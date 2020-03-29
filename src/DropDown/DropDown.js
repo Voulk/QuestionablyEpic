@@ -42,22 +42,12 @@ showDropdownMenu = (event) => {
 
   render(props) {
     return (
-      <div  className="dropdown">
-        <div className="button" onClick={this.showDropdownMenu}> {this.state.dropdowntext} </div>
-        { this.state.displayMenu ? (
-          <div className="subButton" onClick={this.updatereporttoload}>
-          <LogImport
-          reportid = {this.state.reportid} />
-          {console.log(fight.id)}
-          </div>
-        ) :
-          (
-            null
-          )
-        }
-
-      </div>
-
+      <div className="dropdown">
+        <div className="button" onClick={this.showDropdownMenu}> {this.state.dropdowntext} </div> 
+        { this.state.displayMenu ? (<LogImport reportid = {this.state.reportid} />) : (null) }
+                  <div className="subButton" onClick={this.updatereporttoload}/>
+    
+  </div>
     );
   }
 }
