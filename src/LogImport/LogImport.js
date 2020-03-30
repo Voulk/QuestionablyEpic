@@ -41,6 +41,14 @@ class LogImport extends Component {
    return time
  }
 
+ killwipe = (check) => {
+  if (check === false ) {
+    return 'Wipe'
+  } {
+    return 'Kill!'
+  }
+ }
+
   render() {
     const { fights } = this.state;
     if (this.state.reportid === null) {
@@ -48,14 +56,14 @@ class LogImport extends Component {
     } else {
       return (
           <ul>
-        {fights.map(fight =>
+        {fights.filter(name => name.boss !== 0).map(fight =>
           (<li onClick={() => alert(fight.name)} 
             key={fight.id}
             id={fight.id}
             boss={fight.name}
             start={fight.start_time}
             end={fight.end_time}>
-            <l> {fight.id} - {fight.name} {this.msToTime(this.mather(fight.end_time,fight.start_time))}  </l>
+            <l> {fight.name} - {this.msToTime(this.mather(fight.end_time,fight.start_time))} - {this.killwipe(fight.kill)} {fight.bossPercentage / 100 + '%' } </l>
           </li>))}  
           </ul>
       );
