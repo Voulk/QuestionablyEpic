@@ -40,14 +40,12 @@ showDropdownMenu = (event) => {
     });
   }
 
-  render(props) {
+  render() {
     return (
       <div className="dropdown">
         <div className="button" onClick={this.showDropdownMenu}> {this.state.dropdowntext} </div> 
         { this.state.displayMenu ? (<LogImport reportid = {this.state.reportid} />) : (null) }
-                  <div className="subButton" onClick={this.updatereporttoload}/>
-    
-  </div>
+      </div>
     );
   }
 }
@@ -61,3 +59,4 @@ export default Dropdown;
 // <li><a>Activity Logs</a></li>
 // <li><a>Setting</a></li>
 // <li><a>Log Out</a></li>
+// this.updatereporttoload,

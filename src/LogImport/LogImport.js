@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 const API = 'https://www.warcraftlogs.com:443/v1/report/fights/';
 const API2 = '?api_key=92fc5d4ae86447df22a8c0917c1404dc'
 
@@ -23,23 +24,40 @@ class LogImport extends Component {
         .then(data => this.setState({ fights: data.fights }));
     }
   }
+
+ msToTime = (s) => {
+  let ms = s % 1000;
+  s = (s - ms) / 1000;
+  let secs = s % 60;
+  s = (s - secs) / 60;
+  let mins = s % 60;
+  let hrs = (s - mins) / 60;
+
+  return mins + ':' + secs;
+}
+
+ mather = (time1,time2) => {
+   let time = (time1 - time2)
+   return time
+ }
+
   render() {
     const { fights } = this.state;
     if (this.state.reportid === null) {
-      return "No Report Loaded";
+      return ("No Report Loaded");
     } else {
       return (
-        <ul>
-          {fights.map(fight =>
-            (<li
-              key={fight.id}
-              id={fight.id}
-              boss={fight.name}
-              start={fight.start_time}
-              end={fight.end_time}>
-              <l> {fight.id} - {fight.name} </l>
-            </li>))}
-        </ul>
+          <ul>
+        {fights.map(fight =>
+          (<li onClick={() => alert(fight.name)} 
+            key={fight.id}
+            id={fight.id}
+            boss={fight.name}
+            start={fight.start_time}
+            end={fight.end_time}>
+            <l> {fight.id} - {fight.name} {this.msToTime(this.mather(fight.end_time,fight.start_time))}  </l>
+          </li>))}  
+          </ul>
       );
     }
   }

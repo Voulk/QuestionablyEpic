@@ -52,4 +52,25 @@
      border-color: white transparent transparent transparent;
      right:6px;
      top:18px;
+
+
 }*/
+.DropDownItem {
+  flex: 1;
+  color: black;
+  background-color: lightgrey;
+  border-bottom: 1px solid grey;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  transition: 0.2s all;
+  &:hover {
+    background-color: orange;
+    color: white;
+  }
+  &:last-child {
+    border-radius: 0px 0px 20px 20px;
+  }
+  }
