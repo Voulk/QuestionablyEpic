@@ -5,7 +5,7 @@ import LogImport from '../LogImport/LogImport';
 class Dropdown extends React.Component {
   constructor(props) {
     super(props);
-
+    
     this.state = {
       displayMenu: false,
       dropdowntext: 'Select Fight',
@@ -40,11 +40,14 @@ showDropdownMenu = (event) => {
     });
   }
 
-  render() {
+
+
+
+  render(props) {
     return (
-      <div className="dropdown">
+        <div className="dropdown">
         <div className="button" onClick={this.showDropdownMenu}> {this.state.dropdowntext} </div> 
-        { this.state.displayMenu ? (<LogImport reportid = {this.state.reportid} />) : (null) }
+        { this.state.displayMenu ? (<LogImport reportid = {this.state.reportid} clicker={this.props.clicky}/>)  : (null) }
       </div>
     );
   }

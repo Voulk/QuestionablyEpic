@@ -15,16 +15,20 @@ class LogImportFull extends Component {
       reportidnew: this.props.reportid,
     };
   }
-  componentDidMount = () => {
+  componentDidMount = (props) => {
     if (this.state.reportid === null) {
       this.setState({ fightdets: 'No Report' })
-      console.log('1')
+
     } else {
       this.setState({ reportid: this.props.reportid })
-      console.log('2')
-      fetch(API + this.state.reportid + START + API2) // DEFAULT_QUERY
+
+ 
+      fetch(API + this.state.reportid + START + this.props.starttime + END + this.props.endtime + API2)
+      console.log(API + this.state.reportid + START + this.props.starttime + END + this.props.endtime + API2) // DEFAULT_QUERY
         .then(response => response.json())
-        .then(data => this.setState({ fightdets: data.fightdets }));
+        .then(data => this.setState({ fightdets: data.fightdets }))
+          console.log(this.state.fightdets);
+         
     }
   }
 
@@ -37,10 +41,11 @@ class LogImportFull extends Component {
       return (
         <ul>
           {fightdets.map(fightdet =>
-            (<li key={fightdet.id}>           
+            (<li key={fightdet.timestamp}>           
             </li>))}
         </ul>
       );
+
     }
   }
 }

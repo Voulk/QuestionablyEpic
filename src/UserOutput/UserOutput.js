@@ -7,6 +7,8 @@ const userOutput = (props) => {
     <div className='UserOutput'>
   	<p> Current Log: { props.logactuallink } </p>
   	<p> Current report: { props.reportid } </p>
+  	<p>Current Time: { props.time } </p>
+  	<p>Current Time: { props.timeend } </p>
    	</div>
   );
 };

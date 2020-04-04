@@ -9,6 +9,8 @@ import UserOutput from './UserOutput/UserOutput';
 import ButtonClicker from './ButtonClicker/ButtonClicker';
 import DropDown from './DropDown/DropDown';
 import LogImport from './LogImport/LogImport';
+import LogImportFull from './LogImportFull/LogImportFull';
+//import LogTest from './LogImport/LogTest';
 
 // Coooldown data table here
 const cooldowndata = [
@@ -27,14 +29,34 @@ const data = [
   { name: 'Page G', uv: 3490, pv: 4300, amt: 2100 }
 ];
 
+
+
 class App extends PureComponent {
+
+constructor(){
+  super()
+  this.handler = this.handler.bind(this);
+}
+
 
   state = {
     loglink: 'Insert Log Here',
     logactuallink: null,
     reportid: null,
-    apikey: '92fc5d4ae86447df22a8c0917c1404dc'
+    time: null,
+    apikey: '92fc5d4ae86447df22a8c0917c1404dc',
+    timeend: null,
 
+  }
+
+
+  handler(info,info2) {
+    this.setState({ time: info })
+    this.setState({ timeend: info2 })
+    console.log(this.state.time)
+    console.log(this.state.timeend)
+
+    ;
   }
 
   usernameChangedHandler = (event) => {
@@ -67,19 +89,27 @@ class App extends PureComponent {
         <UserOutput
           logactuallink = {this.state.logactuallink}
           reportid = {this.state.reportid}
+          time = {this.state.time}
+          timeend = {this.state.timeend}
         />
-        <DropDown 
+  
+        <DropDown
           reportid = {this.state.reportid}
+          clicky={this.handler.bind(this)}
         />
+      
+
         <AreaChart
           width={1600}
           height={400}
           data={data}
-          margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="name" />
-          <YAxis />
-          <Tooltip />
+          margin={{ top: 10, right: 30, left: 0, bottom: 0 }}
+
+          >
+          <CartesianGrid strokeDasharray="3 3" stroke="#f5f5f5" />
+          <XAxis dataKey="name" stroke="#f5f5f5" />
+          <YAxis stroke="#f5f5f5" />
+          <Tooltip  />
           <Area type="monotone" dataKey="uv" stackId="1" stroke='null' fill="#8884d8" />
           <Area type="monotone" dataKey="pv" stackId="1" stroke='null' fill="#82ca9d" />
           <Area type="monotone" dataKey="amt" stackId="1" stroke='null' fill="#ffc658" />
@@ -93,3 +123,4 @@ class App extends PureComponent {
 }
 
 export default App;
+   //<LogImportFull starttime={this.state.time} endtime={this.state.timeend} /> 

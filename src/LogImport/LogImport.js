@@ -49,26 +49,21 @@ class LogImport extends Component {
   }
  }
 
-  render() {
-    const { fights } = this.state;
-    if (this.state.reportid === null) {
-      return ("No Report Loaded");
-    } else {
-      return (
-          <ul>
-        {fights.filter(name => name.boss !== 0).map(fight =>
-          (<li onClick={() => alert(fight.name)} 
-            key={fight.id}
-            id={fight.id}
-            boss={fight.name}
-            start={fight.start_time}
-            end={fight.end_time}>
-            <l> {fight.name} - {this.msToTime(this.mather(fight.end_time,fight.start_time))} - {this.killwipe(fight.kill)} {fight.bossPercentage / 100 + '%' } </l>
-          </li>))}  
-          </ul>
-      );
-    }
-  }
+ render(props) {
+   const { fights } = this.state;
+   if (this.state.reportid === null) {
+     return ("No Report Loaded");
+   } else {
+     return (
+       <ul>
+         {fights.filter(name => name.boss !== 0).map(fight =>
+           (<li key={fight.id} onClick={() => this.props.clicker(fight.start_time,fight.end_time)}>
+            {fight.name} - {this.msToTime(this.mather(fight.end_time,fight.start_time))} - {this.killwipe(fight.kill)} {fight.bossPercentage / 100 + '%' }
+           </li>))}  
+       </ul>
+     );
+   }
+ }
 }
 
 
