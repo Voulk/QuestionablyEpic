@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 const API = 'https://www.warcraftlogs.com:443/v1/report/events/damage-taken/';
 const START = '?start='
 const END = '&end='
@@ -10,45 +11,35 @@ class LogImportFull extends Component {
     this.state = {
       reportid: this.props.reportid, //props.reportid,
       fightdets: [],
-      starttime: null,
-      endtime: null,
+      starttime: this.props.starttime,
+      endtime: this.props.endtime,
       reportidnew: this.props.reportid,
     };
+    console.log(this.state.reportid)
+     console.log(this.state.fightdets)
+      console.log(this.state.starttime)
   }
-  componentDidMount = (props) => {
+  componentDidMount = () => {
     if (this.state.reportid === null) {
       this.setState({ fightdets: 'No Report' })
-
     } else {
       this.setState({ reportid: this.props.reportid })
-
- 
-      fetch(API + this.state.reportid + START + this.props.starttime + END + this.props.endtime + API2)
-      console.log(API + this.state.reportid + START + this.props.starttime + END + this.props.endtime + API2) // DEFAULT_QUERY
+      fetch(API + this.state.reportid + START + this.props.time + END + this.props.timeend + API2)
         .then(response => response.json())
-        .then(data => this.setState({ fightdets: data.fightdets }))
-          console.log(this.state.fightdets);
-         
+        .then(data => this.setState({ fightdets: data.fightdets }))    
     }
   }
 
-  //https://www.warcraftlogs.com:443/v1/report/events/damage-taken/ReportID?start=StartTime&end=EndTime&api_key='+ApiKey,null,'/events/timestamp,/events/sourceIsFriendly,/events/ability/name,/events/unmitigatedAmount'
   render() {
     const { fightdets } = this.state;
-    if (this.state.reportid === null) {
-      return "No Report Loaded";
-    } else {
-      return (
-        <ul>
-          {fightdets.map(fightdet =>
-            (<li key={fightdet.timestamp}>           
-            </li>))}
-        </ul>
-      );
-
-    }
+    return (
+      <ul>
+        {fightdets.map(fightdet =>
+          (<li key={fightdet.timestamp} />
+          ))}
+      </ul>
+    );
   }
 }
-
 
 export default LogImportFull;

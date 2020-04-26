@@ -15,10 +15,8 @@ class LogImport extends Component {
   componentDidMount = () => {
     if (this.state.reportid === null) {
       this.setState({ fights: 'No Report' })
-      console.log('1')
     } else {
-      this.setState({ reportid: this.props.reportid})
-      console.log('2')
+      this.setState({ reportid: this.props.reportid })
       fetch(API + this.state.reportid + API2) // DEFAULT_QUERY
         .then(response => response.json())
         .then(data => this.setState({ fights: data.fights }));
@@ -26,15 +24,14 @@ class LogImport extends Component {
   }
 
  msToTime = (s) => {
-  let ms = s % 1000;
-  s = (s - ms) / 1000;
-  let secs = s % 60;
-  s = (s - secs) / 60;
-  let mins = s % 60;
-  let hrs = (s - mins) / 60;
-
-  return mins + ':' + secs;
-}
+   let ms = s % 1000;
+   s = (s - ms) / 1000;
+   let secs = s % 60;
+   s = (s - secs) / 60;
+   let mins = s % 60;
+   let hrs = (s - mins) / 60;
+   return mins + ':' + secs;
+ }
 
  mather = (time1,time2) => {
    let time = (time1 - time2)
@@ -42,11 +39,11 @@ class LogImport extends Component {
  }
 
  killwipe = (check) => {
-  if (check === false ) {
-    return 'Wipe'
-  } {
-    return 'Kill!'
-  }
+   if (check === false ) {
+     return 'Wipe'
+   } else {
+     return 'Kill!'
+   }
  }
 
  render(props) {
@@ -57,9 +54,9 @@ class LogImport extends Component {
      return (
        <ul>
          {fights.filter(name => name.boss !== 0).map(fight =>
-           (<li key={fight.id} onClick={() => this.props.clicker(fight.start_time,fight.end_time)}>
-            {fight.name} - {this.msToTime(this.mather(fight.end_time,fight.start_time))} - {this.killwipe(fight.kill)} {fight.bossPercentage / 100 + '%' }
-           </li>))}  
+           (<li key={fight.id} onClick={() => this.props.clicker(fight.start_time, fight.end_time)}>
+             {fight.name} - {this.msToTime(this.mather(fight.end_time, fight.start_time))} - {this.killwipe(fight.kill)} {fight.bossPercentage / 100 + '%' }
+           </li>))} 
        </ul>
      );
    }
