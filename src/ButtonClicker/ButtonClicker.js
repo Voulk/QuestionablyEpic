@@ -4,9 +4,8 @@ const buttonClicker = (props) => {
   const inputstyle = {
     width: '30.5%',
     height: 25,
-    margin: 2,
-    borderRadius: '5px 5px 5px 5px'
-
+    margin: 5,
+    borderRadius: '5px 5px 5px 5px',
   };
 
   return (<button

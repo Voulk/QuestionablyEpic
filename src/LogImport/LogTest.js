@@ -17,7 +17,7 @@ class LogImport extends Component {
       this.setState({ fights: 'No Report' })
       console.log('1')
     } else {
-      this.setState({ reportid: this.props.reportid})
+      this.setState({ reportid: this.props.reportid })
       console.log('2')
       fetch(API + this.state.reportid + API2) // DEFAULT_QUERY
         .then(response => response.json())
@@ -26,15 +26,14 @@ class LogImport extends Component {
   }
 
  msToTime = (s) => {
-  let ms = s % 1000;
-  s = (s - ms) / 1000;
-  let secs = s % 60;
-  s = (s - secs) / 60;
-  let mins = s % 60;
-  let hrs = (s - mins) / 60;
-
-  return mins + ':' + secs;
-}
+   let ms = s % 1000;
+   s = (s - ms) / 1000;
+   let secs = s % 60;
+   s = (s - secs) / 60;
+   let mins = s % 60;
+   let hrs = (s - mins) / 60;
+   return mins + ':' + secs;
+ }
 
  mather = (time1,time2) => {
    let time = (time1 - time2)
@@ -42,11 +41,11 @@ class LogImport extends Component {
  }
 
  killwipe = (check) => {
-  if (check === false ) {
-    return 'Wipe'
-  } {
-    return 'Kill!'
-  }
+   if (check === false) {
+     return 'Wipe'
+   } {
+     return 'Kill!'
+   }
  }
 
  render() {
@@ -57,15 +56,14 @@ class LogImport extends Component {
      return (
        <ul>
          {fights.filter(name => name.boss !== 0).map(fight =>
-           (<li onClick={this.props.action(fight.start_time)} key={fight.id}/>            
-          ))}
+           (<li onClick={this.props.action(fight.start_time)} key={fight.id}/>
+           )
+         )}
        </ul>
      );
    }
  }
 }
-
-
 
 export default LogImport;
 

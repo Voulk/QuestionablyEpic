@@ -1,9 +1,11 @@
 {
   "name": "react-complete-guide",
+  "homepage": "https://ptolemae.github.io/ptolemae.github.io",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "axios": "^0.19.2",
+    "gh-pages": "^2.2.0",
     "moment": "^2.24.0",
     "react": "^16.0.0-rc.3",
     "react-dom": "^16.0.0-rc.3",
@@ -12,6 +14,8 @@
     "recharts": "^1.8.5"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",

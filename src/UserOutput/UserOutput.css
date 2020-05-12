@@ -1,9 +1,11 @@
 .UserOutput {
-    width: 30%;
+	object-position: 50% 50%;
+	width: 30%;
     padding: 2px;
-    margin: 2px;
-    border: 2px solid black;
+    margin: 5px;
+    border: 1px black;
     background-color: #ccc;
     text-align: left;
     border-radius: 20px 20px 20px 20px;
+    box-shadow: 0px 0px 3px 3px #2C2C2C;
 }
