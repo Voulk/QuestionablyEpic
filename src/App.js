@@ -152,9 +152,7 @@ class App extends Component {
               <Area type="monotone" dataKey="Illusionary Bolt" stackId="1" stroke='null' fill="#43E24A" />
               <Area type="monotone" dataKey="Eye of Corruption" stackId="1" stroke='null' fill="#8884d3" />
               <Area type="monotone" dataKey="Psychic Outburst" stackId="1" stroke='null' fill="#8884d0" />
-              <Area type="monotone" dataKey="Psychic Outburst" stackId="1" stroke='null' fill="#8884d0" />
-
-            </AreaChart>
+              </AreaChart>
           </ResponsiveContainer>
         </div>
         <div/>
