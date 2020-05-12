@@ -33,6 +33,7 @@ class App extends Component {
       datahere: null,
       nextpage: null,
       updatedarray: [],
+      abilitylist: 'none',
     }
   }
 
@@ -48,7 +49,6 @@ class App extends Component {
       // original Call for the base of the import
       await axios.get(API + this.state.reportid + START + this.state.time + END + this.state.timeend + API2)
         .then(result => {
-          console.log(result.data.nextPageTimestamp)
           this.setState({
             data: Object.keys(result.data.events).map(key => (result.data.events[key]))
           })
@@ -60,7 +60,6 @@ class App extends Component {
           console.log(error)
         });
 
-      console.log(this.state.nextpage)
       // Loop of the import updating the next page until the next page is undefined (no next page from json return)
       do {
         await axios.get(API + this.state.reportid + START + this.state.nextpage + END + this.state.timeend + API2)
@@ -77,9 +76,36 @@ class App extends Component {
           });
       } while (this.state.nextpage != undefined)
 
-      this.setState({ updatedarray: this.state.data.map(key =>({ timestamp: this.msToTime(this.mather(this.state.time, key.timestamp)), [key.ability.name]: key.unmitigatedAmount })) })
-      console.log(this.state.updatedarray)
+      this.setState({
+        updatedarray: this.state.data.map(key =>({ timestamp: this.msToTime(this.mather(this.state.time, key.timestamp)), [key.ability.name]: key.unmitigatedAmount })),
+      })
+       this.setState({
+        abilitylistold: (this.state.data.map(key =>(key.ability.name)))
+      })
+       let uniqueArray = Array.from(new Set(this.state.abilitylistold));
+ this.setState({
+        abilitylist: uniqueArray
+      })
     }
+
+    drawAreas() {
+      let data = this.state.abilitylist; 
+      let dataSet = data
+      let areaArr = [];     
+      let count = 0;
+      let len = Object.keys(dataSet).length;
+      let colorCodes = ["#17607D", "#F2D8A7", "#1FCECB", "#FF9311", "#003D5C", "#F27649", "#D5CDB6", "#008C74", "#30588C", "#263138"]
+      for (let i in dataSet) {
+        if (dataSet.hasOwnProperty(i)) {
+          areaArr.push(<Area type='monotone' dataKey={data[i]} stackId="1" key={i} fill={colorCodes[count]}/>) 
+          count = count + 1;
+        }
+      }
+      return areaArr;
+    }
+
+// stroke={colorCodes[count]}
+
   handler = (info, info2) => {
     this.setState({
       time: info,
@@ -112,9 +138,11 @@ class App extends Component {
     return time
   }
   render() {
+ 
     let { chartdata } = this.state.updatedarray
     if (this.state.dataloaded === true) {
       chartdata = this.state.updatedarray
+      
     } else {
       chartdata = this.state.updatedarray
     }
@@ -144,15 +172,12 @@ class App extends Component {
               width={1600}
               height={400}
               data={chartdata}
-              margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
-             
+              margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>       
               <XAxis dataKey="timestamp"  stroke="#f5f5f5"/> 
               <YAxis stroke="#f5f5f5"/>
               <Tooltip />
-              <Area type="monotone" dataKey="Illusionary Bolt" stackId="1" stroke='null' fill="#43E24A" />
-              <Area type="monotone" dataKey="Eye of Corruption" stackId="1" stroke='null' fill="#8884d3" />
-              <Area type="monotone" dataKey="Psychic Outburst" stackId="1" stroke='null' fill="#8884d0" />
-              </AreaChart>
+              {this.drawAreas()}
+            </AreaChart>
           </ResponsiveContainer>
         </div>
         <div/>
@@ -165,3 +190,4 @@ class App extends Component {
 export default App;
 
  // <CartesianGrid strokeDasharray="3 3" stroke="#f5f5f5"/>
+
