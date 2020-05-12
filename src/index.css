@@ -3,4 +3,6 @@ body {
   padding: 0;
   font-family: sans-serif;
   background-color: rgb(40, 44, 52);
+  background-size: cover;
+  background-image: url(./Images/bg.jpg);
 }
