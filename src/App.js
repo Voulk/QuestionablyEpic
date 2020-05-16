@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import './App.css';
-import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from 'recharts';
 import UserInput from './UserInput/UserInput';
 import UserOutput from './UserOutput/UserOutput';
 import ButtonClicker from './ButtonClicker/ButtonClicker';
 import DropDown from './DropDown/DropDown';
 import axios from 'axios';
+import chroma from 'chroma-js';
+import Chart from './Chart/Chart'
+import moment from 'moment';
 
 class App extends Component {
   constructor() {
@@ -34,23 +37,24 @@ class App extends Component {
       nextpage: null,
       updatedarray: [],
       abilitylist: 'none',
+      boss: null,
     }
   }
 
     useless = () => {
     }
 
-    updatechartdata = async () => {
+    updatechartdata = async (starttime, endtime) => {
       const API = 'https://www.warcraftlogs.com:443/v1/report/events/damage-taken/';
       const START = '?start='
       const END = '&end='
       const API2 = '&api_key=92fc5d4ae86447df22a8c0917c1404dc'
 
       // original Call for the base of the import
-      await axios.get(API + this.state.reportid + START + this.state.time + END + this.state.timeend + API2)
+      await axios.get(API + this.state.reportid + START + starttime + END + endtime + API2)
         .then(result => {
           this.setState({
-            data: Object.keys(result.data.events).map(key => (result.data.events[key]))
+            data: Object.keys(result.data.events).filter(key => (result.data.events[key].sourceIsFriendly !== true)).map(key => (result.data.events[key]))
           })
           this.setState({
             nextpage: result.data.nextPageTimestamp
@@ -59,13 +63,12 @@ class App extends Component {
         .catch(function (error) {
           console.log(error)
         });
-
       // Loop of the import updating the next page until the next page is undefined (no next page from json return)
       do {
-        await axios.get(API + this.state.reportid + START + this.state.nextpage + END + this.state.timeend + API2)
+        await axios.get(API + this.state.reportid + START + this.state.nextpage + END + endtime + API2)
           .then(result => {
             this.setState({
-              data: this.state.data.concat(Object.keys(result.data.events).map(key => (result.data.events[key])))
+              data: this.state.data.concat(Object.keys(result.data.events).filter(key =>(result.data.events[key].sourceIsFriendly !== true)).map(key => (result.data.events[key])))
             })
             this.setState({
               nextpage: result.data.nextPageTimestamp
@@ -77,52 +80,34 @@ class App extends Component {
       } while (this.state.nextpage != undefined)
 
       this.setState({
-        updatedarray: this.state.data.map(key =>({ timestamp: this.msToTime(this.mather(this.state.time, key.timestamp)), [key.ability.name]: key.unmitigatedAmount })),
+        updatedarray: this.state.data.map(key =>({ timestamp: moment(this.mather(this.state.time, key.timestamp)).format("mm:ss"), [key.ability.name]: key.unmitigatedAmount, ability: key.unmitigatedAmount })),
       })
-       this.setState({
+
+      this.setState({
         abilitylistold: (this.state.data.map(key =>(key.ability.name)))
       })
-       let uniqueArray = Array.from(new Set(this.state.abilitylistold));
- this.setState({
+      let uniqueArray = Array.from(new Set(this.state.abilitylistold));
+      this.setState({
         abilitylist: uniqueArray
       })
     }
 
-    drawAreas() {
-      let data = this.state.abilitylist; 
-      let dataSet = data
-      let areaArr = [];     
-      let count = 0;
-      let len = Object.keys(dataSet).length;
-      let colorCodes = ["#17607D", "#F2D8A7", "#1FCECB", "#FF9311", "#003D5C", "#F27649", "#D5CDB6", "#008C74", "#30588C", "#263138"]
-      for (let i in dataSet) {
-        if (dataSet.hasOwnProperty(i)) {
-          areaArr.push(<Area type='monotone' dataKey={data[i]} stackId="1" key={i} fill={colorCodes[count]}/>) 
-          count = count + 1;
-        }
-      }
-      return areaArr;
-    }
-
-// stroke={colorCodes[count]}
-
-  handler = (info, info2) => {
+  handler = (info, info2, bossname) => {
     this.setState({
       time: info,
       timeend: info2,
-      nextpage: info
+      nextpage: info,
+      boss: bossname,
     })
   }
   usernameChangedHandler = (event) => {
-    this.setState({ loglink: event.target.value })
-  }
-  logChangedHandler = () => {
-    this.setState({ logactuallink: this.state.loglink })
-    this.setState({ reportid: this.state.loglink.substring(37,54) })
+    let actuallink = event.target.value 
+    this.setState({ logactuallink: event.target.value });
+    this.setState({ reportid: actuallink.substring(37,53) });
   }
   reportidHandler = () => {
     this.setState({ logactuallink: this.state.loglink })
-    this.setState({ reportid: this.state.loglink.substring(37,54) })
+    this.setState({ reportid: this.state.loglink.substring(37,53) })
   }
   msToTime = (s) => {
     let ms = s % 1000;
@@ -130,58 +115,35 @@ class App extends Component {
     let secs = s % 60;
     s = (s - secs) / 60;
     let mins = s % 60;
-    let hrs = (s - mins) / 60;
+    // let hrs = (s - mins) / 60;
     return mins + ':' + secs;
   }
-  mather = (time1,time2) => {
+  mather = (time1, time2) => {
     let time = (time2 - time1)
     return time
   }
   render() {
- 
     let { chartdata } = this.state.updatedarray
-    if (this.state.dataloaded === true) {
-      chartdata = this.state.updatedarray
-      
-    } else {
-      chartdata = this.state.updatedarray
-    }
     return (
       <div className='App' align={'center'} >
-        <div> Paste Warcraftlog Link Here </div>
+        <div style={{ color: 'white', fontWeight: 'bold' }}> Paste Warcraftlog Link Here </div>
         <UserInput
           changed={this.usernameChangedHandler} />
-        <div />
-        <ButtonClicker
-          clicked={this.logChangedHandler}
-        />
         <UserOutput
           logactuallink = {this.state.logactuallink}
           reportid = {this.state.reportid}
           time = {this.state.time}
           timeend = {this.state.timeend}
+          boss = {this.state.boss}
         />
         <DropDown
           reportid = {this.state.reportid}
-          clicky={this.handler}/>
+          clicky={this.handler}
+          update={this.updatechartdata}/>
         <div/>
-        <button onClick={this.updatechartdata}> Click me yo </button>
-        <div style={{ width: '100%', height: 400 }}>
-          <ResponsiveContainer>
-            <AreaChart
-              width={1600}
-              height={400}
-              data={chartdata}
-              margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>       
-              <XAxis dataKey="timestamp"  stroke="#f5f5f5"/> 
-              <YAxis stroke="#f5f5f5"/>
-              <Tooltip />
-              {this.drawAreas()}
-            </AreaChart>
-          </ResponsiveContainer>
-        </div>
+        <Chart chart={this.state.updatedarray} abilitylist={this.state.abilitylist} />
         <div/>
-    
+
       </div>
     )
   }

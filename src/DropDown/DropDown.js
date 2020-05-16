@@ -36,7 +36,7 @@ showDropdownMenu = (event) => {
     return (
       <div className="dropdown">
         <div className="button" onClick={this.showDropdownMenu}> {this.state.dropdowntext} </div> 
-        { this.state.displayMenu ? (<LogImport reportid = {this.state.reportid} clicker={this.props.clicky}/>) : (null) }
+     { this.state.displayMenu ? (<LogImport reportid = {this.state.reportid} clicker={this.props.clicky} update={this.props.update} />) : (null) } 
       </div>
     );
   }

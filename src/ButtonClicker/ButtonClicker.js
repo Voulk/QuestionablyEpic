@@ -5,7 +5,7 @@ const buttonClicker = (props) => {
     width: '30.5%',
     height: 25,
     margin: 5,
-    borderRadius: '5px 5px 5px 5px',
+    boxshadow: '0px 0px 1px 1px #1e1d1f',
   };
 
   return (<button

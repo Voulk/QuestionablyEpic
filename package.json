@@ -5,6 +5,7 @@
   "private": true,
   "dependencies": {
     "axios": "^0.19.2",
+    "chroma-js": "^2.1.0",
     "gh-pages": "^2.2.0",
     "moment": "^2.24.0",
     "react": "^16.0.0-rc.3",
