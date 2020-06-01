@@ -1,84 +1,41 @@
-window.styled = window.styled.default;
+import React from 'react';
+import './DropDown.css';
 
-const Container = styled.div`
-  font-size: 2rem;
-  border-radius: 20px 20px 20px 20px;
-  margin: 0 auto;
-  width: 400px;
-  transition: .2s all;
-  height: ${props =>
-      props.dropDownOpen ? 100 + props.dropDownArr.length * 100   + 'px' : '100px'}
-  background-color: lightgrey;
-  display: flex;
-  flex-direction: column;
-`;
-const DropDownMenu = styled.div`
-  cursor: pointer;
-  height: 100px;
-  width: 400px;
-  border-radius: 20px 20px 0px 0px;
-  background-color: grey;
-  display: flex;
-  text-align: center;
-  justify-content: center;
-  align-content: center;
-  flex-direction: column;
-  &:hover {
-    background-color: darkgrey;
+class DropdownCommon extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      displayMenu: false,
+      dropdowntext: 'Select Class',
+      classes: ['Paladin', 'Rogue', 'Warrior', 'Mage', 'Warlock', 'Druid', 'Priest', 'Demon Hunter', 'Monk']
+    }
+    this.showDropdownMenu = this.showDropdownMenu.bind(this);
+    this.hideDropdownMenu = this.hideDropdownMenu.bind(this);
   }
-`;
-const DropDownItem = styled.div`
-  flex: 1;
-  color: black;
-  background-color: lightgrey;
-  border-bottom: 1px solid grey;
-  display: flex;
-  text-align: center;
-  justify-content: center;
-  align-content: center;
-  flex-direction: column;
-  transition: 0.2s all;
-  &:hover {
-    background-color: orange;
-    color: white;
+showDropdownMenu = (event) => {
+  event.preventDefault();
+  this.setState({ displayMenu: true }, () => {
+    document.addEventListener('click', this.hideDropdownMenu)
+  })
+}
+  hideDropdownMenu = () => {
+    this.setState({ displayMenu: false }, () => {
+      document.removeEventListener('click', this.hideDropdownMenu)
+    })
   }
-  &:last-child {
-    border-radius: 0px 0px 20px 20px;
+
+  updatereporttoload = () => {
+    this.setState({ reportload: this.state.reportid }, () => {
+      document.removeEventListener('click', this.updatereporttoload);
+    });
   }
-`;
-
-class DropDown2 extends React.Component {
-  state = { dropDownOpen: false };
-
-  toggleDropDown = () =>
-    this.setState({ dropDownOpen: !this.state.dropDownOpen });
-
   render() {
-    const title = 'Click Me';
-    const dropDownArr = ['item1', 'item2', 'item3'];
     return (
-      <Container
-        dropDownOpen={this.state.dropDownOpen}
-        dropDownArr={dropDownArr}
-      >
-        <DropDownMenu
-          onClick={() => this.toggleDropDown()}
-        >
-          <div>{title}</div>
-        </DropDownMenu>
-        {this.state.dropDownOpen
-          ? dropDownArr.map(item => {
-            return (
-              <DropDownItem 
-                onClick={() => alert('You Clicked an Item!')}> 
-                <div>{item}</div>
-              </DropDownItem>
-            );
-          })
-          : null}
-      </Container>
+      <div className="dropdown">
+        <div className="button" onClick={this.showDropdownMenu}> {this.state.dropdowntext} </div> 
+        { this.state.displayMenu ? (<ul className="DropDownUL"> {this.state.classes.map(classes => (<li className="DropDownItem" key={classes}>{classes}</li>))}</ul>) : (null) }
+      </div>
     );
   }
 }
-
-ReactDOM.render(<DropDown />, document.getElementById('app'));
+export default DropdownCommon;
