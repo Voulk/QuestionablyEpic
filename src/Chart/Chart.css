@@ -3,8 +3,9 @@
     padding: 2px;
     margin: 5px;
     border: 1px black;
-    background-color: #424242;
+    background-color: #272c34;
     box-shadow: 0px 0px 1px 1px #1e1d1f;
     color: #ffffff;
     font-family: "Roboto";
+    border-radius: 4px;
 }

@@ -12,6 +12,11 @@ import Chart from './Chart/Chart'
 import moment from 'moment';
 import { Button } from '@material-ui/core';
 import ControlledOpenSelect from './DropDown/buttonnew';
+import { Backdrop } from '@material-ui/core';
+import { Container } from '@material-ui/core';
+import CircularProgress from '@material-ui/core/CircularProgress';
+import LoadingOverlay from 'react-loading-overlay';
+import CustomEditComponent from './CooldownTable/Table';
 
 
 class App extends Component {
@@ -27,7 +32,6 @@ class App extends Component {
       updatedarray: [
         { timestamp: 1000, Melee: 100 },
         { timestamp: 2000, Melee: 200 },
-        { timestamp: 2000, Melee: 0 },
         { timestamp: 5000, Melee: 100 },
         { timestamp: 9000, Melee: 200 },
         { timestamp: 70000, Melee: 100 }],
@@ -41,6 +45,7 @@ class App extends Component {
       nextpage: null,
       abilitylist: ['Melee'],
       cooldownlist: ['none'],
+      loadingcheck: false,
       boss: null,
       classes: ['Paladin','Rogue', 'Warrior', 'Mage', 'Warlock', 'Druid', 'Priest', 'Demon Hunter', 'Monk'],
     }
@@ -56,6 +61,9 @@ class App extends Component {
       const END = '&end='
       const API2 = '&api_key=92fc5d4ae86447df22a8c0917c1404dc'
       const CastAPI2 = '&hostility=0&api_key=92fc5d4ae86447df22a8c0917c1404dc'
+      this.setState({
+        loadingcheck: true,
+      })
 
       // original Call for the base of the import
       await axios.get(APIdamagetaken + this.state.reportid + START + starttime + END + endtime + API2)
@@ -85,7 +93,6 @@ class App extends Component {
             console.log(error)
           });
       } while (this.state.nextpage != undefined)
-
 
       //
 
@@ -124,45 +131,101 @@ class App extends Component {
       let cooldownlistold = this.state.datacasts.map(key =>(key.ability.name));
       let uniqueArray = Array.from(new Set(abilitylistold));
       let uniqueArrayCD = Array.from(new Set(cooldownlistold));
-      let updatedarray = this.state.data.map(key =>({ timestamp: moment(this.mather(this.state.time, key.timestamp)).startOf('second').valueOf(), [key.ability.name]: key.unmitigatedAmount, ability: key.ability.name }));
-      let updateddatacasts = this.state.datacasts.map(key =>({ timestamp: moment(this.mather(this.state.time, key.timestamp)).startOf('second').valueOf(), [key.ability.name]: 1, ability: key.ability.name }));
-      let concat = updatedarray.concat(updateddatacasts)
+      let updatedarray = this.state.data.map(key =>({ timestamp: moment(this.mather(this.state.time, key.timestamp)).startOf('second').valueOf(), [key.ability.name]: key.unmitigatedAmount}));
+      let updateddatacasts = this.state.datacasts.map(key =>({ timestamp: moment(this.mather(this.state.time, key.timestamp)).startOf('second').valueOf(), [key.ability.name]: 1 }));
+      console.log(endtime)
+      let times = this.customticks2(this.mather2(endtime, starttime))
+      let concat = updatedarray.concat(updateddatacasts, times)
       let concatabilitylist = uniqueArray.concat(uniqueArrayCD)
       concat.sort((a, b) => a.timestamp > b.timestamp ? 1 : -1)
       let test = new Set(concat.map(time => ({timestamp: time.timestamp})))   
+
+      let datarReformater = concat.reduce((acc, cur) => {
+        acc[cur.timestamp] = concat.reduce((x, n) => {
+          for (let prop in n) {
+            if (cur.timestamp === n.timestamp)  
+              if (x.hasOwnProperty(prop)) 
+                x[prop] += n[prop]
+              else 
+                x[prop] = n[prop];
+              }
+            x.timestamp = cur.timestamp
+            return x;
+          }, {})
+        return acc;
+      }, {})
+let sortedData = []
+Object.keys(datarReformater).forEach(element => sortedData.push(datarReformater[element]))
       this.setState({
-        updatedarray: concat,
+        updatedarray: sortedData,
         Updateddatacasts: updateddatacasts,
         abilitylist: uniqueArray,
         cooldownlist: uniqueArrayCD,
-      })     
-      console.log(this.state.datacasts)
-      console.log(concat)
-      console.log(this.groupBy(concat, "timestamp"))
+      })   
 
- let testy = concat.reduce((basket, fruit) => {
-    for (const [ability, unmitigate] of Object.entries(fruit)) {
-        if (!basket[ability]) {
-            basket[ability] = 0;
+
+
+
+console.log(this.state.updatedarray)
+
+
+
+
+      this.setState({
+        loadingcheck: false,
+      })
+    }
+
+    customticks2 = (loglength) => {
+      let toesisstupid = []
+      let ticks = [];
+      let tickcount = 0;
+      let length = moment(loglength).startOf('second') / 1000;
+      for (let i = 0; i < length; i++) {
+        ticks = ticks.concat(tickcount + 1000)
+        tickcount = tickcount + 1000
+      }
+      ticks.forEach(element => toesisstupid.push({timestamp: element}))
+      return toesisstupid
+    }
+
+    groupByArray(xs, key) {
+      return xs.reduce(function (rv, x) {
+        let v = key instanceof Function ? key(x) : x[key];
+        let el = rv.find((r) => r && r.key === v);
+        if (el) {
+          el.values.push(x);
+        } else {
+          rv.push({
+            key: v,
+            values: [x]
+          });
         }
-
-        basket[ability] += unmitigate;
+        return rv;
+      }, []);
     }
 
-    return basket;
-}, {})
-
- console.log(testy)
-
-
-    }
-
- groupBy = function(xs, key) {
-   return xs.reduce(function(rv, x) {
-     (rv[x[key]] = rv[x[key]] || []).push(x);
-     return rv;
+ groupBy = function (data, key) {
+   // `data` is an array of objects, `key` is the key (or property accessor) to group by
+   // reduce runs this anonymous function on each element of `data` (the `item` parameter,
+   // returning the `storage` parameter at the end
+   return data.reduce(function(storage, item) {
+   // get the first instance of the key by which we're grouping
+     let group = item[key]; 
+     // set `storage` for this instance of group to the outer scope (if not empty) or initialize it
+     storage[group] = storage[group] || []; 
+     // add this item to its group within `storage`
+     storage[group].push(item);
+     // return the updated storage to the reduce function, which will then loop through the next 
+     return storage;
    }, {});
+   // {} is the initial value of the storage
  };
+
+ mather2 = (time1,time2) => {
+   let time = (time1 - time2)
+   return time
+ }
 
 
   handler = (info, info2, bossname) => {
@@ -195,11 +258,13 @@ class App extends Component {
     let time = (time2 - time1)
     return time
   }
+
+
   render() {
-    let { chartdata } = this.state.updatedarray
+    let spinnershow = this.state.loadingcheck;
     return (
       <div className='App' align={'center'} >
-        <div style={{ color: 'Black', fontWeight: 'bold' }}> Paste Warcraftlog Link Here </div>
+        <div style={{ color: 'White', fontWeight: 'bold' }}> Paste Warcraftlog Link Here </div>
         <UserInput
           changed={this.usernameChangedHandler} />
         <UserOutput
@@ -209,17 +274,18 @@ class App extends Component {
           timeend = {this.state.timeend}
           boss = {this.state.boss}
         />
-        <DropDown
-          reportid = {this.state.reportid}
-          clicky={this.handler}
-          update={this.updatechartdata}/>
-        <div/>
+        <ControlledOpenSelect reportid={this.state.reportid} clicky={this.handler} update={this.updatechartdata}/>
+        <LoadingOverlay
+          active={spinnershow}
+          spinner={<CircularProgress color="secondary" />}
+        >
+          <Chart chart={this.state.updatedarray} abilitylist={this.state.abilitylist} cooldown={this.state.cooldownlist} endtime={this.state.timeend} />
+        </LoadingOverlay>
+        
+         <CustomEditComponent />
+      </div>
+     
 
-        <Chart chart={this.state.updatedarray} abilitylist={this.state.abilitylist} cooldown={this.state.cooldownlist} endtime={this.state.timeend} />
-        <div/>
-         <ControlledOpenSelect reportid={this.state.reportid} clicky={this.handler} update={this.updatechartdata}/>
-
-      </div>  
 
     )
   }
@@ -228,16 +294,3 @@ class App extends Component {
 
 export default App;
 
- // <CartesianGrid strokeDasharray="3 3" stroke="#f5f5f5"/>
-
-
-        // <div className="container">
-        //   <ul className="list-group text-center">
-        //     {
-        //       Object.keys(this.state.classes).map(function(key) {
-        //         return <li className="list-group-item list-group-item-info">{this.state.classes[key]}</li>
-        //       }.bind(this))
-        //     }
-        //   </ul>
-        // </div>
-                // <DropDownCommon />

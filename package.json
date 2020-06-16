@@ -4,13 +4,16 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@material-ui/core": "^4.10.0",
+    "@material-ui/core": "^4.10.1",
+    "@material-ui/icons": "^4.9.1",
     "axios": "^0.19.2",
     "chroma-js": "^2.1.0",
     "gh-pages": "^2.2.0",
+    "material-table": "^1.60.0",
     "moment": "^2.24.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-loading-overlay": "^1.0.1",
     "react-scripts": "1.0.13",
     "reactstrap": "^8.4.1",
     "recharts": "^1.8.5"
