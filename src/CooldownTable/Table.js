@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment, useEffect } from "react";
 import ReactDOM from "react-dom";
 import MaterialTable from "material-table";
 import { forwardRef } from 'react';
@@ -17,36 +17,66 @@ import Remove from '@material-ui/icons/Remove';
 import SaveAlt from '@material-ui/icons/SaveAlt';
 import Search from '@material-ui/icons/Search';
 import ViewColumn from '@material-ui/icons/ViewColumn';
-
 import paladinicon from '../Images/spell_holy_holybolt.jpg'
+import classcds from './classcds'
+import TimePicker from 'rc-time-picker';
+import DateFnsUtils from '@date-io/date-fns';
+import Button from '@material-ui/core/Button';
+import Menu from '@material-ui/core/Menu';
+import MenuItem from '@material-ui/core/MenuItem';
+// import 'rc-time-picker/assets/index.css';
+import 'rc-time-picker/assets/index.css';
+// import BasicTimePicker from '../TimePicker/timePicker'
+import moment from 'moment';
+import './table.css';
+
+import {
+  FormControl,
+  InputLabel,
+  Select,
+  OutlinedInput,
+  TextField,
+  option
+} from "@material-ui/core";
+
+const items = [
+  <MenuItem value={'Holy Paladin'}> Holy Paladin </MenuItem>,
+  <MenuItem value={'Restoration Druid'}> Restoration Druid </MenuItem>,
+  <MenuItem value={'Holy Priest'}> Holy Priest </MenuItem>,
+  <MenuItem value={'Discispline Priest'}> Discispline Priest </MenuItem>,
+  <MenuItem value={'Restoration Shaman'}> Restoration Shaman </MenuItem>,
+  <MenuItem value={'Mistweaver Monk'}> Mistweaver Monk </MenuItem>]
 
 const tableIcons = {
-    Add: forwardRef((props, ref) => <AddBox {...props} ref={ref} />),
-    Check: forwardRef((props, ref) => <Check {...props} ref={ref} />),
-    Clear: forwardRef((props, ref) => <Clear {...props} ref={ref} />),
-    Delete: forwardRef((props, ref) => <DeleteOutline {...props} ref={ref} />),
-    DetailPanel: forwardRef((props, ref) => <ChevronRight {...props} ref={ref} />),
-    Edit: forwardRef((props, ref) => <Edit {...props} ref={ref} />),
-    Export: forwardRef((props, ref) => <SaveAlt {...props} ref={ref} />),
-    Filter: forwardRef((props, ref) => <FilterList {...props} ref={ref} />),
-    FirstPage: forwardRef((props, ref) => <FirstPage {...props} ref={ref} />),
-    LastPage: forwardRef((props, ref) => <LastPage {...props} ref={ref} />),
-    NextPage: forwardRef((props, ref) => <ChevronRight {...props} ref={ref} />),
-    PreviousPage: forwardRef((props, ref) => <ChevronLeft {...props} ref={ref} />),
-    ResetSearch: forwardRef((props, ref) => <Clear {...props} ref={ref} />),
-    Search: forwardRef((props, ref) => <Search {...props} ref={ref} />),
-    SortArrow: forwardRef((props, ref) => <ArrowDownward {...props} ref={ref} />),
-    ThirdStateCheck: forwardRef((props, ref) => <Remove {...props} ref={ref} />),
-    ViewColumn: forwardRef((props, ref) => <ViewColumn {...props} ref={ref} />)
-  };
-
+  Add: forwardRef((props, ref) => <AddBox {...props} ref={ref} />),
+  Check: forwardRef((props, ref) => <Check {...props} ref={ref} />),
+  Clear: forwardRef((props, ref) => <Clear {...props} ref={ref} />),
+  Delete: forwardRef((props, ref) => <DeleteOutline {...props} ref={ref} />),
+  DetailPanel: forwardRef((props, ref) => <ChevronRight {...props} ref={ref} />),
+  Edit: forwardRef((props, ref) => <Edit {...props} ref={ref} />),
+  Export: forwardRef((props, ref) => <SaveAlt {...props} ref={ref} />),
+  Filter: forwardRef((props, ref) => <FilterList {...props} ref={ref} />),
+  FirstPage: forwardRef((props, ref) => <FirstPage {...props} ref={ref} />),
+  LastPage: forwardRef((props, ref) => <LastPage {...props} ref={ref} />),
+  NextPage: forwardRef((props, ref) => <ChevronRight {...props} ref={ref} />),
+  PreviousPage: forwardRef((props, ref) => <ChevronLeft {...props} ref={ref} />),
+  ResetSearch: forwardRef((props, ref) => <Clear {...props} ref={ref} />),
+  Search: forwardRef((props, ref) => <Search {...props} ref={ref} />),
+  SortArrow: forwardRef((props, ref) => <ArrowDownward {...props} ref={ref} />),
+  ThirdStateCheck: forwardRef((props, ref) => <Remove {...props} ref={ref} />),
+  ViewColumn: forwardRef((props, ref) => <ViewColumn {...props} ref={ref} />)
+};
 
 export default function CustomEditComponent(props) {
-  const { useState } = React;
 
+  const { useState } = React;
+  let [selectedDate, handleDateChange] = useState(0);
+  let a = 0
+  let z = 0
   const [columns, setColumns] = useState([
     {
-      title: 'Name', field: 'name',
+      title: 'Name',
+      field: 'name',
       editComponent: props => (
         <input
           type="text"
@@ -57,88 +87,80 @@ export default function CustomEditComponent(props) {
     },
     {
       title: 'Class',
-      field: 'Class',
-      lookup: { 
-        1:
-          <div>
-            <img
-              src={'https://wow.zamimg.com/images/wow/icons/tiny/spell_holy_holybolt.gif'}
-              alt={''}
-            /> 
-            Holy Paladin
-          </div>,
-        2:
-          <div>
-            <img
-              src={'https://wow.zamimg.com/images/wow/icons/tiny/talentspec_druid_restoration.gif'}
-              alt={''}
-            /> 
-            Restoration Druid
-          </div>,
-        3:
-          <div>
-            <img
-              src={'https://wow.zamimg.com/images/wow/icons/tiny/spell_holy_guardianspirit.gif'}
-              alt={''}
-            /> 
-            Holy Priest
-          </div>,
-        4:
-          <div>
-            <img
-              src={'https://wow.zamimg.com/images/wow/icons/tiny/spell_holy_wordfortitude.gif'}
-              alt={''}
-            /> 
-            Discispline Priest
-          </div>,
-        5:
-          <div>
-            <img
-              src={'https://wow.zamimg.com/images/wow/icons/tiny/spell_nature_magicimmunity.gif'}
-              alt={''}
-            /> 
-            Restoration Shaman
-          </div>,
-        6:
-          <div>
-            <img
-              src={'https://wow.zamimg.com/images/wow/icons/tiny/spell_monk_mistweaver_spec.gif'}
-              alt={''}
-            /> 
-            Mistweaver Monk
-          </div>},
+      field: 'class',
+      editComponent: props => (
+        <Select
+          value={props.value}
+          onChange={e => { props.onChange(e.target.value); a = e.target.value }}>
+          {items}
+        </Select>
+      )
     },
     {
       title: 'Cooldown',
       field: 'Cooldown',
-      lookup: { 1: 'Holy Paladin', 2: ' Restoration Druid', 3: ' Holy Priest' , 4: 'Discispline Priest' , 5: 'Restoration Shaman' , 6: 'Monk' },
+      editComponent: props => (
+        <Select
+          type="text"
+          value={props.value }
+          onChange={e => { props.onChange(e.target.value); console.log(e.target.value) }}>
+          {classcds(a) || []}
+        </Select>
+      )
+    },
+    {
+      title: 'Time',
+      field: 'time',
+      editComponent: props => (
+        <TimePicker
+          defaultValue={moment()}
+          showHour={false}
+          defaultValue={null}
+          onChange={e => { props.onChange(moment(e).format("mm:ss"))}} />
+      )
     },
   ]);
 
   const [data, setData] = useState([
-    { name: 'Ptolemy', surname: 'Baran', birthYear: 1987, Class: 1 },
-    { name: 'Voulk', surname: 'Baran', birthYear: 2017, Class: 2 },
+    { name: 'Ptolemy', class: 'Holy Paladin', Cooldown: 'Avenging Wrath', time: "00:05" },
+    { name: 'Voulk', class: 'Restoration Druid', Cooldown: 'Tranquility', time: "00:06" },
   ]);
 
+  useEffect(() => {
+  props.update(data)
+}, [data]);
+
+
   return (
+
     <MaterialTable
       icons={tableIcons}
       title="Cooldown Assigner"
       columns={columns}
       data={data}
-      style={{ backgroundColor: '#272c34', color: '#fff' }}
+      // onChange={}
+      style={{ 
+        backgroundColor: '#272c34',
+        color: '#fff',
+        boxShadow: '0px 0px 1px 1px #1e1d1f',
+        fontSize: '0.8 rem' }}
       options={{
         headerStyle: {
           backgroundColor: '#272c34',
-          color: '#FFF'
-        }
+          color: '#FFF',
+          padding: '0px',
+        },
+
+        cellStyle: {
+          padding: '0px',
+        },
+        paging: false
       }}
       editable={{
         onRowAdd: newData =>
           new Promise((resolve, reject) => {
             setTimeout(() => {
               setData([...data, newData]);
-              
               resolve();
             }, 1000)
           }),
@@ -149,10 +171,10 @@ export default function CustomEditComponent(props) {
               const index = oldData.tableData.id;
               dataUpdate[index] = newData;
               setData([...dataUpdate]);
-
               resolve();
             }, 1000)
-          }),
+          }
+          ),
         onRowDelete: oldData =>
           new Promise((resolve, reject) => {
             setTimeout(() => {
@@ -160,7 +182,6 @@ export default function CustomEditComponent(props) {
               const index = oldData.tableData.id;
               dataDelete.splice(index, 1);
               setData([...dataDelete]);
-
               resolve();
             }, 1000)
           }),

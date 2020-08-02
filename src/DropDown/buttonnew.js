@@ -6,20 +6,29 @@ import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import Button from '@material-ui/core/Button';
 import LogImport from '../LogImport/LogImport';
+import './buttonnew.css';
+
+
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
     margin: theme.spacing(1),
-    minWidth: 120,
-    borderColor: 'White',
+    minWidth: 120 ,
+     '& .MuiOutlinedInput-notchedOutline': {
+        borderColor: 'red',
+     }
+
   },
-  label: { color: 'white' },
+  root: {
+       color: 'white'
+  }
 }));
 
 export default function ControlledOpenSelect(props) {
   const classes = useStyles();
   const [age, setAge] = React.useState('');
   const [open, setOpen] = React.useState(false);
+  const [boss, setBoss] = React.useState('');
 
   const handleChange = (event) => {
     console.log(event.target.value)
@@ -35,23 +44,29 @@ export default function ControlledOpenSelect(props) {
   };
 
   return (
-    <div>
-      <FormControl variant="outlined" className={classes.formControl}>
-        <InputLabel id="demo-controlled-open-select-label" className={classes.label}>Fight</InputLabel>
-        <Select
-          labelId="demo-controlled-open-select-label"
-          id="demo-controlled-open-select"
-          open={open}
-          onClose={handleClose}
-          onOpen={handleOpen}
-          value={age}
-          onChange={handleChange}
-          onClick={handleClose}
-        >
-         {<LogImport reportid = {props.reportid} clicker={props.clicky} update={props.update} />}
-         }
-        </Select>
-      </FormControl>
-    </div>
+    <FormControl variant="outlined" className={classes.formControl} size="small">
+      <InputLabel id="demo-controlled-open-select-label" label="Outlined" className={classes.root}> 
+      Fight
+      </InputLabel>
+      <Select
+        labelId="demo-controlled-open-select-label"
+        id="demo-controlled-open-select"
+        open={open}
+        label={boss}
+        onClose={handleClose}
+        onOpen={handleOpen}
+        value={age}
+        onChange={handleChange}
+        onClick={handleClose}
+        
+      >
+        {<LogImport 
+          reportid={props.reportid}
+          clicker={props.clicky}
+          update={props.update}
+         />}
+       }
+      </Select>
+    </FormControl>
   );
 }

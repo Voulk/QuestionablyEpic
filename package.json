@@ -6,13 +6,17 @@
   "dependencies": {
     "@material-ui/core": "^4.10.1",
     "@material-ui/icons": "^4.9.1",
+    "@material-ui/pickers": "^3.2.10",
     "axios": "^0.19.2",
     "chroma-js": "^2.1.0",
     "gh-pages": "^2.2.0",
     "material-table": "^1.60.0",
     "moment": "^2.24.0",
+    "rc-time-picker": "^3.7.3",
     "react": "^16.13.1",
+    "react-data-grid": "^7.0.0-canary.16",
     "react-dom": "^16.13.1",
+    "react-duration-picker": "^1.1.1",
     "react-loading-overlay": "^1.0.1",
     "react-scripts": "1.0.13",
     "reactstrap": "^8.4.1",
@@ -22,7 +26,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && rm build/**/**/*.map",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   }
