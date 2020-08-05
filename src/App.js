@@ -430,17 +430,29 @@ class App extends Component {
                 float={"right"}
                 position={"relative"}
               />
-            </Grid>  
+            </Grid>
             <Grid item xs={'auto'} padding={1}>
-             {this.state.showname ? ( 
-              <Typography style={{ fontWeight: 500, fontSize: '1.25rem', color: 'white', padding: '0px 16px 0px 16px' }}> 
-                {this.state.boss} 
-              </Typography>) : null }   
-              {this.state.showname ? (  
-              <Typography style={{ fontWeight: 500, fontSize: '0.9rem', color: 'white', padding: '0px 16px 0px 16px', textAlign: 'center' }}> 
-                {this.state.currentFighttime + ' - ' + this.state.killWipe}  
-              </Typography>)
-               : null }              
+              {this.state.showname ? (
+                <Typography
+                  style={{
+                    fontWeight: 500,
+                    fontSize: '1.25rem',
+                    color: 'white',
+                    padding: '0px 16px 0px 16px'
+                  }}> 
+                  {this.state.boss}
+                </Typography>) : null }
+              {this.state.showname ? (
+                <Typography
+                  style={{
+                    fontWeight: 500,
+                    fontSize: '0.9rem',
+                    color: 'white',
+                    padding: '0px 16px 0px 16px',
+                    textAlign: 'center'
+                  }}>
+                  {this.state.currentFighttime + ' - ' + this.state.killWipe}
+                </Typography>) : null }
             </Grid>  
             <Grid item xs={'auto'} padding={1}>
               <InteractiveList heals={this.state.healernames} />
@@ -485,19 +497,31 @@ class App extends Component {
           alignItems="flex-start"
           spacing={1} >   
           <Grid item xs={6} padding={1}>
-
             <CustomEditComponent update={this.tablehandler} />
-
-          </Grid>  
+          </Grid> 
           <Grid item xs={2} padding={1}>
-            <Box bgcolor="#333" style={{ borderRadius: 4, boxShadow: '0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12)' }}>
-              <Typography variant="h1" component="h2" style={{ fontWeight: 500, fontSize: '1.25rem', color: 'white', padding: '16px 16px 16px 16px' }}>
+            <Box
+              bgcolor="#333"
+              style={{
+                borderRadius: 4,
+                boxShadow: '0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12)'
+              }}>
+              <Typography
+                variant="h1"
+                component="h2"
+                style={{
+                  fontWeight: 500,
+                  fontSize: '1.25rem',
+                  color: 'white',
+                  padding: '16px 16px 16px 16px'
+                }}>
                 Cooldown Export for ERT Notes
-             </Typography>
-                {this.state.ertList.map(key => 
-                  <Typography style={{ fontWeight: 400, fontSize: '0.875rem', color: 'white', padding: '0px 16px 0px 16px', display: 'block' }}>
+              </Typography>
+              {this.state.ertList.map(key => (
+                <Typography style={{ fontWeight: 400, fontSize: '0.875rem', color: 'white', padding: '0px 16px 0px 16px', display: 'block' }}>
                   {'{time:' + key.time + '}'} - {key.name} - {key.Cooldown}
-                  </Typography>)}  
+                </Typography>))
+              }
             </Box>
           </Grid>
         </Grid>

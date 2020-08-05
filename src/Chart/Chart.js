@@ -221,7 +221,7 @@ if (this.props.showcds === true) {
           width={1500}
           height={300}
           data={this.props.chart}
-          margin={{ top: 30, right: 30, left: 30, bottom: 30 }}
+          margin={{ top: 15, right: 20, left: 20, bottom: 5 }}
           // onMouseDown={e => this.setState({ refAreaLeft: e.activeLabel })}
           // onMouseMove={e => this.state.refAreaLeft && this.setState({ refAreaRight: e.activeLabel })}
           // onMouseUp={this.zoom.bind(this)}
@@ -233,7 +233,7 @@ if (this.props.showcds === true) {
             type='number'
             tickFormatter={timeStr => moment(timeStr).format('mm:ss')}
             stroke='#f5f5f5'
-            label={{ position: 'bottom', offset: 0, value: 'Timestamp', fill: '#f5f5f5', fontWeight: 'bold' }}
+            // label={{ position: 'bottom', offset: 0, value: 'Timestamp', fill: '#f5f5f5', fontWeight: 'bold' }}
             // domain={[left, right]}
             domain={[0, this.props.timeend]}
           />
@@ -255,9 +255,9 @@ if (this.props.showcds === true) {
           />
           <Legend
             verticalAlign='top'
-            height={36}
+            // height={36}
             padding={10}
-            iconType='plainline'
+            iconType='square'
             iconSize={8}
           />
           <Tooltip
