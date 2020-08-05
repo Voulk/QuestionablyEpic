@@ -53,7 +53,10 @@ class App extends Component {
       currentStartTime: 0,
       damageTableShow: false,
       healTableShow: false,
-      ertList: []
+      ertList: [],
+      currentFighttime: null,
+      killWipe: null,
+      showname: false
     }
   }
 
@@ -313,14 +316,17 @@ class App extends Component {
      let time = (time1 - time2)
      return time
    }
-  handler = (info, info2, bossname) => {
+  handler = (info, info2, bossname, fighttime, killcheck) => {
     this.setState({
+      showname: true,
       time: info,
       timeend: info2,
       nextpage: info,
       boss: bossname,
       damageTableShow: true,
-      healTableShow: true
+      healTableShow: true,
+      currentFighttime: fighttime,
+      killWipe: killcheck
     })
   }
 
@@ -423,10 +429,18 @@ class App extends Component {
                 update={this.updatechartdata}
                 float={"right"}
                 position={"relative"}
-                />
+              />
             </Grid>  
             <Grid item xs={'auto'} padding={1}>
-              <Typography style={{ fontWeight: 500, fontSize: '1.25rem', color: 'white', padding: '0px 16px 0px 16px' }}> {this.state.boss} </Typography>
+             {this.state.showname ? ( 
+              <Typography style={{ fontWeight: 500, fontSize: '1.25rem', color: 'white', padding: '0px 16px 0px 16px' }}> 
+                {this.state.boss} 
+              </Typography>) : null }   
+              {this.state.showname ? (  
+              <Typography style={{ fontWeight: 500, fontSize: '0.9rem', color: 'white', padding: '0px 16px 0px 16px', textAlign: 'center' }}> 
+                {this.state.currentFighttime + ' - ' + this.state.killWipe}  
+              </Typography>)
+               : null }              
             </Grid>  
             <Grid item xs={'auto'} padding={1}>
               <InteractiveList heals={this.state.healernames} />
@@ -475,9 +489,9 @@ class App extends Component {
             <CustomEditComponent update={this.tablehandler} />
 
           </Grid>  
-          <Grid item xs={6} padding={1}>
-            <Box bgcolor="#333" width='400px' style={{ borderRadius: 4, boxShadow: '0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12)' }}>
-              <Typography variant="h1" component="h2" style={{ fontWeight: 500, fontSize: '1.25rem', color: 'white', padding: '0px 16px 0px 16px' }}>
+          <Grid item xs={2} padding={1}>
+            <Box bgcolor="#333" style={{ borderRadius: 4, boxShadow: '0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12)' }}>
+              <Typography variant="h1" component="h2" style={{ fontWeight: 500, fontSize: '1.25rem', color: 'white', padding: '16px 16px 16px 16px' }}>
                 Cooldown Export for ERT Notes
              </Typography>
                 {this.state.ertList.map(key => 

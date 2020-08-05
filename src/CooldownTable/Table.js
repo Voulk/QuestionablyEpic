@@ -140,7 +140,7 @@ export default function CustomEditComponent(props) {
           padding: '0px 16px 0px 16px',
           borderBottom: '2px solid #6d6d6d',
           fontSize: '0.8 rem',
-        },
+                  },
         cellStyle: {
           borderBottom: '1px solid #6d6d6d',
           padding: '0px 16px 0px 16px',

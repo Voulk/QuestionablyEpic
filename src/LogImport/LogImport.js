@@ -60,7 +60,7 @@ class LogImport extends Component {
                   <MenuItem 
                     value={1} 
                     key={fight.id} 
-                    onClick={() => {this.props.clicker(fight.start_time, fight.end_time, fight.name); this.props.update(fight.start_time, fight.end_time)}}
+                    onClick={() => {this.props.clicker(fight.start_time, fight.end_time, fight.name, moment(this.mather(fight.end_time, fight.start_time)).format("mm:ss"), this.killwipe(fight.kill)); this.props.update(fight.start_time, fight.end_time)}}
                   >
                     {fight.name}-{moment(this.mather(fight.end_time, fight.start_time)).format("mm:ss")}-{this.killwipe(fight.kill)}-{fight.bossPercentage / 100 + '%'}
                   </MenuItem>

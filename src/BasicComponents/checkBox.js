@@ -2,6 +2,7 @@ import React from 'react';
 import Checkbox from '@material-ui/core/Checkbox';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import { withStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 
 const FormControlLabel1 = withStyles({
@@ -11,6 +12,9 @@ const FormControlLabel1 = withStyles({
     '.MuiTypography-body1 ': {
       fontSize: '0.8rem',
     },
+    // '.MuiIconButton-root ': {
+    //   padding: 0
+    // },
   },
 })((props) => <FormControlLabel color="default" {...props} />);
 
