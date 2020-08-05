@@ -5,25 +5,24 @@ import { green } from '@material-ui/core/colors';
 
 const CssTextField = withStyles({
   root: {
+    '& .MuiFilledInput-root': {
+      backgroundColor: '#6d6d6d'
+},
+'& .MuiInputBase-root': { color: '#fff'
+},
+'& .MuiFilledInput-underline:after': {
+    borderBottomWidth: '2px',
+    borderBottomStyle: 'solid',
+    borderBottomColor: '#d3bc47'
+},
     '& label.Mui-focused': {
-      color: 'green',
+      color: '#ffffff',
     },
     '& .MuiFormLabel-root': {
       color:'white'
     },
     '& .MuiInput-underline:after': {
       borderBottomColor: 'green',
-    },
-    '& .MuiOutlinedInput-root': {
-      '& fieldset': {
-        borderColor: 'red',
-      },
-      '&:hover fieldset': {
-        borderColor: 'yellow',
-      },
-      '&.Mui-focused fieldset': {
-        borderColor: 'green',
-      },
     },
   },
 })(TextField);
@@ -45,7 +44,7 @@ export default function userInput(props) {
       <CssTextField 
         id="filled-basic" 
         label='Paste WarcraftLog Link Here'
-        variant="outlined"
+        variant="filled"
         onChange={props.changed}
         value={props.loglink}
         size="small"

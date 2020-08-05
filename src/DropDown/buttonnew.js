@@ -16,9 +16,26 @@ const useStyles = makeStyles((theme) => ({
     minWidth: 120 ,
      '& .MuiOutlinedInput-notchedOutline': {
         borderColor: 'red',
-     }
-
+     },
+    '& .MuiFilledInput-root': {
+      backgroundColor: '#6d6d6d'
+    },
+'& .MuiFilledInput-underline:after': {
+    borderBottomWidth: '2px',
+    borderBottomStyle: 'solid',
+    borderBottomColor: '#d3bc47'
+},
+    '& label.Mui-focused': {
+      color: '#ffffff',
+    },
+    '& .MuiFormLabel-root': {
+      color:'white'
+    },
+    '& .MuiInput-underline:after': {
+      borderBottomColor: 'green',
+    },
   },
+  
   root: {
        color: 'white'
   }
@@ -35,8 +52,10 @@ export default function ControlledOpenSelect(props) {
     setAge(event.target.value);
   };
 
-  const handleClose = () => {
-    setOpen(false);
+  const handleClose = (event) => {
+    setOpen(false)
+    // setBoss(event.target.value)
+    // console.log(event.target.value)
   };
 
   const handleOpen = () => {
@@ -44,7 +63,7 @@ export default function ControlledOpenSelect(props) {
   };
 
   return (
-    <FormControl variant="outlined" className={classes.formControl} size="small">
+    <FormControl variant="filled" className={classes.formControl} size="small">
       <InputLabel id="demo-controlled-open-select-label" label="Outlined" className={classes.root}> 
       Fight
       </InputLabel>

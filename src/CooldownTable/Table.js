@@ -1,7 +1,5 @@
-import React, { Component, Fragment, useEffect } from "react";
-import ReactDOM from "react-dom";
-import MaterialTable from "material-table";
-import { forwardRef } from 'react';
+import React, { useEffect, forwardRef } from "react";
+import MaterialTable from 'material-table';
 import AddBox from '@material-ui/icons/AddBox';
 import ArrowDownward from '@material-ui/icons/ArrowDownward';
 import Check from '@material-ui/icons/Check';
@@ -20,27 +18,19 @@ import ViewColumn from '@material-ui/icons/ViewColumn';
 import paladinicon from '../Images/spell_holy_holybolt.jpg'
 import classcds from './classcds'
 import TimePicker from 'rc-time-picker';
-import DateFnsUtils from '@date-io/date-fns';
-import Button from '@material-ui/core/Button';
-import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
-// import 'rc-time-picker/assets/index.css';
 import 'rc-time-picker/assets/index.css';
-// import BasicTimePicker from '../TimePicker/timePicker'
 import moment from 'moment';
-import './table.css';
-
-import {
-  FormControl,
-  InputLabel,
-  Select,
-  OutlinedInput,
-  TextField,
-  option
-} from "@material-ui/core";
+import { Select } from '@material-ui/core'
 
 const items = [
-  <MenuItem value={'Holy Paladin'}> Holy Paladin </MenuItem>,
+          <MenuItem value={'Holy Paladin'}>            
+            <img
+              style={{ height: 18, width: 18}}
+              src={paladinicon}
+            /> 
+            Holy Paladin 
+          </MenuItem>,
   <MenuItem value={'Restoration Druid'}> Restoration Druid </MenuItem>,
   <MenuItem value={'Holy Priest'}> Holy Priest </MenuItem>,
   <MenuItem value={'Discispline Priest'}> Discispline Priest </MenuItem>,
@@ -48,31 +38,29 @@ const items = [
   <MenuItem value={'Mistweaver Monk'}> Mistweaver Monk </MenuItem>]
 
 const tableIcons = {
-  Add: forwardRef((props, ref) => <AddBox {...props} ref={ref} />),
-  Check: forwardRef((props, ref) => <Check {...props} ref={ref} />),
-  Clear: forwardRef((props, ref) => <Clear {...props} ref={ref} />),
-  Delete: forwardRef((props, ref) => <DeleteOutline {...props} ref={ref} />),
-  DetailPanel: forwardRef((props, ref) => <ChevronRight {...props} ref={ref} />),
-  Edit: forwardRef((props, ref) => <Edit {...props} ref={ref} />),
-  Export: forwardRef((props, ref) => <SaveAlt {...props} ref={ref} />),
-  Filter: forwardRef((props, ref) => <FilterList {...props} ref={ref} />),
-  FirstPage: forwardRef((props, ref) => <FirstPage {...props} ref={ref} />),
-  LastPage: forwardRef((props, ref) => <LastPage {...props} ref={ref} />),
-  NextPage: forwardRef((props, ref) => <ChevronRight {...props} ref={ref} />),
-  PreviousPage: forwardRef((props, ref) => <ChevronLeft {...props} ref={ref} />),
-  ResetSearch: forwardRef((props, ref) => <Clear {...props} ref={ref} />),
-  Search: forwardRef((props, ref) => <Search {...props} ref={ref} />),
-  SortArrow: forwardRef((props, ref) => <ArrowDownward {...props} ref={ref} />),
-  ThirdStateCheck: forwardRef((props, ref) => <Remove {...props} ref={ref} />),
-  ViewColumn: forwardRef((props, ref) => <ViewColumn {...props} ref={ref} />)
+  Add: forwardRef((props, ref) => <AddBox {...props} style={{ color: '#ffee77' }} ref={ref} />),
+  Check: forwardRef((props, ref) => <Check {...props} style={{ color: '#ffee77' }} ref={ref} />),
+  Clear: forwardRef((props, ref) => <Clear {...props} style={{ color: '#ffee77' }} ref={ref} />),
+  Delete: forwardRef((props, ref) => <DeleteOutline {...props} style={{ color: '#ffee77' }} ref={ref} />),
+  DetailPanel: forwardRef((props, ref) => <ChevronRight {...props} style={{ color: '#ffee77' }} ref={ref} />),
+  Edit: forwardRef((props, ref) => <Edit {...props} style={{ color: '#ffee77' }} ref={ref} />),
+  Export: forwardRef((props, ref) => <SaveAlt {...props} style={{ color: '#ffee77' }} ref={ref} />),
+  Filter: forwardRef((props, ref) => <FilterList {...props} style={{ color: '#ffee77' }} ref={ref} />),
+  FirstPage: forwardRef((props, ref) => <FirstPage {...props} style={{ color: '#ffee77' }} ref={ref} />),
+  LastPage: forwardRef((props, ref) => <LastPage {...props} style={{ color: '#ffee77' }} ref={ref} />),
+  NextPage: forwardRef((props, ref) => <ChevronRight {...props} style={{ color: '#ffee77' }} ref={ref} />),
+  PreviousPage: forwardRef((props, ref) => <ChevronLeft {...props} style={{ color: '#ffee77' }} ref={ref} />),
+  ResetSearch: forwardRef((props, ref) => <Clear {...props} ref={ref} style={{ color: '#ffee77' }} />),
+  Search: forwardRef((props, ref) => <Search {...props} style={{ color: '#ffee77' }} ref={ref} />),
+  SortArrow: forwardRef((props, ref) => <ArrowDownward {...props} style={{ color: '#ffee77' }} ref={ref} />),
+  ThirdStateCheck: forwardRef((props, ref) => <Remove {...props} style={{ color: '#ffee77' }} ref={ref} />),
+  ViewColumn: forwardRef((props, ref) => <ViewColumn {...props} style={{ color: '#ffee77' }} ref={ref} />)
 };
 
 export default function CustomEditComponent(props) {
 
   const { useState } = React;
-  let [selectedDate, handleDateChange] = useState(0);
   let a = 0
-  let z = 0
   const [columns, setColumns] = useState([
     {
       title: 'Name',
@@ -126,34 +114,50 @@ export default function CustomEditComponent(props) {
     { name: 'Voulk', class: 'Restoration Druid', Cooldown: 'Tranquility', time: "00:06" },
   ]);
 
-  useEffect(() => {
-  props.update(data)
-}, [data]);
+  
 
+  useEffect(() => {
+    props.update(data)
+  }, [data]);
 
   return (
-
     <MaterialTable
       icons={tableIcons}
       title="Cooldown Assigner"
       columns={columns}
       data={data}
-      // onChange={}
-      style={{ 
-        backgroundColor: '#272c34',
-        color: '#fff',
-        boxShadow: '0px 0px 1px 1px #1e1d1f',
-        fontSize: '0.8 rem' }}
+      style={{
+        backgroundColor: '#333',
+        color: '#ffffff',
+        borderBottom: '1px solid #6d6d6d',
+        boxShadow: '0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12)',
+        fontSize: '0.8 rem',
+         }}
       options={{
         headerStyle: {
-          backgroundColor: '#272c34',
-          color: '#FFF',
-          padding: '0px',
+          backgroundColor: '#333',
+          color: '#ffffff',
+          padding: '0px 16px 0px 16px',
+          borderBottom: '2px solid #6d6d6d',
+          fontSize: '0.8 rem',
         },
-
         cellStyle: {
-          padding: '0px',
+          borderBottom: '1px solid #6d6d6d',
+          padding: '0px 16px 0px 16px',
+          fontSize: '0.8 rem',
         },
+        rowStyle: {
+          borderBottom: '1px solid #6d6d6d',
+          fontSize: '0.8 rem',
+        },
+        searchFieldStyle: {
+          borderBottom: '1px solid #6d6d6d',
+          color: '#ffffff',
+        },
+        actionsCellStyle: {
+          borderBottom: '1px solid #6d6d6d',
+        },
+        actionsColumnIndex: 5,
         paging: false
       }}
       editable={{

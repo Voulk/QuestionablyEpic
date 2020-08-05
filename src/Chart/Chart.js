@@ -28,6 +28,24 @@ class Chart extends Component {
     };
   }
 
+  //   handleMouseEnter(o) {
+  //   const { dataKey } = o;
+  //   const { opacity } = this.state;
+    
+  //   this.setState({
+  //     opacity: { ...opacity, [dataKey]: 0.5 },
+  //   });
+  // },
+  
+  // handleMouseLeave(o) {
+  //   const { dataKey } = o;
+  //   const { opacity } = this.state;
+    
+  //   this.setState({
+  //     opacity: { ...opacity, [dataKey]: 1 },
+  //   });
+  // },
+
   // getAxisYDomain = (from, to, ref, offset) => {
   //   const refData = this.state.data.slice(from - 1, to);
   //   let [bottom, top] = [refData[0][ref], refData[0][ref]];
@@ -174,9 +192,12 @@ if (this.props.showcds === true) {
 
   componentDidMount() {
     this.setState({ data: this.props.chart })
+    
   }
 
   render() {
+
+    const { opacity } = this.state;
 
     const {
       data, barIndex, left, right, refAreaLeft, refAreaRight, top, bottom, top2, bottom2,

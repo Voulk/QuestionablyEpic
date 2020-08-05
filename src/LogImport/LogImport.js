@@ -53,13 +53,21 @@ class LogImport extends Component {
  render(props) {
    const { fights } = this.state;
    if (this.state.reportid === null) {
-     return (<MenuItem>"No Report Loaded"</MenuItem>);
+     return (<MenuItem value='Fight'>"No Report Loaded"</MenuItem>);
    } else {
     let menuitems = fights.filter(name => name.boss !== 0).map((fight) =>
-                 (<MenuItem value={1} key={fight.id} onClick={() => {this.props.clicker(fight.start_time, fight.end_time, fight.name); this.props.update(fight.start_time, fight.end_time)}}>
-             {fight.name}-{moment(this.mather(fight.end_time, fight.start_time)).format("mm:ss")}-{this.killwipe(fight.kill)}-{fight.bossPercentage / 100 + '%'}
-           </MenuItem>))
-     return menuitems}
+                 (
+                  <MenuItem 
+                    value={1} 
+                    key={fight.id} 
+                    onClick={() => {this.props.clicker(fight.start_time, fight.end_time, fight.name); this.props.update(fight.start_time, fight.end_time)}}
+                  >
+                    {fight.name}-{moment(this.mather(fight.end_time, fight.start_time)).format("mm:ss")}-{this.killwipe(fight.kill)}-{fight.bossPercentage / 100 + '%'}
+                  </MenuItem>
+                 )
+                )
+     return menuitems
+   }
  }
 }
 

@@ -8,7 +8,17 @@ export type ExpansionPanelSummaryTypeMap<
   D extends React.ElementType = 'div'
 > = ExtendButtonBaseTypeMap<{
   props: P & {
+    /**
+     * The content of the expansion panel summary.
+     */
+    children?: React.ReactNode;
+    /**
+     * The icon to display as the expand indicator.
+     */
     expandIcon?: React.ReactNode;
+    /**
+     * Props applied to the `IconButton` element wrapping the expand icon.
+     */
     IconButtonProps?: Partial<IconButtonProps>;
   };
   defaultComponent: D;
@@ -16,11 +26,10 @@ export type ExpansionPanelSummaryTypeMap<
 }>;
 
 /**
+ * ⚠️ The ExpansionPanelSummary component was renamed to AccordionSummary to use a more common naming convention.
  *
- * Demos:
- *
- * - [Expansion Panels](https://material-ui.com/components/expansion-panels/)
- *
+ * You should use `import { AccordionSummary } from '@material-ui/core'`
+ * or `import AccordionSummary from '@material-ui/core/AccordionSummary'`.
  * API:
  *
  * - [ExpansionPanelSummary API](https://material-ui.com/api/expansion-panel-summary/)

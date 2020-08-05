@@ -1,9 +1,8 @@
-import React, { Component, useState } from 'react';
+import React, { Component } from 'react';
 import './App.css';
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from 'recharts';
 import UserInput from './UserInput/UserInput';
 import axios from 'axios';
-import chroma from 'chroma-js';
 import Chart from './Chart/Chart'
 import moment from 'moment';
 import ControlledOpenSelect from './DropDown/buttonnew';
@@ -13,25 +12,9 @@ import LoadingOverlay from 'react-loading-overlay';
 import CustomEditComponent from './CooldownTable/Table';
 import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
-import { makeStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
-
 import InteractiveList from './Lists/ListGen'
-
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemAvatar from '@material-ui/core/ListItemAvatar';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
-import ListItemText from '@material-ui/core/ListItemText';
 import { damageExclusions, healerCooldownsDetailed } from './Data/Data'
-import CustomizedMenus from './DropDown/button';
 import Checkboxes from './BasicComponents/checkBox'
-
-
-
-
-
 
 class App extends Component {
   constructor() {
@@ -69,9 +52,9 @@ class App extends Component {
       currentEndTime: 0,
       currentStartTime: 0,
       damageTableShow: false,
-      healTableShow: false
+      healTableShow: false,
+      ertList: []
     }
-
   }
 
     useless = () => {
@@ -403,17 +386,24 @@ class App extends Component {
     Object.keys(datarReformater2).forEach(element2 => sortedData2.push(datarReformater2[element2]))
     this.setState({ 
       cooldownhelperfinal: sortedData2,
-      cooldownlistcustom2: cooldownlistcustom2 })
+      cooldownlistcustom2: cooldownlistcustom2,
+      ertList: element })
   }
 
   render() {
+    console.log(this.state.ertList)
     let ss = "00:" + "03:05"
     console.log(ss)
     console.log(moment.duration(moment("03:05").format("MM:SS")).asMilliseconds())
     let spinnershow = this.state.loadingcheck;
     return (
       <div className='App'>
-        <Box bgcolor="#272c34" style={{ borderRadius: 4, boxShadow: '0px 0px 1px 1px #1e1d1f' }}>
+        <Box 
+          bgcolor="#333" 
+          style={{ 
+            borderRadius: 4,
+            boxShadow: '0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12)'
+          }}>
           <Grid
             container
             direction="row"
@@ -425,7 +415,7 @@ class App extends Component {
                 changed={this.usernameChangedHandler} 
                 float={"left"}
                 position={"relative"}/>
-            </Grid>   
+            </Grid>           
             <Grid item xs={'auto'} padding={1}>
               <ControlledOpenSelect
                 reportid={this.state.reportid}
@@ -436,14 +426,15 @@ class App extends Component {
                 />
             </Grid>  
             <Grid item xs={'auto'} padding={1}>
+              <Typography style={{ fontWeight: 500, fontSize: '1.25rem', color: 'white', padding: '0px 16px 0px 16px' }}> {this.state.boss} </Typography>
+            </Grid>  
+            <Grid item xs={'auto'} padding={1}>
               <InteractiveList heals={this.state.healernames} />
             </Grid>  
             <Grid item xs={'auto'} padding={1}>
               <Checkboxes check={this.damageTableShow} label={"Show Log Table"}/>
-            </Grid>
-            <Grid item xs={'auto'} padding={1}>
               <Checkboxes check={this.healTableShow} label={"Show Custom Table"}/>
-            </Grid>    
+            </Grid>
           </Grid>  
         </Box>
         <div style={{ height: 10 }}/>
@@ -480,13 +471,19 @@ class App extends Component {
           alignItems="flex-start"
           spacing={1} >   
           <Grid item xs={6} padding={1}>
+
             <CustomEditComponent update={this.tablehandler} />
+
           </Grid>  
           <Grid item xs={6} padding={1}>
-            <Box bgcolor="#272c34" style={{ borderRadius: 4, boxShadow: '0px 0px 1px 1px #1e1d1f' }}>
-              <Typography variant="h1" component="h2" style={{ fontSize: '1.5rem', color: 'white' }}>
+            <Box bgcolor="#333" width='400px' style={{ borderRadius: 4, boxShadow: '0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12)' }}>
+              <Typography variant="h1" component="h2" style={{ fontWeight: 500, fontSize: '1.25rem', color: 'white', padding: '0px 16px 0px 16px' }}>
                 Cooldown Export for ERT Notes
-              </Typography>
+             </Typography>
+                {this.state.ertList.map(key => 
+                  <Typography style={{ fontWeight: 400, fontSize: '0.875rem', color: 'white', padding: '0px 16px 0px 16px', display: 'block' }}>
+                  {'{time:' + key.time + '}'} - {key.name} - {key.Cooldown}
+                  </Typography>)}  
             </Box>
           </Grid>
         </Grid>
@@ -498,3 +495,6 @@ class App extends Component {
 
 export default App;
 
+              // <Typography variant="h1" component="h2" style={{ fontSize: '1.5rem', color: 'white' }}>
+              //   Cooldown Export for ERT Notes
+              // </Typography>

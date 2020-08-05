@@ -3,8 +3,10 @@
     padding: px;
 /*    margin: 5px;*/
     border: 1px black;
-    background-color: #272c34;
-    box-shadow: 0px 0px 1px 1px #1e1d1f;
+    background-color: #333;
+    box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.2), 
+    			0px 2px 2px 0px rgba(0, 0, 0, 0.14),
+    			0px 3px 1px -2px rgba(0, 0, 0, 0.12);
     color: #ffffff;
     font-family: "Roboto";
     border-radius: 4px;
