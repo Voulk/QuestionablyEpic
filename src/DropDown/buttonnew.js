@@ -7,6 +7,7 @@ import Select from '@material-ui/core/Select';
 import Button from '@material-ui/core/Button';
 import LogImport from '../LogImport/LogImport';
 import './buttonnew.css';
+import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 
 
 
@@ -41,6 +42,39 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
+const theme = createMuiTheme({
+  overrides: {
+    // Style sheet name :atom:
+    MuiTableCell: {
+      root: {
+        fontSize: '0.875rem',
+      },
+      body: {
+        fontSize: '0.875rem',
+      }, 
+    },
+    MuiSelect:{
+      root: {
+        color: '#fff'
+      },
+    },
+    MuiToolbar: {
+      regular: {
+        minHeight: '64px'
+      }
+    },
+  },
+  palette: {
+    type: 'dark',
+    primary: {
+      main: '#d3bc47',
+    },
+    secondary: {
+      main: '#ff9100',
+    },
+  },
+});
+
 export default function ControlledOpenSelect(props) {
   const classes = useStyles();
   const [age, setAge] = React.useState('');
@@ -63,29 +97,30 @@ export default function ControlledOpenSelect(props) {
   };
 
   return (
-    <FormControl variant="filled" className={classes.formControl} size="small">
-      <InputLabel id="demo-controlled-open-select-label" label="Outlined" className={classes.root}> 
-      Fight
-      </InputLabel>
-      <Select
-        labelId="demo-controlled-open-select-label"
-        id="demo-controlled-open-select"
-        open={open}
-        label={boss}
-        onClose={handleClose}
-        onOpen={handleOpen}
-        value={age}
-        onChange={handleChange}
-        onClick={handleClose}
-        
-      >
-        {<LogImport 
-          reportid={props.reportid}
-          clicker={props.clicky}
-          update={props.update}
-         />}
-       }
-      </Select>
-    </FormControl>
+    <ThemeProvider theme={theme}>
+      <FormControl variant="filled" className={classes.formControl} size="small">
+        <InputLabel id="demo-controlled-open-select-label" label="Outlined" className={classes.root}> 
+        Fight
+        </InputLabel>
+        <Select
+          labelId="demo-controlled-open-select-label"
+          id="demo-controlled-open-select"
+          open={open}
+          label={boss}
+          onClose={handleClose}
+          onOpen={handleOpen}
+          value={age}
+          onChange={handleChange}
+          onClick={handleClose}       
+        >
+          {<LogImport 
+            reportid={props.reportid}
+            clicker={props.clicky}
+            update={props.update}
+          />}
+         }
+        </Select>
+      </FormControl>
+    </ThemeProvider>
   );
 }

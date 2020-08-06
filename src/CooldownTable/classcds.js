@@ -39,7 +39,7 @@ export default function classcds(props) {
   // Restoration Shaman
   if (props === 'Restoration Shaman') {
   	return (
-        	[<MenuItem value={'Healing Tide Totem '}> Healing Tide Totem </MenuItem>,
+        	[<MenuItem value={'Healing Tide Totem'}> Healing Tide Totem </MenuItem>,
         	<MenuItem value={'Spirit Link Totem'}> Spirit Link Totem </MenuItem>]
     )
   }

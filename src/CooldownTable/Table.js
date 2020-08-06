@@ -15,27 +15,111 @@ import Remove from '@material-ui/icons/Remove';
 import SaveAlt from '@material-ui/icons/SaveAlt';
 import Search from '@material-ui/icons/Search';
 import ViewColumn from '@material-ui/icons/ViewColumn';
-import paladinicon from '../Images/spell_holy_holybolt.jpg'
+import HolyPaladinIcon from '../Images/HolyPaladin.jpg'
+import DiscPriestIcon from '../Images/DisciplinePriest.jpg'
+import HolyPriestIcon from '../Images/HolyPriest.jpg'
+import MistweaverIcon from '../Images/MistWeaverMonk.jpg'
+import RestorationDruidIcon from '../Images/RestorationDruid.jpg'
+import RestorationShamanIcon from '../Images/RestorationShaman.jpg'
 import classcds from './classcds'
 import TimePicker from 'rc-time-picker';
 import MenuItem from '@material-ui/core/MenuItem';
 import 'rc-time-picker/assets/index.css';
 import moment from 'moment';
 import { Select } from '@material-ui/core'
+import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+import { withStyles } from '@material-ui/core/styles';
+
+const theme = createMuiTheme({
+  overrides: {
+    // Style sheet name :atom:
+    MuiTableCell: {
+      root: {
+        fontSize: '0.875rem',
+      },
+      body: {
+        fontSize: '0.875rem',
+      }, 
+    },
+    MuiSelect:{
+      root: {
+        color: '#fff'
+      },
+    },
+    MuiToolbar: {
+      regular: {
+        minHeight: '64px'
+      }
+    },
+  },
+  palette: {
+    type: 'dark',
+    primary: {
+      main: '#d3bc47',
+    },
+    secondary: {
+      main: '#ff9100',
+    },
+  },
+});
 
 const items = [
-          <MenuItem value={'Holy Paladin'}>            
-            <img
-              style={{ height: 18, width: 18}}
-              src={paladinicon}
-            /> 
-            Holy Paladin 
-          </MenuItem>,
-  <MenuItem value={'Restoration Druid'}> Restoration Druid </MenuItem>,
-  <MenuItem value={'Holy Priest'}> Holy Priest </MenuItem>,
-  <MenuItem value={'Discispline Priest'}> Discispline Priest </MenuItem>,
-  <MenuItem value={'Restoration Shaman'}> Restoration Shaman </MenuItem>,
-  <MenuItem value={'Mistweaver Monk'}> Mistweaver Monk </MenuItem>]
+  <MenuItem
+    style={{ color: '#F58CBA' }}
+    value={'Holy Paladin'}>
+    <img
+      style={{ height: 18, width: 18, padding: 5 }}
+      src={HolyPaladinIcon}
+    />
+      Holy Paladin
+  </MenuItem>,
+  <MenuItem
+    style={{ color: '#FF7D0A' }}
+    value={'Restoration Druid'}>
+    <img
+      style={{ height: 18, width: 18, padding: 5 }}
+      src={RestorationDruidIcon}
+    />
+      Restoration Druid
+  </MenuItem>,
+  <MenuItem
+    style={{ color: '#FFFFFF' }}
+    value={'Holy Priest'}>
+    <img
+      style={{ height: 18, width: 18, padding: 5 }}
+      src={HolyPriestIcon}
+    />
+      Holy Priest
+  </MenuItem>,
+  <MenuItem
+    style={{ color: '#FFFFFF' }}
+    value={'Discispline Priest'}>
+    <img
+      style={{ height: 18, width: 18, padding: 5 }}
+      src={DiscPriestIcon}
+    />
+      Discispline Priest
+  </MenuItem>,
+  <MenuItem
+    style={{ color: '#0070DE' }}
+    value={'Restoration Shaman'}>
+    <img
+      style={{ height: 18, width: 18, padding: 5 }}
+      src={RestorationShamanIcon}
+    />
+      Restoration Shaman
+  </MenuItem>,
+  <MenuItem
+    style={{ color: '#00FF96' }}
+    value={'Mistweaver Monk'}>
+    <img
+      style={{ height: 18, width: 18, padding: 5 }}
+      src={MistweaverIcon}
+    />
+      Mistweaver Monk
+  </MenuItem>
+
+]
 
 const tableIcons = {
   Add: forwardRef((props, ref) => <AddBox {...props} style={{ color: '#ffee77' }} ref={ref} />),
@@ -73,15 +157,18 @@ export default function CustomEditComponent(props) {
         />
       )
     },
+    // { field: 'imageUrl', render: rowData => <img src={rowData.imageUrl} style={{ width: 18, borderRadius: '50%' }}/> },
     {
       title: 'Class',
       field: 'class',
       editComponent: props => (
-        <Select
+      <ThemeProvider theme={theme}>
+        <Select 
           value={props.value}
           onChange={e => { props.onChange(e.target.value); a = e.target.value }}>
           {items}
         </Select>
+      </ThemeProvider>
       )
     },
     {
@@ -110,7 +197,7 @@ export default function CustomEditComponent(props) {
   ]);
 
   const [data, setData] = useState([
-    { name: 'Ptolemy', class: 'Holy Paladin', Cooldown: 'Avenging Wrath', time: "00:05" },
+    { name: 'Ptolemy', class: 'Holy Paladin', Cooldown: 'Avenging Wrath', time: "00:05", imageUrl: HolyPaladinIcon },
     { name: 'Voulk', class: 'Restoration Druid', Cooldown: 'Tranquility', time: "00:06" },
   ]);
 
@@ -121,11 +208,13 @@ export default function CustomEditComponent(props) {
   }, [data]);
 
   return (
+  <ThemeProvider theme={theme}>
     <MaterialTable
       icons={tableIcons}
       title="Cooldown Assigner"
       columns={columns}
       data={data}
+
       style={{
         backgroundColor: '#333',
         color: '#ffffff',
@@ -191,5 +280,6 @@ export default function CustomEditComponent(props) {
           }),
       }}
     />
+    </ThemeProvider>
   )
 }

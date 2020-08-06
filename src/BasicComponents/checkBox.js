@@ -12,9 +12,11 @@ const FormControlLabel1 = withStyles({
     '.MuiTypography-body1 ': {
       fontSize: '0.8rem',
     },
-    // '.MuiIconButton-root ': {
-    //   padding: 0
-    // },
+    '@media': {
+      '.MuiToolbar-regular ': {
+        minHeight: '64px'
+      },
+    },
   },
 })((props) => <FormControlLabel color="default" {...props} />);
 

@@ -16,6 +16,7 @@ import InteractiveList from './Lists/ListGen'
 import { damageExclusions, healerCooldownsDetailed } from './Data/Data'
 import Checkboxes from './BasicComponents/checkBox'
 
+
 class App extends Component {
   constructor() {
     super()
@@ -366,8 +367,13 @@ class App extends Component {
     let customcooldown = []
     let cooldownlistcustom = element.map(key => key.name + " - " + key.Cooldown)
     let cooldownlistcustom2 = Array.from(new Set(cooldownlistcustom))
-    let newthing = element.map(key => ({ ability: key.Cooldown, timestamp: moment.duration("00:" + key.time).asMilliseconds(), abilityname: key.name + " - " + key.Cooldown }))
+    let newthing = element.map(key => ({ 
+      ability: key.Cooldown, 
+      timestamp: moment.duration("00:" + key.time).asMilliseconds(), 
+      abilityname: key.name + " - " + key.Cooldown }))
+    console.log(newthing)
     newthing.map(key => customcooldown.push(this.durationmaker(key.ability, key.timestamp, key.abilityname, moment(this.mather(this.state.currentStartTime, this.state.currentEndTime)).startOf('second').valueOf() )))
+    console.log(customcooldown)
     let newthing2 = customcooldown.flat()
     let concat2 = this.state.cooldownhelper
     console.log(concat2)
