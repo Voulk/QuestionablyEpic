@@ -51,6 +51,11 @@ const theme = createMuiTheme({
         minHeight: '64px'
       }
     },
+    //  MuiIconButton: {
+    //   root: {
+    //     padding: '0px'
+    //   },
+    // },
   },
   palette: {
     type: 'dark',
@@ -162,13 +167,15 @@ export default function CustomEditComponent(props) {
       title: 'Class',
       field: 'class',
       editComponent: props => (
-      <ThemeProvider theme={theme}>
-        <Select 
-          value={props.value}
-          onChange={e => { props.onChange(e.target.value); a = e.target.value }}>
-          {items}
-        </Select>
-      </ThemeProvider>
+        <ThemeProvider theme={theme}>
+          <Select 
+            value={props.value}
+            onChange={e => {
+              props.onChange(e.target.value); a = e.target.value
+            }}>
+            {items}
+          </Select>
+        </ThemeProvider>
       )
     },
     {
@@ -208,78 +215,79 @@ export default function CustomEditComponent(props) {
   }, [data]);
 
   return (
-  <ThemeProvider theme={theme}>
-    <MaterialTable
-      icons={tableIcons}
-      title="Cooldown Assigner"
-      columns={columns}
-      data={data}
-
-      style={{
-        backgroundColor: '#333',
-        color: '#ffffff',
-        borderBottom: '1px solid #6d6d6d',
-        boxShadow: '0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12)',
-        fontSize: '0.8 rem',
-         }}
-      options={{
-        headerStyle: {
+    <ThemeProvider theme={theme}>
+      <MaterialTable
+        icons={tableIcons}
+        title="Cooldown Assigner"
+        columns={columns}
+        data={data}
+        style={{
           backgroundColor: '#333',
           color: '#ffffff',
-          padding: '0px 16px 0px 16px',
-          borderBottom: '2px solid #6d6d6d',
+          borderBottom: '1px solid #6d6d6d',
+          boxShadow: '0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12)',
           fontSize: '0.8 rem',
-                  },
-        cellStyle: {
-          borderBottom: '1px solid #6d6d6d',
-          padding: '0px 16px 0px 16px',
-          fontSize: '0.8 rem',
-        },
-        rowStyle: {
-          borderBottom: '1px solid #6d6d6d',
-          fontSize: '0.8 rem',
-        },
-        searchFieldStyle: {
-          borderBottom: '1px solid #6d6d6d',
-          color: '#ffffff',
-        },
-        actionsCellStyle: {
-          borderBottom: '1px solid #6d6d6d',
-        },
-        actionsColumnIndex: 5,
-        paging: false
-      }}
-      editable={{
-        onRowAdd: newData =>
-          new Promise((resolve, reject) => {
-            setTimeout(() => {
-              setData([...data, newData]);
-              resolve();
-            }, 1000)
-          }),
-        onRowUpdate: (newData, oldData) =>
-          new Promise((resolve, reject) => {
-            setTimeout(() => {
-              const dataUpdate = [...data];
-              const index = oldData.tableData.id;
-              dataUpdate[index] = newData;
-              setData([...dataUpdate]);
-              resolve();
-            }, 1000)
-          }
-          ),
-        onRowDelete: oldData =>
-          new Promise((resolve, reject) => {
-            setTimeout(() => {
-              const dataDelete = [...data];
-              const index = oldData.tableData.id;
-              dataDelete.splice(index, 1);
-              setData([...dataDelete]);
-              resolve();
-            }, 1000)
-          }),
-      }}
-    />
-    </ThemeProvider>
+        }}
+        options={{
+          // tableLayout: 'fixed',
+          headerStyle: {
+            backgroundColor: '#333',
+            color: '#ffffff',
+            padding: '0px 16px 0px 16px',
+            borderBottom: '2px solid #6d6d6d',
+            fontSize: '0.8 rem',
+          },
+          cellStyle: {
+            borderBottom: '1px solid #6d6d6d',
+            padding: '0px 16px 0px 16px',
+            fontSize: '0.8 rem',
+          },
+          rowStyle: {
+            borderBottom: '1px solid #6d6d6d',
+            fontSize: '0.8 rem',
+          },
+          searchFieldStyle: {
+            borderBottom: '1px solid #6d6d6d',
+            color: '#ffffff',
+          },
+          actionsCellStyle: {
+            borderBottom: '1px solid #6d6d6d',
+            padding: 0
+          },
+          actionsColumnIndex: 5,
+          paging: false
+        }}
+        editable={{
+          onRowAdd: newData =>
+            new Promise((resolve, reject) => {
+              setTimeout(() => {
+                setData([...data, newData]);
+                resolve();
+              }, 1000)
+            }),
+          onRowUpdate: (newData, oldData) =>
+            new Promise((resolve, reject) => {
+              setTimeout(() => {
+                const dataUpdate = [...data];
+                const index = oldData.tableData.id;
+                dataUpdate[index] = newData;
+                setData([...dataUpdate]);
+                resolve();
+              }, 1000)
+            }
+            ),
+          onRowDelete: oldData =>
+            new Promise((resolve, reject) => {
+              setTimeout(() => {
+                const dataDelete = [...data];
+                const index = oldData.tableData.id;
+                dataDelete.splice(index, 1);
+                setData([...dataDelete]);
+                resolve();
+              }, 1000)
+            }),
+        }}
+      />
+      </ThemeProvider>
   )
 }

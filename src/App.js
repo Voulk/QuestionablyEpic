@@ -15,7 +15,8 @@ import Grid from '@material-ui/core/Grid';
 import InteractiveList from './Lists/ListGen'
 import { damageExclusions, healerCooldownsDetailed } from './Data/Data'
 import Checkboxes from './BasicComponents/checkBox'
-
+import Links from './Links/Links'
+import OppositeContentTimeline from './Timeline/Timeline'
 
 class App extends Component {
   constructor() {
@@ -37,7 +38,7 @@ class App extends Component {
       loglink: 'Insert Log Here',
       reportid: null,
       time: null,
-      times: [{timestamp: 0}],
+      times: [{ timestamp: 0 }],
       timeend: null,
       abilitylist: ['Melee'],
       cooldownlist: ['none'],
@@ -48,7 +49,7 @@ class App extends Component {
       checked: false,
       tabledata: [],
       cooldownhelper: [],
-      cooldownhelperfinal:[],
+      cooldownhelperfinal: [],
       cooldownlistcustom2: ['none'],
       currentEndTime: 0,
       currentStartTime: 0,
@@ -57,7 +58,8 @@ class App extends Component {
       ertList: [],
       currentFighttime: null,
       killWipe: null,
-      showname: false
+      showname: false,
+      Updateddatacasts: []
     }
   }
 
@@ -144,9 +146,8 @@ class App extends Component {
           console.log(error)
         });
 
-      let healerIDName = healers.map(key => ({ id: key.id, name: key.name }))
+      let healerIDName = healers.map(key => ({ id: key.id, name: key.name, class: key.type }))
       let healerID = healers.map(key => key.id)
-
 
       // original Call for the base of the import
       await axios.get(APIdamagetaken + this.state.reportid + START + starttime + END + endtime + HOSTILITY + API2)
@@ -228,16 +229,31 @@ class App extends Component {
         timestamp: moment(this.mather(this.state.time, key.timestamp)).startOf('second').valueOf(),
         [key.ability.name]: key.unmitigatedAmount }));
 
-      let updateddatacasts = cooldowns.map(key =>({ 
+      let updateddatacasts = cooldowns.map(key =>({
         ability: key.ability.name,
         timestamp: moment(this.mather(this.state.time, key.timestamp)).startOf('second').valueOf(),
         [healerIDName.filter(obj => {
           return obj.id === key.sourceID
-        }).map(obj => obj.name) + ' - ' + key.ability.name]: 1 }));
+        }).map(obj => obj.name) + ' - ' + key.ability.name]: 1})
+      );
+
+      let updateddatacastsTimeline = cooldowns.map(key =>({ 
+        ability: key.ability.name,
+        timestamp: moment(this.mather(this.state.time, key.timestamp)).startOf('second').valueOf(),
+        [healerIDName.filter(obj => {
+          return obj.id === key.sourceID
+        }).map(obj => obj.name) + ' - ' + key.ability.name]: 1,
+        name: healerIDName.filter(obj => {
+          return obj.id === key.sourceID
+        }).map(obj => obj.name) + ' - ' + key.ability.name,
+        class: healerIDName.filter(obj => {
+          return obj.id === key.sourceID
+        }).map(obj => obj.class).toString()
+      }
+      ));
 
       updateddatacasts.map(key => healerdurations.push(this.durationmaker(key.ability, key.timestamp, Object.getOwnPropertyNames(key).slice(2), moment(this.mather(starttime, endtime)).startOf('second').valueOf())));
       let cooldownwithdurations = healerdurations.flat();
-
       let times = this.addMissingTimestamps(this.fightDurationCalculator(endtime, starttime));
       let gg = updatedarray.concat(times);
       let damageFromLogWithTimesAddedAndCooldowns = updatedarray.concat(cooldownwithdurations, times);
@@ -256,7 +272,7 @@ class App extends Component {
         cooldownhelper: sortedData2,
         cooldownhelperfinal: sortedData2,
         updatedarray: sortedData,
-        Updateddatacasts: updateddatacasts,
+        Updateddatacasts: updateddatacastsTimeline,
         abilitylist: uniqueArray,
         cooldownlist: uniqueArrayCD,
         loadingcheck: false,
@@ -284,18 +300,16 @@ class App extends Component {
     return timestampSum
   }
 
-  // need to cap durations made at end of report
   durationmaker = (ability, originalTimestamp, abilityname, endtime) => {  
     let duration = healerCooldownsDetailed.filter(obj => { return obj.name === ability }).map(obj => obj.duration)
     console.log(duration)
     let toesisstupid = [{ timestamp: originalTimestamp, [abilityname]: 1 }]
     let tickcount = originalTimestamp;   
     for (let i = 0; i < duration; i++) {
-      console.log(endtime, tickcount)
       if (endtime !== tickcount) {
-      tickcount = tickcount + 1000
-      toesisstupid.push({ timestamp: tickcount, [abilityname]: 1 })
-    }
+        tickcount = tickcount + 1000
+        toesisstupid.push({ timestamp: tickcount, [abilityname]: 1 })
+      }
     }
     return toesisstupid
   }
@@ -335,7 +349,7 @@ class App extends Component {
     this.setState({ damageTableShow: event });
   }
 
-    healTableShow = (event) => {
+  healTableShow = (event) => {
     this.setState({ healTableShow: event });
   }
 
@@ -371,14 +385,10 @@ class App extends Component {
       ability: key.Cooldown, 
       timestamp: moment.duration("00:" + key.time).asMilliseconds(), 
       abilityname: key.name + " - " + key.Cooldown }))
-    console.log(newthing)
     newthing.map(key => customcooldown.push(this.durationmaker(key.ability, key.timestamp, key.abilityname, moment(this.mather(this.state.currentStartTime, this.state.currentEndTime)).startOf('second').valueOf() )))
-    console.log(customcooldown)
     let newthing2 = customcooldown.flat()
     let concat2 = this.state.cooldownhelper
-    console.log(concat2)
     let fuckthisshit = concat2.concat(newthing2)
-    console.log(fuckthisshit)
     fuckthisshit.sort((a, b) => a.timestamp > b.timestamp ? 1 : -1)
     let datarReformater2 = fuckthisshit.reduce((acc, cur) => {
       acc[cur.timestamp] = fuckthisshit.reduce((x, n) => {
@@ -403,16 +413,12 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state.ertList)
-    let ss = "00:" + "03:05"
-    console.log(ss)
-    console.log(moment.duration(moment("03:05").format("MM:SS")).asMilliseconds())
     let spinnershow = this.state.loadingcheck;
     return (
       <div className='App'>
-        <Box 
-          bgcolor="#333" 
-          style={{ 
+        <Box
+          bgcolor="#333"
+          style={{
             borderRadius: 4,
             boxShadow: '0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12)'
           }}>
@@ -421,14 +427,17 @@ class App extends Component {
             direction="row"
             justify="flex-start"
             alignItems="flex-start"
-            spacing={1} >   
+            spacing={1} >
             <Grid item xs={'auto'} padding={1}>           
               <UserInput
                 changed={this.usernameChangedHandler} 
                 float={"left"}
                 position={"relative"}/>
-            </Grid>           
-            <Grid item xs={'auto'} padding={1}>
+            </Grid>
+            <Grid
+              item xs={'auto'}
+              padding={1}
+            >
               <ControlledOpenSelect
                 reportid={this.state.reportid}
                 clicky={this.handler}
@@ -437,7 +446,10 @@ class App extends Component {
                 position={"relative"}
               />
             </Grid>
-            <Grid item xs={'auto'} padding={1}>
+            <Grid
+              item xs={'auto'}
+              padding={1}
+            >
               {this.state.showname ? (
                 <Typography
                   style={{
@@ -459,21 +471,48 @@ class App extends Component {
                   }}>
                   {this.state.currentFighttime + ' - ' + this.state.killWipe}
                 </Typography>) : null }
-            </Grid>  
-            <Grid item xs={'auto'} padding={1}>
-              <InteractiveList heals={this.state.healernames} />
-            </Grid>  
-            <Grid item xs={'auto'} padding={1}>
-              <Checkboxes check={this.damageTableShow} label={"Show Log Table"}/>
-              <Checkboxes check={this.healTableShow} label={"Show Custom Table"}/>
             </Grid>
-          </Grid>  
+            <Grid
+              item xs={'auto'}
+              padding={1}
+            >
+              <InteractiveList heals={this.state.healernames} />
+            </Grid>
+            <Grid
+              item xs={'auto'}
+              padding={1}
+            >
+              <Checkboxes
+                check={this.damageTableShow}
+                label={"Show Log Table"}
+              />
+              <Checkboxes
+                check={this.healTableShow}
+                label={"Show Custom Table"}
+              />
+            </Grid>
+            <Grid
+              item xs={'auto'}
+              padding={1}
+            >
+              <Links />
+            </Grid>
+          </Grid>
         </Box>
-        <div style={{ height: 10 }}/>
-        <Collapse in={this.state.damageTableShow}>
+        <div
+          style={{ height: 10 }}
+        />
+        <Collapse
+          in={this.state.damageTableShow}
+        >
           <LoadingOverlay
             active={spinnershow}
-            spinner={<CircularProgress color="secondary" />}>
+            spinner={
+              <CircularProgress
+                color="secondary"
+              />
+            }
+          >
             <Chart
               chart={this.state.updatedarray}
               abilitylist={this.state.abilitylist}
@@ -481,12 +520,44 @@ class App extends Component {
               endtime={this.state.timeend}
               showcds={true} />
           </LoadingOverlay>
+          <Grid
+            container
+            direction="row"
+            justify="flex-start"
+            alignItems="flex-start"
+            spacing={1} >
+            <Grid 
+              item xs={'auto'}
+              padding={1}
+            >
+              <Box
+                bgcolor="#333"
+                style={{
+                  borderRadius: 4,
+                  boxShadow: '0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12)',
+                  margin: 0
+                }}>
+                <OppositeContentTimeline
+                  data={this.state.Updateddatacasts}
+                />
+              </Box>
+            </Grid>
+          </Grid>
+          <div 
+            style={{ height: 6 }}
+          />
         </Collapse>
-        <div style={{ height: 6 }}/>
-        <Collapse in={this.state.healTableShow}>
+        <Collapse 
+          in={this.state.healTableShow}
+        >
           <LoadingOverlay
             active={spinnershow}
-            spinner={<CircularProgress color="secondary" />}>
+            spinner={
+              <CircularProgress
+                color="secondary"
+              />
+            }
+          >
             <Chart
               chart={this.state.cooldownhelperfinal}
               abilitylist={this.state.abilitylist}
@@ -495,17 +566,27 @@ class App extends Component {
               showcds={true} />
           </LoadingOverlay>
         </Collapse>
-        <div style={{ height: 6 }}/>
+        <div
+          style={{ height: 6 }}
+        />
         <Grid
           container
           direction="row"
           justify="flex-start"
           alignItems="flex-start"
           spacing={1} >   
-          <Grid item xs={6} padding={1}>
-            <CustomEditComponent update={this.tablehandler} />
-          </Grid> 
-          <Grid item xs={2} padding={1}>
+          <Grid
+            item xs={6}
+            padding={1}
+          >
+            <CustomEditComponent
+              update={this.tablehandler}
+            />
+          </Grid>
+          <Grid
+            item xs={2}
+            padding={1}
+          >
             <Box
               bgcolor="#333"
               style={{
@@ -524,7 +605,9 @@ class App extends Component {
                 Cooldown Export for ERT Notes
               </Typography>
               {this.state.ertList.map(key => (
-                <Typography style={{ fontWeight: 400, fontSize: '0.875rem', color: 'white', padding: '0px 16px 0px 16px', display: 'block' }}>
+                <Typography
+                  style={{ fontWeight: 400, fontSize: '0.875rem', color: 'white', padding: '0px 16px 0px 16px', display: 'block' }}
+                >
                   {'{time:' + key.time + '}'} - {key.name} - {key.Cooldown}
                 </Typography>))
               }
@@ -538,7 +621,3 @@ class App extends Component {
 
 
 export default App;
-
-              // <Typography variant="h1" component="h2" style={{ fontSize: '1.5rem', color: 'white' }}>
-              //   Cooldown Export for ERT Notes
-              // </Typography>

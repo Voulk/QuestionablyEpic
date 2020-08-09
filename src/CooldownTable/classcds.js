@@ -1,9 +1,6 @@
 import React from "react";
 import { MenuItem } from "@material-ui/core";
 
-const hpal = ['Aura Matery', 'Avenging Wrath']
-
-
 export default function classcds(props) {
 	 // Paladin Cooldowns 
   if (props === 'Holy Paladin') {
@@ -12,7 +9,6 @@ export default function classcds(props) {
      		  <MenuItem value={'Avenging Wrath'}> Avenging Wrath </MenuItem>]
 	 )
   }
-
   // Restoration Druid
   if (props === 'Restoration Druid') {
  	 return (
@@ -20,7 +16,6 @@ export default function classcds(props) {
         	<MenuItem value={'Tree of Life'}> Tree of Life </MenuItem>]
  	 )
   }
-
   // Holy Priest
   if (props === 'Holy Priest') {
   	return (
@@ -28,7 +23,6 @@ export default function classcds(props) {
         	<MenuItem value={'Divine Hymn'}> Divine Hymn </MenuItem>]
  	 )
   }
-
   // Discipline Priest
   if (props === 'Discispline Priest') {
   	return (
@@ -43,7 +37,6 @@ export default function classcds(props) {
         	<MenuItem value={'Spirit Link Totem'}> Spirit Link Totem </MenuItem>]
     )
   }
-
   // Mistweaver Monk
   if (props === 'Mistweaver Monk') {
   	return (

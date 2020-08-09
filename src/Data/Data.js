@@ -1,78 +1,3 @@
-export const healercooldownsGUID = [
-  // --------------------Paladin--------------------
-  // ----------------Base Abilities-----------------
-  // Avenging Wrath
-  31884,
-  //  Aura Mastery
-  31821,
-  // --------------Covenant Abilities---------------
-  // Divine Toll
-  304971,
-  // Ashen Hallow
-  316958,
-  // Vanquisher's Hammer
-  328204,
-  // Blessing of the Seasons
-  328278,
-  // --------------------Priest---------------------
-  // ----------------Base Abilities-----------------
-  // Power Word: Barrier
-  62618,
-  // Evangelism
-  246287,
-  //  Divine Hymn
-  64843,
-  // --------------Covenant Abilities---------------
-  // Boon of the Ascended
-  325013,
-  // Mindgames
-  323673,
-  // Unholy Nova
-  324724,
-  // Fae Blessings
-  327661,
-  // ---------------------Druid---------------------
-  // Incarnation: Tree of Life
-  33891,
-  // Tranquility
-  740,
-  // --------------Covenant Abilities---------------
-  // Kindred Spirits
-  326434,
-  // Ravenous Frenzy
-  323546,
-  // Adaptive Swarm
-  325727,
-  // Convoke the Spirits
-  323764,
-  // --------------------Monk-----------------------
-  // ----------------Base Abilities-----------------
-  //  Revival
-  115310,
-  // --------------Covenant Abilities---------------
-  // Weapons of Order
-  310454,
-  // Fallen Order
-  326860,
-  // Bonedust Brew
-  325216,
-  // Faeline Stomp
-  327104,
-  // -------------------Shaman----------------------
-  // ----------------Base Abilities-----------------
-  //  Healing Tide Totem
-  108280,
-  // --------------Covenant Abilities---------------
-  // Vesper Totem
-  324386,
-  // Chain Harvest
-  320674,
-  // Primordial Wave
-  326059,
-  // Fae Transfusion
-  328923
-]
-
 export const damageExclusions = [
   // Melee
   1,
@@ -83,7 +8,11 @@ export const damageExclusions = [
   // Grand Delusions
   315197,
   // Burning Rush - Warlock
-  111400
+  111400,
+  // Cauterize - Mage
+  86949,
+  // Light of the Martyr - Paladin
+  183998,
 ]
 
 export const paladinCooldownNames = [
