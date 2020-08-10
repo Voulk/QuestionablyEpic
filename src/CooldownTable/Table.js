@@ -28,7 +28,10 @@ import 'rc-time-picker/assets/index.css';
 import moment from 'moment';
 import { Select } from '@material-ui/core'
 import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
-import { withStyles } from '@material-ui/core/styles';
+import TextField from '@material-ui/core/TextField';
+import InputLabel from '@material-ui/core/InputLabel';
+import FormControl from '@material-ui/core/FormControl';
+import { makeStyles } from '@material-ui/core/styles';
 
 const theme = createMuiTheme({
   overrides: {
@@ -67,6 +70,16 @@ const theme = createMuiTheme({
     },
   },
 });
+
+const useStyles = makeStyles((theme) => ({
+  formControl: {
+    margin: theme.spacing(1),
+    minWidth: 120,
+  },
+  selectEmpty: {
+    marginTop: theme.spacing(2),
+  },
+}));
 
 const items = [
   <MenuItem
@@ -147,7 +160,7 @@ const tableIcons = {
 };
 
 export default function CustomEditComponent(props) {
-
+const classes = useStyles();
   const { useState } = React;
   let a = 0
   const [columns, setColumns] = useState([
@@ -155,39 +168,47 @@ export default function CustomEditComponent(props) {
       title: 'Name',
       field: 'name',
       editComponent: props => (
-        <input
-          type="text"
+        <TextField
+          size="small"
+          id="standard-basic"
+          label="Healer Name"
           value={props.value}
           onChange={e => props.onChange(e.target.value)}
         />
       )
     },
-    // { field: 'imageUrl', render: rowData => <img src={rowData.imageUrl} style={{ width: 18, borderRadius: '50%' }}/> },
     {
       title: 'Class',
       field: 'class',
       editComponent: props => (
         <ThemeProvider theme={theme}>
-          <Select 
-            value={props.value}
-            onChange={e => {
-              props.onChange(e.target.value); a = e.target.value
-            }}>
-            {items}
-          </Select>
+          <FormControl className={classes.formControl}>
+            <InputLabel id="HealerClassSelector">Healer Class</InputLabel>
+            <Select
+              value={props.value}
+              onChange={e => {
+                props.onChange(e.target.value); a = e.target.value
+              }}>
+              {items}
+            </Select>
+          </FormControl>
         </ThemeProvider>
       )
     },
     {
-      title: 'Cooldown',
+      title: 'Ability',
       field: 'Cooldown',
       editComponent: props => (
-        <Select
-          type="text"
-          value={props.value }
-          onChange={e => { props.onChange(e.target.value); console.log(e.target.value) }}>
-          {classcds(a) || []}
-        </Select>
+        <ThemeProvider theme={theme}>
+          <FormControl className={classes.formControl}>
+            <InputLabel id="HealerAbilitySelector">Ability</InputLabel>
+            <Select
+              value={props.value }
+              onChange={e => { props.onChange(e.target.value); console.log(e.target.value) }}>
+              {classcds(a) || []}
+            </Select>
+          </FormControl>
+        </ThemeProvider>
       )
     },
     {
@@ -201,14 +222,15 @@ export default function CustomEditComponent(props) {
           onChange={e => { props.onChange(moment(e).format("mm:ss"))}} />
       )
     },
+    {
+      title: 'Cooldown',
+    },
+    {
+      title: 'Next Available',
+    },
   ]);
 
-  const [data, setData] = useState([
-    { name: 'Ptolemy', class: 'Holy Paladin', Cooldown: 'Avenging Wrath', time: "00:05", imageUrl: HolyPaladinIcon },
-    { name: 'Voulk', class: 'Restoration Druid', Cooldown: 'Tranquility', time: "00:06" },
-  ]);
-
-  
+  const [data, setData] = useState([]);
 
   useEffect(() => {
     props.update(data)
@@ -254,7 +276,7 @@ export default function CustomEditComponent(props) {
             borderBottom: '1px solid #6d6d6d',
             padding: 0
           },
-          actionsColumnIndex: 5,
+          actionsColumnIndex: 6,
           paging: false
         }}
         editable={{

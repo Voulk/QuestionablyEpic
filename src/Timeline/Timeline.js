@@ -42,7 +42,7 @@ const theme = createMuiTheme({
     },
     MuiTimeline: {
       root: {
-        marginBlockStart: '6px',
+        marginBlockStart: '0px',
         marginBlockEnd: '0px',
       },
     },

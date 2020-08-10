@@ -17,6 +17,8 @@ import { damageExclusions, healerCooldownsDetailed } from './Data/Data'
 import Checkboxes from './BasicComponents/checkBox'
 import Links from './Links/Links'
 import OppositeContentTimeline from './Timeline/Timeline'
+import GenericTable from './CooldownTable/GenericTable';
+import DenseAppBar from './Appbar/Appbar'
 
 class App extends Component {
   constructor() {
@@ -26,6 +28,8 @@ class App extends Component {
     this.handler = this.handler.bind(this)
     this.updatechartdata = this.updatechartdata.bind(this)
     this.tablehandler = this.tablehandler.bind(this)
+    this.ertHandler = this.ertHandler.bind(this)
+    this.timelineHandler = this.timelineHandler.bind(this)
     this.state = {
       apikey: '92fc5d4ae86447df22a8c0917c1404dc',
       updatedarray: [
@@ -59,7 +63,9 @@ class App extends Component {
       currentFighttime: null,
       killWipe: null,
       showname: false,
-      Updateddatacasts: []
+      Updateddatacasts: [],
+      ertshowhide: false,
+      timelineshowhide: false
     }
   }
 
@@ -363,6 +369,17 @@ class App extends Component {
     this.setState({ logactuallink: this.state.loglink })
     this.setState({ reportid: this.state.loglink.substring(37,53) })
   }
+  ertHandler = () => {
+    this.setState(prevState => ({
+      ertshowhide: !prevState.ertshowhide
+    }))
+  } 
+    timelineHandler = () => {
+    this.setState(prevState => ({
+      timelineshowhide: !prevState.timelineshowhide
+    }))
+  } 
+
   msToTime = (s) => {
     let ms = s % 1000;
     s = (s - ms) / 1000;
@@ -406,10 +423,12 @@ class App extends Component {
     }, {})
     let sortedData2 = []
     Object.keys(datarReformater2).forEach(element2 => sortedData2.push(datarReformater2[element2]))
+    let abc = element.map(key => ([{ ert: '{time:' + key.time + '}' + ' - ' + key.name + ' - ' + key.Cooldown }])).flat()
     this.setState({ 
       cooldownhelperfinal: sortedData2,
       cooldownlistcustom2: cooldownlistcustom2,
-      ertList: element })
+      ertList: abc })
+    console.log(this.state.ertList)
   }
 
   render() {
@@ -520,52 +539,61 @@ class App extends Component {
               endtime={this.state.timeend}
               showcds={true} />
           </LoadingOverlay>
-          <Grid
-            container
-            direction="row"
-            justify="flex-start"
-            alignItems="flex-start"
-            spacing={1} >
-            <Grid 
-              item xs={'auto'}
-              padding={1}
-            >
-              <Box
-                bgcolor="#333"
-                style={{
-                  borderRadius: 4,
-                  boxShadow: '0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12)',
-                  margin: 0
-                }}>
-                <OppositeContentTimeline
-                  data={this.state.Updateddatacasts}
+          <div style={{padding: '8px 0px 0px 0px'}}>
+            <Grid
+              container
+              direction="row"
+              justify="flex-start"
+              alignItems="flex-start"
+              spacing={1} >
+              <Grid 
+                item xs={'auto'}
+                padding={1}
+              >
+                <DenseAppBar
+                  onClick={this.timelineHandler}
+                  title="Timeline"
                 />
-              </Box>
+                <Collapse
+                  in={this.state.timelineshowhide}
+                >
+                  <Box
+                    bgcolor="#333"
+                    style={{
+                      borderRadius: '0px 0px 4px 4px',
+                      boxShadow: '0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12)',
+                      margin: 0
+                    }}>
+                    <OppositeContentTimeline
+                      data={this.state.Updateddatacasts}
+                    />
+                  </Box>
+                </Collapse>
+              </Grid>
             </Grid>
-          </Grid>
-          <div 
-            style={{ height: 6 }}
-          />
+          </div>
         </Collapse>
-        <Collapse 
-          in={this.state.healTableShow}
-        >
-          <LoadingOverlay
-            active={spinnershow}
-            spinner={
-              <CircularProgress
-                color="secondary"
-              />
-            }
+        <div style={ {padding: '8px 0px 0px 0px' }}>
+          <Collapse 
+            in={this.state.healTableShow}
           >
-            <Chart
-              chart={this.state.cooldownhelperfinal}
-              abilitylist={this.state.abilitylist}
-              cooldown={this.state.cooldownlistcustom2}
-              endtime={this.state.timeend}
-              showcds={true} />
-          </LoadingOverlay>
-        </Collapse>
+            <LoadingOverlay
+              active={spinnershow}
+              spinner={
+                <CircularProgress
+                  color="secondary"
+                />
+              }
+            >
+              <Chart
+                chart={this.state.cooldownhelperfinal}
+                abilitylist={this.state.abilitylist}
+                cooldown={this.state.cooldownlistcustom2}
+                endtime={this.state.timeend}
+                showcds={true} />
+            </LoadingOverlay>
+          </Collapse>
+        </div>
         <div
           style={{ height: 6 }}
         />
@@ -576,7 +604,7 @@ class App extends Component {
           alignItems="flex-start"
           spacing={1} >   
           <Grid
-            item xs={6}
+            item xs={'auto'}
             padding={1}
           >
             <CustomEditComponent
@@ -587,37 +615,25 @@ class App extends Component {
             item xs={2}
             padding={1}
           >
-            <Box
-              bgcolor="#333"
-              style={{
-                borderRadius: 4,
-                boxShadow: '0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12)'
-              }}>
-              <Typography
-                variant="h1"
-                component="h2"
-                style={{
-                  fontWeight: 500,
-                  fontSize: '1.25rem',
-                  color: 'white',
-                  padding: '16px 16px 16px 16px'
-                }}>
-                Cooldown Export for ERT Notes
-              </Typography>
-              {this.state.ertList.map(key => (
-                <Typography
-                  style={{ fontWeight: 400, fontSize: '0.875rem', color: 'white', padding: '0px 16px 0px 16px', display: 'block' }}
-                >
-                  {'{time:' + key.time + '}'} - {key.name} - {key.Cooldown}
-                </Typography>))
-              }
-            </Box>
+            <DenseAppBar
+              onClick={this.ertHandler}
+              title="ERT Note"
+            />
+            <Collapse
+              in={this.state.ertshowhide}
+            >
+              <GenericTable
+                data={this.state.ertList}
+                columns={[{ title: 'Name', field: 'ert' }]}
+                title="ERT Note"
+                header={false}
+              />
+            </Collapse>
           </Grid>
         </Grid>
       </div>
     )
   }
 }
-
 
 export default App;

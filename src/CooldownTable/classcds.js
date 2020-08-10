@@ -43,5 +43,10 @@ export default function classcds(props) {
         	[<MenuItem value={'Revival'}> Revival </MenuItem>]
   	)
   }
+  if (props === 0) {
+    return (
+      [<MenuItem> No Class Selected </MenuItem>]
+    )
+  }
 }
 
