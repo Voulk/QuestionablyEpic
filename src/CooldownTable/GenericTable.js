@@ -18,17 +18,17 @@ import ViewColumn from '@material-ui/icons/ViewColumn';
 import HolyPaladinIcon from '../Images/HolyPaladin.jpg'
 import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 
+
+
 const theme3 = createMuiTheme({
   overrides: {
-    // Style sheet name :atom:
-    // MuiPaper: {
-    //   rounded: {
-    //     borderRadius: '0px 0px 4px 4px'
-    //   },
-    // },
+    MuiTableRow: {
+      gutters: '16px'
+    },
     MuiTableCell: {
       root: {
         fontSize: '0.875rem',
+        padding: '0px 16px 0px 16px',
       },
       body: {
         fontSize: '0.875rem',

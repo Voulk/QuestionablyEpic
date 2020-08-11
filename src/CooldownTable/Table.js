@@ -21,6 +21,7 @@ import HolyPriestIcon from '../Images/HolyPriest.jpg'
 import MistweaverIcon from '../Images/MistWeaverMonk.jpg'
 import RestorationDruidIcon from '../Images/RestorationDruid.jpg'
 import RestorationShamanIcon from '../Images/RestorationShaman.jpg'
+
 import classcds from './classcds'
 import TimePicker from 'rc-time-picker';
 import MenuItem from '@material-ui/core/MenuItem';
@@ -33,32 +34,28 @@ import InputLabel from '@material-ui/core/InputLabel';
 import FormControl from '@material-ui/core/FormControl';
 import { makeStyles } from '@material-ui/core/styles';
 
-const theme = createMuiTheme({
+const themecooldowntable = createMuiTheme({
   overrides: {
     // Style sheet name :atom:
     MuiTableCell: {
       root: {
+        padding: '0px 16px 0px 16px',
         fontSize: '0.875rem',
       },
       body: {
         fontSize: '0.875rem',
       }, 
     },
-    MuiSelect:{
+    MuiSelect: {
       root: {
         color: '#fff'
       },
     },
     MuiToolbar: {
       regular: {
-        minHeight: '64px'
+        minHeight: '64px',
       }
     },
-    //  MuiIconButton: {
-    //   root: {
-    //     padding: '0px'
-    //   },
-    // },
   },
   palette: {
     type: 'dark',
@@ -73,7 +70,7 @@ const theme = createMuiTheme({
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
-    margin: theme.spacing(1),
+    margin: theme.spacing(0.5),
     minWidth: 120,
   },
   selectEmpty: {
@@ -86,7 +83,12 @@ const items = [
     style={{ color: '#F58CBA' }}
     value={'Holy Paladin'}>
     <img
-      style={{ height: 18, width: 18, padding: 5 }}
+      style={{
+        height: 18,
+        width: 18,
+        padding: '0px 5px 0px 5px',
+        verticalAlign: 'middle'
+      }}
       src={HolyPaladinIcon}
     />
       Holy Paladin
@@ -95,7 +97,12 @@ const items = [
     style={{ color: '#FF7D0A' }}
     value={'Restoration Druid'}>
     <img
-      style={{ height: 18, width: 18, padding: 5 }}
+      style={{
+        height: 18,
+        width: 18,
+        padding: '0px 5px 0px 5px',
+        verticalAlign: 'middle'
+      }}
       src={RestorationDruidIcon}
     />
       Restoration Druid
@@ -104,7 +111,12 @@ const items = [
     style={{ color: '#FFFFFF' }}
     value={'Holy Priest'}>
     <img
-      style={{ height: 18, width: 18, padding: 5 }}
+      style={{
+        height: 18,
+        width: 18,
+        padding: '0px 5px 0px 5px',
+        verticalAlign: 'middle'
+      }}
       src={HolyPriestIcon}
     />
       Holy Priest
@@ -113,7 +125,12 @@ const items = [
     style={{ color: '#FFFFFF' }}
     value={'Discispline Priest'}>
     <img
-      style={{ height: 18, width: 18, padding: 5 }}
+      style={{
+        height: 18,
+        width: 18,
+        padding: '0px 5px 0px 5px',
+        verticalAlign: 'middle'
+      }}
       src={DiscPriestIcon}
     />
       Discispline Priest
@@ -122,7 +139,12 @@ const items = [
     style={{ color: '#0070DE' }}
     value={'Restoration Shaman'}>
     <img
-      style={{ height: 18, width: 18, padding: 5 }}
+      style={{
+        height: 18,
+        width: 18,
+        padding: '0px 5px 0px 5px',
+        verticalAlign: 'middle'
+      }}
       src={RestorationShamanIcon}
     />
       Restoration Shaman
@@ -131,7 +153,12 @@ const items = [
     style={{ color: '#00FF96' }}
     value={'Mistweaver Monk'}>
     <img
-      style={{ height: 18, width: 18, padding: 5 }}
+      style={{
+        height: 18,
+        width: 18,
+        padding: '0px 5px 0px 5px',
+        verticalAlign: 'middle'
+      }}
       src={MistweaverIcon}
     />
       Mistweaver Monk
@@ -181,7 +208,7 @@ const classes = useStyles();
       title: 'Class',
       field: 'class',
       editComponent: props => (
-        <ThemeProvider theme={theme}>
+        <ThemeProvider theme={themecooldowntable}>
           <FormControl className={classes.formControl}>
             <InputLabel id="HealerClassSelector">Healer Class</InputLabel>
             <Select
@@ -199,7 +226,7 @@ const classes = useStyles();
       title: 'Ability',
       field: 'Cooldown',
       editComponent: props => (
-        <ThemeProvider theme={theme}>
+        <ThemeProvider theme={themecooldowntable}>
           <FormControl className={classes.formControl}>
             <InputLabel id="HealerAbilitySelector">Ability</InputLabel>
             <Select
@@ -228,6 +255,19 @@ const classes = useStyles();
     {
       title: 'Next Available',
     },
+    {
+      title: 'Notes',
+      field: 'notes',
+      editComponent: props => (
+        <TextField
+          size="small"
+          id="standard-basic"
+          label="Notes"
+          value={props.value}
+          onChange={e => props.onChange(e.target.value)}
+        />
+      )
+    },
   ]);
 
   const [data, setData] = useState([]);
@@ -237,7 +277,7 @@ const classes = useStyles();
   }, [data]);
 
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={themecooldowntable}>
       <MaterialTable
         icons={tableIcons}
         title="Cooldown Assigner"
@@ -261,7 +301,6 @@ const classes = useStyles();
           },
           cellStyle: {
             borderBottom: '1px solid #6d6d6d',
-            padding: '0px 16px 0px 16px',
             fontSize: '0.8 rem',
           },
           rowStyle: {
@@ -276,7 +315,7 @@ const classes = useStyles();
             borderBottom: '1px solid #6d6d6d',
             padding: 0
           },
-          actionsColumnIndex: 6,
+          actionsColumnIndex: 7,
           paging: false
         }}
         editable={{

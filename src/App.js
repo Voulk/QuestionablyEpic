@@ -602,7 +602,8 @@ class App extends Component {
           direction="row"
           justify="flex-start"
           alignItems="flex-start"
-          spacing={1} >   
+          spacing={1} 
+        >
           <Grid
             item xs={'auto'}
             padding={1}
@@ -612,7 +613,7 @@ class App extends Component {
             />
           </Grid>
           <Grid
-            item xs={2}
+            item xs={'Auto'}
             padding={1}
           >
             <DenseAppBar
