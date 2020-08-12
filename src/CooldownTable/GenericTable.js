@@ -22,6 +22,11 @@ import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 
 const theme3 = createMuiTheme({
   overrides: {
+    MuiTableSortLabel: {
+      root: {
+        whiteSpace: 'nowrap'
+      },
+    },
     MuiTableRow: {
       gutters: '16px'
     },
@@ -106,15 +111,18 @@ export default function GenericTable(props) {
             padding: '0px 16px 0px 16px',
             borderBottom: '2px solid #6d6d6d',
             fontSize: '0.8 rem',
+            whiteSpace: 'nowrap'
           },
           cellStyle: {
             borderBottom: '1px solid #6d6d6d',
             padding: '0px 16px 0px 16px',
             fontSize: '0.8 rem',
+            whiteSpace: 'nowrap'
           },
           rowStyle: {
             borderBottom: '1px solid #6d6d6d',
             fontSize: '0.8 rem',
+                        whiteSpace: 'nowrap'
           },
           searchFieldStyle: {
             borderBottom: '1px solid #6d6d6d',

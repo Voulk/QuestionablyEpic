@@ -19,6 +19,8 @@ import Links from './Links/Links'
 import OppositeContentTimeline from './Timeline/Timeline'
 import GenericTable from './CooldownTable/GenericTable';
 import DenseAppBar from './Appbar/Appbar'
+import HolyPaladinIcon from './Images/HolyPaladin.jpg'
+import abilityicons from './CooldownTable/AbilityIcons'
 
 class App extends Component {
   constructor() {
@@ -32,12 +34,7 @@ class App extends Component {
     this.timelineHandler = this.timelineHandler.bind(this)
     this.state = {
       apikey: '92fc5d4ae86447df22a8c0917c1404dc',
-      updatedarray: [
-        { timestamp: 1000, Melee: 100 },
-        { timestamp: 2000, Melee: 200 },
-        { timestamp: 5000, Melee: 100 },
-        { timestamp: 9000, Melee: 200 },
-        { timestamp: 70000, Melee: 100 }],
+      updatedarray: [],
       logactuallink: null,
       loglink: 'Insert Log Here',
       reportid: null,
@@ -245,18 +242,32 @@ class App extends Component {
 
       let updateddatacastsTimeline = cooldowns.map(key =>({ 
         ability: key.ability.name,
-        timestamp: moment(this.mather(this.state.time, key.timestamp)).startOf('second').valueOf(),
-        [healerIDName.filter(obj => {
-          return obj.id === key.sourceID
-        }).map(obj => obj.name) + ' - ' + key.ability.name]: 1,
+        timestamp: moment(this.mather(this.state.time, key.timestamp)).startOf('second').format("mm:ss"),
         name: healerIDName.filter(obj => {
           return obj.id === key.sourceID
-        }).map(obj => obj.name) + ' - ' + key.ability.name,
+        }).map(obj => obj.name).toString(),
         class: healerIDName.filter(obj => {
           return obj.id === key.sourceID
         }).map(obj => obj.class).toString()
       }
       ));
+
+      // Old Code for Timeline
+      // let updateddatacastsTimeline = cooldowns.map(key =>({ 
+      //   ability: key.ability.name,
+      //   timestamp: moment(this.mather(this.state.time, key.timestamp)).startOf('second').valueOf(),
+      //   [healerIDName.filter(obj => {
+      //     return obj.id === key.sourceID
+      //   }).map(obj => obj.name) + ' - ' + key.ability.name]: 1,
+      //   name: healerIDName.filter(obj => {
+      //     return obj.id === key.sourceID
+      //   }).map(obj => obj.name) + ' - ' + key.ability.name,
+      //   class: healerIDName.filter(obj => {
+      //     return obj.id === key.sourceID
+      //   }).map(obj => obj.class).toString()
+      // }
+      // ));
+
 
       updateddatacasts.map(key => healerdurations.push(this.durationmaker(key.ability, key.timestamp, Object.getOwnPropertyNames(key).slice(2), moment(this.mather(starttime, endtime)).startOf('second').valueOf())));
       let cooldownwithdurations = healerdurations.flat();
@@ -373,12 +384,12 @@ class App extends Component {
     this.setState(prevState => ({
       ertshowhide: !prevState.ertshowhide
     }))
-  } 
-    timelineHandler = () => {
+  }
+  timelineHandler = () => {
     this.setState(prevState => ({
       timelineshowhide: !prevState.timelineshowhide
     }))
-  } 
+  }
 
   msToTime = (s) => {
     let ms = s % 1000;
@@ -539,7 +550,7 @@ class App extends Component {
               endtime={this.state.timeend}
               showcds={true} />
           </LoadingOverlay>
-          <div style={{padding: '8px 0px 0px 0px'}}>
+          <div style={{ padding: '8px 0px 0px 0px' }}>
             <Grid
               container
               direction="row"
@@ -557,17 +568,20 @@ class App extends Component {
                 <Collapse
                   in={this.state.timelineshowhide}
                 >
-                  <Box
-                    bgcolor="#333"
-                    style={{
-                      borderRadius: '0px 0px 4px 4px',
-                      boxShadow: '0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12)',
-                      margin: 0
-                    }}>
-                    <OppositeContentTimeline
-                      data={this.state.Updateddatacasts}
-                    />
-                  </Box>
+                  <GenericTable
+                    data={this.state.Updateddatacasts}
+                    columns={[
+                      { title: 'Name', field: 'name' },
+                      { title: 'Ability',
+                        field: 'ability',
+                        render: rowData => (
+                          <div>
+                            {abilityicons(rowData.ability)}
+                            {rowData.ability}
+                          </div>)},
+                      { title: 'Time', field: 'timestamp' }]}
+                    title="Timeline"
+                    header={true}/>
                 </Collapse>
               </Grid>
             </Grid>
@@ -638,3 +652,14 @@ class App extends Component {
 }
 
 export default App;
+ //                   <Box
+                  //   bgcolor="#333"
+                  //   style={{
+                  //     borderRadius: '0px 0px 4px 4px',
+                  //     boxShadow: '0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12)',
+                  //     margin: 0
+                  //   }}>
+                  //   <OppositeContentTimeline
+                  //     data={this.state.Updateddatacasts}
+                  //   />
+                  // </Box>

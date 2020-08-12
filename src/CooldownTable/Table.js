@@ -21,7 +21,6 @@ import HolyPriestIcon from '../Images/HolyPriest.jpg'
 import MistweaverIcon from '../Images/MistWeaverMonk.jpg'
 import RestorationDruidIcon from '../Images/RestorationDruid.jpg'
 import RestorationShamanIcon from '../Images/RestorationShaman.jpg'
-
 import classcds from './classcds'
 import TimePicker from 'rc-time-picker';
 import MenuItem from '@material-ui/core/MenuItem';
@@ -33,6 +32,8 @@ import TextField from '@material-ui/core/TextField';
 import InputLabel from '@material-ui/core/InputLabel';
 import FormControl from '@material-ui/core/FormControl';
 import { makeStyles } from '@material-ui/core/styles';
+import abilityicons from '../CooldownTable/AbilityIcons'
+import classicons from '../CooldownTable/ClassIcons'
 
 const themecooldowntable = createMuiTheme({
   overrides: {
@@ -207,6 +208,11 @@ const classes = useStyles();
     {
       title: 'Class',
       field: 'class',
+      render: rowData => (
+        <div>
+          {classicons(rowData.class)}
+          {rowData.class}
+        </div>),
       editComponent: props => (
         <ThemeProvider theme={themecooldowntable}>
           <FormControl className={classes.formControl}>
@@ -225,6 +231,11 @@ const classes = useStyles();
     {
       title: 'Ability',
       field: 'Cooldown',
+      render: rowData => (
+        <div>
+          {abilityicons(rowData.Cooldown)}
+          {rowData.Cooldown}
+        </div>),
       editComponent: props => (
         <ThemeProvider theme={themecooldowntable}>
           <FormControl className={classes.formControl}>
@@ -302,6 +313,7 @@ const classes = useStyles();
           cellStyle: {
             borderBottom: '1px solid #6d6d6d',
             fontSize: '0.8 rem',
+            whiteSpace: 'nowrap'
           },
           rowStyle: {
             borderBottom: '1px solid #6d6d6d',

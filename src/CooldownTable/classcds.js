@@ -58,7 +58,7 @@ export default function classcds(props) {
         />
         Tranquility
       </MenuItem>,
-      <MenuItem value={'Tree of Life'}>
+      <MenuItem value={'Incarnation: Tree of Life'}>
         <img
           style={{
             height: 18,
@@ -68,7 +68,7 @@ export default function classcds(props) {
           }}
           src={TreeofLifeIcon}
         />
-      Tree of Life
+      Incarnation: Tree of Life
       </MenuItem>]
  	 )
   }
