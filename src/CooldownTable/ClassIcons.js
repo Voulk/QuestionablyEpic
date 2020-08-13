@@ -18,6 +18,7 @@ export default function classicons(props) {
           verticalAlign: 'middle'
         }}
         src={HolyPaladinIcon}
+        alt='Holy Paladin'
       />
     )
   }
@@ -33,6 +34,7 @@ export default function classicons(props) {
           verticalAlign: 'middle'
         }}
         src={RestorationDruidIcon}
+        alt='Restoration Druid'
       />
     )
   }
@@ -48,6 +50,7 @@ export default function classicons(props) {
           verticalAlign: 'middle'
         }}
         src={HolyPriestIcon}
+        alt='Holy Priest'
       />
     )
   }
@@ -63,6 +66,7 @@ export default function classicons(props) {
           verticalAlign: 'middle'
         }}
         src={DiscPriestIcon}
+        alt='Discispline Priest'
       />
     )
   }
@@ -78,6 +82,7 @@ export default function classicons(props) {
           verticalAlign: 'middle'
         }}
         src={RestorationShamanIcon}
+        alt='Restoration Shaman'
       />
     )
   }
@@ -93,6 +98,7 @@ export default function classicons(props) {
           verticalAlign: 'middle'
         }}
         src={MistweaverIcon}
+        alt='Mistweaver Monk'
       />
     )
   }

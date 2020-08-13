@@ -14,7 +14,6 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Links() {
   const classes = useStyles();
-  const preventDefault = (event) => event.preventDefault();
 
   return (
     <Typography className={classes.root}>

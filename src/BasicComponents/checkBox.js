@@ -2,8 +2,6 @@ import React from 'react';
 import Checkbox from '@material-ui/core/Checkbox';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import { withStyles } from '@material-ui/core/styles';
-import { makeStyles } from '@material-ui/core/styles';
-import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 
 const FormControlLabel1 = withStyles({
   // @global is handled by jss-plugin-global.

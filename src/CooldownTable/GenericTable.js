@@ -1,4 +1,4 @@
-import React, { useEffect, forwardRef } from "react";
+import React, { forwardRef } from "react";
 import MaterialTable from 'material-table';
 import AddBox from '@material-ui/icons/AddBox';
 import ArrowDownward from '@material-ui/icons/ArrowDownward';
@@ -15,7 +15,6 @@ import Remove from '@material-ui/icons/Remove';
 import SaveAlt from '@material-ui/icons/SaveAlt';
 import Search from '@material-ui/icons/Search';
 import ViewColumn from '@material-ui/icons/ViewColumn';
-import HolyPaladinIcon from '../Images/HolyPaladin.jpg'
 import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 
 

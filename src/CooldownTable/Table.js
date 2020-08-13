@@ -22,10 +22,8 @@ import MistweaverIcon from '../Images/MistWeaverMonk.jpg'
 import RestorationDruidIcon from '../Images/RestorationDruid.jpg'
 import RestorationShamanIcon from '../Images/RestorationShaman.jpg'
 import classcds from './classcds'
-import TimePicker from 'rc-time-picker';
 import MenuItem from '@material-ui/core/MenuItem';
 import 'rc-time-picker/assets/index.css';
-import moment from 'moment';
 import { Select } from '@material-ui/core'
 import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
@@ -72,7 +70,8 @@ const themecooldowntable = createMuiTheme({
 const useStyles = makeStyles((theme) => ({
   formControl: {
     margin: theme.spacing(0.5),
-    minWidth: 120,
+    whiteSpace: 'nowrap',
+    width: '100%'
   },
   selectEmpty: {
     marginTop: theme.spacing(2),
@@ -91,6 +90,7 @@ const items = [
         verticalAlign: 'middle'
       }}
       src={HolyPaladinIcon}
+      alt='Holy Paladin'
     />
       Holy Paladin
   </MenuItem>,
@@ -105,6 +105,7 @@ const items = [
         verticalAlign: 'middle'
       }}
       src={RestorationDruidIcon}
+      alt='Restoration Druid'
     />
       Restoration Druid
   </MenuItem>,
@@ -119,6 +120,7 @@ const items = [
         verticalAlign: 'middle'
       }}
       src={HolyPriestIcon}
+      alt='Holy Priest'
     />
       Holy Priest
   </MenuItem>,
@@ -133,6 +135,7 @@ const items = [
         verticalAlign: 'middle'
       }}
       src={DiscPriestIcon}
+      alt='Discispline Priest'
     />
       Discispline Priest
   </MenuItem>,
@@ -147,6 +150,7 @@ const items = [
         verticalAlign: 'middle'
       }}
       src={RestorationShamanIcon}
+      alt='Restoration Shaman'
     />
       Restoration Shaman
   </MenuItem>,
@@ -161,6 +165,7 @@ const items = [
         verticalAlign: 'middle'
       }}
       src={MistweaverIcon}
+      alt='Mistweaver Monk'
     />
       Mistweaver Monk
   </MenuItem>
@@ -201,6 +206,7 @@ const classes = useStyles();
           id="standard-basic"
           label="Healer Name"
           value={props.value}
+          style={{ whiteSpace: 'nowrap', width: '100%' }}
           onChange={e => props.onChange(e.target.value)}
         />
       )
@@ -231,11 +237,7 @@ const classes = useStyles();
     {
       title: 'Ability',
       field: 'Cooldown',
-      render: rowData => (
-        <div>
-          {abilityicons(rowData.Cooldown)}
-          {rowData.Cooldown}
-        </div>),
+      render: rowData => (abilityicons(rowData.Cooldown)),
       editComponent: props => (
         <ThemeProvider theme={themecooldowntable}>
           <FormControl className={classes.formControl}>
@@ -253,11 +255,15 @@ const classes = useStyles();
       title: 'Time',
       field: 'time',
       editComponent: props => (
-        <TimePicker
-          defaultValue={moment()}
-          showHour={false}
-          defaultValue={null}
-          onChange={e => { props.onChange(moment(e).format("mm:ss"))}} />
+        <TextField
+          size="small"
+          id="standard-basic"
+          label="Cast Time"
+          placeholder="Format: mm:ss"
+          value={props.value}
+          style={{ whiteSpace: 'nowrap', width: '100%' }}
+          onChange={e => props.onChange(e.target.value)}
+        />
       )
     },
     {

@@ -7,18 +7,16 @@ function BasicTimePicker(props) {
   const [selectedDate, handleDateChange] = useState(new Date());
 
   return (
-                <MuiPickersUtilsProvider utils={DateFnsUtils}>
+    <MuiPickersUtilsProvider utils={DateFnsUtils}>
       <TimePicker
         ampm={false}
-        openTo="minutes"
-        views={["minutes", "seconds"]}
+        open={false}
         format="mm:ss"
         label="Minutes and seconds"
-        value={selectedDate}
-        onChange={handleDateChange}>
-        {console.log(selectedDate)}
+        value={props.value}
+        onChange={props.onChange}>
         </TimePicker>
-               </MuiPickersUtilsProvider>
+      </MuiPickersUtilsProvider>
   );
 }
 

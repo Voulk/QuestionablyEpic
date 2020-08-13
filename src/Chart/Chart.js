@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Brush, ResponsiveContainer, Tooltip, Legend, ReferenceArea} from 'recharts';
+import { AreaChart, Area, XAxis, YAxis, CartesianGrid, ResponsiveContainer, Tooltip, Legend } from 'recharts';
 import chroma from 'chroma-js';
 import './Chart.css';
 import moment from 'moment';
 
 
-const API = 'https://www.warcraftlogs.com:443/v1/report/fights/';
-const START = '?start='
-const END = '&end='
-const API2 = '?api_key=92fc5d4ae86447df22a8c0917c1404dc'
+// const API = 'https://www.warcraftlogs.com:443/v1/report/fights/';
+// const START = '?start='
+// const END = '&end='
+// const API2 = '?api_key=92fc5d4ae86447df22a8c0917c1404dc'
 
 class Chart extends Component {
   constructor(props) {
@@ -191,17 +191,16 @@ if (this.props.showcds === true) {
   // }
 
   componentDidMount() {
-    this.setState({ data: this.props.chart })
-    
+    this.setState({ data: this.props.chart })  
   }
 
   render() {
 
-    const { opacity } = this.state;
+    // const { opacity } = this.state;
 
-    const {
-      data, barIndex, left, right, refAreaLeft, refAreaRight, top, bottom, top2, bottom2,
-    } = this.state;
+    // const {
+    //   data, barIndex, left, right, refAreaLeft, refAreaRight, top, bottom, top2, bottom2,
+    // } = this.state;
 
     const DataFormater = (number) => {
       if (number > 1000000000) {

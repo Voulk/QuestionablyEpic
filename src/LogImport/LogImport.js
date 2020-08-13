@@ -32,7 +32,7 @@ class LogImport extends Component {
    let secs = s % 60;
    s = (s - secs) / 60;
    let mins = s % 60;
-   let hrs = (s - mins) / 60;
+   // let hrs = (s - mins) / 60;
    return mins + ':' + secs;
  }
 

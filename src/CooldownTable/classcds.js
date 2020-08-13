@@ -17,28 +17,34 @@ export default function classcds(props) {
 	 // Paladin Cooldowns 
   if (props === 'Holy Paladin') {
     return ([
-      <MenuItem value={'Aura Mastery'}>
-        <img
-          style={{
-            height: 18,
-            width: 18,
-            padding: '0px 5px 0px 5px',
-            verticalAlign: 'middle'
-          }}
-          src={AuraMasteryIcon}
-        />
+      <MenuItem value={'Aura Mastery'} >
+        <a data-wowhead='spell=31821'>
+          <img
+            style={{
+              height: 18,
+              width: 18,
+              padding: '0px 5px 0px 5px',
+              verticalAlign: 'middle'
+            }}
+            src={AuraMasteryIcon}
+            alt='Aura Mastery'
+          />
+        </a>
         Aura Mastery
       </MenuItem>,
      	<MenuItem value={'Avenging Wrath'}>
-        <img
-          style={{
-            height: 18,
-            width: 18,
-            padding: '0px 5px 0px 5px',
-            verticalAlign: 'middle'
-          }}
-          src={AvengingWrathIcon}
-        />
+        <a data-wowhead='spell=31884'>
+          <img
+            style={{
+              height: 18,
+              width: 18,
+              padding: '0px 5px 0px 5px',
+              verticalAlign: 'middle'
+            }}
+            src={AvengingWrathIcon}
+            alt='Avenging Wrath'
+          />
+        </a>
         Avenging Wrath
       </MenuItem>]
 	 )
@@ -47,28 +53,34 @@ export default function classcds(props) {
   if (props === 'Restoration Druid') {
  	 return ([
       <MenuItem value={'Tranquility'}>
-        <img
-          style={{
-            height: 18,
-            width: 18,
-            padding: '0px 5px 0px 5px',
-            verticalAlign: 'middle'
-          }}
-          src={TranquilityIcon}
-        />
+        <a data-wowhead='spell=740'>
+          <img
+            style={{
+              height: 18,
+              width: 18,
+              padding: '0px 5px 0px 5px',
+              verticalAlign: 'middle'
+            }}
+            src={TranquilityIcon}
+            alt='Tranquility'
+          />
+        </a>
         Tranquility
       </MenuItem>,
       <MenuItem value={'Incarnation: Tree of Life'}>
-        <img
-          style={{
-            height: 18,
-            width: 18,
-            padding: '0px 5px 0px 5px',
-            verticalAlign: 'middle'
-          }}
-          src={TreeofLifeIcon}
-        />
-      Incarnation: Tree of Life
+        <a data-wowhead='spell=33891'>
+          <img
+            style={{
+              height: 18,
+              width: 18,
+              padding: '0px 5px 0px 5px',
+              verticalAlign: 'middle'
+            }}
+            src={TreeofLifeIcon}
+            alt='Incarnation: Tree of Life'
+          />
+        </a>
+        Incarnation: Tree of Life
       </MenuItem>]
  	 )
   }
@@ -76,28 +88,34 @@ export default function classcds(props) {
   if (props === 'Holy Priest') {
   	return ([
       <MenuItem value={'Holy Word: Salvation'}>
-        <img
-          style={{
-            height: 18,
-            width: 18,
-            padding: '0px 5px 0px 5px',
-            verticalAlign: 'middle'
-          }}
-          src={SalvationIcon}
-        />
+        <a data-wowhead='spell=265202'>
+          <img
+            style={{
+              height: 18,
+              width: 18,
+              padding: '0px 5px 0px 5px',
+              verticalAlign: 'middle'
+            }}
+            src={SalvationIcon}
+            alt='Holy Word: Salvation'
+          />
+        </a>
         Holy Word: Salvation
       </MenuItem>,
       <MenuItem value={'Divine Hymn'}>
-        <img
-          style={{
-            height: 18,
-            width: 18,
-            padding: '0px 5px 0px 5px',
-            verticalAlign: 'middle'
-          }}
-          src={DivineHymnIcon}
-        />
-      Divine Hymn
+        <a data-wowhead='spell=64843'>
+          <img
+            style={{
+              height: 18,
+              width: 18,
+              padding: '0px 5px 0px 5px',
+              verticalAlign: 'middle'
+            }}
+            src={DivineHymnIcon}
+            alt='Divine Hymn'
+          />
+        </a>
+        Divine Hymn
       </MenuItem>]
  	 )
   }
@@ -105,28 +123,34 @@ export default function classcds(props) {
   if (props === 'Discispline Priest') {
   	return ([
       <MenuItem value={'Power Word: Barrier'}>
-        <img
-          style={{
-            height: 18,
-            width: 18,
-            padding: '0px 5px 0px 5px',
-            verticalAlign: 'middle'
-          }}
-          src={PowerWordBarrierIcon}
-        />
-      Power Word: Barrier
+        <a data-wowhead='spell=62618'>
+          <img
+            style={{
+              height: 18,
+              width: 18,
+              padding: '0px 5px 0px 5px',
+              verticalAlign: 'middle'
+            }}
+            src={PowerWordBarrierIcon}
+            alt='Power Word: Barrier'
+          />
+        </a>
+        Power Word: Barrier
       </MenuItem>,
       <MenuItem value={'Evangelism'}>
-        <img
-          style={{
-            height: 18,
-            width: 18,
-            padding: '0px 5px 0px 5px',
-            verticalAlign: 'middle'
-          }}
-          src={EvangelismIcon}
-        />
-      Evangelism
+        <a data-wowhead='spell=246287'>
+          <img
+            style={{
+              height: 18,
+              width: 18,
+              padding: '0px 5px 0px 5px',
+              verticalAlign: 'middle'
+            }}
+            src={EvangelismIcon}
+            alt='Evangelism'
+          />
+        </a>
+        Evangelism
       </MenuItem>]
     )
   }
@@ -134,27 +158,33 @@ export default function classcds(props) {
   if (props === 'Restoration Shaman') {
   	return ([
       <MenuItem value={'Healing Tide Totem'}>
-        <img
-          style={{
-            height: 18,
-            width: 18,
-            padding: '0px 5px 0px 5px',
-            verticalAlign: 'middle'
-          }}
-          src={HealingTideTotemIcon}
-        />
-      Healing Tide Totem
+        <a data-wowhead='spell=108280'>
+          <img
+            style={{
+              height: 18,
+              width: 18,
+              padding: '0px 5px 0px 5px',
+              verticalAlign: 'middle'
+            }}
+            src={HealingTideTotemIcon}
+            alt='Healing Tide Totem'
+          />
+        </a>
+        Healing Tide Totem
       </MenuItem>,
       <MenuItem value={'Spirit Link Totem'}>
-        <img
-          style={{
-            height: 18,
-            width: 18,
-            padding: '0px 5px 0px 5px',
-            verticalAlign: 'middle'
-          }}
-          src={SpiritLinkTotemIcon}
-        />
+        <a data-wowhead='spell=98008'>
+          <img
+            style={{
+              height: 18,
+              width: 18,
+              padding: '0px 5px 0px 5px',
+              verticalAlign: 'middle'
+            }}
+            src={SpiritLinkTotemIcon}
+            alt='Spirit Link Totem'
+          />
+        </a>
       Spirit Link Totem
       </MenuItem>]
     )
@@ -163,16 +193,19 @@ export default function classcds(props) {
   if (props === 'Mistweaver Monk') {
   	return ([
       <MenuItem value={'Revival'}>
-        <img
-          style={{
-            height: 18,
-            width: 18,
-            padding: '0px 5px 0px 5px',
-            verticalAlign: 'middle'
-          }}
-          src={RevivalIcon}
-        />
-      Revival
+        <a data-wowhead='spell=98008'>
+          <img
+            style={{
+              height: 18,
+              width: 18,
+              padding: '0px 5px 0px 5px',
+              verticalAlign: 'middle'
+            }}
+            src={RevivalIcon}
+            alt='Revival'
+          />
+        </a>
+        Revival
       </MenuItem>]
   	)
   }

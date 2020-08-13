@@ -572,13 +572,7 @@ class App extends Component {
                     data={this.state.Updateddatacasts}
                     columns={[
                       { title: 'Name', field: 'name' },
-                      { title: 'Ability',
-                        field: 'ability',
-                        render: rowData => (
-                          <div>
-                            {abilityicons(rowData.ability)}
-                            {rowData.ability}
-                          </div>)},
+                      { title: 'Ability', field: 'ability', render: rowData => (abilityicons(rowData.ability)) },
                       { title: 'Time', field: 'timestamp' }]}
                     title="Timeline"
                     header={true}/>
