@@ -72,6 +72,7 @@ export const healerCooldownsDetailed = [
   { name: 'Ashen Hallow', guid: 316958, duration: 30, cooldown: 240 },
   { name: "Vanquisher's Hammer", guid: 328204, duration: 1, cooldown: 30 }, 
   { name: 'Blessing of the Seasons', guid: 328278, duration: 1, cooldown: 30},
+
   // --------------------Priest---------------------
   // ----------------Base Abilities-----------------
   { name: 'Power Word: Barrier', guid: 62618, duartion: 10, cooldown: 180 },
@@ -83,6 +84,7 @@ export const healerCooldownsDetailed = [
   { name: 'Mindgames', guid: 323673, duration: 5, cooldown: 45 },
   { name: 'Unholy Nova', guid: 324724, duration: 15, cooldown: 60 },
   { name: 'Fae Blessings', guid: 327661, duraton: 1, cooldown: 90 },
+
   // ---------------------Druid---------------------
   { name: 'Incarnation: Tree of Life', guid: 33891, duration: 30, cooldown: 180 },
   { name: 'Tranquility', guid: 740, duration: 8, cooldown: 180},
@@ -91,6 +93,7 @@ export const healerCooldownsDetailed = [
   { name: 'Ravenous Frenzy', guid: 323546, duration: 20, cooldown: 180 },
   { name: 'Adaptive Swarm', guid: 325727, duration: 12, cooldown: 25 },
   { name: 'Convoke the Spirits', guid: 323764, duration: 4, cooldown: 120 },
+
   // --------------------Monk-----------------------
   // ----------------Base Abilities-----------------
   { name: 'Revival', guid: 115310, duration: 1, cooldown: 180 },
@@ -99,6 +102,7 @@ export const healerCooldownsDetailed = [
   { name: 'Fallen Order', guid: 326860, duration: 24, cooldown: 180 },
   { name: 'Bonedust Brew', guid: 325216, duration: 10, cooldown: 60 },
   { name: 'Faeline Stomp', guid: 327104, duration: 30, cooldown: 30 },
+
   // -------------------Shaman----------------------
   // ----------------Base Abilities-----------------
   { name: 'Healing Tide Totem', guid: 108280, duration: 10, cooldown: 180 },

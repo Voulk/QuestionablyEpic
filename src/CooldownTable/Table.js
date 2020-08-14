@@ -267,9 +267,6 @@ const classes = useStyles();
       )
     },
     {
-      title: 'Cooldown',
-    },
-    {
       title: 'Next Available',
     },
     {

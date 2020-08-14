@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import './App.css';
-import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from 'recharts';
 import UserInput from './UserInput/UserInput';
 import axios from 'axios';
 import Chart from './Chart/Chart'
 import moment from 'moment';
 import ControlledOpenSelect from './DropDown/buttonnew';
-import { Button, Backdrop, Typography, Collapse, Container } from '@material-ui/core';
+import { Typography, Collapse } from '@material-ui/core';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import LoadingOverlay from 'react-loading-overlay';
 import CustomEditComponent from './CooldownTable/Table';
@@ -16,10 +15,8 @@ import InteractiveList from './Lists/ListGen'
 import { damageExclusions, healerCooldownsDetailed } from './Data/Data'
 import Checkboxes from './BasicComponents/checkBox'
 import Links from './Links/Links'
-import OppositeContentTimeline from './Timeline/Timeline'
 import GenericTable from './CooldownTable/GenericTable';
 import DenseAppBar from './Appbar/Appbar'
-import HolyPaladinIcon from './Images/HolyPaladin.jpg'
 import abilityicons from './CooldownTable/AbilityIcons'
 
 class App extends Component {
@@ -92,6 +89,7 @@ class App extends Component {
       let sortedData = []
       let sortedData2 = []
 
+      // Class Casts Import
 
       await axios.get(APIHEALING + this.state.reportid + START + starttime + END + endtime + apiMonk + API2)
         .then(result => {
@@ -147,7 +145,7 @@ class App extends Component {
         })
         .catch(function (error) {
           console.log(error)
-        });
+        });      
 
       let healerIDName = healers.map(key => ({ id: key.id, name: key.name, class: key.type }))
       let healerID = healers.map(key => key.id)
@@ -222,9 +220,10 @@ class App extends Component {
         nextpage != undefined);
 
       let abilitylistold = damage.map(key =>(key.ability.name));
-      let cooldownlistold = cooldowns.map(key =>(healerIDName.filter(obj => {
-        return obj.id === key.sourceID
-      }).map(obj => obj.name) + ' - ' + key.ability.name));
+      let cooldownlistold = cooldowns.map(key =>(
+        healerIDName.filter(obj => {
+          return obj.id === key.sourceID
+        }).map(obj => obj.name) + ' - ' + key.ability.name));
       let uniqueArray = Array.from(new Set(abilitylistold));
       let uniqueArrayCD = Array.from(new Set(cooldownlistold));
 
@@ -319,20 +318,19 @@ class App extends Component {
 
   durationmaker = (ability, originalTimestamp, abilityname, endtime) => {  
     let duration = healerCooldownsDetailed.filter(obj => { return obj.name === ability }).map(obj => obj.duration)
-    console.log(duration)
-    let toesisstupid = [{ timestamp: originalTimestamp, [abilityname]: 1 }]
+    let newarray = [{ timestamp: originalTimestamp, [abilityname]: 1 }]
     let tickcount = originalTimestamp;   
     for (let i = 0; i < duration; i++) {
       if (endtime !== tickcount) {
         tickcount = tickcount + 1000
-        toesisstupid.push({ timestamp: tickcount, [abilityname]: 1 })
+        newarray.push({ timestamp: tickcount, [abilityname]: 1 })
       }
     }
-    return toesisstupid
+    return newarray
   }
 
   addMissingTimestamps = (loglength) => {
-    let toesisstupid = [{ timestamp: 0 }]
+    let newarray = [{ timestamp: 0 }]
     let ticks = [];
     let tickcount = 0;
     let length = moment(loglength).startOf('second') / 1000;
@@ -340,14 +338,15 @@ class App extends Component {
       ticks = ticks.concat(tickcount + 1000)
       tickcount = tickcount + 1000
     }
-    ticks.forEach(element => toesisstupid.push({ timestamp: element }))
-    return toesisstupid
+    ticks.forEach(element => newarray.push({ timestamp: element }))
+    return newarray
   }
 
    fightDurationCalculator = (time1,time2) => {
      let time = (time1 - time2)
      return time
    }
+
   handler = (info, info2, bossname, fighttime, killcheck) => {
     this.setState({
       showname: true,
@@ -370,21 +369,23 @@ class App extends Component {
     this.setState({ healTableShow: event });
   }
 
-
   usernameChangedHandler = (event) => {
     let actuallink = event.target.value 
     this.setState({ logactuallink: event.target.value });
     this.setState({ reportid: actuallink.substring(37,53) });
   }
+
   reportidHandler = () => {
     this.setState({ logactuallink: this.state.loglink })
     this.setState({ reportid: this.state.loglink.substring(37,53) })
   }
+
   ertHandler = () => {
     this.setState(prevState => ({
       ertshowhide: !prevState.ertshowhide
     }))
   }
+
   timelineHandler = () => {
     this.setState(prevState => ({
       timelineshowhide: !prevState.timelineshowhide
@@ -400,6 +401,7 @@ class App extends Component {
     // let hrs = (s - mins) / 60;
     return mins + ':' + secs;
   }
+
   mather = (time1, time2) => {
     let time = (time2 - time1)
     return time
@@ -416,10 +418,10 @@ class App extends Component {
     newthing.map(key => customcooldown.push(this.durationmaker(key.ability, key.timestamp, key.abilityname, moment(this.mather(this.state.currentStartTime, this.state.currentEndTime)).startOf('second').valueOf() )))
     let newthing2 = customcooldown.flat()
     let concat2 = this.state.cooldownhelper
-    let fuckthisshit = concat2.concat(newthing2)
-    fuckthisshit.sort((a, b) => a.timestamp > b.timestamp ? 1 : -1)
-    let datarReformater2 = fuckthisshit.reduce((acc, cur) => {
-      acc[cur.timestamp] = fuckthisshit.reduce((x, n) => {
+    let joinedarray = concat2.concat(newthing2)
+    joinedarray.sort((a, b) => a.timestamp > b.timestamp ? 1 : -1)
+    let datarReformater2 = joinedarray.reduce((acc, cur) => {
+      acc[cur.timestamp] = joinedarray.reduce((x, n) => {
         for (let prop in n) {
           if (cur.timestamp === n.timestamp)
             if (x.hasOwnProperty(prop))
@@ -450,24 +452,20 @@ class App extends Component {
           bgcolor="#333"
           style={{
             borderRadius: 4,
-            boxShadow: '0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12)'
-          }}>
+            boxShadow: '0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12)'}}>
           <Grid
             container
             direction="row"
             justify="flex-start"
             alignItems="flex-start"
-            spacing={1} >
-            <Grid item xs={'auto'} padding={1}>           
+            spacing={1}>
+            <Grid item xs={3} padding={1}>
               <UserInput
-                changed={this.usernameChangedHandler} 
+                changed={this.usernameChangedHandler}
                 float={"left"}
                 position={"relative"}/>
             </Grid>
-            <Grid
-              item xs={'auto'}
-              padding={1}
-            >
+            <Grid item xs={'auto'} padding={1}>
               <ControlledOpenSelect
                 reportid={this.state.reportid}
                 clicky={this.handler}
@@ -476,10 +474,7 @@ class App extends Component {
                 position={"relative"}
               />
             </Grid>
-            <Grid
-              item xs={'auto'}
-              padding={1}
-            >
+            <Grid item xs={'auto'} padding={1}>
               {this.state.showname ? (
                 <Typography
                   style={{
@@ -502,47 +497,21 @@ class App extends Component {
                   {this.state.currentFighttime + ' - ' + this.state.killWipe}
                 </Typography>) : null }
             </Grid>
-            <Grid
-              item xs={'auto'}
-              padding={1}
-            >
+            <Grid item xs={'auto'} padding={1}>
               <InteractiveList heals={this.state.healernames} />
             </Grid>
-            <Grid
-              item xs={'auto'}
-              padding={1}
-            >
-              <Checkboxes
-                check={this.damageTableShow}
-                label={"Show Log Table"}
-              />
-              <Checkboxes
-                check={this.healTableShow}
-                label={"Show Custom Table"}
-              />
+            <Grid item xs={'auto'} padding={1}>
+              <Checkboxes check={this.damageTableShow} label={"Show Log Table"} />
+              <Checkboxes check={this.healTableShow} label={"Show Custom Table"} />
             </Grid>
-            <Grid
-              item xs={'auto'}
-              padding={1}
-            >
+            <Grid item xs={'auto'} padding={1}>
               <Links />
             </Grid>
           </Grid>
         </Box>
-        <div
-          style={{ height: 10 }}
-        />
-        <Collapse
-          in={this.state.damageTableShow}
-        >
-          <LoadingOverlay
-            active={spinnershow}
-            spinner={
-              <CircularProgress
-                color="secondary"
-              />
-            }
-          >
+        <div style={{ height: 10 }} />
+        <Collapse in={this.state.damageTableShow} >
+          <LoadingOverlay active={spinnershow} spinner={<CircularProgress color="secondary" />}>
             <Chart
               chart={this.state.updatedarray}
               abilitylist={this.state.abilitylist}
@@ -557,17 +526,9 @@ class App extends Component {
               justify="flex-start"
               alignItems="flex-start"
               spacing={1} >
-              <Grid 
-                item xs={'auto'}
-                padding={1}
-              >
-                <DenseAppBar
-                  onClick={this.timelineHandler}
-                  title="Timeline"
-                />
-                <Collapse
-                  in={this.state.timelineshowhide}
-                >
+              <Grid item xs={2} padding={1}>
+                <DenseAppBar onClick={this.timelineHandler} title="Timeline"/>
+                <Collapse in={this.state.timelineshowhide}>
                   <GenericTable
                     data={this.state.Updateddatacasts}
                     columns={[
@@ -582,17 +543,8 @@ class App extends Component {
           </div>
         </Collapse>
         <div style={ {padding: '8px 0px 0px 0px' }}>
-          <Collapse 
-            in={this.state.healTableShow}
-          >
-            <LoadingOverlay
-              active={spinnershow}
-              spinner={
-                <CircularProgress
-                  color="secondary"
-                />
-              }
-            >
+          <Collapse in={this.state.healTableShow}>
+            <LoadingOverlay active={spinnershow} spinner={<CircularProgress color="secondary"/>}>
               <Chart
                 chart={this.state.cooldownhelperfinal}
                 abilitylist={this.state.abilitylist}
@@ -602,41 +554,19 @@ class App extends Component {
             </LoadingOverlay>
           </Collapse>
         </div>
-        <div
-          style={{ height: 6 }}
-        />
-        <Grid
-          container
-          direction="row"
-          justify="flex-start"
-          alignItems="flex-start"
-          spacing={1} 
-        >
-          <Grid
-            item xs={'auto'}
-            padding={1}
-          >
-            <CustomEditComponent
-              update={this.tablehandler}
-            />
+        <div style={{ height: 6 }}/>
+        <Grid container direction="row" justify="flex-start" alignItems="flex-start" spacing={1}>
+          <Grid item xs={'6'} padding={1}>
+            <CustomEditComponent update={this.tablehandler} />
           </Grid>
-          <Grid
-            item xs={'Auto'}
-            padding={1}
-          >
-            <DenseAppBar
-              onClick={this.ertHandler}
-              title="ERT Note"
-            />
-            <Collapse
-              in={this.state.ertshowhide}
-            >
+          <Grid item xs={2} padding={1}>
+            <DenseAppBar onClick={this.ertHandler} title="ERT Note" />
+            <Collapse in={this.state.ertshowhide} >
               <GenericTable
                 data={this.state.ertList}
                 columns={[{ title: 'Name', field: 'ert' }]}
                 title="ERT Note"
-                header={false}
-              />
+                header={false} />
             </Collapse>
           </Grid>
         </Grid>
@@ -646,14 +576,3 @@ class App extends Component {
 }
 
 export default App;
- //                   <Box
-                  //   bgcolor="#333"
-                  //   style={{
-                  //     borderRadius: '0px 0px 4px 4px',
-                  //     boxShadow: '0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12)',
-                  //     margin: 0
-                  //   }}>
-                  //   <OppositeContentTimeline
-                  //     data={this.state.Updateddatacasts}
-                  //   />
-                  // </Box>
