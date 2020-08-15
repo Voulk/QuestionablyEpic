@@ -557,7 +557,7 @@ class App extends Component {
         </div>
         <div style={{ height: 6 }}/>
         <Grid container direction="row" justify="flex-start" alignItems="flex-start" spacing={1}>
-          <Grid item xs={'Auto'} padding={1}>
+          <Grid item xs={6} padding={1}>
             <CustomEditComponent update={this.tablehandler} />
           </Grid>
           <Grid item xs={2} padding={1}>

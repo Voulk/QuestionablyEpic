@@ -21,8 +21,8 @@ export default function classcds(props) {
         <a data-wowhead='spell=31821'>
           <img
             style={{
-              height: 18,
-              width: 18,
+              height: 20,
+              width: 20,
               padding: '0px 5px 0px 5px',
               verticalAlign: 'middle'
             }}
@@ -36,8 +36,8 @@ export default function classcds(props) {
         <a data-wowhead='spell=31884'>
           <img
             style={{
-              height: 18,
-              width: 18,
+              height: 20,
+              width: 20,
               padding: '0px 5px 0px 5px',
               verticalAlign: 'middle'
             }}
@@ -56,8 +56,8 @@ export default function classcds(props) {
         <a data-wowhead='spell=740'>
           <img
             style={{
-              height: 18,
-              width: 18,
+              height: 20,
+              width: 20,
               padding: '0px 5px 0px 5px',
               verticalAlign: 'middle'
             }}
@@ -71,8 +71,8 @@ export default function classcds(props) {
         <a data-wowhead='spell=33891'>
           <img
             style={{
-              height: 18,
-              width: 18,
+              height: 20,
+              width: 20,
               padding: '0px 5px 0px 5px',
               verticalAlign: 'middle'
             }}
@@ -91,8 +91,8 @@ export default function classcds(props) {
         <a data-wowhead='spell=265202'>
           <img
             style={{
-              height: 18,
-              width: 18,
+              height: 20,
+              width: 20,
               padding: '0px 5px 0px 5px',
               verticalAlign: 'middle'
             }}
@@ -106,8 +106,8 @@ export default function classcds(props) {
         <a data-wowhead='spell=64843'>
           <img
             style={{
-              height: 18,
-              width: 18,
+              height: 20,
+              width: 20,
               padding: '0px 5px 0px 5px',
               verticalAlign: 'middle'
             }}
@@ -126,8 +126,8 @@ export default function classcds(props) {
         <a data-wowhead='spell=62618'>
           <img
             style={{
-              height: 18,
-              width: 18,
+              height: 20,
+              width: 20,
               padding: '0px 5px 0px 5px',
               verticalAlign: 'middle'
             }}
@@ -141,8 +141,8 @@ export default function classcds(props) {
         <a data-wowhead='spell=246287'>
           <img
             style={{
-              height: 18,
-              width: 18,
+              height: 20,
+              width: 20,
               padding: '0px 5px 0px 5px',
               verticalAlign: 'middle'
             }}
@@ -161,8 +161,8 @@ export default function classcds(props) {
         <a data-wowhead='spell=108280'>
           <img
             style={{
-              height: 18,
-              width: 18,
+              height: 20,
+              width: 20,
               padding: '0px 5px 0px 5px',
               verticalAlign: 'middle'
             }}
@@ -176,8 +176,8 @@ export default function classcds(props) {
         <a data-wowhead='spell=98008'>
           <img
             style={{
-              height: 18,
-              width: 18,
+              height: 20,
+              width: 20,
               padding: '0px 5px 0px 5px',
               verticalAlign: 'middle'
             }}
@@ -196,8 +196,8 @@ export default function classcds(props) {
         <a data-wowhead='spell=98008'>
           <img
             style={{
-              height: 18,
-              width: 18,
+              height: 20,
+              width: 20,
               padding: '0px 5px 0px 5px',
               verticalAlign: 'middle'
             }}

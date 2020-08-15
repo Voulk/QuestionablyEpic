@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import moment from 'moment';
 import MenuItem from '@material-ui/core/MenuItem';
+import bossIcons from '../CooldownTable/BossIcons'
 
 const API = 'https://www.warcraftlogs.com:443/v1/report/fights/';
 const API2 = '?api_key=92fc5d4ae86447df22a8c0917c1404dc'
@@ -50,7 +51,9 @@ class LogImport extends Component {
 
 
  render(props) {
+
    const { fights } = this.state;
+   console.log(fights)
    if (this.state.reportid === null) {
      return (<MenuItem value='Fight'>"No Report Loaded"</MenuItem>);
    } else {
@@ -62,7 +65,8 @@ class LogImport extends Component {
            onClick={() => {
              this.props.clicker(fight.start_time, fight.end_time, fight.name, moment(this.mather(fight.end_time, fight.start_time)).format("mm:ss"), this.killwipe(fight.kill)); this.props.update(fight.start_time, fight.end_time)}}
          >
-           {fight.name}-{moment(this.mather(fight.end_time, fight.start_time)).format("mm:ss")}-{this.killwipe(fight.kill)}-{fight.bossPercentage / 100 + '%'}
+           {bossIcons(fight.boss)}
+           {fight.name + ' - ' + moment(this.mather(fight.end_time, fight.start_time)).format("mm:ss") + ' - ' + this.killwipe(fight.kill) + ' - ' + fight.bossPercentage / 100 + '%'}
          </MenuItem>
        )
      )

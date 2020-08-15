@@ -113,3 +113,18 @@ export const healerCooldownsDetailed = [
   { name: 'Primordial Wave', guid: 326059, duration: 1, cooldown: 45 },
   { name: 'Fae Transfusion', guid: 328923, duration: 3, cooldown: 120 }
 ]
+
+export const bossIds = [
+  { id: 2327, name: 'Maut', raid: "Ny'alotha, the Waking City" },
+  { id: 2328, name: 'Dark Inquisitor Xanesh', raid: "Ny'alotha, the Waking City" },
+  { id: 2329, name: 'Wrathion', raid: "Ny'alotha, the Waking City" },
+  { id: 2331, name: 'Ra-den the Despoiled', raid: "Ny'alotha, the Waking City" },
+  { id: 2333, name: 'The Hivemind', raid: "Ny'alotha, the Waking City" },
+  { id: 2334, name: 'Prophet Skitra', raid: "Ny'alotha, the Waking City" },
+  { id: 2335, name: "Shad'har the Insatiable", raid: "Ny'alotha, the Waking City" },
+  { id: 2336, name: 'Vexiona', raid: "Ny'alotha, the Waking City" },
+  { id: 2337, name: "Carapace of N'Zoth", raid: "Ny'alotha, the Waking City" },
+  { id: 2343, name: "Drest'agath", raid: "Ny'alotha, the Waking City" },
+  { id: 2344, name: "N'Zoth the Corruptor", raid: "Ny'alotha, the Waking City" },
+  { id: 2345, name: "Il'gynoth, Corruption Reborn", raid: "Ny'alotha, the Waking City" }
+]

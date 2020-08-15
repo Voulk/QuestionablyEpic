@@ -42,8 +42,8 @@ export default function abilityicons(props) {
         <a data-wowhead='spell=31821'>
           <img
             style={{
-              height: 18,
-              width: 18,
+              height: 20,
+              width: 20,
               padding: '0px 5px 0px 5px',
               verticalAlign: 'middle'
             }}
@@ -62,8 +62,8 @@ export default function abilityicons(props) {
         <a data-wowhead='spell=31884'>
           <img
             style={{
-              height: 18,
-              width: 18,
+              height: 20,
+              width: 20,
               padding: '0px 5px 0px 5px',
               verticalAlign: 'middle'
             }}
@@ -84,8 +84,8 @@ export default function abilityicons(props) {
         <a data-wowhead='spell=304971'>
           <img
             style={{
-              height: 18,
-              width: 18,
+              height: 20,
+              width: 20,
               padding: '0px 5px 0px 5px',
               verticalAlign: 'middle'
             }}
@@ -104,8 +104,8 @@ export default function abilityicons(props) {
         <a data-wowhead='spell=316958'>
           <img
             style={{
-              height: 18,
-              width: 18,
+              height: 20,
+              width: 20,
               padding: '0px 5px 0px 5px',
               verticalAlign: 'middle'
             }}
@@ -124,8 +124,8 @@ export default function abilityicons(props) {
         <a data-wowhead='spell=31821'>
           <img
             style={{
-              height: 18,
-              width: 18,
+              height: 20,
+              width: 20,
               padding: '0px 5px 0px 5px',
               verticalAlign: 'middle'
             }}
@@ -144,8 +144,8 @@ export default function abilityicons(props) {
         <a data-wowhead='spell=328278'>
           <img
             style={{
-              height: 18,
-              width: 18,
+              height: 20,
+              width: 20,
               padding: '0px 5px 0px 5px',
               verticalAlign: 'middle'
             }}
@@ -166,8 +166,8 @@ export default function abilityicons(props) {
         <a data-wowhead='spell=740'>
           <img
             style={{
-              height: 18,
-              width: 18,
+              height: 20,
+              width: 20,
               padding: '0px 5px 0px 5px',
               verticalAlign: 'middle'
             }}
@@ -186,8 +186,8 @@ export default function abilityicons(props) {
         <a data-wowhead='spell=33891'>
           <img
             style={{
-              height: 18,
-              width: 18,
+              height: 20,
+              width: 20,
               padding: '0px 5px 0px 5px',
               verticalAlign: 'middle'
             }}
@@ -208,8 +208,8 @@ export default function abilityicons(props) {
         <a data-wowhead='spell=326434'>
           <img
             style={{
-              height: 18,
-              width: 18,
+              height: 20,
+              width: 20,
               padding: '0px 5px 0px 5px',
               verticalAlign: 'middle'
             }}
@@ -228,8 +228,8 @@ export default function abilityicons(props) {
         <a data-wowhead='spell=323546'>
           <img
             style={{
-              height: 18,
-              width: 18,
+              height: 20,
+              width: 20,
               padding: '0px 5px 0px 5px',
               verticalAlign: 'middle'
             }}
@@ -248,8 +248,8 @@ export default function abilityicons(props) {
         <a data-wowhead='spell=325727'>
           <img
             style={{
-              height: 18,
-              width: 18,
+              height: 20,
+              width: 20,
               padding: '0px 5px 0px 5px',
               verticalAlign: 'middle'
             }}
@@ -268,8 +268,8 @@ export default function abilityicons(props) {
         <a data-wowhead='spell=323764'>
           <img
             style={{
-              height: 18,
-              width: 18,
+              height: 20,
+              width: 20,
               padding: '0px 5px 0px 5px',
               verticalAlign: 'middle'
             }}
@@ -290,8 +290,8 @@ export default function abilityicons(props) {
         <a data-wowhead='spell=265202'>
           <img
             style={{
-              height: 18,
-              width: 18,
+              height: 20,
+              width: 20,
               padding: '0px 5px 0px 5px',
               verticalAlign: 'middle'
             }}
@@ -310,8 +310,8 @@ export default function abilityicons(props) {
         <a data-wowhead='spell=64843'>
           <img
             style={{
-              height: 18,
-              width: 18,
+              height: 20,
+              width: 20,
               padding: '0px 5px 0px 5px',
               verticalAlign: 'middle'
             }}
@@ -332,8 +332,8 @@ export default function abilityicons(props) {
         <a data-wowhead='spell=62618'>
           <img
             style={{
-              height: 18,
-              width: 18,
+              height: 20,
+              width: 20,
               padding: '0px 5px 0px 5px',
               verticalAlign: 'middle'
             }}
@@ -352,8 +352,8 @@ export default function abilityicons(props) {
         <a data-wowhead='spell=246287'>
           <img
             style={{
-              height: 18,
-              width: 18,
+              height: 20,
+              width: 20,
               padding: '0px 5px 0px 5px',
               verticalAlign: 'middle'
             }}
@@ -374,8 +374,8 @@ export default function abilityicons(props) {
         <a data-wowhead='spell=325013'>
           <img
             style={{
-              height: 18,
-              width: 18,
+              height: 20,
+              width: 20,
               padding: '0px 5px 0px 5px',
               verticalAlign: 'middle'
             }}
@@ -394,8 +394,8 @@ export default function abilityicons(props) {
         <a data-wowhead='spell=323673'>
           <img
             style={{
-              height: 18,
-              width: 18,
+              height: 20,
+              width: 20,
               padding: '0px 5px 0px 5px',
               verticalAlign: 'middle'
             }}
@@ -414,8 +414,8 @@ export default function abilityicons(props) {
         <a data-wowhead='spell=324724'>
           <img
             style={{
-              height: 18,
-              width: 18,
+              height: 20,
+              width: 20,
               padding: '0px 5px 0px 5px',
               verticalAlign: 'middle'
             }}
@@ -434,8 +434,8 @@ export default function abilityicons(props) {
         <a data-wowhead='spell=327661'>
           <img
             style={{
-              height: 18,
-              width: 18,
+              height: 20,
+              width: 20,
               padding: '0px 5px 0px 5px',
               verticalAlign: 'middle'
             }}
@@ -456,8 +456,8 @@ export default function abilityicons(props) {
         <a data-wowhead='spell=108280'>
           <img
             style={{
-              height: 18,
-              width: 18,
+              height: 20,
+              width: 20,
               padding: '0px 5px 0px 5px',
               verticalAlign: 'middle'
             }}
@@ -476,8 +476,8 @@ export default function abilityicons(props) {
         <a data-wowhead='spell=98008'>
           <img
             style={{
-              height: 18,
-              width: 18,
+              height: 20,
+              width: 20,
               padding: '0px 5px 0px 5px',
               verticalAlign: 'middle'
             }}
@@ -498,8 +498,8 @@ export default function abilityicons(props) {
         <a data-wowhead='spell=324386'>
           <img
             style={{
-              height: 18,
-              width: 18,
+              height: 20,
+              width: 20,
               padding: '0px 5px 0px 5px',
               verticalAlign: 'middle'
             }}
@@ -518,8 +518,8 @@ export default function abilityicons(props) {
         <a data-wowhead='spell=320674'>
           <img
             style={{
-              height: 18,
-              width: 18,
+              height: 20,
+              width: 20,
               padding: '0px 5px 0px 5px',
               verticalAlign: 'middle'
             }}
@@ -538,8 +538,8 @@ export default function abilityicons(props) {
         <a data-wowhead='spell=326059'>
           <img
             style={{
-              height: 18,
-              width: 18,
+              height: 20,
+              width: 20,
               padding: '0px 5px 0px 5px',
               verticalAlign: 'middle'
             }}
@@ -558,8 +558,8 @@ export default function abilityicons(props) {
         <a data-wowhead='spell=328923'>
           <img
             style={{
-              height: 18,
-              width: 18,
+              height: 20,
+              width: 20,
               padding: '0px 5px 0px 5px',
               verticalAlign: 'middle'
             }}
@@ -580,8 +580,8 @@ export default function abilityicons(props) {
         <a data-wowhead='spell=98008'>
           <img
             style={{
-              height: 18,
-              width: 18,
+              height: 20,
+              width: 20,
               padding: '0px 5px 0px 5px',
               verticalAlign: 'middle'
             }}
@@ -602,8 +602,8 @@ export default function abilityicons(props) {
         <a data-wowhead='spell=310454'>
           <img
             style={{
-              height: 18,
-              width: 18,
+              height: 20,
+              width: 20,
               padding: '0px 5px 0px 5px',
               verticalAlign: 'middle'
             }}
@@ -622,8 +622,8 @@ export default function abilityicons(props) {
         <a data-wowhead='spell=326860'>
           <img
             style={{
-              height: 18,
-              width: 18,
+              height: 20,
+              width: 20,
               padding: '0px 5px 0px 5px',
               verticalAlign: 'middle'
             }}
@@ -642,8 +642,8 @@ export default function abilityicons(props) {
         <a data-wowhead='spell=325216'>
           <img
             style={{
-              height: 18,
-              width: 18,
+              height: 20,
+              width: 20,
               padding: '0px 5px 0px 5px',
               verticalAlign: 'middle'
             }}
@@ -662,8 +662,8 @@ export default function abilityicons(props) {
         <a data-wowhead='spell=327104'>
           <img
             style={{
-              height: 18,
-              width: 18,
+              height: 20,
+              width: 20,
               padding: '0px 5px 0px 5px',
               verticalAlign: 'middle'
             }}

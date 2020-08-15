@@ -85,8 +85,8 @@ const items = [
     value={'Holy Paladin'}>
     <img
       style={{
-        height: 18,
-        width: 18,
+        height: 20,
+        width: 20,
         padding: '0px 5px 0px 5px',
         verticalAlign: 'middle'
       }}
@@ -100,8 +100,8 @@ const items = [
     value={'Restoration Druid'}>
     <img
       style={{
-        height: 18,
-        width: 18,
+        height: 20,
+        width: 20,
         padding: '0px 5px 0px 5px',
         verticalAlign: 'middle'
       }}
@@ -115,8 +115,8 @@ const items = [
     value={'Holy Priest'}>
     <img
       style={{
-        height: 18,
-        width: 18,
+        height: 20,
+        width: 20,
         padding: '0px 5px 0px 5px',
         verticalAlign: 'middle'
       }}
@@ -130,8 +130,8 @@ const items = [
     value={'Discispline Priest'}>
     <img
       style={{
-        height: 18,
-        width: 18,
+        height: 20,
+        width: 20,
         padding: '0px 5px 0px 5px',
         verticalAlign: 'middle'
       }}
@@ -145,8 +145,8 @@ const items = [
     value={'Restoration Shaman'}>
     <img
       style={{
-        height: 18,
-        width: 18,
+        height: 20,
+        width: 20,
         padding: '0px 5px 0px 5px',
         verticalAlign: 'middle'
       }}
@@ -160,8 +160,8 @@ const items = [
     value={'Mistweaver Monk'}>
     <img
       style={{
-        height: 18,
-        width: 18,
+        height: 20,
+        width: 20,
         padding: '0px 5px 0px 5px',
         verticalAlign: 'middle'
       }}

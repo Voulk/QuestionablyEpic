@@ -12,8 +12,8 @@ export default function classicons(props) {
     return (
       <img
         style={{
-          height: 18,
-          width: 18,
+          height: 20,
+          width: 20,
           padding: '0px 5px 0px 5px',
           verticalAlign: 'middle'
         }}
@@ -28,8 +28,8 @@ export default function classicons(props) {
     return (
       <img
         style={{
-          height: 18,
-          width: 18,
+          height: 20,
+          width: 20,
           padding: '0px 5px 0px 5px',
           verticalAlign: 'middle'
         }}
@@ -44,8 +44,8 @@ export default function classicons(props) {
     return (
       <img
         style={{
-          height: 18,
-          width: 18,
+          height: 20,
+          width: 20,
           padding: '0px 5px 0px 5px',
           verticalAlign: 'middle'
         }}
@@ -60,8 +60,8 @@ export default function classicons(props) {
     return (
       <img
         style={{
-          height: 18,
-          width: 18,
+          height: 20,
+          width: 20,
           padding: '0px 5px 0px 5px',
           verticalAlign: 'middle'
         }}
@@ -76,8 +76,8 @@ export default function classicons(props) {
     return (
       <img
         style={{
-          height: 18,
-          width: 18,
+          height: 20,
+          width: 20,
           padding: '0px 5px 0px 5px',
           verticalAlign: 'middle'
         }}
@@ -92,8 +92,8 @@ export default function classicons(props) {
     return (
       <img
         style={{
-          height: 18,
-          width: 18,
+          height: 20,
+          width: 20,
           padding: '0px 5px 0px 5px',
           verticalAlign: 'middle'
         }}

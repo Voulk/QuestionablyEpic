@@ -6,6 +6,7 @@ import moment from 'moment';
 
 class Chart extends Component {
   constructor(props) {
+
     super(props)
     this.state = {
       abilityList: this.props.abilitylist,
@@ -103,9 +104,26 @@ class Chart extends Component {
         return number.toString()
       }
     }
+//     const renderLegend = (props) => {
+//   const { payload } = props;
+
+//   return (
+//     <ul>
+//       {
+//         payload.map((entry, index) => (
+//           <a 
+//           <li key={`item-${index}`}>{entry.value}</li>
+//         ))
+//       }
+//     </ul>
+//   );
+// }
+// <Legend content={renderLegend} />
 
     return (
+
       <ResponsiveContainer className='ResponsiveContainer' width='100%' height={300} >
+
         <AreaChart
           width={1500}
           height={300}
@@ -139,12 +157,20 @@ class Chart extends Component {
             padding={10}
             iconType='square'
             iconSize={8}
+            // payload={
+            //   this.props.chart.map(
+            //     item => ({
+            //       id: item.ability,
+            //       type: "square",
+            //       value: `${item.ability}`,
+            //     }))}
           />
           <Tooltip
             labelStyle={{ color: '#ffffff' }}
             contentStyle={{ backgroundColor: '#1b1b1b', border: '1px solid #1b1b1b' }}
             labelFormatter={timeStr => moment(timeStr).format('mm:ss')}
           />
+                  {console.log(this.props.chart)}
           {this.drawAreas()}
         </AreaChart>
 
