@@ -448,6 +448,7 @@ class App extends Component {
     let spinnershow = this.state.loadingcheck;
     return (
       <div className='App'>
+      {console.log(moment('00:05', 'mm:ss').add(30, 's').format("mm:ss"))}
         <Box
           bgcolor="#333"
           style={{
@@ -526,7 +527,7 @@ class App extends Component {
               justify="flex-start"
               alignItems="flex-start"
               spacing={1} >
-              <Grid item xs={2} padding={1}>
+              <Grid item xs={'Auto'} padding={1}>
                 <DenseAppBar onClick={this.timelineHandler} title="Timeline"/>
                 <Collapse in={this.state.timelineshowhide}>
                   <GenericTable
@@ -556,7 +557,7 @@ class App extends Component {
         </div>
         <div style={{ height: 6 }}/>
         <Grid container direction="row" justify="flex-start" alignItems="flex-start" spacing={1}>
-          <Grid item xs={'6'} padding={1}>
+          <Grid item xs={'Auto'} padding={1}>
             <CustomEditComponent update={this.tablehandler} />
           </Grid>
           <Grid item xs={2} padding={1}>

@@ -32,10 +32,11 @@ import FormControl from '@material-ui/core/FormControl';
 import { makeStyles } from '@material-ui/core/styles';
 import abilityicons from '../CooldownTable/AbilityIcons'
 import classicons from '../CooldownTable/ClassIcons'
+import moment from 'moment';
+import { healerCooldownsDetailed } from '../Data/Data'
 
 const themecooldowntable = createMuiTheme({
   overrides: {
-    // Style sheet name :atom:
     MuiTableCell: {
       root: {
         padding: '0px 16px 0px 16px',
@@ -268,6 +269,12 @@ const classes = useStyles();
     },
     {
       title: 'Next Available',
+      render: rowData => (
+        <div>
+          {moment(rowData.time, 'mm:ss').add(healerCooldownsDetailed.filter(obj => {
+            return obj.name === rowData.Cooldown
+          }).map(obj => obj.cooldown).toString(), 's').format("mm:ss")}
+        </div>)
     },
     {
       title: 'Notes',
