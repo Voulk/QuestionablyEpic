@@ -18,6 +18,7 @@ import Links from './Links/Links'
 import GenericTable from './CooldownTable/GenericTable';
 import DenseAppBar from './Appbar/Appbar'
 import abilityicons from './CooldownTable/AbilityIcons'
+import { classColoursERT } from './CooldownTable/ClassColourFunctions'
 
 class App extends Component {
   constructor() {
@@ -370,7 +371,7 @@ class App extends Component {
   }
 
   usernameChangedHandler = (event) => {
-    let actuallink = event.target.value 
+    let actuallink = event.target.value
     this.setState({ logactuallink: event.target.value });
     this.setState({ reportid: actuallink.substring(37,53) });
   }
@@ -436,7 +437,7 @@ class App extends Component {
     }, {})
     let sortedData2 = []
     Object.keys(datarReformater2).forEach(element2 => sortedData2.push(datarReformater2[element2]))
-    let abc = element.map(key => ([{ ert: '{time:' + key.time + '}' + ' - ' + key.name + ' - ' + key.Cooldown }])).flat()
+    let abc = element.map(key => ([{ ert: '{time:' + key.time + '}' + ' - ' + classColoursERT(key.class) + key.name + '|r' + ' - ' + key.Cooldown }])).flat()
     this.setState({ 
       cooldownhelperfinal: sortedData2,
       cooldownlistcustom2: cooldownlistcustom2,
@@ -448,7 +449,6 @@ class App extends Component {
     let spinnershow = this.state.loadingcheck;
     return (
       <div className='App'>
-      {console.log(moment('00:05', 'mm:ss').add(30, 's').format("mm:ss"))}
         <Box
           bgcolor="#333"
           style={{
@@ -557,10 +557,10 @@ class App extends Component {
         </div>
         <div style={{ height: 6 }}/>
         <Grid container direction="row" justify="flex-start" alignItems="flex-start" spacing={1}>
-          <Grid item xs={6} padding={1}>
+          <Grid item xs={9} padding={1}>
             <CustomEditComponent update={this.tablehandler} />
           </Grid>
-          <Grid item xs={2} padding={1}>
+          <Grid item xs={3} padding={1}>
             <DenseAppBar onClick={this.ertHandler} title="ERT Note" />
             <Collapse in={this.state.ertshowhide} >
               <GenericTable

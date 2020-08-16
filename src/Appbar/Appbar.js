@@ -61,7 +61,7 @@ export default function DenseAppBar(props) {
   return (
     <ThemeProvider theme={theme}>
       <div className={classes.root}>
-        <AppBar position="static">
+        <AppBar position="static" style={{ borderRadius: '4px 4px 0px 0px'}} >
           <Toolbar variant="dense">
             <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu" onClick={props.onClick}>
               <MenuIcon />

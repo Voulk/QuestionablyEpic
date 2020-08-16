@@ -126,5 +126,16 @@ export const bossIds = [
   { id: 2337, name: "Carapace of N'Zoth", raid: "Ny'alotha, the Waking City" },
   { id: 2343, name: "Drest'agath", raid: "Ny'alotha, the Waking City" },
   { id: 2344, name: "N'Zoth the Corruptor", raid: "Ny'alotha, the Waking City" },
-  { id: 2345, name: "Il'gynoth, Corruption Reborn", raid: "Ny'alotha, the Waking City" }
+  { id: 2345, name: "Il'gynoth, Corruption Reborn", raid: "Ny'alotha, the Waking City" },
+  
+  { id: 2398, name: 'Shriekwing', raid: 'Castle Nathria' },
+  { id: 2418, name: 'Huntsman Altimor', raid: 'Castle Nathria' },
+  { id: 2402, name: "Sun King's Salvation", raid: 'Castle Nathria' },
+  { id: 2405, name: "Artificer Xy'mox", raid: 'Castle Nathria' },
+  { id: 2383, name: 'Hungering Destroyer', raid: 'Castle Nathria' },
+  { id: 2406, name: 'Lady Inerva Darkvein', raid: 'Castle Nathria' },
+  { id: 2412, name: 'The Council of Blood', raid: 'Castle Nathria' },
+  { id: 2399, name: 'Sludgefist', raid: 'Castle Nathria' },
+  { id: 2417, name: 'Stone Legion Generals', raid: 'Castle Nathria' },
+  { id: 2407, name: 'Sire Denathrius', raid: 'Castle Nathria' },
 ]

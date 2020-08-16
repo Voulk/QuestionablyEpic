@@ -34,6 +34,7 @@ import abilityicons from '../CooldownTable/AbilityIcons'
 import classicons from '../CooldownTable/ClassIcons'
 import moment from 'moment';
 import { healerCooldownsDetailed } from '../Data/Data'
+import { classColoursJS } from '../CooldownTable/ClassColourFunctions'
 
 const themecooldowntable = createMuiTheme({
   overrides: {
@@ -194,13 +195,17 @@ const tableIcons = {
 };
 
 export default function CustomEditComponent(props) {
-const classes = useStyles();
+  const classes = useStyles();
   const { useState } = React;
   let a = 0
   const [columns, setColumns] = useState([
     {
       title: 'Name',
       field: 'name',
+      render: rowData => (
+        <div style={{ color: classColoursJS(rowData.class) }}>
+          {rowData.name}
+        </div>),
       editComponent: props => (
         <TextField
           size="small"
@@ -216,7 +221,7 @@ const classes = useStyles();
       title: 'Class',
       field: 'class',
       render: rowData => (
-        <div>
+        <div style={{ color: classColoursJS(rowData.class) }}>
           {classicons(rowData.class)}
           {rowData.class}
         </div>),
@@ -371,6 +376,6 @@ const classes = useStyles();
             }),
         }}
       />
-      </ThemeProvider>
+    </ThemeProvider>
   )
 }
