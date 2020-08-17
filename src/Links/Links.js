@@ -18,7 +18,7 @@ export default function Links() {
   return (
     <Typography className={classes.root}>
       <Link href="https://docs.google.com/forms/d/e/1FAIpQLSc56_jtmRu9YolkZNH48jQCv-dn8R_HAuAcbwmM6VCtzxdETQ/viewform">
-        Report Bugs/Feedback
+        Bugs/Feedback
       </Link>
       <Link href="https://trello.com/b/iWirX7lE/holydiver">
         Trello

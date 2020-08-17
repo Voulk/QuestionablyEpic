@@ -60,7 +60,8 @@ class App extends Component {
       showname: false,
       Updateddatacasts: [],
       ertshowhide: false,
-      timelineshowhide: false
+      timelineshowhide: false,
+      legenddata: []
     }
   }
 
@@ -225,8 +226,16 @@ class App extends Component {
         healerIDName.filter(obj => {
           return obj.id === key.sourceID
         }).map(obj => obj.name) + ' - ' + key.ability.name));
+
       let uniqueArray = Array.from(new Set(abilitylistold));
       let uniqueArrayCD = Array.from(new Set(cooldownlistold));
+
+      let abilitylistGuidTest = damage.map(key =>({ value: key.ability.name, id: key.ability.guid }));
+      let legenddata = this.getUnique(abilitylistGuidTest, 'id')
+      let uniqueArrayNewForLegend = legenddata.concat(uniqueArrayCD)
+
+
+      console.log(uniqueArrayNewForLegend)
 
       let updatedarray = damage.map(key =>({
         timestamp: moment(this.mather(this.state.time, key.timestamp)).startOf('second').valueOf(),
@@ -288,6 +297,7 @@ class App extends Component {
       this.setState({
         cooldownhelper: sortedData2,
         cooldownhelperfinal: sortedData2,
+        legenddata: uniqueArrayNewForLegend,
         updatedarray: sortedData,
         Updateddatacasts: updateddatacastsTimeline,
         abilitylist: uniqueArray,
@@ -298,6 +308,17 @@ class App extends Component {
         currentStartTime: starttime
       });
     }
+
+  getUnique = (arr, comp) => {
+    // store the comparison  values in array
+    const unique = arr.map(e => e[comp])
+    // store the indexes of the unique objects
+      .map((e, i, final) => final.indexOf(e) === i && i)
+      // eliminate the false indexes & return unique objects
+      .filter((e) => arr[e]).map(e => arr[e]);
+    return unique;
+  }
+
 
   reduceTimestamps = (array) => { 
     let timestampSum = array.reduce((acc, cur) => {
@@ -437,7 +458,8 @@ class App extends Component {
     }, {})
     let sortedData2 = []
     Object.keys(datarReformater2).forEach(element2 => sortedData2.push(datarReformater2[element2]))
-    let abc = element.map(key => ([{ ert: '{time:' + key.time + '}' + ' - ' + classColoursERT(key.class) + key.name + '|r' + ' - ' + key.Cooldown }])).flat()
+    let abc = element.map(key => ({ ert: '{time:' + key.time + '}' + ' - ' + classColoursERT(key.class) + key.name + '|r' + ' - ' + key.Cooldown, time: key.time }))
+    console.log(abc)
     this.setState({ 
       cooldownhelperfinal: sortedData2,
       cooldownlistcustom2: cooldownlistcustom2,
@@ -447,115 +469,77 @@ class App extends Component {
 
   render() {
     let spinnershow = this.state.loadingcheck;
+
     return (
       <div className='App'>
-        <Box
-          bgcolor="#333"
-          style={{
-            borderRadius: 4,
-            boxShadow: '0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12)'}}>
-          <Grid
-            container
-            direction="row"
-            justify="flex-start"
-            alignItems="flex-start"
-            spacing={1}>
-            <Grid item xs={3} padding={1}>
-              <UserInput
-                changed={this.usernameChangedHandler}
-                float={"left"}
-                position={"relative"}/>
-            </Grid>
-            <Grid item xs={'auto'} padding={1}>
-              <ControlledOpenSelect
-                reportid={this.state.reportid}
-                clicky={this.handler}
-                update={this.updatechartdata}
-                float={"right"}
-                position={"relative"}
-              />
-            </Grid>
-            <Grid item xs={'auto'} padding={1}>
-              {this.state.showname ? (
-                <Typography
-                  style={{
-                    fontWeight: 500,
-                    fontSize: '1.25rem',
-                    color: 'white',
-                    padding: '0px 16px 0px 16px'
-                  }}> 
-                  {this.state.boss}
-                </Typography>) : null }
-              {this.state.showname ? (
-                <Typography
-                  style={{
-                    fontWeight: 500,
-                    fontSize: '0.9rem',
-                    color: 'white',
-                    padding: '0px 16px 0px 16px',
-                    textAlign: 'center'
-                  }}>
-                  {this.state.currentFighttime + ' - ' + this.state.killWipe}
-                </Typography>) : null }
-            </Grid>
-            <Grid item xs={'auto'} padding={1}>
-              <InteractiveList heals={this.state.healernames} />
-            </Grid>
-            <Grid item xs={'auto'} padding={1}>
-              <Checkboxes check={this.damageTableShow} label={"Show Log Table"} />
-              <Checkboxes check={this.healTableShow} label={"Show Custom Table"} />
-            </Grid>
-            <Grid item xs={'auto'} padding={1}>
-              <Links />
-            </Grid>
-          </Grid>
-        </Box>
-        <div style={{ height: 10 }} />
-        <Collapse in={this.state.damageTableShow} >
-          <LoadingOverlay active={spinnershow} spinner={<CircularProgress color="secondary" />}>
-            <Chart
-              chart={this.state.updatedarray}
-              abilitylist={this.state.abilitylist}
-              cooldown={this.state.cooldownlist}
-              endtime={this.state.timeend}
-              showcds={true} />
-          </LoadingOverlay>
-          <div style={{ padding: '8px 0px 0px 0px' }}>
-            <Grid
-              container
-              direction="row"
-              justify="flex-start"
-              alignItems="flex-start"
-              spacing={1} >
-              <Grid item xs={'Auto'} padding={1}>
-                <DenseAppBar onClick={this.timelineHandler} title="Timeline"/>
-                <Collapse in={this.state.timelineshowhide}>
-                  <GenericTable
-                    data={this.state.Updateddatacasts}
-                    columns={[
-                      { title: 'Name', field: 'name' },
-                      { title: 'Ability', field: 'ability', render: rowData => (abilityicons(rowData.ability)) },
-                      { title: 'Time', field: 'timestamp' }]}
-                    title="Timeline"
-                    header={true}/>
-                </Collapse>
+        <Grid container direction="row" justify="flex-start" alignItems="flex-start" spacing={1}>
+          <Grid item xs={12} padding={1}>
+            <Box bgcolor="#333" style={{ borderRadius: 4, boxShadow: '0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12)' }}>
+              <Grid container direction="row" justify="flex-start" alignItems="flex-start" spacing={1}>
+                <Grid item xs={5} padding={1}>
+                  <UserInput changed={this.usernameChangedHandler} float={"left"} position={"relative"}/>
+                </Grid>
+                <Grid item xs={1} padding={1}>
+                  <ControlledOpenSelect reportid={this.state.reportid} clicky={this.handler} update={this.updatechartdata} float={"right"} position={"relative"}/>
+                </Grid>
+                <Grid item xs={1} padding={1} align='center'>
+                  {this.state.showname ? (
+                    <Typography style={{ fontWeight: 500, fontSize: '1.25rem', color: 'white', padding: '0px 16px 0px 16px' }}>
+                      {this.state.boss}
+                    </Typography>) : null }
+                  {this.state.showname ? (
+                    <Typography style={{ fontWeight: 500, fontSize: '0.9rem', color: 'white', padding: '0px 16px 0px 16px', textAlign: 'center' }}>
+                      {this.state.currentFighttime + ' - ' + this.state.killWipe}
+                    </Typography>) : null }
+                </Grid>
+                <Grid item xs={2} padding={1}>
+                  <InteractiveList heals={this.state.healernames} />
+                </Grid>
+                <Grid item xs={1} padding={1}>
+                  <Checkboxes check={this.damageTableShow} label={"Show Log Table"} />
+                  <Checkboxes check={this.healTableShow} label={"Show Custom Table"} />
+                </Grid>
+                <Grid item xs={2} padding={1}>
+                  <Links />
+                </Grid>
               </Grid>
-            </Grid>
-          </div>
-        </Collapse>
-        <div style={ {padding: '8px 0px 0px 0px' }}>
-          <Collapse in={this.state.healTableShow}>
-            <LoadingOverlay active={spinnershow} spinner={<CircularProgress color="secondary"/>}>
-              <Chart
-                chart={this.state.cooldownhelperfinal}
-                abilitylist={this.state.abilitylist}
-                cooldown={this.state.cooldownlistcustom2}
-                endtime={this.state.timeend}
-                showcds={true} />
-            </LoadingOverlay>
-          </Collapse>
-        </div>
-        <div style={{ height: 6 }}/>
+            </Box>
+          </Grid>
+        </Grid>
+
+        <div style={{margin: '4px 0px 0px 0px'}}/>
+
+        <Grid container direction="row" justify="flex-start" alignItems="flex-start" spacing={1}>
+          <Grid item xs={12} padding={1}>  
+            <Collapse in={this.state.damageTableShow} >
+              <LoadingOverlay active={spinnershow} spinner={<CircularProgress color="secondary" />}>
+                <Chart chart={this.state.updatedarray} abilitylist={this.state.abilitylist} legendata={this.state.legenddata} cooldown={this.state.cooldownlist} endtime={this.state.timeend} showcds={true} />
+              </LoadingOverlay>
+            </Collapse>
+          </Grid>
+        </Grid>
+
+        <Grid container direction="row" justify="flex-start" alignItems="flex-start" spacing={1}>
+          <Grid item xs={3} padding={1}>
+            <Collapse in={this.state.damageTableShow} >  
+              <DenseAppBar onClick={this.timelineHandler} title="Timeline"/>
+              <Collapse in={this.state.timelineshowhide}>
+                <GenericTable data={this.state.Updateddatacasts} columns={[{ title: 'Name', field: 'name' },{ title: 'Ability', field: 'ability', render: rowData => (abilityicons(rowData.ability)) },{ title: 'Time', field: 'timestamp' }]} title='Timeline' header={true}/>
+              </Collapse>
+            </Collapse>
+          </Grid>
+        </Grid>
+
+        <Grid container direction="row" justify="flex-start" alignItems="flex-start" spacing={1}>
+          <Grid item xs={12} padding={1}>
+            <Collapse in={this.state.healTableShow}>
+              <LoadingOverlay active={spinnershow} spinner={<CircularProgress color="secondary"/>}>
+                <Chart chart={this.state.cooldownhelperfinal} abilitylist={this.state.abilitylist} cooldown={this.state.cooldownlistcustom2} endtime={this.state.timeend} showcds={true} />
+              </LoadingOverlay>
+            </Collapse>
+          </Grid>
+        </Grid>
+
         <Grid container direction="row" justify="flex-start" alignItems="flex-start" spacing={1}>
           <Grid item xs={9} padding={1}>
             <CustomEditComponent update={this.tablehandler} />
@@ -565,9 +549,9 @@ class App extends Component {
             <Collapse in={this.state.ertshowhide} >
               <GenericTable
                 data={this.state.ertList}
-                columns={[{ title: 'Name', field: 'ert' }]}
+                columns={[{ title: 'Sort by Time', field: 'ert' }, { title: 'Time', field: 'time', hidden: true, customSort: (a, b) => moment(a, 'mm:ss').milliseconds() - moment(b, 'mm:ss').milliseconds() } ]}
                 title="ERT Note"
-                header={false} />
+                header={true} />
             </Collapse>
           </Grid>
         </Grid>

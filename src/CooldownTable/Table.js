@@ -306,7 +306,7 @@ export default function CustomEditComponent(props) {
     <ThemeProvider theme={themecooldowntable}>
       <MaterialTable
         icons={tableIcons}
-        title="Cooldown Assigner"
+        title="Cooldown Planner"
         columns={columns}
         data={data}
         style={{

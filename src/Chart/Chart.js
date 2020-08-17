@@ -92,6 +92,16 @@ class Chart extends Component {
     this.setState({ data: this.props.chart })  
   }
 
+  renderColorfulLegendText = (value, id) => {
+    console.log({ id })
+    console.log({ value })
+    return (
+      <a data-wowhead={'spell=' + id }>
+        <span>{value}</span>
+      </a>
+    )
+  }
+
   render() {
     const DataFormater = (number) => {
       if (number > 1000000000) {
@@ -104,21 +114,6 @@ class Chart extends Component {
         return number.toString()
       }
     }
-//     const renderLegend = (props) => {
-//   const { payload } = props;
-
-//   return (
-//     <ul>
-//       {
-//         payload.map((entry, index) => (
-//           <a 
-//           <li key={`item-${index}`}>{entry.value}</li>
-//         ))
-//       }
-//     </ul>
-//   );
-// }
-// <Legend content={renderLegend} />
 
     return (
 
@@ -157,13 +152,8 @@ class Chart extends Component {
             padding={10}
             iconType='square'
             iconSize={8}
-            // payload={
-            //   this.props.chart.map(
-            //     item => ({
-            //       id: item.ability,
-            //       type: "square",
-            //       value: `${item.ability}`,
-            //     }))}
+            // formatter={this.renderColorfulLegendText}
+            // payload={this.props.legendata}
           />
           <Tooltip
             labelStyle={{ color: '#ffffff' }}
