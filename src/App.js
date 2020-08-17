@@ -20,6 +20,8 @@ import DenseAppBar from './Appbar/Appbar'
 import abilityicons from './CooldownTable/AbilityIcons'
 import { classColoursERT } from './CooldownTable/ClassColourFunctions'
 
+import QEMainMenu from './Modules/QEMainMenu.js';
+
 class App extends Component {
   constructor() {
     super()
@@ -472,6 +474,24 @@ class App extends Component {
 
     return (
       <div className='App'>
+
+
+        {/* 
+        - QE Live SL - 
+        
+          <QEMainMenu />
+
+        */}
+      
+      
+
+
+        {/* 
+        - Holy Diver - 
+          TODO: Move into separate JS file so it can be called from a main menu. 
+          TODO: Move logs information into separate JS file.
+        */}
+
         <Grid container direction="row" justify="flex-start" alignItems="flex-start" spacing={1}>
           <Grid item xs={12} padding={1}>
             <Box bgcolor="#333" style={{ borderRadius: 4, boxShadow: '0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12)' }}>
