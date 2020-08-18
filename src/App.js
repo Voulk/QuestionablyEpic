@@ -67,7 +67,9 @@ class App extends Component {
     }
   }
 
-    useless = () => {
+    useless = (starttime, endtime) => {
+            this.setState({ loadingcheck: true })
+
     }
 
     updatechartdata = async (starttime, endtime) => {
@@ -223,79 +225,92 @@ class App extends Component {
       } while (
         nextpage != undefined);
 
+      // Create List of Damaging Abilities from the Damage Import Array
       let abilitylistold = damage.map(key =>(key.ability.name));
-      let cooldownlistold = cooldowns.map(key =>(
-        healerIDName.filter(obj => {
-          return obj.id === key.sourceID
-        }).map(obj => obj.name) + ' - ' + key.ability.name));
-
+      // Create Unique List of Damaging Abilities
       let uniqueArray = Array.from(new Set(abilitylistold));
+      // Create List of Healing Cooldowns Used from the Healing Casts Array
+      let cooldownlistold = cooldowns.map(key =>( healerIDName.filter(obj => { return obj.id === key.sourceID }).map(obj => obj.name) + ' - ' + key.ability.name));
+      // Create Unique List of Healing Cooldowns 
       let uniqueArrayCD = Array.from(new Set(cooldownlistold));
 
-      let abilitylistGuidTest = damage.map(key =>({ value: key.ability.name, id: key.ability.guid }));
-      let legenddata = this.getUnique(abilitylistGuidTest, 'id')
-      let uniqueArrayNewForLegend = legenddata.concat(uniqueArrayCD)
+      // Attempting to create a list for Custom legend to use with wowhead tooltip
+      // Create Ability List With Guids for legend (Testing)
+      let legendAbilityListMap = damage.map(key =>({ value: key.ability.name, id: key.ability.guid }));
+      // Get Unique Objects from Ability list for the custom legend
+      let uniqueLegendData = this.getUniqueObjectsFromArray(legendAbilityListMap, 'id')
+      // Concat the Unique Ability List with the Cooldown List
+      let uniqueArrayNewForLegend = uniqueLegendData.concat(uniqueArrayCD)
 
+      // Map New Data Array Timestamp + ability name & Unmitaged Amount
+      let updatedarray = damage.map(
+        key =>({
+          timestamp: moment(this.mather(this.state.time, key.timestamp)).startOf('second').valueOf(),
+          [key.ability.name]: key.unmitigatedAmount
+        }));
 
-      console.log(uniqueArrayNewForLegend)
-
-      let updatedarray = damage.map(key =>({
-        timestamp: moment(this.mather(this.state.time, key.timestamp)).startOf('second').valueOf(),
-        [key.ability.name]: key.unmitigatedAmount }));
-
-      let updateddatacasts = cooldowns.map(key =>({
-        ability: key.ability.name,
-        timestamp: moment(this.mather(this.state.time, key.timestamp)).startOf('second').valueOf(),
-        [healerIDName.filter(obj => {
-          return obj.id === key.sourceID
-        }).map(obj => obj.name) + ' - ' + key.ability.name]: 1})
+      // Map New Data Array ability, Timestamp, Healer name - ability: 1
+      let updateddatacasts = cooldowns.map(
+        key =>({ ability: key.ability.name,
+          timestamp: moment(this.mather(this.state.time, key.timestamp)).startOf('second').valueOf(),
+          [healerIDName.filter(obj => {
+            return obj.id === key.sourceID
+          }).map(obj => obj.name) + ' - ' + key.ability.name]: 1})
       );
 
+      // Map New Array for casts for the timeline.
       let updateddatacastsTimeline = cooldowns.map(key =>({ 
         ability: key.ability.name,
         timestamp: moment(this.mather(this.state.time, key.timestamp)).startOf('second').format("mm:ss"),
-        name: healerIDName.filter(obj => {
-          return obj.id === key.sourceID
-        }).map(obj => obj.name).toString(),
+        name: healerIDName.filter(
+          obj => {
+            return obj.id === key.sourceID
+          }).map(
+          obj => obj.name).toString(),
         class: healerIDName.filter(obj => {
           return obj.id === key.sourceID
-        }).map(obj => obj.class).toString()
+        }).map(
+          obj => obj.class).toString()
       }
-      ));
+      ))
 
-      // Old Code for Timeline
-      // let updateddatacastsTimeline = cooldowns.map(key =>({ 
-      //   ability: key.ability.name,
-      //   timestamp: moment(this.mather(this.state.time, key.timestamp)).startOf('second').valueOf(),
-      //   [healerIDName.filter(obj => {
-      //     return obj.id === key.sourceID
-      //   }).map(obj => obj.name) + ' - ' + key.ability.name]: 1,
-      //   name: healerIDName.filter(obj => {
-      //     return obj.id === key.sourceID
-      //   }).map(obj => obj.name) + ' - ' + key.ability.name,
-      //   class: healerIDName.filter(obj => {
-      //     return obj.id === key.sourceID
-      //   }).map(obj => obj.class).toString()
-      // }
-      // ));
+      // Map the data casts using the durationmaker function (returning array of cooldowns duration), then pushing those into the healerdurations array
+      updateddatacasts.map(
+        key => healerdurations.push(
+          this.durationmaker(
+            key.ability, key.timestamp,
+            Object.getOwnPropertyNames(key).slice(2),
+            moment(this.mather(starttime, endtime)).startOf('second').valueOf()
+          )
+        )
+      )
 
-
-      updateddatacasts.map(key => healerdurations.push(this.durationmaker(key.ability, key.timestamp, Object.getOwnPropertyNames(key).slice(2), moment(this.mather(starttime, endtime)).startOf('second').valueOf())));
+      // Flatten the healer duration array 
       let cooldownwithdurations = healerdurations.flat();
-      let times = this.addMissingTimestamps(this.fightDurationCalculator(endtime, starttime));
-      let gg = updatedarray.concat(times);
-      let damageFromLogWithTimesAddedAndCooldowns = updatedarray.concat(cooldownwithdurations, times);
 
-      damageFromLogWithTimesAddedAndCooldowns.sort((a, b) => a.timestamp > b.timestamp ? 1 : -1);
+      // create missing timestamps from start to end of report selected
+      let times = this.addMissingTimestamps(
+        this.fightDurationCalculator(
+          endtime,
+          starttime
+        )
+      )
+      // concat the damage array with the cooldown durations with the missing durations
+      let damageFromLogWithTimesAddedAndCooldowns = updatedarray.concat(cooldownwithdurations, times)
+      // Sort the Array by Timestamp
+      damageFromLogWithTimesAddedAndCooldowns.sort((a, b) => a.timestamp > b.timestamp ? 1 : -1)
+      // reduce array removing any duplicate timestamps
+      let dataReformater = this.reduceTimestamps(damageFromLogWithTimesAddedAndCooldowns)
 
-      let dataReformater = this.reduceTimestamps(damageFromLogWithTimesAddedAndCooldowns);
+      // concat the damage array with the missing durations
+      let concatArrayWithMissingTimes = updatedarray.concat(times)
+      // Sort the Array by Timestamp
+      concatArrayWithMissingTimes.sort((a, b) => a.timestamp > b.timestamp ? 1 : -1)
+      // reduce array removing any duplicate timestamps
+      let dataReformater2 = this.reduceTimestamps(concatArrayWithMissingTimes)
 
-      gg.sort((a, b) => a.timestamp > b.timestamp ? 1 : -1);
-
-      let dataReformater2 = this.reduceTimestamps(gg);
-
-      Object.keys(dataReformater).forEach(element => sortedData.push(dataReformater[element]));
-      Object.keys(dataReformater2).forEach(element => sortedData2.push(dataReformater2[element]));
+      Object.keys(dataReformater).forEach(element => sortedData.push(dataReformater[element]))
+      Object.keys(dataReformater2).forEach(element => sortedData2.push(dataReformater2[element]))
       this.setState({
         cooldownhelper: sortedData2,
         cooldownhelperfinal: sortedData2,
@@ -311,7 +326,7 @@ class App extends Component {
       });
     }
 
-  getUnique = (arr, comp) => {
+  getUniqueObjectsFromArray = (arr, comp) => {
     // store the comparison  values in array
     const unique = arr.map(e => e[comp])
     // store the indexes of the unique objects
