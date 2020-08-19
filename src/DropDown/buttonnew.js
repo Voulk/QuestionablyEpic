@@ -38,27 +38,6 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const theme = createMuiTheme({
-  overrides: {
-    // Style sheet name :atom:
-    MuiTableCell: {
-      root: {
-        fontSize: '0.875rem',
-      },
-      body: {
-        fontSize: '0.875rem',
-      }, 
-    },
-    MuiSelect:{
-      root: {
-        color: '#fff'
-      },
-    },
-    MuiToolbar: {
-      regular: {
-        minHeight: '64px'
-      }
-    },
-  },
   palette: {
     type: 'dark',
     primary: {

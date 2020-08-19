@@ -10,17 +10,7 @@ import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-
-  },
-  menuButton: {
-    marginRight: theme.spacing(2),
-  },
-}));
-
-const theme = createMuiTheme({
-  overrides: {
-    // Style sheet name :atom:
-    MuiTableCell: {
+     MuiTableCell: {
       root: {
         fontSize: '0.875rem',
       },
@@ -37,13 +27,16 @@ const theme = createMuiTheme({
       regular: {
         minHeight: '64px'
       }
-    },
-    //  MuiIconButton: {
-    //   root: {
-    //     padding: '0px'
-    //   },
-    // },
+
   },
+  },
+  menuButton: {
+    marginRight: theme.spacing(2),
+  },
+}));
+
+const theme = createMuiTheme({
+  
   palette: {
     type: 'dark',
     primary: {

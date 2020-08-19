@@ -36,28 +36,61 @@ import moment from 'moment';
 import { healerCooldownsDetailed } from '../Data/Data'
 import { classColoursJS } from '../CooldownTable/ClassColourFunctions'
 
-const themecooldowntable = createMuiTheme({
-  overrides: {
-    MuiTableCell: {
-      root: {
-        padding: '0px 16px 0px 16px',
-        fontSize: '0.875rem',
-      },
-      body: {
-        fontSize: '0.875rem',
-      }, 
-    },
-    MuiSelect: {
-      root: {
-        color: '#fff'
-      },
-    },
-    MuiToolbar: {
-      regular: {
-        minHeight: '64px',
-      }
-    },
+const useStyles = makeStyles((theme) => ({
+  // cooldowntable: {
+  //   MuiTableCell: {
+  //     root: {
+  //       padding: '0px 16px 0px 16px',
+  //       fontSize: '0.875rem',
+  //     },
+  //     body: {
+  //       fontSize: '0.875rem',
+  //     }, 
+  //   },
+  //   MuiSelect: {
+  //     root: {
+  //       color: '#fff'
+  //     },
+  //   },
+  //   MuiToolbar: {
+  //     regular: {
+  //       minHeight: '64px',
+  //     }
+  //   },
+  // },
+  formControl: {
+    margin: theme.spacing(0.5),
+    whiteSpace: 'nowrap',
+    width: '100%'
   },
+  selectEmpty: {
+    marginTop: theme.spacing(2),
+  },
+}
+));
+
+const themecooldowntable = createMuiTheme({
+  // overrides: {
+  //   MuiTableCell: {
+  //     root: {
+  //       padding: '0px 16px 0px 16px',
+  //       fontSize: '0.875rem',
+  //     },
+  //     body: {
+  //       fontSize: '0.875rem',
+  //     }, 
+  //   },
+  //   MuiSelect: {
+  //     root: {
+  //       color: '#fff'
+  //     },
+  //   },
+  //   MuiToolbar: {
+  //     regular: {
+  //       minHeight: '64px',
+  //     }
+  //   },
+  // },
   palette: {
     type: 'dark',
     primary: {
@@ -69,16 +102,6 @@ const themecooldowntable = createMuiTheme({
   },
 });
 
-const useStyles = makeStyles((theme) => ({
-  formControl: {
-    margin: theme.spacing(0.5),
-    whiteSpace: 'nowrap',
-    width: '100%'
-  },
-  selectEmpty: {
-    marginTop: theme.spacing(2),
-  },
-}));
 
 const items = [
   <MenuItem
@@ -305,6 +328,7 @@ export default function CustomEditComponent(props) {
   return (
     <ThemeProvider theme={themecooldowntable}>
       <MaterialTable
+        className={classes.formControl}
         icons={tableIcons}
         title="Cooldown Planner"
         columns={columns}

@@ -20,35 +20,35 @@ import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 
 
 const theme3 = createMuiTheme({
-  overrides: {
-    MuiTableSortLabel: {
-      root: {
-        whiteSpace: 'nowrap'
-      },
-    },
-    MuiTableRow: {
-      gutters: '16px'
-    },
-    MuiTableCell: {
-      root: {
-        fontSize: '0.875rem',
-        padding: '0px 16px 0px 16px',
-      },
-      body: {
-        fontSize: '0.875rem',
-      }, 
-    },
-    MuiSelect:{
-      root: {
-        color: '#fff'
-      },
-    },
-    MuiToolbar: {
-      regular: {
-        minHeight: '64px'
-      }
-    },
-  },
+  // overrides: {
+  //   MuiTableSortLabel: {
+  //     root: {
+  //       whiteSpace: 'nowrap'
+  //     },
+  //   },
+  //   MuiTableRow: {
+  //     gutters: '16px'
+  //   },
+  //   MuiTableCell: {
+  //     root: {
+  //       fontSize: '0.875rem',
+  //       padding: '0px 16px 0px 16px',
+  //     },
+  //     body: {
+  //       fontSize: '0.875rem',
+  //     }, 
+  //   },
+  //   MuiSelect:{
+  //     root: {
+  //       color: '#fff'
+  //     },
+  //   },
+  //   MuiToolbar: {
+  //     regular: {
+  //       minHeight: '64px'
+  //     }
+  //   },
+  // },
   palette: {
     type: 'dark',
     primary: {

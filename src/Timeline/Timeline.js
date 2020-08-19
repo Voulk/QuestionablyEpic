@@ -20,43 +20,43 @@ const useStyles = makeStyles({
 });
 
 const theme = createMuiTheme({
-  overrides: {
-    // Style sheet name :atom:
-    MuiTableCell: {
-      root: {
-        fontSize: '0.875rem',
-      },
-      body: {
-        fontSize: '0.875rem',
-      }, 
-    },
-    MuiSelect:{
-      root: {
-        color: '#fff'
-      },
-    },
-    MuiToolbar: {
-      regular: {
-        minHeight: '64px'
-      }
-    },
-    MuiTimeline: {
-      root: {
-        marginBlockStart: '0px',
-        marginBlockEnd: '0px',
-      },
-    },
-    MuiTimelineOppositeContent: {
-      root: {
-        flex: 0
-      },
-    },
-    MuiTimelineItem: {
-      root: {
-        minHeight: '35px'
-      },
-    },
-  },
+  // overrides: {
+  //   // Style sheet name :atom:
+  //   MuiTableCell: {
+  //     root: {
+  //       fontSize: '0.875rem',
+  //     },
+  //     body: {
+  //       fontSize: '0.875rem',
+  //     }, 
+  //   },
+  //   MuiSelect:{
+  //     root: {
+  //       color: '#fff'
+  //     },
+  //   },
+  //   MuiToolbar: {
+  //     regular: {
+  //       minHeight: '64px'
+  //     }
+  //   },
+  //   MuiTimeline: {
+  //     root: {
+  //       marginBlockStart: '0px',
+  //       marginBlockEnd: '0px',
+  //     },
+  //   },
+  //   MuiTimelineOppositeContent: {
+  //     root: {
+  //       flex: 0
+  //     },
+  //   },
+  //   MuiTimelineItem: {
+  //     root: {
+  //       minHeight: '35px'
+  //     },
+  //   },
+  // },
   palette: {
     type: 'dark',
     primary: {
