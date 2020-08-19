@@ -1,4 +1,2 @@
-/node_modules
-/build
-
+# Specify filepatterns you want git to ignore.
 
