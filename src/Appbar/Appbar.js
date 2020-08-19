@@ -10,25 +10,25 @@ import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-     MuiTableCell: {
-      root: {
-        fontSize: '0.875rem',
-      },
-      body: {
-        fontSize: '0.875rem',
-      }, 
-    },
-    MuiSelect:{
-      root: {
-        color: '#fff'
-      },
-    },
-    MuiToolbar: {
-      regular: {
-        minHeight: '64px'
-      }
+  //    MuiTableCell: {
+  //     root: {
+  //       fontSize: '0.875rem',
+  //     },
+  //     body: {
+  //       fontSize: '0.875rem',
+  //     }, 
+  //   },
+  //   MuiSelect:{
+  //     root: {
+  //       color: '#fff'
+  //     },
+  //   },
+  //   MuiToolbar: {
+  //     regular: {
+  //       minHeight: '64px'
+  //     }
 
-  },
+  // },
   },
   menuButton: {
     marginRight: theme.spacing(2),

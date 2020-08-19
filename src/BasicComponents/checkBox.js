@@ -5,16 +5,16 @@ import { withStyles } from '@material-ui/core/styles';
 
 const FormControlLabel1 = withStyles({
   // @global is handled by jss-plugin-global.
-  '@global': {
+  // '@global': {
     // You should target [class*="MuiButton-root"] instead if you nest themes.
     '.MuiTypography-body1 ': {
       fontSize: '0.8rem',
     },
-    '@media': {
+    // '@media': {
       '.MuiToolbar-regular ': {
         minHeight: '64px'
-      },
-    },
+
+  //   },
   },
 })((props) => <FormControlLabel color="default" {...props} />);
 
