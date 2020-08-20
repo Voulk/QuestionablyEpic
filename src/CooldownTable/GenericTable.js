@@ -17,49 +17,17 @@ import Search from '@material-ui/icons/Search';
 import ViewColumn from '@material-ui/icons/ViewColumn';
 import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 
-
-
 const theme3 = createMuiTheme({
-  // overrides: {
-  //   MuiTableSortLabel: {
-  //     root: {
-  //       whiteSpace: 'nowrap'
-  //     },
-  //   },
-  //   MuiTableRow: {
-  //     gutters: '16px'
-  //   },
-  //   MuiTableCell: {
-  //     root: {
-  //       fontSize: '0.875rem',
-  //       padding: '0px 16px 0px 16px',
-  //     },
-  //     body: {
-  //       fontSize: '0.875rem',
-  //     }, 
-  //   },
-  //   MuiSelect:{
-  //     root: {
-  //       color: '#fff'
-  //     },
-  //   },
-  //   MuiToolbar: {
-  //     regular: {
-  //       minHeight: '64px'
-  //     }
-  //   },
-  // },
   palette: {
     type: 'dark',
     primary: {
-      main: '#d3bc47',
+      main: '#d3bc47'
     },
     secondary: {
-      main: '#ff9100',
-    },
-  },
+      main: '#ff9100'
+    }
+  }
 });
-
 
 const tableIcons = {
   Add: forwardRef((props, ref) => <AddBox {...props} style={{ color: '#ffee77' }} ref={ref} />),
@@ -82,8 +50,6 @@ const tableIcons = {
 };
 
 export default function GenericTable(props) {
-  const { useState } = React;
-
   return (
     <ThemeProvider theme={theme3}>
       <MaterialTable
@@ -122,11 +88,11 @@ export default function GenericTable(props) {
           rowStyle: {
             borderBottom: '1px solid #6d6d6d',
             fontSize: '0.8 rem',
-                        whiteSpace: 'nowrap'
+            whiteSpace: 'nowrap'
           },
           searchFieldStyle: {
             borderBottom: '1px solid #6d6d6d',
-            color: '#ffffff',
+            color: '#ffffff'
           },
           actionsCellStyle: {
             borderBottom: '1px solid #6d6d6d',

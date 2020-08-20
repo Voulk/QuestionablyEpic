@@ -15,14 +15,7 @@ import Remove from '@material-ui/icons/Remove';
 import SaveAlt from '@material-ui/icons/SaveAlt';
 import Search from '@material-ui/icons/Search';
 import ViewColumn from '@material-ui/icons/ViewColumn';
-import HolyPaladinIcon from '../Images/HolyPaladin.jpg'
-import DiscPriestIcon from '../Images/DisciplinePriest.jpg'
-import HolyPriestIcon from '../Images/HolyPriest.jpg'
-import MistweaverIcon from '../Images/MistWeaverMonk.jpg'
-import RestorationDruidIcon from '../Images/RestorationDruid.jpg'
-import RestorationShamanIcon from '../Images/RestorationShaman.jpg'
 import classcds from './classcds'
-import MenuItem from '@material-ui/core/MenuItem';
 import 'rc-time-picker/assets/index.css';
 import { Select } from '@material-ui/core'
 import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
@@ -35,167 +28,31 @@ import classicons from '../CooldownTable/ClassIcons'
 import moment from 'moment';
 import { healerCooldownsDetailed } from '../Data/Data'
 import { classColoursJS } from '../CooldownTable/ClassColourFunctions'
+import { classMenus } from '../CooldownTable/ClassMenuItems' 
 
 const useStyles = makeStyles((theme) => ({
-  // cooldowntable: {
-  //   MuiTableCell: {
-  //     root: {
-  //       padding: '0px 16px 0px 16px',
-  //       fontSize: '0.875rem',
-  //     },
-  //     body: {
-  //       fontSize: '0.875rem',
-  //     }, 
-  //   },
-  //   MuiSelect: {
-  //     root: {
-  //       color: '#fff'
-  //     },
-  //   },
-  //   MuiToolbar: {
-  //     regular: {
-  //       minHeight: '64px',
-  //     }
-  //   },
-  // },
-  formControl: {
+    formControl: {
     margin: theme.spacing(0.5),
     whiteSpace: 'nowrap',
     width: '100%'
   },
   selectEmpty: {
-    marginTop: theme.spacing(2),
-  },
+    marginTop: theme.spacing(2)
+  }
 }
 ));
 
 const themecooldowntable = createMuiTheme({
-  // overrides: {
-  //   MuiTableCell: {
-  //     root: {
-  //       padding: '0px 16px 0px 16px',
-  //       fontSize: '0.875rem',
-  //     },
-  //     body: {
-  //       fontSize: '0.875rem',
-  //     }, 
-  //   },
-  //   MuiSelect: {
-  //     root: {
-  //       color: '#fff'
-  //     },
-  //   },
-  //   MuiToolbar: {
-  //     regular: {
-  //       minHeight: '64px',
-  //     }
-  //   },
-  // },
   palette: {
     type: 'dark',
     primary: {
-      main: '#d3bc47',
+      main: '#d3bc47'
     },
     secondary: {
-      main: '#ff9100',
-    },
-  },
+      main: '#ff9100'
+    }
+  }
 });
-
-
-const items = [
-  <MenuItem
-    style={{ color: '#F58CBA' }}
-    value={'Holy Paladin'}>
-    <img
-      style={{
-        height: 20,
-        width: 20,
-        padding: '0px 5px 0px 5px',
-        verticalAlign: 'middle'
-      }}
-      src={HolyPaladinIcon}
-      alt='Holy Paladin'
-    />
-      Holy Paladin
-  </MenuItem>,
-  <MenuItem
-    style={{ color: '#FF7D0A' }}
-    value={'Restoration Druid'}>
-    <img
-      style={{
-        height: 20,
-        width: 20,
-        padding: '0px 5px 0px 5px',
-        verticalAlign: 'middle'
-      }}
-      src={RestorationDruidIcon}
-      alt='Restoration Druid'
-    />
-      Restoration Druid
-  </MenuItem>,
-  <MenuItem
-    style={{ color: '#FFFFFF' }}
-    value={'Holy Priest'}>
-    <img
-      style={{
-        height: 20,
-        width: 20,
-        padding: '0px 5px 0px 5px',
-        verticalAlign: 'middle'
-      }}
-      src={HolyPriestIcon}
-      alt='Holy Priest'
-    />
-      Holy Priest
-  </MenuItem>,
-  <MenuItem
-    style={{ color: '#FFFFFF' }}
-    value={'Discispline Priest'}>
-    <img
-      style={{
-        height: 20,
-        width: 20,
-        padding: '0px 5px 0px 5px',
-        verticalAlign: 'middle'
-      }}
-      src={DiscPriestIcon}
-      alt='Discispline Priest'
-    />
-      Discispline Priest
-  </MenuItem>,
-  <MenuItem
-    style={{ color: '#0070DE' }}
-    value={'Restoration Shaman'}>
-    <img
-      style={{
-        height: 20,
-        width: 20,
-        padding: '0px 5px 0px 5px',
-        verticalAlign: 'middle'
-      }}
-      src={RestorationShamanIcon}
-      alt='Restoration Shaman'
-    />
-      Restoration Shaman
-  </MenuItem>,
-  <MenuItem
-    style={{ color: '#00FF96' }}
-    value={'Mistweaver Monk'}>
-    <img
-      style={{
-        height: 20,
-        width: 20,
-        padding: '0px 5px 0px 5px',
-        verticalAlign: 'middle'
-      }}
-      src={MistweaverIcon}
-      alt='Mistweaver Monk'
-    />
-      Mistweaver Monk
-  </MenuItem>
-
-]
 
 const tableIcons = {
   Add: forwardRef((props, ref) => <AddBox {...props} style={{ color: '#ffee77' }} ref={ref} />),
@@ -257,7 +114,7 @@ export default function CustomEditComponent(props) {
               onChange={e => {
                 props.onChange(e.target.value); a = e.target.value
               }}>
-              {items}
+              {classMenus}
             </Select>
           </FormControl>
         </ThemeProvider>
@@ -328,7 +185,7 @@ export default function CustomEditComponent(props) {
   return (
     <ThemeProvider theme={themecooldowntable}>
       <MaterialTable
-        className={classes.formControl}
+        className={classes.cooldowntable}
         icons={tableIcons}
         title="Cooldown Planner"
         columns={columns}
@@ -352,7 +209,7 @@ export default function CustomEditComponent(props) {
           cellStyle: {
             borderBottom: '1px solid #6d6d6d',
             fontSize: '0.8 rem',
-            whiteSpace: 'nowrap'
+            whiteSpace: 'nowrap',
           },
           rowStyle: {
             borderBottom: '1px solid #6d6d6d',

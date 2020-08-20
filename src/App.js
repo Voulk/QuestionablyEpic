@@ -19,7 +19,7 @@ import GenericTable from './CooldownTable/GenericTable';
 import DenseAppBar from './Appbar/Appbar'
 import abilityicons from './CooldownTable/AbilityIcons'
 import { classColoursERT } from './CooldownTable/ClassColourFunctions'
-
+import { addMissingTimestamps, getUniqueObjectsFromArray, reduceTimestamps, fightDurationCalculator } from './Functions/Functions'
 import QEMainMenu from './Modules/QEMainMenu.js';
 
 class App extends Component {
@@ -238,21 +238,21 @@ class App extends Component {
       // Create Ability List With Guids for legend (Testing)
       let legendAbilityListMap = damage.map(key =>({ value: key.ability.name, id: key.ability.guid }));
       // Get Unique Objects from Ability list for the custom legend
-      let uniqueLegendData = this.getUniqueObjectsFromArray(legendAbilityListMap, 'id')
+      let uniqueLegendData = getUniqueObjectsFromArray(legendAbilityListMap, 'id')
       // Concat the Unique Ability List with the Cooldown List
       let uniqueArrayNewForLegend = uniqueLegendData.concat(uniqueArrayCD)
 
       // Map New Data Array Timestamp + ability name & Unmitaged Amount
       let updatedarray = damage.map(
         key =>({
-          timestamp: moment(this.mather(this.state.time, key.timestamp)).startOf('second').valueOf(),
+          timestamp: moment(fightDurationCalculator(key.timestamp, this.state.time)).startOf('second').valueOf(),
           [key.ability.name]: key.unmitigatedAmount
         }));
 
       // Map New Data Array ability, Timestamp, Healer name - ability: 1
       let updateddatacasts = cooldowns.map(
         key =>({ ability: key.ability.name,
-          timestamp: moment(this.mather(this.state.time, key.timestamp)).startOf('second').valueOf(),
+          timestamp: moment(fightDurationCalculator(key.timestamp, this.state.time)).startOf('second').valueOf(),
           [healerIDName.filter(obj => {
             return obj.id === key.sourceID
           }).map(obj => obj.name) + ' - ' + key.ability.name]: 1})
@@ -261,7 +261,7 @@ class App extends Component {
       // Map New Array for casts for the timeline.
       let updateddatacastsTimeline = cooldowns.map(key =>({ 
         ability: key.ability.name,
-        timestamp: moment(this.mather(this.state.time, key.timestamp)).startOf('second').format("mm:ss"),
+        timestamp: moment(fightDurationCalculator(key.timestamp, this.state.time)).startOf('second').format("mm:ss"),
         name: healerIDName.filter(
           obj => {
             return obj.id === key.sourceID
@@ -280,7 +280,7 @@ class App extends Component {
           this.durationmaker(
             key.ability, key.timestamp,
             Object.getOwnPropertyNames(key).slice(2),
-            moment(this.mather(starttime, endtime)).startOf('second').valueOf()
+            moment(fightDurationCalculator(endtime, starttime)).startOf('second').valueOf()
           )
         )
       )
@@ -289,8 +289,8 @@ class App extends Component {
       let cooldownwithdurations = healerdurations.flat();
 
       // create missing timestamps from start to end of report selected
-      let times = this.addMissingTimestamps(
-        this.fightDurationCalculator(
+      let times = addMissingTimestamps(
+        fightDurationCalculator(
           endtime,
           starttime
         )
@@ -300,14 +300,14 @@ class App extends Component {
       // Sort the Array by Timestamp
       damageFromLogWithTimesAddedAndCooldowns.sort((a, b) => a.timestamp > b.timestamp ? 1 : -1)
       // reduce array removing any duplicate timestamps
-      let dataReformater = this.reduceTimestamps(damageFromLogWithTimesAddedAndCooldowns)
+      let dataReformater = reduceTimestamps(damageFromLogWithTimesAddedAndCooldowns)
 
       // concat the damage array with the missing durations
       let concatArrayWithMissingTimes = updatedarray.concat(times)
       // Sort the Array by Timestamp
       concatArrayWithMissingTimes.sort((a, b) => a.timestamp > b.timestamp ? 1 : -1)
       // reduce array removing any duplicate timestamps
-      let dataReformater2 = this.reduceTimestamps(concatArrayWithMissingTimes)
+      let dataReformater2 = reduceTimestamps(concatArrayWithMissingTimes)
 
       Object.keys(dataReformater).forEach(element => sortedData.push(dataReformater[element]))
       Object.keys(dataReformater2).forEach(element => sortedData2.push(dataReformater2[element]))
@@ -326,35 +326,6 @@ class App extends Component {
       });
     }
 
-  getUniqueObjectsFromArray = (arr, comp) => {
-    // store the comparison  values in array
-    const unique = arr.map(e => e[comp])
-    // store the indexes of the unique objects
-      .map((e, i, final) => final.indexOf(e) === i && i)
-      // eliminate the false indexes & return unique objects
-      .filter((e) => arr[e]).map(e => arr[e]);
-    return unique;
-  }
-
-
-  reduceTimestamps = (array) => { 
-    let timestampSum = array.reduce((acc, cur) => {
-      acc[cur.timestamp] = array.reduce((x, n) => {
-        for (let prop in n) {
-          if (cur.timestamp === n.timestamp)
-            if (x.hasOwnProperty(prop))
-              x[prop] += n[prop]
-            else
-              x[prop] = n[prop];
-        }
-        x.timestamp = cur.timestamp
-        return x;
-      }, {})
-      return acc;
-    }, {})
-    return timestampSum
-  }
-
   durationmaker = (ability, originalTimestamp, abilityname, endtime) => {  
     let duration = healerCooldownsDetailed.filter(obj => { return obj.name === ability }).map(obj => obj.duration)
     let newarray = [{ timestamp: originalTimestamp, [abilityname]: 1 }]
@@ -367,24 +338,6 @@ class App extends Component {
     }
     return newarray
   }
-
-  addMissingTimestamps = (loglength) => {
-    let newarray = [{ timestamp: 0 }]
-    let ticks = [];
-    let tickcount = 0;
-    let length = moment(loglength).startOf('second') / 1000;
-    for (let i = 0; i < length; i++) {
-      ticks = ticks.concat(tickcount + 1000)
-      tickcount = tickcount + 1000
-    }
-    ticks.forEach(element => newarray.push({ timestamp: element }))
-    return newarray
-  }
-
-   fightDurationCalculator = (time1,time2) => {
-     let time = (time1 - time2)
-     return time
-   }
 
   handler = (info, info2, bossname, fighttime, killcheck) => {
     this.setState({
@@ -431,20 +384,6 @@ class App extends Component {
     }))
   }
 
-  msToTime = (s) => {
-    let ms = s % 1000;
-    s = (s - ms) / 1000;
-    let secs = s % 60;
-    s = (s - secs) / 60;
-    let mins = s % 60;
-    // let hrs = (s - mins) / 60;
-    return mins + ':' + secs;
-  }
-
-  mather = (time1, time2) => {
-    let time = (time2 - time1)
-    return time
-  }
 
   tablehandler = (element) => {
     let customcooldown = []
@@ -454,7 +393,7 @@ class App extends Component {
       ability: key.Cooldown, 
       timestamp: moment.duration("00:" + key.time).asMilliseconds(), 
       abilityname: key.name + " - " + key.Cooldown }))
-    newthing.map(key => customcooldown.push(this.durationmaker(key.ability, key.timestamp, key.abilityname, moment(this.mather(this.state.currentStartTime, this.state.currentEndTime)).startOf('second').valueOf() )))
+    newthing.map(key => customcooldown.push(this.durationmaker(key.ability, key.timestamp, key.abilityname, moment(fightDurationCalculator(this.state.currentEndTime, this.state.currentStartTime)).startOf('second').valueOf())))
     let newthing2 = customcooldown.flat()
     let concat2 = this.state.cooldownhelper
     let joinedarray = concat2.concat(newthing2)
@@ -489,24 +428,15 @@ class App extends Component {
 
     return (
       <div className='App'>
-
-
         {/* 
-        - QE Live SL - 
-        
-          <QEMainMenu />
-
-        */}
-      
-      
-
-
+         - QE Live SL -      
+         <QEMainMenu />
+           */}
         {/* 
         - Holy Diver - 
           TODO: Move into separate JS file so it can be called from a main menu. 
           TODO: Move logs information into separate JS file.
         */}
-
         <Grid container direction="row" justify="flex-start" alignItems="flex-start" spacing={1}>
           <Grid item xs={12} padding={1}>
             <Box bgcolor="#333" style={{ borderRadius: 4, boxShadow: '0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12)' }}>

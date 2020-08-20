@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import moment from 'moment';
 import MenuItem from '@material-ui/core/MenuItem';
 import bossIcons from '../CooldownTable/BossIcons'
+import { fightDurationCalculator } from '../Functions/Functions'
+
 
 const API = 'https://www.warcraftlogs.com:443/v1/report/fights/';
 const API2 = '?api_key=92fc5d4ae86447df22a8c0917c1404dc'
@@ -25,16 +27,6 @@ class LogImport extends Component {
         .then(data => this.setState({ fights: data.fights }));
     }
   }
-
- msToTime = (s) => {
-   let ms = s % 1000;
-   s = (s - ms) / 1000;
-   let secs = s % 60;
-   s = (s - secs) / 60;
-   let mins = s % 60;
-   // let hrs = (s - mins) / 60;
-   return mins + ':' + secs;
- }
 
  mather = (time1,time2) => {
    let time = (time1 - time2)
@@ -63,7 +55,7 @@ class LogImport extends Component {
            value={1}
            key={fight.id}
            onClick={() => {
-             this.props.clicker(fight.start_time, fight.end_time, fight.name, moment(this.mather(fight.end_time, fight.start_time)).format("mm:ss"), this.killwipe(fight.kill)); this.props.update(fight.start_time, fight.end_time)}}
+             this.props.clicker(fight.start_time, fight.end_time, fight.name, moment(fightDurationCalculator(fight.end_time, fight.start_time)).format("mm:ss"), this.killwipe(fight.kill)); this.props.update(fight.start_time, fight.end_time)}}
          >
            {bossIcons(fight.boss)}
            {fight.name + ' - ' + moment(this.mather(fight.end_time, fight.start_time)).format("mm:ss") + ' - ' + this.killwipe(fight.kill) + ' - ' + fight.bossPercentage / 100 + '%'}
