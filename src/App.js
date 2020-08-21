@@ -292,7 +292,7 @@ class App extends Component {
                   <Checkboxes check={this.damageTableShow} label={'Show Log Table'} />
                   <Checkboxes check={this.healTableShow} label={'Show Custom Table'} />
                 </Grid>
-                <Grid item xs={2} padding={1}>
+                <Grid item xs={1} padding={1}>
                   <Links />
                 </Grid>
               </Grid>

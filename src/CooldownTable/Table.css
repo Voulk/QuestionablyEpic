@@ -1,16 +1,7 @@
-/*.MuiTableCellroot: {
-      padding: 0px 16px 0px 16px;
-      font-size: '0.875rem';
-    }
+.MuiTableCell-root.MuiTableCell-body.MuiTableCell-alignLeft{
+padding: 0px 16px 0px 16px;
+}
 
-.MuiTableCell-body: {
-        font-size: '0.875rem',
-      },
-
-.MuiSelect-root: {
-        color: '#fff'
-      },
-
-.MuiToolbar-regular: {
-        min-height: '64px',
-      }*/
+.MuiButtonBase-root.MuiIconButton-root.MuiIconButton-colorInherit {
+padding: 4px 4px 4px 4px;
+}

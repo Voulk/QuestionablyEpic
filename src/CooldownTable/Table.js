@@ -29,9 +29,10 @@ import moment from 'moment';
 import { healerCooldownsDetailed } from '../Data/Data'
 import { classColoursJS } from '../CooldownTable/ClassColourFunctions'
 import { classMenus } from '../CooldownTable/ClassMenuItems' 
+import './Table.css'
 
 const useStyles = makeStyles((theme) => ({
-    formControl: {
+  formControl: {
     margin: theme.spacing(0.5),
     whiteSpace: 'nowrap',
     width: '100%'
@@ -185,7 +186,6 @@ export default function CustomEditComponent(props) {
   return (
     <ThemeProvider theme={themecooldowntable}>
       <MaterialTable
-        className={classes.cooldowntable}
         icons={tableIcons}
         title="Cooldown Planner"
         columns={columns}
@@ -210,10 +210,12 @@ export default function CustomEditComponent(props) {
             borderBottom: '1px solid #6d6d6d',
             fontSize: '0.8 rem',
             whiteSpace: 'nowrap',
+            padding: '0px 16px 0px 16px'
           },
           rowStyle: {
             borderBottom: '1px solid #6d6d6d',
             fontSize: '0.8 rem',
+            padding: '0px 16px 0px 16px'
           },
           searchFieldStyle: {
             borderBottom: '1px solid #6d6d6d',
@@ -221,12 +223,13 @@ export default function CustomEditComponent(props) {
           },
           actionsCellStyle: {
             borderBottom: '1px solid #6d6d6d',
-            padding: 0
+            padding: '0px 16px 0px 16px'
           },
           actionsColumnIndex: 7,
           paging: false
         }}
         editable={{
+          cellStyle: {padding: '0px 16px 0px 16px'},
           onRowAdd: newData =>
             new Promise((resolve, reject) => {
               setTimeout(() => {
