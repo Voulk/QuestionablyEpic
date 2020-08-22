@@ -75,7 +75,7 @@ export const healerCooldownsDetailed = [
 
   // --------------------Priest---------------------
   // ----------------Base Abilities-----------------
-  { name: 'Power Word: Barrier', guid: 62618, duartion: 10, cooldown: 180 },
+  { name: 'Power Word: Barrier', guid: 62618, duration: 10, cooldown: 180 },
   { name: 'Evangelism', guid: 246287, duration: 6, cooldown: 90 },
   { name: 'Divine Hymn', guid: 64843, duration: 8, cooldown: 180 },
   { name: 'Holy Word: Salvation', guid: 265202, duration: 1, cooldown: 720 },
