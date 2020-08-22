@@ -16,12 +16,8 @@ const useStyles = makeStyles((theme) => ({
 const theme = createMuiTheme({
   palette: {
     type: 'dark',
-    primary: {
-      main: '#d3bc47'
-    },
-    secondary: {
-      main: '#ff9100'
-    }
+    primary: { main: '#d3bc47' },
+    secondary: { main: '#e0e0e0' }
   }
 });
 
@@ -48,7 +44,7 @@ export default function ControlledOpenSelect(props) {
 
   return (
     <ThemeProvider theme={theme}>
-      <FormControl variant='filled' className={classes.formControl} size='small'>
+      <FormControl variant='outlined' className={classes.formControl} size='small'>
         <InputLabel id='demo-controlled-open-select-label' label='Outlined'>
         Fight
         </InputLabel>

@@ -7,7 +7,7 @@ const theme = createMuiTheme({
   palette: {
     type: 'dark',
     primary: { main: '#d3bc47' },
-    secondary: { main: '#ff9100' }
+    secondary: { main: '#e0e0e0' }
   }
 });
 
@@ -28,7 +28,7 @@ export default function userInput(props) {
         <TextField
           id='filled-basic'
           label='Paste WarcraftLog Link Here'
-          variant='filled'
+          variant='outlined'
           onChange={props.changed}
           value={props.loglink}
           size='small'

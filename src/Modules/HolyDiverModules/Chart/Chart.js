@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
-import { AreaChart, Area, XAxis, YAxis, CartesianGrid, ResponsiveContainer, Tooltip, Legend } from 'recharts';
+import { AreaChart, Area, XAxis, YAxis, ResponsiveContainer, Tooltip, Legend } from 'recharts';
 import chroma from 'chroma-js';
 import './Chart.css';
 import moment from 'moment';
 
 class Chart extends Component {
   constructor(props) {
-
     super(props)
     this.state = {
       abilityList: this.props.abilitylist,
@@ -116,9 +115,7 @@ class Chart extends Component {
     }
 
     return (
-
       <ResponsiveContainer className='ResponsiveContainer' width='100%' height={300} >
-
         <AreaChart
           width={1500}
           height={300}
@@ -160,7 +157,6 @@ class Chart extends Component {
             contentStyle={{ backgroundColor: '#1b1b1b', border: '1px solid #1b1b1b' }}
             labelFormatter={timeStr => moment(timeStr).format('mm:ss')}
           />
-                  {console.log(this.props.chart)}
           {this.drawAreas()}
         </AreaChart>
 

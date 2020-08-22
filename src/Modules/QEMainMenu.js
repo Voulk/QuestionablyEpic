@@ -8,7 +8,7 @@ import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import './QEMainMenu.css';
-import MenuButton from './MenuButton.js';
+import MenuButton from './QEModules/MenuButton.js';
 
 // This is all shitty boilerplate code that'll be replaced. Do not copy.
 const useStyles = makeStyles((theme) => ({

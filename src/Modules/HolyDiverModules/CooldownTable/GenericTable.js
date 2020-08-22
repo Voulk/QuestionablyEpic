@@ -16,12 +16,13 @@ import SaveAlt from '@material-ui/icons/SaveAlt';
 import Search from '@material-ui/icons/Search';
 import ViewColumn from '@material-ui/icons/ViewColumn';
 import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+import './Table.css'
 
 const theme = createMuiTheme({
   palette: {
     type: 'dark',
     primary: { main: '#d3bc47' },
-    secondary: { main: '#ff9100' }
+    secondary: { main: '#e0e0e0' }
   }
 });
 const tableIcons = {

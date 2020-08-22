@@ -46,12 +46,8 @@ const useStyles = makeStyles((theme) => ({
 const themecooldowntable = createMuiTheme({
   palette: {
     type: 'dark',
-    primary: {
-      main: '#d3bc47'
-    },
-    secondary: {
-      main: '#ff9100'
-    }
+    primary: { main: '#d3bc47' },
+    secondary: { main: '#e0e0e0' }
   }
 });
 

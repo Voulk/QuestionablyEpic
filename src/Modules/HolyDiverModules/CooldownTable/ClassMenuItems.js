@@ -1,11 +1,11 @@
 import React from "react";
 import MenuItem from '@material-ui/core/MenuItem';
-import HolyPaladinIcon from '../Images/HolyPaladin.jpg'
-import DiscPriestIcon from '../Images/DisciplinePriest.jpg'
-import HolyPriestIcon from '../Images/HolyPriest.jpg'
-import MistweaverIcon from '../Images/MistWeaverMonk.jpg'
-import RestorationDruidIcon from '../Images/RestorationDruid.jpg'
-import RestorationShamanIcon from '../Images/RestorationShaman.jpg'
+import HolyPaladinIcon from '../../../Images/HolyPaladin.jpg'
+import DiscPriestIcon from '../../../Images/DisciplinePriest.jpg'
+import HolyPriestIcon from '../../../Images/HolyPriest.jpg'
+import MistweaverIcon from '../../../Images/MistWeaverMonk.jpg'
+import RestorationDruidIcon from '../../../Images/RestorationDruid.jpg'
+import RestorationShamanIcon from '../../../Images/RestorationShaman.jpg'
 
 export const classMenus = [
   <MenuItem
