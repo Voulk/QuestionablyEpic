@@ -1,15 +1,12 @@
 import React, { Component } from 'react';
+import { Typography, Collapse, Box, CircularProgress, Grid } from '@material-ui/core';
 import './App.css';
 import UserInput from './UserInput/UserInput';
 import Chart from './Chart/Chart'
 import moment from 'moment';
 import ControlledOpenSelect from './DropDown/buttonnew';
-import { Typography, Collapse } from '@material-ui/core';
-import CircularProgress from '@material-ui/core/CircularProgress';
 import LoadingOverlay from 'react-loading-overlay';
 import CustomEditComponent from './CooldownTable/Table';
-import Box from '@material-ui/core/Box';
-import Grid from '@material-ui/core/Grid';
 import InteractiveList from './Lists/ListGen'
 import Checkboxes from './BasicComponents/checkBox'
 import Links from './Links/Links'
@@ -83,14 +80,16 @@ class App extends Component {
       let healerIDName = healers.map(key => ({ id: key.id, name: key.name, class: key.type }))
       // Map Healer Ids
       let healerID = healers.map(key => key.id)
+
       // Import Damage From Damage Function
       const damage = await importDamageLogData(starttime, endtime, this.state.reportid)
-      // Import Cooldowns from Cooldown Function
-      const cooldowns = await importCastsLogData(starttime, endtime, this.state.reportid, healerID)
       // Create List of Damaging Abilities from the Damage Import Array
       let abilitylistold = damage.map(key =>(key.ability.name));
       // Create Unique List of Damaging Abilities
       let uniqueArray = Array.from(new Set(abilitylistold));
+
+      // Import Cooldowns from Cooldown Function
+      const cooldowns = await importCastsLogData(starttime, endtime, this.state.reportid, healerID)
       // Create List of Healing Cooldowns Used from the Healing Casts Array
       let cooldownlistold = cooldowns.map(key =>( healerIDName.filter(obj => {
         return obj.id === key.sourceID
@@ -230,11 +229,13 @@ class App extends Component {
     let datarReformater2 = joinedarray.reduce((acc, cur) => {
       acc[cur.timestamp] = joinedarray.reduce((x, n) => {
         for (let prop in n) {
-          if (cur.timestamp === n.timestamp)
-            if (x.hasOwnProperty(prop))
+          if (cur.timestamp === n.timestamp) {
+            if (x.hasOwnProperty(prop)) {
               x[prop] += n[prop]
-            else
+            } else {
               x[prop] = n[prop];
+            }
+          }
         }
         x.timestamp = cur.timestamp
         return x;
@@ -256,9 +257,10 @@ class App extends Component {
 
     return (
       <div className='App'>
+
         {/* 
          - QE Live SL -      
-         <QEMainMenu />
+               <QEMainMenu />
            */}
         {/* 
         - Holy Diver - 

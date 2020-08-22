@@ -17,18 +17,13 @@ import Search from '@material-ui/icons/Search';
 import ViewColumn from '@material-ui/icons/ViewColumn';
 import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 
-const theme3 = createMuiTheme({
+const theme = createMuiTheme({
   palette: {
     type: 'dark',
-    primary: {
-      main: '#d3bc47'
-    },
-    secondary: {
-      main: '#ff9100'
-    }
+    primary: { main: '#d3bc47' },
+    secondary: { main: '#ff9100' }
   }
 });
-
 const tableIcons = {
   Add: forwardRef((props, ref) => <AddBox {...props} style={{ color: '#ffee77' }} ref={ref} />),
   Check: forwardRef((props, ref) => <Check {...props} style={{ color: '#ffee77' }} ref={ref} />),
@@ -51,7 +46,7 @@ const tableIcons = {
 
 export default function GenericTable(props) {
   return (
-    <ThemeProvider theme={theme3}>
+    <ThemeProvider theme={theme}>
       <MaterialTable
         icons={tableIcons}
         title={props.title}

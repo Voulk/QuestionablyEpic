@@ -9,31 +9,7 @@ import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 const useStyles = makeStyles((theme) => ({
   formControl: {
     margin: theme.spacing(1),
-    minWidth: 120 ,
-     '& .MuiOutlinedInput-notchedOutline': {
-        borderColor: 'red',
-     },
-    '& .MuiFilledInput-root': {
-      backgroundColor: '#6d6d6d'
-    },
-'& .MuiFilledInput-underline:after': {
-    borderBottomWidth: '2px',
-    borderBottomStyle: 'solid',
-    borderBottomColor: '#d3bc47'
-},
-    '& label.Mui-focused': {
-      color: '#ffffff',
-    },
-    '& .MuiFormLabel-root': {
-      color:'white'
-    },
-    '& .MuiInput-underline:after': {
-      borderBottomColor: 'green',
-    },
-  },
-  
-  root: {
-       color: 'white'
+    minWidth: 120
   }
 }));
 
@@ -41,12 +17,12 @@ const theme = createMuiTheme({
   palette: {
     type: 'dark',
     primary: {
-      main: '#d3bc47',
+      main: '#d3bc47'
     },
     secondary: {
-      main: '#ff9100',
-    },
-  },
+      main: '#ff9100'
+    }
+  }
 });
 
 export default function ControlledOpenSelect(props) {
@@ -72,20 +48,20 @@ export default function ControlledOpenSelect(props) {
 
   return (
     <ThemeProvider theme={theme}>
-      <FormControl variant="filled" className={classes.formControl} size="small">
-        <InputLabel id="demo-controlled-open-select-label" label="Outlined" className={classes.root}> 
+      <FormControl variant='filled' className={classes.formControl} size='small'>
+        <InputLabel id='demo-controlled-open-select-label' label='Outlined'>
         Fight
         </InputLabel>
         <Select
-          labelId="demo-controlled-open-select-label"
-          id="demo-controlled-open-select"
+          labelId='demo-controlled-open-select-label'
+          id='demo-controlled-open-select'
           open={open}
           label={boss}
           onClose={handleClose}
           onOpen={handleOpen}
           value={age}
           onChange={handleChange}
-          onClick={handleClose}       
+          onClick={handleClose}
         >
           {<LogImport 
             reportid={props.reportid}

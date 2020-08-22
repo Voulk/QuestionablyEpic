@@ -2,19 +2,12 @@ import React from 'react';
 import Checkbox from '@material-ui/core/Checkbox';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import { withStyles } from '@material-ui/core/styles';
+import './checkBox.css';
+import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 
 const FormControlLabel1 = withStyles({
-  // @global is handled by jss-plugin-global.
-  // '@global': {
-    // You should target [class*="MuiButton-root"] instead if you nest themes.
-    '.MuiTypography-body1 ': {
-      fontSize: '0.8rem',
-    },
-    // '@media': {
-      '.MuiToolbar-regular ': {
-        minHeight: '64px'
-
-  //   },
+  '.MuiTypography-root.MuiFormControlLabel-label.MuiTypography-body1': {
+    fontSize: '0.8rem',
   },
 })((props) => <FormControlLabel color="default" {...props} />);
 
@@ -32,6 +25,14 @@ const GreenCheckbox = withStyles({
   checked: {},
 })((props) => <Checkbox color="default" {...props} />);
 
+const theme = createMuiTheme({
+  palette: {
+    type: 'dark',
+    primary: { main: '#d3bc47' },
+    secondary: { main: '#ff9100' }
+  }
+});
+
 export default function Checkboxes(props) {
   const [checked, setChecked] = React.useState(false);
 
@@ -42,17 +43,19 @@ export default function Checkboxes(props) {
 
   return (
     <div>
-      <FormControlLabel1 
-        style={{ color: 'white' }}
-        control={
-          <GreenCheckbox
-            checked={checked}
-            onChange={handleChange}
-            size="small"
-            inputProps={{ 'aria-label': 'primary checkbox' }}
-          />}
-        label={props.label}
-      />
+      <ThemeProvider theme={theme}>
+        <FormControlLabel1 
+          style={{ color: 'white' }}
+          control={
+            <Checkbox
+              checked={checked}
+              onChange={handleChange}
+              size="small"
+              inputProps={{ 'aria-label': 'primary checkbox' }}
+            />}
+          label={props.label}
+        />
+      </ThemeProvider>
     </div>
   );
 }

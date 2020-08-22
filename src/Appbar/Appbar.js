@@ -10,25 +10,6 @@ import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-  //    MuiTableCell: {
-  //     root: {
-  //       fontSize: '0.875rem',
-  //     },
-  //     body: {
-  //       fontSize: '0.875rem',
-  //     }, 
-  //   },
-  //   MuiSelect:{
-  //     root: {
-  //       color: '#fff'
-  //     },
-  //   },
-  //   MuiToolbar: {
-  //     regular: {
-  //       minHeight: '64px'
-  //     }
-
-  // },
   },
   menuButton: {
     marginRight: theme.spacing(2),
@@ -36,16 +17,11 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const theme = createMuiTheme({
-  
   palette: {
     type: 'dark',
-    primary: {
-      main: '#d3bc47',
-    },
-    secondary: {
-      main: '#ff9100',
-    },
-  },
+    primary: { main: '#d3bc47' },
+    secondary: { main: '#ff9100' }
+  }
 });
 
 export default function DenseAppBar(props) {
