@@ -10,7 +10,7 @@ import InteractiveList from '../Modules/HolyDiverModules/Lists/ListGen'
 import Checkboxes from '../Modules/HolyDiverModules/BasicComponents/checkBox'
 import Links from '../Modules/HolyDiverModules/Links/Links'
 import GenericTable from '../Modules/HolyDiverModules/CooldownTable/GenericTable';
-import DenseAppBar from '../Modules/HolyDiverModules/Appbar/Appbar'
+import DenseAppBar from '../Modules/HolyDiverModules/BasicComponents/Appbar'
 import abilityicons from '../Modules/HolyDiverModules/CooldownTable/AbilityIcons'
 import { classColoursERT } from '../Modules/HolyDiverModules/CooldownTable/ClassColourFunctions'
 import {
