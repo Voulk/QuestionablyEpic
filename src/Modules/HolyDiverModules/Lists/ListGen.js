@@ -3,12 +3,13 @@ import { makeStyles } from '@material-ui/core/styles';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
+import classicons from '../CooldownTable/ClassIcons'
 
 
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    maxWidth: 752,
+    // maxWidth: 752,
   },
   demo: {
     // backgroundColor: 'theme.palette.background.paper',
@@ -36,9 +37,10 @@ export default function InteractiveList(props) {
   let listheal = props.heals.map(key =>
     (<ListItem>
       <ListItemText
-        primary={key}
+        primary={key.name}
         secondary={secondary ? 'Secondary text' : null}
       />
+      {classicons(key.icon)}
     </ListItem>))
 
   return (

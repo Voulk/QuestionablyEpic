@@ -31,6 +31,7 @@ export default function Checkboxes(props) {
               checked={checked}
               onChange={handleChange}
               size="small"
+              style={{ padding: '4px'}}
               inputProps={{ 'aria-label': 'primary checkbox' }}
             />}
           label={props.label}

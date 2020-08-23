@@ -159,7 +159,7 @@ class HolyDiver extends Component {
         abilitylist: uniqueArray,
         cooldownlist: uniqueArrayCD,
         loadingcheck: false,
-        healernames: healers.map(key => key.name + ' - ' + key.icon),
+        healernames: healers.map(key => ({ name: key.name, icon: key.icon })),
         currentEndTime: endtime,
         currentStartTime: starttime
       });
@@ -254,7 +254,7 @@ class HolyDiver extends Component {
     let spinnershow = this.state.loadingcheck;
 
     return (
-      <div className='App'>
+      <div >
         <Grid container direction='row' justify='flex-start' alignItems='flex-start' spacing={1}>
           <Grid item xs={12} padding={1}>
             <Box bgcolor='#333' style={{ borderRadius: 4, boxShadow: '0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12)' }}>
@@ -265,9 +265,9 @@ class HolyDiver extends Component {
                 <Grid item xs={1} padding={1}>
                   <ControlledOpenSelect reportid={this.state.reportid} clicky={this.handler} update={this.updatechartdata} float={'right'} position={'relative'}/>
                 </Grid>
-                <Grid item xs={1} padding={1} align='center'>
+                <Grid item xs={3} padding={1} align='center'>
                   {this.state.showname ? (
-                    <Typography style={{ fontWeight: 500, fontSize: '1.25rem', color: 'white', padding: '0px 16px 0px 16px' }}>
+                    <Typography style={{ fontWeight: 500, fontSize: '0.9rem', color: 'white', padding: '0px 16px 0px 16px', whiteSpace: 'nowrap', }}>
                       {this.state.boss}
                     </Typography>) : null }
                   {this.state.showname ? (
@@ -275,9 +275,11 @@ class HolyDiver extends Component {
                       {this.state.currentFighttime + ' - ' + this.state.killWipe}
                     </Typography>) : null }
                 </Grid>
-                <Grid item xs={2} padding={1}>
+                {/*
+                <Grid item xs={1} padding={1}>
                   <InteractiveList heals={this.state.healernames} />
                 </Grid>
+                */}
                 <Grid item xs={1} padding={1}>
                   <Checkboxes check={this.damageTableShow} label={'Log Chart'} />
                   <Checkboxes check={this.healTableShow} label={'Custom CD Chart'} />

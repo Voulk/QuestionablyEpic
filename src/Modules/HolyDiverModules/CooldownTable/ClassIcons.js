@@ -8,7 +8,7 @@ import RestorationShamanIcon from '../../../Images/RestorationShaman.jpg'
 
 export default function classicons(props) {
   // Paladin Cooldowns 
-  if (props === 'Holy Paladin') {
+  if (props === 'Holy Paladin' || props === 'Paladin-Holy') {
     return (
       <img
         style={{
@@ -24,7 +24,7 @@ export default function classicons(props) {
   }
 
   // Restoration Druid
-  if (props === 'Restoration Druid') {
+  if (props === 'Restoration Druid' || props === 'Druid-Restoration') {
     return (
       <img
         style={{
@@ -40,7 +40,7 @@ export default function classicons(props) {
   }
 
   // Holy Priest
-  if (props === 'Holy Priest') {
+  if (props === 'Holy Priest' || props === 'Priest-Holy') {
     return (
       <img
         style={{
@@ -56,7 +56,7 @@ export default function classicons(props) {
   }
 
   // Discipline Priest
-  if (props === 'Discispline Priest') {
+  if (props === 'Discispline Priest' || props === 'Priest-Discipline') {
     return (
       <img
         style={{
@@ -72,7 +72,7 @@ export default function classicons(props) {
   }
 
   // Restoration Shaman
-  if (props === 'Restoration Shaman') {
+  if (props === 'Restoration Shaman' || props === 'Shaman-Restoration') {
     return (
       <img
         style={{
@@ -88,7 +88,7 @@ export default function classicons(props) {
   }
 
   // Mistweaver Monk
-  if (props === 'Mistweaver Monk') {
+  if (props === 'Mistweaver Monk' || props === 'Monk-Mistweaver') {
     return (
       <img
         style={{
