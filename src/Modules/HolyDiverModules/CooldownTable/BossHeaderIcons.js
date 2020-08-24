@@ -1,4 +1,18 @@
 import React from "react";
+
+// Castle Nathria
+import ArtificerHeader from "../../../Images/Bosses/castlenathria/artificerxymox/artificerxymox.png"
+import CouncilHeader from "../../../Images/Bosses/castlenathria/thecouncilofblood/thecouncilofblood.png"
+import HungeringDestroyerHeader from "../../../Images/Bosses/castlenathria/hungeringdestroyer/hungeringdestroyer.png"
+import HuntsmanAltimorHeader from "../../../Images/Bosses/castlenathria/huntsmanaltimor/huntsmanaltimor.png"
+import SunKingsSalvationHeader from "../../../Images/Bosses/castlenathria/sunkingssalvation/sunkingssalvation.png"
+import LadyInervaDarkveinHeader from "../../../Images/Bosses/castlenathria/ladyinervadarkvein/ladyinervadarkvein.png"
+import ShriekwingHeader from "../../../Images/Bosses/castlenathria/shriekwing/shriekwing.png"
+import SireDenathriusHeader from "../../../Images/Bosses/castlenathria/siredenathrius/siredenathrius.png"
+import SludgefistHeader from "../../../Images/Bosses/castlenathria/sludgefist/sludgefist.png"
+import StonebornGeneralsHeader from "../../../Images/Bosses/castlenathria/stonelegiongenerals/stonelegiongenerals.png"
+
+// Nyalotha
 import MautHeader from "../../../Images/Bosses/Nya'lotha/Maut/maut.png"
 import XaneshHeader from "../../../Images/Bosses/Nya'lotha/Xanesh/xanesh.png"
 import WrathionHeader from "../../../Images/Bosses/Nya'lotha/Wrathion/wrathion.png"
@@ -12,6 +26,7 @@ import DrestagathHeader from "../../../Images/Bosses/Nya'lotha/Drestagath/dresta
 import NzothHeader from "../../../Images/Bosses/Nya'lotha/Nzoth/nzoth.png"
 import IlgynothHeader from "../../../Images/Bosses/Nya'lotha/Ilgynoth/ilgynoth.png"
 
+// Eternal Palace
 import SivaraHeader from "../../../Images/Bosses/eternalpalace/sivara/sivara.png"
 import BehemothHeader from "../../../Images/Bosses/eternalpalace/behemoth/behemoth.png"
 import RadianceHeader from "../../../Images/Bosses/eternalpalace/radiance/radiance.png"
@@ -21,6 +36,7 @@ import QueensCourtHeader from "../../../Images/Bosses/eternalpalace/queenscourt/
 import ZaqulHeader from "../../../Images/Bosses/eternalpalace/zaqul/zaqul.png"
 import QueenAzsharaHeader from "../../../Images/Bosses/eternalpalace/queenazshara/queenazshara.png"
 
+// Dazalor
 import ChampionsOfLightHeader from "../../../Images/Bosses/dazaralor/championsoflight/championsoflight.png"
 import GrongHeader from "../../../Images/Bosses/dazaralor/grong/grong.png"
 import JadefireMastersHeader from "../../../Images/Bosses/dazaralor/jadefiremasters/jadefiremasters.png"
@@ -31,21 +47,22 @@ import BlockadeHeader from "../../../Images/Bosses/dazaralor/blockade/blockade.p
 import MekkatorqueHeader from "../../../Images/Bosses/dazaralor/mekkatorque/mekkatorque.png"
 import JainaHeader from "../../../Images/Bosses/dazaralor/jaina/jaina.png"
 
-// import ArtificerHeader from "../../../Images/Bosses/CastleNathria/Artificer.jpg"
-// import CouncilHeader from "../../../Images/Bosses/CastleNathria/Council.jpg"
-// import HungeringDestroyerHeader from "../../../Images/Bosses/CastleNathria/HungeringDestroyer.jpg"
-// import HuntsmanAltimorHeader from "../../../Images/Bosses/CastleNathria/HuntsmanAltimor.jpg"
-// import KaelthasSunstriderHeader from "../../../Images/Bosses/CastleNathria/KaelthasSunstrider.jpg"
-// import LadyInervaDarkveinHeader from "../../../Images/Bosses/CastleNathria/LadyInervaDarkvein.jpg"
-// import ShriekwingHeader from "../../../Images/Bosses/CastleNathria/Shriekwing.jpg"
-// import SireDenathriusHeader from "../../../Images/Bosses/CastleNathria/SireDenathrius.jpg"
-// import SludgefistHeader from "../../../Images/Bosses/CastleNathria/Sludgefist.jpg"
-// import StonebornGeneralsHeader from "../../../Images/Bosses/CastleNathria/StonebornGenerals.jpg"
-
-
 export default function bossHeaders(props) {
   let source = ""
 
+  // Castle Nathria
+  if (props === 'Broker Curator') { source = ArtificerHeader }
+  if (props === 'Huntsman Altimor') { source = HuntsmanAltimorHeader }
+  if (props === 'Hungering Destroyer') { source = HungeringDestroyerHeader }
+  if (props === 'Lady Inerva Darkvein') { source = LadyInervaDarkveinHeader }
+  if (props === 'The Council of Blood') { source = CouncilHeader }
+  if (props === 'Sire Denathrius') { source = SireDenathriusHeader }
+  if (props === 'Stone Legion Generals') { source = StonebornGeneralsHeader }
+  if (props === 'Shriekwing') { source = ShriekwingHeader }
+  if (props === 'Sludgefist') { source = SludgefistHeader }
+  if (props === "Kael'thas") { source = SunKingsSalvationHeader }
+
+  // Nyalotha
   if (props === 'Maut') { source = MautHeader }
   if (props === 'Dark Inquisitor Xanesh') { source = XaneshHeader }
   if (props === 'Wrathion') { source = WrathionHeader }
@@ -59,6 +76,7 @@ export default function bossHeaders(props) {
   if (props === "N'Zoth the Corruptor") { source = NzothHeader }
   if (props === "Il'gynoth, Corruption Reborn") { source = IlgynothHeader }
 
+  // Eternal Palace
   if (props === 'Abyssal Commander Sivara') { source = SivaraHeader }
   if (props === 'Blackwater Behemoth') { source = BehemothHeader }
   if (props === 'Radiance of Azshara') { source = RadianceHeader }
@@ -68,6 +86,7 @@ export default function bossHeaders(props) {
   if (props === "Za'qul") { source = ZaqulHeader }
   if (props === 'Queen Azshara') { source = QueenAzsharaHeader }
 
+  // Dazalor
   if (props === 'Champions of the Light') { source = ChampionsOfLightHeader }
   if (props === 'Grong') { source = GrongHeader }
   if (props === 'Jadefire Masters') { source = JadefireMastersHeader }
