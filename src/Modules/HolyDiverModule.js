@@ -8,7 +8,6 @@ import LoadingOverlay from 'react-loading-overlay';
 import CustomEditComponent from '../Modules/HolyDiverModules/CooldownTable/Table';
 import InteractiveList from '../Modules/HolyDiverModules/Lists/ListGen'
 import Checkboxes from '../Modules/HolyDiverModules/BasicComponents/checkBox'
-import Links from '../Modules/HolyDiverModules/Links/Links'
 import GenericTable from '../Modules/HolyDiverModules/CooldownTable/GenericTable';
 import DenseAppBar from '../Modules/HolyDiverModules/BasicComponents/Appbar'
 import abilityicons from '../Modules/HolyDiverModules/CooldownTable/AbilityIcons'
@@ -22,6 +21,17 @@ import {
   importDamageLogData,
   importCastsLogData,
   durationmaker } from '../Modules/HolyDiverModules/Functions/Functions'
+import bossHeaders from '../Modules/HolyDiverModules/CooldownTable/BossHeaderIcons'
+import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+
+
+const theme = createMuiTheme({
+  palette: {
+    type: 'dark',
+    primary: { main: '#d3bc47' },
+    secondary: { main: '#e0e0e0' }
+  }
+});
 
 class HolyDiver extends Component {
   constructor() {
@@ -254,93 +264,97 @@ class HolyDiver extends Component {
     let spinnershow = this.state.loadingcheck;
 
     return (
-      <div >
-        <Grid container direction='row' justify='flex-start' alignItems='flex-start' spacing={1}>
-          <Grid item xs={12} padding={1}>
-            <Box bgcolor='#333' style={{ borderRadius: 4, boxShadow: '0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12)' }}>
-              <Grid container direction='row' justify='flex-start' alignItems='flex-start' spacing={1}>
-                <Grid item xs={5} padding={1}>
+      <ThemeProvider theme={theme}>
+        <div >
+          <Grid container direction='row' justify='flex-start' alignItems='flex-start' spacing={1}>
+            <Grid item xs={6} padding={1}>
+              <Box bgcolor='#333' style={{ borderRadius: 4, boxShadow: '0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12)' }}>
+                <div style={{ display: 'inline-flex', width: '100%' }}>
                   <UserInput changed={this.usernameChangedHandler} float={'left'} position={'relative'}/>
-                </Grid>
-                <Grid item xs={1} padding={1}>
                   <ControlledOpenSelect reportid={this.state.reportid} clicky={this.handler} update={this.updatechartdata} float={'right'} position={'relative'}/>
-                </Grid>
-                <Grid item xs={3} padding={1} align='center'>
-                  {this.state.showname ? (
-                    <Typography style={{ fontWeight: 500, fontSize: '0.9rem', color: 'white', padding: '0px 16px 0px 16px', whiteSpace: 'nowrap', }}>
-                      {this.state.boss}
-                    </Typography>) : null }
-                  {this.state.showname ? (
-                    <Typography style={{ fontWeight: 500, fontSize: '0.9rem', color: 'white', padding: '0px 16px 0px 16px', textAlign: 'center' }}>
-                      {this.state.currentFighttime + ' - ' + this.state.killWipe}
-                    </Typography>) : null }
-                </Grid>
-                {/*
-                <Grid item xs={1} padding={1}>
-                  <InteractiveList heals={this.state.healernames} />
-                </Grid>
-                */}
-                <Grid item xs={1} padding={1}>
-                  <Checkboxes check={this.damageTableShow} label={'Log Chart'} />
-                  <Checkboxes check={this.healTableShow} label={'Custom CD Chart'} />
-                </Grid>
-                <Grid item xs={1} padding={1}>
-                  <Links />
-                </Grid>
-              </Grid>
-            </Box>
+                </div>
+              </Box>
+            </Grid>
           </Grid>
-        </Grid>
 
-        <div style={{ margin: '4px 0px 0px 0px' }}/>
 
-        <Grid container direction='row' justify='flex-start' alignItems='flex-start' spacing={1}>
-          <Grid item xs={12} padding={1}>  
-            <Collapse in={this.state.damageTableShow} >
-              <LoadingOverlay active={spinnershow} spinner={<CircularProgress color="secondary" />}>
-                <Chart chart={this.state.updatedarray} abilitylist={this.state.abilitylist} legendata={this.state.legenddata} cooldown={this.state.cooldownlist} endtime={this.state.timeend} showcds={true} />
-              </LoadingOverlay>
-            </Collapse>
-          </Grid>
-        </Grid>
-
-        <Grid container direction='row' justify='flex-start' alignItems='flex-start' spacing={1}>
-          <Grid item xs={3} padding={1}>
-            <Collapse in={this.state.damageTableShow} > 
-              <DenseAppBar onClick={this.timelineHandler} title='Timeline'/>
-              <Collapse in={this.state.timelineshowhide}>
-                <GenericTable data={this.state.Updateddatacasts} columns={[{ title: 'Name', field: 'name' },{ title: 'Ability', field: 'ability', render: rowData => (abilityicons(rowData.ability)) },{ title: 'Time', field: 'timestamp' }]} title='Timeline' header={true}/>
+          <Grid container direction='row' justify='flex-start' alignItems='flex-start' spacing={1}>
+            <Grid item xs={12} padding={1}>
+              <Collapse in={this.state.damageTableShow} >
+                <Box bgcolor='#333' style={{ borderRadius: 4, boxShadow: '0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12)' }}>
+                  <div style={{ display: 'inline-flex', width: '100%', alignItems: 'center' }}>
+                    {bossHeaders(this.state.boss)}
+                    <Grid item xs={2} padding={1} align='center'>
+                      {this.state.showname ? (
+                        <Typography style={{ fontWeight: 500, fontSize: '1.25rem', padding: '0px 16px 0px 16px', whiteSpace: 'nowrap' }} color='Primary'>
+                          {this.state.boss}
+                        </Typography>) : null }
+                      {this.state.showname ? (
+                        <Typography style={{ fontWeight: 500, fontSize: '0.9rem', color: 'white', padding: '0px 16px 0px 16px', textAlign: 'center' }}>
+                          {this.state.currentFighttime + ' - ' + this.state.killWipe}
+                        </Typography>) : null }
+                    </Grid>
+                    <Grid item xs={2} padding={1} flex={0}>
+                      <InteractiveList heals={this.state.healernames} />
+                    </Grid>
+                    <Grid item xs={1} padding={1}>
+                      <Checkboxes check={this.damageTableShow} label={'Log Chart'} />
+                      <Checkboxes check={this.healTableShow} label={'Custom CD Chart'} />
+                    </Grid>
+                  </div>
+                </Box>
               </Collapse>
-            </Collapse>
+            </Grid>
           </Grid>
-        </Grid>
 
-        <Grid container direction='row' justify='flex-start' alignItems='flex-start' spacing={1}>
-          <Grid item xs={12} padding={1}>
-            <Collapse in={this.state.healTableShow}>
-              <LoadingOverlay active={spinnershow} spinner={<CircularProgress color='secondary'/>}>
-                <Chart chart={this.state.cooldownhelperfinal} abilitylist={this.state.abilitylist} cooldown={this.state.cooldownlistcustom2} endtime={this.state.timeend} showcds={true} />
-              </LoadingOverlay>
-            </Collapse>
+          <Grid container direction='row' justify='flex-start' alignItems='flex-start' spacing={1}>
+            <Grid item xs={12} padding={1}>  
+              <Collapse in={this.state.damageTableShow} >
+                <LoadingOverlay active={spinnershow} spinner={<CircularProgress color="secondary" />}>
+                  <Chart chart={this.state.updatedarray} abilitylist={this.state.abilitylist} legendata={this.state.legenddata} cooldown={this.state.cooldownlist} endtime={this.state.timeend} showcds={true} />
+                </LoadingOverlay>
+              </Collapse>
+            </Grid>
           </Grid>
-        </Grid>
 
-        <Grid container direction='row' justify='flex-start' alignItems='flex-start' spacing={1}>
-          <Grid item xs={9} padding={1}>
-            <CustomEditComponent update={this.tablehandler} />
+          <Grid container direction='row' justify='flex-start' alignItems='flex-start' spacing={1}>
+            <Grid item xs={3} padding={1}>
+              <Collapse in={this.state.damageTableShow} > 
+                <DenseAppBar onClick={this.timelineHandler} title='Timeline'/>
+                <Collapse in={this.state.timelineshowhide}>
+                  <GenericTable data={this.state.Updateddatacasts} columns={[{ title: 'Name', field: 'name' },{ title: 'Ability', field: 'ability', render: rowData => (abilityicons(rowData.ability)) },{ title: 'Time', field: 'timestamp' }]} title='Timeline' header={true}/>
+                </Collapse>
+              </Collapse>
+            </Grid>
           </Grid>
-          <Grid item xs={3} padding={1}>
-            <DenseAppBar onClick={this.ertHandler} title='ERT Note' />
-            <Collapse in={this.state.ertshowhide} >
-              <GenericTable
-                data={this.state.ertList}
-                columns={[{ title: 'Sort by Time', field: 'ert' }, { title: 'Time', field: 'time', hidden: true, customSort: (a, b) => moment(a, 'mm:ss').milliseconds() - moment(b, 'mm:ss').milliseconds() } ]}
-                title='ERT Note'
-                header={true} />
-            </Collapse>
+
+          <Grid container direction='row' justify='flex-start' alignItems='flex-start' spacing={1}>
+            <Grid item xs={12} padding={1}>
+              <Collapse in={this.state.healTableShow}>
+                <LoadingOverlay active={spinnershow} spinner={<CircularProgress color='secondary'/>}>
+                  <Chart chart={this.state.cooldownhelperfinal} abilitylist={this.state.abilitylist} cooldown={this.state.cooldownlistcustom2} endtime={this.state.timeend} showcds={true} />
+                </LoadingOverlay>
+              </Collapse>
+            </Grid>
           </Grid>
-        </Grid>
-      </div>
+
+          <Grid container direction='row' justify='flex-start' alignItems='flex-start' spacing={1}>
+            <Grid item xs={9} padding={1}>
+              <CustomEditComponent update={this.tablehandler} />
+            </Grid>
+            <Grid item xs={3} padding={1}>
+              <DenseAppBar onClick={this.ertHandler} title='ERT Note' />
+              <Collapse in={this.state.ertshowhide} >
+                <GenericTable
+                  data={this.state.ertList}
+                  columns={[{ title: 'Sort by Time', field: 'ert' }, { title: 'Time', field: 'time', hidden: true, customSort: (a, b) => moment(a, 'mm:ss').milliseconds() - moment(b, 'mm:ss').milliseconds() } ]}
+                  title='ERT Note'
+                  header={true} />
+              </Collapse>
+            </Grid>
+          </Grid>
+        </div>
+      </ThemeProvider>
     )
   }
 }

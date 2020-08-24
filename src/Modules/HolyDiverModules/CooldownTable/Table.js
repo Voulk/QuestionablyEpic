@@ -99,7 +99,7 @@ export default function CustomEditComponent(props) {
       field: 'class',
       render: rowData => (
         <div style={{ color: classColoursJS(rowData.class) }}>
-          {classicons(rowData.class)}
+          {classicons(rowData.class, 20)}
           {rowData.class}
         </div>),
       editComponent: props => (

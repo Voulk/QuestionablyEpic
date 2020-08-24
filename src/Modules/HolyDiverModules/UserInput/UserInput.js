@@ -21,19 +21,18 @@ const useStyles = makeStyles((theme) => ({
 }));
 export default function userInput(props) {
   const classes = useStyles();
-
   return (
     <ThemeProvider theme={theme}>
-      <form className={classes.root} noValidate autoComplete='off'>
-        <TextField
-          id='filled-basic'
-          label='Paste WarcraftLog Link Here'
-          variant='outlined'
-          onChange={props.changed}
-          value={props.loglink}
-          size='small'
-        />
-      </form>
+      <TextField
+        className={classes.root}
+        id='filled-basic'
+        label='Paste WarcraftLog Link Here'
+        variant='outlined'
+        onChange={props.changed}
+        value={props.loglink}
+        size='small'
+        style={{ width: '100%'}}
+      />
     </ThemeProvider>
   );
 }

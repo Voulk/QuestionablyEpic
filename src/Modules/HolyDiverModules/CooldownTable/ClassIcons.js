@@ -6,14 +6,14 @@ import MistweaverIcon from '../../../Images/MistWeaverMonk.jpg'
 import RestorationDruidIcon from '../../../Images/RestorationDruid.jpg'
 import RestorationShamanIcon from '../../../Images/RestorationShaman.jpg'
 
-export default function classicons(props) {
+export default function classicons(props, iconsize) {
   // Paladin Cooldowns 
   if (props === 'Holy Paladin' || props === 'Paladin-Holy') {
     return (
       <img
         style={{
-          height: 20,
-          width: 20,
+          height: iconsize,
+          width: iconsize,
           padding: '0px 5px 0px 5px',
           verticalAlign: 'middle'
         }}
@@ -28,8 +28,8 @@ export default function classicons(props) {
     return (
       <img
         style={{
-          height: 20,
-          width: 20,
+          height: iconsize,
+          width: iconsize,
           padding: '0px 5px 0px 5px',
           verticalAlign: 'middle'
         }}
@@ -44,8 +44,8 @@ export default function classicons(props) {
     return (
       <img
         style={{
-          height: 20,
-          width: 20,
+          height: iconsize,
+          width: iconsize,
           padding: '0px 5px 0px 5px',
           verticalAlign: 'middle'
         }}
@@ -60,8 +60,8 @@ export default function classicons(props) {
     return (
       <img
         style={{
-          height: 20,
-          width: 20,
+          height: iconsize,
+          width: iconsize,
           padding: '0px 5px 0px 5px',
           verticalAlign: 'middle'
         }}
@@ -76,8 +76,8 @@ export default function classicons(props) {
     return (
       <img
         style={{
-          height: 20,
-          width: 20,
+          height: iconsize,
+          width: iconsize,
           padding: '0px 5px 0px 5px',
           verticalAlign: 'middle'
         }}
@@ -92,8 +92,8 @@ export default function classicons(props) {
     return (
       <img
         style={{
-          height: 20,
-          width: 20,
+          height: iconsize,
+          width: iconsize,
           padding: '0px 5px 0px 5px',
           verticalAlign: 'middle'
         }}

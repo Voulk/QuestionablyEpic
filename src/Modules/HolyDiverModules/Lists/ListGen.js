@@ -8,7 +8,7 @@ import classicons from '../CooldownTable/ClassIcons'
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    flexGrow: 1,
+    // flexGrow: 1,
     // maxWidth: 752,
   },
   demo: {
@@ -36,20 +36,15 @@ export default function InteractiveList(props) {
 
   let listheal = props.heals.map(key =>
     (<ListItem>
-      <ListItemText
-        primary={key.name}
-        secondary={secondary ? 'Secondary text' : null}
-      />
-      {classicons(key.icon)}
+      {classicons(key.icon, 14)}
+      <ListItemText primary={key.name} secondary={secondary ? 'Secondary text' : null} />
     </ListItem>))
 
   return (
-    <div className={classes.root}>
-      <div className={classes.demo}>
-        <List dense={dense}>
-          {listheal}
-        </List>
-      </div>
+    <div className={classes.demo}>
+      <List dense={dense}>
+        {listheal}
+      </List>
     </div>
   );
 }
