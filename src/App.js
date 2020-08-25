@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 //import HolyDiver from './Modules/HolyDiverModule'
-import QEMainMenu from './Modules/QEMainMenu.js';
+import QEMainMenu from './Modules/QEModules/QEMainMenu.js';
 import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 
 const theme = createMuiTheme({

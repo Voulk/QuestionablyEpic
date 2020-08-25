@@ -1,4 +1,6 @@
-
+var SPELL_CASTS_LOC = 1;
+var SPELL_HEALING_LOC = 2;
+var SPELL_OVERHEALING_LOC = 5;
 
 
 class Player {
@@ -30,10 +32,8 @@ class Player {
     }
 
     // Convert the players given stats into a percentage. 
-    getStatPerc = (stat) => {
-        
+    getStatPerc = (stat) => {       
         var statPerc = 1.0;
-
         switch(stat) {
             case "Haste":
                 statPerc = 1 + this.activeStats.haste / 68;
@@ -61,12 +61,8 @@ class Player {
     }
 
     getSpellCasts = (spellName) => {
-        return this.castPattern.get(spellName)[0];
+        return this.castPattern[spellName][SPELL_CASTS_LOC];
     }
-
-
-
-
 }
 
 export default Player;
