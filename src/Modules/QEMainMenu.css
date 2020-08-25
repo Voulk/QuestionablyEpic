@@ -1,13 +1,28 @@
-.menuBtn {
-    width: "280px";
-    margin: "7px";
-
+.menBtn {
+    width: 95%;
+    margin: 7px;
 }
 
 
 .headers {
-    font-size: 20px;
+    font-size: 32px;
     color: Whitesmoke;
     width: "280px";
-    margin: "7px";
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    padding: 0px;
+    margin-bottom: 2px;
+
+}
+
+.test {
+    background-color: green;
+    margin-left: auto,
+}
+
+
+body {
+    background-color: #353535;
+
 }
