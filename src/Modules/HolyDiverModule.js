@@ -24,6 +24,12 @@ import {
 import bossHeaders from '../Modules/HolyDiverModules/CooldownTable/BossHeaderIcons'
 import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 
+import Accordion from '@material-ui/core/Accordion';
+import AccordionSummary from '@material-ui/core/AccordionSummary';
+import AccordionDetails from '@material-ui/core/AccordionDetails';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import Grow from '@material-ui/core/Grow';
+
 
 const theme = createMuiTheme({
   palette: {
@@ -281,28 +287,34 @@ class HolyDiver extends Component {
           <Grid container direction='row' justify='flex-start' alignItems='flex-start' spacing={1}>
             <Grid item xs={12} padding={1}>
               <Collapse in={this.state.damageTableShow} >
-                <Box bgcolor='#333' style={{ borderRadius: 4, boxShadow: '0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12)' }}>
-                  <div style={{ display: 'inline-flex', width: '100%', alignItems: 'center' }}>
-                    {bossHeaders(this.state.boss)}
-                    <Grid item xs={2} padding={1} align='center'>
-                      {this.state.showname ? (
-                        <Typography style={{ fontWeight: 500, fontSize: '1.25rem', padding: '0px 16px 0px 16px', whiteSpace: 'nowrap' }} color='Primary'>
-                          {this.state.boss}
-                        </Typography>) : null }
-                      {this.state.showname ? (
-                        <Typography style={{ fontWeight: 500, fontSize: '0.9rem', color: 'white', padding: '0px 16px 0px 16px', textAlign: 'center' }}>
-                          {this.state.currentFighttime + ' - ' + this.state.killWipe}
-                        </Typography>) : null }
-                    </Grid>
-                    <Grid item xs={2} padding={1} flex={0}>
-                      <InteractiveList heals={this.state.healernames} />
-                    </Grid>
-                    <Grid item xs={1} padding={1}>
-                      <Checkboxes check={this.damageTableShow} label={'Log Chart'} />
-                      <Checkboxes check={this.healTableShow} label={'Custom CD Chart'} />
-                    </Grid>
-                  </div>
-                </Box>
+                <Grow
+                  in={this.state.damageTableShow}
+                  style={{ transformOrigin: '0 0 0' }}
+                  {...(this.state.damageTableShow ? { timeout: 1000 } : {})}
+                >
+                  <Box bgcolor='#333' style={{ borderRadius: 4, boxShadow: '0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12)' }}>
+                    <div style={{ display: 'inline-flex', width: '100%', alignItems: 'center' }}>
+                      {bossHeaders(this.state.boss)}
+                      <Grid item xs={2} padding={1} align='center'>
+                        {this.state.showname ? (
+                          <Typography style={{ fontWeight: 500, fontSize: '1.25rem', padding: '0px 16px 0px 16px', whiteSpace: 'nowrap' }} color='Primary'>
+                            {this.state.boss}
+                          </Typography>) : null }
+                        {this.state.showname ? (
+                          <Typography style={{ fontWeight: 500, fontSize: '0.9rem', color: 'white', padding: '0px 16px 0px 16px', textAlign: 'center' }}>
+                            {this.state.currentFighttime + ' - ' + this.state.killWipe}
+                          </Typography>) : null }
+                      </Grid>
+                      <Grid item xs={2} padding={1} flex={0}>
+                        <InteractiveList heals={this.state.healernames} />
+                      </Grid>
+                      <Grid item xs={1} padding={1}>
+                        <Checkboxes check={this.damageTableShow} label={'Log Chart'} />
+                        <Checkboxes check={this.healTableShow} label={'Custom CD Chart'} />
+                      </Grid>
+                    </div>
+                  </Box>
+                  </Grow>
               </Collapse>
             </Grid>
           </Grid>

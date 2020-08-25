@@ -16,7 +16,6 @@ import SaveAlt from '@material-ui/icons/SaveAlt';
 import Search from '@material-ui/icons/Search';
 import ViewColumn from '@material-ui/icons/ViewColumn';
 import classcds from './classcds'
-import 'rc-time-picker/assets/index.css';
 import { Select } from '@material-ui/core'
 import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
@@ -31,6 +30,7 @@ import { classColoursJS } from '../CooldownTable/ClassColourFunctions'
 import { classMenus } from '../CooldownTable/ClassMenuItems' 
 import './Table.css'
 
+
 const useStyles = makeStyles((theme) => ({
   formControl: {
     margin: theme.spacing(0.5),
@@ -44,6 +44,19 @@ const useStyles = makeStyles((theme) => ({
 ));
 
 const themecooldowntable = createMuiTheme({
+  overrides: {
+    MuiTableCell: {
+      root: {
+        padding: '0px 16px 0px 16px'
+      },
+    },
+    MuiIconButton: {
+      root: {
+        padding: '4px'
+      }
+    },
+
+  },
   palette: {
     type: 'dark',
     primary: { main: '#d3bc47' },
@@ -87,7 +100,7 @@ export default function CustomEditComponent(props) {
         <TextField
           size="small"
           id="standard-basic"
-          label="Healer Name"
+          label="Name"
           value={props.value}
           style={{ whiteSpace: 'nowrap', width: '100%' }}
           onChange={e => props.onChange(e.target.value)}
@@ -105,7 +118,7 @@ export default function CustomEditComponent(props) {
       editComponent: props => (
         <ThemeProvider theme={themecooldowntable}>
           <FormControl className={classes.formControl}>
-            <InputLabel id="HealerClassSelector">Healer Class</InputLabel>
+            <InputLabel id="HealerClassSelector">Class</InputLabel>
             <Select
               value={props.value}
               onChange={e => {
@@ -219,7 +232,6 @@ export default function CustomEditComponent(props) {
           },
           actionsCellStyle: {
             borderBottom: '1px solid #6d6d6d',
-            padding: '0px 16px 0px 16px'
           },
           actionsColumnIndex: 7,
           paging: false

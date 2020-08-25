@@ -181,7 +181,7 @@ export async function importDamageLogData(starttime, endtime, reportid) {
       .catch(function (error) {
         console.log(error)
       });
-  } while (nextpage != undefined)
+  } while (nextpage != undefined || null)
 
   return damage
 }
@@ -226,7 +226,7 @@ export async function importCastsLogData(starttime, endtime, reportid, healerID)
       });
     i = i + 1
   } while (
-    nextpage != undefined);
+    nextpage != undefined || null);
   return cooldowns
 }
 
