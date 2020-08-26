@@ -2,7 +2,15 @@ import React, { Component } from 'react';
 import './App.css';
 //import HolyDiver from './Modules/HolyDiverModule'
 import QEMainMenu from './Modules/QEModules/QEMainMenu.js';
+import TrinketCompare from './Modules/QEModules/TrinketCompare.js';
+
 import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 const theme = createMuiTheme({
   palette: {
@@ -21,16 +29,20 @@ class App extends Component {
 
   render() {
     return (
+      <Router>
+
       <ThemeProvider theme={theme}>
       <div className='App'>
-       {/* 
-         - QE Live SL -      
-               <HolyDiver />
-           */}
-        <QEMainMenu />   
-        
+        <Switch> 
+          <Route exact path="/" component={QEMainMenu} />
+          {/*<Route path="holydiver" component={HolyDiver} /> */}
+          <Route path="/trinkets" component={TrinketCompare} />
+
+        </Switch>
       </div>
       </ThemeProvider>
+
+      </Router>
     )
   }
 }

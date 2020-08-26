@@ -17,6 +17,7 @@ import EditIcon from "@material-ui/icons/Edit";
 import Box from '@material-ui/core/Box';
 import Player from './Player/Player';
 import QEHeader from './QEHeader';
+import { Link } from 'react-router-dom';
 
 
 // This is all shitty boilerplate code that'll be replaced. Do not copy.
@@ -53,14 +54,11 @@ export default class QEMainMenu extends Component {
         <div style={{backgroundColor: "#353535"}}>
         <QEHeader />
           <div style={{margin: "auto", width: "20%", justifyContent: "center", display: "block"}}>
-            
-            <p>{player.getSpellCasts("Rejuv")}</p>
-
             <p className="headers">Items & Gear</p>
             
             <Button variant="contained" color="primary" style={{width: "95%", margin: "7px"}}>Top Gear</Button>
             <Button variant="contained" color="primary" style={{width: "95%", margin: "7px"}}>Gear Quick Compare</Button>
-            <Button variant="contained" color="primary" style={{width: "95%", margin: "7px"}}>Trinket Quick Compare</Button>
+            <Button variant="contained" color="primary" style={{width: "95%", margin: "7px"}} component={Link} to="/trinkets">Trinket Quick Compare</Button>
             <Button variant="contained" color="primary" style={{width: "95%", margin: "7px"}}>Upgrade Finder</Button>
             <Button variant="contained" color="primary" style={{width: "95%", margin: "7px"}}>Explore Conduits</Button>
             
@@ -70,7 +68,8 @@ export default class QEMainMenu extends Component {
 
 
             <p className="headers">Settings</p>
-            <Button variant="contained" color="primary" className="menBtn">Settings</Button>
+            <Button variant="contained" color="primary" style={{width: "95%", margin: "7px"}}>Add Char (Temp)</Button>
+            <Button variant="contained" color="primary" style={{width: "95%", margin: "7px"}}>Settings</Button>
           </div>
 
       </div>

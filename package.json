@@ -24,6 +24,7 @@
     "react-dom": "^16.13.1",
     "react-duration-picker": "^1.1.1",
     "react-loading-overlay": "^1.0.1",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "1.0.13",
     "reactstrap": "^8.5.1",
     "recharts": "^1.8.5",
