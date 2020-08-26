@@ -12,8 +12,6 @@ import MenuIcon from '@material-ui/icons/Menu';
 import './QEMainMenu.css';
 import Avatar from "@material-ui/core/Avatar";
 
-import SaveIcon from "@material-ui/icons/Save";
-import EditIcon from "@material-ui/icons/Edit";
 import Box from '@material-ui/core/Box';
 import Player from './Player/Player';
 import QEHeader from './QEHeader';
@@ -65,7 +63,6 @@ export default class QEMainMenu extends Component {
 
             <p className="headers">Raid Tools</p>
             <Button variant="contained" color="primary" style={{width: "95%", margin: "7px"}}>Cooldown Assignments</Button>
-
 
             <p className="headers">Settings</p>
             <Button variant="contained" color="primary" style={{width: "95%", margin: "7px"}}>Add Char (Temp)</Button>

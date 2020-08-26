@@ -25,10 +25,11 @@ class Player {
    
     statWeights = {
         intellect: 1, // Fixed.
-        haste: 0.5,
-        crit: 0.5,
+        haste: 0.4,
+        crit: 0.6,
         mastery: 0.5,
-        vers: 0.5
+        vers: 0.3,
+        leech: 0.8
     }
 
     // Convert the players given stats into a percentage. 
@@ -49,8 +50,7 @@ class Player {
             default:
                 break;
         }
-
-        
+   
         // Round to four decimal places. I'd heavily caution against ever rounding more heavily than this. 
         return Math.round(statPerc*10000) / 10000;
 
