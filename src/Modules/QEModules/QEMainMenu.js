@@ -62,7 +62,7 @@ export default class QEMainMenu extends Component {
             
 
             <p className="headers">Raid Tools</p>
-            <Button variant="contained" color="primary" style={{width: "95%", margin: "7px"}}>Cooldown Assignments</Button>
+            <Button variant="contained" color="primary" style={{width: "95%", margin: "7px"}} component={Link} to="/holydiver">Cooldown Planner</Button>
 
             <p className="headers">Settings</p>
             <Button variant="contained" color="primary" style={{width: "95%", margin: "7px"}}>Add Char (Temp)</Button>

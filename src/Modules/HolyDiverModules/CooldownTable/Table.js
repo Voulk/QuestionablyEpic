@@ -200,19 +200,13 @@ export default function CustomEditComponent(props) {
         columns={columns}
         data={data}
         style={{
-          backgroundColor: '#333',
-          color: '#ffffff',
-          borderBottom: '1px solid #6d6d6d',
           boxShadow: '0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12)',
           fontSize: '0.8 rem',
         }}
         options={{
-          // tableLayout: 'fixed',
           headerStyle: {
-            backgroundColor: '#333',
-            color: '#ffffff',
-            padding: '0px 16px 0px 16px',
             borderBottom: '2px solid #6d6d6d',
+            padding: '0px 16px 0px 16px',
             fontSize: '0.8 rem',
           },
           cellStyle: {
@@ -230,14 +224,14 @@ export default function CustomEditComponent(props) {
             borderBottom: '1px solid #6d6d6d',
             color: '#ffffff',
           },
-          actionsCellStyle: {
+          actionCellStyle: {
             borderBottom: '1px solid #6d6d6d',
           },
           actionsColumnIndex: 7,
           paging: false
         }}
         editable={{
-          cellStyle: {padding: '0px 16px 0px 16px'},
+          cellStyle: { padding: '0px 16px 0px 16px' },
           onRowAdd: newData =>
             new Promise((resolve, reject) => {
               setTimeout(() => {

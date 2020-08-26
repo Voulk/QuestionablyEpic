@@ -16,31 +16,22 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const theme = createMuiTheme({
-  palette: {
-    type: 'dark',
-    primary: { main: '#d3bc47' },
-    secondary: { main: '#e0e0e0' }
-  }
-});
 
 export default function DenseAppBar(props) {
   const classes = useStyles();
 
   return (
-    <ThemeProvider theme={theme}>
-      <div className={classes.root}>
-        <AppBar position="static" style={{ borderRadius: '4px 4px 0px 0px' }} >
-          <Toolbar variant="dense">
-            <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu" onClick={props.onClick}>
-              <MenuIcon />
-            </IconButton>
-            <Typography variant="h6" color="inherit">
-              {props.title}
-            </Typography>
-          </Toolbar>
-        </AppBar>
-      </div>
-    </ThemeProvider>
+    <div className={classes.root}>
+      <AppBar position="static" style={{ borderRadius: '4px 4px 0px 0px' }} >
+        <Toolbar variant="dense">
+          <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu" onClick={props.onClick}>
+            <MenuIcon />
+          </IconButton>
+          <Typography variant="h6" color="inherit">
+            {props.title}
+          </Typography>
+        </Toolbar>
+      </AppBar>
+    </div>
   );
 }

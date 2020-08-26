@@ -14,14 +14,6 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const theme = createMuiTheme({
-  palette: {
-    type: 'dark',
-    primary: { main: '#d3bc47' },
-    secondary: { main: '#e0e0e0' }
-  }
-});
-
 export default function ControlledOpenSelect(props) {
   const classes = useStyles();
   const [age, setAge] = React.useState('');
@@ -44,30 +36,28 @@ export default function ControlledOpenSelect(props) {
   };
 
   return (
-    <ThemeProvider theme={theme}>
-      <FormControl variant='outlined' className={classes.formControl} size='small'>
-        <InputLabel id='demo-controlled-open-select-label' label='Outlined'>
-        Fight
-        </InputLabel>
-        <Select
-          labelId='demo-controlled-open-select-label'
-          id='demo-controlled-open-select'
-          open={open}
-          label={boss}
-          onClose={handleClose}
-          onOpen={handleOpen}
-          value={age}
-          onChange={handleChange}
-          onClick={handleClose}
-        >
-          {<LogImport 
-            reportid={props.reportid}
-            clicker={props.clicky}
-            update={props.update}
-          />}
-         }
-        </Select>
-      </FormControl>
-    </ThemeProvider>
+    <FormControl variant='outlined' className={classes.formControl} size='small'>
+      <InputLabel id='demo-controlled-open-select-label' label='Outlined'>
+      Fight
+      </InputLabel>
+      <Select
+        labelId='demo-controlled-open-select-label'
+        id='demo-controlled-open-select'
+        open={open}
+        label={boss}
+        onClose={handleClose}
+        onOpen={handleOpen}
+        value={age}
+        onChange={handleChange}
+        onClick={handleClose}
+      >
+        {<LogImport 
+          reportid={props.reportid}
+          clicker={props.clicky}
+          update={props.update}
+        />}
+       }
+      </Select>
+    </FormControl>
   );
 }

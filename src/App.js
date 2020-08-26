@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-//import HolyDiver from './Modules/HolyDiverModule'
+import HolyDiver from './Modules/HolyDiverModules/HolyDiverModule'
 import QEMainMenu from './Modules/QEModules/QEMainMenu.js';
 import TrinketCompare from './Modules/QEModules/TrinketCompare.js';
 
@@ -10,7 +10,7 @@ import {
   Switch,
   Route,
   Link
-} from "react-router-dom";
+} from 'react-router-dom';
 
 const theme = createMuiTheme({
   palette: {
@@ -25,23 +25,19 @@ class App extends Component {
     super()
   }
 
-
-
   render() {
     return (
       <Router>
+        <ThemeProvider theme={theme}>
+          <div className='App'>
+            <Switch> 
+              <Route exact path="/" component={QEMainMenu} />
+              <Route path="/holydiver" component={HolyDiver} />
+              <Route path="/trinkets" component={TrinketCompare} />
 
-      <ThemeProvider theme={theme}>
-      <div className='App'>
-        <Switch> 
-          <Route exact path="/" component={QEMainMenu} />
-          {/*<Route path="holydiver" component={HolyDiver} /> */}
-          <Route path="/trinkets" component={TrinketCompare} />
-
-        </Switch>
-      </div>
-      </ThemeProvider>
-
+            </Switch>
+          </div>
+        </ThemeProvider>
       </Router>
     )
   }

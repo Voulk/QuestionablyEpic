@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
-import { Typography, Collapse, Box, CircularProgress, Grid } from '@material-ui/core';
-import UserInput from '../Modules/HolyDiverModules/UserInput/UserInput';
-import Chart from '../Modules/HolyDiverModules/Chart/Chart'
+import { Typography, Collapse, CircularProgress, Grid } from '@material-ui/core';
+import UserInput from '../HolyDiverModules/UserInput/UserInput';
+import Chart from '../HolyDiverModules/Chart/Chart'
 import moment from 'moment';
-import ControlledOpenSelect from '../Modules/HolyDiverModules/DropDown/buttonnew';
+import ControlledOpenSelect from '../HolyDiverModules/DropDown/buttonnew';
 import LoadingOverlay from 'react-loading-overlay';
-import CustomEditComponent from '../Modules/HolyDiverModules/CooldownTable/Table';
-import InteractiveList from '../Modules/HolyDiverModules/Lists/ListGen'
-import Checkboxes from '../Modules/HolyDiverModules/BasicComponents/checkBox'
-import GenericTable from '../Modules/HolyDiverModules/CooldownTable/GenericTable';
-import DenseAppBar from '../Modules/HolyDiverModules/BasicComponents/Appbar'
-import abilityicons from '../Modules/HolyDiverModules/CooldownTable/AbilityIcons'
-import { classColoursERT } from '../Modules/HolyDiverModules/CooldownTable/ClassColourFunctions'
+import CustomEditComponent from '../HolyDiverModules/CooldownTable/Table';
+import InteractiveList from '../HolyDiverModules/Lists/ListGen'
+import Checkboxes from '../HolyDiverModules/BasicComponents/checkBox'
+import GenericTable from '../HolyDiverModules/CooldownTable/GenericTable';
+import DenseAppBar from '../HolyDiverModules/BasicComponents/Appbar'
+import abilityicons from '../HolyDiverModules/CooldownTable/AbilityIcons'
+import { classColoursERT } from '../HolyDiverModules/CooldownTable/ClassColourFunctions'
 import {
   addMissingTimestamps,
   getUniqueObjectsFromArray,
@@ -20,24 +20,11 @@ import {
   importHealerLogData,
   importDamageLogData,
   importCastsLogData,
-  durationmaker } from '../Modules/HolyDiverModules/Functions/Functions'
-import bossHeaders from '../Modules/HolyDiverModules/CooldownTable/BossHeaderIcons'
-import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
-
-import Accordion from '@material-ui/core/Accordion';
-import AccordionSummary from '@material-ui/core/AccordionSummary';
-import AccordionDetails from '@material-ui/core/AccordionDetails';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+  durationmaker } from '../HolyDiverModules/Functions/Functions'
+import bossHeaders from '../HolyDiverModules/CooldownTable/BossHeaderIcons'
 import Grow from '@material-ui/core/Grow';
-
-
-const theme = createMuiTheme({
-  palette: {
-    type: 'dark',
-    primary: { main: '#d3bc47' },
-    secondary: { main: '#e0e0e0' }
-  }
-});
+import QEHeader from '../QEModules/QEHeader';
+import Paper from '@material-ui/core/Paper';
 
 class HolyDiver extends Component {
   constructor() {
@@ -270,16 +257,17 @@ class HolyDiver extends Component {
     let spinnershow = this.state.loadingcheck;
 
     return (
-      <ThemeProvider theme={theme}>
-        <div >
-          <Grid container direction='row' justify='flex-start' alignItems='flex-start' spacing={1}>
+      <div>
+        <QEHeader />
+        <div style={{ margin: 10}}>
+          <Grid container direction='row' justify='flex-start' alignItems='flex-start' spacing={1} style={{ padding: '10px 0px 0px 0px' }}>
             <Grid item xs={6} padding={1}>
-              <Box bgcolor='#333' style={{ borderRadius: 4, boxShadow: '0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12)' }}>
+              <Paper bgcolor='#333' style={{ borderRadius: 4, boxShadow: '0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12)' }}>
                 <div style={{ display: 'inline-flex', width: '100%' }}>
                   <UserInput changed={this.usernameChangedHandler} float={'left'} position={'relative'}/>
                   <ControlledOpenSelect reportid={this.state.reportid} clicky={this.handler} update={this.updatechartdata} float={'right'} position={'relative'}/>
                 </div>
-              </Box>
+              </Paper>
             </Grid>
           </Grid>
 
@@ -292,7 +280,7 @@ class HolyDiver extends Component {
                   style={{ transformOrigin: '0 0 0' }}
                   {...(this.state.damageTableShow ? { timeout: 1000 } : {})}
                 >
-                  <Box bgcolor='#333' style={{ borderRadius: 4, boxShadow: '0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12)' }}>
+                  <Paper bgcolor='#333' style={{ borderRadius: 4, boxShadow: '0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12)' }}>
                     <div style={{ display: 'inline-flex', width: '100%', alignItems: 'center' }}>
                       {bossHeaders(this.state.boss)}
                       <Grid item xs={2} padding={1} align='center'>
@@ -313,8 +301,8 @@ class HolyDiver extends Component {
                         <Checkboxes check={this.healTableShow} label={'Custom CD Chart'} />
                       </Grid>
                     </div>
-                  </Box>
-                  </Grow>
+                  </Paper>
+                </Grow>
               </Collapse>
             </Grid>
           </Grid>
@@ -366,7 +354,7 @@ class HolyDiver extends Component {
             </Grid>
           </Grid>
         </div>
-      </ThemeProvider>
+      </div>
     )
   }
 }
