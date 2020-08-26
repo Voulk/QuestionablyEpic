@@ -57,6 +57,7 @@ class HolyDiver extends Component {
       currentEndTime: 0,
       currentStartTime: 0,
       damageTableShow: false,
+      logDetailsShow: false,
       healTableShow: false,
       ertList: [],
       currentFighttime: null,
@@ -175,6 +176,7 @@ class HolyDiver extends Component {
       timeend: info2,
       nextpage: info,
       boss: bossname,
+      logDetailsShow: true,
       damageTableShow: true,
       healTableShow: true,
       currentFighttime: fighttime,
@@ -274,11 +276,11 @@ class HolyDiver extends Component {
 
           <Grid container direction='row' justify='flex-start' alignItems='flex-start' spacing={1}>
             <Grid item xs={12} padding={1}>
-              <Collapse in={this.state.damageTableShow} >
+              <Collapse in={this.state.logDetailsShow} >
                 <Grow
-                  in={this.state.damageTableShow}
+                  in={this.state.logDetailsShow}
                   style={{ transformOrigin: '0 0 0' }}
-                  {...(this.state.damageTableShow ? { timeout: 1000 } : {})}
+                  {...(this.state.logDetailsShow ? { timeout: 1000 } : {})}
                 >
                   <Paper bgcolor='#333' style={{ borderRadius: 4, boxShadow: '0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12)' }}>
                     <div style={{ display: 'inline-flex', width: '100%', alignItems: 'center' }}>
@@ -318,14 +320,43 @@ class HolyDiver extends Component {
           </Grid>
 
           <Grid container direction='row' justify='flex-start' alignItems='flex-start' spacing={1}>
+           
             <Grid item xs={3} padding={1}>
               <Collapse in={this.state.damageTableShow} > 
-                <DenseAppBar onClick={this.timelineHandler} title='Timeline'/>
+                <DenseAppBar onClick={this.timelineHandler} title='Cooldown Timeline'/>
                 <Collapse in={this.state.timelineshowhide}>
                   <GenericTable data={this.state.Updateddatacasts} columns={[{ title: 'Name', field: 'name' },{ title: 'Ability', field: 'ability', render: rowData => (abilityicons(rowData.ability)) },{ title: 'Time', field: 'timestamp' }]} title='Timeline' header={true}/>
                 </Collapse>
               </Collapse>
             </Grid>
+
+            <Grid item xs={3} padding={1}>
+              <Collapse in={this.state.damageTableShow} > 
+                <DenseAppBar onClick={this.timelineHandler} title='Damage Taken (DTPS)'/>
+                <Collapse in={this.state.timelineshowhide}>
+                  <GenericTable data={this.state.Updateddatacasts} columns={[{ title: 'Name', field: 'name' },{ title: 'Ability', field: 'ability', render: rowData => (abilityicons(rowData.ability)) },{ title: 'Time', field: 'timestamp' }]} title='Timeline' header={true}/>
+                </Collapse>
+              </Collapse>
+            </Grid>
+
+            <Grid item xs={3} padding={1}>
+              <Collapse in={this.state.damageTableShow} > 
+                <DenseAppBar onClick={this.timelineHandler} title='some other cool metric'/>
+                <Collapse in={this.state.timelineshowhide}>
+                  <GenericTable data={this.state.Updateddatacasts} columns={[{ title: 'Name', field: 'name' },{ title: 'Ability', field: 'ability', render: rowData => (abilityicons(rowData.ability)) },{ title: 'Time', field: 'timestamp' }]} title='Timeline' header={true}/>
+                </Collapse>
+              </Collapse>
+            </Grid>
+
+                        <Grid item xs={3} padding={1}>
+              <Collapse in={this.state.damageTableShow} > 
+                <DenseAppBar onClick={this.timelineHandler} title='placeholder thing'/>
+                <Collapse in={this.state.timelineshowhide}>
+                  <GenericTable data={this.state.Updateddatacasts} columns={[{ title: 'Name', field: 'name' },{ title: 'Ability', field: 'ability', render: rowData => (abilityicons(rowData.ability)) },{ title: 'Time', field: 'timestamp' }]} title='Timeline' header={true}/>
+                </Collapse>
+              </Collapse>
+            </Grid>
+
           </Grid>
 
           <Grid container direction='row' justify='flex-start' alignItems='flex-start' spacing={1}>
