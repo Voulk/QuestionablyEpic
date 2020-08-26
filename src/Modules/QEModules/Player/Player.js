@@ -6,7 +6,6 @@ var SPELL_OVERHEALING_LOC = 5;
 class Player {
     constructor(playerName, specName) {
         this.spec = specName;
-        
     }
     spec = "";
     castPattern = {
@@ -62,6 +61,30 @@ class Player {
 
     getSpellCasts = (spellName) => {
         return this.castPattern[spellName][SPELL_CASTS_LOC];
+    }
+
+    // Consider replacing this with an external table for cleanliness and ease of editing. 
+    setupDefaults = (spec) => {
+        if (spec === "Druid") {
+            this.activeStats = {
+                intellect: 0,
+                haste: 1,
+                crit: 0,
+                mastery: 0,
+                vers: 0,
+            }
+           
+            this.statWeights = {
+                intellect: 1, // Fixed.
+                haste: 0.4,
+                crit: 0.6,
+                mastery: 0.5,
+                vers: 0.3,
+                leech: 0.8
+            }
+
+        }
+
     }
 }
 

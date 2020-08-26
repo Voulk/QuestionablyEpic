@@ -19,6 +19,7 @@ import Player from './Player/Player';
 import QEHeader from './QEHeader';
 import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
+import LegendaryObject from './LegendaryObject';
 
 
 // This is all shitty boilerplate code that'll be replaced. Do not copy.
@@ -35,31 +36,40 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-// Demo list only.
-const trinketList = ["Sea Star", "Music Box", "Conch", "Alchemist Stone", "Flat Stat Stick"]
+//TODO
+const getLegendaryList = (spec) => {
+    return ["Rejuv Spreader", "Swiftmend Extension", "Double Lifebloom"];
+}
+
+const getLegendaryInfo = (name, spec, infoType) => {
+    return Math.round(Math.random(0, 1) * 100);
+
+
+}
+
 
 export default class QEMainMenu extends Component {
     render() {
+
       return (
         <div style={{backgroundColor: "#353535"}}>
 
         <QEHeader />
 
-          <div style={{margin: "auto", width: "20%", justifyContent: "center", display: "block"}}>
-            <p className="headers">Trinket Compare</p>
-            <Autocomplete
-              id="trinketSelection"
-              options={trinketList}
-              style={{width: 250}}
-              renderInput={(params) => <TextField {...params} label="Select a Trinket" variant="outlined" />}
-            />
+          <div style={{margin: "auto", width: "55%", justifyContent: "space-between", display: "block" }}>
+            <p className="headers">Legendary Compare</p>
 
-            <Button variant="contained">Add</Button>
+                {getLegendaryList().map((item, index) => (
+                    <LegendaryObject key={index} name={item} hps={getLegendaryInfo(item, this.props.pl.spec, "HPS")}/>
 
+                ))}
 
           </div>
 
-      </div>
+
+
+        </div>
+
       
       );
     }

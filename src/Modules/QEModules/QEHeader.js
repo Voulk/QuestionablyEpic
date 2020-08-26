@@ -28,7 +28,9 @@ export default class QEMainMenu extends Component {
             <div>
             </div>
 
+        <Button color="inherit">Raid</Button>
         <Button color="inherit">Login</Button>
+        
         </Toolbar>
       </AppBar>
       </div>

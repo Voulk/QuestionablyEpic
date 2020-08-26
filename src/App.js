@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
-import HolyDiver from './Modules/HolyDiverModules/HolyDiverModule'
+//import HolyDiver from './Modules/HolyDiverModules/HolyDiverModule'
 import QEMainMenu from './Modules/QEModules/QEMainMenu.js';
 import TrinketCompare from './Modules/QEModules/TrinketCompare.js';
+import LegendaryCompare from './Modules/QEModules/LegendaryCompare.js';
+import Player from './Modules/QEModules/Player/Player';
 
 import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import {
@@ -20,9 +22,15 @@ const theme = createMuiTheme({
   }
 });
 
+
 class App extends Component {
   constructor() {
     super()
+
+    this.state = {
+      player: new Player("Voulk", "Druid")
+
+    }
   }
 
   render() {
@@ -31,9 +39,10 @@ class App extends Component {
         <ThemeProvider theme={theme}>
           <div className='App'>
             <Switch> 
-              <Route exact path="/" component={QEMainMenu} />
-              <Route path="/holydiver" component={HolyDiver} />
-              <Route path="/trinkets" component={TrinketCompare} />
+              <Route exact path="/" render={() => <QEMainMenu pl={this.state.player} />} />
+              {/*<Route path="/holydiver" component={HolyDiver} /> */}
+              <Route path="/trinkets" render={() => <TrinketCompare pl={this.state.player} />} />
+              <Route path="/legendaries" render={() => <LegendaryCompare pl={this.state.player} />} />
 
             </Switch>
           </div>

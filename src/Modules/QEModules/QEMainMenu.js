@@ -41,11 +41,6 @@ const btnStyle = makeStyles((theme) => ({
 
 }));
 
-//Delete later
-const player = new Player("Voulk", "Druid");
-
-
-
 export default class QEMainMenu extends Component {
     render() {
       return (
@@ -53,11 +48,12 @@ export default class QEMainMenu extends Component {
         <QEHeader />
           <div style={{margin: "auto", width: "20%", justifyContent: "center", display: "block"}}>
             <p className="headers">Items & Gear</p>
+            <p>{this.props.pl.getSpec()}</p>
             
             <Button variant="contained" color="primary" style={{width: "95%", margin: "7px"}}>Top Gear</Button>
             <Button variant="contained" color="primary" style={{width: "95%", margin: "7px"}}>Gear Quick Compare</Button>
             <Button variant="contained" color="primary" style={{width: "95%", margin: "7px"}} component={Link} to="/trinkets">Trinket Quick Compare</Button>
-            <Button variant="contained" color="primary" style={{width: "95%", margin: "7px"}}>Upgrade Finder</Button>
+            <Button variant="contained" color="primary" style={{width: "95%", margin: "7px"}} component={Link} to="/legendaries">Legendary Analysis</Button>
             <Button variant="contained" color="primary" style={{width: "95%", margin: "7px"}}>Explore Conduits</Button>
             
 
