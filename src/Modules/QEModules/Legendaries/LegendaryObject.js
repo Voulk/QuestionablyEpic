@@ -11,7 +11,7 @@ export default function LegendaryObject(props) {
         return(
             <div className="lego">
                 <div className="titleBox">
-                    <img src={legendaryImages[this.props.name]} alt=''/> 
+                    <img src={legendaryImages[props.name]} alt=''/> 
  
                     <p style={{fontSize: "16px", marginTop: "2px", textAlign: "center", fontWeight: "bold", display: "inline-block"}}>{this.props.name}</p>
                 </div>
