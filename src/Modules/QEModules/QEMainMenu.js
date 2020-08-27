@@ -16,6 +16,7 @@ import Box from '@material-ui/core/Box';
 import Player from './Player/Player';
 import QEHeader from './QEHeader';
 import { Link } from 'react-router-dom';
+import { withTranslation, useTranslation } from 'react-i18next';
 
 
 // This is all shitty boilerplate code that'll be replaced. Do not copy.
@@ -41,16 +42,18 @@ const btnStyle = makeStyles((theme) => ({
 
 }));
 
+//
 
 
-export default class QEMainMenu extends Component {
-    render() {
+export default function QEMainMenu(props) {
+  const { t, i18n } = useTranslation();
+    
       return (
         <div style={{backgroundColor: "#353535"}}>
         <QEHeader />
           <div style={{margin: "auto", width: "20%", justifyContent: "center", display: "block"}}>
-            <p className="headers">Items & Gear</p>
-            <p>{this.props.pl.getSpec()}</p>
+            <p className="headers">{t("MenuItemsH")}</p>
+            <p>{props.pl.getSpec()}</p>
             
             <Button variant="contained" color="primary" style={{width: "95%", margin: "7px"}}>Top Gear</Button>
             <Button variant="contained" color="primary" style={{width: "95%", margin: "7px"}}>Gear Quick Compare</Button>
@@ -70,5 +73,4 @@ export default class QEMainMenu extends Component {
       </div>
       
       );
-    }
   }

@@ -5,6 +5,7 @@ import QEMainMenu from './Modules/QEModules/QEMainMenu.js';
 import TrinketCompare from './Modules/QEModules/TrinketCompare.js';
 import LegendaryCompare from './Modules/QEModules/Legendaries/LegendaryCompare.js';
 import Player from './Modules/QEModules/Player/Player';
+import { withTranslation, Trans } from 'react-i18next';
 
 import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import {
@@ -28,7 +29,8 @@ class App extends Component {
     super()
 
     this.state = {
-      player: new Player("Voulk", "Druid")
+      player: new Player("Voulk", "Druid"),
+      lang: "en"
 
     }
   }
@@ -52,4 +54,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default withTranslation()(App);
