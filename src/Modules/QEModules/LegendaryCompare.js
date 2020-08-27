@@ -47,6 +47,17 @@ const getLegendaryInfo = (name, spec, infoType) => {
 
 }
 
+class Legendary {
+    constructor() {
+        this.name = "";
+        this.expectedHps = 0;
+        this.expectedDps = 0;
+        this.singleTargetHPS = 0;
+    }
+  
+    
+  }
+
 
 export default class QEMainMenu extends Component {
     render() {
