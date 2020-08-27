@@ -13,7 +13,7 @@ import TranquilityIcon from '../../../Images/Classes/Druid/Specialisation/Restor
 import TreeofLifeIcon from '../../../Images/Classes/Druid/Specialisation/Restoration/Icons/TreeofLife.jpg'
 
 
-export default function classcds(props) {
+export default function ClassCooldownMenuItems(props) {
 	 // Paladin Cooldowns 
   if (props === 'Holy Paladin') {
     return ([

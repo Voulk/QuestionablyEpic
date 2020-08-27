@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { Typography, Collapse, CircularProgress, Grid } from '@material-ui/core';
-import UserInput from '../HolyDiverModules/UserInput/UserInput';
+import UserLogTextInput from '../HolyDiverModules/UserInput/UserLogTextInput';
 import Chart from '../HolyDiverModules/Chart/Chart'
 import moment from 'moment';
-import ControlledOpenSelect from '../HolyDiverModules/DropDown/buttonnew';
+import FightSelectorButton from '../HolyDiverModules/UserInput/FightSelectorButton';
 import LoadingOverlay from 'react-loading-overlay';
 import CustomEditComponent from '../HolyDiverModules/CooldownTable/Table';
 import InteractiveList from '../HolyDiverModules/Lists/ListGen'
-import Checkboxes from '../HolyDiverModules/BasicComponents/checkBox'
+import Checkboxes from '../HolyDiverModules/BasicComponents/CheckBox'
 import GenericTable from '../HolyDiverModules/CooldownTable/GenericTable';
 import DenseAppBar from '../HolyDiverModules/BasicComponents/Appbar'
 import abilityicons from '../HolyDiverModules/CooldownTable/AbilityIcons'
@@ -261,13 +261,13 @@ class HolyDiver extends Component {
     return (
       <div>
         <QEHeader />
-        <div style={{ margin: 10}}>
+        <div style={{ margin: '20px 50px 20px 50px' }}>
           <Grid container direction='row' justify='flex-start' alignItems='flex-start' spacing={1} style={{ padding: '10px 0px 0px 0px' }}>
             <Grid item xs={6} padding={1}>
               <Paper bgcolor='#333' style={{ borderRadius: 4, boxShadow: '0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12)' }}>
                 <div style={{ display: 'inline-flex', width: '100%' }}>
-                  <UserInput changed={this.usernameChangedHandler} float={'left'} position={'relative'}/>
-                  <ControlledOpenSelect reportid={this.state.reportid} clicky={this.handler} update={this.updatechartdata} float={'right'} position={'relative'}/>
+                  <UserLogTextInput changed={this.usernameChangedHandler} float={'left'} position={'relative'}/>
+                  <FightSelectorButton reportid={this.state.reportid} clicky={this.handler} update={this.updatechartdata} float={'right'} position={'relative'}/>
                 </div>
               </Paper>
             </Grid>

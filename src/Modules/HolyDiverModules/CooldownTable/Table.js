@@ -15,7 +15,7 @@ import Remove from '@material-ui/icons/Remove';
 import SaveAlt from '@material-ui/icons/SaveAlt';
 import Search from '@material-ui/icons/Search';
 import ViewColumn from '@material-ui/icons/ViewColumn';
-import classcds from './classcds'
+import ClassCooldownMenuItems from './ClassCooldownMenuItems'
 import { Select } from '@material-ui/core'
 import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
@@ -87,7 +87,7 @@ const tableIcons = {
 export default function CustomEditComponent(props) {
   const classes = useStyles();
   const { useState } = React;
-  let a = 0
+  let wowClass = 0
   const [columns, setColumns] = useState([
     {
       title: 'Name',
@@ -122,7 +122,7 @@ export default function CustomEditComponent(props) {
             <Select
               value={props.value}
               onChange={e => {
-                props.onChange(e.target.value); a = e.target.value
+                props.onChange(e.target.value); wowClass = e.target.value
               }}>
               {classMenus}
             </Select>
@@ -141,7 +141,7 @@ export default function CustomEditComponent(props) {
             <Select
               value={props.value }
               onChange={e => { props.onChange(e.target.value); console.log(e.target.value) }}>
-              {classcds(a) || []}
+              {ClassCooldownMenuItems(wowClass) || []}
             </Select>
           </FormControl>
         </ThemeProvider>

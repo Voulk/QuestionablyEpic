@@ -11,7 +11,7 @@ const useStyles = makeStyles((theme) => ({
     }
   }
 }));
-export default function userInput(props) {
+export default function UserLogTextInput(props) {
   const classes = useStyles();
   return (
     <TextField
