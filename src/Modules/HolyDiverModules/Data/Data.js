@@ -13,6 +13,27 @@ export const damageExclusions = [
   86949,
   // Light of the Martyr - Paladin
   183998,
+  // Cauterize - Mage
+  87023,
+  // Conflagrate - Warlock
+  17962,
+  // Earth Shock - Shaman
+  8042,
+  // Infinite Stars
+  317265,
+  // Lethal Strikes
+  311192,
+  // Meteor - Mage
+  153561,
+  // Ignite - Mage
+  12654,
+  // Execute - Warrior
+  260798,
+  // Blessing of Sacrifice - Paladin
+  6940,
+  // Psyche Shredder
+  313663,
+
 ]
 
 export const paladinCooldownNames = [
