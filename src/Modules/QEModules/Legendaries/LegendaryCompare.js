@@ -1,24 +1,12 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { makeStyles } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
-import IconButton from '@material-ui/core/IconButton';
 
-import logo from '../../../Images/QeAssets/QELogo.png'
 import MenuIcon from '@material-ui/icons/Menu';
 import '../QEMainMenu.css';
-import Avatar from "@material-ui/core/Avatar";
 
-import SaveIcon from "@material-ui/icons/Save";
-import EditIcon from "@material-ui/icons/Edit";
-import Box from '@material-ui/core/Box';
 import Player from '../Player/Player';
 import QEHeader from '../QEHeader';
-import TextField from '@material-ui/core/TextField';
-import Autocomplete from '@material-ui/lab/Autocomplete';
 import LegendaryObject from './LegendaryObject';
 import getLegendaryInfo from '../Classes/LegendaryFormulas';
 import './Legendaries.css';
@@ -49,8 +37,6 @@ const createLegendary = (legendaryName, container, spec, pl) => {
 const fillLegendaries = (container, spec, pl) => {
     //container = [];
     if (spec === "Druid") {
-      
-
         createLegendary("Rejuv Spreader", container, spec, pl);
         createLegendary("Swiftmend Extension", container, spec, pl);
         createLegendary("The Dark Titans Lesson", container, spec, pl);

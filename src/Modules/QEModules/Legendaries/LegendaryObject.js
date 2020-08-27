@@ -1,20 +1,17 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import { makeStyles } from '@material-ui/core/styles';
 
 
 const legendaryImages = {
     'The Dark Titans Lesson' : require('../../../Images/Legendaries/TheDarkTitansLesson.jpg')
    
-
 }
 
-export default class LegendaryObject extends Component {
-    render() {
+export default function LegendaryObject(props) {
         return(
             <div className="lego">
                 <div className="titleBox">
-                    <img src={legendaryImages[this.props.name]}/> 
+                    <img src={legendaryImages[this.props.name]} alt=''/> 
  
                     <p style={{fontSize: "16px", marginTop: "2px", textAlign: "center", fontWeight: "bold", display: "inline-block"}}>{this.props.name}</p>
                 </div>
@@ -31,5 +28,4 @@ export default class LegendaryObject extends Component {
 
 
         )
-    }
 }

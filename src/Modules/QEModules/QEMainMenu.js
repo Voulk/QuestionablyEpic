@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { makeStyles } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 
@@ -16,7 +13,7 @@ import Box from '@material-ui/core/Box';
 import Player from './Player/Player';
 import QEHeader from './QEHeader';
 import { Link } from 'react-router-dom';
-import { withTranslation, useTranslation } from 'react-i18next';
+import { useTranslation } from 'react-i18next';
 
 
 // This is all shitty boilerplate code that'll be replaced. Do not copy.
@@ -41,8 +38,6 @@ const btnStyle = makeStyles((theme) => ({
   }
 
 }));
-
-//
 
 
 export default function QEMainMenu(props) {

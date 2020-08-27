@@ -1,6 +1,5 @@
 
 
-
 export default function getLegendaryInfo(legendary, spec, pl)  {
  
     // Druid
