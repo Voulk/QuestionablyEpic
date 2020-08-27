@@ -1,17 +1,15 @@
 import React from "react";
-
 // Castle Nathria
-import ArtificerHeader from "../../../Images/Bosses/castlenathria/artificerxymox/artificerxymox.png"
-import CouncilHeader from "../../../Images/Bosses/castlenathria/thecouncilofblood/thecouncilofblood.png"
-import HungeringDestroyerHeader from "../../../Images/Bosses/castlenathria/hungeringdestroyer/hungeringdestroyer.png"
-import HuntsmanAltimorHeader from "../../../Images/Bosses/castlenathria/huntsmanaltimor/huntsmanaltimor.png"
-import SunKingsSalvationHeader from "../../../Images/Bosses/castlenathria/sunkingssalvation/sunkingssalvation.png"
-import LadyInervaDarkveinHeader from "../../../Images/Bosses/castlenathria/ladyinervadarkvein/ladyinervadarkvein.png"
-import ShriekwingHeader from "../../../Images/Bosses/castlenathria/shriekwing/shriekwing.png"
-import SireDenathriusHeader from "../../../Images/Bosses/castlenathria/siredenathrius/siredenathrius.png"
-import SludgefistHeader from "../../../Images/Bosses/castlenathria/sludgefist/sludgefist.png"
-import StonebornGeneralsHeader from "../../../Images/Bosses/castlenathria/stonelegiongenerals/stonelegiongenerals.png"
-
+import ArtificerHeader from '../../../Images/Bosses/CastleNathria/ArtificerXymox/ArtificerXymoxEJ.png'
+import CouncilHeader from '../../../Images/Bosses/CastleNathria/TheCouncilOfBlood/TheCouncilOfBloodEJ.png'
+import HungeringDestroyerHeader from '../../../Images/Bosses/CastleNathria/HungeringDestroyer/HungeringDestroyerEJ.png'
+import HuntsmanAltimorHeader from '../../../Images/Bosses/CastleNathria/HuntsmanAltimor/HuntsmanAltimorEJ.png'
+import SunKingsSalvationHeader from '../../../Images/Bosses/CastleNathria/SunKingsSalvation/SunKingsSalvationEJ.png'
+import LadyInervaDarkveinHeader from '../../../Images/Bosses/CastleNathria/LadyInervaDarkvein/LadyInervaDarkveinEJ.png'
+import ShriekwingHeader from '../../../Images/Bosses/CastleNathria/Shriekwing/ShriekwingEJ.png'
+import SireDenathriusHeader from '../../../Images/Bosses/CastleNathria/SireDenathrius/SireDenathriusEJ.png'
+import SludgefistHeader from '../../../Images/Bosses/CastleNathria/Sludgefist/SludgefistEJ.png'
+import StonebornGeneralsHeader from '../../../Images/Bosses/CastleNathria/StoneLegionGenerals/StoneLegionGeneralsEJ.png'
 // Nyalotha
 import MautHeader from "../../../Images/Bosses/Nya'lotha/Maut/maut.png"
 import XaneshHeader from "../../../Images/Bosses/Nya'lotha/Xanesh/xanesh.png"
@@ -25,27 +23,25 @@ import CarapaceHeader from "../../../Images/Bosses/Nya'lotha/Carapace/carapace.p
 import DrestagathHeader from "../../../Images/Bosses/Nya'lotha/Drestagath/drestagath.png"
 import NzothHeader from "../../../Images/Bosses/Nya'lotha/Nzoth/nzoth.png"
 import IlgynothHeader from "../../../Images/Bosses/Nya'lotha/Ilgynoth/ilgynoth.png"
-
 // Eternal Palace
-import SivaraHeader from "../../../Images/Bosses/eternalpalace/sivara/sivara.png"
-import BehemothHeader from "../../../Images/Bosses/eternalpalace/behemoth/behemoth.png"
-import RadianceHeader from "../../../Images/Bosses/eternalpalace/radiance/radiance.png"
-import AshvaneHeader from "../../../Images/Bosses/eternalpalace/ashvane/ashvane.png"
-import OrgozoaHeader from "../../../Images/Bosses/eternalpalace/orgozoa/orgozoa.png"
-import QueensCourtHeader from "../../../Images/Bosses/eternalpalace/queenscourt/queenscourt.png"
-import ZaqulHeader from "../../../Images/Bosses/eternalpalace/zaqul/zaqul.png"
-import QueenAzsharaHeader from "../../../Images/Bosses/eternalpalace/queenazshara/queenazshara.png"
-
+import SivaraHeader from "../../../Images/Bosses/EternalPalace/sivara/sivara.png"
+import BehemothHeader from "../../../Images/Bosses/EternalPalace/behemoth/behemoth.png"
+import RadianceHeader from "../../../Images/Bosses/EternalPalace/radiance/radiance.png"
+import AshvaneHeader from "../../../Images/Bosses/EternalPalace/ashvane/ashvane.png"
+import OrgozoaHeader from "../../../Images/Bosses/EternalPalace/orgozoa/orgozoa.png"
+import QueensCourtHeader from "../../../Images/Bosses/EternalPalace/queenscourt/queenscourt.png"
+import ZaqulHeader from "../../../Images/Bosses/EternalPalace/zaqul/zaqul.png"
+import QueenAzsharaHeader from "../../../Images/Bosses/EternalPalace/queenazshara/queenazshara.png"
 // Dazalor
-import ChampionsOfLightHeader from "../../../Images/Bosses/dazaralor/championsoflight/championsoflight.png"
-import GrongHeader from "../../../Images/Bosses/dazaralor/grong/grong.png"
-import JadefireMastersHeader from "../../../Images/Bosses/dazaralor/jadefiremasters/jadefiremasters.png"
-import OpulenceHeader from "../../../Images/Bosses/dazaralor/opulence/opulence.png"
-import ConclaveHeader from "../../../Images/Bosses/dazaralor/conclave/conclave.png"
-import RastakhanHeader from "../../../Images/Bosses/dazaralor/rastakhan/rastakhan.png"
-import BlockadeHeader from "../../../Images/Bosses/dazaralor/blockade/blockade.png"
-import MekkatorqueHeader from "../../../Images/Bosses/dazaralor/mekkatorque/mekkatorque.png"
-import JainaHeader from "../../../Images/Bosses/dazaralor/jaina/jaina.png"
+import ChampionsOfLightHeader from "../../../Images/Bosses/Dazaralor/championsoflight/championsoflight.png"
+import GrongHeader from "../../../Images/Bosses/Dazaralor/grong/grong.png"
+import JadefireMastersHeader from "../../../Images/Bosses/Dazaralor/jadefiremasters/jadefiremasters.png"
+import OpulenceHeader from "../../../Images/Bosses/Dazaralor/opulence/opulence.png"
+import ConclaveHeader from "../../../Images/Bosses/Dazaralor/conclave/conclave.png"
+import RastakhanHeader from "../../../Images/Bosses/Dazaralor/rastakhan/rastakhan.png"
+import BlockadeHeader from "../../../Images/Bosses/Dazaralor/blockade/blockade.png"
+import MekkatorqueHeader from "../../../Images/Bosses/Dazaralor/mekkatorque/mekkatorque.png"
+import JainaHeader from "../../../Images/Bosses/Dazaralor/jaina/jaina.png"
 
 export default function bossHeaders(props) {
   let source = ""

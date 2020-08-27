@@ -1,16 +1,16 @@
 import React from "react";
 import { MenuItem } from "@material-ui/core";
-import AuraMasteryIcon from '../../../Images/AuraMastery.jpg'
-import AvengingWrathIcon from '../../../Images/AvengingWrath.jpg'
-import DivineHymnIcon from '../../../Images/DivineHymn.jpg'
-import EvangelismIcon from '../../../Images/Evangelism.jpg'
-import HealingTideTotemIcon from '../../../Images/HealingTideTotem.jpg'
-import PowerWordBarrierIcon from '../../../Images/PowerWordBarrier.jpg'
-import RevivalIcon from '../../../Images/Revival.jpg'
-import SalvationIcon from '../../../Images/Salvation.jpg'
-import SpiritLinkTotemIcon from '../../../Images/SpiritLinkTotem.jpg'
-import TranquilityIcon from '../../../Images/Tranquility.jpg'
-import TreeofLifeIcon from '../../../Images/TreeofLife.jpg'
+import AuraMasteryIcon from '../../../Images/Classes/Paladin/Specialisation/Holy/Icons/AuraMastery.jpg'
+import AvengingWrathIcon from '../../../Images/Classes/Paladin/Specialisation/Holy/Icons/AvengingWrath.jpg'
+import DivineHymnIcon from '../../../Images/Classes/Priest/Specialisation/Holy/Icons/DivineHymn.jpg'
+import EvangelismIcon from '../../../Images/Classes/Priest/Specialisation/Discipline/Icons/Evangelism.jpg'
+import HealingTideTotemIcon from '../../../Images/Classes/Shaman/Specialisation/Restoration/Icons/HealingTideTotem.jpg'
+import PowerWordBarrierIcon from '../../../Images/Classes/Priest/Specialisation/Discipline/Icons/PowerWordBarrier.jpg'
+import RevivalIcon from '../../../Images/Classes/Monk/Specialisation/Mistweaver/Icons/Revival.jpg'
+import SalvationIcon from '../../../Images/Classes/Priest/Specialisation/Holy/Icons/Salvation.jpg'
+import SpiritLinkTotemIcon from '../../../Images/Classes/Shaman/Specialisation/Restoration/Icons/SpiritLinkTotem.jpg'
+import TranquilityIcon from '../../../Images/Classes/Druid/Specialisation/Restoration/Icons/Tranquility.jpg'
+import TreeofLifeIcon from '../../../Images/Classes/Druid/Specialisation/Restoration/Icons/TreeofLife.jpg'
 
 
 export default function classcds(props) {
