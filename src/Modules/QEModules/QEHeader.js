@@ -28,6 +28,9 @@ export default class QEMainMenu extends Component {
             <div>
             </div>
 
+
+        <Button color="inherit">Insert Log</Button>
+        <Button color="inherit">SimC</Button>
         <Button color="inherit">Raid</Button>
         <Button color="inherit">Login</Button>
         

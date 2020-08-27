@@ -7,19 +7,21 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 
-import logo from '../../Images/QeAssets/QELogo.png'
+import logo from '../../../Images/QeAssets/QELogo.png'
 import MenuIcon from '@material-ui/icons/Menu';
-import './QEMainMenu.css';
+import '../QEMainMenu.css';
 import Avatar from "@material-ui/core/Avatar";
 
 import SaveIcon from "@material-ui/icons/Save";
 import EditIcon from "@material-ui/icons/Edit";
 import Box from '@material-ui/core/Box';
-import Player from './Player/Player';
-import QEHeader from './QEHeader';
+import Player from '../Player/Player';
+import QEHeader from '../QEHeader';
 import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import LegendaryObject from './LegendaryObject';
+import getLegendaryInfo from '../Classes/LegendaryFormulas';
+import './Legendaries.css';
 
 
 // This is all shitty boilerplate code that'll be replaced. Do not copy.
@@ -36,33 +38,61 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-//TODO
-const getLegendaryList = (spec) => {
-    return ["Rejuv Spreader", "Swiftmend Extension", "Double Lifebloom"];
+const createLegendary = (legendaryName, container, spec, pl) => {
+    let lego = new Legendary(legendaryName)
+    getLegendaryInfo(lego, spec, pl)
+
+    container.push(lego)
+
 }
 
-const getLegendaryInfo = (name, spec, infoType) => {
-    return Math.round(Math.random(0, 1) * 100);
+const fillLegendaries = (container, spec, pl) => {
+    //container = [];
+    if (spec === "Druid") {
+      
+
+        createLegendary("Rejuv Spreader", container, spec, pl);
+        createLegendary("Swiftmend Extension", container, spec, pl);
+        createLegendary("The Dark Titans Lesson", container, spec, pl);
+
+    }
+}
+
+const sortLegendaries = (container) => {
+  // Current default sorting is by HPS but we could get creative here in future.
+  container.sort((a, b) => (a.expectedHPS < b.expectedHPS ? 1 : -1))
 
 
 }
 
 class Legendary {
-    constructor() {
-        this.name = "";
+    constructor(name) {
+        this.name = name;
+        this.image = 0;
         this.expectedHps = 0;
         this.expectedDps = 0;
         this.singleTargetHPS = 0;
     }
-  
+     
+}
+
+export default class LegendaryCompare extends Component {
+    constructor(props) {
+      super(props)
+
+      this.state = {
+        legendaryList: []
+      }
+
+      fillLegendaries(this.state.legendaryList, props.pl.spec);
+      sortLegendaries(this.state.legendaryList);
+
+    }
     
-  }
-
-
-export default class QEMainMenu extends Component {
     render() {
 
       return (
+        
         <div style={{backgroundColor: "#353535"}}>
 
         <QEHeader />
@@ -70,18 +100,14 @@ export default class QEMainMenu extends Component {
           <div style={{margin: "auto", width: "55%", justifyContent: "space-between", display: "block" }}>
             <p className="headers">Legendary Compare</p>
 
-                {getLegendaryList().map((item, index) => (
-                    <LegendaryObject key={index} name={item} hps={getLegendaryInfo(item, this.props.pl.spec, "HPS")}/>
+                {this.state.legendaryList.map((item, index) => (
+                    <LegendaryObject key={index} name={item.name} hps={item.expectedHPS}/>
 
                 ))}
 
           </div>
-
-
-
         </div>
 
-      
       );
     }
   }

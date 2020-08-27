@@ -1,0 +1,32 @@
+.titleBox {
+    display: block;
+    margin: 0px;
+    margin: auto;
+    position: relative;
+    text-align: center;
+    height: 16%;
+    border-width: 0 0 2px 0;
+    border-style: solid;
+    border-color: black;
+    padding: 0;
+}
+
+.titleBox img {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    max-height: 100%;
+    width: auto;
+}
+
+.lego {
+    border: 2px Solid black;
+    display: inline-block;
+    margin: 5px;
+    width: 260px;
+    height: 220px;
+    background-color: #DBA530;
+    background-image: url("https://www.transparenttextures.com/patterns/crossword.png");
+
+
+}

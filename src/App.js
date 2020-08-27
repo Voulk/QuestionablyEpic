@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
-import HolyDiver from './Modules/HolyDiverModules/HolyDiverModule'
+//import HolyDiver from './Modules/HolyDiverModules/HolyDiverModule'
 import QEMainMenu from './Modules/QEModules/QEMainMenu.js';
 import TrinketCompare from './Modules/QEModules/TrinketCompare.js';
-import LegendaryCompare from './Modules/QEModules/LegendaryCompare.js';
+import LegendaryCompare from './Modules/QEModules/Legendaries/LegendaryCompare.js';
 import Player from './Modules/QEModules/Player/Player';
 
 import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
@@ -40,7 +40,7 @@ class App extends Component {
           <div className='App'>
             <Switch> 
               <Route exact path="/" render={() => <QEMainMenu pl={this.state.player} />} />
-              <Route path="/holydiver" component={HolyDiver} />
+              {/*<Route path="/holydiver" component={HolyDiver} /> */}
               <Route path="/trinkets" render={() => <TrinketCompare pl={this.state.player} />} />
               <Route path="/legendaries" render={() => <LegendaryCompare pl={this.state.player} />} />
 

@@ -27,15 +27,3 @@ body {
     background-color: #353535;
 
 }
-
-.lego {
-    border: 2px Solid black;
-    display: inline-block;
-    margin: 5px;
-    width: 240px;
-    height: 210px;
-    background-color: goldenrod;
-    background-image: url("https://www.transparenttextures.com/patterns/brilliant.png");
-
-
-}
