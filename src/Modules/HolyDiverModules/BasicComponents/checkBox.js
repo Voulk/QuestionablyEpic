@@ -1,23 +1,21 @@
-import React from 'react';
-import Checkbox from '@material-ui/core/Checkbox';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
-
+import React from "react";
+import Checkbox from "@material-ui/core/Checkbox";
+import FormControlLabel from "@material-ui/core/FormControlLabel";
+import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 
 const theme = createMuiTheme({
   overrides: {
     MuiTypography: {
       body1: {
-        fontSize: '0.8rem'
-      }
-    }
+        fontSize: "0.8rem",
+      },
+    },
   },
   palette: {
-    type: 'dark',
-    primary: { main: '#d3bc47' },
-    secondary: { main: '#e0e0e0' }
-  }
-
+    type: "dark",
+    primary: { main: "#d3bc47" },
+    secondary: { main: "#e0e0e0" },
+  },
 });
 
 export default function Checkboxes(props) {
@@ -25,22 +23,23 @@ export default function Checkboxes(props) {
 
   const handleChange = (event) => {
     setChecked(event.target.checked);
-    props.check(event.target.checked)
+    props.check(event.target.checked);
   };
 
   return (
     <div>
       <ThemeProvider theme={theme}>
         <FormControlLabel
-          style={{ color: 'white'}}
+          style={{ color: "white" }}
           control={
             <Checkbox
               checked={checked}
               onChange={handleChange}
               size="small"
-              style={{ padding: '4px'}}
-              inputProps={{ 'aria-label': 'primary checkbox', }}
-            />}
+              style={{ padding: "4px" }}
+              inputProps={{ "aria-label": "primary checkbox" }}
+            />
+          }
           label={props.label}
         />
       </ThemeProvider>
