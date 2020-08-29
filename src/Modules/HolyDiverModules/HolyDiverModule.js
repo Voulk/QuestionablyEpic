@@ -31,6 +31,7 @@ import bossHeaders from "../HolyDiverModules/CooldownTable/BossHeaderIcons";
 import Grow from "@material-ui/core/Grow";
 import QEHeader from "../QEModules/QEHeader";
 import Paper from "@material-ui/core/Paper";
+import { bossAbilities } from "./Data/Data";
 
 class HolyDiver extends Component {
   constructor() {
@@ -73,7 +74,11 @@ class HolyDiver extends Component {
       ertshowhide: false,
       timelineshowhide: false,
       legenddata: [],
+      uniqueArrayGuid: [],
     };
+  }
+
+  useless = () => {
   }
 
   updatechartdata = async (starttime, endtime) => {
@@ -88,12 +93,14 @@ class HolyDiver extends Component {
       endtime,
       this.state.reportid
     );
+
     // Map Healer id, name, class type
     let healerIDName = healers.map((key) => ({
       id: key.id,
       name: key.name,
       class: key.type,
     }));
+    
     // Map Healer Ids
     let healerID = healers.map((key) => key.id);
 
@@ -105,9 +112,11 @@ class HolyDiver extends Component {
     );
     // Create List of Damaging Abilities from the Damage Import Array
     let abilitylistold = damage.map((key) => key.ability.name);
+    // let abilitylistoldwithguid = damage.map((key) => ({ ability: key.ability.name, guid: key.ability.guid }));
     // Create Unique List of Damaging Abilities
     let uniqueArray = Array.from(new Set(abilitylistold));
-
+    let uniqueArrayGuid = uniqueArray.flat().map((key) => ({ ability: key }))
+       
     // Import Cooldowns from Cooldown Function
     const cooldowns = await importCastsLogData(
       starttime,
@@ -213,6 +222,15 @@ class HolyDiver extends Component {
     let dataReformater = reduceTimestamps(
       damageFromLogWithTimesAddedAndCooldowns
     );
+
+    let dtpsArray = damage.map((key) => ({
+      timestamp: moment(fightDurationCalculator(key.timestamp, this.state.time))
+        .startOf("second")
+        .valueOf(),
+      abilityName: key.ability.name,
+      abilityDamage: key.unmitigatedAmount,
+    }));
+
     // concat the damage array with the missing durations
     let concatArrayWithMissingTimes = updatedarray.concat(times);
     // Sort the Array by Timestamp
@@ -233,6 +251,7 @@ class HolyDiver extends Component {
       legenddata: uniqueArrayNewForLegend,
       updatedarray: sortedData,
       Updateddatacasts: updateddatacastsTimeline,
+      uniqueArrayGuid: uniqueArrayGuid,
       abilitylist: uniqueArray,
       cooldownlist: uniqueArrayCD,
       loadingcheck: false,
@@ -240,7 +259,7 @@ class HolyDiver extends Component {
       currentEndTime: endtime,
       currentStartTime: starttime,
     });
-  };
+  }
 
   handler = (info, info2, bossname, fighttime, killcheck) => {
     this.setState({
@@ -255,38 +274,38 @@ class HolyDiver extends Component {
       currentFighttime: fighttime,
       killWipe: killcheck,
     });
-  };
+  }
 
   damageTableShow = (event) => {
     this.setState({ damageTableShow: event });
-  };
+  }
 
   healTableShow = (event) => {
     this.setState({ healTableShow: event });
-  };
+  }
 
   usernameChangedHandler = (event) => {
     let actuallink = event.target.value;
     this.setState({ logactuallink: event.target.value });
     this.setState({ reportid: actuallink.substring(37, 53) });
-  };
+  }
 
   reportidHandler = () => {
     this.setState({ logactuallink: this.state.loglink });
     this.setState({ reportid: this.state.loglink.substring(37, 53) });
-  };
+  }
 
   ertHandler = () => {
     this.setState((prevState) => ({
       ertshowhide: !prevState.ertshowhide,
     }));
-  };
+  }
 
   timelineHandler = () => {
     this.setState((prevState) => ({
       timelineshowhide: !prevState.timelineshowhide,
     }));
-  };
+  }
 
   tablehandler = (element) => {
     let customcooldown = [];
@@ -360,7 +379,7 @@ class HolyDiver extends Component {
       cooldownlistcustom2: cooldownlistcustom2,
       ertList: ertNote,
     });
-  };
+  }
 
   render() {
     let spinnershow = this.state.loadingcheck;
@@ -550,19 +569,31 @@ class HolyDiver extends Component {
                 />
                 <Collapse in={this.state.timelineshowhide}>
                   <GenericTable
-                    data={this.state.Updateddatacasts}
+                    data={this.state.uniqueArrayGuid}
                     columns={[
-                      { title: "Name", field: "name" },
                       {
                         title: "Ability",
                         field: "ability",
-                        render: (rowData) => abilityicons(rowData.ability),
+                        // render: (rowData) => (
+                        //   <a
+                        //     data-wowhead={
+                        //       "spell=" +
+                        //       bossAbilities
+                        //         .filter((obj) => {
+                        //           return obj.ability === rowData;
+                        //         })
+                        //         .map((obj) => obj.guid)
+                        //         .toString()
+                        //     }
+                        //   >
+                        //     {rowData}
+                        //   </a>
+                        // ),
                       },
-                      { title: "Time", field: "timestamp" },
                     ]}
-                    title="Timeline"
+                    title="Ability"
                     header={true}
-                  />
+                  />;
                 </Collapse>
               </Collapse>
             </Grid>

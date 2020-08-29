@@ -101,13 +101,12 @@ class Chart extends Component {
     this.setState({ data: this.props.chart });
   }
 
-  renderColorfulLegendText = (value, id) => {
-    console.log({ id });
-    console.log({ value });
+  renderColorfulLegendText = (value, entry) => {
+    // console.log({ value, entry });
     return (
-      <a data-wowhead={"spell=" + id}>
-        <span>{value}</span>
-      </a>
+      // <a data-wowhead={"spell=" + id}>
+      <span style={{ fontSize: "0.7rem" }}>{value}</span>
+      // </a>
     );
   };
 
@@ -119,6 +118,8 @@ class Chart extends Component {
         return (number / 1000000).toString() + "M";
       } else if (number > 1000) {
         return (number / 1000).toString() + "K";
+      } else if (number === 0) {
+        return "";
       } else {
         return number.toString();
       }
@@ -128,13 +129,12 @@ class Chart extends Component {
       <ResponsiveContainer
         className="ResponsiveContainer"
         width="100%"
-        height={300}
+        aspect={4.0 / 0.7}
       >
         <AreaChart
-          width={1500}
-          height={300}
+          width="100%"
           data={this.props.chart}
-          margin={{ top: 15, right: 20, left: 20, bottom: 5 }}
+          margin={{ top: 15, right: -30, left: 30, bottom: 0 }}
         >
           <XAxis
             dataKey="timestamp"
@@ -147,10 +147,11 @@ class Chart extends Component {
           />
           <YAxis
             yAxisId="1"
+            mirror={true}
             stroke="#f5f5f5"
             tickFormatter={DataFormater}
             label={{
-              offset: 0,
+              offset: -12,
               value: "Unmitigated Damage",
               angle: -90,
               fill: "#f5f5f5",
@@ -163,14 +164,15 @@ class Chart extends Component {
             orientation="right"
             stroke="#f5f5f5"
             tick={false}
-            domain={["dataMin", 5]}
+            domain={['"dataMin"', 5]}
+            padding={0}
           />
           <Legend
             verticalAlign="top"
             padding={10}
             iconType="square"
             iconSize={8}
-            // formatter={this.renderColorfulLegendText}
+            formatter={this.renderColorfulLegendText}
             // payload={this.props.legendata}
           />
           <Tooltip
