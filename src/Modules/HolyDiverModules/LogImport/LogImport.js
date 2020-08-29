@@ -60,7 +60,8 @@ class LogImport extends Component {
                 moment(
                   fightDurationCalculator(fight.end_time, fight.start_time)
                 ).format("mm:ss"),
-                this.killwipe(fight.kill)
+                this.killwipe(fight.kill),
+                fight.boss
               ]);
               this.props.update(fight.start_time, fight.end_time);
             }}

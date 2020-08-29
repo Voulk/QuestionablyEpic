@@ -47,127 +47,175 @@ export default function bossHeaders(props) {
   let source = "";
 
   // Castle Nathria
-  if (props === "Broker Curator") {
+  // Broker Curator
+  if (props === 2405) {
     source = ArtificerHeader;
   }
-  if (props === "Huntsman Altimor") {
+  // Huntsman Altimor
+  if (props === 2418) {
     source = HuntsmanAltimorHeader;
   }
-  if (props === "Hungering Destroyer") {
+  // Hungering Destroyer
+  if (props === 2383) {
     source = HungeringDestroyerHeader;
   }
-  if (props === "Lady Inerva Darkvein") {
+  // Lady Inerva Darkvein
+  if (props === 2406) {
     source = LadyInervaDarkveinHeader;
   }
-  if (props === "The Council of Blood") {
+  // The Council of Blood
+  if (props === 2412) {
     source = CouncilHeader;
   }
-  if (props === "Sire Denathrius") {
+  // Sire Denathrius
+  if (props === 2407) {
     source = SireDenathriusHeader;
   }
-  if (props === "Stone Legion Generals") {
+  // Stone Legion Generals
+  if (props === 2417) {
     source = StonebornGeneralsHeader;
   }
-  if (props === "Shriekwing") {
+  // Shriekwing
+  if (props === 2398) {
     source = ShriekwingHeader;
   }
-  if (props === "Sludgefist") {
+  // Sludgefist
+  if (props === 2399) {
     source = SludgefistHeader;
   }
-  if (props === "Kael'thas") {
+  // Kael'thas
+  if (props === 2402) {
     source = SunKingsSalvationHeader;
   }
 
   // Nyalotha
-  if (props === "Maut") {
+  // Maut
+  if (props === 2327) {
     source = MautHeader;
   }
-  if (props === "Dark Inquisitor Xanesh") {
+  // Dark Inquisitor Xanesh
+  if (props === 2328) {
     source = XaneshHeader;
   }
-  if (props === "Wrathion") {
+  // Wrathion
+  if (props === 2329) {
     source = WrathionHeader;
   }
-  if (props === "Ra-den the Despoiled") {
+  // Ra-den the Despoiled
+  if (props === 2331) {
     source = RadenHeader;
   }
-  if (props === "The Hivemind") {
+  // The Hivemind
+  if (props === 2333) {
     source = HivemindHeader;
   }
-  if (props === "Prophet Skitra") {
+  // Prophet Skitra
+  if (props === 2334) {
     source = SkitraHeader;
   }
-  if (props === "Shad'har the Insatiable") {
+  // Shad'har the Insatiable
+  if (props === 2335) {
     source = ShadharHeader;
   }
-  if (props === "Vexiona") {
+  // Vexiona
+  if (props === 2336) {
     source = VexionaHeader;
   }
-  if (props === "Carapace of N'Zoth") {
+  // Carapace of N'Zoth
+  if (props === 2337) {
     source = CarapaceHeader;
   }
-  if (props === "Drest'agath") {
+  // Drest'agath
+  if (props === 2343) {
     source = DrestagathHeader;
   }
-  if (props === "N'Zoth the Corruptor") {
+  // N'Zoth the Corruptor
+  if (props === 2344) {
     source = NzothHeader;
   }
-  if (props === "Il'gynoth, Corruption Reborn") {
+  // Il'gynoth, Corruption Reborn
+  if (props === 2345) {
     source = IlgynothHeader;
   }
 
   // Eternal Palace
-  if (props === "Abyssal Commander Sivara") {
+  // Abyssal Commander Sivara
+  if (props === 2352) {
     source = SivaraHeader;
   }
-  if (props === "Blackwater Behemoth") {
+  // Blackwater Behemoth
+  if (props === 2347) {
     source = BehemothHeader;
   }
-  if (props === "Radiance of Azshara") {
+  // Radiance of Azshara
+  if (props === 2353) {
     source = RadianceHeader;
   }
-  if (props === "Lady Ashvane") {
+  // Lady Ashvane
+  if (props === 2354) {
     source = AshvaneHeader;
   }
-  if (props === "Orgozoa") {
+  // Orgozoa
+  if (props === 2351) {
     source = OrgozoaHeader;
   }
-  if (props === "The Queen's Court") {
+  // The Queen's Court
+  if (props === 2359) {
     source = QueensCourtHeader;
   }
-  if (props === "Za'qul") {
+  // Za'qul
+  if (props === 2349) {
     source = ZaqulHeader;
   }
-  if (props === "Queen Azshara") {
+  // Queen Azshara
+  if (props === 2361) {
     source = QueenAzsharaHeader;
   }
 
   // Dazalor
-  if (props === "Champions of the Light") {
+  // Champions of the Light
+  if (props === 2333) {
     source = ChampionsOfLightHeader;
   }
-  if (props === "Grong") {
+  if (props === 2344) {
+    source = ChampionsOfLightHeader;
+  }
+  // Grong
+  if (props === 2325) {
     source = GrongHeader;
   }
-  if (props === "Jadefire Masters") {
+  if (props === 2340) {
+    source = GrongHeader;
+  }
+  // Jadefire Masters
+  if (props === 2323) {
     source = JadefireMastersHeader;
   }
-  if (props === "Opulence") {
+  if (props === 2341) {
+    source = JadefireMastersHeader;
+  }
+  // Opulence
+  if (props === 2342) {
     source = OpulenceHeader;
   }
-  if (props === "Conclave of the Chosen") {
+  // Conclave of the Chosen
+  if (props === 2330) {
     source = ConclaveHeader;
   }
-  if (props === "King Rastakhan") {
+  // King Rastakhan
+  if (props === 2335) {
     source = RastakhanHeader;
   }
-  if (props === "Mekkatorque") {
+  // Mekkatorque
+  if (props === 2334) {
     source = MekkatorqueHeader;
   }
-  if (props === "Stormwall Blockade") {
+  // Stormwall Blockade
+  if (props === 2337) {
     source = BlockadeHeader;
   }
-  if (props === "Lady Jaina Proudmoore") {
+  // Lady Jaina Proudmoore
+  if (props === 2343) {
     source = JainaHeader;
   }
 

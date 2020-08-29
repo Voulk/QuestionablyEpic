@@ -44,6 +44,7 @@ class HolyDiver extends Component {
     this.ertHandler = this.ertHandler.bind(this);
     this.timelineHandler = this.timelineHandler.bind(this);
     this.state = {
+      currentBossID: null,
       updatedarray: [],
       logactuallink: null,
       loglink: "Insert Log Here",
@@ -273,6 +274,7 @@ class HolyDiver extends Component {
       healTableShow: true,
       currentFighttime: info[3],
       killWipe: info[4],
+      currentBossID: info[5],
     });
   }
 
@@ -452,7 +454,7 @@ class HolyDiver extends Component {
                         alignItems: "center",
                       }}
                     >
-                      {bossHeaders(this.state.boss)}
+                      {bossHeaders(this.state.currentBossID)}
                       <Grid item xs={2} padding={1} align="center">
                         {this.state.showname ? (
                           <Typography

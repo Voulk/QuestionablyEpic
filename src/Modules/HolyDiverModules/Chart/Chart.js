@@ -169,7 +169,6 @@ class Chart extends Component {
           />
           <Legend
             verticalAlign="top"
-            padding={10}
             iconType="square"
             iconSize={8}
             formatter={this.renderColorfulLegendText}
