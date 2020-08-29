@@ -53,7 +53,7 @@ class LogImport extends Component {
             value={1}
             key={fight.id}
             onClick={() => {
-              this.props.clicker(
+              this.props.clicker([
                 fight.start_time,
                 fight.end_time,
                 fight.name,
@@ -61,7 +61,7 @@ class LogImport extends Component {
                   fightDurationCalculator(fight.end_time, fight.start_time)
                 ).format("mm:ss"),
                 this.killwipe(fight.kill)
-              );
+              ]);
               this.props.update(fight.start_time, fight.end_time);
             }}
           >

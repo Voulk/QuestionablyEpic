@@ -94,7 +94,7 @@ class Chart extends Component {
       ticks = ticks.concat(tickcount + 1000);
       tickcount = tickcount + 1000;
     }
-    return { ...ticks };
+    return  ticks.flat() ;
   };
 
   componentDidMount() {

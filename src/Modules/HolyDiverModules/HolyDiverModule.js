@@ -223,13 +223,13 @@ class HolyDiver extends Component {
       damageFromLogWithTimesAddedAndCooldowns
     );
 
-    let dtpsArray = damage.map((key) => ({
-      timestamp: moment(fightDurationCalculator(key.timestamp, this.state.time))
-        .startOf("second")
-        .valueOf(),
-      abilityName: key.ability.name,
-      abilityDamage: key.unmitigatedAmount,
-    }));
+    // let dtpsArray = damage.map((key) => ({
+    //   timestamp: moment(fightDurationCalculator(key.timestamp, this.state.time))
+    //     .startOf("second")
+    //     .valueOf(),
+    //   abilityName: key.ability.name,
+    //   abilityDamage: key.unmitigatedAmount,
+    // }));
 
     // concat the damage array with the missing durations
     let concatArrayWithMissingTimes = updatedarray.concat(times);
@@ -261,18 +261,18 @@ class HolyDiver extends Component {
     });
   }
 
-  handler = (info, info2, bossname, fighttime, killcheck) => {
+  handler = (info) => {
     this.setState({
       showname: true,
-      time: info,
-      timeend: info2,
-      nextpage: info,
-      boss: bossname,
+      time: info[0],
+      timeend: info[1],
+      nextpage: info[0],
+      boss: info[2],
       logDetailsShow: true,
       damageTableShow: true,
       healTableShow: true,
-      currentFighttime: fighttime,
-      killWipe: killcheck,
+      currentFighttime: info[3],
+      killWipe: info[4],
     });
   }
 
@@ -462,7 +462,7 @@ class HolyDiver extends Component {
                               padding: "0px 16px 0px 16px",
                               whiteSpace: "nowrap",
                             }}
-                            color="Primary"
+                            color="primary"
                           >
                             {this.state.boss}
                           </Typography>
@@ -521,7 +521,7 @@ class HolyDiver extends Component {
                     abilitylist={this.state.abilitylist}
                     legendata={this.state.legenddata}
                     cooldown={this.state.cooldownlist}
-                    endtime={this.state.timeend}
+                    endtime={fightDurationCalculator(this.state.timeend, this.state.time)}
                     showcds={true}
                   />
                 </LoadingOverlay>
@@ -666,7 +666,7 @@ class HolyDiver extends Component {
                     chart={this.state.cooldownhelperfinal}
                     abilitylist={this.state.abilitylist}
                     cooldown={this.state.cooldownlistcustom2}
-                    endtime={this.state.timeend}
+                    endtime={fightDurationCalculator(this.state.timeend, this.state.time)}
                     showcds={true}
                   />
                 </LoadingOverlay>
