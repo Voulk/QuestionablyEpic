@@ -140,82 +140,79 @@ export default function bossHeaders(props) {
 
   // Eternal Palace
   // Abyssal Commander Sivara
-  if (props === 2352) {
+  if (props === 2298) {
     source = SivaraHeader;
   }
   // Blackwater Behemoth
-  if (props === 2347) {
+  if (props === 2289) {
     source = BehemothHeader;
   }
   // Radiance of Azshara
-  if (props === 2353) {
+  if (props === 2305) {
     source = RadianceHeader;
   }
   // Lady Ashvane
-  if (props === 2354) {
+  if (props === 2304) {
     source = AshvaneHeader;
   }
   // Orgozoa
-  if (props === 2351) {
+  if (props === 2303) {
     source = OrgozoaHeader;
   }
   // The Queen's Court
-  if (props === 2359) {
+  if (props === 2311) {
     source = QueensCourtHeader;
   }
   // Za'qul
-  if (props === 2349) {
+  if (props === 2293) {
     source = ZaqulHeader;
   }
   // Queen Azshara
-  if (props === 2361) {
+  if (props === 2299) {
     source = QueenAzsharaHeader;
   }
 
   // Dazalor
   // Champions of the Light
-  if (props === 2333) {
-    source = ChampionsOfLightHeader;
-  }
-  if (props === 2344) {
+  if (props === 2265) {
     source = ChampionsOfLightHeader;
   }
   // Grong
-  if (props === 2325) {
+  if (props === 2263) {
     source = GrongHeader;
   }
-  if (props === 2340) {
+  if (props === 2284) {
     source = GrongHeader;
   }
   // Jadefire Masters
-  if (props === 2323) {
+  if (props === 2266) {
     source = JadefireMastersHeader;
   }
-  if (props === 2341) {
+  if (props === 2285) {
     source = JadefireMastersHeader;
   }
   // Opulence
-  if (props === 2342) {
+  if (props === 2271) {
     source = OpulenceHeader;
   }
   // Conclave of the Chosen
-  if (props === 2330) {
+  if (props === 2268) {
     source = ConclaveHeader;
   }
   // King Rastakhan
-  if (props === 2335) {
+  if (props === 2272) {
     source = RastakhanHeader;
   }
   // Mekkatorque
-  if (props === 2334) {
+  if (props === 2276) {
     source = MekkatorqueHeader;
   }
   // Stormwall Blockade
-  if (props === 2337) {
+  if (props === 2280) {
     source = BlockadeHeader;
   }
   // Lady Jaina Proudmoore
-  if (props === 2343) {
+  if (props === 2281) {
     source = JainaHeader;
   }
 

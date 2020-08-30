@@ -238,7 +238,10 @@ export async function importDamageLogData(starttime, endtime, reportid) {
     .catch(function (error) {
       console.log(error);
     });
+
+    console.log(nextpage)
   // Loop of the import updating the next page until the next page is undefined (no next page from json return)
+  if ( nextpage !== undefined || null) {
   do {
     await axios
       .get(
@@ -269,7 +272,8 @@ export async function importDamageLogData(starttime, endtime, reportid) {
       .catch(function (error) {
         console.log(error);
       });
-  } while (nextpage != undefined || null);
+  } while (nextpage !== undefined || null);
+}
 
   return damage;
 }
@@ -309,6 +313,7 @@ export async function importCastsLogData(
     });
   // Loop of the import updating the next page until the next page is undefined (no next page from json return)
   let i = 0;
+if ( nextpage !== undefined || null) {
   do {
     await axios
       .get(
@@ -332,6 +337,7 @@ export async function importCastsLogData(
         console.log(error);
       });
     i = i + 1;
-  } while (nextpage != undefined || null);
+  } while (nextpage !== undefined || null);
+}
   return cooldowns;
 }
