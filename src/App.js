@@ -24,12 +24,12 @@ class App extends Component {
     super()
 
     this.state = {
-      allChar = [
+      allChar: [
         new Player("Voulk", "Druid")
 
       ],
-      allConfig = {
-
+      allConfig: {
+        activeChar: 0
 
       },
       

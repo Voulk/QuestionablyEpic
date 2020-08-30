@@ -61,7 +61,7 @@ export default function QEMainMenu(props) {
             <Button variant="contained" color="primary" style={{width: "95%", margin: "7px"}} component={Link} to="/holydiver">Cooldown Planner</Button>
 
             <p className="headers">Settings</p>
-            <Button variant="contained" color="primary" style={{width: "95%", margin: "7px"}}>Add Char (Temp)</Button>
+            <Button variant="contained" color="primary" style={{width: "95%", margin: "7px"}} component={Link} to="/addchar">Add Char (Temp)</Button>
             <Button variant="contained" color="primary" style={{width: "95%", margin: "7px"}}>Settings</Button>
           </div>
 
