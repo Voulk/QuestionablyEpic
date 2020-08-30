@@ -347,3 +347,11 @@ export async function importCastsLogData(
   }
   return cooldowns;
 }
+
+export function killOrWipe(check) {
+  if (check === false) {
+    return "Wipe";
+  } else {
+    return "Kill!";
+  }
+}
