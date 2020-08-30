@@ -38,7 +38,7 @@ const btnStyle = makeStyles((theme) => ({
   }
 
 }));
-
+//            <p>{props.pl.getSpec()}</p>
 
 export default function QEMainMenu(props) {
   const { t, i18n } = useTranslation();
@@ -48,7 +48,7 @@ export default function QEMainMenu(props) {
         <QEHeader />
           <div style={{margin: "auto", width: "20%", justifyContent: "center", display: "block"}}>
             <p className="headers">{t("MenuItemsH")}</p>
-            <p>{props.pl.getSpec()}</p>
+ 
             
             <Button variant="contained" color="primary" style={{width: "95%", margin: "7px"}}>Top Gear</Button>
             <Button variant="contained" color="primary" style={{width: "95%", margin: "7px"}}>Gear Quick Compare</Button>
