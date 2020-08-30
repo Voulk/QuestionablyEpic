@@ -35,6 +35,10 @@ export const damageExclusions = [
   313663,
   // Kindred Protection - Druid
   327037,
+  // Shadow Mend - Priest
+  186263,
+  // Shadow Word: Death - Priest
+  32379,
 
 ]
 

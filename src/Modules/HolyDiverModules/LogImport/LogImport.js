@@ -42,7 +42,6 @@ class LogImport extends Component {
 
   render(props) {
     const { fights } = this.state;
-    console.log(fights);
     if (this.state.reportid === null) {
       return <MenuItem value="Fight">"No Report Loaded"</MenuItem>;
     } else {

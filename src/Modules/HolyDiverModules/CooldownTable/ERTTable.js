@@ -17,6 +17,8 @@ import Search from "@material-ui/icons/Search";
 import ViewColumn from "@material-ui/icons/ViewColumn";
 import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import "./Table.css";
+import { bossAbilities } from "../Data/Data";
+import moment from "moment";
 
 const theme = createMuiTheme({
   palette: {
@@ -79,13 +81,24 @@ const tableIcons = {
   )),
 };
 
-export default function GenericTable(props) {
+export default function ERTTable(props) {
   return (
     <ThemeProvider theme={theme}>
       <MaterialTable
         icons={tableIcons}
-        title={props.title}
-        columns={props.columns}
+        columns={[
+          { title: "Sort by Time", field: "ert" },
+          {
+            title: "Time",
+            field: "time",
+            hidden: true,
+            customSort: (a, b) =>
+              moment(a, "mm:ss").milliseconds() -
+              moment(b, "mm:ss").milliseconds(),
+          },
+        ]}
+        title="ERT Note"
+        header={true}
         data={props.data}
         style={{
           borderRadius: "0px 0px 4px 4px",
@@ -98,7 +111,7 @@ export default function GenericTable(props) {
         options={{
           showTitle: false,
           toolbar: false,
-          header: props.header,
+          header: true,
           search: false,
           headerStyle: {
             color: "#ffffff",

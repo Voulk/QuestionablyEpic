@@ -21,14 +21,11 @@ export default function FightSelectorButton(props) {
   const [boss, setBoss] = React.useState("");
 
   const handleChange = (event) => {
-    console.log(event.target.value);
     setAge(event.target.value);
   };
 
   const handleClose = (event) => {
     setOpen(false);
-    // setBoss(event.target.value)
-    // console.log(event.target.value)
   };
 
   const handleOpen = () => {

@@ -176,9 +176,7 @@ export default function CustomEditComponent(props) {
             <Select
               value={props.value}
               onChange={(e) => {
-                props.onChange(e.target.value);
-                console.log(e.target.value);
-              }}
+                props.onChange(e.target.value);}}
             >
               {ClassCooldownMenuItems(wowClass) || []}
             </Select>

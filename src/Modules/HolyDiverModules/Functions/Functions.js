@@ -239,41 +239,40 @@ export async function importDamageLogData(starttime, endtime, reportid) {
       console.log(error);
     });
 
-    console.log(nextpage)
   // Loop of the import updating the next page until the next page is undefined (no next page from json return)
-  if ( nextpage !== undefined || null) {
-  do {
-    await axios
-      .get(
-        APIdamagetaken +
-          reportid +
-          START +
-          nextpage +
-          END +
-          endtime +
-          HOSTILITY +
-          API2
-      )
-      .then((result) => {
-        damage = damage.concat(
-          Object.keys(result.data.events)
-            .filter(
-              (key) =>
-                damageExclusions.includes(
-                  result.data.events[key].ability.guid
-                ) === false &&
-                // Has to Have unmitigatedAmount
-                result.data.events[key].unmitigatedAmount
-            )
-            .map((key) => result.data.events[key])
-        );
-        nextpage = result.data.nextPageTimestamp;
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-  } while (nextpage !== undefined || null);
-}
+  if (nextpage !== undefined || null) {
+    do {
+      await axios
+        .get(
+          APIdamagetaken +
+            reportid +
+            START +
+            nextpage +
+            END +
+            endtime +
+            HOSTILITY +
+            API2
+        )
+        .then((result) => {
+          damage = damage.concat(
+            Object.keys(result.data.events)
+              .filter(
+                (key) =>
+                  damageExclusions.includes(
+                    result.data.events[key].ability.guid
+                  ) === false &&
+                  // Has to Have unmitigatedAmount
+                  result.data.events[key].unmitigatedAmount
+              )
+              .map((key) => result.data.events[key])
+          );
+          nextpage = result.data.nextPageTimestamp;
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+    } while (nextpage !== undefined || null);
+  }
 
   return damage;
 }
@@ -313,31 +312,38 @@ export async function importCastsLogData(
     });
   // Loop of the import updating the next page until the next page is undefined (no next page from json return)
   let i = 0;
-if ( nextpage !== undefined || null) {
-  do {
-    await axios
-      .get(
-        APICast + reportid + START + nextpage + END + endtime + HOSTILITY + API2
-      )
-      .then((result) => {
-        cooldowns = cooldowns.concat(
-          Object.keys(result.data.events)
-            .filter(
-              (key) =>
-                healerCooldownsDetailed
-                  .map((obj) => obj.guid)
-                  .includes(result.data.events[key].ability.guid) &&
-                healerID.includes(result.data.events[key].sourceID)
-            )
-            .map((key) => result.data.events[key])
-        );
-        nextpage = result.data.nextPageTimestamp;
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-    i = i + 1;
-  } while (nextpage !== undefined || null);
-}
+  if (nextpage !== undefined || null) {
+    do {
+      await axios
+        .get(
+          APICast +
+            reportid +
+            START +
+            nextpage +
+            END +
+            endtime +
+            HOSTILITY +
+            API2
+        )
+        .then((result) => {
+          cooldowns = cooldowns.concat(
+            Object.keys(result.data.events)
+              .filter(
+                (key) =>
+                  healerCooldownsDetailed
+                    .map((obj) => obj.guid)
+                    .includes(result.data.events[key].ability.guid) &&
+                  healerID.includes(result.data.events[key].sourceID)
+              )
+              .map((key) => result.data.events[key])
+          );
+          nextpage = result.data.nextPageTimestamp;
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+      i = i + 1;
+    } while (nextpage !== undefined || null);
+  }
   return cooldowns;
 }

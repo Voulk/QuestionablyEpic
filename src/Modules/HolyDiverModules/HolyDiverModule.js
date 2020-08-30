@@ -13,9 +13,8 @@ import LoadingOverlay from "react-loading-overlay";
 import CustomEditComponent from "../HolyDiverModules/CooldownTable/Table";
 import InteractiveList from "../HolyDiverModules/Lists/ListGen";
 import Checkboxes from "../HolyDiverModules/BasicComponents/CheckBox";
-import GenericTable from "../HolyDiverModules/CooldownTable/GenericTable";
+import CooldownTimeline from "../HolyDiverModules/CooldownTable/CooldownTimeline";
 import DenseAppBar from "../HolyDiverModules/BasicComponents/Appbar";
-import abilityicons from "../HolyDiverModules/CooldownTable/AbilityIcons";
 import { classColoursERT } from "../HolyDiverModules/CooldownTable/ClassColourFunctions";
 import {
   addMissingTimestamps,
@@ -31,7 +30,8 @@ import bossHeaders from "../HolyDiverModules/CooldownTable/BossHeaderIcons";
 import Grow from "@material-ui/core/Grow";
 import QEHeader from "../QEModules/QEHeader";
 import Paper from "@material-ui/core/Paper";
-import { bossAbilities } from "./Data/Data";
+import DtpsTable from "../HolyDiverModules/CooldownTable/DtpsTable";
+import ERTTable from "../HolyDiverModules/CooldownTable/ERTTable";
 
 class HolyDiver extends Component {
   constructor() {
@@ -79,8 +79,7 @@ class HolyDiver extends Component {
     };
   }
 
-  useless = () => {
-  }
+  useless = () => {};
 
   updatechartdata = async (starttime, endtime) => {
     this.setState({ loadingcheck: true });
@@ -101,7 +100,7 @@ class HolyDiver extends Component {
       name: key.name,
       class: key.type,
     }));
-    
+
     // Map Healer Ids
     let healerID = healers.map((key) => key.id);
 
@@ -116,8 +115,8 @@ class HolyDiver extends Component {
     // let abilitylistoldwithguid = damage.map((key) => ({ ability: key.ability.name, guid: key.ability.guid }));
     // Create Unique List of Damaging Abilities
     let uniqueArray = Array.from(new Set(abilitylistold));
-    let uniqueArrayGuid = uniqueArray.flat().map((key) => ({ ability: key }))
-       
+    let uniqueArrayGuid = uniqueArray.flat().map((key) => ({ ability: key }));
+
     // Import Cooldowns from Cooldown Function
     const cooldowns = await importCastsLogData(
       starttime,
@@ -260,7 +259,7 @@ class HolyDiver extends Component {
       currentEndTime: endtime,
       currentStartTime: starttime,
     });
-  }
+  };
 
   handler = (info) => {
     this.setState({
@@ -276,38 +275,38 @@ class HolyDiver extends Component {
       killWipe: info[4],
       currentBossID: info[5],
     });
-  }
+  };
 
   damageTableShow = (event) => {
     this.setState({ damageTableShow: event });
-  }
+  };
 
   healTableShow = (event) => {
     this.setState({ healTableShow: event });
-  }
+  };
 
   usernameChangedHandler = (event) => {
     let actuallink = event.target.value;
     this.setState({ logactuallink: event.target.value });
     this.setState({ reportid: actuallink.substring(37, 53) });
-  }
+  };
 
   reportidHandler = () => {
     this.setState({ logactuallink: this.state.loglink });
     this.setState({ reportid: this.state.loglink.substring(37, 53) });
-  }
+  };
 
   ertHandler = () => {
     this.setState((prevState) => ({
       ertshowhide: !prevState.ertshowhide,
     }));
-  }
+  };
 
   timelineHandler = () => {
     this.setState((prevState) => ({
       timelineshowhide: !prevState.timelineshowhide,
     }));
-  }
+  };
 
   tablehandler = (element) => {
     let customcooldown = [];
@@ -381,7 +380,7 @@ class HolyDiver extends Component {
       cooldownlistcustom2: cooldownlistcustom2,
       ertList: ertNote,
     });
-  }
+  };
 
   render() {
     let spinnershow = this.state.loadingcheck;
@@ -523,7 +522,10 @@ class HolyDiver extends Component {
                     abilitylist={this.state.abilitylist}
                     legendata={this.state.legenddata}
                     cooldown={this.state.cooldownlist}
-                    endtime={fightDurationCalculator(this.state.timeend, this.state.time)}
+                    endtime={fightDurationCalculator(
+                      this.state.timeend,
+                      this.state.time
+                    )}
                     showcds={true}
                   />
                 </LoadingOverlay>
@@ -545,20 +547,7 @@ class HolyDiver extends Component {
                   title="Cooldown Timeline"
                 />
                 <Collapse in={this.state.timelineshowhide}>
-                  <GenericTable
-                    data={this.state.Updateddatacasts}
-                    columns={[
-                      { title: "Name", field: "name" },
-                      {
-                        title: "Ability",
-                        field: "ability",
-                        render: (rowData) => abilityicons(rowData.ability),
-                      },
-                      { title: "Time", field: "timestamp" },
-                    ]}
-                    title="Timeline"
-                    header={true}
-                  />
+                  <CooldownTimeline data={this.state.Updateddatacasts} />
                 </Collapse>
               </Collapse>
             </Grid>
@@ -567,47 +556,22 @@ class HolyDiver extends Component {
               <Collapse in={this.state.damageTableShow}>
                 <DenseAppBar
                   onClick={this.timelineHandler}
-                  title="Damage Taken (DTPS)"
+                  title="Damaging Abilities"
                 />
                 <Collapse in={this.state.timelineshowhide}>
-                  <GenericTable
-                    data={this.state.uniqueArrayGuid}
-                    columns={[
-                      {
-                        title: "Ability",
-                        field: "ability",
-                        // render: (rowData) => (
-                        //   <a
-                        //     data-wowhead={
-                        //       "spell=" +
-                        //       bossAbilities
-                        //         .filter((obj) => {
-                        //           return obj.ability === rowData;
-                        //         })
-                        //         .map((obj) => obj.guid)
-                        //         .toString()
-                        //     }
-                        //   >
-                        //     {rowData}
-                        //   </a>
-                        // ),
-                      },
-                    ]}
-                    title="Ability"
-                    header={true}
-                  />;
+                  <DtpsTable data={this.state.uniqueArrayGuid} />
                 </Collapse>
               </Collapse>
             </Grid>
 
-            <Grid item xs={3} padding={1}>
+            {/* <Grid item xs={3} padding={1}>
               <Collapse in={this.state.damageTableShow}>
                 <DenseAppBar
                   onClick={this.timelineHandler}
                   title="some other cool metric"
                 />
                 <Collapse in={this.state.timelineshowhide}>
-                  <GenericTable
+                  <dtpsTable
                     data={this.state.Updateddatacasts}
                     columns={[
                       { title: "Name", field: "name" },
@@ -632,7 +596,7 @@ class HolyDiver extends Component {
                   title="placeholder thing"
                 />
                 <Collapse in={this.state.timelineshowhide}>
-                  <GenericTable
+                  <dtpsTable
                     data={this.state.Updateddatacasts}
                     columns={[
                       { title: "Name", field: "name" },
@@ -649,6 +613,7 @@ class HolyDiver extends Component {
                 </Collapse>
               </Collapse>
             </Grid>
+                    */}
           </Grid>
 
           <Grid
@@ -668,7 +633,10 @@ class HolyDiver extends Component {
                     chart={this.state.cooldownhelperfinal}
                     abilitylist={this.state.abilitylist}
                     cooldown={this.state.cooldownlistcustom2}
-                    endtime={fightDurationCalculator(this.state.timeend, this.state.time)}
+                    endtime={fightDurationCalculator(
+                      this.state.timeend,
+                      this.state.time
+                    )}
                     showcds={true}
                   />
                 </LoadingOverlay>
@@ -689,22 +657,7 @@ class HolyDiver extends Component {
             <Grid item xs={3} padding={1}>
               <DenseAppBar onClick={this.ertHandler} title="ERT Note" />
               <Collapse in={this.state.ertshowhide}>
-                <GenericTable
-                  data={this.state.ertList}
-                  columns={[
-                    { title: "Sort by Time", field: "ert" },
-                    {
-                      title: "Time",
-                      field: "time",
-                      hidden: true,
-                      customSort: (a, b) =>
-                        moment(a, "mm:ss").milliseconds() -
-                        moment(b, "mm:ss").milliseconds(),
-                    },
-                  ]}
-                  title="ERT Note"
-                  header={true}
-                />
+                <ERTTable data={this.state.ertList} />
               </Collapse>
             </Grid>
           </Grid>
