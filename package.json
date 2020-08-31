@@ -33,6 +33,7 @@
     "react-scripts": "1.0.13",
     "reactstrap": "^8.5.1",
     "recharts": "^1.8.5",
+    "simple-oauth2": "^4.1.0",
     "typescript": "^3.9.7"
   },
   "scripts": {
