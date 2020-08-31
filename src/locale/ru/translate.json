@@ -1,6 +1,10 @@
 {
     "translations": {
-        "paragraph": "段落",
+        "Insert Log": "Вставить журнал",
+        "Raid": "Рейд",
+        "Login": "Авторизоваться",
+        "Top Gear": "Высшая передача",
+        "MenuItemsH": "Предметы и снаряжение",
         "author": {
             "title": "著者名",
             "value": "タリクル"

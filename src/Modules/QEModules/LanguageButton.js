@@ -10,6 +10,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import ruFlag from "../../locale/ru/ru.png";
 import enFlag from "../../locale/en/en.png";
 import chFlag from "../../locale/ch/ch.png";
+import { useTranslation, withTranslation, Trans } from 'react-i18next';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -30,6 +31,8 @@ export default function LanguageSelector(props) {
     setOpen((prevOpen) => !prevOpen);
   };
 
+  const {i18n} = useTranslation();
+
   const handleClose = (event, lang) => {
     if (anchorRef.current && anchorRef.current.contains(event.target)) {
       return;
@@ -37,6 +40,7 @@ export default function LanguageSelector(props) {
     if (lang === undefined) {
       lang = language;
     }
+    i18n.changeLanguage(lang)
     setLanguage(lang);
     props.langSet(lang);
     setOpen(false);
