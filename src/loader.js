@@ -9,3 +9,12 @@
 const loadPlayer = () => {
 
 }
+
+
+const credentials = {
+    client: {
+        id: ''
+    }
+
+
+}
