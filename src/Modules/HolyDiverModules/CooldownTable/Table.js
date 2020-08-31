@@ -29,6 +29,7 @@ import { healerCooldownsDetailed } from "../Data/Data";
 import { classColoursJS } from "../CooldownTable/ClassColourFunctions";
 import { classMenus } from "../CooldownTable/ClassMenuItems";
 import "./Table.css";
+import { useTranslation } from "react-i18next";
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -117,6 +118,7 @@ const tableIcons = {
 
 export default function CustomEditComponent(props) {
   const classes = useStyles();
+  const { t, i18n } = useTranslation();
   const { useState } = React;
   let wowClass = 0;
   const [columns, setColumns] = useState([
@@ -132,7 +134,7 @@ export default function CustomEditComponent(props) {
         <TextField
           size="small"
           id="standard-basic"
-          label="Name"
+          label={t("Name")}
           value={props.value}
           style={{ whiteSpace: "nowrap", width: "100%" }}
           onChange={(e) => props.onChange(e.target.value)}
@@ -151,7 +153,7 @@ export default function CustomEditComponent(props) {
       editComponent: (props) => (
         <ThemeProvider theme={themecooldowntable}>
           <FormControl className={classes.formControl}>
-            <InputLabel id="HealerClassSelector">Class</InputLabel>
+            <InputLabel id="HealerClassSelector">{t("Class")}</InputLabel>
             <Select
               value={props.value}
               onChange={(e) => {
@@ -172,7 +174,7 @@ export default function CustomEditComponent(props) {
       editComponent: (props) => (
         <ThemeProvider theme={themecooldowntable}>
           <FormControl className={classes.formControl}>
-            <InputLabel id="HealerAbilitySelector">Ability</InputLabel>
+            <InputLabel id="HealerAbilitySelector">{t("Ability")}</InputLabel>
             <Select
               value={props.value}
               onChange={(e) => {
