@@ -13,8 +13,13 @@ const loadPlayer = () => {
 
 const credentials = {
     client: {
-        id: ''
+        id: '1be64387daf6494da2de568527ad82cc'
     }
+
+    //fetch("https://us.battle.net/oauth/authorize?client_id=1be64387daf6494da2de568527ad82cc&redirect_uri=https://localhost:3000/&response_type=code&scope=openid")
+    
+    
+
 
 
 }

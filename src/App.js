@@ -1,14 +1,16 @@
 import React, { Component } from "react";
 import "./App.css";
-import HolyDiver from "./Modules/HolyDiverModules/HolyDiverModule";
+//import HolyDiver from "./Modules/HolyDiverModules/HolyDiverModule";
 import QEMainMenu from "./Modules/QEModules/QEMainMenu.js";
 import TrinketCompare from "./Modules/QEModules/TrinketCompare.js";
 import LegendaryCompare from "./Modules/QEModules/Legendaries/LegendaryCompare.js";
 import Player from "./Modules/QEModules/Player/Player";
+import { ConfirmLogin, QELogin } from "./Modules/QEModules/QELogin";
 import { withTranslation, Trans } from "react-i18next";
 
 import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { Redirect, useHistory } from "react-router-dom";
 
 const theme = createMuiTheme({
   palette: {
@@ -27,7 +29,8 @@ class App extends Component {
       allConfig: {
         activeChar: 0,
       },
-
+      playerRegion: 'US',
+      client_id: '1be64387daf6494da2de568527ad82cc',
       lang: "en",
     };
   }
@@ -35,6 +38,26 @@ class App extends Component {
   langSet = (props) => {
     this.setState({ lang: props });
   };
+
+  setRegion = (props) => {   
+    this.setState({playerRegion : props})
+  
+  }
+
+
+  buildLoginURL = () => {
+    // China is a little different from the other regions and uses its own URL.
+    if (this.state.playerRegion == "cn") {
+      return 'https://www.battlenet.com.cn/oauth/authorize?client_id=' + 
+      this.state.client_id + '&redirect_uri=http://localhost:3000/confirmlogin/&response_type=code&scope=openid'
+    }
+    else {
+      return 'https://' + this.state.playerRegion + '.battle.net/oauth/authorize?client_id=' + 
+      this.state.client_id + '&redirect_uri=http://localhost:3000/confirmlogin/&response_type=code&scope=openid'
+    }
+
+  }
+
 
   render() {
     return (
@@ -53,15 +76,15 @@ class App extends Component {
                   />
                 )}
               />
-              <Route
+              {/*<Route
                 path="/holydiver"
                 render={() => (
                   <HolyDiver 
                     langSet={this.langSet}
                     curLang={this.state.lang}
-                  />
+                  /> 
                 )}
-              />
+                /> */}
               <Route
                 path="/trinkets"
                 render={() => (
@@ -82,6 +105,37 @@ class App extends Component {
                   />
                 )}
               />
+              <Route
+                path="/login"
+                render={() => (
+                  <QELogin 
+                    langSet={this.langSet}
+                    curLang={this.state.lang}
+                    setRegion={this.setRegion}
+                  />
+                )}
+
+              />
+              <Route
+                path="/attemptlogin"
+                component={() => (
+                  window.location = this.buildLoginURL()
+                  
+                )}
+
+              />
+              <Route
+                path="/confirmlogin/"
+                
+                render={(props) => (
+                  <ConfirmLogin {...props} />
+
+                  
+                )}
+               
+
+              />
+
             </Switch>
           </div>
         </ThemeProvider>

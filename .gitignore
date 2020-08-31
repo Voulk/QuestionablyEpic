@@ -21,3 +21,7 @@ sketch
 
 # End of https://www.toptal.com/developers/gitignore/api/react
 
+ca.key
+ca.crt
+cert.crt
+cert.key
