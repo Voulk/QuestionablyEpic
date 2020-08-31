@@ -18,11 +18,6 @@ const theme = createMuiTheme({
   },
 });
 
-<<<<<<< HEAD
-
-
-=======
->>>>>>> db41e915b7ac47e2094c302c51618c0a3857afb2
 class App extends Component {
   constructor() {
     super();
