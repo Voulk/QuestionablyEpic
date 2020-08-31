@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
-//import HolyDiver from "./Modules/HolyDiverModules/HolyDiverModule";
+import HolyDiver from "./Modules/HolyDiverModules/HolyDiverModule";
 import QEMainMenu from "./Modules/QEModules/QEMainMenu.js";
 import TrinketCompare from "./Modules/QEModules/TrinketCompare.js";
 import LegendaryCompare from "./Modules/QEModules/Legendaries/LegendaryCompare.js";
@@ -18,26 +18,23 @@ const theme = createMuiTheme({
   },
 });
 
-
 class App extends Component {
   constructor() {
-    super()
-
+    super();
+    this.langSet = this.langSet.bind(this);
     this.state = {
-      allChar: [
-        new Player("Voulk", "Druid")
-
-      ],
+      allChar: [new Player("Voulk", "Druid")],
       allConfig: {
-        activeChar: 0
-
+        activeChar: 0,
       },
-      
 
-      lang: "en"
-
-    }
+      lang: "en",
+    };
   }
+
+  langSet = (props) => {
+    this.setState({ lang: props });
+  };
 
   render() {
     return (
@@ -45,16 +42,51 @@ class App extends Component {
         <ThemeProvider theme={theme}>
           <div className="App">
             <Switch>
-              <Route exact path="/" render={() => <QEMainMenu pl={this.state.player} />} />
-              { /* <Route path="/holydiver" component={HolyDiver} /> */}
-              <Route path="/trinkets" render={() => <TrinketCompare pl={this.state.player} />} />
-              <Route path="/legendaries" render={() => <LegendaryCompare pl={this.state.player} />} />
-
+              <Route
+                exact
+                path="/"
+                render={() => (
+                  <QEMainMenu
+                    pl={this.state.player}
+                    langSet={this.langSet}
+                    curLang={this.state.lang}
+                  />
+                )}
+              />
+              <Route
+                path="/holydiver"
+                render={() => (
+                  <HolyDiver 
+                    langSet={this.langSet}
+                    curLang={this.state.lang}
+                  />
+                )}
+              />
+              <Route
+                path="/trinkets"
+                render={() => (
+                  <TrinketCompare
+                    pl={this.state.player}
+                    langSet={this.langSet}
+                    curLang={this.state.lang}
+                  />
+                )}
+              />
+              <Route
+                path="/legendaries"
+                render={() => (
+                  <LegendaryCompare
+                    pl={this.state.player}
+                    langSet={this.langSet}
+                    curLang={this.state.lang}
+                  />
+                )}
+              />
             </Switch>
           </div>
         </ThemeProvider>
       </Router>
-    )
+    );
   }
 }
 

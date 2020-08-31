@@ -3,7 +3,7 @@ import LanguageDetector from "i18next-browser-languagedetector"
 import {initReactI18next} from 'react-i18next'
 import XHR from 'i18next-xhr-backend'
 import languageEN from './locale/en/translate.json'
-import languageJP from './locale/jp/translate.json'
+import languageCH from './locale/ch/translate.json'
 
 i18n
 .use(XHR)
@@ -12,7 +12,7 @@ i18n
 .init({
     resources: {
         en: languageEN,
-        jp: languageJP
+        ch: languageCH
     },
     /* default language when load the website in browser */
     lng: "en",

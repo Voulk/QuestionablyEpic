@@ -13,10 +13,11 @@ import './QEMainMenu.css';
 import Avatar from "@material-ui/core/Avatar";
 
 import Box from '@material-ui/core/Box';
+import LanguageSelector from "./LanguageButton"
 
 
 export default class QEMainMenu extends Component {
-    render() {
+    render(props) {
       return (      
         <div style={{backgroundColor: "#353535"}}>
         <AppBar position="static" color="Black">
@@ -33,6 +34,7 @@ export default class QEMainMenu extends Component {
         <Button color="inherit">SimC</Button>
         <Button color="inherit">Raid</Button>
         <Button color="inherit">Login</Button>
+        <LanguageSelector langSet={this.props.langSet} curLang={this.props.curLang} />
         
         </Toolbar>
       </AppBar>
