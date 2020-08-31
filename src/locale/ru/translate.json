@@ -1,6 +1,14 @@
 {
     "translations": {
-        "paragraph": "段落",
+        "Insert Log": "Вставить журнал",
+        "Raid": "Рейд",
+        "Login": "Авторизоваться",
+        "Top Gear": "Высшая передача",
+        "MenuItemsH": "Предметы и снаряжение",
+        "Paste WarcraftLog Link Here": "Вставьте ссылку WarcraftLog сюда",
+        "Class": "Класс",
+        "Name": "название",
+        "Ability": "способность",
         "author": {
             "title": "著者名",
             "value": "タリクル"
