@@ -1,10 +1,12 @@
 import React, { Component } from "react";
 import "./App.css";
-import HolyDiver from "./Modules/HolyDiverModules/HolyDiverModule";
+//import HolyDiver from "./Modules/HolyDiverModules/HolyDiverModule";
 import QEMainMenu from "./Modules/QEModules/QEMainMenu.js";
 import TrinketCompare from "./Modules/QEModules/TrinketCompare.js";
 import LegendaryCompare from "./Modules/QEModules/Legendaries/LegendaryCompare.js";
 import Player from "./Modules/QEModules/Player/Player";
+import QEHeader from "./Modules/QEModules/QEHeader";
+
 import { ConfirmLogin, QELogin } from "./Modules/QEModules/QELogin";
 import { withTranslation, Trans } from "react-i18next";
 
@@ -29,9 +31,12 @@ class App extends Component {
       allConfig: {
         activeChar: 0,
       },
-      playerRegion: 'US',
+      playerRegion: 'us',
       client_id: '1be64387daf6494da2de568527ad82cc',
       lang: "en",
+      playerLoginID: '',
+      playerBattleTag: '',
+      accessToken: '',
     };
   }
 
@@ -42,6 +47,12 @@ class App extends Component {
   setRegion = (props) => {   
     this.setState({playerRegion : props})
   
+  }
+
+  updatePlayerID = (id, battletag) => {
+    this.setState({playerLoginID: id})
+    this.setState({playerBattleTag: battletag})
+
   }
 
 
@@ -59,11 +70,14 @@ class App extends Component {
   }
 
 
+
+
   render() {
     return (
       <Router>
         <ThemeProvider theme={theme}>
           <div className="App">
+            <QEHeader />
             <Switch>
               <Route
                 exact
@@ -76,7 +90,7 @@ class App extends Component {
                   />
                 )}
               />
-              <Route
+              {/*<Route
                 path="/holydiver"
                 render={() => (
                   <HolyDiver 
@@ -84,7 +98,7 @@ class App extends Component {
                     curLang={this.state.lang}
                   /> 
                 )}
-                />
+                /> */}
               <Route
                 path="/trinkets"
                 render={() => (
@@ -127,8 +141,9 @@ class App extends Component {
               <Route
                 path="/confirmlogin/"
                 
-                render={(props) => (
-                  <ConfirmLogin {...props} />
+                render={() => (
+                  <ConfirmLogin 
+                    updatePlayerID={this.updatePlayerID} />
 
                   
                 )}

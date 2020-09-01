@@ -18,7 +18,7 @@ import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 
 
-export default function QEMainMenu(props) {
+export default function QEHeader(props) {
   const { t, i18n } = useTranslation();
   return (
     <div style={{ backgroundColor: "#353535" }}>
