@@ -8,11 +8,13 @@ import Player from "./Modules/QEModules/Player/Player";
 import QEHeader from "./Modules/QEModules/QEHeader";
 
 import { ConfirmLogin, QELogin } from "./Modules/QEModules/QELogin";
-import { withTranslation, Trans } from "react-i18next";
+import { withTranslation, Trans, useTranslation } from "react-i18next";
+import i18n from './i18n';
 
 import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { Redirect, useHistory } from "react-router-dom";
+import ls from 'local-storage';
 
 const theme = createMuiTheme({
   palette: {
@@ -23,6 +25,7 @@ const theme = createMuiTheme({
 });
 
 class App extends Component {
+
   constructor() {
     super();
     this.langSet = this.langSet.bind(this);
@@ -40,8 +43,12 @@ class App extends Component {
     };
   }
 
+
   langSet = (props) => {
+
     this.setState({ lang: props });
+    ls.set('lang', props)
+    
   };
 
   setRegion = (props) => {   
@@ -52,6 +59,9 @@ class App extends Component {
   updatePlayerID = (id, battletag) => {
     this.setState({playerLoginID: id})
     this.setState({playerBattleTag: battletag})
+
+    ls.set('id', id)
+    ls.set('btag', battletag)
 
   }
 
@@ -69,6 +79,20 @@ class App extends Component {
 
   }
 
+  // When component mounts, check local storage for battle tag or ID.
+  componentDidMount() {
+      this.setState({
+        playerLoginID : ls.get('id') || '',
+        playerBattleTag : ls.get('btag') || '',
+        lang: ls.get('lang') || 'en'
+      })
+
+      i18n.changeLanguage(this.state.lang)
+      alert("Loaded")
+
+
+  }
+
 
   render() {
     return (
@@ -77,7 +101,7 @@ class App extends Component {
           <div className="App">
             <QEHeader 
               langSet={this.langSet} 
-              curLang={this.curLang}
+              curLang={this.state.lang}
               playerTag={this.state.playerBattleTag}/>
             <Switch>
               <Route

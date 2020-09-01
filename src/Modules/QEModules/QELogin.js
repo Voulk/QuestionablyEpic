@@ -3,6 +3,7 @@ import React, { Component, useEffect } from "react";
 import QEHeader from "./QEHeader";
 import Button from "@material-ui/core/Button";
 import { Redirect, useHistory, useLocation } from "react-router-dom";
+import ls from 'local-storage';
 
 export function QELogin(props) {
 
