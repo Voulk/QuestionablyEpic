@@ -81,8 +81,6 @@ export default class LegendaryCompare extends Component {
         
         <div style={{backgroundColor: "#353535"}}>
 
-        <QEHeader />
-
           <div style={{margin: "auto", width: "55%", justifyContent: "space-between", display: "block" }}>
             <p className="headers">Legendary Compare</p>
 

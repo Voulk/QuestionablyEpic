@@ -45,7 +45,6 @@ export default function QEMainMenu(props) {
     
       return (
         <div style={{backgroundColor: "#353535"}}>
-        <QEHeader langSet={props.langSet} curLang={props.curLang}/>
           <div style={{margin: "auto", width: "20%", justifyContent: "center", display: "block"}}>
             <p className="headers">{t("MenuItemsH")}</p>
  

@@ -77,7 +77,9 @@ class App extends Component {
       <Router>
         <ThemeProvider theme={theme}>
           <div className="App">
-            <QEHeader />
+            <QEHeader 
+              langSet={this.langSet} 
+              curLang={this.curLang}/>
             <Switch>
               <Route
                 exact

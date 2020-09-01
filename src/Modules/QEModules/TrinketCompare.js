@@ -43,8 +43,6 @@ export default class QEMainMenu extends Component {
       return (
         <div style={{backgroundColor: "#353535"}}>
 
-        <QEHeader langSet={this.props.langSet} curLang={this.props.curLang}/>
-
           <div style={{margin: "auto", width: "20%", justifyContent: "center", display: "block"}}>
             <p className="headers">Trinket Compare</p>
             <Autocomplete

@@ -42,7 +42,6 @@ export function QELogin(props) {
 
     return(
         <div>
-        <QEHeader />
         <div style={outerDivStyle}>
             
             <img src="https://bnetcmsus-a.akamaihd.net/cms/blog_header/ws/WS6KBZEZAFTA1502739438225.jpg" />
@@ -109,7 +108,7 @@ export function ConfirmLogin(props) {
    
     return (
         <div>
-            <QEHeader />
+            
             <p>{query.get("code")}</p>
         </div>
     )

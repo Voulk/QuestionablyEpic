@@ -388,7 +388,6 @@ class HolyDiver extends Component {
 
     return (
       <div>
-        <QEHeader langSet={this.props.langSet} curLang={this.props.curLang} />
         <div style={{ margin: "20px 50px 20px 50px" }}>
           <Grid
             container
