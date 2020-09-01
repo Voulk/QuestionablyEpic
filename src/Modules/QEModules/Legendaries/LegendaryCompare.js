@@ -70,7 +70,9 @@ export default class LegendaryCompare extends Component {
         legendaryList: []
       }
 
-      fillLegendaries(this.state.legendaryList, props.pl.spec);
+      
+
+      fillLegendaries(this.state.legendaryList, props.pl.spec, props.pl);
       sortLegendaries(this.state.legendaryList);
 
     }
@@ -85,6 +87,7 @@ export default class LegendaryCompare extends Component {
             <p className="headers">Legendary Compare</p>
 
                 {this.state.legendaryList.map((item, index) => (
+                    
                     <LegendaryObject key={index} name={item.name} hps={item.expectedHPS}/>
 
                 ))}

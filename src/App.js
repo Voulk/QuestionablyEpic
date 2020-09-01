@@ -43,6 +43,9 @@ class App extends Component {
     };
   }
 
+  getActivePlayer = () => {
+    return this.state.allChar[this.state.allConfig.activeChar];
+  }
 
   langSet = (props) => {
 
@@ -88,13 +91,14 @@ class App extends Component {
       })
 
       i18n.changeLanguage(this.state.lang)
-      alert("Loaded")
 
 
   }
 
 
   render() {
+    let activePlayer = this.getActivePlayer();
+
     return (
       <Router>
         <ThemeProvider theme={theme}>
@@ -138,7 +142,7 @@ class App extends Component {
                 path="/legendaries"
                 render={() => (
                   <LegendaryCompare
-                    pl={this.state.player}
+                    pl={activePlayer}
                     langSet={this.langSet}
                     curLang={this.state.lang}
                   />

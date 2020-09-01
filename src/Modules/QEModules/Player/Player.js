@@ -13,8 +13,9 @@ class Player {
     // A players spell casting patterns. These are averaged from entered logs and a default is provided too. 
     // 
     castPattern = {
-        "Rejuv": [35, 40, 75],
+        "Rejuv": [35, 40213, 75],
         "Wild Growth": 40,
+        "Overall": [0, 90132, 43]
 
     };
    
