@@ -70,8 +70,6 @@ class App extends Component {
   }
 
 
-
-
   render() {
     return (
       <Router>
@@ -79,7 +77,8 @@ class App extends Component {
           <div className="App">
             <QEHeader 
               langSet={this.langSet} 
-              curLang={this.curLang}/>
+              curLang={this.curLang}
+              playerTag={this.state.playerBattleTag}/>
             <Switch>
               <Route
                 exact

@@ -20,6 +20,13 @@ import { Link } from "react-router-dom";
 
 export default function QEHeader(props) {
   const { t, i18n } = useTranslation();
+  
+  // If the player isn't logged in, then show a login button and redirect to the login page on click.
+  // If the player IS logged in, show their battle tag and redirect to profile on click.
+  // TODO: Implement profile. 
+  let playerName = props.playerTag || t("Login");
+  let linkTarget = (props.playerTag == "") ? "/login" : "/profile";
+
   return (
     <div style={{ backgroundColor: "#353535" }}>
       <AppBar position="static" color="Black">
@@ -32,7 +39,7 @@ export default function QEHeader(props) {
           <Button color="inherit">{t("Insert Log")}</Button>
           <Button color="inherit">SimC</Button>
           <Button color="inherit">{t("Raid")}</Button>
-          <Button color="inherit" component={Link} to="/login">{t("Login")}</Button>
+          <Button color="inherit" component={Link} to={linkTarget}>{playerName}</Button>
           <LanguageSelector langSet={props.langSet} curLang={props.curLang} />
         </Toolbar>
       </AppBar>

@@ -35,7 +35,7 @@ export function QELogin(props) {
     }
 
     function handleClick(region) {
-        props.setRegion(region)    
+        props.setRegion(region)
         history.push("/attemptlogin")
 
     }
@@ -62,30 +62,16 @@ function useQuery() {
     return new URLSearchParams(useLocation().search);
 }
 
-function getPlayerTag(accessToken, updatePlayerID) {
-    
 
-    fetch('https://us.battle.net/oauth/userinfo?access_token=' + accessToken)
-    .then(res => res.json())
-    .then(
-        (result) => {
-            alert("Full Success" + JSON.stringify(result) + "|" + result.battletag) 
-            
-            if (checkCanUpdateID(result.id, result.battletag)) updatePlayerID(result.id, result.battletag)
-            
-        },
-        (error) => {
-            console.log("Error: " + error.message + ".")
-        }
-    );
-
-}
-
+// Checks that the battle tag and player ID are valid. 
+// ID is just in the format of a medium length int, BTag is String#Numbers. Regex should be more than sufficient.
+// TODO implement
 function checkCanUpdateID(ID, BTAG) {
-    // TODO
     return true;
 }
 
+// Takes the players authorization code and sends it to the QE servers to be converted into an access code. 
+// We use the QE servers for this to avoid revealing our client secret. 
 export function ConfirmLogin(props) { 
 
     let query = useQuery()
@@ -112,5 +98,23 @@ export function ConfirmLogin(props) {
             <p>{query.get("code")}</p>
         </div>
     )
+
+}
+
+// Uses a players access token to get their battle tag and player ID.
+// Right now PlayerID is assumed to be unique. This probably needs to be double checked before we use it as a primary key.
+function getPlayerTag(accessToken, updatePlayerID) {
+    fetch('https://us.battle.net/oauth/userinfo?access_token=' + accessToken)
+    .then(res => res.json())
+    .then(
+        (result) => {
+            //alert("Full Success" + JSON.stringify(result) + "|" + result.battletag)      
+            if (checkCanUpdateID(result.id, result.battletag)) updatePlayerID(result.id, result.battletag)
+            
+        },
+        (error) => {
+            console.log("Error: " + error.message + ".")
+        }
+    );
 
 }
