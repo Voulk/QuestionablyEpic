@@ -6,6 +6,7 @@ import {
   Grid,
 } from "@material-ui/core";
 import UserLogTextInput from "../HolyDiverModules/UserInput/UserLogTextInput";
+import TestMenu from "../HolyDiverModules/UserInput/TestMenu";
 import Chart from "../HolyDiverModules/Chart/Chart";
 import moment from "moment";
 import FightSelectorButton from "../HolyDiverModules/UserInput/FightSelectorButton";
@@ -419,6 +420,11 @@ class HolyDiver extends Component {
                     float={"right"}
                     position={"relative"}
                   />
+                  <TestMenu
+                    reportid={this.state.reportid}
+                    clicky={this.handler}
+                    update={this.updatechartdata}
+                  />
                 </div>
               </Paper>
             </Grid>
@@ -547,7 +553,7 @@ class HolyDiver extends Component {
                   title="Cooldown Timeline"
                 />
                 <Collapse in={this.state.timelineshowhide}>
-                  <CooldownTimeline data={this.state.Updateddatacasts} />
+                  <CooldownTimeline data={this.state.Updateddatacasts} curLang={this.props.curLang} />
                 </Collapse>
               </Collapse>
             </Grid>
@@ -559,7 +565,7 @@ class HolyDiver extends Component {
                   title="Damaging Abilities"
                 />
                 <Collapse in={this.state.timelineshowhide}>
-                  <DtpsTable data={this.state.uniqueArrayGuid} />
+                  <DtpsTable data={this.state.uniqueArrayGuid} curLang={this.props.curLang} />
                 </Collapse>
               </Collapse>
             </Grid>
@@ -652,12 +658,12 @@ class HolyDiver extends Component {
             spacing={1}
           >
             <Grid item xs={9} padding={1}>
-              <CustomEditComponent update={this.tablehandler} />
+              <CustomEditComponent update={this.tablehandler} curLang={this.props.curLang} />
             </Grid>
             <Grid item xs={3} padding={1}>
               <DenseAppBar onClick={this.ertHandler} title="ERT Note" />
               <Collapse in={this.state.ertshowhide}>
-                <ERTTable data={this.state.ertList} />
+                <ERTTable data={this.state.ertList} curLang={this.props.curLang} />
               </Collapse>
             </Grid>
           </Grid>

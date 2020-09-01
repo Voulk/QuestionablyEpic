@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
-//import HolyDiver from "./Modules/HolyDiverModules/HolyDiverModule";
+import HolyDiver from "./Modules/HolyDiverModules/HolyDiverModule";
 import QEMainMenu from "./Modules/QEModules/QEMainMenu.js";
 import TrinketCompare from "./Modules/QEModules/TrinketCompare.js";
 import LegendaryCompare from "./Modules/QEModules/Legendaries/LegendaryCompare.js";
@@ -76,7 +76,7 @@ class App extends Component {
                   />
                 )}
               />
-              {/*<Route
+              <Route
                 path="/holydiver"
                 render={() => (
                   <HolyDiver 
@@ -84,7 +84,7 @@ class App extends Component {
                     curLang={this.state.lang}
                   /> 
                 )}
-                /> */}
+                />
               <Route
                 path="/trinkets"
                 render={() => (

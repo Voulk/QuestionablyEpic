@@ -11,6 +11,9 @@ import {
 import chroma from "chroma-js";
 import "./Chart.css";
 import moment from "moment";
+import i18n from 'i18next';
+import 'moment/locale/zh-cn';
+
 
 class Chart extends Component {
   constructor(props) {
@@ -29,6 +32,7 @@ class Chart extends Component {
       animation: true,
     };
   }
+
 
   drawAreas() {
     let abilities = this.props.abilitylist;
@@ -152,7 +156,7 @@ class Chart extends Component {
             tickFormatter={DataFormater}
             label={{
               offset: -12,
-              value: "Unmitigated Damage",
+              value: i18n.t("Unmitigated Damage"),
               angle: -90,
               fill: "#f5f5f5",
               fontWeight: "bold",

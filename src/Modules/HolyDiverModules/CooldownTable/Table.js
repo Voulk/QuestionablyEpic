@@ -30,7 +30,8 @@ import { classColoursJS } from "../CooldownTable/ClassColourFunctions";
 import { classMenus } from "../CooldownTable/ClassMenuItems";
 import "./Table.css";
 import { useTranslation } from "react-i18next";
-
+import { localizationRU, localizationCH } from "./TableLocalization.js"
+  
 const useStyles = makeStyles((theme) => ({
   formControl: {
     margin: theme.spacing(0.5),
@@ -120,10 +121,11 @@ export default function CustomEditComponent(props) {
   const classes = useStyles();
   const { t, i18n } = useTranslation();
   const { useState } = React;
+
   let wowClass = 0;
-  const [columns, setColumns] = useState([
+  let columns = [
     {
-      title: "Name",
+      title: t("Name"),
       field: "name",
       render: (rowData) => (
         <div style={{ color: classColoursJS(rowData.class) }}>
@@ -142,7 +144,7 @@ export default function CustomEditComponent(props) {
       ),
     },
     {
-      title: "Class",
+      title: t("Class"),
       field: "class",
       render: (rowData) => (
         <div style={{ color: classColoursJS(rowData.class) }}>
@@ -168,7 +170,7 @@ export default function CustomEditComponent(props) {
       ),
     },
     {
-      title: "Ability",
+      title: t("Ability"),
       field: "Cooldown",
       render: (rowData) => abilityicons(rowData.Cooldown),
       editComponent: (props) => (
@@ -178,7 +180,8 @@ export default function CustomEditComponent(props) {
             <Select
               value={props.value}
               onChange={(e) => {
-                props.onChange(e.target.value);}}
+                props.onChange(e.target.value);
+              }}
             >
               {ClassCooldownMenuItems(wowClass) || []}
             </Select>
@@ -187,7 +190,7 @@ export default function CustomEditComponent(props) {
       ),
     },
     {
-      title: "Time",
+      title: t("Time"),
       field: "time",
       editComponent: (props) => (
         <TextField
@@ -202,7 +205,7 @@ export default function CustomEditComponent(props) {
       ),
     },
     {
-      title: "Next Available",
+      title: t("Next Available"),
       render: (rowData) => (
         <div>
           {moment(rowData.time, "mm:ss")
@@ -220,7 +223,7 @@ export default function CustomEditComponent(props) {
       ),
     },
     {
-      title: "Notes",
+      title: t("Notes"),
       field: "notes",
       editComponent: (props) => (
         <TextField
@@ -232,7 +235,7 @@ export default function CustomEditComponent(props) {
         />
       ),
     },
-  ]);
+  ];
 
   const [data, setData] = useState([]);
 
@@ -240,11 +243,22 @@ export default function CustomEditComponent(props) {
     props.update(data);
   }, [data]);
 
+  let curLang = (lang) => {
+    if (lang === "en") {
+      return false;
+    } else if (lang === "ru") {
+      return localizationRU;
+    } else if (lang === "ch") {
+      return localizationCH;
+    }
+    else { return false }
+  };
+
   return (
     <ThemeProvider theme={themecooldowntable}>
       <MaterialTable
         icons={tableIcons}
-        title="Cooldown Planner"
+        title={t("Cooldown Planner")}
         columns={columns}
         data={data}
         style={{
@@ -279,6 +293,7 @@ export default function CustomEditComponent(props) {
           actionsColumnIndex: 7,
           paging: false,
         }}
+        localization={curLang(props.curLang)}
         editable={{
           cellStyle: { padding: "0px 16px 0px 16px" },
           onRowAdd: (newData) =>

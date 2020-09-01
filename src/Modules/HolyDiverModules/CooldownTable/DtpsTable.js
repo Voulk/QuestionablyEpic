@@ -18,6 +18,7 @@ import ViewColumn from "@material-ui/icons/ViewColumn";
 import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import "./Table.css";
 import { bossAbilities } from "../Data/Data";
+import { localizationRU, localizationCH } from "./TableLocalization.js"
 
 const theme = createMuiTheme({
   palette: {
@@ -80,6 +81,18 @@ const tableIcons = {
   )),
 };
 
+let curLang = (lang) => {
+  if (lang === "en") {
+    return false;
+  } else if (lang === "ru") {
+    return localizationRU;
+  } else if (lang === "ch") {
+    return localizationCH;
+  } else {
+    return false;
+  }
+};
+
 export default function DtpsTable(props) {
   return (
     <ThemeProvider theme={theme}>
@@ -119,6 +132,7 @@ export default function DtpsTable(props) {
           fontSize: "0.8 rem",
           whiteSpace: "nowrap",
         }}
+        localization={curLang(props.curLang)}
         options={{
           showTitle: false,
           toolbar: false,

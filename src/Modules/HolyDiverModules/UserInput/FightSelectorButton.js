@@ -39,7 +39,7 @@ export default function FightSelectorButton(props) {
       size="small"
     >
       <InputLabel id="demo-controlled-open-select-label" label="Outlined">
-        Fight
+        Select
       </InputLabel>
       <Select
         labelId="demo-controlled-open-select-label"

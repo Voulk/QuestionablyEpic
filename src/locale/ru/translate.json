@@ -9,6 +9,8 @@
         "Class": "Класс",
         "Name": "название",
         "Ability": "способность",
+        "Cooldown Planner": "Планировщик восстановления",
+        "Unmitigated Damage": "Неограниченный урон",
         "author": {
             "title": "著者名",
             "value": "タリクル"
