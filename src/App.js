@@ -65,6 +65,10 @@ class App extends Component {
 
     ls.set('id', id)
     ls.set('btag', battletag)
+  }
+
+  updateCharacters = () => {
+    ls.set('allChar', JSON.stringify(this.state.allChar))
 
   }
 
