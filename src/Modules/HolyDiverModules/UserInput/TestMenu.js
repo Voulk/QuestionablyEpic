@@ -8,7 +8,7 @@ import MenuItem from "@material-ui/core/MenuItem";
 import MenuList from "@material-ui/core/MenuList";
 import { makeStyles } from "@material-ui/core/styles";
 import LogImport from "../LogImport/LogImport2";
-import { useTranslation, withTranslation, Trans } from 'react-i18next';
+import { useTranslation, withTranslation, Trans } from "react-i18next";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -85,14 +85,14 @@ export default function TestMenu(props) {
                     id="menu-list-grow"
                     onKeyDown={handleListKeyDown}
                   >
-                  {
-                    <LogImport
-                      reportid={props.reportid}
-                      clicker={props.clicky}
-                      update={props.update}
-                      close={handleClose}
-                    />
-                  }
+                    {
+                      <LogImport
+                        reportid={props.reportid}
+                        clicker={props.clicky}
+                        update={props.update}
+                        close={handleClose}
+                      />
+                    }
                   </MenuList>
                 </ClickAwayListener>
               </Paper>
