@@ -32,7 +32,10 @@ export default function QEHeader(props) {
       <AppBar position="static" color="Black">
         <Toolbar style={{ marginLeft: "20%", marginRight: "20%" }}>
           <Box display="flex" flexGrow={1}>
-            <img src={logo} alt="QE Live" />
+            <Link to={"/"}>
+              <img src={logo} alt="QE Live" />
+            </Link>
+            
           </Box>
           <div></div>
 

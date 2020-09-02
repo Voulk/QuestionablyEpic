@@ -67,10 +67,13 @@ class App extends Component {
     ls.set('btag', battletag)
   }
 
+
+  // Characters
   updateCharacters = () => {
     ls.set('allChar', JSON.stringify(this.state.allChar))
 
   }
+
 
 
   buildLoginURL = () => {
@@ -117,6 +120,7 @@ class App extends Component {
                 path="/"
                 render={() => (
                   <QEMainMenu
+                    chars={this.state.allChar}
                     pl={this.state.player}
                     langSet={this.langSet}
                     curLang={this.state.lang}
