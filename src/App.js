@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import "./App.css";
-import HolyDiver from "./Modules/HolyDiverModules/HolyDiverModule";
+//import HolyDiver from "./Modules/HolyDiverModules/HolyDiverModule";
 import QEMainMenu from "./Modules/QEModules/QEMainMenu.js";
 import TrinketCompare from "./Modules/QEModules/TrinketCompare.js";
 import LegendaryCompare from "./Modules/QEModules/Legendaries/LegendaryCompare.js";
 import Player from "./Modules/QEModules/Player/Player";
 import QEHeader from "./Modules/QEModules/QEHeader";
+import PlayerChars from "./PlayerChars";
 
 import { ConfirmLogin, QELogin } from "./Modules/QEModules/QELogin";
 import { withTranslation, Trans, useTranslation } from "react-i18next";
@@ -29,10 +30,7 @@ class App extends Component {
     super();
     this.langSet = this.langSet.bind(this);
     this.state = {
-      allChar: [new Player("Voulk", "Druid")],
-      allConfig: {
-        activeChar: 0,
-      },
+      characters: new PlayerChars(),
       playerRegion: "us",
       client_id: "1be64387daf6494da2de568527ad82cc",
       lang: "en",
@@ -42,9 +40,7 @@ class App extends Component {
     };
   }
 
-  getActivePlayer = () => {
-    return this.state.allChar[this.state.allConfig.activeChar];
-  };
+ 
 
   langSet = (props) => {
     this.setState({ lang: props });
@@ -63,10 +59,6 @@ class App extends Component {
     ls.set("btag", battletag);
   };
 
-  // Characters
-  updateCharacters = () => {
-    ls.set("allChar", JSON.stringify(this.state.allChar));
-  };
 
   buildLoginURL = () => {
     // China is a little different from the other regions and uses its own URL.
@@ -94,12 +86,13 @@ class App extends Component {
       playerBattleTag: ls.get("btag") || "",
       lang: ls.get("lang") || "en",
     });
-
+    this.state.characters.loadChars();
     i18n.changeLanguage(this.state.lang);
   }
 
   render() {
-    let activePlayer = this.getActivePlayer();
+
+    let activePlayer = this.state.characters.getActiveChar();
 
     return (
       <Router>
@@ -124,12 +117,12 @@ class App extends Component {
                   />
                 )}
               />
-              <Route
+              {/*<Route
                 path="/holydiver"
                 render={() => (
                   <HolyDiver langSet={this.langSet} curLang={this.state.lang} />
                 )}
-              />
+                /> */}
               <Route
                 path="/trinkets"
                 render={() => (

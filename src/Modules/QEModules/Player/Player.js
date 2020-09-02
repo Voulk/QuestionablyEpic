@@ -8,6 +8,7 @@ class Player {
         this.spec = specName;
         this.setupDefaults();
     }
+    
     spec = "";
 
     // A players spell casting patterns. These are averaged from entered logs and a default is provided too. 

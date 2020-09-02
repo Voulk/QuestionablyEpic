@@ -13,7 +13,7 @@ import FightSelectorButton from "../HolyDiverModules/UserInput/FightSelectorButt
 import LoadingOverlay from "react-loading-overlay";
 import CustomEditComponent from "../HolyDiverModules/CooldownTable/Table";
 import InteractiveList from "../HolyDiverModules/Lists/ListGen";
-import Checkboxes from "../HolyDiverModules/BasicComponents/CheckBox";
+import Checkboxes from "./BasicComponents/CheckBox";
 import CooldownTimeline from "../HolyDiverModules/CooldownTable/CooldownTimeline";
 import DenseAppBar from "../HolyDiverModules/BasicComponents/Appbar";
 import { classColoursERT } from "../HolyDiverModules/CooldownTable/ClassColourFunctions";
