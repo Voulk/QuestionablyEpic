@@ -11,7 +11,7 @@ import ls from "local-storage";
 
 //const [allChar, updateChars] = UseState(new Player("Voulk", "Druid"));
 
-
+// This entire component class might be scrapped and replaced. Beware edits. 
 class PlayerChars extends Component  {
     constructor(props) {
         super(props);

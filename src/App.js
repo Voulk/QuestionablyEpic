@@ -42,7 +42,6 @@ class App extends Component {
     
   }
 
- 
 
   langSet = (props) => {
     this.setState({ lang: props });
