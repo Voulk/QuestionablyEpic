@@ -38,6 +38,8 @@ class App extends Component {
       playerBattleTag: "",
       accessToken: "",
     };
+
+    
   }
 
  
@@ -86,16 +88,21 @@ class App extends Component {
       playerBattleTag: ls.get("btag") || "",
       lang: ls.get("lang") || "en",
     });
-    this.state.characters.loadChars();
+    
+    this.state.characters.testFunc();
     i18n.changeLanguage(this.state.lang);
   }
 
   render() {
 
     let activePlayer = this.state.characters.getActiveChar();
+    let allChars = this.state.characters.getAllChar();
+    //alert(JSON.stringify(allChars[0]));
 
     return (
+      
       <Router>
+        
         {console.log(this.state)}
         <ThemeProvider theme={theme}>
           <div className="App">
@@ -110,7 +117,7 @@ class App extends Component {
                 path="/"
                 render={() => (
                   <QEMainMenu
-                    chars={this.state.allChar}
+                    allChars={allChars}
                     pl={this.state.player}
                     langSet={this.langSet}
                     curLang={this.state.lang}

@@ -13,30 +13,43 @@ import ls from "local-storage";
 
 
 class PlayerChars extends Component  {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
-            allChar: [new Player("Voulk", "Druid")],
+            allChar: JSON.parse(ls.get("allChar")) || [new Player("VoulkThree", "Druid")],
             activeChar: 0
           };
+        
+        ls.set("allChar", JSON.stringify(this.state.allChar));
     }
 
-    setInitial(charArray) {
+    /// Disregard all of this for now.
+    setInitial(charArray, loadState) {
         this.setState({allChar : charArray});
+        this.setState({activeChar: 9 }, () => {alert("State Set")});
+        if (loadState === "New") {
+            //ls.set("allChar", JSON.stringify(this.state.allChar));
+        }
+        
     }
 
+    testFunc = () => {
+        this.setState({activeChar: 9 }, () => {alert("State Set")});
+    }
+
+    /// Disregard.
     loadChars = () => {
         // Check DB first.
 
         // Then check LS
-        if (ls.get("allChar") !== "") {
-            this.setInitial(JSON.parse(ls.get("allchar")));
+        if (ls.get("allChar") !== null && ls.get("allChar") !== '[]') {
+            this.setInitial(JSON.parse(ls.get("allchar"), "Load"));
+            alert("Found LS" + ls.get("allChar"));
         }
         else {
-            this.setInitial(new Player("Voulk", "Druid"));
-        }
-        
-        
+            this.setInitial([new Player("VoulkTwo", "Druid")], "New");
+            //alert("Setting New");
+        }     
 
     }
 
@@ -53,6 +66,18 @@ class PlayerChars extends Component  {
     getActiveChar = () => {
         return this.state.allChar[this.state.activeChar];
       };
+
+    getAllChar = () => {
+        return this.state.allChar;
+    }
+
+    componentDidMount() {
+        alert("Hi");
+    }
+
+    render() {
+        return null;
+    }
  
 
 };

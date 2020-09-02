@@ -14,6 +14,7 @@ import Player from "./Player/Player";
 import QEHeader from "./QEHeader";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import CharComponent from "./CharComponent";
 
 
 // This is all shitty boilerplate code that'll be replaced. Do not copy.
@@ -62,6 +63,15 @@ export default function QEMainMenu(props) {
             <p className="headers">Settings</p>
             <Button variant="contained" color="primary" style={{width: "95%", margin: "7px"}} component={Link} to="/addchar">Add Char (Temp)</Button>
             <Button variant="contained" color="primary" style={{width: "95%", margin: "7px"}}>Settings</Button>
+
+            <p className="headers">Characters (Temp)</p>
+
+            {/*props.allChars.map((char, index) => (
+                    
+                    <CharComponent key={index} name={char.charName} spec={char.spec}/>
+
+            )) */}
+
           </div>
 
       </div>

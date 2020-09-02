@@ -6,9 +6,10 @@ var SPELL_OVERHEALING_LOC = 5;
 class Player {
     constructor(playerName, specName) {
         this.spec = specName;
+        this.charName = playerName;
         this.setupDefaults();
     }
-    
+
     spec = "";
 
     // A players spell casting patterns. These are averaged from entered logs and a default is provided too. 
