@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
-//import HolyDiver from "./Modules/HolyDiverModules/HolyDiverModule";
+import HolyDiver from "./Modules/HolyDiverModules/HolyDiverModule";
 import QEMainMenu from "./Modules/QEModules/QEMainMenu.js";
 import TrinketCompare from "./Modules/QEModules/TrinketCompare.js";
 import LegendaryCompare from "./Modules/QEModules/Legendaries/LegendaryCompare.js";
@@ -29,6 +29,7 @@ class App extends Component {
   constructor() {
     super();
     this.langSet = this.langSet.bind(this);
+    this.userLogout = this.userLogout.bind(this);
     this.state = {
       characters: new PlayerChars(),
       playerRegion: "us",
@@ -38,10 +39,7 @@ class App extends Component {
       playerBattleTag: "",
       accessToken: "",
     };
-
-    
   }
-
 
   langSet = (props) => {
     this.setState({ lang: props });
@@ -67,9 +65,7 @@ class App extends Component {
 
     ls.remove("id");
     ls.remove("btag");
-
   }
-
 
   buildLoginURL = () => {
     // China is a little different from the other regions and uses its own URL.
@@ -97,25 +93,23 @@ class App extends Component {
       playerBattleTag: ls.get("btag") || "",
       lang: ls.get("lang") || "en",
     });
-    
+
     this.state.characters.testFunc();
     i18n.changeLanguage(this.state.lang);
   }
 
   render() {
-
     let activePlayer = this.state.characters.getActiveChar();
     let allChars = this.state.characters.getAllChar();
     //alert(JSON.stringify(allChars[0]));
 
     return (
-      
       <Router>
-        
         {console.log(this.state)}
         <ThemeProvider theme={theme}>
           <div className="App">
             <QEHeader
+              logFunc={this.userLogout}
               langSet={this.langSet}
               curLang={this.state.lang}
               playerTag={this.state.playerBattleTag}
@@ -133,12 +127,13 @@ class App extends Component {
                   />
                 )}
               />
-              {/*<Route
+              {/*>:( FIX YO FOLDERS) */}
+              <Route
                 path="/holydiver"
                 render={() => (
                   <HolyDiver langSet={this.langSet} curLang={this.state.lang} />
                 )}
-                /> */}
+              />
               <Route
                 path="/trinkets"
                 render={() => (

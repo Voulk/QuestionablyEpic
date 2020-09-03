@@ -24,16 +24,25 @@ export default function ProfileSelector(props) {
   const [open, setOpen] = React.useState(false);
   const anchorRef = React.useRef(null);
 
+
   const handleToggle = () => {
     setOpen((prevOpen) => !prevOpen);
   };
 
-  const { i18n } = useTranslation();
+  const { t } = useTranslation();
 
-  const handleClose = (event, lang) => {
+  const handleClose = (event) => {
     if (anchorRef.current && anchorRef.current.contains(event.target)) {
       return;
     }
+    setOpen(false);
+  };
+
+  const handleLogout = (event) => {
+    if (anchorRef.current && anchorRef.current.contains(event.target)) {
+      return;
+    }
+    props.logFunc()
     setOpen(false);
   };
 
@@ -47,24 +56,40 @@ export default function ProfileSelector(props) {
   // return focus to the button when we transitioned from !open -> open
   const prevOpen = React.useRef(open);
   React.useEffect(() => {
-    if (prevOpen.current === true && open === false) {
-      anchorRef.current.focus();
-    }
+    // if (prevOpen.current === true && open === false) {
+    //   anchorRef.current.focus();
+    // }
 
     prevOpen.current = open;
   }, [open]);
 
-  return (
-    <div className={classes.root}>
-      <div>
+  function buttonTHing(name) {
+    if (name === t("Login")) {
+      return (
+        <Button component={props.component} to={props.to}>
+          Login
+        </Button>
+      );
+    } else {
+      return (
         <Button
           ref={anchorRef}
           aria-controls={open ? "menu-list-grow" : undefined}
           aria-haspopup="true"
           onClick={handleToggle}
+          onMouseOver={handleToggle}
         >
           {props.name}
         </Button>
+      );
+    }
+  }
+
+  return (
+    <div className={classes.root}>
+    {console.log(props.name)}
+      <div>
+        {buttonTHing(props.name)}
         <Popper
           open={open}
           anchorEl={anchorRef.current}
@@ -88,13 +113,13 @@ export default function ProfileSelector(props) {
                     onKeyDown={handleListKeyDown}
                   >
                     <MenuItem
-                      onClick={(e) => handleClose(e, "en")}
+                      onClick={(e) => handleClose(e)}
                       component={props.component}
                       to={props.to}
                     >
                       Account
                     </MenuItem>
-                    <MenuItem onClick={(e) => handleClose(e, "ru")}>
+                    <MenuItem onClick={(e) => handleLogout(e)}>
                       Logout
                     </MenuItem>
                   </MenuList>
