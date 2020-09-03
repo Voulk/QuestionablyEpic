@@ -110,12 +110,30 @@ function getPlayerTag(accessToken, updatePlayerID) {
     .then(
         (result) => {
             //alert("Full Success" + JSON.stringify(result) + "|" + result.battletag)      
-            if (checkCanUpdateID(result.id, result.battletag)) updatePlayerID(result.id, result.battletag)
+            if (checkCanUpdateID(result.id, result.battletag)) {
+                updatePlayerID(result.id, result.battletag)
+                dbCreatePlayer(result.id, result.battletag)
+            } 
             
         },
         (error) => {
             console.log("Error: " + error.message + ".")
         }
     );
+
+}
+
+function dbCreatePlayer(bid, btag) {
+    let adjTag = btag.replace("#", "%23");
+    let fetchUrl = 'https://questionablyepic.com/api/addUser.php?btag=' + adjTag + '&bid=' + bid;
+
+    fetch(fetchUrl)
+    .then(res => res.text())
+    .then((response) => {
+        //alert("Success |" + response + "|")       
+        
+
+    })
+    .catch(err => console.log(err))
 
 }
