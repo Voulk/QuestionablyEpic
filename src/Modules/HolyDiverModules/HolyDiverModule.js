@@ -29,11 +29,12 @@ import {
 } from "../HolyDiverModules/Functions/Functions";
 import bossHeaders from "../HolyDiverModules/CooldownTable/BossHeaderIcons";
 import Grow from "@material-ui/core/Grow";
-import QEHeader from "../QEModules/QEHeader";
 import Paper from "@material-ui/core/Paper";
 import DtpsTable from "../HolyDiverModules/CooldownTable/DtpsTable";
 import ERTTable from "../HolyDiverModules/CooldownTable/ERTTable";
 import SwitchLabels from "./BasicComponents/Switch";
+
+
 
 class HolyDiver extends Component {
   constructor(props) {

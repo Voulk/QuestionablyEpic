@@ -16,17 +16,6 @@ export default function UserLogTextInput(props) {
   const classes = useStyles();
   const { t, i18n } = useTranslation();
 
-    const [error, setError] = React.useState(false);
-
-
-  const errorchecker = (errorcheck) => {
-    if (errorcheck === "err") {
-      setError(true);
-    } else {
-      setError(false);
-    }
-  };
-
   return (
     <TextField
       className={classes.root}

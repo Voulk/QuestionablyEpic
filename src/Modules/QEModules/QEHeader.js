@@ -14,6 +14,7 @@ import Avatar from "@material-ui/core/Avatar";
 
 import Box from "@material-ui/core/Box";
 import LanguageSelector from "./LanguageButton";
+import ProfileSelector from "./ProfileButton";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 
@@ -38,11 +39,10 @@ export default function QEHeader(props) {
             
           </Box>
           <div></div>
-
           <Button color="inherit">{t("Insert Log")}</Button>
           <Button color="inherit">SimC</Button>
           <Button color="inherit">{t("Raid")}</Button>
-          <Button color="inherit" component={Link} to={linkTarget}>{playerName}</Button>
+          <ProfileSelector name={playerName} component={Link} to={linkTarget}/>
           <LanguageSelector langSet={props.langSet} curLang={props.curLang} />
         </Toolbar>
       </AppBar>
