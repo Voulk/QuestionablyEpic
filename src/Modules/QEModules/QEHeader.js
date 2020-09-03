@@ -17,6 +17,7 @@ import LanguageSelector from "./LanguageButton";
 import ProfileSelector from "./ProfileButton";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
+import CustomizedDialogs from "./LoginDialogTest.js";
 
 export default function QEHeader(props) {
   const { t, i18n } = useTranslation();
@@ -47,6 +48,7 @@ export default function QEHeader(props) {
             logFunc={props.logFunc}
           />
           <LanguageSelector langSet={props.langSet} curLang={props.curLang} />
+          <CustomizedDialogs />
         </Toolbar>
       </AppBar>
     </div>
