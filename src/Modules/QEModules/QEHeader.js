@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import ReactDOM from "react-dom";
 import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
@@ -17,16 +17,16 @@ import LanguageSelector from "./LanguageButton";
 import ProfileSelector from "./ProfileButton";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
-
+import CustomizedDialogs from "./LoginDialogTest.js";
 
 export default function QEHeader(props) {
   const { t, i18n } = useTranslation();
-  
+
   // If the player isn't logged in, then show a login button and redirect to the login page on click.
   // If the player IS logged in, show their battle tag and redirect to profile on click.
-  // TODO: Implement profile. 
+  // TODO: Implement profile.
   let playerName = props.playerTag || t("Login");
-  let linkTarget = (props.playerTag == "") ? "/login" : "/profile";
+  let linkTarget = props.playerTag === "" ? "/login" : "/profile";
 
   return (
     <div style={{ backgroundColor: "#353535" }}>
@@ -36,14 +36,19 @@ export default function QEHeader(props) {
             <Link to={"/"}>
               <img src={logo} alt="QE Live" />
             </Link>
-            
           </Box>
           <div></div>
           <Button color="inherit">{t("Insert Log")}</Button>
           <Button color="inherit">SimC</Button>
           <Button color="inherit">{t("Raid")}</Button>
-          <ProfileSelector name={playerName} component={Link} to={linkTarget}/>
+          <ProfileSelector
+            name={playerName}
+            component={Link}
+            to={linkTarget}
+            logFunc={props.logFunc}
+          />
           <LanguageSelector langSet={props.langSet} curLang={props.curLang} />
+          <CustomizedDialogs />
         </Toolbar>
       </AppBar>
     </div>
