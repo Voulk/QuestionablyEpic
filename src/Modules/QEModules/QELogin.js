@@ -64,6 +64,7 @@ function useQuery() {
 }
 
 
+
 // Checks that the battle tag and player ID are valid. 
 // ID is just in the format of a medium length int, BTag is String#Numbers. Regex should be more than sufficient.
 // TODO implement

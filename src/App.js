@@ -60,6 +60,12 @@ class App extends Component {
     ls.set("btag", battletag);
   };
 
+  userLogout() {
+    // Do other stuff later.
+    this.updatePlayerID(null, null)
+
+  }
+
 
   buildLoginURL = () => {
     // China is a little different from the other regions and uses its own URL.
