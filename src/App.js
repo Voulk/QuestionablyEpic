@@ -39,7 +39,6 @@ class App extends Component {
       accessToken: "",
     };
 
-    
   }
 
 
@@ -98,7 +97,6 @@ class App extends Component {
       lang: ls.get("lang") || "en",
     });
     
-    this.state.characters.testFunc();
     i18n.changeLanguage(this.state.lang);
   }
 

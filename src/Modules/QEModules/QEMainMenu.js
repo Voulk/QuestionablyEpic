@@ -66,11 +66,11 @@ export default function QEMainMenu(props) {
 
             <p className="headers">Characters (Temp)</p>
 
-            {/*props.allChars.map((char, index) => (
+            {props.allChars.length > 0 ? props.allChars.map((char, index) => (
                     
                     <CharComponent key={index} name={char.charName} spec={char.spec}/>
 
-            )) */}
+            )) : ""}
 
           </div>
 

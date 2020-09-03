@@ -138,3 +138,23 @@ function dbCreatePlayer(bid, btag) {
     .catch(err => console.log(err))
 
 }
+
+// Add allChars to DB with a players bid and btag.
+function dbAddCharacters() {
+
+}
+
+// Update a players characters in the DB when a change is made.
+// Possible changes:
+// - Changed stat weights.
+// - New Log URL.
+// - Character name change.
+// - Deleted character.
+function dbUpdateCharacters() {
+
+}
+
+function dbPullCharacters() {
+    
+
+}

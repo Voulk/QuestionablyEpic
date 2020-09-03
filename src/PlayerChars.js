@@ -12,6 +12,37 @@ import ls from "local-storage";
 //const [allChar, updateChars] = UseState(new Player("Voulk", "Druid"));
 
 // This entire component class might be scrapped and replaced. Beware edits. 
+
+class PlayerChars  {
+    constructor(props) {
+        //super(props);
+        
+        this.allChar = JSON.parse(ls.get("allChar")) || [new Player("VoulkThree", "Druid")];
+        this.activeChar = 0;
+    };
+
+    allChar = [];
+    activeChar = 0;
+
+
+    getActiveChar = () => {
+        return this.allChar[this.activeChar];
+      };
+
+    getAllChar = () => {
+        return this.allChar;
+    }  
+
+
+}
+
+export default PlayerChars;
+
+
+
+
+/// Old Code
+/*
 class PlayerChars extends Component  {
     constructor(props) {
         super(props);
@@ -106,3 +137,5 @@ const credentials = {
 }
 
 export default PlayerChars;
+
+*/
