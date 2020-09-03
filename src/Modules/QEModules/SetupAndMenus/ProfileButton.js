@@ -9,7 +9,7 @@ import MenuList from "@material-ui/core/MenuList";
 import { makeStyles } from "@material-ui/core/styles";
 import { useTranslation, withTranslation, Trans } from "react-i18next";
 import { Link } from "react-router-dom";
-import BnetIcon from "../../Images/QeAssets/BattleNetIcon.png"
+import BnetIcon from "../../../Images/QeAssets/BattleNetIcon.png"
 
 const useStyles = makeStyles((theme) => ({
   root: {

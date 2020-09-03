@@ -9,14 +9,14 @@ import IconButton from '@material-ui/core/IconButton';
 
 import logo from '../../Images/QeAssets/QELogo.png'
 import MenuIcon from '@material-ui/icons/Menu';
-import './QEMainMenu.css';
+import './SetupAndMenus/QEMainMenu.css';
 import Avatar from "@material-ui/core/Avatar";
 
 import SaveIcon from "@material-ui/icons/Save";
 import EditIcon from "@material-ui/icons/Edit";
 import Box from '@material-ui/core/Box';
 import Player from './Player/Player';
-import QEHeader from './QEHeader';
+import QEHeader from './SetupAndMenus/QEHeader';
 import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 

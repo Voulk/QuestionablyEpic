@@ -11,6 +11,7 @@ class Player {
     }
 
     spec = "";
+    charID = 0;
 
     // A players spell casting patterns. These are averaged from entered logs and a default is provided too. 
     // 

@@ -7,7 +7,7 @@ import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import IconButton from "@material-ui/core/IconButton";
 
-import logo from "../../Images/QeAssets/QELogo.png";
+import logo from "../../../Images/QeAssets/QELogo.png";
 import MenuIcon from "@material-ui/icons/Menu";
 import "./QEMainMenu.css";
 import Avatar from "@material-ui/core/Avatar";

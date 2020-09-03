@@ -7,9 +7,9 @@ import Popper from "@material-ui/core/Popper";
 import MenuItem from "@material-ui/core/MenuItem";
 import MenuList from "@material-ui/core/MenuList";
 import { makeStyles } from "@material-ui/core/styles";
-import ruFlag from "../../locale/ru/ru.png";
-import enFlag from "../../locale/en/en.png";
-import chFlag from "../../locale/ch/ch.png";
+import ruFlag from "../../../locale/ru/ru.png";
+import enFlag from "../../../locale/en/en.png";
+import chFlag from "../../../locale/ch/ch.png";
 import { useTranslation, withTranslation, Trans } from 'react-i18next';
 
 const useStyles = makeStyles((theme) => ({

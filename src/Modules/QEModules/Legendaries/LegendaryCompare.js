@@ -3,10 +3,10 @@ import ReactDOM from 'react-dom';
 import { makeStyles } from '@material-ui/core/styles';
 
 import MenuIcon from '@material-ui/icons/Menu';
-import '../QEMainMenu.css';
+import '../SetupAndMenus/QEMainMenu.css';
 
 import Player from '../Player/Player';
-import QEHeader from '../QEHeader';
+import QEHeader from '../SetupAndMenus/QEHeader';
 import LegendaryObject from './LegendaryObject';
 import getLegendaryInfo from '../Classes/LegendaryFormulas';
 import './Legendaries.css';

@@ -4,13 +4,13 @@ import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import IconButton from "@material-ui/core/IconButton";
 
-import logo from "../../Images/QeAssets/QELogo.png";
+import logo from "../../../Images/QeAssets/QELogo.png";
 import MenuIcon from "@material-ui/icons/Menu";
 import "./QEMainMenu.css";
 import Avatar from "@material-ui/core/Avatar";
 
 import Box from "@material-ui/core/Box";
-import Player from "./Player/Player";
+import Player from "../Player/Player";
 import QEHeader from "./QEHeader";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";

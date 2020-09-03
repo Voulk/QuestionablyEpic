@@ -1,6 +1,5 @@
 
 import Player from "./Modules/QEModules/Player/Player";
-import React, { Component, UseState } from "react";
 import ls from "local-storage";
 // On app start, load player data. 
 // First, we will check if they are signed in and have character data. 
@@ -14,24 +13,43 @@ import ls from "local-storage";
 // This entire component class might be scrapped and replaced. Beware edits. 
 
 class PlayerChars  {
-    constructor(props) {
-        //super(props);
+    constructor() {
         
         this.allChar = JSON.parse(ls.get("allChar")) || [new Player("VoulkThree", "Druid")];
         this.activeChar = 0;
     };
 
-    allChar = [];
-    activeChar = 0;
+    allChar = []; // An array of all our characters. 
+    activeChar = 0; // The index in the character array of our currently selected character.
 
-
+    // Return the players active character.
     getActiveChar = () => {
         return this.allChar[this.activeChar];
       };
 
+    // Return an array of all of the players characters.  
     getAllChar = () => {
         return this.allChar;
     }  
+
+    // Save our character array, both to database (when logged in) and to LocalStorage.
+    saveAllChar = () => {
+        // Database TODO
+
+        // Local Storage
+        ls.set("allChar", JSON.stringify(this.state.allChar))
+    }
+
+    // Add a new character to the array then save it.
+    addChar = (name, spec) => {
+        this.allChar.push(new Player(name, spec))
+
+    }
+
+    // Delete the active character.
+    delActiveChar = () => {
+        this.allChar.splice(this.activeChar, 1)
+    }
 
 
 }
@@ -40,8 +58,7 @@ export default PlayerChars;
 
 
 
-
-/// Old Code
+/// Previous attempt at this module. Will delete soon, but for now left here as a mistake rectified. 
 /*
 class PlayerChars extends Component  {
     constructor(props) {
