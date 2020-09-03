@@ -357,7 +357,6 @@ export function killOrWipe(check) {
 }
 
 export function warcraftLogReportID(string) {
-  console.log(string);
   let reportID = "";
   // If String is longer than report length
   if (string.length > 16 && string.includes("/")) {
@@ -365,7 +364,6 @@ export function warcraftLogReportID(string) {
       .split("/")
       .filter((key) => key.length === 16)
       .toString();
-console.log(stringCheck)
     if (stringCheck === "") {
       reportID = "err";
     } else {
@@ -382,6 +380,5 @@ console.log(stringCheck)
     // If Notihng Matches the above tests, then return an error code here
     reportID = "err";
   }
-  console.log(reportID);
   return reportID;
 }

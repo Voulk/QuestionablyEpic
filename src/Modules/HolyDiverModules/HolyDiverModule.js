@@ -84,7 +84,7 @@ class HolyDiver extends Component {
     };
   }
 
-  useless = () => {};
+  useless = () => {}
 
   updatechartdata = async (starttime, endtime) => {
     this.setState({ loadingcheck: true });
@@ -244,7 +244,7 @@ class HolyDiver extends Component {
       unmitigatedDamageFromLogWithTimesAddedAndCooldowns
     );
     let dataReformaterDamage = reduceTimestamps(
-      unmitigatedDamageFromLogWithTimesAddedAndCooldowns
+      damageFromLogWithTimesAddedAndCooldowns
     );
 
     // let dtpsArray = damage.map((key) => ({
@@ -415,7 +415,6 @@ class HolyDiver extends Component {
 
     return (
       <div>
-      {console.log(this.state.chartData)}
         <div style={{ margin: "20px 50px 20px 50px" }}>
           <Grid
             container
@@ -525,7 +524,7 @@ class HolyDiver extends Component {
                       <Grid item xs={1} padding={1}>
                         <SwitchLabels check={this.damageTableShow} label={"Log Chart"}/>
                         <SwitchLabels check={this.healTableShow} label={"Custom CD Chart"}/>
-                        <SwitchLabels check={this.changeDataSet} label={this.state.chartData === true ? "Mitigated" : "Unmitigated" }/>
+                        <SwitchLabels check={this.changeDataSet} label={this.state.chartData === true ? "Unmitigated" : "Mitigated" }/>
                       </Grid>
                     </div>
                   </Paper>
