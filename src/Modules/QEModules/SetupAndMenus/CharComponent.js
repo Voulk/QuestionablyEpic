@@ -1,26 +1,27 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
+import druid from "../../../Images/DruidSmall.png";
 
 
 export default function CharComponent(props) {
     
         return(
-            <div className="lego">
-                <div className="titleBox">
-                    
- 
-                    <p style={{fontSize: "16px", marginTop: "2px", textAlign: "center", fontWeight: "bold", display: "inline-block"}}>{props.name}</p>
+            <div className="charComp">
+                <div className="charLeft" >
+                    <img src={druid} />
                 </div>
-                
-            <div style={{height: "45%", borderWidth: "0 0 2px 0", borderStyle: "solid", borderColor: "black"}}>
-                
+
+                <div className="charRight">
+                    <p style={{fontSize: "18px", marginTop: "4px", marginBottom: "0px", textAlign: "left", fontWeight: "bold"}}>{props.name}</p>
+                    <p style={{fontSize: "14px", marginTop: "2px", textAlign: "left"}}>{props.spec}</p>
+
+
+                </div>
+                   
+
 
             </div>
-            <div>
-                <p style={{fontSize: "16px", margin: "1px", marginLeft: "auto", marginRight: "auto", textAlign: "center", fontWeight: "bold"}}>Spec: {props.spec}</p>
-            </div>
-        </div>
 
 
 

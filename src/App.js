@@ -6,7 +6,7 @@ import TrinketCompare from "./Modules/QEModules/TrinketCompare.js";
 import LegendaryCompare from "./Modules/QEModules/Legendaries/LegendaryCompare.js";
 import Player from "./Modules/QEModules/Player/Player";
 import QEHeader from "./Modules/QEModules/SetupAndMenus/QEHeader";
-import PlayerChars from "./PlayerChars";
+import PlayerChars from "./Modules/QEModules/Player/PlayerChars";
 
 import { ConfirmLogin, QELogin } from "./Modules/QEModules/SetupAndMenus/QELogin";
 import { withTranslation, Trans, useTranslation } from "react-i18next";
@@ -14,7 +14,6 @@ import i18n from "./i18n";
 
 import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import { Redirect, useHistory } from "react-router-dom";
 import ls from "local-storage";
 
 const theme = createMuiTheme({

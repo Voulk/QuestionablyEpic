@@ -27,3 +27,29 @@ body {
     background-color: #353535;
 
 }
+
+.charComp {
+    position: relative;
+    border: 2px Solid black;
+    display: inline-block;
+    margin: 5px;
+    width: 240px;
+    height: 80px;
+    background-color: #DBA530;
+    background-image: url("https://www.transparenttextures.com/patterns/crossword.png");
+
+}
+
+.charLeft {
+    
+    width: 33%;
+    float: left;
+   
+}
+
+.charRight {
+    float: right;
+    width: 63%;
+
+}
+

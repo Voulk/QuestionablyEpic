@@ -1,5 +1,5 @@
 
-import Player from "./Modules/QEModules/Player/Player";
+import Player from "./Player";
 import ls from "local-storage";
 // On app start, load player data. 
 // First, we will check if they are signed in and have character data. 
@@ -15,7 +15,7 @@ import ls from "local-storage";
 class PlayerChars  {
     constructor() {
         
-        this.allChar = JSON.parse(ls.get("allChar")) || [new Player("VoulkThree", "Druid")];
+        this.allChar = JSON.parse(ls.get("allChar")) || [new Player("VoulkThree", "Restoration Druid")];
         this.activeChar = 0;
     };
 
@@ -59,6 +59,7 @@ export default PlayerChars;
 
 
 /// Previous attempt at this module. Will delete soon, but for now left here as a mistake rectified. 
+
 /*
 class PlayerChars extends Component  {
     constructor(props) {
