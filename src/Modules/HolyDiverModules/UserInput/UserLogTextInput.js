@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { makeStyles, withStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
@@ -15,11 +15,24 @@ const useStyles = makeStyles((theme) => ({
 export default function UserLogTextInput(props) {
   const classes = useStyles();
   const { t, i18n } = useTranslation();
+
+    const [error, setError] = React.useState(false);
+
+
+  const errorchecker = (errorcheck) => {
+    if (errorcheck === "err") {
+      setError(true);
+    } else {
+      setError(false);
+    }
+  };
+
   return (
     <TextField
       className={classes.root}
+      error={props.reportid !== "err" ? false : true }
       id="filled-basic"
-      label={t("Paste WarcraftLog Link Here")}
+      label={props.reportid !== "err" ? t("Paste WarcraftLog Link Here") : "Incorrect Link / Report ID Provided :(" }
       variant="outlined"
       onChange={props.changed}
       value={props.loglink}

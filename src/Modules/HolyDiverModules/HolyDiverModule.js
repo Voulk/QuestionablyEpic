@@ -13,7 +13,6 @@ import FightSelectorButton from "../HolyDiverModules/UserInput/FightSelectorButt
 import LoadingOverlay from "react-loading-overlay";
 import CustomEditComponent from "../HolyDiverModules/CooldownTable/Table";
 import InteractiveList from "../HolyDiverModules/Lists/ListGen";
-import Checkboxes from "./BasicComponents/CheckBox";
 import CooldownTimeline from "../HolyDiverModules/CooldownTable/CooldownTimeline";
 import DenseAppBar from "../HolyDiverModules/BasicComponents/Appbar";
 import { classColoursERT } from "../HolyDiverModules/CooldownTable/ClassColourFunctions";
@@ -26,6 +25,7 @@ import {
   importDamageLogData,
   importCastsLogData,
   durationmaker,
+  warcraftLogReportID,
 } from "../HolyDiverModules/Functions/Functions";
 import bossHeaders from "../HolyDiverModules/CooldownTable/BossHeaderIcons";
 import Grow from "@material-ui/core/Grow";
@@ -33,10 +33,12 @@ import QEHeader from "../QEModules/QEHeader";
 import Paper from "@material-ui/core/Paper";
 import DtpsTable from "../HolyDiverModules/CooldownTable/DtpsTable";
 import ERTTable from "../HolyDiverModules/CooldownTable/ERTTable";
+import SwitchLabels from "./BasicComponents/Switch";
 
 class HolyDiver extends Component {
   constructor(props) {
     super();
+    this.reportidHandler = this.reportidHandler.bind(this)
     this.damageTableShow = this.damageTableShow.bind(this);
     this.healTableShow = this.healTableShow.bind(this);
     this.handler = this.handler.bind(this);
@@ -46,7 +48,7 @@ class HolyDiver extends Component {
     this.timelineHandler = this.timelineHandler.bind(this);
     this.state = {
       currentBossID: null,
-      updatedarray: [],
+      unmitigatedChartData: [],
       logactuallink: null,
       loglink: "Insert Log Here",
       reportid: null,
@@ -77,6 +79,8 @@ class HolyDiver extends Component {
       timelineshowhide: false,
       legenddata: [],
       uniqueArrayGuid: [],
+      damageChartData: [],
+      chartData: true,
     };
   }
 
@@ -85,8 +89,9 @@ class HolyDiver extends Component {
   updatechartdata = async (starttime, endtime) => {
     this.setState({ loadingcheck: true });
     let healerdurations = [];
-    let sortedData = [];
-    let sortedData2 = [];
+    let sortedDataUnmitigated = [];
+    let sortedDataDamage = [];
+    let sortedDataNoCooldowns = [];
 
     // Import Healer Info from Healer Function
     const healers = await importHealerLogData(
@@ -152,11 +157,18 @@ class HolyDiver extends Component {
     // Concat the Unique Ability List with the Cooldown List
     let uniqueArrayNewForLegend = uniqueLegendData.concat(uniqueArrayCD);
     // Map New Data Array Timestamp + ability name & Unmitaged Amount
-    let updatedarray = damage.map((key) => ({
+    let unmitigatedDamageMap = damage.map((key) => ({
       timestamp: moment(fightDurationCalculator(key.timestamp, this.state.time))
         .startOf("second")
         .valueOf(),
       [key.ability.name]: key.unmitigatedAmount,
+    }));
+
+        let mitigatedDamageMap = damage.map((key) => ({
+      timestamp: moment(fightDurationCalculator(key.timestamp, this.state.time))
+        .startOf("second")
+        .valueOf(),
+      [key.ability.name]: key.amount,
     }));
     // Map New Data Array ability, Timestamp, Healer name - ability: 1
     let updateddatacasts = cooldowns.map((key) => ({
@@ -211,17 +223,28 @@ class HolyDiver extends Component {
       fightDurationCalculator(endtime, starttime)
     );
     // concat the damage array with the cooldown durations with the missing durations
-    let damageFromLogWithTimesAddedAndCooldowns = updatedarray.concat(
+    let unmitigatedDamageFromLogWithTimesAddedAndCooldowns = unmitigatedDamageMap.concat(
+      cooldownwithdurations,
+      times
+    );
+
+    let damageFromLogWithTimesAddedAndCooldowns = mitigatedDamageMap.concat(
       cooldownwithdurations,
       times
     );
     // Sort the Array by Timestamp
+    unmitigatedDamageFromLogWithTimesAddedAndCooldowns.sort((a, b) =>
+      a.timestamp > b.timestamp ? 1 : -1
+    );
     damageFromLogWithTimesAddedAndCooldowns.sort((a, b) =>
       a.timestamp > b.timestamp ? 1 : -1
     );
     // reduce array removing any duplicate timestamps
-    let dataReformater = reduceTimestamps(
-      damageFromLogWithTimesAddedAndCooldowns
+    let dataReformaterUnmitigatedDamage = reduceTimestamps(
+      unmitigatedDamageFromLogWithTimesAddedAndCooldowns
+    );
+    let dataReformaterDamage = reduceTimestamps(
+      unmitigatedDamageFromLogWithTimesAddedAndCooldowns
     );
 
     // let dtpsArray = damage.map((key) => ({
@@ -233,24 +256,31 @@ class HolyDiver extends Component {
     // }));
 
     // concat the damage array with the missing durations
-    let concatArrayWithMissingTimes = updatedarray.concat(times);
+    let concatArrayWithMissingTimes = unmitigatedDamageMap.concat(times);
     // Sort the Array by Timestamp
     concatArrayWithMissingTimes.sort((a, b) =>
       a.timestamp > b.timestamp ? 1 : -1
     );
     // reduce array removing any duplicate timestamps
     let dataReformater2 = reduceTimestamps(concatArrayWithMissingTimes);
-    Object.keys(dataReformater).forEach((element) =>
-      sortedData.push(dataReformater[element])
+    Object.keys(dataReformaterUnmitigatedDamage).forEach((element) =>
+      sortedDataUnmitigated.push(dataReformaterUnmitigatedDamage[element])
     );
+
+    Object.keys(dataReformaterDamage).forEach((element) =>
+      sortedDataDamage.push(dataReformaterDamage[element])
+    );
+
+
     Object.keys(dataReformater2).forEach((element) =>
-      sortedData2.push(dataReformater2[element])
+      sortedDataNoCooldowns.push(dataReformater2[element])
     );
     this.setState({
-      cooldownhelper: sortedData2,
-      cooldownhelperfinal: sortedData2,
+      cooldownhelper: sortedDataNoCooldowns,
+      cooldownhelperfinal: sortedDataNoCooldowns,
       legenddata: uniqueArrayNewForLegend,
-      updatedarray: sortedData,
+      unmitigatedChartData: sortedDataUnmitigated,
+      damageChartData: sortedDataDamage,
       Updateddatacasts: updateddatacastsTimeline,
       uniqueArrayGuid: uniqueArrayGuid,
       abilitylist: uniqueArray,
@@ -286,15 +316,12 @@ class HolyDiver extends Component {
     this.setState({ healTableShow: event });
   };
 
-  usernameChangedHandler = (event) => {
-    let actuallink = event.target.value;
-    this.setState({ logactuallink: event.target.value });
-    this.setState({ reportid: actuallink.substring(37, 53) });
+  changeDataSet = (event) => {
+    this.setState({ chartData: event });
   };
 
-  reportidHandler = () => {
-    this.setState({ logactuallink: this.state.loglink });
-    this.setState({ reportid: this.state.loglink.substring(37, 53) });
+  reportidHandler = (event) => {
+    this.setState({ reportid: warcraftLogReportID(event.target.value) });
   };
 
   ertHandler = () => {
@@ -388,6 +415,7 @@ class HolyDiver extends Component {
 
     return (
       <div>
+      {console.log(this.state.chartData)}
         <div style={{ margin: "20px 50px 20px 50px" }}>
           <Grid
             container
@@ -408,9 +436,10 @@ class HolyDiver extends Component {
               >
                 <div style={{ display: "inline-flex", width: "100%" }}>
                   <UserLogTextInput
-                    changed={this.usernameChangedHandler}
+                    changed={this.reportidHandler}
                     float={"left"}
                     position={"relative"}
+                    reportid={this.state.reportid}
                   />
                   <FightSelectorButton
                     reportid={this.state.reportid}
@@ -423,6 +452,7 @@ class HolyDiver extends Component {
                     reportid={this.state.reportid}
                     clicky={this.handler}
                     update={this.updatechartdata}
+                    position={"relative"}
                   />
                 </div>
               </Paper>
@@ -493,14 +523,9 @@ class HolyDiver extends Component {
                         <InteractiveList heals={this.state.healernames} />
                       </Grid>
                       <Grid item xs={1} padding={1}>
-                        <Checkboxes
-                          check={this.damageTableShow}
-                          label={"Log Chart"}
-                        />
-                        <Checkboxes
-                          check={this.healTableShow}
-                          label={"Custom CD Chart"}
-                        />
+                        <SwitchLabels check={this.damageTableShow} label={"Log Chart"}/>
+                        <SwitchLabels check={this.healTableShow} label={"Custom CD Chart"}/>
+                        <SwitchLabels check={this.changeDataSet} label={this.state.chartData === true ? "Mitigated" : "Unmitigated" }/>
                       </Grid>
                     </div>
                   </Paper>
@@ -523,7 +548,9 @@ class HolyDiver extends Component {
                   spinner={<CircularProgress color="secondary" />}
                 >
                   <Chart
-                    chart={this.state.updatedarray}
+                    dataToShow={this.state.chartData}
+                    mitigated={this.state.damageChartData}
+                    unmitigated={this.state.unmitigatedChartData}
                     abilitylist={this.state.abilitylist}
                     legendata={this.state.legenddata}
                     cooldown={this.state.cooldownlist}
@@ -635,7 +662,9 @@ class HolyDiver extends Component {
                   spinner={<CircularProgress color="secondary" />}
                 >
                   <Chart
-                    chart={this.state.cooldownhelperfinal}
+                    dataToShow={this.state.chartData}
+                    mitigated={this.state.damageChartData}
+                    unmitigated={this.state.unmitigatedChartData}
                     abilitylist={this.state.abilitylist}
                     cooldown={this.state.cooldownlistcustom2}
                     endtime={fightDurationCalculator(

@@ -355,3 +355,33 @@ export function killOrWipe(check) {
     return "Kill!";
   }
 }
+
+export function warcraftLogReportID(string) {
+  console.log(string);
+  let reportID = "";
+  // If String is longer than report length
+  if (string.length > 16 && string.includes("/")) {
+    let stringCheck = string
+      .split("/")
+      .filter((key) => key.length === 16)
+      .toString();
+console.log(stringCheck)
+    if (stringCheck === "") {
+      reportID = "err";
+    } else {
+      reportID = stringCheck;
+    }
+  } else if (
+    // If String is the Length of a Log (Very Unlikely to randomly put a 16 character string that isn't a log here)
+    string.length === 16
+  ) {
+    reportID = string;
+  } else if (string === "") {
+    reportID = "";
+  } else {
+    // If Notihng Matches the above tests, then return an error code here
+    reportID = "err";
+  }
+  console.log(reportID);
+  return reportID;
+}

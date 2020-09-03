@@ -135,11 +135,13 @@ class Chart extends Component {
         width="100%"
         aspect={4.0 / 0.7}
       >
+
         <AreaChart
           width="100%"
-          data={this.props.chart}
+          data={this.props.dataToShow === true ? this.props.unmitigated : this.props.mitigated }
           margin={{ top: 15, right: -30, left: 30, bottom: 0 }}
         >
+        {console.log(this.props.unmitigated), console.log(this.props.mitigated)}
           <XAxis
             dataKey="timestamp"
             scale="time"
