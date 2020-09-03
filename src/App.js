@@ -62,7 +62,11 @@ class App extends Component {
 
   userLogout() {
     // Do other stuff later.
-    this.updatePlayerID(null, null)
+    this.setState({ playerLoginID: 0 });
+    this.setState({ playerBattleTag: "" });
+
+    ls.remove("id");
+    ls.remove("btag");
 
   }
 
