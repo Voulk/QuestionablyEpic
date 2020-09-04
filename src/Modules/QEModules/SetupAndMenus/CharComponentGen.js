@@ -18,6 +18,7 @@ const useStyles = makeStyles((theme) => ({
   },
   content: {
     flex: "1 0 auto",
+    padding: "10px"
   },
   large: {
     width: "80px",
@@ -28,7 +29,7 @@ export default function CharCards(props) {
   const classes = useStyles();
   return (
     <div>
-      <Card className={classes.root} variant="outlined">
+      <Card className={classes.root} variant="outlined" raised={true}>
         <div className={classes.details}>
           <CardContent className={classes.content}>
             <Typography variant="h6" component="h2">
@@ -39,7 +40,7 @@ export default function CharCards(props) {
             </Typography>
           </CardContent>
         </div>
-        <Avatar variant="rounded" alt="Remy Sharp" className={classes.large} />
+        <Avatar src="https://render-us.worldofwarcraft.com/character/frostmourne/212/180358868-avatar.jpg" variant="rounded" alt="Remy Sharp" className={classes.large} />
       </Card>
     </div>
   );
