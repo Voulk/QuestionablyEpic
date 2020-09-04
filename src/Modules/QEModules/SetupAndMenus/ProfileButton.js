@@ -8,8 +8,35 @@ import MenuItem from "@material-ui/core/MenuItem";
 import MenuList from "@material-ui/core/MenuList";
 import { makeStyles } from "@material-ui/core/styles";
 import { useTranslation, withTranslation, Trans } from "react-i18next";
-import { Link } from "react-router-dom";
-import BnetIcon from "../../../Images/QeAssets/BattleNetIcon.png"
+import BnetIcon from "../../../Images/QeAssets/BattleNetIcon.png";
+import { withStyles } from "@material-ui/core/styles";
+import Dialog from "@material-ui/core/Dialog";
+import MuiDialogTitle from "@material-ui/core/DialogTitle";
+import MuiDialogContent from "@material-ui/core/DialogContent";
+import MuiDialogActions from "@material-ui/core/DialogActions";
+import IconButton from "@material-ui/core/IconButton";
+import CloseIcon from "@material-ui/icons/Close";
+import Typography from "@material-ui/core/Typography";
+import { ConfirmLogin, QELogin } from "./QELogin";
+
+const styles = (theme) => ({
+  root: {
+    margin: 0,
+    padding: theme.spacing(2),
+  },
+  closeButton: {
+    position: "absolute",
+    right: theme.spacing(1),
+    top: theme.spacing(1),
+    color: theme.palette.grey[500],
+  },
+});
+
+const DialogContent = withStyles((theme) => ({
+  root: {
+    padding: theme.spacing(2),
+  },
+}))(MuiDialogContent);
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -23,8 +50,20 @@ const useStyles = makeStyles((theme) => ({
 export default function ProfileSelector(props) {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
+  const [opendialog, setOpenDialog] = React.useState(false);
   const anchorRef = React.useRef(null);
 
+  const handleDialogOpen = () => {
+    setOpenDialog(true);
+  };
+
+  const handleHoverOpen = () => {
+    setOpen(true);
+  };
+
+  const handleCloseDialog = () => {
+    setOpenDialog(false);
+  };
 
   const handleToggle = () => {
     setOpen((prevOpen) => !prevOpen);
@@ -32,10 +71,10 @@ export default function ProfileSelector(props) {
 
   const { t } = useTranslation();
 
-  const handleClose = (event) => {
-    if (anchorRef.current && anchorRef.current.contains(event.target)) {
-      return;
-    }
+  const handleClose = () => {
+    // if (anchorRef.current && anchorRef.current.contains(event.target)) {
+    //   return;
+    // }
     setOpen(false);
   };
 
@@ -43,7 +82,7 @@ export default function ProfileSelector(props) {
     if (anchorRef.current && anchorRef.current.contains(event.target)) {
       return;
     }
-    props.logFunc()
+    props.logFunc();
     setOpen(false);
   };
 
@@ -67,9 +106,22 @@ export default function ProfileSelector(props) {
   function buttonTHing(name) {
     if (name === t("Login")) {
       return (
-        <Button component={props.component} to={props.to}>
-          Login
-        </Button>
+        <div>
+          <Button onClick={handleDialogOpen}>Login</Button>
+          <Dialog
+            onClose={handleCloseDialog}
+            aria-labelledby="customized-dialog-title"
+            open={opendialog}
+          >
+            <DialogContent>
+              <QELogin
+                langSet={props.langSet}
+                curLang={props.lang}
+                setRegion={props.setRegion}
+              />
+            </DialogContent>
+          </Dialog>
+        </div>
       );
     } else {
       return (
@@ -78,9 +130,9 @@ export default function ProfileSelector(props) {
           aria-controls={open ? "menu-list-grow" : undefined}
           aria-haspopup="true"
           onClick={handleToggle}
-          onMouseOver={handleToggle}
+          onMouseOver={handleHoverOpen}
         >
-        <img src={BnetIcon} width="24px" height="24px"/>
+          <img src={BnetIcon} width="24px" height="24px" />
           {props.name}
         </Button>
       );
@@ -89,7 +141,7 @@ export default function ProfileSelector(props) {
 
   return (
     <div className={classes.root}>
-    {console.log(props.name)}
+      {console.log(props.name)}
       <div>
         {buttonTHing(props.name)}
         <Popper
@@ -121,9 +173,7 @@ export default function ProfileSelector(props) {
                     >
                       Account
                     </MenuItem>
-                    <MenuItem onClick={(e) => handleLogout(e)}>
-                      Logout
-                    </MenuItem>
+                    <MenuItem onClick={(e) => handleLogout(e)}>Logout</MenuItem>
                   </MenuList>
                 </ClickAwayListener>
               </Paper>
