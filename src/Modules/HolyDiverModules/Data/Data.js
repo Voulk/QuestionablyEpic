@@ -537,4 +537,41 @@ export const bossAbilities = [
   { ability: "Waltz of Blood", guid: 342853 },
   { ability: "Bolt of Power", guid: 337110 },
   { ability: "Tactical Advance", guid: 328334 },
-];
+]
+
+
+// paladin talents
+// row 1
+// crusaders might - 1926926
+// bestow faith - 223306
+// light's hammer - 114158
+//
+// row 2
+// saved by the light - 157047
+// judgment of the light - 183778
+// holy prism - 114165
+//
+// row 3
+// fist of jsutice - 234299
+// repentance - 20066
+// blinding light 
+//
+// row 4
+// unbreakable spirit -
+// cavalier -
+// rule of law
+// 
+// row 5
+// divine purpose
+// holy avenger
+// seraphim
+// 
+// row 6
+// sanctified wrath
+// avenging crusader
+// awakening
+// 
+// row 7
+// glimmer of light
+// beacon of faith
+// beacon of virtue

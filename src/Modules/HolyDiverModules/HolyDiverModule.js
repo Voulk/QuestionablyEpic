@@ -453,21 +453,15 @@ class HolyDiver extends Component {
                   <UserLogTextInput
                     changed={this.reportidHandler}
                     float={"left"}
-                    position={"relative"}
+                    
                     reportid={this.state.reportid}
                   />
-                  <FightSelectorButton
-                    reportid={this.state.reportid}
-                    clicky={this.handler}
-                    update={this.updatechartdata}
-                    float={"right"}
-                    position={"relative"}
-                  />
+
                   <TestMenu
                     reportid={this.state.reportid}
                     clicky={this.handler}
                     update={this.updatechartdata}
-                    position={"relative"}
+                    float={"right"}
                   />
                 </div>
               </Paper>
