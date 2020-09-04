@@ -397,3 +397,17 @@ export function sumDamage(array) {
   }, {});
   return timestampSum;
 }
+
+export function logDifficulty(dif) {
+  if (dif === 1) {
+    return "LFR";
+  } else if (dif === 3) {
+    return "Normal";
+  } else if (dif === 4) {
+    return "Heroic";
+  } else if (dif === 5) {
+    return "Mythic";
+  } else {
+    return "Error: Difficulty Missing :(";
+  }
+}

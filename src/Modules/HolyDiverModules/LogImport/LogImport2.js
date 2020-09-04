@@ -35,6 +35,7 @@ export default function LogImport(props) {
               ).format("mm:ss"),
               killOrWipe(fight.kill),
               fight.boss,
+              fight.difficulty,
             ]);
             props.update(fight.start_time, fight.end_time);
             props.close(e);

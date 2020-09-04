@@ -27,6 +27,7 @@ import {
   durationmaker,
   warcraftLogReportID,
   sumDamage,
+  logDifficulty,
 } from "../HolyDiverModules/Functions/Functions";
 import bossHeaders from "../HolyDiverModules/CooldownTable/BossHeaderIcons";
 import Grow from "@material-ui/core/Grow";
@@ -34,6 +35,7 @@ import Paper from "@material-ui/core/Paper";
 import DtpsTable from "../HolyDiverModules/CooldownTable/DtpsTable";
 import ERTTable from "../HolyDiverModules/CooldownTable/ERTTable";
 import SwitchLabels from "./BasicComponents/Switch";
+import SimpleAccordion from "../HolyDiverModules/CooldownTable/HealerInfo";
 
 class HolyDiver extends Component {
   constructor(props) {
@@ -82,6 +84,7 @@ class HolyDiver extends Component {
       damageChartData: [],
       chartData: true,
       summedDamage: [],
+      currentDifficulty: null,
     };
   }
 
@@ -321,6 +324,7 @@ class HolyDiver extends Component {
       currentFighttime: info[3],
       killWipe: info[4],
       currentBossID: info[5],
+      currentDifficulty: logDifficulty(info[6]),
     });
   };
 
@@ -453,8 +457,14 @@ class HolyDiver extends Component {
                   <UserLogTextInput
                     changed={this.reportidHandler}
                     float={"left"}
-                    
                     reportid={this.state.reportid}
+                  />
+
+                  <FightSelectorButton
+                    reportid={this.state.reportid}
+                    clicky={this.handler}
+                    update={this.updatechartdata}
+                    float={"right"}
                   />
 
                   <TestMenu
@@ -509,7 +519,7 @@ class HolyDiver extends Component {
                             }}
                             color="primary"
                           >
-                            {this.state.boss}
+                            {this.state.boss} - {this.state.currentDifficulty}
                           </Typography>
                         ) : null}
                         {this.state.showname ? (
@@ -624,31 +634,19 @@ class HolyDiver extends Component {
               </Collapse>
             </Grid>
 
-            {/* <Grid item xs={3} padding={1}>
+            <Grid item xs={3} padding={1}>
               <Collapse in={this.state.damageTableShow}>
                 <DenseAppBar
                   onClick={this.timelineHandler}
-                  title="some other cool metric"
+                  title="Healer Talents/Legendaries"
                 />
                 <Collapse in={this.state.timelineshowhide}>
-                  <dtpsTable
-                    data={this.state.Updateddatacasts}
-                    columns={[
-                      { title: "Name", field: "name" },
-                      {
-                        title: "Ability",
-                        field: "ability",
-                        render: (rowData) => abilityicons(rowData.ability),
-                      },
-                      { title: "Time", field: "timestamp" },
-                    ]}
-                    title="Timeline"
-                    header={true}
-                  />
+                  <SimpleAccordion />
                 </Collapse>
               </Collapse>
             </Grid>
 
+            {/*
             <Grid item xs={3} padding={1}>
               <Collapse in={this.state.damageTableShow}>
                 <DenseAppBar
