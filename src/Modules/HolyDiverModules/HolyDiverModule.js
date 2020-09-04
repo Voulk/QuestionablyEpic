@@ -26,6 +26,7 @@ import {
   importCastsLogData,
   durationmaker,
   warcraftLogReportID,
+  sumDamage,
 } from "../HolyDiverModules/Functions/Functions";
 import bossHeaders from "../HolyDiverModules/CooldownTable/BossHeaderIcons";
 import Grow from "@material-ui/core/Grow";
@@ -34,12 +35,10 @@ import DtpsTable from "../HolyDiverModules/CooldownTable/DtpsTable";
 import ERTTable from "../HolyDiverModules/CooldownTable/ERTTable";
 import SwitchLabels from "./BasicComponents/Switch";
 
-
-
 class HolyDiver extends Component {
   constructor(props) {
     super();
-    this.reportidHandler = this.reportidHandler.bind(this)
+    this.reportidHandler = this.reportidHandler.bind(this);
     this.damageTableShow = this.damageTableShow.bind(this);
     this.healTableShow = this.healTableShow.bind(this);
     this.handler = this.handler.bind(this);
@@ -82,13 +81,18 @@ class HolyDiver extends Component {
       uniqueArrayGuid: [],
       damageChartData: [],
       chartData: true,
+      summedDamage: [],
     };
   }
 
-  useless = () => {}
+  useless = () => {};
 
   updatechartdata = async (starttime, endtime) => {
     this.setState({ loadingcheck: true });
+    let fightLength = moment
+      .duration(fightDurationCalculator(endtime, starttime))
+      .asSeconds()
+      .toString();
     let healerdurations = [];
     let sortedDataUnmitigated = [];
     let sortedDataDamage = [];
@@ -165,7 +169,7 @@ class HolyDiver extends Component {
       [key.ability.name]: key.unmitigatedAmount,
     }));
 
-        let mitigatedDamageMap = damage.map((key) => ({
+    let mitigatedDamageMap = damage.map((key) => ({
       timestamp: moment(fightDurationCalculator(key.timestamp, this.state.time))
         .startOf("second")
         .valueOf(),
@@ -272,10 +276,20 @@ class HolyDiver extends Component {
       sortedDataDamage.push(dataReformaterDamage[element])
     );
 
-
     Object.keys(dataReformater2).forEach((element) =>
       sortedDataNoCooldowns.push(dataReformater2[element])
     );
+
+    let sum = sumDamage(sortedDataNoCooldowns, fightLength);
+    let summedDamage = Object.keys(sum)
+      .filter((obj) => {
+        return obj !== "timestamp";
+      })
+      .map((key) => {
+        return { ability: key, damage: Math.round(sum[key] / fightLength) };
+      });
+    summedDamage.sort((a, b) => (b.damage > a.damage ? 1 : -1));
+
     this.setState({
       cooldownhelper: sortedDataNoCooldowns,
       cooldownhelperfinal: sortedDataNoCooldowns,
@@ -290,6 +304,7 @@ class HolyDiver extends Component {
       healernames: healers.map((key) => ({ name: key.name, icon: key.icon })),
       currentEndTime: endtime,
       currentStartTime: starttime,
+      summedDamage: summedDamage,
     });
   };
 
@@ -523,9 +538,22 @@ class HolyDiver extends Component {
                         <InteractiveList heals={this.state.healernames} />
                       </Grid>
                       <Grid item xs={1} padding={1}>
-                        <SwitchLabels check={this.damageTableShow} label={"Log Chart"}/>
-                        <SwitchLabels check={this.healTableShow} label={"Custom CD Chart"}/>
-                        <SwitchLabels check={this.changeDataSet} label={this.state.chartData === true ? "Unmitigated" : "Mitigated" }/>
+                        <SwitchLabels
+                          check={this.damageTableShow}
+                          label={"Log Chart"}
+                        />
+                        <SwitchLabels
+                          check={this.healTableShow}
+                          label={"Custom CD Chart"}
+                        />
+                        <SwitchLabels
+                          check={this.changeDataSet}
+                          label={
+                            this.state.chartData === true
+                              ? "Unmitigated"
+                              : "Mitigated"
+                          }
+                        />
                       </Grid>
                     </div>
                   </Paper>
@@ -579,7 +607,10 @@ class HolyDiver extends Component {
                   title="Cooldown Timeline"
                 />
                 <Collapse in={this.state.timelineshowhide}>
-                  <CooldownTimeline data={this.state.Updateddatacasts} curLang={this.props.curLang} />
+                  <CooldownTimeline
+                    data={this.state.Updateddatacasts}
+                    curLang={this.props.curLang}
+                  />
                 </Collapse>
               </Collapse>
             </Grid>
@@ -591,7 +622,10 @@ class HolyDiver extends Component {
                   title="Damaging Abilities"
                 />
                 <Collapse in={this.state.timelineshowhide}>
-                  <DtpsTable data={this.state.uniqueArrayGuid} curLang={this.props.curLang} />
+                  <DtpsTable
+                    data={this.state.summedDamage}
+                    curLang={this.props.curLang}
+                  />
                 </Collapse>
               </Collapse>
             </Grid>
@@ -686,12 +720,18 @@ class HolyDiver extends Component {
             spacing={1}
           >
             <Grid item xs={9} padding={1}>
-              <CustomEditComponent update={this.tablehandler} curLang={this.props.curLang} />
+              <CustomEditComponent
+                update={this.tablehandler}
+                curLang={this.props.curLang}
+              />
             </Grid>
             <Grid item xs={3} padding={1}>
               <DenseAppBar onClick={this.ertHandler} title="ERT Note" />
               <Collapse in={this.state.ertshowhide}>
-                <ERTTable data={this.state.ertList} curLang={this.props.curLang} />
+                <ERTTable
+                  data={this.state.ertList}
+                  curLang={this.props.curLang}
+                />
               </Collapse>
             </Grid>
           </Grid>

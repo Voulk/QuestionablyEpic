@@ -382,3 +382,18 @@ export function warcraftLogReportID(string) {
   }
   return reportID;
 }
+
+
+export function sumDamage(array) {
+  let timestampSum = array.reduce((x, n) => {
+    for (let prop in n) {
+      if (x.hasOwnProperty(prop)) {
+        x[prop] += n[prop];
+      } else {
+        x[prop] = n[prop];
+      }
+    } 
+    return x;
+  }, {});
+  return timestampSum;
+}

@@ -15,7 +15,7 @@ import QEHeader from "./QEHeader";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import CharComponent from "./CharComponent";
-
+import CharCards from "./CharComponentGen";
 
 // This is all shitty boilerplate code that'll be replaced. Do not copy.
 const useStyles = makeStyles((theme) => ({
@@ -27,54 +27,120 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     flexGrow: 5,
-    
   },
 }));
 
 const btnStyle = makeStyles((theme) => ({
   btn: {
     width: "95%",
-    margin: "7px", 
+    margin: "7px",
     backgroundColor: "Gold",
-  }
-
+  },
 }));
 //            <p>{props.pl.getSpec()}</p>
 
 export default function QEMainMenu(props) {
   const { t, i18n } = useTranslation();
-    
-      return (
-        <div style={{backgroundColor: "#353535"}}>
-          <div style={{margin: "auto", width: "20%", justifyContent: "center", display: "block"}}>
-            <p className="headers">{t("MenuItemsH")}</p>
- 
-            
-            <Button variant="contained" color="primary" style={{width: "95%", margin: "7px"}}>{t("Top Gear")}</Button>
-            <Button variant="contained" color="primary" style={{width: "95%", margin: "7px"}}>Gear Quick Compare</Button>
-            <Button variant="contained" color="primary" style={{width: "95%", margin: "7px"}} component={Link} to="/trinkets">Trinket Quick Compare</Button>
-            <Button variant="contained" color="primary" style={{width: "95%", margin: "7px"}} component={Link} to="/legendaries">Legendary Analysis</Button>
-            <Button variant="contained" color="primary" style={{width: "95%", margin: "7px"}}>Explore Conduits</Button>
-            
 
-            <p className="headers">Raid Tools</p>
-            <Button variant="contained" color="primary" style={{width: "95%", margin: "7px"}} component={Link} to="/holydiver">Cooldown Planner</Button>
+  return (
+    <div style={{ backgroundColor: "#353535" }}>
+      <div
+        style={{
+          margin: "auto",
+          width: "20%",
+          justifyContent: "center",
+          display: "block",
+        }}
+      >
+        <p className="headers">{t("MenuItemsH")}</p>
 
-            <p className="headers">Settings</p>
-            <Button variant="contained" color="primary" style={{width: "95%", margin: "7px"}} component={Link} to="/addchar">Add Char (Temp)</Button>
-            <Button variant="contained" color="primary" style={{width: "95%", margin: "7px"}}>Settings</Button>
+        <Button
+          variant="contained"
+          color="primary"
+          style={{ width: "95%", margin: "7px" }}
+        >
+          {t("Top Gear")}
+        </Button>
+        <Button
+          variant="contained"
+          color="primary"
+          style={{ width: "95%", margin: "7px" }}
+        >
+          Gear Quick Compare
+        </Button>
+        <Button
+          variant="contained"
+          color="primary"
+          style={{ width: "95%", margin: "7px" }}
+          component={Link}
+          to="/trinkets"
+        >
+          Trinket Quick Compare
+        </Button>
+        <Button
+          variant="contained"
+          color="primary"
+          style={{ width: "95%", margin: "7px" }}
+          component={Link}
+          to="/legendaries"
+        >
+          Legendary Analysis
+        </Button>
+        <Button
+          variant="contained"
+          color="primary"
+          style={{ width: "95%", margin: "7px" }}
+        >
+          Explore Conduits
+        </Button>
 
-            <p className="headers">Characters (Temp)</p>
+        <p className="headers">Raid Tools</p>
+        <Button
+          variant="contained"
+          color="primary"
+          style={{ width: "95%", margin: "7px" }}
+          component={Link}
+          to="/holydiver"
+        >
+          Cooldown Planner
+        </Button>
 
-            {props.allChars.length > 0 ? props.allChars.map((char, index) => (
-                    
-                    <CharComponent key={index} name={char.charName} spec={char.spec}/>
+        <p className="headers">Settings</p>
+        <Button
+          variant="contained"
+          color="primary"
+          style={{ width: "95%", margin: "7px" }}
+          component={Link}
+          to="/addchar"
+        >
+          Add Char (Temp)
+        </Button>
+        <Button
+          variant="contained"
+          color="primary"
+          style={{ width: "95%", margin: "7px" }}
+        >
+          Settings
+        </Button>
 
-            )) : ""}
+        <p className="headers">Characters (Temp)</p>
 
-          </div>
+        {props.allChars.length > 0
+          ? props.allChars.map((char, index) => (
+              <CharComponent
+                key={index}
+                name={char.charName}
+                spec={char.spec}
+              />
+            ))
+          : ""}
 
+        {props.allChars.length > 0
+          ? props.allChars.map((char, index) => (
+              <CharCards key={index} name={char.charName} spec={char.spec} />
+            ))
+          : ""}
       </div>
-      
-      );
-  }
+    </div>
+  );
+}

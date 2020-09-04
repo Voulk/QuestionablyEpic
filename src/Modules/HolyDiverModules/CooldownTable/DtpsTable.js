@@ -18,7 +18,7 @@ import ViewColumn from "@material-ui/icons/ViewColumn";
 import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import "./Table.css";
 import { bossAbilities } from "../Data/Data";
-import { localizationRU, localizationCH } from "./TableLocalization.js"
+import { localizationRU, localizationCH } from "./TableLocalization.js";
 
 const theme = createMuiTheme({
   palette: {
@@ -119,6 +119,10 @@ export default function DtpsTable(props) {
                 </a>
               </div>
             ),
+          },
+          {
+            title: "DTPS",
+            field: "damage",
           },
         ]}
         title="Ability"

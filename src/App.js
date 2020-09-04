@@ -8,7 +8,10 @@ import Player from "./Modules/QEModules/Player/Player";
 import QEHeader from "./Modules/QEModules/SetupAndMenus/QEHeader";
 import PlayerChars from "./Modules/QEModules/Player/PlayerChars";
 
-import { ConfirmLogin, QELogin } from "./Modules/QEModules/SetupAndMenus/QELogin";
+import {
+  ConfirmLogin,
+  QELogin,
+} from "./Modules/QEModules/SetupAndMenus/QELogin";
 import { withTranslation, Trans, useTranslation } from "react-i18next";
 import i18n from "./i18n";
 
@@ -92,7 +95,7 @@ class App extends Component {
       playerBattleTag: ls.get("btag") || "",
       lang: ls.get("lang") || "en",
     });
-    
+
     i18n.changeLanguage(this.state.lang);
   }
 
@@ -132,7 +135,7 @@ class App extends Component {
                 render={() => (
                   <HolyDiver langSet={this.langSet} curLang={this.state.lang} />
                 )}
-                />
+              />
               <Route
                 path="/trinkets"
                 render={() => (
