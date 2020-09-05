@@ -27,15 +27,6 @@ export default function bossIcons(props) {
   let source = "";
   let alt = "";
 
-  { ability: "Gluttonous Miasma", guid: 330537 },
-  { ability: "Gluttonous Miasma", guid: 330590 },
-  { ability: "Volatile Ejection", guid: 334228 },
-  { ability: "Expunge", guid: 329742 },
-  { ability: "Desolate", guid: 329455 },
-  { ability: "Hungering Strikes", guid: 332296 },
-  { ability: "Overwhelm", guid: 329774 },
-  { ability: "Obliterating Rift", guid: 329835 },
-
   // Ny'alotha, the Waking City
   if (props === 2327) {
     source = MautIcon;
@@ -134,6 +125,7 @@ export default function bossIcons(props) {
         width: 20,
         padding: "0px 5px 0px 5px",
         verticalAlign: "middle",
+        borderRadius: "4px"
       }}
       src={source}
       alt={alt}

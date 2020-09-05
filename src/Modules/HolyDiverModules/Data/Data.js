@@ -538,40 +538,28 @@ export const bossAbilities = [
   { ability: "Bolt of Power", guid: 337110 },
   { ability: "Tactical Advance", guid: 328334 },
 ]
+export const talents = [
+  // Paladin Talents
 
-
-// paladin talents
-// row 1
-// crusaders might - 1926926
-// bestow faith - 223306
-// light's hammer - 114158
-//
-// row 2
-// saved by the light - 157047
-// judgment of the light - 183778
-// holy prism - 114165
-//
-// row 3
-// fist of jsutice - 234299
-// repentance - 20066
-// blinding light 
-//
-// row 4
-// unbreakable spirit -
-// cavalier -
-// rule of law
-// 
-// row 5
-// divine purpose
-// holy avenger
-// seraphim
-// 
-// row 6
-// sanctified wrath
-// avenging crusader
-// awakening
-// 
-// row 7
-// glimmer of light
-// beacon of faith
-// beacon of virtue
+  { name: "Crusader's Might", guid: 196926 },
+  { name: "Bestow Faith", guid: 223306 },
+  { name: "Light's Hammer", guid: 114158 },
+  { name: "Saved by the Light", guid: 157047 },
+  { name: "Judgment of Light", guid: 183778 },
+  { name: "Holy Prism", guid: 114165 },
+  { name: "Fist of Justice", guid: 234299 },
+  { name: "Repentance", guid: 20066 },
+  { name: "Blinding Light", guid: 115750 },
+  { name: "Unbreakable Spirit", guid: 114154 },
+  { name: "Cavalier", guid: 230332 },
+  { name: "Rule of Law", guid: 214202 },
+  { name: "Divine Purpose", guid: 223817 },
+  { name: "Holy Avenger", guid: 105809 },
+  { name: "Seraphim", guid: 152262 },
+  { name: "Sanctified Wrath", guid: 53376 },
+  { name: "Avenging Crusader", guid: 216331 },
+  { name: "Awakening", guid: 248033 },
+  { name: "Glimmer of Light", guid: 325966 },
+  { name: "Beacon of Faith", guid: 156910 },
+  { name: "Beacon of Virtue", guid: 200025 },
+];

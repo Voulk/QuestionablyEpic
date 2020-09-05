@@ -12,7 +12,6 @@ import moment from "moment";
 import FightSelectorButton from "../HolyDiverModules/UserInput/FightSelectorButton";
 import LoadingOverlay from "react-loading-overlay";
 import CustomEditComponent from "../HolyDiverModules/CooldownTable/Table";
-import InteractiveList from "../HolyDiverModules/Lists/ListGen";
 import CooldownTimeline from "../HolyDiverModules/CooldownTable/CooldownTimeline";
 import DenseAppBar from "../HolyDiverModules/BasicComponents/Appbar";
 import { classColoursERT } from "../HolyDiverModules/CooldownTable/ClassColourFunctions";
@@ -115,8 +114,11 @@ class HolyDiver extends Component {
       class: key.type,
     }));
 
+    console.log(healerIDName)
+
     // Map Healer Ids
     let healerID = healers.map((key) => key.id);
+
 
     // Import Damage From Damage Function
     const damage = await importDamageLogData(
@@ -304,7 +306,7 @@ class HolyDiver extends Component {
       abilitylist: uniqueArray,
       cooldownlist: uniqueArrayCD,
       loadingcheck: false,
-      healernames: healers.map((key) => ({ name: key.name, icon: key.icon })),
+      healernames: healers.map((key) => ({ name: key.name, icon: key.icon, talents: key.talents })),
       currentEndTime: endtime,
       currentStartTime: starttime,
       summedDamage: summedDamage,
@@ -508,7 +510,7 @@ class HolyDiver extends Component {
                       }}
                     >
                       {bossHeaders(this.state.currentBossID)}
-                      <Grid item xs={2} padding={1} align="center">
+                      <Grid item xs={11} padding={1} align="center">
                         {this.state.showname ? (
                           <Typography
                             style={{
@@ -538,9 +540,7 @@ class HolyDiver extends Component {
                           </Typography>
                         ) : null}
                       </Grid>
-                      <Grid item xs={2} padding={1} flex={0}>
-                        <InteractiveList heals={this.state.healernames} />
-                      </Grid>
+
                       <Grid item xs={1} padding={1}>
                         <SwitchLabels
                           check={this.damageTableShow}
@@ -641,7 +641,7 @@ class HolyDiver extends Component {
                   title="Healer Talents/Legendaries"
                 />
                 <Collapse in={this.state.timelineshowhide}>
-                  <SimpleAccordion />
+                  <SimpleAccordion heals={this.state.healernames} />
                 </Collapse>
               </Collapse>
             </Grid>
