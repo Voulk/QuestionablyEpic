@@ -116,10 +116,11 @@ export default function talentIcons(props) {
     <a data-wowhead={"spell=" + props}>
       <img
         style={{
-          height: 48,
-          width: 48,
+          height: 30,
+          width: 30,
           padding: "0px 5px 0px 5px",
           verticalAlign: "middle",
+          borderRadius: "4px"
         }}
         src={source}
         alt={alt}
