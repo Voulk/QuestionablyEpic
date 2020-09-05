@@ -9,9 +9,14 @@ import MenuIcon from "@material-ui/icons/Menu";
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
+    //     "& .MuiIconButton-root": {
+    //   padding: "0px 12px 0px 12px"
+    // }
   },
   menuButton: {
     marginRight: theme.spacing(2),
+
+
   },
 }));
 

@@ -306,7 +306,7 @@ class HolyDiver extends Component {
       abilitylist: uniqueArray,
       cooldownlist: uniqueArrayCD,
       loadingcheck: false,
-      healernames: healers.map((key) => ({ name: key.name, icon: key.icon, talents: key.talents })),
+      healernames: healers.map((key) => ({ name: key.name, icon: key.icon, talents: key.talents, type: key.type })),
       currentEndTime: endtime,
       currentStartTime: starttime,
       summedDamage: summedDamage,
