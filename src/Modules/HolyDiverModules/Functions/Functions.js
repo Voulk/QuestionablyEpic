@@ -358,9 +358,15 @@ export function killOrWipe(check) {
 
 export function warcraftLogReportID(string) {
   let reportID = "";
+  let stringNew = string;
   // If String is longer than report length
-  if (string.length > 16 && string.includes("/")) {
-    let stringCheck = string
+
+  if (string.includes("#")) {
+    stringNew = string.split("#")[0];
+  }
+
+  if (stringNew.length > 16 && stringNew.includes("/")) {
+    let stringCheck = stringNew
       .split("/")
       .filter((key) => key.length === 16)
       .toString();
@@ -371,10 +377,10 @@ export function warcraftLogReportID(string) {
     }
   } else if (
     // If String is the Length of a Log (Very Unlikely to randomly put a 16 character string that isn't a log here)
-    string.length === 16
+    stringNew.length === 16
   ) {
-    reportID = string;
-  } else if (string === "") {
+    reportID = stringNew;
+  } else if (stringNew === "") {
     reportID = "";
   } else {
     // If Notihng Matches the above tests, then return an error code here
