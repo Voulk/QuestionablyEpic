@@ -73,12 +73,23 @@ export default function QEMainMenu(props) {
               />
             ))
           : ""  // Old character cards. Remove once new design is final. */ }
-
+          <div
+              style={{
+                width: "100%",
+                justifyContent: "left",           
+                display: "flex",
+                flexDirection: "row",
+                spacing: "5",
+        }}
+      >
+          
         {props.allChars.length > 0
           ? props.allChars.map((char, index) => (
               <CharCards key={index} name={char.charName} spec={char.spec} />
             ))
           : ""}
+          { <CharCards key={99} name="Add Character" spec="NA" /> } 
+          </div>
       </div>
     </div>
   );
