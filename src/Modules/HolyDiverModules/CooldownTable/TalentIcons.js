@@ -69,27 +69,27 @@ import TigerDashIcon from "../../../Images/Classes/Druid/Specialisation/Restorat
 import WildChargeIcon from "../../../Images/Classes/Druid/Specialisation/Restoration/Icons/Talents/WildChargeIcon.jpg";
 
 // Monk Icons
-import CelerityIcon from "../../../Images/Classes/Monk/Specialisation/Restoration/Icons/Talents/CelerityIcon.jpg";
-import ChiBurstIcon from "../../../Images/Classes/Monk/Specialisation/Restoration/Icons/Talents/ChiBurstIcon.jpg";
-import ChiTorpedoIcon from "../../../Images/Classes/Monk/Specialisation/Restoration/Icons/Talents/ChiTorpedoIcon.jpg";
-import ChiWaveIcon from "../../../Images/Classes/Monk/Specialisation/Restoration/Icons/Talents/ChiWaveIcon.jpg";
-import DampenHarmIcon from "../../../Images/Classes/Monk/Specialisation/Restoration/Icons/Talents/DampenHarmIcon.jpg";
-import DiffuseMagicIcon from "../../../Images/Classes/Monk/Specialisation/Restoration/Icons/Talents/DiffuseMagicIcon.jpg";
-import FocusedThunderIcon from "../../../Images/Classes/Monk/Specialisation/Restoration/Icons/Talents/FocusedThunderIcon.jpg";
-import HealingElixirIcon from "../../../Images/Classes/Monk/Specialisation/Restoration/Icons/Talents/HealingElixirIcon.jpg";
-import InvokeChiJiTheRedCraneIcon from "../../../Images/Classes/Monk/Specialisation/Restoration/Icons/Talents/InvokeChiJiTheRedCraneIcon.jpg";
-import LifecyclesIcon from "../../../Images/Classes/Monk/Specialisation/Restoration/Icons/Talents/LifecyclesIcon.jpg";
-import ManaTeaIcon from "../../../Images/Classes/Monk/Specialisation/Restoration/Icons/Talents/ManaTeaIcon.jpg";
-import MistWrapIcon from "../../../Images/Classes/Monk/Specialisation/Restoration/Icons/Talents/MistWrapIcon.jpg";
-import RefreshingJadeWindIcon from "../../../Images/Classes/Monk/Specialisation/Restoration/Icons/Talents/RefreshingJadeWindIcon.jpg";
-import RingOfPeaceIcon from "../../../Images/Classes/Monk/Specialisation/Restoration/Icons/Talents/RingOfPeaceIcon.jpg";
-import RisingMistIcon from "../../../Images/Classes/Monk/Specialisation/Restoration/Icons/Talents/RisingMistIcon.jpg";
-import SongOfChiJiIcon from "../../../Images/Classes/Monk/Specialisation/Restoration/Icons/Talents/SongOfChiJiIcon.jpg";
-import SpiritOfTheCraneIcon from "../../../Images/Classes/Monk/Specialisation/Restoration/Icons/Talents/SpiritOfTheCraneIcon.jpg";
-import SummonJadeSerpentStatueIcon from "../../../Images/Classes/Monk/Specialisation/Restoration/Icons/Talents/SummonJadeSerpentStatueIcon.jpg";
-import TigersLustIcon from "../../../Images/Classes/Monk/Specialisation/Restoration/Icons/Talents/TigersLustIcon.jpg";
-import TigerTailSweepIcon from "../../../Images/Classes/Monk/Specialisation/Restoration/Icons/Talents/TigerTailSweepIcon.jpg";
-import UpwellingIcon from "../../../Images/Classes/Monk/Specialisation/Restoration/Icons/Talents/UpwellingIcon.jpg";
+import CelerityIcon from "../../../Images/Classes/Monk/Specialisation/Mistweaver/Icons/Talents/CelerityIcon.jpg";
+import ChiBurstIcon from "../../../Images/Classes/Monk/Specialisation/Mistweaver/Icons/Talents/ChiBurstIcon.jpg";
+import ChiTorpedoIcon from "../../../Images/Classes/Monk/Specialisation/Mistweaver/Icons/Talents/ChiTorpedoIcon.jpg";
+import ChiWaveIcon from "../../../Images/Classes/Monk/Specialisation/Mistweaver/Icons/Talents/ChiWaveIcon.jpg";
+import DampenHarmIcon from "../../../Images/Classes/Monk/Specialisation/Mistweaver/Icons/Talents/DampenHarmIcon.jpg";
+import DiffuseMagicIcon from "../../../Images/Classes/Monk/Specialisation/Mistweaver/Icons/Talents/DiffuseMagicIcon.jpg";
+import FocusedThunderIcon from "../../../Images/Classes/Monk/Specialisation/Mistweaver/Icons/Talents/FocusedThunderIcon.jpg";
+import HealingElixirIcon from "../../../Images/Classes/Monk/Specialisation/Mistweaver/Icons/Talents/HealingElixirIcon.jpg";
+import InvokeChiJiTheRedCraneIcon from "../../../Images/Classes/Monk/Specialisation/Mistweaver/Icons/Talents/InvokeChiJiTheRedCraneIcon.jpg";
+import LifecyclesIcon from "../../../Images/Classes/Monk/Specialisation/Mistweaver/Icons/Talents/LifecyclesIcon.jpg";
+import ManaTeaIcon from "../../../Images/Classes/Monk/Specialisation/Mistweaver/Icons/Talents/ManaTeaIcon.jpg";
+import MistWrapIcon from "../../../Images/Classes/Monk/Specialisation/Mistweaver/Icons/Talents/MistWrapIcon.jpg";
+import RefreshingJadeWindIcon from "../../../Images/Classes/Monk/Specialisation/Mistweaver/Icons/Talents/RefreshingJadeWindIcon.jpg";
+import RingOfPeaceIcon from "../../../Images/Classes/Monk/Specialisation/Mistweaver/Icons/Talents/RingOfPeaceIcon.jpg";
+import RisingMistIcon from "../../../Images/Classes/Monk/Specialisation/Mistweaver/Icons/Talents/RisingMistIcon.jpg";
+import SongOfChiJiIcon from "../../../Images/Classes/Monk/Specialisation/Mistweaver/Icons/Talents/SongOfChiJiIcon.jpg";
+import SpiritOfTheCraneIcon from "../../../Images/Classes/Monk/Specialisation/Mistweaver/Icons/Talents/SpiritOfTheCraneIcon.jpg";
+import SummonJadeSerpentStatueIcon from "../../../Images/Classes/Monk/Specialisation/Mistweaver/Icons/Talents/SummonJadeSerpentStatueIcon.jpg";
+import TigersLustIcon from "../../../Images/Classes/Monk/Specialisation/Mistweaver/Icons/Talents/TigersLustIcon.jpg";
+import TigerTailSweepIcon from "../../../Images/Classes/Monk/Specialisation/Mistweaver/Icons/Talents/TigerTailSweepIcon.jpg";
+import UpwellingIcon from "../../../Images/Classes/Monk/Specialisation/Mistweaver/Icons/Talents/UpwellingIcon.jpg";
 
 // Priest - Discipline Icons
 import AngelicFeatherIconDisc from "../../../Images/Classes/Priest/Specialisation/Discipline/Icons/Talents/AngelicFeatherIcon.jpg";
@@ -307,7 +307,7 @@ export default function talentIcons(props) {
     source = CloudburstTotemIcon;
     alt = "Cloudburst Totem";
   }
-  if (props === 157153) {
+  if (props === 157154) {
     source = HighTideIcon;
     alt = "High Tide";
   }
@@ -340,7 +340,7 @@ export default function talentIcons(props) {
     source = RenewalIcon;
     alt = "Renewal";
   }
-  if (props === 132302) {
+  if (props === 132302 || props === 102401) {
     source = WildChargeIcon;
     alt = "Wild Charge";
   }
