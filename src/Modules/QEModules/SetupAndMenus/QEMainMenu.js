@@ -17,6 +17,19 @@ import { useTranslation } from "react-i18next";
 import CharComponent from "./CharComponent";
 import CharCards from "./CharComponentGen";
 
+
+// Warning: If a button name has to change, do it in the translation files. Consider the titles here to be ID's rather than strings.
+const mainMenuOptions = {
+  "Top Gear" : "/topgear",
+  "Gear Quick Compare" : "/quickcompare",
+  "Trinket Quick Compare" : "/trinkets",
+  "Legendary Analysis" : "/legendaries",
+  "Explore Soulbinds" : "/soulbinds",
+  "Cooldown Planner" : "/holydiver",
+
+}
+
+
 // This is all shitty boilerplate code that'll be replaced. Do not copy.
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -52,80 +65,27 @@ export default function QEMainMenu(props) {
           display: "block",
         }}
       >
-        <p className="headers">{t("MenuItemsH")}</p>
+        <p className="headers">{t("MainMenuItemsH")}</p>
 
-        <Button
-          variant="contained"
-          color="primary"
-          style={{ width: "95%", margin: "7px" }}
-        >
-          {t("Top Gear")}
-        </Button>
-        <Button
-          variant="contained"
-          color="primary"
-          style={{ width: "95%", margin: "7px" }}
-        >
-          Gear Quick Compare
-        </Button>
-        <Button
-          variant="contained"
-          color="primary"
-          style={{ width: "95%", margin: "7px" }}
-          component={Link}
-          to="/trinkets"
-        >
-          Trinket Quick Compare
-        </Button>
-        <Button
-          variant="contained"
-          color="primary"
-          style={{ width: "95%", margin: "7px" }}
-          component={Link}
-          to="/legendaries"
-        >
-          Legendary Analysis
-        </Button>
-        <Button
-          variant="contained"
-          color="primary"
-          style={{ width: "95%", margin: "7px" }}
-        >
-          Explore Conduits
-        </Button>
+        {
+        Object.keys(mainMenuOptions).map((key, index) => ( 
+          // Buttons are translated and printed from a dictionary.
+          <Button
+              variant="contained"
+              color="primary"
+              style={{ width: "95%", margin: "7px" }}
+              component={Link}
+              to={mainMenuOptions[key]}
+          >
+            {t(key)}
+          </Button>
 
-        <p className="headers">Raid Tools</p>
-        <Button
-          variant="contained"
-          color="primary"
-          style={{ width: "95%", margin: "7px" }}
-          component={Link}
-          to="/holydiver"
-        >
-          Cooldown Planner
-        </Button>
+        ))
+      }
 
-        <p className="headers">Settings</p>
-        <Button
-          variant="contained"
-          color="primary"
-          style={{ width: "95%", margin: "7px" }}
-          component={Link}
-          to="/addchar"
-        >
-          Add Char (Temp)
-        </Button>
-        <Button
-          variant="contained"
-          color="primary"
-          style={{ width: "95%", margin: "7px" }}
-        >
-          Settings
-        </Button>
+        <p className="headers">{t("MainMenuCharactersH")}</p>
 
-        <p className="headers">Characters (Temp)</p>
-
-        {props.allChars.length > 0
+        {/*props.allChars.length > 0
           ? props.allChars.map((char, index) => (
               <CharComponent
                 key={index}
@@ -133,7 +93,7 @@ export default function QEMainMenu(props) {
                 spec={char.spec}
               />
             ))
-          : ""}
+          : ""  // Old character cards. Remove once new design is final. */ }
 
         {props.allChars.length > 0
           ? props.allChars.map((char, index) => (

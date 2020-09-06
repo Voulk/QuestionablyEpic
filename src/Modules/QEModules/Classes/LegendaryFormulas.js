@@ -3,7 +3,7 @@
 export default function getLegendaryInfo(legendary, spec, pl)  {
  
     // Druid
-    if (spec === "Druid") {
+    if (spec === "Restoration Druid") {
         getDruidLegendary(legendary, pl);
     }
 

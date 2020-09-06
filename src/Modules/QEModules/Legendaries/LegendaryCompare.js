@@ -36,7 +36,7 @@ const createLegendary = (legendaryName, container, spec, pl) => {
 
 const fillLegendaries = (container, spec, pl) => {
     //container = [];
-    if (spec === "Druid") {
+    if (spec === "Restoration Druid") {
         createLegendary("Rejuv Spreader", container, spec, pl);
         createLegendary("Swiftmend Extension", container, spec, pl);
         createLegendary("The Dark Titans Lesson", container, spec, pl);
@@ -69,8 +69,6 @@ export default class LegendaryCompare extends Component {
       this.state = {
         legendaryList: []
       }
-
-      
 
       fillLegendaries(this.state.legendaryList, props.pl.spec, props.pl);
       sortLegendaries(this.state.legendaryList);

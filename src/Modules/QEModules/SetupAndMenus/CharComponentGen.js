@@ -6,11 +6,17 @@ import Typography from "@material-ui/core/Typography";
 import Avatar from "@material-ui/core/Avatar";
 import { classColoursJS } from "../../HolyDiverModules/CooldownTable/ClassColourFunctions";
 
+const specImages = {
+  "Restoration Druid": require("../../../Images/DruidSmall.png"),
+};
+
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "inline-flex",
-    maxWidth: "230px",
+    maxWidth: "240px",
+    width: "240px",
     maxHeight: "80px",
+    borderColor: "green",
   },
   details: {
     display: "flex",
@@ -18,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
   },
   content: {
     flex: "1 0 auto",
-    padding: "10px"
+    padding: "5px"
   },
   large: {
     width: "80px",
@@ -30,6 +36,7 @@ export default function CharCards(props) {
   return (
     <div>
       <Card className={classes.root} variant="outlined" raised={true}>
+      <Avatar src={specImages[props.spec]} variant="rounded" alt="Remy Sharp" className={classes.large} />
         <div className={classes.details}>
           <CardContent className={classes.content}>
             <Typography variant="h6" component="h2">
@@ -40,7 +47,7 @@ export default function CharCards(props) {
             </Typography>
           </CardContent>
         </div>
-        <Avatar src="https://render-us.worldofwarcraft.com/character/frostmourne/212/180358868-avatar.jpg" variant="rounded" alt="Remy Sharp" className={classes.large} />
+        
       </Card>
     </div>
   );
