@@ -537,7 +537,7 @@ export const bossAbilities = [
   { ability: "Waltz of Blood", guid: 342853 },
   { ability: "Bolt of Power", guid: 337110 },
   { ability: "Tactical Advance", guid: 328334 },
-]
+];
 export const talents = [
   // Paladin Talents
 
@@ -562,4 +562,76 @@ export const talents = [
   { name: "Glimmer of Light", guid: 325966 },
   { name: "Beacon of Faith", guid: 156910 },
   { name: "Beacon of Virtue", guid: 200025 },
+
+  //shaman talents
+
+  { name: "Torrent", guid: 200072 },
+  { name: "Undulation", guid: 200071 },
+  { name: "Unleash Life", guid: 73685 },
+  { name: "Echo of the Elements", guid: 108283 },
+  { name: "Deluge", guid: 200076 },
+  { name: "Surge of Earth", guid: 320746 },
+  { name: "Spirit Wolf", guid: 260878 },
+  { name: "Earthgrab Totem", guid: 51485 },
+  { name: "Static Charge", guid: 265046 },
+  { name: "Ancestral Vigor", guid: 207401 },
+  { name: "Earthen Wall Totem", guid: 198838 },
+  { name: "Ancestral Protection Totem", guid: 207399 },
+  { name: "Nature's Guardian", guid: 30884 },
+  { name: "Graceful Spirit", guid: 192088 },
+  { name: "Wind Rush Totem", guid: 192077 },
+  { name: "Flash Flood", guid: 280614 },
+  { name: "Downpour", guid: 207778 },
+  { name: "Cloudburst Totem", guid: 157153 },
+  { name: "High Tide", guid: 157154 },
+  { name: "Wellspring", guid: 197995 },
+  { name: "Ascendance", guid: 114052 },
+
+  // Druid talents
+
+  { name: "Abundance", guid: 207383 },
+  { name: "Nourish", guid: 50464 },
+  { name: "Cenarion Ward", guid: 102351 },
+  { name: "Tiger Dash", guid: 252216 },
+  { name: "Renewal", guid: 108238 },
+  { name: "Wild Charge", guid: 132302 },
+  { name: "Balance Affinity", guid: 197632 },
+  { name: "Feral Affinity", guid: 197490 },
+  { name: "Guardian Affinity", guid: 197491 },
+  { name: "Mighty Bash", guid: 5211 },
+  { name: "Mass Entanglement", guid: 102359 },
+  { name: "Heart of the Wild", guid: 319454 },
+  { name: "Soul of the Forest", guid: 158478 },
+  { name: "Cultivation", guid: 200390 },
+  { name: "Incarnation: Tree of Life", guid: 33891 },
+  { name: "Inner Peace", guid: 197073 },
+  { name: "Spring Blossoms", guid: 207385 },
+  { name: "Overgrowth", guid: 203651 },
+  { name: "Photosynthesis", guid: 274902 },
+  { name: "Germination", guid: 155675 },
+  { name: "Flourish", guid: 197721 },
+
+  // Monk talents
+
+  { name: "Abundance", guid: 207383 },
+  { name: "Nourish", guid: 50464 },
+  { name: "Cenarion Ward", guid: 102351 },
+  { name: "Tiger Dash", guid: 252216 },
+  { name: "Renewal", guid: 108238 },
+  { name: "Wild Charge", guid: 132302 },
+  { name: "Balance Affinity", guid: 197632 },
+  { name: "Feral Affinity", guid: 197490 },
+  { name: "Guardian Affinity", guid: 197491 },
+  { name: "Mighty Bash", guid: 5211 },
+  { name: "Mass Entanglement", guid: 102359 },
+  { name: "Heart of the Wild", guid: 319454 },
+  { name: "Soul of the Forest", guid: 158478 },
+  { name: "Cultivation", guid: 200390 },
+  { name: "Incarnation: Tree of Life", guid: 33891 },
+  { name: "Inner Peace", guid: 197073 },
+  { name: "Spring Blossoms", guid: 207385 },
+  { name: "Overgrowth", guid: 203651 },
+  { name: "Photosynthesis", guid: 274902 },
+  { name: "Germination", guid: 155675 },
+  { name: "Flourish", guid: 197721 },
 ];
