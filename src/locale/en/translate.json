@@ -1,6 +1,7 @@
 {
     "translations": {
-        "MenuItemsH": "Items & Gearing",
+        "MainMenuItemsH": "Items & Gearing",
+        "MainMenuCharactersH": "Characters",
         "author": {
             "title": "Author Name",
             "value": "Tariqul"

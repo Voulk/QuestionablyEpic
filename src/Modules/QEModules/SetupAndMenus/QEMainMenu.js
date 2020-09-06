@@ -29,27 +29,6 @@ const mainMenuOptions = {
 
 }
 
-
-// This is all shitty boilerplate code that'll be replaced. Do not copy.
-const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-  },
-  menuButton: {
-    marginRight: theme.spacing(2),
-  },
-  title: {
-    flexGrow: 5,
-  },
-}));
-
-const btnStyle = makeStyles((theme) => ({
-  btn: {
-    width: "95%",
-    margin: "7px",
-    backgroundColor: "Gold",
-  },
-}));
 //            <p>{props.pl.getSpec()}</p>
 
 export default function QEMainMenu(props) {
@@ -60,7 +39,7 @@ export default function QEMainMenu(props) {
       <div
         style={{
           margin: "auto",
-          width: "20%",
+          width: "45%",
           justifyContent: "center",
           display: "block",
         }}
@@ -73,7 +52,7 @@ export default function QEMainMenu(props) {
           <Button
               variant="contained"
               color="primary"
-              style={{ width: "95%", margin: "7px" }}
+              style={{ width: "45%", margin: "7px", height: "40px", backgroundColor: "#c8b054"}}
               component={Link}
               to={mainMenuOptions[key]}
           >
