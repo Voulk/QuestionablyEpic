@@ -19,6 +19,7 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 const specImages = {
   "Restoration Druid": require("../../../Images/DruidSmall.png"),
   "Discipline Priest" : require("../../../Images/DiscSmall.png"),
+  "Holy Paladin" : require("../../../Images/PaladinSmall.png"),
 };
 
 // Called when a character is clicked.
@@ -35,8 +36,6 @@ const charClicked = (char, cardType, allChars, updateChar) =>  {
     // New character clicked. Offer new character dialog. 
     //alert("New Character");
     //charCreationDialog(char);
-
-    //alert(JSON.stringify(allChars.getActiveChar()))
     allChars.addChar("VoulkPriest", "Discipline Priest");
     updateChar(allChars);
   }
@@ -55,10 +54,9 @@ const useStyles = makeStyles((theme) => ({
     marginRight: "10px",
   },
   activeChar: {
-    borderColor: "Green",
+    borderColor: "ForestGreen",
     
   },
-
 
   details: {
     display: "flex",

@@ -57,7 +57,7 @@ class PlayerChars  {
         //ls.set("allChar", JSON.stringify(this.allChar))
     }
 
-    // Delete the active character.
+    // Delete the active character. This will require shifting the character IDs of the others in the array to keep them unique. 
     delActiveChar = () => {
         this.allChar.splice(this.activeChar, 1)
     }
