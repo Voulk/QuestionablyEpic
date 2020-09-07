@@ -85,10 +85,10 @@ export default function QEMainMenu(props) {
           
         {props.allChars.length > 0
           ? props.allChars.map((char, index) => (
-              <CharCards key={index} name={char.charName} spec={char.spec} />
+              <CharCards key={index} name={char.charName} char={char} cardType="Char"/>
             ))
           : ""}
-          { <CharCards key={99} name="Add Character" spec="NA" /> } 
+          { <CharCards key={99} name="Add Character" char="NA" cardType="New"/> } 
           </div>
       </div>
     </div>
