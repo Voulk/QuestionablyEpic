@@ -48,6 +48,10 @@ class App extends Component {
     ls.set("lang", props);
   };
 
+  updatePlayerChars = (allChars) => {
+    this.setState({characters : allChars})
+  }
+
   setRegion = (props) => {
     this.setState({ playerRegion: props });
   };
@@ -101,7 +105,7 @@ class App extends Component {
 
   render() {
     let activePlayer = this.state.characters.getActiveChar();
-    let allChars = this.state.characters.getAllChar();
+    let allChars = this.state.characters;
     //alert(JSON.stringify(allChars[0]));
 
     return (
@@ -123,6 +127,7 @@ class App extends Component {
                 render={() => (
                   <QEMainMenu
                     allChars={allChars}
+                    charUpdate={this.updatePlayerChars}
                     pl={this.state.player}
                     langSet={this.langSet}
                     curLang={this.state.lang}

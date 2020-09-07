@@ -15,8 +15,10 @@ import ls from "local-storage";
 class PlayerChars  {
     constructor() {
         
-        this.allChar = JSON.parse(ls.get("allChar")) || [new Player("VoulkThree", "Restoration Druid")];
-        this.activeChar = 0;
+        this.allChar = JSON.parse(ls.get("allChar")) || [new Player("VoulkThree", "Restoration Druid", 0)];
+        this.activeChar = ls.get("activeChar") || 0;
+        
+        //this.saveAllChar = this.saveAllChar.bind(this);
     };
 
     allChar = []; // An array of all our characters. 
@@ -26,6 +28,11 @@ class PlayerChars  {
     getActiveChar = () => {
         return this.allChar[this.activeChar];
       };
+
+    setActiveChar = (index) => {
+        this.activeChar = index;
+        this.saveAllChar();
+    }
 
     // Return an array of all of the players characters.  
     getAllChar = () => {
@@ -37,13 +44,17 @@ class PlayerChars  {
         // Database TODO
 
         // Local Storage
-        ls.set("allChar", JSON.stringify(this.state.allChar))
+        ls.set("allChar", JSON.stringify(this.allChar))
+        ls.set("activeChar", this.activeChar)
     }
 
     // Add a new character to the array then save it.
     addChar = (name, spec) => {
-        this.allChar.push(new Player(name, spec))
+        //alert("Adding new Character")
+        this.allChar.push(new Player(name, spec, this.allChar.length))
+        this.saveAllChar();
 
+        //ls.set("allChar", JSON.stringify(this.allChar))
     }
 
     // Delete the active character.

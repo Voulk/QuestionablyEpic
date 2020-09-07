@@ -4,9 +4,10 @@ var SPELL_OVERHEALING_LOC = 5;
 
 
 class Player {
-    constructor(playerName, specName) {
+    constructor(playerName, specName, charID) {
         this.spec = specName;
         this.charName = playerName;
+        this.charID = charID;
         this.setupDefaults();
     }
 

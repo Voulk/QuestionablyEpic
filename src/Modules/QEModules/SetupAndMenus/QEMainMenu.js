@@ -76,19 +76,21 @@ export default function QEMainMenu(props) {
           <div
               style={{
                 width: "100%",
-                justifyContent: "left",           
-                display: "flex",
+                justifyContent: "left",
+                display: "inline-flex",
                 flexDirection: "row",
                 spacing: "5",
+                
         }}
       >
           
-        {props.allChars.length > 0
-          ? props.allChars.map((char, index) => (
-              <CharCards key={index} name={char.charName} char={char} cardType="Char"/>
+        {props.allChars.getAllChar().length > 0
+          ? props.allChars.getAllChar().map((char, index) => (
+              <CharCards key={index} name={char.charName} char={char} cardType="Char" 
+                allChars={props.allChars} charUpdate={props.charUpdate} isActive={index==props.allChars.activeChar}/>
             ))
           : ""}
-          { <CharCards key={99} name="Add Character" char="NA" cardType="New"/> } 
+          { <CharCards key={99} name="Add Character" char="NA" cardType="New" allChars={props.allChars} charUpdate={props.charUpdate}/> } 
           </div>
       </div>
     </div>

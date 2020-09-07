@@ -7,22 +7,38 @@ import Typography from "@material-ui/core/Typography";
 import Avatar from "@material-ui/core/Avatar";
 import { classColoursJS } from "../../HolyDiverModules/CooldownTable/ClassColourFunctions";
 
+import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogContentText from '@material-ui/core/DialogContentText';
+import DialogTitle from '@material-ui/core/DialogTitle';
+
 // Spec Images.
 const specImages = {
   "Restoration Druid": require("../../../Images/DruidSmall.png"),
+  "Discipline Priest" : require("../../../Images/DiscSmall.png"),
 };
 
 // Called when a character is clicked.
 // TODO: Add Logic
-const charClicked = (char, cardType) =>  {
+const charClicked = (char, cardType, allChars, updateChar) =>  {
   if (cardType === "Char") {
     // Character Clicked. Take player to character sheet.
-    alert("Character Clicked " + char.charName);
+    //alert("Character Clicked " + char.charName);
+    allChars.setActiveChar(char.charID);
+    updateChar(allChars);
 
   }
   else {
     // New character clicked. Offer new character dialog. 
-    alert("New Character");
+    //alert("New Character");
+    //charCreationDialog(char);
+
+    //alert(JSON.stringify(allChars.getActiveChar()))
+    allChars.addChar("VoulkPriest", "Discipline Priest");
+    updateChar(allChars);
   }
 
   
@@ -34,10 +50,16 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: "260px",
     width: "260px",
     maxHeight: "80px",
-    borderColor: "green",
+    borderColor: "Gold",
     padding: "0px",
     marginRight: "10px",
   },
+  activeChar: {
+    borderColor: "Green",
+    
+  },
+
+
   details: {
     display: "flex",
     flexDirection: "column",
@@ -55,15 +77,17 @@ const useStyles = makeStyles((theme) => ({
 export default function CharCards(props) {
   const classes = useStyles();
   const spec = props.cardType === "Char" ? props.char.spec : "";
+  const rootClassName = classes.root + ' ' + (props.isActive ?  classes.activeChar : '');
+  //alert(rootClassName);
   
   return (
     <div>
-      <CardActionArea onClick={(e) => charClicked(props.char, props.cardType, e)}>
-      <Card className={classes.root} variant="outlined" raised={true}>
+      <CardActionArea onClick={(e) => charClicked(props.char, props.cardType, props.allChars, props.charUpdate, e)}>
+      <Card className={rootClassName} variant="outlined" raised={true}>
       <Avatar src={specImages[spec]} variant="rounded" alt="" className={classes.large} />
         <div className={classes.details}>
           <CardContent className={classes.content}>
-            <Typography variant="h6" component="h3">
+            <Typography variant="h6" component="h4">
               {props.name}
             </Typography>
             <Typography style={{ color: classColoursJS(spec) }}>
@@ -77,4 +101,56 @@ export default function CharCards(props) {
       
     </div>
   );
+}
+
+// TODO
+const charCreationDialog = (props) => {
+  //alert("Hello")
+  //const [open, setOpen] = React.useState(false);
+  const open = true;
+
+  const handleClickOpen = () => {
+    //setOpen(true);
+  };
+
+  const handleClose = () => {
+    //setOpen(false);
+  };
+
+  return (
+    <div>
+          <div>
+      <Button variant="outlined" color="primary" onClick={handleClickOpen}>
+        Open form dialog
+      </Button>
+      <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
+        <DialogTitle id="form-dialog-title">Subscribe</DialogTitle>
+        <DialogContent>
+          <DialogContentText>
+            To subscribe to this website, please enter your email address here. We will send updates
+            occasionally.
+          </DialogContentText>
+          <TextField
+            autoFocus
+            margin="dense"
+            id="name"
+            label="Email Address"
+            type="email"
+            fullWidth
+          />
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleClose} color="primary">
+            Cancel
+          </Button>
+          <Button onClick={handleClose} color="primary">
+            Subscribe
+          </Button>
+        </DialogActions>
+      </Dialog>
+    </div>
+
+    </div>
+  )
+
 }
