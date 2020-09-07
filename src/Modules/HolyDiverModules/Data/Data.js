@@ -538,6 +538,7 @@ export const bossAbilities = [
   { ability: "Bolt of Power", guid: 337110 },
   { ability: "Tactical Advance", guid: 328334 },
 ];
+
 export const talents = [
   // Paladin Talents
 

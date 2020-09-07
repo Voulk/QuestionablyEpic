@@ -30,8 +30,8 @@ import { classColoursJS } from "../CooldownTable/ClassColourFunctions";
 import { classMenus } from "../CooldownTable/ClassMenuItems";
 import "./Table.css";
 import { useTranslation } from "react-i18next";
-import { localizationRU, localizationCH } from "./TableLocalization.js"
-  
+import { localizationRU, localizationCH } from "./TableLocalization.js";
+
 const useStyles = makeStyles((theme) => ({
   formControl: {
     margin: theme.spacing(0.5),
@@ -250,8 +250,9 @@ export default function CustomEditComponent(props) {
       return localizationRU;
     } else if (lang === "ch") {
       return localizationCH;
+    } else {
+      return false;
     }
-    else { return false }
   };
 
   return (
