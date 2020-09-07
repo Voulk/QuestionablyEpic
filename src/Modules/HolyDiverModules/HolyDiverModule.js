@@ -101,7 +101,6 @@ class HolyDiver extends Component {
     let sortedDataUnmitigatedNoCooldowns = [];
     let sortedDataMitigatedDamageNoCooldowns = [];
 
-
     // Import Healer Info from Healer Function
     const healers = await importHealerLogData(
       starttime,
@@ -116,11 +115,10 @@ class HolyDiver extends Component {
       class: key.type,
     }));
 
-    console.log(healerIDName)
+    console.log(healerIDName);
 
     // Map Healer Ids
     let healerID = healers.map((key) => key.id);
-
 
     // Import Damage From Damage Function
     const damage = await importDamageLogData(
@@ -280,33 +278,70 @@ class HolyDiver extends Component {
       mitigatedDamageFromLogWithTimesAddedNoCooldowns
     );
 
+    Object.keys(
+      unmitigatedDamageTimestampsReducedWithCooldowns
+    ).forEach((element) =>
+      sortedDataUnmitigatedWithCooldowns.push(
+        unmitigatedDamageTimestampsReducedWithCooldowns[element]
+      )
+    );
+    Object.keys(
+      mitigatedDamageTimestampsReducedWithCooldowns
+    ).forEach((element) =>
+      sortedDataMitigatedDamageWithCooldowns.push(
+        mitigatedDamageTimestampsReducedWithCooldowns[element]
+      )
+    );
+    Object.keys(
+      unmitigatedDamageTimestampsReducedNoCooldowns
+    ).forEach((element) =>
+      sortedDataUnmitigatedNoCooldowns.push(
+        unmitigatedDamageTimestampsReducedNoCooldowns[element]
+      )
+    );
+    Object.keys(
+      mitigatedDamageTimestampsReducedNoCooldowns
+    ).forEach((element) =>
+      sortedDataMitigatedDamageNoCooldowns.push(
+        mitigatedDamageTimestampsReducedNoCooldowns[element]
+      )
+    );
 
-    Object.keys(unmitigatedDamageTimestampsReducedWithCooldowns).forEach((element) => sortedDataUnmitigatedWithCooldowns.push(unmitigatedDamageTimestampsReducedWithCooldowns[element]));
-    Object.keys(mitigatedDamageTimestampsReducedWithCooldowns).forEach((element) => sortedDataMitigatedDamageWithCooldowns.push(mitigatedDamageTimestampsReducedWithCooldowns[element]));
-    Object.keys(unmitigatedDamageTimestampsReducedNoCooldowns).forEach((element) => sortedDataUnmitigatedNoCooldowns.push(unmitigatedDamageTimestampsReducedNoCooldowns[element]));
-    Object.keys(mitigatedDamageTimestampsReducedNoCooldowns).forEach((element) => sortedDataMitigatedDamageNoCooldowns.push(mitigatedDamageTimestampsReducedNoCooldowns[element]));
-
-    let summedUnmitigationDamage = sumDamage(sortedDataUnmitigatedNoCooldowns, fightLength);
+    let summedUnmitigationDamage = sumDamage(
+      sortedDataUnmitigatedNoCooldowns,
+      fightLength
+    );
     let summedUnmitigatedDamagePerSecond = Object.keys(summedUnmitigationDamage)
       .filter((obj) => {
         return obj !== "timestamp";
       })
       .map((key) => {
-        return { ability: key, damage: Math.round(summedUnmitigationDamage[key] / fightLength) };
+        return {
+          ability: key,
+          damage: Math.round(summedUnmitigationDamage[key] / fightLength),
+        };
       });
-    summedUnmitigatedDamagePerSecond.sort((a, b) => (b.damage > a.damage ? 1 : -1));
+    summedUnmitigatedDamagePerSecond.sort((a, b) =>
+      b.damage > a.damage ? 1 : -1
+    );
 
-
-    let summedMitigationDamage = sumDamage(sortedDataMitigatedDamageNoCooldowns, fightLength);
+    let summedMitigationDamage = sumDamage(
+      sortedDataMitigatedDamageNoCooldowns,
+      fightLength
+    );
     let summedMitigationDamagePerSecond = Object.keys(summedUnmitigationDamage)
       .filter((obj) => {
         return obj !== "timestamp";
       })
       .map((key) => {
-        return { ability: key, damage: Math.round(summedUnmitigationDamage[key] / fightLength) };
+        return {
+          ability: key,
+          damage: Math.round(summedUnmitigationDamage[key] / fightLength),
+        };
       });
-    summedUnmitigatedDamagePerSecond.sort((a, b) => (b.damage > a.damage ? 1 : -1));
-
+    summedUnmitigatedDamagePerSecond.sort((a, b) =>
+      b.damage > a.damage ? 1 : -1
+    );
 
     this.setState({
       unmitigatedChartDataNoCooldowns: sortedDataUnmitigatedNoCooldowns,
@@ -319,7 +354,12 @@ class HolyDiver extends Component {
       abilitylist: uniqueArray,
       cooldownlist: uniqueArrayCD,
       loadingcheck: false,
-      healernames: healers.map((key) => ({ name: key.name, icon: key.icon, talents: key.talents, type: key.type })),
+      healernames: healers.map((key) => ({
+        name: key.name,
+        icon: key.icon,
+        talents: key.talents,
+        type: key.type,
+      })),
       currentEndTime: endtime,
       currentStartTime: starttime,
       summedUnmitigatedDamagePerSecond: summedUnmitigatedDamagePerSecond,
@@ -371,22 +411,25 @@ class HolyDiver extends Component {
     }));
   };
 
-
   // Yo @Ptolemy this needs serious cleaning and adding of Unmitigated Damage
   tablehandler = (element) => {
-    let customcooldown = [];
-    let sortedData2 = [];
-    let cooldownlistcustom = element.map(
+    let customCooldownDurations = [];
+    let unmitigatedChartDataNoCooldowns = [];
+    let mitigatedChartDataNoCooldowns = [];
+
+    let customCooldownList = element.map(
       (key) => key.name + " - " + key.Cooldown
     );
-    let cooldownlistcustom2 = Array.from(new Set(cooldownlistcustom));
-    let newthing = element.map((key) => ({
+    let uniqueCooldownListArray = Array.from(new Set(customCooldownList));
+
+    let customCooldownInput = element.map((key) => ({
       ability: key.Cooldown,
       timestamp: moment.duration("00:" + key.time).asMilliseconds(),
       abilityname: key.name + " - " + key.Cooldown,
     }));
-    newthing.map((key) =>
-      customcooldown.push(
+
+    customCooldownInput.map((key) =>
+      customCooldownDurations.push(
         durationmaker(
           key.ability,
           key.timestamp,
@@ -402,14 +445,18 @@ class HolyDiver extends Component {
         )
       )
     );
-    let newthing2 = customcooldown.flat();
+
+    let customCooldownDurationFlatArray = customCooldownDurations.flat();
+
     let concat2 = this.state.unmitigatedChartDataNoCooldowns;
-    let joinedarray = concat2.concat(newthing2);
+    let concat3 = this.state.mitigatedChartDataNoCooldowns;
+
+    let joinedarray = concat2.concat(customCooldownDurationFlatArray);
+    let joinedarray2 = concat3.concat(customCooldownDurationFlatArray);
     joinedarray.sort((a, b) => (a.timestamp > b.timestamp ? 1 : -1));
+    joinedarray2.sort((a, b) => (a.timestamp > b.timestamp ? 1 : -1));
 
-
-
-    let datarReformater2 = joinedarray.reduce((acc, cur) => {
+    let reducedData1 = joinedarray.reduce((acc, cur) => {
       acc[cur.timestamp] = joinedarray.reduce((x, n) => {
         for (let prop in n) {
           if (cur.timestamp === n.timestamp) {
@@ -426,12 +473,30 @@ class HolyDiver extends Component {
       return acc;
     }, {});
 
- 
-    Object.keys(datarReformater2).forEach((element2) =>
-      sortedData2.push(datarReformater2[element2])
+    let reducedData2 = joinedarray2.reduce((acc, cur) => {
+      acc[cur.timestamp] = joinedarray2.reduce((x, n) => {
+        for (let prop in n) {
+          if (cur.timestamp === n.timestamp) {
+            if (x.hasOwnProperty(prop)) {
+              x[prop] += n[prop];
+            } else {
+              x[prop] = n[prop];
+            }
+          }
+        }
+        x.timestamp = cur.timestamp;
+        return x;
+      }, {});
+      return acc;
+    }, {});
+
+    Object.keys(reducedData1).forEach((element2) =>
+      unmitigatedChartDataNoCooldowns.push(reducedData1[element2])
     );
 
-
+    Object.keys(reducedData2).forEach((element2) =>
+      mitigatedChartDataNoCooldowns.push(reducedData2[element2])
+    );
 
     let ertNote = element.map((key) => ({
       ert:
@@ -447,13 +512,10 @@ class HolyDiver extends Component {
       time: key.time,
     }));
 
-    console.log(sortedData2)
-    console.log(cooldownlistcustom2)
-
     this.setState({
-      mitigatedChartDataNoCooldowns: sortedData2,
-      unmitigatedChartDataNoCooldowns: sortedData2,
-      cooldownlistcustom2: cooldownlistcustom2,
+      mitigatedChartDataNoCooldowns: mitigatedChartDataNoCooldowns,
+      unmitigatedChartDataNoCooldowns: unmitigatedChartDataNoCooldowns,
+      cooldownlistcustom2: uniqueCooldownListArray,
       ertList: ertNote,
     });
   };
