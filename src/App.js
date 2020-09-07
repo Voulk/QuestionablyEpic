@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
-//import HolyDiver from "./Modules/HolyDiverModules/HolyDiverModule";
+import HolyDiver from "./Modules/HolyDiverModules/HolyDiverModule";
 import QEMainMenu from "./Modules/QEModules/SetupAndMenus/QEMainMenu.js";
 import TrinketCompare from "./Modules/QEModules/TrinketCompare.js";
 import LegendaryCompare from "./Modules/QEModules/Legendaries/LegendaryCompare.js";
@@ -129,13 +129,13 @@ class App extends Component {
                   />
                 )}
               />
-              {/*>:( FIX YO FOLDERS) } 
+              {/*>:( FIX YO FOLDERS) */}
               <Route
                 path="/holydiver"
                 render={() => (
                   <HolyDiver langSet={this.langSet} curLang={this.state.lang} />
                 )}
-              />*/}
+              />
               <Route
                 path="/trinkets"
                 render={() => (

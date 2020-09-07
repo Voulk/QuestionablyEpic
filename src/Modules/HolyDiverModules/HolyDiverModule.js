@@ -63,8 +63,8 @@ class HolyDiver extends Component {
       healernames: [],
       checked: false,
       tabledata: [],
-      cooldownhelper: [],
-      cooldownhelperfinal: [],
+      unmitigatedChartDataNoCooldowns: [],
+      mitigatedChartDataNoCooldowns: [],
       cooldownlistcustom2: ["none"],
       currentEndTime: 0,
       currentStartTime: 0,
@@ -80,9 +80,9 @@ class HolyDiver extends Component {
       timelineshowhide: false,
       legenddata: [],
       uniqueArrayGuid: [],
-      damageChartData: [],
+      mitigatedChartData: [],
       chartData: true,
-      summedDamage: [],
+      summedUnmitigatedDamagePerSecond: [],
       currentDifficulty: null,
     };
   }
@@ -96,9 +96,11 @@ class HolyDiver extends Component {
       .asSeconds()
       .toString();
     let healerdurations = [];
-    let sortedDataUnmitigated = [];
-    let sortedDataDamage = [];
-    let sortedDataNoCooldowns = [];
+    let sortedDataUnmitigatedWithCooldowns = [];
+    let sortedDataMitigatedDamageWithCooldowns = [];
+    let sortedDataUnmitigatedNoCooldowns = [];
+    let sortedDataMitigatedDamageNoCooldowns = [];
+
 
     // Import Healer Info from Healer Function
     const healers = await importHealerLogData(
@@ -213,6 +215,7 @@ class HolyDiver extends Component {
         .map((obj) => obj.class)
         .toString(),
     }));
+
     // Map the data casts using the durationmaker function (returning array of cooldowns duration), then pushing those into the healerdurations array
     updateddatacasts.map((key) =>
       healerdurations.push(
@@ -232,75 +235,85 @@ class HolyDiver extends Component {
     let times = addMissingTimestamps(
       fightDurationCalculator(endtime, starttime)
     );
+
     // concat the damage array with the cooldown durations with the missing durations
     let unmitigatedDamageFromLogWithTimesAddedAndCooldowns = unmitigatedDamageMap.concat(
       cooldownwithdurations,
       times
     );
-
-    let damageFromLogWithTimesAddedAndCooldowns = mitigatedDamageMap.concat(
+    let mitigatedDamageFromLogWithTimesAddedAndCooldowns = mitigatedDamageMap.concat(
       cooldownwithdurations,
       times
     );
+    let unmitigatedDamageFromLogWithTimesAddedNoCooldowns = unmitigatedDamageMap.concat(
+      times
+    );
+    let mitigatedDamageFromLogWithTimesAddedNoCooldowns = mitigatedDamageMap.concat(
+      times
+    );
+
     // Sort the Array by Timestamp
     unmitigatedDamageFromLogWithTimesAddedAndCooldowns.sort((a, b) =>
       a.timestamp > b.timestamp ? 1 : -1
     );
-    damageFromLogWithTimesAddedAndCooldowns.sort((a, b) =>
+    mitigatedDamageFromLogWithTimesAddedAndCooldowns.sort((a, b) =>
       a.timestamp > b.timestamp ? 1 : -1
     );
+    unmitigatedDamageFromLogWithTimesAddedNoCooldowns.sort((a, b) =>
+      a.timestamp > b.timestamp ? 1 : -1
+    );
+    mitigatedDamageFromLogWithTimesAddedNoCooldowns.sort((a, b) =>
+      a.timestamp > b.timestamp ? 1 : -1
+    );
+
     // reduce array removing any duplicate timestamps
-    let dataReformaterUnmitigatedDamage = reduceTimestamps(
+    let unmitigatedDamageTimestampsReducedWithCooldowns = reduceTimestamps(
       unmitigatedDamageFromLogWithTimesAddedAndCooldowns
     );
-    let dataReformaterDamage = reduceTimestamps(
-      damageFromLogWithTimesAddedAndCooldowns
+    let mitigatedDamageTimestampsReducedWithCooldowns = reduceTimestamps(
+      mitigatedDamageFromLogWithTimesAddedAndCooldowns
+    );
+    let unmitigatedDamageTimestampsReducedNoCooldowns = reduceTimestamps(
+      unmitigatedDamageFromLogWithTimesAddedNoCooldowns
+    );
+    let mitigatedDamageTimestampsReducedNoCooldowns = reduceTimestamps(
+      mitigatedDamageFromLogWithTimesAddedNoCooldowns
     );
 
-    // let dtpsArray = damage.map((key) => ({
-    //   timestamp: moment(fightDurationCalculator(key.timestamp, this.state.time))
-    //     .startOf("second")
-    //     .valueOf(),
-    //   abilityName: key.ability.name,
-    //   abilityDamage: key.unmitigatedAmount,
-    // }));
 
-    // concat the damage array with the missing durations
-    let concatArrayWithMissingTimes = unmitigatedDamageMap.concat(times);
-    // Sort the Array by Timestamp
-    concatArrayWithMissingTimes.sort((a, b) =>
-      a.timestamp > b.timestamp ? 1 : -1
-    );
-    // reduce array removing any duplicate timestamps
-    let dataReformater2 = reduceTimestamps(concatArrayWithMissingTimes);
-    Object.keys(dataReformaterUnmitigatedDamage).forEach((element) =>
-      sortedDataUnmitigated.push(dataReformaterUnmitigatedDamage[element])
-    );
+    Object.keys(unmitigatedDamageTimestampsReducedWithCooldowns).forEach((element) => sortedDataUnmitigatedWithCooldowns.push(unmitigatedDamageTimestampsReducedWithCooldowns[element]));
+    Object.keys(mitigatedDamageTimestampsReducedWithCooldowns).forEach((element) => sortedDataMitigatedDamageWithCooldowns.push(mitigatedDamageTimestampsReducedWithCooldowns[element]));
+    Object.keys(unmitigatedDamageTimestampsReducedNoCooldowns).forEach((element) => sortedDataUnmitigatedNoCooldowns.push(unmitigatedDamageTimestampsReducedNoCooldowns[element]));
+    Object.keys(mitigatedDamageTimestampsReducedNoCooldowns).forEach((element) => sortedDataMitigatedDamageNoCooldowns.push(mitigatedDamageTimestampsReducedNoCooldowns[element]));
 
-    Object.keys(dataReformaterDamage).forEach((element) =>
-      sortedDataDamage.push(dataReformaterDamage[element])
-    );
-
-    Object.keys(dataReformater2).forEach((element) =>
-      sortedDataNoCooldowns.push(dataReformater2[element])
-    );
-
-    let sum = sumDamage(sortedDataNoCooldowns, fightLength);
-    let summedDamage = Object.keys(sum)
+    let summedUnmitigationDamage = sumDamage(sortedDataUnmitigatedNoCooldowns, fightLength);
+    let summedUnmitigatedDamagePerSecond = Object.keys(summedUnmitigationDamage)
       .filter((obj) => {
         return obj !== "timestamp";
       })
       .map((key) => {
-        return { ability: key, damage: Math.round(sum[key] / fightLength) };
+        return { ability: key, damage: Math.round(summedUnmitigationDamage[key] / fightLength) };
       });
-    summedDamage.sort((a, b) => (b.damage > a.damage ? 1 : -1));
+    summedUnmitigatedDamagePerSecond.sort((a, b) => (b.damage > a.damage ? 1 : -1));
+
+
+    let summedMitigationDamage = sumDamage(sortedDataMitigatedDamageNoCooldowns, fightLength);
+    let summedMitigationDamagePerSecond = Object.keys(summedUnmitigationDamage)
+      .filter((obj) => {
+        return obj !== "timestamp";
+      })
+      .map((key) => {
+        return { ability: key, damage: Math.round(summedUnmitigationDamage[key] / fightLength) };
+      });
+    summedUnmitigatedDamagePerSecond.sort((a, b) => (b.damage > a.damage ? 1 : -1));
+
 
     this.setState({
-      cooldownhelper: sortedDataNoCooldowns,
-      cooldownhelperfinal: sortedDataNoCooldowns,
+      unmitigatedChartDataNoCooldowns: sortedDataUnmitigatedNoCooldowns,
+      mitigatedChartDataNoCooldowns: sortedDataMitigatedDamageNoCooldowns,
       legenddata: uniqueArrayNewForLegend,
-      unmitigatedChartData: sortedDataUnmitigated,
-      damageChartData: sortedDataDamage,
+      unmitigatedChartData: sortedDataUnmitigatedWithCooldowns,
+      mitigatedChartData: sortedDataMitigatedDamageWithCooldowns,
       Updateddatacasts: updateddatacastsTimeline,
       uniqueArrayGuid: uniqueArrayGuid,
       abilitylist: uniqueArray,
@@ -309,7 +322,7 @@ class HolyDiver extends Component {
       healernames: healers.map((key) => ({ name: key.name, icon: key.icon, talents: key.talents, type: key.type })),
       currentEndTime: endtime,
       currentStartTime: starttime,
-      summedDamage: summedDamage,
+      summedUnmitigatedDamagePerSecond: summedUnmitigatedDamagePerSecond,
     });
   };
 
@@ -358,6 +371,8 @@ class HolyDiver extends Component {
     }));
   };
 
+
+  // Yo @Ptolemy this needs serious cleaning and adding of Unmitigated Damage
   tablehandler = (element) => {
     let customcooldown = [];
     let sortedData2 = [];
@@ -388,9 +403,12 @@ class HolyDiver extends Component {
       )
     );
     let newthing2 = customcooldown.flat();
-    let concat2 = this.state.cooldownhelper;
+    let concat2 = this.state.unmitigatedChartDataNoCooldowns;
     let joinedarray = concat2.concat(newthing2);
     joinedarray.sort((a, b) => (a.timestamp > b.timestamp ? 1 : -1));
+
+
+
     let datarReformater2 = joinedarray.reduce((acc, cur) => {
       acc[cur.timestamp] = joinedarray.reduce((x, n) => {
         for (let prop in n) {
@@ -408,9 +426,13 @@ class HolyDiver extends Component {
       return acc;
     }, {});
 
+ 
     Object.keys(datarReformater2).forEach((element2) =>
       sortedData2.push(datarReformater2[element2])
     );
+
+
+
     let ertNote = element.map((key) => ({
       ert:
         "{time:" +
@@ -425,8 +447,12 @@ class HolyDiver extends Component {
       time: key.time,
     }));
 
+    console.log(sortedData2)
+    console.log(cooldownlistcustom2)
+
     this.setState({
-      cooldownhelperfinal: sortedData2,
+      mitigatedChartDataNoCooldowns: sortedData2,
+      unmitigatedChartDataNoCooldowns: sortedData2,
       cooldownlistcustom2: cooldownlistcustom2,
       ertList: ertNote,
     });
@@ -581,7 +607,7 @@ class HolyDiver extends Component {
                 >
                   <Chart
                     dataToShow={this.state.chartData}
-                    mitigated={this.state.damageChartData}
+                    mitigated={this.state.mitigatedChartData}
                     unmitigated={this.state.unmitigatedChartData}
                     abilitylist={this.state.abilitylist}
                     legendata={this.state.legenddata}
@@ -627,7 +653,7 @@ class HolyDiver extends Component {
                 />
                 <Collapse in={this.state.timelineshowhide}>
                   <DtpsTable
-                    data={this.state.summedDamage}
+                    data={this.state.summedUnmitigatedDamagePerSecond}
                     curLang={this.props.curLang}
                   />
                 </Collapse>
@@ -689,8 +715,8 @@ class HolyDiver extends Component {
                 >
                   <Chart
                     dataToShow={this.state.chartData}
-                    mitigated={this.state.damageChartData}
-                    unmitigated={this.state.unmitigatedChartData}
+                    mitigated={this.state.mitigatedChartDataNoCooldowns}
+                    unmitigated={this.state.unmitigatedChartDataNoCooldowns}
                     abilitylist={this.state.abilitylist}
                     cooldown={this.state.cooldownlistcustom2}
                     endtime={fightDurationCalculator(
