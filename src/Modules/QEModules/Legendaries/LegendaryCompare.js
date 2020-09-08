@@ -40,6 +40,7 @@ const fillLegendaries = (container, spec, pl) => {
         createLegendary("Rejuv Spreader", container, spec, pl);
         createLegendary("Swiftmend Extension", container, spec, pl);
         createLegendary("The Dark Titans Lesson", container, spec, pl);
+        createLegendary("Free Wild Growth", container, spec, pl);
 
     }
 }

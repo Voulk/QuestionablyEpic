@@ -3,6 +3,7 @@ var SPELL_HEALING_LOC = 1;
 var SPELL_HEALING_PERC = 2;
 var SPELL_OVERHEALING_LOC = 5;
 
+var averageHoTCount = 1.4; // TODO: Build this in correctly and pull it from logs where applicable.
 
 
 class Player {
@@ -20,7 +21,7 @@ class Player {
     // A players spell casting patterns. These are averaged from entered logs and a default is provided too. 
     // 
     castPattern = {
-        "Rejuvenation": [35, 40213, 0.75],
+        "Rejuvenation": [35, 40213, 0.22],
         "Wild Growth": 40,
         "Overall": [0, 90132, 1]
 
@@ -30,11 +31,11 @@ class Player {
     // They can either be pulled automatically from the entered log, or calculated from an entered SimC string.
     // These are used for items like trinkets or conduits, where a flat healing portion might scale with various secondary stats. 
     activeStats = {
-        intellect: 0,
-        haste: 1,
-        crit: 0,
+        intellect: 1500,
+        haste: 400,
+        crit: 350,
         mastery: 0,
-        vers: 0,
+        vers: 200,
         hps: 6000,
     }
    
@@ -58,15 +59,15 @@ class Player {
         var statPerc = 1.0;
         switch(stat) {
             case "Haste":
-                statPerc = 1 + this.activeStats.haste / 68;
+                statPerc = 1 + this.activeStats.haste / 33 / 100;
                 break;
             case "Crit":
-                statPerc = 1.05 + this.activeStats.crit / 72;
+                statPerc = 1.05 + this.activeStats.crit / 35 / 100;
                 break;
             case "Mastery":
                 break;
             case "Vers":
-                statPerc = 1 + this.activeStats.vers / 85;
+                statPerc = 1 + this.activeStats.vers / 40 / 100;
                 break;
             default:
                 break;
@@ -77,12 +78,33 @@ class Player {
 
     }
 
+    // This multiplies three-four secondary stats together to improve code efficiency. 
+    // includeMastery: Boolean: Indicates whether Mastery should be included. 
+    // TODO: Add Mastery
+    getSecondaryMultiplier = (includeMastery) => {
+        let mult = this.getStatPerc("Haste") * this.getStatPerc("Crit") * this.getStatPerc("Vers");
+        if (includeMastery) { 
+            switch(this.getSpec()) {
+                case "Restoration Druid":
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        return mult;
+    }
+
     getSpec = () => {
         return this.spec;
     }
 
     getHPS = () => {
         return this.activeStats.hps;
+    }
+
+    getInt = () => {
+        return this.activeStats.intellect;
     }
 
     getSpellCasts = (spellName) => {
@@ -105,7 +127,7 @@ class Player {
             }
            
             this.statWeights = {
-                intellect: 1, // Fixed.
+                intellect: 1, // Fixed at 1.
                 haste: 0.4,
                 crit: 0.6,
                 mastery: 0.5,

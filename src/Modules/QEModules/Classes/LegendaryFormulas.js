@@ -19,8 +19,10 @@ const getDruidLegendary = (legendary, pl) => {
     let result = 0.0;
     let name = legendary.name;
 
-    //alert(JSON.stringify(pl));    
-
+    /*
+    The rejuv spreading legendary can best be expressed as a percentage increase to our rejuv healing. 
+    TODO: When accepting log input we will eventually have to take into account those already wearing it since it changes our formula slightly.
+    */
     if (name === "Rejuv Spreader") {
         let rejuvHealingPerc = pl.getSpellHealingPerc("Rejuvenation");
         let baseTicks = 1 + (5 * pl.getStatPerc("Haste"));
@@ -28,10 +30,17 @@ const getDruidLegendary = (legendary, pl) => {
         let rejuvHealingInc = (expectedTicksWithLegendary / baseTicks) - 1;
         let expectedHPS = Math.round(rejuvHealingInc * rejuvHealingPerc * pl.getHPS());
 
-        // Do Math
+        // Return result.
         legendary.expectedHPS = expectedHPS;
 
     }
+
+    /* 
+
+    The swiftmend extension legendary can be valued by calculating how much extra healing we can expect out of the HoTs on the swiftmended target. 
+    The general goal most of the time is to Swiftmend whichever target has your Cenarion Ward but players aren't perfect. 
+
+    */
     else if (name === "Swiftmend Extension") {
         // Do Math
         legendary.expectedHPS = 11;
@@ -42,9 +51,15 @@ const getDruidLegendary = (legendary, pl) => {
         legendary.expectedHPS = 7;
     }
 
+    // Consider building in support for the conduit via SimC grab or something similar.
+    
+    else if (name === "Free Wild Growth") {
+        let expectedOverhealing = 0.2; // TODO: Placeholder. 
+        let oneWildGrowth =  0.91 * 6 * pl.getInt() * pl.getSecondaryMultiplier(true) * (1 - expectedOverhealing);
 
 
-
+        legendary.expectedHPS = Math.round(oneWildGrowth * (60 / 45) / 60);
+    }
     return result;
 
 
