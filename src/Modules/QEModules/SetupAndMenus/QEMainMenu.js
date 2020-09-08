@@ -24,11 +24,11 @@ const mainMenuOptions = {
   "Gear Quick Compare": "/quickcompare",
   "Trinket Quick Compare": "/trinkets",
   "Legendary Analysis": "/legendaries",
-  "Explore Soulbinds": "/soulbinds",
+  "Explore Covenants": "/soulbinds",
   "Cooldown Planner": "/holydiver",
 };
 
-//            <p>{props.pl.getSpec()}</p>
+// <p>{props.pl.getSpec()}</p>
 
 export default function QEMainMenu(props) {
   const { t, i18n } = useTranslation();

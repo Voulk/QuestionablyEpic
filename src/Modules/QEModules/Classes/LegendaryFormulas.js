@@ -19,9 +19,17 @@ const getDruidLegendary = (legendary, pl) => {
     let result = 0.0;
     let name = legendary.name;
 
-    if (name === "Rejuv Spreader") {       
+    //alert(JSON.stringify(pl));    
+
+    if (name === "Rejuv Spreader") {
+        let rejuvHealingPerc = pl.getSpellHealingPerc("Rejuvenation");
+        let baseTicks = 1 + (5 * pl.getStatPerc("Haste"));
+        let expectedTicksWithLegendary = (baseTicks / (1 - 0.02 * Math.ceil(baseTicks)));
+        let rejuvHealingInc = (expectedTicksWithLegendary / baseTicks) - 1;
+        let expectedHPS = Math.round(rejuvHealingInc * rejuvHealingPerc * pl.getHPS());
+
         // Do Math
-        legendary.expectedHPS = 5;
+        legendary.expectedHPS = expectedHPS;
 
     }
     else if (name === "Swiftmend Extension") {

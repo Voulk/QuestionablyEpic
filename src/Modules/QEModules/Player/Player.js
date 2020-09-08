@@ -1,6 +1,8 @@
-var SPELL_CASTS_LOC = 1;
-var SPELL_HEALING_LOC = 2;
+var SPELL_CASTS_LOC = 0;
+var SPELL_HEALING_LOC = 1;
+var SPELL_HEALING_PERC = 2;
 var SPELL_OVERHEALING_LOC = 5;
+
 
 
 class Player {
@@ -9,6 +11,7 @@ class Player {
         this.charName = playerName;
         this.charID = charID;
         this.setupDefaults();
+        //this.getStatPerc = getStatPerc;
     }
 
     spec = "";
@@ -17,11 +20,11 @@ class Player {
     // A players spell casting patterns. These are averaged from entered logs and a default is provided too. 
     // 
     castPattern = {
-        "Rejuv": [35, 40213, 75],
+        "Rejuvenation": [35, 40213, 0.75],
         "Wild Growth": 40,
-        "Overall": [0, 90132, 43]
+        "Overall": [0, 90132, 1]
 
-    };
+    }
    
     // The players active stats from their character page. These are raw rather than being percentages. 
     // They can either be pulled automatically from the entered log, or calculated from an entered SimC string.
@@ -32,6 +35,7 @@ class Player {
         crit: 0,
         mastery: 0,
         vers: 0,
+        hps: 6000,
     }
    
     // Stat weights are normalized around intellect. 
@@ -77,13 +81,21 @@ class Player {
         return this.spec;
     }
 
+    getHPS = () => {
+        return this.activeStats.hps;
+    }
+
     getSpellCasts = (spellName) => {
         return this.castPattern[spellName][SPELL_CASTS_LOC];
     }
 
+    getSpellHealingPerc = (spellName) => {
+        return this.castPattern[spellName][SPELL_HEALING_PERC]
+    }
+
     // Consider replacing this with an external table for cleanliness and ease of editing. 
     setupDefaults = (spec) => {
-        if (spec === "Druid") {
+        if (spec === "Restoration Druid") {
             this.activeStats = {
                 intellect: 0,
                 haste: 1,

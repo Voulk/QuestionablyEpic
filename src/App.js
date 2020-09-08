@@ -4,7 +4,6 @@ import "./App.css";
 import QEMainMenu from "./Modules/QEModules/SetupAndMenus/QEMainMenu.js";
 import TrinketCompare from "./Modules/QEModules/TrinketCompare.js";
 import LegendaryCompare from "./Modules/QEModules/Legendaries/LegendaryCompare.js";
-import Player from "./Modules/QEModules/Player/Player";
 import QEHeader from "./Modules/QEModules/SetupAndMenus/QEHeader";
 import PlayerChars from "./Modules/QEModules/Player/PlayerChars";
 
