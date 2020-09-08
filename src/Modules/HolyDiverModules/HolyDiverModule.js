@@ -35,6 +35,7 @@ import DtpsTable from "../HolyDiverModules/CooldownTable/DtpsTable";
 import ERTTable from "../HolyDiverModules/CooldownTable/ERTTable";
 import SwitchLabels from "./BasicComponents/Switch";
 import SimpleAccordion from "../HolyDiverModules/CooldownTable/HealerInfo";
+import HealTeam from "../HolyDiverModules/CooldownTable/HealTeam";
 
 class HolyDiver extends Component {
   constructor(props) {
@@ -567,7 +568,6 @@ class HolyDiver extends Component {
               </Paper>
             </Grid>
           </Grid>
-
           <Grid
             container
             direction="row"
@@ -653,7 +653,6 @@ class HolyDiver extends Component {
               </Collapse>
             </Grid>
           </Grid>
-
           <Grid
             container
             direction="row"
@@ -684,7 +683,6 @@ class HolyDiver extends Component {
               </Collapse>
             </Grid>
           </Grid>
-
           <Grid
             container
             direction="row"
@@ -761,7 +759,6 @@ class HolyDiver extends Component {
             </Grid>
                     */}
           </Grid>
-
           <Grid
             container
             direction="row"
@@ -791,7 +788,6 @@ class HolyDiver extends Component {
               </Collapse>
             </Grid>
           </Grid>
-
           <Grid
             container
             direction="row"
@@ -813,6 +809,17 @@ class HolyDiver extends Component {
                   curLang={this.props.curLang}
                 />
               </Collapse>
+            </Grid>
+          </Grid>
+          <Grid
+            container
+            direction="row"
+            justify="flex-start"
+            alignItems="flex-start"
+            spacing={1}
+          >
+            <Grid item xs={4} padding={1}>
+              <HealTeam />
             </Grid>
           </Grid>
         </div>

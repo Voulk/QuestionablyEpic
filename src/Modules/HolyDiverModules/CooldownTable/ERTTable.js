@@ -123,6 +123,7 @@ export default function ERTTable(props) {
         }}
         localization={curLang(props.curLang)}
         options={{
+          padding: "dense",
           showTitle: false,
           toolbar: false,
           header: true,

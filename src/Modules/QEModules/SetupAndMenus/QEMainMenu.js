@@ -16,20 +16,17 @@ import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import CharComponent from "./CharComponent";
 import CharCards from "./CharComponentGen";
-import { Grid
-} from "@material-ui/core";
-
+import { Grid } from "@material-ui/core";
 
 // Warning: If a button name has to change, do it in the translation files. Consider the titles here to be ID's rather than strings.
 const mainMenuOptions = {
-  "Top Gear" : "/topgear",
-  "Gear Quick Compare" : "/quickcompare",
-  "Trinket Quick Compare" : "/trinkets",
-  "Legendary Analysis" : "/legendaries",
-  "Explore Soulbinds" : "/soulbinds",
-  "Cooldown Planner" : "/holydiver",
-
-}
+  "Top Gear": "/topgear",
+  "Gear Quick Compare": "/quickcompare",
+  "Trinket Quick Compare": "/trinkets",
+  "Legendary Analysis": "/legendaries",
+  "Explore Soulbinds": "/soulbinds",
+  "Cooldown Planner": "/holydiver",
+};
 
 //            <p>{props.pl.getSpec()}</p>
 
@@ -48,21 +45,23 @@ export default function QEMainMenu(props) {
       >
         <p className="headers">{t("MainMenuItemsH")}</p>
 
-        {
-        Object.keys(mainMenuOptions).map((key, index) => ( 
+        {Object.keys(mainMenuOptions).map((key, index) => (
           // Buttons are translated and printed from a dictionary.
           <Button
-              variant="contained"
-              color="primary"
-              style={{ width: "45%", margin: "7px", height: "40px", backgroundColor: "#c8b054"}}
-              component={Link}
-              to={mainMenuOptions[key]}
+            variant="contained"
+            color="primary"
+            style={{
+              width: "45%",
+              margin: "7px",
+              height: "40px",
+              backgroundColor: "#c8b054",
+            }}
+            component={Link}
+            to={mainMenuOptions[key]}
           >
             {t(key)}
           </Button>
-
-        ))
-      }
+        ))}
 
         <p className="headers">{t("MainMenuCharactersH")}</p>
 
@@ -74,31 +73,48 @@ export default function QEMainMenu(props) {
                 spec={char.spec}
               />
             ))
-          : ""  // Old character cards. Remove once new design is final. */ }
+          : ""  // Old character cards. Remove once new design is final. */}
 
-          <Grid container spacing={1}>
-        {props.allChars.getAllChar().length > 0
-          ? props.allChars.getAllChar().map((char, index) => (
-              <CharCards key={index} name={char.charName} char={char} cardType="Char" 
-                allChars={props.allChars} charUpdate={props.charUpdate} isActive={index==props.allChars.activeChar}/>
-            ))
-          : ""}
-          { <CharCards key={99} name="Add Character" char="NA" cardType="New" allChars={props.allChars} charUpdate={props.charUpdate}/> } 
-          </Grid>
-
+        <Grid container spacing={1}>
+          {props.allChars.getAllChar().length > 0
+            ? props.allChars
+                .getAllChar()
+                .map((char, index) => (
+                  <CharCards
+                    key={index}
+                    name={char.charName}
+                    char={char}
+                    cardType="Char"
+                    allChars={props.allChars}
+                    charUpdate={props.charUpdate}
+                    isActive={index == props.allChars.activeChar}
+                  />
+                ))
+            : ""}
+          {
+            <CharCards
+              key={99}
+              name="Add Character"
+              char="NA"
+              cardType="New"
+              allChars={props.allChars}
+              charUpdate={props.charUpdate}
+            />
+          }
+        </Grid>
       </div>
     </div>
   );
 }
 
-      //     <div
-      //         style={{
-      //           width: "100%",
-      //           justifyContent: "left",
-      //           display: "inline-flex",
-      //           flexDirection: "row",
-      //           spacing: "5",
-                
-      //   }}
-      // >
-      //           </div>
+//     <div
+//         style={{
+//           width: "100%",
+//           justifyContent: "left",
+//           display: "inline-flex",
+//           flexDirection: "row",
+//           spacing: "5",
+
+//   }}
+// >
+//           </div>

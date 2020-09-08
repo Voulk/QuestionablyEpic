@@ -2,48 +2,43 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
-import CardActionArea from '@material-ui/core/CardActionArea';
+import CardActionArea from "@material-ui/core/CardActionArea";
 import Typography from "@material-ui/core/Typography";
 import Avatar from "@material-ui/core/Avatar";
 import { classColoursJS } from "../../HolyDiverModules/CooldownTable/ClassColourFunctions";
 
-import Button from '@material-ui/core/Button';
-import TextField from '@material-ui/core/TextField';
-import Dialog from '@material-ui/core/Dialog';
-import DialogActions from '@material-ui/core/DialogActions';
-import DialogContent from '@material-ui/core/DialogContent';
-import DialogContentText from '@material-ui/core/DialogContentText';
-import DialogTitle from '@material-ui/core/DialogTitle';
-import { Grid
-} from "@material-ui/core";
+import Button from "@material-ui/core/Button";
+import TextField from "@material-ui/core/TextField";
+import Dialog from "@material-ui/core/Dialog";
+import DialogActions from "@material-ui/core/DialogActions";
+import DialogContent from "@material-ui/core/DialogContent";
+import DialogContentText from "@material-ui/core/DialogContentText";
+import DialogTitle from "@material-ui/core/DialogTitle";
+import { Grid } from "@material-ui/core";
 
 // Spec Images.
 const specImages = {
   "Restoration Druid": require("../../../Images/DruidSmall.png"),
-  "Discipline Priest" : require("../../../Images/DiscSmall.png"),
-  "Holy Paladin" : require("../../../Images/PaladinSmall.png"),
+  "Discipline Priest": require("../../../Images/DiscSmall.png"),
+  "Holy Paladin": require("../../../Images/PaladinSmall.png"),
 };
 
 // Called when a character is clicked.
 // TODO: Add Logic
-const charClicked = (char, cardType, allChars, updateChar) =>  {
+const charClicked = (char, cardType, allChars, updateChar) => {
   if (cardType === "Char") {
     // Character Clicked. Take player to character sheet.
     //alert("Character Clicked " + char.charName);
     allChars.setActiveChar(char.charID);
     updateChar(allChars);
-
-  }
-  else {
-    // New character clicked. Offer new character dialog. 
+  } else {
+    // New character clicked. Offer new character dialog.
     //alert("New Character");
     //charCreationDialog(char);
     allChars.addChar("VoulkPriest", "Discipline Priest");
     updateChar(allChars);
   }
-
-  
-}
+};
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -57,7 +52,6 @@ const useStyles = makeStyles((theme) => ({
   },
   activeChar: {
     borderColor: "ForestGreen",
-    
   },
 
   details: {
@@ -66,7 +60,7 @@ const useStyles = makeStyles((theme) => ({
   },
   content: {
     flex: "1 0 auto",
-    padding: "5px"
+    padding: "5px",
   },
   large: {
     width: "80px",
@@ -77,28 +71,42 @@ const useStyles = makeStyles((theme) => ({
 export default function CharCards(props) {
   const classes = useStyles();
   const spec = props.cardType === "Char" ? props.char.spec : "";
-  const rootClassName = classes.root + ' ' + (props.isActive ?  classes.activeChar : '');
+  const rootClassName =
+    classes.root + " " + (props.isActive ? classes.activeChar : "");
   //alert(rootClassName);
-  
+
   return (
     <Grid item xs={3}>
-      <CardActionArea onClick={(e) => charClicked(props.char, props.cardType, props.allChars, props.charUpdate, e)}>
-      <Card className={rootClassName} variant="outlined" raised={true}>
-      <Avatar src={specImages[spec]} variant="rounded" alt="" className={classes.large} />
-        <div className={classes.details}>
-          <CardContent className={classes.content}>
-            <Typography variant="h6" component="h4">
-              {props.name}
-            </Typography>
-            <Typography style={{ color: classColoursJS(spec) }}>
-              {spec}
-            </Typography>
-          </CardContent>
-        </div>
-        
-      </Card>
+      <CardActionArea
+        onClick={(e) =>
+          charClicked(
+            props.char,
+            props.cardType,
+            props.allChars,
+            props.charUpdate,
+            e
+          )
+        }
+      >
+        <Card className={rootClassName} variant="outlined" raised={true}>
+          <Avatar
+            src={specImages[spec]}
+            variant="rounded"
+            alt=""
+            className={classes.large}
+          />
+          <div className={classes.details}>
+            <CardContent className={classes.content}>
+              <Typography variant="h6" component="h4">
+                {props.name}
+              </Typography>
+              <Typography style={{ color: classColoursJS(spec) }}>
+                {spec}
+              </Typography>
+            </CardContent>
+          </div>
+        </Card>
       </CardActionArea>
-      
     </Grid>
   );
 }
@@ -119,38 +127,40 @@ const charCreationDialog = (props) => {
 
   return (
     <div>
-          <div>
-      <Button variant="outlined" color="primary" onClick={handleClickOpen}>
-        Open form dialog
-      </Button>
-      <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
-        <DialogTitle id="form-dialog-title">Subscribe</DialogTitle>
-        <DialogContent>
-          <DialogContentText>
-            To subscribe to this website, please enter your email address here. We will send updates
-            occasionally.
-          </DialogContentText>
-          <TextField
-            autoFocus
-            margin="dense"
-            id="name"
-            label="Email Address"
-            type="email"
-            fullWidth
-          />
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={handleClose} color="primary">
-            Cancel
-          </Button>
-          <Button onClick={handleClose} color="primary">
-            Subscribe
-          </Button>
-        </DialogActions>
-      </Dialog>
+      <div>
+        <Button variant="outlined" color="primary" onClick={handleClickOpen}>
+          Open form dialog
+        </Button>
+        <Dialog
+          open={open}
+          onClose={handleClose}
+          aria-labelledby="form-dialog-title"
+        >
+          <DialogTitle id="form-dialog-title">Subscribe</DialogTitle>
+          <DialogContent>
+            <DialogContentText>
+              To subscribe to this website, please enter your email address
+              here. We will send updates occasionally.
+            </DialogContentText>
+            <TextField
+              autoFocus
+              margin="dense"
+              id="name"
+              label="Email Address"
+              type="email"
+              fullWidth
+            />
+          </DialogContent>
+          <DialogActions>
+            <Button onClick={handleClose} color="primary">
+              Cancel
+            </Button>
+            <Button onClick={handleClose} color="primary">
+              Subscribe
+            </Button>
+          </DialogActions>
+        </Dialog>
+      </div>
     </div>
-
-    </div>
-  )
-
-}
+  );
+};

@@ -138,6 +138,7 @@ export default function DtpsTable(props) {
         }}
         localization={curLang(props.curLang)}
         options={{
+          padding: "dense",
           showTitle: false,
           toolbar: false,
           header: true,
