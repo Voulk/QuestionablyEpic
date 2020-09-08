@@ -16,6 +16,8 @@ import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import CharComponent from "./CharComponent";
 import CharCards from "./CharComponentGen";
+import { Grid
+} from "@material-ui/core";
 
 
 // Warning: If a button name has to change, do it in the translation files. Consider the titles here to be ID's rather than strings.
@@ -73,17 +75,8 @@ export default function QEMainMenu(props) {
               />
             ))
           : ""  // Old character cards. Remove once new design is final. */ }
-          <div
-              style={{
-                width: "100%",
-                justifyContent: "left",
-                display: "inline-flex",
-                flexDirection: "row",
-                spacing: "5",
-                
-        }}
-      >
-          
+
+          <Grid container spacing={1}>
         {props.allChars.getAllChar().length > 0
           ? props.allChars.getAllChar().map((char, index) => (
               <CharCards key={index} name={char.charName} char={char} cardType="Char" 
@@ -91,8 +84,21 @@ export default function QEMainMenu(props) {
             ))
           : ""}
           { <CharCards key={99} name="Add Character" char="NA" cardType="New" allChars={props.allChars} charUpdate={props.charUpdate}/> } 
-          </div>
+          </Grid>
+
       </div>
     </div>
   );
 }
+
+      //     <div
+      //         style={{
+      //           width: "100%",
+      //           justifyContent: "left",
+      //           display: "inline-flex",
+      //           flexDirection: "row",
+      //           spacing: "5",
+                
+      //   }}
+      // >
+      //           </div>

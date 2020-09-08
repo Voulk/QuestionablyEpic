@@ -14,6 +14,8 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
+import { Grid
+} from "@material-ui/core";
 
 // Spec Images.
 const specImages = {
@@ -46,8 +48,8 @@ const charClicked = (char, cardType, allChars, updateChar) =>  {
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "inline-flex",
-    maxWidth: "260px",
-    width: "260px",
+    // maxWidth: "260px",
+    width: "100%",
     maxHeight: "80px",
     borderColor: "Gold",
     padding: "0px",
@@ -79,7 +81,7 @@ export default function CharCards(props) {
   //alert(rootClassName);
   
   return (
-    <div>
+    <Grid item xs={3}>
       <CardActionArea onClick={(e) => charClicked(props.char, props.cardType, props.allChars, props.charUpdate, e)}>
       <Card className={rootClassName} variant="outlined" raised={true}>
       <Avatar src={specImages[spec]} variant="rounded" alt="" className={classes.large} />
@@ -97,7 +99,7 @@ export default function CharCards(props) {
       </Card>
       </CardActionArea>
       
-    </div>
+    </Grid>
   );
 }
 
