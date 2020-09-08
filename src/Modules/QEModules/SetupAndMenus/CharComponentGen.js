@@ -48,7 +48,7 @@ const useStyles = makeStyles((theme) => ({
     maxHeight: "80px",
     borderColor: "Gold",
     padding: "0px",
-    marginRight: "10px",
+    marginRight: "0px",
   },
   activeChar: {
     borderColor: "ForestGreen",
@@ -76,7 +76,7 @@ export default function CharCards(props) {
   //alert(rootClassName);
 
   return (
-    <Grid item xs={3}>
+    <Grid item xs={4}>
       <CardActionArea
         onClick={(e) =>
           charClicked(

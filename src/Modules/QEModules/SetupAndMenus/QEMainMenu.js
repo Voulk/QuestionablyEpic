@@ -75,7 +75,7 @@ export default function QEMainMenu(props) {
             ))
           : ""  // Old character cards. Remove once new design is final. */}
 
-        <Grid container spacing={1}>
+        <Grid container spacing={2}>
           {props.allChars.getAllChar().length > 0
             ? props.allChars
                 .getAllChar()
@@ -91,7 +91,7 @@ export default function QEMainMenu(props) {
                   />
                 ))
             : ""}
-          {
+          {props.allChars.getAllChar().length < 9 ? 
             <CharCards
               key={99}
               name="Add Character"
@@ -100,7 +100,7 @@ export default function QEMainMenu(props) {
               allChars={props.allChars}
               charUpdate={props.charUpdate}
             />
-          }
+          : ""}
         </Grid>
       </div>
     </div>
