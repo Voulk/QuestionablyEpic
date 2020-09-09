@@ -60,6 +60,13 @@ const themecooldowntable = createMuiTheme({
         padding: "4px",
       },
     },
+    MuiOutlinedInput: {
+      input: { padding: 10}
+    },
+    MTableToolbar: {
+        minHeight: 0
+    }
+
   },
   palette: {
     type: "dark",
@@ -289,6 +296,7 @@ export default function CustomEditComponent(props) {
         }}
         options={{
           showTitle: false,
+          searchFieldVariant: "outlined",
           headerStyle: {
             borderBottom: "2px solid #6d6d6d",
             padding: "0px 16px 0px 16px",
@@ -306,7 +314,8 @@ export default function CustomEditComponent(props) {
             padding: "0px 16px 0px 16px",
           },
           searchFieldStyle: {
-            borderBottom: "1px solid #6d6d6d",
+            // borderBottom: "1px solid #6d6d6d",
+            
             color: "#ffffff",
           },
           actionCellStyle: {
@@ -319,8 +328,8 @@ export default function CustomEditComponent(props) {
         components={{
           Toolbar: (props) => (
             <div>
-              <MTableToolbar {...props} />
-              <Grid container style={{ marginLeft: 10 }} spacing={1}>
+
+              <Grid container style={{ padding: 10 }} spacing={1}>
                 <Grid item xs="auto">
                   <FormControl
                     style={{ minWidth: 175 }}
@@ -387,6 +396,9 @@ export default function CustomEditComponent(props) {
                     </Select>
                   </FormControl>
                 </Grid>
+                <Grid item xs="auto">
+                              <MTableToolbar {...props} />
+                              </Grid>
               </Grid>
             </div>
           ),
