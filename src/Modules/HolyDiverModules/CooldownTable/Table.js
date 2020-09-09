@@ -1,5 +1,5 @@
 import React, { useEffect, forwardRef } from "react";
-import MaterialTable from "material-table";
+import MaterialTable, { MTableToolbar } from "material-table";
 import AddBox from "@material-ui/icons/AddBox";
 import ArrowDownward from "@material-ui/icons/ArrowDownward";
 import Check from "@material-ui/icons/Check";
@@ -16,7 +16,7 @@ import SaveAlt from "@material-ui/icons/SaveAlt";
 import Search from "@material-ui/icons/Search";
 import ViewColumn from "@material-ui/icons/ViewColumn";
 import ClassCooldownMenuItems from "./ClassCooldownMenuItems";
-import { Select } from "@material-ui/core";
+import { Select, Grid } from "@material-ui/core";
 import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import InputLabel from "@material-ui/core/InputLabel";
@@ -25,12 +25,17 @@ import { makeStyles } from "@material-ui/core/styles";
 import abilityicons from "../CooldownTable/AbilityIcons";
 import classicons from "../CooldownTable/ClassIcons";
 import moment from "moment";
-import { healerCooldownsDetailed } from "../Data/Data";
+import {
+  healerCooldownsDetailed,
+  raidList,
+  nathriaBossList,
+} from "../Data/Data";
 import { classColoursJS } from "../CooldownTable/ClassColourFunctions";
 import { classMenus } from "../CooldownTable/ClassMenuItems";
 import "./Table.css";
 import { useTranslation } from "react-i18next";
 import { localizationRU, localizationCH } from "./TableLocalization.js";
+import MenuItem from "@material-ui/core/MenuItem";
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -121,6 +126,7 @@ export default function CustomEditComponent(props) {
   const classes = useStyles();
   const { t, i18n } = useTranslation();
   const { useState } = React;
+  const rl = raidList;
 
   let wowClass = 0;
   let columns = [
@@ -238,6 +244,20 @@ export default function CustomEditComponent(props) {
   ];
 
   const [data, setData] = useState([]);
+  const [raid, setRaid] = useState("");
+  const [boss, setBoss] = useState("");
+  const [plan, setPlan] = useState("");
+
+  const handleChangeRaid = (event) => {
+    setRaid(event.target.value);
+  };
+    const handleChangeBoss = (event) => {
+    setBoss(event.target.value);
+  };
+      const handleChangePlan = (event) => {
+    setPlan(event.target.value);
+  };
+
 
   useEffect(() => {
     props.update(data);
@@ -259,7 +279,7 @@ export default function CustomEditComponent(props) {
     <ThemeProvider theme={themecooldowntable}>
       <MaterialTable
         icons={tableIcons}
-        title={t("Cooldown Planner")}
+        // title={t("Cooldown Planner")}
         columns={columns}
         data={data}
         style={{
@@ -268,6 +288,7 @@ export default function CustomEditComponent(props) {
           fontSize: "0.8 rem",
         }}
         options={{
+          showTitle: false,
           headerStyle: {
             borderBottom: "2px solid #6d6d6d",
             padding: "0px 16px 0px 16px",
@@ -295,6 +316,81 @@ export default function CustomEditComponent(props) {
           paging: false,
         }}
         localization={curLang(props.curLang)}
+        components={{
+          Toolbar: (props) => (
+            <div>
+              <MTableToolbar {...props} />
+              <Grid container style={{ marginLeft: 10 }} spacing={1}>
+                <Grid item xs="auto">
+                  <FormControl
+                    style={{ minWidth: 175 }}
+                    variant="outlined"
+                    size="small"
+                  >
+                    <InputLabel id="RaidSelector">
+                      {t("Select Raid")}
+                    </InputLabel>
+                    <Select
+                      labelId="RaidSelector"
+                      value={raid}
+                      onChange={handleChangeRaid}
+                    >
+                      {rl.map((key) => (
+                        <MenuItem value={key.raidName}>
+                          {" "}
+                          {key.raidName}{" "}
+                        </MenuItem>
+                      ))}
+                    </Select>
+                  </FormControl>
+                </Grid>
+                <Grid item xs="auto">
+                  <FormControl
+                    style={{ minWidth: 175 }}
+                    variant="outlined"
+                    size="small"
+                    disabled={raid === "" ? true : false}
+                  >
+                    <InputLabel id="RaidSelector">
+                      {t("Select Boss")}
+                    </InputLabel>
+                    <Select
+                      labelId="RaidSelector"
+                      value={boss}
+                      onChange={handleChangeBoss}
+                    >
+                      {nathriaBossList.map((key) => (
+                        <MenuItem value={key.name}>{key.name}</MenuItem>
+                      ))}
+                    </Select>
+                  </FormControl>
+                </Grid>
+                <Grid item xs="auto">
+                  <FormControl
+                    style={{ minWidth: 175 }}
+                    variant="outlined"
+                    size="small"
+                    disabled={boss === "" ? true : false}
+                  >
+                    <InputLabel id="RaidSelector">
+                      {t("Select Plan")}
+                    </InputLabel>
+                    <Select
+                      labelId="RaidSelector"
+                      value={plan}
+                      onChange={handleChangePlan}
+                    >
+                      <MenuItem value={"plan1"}>Plan 1</MenuItem>
+                      <MenuItem value={"plan2"}>Plan 2</MenuItem>
+                      <MenuItem value={"plan3"}>Plan 3</MenuItem>
+                      <MenuItem value={"plan4"}>Plan 4</MenuItem>
+                    </Select>
+                  </FormControl>
+                </Grid>
+              </Grid>
+            </div>
+          ),
+        }}
         editable={{
           cellStyle: { padding: "0px 16px 0px 16px" },
           onRowAdd: (newData) =>

@@ -684,3 +684,49 @@ export const talents = [
   { name: "Apotheosis", guid: 200183 },
   { name: "Holy Word: Salvation", guid: 265202 }
 ];
+
+export const raidList = [
+{id: 1, raidName: "Castle Nathria" }
+]
+export const nathriaBossList = [
+  {
+    id: 1,
+    name: "Shriekwing",
+  },
+  {
+    id: 2,
+    name: "Huntsman Altimor",
+  },
+  {
+    id: 3,
+    name: "Sun King's Salvation",
+  },
+  {
+    id: 4,
+    name: "Artificer Xy'mox",
+  },
+  {
+    id: 5,
+    name: "Hungering Destroyer",
+  },
+  {
+    id: 6,
+    name: "Lady Inerva Darkvein",
+  },
+  {
+    id: 7,
+    name: "The Council of Blood",
+  },
+  {
+    id: 8,
+    name: "Sludgefist",
+  },
+  {
+    id: 9,
+    name: "Stone Legion Generals",
+  },
+  {
+    id: 10,
+    name: "Sire Denathrius",
+  },
+];
