@@ -29,6 +29,7 @@ import {
   healerCooldownsDetailed,
   raidList,
   nathriaBossList,
+  bossAbilities,
 } from "../Data/Data";
 import { classColoursJS } from "../CooldownTable/ClassColourFunctions";
 import { classMenus } from "../CooldownTable/ClassMenuItems";
@@ -36,6 +37,7 @@ import "./Table.css";
 import { useTranslation } from "react-i18next";
 import { localizationRU, localizationCH } from "./TableLocalization.js";
 import MenuItem from "@material-ui/core/MenuItem";
+import bossIcons from "../CooldownTable/BossIcons";
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -51,7 +53,7 @@ const useStyles = makeStyles((theme) => ({
 const themecooldowntable = createMuiTheme({
   overrides: {
     MuiTableCell: {
-      root: {
+      regular: {
         padding: "0px 16px 0px 16px",
       },
     },
@@ -61,12 +63,8 @@ const themecooldowntable = createMuiTheme({
       },
     },
     MuiOutlinedInput: {
-      input: { padding: 10}
+      input: { padding: 10 },
     },
-    MTableToolbar: {
-        minHeight: 0
-    }
-
   },
   palette: {
     type: "dark",
@@ -134,6 +132,21 @@ export default function CustomEditComponent(props) {
   const { t, i18n } = useTranslation();
   const { useState } = React;
   const rl = raidList;
+  const [data, setData] = useState([]);
+  const [raid, setRaid] = useState("");
+  const [boss, setBoss] = useState("");
+  const [plan, setPlan] = useState("");
+
+  const handleChangeRaid = (event) => {
+    setRaid(event.target.value);
+  };
+  const handleChangeBoss = (event) => {
+    console.log(event.target.value);
+    setBoss(event.target.value);
+  };
+  const handleChangePlan = (event) => {
+    setPlan(event.target.value);
+  };
 
   let wowClass = 0;
   let columns = [
@@ -183,13 +196,13 @@ export default function CustomEditComponent(props) {
       ),
     },
     {
-      title: t("Ability"),
+      title: t("Cooldown"),
       field: "Cooldown",
       render: (rowData) => abilityicons(rowData.Cooldown),
       editComponent: (props) => (
         <ThemeProvider theme={themecooldowntable}>
           <FormControl className={classes.formControl}>
-            <InputLabel id="HealerAbilitySelector">{t("Ability")}</InputLabel>
+            <InputLabel id="HealerAbilitySelector">{t("Cooldown")}</InputLabel>
             <Select
               value={props.value}
               onChange={(e) => {
@@ -236,6 +249,46 @@ export default function CustomEditComponent(props) {
       ),
     },
     {
+      title: t("Boss Ability"),
+      field: "bossAbility",
+      // render: (rowData) => abilityicons(rowData.Cooldown),
+      editComponent: (props) => (
+        <ThemeProvider theme={themecooldowntable}>
+          <FormControl className={classes.formControl}>
+            <InputLabel id="HealerAbilitySelector">
+              {t("Boss Ability")}
+            </InputLabel>
+            <Select
+              value={props.value}
+              onChange={(e) => {
+                props.onChange(e.target.value);
+              }}
+            >
+              {bossAbilities
+                .filter((obj) => {
+                  return obj.bossID === boss;
+                })
+                .map((key, i) => (
+                  <MenuItem key={i} value={key.ability}>
+                    <a data-wowhead={"spell=" + key.guid}>
+                      <img
+                        style={{
+                          height: 20,
+                          width: 20,
+                          padding: "0px 5px 0px 5px",
+                          verticalAlign: "middle",
+                        }}
+                      />
+                    </a>
+                    {key.ability}
+                  </MenuItem>
+                ))}
+            </Select>
+          </FormControl>
+        </ThemeProvider>
+      ),
+    },
+    {
       title: t("Notes"),
       field: "notes",
       editComponent: (props) => (
@@ -249,22 +302,6 @@ export default function CustomEditComponent(props) {
       ),
     },
   ];
-
-  const [data, setData] = useState([]);
-  const [raid, setRaid] = useState("");
-  const [boss, setBoss] = useState("");
-  const [plan, setPlan] = useState("");
-
-  const handleChangeRaid = (event) => {
-    setRaid(event.target.value);
-  };
-    const handleChangeBoss = (event) => {
-    setBoss(event.target.value);
-  };
-      const handleChangePlan = (event) => {
-    setPlan(event.target.value);
-  };
-
 
   useEffect(() => {
     props.update(data);
@@ -315,7 +352,7 @@ export default function CustomEditComponent(props) {
           },
           searchFieldStyle: {
             // borderBottom: "1px solid #6d6d6d",
-            
+
             color: "#ffffff",
           },
           actionCellStyle: {
@@ -328,7 +365,6 @@ export default function CustomEditComponent(props) {
         components={{
           Toolbar: (props) => (
             <div>
-
               <Grid container style={{ padding: 10 }} spacing={1}>
                 <Grid item xs="auto">
                   <FormControl
@@ -345,10 +381,7 @@ export default function CustomEditComponent(props) {
                       onChange={handleChangeRaid}
                     >
                       {rl.map((key) => (
-                        <MenuItem value={key.raidName}>
-                          {" "}
-                          {key.raidName}{" "}
-                        </MenuItem>
+                        <MenuItem value={key.raidName}>{key.raidName}</MenuItem>
                       ))}
                     </Select>
                   </FormControl>
@@ -368,9 +401,16 @@ export default function CustomEditComponent(props) {
                       value={boss}
                       onChange={handleChangeBoss}
                     >
-                      {nathriaBossList.map((key) => (
-                        <MenuItem value={key.name}>{key.name}</MenuItem>
-                      ))}
+                      {nathriaBossList
+                        .filter((obj) => {
+                          return obj.raid === raid;
+                        })
+                        .map((key) => (
+                          <MenuItem value={key.id}>
+                            {bossIcons(key.id)}
+                            {key.name}
+                          </MenuItem>
+                        ))}
                     </Select>
                   </FormControl>
                 </Grid>
@@ -397,8 +437,8 @@ export default function CustomEditComponent(props) {
                   </FormControl>
                 </Grid>
                 <Grid item xs="auto">
-                              <MTableToolbar {...props} />
-                              </Grid>
+                  <MTableToolbar {...props} />
+                </Grid>
               </Grid>
             </div>
           ),

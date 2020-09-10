@@ -439,15 +439,15 @@ export const bossAbilities = [
   // Sonar Shriek
   //
   // Note Earsplitting Shriek, Desdent Seems to have 2 GUID
-  { ability: "Sanguine Ichor", guid: 340324 },
-  { ability: "Earsplitting Shriek", guid: 330712 },
-  { ability: "Earsplitting Shriek", guid: 336005 },
-  { ability: "Descent", guid: 342923 },
-  { ability: "Descent", guid: 342078 },
-  { ability: "Bloodlight", guid: 343384 },
-  { ability: "Echoing Screech", guid: 342866 },
-  { ability: "Exsanguinating Bite", guid: 328887 },
-  { ability: "Exsanguinated", guid: 328897 },
+  { bossID: 2398, ability: "Sanguine Ichor", guid: 340324 },
+  { bossID: 2398, ability: "Earsplitting Shriek", guid: 330712 },
+  { bossID: 2398, ability: "Earsplitting Shriek", guid: 336005 },
+  { bossID: 2398, ability: "Descent", guid: 342923 },
+  { bossID: 2398, ability: "Descent", guid: 342078 },
+  { bossID: 2398, ability: "Bloodlight", guid: 343384 },
+  { bossID: 2398, ability: "Echoing Screech", guid: 342866 },
+  { bossID: 2398, ability: "Exsanguinating Bite", guid: 328887 },
+  { bossID: 2398, ability: "Exsanguinated", guid: 328897 },
 
   // Stone Born Generals
   //
@@ -690,43 +690,55 @@ export const raidList = [
 ]
 export const nathriaBossList = [
   {
-    id: 1,
+    id: 2398,
     name: "Shriekwing",
+    raid: "Castle Nathria",
   },
   {
-    id: 2,
+    id: 2418,
     name: "Huntsman Altimor",
+    raid: "Castle Nathria",
   },
   {
-    id: 3,
+    id: 2402,
     name: "Sun King's Salvation",
+    raid: "Castle Nathria",
   },
   {
-    id: 4,
+    id: 2405,
     name: "Artificer Xy'mox",
+    raid: "Castle Nathria",
   },
   {
-    id: 5,
+    id: 2383,
     name: "Hungering Destroyer",
+    raid: "Castle Nathria",
   },
   {
-    id: 6,
+    id: 2406,
     name: "Lady Inerva Darkvein",
+    raid: "Castle Nathria",
   },
   {
-    id: 7,
+    id: 2412,
     name: "The Council of Blood",
+    raid: "Castle Nathria",
   },
   {
-    id: 8,
+    id: 2399,
     name: "Sludgefist",
+    raid: "Castle Nathria",
   },
   {
-    id: 9,
+    id: 2417,
     name: "Stone Legion Generals",
+    raid: "Castle Nathria",
   },
   {
-    id: 10,
+    id: 2407,
     name: "Sire Denathrius",
+    raid: "Castle Nathria",
   },
 ];
+
+
