@@ -50,6 +50,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+
 const themecooldowntable = createMuiTheme({
   overrides: {
     MuiTableCell: {
@@ -64,6 +65,11 @@ const themecooldowntable = createMuiTheme({
     },
     MuiOutlinedInput: {
       input: { padding: 10 },
+    },
+    MuiToolbar: {
+      regular: {
+        minHeight: 0,
+      },
     },
   },
   palette: {
@@ -437,7 +443,7 @@ export default function CustomEditComponent(props) {
                   </FormControl>
                 </Grid>
                 <Grid item xs="auto">
-                  <MTableToolbar {...props} />
+                    <MTableToolbar {...props} />
                 </Grid>
               </Grid>
             </div>
