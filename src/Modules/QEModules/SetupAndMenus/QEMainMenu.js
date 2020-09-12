@@ -45,24 +45,26 @@ export default function QEMainMenu(props) {
         }}
       >
         <p className="headers">{t("MainMenuItemsH")}</p>
-
-        {Object.keys(mainMenuOptions).map((key, index) => (
-          // Buttons are translated and printed from a dictionary.
-          <Button
-            variant="contained"
-            color="primary"
-            style={{
-              width: "45%",
-              margin: "7px",
-              height: "40px",
-              backgroundColor: "#c8b054",
-            }}
-            component={Link}
-            to={mainMenuOptions[key]}
-          >
-            {t(key)}
-          </Button>
-        ))}
+        <Grid container spacing={1}>
+          {Object.keys(mainMenuOptions).map((key, index) => (
+            // Buttons are translated and printed from a dictionary.
+            <Grid item xs={6}>
+              <Button
+                variant="contained"
+                color="primary"
+                style={{
+                  width: "100%",
+                  height: "40px",
+                  backgroundColor: "#c8b054",
+                }}
+                component={Link}
+                to={mainMenuOptions[key]}
+              >
+                {t(key)}
+              </Button>
+            </Grid>
+          ))}
+        </Grid>
 
         <p className="headers">{t("MainMenuCharactersH")}</p>
 
