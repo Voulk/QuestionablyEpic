@@ -15,6 +15,7 @@ import DialogContent from "@material-ui/core/DialogContent";
 import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import { Grid } from "@material-ui/core";
+import FormDialog from "./CharCreator";
 
 // Spec Images.
 const specImages = {
@@ -35,8 +36,8 @@ const charClicked = (char, cardType, allChars, updateChar) => {
     // New character clicked. Offer new character dialog.
     //alert("New Character");
     //charCreationDialog(char);
-    allChars.addChar("VoulkPriest", "Discipline Priest");
-    updateChar(allChars);
+    // allChars.addChar("VoulkPriest", "Discipline Priest");
+    // updateChar(allChars);
   }
 };
 

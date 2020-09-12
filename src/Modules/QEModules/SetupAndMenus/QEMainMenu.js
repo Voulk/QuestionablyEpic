@@ -17,6 +17,7 @@ import { useTranslation } from "react-i18next";
 import CharComponent from "./CharComponent";
 import CharCards from "./CharComponentGen";
 import { Grid } from "@material-ui/core";
+import AddNewChar from "./CharCreator";
 
 // Warning: If a button name has to change, do it in the translation files. Consider the titles here to be ID's rather than strings.
 const mainMenuOptions = {
@@ -87,20 +88,11 @@ export default function QEMainMenu(props) {
                     cardType="Char"
                     allChars={props.allChars}
                     charUpdate={props.charUpdate}
-                    isActive={index == props.allChars.activeChar}
+                    isActive={index === props.allChars.activeChar}
                   />
                 ))
             : ""}
-          {props.allChars.getAllChar().length < 9 ? 
-            <CharCards
-              key={99}
-              name="Add Character"
-              char="NA"
-              cardType="New"
-              allChars={props.allChars}
-              charUpdate={props.charUpdate}
-            />
-          : ""}
+          {props.allChars.getAllChar().length < 9 ? <AddNewChar /> : ""}
         </Grid>
       </div>
     </div>
