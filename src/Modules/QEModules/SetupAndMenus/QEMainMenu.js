@@ -92,7 +92,14 @@ export default function QEMainMenu(props) {
                   />
                 ))
             : ""}
-          {props.allChars.getAllChar().length < 9 ? <AddNewChar /> : ""}
+          {props.allChars.getAllChar().length < 9 ? (
+            <AddNewChar
+              allChars={props.allChars}
+              charUpdate={props.charUpdate}
+            />
+          ) : (
+            ""
+          )}
         </Grid>
       </div>
     </div>

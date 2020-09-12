@@ -21,6 +21,7 @@ import CardActionArea from "@material-ui/core/CardActionArea";
 import Typography from "@material-ui/core/Typography";
 import Avatar from "@material-ui/core/Avatar";
 import { classColoursJS } from "../../HolyDiverModules/CooldownTable/ClassColourFunctions";
+import raceIcons from "../../HolyDiverModules/CooldownTable/RaceIcons";
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -175,11 +176,12 @@ const classList = {
   },
 };
 
-export default function AddNewChar() {
+export default function AddNewChar(props) {
   const { t, i18n } = useTranslation();
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
   const [healClass, setHealClass] = React.useState("");
+  const [charName, setCharName] = React.useState("");
   const [selectedRace, setSelectedRace] = React.useState("");
   const handleClickOpen = () => {
     setOpen(true);
@@ -188,12 +190,19 @@ export default function AddNewChar() {
   const handleClose = () => {
     setOpen(false);
   };
-
-  const handleChangePlan = (event) => {
+  const handleAdd = (name, spec, allChars, updateChar) => {
+    setOpen(false);
+    allChars.addChar(name, spec);
+    updateChar(allChars);
+  };
+  const handleChangeSpec = (event) => {
     setHealClass(event.target.value);
   };
   const handleChangeRace = (event) => {
     setSelectedRace(event.target.value);
+  };
+  const handleChangeName = (event) => {
+    setCharName(event.target.value);
   };
 
   return (
@@ -218,13 +227,21 @@ export default function AddNewChar() {
       >
         <DialogTitle id="form-dialog-title">Create New Character</DialogTitle>
         <DialogContent>
-          <DialogContentText>Select your Class and Race</DialogContentText>
+          {/* <DialogContentText>Select your Class and Race</DialogContentText> */}
           <Grid container spacing={1}>
-            <Grid item xs={12}>
+            <Grid item xs={6}>
               <TextField
                 className={classes.textInput}
                 id="standard-basic"
-                label="Standard"
+                label="Character Name"
+                onChange={handleChangeName}
+              />
+            </Grid>
+            <Grid item xs={6}>
+              <TextField
+                className={classes.textInput}
+                id="standard-basic"
+                label="Server"
               />
             </Grid>
             <Grid item xs={6}>
@@ -232,7 +249,7 @@ export default function AddNewChar() {
                 <InputLabel id="NewClassSelector">
                   {t("Select Class")}
                 </InputLabel>
-                <Select value={healClass} onChange={handleChangePlan}>
+                <Select value={healClass} onChange={handleChangeSpec}>
                   {Object.getOwnPropertyNames(classList).map((key, i) => (
                     <MenuItem key={i} value={key}>
                       {classicons(key, 20)}
@@ -253,15 +270,10 @@ export default function AddNewChar() {
                     ? ""
                     : classList[healClass.toString()].races.map((key, i) => (
                         <MenuItem key={i} value={key}>
-                          <img
-                            style={{
-                              height: 20,
-                              width: 20,
-                              padding: "0px 5px 0px 5px",
-                              verticalAlign: "middle",
-                            }}
-                          />
-                          {key}
+                          <div style={{ display: "inline-flex" }}>
+                            {raceIcons(key)}
+                            {key}
+                          </div>
                         </MenuItem>
                       ))}
                 </Select>
@@ -273,7 +285,12 @@ export default function AddNewChar() {
           <Button onClick={handleClose} color="primary">
             Cancel
           </Button>
-          <Button onClick={handleClose} color="primary">
+          <Button
+            onClick={() =>
+              handleAdd(charName, healClass, props.allChars, props.charUpdate)
+            }
+            color="primary"
+          >
             Add
           </Button>
         </DialogActions>
