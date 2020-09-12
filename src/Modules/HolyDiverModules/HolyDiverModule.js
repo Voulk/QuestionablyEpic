@@ -6,7 +6,6 @@ import {
   Grid,
 } from "@material-ui/core";
 import UserLogTextInput from "../HolyDiverModules/UserInput/UserLogTextInput";
-import TestMenu from "../HolyDiverModules/UserInput/TestMenu";
 import Chart from "../HolyDiverModules/Chart/Chart";
 import moment from "moment";
 import FightSelectorButton from "../HolyDiverModules/UserInput/FightSelectorButton";
@@ -552,13 +551,6 @@ class HolyDiver extends Component {
                   />
 
                   <FightSelectorButton
-                    reportid={this.state.reportid}
-                    clicky={this.handler}
-                    update={this.updatechartdata}
-                    float={"right"}
-                  />
-
-                  <TestMenu
                     reportid={this.state.reportid}
                     clicky={this.handler}
                     update={this.updatechartdata}

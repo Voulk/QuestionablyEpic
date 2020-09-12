@@ -8,17 +8,19 @@ export default function LogImport(props) {
   const API = "https://www.warcraftlogs.com:443/v1/report/fights/";
   const API2 = "?api_key=92fc5d4ae86447df22a8c0917c1404dc";
   let menuItems = "";
-  const [fightData, setfightData] = React.useState([]);
+  let fightData = [];
 
-  useEffect(() => {
-    if (props.reportid) {
-      fetch(API + props.reportid + API2) // DEFAULT_QUERY
-        .then((response) => response.json())
-        .then((data) => setfightData(data.fights));
-    }
-  });
+  async function fetchData() {
+    await fetch(API + props.reportid + API2) // DEFAULT_QUERY
+      .then((response) => response.json())
+      .then((data) => (fightData = data.fights));
+  }
 
   if (props.reportid !== null) {
+    fetchData();
+  }
+
+  if (fightData !== []) {
     menuItems = fightData
       .filter((name) => name.boss !== 0)
       .map((fight) => (
@@ -57,6 +59,5 @@ export default function LogImport(props) {
   } else {
     menuItems = <MenuItem value="Fight">"No Report Loaded"</MenuItem>;
   }
-
   return menuItems;
 }
