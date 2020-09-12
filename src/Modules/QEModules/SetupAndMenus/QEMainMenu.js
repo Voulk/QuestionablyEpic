@@ -48,8 +48,9 @@ export default function QEMainMenu(props) {
         <Grid container spacing={1}>
           {Object.keys(mainMenuOptions).map((key, index) => (
             // Buttons are translated and printed from a dictionary.
-            <Grid item xs={6}>
+            <Grid item xs={6} key={index}>
               <Button
+                key={index}
                 variant="contained"
                 color="primary"
                 style={{
@@ -67,16 +68,6 @@ export default function QEMainMenu(props) {
         </Grid>
 
         <p className="headers">{t("MainMenuCharactersH")}</p>
-
-        {/*props.allChars.length > 0
-          ? props.allChars.map((char, index) => (
-              <CharComponent
-                key={index}
-                name={char.charName}
-                spec={char.spec}
-              />
-            ))
-          : ""  // Old character cards. Remove once new design is final. */}
 
         <Grid container spacing={2}>
           {props.allChars.getAllChar().length > 0
@@ -107,15 +98,3 @@ export default function QEMainMenu(props) {
     </div>
   );
 }
-
-//     <div
-//         style={{
-//           width: "100%",
-//           justifyContent: "left",
-//           display: "inline-flex",
-//           flexDirection: "row",
-//           spacing: "5",
-
-//   }}
-// >
-//           </div>

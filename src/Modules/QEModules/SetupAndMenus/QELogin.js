@@ -32,7 +32,7 @@ export function QELogin(props) {
         alignItems="center"
         wrap="nowrap"
       >
-        <Grid Item xs={4}>
+        <Grid item xs={4}>
           <Button
             variant="contained"
             color="primary"
@@ -42,7 +42,7 @@ export function QELogin(props) {
             US
           </Button>
         </Grid>
-        <Grid Item xs={4}>
+        <Grid item xs={4}>
           <Button
             variant="contained"
             color="primary"
@@ -52,7 +52,7 @@ export function QELogin(props) {
             EU
           </Button>
         </Grid>
-        <Grid Item xs={4}>
+        <Grid item xs={4}>
           <Button
             variant="contained"
             color="primary"
@@ -62,7 +62,7 @@ export function QELogin(props) {
             APAC
           </Button>
         </Grid>
-        <Grid Item xs={4}>
+        <Grid item xs={4}>
           <Button
             variant="contained"
             color="primary"
