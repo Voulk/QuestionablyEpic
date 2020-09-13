@@ -431,23 +431,26 @@ export const bossAbilities = [
   { ability: "Highly Concentrated Anima", guid: 340477 },
 
   // Shriekwing
-  //
-  // Bloodcurdling Shriek
-  // Blind Swipe
-  // Deadly Descent
-  // Echoing Sonar
-  // Sonar Shriek
-  //
-  // Note Earsplitting Shriek, Desdent Seems to have 2 GUID
+  // 
+  { bossID: 2398, ability: "Reverberating Scream (Hit)", guid: 344112 },
+  { bossID: 2398, ability: "Reverberating Scream (DOT)", guid: 344114 },
+  { bossID: 2398, ability: "Deadly Descent", guid: 343021 },
+  { bossID: 2398, ability: "Echoing Sonar", guid: 343022 },
+  { bossID: 2398, ability: "Bloodcurdling Shriek", guid: 330712 },
+  { bossID: 2398, ability: "Sonar Shriek", guid: 343023 },
+  { bossID: 2398, ability: "Blind Swipe", guid: 343005 },
   { bossID: 2398, ability: "Sanguine Ichor", guid: 340324 },
-  { bossID: 2398, ability: "Earsplitting Shriek", guid: 330712 },
-  { bossID: 2398, ability: "Earsplitting Shriek", guid: 336005 },
   { bossID: 2398, ability: "Descent", guid: 342923 },
-  { bossID: 2398, ability: "Descent", guid: 342078 },
   { bossID: 2398, ability: "Bloodlight", guid: 343384 },
-  { bossID: 2398, ability: "Echoing Screech", guid: 342866 },
   { bossID: 2398, ability: "Exsanguinating Bite", guid: 328887 },
+  { bossID: 2398, ability: "Echoing Screech", guid: 342866 },
   { bossID: 2398, ability: "Exsanguinated", guid: 328897 },
+
+
+
+
+
+
 
   // Stone Born Generals
   //

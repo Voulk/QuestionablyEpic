@@ -38,6 +38,7 @@ import { useTranslation } from "react-i18next";
 import { localizationRU, localizationCH } from "./TableLocalization.js";
 import MenuItem from "@material-ui/core/MenuItem";
 import bossIcons from "../CooldownTable/BossIcons";
+import bossAbilityIcons from "../Functions/IconFunctions/BossAbilityIcons"
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -257,7 +258,7 @@ export default function CustomEditComponent(props) {
     {
       title: t("Boss Ability"),
       field: "bossAbility",
-      // render: (rowData) => abilityicons(rowData.Cooldown),
+      render: (rowData) => <div> {bossAbilityIcons(rowData.bossAbility)} {rowData.bossAbility} </div>,
       editComponent: (props) => (
         <ThemeProvider theme={themecooldowntable}>
           <FormControl className={classes.formControl}>
@@ -277,14 +278,7 @@ export default function CustomEditComponent(props) {
                 .map((key, i) => (
                   <MenuItem key={i} value={key.ability}>
                     <a data-wowhead={"spell=" + key.guid}>
-                      <img
-                        style={{
-                          height: 20,
-                          width: 20,
-                          padding: "0px 5px 0px 5px",
-                          verticalAlign: "middle",
-                        }}
-                      />
+                      {bossAbilityIcons(key.guid)}
                     </a>
                     {key.ability}
                   </MenuItem>
