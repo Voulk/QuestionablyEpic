@@ -19,6 +19,7 @@ import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import "./Table.css";
 import { bossAbilities } from "../Data/Data";
 import { localizationRU, localizationCH } from "./TableLocalization.js";
+import bossAbilityIcons from "../Functions/IconFunctions/BossAbilityIcons";
 
 const theme = createMuiTheme({
   palette: {
@@ -115,8 +116,17 @@ export default function DtpsTable(props) {
                       .toString()
                   }
                 >
-                  {rowData.ability}
+                  {bossAbilityIcons(
+                    Number(bossAbilities
+                      .filter((obj) => {
+                        return obj.ability === rowData.ability;
+                      })
+                      .map((obj) => obj.guid)
+                      .toString())
+                  )}
+
                 </a>
+                  {rowData.ability}
               </div>
             ),
           },
