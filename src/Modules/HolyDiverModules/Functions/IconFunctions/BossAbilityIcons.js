@@ -12,63 +12,70 @@ import EchoingScreechIcon from "../../../../Images/Bosses/CastleNathria/Shriekwi
 import ExsanguinatedIcon from "../../../../Images/Bosses/CastleNathria/Shriekwing/Icons/ExsanguinatedIcon.jpg";
 import BlindSwipeIcon from "../../../../Images/Bosses/CastleNathria/Shriekwing/Icons/BlindSwipeIcon.jpg";
 
-
-
 export default function bossAbilityIcons(props) {
   let source = "";
   let alt = "";
 
   // Shriekwing
   // Reverberating Scream
-  if (props === 344112 || props === 344114 || props === "Reverberating Scream (Hit)" || props === "Reverberating Scream (DOT)") {
+  if (
+    props === 344112 ||
+    props === 344114 ||
+    props === "Reverberating Scream (Hit)" ||
+    props === "Reverberating Scream (DOT)"
+  ) {
     source = ReverberatingScreamIcon;
     alt = "Reverberating Scream";
   }
-  if (props === 340324) {
+  if (props === 340324 || props === "Sanguine Ichor") {
     source = SanguineIchorIcon;
     alt = "Sanguine Ichor";
   }
-  if (props === 343021) {
+  if (props === 343021 || props === "Deadly Descent") {
     source = DeadlyDescentIcon;
     alt = "Deadly Descent";
   }
-  if (props === 342923) {
+  if (props === 342923 || props === "Descent") {
     source = DescentIconIcon;
     alt = "Descent";
   }
-  if (props === 343384) {
+  if (props === 343384 || props === "Bloodlight") {
     source = BloodlightIcon;
     alt = "Bloodlight";
   }
-  if (props === 328887) {
+  if (props === 328887 || props === "Exsanguinated") {
     source = ExsanguinatingBiteIcon;
     alt = "Exsanguinating Bite";
   }
-  if (props === 343022) {
+  if (props === 343022 || props === "Echoing Screech") {
     source = EchoingSonarIcon;
     alt = "Echoing Sonar";
   }
-  if (props === 330712 || props === 336005) {
+  if (
+    props === 330712 ||
+    props === 336005 ||
+    props === "Bloodcurdling Shriek (Hit)" ||
+    props === "Bloodcurdling Shriek (DOT)"
+  ) {
     source = BloodcurdlingShriekIcon;
     alt = "Bloodcurdling Shriek";
   }
-  if (props === 343023) {
+  if (props === 343023 || props === "Sonar Shriek") {
     source = SonarShriekIcon;
     alt = "Sonar Shriek";
   }
-  if (props === 342866) {
+  if (props === 342866 || props === "Echoing Screech") {
     source = EchoingScreechIcon;
     alt = "Echoing Screech";
   }
-  if (props === 328897) {
+  if (props === 328897 || props === "Exsanguinated") {
     source = ExsanguinatedIcon;
     alt = "Exsanguinated";
   }
-    if (props === 343005) {
+  if (props === 343005 || props === "Blind Swipe") {
     source = BlindSwipeIcon;
     alt = "Blind Swipe";
   }
-
 
   return (
     <img
@@ -77,7 +84,7 @@ export default function bossAbilityIcons(props) {
         width: 20,
         padding: "0px 5px 0px 5px",
         verticalAlign: "middle",
-        borderRadius: "4px"
+        borderRadius: "4px",
       }}
       src={source}
       alt={alt}
