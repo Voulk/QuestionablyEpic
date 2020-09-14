@@ -22,6 +22,8 @@ import Typography from "@material-ui/core/Typography";
 import Avatar from "@material-ui/core/Avatar";
 import { classColoursJS } from "../../HolyDiverModules/CooldownTable/ClassColourFunctions";
 import raceIcons from "../../HolyDiverModules/CooldownTable/RaceIcons";
+import Autocomplete from "@material-ui/lab/Autocomplete";
+import { serverList } from "../../HolyDiverModules/Data/Data";
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -29,6 +31,10 @@ const useStyles = makeStyles((theme) => ({
     whiteSpace: "nowrap",
     width: "100%",
     minWidth: 150,
+  },
+  formRegion: {
+    whiteSpace: "nowrap",
+    width: "100%",
   },
   selectEmpty: {
     marginTop: theme.spacing(2),
@@ -58,6 +64,8 @@ const useStyles = makeStyles((theme) => ({
     height: "80px",
   },
 }));
+
+const region = ["CN", "US", "TW", "EU"];
 
 const classList = {
   "Holy Paladin": {
@@ -182,6 +190,7 @@ export default function AddNewChar(props) {
   const [open, setOpen] = React.useState(false);
   const [healClass, setHealClass] = React.useState("");
   const [charName, setCharName] = React.useState("");
+  const [regions, setRegions] = React.useState("");
   const [selectedRace, setSelectedRace] = React.useState("");
   const handleClickOpen = () => {
     setOpen(true);
@@ -204,6 +213,9 @@ export default function AddNewChar(props) {
   const handleChangeName = (event) => {
     setCharName(event.target.value);
   };
+  const handleChangeRegion = (event) => {
+    setRegions(event.target.value);
+  };
 
   return (
     <Grid item xs={4}>
@@ -221,6 +233,8 @@ export default function AddNewChar(props) {
       </CardActionArea>
 
       <Dialog
+        fullWidth={true}
+        maxWidth="xs"
         open={open}
         onClose={handleClose}
         aria-labelledby="form-dialog-title"
@@ -228,24 +242,58 @@ export default function AddNewChar(props) {
         <DialogTitle id="form-dialog-title">Create New Character</DialogTitle>
         <DialogContent>
           {/* <DialogContentText>Select your Class and Race</DialogContentText> */}
-          <Grid container spacing={1}>
-            <Grid item xs={6}>
+          <Grid container xs spacing={1} direction="column">
+            <Grid item xs={12}>
               <TextField
                 className={classes.textInput}
                 id="standard-basic"
                 label="Character Name"
                 onChange={handleChangeName}
+                variant="outlined"
+                size="small"
               />
             </Grid>
-            <Grid item xs={6}>
-              <TextField
-                className={classes.textInput}
-                id="standard-basic"
-                label="Server"
-              />
+            <Grid item xs={12} sm container direction="row" spacing={1}>
+              <Grid item xs={4}>
+                <FormControl
+                  className={classes.formRegion}
+                  variant="outlined"
+                  size="small"
+                >
+                  <InputLabel id="NewClassSelector">{t("Region")}</InputLabel>
+                  <Select value={regions} onChange={handleChangeRegion}>
+                    {Object.values(region).map((key, i) => (
+                      <MenuItem key={i} value={key}>
+                        {key}
+                      </MenuItem>
+                    ))}
+                  </Select>
+                </FormControl>
+              </Grid>
+              <Grid item xs={8}>
+                <Autocomplete
+                  size="small"
+                  disabled={regions === "" ? true : false}
+                  id="server-select"
+                  options={serverList[regions]}
+                  getOptionLabel={(option) => option}
+                  style={{ width: "100%" }}
+                  renderInput={(params) => (
+                    <TextField
+                      {...params}
+                      label="Server Name"
+                      variant="outlined"
+                    />
+                  )}
+                />
+              </Grid>
             </Grid>
-            <Grid item xs={6}>
-              <FormControl className={classes.formControl}>
+            <Grid item xs={12}>
+              <FormControl
+                className={classes.formControl}
+                variant="outlined"
+                size="small"
+              >
                 <InputLabel id="NewClassSelector">
                   {t("Select Class")}
                 </InputLabel>
@@ -259,10 +307,12 @@ export default function AddNewChar(props) {
                 </Select>
               </FormControl>
             </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={12}>
               <FormControl
                 disabled={healClass === "" ? true : false}
                 className={classes.formControl}
+                variant="outlined"
+                size="small"
               >
                 <InputLabel id="NewRaceSelector">{t("Select Race")}</InputLabel>
                 <Select value={selectedRace} onChange={handleChangeRace}>
