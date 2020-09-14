@@ -17,7 +17,7 @@ import LanguageSelector from "./LanguageButton";
 import ProfileSelector from "./ProfileButton";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
-import SimCraftInput from "./SimCraftDialog"
+import SimCraftInput from "./SimCraftDialog";
 
 export default function QEHeader(props) {
   const { t, i18n } = useTranslation();
@@ -37,7 +37,7 @@ export default function QEHeader(props) {
               <img src={logo} alt="QE Live" />
             </Link>
           </Box>
-          <div></div>
+          <div/>
           <Button color="inherit">{t("Insert Log")}</Button>
           <SimCraftInput />
           <Button color="inherit">{t("Raid")}</Button>

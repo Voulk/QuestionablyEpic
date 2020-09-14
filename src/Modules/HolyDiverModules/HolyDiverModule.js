@@ -114,12 +114,7 @@ class HolyDiver extends Component {
       name: key.name,
       class: key.type,
     }));
-
-    console.log(healerIDName);
-
-    // Map Healer Ids
-    let healerID = healers.map((key) => key.id);
-
+  
     // Import Damage From Damage Function
     const damage = await importDamageLogData(
       starttime,
@@ -134,11 +129,12 @@ class HolyDiver extends Component {
     let uniqueArrayGuid = uniqueArray.flat().map((key) => ({ ability: key }));
 
     // Import Cooldowns from Cooldown Function
+    // Map Healer Ids
     const cooldowns = await importCastsLogData(
       starttime,
       endtime,
       this.state.reportid,
-      healerID
+      healers.map((key) => key.id)
     );
     // Create List of Healing Cooldowns Used from the Healing Casts Array
     let cooldownlistold = cooldowns.map(
@@ -155,17 +151,15 @@ class HolyDiver extends Component {
     let uniqueArrayCD = Array.from(new Set(cooldownlistold));
     // Attempting to create a list for Custom legend to use with wowhead tooltip
     // Create Ability List With Guids for legend (Testing)
-    let legendAbilityListMap = damage.map((key) => ({
-      value: key.ability.name,
-      id: key.ability.guid,
-    }));
     // Get Unique Objects from Ability list for the custom legend
-    let uniqueLegendData = getUniqueObjectsFromArray(
-      legendAbilityListMap,
-      "id"
-    );
     // Concat the Unique Ability List with the Cooldown List
-    let uniqueArrayNewForLegend = uniqueLegendData.concat(uniqueArrayCD);
+    let uniqueArrayNewForLegend = getUniqueObjectsFromArray(
+      damage.map((key) => ({
+        value: key.ability.name,
+        id: key.ability.guid,
+      })),
+      "id"
+    ).concat(uniqueArrayCD);
     // Map New Data Array Timestamp + ability name & Unmitaged Amount
     let unmitigatedDamageMap = damage.map((key) => ({
       timestamp: moment(fightDurationCalculator(key.timestamp, this.state.time))
@@ -786,6 +780,7 @@ class HolyDiver extends Component {
             justify="flex-start"
             alignItems="flex-start"
             spacing={1}
+            margin={4}
           >
             <Grid item xs={9} padding={1}>
               <CustomEditComponent

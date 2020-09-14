@@ -4,17 +4,14 @@ import TextField from "@material-ui/core/TextField";
 import Dialog from "@material-ui/core/Dialog";
 import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
-import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
-import { makeStyles } from "@material-ui/core/styles";
-import { Input } from "@material-ui/core";
 
-const useStyles = makeStyles((theme) => ({
-  root: { height: 500 },
-}));
+// const useStyles = makeStyles((theme) => ({
+//   root: { height: 500 },
+// }));
 
 export default function SimCraftInput() {
-  const classes = useStyles;
+  // const classes = useStyles;
   const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
@@ -40,7 +37,7 @@ export default function SimCraftInput() {
         <DialogTitle id="form-dialog-title">Paste Your SimC String</DialogTitle>
         <DialogContent style={{ height: 400 }}>
           <TextField
-            className={classes.root}
+            // className={classes.root}
             autoFocus
             multiline={true}
             margin="dense"
