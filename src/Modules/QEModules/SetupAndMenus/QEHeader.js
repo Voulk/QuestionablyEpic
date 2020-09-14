@@ -17,6 +17,7 @@ import LanguageSelector from "./LanguageButton";
 import ProfileSelector from "./ProfileButton";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
+import SimCraftInput from "./SimCraftDialog"
 
 export default function QEHeader(props) {
   const { t, i18n } = useTranslation();
@@ -38,7 +39,7 @@ export default function QEHeader(props) {
           </Box>
           <div></div>
           <Button color="inherit">{t("Insert Log")}</Button>
-          <Button color="inherit">SimC</Button>
+          <SimCraftInput />
           <Button color="inherit">{t("Raid")}</Button>
           <ProfileSelector
             name={playerName}
