@@ -27,7 +27,7 @@ import { serverList } from "../../HolyDiverModules/Data/Data";
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
-    margin: theme.spacing(0.5),
+    // margin: theme.spacing(0.5),
     whiteSpace: "nowrap",
     width: "100%",
     minWidth: 150,
@@ -35,6 +35,7 @@ const useStyles = makeStyles((theme) => ({
   formRegion: {
     whiteSpace: "nowrap",
     width: "100%",
+    marginRight: 1
   },
   selectEmpty: {
     marginTop: theme.spacing(2),
@@ -253,7 +254,7 @@ export default function AddNewChar(props) {
                 size="small"
               />
             </Grid>
-            <Grid item xs={12} sm container direction="row" spacing={1}>
+            <Grid item xs={12} sm container direction="row">
               <Grid item xs={4}>
                 <FormControl
                   className={classes.formRegion}
