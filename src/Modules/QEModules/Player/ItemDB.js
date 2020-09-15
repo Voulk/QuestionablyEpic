@@ -16,7 +16,10 @@ static var allItemsJSON = [{
         "ch": "第七军团士兵屏障",
         "en": "7th Legionnaires Aegis",
         "ru": "Эгида бойца 7-го легиона",
-        "es": "Égida de legionario de la Séptima Legión"
+        "es": "Égida de legionario de la Séptima Legión",
+        "pt": "Égide do Legionário da 7ª",
+        "kr": "7군단 용사의 아이기스",
+        "fr": "Égide de légionnaire de la 7e"
     },
     "icon": "inv_shield_1h_warfrontsalliance_c_01",
     "itemClass": 2,
