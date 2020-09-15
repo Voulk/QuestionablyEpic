@@ -38,7 +38,7 @@ import { useTranslation } from "react-i18next";
 import { localizationRU, localizationCH } from "./TableLocalization.js";
 import MenuItem from "@material-ui/core/MenuItem";
 import bossIcons from "../CooldownTable/BossIcons";
-import bossAbilityIcons from "../Functions/IconFunctions/BossAbilityIcons"
+import bossAbilityIcons from "../Functions/IconFunctions/BossAbilityIcons";
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -51,11 +51,13 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-
 const themecooldowntable = createMuiTheme({
   overrides: {
     MuiTableCell: {
       regular: {
+        padding: "0px 16px 0px 16px",
+      },
+      root: {
         padding: "0px 16px 0px 16px",
       },
     },
@@ -70,6 +72,9 @@ const themecooldowntable = createMuiTheme({
     MuiToolbar: {
       regular: {
         minHeight: 0,
+        "@media (min-width: 600px)": {
+          minHeight: "0px",
+        },
       },
     },
   },
@@ -258,7 +263,12 @@ export default function CustomEditComponent(props) {
     {
       title: t("Boss Ability"),
       field: "bossAbility",
-      render: (rowData) => <div> {bossAbilityIcons(rowData.bossAbility)} {rowData.bossAbility} </div>,
+      render: (rowData) => (
+        <div>
+          {" "}
+          {bossAbilityIcons(rowData.bossAbility)} {rowData.bossAbility}{" "}
+        </div>
+      ),
       editComponent: (props) => (
         <ThemeProvider theme={themecooldowntable}>
           <FormControl className={classes.formControl}>
@@ -273,7 +283,9 @@ export default function CustomEditComponent(props) {
             >
               {bossAbilities
                 .filter((obj) => {
-                  return obj.bossID === boss;
+                  return (
+                    obj.bossID === boss && obj.cooldownPlannerActive === true
+                  );
                 })
                 .map((key, i) => (
                   <MenuItem key={i} value={key.ability}>
@@ -330,7 +342,7 @@ export default function CustomEditComponent(props) {
           boxShadow:
             "0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12)",
           fontSize: "0.8 rem",
-          marginTop: 4
+          marginTop: 4,
         }}
         options={{
           showTitle: false,
@@ -366,79 +378,89 @@ export default function CustomEditComponent(props) {
         components={{
           Toolbar: (props) => (
             <div>
-              <Grid container style={{ padding: 10 }} spacing={1}>
-                <Grid item xs="auto">
-                  <FormControl
-                    style={{ minWidth: 175 }}
-                    variant="outlined"
-                    size="small"
-                  >
-                    <InputLabel id="RaidSelector">
-                      {t("Select Raid")}
-                    </InputLabel>
-                    <Select
-                      labelId="RaidSelector"
-                      value={raid}
-                      onChange={handleChangeRaid}
+              <Grid
+                container
+                style={{ padding: 10 }}
+                spacing={1}
+                direction="row"
+                justify="space-between"
+              >
+                <Grid item container spacing={1} xs={7}>
+                  <Grid item xs="auto">
+                    <FormControl
+                      style={{ minWidth: 175 }}
+                      variant="outlined"
+                      size="small"
                     >
-                      {rl.map((key) => (
-                        <MenuItem value={key.raidName}>{key.raidName}</MenuItem>
-                      ))}
-                    </Select>
-                  </FormControl>
-                </Grid>
-                <Grid item xs="auto">
-                  <FormControl
-                    style={{ minWidth: 175 }}
-                    variant="outlined"
-                    size="small"
-                    disabled={raid === "" ? true : false}
-                  >
-                    <InputLabel id="RaidSelector">
-                      {t("Select Boss")}
-                    </InputLabel>
-                    <Select
-                      labelId="RaidSelector"
-                      value={boss}
-                      onChange={handleChangeBoss}
-                    >
-                      {nathriaBossList
-                        .filter((obj) => {
-                          return obj.raid === raid;
-                        })
-                        .map((key) => (
-                          <MenuItem value={key.id}>
-                            {bossIcons(key.id)}
-                            {key.name}
+                      <InputLabel id="RaidSelector">
+                        {t("Select Raid")}
+                      </InputLabel>
+                      <Select
+                        labelId="RaidSelector"
+                        value={raid}
+                        onChange={handleChangeRaid}
+                      >
+                        {rl.map((key) => (
+                          <MenuItem value={key.raidName}>
+                            {key.raidName}
                           </MenuItem>
                         ))}
-                    </Select>
-                  </FormControl>
-                </Grid>
-                <Grid item xs="auto">
-                  <FormControl
-                    style={{ minWidth: 175 }}
-                    variant="outlined"
-                    size="small"
-                    disabled={boss === "" ? true : false}
-                  >
-                    <InputLabel id="RaidSelector">
-                      {t("Select Plan")}
-                    </InputLabel>
-                    <Select
-                      labelId="RaidSelector"
-                      value={plan}
-                      onChange={handleChangePlan}
+                      </Select>
+                    </FormControl>
+                  </Grid>
+                  <Grid item xs="auto">
+                    <FormControl
+                      style={{ minWidth: 175 }}
+                      variant="outlined"
+                      size="small"
+                      disabled={raid === "" ? true : false}
                     >
-                      <MenuItem value={"plan1"}>Plan 1</MenuItem>
-                      <MenuItem value={"plan2"}>Plan 2</MenuItem>
-                      <MenuItem value={"plan3"}>Plan 3</MenuItem>
-                      <MenuItem value={"plan4"}>Plan 4</MenuItem>
-                    </Select>
-                  </FormControl>
+                      <InputLabel id="RaidSelector">
+                        {t("Select Boss")}
+                      </InputLabel>
+                      <Select
+                        labelId="RaidSelector"
+                        value={boss}
+                        onChange={handleChangeBoss}
+                      >
+                        {nathriaBossList
+                          .filter((obj) => {
+                            return obj.raid === raid;
+                          })
+                          .map((key) => (
+                            <MenuItem value={key.id}>
+                              {bossIcons(key.id)}
+                              {key.name}
+                            </MenuItem>
+                          ))}
+                      </Select>
+                    </FormControl>
+                  </Grid>
+                  <Grid item xs="auto">
+                    <FormControl
+                      style={{ minWidth: 175 }}
+                      variant="outlined"
+                      size="small"
+                      disabled={boss === "" ? true : false}
+                    >
+                      <InputLabel id="RaidSelector">
+                        {t("Select Plan")}
+                      </InputLabel>
+                      <Select
+                        labelId="RaidSelector"
+                        value={plan}
+                        onChange={handleChangePlan}
+                      >
+                        <MenuItem value={"plan1"}>Plan 1</MenuItem>
+                        <MenuItem value={"plan2"}>Plan 2</MenuItem>
+                        <MenuItem value={"plan3"}>Plan 3</MenuItem>
+                        <MenuItem value={"plan4"}>Plan 4</MenuItem>
+                      </Select>
+                    </FormControl>
+                  </Grid>
                 </Grid>
                 <Grid item xs="auto">
-                    <MTableToolbar {...props} />
+                  <MTableToolbar {...props} />
                 </Grid>
               </Grid>
             </div>
@@ -446,6 +468,7 @@ export default function CustomEditComponent(props) {
         }}
         editable={{
           cellStyle: { padding: "0px 16px 0px 16px" },
+          rowStyle: { padding: "0px 16px 0px 16px" },
           onRowAdd: (newData) =>
             new Promise((resolve, reject) => {
               setTimeout(() => {

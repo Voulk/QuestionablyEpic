@@ -41,18 +41,16 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const themecooldowntable = createMuiTheme({
-  // overrides: {
-  //   MuiTableCell: {
-  //     root: {
-  //       padding: "0px 16px 0px 16px",
-  //     },
-  //   },
-  //   MuiIconButton: {
-  //     root: {
-  //       padding: "4px",
-  //     },
-  //   },
-  // },
+  overrides: {
+MuiToolbar: {
+      regular: {
+        minHeight: 0,
+        "@media (min-width: 600px)": {
+          minHeight: "0px",
+        },
+      },
+    },
+  },
   palette: {
     type: "dark",
     primary: { main: "#d3bc47" },

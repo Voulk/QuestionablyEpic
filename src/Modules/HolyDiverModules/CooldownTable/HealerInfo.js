@@ -38,6 +38,7 @@ export default function SimpleAccordion(props) {
 
   return (
     <div className={classes.root}>
+    {console.log(props.heals)}
       {props.heals.map((key, index) => (
         <Accordion>
           <AccordionSummary

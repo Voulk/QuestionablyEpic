@@ -117,16 +117,17 @@ export default function DtpsTable(props) {
                   }
                 >
                   {bossAbilityIcons(
-                    Number(bossAbilities
-                      .filter((obj) => {
-                        return obj.ability === rowData.ability;
-                      })
-                      .map((obj) => obj.guid)
-                      .toString())
+                    Number(
+                      bossAbilities
+                        .filter((obj) => {
+                          return obj.ability === rowData.ability;
+                        })
+                        .map((obj) => obj.guid)
+                        .toString()
+                    )
                   )}
-
                 </a>
-                  {rowData.ability}
+                {rowData.ability}
               </div>
             ),
           },

@@ -1,66 +1,49 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import InputLabel from "@material-ui/core/InputLabel";
-import FormControl from "@material-ui/core/FormControl";
-import Select from "@material-ui/core/Select";
 import LogImport from "../LogImport/LogImport";
-import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
+import Menu from "@material-ui/core/Menu";
+import Button from "@material-ui/core/Button";
+import Fade from "@material-ui/core/Fade";
 
-const useStyles = makeStyles((theme) => ({
-  formControl: {
-    margin: theme.spacing(1),
-    minWidth: 120,
-    marginLeft: "16px",
-  },
-}));
 
 export default function FightSelectorButton(props) {
-  const classes = useStyles();
-  const [age, setAge] = React.useState("");
-  const [open, setOpen] = React.useState(false);
-  const [boss, setBoss] = React.useState("");
+  const [anchorEl, setAnchorEl] = React.useState(null);
 
-  const handleChange = (event) => {
-    setAge(event.target.value);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
   };
 
-  const handleClose = (event) => {
-    setOpen(false);
-  };
-
-  const handleOpen = () => {
-    setOpen(true);
+  const handleClose = () => {
+    setAnchorEl(null);
   };
 
   return (
-    <FormControl
-      variant="outlined"
-      className={classes.formControl}
-      size="small"
-    >
-      <InputLabel id="demo-controlled-open-select-label" label="Outlined">
-        Select
-      </InputLabel>
-      <Select
-        labelId="demo-controlled-open-select-label"
-        id="demo-controlled-open-select"
-        open={open}
-        label={boss}
+    <div>
+      <Button
+        aria-controls="fight-selector"
+        aria-haspopup="true"
+        onClick={handleClick}
+        variant="outlined"
+        style={{ whiteSpace: "nowrap" }}
+      >
+        Select Fight
+      </Button>
+      <Menu
+        id="fight-selector"
+        anchorEl={anchorEl}
+        // keepMounted
+        open={Boolean(anchorEl)}
         onClose={handleClose}
-        onOpen={handleOpen}
-        value={age}
-        onChange={handleChange}
-        onClick={handleClose}
+        TransitionComponent={Fade}
       >
         {
           <LogImport
             reportid={props.reportid}
             clicker={props.clicky}
             update={props.update}
+            close={handleClose}
           />
         }
-        }
-      </Select>
-    </FormControl>
+      </Menu>
+    </div>
   );
 }

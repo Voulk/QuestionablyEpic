@@ -63,6 +63,7 @@ class LogImport extends Component {
                 fight.boss,
                 fight.difficulty,
               ]);
+              this.props.close();
               this.props.update(fight.start_time, fight.end_time);
             }}
           >

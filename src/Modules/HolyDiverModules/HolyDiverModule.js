@@ -7,6 +7,7 @@ import {
 } from "@material-ui/core";
 import UserLogTextInput from "../HolyDiverModules/UserInput/UserLogTextInput";
 import Chart from "../HolyDiverModules/Chart/Chart";
+import Example from "../HolyDiverModules/Chart/DTPSBarChart";
 import moment from "moment";
 import FightSelectorButton from "../HolyDiverModules/UserInput/FightSelectorButton";
 import LoadingOverlay from "react-loading-overlay";
@@ -108,13 +109,15 @@ class HolyDiver extends Component {
       this.state.reportid
     );
 
+    console.log(healers)
+
     // Map Healer id, name, class type
     let healerIDName = healers.map((key) => ({
       id: key.id,
       name: key.name,
       class: key.type,
     }));
-  
+
     // Import Damage From Damage Function
     const damage = await importDamageLogData(
       starttime,
@@ -520,40 +523,39 @@ class HolyDiver extends Component {
     return (
       <div>
         <div style={{ margin: "20px 50px 20px 50px" }}>
-          <Grid
-            container
-            direction="row"
-            justify="flex-start"
-            alignItems="flex-start"
-            spacing={1}
-            style={{ padding: "10px 0px 0px 0px" }}
+          <Paper
+            bgcolor="#333"
+            style={{
+              display: "inline-flex",
+              margin: "0px 0px 4px 0px",
+              borderRadius: 4,
+              padding: "10px 10px 10px 10px",
+              boxShadow:
+                "0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12)",
+            }}
           >
-            <Grid item xs={6} padding={1}>
-              <Paper
-                bgcolor="#333"
-                style={{
-                  borderRadius: 4,
-                  boxShadow:
-                    "0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12)",
-                }}
-              >
-                <div style={{ display: "inline-flex", width: "100%" }}>
-                  <UserLogTextInput
-                    changed={this.reportidHandler}
-                    float={"left"}
-                    reportid={this.state.reportid}
-                  />
-
-                  <FightSelectorButton
-                    reportid={this.state.reportid}
-                    clicky={this.handler}
-                    update={this.updatechartdata}
-                    float={"right"}
-                  />
-                </div>
-              </Paper>
+            <Grid
+              container
+              direction="row"
+              justify="flex-start"
+              alignItems="flex-start"
+              spacing={1}
+            >
+              <Grid item xs="auto" padding={1}>
+                <UserLogTextInput
+                  changed={this.reportidHandler}
+                  reportid={this.state.reportid}
+                />
+              </Grid>
+              <Grid item xs="auto" padding={1}>
+                <FightSelectorButton
+                  reportid={this.state.reportid}
+                  clicky={this.handler}
+                  update={this.updatechartdata}
+                />
+              </Grid>
             </Grid>
-          </Grid>
+          </Paper>
           <Grid
             container
             direction="row"
@@ -719,8 +721,15 @@ class HolyDiver extends Component {
             </Grid>
 
             {/*
-            <Grid item xs={3} padding={1}>
-              <Collapse in={this.state.damageTableShow}>
+            
+          <Grid item xs={3} padding={1}>
+          <Collapse in={this.state.damageTableShow}>
+            <Example />
+             </Collapse>
+          </Grid>
+
+            
+              
                 <DenseAppBar
                   onClick={this.timelineHandler}
                   title="placeholder thing"
@@ -741,8 +750,8 @@ class HolyDiver extends Component {
                     header={true}
                   />
                 </Collapse>
-              </Collapse>
-            </Grid>
+             
+            
                     */}
           </Grid>
           <Grid
