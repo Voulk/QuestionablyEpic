@@ -42,12 +42,9 @@ import bossAbilityIcons from "../Functions/IconFunctions/BossAbilityIcons";
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
-    margin: theme.spacing(0.5),
+    margin: theme.spacing(1),
     whiteSpace: "nowrap",
     width: "100%",
-  },
-  selectEmpty: {
-    marginTop: theme.spacing(2),
   },
 }));
 
@@ -66,6 +63,27 @@ const themecooldowntable = createMuiTheme({
         padding: "4px",
       },
     },
+    // MuiOutlinedInput: {
+    //   input: { padding: 10 },
+    // },
+    MuiToolbar: {
+      regular: {
+        minHeight: 0,
+        "@media (min-width: 600px)": {
+          minHeight: "0px",
+        },
+      },
+    },
+  },
+  palette: {
+    type: "dark",
+    primary: { main: "#d3bc47" },
+    secondary: { main: "#e0e0e0" },
+  },
+});
+
+const SearchFieldOverride = createMuiTheme({
+  overrides: {
     MuiOutlinedInput: {
       input: { padding: 10 },
     },
@@ -165,6 +183,7 @@ export default function CustomEditComponent(props) {
     {
       title: t("Name"),
       field: "name",
+      align: "center",
       render: (rowData) => (
         <div style={{ color: classColoursJS(rowData.class) }}>
           {rowData.name}
@@ -174,6 +193,7 @@ export default function CustomEditComponent(props) {
         <TextField
           size="small"
           id="standard-basic"
+          variant="outlined"
           label={t("Name")}
           value={props.value}
           style={{ whiteSpace: "nowrap", width: "100%" }}
@@ -184,6 +204,7 @@ export default function CustomEditComponent(props) {
     {
       title: t("Class"),
       field: "class",
+      align: "center",
       render: (rowData) => (
         <div style={{ color: classColoursJS(rowData.class) }}>
           {classicons(rowData.class, 20)}
@@ -192,10 +213,15 @@ export default function CustomEditComponent(props) {
       ),
       editComponent: (props) => (
         <ThemeProvider theme={themecooldowntable}>
-          <FormControl className={classes.formControl}>
-            <InputLabel id="HealerClassSelector">{t("Class")}</InputLabel>
+          <FormControl
+            className={classes.formControl}
+            variant="outlined"
+            size="small"
+          >
+            <InputLabel id="ClassSelector">{t("Class")}</InputLabel>
             <Select
               value={props.value}
+              labelId="ClassSelector"
               onChange={(e) => {
                 props.onChange(e.target.value);
                 wowClass = e.target.value;
@@ -210,29 +236,37 @@ export default function CustomEditComponent(props) {
     {
       title: t("Cooldown"),
       field: "Cooldown",
+      align: "center",
       render: (rowData) => abilityicons(rowData.Cooldown),
       editComponent: (props) => (
-        <ThemeProvider theme={themecooldowntable}>
-          <FormControl className={classes.formControl}>
-            <InputLabel id="HealerAbilitySelector">{t("Cooldown")}</InputLabel>
-            <Select
-              value={props.value}
-              onChange={(e) => {
-                props.onChange(e.target.value);
-              }}
-            >
-              {ClassCooldownMenuItems(wowClass) || []}
-            </Select>
-          </FormControl>
-        </ThemeProvider>
+        // <ThemeProvider theme={themecooldowntable}>
+        <FormControl
+          className={classes.formControl}
+          variant="outlined"
+          size="small"
+        >
+          <InputLabel id="HealerAbilitySelector">{t("Cooldown")}</InputLabel>
+          <Select
+            value={props.value}
+            labelId="HealerAbilitySelector"
+            onChange={(e) => {
+              props.onChange(e.target.value);
+            }}
+          >
+            {ClassCooldownMenuItems(wowClass) || []}
+          </Select>
+        </FormControl>
+        // </ThemeProvider>
       ),
     },
     {
       title: t("Time"),
       field: "time",
+      align: "center",
       editComponent: (props) => (
         <TextField
           size="small"
+          variant="outlined"
           id="standard-basic"
           label="Cast Time"
           placeholder="Format: mm:ss"
@@ -244,6 +278,7 @@ export default function CustomEditComponent(props) {
     },
     {
       title: t("Next Available"),
+      align: "center",
       render: (rowData) => (
         <div>
           {moment(rowData.time, "mm:ss")
@@ -263,6 +298,7 @@ export default function CustomEditComponent(props) {
     {
       title: t("Boss Ability"),
       field: "bossAbility",
+      align: "center",
       render: (rowData) => (
         <div>
           {" "}
@@ -271,12 +307,17 @@ export default function CustomEditComponent(props) {
       ),
       editComponent: (props) => (
         <ThemeProvider theme={themecooldowntable}>
-          <FormControl className={classes.formControl}>
-            <InputLabel id="HealerAbilitySelector">
+          <FormControl
+            className={classes.formControl}
+            variant="outlined"
+            size="small"
+          >
+            <InputLabel id="BossAbilitySelector">
               {t("Boss Ability")}
             </InputLabel>
             <Select
               value={props.value}
+              labelId="BossAbilitySelector"
               onChange={(e) => {
                 props.onChange(e.target.value);
               }}
@@ -303,9 +344,11 @@ export default function CustomEditComponent(props) {
     {
       title: t("Notes"),
       field: "notes",
+      align: "center",
       editComponent: (props) => (
         <TextField
           size="small"
+          variant="outlined"
           id="standard-basic"
           label="Notes"
           value={props.value}
@@ -363,11 +406,6 @@ export default function CustomEditComponent(props) {
             fontSize: "0.8 rem",
             padding: "0px 16px 0px 16px",
           },
-          searchFieldStyle: {
-            // borderBottom: "1px solid #6d6d6d",
-
-            color: "#ffffff",
-          },
           actionCellStyle: {
             borderBottom: "1px solid #6d6d6d",
           },
@@ -385,10 +423,10 @@ export default function CustomEditComponent(props) {
                 direction="row"
                 justify="space-between"
               >
-                <Grid item container spacing={1} xs={7}>
+                <Grid item container spacing={1} xs={7} alignItems="center">
                   <Grid item xs="auto">
                     <FormControl
-                      style={{ minWidth: 175 }}
+                      style={{ minWidth: 200, marginLeft: 8 }}
                       variant="outlined"
                       size="small"
                     >
@@ -410,7 +448,7 @@ export default function CustomEditComponent(props) {
                   </Grid>
                   <Grid item xs="auto">
                     <FormControl
-                      style={{ minWidth: 175 }}
+                      style={{ minWidth: 200 }}
                       variant="outlined"
                       size="small"
                       disabled={raid === "" ? true : false}
@@ -438,7 +476,7 @@ export default function CustomEditComponent(props) {
                   </Grid>
                   <Grid item xs="auto">
                     <FormControl
-                      style={{ minWidth: 175 }}
+                      style={{ minWidth: 200 }}
                       variant="outlined"
                       size="small"
                       disabled={boss === "" ? true : false}
@@ -460,13 +498,16 @@ export default function CustomEditComponent(props) {
                   </Grid>
                 </Grid>
                 <Grid item xs="auto">
-                  <MTableToolbar {...props} />
+                  <ThemeProvider theme={SearchFieldOverride}>
+                    <MTableToolbar {...props} />
+                  </ThemeProvider>
                 </Grid>
               </Grid>
             </div>
           ),
         }}
         editable={{
+          align: "center",
           cellStyle: { padding: "0px 16px 0px 16px" },
           rowStyle: { padding: "0px 16px 0px 16px" },
           onRowAdd: (newData) =>

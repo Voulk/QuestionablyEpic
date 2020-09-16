@@ -122,6 +122,7 @@ export default function HealTeam(props) {
     {
       title: t("Name"),
       field: "name",
+      align: "center",
       render: (rowData) => (
         <div style={{ color: classColoursJS(rowData.class) }}>
           {rowData.name}
@@ -130,6 +131,7 @@ export default function HealTeam(props) {
       editComponent: (props) => (
         <TextField
           size="small"
+          variant="outlined"
           id="standard-basic"
           label={t("Name")}
           value={props.value}
@@ -141,6 +143,7 @@ export default function HealTeam(props) {
     {
       title: t("Class"),
       field: "class",
+      align: "center",
       render: (rowData) => (
         <div style={{ color: classColoursJS(rowData.class) }}>
           {classicons(rowData.class, 20)}
@@ -149,7 +152,7 @@ export default function HealTeam(props) {
       ),
       editComponent: (props) => (
         <ThemeProvider theme={themecooldowntable}>
-          <FormControl className={classes.formControl} size="small">
+          <FormControl className={classes.formControl} size="small" variant="outlined">
             <InputLabel id="HealerClassSelector">{t("Class")}</InputLabel>
             <Select
               value={props.value}
@@ -167,8 +170,10 @@ export default function HealTeam(props) {
     {
       title: t("Notes"),
       field: "notes",
+      align: "center",
       editComponent: (props) => (
         <TextField
+        variant="outlined"
           size="small"
           id="standard-basic"
           label="Notes"
