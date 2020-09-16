@@ -61,6 +61,7 @@ const sortLegendaries = (container) => {
 class Legendary {
     constructor(name) {
         this.name = name;
+        this.description = "Legendary Description";
         this.image = 0;
         this.expectedHps = 0;
         this.expectedDps = 0;
@@ -73,7 +74,6 @@ export default function LegendaryCompare(props) {
     const { t, i18n } = useTranslation();
 
     let legendaryList = [];
-    //const [legendaryList, setLegendaryList] = useState([]);
 
     fillLegendaries(legendaryList, props.pl.spec, props.pl, props.contentType);
     sortLegendaries(legendaryList);
@@ -87,7 +87,7 @@ export default function LegendaryCompare(props) {
 
                 {legendaryList.map((item, index) => (
                     
-                    <LegendaryObject key={index} name={item.name} hps={item.expectedHPS}/>
+                    <LegendaryObject key={index} item={item}/>
 
                 ))}
 
