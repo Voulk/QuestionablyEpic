@@ -2,6 +2,7 @@
     "translations": {
         "MainMenuItemsH": "Items & Gearing",
         "MainMenuCharactersH": "Characters",
+        "LegendaryCompareTitle": "Legendary Compare",
         "author": {
             "title": "Author Name",
             "value": "Tariqul"

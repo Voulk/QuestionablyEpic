@@ -1,10 +1,10 @@
 
 
-export default function getLegendaryInfo(legendary, spec, pl)  {
+export default function getLegendaryInfo(legendary, spec, pl, contentType)  {
  
     // Druid
     if (spec === "Restoration Druid") {
-        getDruidLegendary(legendary, pl);
+        getDruidLegendary(legendary, pl, contentType);
     }
 
     // TODO: Other specs.
@@ -15,7 +15,7 @@ export default function getLegendaryInfo(legendary, spec, pl)  {
 
 }
 
-const getDruidLegendary = (legendary, pl) => {
+const getDruidLegendary = (legendary, pl, contentType) => {
     let result = 0.0;
     let name = legendary.name;
 
@@ -24,7 +24,7 @@ const getDruidLegendary = (legendary, pl) => {
     TODO: When accepting log input we will eventually have to take into account those already wearing it since it changes our formula slightly.
     */
     if (name === "Rejuv Spreader") {
-        let rejuvHealingPerc = pl.getSpellHealingPerc("Rejuvenation");
+        let rejuvHealingPerc = pl.getSpellHealingPerc("Rejuvenation", contentType);
         let baseTicks = 1 + (5 * pl.getStatPerc("Haste"));
         let expectedTicksWithLegendary = (baseTicks / (1 - 0.02 * Math.ceil(baseTicks)));
         let rejuvHealingInc = (expectedTicksWithLegendary / baseTicks) - 1;

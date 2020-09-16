@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -10,6 +10,7 @@ import QEHeader from '../SetupAndMenus/QEHeader';
 import LegendaryObject from './LegendaryObject';
 import getLegendaryInfo from '../Classes/LegendaryFormulas';
 import './Legendaries.css';
+import { useTranslation } from "react-i18next";
 
 
 // This is all shitty boilerplate code that'll be replaced. Do not copy.
@@ -26,21 +27,21 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const createLegendary = (legendaryName, container, spec, pl) => {
+const createLegendary = (legendaryName, container, spec, pl, contentType) => {
     let lego = new Legendary(legendaryName)
-    getLegendaryInfo(lego, spec, pl)
+    getLegendaryInfo(lego, spec, pl, contentType)
 
     container.push(lego)
 
 }
 
-const fillLegendaries = (container, spec, pl) => {
+const fillLegendaries = (container, spec, pl, contentType) => {
     //container = [];
     if (spec === "Restoration Druid") {
-        createLegendary("Rejuv Spreader", container, spec, pl);
-        createLegendary("Swiftmend Extension", container, spec, pl);
-        createLegendary("The Dark Titans Lesson", container, spec, pl);
-        createLegendary("Free Wild Growth", container, spec, pl);
+        createLegendary("Rejuv Spreader", container, spec, pl, contentType);
+        createLegendary("Swiftmend Extension", container, spec, pl, contentType);
+        createLegendary("The Dark Titans Lesson", container, spec, pl, contentType);
+        createLegendary("Free Wild Growth", container, spec, pl, contentType);
 
     }
 }
@@ -63,29 +64,23 @@ class Legendary {
      
 }
 
-export default class LegendaryCompare extends Component {
-    constructor(props) {
-      super(props)
+export default function LegendaryCompare(props) {
+    const { t, i18n } = useTranslation();
 
-      this.state = {
-        legendaryList: []
-      }
+    let legendaryList = [];
+    //const [legendaryList, setLegendaryList] = useState([]);
 
-      fillLegendaries(this.state.legendaryList, props.pl.spec, props.pl);
-      sortLegendaries(this.state.legendaryList);
-
-    }
-    
-    render() {
+    fillLegendaries(legendaryList, props.pl.spec, props.pl, props.contentType);
+    sortLegendaries(legendaryList);
 
       return (
         
         <div style={{backgroundColor: "#353535"}}>
 
           <div style={{margin: "auto", width: "55%", justifyContent: "space-between", display: "block" }}>
-            <p className="headers">Legendary Compare</p>
+            <p className="headers">{t("LegendaryCompareTitle")}</p>
 
-                {this.state.legendaryList.map((item, index) => (
+                {legendaryList.map((item, index) => (
                     
                     <LegendaryObject key={index} name={item.name} hps={item.expectedHPS}/>
 
@@ -95,5 +90,4 @@ export default class LegendaryCompare extends Component {
         </div>
 
       );
-    }
   }

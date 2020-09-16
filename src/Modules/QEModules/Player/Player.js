@@ -20,12 +20,32 @@ class Player {
 
     // A players spell casting patterns. These are averaged from entered logs and a default is provided too. 
     // 
-    castPattern = {
+    castPattern =
+    {   "Raid": {
+            "Rejuvenation": [35, 40213, 0.22],
+            "Wild Growth": 40,
+            "Overall": [0, 90132, 1]
+    },
+        "Dungeon": {
+            "Rejuvenation": [35, 40213, 0.11],
+            "Wild Growth": 40,
+            "Overall": [0, 90132, 1]
+        }
+    }
+
+
+    /*
+    castPattern =
+    [{ // Raid
         "Rejuvenation": [35, 40213, 0.22],
         "Wild Growth": 40,
         "Overall": [0, 90132, 1]
-
-    }
+    },
+    { // Dungeon
+        "Rejuvenation": [35, 40213, 0.11],
+        "Wild Growth": 40,
+        "Overall": [0, 90132, 1]
+    }] */
    
     // The players active stats from their character page. These are raw rather than being percentages. 
     // They can either be pulled automatically from the entered log, or calculated from an entered SimC string.
@@ -107,12 +127,14 @@ class Player {
         return this.activeStats.intellect;
     }
 
-    getSpellCasts = (spellName) => {
-        return this.castPattern[spellName][SPELL_CASTS_LOC];
+    getSpellCasts = (spellName, contentType) => {
+        
+        return this.castPattern[contentType][spellName][SPELL_CASTS_LOC];
     }
 
-    getSpellHealingPerc = (spellName) => {
-        return this.castPattern[spellName][SPELL_HEALING_PERC]
+    getSpellHealingPerc = (spellName, contentType) => {
+        
+        return this.castPattern[contentType][spellName][SPELL_HEALING_PERC]
     }
 
     // Consider replacing this with an external table for cleanliness and ease of editing. 

@@ -169,6 +169,7 @@ class App extends Component {
                     pl={activePlayer}
                     langSet={this.langSet}
                     curLang={this.state.lang}
+                    contentType={this.state.contentType}
                   />
                 )}
               />
