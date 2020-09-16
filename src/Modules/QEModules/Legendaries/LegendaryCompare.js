@@ -37,13 +37,18 @@ const createLegendary = (legendaryName, container, spec, pl, contentType) => {
 
 const fillLegendaries = (container, spec, pl, contentType) => {
     //container = [];
-    if (spec === "Restoration Druid") {
-        createLegendary("Rejuv Spreader", container, spec, pl, contentType);
-        createLegendary("Swiftmend Extension", container, spec, pl, contentType);
-        createLegendary("The Dark Titans Lesson", container, spec, pl, contentType);
-        createLegendary("Free Wild Growth", container, spec, pl, contentType);
-
+    let choices = {
+      "Restoration Druid": ["Rejuv Spreader", "Swiftmend Extension", "The Dark Titans Lesson", "Free Wild Growth"],
+      "Holy Paladin": ["HolyPaladinLegendary1"],
+      "Holy Priest": ["HolyPriestLegendary1"]
     }
+
+    // Create legendaries for the given spec. 
+    choices[spec].map((itemName, index) => (
+      createLegendary(itemName, container, spec, pl, contentType)
+
+    ))
+
 }
 
 const sortLegendaries = (container) => {

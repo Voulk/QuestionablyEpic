@@ -33,19 +33,6 @@ class Player {
         }
     }
 
-
-    /*
-    castPattern =
-    [{ // Raid
-        "Rejuvenation": [35, 40213, 0.22],
-        "Wild Growth": 40,
-        "Overall": [0, 90132, 1]
-    },
-    { // Dungeon
-        "Rejuvenation": [35, 40213, 0.11],
-        "Wild Growth": 40,
-        "Overall": [0, 90132, 1]
-    }] */
    
     // The players active stats from their character page. These are raw rather than being percentages. 
     // They can either be pulled automatically from the entered log, or calculated from an entered SimC string.
@@ -64,13 +51,24 @@ class Player {
     // - Since these change quite often we use a tag. If default = true then their weights will automatically update whenever they open the app.
     // - If they manually enter weights on the other hand, then this automatic-update won't occur. 
     statWeights = {
-        intellect: 1, 
-        haste: 0.4,
-        crit: 0.6,
-        mastery: 0.5,
-        vers: 0.3,
-        leech: 0.8,
-        default: true, 
+        "Raid": {
+            intellect: 1, 
+            haste: 0.4,
+            crit: 0.6,
+            mastery: 0.5,
+            vers: 0.3,
+            leech: 0.8,
+        },
+        "Dungeon": {
+            intellect: 1, 
+            haste: 0.4,
+            crit: 0.6,
+            mastery: 0.5,
+            vers: 0.3,
+            leech: 0.8,
+        },
+        "DefaultWeights": true
+
     }
 
     // Convert the players given stats into a percentage. 
@@ -149,12 +147,23 @@ class Player {
             }
            
             this.statWeights = {
-                intellect: 1, // Fixed at 1.
-                haste: 0.4,
-                crit: 0.6,
-                mastery: 0.5,
-                vers: 0.3,
-                leech: 0.8
+                "Raid": {
+                    intellect: 1, 
+                    haste: 0.4,
+                    crit: 0.6,
+                    mastery: 0.5,
+                    vers: 0.3,
+                    leech: 0.8,
+                },
+                "Dungeon": {
+                    intellect: 1, 
+                    haste: 0.4,
+                    crit: 0.6,
+                    mastery: 0.5,
+                    vers: 0.3,
+                    leech: 0.8,
+                },
+                "DefaultWeights": true
             }
 
         }
