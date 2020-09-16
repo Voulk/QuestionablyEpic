@@ -40,7 +40,7 @@ export default function QEHeader(props) {
           <div/>
           <Button color="inherit">{t("Insert Log")}</Button>
           <SimCraftInput />
-          <Button color="inherit">{t("Raid")}</Button>
+          <Button color="inherit" onClick={props.toggleContentType}>{t(props.contentType)}</Button>
           <ProfileSelector
             name={playerName}
             component={Link}

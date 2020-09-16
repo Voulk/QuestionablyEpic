@@ -39,6 +39,7 @@ class App extends Component {
       playerLoginID: "",
       playerBattleTag: "",
       accessToken: "",
+      contentType: "Raid",
     };
   }
 
@@ -49,11 +50,18 @@ class App extends Component {
 
   updatePlayerChars = (allChars) => {
     this.setState({characters : allChars})
+    
   }
 
   setRegion = (props) => {
     this.setState({ playerRegion: props });
   };
+
+  toggleContentType = () => {
+    let newType = this.state.contentType === "Raid" ? "Dungeon" : "Raid";
+    this.setState({ contentType: newType});
+    ls.set("contentType", newType);
+  }
 
   updatePlayerID = (id, battletag) => {
     this.setState({ playerLoginID: id });
@@ -97,6 +105,7 @@ class App extends Component {
       playerLoginID: ls.get("id") || "",
       playerBattleTag: ls.get("btag") || "",
       lang: ls.get("lang") || "en",
+      contentType: ls.get("contentType") || "Raid",
     });
 
     i18n.changeLanguage(this.state.lang);
@@ -119,6 +128,8 @@ class App extends Component {
               curLang={this.state.lang}
               playerTag={this.state.playerBattleTag}
               setRegion={this.setRegion}
+              toggleContentType={this.toggleContentType}
+              contentType={this.state.contentType}
             />
             <Switch>
               <Route
