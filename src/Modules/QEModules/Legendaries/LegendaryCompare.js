@@ -38,9 +38,10 @@ const createLegendary = (legendaryName, container, spec, pl, contentType) => {
 const fillLegendaries = (container, spec, pl, contentType) => {
     //container = [];
     let choices = {
-      "Restoration Druid": ["Rejuv Spreader", "Swiftmend Extension", "The Dark Titans Lesson", "Free Wild Growth", 
+      "Restoration Druid": ["Vision of Unending Growth", "Verdant Infusion", "The Dark Titans Lesson", "Lycaras Fleeting Glimpse", 
                             "Circle of Life and Death", "Oath of the Elder Druid", "Memory of the Mother Tree"],
-      "Holy Paladin": ["HolyPaladinLegendary1"],
+      "Holy Paladin": ["From Dusk till Dawn", "Vanguards Momentum", "The Magistrates Judgment", "Inflorescence of the Sunwell", "Maraads Dying Breath",
+                        "Shadowbreaker, Dawn of the Sun", "Shock Barrier"],
       "Holy Priest": ["HolyPriestLegendary1"]
     }
 

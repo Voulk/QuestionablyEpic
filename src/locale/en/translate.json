@@ -2,7 +2,7 @@
     "translations": {
         "MainMenuItemsH": "Items & Gearing",
         "MainMenuCharactersH": "Characters",
-        "LegendaryCompareTitle": "Legendary Compare",
+        "LegendaryCompareTitle": "Legendaries at a Glance",
         "author": {
             "title": "Author Name",
             "value": "Tariqul"
@@ -14,7 +14,7 @@
             "value": "Whenever I smell strong tobacco smos away from the smoker and fills the room."
         },
 
-        "Rejuv Spreader": {
+        "Vision of Unending Growth": {
             "name": "Vision of Unending Growth",
             "desc": "Rejuvenation has a 2% chance to create a new Rejuvenation on a nearby target on tick.",
             "droploc": "Currently Unknown"
@@ -26,14 +26,14 @@
             "droploc": "Halls of Atonement (Dungeon)"
         },
 
-        "Swiftmend Extension": {
+        "Verdant Infusion": {
             "name": "Verdant Infusion",
             "desc": "Swiftmend no longer consumes a heal over time effect, and extends the duration of HoTs on the target by 10s.",
             "droploc": "Oranomonos (World Boss)"
 
         },
 
-        "Free Wild Growth": {
+        "Lycaras Fleeting Glimpse": {
             "name": "Lycara's Fleeting Glimpse",
             "desc": "Every 45s while in combat, cast a spell based on your form (Wild Growth, Primal Wrath, Starfall, Stampeding Roar).",
             "droploc": "Theater of Pain (Dungeon)"
@@ -57,6 +57,50 @@
             "name": "Circle of Life and Death",
             "desc": "DoT's deal damage in 25% less time, HoTs in 15% less time.",
             "droploc": "Stone Legion Generals (Raid)"
+        },
+
+
+        
+        "From Dusk till Dawn": {
+            "name": "From Dusk till Dawn",
+            "desc": "When you reach 5 Holy Power, gain 6% damage and healing for 10 seconds. When you reach 0 Holy Power, gain 6% DR for 10 seconds.",
+            "droploc": "Stone Legion Generals (Raid)"
+        },
+
+        "Vanguards Momentum": {
+            "name": "Vanguard's Momentum",
+            "desc": "Hammer of Wrath has two extra charges.",
+            "droploc": "Currently Unknown"
+        },
+
+        "The Magistrates Judgment": {
+            "name": "The Magistrate's Judgment",
+            "desc": "Judgment has a 60% chance to reduce the cost of your next Holy Power spender by 60%.",
+            "droploc": "Theater of Pain"
+        },
+
+        "Inflorescence of the Sunwell": {
+            "name": "Inflorescence of the Sunwell",
+            "desc": "Infusion of Light has 1 additional charge and its effects are increased by 20%.",
+            "droploc": "Currently Unknown"
+        },
+
+        "Maraads Dying Breath": {
+            "name": "Maraad's Dying Breath",
+            "desc": "Light of Dawn causes your next Light of the Martyr to also heal your Beacon of Light. Each ally hit by LoD increases Light of the Martyr healing by 10%.",
+            "droploc": "Sanguine Depths (Dungeon)"
+        },
+
+        "Shadowbreaker, Dawn of the Sun": {
+            "name": "Shadowbreaker, Dawn of the Sun",
+            "desc": "Light of Dawns range is increased to 40 yards, and all allies healed receive +20% healing from you for 6 seconds.",
+            "droploc": "Sun Kings Salvation (Raid)"
+        },
+
+        "Shock Barrier": {
+            "name": "Shock Barrier",
+            "desc": "Holy Shock protects the target for 18 seconds, absorbing X damage every 6 seconds. Maximum of 3 targets protected at a time.",
+            "droploc": "Currently Unknown"
         }
         
     }

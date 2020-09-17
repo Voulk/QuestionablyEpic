@@ -15,7 +15,7 @@
     position: absolute;
     right: 0px;
     top: 0px;
-    max-height: 42px;
+    max-height: 44px;
     width: auto;
 }
 
@@ -50,7 +50,7 @@
     border: 2px Solid black;
     display: inline-block;
     margin: 7px;
-    width: 300px;
+    width: 332px;
     height: 200px;
     background-color: #DBA530;
     background-image: url("https://www.transparenttextures.com/patterns/crossword.png");

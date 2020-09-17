@@ -3,7 +3,22 @@ import ReactDOM from 'react-dom';
 import { useTranslation } from "react-i18next";
 
 const legendaryImages = {
-    'The Dark Titans Lesson' : require('../../../Images/Legendaries/TheDarkTitansLesson.jpg')
+    "The Dark Titans Lesson" : require('../../../Images/Legendaries/TheDarkTitansLesson.jpg'),
+    "Circle of Life and Death" : require('../../../Images/Legendaries/CircleOfLifeAndDeath.jpg'),
+    "Lycaras Fleeting Glimpse" : require('../../../Images/Legendaries/LycarasFleetingGlimpse.jpg'),
+    "Memory of the Mother Tree" : require('../../../Images/Legendaries/MemoryOfTheMotherTree.jpg'),
+    "Oath of the Elder Druid" : require('../../../Images/Legendaries/OathOfTheElderDruid.jpg'),
+    "Verdant Infusion" : require('../../../Images/Legendaries/VerdantInfusion.jpg'),
+    "Vision of Unending Growth" : require('../../../Images/Legendaries/VisionOfUnendingGrowth.jpg'),
+
+    // Paladin
+    "From Dusk till Dawn" : require('../../../Images/Legendaries/FromDuskTillDawn.jpg'),
+    "Vanguards Momentum" : require('../../../Images/Legendaries/VanguardsMomentum.jpg'),
+    "The Magistrates Judgment" : require('../../../Images/Legendaries/TheMagistratesJudgment.jpg'),
+    "Inflorescence of the Sunwell" : require('../../../Images/Legendaries/InflorescenceOfTheSunwell.jpg'),
+    "Maraads Dying Breath" : require('../../../Images/Legendaries/MaraadsDyingBreath.jpg'),
+    "Shadowbreaker, Dawn of the Sun" : require('../../../Images/Legendaries/ShadowbreakerDawnOfTheSun.jpg'),
+    "Shock Barrier" : require('../../../Images/Legendaries/ShockBarrier.jpg')
    
 }
 
