@@ -11,7 +11,7 @@
 
         "description": {
             "title": "description",
-            "value": "Whenever I smell strong tobacco smoke when I'm in an enclosed space such as a room, train, or aircraft, I begin to get angry. There are several reasons. First, medical researchers have shown that secondhand smoke, that is, the smoke from other people's cigarettes, causes cancer and other health problems. If the smoke were car exhaust or burning trash, we would put out the fire and open the windows to get rid of the smoke. Second, it stinks. The smoke drifts away from the smoker and fills the room."
+            "value": "Whenever I smell strong tobacco smos away from the smoker and fills the room."
         },
 
         "Rejuv Spreader": {
@@ -28,16 +28,35 @@
 
         "Swiftmend Extension": {
             "name": "Verdant Infusion",
-            "desc": "Swiftmend no longer consumes a heal over time effect, and extends the duration of HoTs on the target by 10s",
+            "desc": "Swiftmend no longer consumes a heal over time effect, and extends the duration of HoTs on the target by 10s.",
             "droploc": "Oranomonos (World Boss)"
 
         },
 
         "Free Wild Growth": {
             "name": "Lycara's Fleeting Glimpse",
-            "desc": "Every 45s while in combat, cast a spell based on your form (Wild Growth, Primal Wrath, Starfall, Stampeding Roar)",
+            "desc": "Every 45s while in combat, cast a spell based on your form (Wild Growth, Primal Wrath, Starfall, Stampeding Roar).",
             "droploc": "Theater of Pain (Dungeon)"
 
+        },
+
+        "Memory of the Mother Tree": {
+            "name": "Memory of the Mother Tree",
+            "desc": "Wild Growth has a 25% chance to cause your next Rejuv or Regrowth to apply to 2 additional allies.",
+            "droploc": "Inerva Darkvein (Raid)"
+
+        },
+
+        "Oath of the Elder Druid": {
+            "name": "Oath of the Elder Druid",
+            "desc": "Effects of Thick Hide, Astral Influence, Feline Swiftness and Ysera's Gift increased by 75%. Free Heart of the Wild per minute.",
+            "droploc": "PVP Honor Vendor"
+        },
+
+        "Circle of Life and Death": {
+            "name": "Circle of Life and Death",
+            "desc": "DoT's deal damage in 25% less time, HoTs in 15% less time.",
+            "droploc": "Stone Legion Generals (Raid)"
         }
         
     }

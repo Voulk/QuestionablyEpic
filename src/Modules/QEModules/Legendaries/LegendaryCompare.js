@@ -38,7 +38,8 @@ const createLegendary = (legendaryName, container, spec, pl, contentType) => {
 const fillLegendaries = (container, spec, pl, contentType) => {
     //container = [];
     let choices = {
-      "Restoration Druid": ["Rejuv Spreader", "Swiftmend Extension", "The Dark Titans Lesson", "Free Wild Growth"],
+      "Restoration Druid": ["Rejuv Spreader", "Swiftmend Extension", "The Dark Titans Lesson", "Free Wild Growth", 
+                            "Circle of Life and Death", "Oath of the Elder Druid", "Memory of the Mother Tree"],
       "Holy Paladin": ["HolyPaladinLegendary1"],
       "Holy Priest": ["HolyPriestLegendary1"]
     }
