@@ -7,13 +7,16 @@ var averageHoTCount = 1.4; // TODO: Build this in correctly and pull it from log
 
 
 class Player {
-    constructor(playerName, specName, charID) {
+    constructor(playerName, specName, charID, statWeights="default") {
         this.spec = specName;
         this.charName = playerName;
         this.charID = charID;
         this.setupDefaults();
+
+        if (statWeights != "default") this.statWeights = statWeights;
         //this.getStatPerc = getStatPerc;
     }
+
 
     spec = "";
     charID = 0;

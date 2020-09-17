@@ -15,10 +15,32 @@ import ls from "local-storage";
 class PlayerChars  {
     constructor() {
         
-        this.allChar = JSON.parse(ls.get("allChar")) || [new Player("VoulkThree", "Restoration Druid", 0)];
+        // Check our local storage for our characters.
+        let playerChars = JSON.parse(ls.get("allChar")) || [];
+
+        // 
+        let charArray = []
+        // If we have characters in storage, loop through them and create a new Player object for each.
+        // We can't load our players in directly because if we don't instantiate new Player objects they won't have the necessary functions
+        // that we need for each module. 
+        if (playerChars.length !== 0) {
+            
+            playerChars.forEach(function(player) {
+                
+                // This could be changed later if we end up storing more information about a character. Say, the most recent log they were in.
+                charArray.push(new Player(player.charName, player.spec, player.charID, player.statWeights))
+            }) 
+        }
+        else {
+            // If we don't have any characters stored, initilize an empty array. For now we have a demo character inserted but on live
+            // you'll just start without characters and it'll prompt you to create your first.
+            charArray = [new Player("VoulkDemo", "Restoration Druid", 0)]
+        }
+
+        this.allChar = charArray;
+        /*this.allChar = JSON.parse(ls.get("allChar")) || [new Player("VoulkThree", "Restoration Druid", 0)]; // This is the previous code. To be eventually removed */
         this.activeChar = ls.get("activeChar") || 0;
         
-        //this.saveAllChar = this.saveAllChar.bind(this);
     };
 
     allChar = []; // An array of all our characters. 
