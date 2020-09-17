@@ -39,6 +39,7 @@ import { localizationRU, localizationCH } from "./TableLocalization.js";
 import MenuItem from "@material-ui/core/MenuItem";
 import bossIcons from "../CooldownTable/BossIcons";
 import bossAbilityIcons from "../Functions/IconFunctions/BossAbilityIcons";
+import ls from "local-storage";
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -173,7 +174,14 @@ export default function CustomEditComponent(props) {
   const handleChangeBoss = (event) => {
     console.log(event.target.value);
     setBoss(event.target.value);
+    if (ls.get(raid + "." + boss + ".1") === null) {
+      ls.set(raid + "." + boss + ".1", []);
+    }
+
+    setData(ls.get(raid + "." + event.target.value + ".1"));
+    console.log(data);
   };
+
   const handleChangePlan = (event) => {
     setPlan(event.target.value);
   };
@@ -359,8 +367,19 @@ export default function CustomEditComponent(props) {
   ];
 
   useEffect(() => {
-    props.update(data);
-  }, [data]);
+    nathriaBossList.map((key) => {
+      if (ls.get("Castle Nathria" + "." + key.id + ".1") === null) {
+        ls.set("Castle Nathria" + "." + key.id + ".1", []);
+      }
+    });
+  });
+
+  useEffect(
+    () => {
+      props.update(data);
+    },
+    [data]
+  );
 
   let curLang = (lang) => {
     if (lang === "en") {
@@ -372,6 +391,39 @@ export default function CustomEditComponent(props) {
     } else {
       return false;
     }
+  };
+
+  //  Shriekwing CD Plan
+  //  nathria.2398.1
+  //  Huntsman Altimor
+  //  nathria.2418.1
+  //  Sun King's Salvation
+  //  nathria.2402.1
+  //  Artificer Xy'mox
+  //  nathria.2405.1
+  //  Hungering Destroyer
+  //  nathria.2383.1
+  //  Lady Inerva Darkvein
+  //  nathria.2406.1
+  //  The Council of Blood
+  //  nathria.2412
+  //  Sludgefist.1
+  //  nathria.2399
+  //  Stone Legion Generals
+  //  nathria.2417.1
+  //  Sire Denathrius
+  //  nathria.2407.1
+  //
+  //    let updateStorage = (props, boss) => {
+  //
+  //
+  //
+  
+  let updateStorage = (props, boss) => {
+    if (ls.get(raid + "." + boss + ".1") === null) {
+      ls.set(raid + "." + boss + ".1", []);
+    }
+    ls.set(raid + "." + boss + ".1", props);
   };
 
   return (
@@ -474,7 +526,7 @@ export default function CustomEditComponent(props) {
                       </Select>
                     </FormControl>
                   </Grid>
-                  <Grid item xs="auto">
+                  {/*<Grid item xs="auto">
                     <FormControl
                       style={{ minWidth: 200 }}
                       variant="outlined"
@@ -495,7 +547,7 @@ export default function CustomEditComponent(props) {
                         <MenuItem value={"plan4"}>Plan 4</MenuItem>
                       </Select>
                     </FormControl>
-                  </Grid>
+                  </Grid> */}
                 </Grid>
                 <Grid item xs="auto">
                   <ThemeProvider theme={SearchFieldOverride}>
@@ -515,6 +567,7 @@ export default function CustomEditComponent(props) {
               setTimeout(() => {
                 setData([...data, newData]);
                 resolve();
+                updateStorage([...data, newData], boss);
               }, 1000);
             }),
           onRowUpdate: (newData, oldData) =>
@@ -524,6 +577,7 @@ export default function CustomEditComponent(props) {
                 const index = oldData.tableData.id;
                 dataUpdate[index] = newData;
                 setData([...dataUpdate]);
+                updateStorage([...dataUpdate], boss);
                 resolve();
               }, 1000);
             }),
@@ -534,6 +588,7 @@ export default function CustomEditComponent(props) {
                 const index = oldData.tableData.id;
                 dataDelete.splice(index, 1);
                 setData([...dataDelete]);
+                updateStorage([...dataDelete], boss);
                 resolve();
               }, 1000);
             }),

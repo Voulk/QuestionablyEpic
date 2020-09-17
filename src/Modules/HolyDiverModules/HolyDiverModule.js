@@ -27,6 +27,7 @@ import {
   warcraftLogReportID,
   sumDamage,
   logDifficulty,
+  importSummaryData,
 } from "../HolyDiverModules/Functions/Functions";
 import bossHeaders from "../HolyDiverModules/CooldownTable/BossHeaderIcons";
 import Grow from "@material-ui/core/Grow";
@@ -109,7 +110,11 @@ class HolyDiver extends Component {
       this.state.reportid
     );
 
-    console.log(healers)
+    let summary = await importSummaryData(starttime,
+      endtime,
+      this.state.reportid)
+
+    console.log(summary)
 
     // Map Healer id, name, class type
     let healerIDName = healers.map((key) => ({
@@ -697,13 +702,14 @@ class HolyDiver extends Component {
               <Collapse in={this.state.damageTableShow}>
                 <DenseAppBar
                   onClick={this.timelineHandler}
-                  title="Damaging Abilities"
+                  title="DTPS by Ability"
                 />
                 <Collapse in={this.state.timelineshowhide}>
-                  <DtpsTable
+                <Example data={this.state.summedUnmitigatedDamagePerSecond}/>
+                  {/* <DtpsTable
                     data={this.state.summedUnmitigatedDamagePerSecond}
                     curLang={this.props.curLang}
-                  />
+                  /> */}
                 </Collapse>
               </Collapse>
             </Grid>
@@ -720,15 +726,15 @@ class HolyDiver extends Component {
               </Collapse>
             </Grid>
 
-            {/*
+        
             
           <Grid item xs={3} padding={1}>
           <Collapse in={this.state.damageTableShow}>
-            <Example />
+            
              </Collapse>
           </Grid>
 
-            
+                {/*
               
                 <DenseAppBar
                   onClick={this.timelineHandler}

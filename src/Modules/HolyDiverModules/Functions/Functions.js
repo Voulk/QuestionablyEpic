@@ -389,7 +389,6 @@ export function warcraftLogReportID(string) {
   return reportID;
 }
 
-
 export function sumDamage(array) {
   let timestampSum = array.reduce((x, n) => {
     for (let prop in n) {
@@ -398,7 +397,7 @@ export function sumDamage(array) {
       } else {
         x[prop] = n[prop];
       }
-    } 
+    }
     return x;
   }, {});
   return timestampSum;
@@ -416,4 +415,30 @@ export function logDifficulty(dif) {
   } else {
     return "Error: Difficulty Missing :(";
   }
+}
+
+// Returns Array of Healer Information
+export async function importSummaryData(starttime, endtime, reportid) {
+  const APISummary =
+    "https://www.warcraftlogs.com:443/v1/report/tables/summary/";
+  const API2 = "&api_key=92fc5d4ae86447df22a8c0917c1404dc";
+  const START = "?start=";
+  const END = "&end=";
+  let summary = [];
+  // Class Casts Import
+
+  await axios
+    .get(APISummary + reportid + START + starttime + END + endtime + API2)
+    .then((result) => {
+      summary = Object.keys(result.data.playerDetails)
+
+        .filter((key) => key === "healers")
+        .map((key) => result.data.playerDetails[key]);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  console.log(summary);
+
+  return summary;
 }
