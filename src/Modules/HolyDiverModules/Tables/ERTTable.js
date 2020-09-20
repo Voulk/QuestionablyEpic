@@ -16,7 +16,6 @@ import SaveAlt from "@material-ui/icons/SaveAlt";
 import Search from "@material-ui/icons/Search";
 import ViewColumn from "@material-ui/icons/ViewColumn";
 import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
-import "./Table.css";
 import { bossAbilities } from "../Data/Data";
 import moment from "moment";
 import { localizationRU, localizationCH } from "./TableLocalization.js"

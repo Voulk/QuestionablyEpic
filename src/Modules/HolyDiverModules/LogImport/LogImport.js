@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import moment from "moment";
 import MenuItem from "@material-ui/core/MenuItem";
-import bossIcons from "../CooldownTable/BossIcons";
+import bossIcons from "../Functions/IconFunctions/BossIcons";
 import { fightDurationCalculator } from "../Functions/Functions";
 
 const API = "https://www.warcraftlogs.com:443/v1/report/fights/";

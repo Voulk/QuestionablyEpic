@@ -22,8 +22,8 @@ import TextField from "@material-ui/core/TextField";
 import InputLabel from "@material-ui/core/InputLabel";
 import FormControl from "@material-ui/core/FormControl";
 import { makeStyles } from "@material-ui/core/styles";
-import abilityicons from "../CooldownTable/AbilityIcons";
-import classicons from "../CooldownTable/ClassIcons";
+import abilityicons from "../Functions/IconFunctions/AbilityIcons";
+import classicons from "../Functions/IconFunctions/ClassIcons";
 import moment from "moment";
 import {
   healerCooldownsDetailed,
@@ -31,13 +31,12 @@ import {
   nathriaBossList,
   bossAbilities,
 } from "../Data/Data";
-import { classColoursJS } from "../CooldownTable/ClassColourFunctions";
-import { classMenus } from "../CooldownTable/ClassMenuItems";
-import "./Table.css";
+import { classColoursJS } from "../Functions/ClassColourFunctions";
+import { classMenus } from "../Tables/ClassMenuItems";
 import { useTranslation } from "react-i18next";
 import { localizationRU, localizationCH } from "./TableLocalization.js";
 import MenuItem from "@material-ui/core/MenuItem";
-import bossIcons from "../CooldownTable/BossIcons";
+import bossIcons from "../Functions/IconFunctions/BossIcons";
 import bossAbilityIcons from "../Functions/IconFunctions/BossAbilityIcons";
 import ls from "local-storage";
 
@@ -158,7 +157,7 @@ const tableIcons = {
   )),
 };
 
-export default function CustomEditComponent(props) {
+export default function CooldownPlanner(props) {
   const classes = useStyles();
   const { t } = useTranslation();
   const { useState } = React;
@@ -294,7 +293,7 @@ export default function CustomEditComponent(props) {
           size="small"
           variant="outlined"
           id="standard-basic"
-          label={t("CastTimeLabel")}
+          label={t("HDTableLabels.CastTimeLabel")}
           placeholder="Format: mm:ss"
           value={props.value}
           style={{ whiteSpace: "nowrap", width: "100%" }}

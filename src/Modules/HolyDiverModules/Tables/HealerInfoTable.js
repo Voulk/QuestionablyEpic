@@ -5,9 +5,9 @@ import AccordionSummary from "@material-ui/core/AccordionSummary";
 import AccordionDetails from "@material-ui/core/AccordionDetails";
 import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import classicons from "../CooldownTable/ClassIcons";
-import talentIcons from "../CooldownTable/TalentIcons";
-import { classColoursJS } from "../CooldownTable/ClassColourFunctions";
+import classicons from "../Functions/IconFunctions/ClassIcons";
+import talentIcons from "../Functions/IconFunctions/TalentIcons";
+import { classColoursJS } from "../Functions/ClassColourFunctions";
 import { useTranslation } from "react-i18next";
 import Paper from "@material-ui/core/Paper";
 

@@ -16,8 +16,7 @@ import SaveAlt from "@material-ui/icons/SaveAlt";
 import Search from "@material-ui/icons/Search";
 import ViewColumn from "@material-ui/icons/ViewColumn";
 import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
-import "./Table.css";
-import abilityicons from "../CooldownTable/AbilityIcons";
+import abilityicons from "../Functions/IconFunctions/AbilityIcons";
 import { localizationRU, localizationCH } from "./TableLocalization.js"
 
 const theme = createMuiTheme({

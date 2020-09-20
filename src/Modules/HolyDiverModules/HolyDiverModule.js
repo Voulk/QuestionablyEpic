@@ -11,10 +11,10 @@ import Example from "../HolyDiverModules/Chart/DTPSBarChart";
 import moment from "moment";
 import FightSelectorButton from "../HolyDiverModules/UserInput/FightSelectorButton";
 import LoadingOverlay from "react-loading-overlay";
-import CustomEditComponent from "../HolyDiverModules/CooldownTable/Table";
-import CooldownTimeline from "../HolyDiverModules/CooldownTable/CooldownTimeline";
+import CooldownPlanner from "../HolyDiverModules/Tables/CooldownPlanner.js";
+import CooldownTimeline from "../HolyDiverModules/Tables/CooldownTimelineTable";
 import DenseAppBar from "../HolyDiverModules/BasicComponents/Appbar";
-import { classColoursERT } from "../HolyDiverModules/CooldownTable/ClassColourFunctions";
+import { classColoursERT } from "../HolyDiverModules/Functions/ClassColourFunctions";
 import {
   addMissingTimestamps,
   getUniqueObjectsFromArray,
@@ -29,14 +29,13 @@ import {
   logDifficulty,
   importSummaryData,
 } from "../HolyDiverModules/Functions/Functions";
-import bossHeaders from "../HolyDiverModules/CooldownTable/BossHeaderIcons";
+import bossHeaders from "../HolyDiverModules/Functions/IconFunctions/BossHeaderIcons";
 import Grow from "@material-ui/core/Grow";
 import Paper from "@material-ui/core/Paper";
-import DtpsTable from "../HolyDiverModules/CooldownTable/DtpsTable";
-import ERTTable from "../HolyDiverModules/CooldownTable/ERTTable";
+import ERTTable from "../HolyDiverModules/Tables/ERTTable";
 import SwitchLabels from "./BasicComponents/Switch";
-import SimpleAccordion from "../HolyDiverModules/CooldownTable/HealerInfo";
-import HealTeam from "../HolyDiverModules/CooldownTable/HealTeam";
+import SimpleAccordion from "../HolyDiverModules/Tables/HealerInfoTable";
+import HealTeam from "../HolyDiverModules/Tables/HealTeamTable";
 
 class HolyDiver extends Component {
   constructor(props) {
@@ -810,7 +809,7 @@ class HolyDiver extends Component {
               <HealTeam curLang={this.props.curLang} />
             </Grid>
             <Grid item xs={8} padding={1}>
-              <CustomEditComponent
+              <CooldownPlanner
                 update={this.tablehandler}
                 curLang={this.props.curLang}
               />
