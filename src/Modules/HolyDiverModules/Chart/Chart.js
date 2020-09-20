@@ -12,7 +12,7 @@ import chroma from "chroma-js";
 import "./Chart.css";
 import moment from "moment";
 import i18n from 'i18next';
-import 'moment/locale/zh-cn';
+
 
 
 class Chart extends Component {
@@ -43,9 +43,12 @@ class Chart extends Component {
     let count = 0;
     let len = dataSet.length;
     let len2 = dataset2.length;
+    // Sets the Colour Scale of the Damaging Abilities (uses brewer colour scales: See in Resources Folder)
     let colorCodes = chroma.scale("Spectral").colors(len);
+    // Sets the Colour Scale of the Cooldown Abilities (uses brewer colour scales: See in Resources Folder)
     let colorCodeCooldowns = chroma.scale("Paired").colors(len2);
 
+    // Pushes Each datakey for ability with a colour from the generated scale to an array for the chart.
     for (let i in dataSet) {
       if (dataSet.hasOwnProperty(i)) {
         areaArr.push(
@@ -66,6 +69,7 @@ class Chart extends Component {
       }
     }
 
+    // if props.showcds is true Pushes Each datakey for ability with a colour from the generated scale to an array for the chart.
     if (this.props.showcds === true) {
       for (let i in dataset2) {
         if (dataset2.hasOwnProperty(i)) {
@@ -90,6 +94,7 @@ class Chart extends Component {
     return areaArr;
   }
 
+  // Generates a set of ticks based on the log length, otherwise the chart doesn't show the missing timestamps
   customticks = (loglength) => {
     let ticks = [];
     let tickcount = 0;
@@ -105,6 +110,7 @@ class Chart extends Component {
     this.setState({ data: this.props.chart });
   }
 
+  // WIP to make custom legend items with wowhead hover.
   renderColorfulLegendText = (value, entry) => {
     // console.log({ value, entry });
     return (
@@ -115,6 +121,7 @@ class Chart extends Component {
   };
 
   render() {
+    // Shortens long numbers i.e 1000000 will be 1M
     const DataFormater = (number) => {
       if (number > 1000000000) {
         return (number / 1000000000).toString() + "B";
