@@ -4,6 +4,7 @@ import HolyDiver from "./Modules/HolyDiverModules/HolyDiverModule";
 import QEMainMenu from "./Modules/QEModules/SetupAndMenus/QEMainMenu.js";
 import TrinketCompare from "./Modules/QEModules/TrinketCompare.js";
 import LegendaryCompare from "./Modules/QEModules/Legendaries/LegendaryCompare.js";
+import QuickCompare from "./Modules/QEModules/QuickCompare/QuickCompare.js";
 import QEHeader from "./Modules/QEModules/SetupAndMenus/QEHeader";
 import PlayerChars from "./Modules/QEModules/Player/PlayerChars";
 
@@ -159,6 +160,17 @@ class App extends Component {
                     pl={this.state.player}
                     langSet={this.langSet}
                     curLang={this.state.lang}
+                  />
+                )}
+              />
+              <Route
+                path="/quickcompare"
+                render={() => (
+                  <QuickCompare
+                    pl={this.state.player}
+                    langSet={this.langSet}
+                    curLang={this.state.lang}
+                    contentType={this.state.contentType}
                   />
                 )}
               />
