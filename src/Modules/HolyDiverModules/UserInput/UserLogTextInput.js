@@ -11,7 +11,7 @@ export default function UserLogTextInput(props) {
       id="filled-basic"
       label={
         props.reportid !== "err"
-          ? t("Paste WarcraftLog Link Here")
+          ? t("HDUserInputs.Loglink")
           : "Incorrect Link / Report ID Provided :("
       }
       variant="outlined"

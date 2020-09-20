@@ -33,7 +33,7 @@ export default class Example extends PureComponent {
             margin={{
               top: 5,
               right: 30,
-              left: 20,
+              left: 30,
               bottom: 5,
             }}
             layout="vertical"
@@ -41,8 +41,7 @@ export default class Example extends PureComponent {
             <XAxis type="number" stroke="#f5f5f5" />
             <YAxis type="category" dataKey="ability" stroke="#f5f5f5"
              />
-            <Tooltip />
-            <Bar dataKey="damage" fill="#8884d8" />
+            <Bar label={{ fill: "#f5f5f5", fontSize: 12, position:"right" }} dataKey="damage" fill="#8884d8" />
           </BarChart>
         </ResponsiveContainer>
       </Paper>

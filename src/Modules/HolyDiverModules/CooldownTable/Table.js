@@ -43,7 +43,7 @@ import ls from "local-storage";
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
-    margin: theme.spacing(1),
+    // margin: theme.spacing(1),
     whiteSpace: "nowrap",
     width: "100%",
   },
@@ -53,10 +53,10 @@ const themecooldowntable = createMuiTheme({
   overrides: {
     MuiTableCell: {
       regular: {
-        padding: "0px 16px 0px 16px",
+        padding: "0px 8px 0px 8px",
       },
       root: {
-        padding: "0px 16px 0px 16px",
+        padding: "4px 4px 4px 4px",
       },
     },
     MuiIconButton: {
@@ -160,7 +160,7 @@ const tableIcons = {
 
 export default function CustomEditComponent(props) {
   const classes = useStyles();
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const { useState } = React;
   const rl = raidList;
   const [data, setData] = useState([]);
@@ -186,33 +186,53 @@ export default function CustomEditComponent(props) {
     setPlan(event.target.value);
   };
 
+  // ls.get("healerInfo")
+  //   .filter((obj) => {
+  //     return obj.name === rowData.name;
+  //   })
+  //   .map((obj) => obj.class)
+  //   .toString()
+
   let wowClass = 0;
   let columns = [
     {
       title: t("Name"),
       field: "name",
-      align: "center",
       render: (rowData) => (
         <div style={{ color: classColoursJS(rowData.class) }}>
           {rowData.name}
         </div>
       ),
       editComponent: (props) => (
-        <TextField
-          size="small"
-          id="standard-basic"
-          variant="outlined"
-          label={t("Name")}
-          value={props.value}
-          style={{ whiteSpace: "nowrap", width: "100%" }}
-          onChange={(e) => props.onChange(e.target.value)}
-        />
+        <ThemeProvider theme={themecooldowntable}>
+          <FormControl
+            className={classes.formControl}
+            variant="outlined"
+            size="small"
+          >
+            <InputLabel id="HealerSelector">{t("Name")}</InputLabel>
+            <Select
+              value={props.value}
+              labelId="HealerSelector"
+              onChange={(e) => {
+                props.onChange(e.target.value);
+                // wowClass = e.target.value;
+              }}
+            >
+              {ls.get("healerInfo").map((key, i) => (
+                <MenuItem key={i} value={key.name}>
+                  {" "}
+                  {key.name}{" "}
+                </MenuItem>
+              ))}
+            </Select>
+          </FormControl>
+        </ThemeProvider>
       ),
     },
     {
       title: t("Class"),
       field: "class",
-      align: "center",
       render: (rowData) => (
         <div style={{ color: classColoursJS(rowData.class) }}>
           {classicons(rowData.class, 20)}
@@ -244,7 +264,6 @@ export default function CustomEditComponent(props) {
     {
       title: t("Cooldown"),
       field: "Cooldown",
-      align: "center",
       render: (rowData) => abilityicons(rowData.Cooldown),
       editComponent: (props) => (
         // <ThemeProvider theme={themecooldowntable}>
@@ -268,15 +287,14 @@ export default function CustomEditComponent(props) {
       ),
     },
     {
-      title: t("Time"),
+      title: t("HDTableLabels.CastTimeLabel"),
       field: "time",
-      align: "center",
       editComponent: (props) => (
         <TextField
           size="small"
           variant="outlined"
           id="standard-basic"
-          label="Cast Time"
+          label={t("CastTimeLabel")}
           placeholder="Format: mm:ss"
           value={props.value}
           style={{ whiteSpace: "nowrap", width: "100%" }}
@@ -285,8 +303,7 @@ export default function CustomEditComponent(props) {
       ),
     },
     {
-      title: t("Next Available"),
-      align: "center",
+      title: t("HDTableLabels.OffCooldownLabel"),
       render: (rowData) => (
         <div>
           {moment(rowData.time, "mm:ss")
@@ -304,13 +321,11 @@ export default function CustomEditComponent(props) {
       ),
     },
     {
-      title: t("Boss Ability"),
+      title: t("HDTableLabels.BossAbilityLabel"),
       field: "bossAbility",
-      align: "center",
       render: (rowData) => (
         <div>
-          {" "}
-          {bossAbilityIcons(rowData.bossAbility)} {rowData.bossAbility}{" "}
+          {bossAbilityIcons(rowData.bossAbility)} {rowData.bossAbility}
         </div>
       ),
       editComponent: (props) => (
@@ -321,7 +336,7 @@ export default function CustomEditComponent(props) {
             size="small"
           >
             <InputLabel id="BossAbilitySelector">
-              {t("Boss Ability")}
+              {t("HDTableLabels.BossAbilityLabel")}
             </InputLabel>
             <Select
               value={props.value}
@@ -350,15 +365,14 @@ export default function CustomEditComponent(props) {
       ),
     },
     {
-      title: t("Notes"),
+      title: t("HDTableLabels.NotesLabel"),
       field: "notes",
-      align: "center",
       editComponent: (props) => (
         <TextField
           size="small"
           variant="outlined"
           id="standard-basic"
-          label="Notes"
+          label={t("HDTableLabels.NotesLabel")}
           value={props.value}
           onChange={(e) => props.onChange(e.target.value)}
         />
@@ -372,14 +386,14 @@ export default function CustomEditComponent(props) {
         ls.set("Castle Nathria" + "." + key.id + ".1", []);
       }
     });
+    if (ls.get("healerinfo") === null) {
+      ls.set("healerinfo", []);
+    }
   });
 
-  useEffect(
-    () => {
-      props.update(data);
-    },
-    [data]
-  );
+  useEffect(() => {
+    props.update(data);
+  }, [data]);
 
   let curLang = (lang) => {
     if (lang === "en") {
@@ -393,32 +407,6 @@ export default function CustomEditComponent(props) {
     }
   };
 
-  //  Shriekwing CD Plan
-  //  nathria.2398.1
-  //  Huntsman Altimor
-  //  nathria.2418.1
-  //  Sun King's Salvation
-  //  nathria.2402.1
-  //  Artificer Xy'mox
-  //  nathria.2405.1
-  //  Hungering Destroyer
-  //  nathria.2383.1
-  //  Lady Inerva Darkvein
-  //  nathria.2406.1
-  //  The Council of Blood
-  //  nathria.2412
-  //  Sludgefist.1
-  //  nathria.2399
-  //  Stone Legion Generals
-  //  nathria.2417.1
-  //  Sire Denathrius
-  //  nathria.2407.1
-  //
-  //    let updateStorage = (props, boss) => {
-  //
-  //
-  //
-  
   let updateStorage = (props, boss) => {
     if (ls.get(raid + "." + boss + ".1") === null) {
       ls.set(raid + "." + boss + ".1", []);
@@ -436,7 +424,7 @@ export default function CustomEditComponent(props) {
         style={{
           boxShadow:
             "0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12)",
-          fontSize: "0.8 rem",
+          // fontSize: "0.8 rem",
           marginTop: 4,
         }}
         options={{
@@ -444,19 +432,21 @@ export default function CustomEditComponent(props) {
           searchFieldVariant: "outlined",
           headerStyle: {
             borderBottom: "2px solid #6d6d6d",
-            padding: "0px 16px 0px 16px",
-            fontSize: "0.8 rem",
+            padding: "0px 4px 0px 4px",
+            // fontSize: "0.8 rem",
+            whiteSpace: "nowrap",
           },
           cellStyle: {
-            borderBottom: "1px solid #6d6d6d",
-            fontSize: "0.8 rem",
+            // borderBottom: "1px solid #6d6d6d",
+            // fontSize: "0.8 rem",
             whiteSpace: "nowrap",
-            padding: "0px 16px 0px 16px",
+            // padding: "4px 16px 0px 16px",
           },
           rowStyle: {
             borderBottom: "1px solid #6d6d6d",
-            fontSize: "0.8 rem",
-            padding: "0px 16px 0px 16px",
+            // fontSize: "0.8 rem",
+            padding: "4px 16px 4px 16px",
+            "& :first-child": { paddingLeft: "8px" },
           },
           actionCellStyle: {
             borderBottom: "1px solid #6d6d6d",
@@ -464,6 +454,16 @@ export default function CustomEditComponent(props) {
           actionsColumnIndex: 7,
           paging: false,
         }}
+        //       actions={[
+        //   {
+        //     icon: "add_box",
+        //     tooltip: "my tooltip",
+        //     isFreeAction: true,
+        //     onClick: () => {
+        //       console.log("clicked");
+        //     }
+        //   }
+        // ]}
         localization={curLang(props.curLang)}
         components={{
           Toolbar: (props) => (
@@ -483,7 +483,7 @@ export default function CustomEditComponent(props) {
                       size="small"
                     >
                       <InputLabel id="RaidSelector">
-                        {t("Select Raid")}
+                        {t("HDTableLabels.RaidSelectorLabel")}
                       </InputLabel>
                       <Select
                         labelId="RaidSelector"
@@ -505,11 +505,11 @@ export default function CustomEditComponent(props) {
                       size="small"
                       disabled={raid === "" ? true : false}
                     >
-                      <InputLabel id="RaidSelector">
-                        {t("Select Boss")}
+                      <InputLabel id="BossSelector">
+                        {t("HDTableLabels.BossSelectorLabel")}
                       </InputLabel>
                       <Select
-                        labelId="RaidSelector"
+                        labelId="BossSelector"
                         value={boss}
                         onChange={handleChangeBoss}
                       >
@@ -559,9 +559,6 @@ export default function CustomEditComponent(props) {
           ),
         }}
         editable={{
-          align: "center",
-          cellStyle: { padding: "0px 16px 0px 16px" },
-          rowStyle: { padding: "0px 16px 0px 16px" },
           onRowAdd: (newData) =>
             new Promise((resolve, reject) => {
               setTimeout(() => {

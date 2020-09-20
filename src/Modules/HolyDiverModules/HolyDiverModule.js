@@ -110,11 +110,13 @@ class HolyDiver extends Component {
       this.state.reportid
     );
 
-    let summary = await importSummaryData(starttime,
+    let summary = await importSummaryData(
+      starttime,
       endtime,
-      this.state.reportid)
+      this.state.reportid
+    );
 
-    console.log(summary)
+    console.log(summary);
 
     // Map Healer id, name, class type
     let healerIDName = healers.map((key) => ({
@@ -356,11 +358,22 @@ class HolyDiver extends Component {
       abilitylist: uniqueArray,
       cooldownlist: uniqueArrayCD,
       loadingcheck: false,
-      healernames: healers.map((key) => ({
+      healernames: summary.map((key) => ({
         name: key.name,
         icon: key.icon,
-        talents: key.talents,
+        talents: key.combatantInfo.talents,
         type: key.type,
+        stats: [
+          {
+            intellect: key.combatantInfo.stats.Intellect.min,
+            crit: key.combatantInfo.stats.Crit.min,
+            haste: key.combatantInfo.stats.Haste.min,
+            mastery: key.combatantInfo.stats.Mastery.min,
+            versatility: key.combatantInfo.stats.Versatility.min,
+            leech: key.combatantInfo.stats.Leech.min,
+            ilvl: key.combatantInfo.stats["Item Level"].min,
+          },
+        ],
       })),
       currentEndTime: endtime,
       currentStartTime: starttime,
@@ -527,7 +540,7 @@ class HolyDiver extends Component {
 
     return (
       <div>
-        <div style={{ margin: "20px 50px 20px 50px" }}>
+        <div style={{ margin: "20px 2% 20px 2%" }}>
           <Paper
             bgcolor="#333"
             style={{
@@ -702,10 +715,22 @@ class HolyDiver extends Component {
               <Collapse in={this.state.damageTableShow}>
                 <DenseAppBar
                   onClick={this.timelineHandler}
+                  title="Healer Talents/Legendaries"
+                />
+                <Collapse in={this.state.timelineshowhide}>
+                  <SimpleAccordion heals={this.state.healernames} />
+                </Collapse>
+              </Collapse>
+            </Grid>
+
+            <Grid item xs={3} padding={1}>
+              <Collapse in={this.state.damageTableShow}>
+                <DenseAppBar
+                  onClick={this.timelineHandler}
                   title="DTPS by Ability"
                 />
                 <Collapse in={this.state.timelineshowhide}>
-                <Example data={this.state.summedUnmitigatedDamagePerSecond}/>
+                  <Example data={this.state.summedUnmitigatedDamagePerSecond} />
                   {/* <DtpsTable
                     data={this.state.summedUnmitigatedDamagePerSecond}
                     curLang={this.props.curLang}
@@ -715,26 +740,10 @@ class HolyDiver extends Component {
             </Grid>
 
             <Grid item xs={3} padding={1}>
-              <Collapse in={this.state.damageTableShow}>
-                <DenseAppBar
-                  onClick={this.timelineHandler}
-                  title="Healer Talents/Legendaries"
-                />
-                <Collapse in={this.state.timelineshowhide}>
-                  <SimpleAccordion heals={this.state.healernames} />
-                </Collapse>
-              </Collapse>
+              <Collapse in={this.state.damageTableShow}></Collapse>
             </Grid>
 
-        
-            
-          <Grid item xs={3} padding={1}>
-          <Collapse in={this.state.damageTableShow}>
-            
-             </Collapse>
-          </Grid>
-
-                {/*
+            {/*
               
                 <DenseAppBar
                   onClick={this.timelineHandler}
@@ -797,20 +806,14 @@ class HolyDiver extends Component {
             spacing={1}
             margin={4}
           >
-            <Grid item xs={9} padding={1}>
+            <Grid item xs={4} padding={1}>
+              <HealTeam curLang={this.props.curLang} />
+            </Grid>
+            <Grid item xs={8} padding={1}>
               <CustomEditComponent
                 update={this.tablehandler}
                 curLang={this.props.curLang}
               />
-            </Grid>
-            <Grid item xs={3} padding={1}>
-              <DenseAppBar onClick={this.ertHandler} title="ERT Note" />
-              <Collapse in={this.state.ertshowhide}>
-                <ERTTable
-                  data={this.state.ertList}
-                  curLang={this.props.curLang}
-                />
-              </Collapse>
             </Grid>
           </Grid>
           <Grid
@@ -820,8 +823,14 @@ class HolyDiver extends Component {
             alignItems="flex-start"
             spacing={1}
           >
-            <Grid item xs={4} padding={1}>
-              <HealTeam />
+            <Grid item xs={3} padding={1}>
+              <DenseAppBar onClick={this.ertHandler} title="ERT Note" />
+              <Collapse in={this.state.ertshowhide}>
+                <ERTTable
+                  data={this.state.ertList}
+                  curLang={this.props.curLang}
+                />
+              </Collapse>
             </Grid>
           </Grid>
         </div>

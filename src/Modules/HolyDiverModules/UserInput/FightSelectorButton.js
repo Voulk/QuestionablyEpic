@@ -3,10 +3,11 @@ import LogImport from "../LogImport/LogImport";
 import Menu from "@material-ui/core/Menu";
 import Button from "@material-ui/core/Button";
 import Fade from "@material-ui/core/Fade";
-
+import { useTranslation } from "react-i18next";
 
 export default function FightSelectorButton(props) {
   const [anchorEl, setAnchorEl] = React.useState(null);
+  const { t } = useTranslation();
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -25,7 +26,7 @@ export default function FightSelectorButton(props) {
         variant="outlined"
         style={{ whiteSpace: "nowrap" }}
       >
-        Select Fight
+        {t("HDUserInputs.fightButtonLabel")}
       </Button>
       <Menu
         id="fight-selector"

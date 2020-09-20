@@ -31,7 +31,6 @@ import ls from "local-storage";
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
-    margin: theme.spacing(0.5),
     whiteSpace: "nowrap",
     width: "100%",
   },
@@ -42,12 +41,15 @@ const useStyles = makeStyles((theme) => ({
 
 const themecooldowntable = createMuiTheme({
   overrides: {
-MuiToolbar: {
+    MuiToolbar: {
       regular: {
         minHeight: 0,
         "@media (min-width: 600px)": {
           minHeight: "0px",
         },
+      },
+      root: {
+        padding: "4px 4px 4px 4px",
       },
     },
   },
@@ -114,7 +116,7 @@ const tableIcons = {
 
 export default function HealTeam(props) {
   const classes = useStyles();
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const { useState } = React;
 
   let wowClass = 0;
@@ -122,7 +124,6 @@ export default function HealTeam(props) {
     {
       title: t("Name"),
       field: "name",
-      align: "center",
       render: (rowData) => (
         <div style={{ color: classColoursJS(rowData.class) }}>
           {rowData.name}
@@ -143,7 +144,6 @@ export default function HealTeam(props) {
     {
       title: t("Class"),
       field: "class",
-      align: "center",
       render: (rowData) => (
         <div style={{ color: classColoursJS(rowData.class) }}>
           {classicons(rowData.class, 20)}
@@ -152,7 +152,11 @@ export default function HealTeam(props) {
       ),
       editComponent: (props) => (
         <ThemeProvider theme={themecooldowntable}>
-          <FormControl className={classes.formControl} size="small" variant="outlined">
+          <FormControl
+            className={classes.formControl}
+            size="small"
+            variant="outlined"
+          >
             <InputLabel id="HealerClassSelector">{t("Class")}</InputLabel>
             <Select
               value={props.value}
@@ -168,12 +172,11 @@ export default function HealTeam(props) {
       ),
     },
     {
-      title: t("Notes"),
+      title: t("HDTableLabels.NotesLabel"),
       field: "notes",
-      align: "center",
       editComponent: (props) => (
         <TextField
-        variant="outlined"
+          variant="outlined"
           size="small"
           id="standard-basic"
           label="Notes"
@@ -210,32 +213,32 @@ export default function HealTeam(props) {
     <ThemeProvider theme={themecooldowntable}>
       <MaterialTable
         icons={tableIcons}
-        title={t("Heal Team")}
+        title={t("HDTableLabels.HealTeamHeader")}
         columns={columns}
         data={data}
         style={{
           boxShadow:
             "0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12)",
-          fontSize: "0.8 rem",
+          // fontSize: "0.8 rem",
         }}
         options={{
           search: false,
           padding: "dense",
           headerStyle: {
             borderBottom: "2px solid #6d6d6d",
-            padding: "0px 16px 0px 16px",
-            fontSize: "0.8 rem",
+            padding: "0px 8px 0px 8px",
+            // fontSize: "0.8 rem",
           },
           cellStyle: {
             borderBottom: "1px solid #6d6d6d",
-            fontSize: "0.8 rem",
+            // fontSize: "0.8 rem",
             whiteSpace: "nowrap",
-            padding: "0px 16px 0px 16px",
+            padding: "0px 8px 0px 8px",
           },
           rowStyle: {
             borderBottom: "1px solid #6d6d6d",
-            fontSize: "0.8 rem",
-            padding: "0px 16px 0px 16px",
+            // fontSize: "0.8 rem",
+            padding: "0px 8px 0px 8px",
           },
           searchFieldStyle: {
             borderBottom: "1px solid #6d6d6d",
@@ -249,7 +252,7 @@ export default function HealTeam(props) {
         }}
         localization={curLang(props.curLang)}
         editable={{
-          cellStyle: { padding: "0px 16px 0px 16px" },
+          cellStyle: { padding: "0px 8px 0px 8px" },
           onRowAdd: (newData) =>
             new Promise((resolve, reject) => {
               setTimeout(() => {

@@ -433,12 +433,11 @@ export async function importSummaryData(starttime, endtime, reportid) {
       summary = Object.keys(result.data.playerDetails)
 
         .filter((key) => key === "healers")
-        .map((key) => result.data.playerDetails[key]);
+        .map((key) => result.data.playerDetails[key]).flat();
     })
     .catch(function (error) {
       console.log(error);
     });
-  console.log(summary);
 
   return summary;
 }

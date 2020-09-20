@@ -44,7 +44,7 @@ class Chart extends Component {
     let len = dataSet.length;
     let len2 = dataset2.length;
     let colorCodes = chroma.scale("Spectral").colors(len);
-    let colorCodeCooldowns = chroma.scale("Pastel1").colors(len2);
+    let colorCodeCooldowns = chroma.scale("Paired").colors(len2);
 
     for (let i in dataSet) {
       if (dataSet.hasOwnProperty(i)) {
@@ -157,7 +157,7 @@ class Chart extends Component {
             tickFormatter={DataFormater}
             label={{
               offset: -12,
-              value: i18n.t("Unmitigated Damage"),
+              value: i18n.t("HDChartLabels.UnmitigatedDamageLabel"),
               angle: -90,
               fill: "#f5f5f5",
               fontWeight: "bold",

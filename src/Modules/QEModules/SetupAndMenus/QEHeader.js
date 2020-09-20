@@ -1,16 +1,10 @@
 import React from "react";
-import ReactDOM from "react-dom";
-import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
-import IconButton from "@material-ui/core/IconButton";
-
 import logo from "../../../Images/QeAssets/QELogo.png";
-import MenuIcon from "@material-ui/icons/Menu";
 import "./QEMainMenu.css";
-import Avatar from "@material-ui/core/Avatar";
+
 
 import Box from "@material-ui/core/Box";
 import LanguageSelector from "./LanguageButton";
@@ -20,7 +14,7 @@ import { Link } from "react-router-dom";
 import SimCraftInput from "./SimCraftDialog";
 
 export default function QEHeader(props) {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   // If the player isn't logged in, then show a login button and redirect to the login page on click.
   // If the player IS logged in, show their battle tag and redirect to profile on click.
@@ -38,7 +32,7 @@ export default function QEHeader(props) {
             </Link>
           </Box>
           <div/>
-          <Button color="inherit">{t("Insert Log")}</Button>
+          <Button color="inherit">{t("QeHeader.InsertLogLabel")}</Button>
           <SimCraftInput />
           <Button color="inherit" onClick={props.toggleContentType}>{t(props.contentType)}</Button>
           <ProfileSelector

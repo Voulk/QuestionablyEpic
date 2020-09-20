@@ -8,6 +8,8 @@ import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import classicons from "../CooldownTable/ClassIcons";
 import talentIcons from "../CooldownTable/TalentIcons";
 import { classColoursJS } from "../CooldownTable/ClassColourFunctions";
+import { useTranslation } from "react-i18next";
+import Paper from "@material-ui/core/Paper";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -34,11 +36,12 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function SimpleAccordion(props) {
+  const { t } = useTranslation();
   const classes = useStyles();
 
   return (
     <div className={classes.root}>
-    {console.log(props.heals)}
+      {console.log(props.heals)}
       {props.heals.map((key, index) => (
         <Accordion>
           <AccordionSummary
@@ -47,22 +50,72 @@ export default function SimpleAccordion(props) {
             aria-controls={"panel" + index + "a-content"}
             id={"panel" + index + "a-header"}
           >
-            <Typography style={{color: classColoursJS(key.type) }} className={classes.heading}>
+            <Typography
+              style={{ color: classColoursJS(key.type) }}
+              className={classes.heading}
+            >
               {classicons(key.icon, 16)}
               {key.name}
             </Typography>
           </AccordionSummary>
           <AccordionSummary className={classes.content}>
-            <Typography className={classes.heading}>Talents</Typography>
+            <Typography className={classes.heading}>
+              {t("HDAccordianTitles.StatsHeading")}
+            </Typography>
+          </AccordionSummary>
+
+          <AccordionDetails>
+            <Paper style={{ width: "100%", display: "flex" }} elevation={3}>
+              {key.stats.map((stats) => (
+                <Typography style={{ textAlign: "center" }}>
+                  {t("HDAccordianTitles.Item Level")} {stats.ilvl}
+                </Typography>
+              ))}
+              {key.stats.map((stats) => (
+                <Typography style={{ textAlign: "center" }}>
+                  {t("HDAccordianTitles.Crit")} {stats.crit}
+                </Typography>
+              ))}
+              {key.stats.map((stats) => (
+                <Typography style={{ textAlign: "center" }}>
+                  {t("HDAccordianTitles.Haste")} {stats.haste}
+                </Typography>
+              ))}
+              {key.stats.map((stats) => (
+                <Typography style={{ textAlign: "center" }}>
+                  {t("HDAccordianTitles.Mastery")} {stats.mastery}
+                </Typography>
+              ))}
+              {key.stats.map((stats) => (
+                <Typography style={{ textAlign: "center" }}>
+                  {t("HDAccordianTitles.Versatility")} {stats.versatility}
+                </Typography>
+              ))}
+            </Paper>
+          </AccordionDetails>
+
+          <AccordionSummary className={classes.content}>
+            <Typography className={classes.heading}>
+              {t("HDAccordianTitles.TalentHeader")}
+            </Typography>
           </AccordionSummary>
           <AccordionDetails>
-            {key.talents.map((talent) => talentIcons(talent.guid))}
+            <Paper
+              style={{ width: "100%", display: "flex", padding: 4 }}
+              elevation={3}
+            >
+              {key.talents.map((talent) => talentIcons(talent.guid))}
+            </Paper>
           </AccordionDetails>
           <AccordionSummary className={classes.content}>
-            <Typography className={classes.heading}>Covenant Abiilities</Typography>
+            <Typography className={classes.heading}>
+              {t("HDAccordianTitles.CovenantHeader")}
+            </Typography>
           </AccordionSummary>
           <AccordionSummary className={classes.content}>
-            <Typography className={classes.heading}>Legendaries</Typography>
+            <Typography className={classes.heading}>
+              {t("HDAccordianTitles.LegendaryHeader")}
+            </Typography>
           </AccordionSummary>
         </Accordion>
       ))}
