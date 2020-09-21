@@ -8,6 +8,11 @@
             "value": "タリクル"
         },
 
+        "HeaderLabels": {
+            "Login" : "登录",
+            "" : ""
+        },
+
         "ModuleTitles": {
             "QuickCompare": "快速比较"
           },

@@ -63,6 +63,8 @@ class Legendary {
 } */
 
 // Consider moving to somewhere more globally accessible. 
+// These are value : label pairs that automatically pull the translated version of the slot name.
+// TODO: Add the remaining slots. 
 function getSlots() {
   const { t, i18n } = useTranslation();
   let slots = [{value: 'Head', label: t("slotNames.head")},
@@ -78,8 +80,6 @@ export default function QuickCompare(props) {
     const { t, i18n } = useTranslation();
     const classes = useStyles();
     
-    //const slots = ['Helm', 'Shoulders', 'Chest', 'Ring', 'Trinket', 'Belt'] // Probably store this somewhere more accessible. 
-
     const slots = getSlots();
     const itemDropdown = []; // Filled later based on item slot and armor type.
 
@@ -88,10 +88,12 @@ export default function QuickCompare(props) {
     // This is left as a TODO until key functionality is completed but is a moderate priority. 
     const itemLevels = [226, 220, 214, 208, 202]; 
 
-    const [age, setAge] = React.useState('');
+    // Define State. 
+    const [itemLevel, setItemLevel] = React.useState(0);
+    const [itemName, setItemName] = React.useState('');
     const [activeSlot, setSlot] = React.useState('Helm');
-  
 
+    // Fill Items fills the ItemNames box with items appropriate to the given slot and spec. 
     const fillItems = (slotName, spec) => {
       const acceptableArmorTypes = getValidArmorTypes(spec);
       const acceptableWeaponTypes = getValidWeaponTypes(spec);
@@ -117,14 +119,11 @@ export default function QuickCompare(props) {
             itemDropdown.push({value: item.id, label: item.names[props.curLang]});
  
           }
-
-
-
       }
 
-      // Placeholders.
+      // Placeholders. Delete. 
       if (slotName == "Helm") {
-        itemDropdown.push("HelmItem1");
+        itemDropdown.push({value: "Generic Helm", label: "Generic Helm Label"});
       }
       else {
         itemDropdown.push({value: "Generic Item", label: "Generic Label"});
@@ -132,9 +131,12 @@ export default function QuickCompare(props) {
 
     }
 
-    const handleChange = (event) => {
-      console.log("New value: " + event.target.value);
-      setAge(event.target.value);
+    const itemNameChanged = (event) => {     
+      setItemName(event.target.value);
+    };
+
+    const itemLevelChanged = (event) => {     
+      setItemLevel(event.target.value);
     };
 
     const changeSlot = (event) => {
@@ -167,8 +169,8 @@ export default function QuickCompare(props) {
                 <FormControl className={classes.formControl}> 
                 <InputLabel id="itemname">{t("QuickCompare.ItemName")}</InputLabel>
                 <NativeSelect
-                  value={age}
-                  onChange={handleChange}
+                  value={itemName}
+                  onChange={itemNameChanged}
                   displayEmpty
                 >
                   <option aria-label="None" value="" />
@@ -181,8 +183,8 @@ export default function QuickCompare(props) {
                 <FormControl className={classes.formControl}> 
                 <InputLabel id="itemlevel">{t("QuickCompare.ItemLevel")}</InputLabel>
                 <NativeSelect
-                  value={age}
-                  onChange={handleChange}
+                  value={itemLevel}
+                  onChange={itemLevelChanged}
                   displayEmpty
                 >
                   <option aria-label="None" value="" />

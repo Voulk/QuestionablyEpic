@@ -91,10 +91,10 @@ export default function ProfileSelector(props) {
   }, [open]);
 
   function buttonTHing(name) {
-    if (name === t("Login")) {
+    if (name === t("HeaderLabels.Login")) {
       return (
         <div>
-          <Button onClick={handleDialogOpen}>Login</Button>
+          <Button onClick={handleDialogOpen}>{t("HeaderLabels.Login")}</Button>
           <Dialog
             onClose={handleCloseDialog}
             aria-labelledby="customized-dialog-title"

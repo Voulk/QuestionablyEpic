@@ -10,6 +10,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import ruFlag from "../../../locale/ru/ru.png";
 import enFlag from "../../../locale/en/en.png";
 import chFlag from "../../../locale/ch/ch.png";
+import frFlag from "../../../locale/fr/fr.png";
 import { useTranslation, withTranslation, Trans } from 'react-i18next';
 
 const useStyles = makeStyles((theme) => ({
@@ -70,6 +71,8 @@ export default function LanguageSelector(props) {
       return ruFlag;
     } else if (check === "ch") {
       return chFlag;
+    } else if (check === "fr") {
+      return frFlag;
     } else {
       return enFlag;
     }
@@ -115,6 +118,10 @@ export default function LanguageSelector(props) {
                     <MenuItem onClick={(e) => handleClose(e, "en")}>
                       <img src={enFlag} style={{ marginRight: "5px" }} />
                       EN
+                    </MenuItem>
+                    <MenuItem onClick={(e) => handleClose(e, "fr")}>
+                      <img src={frFlag} style={{ marginRight: "5px" }} />
+                      FR
                     </MenuItem>
                     <MenuItem onClick={(e) => handleClose(e, "ru")}>
                       <img src={ruFlag} style={{ marginRight: "5px" }} />

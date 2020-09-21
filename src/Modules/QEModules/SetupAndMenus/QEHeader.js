@@ -19,7 +19,7 @@ export default function QEHeader(props) {
   // If the player isn't logged in, then show a login button and redirect to the login page on click.
   // If the player IS logged in, show their battle tag and redirect to profile on click.
   // TODO: Implement profile.
-  let playerName = props.playerTag || t("Login");
+  let playerName = props.playerTag || t("HeaderLabels.Login");
   let linkTarget = props.playerTag === "" ? "/login" : "/profile";
 
   return (

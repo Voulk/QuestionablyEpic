@@ -1,17 +1,17 @@
 {
   "translations": {
-    "MainMenuItemsH": "Items & Gearing",
-    "MainMenuCharactersH": "Characters",
-    "LegendaryCompareTitle": "Legendaries at a Glance",
+    "MainMenuItemsH": "Items & GearingFr",
+    "MainMenuCharactersH": "CharactersFr",
+    "LegendaryCompareTitle": "Legendaries at a GlanceFr",
 
     "ModuleTitles": {
-      "QuickCompare": "Quick Compare"
+      "QuickCompare": "Quick CompareFr"
     },
 
     "QuickCompare": {
-      "Slot": "Slot",
-      "ItemName": "Item Name",
-      "ItemLevel" : "Item Level"
+      "Slot": "SlotFr",
+      "ItemName": "Item NameFr",
+      "ItemLevel" : "Item LevelFr"
     },
 
     "HeaderLabels": {
