@@ -4,6 +4,16 @@
     "MainMenuCharactersH": "Characters",
     "LegendaryCompareTitle": "Legendaries at a Glance",
 
+    "ModuleTitles": {
+      "QuickCompare": "Quick Compare"
+    },
+
+    "QuickCompare": {
+      "Slot": "Slot",
+      "ItemName": "Item Name",
+      "ItemLevel" : "Item Level"
+    },
+
     "_Comments1": "Common Words",
     "Login": "Login",
     "Name": "Name",
@@ -54,6 +64,12 @@
       "title": "description",
       "value": "Whenever I smell strong tobacco smos away from the smoker and fills the room."
     },
+    "slotNames": {
+      "head" : "Helm",
+      "shoulder" : "Shoulders",
+      "waist" : "Belt"
+    },
+
     "Vision of Unending Growth": {
       "name": "Vision of Unending Growth",
       "desc": "Rejuvenation has a 2% chance to create a new Rejuvenation on a nearby target on tick.",

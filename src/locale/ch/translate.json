@@ -7,9 +7,26 @@
             "title": "著者名",
             "value": "タリクル"
         },
+
+        "ModuleTitles": {
+            "QuickCompare": "快速比较"
+          },
+
+        "QuickCompare": {
+            "Slot": "物品栏",
+            "ItemName": "名称",
+            "ItemLevel" : "物品等级"
+        },
+
         "description": {
             "title": "説明",
             "value": "部屋、電車、飛行機な。"
-        }
+        },
+
+        "slotNames": {
+            "head" : "头部",
+            "shoulder" : "肩部",
+            "waist" : "腰部"
+          }
     }
 }

@@ -62,12 +62,31 @@ class Legendary {
      
 } */
 
+// Consider moving to somewhere more globally accessible. 
+function getSlots() {
+  const { t, i18n } = useTranslation();
+  let slots = [{value: 'Head', label: t("slotNames.head")},
+              {value: 'Shoulder', label: t("slotNames.shoulder")},
+              {value: 'Waist', label: t("slotNames.waist")},
+
+              ]
+
+  return slots;
+}
+
 export default function QuickCompare(props) {
     const { t, i18n } = useTranslation();
     const classes = useStyles();
     
-    const slots = ['Helm', 'Shoulders', 'Chest', 'Ring', 'Trinket', 'Belt'] // Probably store this somewhere more accessible. 
-    const itemDropdown = [];
+    //const slots = ['Helm', 'Shoulders', 'Chest', 'Ring', 'Trinket', 'Belt'] // Probably store this somewhere more accessible. 
+
+    const slots = getSlots();
+    const itemDropdown = []; // Filled later based on item slot and armor type.
+
+    // Right now the available item levels are static, but given the removal of titanforging each item could hypothetically share 
+    // a list of available ilvls and the player could select from a smaller list instead. 
+    // This is left as a TODO until key functionality is completed but is a moderate priority. 
+    const itemLevels = [226, 220, 214, 208, 202]; 
 
     const [age, setAge] = React.useState('');
     const [activeSlot, setSlot] = React.useState('Helm');
@@ -95,7 +114,7 @@ export default function QuickCompare(props) {
 
             // If item is valid, add to our selection.
             console.log(item.name + item.dropLoc);
-            itemDropdown.push(item.name);
+            itemDropdown.push({value: item.id, label: item.names[props.curLang]});
  
           }
 
@@ -103,17 +122,18 @@ export default function QuickCompare(props) {
 
       }
 
-
+      // Placeholders.
       if (slotName == "Helm") {
         itemDropdown.push("HelmItem1");
       }
       else {
-        itemDropdown.push("Generic Item");
+        itemDropdown.push({value: "Generic Item", label: "Generic Label"});
       }
 
     }
 
     const handleChange = (event) => {
+      console.log("New value: " + event.target.value);
       setAge(event.target.value);
     };
 
@@ -128,37 +148,54 @@ export default function QuickCompare(props) {
         <div style={{backgroundColor: "#353535"}}>
 
           <div style={{margin: "auto", width: "55%", justifyContent: "space-between", display: "block" }}>
-            <p className="headers">{t("GearCompareTitle")}</p>
+            <p className="headers">{t("ModuleTitles.QuickCompare")}</p>
 
             <div className="itemEntry">
                 <FormControl className={classes.formControl}> 
-                <InputLabel id="slots">Slot</InputLabel>
+                <InputLabel id="slots">{t("QuickCompare.Slot")}</InputLabel>
                 <NativeSelect
                   value={activeSlot}
                   onChange={changeSlot}
                   displayEmpty
                 >
-                  {slots.map((x, y) => <option key={y}>{x}</option>)}
+                  {slots.map((x, y) => <option key={y} value={x.value}>{x.label}</option>)}
 
                 </NativeSelect>
 
                 </FormControl>
 
                 <FormControl className={classes.formControl}> 
-                <InputLabel id="itemname">Item Name</InputLabel>
+                <InputLabel id="itemname">{t("QuickCompare.ItemName")}</InputLabel>
                 <NativeSelect
                   value={age}
                   onChange={handleChange}
                   displayEmpty
                 >
                   <option aria-label="None" value="" />
-                  {itemDropdown.map((x, y) => <option key={y} value={y}>{x}</option>)}
+                  {itemDropdown.map((x, y) => <option key={y} value={x.value}>{x.label}</option>)}
+                  
+                </NativeSelect>
+
+                </FormControl>
+
+                <FormControl className={classes.formControl}> 
+                <InputLabel id="itemlevel">{t("QuickCompare.ItemLevel")}</InputLabel>
+                <NativeSelect
+                  value={age}
+                  onChange={handleChange}
+                  displayEmpty
+                >
+                  <option aria-label="None" value="" />
+                  {itemLevels.map((x, y) => <option key={y} value={y}>{x}</option>)}
 
                 </NativeSelect>
 
                 </FormControl>
 
             </div>
+
+
+
 
             <div className="itemList">
 

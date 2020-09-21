@@ -50,7 +50,7 @@ export const itemDB = [{
     "icon": "inv_leather_nazmirraid_d_01shoulder",
     "itemClass": 4,
     "itemSubClass": 2,
-    "itemSlot": "Belt",
+    "itemSlot": "Waist",
     "itemLevel": 350,
     "selectable": true,
     "stats": {
