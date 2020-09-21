@@ -48,8 +48,9 @@ export const itemDB = [{
         "fr": "Égide de légionnaire de la 7e"
     },
     "icon": "inv_leather_nazmirraid_d_01shoulder",
-    "itemClass": 2,
-    "itemSubClass": 7,
+    "itemClass": 4,
+    "itemSubClass": 2,
+    "itemSlot": "Belt",
     "itemLevel": 350,
     "selectable": true,
     "stats": {

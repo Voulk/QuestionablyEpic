@@ -166,7 +166,7 @@ class App extends Component {
                 path="/quickcompare"
                 render={() => (
                   <QuickCompare
-                    pl={this.state.player}
+                    pl={activePlayer}
                     langSet={this.langSet}
                     curLang={this.state.lang}
                     contentType={this.state.contentType}

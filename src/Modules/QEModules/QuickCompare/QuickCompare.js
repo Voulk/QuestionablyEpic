@@ -16,6 +16,7 @@ import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import NativeSelect from '@material-ui/core/NativeSelect';
 import { itemDB } from '../Player/ItemDB'; 
+import { getValidArmorTypes, getValidWeaponTypes } from '../Player/PlayerUtilities'; 
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -65,17 +66,40 @@ export default function QuickCompare(props) {
     const { t, i18n } = useTranslation();
     const classes = useStyles();
     
-    const slots = ['Helm', 'Shoulders', 'Chest', 'Ring', 'Trinket'] // Probably store this somewhere more accessible. 
+    const slots = ['Helm', 'Shoulders', 'Chest', 'Ring', 'Trinket', 'Belt'] // Probably store this somewhere more accessible. 
     const itemDropdown = [];
 
     const [age, setAge] = React.useState('');
     const [activeSlot, setSlot] = React.useState('Helm');
   
 
-    const fillItems = (slotName) => {
+    const fillItems = (slotName, spec) => {
+      const acceptableArmorTypes = getValidArmorTypes(spec);
+      const acceptableWeaponTypes = getValidWeaponTypes(spec);
+
       var i = 0;
       for (i = 0; i < itemDB.length; i++) {
           console.log(itemDB[i].name + itemDB[i].dropLoc);
+          let item = itemDB[i];
+
+          if (slotName === item.itemSlot &&
+              (slotName !== "Weapons & Offhands" && item.itemClass == 4 && acceptableArmorTypes.includes(item.itemSubClass)) ||
+              (slotName === "Weapons & Offhands" && item.itemClass == 2 && acceptableWeaponTypes.includes(item.itemSubClass))) {
+            // If the selected slot is "Weapons & Offhands" then our checks involve:
+            // - Ensuring the item is a weapon (item class 2)
+            // - Ensuring the player can wield that weapon type.
+
+            // If it's not a weapon then we are checking for:
+            // - Ensuring the item isn't a weapon (item class 4 covers us here).
+            // - Ensuring the players spec is able to wear the armor type (Shamans shouldn't show plate, nor leather items for example).
+
+            // If item is valid, add to our selection.
+            console.log(item.name + item.dropLoc);
+            itemDropdown.push(item.name);
+ 
+          }
+
+
 
       }
 
@@ -96,8 +120,8 @@ export default function QuickCompare(props) {
     const changeSlot = (event) => {
       setSlot(event.target.value);
     }
-
-    fillItems(activeSlot);
+    
+    fillItems(activeSlot, props.pl.spec);
 
       return (
         
