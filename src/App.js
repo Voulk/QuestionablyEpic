@@ -7,7 +7,6 @@ import LegendaryCompare from "./Modules/QEModules/Legendaries/LegendaryCompare.j
 import QuickCompare from "./Modules/QEModules/QuickCompare/QuickCompare.js";
 import QEHeader from "./Modules/QEModules/SetupAndMenus/QEHeader";
 import PlayerChars from "./Modules/QEModules/Player/PlayerChars";
-
 import {
   ConfirmLogin,
   QELogin,

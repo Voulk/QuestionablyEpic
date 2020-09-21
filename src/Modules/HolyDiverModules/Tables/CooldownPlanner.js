@@ -38,6 +38,7 @@ import { localizationRU, localizationCH } from "./TableLocalization.js";
 import MenuItem from "@material-ui/core/MenuItem";
 import bossIcons from "../Functions/IconFunctions/BossIcons";
 import bossAbilityIcons from "../Functions/IconFunctions/BossAbilityIcons";
+import Divider from '@material-ui/core/Divider';
 import ls from "local-storage";
 
 const useStyles = makeStyles((theme) => ({

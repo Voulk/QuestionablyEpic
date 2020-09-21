@@ -10,6 +10,10 @@ import talentIcons from "../Functions/IconFunctions/TalentIcons";
 import { classColoursJS } from "../Functions/ClassColourFunctions";
 import { useTranslation } from "react-i18next";
 import Paper from "@material-ui/core/Paper";
+import Card from "@material-ui/core/Card";
+import CardActions from "@material-ui/core/CardActions";
+import CardContent from "@material-ui/core/CardContent";
+import Divider from "@material-ui/core/Divider";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -21,6 +25,7 @@ const useStyles = makeStyles((theme) => ({
   heading: {
     fontSize: theme.typography.pxToRem(15),
     fontWeight: theme.typography.fontWeightRegular,
+    textAlign: "center",
   },
   content: {
     "& .MuiAccordionSummary-content.Mui-expanded": {
@@ -51,72 +56,76 @@ export default function SimpleAccordion(props) {
             id={"panel" + index + "a-header"}
           >
             <Typography
-              style={{ color: classColoursJS(key.type) }}
+              style={{ color: classColoursJS(key.type), textAlign: "center" }}
               className={classes.heading}
             >
               {classicons(key.icon, 16)}
               {key.name}
             </Typography>
           </AccordionSummary>
-          <AccordionSummary className={classes.content}>
-            <Typography className={classes.heading}>
-              {t("HDAccordianTitles.StatsHeading")}
-            </Typography>
-          </AccordionSummary>
-
           <AccordionDetails>
-            <Paper style={{ width: "100%", display: "flex" }} elevation={3}>
-              {key.stats.map((stats) => (
-                <Typography style={{ textAlign: "center" }}>
-                  {t("HDAccordianTitles.Item Level")} {stats.ilvl}
-                </Typography>
-              ))}
-              {key.stats.map((stats) => (
-                <Typography style={{ textAlign: "center" }}>
-                  {t("HDAccordianTitles.Crit")} {stats.crit}
-                </Typography>
-              ))}
-              {key.stats.map((stats) => (
-                <Typography style={{ textAlign: "center" }}>
-                  {t("HDAccordianTitles.Haste")} {stats.haste}
-                </Typography>
-              ))}
-              {key.stats.map((stats) => (
-                <Typography style={{ textAlign: "center" }}>
-                  {t("HDAccordianTitles.Mastery")} {stats.mastery}
-                </Typography>
-              ))}
-              {key.stats.map((stats) => (
-                <Typography style={{ textAlign: "center" }}>
-                  {t("HDAccordianTitles.Versatility")} {stats.versatility}
-                </Typography>
-              ))}
-            </Paper>
-          </AccordionDetails>
-
-          <AccordionSummary className={classes.content}>
-            <Typography className={classes.heading}>
-              {t("HDAccordianTitles.TalentHeader")}
-            </Typography>
-          </AccordionSummary>
-          <AccordionDetails>
-            <Paper
-              style={{ width: "100%", display: "flex", padding: 4 }}
-              elevation={3}
+            <Card
+              style={{
+                width: "100%",
+                display: "inline-flex",
+                backgroundColor: "#353535",
+              }}
+              raised
             >
-              {key.talents.map((talent) => talentIcons(talent.guid))}
-            </Paper>
+              <CardContent style={{ padding: 8 }}>
+                <Typography className={classes.heading} color="primary">
+                  {t("HDAccordianTitles.StatsHeading")}
+                </Typography>
+                <Divider />
+                {key.stats.map((stats) => (
+                  <Typography style={{ textAlign: "center" }}>
+                    {t("HDAccordianTitles.Item Level")} {stats.ilvl}
+                  </Typography>
+                ))}
+                {key.stats.map((stats) => (
+                  <Typography style={{ textAlign: "center" }}>
+                    {t("HDAccordianTitles.Crit")} {stats.crit}
+                  </Typography>
+                ))}
+                {key.stats.map((stats) => (
+                  <Typography style={{ textAlign: "center" }}>
+                    {t("HDAccordianTitles.Haste")} {stats.haste}
+                  </Typography>
+                ))}
+                {key.stats.map((stats) => (
+                  <Typography style={{ textAlign: "center" }}>
+                    {t("HDAccordianTitles.Mastery")} {stats.mastery}
+                  </Typography>
+                ))}
+                {key.stats.map((stats) => (
+                  <Typography style={{ textAlign: "center" }}>
+                    {t("HDAccordianTitles.Versatility")} {stats.versatility}
+                  </Typography>
+                ))}
+              </CardContent>
+              <div style={{ display: "block" }}>
+                <CardContent style={{ padding: 8 }}>
+                  <Typography className={classes.heading} color="primary">
+                    {t("HDAccordianTitles.TalentHeader")}
+                  </Typography>
+                  <Divider />
+                  {key.talents.map((talent) => talentIcons(talent.guid))}
+                </CardContent>
+                <CardContent style={{ padding: 8 }}>
+                  <Typography className={classes.heading} color="primary">
+                    {t("HDAccordianTitles.CovenantHeader")}
+                  </Typography>
+                  <Divider />
+                </CardContent>
+                <CardContent style={{ padding: 8 }}>
+                  <Typography className={classes.heading} color="primary">
+                    {t("HDAccordianTitles.LegendaryHeader")}
+                  </Typography>
+                  <Divider />
+                </CardContent>
+              </div>
+            </Card>
           </AccordionDetails>
-          <AccordionSummary className={classes.content}>
-            <Typography className={classes.heading}>
-              {t("HDAccordianTitles.CovenantHeader")}
-            </Typography>
-          </AccordionSummary>
-          <AccordionSummary className={classes.content}>
-            <Typography className={classes.heading}>
-              {t("HDAccordianTitles.LegendaryHeader")}
-            </Typography>
-          </AccordionSummary>
         </Accordion>
       ))}
     </div>

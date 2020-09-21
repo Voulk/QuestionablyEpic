@@ -3,6 +3,7 @@ import moment from "moment";
 import MenuItem from "@material-ui/core/MenuItem";
 import bossIcons from "../Functions/IconFunctions/BossIcons";
 import { fightDurationCalculator } from "../Functions/Functions";
+import Divider from "@material-ui/core/Divider";
 
 const API = "https://www.warcraftlogs.com:443/v1/report/fights/";
 const API2 = "?api_key=92fc5d4ae86447df22a8c0917c1404dc";
@@ -48,37 +49,40 @@ class LogImport extends Component {
       let menuitems = fights
         .filter((name) => name.boss !== 0)
         .map((fight) => (
-          <MenuItem
-            value={1}
-            key={fight.id}
-            onClick={() => {
-              this.props.clicker([
-                fight.start_time,
-                fight.end_time,
-                fight.name,
-                moment(
-                  fightDurationCalculator(fight.end_time, fight.start_time)
-                ).format("mm:ss"),
-                this.killwipe(fight.kill),
-                fight.boss,
-                fight.difficulty,
-              ]);
-              this.props.close();
-              this.props.update(fight.start_time, fight.end_time);
-            }}
-          >
-            {bossIcons(fight.boss)}
-            {fight.name +
-              " - " +
-              moment(this.mather(fight.end_time, fight.start_time)).format(
-                "mm:ss"
-              ) +
-              " - " +
-              this.killwipe(fight.kill) +
-              " - " +
-              fight.bossPercentage / 100 +
-              "%"}
-          </MenuItem>
+          <div>
+            <MenuItem
+              value={1}
+              key={fight.id}
+              onClick={() => {
+                this.props.clicker([
+                  fight.start_time,
+                  fight.end_time,
+                  fight.name,
+                  moment(
+                    fightDurationCalculator(fight.end_time, fight.start_time)
+                  ).format("mm:ss"),
+                  this.killwipe(fight.kill),
+                  fight.boss,
+                  fight.difficulty,
+                ]);
+                this.props.close();
+                this.props.update(fight.start_time, fight.end_time);
+              }}
+            >
+              {bossIcons(fight.boss)}
+              {fight.name +
+                " - " +
+                moment(this.mather(fight.end_time, fight.start_time)).format(
+                  "mm:ss"
+                ) +
+                " - " +
+                this.killwipe(fight.kill) +
+                " - " +
+                fight.bossPercentage / 100 +
+                "%"}
+            </MenuItem>
+            <Divider />
+          </div>
         ));
       return menuitems;
     }

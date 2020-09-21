@@ -671,7 +671,7 @@ export default function talentIcons(props) {
         style={{
           height: 30,
           width: 30,
-          padding: "0px 5px 0px 5px",
+          padding: 4,
           verticalAlign: "middle",
           borderRadius: "4px"
         }}
