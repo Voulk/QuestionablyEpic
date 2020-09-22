@@ -17,6 +17,7 @@ import Select from '@material-ui/core/Select';
 import NativeSelect from '@material-ui/core/NativeSelect';
 import { itemDB } from '../Player/ItemDB'; 
 import { getValidArmorTypes, getValidWeaponTypes } from '../Player/PlayerUtilities'; 
+import Button from "@material-ui/core/Button";
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -87,11 +88,14 @@ export default function QuickCompare(props) {
     // a list of available ilvls and the player could select from a smaller list instead. 
     // This is left as a TODO until key functionality is completed but is a moderate priority. 
     const itemLevels = [226, 220, 214, 208, 202]; 
+    const itemTertiaries = ["Leech", "Avoidance"];
 
     // Define State. 
     const [itemLevel, setItemLevel] = React.useState(0);
     const [itemName, setItemName] = React.useState('');
     const [activeSlot, setSlot] = React.useState('Helm');
+    const [itemSocket, setItemSocket] = React.useState('');
+    const [itemTertiary, setItemTertiary] = React.useState('');
 
     // Fill Items fills the ItemNames box with items appropriate to the given slot and spec. 
     const fillItems = (slotName, spec) => {
@@ -139,6 +143,14 @@ export default function QuickCompare(props) {
       setItemLevel(event.target.value);
     };
 
+    const itemSocketChanged = (event) => {
+      setItemSocket(event.target.value);
+    };
+
+    const itemTertiaryChanged = (event) => {
+      setItemTertiary(event.target.value);
+    };
+
     const changeSlot = (event) => {
       setSlot(event.target.value);
     }
@@ -149,7 +161,7 @@ export default function QuickCompare(props) {
         
         <div style={{backgroundColor: "#353535"}}>
 
-          <div style={{margin: "auto", width: "55%", justifyContent: "space-between", display: "block" }}>
+          <div style={{margin: "auto", width: "55%", display: 'block'}}>
             <p className="headers">{t("ModuleTitles.QuickCompare")}</p>
 
             <div className="itemEntry">
@@ -193,6 +205,51 @@ export default function QuickCompare(props) {
                 </NativeSelect>
 
                 </FormControl>
+
+                <FormControl className={classes.formControl}> 
+                <InputLabel id="itemsocket">{t("QuickCompare.Socket")}</InputLabel>
+                <NativeSelect
+                  value={itemSocket}
+                  onChange={itemSocketChanged}
+                  displayEmpty
+                >
+                  <option aria-label="None" value="" />
+                  <option label="Yes" value="Yes" />
+
+                </NativeSelect>
+
+                </FormControl>
+
+
+                <FormControl className={classes.formControl}> 
+                <InputLabel id="itemtertiary">{t("QuickCompare.Tertiary")}</InputLabel>
+                <NativeSelect
+                  value={itemTertiary}
+                  onChange={itemTertiaryChanged}
+                  displayEmpty
+                >
+                  <option aria-label="None" value="" />
+                  {itemTertiaries.map((x, y) => <option key={y} value={y}>{x}</option>)}
+
+                </NativeSelect>
+
+                </FormControl>
+
+                <Button
+                key={8}
+                variant="contained"
+                color="primary"
+                style={{
+                  width: "80px",
+                  height: "40px",
+                  marginTop: "15px",
+                  marginLeft: "5px",
+                  backgroundColor: "#c8b054",
+                }}
+              >
+                {t("QuickCompare.AddButton")}
+              </Button>
+
 
             </div>
 

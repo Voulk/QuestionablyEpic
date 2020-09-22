@@ -11,7 +11,10 @@
     "QuickCompare": {
       "Slot": "Slot",
       "ItemName": "Item Name",
-      "ItemLevel" : "Item Level"
+      "ItemLevel" : "Item Level",
+      "Socket" : "Socket",
+      "Tertiary" : "Tertiary",
+      "AddButton" : "Add"
     },
 
     "HeaderLabels": {

@@ -4,11 +4,11 @@
 }
 
 .itemEntry {
-    display: inline-block;
-    padding: 5px;
-    margin: 10px;
-   
+    display: flex;
+    align-content: center;
     width: 100%;
+    flex-direction: row;
+    justify-content: center;
 }
 
 .qcDropdown {
