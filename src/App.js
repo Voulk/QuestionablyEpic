@@ -7,6 +7,7 @@ import LegendaryCompare from "./Modules/QEModules/Legendaries/LegendaryCompare.j
 import QuickCompare from "./Modules/QEModules/QuickCompare/QuickCompare.js";
 import QEHeader from "./Modules/QEModules/SetupAndMenus/QEHeader";
 import PlayerChars from "./Modules/QEModules/Player/PlayerChars";
+import SimpleTabs from "./Modules/QEModules/Covenant Test/CovenantExploration.js";
 import {
   ConfirmLogin,
   QELogin,
@@ -182,6 +183,13 @@ class App extends Component {
                     curLang={this.state.lang}
                     contentType={this.state.contentType}
                   />
+                )}
+              />
+
+              <Route
+                path="/soulbinds"
+                render={() => (
+                  <SimpleTabs />
                 )}
               />
               <Route

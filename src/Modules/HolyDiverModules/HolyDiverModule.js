@@ -34,7 +34,7 @@ import Grow from "@material-ui/core/Grow";
 import Paper from "@material-ui/core/Paper";
 import ERTTable from "../HolyDiverModules/Tables/ERTTable";
 import SwitchLabels from "./BasicComponents/Switch";
-import SimpleAccordion from "../HolyDiverModules/Tables/HealerInfoTable";
+import SimpleAccordion from "../HolyDiverModules/Tables/HealerInfoTable2";
 import HealTeam from "../HolyDiverModules/Tables/HealTeamTable";
 
 class HolyDiver extends Component {
@@ -688,61 +688,60 @@ class HolyDiver extends Component {
               </Collapse>
             </Grid>
           </Grid>
-          <Grid
-            container
-            direction="row"
-            justify="flex-start"
-            alignItems="flex-start"
-            spacing={1}
-          >
-            <Grid item xs={3} padding={1}>
-              <Collapse in={this.state.damageTableShow}>
-                <DenseAppBar
-                  onClick={this.timelineHandler}
-                  title="Cooldown Timeline"
-                />
-                <Collapse in={this.state.timelineshowhide}>
-                  <CooldownTimeline
-                    data={this.state.Updateddatacasts}
-                    curLang={this.props.curLang}
+
+          <Collapse in={this.state.damageTableShow}>
+            <Paper style={{ padding: 4 }}>
+              <Grid
+                container
+                direction="row"
+                justify="flex-start"
+                alignItems="flex-start"
+                spacing={1}
+              >
+                <Grid item xs={3} padding={1}>
+                  <DenseAppBar
+                    onClick={this.timelineHandler}
+                    title="Cooldown Timeline"
                   />
-                </Collapse>
-              </Collapse>
-            </Grid>
+                  <Collapse in={this.state.timelineshowhide}>
+                    <CooldownTimeline
+                      data={this.state.Updateddatacasts}
+                      curLang={this.props.curLang}
+                    />
+                  </Collapse>
+                </Grid>
 
-            <Grid item xs={3} padding={1}>
-              <Collapse in={this.state.damageTableShow}>
-                <DenseAppBar
-                  onClick={this.timelineHandler}
-                  title="Healer Talents/Legendaries"
-                />
-                <Collapse in={this.state.timelineshowhide}>
-                  <SimpleAccordion heals={this.state.healernames} />
-                </Collapse>
-              </Collapse>
-            </Grid>
+                <Grid item xs={3} padding={1}>
+                  <Collapse in={this.state.damageTableShow}>
+                    <DenseAppBar
+                      onClick={this.timelineHandler}
+                      title="Healer Talents/Legendaries"
+                    />
+                    <Collapse in={this.state.timelineshowhide}>
+                      <SimpleAccordion heals={this.state.healernames} />
+                    </Collapse>
+                  </Collapse>
+                </Grid>
 
-            <Grid item xs={3} padding={1}>
-              <Collapse in={this.state.damageTableShow}>
-                <DenseAppBar
-                  onClick={this.timelineHandler}
-                  title="DTPS by Ability"
-                />
-                <Collapse in={this.state.timelineshowhide}>
-                  <Example data={this.state.summedUnmitigatedDamagePerSecond} />
-                  {/* <DtpsTable
-                    data={this.state.summedUnmitigatedDamagePerSecond}
-                    curLang={this.props.curLang}
-                  /> */}
-                </Collapse>
-              </Collapse>
-            </Grid>
+                <Grid item xs={3} padding={1}>
+                  <Collapse in={this.state.damageTableShow}>
+                    <DenseAppBar
+                      onClick={this.timelineHandler}
+                      title="DTPS by Ability"
+                    />
+                    <Collapse in={this.state.timelineshowhide}>
+                      <Example
+                        data={this.state.summedUnmitigatedDamagePerSecond}
+                      />
+                    </Collapse>
+                  </Collapse>
+                </Grid>
 
-            <Grid item xs={3} padding={1}>
-              <Collapse in={this.state.damageTableShow}></Collapse>
-            </Grid>
+                {/*
 
-            {/*
+                                  <Grid item xs={3} padding={1}>
+                  <Collapse in={this.state.damageTableShow}></Collapse>
+                </Grid>
               
                 <DenseAppBar
                   onClick={this.timelineHandler}
@@ -767,7 +766,10 @@ class HolyDiver extends Component {
              
             
                     */}
-          </Grid>
+              </Grid>
+            </Paper>
+          </Collapse>
+
           <Grid
             container
             direction="row"
