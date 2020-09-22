@@ -19,7 +19,7 @@ export default class Example extends PureComponent {
 
   render() {
     return (
-      <Paper>
+      <Paper style={{marginTop: "8px"}}>
         <ResponsiveContainer
           className="ResponsiveContainer"
           width="100%"

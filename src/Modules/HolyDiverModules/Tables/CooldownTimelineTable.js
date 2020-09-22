@@ -110,12 +110,14 @@ export default function CooldownTimeline(props) {
         header={true}
         data={props.data}
         style={{
-          borderRadius: "0px 0px 4px 4px",
+          marginTop: "8px",
+          borderRadius: 4,
           color: "#ffffff",
           boxShadow:
             "0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12)",
           fontSize: "0.8 rem",
           whiteSpace: "nowrap",
+          backgroundColor: "#353535"
         }}
         localization={curLang(props.curLang)}
         options={{
@@ -129,6 +131,7 @@ export default function CooldownTimeline(props) {
             borderBottom: "2px solid #6d6d6d",
             fontSize: "0.8 rem",
             whiteSpace: "nowrap",
+            backgroundColor: "#353535"
           },
           cellStyle: {
             borderBottom: "1px solid #6d6d6d",

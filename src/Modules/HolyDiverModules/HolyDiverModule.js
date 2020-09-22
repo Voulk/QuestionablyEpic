@@ -540,204 +540,217 @@ class HolyDiver extends Component {
     return (
       <div>
         <div style={{ margin: "20px 2% 20px 2%" }}>
-          <Paper
-            bgcolor="#333"
-            style={{
-              display: "inline-flex",
-              margin: "0px 0px 4px 0px",
-              borderRadius: 4,
-              padding: "10px 10px 10px 10px",
-              boxShadow:
-                "0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12)",
-            }}
-          >
+          <Grid container spacing={1}>
+            <Grid item container>
+              <Paper
+                bgcolor="#333"
+                style={{
+                  display: "inline-flex",
+                  margin: "0px 0px 4px 0px",
+                  borderRadius: 4,
+                  padding: "10px 10px 10px 10px",
+                  boxShadow:
+                    "0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12)",
+                }}
+              >
+                <Grid
+                  item
+                  container
+                  direction="row"
+                  justify="flex-start"
+                  alignItems="flex-start"
+                  spacing={1}
+                >
+                  <Grid item xs="auto" padding={1}>
+                    <UserLogTextInput
+                      changed={this.reportidHandler}
+                      reportid={this.state.reportid}
+                    />
+                  </Grid>
+                  <Grid item xs="auto" padding={1}>
+                    <FightSelectorButton
+                      reportid={this.state.reportid}
+                      clicky={this.handler}
+                      update={this.updatechartdata}
+                    />
+                  </Grid>
+                </Grid>
+              </Paper>
+            </Grid>
+
             <Grid
+              item
               container
               direction="row"
               justify="flex-start"
               alignItems="flex-start"
               spacing={1}
             >
-              <Grid item xs="auto" padding={1}>
-                <UserLogTextInput
-                  changed={this.reportidHandler}
-                  reportid={this.state.reportid}
-                />
-              </Grid>
-              <Grid item xs="auto" padding={1}>
-                <FightSelectorButton
-                  reportid={this.state.reportid}
-                  clicky={this.handler}
-                  update={this.updatechartdata}
-                />
-              </Grid>
-            </Grid>
-          </Paper>
-          <Grid
-            container
-            direction="row"
-            justify="flex-start"
-            alignItems="flex-start"
-            spacing={1}
-          >
-            <Grid item xs={12} padding={1}>
-              <Collapse in={this.state.logDetailsShow}>
-                <Grow
-                  in={this.state.logDetailsShow}
-                  style={{ transformOrigin: "0 0 0" }}
-                  {...(this.state.logDetailsShow ? { timeout: 1000 } : {})}
-                >
-                  <Paper
-                    bgcolor="#333"
-                    style={{
-                      borderRadius: 4,
-                      boxShadow:
-                        "0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12)",
-                    }}
+              <Grid item xs={12} padding={1}>
+                <Collapse in={this.state.logDetailsShow}>
+                  <Grow
+                    in={this.state.logDetailsShow}
+                    style={{ transformOrigin: "0 0 0" }}
+                    {...(this.state.logDetailsShow ? { timeout: 1000 } : {})}
                   >
-                    <div
+                    <Paper
+                      bgcolor="#333"
                       style={{
-                        display: "inline-flex",
-                        width: "100%",
-                        alignItems: "center",
+                        borderRadius: 4,
+                        boxShadow:
+                          "0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12)",
                       }}
                     >
-                      {bossHeaders(this.state.currentBossID)}
-                      <Grid item xs={11} padding={1} align="center">
-                        {this.state.showname ? (
-                          <Typography
-                            style={{
-                              fontWeight: 500,
-                              fontSize: "1.25rem",
-                              padding: "0px 16px 0px 16px",
-                              whiteSpace: "nowrap",
-                            }}
-                            color="primary"
-                          >
-                            {this.state.boss} - {this.state.currentDifficulty}
-                          </Typography>
-                        ) : null}
-                        {this.state.showname ? (
-                          <Typography
-                            style={{
-                              fontWeight: 500,
-                              fontSize: "0.9rem",
-                              color: "white",
-                              padding: "0px 16px 0px 16px",
-                              textAlign: "center",
-                            }}
-                          >
-                            {this.state.currentFighttime +
-                              " - " +
-                              this.state.killWipe}
-                          </Typography>
-                        ) : null}
-                      </Grid>
+                      <div
+                        style={{
+                          display: "inline-flex",
+                          width: "100%",
+                          alignItems: "center",
+                        }}
+                      >
+                        {bossHeaders(this.state.currentBossID)}
+                        <Grid item xs={11} padding={1} align="center">
+                          {this.state.showname ? (
+                            <Typography
+                              style={{
+                                fontWeight: 500,
+                                fontSize: "1.25rem",
+                                padding: "0px 16px 0px 16px",
+                                whiteSpace: "nowrap",
+                              }}
+                              color="primary"
+                            >
+                              {this.state.boss} - {this.state.currentDifficulty}
+                            </Typography>
+                          ) : null}
+                          {this.state.showname ? (
+                            <Typography
+                              style={{
+                                fontWeight: 500,
+                                fontSize: "0.9rem",
+                                color: "white",
+                                padding: "0px 16px 0px 16px",
+                                textAlign: "center",
+                              }}
+                            >
+                              {this.state.currentFighttime +
+                                " - " +
+                                this.state.killWipe}
+                            </Typography>
+                          ) : null}
+                        </Grid>
 
-                      <Grid item xs={1} padding={1}>
-                        <SwitchLabels
-                          check={this.damageTableShow}
-                          label={"Log Chart"}
-                        />
-                        <SwitchLabels
-                          check={this.healTableShow}
-                          label={"Custom CD Chart"}
-                        />
-                        <SwitchLabels
-                          check={this.changeDataSet}
-                          label={
-                            this.state.chartData === true
-                              ? "Unmitigated"
-                              : "Mitigated"
-                          }
-                        />
-                      </Grid>
-                    </div>
-                  </Paper>
-                </Grow>
-              </Collapse>
+                        <Grid item xs={1} padding={1}>
+                          <SwitchLabels
+                            check={this.damageTableShow}
+                            label={"Log Chart"}
+                          />
+                          <SwitchLabels
+                            check={this.healTableShow}
+                            label={"Custom CD Chart"}
+                          />
+                          <SwitchLabels
+                            check={this.changeDataSet}
+                            label={
+                              this.state.chartData === true
+                                ? "Unmitigated"
+                                : "Mitigated"
+                            }
+                          />
+                        </Grid>
+                      </div>
+                    </Paper>
+                  </Grow>
+                </Collapse>
+              </Grid>
             </Grid>
-          </Grid>
-          <Grid
-            container
-            direction="row"
-            justify="flex-start"
-            alignItems="flex-start"
-            spacing={1}
-          >
-            <Grid item xs={12} padding={1}>
-              <Collapse in={this.state.damageTableShow}>
-                <LoadingOverlay
-                  active={spinnershow}
-                  spinner={<CircularProgress color="secondary" />}
-                >
-                  <Chart
-                    dataToShow={this.state.chartData}
-                    mitigated={this.state.mitigatedChartData}
-                    unmitigated={this.state.unmitigatedChartData}
-                    abilitylist={this.state.abilitylist}
-                    legendata={this.state.legenddata}
-                    cooldown={this.state.cooldownlist}
-                    endtime={fightDurationCalculator(
-                      this.state.timeend,
-                      this.state.time
-                    )}
-                    showcds={true}
-                  />
-                </LoadingOverlay>
-              </Collapse>
-            </Grid>
-          </Grid>
 
-          <Collapse in={this.state.damageTableShow}>
-            <Paper style={{ padding: 4 }}>
-              <Grid
-                container
-                direction="row"
-                justify="flex-start"
-                alignItems="flex-start"
-                spacing={1}
+            <Grid
+              item
+              container
+              direction="row"
+              justify="flex-start"
+              alignItems="flex-start"
+              spacing={1}
+            >
+              <Grid item xs={12} padding={1}>
+                <Collapse in={this.state.damageTableShow}>
+                  <LoadingOverlay
+                    active={spinnershow}
+                    spinner={<CircularProgress color="secondary" />}
+                  >
+                    <Chart
+                      dataToShow={this.state.chartData}
+                      mitigated={this.state.mitigatedChartData}
+                      unmitigated={this.state.unmitigatedChartData}
+                      abilitylist={this.state.abilitylist}
+                      legendata={this.state.legenddata}
+                      cooldown={this.state.cooldownlist}
+                      endtime={fightDurationCalculator(
+                        this.state.timeend,
+                        this.state.time
+                      )}
+                      showcds={true}
+                    />
+                  </LoadingOverlay>
+                </Collapse>
+              </Grid>
+            </Grid>
+
+            <Grid item container>
+              <Collapse
+                in={this.state.damageTableShow}
+                style={{ width: "100%" }}
               >
-                <Grid item xs={3} padding={1}>
-                  <DenseAppBar
-                    onClick={this.timelineHandler}
-                    title="Cooldown Timeline"
-                  />
-                  <Collapse in={this.state.timelineshowhide}>
-                    <CooldownTimeline
-                      data={this.state.Updateddatacasts}
-                      curLang={this.props.curLang}
-                    />
-                  </Collapse>
-                </Grid>
-
-                <Grid item xs={3} padding={1}>
-                  <Collapse in={this.state.damageTableShow}>
-                    <DenseAppBar
-                      onClick={this.timelineHandler}
-                      title="Healer Talents/Legendaries"
-                    />
-                    <Collapse in={this.state.timelineshowhide}>
-                      <SimpleAccordion heals={this.state.healernames} />
-                    </Collapse>
-                  </Collapse>
-                </Grid>
-
-                <Grid item xs={3} padding={1}>
-                  <Collapse in={this.state.damageTableShow}>
-                    <DenseAppBar
-                      onClick={this.timelineHandler}
-                      title="DTPS by Ability"
-                    />
-                    <Collapse in={this.state.timelineshowhide}>
-                      <Example
-                        data={this.state.summedUnmitigatedDamagePerSecond}
+                <Paper style={{padding: 10}}>
+                  <Grid
+                    item
+                    container
+                    direction="row"
+                    justify="flex-start"
+                    alignItems="flex-start"
+                    spacing={1}
+                  >
+                    <Grid item xs={3} padding={1}>
+                      <DenseAppBar
+                        onClick={this.timelineHandler}
+                        title="Cooldown Timeline"
                       />
-                    </Collapse>
-                  </Collapse>
-                </Grid>
+                      <Collapse in={this.state.timelineshowhide}>
+                        <CooldownTimeline
+                          data={this.state.Updateddatacasts}
+                          curLang={this.props.curLang}
+                        />
+                      </Collapse>
+                    </Grid>
 
-                {/*
+                    <Grid item xs={3} padding={1}>
+                      <Collapse in={this.state.damageTableShow}>
+                        <DenseAppBar
+                          onClick={this.timelineHandler}
+                          title="Healer Talents/Legendaries"
+                        />
+                        <Collapse in={this.state.timelineshowhide}>
+                          <SimpleAccordion heals={this.state.healernames} />
+                        </Collapse>
+                      </Collapse>
+                    </Grid>
+
+                    <Grid item xs={3} padding={1}>
+                      <Collapse in={this.state.damageTableShow}>
+                        <DenseAppBar
+                          onClick={this.timelineHandler}
+                          title="DTPS by Ability"
+                        />
+                        <Collapse in={this.state.timelineshowhide}>
+                          <Example
+                            data={this.state.summedUnmitigatedDamagePerSecond}
+                          />
+                        </Collapse>
+                      </Collapse>
+                    </Grid>
+
+                    {/*
 
                                   <Grid item xs={3} padding={1}>
                   <Collapse in={this.state.damageTableShow}></Collapse>
@@ -766,72 +779,77 @@ class HolyDiver extends Component {
              
             
                     */}
-              </Grid>
-            </Paper>
-          </Collapse>
-
-          <Grid
-            container
-            direction="row"
-            justify="flex-start"
-            alignItems="flex-start"
-            spacing={1}
-          >
-            <Grid item xs={12} padding={1}>
-              <Collapse in={this.state.healTableShow}>
-                <LoadingOverlay
-                  active={spinnershow}
-                  spinner={<CircularProgress color="secondary" />}
-                >
-                  <Chart
-                    dataToShow={this.state.chartData}
-                    mitigated={this.state.mitigatedChartDataNoCooldowns}
-                    unmitigated={this.state.unmitigatedChartDataNoCooldowns}
-                    abilitylist={this.state.abilitylist}
-                    cooldown={this.state.cooldownlistcustom2}
-                    endtime={fightDurationCalculator(
-                      this.state.timeend,
-                      this.state.time
-                    )}
-                    showcds={true}
-                  />
-                </LoadingOverlay>
+                  </Grid>
+                </Paper>
               </Collapse>
             </Grid>
-          </Grid>
-          <Grid
-            container
-            direction="row"
-            justify="flex-start"
-            alignItems="flex-start"
-            spacing={1}
-            margin={4}
-          >
-            <Grid item xs={4} padding={1}>
-              <HealTeam curLang={this.props.curLang} />
+
+            <Grid
+              item
+              container
+              direction="row"
+              justify="flex-start"
+              alignItems="flex-start"
+              spacing={1}
+            >
+              <Grid item xs={12} padding={1}>
+                <Collapse in={this.state.healTableShow}>
+                  <LoadingOverlay
+                    active={spinnershow}
+                    spinner={<CircularProgress color="secondary" />}
+                  >
+                    <Chart
+                      dataToShow={this.state.chartData}
+                      mitigated={this.state.mitigatedChartDataNoCooldowns}
+                      unmitigated={this.state.unmitigatedChartDataNoCooldowns}
+                      abilitylist={this.state.abilitylist}
+                      cooldown={this.state.cooldownlistcustom2}
+                      endtime={fightDurationCalculator(
+                        this.state.timeend,
+                        this.state.time
+                      )}
+                      showcds={true}
+                    />
+                  </LoadingOverlay>
+                </Collapse>
+              </Grid>
             </Grid>
-            <Grid item xs={8} padding={1}>
-              <CooldownPlanner
-                update={this.tablehandler}
-                curLang={this.props.curLang}
-              />
-            </Grid>
-          </Grid>
-          <Grid
-            container
-            direction="row"
-            justify="flex-start"
-            alignItems="flex-start"
-            spacing={1}
-          >
-            <Grid item xs={3} padding={1}>
-              <DenseAppBar onClick={this.ertHandler} title="ERT Note" />
-              <Collapse in={this.state.ertshowhide}>
-                <ERTTable
-                  data={this.state.ertList}
+            <Grid
+              item
+              container
+              direction="row"
+              justify="flex-start"
+              alignItems="flex-start"
+              spacing={1}
+              margin={4}
+            >
+              <Grid item xs={4} padding={1}>
+                <HealTeam curLang={this.props.curLang} />
+              </Grid>
+              <Grid item xs={8} padding={1}>
+                <CooldownPlanner
+                  update={this.tablehandler}
                   curLang={this.props.curLang}
                 />
-              </Collapse>
+              </Grid>
+            </Grid>
+            <Grid
+              item
+              container
+              direction="row"
+              justify="flex-start"
+              alignItems="flex-start"
+              spacing={1}
+            >
+              <Grid item xs={3} padding={1}>
+                <DenseAppBar onClick={this.ertHandler} title="ERT Note" />
+                <Collapse in={this.state.ertshowhide}>
+                  <ERTTable
+                    data={this.state.ertList}
+                    curLang={this.props.curLang}
+                  />
+                </Collapse>
+              </Grid>
             </Grid>
           </Grid>
         </div>

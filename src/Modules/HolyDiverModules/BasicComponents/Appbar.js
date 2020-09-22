@@ -25,7 +25,7 @@ export default function DenseAppBar(props) {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static" style={{ borderRadius: "4px 4px 0px 0px" }}>
+      <AppBar position="static" style={{ borderRadius: 4 }}>
         <Toolbar variant="dense">
           <IconButton
             edge="start"
