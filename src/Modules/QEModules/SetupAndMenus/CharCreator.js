@@ -254,7 +254,7 @@ export default function AddNewChar(props) {
                 size="small"
               />
             </Grid>
-            <Grid item xs={12} sm container direction="row">
+            <Grid container spacing={1} item>
               <Grid item xs={4}>
                 <FormControl
                   className={classes.formRegion}
