@@ -585,6 +585,7 @@ class HolyDiver extends Component {
               justify="flex-start"
               alignItems="flex-start"
               spacing={1}
+              style={{ display: this.state.logDetailsShow ? "block" : "none" }}
             >
               <Grid item xs={12} padding={1}>
                 <Collapse in={this.state.logDetailsShow}>
@@ -672,6 +673,7 @@ class HolyDiver extends Component {
               justify="flex-start"
               alignItems="flex-start"
               spacing={1}
+              style={{ display: this.state.damageTableShow ? "block" : "none" }}
             >
               <Grid item xs={12} padding={1}>
                 <Collapse in={this.state.damageTableShow}>
@@ -697,7 +699,7 @@ class HolyDiver extends Component {
               </Grid>
             </Grid>
 
-            <Grid item container>
+            <Grid item container style={{ display: this.state.damageTableShow ? "block" : "none" }}>
               <Collapse
                 in={this.state.damageTableShow}
                 style={{ width: "100%" }}
@@ -791,6 +793,7 @@ class HolyDiver extends Component {
               justify="flex-start"
               alignItems="flex-start"
               spacing={1}
+              style={{ display: this.state.healTableShow ? "block" : "none" }}
             >
               <Grid item xs={12} padding={1}>
                 <Collapse in={this.state.healTableShow}>
