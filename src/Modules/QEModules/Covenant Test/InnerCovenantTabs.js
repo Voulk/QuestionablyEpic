@@ -1,12 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
-import AppBar from "@material-ui/core/AppBar";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
-import InnerVerticalTabs from "./InnerCovenantTabs"
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -15,8 +13,8 @@ function TabPanel(props) {
     <div
       role="tabpanel"
       hidden={value !== index}
-      id={`simple-tabpanel-${index}`}
-      aria-labelledby={`simple-tab-${index}`}
+      id={`vertical-tabpanel-${index}`}
+      aria-labelledby={`vertical-tab-${index}`}
       {...other}
     >
       {value === index && (
@@ -36,24 +34,24 @@ TabPanel.propTypes = {
 
 function a11yProps(index) {
   return {
-    id: `simple-tab-${index}`,
-    "aria-controls": `simple-tabpanel-${index}`,
+    id: `vertical-tab-${index}`,
+    "aria-controls": `vertical-tabpanel-${index}`,
   };
 }
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    justifyContent: "center",
-    display: "block",
-    marginLeft: "20%",
-    marginRight: "20%",
-    marginTop: "2%",
     flexGrow: 1,
     backgroundColor: theme.palette.background.paper,
+    display: "flex",
+    height: 224,
+  },
+  tabs: {
+    borderRight: `1px solid ${theme.palette.divider}`,
   },
 }));
 
-export default function SimpleTabs() {
+export default function InnerVerticalTabs(props) {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
 
@@ -63,34 +61,38 @@ export default function SimpleTabs() {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static">
-        <Tabs
-          value={value}
-          onChange={handleChange}
-          aria-label="simple tabs example"
-          variant="fullWidth"
-        >
-          <Tab label="Kyrian" {...a11yProps(0)} />
-          <Tab label="Night Fae" {...a11yProps(1)} />
-          <Tab label="Venthyr" {...a11yProps(2)} />
-          <Tab label="Necrolords" {...a11yProps(3)} />
-        </Tabs>
-      </AppBar>
+      <Tabs
+        orientation="vertical"
+        // variant="scrollable"
+        value={value}
+        onChange={handleChange}
+        aria-label="Vertical tabs example"
+        className={classes.tabs}
+      >
+        <Tab label={props.soulbind1} {...a11yProps(0)} />
+        <Tab label={props.soulbind2} {...a11yProps(1)} />
+        <Tab label={props.soulbind3} {...a11yProps(2)} />
+      </Tabs>
       <TabPanel value={value} index={0}>
-        {/* Kyrian */}
-        <InnerVerticalTabs soulbind1={"Pelagos"} soulbind2={"Kleia"} soulbind3={"Mikanikos"}/>
+        Item One
       </TabPanel>
       <TabPanel value={value} index={1}>
-      {/* Night Fae */}
-        <InnerVerticalTabs soulbind1={"Niya"} soulbind2={"Dreamweaver"} soulbind3={"Korayn"}/>
+        Item Two
       </TabPanel>
       <TabPanel value={value} index={2}>
-      {/* Venthyr */}
-        <InnerVerticalTabs soulbind1={"Nadjia"} soulbind2={"Theotar"} soulbind3={"General Draven"}/>
+        Item Three
       </TabPanel>
       <TabPanel value={value} index={3}>
-      {/* Necrolords */}
-        <InnerVerticalTabs soulbind1={"Plague Deviser Marileth"} soulbind2={"Emeni"} soulbind3={"Bonesmith Heirmir"}/>
+        Item Four
+      </TabPanel>
+      <TabPanel value={value} index={4}>
+        Item Five
+      </TabPanel>
+      <TabPanel value={value} index={5}>
+        Item Six
+      </TabPanel>
+      <TabPanel value={value} index={6}>
+        Item Seven
       </TabPanel>
     </div>
   );
