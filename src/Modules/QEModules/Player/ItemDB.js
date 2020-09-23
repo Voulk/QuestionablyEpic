@@ -34,13 +34,14 @@ export const itemDB = [{
         "vers": 0,
         "mastery": 83
     },
-    "dropLoc": "World Quest"},
+    "dropLoc": "World Quest",
+    "effect" : ""},
     {
     "id": 161403,
     "name": "Avian Clutch Belt",
     "names": {
         "ch": "第七军团士兵屏障",
-        "en": "7th Legionnaires Aegis",
+        "en": "Avian Clutch Belt",
         "ru": "Эгида бойца 7-го легиона",
         "es": "Égida de legionario de la Séptima Legión",
         "pt": "Égide do Legionário da 7ª",
@@ -61,6 +62,8 @@ export const itemDB = [{
         "vers": 81,
         "mastery": 0
     },
-    "dropLoc": "Boss A (Raid)"},
+    "dropLoc": "Boss A (Raid)",
+    "effect": ""},
+    
 
 ]

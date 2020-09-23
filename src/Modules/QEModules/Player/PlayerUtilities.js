@@ -1,4 +1,4 @@
-
+import { itemDB } from './ItemDB'
 
 /*
 
@@ -32,4 +32,40 @@ export function getValidArmorTypes(spec) {
 export function getValidWeaponTypes(spec) {
     return [0];
 
+}
+
+// Returns a translated item name based on an ID.
+export function getTranslatedItemName(id, lang) {
+    let temp = itemDB.filter(function(item) {
+        return item.id === id;
+    })
+
+    return temp[0].names[lang];
+}
+
+// Returns a translated item name based on an ID.
+export function getItemIcon(id) {
+    let temp = itemDB.filter(function(item) {
+        return item.id === id;
+    })
+
+    return temp[0].icon;
+}
+
+// Calculates the given secondary stats an item should have at any given item level.
+// TODO
+export function calcSecondaryStatAtLevel(itemLevel, baseStat, baseLevel) {
+
+}
+
+// Calculates the given primary stats an item should have at any given item level.
+// TODO
+export function calcPrimaryStatAtLevel(itemLevel, baseStat, baseLevel) {
+
+}
+
+// Builds a stat string out of an items given stats and effect. 
+// TODO
+export function buildStatString(stats, effect) {
+    return "Haste / Crit / Effect" // Default for UI design purposes.
 }

@@ -6,6 +6,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import '../SetupAndMenus/QEMainMenu.css';
 
 import Player from '../Player/Player';
+import Item from '../Player/Item';
 import QEHeader from '../SetupAndMenus/QEHeader';
 import './QuickCompare.css';
 import { useTranslation } from "react-i18next";
@@ -18,6 +19,7 @@ import NativeSelect from '@material-ui/core/NativeSelect';
 import { itemDB } from '../Player/ItemDB'; 
 import { getValidArmorTypes, getValidWeaponTypes } from '../Player/PlayerUtilities'; 
 import Button from "@material-ui/core/Button";
+import QCTile from './QCTile';
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -97,10 +99,12 @@ export default function QuickCompare(props) {
 
     // Define State. 
     const [itemLevel, setItemLevel] = React.useState(0);
+    const [itemID, setItemID] = React.useState(0);
     const [itemName, setItemName] = React.useState('');
-    const [activeSlot, setSlot] = React.useState('Helm');
+    const [activeSlot, setSlot] = React.useState('Head');
     const [itemSocket, setItemSocket] = React.useState('');
     const [itemTertiary, setItemTertiary] = React.useState('');
+    const [itemList, setItemList] = React.useState(props.pl.getActiveItems(activeSlot));
 
     // Fill Items fills the ItemNames box with items appropriate to the given slot and spec. 
     const fillItems = (slotName, spec) => {
@@ -130,23 +134,24 @@ export default function QuickCompare(props) {
           }
       }
 
-      // Placeholders. Delete. 
-      if (slotName == "Helm") {
-        itemDropdown.push({value: "Generic Helm", label: "Generic Helm Label"});
-      }
-      else {
-        itemDropdown.push({value: "Generic Item", label: "Generic Label"});
-      }
-
     }
 
     // Add an item to our "Active Items" array. 
-    const addItem = () => {
+    const addItem = (event) => {
+      let player = props.pl;
+      let item = new Item(itemID, itemName, activeSlot, itemSocket, itemTertiary, 0);
+      player.addActiveItem(item);
+
+      //player.getActiveItems(activeSlot)
+
+      setItemList([...player.getActiveItems(activeSlot)]);
 
     }
 
     const itemNameChanged = (event) => {     
-      setItemName(event.target.value);
+      setItemID(parseInt(event.target.value));
+      setItemName(event.target.name);
+      
     };
 
     const itemLevelChanged = (event) => {     
@@ -163,6 +168,13 @@ export default function QuickCompare(props) {
 
     const changeSlot = (event) => {
       setSlot(event.target.value);
+      setItemList([...props.pl.getActiveItems(event.target.value)]);
+    }
+
+    // TODO. Calculate the score for a given item.
+    // Score is calculated by multiplying out stat weights and then adding any special effects. 
+    const calculateScore = (item) => {
+
     }
     
     fillItems(activeSlot, props.pl.spec);
@@ -175,6 +187,7 @@ export default function QuickCompare(props) {
             <p className="headers">{t("ModuleTitles.QuickCompare")}</p>
 
             <div className="itemEntry">
+
                 <FormControl className={classes.formControl}> 
                 <InputLabel id="slots">{t("QuickCompare.Slot")}</InputLabel>
                 <NativeSelect
@@ -191,12 +204,12 @@ export default function QuickCompare(props) {
                 <FormControl className={classes.formControl}> 
                 <InputLabel id="itemname">{t("QuickCompare.ItemName")}</InputLabel>
                 <NativeSelect
-                  value={itemName}
+                  value={itemID}
                   onChange={itemNameChanged}
                   displayEmpty
                 >
-                  <option aria-label="None" value="" />
-                  {itemDropdown.map((x, y) => <option key={y} value={x.value}>{x.label}</option>)}
+                  <option aria-label="None" value="" /> 
+                  {itemDropdown.map((x, y) => <option key={y} value={x.value} name={x.label}>{x.label}</option>)}
                   
                 </NativeSelect>
 
@@ -249,6 +262,7 @@ export default function QuickCompare(props) {
                 key={8}
                 variant="contained"
                 color="primary"
+                onClick={addItem}
                 style={{
                   width: "70px",
                   height: "30px",
@@ -267,15 +281,13 @@ export default function QuickCompare(props) {
 
 
             <div className="itemList">
+              {itemList.map((item, index) => (
+                      
+                      <QCTile key={index} item={item} lang={props.curLang}/>
 
+                  ))}
 
             </div>
-
-                {/*legendaryList.map((item, index) => (
-                    
-                    <LegendaryObject key={index} item={item}/>
-
-                )) */}
 
           </div>
         </div>

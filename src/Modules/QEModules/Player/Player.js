@@ -85,6 +85,14 @@ class Player {
         this.activeItems = [];
     }
 
+    getActiveItems = (slot) => {
+        let temp = this.activeItems.filter(function(item) {
+            return item.slot === slot;
+        })
+        return temp;
+
+    }
+
     // Convert the players given stats into a percentage. 
     // TODO: Implement Mastery
     getStatPerc = (stat) => {       
