@@ -70,7 +70,12 @@ function getSlots() {
   const { t, i18n } = useTranslation();
   let slots = [{value: 'Head', label: t("slotNames.head")},
               {value: 'Shoulder', label: t("slotNames.shoulder")},
+              {value: 'Back', label: t("slotNames.back")},
+              {value: 'Chest', label: t("slotNames.chest")},
+              {value: 'Wrist', label: t("slotNames.wrist")},
+              {value: 'Hands', label: t("slotNames.hands")},
               {value: 'Waist', label: t("slotNames.waist")},
+              
 
               ]
 
@@ -132,6 +137,11 @@ export default function QuickCompare(props) {
       else {
         itemDropdown.push({value: "Generic Item", label: "Generic Label"});
       }
+
+    }
+
+    // Add an item to our "Active Items" array. 
+    const addItem = () => {
 
     }
 
@@ -240,8 +250,8 @@ export default function QuickCompare(props) {
                 variant="contained"
                 color="primary"
                 style={{
-                  width: "80px",
-                  height: "40px",
+                  width: "70px",
+                  height: "30px",
                   marginTop: "15px",
                   marginLeft: "5px",
                   backgroundColor: "#c8b054",

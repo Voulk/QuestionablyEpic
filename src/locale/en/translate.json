@@ -75,6 +75,10 @@
     "slotNames": {
       "head" : "Helm",
       "shoulder" : "Shoulders",
+      "back" : "Cape",
+      "chest" : "Chest",
+      "wrists" : "Bracers",
+      "hands" : "Gloves",
       "waist" : "Belt"
     },
 

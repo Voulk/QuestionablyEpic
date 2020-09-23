@@ -12,14 +12,17 @@ class Player {
         this.charName = playerName;
         this.charID = charID;
         this.setupDefaults();
+        this.activeItems = [];
 
-        if (statWeights != "default") this.statWeights = statWeights;
+        if (statWeights !== "default") this.statWeights = statWeights;
         //this.getStatPerc = getStatPerc;
     }
 
 
     spec = "";
     charID = 0;
+    activeItems = [];
+    
 
     // A players spell casting patterns. These are averaged from entered logs and a default is provided too. 
     // 
@@ -72,6 +75,14 @@ class Player {
         },
         "DefaultWeights": true
 
+    }
+
+    addActiveItem = (item) => {
+        this.activeItems.push(item);
+    }
+
+    clearActiveItems = () => {
+        this.activeItems = [];
     }
 
     // Convert the players given stats into a percentage. 
