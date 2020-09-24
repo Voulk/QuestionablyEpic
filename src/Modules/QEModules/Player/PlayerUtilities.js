@@ -40,16 +40,21 @@ export function getTranslatedItemName(id, lang) {
         return item.id === id;
     })
 
-    return temp[0].names[lang];
+    if (temp.length > 0) return temp[0].names[lang];
+    else return "Unknown Item";
 }
 
 // Returns a translated item name based on an ID.
+// Add some support for missing icons.
 export function getItemIcon(id) {
     let temp = itemDB.filter(function(item) {
         return item.id === id;
     })
 
-    return temp[0].icon;
+    console.log(JSON.stringify(temp) + temp.length)
+    if (temp.length > 0) return (window.location.origin + "/Images/Items/" + temp[0].icon + '.jpg')
+    else return (window.location.origin + "/Images/Items/missing.jpg")
+
 }
 
 // Calculates the given secondary stats an item should have at any given item level.

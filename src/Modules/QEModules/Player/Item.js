@@ -4,9 +4,10 @@
 // We'll create them when we import a SimC string, or when an item is added manually.
 // Items are stored in the players character. They are not currently stored in local storage but that is a likely addition soon after release.
 class Item {
-    constructor(id, name, slot, socket, tertiary, softScore = 0) {
+    constructor(id, name, slot, socket, tertiary, softScore = 0, level) {
         this.id = id;
         this.name = name;
+        this.level = level;
         this.slot = slot;
         this.socket = socket;
         this.tertiary = tertiary;
@@ -14,6 +15,7 @@ class Item {
     }
 
     id = 0; // The items ID
+    level = 200; // The items ilvl
     name = ""; // Consider how to store this in a localised form. 
     slot = "";
     softScore = 0;

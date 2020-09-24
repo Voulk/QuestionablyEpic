@@ -50,7 +50,7 @@ export const itemDB = [
       kr: "7군단 용사의 아이기스",
       fr: "Égide de légionnaire de la 7e",
     },
-    icon: "inv_leather_nazmirraid_d_01shoulder",
+    icon: "inv_leather_nazmirraid_d_01buckle",
     itemClass: 4,
     itemSubClass: 2,
     itemSlot: "Waist",
