@@ -20,6 +20,8 @@ import { itemDB } from '../Player/ItemDB';
 import { getValidArmorTypes, getValidWeaponTypes } from '../Player/PlayerUtilities'; 
 import Button from "@material-ui/core/Button";
 import QCTile from './QCTile';
+import ItemCard from './ItemCard';
+import Grid from '@material-ui/core/Grid'
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -283,13 +285,15 @@ export default function QuickCompare(props) {
             <div className="itemList">
               {itemList.map((item, index) => (
                       
-                      <QCTile key={index} item={item} lang={props.curLang}/>
-
+                      // <QCTile key={index} item={item} lang={props.curLang}/>
+                      // scuffed card, need proper item to test
+                       <ItemCard key={index} item={item} />
                   ))}
 
             </div>
-
+         
           </div>
+
         </div>
 
       );
