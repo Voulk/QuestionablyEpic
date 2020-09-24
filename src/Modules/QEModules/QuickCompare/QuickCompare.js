@@ -275,22 +275,50 @@ export default function QuickCompare(props) {
               >
                 {t("QuickCompare.AddButton")}
               </Button>
-
-
             </div>
+ {/* // test card delete later*/}
+            <ItemCard
+              item={{
+                id: 161403,
+                name: "Avian Clutch Belt",
+                names: {
+                  ch: "第七军团士兵屏障",
+                  en: "Avian Clutch Belt",
+                  ru: "Эгида бойца 7-го легиона",
+                  es: "Égida de legionario de la Séptima Legión",
+                  pt: "Égide do Legionário da 7ª",
+                  kr: "7군단 용사의 아이기스",
+                  fr: "Égide de légionnaire de la 7e",
+                },
+                icon: "inv_leather_nazmirraid_d_01shoulder",
+                itemClass: 4,
+                itemSubClass: 2,
+                itemSlot: "Waist",
+                itemLevel: 350,
+                selectable: true,
+                stats: {
+                  int: 326,
+                  stamina: 574,
+                  haste: 0,
+                  crit: 125,
+                  vers: 81,
+                  mastery: 0,
+                },
+                dropLoc: "Boss A (Raid)",
+                effect: "",
+              }}
+            />;
 
-
-
-
-            <div className="itemList">
+            <Grid container spacing={1}>
               {itemList.map((item, index) => (
                       
                       // <QCTile key={index} item={item} lang={props.curLang}/>
                       // scuffed card, need proper item to test
                        <ItemCard key={index} item={item} />
                   ))}
-
-            </div>
+            
+            </Grid>
+            
          
           </div>
 

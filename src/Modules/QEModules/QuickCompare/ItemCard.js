@@ -29,6 +29,7 @@ const useStyles = makeStyles({
 
 export default function ItemCard(props) {
   const classes = useStyles();
+  console.log(Object.keys(props.item.stats).map(key => key))
 
   const test = false;
 
@@ -40,51 +41,25 @@ export default function ItemCard(props) {
   const effect = test ? props.effect : null;
 
   return (
-    <Card className={classes.root} variant="outlined">
-      {/* // disabled disables..the card action area, i.e selecting items would have it as false, if no selection required then true */}
-      <CardActionArea disabled={false}>
-        <Grid container spacing={1} display="block" wrap="nowrap">
-          <Grid item xs="auto">
-            <CardContent style={{ padding: 10 }}>
-              <img width={56} height={56} />
+    <Grid item xs={3}>
+      <Card className={classes.root} variant="outlined">
+        {/* // disabled disables..the card action area, i.e selecting items would have it as false, if no selection required then true */}
+        <CardActionArea disabled={false}>
+          <Grid container spacing={1} display="block" wrap="nowrap">
+            <Grid item xs="auto">
+              <CardContent style={{ padding: 10 }}>
+                <img width={56} height={56} />
 
-              <Typography
-                variant="body2"
-                component="p"
-                style={{ textAlign: "center" }}
-              >
-                Ilvl - {props.ilvl}
-              </Typography>
-            </CardContent>
-          </Grid>
-          <CardContent style={{ padding: 10 }}>
-            <Grid
-              item
-              container
-              display="block"
-              direction="column"
-              xs="auto"
-              spacing={1}
-            >
-              <Grid
-                container
-                item
-                style={{ minHeight: 64 }}
-                alignItems="center"
-              >
-                <Grid item>
-                  <Typography
-                    variant="h6"
-                    component="h2"
-                    wrap="nowrap"
-                    display="block"
-                    align="center"
-                  >
-                    {props.item.name}
-                  </Typography>
-                </Grid>
-              </Grid>
-              <Divider />
+                <Typography
+                  variant="body2"
+                  component="p"
+                  style={{ textAlign: "center" }}
+                >
+                  Ilvl - {props.ilvl}
+                </Typography>
+              </CardContent>
+            </Grid>
+            <CardContent style={{ padding: 10 }}>
               <Grid
                 item
                 container
@@ -92,18 +67,46 @@ export default function ItemCard(props) {
                 direction="column"
                 xs="auto"
                 spacing={1}
-                justify="flex-end"
               >
-                <Grid item>
-                  <Typography variant="body2" component="p" align="center">
-                    {socket} {stat1} / {stat2} / {tertiary} / {effect}
-                  </Typography>
+                <Grid
+                  container
+                  item
+                  style={{ minHeight: 64 }}
+                  alignItems="center"
+                >
+                  <Grid item>
+                    <Typography
+                      variant="h6"
+                      component="h2"
+                      wrap="nowrap"
+                      display="block"
+                      align="center"
+                    >
+                      {props.item.name}
+                    </Typography>
+                  </Grid>
+                </Grid>
+                <Divider />
+                <Grid
+                  item
+                  container
+                  display="block"
+                  direction="column"
+                  xs="auto"
+                  spacing={1}
+                  justify="flex-end"
+                >
+                  <Grid item>
+                    <Typography variant="body2" component="p" align="center">
+                      {socket} {stat1} / {stat2} / {tertiary} / {effect}
+                    </Typography>
+                  </Grid>
                 </Grid>
               </Grid>
-            </Grid>
-          </CardContent>
-        </Grid>
-      </CardActionArea>
-    </Card>
+            </CardContent>
+          </Grid>
+        </CardActionArea>
+      </Card>
+    </Grid>
   );
 }
