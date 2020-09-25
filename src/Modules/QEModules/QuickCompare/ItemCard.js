@@ -13,6 +13,7 @@ import {
   buildStatString,
   getItemIcon,
 } from "../Player/PlayerUtilities";
+import "./ItemCard.css";
 
 const icons = require.context("../../../../public/Images/Items", true);
 
@@ -38,7 +39,7 @@ export default function ItemCard(props) {
   const classes = useStyles();
   const item = props.item;
   const statString = buildStatString(item.stats);
-  console.log(Object.keys(props.item.stats).map((key) => key));
+
   const test = false;
 
   const itemQuality = (quality) => {
@@ -60,27 +61,44 @@ export default function ItemCard(props) {
     }
   };
 
-  // change test to props.socket (true/false)
-  const socket = test ? <img width={15} height={15} /> : null;
+  const socket = props.item.socket ? (
+    <div style={{ display: "inline" }}>
+      {" "}
+      <img width={15} height={15} /> /{" "}
+    </div>
+  ) : null;
+
+  const tertiary =
+    props.item.tertiary !== "" ? (
+      <div style={{ display: "inline" }}> / {props.item.tertiary} </div>
+    ) : null;
 
   return (
     <Grid item xs={4}>
       <Card className={classes.root} variant="outlined">
         <CardActionArea disabled={false}>
-          <Grid container display="inline-flex" wrap="nowrap">
-            <Grid item xs="auto" justify="space-between">
+          <Grid
+            container
+            display="inline-flex"
+            wrap="nowrap"
+            justify="space-between"
+          >
+            <Grid item xs="auto">
               <CardContent style={{ padding: "8.5px", display: "inline-flex" }}>
-                <img
-                  src={getItemIcon(item.id)}
-                  width={56}
-                  height={56}
-                  style={{
-                    borderRadius: 4,
-                    borderWidth: "1px",
-                    borderStyle: "solid",
-                    borderColor: itemQuality("Uncommon"),
-                  }}
-                />
+                <div className="container">
+                  <img
+                    src={getItemIcon(item.id)}
+                    width={56}
+                    height={56}
+                    style={{
+                      borderRadius: 4,
+                      borderWidth: "1px",
+                      borderStyle: "solid",
+                      borderColor: itemQuality("Uncommon"),
+                    }}
+                  />
+                  <div className="bottom-right"> {item.level} </div>
+                </div>
               </CardContent>
             </Grid>
             <Divider orientation="vertical" flexItem />
@@ -103,7 +121,7 @@ export default function ItemCard(props) {
                   <Grid item>
                     <Typography
                       variant="subtitle1"
-                      component="subtitle1"
+                      // component="subtitle1"
                       wrap="nowrap"
                       display="block"
                       align="left"
@@ -122,15 +140,15 @@ export default function ItemCard(props) {
                   xs="auto"
                   // justify="flex-end"
                 >
-                  <Grid item>
+                  <Grid item style={{marginTop: "4px"}}>
                     <Typography
-                      variant="subtitle1"
-                      component="subtitle1"
+                      variant="body2"
+                      // component="subtitle1"
                       wrap="nowrap"
                       display="block"
                       align="left"
                     >
-                      Ilvl {item.level} / {socket} {statString}
+                      {socket} {statString} {tertiary}
                     </Typography>
                   </Grid>
                 </Grid>

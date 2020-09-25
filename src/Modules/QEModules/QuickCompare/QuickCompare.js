@@ -26,6 +26,7 @@ import QCTile from "./QCTile";
 import ItemCard from "./ItemCard";
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
+import Typography from "@material-ui/core/Typography";
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -157,7 +158,7 @@ export default function QuickCompare(props) {
     player.addActiveItem(item);
 
     //player.getActiveItems(activeSlot)
-
+    console.log(item)
     setItemList([...player.getActiveItems(activeSlot)]);
   };
 
@@ -192,107 +193,123 @@ export default function QuickCompare(props) {
   return (
     <div style={{ backgroundColor: "#353535" }}>
       <div style={{ margin: "auto", width: "55%", display: "block" }}>
-        <p className="headers">{t("ModuleTitles.QuickCompare")}</p>
+        <Grid container spacing={2} justify="center" style={{ marginTop: 32 }}>
+          <Grid item xs={12}>
+            <Paper>
+              <Typography variant="h4" align="center">
+                {t("ModuleTitles.QuickCompare")}
+              </Typography>
 
-        <div className="itemEntry">
-          <FormControl className={classes.formControl}>
-            <InputLabel id="slots">{t("QuickCompare.Slot")}</InputLabel>
-            <NativeSelect value={activeSlot} onChange={changeSlot} displayEmpty>
-              {slots.map((x, y) => (
-                <option key={y} value={x.value}>
-                  {x.label}
-                </option>
-              ))}
-            </NativeSelect>
-          </FormControl>
+              <div className="itemEntry">
+                <FormControl className={classes.formControl}>
+                  <InputLabel id="slots">{t("QuickCompare.Slot")}</InputLabel>
+                  <NativeSelect
+                    value={activeSlot}
+                    onChange={changeSlot}
+                    displayEmpty
+                  >
+                    {slots.map((x, y) => (
+                      <option key={y} value={x.value}>
+                        {x.label}
+                      </option>
+                    ))}
+                  </NativeSelect>
+                </FormControl>
 
-          <FormControl className={classes.formControl}>
-            <InputLabel id="itemname">{t("QuickCompare.ItemName")}</InputLabel>
-            <NativeSelect
-              value={itemID}
-              onChange={itemNameChanged}
-              displayEmpty
-            >
-              <option aria-label="None" value="" />
-              {itemDropdown.map((x, y) => (
-                <option key={y} value={x.value} name={x.label}>
-                  {x.label}
-                </option>
-              ))}
-            </NativeSelect>
-          </FormControl>
+                <FormControl className={classes.formControl}>
+                  <InputLabel id="itemname">
+                    {t("QuickCompare.ItemName")}
+                  </InputLabel>
+                  <NativeSelect
+                    value={itemID}
+                    onChange={itemNameChanged}
+                    displayEmpty
+                  >
+                    <option aria-label="None" value="" />
+                    {itemDropdown.map((x, y) => (
+                      <option key={y} value={x.value} name={x.label}>
+                        {x.label}
+                      </option>
+                    ))}
+                  </NativeSelect>
+                </FormControl>
 
-          <FormControl className={classes.formControl}>
-            <InputLabel id="itemlevel">
-              {t("QuickCompare.ItemLevel")}
-            </InputLabel>
-            <NativeSelect
-              value={itemLevel}
-              onChange={itemLevelChanged}
-              displayEmpty
-            >
-              <option aria-label="None" value="" />
-              {itemLevels.map((x, y) => (
-                <option key={y} value={x}>
-                  {x}
-                </option>
-              ))}
-            </NativeSelect>
-          </FormControl>
+                <FormControl className={classes.formControl}>
+                  <InputLabel id="itemlevel">
+                    {t("QuickCompare.ItemLevel")}
+                  </InputLabel>
+                  <NativeSelect
+                    value={itemLevel}
+                    onChange={itemLevelChanged}
+                    displayEmpty
+                  >
+                    <option aria-label="None" value="" />
+                    {itemLevels.map((x, y) => (
+                      <option key={y} value={x}>
+                        {x}
+                      </option>
+                    ))}
+                  </NativeSelect>
+                </FormControl>
 
-          <FormControl className={classes.formControl}>
-            <InputLabel id="itemsocket">{t("QuickCompare.Socket")}</InputLabel>
-            <NativeSelect
-              value={itemSocket}
-              onChange={itemSocketChanged}
-              displayEmpty
-            >
-              <option aria-label="None" value="" />
-              <option label="Yes" value="Yes" />
-            </NativeSelect>
-          </FormControl>
+                <FormControl className={classes.formControl}>
+                  <InputLabel id="itemsocket">
+                    {t("QuickCompare.Socket")}
+                  </InputLabel>
+                  <NativeSelect
+                    value={itemSocket}
+                    onChange={itemSocketChanged}
+                    displayEmpty
+                  >
+                    <option aria-label="None" value="" />
+                    <option label="Yes" value="Yes" />
+                  </NativeSelect>
+                </FormControl>
 
-          <FormControl className={classes.formControl}>
-            <InputLabel id="itemtertiary">
-              {t("QuickCompare.Tertiary")}
-            </InputLabel>
-            <NativeSelect
-              value={itemTertiary}
-              onChange={itemTertiaryChanged}
-              displayEmpty
-            >
-              <option aria-label="None" value="" />
-              {itemTertiaries.map((x, y) => (
-                <option key={y} value={y}>
-                  {x}
-                </option>
-              ))}
-            </NativeSelect>
-          </FormControl>
+                <FormControl className={classes.formControl}>
+                  <InputLabel id="itemtertiary">
+                    {t("QuickCompare.Tertiary")}
+                  </InputLabel>
+                  <NativeSelect
+                    value={itemTertiary}
+                    onChange={itemTertiaryChanged}
+                    displayEmpty
+                  >
+                    <option aria-label="None" value="" />
+                    {itemTertiaries.map((x, y) => (
+                      <option key={y} value={x}>
+                        {x}
+                      </option>
+                    ))}
+                  </NativeSelect>
+                </FormControl>
 
-          <Button
-            key={8}
-            variant="contained"
-            color="primary"
-            onClick={addItem}
-            style={{
-              width: "70px",
-              height: "30px",
-              marginTop: "15px",
-              marginLeft: "5px",
-              backgroundColor: "#c8b054",
-            }}
-          >
-            {t("QuickCompare.AddButton")}
-          </Button>
-        </div>
+                <Button
+                  key={8}
+                  variant="contained"
+                  color="primary"
+                  onClick={addItem}
+                  style={{
+                    width: "70px",
+                    height: "30px",
+                    marginTop: "15px",
+                    marginLeft: "5px",
+                    backgroundColor: "#c8b054",
+                  }}
+                >
+                  {t("QuickCompare.AddButton")}
+                </Button>
+              </div>
+            </Paper>
+          </Grid>
 
-        <Grid container spacing={1}>
-          {itemList.map((item, index) => (
-            // <QCTile key={index} item={item} lang={props.curLang}/>
-            // scuffed card, need proper item to test
-            <ItemCard key={index} item={item} lang={props.curLang} />
-          ))}
+          <Grid container item spacing={1}>
+            {itemList.map((item, index) => (
+              // <QCTile key={index} item={item} lang={props.curLang}/>
+              // scuffed card, need proper item to test
+              <ItemCard key={index} item={item} lang={props.curLang} />
+            ))}
+          </Grid>
         </Grid>
       </div>
     </div>
