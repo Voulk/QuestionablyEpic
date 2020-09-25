@@ -118,7 +118,7 @@ export default function ItemCard(props) {
                   alignItems="center"
                   style={{ width: "100%" }}
                 >
-                  <Grid item>
+                  <Grid item xs={11}>
                     <Typography
                       variant="subtitle1"
                       // component="subtitle1"
@@ -128,6 +128,18 @@ export default function ItemCard(props) {
                       style={{ color: itemQuality("Uncommon") }}
                     >
                       {getTranslatedItemName(item.id, props.lang)}
+                    </Typography>
+                  </Grid>
+                  <Grid item xs={1}>
+                    <Typography
+                      variant="subtitle1"
+                      // component="subtitle1"
+                      wrap="nowrap"
+                      display="block"
+                      // align="Right"
+                      // style={{ color: itemQuality("Uncommon") }}
+                    >
+                     {props.item.softScore}
                     </Typography>
                   </Grid>
                 </Grid>
@@ -142,7 +154,7 @@ export default function ItemCard(props) {
                 >
                   <Grid item style={{marginTop: "4px"}}>
                     <Typography
-                      variant="body2"
+                      variant="subtitle1"
                       // component="subtitle1"
                       wrap="nowrap"
                       display="block"
