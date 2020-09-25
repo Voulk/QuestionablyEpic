@@ -1,13 +1,5 @@
 
 
-// Experimental and not likely to see use.
-const allItemsArray = 
-[   // [ID, "Name, "Armor Type", "Slot", int, stamina, BaseHaste, BaseCrit, BaseVers, BaseMastery, BaseItemLevel, DropLocation, Selectable],
-    [163891, "7th Legionnaires Aegis", "Shield", "Shield", 666, 382, 0, 54, 0, 83, 280, "World Quest", true]
-
-
-]
-
 // Much more likely to see use.
 export const itemDB = [
   {
