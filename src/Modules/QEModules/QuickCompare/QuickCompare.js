@@ -151,7 +151,7 @@ export default function QuickCompare(props) {
       activeSlot,
       itemSocket,
       itemTertiary,
-      0,
+      3000,
       itemLevel
     );
     item.level = itemLevel;

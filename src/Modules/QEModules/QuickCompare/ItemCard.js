@@ -114,29 +114,29 @@ export default function ItemCard(props) {
                 <Grid
                   container
                   item
-                  // style={{ minHeight: 64 }}
+                  justify="space-between"
                   alignItems="center"
                   style={{ width: "100%" }}
                 >
-                  <Grid item xs={11}>
+                  <Grid item xs="auto">
                     <Typography
                       variant="subtitle1"
                       // component="subtitle1"
                       wrap="nowrap"
-                      display="block"
+                      display="inline-flex"
                       align="left"
                       style={{ color: itemQuality("Uncommon") }}
                     >
                       {getTranslatedItemName(item.id, props.lang)}
                     </Typography>
                   </Grid>
-                  <Grid item xs={1}>
+                  <Grid item xs="auto">
                     <Typography
                       variant="subtitle1"
                       // component="subtitle1"
                       wrap="nowrap"
-                      display="block"
-                      // align="Right"
+                      display="inline-flex"
+                      align="Right"
                       // style={{ color: itemQuality("Uncommon") }}
                     >
                      {props.item.softScore}
