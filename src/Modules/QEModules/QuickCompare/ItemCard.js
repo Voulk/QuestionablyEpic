@@ -8,9 +8,13 @@ import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import Divider from "@material-ui/core/Divider";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
-import { getTranslatedItemName, buildStatString, getItemIcon } from "../Player/PlayerUtilities";
+import {
+  getTranslatedItemName,
+  buildStatString,
+  getItemIcon,
+} from "../Player/PlayerUtilities";
 
-const icons = require.context('../../../../public/Images/Items', true)
+const icons = require.context("../../../../public/Images/Items", true);
 
 const useStyles = makeStyles({
   root: {
@@ -34,50 +38,67 @@ export default function ItemCard(props) {
   const classes = useStyles();
   const item = props.item;
   const statString = buildStatString(item.stats);
-  console.log(Object.keys(props.item.stats).map(key => key))
-
+  console.log(Object.keys(props.item.stats).map((key) => key));
   const test = false;
+
+  const itemQuality = (quality) => {
+    switch (quality) {
+      case "Legendary":
+        return "#ff8000";
+        break;
+      case "Epic":
+        return "#a335ee";
+        break;
+      case "Uncommon":
+        return "#0070dd";
+        break;
+      case "Common":
+        return "#1eff00";
+        break;
+      default:
+        return "#fff";
+    }
+  };
 
   // change test to props.socket (true/false)
   const socket = test ? <img width={15} height={15} /> : null;
-  const stat1 = test ? props.stat1 : null;
-  const stat2 = test ? props.stat2 : null;
-  const tertiary = test ? props.tertiary : null;
-  const effect = test ? props.effect : null;
 
   return (
     <Grid item xs={4}>
       <Card className={classes.root} variant="outlined">
-        {/* // disabled disables..the card action area, i.e selecting items would have it as false, if no selection required then true */}
         <CardActionArea disabled={false}>
-          <Grid container spacing={1} display="block" wrap="nowrap">
-            <Grid item xs="auto">
-              <CardContent style={{ padding: 10 }}>
-                <img src={getItemIcon(item.id)} width={56} height={56} />
-
-                <Typography
-                  variant="body2"
-                  component="p"
-                  style={{ textAlign: "center" }}
-                >
-                  Ilvl - {item.level}
-                </Typography>
+          <Grid container display="inline-flex" wrap="nowrap">
+            <Grid item xs="auto" justify="space-between">
+              <CardContent style={{ padding: "8.5px", display: "inline-flex" }}>
+                <img
+                  src={getItemIcon(item.id)}
+                  width={56}
+                  height={56}
+                  style={{
+                    borderRadius: 4,
+                    borderWidth: "1px",
+                    borderStyle: "solid",
+                    borderColor: itemQuality("Uncommon"),
+                  }}
+                />
               </CardContent>
             </Grid>
-            <CardContent style={{ padding: 10 }}>
+            <Divider orientation="vertical" flexItem />
+            <CardContent style={{ padding: 8, width: "100%" }}>
               <Grid
                 item
                 container
-                display="block"
+                display="inline-flex"
                 direction="column"
+                justify="space-around"
                 xs="auto"
-                spacing={1}
               >
                 <Grid
                   container
                   item
-                  style={{ minHeight: 64 }}
+                  // style={{ minHeight: 64 }}
                   alignItems="center"
+                  style={{ width: "100%" }}
                 >
                   <Grid item>
                     <Typography
@@ -86,6 +107,7 @@ export default function ItemCard(props) {
                       wrap="nowrap"
                       display="block"
                       align="left"
+                      style={{ color: itemQuality("Uncommon") }}
                     >
                       {getTranslatedItemName(item.id, props.lang)}
                     </Typography>
@@ -95,15 +117,20 @@ export default function ItemCard(props) {
                 <Grid
                   item
                   container
-                  display="block"
+                  display="inline-flex"
                   direction="column"
                   xs="auto"
-                  spacing={1}
-                  justify="flex-end"
+                  // justify="flex-end"
                 >
                   <Grid item>
-                    <Typography variant="body2" component="p" align="center">
-                      {socket} {statString}
+                    <Typography
+                      variant="subtitle1"
+                      component="subtitle1"
+                      wrap="nowrap"
+                      display="block"
+                      align="left"
+                    >
+                      Ilvl {item.level} / {socket} {statString}
                     </Typography>
                   </Grid>
                 </Grid>
