@@ -206,6 +206,7 @@ export default function QuickCompare(props) {
     setItemList([...props.pl.getActiveItems(event.target.value)]);
   };
 
+
   // TODO. Calculate the score for a given item.
   // Score is calculated by multiplying out stat weights and then adding any special effects.
   const calculateScore = (item) => {};
@@ -222,6 +223,7 @@ export default function QuickCompare(props) {
                 variant="h4"
                 align="center"
                 style={{ padding: "10px 10px 0px 10px" }}
+                color="primary"
               >
                 {t("ModuleTitles.QuickCompare")}
                 <Divider variant="middle" />
