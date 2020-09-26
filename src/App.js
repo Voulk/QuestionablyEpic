@@ -18,6 +18,8 @@ import i18n from "./i18n";
 import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import ls from "local-storage";
+import Snackbar from "@material-ui/core/Snackbar";
+import MuiAlert from "@material-ui/lab/Alert";
 
 const theme = createMuiTheme({
   palette: {
@@ -30,6 +32,8 @@ const theme = createMuiTheme({
 class App extends Component {
   constructor() {
     super();
+    this.handleCharSnackOpen = this.handleCharSnackOpen.bind(this);
+    this.handleCharSnackClose = this.handleCharSnackClose.bind(this);
     this.langSet = this.langSet.bind(this);
     this.userLogout = this.userLogout.bind(this);
     this.state = {
@@ -41,8 +45,20 @@ class App extends Component {
       playerBattleTag: "",
       accessToken: "",
       contentType: "Raid",
+      charSnackState: false,
     };
   }
+
+  handleCharSnackOpen = () => {
+    this.setState({ charSnackState: true });
+  };
+
+  handleCharSnackClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+    this.setState({ charSnackState: false });
+  };
 
   langSet = (props) => {
     this.setState({ lang: props });
@@ -50,9 +66,8 @@ class App extends Component {
   };
 
   updatePlayerChars = (allChars) => {
-    this.setState({characters : allChars})
-    
-  }
+    this.setState({ characters: allChars });
+  };
 
   setRegion = (props) => {
     this.setState({ playerRegion: props });
@@ -60,9 +75,9 @@ class App extends Component {
 
   toggleContentType = () => {
     let newType = this.state.contentType === "Raid" ? "Dungeon" : "Raid";
-    this.setState({ contentType: newType});
+    this.setState({ contentType: newType });
     ls.set("contentType", newType);
-  }
+  };
 
   updatePlayerID = (id, battletag) => {
     this.setState({ playerLoginID: id });
@@ -115,12 +130,14 @@ class App extends Component {
   render() {
     let activePlayer = this.state.characters.getActiveChar();
     let allChars = this.state.characters;
-    //alert(JSON.stringify(allChars[0]));
 
+    function Alert(props) {
+      return <MuiAlert elevation={6} variant="filled" {...props} />;
+    }
+    //alert(JSON.stringify(allChars[0]));
 
     return (
       <Router>
-        {console.log(this.state)}
         <ThemeProvider theme={theme}>
           <div className="App">
             <QEHeader
@@ -132,6 +149,18 @@ class App extends Component {
               toggleContentType={this.toggleContentType}
               contentType={this.state.contentType}
             />
+
+            {/* // Char Added Snackbar */}
+            <Snackbar
+              open={this.state.charSnackState}
+              autoHideDuration={3000}
+              onClose={this.handleCharSnackClose}
+            >
+              <Alert onClose={this.handleCharSnackClose} severity="success">
+                Character Added!
+              </Alert>
+            </Snackbar>
+
             <Switch>
               <Route
                 exact
@@ -143,16 +172,16 @@ class App extends Component {
                     pl={this.state.player}
                     langSet={this.langSet}
                     curLang={this.state.lang}
+                    charAddedSnack={this.handleCharSnackOpen}
                   />
                 )}
               />
-              {/*>:( FIX YO FOLDERS) */}
               <Route
                 path="/holydiver"
                 render={() => (
                   <HolyDiver langSet={this.langSet} curLang={this.state.lang} />
-                )} 
-              />    
+                )}
+              />
               <Route
                 path="/trinkets"
                 render={() => (
@@ -186,12 +215,7 @@ class App extends Component {
                 )}
               />
 
-              <Route
-                path="/soulbinds"
-                render={() => (
-                  <SimpleTabs />
-                )}
-              />
+              <Route path="/soulbinds" render={() => <SimpleTabs />} />
               <Route
                 path="/login"
                 render={() => (
