@@ -11,6 +11,7 @@ import SalvationIcon from "../../../Images/Classes/Priest/Specialisation/Holy/Ic
 import SpiritLinkTotemIcon from "../../../Images/Classes/Shaman/Specialisation/Restoration/Icons/SpiritLinkTotem.jpg";
 import TranquilityIcon from "../../../Images/Classes/Druid/Specialisation/Restoration/Icons/Tranquility.jpg";
 import TreeofLifeIcon from "../../../Images/Classes/Druid/Specialisation/Restoration/Icons/TreeofLife.jpg";
+import Divider from "@material-ui/core/Divider";
 
 export default function ClassCooldownMenuItems(props) {
   // Paladin Cooldowns
@@ -31,6 +32,7 @@ export default function ClassCooldownMenuItems(props) {
         </a>
         Aura Mastery
       </MenuItem>,
+      <Divider />,
       <MenuItem value={"Avenging Wrath"}>
         <a data-wowhead="spell=31884">
           <img
@@ -66,6 +68,7 @@ export default function ClassCooldownMenuItems(props) {
         </a>
         Tranquility
       </MenuItem>,
+      <Divider />,
       <MenuItem value={"Incarnation: Tree of Life"}>
         <a data-wowhead="spell=33891">
           <img
@@ -101,6 +104,7 @@ export default function ClassCooldownMenuItems(props) {
         </a>
         Holy Word: Salvation
       </MenuItem>,
+      <Divider />,
       <MenuItem value={"Divine Hymn"}>
         <a data-wowhead="spell=64843">
           <img
@@ -136,6 +140,7 @@ export default function ClassCooldownMenuItems(props) {
         </a>
         Power Word: Barrier
       </MenuItem>,
+      <Divider />,
       <MenuItem value={"Evangelism"}>
         <a data-wowhead="spell=246287">
           <img
@@ -171,6 +176,7 @@ export default function ClassCooldownMenuItems(props) {
         </a>
         Healing Tide Totem
       </MenuItem>,
+      <Divider />,
       <MenuItem value={"Spirit Link Totem"}>
         <a data-wowhead="spell=98008">
           <img

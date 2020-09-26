@@ -6,6 +6,7 @@ import HolyPriestIcon from "../../../Images/Classes/Priest/Specialisation/Holy/I
 import MistweaverIcon from "../../../Images/Classes/Monk/Specialisation/Mistweaver/Icons/MistWeaverMonk.jpg";
 import RestorationDruidIcon from "../../../Images/Classes/Druid/Specialisation/Restoration/Icons/RestorationDruid.jpg";
 import RestorationShamanIcon from "../../../Images/Classes/Shaman/Specialisation/Restoration/Icons/RestorationShaman.jpg";
+import Divider from "@material-ui/core/Divider";
 
 export const classMenus = [
   <MenuItem style={{ color: "#F58CBA" }} value={"Holy Paladin"}>
@@ -21,6 +22,7 @@ export const classMenus = [
     />
     Holy Paladin
   </MenuItem>,
+  <Divider />,
   <MenuItem style={{ color: "#FF7D0A" }} value={"Restoration Druid"}>
     <img
       style={{
@@ -34,6 +36,7 @@ export const classMenus = [
     />
     Restoration Druid
   </MenuItem>,
+  <Divider />,
   <MenuItem style={{ color: "#FFFFFF" }} value={"Holy Priest"}>
     <img
       style={{
@@ -47,6 +50,7 @@ export const classMenus = [
     />
     Holy Priest
   </MenuItem>,
+  <Divider />,
   <MenuItem style={{ color: "#FFFFFF" }} value={"Discispline Priest"}>
     <img
       style={{
@@ -60,6 +64,7 @@ export const classMenus = [
     />
     Discispline Priest
   </MenuItem>,
+  <Divider />,
   <MenuItem style={{ color: "#0070DE" }} value={"Restoration Shaman"}>
     <img
       style={{
@@ -73,6 +78,7 @@ export const classMenus = [
     />
     Restoration Shaman
   </MenuItem>,
+  <Divider />,
   <MenuItem style={{ color: "#00FF96" }} value={"Mistweaver Monk"}>
     <img
       style={{

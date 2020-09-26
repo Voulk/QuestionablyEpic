@@ -242,7 +242,7 @@ export default function CooldownPlanner(props) {
                   {" "}
                   {key.name}{" "}
                 </MenuItem>
-              ))}
+              )).map(key => [key,<Divider />])}
             </Select>
           </FormControl>
         </ThemeProvider>
@@ -430,7 +430,7 @@ export default function CooldownPlanner(props) {
                     </a>
                     {key.ability}
                   </MenuItem>
-                ))}
+                )).map(key => [key,<Divider />])}
             </Select>
           </FormControl>
         </ThemeProvider>
@@ -586,7 +586,7 @@ export default function CooldownPlanner(props) {
                           <MenuItem value={key.raidName}>
                             {key.raidName}
                           </MenuItem>
-                        ))}
+                        )).map(key => [key,<Divider />])}
                       </Select>
                     </FormControl>
                   </Grid>
@@ -630,14 +630,11 @@ export default function CooldownPlanner(props) {
                             return obj.raid === raid;
                           })
                           .map((key) => (
-                            <div>
                               <MenuItem value={key.id}>
                                 {bossIcons(key.id)}
                                 {key.name}
                               </MenuItem>
-                              <Divider />
-                            </div>
-                          ))}
+                          )).map(key => [key,<Divider />])}
                       </Select>
                     </FormControl>
                   </Grid>

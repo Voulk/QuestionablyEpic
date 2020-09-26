@@ -79,7 +79,8 @@
       "chest" : "Chest",
       "wrists" : "Bracers",
       "hands" : "Gloves",
-      "waist" : "Belt"
+      "waist" : "Belt",
+      "feet" : "Boots"
     },
 
     "Vision of Unending Growth": {

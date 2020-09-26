@@ -14,6 +14,9 @@ import {
   getItemIcon,
 } from "../Player/PlayerUtilities";
 import "./ItemCard.css";
+import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
+import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
+import RemoveIcon from "@material-ui/icons/Remove";
 
 const icons = require.context("../../../../public/Images/Items", true);
 
@@ -61,10 +64,29 @@ export default function ItemCard(props) {
     }
   };
 
+  const upgradeColor = (num) => {
+    if (num > 0) {
+      return "#4CBB17";
+    } else if (num < 0) {
+      return "#ad2c34";
+    } else {
+      return "#fff";
+    }
+  };
+
+  // const upgradeArrow = (num) => {
+  //   if (num > 0) {
+  //     return <KeyboardArrowUpIcon style={{ color: "#4CBB17" }} />;
+  //   } else if (num > 0) {
+  //     return <KeyboardArrowDownIcon style={{ color: "#ad2c34" }} />;
+  //   } else {
+  //     return <RemoveIcon style={{ color: "#fff" }} />;
+  //   }
+  // };
+
   const socket = props.item.socket ? (
     <div style={{ display: "inline" }}>
-      {" "}
-      <img width={15} height={15} /> /{" "}
+      <img width={15} height={15} /> /
     </div>
   ) : null;
 
@@ -118,7 +140,7 @@ export default function ItemCard(props) {
                   alignItems="center"
                   style={{ width: "100%" }}
                 >
-                  <Grid item xs="auto">
+                  <Grid item xs="auto" display="inline-f">
                     <Typography
                       variant="subtitle1"
                       // component="subtitle1"
@@ -130,17 +152,18 @@ export default function ItemCard(props) {
                       {getTranslatedItemName(item.id, props.lang)}
                     </Typography>
                   </Grid>
-                  <Grid item xs="auto">
+                  <Grid item xs="auto" style={{display:"inline-flex"}}>
                     <Typography
                       variant="subtitle1"
                       // component="subtitle1"
                       wrap="nowrap"
                       display="inline-flex"
                       align="Right"
-                      // style={{ color: itemQuality("Uncommon") }}
+                      style={{ color: upgradeColor(props.item.softScore) }}
                     >
-                     {props.item.softScore}
+                      {props.item.softScore}
                     </Typography>
+                    {/* {upgradeArrow(props.item.softScore)} */}
                   </Grid>
                 </Grid>
                 <Divider />
@@ -152,7 +175,7 @@ export default function ItemCard(props) {
                   xs="auto"
                   // justify="flex-end"
                 >
-                  <Grid item style={{marginTop: "4px"}}>
+                  <Grid item style={{ marginTop: "4px" }}>
                     <Typography
                       variant="subtitle1"
                       // component="subtitle1"
