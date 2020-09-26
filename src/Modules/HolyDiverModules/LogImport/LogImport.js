@@ -49,7 +49,6 @@ class LogImport extends Component {
       let menuitems = fights
         .filter((name) => name.boss !== 0)
         .map((fight) => (
-          <div>
             <MenuItem
               value={1}
               key={fight.id}
@@ -81,9 +80,7 @@ class LogImport extends Component {
                 fight.bossPercentage / 100 +
                 "%"}
             </MenuItem>
-            <Divider />
-          </div>
-        ));
+        )).map(key => [key,<Divider />]);
       return menuitems;
     }
   }
