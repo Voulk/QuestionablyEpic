@@ -74,20 +74,19 @@ export default function ItemCard(props) {
     }
   };
 
-  const upgradeArrow = (num) => {
-    if (num > 0) {
-      return <KeyboardArrowUpIcon style={{ color: "#4CBB17" }} />;
-    } else if (num > 0) {
-      return <KeyboardArrowDownIcon style={{ color: "#ad2c34" }} />;
-    } else {
-      return <RemoveIcon style={{ color: "#fff" }} />;
-    }
-  };
+  // const upgradeArrow = (num) => {
+  //   if (num > 0) {
+  //     return <KeyboardArrowUpIcon style={{ color: "#4CBB17" }} />;
+  //   } else if (num > 0) {
+  //     return <KeyboardArrowDownIcon style={{ color: "#ad2c34" }} />;
+  //   } else {
+  //     return <RemoveIcon style={{ color: "#fff" }} />;
+  //   }
+  // };
 
   const socket = props.item.socket ? (
     <div style={{ display: "inline" }}>
-      {" "}
-      <img width={15} height={15} /> /{" "}
+      <img width={15} height={15} /> /
     </div>
   ) : null;
 
@@ -164,7 +163,7 @@ export default function ItemCard(props) {
                     >
                       {props.item.softScore}
                     </Typography>
-                    {upgradeArrow(props.item.softScore)}
+                    {/* {upgradeArrow(props.item.softScore)} */}
                   </Grid>
                 </Grid>
                 <Divider />
