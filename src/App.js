@@ -32,8 +32,11 @@ const theme = createMuiTheme({
 class App extends Component {
   constructor() {
     super();
+
+    // binds the snack open handlers to this component so we can send it down to where we can trigger them in the relevant component
     this.handleCharSnackOpen = this.handleCharSnackOpen.bind(this);
-    this.handleCharSnackClose = this.handleCharSnackClose.bind(this);
+    this.handleLoginSnackOpen = this.handleLoginSnackOpen.bind(this);
+
     this.langSet = this.langSet.bind(this);
     this.userLogout = this.userLogout.bind(this);
     this.state = {
@@ -46,19 +49,34 @@ class App extends Component {
       accessToken: "",
       contentType: "Raid",
       charSnackState: false,
+      loginSnackState: false,
     };
   }
 
+  // --Snack Bar Handlers--
+  // Character Added
   handleCharSnackOpen = () => {
     this.setState({ charSnackState: true });
   };
-
   handleCharSnackClose = (event, reason) => {
     if (reason === "clickaway") {
       return;
     }
     this.setState({ charSnackState: false });
   };
+
+  // Login
+  handleLoginSnackOpen = () => {
+    this.setState({ loginSnackState: true });
+  };
+  handleLoginClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+    this.setState({ loginSnackState: false });
+  };
+
+  // ////////////////////////////////////////
 
   langSet = (props) => {
     this.setState({ lang: props });
@@ -160,6 +178,17 @@ class App extends Component {
                 Character Added!
               </Alert>
             </Snackbar>
+            
+            {/* // Login Success Snackbar */}
+            <Snackbar
+              open={this.state.loginSnackState}
+              autoHideDuration={3000}
+              onClose={this.handleLoginClose}
+            >
+              <Alert onClose={this.handleLoginClose} severity="success">
+                Logged in Successfully!
+              </Alert>
+            </Snackbar>
 
             <Switch>
               <Route
@@ -233,7 +262,10 @@ class App extends Component {
               <Route
                 path="/confirmlogin/"
                 render={() => (
-                  <ConfirmLogin updatePlayerID={this.updatePlayerID} />
+                  <ConfirmLogin
+                    loginSnackOpen={this.handleLoginSnackOpen}
+                    updatePlayerID={this.updatePlayerID}
+                  />
                 )}
               />
             </Switch>
