@@ -16,7 +16,7 @@ import SaveAlt from "@material-ui/icons/SaveAlt";
 import Search from "@material-ui/icons/Search";
 import ViewColumn from "@material-ui/icons/ViewColumn";
 import ClassCooldownMenuItems from "./ClassCooldownMenuItems";
-import { Select, Grid } from "@material-ui/core";
+import { Select, Grid, Paper } from "@material-ui/core";
 import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import InputLabel from "@material-ui/core/InputLabel";
@@ -38,7 +38,7 @@ import { localizationRU, localizationCH } from "./TableLocalization.js";
 import MenuItem from "@material-ui/core/MenuItem";
 import bossIcons from "../Functions/IconFunctions/BossIcons";
 import bossAbilityIcons from "../Functions/IconFunctions/BossAbilityIcons";
-import Divider from '@material-ui/core/Divider';
+import Divider from "@material-ui/core/Divider";
 import ls from "local-storage";
 
 const useStyles = makeStyles((theme) => ({
@@ -218,6 +218,24 @@ export default function CooldownPlanner(props) {
                 props.onChange(e.target.value);
                 // wowClass = e.target.value;
               }}
+              MenuProps={{
+                style: { marginTop: 5 },
+                MenuListProps: {
+                  style: { paddingTop: 0, paddingBottom: 0 },
+                },
+                PaperProps: {
+                  style: { border: "1px solid rgba(255, 255, 255, 0.23)" },
+                },
+                anchorOrigin: {
+                  vertical: "bottom",
+                  horizontal: "left",
+                },
+                transformOrigin: {
+                  vertical: "top",
+                  horizontal: "left",
+                },
+                getContentAnchorEl: null,
+              }}
             >
               {ls.get("healerInfo").map((key, i) => (
                 <MenuItem key={i} value={key.name}>
@@ -254,6 +272,24 @@ export default function CooldownPlanner(props) {
                 props.onChange(e.target.value);
                 wowClass = e.target.value;
               }}
+              MenuProps={{
+                style: { marginTop: 5 },
+                MenuListProps: {
+                  style: { paddingTop: 0, paddingBottom: 0 },
+                },
+                PaperProps: {
+                  style: { border: "1px solid rgba(255, 255, 255, 0.23)" },
+                },
+                anchorOrigin: {
+                  vertical: "bottom",
+                  horizontal: "left",
+                },
+                transformOrigin: {
+                  vertical: "top",
+                  horizontal: "left",
+                },
+                getContentAnchorEl: null,
+              }}
             >
               {classMenus}
             </Select>
@@ -278,6 +314,24 @@ export default function CooldownPlanner(props) {
             labelId="HealerAbilitySelector"
             onChange={(e) => {
               props.onChange(e.target.value);
+            }}
+            MenuProps={{
+              style: { marginTop: 5 },
+              MenuListProps: {
+                style: { paddingTop: 0, paddingBottom: 0 },
+              },
+              PaperProps: {
+                style: { border: "1px solid rgba(255, 255, 255, 0.23)" },
+              },
+              anchorOrigin: {
+                vertical: "bottom",
+                horizontal: "left",
+              },
+              transformOrigin: {
+                vertical: "top",
+                horizontal: "left",
+              },
+              getContentAnchorEl: null,
             }}
           >
             {ClassCooldownMenuItems(wowClass) || []}
@@ -343,6 +397,24 @@ export default function CooldownPlanner(props) {
               labelId="BossAbilitySelector"
               onChange={(e) => {
                 props.onChange(e.target.value);
+              }}
+              MenuProps={{
+                style: { marginTop: 5 },
+                MenuListProps: {
+                  style: { paddingTop: 0, paddingBottom: 0 },
+                },
+                PaperProps: {
+                  style: { border: "1px solid rgba(255, 255, 255, 0.23)" },
+                },
+                anchorOrigin: {
+                  vertical: "bottom",
+                  horizontal: "left",
+                },
+                transformOrigin: {
+                  vertical: "top",
+                  horizontal: "left",
+                },
+                getContentAnchorEl: null,
               }}
             >
               {bossAbilities
@@ -489,6 +561,26 @@ export default function CooldownPlanner(props) {
                         labelId="RaidSelector"
                         value={raid}
                         onChange={handleChangeRaid}
+                        MenuProps={{
+                          style: { marginTop: 5 },
+                          MenuListProps: {
+                            style: { paddingTop: 0, paddingBottom: 0 },
+                          },
+                          PaperProps: {
+                            style: {
+                              border: "1px solid rgba(255, 255, 255, 0.23)",
+                            },
+                          },
+                          anchorOrigin: {
+                            vertical: "bottom",
+                            horizontal: "left",
+                          },
+                          transformOrigin: {
+                            vertical: "top",
+                            horizontal: "left",
+                          },
+                          getContentAnchorEl: null,
+                        }}
                       >
                         {rl.map((key) => (
                           <MenuItem value={key.raidName}>
@@ -512,16 +604,39 @@ export default function CooldownPlanner(props) {
                         labelId="BossSelector"
                         value={boss}
                         onChange={handleChangeBoss}
+                        MenuProps={{
+                          style: { marginTop: 5 },
+                          MenuListProps: {
+                            style: { paddingTop: 0, paddingBottom: 0 },
+                          },
+                          PaperProps: {
+                            style: {
+                              border: "1px solid rgba(255, 255, 255, 0.23)",
+                            },
+                          },
+                          anchorOrigin: {
+                            vertical: "bottom",
+                            horizontal: "left",
+                          },
+                          transformOrigin: {
+                            vertical: "top",
+                            horizontal: "left",
+                          },
+                          getContentAnchorEl: null,
+                        }}
                       >
                         {nathriaBossList
                           .filter((obj) => {
                             return obj.raid === raid;
                           })
                           .map((key) => (
-                            <MenuItem value={key.id}>
-                              {bossIcons(key.id)}
-                              {key.name}
-                            </MenuItem>
+                            <div>
+                              <MenuItem value={key.id}>
+                                {bossIcons(key.id)}
+                                {key.name}
+                              </MenuItem>
+                              <Divider />
+                            </div>
                           ))}
                       </Select>
                     </FormControl>
