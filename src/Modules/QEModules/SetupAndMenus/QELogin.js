@@ -105,7 +105,7 @@ export function ConfirmLogin(props) {
   history.push("/");
 
   //});
-
+  props.loginSnackOpen()
   return (
     <div>
       <p>{query.get("code")}</p>

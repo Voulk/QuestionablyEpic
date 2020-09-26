@@ -89,6 +89,7 @@ export default function QEMainMenu(props) {
             <AddNewChar
               allChars={props.allChars}
               charUpdate={props.charUpdate}
+              charAddedSnack={props.charAddedSnack}
             />
           ) : (
             ""

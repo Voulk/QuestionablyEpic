@@ -27,6 +27,10 @@ import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 import Divider from "@material-ui/core/Divider";
+import Snackbar from "@material-ui/core/Snackbar";
+import MuiAlert from "@material-ui/lab/Alert";
+
+
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -109,6 +113,19 @@ function getSlots() {
 export default function QuickCompare(props) {
   const { t, i18n } = useTranslation();
   const classes = useStyles();
+  const [open, setOpen] = React.useState(false);
+
+  const handleClick = () => {
+    setOpen(true);
+  };
+
+  const handleClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+
+    setOpen(false);
+  };
 
   const slots = getSlots();
   const itemDropdown = []; // Filled later based on item slot and armor type.
@@ -182,6 +199,7 @@ export default function QuickCompare(props) {
     //player.getActiveItems(activeSlot)
     console.log(item);
     setItemList([...player.getActiveItems(activeSlot)]);
+    handleClick();
   };
 
   const itemNameChanged = (event) => {
@@ -459,6 +477,15 @@ export default function QuickCompare(props) {
                 >
                   {t("QuickCompare.AddButton")}
                 </Button>
+                <Snackbar
+                  open={open}
+                  autoHideDuration={3000}
+                  onClose={handleClose}
+                >
+                  <Alert onClose={handleClose} severity="success">
+                    Item Added!
+                  </Alert>
+                </Snackbar>
               </div>
             </Paper>
           </Grid>
