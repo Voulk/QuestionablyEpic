@@ -11,6 +11,7 @@ import SonarShriekIcon from "../../../../Images/Bosses/CastleNathria/Shriekwing/
 import EchoingScreechIcon from "../../../../Images/Bosses/CastleNathria/Shriekwing/Icons/EchoingScreechIcon.jpg";
 import ExsanguinatedIcon from "../../../../Images/Bosses/CastleNathria/Shriekwing/Icons/ExsanguinatedIcon.jpg";
 import BlindSwipeIcon from "../../../../Images/Bosses/CastleNathria/Shriekwing/Icons/BlindSwipeIcon.jpg";
+import EarsplittingShriekIcon from "../../../../Images/Bosses/CastleNathria/Shriekwing/Icons/EarsplittingShriekIcon.jpg";
 
 export default function bossAbilityIcons(props) {
   let source = "";
@@ -75,6 +76,10 @@ export default function bossAbilityIcons(props) {
   if (props === 343005 || props === "Blind Swipe") {
     source = BlindSwipeIcon;
     alt = "Blind Swipe";
+  }
+    if (props === 330711 || props === "Earsplitting Shriek") {
+    source = EarsplittingShriekIcon;
+    alt = "Earsplitting Shriek";
   }
 
   return (

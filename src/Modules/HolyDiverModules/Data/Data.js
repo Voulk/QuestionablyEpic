@@ -608,39 +608,39 @@ export const bossAbilities = [
   // Shriekwing
   {
     bossID: 2398,
-    ability: "Reverberating Scream (Hit)",
+    ability: "Reverberating Scream",
     guid: 344112,
     cooldownPlannerActive: true,
   },
   {
     bossID: 2398,
-    ability: "Reverberating Scream (DOT)",
+    ability: "Reverberating Scream",
     guid: 344114,
-    cooldownPlannerActive: true,
+    cooldownPlannerActive: false,
   },
   {
     bossID: 2398,
     ability: "Deadly Descent",
     guid: 343021,
-    cooldownPlannerActive: true,
+    cooldownPlannerActive: false,
   },
   {
     bossID: 2398,
     ability: "Echoing Sonar",
     guid: 343022,
-    cooldownPlannerActive: true,
+    cooldownPlannerActive: false,
   },
   {
     bossID: 2398,
-    ability: "Bloodcurdling Shriek (Hit)",
+    ability: "Bloodcurdling Shriek",
     guid: 330712,
     cooldownPlannerActive: true,
   },
   {
     bossID: 2398,
-    ability: "Bloodcurdling Shriek (DOT",
+    ability: "Bloodcurdling Shriek",
     guid: 336005,
-    cooldownPlannerActive: true,
+    cooldownPlannerActive: false,
   },
   {
     bossID: 2398,
@@ -652,19 +652,19 @@ export const bossAbilities = [
     bossID: 2398,
     ability: "Blind Swipe",
     guid: 343005,
-    cooldownPlannerActive: true,
+    cooldownPlannerActive: false,
   },
   {
     bossID: 2398,
     ability: "Sanguine Ichor",
     guid: 340324,
-    cooldownPlannerActive: true,
+    cooldownPlannerActive: false,
   },
   {
     bossID: 2398,
     ability: "Descent",
     guid: 342923,
-    cooldownPlannerActive: true,
+    cooldownPlannerActive: false,
   },
   {
     bossID: 2398,
@@ -676,19 +676,26 @@ export const bossAbilities = [
     bossID: 2398,
     ability: "Exsanguinating Bite",
     guid: 328887,
-    cooldownPlannerActive: true,
+    cooldownPlannerActive: false,
   },
   {
     bossID: 2398,
     ability: "Echoing Screech",
     guid: 342866,
-    cooldownPlannerActive: true,
+    cooldownPlannerActive: false,
   },
   {
     bossID: 2398,
     ability: "Exsanguinated",
     guid: 328897,
+    cooldownPlannerActive: false,
+  },
+  {
+    bossID: 2398,
+    ability: "Earsplitting Shriek",
+    guid: 330711,
     cooldownPlannerActive: true,
+    icon: "./../../../../../Images/Bosses/CastleNathria/Shriekwing/Icons/EarsplittingShriekIcon.jpg"
   },
 
   // Stone Born Generals
@@ -767,7 +774,7 @@ export const bossAbilities = [
   },
 
   // Sun King's Salvation
-    {
+  {
     bossID: 2402,
     ability: "Smoldering Remnants",
     guid: 328579,
@@ -1088,7 +1095,7 @@ export const bossAbilities = [
     guid: 331634,
     cooldownPlannerActive: true,
   },
-  
+
   // sludgefist
   {
     bossID: 2399,
@@ -1180,9 +1187,6 @@ export const bossAbilities = [
     guid: 339189,
     cooldownPlannerActive: true,
   },
-
-
-
 ];
 
 export const talents = [
