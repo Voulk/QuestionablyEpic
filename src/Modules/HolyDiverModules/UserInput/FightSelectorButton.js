@@ -32,11 +32,16 @@ export default function FightSelectorButton(props) {
         style={{ marginTop: 5 }}
         id="fight-selector"
         anchorEl={anchorEl}
+        MenuListProps={{
+          style: { paddingTop: 0, paddingBottom: 0 },
+        }}
         // keepMounted
         open={Boolean(anchorEl)}
         onClose={handleClose}
         TransitionComponent={Fade}
-        PaperProps={{ style: { border: "1px solid rgba(255, 255, 255, 0.23)" } }}
+        PaperProps={{
+          style: { border: "1px solid rgba(255, 255, 255, 0.23)" },
+        }}
         anchorOrigin={{
           vertical: "bottom",
           horizontal: "left",

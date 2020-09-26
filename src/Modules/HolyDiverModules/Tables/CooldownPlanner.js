@@ -220,6 +220,9 @@ export default function CooldownPlanner(props) {
               }}
               MenuProps={{
                 style: { marginTop: 5 },
+                MenuListProps: {
+                  style: { paddingTop: 0, paddingBottom: 0 },
+                },
                 PaperProps: {
                   style: { border: "1px solid rgba(255, 255, 255, 0.23)" },
                 },
@@ -271,6 +274,9 @@ export default function CooldownPlanner(props) {
               }}
               MenuProps={{
                 style: { marginTop: 5 },
+                MenuListProps: {
+                  style: { paddingTop: 0, paddingBottom: 0 },
+                },
                 PaperProps: {
                   style: { border: "1px solid rgba(255, 255, 255, 0.23)" },
                 },
@@ -311,6 +317,9 @@ export default function CooldownPlanner(props) {
             }}
             MenuProps={{
               style: { marginTop: 5 },
+              MenuListProps: {
+                style: { paddingTop: 0, paddingBottom: 0 },
+              },
               PaperProps: {
                 style: { border: "1px solid rgba(255, 255, 255, 0.23)" },
               },
@@ -391,6 +400,9 @@ export default function CooldownPlanner(props) {
               }}
               MenuProps={{
                 style: { marginTop: 5 },
+                MenuListProps: {
+                  style: { paddingTop: 0, paddingBottom: 0 },
+                },
                 PaperProps: {
                   style: { border: "1px solid rgba(255, 255, 255, 0.23)" },
                 },
@@ -551,6 +563,9 @@ export default function CooldownPlanner(props) {
                         onChange={handleChangeRaid}
                         MenuProps={{
                           style: { marginTop: 5 },
+                          MenuListProps: {
+                            style: { paddingTop: 0, paddingBottom: 0 },
+                          },
                           PaperProps: {
                             style: {
                               border: "1px solid rgba(255, 255, 255, 0.23)",
@@ -591,6 +606,9 @@ export default function CooldownPlanner(props) {
                         onChange={handleChangeBoss}
                         MenuProps={{
                           style: { marginTop: 5 },
+                          MenuListProps: {
+                            style: { paddingTop: 0, paddingBottom: 0 },
+                          },
                           PaperProps: {
                             style: {
                               border: "1px solid rgba(255, 255, 255, 0.23)",
@@ -612,10 +630,13 @@ export default function CooldownPlanner(props) {
                             return obj.raid === raid;
                           })
                           .map((key) => (
-                            <MenuItem value={key.id}>
-                              {bossIcons(key.id)}
-                              {key.name}
-                            </MenuItem>
+                            <div>
+                              <MenuItem value={key.id}>
+                                {bossIcons(key.id)}
+                                {key.name}
+                              </MenuItem>
+                              <Divider />
+                            </div>
                           ))}
                       </Select>
                     </FormControl>
