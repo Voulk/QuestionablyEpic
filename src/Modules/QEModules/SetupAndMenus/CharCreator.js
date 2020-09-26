@@ -204,6 +204,7 @@ export default function AddNewChar(props) {
     setOpen(false);
     allChars.addChar(name, spec);
     updateChar(allChars);
+    props.charAddedSnack()
   };
   const handleChangeSpec = (event) => {
     setHealClass(event.target.value);
