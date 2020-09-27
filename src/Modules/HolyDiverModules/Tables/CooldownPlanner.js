@@ -1,5 +1,9 @@
 import React, { useEffect, forwardRef } from "react";
-import MaterialTable, { MTableToolbar } from "material-table";
+import MaterialTable, {
+  MTableToolbar,
+  MTableBody,
+  MTableHeader,
+} from "material-table";
 import AddBox from "@material-ui/icons/AddBox";
 import ArrowDownward from "@material-ui/icons/ArrowDownward";
 import Check from "@material-ui/icons/Check";
@@ -36,6 +40,8 @@ import { classMenus } from "../Tables/ClassMenuItems";
 import { useTranslation } from "react-i18next";
 import { localizationRU, localizationCH } from "./TableLocalization.js";
 import MenuItem from "@material-ui/core/MenuItem";
+import Collapse from "@material-ui/core/Collapse";
+import Grow from "@material-ui/core/Grow";
 import bossIcons from "../Functions/IconFunctions/BossIcons";
 import bossAbilityIcons from "../Functions/IconFunctions/BossAbilityIcons";
 import Divider from "@material-ui/core/Divider";
@@ -237,12 +243,15 @@ export default function CooldownPlanner(props) {
                 getContentAnchorEl: null,
               }}
             >
-              {ls.get("healerInfo").map((key, i) => (
-                <MenuItem key={i} value={key.name}>
-                  {" "}
-                  {key.name}{" "}
-                </MenuItem>
-              )).map(key => [key,<Divider />])}
+              {ls
+                .get("healerInfo")
+                .map((key, i) => (
+                  <MenuItem key={i} value={key.name}>
+                    {" "}
+                    {key.name}{" "}
+                  </MenuItem>
+                ))
+                .map((key) => [key, <Divider />])}
             </Select>
           </FormControl>
         </ThemeProvider>
@@ -379,7 +388,8 @@ export default function CooldownPlanner(props) {
       field: "bossAbility",
       render: (rowData) => (
         <div>
-          {bossAbilityIcons(rowData.bossAbility)} {rowData.bossAbility}
+           {/* {bossAbilityIcons(rowData.bossAbility)} */}
+           {rowData.bossAbility}
         </div>
       ),
       editComponent: (props) => (
@@ -427,10 +437,12 @@ export default function CooldownPlanner(props) {
                   <MenuItem key={i} value={key.ability}>
                     <a data-wowhead={"spell=" + key.guid}>
                       {bossAbilityIcons(key.guid)}
+                      {console.log(key.guid)}
                     </a>
                     {key.ability}
                   </MenuItem>
-                )).map(key => [key,<Divider />])}
+                ))
+                .map((key) => [key, <Divider />])}
             </Select>
           </FormControl>
         </ThemeProvider>
@@ -525,6 +537,7 @@ export default function CooldownPlanner(props) {
           },
           actionsColumnIndex: 7,
           paging: false,
+          // search: (boss === "" ? false : true)
         }}
         //       actions={[
         //   {
@@ -538,6 +551,26 @@ export default function CooldownPlanner(props) {
         // ]}
         localization={curLang(props.curLang)}
         components={{
+          Body: (props) =>
+            boss === "" ? null : (
+              <Grow
+                in={boss === "" ? false : true}
+                style={{ transformOrigin: "0 0 0" }}
+                {...((boss === "" ? false : true) ? { timeout: "auto" } : {})}
+              >
+                <MTableBody {...props} />
+              </Grow>
+            ),
+          Header: (props) =>
+            boss === "" ? null : (
+              <Grow
+                in={boss === "" ? false : true}
+                style={{ transformOrigin: "0 0 0" }}
+                {...((boss === "" ? false : true) ? { timeout: "auto" } : {})}
+              >
+                <MTableHeader {...props} />
+              </Grow>
+            ),
           Toolbar: (props) => (
             <div>
               <Grid
@@ -582,11 +615,13 @@ export default function CooldownPlanner(props) {
                           getContentAnchorEl: null,
                         }}
                       >
-                        {rl.map((key) => (
-                          <MenuItem value={key.raidName}>
-                            {key.raidName}
-                          </MenuItem>
-                        )).map(key => [key,<Divider />])}
+                        {rl
+                          .map((key) => (
+                            <MenuItem value={key.raidName}>
+                              {key.raidName}
+                            </MenuItem>
+                          ))
+                          .map((key) => [key, <Divider />])}
                       </Select>
                     </FormControl>
                   </Grid>
@@ -630,11 +665,12 @@ export default function CooldownPlanner(props) {
                             return obj.raid === raid;
                           })
                           .map((key) => (
-                              <MenuItem value={key.id}>
-                                {bossIcons(key.id)}
-                                {key.name}
-                              </MenuItem>
-                          )).map(key => [key,<Divider />])}
+                            <MenuItem value={key.id}>
+                              {bossIcons(key.id)}
+                              {key.name}
+                            </MenuItem>
+                          ))
+                          .map((key) => [key, <Divider />])}
                       </Select>
                     </FormControl>
                   </Grid>
@@ -663,7 +699,7 @@ export default function CooldownPlanner(props) {
                 </Grid>
                 <Grid item xs="auto">
                   <ThemeProvider theme={SearchFieldOverride}>
-                    <MTableToolbar {...props} />
+                    {boss === "" ? null : <MTableToolbar {...props} />}
                   </ThemeProvider>
                 </Grid>
               </Grid>
