@@ -138,7 +138,7 @@ export default function QuickCompare(props) {
   // a list of available ilvls and the player could select from a smaller list instead.
   // This is left as a TODO until key functionality is completed but is a moderate priority.
   const itemLevels = [226, 220, 214, 208, 202];
-  const itemTertiaries = ["Leech", "Avoidance"];
+  const itemTertiaries = ["Avoidance", "Leech", "None"];
 
   // Define State.
   const [itemLevel, setItemLevel] = React.useState();
@@ -188,6 +188,7 @@ export default function QuickCompare(props) {
   // Add an item to our "Active Items" array.
   const addItem = () => {
     let player = props.pl;
+    console.log(itemTertiary)
     let item = new Item(
       itemID,
       itemName,
