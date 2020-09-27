@@ -388,7 +388,8 @@ export default function CooldownPlanner(props) {
       field: "bossAbility",
       render: (rowData) => (
         <div>
-          {bossAbilityIcons(rowData.bossAbility)} {rowData.bossAbility}
+           {/* {bossAbilityIcons(rowData.bossAbility)} */}
+           {rowData.bossAbility}
         </div>
       ),
       editComponent: (props) => (
@@ -436,6 +437,7 @@ export default function CooldownPlanner(props) {
                   <MenuItem key={i} value={key.ability}>
                     <a data-wowhead={"spell=" + key.guid}>
                       {bossAbilityIcons(key.guid)}
+                      {console.log(key.guid)}
                     </a>
                     {key.ability}
                   </MenuItem>
