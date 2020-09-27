@@ -261,6 +261,7 @@ export default function AddNewChar(props) {
                   className={classes.formRegion}
                   variant="outlined"
                   size="small"
+                  disabled={charName === "" ? true : false}
                 >
                   <InputLabel id="NewClassSelector">{t("Region")}</InputLabel>
                   <Select value={regions} onChange={handleChangeRegion}>
@@ -295,6 +296,7 @@ export default function AddNewChar(props) {
                 className={classes.formControl}
                 variant="outlined"
                 size="small"
+                disabled={regions === "" ? true : false}
               >
                 <InputLabel id="NewClassSelector">
                   {t("Select Class")}
@@ -342,6 +344,7 @@ export default function AddNewChar(props) {
               handleAdd(charName, healClass, props.allChars, props.charUpdate)
             }
             color="primary"
+            disabled={selectedRace === "" ? true : false}
           >
             Add
           </Button>
