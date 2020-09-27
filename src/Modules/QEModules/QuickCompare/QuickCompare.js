@@ -63,6 +63,10 @@ const menuStyle = {
   getContentAnchorEl: null,
 };
 
+    function Alert(props) {
+      return <MuiAlert elevation={6} variant="filled" {...props} />;
+    }
+
 const createItem = (legendaryName, container, spec, pl, contentType) => {
   //let lego = new Legendary(legendaryName)
   //getLegendaryInfo(lego, spec, pl, contentType)
