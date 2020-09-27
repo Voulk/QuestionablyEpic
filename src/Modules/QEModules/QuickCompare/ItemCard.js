@@ -23,7 +23,7 @@ const icons = require.context("../../../../public/Images/Items", true);
 const useStyles = makeStyles({
   root: {
     minWidth: 250,
-    maxWidth: 350,
+    
   },
   bullet: {
     display: "inline-block",
