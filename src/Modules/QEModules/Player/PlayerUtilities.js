@@ -51,8 +51,9 @@ export function getItemIcon(id) {
         return item.id === id;
     })
 
-    console.log(JSON.stringify(temp) + temp.length)
-    if (temp.length > 0) return (window.location.origin + "/Images/Items/" + temp[0].icon + '.jpg')
+    //console.log(JSON.stringify(temp) + temp.length)
+    //console.log(temp[0].icon)
+    if (temp.length > 0) return (window.location.origin + "/Images/Icons/" + temp[0].icon + '.jpg')
     else return (window.location.origin + "/Images/Items/missing.jpg")
 
 }

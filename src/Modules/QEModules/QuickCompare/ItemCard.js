@@ -18,7 +18,7 @@ import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 import RemoveIcon from "@material-ui/icons/Remove";
 
-const icons = require.context("../../../../public/Images/Items", true);
+const icons = require.context("../../../../public/Images/Icons", true);
 
 const useStyles = makeStyles({
   root: {
