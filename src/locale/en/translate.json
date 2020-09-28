@@ -74,13 +74,17 @@
     },
     "slotNames": {
       "head" : "Helm",
+      "neck" : "Neck",
       "shoulder" : "Shoulders",
       "back" : "Cape",
       "chest" : "Chest",
       "wrists" : "Bracers",
       "hands" : "Gloves",
       "waist" : "Belt",
-      "feet" : "Boots"
+      "feet" : "Boots",
+      "trinket": "Trinkets",
+      "weapon": "Weapons",
+      "finger": "Ring"
     },
 
     "Vision of Unending Growth": {

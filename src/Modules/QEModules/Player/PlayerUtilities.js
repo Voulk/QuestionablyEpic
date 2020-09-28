@@ -72,5 +72,5 @@ export function calcPrimaryStatAtLevel(itemLevel, baseStat, baseLevel) {
 // Builds a stat string out of an items given stats and effect. 
 // TODO
 export function buildStatString(stats, effect) {
-    return "Haste / Crit / Effect" // Default for UI design purposes.
+    return "Haste / Crit" // Default for UI design purposes.
 }
