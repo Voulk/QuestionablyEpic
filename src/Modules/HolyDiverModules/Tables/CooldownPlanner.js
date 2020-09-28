@@ -38,7 +38,11 @@ import {
 import { classColoursJS } from "../Functions/ClassColourFunctions";
 import { classMenus } from "../Tables/ClassMenuItems";
 import { useTranslation } from "react-i18next";
-import { localizationRU, localizationCH } from "./TableLocalization.js";
+import {
+  localizationRU,
+  localizationCH,
+  localizationFR,
+} from "./TableLocalization.js";
 import MenuItem from "@material-ui/core/MenuItem";
 import Collapse from "@material-ui/core/Collapse";
 import Grow from "@material-ui/core/Grow";
@@ -247,8 +251,7 @@ export default function CooldownPlanner(props) {
                 .get("healerInfo")
                 .map((key, i) => (
                   <MenuItem key={i} value={key.name}>
-                    {" "}
-                    {key.name}{" "}
+                    {key.name}
                   </MenuItem>
                 ))
                 .map((key) => [key, <Divider />])}
@@ -388,8 +391,8 @@ export default function CooldownPlanner(props) {
       field: "bossAbility",
       render: (rowData) => (
         <div>
-           {/* {bossAbilityIcons(rowData.bossAbility)} */}
-           {rowData.bossAbility}
+          {/* {bossAbilityIcons(rowData.bossAbility)} */}
+          {rowData.bossAbility}
         </div>
       ),
       editComponent: (props) => (
@@ -486,6 +489,8 @@ export default function CooldownPlanner(props) {
       return localizationRU;
     } else if (lang === "ch") {
       return localizationCH;
+    } else if (lang === "fr") {
+      return localizationFR;
     } else {
       return false;
     }
