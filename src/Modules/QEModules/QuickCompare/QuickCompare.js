@@ -20,6 +20,8 @@ import { itemDB } from "../Player/ItemDB";
 import {
   getValidArmorTypes,
   getValidWeaponTypes,
+  calcSecondaryStatAtLevel,
+  calcPrimaryStatAtLevel
 } from "../Player/PlayerUtilities";
 import Button from "@material-ui/core/Button";
 import ItemCard from "./ItemCard";
@@ -183,7 +185,7 @@ export default function QuickCompare(props) {
         // - Ensuring the players spec is able to wear the armor type (Shamans shouldn't show plate, nor leather items for example).
 
         // If item is valid, add to our selection.
-        console.log(item.name + item.dropLoc);
+        //console.log(item.name + item.dropLoc);
         itemDropdown.push({ value: item.id, label: item.names[props.curLang] });
       }
     }
@@ -242,6 +244,12 @@ export default function QuickCompare(props) {
   const calculateScore = (item) => {};
 
   fillItems(activeSlot, props.pl.spec);
+
+
+  // Test Code. Delete Later.
+  console.log(calcSecondaryStatAtLevel(187, "Feet"))
+
+  //
 
   return (
     <div style={{ backgroundColor: "#353535" }}>

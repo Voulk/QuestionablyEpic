@@ -59,14 +59,34 @@ export function getItemIcon(id) {
 }
 
 // Calculates the given secondary stats an item should have at any given item level.
+// For now this also calculates int and returns an array.
 // TODO
-export function calcSecondaryStatAtLevel(itemLevel, baseStat, baseLevel) {
+export function calcSecondaryStatAtLevel(itemLevel, slot, stats) {
+    stats = {
+        "intellect": 5259,
+        "stamina": 7889,
+        "haste": 0,
+        "crit": 3000,
+        "mastery": 4000,
+        "vers": 0
+    }
+
+    for (var key in stats) {
+        console.log(key + stats[key])
+    }
+
+    console.log('Hello there');
+    let rand_prop = 81;
+    let combat_mult = 1.510671929;
+    let allocation = 2800;
+
+    return (Math.floor(Math.floor(rand_prop * allocation * 0.0001 + 0.5) * combat_mult))
 
 }
 
 // Calculates the given primary stats an item should have at any given item level.
 // TODO
-export function calcPrimaryStatAtLevel(itemLevel, baseStat, baseLevel) {
+export function calcPrimaryStatAtLevel(itemLevel, slot) {
 
 }
 
