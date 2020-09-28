@@ -45,4 +45,10 @@ export function classColoursJS(props) {
   if (props === "Mistweaver Monk" || props === "Monk") {
     return "#00FF96";
   }
+  if (props === "Warrior") {
+    return "#C79C6E";
+  }
+  if (props === "Demon Hunter") {
+    return "#A330C9";
+  }
 }
