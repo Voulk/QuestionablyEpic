@@ -51,8 +51,9 @@ export function getItemIcon(id) {
         return item.id === id;
     })
 
-    console.log(JSON.stringify(temp) + temp.length)
-    if (temp.length > 0) return (window.location.origin + "/Images/Items/" + temp[0].icon + '.jpg')
+    //console.log(JSON.stringify(temp) + temp.length)
+    //console.log(temp[0].icon)
+    if (temp.length > 0) return (window.location.origin + "/Images/Icons/" + temp[0].icon + '.jpg')
     else return (window.location.origin + "/Images/Items/missing.jpg")
 
 }
@@ -72,5 +73,5 @@ export function calcPrimaryStatAtLevel(itemLevel, baseStat, baseLevel) {
 // Builds a stat string out of an items given stats and effect. 
 // TODO
 export function buildStatString(stats, effect) {
-    return "Haste / Crit / Effect" // Default for UI design purposes.
+    return "Haste / Crit" // Default for UI design purposes.
 }

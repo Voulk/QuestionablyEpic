@@ -18,7 +18,7 @@ import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 import RemoveIcon from "@material-ui/icons/Remove";
 
-const icons = require.context("../../../../public/Images/Items", true);
+const icons = require.context("../../../../public/Images/Icons", true);
 
 const useStyles = makeStyles({
   root: {
@@ -54,7 +54,7 @@ export default function ItemCard(props) {
         return "#a335ee";
         break;
       case "Uncommon":
-        return "#0070dd";
+        return "#328CE3"; // Previously #0070dd
         break;
       case "Common":
         return "#1eff00";

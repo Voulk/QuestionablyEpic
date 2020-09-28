@@ -102,6 +102,7 @@ function getSlots() {
   const { t } = useTranslation();
   let slots = [
     { value: "Head", label: t("slotNames.head") },
+    { value: "Neck", label: t("slotNames.neck") },
     { value: "Shoulder", label: t("slotNames.shoulder") },
     { value: "Back", label: t("slotNames.back") },
     { value: "Chest", label: t("slotNames.chest") },
@@ -109,6 +110,8 @@ function getSlots() {
     { value: "Hands", label: t("slotNames.hands") },
     { value: "Waist", label: t("slotNames.waist") },
     { value: "Feet", label: t("slotNames.feet") },
+    { value: "Finger", label: t("slotNames.finger") },
+    { value: "Trinket", label: t("slotNames.trinket")}
   ];
 
   return slots;
@@ -158,17 +161,18 @@ export default function QuickCompare(props) {
 
     var i = 0;
     for (i = 0; i < itemDB.length; i++) {
-      console.log(itemDB[i].name + itemDB[i].dropLoc);
+      console.log(itemDB[i].name + itemDB[i].dropLoc );
       let item = itemDB[i];
 
       if (
-        (slotName === item.itemSlot &&
+        (slotName === item.slot &&
           slotName !== "Weapons & Offhands" &&
           item.itemClass == 4 &&
           acceptableArmorTypes.includes(item.itemSubClass)) ||
         (slotName === "Weapons & Offhands" &&
           item.itemClass == 2 &&
-          acceptableWeaponTypes.includes(item.itemSubClass))
+          acceptableWeaponTypes.includes(item.itemSubClass)) ||
+        (slotName === item.slot && slotName === "Back")  
       ) {
         // If the selected slot is "Weapons & Offhands" then our checks involve:
         // - Ensuring the item is a weapon (item class 2)
@@ -183,6 +187,9 @@ export default function QuickCompare(props) {
         itemDropdown.push({ value: item.id, label: item.names[props.curLang] });
       }
     }
+
+    itemDropdown.sort((a, b) => (a.label > b.label ? 1 : -1))
+
   };
 
   // Add an item to our "Active Items" array.
