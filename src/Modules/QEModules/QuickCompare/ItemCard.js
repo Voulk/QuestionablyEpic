@@ -54,7 +54,7 @@ export default function ItemCard(props) {
         return "#a335ee";
         break;
       case "Uncommon":
-        return "#0070dd";
+        return "#328CE3"; // Previously #0070dd
         break;
       case "Common":
         return "#1eff00";

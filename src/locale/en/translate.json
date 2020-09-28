@@ -94,12 +94,12 @@
     },
     "The Dark Titans Lesson": {
       "name": "The Dark Titans Lesson",
-      "desc": "You may apply Lifebloom to two targets at once, and Lifeblooms 'bloom' healing is increased by 75%.",
+      "desc": "You may apply Lifebloom to two targets at once, and Lifeblooms 'bloom' healing is increased by 25%.",
       "droploc": "Halls of Atonement (Dungeon)"
     },
     "Verdant Infusion": {
       "name": "Verdant Infusion",
-      "desc": "Swiftmend no longer consumes a heal over time effect, and extends the duration of HoTs on the target by 10s.",
+      "desc": "Swiftmend no longer consumes a heal over time effect, and extends the duration of HoTs on the target by 6s.",
       "droploc": "Oranomonos (World Boss)"
     },
     "Lycaras Fleeting Glimpse": {
@@ -109,7 +109,7 @@
     },
     "Memory of the Mother Tree": {
       "name": "Memory of the Mother Tree",
-      "desc": "Wild Growth has a 25% chance to cause your next Rejuv or Regrowth to apply to 2 additional allies.",
+      "desc": "Wild Growth has a 50% chance to cause your next Rejuv or Regrowth to apply to 3 additional allies.",
       "droploc": "Inerva Darkvein (Raid)"
     },
     "Oath of the Elder Druid": {
