@@ -3,7 +3,8 @@
 
 // The combat ratings multiplier table
 
-const combat_ratings_mult_by_ilvl = [
+
+export const combat_ratings_mult_by_ilvl = [
     // Armor Multiplier
       0, 
       1.5,	1.5,	1.5,	1.5,	1.5,	//    5

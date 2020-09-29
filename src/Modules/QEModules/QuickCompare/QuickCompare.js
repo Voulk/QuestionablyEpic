@@ -20,8 +20,8 @@ import { itemDB } from "../Player/ItemDB";
 import {
   getValidArmorTypes,
   getValidWeaponTypes,
-  calcSecondaryStatAtLevel,
-  calcPrimaryStatAtLevel
+  calcStatsAtLevel,
+  getItemAllocations,
 } from "../Player/PlayerUtilities";
 import Button from "@material-ui/core/Button";
 import ItemCard from "./ItemCard";
@@ -163,7 +163,7 @@ export default function QuickCompare(props) {
 
     var i = 0;
     for (i = 0; i < itemDB.length; i++) {
-      console.log(itemDB[i].name + itemDB[i].dropLoc );
+      //console.log(itemDB[i].name + itemDB[i].dropLoc );
       let item = itemDB[i];
 
       if (
@@ -208,6 +208,7 @@ export default function QuickCompare(props) {
       itemLevel
     );
     item.level = itemLevel;
+    item.stats = calcStatsAtLevel(itemLevel, activeSlot, getItemAllocations(itemID))
     player.addActiveItem(item);
 
     //player.getActiveItems(activeSlot)
@@ -247,7 +248,16 @@ export default function QuickCompare(props) {
 
 
   // Test Code. Delete Later.
-  console.log(calcSecondaryStatAtLevel(187, "Feet"))
+  /*
+  console.log(calcStatsAtLevel(187, "Feet", {
+    "intellect": 5259,
+    "stamina": 7889,
+    "haste": 4250,
+    "crit": 0,
+    "mastery": 2750,
+    "vers": 0
+    
+})) */
 
   //
 
@@ -279,6 +289,7 @@ export default function QuickCompare(props) {
                     value={activeSlot}
                     onChange={changeSlot}
                     MenuProps={menuStyle}
+                    
                   >
                     {slots
                       .map((x, y) => (
