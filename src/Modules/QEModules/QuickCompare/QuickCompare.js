@@ -23,7 +23,8 @@ import {
   getValidWeaponTypes,
   calcStatsAtLevel,
   getItemAllocations,
-} from "../Player/PlayerUtilities";
+  scoreItem,
+} from "../Engine/ItemUtilities";
 import Button from "@material-ui/core/Button";
 import ItemCard from "./ItemCard";
 import Grid from "@material-ui/core/Grid";
@@ -213,6 +214,8 @@ export default function QuickCompare(props) {
       activeSlot,
       getItemAllocations(itemID)
     );
+    item.softScore = scoreItem(item);
+
     player.addActiveItem(item);
 
     //player.getActiveItems(activeSlot)

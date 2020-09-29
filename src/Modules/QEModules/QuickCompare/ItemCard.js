@@ -12,7 +12,7 @@ import {
   getTranslatedItemName,
   buildStatString,
   getItemIcon,
-} from "../Player/PlayerUtilities";
+} from "../Engine/ItemUtilities";
 import "./ItemCard.css";
 import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
@@ -42,7 +42,7 @@ const useStyles = makeStyles({
 export default function ItemCard(props) {
   const classes = useStyles();
   const item = props.item;
-  const statString = buildStatString(item.stats);
+  const statString = buildStatString(item.stats, item.effect);
 
   const test = false;
 

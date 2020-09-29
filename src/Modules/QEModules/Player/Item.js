@@ -21,6 +21,7 @@ class Item {
     softScore = 0;
     socket = false;
     tertiary = "";
+    effect = "";
     
     // The stats on the item. These should already be adjusted for item level.
     stats = {
