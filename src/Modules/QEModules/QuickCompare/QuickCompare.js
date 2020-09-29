@@ -12,6 +12,7 @@ import "./QuickCompare.css";
 import { useTranslation } from "react-i18next";
 import InputLabel from "@material-ui/core/InputLabel";
 import MenuItem from "@material-ui/core/MenuItem";
+import ListItem from "@material-ui/core/ListItem";
 // import FormHelperText from "@material-ui/core/FormHelperText";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
@@ -31,8 +32,8 @@ import Typography from "@material-ui/core/Typography";
 import Divider from "@material-ui/core/Divider";
 import Snackbar from "@material-ui/core/Snackbar";
 import MuiAlert from "@material-ui/lab/Alert";
-
-
+import Autocomplete from "@material-ui/lab/Autocomplete";
+import TextField from "@material-ui/core/TextField";
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -65,9 +66,9 @@ const menuStyle = {
   getContentAnchorEl: null,
 };
 
-    function Alert(props) {
-      return <MuiAlert elevation={6} variant="filled" {...props} />;
-    }
+function Alert(props) {
+  return <MuiAlert elevation={6} variant="filled" {...props} />;
+}
 
 const createItem = (legendaryName, container, spec, pl, contentType) => {
   //let lego = new Legendary(legendaryName)
@@ -113,7 +114,7 @@ function getSlots() {
     { value: "Waist", label: t("slotNames.waist") },
     { value: "Feet", label: t("slotNames.feet") },
     { value: "Finger", label: t("slotNames.finger") },
-    { value: "Trinket", label: t("slotNames.trinket")}
+    { value: "Trinket", label: t("slotNames.trinket") },
   ];
 
   return slots;
@@ -174,7 +175,7 @@ export default function QuickCompare(props) {
         (slotName === "Weapons & Offhands" &&
           item.itemClass == 2 &&
           acceptableWeaponTypes.includes(item.itemSubClass)) ||
-        (slotName === item.slot && slotName === "Back")  
+        (slotName === item.slot && slotName === "Back")
       ) {
         // If the selected slot is "Weapons & Offhands" then our checks involve:
         // - Ensuring the item is a weapon (item class 2)
@@ -190,14 +191,13 @@ export default function QuickCompare(props) {
       }
     }
 
-    itemDropdown.sort((a, b) => (a.label > b.label ? 1 : -1))
-
+    itemDropdown.sort((a, b) => (a.label > b.label ? 1 : -1));
   };
 
   // Add an item to our "Active Items" array.
   const addItem = () => {
     let player = props.pl;
-    console.log(itemTertiary)
+    console.log(itemTertiary);
     let item = new Item(
       itemID,
       itemName,
@@ -208,7 +208,11 @@ export default function QuickCompare(props) {
       itemLevel
     );
     item.level = itemLevel;
-    item.stats = calcStatsAtLevel(itemLevel, activeSlot, getItemAllocations(itemID))
+    item.stats = calcStatsAtLevel(
+      itemLevel,
+      activeSlot,
+      getItemAllocations(itemID)
+    );
     player.addActiveItem(item);
 
     //player.getActiveItems(activeSlot)
@@ -220,10 +224,15 @@ export default function QuickCompare(props) {
   const itemNameChanged = (event) => {
     setItemID(parseInt(event.target.value));
     setItemName(event.target.name);
+    console.log(event.target.name);
+
+    console.log(itemID, itemName);
   };
 
   const itemLevelChanged = (event) => {
     setItemLevel(parseInt(event.target.value));
+    setItemSocket("No");
+    setItemTertiary("None");
   };
 
   const itemSocketChanged = (event) => {
@@ -239,13 +248,11 @@ export default function QuickCompare(props) {
     setItemList([...props.pl.getActiveItems(event.target.value)]);
   };
 
-
   // TODO. Calculate the score for a given item.
   // Score is calculated by multiplying out stat weights and then adding any special effects.
   const calculateScore = (item) => {};
 
   fillItems(activeSlot, props.pl.spec);
-
 
   // Test Code. Delete Later.
   /*
@@ -262,46 +269,54 @@ export default function QuickCompare(props) {
   //
 
   return (
-    <div style={{ backgroundColor: "#353535" }}>
-      <div style={{ margin: "auto", width: "55%", display: "block" }}>
-        <Grid container spacing={2} justify="center" style={{ marginTop: 32 }}>
-          <Grid item xs={12}>
-            <Paper>
-              <Typography
-                variant="h4"
-                align="center"
-                style={{ padding: "10px 10px 0px 10px" }}
-                color="primary"
+    <div style={{ backgroundColor: "#353535", marginTop: 32 }}>
+      {console.log(itemDropdown)}
+      <Grid
+        container
+        spacing={2}
+        justify="center"
+        style={{
+          margin: "auto",
+          width: "65%",
+          display: "block",
+        }}
+      >
+        <Grid item xs={12}>
+          <Paper>
+            <Typography
+              variant="h4"
+              align="center"
+              style={{ padding: "10px 10px 5px 10px" }}
+              color="primary"
+            >
+              {t("ModuleTitles.QuickCompare")}
+            </Typography>
+            <Divider variant="middle" />
+
+            <div className="itemEntry" style={{ padding: "5px 0px 0px 0px" }}>
+              <FormControl
+                className={classes.formControl}
+                variant="outlined"
+                size="small"
               >
-                {t("ModuleTitles.QuickCompare")}
-                <Divider variant="middle" />
-              </Typography>
-
-              <div className="itemEntry">
-                <FormControl
-                  className={classes.formControl}
-                  variant="outlined"
-                  size="small"
+                <InputLabel id="slots">{t("QuickCompare.Slot")}</InputLabel>
+                <Select
+                  labelId="slots"
+                  value={activeSlot}
+                  onChange={changeSlot}
+                  MenuProps={menuStyle}
+                  label={t("QuickCompare.Slot")}
                 >
-                  <InputLabel id="slots">{t("QuickCompare.Slot")}</InputLabel>
-                  <Select
-                    labelId="slots"
-                    value={activeSlot}
-                    onChange={changeSlot}
-                    MenuProps={menuStyle}
-                    
-                  >
-                    {slots
-                      .map((x, y) => (
-                        <MenuItem key={y} value={x.value}>
-                          {x.label}
-                        </MenuItem>
-                      ))
-                      .map((key) => [key, <Divider />])}
-                  </Select>
-                </FormControl>
-
-                {/* <FormControl className={classes.formControl}>
+                  {slots
+                    .map((x, y) => (
+                      <MenuItem key={y} value={x.value}>
+                        {x.label}
+                      </MenuItem>
+                    ))
+                    .map((key) => [key, <Divider />])}
+                </Select>
+              </FormControl>
+              {/* <FormControl className={classes.formControl}>
                   <InputLabel id="slots">{t("QuickCompare.Slot")}</InputLabel>
                   <NativeSelect
                     value={activeSlot}
@@ -315,33 +330,78 @@ export default function QuickCompare(props) {
                     ))}
                   </NativeSelect>
                 </FormControl> */}
+              {/* <FormControl
+                className={classes.formControl}
+                variant="outlined"
+                size="small"
+                disabled={activeSlot === undefined ? true : false}
+              >
+                <InputLabel id="itemname">
+                  {t("QuickCompare.ItemName")}
+                </InputLabel>
+                <Select
+                  labelId="itemname"
+                  value={itemID}
+                  onChange={itemNameChanged}
+                  MenuProps={menuStyle}
+                  label={t("QuickCompare.ItemName")}
+                >
+                  {itemDropdown
+                    .map((x, y) => (
+                      <MenuItem key={y} value={x.value} name={x.label}>
+                        {x.label}
+                      </MenuItem>
+                    ))
+                    .map((key) => [key, <Divider />])}
+                </Select>
+              </FormControl>
 
-                <FormControl
-                  className={classes.formControl}
-                  variant="outlined"
+            */}
+
+              <FormControl
+                className={classes.formControl}
+                variant="outlined"
+                size="small"
+                style={{ minWidth: 350 }}
+                disabled={activeSlot === undefined ? true : false}
+              >
+                <Autocomplete
                   size="small"
                   disabled={activeSlot === undefined ? true : false}
-                >
-                  <InputLabel id="itemname">
-                    {t("QuickCompare.ItemName")}
-                  </InputLabel>
-                  <Select
-                    labelId="itemname"
-                    value={itemID}
-                    onChange={itemNameChanged}
-                    MenuProps={menuStyle}
-                  >
-                    {itemDropdown
-                      .map((x, y) => (
-                        <MenuItem key={y} value={x.value} name={x.label}>
-                          {x.label}
-                        </MenuItem>
-                      ))
-                      .map((key) => [key, <Divider />])}
-                  </Select>
-                </FormControl>
+                  id="item-select"
+                  onChange={itemNameChanged}
+                  options={itemDropdown}
+                  getOptionLabel={(option) => option.label}
+                  ListboxProps={{
+                    style: {
+                      border: "1px solid rgba(255, 255, 255, 0.23)",
+                      padding: 0,
+                    },
+                  }}
+                  style={{ width: "100%" }}
+                  renderOption={(option, i) => (
+                    <ListItem
+                      ContainerProps={{ style: { padding: 0 } }}
+                      divider
+                      disableGutters
+                      key={i}
+                      value={option.value}
+                      name={option.label}
+                    >
+                      {option.label}
+                    </ListItem>
+                  )}
+                  renderInput={(params) => (
+                    <TextField
+                      {...params}
+                      label={t("QuickCompare.ItemName")}
+                      variant="outlined"
+                    />
+                  )}
+                />
+              </FormControl>
 
-                {/*
+              {/*
                 <FormControl className={classes.formControl}>
                   <InputLabel id="itemname">
                     {t("QuickCompare.ItemName")}
@@ -359,33 +419,32 @@ export default function QuickCompare(props) {
                     ))}
                   </NativeSelect>
                 </FormControl> */}
-
-                <FormControl
-                  className={classes.formControl}
-                  variant="outlined"
-                  size="small"
-                  disabled={itemID === undefined ? true : false}
+              <FormControl
+                className={classes.formControl}
+                variant="outlined"
+                size="small"
+                disabled={itemID === undefined ? true : false}
+              >
+                <InputLabel id="itemlevel">
+                  {t("QuickCompare.ItemLevel")}
+                </InputLabel>
+                <Select
+                  labelId="itemlevel"
+                  value={itemLevel}
+                  onChange={itemLevelChanged}
+                  MenuProps={menuStyle}
+                  label={t("QuickCompare.ItemLevel")}
                 >
-                  <InputLabel id="itemlevel">
-                    {t("QuickCompare.ItemLevel")}
-                  </InputLabel>
-                  <Select
-                    labelId="itemlevel"
-                    value={itemLevel}
-                    onChange={itemLevelChanged}
-                    MenuProps={menuStyle}
-                  >
-                    {itemLevels
-                      .map((x, y) => (
-                        <MenuItem key={y} value={x} name={x.label}>
-                          {x}
-                        </MenuItem>
-                      ))
-                      .map((key) => [key, <Divider />])}
-                  </Select>
-                </FormControl>
-
-                {/* <FormControl className={classes.formControl}>
+                  {itemLevels
+                    .map((x, y) => (
+                      <MenuItem key={y} value={x} name={x.label}>
+                        {x}
+                      </MenuItem>
+                    ))
+                    .map((key) => [key, <Divider />])}
+                </Select>
+              </FormControl>
+              {/* <FormControl className={classes.formControl}>
                   <InputLabel id="itemlevel">
                     {t("QuickCompare.ItemLevel")}
                   </InputLabel>
@@ -403,39 +462,39 @@ export default function QuickCompare(props) {
                   </NativeSelect>
                 </FormControl>
               */}
-
-                <FormControl
-                  className={classes.formControl}
-                  variant="outlined"
-                  size="small"
-                  disabled={itemLevel === undefined ? true : false}
+              <FormControl
+                className={classes.formControl}
+                variant="outlined"
+                size="small"
+                disabled={itemLevel === undefined ? true : false}
+              >
+                <InputLabel id="itemsocket">
+                  {t("QuickCompare.Socket")}
+                </InputLabel>
+                <Select
+                  key={itemSocket}
+                  labelId="itemsocket"
+                  value={itemSocket}
+                  onChange={itemSocketChanged}
+                  MenuProps={menuStyle}
+                  label={t("QuickCompare.Socket")}
                 >
-                  <InputLabel id="itemsocket">
-                    {t("QuickCompare.Socket")}
-                  </InputLabel>
-                  <Select
-                    labelId="itemsocket"
-                    value={itemSocket}
-                    onChange={itemSocketChanged}
-                    MenuProps={menuStyle}
-                  >
-                    {[
-                      <MenuItem label="Yes" value="Yes">
-                        Yes
-                      </MenuItem>,
-                      <Divider />,
-                    ]}
-                    ,
-                    {[
-                      <MenuItem label="No" value="No">
-                        No
-                      </MenuItem>,
-                      <Divider />,
-                    ]}
-                  </Select>
-                </FormControl>
-
-                {/*
+                  {[
+                    <MenuItem label="Yes" value="Yes">
+                      Yes
+                    </MenuItem>,
+                    <Divider />,
+                  ]}
+                  ,
+                  {[
+                    <MenuItem label="No" value="No">
+                      No
+                    </MenuItem>,
+                    <Divider />,
+                  ]}
+                </Select>
+              </FormControl>
+              {/*
                 <FormControl className={classes.formControl}>
                   <InputLabel id="itemsocket">
                     {t("QuickCompare.Socket")  
@@ -449,30 +508,31 @@ export default function QuickCompare(props) {
                     <option label="Yes" value="Yes" />
                   </NativeSelect>
                 </FormControl> */}
-
-                <FormControl
-                  className={classes.formControl}
-                  variant="outlined"
-                  size="small"
-                  disabled={itemSocket === undefined ? true : false}
+              <FormControl
+                className={classes.formControl}
+                variant="outlined"
+                size="small"
+                disabled={itemLevel === undefined ? true : false}
+              >
+                <InputLabel id="itemtertiary">
+                  {t("QuickCompare.Tertiary")}
+                </InputLabel>
+                <Select
+                  key={itemTertiary}
+                  labelId="itemtertiary"
+                  value={itemTertiary}
+                  onChange={itemTertiaryChanged}
+                  MenuProps={menuStyle}
+                  label={t("QuickCompare.Tertiary")}
                 >
-                  <InputLabel id="itemtertiary">
-                    {t("QuickCompare.Tertiary")}
-                  </InputLabel>
-                  <Select
-                    labelId="itemtertiary"
-                    value={itemTertiary}
-                    onChange={itemTertiaryChanged}
-                    MenuProps={menuStyle}
-                  >
-                    {itemTertiaries.map((x, y) => (
-                      <MenuItem key={y} value={x}>
-                        {x}
-                      </MenuItem>
-                    ))}
-                  </Select>
-                </FormControl>
-                {/*
+                  {itemTertiaries.map((x, y) => (
+                    <MenuItem key={y} value={x}>
+                      {x}
+                    </MenuItem>
+                  ))}
+                </Select>
+              </FormControl>
+              {/*
                 <FormControl className={classes.formControl}>
                   <InputLabel id="itemtertiary">
                     {t("QuickCompare.Tertiary")}
@@ -491,45 +551,43 @@ export default function QuickCompare(props) {
                   </NativeSelect>
                 </FormControl>
               */}
-
-                <Button
-                  key={8}
-                  variant="contained"
-                  color="primary"
-                  onClick={addItem}
-                  style={{
-                    width: "70px",
-                    height: "30px",
-                    marginTop: "15px",
-                    marginLeft: "5px",
-                    backgroundColor: "#c8b054",
-                  }}
-                  disabled={itemTertiary === undefined ? true : false}
-                >
-                  {t("QuickCompare.AddButton")}
-                </Button>
-                <Snackbar
-                  open={open}
-                  autoHideDuration={3000}
-                  onClose={handleClose}
-                >
-                  <Alert onClose={handleClose} severity="success">
-                    Item Added!
-                  </Alert>
-                </Snackbar>
-              </div>
-            </Paper>
-          </Grid>
-
-          <Grid container item spacing={1}>
-            {itemList.map((item, index) => (
-              // <QCTile key={index} item={item} lang={props.curLang}/>
-              // scuffed card, need proper item to test
-              <ItemCard key={index} item={item} lang={props.curLang} />
-            ))}
-          </Grid>
+              <Button
+                key={8}
+                variant="contained"
+                color="primary"
+                onClick={addItem}
+                style={{
+                  width: "70px",
+                  height: "30px",
+                  marginTop: "15px",
+                  marginLeft: "5px",
+                  backgroundColor: "#c8b054",
+                }}
+                disabled={itemLevel === undefined ? true : false}
+              >
+                {t("QuickCompare.AddButton")}
+              </Button>
+              <Snackbar
+                open={open}
+                autoHideDuration={3000}
+                onClose={handleClose}
+              >
+                <Alert onClose={handleClose} severity="success">
+                  Item Added!
+                </Alert>
+              </Snackbar>
+            </div>
+          </Paper>
         </Grid>
-      </div>
+
+        <Grid container item spacing={1}>
+          {itemList.map((item, index) => (
+            // <QCTile key={index} item={item} lang={props.curLang}/>
+            // scuffed card, need proper item to test
+            <ItemCard key={index} item={item} lang={props.curLang} />
+          ))}
+        </Grid>
+      </Grid>
     </div>
   );
 }

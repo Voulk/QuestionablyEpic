@@ -17,13 +17,14 @@ import "./ItemCard.css";
 import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 import RemoveIcon from "@material-ui/icons/Remove";
+import DeleteIcon from "@material-ui/icons/Delete";
+import IconButton from "@material-ui/core/IconButton";
 
 const icons = require.context("../../../../public/Images/Icons", true);
 
 const useStyles = makeStyles({
   root: {
     minWidth: 250,
-    
   },
   bullet: {
     display: "inline-block",
@@ -84,11 +85,12 @@ export default function ItemCard(props) {
   //   }
   // };
 
-  const socket = props.item.socket ? (
-    <div style={{ display: "inline" }}>
-      <img width={15} height={15} /> /
-    </div>
-  ) : null;
+  const socket =
+    props.item.socket === "Yes" ? (
+      <div style={{ display: "inline" }}>
+        <img width={15} height={15} /> /
+      </div>
+    ) : null;
 
   const tertiary =
     props.item.tertiary !== "None" ? (
@@ -98,99 +100,110 @@ export default function ItemCard(props) {
   return (
     <Grid item xs={4}>
       <Card className={classes.root} variant="outlined">
-        <CardActionArea disabled={false}>
-          <Grid
-            container
-            display="inline-flex"
-            wrap="nowrap"
-            justify="space-between"
-          >
-            <Grid item xs="auto">
-              <CardContent style={{ padding: "8.5px", display: "inline-flex" }}>
-                <div className="container">
-                  <img
-                    src={getItemIcon(item.id)}
-                    width={56}
-                    height={56}
-                    style={{
-                      borderRadius: 4,
-                      borderWidth: "1px",
-                      borderStyle: "solid",
-                      borderColor: itemQuality("Uncommon"),
-                    }}
-                  />
-                  <div className="bottom-right"> {item.level} </div>
-                </div>
-              </CardContent>
-            </Grid>
-            <Divider orientation="vertical" flexItem />
-            <CardContent style={{ padding: 8, width: "100%" }}>
+        {/* <CardActionArea disabled={true}> */}
+        <Grid
+          container
+          display="inline-flex"
+          wrap="nowrap"
+          justify="space-between"
+        >
+          <Grid item xs="auto">
+            <CardContent style={{ padding: "8.5px", display: "inline-flex" }}>
+              <div className="container">
+                <img
+                  src={getItemIcon(item.id)}
+                  width={56}
+                  height={56}
+                  style={{
+                    borderRadius: 4,
+                    borderWidth: "1px",
+                    borderStyle: "solid",
+                    borderColor: itemQuality("Uncommon"),
+                  }}
+                />
+                <div className="bottom-right"> {item.level} </div>
+              </div>
+            </CardContent>
+          </Grid>
+          <Divider orientation="vertical" flexItem />
+          <CardContent style={{ padding: 8, width: "100%" }}>
+            <Grid
+              item
+              container
+              display="inline-flex"
+              direction="column"
+              justify="space-around"
+              xs="auto"
+            >
+              <Grid
+                container
+                item
+                justify="space-between"
+                alignItems="center"
+                style={{ width: "100%" }}
+              >
+                <Grid item xs="auto" display="inline-flex">
+                  <Typography
+                    variant="subtitle1"
+                    // component="subtitle1"
+                    wrap="nowrap"
+                    display="inline-flex"
+                    align="left"
+                    style={{ color: itemQuality("Uncommon") }}
+                  >
+                    {getTranslatedItemName(item.id, props.lang)}
+                  </Typography>
+                </Grid>
+                <Grid item xs="1" display="inline-flex">
+                  <IconButton aria-label="delete" size="small">
+                    <DeleteIcon style={{ color: "#ad2c34" }} fontSize="small" />
+                  </IconButton>
+                </Grid>
+              </Grid>
+              <Divider />
               <Grid
                 item
                 container
                 display="inline-flex"
-                direction="column"
-                justify="space-around"
+                direction="row"
                 xs="auto"
+                justify="space-between"
+                style={{ marginTop: "4px" }}
               >
-                <Grid
-                  container
-                  item
-                  justify="space-between"
-                  alignItems="center"
-                  style={{ width: "100%" }}
-                >
-                  <Grid item xs="auto" display="inline-f">
-                    <Typography
-                      variant="subtitle1"
-                      // component="subtitle1"
-                      wrap="nowrap"
-                      display="inline-flex"
-                      align="left"
-                      style={{ color: itemQuality("Uncommon") }}
-                    >
-                      {getTranslatedItemName(item.id, props.lang)}
-                    </Typography>
-                  </Grid>
-                  <Grid item xs="auto" style={{display:"inline-flex"}}>
-                    <Typography
-                      variant="subtitle1"
-                      // component="subtitle1"
-                      wrap="nowrap"
-                      display="inline-flex"
-                      align="Right"
-                      style={{ color: upgradeColor(props.item.softScore) }}
-                    >
-                      {props.item.softScore}
-                    </Typography>
-                    {/* {upgradeArrow(props.item.softScore)} */}
-                  </Grid>
+                <Grid item xs="auto">
+                  <Typography
+                    variant="subtitle1"
+                    // component="subtitle1"
+                    wrap="nowrap"
+                    display="block"
+                    align="left"
+                  >
+                    {socket} {statString} {tertiary}
+                  </Typography>
                 </Grid>
-                <Divider />
-                <Grid
-                  item
-                  container
-                  display="inline-flex"
-                  direction="column"
-                  xs="auto"
-                  // justify="flex-end"
-                >
-                  <Grid item style={{ marginTop: "4px" }}>
-                    <Typography
-                      variant="subtitle1"
-                      // component="subtitle1"
-                      wrap="nowrap"
-                      display="block"
-                      align="left"
-                    >
-                      {socket} {statString} {tertiary}
-                    </Typography>
-                  </Grid>
+
+                <Grid item xs="2" style={{ display: "inline-flex" }}>
+                  <Divider orientation="vertical" flexItem />
+                  <Typography
+                    variant="subtitle1"
+                    // component="subtitle1"
+                    wrap="nowrap"
+                    display="inline-flex"
+                    align="Right"
+                    style={{
+                      color: upgradeColor(props.item.softScore),
+                      paddingLeft: "8px",
+                    }}
+                  >
+                    {props.item.softScore}
+                  </Typography>
+                  {/* {upgradeArrow(props.item.softScore)} */}
                 </Grid>
               </Grid>
-            </CardContent>
-          </Grid>
-        </CardActionArea>
+            </Grid>
+          </CardContent>
+        </Grid>
+        {/* </CardActionArea> */}
       </Card>
     </Grid>
   );
