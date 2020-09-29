@@ -1,4 +1,6 @@
 import { itemDB } from './ItemDB'
+import {randPropPoints} from '../Engine/RandPropPointsBylevel'
+import {combat_ratings_mult_by_ilvl} from '../Engine/CombatMultByLevel'
 
 /*
 
@@ -58,17 +60,90 @@ export function getItemIcon(id) {
 
 }
 
-// Calculates the given secondary stats an item should have at any given item level.
-// TODO
-export function calcSecondaryStatAtLevel(itemLevel, baseStat, baseLevel) {
+// Returns item stat allocations. MUST be converted to stats before it's used in any scoring capacity. 
+export function getItemAllocations(id) {
+    let temp = itemDB.filter(function(item) {
+        return item.id === id;
+    })
+
+    //console.log(JSON.stringify(temp) + temp.length)
+    //console.log(temp[0].icon)
+    if (temp.length > 0) return (temp[0].stats)
+    else return 0
 
 }
 
-// Calculates the given primary stats an item should have at any given item level.
-// TODO
-export function calcPrimaryStatAtLevel(itemLevel, baseStat, baseLevel) {
+// Returns which secondary item category a given slot falls in. 
+function getItemCat(slot) {
+    switch(slot)
+    {
+        case("Head"):
+        case("Chest"):
+        case("Legs"):
+        case("Robe"):
+            return 0;
+        
+        case("Shoulder"):
+        case("Waist"):
+        case("Feet"):
+        case("Hands"):
+        case("Trinket"):
+            return 1;
+
+        case("Neck"):
+        case("Finger"):
+        case("Back"):
+        case("Wrists"):
+            return 2;
+        
+        case("Offhand"):
+        case("Shield"):
+            return 3;
+        default:
+            return 3;
+            // Raise error.
+    }
+}
+
+// Calculates the intellect and secondary stats an item should have at a given item level.
+// This uses the RandPropPointsByLevel and CombatMultByLevel tables and returns a dictionary object of stats. 
+// Stat allocations are passed to the function from our Item Database. 
+export function calcStatsAtLevel(itemLevel, slot, statAllocations) {
+    let stats = {
+        intellect: 0,
+        stamina: 0,
+        haste: 0,
+        mastery: 0,
+        vers: 0,
+        crit: 0,
+        leech: 0,
+    }
+
+    let rand_prop = randPropPoints[itemLevel]['slotValues'][getItemCat(slot)];   
+    let combat_mult = combat_ratings_mult_by_ilvl[itemLevel];
+
+    
+    for (var key in statAllocations) {
+        
+        let allocation = statAllocations[key]
+
+        if (["haste", "crit", "mastery", "vers"].includes(key)) {        
+            stats[key] = (Math.floor(Math.floor(rand_prop * allocation * 0.0001 + 0.5) * combat_mult))
+        }
+        else if (key === "intellect") {
+            stats[key] = (Math.floor(Math.floor(rand_prop * allocation * 0.0001 + 0.5) * 1))
+        }
+        else if (key === "stamina") {
+            // todo
+        }
+    }
+
+    console.log(stats);
+
+    return stats;
 
 }
+
 
 // Builds a stat string out of an items given stats and effect. 
 // TODO

@@ -28,7 +28,7 @@ class Item {
         stamina: 0,
         haste: 0,
         mastery: 0,
-        versatility: 0,
+        vers: 0,
         crit: 0,
         leech: 0,
     }

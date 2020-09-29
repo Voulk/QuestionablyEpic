@@ -20,6 +20,8 @@ import { itemDB } from "../Player/ItemDB";
 import {
   getValidArmorTypes,
   getValidWeaponTypes,
+  calcStatsAtLevel,
+  getItemAllocations,
 } from "../Player/PlayerUtilities";
 import Button from "@material-ui/core/Button";
 import ItemCard from "./ItemCard";
@@ -161,7 +163,7 @@ export default function QuickCompare(props) {
 
     var i = 0;
     for (i = 0; i < itemDB.length; i++) {
-      console.log(itemDB[i].name + itemDB[i].dropLoc );
+      //console.log(itemDB[i].name + itemDB[i].dropLoc );
       let item = itemDB[i];
 
       if (
@@ -183,7 +185,7 @@ export default function QuickCompare(props) {
         // - Ensuring the players spec is able to wear the armor type (Shamans shouldn't show plate, nor leather items for example).
 
         // If item is valid, add to our selection.
-        console.log(item.name + item.dropLoc);
+        //console.log(item.name + item.dropLoc);
         itemDropdown.push({ value: item.id, label: item.names[props.curLang] });
       }
     }
@@ -206,6 +208,7 @@ export default function QuickCompare(props) {
       itemLevel
     );
     item.level = itemLevel;
+    item.stats = calcStatsAtLevel(itemLevel, activeSlot, getItemAllocations(itemID))
     player.addActiveItem(item);
 
     //player.getActiveItems(activeSlot)
@@ -243,6 +246,21 @@ export default function QuickCompare(props) {
 
   fillItems(activeSlot, props.pl.spec);
 
+
+  // Test Code. Delete Later.
+  /*
+  console.log(calcStatsAtLevel(187, "Feet", {
+    "intellect": 5259,
+    "stamina": 7889,
+    "haste": 4250,
+    "crit": 0,
+    "mastery": 2750,
+    "vers": 0
+    
+})) */
+
+  //
+
   return (
     <div style={{ backgroundColor: "#353535" }}>
       <div style={{ margin: "auto", width: "55%", display: "block" }}>
@@ -271,6 +289,7 @@ export default function QuickCompare(props) {
                     value={activeSlot}
                     onChange={changeSlot}
                     MenuProps={menuStyle}
+                    
                   >
                     {slots
                       .map((x, y) => (
