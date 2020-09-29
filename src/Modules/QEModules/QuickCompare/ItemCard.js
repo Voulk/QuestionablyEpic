@@ -100,109 +100,109 @@ export default function ItemCard(props) {
   return (
     <Grid item xs={4}>
       <Card className={classes.root} variant="outlined">
-       {/* <CardActionArea disabled={true}> */}
-          <Grid
-            container
-            display="inline-flex"
-            wrap="nowrap"
-            justify="space-between"
-          >
-            <Grid item xs="auto">
-              <CardContent style={{ padding: "8.5px", display: "inline-flex" }}>
-                <div className="container">
-                  <img
-                    src={getItemIcon(item.id)}
-                    width={56}
-                    height={56}
-                    style={{
-                      borderRadius: 4,
-                      borderWidth: "1px",
-                      borderStyle: "solid",
-                      borderColor: itemQuality("Uncommon"),
-                    }}
-                  />
-                  <div className="bottom-right"> {item.level} </div>
-                </div>
-              </CardContent>
-            </Grid>
-            <Divider orientation="vertical" flexItem />
-            <CardContent style={{ padding: 8, width: "100%" }}>
+        {/* <CardActionArea disabled={true}> */}
+        <Grid
+          container
+          display="inline-flex"
+          wrap="nowrap"
+          justify="space-between"
+        >
+          <Grid item xs="auto">
+            <CardContent style={{ padding: "8.5px", display: "inline-flex" }}>
+              <div className="container">
+                <img
+                  src={getItemIcon(item.id)}
+                  width={56}
+                  height={56}
+                  style={{
+                    borderRadius: 4,
+                    borderWidth: "1px",
+                    borderStyle: "solid",
+                    borderColor: itemQuality("Uncommon"),
+                  }}
+                />
+                <div className="bottom-right"> {item.level} </div>
+              </div>
+            </CardContent>
+          </Grid>
+          <Divider orientation="vertical" flexItem />
+          <CardContent style={{ padding: 8, width: "100%" }}>
+            <Grid
+              item
+              container
+              display="inline-flex"
+              direction="column"
+              justify="space-around"
+              xs="auto"
+            >
+              <Grid
+                container
+                item
+                justify="space-between"
+                alignItems="center"
+                style={{ width: "100%" }}
+              >
+                <Grid item xs="auto" display="inline-flex">
+                  <Typography
+                    variant="subtitle1"
+                    // component="subtitle1"
+                    wrap="nowrap"
+                    display="inline-flex"
+                    align="left"
+                    style={{ color: itemQuality("Uncommon") }}
+                  >
+                    {getTranslatedItemName(item.id, props.lang)}
+                  </Typography>
+                </Grid>
+                <Grid item xs="1" display="inline-flex">
+                  <IconButton aria-label="delete" size="small">
+                    <DeleteIcon style={{ color: "#ad2c34" }} fontSize="small" />
+                  </IconButton>
+                </Grid>
+              </Grid>
+              <Divider />
               <Grid
                 item
                 container
                 display="inline-flex"
-                direction="column"
-                justify="space-around"
+                direction="row"
                 xs="auto"
+                justify="space-between"
+                style={{ marginTop: "4px" }}
               >
-                <Grid
-                  container
-                  item
-                  justify="space-between"
-                  alignItems="center"
-                  style={{ width: "100%" }}
-                >
-                  <Grid item xs="auto" display="inline-flex">
-                    <Typography
-                      variant="subtitle1"
-                      // component="subtitle1"
-                      wrap="nowrap"
-                      display="inline-flex"
-                      align="left"
-                      style={{ color: itemQuality("Uncommon") }}
-                    >
-                      {getTranslatedItemName(item.id, props.lang)}
-                    </Typography>
-                  </Grid>
-                  <Grid item xs="1" display="inline-flex">
-                    <IconButton aria-label="delete" size="small">
-                      <DeleteIcon style={{ color: "#ad2c34" }} fontSize="small" />
-                    </IconButton>
-                  </Grid>
+                <Grid item xs="auto">
+                  <Typography
+                    variant="subtitle1"
+                    // component="subtitle1"
+                    wrap="nowrap"
+                    display="block"
+                    align="left"
+                  >
+                    {socket} {statString} {tertiary}
+                  </Typography>
                 </Grid>
-                <Divider />
-                <Grid
-                  item
-                  container
-                  display="inline-flex"
-                  direction="row"
-                  xs="auto"
-                  justify="space-between"
-                  style={{ marginTop: "4px" }}
-                >
-                  <Grid item xs="auto">
-                    <Typography
-                      variant="subtitle1"
-                      // component="subtitle1"
-                      wrap="nowrap"
-                      display="block"
-                      align="left"
-                    >
-                      {socket} {statString} {tertiary}
-                    </Typography>
-                  </Grid>
 
-                  <Grid item xs="2" style={{ display: "inline-flex" }}>
-                    <Divider orientation="vertical" flexItem />
-                    <Typography
-                      variant="subtitle1"
-                      // component="subtitle1"
-                      wrap="nowrap"
-                      display="inline-flex"
-                      align="Right"
-                      style={{
-                        color: upgradeColor(props.item.softScore),
-                        paddingLeft: "8px",
-                      }}
-                    >
-                      {props.item.softScore}
-                    </Typography>
-                    {/* {upgradeArrow(props.item.softScore)} */}
-                  </Grid>
+                <Grid item xs="2" style={{ display: "inline-flex" }}>
+                  <Divider orientation="vertical" flexItem />
+                  <Typography
+                    variant="subtitle1"
+                    // component="subtitle1"
+                    wrap="nowrap"
+                    display="inline-flex"
+                    align="Right"
+                    style={{
+                      color: upgradeColor(props.item.softScore),
+                      paddingLeft: "8px",
+                    }}
+                  >
+                    {props.item.softScore}
+                  </Typography>
+                  {/* {upgradeArrow(props.item.softScore)} */}
                 </Grid>
               </Grid>
-            </CardContent>
-          </Grid>
+            </Grid>
+          </CardContent>
+        </Grid>
         {/* </CardActionArea> */}
       </Card>
     </Grid>
