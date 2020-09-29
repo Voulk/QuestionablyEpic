@@ -17,13 +17,13 @@ import "./ItemCard.css";
 import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 import RemoveIcon from "@material-ui/icons/Remove";
+import ClearIcon from '@material-ui/icons/Clear';
 
 const icons = require.context("../../../../public/Images/Icons", true);
 
 const useStyles = makeStyles({
   root: {
     minWidth: 250,
-    
   },
   bullet: {
     display: "inline-block",
@@ -84,7 +84,7 @@ export default function ItemCard(props) {
   //   }
   // };
 
-  const socket = props.item.socket ? (
+  const socket = props.item.socket === "Yes" ? (
     <div style={{ display: "inline" }}>
       <img width={15} height={15} /> /
     </div>
@@ -98,7 +98,7 @@ export default function ItemCard(props) {
   return (
     <Grid item xs={4}>
       <Card className={classes.root} variant="outlined">
-        <CardActionArea disabled={false}>
+        <CardActionArea disabled={true}>
           <Grid
             container
             display="inline-flex"
@@ -140,7 +140,7 @@ export default function ItemCard(props) {
                   alignItems="center"
                   style={{ width: "100%" }}
                 >
-                  <Grid item xs="auto" display="inline-f">
+                  <Grid item xs="auto" display="inline-flex">
                     <Typography
                       variant="subtitle1"
                       // component="subtitle1"
@@ -152,18 +152,8 @@ export default function ItemCard(props) {
                       {getTranslatedItemName(item.id, props.lang)}
                     </Typography>
                   </Grid>
-                  <Grid item xs="auto" style={{display:"inline-flex"}}>
-                    <Typography
-                      variant="subtitle1"
-                      // component="subtitle1"
-                      wrap="nowrap"
-                      display="inline-flex"
-                      align="Right"
-                      style={{ color: upgradeColor(props.item.softScore) }}
-                    >
-                      {props.item.softScore}
-                    </Typography>
-                    {/* {upgradeArrow(props.item.softScore)} */}
+                   <Grid item xs="1" display="inline-flex">
+                    <ClearIcon style={{ color: "#ad2c34" }} />
                   </Grid>
                 </Grid>
                 <Divider />
@@ -171,11 +161,12 @@ export default function ItemCard(props) {
                   item
                   container
                   display="inline-flex"
-                  direction="column"
+                  direction="row"
                   xs="auto"
-                  // justify="flex-end"
+                  justify="space-between"
+                  style={{ marginTop: "4px" }}
                 >
-                  <Grid item style={{ marginTop: "4px" }}>
+                  <Grid item xs="auto">
                     <Typography
                       variant="subtitle1"
                       // component="subtitle1"
@@ -185,6 +176,21 @@ export default function ItemCard(props) {
                     >
                       {socket} {statString} {tertiary}
                     </Typography>
+                  </Grid>
+
+                  <Grid item xs="2" style={{ display: "inline-flex" }}>
+                                    <Divider orientation="vertical" flexItem />
+                    <Typography
+                      variant="subtitle1"
+                      // component="subtitle1"
+                      wrap="nowrap"
+                      display="inline-flex"
+                      align="Right"
+                      style={{ color: upgradeColor(props.item.softScore), paddingLeft: "8px" }}
+                    >
+                      {props.item.softScore}
+                    </Typography>
+                    {/* {upgradeArrow(props.item.softScore)} */}
                   </Grid>
                 </Grid>
               </Grid>
