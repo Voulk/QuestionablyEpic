@@ -12,6 +12,7 @@ class Item {
         this.socket = socket;
         this.tertiary = tertiary;
         this.softScore = softScore;
+
     }
 
     id = 0; // The items ID
@@ -21,6 +22,7 @@ class Item {
     softScore = 0;
     socket = false;
     tertiary = "";
+    effect = "";
     
     // The stats on the item. These should already be adjusted for item level.
     stats = {
@@ -32,6 +34,8 @@ class Item {
         crit: 0,
         leech: 0,
     }
+
+
 
 
 
