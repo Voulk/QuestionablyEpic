@@ -12,6 +12,7 @@ class Item {
         this.socket = socket;
         this.tertiary = tertiary;
         this.softScore = softScore;
+
     }
 
     id = 0; // The items ID
@@ -33,6 +34,8 @@ class Item {
         crit: 0,
         leech: 0,
     }
+
+
 
 
 

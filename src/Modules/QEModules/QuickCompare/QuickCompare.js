@@ -144,7 +144,7 @@ export default function QuickCompare(props) {
   // Right now the available item levels are static, but given the removal of titanforging each item could hypothetically share
   // a list of available ilvls and the player could select from a smaller list instead.
   // This is left as a TODO until key functionality is completed but is a moderate priority.
-  const itemLevels = [226, 220, 214, 208, 202];
+  const itemLevels = [226, 213, 200, 187, 174, 161, 148, 131];
   const itemTertiaries = ["Avoidance", "Leech", "None"];
 
   // Define State.
@@ -205,16 +205,17 @@ export default function QuickCompare(props) {
       activeSlot,
       itemSocket,
       itemTertiary,
-      3000,
+      0,
       itemLevel
     );
     item.level = itemLevel;
     item.stats = calcStatsAtLevel(
       itemLevel,
       activeSlot,
-      getItemAllocations(itemID)
+      getItemAllocations(itemID),
+      itemTertiary
     );
-    item.softScore = scoreItem(item);
+    item.softScore = scoreItem(item, player, props.contentType);
 
     player.addActiveItem(item);
 

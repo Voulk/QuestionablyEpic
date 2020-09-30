@@ -108,7 +108,7 @@ function getItemCat(slot) {
 // Calculates the intellect and secondary stats an item should have at a given item level.
 // This uses the RandPropPointsByLevel and CombatMultByLevel tables and returns a dictionary object of stats. 
 // Stat allocations are passed to the function from our Item Database. 
-export function calcStatsAtLevel(itemLevel, slot, statAllocations) {
+export function calcStatsAtLevel(itemLevel, slot, statAllocations, tertiary) {
     let stats = {
         intellect: 0,
         stamina: 0,
@@ -121,8 +121,9 @@ export function calcStatsAtLevel(itemLevel, slot, statAllocations) {
 
     let rand_prop = randPropPoints[itemLevel]['slotValues'][getItemCat(slot)];   
     let combat_mult = combat_ratings_mult_by_ilvl[itemLevel];
-
     
+    
+    // These stats should be precise, and never off by one.
     for (var key in statAllocations) {
         
         let allocation = statAllocations[key]
@@ -136,6 +137,12 @@ export function calcStatsAtLevel(itemLevel, slot, statAllocations) {
         else if (key === "stamina") {
             // todo
         }
+    }
+
+    // This, on the other hand, is a close estimate that should be replaced before launch.
+    if (tertiary === "Leech") {
+        const terMult = ((slot === "Finger" || slot === "Neck") ? 0.170027 : 0.429132)
+        stats.leech = Math.floor(terMult * (stats.haste + stats.crit + stats.mastery + stats.vers));
     }
 
     console.log(stats);
@@ -176,7 +183,22 @@ function correctCasing(string) {
   // Return an item score.
   // Score is calculated by multiplying out an items stats against the players stat weights.
   // Special effects, sockets and leech are then added afterwards. 
-  export function scoreItem(item, player) {
+  export function scoreItem(item, player, contentType) {
+    console.log("Calculating Score");
+    let score = 0
+
+    // Multiply the item's stats by our stat weights.
+    for (var stat in item.stats) {
+        //console.log("$" + stat + ":" + item.stats[stat] * player.getStatWeight(contentType, stat))
+        score += item.stats[stat] * player.getStatWeight(contentType, stat)
+    }
       
-      return 0;
+    // Add Socket
+    if (item.socket === "Yes") {
+        score += 16 * player.getStatWeight(contentType, player.getHighestStatWeight(contentType))
+    }
+
+
+    console.log("Score post: " + score)
+    return Math.round(score);
   }

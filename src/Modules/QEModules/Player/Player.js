@@ -59,21 +59,46 @@ class Player {
     statWeights = {
         "Raid": {
             intellect: 1, 
-            haste: 0.4,
+            haste: 0.5,
             crit: 0.6,
             mastery: 0.5,
-            vers: 0.3,
-            leech: 0.8,
+            vers: 0.45,
+            leech: 0.7,
         },
         "Dungeon": {
             intellect: 1, 
-            haste: 0.4,
-            crit: 0.6,
-            mastery: 0.5,
-            vers: 0.3,
-            leech: 0.8,
+            haste: 0.8,
+            crit: 0.5,
+            mastery: 0.4,
+            vers: 0.45,
+            leech: 0.7,
         },
         "DefaultWeights": true
+
+    }
+
+    getStatWeight = (contentType, stat) => {
+        if (stat in this.statWeights[contentType]) {
+            return this.statWeights[contentType][stat]
+        }
+        else {
+            return 0;
+        }
+            
+    }
+
+    // Used for the purpose of maximising stuff like ring enchants and gems. 
+    // Returns the players stat that has the highest weight. We should consider how to handle tie breaks.
+    getHighestStatWeight = (contentType) => {
+        let max = "";
+        let maxValue = 0;
+        let weights = this.statWeights[contentType]
+
+        for (var stat in weights) {
+            if (weights[stat] > maxValue && ['crit', 'haste', 'mastery', 'vers'].includes(stat)) { max = stat; maxValue = weights[stat] };
+        }
+
+        return max;
 
     }
 
