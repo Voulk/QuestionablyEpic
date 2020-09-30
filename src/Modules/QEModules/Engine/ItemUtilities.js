@@ -1,6 +1,8 @@
 import { itemDB } from '../Player/ItemDB'
 import {randPropPoints} from './RandPropPointsBylevel'
 import {combat_ratings_mult_by_ilvl} from './CombatMultByLevel'
+import { getEffectValue } from './EffectFormulas/EffectEngine';
+
 
 /*
 
@@ -44,6 +46,16 @@ export function getTranslatedItemName(id, lang) {
 
     if (temp.length > 0) return temp[0].names[lang];
     else return "Unknown Item";
+}
+
+// Returns a translated item name based on an ID.
+export function getItemEffect(id) {
+    let temp = itemDB.filter(function(item) {
+        return item.id === id;
+    })
+
+    if (temp.length > 0 & 'effect' in temp[0]) return temp[0].effect;
+    else return "";
 }
 
 // Returns a translated item name based on an ID.
@@ -117,6 +129,7 @@ export function calcStatsAtLevel(itemLevel, slot, statAllocations, tertiary) {
         vers: 0,
         crit: 0,
         leech: 0,
+        bonus_stats: {}
     }
 
     let rand_prop = randPropPoints[itemLevel]['slotValues'][getItemCat(slot)];   
@@ -176,6 +189,7 @@ export function buildStatString(stats, effect) {
     return statString.slice(0, -3); // We slice here to remove excess slashes and white space from the end. 
 }
 
+
 function correctCasing(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
   }
@@ -187,10 +201,21 @@ function correctCasing(string) {
     console.log("Calculating Score");
     let score = 0
 
+    // Calculate Effect.
+    if (item.effect !== "") {
+        item.stats.bonus_stats = getEffectValue(item.effect);
+    }
+
     // Multiply the item's stats by our stat weights.
     for (var stat in item.stats) {
+        console.log(item.stats);
         //console.log("$" + stat + ":" + item.stats[stat] * player.getStatWeight(contentType, stat))
-        score += item.stats[stat] * player.getStatWeight(contentType, stat)
+        if (stat !== "bonus_stats") {
+            let statSum = item.stats[stat] + (stat in item.stats['bonus_stats'] ? item.stats['bonus_stats'][stat] : 0);
+            score += statSum * player.getStatWeight(contentType, stat);
+            console.log("Stat: " + stat + " adds " + statSum * player.getStatWeight(contentType, stat) + " to score.");
+        }
+        
     }
       
     // Add Socket

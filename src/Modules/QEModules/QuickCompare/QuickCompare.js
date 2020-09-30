@@ -24,6 +24,7 @@ import {
   calcStatsAtLevel,
   getItemAllocations,
   scoreItem,
+  getItemEffect,
 } from "../Engine/ItemUtilities";
 import Button from "@material-ui/core/Button";
 import ItemCard from "./ItemCard";
@@ -236,8 +237,10 @@ export default function QuickCompare(props) {
       getItemAllocations(itemID),
       itemTertiary
     );
-    item.softScore = scoreItem(item, player, props.contentType);
 
+    item.effect = getItemEffect(itemID);
+    item.softScore = scoreItem(item, player, props.contentType);
+    
     player.addActiveItem(item);
 
     //player.getActiveItems(activeSlot)
