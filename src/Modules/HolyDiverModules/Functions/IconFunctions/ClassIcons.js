@@ -5,10 +5,16 @@ import HolyPriestIcon from "../../../../Images/Classes/Priest/Specialisation/Hol
 import MistweaverIcon from "../../../../Images/Classes/Monk/Specialisation/Mistweaver/Icons/MistWeaverMonk.jpg";
 import RestorationDruidIcon from "../../../../Images/Classes/Druid/Specialisation/Restoration/Icons/RestorationDruid.jpg";
 import RestorationShamanIcon from "../../../../Images/Classes/Shaman/Specialisation/Restoration/Icons/RestorationShaman.jpg";
+import WarriorIcon from "../../../../Images/Classes/Warrior/WarriorIcon.jpg";
+import DemonHunterIcon from "../../../../Images/Classes/DemonHunter/DemonHunterIcon.jpg";
 
 export default function classicons(props, iconsize) {
   // Paladin Cooldowns
-  if (props === "Holy Paladin" || props === "Paladin-Holy" || props === "Paladin") {
+  if (
+    props === "Holy Paladin" ||
+    props === "Paladin-Holy" ||
+    props === "Paladin"
+  ) {
     return (
       <img
         style={{
@@ -24,7 +30,11 @@ export default function classicons(props, iconsize) {
   }
 
   // Restoration Druid
-  if (props === "Restoration Druid" || props === "Druid-Restoration" || props === "Druid") {
+  if (
+    props === "Restoration Druid" ||
+    props === "Druid-Restoration" ||
+    props === "Druid"
+  ) {
     return (
       <img
         style={{
@@ -40,7 +50,11 @@ export default function classicons(props, iconsize) {
   }
 
   // Holy Priest
-  if (props === "Holy Priest" || props === "Priest-Holy" || props === "Priest") {
+  if (
+    props === "Holy Priest" ||
+    props === "Priest-Holy" ||
+    props === "Priest"
+  ) {
     return (
       <img
         style={{
@@ -72,7 +86,11 @@ export default function classicons(props, iconsize) {
   }
 
   // Restoration Shaman
-  if (props === "Restoration Shaman" || props === "Shaman-Restoration" || props === "Shaman") {
+  if (
+    props === "Restoration Shaman" ||
+    props === "Shaman-Restoration" ||
+    props === "Shaman"
+  ) {
     return (
       <img
         style={{
@@ -88,7 +106,11 @@ export default function classicons(props, iconsize) {
   }
 
   // Mistweaver Monk
-  if (props === "Mistweaver Monk" || props === "Monk-Mistweaver" || props === "Monk") {
+  if (
+    props === "Mistweaver Monk" ||
+    props === "Monk-Mistweaver" ||
+    props === "Monk"
+  ) {
     return (
       <img
         style={{
@@ -99,6 +121,38 @@ export default function classicons(props, iconsize) {
         }}
         src={MistweaverIcon}
         alt="Mistweaver Monk"
+      />
+    );
+  }
+
+  // Warrior
+  if (props === "Warrior") {
+    return (
+      <img
+        style={{
+          height: iconsize,
+          width: iconsize,
+          padding: "0px 5px 0px 5px",
+          verticalAlign: "middle",
+        }}
+        src={WarriorIcon}
+        alt="Warrior"
+      />
+    );
+  }
+
+  // Demon Hunter
+  if (props === "Havoc Demon Hunter") {
+    return (
+      <img
+        style={{
+          height: iconsize,
+          width: iconsize,
+          padding: "0px 5px 0px 5px",
+          verticalAlign: "middle",
+        }}
+        src={DemonHunterIcon}
+        alt="Havoc Demon Hunter"
       />
     );
   }
