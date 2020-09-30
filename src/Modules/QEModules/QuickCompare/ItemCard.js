@@ -3,24 +3,18 @@ import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
 import CardContent from "@material-ui/core/CardContent";
-// import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import Divider from "@material-ui/core/Divider";
-import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import {
   getTranslatedItemName,
   buildStatString,
   getItemIcon,
 } from "../Player/PlayerUtilities";
 import "./ItemCard.css";
-import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
-import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
-import RemoveIcon from "@material-ui/icons/Remove";
 import DeleteIcon from "@material-ui/icons/Delete";
 import IconButton from "@material-ui/core/IconButton";
-
-const icons = require.context("../../../../public/Images/Icons", true);
+import socketImage from "../../../Images/Resources/EmptySocket.png";
 
 const useStyles = makeStyles({
   root: {
@@ -75,20 +69,16 @@ export default function ItemCard(props) {
     }
   };
 
-  // const upgradeArrow = (num) => {
-  //   if (num > 0) {
-  //     return <KeyboardArrowUpIcon style={{ color: "#4CBB17" }} />;
-  //   } else if (num > 0) {
-  //     return <KeyboardArrowDownIcon style={{ color: "#ad2c34" }} />;
-  //   } else {
-  //     return <RemoveIcon style={{ color: "#fff" }} />;
-  //   }
-  // };
-
   const socket =
     props.item.socket === "Yes" ? (
       <div style={{ display: "inline" }}>
-        <img width={15} height={15} /> /
+        <img
+          src={socketImage}
+          width={15}
+          height={15}
+          style={{ verticalAlign: "middle" }}
+        />{" "}
+        /
       </div>
     ) : null;
 
@@ -108,7 +98,12 @@ export default function ItemCard(props) {
           justify="space-between"
         >
           <Grid item xs="auto">
-            <CardContent style={{ padding: "8.5px", display: "inline-flex" }}>
+            <CardContent
+              style={{
+                padding: "4.5px 4.5px 0.5px 4.5px",
+                display: "inline-flex",
+              }}
+            >
               <div className="container">
                 <img
                   src={getItemIcon(item.id)}
@@ -126,7 +121,7 @@ export default function ItemCard(props) {
             </CardContent>
           </Grid>
           <Divider orientation="vertical" flexItem />
-          <CardContent style={{ padding: 8, width: "100%" }}>
+          <CardContent style={{ padding: 4, width: "100%" }}>
             <Grid
               item
               container
@@ -142,10 +137,9 @@ export default function ItemCard(props) {
                 alignItems="center"
                 style={{ width: "100%" }}
               >
-                <Grid item xs="auto" display="inline-flex">
+                <Grid item xs={11} display="inline-flex">
                   <Typography
                     variant="subtitle1"
-                    // component="subtitle1"
                     wrap="nowrap"
                     display="inline-flex"
                     align="left"
@@ -154,10 +148,25 @@ export default function ItemCard(props) {
                     {getTranslatedItemName(item.id, props.lang)}
                   </Typography>
                 </Grid>
-                <Grid item xs="1" display="inline-flex">
-                  <IconButton aria-label="delete" size="small">
-                    <DeleteIcon style={{ color: "#ad2c34" }} fontSize="small" />
-                  </IconButton>
+                <Grid
+                  item
+                  xs={1}
+                  justify="flex-end"
+                  style={{ display: "inline-flex" }}
+                >
+                  <Divider orientation="vertical" flexItem />
+                  <Typography
+                    variant="subtitle1"
+                    wrap="nowrap"
+                    display="inline-flex"
+                    align="right"
+                    style={{
+                      color: upgradeColor(props.item.softScore),
+                      paddingLeft: "4px",
+                    }}
+                  >
+                    {props.item.softScore}
+                  </Typography>
                 </Grid>
               </Grid>
               <Divider />
@@ -168,12 +177,10 @@ export default function ItemCard(props) {
                 direction="row"
                 xs="auto"
                 justify="space-between"
-                style={{ marginTop: "4px" }}
               >
                 <Grid item xs="auto">
                   <Typography
                     variant="subtitle1"
-                    // component="subtitle1"
                     wrap="nowrap"
                     display="block"
                     align="left"
@@ -182,22 +189,13 @@ export default function ItemCard(props) {
                   </Typography>
                 </Grid>
 
-                <Grid item xs="2" style={{ display: "inline-flex" }}>
-                  <Divider orientation="vertical" flexItem />
-                  <Typography
-                    variant="subtitle1"
-                    // component="subtitle1"
-                    wrap="nowrap"
-                    display="inline-flex"
-                    align="Right"
-                    style={{
-                      color: upgradeColor(props.item.softScore),
-                      paddingLeft: "8px",
-                    }}
-                  >
-                    {props.item.softScore}
-                  </Typography>
-                  {/* {upgradeArrow(props.item.softScore)} */}
+                <Grid item xs={1} display="inline-flex">
+                  <IconButton aria-label="delete" size="small">
+                    <DeleteIcon
+                      style={{ color: "#ad2c34", paddingTop: 2 }}
+                      fontSize="small"
+                    />
+                  </IconButton>
                 </Grid>
               </Grid>
             </Grid>
