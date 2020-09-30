@@ -30,6 +30,8 @@ import WeaponsofOrderIcon from "../../../../Images/Classes/Monk/CovenantAbilitie
 import FallenOrderIcon from "../../../../Images/Classes/Monk/CovenantAbilities/FallenOrder.jpg";
 import BonedustBrewIcon from "../../../../Images/Classes/Monk/CovenantAbilities/BonedustBrew.jpg";
 import FaelineStompIcon from "../../../../Images/Classes/Monk/CovenantAbilities/FaelineStomp.jpg";
+import DarknessIcon from "../../../../Images/Classes/DemonHunter/DemonHunterIcon.jpg";
+import RallyingCryIcon from "../../../../Images/Classes/Warrior/RallyingCryIcon.jpg";
 
 // Should probably work this off GUID
 
@@ -205,6 +207,16 @@ export default function abilityicons(props) {
     source = FaelineStompIcon;
     alt = "Faeline Stomp";
   }
+  if (props === "Darkness") {
+    spell = "spell=196718";
+    source = DarknessIcon;
+    alt = "Darkness";
+  }
+  if (props === "Rallying Cry") {
+    spell = "spell=97462";
+    source = RallyingCryIcon;
+    alt = "Rallying Cry";
+  }
 
   return (
     <div>
@@ -224,4 +236,3 @@ export default function abilityicons(props) {
     </div>
   );
 }
-

@@ -11,6 +11,8 @@ import SalvationIcon from "../../../Images/Classes/Priest/Specialisation/Holy/Ic
 import SpiritLinkTotemIcon from "../../../Images/Classes/Shaman/Specialisation/Restoration/Icons/SpiritLinkTotem.jpg";
 import TranquilityIcon from "../../../Images/Classes/Druid/Specialisation/Restoration/Icons/Tranquility.jpg";
 import TreeofLifeIcon from "../../../Images/Classes/Druid/Specialisation/Restoration/Icons/TreeofLife.jpg";
+import DarknessIcon from "../../../Images/Classes/DemonHunter/DemonHunterIcon.jpg"
+import RallyingCryIcon from "../../../Images/Classes/Warrior/RallyingCryIcon.jpg"
 import Divider from "@material-ui/core/Divider";
 
 export default function ClassCooldownMenuItems(props) {
@@ -211,6 +213,46 @@ export default function ClassCooldownMenuItems(props) {
           />
         </a>
         Revival
+      </MenuItem>,
+    ];
+  }
+
+  if (props === "Havoc Demon Hunter") {
+    return [
+      <MenuItem value={"Darkness"}>
+        <a data-wowhead="spell=196718">
+          <img
+            style={{
+              height: 20,
+              width: 20,
+              padding: "0px 5px 0px 5px",
+              verticalAlign: "middle",
+            }}
+            src={DarknessIcon}
+            alt="Darkness"
+          />
+        </a>
+        Darkness
+      </MenuItem>,
+    ];
+  }
+
+  if (props === "Warrior") {
+    return [
+      <MenuItem value={"Rallying Cry"}>
+        <a data-wowhead="spell=97462">
+          <img
+            style={{
+              height: 20,
+              width: 20,
+              padding: "0px 5px 0px 5px",
+              verticalAlign: "middle",
+            }}
+            src={RallyingCryIcon}
+            alt="Rallying Cry"
+          />
+        </a>
+        Rallying Cry
       </MenuItem>,
     ];
   }

@@ -24,7 +24,7 @@ export default function QEHeader(props) {
 
   return (
     <div style={{ backgroundColor: "#353535" }}>
-      <AppBar position="static" color="Black">
+      <AppBar position="static" color="inherit">
         <Toolbar style={{ marginLeft: "20%", marginRight: "20%" }}>
           <Box display="flex" flexGrow={1}>
             <Link to={"/"}>
@@ -32,9 +32,9 @@ export default function QEHeader(props) {
             </Link>
           </Box>
           <div/>
-          <Button color="inherit">{t("QeHeader.InsertLogLabel")}</Button>
+          <Button color="secondary">{t("QeHeader.InsertLogLabel")}</Button>
           <SimCraftInput />
-          <Button color="inherit" onClick={props.toggleContentType}>{t(props.contentType)}</Button>
+          <Button color="secondary" onClick={props.toggleContentType}>{t(props.contentType)}</Button>
           <ProfileSelector
             name={playerName}
             component={Link}

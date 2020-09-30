@@ -286,6 +286,22 @@ export const healerCooldownsDetailed = [
     duration: 3,
     cooldown: 120,
   },
+
+  // Utility Cooldowns
+  {
+    name: "Darkness",
+    guid: 196718,
+    duration: 8,
+    cooldown: 180,
+  },
+
+    {
+    name: "Rallying Cry",
+    guid: 97462,
+    duration: 10,
+    cooldown: 180,
+  },
+
 ];
 
 export const bossIds = [
