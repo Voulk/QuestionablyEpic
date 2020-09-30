@@ -100,7 +100,7 @@ export const classMenus = [
   <Divider />,
   <ListSubheader>Utility</ListSubheader>,
   <Divider />,
-  <MenuItem style={{ color: "#A330C9" }} value={"Demon Hunter"}>
+  <MenuItem style={{ color: "#A330C9" }} value={"Havoc Demon Hunter"}>
     <img
       style={{
         height: 20,
@@ -109,9 +109,9 @@ export const classMenus = [
         verticalAlign: "middle",
       }}
       src={DemonHunterIcon}
-      alt="Demon Hunter"
+      alt="Havoc Demon Hunter"
     />
-    Demon Hunter
+    Havoc Demon Hunter
   </MenuItem>,
   <Divider />,
   <MenuItem style={{ color: "#C79C6E" }} value={"Warrior"}>

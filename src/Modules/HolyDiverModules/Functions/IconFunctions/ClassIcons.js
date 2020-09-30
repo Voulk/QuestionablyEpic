@@ -142,7 +142,7 @@ export default function classicons(props, iconsize) {
   }
 
   // Demon Hunter
-  if (props === "Demon Hunter") {
+  if (props === "Havoc Demon Hunter") {
     return (
       <img
         style={{
@@ -152,7 +152,7 @@ export default function classicons(props, iconsize) {
           verticalAlign: "middle",
         }}
         src={DemonHunterIcon}
-        alt="Demon Hunter"
+        alt="Havoc Demon Hunter"
       />
     );
   }
