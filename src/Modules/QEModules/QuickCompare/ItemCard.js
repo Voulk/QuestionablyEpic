@@ -178,7 +178,7 @@ export default function ItemCard(props) {
                 xs="auto"
                 justify="space-between"
               >
-                <Grid item xs="auto">
+                <Grid item xs={11}>
                   <Typography
                     variant="subtitle1"
                     wrap="nowrap"
@@ -189,8 +189,9 @@ export default function ItemCard(props) {
                   </Typography>
                 </Grid>
 
-                <Grid item xs={1} display="inline-flex">
-                  <IconButton aria-label="delete" size="small">
+                <Grid item xs={1} display="inline-flex" justify="flex-end" align="right"
+>
+                  <IconButton aria-label="delete" size="small" >
                     <DeleteIcon
                       style={{ color: "#ad2c34", paddingTop: 2 }}
                       fontSize="small"
