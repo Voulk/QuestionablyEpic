@@ -34,7 +34,7 @@ import Grow from "@material-ui/core/Grow";
 import Paper from "@material-ui/core/Paper";
 import ERTTable from "../HolyDiverModules/Tables/ERTTable";
 import SwitchLabels from "./BasicComponents/Switch";
-import SimpleAccordion from "../HolyDiverModules/Tables/HealerInfoTable2";
+import HealerInfoTable from "../HolyDiverModules/Tables/HealerInfoTable";
 import HealTeam from "../HolyDiverModules/Tables/HealTeamTable";
 
 class HolyDiver extends Component {
@@ -64,7 +64,9 @@ class HolyDiver extends Component {
       healernames: [],
       checked: false,
       tabledata: [],
+      unmitigatedChartDataNoCooldownsOriginal: [],
       unmitigatedChartDataNoCooldowns: [],
+      mitigatedChartDataNoCooldownsOriginal: [],
       mitigatedChartDataNoCooldowns: [],
       cooldownlistcustom2: ["none"],
       currentEndTime: 0,
@@ -136,8 +138,6 @@ class HolyDiver extends Component {
       endtime,
       this.state.reportid
     );
-
-    console.log(summary);
 
     /////////////////////////////////////
     // Map Healer id, name, class type //
@@ -412,7 +412,9 @@ class HolyDiver extends Component {
     );
 
     this.setState({
+      unmitigatedChartDataNoCooldownsOriginal: sortedDataUnmitigatedNoCooldowns,
       unmitigatedChartDataNoCooldowns: sortedDataUnmitigatedNoCooldowns,
+      mitigatedChartDataNoCooldownsOriginal: sortedDataMitigatedDamageNoCooldowns,
       mitigatedChartDataNoCooldowns: sortedDataMitigatedDamageNoCooldowns,
       legenddata: uniqueArrayNewForLegend,
       unmitigatedChartData: sortedDataUnmitigatedWithCooldowns,
@@ -526,8 +528,8 @@ class HolyDiver extends Component {
 
     let customCooldownDurationFlatArray = customCooldownDurations.flat();
 
-    let concat2 = this.state.unmitigatedChartDataNoCooldowns;
-    let concat3 = this.state.mitigatedChartDataNoCooldowns;
+    let concat2 = this.state.unmitigatedChartDataNoCooldownsOriginal;
+    let concat3 = this.state.mitigatedChartDataNoCooldownsOriginal;
 
     let joinedarray = concat2.concat(customCooldownDurationFlatArray);
     let joinedarray2 = concat3.concat(customCooldownDurationFlatArray);
@@ -815,7 +817,7 @@ class HolyDiver extends Component {
                           title="Healer Talents/Legendaries"
                         />
                         <Collapse in={this.state.timelineshowhide}>
-                          <SimpleAccordion heals={this.state.healernames} />
+                          <HealerInfoTable heals={this.state.healernames} />
                         </Collapse>
                       </Collapse>
                     </Grid>

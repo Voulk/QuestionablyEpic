@@ -144,7 +144,6 @@ class Chart extends Component {
       >
 
         <AreaChart
-          width="100%"
           data={this.props.dataToShow === true ? this.props.unmitigated : this.props.mitigated }
           margin={{ top: 15, right: -30, left: 30, bottom: 0 }}
         >
@@ -177,7 +176,6 @@ class Chart extends Component {
             stroke="#f5f5f5"
             tick={false}
             domain={['"dataMin"', 5]}
-            padding={0}
           />
           <Legend
             verticalAlign="top"

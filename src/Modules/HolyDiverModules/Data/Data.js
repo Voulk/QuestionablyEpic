@@ -295,13 +295,12 @@ export const healerCooldownsDetailed = [
     cooldown: 180,
   },
 
-    {
+  {
     name: "Rallying Cry",
     guid: 97462,
     duration: 10,
     cooldown: 180,
   },
-
 ];
 
 export const bossIds = [

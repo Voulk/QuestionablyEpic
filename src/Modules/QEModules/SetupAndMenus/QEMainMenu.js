@@ -1,20 +1,8 @@
-import React, { Component } from "react";
-import ReactDOM from "react-dom";
-import { makeStyles } from "@material-ui/core/styles";
+import React from "react";
 import Button from "@material-ui/core/Button";
-import IconButton from "@material-ui/core/IconButton";
-
-import logo from "../../../Images/QeAssets/QELogo.png";
-import MenuIcon from "@material-ui/icons/Menu";
 import "./QEMainMenu.css";
-import Avatar from "@material-ui/core/Avatar";
-
-import Box from "@material-ui/core/Box";
-import Player from "../Player/Player";
-import QEHeader from "./QEHeader";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import CharComponent from "./CharComponent";
 import CharCards from "./CharComponentGen";
 import { Grid } from "@material-ui/core";
 import AddNewChar from "./CharCreator";
@@ -32,7 +20,7 @@ const mainMenuOptions = {
 // <p>{props.pl.getSpec()}</p>
 
 export default function QEMainMenu(props) {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   return (
     <div style={{ backgroundColor: "#353535" }}>

@@ -20,7 +20,7 @@ import SaveAlt from "@material-ui/icons/SaveAlt";
 import Search from "@material-ui/icons/Search";
 import ViewColumn from "@material-ui/icons/ViewColumn";
 import ClassCooldownMenuItems from "./ClassCooldownMenuItems";
-import { Select, Grid, Paper } from "@material-ui/core";
+import { Select, Grid } from "@material-ui/core";
 import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import InputLabel from "@material-ui/core/InputLabel";
@@ -44,7 +44,6 @@ import {
   localizationFR,
 } from "./TableLocalization.js";
 import MenuItem from "@material-ui/core/MenuItem";
-import Collapse from "@material-ui/core/Collapse";
 import Grow from "@material-ui/core/Grow";
 import bossIcons from "../Functions/IconFunctions/BossIcons";
 import bossAbilityIcons from "../Functions/IconFunctions/BossAbilityIcons";
@@ -62,9 +61,9 @@ const useStyles = makeStyles((theme) => ({
 const themecooldowntable = createMuiTheme({
   overrides: {
     MuiTableCell: {
-      regular: {
-        padding: "0px 8px 0px 8px",
-      },
+      // regular: {
+      //   padding: "0px 8px 0px 8px",
+      // },
       root: {
         padding: "4px 4px 4px 4px",
       },
@@ -182,14 +181,11 @@ export default function CooldownPlanner(props) {
     setRaid(event.target.value);
   };
   const handleChangeBoss = (event) => {
-    console.log(event.target.value);
     setBoss(event.target.value);
     if (ls.get(raid + "." + boss + ".1") === null) {
       ls.set(raid + "." + boss + ".1", []);
     }
-
     setData(ls.get(raid + "." + event.target.value + ".1"));
-    console.log(data);
   };
 
   const handleChangePlan = (event) => {
@@ -440,7 +436,6 @@ export default function CooldownPlanner(props) {
                   <MenuItem key={i} value={key.ability}>
                     <a data-wowhead={"spell=" + key.guid}>
                       {bossAbilityIcons(key.guid)}
-                      {console.log(key.guid)}
                     </a>
                     {key.ability}
                   </MenuItem>
@@ -522,38 +517,22 @@ export default function CooldownPlanner(props) {
           headerStyle: {
             borderBottom: "2px solid #6d6d6d",
             padding: "0px 4px 0px 4px",
-            // fontSize: "0.8 rem",
             whiteSpace: "nowrap",
           },
           cellStyle: {
-            // borderBottom: "1px solid #6d6d6d",
-            // fontSize: "0.8 rem",
             whiteSpace: "nowrap",
-            // padding: "4px 16px 0px 16px",
           },
           rowStyle: {
             borderBottom: "1px solid #6d6d6d",
-            // fontSize: "0.8 rem",
             padding: "4px 16px 4px 16px",
-            "& :first-child": { paddingLeft: "8px" },
+            "& :firstChild": { paddingLeft: "8px" },
           },
           actionCellStyle: {
             borderBottom: "1px solid #6d6d6d",
           },
           actionsColumnIndex: 7,
           paging: false,
-          // search: (boss === "" ? false : true)
         }}
-        //       actions={[
-        //   {
-        //     icon: "add_box",
-        //     tooltip: "my tooltip",
-        //     isFreeAction: true,
-        //     onClick: () => {
-        //       console.log("clicked");
-        //     }
-        //   }
-        // ]}
         localization={curLang(props.curLang)}
         components={{
           Body: (props) =>
@@ -703,9 +682,11 @@ export default function CooldownPlanner(props) {
                   </Grid> */}
                 </Grid>
                 <Grid item xs="auto">
-                  <ThemeProvider theme={SearchFieldOverride}>
-                    {boss === "" ? null : <MTableToolbar {...props} />}
-                  </ThemeProvider>
+                  {boss === "" ? null : (
+                    <ThemeProvider theme={SearchFieldOverride}>
+                      <MTableToolbar {...props} />{" "}
+                    </ThemeProvider>
+                  )}
                 </Grid>
               </Grid>
             </div>

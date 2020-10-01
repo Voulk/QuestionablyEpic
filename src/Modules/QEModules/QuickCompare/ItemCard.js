@@ -106,7 +106,7 @@ export default function ItemCard(props) {
             >
               <div className="container">
                 <img
-                  src={getItemIcon(item.id)}   
+                  src={getItemIcon(item.id)}
                   alt="img"
                   width={56}
                   height={56}
@@ -126,7 +126,7 @@ export default function ItemCard(props) {
             <Grid
               item
               container
-              display="inline-flex"
+              display="inline"
               direction="column"
               justify="space-around"
               xs="auto"
@@ -134,36 +134,41 @@ export default function ItemCard(props) {
               <Grid
                 container
                 item
+                wrap="nowrap"
                 justify="space-between"
                 alignItems="center"
                 style={{ width: "100%" }}
               >
-                <Grid item xs={11} display="inline-flex">
+                <Grid item xs={11} display="inline">
                   <Typography
                     variant="subtitle1"
                     wrap="nowrap"
-                    display="inline-flex"
+                    display="inline"
                     align="left"
                     style={{ color: itemQuality("Uncommon") }}
                   >
                     {getTranslatedItemName(item.id, props.lang)}
                   </Typography>
                 </Grid>
+                <Divider orientation="vertical" flexItem />
                 <Grid
                   item
                   xs={1}
-                  justify="flex-end"
-                  style={{ display: "inline-flex" }}
+                  style={{
+                    display: "inline-flex",
+                    justifyContent: "center",
+                    paddingLeft: 2,
+                  }}
                 >
-                  <Divider orientation="vertical" flexItem />
                   <Typography
                     variant="subtitle1"
                     wrap="nowrap"
-                    display="inline-flex"
-                    align="right"
+                    display="inline"
+                    align="center"
                     style={{
                       color: upgradeColor(props.item.softScore),
-                      paddingLeft: "4px",
+                      paddingLeft: "2px",
+                      paddingRight: "2px",
                     }}
                   >
                     {props.item.softScore}
@@ -174,7 +179,7 @@ export default function ItemCard(props) {
               <Grid
                 item
                 container
-                display="inline-flex"
+                display="inline"
                 direction="row"
                 xs="auto"
                 justify="space-between"
@@ -190,9 +195,8 @@ export default function ItemCard(props) {
                   </Typography>
                 </Grid>
 
-                <Grid item xs={1} display="inline-flex" justify="flex-end" align="right"
->
-                  <IconButton aria-label="delete" size="small" >
+                <Grid item xs={1} display="inline-flex" align="center">
+                  <IconButton aria-label="delete" size="small">
                     <DeleteIcon
                       style={{ color: "#ad2c34", paddingTop: 2 }}
                       fontSize="small"

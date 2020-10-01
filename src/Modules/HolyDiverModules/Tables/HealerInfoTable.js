@@ -1,10 +1,6 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import Accordion from "@material-ui/core/Accordion";
-import AccordionSummary from "@material-ui/core/AccordionSummary";
-import AccordionDetails from "@material-ui/core/AccordionDetails";
 import Typography from "@material-ui/core/Typography";
-import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import classicons from "../Functions/IconFunctions/ClassIcons";
 import talentIcons from "../Functions/IconFunctions/TalentIcons";
 import { classColoursJS } from "../Functions/ClassColourFunctions";
@@ -14,10 +10,12 @@ import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import Divider from "@material-ui/core/Divider";
+import Grid from "@material-ui/core/Grid";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    width: "100%",
+    // width: "100%",
+
     "& .MuiAccordionSummary-root": {
       minHeight: 0,
     },
@@ -40,94 +38,96 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function SimpleAccordion(props) {
+export default function HealerInfoTable(props) {
   const { t } = useTranslation();
   const classes = useStyles();
 
   return (
-    <div className={classes.root}>
-      {console.log(props.heals)}
+    <Grid container spacing={1} style={{ display: "block", marginTop: "4px" }}>
       {props.heals.map((key, index) => (
-        <Accordion>
-          <AccordionSummary
-            className={classes.content}
-            expandIcon={<ExpandMoreIcon />}
-            aria-controls={"panel" + index + "a-content"}
-            id={"panel" + index + "a-header"}
+        <Grid conatiner item>
+          <Card
+            style={{
+              // width: "100%",
+              display: "inline-flex",
+              backgroundColor: "#353535",
+            }}
+            raised
           >
-            <Typography
-              style={{ color: classColoursJS(key.type), textAlign: "center" }}
-              className={classes.heading}
-            >
-              {classicons(key.icon, 16)}
-              {key.name}
-            </Typography>
-          </AccordionSummary>
-          <AccordionDetails>
-            <Card
-              style={{
-                width: "100%",
-                display: "inline-flex",
-                backgroundColor: "#353535",
-              }}
-              raised
-            >
-              <CardContent style={{ padding: 8 }}>
-                <Typography className={classes.heading} color="primary">
-                  {t("HDAccordianTitles.StatsHeading")}
-                </Typography>
-                <Divider />
-                {key.stats.map((stats) => (
-                  <Typography style={{ textAlign: "center" }}>
-                    {t("HDAccordianTitles.Item Level")} {stats.ilvl}
+            <Grid container item justify="center" style={{ margin: 4}} >
+              <Grid item xs={12}>
+                <CardContent style={{ padding: "0px 8px 0px 8px" }}>
+                  <Typography
+                    style={{
+                      color: classColoursJS(key.type),
+                    }}
+                    className={classes.heading}
+                  >
+                    {classicons(key.icon, 16)}
+                    {key.name}
                   </Typography>
-                ))}
-                {key.stats.map((stats) => (
-                  <Typography style={{ textAlign: "center" }}>
-                    {t("HDAccordianTitles.Crit")} {stats.crit}
+                </CardContent>
+              </Grid>
+              <Grid item xs="auto" style={{ display: "inline-flex" }}>
+                <CardContent style={{ padding: "2px 8px 2px 8px" }}>
+                  <Typography className={classes.heading} color="primary">
+                    {t("HDAccordianTitles.StatsHeading")}
                   </Typography>
-                ))}
-                {key.stats.map((stats) => (
-                  <Typography style={{ textAlign: "center" }}>
-                    {t("HDAccordianTitles.Haste")} {stats.haste}
-                  </Typography>
-                ))}
-                {key.stats.map((stats) => (
-                  <Typography style={{ textAlign: "center" }}>
-                    {t("HDAccordianTitles.Mastery")} {stats.mastery}
-                  </Typography>
-                ))}
-                {key.stats.map((stats) => (
-                  <Typography style={{ textAlign: "center" }}>
-                    {t("HDAccordianTitles.Versatility")} {stats.versatility}
-                  </Typography>
-                ))}
-              </CardContent>
-              <div style={{ display: "block" }}>
-                <CardContent style={{ padding: 8 }}>
+                  <Divider />
+                  {key.stats.map((stats) => (
+                    <Typography style={{ textAlign: "center" }}>
+                      {t("HDAccordianTitles.Item Level")} {stats.ilvl}
+                    </Typography>
+                  ))}
+                  {key.stats.map((stats) => (
+                    <Typography style={{ textAlign: "center" }}>
+                      {t("HDAccordianTitles.Crit")} {stats.crit}
+                    </Typography>
+                  ))}
+                  {key.stats.map((stats) => (
+                    <Typography style={{ textAlign: "center" }}>
+                      {t("HDAccordianTitles.Haste")} {stats.haste}
+                    </Typography>
+                  ))}
+                  {key.stats.map((stats) => (
+                    <Typography style={{ textAlign: "center" }}>
+                      {t("HDAccordianTitles.Mastery")} {stats.mastery}
+                    </Typography>
+                  ))}
+                  {key.stats.map((stats) => (
+                    <Typography style={{ textAlign: "center" }}>
+                      {t("HDAccordianTitles.Versatility")} {stats.versatility}
+                    </Typography>
+                  ))}
+                </CardContent>
+              </Grid>
+              <Grid item xs={8} justify="center">
+                <CardContent style={{ padding: "4px 8px 4px 8px"}} >
                   <Typography className={classes.heading} color="primary">
                     {t("HDAccordianTitles.TalentHeader")}
                   </Typography>
                   <Divider />
+                  <div style={{ textAlignLast: "center"}}>
                   {key.talents.map((talent) => talentIcons(talent.guid))}
+                  </div>
                 </CardContent>
-                <CardContent style={{ padding: 8 }}>
+                <CardContent style={{ padding: "4px 8px 4px 8px" }}>
                   <Typography className={classes.heading} color="primary">
                     {t("HDAccordianTitles.CovenantHeader")}
                   </Typography>
                   <Divider />
                 </CardContent>
-                <CardContent style={{ padding: 8 }}>
+                <CardContent style={{ padding: "4px 8px 4px 8px" }}>
                   <Typography className={classes.heading} color="primary">
                     {t("HDAccordianTitles.LegendaryHeader")}
                   </Typography>
                   <Divider />
                 </CardContent>
-              </div>
-            </Card>
-          </AccordionDetails>
-        </Accordion>
+              </Grid>
+            </Grid>
+          </Card>
+        </Grid>
       ))}
-    </div>
+    </Grid>
   );
 }
