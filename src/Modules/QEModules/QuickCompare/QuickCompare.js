@@ -1,18 +1,15 @@
 import React, { useState } from "react";
 // import ReactDOM from "react-dom";
 import { makeStyles } from "@material-ui/core/styles";
-
-import MenuIcon from "@material-ui/icons/Menu";
 import "../SetupAndMenus/QEMainMenu.css";
 
-import Player from "../Player/Player";
+// import Player from "../Player/Player";
 import Item from "../Player/Item";
 // import QEHeader from "../SetupAndMenus/QEHeader";
 import "./QuickCompare.css";
 import { useTranslation } from "react-i18next";
 import InputLabel from "@material-ui/core/InputLabel";
 import MenuItem from "@material-ui/core/MenuItem";
-import ListItem from "@material-ui/core/ListItem";
 // import FormHelperText from "@material-ui/core/FormHelperText";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
@@ -36,7 +33,6 @@ import Snackbar from "@material-ui/core/Snackbar";
 import MuiAlert from "@material-ui/lab/Alert";
 import Autocomplete from "@material-ui/lab/Autocomplete";
 import TextField from "@material-ui/core/TextField";
-import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -68,26 +64,6 @@ const menuStyle = {
   },
   getContentAnchorEl: null,
 };
-
-const help = createMuiTheme({
-  overrides: {
-    MuiAutocomplete: {
-      option: {
-        // '&[data-focus="true"]': {
-        //   backgroundColor: 'red',
-        paddingLeft: 0,
-        paddingRight: 0,
-        paddingTop: 0,
-        paddingBottom: 0,
-      },
-    },
-  },
-  palette: {
-    type: "dark",
-    primary: { main: "#d3bc47" },
-    secondary: { main: "#e0e0e0" },
-  },
-});
 
 function Alert(props) {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
@@ -144,7 +120,7 @@ function getSlots() {
 }
 
 export default function QuickCompare(props) {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
 
@@ -170,13 +146,13 @@ export default function QuickCompare(props) {
   const itemTertiaries = ["Avoidance", "Leech", "None"];
 
   // Define State.
-  const [itemLevel, setItemLevel] = React.useState();
-  const [itemID, setItemID] = React.useState();
-  const [itemName, setItemName] = React.useState();
-  const [activeSlot, setSlot] = React.useState();
-  const [itemSocket, setItemSocket] = React.useState();
-  const [itemTertiary, setItemTertiary] = React.useState();
-  const [itemList, setItemList] = React.useState(
+  const [itemLevel, setItemLevel] = useState("");
+  const [itemID, setItemID] = useState("");
+  const [itemName, setItemName] = useState("");
+  const [activeSlot, setSlot] = useState("");
+  const [itemSocket, setItemSocket] = useState("");
+  const [itemTertiary, setItemTertiary] = useState("");
+  const [itemList, setItemList] = useState(
     props.pl.getActiveItems(activeSlot)
   );
 
@@ -193,10 +169,10 @@ export default function QuickCompare(props) {
       if (
         (slotName === item.slot &&
           slotName !== "Weapons & Offhands" &&
-          item.itemClass == 4 &&
+          item.itemClass === 4 &&
           acceptableArmorTypes.includes(item.itemSubClass)) ||
         (slotName === "Weapons & Offhands" &&
-          item.itemClass == 2 &&
+          item.itemClass === 2 &&
           acceptableWeaponTypes.includes(item.itemSubClass)) ||
         (slotName === item.slot && slotName === "Back")
       ) {
@@ -220,7 +196,6 @@ export default function QuickCompare(props) {
   // Add an item to our "Active Items" array.
   const addItem = () => {
     let player = props.pl;
-    console.log(itemTertiary);
     let item = new Item(
       itemID,
       itemName,
@@ -230,7 +205,7 @@ export default function QuickCompare(props) {
       0,
       itemLevel
     );
-    
+
     item.level = itemLevel;
     item.stats = calcStatsAtLevel(
       itemLevel,
@@ -241,7 +216,6 @@ export default function QuickCompare(props) {
 
     item.effect = getItemEffect(itemID);
     item.softScore = scoreItem(item, player, props.contentType);
-    
 
     player.addActiveItem(item);
 
@@ -251,16 +225,14 @@ export default function QuickCompare(props) {
     handleClick();
   };
 
-  const itemNameChanged = (event) => {
-    setItemID(parseInt(event.target.value));
-    setItemName(event.target.name);
-    console.log(event.target.name);
-
-    console.log(itemID, itemName);
+  const itemNameChanged = (event, val) => {
+    setItemID(val.value);
+    setItemName(val.name);
   };
 
   const itemLevelChanged = (event) => {
-    setItemLevel(parseInt(event.target.value));
+    // removed parse int here, was missing radix parameter
+    setItemLevel(event.target.value);
     setItemSocket("No");
     setItemTertiary("None");
   };
@@ -286,7 +258,6 @@ export default function QuickCompare(props) {
 
   return (
     <div style={{ backgroundColor: "#353535", marginTop: 32 }}>
-      {console.log(itemDropdown)}
       <Grid
         container
         spacing={2}
@@ -346,51 +317,39 @@ export default function QuickCompare(props) {
               </Grid>
 
               <Grid item>
-                <ThemeProvider theme={help}>
-                  <FormControl
-                    className={classes.formControl}
-                    variant="outlined"
+                <FormControl
+                  className={classes.formControl}
+                  variant="outlined"
+                  size="small"
+                  style={{ minWidth: 350 }}
+                  disabled={activeSlot === "" ? true : false}
+                >
+                  <Autocomplete
+
                     size="small"
-                    style={{ minWidth: 300 }}
-                    disabled={activeSlot === undefined ? true : false}
-                  >
-                    <Autocomplete
-                      size="small"
-                      disabled={activeSlot === undefined ? true : false}
-                      id="item-select"
-                      onChange={itemNameChanged}
-                      options={itemDropdown}
-                      openOnFocus={true}
-                      getOptionLabel={(option) => option.label}
-                      ListboxProps={{
-                        style: {
-                          border: "1px solid rgba(255, 255, 255, 0.23)",
-                          padding: 0,
-                        },
-                      }}
-                      style={{ width: "100%" }}
-                      renderOption={(option, i) => (
-                        <ListItem
-                          divider
-                          disableGutters
-                          key={i}
-                          value={option.value}
-                          name={option.label}
-                          style={{ paddingLeft: 8 }}
-                        >
-                          {option.label}
-                        </ListItem>
-                      )}
-                      renderInput={(params) => (
-                        <TextField
-                          {...params}
-                          label={t("QuickCompare.ItemName")}
-                          variant="outlined"
-                        />
-                      )}
-                    />
-                  </FormControl>
-                </ThemeProvider>
+                    disabled={activeSlot === "" ? true : false}
+                    id="item-select"
+                    onChange={itemNameChanged}
+                    options={itemDropdown}
+                    openOnFocus={true}
+                    getOptionLabel={(option) => option.label}
+                    getOptionSelected={(option, value) => option.label === value.label}
+                    ListboxProps={{
+                      style: {
+                        border: "1px solid rgba(255, 255, 255, 0.23)",
+                        padding: 0,
+                      },
+                    }}
+                    style={{ width: "100%" }}
+                    renderInput={(params) => (
+                      <TextField
+                        {...params}
+                        label={t("QuickCompare.ItemName")}
+                        variant="outlined"
+                      />
+                    )}
+                  />
+                </FormControl>
               </Grid>
 
               <Grid item>
@@ -398,7 +357,7 @@ export default function QuickCompare(props) {
                   className={classes.formControl}
                   variant="outlined"
                   size="small"
-                  disabled={itemID === undefined ? true : false}
+                  disabled={itemID === "" ? true : false}
                 >
                   <InputLabel id="itemlevel">
                     {t("QuickCompare.ItemLevel")}
@@ -426,7 +385,7 @@ export default function QuickCompare(props) {
                   className={classes.formControl}
                   variant="outlined"
                   size="small"
-                  disabled={itemLevel === undefined ? true : false}
+                  disabled={itemLevel === "" ? true : false}
                 >
                   <InputLabel id="itemsocket">
                     {t("QuickCompare.Socket")}
@@ -440,17 +399,17 @@ export default function QuickCompare(props) {
                     label={t("QuickCompare.Socket")}
                   >
                     {[
-                      <MenuItem label="Yes" value="Yes">
+                      <MenuItem key={"Yes"} label="Yes" value="Yes">
                         Yes
                       </MenuItem>,
-                      <Divider />,
+                      <Divider key={1} />,
                     ]}
                     ,
                     {[
-                      <MenuItem label="No" value="No">
+                      <MenuItem key={"No"} label="No" value="No">
                         No
                       </MenuItem>,
-                      <Divider />,
+                      <Divider key={2} />,
                     ]}
                   </Select>
                 </FormControl>
@@ -461,7 +420,7 @@ export default function QuickCompare(props) {
                   className={classes.formControl}
                   variant="outlined"
                   size="small"
-                  disabled={itemLevel === undefined ? true : false}
+                  disabled={itemLevel === "" ? true : false}
                 >
                   <InputLabel id="itemtertiary">
                     {t("QuickCompare.Tertiary")}
@@ -490,7 +449,7 @@ export default function QuickCompare(props) {
                   color="primary"
                   onClick={addItem}
                   size="small"
-                  disabled={itemLevel === undefined ? true : false}
+                  disabled={itemLevel === "" ? true : false}
                 >
                   {t("QuickCompare.AddButton")}
                 </Button>

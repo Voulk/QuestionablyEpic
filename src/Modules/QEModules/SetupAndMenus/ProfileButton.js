@@ -128,7 +128,6 @@ export default function ProfileSelector(props) {
 
   return (
     <div className={classes.root}>
-      {console.log(props.name)}
       <div>
         {buttonTHing(props.name)}
         <Popper

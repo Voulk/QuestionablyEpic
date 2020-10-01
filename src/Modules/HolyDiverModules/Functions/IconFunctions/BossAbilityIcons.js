@@ -8,7 +8,6 @@ export default function bossAbilityIcons(props) {
       return obj.guid === props;
     })
     .map((obj) => obj.icon);
-  console.log(iconName);
 
   alt = bossAbilities
     .filter((obj) => {

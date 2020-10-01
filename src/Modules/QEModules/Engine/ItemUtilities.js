@@ -159,9 +159,6 @@ export function calcStatsAtLevel(itemLevel, slot, statAllocations, tertiary) {
         const terMult = ((slot === "Finger" || slot === "Neck") ? 0.170027 : 0.429132)
         stats.leech = Math.floor(terMult * (stats.haste + stats.crit + stats.mastery + stats.vers));
     }
-
-    console.log(stats);
-
     return stats;
 
 }

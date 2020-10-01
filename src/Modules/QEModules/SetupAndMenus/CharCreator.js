@@ -35,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
   formRegion: {
     whiteSpace: "nowrap",
     width: "100%",
-    marginRight: 1
+    marginRight: 1,
   },
   selectEmpty: {
     marginTop: theme.spacing(2),
@@ -204,7 +204,7 @@ export default function AddNewChar(props) {
     setOpen(false);
     allChars.addChar(name, spec);
     updateChar(allChars);
-    props.charAddedSnack()
+    props.charAddedSnack();
   };
   const handleChangeSpec = (event) => {
     setHealClass(event.target.value);
@@ -244,7 +244,7 @@ export default function AddNewChar(props) {
         <DialogTitle id="form-dialog-title">Create New Character</DialogTitle>
         <DialogContent>
           {/* <DialogContentText>Select your Class and Race</DialogContentText> */}
-          <Grid container xs spacing={1} direction="column">
+          <Grid container spacing={1} direction="column">
             <Grid item xs={12}>
               <TextField
                 className={classes.textInput}

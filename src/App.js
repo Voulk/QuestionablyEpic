@@ -12,11 +12,11 @@ import {
   ConfirmLogin,
   QELogin,
 } from "./Modules/QEModules/SetupAndMenus/QELogin";
-import { withTranslation, Trans, useTranslation } from "react-i18next";
+import { withTranslation } from "react-i18next";
 import i18n from "./i18n";
 
 import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import ls from "local-storage";
 import Snackbar from "@material-ui/core/Snackbar";
 import MuiAlert from "@material-ui/lab/Alert";

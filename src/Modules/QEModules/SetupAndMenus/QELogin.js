@@ -1,8 +1,7 @@
-import React, { Component, useEffect } from "react";
-import QEHeader from "./QEHeader";
+import React from "react";
 import Button from "@material-ui/core/Button";
-import { Redirect, useHistory, useLocation } from "react-router-dom";
-import ls from "local-storage";
+import { useHistory, useLocation } from "react-router-dom";
+// import ls from "local-storage";
 import BattleNetLogo from "../../../Images/QeAssets/BattleNetLogo.png";
 import { Grid } from "@material-ui/core";
 
@@ -24,7 +23,7 @@ export function QELogin(props) {
 
   return (
     <div>
-      <img src={BattleNetLogo} style={{ borderRadius: "4px" }} />
+      <img src={BattleNetLogo} style={{ borderRadius: "4px" }} alt="BattleNet" />
       <Grid
         container
         direction="row"
