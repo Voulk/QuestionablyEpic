@@ -67,8 +67,10 @@ export function getItemIcon(id) {
 
     //console.log(JSON.stringify(temp) + temp.length)
     //console.log(temp[0].icon)
-    if (temp.length > 0) return (window.location.origin + "/Images/Icons/" + temp[0].icon + '.jpg')
-    else return (window.location.origin + "/Images/Items/missing.jpg")
+
+    //return("");
+    if (temp.length > 0 & 'icon' in temp[0]) return ("/Images/Icons/" + temp[0].icon + '.jpg')
+    else return ("/Images/Icons/missing.jpg")
 
 }
 
@@ -190,6 +192,7 @@ export function buildStatString(stats, effect) {
 }
 
 
+// Returns the string with its first letter capitalized. 
 function correctCasing(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
   }
@@ -198,8 +201,7 @@ function correctCasing(string) {
   // Score is calculated by multiplying out an items stats against the players stat weights.
   // Special effects, sockets and leech are then added afterwards. 
   export function scoreItem(item, player, contentType) {
-    console.log("Calculating Score");
-    let score = 0
+    let score = 0;
 
     // Calculate Effect.
     if (item.effect !== "") {
@@ -208,22 +210,17 @@ function correctCasing(string) {
 
     // Multiply the item's stats by our stat weights.
     for (var stat in item.stats) {
-        console.log(item.stats);
-        //console.log("$" + stat + ":" + item.stats[stat] * player.getStatWeight(contentType, stat))
         if (stat !== "bonus_stats") {
             let statSum = item.stats[stat] + (stat in item.stats['bonus_stats'] ? item.stats['bonus_stats'][stat] : 0);
             score += statSum * player.getStatWeight(contentType, stat);
-            console.log("Stat: " + stat + " adds " + statSum * player.getStatWeight(contentType, stat) + " to score.");
+            //console.log("Stat: " + stat + " adds " + statSum * player.getStatWeight(contentType, stat) + " to score.");
         }
         
     }
-      
+     
     // Add Socket
     if (item.socket === "Yes") {
         score += 16 * player.getStatWeight(contentType, player.getHighestStatWeight(contentType))
     }
-
-
-    console.log("Score post: " + score)
     return Math.round(score);
   }
