@@ -1,6 +1,7 @@
 
 
-// Much more likely to see use.
+// 
+// Effect types: 'Class Legendary', 'Generic Legendary', 'Trinket', 'Special', 'Conduit'
 export const itemDB = [
   {
       "id": 168676,
@@ -889,7 +890,11 @@ export const itemDB = [
       },
       "dropLoc": "",
       "selectable": "true",
-      "slot": "Back"
+      "slot": "Back",
+      "effect": {
+          "type": 'special',
+          "name": 'Ashjrakamas'
+      }
   },
   {
       "id": 170386,

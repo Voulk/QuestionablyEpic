@@ -1,6 +1,8 @@
 import { itemDB } from '../Player/ItemDB'
 import {randPropPoints} from './RandPropPointsBylevel'
 import {combat_ratings_mult_by_ilvl} from './CombatMultByLevel'
+import { getEffectValue } from './EffectFormulas/EffectEngine';
+
 
 /*
 
@@ -47,6 +49,16 @@ export function getTranslatedItemName(id, lang) {
 }
 
 // Returns a translated item name based on an ID.
+export function getItemEffect(id) {
+    let temp = itemDB.filter(function(item) {
+        return item.id === id;
+    })
+
+    if (temp.length > 0 & 'effect' in temp[0]) return temp[0].effect;
+    else return "";
+}
+
+// Returns a translated item name based on an ID.
 // Add some support for missing icons.
 export function getItemIcon(id) {
     let temp = itemDB.filter(function(item) {
@@ -55,8 +67,10 @@ export function getItemIcon(id) {
 
     //console.log(JSON.stringify(temp) + temp.length)
     //console.log(temp[0].icon)
-    if (temp.length > 0) return (window.location.origin + "/Images/Icons/" + temp[0].icon + '.jpg')
-    else return (window.location.origin + "/Images/Items/missing.jpg")
+
+    //return("");
+    if (temp.length > 0 & 'icon' in temp[0]) return ("/Images/Icons/" + temp[0].icon + '.jpg')
+    else return ("/Images/Icons/missing.jpg")
 
 }
 
@@ -117,6 +131,7 @@ export function calcStatsAtLevel(itemLevel, slot, statAllocations, tertiary) {
         vers: 0,
         crit: 0,
         leech: 0,
+        bonus_stats: {}
     }
 
     let rand_prop = randPropPoints[itemLevel]['slotValues'][getItemCat(slot)];   
@@ -176,6 +191,8 @@ export function buildStatString(stats, effect) {
     return statString.slice(0, -3); // We slice here to remove excess slashes and white space from the end. 
 }
 
+
+// Returns the string with its first letter capitalized. 
 function correctCasing(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
   }
@@ -184,21 +201,26 @@ function correctCasing(string) {
   // Score is calculated by multiplying out an items stats against the players stat weights.
   // Special effects, sockets and leech are then added afterwards. 
   export function scoreItem(item, player, contentType) {
-    console.log("Calculating Score");
-    let score = 0
+    let score = 0;
+
+    // Calculate Effect.
+    if (item.effect !== "") {
+        item.stats.bonus_stats = getEffectValue(item.effect);
+    }
 
     // Multiply the item's stats by our stat weights.
     for (var stat in item.stats) {
-        //console.log("$" + stat + ":" + item.stats[stat] * player.getStatWeight(contentType, stat))
-        score += item.stats[stat] * player.getStatWeight(contentType, stat)
+        if (stat !== "bonus_stats") {
+            let statSum = item.stats[stat] + (stat in item.stats['bonus_stats'] ? item.stats['bonus_stats'][stat] : 0);
+            score += statSum * player.getStatWeight(contentType, stat);
+            //console.log("Stat: " + stat + " adds " + statSum * player.getStatWeight(contentType, stat) + " to score.");
+        }
+        
     }
-      
+     
     // Add Socket
     if (item.socket === "Yes") {
         score += 16 * player.getStatWeight(contentType, player.getHighestStatWeight(contentType))
     }
-
-
-    console.log("Score post: " + score)
     return Math.round(score);
   }

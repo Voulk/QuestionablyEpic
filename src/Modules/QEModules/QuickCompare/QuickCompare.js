@@ -24,6 +24,7 @@ import {
   calcStatsAtLevel,
   getItemAllocations,
   scoreItem,
+  getItemEffect,
 } from "../Engine/ItemUtilities";
 import Button from "@material-ui/core/Button";
 import ItemCard from "./ItemCard";
@@ -229,6 +230,7 @@ export default function QuickCompare(props) {
       0,
       itemLevel
     );
+    
     item.level = itemLevel;
     item.stats = calcStatsAtLevel(
       itemLevel,
@@ -236,12 +238,15 @@ export default function QuickCompare(props) {
       getItemAllocations(itemID),
       itemTertiary
     );
+
+    item.effect = getItemEffect(itemID);
     item.softScore = scoreItem(item, player, props.contentType);
+    
 
     player.addActiveItem(item);
 
     //player.getActiveItems(activeSlot)
-    console.log(item);
+    //console.log(item);
     setItemList([...player.getActiveItems(activeSlot)]);
     handleClick();
   };
@@ -278,20 +283,6 @@ export default function QuickCompare(props) {
   const calculateScore = (item) => {};
 
   fillItems(activeSlot, props.pl.spec);
-
-  // Test Code. Delete Later.
-  /*
-  console.log(calcStatsAtLevel(187, "Feet", {
-    "intellect": 5259,
-    "stamina": 7889,
-    "haste": 4250,
-    "crit": 0,
-    "mastery": 2750,
-    "vers": 0
-    
-})) */
-
-  //
 
   return (
     <div style={{ backgroundColor: "#353535", marginTop: 32 }}>

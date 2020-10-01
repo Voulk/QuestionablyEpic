@@ -25,6 +25,7 @@ class Item {
     effect = "";
     
     // The stats on the item. These should already be adjusted for item level.
+    // HPS is a calculated field. It includes any item effects that provide healing or absorbs. 
     stats = {
         intellect: 0,
         stamina: 0,
@@ -33,6 +34,15 @@ class Item {
         vers: 0,
         crit: 0,
         leech: 0,
+        hps: 0,
+        bonus_stats: {
+            intellect: 0,
+            haste: 0,
+            mastery: 0,
+            vers: 0,
+            leech: 0,
+            hps: 0
+        }
     }
 
 

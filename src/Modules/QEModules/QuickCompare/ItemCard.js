@@ -106,7 +106,8 @@ export default function ItemCard(props) {
             >
               <div className="container">
                 <img
-                  src={getItemIcon(item.id)}
+                  src={getItemIcon(item.id)}   
+                  alt="img"
                   width={56}
                   height={56}
                   style={{
