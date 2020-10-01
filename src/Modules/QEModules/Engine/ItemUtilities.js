@@ -202,7 +202,7 @@ function correctCasing(string) {
 
     // Calculate Effect.
     if (item.effect !== "") {
-        item.stats.bonus_stats = getEffectValue(item.effect);
+        item.stats.bonus_stats = getEffectValue(item.effect, player, contentType, item.itemLevel);
     }
 
     // Multiply the item's stats by our stat weights.
