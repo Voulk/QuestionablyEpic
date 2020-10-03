@@ -142,6 +142,11 @@ export default function HealTeam(props) {
         paddingLeft: 8,
         borderRight: "1px solid rgb(81 81 81)",
       },
+      headerStyle: {
+        paddingLeft: 8,
+        borderRight: "1px solid #6d6d6d",
+        textAlign: "center",
+      },
       render: (rowData) => (
         <div style={{ color: classColoursJS(rowData.class) }}>
           {rowData.name}
@@ -165,6 +170,10 @@ export default function HealTeam(props) {
       cellStyle: {
         whiteSpace: "nowrap",
         borderRight: "1px solid rgb(81 81 81)",
+      },
+      headerStyle: {
+        borderRight: "1px solid #6d6d6d",
+        textAlign: "center",
       },
       render: (rowData) => (
         <div style={{ color: classColoursJS(rowData.class) }}>
@@ -196,10 +205,13 @@ export default function HealTeam(props) {
     {
       title: t("HDTableLabels.NotesLabel"),
       field: "notes",
-
       cellStyle: {
         whiteSpace: "nowrap",
         borderRight: "1px solid rgb(81 81 81)",
+      },
+      headerStyle: {
+        borderRight: "1px solid #6d6d6d",
+        textAlign: "center",
       },
       editComponent: (props) => (
         <TextField
@@ -252,6 +264,7 @@ export default function HealTeam(props) {
           search: false,
           headerStyle: {
             borderBottom: "2px solid #6d6d6d",
+            borderTop: "2px solid #6d6d6d",
             padding: "0px 8px 0px 8px",
             // fontSize: "0.8 rem",
           },

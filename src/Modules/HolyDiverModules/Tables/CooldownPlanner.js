@@ -52,7 +52,6 @@ import ls from "local-storage";
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
-    // margin: theme.spacing(1),
     whiteSpace: "nowrap",
     width: "100%",
   },
@@ -61,9 +60,6 @@ const useStyles = makeStyles((theme) => ({
 const themecooldowntable = createMuiTheme({
   overrides: {
     MuiTableCell: {
-      // regular: {
-      //   padding: "0px 8px 0px 8px",
-      // },
       root: {
         padding: "4px 4px 4px 4px",
       },
@@ -73,9 +69,6 @@ const themecooldowntable = createMuiTheme({
         padding: "4px",
       },
     },
-    // MuiOutlinedInput: {
-    //   input: { padding: 10 },
-    // },
     MuiToolbar: {
       regular: {
         minHeight: 0,
@@ -208,18 +201,9 @@ export default function CooldownPlanner(props) {
     }
     setData(ls.get(raid + "." + event.target.value + ".1"));
   };
-
   const handleChangePlan = (event) => {
     setPlan(event.target.value);
   };
-
-  // ls.get("healerInfo")
-  //   .filter((obj) => {
-  //     return obj.name === rowData.name;
-  //   })
-  //   .map((obj) => obj.class)
-  //   .toString()
-
   let wowClass = 0;
   let columns = [
     {
@@ -231,7 +215,11 @@ export default function CooldownPlanner(props) {
         paddingLeft: 8,
         borderRight: "1px solid rgb(81 81 81)",
       },
-      headerStyle: { paddingLeft: 8 },
+      headerStyle: {
+        paddingLeft: 22,
+        borderRight: "1px solid #6d6d6d",
+        textAlign: "center",
+      },
       render: (rowData) => (
         <div style={{ color: classColoursJS(rowData.class) }}>
           {rowData.name}
@@ -252,24 +240,7 @@ export default function CooldownPlanner(props) {
                 props.onChange(e.target.value);
                 // wowClass = e.target.value;
               }}
-              MenuProps={{
-                style: { marginTop: 5 },
-                MenuListProps: {
-                  style: { paddingTop: 0, paddingBottom: 0 },
-                },
-                PaperProps: {
-                  style: { border: "1px solid rgba(255, 255, 255, 0.23)" },
-                },
-                anchorOrigin: {
-                  vertical: "bottom",
-                  horizontal: "left",
-                },
-                transformOrigin: {
-                  vertical: "top",
-                  horizontal: "left",
-                },
-                getContentAnchorEl: null,
-              }}
+              MenuProps={menuStyle}
             >
               {ls
                 .get("healerInfo")
@@ -291,6 +262,11 @@ export default function CooldownPlanner(props) {
       cellStyle: {
         whiteSpace: "nowrap",
         borderRight: "1px solid rgb(81 81 81)",
+      },
+      headerStyle: {
+        paddingLeft: 22,
+        borderRight: "1px solid #6d6d6d",
+        textAlign: "center",
       },
       render: (rowData) => (
         <div style={{ color: classColoursJS(rowData.class) }}>
@@ -329,9 +305,13 @@ export default function CooldownPlanner(props) {
         whiteSpace: "nowrap",
         borderRight: "1px solid rgb(81 81 81)",
       },
+      headerStyle: {
+        paddingLeft: 22,
+        borderRight: "1px solid #6d6d6d",
+        textAlign: "center",
+      },
       render: (rowData) => abilityicons(rowData.Cooldown),
       editComponent: (props) => (
-        // <ThemeProvider theme={themecooldowntable}>
         <FormControl
           className={classes.formControl}
           variant="outlined"
@@ -344,12 +324,11 @@ export default function CooldownPlanner(props) {
             onChange={(e) => {
               props.onChange(e.target.value);
             }}
-              MenuProps={menuStyle}
+            MenuProps={menuStyle}
           >
             {ClassCooldownMenuItems(wowClass) || []}
           </Select>
         </FormControl>
-        // </ThemeProvider>
       ),
     },
     {
@@ -359,6 +338,11 @@ export default function CooldownPlanner(props) {
       cellStyle: {
         whiteSpace: "nowrap",
         borderRight: "1px solid rgb(81 81 81)",
+      },
+      headerStyle: {
+        paddingLeft: 22,
+        borderRight: "1px solid #6d6d6d",
+        textAlign: "center",
       },
       editComponent: (props) => (
         <TextField
@@ -379,6 +363,11 @@ export default function CooldownPlanner(props) {
       cellStyle: {
         whiteSpace: "nowrap",
         borderRight: "1px solid rgb(81 81 81)",
+      },
+      headerStyle: {
+        paddingLeft: 22,
+        borderRight: "1px solid #6d6d6d",
+        textAlign: "center",
       },
       render: (rowData) => (
         <div>
@@ -404,9 +393,14 @@ export default function CooldownPlanner(props) {
         whiteSpace: "nowrap",
         borderRight: "1px solid rgb(81 81 81)",
       },
+      headerStyle: {
+        paddingLeft: 22,
+        borderRight: "1px solid #6d6d6d",
+        textAlign: "center",
+      },
       render: (rowData) => (
         <div>
-          {/* {bossAbilityIcons(rowData.bossAbility)} */}
+          {bossAbilityIcons(rowData.bossAbility)}
           {rowData.bossAbility}
         </div>
       ),
@@ -455,6 +449,11 @@ export default function CooldownPlanner(props) {
       cellStyle: {
         whiteSpace: "nowrap",
         borderRight: "1px solid rgb(81 81 81)",
+      },
+      headerStyle: {
+        paddingLeft: 22,
+        borderRight: "1px solid #6d6d6d",
+        textAlign: "center",
       },
       editComponent: (props) => (
         <TextField
@@ -522,6 +521,7 @@ export default function CooldownPlanner(props) {
           showTitle: false,
           searchFieldVariant: "outlined",
           headerStyle: {
+            borderTop: "2px solid #6d6d6d",
             borderBottom: "2px solid #6d6d6d",
             padding: "0px 4px 0px 4px",
             whiteSpace: "nowrap",
@@ -599,7 +599,7 @@ export default function CooldownPlanner(props) {
                             horizontal: "left",
                           },
                           getContentAnchorEl: null,
-                          tableLayout: "fixed"
+                          tableLayout: "fixed",
                         }}
                       >
                         {rl
