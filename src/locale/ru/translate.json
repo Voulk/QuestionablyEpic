@@ -1,23 +1,46 @@
 {
-    "translations": {
-        "Insert Log": "Вставить журнал",
-        "Raid": "Рейд",
-        "Login": "Авторизоваться",
-        "Top Gear": "Высшая передача",
-        "MenuItemsH": "Предметы и снаряжение",
-        "Paste WarcraftLog Link Here": "Вставьте ссылку WarcraftLog сюда",
-        "Class": "Класс",
-        "Name": "название",
-        "Ability": "способность",
-        "Cooldown Planner": "Планировщик восстановления",
-        "Unmitigated Damage": "Неограниченный урон",
-        "author": {
-            "title": "著者名",
-            "value": "タリクル"
-        },
-        "description": {
-            "title": "説明",
-            "value": "部屋、電車、飛行機などの囲まれた場所にいるときに強いタバコの煙の臭いがするたびに、怒り始めます。いくつかの理由があります。第一に、医学研究者は、間接喫煙、つまり他の人のタバコからの煙が癌やその他の健康上の問題を引き起こすことを示しました。煙が車の排気ガスや燃えているごみであれば、火を消し、窓を開けて煙を取り除きます。第二に、悪臭を放ちます。煙は喫煙者から離れて部屋を埋めます。"
-        }
+  "translations": {
+    "Insert Log": "Вставить журнал",
+    "Raid": "Рейд",
+    "Login": "Авторизоваться",
+    "Top Gear": "Высшая передача",
+    "MenuItemsH": "Предметы и снаряжение",
+    "Paste WarcraftLog Link Here": "Вставьте ссылку WarcraftLog сюда",
+    "Class": "Класс",
+    "Name": "название",
+    "Ability": "способность",
+    "Cooldown Planner": "Планировщик восстановления",
+    "Unmitigated Damage": "Неограниченный урон",
+    "author": {
+      "title": "著者名",
+      "value": "タリクル"
+    },
+    "description": {
+      "title": "説明",
+      "value": "部屋、電車、飛行機などの囲まれた場所にいるときに強いタバコの煙の臭いがするたびに、怒り始めます。いくつかの理由があります。第一に、医学研究者は、間接喫煙、つまり他の人のタバコからの煙が癌やその他の健康上の問題を引き起こすことを示しました。煙が車の排気ガスや燃えているごみであれば、火を消し、窓を開けて煙を取り除きます。第二に、悪臭を放ちます。煙は喫煙者から離れて部屋を埋めます。"
+    },
+    "CooldownPlannerClassAbilities": {
+      "HolyPaladinComment": "Holy Paladin Class Cooldowns",
+      "31821": "Владение аурами",
+      "31884": "Гнев карателя",
+      "RestorationDruidComment": "Restoration Druid Class Cooldowns",
+      "740": "Спокойствие",
+      "33891": "Воплощение: древо жизни",
+      "HolyPriestComment": "Holy Priest Class Cooldowns",
+      "265202": "Слово Света: Спасение",
+      "64843": "Божественный гимн",
+      "DisciplinePriestComment": "Discipline Priest Class Cooldowns",
+      "81782": "Слово силы: Барьер",
+      "246287": "Проповедь",
+      "RestorationShamanComment": "Restoration Shaman Class Cooldowns",
+      "108280": "Тотем целительного прилива",
+      "98008": "Тотем духовной связи",
+      "MistweaverMonkComment": "Mistweaver Monk Class Cooldowns",
+      "115310": "Восстановление сил",
+      "HavocDemonHunterComment": "Havoc Demon Hunter Cooldowns",
+      "196718": "Мрак",
+      "WarriorComment": "Warrior Cooldowns",
+      "97462": "Ободряющий клич"
     }
+  }
 }

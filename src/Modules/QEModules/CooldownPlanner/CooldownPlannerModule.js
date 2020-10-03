@@ -251,6 +251,7 @@ class HolyDiver extends Component {
     ///////////////////////////////////////////////
     let updateddatacastsTimeline = cooldowns.map((key) => ({
       ability: key.ability.name,
+      guid: key.ability.guid,
       timestamp: moment(fightDurationCalculator(key.timestamp, this.state.time))
         .startOf("second")
         .format("mm:ss"),

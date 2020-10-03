@@ -102,7 +102,7 @@ export default function CooldownTimeline(props) {
           {
             title: "Ability",
             field: "ability",
-            render: (rowData) => abilityicons(rowData.ability),
+            render: (rowData) => (<div>{abilityicons(rowData.guid)}{rowData.ability}</div>),
           },
           { title: "Time", field: "timestamp" },
         ]}

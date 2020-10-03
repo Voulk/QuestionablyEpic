@@ -11,6 +11,7 @@ import DemonHunterIcon from "../../../../../Images/Classes/DemonHunter/DemonHunt
 export default function classicons(props, iconsize) {
   // Paladin Cooldowns
   if (
+    props === "HolyPaladin" ||
     props === "Holy Paladin" ||
     props === "Paladin-Holy" ||
     props === "Paladin"
@@ -31,6 +32,7 @@ export default function classicons(props, iconsize) {
 
   // Restoration Druid
   if (
+    props === "RestorationDruid" ||
     props === "Restoration Druid" ||
     props === "Druid-Restoration" ||
     props === "Druid"
@@ -51,6 +53,7 @@ export default function classicons(props, iconsize) {
 
   // Holy Priest
   if (
+    props === "HolyPriest" ||
     props === "Holy Priest" ||
     props === "Priest-Holy" ||
     props === "Priest"
@@ -70,7 +73,10 @@ export default function classicons(props, iconsize) {
   }
 
   // Discipline Priest
-  if (props === "Discispline Priest" || props === "Priest-Discipline") {
+  if (
+    props === "DiscisplinePriest" ||
+    props === "Discispline Priest" ||
+    props === "Priest-Discipline") {
     return (
       <img
         style={{
@@ -87,6 +93,7 @@ export default function classicons(props, iconsize) {
 
   // Restoration Shaman
   if (
+    props === "RestorationShaman" ||
     props === "Restoration Shaman" ||
     props === "Shaman-Restoration" ||
     props === "Shaman"
@@ -107,6 +114,7 @@ export default function classicons(props, iconsize) {
 
   // Mistweaver Monk
   if (
+    props === "MistweaverMonk" ||
     props === "Mistweaver Monk" ||
     props === "Monk-Mistweaver" ||
     props === "Monk"
@@ -142,7 +150,10 @@ export default function classicons(props, iconsize) {
   }
 
   // Demon Hunter
-  if (props === "Havoc Demon Hunter") {
+  if (
+    props === "HavocDemonHunter" ||
+    props === "Havoc Demon Hunter"
+    ) {
     return (
       <img
         style={{

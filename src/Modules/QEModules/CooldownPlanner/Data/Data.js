@@ -760,7 +760,7 @@ export const bossAbilities = [
     icon: require("../../../../Images/Bosses/CastleNathria/Shriekwing/Icons/EarsplittingShriekIcon.jpg"),
   },
 
-  // Stone Born Generals
+  // Stone Legion Generals
   //
   {
     bossID: 2417,
