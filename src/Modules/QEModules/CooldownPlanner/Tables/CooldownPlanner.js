@@ -429,11 +429,11 @@ export default function CooldownPlanner(props) {
                   );
                 })
                 .map((key, i) => (
-                  <MenuItem key={i} value={key.ability}>
+                  <MenuItem key={i} value={key.guid}>
                     <a data-wowhead={"spell=" + key.guid}>
                       {bossAbilityIcons(key.guid)}
                     </a>
-                    {key.ability}
+                    {t("BossAbilities." + key.guid)}
                   </MenuItem>
                 ))
                 .map((key) => [key, <Divider />])}
