@@ -40,6 +40,19 @@ const useStyles = makeStyles((theme) => ({
 
 const themecooldowntable = createMuiTheme({
   overrides: {
+    MuiTableCell: {
+      // regular: {
+      //   padding: "0px 8px 0px 8px",
+      // },
+      root: {
+        padding: "4px 4px 4px 4px",
+      },
+    },
+    MuiIconButton: {
+      root: {
+        padding: "4px",
+      },
+    },
     MuiToolbar: {
       regular: {
         minHeight: 0,
@@ -123,6 +136,17 @@ export default function HealTeam(props) {
     {
       title: t("Name"),
       field: "name",
+      width: "20%",
+      cellStyle: {
+        whiteSpace: "nowrap",
+        paddingLeft: 8,
+        borderRight: "1px solid rgb(81 81 81)",
+      },
+      headerStyle: {
+        paddingLeft: 8,
+        borderRight: "1px solid #6d6d6d",
+        textAlign: "center",
+      },
       render: (rowData) => (
         <div style={{ color: classColoursJS(rowData.class) }}>
           {rowData.name}
@@ -143,6 +167,14 @@ export default function HealTeam(props) {
     {
       title: t("Class"),
       field: "class",
+      cellStyle: {
+        whiteSpace: "nowrap",
+        borderRight: "1px solid rgb(81 81 81)",
+      },
+      headerStyle: {
+        borderRight: "1px solid #6d6d6d",
+        textAlign: "center",
+      },
       render: (rowData) => (
         <div style={{ color: classColoursJS(rowData.class) }}>
           {classicons(rowData.class, 20)}
@@ -173,6 +205,14 @@ export default function HealTeam(props) {
     {
       title: t("HDTableLabels.NotesLabel"),
       field: "notes",
+      cellStyle: {
+        whiteSpace: "nowrap",
+        borderRight: "1px solid rgb(81 81 81)",
+      },
+      headerStyle: {
+        borderRight: "1px solid #6d6d6d",
+        textAlign: "center",
+      },
       editComponent: (props) => (
         <TextField
           variant="outlined"
@@ -222,22 +262,14 @@ export default function HealTeam(props) {
         }}
         options={{
           search: false,
-          padding: "dense",
           headerStyle: {
             borderBottom: "2px solid #6d6d6d",
+            borderTop: "2px solid #6d6d6d",
             padding: "0px 8px 0px 8px",
             // fontSize: "0.8 rem",
-          },
-          cellStyle: {
-            borderBottom: "1px solid #6d6d6d",
-            // fontSize: "0.8 rem",
-            whiteSpace: "nowrap",
-            padding: "0px 8px 0px 8px",
           },
           rowStyle: {
             borderBottom: "1px solid #6d6d6d",
-            // fontSize: "0.8 rem",
-            padding: "0px 8px 0px 8px",
           },
           searchFieldStyle: {
             borderBottom: "1px solid #6d6d6d",
@@ -247,11 +279,11 @@ export default function HealTeam(props) {
             borderBottom: "1px solid #6d6d6d",
           },
           actionsColumnIndex: 7,
+          // tableLayout: "fixed",
           paging: false,
         }}
         localization={curLang(props.curLang)}
         editable={{
-          cellStyle: { padding: "0px 8px 0px 8px" },
           onRowAdd: (newData) =>
             new Promise((resolve, reject) => {
               setTimeout(() => {

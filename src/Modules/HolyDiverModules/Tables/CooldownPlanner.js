@@ -52,7 +52,6 @@ import ls from "local-storage";
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
-    // margin: theme.spacing(1),
     whiteSpace: "nowrap",
     width: "100%",
   },
@@ -61,9 +60,6 @@ const useStyles = makeStyles((theme) => ({
 const themecooldowntable = createMuiTheme({
   overrides: {
     MuiTableCell: {
-      // regular: {
-      //   padding: "0px 8px 0px 8px",
-      // },
       root: {
         padding: "4px 4px 4px 4px",
       },
@@ -73,9 +69,6 @@ const themecooldowntable = createMuiTheme({
         padding: "4px",
       },
     },
-    // MuiOutlinedInput: {
-    //   input: { padding: 10 },
-    // },
     MuiToolbar: {
       regular: {
         minHeight: 0,
@@ -91,6 +84,27 @@ const themecooldowntable = createMuiTheme({
     secondary: { main: "#e0e0e0" },
   },
 });
+
+const menuStyle = {
+  style: { marginTop: 5 },
+  MenuListProps: {
+    style: { paddingTop: 0, paddingBottom: 0 },
+  },
+  PaperProps: {
+    style: {
+      border: "1px solid rgba(255, 255, 255, 0.23)",
+    },
+  },
+  anchorOrigin: {
+    vertical: "bottom",
+    horizontal: "left",
+  },
+  transformOrigin: {
+    vertical: "top",
+    horizontal: "left",
+  },
+  getContentAnchorEl: null,
+};
 
 const SearchFieldOverride = createMuiTheme({
   overrides: {
@@ -187,23 +201,25 @@ export default function CooldownPlanner(props) {
     }
     setData(ls.get(raid + "." + event.target.value + ".1"));
   };
-
   const handleChangePlan = (event) => {
     setPlan(event.target.value);
   };
-
-  // ls.get("healerInfo")
-  //   .filter((obj) => {
-  //     return obj.name === rowData.name;
-  //   })
-  //   .map((obj) => obj.class)
-  //   .toString()
-
   let wowClass = 0;
   let columns = [
     {
       title: t("Name"),
       field: "name",
+      width: "10%",
+      cellStyle: {
+        whiteSpace: "nowrap",
+        paddingLeft: 8,
+        borderRight: "1px solid rgb(81 81 81)",
+      },
+      headerStyle: {
+        paddingLeft: 22,
+        borderRight: "1px solid #6d6d6d",
+        textAlign: "center",
+      },
       render: (rowData) => (
         <div style={{ color: classColoursJS(rowData.class) }}>
           {rowData.name}
@@ -224,24 +240,7 @@ export default function CooldownPlanner(props) {
                 props.onChange(e.target.value);
                 // wowClass = e.target.value;
               }}
-              MenuProps={{
-                style: { marginTop: 5 },
-                MenuListProps: {
-                  style: { paddingTop: 0, paddingBottom: 0 },
-                },
-                PaperProps: {
-                  style: { border: "1px solid rgba(255, 255, 255, 0.23)" },
-                },
-                anchorOrigin: {
-                  vertical: "bottom",
-                  horizontal: "left",
-                },
-                transformOrigin: {
-                  vertical: "top",
-                  horizontal: "left",
-                },
-                getContentAnchorEl: null,
-              }}
+              MenuProps={menuStyle}
             >
               {ls
                 .get("healerInfo")
@@ -259,6 +258,16 @@ export default function CooldownPlanner(props) {
     {
       title: t("Class"),
       field: "class",
+      width: "15%",
+      cellStyle: {
+        whiteSpace: "nowrap",
+        borderRight: "1px solid rgb(81 81 81)",
+      },
+      headerStyle: {
+        paddingLeft: 22,
+        borderRight: "1px solid #6d6d6d",
+        textAlign: "center",
+      },
       render: (rowData) => (
         <div style={{ color: classColoursJS(rowData.class) }}>
           {classicons(rowData.class, 20)}
@@ -280,24 +289,7 @@ export default function CooldownPlanner(props) {
                 props.onChange(e.target.value);
                 wowClass = e.target.value;
               }}
-              MenuProps={{
-                style: { marginTop: 5 },
-                MenuListProps: {
-                  style: { paddingTop: 0, paddingBottom: 0 },
-                },
-                PaperProps: {
-                  style: { border: "1px solid rgba(255, 255, 255, 0.23)" },
-                },
-                anchorOrigin: {
-                  vertical: "bottom",
-                  horizontal: "left",
-                },
-                transformOrigin: {
-                  vertical: "top",
-                  horizontal: "left",
-                },
-                getContentAnchorEl: null,
-              }}
+              MenuProps={menuStyle}
             >
               {classMenus}
             </Select>
@@ -308,9 +300,18 @@ export default function CooldownPlanner(props) {
     {
       title: t("Cooldown"),
       field: "Cooldown",
+      width: "15%",
+      cellStyle: {
+        whiteSpace: "nowrap",
+        borderRight: "1px solid rgb(81 81 81)",
+      },
+      headerStyle: {
+        paddingLeft: 22,
+        borderRight: "1px solid #6d6d6d",
+        textAlign: "center",
+      },
       render: (rowData) => abilityicons(rowData.Cooldown),
       editComponent: (props) => (
-        // <ThemeProvider theme={themecooldowntable}>
         <FormControl
           className={classes.formControl}
           variant="outlined"
@@ -323,34 +324,26 @@ export default function CooldownPlanner(props) {
             onChange={(e) => {
               props.onChange(e.target.value);
             }}
-            MenuProps={{
-              style: { marginTop: 5 },
-              MenuListProps: {
-                style: { paddingTop: 0, paddingBottom: 0 },
-              },
-              PaperProps: {
-                style: { border: "1px solid rgba(255, 255, 255, 0.23)" },
-              },
-              anchorOrigin: {
-                vertical: "bottom",
-                horizontal: "left",
-              },
-              transformOrigin: {
-                vertical: "top",
-                horizontal: "left",
-              },
-              getContentAnchorEl: null,
-            }}
+            MenuProps={menuStyle}
           >
             {ClassCooldownMenuItems(wowClass) || []}
           </Select>
         </FormControl>
-        // </ThemeProvider>
       ),
     },
     {
       title: t("HDTableLabels.CastTimeLabel"),
       field: "time",
+      width: "4%",
+      cellStyle: {
+        whiteSpace: "nowrap",
+        borderRight: "1px solid rgb(81 81 81)",
+      },
+      headerStyle: {
+        paddingLeft: 22,
+        borderRight: "1px solid #6d6d6d",
+        textAlign: "center",
+      },
       editComponent: (props) => (
         <TextField
           size="small"
@@ -366,6 +359,16 @@ export default function CooldownPlanner(props) {
     },
     {
       title: t("HDTableLabels.OffCooldownLabel"),
+      width: "4%",
+      cellStyle: {
+        whiteSpace: "nowrap",
+        borderRight: "1px solid rgb(81 81 81)",
+      },
+      headerStyle: {
+        paddingLeft: 22,
+        borderRight: "1px solid #6d6d6d",
+        textAlign: "center",
+      },
       render: (rowData) => (
         <div>
           {moment(rowData.time, "mm:ss")
@@ -385,9 +388,19 @@ export default function CooldownPlanner(props) {
     {
       title: t("HDTableLabels.BossAbilityLabel"),
       field: "bossAbility",
+      width: "15%",
+      cellStyle: {
+        whiteSpace: "nowrap",
+        borderRight: "1px solid rgb(81 81 81)",
+      },
+      headerStyle: {
+        paddingLeft: 22,
+        borderRight: "1px solid #6d6d6d",
+        textAlign: "center",
+      },
       render: (rowData) => (
         <div>
-          {/* {bossAbilityIcons(rowData.bossAbility)} */}
+          {bossAbilityIcons(rowData.bossAbility)}
           {rowData.bossAbility}
         </div>
       ),
@@ -407,24 +420,7 @@ export default function CooldownPlanner(props) {
               onChange={(e) => {
                 props.onChange(e.target.value);
               }}
-              MenuProps={{
-                style: { marginTop: 5 },
-                MenuListProps: {
-                  style: { paddingTop: 0, paddingBottom: 0 },
-                },
-                PaperProps: {
-                  style: { border: "1px solid rgba(255, 255, 255, 0.23)" },
-                },
-                anchorOrigin: {
-                  vertical: "bottom",
-                  horizontal: "left",
-                },
-                transformOrigin: {
-                  vertical: "top",
-                  horizontal: "left",
-                },
-                getContentAnchorEl: null,
-              }}
+              MenuProps={menuStyle}
             >
               {bossAbilities
                 .filter((obj) => {
@@ -449,6 +445,16 @@ export default function CooldownPlanner(props) {
     {
       title: t("HDTableLabels.NotesLabel"),
       field: "notes",
+      width: "20%",
+      cellStyle: {
+        whiteSpace: "nowrap",
+        borderRight: "1px solid rgb(81 81 81)",
+      },
+      headerStyle: {
+        paddingLeft: 22,
+        borderRight: "1px solid #6d6d6d",
+        textAlign: "center",
+      },
       editComponent: (props) => (
         <TextField
           size="small"
@@ -515,17 +521,13 @@ export default function CooldownPlanner(props) {
           showTitle: false,
           searchFieldVariant: "outlined",
           headerStyle: {
+            borderTop: "2px solid #6d6d6d",
             borderBottom: "2px solid #6d6d6d",
             padding: "0px 4px 0px 4px",
             whiteSpace: "nowrap",
           },
-          cellStyle: {
-            whiteSpace: "nowrap",
-          },
           rowStyle: {
             borderBottom: "1px solid #6d6d6d",
-            padding: "4px 16px 4px 16px",
-            "& :firstChild": { paddingLeft: "8px" },
           },
           actionCellStyle: {
             borderBottom: "1px solid #6d6d6d",
@@ -597,6 +599,7 @@ export default function CooldownPlanner(props) {
                             horizontal: "left",
                           },
                           getContentAnchorEl: null,
+                          tableLayout: "fixed",
                         }}
                       >
                         {rl

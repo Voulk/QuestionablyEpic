@@ -51,10 +51,10 @@
       "_Comments1": "Translations for HD Tables",
       "RaidSelectorLabel": "Select Raid",
       "BossSelectorLabel": "Select Boss",
-      "CastTimeLabel": "Cast Time",
+      "CastTimeLabel": "Cast",
       "BossAbilityLabel": "Boss Ability",
       "NotesLabel": "Notes",
-      "OffCooldownLabel": "Off Cooldown",
+      "OffCooldownLabel": "Available",
       "HealTeamHeader": "Heal Team"
     },
     "HDChartLabels": {
