@@ -5,7 +5,7 @@ import CardContent from "@material-ui/core/CardContent";
 import CardActionArea from "@material-ui/core/CardActionArea";
 import Typography from "@material-ui/core/Typography";
 import Avatar from "@material-ui/core/Avatar";
-import { classColoursJS } from "../../HolyDiverModules/Functions/ClassColourFunctions";
+import { classColoursJS } from "../CooldownPlanner/Functions/ClassColourFunctions.js";
 
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";

@@ -1,12 +1,12 @@
 import React from "react";
-import HolyPaladinIcon from "../../../../Images/Classes/Paladin/Specialisation/Holy/Icons/HolyPaladin.jpg";
-import DiscPriestIcon from "../../../../Images/Classes/Priest/Specialisation/Discipline/Icons/DisciplinePriest.jpg";
-import HolyPriestIcon from "../../../../Images/Classes/Priest/Specialisation/Holy/Icons/HolyPriest.jpg";
-import MistweaverIcon from "../../../../Images/Classes/Monk/Specialisation/Mistweaver/Icons/MistWeaverMonk.jpg";
-import RestorationDruidIcon from "../../../../Images/Classes/Druid/Specialisation/Restoration/Icons/RestorationDruid.jpg";
-import RestorationShamanIcon from "../../../../Images/Classes/Shaman/Specialisation/Restoration/Icons/RestorationShaman.jpg";
-import WarriorIcon from "../../../../Images/Classes/Warrior/WarriorIcon.jpg";
-import DemonHunterIcon from "../../../../Images/Classes/DemonHunter/DemonHunterIcon.jpg";
+import HolyPaladinIcon from "../../../../../Images/Classes/Paladin/Specialisation/Holy/Icons/HolyPaladin.jpg";
+import DiscPriestIcon from "../../../../../Images/Classes/Priest/Specialisation/Discipline/Icons/DisciplinePriest.jpg";
+import HolyPriestIcon from "../../../../../Images/Classes/Priest/Specialisation/Holy/Icons/HolyPriest.jpg";
+import MistweaverIcon from "../../../../../Images/Classes/Monk/Specialisation/Mistweaver/Icons/MistWeaverMonk.jpg";
+import RestorationDruidIcon from "../../../../../Images/Classes/Druid/Specialisation/Restoration/Icons/RestorationDruid.jpg";
+import RestorationShamanIcon from "../../../../../Images/Classes/Shaman/Specialisation/Restoration/Icons/RestorationShaman.jpg";
+import WarriorIcon from "../../../../../Images/Classes/Warrior/WarriorIcon.jpg";
+import DemonHunterIcon from "../../../../../Images/Classes/DemonHunter/DemonHunterIcon.jpg";
 
 export default function classicons(props, iconsize) {
   // Paladin Cooldowns
