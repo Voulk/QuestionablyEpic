@@ -5,16 +5,16 @@ import {
   CircularProgress,
   Grid,
 } from "@material-ui/core";
-import UserLogTextInput from "../HolyDiverModules/UserInput/UserLogTextInput";
-import Chart from "../HolyDiverModules/Chart/Chart";
-import Example from "../HolyDiverModules/Chart/DTPSBarChart";
+import UserLogTextInput from "../CooldownPlanner/UserInput/UserLogTextInput";
+import Chart from "../CooldownPlanner/Chart/Chart";
+import Example from "../CooldownPlanner/Chart/DTPSBarChart";
 import moment from "moment";
-import FightSelectorButton from "../HolyDiverModules/UserInput/FightSelectorButton";
+import FightSelectorButton from "../CooldownPlanner/UserInput/FightSelectorButton";
 import LoadingOverlay from "react-loading-overlay";
-import CooldownPlanner from "../HolyDiverModules/Tables/CooldownPlanner.js";
-import CooldownTimeline from "../HolyDiverModules/Tables/CooldownTimelineTable";
-import DenseAppBar from "../HolyDiverModules/BasicComponents/Appbar";
-import { classColoursERT } from "../HolyDiverModules/Functions/ClassColourFunctions";
+import CooldownPlanner from "../CooldownPlanner/Tables/CooldownPlanner.js";
+import CooldownTimeline from "../CooldownPlanner/Tables/CooldownTimelineTable";
+import DenseAppBar from "../CooldownPlanner/BasicComponents/Appbar";
+import { classColoursERT } from "../CooldownPlanner/Functions/ClassColourFunctions";
 import {
   addMissingTimestamps,
   getUniqueObjectsFromArray,
@@ -28,14 +28,14 @@ import {
   sumDamage,
   logDifficulty,
   importSummaryData,
-} from "../HolyDiverModules/Functions/Functions";
-import bossHeaders from "../HolyDiverModules/Functions/IconFunctions/BossHeaderIcons";
+} from "../CooldownPlanner/Functions/Functions";
+import bossHeaders from "../CooldownPlanner/Functions/IconFunctions/BossHeaderIcons";
 import Grow from "@material-ui/core/Grow";
 import Paper from "@material-ui/core/Paper";
-import ERTTable from "../HolyDiverModules/Tables/ERTTable";
+import ERTTable from "../CooldownPlanner/Tables/ERTTable";
 import SwitchLabels from "./BasicComponents/Switch";
-import HealerInfoTable from "../HolyDiverModules/Tables/HealerInfoTable";
-import HealTeam from "../HolyDiverModules/Tables/HealTeamTable";
+import HealerInfoTable from "../CooldownPlanner/Tables/HealerInfoTable";
+import HealTeam from "../CooldownPlanner/Tables/HealTeamTable";
 
 class HolyDiver extends Component {
   constructor(props) {

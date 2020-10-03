@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import "./App.css";
-import HolyDiver from "./Modules/HolyDiverModules/HolyDiverModule";
-import QEMainMenu from "./Modules/QEModules/SetupAndMenus/QEMainMenu.js";
-import TrinketCompare from "./Modules/QEModules/TrinketCompare.js";
-import LegendaryCompare from "./Modules/QEModules/Legendaries/LegendaryCompare.js";
-import QuickCompare from "./Modules/QEModules/QuickCompare/QuickCompare.js";
+import HolyDiver from "./Modules/QEModules/CooldownPlanner/CooldownPlannerModule";
+import QEMainMenu from "./Modules/QEModules/SetupAndMenus/QEMainMenu";
+import TrinketCompare from "./Modules/QEModules/TrinketCompare";
+import LegendaryCompare from "./Modules/QEModules/Legendaries/LegendaryCompare";
+import QuickCompare from "./Modules/QEModules/QuickCompare/QuickCompare";
 import QEHeader from "./Modules/QEModules/SetupAndMenus/QEHeader";
 import PlayerChars from "./Modules/QEModules/Player/PlayerChars";
-import SimpleTabs from "./Modules/QEModules/Covenant Test/CovenantExploration.js";
+import SimpleTabs from "./Modules/QEModules/Covenant Test/CovenantExploration";
 import {
   ConfirmLogin,
   QELogin,

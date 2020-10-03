@@ -12,7 +12,7 @@ import MenuItem from "@material-ui/core/MenuItem";
 import FormControl from "@material-ui/core/FormControl";
 import InputLabel from "@material-ui/core/InputLabel";
 import { useTranslation } from "react-i18next";
-import classicons from "../../HolyDiverModules/Functions/IconFunctions/ClassIcons";
+import classicons from "../CooldownPlanner/Functions/IconFunctions/ClassIcons";
 import CharCards from "./CharComponentGen";
 
 import Card from "@material-ui/core/Card";
@@ -20,10 +20,10 @@ import CardContent from "@material-ui/core/CardContent";
 import CardActionArea from "@material-ui/core/CardActionArea";
 import Typography from "@material-ui/core/Typography";
 import Avatar from "@material-ui/core/Avatar";
-import { classColoursJS } from "../../HolyDiverModules/Functions/ClassColourFunctions";
-import raceIcons from "../../HolyDiverModules/Functions/IconFunctions/RaceIcons";
+import { classColoursJS } from "../CooldownPlanner/Functions/ClassColourFunctions";
+import raceIcons from "../CooldownPlanner/Functions/IconFunctions/RaceIcons";
 import Autocomplete from "@material-ui/lab/Autocomplete";
-import { serverList } from "../../HolyDiverModules/Data/Data";
+import { serverList } from "../CooldownPlanner/Data/Data";
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
