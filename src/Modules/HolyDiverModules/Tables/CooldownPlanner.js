@@ -92,6 +92,27 @@ const themecooldowntable = createMuiTheme({
   },
 });
 
+const menuStyle = {
+  style: { marginTop: 5 },
+  MenuListProps: {
+    style: { paddingTop: 0, paddingBottom: 0 },
+  },
+  PaperProps: {
+    style: {
+      border: "1px solid rgba(255, 255, 255, 0.23)",
+    },
+  },
+  anchorOrigin: {
+    vertical: "bottom",
+    horizontal: "left",
+  },
+  transformOrigin: {
+    vertical: "top",
+    horizontal: "left",
+  },
+  getContentAnchorEl: null,
+};
+
 const SearchFieldOverride = createMuiTheme({
   overrides: {
     MuiOutlinedInput: {
@@ -204,6 +225,13 @@ export default function CooldownPlanner(props) {
     {
       title: t("Name"),
       field: "name",
+      width: "10%",
+      cellStyle: {
+        whiteSpace: "nowrap",
+        paddingLeft: 8,
+        borderRight: "1px solid rgb(81 81 81)",
+      },
+      headerStyle: { paddingLeft: 8 },
       render: (rowData) => (
         <div style={{ color: classColoursJS(rowData.class) }}>
           {rowData.name}
@@ -259,6 +287,11 @@ export default function CooldownPlanner(props) {
     {
       title: t("Class"),
       field: "class",
+      width: "15%",
+      cellStyle: {
+        whiteSpace: "nowrap",
+        borderRight: "1px solid rgb(81 81 81)",
+      },
       render: (rowData) => (
         <div style={{ color: classColoursJS(rowData.class) }}>
           {classicons(rowData.class, 20)}
@@ -280,24 +313,7 @@ export default function CooldownPlanner(props) {
                 props.onChange(e.target.value);
                 wowClass = e.target.value;
               }}
-              MenuProps={{
-                style: { marginTop: 5 },
-                MenuListProps: {
-                  style: { paddingTop: 0, paddingBottom: 0 },
-                },
-                PaperProps: {
-                  style: { border: "1px solid rgba(255, 255, 255, 0.23)" },
-                },
-                anchorOrigin: {
-                  vertical: "bottom",
-                  horizontal: "left",
-                },
-                transformOrigin: {
-                  vertical: "top",
-                  horizontal: "left",
-                },
-                getContentAnchorEl: null,
-              }}
+              MenuProps={menuStyle}
             >
               {classMenus}
             </Select>
@@ -308,6 +324,11 @@ export default function CooldownPlanner(props) {
     {
       title: t("Cooldown"),
       field: "Cooldown",
+      width: "15%",
+      cellStyle: {
+        whiteSpace: "nowrap",
+        borderRight: "1px solid rgb(81 81 81)",
+      },
       render: (rowData) => abilityicons(rowData.Cooldown),
       editComponent: (props) => (
         // <ThemeProvider theme={themecooldowntable}>
@@ -323,24 +344,7 @@ export default function CooldownPlanner(props) {
             onChange={(e) => {
               props.onChange(e.target.value);
             }}
-            MenuProps={{
-              style: { marginTop: 5 },
-              MenuListProps: {
-                style: { paddingTop: 0, paddingBottom: 0 },
-              },
-              PaperProps: {
-                style: { border: "1px solid rgba(255, 255, 255, 0.23)" },
-              },
-              anchorOrigin: {
-                vertical: "bottom",
-                horizontal: "left",
-              },
-              transformOrigin: {
-                vertical: "top",
-                horizontal: "left",
-              },
-              getContentAnchorEl: null,
-            }}
+              MenuProps={menuStyle}
           >
             {ClassCooldownMenuItems(wowClass) || []}
           </Select>
@@ -351,6 +355,11 @@ export default function CooldownPlanner(props) {
     {
       title: t("HDTableLabels.CastTimeLabel"),
       field: "time",
+      width: "4%",
+      cellStyle: {
+        whiteSpace: "nowrap",
+        borderRight: "1px solid rgb(81 81 81)",
+      },
       editComponent: (props) => (
         <TextField
           size="small"
@@ -366,6 +375,11 @@ export default function CooldownPlanner(props) {
     },
     {
       title: t("HDTableLabels.OffCooldownLabel"),
+      width: "4%",
+      cellStyle: {
+        whiteSpace: "nowrap",
+        borderRight: "1px solid rgb(81 81 81)",
+      },
       render: (rowData) => (
         <div>
           {moment(rowData.time, "mm:ss")
@@ -385,6 +399,11 @@ export default function CooldownPlanner(props) {
     {
       title: t("HDTableLabels.BossAbilityLabel"),
       field: "bossAbility",
+      width: "15%",
+      cellStyle: {
+        whiteSpace: "nowrap",
+        borderRight: "1px solid rgb(81 81 81)",
+      },
       render: (rowData) => (
         <div>
           {/* {bossAbilityIcons(rowData.bossAbility)} */}
@@ -407,24 +426,7 @@ export default function CooldownPlanner(props) {
               onChange={(e) => {
                 props.onChange(e.target.value);
               }}
-              MenuProps={{
-                style: { marginTop: 5 },
-                MenuListProps: {
-                  style: { paddingTop: 0, paddingBottom: 0 },
-                },
-                PaperProps: {
-                  style: { border: "1px solid rgba(255, 255, 255, 0.23)" },
-                },
-                anchorOrigin: {
-                  vertical: "bottom",
-                  horizontal: "left",
-                },
-                transformOrigin: {
-                  vertical: "top",
-                  horizontal: "left",
-                },
-                getContentAnchorEl: null,
-              }}
+              MenuProps={menuStyle}
             >
               {bossAbilities
                 .filter((obj) => {
@@ -449,6 +451,11 @@ export default function CooldownPlanner(props) {
     {
       title: t("HDTableLabels.NotesLabel"),
       field: "notes",
+      width: "20%",
+      cellStyle: {
+        whiteSpace: "nowrap",
+        borderRight: "1px solid rgb(81 81 81)",
+      },
       editComponent: (props) => (
         <TextField
           size="small"
@@ -519,13 +526,8 @@ export default function CooldownPlanner(props) {
             padding: "0px 4px 0px 4px",
             whiteSpace: "nowrap",
           },
-          cellStyle: {
-            whiteSpace: "nowrap",
-          },
           rowStyle: {
             borderBottom: "1px solid #6d6d6d",
-            padding: "4px 16px 4px 16px",
-            "& :firstChild": { paddingLeft: "8px" },
           },
           actionCellStyle: {
             borderBottom: "1px solid #6d6d6d",
@@ -597,6 +599,7 @@ export default function CooldownPlanner(props) {
                             horizontal: "left",
                           },
                           getContentAnchorEl: null,
+                          tableLayout: "fixed"
                         }}
                       >
                         {rl
