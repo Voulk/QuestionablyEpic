@@ -271,7 +271,7 @@ export default function CooldownPlanner(props) {
       render: (rowData) => (
         <div style={{ color: classColoursJS(rowData.class) }}>
           {classicons(rowData.class, 20)}
-          {rowData.class}
+          {t("CooldownPlannerClasses." + rowData.class)}
         </div>
       ),
       editComponent: (props) => (
@@ -310,7 +310,12 @@ export default function CooldownPlanner(props) {
         borderRight: "1px solid #6d6d6d",
         textAlign: "center",
       },
-      render: (rowData) => abilityicons(rowData.Cooldown),
+      render: (rowData) => (
+        <div>
+          {abilityicons(rowData.Cooldown)}
+          {t("CooldownPlannerClassAbilities." + rowData.Cooldown)}
+        </div>
+      ),
       editComponent: (props) => (
         <FormControl
           className={classes.formControl}
@@ -401,7 +406,7 @@ export default function CooldownPlanner(props) {
       render: (rowData) => (
         <div>
           {bossAbilityIcons(rowData.bossAbility)}
-          {rowData.bossAbility}
+          {t("BossAbilities." + rowData.bossAbility)}
         </div>
       ),
       editComponent: (props) => (

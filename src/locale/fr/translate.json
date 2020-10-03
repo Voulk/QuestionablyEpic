@@ -27,6 +27,30 @@
     "Raid": "Raid",
     "Dungeon": "Dungeon",
 
+    "CooldownPlannerClassAbilities": {
+      "HolyPaladinComment": "Holy Paladin Class Cooldowns",
+      "31821": "Maîtrise des auras",
+      "31884": "Courroux vengeur",
+      "RestorationDruidComment": "Restoration Druid Class Cooldowns",
+      "740": "Tranquillité",
+      "33891": "Incarnation : Arbre de vie",
+      "HolyPriestComment": "Holy Priest Class Cooldowns",
+      "265202": "Mot sacré : Salut",
+      "64843": "Hymne divin",
+      "DisciplinePriestComment": "Discipline Priest Class Cooldowns",
+      "81782": "Mot de pouvoir : Barrière",
+      "246287": "Évangélisme",
+      "RestorationShamanComment": "Restoration Shaman Class Cooldowns",
+      "108280": "Totem de marée de soins",
+      "98008": "Totem de lien d'esprit",
+      "MistweaverMonkComment": "Mistweaver Monk Class Cooldowns",
+      "115310": "Regain",
+      "HavocDemonHunterComment": "Havoc Demon Hunter Cooldowns",
+      "196718": "Ténèbres",
+      "WarriorComment": "Warrior Cooldowns",
+      "97462": "Cri de ralliement"
+    },
+
     "HDAccordianTitles": {
       "_Comments1": "Translations for the Accordian for Healer Info",
       "StatsHeading": "Stats",

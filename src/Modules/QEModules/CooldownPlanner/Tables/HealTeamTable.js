@@ -178,7 +178,7 @@ export default function HealTeam(props) {
       render: (rowData) => (
         <div style={{ color: classColoursJS(rowData.class) }}>
           {classicons(rowData.class, 20)}
-          {rowData.class}
+          {t("CooldownPlannerClasses." + rowData.class)}
         </div>
       ),
       editComponent: (props) => (
@@ -193,7 +193,6 @@ export default function HealTeam(props) {
               value={props.value}
               onChange={(e) => {
                 props.onChange(e.target.value);
-                wowClass = e.target.value;
               }}
             >
               {classMenus}

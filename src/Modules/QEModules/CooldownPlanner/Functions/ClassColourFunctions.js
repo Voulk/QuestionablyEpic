@@ -1,54 +1,54 @@
 // import React from "react";
 
 export function classColoursERT(props) {
-  if (props === "Holy Paladin") {
+  if (props === "HolyPaladin") {
     return "|cfff38bb9";
   }
-  if (props === "Restoration Druid") {
+  if (props === "RestorationDruid") {
     return "|cfffe7b09";
   }
-  if (props === "Holy Priest") {
+  if (props === "HolyPriest") {
     return "|cfffefefe";
   }
 
-  if (props === "Discispline Priest") {
+  if (props === "DiscisplinePriest") {
     return "|cfffefefe";
   }
 
-  if (props === "Restoration Shaman") {
+  if (props === "RestorationShaman") {
     return "|cff006fdc";
   }
 
-  if (props === "Mistweaver Monk") {
+  if (props === "MistweaverMonk") {
     return "|cff00fe95";
   }
 }
 
 export function classColoursJS(props) {
-  if (props === "Holy Paladin" || props === "Paladin") {
+  if (props === "HolyPaladin" || props === "Paladin") {
     return "#F58CBA";
   }
-  if (props === "Restoration Druid" || props === "Druid") {
+  if (props === "RestorationDruid" || props === "Druid") {
     return "#FF7D0A";
   }
   if (
-    props === "Holy Priest" ||
+    props === "HolyPriest" ||
     props === "Priest" ||
-    props === "Discispline Priest"
+    props === "DiscisplinePriest"
   ) {
     return "#FFFFFF";
   }
-  if (props === "Restoration Shaman" || props === "Shaman") {
+  if (props === "RestorationShaman" || props === "Shaman") {
     return "#0070DE  ";
   }
 
-  if (props === "Mistweaver Monk" || props === "Monk") {
+  if (props === "MistweaverMonk" || props === "Monk") {
     return "#00FF96";
   }
   if (props === "Warrior") {
     return "#C79C6E";
   }
-  if (props === "Havoc Demon Hunter") {
+  if (props === "HavocDemonHunter") {
     return "#A330C9";
   }
 }

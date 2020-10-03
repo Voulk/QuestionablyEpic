@@ -43,184 +43,183 @@ export default function abilityicons(props) {
 
   // Holy Paladin
   // Paladin Base Abilities
-  if (props === "Aura Mastery") {
+  if (props === 31821) {
     spell = "spell=31821";
     source = AuraMasteryIcon;
     alt = "Aura Mastery";
   }
-  if (props === "Avenging Wrath") {
+  if (props === 31884) {
     spell = "spell=31884";
     source = AvengingWrathIcon;
     alt = "Avenging Wrath";
   }
   // Paladin Covenant Cooldowns
-  if (props === "Divine Toll") {
+  if (props === 304971) {
     spell = "spell=304971";
     source = DivineTollIcon;
     alt = "Divine Toll";
   }
-  if (props === "Ashen Hallow") {
+  if (props === 316958) {
     spell = "spell=316958";
     source = AshenHallowIcon;
     alt = "Ashen Hallow";
   }
-  if (props === "Vanquisher's Hammer") {
+  if (props === 31821) {
     spell = "spell=31821";
     source = VanquishersHammerIcon;
     alt = "Vanquisher's Hammer";
   }
-  if (props === "Blessing of the Seasons") {
+  if (props === 328278) {
     spell = "spell=328278";
     source = BlessingOfSeasonsIcon;
     alt = "Blessing of the Seasons";
   }
   // Restoration Druid
-  if (props === "Tranquility") {
+  if (props === 740) {
     spell = "spell=740";
     source = TranquilityIcon;
     alt = "Tranquility";
   }
-  if (props === "Incarnation: Tree of Life") {
+  if (props === 33891) {
     spell = "spell=33891";
     source = TreeofLifeIcon;
     alt = "Incarnation: Tree of Life";
   }
   // Druid Covenant Cooldowns
-  if (props === "Kindred Spirits") {
+  if (props === 326434) {
     spell = "spell=326434";
     source = KindredSpiritsIcon;
     alt = "Kindred Spirits";
   }
-  if (props === "Ravenous Frenzy") {
+  if (props === 323546) {
     spell = "spell=323546";
     source = RavenousFrenzyIcon;
     alt = "Ravenous Frenzy";
   }
-  if (props === "Adaptive Swarm") {
+  if (props === 325727) {
     spell = "spell=325727";
     source = AdaptiveSwarmIcon;
     alt = "Adaptive Swarm";
   }
-  if (props === "Convoke the Spirits") {
+  if (props === 323764) {
     spell = "spell=323764";
     source = ConvokeTheSpiritsIcon;
     alt = "Convoke the Spirits";
   }
   // Holy Priest
-  if (props === "Holy Word: Salvation") {
+  if (props === 265202) {
     spell = "spell=265202";
     source = SalvationIcon;
     alt = "Holy Word: Salvation";
   }
-  if (props === "Divine Hymn") {
+  if (props === 64843) {
     spell = "spell=64843";
     source = DivineHymnIcon;
     alt = "Divine Hymn";
   }
   // Discipline Priest
-  if (props === "Power Word: Barrier") {
+  if (props === 62618) {
     spell = "spell=62618";
     source = PowerWordBarrierIcon;
     alt = "Power Word: Barrier";
   }
-  if (props === "Evangelism") {
+  if (props === 246287) {
     spell = "spell=246287";
     source = EvangelismIcon;
     alt = "Evangelism";
   }
   // Priest Covenant Abilities
-  if (props === "Boon of the Ascended") {
+  if (props === 325013) {
     spell = "spell=325013";
     source = BoonoftheAscendedIcon;
     alt = "Boon of the Ascended";
   }
-  if (props === "Mindgames") {
+  if (props === 323673) {
     spell = "spell=323673";
     source = MindgamesIcon;
     alt = "Mindgames";
   }
-  if (props === "Unholy Nova") {
+  if (props === 324724) {
     spell = "spell=324724";
     source = UnholyNovaIcon;
     alt = "Unholy Nova";
   }
-  if (props === "Fae Blessings") {
+  if (props === 327661) {
     spell = "spell=327661";
     source = FaeBlessingsIcon;
     alt = "Fae Blessings";
   }
   // Restoration Shaman
-  if (props === "Healing Tide Totem") {
+  if (props === 108280) {
     spell = "spell=108280";
     source = HealingTideTotemIcon;
     alt = "Healing Tide Totem";
   }
-  if (props === "Spirit Link Totem") {
+  if (props === 98008) {
     spell = "spell=98008";
     source = SpiritLinkTotemIcon;
     alt = "Spirit Link Totem";
   }
   // Shaman Covenant Abilities
-  if (props === "Vesper Totem") {
+  if (props === 324386) {
     spell = "spell=324386";
     source = VesperTotemIcon;
     alt = "Vesper Totem";
   }
-  if (props === "Chain Harvest") {
+  if (props === 320674) {
     spell = "spell=320674";
     source = ChainHarvestIcon;
     alt = "Chain Harvest";
   }
-  if (props === "Primordial Wave") {
+  if (props === 326059) {
     spell = "spell=326059";
     source = PrimordialWaveIcon;
     alt = "Primordial Wave";
   }
-  if (props === "Fae Transfusion") {
+  if (props === 328923) {
     spell = "spell=328923";
     source = FaeTransfusionIcon;
     alt = "Fae Transfusion";
   }
   // Mistweaver Monk
-  if (props === "Revival") {
+  if (props === 98008) {
     spell = "spell=98008";
     source = RevivalIcon;
     alt = "Revival";
   }
   // Monk Covenant Abilities
-  if (props === "Weapons of Order") {
+  if (props === 310454) {
     spell = "spell=310454";
     source = WeaponsofOrderIcon;
     alt = "Weapons of Order";
   }
-  if (props === "Fallen Order") {
+  if (props === 326860) {
     spell = "spell=326860";
     source = FallenOrderIcon;
     alt = "Fallen Order";
   }
-  if (props === "Bonedust Brew") {
+  if (props === 325216) {
     spell = "spell=325216";
     source = BonedustBrewIcon;
     alt = "Bonedust Brew";
   }
-  if (props === "Faeline Stomp") {
+  if (props === 327104) {
     spell = "spell=327104";
     source = FaelineStompIcon;
     alt = "Faeline Stomp";
   }
-  if (props === "Darkness") {
+  if (props === 196718) {
     spell = "spell=196718";
     source = DarknessIcon;
     alt = "Darkness";
   }
-  if (props === "Rallying Cry") {
+  if (props === 97462) {
     spell = "spell=97462";
     source = RallyingCryIcon;
     alt = "Rallying Cry";
   }
 
   return (
-    <div>
       <a data-wowhead={spell}>
         <img
           style={{
@@ -233,7 +232,5 @@ export default function abilityicons(props) {
           alt={alt}
         />
       </a>
-      {props}
-    </div>
   );
 }

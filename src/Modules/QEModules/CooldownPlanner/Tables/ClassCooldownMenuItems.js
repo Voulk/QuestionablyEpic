@@ -13,14 +13,15 @@ import TranquilityIcon from "../../../../Images/Classes/Druid/Specialisation/Res
 import TreeofLifeIcon from "../../../../Images/Classes/Druid/Specialisation/Restoration/Icons/TreeofLife.jpg";
 import DarknessIcon from "../../../../Images/Classes/DemonHunter/DemonHunterIcon.jpg"
 import RallyingCryIcon from "../../../../Images/Classes/Warrior/RallyingCryIcon.jpg"
+import { useTranslation, Translation } from "react-i18next";
 import Divider from "@material-ui/core/Divider";
 
 
 export default function ClassCooldownMenuItems(props) {
   // Paladin Cooldowns
-  if (props === "Holy Paladin") {
+  if (props === "HolyPaladin") {
     return [
-      <MenuItem value={"Aura Mastery"}>
+      <MenuItem value={31821}>
         <a data-wowhead="spell=31821">
           <img
             style={{
@@ -33,10 +34,12 @@ export default function ClassCooldownMenuItems(props) {
             alt="Aura Mastery"
           />
         </a>
-        Aura Mastery
+        <Translation>
+          {(t, { i18n }) => t("CooldownPlannerClassAbilities.31821")}
+        </Translation>
       </MenuItem>,
       <Divider />,
-      <MenuItem value={"Avenging Wrath"}>
+      <MenuItem value={31884}>
         <a data-wowhead="spell=31884">
           <img
             style={{
@@ -49,14 +52,16 @@ export default function ClassCooldownMenuItems(props) {
             alt="Avenging Wrath"
           />
         </a>
-        Avenging Wrath
+        <Translation>
+          {(t, { i18n }) => t("CooldownPlannerClassAbilities.31884")}
+        </Translation>
       </MenuItem>,
     ];
   }
   // Restoration Druid
-  if (props === "Restoration Druid") {
+  if (props === "RestorationDruid") {
     return [
-      <MenuItem value={"Tranquility"}>
+      <MenuItem value={740}>
         <a data-wowhead="spell=740">
           <img
             style={{
@@ -69,10 +74,12 @@ export default function ClassCooldownMenuItems(props) {
             alt="Tranquility"
           />
         </a>
-        Tranquility
+        <Translation>
+          {(t, { i18n }) => t("CooldownPlannerClassAbilities.740")}
+        </Translation>
       </MenuItem>,
       <Divider />,
-      <MenuItem value={"Incarnation: Tree of Life"}>
+      <MenuItem value={33891}>
         <a data-wowhead="spell=33891">
           <img
             style={{
@@ -85,14 +92,16 @@ export default function ClassCooldownMenuItems(props) {
             alt="Incarnation: Tree of Life"
           />
         </a>
-        Incarnation: Tree of Life
+        <Translation>
+          {(t, { i18n }) => t("CooldownPlannerClassAbilities.33891")}
+        </Translation>
       </MenuItem>,
     ];
   }
   // Holy Priest
-  if (props === "Holy Priest") {
+  if (props === "HolyPriest") {
     return [
-      <MenuItem value={"Holy Word: Salvation"}>
+      <MenuItem value={265202}>
         <a data-wowhead="spell=265202">
           <img
             style={{
@@ -105,10 +114,12 @@ export default function ClassCooldownMenuItems(props) {
             alt="Holy Word: Salvation"
           />
         </a>
-        Holy Word: Salvation
+        <Translation>
+          {(t, { i18n }) => t("CooldownPlannerClassAbilities.265202")}
+        </Translation>
       </MenuItem>,
       <Divider />,
-      <MenuItem value={"Divine Hymn"}>
+      <MenuItem value={64843}>
         <a data-wowhead="spell=64843">
           <img
             style={{
@@ -121,14 +132,16 @@ export default function ClassCooldownMenuItems(props) {
             alt="Divine Hymn"
           />
         </a>
-        Divine Hymn
+        <Translation>
+          {(t, { i18n }) => t("CooldownPlannerClassAbilities.64843")}
+        </Translation>
       </MenuItem>,
     ];
   }
   // Discipline Priest
-  if (props === "Discispline Priest") {
+  if (props === "DiscisplinePriest") {
     return [
-      <MenuItem value={"Power Word: Barrier"}>
+      <MenuItem value={62618}>
         <a data-wowhead="spell=62618">
           <img
             style={{
@@ -141,10 +154,12 @@ export default function ClassCooldownMenuItems(props) {
             alt="Power Word: Barrier"
           />
         </a>
-        Power Word: Barrier
+        <Translation>
+          {(t, { i18n }) => t("CooldownPlannerClassAbilities.62618")}
+        </Translation>
       </MenuItem>,
       <Divider />,
-      <MenuItem value={"Evangelism"}>
+      <MenuItem value={246287}>
         <a data-wowhead="spell=246287">
           <img
             style={{
@@ -157,14 +172,16 @@ export default function ClassCooldownMenuItems(props) {
             alt="Evangelism"
           />
         </a>
-        Evangelism
+        <Translation>
+          {(t, { i18n }) => t("CooldownPlannerClassAbilities.246287")}
+        </Translation>
       </MenuItem>,
     ];
   }
   // Restoration Shaman
-  if (props === "Restoration Shaman") {
+  if (props === "RestorationShaman") {
     return [
-      <MenuItem value={"Healing Tide Totem"}>
+      <MenuItem value={108280}>
         <a data-wowhead="spell=108280">
           <img
             style={{
@@ -177,10 +194,12 @@ export default function ClassCooldownMenuItems(props) {
             alt="Healing Tide Totem"
           />
         </a>
-        Healing Tide Totem
+        <Translation>
+          {(t, { i18n }) => t("CooldownPlannerClassAbilities.108280")}
+        </Translation>
       </MenuItem>,
       <Divider />,
-      <MenuItem value={"Spirit Link Totem"}>
+      <MenuItem value={98008}>
         <a data-wowhead="spell=98008">
           <img
             style={{
@@ -193,15 +212,17 @@ export default function ClassCooldownMenuItems(props) {
             alt="Spirit Link Totem"
           />
         </a>
-        Spirit Link Totem
+        <Translation>
+          {(t, { i18n }) => t("CooldownPlannerClassAbilities.98008")}
+        </Translation>
       </MenuItem>,
     ];
   }
   // Mistweaver Monk
-  if (props === "Mistweaver Monk") {
+  if (props === "MistweaverMonk") {
     return [
-      <MenuItem value={"Revival"}>
-        <a data-wowhead="spell=98008">
+      <MenuItem value={115310}>
+        <a data-wowhead="spell=115310">
           <img
             style={{
               height: 20,
@@ -213,14 +234,16 @@ export default function ClassCooldownMenuItems(props) {
             alt="Revival"
           />
         </a>
-        Revival
+        <Translation>
+          {(t, { i18n }) => t("CooldownPlannerClassAbilities.115310")}
+        </Translation>
       </MenuItem>,
     ];
   }
 
-  if (props === "Havoc Demon Hunter") {
+  if (props === "HavocDemonHunter") {
     return [
-      <MenuItem value={"Darkness"}>
+      <MenuItem value={196718}>
         <a data-wowhead="spell=196718">
           <img
             style={{
@@ -233,14 +256,16 @@ export default function ClassCooldownMenuItems(props) {
             alt="Darkness"
           />
         </a>
-        Darkness
+        <Translation>
+          {(t, { i18n }) => t("CooldownPlannerClassAbilities.196718")}
+        </Translation>
       </MenuItem>,
     ];
   }
 
   if (props === "Warrior") {
     return [
-      <MenuItem value={"Rallying Cry"}>
+      <MenuItem value={97462}>
         <a data-wowhead="spell=97462">
           <img
             style={{
@@ -253,7 +278,9 @@ export default function ClassCooldownMenuItems(props) {
             alt="Rallying Cry"
           />
         </a>
-        Rallying Cry
+        <Translation>
+          {(t, { i18n }) => t("CooldownPlannerClassAbilities.97462")}
+        </Translation>
       </MenuItem>,
     ];
   }
