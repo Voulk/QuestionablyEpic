@@ -83,7 +83,8 @@
       "waist" : "Belt",
       "feet" : "Boots",
       "trinket": "Trinkets",
-      "weapon": "Weapons",
+      "weapons": "Weapons",
+      "offhands": "Off-Hands",
       "finger": "Ring"
     },
 
