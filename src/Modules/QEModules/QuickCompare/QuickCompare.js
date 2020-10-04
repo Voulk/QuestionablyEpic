@@ -114,6 +114,8 @@ function getSlots() {
     { value: "Feet", label: t("slotNames.feet") },
     { value: "Finger", label: t("slotNames.finger") },
     { value: "Trinket", label: t("slotNames.trinket") },
+    { value: "Weapons", label: t("slotNames.weapons") },
+    { value: "Off-Hands", label: t("slotNames.offhands") },
   ];
 
   return slots;
@@ -152,28 +154,31 @@ export default function QuickCompare(props) {
   const [activeSlot, setSlot] = useState("");
   const [itemSocket, setItemSocket] = useState("");
   const [itemTertiary, setItemTertiary] = useState("");
-  const [itemList, setItemList] = useState(
-    props.pl.getActiveItems(activeSlot)
-  );
+  const [itemList, setItemList] = useState(props.pl.getActiveItems(activeSlot));
 
   // Fill Items fills the ItemNames box with items appropriate to the given slot and spec.
   const fillItems = (slotName, spec) => {
     const acceptableArmorTypes = getValidArmorTypes(spec);
-    const acceptableWeaponTypes = getValidWeaponTypes(spec);
+    const acceptableWeaponTypes = getValidWeaponTypes(spec, slotName);
 
-    var i = 0;
+    let i = 0;
     for (i = 0; i < itemDB.length; i++) {
       //console.log(itemDB[i].name + itemDB[i].dropLoc );
       let item = itemDB[i];
 
       if (
         (slotName === item.slot &&
-          slotName !== "Weapons & Offhands" &&
+          (slotName !== "Weapons" || slotName !== "Off-Hands") &&
           item.itemClass === 4 &&
           acceptableArmorTypes.includes(item.itemSubClass)) ||
-        (slotName === "Weapons & Offhands" &&
+        (slotName === "Weapons" &&
           item.itemClass === 2 &&
-          acceptableWeaponTypes.includes(item.itemSubClass)) ||
+          acceptableWeaponTypes.includes(item.itemSubClass) &&
+          (item.slot === "Weapon" || item.slot === "2HWeapon")) ||
+        (slotName === "Off-Hands" &&
+          item.itemClass === 4 &&
+          acceptableWeaponTypes.includes(item.itemSubClass) &&
+          (item.slot === "Holdable" || item.slot === "Shield")) ||
         (slotName === item.slot && slotName === "Back")
       ) {
         // If the selected slot is "Weapons & Offhands" then our checks involve:
@@ -230,9 +235,9 @@ export default function QuickCompare(props) {
     setItemName(val.name);
   };
 
-  const itemLevelChanged = (event) => {
+  const itemLevelChanged = (event, val) => {
     // removed parse int here, was missing radix parameter
-    setItemLevel(event.target.value);
+    setItemLevel(val);
     setItemSocket("No");
     setItemTertiary("None");
   };
@@ -315,6 +320,11 @@ export default function QuickCompare(props) {
                   </Select>
                 </FormControl>
               </Grid>
+              <Divider
+                orientation="vertical"
+                flexItem
+                style={{ marginLeft: 4, marginRight: 4 }}
+              />
 
               <Grid item>
                 <FormControl
@@ -325,7 +335,6 @@ export default function QuickCompare(props) {
                   disabled={activeSlot === "" ? true : false}
                 >
                   <Autocomplete
-
                     size="small"
                     disabled={activeSlot === "" ? true : false}
                     id="item-select"
@@ -333,7 +342,9 @@ export default function QuickCompare(props) {
                     options={itemDropdown}
                     openOnFocus={true}
                     getOptionLabel={(option) => option.label}
-                    getOptionSelected={(option, value) => option.label === value.label}
+                    getOptionSelected={(option, value) =>
+                      option.label === value.label
+                    }
                     ListboxProps={{
                       style: {
                         border: "1px solid rgba(255, 255, 255, 0.23)",
@@ -353,30 +364,38 @@ export default function QuickCompare(props) {
               </Grid>
 
               <Grid item>
-                <FormControl
+               <FormControl
                   className={classes.formControl}
                   variant="outlined"
                   size="small"
                   disabled={itemID === "" ? true : false}
                 >
-                  <InputLabel id="itemlevel">
-                    {t("QuickCompare.ItemLevel")}
-                  </InputLabel>
-                  <Select
-                    labelId="itemlevel"
-                    value={itemLevel}
+                  <Autocomplete
+                    size="small"
+                    disabled={itemID === "" ? true : false}
+                    id="Ilvl-select"
                     onChange={itemLevelChanged}
-                    MenuProps={menuStyle}
-                    label={t("QuickCompare.ItemLevel")}
-                  >
-                    {itemLevels
-                      .map((x, y) => (
-                        <MenuItem key={y} value={x} name={x.label}>
-                          {x}
-                        </MenuItem>
-                      ))
-                      .map((key) => [key, <Divider />])}
-                  </Select>
+                    options={itemLevels}
+                    openOnFocus={true}
+                    getOptionLabel={(option) => option.toString()}
+                    getOptionSelected={(option, value) =>
+                      option === value
+                    }
+                    ListboxProps={{
+                      style: {
+                        border: "1px solid rgba(255, 255, 255, 0.23)",
+                        padding: 0,
+                      },
+                    }}
+                    style={{ width: "100%" }}
+                    renderInput={(params) => (
+                      <TextField
+                        {...params}
+                        label={t("QuickCompare.ItemLevel")}
+                        variant="outlined"
+                      />
+                    )}
+                  />
                 </FormControl>
               </Grid>
 

@@ -109,7 +109,7 @@ export default function ItemCard(props) {
                   alt="img"
                   width={56}
                   height={56}
-                  src={""/*getItemIcon(item.id)*/}
+                  src={getItemIcon(item.id)}
                   style={{
                     borderRadius: 4,
                     borderWidth: "1px",
