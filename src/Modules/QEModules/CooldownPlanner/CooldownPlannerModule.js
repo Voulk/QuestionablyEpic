@@ -429,6 +429,8 @@ class HolyDiver extends Component {
         name: key.name,
         icon: key.icon,
         talents: key.combatantInfo.talents,
+        soulbindAbilities: key.combatantInfo.artifact,
+        soulbindConduits: key.combatantInfo.heartOfAzeroth,
         type: key.type,
         stats: [
           {

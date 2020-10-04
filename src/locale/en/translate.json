@@ -39,8 +39,8 @@
       "Mastery": "Mastery",
       "Versatility": "Versatility",
       "TalentHeader": "Talents",
-      "CovenantHeader": "Covenant Abilities",
-      "LegendaryHeader": "Legendaries"
+      "SoulbindAbilities": "Soulbind Abilities",
+      "SoulbindConduits": "Soulbind Conduits"
     },
     "HDUserInputs": {
       "_Comments1": "Translations for the User Input Components",
