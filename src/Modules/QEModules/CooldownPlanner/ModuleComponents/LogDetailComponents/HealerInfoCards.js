@@ -1,9 +1,9 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
-import classicons from "../Functions/IconFunctions/ClassIcons";
-import talentIcons from "../Functions/IconFunctions/TalentIcons";
-import { classColoursJS } from "../Functions/ClassColourFunctions";
+import classicons from "../../Functions/IconFunctions/ClassIcons.js";
+import talentIcons from "../../Functions/IconFunctions/TalentIcons";
+import { classColoursJS } from "../../Functions/ClassColourFunctions";
 import { useTranslation } from "react-i18next";
 import Paper from "@material-ui/core/Paper";
 import Card from "@material-ui/core/Card";
@@ -38,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function HealerInfoTable(props) {
+export default function HealerInfoCards(props) {
   const { t } = useTranslation();
   const classes = useStyles();
 

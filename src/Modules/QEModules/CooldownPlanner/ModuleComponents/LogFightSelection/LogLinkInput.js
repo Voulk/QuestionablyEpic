@@ -2,7 +2,7 @@ import React from "react";
 import TextField from "@material-ui/core/TextField";
 import { useTranslation } from "react-i18next";
 
-export default function UserLogTextInput(props) {
+export default function LogLinkInput(props) {
   const { t } = useTranslation();
 
   return (
