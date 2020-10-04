@@ -23,7 +23,7 @@ import FormControl from "@material-ui/core/FormControl";
 import { makeStyles } from "@material-ui/core/styles";
 import classicons from "../Functions/IconFunctions/ClassIcons";
 import { classColoursJS } from "../Functions/ClassColourFunctions";
-import { classMenus } from "../Tables/ClassMenuItems";
+import { classMenus } from "../Menus/ClassMenuItems";
 import { useTranslation } from "react-i18next";
 import { localizationRU, localizationCH } from "./TableLocalization.js";
 import ls from "local-storage";

@@ -5,14 +5,14 @@ import {
   CircularProgress,
   Grid,
 } from "@material-ui/core";
-import UserLogTextInput from "../CooldownPlanner/UserInput/UserLogTextInput";
-import Chart from "../CooldownPlanner/Chart/Chart";
-import Example from "../CooldownPlanner/Chart/DTPSBarChart";
+import LogLinkInput from "../CooldownPlanner/ModuleComponents/LogFightSelection/LogLinkInput";
+import Chart from "./ModuleComponents/Chart/Chart";
+import Example from "../CooldownPlanner/ModuleComponents/LogDetailComponents/DTPSBarChart";
 import moment from "moment";
-import FightSelectorButton from "../CooldownPlanner/UserInput/FightSelectorButton";
+import FightSelectorButton from "../CooldownPlanner/ModuleComponents/LogFightSelection/FightSelectorButton";
 import LoadingOverlay from "react-loading-overlay";
-import CooldownPlanner from "../CooldownPlanner/Tables/CooldownPlanner.js";
-import CooldownTimeline from "../CooldownPlanner/Tables/CooldownTimelineTable";
+import CooldownPlanner from "../CooldownPlanner/ModuleComponents/CooldownPlanner.js";
+import CooldownTimeline from "../CooldownPlanner/ModuleComponents/LogDetailComponents/CooldownTimelineTable";
 import DenseAppBar from "../CooldownPlanner/BasicComponents/Appbar";
 import { classColoursERT } from "../CooldownPlanner/Functions/ClassColourFunctions";
 import {
@@ -32,10 +32,10 @@ import {
 import bossHeaders from "../CooldownPlanner/Functions/IconFunctions/BossHeaderIcons";
 import Grow from "@material-ui/core/Grow";
 import Paper from "@material-ui/core/Paper";
-import ERTTable from "../CooldownPlanner/Tables/ERTTable";
+import ERTTable from "../CooldownPlanner/ModuleComponents/ERTTable";
 import SwitchLabels from "./BasicComponents/Switch";
-import HealerInfoTable from "../CooldownPlanner/Tables/HealerInfoTable";
-import HealTeam from "../CooldownPlanner/Tables/HealTeamTable";
+import HealerInfoTable from "../CooldownPlanner/ModuleComponents/LogDetailComponents/HealerInfoCards";
+import HealTeam from "../CooldownPlanner/ModuleComponents/HealTeamTable";
 
 class HolyDiver extends Component {
   constructor(props) {
@@ -633,7 +633,7 @@ class HolyDiver extends Component {
                   spacing={1}
                 >
                   <Grid item xs="auto" padding={1}>
-                    <UserLogTextInput
+                    <LogLinkInput
                       changed={this.reportidHandler}
                       reportid={this.state.reportid}
                     />

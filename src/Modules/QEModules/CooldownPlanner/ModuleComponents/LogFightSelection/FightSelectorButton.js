@@ -1,5 +1,5 @@
 import React from "react";
-import LogImport from "../LogImport/LogImport";
+import LogImport from "./FightSelectorMenu";
 import Menu from "@material-ui/core/Menu";
 import Button from "@material-ui/core/Button";
 import Fade from "@material-ui/core/Fade";

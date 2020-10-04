@@ -19,7 +19,7 @@ import Remove from "@material-ui/icons/Remove";
 import SaveAlt from "@material-ui/icons/SaveAlt";
 import Search from "@material-ui/icons/Search";
 import ViewColumn from "@material-ui/icons/ViewColumn";
-import ClassCooldownMenuItems from "./ClassCooldownMenuItems";
+import ClassCooldownMenuItems from "../Menus/ClassCooldownMenuItems";
 import { Select, Grid } from "@material-ui/core";
 import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
@@ -36,7 +36,7 @@ import {
   bossAbilities,
 } from "../Data/Data";
 import { classColoursJS } from "../Functions/ClassColourFunctions";
-import { classMenus } from "../Tables/ClassMenuItems";
+import { classMenus } from "../Menus/ClassMenuItems";
 import { useTranslation } from "react-i18next";
 import {
   localizationRU,
