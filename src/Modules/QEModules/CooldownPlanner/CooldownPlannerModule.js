@@ -16,18 +16,10 @@ import CooldownTimeline from "../CooldownPlanner/ModuleComponents/LogDetailCompo
 import DenseAppBar from "../CooldownPlanner/BasicComponents/Appbar";
 import { classColoursERT } from "../CooldownPlanner/Functions/ClassColourFunctions";
 import {
-  addMissingTimestamps,
-  getUniqueObjectsFromArray,
-  reduceTimestamps,
   fightDurationCalculator,
-  importHealerLogData,
-  importDamageLogData,
-  importCastsLogData,
   durationmaker,
   warcraftLogReportID,
-  sumDamage,
   logDifficulty,
-  importSummaryData,
 } from "../CooldownPlanner/Functions/Functions";
 import bossHeaders from "../CooldownPlanner/Functions/IconFunctions/BossHeaderIcons";
 import Grow from "@material-ui/core/Grow";
