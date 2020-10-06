@@ -117,6 +117,7 @@ export default async function updatechartdata(starttime, endtime) {
   cooldowns
     .map((key) => ({
       ability: key.ability.name,
+      guid: key.ability.guid,
       timestamp: moment(fightDurationCalculator(key.timestamp, this.state.time))
         .startOf("second")
         .valueOf(),
@@ -131,15 +132,16 @@ export default async function updatechartdata(starttime, endtime) {
     .map((key) =>
       healerDurations.push(
         durationmaker(
-          key.ability,
+          key.guid,
           key.timestamp,
-          Object.getOwnPropertyNames(key).slice(2),
+          Object.getOwnPropertyNames(key).slice(3),
           moment(fightDurationCalculator(endtime, starttime))
             .startOf("second")
             .valueOf()
         )
       )
     );
+    console.log(healerDurations)
 
   // Attempting to create a list for Custom legend to use with wowhead tooltip
   // Create Ability List With Guids for legend (Testing)
