@@ -60,7 +60,7 @@ export function durationmaker(
 ) {
   let duration = healerCooldownsDetailed
     .filter((obj) => {
-      return obj.name === ability;
+      return obj.guid === ability;
     })
     .map((obj) => obj.duration);
   let newarray = [{ timestamp: originalTimestamp, [abilityname]: 1 }];
