@@ -8,16 +8,13 @@ import {
 import LogLinkInput from "../CooldownPlanner/ModuleComponents/LogFightSelection/LogLinkInput";
 import Chart from "./ModuleComponents/Chart/Chart";
 import Example from "../CooldownPlanner/ModuleComponents/LogDetailComponents/DTPSBarChart";
-import moment from "moment";
 import FightSelectorButton from "../CooldownPlanner/ModuleComponents/LogFightSelection/FightSelectorButton";
 import LoadingOverlay from "react-loading-overlay";
 import CooldownPlanner from "../CooldownPlanner/ModuleComponents/CooldownPlanner.js";
 import CooldownTimeline from "../CooldownPlanner/ModuleComponents/LogDetailComponents/CooldownTimelineTable";
 import DenseAppBar from "../CooldownPlanner/BasicComponents/Appbar";
-import { classColoursERT } from "../CooldownPlanner/Functions/ClassColourFunctions";
 import {
   fightDurationCalculator,
-  durationmaker,
   warcraftLogReportID,
   logDifficulty,
 } from "../CooldownPlanner/Functions/Functions";
@@ -29,6 +26,7 @@ import SwitchLabels from "./BasicComponents/Switch";
 import HealerInfoTable from "../CooldownPlanner/ModuleComponents/LogDetailComponents/HealerInfoCards";
 import HealTeam from "../CooldownPlanner/ModuleComponents/HealTeamTable";
 import updatechartdata from "./Engine/LogImportEngine.js";
+import chartCooldownUpdater from "./Engine/UserCooldownChartEngine.js";
 
 class HolyDiver extends Component {
   constructor(props) {
@@ -40,7 +38,7 @@ class HolyDiver extends Component {
     this.healTableShow = this.healTableShow.bind(this);
     this.handler = this.handler.bind(this);
     this.updatechartdataNew = updatechartdata.bind(this);
-    this.tablehandler = this.tablehandler.bind(this);
+    this.chartCooldownUpdater = chartCooldownUpdater.bind(this);
     this.ertHandler = this.ertHandler.bind(this);
     this.timelineHandler = this.timelineHandler.bind(this);
     // Here we set our state for the cooldown Planner Module.
@@ -86,6 +84,8 @@ class HolyDiver extends Component {
     };
   }
 
+  // this function is bound to this component.
+  // It is passed as a prop for the fight Selector, and the states are set depending on the data returned.
   handler = (info) => {
     this.setState({
       showname: true,
@@ -103,14 +103,17 @@ class HolyDiver extends Component {
     });
   };
 
+  // This Function sets the state on whether the Log Cooldown Chart is Shown.
   damageTableShow = (event) => {
     this.setState({ damageTableShow: event });
   };
 
+  // This Function sets the state on whether the User Input Cooldown Chart is Shown.
   healTableShow = (event) => {
     this.setState({ healTableShow: event });
   };
 
+  // This funtion sets the state for Unmitigated/Mitigated Damage shown.
   changeDataSet = (event) => {
     this.setState({ chartData: event });
   };
@@ -129,114 +132,6 @@ class HolyDiver extends Component {
     this.setState((prevState) => ({
       timelineshowhide: !prevState.timelineshowhide,
     }));
-  };
-
-  tablehandler = (element) => {
-    let customCooldownDurations = [];
-    let unmitigatedChartDataNoCooldowns = [];
-    let mitigatedChartDataNoCooldowns = [];
-
-    let customCooldownList = element.map(
-      (key) => key.name + " - " + key.Cooldown
-    );
-    let uniqueCooldownListArray = Array.from(new Set(customCooldownList));
-
-    let customCooldownInput = element.map((key) => ({
-      ability: key.Cooldown,
-      timestamp: moment.duration("00:" + key.time).asMilliseconds(),
-      abilityname: key.name + " - " + key.Cooldown,
-    }));
-
-    customCooldownInput.map((key) =>
-      customCooldownDurations.push(
-        durationmaker(
-          key.ability,
-          key.timestamp,
-          key.abilityname,
-          moment(
-            fightDurationCalculator(
-              this.state.currentEndTime,
-              this.state.currentStartTime
-            )
-          )
-            .startOf("second")
-            .valueOf()
-        )
-      )
-    );
-
-    let customCooldownDurationFlatArray = customCooldownDurations.flat();
-
-    let concat2 = this.state.unmitigatedChartDataNoCooldownsOriginal;
-    let concat3 = this.state.mitigatedChartDataNoCooldownsOriginal;
-
-    let joinedarray = concat2.concat(customCooldownDurationFlatArray);
-    let joinedarray2 = concat3.concat(customCooldownDurationFlatArray);
-    joinedarray.sort((a, b) => (a.timestamp > b.timestamp ? 1 : -1));
-    joinedarray2.sort((a, b) => (a.timestamp > b.timestamp ? 1 : -1));
-
-    let reducedData1 = joinedarray.reduce((acc, cur) => {
-      acc[cur.timestamp] = joinedarray.reduce((x, n) => {
-        for (let prop in n) {
-          if (cur.timestamp === n.timestamp) {
-            if (x.hasOwnProperty(prop)) {
-              x[prop] += n[prop];
-            } else {
-              x[prop] = n[prop];
-            }
-          }
-        }
-        x.timestamp = cur.timestamp;
-        return x;
-      }, {});
-      return acc;
-    }, {});
-
-    let reducedData2 = joinedarray2.reduce((acc, cur) => {
-      acc[cur.timestamp] = joinedarray2.reduce((x, n) => {
-        for (let prop in n) {
-          if (cur.timestamp === n.timestamp) {
-            if (x.hasOwnProperty(prop)) {
-              x[prop] += n[prop];
-            } else {
-              x[prop] = n[prop];
-            }
-          }
-        }
-        x.timestamp = cur.timestamp;
-        return x;
-      }, {});
-      return acc;
-    }, {});
-
-    Object.keys(reducedData1).forEach((element2) =>
-      unmitigatedChartDataNoCooldowns.push(reducedData1[element2])
-    );
-
-    Object.keys(reducedData2).forEach((element2) =>
-      mitigatedChartDataNoCooldowns.push(reducedData2[element2])
-    );
-
-    let ertNote = element.map((key) => ({
-      ert:
-        "{time:" +
-        key.time +
-        "}" +
-        " - " +
-        classColoursERT(key.class) +
-        key.name +
-        "|r" +
-        " - " +
-        key.Cooldown,
-      time: key.time,
-    }));
-
-    this.setState({
-      mitigatedChartDataNoCooldowns: mitigatedChartDataNoCooldowns,
-      unmitigatedChartDataNoCooldowns: unmitigatedChartDataNoCooldowns,
-      cooldownlistcustom2: uniqueCooldownListArray,
-      ertList: ertNote,
-    });
   };
 
   render() {
@@ -563,7 +458,7 @@ class HolyDiver extends Component {
               </Grid>
               <Grid item xs={8} padding={1}>
                 <CooldownPlanner
-                  update={this.tablehandler}
+                  update={this.chartCooldownUpdater}
                   curLang={this.props.curLang}
                 />
               </Grid>
