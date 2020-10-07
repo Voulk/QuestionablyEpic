@@ -237,7 +237,7 @@ export default function HealTeam(props) {
 
   let curLang = (lang) => {
     if (lang === "en") {
-      return false;
+      return ({});
     } else if (lang === "ru") {
       return localizationRU;
     } else if (lang === "ch") {

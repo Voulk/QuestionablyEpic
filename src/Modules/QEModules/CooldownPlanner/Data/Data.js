@@ -2466,3 +2466,467 @@ export const serverList = {
     "龙骨平原",
   ],
 };
+
+conduits = [
+  {
+    guid: 0,
+    icon: "inv_axe_02",
+    name: "Unknown",
+  },
+  // Druids
+  {
+    guid: 340616,
+    abilityIcon: "spell_nature_crystalball.jpg",
+    name: "Flash of Clarity",
+  },
+  {
+    guid: 340621,
+    abilityIcon: "item_herbd.jpg",
+    name: "Floral Recycling",
+  },
+  {
+    guid: 340550,
+    abilityIcon: "spell_nature_ravenform.jpg",
+    name: "Ready for Anything",
+  },
+  {
+    guid: 340549,
+    abilityIcon: "ability_druid_flourish.jpg",
+    name: "Unstoppable Growth",
+  },
+  {
+    guid: 341378,
+    abilityIcon: "ability_bastion_druid.jpg",
+    name: "Deep Allegiance",
+  },
+  {
+    guid: 341378,
+    abilityIcon: "ability_bastion_druid.jpg",
+    name: "Deep Allegiance",
+  },
+  {
+    guid: 341383,
+    abilityIcon: "ability_revendreth_druid.jpg",
+    name: "Endless Thirst",
+  },
+  {
+    guid: 341447,
+    abilityIcon: "ability_maldraxxus_druid.jpg",
+    name: "Evolved Swarm",
+  },
+  {
+    guid: 341446,
+    abilityIcon: "ability_ardenweald_druid.jpg",
+    name: "Conflux of Elements",
+  },
+  {
+    guid: 340529,
+    abilityIcon: "spell_nature_stoneclawtotem.jpg",
+    name: "Tough as Bark",
+  },
+  {
+    guid: 340541,
+    abilityIcon: "ability_druid_markofursol.jpg",
+    name: "Ursine Vigor",
+  },
+  {
+    guid: 340543,
+    abilityIcon: "spell_nature_healingway.jpg",
+    name: "Innate Resolve",
+  },
+  {
+    guid: 341280,
+    abilityIcon: "spell_nature_reincarnation.jpg",
+    name: "Born Anew",
+  },
+  {
+    guid: 341450,
+    abilityIcon: "spell_druid_stampedingroar_cat.jpg",
+    name: "Front of the Pack",
+  },
+  {
+    guid: 341451,
+    abilityIcon: "ability_hunter_huntervswild.jpg",
+    name: "Born of the Wilds",
+  },
+  {
+    guid: 340545,
+    abilityIcon: "spell_druid_tirelesspursuit.jpg",
+    name: "Tireless Pursuit",
+  },
+  // Monk
+  {
+    guid: 336773,
+    abilityIcon: "inv_inscription_deck_jadeserpent.jpg",
+    name: "Jade Bond",
+  },
+  {
+    guid: 337241,
+    abilityIcon: "inv_misc_gem_pearl_06.jpg",
+    name: "Nourishing Chi",
+  },
+  {
+    guid: 337099,
+    abilityIcon: "spell_monk_revival.jpg",
+    name: "Rising Sun Revival",
+  },
+  {
+    guid: 336812,
+    abilityIcon: "spell_nature_abolishmagic.jpg",
+    name: "Resplendent Mist",
+  },
+  {
+    guid: 337286,
+    abilityIcon: "ability_bastion_warrior.jpg",
+    name: "Strike with Clarity",
+  },
+  {
+    guid: 337301,
+    abilityIcon: "spell_animarevendreth_buff.jpg",
+    name: "Imbued Reflections",
+  },
+  {
+    guid: 337295,
+    abilityIcon: "spell_animamaldraxxus_nova.jpg",
+    name: "Bone Marrow Hops",
+  },
+  {
+    guid: 337303,
+    abilityIcon: "spell_animaardenweald_beam.jpg",
+    name: "Way of the Fae",
+  },
+  {
+    guid: 336853,
+    abilityIcon: "inv_misc_food_vendor_blackpepper.jpg",
+    name: "Fortifying Ingredients",
+  },
+  {
+    guid: 336632,
+    abilityIcon: "inv_misc_volatileearth.jpg",
+    name: "Grounding Breath",
+  },
+  {
+    guid: 336379,
+    abilityIcon: "ability_monk_chiswirl.jpg",
+    name: "Harm Denial",
+  },
+  {
+    guid: 336890,
+    abilityIcon: "inv_elemental_mote_air01.jpg",
+    name: "Dizzying Tumble",
+  },
+  {
+    guid: 336884,
+    abilityIcon: "sha_ability_rogue_bloodyeye.jpg",
+    name: "Lingering Numbness",
+  },
+  {
+    guid: 337078,
+    abilityIcon: "ability_monk_ridethewind.jpg",
+    name: "Swift Transference",
+  },
+  {
+    guid: 337084,
+    abilityIcon: "ability_titankeeper_phasing.jpg",
+    name: "Tumbling Technique",
+  },
+  // Paladin
+  {
+    guid: 339570,
+    abilityIcon: "ability_priest_spiritoftheredeemer.jpg",
+    name: "Enkindled Spirit",
+  },
+  {
+    guid: 339984,
+    abilityIcon: "item_holyspark.jpg",
+    name: "Focused Light",
+  },
+  {
+    guid: 339712,
+    abilityIcon: "ability_priest_voidshift.jpg",
+    name: "Resplendent Light",
+  },
+  {
+    guid: 339987,
+    abilityIcon: "achievement_admiral_of_the_light.jpg",
+    name: "Untempered Dedication",
+  },
+  {
+    guid: 340218,
+    abilityIcon: "spell_animabastion_orb.jpg",
+    name: "Ringing Clarity",
+  },
+  {
+    guid: 340212,
+    abilityIcon: "spell_animarevendreth_groundstate.jpg",
+    name: "Hallowed Discernment",
+  },
+  {
+    guid: 340192,
+    abilityIcon: "spell_animamaldraxxus_missile.jpg",
+    name: "Righteous Might",
+  },
+  {
+    guid: 340185,
+    abilityIcon: "spell_animaardenweald_buff.jpg",
+    name: "The Long Summer",
+  },
+  {
+    guid: 338741,
+    abilityIcon: "ability_racial_holyresistance.jpg",
+    name: "Divine Call",
+  },
+  {
+    guid: 339114,
+    abilityIcon: "ability_priest_cascade.jpg",
+    name: "Golden Path",
+  },
+  {
+    guid: 338787,
+    abilityIcon: "ability_vehicle_sonicshockwave.jpg",
+    name: "Shielding Words",
+  },
+  {
+    guid: 339316,
+    abilityIcon: "achievement_dungeon_heroic_gloryoftheraider.jpg",
+    name: "Echoing Blessings",
+  },
+  {
+    guid: 339268,
+    abilityIcon: "inv_lightforgedmatrixability_lightsjudgment.jpgg",
+    name: "Light's Barding",
+  },
+  {
+    guid: 339124,
+    abilityIcon: "spell_holy_mindsooth.jpg",
+    name: "Pure Concentration",
+  },
+  {
+    guid: 339292,
+    abilityIcon: "spell_holy_painsupression.jpg",
+    name: "Wrench Evil",
+  },
+  // Priest
+
+  {
+    guid: 337790,
+    abilityIcon: "spell_holy_spiritualguidence.jpg",
+    name: "Exaltation",
+  },
+  {
+    guid: 337786,
+    abilityIcon: "spell_holy_blessedrecovery.jpg",
+    name: "Pain Transformation",
+  },
+  {
+    guid: 337778,
+    abilityIcon: "ability_priest_spiritoftheredeemer.jpg",
+    name: "Shining Radiance",
+  },
+  {
+    guid: 337891,
+    abilityIcon: "spell_holy_purify.jpg",
+    name: "Swift Penitence",
+  },
+  {
+    guid: 337914,
+    abilityIcon: "achievement_bg_returnxflags_def_wsg.jpg",
+    name: "Focused Mending",
+  },
+  {
+    guid: 338345,
+    abilityIcon: "ability_priest_bindingprayers.jpg",
+    name: "Holy Oration",
+  },
+  {
+    guid: 337811,
+    abilityIcon: "inv_icon_wing06a.jpg",
+    name: "Lasting Spirit",
+  },
+  {
+    guid: 337947,
+    abilityIcon: "spell_holy_holybolt.jpg",
+    name: "Resonant Words",
+  },
+  {
+    guid: 337966,
+    abilityIcon: "spell_animabastion_wave.jpg",
+    name: "Courageous Ascension",
+  },
+  {
+    guid: 338315,
+    abilityIcon: "spell_animarevendreth_debuff.jpg",
+    name: "Shattered Perceptions",
+  },
+  {
+    guid: 337979,
+    abilityIcon: "spell_animamaldraxxus_debuff.jpg",
+    name: "Festering Transfusion",
+  },
+  {
+    guid: 338305,
+    abilityIcon: "spell_animaardenweald_buff.jpg",
+    name: "Fae Fermata",
+  },
+  {
+    guid: 337715,
+    abilityIcon: "ability_priest_clarityofwill.jpg",
+    name: "Charitable Soul",
+  },
+  {
+    guid: 337748,
+    abilityIcon: "spell_holy_restoration.jpg",
+    name: "Light's Inspiration",
+  },
+  {
+    guid: 337662,
+    abilityIcon: "spell_nature_invisibilty.jpg",
+    name: "Translucent Image",
+  },
+  {
+    guid: 337707,
+    abilityIcon: "ability_pvp_innerrenewal.jpg",
+    name: "Clear Mind",
+  },
+  {
+    guid: 337954,
+    abilityIcon: "sha_ability_rogue_bloodyeye_nightborne.jpg",
+    name: "Mental Recovery",
+  },
+  {
+    guid: 337678,
+    abilityIcon: "ability_priest_savinggrace.jpg",
+    name: "Move with Grace",
+  },
+  {
+    guid: 337762,
+    abilityIcon: "ability_priest_wordsofmeaning.jpg",
+    name: "Power Unto Others",
+  },
+];
+
+soulbindAbilities = [
+  // Kyrian
+  // Pelagos
+  {
+    guid: 328257,
+    icon: "ability_hunter_readiness.jpg",
+    name: "Let Go of the Past",
+  },
+  // Druids
+  {
+    guid: 329777,
+    abilityIcon: "inv_gizmo_khoriumpowercore.jpg",
+    name: "Phial of Patience",
+  },
+  {
+    guid: 329786,
+    abilityIcon: "achievement_guildperk_havegroup-willtravel.jpg",
+    name: "Road of Trials",
+  },
+  {
+    guid: 328261,
+    abilityIcon: "spell_arcane_focusedpower.jpg",
+    name: "Focusing Mantra",
+  },
+  {
+    guid: 328265,
+    abilityIcon: "ability_hunter_displacement.jpg",
+    name: "Bond of Friendship",
+  },
+  {
+    guid: 328263,
+    abilityIcon: "inv_misc_bag_14.jpg",
+    name: "Cleansed Vestments",
+  },
+  {
+    guid: 328266,
+    abilityIcon: "spell_animabastion_buff.jpg",
+    name: "Combat Meditation",
+  },
+
+  // Kleia
+  {
+    guid: 329776,
+    abilityIcon: "inv_alchemy_elixir_02.jpg",
+    name: "Ascendant Phial",
+  },
+  {
+    guid: 334066,
+    abilityIcon: "achievement_reputation_05.jpg",
+    name: "Mentorship",
+  },
+  {
+    guid: 329781,
+    abilityIcon: "spell_holy_mindvision.jpg",
+    name: "Resonant Accolades",
+  },
+  {
+    guid: 329779,
+    abilityIcon: "inv_boots_plate_05.jpg",
+    name: "Bearer's Pursuit",
+  },
+  {
+    guid: 329778,
+    abilityIcon: "ability_hunter_displacement.jpg",
+    name: "Pointed Courage",
+  },
+  {
+    guid: 329784,
+    abilityIcon: "spell_magic_magearmor.jpg",
+    name: "Cleansing Rites",
+  },
+  {
+    guid: 328258,
+    abilityIcon: "spell_frost_wisp.jpg",
+    name: "Ever Forward",
+  },
+  {
+    guid: 329791,
+    abilityIcon: "spell_holy_prayerofspirit.jpg",
+    name: "Valiant Strikes",
+  },
+
+  // Forgelite Prime Mikanikos
+
+  {
+    guid: 331610,
+    abilityIcon: "inv_potion_105.jpg",
+    name: "Charged Additive",
+  },
+  {
+    guid: 331609,
+    abilityIcon: "inv_alchemy_lightbloodelixir.jpg",
+    name: "Forgelite Filter",
+  },
+  {
+    guid: 333935,
+    abilityIcon: "spell_paladin_lightshammer.jpg",
+    name: "Hammer of Genesis",
+  },
+  {
+    guid: 331612,
+    abilityIcon: "inv_jewelcrafting_80_cutgem02_blue.jpg",
+    name: "Sparkling Driftglobe Core",
+  },
+  {
+    guid: 331611,
+    abilityIcon: "inv_misc_enggizmos_05.jpg",
+    name: "Soulsteel Clamps",
+  },
+  {
+    guid: 331726,
+    abilityIcon: "inv_misc_enchantedpearlf.jpg",
+    name: "Regenerating Materials",
+  },
+  {
+    guid: 331725,
+    abilityIcon: "achievement_legionpvp4tier1.jpg",
+    name: "Resilient Plumage",
+  },
+  {
+    guid: 333950,
+    abilityIcon: "ui_sigil_kyrian.jpg",
+    name: "Bron's Call to Action",
+  },
+];

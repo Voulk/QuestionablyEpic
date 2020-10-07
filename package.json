@@ -19,7 +19,7 @@
     "i18next-browser-languagedetector": "^6.0.1",
     "i18next-xhr-backend": "^3.2.2",
     "local-storage": "^2.0.0",
-    "material-table": "^1.69.0",
+    "material-table": "^1.69.1",
     "material-ui-popup-state": "^1.6.1",
     "mkcert": "^1.4.0",
     "moment": "^2.29.0",
