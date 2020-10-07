@@ -47,7 +47,7 @@ export default function HealerInfoCards(props) {
   return (
     <Grid container spacing={1} style={{ display: "block", marginTop: "4px" }}>
       {props.heals.map((key, index) => (
-        <Grid conatiner item>
+        <Grid container item key={index} direction="row">
           <Card
             style={{
               width: "100%",
@@ -85,114 +85,130 @@ export default function HealerInfoCards(props) {
                     {t("HDAccordianTitles.StatsHeading")}
                   </Typography>
                   <Divider />
-                  {key.stats.map((stats) => (
-                    <Typography style={{ textAlign: "center" }}>
-                      {t("HDAccordianTitles.Item Level")} {stats.ilvl}
-                    </Typography>
-                  ))}
-                  {key.stats.map((stats) => (
-                    <Typography style={{ textAlign: "center" }}>
-                      {t("HDAccordianTitles.Crit")} {stats.crit}
-                    </Typography>
-                  ))}
-                  {key.stats.map((stats) => (
-                    <Typography style={{ textAlign: "center" }}>
-                      {t("HDAccordianTitles.Haste")} {stats.haste}
-                    </Typography>
-                  ))}
-                  {key.stats.map((stats) => (
-                    <Typography style={{ textAlign: "center" }}>
-                      {t("HDAccordianTitles.Mastery")} {stats.mastery}
-                    </Typography>
-                  ))}
-                  {key.stats.map((stats) => (
-                    <Typography style={{ textAlign: "center" }}>
-                      {t("HDAccordianTitles.Versatility")} {stats.versatility}
-                    </Typography>
+                  {key.stats.map((stats, i) => (
+                    <div key={i}>
+                      <Typography style={{ textAlign: "center", whiteSpace: "nowrap" }}>
+                        {t("HDAccordianTitles.Item Level")} {stats.ilvl}
+                      </Typography>
+                      <Typography style={{ textAlign: "center", whiteSpace: "nowrap" }}>
+                        {t("HDAccordianTitles.Crit")} {stats.crit}
+                      </Typography>
+                      <Typography style={{ textAlign: "center", whiteSpace: "nowrap" }}>
+                        {t("HDAccordianTitles.Haste")} {stats.haste}
+                      </Typography>
+                      <Typography style={{ textAlign: "center", whiteSpace: "nowrap" }}>
+                        {t("HDAccordianTitles.Mastery")} {stats.mastery}
+                      </Typography>
+                      <Typography style={{ textAlign: "center", whiteSpace: "nowrap" }}>
+                        {t("HDAccordianTitles.Versatility")} {stats.versatility}
+                      </Typography>
+                    </div>
                   ))}
                 </CardContent>
               </Grid>
               {/* <Divider orientation="vertical" flexItem /> */}
-              <Grid item xs={9} justify="center">
-                <CardContent style={{ padding: "2px 8px 0px 8px" }}>
-                  <Divider />
-                  <Typography className={classes.heading} color="primary">
-                    {t("HDAccordianTitles.TalentHeader")}
-                  </Typography>
-                  <Divider />
-                  <div style={{ textAlignLast: "center" }}>
-                    {key.talents.map((talent) => talentIcons(talent.guid))}
-                  </div>
-                </CardContent>
-                <CardContent style={{ padding: "2px 8px 0px 8px" }}>
-                  <Divider />
-                  <Typography className={classes.heading} color="primary">
-                    {t("HDAccordianTitles.SoulbindAbilities")}
-                  </Typography>
-                  <Divider />
-                  <div
-                    style={{
-                      textAlignLast: "center",
-                      display: "flex",
-                      justifyContent: "center",
-                    }}
-                  >
-                    {key.soulbindAbilities.map((ability) => (
-                      <a data-wowhead={"spell=" + ability.guid}>
-                        <img
-                          style={{
-                            height: 30,
-                            width: 30,
-                            padding: 4,
-                            verticalAlign: "middle",
-                            borderRadius: "4px",
-                          }}
-                          // src={source}
-                          // alt={alt}
-                        />
-                      </a>
-                    ))}
-                  </div>
-                </CardContent>
-                <CardContent style={{ padding: "2px 8px 0px 8px" }}>
-                  <Divider />
-                  <Typography className={classes.heading} color="primary">
-                    {t("HDAccordianTitles.SoulbindConduits")}
-                  </Typography>
-                  <Divider />
-                                 <div
-                    style={{
-                      textAlignLast: "center",
-                      display: "flex",
-                      justifyContent: "center",
-                    }}
-                  >
-                  {key.soulbindConduits.map((conduit) => (
-                    <a data-wowhead={"spell=" + conduit.guid}>
-                      <div className="container">
-                        <img
-                          style={{
-                            height: 30,
-                            width: 30,
-                            padding: 4,
-                            verticalAlign: "middle",
-                            borderRadius: "4px",
-                          }}
-                          src={"" /*getItemIcon(item.id)*/}
-                          // style={{
-                          //   borderRadius: 4,
-                          //   borderWidth: "1px",
-                          //   borderStyle: "solid",
-                          //   borderColor: itemQuality("Uncommon"),
-                          // }}
-                        />
+              <Grid item xs={9} container justify="flex-start" alignItems="flex-start" style={{display: "inline"}}>
+                <Grid item xs={12}>
+                  <CardContent style={{ padding: "2px 8px 0px 8px", textAlignLast: "center" }}>
+                    <Divider />
+                    <Typography className={classes.heading} color="primary">
+                      {t("HDAccordianTitles.TalentHeader")}
+                    </Typography>
+                    <Divider />
+                    <div
+                      style={{
+                        textAlignLast: "center",
+                        display: "inline-flex",
+                      }}
+                    >
+                      {key.talents.map((talent, i) => (
+                        <div key={i}> {talentIcons(talent.guid)} </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Grid>
+                <Grid item xs={12}>
+                  <CardContent style={{ padding: "2px 8px 0px 8px", textAlignLast: "center" }}>
+                    <Divider />
+                    <Typography
+                      className={classes.heading}
+                      color="primary"
+                      style={{ width: "100%" }}
+                    >
+                      {t("HDAccordianTitles.SoulbindAbilities")}
+                    </Typography>
+                    <Divider />
+                    <div
+                      style={{
+                        textAlignLast: "center",
+                        display: "flex",
+                        justifyContent: "center",
+                      }}
+                    >
+                      {key.soulbindAbilities.map((ability, i) => (
+                        <a data-wowhead={"spell=" + ability.guid} key={i}>
+                          <img
+                            style={{
+                              height: 30,
+                              width: 30,
+                              padding: 4,
+                              verticalAlign: "middle",
+                              borderRadius: "4px",
+                            }}
+                            // src={source}
+                            // alt={alt}
+                          />
+                        </a>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Grid>
+                <Grid item xs={12}>
+                  <CardContent style={{ padding: "2px 8px 0px 8px", textAlignLast: "center" }}>
+                    <Divider />
+                    <Typography className={classes.heading} color="primary">
+                      {t("HDAccordianTitles.SoulbindConduits")}
+                    </Typography>
+                    <Divider />
+                    <div
+                      style={{
+                        textAlignLast: "center",
+                        display: "flex",
+                        justifyContent: "center",
+                      }}
+                    >
+                      {key.soulbindConduits.map((conduit, i) => (
+                        <a data-wowhead={"spell=" + conduit.guid} key={i}>
+                          <div className="container">
+                            <img
+                              style={{
+                                height: 30,
+                                width: 30,
+                                padding: 4,
+                                verticalAlign: "middle",
+                                borderRadius: "4px",
+                              }}
+                              src={"" /*getItemIcon(item.id)*/}
+                              // style={{
+                              //   borderRadius: 4,
+                              //   borderWidth: "1px",
+                              //   borderStyle: "solid",
+                              //   borderColor: itemQuality("Uncommon"),
+                              // }}
+                            />
 
-                        <div className="bottom-right" style={{fontSize: 12}}> {conduit.total} </div>
-                      </div>
-                    </a>
-                  ))}
-                  </div>
-                </CardContent>
+                            <div
+                              className="bottom-right"
+                              style={{ fontSize: 12 }}
+                            >
+                              {conduit.total}
+                            </div>
+                          </div>
+                        </a>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Grid>
               </Grid>
               {/* <Divider orientation="vertical" flexItem /> */}
             </Grid>

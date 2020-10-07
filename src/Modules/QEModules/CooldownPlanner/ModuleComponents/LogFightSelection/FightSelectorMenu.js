@@ -44,13 +44,13 @@ class LogImport extends Component {
   render(props) {
     const { fights } = this.state;
     if (this.state.reportid === null) {
-      return <MenuItem value="Fight">"No Report Loaded"</MenuItem>;
+      return <MenuItem key={99} value="Fight">"No Report Loaded"</MenuItem>;
     } else {
       let menuitems = fights
         .filter((name) => name.boss !== 0)
         .map((fight, i) => (
           <MenuItem
-            key={fight.id}
+            key={i}
             onClick={() => {
               this.props.clicker([
                 fight.start_time,
@@ -80,7 +80,7 @@ class LogImport extends Component {
               "%"}
           </MenuItem>
         ))
-        .map((key) => [key, <Divider />]);
+        .map((key,i) => [key, <Divider key={i + 200} />]);
       return menuitems;
     }
   }
