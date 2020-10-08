@@ -8,10 +8,7 @@ import QuickCompare from "./Modules/QuickCompare/QuickCompare";
 import QEHeader from "./Modules/SetupAndMenus/QEHeader";
 import PlayerChars from "./Modules/Player/PlayerChars";
 import SimpleTabs from "./Modules/Covenant Test/CovenantExploration";
-import {
-  ConfirmLogin,
-  QELogin,
-} from "./Modules/SetupAndMenus/QELogin";
+import { ConfirmLogin, QELogin } from "./Modules/SetupAndMenus/QELogin";
 import { withTranslation } from "react-i18next";
 import i18n from "./i18n";
 
@@ -27,6 +24,37 @@ const theme = createMuiTheme({
     primary: { main: "#d3bc47" },
     secondary: { main: "#e0e0e0" },
   },
+
+  // just messing around with themes here. Yellow colour is different in the below.
+
+  // palette: {
+  //   common: { black: "#000", white: "#fff" },
+  //   background: { paper: "rgba(53, 53, 53, 1)", default: "#fafafa" },
+  //   primary: {
+  //     light: "rgba(95, 95, 95, 1)",
+  //     main: "rgba(53, 53, 53, 1)",
+  //     dark: "rgba(15, 15, 15, 1)",
+  //     contrastText: "#fff",
+  //   },
+  //   secondary: {
+  //     light: "rgba(255, 255, 107, 1)",
+  //     main: "rgba(253, 216, 53, 1)",
+  //     dark: "rgba(198, 167, 0, 1)",
+  //     contrastText: "rgba(0, 0, 0, 1)",
+  //   },
+  //   error: {
+  //     light: "#e57373",
+  //     main: "#f44336",
+  //     dark: "#d32f2f",
+  //     contrastText: "#fff",
+  //   },
+  //   text: {
+  //     primary: "rgba(0, 0, 0, 0.87)",
+  //     secondary: "rgba(0, 0, 0, 0.54)",
+  //     disabled: "rgba(0, 0, 0, 0.38)",
+  //     hint: "rgba(0, 0, 0, 0.38)",
+  //   },
+  // },
 });
 
 class App extends Component {

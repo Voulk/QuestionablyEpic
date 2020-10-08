@@ -87,19 +87,29 @@ export default function HealerInfoCards(props) {
                   <Divider />
                   {key.stats.map((stats, i) => (
                     <div key={i}>
-                      <Typography style={{ textAlign: "center", whiteSpace: "nowrap" }}>
+                      <Typography
+                        style={{ textAlign: "center", whiteSpace: "nowrap" }}
+                      >
                         {t("HDAccordianTitles.Item Level")} {stats.ilvl}
                       </Typography>
-                      <Typography style={{ textAlign: "center", whiteSpace: "nowrap" }}>
+                      <Typography
+                        style={{ textAlign: "center", whiteSpace: "nowrap" }}
+                      >
                         {t("HDAccordianTitles.Crit")} {stats.crit}
                       </Typography>
-                      <Typography style={{ textAlign: "center", whiteSpace: "nowrap" }}>
+                      <Typography
+                        style={{ textAlign: "center", whiteSpace: "nowrap" }}
+                      >
                         {t("HDAccordianTitles.Haste")} {stats.haste}
                       </Typography>
-                      <Typography style={{ textAlign: "center", whiteSpace: "nowrap" }}>
+                      <Typography
+                        style={{ textAlign: "center", whiteSpace: "nowrap" }}
+                      >
                         {t("HDAccordianTitles.Mastery")} {stats.mastery}
                       </Typography>
-                      <Typography style={{ textAlign: "center", whiteSpace: "nowrap" }}>
+                      <Typography
+                        style={{ textAlign: "center", whiteSpace: "nowrap" }}
+                      >
                         {t("HDAccordianTitles.Versatility")} {stats.versatility}
                       </Typography>
                     </div>
@@ -107,9 +117,21 @@ export default function HealerInfoCards(props) {
                 </CardContent>
               </Grid>
               {/* <Divider orientation="vertical" flexItem /> */}
-              <Grid item xs={9} container justify="flex-start" alignItems="flex-start" style={{display: "inline"}}>
+              <Grid
+                item
+                xs={9}
+                container
+                justify="flex-start"
+                alignItems="flex-start"
+                style={{ display: "inline" }}
+              >
                 <Grid item xs={12}>
-                  <CardContent style={{ padding: "2px 8px 0px 8px", textAlignLast: "center" }}>
+                  <CardContent
+                    style={{
+                      padding: "2px 8px 0px 8px",
+                      textAlignLast: "center",
+                    }}
+                  >
                     <Divider />
                     <Typography className={classes.heading} color="primary">
                       {t("HDAccordianTitles.TalentHeader")}
@@ -128,7 +150,12 @@ export default function HealerInfoCards(props) {
                   </CardContent>
                 </Grid>
                 <Grid item xs={12}>
-                  <CardContent style={{ padding: "2px 8px 0px 8px", textAlignLast: "center" }}>
+                  <CardContent
+                    style={{
+                      padding: "2px 8px 0px 8px",
+                      textAlignLast: "center",
+                    }}
+                  >
                     <Divider />
                     <Typography
                       className={classes.heading}
@@ -155,8 +182,8 @@ export default function HealerInfoCards(props) {
                               verticalAlign: "middle",
                               borderRadius: "4px",
                             }}
-                            // src={source}
-                            // alt={alt}
+                            src={"/Images/Icons/" + ability.abilityIcon}
+                            alt={"ability" + i}
                           />
                         </a>
                       ))}
@@ -164,7 +191,12 @@ export default function HealerInfoCards(props) {
                   </CardContent>
                 </Grid>
                 <Grid item xs={12}>
-                  <CardContent style={{ padding: "2px 8px 0px 8px", textAlignLast: "center" }}>
+                  <CardContent
+                    style={{
+                      padding: "2px 8px 0px 8px",
+                      textAlignLast: "center",
+                    }}
+                  >
                     <Divider />
                     <Typography className={classes.heading} color="primary">
                       {t("HDAccordianTitles.SoulbindConduits")}
@@ -188,7 +220,8 @@ export default function HealerInfoCards(props) {
                                 verticalAlign: "middle",
                                 borderRadius: "4px",
                               }}
-                              src={"" /*getItemIcon(item.id)*/}
+                              src={"/Images/Icons/" + conduit.abilityIcon}
+                              alt={"coinduit" + i}
                               // style={{
                               //   borderRadius: 4,
                               //   borderWidth: "1px",
@@ -199,7 +232,10 @@ export default function HealerInfoCards(props) {
 
                             <div
                               className="bottom-right"
-                              style={{ fontSize: 12 }}
+                              style={{
+                                fontSize: 12,
+                                textShadow: "0px 0px 4px #000000",
+                              }}
                             >
                               {conduit.total}
                             </div>
