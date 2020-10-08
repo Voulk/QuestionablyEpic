@@ -7,11 +7,11 @@ import Popper from "@material-ui/core/Popper";
 import MenuItem from "@material-ui/core/MenuItem";
 import MenuList from "@material-ui/core/MenuList";
 import { makeStyles } from "@material-ui/core/styles";
-import ruFlag from "../../../locale/ru/ru.png";
-import enFlag from "../../../locale/en/en.png";
-import chFlag from "../../../locale/ch/ch.png";
-import frFlag from "../../../locale/fr/fr.png";
-import { useTranslation, withTranslation, Trans } from 'react-i18next';
+import ruFlag from "../../locale/ru/ru.png";
+import enFlag from "../../locale/en/en.png";
+import chFlag from "../../locale/ch/ch.png";
+import frFlag from "../../locale/fr/fr.png";
+import { useTranslation } from "react-i18next";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -32,7 +32,7 @@ export default function LanguageSelector(props) {
     setOpen((prevOpen) => !prevOpen);
   };
 
-  const {i18n} = useTranslation();
+  const { i18n } = useTranslation();
 
   const handleClose = (event, lang) => {
     if (anchorRef.current && anchorRef.current.contains(event.target)) {
@@ -41,7 +41,7 @@ export default function LanguageSelector(props) {
     if (lang === undefined) {
       lang = language;
     }
-    i18n.changeLanguage(lang)
+    i18n.changeLanguage(lang);
     setLanguage(lang);
     props.langSet(lang);
     setOpen(false);
@@ -87,7 +87,8 @@ export default function LanguageSelector(props) {
           aria-haspopup="true"
           onClick={handleToggle}
         >
-          <img src={langIcon(language)} style={{ marginRight: "5px" }} />{language}
+          <img src={langIcon(language)} style={{ marginRight: "5px" }} />
+          {language}
         </Button>
         <Popper
           open={open}

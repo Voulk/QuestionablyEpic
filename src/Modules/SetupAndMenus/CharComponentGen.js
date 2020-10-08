@@ -19,9 +19,9 @@ import FormDialog from "./CharCreator";
 
 // Spec Images.
 const specImages = {
-  "Restoration Druid": require("../../../Images/DruidSmall.png"),
-  "Discipline Priest": require("../../../Images/DiscSmall.png"),
-  "Holy Paladin": require("../../../Images/PaladinSmall.png"),
+  "Restoration Druid": require("../../Images/DruidSmall.png"),
+  "Discipline Priest": require("../../Images/DiscSmall.png"),
+  "Holy Paladin": require("../../Images/PaladinSmall.png"),
 };
 
 // Called when a character is clicked.

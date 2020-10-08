@@ -2,9 +2,8 @@ import React from "react";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Button from "@material-ui/core/Button";
-import logo from "../../../Images/QeAssets/QELogo.png";
+import logo from "../../Images/QeAssets/QELogo.png";
 import "./QEMainMenu.css";
-
 
 import Box from "@material-ui/core/Box";
 import LanguageSelector from "./LanguageButton";
@@ -31,10 +30,12 @@ export default function QEHeader(props) {
               <img src={logo} alt="QE Live" />
             </Link>
           </Box>
-          <div/>
+          <div />
           <Button color="secondary">{t("QeHeader.InsertLogLabel")}</Button>
           <SimCraftInput />
-          <Button color="secondary" onClick={props.toggleContentType}>{t(props.contentType)}</Button>
+          <Button color="secondary" onClick={props.toggleContentType}>
+            {t(props.contentType)}
+          </Button>
           <ProfileSelector
             name={playerName}
             component={Link}

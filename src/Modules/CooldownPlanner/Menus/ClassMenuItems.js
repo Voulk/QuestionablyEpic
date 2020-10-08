@@ -1,15 +1,15 @@
 import React from "react";
 import MenuItem from "@material-ui/core/MenuItem";
 import ListSubheader from "@material-ui/core/ListSubheader";
-import HolyPaladinIcon from "../../../../Images/Classes/Paladin/Specialisation/Holy/Icons/HolyPaladin.jpg";
-import DiscPriestIcon from "../../../../Images/Classes/Priest/Specialisation/Discipline/Icons/DisciplinePriest.jpg";
-import HolyPriestIcon from "../../../../Images/Classes/Priest/Specialisation/Holy/Icons/HolyPriest.jpg";
-import MistweaverIcon from "../../../../Images/Classes/Monk/Specialisation/Mistweaver/Icons/MistWeaverMonk.jpg";
-import RestorationDruidIcon from "../../../../Images/Classes/Druid/Specialisation/Restoration/Icons/RestorationDruid.jpg";
-import RestorationShamanIcon from "../../../../Images/Classes/Shaman/Specialisation/Restoration/Icons/RestorationShaman.jpg";
-import WarriorIcon from "../../../../Images/Classes/Warrior/WarriorIcon.jpg";
-import DemonHunterIcon from "../../../../Images/Classes/DemonHunter/DemonHunterIcon.jpg";
-import { useTranslation, Translation } from "react-i18next";
+import HolyPaladinIcon from "../../../Images/Classes/Paladin/Specialisation/Holy/Icons/HolyPaladin.jpg";
+import DiscPriestIcon from "../../../Images/Classes/Priest/Specialisation/Discipline/Icons/DisciplinePriest.jpg";
+import HolyPriestIcon from "../../../Images/Classes/Priest/Specialisation/Holy/Icons/HolyPriest.jpg";
+import MistweaverIcon from "../../../Images/Classes/Monk/Specialisation/Mistweaver/Icons/MistWeaverMonk.jpg";
+import RestorationDruidIcon from "../../../Images/Classes/Druid/Specialisation/Restoration/Icons/RestorationDruid.jpg";
+import RestorationShamanIcon from "../../../Images/Classes/Shaman/Specialisation/Restoration/Icons/RestorationShaman.jpg";
+import WarriorIcon from "../../../Images/Classes/Warrior/WarriorIcon.jpg";
+import DemonHunterIcon from "../../../Images/Classes/DemonHunter/DemonHunterIcon.jpg";
+import { Translation } from "react-i18next";
 import Divider from "@material-ui/core/Divider";
 
 export const classMenus = [

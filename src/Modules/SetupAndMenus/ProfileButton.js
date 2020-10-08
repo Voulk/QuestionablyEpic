@@ -8,16 +8,11 @@ import MenuItem from "@material-ui/core/MenuItem";
 import MenuList from "@material-ui/core/MenuList";
 import { makeStyles } from "@material-ui/core/styles";
 import { useTranslation } from "react-i18next";
-import BnetIcon from "../../../Images/QeAssets/BattleNetIcon.png";
+import BnetIcon from "../../Images/QeAssets/BattleNetIcon.png";
 import { withStyles } from "@material-ui/core/styles";
 import Dialog from "@material-ui/core/Dialog";
-import MuiDialogTitle from "@material-ui/core/DialogTitle";
 import MuiDialogContent from "@material-ui/core/DialogContent";
-import MuiDialogActions from "@material-ui/core/DialogActions";
-import IconButton from "@material-ui/core/IconButton";
-import CloseIcon from "@material-ui/icons/Close";
-import Typography from "@material-ui/core/Typography";
-import { ConfirmLogin, QELogin } from "./QELogin";
+import { QELogin } from "./QELogin";
 
 const DialogContent = withStyles((theme) => ({
   root: {
