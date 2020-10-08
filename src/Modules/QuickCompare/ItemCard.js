@@ -14,7 +14,7 @@ import {
 import "./ItemCard.css";
 import DeleteIcon from "@material-ui/icons/Delete";
 import IconButton from "@material-ui/core/IconButton";
-import socketImage from "../../../Images/Resources/EmptySocket.png";
+import socketImage from "../../Images/Resources/EmptySocket.png";
 
 const useStyles = makeStyles({
   root: {

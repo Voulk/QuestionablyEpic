@@ -2,7 +2,7 @@ import React from "react";
 import Button from "@material-ui/core/Button";
 import { useHistory, useLocation } from "react-router-dom";
 // import ls from "local-storage";
-import BattleNetLogo from "../../../Images/QeAssets/BattleNetLogo.png";
+import BattleNetLogo from "../../Images/QeAssets/BattleNetLogo.png";
 import { Grid } from "@material-ui/core";
 
 export function QELogin(props) {
@@ -23,7 +23,11 @@ export function QELogin(props) {
 
   return (
     <div>
-      <img src={BattleNetLogo} style={{ borderRadius: "4px" }} alt="BattleNet" />
+      <img
+        src={BattleNetLogo}
+        style={{ borderRadius: "4px" }}
+        alt="BattleNet"
+      />
       <Grid
         container
         direction="row"
@@ -104,7 +108,7 @@ export function ConfirmLogin(props) {
   history.push("/");
 
   //});
-  props.loginSnackOpen()
+  props.loginSnackOpen();
   return (
     <div>
       <p>{query.get("code")}</p>

@@ -4,7 +4,6 @@ import TextField from "@material-ui/core/TextField";
 import Dialog from "@material-ui/core/Dialog";
 import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
-import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import { Select, Grid } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
@@ -13,14 +12,11 @@ import FormControl from "@material-ui/core/FormControl";
 import InputLabel from "@material-ui/core/InputLabel";
 import { useTranslation } from "react-i18next";
 import classicons from "../CooldownPlanner/Functions/IconFunctions/ClassIcons";
-import CharCards from "./CharComponentGen";
-
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import CardActionArea from "@material-ui/core/CardActionArea";
 import Typography from "@material-ui/core/Typography";
 import Avatar from "@material-ui/core/Avatar";
-import { classColoursJS } from "../CooldownPlanner/Functions/ClassColourFunctions";
 import raceIcons from "../CooldownPlanner/Functions/IconFunctions/RaceIcons";
 import Autocomplete from "@material-ui/lab/Autocomplete";
 import { serverList } from "../CooldownPlanner/Data/Data";
@@ -186,7 +182,7 @@ const classList = {
 };
 
 export default function AddNewChar(props) {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
   const [healClass, setHealClass] = React.useState("");
@@ -243,7 +239,6 @@ export default function AddNewChar(props) {
       >
         <DialogTitle id="form-dialog-title">Create New Character</DialogTitle>
         <DialogContent>
-          {/* <DialogContentText>Select your Class and Race</DialogContentText> */}
           <Grid container spacing={1} direction="column">
             <Grid item xs={12}>
               <TextField

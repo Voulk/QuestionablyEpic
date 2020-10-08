@@ -1,17 +1,17 @@
 import React, { Component } from "react";
 import "./App.css";
-import HolyDiver from "./Modules/QEModules/CooldownPlanner/CooldownPlannerModule";
-import QEMainMenu from "./Modules/QEModules/SetupAndMenus/QEMainMenu";
-import TrinketCompare from "./Modules/QEModules/TrinketCompare";
-import LegendaryCompare from "./Modules/QEModules/Legendaries/LegendaryCompare";
-import QuickCompare from "./Modules/QEModules/QuickCompare/QuickCompare";
-import QEHeader from "./Modules/QEModules/SetupAndMenus/QEHeader";
-import PlayerChars from "./Modules/QEModules/Player/PlayerChars";
-import SimpleTabs from "./Modules/QEModules/Covenant Test/CovenantExploration";
+import HolyDiver from "./Modules/CooldownPlanner/CooldownPlannerModule";
+import QEMainMenu from "./Modules/SetupAndMenus/QEMainMenu";
+import TrinketCompare from "./Modules/TrinketCompare";
+import LegendaryCompare from "./Modules/Legendaries/LegendaryCompare";
+import QuickCompare from "./Modules/QuickCompare/QuickCompare";
+import QEHeader from "./Modules/SetupAndMenus/QEHeader";
+import PlayerChars from "./Modules/Player/PlayerChars";
+import SimpleTabs from "./Modules/Covenant Test/CovenantExploration";
 import {
   ConfirmLogin,
   QELogin,
-} from "./Modules/QEModules/SetupAndMenus/QELogin";
+} from "./Modules/SetupAndMenus/QELogin";
 import { withTranslation } from "react-i18next";
 import i18n from "./i18n";
 
@@ -178,7 +178,7 @@ class App extends Component {
                 Character Added!
               </Alert>
             </Snackbar>
-            
+
             {/* // Login Success Snackbar */}
             <Snackbar
               open={this.state.loginSnackState}

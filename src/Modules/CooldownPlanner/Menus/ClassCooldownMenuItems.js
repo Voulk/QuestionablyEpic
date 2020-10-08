@@ -1,21 +1,20 @@
 import React from "react";
 import { MenuItem } from "@material-ui/core";
-import AuraMasteryIcon from "../../../../Images/Classes/Paladin/Specialisation/Holy/Icons/AuraMastery.jpg";
-import AvengingWrathIcon from "../../../../Images/Classes/Paladin/Specialisation/Holy/Icons/AvengingWrath.jpg";
-import DivineHymnIcon from "../../../../Images/Classes/Priest/Specialisation/Holy/Icons/DivineHymn.jpg";
-import EvangelismIcon from "../../../../Images/Classes/Priest/Specialisation/Discipline/Icons/Evangelism.jpg";
-import HealingTideTotemIcon from "../../../../Images/Classes/Shaman/Specialisation/Restoration/Icons/HealingTideTotem.jpg";
-import PowerWordBarrierIcon from "../../../../Images/Classes/Priest/Specialisation/Discipline/Icons/PowerWordBarrier.jpg";
-import RevivalIcon from "../../../../Images/Classes/Monk/Specialisation/Mistweaver/Icons/Revival.jpg";
-import SalvationIcon from "../../../../Images/Classes/Priest/Specialisation/Holy/Icons/Salvation.jpg";
-import SpiritLinkTotemIcon from "../../../../Images/Classes/Shaman/Specialisation/Restoration/Icons/SpiritLinkTotem.jpg";
-import TranquilityIcon from "../../../../Images/Classes/Druid/Specialisation/Restoration/Icons/Tranquility.jpg";
-import TreeofLifeIcon from "../../../../Images/Classes/Druid/Specialisation/Restoration/Icons/TreeofLife.jpg";
-import DarknessIcon from "../../../../Images/Classes/DemonHunter/DemonHunterIcon.jpg"
-import RallyingCryIcon from "../../../../Images/Classes/Warrior/RallyingCryIcon.jpg"
-import { useTranslation, Translation } from "react-i18next";
+import AuraMasteryIcon from "../../../Images/Classes/Paladin/Specialisation/Holy/Icons/AuraMastery.jpg";
+import AvengingWrathIcon from "../../../Images/Classes/Paladin/Specialisation/Holy/Icons/AvengingWrath.jpg";
+import DivineHymnIcon from "../../../Images/Classes/Priest/Specialisation/Holy/Icons/DivineHymn.jpg";
+import EvangelismIcon from "../../../Images/Classes/Priest/Specialisation/Discipline/Icons/Evangelism.jpg";
+import HealingTideTotemIcon from "../../../Images/Classes/Shaman/Specialisation/Restoration/Icons/HealingTideTotem.jpg";
+import PowerWordBarrierIcon from "../../../Images/Classes/Priest/Specialisation/Discipline/Icons/PowerWordBarrier.jpg";
+import RevivalIcon from "../../../Images/Classes/Monk/Specialisation/Mistweaver/Icons/Revival.jpg";
+import SalvationIcon from "../../../Images/Classes/Priest/Specialisation/Holy/Icons/Salvation.jpg";
+import SpiritLinkTotemIcon from "../../../Images/Classes/Shaman/Specialisation/Restoration/Icons/SpiritLinkTotem.jpg";
+import TranquilityIcon from "../../../Images/Classes/Druid/Specialisation/Restoration/Icons/Tranquility.jpg";
+import TreeofLifeIcon from "../../../Images/Classes/Druid/Specialisation/Restoration/Icons/TreeofLife.jpg";
+import DarknessIcon from "../../../Images/Classes/DemonHunter/DemonHunterIcon.jpg";
+import RallyingCryIcon from "../../../Images/Classes/Warrior/RallyingCryIcon.jpg";
+import { Translation } from "react-i18next";
 import Divider from "@material-ui/core/Divider";
-
 
 export default function ClassCooldownMenuItems(props) {
   // Paladin Cooldowns
@@ -35,7 +34,7 @@ export default function ClassCooldownMenuItems(props) {
           />
         </a>
         <Translation>
-          {(t, { i18n }) => t("CooldownPlannerClassAbilities.31821")}
+          {(t) => t("CooldownPlannerClassAbilities.31821")}
         </Translation>
       </MenuItem>,
       <Divider />,
@@ -53,7 +52,7 @@ export default function ClassCooldownMenuItems(props) {
           />
         </a>
         <Translation>
-          {(t, { i18n }) => t("CooldownPlannerClassAbilities.31884")}
+          {(t) => t("CooldownPlannerClassAbilities.31884")}
         </Translation>
       </MenuItem>,
     ];
@@ -75,7 +74,7 @@ export default function ClassCooldownMenuItems(props) {
           />
         </a>
         <Translation>
-          {(t, { i18n }) => t("CooldownPlannerClassAbilities.740")}
+          {(t) => t("CooldownPlannerClassAbilities.740")}
         </Translation>
       </MenuItem>,
       <Divider />,
@@ -93,7 +92,7 @@ export default function ClassCooldownMenuItems(props) {
           />
         </a>
         <Translation>
-          {(t, { i18n }) => t("CooldownPlannerClassAbilities.33891")}
+          {(t) => t("CooldownPlannerClassAbilities.33891")}
         </Translation>
       </MenuItem>,
     ];
@@ -115,7 +114,7 @@ export default function ClassCooldownMenuItems(props) {
           />
         </a>
         <Translation>
-          {(t, { i18n }) => t("CooldownPlannerClassAbilities.265202")}
+          {(t) => t("CooldownPlannerClassAbilities.265202")}
         </Translation>
       </MenuItem>,
       <Divider />,
@@ -133,7 +132,7 @@ export default function ClassCooldownMenuItems(props) {
           />
         </a>
         <Translation>
-          {(t, { i18n }) => t("CooldownPlannerClassAbilities.64843")}
+          {(t) => t("CooldownPlannerClassAbilities.64843")}
         </Translation>
       </MenuItem>,
     ];
@@ -155,7 +154,7 @@ export default function ClassCooldownMenuItems(props) {
           />
         </a>
         <Translation>
-          {(t, { i18n }) => t("CooldownPlannerClassAbilities.62618")}
+          {(t) => t("CooldownPlannerClassAbilities.62618")}
         </Translation>
       </MenuItem>,
       <Divider />,
@@ -173,7 +172,7 @@ export default function ClassCooldownMenuItems(props) {
           />
         </a>
         <Translation>
-          {(t, { i18n }) => t("CooldownPlannerClassAbilities.246287")}
+          {(t) => t("CooldownPlannerClassAbilities.246287")}
         </Translation>
       </MenuItem>,
     ];
@@ -195,7 +194,7 @@ export default function ClassCooldownMenuItems(props) {
           />
         </a>
         <Translation>
-          {(t, { i18n }) => t("CooldownPlannerClassAbilities.108280")}
+          {(t) => t("CooldownPlannerClassAbilities.108280")}
         </Translation>
       </MenuItem>,
       <Divider />,
@@ -213,7 +212,7 @@ export default function ClassCooldownMenuItems(props) {
           />
         </a>
         <Translation>
-          {(t, { i18n }) => t("CooldownPlannerClassAbilities.98008")}
+          {(t) => t("CooldownPlannerClassAbilities.98008")}
         </Translation>
       </MenuItem>,
     ];
@@ -235,7 +234,7 @@ export default function ClassCooldownMenuItems(props) {
           />
         </a>
         <Translation>
-          {(t, { i18n }) => t("CooldownPlannerClassAbilities.115310")}
+          {(t) => t("CooldownPlannerClassAbilities.115310")}
         </Translation>
       </MenuItem>,
     ];
@@ -257,7 +256,7 @@ export default function ClassCooldownMenuItems(props) {
           />
         </a>
         <Translation>
-          {(t, { i18n }) => t("CooldownPlannerClassAbilities.196718")}
+          {(t) => t("CooldownPlannerClassAbilities.196718")}
         </Translation>
       </MenuItem>,
     ];
@@ -279,7 +278,7 @@ export default function ClassCooldownMenuItems(props) {
           />
         </a>
         <Translation>
-          {(t, { i18n }) => t("CooldownPlannerClassAbilities.97462")}
+          {(t) => t("CooldownPlannerClassAbilities.97462")}
         </Translation>
       </MenuItem>,
     ];
