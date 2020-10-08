@@ -2803,6 +2803,84 @@ export const conduits = [
     abilityIcon: "ability_priest_wordsofmeaning.jpg",
     name: "Power Unto Others",
   },
+
+  // Shaman
+
+  {
+    guid: 338329,
+    abilityIcon: "spell_shaman_improvedearthshield.jpg",
+    name: "Embrace of Earth",
+  },
+  {
+    guid: 338343,
+    abilityIcon: "shaman_pvp_ripplingwaters.jpg",
+    name: "Heavy Rainfall",
+  },
+  {
+    guid: 338346,
+    abilityIcon: "spell_shaman_blessingofeternals.jpg",
+    name: "Nature's Reach",
+  },
+  {
+    guid: 338339,
+    abilityIcon: "spell_holy_serendipity.jpg",
+    name: "Swirling Currents",
+  },
+  {
+    guid: 339182,
+    abilityIcon: "ability_monk_forcesphere.jpg",
+    name: "Elysian Dirge",
+  },
+  {
+    guid: 339185,
+    abilityIcon: "warlock_charredremains.jpg",
+    name: "Lavish Harvest",
+  },
+  {
+    guid: 339186,
+    abilityIcon: "spell_animamaldraxxus_wave.jpg",
+    name: "Tumbling Waves",
+  },
+  {
+    guid: 339183,
+    abilityIcon: "spell_animaardenweald_debuff.jpg",
+    name: "Essential Extraction",
+  },
+  {
+    guid: 337964,
+    abilityIcon: "ability_hunter_mastertactitian.jpg",
+    name: "Astral Protection",
+  },
+  {
+    guid: 337974,
+    abilityIcon: "ability_shaman_fortifyingwaters.jpg",
+    name: "Refreshing Waters",
+  },
+  {
+    guid: 337981,
+    abilityIcon: "ability_accretion.jpg",
+    name: "Vital Accretion",
+  },
+  {
+    guid: 338054,
+    abilityIcon: "spell_nature_removedisease.jpg",
+    name: "Crippling Hex",
+  },
+  {
+    guid: 338048,
+    abilityIcon: "spell_arcane_prismaticcloak.jpg",
+    name: "Spiritual Resonance",
+  },
+  {
+    guid: 338033,
+    abilityIcon: "ability_hunter_longevity.jpg",
+    name: "Thunderous Paws",
+  },
+  {
+    guid: 338042,
+    abilityIcon: "spell_shaman_dropall_03.jpg",
+    name: "Totemic Surge",
+  },
 ];
 
 export const soulbindAbilities = [
@@ -2928,5 +3006,383 @@ export const soulbindAbilities = [
     guid: 333950,
     abilityIcon: "ui_sigil_kyrian.jpg",
     name: "Bron's Call to Action",
+  },
+
+  // Venthyr
+  // Nadjia the Mistblade
+  {
+    guid: 331576,
+    abilityIcon: "spell_shadow_deathsembrace.jpg",
+    name: "Agent of Chaos",
+  },
+  {
+    guid: 331577,
+    abilityIcon: "ability_rogue_sprint_blue.jpg",
+    name: "Fancy Footwork",
+  },
+  {
+    guid: 331579,
+    abilityIcon: "ability_rogue_dirtydeeds.jpg",
+    name: "Friends in Low Places",
+  },
+  {
+    guid: 331580,
+    abilityIcon: "trade_brewpoison.jpg",
+    name: "Exacting Preparation",
+  },
+  {
+    guid: 331582,
+    abilityIcon: "sha_ability_rogue_bloodyeye_nightmare.jpg",
+    name: "Familiar Predicaments",
+  },
+  {
+    guid: 331584,
+    abilityIcon: "inv_tabard_duelersguild.jpg",
+    name: "Dauntless Duelist",
+  },
+  {
+    guid: 331586,
+    abilityIcon: "ability_rogue_bloodsplatter.jpg",
+    name: "Thrill Seeker",
+  },
+
+  // Theotar the Mad Duke
+
+  {
+    guid: 336140,
+    abilityIcon: "inv_raidpriestmythic_q_01boot.jpg",
+    name: "Watch the Shoes!",
+  },
+  {
+    guid: 336147,
+    abilityIcon: "spell_lifegivingspeed.jpg",
+    name: "Leisurely Gait",
+  },
+  {
+    guid: 336243,
+    abilityIcon: "inv_trinket_revendreth_01_gold.jpg",
+    name: "Refined Palate",
+  },
+  {
+    guid: 336239,
+    abilityIcon: "archaeology_5_0_umbrellaofchiji.jpg",
+    name: "Soothing Shade",
+  },
+  {
+    guid: 336245,
+    abilityIcon: "inv_misc_coin_01.jpg",
+    name: "Token of Appreciation",
+  },
+  {
+    guid: 336247,
+    abilityIcon: "achievement_halloween_smiley_01.jpg",
+    name: "Life of the Party",
+  },
+  {
+    guid: 336150,
+    abilityIcon: "trade_archaeology_queenazshara-dressinggown.jpg",
+    name: "Impeccable Style",
+  },
+  {
+    guid: 336184,
+    abilityIcon: "achievement_guildperk_bountifulbags.jpg",
+    name: "Exquisite Ingredients",
+  },
+  {
+    guid: 319983,
+    abilityIcon: "inv_drink_23.jpg",
+    name: "Wasteland Propriety",
+  },
+
+  // General Draven
+
+  {
+    guid: 332755,
+    abilityIcon: "inv_chest_mail_revendreth_d_01.jpg",
+    name: "Unbreakable Body",
+  },
+  {
+    guid: 332862,
+    abilityIcon: "spell_misc_warsongfocus.jpg",
+    name: "Expedition Leader",
+  },
+  {
+    guid: 319973,
+    abilityIcon: "ability_warrior_intensifyrage.jpg",
+    name: "Built for War",
+  },
+  {
+    guid: 332753,
+    abilityIcon: "inv_inscription_80_warscroll_battleshout.jpg",
+    name: "Superior Tactics",
+  },
+  {
+    guid: 332754,
+    abilityIcon: "achievement_bg_killxenemies_generalsroom.jpg",
+    name: "Hold Your Ground",
+  },
+  {
+    guid: 319978,
+    abilityIcon: "ability_garrosh_touch_of_yshaarj.jpg",
+    name: "Enduring Gloom",
+  },
+  {
+    guid: 319982,
+    abilityIcon: "spell_holy_prayerofhealing.jpg",
+    name: "Move As One",
+  },
+  {
+    guid: 340159,
+    abilityIcon: "inv_misc_reforgedarchstone_01.jpg",
+    name: "Service In Stone",
+  },
+
+  // Necrolord
+
+  //Plague Deviser Marileth
+
+  {
+    guid: 323074,
+    abilityIcon: "inv_misc_food_legion_gooslime_pool.jpg",
+    name: "Volatile Solvent",
+  },
+  {
+    guid: 323089,
+    abilityIcon: "inv_maldraxxusslime_red.jpg",
+    name: "Travel with Bloop",
+  },
+  {
+    guid: 323091,
+    abilityIcon: "inv_maldraxxusslime_green.jpg",
+    name: "Ooz's Frictionless Coating",
+  },
+  {
+    guid: 323090,
+    abilityIcon: "inv_maldraxxusslime_yellow.jpg",
+    name: "Plaguey's Preemptive Strike",
+  },
+  {
+    guid: 323079,
+    abilityIcon: "inv_maldraxxusslime_purple.jpg",
+    name: "Kevin's Keyring",
+  },
+  {
+    guid: 323081,
+    abilityIcon: "inv_maldraxxusslime_plague.jpg",
+    name: "Plagueborn Cleansing Slime",
+  },
+  {
+    guid: 323095,
+    abilityIcon: "spell_shadow_zdemonformgreen.jpg",
+    name: "Ultimate Form",
+  },
+
+  // Emeni, the Slaughter Daughter
+
+  {
+    guid: 323921,
+    abilityIcon: "inv_helm_crown_c_01_black.jpg",
+    name: "Emeni's Magnificent Skin",
+  },
+  {
+    guid: 341650,
+    abilityIcon: "inv_helm_crown_c_01_rose.jpg",
+    name: "Emeni's Ambulatory Flesh",
+  },
+  {
+    guid: 324440,
+    abilityIcon: "inv_pants_leather_raiddruid_j_01.jpg",
+    name: "Cartilaginous Legs",
+  },
+  {
+    guid: 324441,
+    abilityIcon: "item_alchemiststonec.jpg",
+    name: "Hearth Kidneystone",
+  },
+  {
+    guid: 323918,
+    abilityIcon: "spell_nzinsanity_leadenfoot.jpg",
+    name: "Gristled Toes",
+  },
+  {
+    guid: 323919,
+    abilityIcon: "ability_creature_poison_01.jpg",
+    name: "Gnashing Chompers",
+  },
+  {
+    guid: 323916,
+    abilityIcon: "spell_shadow_plaguecloud.jpg",
+    name: "Sulfuric Emission",
+  },
+  {
+    guid: 342156,
+    abilityIcon: "trade_archaeology_vrykul_runestick.jpg",
+    name: "Lead by Example",
+  },
+
+  // Bonesmith Heirmir
+
+  {
+    guid: 326504,
+    abilityIcon: "inv_misc_sawblade_01.jpg",
+    name: "Serrated Spaulders",
+  },
+  {
+    guid: 326507,
+    abilityIcon: "inv_cooking_80_brinyflesh.jpg",
+    name: "Resourceful Fleshcrafting",
+  },
+  {
+    guid: 326509,
+    abilityIcon: "spell_deathknight_empowerruneblade.jpg",
+    name: "Heirmir's Arsenal: Ravenous Pendant",
+  },
+  {
+    guid: 326511,
+    abilityIcon: "inv_boots_raidshaman_i_01.jpg",
+    name: "Heirmir's Arsenal: Gorestompers",
+  },
+  {
+    guid: 326572,
+    abilityIcon: "inv_misc_enchantedpearla.jpg",
+    name: "Heirmir's Arsenal: Marrowed Gemstone",
+  },
+  {
+    guid: 326512,
+    abilityIcon: "trade_archaeology_bones-of-transformation.jpg",
+    name: "Runeforged Spurs",
+  },
+  {
+    guid: 326513,
+    abilityIcon: "inv_misc_coinbag14.jpg",
+    name: "Bonesmith's Satchel",
+  },
+  {
+    guid: 326514,
+    abilityIcon: "garrison_greenarmor.jpg",
+    name: "Forgeborne Reveries",
+  },
+
+  // Night Fae
+  // Niya
+
+  {
+    guid: 342270,
+    abilityIcon: "ability_racial_runningwild.jpg",
+    name: "Run Without Tiring",
+  },
+  {
+    guid: 320658,
+    abilityIcon: "inv_misc_foot_centaur.jpg",
+    name: "Stay on the Move",
+  },
+  {
+    guid: 320659,
+    abilityIcon: "ability_rogue_trip.jpg",
+    name: "Niya's Tools: Burrs",
+  },
+  {
+    guid: 320660,
+    abilityIcon: "trade_brewpoison.jpg",
+    name: "Niya's Tools: Poison",
+  },
+  {
+    guid: 320662,
+    abilityIcon: "inv_misc_herb_arthastear_petal.jpg",
+    name: "Niya's Tools: Herbs",
+  },
+  {
+    guid: 320668,
+    abilityIcon: "inv_misc_bag_27.jpg",
+    name: "Nature's Splendor",
+  },
+  {
+    guid: 320687,
+    abilityIcon: "ability_druid_supriseattack.jpg",
+    name: "Swift Patrol",
+  },
+  {
+    guid: 322721,
+    abilityIcon: "ability_druid_manatree.jpg",
+    name: "Grove Invigoration",
+  },
+  // Dreamweaver
+
+  {
+    guid: 319191,
+    abilityIcon: "inv_misc_trailofflowers.jpg",
+    name: "Field of Blossoms",
+  },
+  {
+    guid: 319210,
+    abilityIcon: "spell_shaman_blessingofeternals.jpg",
+    name: "Social Butterfly",
+  },
+  {
+    guid: 319211,
+    abilityIcon: "spell_nature_sleep.jpg",
+    name: "Soothing Voice",
+  },
+  {
+    guid: 319213,
+    abilityIcon: "ability_druid_dreamstate.jpg",
+    name: "Empowered Chrysalis",
+  },
+  {
+    guid: 319214,
+    abilityIcon: "inv_misc_dust.jpg",
+    name: "Faerie Dust",
+  },
+  {
+    guid: 319216,
+    abilityIcon: "ability_xavius_dreamsimulacrum.jpg",
+    name: "Somnambulist",
+  },
+  {
+    guid: 319217,
+    abilityIcon: "inv_farm_herbseed.jpg",
+    name: "Podtender",
+  },
+
+  // Korayn
+  {
+    guid: 325067,
+    abilityIcon: "inv_misc_monsterhorn_05.jpg",
+    name: "Horn of the Wild Hunt",
+  },
+  {
+    guid: 325065,
+    abilityIcon: "ability_druid_dash.jpg",
+    name: "Wild Hunt's Charge",
+  },
+  {
+    guid: 325068,
+    abilityIcon: "ability_warrior_endlessrage.jpg",
+    name: "Face Your Foes",
+  },
+  {
+    guid: 325069,
+    abilityIcon: "ability_rogue_surpriseattack.jpg",
+    name: "First Strike",
+  },
+  {
+    guid: 325601,
+    abilityIcon: "spell_nature_shamanrage.jpg",
+    name: "Hold the Line",
+  },
+  {
+    guid: 325072,
+    abilityIcon: "inv_polearm_2h_heirloomspear_c_01.jpg",
+    name: "Vorkai Sharpening Techniques",
+  },
+  {
+    guid: 325073,
+    abilityIcon: "inv_misc_foot_centaur.jpg",
+    name: "Get In Formation",
+  },
+  {
+    guid: 325066,
+    abilityIcon: "ability_blackhand_marked4death.jpg",
+    name: "Wild Hunt Tactics",
   },
 ];

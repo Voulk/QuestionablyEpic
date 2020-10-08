@@ -62,6 +62,7 @@ class LogImport extends Component {
                 this.killwipe(fight.kill),
                 fight.boss,
                 fight.difficulty,
+                fight.keystoneLevel
               ]);
               this.props.close();
               this.props.update(fight.start_time, fight.end_time);

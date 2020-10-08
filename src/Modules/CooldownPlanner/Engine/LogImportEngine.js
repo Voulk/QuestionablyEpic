@@ -141,7 +141,6 @@ export default async function updatechartdata(starttime, endtime) {
         )
       )
     );
-    console.log(healerDurations)
 
   // Attempting to create a list for Custom legend to use with wowhead tooltip
   // Create Ability List With Guids for legend (Testing)

@@ -64,8 +64,8 @@ export default function abilityicons(props) {
     source = AshenHallowIcon;
     alt = "Ashen Hallow";
   }
-  if (props === 31821) {
-    spell = "spell=31821";
+  if (props === 328204) {
+    spell = "spell=328204";
     source = VanquishersHammerIcon;
     alt = "Vanquisher's Hammer";
   }

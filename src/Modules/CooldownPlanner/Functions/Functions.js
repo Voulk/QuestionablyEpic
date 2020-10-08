@@ -412,10 +412,13 @@ export function logDifficulty(dif) {
     return "Heroic";
   } else if (dif === 5) {
     return "Mythic";
+  } else if (dif === 10) {
+    return "M+";
   } else {
     return "Error: Difficulty Missing :(";
   }
 }
+
 
 // Returns Array of Healer Information
 export async function importSummaryData(starttime, endtime, reportid) {
@@ -433,7 +436,8 @@ export async function importSummaryData(starttime, endtime, reportid) {
       summary = Object.keys(result.data.playerDetails)
 
         .filter((key) => key === "healers")
-        .map((key) => result.data.playerDetails[key]).flat();
+        .map((key) => result.data.playerDetails[key])
+        .flat();
     })
     .catch(function (error) {
       console.log(error);

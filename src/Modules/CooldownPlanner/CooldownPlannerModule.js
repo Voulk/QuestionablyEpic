@@ -81,6 +81,7 @@ class HolyDiver extends Component {
       chartData: true,
       summedUnmitigatedDamagePerSecond: [],
       currentDifficulty: null,
+      currentKeystone: null,
     };
   }
 
@@ -100,6 +101,7 @@ class HolyDiver extends Component {
       killWipe: info[4],
       currentBossID: info[5],
       currentDifficulty: logDifficulty(info[6]),
+      currentKeystone: info[7],
     });
   };
 
@@ -227,6 +229,10 @@ class HolyDiver extends Component {
                               color="primary"
                             >
                               {this.state.boss} - {this.state.currentDifficulty}
+                              {this.state.currentKeystone === null ||
+                              this.state.currentKeystone === undefined
+                                ? null
+                                : this.state.currentKeystone}
                             </Typography>
                           ) : null}
                           {this.state.showname ? (
