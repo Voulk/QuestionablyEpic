@@ -24,7 +24,7 @@ export default function SimCraftInput() {
 
   return (
     <div>
-      <Button color="secondary" onClick={handleClickOpen}>
+      <Button style={{ color: "white" }} onClick={handleClickOpen}>
         SimC
       </Button>
       <Dialog

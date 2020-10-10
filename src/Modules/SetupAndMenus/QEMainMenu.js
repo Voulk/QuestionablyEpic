@@ -44,7 +44,6 @@ export default function QEMainMenu(props) {
                 style={{
                   width: "100%",
                   height: "40px",
-                  backgroundColor: "#c8b054",
                 }}
                 component={Link}
                 to={mainMenuOptions[key]}

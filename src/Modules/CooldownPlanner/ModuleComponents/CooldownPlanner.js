@@ -405,7 +405,9 @@ export default function CooldownPlanner(props) {
       },
       render: (rowData) => (
         <div>
-          {bossAbilityIcons(rowData.bossAbility)}
+          <a data-wowhead={"spell=" + rowData.bossAbility}>
+            {bossAbilityIcons(rowData.bossAbility)}
+          </a>
           {t("BossAbilities." + rowData.bossAbility)}
         </div>
       ),
@@ -490,7 +492,7 @@ export default function CooldownPlanner(props) {
 
   let curLang = (lang) => {
     if (lang === "en") {
-      return ({});
+      return {};
     } else if (lang === "ru") {
       return localizationRU;
     } else if (lang === "ch") {
