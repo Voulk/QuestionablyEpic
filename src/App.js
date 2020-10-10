@@ -21,7 +21,7 @@ import MuiAlert from "@material-ui/lab/Alert";
 const theme = createMuiTheme({
   palette: {
     type: "dark",
-    primary: { main: "#d3bc47" },
+    primary: { main: "#c8b054" },
     secondary: { main: "#e0e0e0" },
   },
 
@@ -29,16 +29,16 @@ const theme = createMuiTheme({
 
   // palette: {
   //   common: { black: "#000", white: "#fff" },
-  //   background: { paper: "rgba(53, 53, 53, 1)", default: "#fafafa" },
+  //   background: { paper: "#424242", default: "#333" },
   //   primary: {
-  //     light: "rgba(95, 95, 95, 1)",
-  //     main: "rgba(53, 53, 53, 1)",
-  //     dark: "rgba(15, 15, 15, 1)",
+  //     light: "#6d6d6d",
+  //     main: "#424242",
+  //     dark: "#1b1b1b",
   //     contrastText: "#fff",
   //   },
   //   secondary: {
-  //     light: "rgba(255, 255, 107, 1)",
-  //     main: "rgba(253, 216, 53, 1)",
+  //     light: "#ffee77",
+  //     main: "#d3bc47",
   //     dark: "rgba(198, 167, 0, 1)",
   //     contrastText: "rgba(0, 0, 0, 1)",
   //   },

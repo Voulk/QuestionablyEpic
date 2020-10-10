@@ -31,9 +31,11 @@ export default function QEHeader(props) {
             </Link>
           </Box>
           <div />
-          <Button color="secondary">{t("QeHeader.InsertLogLabel")}</Button>
+          <Button style={{ color: "white" }}>
+            {t("QeHeader.InsertLogLabel")}
+          </Button>
           <SimCraftInput />
-          <Button color="secondary" onClick={props.toggleContentType}>
+          <Button style={{ color: "white" }} onClick={props.toggleContentType}>
             {t(props.contentType)}
           </Button>
           <ProfileSelector

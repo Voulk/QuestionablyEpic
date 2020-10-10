@@ -148,7 +148,6 @@ class HolyDiver extends Component {
             {/* Grid Container for the User Input Components, With Paper as the Surface */}
             <Grid item container>
               <Paper
-                bgcolor="#333"
                 style={{
                   display: "inline-flex",
                   margin: "0px 0px 4px 0px",
@@ -156,6 +155,7 @@ class HolyDiver extends Component {
                   padding: "10px 10px 10px 10px",
                   boxShadow:
                     "0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12)",
+                  // backgroundColor: "#333"
                 }}
               >
                 {/* Grid Container for the Log Input/Fight Selection Button */}
@@ -328,59 +328,59 @@ class HolyDiver extends Component {
                 in={this.state.damageTableShow}
                 style={{ width: "100%" }}
               >
-                <Paper style={{ padding: 10 }}>
-                  <Grid
-                    item
-                    container
-                    direction="row"
-                    justify="flex-start"
-                    alignItems="flex-start"
-                    spacing={1}
-                  >
-                    <Grid item xs={3} padding={1}>
+                <Grid
+                  item
+                  container
+                  direction="row"
+                  justify="flex-start"
+                  alignItems="flex-start"
+                  spacing={1}
+                  style={{paddingLeft: "11%", paddingRight: "11%"}}
+                >
+                  <Grid item xs={4} padding={1}>
+                    <DenseAppBar
+                      onClick={this.timelineHandler}
+                      title="Cooldown Timeline"
+                    />
+                    <Collapse in={this.state.timelineshowhide}>
+                      <CooldownTimeline
+                        data={this.state.Updateddatacasts}
+                        curLang={this.props.curLang}
+                      />
+                    </Collapse>
+                  </Grid>
+
+                  <Grid item xs={4} padding={1}>
+                    <Collapse in={this.state.damageTableShow}>
                       <DenseAppBar
                         onClick={this.timelineHandler}
-                        title="Cooldown Timeline"
+                        title="Healer Talents/Legendaries"
                       />
                       <Collapse in={this.state.timelineshowhide}>
-                        <CooldownTimeline
-                          data={this.state.Updateddatacasts}
-                          curLang={this.props.curLang}
+                        <HealerInfoTable heals={this.state.healernames} />
+                      </Collapse>
+                    </Collapse>
+                  </Grid>
+
+                  <Grid item xs={4} padding={1}>
+                    <Collapse in={this.state.damageTableShow}>
+                      <DenseAppBar
+                        onClick={this.timelineHandler}
+                        title="DTPS by Ability"
+                      />
+                      <Collapse in={this.state.timelineshowhide}>
+                        <Example
+                          data={this.state.summedUnmitigatedDamagePerSecond}
                         />
                       </Collapse>
-                    </Grid>
+                    </Collapse>
+                  </Grid>
 
-                    <Grid item xs={3} padding={1}>
-                      <Collapse in={this.state.damageTableShow}>
-                        <DenseAppBar
-                          onClick={this.timelineHandler}
-                          title="Healer Talents/Legendaries"
-                        />
-                        <Collapse in={this.state.timelineshowhide}>
-                          <HealerInfoTable heals={this.state.healernames} />
-                        </Collapse>
-                      </Collapse>
-                    </Grid>
-
-                    <Grid item xs={3} padding={1}>
-                      <Collapse in={this.state.damageTableShow}>
-                        <DenseAppBar
-                          onClick={this.timelineHandler}
-                          title="DTPS by Ability"
-                        />
-                        <Collapse in={this.state.timelineshowhide}>
-                          <Example
-                            data={this.state.summedUnmitigatedDamagePerSecond}
-                          />
-                        </Collapse>
-                      </Collapse>
-                    </Grid>
-
-                    {/*
+                  {/*
                         Below is For a 4th data panel (may just remove and run 3 panels)
                     */}
 
-                    {/*
+                  {/*
                 <Grid item xs={3} padding={1}>
                   <Collapse in={this.state.damageTableShow}></Collapse>
 
@@ -406,8 +406,7 @@ class HolyDiver extends Component {
                 </Collapse>
               </Grid>
                     */}
-                  </Grid>
-                </Paper>
+                </Grid>
               </Collapse>
             </Grid>
 

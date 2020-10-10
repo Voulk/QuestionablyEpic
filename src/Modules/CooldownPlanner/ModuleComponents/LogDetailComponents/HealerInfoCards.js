@@ -52,7 +52,7 @@ export default function HealerInfoCards(props) {
             style={{
               width: "100%",
               display: "inline-flex",
-              backgroundColor: "#353535",
+              padding: 2
             }}
             raised
           >
@@ -60,12 +60,13 @@ export default function HealerInfoCards(props) {
               <Grid item xs={12}>
                 <CardContent style={{ padding: "0px 8px 0px 8px" }}>
                   <Typography
+                    variant="h6"
                     style={{
                       color: classColoursJS(key.type),
+                      textAlign: "center",
                     }}
-                    className={classes.heading}
                   >
-                    {classicons(key.icon, 16)}
+                    {classicons(key.icon, 20)}
                     {key.name}
                   </Typography>
                 </CardContent>

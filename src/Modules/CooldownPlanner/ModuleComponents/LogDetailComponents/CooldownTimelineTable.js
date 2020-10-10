@@ -17,7 +17,9 @@ import Search from "@material-ui/icons/Search";
 import ViewColumn from "@material-ui/icons/ViewColumn";
 import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import abilityicons from "../../Functions/IconFunctions/AbilityIcons.js";
-import { localizationRU, localizationCH } from "../TableLocalization.js"
+import { localizationRU, localizationCH } from "../TableLocalization.js";
+import moment from "moment";
+import { healerCooldownsDetailed } from "../../Data/Data.js";
 
 const theme = createMuiTheme({
   palette: {
@@ -82,7 +84,7 @@ const tableIcons = {
 
 let curLang = (lang) => {
   if (lang === "en") {
-      return ({});
+    return {};
   } else if (lang === "ru") {
     return localizationRU;
   } else if (lang === "ch") {
@@ -98,13 +100,78 @@ export default function CooldownTimeline(props) {
       <MaterialTable
         icons={tableIcons}
         columns={[
-          { title: "Name", field: "name" },
+          {
+            title: "Name",
+            field: "name",
+            cellStyle: {
+              whiteSpace: "nowrap",
+              borderRight: "1px solid rgb(81 81 81)",
+              padding: "0px 8px 0px 8px",
+            },
+            headerStyle: {
+              borderRight: "1px solid #6d6d6d",
+              textAlign: "center",
+            },
+          },
           {
             title: "Ability",
             field: "ability",
-            render: (rowData) => (<div>{abilityicons(rowData.guid)}{rowData.ability}</div>),
+            cellStyle: {
+              whiteSpace: "nowrap",
+              borderRight: "1px solid rgb(81 81 81)",
+              padding: "0px 8px 0px 8px",
+            },
+            headerStyle: {
+              borderRight: "1px solid #6d6d6d",
+              textAlign: "center",
+            },
+            render: (rowData) => (
+              <div>
+                {abilityicons(rowData.guid)}
+                {rowData.ability}
+              </div>
+            ),
           },
-          { title: "Time", field: "timestamp" },
+          {
+            title: "Cast",
+            field: "timestamp",
+            width: "2%",
+            cellStyle: {
+              whiteSpace: "nowrap",
+              borderRight: "1px solid rgb(81 81 81)",
+              padding: "0px 8px 0px 8px",
+            },
+            headerStyle: {
+              borderRight: "1px solid #6d6d6d",
+              textAlign: "center",
+            },
+          },
+          {
+            title: "Avail.",
+            width: "2%",
+            cellStyle: {
+              whiteSpace: "nowrap",
+              padding: "0px 8px 0px 8px",
+            },
+            headerStyle: {
+              textAlign: "center",
+            },
+            render: (rowData) => (
+              <div>
+                {moment(rowData.timestamp, "mm:ss")
+                  .add(
+                    healerCooldownsDetailed
+                      .filter((obj) => {
+                        return obj.guid === rowData.guid;
+                      })
+                      .map((obj) => obj.cooldown)
+                      .toString(),
+                    "s"
+                  )
+                  .format("mm:ss")}
+              </div>
+            ),
+          },
         ]}
         title="Timeline"
         header={true}
@@ -117,7 +184,7 @@ export default function CooldownTimeline(props) {
             "0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12)",
           fontSize: "0.8 rem",
           whiteSpace: "nowrap",
-          backgroundColor: "#353535"
+          paddingBottom: 8,
         }}
         localization={curLang(props.curLang)}
         options={{
@@ -127,15 +194,15 @@ export default function CooldownTimeline(props) {
           search: false,
           headerStyle: {
             color: "#ffffff",
-            padding: "0px 16px 0px 16px",
+            padding: "0px 8px 0px 8px",
             borderBottom: "2px solid #6d6d6d",
             fontSize: "0.8 rem",
             whiteSpace: "nowrap",
-            backgroundColor: "#353535"
+            borderRadius: "4px 0px",
           },
           cellStyle: {
             borderBottom: "1px solid #6d6d6d",
-            padding: "0px 16px 0px 16px",
+            padding: "0px 8px 0px 8px",
             fontSize: "0.8 rem",
             whiteSpace: "nowrap",
           },
@@ -154,6 +221,7 @@ export default function CooldownTimeline(props) {
           },
           actionsColumnIndex: 6,
           paging: false,
+          // tableLayout: "fixed",
         }}
       />
     </ThemeProvider>

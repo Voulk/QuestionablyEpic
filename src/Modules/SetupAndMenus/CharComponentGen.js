@@ -16,6 +16,8 @@ import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import { Grid } from "@material-ui/core";
 import FormDialog from "./CharCreator";
+import Divider from "@material-ui/core/Divider";
+import classicons from "../CooldownPlanner/Functions/IconFunctions/ClassIcons.js"
 
 // Spec Images.
 const specImages = {
@@ -58,10 +60,15 @@ const useStyles = makeStyles((theme) => ({
   details: {
     display: "flex",
     flexDirection: "column",
+    width: "100%",
+    marginTop: 10,
+    marginBottom: 5,
+    marginLeft: 5,
+    marginRight: 5,
   },
   content: {
     flex: "1 0 auto",
-    padding: "5px",
+    padding: "0px",
   },
   large: {
     width: "80px",
@@ -92,17 +99,23 @@ export default function CharCards(props) {
         <Card className={rootClassName} variant="outlined" raised={true}>
           <Avatar
             src={specImages[spec]}
-            variant="rounded"
+            variant="square"
             alt=""
             className={classes.large}
           />
+          <Divider orientation="vertical" flexItem />
           <div className={classes.details}>
             <CardContent className={classes.content}>
-              <Typography variant="h6" component="h4">
+              <Typography variant="h6" component="h4" style={{ lineHeight: 1, color: classColoursJS(spec) }}>
                 {props.name}
               </Typography>
-              <Typography style={{ color: classColoursJS(spec) }}>
+              <Typography variant="caption" style={{ fontSize: 11 }}>
+                US-Frostmourne
+              </Typography>
+              <Divider />
+              <Typography style={{ color: classColoursJS(spec), marginTop: 2 }}>
                 {spec}
+                {classicons(spec, 18)}
               </Typography>
             </CardContent>
           </div>
@@ -111,57 +124,3 @@ export default function CharCards(props) {
     </Grid>
   );
 }
-
-// TODO
-const charCreationDialog = (props) => {
-  //alert("Hello")
-  //const [open, setOpen] = React.useState(false);
-  const open = true;
-
-  const handleClickOpen = () => {
-    //setOpen(true);
-  };
-
-  const handleClose = () => {
-    //setOpen(false);
-  };
-
-  return (
-    <div>
-      <div>
-        <Button variant="outlined" color="primary" onClick={handleClickOpen}>
-          Open form dialog
-        </Button>
-        <Dialog
-          open={open}
-          onClose={handleClose}
-          aria-labelledby="form-dialog-title"
-        >
-          <DialogTitle id="form-dialog-title">Subscribe</DialogTitle>
-          <DialogContent>
-            <DialogContentText>
-              To subscribe to this website, please enter your email address
-              here. We will send updates occasionally.
-            </DialogContentText>
-            <TextField
-              autoFocus
-              margin="dense"
-              id="name"
-              label="Email Address"
-              type="email"
-              fullWidth
-            />
-          </DialogContent>
-          <DialogActions>
-            <Button onClick={handleClose} color="primary">
-              Cancel
-            </Button>
-            <Button onClick={handleClose} color="primary">
-              Subscribe
-            </Button>
-          </DialogActions>
-        </Dialog>
-      </div>
-    </div>
-  );
-};
