@@ -23,7 +23,7 @@ export default function QEMainMenu(props) {
   const { t } = useTranslation();
 
   return (
-    <div style={{ backgroundColor: "#353535" }}>
+    <div style={{ backgroundColor: "#313131" }}>
       <div
         style={{
           margin: "auto",

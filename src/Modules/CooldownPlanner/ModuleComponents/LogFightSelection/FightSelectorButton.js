@@ -24,7 +24,7 @@ export default function FightSelectorButton(props) {
         aria-haspopup="true"
         onClick={handleClick}
         variant="outlined"
-        style={{ whiteSpace: "nowrap" }}
+        style={{ whiteSpace: "nowrap", padding: "7px 15px" }}
       >
         {t("HDUserInputs.fightButtonLabel")}
       </Button>
