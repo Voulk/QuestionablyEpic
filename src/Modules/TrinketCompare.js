@@ -29,7 +29,9 @@ const trinketList = [
 export default class QEMainMenu extends Component {
   render() {
     return (
-      <div style={{ backgroundColor: "#353535" }}>
+      <div
+      // style={{ backgroundColor: "#353535" }}
+      >
         <div
           style={{
             margin: "auto",

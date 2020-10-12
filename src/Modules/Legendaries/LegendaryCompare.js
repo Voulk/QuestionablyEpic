@@ -81,7 +81,9 @@ export default function LegendaryCompare(props) {
   sortLegendaries(legendaryList);
 
   return (
-    <div style={{ backgroundColor: "#353535" }}>
+    <div
+    // style={{ backgroundColor: "#313131" }}
+    >
       <div
         style={{
           margin: "auto",

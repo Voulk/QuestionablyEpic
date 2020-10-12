@@ -136,7 +136,6 @@ export default function HealTeam(props) {
     {
       title: t("Name"),
       field: "name",
-      width: "20%",
       cellStyle: {
         whiteSpace: "nowrap",
         paddingLeft: 8,

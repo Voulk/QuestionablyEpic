@@ -262,7 +262,12 @@ export default function QuickCompare(props) {
   fillItems(activeSlot, props.pl.spec);
 
   return (
-    <div style={{ backgroundColor: "#353535", marginTop: 32 }}>
+    <div
+      style={{
+        // backgroundColor: "#313131",
+        marginTop: 32,
+      }}
+    >
       <Grid
         container
         spacing={2}
@@ -364,7 +369,7 @@ export default function QuickCompare(props) {
               </Grid>
 
               <Grid item>
-               <FormControl
+                <FormControl
                   className={classes.formControl}
                   variant="outlined"
                   size="small"
@@ -378,9 +383,7 @@ export default function QuickCompare(props) {
                     options={itemLevels}
                     openOnFocus={true}
                     getOptionLabel={(option) => option.toString()}
-                    getOptionSelected={(option, value) =>
-                      option === value
-                    }
+                    getOptionSelected={(option, value) => option === value}
                     ListboxProps={{
                       style: {
                         border: "1px solid rgba(255, 255, 255, 0.23)",

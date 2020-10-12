@@ -141,8 +141,9 @@ class HolyDiver extends Component {
 
     return (
       <div>
-        <div style={{ margin: "20px 2% 20px 2%" }}>
-          {/* Main Grid for the Compoonent, this should control the base spacing of all the base components,
+        <div style={{ margin: "20px 12% 20px 12%" }}>
+          {/*<Paper style={{ padding: 8 }}>
+             Main Grid for the Compoonent, this should control the base spacing of all the base components,
               any Grid Components within this with the item prop will have spacing  */}
           <Grid container spacing={1}>
             {/* Grid Container for the User Input Components, With Paper as the Surface */}
@@ -192,7 +193,9 @@ class HolyDiver extends Component {
               justify="flex-start"
               alignItems="flex-start"
               spacing={1}
-              style={{ display: this.state.logDetailsShow ? "block" : "none" }}
+              style={{
+                display: this.state.logDetailsShow ? "block" : "none",
+              }}
             >
               <Grid item xs={12} padding={1}>
                 <Collapse in={this.state.logDetailsShow}>
@@ -289,7 +292,9 @@ class HolyDiver extends Component {
               justify="flex-start"
               alignItems="flex-start"
               spacing={1}
-              style={{ display: this.state.damageTableShow ? "block" : "none" }}
+              style={{
+                display: this.state.damageTableShow ? "block" : "none",
+              }}
             >
               <Grid item xs={12} padding={1}>
                 <Collapse in={this.state.damageTableShow}>
@@ -322,7 +327,9 @@ class HolyDiver extends Component {
             <Grid
               item
               container
-              style={{ display: this.state.damageTableShow ? "block" : "none" }}
+              style={{
+                display: this.state.damageTableShow ? "block" : "none",
+              }}
             >
               <Collapse
                 in={this.state.damageTableShow}
@@ -335,7 +342,7 @@ class HolyDiver extends Component {
                   justify="flex-start"
                   alignItems="flex-start"
                   spacing={1}
-                  style={{paddingLeft: "11%", paddingRight: "11%"}}
+                  // style={{ paddingLeft: "11%", paddingRight: "11%" }}
                 >
                   <Grid item xs={4} padding={1}>
                     <DenseAppBar
@@ -458,29 +465,16 @@ class HolyDiver extends Component {
               spacing={1}
               margin={4}
             >
-              <Grid item xs={4} padding={1}>
-                <HealTeam curLang={this.props.curLang} />
-              </Grid>
-              <Grid item xs={8} padding={1}>
+              <Grid item xs={12} padding={1}>
                 <CooldownPlanner
                   update={this.chartCooldownUpdater}
                   curLang={this.props.curLang}
                 />
               </Grid>
-            </Grid>
-
-            {/*
-                ERT Table - This is for an easy export of the Cooldowns PLanned to paste into ERT
-            */}
-            <Grid
-              item
-              container
-              direction="row"
-              justify="flex-start"
-              alignItems="flex-start"
-              spacing={1}
-            >
-              <Grid item xs={3} padding={1}>
+              <Grid item xs={8} padding={1}>
+                <HealTeam curLang={this.props.curLang} />
+              </Grid>
+              <Grid item xs={4} padding={1}>
                 <DenseAppBar onClick={this.ertHandler} title="ERT Note" />
                 <Collapse in={this.state.ertshowhide}>
                   <ERTTable
@@ -490,7 +484,23 @@ class HolyDiver extends Component {
                 </Collapse>
               </Grid>
             </Grid>
+
+            {/*
+                ERT Table - This is for an easy export of the Cooldowns PLanned to paste into ERT
+
+              <Grid
+                item
+                container
+                direction="row"
+                justify="flex-start"
+                alignItems="flex-start"
+                spacing={1}
+              >
+                
+              </Grid>
+                          */}
           </Grid>
+          {/*  </Paper> */}
         </div>
       </div>
     );
