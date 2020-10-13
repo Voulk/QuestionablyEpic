@@ -153,35 +153,27 @@ class HolyDiver extends Component {
                   display: "inline-flex",
                   margin: "0px 0px 4px 0px",
                   borderRadius: 4,
-                  padding: "10px 10px 10px 10px",
+                  padding: "10px 10px 10px 18px",
                   boxShadow:
                     "0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12)",
+                    width: "50%"
                   // backgroundColor: "#333"
                 }}
               >
                 {/* Grid Container for the Log Input/Fight Selection Button */}
-                <Grid
-                  item
-                  container
-                  direction="row"
-                  justify="flex-start"
-                  alignItems="flex-start"
-                  spacing={1}
-                >
-                  <Grid item xs="auto" padding={1}>
+
                     <LogLinkInput
                       changed={this.reportidHandler}
                       reportid={this.state.reportid}
                     />
-                  </Grid>
-                  <Grid item xs="auto" padding={1}>
+
+
                     <FightSelectorButton
                       reportid={this.state.reportid}
                       clicky={this.handler}
                       update={this.updatechartdataNew}
                     />
-                  </Grid>
-                </Grid>
+
               </Paper>
             </Grid>
 

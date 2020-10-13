@@ -182,8 +182,8 @@ export default function abilityicons(props) {
     alt = "Fae Transfusion";
   }
   // Mistweaver Monk
-  if (props === 98008) {
-    spell = "spell=98008";
+  if (props === 115310) {
+    spell = "spell=115310";
     source = RevivalIcon;
     alt = "Revival";
   }
