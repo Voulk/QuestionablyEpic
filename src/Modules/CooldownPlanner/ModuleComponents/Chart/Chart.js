@@ -11,9 +11,7 @@ import {
 import chroma from "chroma-js";
 import "./Chart.css";
 import moment from "moment";
-import i18n from 'i18next';
-
-
+import i18n from "i18next";
 
 class Chart extends Component {
   constructor(props) {
@@ -32,7 +30,6 @@ class Chart extends Component {
       animation: true,
     };
   }
-
 
   drawAreas() {
     let abilities = this.props.abilitylist;
@@ -103,7 +100,7 @@ class Chart extends Component {
       ticks = ticks.concat(tickcount + 1000);
       tickcount = tickcount + 1000;
     }
-    return  ticks.flat() ;
+    return ticks.flat();
   };
 
   componentDidMount() {
@@ -142,10 +139,14 @@ class Chart extends Component {
         width="100%"
         aspect={4.0 / 0.7}
       >
-
         <AreaChart
-          data={this.props.dataToShow === true ? this.props.unmitigated : this.props.mitigated }
-          margin={{ top: 15, right: -30, left: 30, bottom: 0 }}
+          data={
+            this.props.dataToShow === true
+              ? this.props.unmitigated
+              : this.props.mitigated
+          }
+          margin={{ left: 22 }}
+          style={{ padding: "10px 0px 0px 15px" }}
         >
           <XAxis
             dataKey="timestamp"
@@ -162,12 +163,12 @@ class Chart extends Component {
             stroke="#f5f5f5"
             tickFormatter={DataFormater}
             label={{
-              offset: -12,
               value: i18n.t("HDChartLabels.UnmitigatedDamageLabel"),
               angle: -90,
               fill: "#f5f5f5",
               fontWeight: "bold",
-              position: "insideLeft",
+              position: "left",
+              offset: 12,
             }}
           />
           <YAxis
@@ -175,13 +176,14 @@ class Chart extends Component {
             orientation="right"
             stroke="#f5f5f5"
             tick={false}
-            domain={['"dataMin"', 5]}
+            domain={["dataMin", 5]}
           />
           <Legend
-            verticalAlign="top"
+            verticalAlign="bottom"
             iconType="square"
             iconSize={8}
             formatter={this.renderColorfulLegendText}
+            style={{ padding: 4 }}
             // payload={this.props.legendata}
           />
           <Tooltip

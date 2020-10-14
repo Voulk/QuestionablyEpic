@@ -576,7 +576,7 @@ export default function CooldownPlanner(props) {
                 <Grid item container spacing={1} xs={7} alignItems="center">
                   <Grid item xs="auto">
                     <FormControl
-                      style={{ minWidth: 200}}
+                      style={{ minWidth: 200 }}
                       variant="outlined"
                       size="small"
                     >
