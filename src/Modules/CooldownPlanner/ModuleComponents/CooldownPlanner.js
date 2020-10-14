@@ -217,7 +217,7 @@ export default function CooldownPlanner(props) {
       },
       headerStyle: {
         paddingLeft: 22,
-        borderRight: "1px solid #6d6d6d",
+        borderRight: "1px solid #515151",
         textAlign: "center",
       },
       render: (rowData) => (
@@ -265,7 +265,7 @@ export default function CooldownPlanner(props) {
       },
       headerStyle: {
         paddingLeft: 22,
-        borderRight: "1px solid #6d6d6d",
+        borderRight: "1px solid #515151",
         textAlign: "center",
       },
       render: (rowData) => (
@@ -307,7 +307,7 @@ export default function CooldownPlanner(props) {
       },
       headerStyle: {
         paddingLeft: 22,
-        borderRight: "1px solid #6d6d6d",
+        borderRight: "1px solid #515151",
         textAlign: "center",
       },
       render: (rowData) => (
@@ -346,7 +346,7 @@ export default function CooldownPlanner(props) {
       },
       headerStyle: {
         paddingLeft: 22,
-        borderRight: "1px solid #6d6d6d",
+        borderRight: "1px solid #515151",
         textAlign: "center",
       },
       editComponent: (props) => (
@@ -371,7 +371,7 @@ export default function CooldownPlanner(props) {
       },
       headerStyle: {
         paddingLeft: 22,
-        borderRight: "1px solid #6d6d6d",
+        borderRight: "1px solid #515151",
         textAlign: "center",
       },
       render: (rowData) => (
@@ -400,7 +400,7 @@ export default function CooldownPlanner(props) {
       },
       headerStyle: {
         paddingLeft: 22,
-        borderRight: "1px solid #6d6d6d",
+        borderRight: "1px solid #515151",
         textAlign: "center",
       },
       render: (rowData) => (
@@ -459,7 +459,7 @@ export default function CooldownPlanner(props) {
       },
       headerStyle: {
         paddingLeft: 22,
-        borderRight: "1px solid #6d6d6d",
+        borderRight: "1px solid #515151",
         textAlign: "center",
       },
       editComponent: (props) => (
@@ -523,21 +523,21 @@ export default function CooldownPlanner(props) {
             "0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12)",
           // fontSize: "0.8 rem",
           marginTop: 4,
+          padding: 16,
         }}
         options={{
           showTitle: false,
           searchFieldVariant: "outlined",
           headerStyle: {
-            borderTop: "2px solid #6d6d6d",
-            borderBottom: "2px solid #6d6d6d",
+            border: "1px solid #515151",
             padding: "0px 4px 0px 4px",
             whiteSpace: "nowrap",
           },
           rowStyle: {
-            borderBottom: "1px solid #6d6d6d",
+            border: "1px solid #515151",
           },
           actionCellStyle: {
-            borderBottom: "1px solid #6d6d6d",
+            borderBottom: "1px solid #515151",
           },
           actionsColumnIndex: 7,
           paging: false,
@@ -568,7 +568,7 @@ export default function CooldownPlanner(props) {
             <div>
               <Grid
                 container
-                style={{ padding: 10 }}
+                // style={{ paddingBottom: 10 }}
                 spacing={1}
                 direction="row"
                 justify="space-between"
@@ -576,7 +576,7 @@ export default function CooldownPlanner(props) {
                 <Grid item container spacing={1} xs={7} alignItems="center">
                   <Grid item xs="auto">
                     <FormControl
-                      style={{ minWidth: 200, marginLeft: 8 }}
+                      style={{ minWidth: 200}}
                       variant="outlined"
                       size="small"
                     >
@@ -587,6 +587,7 @@ export default function CooldownPlanner(props) {
                         labelId="RaidSelector"
                         value={raid}
                         onChange={handleChangeRaid}
+                        label={t("HDTableLabels.RaidSelectorLabel")}
                         MenuProps={{
                           style: { marginTop: 5 },
                           MenuListProps: {
@@ -633,6 +634,7 @@ export default function CooldownPlanner(props) {
                         labelId="BossSelector"
                         value={boss}
                         onChange={handleChangeBoss}
+                        label={t("HDTableLabels.BossSelectorLabel")}
                         MenuProps={{
                           style: { marginTop: 5 },
                           MenuListProps: {

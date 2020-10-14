@@ -70,6 +70,7 @@ const themecooldowntable = createMuiTheme({
     primary: { main: "#d3bc47" },
     secondary: { main: "#e0e0e0" },
   },
+
 });
 
 const tableIcons = {
@@ -136,14 +137,15 @@ export default function HealTeam(props) {
     {
       title: t("Name"),
       field: "name",
+      width: "16%",
       cellStyle: {
         whiteSpace: "nowrap",
         paddingLeft: 8,
-        borderRight: "1px solid rgb(81 81 81)",
+        borderRight: "1px solid #515151",
       },
       headerStyle: {
         paddingLeft: 8,
-        borderRight: "1px solid #6d6d6d",
+        borderRight: "1px solid #515151",
         textAlign: "center",
       },
       render: (rowData) => (
@@ -166,12 +168,13 @@ export default function HealTeam(props) {
     {
       title: t("Class"),
       field: "class",
+      width: 250,
       cellStyle: {
         whiteSpace: "nowrap",
         borderRight: "1px solid rgb(81 81 81)",
       },
       headerStyle: {
-        borderRight: "1px solid #6d6d6d",
+        borderRight: "1px solid #515151",
         textAlign: "center",
       },
       render: (rowData) => (
@@ -208,7 +211,7 @@ export default function HealTeam(props) {
         borderRight: "1px solid rgb(81 81 81)",
       },
       headerStyle: {
-        borderRight: "1px solid #6d6d6d",
+        borderRight: "1px solid #515151",
         textAlign: "center",
       },
       editComponent: (props) => (
@@ -256,25 +259,27 @@ export default function HealTeam(props) {
         style={{
           boxShadow:
             "0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12)",
+            padding: 16
           // fontSize: "0.8 rem",
         }}
         options={{
           search: false,
           headerStyle: {
-            borderBottom: "2px solid #6d6d6d",
-            borderTop: "2px solid #6d6d6d",
+            border: "1px solid #515151",
             padding: "0px 8px 0px 8px",
             // fontSize: "0.8 rem",
           },
           rowStyle: {
-            borderBottom: "1px solid #6d6d6d",
+            borderBottom: "1px solid #515151",
+            borderLeft: "1px solid #515151",
+            borderRight: "1px solid #515151",
           },
           searchFieldStyle: {
-            borderBottom: "1px solid #6d6d6d",
+            borderBottom: "1px solid #515151",
             color: "#ffffff",
           },
           actionCellStyle: {
-            borderBottom: "1px solid #6d6d6d",
+            borderBottom: "1px solid #515151",
           },
           actionsColumnIndex: 7,
           // tableLayout: "fixed",
