@@ -337,10 +337,10 @@ class HolyDiver extends Component {
                   // style={{ paddingLeft: "11%", paddingRight: "11%" }}
                 >
                   <Grid item xs={4} padding={1}>
-                    <DenseAppBar
+                   {/* <DenseAppBar
                       onClick={this.timelineHandler}
                       title="Cooldown Timeline"
-                    />
+                    /> */}
                     <Collapse in={this.state.timelineshowhide}>
                       <CooldownTimeline
                         data={this.state.Updateddatacasts}
@@ -467,13 +467,13 @@ class HolyDiver extends Component {
                 <HealTeam curLang={this.props.curLang} />
               </Grid>
               <Grid item xs={4} padding={1}>
-                <DenseAppBar onClick={this.ertHandler} title="ERT Note" />
-                <Collapse in={this.state.ertshowhide}>
+              {/*  <DenseAppBar onClick={this.ertHandler} title="ERT Note" />
+                <Collapse in={this.state.ertshowhide}> */}
                   <ERTTable
                     data={this.state.ertList}
                     curLang={this.props.curLang}
                   />
-                </Collapse>
+               {/* </Collapse> */}
               </Grid>
             </Grid>
 

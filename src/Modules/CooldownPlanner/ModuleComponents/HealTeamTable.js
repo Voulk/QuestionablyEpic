@@ -1,5 +1,5 @@
 import React, { forwardRef } from "react";
-import MaterialTable, { MTableToolbar } from "material-table";
+import MaterialTable, { MTableToolbar, MTableActions } from "material-table";
 import AddBox from "@material-ui/icons/AddBox";
 import ArrowDownward from "@material-ui/icons/ArrowDownward";
 import Check from "@material-ui/icons/Check";
@@ -309,23 +309,13 @@ export default function HealTeam(props) {
           paging: false,
         }}
         localization={curLang(props.curLang)}
-        // components={{
-        //   Toolbar: (props) => (
-        //     <div
-        //       style={{
-        //         display: "inline-flex",
-        //         width: "100%",
-        //       }}
-        //     >
-        //       <div style={{ marginLeft: "45%", alignSelf: "center", fontSize: 26 }}>
-        //         Healing Team{" "}
-        //       </div>
-        //       <ThemeProvider theme={SearchFieldOverride}>
-        //         <MTableToolbar {...props} sty />
-        //       </ThemeProvider>
-        //     </div>
-        //   ),
-        // }}
+        components={{
+          Actions: props => (<div>
+         <MTableActions {...props}/>
+         </div>
+        )
+        }}
+
         editable={{
           onRowAdd: (newData) =>
             new Promise((resolve, reject) => {

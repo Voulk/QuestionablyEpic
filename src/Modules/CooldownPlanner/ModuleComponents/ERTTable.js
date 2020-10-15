@@ -19,8 +19,56 @@ import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import { bossAbilities } from "../Data/Data";
 import moment from "moment";
 import { localizationRU, localizationCH } from "./TableLocalization.js";
+import { useTranslation } from "react-i18next";
 
 const theme = createMuiTheme({
+  overrides: {
+    MuiTableCell: {
+      // regular: {
+      //   padding: "0px 8px 0px 8px",
+      // },
+      root: {
+        padding: "4px 4px 4px 4px",
+      },
+    },
+    MuiIconButton: {
+      root: {
+        padding: "4px",
+      },
+    },
+    MuiToolbar: {
+      regular: {
+        minHeight: 0,
+        "@media (min-width: 600px)": {
+          minHeight: "0px",
+        },
+      },
+      root: {
+        padding: "4px 4px 4px 4px",
+      },
+    },
+  },
+  palette: {
+    type: "dark",
+    primary: { main: "#d3bc47" },
+    secondary: { main: "#e0e0e0" },
+  },
+});
+
+const SearchFieldOverride = createMuiTheme({
+  overrides: {
+    MuiOutlinedInput: {
+      input: { padding: 10 },
+    },
+    MuiToolbar: {
+      regular: {
+        minHeight: 0,
+        "@media (min-width: 600px)": {
+          minHeight: "0px",
+        },
+      },
+    },
+  },
   palette: {
     type: "dark",
     primary: { main: "#d3bc47" },
@@ -94,6 +142,7 @@ let curLang = (lang) => {
 };
 
 export default function ERTTable(props) {
+    const { t } = useTranslation();
   return (
     <ThemeProvider theme={theme}>
       <MaterialTable
@@ -114,42 +163,36 @@ export default function ERTTable(props) {
         data={props.data}
         style={{
           borderRadius: 4,
-          color: "#ffffff",
           boxShadow:
             "0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12)",
           fontSize: "0.8 rem",
           whiteSpace: "nowrap",
-          marginTop: "4px",
+          padding: 16,
         }}
         localization={curLang(props.curLang)}
         options={{
           padding: "dense",
-          showTitle: false,
-          toolbar: false,
+          toolbar: true,
           header: true,
           search: false,
           headerStyle: {
-            color: "#ffffff",
-            padding: "0px 16px 0px 16px",
-            borderBottom: "2px solid #6d6d6d",
-            fontSize: "0.8 rem",
-            whiteSpace: "nowrap",
-            borderRadius: "4px 0px",
-          },
-          cellStyle: {
-            borderBottom: "1px solid #6d6d6d",
-            padding: "0px 16px 0px 16px",
-            fontSize: "0.8 rem",
-            whiteSpace: "nowrap",
+            border: "1px solid #c8b054",
+            padding: "0px 8px 0px 8px",
+            backgroundColor: "#c8b054",
+            color: "#000",
+            // fontSize: "0.8 rem",
           },
           rowStyle: {
-            borderBottom: "1px solid #6d6d6d",
-            fontSize: "0.8 rem",
-            whiteSpace: "nowrap",
+            borderBottom: "1px solid #515151",
+            borderLeft: "1px solid #515151",
+            borderRight: "1px solid #515151",
           },
           searchFieldStyle: {
-            borderBottom: "1px solid #6d6d6d",
+            borderBottom: "1px solid #515151",
             color: "#ffffff",
+          },
+          actionCellStyle: {
+            borderBottom: "1px solid #515151",
           },
           actionsCellStyle: {
             borderBottom: "1px solid #6d6d6d",

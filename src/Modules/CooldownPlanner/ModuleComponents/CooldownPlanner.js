@@ -529,9 +529,11 @@ export default function CooldownPlanner(props) {
           showTitle: false,
           searchFieldVariant: "outlined",
           headerStyle: {
-            border: "1px solid #515151",
-            padding: "0px 4px 0px 4px",
-            whiteSpace: "nowrap",
+            border: "1px solid #c8b054",
+            padding: "0px 8px 0px 8px",
+            backgroundColor: "#c8b054",
+            color: "#000",
+            // fontSize: "0.8 rem",
           },
           rowStyle: {
             border: "1px solid #515151",
