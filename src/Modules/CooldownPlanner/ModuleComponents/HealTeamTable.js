@@ -284,6 +284,8 @@ export default function HealTeam(props) {
         }}
         options={{
           search: false,
+          showTitle: true,
+          // toolbar: false,
           // showTitle: false,
           headerStyle: {
             border: "1px solid #c8b054",
@@ -309,13 +311,20 @@ export default function HealTeam(props) {
           paging: false,
         }}
         localization={curLang(props.curLang)}
-        components={{
-          Actions: props => (<div>
-         <MTableActions {...props}/>
-         </div>
-        )
-        }}
-
+        // components={{
+        //   Toolbar: (props) => (
+        //     <div style={{ display: "inline-flex", width: "100%", justifyContent: "flex-end" }}>
+        //       <Typography color="primary" variant="h6" style={{marginRight: "45%"}}>Healing Team</Typography>
+        //       <div
+        //         style={{
+        //           height: "0px",
+        //         }}
+        //       >
+        //         <MTableToolbar {...props} />
+        //       </div>
+        //     </div>
+        //   ),
+        // }}
         editable={{
           onRowAdd: (newData) =>
             new Promise((resolve, reject) => {

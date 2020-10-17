@@ -45,7 +45,7 @@ export default function HealerInfoCards(props) {
   const classes = useStyles();
 
   return (
-    <Grid container spacing={1} style={{ display: "block", marginTop: "4px" }}>
+    <Grid container spacing={1} style={{ display: "block" }}>
       {props.heals.map((key, index) => (
         <Grid container item key={index} direction="row">
           <Card

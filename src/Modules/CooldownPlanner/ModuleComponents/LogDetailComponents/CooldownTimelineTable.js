@@ -20,10 +20,11 @@ import abilityicons from "../../Functions/IconFunctions/AbilityIcons.js";
 import { localizationRU, localizationCH } from "../TableLocalization.js";
 import moment from "moment";
 import { healerCooldownsDetailed } from "../../Data/Data.js";
+import Typography from "@material-ui/core/Typography";
 
 const theme = createMuiTheme({
-    overrides: {
-  MuiToolbar: {
+  overrides: {
+    MuiToolbar: {
       regular: {
         minHeight: 0,
         "@media (min-width: 600px)": {
@@ -197,19 +198,23 @@ export default function CooldownTimeline(props) {
             "0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12)",
           fontSize: "0.8 rem",
           whiteSpace: "nowrap",
-          padding: 8
+          padding: 8,
         }}
-
+        components={{
+          Toolbar: (props) => (
+            <Typography variant="h6" color="primary" style={{ textAlign: "center" }}>
+              Log Cooldown Timeline
+            </Typography>
+          ),
+        }}
         localization={curLang(props.curLang)}
         options={{
-
           showTitle: true,
           toolbar: true,
           header: true,
           search: false,
           headerStyle: {
             border: "1px solid #c8b054",
-            borderRadius: 4,
             padding: "0px 8px 0px 8px",
             backgroundColor: "#c8b054",
             color: "#000",
