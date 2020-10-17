@@ -142,7 +142,7 @@ let curLang = (lang) => {
 };
 
 export default function ERTTable(props) {
-    const { t } = useTranslation();
+  const { t } = useTranslation();
   return (
     <ThemeProvider theme={theme}>
       <MaterialTable

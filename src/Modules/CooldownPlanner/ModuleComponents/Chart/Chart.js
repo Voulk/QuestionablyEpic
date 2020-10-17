@@ -33,7 +33,10 @@ class Chart extends Component {
   }
 
   drawAreas() {
-    let abilities = this.props.abilitylist;
+    // Provided prop array of abilities and guids are mapped for datakeys then made into a unique array of ability names.
+    let abilities = Array.from(
+      new Set(this.props.abilitylist.map((key) => key.ability))
+    );
     let cooldowns = this.props.cooldown;
     let dataSet = abilities;
     let dataset2 = cooldowns;
@@ -52,7 +55,7 @@ class Chart extends Component {
         areaArr.push(
           <Area
             type="linear"
-            fillOpacity={0.5}
+            fillOpacity={0.9}
             dataKey={abilities[i]}
             stackId="1"
             key={abilities[i]}
@@ -104,17 +107,28 @@ class Chart extends Component {
     return ticks.flat();
   };
 
+
+  // The charts data is set here on component mount. The data is passed from the CooldownPlannerModule.
   componentDidMount() {
     this.setState({ data: this.props.chart });
   }
 
-  // WIP to make custom legend items with wowhead hover.
+  // The charts legend is generated here from the charts entries, and is matched with the provided ability list prop to return a matching guid for the wowhead tooltip
   renderColorfulLegendText = (value, entry) => {
-    // console.log({ value, entry });
+    console.log({ value, entry });
     return (
-      // <a data-wowhead={"spell=" + id}>
-      <span style={{ fontSize: "0.7rem" }}>{value}</span>
-      // </a>
+      <a
+        data-wowhead={
+          "spell=" +
+          this.props.abilitylist
+            .filter((obj) => {
+              return obj.ability === value;
+            })
+            .map((obj) => obj.guid)
+        }
+      >
+        <span style={{ fontSize: "0.7rem" }}>{value}</span>
+      </a>
     );
   };
 
@@ -185,7 +199,10 @@ class Chart extends Component {
               iconType="square"
               iconSize={8}
               formatter={this.renderColorfulLegendText}
-              wrapperStyle={{ padding: 2, border: "1px solid rgba(255, 255, 255, 0.5)" }}
+              wrapperStyle={{
+                padding: 2,
+                border: "1px solid rgba(255, 255, 255, 0.5)",
+              }}
               width="97%"
               margin={{ right: 44 }}
 

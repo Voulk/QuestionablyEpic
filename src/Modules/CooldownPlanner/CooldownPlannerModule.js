@@ -31,7 +31,7 @@ import chartCooldownUpdater from "./Engine/UserCooldownChartEngine.js";
 class HolyDiver extends Component {
   constructor(props) {
     super();
-    // Jere we bind the below functions to this Component.
+    // We bind the below functions to this Component.
     // This means these functions can be passed as props to other components and they will return here rather than in the component they are sent to.
     this.reportidHandler = this.reportidHandler.bind(this);
     this.damageTableShow = this.damageTableShow.bind(this);
@@ -41,7 +41,7 @@ class HolyDiver extends Component {
     this.chartCooldownUpdater = chartCooldownUpdater.bind(this);
     this.ertHandler = this.ertHandler.bind(this);
     this.timelineHandler = this.timelineHandler.bind(this);
-    // Here we set our state for the cooldown Planner Module.
+    // We set our state for the cooldown Planner Module.
     this.state = {
       currentBossID: null,
       unmitigatedChartData: [],
