@@ -45,20 +45,32 @@ export default function HealerInfoCards(props) {
   const classes = useStyles();
 
   return (
-    <Grid container spacing={1} style={{ display: "block", marginTop: "4px" }}>
+    <Grid container spacing={1} style={{ display: "block" }}>
       {props.heals.map((key, index) => (
         <Grid container item key={index} direction="row">
           <Card
             style={{
               width: "100%",
               display: "inline-flex",
-              padding: 2
+              padding: 2,
             }}
             raised
           >
-            <Grid container item justify="center" style={{ margin: 4 }}>
+            <Grid
+              container
+              item
+              justify="center"
+              style={{ margin: 4 }}
+              spacing={1}
+            >
               <Grid item xs={12}>
-                <CardContent style={{ padding: "0px 8px 0px 8px" }}>
+                <CardContent
+                  style={{
+                    padding: "0px 8px 0px 8px",
+                    border: "1px solid rgba(255, 255, 255, 0.12)",
+                    // backgroundColor: "#c8b054"
+                  }}
+                >
                   <Typography
                     variant="h6"
                     style={{
@@ -80,8 +92,13 @@ export default function HealerInfoCards(props) {
                   justifyContent: "space-evenly",
                 }}
               >
-                <CardContent style={{ padding: "2px 8px 2px 8px" }}>
-                  <Divider />
+                <CardContent
+                  style={{
+                    padding: "2px 8px 2px 8px",
+                    border: "1px solid rgba(255, 255, 255, 0.12)",
+                    width: "100%",
+                  }}
+                >
                   <Typography className={classes.heading} color="primary">
                     {t("HDAccordianTitles.StatsHeading")}
                   </Typography>
@@ -89,29 +106,50 @@ export default function HealerInfoCards(props) {
                   {key.stats.map((stats, i) => (
                     <div key={i}>
                       <Typography
-                        style={{ textAlign: "center", whiteSpace: "nowrap" }}
+                        style={{
+                          textAlign: "center",
+                          whiteSpace: "nowrap",
+                          fontSize: 14,
+                        }}
                       >
-                        {t("HDAccordianTitles.Item Level")} {stats.ilvl}
+                        {t("HDAccordianTitles.Item Level")}: {stats.ilvl}
                       </Typography>
                       <Typography
-                        style={{ textAlign: "center", whiteSpace: "nowrap" }}
+                        style={{
+                          textAlign: "center",
+                          whiteSpace: "nowrap",
+                          fontSize: 14,
+                        }}
                       >
-                        {t("HDAccordianTitles.Crit")} {stats.crit}
+                        {t("HDAccordianTitles.Crit")}: {stats.crit}
                       </Typography>
                       <Typography
-                        style={{ textAlign: "center", whiteSpace: "nowrap" }}
+                        style={{
+                          textAlign: "center",
+                          whiteSpace: "nowrap",
+                          fontSize: 14,
+                        }}
                       >
-                        {t("HDAccordianTitles.Haste")} {stats.haste}
+                        {t("HDAccordianTitles.Haste")}: {stats.haste}
                       </Typography>
                       <Typography
-                        style={{ textAlign: "center", whiteSpace: "nowrap" }}
+                        style={{
+                          textAlign: "center",
+                          whiteSpace: "nowrap",
+                          fontSize: 14,
+                        }}
                       >
-                        {t("HDAccordianTitles.Mastery")} {stats.mastery}
+                        {t("HDAccordianTitles.Mastery")}: {stats.mastery}
                       </Typography>
                       <Typography
-                        style={{ textAlign: "center", whiteSpace: "nowrap" }}
+                        style={{
+                          textAlign: "center",
+                          whiteSpace: "nowrap",
+                          fontSize: 14,
+                        }}
                       >
-                        {t("HDAccordianTitles.Versatility")} {stats.versatility}
+                        {t("HDAccordianTitles.Versatility")}:{" "}
+                        {stats.versatility}
                       </Typography>
                     </div>
                   ))}
@@ -131,9 +169,11 @@ export default function HealerInfoCards(props) {
                     style={{
                       padding: "2px 8px 0px 8px",
                       textAlignLast: "center",
+                      borderTop: "1px solid rgba(255, 255, 255, 0.12)",
+                      borderLeft: "1px solid rgba(255, 255, 255, 0.12)",
+                      borderRight: "1px solid rgba(255, 255, 255, 0.12)",
                     }}
                   >
-                    <Divider />
                     <Typography className={classes.heading} color="primary">
                       {t("HDAccordianTitles.TalentHeader")}
                     </Typography>
@@ -155,9 +195,12 @@ export default function HealerInfoCards(props) {
                     style={{
                       padding: "2px 8px 0px 8px",
                       textAlignLast: "center",
+
+                      borderTop: "1px solid rgba(255, 255, 255, 0.12)",
+                      borderLeft: "1px solid rgba(255, 255, 255, 0.12)",
+                      borderRight: "1px solid rgba(255, 255, 255, 0.12)",
                     }}
                   >
-                    <Divider />
                     <Typography
                       className={classes.heading}
                       color="primary"
@@ -196,9 +239,9 @@ export default function HealerInfoCards(props) {
                     style={{
                       padding: "2px 8px 0px 8px",
                       textAlignLast: "center",
+                      border: "1px solid rgba(255, 255, 255, 0.12)",
                     }}
                   >
-                    <Divider />
                     <Typography className={classes.heading} color="primary">
                       {t("HDAccordianTitles.SoulbindConduits")}
                     </Typography>

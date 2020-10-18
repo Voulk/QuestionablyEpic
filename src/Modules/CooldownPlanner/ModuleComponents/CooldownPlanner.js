@@ -235,6 +235,7 @@ export default function CooldownPlanner(props) {
             <InputLabel id="HealerSelector">{t("Name")}</InputLabel>
             <Select
               value={props.value}
+                                      label={t("Name")}
               labelId="HealerSelector"
               onChange={(e) => {
                 props.onChange(e.target.value);
@@ -285,6 +286,7 @@ export default function CooldownPlanner(props) {
             <Select
               value={props.value}
               labelId="ClassSelector"
+               label={t("Class")}
               onChange={(e) => {
                 props.onChange(e.target.value);
                 wowClass = e.target.value;
@@ -326,6 +328,7 @@ export default function CooldownPlanner(props) {
           <Select
             value={props.value}
             labelId="HealerAbilitySelector"
+            label={t("Cooldown")}
             onChange={(e) => {
               props.onChange(e.target.value);
             }}
@@ -424,6 +427,7 @@ export default function CooldownPlanner(props) {
             <Select
               value={props.value}
               labelId="BossAbilitySelector"
+              label={t("HDTableLabels.BossAbilityLabel")}
               onChange={(e) => {
                 props.onChange(e.target.value);
               }}
@@ -464,6 +468,8 @@ export default function CooldownPlanner(props) {
       },
       editComponent: (props) => (
         <TextField
+        style={{width: "100%"}}
+        
           size="small"
           variant="outlined"
           id="standard-basic"
@@ -522,16 +528,17 @@ export default function CooldownPlanner(props) {
           boxShadow:
             "0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12)",
           // fontSize: "0.8 rem",
-          marginTop: 4,
           padding: 16,
         }}
         options={{
           showTitle: false,
           searchFieldVariant: "outlined",
           headerStyle: {
-            border: "1px solid #515151",
-            padding: "0px 4px 0px 4px",
-            whiteSpace: "nowrap",
+            border: "1px solid #c8b054",
+            padding: "0px 8px 0px 8px",
+            backgroundColor: "#c8b054",
+            color: "#000",
+            // fontSize: "0.8 rem",
           },
           rowStyle: {
             border: "1px solid #515151",
@@ -576,7 +583,7 @@ export default function CooldownPlanner(props) {
                 <Grid item container spacing={1} xs={7} alignItems="center">
                   <Grid item xs="auto">
                     <FormControl
-                      style={{ minWidth: 200}}
+                      style={{ minWidth: 200 }}
                       variant="outlined"
                       size="small"
                     >

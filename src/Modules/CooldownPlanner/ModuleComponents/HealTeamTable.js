@@ -1,5 +1,5 @@
 import React, { forwardRef } from "react";
-import MaterialTable from "material-table";
+import MaterialTable, { MTableToolbar, MTableActions } from "material-table";
 import AddBox from "@material-ui/icons/AddBox";
 import ArrowDownward from "@material-ui/icons/ArrowDownward";
 import Check from "@material-ui/icons/Check";
@@ -15,7 +15,7 @@ import Remove from "@material-ui/icons/Remove";
 import SaveAlt from "@material-ui/icons/SaveAlt";
 import Search from "@material-ui/icons/Search";
 import ViewColumn from "@material-ui/icons/ViewColumn";
-import { Select } from "@material-ui/core";
+import { Select, Typography } from "@material-ui/core";
 import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import InputLabel from "@material-ui/core/InputLabel";
@@ -70,7 +70,27 @@ const themecooldowntable = createMuiTheme({
     primary: { main: "#d3bc47" },
     secondary: { main: "#e0e0e0" },
   },
+});
 
+const SearchFieldOverride = createMuiTheme({
+  overrides: {
+    MuiOutlinedInput: {
+      input: { padding: 10 },
+    },
+    MuiToolbar: {
+      regular: {
+        minHeight: 0,
+        "@media (min-width: 600px)": {
+          minHeight: "0px",
+        },
+      },
+    },
+  },
+  palette: {
+    type: "dark",
+    primary: { main: "#d3bc47" },
+    secondary: { main: "#e0e0e0" },
+  },
 });
 
 const tableIcons = {
@@ -239,7 +259,7 @@ export default function HealTeam(props) {
 
   let curLang = (lang) => {
     if (lang === "en") {
-      return ({});
+      return {};
     } else if (lang === "ru") {
       return localizationRU;
     } else if (lang === "ch") {
@@ -259,14 +279,19 @@ export default function HealTeam(props) {
         style={{
           boxShadow:
             "0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12)",
-            padding: 16
+          padding: 16,
           // fontSize: "0.8 rem",
         }}
         options={{
           search: false,
+          showTitle: true,
+          // toolbar: false,
+          // showTitle: false,
           headerStyle: {
-            border: "1px solid #515151",
+            border: "1px solid #c8b054",
             padding: "0px 8px 0px 8px",
+            backgroundColor: "#c8b054",
+            color: "#000",
             // fontSize: "0.8 rem",
           },
           rowStyle: {
@@ -286,6 +311,20 @@ export default function HealTeam(props) {
           paging: false,
         }}
         localization={curLang(props.curLang)}
+        // components={{
+        //   Toolbar: (props) => (
+        //     <div style={{ display: "inline-flex", width: "100%", justifyContent: "flex-end" }}>
+        //       <Typography color="primary" variant="h6" style={{marginRight: "45%"}}>Healing Team</Typography>
+        //       <div
+        //         style={{
+        //           height: "0px",
+        //         }}
+        //       >
+        //         <MTableToolbar {...props} />
+        //       </div>
+        //     </div>
+        //   ),
+        // }}
         editable={{
           onRowAdd: (newData) =>
             new Promise((resolve, reject) => {

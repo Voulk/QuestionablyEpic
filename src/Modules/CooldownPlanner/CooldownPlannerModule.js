@@ -31,7 +31,7 @@ import chartCooldownUpdater from "./Engine/UserCooldownChartEngine.js";
 class HolyDiver extends Component {
   constructor(props) {
     super();
-    // Jere we bind the below functions to this Component.
+    // We bind the below functions to this Component.
     // This means these functions can be passed as props to other components and they will return here rather than in the component they are sent to.
     this.reportidHandler = this.reportidHandler.bind(this);
     this.damageTableShow = this.damageTableShow.bind(this);
@@ -41,7 +41,7 @@ class HolyDiver extends Component {
     this.chartCooldownUpdater = chartCooldownUpdater.bind(this);
     this.ertHandler = this.ertHandler.bind(this);
     this.timelineHandler = this.timelineHandler.bind(this);
-    // Here we set our state for the cooldown Planner Module.
+    // We set our state for the cooldown Planner Module.
     this.state = {
       currentBossID: null,
       unmitigatedChartData: [],
@@ -156,24 +156,22 @@ class HolyDiver extends Component {
                   padding: "10px 10px 10px 18px",
                   boxShadow:
                     "0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12)",
-                    width: "50%"
+                  width: "50%",
                   // backgroundColor: "#333"
                 }}
               >
                 {/* Grid Container for the Log Input/Fight Selection Button */}
 
-                    <LogLinkInput
-                      changed={this.reportidHandler}
-                      reportid={this.state.reportid}
-                    />
+                <LogLinkInput
+                  changed={this.reportidHandler}
+                  reportid={this.state.reportid}
+                />
 
-
-                    <FightSelectorButton
-                      reportid={this.state.reportid}
-                      clicky={this.handler}
-                      update={this.updatechartdataNew}
-                    />
-
+                <FightSelectorButton
+                  reportid={this.state.reportid}
+                  clicky={this.handler}
+                  update={this.updatechartdataNew}
+                />
               </Paper>
             </Grid>
 
@@ -337,42 +335,42 @@ class HolyDiver extends Component {
                   // style={{ paddingLeft: "11%", paddingRight: "11%" }}
                 >
                   <Grid item xs={4} padding={1}>
-                    <DenseAppBar
+                    {/* <DenseAppBar
                       onClick={this.timelineHandler}
                       title="Cooldown Timeline"
+                    /> */}
+                    {/* <Collapse in={this.state.timelineshowhide}> */}
+                    <CooldownTimeline
+                      data={this.state.Updateddatacasts}
+                      curLang={this.props.curLang}
                     />
-                    <Collapse in={this.state.timelineshowhide}>
-                      <CooldownTimeline
-                        data={this.state.Updateddatacasts}
-                        curLang={this.props.curLang}
-                      />
-                    </Collapse>
+                    {/* </Collapse> */}
                   </Grid>
 
                   <Grid item xs={4} padding={1}>
-                    <Collapse in={this.state.damageTableShow}>
-                      <DenseAppBar
+                    {/*  <Collapse in={this.state.damageTableShow}>*/}
+                    {/* <DenseAppBar
                         onClick={this.timelineHandler}
                         title="Healer Talents/Legendaries"
-                      />
-                      <Collapse in={this.state.timelineshowhide}>
-                        <HealerInfoTable heals={this.state.healernames} />
-                      </Collapse>
-                    </Collapse>
+                      /> */}
+                    {/*    <Collapse in={this.state.timelineshowhide}> */}
+                    <HealerInfoTable heals={this.state.healernames} />
+                    {/*    </Collapse> */}
+                    {/*   </Collapse>*/}
                   </Grid>
 
                   <Grid item xs={4} padding={1}>
-                    <Collapse in={this.state.damageTableShow}>
+                    {/*  <Collapse in={this.state.damageTableShow}>
                       <DenseAppBar
                         onClick={this.timelineHandler}
                         title="DTPS by Ability"
                       />
-                      <Collapse in={this.state.timelineshowhide}>
-                        <Example
-                          data={this.state.summedUnmitigatedDamagePerSecond}
-                        />
-                      </Collapse>
-                    </Collapse>
+                      <Collapse in={this.state.timelineshowhide}> */}
+                    <Example
+                      data={this.state.summedUnmitigatedDamagePerSecond}
+                    />
+                    {/* </Collapse>*/}
+                    {/* </Collapse>*/}
                   </Grid>
 
                   {/*
@@ -467,13 +465,13 @@ class HolyDiver extends Component {
                 <HealTeam curLang={this.props.curLang} />
               </Grid>
               <Grid item xs={4} padding={1}>
-                <DenseAppBar onClick={this.ertHandler} title="ERT Note" />
-                <Collapse in={this.state.ertshowhide}>
-                  <ERTTable
-                    data={this.state.ertList}
-                    curLang={this.props.curLang}
-                  />
-                </Collapse>
+                {/*  <DenseAppBar onClick={this.ertHandler} title="ERT Note" />
+                <Collapse in={this.state.ertshowhide}> */}
+                <ERTTable
+                  data={this.state.ertList}
+                  curLang={this.props.curLang}
+                />
+                {/* </Collapse> */}
               </Grid>
             </Grid>
 

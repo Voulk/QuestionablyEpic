@@ -20,8 +20,23 @@ import abilityicons from "../../Functions/IconFunctions/AbilityIcons.js";
 import { localizationRU, localizationCH } from "../TableLocalization.js";
 import moment from "moment";
 import { healerCooldownsDetailed } from "../../Data/Data.js";
+import Typography from "@material-ui/core/Typography";
+import Divider from "@material-ui/core/Divider";
 
 const theme = createMuiTheme({
+  overrides: {
+    MuiToolbar: {
+      regular: {
+        minHeight: 0,
+        "@media (min-width: 600px)": {
+          minHeight: "0px",
+        },
+      },
+      root: {
+        padding: "4px 4px 4px 4px",
+      },
+    },
+  },
   palette: {
     type: "dark",
     primary: { main: "#d3bc47" },
@@ -107,10 +122,12 @@ export default function CooldownTimeline(props) {
               whiteSpace: "nowrap",
               borderRight: "1px solid rgb(81 81 81)",
               padding: "0px 8px 0px 8px",
+              fontSize: 14
             },
             headerStyle: {
               borderRight: "1px solid #6d6d6d",
               textAlign: "center",
+              fontSize: 14
             },
           },
           {
@@ -120,10 +137,12 @@ export default function CooldownTimeline(props) {
               whiteSpace: "nowrap",
               borderRight: "1px solid rgb(81 81 81)",
               padding: "0px 8px 0px 8px",
+              fontSize: 14
             },
             headerStyle: {
               borderRight: "1px solid #6d6d6d",
               textAlign: "center",
+              fontSize: 14
             },
             render: (rowData) => (
               <div>
@@ -140,10 +159,12 @@ export default function CooldownTimeline(props) {
               whiteSpace: "nowrap",
               borderRight: "1px solid rgb(81 81 81)",
               padding: "0px 8px 0px 8px",
+              fontSize: 14
             },
             headerStyle: {
               borderRight: "1px solid #6d6d6d",
               textAlign: "center",
+              fontSize: 14
             },
           },
           {
@@ -152,9 +173,11 @@ export default function CooldownTimeline(props) {
             cellStyle: {
               whiteSpace: "nowrap",
               padding: "0px 8px 0px 8px",
+              fontSize: 14
             },
             headerStyle: {
               textAlign: "center",
+              fontSize: 14
             },
             render: (rowData) => (
               <div>
@@ -177,39 +200,43 @@ export default function CooldownTimeline(props) {
         header={true}
         data={props.data}
         style={{
-          marginTop: "8px",
+          // marginTop: "8px",
           borderRadius: 4,
           color: "#ffffff",
           boxShadow:
             "0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12)",
           fontSize: "0.8 rem",
           whiteSpace: "nowrap",
-          paddingBottom: 8,
+          padding: 8,
+        }}
+        components={{
+          Toolbar: (props) => (
+            <div style={{marginBottom: 8}}>
+            <Divider/>
+            <Typography variant="body2" color="primary" style={{ textAlign: "center" }}>
+              Log Cooldown Timeline
+            </Typography>
+            <Divider/>
+            </div>
+          ),
         }}
         localization={curLang(props.curLang)}
         options={{
-          showTitle: false,
-          toolbar: false,
+          showTitle: true,
+          toolbar: true,
           header: true,
           search: false,
           headerStyle: {
-            color: "#ffffff",
+            border: "1px solid #c8b054",
             padding: "0px 8px 0px 8px",
-            borderBottom: "2px solid #6d6d6d",
-            fontSize: "0.8 rem",
-            whiteSpace: "nowrap",
-            borderRadius: "4px 0px",
-          },
-          cellStyle: {
-            borderBottom: "1px solid #6d6d6d",
-            padding: "0px 8px 0px 8px",
-            fontSize: "0.8 rem",
-            whiteSpace: "nowrap",
+            backgroundColor: "#c8b054",
+            color: "#000",
+            // fontSize: "0.8 rem",
           },
           rowStyle: {
-            borderBottom: "1px solid #6d6d6d",
-            fontSize: "0.8 rem",
-            whiteSpace: "nowrap",
+            borderBottom: "1px solid #515151",
+            borderLeft: "1px solid #515151",
+            borderRight: "1px solid #515151",
           },
           searchFieldStyle: {
             borderBottom: "1px solid #6d6d6d",

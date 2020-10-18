@@ -9,6 +9,9 @@ import WarriorIcon from "../../../../Images/Classes/Warrior/WarriorIcon.jpg";
 import DemonHunterIcon from "../../../../Images/Classes/DemonHunter/DemonHunterIcon.jpg";
 
 export default function classicons(props, iconsize) {
+  let src = "";
+  let alt = "";
+
   // Paladin Cooldowns
   if (
     props === "HolyPaladin" ||
@@ -16,18 +19,8 @@ export default function classicons(props, iconsize) {
     props === "Paladin-Holy" ||
     props === "Paladin"
   ) {
-    return (
-      <img
-        style={{
-          height: iconsize,
-          width: iconsize,
-          padding: "0px 5px 0px 5px",
-          verticalAlign: "middle",
-        }}
-        src={HolyPaladinIcon}
-        alt="Holy Paladin"
-      />
-    );
+    src = HolyPaladinIcon;
+    alt = "Holy Paladin";
   }
 
   // Restoration Druid
@@ -37,18 +30,8 @@ export default function classicons(props, iconsize) {
     props === "Druid-Restoration" ||
     props === "Druid"
   ) {
-    return (
-      <img
-        style={{
-          height: iconsize,
-          width: iconsize,
-          padding: "0px 5px 0px 5px",
-          verticalAlign: "middle",
-        }}
-        src={RestorationDruidIcon}
-        alt="Restoration Druid"
-      />
-    );
+    src = RestorationDruidIcon;
+    alt = "Restoration Druid";
   }
 
   // Holy Priest
@@ -58,37 +41,18 @@ export default function classicons(props, iconsize) {
     props === "Priest-Holy" ||
     props === "Priest"
   ) {
-    return (
-      <img
-        style={{
-          height: iconsize,
-          width: iconsize,
-          padding: "0px 5px 0px 5px",
-          verticalAlign: "middle",
-        }}
-        src={HolyPriestIcon}
-        alt="Holy Priest"
-      />
-    );
+    src = HolyPriestIcon;
+    alt = "Holy Priest";
   }
 
   // Discipline Priest
   if (
     props === "DiscisplinePriest" ||
     props === "Discispline Priest" ||
-    props === "Priest-Discipline") {
-    return (
-      <img
-        style={{
-          height: iconsize,
-          width: iconsize,
-          padding: "0px 5px 0px 5px",
-          verticalAlign: "middle",
-        }}
-        src={DiscPriestIcon}
-        alt="Discispline Priest"
-      />
-    );
+    props === "Priest-Discipline"
+  ) {
+    src = DiscPriestIcon;
+    alt = "Discispline Priest";
   }
 
   // Restoration Shaman
@@ -98,18 +62,8 @@ export default function classicons(props, iconsize) {
     props === "Shaman-Restoration" ||
     props === "Shaman"
   ) {
-    return (
-      <img
-        style={{
-          height: iconsize,
-          width: iconsize,
-          padding: "0px 5px 0px 5px",
-          verticalAlign: "middle",
-        }}
-        src={RestorationShamanIcon}
-        alt="Restoration Shaman"
-      />
-    );
+    src = RestorationShamanIcon;
+    alt = "Restoration Shaman";
   }
 
   // Mistweaver Monk
@@ -119,52 +73,32 @@ export default function classicons(props, iconsize) {
     props === "Monk-Mistweaver" ||
     props === "Monk"
   ) {
-    return (
-      <img
-        style={{
-          height: iconsize,
-          width: iconsize,
-          padding: "0px 5px 0px 5px",
-          verticalAlign: "middle",
-        }}
-        src={MistweaverIcon}
-        alt="Mistweaver Monk"
-      />
-    );
+    src = MistweaverIcon;
+    alt = "Mistweaver Monk";
   }
 
   // Warrior
   if (props === "Warrior") {
-    return (
-      <img
-        style={{
-          height: iconsize,
-          width: iconsize,
-          padding: "0px 5px 0px 5px",
-          verticalAlign: "middle",
-        }}
-        src={WarriorIcon}
-        alt="Warrior"
-      />
-    );
+    src = WarriorIcon;
+    alt = "Warrior";
   }
 
   // Demon Hunter
-  if (
-    props === "HavocDemonHunter" ||
-    props === "Havoc Demon Hunter"
-    ) {
-    return (
-      <img
-        style={{
-          height: iconsize,
-          width: iconsize,
-          padding: "0px 5px 0px 5px",
-          verticalAlign: "middle",
-        }}
-        src={DemonHunterIcon}
-        alt="Havoc Demon Hunter"
-      />
-    );
+  if (props === "HavocDemonHunter" || props === "Havoc Demon Hunter") {
+    src = { DemonHunterIcon };
+    alt = "Havoc Demon Hunter";
   }
+
+  return (
+    <img
+      style={{
+        height: iconsize,
+        width: iconsize,
+        padding: "0px 5px 0px 5px",
+        verticalAlign: "middle",
+      }}
+      src={src}
+      alt={alt}
+    />
+  );
 }

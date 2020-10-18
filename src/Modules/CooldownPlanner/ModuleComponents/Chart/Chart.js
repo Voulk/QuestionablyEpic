@@ -11,9 +11,8 @@ import {
 import chroma from "chroma-js";
 import "./Chart.css";
 import moment from "moment";
-import i18n from 'i18next';
-
-
+import i18n from "i18next";
+import { Paper } from "@material-ui/core";
 
 class Chart extends Component {
   constructor(props) {
@@ -33,9 +32,11 @@ class Chart extends Component {
     };
   }
 
-
   drawAreas() {
-    let abilities = this.props.abilitylist;
+    // Provided prop array of abilities and guids are mapped for datakeys then made into a unique array of ability names.
+    let abilities = Array.from(
+      new Set(this.props.abilitylist.map((key) => key.ability))
+    );
     let cooldowns = this.props.cooldown;
     let dataSet = abilities;
     let dataset2 = cooldowns;
@@ -54,7 +55,7 @@ class Chart extends Component {
         areaArr.push(
           <Area
             type="linear"
-            fillOpacity={0.5}
+            fillOpacity={0.9}
             dataKey={abilities[i]}
             stackId="1"
             key={abilities[i]}
@@ -103,20 +104,31 @@ class Chart extends Component {
       ticks = ticks.concat(tickcount + 1000);
       tickcount = tickcount + 1000;
     }
-    return  ticks.flat() ;
+    return ticks.flat();
   };
 
+
+  // The charts data is set here on component mount. The data is passed from the CooldownPlannerModule.
   componentDidMount() {
     this.setState({ data: this.props.chart });
   }
 
-  // WIP to make custom legend items with wowhead hover.
+  // The charts legend is generated here from the charts entries, and is matched with the provided ability list prop to return a matching guid for the wowhead tooltip
   renderColorfulLegendText = (value, entry) => {
-    // console.log({ value, entry });
+    console.log({ value, entry });
     return (
-      // <a data-wowhead={"spell=" + id}>
-      <span style={{ fontSize: "0.7rem" }}>{value}</span>
-      // </a>
+      <a
+        data-wowhead={
+          "spell=" +
+          this.props.abilitylist
+            .filter((obj) => {
+              return obj.ability === value;
+            })
+            .map((obj) => obj.guid)
+        }
+      >
+        <span style={{ fontSize: "0.7rem" }}>{value}</span>
+      </a>
     );
   };
 
@@ -137,64 +149,77 @@ class Chart extends Component {
     };
 
     return (
-      <ResponsiveContainer
-        className="ResponsiveContainer"
-        width="100%"
-        aspect={4.0 / 0.7}
-      >
-
-        <AreaChart
-          data={this.props.dataToShow === true ? this.props.unmitigated : this.props.mitigated }
-          margin={{ top: 15, right: -30, left: 30, bottom: 0 }}
+      <Paper style={{ padding: 10 }}>
+        <ResponsiveContainer
+          className="ResponsiveContainer"
+          // width="100%"
+          aspect={4 / 0.8}
         >
-          <XAxis
-            dataKey="timestamp"
-            scale="time"
-            ticks={this.customticks(this.props.endtime)}
-            type="number"
-            tickFormatter={(timeStr) => moment(timeStr).format("mm:ss")}
-            stroke="#f5f5f5"
-            domain={[0, this.props.timeend]}
-          />
-          <YAxis
-            yAxisId="1"
-            mirror={true}
-            stroke="#f5f5f5"
-            tickFormatter={DataFormater}
-            label={{
-              offset: -12,
-              value: i18n.t("HDChartLabels.UnmitigatedDamageLabel"),
-              angle: -90,
-              fill: "#f5f5f5",
-              fontWeight: "bold",
-              position: "insideLeft",
-            }}
-          />
-          <YAxis
-            yAxisId="2"
-            orientation="right"
-            stroke="#f5f5f5"
-            tick={false}
-            domain={['"dataMin"', 5]}
-          />
-          <Legend
-            verticalAlign="top"
-            iconType="square"
-            iconSize={8}
-            formatter={this.renderColorfulLegendText}
-            // payload={this.props.legendata}
-          />
-          <Tooltip
-            labelStyle={{ color: "#ffffff" }}
-            contentStyle={{
-              backgroundColor: "#1b1b1b",
-              border: "1px solid #1b1b1b",
-            }}
-            labelFormatter={(timeStr) => moment(timeStr).format("mm:ss")}
-          />
-          {this.drawAreas()}
-        </AreaChart>
-      </ResponsiveContainer>
+          <AreaChart
+            data={
+              this.props.dataToShow === true
+                ? this.props.unmitigated
+                : this.props.mitigated
+            }
+            margin={{ left: 22, right: -44 }}
+            width="100%"
+          >
+            <XAxis
+              dataKey="timestamp"
+              scale="time"
+              ticks={this.customticks(this.props.endtime)}
+              type="number"
+              tickFormatter={(timeStr) => moment(timeStr).format("mm:ss")}
+              stroke="#f5f5f5"
+              domain={[0, this.props.timeend]}
+            />
+            <YAxis
+              yAxisId="1"
+              mirror={true}
+              stroke="#f5f5f5"
+              tickFormatter={DataFormater}
+              label={{
+                value: i18n.t("HDChartLabels.UnmitigatedDamageLabel"),
+                angle: -90,
+                fill: "#f5f5f5",
+                fontWeight: "bold",
+                position: "left",
+                offset: 12,
+              }}
+            />
+            <YAxis
+              yAxisId="2"
+              orientation="right"
+              stroke="#f5f5f5"
+              tick={false}
+              domain={["dataMin", 5]}
+            />
+            <Legend
+              verticalAlign="bottom"
+              iconType="square"
+              iconSize={8}
+              formatter={this.renderColorfulLegendText}
+              wrapperStyle={{
+                padding: 2,
+                border: "1px solid rgba(255, 255, 255, 0.5)",
+              }}
+              width="97%"
+              margin={{ right: 44 }}
+
+              // payload={this.props.legendata}
+            />
+            <Tooltip
+              labelStyle={{ color: "#ffffff" }}
+              contentStyle={{
+                backgroundColor: "#1b1b1b",
+                border: "1px solid #1b1b1b",
+              }}
+              labelFormatter={(timeStr) => moment(timeStr).format("mm:ss")}
+            />
+            {this.drawAreas()}
+          </AreaChart>
+        </ResponsiveContainer>
+      </Paper>
     );
   }
 }
