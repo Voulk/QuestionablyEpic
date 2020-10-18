@@ -21,6 +21,7 @@ import { localizationRU, localizationCH } from "../TableLocalization.js";
 import moment from "moment";
 import { healerCooldownsDetailed } from "../../Data/Data.js";
 import Typography from "@material-ui/core/Typography";
+import Divider from "@material-ui/core/Divider";
 
 const theme = createMuiTheme({
   overrides: {
@@ -121,10 +122,12 @@ export default function CooldownTimeline(props) {
               whiteSpace: "nowrap",
               borderRight: "1px solid rgb(81 81 81)",
               padding: "0px 8px 0px 8px",
+              fontSize: 14
             },
             headerStyle: {
               borderRight: "1px solid #6d6d6d",
               textAlign: "center",
+              fontSize: 14
             },
           },
           {
@@ -134,10 +137,12 @@ export default function CooldownTimeline(props) {
               whiteSpace: "nowrap",
               borderRight: "1px solid rgb(81 81 81)",
               padding: "0px 8px 0px 8px",
+              fontSize: 14
             },
             headerStyle: {
               borderRight: "1px solid #6d6d6d",
               textAlign: "center",
+              fontSize: 14
             },
             render: (rowData) => (
               <div>
@@ -154,10 +159,12 @@ export default function CooldownTimeline(props) {
               whiteSpace: "nowrap",
               borderRight: "1px solid rgb(81 81 81)",
               padding: "0px 8px 0px 8px",
+              fontSize: 14
             },
             headerStyle: {
               borderRight: "1px solid #6d6d6d",
               textAlign: "center",
+              fontSize: 14
             },
           },
           {
@@ -166,9 +173,11 @@ export default function CooldownTimeline(props) {
             cellStyle: {
               whiteSpace: "nowrap",
               padding: "0px 8px 0px 8px",
+              fontSize: 14
             },
             headerStyle: {
               textAlign: "center",
+              fontSize: 14
             },
             render: (rowData) => (
               <div>
@@ -202,9 +211,13 @@ export default function CooldownTimeline(props) {
         }}
         components={{
           Toolbar: (props) => (
-            <Typography variant="h6" color="primary" style={{ textAlign: "center" }}>
+            <div style={{marginBottom: 8}}>
+            <Divider/>
+            <Typography variant="body2" color="primary" style={{ textAlign: "center" }}>
               Log Cooldown Timeline
             </Typography>
+            <Divider/>
+            </div>
           ),
         }}
         localization={curLang(props.curLang)}
