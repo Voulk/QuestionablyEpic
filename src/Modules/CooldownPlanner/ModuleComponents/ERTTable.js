@@ -1,5 +1,5 @@
 import React, { forwardRef } from "react";
-import MaterialTable from "material-table";
+import MaterialTable, { MTableToolbar } from "material-table";
 import AddBox from "@material-ui/icons/AddBox";
 import ArrowDownward from "@material-ui/icons/ArrowDownward";
 import Check from "@material-ui/icons/Check";
@@ -20,6 +20,7 @@ import { bossAbilities } from "../Data/Data";
 import moment from "moment";
 import { localizationRU, localizationCH } from "./TableLocalization.js";
 import { useTranslation } from "react-i18next";
+import Divider from "@material-ui/core/Divider";
 
 const theme = createMuiTheme({
   overrides: {
@@ -45,6 +46,7 @@ const theme = createMuiTheme({
       },
       root: {
         padding: "4px 4px 4px 4px",
+        color: "#c8b054"
       },
     },
   },
@@ -170,6 +172,14 @@ export default function ERTTable(props) {
           padding: 16,
         }}
         localization={curLang(props.curLang)}
+                components={{
+          Toolbar: (props) => (
+            <div style={{ marginBottom: 8 }}>
+              <MTableToolbar {...props} />
+              <Divider />
+            </div>
+          ),
+        }}
         options={{
           padding: "dense",
           toolbar: true,
@@ -182,10 +192,17 @@ export default function ERTTable(props) {
             color: "#000",
             // fontSize: "0.8 rem",
           },
-          rowStyle: {
-            borderBottom: "1px solid #515151",
-            borderLeft: "1px solid #515151",
-            borderRight: "1px solid #515151",
+          rowStyle: (rowData, index) => {
+            if (index % 2) {
+              return {
+                backgroundColor: "#535353",
+                border: "1px solid #515151",
+              };
+            } else {
+              return {
+                border: "1px solid #515151",
+              };
+            }
           },
           searchFieldStyle: {
             borderBottom: "1px solid #515151",

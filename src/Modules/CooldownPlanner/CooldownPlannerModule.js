@@ -27,6 +27,7 @@ import HealerInfoTable from "../CooldownPlanner/ModuleComponents/LogDetailCompon
 import HealTeam from "../CooldownPlanner/ModuleComponents/HealTeamTable";
 import updatechartdata from "./Engine/LogImportEngine.js";
 import chartCooldownUpdater from "./Engine/UserCooldownChartEngine.js";
+import Divider from "@material-ui/core/Divider";
 
 class HolyDiver extends Component {
   constructor(props) {
@@ -332,45 +333,32 @@ class HolyDiver extends Component {
                   justify="flex-start"
                   alignItems="flex-start"
                   spacing={1}
-                  // style={{ paddingLeft: "11%", paddingRight: "11%" }}
                 >
                   <Grid item xs={4} padding={1}>
-                    {/* <DenseAppBar
-                      onClick={this.timelineHandler}
-                      title="Cooldown Timeline"
-                    /> */}
-                    {/* <Collapse in={this.state.timelineshowhide}> */}
                     <CooldownTimeline
                       data={this.state.Updateddatacasts}
                       curLang={this.props.curLang}
                     />
-                    {/* </Collapse> */}
                   </Grid>
 
                   <Grid item xs={4} padding={1}>
-                    {/*  <Collapse in={this.state.damageTableShow}>*/}
-                    {/* <DenseAppBar
-                        onClick={this.timelineHandler}
-                        title="Healer Talents/Legendaries"
-                      /> */}
-                    {/*    <Collapse in={this.state.timelineshowhide}> */}
+                    <Paper style={{ padding: 8, marginBottom: 8 }}>
+                      <Typography
+                        variant="h6"
+                        color="primary"
+                        style={{ padding: "4px 8px 4px 24px" }}
+                      >
+                        Healer Information
+                      </Typography>
+                      <Divider />
+                    </Paper>
                     <HealerInfoTable heals={this.state.healernames} />
-                    {/*    </Collapse> */}
-                    {/*   </Collapse>*/}
                   </Grid>
 
                   <Grid item xs={4} padding={1}>
-                    {/*  <Collapse in={this.state.damageTableShow}>
-                      <DenseAppBar
-                        onClick={this.timelineHandler}
-                        title="DTPS by Ability"
-                      />
-                      <Collapse in={this.state.timelineshowhide}> */}
                     <Example
                       data={this.state.summedUnmitigatedDamagePerSecond}
                     />
-                    {/* </Collapse>*/}
-                    {/* </Collapse>*/}
                   </Grid>
 
                   {/*
