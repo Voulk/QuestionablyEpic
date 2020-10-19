@@ -27,6 +27,7 @@ import { classMenus } from "../Menus/ClassMenuItems";
 import { useTranslation } from "react-i18next";
 import { localizationRU, localizationCH } from "./TableLocalization.js";
 import ls from "local-storage";
+import Divider from "@material-ui/core/Divider";
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -62,6 +63,7 @@ const themecooldowntable = createMuiTheme({
       },
       root: {
         padding: "4px 4px 4px 4px",
+        color: "#c8b054",
       },
     },
   },
@@ -161,11 +163,11 @@ export default function HealTeam(props) {
       cellStyle: {
         whiteSpace: "nowrap",
         paddingLeft: 8,
-        borderRight: "1px solid #515151",
+        // borderRight: "1px solid #515151",
       },
       headerStyle: {
         paddingLeft: 8,
-        borderRight: "1px solid #515151",
+        // borderRight: "1px solid #515151",
         textAlign: "center",
       },
       render: (rowData) => (
@@ -191,10 +193,10 @@ export default function HealTeam(props) {
       width: 250,
       cellStyle: {
         whiteSpace: "nowrap",
-        borderRight: "1px solid rgb(81 81 81)",
+        // borderRight: "1px solid rgb(81 81 81)",
       },
       headerStyle: {
-        borderRight: "1px solid #515151",
+        // borderRight: "1px solid #515151",
         textAlign: "center",
       },
       render: (rowData) => (
@@ -228,10 +230,10 @@ export default function HealTeam(props) {
       field: "notes",
       cellStyle: {
         whiteSpace: "nowrap",
-        borderRight: "1px solid rgb(81 81 81)",
+        // borderRight: "1px solid rgb(81 81 81)",
       },
       headerStyle: {
-        borderRight: "1px solid #515151",
+        // borderRight: "1px solid #515151",
         textAlign: "center",
       },
       editComponent: (props) => (
@@ -294,11 +296,24 @@ export default function HealTeam(props) {
             color: "#000",
             // fontSize: "0.8 rem",
           },
-          rowStyle: {
-            borderBottom: "1px solid #515151",
-            borderLeft: "1px solid #515151",
-            borderRight: "1px solid #515151",
+          rowStyle: (rowData, index) => {
+            if (index % 2) {
+              return {
+                backgroundColor: "#535353",
+                borderBottom: "1px solid #515151",
+                borderLeft: "1px solid #515151",
+                borderRight: "1px solid #515151",
+              };
+            } else {
+              return {
+                borderBottom: "1px solid #515151",
+                borderLeft: "1px solid #515151",
+                borderRight: "1px solid #515151",
+              };
+            }
           },
+
+          // },
           searchFieldStyle: {
             borderBottom: "1px solid #515151",
             color: "#ffffff",
@@ -309,6 +324,14 @@ export default function HealTeam(props) {
           actionsColumnIndex: 7,
           // tableLayout: "fixed",
           paging: false,
+        }}
+        components={{
+          Toolbar: (props) => (
+            <div style={{ marginBottom: 8 }}>
+              <MTableToolbar {...props} />
+              <Divider />
+            </div>
+          ),
         }}
         localization={curLang(props.curLang)}
         // components={{

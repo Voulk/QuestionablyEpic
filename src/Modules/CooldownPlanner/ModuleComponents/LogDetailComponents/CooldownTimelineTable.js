@@ -1,5 +1,5 @@
 import React, { forwardRef } from "react";
-import MaterialTable from "material-table";
+import MaterialTable, { MTableToolbar } from "material-table";
 import AddBox from "@material-ui/icons/AddBox";
 import ArrowDownward from "@material-ui/icons/ArrowDownward";
 import Check from "@material-ui/icons/Check";
@@ -34,6 +34,7 @@ const theme = createMuiTheme({
       },
       root: {
         padding: "4px 4px 4px 4px",
+        color: "#c8b054",
       },
     },
   },
@@ -120,14 +121,14 @@ export default function CooldownTimeline(props) {
             field: "name",
             cellStyle: {
               whiteSpace: "nowrap",
-              borderRight: "1px solid rgb(81 81 81)",
+              // borderRight: "1px solid rgb(81 81 81)",
               padding: "0px 8px 0px 8px",
-              fontSize: 14
+              fontSize: 14,
             },
             headerStyle: {
-              borderRight: "1px solid #6d6d6d",
+              // borderRight: "1px solid #6d6d6d",
               textAlign: "center",
-              fontSize: 14
+              fontSize: 14,
             },
           },
           {
@@ -135,14 +136,14 @@ export default function CooldownTimeline(props) {
             field: "ability",
             cellStyle: {
               whiteSpace: "nowrap",
-              borderRight: "1px solid rgb(81 81 81)",
+              // borderRight: "1px solid rgb(81 81 81)",
               padding: "0px 8px 0px 8px",
-              fontSize: 14
+              fontSize: 14,
             },
             headerStyle: {
-              borderRight: "1px solid #6d6d6d",
+              // borderRight: "1px solid #6d6d6d",
               textAlign: "center",
-              fontSize: 14
+              fontSize: 14,
             },
             render: (rowData) => (
               <div>
@@ -157,14 +158,14 @@ export default function CooldownTimeline(props) {
             width: "2%",
             cellStyle: {
               whiteSpace: "nowrap",
-              borderRight: "1px solid rgb(81 81 81)",
+              // borderRight: "1px solid rgb(81 81 81)",
               padding: "0px 8px 0px 8px",
-              fontSize: 14
+              fontSize: 14,
             },
             headerStyle: {
-              borderRight: "1px solid #6d6d6d",
+              // borderRight: "1px solid #6d6d6d",
               textAlign: "center",
-              fontSize: 14
+              fontSize: 14,
             },
           },
           {
@@ -173,11 +174,11 @@ export default function CooldownTimeline(props) {
             cellStyle: {
               whiteSpace: "nowrap",
               padding: "0px 8px 0px 8px",
-              fontSize: 14
+              fontSize: 14,
             },
             headerStyle: {
               textAlign: "center",
-              fontSize: 14
+              fontSize: 14,
             },
             render: (rowData) => (
               <div>
@@ -196,7 +197,7 @@ export default function CooldownTimeline(props) {
             ),
           },
         ]}
-        title="Timeline"
+        title="Cooldown Usage Timeline"
         header={true}
         data={props.data}
         style={{
@@ -209,18 +210,15 @@ export default function CooldownTimeline(props) {
           whiteSpace: "nowrap",
           padding: 8,
         }}
+        localization={curLang(props.curLang)}
         components={{
           Toolbar: (props) => (
-            <div style={{marginBottom: 8}}>
-            <Divider/>
-            <Typography variant="body2" color="primary" style={{ textAlign: "center" }}>
-              Log Cooldown Timeline
-            </Typography>
-            <Divider/>
+            <div style={{ marginBottom: 8 }}>
+              <MTableToolbar {...props} />
+              <Divider />
             </div>
           ),
         }}
-        localization={curLang(props.curLang)}
         options={{
           showTitle: true,
           toolbar: true,
@@ -233,10 +231,21 @@ export default function CooldownTimeline(props) {
             color: "#000",
             // fontSize: "0.8 rem",
           },
-          rowStyle: {
-            borderBottom: "1px solid #515151",
-            borderLeft: "1px solid #515151",
-            borderRight: "1px solid #515151",
+          rowStyle: (rowData, index) => {
+            if (index % 2) {
+              return {
+                backgroundColor: "#535353",
+                borderBottom: "1px solid #515151",
+                borderLeft: "1px solid #515151",
+                borderRight: "1px solid #515151",
+              };
+            } else {
+              return {
+                borderBottom: "1px solid #515151",
+                borderLeft: "1px solid #515151",
+                borderRight: "1px solid #515151",
+              };
+            }
           },
           searchFieldStyle: {
             borderBottom: "1px solid #6d6d6d",

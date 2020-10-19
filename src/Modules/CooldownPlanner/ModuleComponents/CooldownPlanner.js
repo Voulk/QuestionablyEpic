@@ -70,6 +70,7 @@ const themecooldowntable = createMuiTheme({
       },
     },
     MuiToolbar: {
+      root: {color: "#345"},
       regular: {
         minHeight: 0,
         "@media (min-width: 600px)": {
@@ -213,11 +214,11 @@ export default function CooldownPlanner(props) {
       cellStyle: {
         whiteSpace: "nowrap",
         paddingLeft: 8,
-        borderRight: "1px solid rgb(81 81 81)",
+        // borderRight: "1px solid rgb(81 81 81)",
       },
       headerStyle: {
         paddingLeft: 22,
-        borderRight: "1px solid #515151",
+        // borderRight: "1px solid #515151",
         textAlign: "center",
       },
       render: (rowData) => (
@@ -235,7 +236,7 @@ export default function CooldownPlanner(props) {
             <InputLabel id="HealerSelector">{t("Name")}</InputLabel>
             <Select
               value={props.value}
-                                      label={t("Name")}
+              label={t("Name")}
               labelId="HealerSelector"
               onChange={(e) => {
                 props.onChange(e.target.value);
@@ -262,11 +263,11 @@ export default function CooldownPlanner(props) {
       width: "15%",
       cellStyle: {
         whiteSpace: "nowrap",
-        borderRight: "1px solid rgb(81 81 81)",
+        // borderRight: "1px solid rgb(81 81 81)",
       },
       headerStyle: {
         paddingLeft: 22,
-        borderRight: "1px solid #515151",
+        // borderRight: "1px solid #515151",
         textAlign: "center",
       },
       render: (rowData) => (
@@ -286,7 +287,7 @@ export default function CooldownPlanner(props) {
             <Select
               value={props.value}
               labelId="ClassSelector"
-               label={t("Class")}
+              label={t("Class")}
               onChange={(e) => {
                 props.onChange(e.target.value);
                 wowClass = e.target.value;
@@ -305,11 +306,11 @@ export default function CooldownPlanner(props) {
       width: "15%",
       cellStyle: {
         whiteSpace: "nowrap",
-        borderRight: "1px solid rgb(81 81 81)",
+        // borderRight: "1px solid rgb(81 81 81)",
       },
       headerStyle: {
         paddingLeft: 22,
-        borderRight: "1px solid #515151",
+        // borderRight: "1px solid #515151",
         textAlign: "center",
       },
       render: (rowData) => (
@@ -345,11 +346,11 @@ export default function CooldownPlanner(props) {
       width: "4%",
       cellStyle: {
         whiteSpace: "nowrap",
-        borderRight: "1px solid rgb(81 81 81)",
+        // borderRight: "1px solid rgb(81 81 81)",
       },
       headerStyle: {
         paddingLeft: 22,
-        borderRight: "1px solid #515151",
+        // borderRight: "1px solid #515151",
         textAlign: "center",
       },
       editComponent: (props) => (
@@ -370,11 +371,11 @@ export default function CooldownPlanner(props) {
       width: "4%",
       cellStyle: {
         whiteSpace: "nowrap",
-        borderRight: "1px solid rgb(81 81 81)",
+        // borderRight: "1px solid rgb(81 81 81)",
       },
       headerStyle: {
         paddingLeft: 22,
-        borderRight: "1px solid #515151",
+        // borderRight: "1px solid #515151",
         textAlign: "center",
       },
       render: (rowData) => (
@@ -383,7 +384,7 @@ export default function CooldownPlanner(props) {
             .add(
               healerCooldownsDetailed
                 .filter((obj) => {
-                  return obj.name === rowData.Cooldown;
+                  return obj.guid === rowData.Cooldown;
                 })
                 .map((obj) => obj.cooldown)
                 .toString(),
@@ -399,11 +400,11 @@ export default function CooldownPlanner(props) {
       width: "15%",
       cellStyle: {
         whiteSpace: "nowrap",
-        borderRight: "1px solid rgb(81 81 81)",
+        // borderRight: "1px solid rgb(81 81 81)",
       },
       headerStyle: {
         paddingLeft: 22,
-        borderRight: "1px solid #515151",
+        // borderRight: "1px solid #515151",
         textAlign: "center",
       },
       render: (rowData) => (
@@ -459,17 +460,16 @@ export default function CooldownPlanner(props) {
       width: "20%",
       cellStyle: {
         whiteSpace: "nowrap",
-        borderRight: "1px solid rgb(81 81 81)",
+        // borderRight: "1px solid rgb(81 81 81)",
       },
       headerStyle: {
         paddingLeft: 22,
-        borderRight: "1px solid #515151",
+        // borderRight: "1px solid #515151",
         textAlign: "center",
       },
       editComponent: (props) => (
         <TextField
-        style={{width: "100%"}}
-        
+          style={{ width: "100%" }}
           size="small"
           variant="outlined"
           id="standard-basic"
@@ -540,8 +540,17 @@ export default function CooldownPlanner(props) {
             color: "#000",
             // fontSize: "0.8 rem",
           },
-          rowStyle: {
-            border: "1px solid #515151",
+          rowStyle: (rowData, index) => {
+            if (index % 2) {
+              return {
+                backgroundColor: "#535353",
+                border: "1px solid #515151",
+              };
+            } else {
+              return {
+                border: "1px solid #515151",
+              };
+            }
           },
           actionCellStyle: {
             borderBottom: "1px solid #515151",
