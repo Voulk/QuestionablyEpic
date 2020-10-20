@@ -24,13 +24,12 @@ export default class Example extends PureComponent {
         </div>
         <ResponsiveContainer
           className="ResponsiveContainer"
-          width="100%"
           height="100%"
-          aspect={1 / 0.6}
+          aspect={1 / 1}
         >
           <BarChart
-            width={500}
-            height={300}
+            // width={500}
+            // height={300}
             data={this.props.data}
             margin={{
               top: 5,

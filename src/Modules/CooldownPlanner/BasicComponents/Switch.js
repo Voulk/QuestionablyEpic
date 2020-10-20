@@ -8,7 +8,7 @@ const theme = createMuiTheme({
   overrides: {
     MuiTypography: {
       body1: {
-        fontSize: "0.8rem",
+        fontSize: "0.7rem",
       },
     },
   },
@@ -39,6 +39,7 @@ export default function SwitchLabels(props) {
             />
           }
           label={props.label}
+          labelPlacement="top"
         />
       </FormGroup>
     </ThemeProvider>
