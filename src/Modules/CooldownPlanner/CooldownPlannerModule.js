@@ -143,52 +143,53 @@ class HolyDiver extends Component {
     return (
       <div>
         <div style={{ margin: "20px 12% 20px 12%" }}>
-          {/*<Paper style={{ padding: 8 }}>
-             Main Grid for the Compoonent, this should control the base spacing of all the base components,
+          {/* Main Grid for the Compoonent, this should control the base spacing of all the base components,
               any Grid Components within this with the item prop will have spacing  */}
           <Grid container spacing={1}>
-            {/* Grid Container for the User Input Components, With Paper as the Surface */}
-            <Grid item container>
-              <Paper
+            <Grid
+              container
+              item
+              // spacing={1}
+              xs={12}
+              style={{ width: "100%" }}
+              justify="space-between"
+            >
+              {/* Grid Container for the User Input Components, With Paper as the Surface */}
+              <Grid item container xs={6}>
+                <Paper
+                  style={{
+                    display: "inline-flex",
+                    margin: "0px 0px 4px 0px",
+                    borderRadius: 4,
+                    padding: "10px 10px 10px 18px",
+                    boxShadow:
+                      "0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12)",
+                    width: "100%",
+                  }}
+                >
+                  {/* Grid Container for the Log Input/Fight Selection Button */}
+
+                  <LogLinkInput
+                    changed={this.reportidHandler}
+                    reportid={this.state.reportid}
+                  />
+
+                  <FightSelectorButton
+                    reportid={this.state.reportid}
+                    clicky={this.handler}
+                    update={this.updatechartdataNew}
+                  />
+                </Paper>
+              </Grid>
+              <Grid
+                item
+                container
+                xs={3}
+                justify="flex-end"
                 style={{
-                  display: "inline-flex",
-                  margin: "0px 0px 4px 0px",
-                  borderRadius: 4,
-                  padding: "10px 10px 10px 18px",
-                  boxShadow:
-                    "0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12)",
-                  width: "50%",
-                  // backgroundColor: "#333"
+                  display: this.state.logDetailsShow ? "flex" : "none",
                 }}
               >
-                {/* Grid Container for the Log Input/Fight Selection Button */}
-
-                <LogLinkInput
-                  changed={this.reportidHandler}
-                  reportid={this.state.reportid}
-                />
-
-                <FightSelectorButton
-                  reportid={this.state.reportid}
-                  clicky={this.handler}
-                  update={this.updatechartdataNew}
-                />
-              </Paper>
-            </Grid>
-
-            {/* Grid Container for Log Details i.e Boss, Difficulty, Fight Length and Chart Switches (Potentially Move these out of this Container) */}
-            <Grid
-              item
-              container
-              direction="row"
-              justify="flex-start"
-              alignItems="flex-start"
-              spacing={1}
-              style={{
-                display: this.state.logDetailsShow ? "block" : "none",
-              }}
-            >
-              <Grid item xs={12} padding={1}>
                 <Collapse in={this.state.logDetailsShow}>
                   <Grow
                     in={this.state.logDetailsShow}
@@ -196,76 +197,31 @@ class HolyDiver extends Component {
                     {...(this.state.logDetailsShow ? { timeout: 1000 } : {})}
                   >
                     <Paper
-                      bgcolor="#333"
                       style={{
+                        display: "inline-flex",
+                        margin: "0px 0px 4px 0px",
                         borderRadius: 4,
+                        padding: "10px 10px 10px 18px",
                         boxShadow:
                           "0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12)",
                       }}
                     >
-                      <div
-                        style={{
-                          display: "inline-flex",
-                          width: "100%",
-                          alignItems: "center",
-                        }}
-                      >
-                        {bossHeaders(this.state.currentBossID)}
-                        <Grid item xs={11} padding={1} align="center">
-                          {this.state.showname ? (
-                            <Typography
-                              style={{
-                                fontWeight: 500,
-                                fontSize: "1.25rem",
-                                padding: "0px 16px 0px 16px",
-                                whiteSpace: "nowrap",
-                              }}
-                              color="primary"
-                            >
-                              {this.state.boss} - {this.state.currentDifficulty}
-                              {this.state.currentKeystone === null ||
-                              this.state.currentKeystone === undefined
-                                ? null
-                                : this.state.currentKeystone}
-                            </Typography>
-                          ) : null}
-                          {this.state.showname ? (
-                            <Typography
-                              style={{
-                                fontWeight: 500,
-                                fontSize: "0.9rem",
-                                color: "white",
-                                padding: "0px 16px 0px 16px",
-                                textAlign: "center",
-                              }}
-                            >
-                              {this.state.currentFighttime +
-                                " - " +
-                                this.state.killWipe}
-                            </Typography>
-                          ) : null}
-                        </Grid>
-
-                        {/* Grid item for the Switches controlling Chart Features. i.e Show Charts, Mitigated/Unmitigated Damage */}
-                        <Grid item xs={1} padding={1}>
-                          <SwitchLabels
-                            check={this.damageTableShow}
-                            label={"Log Chart"}
-                          />
-                          <SwitchLabels
-                            check={this.healTableShow}
-                            label={"Custom CD Chart"}
-                          />
-                          <SwitchLabels
-                            check={this.changeDataSet}
-                            label={
-                              this.state.chartData === true
-                                ? "Unmitigated"
-                                : "Mitigated"
-                            }
-                          />
-                        </Grid>
-                      </div>
+                      <SwitchLabels
+                        check={this.damageTableShow}
+                        label={"Log Chart"}
+                      />
+                      <SwitchLabels
+                        check={this.healTableShow}
+                        label={"Custom CD Chart"}
+                      />
+                      <SwitchLabels
+                        check={this.changeDataSet}
+                        label={
+                          this.state.chartData === true
+                            ? "Unmitigated"
+                            : "Mitigated"
+                        }
+                      />
                     </Paper>
                   </Grow>
                 </Collapse>
@@ -288,6 +244,78 @@ class HolyDiver extends Component {
               }}
             >
               <Grid item xs={12} padding={1}>
+                <Collapse in={this.state.logDetailsShow}>
+                  <Grow
+                    in={this.state.logDetailsShow}
+                    style={{ transformOrigin: "0 0 0" }}
+                    {...(this.state.logDetailsShow ? { timeout: 1000 } : {})}
+                  >
+                    <Paper
+                      bgcolor="#333"
+                      style={{
+                        borderRadius: 4,
+                        boxShadow:
+                          "0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12)",
+                      }}
+                    >
+                      <Grid item xs={12} padding={1} align="center">
+                        <div
+                          style={{
+                            display: "inline-flex",
+                            width: "100%",
+                            justifyContent: "center",
+                          }}
+                        >
+                          {bossHeaders(this.state.currentBossID)}
+                          <div>
+                            {this.state.showname ? (
+                              <Typography
+                                style={{
+                                  fontWeight: 500,
+                                  fontSize: "1.25rem",
+                                  padding: "0px 16px 0px 16px",
+                                  whiteSpace: "nowrap",
+                                }}
+                                color="primary"
+                              >
+                                {this.state.boss} -{" "}
+                                {this.state.currentDifficulty}
+                                {this.state.currentKeystone === null ||
+                                this.state.currentKeystone === undefined
+                                  ? null
+                                  : this.state.currentKeystone}
+                              </Typography>
+                            ) : null}
+                            {this.state.showname ? (
+                              <Typography
+                                style={{
+                                  fontWeight: 500,
+                                  fontSize: "0.9rem",
+                                  color: "white",
+                                  padding: "0px 16px 0px 16px",
+                                  textAlign: "center",
+                                }}
+                              >
+                                {this.state.currentFighttime +
+                                  " - " +
+                                  this.state.killWipe}
+                              </Typography>
+                            ) : null}
+                          </div>
+                        </div>
+                      </Grid>
+                    </Paper>
+                  </Grow>
+                </Collapse>
+              </Grid>
+              <Grid
+                item
+                xs={12}
+                padding={1}
+                style={{
+                  display: this.state.damageTableShow ? "block" : "none",
+                }}
+              >
                 <Collapse in={this.state.damageTableShow}>
                   <LoadingOverlay
                     active={spinnershow}
@@ -340,7 +368,6 @@ class HolyDiver extends Component {
                       curLang={this.props.curLang}
                     />
                   </Grid>
-
                   <Grid item xs={4} padding={1}>
                     <Paper style={{ padding: 8, marginBottom: 8 }}>
                       <Typography
@@ -354,43 +381,11 @@ class HolyDiver extends Component {
                     </Paper>
                     <HealerInfoTable heals={this.state.healernames} />
                   </Grid>
-
                   <Grid item xs={4} padding={1}>
                     <Example
                       data={this.state.summedUnmitigatedDamagePerSecond}
                     />
                   </Grid>
-
-                  {/*
-                        Below is For a 4th data panel (may just remove and run 3 panels)
-                    */}
-
-                  {/*
-                <Grid item xs={3} padding={1}>
-                  <Collapse in={this.state.damageTableShow}></Collapse>
-
-                <DenseAppBar
-                  onClick={this.timelineHandler}
-                  title="placeholder thing"
-                />
-                <Collapse in={this.state.timelineshowhide}>
-                  <dtpsTable
-                    data={this.state.Updateddatacasts}
-                    columns={[
-                      { title: "Name", field: "name" },
-                      {
-                        title: "Ability",
-                        field: "ability",
-                        render: (rowData) => abilityicons(rowData.ability),
-                      },
-                      { title: "Time", field: "timestamp" },
-                    ]}
-                    title="Timeline"
-                    header={true}
-                  />
-                </Collapse>
-              </Grid>
-                    */}
                 </Grid>
               </Collapse>
             </Grid>
@@ -453,32 +448,13 @@ class HolyDiver extends Component {
                 <HealTeam curLang={this.props.curLang} />
               </Grid>
               <Grid item xs={4} padding={1}>
-                {/*  <DenseAppBar onClick={this.ertHandler} title="ERT Note" />
-                <Collapse in={this.state.ertshowhide}> */}
                 <ERTTable
                   data={this.state.ertList}
                   curLang={this.props.curLang}
                 />
-                {/* </Collapse> */}
               </Grid>
             </Grid>
-
-            {/*
-                ERT Table - This is for an easy export of the Cooldowns PLanned to paste into ERT
-
-              <Grid
-                item
-                container
-                direction="row"
-                justify="flex-start"
-                alignItems="flex-start"
-                spacing={1}
-              >
-                
-              </Grid>
-                          */}
           </Grid>
-          {/*  </Paper> */}
         </div>
       </div>
     );
