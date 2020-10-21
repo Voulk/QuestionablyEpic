@@ -487,8 +487,8 @@ export default function CooldownPlanner(props) {
         ls.set("Castle Nathria" + "." + key.id + ".1", []);
       }
     });
-    if (ls.get("healerinfo") === null) {
-      ls.set("healerinfo", []);
+    if (ls.get("healerInfo") === null || ls.get("healerInfo") === undefined) {
+      ls.set("healerInfo", []);
     }
   });
 

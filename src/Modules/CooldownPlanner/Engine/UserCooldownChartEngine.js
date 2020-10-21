@@ -5,6 +5,8 @@ import {
 } from "../../CooldownPlanner/Functions/Functions";
 import moment from "moment";
 import { classColoursERT } from "../../CooldownPlanner/Functions/ClassColourFunctions";
+import { healerCooldownsDetailed } from "../Data/Data";
+import i18n from "i18next";
 
 /*=============================================
   This Function should be bound to the component the data should be set to.
@@ -84,7 +86,7 @@ export default function chartCooldownUpdater(tableData) {
       key.name +
       "|r" +
       " - " +
-      key.Cooldown,
+    i18n.t("CooldownPlannerClassAbilities." + key.Cooldown) + "{spell:" + key.Cooldown + "}" ,
     time: key.time,
   }));
 
