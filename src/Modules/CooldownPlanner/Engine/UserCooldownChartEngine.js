@@ -21,12 +21,12 @@ export default function chartCooldownUpdater(tableData) {
   let unmitigatedChartDataNoCooldowns = [];
   let mitigatedChartDataNoCooldowns = [];
 
-  // We map the data from the Cooldown Planner into a unique list of Healer Names + Cooldowns for dataKeys for the Chart.
+  // Map the data from the Cooldown Planner into a unique list of Healer Names + Cooldowns for dataKeys for the Chart.
   let uniqueCooldownListArray = Array.from(
     new Set(tableData.map((key) => key.name + " - " + key.Cooldown))
   );
 
-  // We map the Data from the Cooldown Planner and create a new array of objects. These are then mapped using the durationmaker function to create the data for the length of the cooldown and pushed into a new array customCooldownDurations.
+  // Map the Data from the Cooldown Planner and create a new array of objects. These are then mapped using the durationmaker function to create the data for the length of the cooldown and pushed into a new array customCooldownDurations.
   tableData
     .map((key) => ({
       ability: key.Cooldown,
@@ -53,7 +53,7 @@ export default function chartCooldownUpdater(tableData) {
 
   let customCooldownDurationFlatArray = customCooldownDurations.flat();
 
-  // We join the Cooldown Durates with the Damage Taken Data (The original data before any data from the table was entered.
+  // Join the Cooldown Durates with the Damage Taken Data (The original data before any data from the table was entered.
   // This is so the data doesn't double up with previously entered data.)
   let joinedarray = this.state.unmitigatedChartDataNoCooldownsOriginal
     .concat(customCooldownDurationFlatArray)
@@ -75,7 +75,7 @@ export default function chartCooldownUpdater(tableData) {
     mitigatedChartDataNoCooldowns.push(reducedData2[element2])
   );
 
-  // We Map the ERT note from the Table Data
+  // Map the ERT note from the Table Data
   const ertNote = tableData.map((key) => ({
     ert:
       "{time:" +
@@ -86,7 +86,10 @@ export default function chartCooldownUpdater(tableData) {
       key.name +
       "|r" +
       " - " +
-    i18n.t("CooldownPlannerClassAbilities." + key.Cooldown) + "{spell:" + key.Cooldown + "}" ,
+      i18n.t("CooldownPlannerClassAbilities." + key.Cooldown) +
+      "{spell:" +
+      key.Cooldown +
+      "}",
     time: key.time,
   }));
 

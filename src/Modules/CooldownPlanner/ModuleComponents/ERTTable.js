@@ -46,7 +46,7 @@ const theme = createMuiTheme({
       },
       root: {
         padding: "4px 4px 4px 4px",
-        color: "#c8b054"
+        color: "#c8b054",
       },
     },
   },
@@ -172,7 +172,7 @@ export default function ERTTable(props) {
           padding: 16,
         }}
         localization={curLang(props.curLang)}
-                components={{
+        components={{
           Toolbar: (props) => (
             <div style={{ marginBottom: 8 }}>
               <MTableToolbar {...props} />
@@ -190,7 +190,6 @@ export default function ERTTable(props) {
             padding: "0px 8px 0px 8px",
             backgroundColor: "#c8b054",
             color: "#000",
-            // fontSize: "0.8 rem",
           },
           rowStyle: (rowData, index) => {
             if (index % 2) {

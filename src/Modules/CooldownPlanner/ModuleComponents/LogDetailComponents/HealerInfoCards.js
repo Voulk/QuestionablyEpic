@@ -96,6 +96,7 @@ export default function HealerInfoCards(props) {
                       padding: "2px 8px 2px 8px",
                       border: "1px solid rgba(255, 255, 255, 0.12)",
                       width: "100%",
+                      height: "fit-content"
                     }}
                   >
                     <Typography className={classes.heading} color="primary">
@@ -225,7 +226,11 @@ export default function HealerInfoCards(props) {
                                 verticalAlign: "middle",
                                 borderRadius: "4px",
                               }}
-                              src={"/Images/Icons/" + ability.abilityIcon}
+                              src={
+                                process.env.PUBLIC_URL +
+                                "/Images/Icons/" +
+                                ability.abilityIcon
+                              }
                               alt={"ability" + i}
                             />
                           </a>

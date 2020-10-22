@@ -115,7 +115,6 @@ class Chart extends Component {
 
   // The charts legend is generated here from the charts entries, and is matched with the provided ability list prop to return a matching guid for the wowhead tooltip
   renderColorfulLegendText = (value, entry) => {
-    console.log({ value, entry });
     return (
       <a
         data-wowhead={
@@ -152,7 +151,6 @@ class Chart extends Component {
       <Paper style={{ padding: 10 }}>
         <ResponsiveContainer
           className="ResponsiveContainer"
-          // width="100%"
           aspect={4 / 0.8}
         >
           <AreaChart

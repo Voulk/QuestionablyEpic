@@ -214,11 +214,9 @@ export default function CooldownPlanner(props) {
       cellStyle: {
         whiteSpace: "nowrap",
         paddingLeft: 8,
-        // borderRight: "1px solid rgb(81 81 81)",
       },
       headerStyle: {
         paddingLeft: 22,
-        // borderRight: "1px solid #515151",
         textAlign: "center",
       },
       render: (rowData) => (
@@ -240,7 +238,6 @@ export default function CooldownPlanner(props) {
               labelId="HealerSelector"
               onChange={(e) => {
                 props.onChange(e.target.value);
-                // wowClass = e.target.value;
               }}
               MenuProps={menuStyle}
             >
@@ -263,11 +260,9 @@ export default function CooldownPlanner(props) {
       width: "15%",
       cellStyle: {
         whiteSpace: "nowrap",
-        // borderRight: "1px solid rgb(81 81 81)",
       },
       headerStyle: {
         paddingLeft: 22,
-        // borderRight: "1px solid #515151",
         textAlign: "center",
       },
       render: (rowData) => (
@@ -306,11 +301,9 @@ export default function CooldownPlanner(props) {
       width: "15%",
       cellStyle: {
         whiteSpace: "nowrap",
-        // borderRight: "1px solid rgb(81 81 81)",
       },
       headerStyle: {
         paddingLeft: 22,
-        // borderRight: "1px solid #515151",
         textAlign: "center",
       },
       render: (rowData) => (
@@ -346,11 +339,9 @@ export default function CooldownPlanner(props) {
       width: "4%",
       cellStyle: {
         whiteSpace: "nowrap",
-        // borderRight: "1px solid rgb(81 81 81)",
       },
       headerStyle: {
         paddingLeft: 22,
-        // borderRight: "1px solid #515151",
         textAlign: "center",
       },
       editComponent: (props) => (
@@ -371,11 +362,9 @@ export default function CooldownPlanner(props) {
       width: "4%",
       cellStyle: {
         whiteSpace: "nowrap",
-        // borderRight: "1px solid rgb(81 81 81)",
       },
       headerStyle: {
         paddingLeft: 22,
-        // borderRight: "1px solid #515151",
         textAlign: "center",
       },
       render: (rowData) => (
@@ -400,11 +389,9 @@ export default function CooldownPlanner(props) {
       width: "15%",
       cellStyle: {
         whiteSpace: "nowrap",
-        // borderRight: "1px solid rgb(81 81 81)",
       },
       headerStyle: {
         paddingLeft: 22,
-        // borderRight: "1px solid #515151",
         textAlign: "center",
       },
       render: (rowData) => (
@@ -460,11 +447,9 @@ export default function CooldownPlanner(props) {
       width: "20%",
       cellStyle: {
         whiteSpace: "nowrap",
-        // borderRight: "1px solid rgb(81 81 81)",
       },
       headerStyle: {
         paddingLeft: 22,
-        // borderRight: "1px solid #515151",
         textAlign: "center",
       },
       editComponent: (props) => (
@@ -527,7 +512,6 @@ export default function CooldownPlanner(props) {
         style={{
           boxShadow:
             "0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12)",
-          // fontSize: "0.8 rem",
           padding: 16,
         }}
         options={{
@@ -538,7 +522,6 @@ export default function CooldownPlanner(props) {
             padding: "0px 8px 0px 8px",
             backgroundColor: "#c8b054",
             color: "#000",
-            // fontSize: "0.8 rem",
           },
           rowStyle: (rowData, index) => {
             if (index % 2) {
@@ -584,7 +567,6 @@ export default function CooldownPlanner(props) {
             <div>
               <Grid
                 container
-                // style={{ paddingBottom: 10 }}
                 spacing={1}
                 direction="row"
                 justify="space-between"
