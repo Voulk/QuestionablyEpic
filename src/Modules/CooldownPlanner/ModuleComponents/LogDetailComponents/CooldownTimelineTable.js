@@ -122,7 +122,7 @@ export default function CooldownTimeline(props) {
             cellStyle: {
               whiteSpace: "nowrap",
               // borderRight: "1px solid rgb(81 81 81)",
-              padding: "0px 8px 0px 8px",
+              padding: "4px 8px 4px 8px",
               fontSize: 14,
             },
             headerStyle: {
@@ -137,7 +137,7 @@ export default function CooldownTimeline(props) {
             cellStyle: {
               whiteSpace: "nowrap",
               // borderRight: "1px solid rgb(81 81 81)",
-              padding: "0px 8px 0px 8px",
+              padding: "4px 8px 4px 8px",
               fontSize: 14,
             },
             headerStyle: {
@@ -159,7 +159,7 @@ export default function CooldownTimeline(props) {
             cellStyle: {
               whiteSpace: "nowrap",
               // borderRight: "1px solid rgb(81 81 81)",
-              padding: "0px 8px 0px 8px",
+              padding: "4px 8px 4px 8px",
               fontSize: 14,
             },
             headerStyle: {
@@ -173,7 +173,7 @@ export default function CooldownTimeline(props) {
             width: "2%",
             cellStyle: {
               whiteSpace: "nowrap",
-              padding: "0px 8px 0px 8px",
+              padding: "4px 8px 4px 8px",
               fontSize: 14,
             },
             headerStyle: {

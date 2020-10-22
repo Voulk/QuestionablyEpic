@@ -58,7 +58,7 @@ export function getValidWeaponTypes(spec, slot) {
   switch (slot) {
     case "Off-Hands":
       switch (spec) {
-        case "Restoration Shaman" :
+        case "Restoration Shaman":
         case "Holy Paladin":
           return [0, 6];
         default:
@@ -118,8 +118,8 @@ export function getItemIcon(id) {
 
   //return("");
   if ((temp.length > 0) & ("icon" in temp[0]))
-    return "/Images/Icons/" + temp[0].icon + ".jpg";
-  else return "/Images/Icons/missing.jpg";
+    return process.env.PUBLIC_URL + "/Images/Icons/" + temp[0].icon + ".jpg";
+  else return process.env.PUBLIC_URL + "/Images/Icons/missing.jpg";
 }
 
 // Returns item stat allocations. MUST be converted to stats before it's used in any scoring capacity.

@@ -85,7 +85,7 @@ export default function classicons(props, iconsize) {
 
   // Demon Hunter
   if (props === "HavocDemonHunter" || props === "Havoc Demon Hunter") {
-    src = { DemonHunterIcon };
+    src = DemonHunterIcon;
     alt = "Havoc Demon Hunter";
   }
 

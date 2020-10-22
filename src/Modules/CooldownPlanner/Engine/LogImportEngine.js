@@ -42,7 +42,7 @@ function getUnique(arr, comp) {
 }
 
 export default async function updatechartdata(starttime, endtime) {
-  //  We set the Loading State of the loading spinner so that the user knows data is being loaded.
+  //  Set the Loading State of the loading spinner so that the user knows data is being loaded.
   this.setState({ loadingcheck: true });
   let healerDurations = [];
   let sortedDataUnmitigatedWithCooldowns = [];
@@ -57,7 +57,7 @@ export default async function updatechartdata(starttime, endtime) {
     .asSeconds()
     .toString();
 
-  // We call the function that will import Healer Info from the Logs healing table for each healing class.
+  // Import Healer Info from the Logs healing table for each healing class.
   // See: "importHealerLogData" in the functions file for more info.
   const healers = await importHealerLogData(
     starttime,
@@ -65,7 +65,7 @@ export default async function updatechartdata(starttime, endtime) {
     this.state.reportid
   );
 
-  // We call the function that will import summary Info from the Logs Summary table.
+  // Import summary Info from the Logs Summary table.
   // This contains our data for Gear, Stats, Conduits, Soulbinds etc etc.
   // See: "importSummaryData" in the functions file for more info.
   const summary = await importSummaryData(
@@ -74,7 +74,7 @@ export default async function updatechartdata(starttime, endtime) {
     this.state.reportid
   );
 
-  // We import all the damage-taken from the log for friendly targets.
+  // Import all the damage-taken from the log for friendly targets.
   // See: "importDamageLogData" in the functions file for more info.
   const damage = await importDamageLogData(
     starttime,
@@ -82,14 +82,14 @@ export default async function updatechartdata(starttime, endtime) {
     this.state.reportid
   );
 
-  // We map Healer Data for ID, Name and Class.
+  // Map Healer Data for ID, Name and Class.
   const healerIDName = healers.map((key) => ({
     id: key.id,
     name: key.name,
     class: key.type,
   }));
 
-  // We import the log data for Casts for each healer in the log.
+  // Import the log data for Casts for each healer in the log.
   // See: "importCastsLogData" fpr mpre info.
   const cooldowns = await importCastsLogData(
     starttime,
@@ -97,8 +97,8 @@ export default async function updatechartdata(starttime, endtime) {
     this.state.reportid,
     healers.map((key) => key.id)
   );
-  
-  // We map the damaging abilities and guids to an array of objects.
+
+  // Map the damaging abilities and guids to an array of objects.
   damage.map((key) =>
     damagingAbilities.push({
       ability: key.ability.name,
@@ -106,7 +106,7 @@ export default async function updatechartdata(starttime, endtime) {
     })
   );
 
-  // We Filter the array to unique entries for Ability name and Guid.
+  // Filter the array to unique entries for Ability name and Guid.
   const uniqueArray = damagingAbilities.filter(
     (ele, ind) =>
       ind ===
@@ -115,7 +115,7 @@ export default async function updatechartdata(starttime, endtime) {
       )
   );
 
-  // We map the cooldown data imported into an array of cooldowns in this format (HealerName - CooldownName).
+  // Map the cooldown data imported into an array of cooldowns in this format (HealerName - CooldownName).
   // Then We make a unique list of Cooldowns from the previously mapped array, then create an array from this.
   // We do this for the chart data as these are needed for dataKeys for the chart.
 
@@ -134,8 +134,8 @@ export default async function updatechartdata(starttime, endtime) {
     )
   );
 
-  // We map the cooldown casts into objects for the chart.
-  //  Them we map Cooldown Casts and using the duration maker function to add extra data points for the times the cooldown should be active.
+  // Map the cooldown casts into objects for the chart.
+  // Them we map Cooldown Casts and using the duration maker function to add extra data points for the times the cooldown should be active.
   // These are pushed into the new array healerDurations during the map
   cooldowns
     .map((key) => ({
@@ -177,7 +177,7 @@ export default async function updatechartdata(starttime, endtime) {
     "id"
   ).concat(uniqueArrayCD);
 
-  // We map the Unmitigated damage taken & timestamps.
+  // Map the Unmitigated damage taken & timestamps.
   // Timestamps are caluated via function by minusing the start of the the fight in ms from the end in ms.
   // Then converted to the started of the nearest second otherwise the chart will show each individual ms.
   // We Don't need to delve that deep into MS for the chart.
@@ -188,7 +188,7 @@ export default async function updatechartdata(starttime, endtime) {
     [key.ability.name]: key.unmitigatedAmount,
   }));
 
-  // We map the Mitigated damage taken & timestamps.
+  // Map the Mitigated damage taken & timestamps.
   // Timestamps are caluated via function by minusing the start of the the fight in ms from the end in ms.
   // Then converted to the started of the nearest second otherwise the chart will show each individual ms.
   // We Don't need to delve that deep into MS for the chart.
@@ -199,7 +199,7 @@ export default async function updatechartdata(starttime, endtime) {
     [key.ability.name]: key.amount,
   }));
 
-  // We map cooldown casts for the Timeline Table.
+  // Map cooldown casts for the Timeline Table.
   const updateddatacastsTimeline = cooldowns.map((key) => ({
     ability: key.ability.name,
     guid: key.ability.guid,
@@ -220,13 +220,13 @@ export default async function updatechartdata(starttime, endtime) {
       .toString(),
   }));
 
-  // We Flatten the map we just created into an array.
+  // Flatten the map we just created into an array.
   let cooldownwithdurations = healerDurations.flat();
 
-  // We Create any missing timestamps in the fight (i.e no damage, these are needed so the chart doesn't stretch the areas to the next point.)
+  // Create any missing timestamps in the fight (i.e no damage, these are needed so the chart doesn't stretch the areas to the next point.)
   let times = addMissingTimestamps(fightDurationCalculator(endtime, starttime));
 
-  // We Concat the damage arrays with the cooldown durations with the missing durations
+  // Concat the damage arrays with the cooldown durations with the missing durations
   let unmitigatedDamageFromLogWithTimesAddedAndCooldowns = unmitigatedDamageMap.concat(
     cooldownwithdurations,
     times

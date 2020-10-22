@@ -1,5 +1,5 @@
 import React, { PureComponent } from "react";
-import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer } from "recharts";
+import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, Tooltip } from "recharts";
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 import Divider from "@material-ui/core/Divider";
@@ -42,6 +42,16 @@ export default class Example extends PureComponent {
             barCategoryGap={1}
             layout="vertical"
           >
+          <Tooltip
+              labelStyle={{ color: "#ffffff" }}
+              contentStyle={{
+                backgroundColor: "#1b1b1b",
+                border: "1px solid #1b1b1b",
+              }}
+               cursor
+               wrapperStyle={{color: "#1b1b1b"}}
+              // labelFormatter={(timeStr) => moment(timeStr).format("mm:ss")}
+            />
             <XAxis type="number" stroke="#f5f5f5" />
             <YAxis type="category" dataKey="ability" stroke="#f5f5f5" />
             <Bar
@@ -49,6 +59,7 @@ export default class Example extends PureComponent {
               dataKey="damage"
               fill="#8884d8"
             />
+            
           </BarChart>
         </ResponsiveContainer>
       </Paper>
