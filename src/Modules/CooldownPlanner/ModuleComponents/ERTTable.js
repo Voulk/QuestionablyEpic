@@ -18,7 +18,10 @@ import ViewColumn from "@material-ui/icons/ViewColumn";
 import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import { bossAbilities } from "../Data/Data";
 import moment from "moment";
-import { localizationRU, localizationCH } from "./TableLocalization.js";
+import { localizationFR } from "../../../locale/fr/TableLocale";
+import { localizationEN } from "../../../locale/en/TableLocale";
+import { localizationRU } from "../../../locale/ru/TableLocale";
+import { localizationCH } from "../../../locale/ch/TableLocale";
 import { useTranslation } from "react-i18next";
 import Divider from "@material-ui/core/Divider";
 
@@ -133,11 +136,13 @@ const tableIcons = {
 
 let curLang = (lang) => {
   if (lang === "en") {
-    return {};
+    return localizationEN;
   } else if (lang === "ru") {
     return localizationRU;
   } else if (lang === "ch") {
     return localizationCH;
+  } else if (lang === "fr") {
+    return localizationFR;
   } else {
     return false;
   }

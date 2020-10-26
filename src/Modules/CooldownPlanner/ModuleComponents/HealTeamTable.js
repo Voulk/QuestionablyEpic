@@ -25,7 +25,10 @@ import classicons from "../Functions/IconFunctions/ClassIcons";
 import { classColoursJS } from "../Functions/ClassColourFunctions";
 import { classMenus } from "../Menus/ClassMenuItems";
 import { useTranslation } from "react-i18next";
-import { localizationRU, localizationCH } from "./TableLocalization.js";
+import { localizationFR } from "../../../locale/fr/TableLocale";
+import { localizationEN } from "../../../locale/en/TableLocale";
+import { localizationRU } from "../../../locale/ru/TableLocale";
+import { localizationCH } from "../../../locale/ch/TableLocale";
 import ls from "local-storage";
 import Divider from "@material-ui/core/Divider";
 
@@ -261,11 +264,13 @@ export default function HealTeam(props) {
 
   let curLang = (lang) => {
     if (lang === "en") {
-      return {};
+      return localizationEN;
     } else if (lang === "ru") {
       return localizationRU;
     } else if (lang === "ch") {
       return localizationCH;
+    } else if (lang === "fr") {
+      return localizationFR;
     } else {
       return false;
     }
