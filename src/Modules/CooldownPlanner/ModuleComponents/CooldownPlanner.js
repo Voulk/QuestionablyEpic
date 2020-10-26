@@ -38,11 +38,10 @@ import {
 import { classColoursJS } from "../Functions/ClassColourFunctions";
 import { classMenus } from "../Menus/ClassMenuItems";
 import { useTranslation } from "react-i18next";
-import {
-  localizationRU,
-  localizationCH,
-  localizationFR,
-} from "./TableLocalization.js";
+import { localizationFR } from "../../../locale/fr/TableLocale";
+import { localizationEN } from "../../../locale/en/TableLocale";
+import { localizationRU } from "../../../locale/ru/TableLocale";
+import { localizationCH } from "../../../locale/ch/TableLocale";
 import MenuItem from "@material-ui/core/MenuItem";
 import Grow from "@material-ui/core/Grow";
 import bossIcons from "../Functions/IconFunctions/BossIcons";
@@ -483,7 +482,7 @@ export default function CooldownPlanner(props) {
 
   let curLang = (lang) => {
     if (lang === "en") {
-      return {};
+      return localizationEN;
     } else if (lang === "ru") {
       return localizationRU;
     } else if (lang === "ch") {

@@ -17,7 +17,10 @@ import Search from "@material-ui/icons/Search";
 import ViewColumn from "@material-ui/icons/ViewColumn";
 import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import abilityicons from "../../Functions/IconFunctions/AbilityIcons.js";
-import { localizationRU, localizationCH } from "../TableLocalization.js";
+import { localizationFR } from "../../../../locale/fr/TableLocale";
+import { localizationEN } from "../../../../locale/en/TableLocale";
+import { localizationRU } from "../../../../locale/ru/TableLocale";
+import { localizationCH } from "../../../../locale/ch/TableLocale";
 import moment from "moment";
 import { healerCooldownsDetailed } from "../../Data/Data.js";
 import Typography from "@material-ui/core/Typography";
@@ -100,11 +103,13 @@ const tableIcons = {
 
 let curLang = (lang) => {
   if (lang === "en") {
-    return {};
+    return localizationEN;
   } else if (lang === "ru") {
     return localizationRU;
   } else if (lang === "ch") {
     return localizationCH;
+  } else if (lang === "fr") {
+    return localizationFR;
   } else {
     return false;
   }
