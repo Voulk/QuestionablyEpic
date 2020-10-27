@@ -44,5 +44,4 @@ jobs:
           --exclude /deploy_key \
           --exclude /.git/ \
           --exclude /.github/ \
-          --exclude /node_modules/ \
           ./build/ ${{env.dest}}
