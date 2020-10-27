@@ -8,7 +8,7 @@
       "type": "image/png"
     }
   ],
-  "start_url": "./qesl/index.html",
+  "start_url": "./qesl/",
   "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#ffffff"
