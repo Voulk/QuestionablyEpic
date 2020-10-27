@@ -45,4 +45,4 @@ jobs:
           --exclude /.git/ \
           --exclude /.github/ \
           --exclude /node_modules/ \
-          ./ ${{env.dest}}
+          ./build/ ${{env.dest}}
