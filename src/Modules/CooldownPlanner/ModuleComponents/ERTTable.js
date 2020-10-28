@@ -24,6 +24,7 @@ import { localizationRU } from "../../../locale/ru/TableLocale";
 import { localizationCH } from "../../../locale/ch/TableLocale";
 import { useTranslation } from "react-i18next";
 import Divider from "@material-ui/core/Divider";
+import Paper from "@material-ui/core/Paper";
 
 const theme = createMuiTheme({
   overrides: {
@@ -143,8 +144,6 @@ let curLang = (lang) => {
     return localizationCH;
   } else if (lang === "fr") {
     return localizationFR;
-  } else {
-    return false;
   }
 };
 
@@ -170,14 +169,13 @@ export default function ERTTable(props) {
         data={props.data}
         style={{
           borderRadius: 4,
-          boxShadow:
-            "0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12)",
           fontSize: "0.8 rem",
           whiteSpace: "nowrap",
-          padding: 16,
+          padding: 10,
         }}
         localization={curLang(props.curLang)}
         components={{
+          Container: (props) => <Paper {...props} elevation={0} />,
           Toolbar: (props) => (
             <div style={{ marginBottom: 8 }}>
               <MTableToolbar {...props} />

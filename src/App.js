@@ -150,15 +150,14 @@ class App extends Component {
         this.state.client_id +
         "&redirect_uri=http://localhost:3000/confirmlogin/&response_type=code&scope=openid"
       );
-    } else {
-      return (
-        "https://" +
-        this.state.playerRegion +
-        ".battle.net/oauth/authorize?client_id=" +
-        this.state.client_id +
-        "&redirect_uri=http://localhost:3000/confirmlogin/&response_type=code&scope=openid"
-      );
     }
+    return (
+      "https://" +
+      this.state.playerRegion +
+      ".battle.net/oauth/authorize?client_id=" +
+      this.state.client_id +
+      "&redirect_uri=http://localhost:3000/confirmlogin/&response_type=code&scope=openid"
+    );
   };
 
   // When component mounts, check local storage for battle tag or ID.
@@ -183,7 +182,7 @@ class App extends Component {
     //alert(JSON.stringify(allChars[0]));
 
     return (
-      <Router basename={'/qesl/'}>
+      <Router basename={"/qesl/"}>
         <ThemeProvider theme={theme}>
           <div className="App">
             <QEHeader

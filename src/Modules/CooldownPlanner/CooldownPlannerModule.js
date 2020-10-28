@@ -12,7 +12,6 @@ import FightSelectorButton from "../CooldownPlanner/ModuleComponents/LogFightSel
 import LoadingOverlay from "react-loading-overlay";
 import CooldownPlanner from "../CooldownPlanner/ModuleComponents/CooldownPlanner.js";
 import CooldownTimeline from "../CooldownPlanner/ModuleComponents/LogDetailComponents/CooldownTimelineTable";
-import DenseAppBar from "../CooldownPlanner/BasicComponents/Appbar";
 import {
   fightDurationCalculator,
   warcraftLogReportID,
@@ -52,7 +51,7 @@ class HolyDiver extends Component {
       time: null,
       times: [{ timestamp: 0 }],
       timeend: null,
-      abilitylist: ["Melee"],
+      abilityList: ["Melee"],
       cooldownlist: ["none"],
       loadingcheck: false,
       boss: null,
@@ -160,12 +159,10 @@ class HolyDiver extends Component {
                   style={{
                     display: "inline-flex",
                     margin: "0px 0px 4px 0px",
-                    borderRadius: 4,
-                    padding: "10px 10px 10px 18px",
-                    boxShadow:
-                      "0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12)",
+                    padding: "10px 10px 10px 10px",
                     width: "100%",
                   }}
+                  elevation={0}
                 >
                   {/* Grid Container for the Log Input/Fight Selection Button */}
 
@@ -200,10 +197,7 @@ class HolyDiver extends Component {
                       style={{
                         display: "inline-flex",
                         margin: "0px 0px 4px 0px",
-                        borderRadius: 4,
-                        padding: "10px 10px 10px 18px",
-                        boxShadow:
-                          "0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12)",
+                        padding: "10px 10px 10px 10px",
                       }}
                     >
                       <SwitchLabels
@@ -250,14 +244,7 @@ class HolyDiver extends Component {
                     style={{ transformOrigin: "0 0 0" }}
                     {...(this.state.logDetailsShow ? { timeout: 1000 } : {})}
                   >
-                    <Paper
-                      bgcolor="#333"
-                      style={{
-                        borderRadius: 4,
-                        boxShadow:
-                          "0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12)",
-                      }}
-                    >
+                    <Paper bgcolor="#333">
                       <Grid item xs={12} padding={1} align="center">
                         <div
                           style={{
@@ -325,7 +312,7 @@ class HolyDiver extends Component {
                       dataToShow={this.state.chartData}
                       mitigated={this.state.mitigatedChartData}
                       unmitigated={this.state.unmitigatedChartData}
-                      abilitylist={this.state.abilitylist}
+                      abilityList={this.state.abilityList}
                       legendata={this.state.legenddata}
                       cooldown={this.state.cooldownlist}
                       endtime={fightDurationCalculator(
@@ -413,7 +400,7 @@ class HolyDiver extends Component {
                       dataToShow={this.state.chartData}
                       mitigated={this.state.mitigatedChartDataNoCooldowns}
                       unmitigated={this.state.unmitigatedChartDataNoCooldowns}
-                      abilitylist={this.state.abilitylist}
+                      abilityList={this.state.abilityList}
                       cooldown={this.state.cooldownlistcustom2}
                       endtime={fightDurationCalculator(
                         this.state.timeend,

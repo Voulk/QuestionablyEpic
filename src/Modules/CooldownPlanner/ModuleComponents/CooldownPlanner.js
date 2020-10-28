@@ -7,18 +7,11 @@ import MaterialTable, {
 import AddBox from "@material-ui/icons/AddBox";
 import ArrowDownward from "@material-ui/icons/ArrowDownward";
 import Check from "@material-ui/icons/Check";
-import ChevronLeft from "@material-ui/icons/ChevronLeft";
-import ChevronRight from "@material-ui/icons/ChevronRight";
 import Clear from "@material-ui/icons/Clear";
 import DeleteOutline from "@material-ui/icons/DeleteOutline";
 import Edit from "@material-ui/icons/Edit";
 import FilterList from "@material-ui/icons/FilterList";
-import FirstPage from "@material-ui/icons/FirstPage";
-import LastPage from "@material-ui/icons/LastPage";
-import Remove from "@material-ui/icons/Remove";
-import SaveAlt from "@material-ui/icons/SaveAlt";
 import Search from "@material-ui/icons/Search";
-import ViewColumn from "@material-ui/icons/ViewColumn";
 import ClassCooldownMenuItems from "../Menus/ClassCooldownMenuItems";
 import { Select, Grid } from "@material-ui/core";
 import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
@@ -26,8 +19,8 @@ import TextField from "@material-ui/core/TextField";
 import InputLabel from "@material-ui/core/InputLabel";
 import FormControl from "@material-ui/core/FormControl";
 import { makeStyles } from "@material-ui/core/styles";
-import abilityicons from "../Functions/IconFunctions/AbilityIcons";
-import classicons from "../Functions/IconFunctions/ClassIcons";
+import abilityIcons from "../Functions/IconFunctions/AbilityIcons";
+import classIcons from "../Functions/IconFunctions/ClassIcons";
 import moment from "moment";
 import {
   healerCooldownsDetailed,
@@ -48,6 +41,7 @@ import bossIcons from "../Functions/IconFunctions/BossIcons";
 import bossAbilityIcons from "../Functions/IconFunctions/BossAbilityIcons";
 import Divider from "@material-ui/core/Divider";
 import ls from "local-storage";
+import Paper from "@material-ui/core/Paper";
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -56,7 +50,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const themecooldowntable = createMuiTheme({
+const themeCooldownTable = createMuiTheme({
   overrides: {
     MuiTableCell: {
       root: {
@@ -69,7 +63,7 @@ const themecooldowntable = createMuiTheme({
       },
     },
     MuiToolbar: {
-      root: {color: "#345"},
+      root: { color: "#345" },
       regular: {
         minHeight: 0,
         "@media (min-width: 600px)": {
@@ -140,29 +134,11 @@ const tableIcons = {
   Delete: forwardRef((props, ref) => (
     <DeleteOutline {...props} style={{ color: "#ffee77" }} ref={ref} />
   )),
-  DetailPanel: forwardRef((props, ref) => (
-    <ChevronRight {...props} style={{ color: "#ffee77" }} ref={ref} />
-  )),
   Edit: forwardRef((props, ref) => (
     <Edit {...props} style={{ color: "#ffee77" }} ref={ref} />
   )),
-  Export: forwardRef((props, ref) => (
-    <SaveAlt {...props} style={{ color: "#ffee77" }} ref={ref} />
-  )),
   Filter: forwardRef((props, ref) => (
     <FilterList {...props} style={{ color: "#ffee77" }} ref={ref} />
-  )),
-  FirstPage: forwardRef((props, ref) => (
-    <FirstPage {...props} style={{ color: "#ffee77" }} ref={ref} />
-  )),
-  LastPage: forwardRef((props, ref) => (
-    <LastPage {...props} style={{ color: "#ffee77" }} ref={ref} />
-  )),
-  NextPage: forwardRef((props, ref) => (
-    <ChevronRight {...props} style={{ color: "#ffee77" }} ref={ref} />
-  )),
-  PreviousPage: forwardRef((props, ref) => (
-    <ChevronLeft {...props} style={{ color: "#ffee77" }} ref={ref} />
   )),
   ResetSearch: forwardRef((props, ref) => (
     <Clear {...props} ref={ref} style={{ color: "#ffee77" }} />
@@ -172,12 +148,6 @@ const tableIcons = {
   )),
   SortArrow: forwardRef((props, ref) => (
     <ArrowDownward {...props} style={{ color: "#ffee77" }} ref={ref} />
-  )),
-  ThirdStateCheck: forwardRef((props, ref) => (
-    <Remove {...props} style={{ color: "#ffee77" }} ref={ref} />
-  )),
-  ViewColumn: forwardRef((props, ref) => (
-    <ViewColumn {...props} style={{ color: "#ffee77" }} ref={ref} />
   )),
 };
 
@@ -224,7 +194,7 @@ export default function CooldownPlanner(props) {
         </div>
       ),
       editComponent: (props) => (
-        <ThemeProvider theme={themecooldowntable}>
+        <ThemeProvider theme={themeCooldownTable}>
           <FormControl
             className={classes.formControl}
             variant="outlined"
@@ -266,12 +236,12 @@ export default function CooldownPlanner(props) {
       },
       render: (rowData) => (
         <div style={{ color: classColoursJS(rowData.class) }}>
-          {classicons(rowData.class, 20)}
+          {classIcons(rowData.class, 20)}
           {t("CooldownPlannerClasses." + rowData.class)}
         </div>
       ),
       editComponent: (props) => (
-        <ThemeProvider theme={themecooldowntable}>
+        <ThemeProvider theme={themeCooldownTable}>
           <FormControl
             className={classes.formControl}
             variant="outlined"
@@ -307,7 +277,7 @@ export default function CooldownPlanner(props) {
       },
       render: (rowData) => (
         <div>
-          {abilityicons(rowData.Cooldown)}
+          {abilityIcons(rowData.Cooldown)}
           {t("CooldownPlannerClassAbilities." + rowData.Cooldown)}
         </div>
       ),
@@ -402,7 +372,7 @@ export default function CooldownPlanner(props) {
         </div>
       ),
       editComponent: (props) => (
-        <ThemeProvider theme={themecooldowntable}>
+        <ThemeProvider theme={themeCooldownTable}>
           <FormControl
             className={classes.formControl}
             variant="outlined"
@@ -489,8 +459,6 @@ export default function CooldownPlanner(props) {
       return localizationCH;
     } else if (lang === "fr") {
       return localizationFR;
-    } else {
-      return false;
     }
   };
 
@@ -502,16 +470,13 @@ export default function CooldownPlanner(props) {
   };
 
   return (
-    <ThemeProvider theme={themecooldowntable}>
+    <ThemeProvider theme={themeCooldownTable}>
       <MaterialTable
         icons={tableIcons}
-        // title={t("Cooldown Planner")}
         columns={columns}
         data={data}
         style={{
-          boxShadow:
-            "0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12)",
-          padding: 16,
+          padding: 10,
         }}
         options={{
           showTitle: false,
@@ -528,11 +493,10 @@ export default function CooldownPlanner(props) {
                 backgroundColor: "#535353",
                 border: "1px solid #515151",
               };
-            } else {
-              return {
-                border: "1px solid #515151",
-              };
             }
+            return {
+              border: "1px solid #515151",
+            };
           },
           actionCellStyle: {
             borderBottom: "1px solid #515151",
@@ -542,6 +506,7 @@ export default function CooldownPlanner(props) {
         }}
         localization={curLang(props.curLang)}
         components={{
+          Container: (props) => <Paper {...props} elevation={0} />,
           Body: (props) =>
             boss === "" ? null : (
               <Grow
@@ -549,7 +514,7 @@ export default function CooldownPlanner(props) {
                 style={{ transformOrigin: "0 0 0" }}
                 {...((boss === "" ? false : true) ? { timeout: "auto" } : {})}
               >
-                <MTableBody {...props} />
+                <MTableBody {...props} style={{ marginTop: 10 }} />
               </Grow>
             ),
           Header: (props) =>
@@ -585,27 +550,7 @@ export default function CooldownPlanner(props) {
                         value={raid}
                         onChange={handleChangeRaid}
                         label={t("HDTableLabels.RaidSelectorLabel")}
-                        MenuProps={{
-                          style: { marginTop: 5 },
-                          MenuListProps: {
-                            style: { paddingTop: 0, paddingBottom: 0 },
-                          },
-                          PaperProps: {
-                            style: {
-                              border: "1px solid rgba(255, 255, 255, 0.23)",
-                            },
-                          },
-                          anchorOrigin: {
-                            vertical: "bottom",
-                            horizontal: "left",
-                          },
-                          transformOrigin: {
-                            vertical: "top",
-                            horizontal: "left",
-                          },
-                          getContentAnchorEl: null,
-                          tableLayout: "fixed",
-                        }}
+                        MenuProps={menuStyle}
                       >
                         {rl
                           .map((key) => (
@@ -632,26 +577,7 @@ export default function CooldownPlanner(props) {
                         value={boss}
                         onChange={handleChangeBoss}
                         label={t("HDTableLabels.BossSelectorLabel")}
-                        MenuProps={{
-                          style: { marginTop: 5 },
-                          MenuListProps: {
-                            style: { paddingTop: 0, paddingBottom: 0 },
-                          },
-                          PaperProps: {
-                            style: {
-                              border: "1px solid rgba(255, 255, 255, 0.23)",
-                            },
-                          },
-                          anchorOrigin: {
-                            vertical: "bottom",
-                            horizontal: "left",
-                          },
-                          transformOrigin: {
-                            vertical: "top",
-                            horizontal: "left",
-                          },
-                          getContentAnchorEl: null,
-                        }}
+                        MenuProps={menuStyle}
                       >
                         {nathriaBossList
                           .filter((obj) => {
@@ -667,7 +593,7 @@ export default function CooldownPlanner(props) {
                       </Select>
                     </FormControl>
                   </Grid>
-                  {/*<Grid item xs="auto">
+                  {/* <Grid item xs="auto">
                     <FormControl
                       style={{ minWidth: 200 }}
                       variant="outlined"

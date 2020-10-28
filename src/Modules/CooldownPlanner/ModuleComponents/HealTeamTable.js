@@ -21,7 +21,7 @@ import TextField from "@material-ui/core/TextField";
 import InputLabel from "@material-ui/core/InputLabel";
 import FormControl from "@material-ui/core/FormControl";
 import { makeStyles } from "@material-ui/core/styles";
-import classicons from "../Functions/IconFunctions/ClassIcons";
+import classIcons from "../Functions/IconFunctions/ClassIcons";
 import { classColoursJS } from "../Functions/ClassColourFunctions";
 import { classMenus } from "../Menus/ClassMenuItems";
 import { useTranslation } from "react-i18next";
@@ -31,6 +31,7 @@ import { localizationRU } from "../../../locale/ru/TableLocale";
 import { localizationCH } from "../../../locale/ch/TableLocale";
 import ls from "local-storage";
 import Divider from "@material-ui/core/Divider";
+import Paper from "@material-ui/core/Paper";
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -42,7 +43,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const themecooldowntable = createMuiTheme({
+const themeCooldownTable = createMuiTheme({
   overrides: {
     MuiTableCell: {
       // regular: {
@@ -59,35 +60,14 @@ const themecooldowntable = createMuiTheme({
     },
     MuiToolbar: {
       regular: {
-        minHeight: 0,
         "@media (min-width: 600px)": {
           minHeight: "0px",
         },
+        minHeight: 0,
       },
       root: {
         padding: "4px 4px 4px 4px",
         color: "#c8b054",
-      },
-    },
-  },
-  palette: {
-    type: "dark",
-    primary: { main: "#d3bc47" },
-    secondary: { main: "#e0e0e0" },
-  },
-});
-
-const SearchFieldOverride = createMuiTheme({
-  overrides: {
-    MuiOutlinedInput: {
-      input: { padding: 10 },
-    },
-    MuiToolbar: {
-      regular: {
-        minHeight: 0,
-        "@media (min-width: 600px)": {
-          minHeight: "0px",
-        },
       },
     },
   },
@@ -157,7 +137,6 @@ export default function HealTeam(props) {
   const { t } = useTranslation();
   const { useState } = React;
 
-  let wowClass = 0;
   let columns = [
     {
       title: t("Name"),
@@ -204,12 +183,12 @@ export default function HealTeam(props) {
       },
       render: (rowData) => (
         <div style={{ color: classColoursJS(rowData.class) }}>
-          {classicons(rowData.class, 20)}
+          {classIcons(rowData.class, 20)}
           {t("CooldownPlannerClasses." + rowData.class)}
         </div>
       ),
       editComponent: (props) => (
-        <ThemeProvider theme={themecooldowntable}>
+        <ThemeProvider theme={themeCooldownTable}>
           <FormControl
             className={classes.formControl}
             size="small"
@@ -271,22 +250,18 @@ export default function HealTeam(props) {
       return localizationCH;
     } else if (lang === "fr") {
       return localizationFR;
-    } else {
-      return false;
     }
   };
 
   return (
-    <ThemeProvider theme={themecooldowntable}>
+    <ThemeProvider theme={themeCooldownTable}>
       <MaterialTable
         icons={tableIcons}
         title={t("HDTableLabels.HealTeamHeader")}
         columns={columns}
         data={data}
         style={{
-          boxShadow:
-            "0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12)",
-          padding: 16,
+          padding: 10,
           // fontSize: "0.8 rem",
         }}
         options={{
@@ -331,6 +306,7 @@ export default function HealTeam(props) {
           paging: false,
         }}
         components={{
+          Container: (props) => <Paper {...props} elevation={0} />,
           Toolbar: (props) => (
             <div style={{ marginBottom: 8 }}>
               <MTableToolbar {...props} />

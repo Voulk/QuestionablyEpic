@@ -33,10 +33,9 @@ import FaelineStompIcon from "../../../../Images/Classes/Monk/CovenantAbilities/
 import DarknessIcon from "../../../../Images/Classes/DemonHunter/DemonHunterIcon.jpg";
 import RallyingCryIcon from "../../../../Images/Classes/Warrior/RallyingCryIcon.jpg";
 
-
 // Should probably work this off GUID
 
-export default function abilityicons(props) {
+export default function abilityIcons(props) {
   let spell = "";
   let source = "";
   let alt = "";
@@ -220,17 +219,17 @@ export default function abilityicons(props) {
   }
 
   return (
-      <a data-wowhead={spell}>
-        <img
-          style={{
-            height: 20,
-            width: 20,
-            padding: "0px 5px 0px 5px",
-            verticalAlign: "middle",
-          }}
-          src={source}
-          alt={alt}
-        />
-      </a>
+    <a data-wowhead={spell}>
+      <img
+        style={{
+          height: 20,
+          width: 20,
+          padding: "0px 5px 0px 5px",
+          verticalAlign: "middle",
+        }}
+        src={source}
+        alt={alt}
+      />
+    </a>
   );
 }

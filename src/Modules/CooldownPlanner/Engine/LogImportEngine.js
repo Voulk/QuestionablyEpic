@@ -12,7 +12,7 @@ import {
 } from "../Functions/Functions";
 import moment from "moment";
 
-/*=============================================
+/* =============================================
    This Function Imports all the Data for the Chart/Log Details
    component. This Function should be bound to the Component that is imported into, so all data
    retreived by it is returned/setting the state in that component. This is
@@ -30,14 +30,11 @@ function getUnique(arr, comp) {
   // store the comparison  values in array
   const unique = arr
     .map((e) => e[comp])
-
     // store the indexes of the unique objects
     .map((e, i, final) => final.indexOf(e) === i && i)
-
     // eliminate the false indexes & return unique objects
     .filter((e) => arr[e])
     .map((e) => arr[e]);
-
   return unique;
 }
 
@@ -339,7 +336,7 @@ export default async function updatechartdata(starttime, endtime) {
     unmitigatedChartData: sortedDataUnmitigatedWithCooldowns,
     mitigatedChartData: sortedDataMitigatedDamageWithCooldowns,
     Updateddatacasts: updateddatacastsTimeline,
-    abilitylist: uniqueArray,
+    abilityList: uniqueArray,
     cooldownlist: uniqueArrayCD,
     loadingcheck: false,
     healernames: summary.map((key) => ({

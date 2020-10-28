@@ -73,8 +73,6 @@ export default function LanguageSelector(props) {
       return chFlag;
     } else if (check === "fr") {
       return frFlag;
-    } else {
-      return enFlag;
     }
   };
 
