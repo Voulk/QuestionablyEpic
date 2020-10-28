@@ -146,7 +146,7 @@ class Chart extends Component {
     };
 
     return (
-      <Paper style={{ padding: 10 }}>
+      <Paper style={{ padding: 10 }} elevation={0}>
         <ResponsiveContainer className="ResponsiveContainer" aspect={4 / 0.8}>
           <AreaChart
             data={

@@ -490,7 +490,7 @@ export default function CooldownPlanner(props) {
           rowStyle: (rowData, index) => {
             if (index % 2) {
               return {
-                backgroundColor: "#535353",
+                backgroundColor: "#515151",
                 border: "1px solid #515151",
               };
             }
@@ -514,7 +514,7 @@ export default function CooldownPlanner(props) {
                 style={{ transformOrigin: "0 0 0" }}
                 {...((boss === "" ? false : true) ? { timeout: "auto" } : {})}
               >
-                <MTableBody {...props} style={{ marginTop: 10 }} />
+                <MTableBody {...props} />
               </Grow>
             ),
           Header: (props) =>
@@ -534,6 +534,9 @@ export default function CooldownPlanner(props) {
                 spacing={1}
                 direction="row"
                 justify="space-between"
+                style={{
+                  marginBottom: (boss === "" ? false : true) ? 5 : 0,
+                }}
               >
                 <Grid item container spacing={1} xs={7} alignItems="center">
                   <Grid item xs="auto">

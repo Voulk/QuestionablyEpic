@@ -1,31 +1,17 @@
 import React, { forwardRef } from "react";
 import MaterialTable, { MTableToolbar } from "material-table";
-import AddBox from "@material-ui/icons/AddBox";
 import ArrowDownward from "@material-ui/icons/ArrowDownward";
-import Check from "@material-ui/icons/Check";
-import ChevronLeft from "@material-ui/icons/ChevronLeft";
-import ChevronRight from "@material-ui/icons/ChevronRight";
-import Clear from "@material-ui/icons/Clear";
-import DeleteOutline from "@material-ui/icons/DeleteOutline";
-import Edit from "@material-ui/icons/Edit";
-import FilterList from "@material-ui/icons/FilterList";
-import FirstPage from "@material-ui/icons/FirstPage";
-import LastPage from "@material-ui/icons/LastPage";
-import Remove from "@material-ui/icons/Remove";
-import SaveAlt from "@material-ui/icons/SaveAlt";
-import Search from "@material-ui/icons/Search";
-import ViewColumn from "@material-ui/icons/ViewColumn";
 import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
-import abilityicons from "../../Functions/IconFunctions/AbilityIcons.js";
+import abilityIcons from "../../Functions/IconFunctions/AbilityIcons.js";
 import { localizationFR } from "../../../../locale/fr/TableLocale";
 import { localizationEN } from "../../../../locale/en/TableLocale";
 import { localizationRU } from "../../../../locale/ru/TableLocale";
 import { localizationCH } from "../../../../locale/ch/TableLocale";
 import moment from "moment";
 import { healerCooldownsDetailed } from "../../Data/Data.js";
-import Typography from "@material-ui/core/Typography";
 import Divider from "@material-ui/core/Divider";
 import Paper from "@material-ui/core/Paper";
+import { useTranslation } from "react-i18next";
 
 const theme = createMuiTheme({
   overrides: {
@@ -49,56 +35,8 @@ const theme = createMuiTheme({
   },
 });
 const tableIcons = {
-  Add: forwardRef((props, ref) => (
-    <AddBox {...props} style={{ color: "#ffee77" }} ref={ref} />
-  )),
-  Check: forwardRef((props, ref) => (
-    <Check {...props} style={{ color: "#ffee77" }} ref={ref} />
-  )),
-  Clear: forwardRef((props, ref) => (
-    <Clear {...props} style={{ color: "#ffee77" }} ref={ref} />
-  )),
-  Delete: forwardRef((props, ref) => (
-    <DeleteOutline {...props} style={{ color: "#ffee77" }} ref={ref} />
-  )),
-  DetailPanel: forwardRef((props, ref) => (
-    <ChevronRight {...props} style={{ color: "#ffee77" }} ref={ref} />
-  )),
-  Edit: forwardRef((props, ref) => (
-    <Edit {...props} style={{ color: "#ffee77" }} ref={ref} />
-  )),
-  Export: forwardRef((props, ref) => (
-    <SaveAlt {...props} style={{ color: "#ffee77" }} ref={ref} />
-  )),
-  Filter: forwardRef((props, ref) => (
-    <FilterList {...props} style={{ color: "#ffee77" }} ref={ref} />
-  )),
-  FirstPage: forwardRef((props, ref) => (
-    <FirstPage {...props} style={{ color: "#ffee77" }} ref={ref} />
-  )),
-  LastPage: forwardRef((props, ref) => (
-    <LastPage {...props} style={{ color: "#ffee77" }} ref={ref} />
-  )),
-  NextPage: forwardRef((props, ref) => (
-    <ChevronRight {...props} style={{ color: "#ffee77" }} ref={ref} />
-  )),
-  PreviousPage: forwardRef((props, ref) => (
-    <ChevronLeft {...props} style={{ color: "#ffee77" }} ref={ref} />
-  )),
-  ResetSearch: forwardRef((props, ref) => (
-    <Clear {...props} ref={ref} style={{ color: "#ffee77" }} />
-  )),
-  Search: forwardRef((props, ref) => (
-    <Search {...props} style={{ color: "#ffee77" }} ref={ref} />
-  )),
   SortArrow: forwardRef((props, ref) => (
     <ArrowDownward {...props} style={{ color: "#ffee77" }} ref={ref} />
-  )),
-  ThirdStateCheck: forwardRef((props, ref) => (
-    <Remove {...props} style={{ color: "#ffee77" }} ref={ref} />
-  )),
-  ViewColumn: forwardRef((props, ref) => (
-    <ViewColumn {...props} style={{ color: "#ffee77" }} ref={ref} />
   )),
 };
 
@@ -115,18 +53,19 @@ let curLang = (lang) => {
 };
 
 export default function CooldownTimeline(props) {
+  const { t } = useTranslation();
   return (
     <ThemeProvider theme={theme}>
       <MaterialTable
         icons={tableIcons}
         columns={[
           {
-            title: "Name",
+            title: t("Name"),
             field: "name",
             cellStyle: {
               whiteSpace: "nowrap",
               // borderRight: "1px solid rgb(81 81 81)",
-              padding: "4px 8px 4px 8px",
+              padding: "2px 8px",
               fontSize: 14,
             },
             headerStyle: {
@@ -136,12 +75,12 @@ export default function CooldownTimeline(props) {
             },
           },
           {
-            title: "Ability",
+            title: t("Cooldown"),
             field: "ability",
             cellStyle: {
               whiteSpace: "nowrap",
               // borderRight: "1px solid rgb(81 81 81)",
-              padding: "4px 8px 4px 8px",
+              padding: "2px 8px",
               fontSize: 14,
             },
             headerStyle: {
@@ -151,19 +90,19 @@ export default function CooldownTimeline(props) {
             },
             render: (rowData) => (
               <div>
-                {abilityicons(rowData.guid)}
+                {abilityIcons(rowData.guid)}
                 {rowData.ability}
               </div>
             ),
           },
           {
-            title: "Cast",
+            title: t("HDTableLabels.CastTimeLabel"),
             field: "timestamp",
             width: "2%",
             cellStyle: {
               whiteSpace: "nowrap",
               // borderRight: "1px solid rgb(81 81 81)",
-              padding: "4px 8px 4px 8px",
+              padding: "2px 8px",
               fontSize: 14,
             },
             headerStyle: {
@@ -173,11 +112,11 @@ export default function CooldownTimeline(props) {
             },
           },
           {
-            title: "Avail.",
+            title: t("HDTableLabels.OffCooldownLabel"),
             width: "2%",
             cellStyle: {
               whiteSpace: "nowrap",
-              padding: "4px 8px 4px 8px",
+              padding: "2px 8px",
               fontSize: 14,
             },
             headerStyle: {
@@ -241,13 +180,12 @@ export default function CooldownTimeline(props) {
                 borderLeft: "1px solid #515151",
                 borderRight: "1px solid #515151",
               };
-            } else {
-              return {
-                borderBottom: "1px solid #515151",
-                borderLeft: "1px solid #515151",
-                borderRight: "1px solid #515151",
-              };
             }
+            return {
+              borderBottom: "1px solid #515151",
+              borderLeft: "1px solid #515151",
+              borderRight: "1px solid #515151",
+            };
           },
           searchFieldStyle: {
             borderBottom: "1px solid #6d6d6d",

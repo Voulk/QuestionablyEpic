@@ -145,11 +145,9 @@ export default function HealTeam(props) {
       cellStyle: {
         whiteSpace: "nowrap",
         paddingLeft: 8,
-        // borderRight: "1px solid #515151",
       },
       headerStyle: {
         paddingLeft: 8,
-        // borderRight: "1px solid #515151",
         textAlign: "center",
       },
       render: (rowData) => (
@@ -175,10 +173,8 @@ export default function HealTeam(props) {
       width: 250,
       cellStyle: {
         whiteSpace: "nowrap",
-        // borderRight: "1px solid rgb(81 81 81)",
       },
       headerStyle: {
-        // borderRight: "1px solid #515151",
         textAlign: "center",
       },
       render: (rowData) => (
@@ -237,10 +233,6 @@ export default function HealTeam(props) {
     ls.set("healerInfo", props);
   };
 
-  // useEffect(() => {
-  //   props.update(data);
-  // }, [data]);
-
   let curLang = (lang) => {
     if (lang === "en") {
       return localizationEN;
@@ -262,38 +254,31 @@ export default function HealTeam(props) {
         data={data}
         style={{
           padding: 10,
-          // fontSize: "0.8 rem",
         }}
         options={{
           search: false,
           showTitle: true,
-          // toolbar: false,
-          // showTitle: false,
           headerStyle: {
             border: "1px solid #c8b054",
             padding: "0px 8px 0px 8px",
             backgroundColor: "#c8b054",
             color: "#000",
-            // fontSize: "0.8 rem",
           },
           rowStyle: (rowData, index) => {
             if (index % 2) {
               return {
-                backgroundColor: "#535353",
-                borderBottom: "1px solid #515151",
-                borderLeft: "1px solid #515151",
-                borderRight: "1px solid #515151",
-              };
-            } else {
-              return {
+                backgroundColor: "#515151",
                 borderBottom: "1px solid #515151",
                 borderLeft: "1px solid #515151",
                 borderRight: "1px solid #515151",
               };
             }
+            return {
+              borderBottom: "1px solid #515151",
+              borderLeft: "1px solid #515151",
+              borderRight: "1px solid #515151",
+            };
           },
-
-          // },
           searchFieldStyle: {
             borderBottom: "1px solid #515151",
             color: "#ffffff",
