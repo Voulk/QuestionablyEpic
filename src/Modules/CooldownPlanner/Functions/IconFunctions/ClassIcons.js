@@ -8,7 +8,7 @@ import RestorationShamanIcon from "../../../../Images/Classes/Shaman/Specialisat
 import WarriorIcon from "../../../../Images/Classes/Warrior/WarriorIcon.jpg";
 import DemonHunterIcon from "../../../../Images/Classes/DemonHunter/DemonHunterIcon.jpg";
 
-export default function classicons(props, iconsize) {
+export default function classIcons(props, iconSize) {
   let src = "";
   let alt = "";
 
@@ -92,8 +92,8 @@ export default function classicons(props, iconsize) {
   return (
     <img
       style={{
-        height: iconsize,
-        width: iconsize,
+        height: iconSize,
+        width: iconSize,
         padding: "0px 5px 0px 5px",
         verticalAlign: "middle",
       }}

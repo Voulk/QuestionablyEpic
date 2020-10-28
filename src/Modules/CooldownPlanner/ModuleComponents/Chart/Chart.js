@@ -18,7 +18,7 @@ class Chart extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      abilityList: this.props.abilitylist,
+      abilityList: this.props.abilityList,
       data: this.props.chartdata,
       left: "dataMin",
       right: "dataMax",
@@ -35,7 +35,7 @@ class Chart extends Component {
   drawAreas() {
     // Provided prop array of abilities and guids are mapped for datakeys then made into a unique array of ability names.
     let abilities = Array.from(
-      new Set(this.props.abilitylist.map((key) => key.ability))
+      new Set(this.props.abilityList.map((key) => key.ability))
     );
     let cooldowns = this.props.cooldown;
     let dataSet = abilities;
@@ -107,7 +107,6 @@ class Chart extends Component {
     return ticks.flat();
   };
 
-
   // The charts data is set here on component mount. The data is passed from the CooldownPlannerModule.
   componentDidMount() {
     this.setState({ data: this.props.chart });
@@ -119,7 +118,7 @@ class Chart extends Component {
       <a
         data-wowhead={
           "spell=" +
-          this.props.abilitylist
+          this.props.abilityList
             .filter((obj) => {
               return obj.ability === value;
             })
@@ -142,17 +141,13 @@ class Chart extends Component {
         return (number / 1000).toString() + "K";
       } else if (number === 0) {
         return "";
-      } else {
-        return number.toString();
       }
+      return number.toString();
     };
 
     return (
-      <Paper style={{ padding: 10 }}>
-        <ResponsiveContainer
-          className="ResponsiveContainer"
-          aspect={4 / 0.8}
-        >
+      <Paper style={{ padding: 10 }} elevation={0}>
+        <ResponsiveContainer className="ResponsiveContainer" aspect={4 / 0.8}>
           <AreaChart
             data={
               this.props.dataToShow === true
