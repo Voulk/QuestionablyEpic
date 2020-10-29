@@ -5,6 +5,7 @@ import Dialog from "@material-ui/core/Dialog";
 import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
 import DialogTitle from "@material-ui/core/DialogTitle";
+import {runSimC} from "../Engine/SimCImport/SimCImportEngine";
 
 // const useStyles = makeStyles((theme) => ({
 //   root: { height: 500 },
@@ -13,6 +14,7 @@ import DialogTitle from "@material-ui/core/DialogTitle";
 export default function SimCraftInput() {
   // const classes = useStyles;
   const [open, setOpen] = React.useState(false);
+  const [simC, setSimC] = React.useState('');
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -20,6 +22,11 @@ export default function SimCraftInput() {
 
   const handleClose = () => {
     setOpen(false);
+  };
+
+  const handleSubmit = () => {
+    runSimC(simC);
+    //setOpen(false);
   };
 
   return (
@@ -41,18 +48,19 @@ export default function SimCraftInput() {
             autoFocus
             multiline={true}
             margin="dense"
-            id="name"
+            id="simcentry"
             label="SimC String"
             fullWidth
             style={{ height: "100%" }}
             variant="outlined"
+            onChange={evt => setSimC(evt.target.value)}
           />
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose} color="primary">
             Cancel
           </Button>
-          <Button onClick={handleClose} color="primary">
+          <Button onClick={handleSubmit} color="primary">
             Submit
           </Button>
         </DialogActions>

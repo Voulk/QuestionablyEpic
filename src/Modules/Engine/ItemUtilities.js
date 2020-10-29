@@ -106,6 +106,15 @@ export function getItemEffect(id) {
   else return "";
 }
 
+export function getItemLevel(id) {
+  let temp = itemDB.filter(function (item) {
+    return item.id === id;
+  });
+
+  if (temp.length > 0) return temp[0].itemLevel;
+  else return -2;
+}
+
 // Returns a translated item name based on an ID.
 // Add some support for missing icons.
 export function getItemIcon(id) {
