@@ -96,6 +96,13 @@
     },
     "BossAbilities": {
       "undefined": "No Ability Selected",
+      "NzothComment": "Nzoth Abilities",
+      "309980": "Paranoia",
+      "317066": "Harvest Thoughts",
+      "318449": "Eternal Torment",
+      "309046": "Mindgate",
+      "317102": "Evoke Anguish",
+      "319350": "Cleansing Protocol",
       "ShriekingComment": "Shriekwing Abilities",
       "344112": "Reverberating Scream",
       "344114": "Reverberating Scream",
