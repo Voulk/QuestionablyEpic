@@ -418,6 +418,50 @@ export const bossIds = [
 ];
 
 export const bossAbilities = [
+  //N'zoth
+  {
+    bossID: 2375,
+    ability: "Paranoia",
+    guid: 309980,
+    cooldownPlannerActive: true,
+    icon: require("../../../Images/Bosses/Nya'lotha/Nzoth/spell_arcane_mindmastery.jpg"),
+  },
+  {
+    bossID: 2375,
+    ability: "Harvest Thoughts",
+    guid: 317066,
+    cooldownPlannerActive: true,
+    icon: require("../../../Images/Bosses/Nya'lotha/Nzoth/spell_shadow_brainwash.jpg"),
+  },
+  {
+    bossID: 2375,
+    ability: "Eternal Torment",
+    guid: 318449,
+    cooldownPlannerActive: true,
+    icon: require("../../../Images/Bosses/Nya'lotha/Nzoth/spell_shadow_painandsuffering.jpg"),
+  },
+  {
+    bossID: 2375,
+    ability: "Mindgate",
+    guid: 309046,
+    cooldownPlannerActive: true,
+    icon: require("../../../Images/Bosses/Nya'lotha/Nzoth/ability_kaztik_dominatemind.jpg"),
+  },
+  {
+    bossID: 2375,
+    ability: "Evoke Anguish",
+    guid: 317102,
+    cooldownPlannerActive: true,
+    icon: require("../../../Images/Bosses/Nya'lotha/Nzoth/spell_shadow_shadetruesight.jpg"),
+  },
+  {
+    bossID: 2375,
+    ability: "Cleansing Protocol",
+    guid: 319350,
+    cooldownPlannerActive: true,
+    icon: require("../../../Images/Bosses/Nya'lotha/Nzoth/ability_titankeeper_cleansingorb.jpg"),
+  },
+
   // Hungering Destroyer
   {
     bossID: 2383,
@@ -1482,57 +1526,65 @@ export const talents = [
   { name: "Holy Word: Salvation", guid: 265202 },
 ];
 
-export const raidList = [{ id: 1, raidName: "Castle Nathria" }];
-export const nathriaBossList = [
+export const raidList = [
+  { id: 0, zoneID: 10522, raidName: "Ny’alotha" },
+  { id: 1, zoneID: 13224, raidName: "Castle Nathria" },
+];
+export const bossList = [
+  {
+    id: 2375,
+    name: "N'zoth",
+    zoneID: 10522,
+  },
   {
     id: 2398,
     name: "Shriekwing",
-    raid: "Castle Nathria",
+    zoneID: 13224,
   },
   {
     id: 2418,
     name: "Huntsman Altimor",
-    raid: "Castle Nathria",
+    zoneID: 13224,
   },
   {
     id: 2402,
     name: "Sun King's Salvation",
-    raid: "Castle Nathria",
+    zoneID: 13224,
   },
   {
     id: 2405,
     name: "Artificer Xy'mox",
-    raid: "Castle Nathria",
+    zoneID: 13224,
   },
   {
     id: 2383,
     name: "Hungering Destroyer",
-    raid: "Castle Nathria",
+    zoneID: 13224,
   },
   {
     id: 2406,
     name: "Lady Inerva Darkvein",
-    raid: "Castle Nathria",
+    zoneID: 13224,
   },
   {
     id: 2412,
     name: "The Council of Blood",
-    raid: "Castle Nathria",
+    zoneID: 13224,
   },
   {
     id: 2399,
     name: "Sludgefist",
-    raid: "Castle Nathria",
+    zoneID: 13224,
   },
   {
     id: 2417,
     name: "Stone Legion Generals",
-    raid: "Castle Nathria",
+    zoneID: 13224,
   },
   {
     id: 2407,
     name: "Sire Denathrius",
-    raid: "Castle Nathria",
+    zoneID: 13224,
   },
 ];
 

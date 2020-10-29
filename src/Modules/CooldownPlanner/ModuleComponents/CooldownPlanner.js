@@ -25,7 +25,7 @@ import moment from "moment";
 import {
   healerCooldownsDetailed,
   raidList,
-  nathriaBossList,
+  bossList,
   bossAbilities,
 } from "../Data/Data";
 import { classColoursJS } from "../Functions/ClassColourFunctions";
@@ -436,9 +436,9 @@ export default function CooldownPlanner(props) {
   ];
 
   useEffect(() => {
-    nathriaBossList.map((key) => {
-      if (ls.get("Castle Nathria" + "." + key.id + ".1") === null) {
-        ls.set("Castle Nathria" + "." + key.id + ".1", []);
+    bossList.map((key) => {
+      if (ls.get(key.zoneID + "." + key.id + ".1") === null) {
+        ls.set(key.zoneID + "." + key.id + ".1", []);
       }
     });
     if (ls.get("healerInfo") === null || ls.get("healerInfo") === undefined) {
@@ -466,8 +466,13 @@ export default function CooldownPlanner(props) {
     if (ls.get(raid + "." + boss + ".1") === null) {
       ls.set(raid + "." + boss + ".1", []);
     }
-    ls.set(raid + "." + boss + ".1", props);
+    ls.set(
+      raid + "." + boss + ".1",
+      props.sort((a, b) => (a.time > b.time ? 1 : -1))
+    );
   };
+
+  console.log(raid);
 
   return (
     <ThemeProvider theme={themeCooldownTable}>
@@ -557,7 +562,7 @@ export default function CooldownPlanner(props) {
                       >
                         {rl
                           .map((key) => (
-                            <MenuItem value={key.raidName}>
+                            <MenuItem value={key.zoneID}>
                               {key.raidName}
                             </MenuItem>
                           ))
@@ -582,9 +587,9 @@ export default function CooldownPlanner(props) {
                         label={t("HDTableLabels.BossSelectorLabel")}
                         MenuProps={menuStyle}
                       >
-                        {nathriaBossList
+                        {bossList
                           .filter((obj) => {
-                            return obj.raid === raid;
+                            return obj.zoneID === raid;
                           })
                           .map((key) => (
                             <MenuItem value={key.id}>
@@ -634,7 +639,9 @@ export default function CooldownPlanner(props) {
           onRowAdd: (newData) =>
             new Promise((resolve, reject) => {
               setTimeout(() => {
-                setData([...data, newData]);
+                setData(
+                  [...data, newData].sort((a, b) => (a.time > b.time ? 1 : -1))
+                );
                 resolve();
                 updateStorage([...data, newData], boss);
               }, 1000);
@@ -645,7 +652,9 @@ export default function CooldownPlanner(props) {
                 const dataUpdate = [...data];
                 const index = oldData.tableData.id;
                 dataUpdate[index] = newData;
-                setData([...dataUpdate]);
+                setData(
+                  [...dataUpdate].sort((a, b) => (a.time > b.time ? 1 : -1))
+                );
                 updateStorage([...dataUpdate], boss);
                 resolve();
               }, 1000);
@@ -656,7 +665,9 @@ export default function CooldownPlanner(props) {
                 const dataDelete = [...data];
                 const index = oldData.tableData.id;
                 dataDelete.splice(index, 1);
-                setData([...dataDelete]);
+                setData(
+                  [...dataDelete].sort((a, b) => (a.time > b.time ? 1 : -1))
+                );
                 updateStorage([...dataDelete], boss);
                 resolve();
               }, 1000);

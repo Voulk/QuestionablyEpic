@@ -192,6 +192,7 @@ export default function HealTeam(props) {
           >
             <InputLabel id="HealerClassSelector">{t("Class")}</InputLabel>
             <Select
+              label={t("Class")}
               value={props.value}
               onChange={(e) => {
                 props.onChange(e.target.value);
@@ -221,6 +222,7 @@ export default function HealTeam(props) {
           id="standard-basic"
           label="Notes"
           value={props.value}
+          style={{ width: "100%" }}
           onChange={(e) => props.onChange(e.target.value)}
         />
       ),
