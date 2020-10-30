@@ -146,6 +146,12 @@ export default function ProfileSelector(props) {
                     autoFocusItem={open}
                     id="menu-list-grow"
                     onKeyDown={handleListKeyDown}
+                    style={{
+                      border: "1px solid rgba(255, 255, 255, 0.23)",
+                      borderRadius: 4,
+                      paddingTop: 0,
+                      paddingBottom: 0,
+                    }}
                   >
                     <MenuItem
                       onClick={(e) => handleClose(e)}
