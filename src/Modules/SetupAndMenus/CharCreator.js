@@ -216,7 +216,7 @@ export default function AddNewChar(props) {
   };
 
   return (
-    <Grid item xs={4}>
+    <Grid item xs={12} sm={6} md={6} lg={4} xl={4}>
       <CardActionArea onClick={handleClickOpen}>
         <Card className={classes.root} variant="outlined" raised={true}>
           <Avatar variant="rounded" alt="" className={classes.large} />

@@ -11,6 +11,7 @@ import ProfileSelector from "./ProfileButton";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import SimCraftInput from "./SimCraftDialog";
+import Grid from "@material-ui/core/Grid";
 
 export default function QEHeader(props) {
   const { t } = useTranslation();
@@ -24,28 +25,65 @@ export default function QEHeader(props) {
   return (
     <div style={{ backgroundColor: "#353535" }}>
       <AppBar position="static" color="inherit">
-        <Toolbar style={{ marginLeft: "20%", marginRight: "20%" }}>
-          <Box display="flex" flexGrow={1}>
-            <Link to={"/"}>
-              <img src={logo} alt="QE Live" />
-            </Link>
-          </Box>
-          <div />
-          <Button style={{ color: "white" }}>
-            {t("QeHeader.InsertLogLabel")}
-          </Button>
-          <SimCraftInput />
-          <Button style={{ color: "white" }} onClick={props.toggleContentType}>
-            {t(props.contentType)}
-          </Button>
-          <ProfileSelector
-            name={playerName}
-            component={Link}
-            to={linkTarget}
-            logFunc={props.logFunc}
-            setRegion={props.setRegion}
-          />
-          <LanguageSelector langSet={props.langSet} curLang={props.curLang} />
+        <Toolbar style={{ marginLeft: "10%", marginRight: "10%" }}>
+          <Grid
+            container
+            direction="row"
+            justify="space-between"
+            alignItems="center"
+          >
+            <Grid item xs={12} sm={12} md={1} lg={1} xl={1} align="center">
+              <Link to={"/"}>
+                <img src={logo} alt="QE Live" />
+              </Link>
+            </Grid>
+            <Grid
+              container
+              item
+              xs={12}
+              sm={12}
+              md={4}
+              lg={4}
+              xl={4}
+              direction="row"
+              justify="center"
+              alignItems="center"
+              spacing={1}
+              wrap="nowrap"
+            >
+              <Grid item>
+                <Button style={{ color: "white" }}>
+                  {t("QeHeader.InsertLogLabel")}
+                </Button>
+              </Grid>
+              <Grid item>
+                <SimCraftInput />
+              </Grid>
+              <Grid item>
+                <Button
+                  style={{ color: "white" }}
+                  onClick={props.toggleContentType}
+                >
+                  {t(props.contentType)}
+                </Button>
+              </Grid>
+              <Grid item>
+                <ProfileSelector
+                  name={playerName}
+                  component={Link}
+                  to={linkTarget}
+                  logFunc={props.logFunc}
+                  setRegion={props.setRegion}
+                />
+              </Grid>
+              <Grid item>
+                <LanguageSelector
+                  langSet={props.langSet}
+                  curLang={props.curLang}
+                />
+              </Grid>
+            </Grid>
+          </Grid>
         </Toolbar>
       </AppBar>
     </div>

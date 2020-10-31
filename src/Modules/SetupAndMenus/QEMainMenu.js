@@ -36,7 +36,7 @@ export default function QEMainMenu(props) {
         <Grid container spacing={1}>
           {Object.keys(mainMenuOptions).map((key, index) => (
             // Buttons are translated and printed from a dictionary.
-            <Grid item xs={6} key={index}>
+            <Grid item xs={12} sm={12} md={6} lg={6} xl={6} key={index}>
               <Button
                 key={index}
                 variant="contained"
@@ -44,6 +44,7 @@ export default function QEMainMenu(props) {
                 style={{
                   width: "100%",
                   height: "40px",
+                  whiteSpace: "nowrap",
                 }}
                 component={Link}
                 to={mainMenuOptions[key]}

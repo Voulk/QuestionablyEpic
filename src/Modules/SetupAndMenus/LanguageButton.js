@@ -12,6 +12,7 @@ import enFlag from "../../locale/en/en.png";
 import chFlag from "../../locale/ch/ch.png";
 import frFlag from "../../locale/fr/fr.png";
 import { useTranslation } from "react-i18next";
+import ReactCountryFlag from "react-country-flag";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -66,13 +67,21 @@ export default function LanguageSelector(props) {
 
   const langIcon = (check) => {
     if (check === "en") {
-      return enFlag;
+      return (
+        <ReactCountryFlag countryCode="GB" svg style={{ marginRight: "5px" }} />
+      );
     } else if (check === "ru") {
-      return ruFlag;
+      return (
+        <ReactCountryFlag countryCode="RU" svg style={{ marginRight: "5px" }} />
+      );
     } else if (check === "ch") {
-      return chFlag;
+      return (
+        <ReactCountryFlag countryCode="CN" svg style={{ marginRight: "5px" }} />
+      );
     } else if (check === "fr") {
-      return frFlag;
+      return (
+        <ReactCountryFlag countryCode="FR" svg style={{ marginRight: "5px" }} />
+      );
     }
   };
 
@@ -85,7 +94,7 @@ export default function LanguageSelector(props) {
           aria-haspopup="true"
           onClick={handleToggle}
         >
-          <img src={langIcon(language)} style={{ marginRight: "5px" }} />
+          {langIcon(language)}
           {language}
         </Button>
         <Popper
@@ -109,21 +118,43 @@ export default function LanguageSelector(props) {
                     autoFocusItem={open}
                     id="menu-list-grow"
                     onKeyDown={handleListKeyDown}
+                    style={{
+                      border: "1px solid rgba(255, 255, 255, 0.23)",
+                      borderRadius: 4,
+                      paddingTop: 0,
+                      paddingBottom: 0,
+                    }}
                   >
                     <MenuItem onClick={(e) => handleClose(e, "ch")}>
-                      <img src={chFlag} style={{ marginRight: "5px" }} />
+                      <ReactCountryFlag
+                        countryCode="CN"
+                        svg
+                        style={{ marginRight: "5px" }}
+                      />
                       CH
                     </MenuItem>
                     <MenuItem onClick={(e) => handleClose(e, "en")}>
-                      <img src={enFlag} style={{ marginRight: "5px" }} />
+                      <ReactCountryFlag
+                        countryCode="GB"
+                        svg
+                        style={{ marginRight: "5px" }}
+                      />
                       EN
                     </MenuItem>
                     <MenuItem onClick={(e) => handleClose(e, "fr")}>
-                      <img src={frFlag} style={{ marginRight: "5px" }} />
+                      <ReactCountryFlag
+                        countryCode="FR"
+                        svg
+                        style={{ marginRight: "5px" }}
+                      />
                       FR
                     </MenuItem>
                     <MenuItem onClick={(e) => handleClose(e, "ru")}>
-                      <img src={ruFlag} style={{ marginRight: "5px" }} />
+                      <ReactCountryFlag
+                        countryCode="RU"
+                        svg
+                        style={{ marginRight: "5px" }}
+                      />
                       RU
                     </MenuItem>
                   </MenuList>

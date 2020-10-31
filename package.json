@@ -25,6 +25,7 @@
     "moment": "^2.29.0",
     "rc-time-picker": "^3.7.3",
     "react": "^16.13.1",
+    "react-country-flag": "^2.3.0",
     "react-data-grid": "^7.0.0-canary.22",
     "react-dom": "^16.13.1",
     "react-duration-picker": "^1.1.1",

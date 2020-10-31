@@ -8,7 +8,7 @@ import Avatar from "@material-ui/core/Avatar";
 import { classColoursJS } from "../CooldownPlanner/Functions/ClassColourFunctions.js";
 import { Grid } from "@material-ui/core";
 import Divider from "@material-ui/core/Divider";
-import classicons from "../CooldownPlanner/Functions/IconFunctions/ClassIcons.js"
+import classicons from "../CooldownPlanner/Functions/IconFunctions/ClassIcons.js";
 
 // Spec Images.
 const specImages = {
@@ -75,7 +75,7 @@ export default function CharCards(props) {
   //alert(rootClassName);
 
   return (
-    <Grid item xs={4}>
+    <Grid item xs={12} sm={6} md={6} lg={4} xl={4}>
       <CardActionArea
         onClick={(e) =>
           charClicked(
@@ -97,7 +97,11 @@ export default function CharCards(props) {
           <Divider orientation="vertical" flexItem />
           <div className={classes.details}>
             <CardContent className={classes.content}>
-              <Typography variant="h6" component="h4" style={{ lineHeight: 1, color: classColoursJS(spec) }}>
+              <Typography
+                variant="h6"
+                component="h4"
+                style={{ lineHeight: 1, color: classColoursJS(spec) }}
+              >
                 {props.name}
               </Typography>
               <Typography variant="caption" style={{ fontSize: 11 }}>

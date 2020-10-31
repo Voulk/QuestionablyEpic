@@ -4,20 +4,24 @@ import MaterialTable, {
   MTableBody,
   MTableHeader,
 } from "material-table";
-import AddBox from "@material-ui/icons/AddBox";
-import ArrowDownward from "@material-ui/icons/ArrowDownward";
-import Check from "@material-ui/icons/Check";
-import Clear from "@material-ui/icons/Clear";
-import DeleteOutline from "@material-ui/icons/DeleteOutline";
-import Edit from "@material-ui/icons/Edit";
-import FilterList from "@material-ui/icons/FilterList";
-import Search from "@material-ui/icons/Search";
+import { AddBox } from "@material-ui/icons/AddBox";
+import { ArrowDownward } from "@material-ui/icons/ArrowDownward";
+import { Check } from "@material-ui/icons/Check";
+import { Clear } from "@material-ui/icons/Clear";
+import { DeleteOutline } from "@material-ui/icons/DeleteOutline";
+import { Edit } from "@material-ui/icons/Edit";
+import { Search } from "@material-ui/icons/Search";
+import { FilterList } from "@material-ui/icons/FilterList";
 import ClassCooldownMenuItems from "../Menus/ClassCooldownMenuItems";
 import { Select, Grid } from "@material-ui/core";
 import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import InputLabel from "@material-ui/core/InputLabel";
 import FormControl from "@material-ui/core/FormControl";
+import Divider from "@material-ui/core/Divider";
+import Paper from "@material-ui/core/Paper";
+import Grow from "@material-ui/core/Grow";
+import MenuItem from "@material-ui/core/MenuItem";
 import { makeStyles } from "@material-ui/core/styles";
 import abilityIcons from "../Functions/IconFunctions/AbilityIcons";
 import classIcons from "../Functions/IconFunctions/ClassIcons";
@@ -35,13 +39,9 @@ import { localizationFR } from "../../../locale/fr/TableLocale";
 import { localizationEN } from "../../../locale/en/TableLocale";
 import { localizationRU } from "../../../locale/ru/TableLocale";
 import { localizationCH } from "../../../locale/ch/TableLocale";
-import MenuItem from "@material-ui/core/MenuItem";
-import Grow from "@material-ui/core/Grow";
 import bossIcons from "../Functions/IconFunctions/BossIcons";
 import bossAbilityIcons from "../Functions/IconFunctions/BossAbilityIcons";
-import Divider from "@material-ui/core/Divider";
 import ls from "local-storage";
-import Paper from "@material-ui/core/Paper";
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -149,6 +149,7 @@ const tableIcons = {
   SortArrow: forwardRef((props, ref) => (
     <ArrowDownward {...props} style={{ color: "#ffee77" }} ref={ref} />
   )),
+  // Export: forwardRef((props, ref) => <SaveAlt {...props} ref={ref} />),
 };
 
 export default function CooldownPlanner(props) {
@@ -486,6 +487,7 @@ export default function CooldownPlanner(props) {
         options={{
           showTitle: false,
           searchFieldVariant: "outlined",
+          // exportButton: true,
           headerStyle: {
             border: "1px solid #c8b054",
             padding: "0px 8px 0px 8px",
@@ -627,7 +629,7 @@ export default function CooldownPlanner(props) {
                 <Grid item xs="auto">
                   {boss === "" ? null : (
                     <ThemeProvider theme={SearchFieldOverride}>
-                      <MTableToolbar {...props} />{" "}
+                      <MTableToolbar {...props} />
                     </ThemeProvider>
                   )}
                 </Grid>
