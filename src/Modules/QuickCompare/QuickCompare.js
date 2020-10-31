@@ -325,11 +325,11 @@ export default function QuickCompare(props) {
                   </Select>
                 </FormControl>
               </Grid>
-              <Divider
+              {/* <Divider
                 orientation="vertical"
                 flexItem
                 style={{ marginLeft: 4, marginRight: 4 }}
-              />
+              /> */}
 
               <Grid item>
                 <FormControl

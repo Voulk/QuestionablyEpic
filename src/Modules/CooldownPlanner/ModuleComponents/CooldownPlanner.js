@@ -4,28 +4,24 @@ import MaterialTable, {
   MTableBody,
   MTableHeader,
 } from "material-table";
-import {
-  AddBox,
-  ArrowDownward,
-  Check,
-  Clear,
-  DeleteOutline,
-  Edit,
-  FilterList,
-  Search,
-} from "@material-ui/icons";
+import { AddBox } from "@material-ui/icons/AddBox";
+import { ArrowDownward } from "@material-ui/icons/ArrowDownward";
+import { Check } from "@material-ui/icons/Check";
+import { Clear } from "@material-ui/icons/Clear";
+import { DeleteOutline } from "@material-ui/icons/DeleteOutline";
+import { Edit } from "@material-ui/icons/Edit";
+import { Search } from "@material-ui/icons/Search";
+import { FilterList } from "@material-ui/icons/FilterList";
 import ClassCooldownMenuItems from "../Menus/ClassCooldownMenuItems";
 import { Select, Grid } from "@material-ui/core";
 import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
-import {
-  TextField,
-  InputLabel,
-  FormControl,
-  Divider,
-  Paper,
-  Grow,
-  MenuItem,
-} from "@material-ui/core/";
+import TextField from "@material-ui/core/TextField";
+import InputLabel from "@material-ui/core/InputLabel";
+import FormControl from "@material-ui/core/FormControl";
+import Divider from "@material-ui/core/Divider";
+import Paper from "@material-ui/core/Paper";
+import Grow from "@material-ui/core/Grow";
+import MenuItem from "@material-ui/core/MenuItem";
 import { makeStyles } from "@material-ui/core/styles";
 import abilityIcons from "../Functions/IconFunctions/AbilityIcons";
 import classIcons from "../Functions/IconFunctions/ClassIcons";
