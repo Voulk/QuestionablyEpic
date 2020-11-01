@@ -102,7 +102,7 @@ export function getItemEffect(id) {
     return item.id === id;
   });
 
-  if ((temp.length > 0) & ("effect" in temp[0])) return temp[0].effect;
+  if ((temp.length > 0) && ("effect" in temp[0])) return temp[0].effect;
   else return "";
 }
 
@@ -126,7 +126,7 @@ export function getItemIcon(id) {
   //console.log(temp[0].icon)
 
   //return("");
-  if ((temp.length > 0) & ("icon" in temp[0]))
+  if ((temp.length > 0) && ("icon" in temp[0]))
     return process.env.PUBLIC_URL + "/Images/Icons/" + temp[0].icon + ".jpg";
   else return process.env.PUBLIC_URL + "/Images/Icons/missing.jpg";
 }
@@ -189,6 +189,8 @@ export function calcStatsAtLevel(itemLevel, slot, statAllocations, tertiary) {
     bonus_stats: {},
   };
 
+  //console.log("Calc Stats at Level: " + itemLevel + "/" + slot + "/" + statAllocations + "/" + tertiary);
+
   let rand_prop = randPropPoints[itemLevel]["slotValues"][getItemCat(slot)];
   let combat_mult = combat_ratings_mult_by_ilvl[itemLevel];
 
@@ -247,7 +249,7 @@ export function buildStatString(stats, effect) {
 }
 
 // Returns the string with its first letter capitalized.
-function correctCasing(string) {
+export function correctCasing(string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
 }
 

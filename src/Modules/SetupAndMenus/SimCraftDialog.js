@@ -11,7 +11,7 @@ import {runSimC} from "../Engine/SimCImport/SimCImportEngine";
 //   root: { height: 500 },
 // }));
 
-export default function SimCraftInput() {
+export default function SimCraftInput(props) {
   // const classes = useStyles;
   const [open, setOpen] = React.useState(false);
   const [simC, setSimC] = React.useState('');
@@ -25,7 +25,7 @@ export default function SimCraftInput() {
   };
 
   const handleSubmit = () => {
-    runSimC(simC);
+    runSimC(simC, props.pl);
     //setOpen(false);
   };
 
