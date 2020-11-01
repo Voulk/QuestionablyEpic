@@ -184,10 +184,6 @@ export default function CooldownPlanner(props) {
         whiteSpace: "nowrap",
         paddingLeft: 8,
       },
-      headerStyle: {
-        paddingLeft: 22,
-        textAlign: "center",
-      },
       render: (rowData) => (
         <div style={{ color: classColoursJS(rowData.class) }}>
           {rowData.name}
@@ -230,10 +226,6 @@ export default function CooldownPlanner(props) {
       cellStyle: {
         whiteSpace: "nowrap",
       },
-      headerStyle: {
-        paddingLeft: 22,
-        textAlign: "center",
-      },
       render: (rowData) => (
         <div style={{ color: classColoursJS(rowData.class) }}>
           {classIcons(rowData.class, 20)}
@@ -271,10 +263,6 @@ export default function CooldownPlanner(props) {
       cellStyle: {
         whiteSpace: "nowrap",
       },
-      headerStyle: {
-        paddingLeft: 22,
-        textAlign: "center",
-      },
       render: (rowData) => (
         <div>
           {abilityIcons(rowData.Cooldown)}
@@ -309,10 +297,6 @@ export default function CooldownPlanner(props) {
       cellStyle: {
         whiteSpace: "nowrap",
       },
-      headerStyle: {
-        paddingLeft: 22,
-        textAlign: "center",
-      },
       editComponent: (props) => (
         <TextField
           size="small"
@@ -331,10 +315,6 @@ export default function CooldownPlanner(props) {
       width: "4%",
       cellStyle: {
         whiteSpace: "nowrap",
-      },
-      headerStyle: {
-        paddingLeft: 22,
-        textAlign: "center",
       },
       render: (rowData) => (
         <div>
@@ -358,10 +338,6 @@ export default function CooldownPlanner(props) {
       width: "15%",
       cellStyle: {
         whiteSpace: "nowrap",
-      },
-      headerStyle: {
-        paddingLeft: 22,
-        textAlign: "center",
       },
       render: (rowData) => (
         <div>
@@ -416,10 +392,6 @@ export default function CooldownPlanner(props) {
       width: "20%",
       cellStyle: {
         whiteSpace: "nowrap",
-      },
-      headerStyle: {
-        paddingLeft: 22,
-        textAlign: "center",
       },
       editComponent: (props) => (
         <TextField

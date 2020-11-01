@@ -146,10 +146,6 @@ export default function HealTeam(props) {
         whiteSpace: "nowrap",
         paddingLeft: 8,
       },
-      headerStyle: {
-        paddingLeft: 8,
-        textAlign: "center",
-      },
       render: (rowData) => (
         <div style={{ color: classColoursJS(rowData.class) }}>
           {rowData.name}
@@ -173,9 +169,6 @@ export default function HealTeam(props) {
       width: 250,
       cellStyle: {
         whiteSpace: "nowrap",
-      },
-      headerStyle: {
-        textAlign: "center",
       },
       render: (rowData) => (
         <div style={{ color: classColoursJS(rowData.class) }}>
@@ -210,10 +203,6 @@ export default function HealTeam(props) {
       cellStyle: {
         whiteSpace: "nowrap",
         // borderRight: "1px solid rgb(81 81 81)",
-      },
-      headerStyle: {
-        // borderRight: "1px solid #515151",
-        textAlign: "center",
       },
       editComponent: (props) => (
         <TextField

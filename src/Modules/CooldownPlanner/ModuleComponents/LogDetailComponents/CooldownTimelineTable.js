@@ -69,8 +69,6 @@ export default function CooldownTimeline(props) {
               fontSize: 14,
             },
             headerStyle: {
-              // borderRight: "1px solid #6d6d6d",
-              textAlign: "center",
               fontSize: 14,
             },
           },
@@ -84,8 +82,6 @@ export default function CooldownTimeline(props) {
               fontSize: 14,
             },
             headerStyle: {
-              // borderRight: "1px solid #6d6d6d",
-              textAlign: "center",
               fontSize: 14,
             },
             render: (rowData) => (
@@ -106,8 +102,6 @@ export default function CooldownTimeline(props) {
               fontSize: 14,
             },
             headerStyle: {
-              // borderRight: "1px solid #6d6d6d",
-              textAlign: "center",
               fontSize: 14,
             },
           },
@@ -120,7 +114,6 @@ export default function CooldownTimeline(props) {
               fontSize: 14,
             },
             headerStyle: {
-              textAlign: "center",
               fontSize: 14,
             },
             render: (rowData) => (
