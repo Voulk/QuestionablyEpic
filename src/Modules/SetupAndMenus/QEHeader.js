@@ -46,7 +46,7 @@ export default function QEHeader(props) {
               lg={4}
               xl={4}
               direction="row"
-              justify="center"
+              justify="flex-end"
               alignItems="center"
               spacing={1}
               wrap="nowrap"
