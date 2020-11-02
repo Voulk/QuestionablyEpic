@@ -1378,6 +1378,28 @@ export const bossAbilities = [
     cooldownPlannerActive: false,
     icon: require("../../../Images/Bosses/CastleNathria/Sludgefist/Icons/ChainBleedIcon.jpg"),
   },
+  // Denathrius
+  {
+    bossID: 2407,
+    ability: "Hand of Destruction",
+    guid: 330627,
+    cooldownPlannerActive: true,
+    icon: require("../../../Images/Bosses/CastleNathria/SireDenathrius/Icons/spell_shadow_unholystrength.jpg"),
+  },
+  {
+    bossID: 2407,
+    ability: "Crescendo",
+    guid: 336162,
+    cooldownPlannerActive: true,
+    icon: require("../../../Images/Bosses/CastleNathria/SireDenathrius/Icons/spell_animarevendreth_missile.jpg"),
+  },
+  {
+    bossID: 2407,
+    ability: "Cleansing Pain",
+    guid: 326707,
+    cooldownPlannerActive: true,
+    icon: require("../../../Images/Bosses/CastleNathria/SireDenathrius/Icons/spell_animarevendreth_wave.jpg"),
+  },
 ];
 
 export const talents = [
