@@ -12,9 +12,19 @@ import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import SimCraftInput from "./SimCraftDialog";
 import Grid from "@material-ui/core/Grid";
+import { makeStyles } from "@material-ui/core/styles";
+
+const useStyles = makeStyles((theme) => ({
+  qeLogo: {
+    [theme.breakpoints.down("sm")]: {
+      marginTop: "10px",
+    },
+  },
+}));
 
 export default function QEHeader(props) {
   const { t } = useTranslation();
+  const classes = useStyles();
 
   // If the player isn't logged in, then show a login button and redirect to the login page on click.
   // If the player IS logged in, show their battle tag and redirect to profile on click.
@@ -34,12 +44,11 @@ export default function QEHeader(props) {
           >
             <Grid item xs={12} sm={12} md={1} lg={1} xl={1} align="center">
               <Link to={"/"}>
-                <img src={logo} alt="QE Live" />
+                <img className={classes.qeLogo} src={logo} alt="QE Live" />
               </Link>
             </Grid>
             <Grid
               container
-              item
               xs={12}
               sm={12}
               md={4}

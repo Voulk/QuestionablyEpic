@@ -158,7 +158,11 @@ export default function HealTeam(props) {
           id="standard-basic"
           label={t("Name")}
           value={props.value}
-          style={{ whiteSpace: "nowrap", width: "100%" }}
+          style={{
+            whiteSpace: "nowrap",
+            width: "100%",
+            marginTop: 6,
+          }}
           onChange={(e) => props.onChange(e.target.value)}
         />
       ),
@@ -182,6 +186,7 @@ export default function HealTeam(props) {
             className={classes.formControl}
             size="small"
             variant="outlined"
+            style={{ marginTop: 6 }}
           >
             <InputLabel id="HealerClassSelector">{t("Class")}</InputLabel>
             <Select
@@ -211,7 +216,7 @@ export default function HealTeam(props) {
           id="standard-basic"
           label="Notes"
           value={props.value}
-          style={{ width: "100%" }}
+          style={{ width: "100%", marginTop: 6 }}
           onChange={(e) => props.onChange(e.target.value)}
         />
       ),

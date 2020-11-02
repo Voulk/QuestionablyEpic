@@ -195,6 +195,7 @@ export default function CooldownPlanner(props) {
             className={classes.formControl}
             variant="outlined"
             size="small"
+            style={{ marginTop: 6 }}
           >
             <InputLabel id="HealerSelector">{t("Name")}</InputLabel>
             <Select
@@ -238,6 +239,7 @@ export default function CooldownPlanner(props) {
             className={classes.formControl}
             variant="outlined"
             size="small"
+            style={{ marginTop: 6 }}
           >
             <InputLabel id="ClassSelector">{t("Class")}</InputLabel>
             <Select
@@ -274,6 +276,7 @@ export default function CooldownPlanner(props) {
           className={classes.formControl}
           variant="outlined"
           size="small"
+          style={{ marginTop: 6 }}
         >
           <InputLabel id="HealerAbilitySelector">{t("Cooldown")}</InputLabel>
           <Select
@@ -305,7 +308,7 @@ export default function CooldownPlanner(props) {
           label={t("HDTableLabels.CastTimeLabel")}
           placeholder="Format: mm:ss"
           value={props.value}
-          style={{ whiteSpace: "nowrap", width: "100%" }}
+          style={{ whiteSpace: "nowrap", width: "100%", marginTop: 6 }}
           onChange={(e) => props.onChange(e.target.value)}
         />
       ),
@@ -353,6 +356,7 @@ export default function CooldownPlanner(props) {
             className={classes.formControl}
             variant="outlined"
             size="small"
+            style={{ marginTop: 6 }}
           >
             <InputLabel id="BossAbilitySelector">
               {t("HDTableLabels.BossAbilityLabel")}
@@ -395,7 +399,7 @@ export default function CooldownPlanner(props) {
       },
       editComponent: (props) => (
         <TextField
-          style={{ width: "100%" }}
+          style={{ width: "100%", marginTop: 6 }}
           size="small"
           variant="outlined"
           id="standard-basic"
