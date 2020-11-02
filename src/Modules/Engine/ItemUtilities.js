@@ -2,6 +2,7 @@ import { itemDB } from "../Player/ItemDB";
 import { randPropPoints } from "./RandPropPointsBylevel";
 import { combat_ratings_mult_by_ilvl } from "./CombatMultByLevel";
 import { getEffectValue } from "./EffectFormulas/EffectEngine";
+import SPEC from "../Engine/SPECS";
 
 /*
 
@@ -14,15 +15,15 @@ This file contains utility functions that center around the player or players it
 // We'll try and leave them out when we can since it keeps the dropdown boxes much much cleaner and the 5% int bonus is only worth giving up on ultra rare occasions.
 export function getValidArmorTypes(spec) {
   switch (spec) {
-    case "Restoration Druid":
-    case "Mistweaver Monk":
+    case SPEC.RESTODRUID:
+    case SPEC.MISTWEAVERMONK:
       return [0, 2]; // Misc + Leather
-    case "Holy Paladin":
+    case SPEC.HOLYPALADIN:
       return [0, 4, 6]; // Misc + Plate + Shields
-    case "Restoration Shaman":
+    case SPEC.RESTOSHAMAN:
       return [0, 3, 6]; // Misc + Mail + Shields
-    case "Holy Priest":
-    case "Discipline Priest":
+    case SPEC.HOLYPRIEST:
+    case SPEC.DISCPRIEST:
       return [0, 1]; // Misc + Cloth
     default:
       return [-1];
@@ -58,25 +59,25 @@ export function getValidWeaponTypes(spec, slot) {
   switch (slot) {
     case "Off-Hands":
       switch (spec) {
-        case "Restoration Shaman":
-        case "Holy Paladin":
+        case SPEC.RESTOSHAMAN:
+        case SPEC.HOLYPALADIN:
           return [0, 6];
         default:
           return [0];
       }
     case "Weapons":
       switch (spec) {
-        case "Restoration Druid":
+        case SPEC.RESTODRUID:
           return [4, 5, 6, 10, 13, 15];
-        case "Mistweaver Monk":
+        case SPEC.MISTWEAVERMONK:
           return [0, 4, 6, 7, 13];
-        case "Holy Paladin":
+        case SPEC.HOLYPALADIN:
           return [0, 1, 4, 5, 6, 7, 8];
-        case "Restoration Shaman":
+        case SPEC.RESTOSHAMAN:
           return [0, 1, 4, 5, 10, 13, 15];
-        case "Holy Priest":
+        case SPEC.HOLYPRIEST:
           return [4, 10, 15, 19];
-        case "Discipline Priest":
+        case SPEC.DISCPRIEST:
           return [4, 10, 15, 19];
         default:
           return [-1];
