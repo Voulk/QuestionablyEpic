@@ -5,6 +5,8 @@ import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
+import { soulbinds } from "./Soulbinds";
+import SoulbindNode from "./SoulbindNode";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -74,7 +76,8 @@ export default function InnerVerticalTabs(props) {
         <Tab label={props.soulbind3} {...a11yProps(2)} />
       </Tabs>
       <TabPanel value={value} index={0}>
-        Item One
+        Item 1
+        {buildSoulbind("Pelagos")}
       </TabPanel>
       <TabPanel value={value} index={1}>
         Item Two
@@ -96,4 +99,26 @@ export default function InnerVerticalTabs(props) {
       </TabPanel>
     </div>
   );
+}
+
+function buildSoulbind(soulbindName) {
+  let activeSoulbind = soulbinds[soulbindName]["traits"];
+  console.log(activeSoulbind);
+  
+  return (
+    <div id="soulbind">
+      <img width={48} height={48} src={process.env.PUBLIC_URL + "/Images/Interface/SoulbindContainer.png" }/>
+
+      {activeSoulbind.map((trait, index) => (
+        <SoulbindNode key={index} position={activeSoulbind.position} />
+    )) }
+    </div>
+
+  )
+
+}
+
+function getSoulbindTree(soulbindName) {
+
+
 }
