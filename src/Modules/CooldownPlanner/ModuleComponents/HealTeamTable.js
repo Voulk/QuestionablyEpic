@@ -146,10 +146,6 @@ export default function HealTeam(props) {
         whiteSpace: "nowrap",
         paddingLeft: 8,
       },
-      headerStyle: {
-        paddingLeft: 8,
-        textAlign: "center",
-      },
       render: (rowData) => (
         <div style={{ color: classColoursJS(rowData.class) }}>
           {rowData.name}
@@ -162,7 +158,11 @@ export default function HealTeam(props) {
           id="standard-basic"
           label={t("Name")}
           value={props.value}
-          style={{ whiteSpace: "nowrap", width: "100%" }}
+          style={{
+            whiteSpace: "nowrap",
+            width: "100%",
+            marginTop: 6,
+          }}
           onChange={(e) => props.onChange(e.target.value)}
         />
       ),
@@ -173,9 +173,6 @@ export default function HealTeam(props) {
       width: 250,
       cellStyle: {
         whiteSpace: "nowrap",
-      },
-      headerStyle: {
-        textAlign: "center",
       },
       render: (rowData) => (
         <div style={{ color: classColoursJS(rowData.class) }}>
@@ -189,9 +186,11 @@ export default function HealTeam(props) {
             className={classes.formControl}
             size="small"
             variant="outlined"
+            style={{ marginTop: 6 }}
           >
             <InputLabel id="HealerClassSelector">{t("Class")}</InputLabel>
             <Select
+              label={t("Class")}
               value={props.value}
               onChange={(e) => {
                 props.onChange(e.target.value);
@@ -210,10 +209,6 @@ export default function HealTeam(props) {
         whiteSpace: "nowrap",
         // borderRight: "1px solid rgb(81 81 81)",
       },
-      headerStyle: {
-        // borderRight: "1px solid #515151",
-        textAlign: "center",
-      },
       editComponent: (props) => (
         <TextField
           variant="outlined"
@@ -221,6 +216,7 @@ export default function HealTeam(props) {
           id="standard-basic"
           label="Notes"
           value={props.value}
+          style={{ width: "100%", marginTop: 6 }}
           onChange={(e) => props.onChange(e.target.value)}
         />
       ),

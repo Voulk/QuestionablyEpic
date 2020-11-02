@@ -39,7 +39,7 @@ jobs:
       run: |
         echo "${{secrets.DEPLOY_KEY}}" > deploy_key
         chmod 600 ./deploy_key
-        rsync -chav --delete \
+        rsync -chav \
           -e 'ssh -p 52836 -i ./deploy_key -o StrictHostKeyChecking=no' \
           --exclude /deploy_key \
           --exclude /.git/ \

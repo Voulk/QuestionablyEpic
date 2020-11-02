@@ -154,7 +154,7 @@ class HolyDiver extends Component {
               justify="space-between"
             >
               {/* Grid Container for the User Input Components, With Paper as the Surface */}
-              <Grid item container xs={6}>
+              <Grid item container xs={12} sm={12} md={6} lg={6} xl={6}>
                 <Paper
                   style={{
                     display: "inline-flex",
@@ -181,7 +181,11 @@ class HolyDiver extends Component {
               <Grid
                 item
                 container
-                xs={3}
+                xs={12}
+                sm={12}
+                md={6}
+                lg={6}
+                xl={6}
                 justify="flex-end"
                 style={{
                   display: this.state.logDetailsShow ? "flex" : "none",
@@ -298,6 +302,10 @@ class HolyDiver extends Component {
               <Grid
                 item
                 xs={12}
+                sm={12}
+                md={12}
+                lg={12}
+                xl={12}
                 padding={1}
                 style={{
                   display: this.state.damageTableShow ? "block" : "none",
@@ -349,13 +357,13 @@ class HolyDiver extends Component {
                   alignItems="flex-start"
                   spacing={1}
                 >
-                  <Grid item xs={4} padding={1}>
+                  <Grid item xs={12} sm={12} md={12} lg={4} xl={4} padding={1}>
                     <CooldownTimeline
                       data={this.state.Updateddatacasts}
                       curLang={this.props.curLang}
                     />
                   </Grid>
-                  <Grid item xs={4} padding={1}>
+                  <Grid item xs={12} sm={12} md={12} lg={4} xl={4} padding={1}>
                     <Paper style={{ padding: 8, marginBottom: 8 }}>
                       <Typography
                         variant="h6"
@@ -368,7 +376,7 @@ class HolyDiver extends Component {
                     </Paper>
                     <HealerInfoTable heals={this.state.healernames} />
                   </Grid>
-                  <Grid item xs={4} padding={1}>
+                  <Grid item xs={12} sm={12} md={12} lg={4} xl={4} padding={1}>
                     <Example
                       data={this.state.summedUnmitigatedDamagePerSecond}
                     />
@@ -390,7 +398,7 @@ class HolyDiver extends Component {
               spacing={1}
               style={{ display: this.state.healTableShow ? "block" : "none" }}
             >
-              <Grid item xs={12} padding={1}>
+              <Grid item xs={12} sm={12} md={12} lg={12} xl={12} padding={1}>
                 <Collapse in={this.state.healTableShow}>
                   <LoadingOverlay
                     active={spinnershow}
@@ -425,16 +433,16 @@ class HolyDiver extends Component {
               spacing={1}
               margin={4}
             >
-              <Grid item xs={12} padding={1}>
+              <Grid item xs={12} sm={12} md={12} lg={12} xl={12} padding={1}>
                 <CooldownPlanner
                   update={this.chartCooldownUpdater}
                   curLang={this.props.curLang}
                 />
               </Grid>
-              <Grid item xs={8} padding={1}>
+              <Grid item xs={12} sm={12} md={12} lg={7} xl={7} padding={1}>
                 <HealTeam curLang={this.props.curLang} />
               </Grid>
-              <Grid item xs={4} padding={1}>
+              <Grid item xs={12} sm={12} md={12} lg={5} xl={5} padding={1}>
                 <ERTTable
                   data={this.state.ertList}
                   curLang={this.props.curLang}

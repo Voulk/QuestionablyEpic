@@ -25,7 +25,7 @@ import moment from "moment";
 import {
   healerCooldownsDetailed,
   raidList,
-  nathriaBossList,
+  bossList,
   bossAbilities,
 } from "../Data/Data";
 import { classColoursJS } from "../Functions/ClassColourFunctions";
@@ -184,10 +184,6 @@ export default function CooldownPlanner(props) {
         whiteSpace: "nowrap",
         paddingLeft: 8,
       },
-      headerStyle: {
-        paddingLeft: 22,
-        textAlign: "center",
-      },
       render: (rowData) => (
         <div style={{ color: classColoursJS(rowData.class) }}>
           {rowData.name}
@@ -199,6 +195,7 @@ export default function CooldownPlanner(props) {
             className={classes.formControl}
             variant="outlined"
             size="small"
+            style={{ marginTop: 6 }}
           >
             <InputLabel id="HealerSelector">{t("Name")}</InputLabel>
             <Select
@@ -230,10 +227,6 @@ export default function CooldownPlanner(props) {
       cellStyle: {
         whiteSpace: "nowrap",
       },
-      headerStyle: {
-        paddingLeft: 22,
-        textAlign: "center",
-      },
       render: (rowData) => (
         <div style={{ color: classColoursJS(rowData.class) }}>
           {classIcons(rowData.class, 20)}
@@ -246,6 +239,7 @@ export default function CooldownPlanner(props) {
             className={classes.formControl}
             variant="outlined"
             size="small"
+            style={{ marginTop: 6 }}
           >
             <InputLabel id="ClassSelector">{t("Class")}</InputLabel>
             <Select
@@ -271,10 +265,6 @@ export default function CooldownPlanner(props) {
       cellStyle: {
         whiteSpace: "nowrap",
       },
-      headerStyle: {
-        paddingLeft: 22,
-        textAlign: "center",
-      },
       render: (rowData) => (
         <div>
           {abilityIcons(rowData.Cooldown)}
@@ -286,6 +276,7 @@ export default function CooldownPlanner(props) {
           className={classes.formControl}
           variant="outlined"
           size="small"
+          style={{ marginTop: 6 }}
         >
           <InputLabel id="HealerAbilitySelector">{t("Cooldown")}</InputLabel>
           <Select
@@ -309,10 +300,6 @@ export default function CooldownPlanner(props) {
       cellStyle: {
         whiteSpace: "nowrap",
       },
-      headerStyle: {
-        paddingLeft: 22,
-        textAlign: "center",
-      },
       editComponent: (props) => (
         <TextField
           size="small"
@@ -321,7 +308,7 @@ export default function CooldownPlanner(props) {
           label={t("HDTableLabels.CastTimeLabel")}
           placeholder="Format: mm:ss"
           value={props.value}
-          style={{ whiteSpace: "nowrap", width: "100%" }}
+          style={{ whiteSpace: "nowrap", width: "100%", marginTop: 6 }}
           onChange={(e) => props.onChange(e.target.value)}
         />
       ),
@@ -331,10 +318,6 @@ export default function CooldownPlanner(props) {
       width: "4%",
       cellStyle: {
         whiteSpace: "nowrap",
-      },
-      headerStyle: {
-        paddingLeft: 22,
-        textAlign: "center",
       },
       render: (rowData) => (
         <div>
@@ -359,10 +342,6 @@ export default function CooldownPlanner(props) {
       cellStyle: {
         whiteSpace: "nowrap",
       },
-      headerStyle: {
-        paddingLeft: 22,
-        textAlign: "center",
-      },
       render: (rowData) => (
         <div>
           <a data-wowhead={"spell=" + rowData.bossAbility}>
@@ -377,6 +356,7 @@ export default function CooldownPlanner(props) {
             className={classes.formControl}
             variant="outlined"
             size="small"
+            style={{ marginTop: 6 }}
           >
             <InputLabel id="BossAbilitySelector">
               {t("HDTableLabels.BossAbilityLabel")}
@@ -417,13 +397,9 @@ export default function CooldownPlanner(props) {
       cellStyle: {
         whiteSpace: "nowrap",
       },
-      headerStyle: {
-        paddingLeft: 22,
-        textAlign: "center",
-      },
       editComponent: (props) => (
         <TextField
-          style={{ width: "100%" }}
+          style={{ width: "100%", marginTop: 6 }}
           size="small"
           variant="outlined"
           id="standard-basic"
@@ -436,9 +412,9 @@ export default function CooldownPlanner(props) {
   ];
 
   useEffect(() => {
-    nathriaBossList.map((key) => {
-      if (ls.get("Castle Nathria" + "." + key.id + ".1") === null) {
-        ls.set("Castle Nathria" + "." + key.id + ".1", []);
+    bossList.map((key) => {
+      if (ls.get(key.zoneID + "." + key.id + ".1") === null) {
+        ls.set(key.zoneID + "." + key.id + ".1", []);
       }
     });
     if (ls.get("healerInfo") === null || ls.get("healerInfo") === undefined) {
@@ -466,8 +442,13 @@ export default function CooldownPlanner(props) {
     if (ls.get(raid + "." + boss + ".1") === null) {
       ls.set(raid + "." + boss + ".1", []);
     }
-    ls.set(raid + "." + boss + ".1", props);
+    ls.set(
+      raid + "." + boss + ".1",
+      props.sort((a, b) => (a.time > b.time ? 1 : -1))
+    );
   };
+
+  console.log(raid);
 
   return (
     <ThemeProvider theme={themeCooldownTable}>
@@ -557,7 +538,7 @@ export default function CooldownPlanner(props) {
                       >
                         {rl
                           .map((key) => (
-                            <MenuItem value={key.raidName}>
+                            <MenuItem value={key.zoneID}>
                               {key.raidName}
                             </MenuItem>
                           ))
@@ -582,9 +563,9 @@ export default function CooldownPlanner(props) {
                         label={t("HDTableLabels.BossSelectorLabel")}
                         MenuProps={menuStyle}
                       >
-                        {nathriaBossList
+                        {bossList
                           .filter((obj) => {
-                            return obj.raid === raid;
+                            return obj.zoneID === raid;
                           })
                           .map((key) => (
                             <MenuItem value={key.id}>
@@ -622,7 +603,7 @@ export default function CooldownPlanner(props) {
                 <Grid item xs="auto">
                   {boss === "" ? null : (
                     <ThemeProvider theme={SearchFieldOverride}>
-                      <MTableToolbar {...props} />{" "}
+                      <MTableToolbar {...props} />
                     </ThemeProvider>
                   )}
                 </Grid>
@@ -634,7 +615,9 @@ export default function CooldownPlanner(props) {
           onRowAdd: (newData) =>
             new Promise((resolve, reject) => {
               setTimeout(() => {
-                setData([...data, newData]);
+                setData(
+                  [...data, newData].sort((a, b) => (a.time > b.time ? 1 : -1))
+                );
                 resolve();
                 updateStorage([...data, newData], boss);
               }, 1000);
@@ -645,7 +628,9 @@ export default function CooldownPlanner(props) {
                 const dataUpdate = [...data];
                 const index = oldData.tableData.id;
                 dataUpdate[index] = newData;
-                setData([...dataUpdate]);
+                setData(
+                  [...dataUpdate].sort((a, b) => (a.time > b.time ? 1 : -1))
+                );
                 updateStorage([...dataUpdate], boss);
                 resolve();
               }, 1000);
@@ -656,7 +641,9 @@ export default function CooldownPlanner(props) {
                 const dataDelete = [...data];
                 const index = oldData.tableData.id;
                 dataDelete.splice(index, 1);
-                setData([...dataDelete]);
+                setData(
+                  [...dataDelete].sort((a, b) => (a.time > b.time ? 1 : -1))
+                );
                 updateStorage([...dataDelete], boss);
                 resolve();
               }, 1000);

@@ -6,6 +6,7 @@ import { useTranslation } from "react-i18next";
 import CharCards from "./CharComponentGen";
 import { Grid } from "@material-ui/core";
 import AddNewChar from "./CharCreator";
+import { makeStyles } from "@material-ui/core/styles";
 
 // Warning: If a button name has to change, do it in the translation files. Consider the titles here to be ID's rather than strings.
 const mainMenuOptions = {
@@ -17,26 +18,51 @@ const mainMenuOptions = {
   "Cooldown Planner": "/holydiver",
 };
 
+const useStyles = makeStyles((theme) => ({
+  root: {
+    [theme.breakpoints.down("sm")]: {
+      margin: "auto",
+      width: "80%",
+      justifyContent: "center",
+      display: "block",
+    },
+    [theme.breakpoints.up("md")]: {
+      margin: "auto",
+      width: "65%",
+      justifyContent: "center",
+      display: "block",
+    },
+    [theme.breakpoints.up("lg")]: {
+      margin: "auto",
+      width: "45%",
+      justifyContent: "center",
+      display: "block",
+    },
+  },
+}));
+
 // <p>{props.pl.getSpec()}</p>
 
 export default function QEMainMenu(props) {
   const { t } = useTranslation();
+  const classes = useStyles();
 
   return (
     <div style={{ backgroundColor: "#313131" }}>
       <div
-        style={{
-          margin: "auto",
-          width: "45%",
-          justifyContent: "center",
-          display: "block",
-        }}
+        className={classes.root}
+        // style={{
+        //   margin: "auto",
+        //   width: "45%",
+        //   justifyContent: "center",
+        //   display: "block",
+        // }}
       >
         <p className="headers">{t("MainMenuItemsH")}</p>
         <Grid container spacing={1}>
           {Object.keys(mainMenuOptions).map((key, index) => (
             // Buttons are translated and printed from a dictionary.
-            <Grid item xs={6} key={index}>
+            <Grid item xs={12} sm={12} md={6} lg={6} xl={6} key={index}>
               <Button
                 key={index}
                 variant="contained"
@@ -44,6 +70,7 @@ export default function QEMainMenu(props) {
                 style={{
                   width: "100%",
                   height: "40px",
+                  whiteSpace: "nowrap",
                 }}
                 component={Link}
                 to={mainMenuOptions[key]}
