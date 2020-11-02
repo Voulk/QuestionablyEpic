@@ -193,6 +193,7 @@ class App extends Component {
               setRegion={this.setRegion}
               toggleContentType={this.toggleContentType}
               contentType={this.state.contentType}
+              pl={activePlayer}
             />
 
             {/* // Char Added Snackbar */}
