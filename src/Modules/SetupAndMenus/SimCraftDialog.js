@@ -27,7 +27,6 @@ export default function SimCraftInput(props) {
   };
 
   const handleSubmit = () => {
-    //setErrorMessage("Incorrect Spec")
     runSimC(simC, props.pl, props.contentType, setErrorMessage);
     //setOpen(false);
   };
