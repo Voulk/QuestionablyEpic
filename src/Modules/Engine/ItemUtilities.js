@@ -86,6 +86,16 @@ export function getValidWeaponTypes(spec, slot) {
   }
 }
 
+// Returns true or false based on whether an ID exists in our item database. 
+// Items that won't be found include stuff like shirts, low level items, quest items without stats and so on.
+// Importing these would be a waste of the user interface.
+export function checkItemExists(id) {
+  let temp = itemDB.filter(function (item) {
+    return item.id === id;
+  });
+  return (temp.length > 0);
+}
+
 // Returns a translated item name based on an ID.
 export function getTranslatedItemName(id, lang) {
   let temp = itemDB.filter(function (item) {
