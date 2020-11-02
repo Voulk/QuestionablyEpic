@@ -1,3 +1,5 @@
+import STAT from '../Engine/STAT'
+
 var SPELL_CASTS_LOC = 0;
 var SPELL_HEALING_LOC = 1;
 var SPELL_HEALING_PERC = 2;
