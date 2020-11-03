@@ -380,7 +380,7 @@ function buildSoulbind(soulbindName) {
 
   return (
     <div id="soulbind" style={{/* position: "absolute" */ display: 'flex', flexDirection: 'row' }}>
-      <div id="soulbinds" style={{backgroundColor: 'red', position: 'relative'}}>
+      <div id="soulbinds" style={{position: 'relative'}}>
         <img
           src={
             process.env.PUBLIC_URL + "/Images/Interface/SoulbindBackgroundSlim.jpg"
@@ -395,7 +395,7 @@ function buildSoulbind(soulbindName) {
   
       </div>
 
-      <div id="conduits" style={{backgroundColor: 'blue', position: 'relative'}} >
+      <div id="conduits" style={{position: 'relative'}} >
         <img
           src={
             process.env.PUBLIC_URL + "/Images/Interface/ConduitContainer.jpg"
@@ -403,13 +403,13 @@ function buildSoulbind(soulbindName) {
           style={{/* position: "absolute", margin: 0, left: 0, padding: 0 */}}
           />
 
-        <div id="conduitChoices" style={{position: 'absolute', top: 0, width: '100%', paddingLeft: '12px', paddingTop: '7px'}} >
+        <div id="conduitChoices" style={{position: 'absolute', top: 0, width: '100%', paddingLeft: '14px', paddingTop: '7px'}} >
 
           <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', padding: '0px'}} >
             <img
             src={
               process.env.PUBLIC_URL + "/Images/Interface/PotencyConduitTag.png"
-            } style={{objectFit: 'cover', width: '90%'}} />
+            } style={{objectFit: 'cover', width: '214px'}} />
             {conduitList.map((conduit, index) => (
               <p style={{color: 'white', margin: '5px', paddingLeft: '75px'}}>{conduit}</p>
             ))}
@@ -417,7 +417,7 @@ function buildSoulbind(soulbindName) {
             <img
             src={
               process.env.PUBLIC_URL + "/Images/Interface/EnduranceConduitTag.png"
-            } style={{objectFit: 'cover', width: '90%', marginTop: '20px'}} />
+            } style={{objectFit: 'cover', width: '214px', marginTop: '20px'}} />
             {conduitList.map((conduit, index) => (
               <p style={{color: 'white', margin: '5px', paddingLeft: '75px'}}>{conduit}</p>
             ))}
