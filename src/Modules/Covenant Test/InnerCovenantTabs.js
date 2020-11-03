@@ -5,8 +5,6 @@ import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
-import { soulbinds } from "./Soulbinds";
-import SoulbindNode from "./SoulbindNode";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -71,10 +69,27 @@ export default function InnerVerticalTabs(props) {
         aria-label="Vertical tabs example"
         className={classes.tabs}
       >
-        <Tab label={props.soulbind1} {...a11yProps(0)} />
-        <Tab label={props.soulbind2} {...a11yProps(1)} />
-        <Tab label={props.soulbind3} {...a11yProps(2)} />
+        <Tab
+          style={{ color: "white" }}
+          icon={props.soulbind1Portrait}
+          label={props.soulbind1}
+          {...a11yProps(0)}
+        />
+        <Tab
+          style={{ color: "white" }}
+          icon={props.soulbind2Portrait}
+          label={props.soulbind2}
+          {...a11yProps(1)}
+        />
+        <Tab
+          style={{ color: "white" }}
+          icon={props.soulbind3Portrait}
+          label={props.soulbind3}
+          {...a11yProps(2)}
+        />
       </Tabs>
+
+      {/* // need to figure out how to pass "pelagos" as the index or a value as a "soulbind1 prop" otherwise each 1st soulbind will show the pelagos tree */}
       <TabPanel value={value} index={0}>
         {buildSoulbind("Pelagos")}
       </TabPanel>
@@ -84,35 +99,6 @@ export default function InnerVerticalTabs(props) {
       <TabPanel value={value} index={2}>
         Item Three
       </TabPanel>
-      <TabPanel value={value} index={3}>
-        Item Four
-      </TabPanel>
-      <TabPanel value={value} index={4}>
-        Item Five
-      </TabPanel>
-      <TabPanel value={value} index={5}>
-        Item Six
-      </TabPanel>
-      <TabPanel value={value} index={6}>
-        Item Seven
-      </TabPanel>
     </div>
   );
-}
-
-function buildSoulbind(soulbindName) {
-  let activeSoulbind = soulbinds[soulbindName]["traits"];
-  //console.log(activeSoulbind);
-  
-  return (
-    <div id="soulbind" style={{position: 'absolute'}}>
-      <img src={process.env.PUBLIC_URL + "/Images/Interface/SoulbindBackground.jpg"} style={{position: 'absolute', margin: 0, left: 0, padding: 0}} />
-
-      {activeSoulbind.map((trait, index) => (
-        <SoulbindNode key={index} soulbindTrait={trait} />
-    )) }
-    </div>
-
-  )
-
 }

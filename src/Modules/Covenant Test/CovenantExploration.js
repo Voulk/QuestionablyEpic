@@ -6,7 +6,8 @@ import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
-import InnerVerticalTabs from "./InnerCovenantTabs"
+import { soulbinds } from "./Soulbinds";
+import SoulbindNode from "./SoulbindNode";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -41,6 +42,13 @@ function a11yProps(index) {
   };
 }
 
+function a11yPropsVert(index) {
+  return {
+    id: `vertical-tab-${index}`,
+    "aria-controls": `vertical-tabpanel-${index}`,
+  };
+}
+
 const useStyles = makeStyles((theme) => ({
   root: {
     justifyContent: "center",
@@ -51,22 +59,37 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     backgroundColor: theme.palette.background.paper,
   },
+  panel: {
+    flexGrow: 1,
+    backgroundColor: theme.palette.background.paper,
+    display: "flex",
+    height: 624,
+  },
+  tabs: {
+    borderRight: `1px solid ${theme.palette.divider}`,
+  },
 }));
 
 export default function SimpleTabs() {
   const classes = useStyles();
-  const [value, setValue] = React.useState(0);
+  const [tabvalue, setTabValue] = React.useState(0);
+  const [soulbindValue, setSoulbindValue] = React.useState(0);
 
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
+  const handleTabChange = (event, newValue) => {
+    setTabValue(newValue);
+    setSoulbindValue(0);
+  };
+
+  const handleChange2 = (event, newValue) => {
+    setSoulbindValue(newValue);
   };
 
   return (
     <div className={classes.root}>
       <AppBar position="static">
         <Tabs
-          value={value}
-          onChange={handleChange}
+          value={tabvalue}
+          onChange={handleTabChange}
           aria-label="simple tabs example"
           variant="fullWidth"
         >
@@ -76,22 +99,296 @@ export default function SimpleTabs() {
           <Tab label="Necrolords" {...a11yProps(3)} />
         </Tabs>
       </AppBar>
-      <TabPanel value={value} index={0}>
-        {/* Kyrian */}
-        <InnerVerticalTabs soulbind1={"Pelagos"} soulbind2={"Kleia"} soulbind3={"Mikanikos"}/>
+
+      {/* Kyrian */}
+      <TabPanel value={tabvalue} index={0}>
+        <div className={classes.panel}>
+          <Tabs
+            orientation="vertical"
+            value={soulbindValue}
+            onChange={handleChange2}
+            aria-label="Vertical tabs example"
+            className={classes.tabs}
+          >
+            <Tab
+              style={{ color: "white" }}
+              icon={
+                <img
+                  height={100}
+                  src={
+                    process.env.PUBLIC_URL + "/Images/Interface/pelagos.webp"
+                  }
+                />
+              }
+              label="Pelagos"
+              {...a11yPropsVert(0)}
+            />
+            <Tab
+              style={{ color: "white" }}
+              icon={
+                <img
+                  height={100}
+                  src={process.env.PUBLIC_URL + "/Images/Interface/kleia.webp"}
+                />
+              }
+              label="Kleia"
+              {...a11yPropsVert(1)}
+            />
+            <Tab
+              style={{ color: "white" }}
+              icon={
+                <img
+                  height={100}
+                  src={
+                    process.env.PUBLIC_URL +
+                    "/Images/Interface/forgelite-prime-mikanikos.webp"
+                  }
+                />
+              }
+              label="Mikanikos"
+              {...a11yPropsVert(2)}
+            />
+          </Tabs>
+
+          {/* // need to figure out how to pass "pelagos" as the index or a value as a "soulbind1 prop" otherwise each 1st soulbind will show the pelagos tree */}
+          <TabPanel
+            value={soulbindValue}
+            index={0}
+            style={{ display: "inline-flex" }}
+          >
+            {buildSoulbind("Pelagos")}
+          </TabPanel>
+          <TabPanel
+            value={soulbindValue}
+            index={1}
+            style={{ display: "inline-flex" }}
+          >
+            {buildSoulbind("Pelagos")}
+          </TabPanel>
+          <TabPanel
+            value={soulbindValue}
+            index={2}
+            style={{ display: "inline-flex" }}
+          >
+            {buildSoulbind("Pelagos")}
+          </TabPanel>
+        </div>
       </TabPanel>
-      <TabPanel value={value} index={1}>
+
       {/* Night Fae */}
-        <InnerVerticalTabs soulbind1={"Niya"} soulbind2={"Dreamweaver"} soulbind3={"Korayn"}/>
+      <TabPanel value={tabvalue} index={1}>
+        <div className={classes.panel}>
+          <Tabs
+            orientation="vertical"
+            // variant="scrollable"
+            value={soulbindValue}
+            onChange={handleChange2}
+            aria-label="Vertical tabs example"
+            className={classes.tabs}
+          >
+            <Tab
+              style={{ color: "white" }}
+              icon={
+                <img
+                  height={100}
+                  src={process.env.PUBLIC_URL + "/Images/Interface/niya.webp"}
+                />
+              }
+              label="Niya"
+              {...a11yPropsVert(0)}
+            />
+            <Tab
+              style={{ color: "white" }}
+              icon={
+                <img
+                  height={100}
+                  src={
+                    process.env.PUBLIC_URL +
+                    "/Images/Interface/dreamweaver.webp"
+                  }
+                />
+              }
+              label="Dreamweaver"
+              {...a11yPropsVert(1)}
+            />
+            <Tab
+              style={{ color: "white" }}
+              icon={
+                <img
+                  height={100}
+                  src={process.env.PUBLIC_URL + "/Images/Interface/korayn.webp"}
+                />
+              }
+              label="Korayn"
+              {...a11yPropsVert(2)}
+            />
+          </Tabs>
+
+          {/* // need to figure out how to pass "pelagos" as the index or a value as a "soulbind1 prop" otherwise each 1st soulbind will show the pelagos tree */}
+          <TabPanel value={soulbindValue} index={0}>
+            {buildSoulbind("Pelagos")}
+          </TabPanel>
+          <TabPanel value={soulbindValue} index={1}>
+            {buildSoulbind("Pelagos")}
+          </TabPanel>
+          <TabPanel value={soulbindValue} index={2}>
+            {buildSoulbind("Pelagos")}
+          </TabPanel>
+        </div>
       </TabPanel>
-      <TabPanel value={value} index={2}>
+
       {/* Venthyr */}
-        <InnerVerticalTabs soulbind1={"Nadjia"} soulbind2={"Theotar"} soulbind3={"General Draven"}/>
+      <TabPanel value={tabvalue} index={2}>
+        <div className={classes.panel}>
+          <Tabs
+            orientation="vertical"
+            // variant="scrollable"
+            value={soulbindValue}
+            onChange={handleChange2}
+            aria-label="Vertical tabs example"
+            className={classes.tabs}
+          >
+            <Tab
+              style={{ color: "white" }}
+              icon={
+                <img
+                  height={100}
+                  src={
+                    process.env.PUBLIC_URL +
+                    "/Images/Interface/nadjia-the-mistblade.webp"
+                  }
+                />
+              }
+              label="Nadjia"
+              {...a11yPropsVert(0)}
+            />
+            <Tab
+              style={{ color: "white" }}
+              icon={
+                <img
+                  height={100}
+                  src={
+                    process.env.PUBLIC_URL +
+                    "/Images/Interface/theotar-the-mad-duke.webp"
+                  }
+                />
+              }
+              label="Theotar"
+              {...a11yPropsVert(1)}
+            />
+            <Tab
+              style={{ color: "white" }}
+              icon={
+                <img
+                  height={100}
+                  src={
+                    process.env.PUBLIC_URL +
+                    "/Images/Interface/general-draven.webp"
+                  }
+                />
+              }
+              label="General Draven"
+              {...a11yPropsVert(2)}
+            />
+          </Tabs>
+
+          {/* // need to figure out how to pass "pelagos" as the index or a value as a "soulbind1 prop" otherwise each 1st soulbind will show the pelagos tree */}
+          <TabPanel value={soulbindValue} index={0}>
+            {buildSoulbind("Pelagos")}
+          </TabPanel>
+          <TabPanel value={soulbindValue} index={1}>
+            {buildSoulbind("Pelagos")}
+          </TabPanel>
+          <TabPanel value={soulbindValue} index={2}>
+            {buildSoulbind("Pelagos")}
+          </TabPanel>
+        </div>
       </TabPanel>
-      <TabPanel value={value} index={3}>
+
       {/* Necrolords */}
-        <InnerVerticalTabs soulbind1={"Plague Deviser Marileth"} soulbind2={"Emeni"} soulbind3={"Bonesmith Heirmir"}/>
+      <TabPanel value={tabvalue} index={3}>
+        <div className={classes.panel}>
+          <Tabs
+            orientation="vertical"
+            // variant="scrollable"
+            value={soulbindValue}
+            onChange={handleChange2}
+            aria-label="Vertical tabs example"
+            className={classes.tabs}
+          >
+            <Tab
+              style={{ color: "white" }}
+              icon={
+                <img
+                  height={100}
+                  src={
+                    process.env.PUBLIC_URL +
+                    "/Images/Interface/plague-deviser-marileth.webp"
+                  }
+                />
+              }
+              label="Plague Deviser Marileth"
+              {...a11yPropsVert(0)}
+            />
+            <Tab
+              style={{ color: "white" }}
+              icon={
+                <img
+                  height={100}
+                  src={process.env.PUBLIC_URL + "/Images/Interface/emeni.webp"}
+                />
+              }
+              label="Emeni"
+              {...a11yPropsVert(1)}
+            />
+            <Tab
+              style={{ color: "white" }}
+              icon={
+                <img
+                  height={100}
+                  src={
+                    process.env.PUBLIC_URL +
+                    "/Images/Interface/bonesmith-heirmir.webp"
+                  }
+                />
+              }
+              label="Bonesmith Heirmir"
+              {...a11yPropsVert(2)}
+            />
+          </Tabs>
+
+          {/* // need to figure out how to pass "pelagos" as the index or a value as a "soulbind1 prop" otherwise each 1st soulbind will show the pelagos tree */}
+          <TabPanel value={soulbindValue} index={0}>
+            {buildSoulbind("Pelagos")}
+          </TabPanel>
+          <TabPanel value={soulbindValue} index={1}>
+            {buildSoulbind("Pelagos")}
+          </TabPanel>
+          <TabPanel value={soulbindValue} index={2}>
+            {buildSoulbind("Pelagos")}
+          </TabPanel>
+        </div>
       </TabPanel>
+    </div>
+  );
+}
+
+function buildSoulbind(soulbindName) {
+  let activeSoulbind = soulbinds[soulbindName]["traits"];
+  //console.log(activeSoulbind);
+
+  return (
+    <div id="soulbind" style={{ position: "absolute" }}>
+      <img
+        src={
+          process.env.PUBLIC_URL + "/Images/Interface/SoulbindBackground.jpg"
+        }
+        style={{ position: "absolute", margin: 0, left: 0, padding: 0 }}
+      />
+
+      {activeSoulbind.map((trait, index) => (
+        <SoulbindNode key={index} soulbindTrait={trait} />
+      ))}
     </div>
   );
 }
