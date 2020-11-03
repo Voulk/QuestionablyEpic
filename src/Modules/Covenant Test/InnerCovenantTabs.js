@@ -46,7 +46,7 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     backgroundColor: theme.palette.background.paper,
     display: "flex",
-    height: 224,
+    height: 624,
   },
   tabs: {
     borderRight: `1px solid ${theme.palette.divider}`,
@@ -76,7 +76,6 @@ export default function InnerVerticalTabs(props) {
         <Tab label={props.soulbind3} {...a11yProps(2)} />
       </Tabs>
       <TabPanel value={value} index={0}>
-        Item 1
         {buildSoulbind("Pelagos")}
       </TabPanel>
       <TabPanel value={value} index={1}>
@@ -103,22 +102,17 @@ export default function InnerVerticalTabs(props) {
 
 function buildSoulbind(soulbindName) {
   let activeSoulbind = soulbinds[soulbindName]["traits"];
-  console.log(activeSoulbind);
+  //console.log(activeSoulbind);
   
   return (
-    <div id="soulbind">
-      <img width={48} height={48} src={process.env.PUBLIC_URL + "/Images/Interface/SoulbindContainer.png" }/>
+    <div id="soulbind" style={{position: 'absolute'}}>
+      <img src={process.env.PUBLIC_URL + "/Images/Interface/SoulbindBackground.jpg"} style={{position: 'absolute', margin: 0, left: 0, padding: 0}} />
 
       {activeSoulbind.map((trait, index) => (
-        <SoulbindNode key={index} position={activeSoulbind.position} />
+        <SoulbindNode key={index} soulbindTrait={trait} />
     )) }
     </div>
 
   )
-
-}
-
-function getSoulbindTree(soulbindName) {
-
 
 }
