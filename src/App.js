@@ -64,6 +64,7 @@ class App extends Component {
     // binds the snack open handlers to this component so we can send it down to where we can trigger them in the relevant component
     this.handleCharSnackOpen = this.handleCharSnackOpen.bind(this);
     this.handleLoginSnackOpen = this.handleLoginSnackOpen.bind(this);
+    this.handleSimCSnackOpen = this.handleSimCSnackOpen.bind(this);
 
     this.langSet = this.langSet.bind(this);
     this.userLogout = this.userLogout.bind(this);
@@ -78,6 +79,7 @@ class App extends Component {
       contentType: "Raid",
       charSnackState: false,
       loginSnackState: false,
+      simcSnackState: false,
     };
   }
 
@@ -102,6 +104,17 @@ class App extends Component {
       return;
     }
     this.setState({ loginSnackState: false });
+  };
+
+  // SimC Added
+  handleSimCSnackOpen = () => {
+    this.setState({ simcSnackState: true });
+  };
+  handleSimCSnackClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+    this.setState({ simcSnackState: false });
   };
 
   // ////////////////////////////////////////
@@ -194,6 +207,7 @@ class App extends Component {
               toggleContentType={this.toggleContentType}
               contentType={this.state.contentType}
               pl={activePlayer}
+              simcSnack={this.handleSimCSnackOpen}
             />
 
             {/* // Char Added Snackbar */}
@@ -215,6 +229,17 @@ class App extends Component {
             >
               <Alert onClose={this.handleLoginClose} severity="success">
                 Logged in Successfully!
+              </Alert>
+            </Snackbar>
+
+            {/* // SimC Success Snackbar */}
+            <Snackbar
+              open={this.state.simcSnackState}
+              autoHideDuration={3000}
+              onClose={this.handleSimCSnackClose}
+            >
+              <Alert onClose={this.handleSimCSnackClose} severity="success">
+                SimC String Imported Successfully!
               </Alert>
             </Snackbar>
 

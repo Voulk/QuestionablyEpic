@@ -66,10 +66,11 @@ export default function QEHeader(props) {
                 </Button>
               </Grid>
               <Grid item>
-                <SimCraftInput 
+                <SimCraftInput
                   pl={props.pl}
                   contentType={props.contentType}
-                  />
+                  simcSnack={props.simcSnack}
+                />
               </Grid>
               <Grid item>
                 <Button
