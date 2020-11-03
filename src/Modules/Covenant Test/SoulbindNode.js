@@ -1,6 +1,6 @@
 import React from "react";
 
-const columnPos = [225, 320, 415];
+const columnPos = [195, 290, 385];
 const rowPos = [20, 100, 180, 240, 320, 400];
 
 export default function SoulbindNode(props) {

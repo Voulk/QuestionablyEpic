@@ -375,33 +375,59 @@ export default function SimpleTabs() {
 
 function buildSoulbind(soulbindName) {
   let activeSoulbind = soulbinds[soulbindName]["traits"];
+  let conduitList = ["Conduit 1", "Conduit 2", "Conduit 3", "Conduit 4", "Conduit 5"] // Pure, raw placeholder. 
   //console.log(activeSoulbind);
 
   return (
     <div id="soulbind" style={{/* position: "absolute" */ display: 'flex', flexDirection: 'row' }}>
-      <div id="soulbinds" style={{backgroundColor: 'red'}}>
+      <div id="soulbinds" style={{backgroundColor: 'red', position: 'relative'}}>
         <img
           src={
             process.env.PUBLIC_URL + "/Images/Interface/SoulbindBackgroundSlim.jpg"
           }
           style={{/* position: "absolute", margin: 0, left: 0, padding: 0 */ }}
         />
-        <div id="nodes" style={{position: 'absolute'}} >
+        <div id="nodes" style={{position: 'absolute', top: 0, backgroundColor: 'pink'}} >
           {activeSoulbind.map((trait, index) => (
             <SoulbindNode key={index} soulbindTrait={trait} />
           ))}
         </div>
-
-        
+  
       </div>
 
-      <div id="conduits" style={{backgroundColor: 'blue'}} >
+      <div id="conduits" style={{backgroundColor: 'blue', position: 'relative'}} >
         <img
           src={
             process.env.PUBLIC_URL + "/Images/Interface/ConduitContainer.jpg"
           }
           style={{/* position: "absolute", margin: 0, left: 0, padding: 0 */}}
-        />
+          />
+
+        <div id="conduitChoices" style={{position: 'absolute', top: 0, width: '100%', paddingLeft: '12px', paddingTop: '7px'}} >
+
+          <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', padding: '0px'}} >
+            <img
+            src={
+              process.env.PUBLIC_URL + "/Images/Interface/PotencyConduitTag.png"
+            } style={{objectFit: 'cover', width: '90%'}} />
+            {conduitList.map((conduit, index) => (
+              <p style={{color: 'white', margin: '5px', paddingLeft: '75px'}}>{conduit}</p>
+            ))}
+
+            <img
+            src={
+              process.env.PUBLIC_URL + "/Images/Interface/EnduranceConduitTag.png"
+            } style={{objectFit: 'cover', width: '90%', marginTop: '20px'}} />
+            {conduitList.map((conduit, index) => (
+              <p style={{color: 'white', margin: '5px', paddingLeft: '75px'}}>{conduit}</p>
+            ))}
+          </div>
+          
+        </div>
+
+         
+
+        
       </div>
 
 
