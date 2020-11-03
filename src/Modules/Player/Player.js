@@ -15,6 +15,8 @@ class Player {
         this.charID = charID;
         this.setupDefaults();
         this.activeItems = [];
+        this.activeConduits = [];
+        this.renown = 0;
 
         if (statWeights !== "default") this.statWeights = statWeights;
         //this.getStatPerc = getStatPerc;
@@ -24,6 +26,8 @@ class Player {
     spec = "";
     charID = 0;
     activeItems = [];
+    activeConduits = [];
+    renown = 0;
     
 
     // A players spell casting patterns. These are averaged from entered logs and a default is provided too. 

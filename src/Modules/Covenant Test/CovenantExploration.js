@@ -21,7 +21,7 @@ function TabPanel(props) {
       {...other}
     >
       {value === index && (
-        <Box p={3}>
+        <Box p={0}>
           <Typography>{children}</Typography>
         </Box>
       )}
@@ -327,7 +327,7 @@ export default function SimpleTabs() {
                   }
                 />
               }
-              label="Plague Deviser Marileth"
+              label="Marileth"
               {...a11yPropsVert(0)}
             />
             <Tab
@@ -378,17 +378,35 @@ function buildSoulbind(soulbindName) {
   //console.log(activeSoulbind);
 
   return (
-    <div id="soulbind" style={{ position: "absolute" }}>
-      <img
-        src={
-          process.env.PUBLIC_URL + "/Images/Interface/SoulbindBackground.jpg"
-        }
-        style={{ position: "absolute", margin: 0, left: 0, padding: 0 }}
-      />
+    <div id="soulbind" style={{/* position: "absolute" */ display: 'flex', flexDirection: 'row' }}>
+      <div id="soulbinds" style={{backgroundColor: 'red'}}>
+        <img
+          src={
+            process.env.PUBLIC_URL + "/Images/Interface/SoulbindBackgroundSlim.jpg"
+          }
+          style={{/* position: "absolute", margin: 0, left: 0, padding: 0 */ }}
+        />
+        <div id="nodes" style={{position: 'absolute'}} >
+          {activeSoulbind.map((trait, index) => (
+            <SoulbindNode key={index} soulbindTrait={trait} />
+          ))}
+        </div>
 
-      {activeSoulbind.map((trait, index) => (
-        <SoulbindNode key={index} soulbindTrait={trait} />
-      ))}
+        
+      </div>
+
+      <div id="conduits" style={{backgroundColor: 'blue'}} >
+        <img
+          src={
+            process.env.PUBLIC_URL + "/Images/Interface/ConduitContainer.jpg"
+          }
+          style={{/* position: "absolute", margin: 0, left: 0, padding: 0 */}}
+        />
+      </div>
+
+
+
+
     </div>
   );
 }
