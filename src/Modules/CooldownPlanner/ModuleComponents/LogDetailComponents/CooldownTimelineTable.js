@@ -12,6 +12,8 @@ import { healerCooldownsDetailed } from "../../Data/Data.js";
 import Divider from "@material-ui/core/Divider";
 import Paper from "@material-ui/core/Paper";
 import { useTranslation } from "react-i18next";
+import { classColoursJS } from "../../Functions/ClassColourFunctions";
+import classIcons from "../../Functions/IconFunctions/ClassIcons";
 
 const theme = createMuiTheme({
   overrides: {
@@ -65,12 +67,22 @@ export default function CooldownTimeline(props) {
             cellStyle: {
               whiteSpace: "nowrap",
               // borderRight: "1px solid rgb(81 81 81)",
-              padding: "2px 8px",
+              padding: "2px 0px",
               fontSize: 14,
             },
             headerStyle: {
               fontSize: 14,
             },
+            render: (rowData) => (
+              <div style={{ color: classColoursJS(rowData.class) }}>
+                {classIcons(rowData.class, 20)}
+                {rowData.name}
+              </div>
+            ),
+          },
+          {
+            field: "class",
+            hidden: true,
           },
           {
             title: t("Cooldown"),

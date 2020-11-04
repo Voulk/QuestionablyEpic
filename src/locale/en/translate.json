@@ -54,7 +54,7 @@
       "CastTimeLabel": "Cast",
       "BossAbilityLabel": "Boss Ability",
       "NotesLabel": "Notes",
-      "OffCooldownLabel": "Available",
+      "OffCooldownLabel": "Off-CD",
       "HealTeamHeader": "Heal Team"
     },
     "HDChartLabels": {

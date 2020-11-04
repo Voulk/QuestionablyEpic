@@ -378,7 +378,9 @@ class HolyDiver extends Component {
                   </Grid>
                   <Grid item xs={12} sm={12} md={12} lg={4} xl={4} padding={1}>
                     <Example
-                      data={this.state.summedUnmitigatedDamagePerSecond}
+                      dataToShow={this.state.chartData}
+                      mitigated={this.state.summedMitigationDamagePerSecond}
+                      unmitigated={this.state.summedUnmitigatedDamagePerSecond}
                     />
                   </Grid>
                 </Grid>
