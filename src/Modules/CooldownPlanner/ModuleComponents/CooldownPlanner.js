@@ -467,6 +467,7 @@ export default function CooldownPlanner(props) {
             padding: "0px 8px 0px 8px",
             backgroundColor: "#c8b054",
             color: "#000",
+            whiteSpace: "nowrap",
           },
           rowStyle: (rowData, index) => {
             if (index % 2) {
