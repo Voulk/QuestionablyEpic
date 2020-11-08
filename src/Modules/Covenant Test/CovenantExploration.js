@@ -53,17 +53,18 @@ const useStyles = makeStyles((theme) => ({
   root: {
     justifyContent: "center",
     display: "block",
-    marginLeft: "20%",
-    marginRight: "20%",
+    marginLeft: "auto",
+    marginRight: "auto",
     marginTop: "2%",
     flexGrow: 1,
     backgroundColor: theme.palette.background.paper,
+    maxWidth: 1010,
   },
   panel: {
     flexGrow: 1,
     backgroundColor: theme.palette.background.paper,
     display: "flex",
-    height: 624,
+    height: 608,
   },
   tabs: {
     borderRight: `1px solid ${theme.palette.divider}`,
@@ -383,60 +384,93 @@ function buildSoulbind(soulbindName, player) {
   //console.log(activeSoulbind);
 
   return (
-    <div id="soulbind" style={{/* position: "absolute" */ display: 'flex', flexDirection: 'row' }}>
-      <div id="soulbinds" style={{position: 'relative'}}>
+    <div
+      id="soulbind"
+      style={{
+        /* position: "absolute" */ display: "flex",
+        flexDirection: "row",
+      }}
+    >
+      <div id="soulbinds" style={{ position: "relative" }}>
         <img
           src={
-            process.env.PUBLIC_URL + "/Images/Interface/SoulbindBackgroundSlim.jpg"
+            process.env.PUBLIC_URL +
+            "/Images/Interface/SoulbindBackgroundSlim.jpg"
           }
-          style={{/* position: "absolute", margin: 0, left: 0, padding: 0 */ }}
+          style={
+            {
+              /* position: "absolute", margin: 0, left: 0, padding: 0 */
+            }
+          }
         />
-        <div id="nodes" style={{position: 'absolute', top: 0, backgroundColor: 'pink'}} >
+        <div
+          id="nodes"
+          style={{ position: "absolute", top: 0, backgroundColor: "pink" }}
+        >
           {activeSoulbind.map((trait, index) => (
             <SoulbindNode key={index} soulbindTrait={trait} />
           ))}
         </div>
-  
       </div>
 
-      <div id="conduits" style={{position: 'relative'}} >
+      <div id="conduits" style={{ position: "relative" }}>
         <img
           src={
             process.env.PUBLIC_URL + "/Images/Interface/ConduitContainer.jpg"
           }
-          style={{/* position: "absolute", margin: 0, left: 0, padding: 0 */}}
-          />
+          style={
+            {
+              /* position: "absolute", margin: 0, left: 0, padding: 0 */
+            }
+          }
+        />
 
-        <div id="conduitChoices" style={{position: 'absolute', top: 0, width: '100%', paddingLeft: '14px', paddingTop: '7px'}} >
-
-          <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', padding: '0px'}} >
+        <div
+          id="conduitChoices"
+          style={{
+            position: "absolute",
+            top: 0,
+            width: "100%",
+            paddingLeft: "14px",
+            paddingTop: "7px",
+          }}
+        >
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "flex-start",
+              padding: "0px",
+            }}
+          >
             <img
-            src={
-              process.env.PUBLIC_URL + "/Images/Interface/PotencyConduitTag.png"
-            } style={{objectFit: 'cover', width: '214px'}} />
+              src={
+                process.env.PUBLIC_URL +
+                "/Images/Interface/PotencyConduitTag.png"
+              }
+              style={{ objectFit: "cover", width: "214px" }}
+            />
             {potencyConduits.map((conduit, index) => (
-              <p style={{color: 'white', margin: '5px', paddingLeft: '30px'}}>{conduit.name}</p>
+              <p style={{ color: "white", margin: "5px", paddingLeft: "75px" }}>
+                {conduit.name}
+              </p>
             ))}
 
             <img
-            src={
-              process.env.PUBLIC_URL + "/Images/Interface/EnduranceConduitTag.png"
-            } style={{objectFit: 'cover', width: '214px', marginTop: '20px'}} />
+              src={
+                process.env.PUBLIC_URL +
+                "/Images/Interface/EnduranceConduitTag.png"
+              }
+              style={{ objectFit: "cover", width: "214px", marginTop: "20px" }}
+            />
             {enduranceConduits.map((conduit, index) => (
-              <p style={{color: 'white', margin: '5px', paddingLeft: '30px'}}>{conduit.name}</p>
+              <p style={{ color: "white", margin: "5px", paddingLeft: "75px" }}>
+                {conduit.name}
+              </p>
             ))}
           </div>
-          
         </div>
-
-         
-
-        
       </div>
-
-
-
-
     </div>
   );
 }
