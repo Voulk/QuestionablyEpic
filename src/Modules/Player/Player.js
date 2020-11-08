@@ -1,3 +1,4 @@
+import { getAvailableClassConduits } from '../Covenant Test/CovenantUtilities';
 import STAT from '../Engine/STAT'
 
 var SPELL_CASTS_LOC = 0;
@@ -19,6 +20,7 @@ class Player {
         this.renown = 0;
 
         if (statWeights !== "default") this.statWeights = statWeights;
+        this.activeConduits = getAvailableClassConduits(specName);
         //this.getStatPerc = getStatPerc;
     }
 
@@ -91,6 +93,12 @@ class Player {
             return 0;
         }
             
+    }
+
+    getActiveConduits = (type) => {
+        return this.activeConduits.filter(function(conduits) {
+            return conduits.type == type;
+        });
     }
 
     // Used for the purpose of maximising stuff like ring enchants and gems. 

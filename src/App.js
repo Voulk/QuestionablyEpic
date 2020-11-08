@@ -272,7 +272,10 @@ class App extends Component {
                 )}
               />
 
-              <Route path="/soulbinds" render={() => <SimpleTabs />} />
+              <Route path="/soulbinds" render={() => 
+                <SimpleTabs 
+                  pl={activePlayer}
+                />} />
               <Route
                 path="/login"
                 render={() => (
