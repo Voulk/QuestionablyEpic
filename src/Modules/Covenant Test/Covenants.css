@@ -1,0 +1,13 @@
+.conduit {
+    display: flex;
+    border-width: 2px;
+    border-color: darkslategray;
+    border-style: solid;
+    height: 38px;
+    border-radius: 0px 8px 8px 0px;
+}
+
+.conduitTitleText {
+    font-size: 12px;
+    padding-left: 7px;
+}

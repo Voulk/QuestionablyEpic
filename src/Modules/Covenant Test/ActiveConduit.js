@@ -1,6 +1,6 @@
 
 
-class ActiveSoulbind {
+class ActiveConduit {
     constructor(id, itemLevel, itemName, type) {
         this.id = id;
         this.itemLevel = itemLevel;
@@ -17,4 +17,4 @@ class ActiveSoulbind {
 
 }
 
-export default ActiveSoulbind;
+export default ActiveConduit;

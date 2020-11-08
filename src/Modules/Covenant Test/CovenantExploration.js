@@ -8,6 +8,7 @@ import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 import { soulbinds } from "./Soulbinds";
 import SoulbindNode from "./SoulbindNode";
+import ConduitObject from "./ConduitObject";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -451,8 +452,8 @@ function buildSoulbind(soulbindName, player) {
               style={{ objectFit: "cover", width: "214px" }}
             />
             {potencyConduits.map((conduit, index) => (
-              <p style={{ color: "white", margin: "5px", paddingLeft: "75px" }}>
-                {conduit.name}
+              <p style={{ color: "white", margin: "5px", paddingLeft: "10px" }}>
+                {<ConduitObject conduit={conduit} />}
               </p>
             ))}
 
@@ -464,8 +465,8 @@ function buildSoulbind(soulbindName, player) {
               style={{ objectFit: "cover", width: "214px", marginTop: "20px" }}
             />
             {enduranceConduits.map((conduit, index) => (
-              <p style={{ color: "white", margin: "5px", paddingLeft: "75px" }}>
-                {conduit.name}
+              <p style={{ color: "white", margin: "5px", paddingLeft: "10px" }}>
+                {<ConduitObject conduit={conduit} />}
               </p>
             ))}
           </div>
