@@ -9,6 +9,7 @@ import Box from "@material-ui/core/Box";
 import { soulbinds } from "./Soulbinds";
 import SoulbindNode from "./SoulbindNode";
 import ConduitObject from "./ConduitObject";
+import Grid from "@material-ui/core/Grid";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -376,102 +377,94 @@ export default function SimpleTabs(props) {
 }
 
 function buildSoulbind(soulbindName, player) {
-  
-  console.log(JSON.stringify(player))
+  console.log(JSON.stringify(player));
   let activeSoulbind = soulbinds[soulbindName]["traits"];
   let potencyConduits = player.getActiveConduits("Potency");
   let enduranceConduits = player.getActiveConduits("Endurance");
-  //let conduitList = ["Conduit 1", "Conduit 2", "Conduit 3", "Conduit 4", "Conduit 5"] // Pure, raw placeholder. 
+  //let conduitList = ["Conduit 1", "Conduit 2", "Conduit 3", "Conduit 4", "Conduit 5"] // Pure, raw placeholder.
   //console.log(activeSoulbind);
 
   return (
-    <div
+    <Grid
       id="soulbind"
-      style={{
-        /* position: "absolute" */ display: "flex",
-        flexDirection: "row",
-      }}
+      container
+      direction="row"
+      style={{ display: "flex", flexWrap: "nowrap" }}
     >
-      <div id="soulbinds" style={{ position: "relative" }}>
-        <img
-          src={
-            process.env.PUBLIC_URL +
-            "/Images/Interface/SoulbindBackgroundSlim.jpg"
-          }
-          style={
-            {
-              /* position: "absolute", margin: 0, left: 0, padding: 0 */
+      <Grid item>
+        <div id="soulbinds" style={{ position: "relative" }}>
+          <img
+            src={
+              process.env.PUBLIC_URL +
+              "/Images/Interface/SoulbindBackgroundSlim.jpg"
             }
-          }
-        />
-        <div
-          id="nodes"
-          style={{ position: "absolute", top: 0, backgroundColor: "pink" }}
-        >
-          {activeSoulbind.map((trait, index) => (
-            <SoulbindNode key={index} soulbindTrait={trait} />
-          ))}
-        </div>
-      </div>
-
-      <div id="conduits" style={{ position: "relative" }}>
-        <img
-          src={
-            process.env.PUBLIC_URL + "/Images/Interface/ConduitContainer.jpg"
-          }
-          style={
-            {
-              /* position: "absolute", margin: 0, left: 0, padding: 0 */
-            }
-          }
-        />
-
-        <div
-          id="conduitChoices"
-          style={{
-            position: "absolute",
-            top: 0,
-            width: "100%",
-            paddingLeft: "14px",
-            paddingTop: "7px",
-          }}
-        >
+          />
           <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "flex-start",
-              padding: "0px",
-            }}
+            id="nodes"
+            style={{ position: "absolute", top: 0, backgroundColor: "pink" }}
           >
-            <img
-              src={
-                process.env.PUBLIC_URL +
-                "/Images/Interface/PotencyConduitTag.png"
-              }
-              style={{ objectFit: "cover", width: "214px" }}
-            />
-            {potencyConduits.map((conduit, index) => (
-              <p style={{ color: "white", margin: "5px", paddingLeft: "10px" }}>
-                {<ConduitObject conduit={conduit} />}
-              </p>
-            ))}
-
-            <img
-              src={
-                process.env.PUBLIC_URL +
-                "/Images/Interface/EnduranceConduitTag.png"
-              }
-              style={{ objectFit: "cover", width: "214px", marginTop: "20px" }}
-            />
-            {enduranceConduits.map((conduit, index) => (
-              <p style={{ color: "white", margin: "5px", paddingLeft: "10px" }}>
-                {<ConduitObject conduit={conduit} />}
-              </p>
+            {activeSoulbind.map((trait, index) => (
+              <SoulbindNode key={index} soulbindTrait={trait} />
             ))}
           </div>
         </div>
-      </div>
-    </div>
+      </Grid>
+
+      <Grid container>
+        <div id="conduits" style={{ position: "relative", width: 245 }}>
+          <img
+            src={
+              process.env.PUBLIC_URL + "/Images/Interface/ConduitContainer.jpg"
+            }
+          />
+
+          <Grid
+            container
+            id="conduitChoices"
+            spacing={1}
+            style={{
+              position: "absolute",
+              top: 0,
+              margin: 1,
+            }}
+          >
+            <Grid item>
+              <img
+                src={
+                  process.env.PUBLIC_URL +
+                  "/Images/Interface/PotencyConduitTag.png"
+                }
+                style={{ objectFit: "cover", width: "214px" }}
+              />
+
+              <Grid container spacing={1} style={{ maxWidth: 245 }}>
+                {potencyConduits.map((conduit, index) => (
+                  <ConduitObject conduit={conduit} />
+                ))}
+              </Grid>
+            </Grid>
+
+            <Grid item>
+              <img
+                src={
+                  process.env.PUBLIC_URL +
+                  "/Images/Interface/EnduranceConduitTag.png"
+                }
+                style={{
+                  objectFit: "cover",
+                  width: "214px",
+                }}
+              />
+
+              <Grid container spacing={1} style={{ maxWidth: 245 }}>
+                {enduranceConduits.map((conduit, index) => (
+                  <ConduitObject conduit={conduit} />
+                ))}
+              </Grid>
+            </Grid>
+          </Grid>
+        </div>
+      </Grid>
+    </Grid>
   );
 }

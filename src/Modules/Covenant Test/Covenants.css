@@ -1,27 +1,70 @@
 .conduit {
-    display: block;
-    border-width: 2px;
-    border-color: darkslategray;
-    border-style: solid;
-    height: 38px;
-    border-radius: 0px 8px 8px 0px;
+  display: block;
+  border-width: 2px;
+  border-color: darkslategray;
+  border-style: solid;
+  height: 38px;
+  border-radius: 0px 8px 8px 0px;
 }
 
 .conduitTop {
-    display: inline-block;
-    height: 55%;
-    width: 100%;
-    text-align: top;
-    
+  display: inline-block;
+  height: 55%;
+  width: 100%;
+  text-align: top;
 }
 
 .conduitBottom {
-    height: 45%;
-    width: 100%;
+  height: 45%;
+  width: 100%;
 }
 
 .conduitTitleText {
-    display: inline-block;
-    font-size: 12px;
-    padding-left: 7px;
+  display: inline-block;
+  font-size: 12px;
+  padding-left: 7px;
+}
+
+/* Container holding the image and the text */
+.container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+/* Bottom left text */
+.bottom-left {
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+}
+
+/* Top left text */
+.top-left {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+}
+
+/* Top right text */
+.top-right {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+}
+
+/* Bottom right text */
+.bottom-right {
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+  font-weight: bold;
+  font-size: 11px;
+}
+
+/* Centered text */
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
