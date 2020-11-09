@@ -8,8 +8,16 @@ export default function ConduitObject(props) {
   
     return (
       <div className="conduit">
-          <img src='' />
-          <p className="conduitTitleText">{conduit.name}</p>
+          
+        
+        <div className="conduitTop" >
+            <p className="conduitTitleText">{conduit.name}</p>
+        </div>
+        <div className="conduitBottom" >
+
+        </div>
+
+        
 
       </div>
     );

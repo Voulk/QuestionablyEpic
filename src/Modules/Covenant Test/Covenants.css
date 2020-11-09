@@ -1,5 +1,5 @@
 .conduit {
-    display: flex;
+    display: block;
     border-width: 2px;
     border-color: darkslategray;
     border-style: solid;
@@ -7,7 +7,21 @@
     border-radius: 0px 8px 8px 0px;
 }
 
+.conduitTop {
+    display: inline-block;
+    height: 55%;
+    width: 100%;
+    text-align: top;
+    
+}
+
+.conduitBottom {
+    height: 45%;
+    width: 100%;
+}
+
 .conduitTitleText {
+    display: inline-block;
     font-size: 12px;
     padding-left: 7px;
 }
