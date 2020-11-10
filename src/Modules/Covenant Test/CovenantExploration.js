@@ -167,14 +167,14 @@ export default function SimpleTabs(props) {
             index={1}
             style={{ display: "inline-flex" }}
           >
-            {buildSoulbind("Pelagos", props.pl)}
+            {buildSoulbind("Kleia", props.pl)}
           </TabPanel>
           <TabPanel
             value={soulbindValue}
             index={2}
             style={{ display: "inline-flex" }}
           >
-            {buildSoulbind("Pelagos", props.pl)}
+            {buildSoulbind("Mikanikos", props.pl)}
           </TabPanel>
         </div>
       </TabPanel>
@@ -230,13 +230,13 @@ export default function SimpleTabs(props) {
 
           {/* // need to figure out how to pass "pelagos" as the index or a value as a "soulbind1 prop" otherwise each 1st soulbind will show the pelagos tree */}
           <TabPanel value={soulbindValue} index={0}>
-            {buildSoulbind("Pelagos", props.pl)}
+            {buildSoulbind("Niya", props.pl)}
           </TabPanel>
           <TabPanel value={soulbindValue} index={1}>
-            {buildSoulbind("Pelagos", props.pl)}
+            {buildSoulbind("Dreamweaver", props.pl)}
           </TabPanel>
           <TabPanel value={soulbindValue} index={2}>
-            {buildSoulbind("Pelagos", props.pl)}
+            {buildSoulbind("Korayn", props.pl)}
           </TabPanel>
         </div>
       </TabPanel>
@@ -363,13 +363,13 @@ export default function SimpleTabs(props) {
 
           {/* // need to figure out how to pass "pelagos" as the index or a value as a "soulbind1 prop" otherwise each 1st soulbind will show the pelagos tree */}
           <TabPanel value={soulbindValue} index={0}>
-            {buildSoulbind("Pelagos", props.pl)}
+            {/*buildSoulbind("Pelagos", props.pl) */}
           </TabPanel>
           <TabPanel value={soulbindValue} index={1}>
-            {buildSoulbind("Pelagos", props.pl)}
+            {buildSoulbind("Kleia", props.pl)}
           </TabPanel>
           <TabPanel value={soulbindValue} index={2}>
-            {buildSoulbind("Pelagos", props.pl)}
+            {buildSoulbind("Mikanikos", props.pl)}
           </TabPanel>
         </div>
       </TabPanel>
@@ -382,7 +382,9 @@ function buildSoulbind(soulbindName, player) {
   let potencyConduits = player.getActiveConduits("Potency");
   let enduranceConduits = player.getActiveConduits("Endurance");
   //let conduitList = ["Conduit 1", "Conduit 2", "Conduit 3", "Conduit 4", "Conduit 5"] // Pure, raw placeholder.
-  //console.log(activeSoulbind);
+  
+  console.log("Y" + soulbindName);
+  console.log(activeSoulbind);
 
   return (
     <Grid

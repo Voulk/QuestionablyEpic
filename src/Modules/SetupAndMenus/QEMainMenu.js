@@ -12,7 +12,7 @@ import { makeStyles } from "@material-ui/core/styles";
 const mainMenuOptions = {
   "Top Gear": "/topgear",
   "Gear Quick Compare": "/quickcompare",
-  "Trinket Quick Compare": "/trinkets",
+  "Great Vault": "/greatvault",
   "Legendary Analysis": "/legendaries",
   "Explore Covenants": "/soulbinds",
   "Cooldown Planner": "/holydiver",

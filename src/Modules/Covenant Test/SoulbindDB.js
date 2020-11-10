@@ -148,8 +148,46 @@ export const soulbindDB = {
         ]
     },
     "Kleia": {
+        "traits": [
 
 
-    }
+
+        ]
+
+    },
+
+    "Mikanikos": {
+        "traits": [
+
+        ]
+
+    },
+
+    "Niya": {
+        "traits": [
+            
+        ]
+
+    },
+    "Mikanikos": {
+        "traits": [
+            
+        ]
+
+    },
+    "Dreamweaver": {
+        "traits": [
+            
+        ]
+
+    },
+    "Korayn": {
+        "traits": [
+            
+        ]
+
+    },
+
+
 
 }
