@@ -6,7 +6,7 @@ import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
-import { soulbinds } from "./Soulbinds";
+import { soulbindDB } from "./SoulbindDB";
 import SoulbindNode from "./SoulbindNode";
 import ConduitObject from "./ConduitObject";
 import Grid from "@material-ui/core/Grid";
@@ -378,7 +378,7 @@ export default function SimpleTabs(props) {
 }
 
 function buildSoulbind(soulbindName, player) {
-  let activeSoulbind = soulbinds[soulbindName]["traits"];
+  let activeSoulbind = soulbindDB[soulbindName]["traits"];
   let potencyConduits = player.getActiveConduits("Potency");
   let enduranceConduits = player.getActiveConduits("Endurance");
   //let conduitList = ["Conduit 1", "Conduit 2", "Conduit 3", "Conduit 4", "Conduit 5"] // Pure, raw placeholder.
@@ -401,7 +401,7 @@ function buildSoulbind(soulbindName, player) {
           />
           <div
             id="nodes"
-            style={{ position: "absolute", top: 0, backgroundColor: "pink" }}
+            style={{}}
           >
             {activeSoulbind.map((trait, index) => (
               <SoulbindNode key={index} soulbindTrait={trait} />
@@ -443,7 +443,7 @@ function buildSoulbind(soulbindName, player) {
                   process.env.PUBLIC_URL +
                   "/Images/Interface/PotencyConduitTag.png"
                 }
-                style={{ objectFit: "cover", width: "214px" }}
+                style={{ objectFit: "cover", width: "214px", paddingLeft: "8px" }}
               />
 
               <Grid container spacing={1} style={{ maxWidth: 245 }}>
@@ -462,6 +462,7 @@ function buildSoulbind(soulbindName, player) {
                 style={{
                   objectFit: "cover",
                   width: "214px",
+                  paddingLeft: "8px" 
                 }}
               />
 
