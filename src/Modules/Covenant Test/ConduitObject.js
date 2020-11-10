@@ -18,7 +18,7 @@ const useStyles = makeStyles({
 export default function ConduitObject(props) {
   const { t } = useTranslation();
   const conduit = props.conduit;
-  //console.log(conduit);
+  // console.log(conduit);
   const classes = useStyles();
 
   const itemQuality = (quality) => {
@@ -59,22 +59,18 @@ export default function ConduitObject(props) {
             display="inline-flex"
             wrap="nowrap"
             justify="space-between"
+            style={{ maxHeight: 26 }}
           >
             <Grid item xs="auto">
-              <CardContent
-                style={{
-                  padding: "0px",
-                  display: "inline-flex",
-                }}
-              >
-                <div className="container">
+              <div className="container">
+                <a data-wowhead={"spell=" + conduit.id}>
                   <img
                     alt=""
-                    width={26}
-                    height={26}
+                    width={24}
+                    height={24}
                     src={conduit.icon}
                     style={{
-                      borderRadius: 4,
+                      borderRadius: "3px 0px 0px 3px",
                       borderWidth: "1px",
                       borderStyle: "solid",
                       borderColor: itemQuality("Uncommon"),
@@ -88,69 +84,56 @@ export default function ConduitObject(props) {
                   >
                     {conduit.itemLevel}
                   </div>
-                </div>
-              </CardContent>
+                </a>
+              </div>
             </Grid>
             <Divider orientation="vertical" flexItem />
-            <CardContent style={{ padding: 0, width: "100%" }}>
-              <Grid
-                container
-                display="inline"
-                direction="column"
-                justify="space-around"
-                xs="auto"
-              >
-                <Grid
-                  container
+            <Grid
+              container
+              wrap="nowrap"
+              justify="space-between"
+              alignItems="center"
+              style={{ width: "100%" }}
+            >
+              <Grid item xs={10} display="inline">
+                <Typography
                   wrap="nowrap"
-                  justify="space-between"
-                  alignItems="center"
-                  style={{ width: "100%" }}
+                  display="inline"
+                  align="left"
+                  style={{
+                    color: "Goldenrod",
+                    fontSize: "12px",
+                    paddingLeft: "4px",
+                  }}
                 >
-                  <Grid item xs={10} display="inline">
-                    <Typography
-                      // variant="subtitle1"
-                      wrap="nowrap"
-                      display="inline"
-                      align="left"
-                      style={{
-                        //color: itemQuality("Uncommon"),
-                        color: 'Goldenrod',
-                        fontSize: "12px",
-                        paddingLeft: "4px",
-                      }}
-                    >
-                      {conduit.name}
-                    </Typography>
-                  </Grid>
-                  <Divider orientation="vertical" flexItem />
-                  <Grid
-                    item
-                    xs={2}
-                    style={{
-                      display: "inline-flex",
-                      justifyContent: "center",
-                      paddingLeft: 2,
-                    }}
-                  >
-                    <Typography
-                      variant="subtitle1"
-                      wrap="nowrap"
-                      display="inline"
-                      align="center"
-                      style={{
-                        color: upgradeColor(conduit.hps),
-                        paddingLeft: "2px",
-                        paddingRight: "2px",
-                        fontSize: "14px",
-                      }}
-                    >
-                      {conduit.hps}
-                    </Typography>
-                  </Grid>
-                </Grid>
+                  {conduit.name}
+                </Typography>
               </Grid>
-            </CardContent>
+              <Divider orientation="vertical" flexItem />
+              <Grid
+                item
+                xs={2}
+                style={{
+                  display: "inline-flex",
+                  justifyContent: "center",
+                }}
+              >
+                <Typography
+                  variant="subtitle1"
+                  wrap="nowrap"
+                  display="inline"
+                  align="center"
+                  style={{
+                    color: upgradeColor(conduit.hps),
+                    paddingLeft: "2px",
+                    paddingRight: "2px",
+                    fontSize: "12px",
+                  }}
+                >
+                  {conduit.hps}
+                </Typography>
+              </Grid>
+            </Grid>
           </Grid>
         </CardActionArea>
       </Card>

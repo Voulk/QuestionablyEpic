@@ -55,8 +55,8 @@
 /* Bottom right text */
 .bottom-right {
   position: absolute;
-  bottom: 4px;
-  right: 4px;
+  bottom: 3px;
+  right: 3px;
   font-weight: bold;
   font-size: 12px;
   text-shadow: 1px 1px 4px black;

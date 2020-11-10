@@ -66,7 +66,8 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     backgroundColor: theme.palette.background.paper,
     display: "flex",
-    height: 608,
+    height: 609,
+    backgroundColor: "#191c23",
   },
   tabs: {
     borderRight: `1px solid ${theme.palette.divider}`,
@@ -410,12 +411,21 @@ function buildSoulbind(soulbindName, player) {
       </Grid>
 
       <Grid container>
-        <div id="conduits" style={{ position: "relative", width: 245 }}>
-          <img
+        <div
+          id="conduits"
+          style={{
+            position: "relative",
+            width: 245,
+            backgroundColor: "#191c23",
+            borderLeft: "1px solid rgba(255, 255, 255, 0.12)",
+            maxHeight: 609,
+          }}
+        >
+          {/* <img
             src={
               process.env.PUBLIC_URL + "/Images/Interface/ConduitContainer.jpg"
             }
-          />
+          /> */}
 
           <Grid
             container
