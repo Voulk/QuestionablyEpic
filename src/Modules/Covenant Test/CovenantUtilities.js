@@ -10,16 +10,16 @@ export function getAvailableClassConduits(spec) {
     const defaultItemLevel = 156;
 
     if (spec === SPECS.RESTODRUID) {
-        conduits.push(new ActiveConduit(-1, defaultItemLevel, "Flash of Clarity", "Potency"));
-        conduits.push(new ActiveConduit(-1, defaultItemLevel, "Floral Recycling", "Potency"));
-        conduits.push(new ActiveConduit(-1, defaultItemLevel, "Ready for Anything", "Potency"));
-        conduits.push(new ActiveConduit(-1, defaultItemLevel, "Unstoppable Growth", "Potency"));
-        conduits.push(new ActiveConduit(-1, defaultItemLevel, "Conflux of Elements", "Potency"));
+        conduits.push(new ActiveConduit(340616, defaultItemLevel, "Flash of Clarity", "Potency"));
+        conduits.push(new ActiveConduit(340621, defaultItemLevel, "Floral Recycling", "Potency"));
+        conduits.push(new ActiveConduit(340550, defaultItemLevel, "Ready for Anything", "Potency"));
+        conduits.push(new ActiveConduit(340549, defaultItemLevel, "Unstoppable Growth", "Potency"));
+        conduits.push(new ActiveConduit(341446, defaultItemLevel, "Conflux of Elements", "Potency"));
         // TODO: Add the full set.
 
-        conduits.push(new ActiveConduit(-1, defaultItemLevel, "Tough as Bark", "Endurance"));
-        conduits.push(new ActiveConduit(-1, defaultItemLevel, "Ursine Vigor", "Endurance"));
-        conduits.push(new ActiveConduit(-1, defaultItemLevel, "Innate Resolve", "Endurance"));
+        conduits.push(new ActiveConduit(340529, defaultItemLevel, "Tough as Bark", "Endurance"));
+        conduits.push(new ActiveConduit(340540, defaultItemLevel, "Ursine Vigor", "Endurance"));
+        conduits.push(new ActiveConduit(340543, defaultItemLevel, "Innate Resolve", "Endurance"));
     }
     else if (spec === SPECS.HOLYPALADIN) {
 

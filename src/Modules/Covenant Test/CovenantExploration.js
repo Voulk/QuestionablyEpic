@@ -377,7 +377,6 @@ export default function SimpleTabs(props) {
 }
 
 function buildSoulbind(soulbindName, player) {
-  console.log(JSON.stringify(player));
   let activeSoulbind = soulbinds[soulbindName]["traits"];
   let potencyConduits = player.getActiveConduits("Potency");
   let enduranceConduits = player.getActiveConduits("Endurance");

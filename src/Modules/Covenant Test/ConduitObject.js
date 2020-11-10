@@ -18,7 +18,7 @@ const useStyles = makeStyles({
 export default function ConduitObject(props) {
   const { t } = useTranslation();
   const conduit = props.conduit;
-  console.log(conduit);
+  //console.log(conduit);
   const classes = useStyles();
 
   const itemQuality = (quality) => {
@@ -72,12 +72,12 @@ export default function ConduitObject(props) {
                     alt=""
                     width={26}
                     height={26}
-                    src={getItemIcon(conduit.icon)}
+                    src={conduit.icon}
                     style={{
                       borderRadius: 4,
-                      // borderWidth: "1px",
-                      // borderStyle: "solid",
-                      // borderColor: itemQuality("Uncommon"),
+                      borderWidth: "1px",
+                      borderStyle: "solid",
+                      borderColor: itemQuality("Uncommon"),
                       padding: 0,
                       margin: 0,
                     }}
@@ -114,8 +114,9 @@ export default function ConduitObject(props) {
                       display="inline"
                       align="left"
                       style={{
-                        color: itemQuality("Uncommon"),
-                        fontSize: "14px",
+                        //color: itemQuality("Uncommon"),
+                        color: 'Goldenrod',
+                        fontSize: "12px",
                         paddingLeft: "4px",
                       }}
                     >
