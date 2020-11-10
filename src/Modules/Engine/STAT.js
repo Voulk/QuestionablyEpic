@@ -1,4 +1,4 @@
-const STAT = {
+export const STAT = {
     HEALTH: 'health',
     STAMINA: 'stamina',
     MANA: 'mana',
@@ -16,4 +16,12 @@ const STAT = {
     AVOIDANCE: 'avoidance',
     SPEED: 'speed',
   };
-  export default STAT;
+
+  export const STATPERONEPERCENT = {
+    HASTE: 32,
+    CRIT: 0,
+    VERSATILITY: 40,
+    VERSATILITY_DR: 80,
+    MASTERY: 0,
+  }
+  

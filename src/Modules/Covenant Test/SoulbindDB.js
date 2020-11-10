@@ -43,7 +43,7 @@ export const soulbindDB = {
                 "renown": 0,
             },
             {
-                "id": 0,
+                "id": 328261,
                 "names": {
                     "en": "Focusing Mantra",
                     "cn": "耐心之瓶",
@@ -133,7 +133,7 @@ export const soulbindDB = {
                 "renown": 0,
             },
             {
-                "id": 0,
+                "id": 328257,
                 "names": {
                     "en": "Let Go of the Past",
                     "cn": "耐心之瓶",

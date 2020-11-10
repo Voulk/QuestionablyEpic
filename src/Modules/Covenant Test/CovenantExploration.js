@@ -160,21 +160,21 @@ export default function SimpleTabs(props) {
             index={0}
             style={{ display: "inline-flex" }}
           >
-            {buildSoulbind("Pelagos", props.pl)}
+            {buildSoulbind("Pelagos", props.pl, props.contentType)}
           </TabPanel>
           <TabPanel
             value={soulbindValue}
             index={1}
             style={{ display: "inline-flex" }}
           >
-            {buildSoulbind("Kleia", props.pl)}
+            {buildSoulbind("Kleia", props.pl, props.contentType)}
           </TabPanel>
           <TabPanel
             value={soulbindValue}
             index={2}
             style={{ display: "inline-flex" }}
           >
-            {buildSoulbind("Mikanikos", props.pl)}
+            {buildSoulbind("Mikanikos", props.pl, props.contentType)}
           </TabPanel>
         </div>
       </TabPanel>
@@ -363,7 +363,7 @@ export default function SimpleTabs(props) {
 
           {/* // need to figure out how to pass "pelagos" as the index or a value as a "soulbind1 prop" otherwise each 1st soulbind will show the pelagos tree */}
           <TabPanel value={soulbindValue} index={0}>
-            {/*buildSoulbind("Pelagos", props.pl) */}
+            {buildSoulbind("Pelagos", props.pl)}
           </TabPanel>
           <TabPanel value={soulbindValue} index={1}>
             {buildSoulbind("Kleia", props.pl)}
@@ -377,7 +377,7 @@ export default function SimpleTabs(props) {
   );
 }
 
-function buildSoulbind(soulbindName, player) {
+function buildSoulbind(soulbindName, player, contentType) {
   let activeSoulbind = soulbindDB[soulbindName]["traits"];
   let potencyConduits = player.getActiveConduits("Potency");
   let enduranceConduits = player.getActiveConduits("Endurance");
@@ -406,7 +406,7 @@ function buildSoulbind(soulbindName, player) {
             style={{}}
           >
             {activeSoulbind.map((trait, index) => (
-              <SoulbindNode key={index} soulbindTrait={trait} />
+              <SoulbindNode key={index} soulbindTrait={trait} player={player} contentType={contentType} />
             ))}
           </div>
         </div>
