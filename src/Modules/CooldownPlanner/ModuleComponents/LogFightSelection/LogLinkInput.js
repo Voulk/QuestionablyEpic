@@ -11,7 +11,7 @@ export default function LogLinkInput(props) {
       id="filled-basic"
       label={
         props.reportid !== "err"
-          ? t("HDUserInputs.Loglink")
+          ? t("CooldownPlannerUserInputs.Loglink")
           : "Incorrect Link / Report ID Provided :("
       }
       variant="outlined"
@@ -19,7 +19,7 @@ export default function LogLinkInput(props) {
       value={props.loglink}
       size="small"
       fullWidth
-      style={{ width: "85%"}}
+      style={{ width: "85%" }}
     />
   );
 }

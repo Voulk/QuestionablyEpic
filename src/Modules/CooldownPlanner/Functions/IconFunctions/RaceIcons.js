@@ -52,117 +52,117 @@ export default function raceIcons(props) {
   let alt = "";
 
   // Ny'alotha, the Waking City
-  if (props === "Blood elf") {
+  if (props === "Races.Blood Elf") {
     sourceMale = BloodElfMale;
     sourceFemale = BloodElfFemale;
     alt = "Blood Elf";
   }
-  if (props === "Dark Iron") {
+  if (props === "Races.Dark Iron Dwarf") {
     sourceMale = DarkIronMale;
     sourceFemale = DarkIronFemale;
     alt = "Dark Iron";
   }
-  if (props === "Draenei") {
+  if (props === "Races.Draenei") {
     sourceMale = DraeneiMale;
     sourceFemale = DraeneiFemale;
     alt = "Draenei";
   }
-  if (props === "Dwarf") {
+  if (props === "Races.Dwarf") {
     sourceMale = DwarfMale;
     sourceFemale = DwarfFemale;
     alt = "Dwarf";
   }
-  if (props === "Gnome") {
+  if (props === "Races.Gnome") {
     sourceMale = GnomeMale;
     sourceFemale = GnomeFemale;
     alt = "Gnome";
   }
-  if (props === "Goblin") {
+  if (props === "Races.Goblin") {
     sourceMale = GoblinMale;
     sourceFemale = GoblinFemale;
     alt = "Goblin";
   }
-  if (props === "Highmountain") {
+  if (props === "Races.Highmountain Tauren") {
     sourceMale = HighmountainMale;
     sourceFemale = HighmountainFemale;
     alt = "Highmountain";
   }
-  if (props === "Human") {
+  if (props === "Races.Human") {
     sourceMale = HumanMale;
     sourceFemale = HumanFemale;
     alt = "Human";
   }
-  if (props === "Kul Tiran") {
+  if (props === "Races.Kul Tiran") {
     sourceMale = KultiranMale;
     sourceFemale = KultiranFemale;
     alt = "Kul Tiran";
   }
-  if (props === "Lightforged") {
+  if (props === "Races.Lightforged Draenei") {
     sourceMale = LightforgedMale;
     sourceFemale = LightforgedFemale;
     alt = "Lightforged";
   }
-  if (props === "Mag'har") {
+  if (props === "Races.Mag'har") {
     sourceMale = MagharMale;
     sourceFemale = MagharFemale;
     alt = "Mag'har";
   }
-  if (props === "Mechagnome") {
+  if (props === "Races.Mechagnome") {
     sourceMale = MechagnomeMale;
     sourceFemale = MechagnomeFemale;
     alt = "Mechagnome";
   }
-  if (props === "Nightborne") {
+  if (props === "Races.Nightborne") {
     sourceMale = NightborneMale;
     sourceFemale = NightborneFemale;
     alt = "Nightborne";
   }
-  if (props === "Night elf") {
+  if (props === "Races.Night Elf") {
     sourceMale = NightElfMale;
     sourceFemale = NightElfFemale;
     alt = "Night elf";
   }
-  if (props === "Orc") {
+  if (props === "Races.Orc") {
     sourceMale = OrcMale;
     sourceFemale = OrcFemale;
     alt = "Orc";
   }
-  if (props === "Pandaren") {
+  if (props === "Races.Pandaren") {
     sourceMale = PandarenMale;
     sourceFemale = PandarenFemale;
     alt = "Pandaren";
   }
-  if (props === "Tauren") {
+  if (props === "Races.Tauren") {
     sourceMale = TaurenMale;
     sourceFemale = TaurenFemale;
     alt = "Tauren";
   }
-  if (props === "Troll") {
+  if (props === "Races.Troll") {
     sourceMale = TrollMale;
     sourceFemale = TrollFemale;
     alt = "Troll";
   }
-  if (props === "Undead") {
+  if (props === "Races.Undead") {
     sourceMale = UndeadMale;
     sourceFemale = UndeadFemale;
     alt = "Undead";
   }
-  if (props === "Void elf") {
+  if (props === "Races.Void Elf") {
     sourceMale = VoidElfMale;
     sourceFemale = VoidElfFemale;
     alt = "Void elf";
   }
-  if (props === "Vulpera") {
+  if (props === "Races.Vulpera") {
     sourceMale = VulperaMale;
     sourceFemale = VulperaFemale;
     alt = "Vulpera";
   }
-  if (props === "Worgen") {
+  if (props === "Races.Worgen") {
     sourceMale = WorgenMale;
     sourceFemale = WorgenFemale;
     alt = "Worgen";
   }
-  if (props === "Zandalari") {
+  if (props === "Races.Zandalari Troll") {
     sourceMale = ZandalariMale;
     sourceFemale = ZandalariFemale;
     alt = "Zandalari";

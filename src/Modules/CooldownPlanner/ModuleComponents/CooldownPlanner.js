@@ -294,7 +294,7 @@ export default function CooldownPlanner(props) {
       ),
     },
     {
-      title: t("HDTableLabels.CastTimeLabel"),
+      title: t("CooldownPlannerTableLabels.CastTimeLabel"),
       field: "time",
       width: "4%",
       cellStyle: {
@@ -305,7 +305,7 @@ export default function CooldownPlanner(props) {
           size="small"
           variant="outlined"
           id="standard-basic"
-          label={t("HDTableLabels.CastTimeLabel")}
+          label={t("CooldownPlannerTableLabels.CastTimeLabel")}
           placeholder="Format: mm:ss"
           value={props.value}
           style={{ whiteSpace: "nowrap", width: "100%", marginTop: 6 }}
@@ -314,7 +314,7 @@ export default function CooldownPlanner(props) {
       ),
     },
     {
-      title: t("HDTableLabels.OffCooldownLabel"),
+      title: t("CooldownPlannerTableLabels.OffCooldownLabel"),
       width: "4%",
       cellStyle: {
         whiteSpace: "nowrap",
@@ -336,7 +336,7 @@ export default function CooldownPlanner(props) {
       ),
     },
     {
-      title: t("HDTableLabels.BossAbilityLabel"),
+      title: t("CooldownPlannerTableLabels.BossAbilityLabel"),
       field: "bossAbility",
       width: "15%",
       cellStyle: {
@@ -359,12 +359,12 @@ export default function CooldownPlanner(props) {
             style={{ marginTop: 6 }}
           >
             <InputLabel id="BossAbilitySelector">
-              {t("HDTableLabels.BossAbilityLabel")}
+              {t("CooldownPlannerTableLabels.BossAbilityLabel")}
             </InputLabel>
             <Select
               value={props.value}
               labelId="BossAbilitySelector"
-              label={t("HDTableLabels.BossAbilityLabel")}
+              label={t("CooldownPlannerTableLabels.BossAbilityLabel")}
               onChange={(e) => {
                 props.onChange(e.target.value);
               }}
@@ -391,7 +391,7 @@ export default function CooldownPlanner(props) {
       ),
     },
     {
-      title: t("HDTableLabels.NotesLabel"),
+      title: t("CooldownPlannerTableLabels.NotesLabel"),
       field: "notes",
       width: "20%",
       cellStyle: {
@@ -403,7 +403,7 @@ export default function CooldownPlanner(props) {
           size="small"
           variant="outlined"
           id="standard-basic"
-          label={t("HDTableLabels.NotesLabel")}
+          label={t("CooldownPlannerTableLabels.NotesLabel")}
           value={props.value}
           onChange={(e) => props.onChange(e.target.value)}
         />
@@ -528,13 +528,15 @@ export default function CooldownPlanner(props) {
                       size="small"
                     >
                       <InputLabel id="RaidSelector">
-                        {t("HDTableLabels.RaidSelectorLabel")}
+                        {t("CooldownPlannerTableLabels.RaidSelectorLabel")}
                       </InputLabel>
                       <Select
                         labelId="RaidSelector"
                         value={raid}
                         onChange={handleChangeRaid}
-                        label={t("HDTableLabels.RaidSelectorLabel")}
+                        label={t(
+                          "CooldownPlannerTableLabels.RaidSelectorLabel"
+                        )}
                         MenuProps={menuStyle}
                       >
                         {rl
@@ -555,13 +557,15 @@ export default function CooldownPlanner(props) {
                       disabled={raid === "" ? true : false}
                     >
                       <InputLabel id="BossSelector">
-                        {t("HDTableLabels.BossSelectorLabel")}
+                        {t("CooldownPlannerTableLabels.BossSelectorLabel")}
                       </InputLabel>
                       <Select
                         labelId="BossSelector"
                         value={boss}
                         onChange={handleChangeBoss}
-                        label={t("HDTableLabels.BossSelectorLabel")}
+                        label={t(
+                          "CooldownPlannerTableLabels.BossSelectorLabel"
+                        )}
                         MenuProps={menuStyle}
                       >
                         {bossList

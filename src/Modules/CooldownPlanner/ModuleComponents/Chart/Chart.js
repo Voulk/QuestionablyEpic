@@ -172,7 +172,9 @@ class Chart extends Component {
               stroke="#f5f5f5"
               tickFormatter={DataFormater}
               label={{
-                value: i18n.t("HDChartLabels.UnmitigatedDamageLabel"),
+                value: i18n.t(
+                  "CooldownPlannerChartLabels.UnmitigatedDamageLabel"
+                ),
                 angle: -90,
                 fill: "#f5f5f5",
                 fontWeight: "bold",
