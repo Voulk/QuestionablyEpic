@@ -13,7 +13,6 @@ import Divider from "@material-ui/core/Divider";
 import Grid from "@material-ui/core/Grid";
 import { getItemIcon } from "../../../Engine/ItemUtilities";
 import "./HealerCardInfo.css";
-
 import Accordion from "@material-ui/core/Accordion";
 import AccordionSummary from "@material-ui/core/AccordionSummary";
 import AccordionDetails from "@material-ui/core/AccordionDetails";
@@ -96,11 +95,11 @@ export default function HealerInfoCards(props) {
                       padding: "2px 8px 2px 8px",
                       border: "1px solid rgba(255, 255, 255, 0.12)",
                       width: "100%",
-                      height: "fit-content"
+                      height: "fit-content",
                     }}
                   >
                     <Typography className={classes.heading} color="primary">
-                      {t("HDAccordianTitles.StatsHeading")}
+                      {t("CooldownPlannerHealerCards.StatsHeading")}
                     </Typography>
                     <Divider />
                     {key.stats.map((stats, i) => (
@@ -112,7 +111,8 @@ export default function HealerInfoCards(props) {
                             fontSize: 14,
                           }}
                         >
-                          {t("HDAccordianTitles.Item Level")}: {stats.ilvl}
+                          {t("CooldownPlannerHealerCards.Item Level")}:{" "}
+                          {stats.ilvl}
                         </Typography>
                         <Typography
                           style={{
@@ -121,7 +121,7 @@ export default function HealerInfoCards(props) {
                             fontSize: 14,
                           }}
                         >
-                          {t("HDAccordianTitles.Crit")}: {stats.crit}
+                          {t("CooldownPlannerHealerCards.Crit")}: {stats.crit}
                         </Typography>
                         <Typography
                           style={{
@@ -130,7 +130,7 @@ export default function HealerInfoCards(props) {
                             fontSize: 14,
                           }}
                         >
-                          {t("HDAccordianTitles.Haste")}: {stats.haste}
+                          {t("CooldownPlannerHealerCards.Haste")}: {stats.haste}
                         </Typography>
                         <Typography
                           style={{
@@ -139,7 +139,8 @@ export default function HealerInfoCards(props) {
                             fontSize: 14,
                           }}
                         >
-                          {t("HDAccordianTitles.Mastery")}: {stats.mastery}
+                          {t("CooldownPlannerHealerCards.Mastery")}:{" "}
+                          {stats.mastery}
                         </Typography>
                         <Typography
                           style={{
@@ -148,7 +149,7 @@ export default function HealerInfoCards(props) {
                             fontSize: 14,
                           }}
                         >
-                          {t("HDAccordianTitles.Versatility")}:{" "}
+                          {t("CooldownPlannerHealerCards.Versatility")}:{" "}
                           {stats.versatility}
                         </Typography>
                       </div>
@@ -175,7 +176,7 @@ export default function HealerInfoCards(props) {
                       }}
                     >
                       <Typography className={classes.heading} color="primary">
-                        {t("HDAccordianTitles.TalentHeader")}
+                        {t("CooldownPlannerHealerCards.TalentHeader")}
                       </Typography>
                       <Divider />
                       <div
@@ -206,7 +207,7 @@ export default function HealerInfoCards(props) {
                         color="primary"
                         style={{ width: "100%" }}
                       >
-                        {t("HDAccordianTitles.SoulbindAbilities")}
+                        {t("CooldownPlannerHealerCards.SoulbindAbilities")}
                       </Typography>
                       <Divider />
                       <div
@@ -247,7 +248,7 @@ export default function HealerInfoCards(props) {
                       }}
                     >
                       <Typography className={classes.heading} color="primary">
-                        {t("HDAccordianTitles.SoulbindConduits")}
+                        {t("CooldownPlannerHealerCards.SoulbindConduits")}
                       </Typography>
                       <Divider />
                       <div
@@ -268,7 +269,11 @@ export default function HealerInfoCards(props) {
                                   verticalAlign: "middle",
                                   borderRadius: "4px",
                                 }}
-                                src={"/Images/Icons/" + conduit.abilityIcon}
+                                src={
+                                  process.env.PUBLIC_URL +
+                                  "/Images/Icons/" +
+                                  conduit.abilityIcon
+                                }
                                 alt={"coinduit" + i}
                                 // style={{
                                 //   borderRadius: 4,

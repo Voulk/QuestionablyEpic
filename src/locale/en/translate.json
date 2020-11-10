@@ -11,15 +11,40 @@
     "QuickCompare": {
       "Slot": "Slot",
       "ItemName": "Item Name",
-      "ItemLevel" : "Item Level",
-      "Socket" : "Socket",
-      "Tertiary" : "Tertiary",
-      "AddButton" : "Add"
+      "ItemLevel": "Item Level",
+      "Socket": "Socket",
+      "Tertiary": "Tertiary",
+      "AddButton": "Add"
     },
 
     "HeaderLabels": {
-      "Login" : "Login",
-      "" : ""
+      "Login": "Login",
+      "": ""
+    },
+
+    "Races": {
+      "Blood Elf": "Blood Elf",
+      "Dark Iron Dwarf": "Dark Iron Dwarf",
+      "Draenei": "Draenei",
+      "Dwarf": "Dwarf",
+      "Gnome": "Gnome",
+      "Goblin": "Goblin",
+      "Highmountain Tauren": "Highmountain Tauren",
+      "Human": "Human",
+      "Kul Tiran": "Kul Tiran",
+      "Lightforged Draenei": "Lightforged Draenei",
+      "Mag'har Orc": "Mag'har Orc",
+      "Mechagnome": "Mechagnome",
+      "Night Elf": "Night Elf",
+      "Nightborne": "Nightborne",
+      "Orc": "Orc",
+      "Tauren": "Tauren",
+      "Troll": "Troll",
+      "Undead": "Undead",
+      "Void Elf": "Void Elf",
+      "Vulpera": "Vulpera",
+      "Worgen": "Worgen",
+      "Zandalari Troll": "Zandalari Troll"
     },
 
     "_Comments1": "Common Words",
@@ -30,7 +55,7 @@
     "Raid": "Raid",
     "Dungeon": "Dungeon",
 
-    "HDAccordianTitles": {
+    "CooldownPlannerHealerCards": {
       "_Comments1": "Translations for the Accordian for Healer Info",
       "StatsHeading": "Stats",
       "Item Level": "ilvl",
@@ -42,12 +67,12 @@
       "SoulbindAbilities": "Soulbind Abilities",
       "SoulbindConduits": "Soulbind Conduits"
     },
-    "HDUserInputs": {
+    "CooldownPlannerUserInputs": {
       "_Comments1": "Translations for the User Input Components",
       "Loglink": "Paste WarcraftLog Link Here",
       "fightButtonLabel": "Select Fight"
     },
-    "HDTableLabels": {
+    "CooldownPlannerTableLabels": {
       "_Comments1": "Translations for HD Tables",
       "RaidSelectorLabel": "Select Raid",
       "BossSelectorLabel": "Select Boss",
@@ -57,12 +82,12 @@
       "OffCooldownLabel": "Off-CD",
       "HealTeamHeader": "Heal Team"
     },
-    "HDChartLabels": {
-        "_Comments1": "Translations for HD Charts",
-        "UnmitigatedDamageLabel": "Unmitigated Damage"
+    "CooldownPlannerChartLabels": {
+      "_Comments1": "Translations for HD Charts",
+      "UnmitigatedDamageLabel": "Unmitigated Damage"
     },
     "CooldownPlannerClasses": {
-      "HolyPaladin" : "Holy Paladin",
+      "HolyPaladin": "Holy Paladin",
       "DiscisplinePriest": "Discispline Priest",
       "RestorationDruid": "Restoration Druid",
       "HavocDemonHunter": "Havoc Demon Hunter",
@@ -242,7 +267,7 @@
       "342740": "Ravenous Swipe"
     },
     "QeHeader": {
-        "InsertLogLabel": "Insert Log"
+      "InsertLogLabel": "Insert Log"
     },
     "author": {
       "title": "Author Name",
@@ -253,15 +278,15 @@
       "value": "Whenever I smell strong tobacco smos away from the smoker and fills the room."
     },
     "slotNames": {
-      "head" : "Helm",
-      "neck" : "Neck",
-      "shoulder" : "Shoulders",
-      "back" : "Cape",
-      "chest" : "Chest",
-      "wrists" : "Bracers",
-      "hands" : "Gloves",
-      "waist" : "Belt",
-      "feet" : "Boots",
+      "head": "Helm",
+      "neck": "Neck",
+      "shoulder": "Shoulders",
+      "back": "Cape",
+      "chest": "Chest",
+      "wrists": "Bracers",
+      "hands": "Gloves",
+      "waist": "Belt",
+      "feet": "Boots",
       "trinket": "Trinkets",
       "weapons": "Weapons",
       "offhands": "Off-Hands",
