@@ -203,7 +203,7 @@ export default function HealTeam(props) {
       ),
     },
     {
-      title: t("HDTableLabels.NotesLabel"),
+      title: t("CooldownPlannerTableLabels.NotesLabel"),
       field: "notes",
       cellStyle: {
         whiteSpace: "nowrap",
@@ -245,7 +245,7 @@ export default function HealTeam(props) {
     <ThemeProvider theme={themeCooldownTable}>
       <MaterialTable
         icons={tableIcons}
-        title={t("HDTableLabels.HealTeamHeader")}
+        title={t("CooldownPlannerTableLabels.HealTeamHeader")}
         columns={columns}
         data={data}
         style={{

@@ -104,7 +104,7 @@ export default function CooldownTimeline(props) {
             ),
           },
           {
-            title: t("HDTableLabels.CastTimeLabel"),
+            title: t("CooldownPlannerTableLabels.CastTimeLabel"),
             field: "timestamp",
             width: "2%",
             cellStyle: {
@@ -118,7 +118,7 @@ export default function CooldownTimeline(props) {
             },
           },
           {
-            title: t("HDTableLabels.OffCooldownLabel"),
+            title: t("CooldownPlannerTableLabels.OffCooldownLabel"),
             width: "2%",
             cellStyle: {
               whiteSpace: "nowrap",

@@ -87,8 +87,9 @@
       "UnmitigatedDamageLabel": "Unmitigated Damage"
     },
     "CooldownPlannerClasses": {
+      "undefined": "",
       "HolyPaladin": "Holy Paladin",
-      "DiscisplinePriest": "Discispline Priest",
+      "DisciplinePriest": "Discispline Priest",
       "RestorationDruid": "Restoration Druid",
       "HavocDemonHunter": "Havoc Demon Hunter",
       "Warrior": "Warrior",
@@ -97,6 +98,7 @@
       "RestorationShaman": "Restoration Shaman"
     },
     "CooldownPlannerClassAbilities": {
+      "undefined": "",
       "HolyPaladinComment": "Holy Paladin Class Cooldowns",
       "31821": "Aura Mastery",
       "31884": "Avenging Wrath",

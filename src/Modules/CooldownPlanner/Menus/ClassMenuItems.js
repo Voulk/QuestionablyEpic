@@ -63,7 +63,7 @@ export const classMenus = [
     </Translation>
   </MenuItem>,
   <Divider />,
-  <MenuItem style={{ color: "#FFFFFF" }} value={"DiscisplinePriest"}>
+  <MenuItem style={{ color: "#FFFFFF" }} value={"DisciplinePriest"}>
     <img
       style={{
         height: 20,
@@ -72,10 +72,10 @@ export const classMenus = [
         verticalAlign: "middle",
       }}
       src={DiscPriestIcon}
-      alt="Discispline Priest"
+      alt="Discipline Priest"
     />
     <Translation>
-      {(t, { i18n }) => t("CooldownPlannerClasses.DiscisplinePriest")}
+      {(t, { i18n }) => t("CooldownPlannerClasses.DisciplinePriest")}
     </Translation>
   </MenuItem>,
   <Divider />,
