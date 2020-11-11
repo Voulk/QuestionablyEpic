@@ -24,7 +24,7 @@ export default function SoulbindNode(props) {
     const containerIcon = '/Images/Interface/' + (name.includes('Conduit') ? 'SoulbindContainer' : 'soulbindcontainercircle') + '.png';
     let selected = false;
     let stat_bonus = getSoulbindFormula(id, props.player, props.contentType);
-
+    let activated = trait.active;
     let position = {
         row: trait.position[0],
         column: trait.position[1]
@@ -37,12 +37,12 @@ export default function SoulbindNode(props) {
 
     // The CSS here is a bit of a nightmare. TODO. 
     return (
-        <div style={{backgroundColor: 'forestgreen', width: '100%', borderRadius: '50%'}}>
+        <div onClick={() => props.activateSoulbind(trait.id)} style={{backgroundColor: 'forestgreen', width: '100%', borderRadius: '50%'}}>
             <img width={48} height={48} src={process.env.PUBLIC_URL + containerIcon} 
                style={{position: 'absolute',  zIndex: 2, left: columnPos[position.column], top: rowPos[position.row]}} />
             <img width={38} height={38} src={icon} 
             style={{position: 'absolute', objectFit: 'contain', borderRadius: '100%', zIndex: 1, left: columnPos[position.column]+5, top: rowPos[position.row]+5}} />
-            <p style={{fontSize: 10, zIndex: 40, color: 'Goldenrod', textAlign: 'center', position: 'absolute', left: columnPos[position.column]-18, top: rowPos[position.row]+28}}>{name}</p> 
+            <p style={{fontSize: 10, zIndex: 40, color: 'Goldenrod', textAlign: 'center', position: 'absolute', left: columnPos[position.column]-18, top: rowPos[position.row]+28}}>{name + "|" + activated}</p> 
             <p style={{fontSize: 10, zIndex: 41, color: 'Goldenrod', textAlign: 'center', position: 'absolute',  left: columnPos[position.column]+5, top: rowPos[position.row]+38}}>{benefitString}</p> 
         </div>
         

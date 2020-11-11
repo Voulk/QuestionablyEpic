@@ -74,10 +74,12 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+// ==============================================
 export default function SimpleTabs(props) {
   const classes = useStyles();
   const [tabvalue, setTabValue] = React.useState(0);
   const [soulbindValue, setSoulbindValue] = React.useState(0);
+  const [soulbindState, setSoulbindState] = React.useState(soulbindDB);
 
   const handleTabChange = (event, newValue) => {
     setTabValue(newValue);
@@ -87,6 +89,19 @@ export default function SimpleTabs(props) {
   const handleChange2 = (event, newValue) => {
     setSoulbindValue(newValue);
   };
+
+  function activateSoulbind(id) {
+    let updatedArray = soulbindState.map(trait => {
+      if (trait.id === id) {
+        return {...trait, active: !trait.active};
+      }
+      return trait;
+
+    });
+
+    setSoulbindState(updatedArray);
+
+}
 
   return (
     <div className={classes.root}>
@@ -160,21 +175,21 @@ export default function SimpleTabs(props) {
             index={0}
             style={{ display: "inline-flex" }}
           >
-            {buildSoulbind("Pelagos", props.pl, props.contentType)}
+            {buildSoulbind("Pelagos", props.pl, props.contentType, soulbindState, activateSoulbind)}
           </TabPanel>
           <TabPanel
             value={soulbindValue}
             index={1}
             style={{ display: "inline-flex" }}
           >
-            {buildSoulbind("Kleia", props.pl, props.contentType)}
+            {buildSoulbind("Kleia", props.pl, props.contentType, soulbindState, activateSoulbind)}
           </TabPanel>
           <TabPanel
             value={soulbindValue}
             index={2}
             style={{ display: "inline-flex" }}
           >
-            {buildSoulbind("Mikanikos", props.pl, props.contentType)}
+            {buildSoulbind("Mikanikos", props.pl, props.contentType, soulbindState, activateSoulbind)}
           </TabPanel>
         </div>
       </TabPanel>
@@ -230,13 +245,13 @@ export default function SimpleTabs(props) {
 
           {/* // need to figure out how to pass "pelagos" as the index or a value as a "soulbind1 prop" otherwise each 1st soulbind will show the pelagos tree */}
           <TabPanel value={soulbindValue} index={0}>
-            {buildSoulbind("Niya", props.pl)}
+            {buildSoulbind("Niya", props.pl, props.contentType, soulbindState, activateSoulbind)}
           </TabPanel>
           <TabPanel value={soulbindValue} index={1}>
-            {buildSoulbind("Dreamweaver", props.pl)}
+            {buildSoulbind("Dreamweaver", props.pl, props.contentType, soulbindState, activateSoulbind)}
           </TabPanel>
           <TabPanel value={soulbindValue} index={2}>
-            {buildSoulbind("Korayn", props.pl)}
+            {buildSoulbind("Korayn", props.pl, props.contentType, soulbindState, activateSoulbind)}
           </TabPanel>
         </div>
       </TabPanel>
@@ -298,13 +313,13 @@ export default function SimpleTabs(props) {
 
           {/* // need to figure out how to pass "pelagos" as the index or a value as a "soulbind1 prop" otherwise each 1st soulbind will show the pelagos tree */}
           <TabPanel value={soulbindValue} index={0}>
-            {buildSoulbind("Pelagos", props.pl)}
+            {buildSoulbind("Pelagos", props.pl, props.contentType, soulbindState, activateSoulbind)}
           </TabPanel>
           <TabPanel value={soulbindValue} index={1}>
-            {buildSoulbind("Pelagos", props.pl)}
+            {buildSoulbind("Pelagos", props.pl, props.contentType, soulbindState, activateSoulbind)}
           </TabPanel>
           <TabPanel value={soulbindValue} index={2}>
-            {buildSoulbind("Pelagos", props.pl)}
+            {buildSoulbind("Pelagos", props.pl, props.contentType, soulbindState, activateSoulbind)}
           </TabPanel>
         </div>
       </TabPanel>
@@ -363,13 +378,13 @@ export default function SimpleTabs(props) {
 
           {/* // need to figure out how to pass "pelagos" as the index or a value as a "soulbind1 prop" otherwise each 1st soulbind will show the pelagos tree */}
           <TabPanel value={soulbindValue} index={0}>
-            {buildSoulbind("Pelagos", props.pl)}
+            {buildSoulbind("Pelagos", props.pl, props.contentType, soulbindState, activateSoulbind)}
           </TabPanel>
           <TabPanel value={soulbindValue} index={1}>
-            {buildSoulbind("Kleia", props.pl)}
+            {buildSoulbind("Kleia", props.pl, props.contentType, soulbindState, activateSoulbind)}
           </TabPanel>
           <TabPanel value={soulbindValue} index={2}>
-            {buildSoulbind("Mikanikos", props.pl)}
+            {buildSoulbind("Mikanikos", props.pl, props.contentType, soulbindState, activateSoulbind)}
           </TabPanel>
         </div>
       </TabPanel>
@@ -377,8 +392,13 @@ export default function SimpleTabs(props) {
   );
 }
 
-function buildSoulbind(soulbindName, player, contentType) {
-  let activeSoulbind = soulbindDB[soulbindName]["traits"];
+
+
+function buildSoulbind(soulbindName, player, contentType, soulbindState, activateSoulbind) {
+  //console.log(JSON.stringify(soulbindState));
+  console.log("Post: " + JSON.stringify(soulbindState))
+  //let activeSoulbind = soulbindState[soulbindName];
+  let activeSoulbind = soulbindState.filter(trait => trait.soulbind === soulbindName);
   let potencyConduits = player.getActiveConduits("Potency");
   let enduranceConduits = player.getActiveConduits("Endurance");
   //let conduitList = ["Conduit 1", "Conduit 2", "Conduit 3", "Conduit 4", "Conduit 5"] // Pure, raw placeholder.
@@ -406,7 +426,7 @@ function buildSoulbind(soulbindName, player, contentType) {
             style={{}}
           >
             {activeSoulbind.map((trait, index) => (
-              <SoulbindNode key={index} soulbindTrait={trait} player={player} contentType={contentType} />
+              <SoulbindNode key={index} activateSoulbind={activateSoulbind} soulbindTrait={trait} player={player} contentType={contentType} />
             ))}
           </div>
         </div>
