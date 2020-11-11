@@ -21,7 +21,7 @@ export default function SoulbindNode(props) {
     const name =  trait.names.en; // Should be created dynamically based on language setting.
     const id = trait.id;
     const icon = process.env.PUBLIC_URL + "/Images/Icons/" + trait.icon;
-    const containerIcon = '/Images/Interface/' + (name.includes('Conduit') ? 'SoulbindContainer' : 'soulbindcontainercircle') + '.png';
+    const containerIcon = '/Images/Interface/soulbindcontainer' + (name.includes('Conduit') ? 'hex' : 'circle') + (trait.active ? 'active' : '') + '.png';
     let selected = false;
     let stat_bonus = getSoulbindFormula(id, props.player, props.contentType);
     let activated = trait.active;
@@ -42,7 +42,7 @@ export default function SoulbindNode(props) {
                style={{position: 'absolute',  zIndex: 2, left: columnPos[position.column], top: rowPos[position.row]}} />
             <img width={38} height={38} src={icon} 
             style={{position: 'absolute', objectFit: 'contain', borderRadius: '100%', zIndex: 1, left: columnPos[position.column]+5, top: rowPos[position.row]+5}} />
-            <p style={{fontSize: 10, zIndex: 40, color: 'Goldenrod', textAlign: 'center', position: 'absolute', left: columnPos[position.column]-18, top: rowPos[position.row]+28}}>{name + "|" + activated}</p> 
+            <p style={{fontSize: 10, zIndex: 40, color: 'Goldenrod', textAlign: 'center', position: 'absolute', left: columnPos[position.column]-18, top: rowPos[position.row]+28}}>{name}</p> 
             <p style={{fontSize: 10, zIndex: 41, color: 'Goldenrod', textAlign: 'center', position: 'absolute',  left: columnPos[position.column]+5, top: rowPos[position.row]+38}}>{benefitString}</p> 
         </div>
         
