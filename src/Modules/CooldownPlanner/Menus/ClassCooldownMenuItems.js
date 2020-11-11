@@ -138,7 +138,7 @@ export default function ClassCooldownMenuItems(props) {
     ];
   }
   // Discipline Priest
-  if (props === "DiscisplinePriest") {
+  if (props === "DisciplinePriest") {
     return [
       <MenuItem value={62618}>
         <a data-wowhead="spell=62618">

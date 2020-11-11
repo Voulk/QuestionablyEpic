@@ -47,12 +47,12 @@ export default function classIcons(props, iconSize) {
 
   // Discipline Priest
   if (
-    props === "DiscisplinePriest" ||
-    props === "Discispline Priest" ||
+    props === "DisciplinePriest" ||
+    props === "Discipline Priest" ||
     props === "Priest-Discipline"
   ) {
     src = DiscPriestIcon;
-    alt = "Discispline Priest";
+    alt = "Discipline Priest";
   }
 
   // Restoration Shaman

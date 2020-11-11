@@ -110,6 +110,10 @@ class HolyDiver extends Component {
     this.setState({ damageTableShow: event });
   };
 
+  logDetailsShow = (event) => {
+    this.setState({ logDetailsShow: event });
+  };
+
   // This Function sets the state on whether the User Input Cooldown Chart is Shown.
   healTableShow = (event) => {
     this.setState({ healTableShow: event });
@@ -188,14 +192,14 @@ class HolyDiver extends Component {
                 xl={6}
                 justify="flex-end"
                 style={{
-                  display: this.state.logDetailsShow ? "flex" : "none",
+                  display: this.state.damageTableShow ? "flex" : "none",
                 }}
               >
-                <Collapse in={this.state.logDetailsShow}>
+                <Collapse in={this.state.damageTableShow}>
                   <Grow
-                    in={this.state.logDetailsShow}
+                    in={this.state.damageTableShow}
                     style={{ transformOrigin: "0 0 0" }}
-                    {...(this.state.logDetailsShow ? { timeout: 1000 } : {})}
+                    {...(this.state.damageTableShow ? { timeout: 1000 } : {})}
                   >
                     <Paper
                       style={{
@@ -207,6 +211,10 @@ class HolyDiver extends Component {
                       <SwitchLabels
                         check={this.damageTableShow}
                         label={"Log Chart"}
+                      />
+                      <SwitchLabels
+                        check={this.logDetailsShow}
+                        label={"Toggle Log Details"}
                       />
                       <SwitchLabels
                         check={this.healTableShow}
@@ -242,11 +250,11 @@ class HolyDiver extends Component {
               }}
             >
               <Grid item xs={12} padding={1}>
-                <Collapse in={this.state.logDetailsShow}>
+                <Collapse in={this.state.damageTableShow}>
                   <Grow
-                    in={this.state.logDetailsShow}
+                    in={this.state.damageTableShow}
                     style={{ transformOrigin: "0 0 0" }}
-                    {...(this.state.logDetailsShow ? { timeout: 1000 } : {})}
+                    {...(this.state.damageTableShow ? { timeout: 1000 } : {})}
                   >
                     <Paper bgcolor="#333">
                       <Grid item xs={12} padding={1} align="center">
@@ -342,11 +350,11 @@ class HolyDiver extends Component {
               item
               container
               style={{
-                display: this.state.damageTableShow ? "block" : "none",
+                display: this.state.logDetailsShow ? "block" : "none",
               }}
             >
               <Collapse
-                in={this.state.damageTableShow}
+                in={this.state.logDetailsShow}
                 style={{ width: "100%" }}
               >
                 <Grid

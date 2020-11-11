@@ -45,7 +45,20 @@
       "Zandalari Troll": "Зандалар"
     },
 
+    "CooldownPlannerClasses": {
+      "undefined": "",
+      "HolyPaladin": "Holy Paladin",
+      "DisciplinePriest": "Discispline Priest",
+      "RestorationDruid": "Restoration Druid",
+      "HavocDemonHunter": "Havoc Demon Hunter",
+      "Warrior": "Warrior",
+      "HolyPriest": "Holy Priest",
+      "MistweaverMonk": "Mistweaver Monk",
+      "RestorationShaman": "Restoration Shaman"
+    },
+
     "CooldownPlannerClassAbilities": {
+      "undefined": "",
       "HolyPaladinComment": "Holy Paladin Class Cooldowns",
       "31821": "Владение аурами",
       "31884": "Гнев карателя",
