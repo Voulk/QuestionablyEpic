@@ -35,8 +35,9 @@ export default function SoulbindNode(props) {
 
     //console.log("P" + JSON.stringify(props.soulbindTrait));
 
+    // The CSS here is a bit of a nightmare. TODO. 
     return (
-        <div style={{backgroundColor: 'forestgreen', width: '90px', borderRadius: '50%'}}>
+        <div style={{backgroundColor: 'forestgreen', width: '100%', borderRadius: '50%'}}>
             <img width={48} height={48} src={process.env.PUBLIC_URL + containerIcon} 
                style={{position: 'absolute',  zIndex: 2, left: columnPos[position.column], top: rowPos[position.row]}} />
             <img width={38} height={38} src={icon} 

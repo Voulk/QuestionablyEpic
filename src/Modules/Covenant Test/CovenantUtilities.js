@@ -22,7 +22,11 @@ export function getAvailableClassConduits(spec) {
         conduits.push(new ActiveConduit(340543, defaultItemLevel, "Innate Resolve", "Endurance"));
     }
     else if (spec === SPECS.HOLYPALADIN) {
-
+        conduits.push(new ActiveConduit(340616, defaultItemLevel, "Enkindled Spirit", "Potency"));
+        conduits.push(new ActiveConduit(339984, defaultItemLevel, "Focused Light", "Potency"));
+        conduits.push(new ActiveConduit(339712, defaultItemLevel, "Resplendent Light", "Potency"));
+        conduits.push(new ActiveConduit(339987, defaultItemLevel, "Untempered Dedication", "Potency"));
+        conduits.push(new ActiveConduit(340218, defaultItemLevel, "Ringing Clarity", "Potency"));
     }
 
 
