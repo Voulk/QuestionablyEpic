@@ -72,7 +72,7 @@ class App extends Component {
       characters: new PlayerChars(),
       playerRegion: "us",
       client_id: "1be64387daf6494da2de568527ad82cc",
-      lang: "en",
+      // lang: "en",
       playerLoginID: "",
       playerBattleTag: "",
       accessToken: "",
@@ -273,8 +273,6 @@ class App extends Component {
                 render={() => (
                   <LegendaryCompare
                     pl={activePlayer}
-                    langSet={this.langSet}
-                    curLang={this.state.lang}
                     contentType={this.state.contentType}
                   />
                 )}
@@ -283,13 +281,7 @@ class App extends Component {
               <Route path="/soulbinds" render={() => <SimpleTabs />} />
               <Route
                 path="/login"
-                render={() => (
-                  <QELogin
-                    langSet={this.langSet}
-                    curLang={this.state.lang}
-                    setRegion={this.setRegion}
-                  />
-                )}
+                render={() => <QELogin setRegion={this.setRegion} />}
               />
               <Route
                 path="/attemptlogin"
