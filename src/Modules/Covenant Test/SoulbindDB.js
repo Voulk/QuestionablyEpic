@@ -12,6 +12,7 @@ export const soulbindDB = [
                 "position": [0, 1], 
                 "renown": 0,
                 "active": false,
+                "stat_bonus": {},
             },
             {
             
@@ -24,6 +25,7 @@ export const soulbindDB = [
                 "position": [1, 0], 
                 "renown": 0,
                 "active": false,
+                "stat_bonus": {},
             },
             {
                 "names": {
@@ -35,6 +37,7 @@ export const soulbindDB = [
                 "position": [1, 1], 
                 "renown": 0,
                 "active": false,
+                "stat_bonus": {},
             },
             {
                 "names": {
@@ -46,6 +49,7 @@ export const soulbindDB = [
                 "position": [1, 2], 
                 "renown": 0,
                 "active": false,
+                "stat_bonus": {},
             },
             {
                 "id": 328261,
@@ -58,6 +62,7 @@ export const soulbindDB = [
                 "position": [2, 0], 
                 "renown": 0,
                 "active": false,
+                "stat_bonus": {},
             },
             {
                 "id": 0,
@@ -70,6 +75,7 @@ export const soulbindDB = [
                 "position": [2, 1], 
                 "renown": 0,
                 "active": false,
+                "stat_bonus": {},
             },
             {
                 "id": 329777,
@@ -82,6 +88,7 @@ export const soulbindDB = [
                 "position": [2, 2], 
                 "renown": 0,
                 "active": false,
+                "stat_bonus": {},
             },
             {
                 "id": 0,
@@ -94,6 +101,7 @@ export const soulbindDB = [
                 "position": [3, 1], 
                 "renown": 0,
                 "active": false,
+                "stat_bonus": {},
             },
             {
                 "id": 0,
@@ -106,6 +114,7 @@ export const soulbindDB = [
                 "position": [4, 0], 
                 "renown": 0,
                 "active": false,
+                "stat_bonus": {},
             },
             {
                 "id": 0,
@@ -118,6 +127,7 @@ export const soulbindDB = [
                 "position": [4, 2], 
                 "renown": 0,
                 "active": false,
+                "stat_bonus": {},
             },
             {
                 "id": 0,
@@ -130,6 +140,7 @@ export const soulbindDB = [
                 "position": [5, 1], 
                 "renown": 0,
                 "active": false,
+                "stat_bonus": {},
             },
             {
                 "id": 0,
@@ -142,6 +153,7 @@ export const soulbindDB = [
                 "position": [6, 0], 
                 "renown": 0,
                 "active": false,
+                "stat_bonus": {},
             },
             {
                 "id": 0,
@@ -154,6 +166,7 @@ export const soulbindDB = [
                 "position": [6, 2], 
                 "renown": 0,
                 "active": false,
+                "stat_bonus": {},
             },
             {
                 "id": 328257,
@@ -166,4 +179,5 @@ export const soulbindDB = [
                 "position": [7, 1], 
                 "renown": 0,
                 "active": false,
+                "stat_bonus": {},
             }]

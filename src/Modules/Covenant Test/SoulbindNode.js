@@ -13,18 +13,20 @@ function getBenefitString(bonus_stats) {
     })
 
     return benefitString;
+}
+
+function getLocalizedName(trait, lang = "en") {
+    return trait.names[lang];
 
 }
 
 export default function SoulbindNode(props) {
     const trait = props.soulbindTrait;
-    const name =  trait.names.en; // Should be created dynamically based on language setting.
-    const id = trait.id;
+    const name =  getLocalizedName(trait);
     const icon = process.env.PUBLIC_URL + "/Images/Icons/" + trait.icon;
     const containerIcon = '/Images/Interface/soulbindcontainer' + (name.includes('Conduit') ? 'hex' : 'circle') + (trait.active ? 'active' : '') + '.png';
-    let selected = false;
-    let stat_bonus = getSoulbindFormula(id, props.player, props.contentType);
-    let activated = trait.active;
+
+    let stat_bonus = trait.bonus_stats;
     let position = {
         row: trait.position[0],
         column: trait.position[1]

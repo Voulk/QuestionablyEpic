@@ -10,6 +10,7 @@ import { soulbindDB } from "./SoulbindDB";
 import SoulbindNode from "./SoulbindNode";
 import ConduitObject from "./ConduitObject";
 import Grid from "@material-ui/core/Grid";
+import { getSoulbindFormula } from "../Engine/EffectFormulas/Generic/GenericSoulbindFormulas";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -79,7 +80,16 @@ export default function SimpleTabs(props) {
   const classes = useStyles();
   const [tabvalue, setTabValue] = React.useState(0);
   const [soulbindValue, setSoulbindValue] = React.useState(0);
-  const [soulbindState, setSoulbindState] = React.useState(soulbindDB);
+  const [soulbindState, setSoulbindState] = React.useState(buildBonusStats(soulbindDB));
+  
+
+  function buildBonusStats(soulbindTraits) {
+      let updatedArray = soulbindTraits.map(trait => {
+        return {...trait, bonus_stats: getSoulbindFormula(trait.id, props.player, props.contentType)};
+      })
+      return updatedArray
+      //setSoulbindState(updatedArray);
+  }
 
   const handleTabChange = (event, newValue) => {
     setTabValue(newValue);
