@@ -56,20 +56,22 @@ const tableIcons = {
   )),
 };
 
-let curLang = (lang) => {
-  if (lang === "en") {
-    return localizationEN;
-  } else if (lang === "ru") {
-    return localizationRU;
-  } else if (lang === "ch") {
-    return localizationCH;
-  } else if (lang === "fr") {
-    return localizationFR;
-  }
-};
-
 export default function ERTTable(props) {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const currentLanguage = i18n.language;
+
+  let curLang = () => {
+    if (currentLanguage === "en") {
+      return localizationEN;
+    } else if (currentLanguage === "ru") {
+      return localizationRU;
+    } else if (currentLanguage === "ch") {
+      return localizationCH;
+    } else if (currentLanguage === "fr") {
+      return localizationFR;
+    }
+  };
+
   return (
     <ThemeProvider theme={theme}>
       <MaterialTable

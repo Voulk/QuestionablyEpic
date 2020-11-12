@@ -44,7 +44,8 @@ const useStyles = makeStyles((theme) => ({
 // <p>{props.pl.getSpec()}</p>
 
 export default function QEMainMenu(props) {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const currentLanguage = i18n.language;
   const classes = useStyles();
 
   return (

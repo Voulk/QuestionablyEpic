@@ -15,6 +15,7 @@ import "./ItemCard.css";
 import DeleteIcon from "@material-ui/icons/Delete";
 import IconButton from "@material-ui/core/IconButton";
 import socketImage from "../../Images/Resources/EmptySocket.png";
+import { useTranslation } from "react-i18next";
 
 const useStyles = makeStyles({
   root: {
@@ -37,6 +38,8 @@ export default function ItemCard(props) {
   const classes = useStyles();
   const item = props.item;
   const statString = buildStatString(item.stats, item.effect);
+  const { t, i18n } = useTranslation();
+  const currentLanguage = i18n.language;
 
   const test = false;
 
@@ -147,7 +150,7 @@ export default function ItemCard(props) {
                     align="left"
                     style={{ color: itemQuality("Uncommon") }}
                   >
-                    {getTranslatedItemName(item.id, props.lang)}
+                    {getTranslatedItemName(item.id, currentLanguage)}
                   </Typography>
                 </Grid>
                 <Divider orientation="vertical" flexItem />

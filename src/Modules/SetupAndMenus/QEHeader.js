@@ -4,8 +4,6 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Button from "@material-ui/core/Button";
 import logo from "../../Images/QeAssets/QELogo.png";
 import "./QEMainMenu.css";
-
-import Box from "@material-ui/core/Box";
 import LanguageSelector from "./LanguageButton";
 import ProfileSelector from "./ProfileButton";
 import { useTranslation } from "react-i18next";
@@ -23,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function QEHeader(props) {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const classes = useStyles();
 
   // If the player isn't logged in, then show a login button and redirect to the login page on click.
@@ -90,10 +88,7 @@ export default function QEHeader(props) {
                 />
               </Grid>
               <Grid item>
-                <LanguageSelector
-                  langSet={props.langSet}
-                  curLang={props.curLang}
-                />
+                <LanguageSelector />
               </Grid>
             </Grid>
           </Grid>

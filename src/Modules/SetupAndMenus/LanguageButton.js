@@ -7,10 +7,6 @@ import Popper from "@material-ui/core/Popper";
 import MenuItem from "@material-ui/core/MenuItem";
 import MenuList from "@material-ui/core/MenuList";
 import { makeStyles } from "@material-ui/core/styles";
-import ruFlag from "../../locale/ru/ru.png";
-import enFlag from "../../locale/en/en.png";
-import chFlag from "../../locale/ch/ch.png";
-import frFlag from "../../locale/fr/fr.png";
 import { useTranslation } from "react-i18next";
 import ReactCountryFlag from "react-country-flag";
 
@@ -25,26 +21,20 @@ const useStyles = makeStyles((theme) => ({
 
 export default function LanguageSelector(props) {
   const classes = useStyles();
+  const { t, i18n } = useTranslation();
+  const currentLanguage = i18n.language;
   const [open, setOpen] = React.useState(false);
-  const [language, setLanguage] = React.useState(props.curLang);
   const anchorRef = React.useRef(null);
 
   const handleToggle = () => {
     setOpen((prevOpen) => !prevOpen);
   };
 
-  const { i18n } = useTranslation();
-
   const handleClose = (event, lang) => {
     if (anchorRef.current && anchorRef.current.contains(event.target)) {
       return;
     }
-    if (lang === undefined) {
-      lang = language;
-    }
     i18n.changeLanguage(lang);
-    setLanguage(lang);
-    props.langSet(lang);
     setOpen(false);
   };
 
@@ -65,20 +55,20 @@ export default function LanguageSelector(props) {
     prevOpen.current = open;
   }, [open]);
 
-  const langIcon = (check) => {
-    if (check === "en") {
+  const langIcon = () => {
+    if (currentLanguage === "en") {
       return (
         <ReactCountryFlag countryCode="GB" svg style={{ marginRight: "5px" }} />
       );
-    } else if (check === "ru") {
+    } else if (currentLanguage === "ru") {
       return (
         <ReactCountryFlag countryCode="RU" svg style={{ marginRight: "5px" }} />
       );
-    } else if (check === "ch") {
+    } else if (currentLanguage === "ch") {
       return (
         <ReactCountryFlag countryCode="CN" svg style={{ marginRight: "5px" }} />
       );
-    } else if (check === "fr") {
+    } else if (currentLanguage === "fr") {
       return (
         <ReactCountryFlag countryCode="FR" svg style={{ marginRight: "5px" }} />
       );
@@ -94,8 +84,8 @@ export default function LanguageSelector(props) {
           aria-haspopup="true"
           onClick={handleToggle}
         >
-          {langIcon(language)}
-          {language}
+          {langIcon(currentLanguage)}
+          {currentLanguage}
         </Button>
         <Popper
           open={open}

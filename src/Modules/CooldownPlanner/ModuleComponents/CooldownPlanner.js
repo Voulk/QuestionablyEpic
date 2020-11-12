@@ -153,7 +153,8 @@ const tableIcons = {
 
 export default function CooldownPlanner(props) {
   const classes = useStyles();
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const currentLanguage = i18n.language;
   const { useState } = React;
   const rl = raidList;
   const [data, setData] = useState([]);
@@ -426,14 +427,14 @@ export default function CooldownPlanner(props) {
     props.update(data);
   }, [data]);
 
-  let curLang = (lang) => {
-    if (lang === "en") {
+  let curLang = () => {
+    if (currentLanguage === "en") {
       return localizationEN;
-    } else if (lang === "ru") {
+    } else if (currentLanguage === "ru") {
       return localizationRU;
-    } else if (lang === "ch") {
+    } else if (currentLanguage === "ch") {
       return localizationCH;
-    } else if (lang === "fr") {
+    } else if (currentLanguage === "fr") {
       return localizationFR;
     }
   };
@@ -486,7 +487,7 @@ export default function CooldownPlanner(props) {
           actionsColumnIndex: 7,
           paging: false,
         }}
-        localization={curLang(props.curLang)}
+        localization={curLang()}
         components={{
           Container: (props) => <Paper {...props} elevation={0} />,
           Body: (props) =>

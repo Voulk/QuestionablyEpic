@@ -1,5 +1,5 @@
-import React, { forwardRef } from "react";
-import MaterialTable, { MTableToolbar, MTableActions } from "material-table";
+import React, { forwardRef, useState } from "react";
+import MaterialTable, { MTableToolbar } from "material-table";
 import AddBox from "@material-ui/icons/AddBox";
 import ArrowDownward from "@material-ui/icons/ArrowDownward";
 import Check from "@material-ui/icons/Check";
@@ -15,7 +15,7 @@ import Remove from "@material-ui/icons/Remove";
 import SaveAlt from "@material-ui/icons/SaveAlt";
 import Search from "@material-ui/icons/Search";
 import ViewColumn from "@material-ui/icons/ViewColumn";
-import { Select, Typography } from "@material-ui/core";
+import { Select } from "@material-ui/core";
 import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import InputLabel from "@material-ui/core/InputLabel";
@@ -134,8 +134,8 @@ const tableIcons = {
 
 export default function HealTeam(props) {
   const classes = useStyles();
-  const { t } = useTranslation();
-  const { useState } = React;
+  const { t, i18n } = useTranslation();
+  const currentLanguage = i18n.language;
 
   let columns = [
     {
@@ -229,14 +229,14 @@ export default function HealTeam(props) {
     ls.set("healerInfo", props);
   };
 
-  let curLang = (lang) => {
-    if (lang === "en") {
+  let curLang = () => {
+    if (currentLanguage === "en") {
       return localizationEN;
-    } else if (lang === "ru") {
+    } else if (currentLanguage === "ru") {
       return localizationRU;
-    } else if (lang === "ch") {
+    } else if (currentLanguage === "ch") {
       return localizationCH;
-    } else if (lang === "fr") {
+    } else if (currentLanguage === "fr") {
       return localizationFR;
     }
   };
@@ -295,7 +295,7 @@ export default function HealTeam(props) {
             </div>
           ),
         }}
-        localization={curLang(props.curLang)}
+        localization={curLang()}
         // components={{
         //   Toolbar: (props) => (
         //     <div style={{ display: "inline-flex", width: "100%", justifyContent: "flex-end" }}>

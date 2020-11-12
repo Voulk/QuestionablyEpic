@@ -42,20 +42,22 @@ const tableIcons = {
   )),
 };
 
-let curLang = (lang) => {
-  if (lang === "en") {
-    return localizationEN;
-  } else if (lang === "ru") {
-    return localizationRU;
-  } else if (lang === "ch") {
-    return localizationCH;
-  } else if (lang === "fr") {
-    return localizationFR;
-  }
-};
-
 export default function CooldownTimeline(props) {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const currentLanguage = i18n.language;
+
+  let curLang = () => {
+    if (currentLanguage === "en") {
+      return localizationEN;
+    } else if (currentLanguage === "ru") {
+      return localizationRU;
+    } else if (currentLanguage === "ch") {
+      return localizationCH;
+    } else if (currentLanguage === "fr") {
+      return localizationFR;
+    }
+  };
+
   return (
     <ThemeProvider theme={theme}>
       <MaterialTable
@@ -155,7 +157,7 @@ export default function CooldownTimeline(props) {
           whiteSpace: "nowrap",
           padding: 8,
         }}
-        localization={curLang(props.curLang)}
+        localization={curLang()}
         components={{
           Container: (props) => <Paper {...props} elevation={0} />,
           Toolbar: (props) => (

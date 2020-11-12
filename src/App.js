@@ -182,7 +182,7 @@ class App extends Component {
       contentType: ls.get("contentType") || "Raid",
     });
 
-    i18n.changeLanguage(this.state.lang);
+    i18n.changeLanguage(ls.get("lang") || "en");
   }
 
   render() {
@@ -200,8 +200,6 @@ class App extends Component {
           <div className="App">
             <QEHeader
               logFunc={this.userLogout}
-              langSet={this.langSet}
-              curLang={this.state.lang}
               playerTag={this.state.playerBattleTag}
               setRegion={this.setRegion}
               toggleContentType={this.toggleContentType}
@@ -252,35 +250,20 @@ class App extends Component {
                     allChars={allChars}
                     charUpdate={this.updatePlayerChars}
                     pl={this.state.player}
-                    langSet={this.langSet}
-                    curLang={this.state.lang}
                     charAddedSnack={this.handleCharSnackOpen}
                   />
                 )}
               />
-              <Route
-                path="/holydiver"
-                render={() => (
-                  <HolyDiver langSet={this.langSet} curLang={this.state.lang} />
-                )}
-              />
+              <Route path="/holydiver" render={() => <HolyDiver />} />
               <Route
                 path="/trinkets"
-                render={() => (
-                  <TrinketCompare
-                    pl={this.state.player}
-                    langSet={this.langSet}
-                    curLang={this.state.lang}
-                  />
-                )}
+                render={() => <TrinketCompare pl={this.state.player} />}
               />
               <Route
                 path="/quickcompare"
                 render={() => (
                   <QuickCompare
                     pl={activePlayer}
-                    langSet={this.langSet}
-                    curLang={this.state.lang}
                     contentType={this.state.contentType}
                   />
                 )}
