@@ -11,6 +11,8 @@ import SoulbindNode from "./SoulbindNode";
 import ConduitObject from "./ConduitObject";
 import Grid from "@material-ui/core/Grid";
 import { getSoulbindFormula } from "../Engine/EffectFormulas/Generic/GenericSoulbindFormulas";
+import SoulbindStatPanel from "./SoulbindStatPanel";
+import {sumSelectedStats, getEstimatedHPS} from "./CovenantUtilities";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -403,18 +405,24 @@ export default function SimpleTabs(props) {
 }
 
 
+/* 
 
+
+*/
 function buildSoulbind(soulbindName, player, contentType, soulbindState, activateSoulbind) {
   //console.log(JSON.stringify(soulbindState));
-  console.log("Post: " + JSON.stringify(soulbindState))
-  //let activeSoulbind = soulbindState[soulbindName];
+  //console.log("Post: " + JSON.stringify(soulbindState))
+  //let activeSoulbind = soulbindState[soulbindName]; 
   let activeSoulbind = soulbindState.filter(trait => trait.soulbind === soulbindName);
   let potencyConduits = player.getActiveConduits("Potency");
   let enduranceConduits = player.getActiveConduits("Endurance");
+
+  let statSums = sumSelectedStats(soulbindName, soulbindState)
+  let estimatedHPS = getEstimatedHPS(statSums);
   //let conduitList = ["Conduit 1", "Conduit 2", "Conduit 3", "Conduit 4", "Conduit 5"] // Pure, raw placeholder.
   
-  console.log("Y" + soulbindName);
-  console.log(activeSoulbind);
+  //console.log("Y" + soulbindName);
+  //console.log(activeSoulbind);
 
   return (
     <Grid
@@ -504,6 +512,8 @@ function buildSoulbind(soulbindName, player, contentType, soulbindState, activat
                 ))}
               </Grid>
             </Grid>
+
+            <SoulbindStatPanel hps={estimatedHPS} stats={statSums} />
           </Grid>
         </div>
       </Grid>

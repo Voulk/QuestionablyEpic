@@ -32,5 +32,29 @@ export function getAvailableClassConduits(spec) {
 
     return conduits;
 
-    
 }
+
+// Returns a bonus_stats dictionary that sums all active soulbind traits for your selected soulbind.
+export function sumSelectedStats(soulbindName, soulbindDict) {
+    
+    let bonus_stats = {};
+
+    let filteredDict = soulbindDict.filter(trait => trait.soulbind === soulbindName && trait.active === true);
+    console.log("Summing Stats" + soulbindName + ". " + filteredDict);
+
+    for (let i = 0; i < filteredDict.length; i++) {
+        console.log(JSON.stringify(filteredDict));
+        bonus_stats = bonus_stats
+    }
+
+
+    return bonus_stats;
+
+}
+
+// Converts a bonus_stats dictionary to a singular estimated HPS number. 
+export function getEstimatedHPS(bonus_stats) {
+
+    return 0;
+}
+

@@ -69,3 +69,19 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+.statPanel {
+  border-style: solid;
+  border-width: 2px;
+  border-color: Goldenrod;
+  width: 90%;
+  height: 80px;
+  margin-left: 5px;
+  font-size: 11px;
+  text-align: center;
+}
+
+.statPanel p {
+  color: goldenrod;
+  margin-left: 5px;
+}
