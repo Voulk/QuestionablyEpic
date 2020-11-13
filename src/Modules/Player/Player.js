@@ -56,7 +56,7 @@ class Player {
         haste: 400,
         crit: 350,
         mastery: 0,
-        vers: 200,
+        versatility: 200,
         hps: 6000,
     }
    
@@ -70,7 +70,7 @@ class Player {
             haste: 0.5,
             crit: 0.6,
             mastery: 0.5,
-            vers: 0.45,
+            versatility: 0.45,
             leech: 0.7,
         },
         "Dungeon": {
@@ -78,7 +78,7 @@ class Player {
             haste: 0.8,
             crit: 0.5,
             mastery: 0.4,
-            vers: 0.45,
+            versatility: 0.45,
             leech: 0.7,
         },
         "DefaultWeights": true
@@ -86,6 +86,8 @@ class Player {
     }
 
     getStatWeight = (contentType, stat) => {
+        stat = stat.toLowerCase();
+        
         if (stat in this.statWeights[contentType]) {
             return this.statWeights[contentType][stat]
         }

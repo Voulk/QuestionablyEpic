@@ -17,6 +17,7 @@ export const soulbindDB = [
     stat_bonus: {},
   },
   {
+    id: 983921,
     names: {
       en: "Finesse Conduit",
       cn: "",
@@ -27,8 +28,10 @@ export const soulbindDB = [
     renown: 0,
     active: false,
     stat_bonus: {},
+    type: 'Finesse Conduit',
   },
   {
+    id: 903132,
     names: {
       en: "Endurance Conduit",
       cn: "",
@@ -39,6 +42,7 @@ export const soulbindDB = [
     renown: 0,
     active: false,
     stat_bonus: {},
+    type: 'Endurance Conduit',
   },
   {
     names: {
@@ -51,6 +55,7 @@ export const soulbindDB = [
     renown: 0,
     active: false,
     stat_bonus: {},
+    type: 'Potency Conduit',
   },
   {
     id: 328261,

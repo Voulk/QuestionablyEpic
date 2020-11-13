@@ -275,6 +275,7 @@ class App extends Component {
               <Route path="/soulbinds" render={() => 
                 <SimpleTabs 
                   pl={activePlayer}
+                  contentType={this.state.contentType}
                 />} />
               <Route
                 path="/login"

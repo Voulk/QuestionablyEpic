@@ -503,7 +503,7 @@ function buildSoulbind(
   let enduranceConduits = player.getActiveConduits("Endurance");
 
   let statSums = sumSelectedStats(soulbindName, soulbindState);
-  let estimatedHPS = getEstimatedHPS(statSums);
+  let estimatedHPS = getEstimatedHPS(statSums, player, contentType);
   //let conduitList = ["Conduit 1", "Conduit 2", "Conduit 3", "Conduit 4", "Conduit 5"] // Pure, raw placeholder.
 
   //console.log("Y" + soulbindName);
