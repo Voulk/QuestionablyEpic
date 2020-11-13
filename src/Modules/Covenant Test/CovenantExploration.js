@@ -557,55 +557,61 @@ function buildSoulbind(
 
           <Grid
             container
-            id="conduitChoices"
-            spacing={1}
-            style={{
-              position: "absolute",
-              top: 0,
-              margin: 1,
-            }}
+            direction="column"
+            justify="space-between"
+            alignItems="center"
+            style={{ height: "100%" }}
           >
-            <Grid item>
-              <img
-                src={
-                  process.env.PUBLIC_URL +
-                  "/Images/Interface/PotencyConduitTag.png"
-                }
-                style={{
-                  objectFit: "cover",
-                  width: "214px",
-                  paddingLeft: "8px",
-                }}
-              />
-
-              <Grid container spacing={1} style={{ maxWidth: 245 }}>
-                {potencyConduits.map((conduit, index) => (
-                  <ConduitObject conduit={conduit} />
-                ))}
+            <Grid
+              container
+              id="conduitChoices"
+              spacing={1}
+              style={{
+                margin: 1,
+              }}
+            >
+              <Grid item xs={12}>
+                <img
+                  src={
+                    process.env.PUBLIC_URL +
+                    "/Images/Interface/PotencyConduitTag.png"
+                  }
+                  style={{
+                    objectFit: "cover",
+                    width: "214px",
+                    paddingLeft: "8px",
+                  }}
+                />
+                <Grid container spacing={1} style={{ maxWidth: 245 }} xs={12}>
+                  {potencyConduits.map((conduit, index) => (
+                    <ConduitObject conduit={conduit} />
+                  ))}
+                </Grid>
+              </Grid>
+              <Grid item xs={12}>
+                <img
+                  src={
+                    process.env.PUBLIC_URL +
+                    "/Images/Interface/EnduranceConduitTag.png"
+                  }
+                  style={{
+                    objectFit: "cover",
+                    width: "214px",
+                    paddingLeft: "8px",
+                  }}
+                />
+                <Grid container spacing={1} style={{ maxWidth: 245 }} xs={12}>
+                  {enduranceConduits.map((conduit, index) => (
+                    <ConduitObject conduit={conduit} />
+                  ))}
+                </Grid>
               </Grid>
             </Grid>
-
-            <Grid item>
-              <img
-                src={
-                  process.env.PUBLIC_URL +
-                  "/Images/Interface/EnduranceConduitTag.png"
-                }
-                style={{
-                  objectFit: "cover",
-                  width: "214px",
-                  paddingLeft: "8px",
-                }}
-              />
-
-              <Grid container spacing={1} style={{ maxWidth: 245 }}>
-                {enduranceConduits.map((conduit, index) => (
-                  <ConduitObject conduit={conduit} />
-                ))}
+            <Grid container>
+              <Grid item xs={12} style={{ paddingBottom: 4 }}>
+                <SoulbindStatPanel hps={estimatedHPS} stats={statSums} />
               </Grid>
             </Grid>
-
-            <SoulbindStatPanel hps={estimatedHPS} stats={statSums} />
           </Grid>
         </div>
       </Grid>
