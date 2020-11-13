@@ -1,6 +1,7 @@
 
 import SPECS from '../Engine/SPECS'
 import ActiveConduit from './ActiveConduit'
+import {conduits} from '../CooldownPlanner/Data/Data'
 
 // Returns a full list of all class conduits in the form of an ActiveSoulbind array.
 // Sets the item levels to the default. This is pulled on character creation so any SimC import can correct the item levels where necessary.
@@ -47,10 +48,8 @@ export function sumSelectedStats(soulbindName, soulbindDict) {
 
     let filteredDict = soulbindDict.filter(trait => trait.soulbind === soulbindName && trait.active === true);
  
-
     for (let i = 0; i < filteredDict.length; i++) {
 
-        
         for (const [key, value] of Object.entries(bonus_stats)) {
             if (key in filteredDict[i].bonus_stats) bonus_stats[key] += filteredDict[i].bonus_stats[key];
         }
@@ -71,5 +70,19 @@ export function getEstimatedHPS(bonus_stats, player, contentType) {
     }
  
     return Math.round(estHPS);
+}
+
+export function getConduitName(id, language = "en") {
+    console.log("Console here: " + id)
+    let filteredDict = conduits.filter(trait => trait.guid === id);
+    if (filteredDict.length > 0) return filteredDict[0].name;
+    else return 'Invalid Name';
+
+}
+
+export function getConduitIcon(id) {
+    let filteredDict = conduits.filter(trait => trait.guid === id);
+    if (filteredDict.length > 0) return filteredDict[0].abilityIcon;
+    else return "missing.jpg"
 }
 

@@ -28,7 +28,6 @@ export const soulbindDB = [
     renown: 0,
     active: false,
     stat_bonus: {},
-    type: 'Finesse Conduit',
   },
   {
     id: 903132,
@@ -43,6 +42,7 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
     type: 'Endurance Conduit',
+    slotted_id: -1,
   },
   {
     names: {
@@ -56,6 +56,7 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
     type: 'Potency Conduit',
+    slotted_id: -1,
   },
   {
     id: 328261,
