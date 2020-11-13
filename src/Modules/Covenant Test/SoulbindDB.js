@@ -6,6 +6,8 @@ export const soulbindDB = [
     names: {
       en: "Combat Meditation",
       cn: "放下过去",
+      fr: "Méditation de combat",
+      ru: "Боевая медитация",
     },
     icon: "spell_animabastion_buff.jpg",
     soulbind: "Pelagos",
@@ -55,6 +57,8 @@ export const soulbindDB = [
     names: {
       en: "Focusing Mantra",
       cn: "耐心之瓶",
+      fr: "Mantra de concentration",
+      ru: "Мантра сосредоточения",
     },
     icon: "spell_arcane_focusedpower.jpg",
     soulbind: "Pelagos",
@@ -68,6 +72,8 @@ export const soulbindDB = [
     names: {
       en: "Road of Trials",
       cn: "耐心之瓶",
+      fr: "Calvaire",
+      ru: "Дорога испытаний",
     },
     icon: "achievement_guildperk_havegroup-willtravel.jpg",
     soulbind: "Pelagos",
@@ -81,6 +87,8 @@ export const soulbindDB = [
     names: {
       en: "Phial of Patience",
       cn: "耐心之瓶",
+      fr: "Flasque de patience",
+      ru: "Флакон терпения",
     },
     icon: "inv_gizmo_khoriumpowercore.jpg",
     soulbind: "Pelagos",
@@ -107,6 +115,8 @@ export const soulbindDB = [
     names: {
       en: "Bond of Friendship",
       cn: "耐心之瓶",
+      fr: "Lien d’amitié",
+      ru: "Узы дружбы",
     },
     icon: "ability_hunter_displacement.jpg",
     soulbind: "Pelagos",
@@ -120,6 +130,8 @@ export const soulbindDB = [
     names: {
       en: "Cleansed Vestments",
       cn: "耐心之瓶",
+      fr: "Habits purifiés",
+      ru: "Очищенные одеяния",
     },
     icon: "inv_misc_bag_14.jpg",
     soulbind: "Pelagos",
@@ -172,6 +184,8 @@ export const soulbindDB = [
     names: {
       en: "Let Go of the Past",
       cn: "耐心之瓶",
+      fr: "Renoncement au passé",
+      ru: "Забудь прошлое",
     },
     icon: "ability_hunter_readiness.jpg",
     soulbind: "Pelagos",
