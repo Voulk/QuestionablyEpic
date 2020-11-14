@@ -69,7 +69,7 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     backgroundColor: theme.palette.background.paper,
     display: "flex",
-    height: 609,
+    height: 700, // 609
     backgroundColor: "#191c23",
   },
   tabs: {
@@ -556,7 +556,7 @@ function buildSoulbind(
           <img
             src={
               process.env.PUBLIC_URL +
-              "/Images/Interface/SoulbindBackgroundSlim.jpg"
+              "/Images/Interface/SoulbindBackgroundFat.jpg"
             }
           />
           <div id="nodes" style={{}}>
@@ -584,7 +584,7 @@ function buildSoulbind(
             width: 245,
             backgroundColor: "#191c23",
             borderLeft: "1px solid rgba(255, 255, 255, 0.12)",
-            maxHeight: 609,
+            maxHeight: 700, // 609 Slim
           }}
         >
           {/* <img

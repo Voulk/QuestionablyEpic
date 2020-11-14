@@ -9,7 +9,7 @@ import { getConduitName } from "./CovenantUtilities";
 import Paper from "@material-ui/core/Paper";
 
 const columnPos = [195, 290, 385];
-const rowPos = [10, 85, 160, 235, 310, 385, 460, 535, 610];
+const rowPos = [5, 85, 165, 245, 325, 405, 485, 565, 645]
 
 const menuStyle = {
   style: { marginTop: 5 },
