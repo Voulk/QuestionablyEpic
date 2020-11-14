@@ -44,15 +44,186 @@ export function getSoulbindFormula(effectID, player, contentType) {
     }
 
     // -- Kleia --
+    // Valiant Strikes
+    else if (effectID === 329791) {
 
-    else if (effectID === -1) {
+    }
+    // Cleansing Rites
+    else if (effectID === 329784) {
+
+    }
+    // Pointed Courage
+    else if (effectID === 329778) {
+
+    }
+    // Resonant Accolades
+    else if (effectID === 329781) {
 
     }
 
     // -- Mikanikos --
+    // Why does Mikanikos have so few throughput traits =( Poor Mikanikos.
+    // Bron's Call to Action
+    else if (effectID === 333950) {
+
+    }
+    // Hammer of Genesis
+    else if (effectID === 333935) {
+
+    }
 
 
     // === Night Fae ===
+    // -- Niya --
+    // Grove Invigoration
+    else if (effectID === 333950) {
+
+    }
+    // Run without Tiring
+    else if (effectID === 342270) {
+
+    }
+    // Niya's Tools: Burrs
+    else if (effectID === 320659) {
+
+    }
+    // Niya's Tools: Herbs
+    else if (effectID === 320662) {
+
+    }
+
+    // -- Dreamwalker --
+    // Podtender
+    else if (effectID === 333950) {
+
+    }
+    // Social Butterfly
+    else if (effectID === 319210) {
+
+    }
+    // Empowered Chrysalis
+    else if (effectID === 319213) {
+
+    }
+
+    // Field of Blossoms
+    else if (effectID === 319191) {
+
+    }
+
+    // -- Korayn --
+    // (Mikanikos V2)
+    // Wild Hunt Tactics
+    else if (effectID === 325066) {
+
+    }
+    // First Strike
+    else if (effectID === 325069) {
+
+    }
+
+    // === Venthyr ===
+    // -- Nadjia --
+    // Thrill Seeker
+    else if (effectID === 331586) {
+
+    }
+
+    // Exacting Preparation
+    else if (effectID === 331580) {
+
+    }
+    // Dauntless Duelist
+    else if (effectID === 331584) {
+
+    }
+
+    // -- Theotar the Mad Duke
+    // Soothing Shade
+    else if (effectID === 336239) {
+
+    }
+    // Token of Appreciation
+    else if (effectID === 336245) {
+
+    }
+    // Refined Palate
+    else if (effectID === 336243) {
+
+    }
+    // Wasteland Propriety
+    else if (effectID === 319983) {
+
+    }
+
+    // -- General Draven --
+    // Service in Stone
+    else if (effectID === 340159) {
+
+    }
+    // Enduring Gloom
+    else if (effectID === 319978) {
+
+    }
+    // Hold Your Ground
+    else if (effectID === 332754) {
+
+    }
+    // Superior Tactics
+    else if (effectID === 332753) {
+
+    }
+    // Built for War
+    else if (effectID === 319973) {
+
+    }
+
+    // === Necrolord ===
+    // -- Marileth --
+    // Volatile Solvent
+    else if (effectID === 323074) {
+
+    }
+    // Ooz's Frictionless Coating
+    else if (effectID === 323091) {
+
+    }
+    // Plague'ys Preemptive Strike
+    else if (effectID === 323090) {
+
+    }
+
+    // Ultimate Form
+    else if (effectID === 323095) {
+
+    }
+
+
+    // -- Emeni --
+    // Lead by Example
+    else if (effectID === 342156) {
+
+    }
+
+    // Gnashing Chompers
+    else if (effectID === 323919) {
+
+    }
+
+    // -- Bonesmith Heirmir --
+    // Forgeborne Reveries
+    else if (effectID === 326514) {
+
+    }
+    // Heirmir's Arsenal: Marrowed Gemstone
+    else if (effectID === 326572) {
+
+    }
+
+    
+
+    
+    
 
     return bonus_stats;
 }
