@@ -9,7 +9,9 @@ import { getConduitName } from "./CovenantUtilities";
 import Paper from "@material-ui/core/Paper";
 
 const columnPos = [195, 290, 385];
-const rowPos = [5, 85, 165, 245, 325, 405, 485, 565, 645]
+const rowPos = [[20, 100, 180, 260, 310, 390, 470, 550, 630],
+                [5,   85, 165, 245, 325, 405, 485, 565, 645],
+                [20, 100, 180, 260, 310, 390, 470, 550, 630]]
 
 const menuStyle = {
   style: { marginTop: 5 },
@@ -67,6 +69,10 @@ function getLocalizedName(trait, type, lang = "en") {
   } else {
     return trait.names[lang]; // Replace with a database lookup based on language.
   }
+}
+
+function getRowPos(column, row) {
+  return rowPos[column][row]
 }
 
 export default function SoulbindNode(props) {
@@ -133,7 +139,7 @@ export default function SoulbindNode(props) {
           position: "absolute",
           zIndex: 2,
           left: columnPos[position.column],
-          top: rowPos[position.row],
+          top: getRowPos(position.column, position.row),
         }}
       />
       <img
@@ -146,7 +152,7 @@ export default function SoulbindNode(props) {
           borderRadius: "100%",
           zIndex: 1,
           left: columnPos[position.column] + 5,
-          top: rowPos[position.row] + 5,
+          top: getRowPos(position.column, position.row) + 5,
         }}
       />
       <Paper
@@ -159,7 +165,7 @@ export default function SoulbindNode(props) {
           textAlign: "center",
           position: "absolute",
           left: columnPos[position.column] - 28,
-          top: rowPos[position.row] + 38,
+          top: getRowPos(position.column, position.row) + 38,
           padding: "2px 2px",
         }}
       >
