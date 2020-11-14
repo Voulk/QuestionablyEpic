@@ -40,7 +40,11 @@ export default function SoulbindNode(props) {
         setAnchorEl(event.currentTarget);
         console.log("Event: " + event.currentTarget)
         
-        //props.activateSoulbind(trait.id)
+        if (type === "Soulbind" || 
+            trait.slotted_id > 0) { 
+                props.activateSoulbind(trait.id)
+            }
+
     };
   
     const handleClose = () => {
@@ -50,8 +54,8 @@ export default function SoulbindNode(props) {
 
     const setConduit = (slottedID) => {
         setAnchorEl(null);
-        console.log("Slotting ID: " + slottedID);
         props.setConduitInSlot(trait.id, slottedID);
+
     }
 
 

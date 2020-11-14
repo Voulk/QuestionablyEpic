@@ -124,7 +124,7 @@ export default function SimpleTabs(props) {
   function setConduitInSlot(slotID, conduitID) {
     let updatedArray = soulbindState.map((trait) => {
       if (trait.id === slotID) {
-        return { ...trait, slotted_id: conduitID, icon: getConduitIcon(conduitID)};
+        return { ...trait, slotted_id: conduitID, icon: getConduitIcon(conduitID), active: true};
       }
       return trait;
     });
