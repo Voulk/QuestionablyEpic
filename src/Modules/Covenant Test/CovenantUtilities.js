@@ -2,6 +2,7 @@
 import SPECS from '../Engine/SPECS'
 import ActiveConduit from './ActiveConduit'
 import {conduits} from '../CooldownPlanner/Data/Data'
+import {getConduitFormula} from '../Engine/EffectFormulas/EffectEngine'
 
 // Returns a full list of all class conduits in the form of an ActiveSoulbind array.
 // Sets the item levels to the default. This is pulled on character creation so any SimC import can correct the item levels where necessary.
@@ -35,6 +36,26 @@ export function getAvailableClassConduits(spec) {
 
 }
 
+// Build Conduit Stats
+export function buildConduitStats(soulbindDict, player, contentType) {
+
+    let tempDict = soulbindDict;
+
+    for (let i = 0; i < tempDict.length; i++) {
+        let trait = tempDict[i];
+        
+        if ('type' in trait && 'slotted_id' in trait && trait.type.includes('Conduit')) {
+            trait.bonus_stats = getConduitFormula(trait.slotted_id, player, contentType); // TODO: Pass item level.
+
+        }
+
+    }
+
+    return tempDict;
+    
+
+}
+
 // Returns a bonus_stats dictionary that sums all active soulbind traits for your selected soulbind.
 export function sumSelectedStats(soulbindName, soulbindDict) {
     
@@ -60,6 +81,7 @@ export function sumSelectedStats(soulbindName, soulbindDict) {
 
 }
 
+
 // Converts a bonus_stats dictionary to a singular estimated HPS number. 
 export function getEstimatedHPS(bonus_stats, player, contentType) {
     let estHPS = 0;
@@ -67,13 +89,16 @@ export function getEstimatedHPS(bonus_stats, player, contentType) {
         if (['Haste', 'Mastery', 'Crit', 'Versatility'].includes(key)) {
             estHPS += value * player.getStatWeight(contentType, key);
         }
+        else if (key === 'HPS') {
+            estHPS += value;
+        }
     }
  
     return Math.round(estHPS);
 }
 
 export function getConduitName(id, language = "en") {
-    console.log("Console here: " + id)
+    //console.log("Console here: " + id)
     let filteredDict = conduits.filter(trait => trait.guid === id);
     if (filteredDict.length > 0) return filteredDict[0].name;
     else return 'Invalid Name';

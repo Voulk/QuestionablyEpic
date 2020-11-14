@@ -154,12 +154,13 @@ export default function SoulbindNode(props) {
         style={{
           fontSize: 10,
           zIndex: 40,
+          width: 96,
           color: "Goldenrod",
           textAlign: "center",
           position: "absolute",
-          left: columnPos[position.column] - 18,
-          top: rowPos[position.row] + 34,
-          padding: "2px 5px",
+          left: columnPos[position.column] - 28,
+          top: rowPos[position.row] + 38,
+          padding: "2px 2px",
         }}
       >
         <div>{name}</div>

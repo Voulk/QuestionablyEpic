@@ -97,6 +97,15 @@ class Player {
             
     }
 
+    calculateConduits = (contentType) => {
+        //console.log("Calculating Conduits")
+        this.activeConduits.forEach(conduit => {
+            conduit.setHPS(this, contentType)
+            console.log("HPS: " + conduit.HPS);
+            //return conduit;
+        })
+    }
+
     getActiveConduits = (type) => {
         return this.activeConduits.filter(function(conduits) {
             return conduits.type == type;

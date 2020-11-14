@@ -12,7 +12,7 @@ import ConduitObject from "./ConduitObject";
 import Grid from "@material-ui/core/Grid";
 import { getSoulbindFormula } from "../Engine/EffectFormulas/Generic/GenericSoulbindFormulas";
 import SoulbindStatPanel from "./SoulbindStatPanel";
-import { sumSelectedStats, getEstimatedHPS, getConduitIcon } from "./CovenantUtilities";
+import { sumSelectedStats, getEstimatedHPS, getConduitIcon, buildConduitStats } from "./CovenantUtilities";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -526,8 +526,16 @@ function buildSoulbind(
   let activeSoulbind = soulbindState.filter(
     (trait) => trait.soulbind === soulbindName
   );
+  console.log("Potency: " + JSON.stringify(potencyConduits));
+  player.calculateConduits(contentType);
+  
+
   let potencyConduits = player.getActiveConduits("Potency");
   let enduranceConduits = player.getActiveConduits("Endurance");
+    console.log("Potency: " + JSON.stringify(potencyConduits));
+    console.log("Endurance: " + enduranceConduits);
+
+  soulbindState = buildConduitStats(soulbindState, player, contentType);
 
   let statSums = sumSelectedStats(soulbindName, soulbindState);
   let estimatedHPS = getEstimatedHPS(statSums, player, contentType);

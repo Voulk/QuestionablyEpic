@@ -7,8 +7,8 @@ export default function SoulbindStatPanel(props) {
 
     return(
         <div className="statPanel">
-            <p>Selected Stat Gain Breakdown</p>
-            <p>Sum Estimated HPS: {props.hps}</p>
+            <p>Selected Stat Gain Breakdown
+            Estimated HPS: {props.hps}</p>
 
         </div>
     )
