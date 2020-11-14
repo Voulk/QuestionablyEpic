@@ -174,7 +174,6 @@ export default function CooldownPlanner(props) {
   const handleChangePlan = (event) => {
     setPlan(event.target.value);
   };
-  let wowClass = 0;
   let columns = [
     {
       title: t("Name"),
