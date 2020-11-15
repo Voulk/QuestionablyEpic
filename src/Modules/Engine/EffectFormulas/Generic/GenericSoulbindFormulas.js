@@ -11,7 +11,7 @@ import {convertPPMToUptime} from '../EffectUtilities'
     soulbind is procced by using your Covenant ability.
 
 */
-export function getSoulbindFormula(effectID, player, contentType) {
+export function getSoulbindFormula(effectID, pl, contentType) {
     let bonus_stats = {}
 
 
@@ -99,10 +99,21 @@ export function getSoulbindFormula(effectID, player, contentType) {
     }
     // Social Butterfly
     else if (effectID === 319210) {
+        let expectedUptime = 1;
+        bonus_stats.Versatility = 1.5 * 40 * expectedUptime; // Placeholder.
 
     }
     // Empowered Chrysalis
+    // TODO: Expand to include overhealing on yourself. 
+    // Double check the shield_consumed is a fair approximation when the expansion goes live. 
     else if (effectID === 319213) {
+        console.log(JSON.stringify(pl));
+        let trait_bonus = 0.1
+        let shield_consumed = 0.95 // The percentage of our overhealing shield that gets consumed. Likely to be very high.
+        let overhealing = (pl.activeStats.rawhps - pl.activeStats.hps)
+
+        
+        bonus_stats.HPS = trait_bonus * shield_consumed * overhealing;
 
     }
 

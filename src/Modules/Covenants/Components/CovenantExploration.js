@@ -83,17 +83,18 @@ export default function SimpleTabs(props) {
   const [tabvalue, setTabValue] = React.useState(0);
   const [soulbindValue, setSoulbindValue] = React.useState(0);
   const [soulbindState, setSoulbindState] = React.useState(
-    buildBonusStats(soulbindDB)
+    buildBonusStats(soulbindDB, props.pl, props.contentType)
   );
 
-  function buildBonusStats(soulbindTraits) {
+  function buildBonusStats(soulbindTraits, player, contentType) {
     let updatedArray = soulbindTraits.map((trait) => {
+      console.log("PL: " + player + ". CT: " + contentType);
       return {
         ...trait,
         bonus_stats: getSoulbindFormula(
           trait.id,
-          props.player,
-          props.contentType
+          player,
+          contentType
         ),
       };
     });

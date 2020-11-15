@@ -60,6 +60,7 @@ class Player {
         mastery: 0,
         versatility: 200,
         hps: 6000,
+        rawhps: 9420,
         
     }
    
