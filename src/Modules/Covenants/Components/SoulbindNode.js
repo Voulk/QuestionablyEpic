@@ -10,9 +10,9 @@ import Paper from "@material-ui/core/Paper";
 
 const columnPos = [195, 290, 385];
 const rowPos = [
-  [20, 100, 180, 260, 310, 390, 470, 550, 630],
+  [20, 100, 180, 260, 340, 390, 470, 550, 630],
   [5, 85, 165, 245, 325, 405, 485, 565, 645],
-  [20, 100, 180, 260, 310, 390, 470, 550, 630],
+  [20, 100, 180, 260, 340, 390, 470, 550, 630],
 ];
 
 const menuStyle = {
@@ -82,7 +82,6 @@ export default function SoulbindNode(props) {
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
-    console.log("Event: " + event.currentTarget);
 
     if (type === "Soulbind" || trait.slotted_id > 0) {
       props.activateSoulbind(trait.id);

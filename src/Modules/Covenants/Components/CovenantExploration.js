@@ -526,14 +526,13 @@ function buildSoulbind(
   let activeSoulbind = soulbindState.filter(
     (trait) => trait.soulbind === soulbindName
   );
-  console.log("Potency: " + JSON.stringify(potencyConduits));
+
   player.calculateConduits(contentType);
   
 
   let potencyConduits = player.getActiveConduits("Potency");
   let enduranceConduits = player.getActiveConduits("Endurance");
-    console.log("Potency: " + JSON.stringify(potencyConduits));
-    console.log("Endurance: " + enduranceConduits);
+
 
   soulbindState = buildConduitStats(soulbindState, player, contentType);
 

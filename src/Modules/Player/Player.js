@@ -1,9 +1,11 @@
 import { getAvailableClassConduits } from '../Covenants/CovenantUtilities';
+import SPEC from '../Engine/SPECS';
 import STAT from '../Engine/STAT'
 
 var SPELL_CASTS_LOC = 0;
 var SPELL_HEALING_LOC = 1;
 var SPELL_HEALING_PERC = 2;
+var SPELL_HPS = 3;
 var SPELL_OVERHEALING_LOC = 5;
 
 var averageHoTCount = 1.4; // TODO: Build this in correctly and pull it from logs where applicable.
@@ -33,11 +35,11 @@ class Player {
     
 
     // A players spell casting patterns. These are averaged from entered logs and a default is provided too. 
-    // 
+    // CASTS, HEALING, HEALINGPERC, HPS, 
     castPattern =
     {   "Raid": {
-            "Rejuvenation": [35, 40213, 0.22],
-            "Wild Growth": 40,
+            "Rejuvenation": [17, 181000, 0.2909, 1566],
+            "Wild Growth": [5, 154400, 0.2472, 1478],
             "Overall": [0, 90132, 1]
     },
         "Dungeon": {
@@ -58,6 +60,7 @@ class Player {
         mastery: 0,
         versatility: 200,
         hps: 6000,
+        
     }
    
     // Stat weights are normalized around intellect. 
@@ -101,7 +104,6 @@ class Player {
         //console.log("Calculating Conduits")
         this.activeConduits.forEach(conduit => {
             conduit.setHPS(this, contentType)
-            console.log("HPS: " + conduit.HPS);
             //return conduit;
         })
     }
@@ -155,35 +157,47 @@ class Player {
                 statPerc = 1.05 + this.activeStats.crit / 35 / 100;
                 break;
             case "Mastery":
+                statPerc = 1; // TODO
                 break;
             case "Vers":
-                statPerc = 1 + this.activeStats.vers / 40 / 100;
+                statPerc = 1 + this.activeStats.versatility / 40 / 100;
                 break;
             default:
                 break;
         }
    
         // Round to four decimal places. I'd heavily caution against ever rounding more heavily than this. 
+        //console.log("Stat: " + stat + ". Perc: " + statPerc);
         return Math.round(statPerc*10000) / 10000;
 
     }
 
-    // This multiplies three-four secondary stats together to improve code efficiency. 
-    // includeMastery: Boolean: Indicates whether Mastery should be included. 
-    // TODO: Add Mastery
-    getSecondaryMultiplier = (includeMastery) => {
-        let mult = this.getStatPerc("Haste") * this.getStatPerc("Crit") * this.getStatPerc("Vers");
-        if (includeMastery) { 
-            switch(this.getSpec()) {
-                case "Restoration Druid":
-                    break;
-                default:
-                    break;
-            }
+    // Returns a stat multiplier. 
+    getStatMultiplier = (flag, statList = []) => {
+        let mult = 1;
+        if (flag === "ALL") {
+            // Returns a multiplier that includes raw intellect. 
+            mult = this.getStatPerc("Haste") * this.getStatPerc("Crit") * this.getStatPerc("Vers") * this.getStatPerc("Mastery") * this.activeStats.intellect;
         }
-
+        else if (flag === "ALLSEC") {
+            // Returns a multiplier that includes all secondaries but NOT intellect.
+            mult = this.getStatPerc("Haste") * this.getStatPerc("Crit") * this.getStatPerc("Vers") * this.getStatPerc("Mastery");
+        }
+        else if (flag === "NOMAST") {
+            // Returns a multiplier of Haste / Vers / Crit.
+            mult = this.getStatPerc("Haste") * this.getStatPerc("Crit") * this.getStatPerc("Vers") 
+        }
+        else {
+            // Our multiplier consists of whatever is in the stat list array.
+            statList.forEach(stat => {
+                mult *= this.getStatPerc(stat);
+            })
+        }
+ 
         return mult;
+
     }
+
 
     getSpec = () => {
         return this.spec;
@@ -205,6 +219,11 @@ class Player {
     getSpellHealingPerc = (spellName, contentType) => {
         
         return this.castPattern[contentType][spellName][SPELL_HEALING_PERC]
+    }
+
+    getSpellHPS = (spellName, contentType) => {
+        
+        return this.castPattern[contentType][spellName][SPELL_HPS]
     }
 
     // Consider replacing this with an external table for cleanliness and ease of editing. 

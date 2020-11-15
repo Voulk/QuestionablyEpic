@@ -69,7 +69,6 @@ export function getEffectValue(effect, player, contentType, itemLevel = 0) {
 
 export function getConduitFormula(effectID, player, contentType, itemLevel = 156) {
     let bonus_stats = {};
-    console.log("Getting Conduits");
 
     switch(player.spec) {
         case(SPEC.DISCPRIEST):
