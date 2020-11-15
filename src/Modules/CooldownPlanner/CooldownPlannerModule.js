@@ -68,6 +68,7 @@ class HolyDiver extends Component {
       damageTableShow: false,
       logDetailsShow: false,
       healTableShow: false,
+      switchPanelShow: false,
       ertList: [],
       currentFighttime: null,
       killWipe: null,
@@ -95,6 +96,7 @@ class HolyDiver extends Component {
       nextpage: info[0],
       boss: info[2],
       logDetailsShow: true,
+      switchPanelShow: true,
       damageTableShow: true,
       healTableShow: true,
       currentFighttime: info[3],
@@ -192,14 +194,14 @@ class HolyDiver extends Component {
                 xl={6}
                 justify="flex-end"
                 style={{
-                  display: this.state.damageTableShow ? "flex" : "none",
+                  display: this.state.switchPanelShow ? "flex" : "none",
                 }}
               >
-                <Collapse in={this.state.damageTableShow}>
+                <Collapse in={this.state.switchPanelShow}>
                   <Grow
-                    in={this.state.damageTableShow}
+                    in={this.state.switchPanelShow}
                     style={{ transformOrigin: "0 0 0" }}
-                    {...(this.state.damageTableShow ? { timeout: 1000 } : {})}
+                    {...(this.state.switchPanelShow ? { timeout: 1000 } : {})}
                   >
                     <Paper
                       style={{
