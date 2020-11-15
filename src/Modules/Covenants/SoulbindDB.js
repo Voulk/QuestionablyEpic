@@ -74,7 +74,7 @@ export const soulbindDB = [
     stat_bonus: {},
   },
   {
-    id: 0,
+    id: 329786,
     names: {
       en: "Road of Trials",
       cn: "耐心之瓶",
@@ -117,7 +117,7 @@ export const soulbindDB = [
     stat_bonus: {},
   },
   {
-    id: 0,
+    id: 328265,
     names: {
       en: "Bond of Friendship",
       cn: "耐心之瓶",
@@ -132,7 +132,7 @@ export const soulbindDB = [
     stat_bonus: {},
   },
   {
-    id: 0,
+    id: 328263,
     names: {
       en: "Cleansed Vestments",
       cn: "耐心之瓶",

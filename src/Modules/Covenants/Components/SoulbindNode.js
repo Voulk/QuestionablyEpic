@@ -9,9 +9,11 @@ import { getConduitName } from "../CovenantUtilities";
 import Paper from "@material-ui/core/Paper";
 
 const columnPos = [195, 290, 385];
-const rowPos = [[20, 100, 180, 260, 310, 390, 470, 550, 630],
-                [5,   85, 165, 245, 325, 405, 485, 565, 645],
-                [20, 100, 180, 260, 310, 390, 470, 550, 630]]
+const rowPos = [
+  [20, 100, 180, 260, 310, 390, 470, 550, 630],
+  [5, 85, 165, 245, 325, 405, 485, 565, 645],
+  [20, 100, 180, 260, 310, 390, 470, 550, 630],
+];
 
 const menuStyle = {
   style: { marginTop: 5 },
@@ -72,7 +74,7 @@ function getLocalizedName(trait, type, lang = "en") {
 }
 
 function getRowPos(column, row) {
-  return rowPos[column][row]
+  return rowPos[column][row];
 }
 
 export default function SoulbindNode(props) {
@@ -130,33 +132,36 @@ export default function SoulbindNode(props) {
         borderRadius: "50%",
       }}
     >
-      <img
-        onClick={handleClick}
-        width={48}
-        height={48}
-        src={process.env.PUBLIC_URL + containerIcon}
-        style={{
-          position: "absolute",
-          zIndex: 2,
-          left: columnPos[position.column],
-          top: getRowPos(position.column, position.row),
-        }}
-      />
-      <img
-        width={38}
-        height={38}
-        src={icon}
-        style={{
-          position: "absolute",
-          objectFit: "contain",
-          borderRadius: "100%",
-          zIndex: 1,
-          left: columnPos[position.column] + 5,
-          top: getRowPos(position.column, position.row) + 5,
-        }}
-      />
+      <a data-wowhead={"spell=" + trait.id}>
+        <img
+          onClick={handleClick}
+          width={48}
+          height={48}
+          src={process.env.PUBLIC_URL + containerIcon}
+          style={{
+            position: "absolute",
+            zIndex: 2,
+            left: columnPos[position.column],
+            top: getRowPos(position.column, position.row),
+          }}
+        />
+
+        <img
+          width={38}
+          height={38}
+          src={icon}
+          style={{
+            position: "absolute",
+            objectFit: "contain",
+            borderRadius: "100%",
+            zIndex: 1,
+            left: columnPos[position.column] + 5,
+            top: getRowPos(position.column, position.row) + 5,
+          }}
+        />
+      </a>
       <Paper
-        variant="outlined"
+        // variant="outlined"
         style={{
           fontSize: 10,
           zIndex: 40,
@@ -164,14 +169,15 @@ export default function SoulbindNode(props) {
           color: "Goldenrod",
           textAlign: "center",
           position: "absolute",
-          left: columnPos[position.column] - 28,
-          top: getRowPos(position.column, position.row) + 38,
-          padding: "2px 2px",
+          left: columnPos[position.column] - 26,
+          top: getRowPos(position.column, position.row) + 46,
+          // padding: "2px 2px",
+          backgroundColor: "rgb(25 28 35 / 65%)",
         }}
       >
         <div>
-        <div>{name}</div>
-        <div>{benefitString}</div>
+          <div>{name}</div>
+          <div>{benefitString}</div>
         </div>
       </Paper>
       {type.includes("Conduit") ? (
