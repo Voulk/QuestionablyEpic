@@ -41,7 +41,7 @@ export const soulbindDB = [
     renown: 0,
     active: false,
     stat_bonus: {},
-    type: 'Endurance Conduit',
+    type: "Endurance Conduit",
     slotted_id: -1,
   },
   {
@@ -55,7 +55,7 @@ export const soulbindDB = [
     renown: 0,
     active: false,
     stat_bonus: {},
-    type: 'Potency Conduit',
+    type: "Potency Conduit",
     slotted_id: -1,
   },
   {
@@ -509,7 +509,7 @@ export const soulbindDB = [
   {
     id: 331725,
     names: {
-      en: "Regenerating Materials",
+      en: "Resilient Plumage",
       cn: "强韧之羽",
       fr: "Plumage résistant",
       ru: "Прочные перья",
