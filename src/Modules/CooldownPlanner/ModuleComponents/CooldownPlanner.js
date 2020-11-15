@@ -156,21 +156,13 @@ export default function CooldownPlanner(props) {
   const { t } = useTranslation();
   const { useState } = React;
   const rl = raidList;
-  const [data, setData] = useState([]);
-  const [raid, setRaid] = useState("");
-  const [boss, setBoss] = useState("");
+  const setData = props.dataUpdateHandler;
+  const currentBoss = props.currentBoss;
+  const currentRaid = props.currentRaid;
+  const currentData = props.data;
   const [plan, setPlan] = useState("");
-
-  const handleChangeRaid = (event) => {
-    setRaid(event.target.value);
-  };
-  const handleChangeBoss = (event) => {
-    setBoss(event.target.value);
-    if (ls.get(raid + "." + boss + ".1") === null) {
-      ls.set(raid + "." + boss + ".1", []);
-    }
-    setData(ls.get(raid + "." + event.target.value + ".1"));
-  };
+  const handleChangeRaid = props.raidHandler;
+  const handleChangeBoss = props.bossHandler;
   const handleChangePlan = (event) => {
     setPlan(event.target.value);
   };
@@ -371,7 +363,8 @@ export default function CooldownPlanner(props) {
               {bossAbilities
                 .filter((obj) => {
                   return (
-                    obj.bossID === boss && obj.cooldownPlannerActive === true
+                    obj.bossID === currentBoss &&
+                    obj.cooldownPlannerActive === true
                   );
                 })
                 .map((key, i) => (
@@ -421,8 +414,8 @@ export default function CooldownPlanner(props) {
   });
 
   useEffect(() => {
-    props.update(data);
-  }, [data]);
+    props.update(currentData);
+  }, [currentData]);
 
   let curLang = (lang) => {
     if (lang === "en") {
@@ -436,24 +429,22 @@ export default function CooldownPlanner(props) {
     }
   };
 
-  let updateStorage = (props, boss) => {
-    if (ls.get(raid + "." + boss + ".1") === null) {
-      ls.set(raid + "." + boss + ".1", []);
+  let updateStorage = (props) => {
+    if (ls.get(currentRaid + "." + currentBoss + ".1") === null) {
+      ls.set(currentRaid + "." + currentBoss + ".1", []);
     }
     ls.set(
-      raid + "." + boss + ".1",
+      currentRaid + "." + currentBoss + ".1",
       props.sort((a, b) => (a.time > b.time ? 1 : -1))
     );
   };
-
-  console.log(raid);
 
   return (
     <ThemeProvider theme={themeCooldownTable}>
       <MaterialTable
         icons={tableIcons}
         columns={columns}
-        data={data}
+        data={currentData}
         style={{
           padding: 10,
         }}
@@ -488,21 +479,25 @@ export default function CooldownPlanner(props) {
         components={{
           Container: (props) => <Paper {...props} elevation={0} />,
           Body: (props) =>
-            boss === "" ? null : (
+            currentBoss === "" ? null : (
               <Grow
-                in={boss === "" ? false : true}
+                in={currentBoss === "" ? false : true}
                 style={{ transformOrigin: "0 0 0" }}
-                {...((boss === "" ? false : true) ? { timeout: "auto" } : {})}
+                {...((currentBoss === "" ? false : true)
+                  ? { timeout: "auto" }
+                  : {})}
               >
                 <MTableBody {...props} />
               </Grow>
             ),
           Header: (props) =>
-            boss === "" ? null : (
+            currentBoss === "" ? null : (
               <Grow
-                in={boss === "" ? false : true}
+                in={currentBoss === "" ? false : true}
                 style={{ transformOrigin: "0 0 0" }}
-                {...((boss === "" ? false : true) ? { timeout: "auto" } : {})}
+                {...((currentBoss === "" ? false : true)
+                  ? { timeout: "auto" }
+                  : {})}
               >
                 <MTableHeader {...props} />
               </Grow>
@@ -515,7 +510,7 @@ export default function CooldownPlanner(props) {
                 direction="row"
                 justify="space-between"
                 style={{
-                  marginBottom: (boss === "" ? false : true) ? 5 : 0,
+                  marginBottom: (currentBoss === "" ? false : true) ? 5 : 0,
                 }}
               >
                 <Grid item container spacing={1} xs={7} alignItems="center">
@@ -530,8 +525,8 @@ export default function CooldownPlanner(props) {
                       </InputLabel>
                       <Select
                         labelId="RaidSelector"
-                        value={raid}
-                        onChange={handleChangeRaid}
+                        value={currentRaid}
+                        onChange={(e) => handleChangeRaid(e.target.value)}
                         label={t(
                           "CooldownPlannerTableLabels.RaidSelectorLabel"
                         )}
@@ -552,15 +547,15 @@ export default function CooldownPlanner(props) {
                       style={{ minWidth: 200 }}
                       variant="outlined"
                       size="small"
-                      disabled={raid === "" ? true : false}
+                      disabled={currentRaid === "" ? true : false}
                     >
                       <InputLabel id="BossSelector">
                         {t("CooldownPlannerTableLabels.BossSelectorLabel")}
                       </InputLabel>
                       <Select
                         labelId="BossSelector"
-                        value={boss}
-                        onChange={handleChangeBoss}
+                        value={currentBoss}
+                        onChange={(e) => handleChangeBoss(e.target.value)}
                         label={t(
                           "CooldownPlannerTableLabels.BossSelectorLabel"
                         )}
@@ -568,7 +563,7 @@ export default function CooldownPlanner(props) {
                       >
                         {bossList
                           .filter((obj) => {
-                            return obj.zoneID === raid;
+                            return obj.zoneID === currentRaid;
                           })
                           .map((key) => (
                             <MenuItem value={key.id}>
@@ -604,7 +599,7 @@ export default function CooldownPlanner(props) {
                   </Grid> */}
                 </Grid>
                 <Grid item xs="auto">
-                  {boss === "" ? null : (
+                  {currentBoss === "" ? null : (
                     <ThemeProvider theme={SearchFieldOverride}>
                       <MTableToolbar {...props} />
                     </ThemeProvider>
@@ -619,35 +614,37 @@ export default function CooldownPlanner(props) {
             new Promise((resolve, reject) => {
               setTimeout(() => {
                 setData(
-                  [...data, newData].sort((a, b) => (a.time > b.time ? 1 : -1))
+                  [...currentData, newData].sort((a, b) =>
+                    a.time > b.time ? 1 : -1
+                  )
                 );
                 resolve();
-                updateStorage([...data, newData], boss);
+                updateStorage([...currentData, newData], currentBoss);
               }, 1000);
             }),
           onRowUpdate: (newData, oldData) =>
             new Promise((resolve, reject) => {
               setTimeout(() => {
-                const dataUpdate = [...data];
+                const dataUpdate = [...currentData];
                 const index = oldData.tableData.id;
                 dataUpdate[index] = newData;
                 setData(
                   [...dataUpdate].sort((a, b) => (a.time > b.time ? 1 : -1))
                 );
-                updateStorage([...dataUpdate], boss);
+                updateStorage([...dataUpdate], currentBoss);
                 resolve();
               }, 1000);
             }),
           onRowDelete: (oldData) =>
             new Promise((resolve, reject) => {
               setTimeout(() => {
-                const dataDelete = [...data];
+                const dataDelete = [...currentData];
                 const index = oldData.tableData.id;
                 dataDelete.splice(index, 1);
                 setData(
                   [...dataDelete].sort((a, b) => (a.time > b.time ? 1 : -1))
                 );
-                updateStorage([...dataDelete], boss);
+                updateStorage([...dataDelete], currentBoss);
                 resolve();
               }, 1000);
             }),
