@@ -174,7 +174,6 @@ export default function CooldownPlanner(props) {
   const handleChangePlan = (event) => {
     setPlan(event.target.value);
   };
-  let wowClass = 0;
   let columns = [
     {
       title: t("Name"),
@@ -203,7 +202,18 @@ export default function CooldownPlanner(props) {
               label={t("Name")}
               labelId="HealerSelector"
               onChange={(e) => {
-                props.onChange(e.target.value);
+                let data = { ...props.rowData };
+                data.name = e.target.value;
+                data.class = ls
+                  .get("healerInfo")
+                  .filter((obj) => {
+                    return obj.name === e.target.value;
+                  })
+                  .map((obj) => obj.class)
+                  .toString();
+                data.Cooldown = "NoCD";
+                props.onRowDataChange(data);
+                // props.onChange(e.target.value);
               }}
               MenuProps={menuStyle}
             >
@@ -233,30 +243,15 @@ export default function CooldownPlanner(props) {
           {t("CooldownPlannerClasses." + rowData.class)}
         </div>
       ),
-      editComponent: (props) => (
-        <ThemeProvider theme={themeCooldownTable}>
-          <FormControl
-            className={classes.formControl}
-            variant="outlined"
-            size="small"
-            style={{ marginTop: 6 }}
-          >
-            <InputLabel id="ClassSelector">{t("Class")}</InputLabel>
-            <Select
-              value={props.value}
-              labelId="ClassSelector"
-              label={t("Class")}
-              onChange={(e) => {
-                props.onChange(e.target.value);
-                wowClass = e.target.value;
-              }}
-              MenuProps={menuStyle}
-            >
-              {classMenus}
-            </Select>
-          </FormControl>
-        </ThemeProvider>
-      ),
+      editComponent: (props, rowData) => {
+        let data = { ...props.rowData };
+        return (
+          <div style={{ color: classColoursJS(data.class) }}>
+            {classIcons(data.class, 20)}
+            {t("CooldownPlannerClasses." + data.class)}
+          </div>
+        );
+      },
     },
     {
       title: t("Cooldown"),
@@ -271,27 +266,30 @@ export default function CooldownPlanner(props) {
           {t("CooldownPlannerClassAbilities." + rowData.Cooldown)}
         </div>
       ),
-      editComponent: (props) => (
-        <FormControl
-          className={classes.formControl}
-          variant="outlined"
-          size="small"
-          style={{ marginTop: 6 }}
-        >
-          <InputLabel id="HealerAbilitySelector">{t("Cooldown")}</InputLabel>
-          <Select
-            value={props.value}
-            labelId="HealerAbilitySelector"
-            label={t("Cooldown")}
-            onChange={(e) => {
-              props.onChange(e.target.value);
-            }}
-            MenuProps={menuStyle}
+      editComponent: (props, rowData) => {
+        let data = { ...props.rowData };
+        return (
+          <FormControl
+            className={classes.formControl}
+            variant="outlined"
+            size="small"
+            style={{ marginTop: 6 }}
           >
-            {ClassCooldownMenuItems(wowClass) || []}
-          </Select>
-        </FormControl>
-      ),
+            <InputLabel id="HealerAbilitySelector">{t("Cooldown")}</InputLabel>
+            <Select
+              value={rowData.Cooldown || props.value}
+              labelId="HealerAbilitySelector"
+              label={t("Cooldown")}
+              onChange={(e) => {
+                props.onChange(e.target.value);
+              }}
+              MenuProps={menuStyle}
+            >
+              {ClassCooldownMenuItems(data.class) || []}
+            </Select>
+          </FormControl>
+        );
+      },
     },
     {
       title: t("CooldownPlannerTableLabels.CastTimeLabel"),
