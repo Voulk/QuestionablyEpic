@@ -6,13 +6,13 @@ import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
-import { soulbindDB } from "./SoulbindDB";
+import { soulbindDB } from "../SoulbindDB";
 import SoulbindNode from "./SoulbindNode";
 import ConduitObject from "./ConduitObject";
 import Grid from "@material-ui/core/Grid";
-import { getSoulbindFormula } from "../Engine/EffectFormulas/Generic/GenericSoulbindFormulas";
+import { getSoulbindFormula } from "../../Engine/EffectFormulas/Generic/GenericSoulbindFormulas";
 import SoulbindStatPanel from "./SoulbindStatPanel";
-import { sumSelectedStats, getEstimatedHPS, getConduitIcon, buildConduitStats } from "./CovenantUtilities";
+import { sumSelectedStats, getEstimatedHPS, getConduitIcon, buildConduitStats } from "../CovenantUtilities";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;

@@ -1,11 +1,11 @@
 import React from "react";
-import { getSoulbindFormula } from "../Engine/EffectFormulas/Generic/GenericSoulbindFormulas";
+import { getSoulbindFormula } from "../../Engine/EffectFormulas/Generic/GenericSoulbindFormulas";
 import Select from "@material-ui/core/Select";
 import Popover from "@material-ui/core/Popover";
 import PopupState, { bindTrigger, bindPopover } from "material-ui-popup-state";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
-import { getConduitName } from "./CovenantUtilities";
+import { getConduitName } from "../CovenantUtilities";
 import Paper from "@material-ui/core/Paper";
 
 const columnPos = [195, 290, 385];
@@ -169,8 +169,10 @@ export default function SoulbindNode(props) {
           padding: "2px 2px",
         }}
       >
+        <div>
         <div>{name}</div>
         <div>{benefitString}</div>
+        </div>
       </Paper>
       {type.includes("Conduit") ? (
         <Menu

@@ -1,6 +1,6 @@
 import {conduits} from '../CooldownPlanner/Data/Data'
 import { getConduitFormula } from '../Engine/EffectFormulas/EffectEngine';
-import {getEstimatedHPS} from '../Covenant Test/CovenantUtilities';
+import {getEstimatedHPS} from '../Covenants/CovenantUtilities';
 
 class ActiveConduit {
     constructor(id, itemLevel, itemName, type, player, contentType) {

@@ -1,4 +1,4 @@
-import { getAvailableClassConduits } from '../Covenant Test/CovenantUtilities';
+import { getAvailableClassConduits } from '../Covenants/CovenantUtilities';
 import STAT from '../Engine/STAT'
 
 var SPELL_CASTS_LOC = 0;
