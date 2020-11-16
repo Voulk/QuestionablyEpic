@@ -9,7 +9,7 @@ import {getGenericLegendary} from './Generic/GenericLegendaryFormulas'
 import {getTrinketEffect} from './Generic/TrinketEffectFormulas'
 
 import {getPriestConduit} from './Priest/PriestConduitFormulas'
-import {getPaladinConduit} from './Paladin/PaladinConduitFormulas.js'
+import {getPaladinConduit} from './Paladin/PaladinConduitFormulas'
 import {getShamanConduit} from './Shaman/ShamanConduitFormulas'
 import {getMonkConduit} from './Monk/MonkConduitFormulas'
 import {getDruidConduit} from './Druid/DruidConduitFormulas'
@@ -26,7 +26,7 @@ export function getEffectValue(effect, player, contentType, itemLevel = 0) {
     const effectName = effect.name;
     const effectType = effect.type;
 
-    console.log("ITEM EFFECT" + effectName + effectType);
+    console.log("ITEM EFFECT" + effectName + effectType + "pl spec" + player.spec);
 
     if (effect.type === 'special') {
         bonus_stats = getGenericEffect(effectName, player, contentType);

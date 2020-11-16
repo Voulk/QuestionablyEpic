@@ -28,12 +28,12 @@ export function getSoulbindFormula(effectID, pl, contentType) {
     }
     // Focusing Mantra
     else if (effectID === 328261) {
-        bonus_stats.HPS = -99 // Placeholder.
+        bonus_stats.HPS = 0 // Placeholder.
         
     }
     // Phial of Patience
     else if (effectID === 329777) {
-        bonus_stats.HPS = -99 // Placeholder.
+        bonus_stats.HPS = 0 // Placeholder.
         
     }
     // Let go of the Past

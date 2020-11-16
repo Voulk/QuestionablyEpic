@@ -16,7 +16,7 @@ class Player {
         this.spec = specName;
         this.charName = playerName;
         this.charID = charID;
-        this.setupDefaults();
+        //this.setupDefaults(specName);
         this.activeItems = [];
         this.activeConduits = [];
         this.renown = 0;
@@ -40,7 +40,11 @@ class Player {
     {   "Raid": {
             "Rejuvenation": [17, 181000, 0.2909, 1566],
             "Wild Growth": [5, 154400, 0.2472, 1478],
-            "Overall": [0, 90132, 1]
+            "Overall": [0, 90132, 1],
+            "Light of Dawn": [20, 238400, 0.2082, 1316],
+            "Holy Shock": [27, 221400, 0.1934, 1222],
+            "Holy Light": [29, 311600, 0.293, 1683],
+            "Shock Barrier": [0, 98300, 0.0858, 542],
     },
         "Dungeon": {
             "Rejuvenation": [35, 40213, 0.11],
@@ -222,6 +226,11 @@ class Player {
         return this.castPattern[contentType][spellName][SPELL_HEALING_PERC]
     }
 
+    getSingleCast = (spellName, contentType) => {
+        
+        return this.castPattern[contentType][spellName][SPELL_HEALING_LOC] / this.castPattern[contentType][spellName][SPELL_CASTS_LOC]
+    }
+
     getSpellHPS = (spellName, contentType) => {
         
         return this.castPattern[contentType][spellName][SPELL_HPS]
@@ -229,13 +238,14 @@ class Player {
 
     // Consider replacing this with an external table for cleanliness and ease of editing. 
     setupDefaults = (spec) => {
+        console.log("Called");
         if (spec === "Restoration Druid") {
             this.activeStats = {
                 intellect: 0,
                 haste: 1,
                 crit: 0,
                 mastery: 0,
-                vers: 0,
+                versatility: 0,
             }
            
             this.statWeights = {
@@ -244,7 +254,7 @@ class Player {
                     haste: 0.4,
                     crit: 0.6,
                     mastery: 0.5,
-                    vers: 0.3,
+                    versatility: 0.3,
                     leech: 0.8,
                 },
                 "Dungeon": {
@@ -252,10 +262,55 @@ class Player {
                     haste: 0.4,
                     crit: 0.6,
                     mastery: 0.5,
-                    vers: 0.3,
+                    versatility: 0.3,
                     leech: 0.8,
                 },
                 "DefaultWeights": true
+            }
+
+        }
+        else if (spec === "Holy Paladin") {
+            console.log("Setting up Holy Paladin")
+            this.activeStats = {
+                intellect: 1600,
+                haste: 450,
+                crit: 600,
+                mastery: 0,
+                versatility: 200,
+            }
+           
+            this.statWeights = {
+                "Raid": {
+                    intellect: 1, 
+                    haste: 0.4,
+                    crit: 0.6,
+                    mastery: 0.5,
+                    versatility: 0.3,
+                    leech: 0.8,
+                },
+                "Dungeon": {
+                    intellect: 1, 
+                    haste: 0.4,
+                    crit: 0.6,
+                    mastery: 0.5,
+                    versatility: 0.3,
+                    leech: 0.8,
+                },
+                "DefaultWeights": true
+            }
+
+            this.castPattern =
+            // CASTS, HEALING, HEALINGPERC, HPS
+            {   "Raid": {
+                    "Light of Dawn": [20, 238400, 0.2082, 1316],
+                    "Holy Shock": [27, 221400, 0.1934, 1222],
+                    "Holy Light": [29, 311600, 0.293, 1683],
+                    "Shock Barrier": [0, 98300, 0.0858, 542],
+                    "Overall": [0, 90132, 1]
+            },
+                "Dungeon": {
+
+                }
             }
 
         }

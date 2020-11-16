@@ -5,6 +5,7 @@ import LegendaryObject from "./LegendaryObject";
 import getLegendaryInfo from "../Classes/LegendaryFormulas";
 import "./Legendaries.css";
 import { useTranslation } from "react-i18next";
+import {getEffectValue} from '../Engine/EffectFormulas/EffectEngine'
 
 // This is all shitty boilerplate code that'll be replaced. Do not copy.
 // const useStyles = makeStyles((theme) => ({
@@ -21,7 +22,7 @@ import { useTranslation } from "react-i18next";
 
 const createLegendary = (legendaryName, container, spec, pl, contentType) => {
   let lego = new Legendary(legendaryName);
-  getLegendaryInfo(lego, spec, pl, contentType);
+  lego.bonus_stats = getEffectValue({name: lego.name, type: 'spec legendary'}, pl, contentType);
 
   container.push(lego);
 };
@@ -66,9 +67,10 @@ class Legendary {
     this.name = name;
     this.description = "Legendary Description";
     this.image = 0;
-    this.expectedHps = 0;
-    this.expectedDps = 0;
-    this.singleTargetHPS = 0;
+    this.bonus_stats = {};
+    //this.expectedHps = 0;
+    //this.expectedDps = 0;
+    //this.singleTargetHPS = 0;
   }
 }
 
