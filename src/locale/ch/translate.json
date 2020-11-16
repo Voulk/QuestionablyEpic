@@ -1,15 +1,53 @@
 {
-    "translations": {
-        "MainMenuItemsH": "段落",
-        "MainMenuCharactersH": "段落",
-        "Top Gear": "者名",
-        "author": {
-            "title": "著者名",
-            "value": "タリクル"
-        },
+  "translations": {
+    "MainMenuItemsH": "段落",
+    "MainMenuCharactersH": "段落",
+    "Top Gear": "者名",
+    "author": {
+      "title": "著者名",
+      "value": "タリクル"
+    },
+
+    "Races": {
+      "Blood Elf": "血精灵",
+      "Dark Iron Dwarf": "黑铁矮人",
+      "Draenei": "德莱尼",
+      "Dwarf": "矮人",
+      "Gnome": "侏儒",
+      "Goblin": "地精",
+      "Highmountain Tauren": "至高岭牛头人",
+      "Human": "人类",
+      "Kul Tiran": "库尔提拉斯人",
+      "Lightforged Draenei": "光铸德莱尼",
+      "Mag'har Orc": "玛格汉兽人",
+      "Mechagnome": "机械侏儒",
+      "Night Elf": "暗夜精灵",
+      "Nightborne": "夜之子",
+      "Orc": "兽人",
+      "Tauren": "牛头人",
+      "Troll": "巨魔",
+      "Undead": "亡灵",
+      "Void Elf": "虚空精灵",
+      "Vulpera": "狐人",
+      "Worgen": "狼人",
+      "Zandalari Troll": "赞达拉巨魔"
+    },
+
+    "CooldownPlannerClasses": {
+      "undefined": "",
+      "HolyPaladin": "Holy Paladin",
+      "DisciplinePriest": "Discispline Priest",
+      "RestorationDruid": "Restoration Druid",
+      "HavocDemonHunter": "Havoc Demon Hunter",
+      "Warrior": "Warrior",
+      "HolyPriest": "Holy Priest",
+      "MistweaverMonk": "Mistweaver Monk",
+      "RestorationShaman": "Restoration Shaman"
+    },
 
     "CooldownPlannerClassAbilities": {
-      "HolyPaladinComment": "Holy Paladin Class Cooldowns",  
+      "undefined": "",
+      "HolyPaladinComment": "Holy Paladin Class Cooldowns",
       "31821": "光环掌握",
       "31884": "复仇之怒",
       "RestorationDruidComment": "Restoration Druid Class Cooldowns",
@@ -32,31 +70,30 @@
       "97462": "集结呐喊"
     },
 
+    "HeaderLabels": {
+      "Login": "登录",
+      "": ""
+    },
 
-        "HeaderLabels": {
-            "Login" : "登录",
-            "" : ""
-        },
+    "ModuleTitles": {
+      "QuickCompare": "快速比较"
+    },
 
-        "ModuleTitles": {
-            "QuickCompare": "快速比较"
-          },
+    "QuickCompare": {
+      "Slot": "物品栏",
+      "ItemName": "名称",
+      "ItemLevel": "物品等级"
+    },
 
-        "QuickCompare": {
-            "Slot": "物品栏",
-            "ItemName": "名称",
-            "ItemLevel" : "物品等级"
-        },
+    "description": {
+      "title": "説明",
+      "value": "部屋、電車、飛行機な。"
+    },
 
-        "description": {
-            "title": "説明",
-            "value": "部屋、電車、飛行機な。"
-        },
-
-        "slotNames": {
-            "head" : "头部",
-            "shoulder" : "肩部",
-            "waist" : "腰部"
-          }
+    "slotNames": {
+      "head": "头部",
+      "shoulder": "肩部",
+      "waist": "腰部"
     }
+  }
 }

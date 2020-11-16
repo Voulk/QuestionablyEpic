@@ -27,6 +27,7 @@ import HealTeam from "../CooldownPlanner/ModuleComponents/HealTeamTable";
 import updatechartdata from "./Engine/LogImportEngine.js";
 import chartCooldownUpdater from "./Engine/UserCooldownChartEngine.js";
 import Divider from "@material-ui/core/Divider";
+import ls from "local-storage";
 
 class HolyDiver extends Component {
   constructor(props) {
@@ -41,6 +42,15 @@ class HolyDiver extends Component {
     this.chartCooldownUpdater = chartCooldownUpdater.bind(this);
     this.ertHandler = this.ertHandler.bind(this);
     this.timelineHandler = this.timelineHandler.bind(this);
+    this.handleChangeBossCooldownPlanner = this.handleChangeBossCooldownPlanner.bind(
+      this
+    );
+    this.handleChangeRaidCooldownPlanner = this.handleChangeRaidCooldownPlanner.bind(
+      this
+    );
+    this.handleChangeDataCooldownPlanner = this.handleChangeDataCooldownPlanner.bind(
+      this
+    );
     // We set our state for the cooldown Planner Module.
     this.state = {
       currentBossID: null,
@@ -68,6 +78,7 @@ class HolyDiver extends Component {
       damageTableShow: false,
       logDetailsShow: false,
       healTableShow: false,
+      switchPanelShow: false,
       ertList: [],
       currentFighttime: null,
       killWipe: null,
@@ -82,6 +93,9 @@ class HolyDiver extends Component {
       summedUnmitigatedDamagePerSecond: [],
       currentDifficulty: null,
       currentKeystone: null,
+      cooldownPlannerCurrentData: [],
+      cooldownPlannerCurrentRaid: "",
+      cooldownPlannerCurrentBoss: "",
     };
   }
 
@@ -95,6 +109,7 @@ class HolyDiver extends Component {
       nextpage: info[0],
       boss: info[2],
       logDetailsShow: true,
+      switchPanelShow: true,
       damageTableShow: true,
       healTableShow: true,
       currentFighttime: info[3],
@@ -102,12 +117,48 @@ class HolyDiver extends Component {
       currentBossID: info[5],
       currentDifficulty: logDifficulty(info[6]),
       currentKeystone: info[7],
+      cooldownPlannerCurrentRaid: info[8],
+      cooldownPlannerCurrentBoss: info[5],
     });
+
+    let data = ls.get(info[8] + "." + info[5] + ".1");
+    this.setState({
+      cooldownPlannerCurrentData: data,
+    });
+  };
+
+  handleChangeRaidCooldownPlanner = (event) => {
+    console.log(event);
+    this.setState({ cooldownPlannerCurrentRaid: event });
+  };
+
+  handleChangeBossCooldownPlanner = (event) => {
+    this.setState({ cooldownPlannerCurrentBoss: event });
+    if (
+      ls.get(this.state.cooldownPlannerCurrentRaid + "." + event + ".1") ===
+      null
+    ) {
+      ls.set(this.state.cooldownPlannerCurrentRaid + "." + event + ".1", []);
+    }
+    let data = ls.get(
+      this.state.cooldownPlannerCurrentRaid + "." + event + ".1"
+    );
+    this.setState({
+      cooldownPlannerCurrentData: data,
+    });
+  };
+
+  handleChangeDataCooldownPlanner = (data) => {
+    this.setState({ cooldownPlannerCurrentData: data });
   };
 
   // This Function sets the state on whether the Log Cooldown Chart is Shown.
   damageTableShow = (event) => {
     this.setState({ damageTableShow: event });
+  };
+
+  logDetailsShow = (event) => {
+    this.setState({ logDetailsShow: event });
   };
 
   // This Function sets the state on whether the User Input Cooldown Chart is Shown.
@@ -138,6 +189,7 @@ class HolyDiver extends Component {
 
   render() {
     let spinnershow = this.state.loadingcheck;
+    console.log(this.state.cooldownPlannerCurrentRaid);
 
     return (
       <div>
@@ -188,14 +240,14 @@ class HolyDiver extends Component {
                 xl={6}
                 justify="flex-end"
                 style={{
-                  display: this.state.logDetailsShow ? "flex" : "none",
+                  display: this.state.switchPanelShow ? "flex" : "none",
                 }}
               >
-                <Collapse in={this.state.logDetailsShow}>
+                <Collapse in={this.state.switchPanelShow}>
                   <Grow
-                    in={this.state.logDetailsShow}
+                    in={this.state.switchPanelShow}
                     style={{ transformOrigin: "0 0 0" }}
-                    {...(this.state.logDetailsShow ? { timeout: 1000 } : {})}
+                    {...(this.state.switchPanelShow ? { timeout: 1000 } : {})}
                   >
                     <Paper
                       style={{
@@ -207,6 +259,10 @@ class HolyDiver extends Component {
                       <SwitchLabels
                         check={this.damageTableShow}
                         label={"Log Chart"}
+                      />
+                      <SwitchLabels
+                        check={this.logDetailsShow}
+                        label={"Toggle Log Details"}
                       />
                       <SwitchLabels
                         check={this.healTableShow}
@@ -242,11 +298,11 @@ class HolyDiver extends Component {
               }}
             >
               <Grid item xs={12} padding={1}>
-                <Collapse in={this.state.logDetailsShow}>
+                <Collapse in={this.state.damageTableShow}>
                   <Grow
-                    in={this.state.logDetailsShow}
+                    in={this.state.damageTableShow}
                     style={{ transformOrigin: "0 0 0" }}
-                    {...(this.state.logDetailsShow ? { timeout: 1000 } : {})}
+                    {...(this.state.damageTableShow ? { timeout: 1000 } : {})}
                   >
                     <Paper bgcolor="#333">
                       <Grid item xs={12} padding={1} align="center">
@@ -342,11 +398,11 @@ class HolyDiver extends Component {
               item
               container
               style={{
-                display: this.state.damageTableShow ? "block" : "none",
+                display: this.state.logDetailsShow ? "block" : "none",
               }}
             >
               <Collapse
-                in={this.state.damageTableShow}
+                in={this.state.logDetailsShow}
                 style={{ width: "100%" }}
               >
                 <Grid
@@ -378,7 +434,9 @@ class HolyDiver extends Component {
                   </Grid>
                   <Grid item xs={12} sm={12} md={12} lg={4} xl={4} padding={1}>
                     <Example
-                      data={this.state.summedUnmitigatedDamagePerSecond}
+                      dataToShow={this.state.chartData}
+                      mitigated={this.state.summedMitigationDamagePerSecond}
+                      unmitigated={this.state.summedUnmitigatedDamagePerSecond}
                     />
                   </Grid>
                 </Grid>
@@ -436,7 +494,12 @@ class HolyDiver extends Component {
               <Grid item xs={12} sm={12} md={12} lg={12} xl={12} padding={1}>
                 <CooldownPlanner
                   update={this.chartCooldownUpdater}
-                  curLang={this.props.curLang}
+                  data={this.state.cooldownPlannerCurrentData}
+                  currentBoss={this.state.cooldownPlannerCurrentBoss}
+                  bossHandler={this.handleChangeBossCooldownPlanner}
+                  currentRaid={this.state.cooldownPlannerCurrentRaid}
+                  raidHandler={this.handleChangeRaidCooldownPlanner}
+                  dataUpdateHandler={this.handleChangeDataCooldownPlanner}
                 />
               </Grid>
               <Grid item xs={12} sm={12} md={12} lg={7} xl={7} padding={1}>

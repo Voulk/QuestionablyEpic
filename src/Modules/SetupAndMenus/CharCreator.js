@@ -11,7 +11,7 @@ import MenuItem from "@material-ui/core/MenuItem";
 import FormControl from "@material-ui/core/FormControl";
 import InputLabel from "@material-ui/core/InputLabel";
 import { useTranslation } from "react-i18next";
-import classicons from "../CooldownPlanner/Functions/IconFunctions/ClassIcons";
+import classIcons from "../CooldownPlanner/Functions/IconFunctions/ClassIcons";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import CardActionArea from "@material-ui/core/CardActionArea";
@@ -67,116 +67,116 @@ const region = ["CN", "US", "TW", "EU"];
 const classList = {
   "Holy Paladin": {
     races: [
-      "Draenei",
-      "Dwarf",
-      "Human",
-      "Lightforged",
-      "Dark Iron",
-      "Blood elf",
-      "Tauren",
-      "Zandalari",
+      "Races.Draenei",
+      "Races.Dwarf",
+      "Races.Human",
+      "Races.Lightforged Draenei",
+      "Races.Dark Iron Dwarf",
+      "Races.Blood Elf",
+      "Races.Tauren",
+      "Races.Zandalari Troll",
     ],
   },
   "Restoration Druid": {
     races: [
-      "Night elf",
-      "Worgen",
-      "Kul Tiran",
-      "Tauren",
-      "Troll",
-      "Highmountain",
-      "Zandalari",
+      "Races.Night Elf",
+      "Races.Worgen",
+      "Races.Kul Tiran",
+      "Races.Tauren",
+      "Races.Troll",
+      "Races.Highmountain Tauren",
+      "Races.Zandalari Troll",
     ],
   },
   "Holy Priest": {
     races: [
-      "Draenei",
-      "Dwarf",
-      "Gnome",
-      "Human",
-      "Night elf",
-      "Worgen",
-      "Void elf",
-      "Lightforged",
-      "Dark Iron",
-      "Kul Tiran",
-      "Mechagnome",
-      "Pandaren",
-      "Blood elf",
-      "Goblin",
-      "Tauren",
-      "Troll",
-      "Undead",
-      "Nightborne",
-      "Mag'har",
-      "Zandalari",
-      "Vulpera",
+      "Races.Draenei",
+      "Races.Dwarf",
+      "Races.Gnome",
+      "Races.Human",
+      "Races.Night Elf",
+      "Races.Worgen",
+      "Races.Void Elf",
+      "Races.Lightforged Draenei",
+      "Races.Dark Iron Dwarf",
+      "Races.Kul Tiran",
+      "Races.Mechagnome",
+      "Races.Pandaren",
+      "Races.Blood Elf",
+      "Races.Goblin",
+      "Races.Tauren",
+      "Races.Troll",
+      "Races.Undead",
+      "Races.Nightborne",
+      "Races.Mag'har",
+      "Races.Zandalari Troll",
+      "Races.Vulpera",
     ],
   },
   "Discispline Priest": {
     races: [
-      "Draenei",
-      "Dwarf",
-      "Gnome",
-      "Human",
-      "Night elf",
-      "Worgen",
-      "Void elf",
-      "Lightforged",
-      "Dark Iron",
-      "Kul Tiran",
-      "Mechagnome",
-      "Pandaren",
-      "Blood elf",
-      "Goblin",
-      "Tauren",
-      "Troll",
-      "Undead",
-      "Nightborne",
-      "Mag'har",
-      "Zandalari",
-      "Vulpera",
+      "Races.Draenei",
+      "Races.Dwarf",
+      "Races.Gnome",
+      "Races.Human",
+      "Races.Night Elf",
+      "Races.Worgen",
+      "Races.Void Elf",
+      "Races.Lightforged Draenei",
+      "Races.Dark Iron Dwarf",
+      "Races.Kul Tiran",
+      "Races.Mechagnome",
+      "Races.Pandaren",
+      "Races.Blood Elf",
+      "Races.Goblin",
+      "Races.Tauren",
+      "Races.Troll",
+      "Races.Undead",
+      "Races.Nightborne",
+      "Races.Mag'har",
+      "Races.Zandalari Troll",
+      "Races.Vulpera",
     ],
   },
   "Restoration Shaman": {
     races: [
-      "Draenei",
-      "Dwarf",
-      "Dark Iron",
-      "Kul Tiran",
-      "Pandaren",
-      "Goblin",
-      "Orc",
-      "Tauren",
-      "Troll",
-      "Highmountain",
-      "Mag'har",
-      "Zandalari",
-      "Vulpera",
+      "Races.Draenei",
+      "Races.Dwarf",
+      "Races.Dark Iron Dwarf",
+      "Races.Kul Tiran",
+      "Races.Pandaren",
+      "Races.Goblin",
+      "Races.Orc",
+      "Races.Tauren",
+      "Races.Troll",
+      "Races.Highmountain Tauren",
+      "Races.Mag'har",
+      "Races.Zandalari Troll",
+      "Races.Vulpera",
     ],
   },
   "Mistweaver Monk": {
     races: [
-      "Draenei",
-      "Dwarf",
-      "Gnome",
-      "Human",
-      "Night elf",
-      "Void elf",
-      "Dark Iron",
-      "Kul Tiran",
-      "Mechagnome",
-      "Pandaren",
-      "Blood elf",
-      "Orc",
-      "Tauren",
-      "Troll",
-      "Undead",
-      "Nightborne",
-      "Highmountain ",
-      "Mag'har",
-      "Zandalari",
-      "Vulpera",
+      "Races.Draenei",
+      "Races.Dwarf",
+      "Races.Gnome",
+      "Races.Human",
+      "Races.Night Elf",
+      "Races.Void Elf",
+      "Races.Dark Iron Dwarf",
+      "Races.Kul Tiran",
+      "Races.Mechagnome",
+      "Races.Pandaren",
+      "Races.Blood Elf",
+      "Races.Orc",
+      "Races.Tauren",
+      "Races.Troll",
+      "Races.Undead",
+      "Races.Nightborne",
+      "Races.Highmountain Tauren",
+      "Races.Mag'har",
+      "Races.Zandalari Troll",
+      "Races.Vulpera",
     ],
   },
 };
@@ -219,7 +219,7 @@ export default function AddNewChar(props) {
     <Grid item xs={12} sm={6} md={6} lg={4} xl={4}>
       <CardActionArea onClick={handleClickOpen}>
         <Card className={classes.root} variant="outlined" raised={true}>
-          <Avatar variant="rounded" alt="" className={classes.large} />
+          <Avatar variant="square" alt="" className={classes.large} />
           <div className={classes.details}>
             <CardContent className={classes.content}>
               <Typography variant="h6" component="h4">
@@ -299,7 +299,7 @@ export default function AddNewChar(props) {
                 <Select value={healClass} onChange={handleChangeSpec}>
                   {Object.getOwnPropertyNames(classList).map((key, i) => (
                     <MenuItem key={i} value={key}>
-                      {classicons(key, 20)}
+                      {classIcons(key, 20)}
                       {key}
                     </MenuItem>
                   ))}
@@ -321,7 +321,7 @@ export default function AddNewChar(props) {
                         <MenuItem key={i} value={key}>
                           <div style={{ display: "inline-flex" }}>
                             {raceIcons(key)}
-                            {key}
+                            {t(key)}
                           </div>
                         </MenuItem>
                       ))}

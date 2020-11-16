@@ -1549,64 +1549,64 @@ export const talents = [
 ];
 
 export const raidList = [
-  { id: 0, zoneID: 10522, raidName: "Ny’alotha" },
-  { id: 1, zoneID: 13224, raidName: "Castle Nathria" },
+  { id: 0, zoneID: 2217, raidName: "Ny’alotha" },
+  { id: 1, zoneID: 2296, raidName: "Castle Nathria" },
 ];
 export const bossList = [
   {
     id: 2375,
     name: "N'zoth",
-    zoneID: 10522,
+    zoneID: 2217,
   },
   {
     id: 2398,
     name: "Shriekwing",
-    zoneID: 13224,
+    zoneID: 2296,
   },
   {
     id: 2418,
     name: "Huntsman Altimor",
-    zoneID: 13224,
+    zoneID: 2296,
   },
   {
     id: 2402,
     name: "Sun King's Salvation",
-    zoneID: 13224,
+    zoneID: 2296,
   },
   {
     id: 2405,
     name: "Artificer Xy'mox",
-    zoneID: 13224,
+    zoneID: 2296,
   },
   {
     id: 2383,
     name: "Hungering Destroyer",
-    zoneID: 13224,
+    zoneID: 2296,
   },
   {
     id: 2406,
     name: "Lady Inerva Darkvein",
-    zoneID: 13224,
+    zoneID: 2296,
   },
   {
     id: 2412,
     name: "The Council of Blood",
-    zoneID: 13224,
+    zoneID: 2296,
   },
   {
     id: 2399,
     name: "Sludgefist",
-    zoneID: 13224,
+    zoneID: 2296,
   },
   {
     id: 2417,
     name: "Stone Legion Generals",
-    zoneID: 13224,
+    zoneID: 2296,
   },
   {
     id: 2407,
     name: "Sire Denathrius",
-    zoneID: 13224,
+    zoneID: 2296,
   },
 ];
 

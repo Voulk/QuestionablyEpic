@@ -1,6 +1,7 @@
 import React, { forwardRef } from "react";
 import MaterialTable, { MTableToolbar } from "material-table";
 import ArrowDownward from "@material-ui/icons/ArrowDownward";
+import FileCopyIcon from "@material-ui/icons/FileCopy";
 import SaveAlt from "@material-ui/icons/SaveAlt";
 import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import moment from "moment";
@@ -51,6 +52,9 @@ const tableIcons = {
   Export: forwardRef((props, ref) => (
     <SaveAlt {...props} style={{ color: "#ffee77" }} ref={ref} />
   )),
+  Copy: forwardRef((props, ref) => (
+    <FileCopyIcon {...props} style={{ color: "#ffee77" }} ref={ref} />
+  )),
   SortArrow: forwardRef((props, ref) => (
     <ArrowDownward {...props} style={{ color: "#ffee77" }} ref={ref} />
   )),
@@ -70,6 +74,24 @@ let curLang = (lang) => {
 
 export default function ERTTable(props) {
   const { t } = useTranslation();
+  const copyToClipboard = () => {
+    const copyText = props.data.map((key) => key.ert).join("");
+    console.log(copyText);
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(copyText).then(
+        () => {
+          console.log("copy success");
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
+    } else {
+      props.data.select();
+      console.log(document.execCommand("copy")); //true
+      document.execCommand("copy");
+    }
+  };
   return (
     <ThemeProvider theme={theme}>
       <MaterialTable
@@ -110,6 +132,16 @@ export default function ERTTable(props) {
             </div>
           ),
         }}
+        actions={[
+          {
+            icon: () => (
+              <FileCopyIcon {...props} style={{ color: "#ffee77" }} />
+            ),
+            tooltip: "Copy to Clipboard",
+            isFreeAction: true,
+            onClick: (event) => copyToClipboard(),
+          },
+        ]}
         options={{
           padding: "dense",
           toolbar: true,
