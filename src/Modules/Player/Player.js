@@ -1,8 +1,11 @@
+import { getAvailableClassConduits } from '../Covenants/CovenantUtilities';
+import SPEC from '../Engine/SPECS';
 import STAT from '../Engine/STAT'
 
 var SPELL_CASTS_LOC = 0;
 var SPELL_HEALING_LOC = 1;
 var SPELL_HEALING_PERC = 2;
+var SPELL_HPS = 3;
 var SPELL_OVERHEALING_LOC = 5;
 
 var averageHoTCount = 1.4; // TODO: Build this in correctly and pull it from logs where applicable.
@@ -13,10 +16,13 @@ class Player {
         this.spec = specName;
         this.charName = playerName;
         this.charID = charID;
-        this.setupDefaults();
+        //this.setupDefaults(specName);
         this.activeItems = [];
+        this.activeConduits = [];
+        this.renown = 0;
 
         if (statWeights !== "default") this.statWeights = statWeights;
+        this.activeConduits = getAvailableClassConduits(specName);
         //this.getStatPerc = getStatPerc;
     }
 
@@ -24,15 +30,21 @@ class Player {
     spec = "";
     charID = 0;
     activeItems = [];
+    activeConduits = [];
+    renown = 0;
     
 
     // A players spell casting patterns. These are averaged from entered logs and a default is provided too. 
-    // 
+    // CASTS, HEALING, HEALINGPERC, HPS, 
     castPattern =
     {   "Raid": {
-            "Rejuvenation": [35, 40213, 0.22],
-            "Wild Growth": 40,
-            "Overall": [0, 90132, 1]
+            "Rejuvenation": [17, 181000, 0.2909, 1566],
+            "Wild Growth": [5, 154400, 0.2472, 1478],
+            "Overall": [0, 90132, 1],
+            "Light of Dawn": [20, 238400, 0.2082, 1316],
+            "Holy Shock": [27, 221400, 0.1934, 1222],
+            "Holy Light": [29, 311600, 0.293, 1683],
+            "Shock Barrier": [0, 98300, 0.0858, 542],
     },
         "Dungeon": {
             "Rejuvenation": [35, 40213, 0.11],
@@ -50,8 +62,10 @@ class Player {
         haste: 400,
         crit: 350,
         mastery: 0,
-        vers: 200,
+        versatility: 200,
         hps: 6000,
+        rawhps: 9420,
+        
     }
    
     // Stat weights are normalized around intellect. 
@@ -64,7 +78,7 @@ class Player {
             haste: 0.5,
             crit: 0.6,
             mastery: 0.5,
-            vers: 0.45,
+            versatility: 0.45,
             leech: 0.7,
         },
         "Dungeon": {
@@ -72,7 +86,7 @@ class Player {
             haste: 0.8,
             crit: 0.5,
             mastery: 0.4,
-            vers: 0.45,
+            versatility: 0.45,
             leech: 0.7,
         },
         "DefaultWeights": true
@@ -80,6 +94,8 @@ class Player {
     }
 
     getStatWeight = (contentType, stat) => {
+        stat = stat.toLowerCase();
+        
         if (stat in this.statWeights[contentType]) {
             return this.statWeights[contentType][stat]
         }
@@ -87,6 +103,20 @@ class Player {
             return 0;
         }
             
+    }
+
+    calculateConduits = (contentType) => {
+        //console.log("Calculating Conduits")
+        this.activeConduits.forEach(conduit => {
+            conduit.setHPS(this, contentType)
+            //return conduit;
+        })
+    }
+
+    getActiveConduits = (type) => {
+        return this.activeConduits.filter(function(conduits) {
+            return conduits.type == type;
+        });
     }
 
     // Used for the purpose of maximising stuff like ring enchants and gems. 
@@ -132,35 +162,47 @@ class Player {
                 statPerc = 1.05 + this.activeStats.crit / 35 / 100;
                 break;
             case "Mastery":
+                statPerc = 1; // TODO
                 break;
             case "Vers":
-                statPerc = 1 + this.activeStats.vers / 40 / 100;
+                statPerc = 1 + this.activeStats.versatility / 40 / 100;
                 break;
             default:
                 break;
         }
    
         // Round to four decimal places. I'd heavily caution against ever rounding more heavily than this. 
+        //console.log("Stat: " + stat + ". Perc: " + statPerc);
         return Math.round(statPerc*10000) / 10000;
 
     }
 
-    // This multiplies three-four secondary stats together to improve code efficiency. 
-    // includeMastery: Boolean: Indicates whether Mastery should be included. 
-    // TODO: Add Mastery
-    getSecondaryMultiplier = (includeMastery) => {
-        let mult = this.getStatPerc("Haste") * this.getStatPerc("Crit") * this.getStatPerc("Vers");
-        if (includeMastery) { 
-            switch(this.getSpec()) {
-                case "Restoration Druid":
-                    break;
-                default:
-                    break;
-            }
+    // Returns a stat multiplier. 
+    getStatMultiplier = (flag, statList = []) => {
+        let mult = 1;
+        if (flag === "ALL") {
+            // Returns a multiplier that includes raw intellect. 
+            mult = this.getStatPerc("Haste") * this.getStatPerc("Crit") * this.getStatPerc("Vers") * this.getStatPerc("Mastery") * this.activeStats.intellect;
         }
-
+        else if (flag === "ALLSEC") {
+            // Returns a multiplier that includes all secondaries but NOT intellect.
+            mult = this.getStatPerc("Haste") * this.getStatPerc("Crit") * this.getStatPerc("Vers") * this.getStatPerc("Mastery");
+        }
+        else if (flag === "NOMAST") {
+            // Returns a multiplier of Haste / Vers / Crit.
+            mult = this.getStatPerc("Haste") * this.getStatPerc("Crit") * this.getStatPerc("Vers") 
+        }
+        else {
+            // Our multiplier consists of whatever is in the stat list array.
+            statList.forEach(stat => {
+                mult *= this.getStatPerc(stat);
+            })
+        }
+ 
         return mult;
+
     }
+
 
     getSpec = () => {
         return this.spec;
@@ -184,15 +226,26 @@ class Player {
         return this.castPattern[contentType][spellName][SPELL_HEALING_PERC]
     }
 
+    getSingleCast = (spellName, contentType) => {
+        
+        return this.castPattern[contentType][spellName][SPELL_HEALING_LOC] / this.castPattern[contentType][spellName][SPELL_CASTS_LOC]
+    }
+
+    getSpellHPS = (spellName, contentType) => {
+        
+        return this.castPattern[contentType][spellName][SPELL_HPS]
+    }
+
     // Consider replacing this with an external table for cleanliness and ease of editing. 
     setupDefaults = (spec) => {
+        console.log("Called");
         if (spec === "Restoration Druid") {
             this.activeStats = {
                 intellect: 0,
                 haste: 1,
                 crit: 0,
                 mastery: 0,
-                vers: 0,
+                versatility: 0,
             }
            
             this.statWeights = {
@@ -201,7 +254,7 @@ class Player {
                     haste: 0.4,
                     crit: 0.6,
                     mastery: 0.5,
-                    vers: 0.3,
+                    versatility: 0.3,
                     leech: 0.8,
                 },
                 "Dungeon": {
@@ -209,10 +262,55 @@ class Player {
                     haste: 0.4,
                     crit: 0.6,
                     mastery: 0.5,
-                    vers: 0.3,
+                    versatility: 0.3,
                     leech: 0.8,
                 },
                 "DefaultWeights": true
+            }
+
+        }
+        else if (spec === "Holy Paladin") {
+            console.log("Setting up Holy Paladin")
+            this.activeStats = {
+                intellect: 1600,
+                haste: 450,
+                crit: 600,
+                mastery: 0,
+                versatility: 200,
+            }
+           
+            this.statWeights = {
+                "Raid": {
+                    intellect: 1, 
+                    haste: 0.4,
+                    crit: 0.6,
+                    mastery: 0.5,
+                    versatility: 0.3,
+                    leech: 0.8,
+                },
+                "Dungeon": {
+                    intellect: 1, 
+                    haste: 0.4,
+                    crit: 0.6,
+                    mastery: 0.5,
+                    versatility: 0.3,
+                    leech: 0.8,
+                },
+                "DefaultWeights": true
+            }
+
+            this.castPattern =
+            // CASTS, HEALING, HEALINGPERC, HPS
+            {   "Raid": {
+                    "Light of Dawn": [20, 238400, 0.2082, 1316],
+                    "Holy Shock": [27, 221400, 0.1934, 1222],
+                    "Holy Light": [29, 311600, 0.293, 1683],
+                    "Shock Barrier": [0, 98300, 0.0858, 542],
+                    "Overall": [0, 90132, 1]
+            },
+                "Dungeon": {
+
+                }
             }
 
         }

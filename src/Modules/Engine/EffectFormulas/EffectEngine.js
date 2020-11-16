@@ -8,6 +8,15 @@ import {getPaladinLegendary} from './Paladin/PaladinLegendaryFormulas'
 import {getGenericLegendary} from './Generic/GenericLegendaryFormulas'
 import {getTrinketEffect} from './Generic/TrinketEffectFormulas'
 
+import {getPriestConduit} from './Priest/PriestConduitFormulas'
+import {getPaladinConduit} from './Paladin/PaladinConduitFormulas'
+import {getShamanConduit} from './Shaman/ShamanConduitFormulas'
+import {getMonkConduit} from './Monk/MonkConduitFormulas'
+import {getDruidConduit} from './Druid/DruidConduitFormulas'
+
+
+import SPEC from '../SPECS'
+
 
 // Effect is a small "dictionary" with two key : value pairs. 
 // The EffectEngine is basically a routing device. It will take your effect and effect type and grab the right formula from the right place.
@@ -17,7 +26,7 @@ export function getEffectValue(effect, player, contentType, itemLevel = 0) {
     const effectName = effect.name;
     const effectType = effect.type;
 
-    console.log("ITEM EFFECT" + effectName + effectType);
+    console.log("ITEM EFFECT" + effectName + effectType + "pl spec" + player.spec);
 
     if (effect.type === 'special') {
         bonus_stats = getGenericEffect(effectName, player, contentType);
@@ -56,4 +65,31 @@ export function getEffectValue(effect, player, contentType, itemLevel = 0) {
     }
 
     return bonus_stats;
+}
+
+export function getConduitFormula(effectID, player, contentType, itemLevel = 156) {
+    let bonus_stats = {};
+
+    switch(player.spec) {
+        case(SPEC.DISCPRIEST):
+        case(SPEC.HOLYPRIEST):
+            bonus_stats = getPriestConduit(effectID, player, contentType, itemLevel);
+            break;
+        case(SPEC.RESTODRUID):
+            bonus_stats = getDruidConduit(effectID, player, contentType, itemLevel);
+            break;
+        case(SPEC.RESTOSHAMAN):
+            bonus_stats = getShamanConduit(effectID, player, contentType, itemLevel);
+            break;
+        case(SPEC.HOLYPALADIN):
+            bonus_stats = getPaladinConduit(effectID, player, contentType, itemLevel);
+            break;
+        case(SPEC.MISTWEAVERMONK):
+            bonus_stats = getMonkConduit(effectID, player, contentType, itemLevel);
+            break;
+
+    }
+
+    return bonus_stats;
+
 }

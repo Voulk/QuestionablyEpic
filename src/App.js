@@ -7,7 +7,7 @@ import LegendaryCompare from "./Modules/Legendaries/LegendaryCompare";
 import QuickCompare from "./Modules/QuickCompare/QuickCompare";
 import QEHeader from "./Modules/SetupAndMenus/QEHeader";
 import PlayerChars from "./Modules/Player/PlayerChars";
-import SimpleTabs from "./Modules/Covenant Test/CovenantExploration";
+import SimpleTabs from "./Modules/Covenants/Components/CovenantExploration";
 import { ConfirmLogin, QELogin } from "./Modules/SetupAndMenus/QELogin";
 import { withTranslation } from "react-i18next";
 import i18n from "./i18n";
@@ -297,7 +297,11 @@ class App extends Component {
                 )}
               />
 
-              <Route path="/soulbinds" render={() => <SimpleTabs />} />
+              <Route path="/soulbinds" render={() => 
+                <SimpleTabs 
+                  pl={activePlayer}
+                  contentType={this.state.contentType}
+                />} />
               <Route
                 path="/login"
                 render={() => (
