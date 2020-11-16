@@ -113,7 +113,7 @@ const classList = {
       "Races.Vulpera",
     ],
   },
-  "Discispline Priest": {
+  "Discipline Priest": {
     races: [
       "Races.Draenei",
       "Races.Dwarf",
