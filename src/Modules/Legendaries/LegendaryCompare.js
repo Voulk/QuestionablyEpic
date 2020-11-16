@@ -2,7 +2,6 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import "../SetupAndMenus/QEMainMenu.css";
 import LegendaryObject from "./LegendaryObject";
-import getLegendaryInfo from "../Classes/LegendaryFormulas";
 import "./Legendaries.css";
 import { useTranslation } from "react-i18next";
 import {getEffectValue} from '../Engine/EffectFormulas/EffectEngine'
