@@ -28,6 +28,8 @@ const createLegendary = (legendaryName, container, spec, pl, contentType) => {
 
 const fillLegendaries = (container, spec, pl, contentType) => {
   //container = [];
+
+  // These are used in the legendary snapshot module. 
   let choices = {
     "Restoration Druid": [
       "Vision of Unending Growth",
@@ -47,7 +49,42 @@ const fillLegendaries = (container, spec, pl, contentType) => {
       "Shadowbreaker, Dawn of the Sun",
       "Shock Barrier",
     ],
-    "Holy Priest": ["HolyPriestLegendary1"],
+    "Restoration Shaman": [
+      "Earthen Harmony",
+      "Jonat's Natural Focus",
+      "Primal Tide Core",
+      "Spirit Walker's Tidal Totem",
+      "Ancestral Reminder",
+      "Chains of Devastation",
+      "Deeply Rooted Elements",
+    ],
+    "Discipline Priest": [
+      "Clarity of Mind",
+      "Crystalline Reflection",
+      "Kiss of Death",
+      "The Penitent One",
+      "Cauterizing Shadows",
+      "Measured Contemplation",
+      "Twins of the Sun Priestess",
+      "Vault of Heavens",
+    ],
+    "Mistweaver Monk": [
+      "Ancient Teachings of the Monastery",
+      "Clouded Focus",
+      "Tear of Morning",
+      "Yu'lon's Whisper",
+      "Invoker's Delight",
+    ],
+    "Holy Priest": ["HolyPriestLegendary1",
+      "Divine Image",
+      "Flash Concentration",
+      "Harmonious Apparatus",
+      "X'anshi, Return of Archbishop Benedictus",
+      "Cauterizing Shadows",
+      "Measured Contemplation",
+      "Twins of the Sun Priestess",
+      "Vault of Heavens",
+  ],
   };
 
   // Create legendaries for the given spec.
