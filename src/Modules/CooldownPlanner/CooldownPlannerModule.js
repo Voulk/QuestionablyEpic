@@ -130,7 +130,6 @@ class HolyDiver extends Component {
   };
 
   handleChangeRaidCooldownPlanner = (event) => {
-    console.log(event);
     this.setState({ cooldownPlannerCurrentRaid: event });
   };
 
