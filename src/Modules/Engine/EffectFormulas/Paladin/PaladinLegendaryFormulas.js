@@ -56,12 +56,32 @@ export const getPaladinLegendary = (effectName, pl, contentType) => {
 
         bonus_stats.HPS = Math.round(infusionsPerMinute * wastedInfusionPercentage * (oneHolyLight * (0.3 + 0.5)) / 60)
     }
+    else if (name === "Shadowbreaker, Dawn of the Sun") {
+
+        bonus_stats.HPS = -1;
+    }
+    else if (name === "Of Dusk and Dawn") {
+
+        bonus_stats.HPS = -1;
+    }
+    else if (name === "Vanguards Momentum") {
+
+        bonus_stats.HPS = -1;
+    }
+    else if (name === "The Magistrates Judgment") {
+
+        bonus_stats.HPS = -1;
+    }
+    else if (name === "Maraads Dying Breath") {
+
+        bonus_stats.HPS = -1;
+    }
 
     // Consider building in support for the conduit via SimC grab or something similar.
 
     else {
-        bonus_stats.HPS = -1;
-        bonus_stats.HPS = -1;
+        bonus_stats.HPS = -2;
+        bonus_stats.HPS = -2;
     }
 
     return bonus_stats;

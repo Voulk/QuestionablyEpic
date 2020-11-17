@@ -30,6 +30,7 @@ const fillLegendaries = (container, spec, pl, contentType) => {
   //container = [];
 
   // These are used in the legendary snapshot module. 
+  
   let choices = {
     "Restoration Druid": [
       "Vision of Unending Growth",
@@ -41,7 +42,7 @@ const fillLegendaries = (container, spec, pl, contentType) => {
       "Memory of the Mother Tree",
     ],
     "Holy Paladin": [
-      "From Dusk till Dawn",
+      "Of Dusk and Dawn",
       "Vanguards Momentum",
       "The Magistrates Judgment",
       "Inflorescence of the Sunwell",
@@ -86,6 +87,67 @@ const fillLegendaries = (container, spec, pl, contentType) => {
       "Vault of Heavens",
   ],
   };
+  
+  /*
+ let choices = {
+  "Restoration Druid": [
+    338832, // Vision of Unending Growth
+    338829, // Verdant Infusion
+    338831, // "The Dark Titans Lesson",
+    340059, // "Lycaras Fleeting Glimpse",
+    338657, // "Circle of Life and Death",
+    338608, // "Oath of the Elder Druid",
+    339064, // "Memory of the Mother Tree",
+  ],
+  "Holy Paladin": [
+    337746, // "Of Dusk and Dawn",
+    337638, // "Vanguards Momentum",
+    337681, // "The Magistrates Judgment",
+    337777, // "Inflorescence of the Sunwell",
+    234848, // "Maraads Dying Breath",
+    337812, // "Shadowbreaker, Dawn of the Sun",
+    337825, // "Shock Barrier",
+    337297, // Relentless Inquisitor,
+  ],
+  "Restoration Shaman": [
+    "Earthen Harmony",
+    "Jonat's Natural Focus",
+    "Primal Tide Core",
+    "Spirit Walker's Tidal Totem",
+    "Ancestral Reminder",
+    "Chains of Devastation",
+    "Deeply Rooted Elements",
+  ],
+  "Discipline Priest": [
+    "Clarity of Mind",
+    "Crystalline Reflection",
+    "Kiss of Death",
+    "The Penitent One",
+    "Cauterizing Shadows",
+    "Measured Contemplation",
+    "Twins of the Sun Priestess",
+    "Vault of Heavens",
+  ],
+  "Mistweaver Monk": [
+    "Ancient Teachings of the Monastery",
+    "Clouded Focus",
+    "Tear of Morning",
+    "Yu'lon's Whisper",
+    "Invoker's Delight",
+  ],
+  "Holy Priest": ["HolyPriestLegendary1",
+    "Divine Image",
+    "Flash Concentration",
+    "Harmonious Apparatus",
+    "X'anshi, Return of Archbishop Benedictus",
+    "Cauterizing Shadows",
+    "Measured Contemplation",
+    "Twins of the Sun Priestess",
+    "Vault of Heavens",
+  ],
+  };
+
+  */
 
   // Create legendaries for the given spec.
   choices[spec].map((itemName, index) =>
@@ -100,6 +162,7 @@ const sortLegendaries = (container) => {
 
 class Legendary {
   constructor(name) {
+    this.id = 0;
     this.name = name;
     this.description = "Legendary Description";
     this.image = 0;
