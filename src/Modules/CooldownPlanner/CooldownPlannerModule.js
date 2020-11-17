@@ -122,9 +122,11 @@ class HolyDiver extends Component {
     });
 
     let data = ls.get(info[8] + "." + info[5] + ".1");
-    this.setState({
-      cooldownPlannerCurrentData: data,
-    });
+    if (data !== null) {
+      this.setState({
+        cooldownPlannerCurrentData: data,
+      });
+    }
   };
 
   handleChangeRaidCooldownPlanner = (event) => {
