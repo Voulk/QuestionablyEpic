@@ -190,7 +190,7 @@ export default function CooldownPlanner(props) {
     {
       title: t("Name"),
       field: "name",
-      width: "10%",
+      width: "7%",
       cellStyle: {
         whiteSpace: "nowrap",
         paddingLeft: 8,
@@ -268,7 +268,7 @@ export default function CooldownPlanner(props) {
     {
       title: t("Cooldown"),
       field: "Cooldown",
-      width: "15%",
+      width: "12%",
       cellStyle: {
         whiteSpace: "nowrap",
       },
@@ -306,12 +306,25 @@ export default function CooldownPlanner(props) {
     {
       title: t("CooldownPlannerTableLabels.CastTimeLabel"),
       field: "time",
-      width: "4%",
+      width: "6%",
       cellStyle: {
         whiteSpace: "nowrap",
       },
       editComponent: (props) => (
         <TextField
+          error={
+            RegExp("^([01]?[0-9]|2[0-3]):[0-5][0-9]$").test(props.value)
+              ? false
+              : true
+          }
+          inputProps={{
+            pattern: "^([01]?[0-9]|2[0-3]):[0-5][0-9]$",
+          }}
+          helperText={
+            RegExp("^([01]?[0-9]|2[0-3]):[0-5][0-9]$").test(props.value)
+              ? ""
+              : "mm:ss format"
+          }
           size="small"
           variant="outlined"
           id="standard-basic"
@@ -320,7 +333,11 @@ export default function CooldownPlanner(props) {
           value={props.value}
           style={{ whiteSpace: "nowrap", width: "100%", marginTop: 6 }}
           onChange={(e) => props.onChange(e.target.value)}
-        />
+        >
+          {console.log(
+            RegExp("^([01]?[0-9]|2[0-3]):[0-5][0-9]$").test(props.value)
+          )}
+        </TextField>
       ),
     },
     {
