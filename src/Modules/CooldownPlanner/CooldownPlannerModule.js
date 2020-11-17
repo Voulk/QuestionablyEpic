@@ -416,10 +416,7 @@ class HolyDiver extends Component {
                   spacing={1}
                 >
                   <Grid item xs={12} sm={12} md={12} lg={4} xl={4} padding={1}>
-                    <CooldownTimeline
-                      data={this.state.Updateddatacasts}
-                      curLang={this.props.curLang}
-                    />
+                    <CooldownTimeline data={this.state.Updateddatacasts} />
                   </Grid>
                   <Grid item xs={12} sm={12} md={12} lg={4} xl={4} padding={1}>
                     <Paper style={{ padding: 8, marginBottom: 8 }}>
@@ -505,13 +502,10 @@ class HolyDiver extends Component {
                 />
               </Grid>
               <Grid item xs={12} sm={12} md={12} lg={7} xl={7} padding={1}>
-                <HealTeam curLang={this.props.curLang} />
+                <HealTeam />
               </Grid>
               <Grid item xs={12} sm={12} md={12} lg={5} xl={5} padding={1}>
-                <ERTTable
-                  data={this.state.ertList}
-                  curLang={this.props.curLang}
-                />
+                <ERTTable data={this.state.ertList} />
               </Grid>
             </Grid>
           </Grid>

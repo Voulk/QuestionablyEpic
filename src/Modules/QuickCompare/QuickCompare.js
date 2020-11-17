@@ -101,7 +101,7 @@ class Legendary {
 // These are value : label pairs that automatically pull the translated version of the slot name.
 // TODO: Add the remaining slots.
 function getSlots() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   let slots = [
     { value: "Head", label: t("slotNames.head") },
     { value: "Neck", label: t("slotNames.neck") },
@@ -122,7 +122,8 @@ function getSlots() {
 }
 
 export default function QuickCompare(props) {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const currentLanguage = i18n.language;
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
 
@@ -191,7 +192,10 @@ export default function QuickCompare(props) {
 
         // If item is valid, add to our selection.
         //console.log(item.name + item.dropLoc);
-        itemDropdown.push({ value: item.id, label: item.names[props.curLang] });
+        itemDropdown.push({
+          value: item.id,
+          label: item.names[currentLanguage],
+        });
       }
     }
 
@@ -491,7 +495,7 @@ export default function QuickCompare(props) {
 
         <Grid container item spacing={1}>
           {itemList.map((item, index) => (
-            <ItemCard key={index} item={item} lang={props.curLang} />
+            <ItemCard key={index} item={item} />
           ))}
         </Grid>
       </Grid>

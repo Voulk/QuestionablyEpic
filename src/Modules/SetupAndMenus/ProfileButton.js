@@ -96,11 +96,7 @@ export default function ProfileSelector(props) {
             open={opendialog}
           >
             <DialogContent>
-              <QELogin
-                langSet={props.langSet}
-                curLang={props.lang}
-                setRegion={props.setRegion}
-              />
+              <QELogin setRegion={props.setRegion} />
             </DialogContent>
           </Dialog>
         </div>
