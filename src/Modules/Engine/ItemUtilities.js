@@ -133,10 +133,6 @@ export function getItemIcon(id) {
     return item.id === id;
   });
 
-  //console.log(JSON.stringify(temp) + temp.length)
-  //console.log(temp[0].icon)
-
-  //return("");
   if ((temp.length > 0) && ("icon" in temp[0]))
     return process.env.PUBLIC_URL + "/Images/Icons/" + temp[0].icon + ".jpg";
   else return process.env.PUBLIC_URL + "/Images/Icons/missing.jpg";

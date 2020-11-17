@@ -44,7 +44,11 @@ class LogImport extends Component {
   render(props) {
     const { fights } = this.state;
     if (this.state.reportid === null) {
-      return <MenuItem key={99} value="Fight">"No Report Loaded"</MenuItem>;
+      return (
+        <MenuItem key={99} value="Fight">
+          "No Report Loaded"
+        </MenuItem>
+      );
     } else {
       let menuitems = fights
         .filter((name) => name.boss !== 0)
@@ -62,7 +66,8 @@ class LogImport extends Component {
                 this.killwipe(fight.kill),
                 fight.boss,
                 fight.difficulty,
-                fight.keystoneLevel
+                fight.keystoneLevel,
+                fight.zoneID,
               ]);
               this.props.close();
               this.props.update(fight.start_time, fight.end_time);
@@ -81,7 +86,7 @@ class LogImport extends Component {
               "%"}
           </MenuItem>
         ))
-        .map((key,i) => [key, <Divider key={i + 200} />]);
+        .map((key, i) => [key, <Divider key={i + 200} />]);
       return menuitems;
     }
   }

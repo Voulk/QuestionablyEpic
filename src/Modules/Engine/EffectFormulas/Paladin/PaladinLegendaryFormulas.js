@@ -1,7 +1,8 @@
 
-const getPaladinLegendary = (legendary, pl, contentType) => {
+export const getPaladinLegendary = (effectName, pl, contentType) => {
     let result = 0.0;
-    let name = legendary.name;
+    let bonus_stats = {};
+    let name = effectName;
 
     /*
     The rejuv spreading legendary can best be expressed as a percentage increase to our rejuv healing. 
@@ -17,7 +18,7 @@ const getPaladinLegendary = (legendary, pl, contentType) => {
 
         // Return result.
         */
-        legendary.expectedHPS = 9999;
+       bonus_stats.HPS = 5
 
     }
 
@@ -29,12 +30,12 @@ const getPaladinLegendary = (legendary, pl, contentType) => {
     */
     else if (name === "Shock Barrier") {
         // Do Math
-        legendary.expectedHPS = -1;
+        bonus_stats.HPS = 5;
     }
 
     else if (name === "The Dark Titans Lesson") {
         // Do Math
-        legendary.expectedHPS = 7;
+        bonus_stats.HPS = 5;
     }
 
     // Consider building in support for the conduit via SimC grab or something similar.
@@ -44,13 +45,15 @@ const getPaladinLegendary = (legendary, pl, contentType) => {
         let oneWildGrowth =  0.91 * 6 * pl.getInt() * pl.getSecondaryMultiplier(true) * (1 - expectedOverhealing);
 
 
-        legendary.expectedHPS = Math.round(oneWildGrowth * (60 / 45) / 60);
+        bonus_stats.HPS  = Math.round(oneWildGrowth * (60 / 45) / 60);
     }
 
     else {
-        legendary.expectedHPS = 0;
-        legendary.expectedDPS = 0;
+        bonus_stats.HPS = -1;
+        bonus_stats.HPS = -1;
     }
+
+    return bonus_stats;
     
 
 

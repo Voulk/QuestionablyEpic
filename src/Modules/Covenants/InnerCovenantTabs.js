@@ -18,7 +18,7 @@ function TabPanel(props) {
       {...other}
     >
       {value === index && (
-        <Box p={3}>
+        <Box p={0}>
           <Typography>{children}</Typography>
         </Box>
       )}
@@ -44,7 +44,7 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     backgroundColor: theme.palette.background.paper,
     display: "flex",
-    height: 224,
+    height: 624,
   },
   tabs: {
     borderRight: `1px solid ${theme.palette.divider}`,
@@ -69,30 +69,35 @@ export default function InnerVerticalTabs(props) {
         aria-label="Vertical tabs example"
         className={classes.tabs}
       >
-        <Tab label={props.soulbind1} {...a11yProps(0)} />
-        <Tab label={props.soulbind2} {...a11yProps(1)} />
-        <Tab label={props.soulbind3} {...a11yProps(2)} />
+        <Tab
+          style={{ color: "white" }}
+          icon={props.soulbind1Portrait}
+          label={props.soulbind1}
+          {...a11yProps(0)}
+        />
+        <Tab
+          style={{ color: "white" }}
+          icon={props.soulbind2Portrait}
+          label={props.soulbind2}
+          {...a11yProps(1)}
+        />
+        <Tab
+          style={{ color: "white" }}
+          icon={props.soulbind3Portrait}
+          label={props.soulbind3}
+          {...a11yProps(2)}
+        />
       </Tabs>
+
+      {/* // need to figure out how to pass "pelagos" as the index or a value as a "soulbind1 prop" otherwise each 1st soulbind will show the pelagos tree */}
       <TabPanel value={value} index={0}>
-        Item One
+        {buildSoulbind("Pelagos")}
       </TabPanel>
       <TabPanel value={value} index={1}>
         Item Two
       </TabPanel>
       <TabPanel value={value} index={2}>
         Item Three
-      </TabPanel>
-      <TabPanel value={value} index={3}>
-        Item Four
-      </TabPanel>
-      <TabPanel value={value} index={4}>
-        Item Five
-      </TabPanel>
-      <TabPanel value={value} index={5}>
-        Item Six
-      </TabPanel>
-      <TabPanel value={value} index={6}>
-        Item Seven
       </TabPanel>
     </div>
   );

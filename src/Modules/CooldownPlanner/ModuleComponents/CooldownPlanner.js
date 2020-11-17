@@ -157,25 +157,36 @@ export default function CooldownPlanner(props) {
   const currentLanguage = i18n.language;
   const { useState } = React;
   const rl = raidList;
-  const [data, setData] = useState([]);
-  const [raid, setRaid] = useState("");
-  const [boss, setBoss] = useState("");
+  const setData = props.dataUpdateHandler;
+  const currentBoss = props.currentBoss;
+  const currentRaid = props.currentRaid;
+  const currentData = props.data;
   const [plan, setPlan] = useState("");
-
-  const handleChangeRaid = (event) => {
-    setRaid(event.target.value);
-  };
-  const handleChangeBoss = (event) => {
-    setBoss(event.target.value);
-    if (ls.get(raid + "." + boss + ".1") === null) {
-      ls.set(raid + "." + boss + ".1", []);
-    }
-    setData(ls.get(raid + "." + event.target.value + ".1"));
-  };
+  const handleChangeRaid = props.raidHandler;
+  const handleChangeBoss = props.bossHandler;
   const handleChangePlan = (event) => {
     setPlan(event.target.value);
   };
-  let wowClass = 0;
+
+  const timeCheck = (rowData) => {
+    let time = moment(rowData.time, "mm:ss")
+      .add(
+        healerCooldownsDetailed
+          .filter((obj) => {
+            return obj.guid === rowData.Cooldown;
+          })
+          .map((obj) => obj.cooldown)
+          .toString(),
+        "s"
+      )
+      .format("mm:ss");
+
+    if (time === "Invalid date") {
+      return "Invalid Time";
+    }
+    return time;
+  };
+
   let columns = [
     {
       title: t("Name"),
@@ -204,7 +215,18 @@ export default function CooldownPlanner(props) {
               label={t("Name")}
               labelId="HealerSelector"
               onChange={(e) => {
-                props.onChange(e.target.value);
+                let data = { ...props.rowData };
+                data.name = e.target.value;
+                data.class = ls
+                  .get("healerInfo")
+                  .filter((obj) => {
+                    return obj.name === e.target.value;
+                  })
+                  .map((obj) => obj.class)
+                  .toString();
+                data.Cooldown = "NoCD";
+                props.onRowDataChange(data);
+                // props.onChange(e.target.value);
               }}
               MenuProps={menuStyle}
             >
@@ -224,40 +246,25 @@ export default function CooldownPlanner(props) {
     {
       title: t("Class"),
       field: "class",
-      width: "15%",
+      width: "10%",
       cellStyle: {
         whiteSpace: "nowrap",
       },
       render: (rowData) => (
         <div style={{ color: classColoursJS(rowData.class) }}>
-          {classIcons(rowData.class, 20)}
+          {rowData.class === undefined ? "" : classIcons(rowData.class, 20)}
           {t("CooldownPlannerClasses." + rowData.class)}
         </div>
       ),
-      editComponent: (props) => (
-        <ThemeProvider theme={themeCooldownTable}>
-          <FormControl
-            className={classes.formControl}
-            variant="outlined"
-            size="small"
-            style={{ marginTop: 6 }}
-          >
-            <InputLabel id="ClassSelector">{t("Class")}</InputLabel>
-            <Select
-              value={props.value}
-              labelId="ClassSelector"
-              label={t("Class")}
-              onChange={(e) => {
-                props.onChange(e.target.value);
-                wowClass = e.target.value;
-              }}
-              MenuProps={menuStyle}
-            >
-              {classMenus}
-            </Select>
-          </FormControl>
-        </ThemeProvider>
-      ),
+      editComponent: (props, rowData) => {
+        let data = { ...props.rowData };
+        return (
+          <div style={{ color: classColoursJS(data.class) }}>
+            {data.class === undefined ? "" : classIcons(data.class, 20)}
+            {t("CooldownPlannerClasses." + data.class)}
+          </div>
+        );
+      },
     },
     {
       title: t("Cooldown"),
@@ -272,27 +279,30 @@ export default function CooldownPlanner(props) {
           {t("CooldownPlannerClassAbilities." + rowData.Cooldown)}
         </div>
       ),
-      editComponent: (props) => (
-        <FormControl
-          className={classes.formControl}
-          variant="outlined"
-          size="small"
-          style={{ marginTop: 6 }}
-        >
-          <InputLabel id="HealerAbilitySelector">{t("Cooldown")}</InputLabel>
-          <Select
-            value={props.value}
-            labelId="HealerAbilitySelector"
-            label={t("Cooldown")}
-            onChange={(e) => {
-              props.onChange(e.target.value);
-            }}
-            MenuProps={menuStyle}
+      editComponent: (props, rowData) => {
+        let data = { ...props.rowData };
+        return (
+          <FormControl
+            className={classes.formControl}
+            variant="outlined"
+            size="small"
+            style={{ marginTop: 6 }}
           >
-            {ClassCooldownMenuItems(wowClass) || []}
-          </Select>
-        </FormControl>
-      ),
+            <InputLabel id="HealerAbilitySelector">{t("Cooldown")}</InputLabel>
+            <Select
+              value={rowData.Cooldown || props.value}
+              labelId="HealerAbilitySelector"
+              label={t("Cooldown")}
+              onChange={(e) => {
+                props.onChange(e.target.value);
+              }}
+              MenuProps={menuStyle}
+            >
+              {ClassCooldownMenuItems(data.class) || []}
+            </Select>
+          </FormControl>
+        );
+      },
     },
     {
       title: t("CooldownPlannerTableLabels.CastTimeLabel"),
@@ -307,7 +317,7 @@ export default function CooldownPlanner(props) {
           variant="outlined"
           id="standard-basic"
           label={t("CooldownPlannerTableLabels.CastTimeLabel")}
-          placeholder="Format: mm:ss"
+          placeholder="mm:ss"
           value={props.value}
           style={{ whiteSpace: "nowrap", width: "100%", marginTop: 6 }}
           onChange={(e) => props.onChange(e.target.value)}
@@ -320,21 +330,7 @@ export default function CooldownPlanner(props) {
       cellStyle: {
         whiteSpace: "nowrap",
       },
-      render: (rowData) => (
-        <div>
-          {moment(rowData.time, "mm:ss")
-            .add(
-              healerCooldownsDetailed
-                .filter((obj) => {
-                  return obj.guid === rowData.Cooldown;
-                })
-                .map((obj) => obj.cooldown)
-                .toString(),
-              "s"
-            )
-            .format("mm:ss")}
-        </div>
-      ),
+      render: (rowData) => <div>{timeCheck(rowData)}</div>,
     },
     {
       title: t("CooldownPlannerTableLabels.BossAbilityLabel"),
@@ -374,7 +370,8 @@ export default function CooldownPlanner(props) {
               {bossAbilities
                 .filter((obj) => {
                   return (
-                    obj.bossID === boss && obj.cooldownPlannerActive === true
+                    obj.bossID === currentBoss &&
+                    obj.cooldownPlannerActive === true
                   );
                 })
                 .map((key, i) => (
@@ -424,8 +421,8 @@ export default function CooldownPlanner(props) {
   });
 
   useEffect(() => {
-    props.update(data);
-  }, [data]);
+    props.update(currentData);
+  }, [currentData]);
 
   let curLang = () => {
     if (currentLanguage === "en") {
@@ -439,24 +436,22 @@ export default function CooldownPlanner(props) {
     }
   };
 
-  let updateStorage = (props, boss) => {
-    if (ls.get(raid + "." + boss + ".1") === null) {
-      ls.set(raid + "." + boss + ".1", []);
+  let updateStorage = (props) => {
+    if (ls.get(currentRaid + "." + currentBoss + ".1") === null) {
+      ls.set(currentRaid + "." + currentBoss + ".1", []);
     }
     ls.set(
-      raid + "." + boss + ".1",
+      currentRaid + "." + currentBoss + ".1",
       props.sort((a, b) => (a.time > b.time ? 1 : -1))
     );
   };
-
-  console.log(raid);
 
   return (
     <ThemeProvider theme={themeCooldownTable}>
       <MaterialTable
         icons={tableIcons}
         columns={columns}
-        data={data}
+        data={currentData}
         style={{
           padding: 10,
         }}
@@ -491,21 +486,25 @@ export default function CooldownPlanner(props) {
         components={{
           Container: (props) => <Paper {...props} elevation={0} />,
           Body: (props) =>
-            boss === "" ? null : (
+            currentBoss === "" ? null : (
               <Grow
-                in={boss === "" ? false : true}
+                in={currentBoss === "" ? false : true}
                 style={{ transformOrigin: "0 0 0" }}
-                {...((boss === "" ? false : true) ? { timeout: "auto" } : {})}
+                {...((currentBoss === "" ? false : true)
+                  ? { timeout: "auto" }
+                  : {})}
               >
                 <MTableBody {...props} />
               </Grow>
             ),
           Header: (props) =>
-            boss === "" ? null : (
+            currentBoss === "" ? null : (
               <Grow
-                in={boss === "" ? false : true}
+                in={currentBoss === "" ? false : true}
                 style={{ transformOrigin: "0 0 0" }}
-                {...((boss === "" ? false : true) ? { timeout: "auto" } : {})}
+                {...((currentBoss === "" ? false : true)
+                  ? { timeout: "auto" }
+                  : {})}
               >
                 <MTableHeader {...props} />
               </Grow>
@@ -518,7 +517,7 @@ export default function CooldownPlanner(props) {
                 direction="row"
                 justify="space-between"
                 style={{
-                  marginBottom: (boss === "" ? false : true) ? 5 : 0,
+                  marginBottom: (currentBoss === "" ? false : true) ? 5 : 0,
                 }}
               >
                 <Grid item container spacing={1} xs={7} alignItems="center">
@@ -533,8 +532,8 @@ export default function CooldownPlanner(props) {
                       </InputLabel>
                       <Select
                         labelId="RaidSelector"
-                        value={raid}
-                        onChange={handleChangeRaid}
+                        value={currentRaid}
+                        onChange={(e) => handleChangeRaid(e.target.value)}
                         label={t(
                           "CooldownPlannerTableLabels.RaidSelectorLabel"
                         )}
@@ -555,15 +554,15 @@ export default function CooldownPlanner(props) {
                       style={{ minWidth: 200 }}
                       variant="outlined"
                       size="small"
-                      disabled={raid === "" ? true : false}
+                      disabled={currentRaid === "" ? true : false}
                     >
                       <InputLabel id="BossSelector">
                         {t("CooldownPlannerTableLabels.BossSelectorLabel")}
                       </InputLabel>
                       <Select
                         labelId="BossSelector"
-                        value={boss}
-                        onChange={handleChangeBoss}
+                        value={currentBoss}
+                        onChange={(e) => handleChangeBoss(e.target.value)}
                         label={t(
                           "CooldownPlannerTableLabels.BossSelectorLabel"
                         )}
@@ -571,7 +570,7 @@ export default function CooldownPlanner(props) {
                       >
                         {bossList
                           .filter((obj) => {
-                            return obj.zoneID === raid;
+                            return obj.zoneID === currentRaid;
                           })
                           .map((key) => (
                             <MenuItem value={key.id}>
@@ -607,7 +606,7 @@ export default function CooldownPlanner(props) {
                   </Grid> */}
                 </Grid>
                 <Grid item xs="auto">
-                  {boss === "" ? null : (
+                  {currentBoss === "" ? null : (
                     <ThemeProvider theme={SearchFieldOverride}>
                       <MTableToolbar {...props} />
                     </ThemeProvider>
@@ -622,35 +621,37 @@ export default function CooldownPlanner(props) {
             new Promise((resolve, reject) => {
               setTimeout(() => {
                 setData(
-                  [...data, newData].sort((a, b) => (a.time > b.time ? 1 : -1))
+                  [...currentData, newData].sort((a, b) =>
+                    a.time > b.time ? 1 : -1
+                  )
                 );
                 resolve();
-                updateStorage([...data, newData], boss);
+                updateStorage([...currentData, newData], currentBoss);
               }, 1000);
             }),
           onRowUpdate: (newData, oldData) =>
             new Promise((resolve, reject) => {
               setTimeout(() => {
-                const dataUpdate = [...data];
+                const dataUpdate = [...currentData];
                 const index = oldData.tableData.id;
                 dataUpdate[index] = newData;
                 setData(
                   [...dataUpdate].sort((a, b) => (a.time > b.time ? 1 : -1))
                 );
-                updateStorage([...dataUpdate], boss);
+                updateStorage([...dataUpdate], currentBoss);
                 resolve();
               }, 1000);
             }),
           onRowDelete: (oldData) =>
             new Promise((resolve, reject) => {
               setTimeout(() => {
-                const dataDelete = [...data];
+                const dataDelete = [...currentData];
                 const index = oldData.tableData.id;
                 dataDelete.splice(index, 1);
                 setData(
                   [...dataDelete].sort((a, b) => (a.time > b.time ? 1 : -1))
                 );
-                updateStorage([...dataDelete], boss);
+                updateStorage([...dataDelete], currentBoss);
                 resolve();
               }, 1000);
             }),
