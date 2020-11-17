@@ -20,7 +20,7 @@ export default function ClassCooldownMenuItems(props) {
   // Paladin Cooldowns
   if (props === "HolyPaladin") {
     return [
-      <MenuItem value={31821}>
+      <MenuItem value={31821} key={1}>
         <a data-wowhead="spell=31821">
           <img
             style={{
@@ -38,7 +38,7 @@ export default function ClassCooldownMenuItems(props) {
         </Translation>
       </MenuItem>,
       <Divider />,
-      <MenuItem value={31884}>
+      <MenuItem value={31884} key={2}>
         <a data-wowhead="spell=31884">
           <img
             style={{
@@ -60,7 +60,7 @@ export default function ClassCooldownMenuItems(props) {
   // Restoration Druid
   if (props === "RestorationDruid") {
     return [
-      <MenuItem value={740}>
+      <MenuItem value={740} key={3}>
         <a data-wowhead="spell=740">
           <img
             style={{
@@ -78,7 +78,7 @@ export default function ClassCooldownMenuItems(props) {
         </Translation>
       </MenuItem>,
       <Divider />,
-      <MenuItem value={33891}>
+      <MenuItem value={33891} key={4}>
         <a data-wowhead="spell=33891">
           <img
             style={{
@@ -100,7 +100,7 @@ export default function ClassCooldownMenuItems(props) {
   // Holy Priest
   if (props === "HolyPriest") {
     return [
-      <MenuItem value={265202}>
+      <MenuItem value={265202} key={5}>
         <a data-wowhead="spell=265202">
           <img
             style={{
@@ -118,7 +118,7 @@ export default function ClassCooldownMenuItems(props) {
         </Translation>
       </MenuItem>,
       <Divider />,
-      <MenuItem value={64843}>
+      <MenuItem value={64843} key={6}>
         <a data-wowhead="spell=64843">
           <img
             style={{
@@ -140,7 +140,7 @@ export default function ClassCooldownMenuItems(props) {
   // Discipline Priest
   if (props === "DisciplinePriest") {
     return [
-      <MenuItem value={62618}>
+      <MenuItem value={62618} key={7}>
         <a data-wowhead="spell=62618">
           <img
             style={{
@@ -158,7 +158,7 @@ export default function ClassCooldownMenuItems(props) {
         </Translation>
       </MenuItem>,
       <Divider />,
-      <MenuItem value={246287}>
+      <MenuItem value={246287} key={8}>
         <a data-wowhead="spell=246287">
           <img
             style={{
@@ -180,7 +180,7 @@ export default function ClassCooldownMenuItems(props) {
   // Restoration Shaman
   if (props === "RestorationShaman") {
     return [
-      <MenuItem value={108280}>
+      <MenuItem value={108280} key={9}>
         <a data-wowhead="spell=108280">
           <img
             style={{
@@ -198,7 +198,7 @@ export default function ClassCooldownMenuItems(props) {
         </Translation>
       </MenuItem>,
       <Divider />,
-      <MenuItem value={98008}>
+      <MenuItem value={98008} key={10}>
         <a data-wowhead="spell=98008">
           <img
             style={{
@@ -220,7 +220,7 @@ export default function ClassCooldownMenuItems(props) {
   // Mistweaver Monk
   if (props === "MistweaverMonk") {
     return [
-      <MenuItem value={115310}>
+      <MenuItem value={115310} key={11}>
         <a data-wowhead="spell=115310">
           <img
             style={{
@@ -242,7 +242,7 @@ export default function ClassCooldownMenuItems(props) {
 
   if (props === "HavocDemonHunter") {
     return [
-      <MenuItem value={196718}>
+      <MenuItem value={196718} key={12}>
         <a data-wowhead="spell=196718">
           <img
             style={{
@@ -264,7 +264,7 @@ export default function ClassCooldownMenuItems(props) {
 
   if (props === "Warrior") {
     return [
-      <MenuItem value={97462}>
+      <MenuItem value={97462} key={13}>
         <a data-wowhead="spell=97462">
           <img
             style={{

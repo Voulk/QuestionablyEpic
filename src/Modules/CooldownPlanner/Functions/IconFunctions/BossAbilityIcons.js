@@ -16,6 +16,9 @@ export default function bossAbilityIcons(props) {
     .map((obj) => obj.ability)
     .toString();
 
+  if (props === undefined) {
+    return null;
+  }
   return (
     <img
       style={{

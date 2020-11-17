@@ -333,11 +333,7 @@ export default function CooldownPlanner(props) {
           value={props.value}
           style={{ whiteSpace: "nowrap", width: "100%", marginTop: 6 }}
           onChange={(e) => props.onChange(e.target.value)}
-        >
-          {console.log(
-            RegExp("^([01]?[0-9]|2[0-3]):[0-5][0-9]$").test(props.value)
-          )}
-        </TextField>
+        />
       ),
     },
     {
