@@ -313,23 +313,19 @@ export default function CooldownPlanner(props) {
       editComponent: (props) => (
         <TextField
           error={
-            RegExp("^([01]?[0-9]|2[0-3]):[0-5][0-9]$").test(props.value)
+            RegExp("^([01]?[0-9]|2[0-3]):[0-5][0-9]$").test(props.value) ||
+            props.value === undefined
               ? false
               : true
           }
           inputProps={{
             pattern: "^([01]?[0-9]|2[0-3]):[0-5][0-9]$",
           }}
-          helperText={
-            RegExp("^([01]?[0-9]|2[0-3]):[0-5][0-9]$").test(props.value)
-              ? ""
-              : "mm:ss format"
-          }
           size="small"
           variant="outlined"
           id="standard-basic"
           label={t("CooldownPlannerTableLabels.CastTimeLabel")}
-          placeholder="mm:ss"
+          placeholder="00:00"
           value={props.value}
           style={{ whiteSpace: "nowrap", width: "100%", marginTop: 6 }}
           onChange={(e) => props.onChange(e.target.value)}
