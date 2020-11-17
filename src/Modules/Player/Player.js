@@ -65,6 +65,7 @@ class Player {
         versatility: 200,
         hps: 6000,
         rawhps: 9420,
+        fightLength: 180,
         
     }
    
@@ -219,6 +220,11 @@ class Player {
     getSpellCasts = (spellName, contentType) => {
         
         return this.castPattern[contentType][spellName][SPELL_CASTS_LOC];
+    }
+
+    getSpellCastsPerMin = (spellName, contentType) => {
+        
+        return this.castPattern[contentType][spellName][SPELL_CASTS_LOC] / this.activeStats.fightLength * 60;
     }
 
     getSpellHealingPerc = (spellName, contentType) => {

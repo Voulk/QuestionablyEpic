@@ -30,27 +30,58 @@ export const getPaladinLegendary = (effectName, pl, contentType) => {
     */
     else if (name === "Shock Barrier") {
         // Do Math
-        bonus_stats.HPS = 5;
+       
+        let holyShockIncrease = 0.2;
+        let wastedShield = 0.12;
+        //console.log("HSI: " + holyShockIncrease);
+
+        bonus_stats.HPS = Math.round(holyShockIncrease * 3 * (1 - wastedShield) * pl.getSpellHPS('Holy Shock', contentType));
     }
 
-    else if (name === "The Dark Titans Lesson") {
+    else if (name === "Inflorescence of the Sunwell") {
         // Do Math
-        bonus_stats.HPS = 5;
+        let infusionsPerMinute = pl.getSpellCastsPerMin('Holy Shock', contentType) * pl.getStatPerc('Crit') + 0.3;
+        let wastedInfusionPercentage = 0.2;
+        let oneHolyLight = pl.getSingleCast('Holy Light', contentType);
+        
+        // Resplendent tests
+        /*
+        let trait_bonus =  0.036 + 5 * 0.004;
+        let targets = 4.8;
+        let expectedOverhealing = 0.3;
+
+        oneHolyLight = oneHolyLight + oneHolyLight * (trait_bonus * targets * (1 - expectedOverhealing))
+        */
+        //
+
+        bonus_stats.HPS = Math.round(infusionsPerMinute * wastedInfusionPercentage * (oneHolyLight * (0.3 + 0.5)) / 60)
+    }
+    else if (name === "Shadowbreaker, Dawn of the Sun") {
+
+        bonus_stats.HPS = -1;
+    }
+    else if (name === "Of Dusk and Dawn") {
+
+        bonus_stats.HPS = -1;
+    }
+    else if (name === "Vanguards Momentum") {
+
+        bonus_stats.HPS = -1;
+    }
+    else if (name === "The Magistrates Judgment") {
+
+        bonus_stats.HPS = -1;
+    }
+    else if (name === "Maraads Dying Breath") {
+
+        bonus_stats.HPS = -1;
     }
 
     // Consider building in support for the conduit via SimC grab or something similar.
-    
-    else if (name === "Lycaras Fleeting Glimpse") {
-        let expectedOverhealing = 0.2; // TODO: Placeholder. 
-        let oneWildGrowth =  0.91 * 6 * pl.getInt() * pl.getSecondaryMultiplier(true) * (1 - expectedOverhealing);
-
-
-        bonus_stats.HPS  = Math.round(oneWildGrowth * (60 / 45) / 60);
-    }
 
     else {
-        bonus_stats.HPS = -1;
-        bonus_stats.HPS = -1;
+        bonus_stats.HPS = -2;
+        bonus_stats.HPS = -2;
     }
 
     return bonus_stats;
