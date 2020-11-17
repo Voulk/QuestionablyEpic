@@ -166,6 +166,26 @@ export default function CooldownPlanner(props) {
   const handleChangePlan = (event) => {
     setPlan(event.target.value);
   };
+
+  const timeCheck = (rowData) => {
+    let time = moment(rowData.time, "mm:ss")
+      .add(
+        healerCooldownsDetailed
+          .filter((obj) => {
+            return obj.guid === rowData.Cooldown;
+          })
+          .map((obj) => obj.cooldown)
+          .toString(),
+        "s"
+      )
+      .format("mm:ss");
+
+    if (time === "Invalid date") {
+      return "Invalid Time";
+    }
+    return time;
+  };
+
   let columns = [
     {
       title: t("Name"),
@@ -225,13 +245,13 @@ export default function CooldownPlanner(props) {
     {
       title: t("Class"),
       field: "class",
-      width: "15%",
+      width: "10%",
       cellStyle: {
         whiteSpace: "nowrap",
       },
       render: (rowData) => (
         <div style={{ color: classColoursJS(rowData.class) }}>
-          {classIcons(rowData.class, 20)}
+          {rowData.class === undefined ? "" : classIcons(rowData.class, 20)}
           {t("CooldownPlannerClasses." + rowData.class)}
         </div>
       ),
@@ -239,7 +259,7 @@ export default function CooldownPlanner(props) {
         let data = { ...props.rowData };
         return (
           <div style={{ color: classColoursJS(data.class) }}>
-            {classIcons(data.class, 20)}
+            {data.class === undefined ? "" : classIcons(data.class, 20)}
             {t("CooldownPlannerClasses." + data.class)}
           </div>
         );
@@ -296,7 +316,7 @@ export default function CooldownPlanner(props) {
           variant="outlined"
           id="standard-basic"
           label={t("CooldownPlannerTableLabels.CastTimeLabel")}
-          placeholder="Format: mm:ss"
+          placeholder="mm:ss"
           value={props.value}
           style={{ whiteSpace: "nowrap", width: "100%", marginTop: 6 }}
           onChange={(e) => props.onChange(e.target.value)}
@@ -309,21 +329,7 @@ export default function CooldownPlanner(props) {
       cellStyle: {
         whiteSpace: "nowrap",
       },
-      render: (rowData) => (
-        <div>
-          {moment(rowData.time, "mm:ss")
-            .add(
-              healerCooldownsDetailed
-                .filter((obj) => {
-                  return obj.guid === rowData.Cooldown;
-                })
-                .map((obj) => obj.cooldown)
-                .toString(),
-              "s"
-            )
-            .format("mm:ss")}
-        </div>
-      ),
+      render: (rowData) => <div>{timeCheck(rowData)}</div>,
     },
     {
       title: t("CooldownPlannerTableLabels.BossAbilityLabel"),
