@@ -107,6 +107,12 @@ export default function SoulbindNode(props) {
     (trait.active ? "active" : "") +
     ".png";
 
+  const conduitTag = 
+    (type.includes("Potency") ? "/Images/Interface/PotencyConduitImg.png" :
+    (type.includes("Endurance Conduit") ? "/Images/Interface/EnduranceConduitImg.png" :
+    (type.includes("Finesse Conduit") ? "/Images/Interface/FinesseConduitImg.png" :
+    '')));
+
   let stat_bonus = trait.bonus_stats;
   let position = {
     row: trait.position[0],
@@ -132,6 +138,7 @@ export default function SoulbindNode(props) {
       }}
     >
       <a data-wowhead={"spell=" + trait.id}>
+
         <img
           onClick={handleClick}
           width={48}
@@ -144,6 +151,21 @@ export default function SoulbindNode(props) {
             top: getRowPos(position.column, position.row),
           }}
         />
+        {conduitTag !== '' ? 
+          <img
+          width={18}
+          height={18}
+          src={process.env.PUBLIC_URL + conduitTag}
+          style={{
+            position: "absolute",
+            zIndex: 3,
+            left: columnPos[position.column]+15,
+            top: getRowPos(position.column, position.row)+30,
+          }}
+        />
+      
+        : ''}
+
 
         <img
           width={38}

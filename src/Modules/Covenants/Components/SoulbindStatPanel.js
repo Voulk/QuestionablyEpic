@@ -18,7 +18,7 @@ export default function SoulbindStatPanel(props) {
           borderRadius: 0,
         }}
       >
-        <div> Selected Stat Gain Breakdown Estimated HPS: {props.hps}</div>
+        <div> Estimated Throughput: {props.hps} HPS</div>
       </Paper>
     </Grid>
     // </div>
