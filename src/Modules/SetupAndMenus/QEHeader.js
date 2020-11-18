@@ -45,50 +45,47 @@ export default function QEHeader(props) {
                 <img className={classes.qeLogo} src={logo} alt="QE Live" />
               </Link>
             </Grid>
-            <Grid
-              container
-              xs={12}
-              sm={12}
-              md={4}
-              lg={4}
-              xl={4}
-              direction="row"
-              justify="flex-end"
-              alignItems="center"
-              spacing={1}
-              wrap="nowrap"
-            >
-              <Grid item>
-                <Button style={{ color: "white" }}>
-                  {t("QeHeader.InsertLogLabel")}
-                </Button>
-              </Grid>
-              <Grid item>
-                <SimCraftInput
-                  pl={props.pl}
-                  contentType={props.contentType}
-                  simcSnack={props.simcSnack}
-                />
-              </Grid>
-              <Grid item>
-                <Button
-                  style={{ color: "white" }}
-                  onClick={props.toggleContentType}
-                >
-                  {t(props.contentType)}
-                </Button>
-              </Grid>
-              <Grid item>
-                <ProfileSelector
-                  name={playerName}
-                  component={Link}
-                  to={linkTarget}
-                  logFunc={props.logFunc}
-                  setRegion={props.setRegion}
-                />
-              </Grid>
-              <Grid item>
-                <LanguageSelector />
+            <Grid item xs={12} sm={12} md={4} lg={4} xl={4}>
+              <Grid
+                container
+                direction="row"
+                justify="flex-end"
+                alignItems="center"
+                spacing={1}
+                wrap="nowrap"
+              >
+                <Grid item>
+                  <Button style={{ color: "white" }}>
+                    {t("QeHeader.InsertLogLabel")}
+                  </Button>
+                </Grid>
+                <Grid item>
+                  <SimCraftInput
+                    pl={props.pl}
+                    contentType={props.contentType}
+                    simcSnack={props.simcSnack}
+                  />
+                </Grid>
+                <Grid item>
+                  <Button
+                    style={{ color: "white" }}
+                    onClick={props.toggleContentType}
+                  >
+                    {t(props.contentType)}
+                  </Button>
+                </Grid>
+                <Grid item>
+                  <ProfileSelector
+                    name={playerName}
+                    component={Link}
+                    to={linkTarget}
+                    logFunc={props.logFunc}
+                    setRegion={props.setRegion}
+                  />
+                </Grid>
+                <Grid item>
+                  <LanguageSelector />
+                </Grid>
               </Grid>
             </Grid>
           </Grid>

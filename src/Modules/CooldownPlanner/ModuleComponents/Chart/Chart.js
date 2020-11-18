@@ -58,7 +58,7 @@ class Chart extends Component {
             fillOpacity={0.9}
             dataKey={abilities[i]}
             stackId="1"
-            key={abilities[i]}
+            key={i}
             stroke={null}
             fill={colorCodes[i]}
             animationDuration={300}
@@ -80,7 +80,7 @@ class Chart extends Component {
               fillOpacity={0.5}
               dataKey={cooldowns[i]}
               stackId="1"
-              key={cooldowns[i]}
+              key={i}
               stroke={null}
               fill={colorCodeCooldowns[i]}
               animationDuration={300}
