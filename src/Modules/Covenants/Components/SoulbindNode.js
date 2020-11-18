@@ -204,8 +204,9 @@ export default function SoulbindNode(props) {
           open={Boolean(anchorEl)}
           onClose={handleClose}
         >
-          {conduitCollection.map((conduit, index) => (
+          {conduitCollection.map((conduit, i) => (
             <MenuItem
+              key={i}
               style={{ padding: "5px 10px" }}
               dense={true}
               onClick={() => setConduit(conduit.id)}
