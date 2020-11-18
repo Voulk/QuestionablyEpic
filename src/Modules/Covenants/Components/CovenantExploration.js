@@ -6,7 +6,7 @@ import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
-import { soulbindDB } from "../SoulbindDB";
+import { soulbindDB, soulbindConnectors } from "../SoulbindDB";
 import SoulbindNode from "./SoulbindNode";
 import ConduitObject from "./ConduitObject";
 import Grid from "@material-ui/core/Grid";
@@ -592,6 +592,9 @@ function buildSoulbind(
   let activeSoulbind = soulbindState.filter(
     (trait) => trait.soulbind === soulbindName
   );
+  let activeConnectors = soulbindConnectors.filter(
+    (trait) => trait.soulbind === soulbindName
+  );
 
   player.calculateConduits(contentType);
 
@@ -623,6 +626,14 @@ function buildSoulbind(
             }
           />
           <div id="nodes" style={{}}>
+            {activeConnectors.map((trait, index) => (
+              <img 
+              src={process.env.PUBLIC_URL + "/Images/Interface/SoulbindsLine" + trait.src}
+              style={{position: 'absolute', zIndex: 0, transform: 'rotate(' + trait.angle + 'deg)', transformOrigin: 'top center', 
+                filter: 'grayscale(95%)', 
+                left: trait.position[0], top: trait.position[1]}}></img>
+            ))}
+
             {activeSoulbind.map((trait, index) => (
               <SoulbindNode
                 key={index}

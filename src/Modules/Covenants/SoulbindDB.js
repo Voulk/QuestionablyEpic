@@ -2499,3 +2499,70 @@ export const soulbindDB = [
     stat_bonus: {},
   },
 ];
+
+export const soulbindConnectors = [
+  /*
+    Angles:
+    - Straight Line: 0
+    - Standard Diagonal: 45 -> left, 315 -> right
+    - Tight Diagonal: 55 -> left, 305 -> right
+  */
+  {
+    soulbind: "Pelagos",
+    src: "Vertical.PNG",
+    position: [298, 10],
+    angle: 0,
+  },
+  {
+    soulbind: "Pelagos",
+    src: "DiagonalShort.png",
+    position: [287, 35],
+    angle: 45,
+  },
+  {
+    soulbind: "Pelagos",
+    src: "DiagonalShort.png",
+    position: [305, 35],
+    angle: 315,
+  },
+  {
+    soulbind: "Pelagos",
+    src: "Vertical.PNG",
+    position: [203, 100],
+    angle: 0,
+  },
+  {
+    soulbind: "Pelagos",
+    src: "Vertical.PNG",
+    position: [298, 85],
+    angle: 0,
+  },
+  {
+    soulbind: "Pelagos",
+    src: "Vertical.PNG",
+    position: [393, 100],
+    angle: 0,
+  },
+  {
+    soulbind: "Pelagos",
+    src: "DiagonalShort.png",
+    position: [202, 198],
+    angle: 305, // 55
+  },
+    {
+    soulbind: "Pelagos",
+    src: "Vertical.PNG",
+    position: [298, 165],
+    angle: 0,
+  },
+  {
+    soulbind: "Pelagos",
+    src: "DiagonalShort.png",
+    position: [400, 198],
+    angle: 55, // 55
+  },
+  
+  
+
+
+]
