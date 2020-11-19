@@ -10,15 +10,19 @@ export default function SoulbindStatPanel(props) {
         elevation={0}
         // variant="outlined"
         style={{
-          maxWidth: 235,
+          maxWidth: 193,
+          width: 193,
           fontSize: "12px",
-          textAlign: "center",
-          minHeight: 60,
-          paddingTop: 16,
+          textAlign: "left",
+          minHeight: 90,
+          paddingTop: 22,
+          paddingLeft: 40,
           borderRadius: 0,
         }}
       >
-        <div> Estimated Throughput: {props.hps} HPS</div>
+        <div style={{fontSize: '16px'}}> Score: {props.hps + props.covAbility}</div>
+        <div> Covenant Ability Est: {props.covAbility}</div>
+        <div> Selected Nodes: {props.hps}</div>
       </Paper>
     </Grid>
     // </div>

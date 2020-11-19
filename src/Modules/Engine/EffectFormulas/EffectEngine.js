@@ -14,6 +14,8 @@ import {getShamanConduit} from './Shaman/ShamanConduitFormulas'
 import {getMonkConduit} from './Monk/MonkConduitFormulas'
 import {getDruidConduit} from './Druid/DruidConduitFormulas'
 
+import {getPaladinCovAbility} from './Paladin/PaladinMiscFormulas'
+
 
 import SPEC from '../SPECS'
 
@@ -108,4 +110,20 @@ export function getConduitFormula(effectID, player, contentType, itemLevel = 145
 
     return bonus_stats;
 
+}
+
+export function getCovAbility(soulbindName, player, contentType) {
+    let bonus_stats = {};
+
+    switch(player.spec) {
+        case(SPEC.DISCPRIEST):
+        case(SPEC.HOLYPRIEST):
+            break;
+        case(SPEC.HOLYPALADIN):
+            bonus_stats = getPaladinCovAbility(soulbindName, player, contentType)
+            break;
+
+    }
+
+    return bonus_stats;
 }

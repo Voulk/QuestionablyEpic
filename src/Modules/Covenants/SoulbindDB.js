@@ -227,6 +227,7 @@ export const soulbindDB = [
     stat_bonus: {},
   },
   {
+    id: 1000839210,
     names: {
       en: "Potency Conduit",
       cn: "",
@@ -237,8 +238,11 @@ export const soulbindDB = [
     renown: 0,
     active: false,
     stat_bonus: {},
+    type: "Potency Conduit",
+    slotted_id: -1,
   },
   {
+    id: 1000839211,
     names: {
       en: "Endurance Conduit",
       cn: "",
@@ -249,6 +253,8 @@ export const soulbindDB = [
     renown: 0,
     active: false,
     stat_bonus: {},
+    type: "Endurance Conduit",
+    slotted_id: -1,
   },
   {
     id: 334066,
@@ -281,6 +287,7 @@ export const soulbindDB = [
     stat_bonus: {},
   },
   {
+    id: 2000839211,
     names: {
       en: "Finesse Conduit",
       cn: "",
@@ -323,6 +330,7 @@ export const soulbindDB = [
     stat_bonus: {},
   },
   {
+    id: 1000839212,
     names: {
       en: "Endurance Conduit",
       cn: "",
@@ -333,8 +341,11 @@ export const soulbindDB = [
     renown: 18,
     active: false,
     stat_bonus: {},
+    type: "Endurance Conduit",
+    slotted_id: -1,
   },
   {
+    id: 1000839213,
     names: {
       en: "Potency Conduit",
       cn: "",
@@ -345,8 +356,11 @@ export const soulbindDB = [
     renown: 28,
     active: false,
     stat_bonus: {},
+    type: "Potency Conduit",
+    slotted_id: -1,
   },
   {
+    id: 1000839214,
     names: {
       en: "Endurance Conduit",
       cn: "",
@@ -357,9 +371,11 @@ export const soulbindDB = [
     renown: 28,
     active: false,
     stat_bonus: {},
+    type: "Endurance Conduit",
+    slotted_id: -1,
   },
   {
-    id: 0,
+    id: 2000839212,
     names: {
       en: "Finesse Conduit",
       cn: "耐心之瓶",
@@ -434,6 +450,7 @@ export const soulbindDB = [
     stat_bonus: {},
   },
   {
+    id: 3000839211,
     names: {
       en: "Potency Conduit",
       cn: "",
@@ -444,8 +461,11 @@ export const soulbindDB = [
     renown: 0,
     active: false,
     stat_bonus: {},
+    type: "Potency Conduit",
+    slotted_id: -1,
   },
   {
+    id: 3000839213,
     names: {
       en: "Endurance Conduit",
       cn: "",
@@ -456,6 +476,8 @@ export const soulbindDB = [
     renown: 0,
     active: false,
     stat_bonus: {},
+    type: "Endurance Conduit",
+    slotted_id: -1,
   },
   {
     id: 331609,
@@ -488,7 +510,7 @@ export const soulbindDB = [
     stat_bonus: {},
   },
   {
-    id: 0,
+    id: 3000839214,
     names: {
       en: "Finesse Conduit",
       cn: "耐心之瓶",
@@ -531,6 +553,7 @@ export const soulbindDB = [
     stat_bonus: {},
   },
   {
+    id: 3000839215,
     names: {
       en: "Endurance Conduit",
       cn: "",
@@ -541,8 +564,11 @@ export const soulbindDB = [
     renown: 0,
     active: false,
     stat_bonus: {},
+    type: "Endurance Conduit",
+    slotted_id: -1,
   },
   {
+    id: 3000839216,
     names: {
       en: "Potency Conduit",
       cn: "",
@@ -553,8 +579,11 @@ export const soulbindDB = [
     renown: 29,
     active: false,
     stat_bonus: {},
+    type: "Potency Conduit",
+    slotted_id: -1,
   },
   {
+    id: 3000839217,
     names: {
       en: "Endurance Conduit",
       cn: "",
@@ -565,9 +594,11 @@ export const soulbindDB = [
     renown: 29,
     active: false,
     stat_bonus: {},
+    type: "Endurance Conduit",
+    slotted_id: -1,
   },
   {
-    id: 0,
+    id: 3000839218,
     names: {
       en: "Finesse Conduit",
       cn: "耐心之瓶",
@@ -641,6 +672,7 @@ export const soulbindDB = [
     stat_bonus: {},
   },
   {
+    id: 4000839211,
     names: {
       en: "Potency Conduit",
       cn: "",
@@ -651,8 +683,11 @@ export const soulbindDB = [
     renown: 0,
     active: false,
     stat_bonus: {},
+    type: "Potency Conduit",
+    slotted_id: -1,
   },
   {
+    id: 3000839212,
     names: {
       en: "Endurance Conduit",
       cn: "",
@@ -663,9 +698,11 @@ export const soulbindDB = [
     renown: 0,
     active: false,
     stat_bonus: {},
+    type: "Endurance Conduit",
+    slotted_id: -1,
   },
   {
-    id: 0,
+    id: 3000839213,
     names: {
       en: "Finesse Conduit",
       cn: "耐心之瓶",
@@ -723,6 +760,7 @@ export const soulbindDB = [
     stat_bonus: {},
   },
   {
+    id: 3000839214,
     names: {
       en: "Endurance Conduit",
       cn: "",
@@ -733,6 +771,8 @@ export const soulbindDB = [
     renown: 9,
     active: false,
     stat_bonus: {},
+    type: "Endurance Conduit",
+    slotted_id: -1,
   },
   {
     id: 323079,
@@ -765,6 +805,7 @@ export const soulbindDB = [
     stat_bonus: {},
   },
   {
+    id: 3000839215,
     names: {
       en: "Potency Conduit",
       cn: "",
@@ -775,8 +816,11 @@ export const soulbindDB = [
     renown: 21,
     active: false,
     stat_bonus: {},
+    type: "Potency Conduit",
+    slotted_id: -1,
   },
   {
+    id: 3000839216,
     names: {
       en: "Endurance Conduit",
       cn: "",
@@ -787,9 +831,11 @@ export const soulbindDB = [
     renown: 25,
     active: false,
     stat_bonus: {},
+    type: "Endurance Conduit",
+    slotted_id: -1,
   },
   {
-    id: 0,
+    id: 3000839217,
     names: {
       en: "Finesse Conduit",
       cn: "耐心之瓶",
@@ -820,7 +866,7 @@ export const soulbindDB = [
   {
     id: 342156,
     names: {
-      en: "Embody the Construct",
+      en: "Lead by Example",
       cn: "具化构造体",
       fr: "Incarnation d’assemblage",
       ru: "Кадавр мечты",
@@ -833,6 +879,7 @@ export const soulbindDB = [
     stat_bonus: {},
   },
   {
+    id: 6000839211,
     names: {
       en: "Potency Conduit",
       cn: "",
@@ -843,8 +890,11 @@ export const soulbindDB = [
     renown: 0,
     active: false,
     stat_bonus: {},
+    type: "Potency Conduit",
+    slotted_id: -1,
   },
   {
+    id: 6000839212,
     names: {
       en: "Endurance Conduit",
       cn: "",
@@ -855,6 +905,8 @@ export const soulbindDB = [
     renown: 0,
     active: false,
     stat_bonus: {},
+    type: "Endurance Conduit",
+    slotted_id: -1,
   },
   {
     id: 323921,
@@ -887,7 +939,7 @@ export const soulbindDB = [
     stat_bonus: {},
   },
   {
-    id: 0,
+    id: 6000839217,
     names: {
       en: "Finesse Conduit",
       cn: "耐心之瓶",
@@ -930,6 +982,7 @@ export const soulbindDB = [
     stat_bonus: {},
   },
   {
+    id: 6000839218,
     names: {
       en: "Endurance Conduit",
       cn: "",
@@ -940,8 +993,11 @@ export const soulbindDB = [
     renown: 18,
     active: false,
     stat_bonus: {},
+    type: "Endurance Conduit",
+    slotted_id: -1,
   },
   {
+    id: 6000839219,
     names: {
       en: "Potency Conduit",
       cn: "",
@@ -952,8 +1008,11 @@ export const soulbindDB = [
     renown: 28,
     active: false,
     stat_bonus: {},
+    type: "Potency Conduit",
+    slotted_id: -1,
   },
   {
+    id: 6000839220,
     names: {
       en: "Endurance Conduit",
       cn: "",
@@ -964,9 +1023,11 @@ export const soulbindDB = [
     renown: 28,
     active: false,
     stat_bonus: {},
+    type: "Endurance Conduit",
+    slotted_id: -1,
   },
   {
-    id: 0,
+    id: 6000839221,
     names: {
       en: "Finesse Conduit",
       cn: "耐心之瓶",
@@ -1040,6 +1101,7 @@ export const soulbindDB = [
     stat_bonus: {},
   },
   {
+    id: 6000839231,
     names: {
       en: "Potency Conduit",
       cn: "",
@@ -1050,8 +1112,11 @@ export const soulbindDB = [
     renown: 0,
     active: false,
     stat_bonus: {},
+    type: "Potency Conduit",
+    slotted_id: -1,
   },
   {
+    id: 6000839234,
     names: {
       en: "Endurance Conduit",
       cn: "",
@@ -1062,6 +1127,8 @@ export const soulbindDB = [
     renown: 0,
     active: false,
     stat_bonus: {},
+    type: "Endurance Conduit",
+    slotted_id: -1,
   },
   {
     id: 326507,
@@ -1094,7 +1161,7 @@ export const soulbindDB = [
     stat_bonus: {},
   },
   {
-    id: 0,
+    id: 6000839236,
     names: {
       en: "Finesse Conduit",
       cn: "耐心之瓶",
@@ -1137,6 +1204,7 @@ export const soulbindDB = [
     stat_bonus: {},
   },
   {
+    id: 6000839237,
     names: {
       en: "Endurance Conduit",
       cn: "",
@@ -1147,8 +1215,11 @@ export const soulbindDB = [
     renown: 0,
     active: false,
     stat_bonus: {},
+    type: "Endurance Conduit",
+    slotted_id: -1,
   },
   {
+    id: 6000839238,
     names: {
       en: "Potency Conduit",
       cn: "",
@@ -1159,8 +1230,11 @@ export const soulbindDB = [
     renown: 29,
     active: false,
     stat_bonus: {},
+    type: "Potency Conduit",
+    slotted_id: -1,
   },
   {
+    id: 6000839239,
     names: {
       en: "Endurance Conduit",
       cn: "",
@@ -1171,9 +1245,11 @@ export const soulbindDB = [
     renown: 29,
     active: false,
     stat_bonus: {},
+    type: "Endurance Conduit",
+    slotted_id: -1,
   },
   {
-    id: 0,
+    id: 6000839241,
     names: {
       en: "Finesse Conduit",
       cn: "耐心之瓶",
@@ -1250,6 +1326,7 @@ export const soulbindDB = [
     stat_bonus: {},
   },
   {
+    id: 6000839242,
     names: {
       en: "Potency Conduit",
       cn: "",
@@ -1260,8 +1337,11 @@ export const soulbindDB = [
     renown: 0,
     active: false,
     stat_bonus: {},
+    type: "Potency Conduit",
+    slotted_id: -1,
   },
   {
+    id: 7000839211,
     names: {
       en: "Endurance Conduit",
       cn: "",
@@ -1272,6 +1352,8 @@ export const soulbindDB = [
     renown: 0,
     active: false,
     stat_bonus: {},
+    type: "Endurance Conduit",
+    slotted_id: -1,
   },
   {
     id: 342270,
@@ -1304,7 +1386,7 @@ export const soulbindDB = [
     stat_bonus: {},
   },
   {
-    id: 0,
+    id: 7000839212,
     names: {
       en: "Finesse Conduit",
       cn: "耐心之瓶",
@@ -1347,6 +1429,7 @@ export const soulbindDB = [
     stat_bonus: {},
   },
   {
+    id: 7000839213,
     names: {
       en: "Endurance Conduit",
       cn: "",
@@ -1357,8 +1440,11 @@ export const soulbindDB = [
     renown: 18,
     active: false,
     stat_bonus: {},
+    type: "Endurance Conduit",
+    slotted_id: -1,
   },
   {
+    id: 7000839214,
     names: {
       en: "Endurance Conduit",
       cn: "",
@@ -1369,8 +1455,11 @@ export const soulbindDB = [
     renown: 25,
     active: false,
     stat_bonus: {},
+    type: "Endurance Conduit",
+    slotted_id: -1,
   },
   {
+    id: 7000839215,
     names: {
       en: "Potency Conduit",
       cn: "",
@@ -1381,9 +1470,11 @@ export const soulbindDB = [
     renown: 25,
     active: false,
     stat_bonus: {},
+    type: "Potency Conduit",
+    slotted_id: -1,
   },
   {
-    id: 0,
+    id: 7000839216,
     names: {
       en: "Finesse Conduit",
       cn: "耐心之瓶",
@@ -1470,6 +1561,8 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Endurance Conduit",
     slotted_id: -1,
+    type: "Endurance Conduit",
+    slotted_id: -1,
   },
   {
     id: 7189321,
@@ -1496,6 +1589,8 @@ export const soulbindDB = [
     renown: 0,
     active: false,
     stat_bonus: {},
+    type: "Potency Conduit",
+    slotted_id: -1,
     type: "Potency Conduit",
     slotted_id: -1,
   },
@@ -1666,7 +1761,7 @@ export const soulbindDB = [
     stat_bonus: {},
   },
   {
-    id: 0,
+    id: 8000839211,
     names: {
       en: "Potency Conduit",
       cn: "",
@@ -1726,7 +1821,7 @@ export const soulbindDB = [
     stat_bonus: {},
   },
   {
-    id: 0,
+    id: 8000839212,
     names: {
       en: "Finesse Conduit",
       cn: "耐心之瓶",
@@ -1814,7 +1909,7 @@ export const soulbindDB = [
     slotted_id: -1,
   },
   {
-    id: 0,
+    id: 8000839213,
     names: {
       en: "Finesse Conduit",
       cn: "耐心之瓶",
@@ -1891,7 +1986,7 @@ export const soulbindDB = [
     stat_bonus: {},
   },
   {
-    id: 0,
+    id: 8000839214,
     names: {
       en: "Potency Conduit",
       cn: "",
@@ -1904,7 +1999,7 @@ export const soulbindDB = [
     stat_bonus: {},
   },
   {
-    id: 0,
+    id: 8000839215,
     names: {
       en: "Endurance Conduit",
       cn: "",
@@ -1947,7 +2042,7 @@ export const soulbindDB = [
     stat_bonus: {},
   },
   {
-    id: 0,
+    id: 8000839216,
     names: {
       en: "Finesse Conduit",
       cn: "耐心之瓶",
@@ -1975,7 +2070,7 @@ export const soulbindDB = [
     stat_bonus: {},
   },
   {
-    id: 0,
+    id: 8000839217,
     names: {
       en: "Endurance Conduit",
       cn: "",
@@ -1988,7 +2083,7 @@ export const soulbindDB = [
     stat_bonus: {},
   },
   {
-    id: 0,
+    id: 8000839218,
     names: {
       en: "Potency Conduit",
       cn: "",
@@ -2001,7 +2096,7 @@ export const soulbindDB = [
     stat_bonus: {},
   },
   {
-    id: 0,
+    id: 8000839219,
     names: {
       en: "Endurance Conduit",
       cn: "",
@@ -2014,7 +2109,7 @@ export const soulbindDB = [
     stat_bonus: {},
   },
   {
-    id: 0,
+    id: 8000839221,
     names: {
       en: "Finesse Conduit",
       cn: "耐心之瓶",
@@ -2089,7 +2184,7 @@ export const soulbindDB = [
     stat_bonus: {},
   },
   {
-    id: 0,
+    id: 8000839222,
     names: {
       en: "Endurance Conduit",
       cn: "",
@@ -2102,7 +2197,7 @@ export const soulbindDB = [
     stat_bonus: {},
   },
   {
-    id: 0,
+    id: 8000839223,
     names: {
       en: "Finesse Conduit",
       cn: "耐心之瓶",
@@ -2145,7 +2240,7 @@ export const soulbindDB = [
     stat_bonus: {},
   },
   {
-    id: 0,
+    id: 8000839224,
     names: {
       en: "Potency Conduit",
       cn: "",
@@ -2188,7 +2283,7 @@ export const soulbindDB = [
     stat_bonus: {},
   },
   {
-    id: 0,
+    id: 8000839225,
     names: {
       en: "Endurance Conduit",
       cn: "",
@@ -2201,7 +2296,7 @@ export const soulbindDB = [
     stat_bonus: {},
   },
   {
-    id: 0,
+    id: 8000839226,
     names: {
       en: "Potency Conduit",
       cn: "",
@@ -2214,7 +2309,7 @@ export const soulbindDB = [
     stat_bonus: {},
   },
   {
-    id: 0,
+    id: 8000839227,
     names: {
       en: "Endurance Conduit",
       cn: "",
@@ -2227,7 +2322,7 @@ export const soulbindDB = [
     stat_bonus: {},
   },
   {
-    id: 0,
+    id: 8000839228,
     names: {
       en: "Finesse Conduit",
       cn: "耐心之瓶",
@@ -2302,7 +2397,7 @@ export const soulbindDB = [
     stat_bonus: {},
   },
   {
-    id: 0,
+    id: 9000839211,
     names: {
       en: "Endurance Conduit",
       cn: "",
@@ -2315,7 +2410,7 @@ export const soulbindDB = [
     stat_bonus: {},
   },
   {
-    id: 0,
+    id: 9000839212,
     names: {
       en: "Finesse Conduit",
       cn: "耐心之瓶",
@@ -2358,7 +2453,7 @@ export const soulbindDB = [
     stat_bonus: {},
   },
   {
-    id: 0,
+    id: 9000839213,
     names: {
       en: "Potency Conduit",
       cn: "",
@@ -2401,7 +2496,7 @@ export const soulbindDB = [
     stat_bonus: {},
   },
   {
-    id: 0,
+    id: 9000839214,
     names: {
       en: "Endurance Conduit",
       cn: "",
@@ -2414,7 +2509,7 @@ export const soulbindDB = [
     stat_bonus: {},
   },
   {
-    id: 0,
+    id: 9000839215,
     names: {
       en: "Potency Conduit",
       cn: "",
@@ -2427,7 +2522,7 @@ export const soulbindDB = [
     stat_bonus: {},
   },
   {
-    id: 0,
+    id: 9000839216,
     names: {
       en: "Endurance Conduit",
       cn: "",
@@ -2440,7 +2535,7 @@ export const soulbindDB = [
     stat_bonus: {},
   },
   {
-    id: 0,
+    id: 9000839217,
     names: {
       en: "Finesse Conduit",
       cn: "耐心之瓶",

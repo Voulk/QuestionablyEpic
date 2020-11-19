@@ -69,10 +69,20 @@ export const getPaladinConduit = (conduitID, pl, contentType, itemLevel = 156) =
     }
     // Golden Path
     else if (conduitID === 339114) {
+        let trait_bonus =  1.8 + conduitLevel * 0.2;
+        let consecration_CPM = 3;
+        expectedOverhealing = 0.65;
+
+        bonus_stats.HPS = (trait_bonus * consecration_CPM * 0.05 * 12 * (1 - expectedOverhealing) * pl.getStatMultiplier('NOHASTE') / 60)
 
     }
     // Shielding Words
     else if (conduitID === 338787) {
+        let trait_bonus =  0.135 + conduitLevel * 0.015;
+        expectedOverhealing = 0.04;
+
+        bonus_stats.HPS = trait_bonus * (1 - expectedOverhealing) * pl.getSpellHPS('Word of Glory', contentType)
+
 
     }
 

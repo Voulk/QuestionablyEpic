@@ -12,6 +12,7 @@ import ConduitObject from "./ConduitObject";
 import Grid from "@material-ui/core/Grid";
 import { getSoulbindFormula } from "../../Engine/EffectFormulas/Generic/GenericSoulbindFormulas";
 import SoulbindStatPanel from "./SoulbindStatPanel";
+import {getCovAbility} from "../../Engine/EffectFormulas/EffectEngine";
 import {
   sumSelectedStats,
   getEstimatedHPS,
@@ -624,6 +625,7 @@ function buildSoulbind(
 
   let statSums = sumSelectedStats(soulbindName, soulbindState);
   let estimatedHPS = getEstimatedHPS(statSums, player, contentType);
+  let covAbility = getEstimatedHPS(getCovAbility(soulbindName, player, contentType));
   //let conduitList = ["Conduit 1", "Conduit 2", "Conduit 3", "Conduit 4", "Conduit 5"] // Pure, raw placeholder.
 
   //console.log("Y" + soulbindName);
@@ -739,7 +741,7 @@ function buildSoulbind(
               </Grid>
             </Grid>
             <Grid container>
-              <SoulbindStatPanel hps={estimatedHPS} stats={statSums} />
+              <SoulbindStatPanel hps={estimatedHPS} covAbility={covAbility} stats={statSums} />
             </Grid>
           </Grid>
         </div>
