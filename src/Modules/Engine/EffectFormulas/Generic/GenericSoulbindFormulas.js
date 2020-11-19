@@ -147,6 +147,8 @@ export function getSoulbindFormula(effectID, pl, contentType) {
 
     // Field of Blossoms
     else if (effectID === 319191) {
+        let expectedUptime = 1 / 6;
+        bonus_stats.Haste = 12 * STATPERONEPERCENT.HASTE * expectedUptime;
 
     }
 

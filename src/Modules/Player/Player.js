@@ -48,9 +48,14 @@ class Player {
             "Shock Barrier": [0, 98300, 0.0858, 542],
     },
         "Dungeon": {
-            "Rejuvenation": [35, 40213, 0.11],
-            "Wild Growth": 40,
-            "Overall": [0, 90132, 1]
+            "Rejuvenation": [17, 181000, 0.2909, 1566],
+            "Wild Growth": [5, 154400, 0.2472, 1478],
+            "Overall": [0, 90132, 1],
+            "Light of Dawn": [20, 238400, 0.2082, 1316],
+            "Word of Glory": [4, 40800, 0.0357, 225],
+            "Holy Shock": [27, 221400, 0.1934, 1222],
+            "Holy Light": [29, 311600, 0.293, 1683],
+            "Shock Barrier": [0, 98300, 0.0858, 542],
         }
     }
 
