@@ -21,23 +21,29 @@ export default function ConduitObject(props) {
   // console.log(conduit);
   const classes = useStyles();
 
-  const itemQuality = (quality) => {
-    switch (quality) {
-      case "Legendary":
-        return "#ff8000";
-        break;
-      case "Epic":
-        return "#a335ee";
-        break;
-      case "Uncommon":
-        return "#328CE3";
-        break;
-      case "Common":
-        return "#1eff00";
-        break;
-      default:
-        return "#fff";
+  const conduitClicked = () => {
+    let oldLevel = props.conduit.itemLevel;
+    let newLevel = oldLevel === 213 ? 145 : oldLevel === 184 ? 200 : oldLevel + 13;
+    props.updateConduitLevel(props.conduit.id, newLevel);
+  }
+
+  const itemQuality = (itemLevel) => {
+    if (itemLevel >= 213) {
+      return "#ff8000"; // Legendary
     }
+    else if (itemLevel >= 200) {
+      return "#a335ee"; // Epic
+    }
+    else if (itemLevel >= 171) {
+      return "#0070dd"; // Rare
+    }
+    else if (itemLevel >= 158) {
+      return "#1eff00"; // Uncommon
+    }
+    else {
+      return "#9d9d9d"; // Grey
+    }
+        
   };
 
   const upgradeColor = (num) => {
@@ -53,7 +59,7 @@ export default function ConduitObject(props) {
   return (
     <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
       <Card className={classes.root} variant="outlined">
-        <CardActionArea disabled={false}>
+        <CardActionArea disabled={false} onClick={conduitClicked}>
           <Grid
             container
             display="inline-flex"
@@ -73,7 +79,7 @@ export default function ConduitObject(props) {
                       borderRadius: "3px 0px 0px 3px",
                       borderWidth: "1px",
                       borderStyle: "solid",
-                      borderColor: itemQuality("Uncommon"),
+                      borderColor: itemQuality(conduit.itemLevel),
                       padding: 0,
                       margin: 0,
                     }}

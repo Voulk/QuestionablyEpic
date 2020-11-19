@@ -61,6 +61,15 @@ class PlayerChars  {
         return this.allChar;
     }  
 
+    updatePlayerChar = (player) => {
+        for (let i = 0; i < this.allChar.length; i++) {
+            if (this.allChar[i].charID === player.charID) {
+                this.allChar[i] = player;
+            }
+        }
+
+    }
+
     // Save our character array, both to database (when logged in) and to LocalStorage.
     saveAllChar = () => {
         // Database TODO

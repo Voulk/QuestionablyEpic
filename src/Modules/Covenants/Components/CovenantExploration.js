@@ -92,6 +92,12 @@ export default function SimpleTabs(props) {
     buildBonusStats(soulbindDB, props.pl, props.contentType)
   );
 
+  function updateConduitLevel(id, newLevel) {
+    props.pl.updateConduitLevel(id, newLevel);
+    props.updatePlayerChar(props.pl);
+
+  }
+
   function buildBonusStats(soulbindTraits, player, contentType) {
     let updatedArray = soulbindTraits.map((trait) => {
       console.log("PL: " + player + ". CT: " + contentType);
@@ -279,7 +285,8 @@ export default function SimpleTabs(props) {
               props.contentType,
               soulbindState,
               activateSoulbind,
-              setConduitInSlot
+              setConduitInSlot,
+              updateConduitLevel,
             )}
           </TabPanel>
           <TabPanel
@@ -293,7 +300,8 @@ export default function SimpleTabs(props) {
               props.contentType,
               soulbindState,
               activateSoulbind,
-              setConduitInSlot
+              setConduitInSlot,
+              updateConduitLevel,
             )}
           </TabPanel>
           <TabPanel
@@ -307,7 +315,8 @@ export default function SimpleTabs(props) {
               props.contentType,
               soulbindState,
               activateSoulbind,
-              setConduitInSlot
+              setConduitInSlot,
+              updateConduitLevel,
             )}
           </TabPanel>
         </div>
@@ -370,7 +379,8 @@ export default function SimpleTabs(props) {
               props.contentType,
               soulbindState,
               activateSoulbind,
-              setConduitInSlot
+              setConduitInSlot,
+              updateConduitLevel,
             )}
           </TabPanel>
           <TabPanel value={soulbindValue} index={1}>
@@ -380,7 +390,8 @@ export default function SimpleTabs(props) {
               props.contentType,
               soulbindState,
               activateSoulbind,
-              setConduitInSlot
+              setConduitInSlot,
+              updateConduitLevel,
             )}
           </TabPanel>
           <TabPanel value={soulbindValue} index={2}>
@@ -390,7 +401,8 @@ export default function SimpleTabs(props) {
               props.contentType,
               soulbindState,
               activateSoulbind,
-              setConduitInSlot
+              setConduitInSlot,
+              updateConduitLevel,
             )}
           </TabPanel>
         </div>
@@ -459,7 +471,8 @@ export default function SimpleTabs(props) {
               props.contentType,
               soulbindState,
               activateSoulbind,
-              setConduitInSlot
+              setConduitInSlot,
+              updateConduitLevel,
             )}
           </TabPanel>
           <TabPanel value={soulbindValue} index={1}>
@@ -469,7 +482,8 @@ export default function SimpleTabs(props) {
               props.contentType,
               soulbindState,
               activateSoulbind,
-              setConduitInSlot
+              setConduitInSlot,
+              updateConduitLevel,
             )}
           </TabPanel>
           <TabPanel value={soulbindValue} index={2}>
@@ -479,7 +493,8 @@ export default function SimpleTabs(props) {
               props.contentType,
               soulbindState,
               activateSoulbind,
-              setConduitInSlot
+              setConduitInSlot,
+              updateConduitLevel,
             )}
           </TabPanel>
         </div>
@@ -545,7 +560,8 @@ export default function SimpleTabs(props) {
               props.contentType,
               soulbindState,
               activateSoulbind,
-              setConduitInSlot
+              setConduitInSlot,
+              updateConduitLevel,
             )}
           </TabPanel>
           <TabPanel value={soulbindValue} index={1}>
@@ -555,7 +571,8 @@ export default function SimpleTabs(props) {
               props.contentType,
               soulbindState,
               activateSoulbind,
-              setConduitInSlot
+              setConduitInSlot,
+              updateConduitLevel,
             )}
           </TabPanel>
           <TabPanel value={soulbindValue} index={2}>
@@ -565,7 +582,8 @@ export default function SimpleTabs(props) {
               props.contentType,
               soulbindState,
               activateSoulbind,
-              setConduitInSlot
+              setConduitInSlot,
+              updateConduitLevel,
             )}
           </TabPanel>
         </div>
@@ -584,7 +602,8 @@ function buildSoulbind(
   contentType,
   soulbindState,
   activateSoulbind,
-  setConduitInSlot
+  setConduitInSlot,
+  updateConduitLevel
 ) {
   //console.log(JSON.stringify(soulbindState));
   //console.log("Post: " + JSON.stringify(soulbindState))
@@ -696,7 +715,7 @@ function buildSoulbind(
                 />
                 <Grid container spacing={1} style={{ maxWidth: 245 }} xs={12}>
                   {potencyConduits.map((conduit, index) => (
-                    <ConduitObject conduit={conduit} />
+                    <ConduitObject conduit={conduit} updateConduitLevel={updateConduitLevel} />
                   ))}
                 </Grid>
               </Grid>
@@ -714,7 +733,7 @@ function buildSoulbind(
                 />
                 <Grid container spacing={1} style={{ maxWidth: 245 }} xs={12}>
                   {enduranceConduits.map((conduit, index) => (
-                    <ConduitObject conduit={conduit} />
+                    <ConduitObject conduit={conduit} updateConduitLevel={updateConduitLevel} />
                   ))}
                 </Grid>
               </Grid>

@@ -4,12 +4,14 @@ export const getDruidConduit = (
   conduitID,
   pl,
   contentType,
-  itemLevel = 156
+  conduitLevel
 ) => {
 
   let bonus_stats = {};
-  let conduitLevel = 6; // Convert the conduit item level to a rank.
+  //let conduitLevel = 6; // Convert the conduit item level to a rank.
   let expectedOverhealing = 0;
+
+  
 
   // === Potency Conduits ===
   // Flash of Clarity
