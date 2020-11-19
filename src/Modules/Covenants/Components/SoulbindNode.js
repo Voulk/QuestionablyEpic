@@ -10,9 +10,9 @@ import Paper from "@material-ui/core/Paper";
 
 const columnPos = [195, 290, 385];
 const rowPos = [
-  [20, 100, 180, 260, 340, 390, 470, 550, 630],
+  [20, 100, 180, 260, 325, 420, 500, 580, 660],
   [5, 85, 165, 245, 325, 405, 485, 565, 645],
-  [20, 100, 180, 260, 340, 390, 470, 550, 630],
+  [20, 100, 180, 260, 325, 420, 500, 580, 660],
 ];
 
 const menuStyle = {
@@ -107,11 +107,13 @@ export default function SoulbindNode(props) {
     (trait.active ? "active" : "") +
     ".png";
 
-  const conduitTag = 
-    (type.includes("Potency") ? "/Images/Interface/PotencyConduitImg.png" :
-    (type.includes("Endurance Conduit") ? "/Images/Interface/EnduranceConduitImg.png" :
-    (type.includes("Finesse Conduit") ? "/Images/Interface/FinesseConduitImg.png" :
-    '')));
+  const conduitTag = type.includes("Potency")
+    ? "/Images/Interface/PotencyConduitImg.png"
+    : type.includes("Endurance Conduit")
+    ? "/Images/Interface/EnduranceConduitImg.png"
+    : type.includes("Finesse Conduit")
+    ? "/Images/Interface/FinesseConduitImg.png"
+    : "";
 
   let stat_bonus = trait.bonus_stats;
   let position = {
@@ -138,7 +140,6 @@ export default function SoulbindNode(props) {
       }}
     >
       <a data-wowhead={"spell=" + trait.id}>
-
         <img
           onClick={handleClick}
           width={48}
@@ -151,21 +152,21 @@ export default function SoulbindNode(props) {
             top: getRowPos(position.column, position.row),
           }}
         />
-        {conduitTag !== '' ? 
+        {conduitTag !== "" ? (
           <img
-          width={18}
-          height={18}
-          src={process.env.PUBLIC_URL + conduitTag}
-          style={{
-            position: "absolute",
-            zIndex: 3,
-            left: columnPos[position.column]+15,
-            top: getRowPos(position.column, position.row)+30,
-          }}
-        />
-      
-        : ''}
-
+            width={18}
+            height={18}
+            src={process.env.PUBLIC_URL + conduitTag}
+            style={{
+              position: "absolute",
+              zIndex: 3,
+              left: columnPos[position.column] + 15,
+              top: getRowPos(position.column, position.row) + 30,
+            }}
+          />
+        ) : (
+          ""
+        )}
 
         <img
           width={38}

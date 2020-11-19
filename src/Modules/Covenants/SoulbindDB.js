@@ -46,7 +46,7 @@ export const soulbindDB = [
     slotted_id: -1,
   },
   {
-    id: 8903278612, 
+    id: 8903278612,
     names: {
       en: "Potency Conduit",
       cn: "",
@@ -1455,7 +1455,6 @@ export const soulbindDB = [
     renown: 0,
     active: false,
     stat_bonus: {},
-    
   },
   {
     id: 908123,
@@ -1484,7 +1483,6 @@ export const soulbindDB = [
     renown: 0,
     active: false,
     stat_bonus: {},
-
   },
   {
     id: 89123123,
@@ -1827,7 +1825,6 @@ export const soulbindDB = [
     renown: 28,
     active: false,
     stat_bonus: {},
-
   },
   {
     id: 325068,
@@ -2510,24 +2507,29 @@ export const soulbindConnectors = [
     - Tight Diagonal: 55 -> left, 305 -> right
   */
   {
+    // Row 1 Middle Verticle
     soulbind: "Pelagos",
     src: "Vertical.PNG",
     position: [298, 10],
     angle: 0,
   },
   {
+    // Row 1 Top Left Diagonal
     soulbind: "Pelagos",
     src: "DiagonalShort.png",
     position: [287, 35],
     angle: 45,
   },
   {
+    // Row 1 Top Right Diagonal
     soulbind: "Pelagos",
     src: "DiagonalShort.png",
     position: [305, 35],
     angle: 315,
   },
+
   {
+    // Row 2 Middle Verticle
     soulbind: "Pelagos",
     src: "Vertical.PNG",
     position: [203, 100],
@@ -2551,7 +2553,7 @@ export const soulbindConnectors = [
     position: [202, 198],
     angle: 305, // 55
   },
-    {
+  {
     soulbind: "Pelagos",
     src: "Vertical.PNG",
     position: [298, 165],
@@ -2563,8 +2565,975 @@ export const soulbindConnectors = [
     position: [400, 198],
     angle: 55, // 55
   },
-  
-  
+  {
+    soulbind: "Pelagos",
+    src: "DiagonalShort.png",
+    position: [285, 280],
+    angle: 55,
+  },
+  {
+    soulbind: "Pelagos",
+    src: "DiagonalShort.png",
+    position: [305, 280],
+    angle: 305,
+  },
+  {
+    soulbind: "Pelagos",
+    src: "DiagonalShort.png",
+    position: [203, 360],
+    angle: 305,
+  },
+  {
+    soulbind: "Pelagos",
+    src: "DiagonalShort.png",
+    position: [393, 360],
+    angle: 55,
+  },
+  {
+    soulbind: "Pelagos",
+    src: "DiagonalShort.png",
+    position: [298, 435],
+    angle: 45,
+  },
+  {
+    soulbind: "Pelagos",
+    src: "DiagonalShort.png",
+    position: [298, 435],
+    angle: 315,
+  },
+  {
+    soulbind: "Pelagos",
+    src: "DiagonalShort.png",
+    position: [203, 525],
+    angle: 315,
+  },
+  {
+    soulbind: "Pelagos",
+    src: "DiagonalShort.png",
+    position: [393, 525],
+    angle: 45,
+  },
 
+  // Kleia
+  {
+    // Row 1 Top Left Diagonal
+    soulbind: "Kleia",
+    src: "DiagonalShort.png",
+    position: [287, 35],
+    angle: 45,
+  },
+  {
+    // Row 1 Top Right Diagonal
+    soulbind: "Kleia",
+    src: "DiagonalShort.png",
+    position: [305, 35],
+    angle: 315,
+  },
+  {
+    // Row 2 Middle Verticle
+    soulbind: "Kleia",
+    src: "Vertical.PNG",
+    position: [203, 100],
+    angle: 0,
+  },
+  {
+    soulbind: "Kleia",
+    src: "Vertical.PNG",
+    position: [393, 100],
+    angle: 0,
+  },
+  {
+    soulbind: "Kleia",
+    src: "DiagonalShort.png",
+    position: [202, 198],
+    angle: 305, // 55
+  },
+  {
+    soulbind: "Kleia",
+    src: "DiagonalShort.png",
+    position: [400, 198],
+    angle: 55, // 55
+  },
+  {
+    soulbind: "Kleia",
+    src: "DiagonalShort.png",
+    position: [285, 280],
+    angle: 55,
+  },
+  {
+    soulbind: "Kleia",
+    src: "DiagonalShort.png",
+    position: [305, 280],
+    angle: 305,
+  },
+  {
+    soulbind: "Kleia",
+    src: "DiagonalShort.png",
+    position: [203, 360],
+    angle: 305,
+  },
+  {
+    soulbind: "Kleia",
+    src: "DiagonalShort.png",
+    position: [393, 360],
+    angle: 55,
+  },
+  {
+    soulbind: "Kleia",
+    src: "DiagonalShort.png",
+    position: [298, 435],
+    angle: 45,
+  },
+  {
+    soulbind: "Kleia",
+    src: "DiagonalShort.png",
+    position: [298, 435],
+    angle: 315,
+  },
+  {
+    soulbind: "Kleia",
+    src: "Vertical.PNG",
+    position: [298, 435],
+    angle: 0,
+  },
+  {
+    // Row 1 Middle Verticle
+    soulbind: "Kleia",
+    src: "Vertical.PNG",
+    position: [298, 515],
+    angle: 0,
+  },
+  {
+    soulbind: "Kleia",
+    src: "Vertical.PNG",
+    position: [203, 530],
+    angle: 0,
+  },
+  {
+    soulbind: "Kleia",
+    src: "Vertical.PNG",
+    position: [393, 530],
+    angle: 0,
+  },
 
-]
+  // Mikanikos
+  {
+    // Row 1 Top Left Diagonal
+    soulbind: "Mikanikos",
+    src: "DiagonalShort.png",
+    position: [287, 35],
+    angle: 45,
+  },
+  {
+    // Row 1 Top Right Diagonal
+    soulbind: "Mikanikos",
+    src: "DiagonalShort.png",
+    position: [305, 35],
+    angle: 315,
+  },
+  {
+    // Row 2 Middle Verticle
+    soulbind: "Mikanikos",
+    src: "Vertical.PNG",
+    position: [203, 100],
+    angle: 0,
+  },
+  {
+    soulbind: "Mikanikos",
+    src: "Vertical.PNG",
+    position: [393, 100],
+    angle: 0,
+  },
+  {
+    soulbind: "Mikanikos",
+    src: "DiagonalShort.png",
+    position: [202, 198],
+    angle: 305, // 55
+  },
+
+  {
+    soulbind: "Mikanikos",
+    src: "DiagonalShort.png",
+    position: [400, 198],
+    angle: 55, // 55
+  },
+  {
+    soulbind: "Mikanikos",
+    src: "DiagonalShort.png",
+    position: [285, 280],
+    angle: 55,
+  },
+  {
+    soulbind: "Mikanikos",
+    src: "DiagonalShort.png",
+    position: [305, 280],
+    angle: 305,
+  },
+  {
+    soulbind: "Mikanikos",
+    src: "DiagonalShort.png",
+    position: [203, 360],
+    angle: 305,
+  },
+  {
+    soulbind: "Mikanikos",
+    src: "DiagonalShort.png",
+    position: [393, 360],
+    angle: 55,
+  },
+  {
+    soulbind: "Mikanikos",
+    src: "DiagonalShort.png",
+    position: [298, 435],
+    angle: 45,
+  },
+  {
+    soulbind: "Mikanikos",
+    src: "DiagonalShort.png",
+    position: [298, 435],
+    angle: 315,
+  },
+  {
+    soulbind: "Mikanikos",
+    src: "Vertical.PNG",
+    position: [298, 435],
+    angle: 0,
+  },
+  {
+    // Row 1 Middle Verticle
+    soulbind: "Mikanikos",
+    src: "Vertical.PNG",
+    position: [298, 515],
+    angle: 0,
+  },
+  {
+    soulbind: "Mikanikos",
+    src: "Vertical.PNG",
+    position: [203, 530],
+    angle: 0,
+  },
+  {
+    soulbind: "Mikanikos",
+    src: "Vertical.PNG",
+    position: [393, 530],
+    angle: 0,
+  },
+
+  // Niya
+  {
+    // Row 1 Top Left Diagonal
+    soulbind: "Niya",
+    src: "DiagonalShort.png",
+    position: [287, 35],
+    angle: 45,
+  },
+  {
+    // Row 1 Top Right Diagonal
+    soulbind: "Niya",
+    src: "DiagonalShort.png",
+    position: [305, 35],
+    angle: 315,
+  },
+  {
+    // Row 2 Middle Verticle
+    soulbind: "Niya",
+    src: "Vertical.PNG",
+    position: [203, 100],
+    angle: 0,
+  },
+  {
+    soulbind: "Niya",
+    src: "Vertical.PNG",
+    position: [393, 100],
+    angle: 0,
+  },
+  {
+    soulbind: "Niya",
+    src: "DiagonalShort.png",
+    position: [202, 198],
+    angle: 305, // 55
+  },
+
+  {
+    soulbind: "Niya",
+    src: "DiagonalShort.png",
+    position: [400, 198],
+    angle: 55, // 55
+  },
+  {
+    soulbind: "Niya",
+    src: "DiagonalShort.png",
+    position: [285, 280],
+    angle: 55,
+  },
+  {
+    soulbind: "Niya",
+    src: "DiagonalShort.png",
+    position: [305, 280],
+    angle: 305,
+  },
+  {
+    soulbind: "Niya",
+    src: "DiagonalShort.png",
+    position: [203, 360],
+    angle: 305,
+  },
+  {
+    soulbind: "Niya",
+    src: "DiagonalShort.png",
+    position: [393, 360],
+    angle: 55,
+  },
+  {
+    soulbind: "Niya",
+    src: "DiagonalShort.png",
+    position: [298, 435],
+    angle: 45,
+  },
+  {
+    soulbind: "Niya",
+    src: "DiagonalShort.png",
+    position: [298, 435],
+    angle: 315,
+  },
+  {
+    soulbind: "Niya",
+    src: "Vertical.PNG",
+    position: [298, 435],
+    angle: 0,
+  },
+  {
+    // Row 1 Middle Verticle
+    soulbind: "Niya",
+    src: "Vertical.PNG",
+    position: [298, 515],
+    angle: 0,
+  },
+  {
+    soulbind: "Niya",
+    src: "Vertical.PNG",
+    position: [203, 530],
+    angle: 0,
+  },
+  {
+    soulbind: "Niya",
+    src: "Vertical.PNG",
+    position: [393, 530],
+    angle: 0,
+  },
+
+  // Korayn
+  {
+    // Row 1 Top Left Diagonal
+    soulbind: "Korayn",
+    src: "DiagonalShort.png",
+    position: [287, 35],
+    angle: 45,
+  },
+  {
+    // Row 1 Top Right Diagonal
+    soulbind: "Korayn",
+    src: "DiagonalShort.png",
+    position: [305, 35],
+    angle: 315,
+  },
+  {
+    // Row 2 Middle Verticle
+    soulbind: "Korayn",
+    src: "Vertical.PNG",
+    position: [203, 100],
+    angle: 0,
+  },
+  {
+    soulbind: "Korayn",
+    src: "Vertical.PNG",
+    position: [393, 100],
+    angle: 0,
+  },
+  {
+    soulbind: "Korayn",
+    src: "DiagonalShort.png",
+    position: [202, 198],
+    angle: 305, // 55
+  },
+
+  {
+    soulbind: "Korayn",
+    src: "DiagonalShort.png",
+    position: [400, 198],
+    angle: 55, // 55
+  },
+  {
+    soulbind: "Korayn",
+    src: "DiagonalShort.png",
+    position: [285, 280],
+    angle: 55,
+  },
+  {
+    soulbind: "Korayn",
+    src: "DiagonalShort.png",
+    position: [305, 280],
+    angle: 305,
+  },
+  {
+    soulbind: "Korayn",
+    src: "DiagonalShort.png",
+    position: [203, 360],
+    angle: 305,
+  },
+  {
+    soulbind: "Korayn",
+    src: "DiagonalShort.png",
+    position: [393, 360],
+    angle: 55,
+  },
+  {
+    soulbind: "Korayn",
+    src: "DiagonalShort.png",
+    position: [298, 435],
+    angle: 45,
+  },
+  {
+    soulbind: "Korayn",
+    src: "DiagonalShort.png",
+    position: [298, 435],
+    angle: 315,
+  },
+  {
+    soulbind: "Korayn",
+    src: "Vertical.PNG",
+    position: [298, 435],
+    angle: 0,
+  },
+  {
+    // Row 1 Middle Verticle
+    soulbind: "Korayn",
+    src: "Vertical.PNG",
+    position: [298, 515],
+    angle: 0,
+  },
+  {
+    soulbind: "Korayn",
+    src: "Vertical.PNG",
+    position: [203, 530],
+    angle: 0,
+  },
+  {
+    soulbind: "Korayn",
+    src: "Vertical.PNG",
+    position: [393, 530],
+    angle: 0,
+  },
+
+  // Theotar
+  {
+    // Row 1 Top Left Diagonal
+    soulbind: "Nadjia",
+    src: "DiagonalShort.png",
+    position: [287, 35],
+    angle: 45,
+  },
+  {
+    // Row 1 Top Right Diagonal
+    soulbind: "Nadjia",
+    src: "DiagonalShort.png",
+    position: [305, 35],
+    angle: 315,
+  },
+  {
+    // Row 2 Middle Verticle
+    soulbind: "Nadjia",
+    src: "Vertical.PNG",
+    position: [203, 100],
+    angle: 0,
+  },
+  {
+    soulbind: "Nadjia",
+    src: "Vertical.PNG",
+    position: [393, 100],
+    angle: 0,
+  },
+  {
+    soulbind: "Nadjia",
+    src: "DiagonalShort.png",
+    position: [202, 198],
+    angle: 305, // 55
+  },
+
+  {
+    soulbind: "Nadjia",
+    src: "DiagonalShort.png",
+    position: [400, 198],
+    angle: 55, // 55
+  },
+  {
+    soulbind: "Nadjia",
+    src: "Vertical.PNG",
+    position: [298, 250],
+    angle: 0,
+  },
+
+  {
+    soulbind: "Nadjia",
+    src: "Vertical.PNG",
+    position: [298, 315],
+    angle: 0,
+  },
+
+  {
+    soulbind: "Nadjia",
+    src: "DiagonalShort.png",
+    position: [298, 435],
+    angle: 45,
+  },
+  {
+    soulbind: "Nadjia",
+    src: "DiagonalShort.png",
+    position: [298, 435],
+    angle: 315,
+  },
+  {
+    soulbind: "Nadjia",
+    src: "Vertical.PNG",
+    position: [298, 435],
+    angle: 0,
+  },
+  {
+    // Row 1 Middle Verticle
+    soulbind: "Nadjia",
+    src: "Vertical.PNG",
+    position: [298, 515],
+    angle: 0,
+  },
+  {
+    soulbind: "Nadjia",
+    src: "Vertical.PNG",
+    position: [203, 530],
+    angle: 0,
+  },
+  {
+    soulbind: "Nadjia",
+    src: "Vertical.PNG",
+    position: [393, 530],
+    angle: 0,
+  },
+
+  // Theotar
+  {
+    // Row 1 Top Left Diagonal
+    soulbind: "Theotar",
+    src: "DiagonalShort.png",
+    position: [287, 35],
+    angle: 45,
+  },
+  {
+    // Row 1 Top Right Diagonal
+    soulbind: "Theotar",
+    src: "DiagonalShort.png",
+    position: [305, 35],
+    angle: 315,
+  },
+  {
+    // Row 2 Middle Verticle
+    soulbind: "Theotar",
+    src: "Vertical.PNG",
+    position: [203, 100],
+    angle: 0,
+  },
+  {
+    soulbind: "Theotar",
+    src: "Vertical.PNG",
+    position: [393, 100],
+    angle: 0,
+  },
+  {
+    soulbind: "Theotar",
+    src: "DiagonalShort.png",
+    position: [202, 198],
+    angle: 305, // 55
+  },
+
+  {
+    soulbind: "Theotar",
+    src: "DiagonalShort.png",
+    position: [400, 198],
+    angle: 55, // 55
+  },
+  {
+    soulbind: "Theotar",
+    src: "DiagonalShort.png",
+    position: [285, 280],
+    angle: 55,
+  },
+  {
+    soulbind: "Theotar",
+    src: "DiagonalShort.png",
+    position: [305, 280],
+    angle: 305,
+  },
+  {
+    soulbind: "Theotar",
+    src: "DiagonalShort.png",
+    position: [203, 360],
+    angle: 305,
+  },
+  {
+    soulbind: "Theotar",
+    src: "DiagonalShort.png",
+    position: [393, 360],
+    angle: 55,
+  },
+  {
+    soulbind: "Theotar",
+    src: "DiagonalShort.png",
+    position: [298, 435],
+    angle: 45,
+  },
+  {
+    soulbind: "Theotar",
+    src: "DiagonalShort.png",
+    position: [298, 435],
+    angle: 315,
+  },
+  {
+    soulbind: "Theotar",
+    src: "Vertical.PNG",
+    position: [298, 435],
+    angle: 0,
+  },
+  {
+    // Row 1 Middle Verticle
+    soulbind: "Theotar",
+    src: "Vertical.PNG",
+    position: [298, 515],
+    angle: 0,
+  },
+  {
+    soulbind: "Theotar",
+    src: "Vertical.PNG",
+    position: [203, 530],
+    angle: 0,
+  },
+  {
+    soulbind: "Theotar",
+    src: "Vertical.PNG",
+    position: [393, 530],
+    angle: 0,
+  },
+
+  // Draven
+  {
+    // Row 1 Top Left Diagonal
+    soulbind: "Draven",
+    src: "DiagonalShort.png",
+    position: [287, 35],
+    angle: 45,
+  },
+  {
+    // Row 1 Top Right Diagonal
+    soulbind: "Draven",
+    src: "DiagonalShort.png",
+    position: [305, 35],
+    angle: 315,
+  },
+  {
+    // Row 2 Middle Verticle
+    soulbind: "Draven",
+    src: "Vertical.PNG",
+    position: [203, 100],
+    angle: 0,
+  },
+  {
+    soulbind: "Draven",
+    src: "Vertical.PNG",
+    position: [393, 100],
+    angle: 0,
+  },
+  {
+    soulbind: "Draven",
+    src: "DiagonalShort.png",
+    position: [202, 198],
+    angle: 305, // 55
+  },
+
+  {
+    soulbind: "Draven",
+    src: "DiagonalShort.png",
+    position: [400, 198],
+    angle: 55, // 55
+  },
+  {
+    soulbind: "Draven",
+    src: "DiagonalShort.png",
+    position: [285, 280],
+    angle: 55,
+  },
+  {
+    soulbind: "Draven",
+    src: "DiagonalShort.png",
+    position: [305, 280],
+    angle: 305,
+  },
+  {
+    soulbind: "Draven",
+    src: "DiagonalShort.png",
+    position: [203, 360],
+    angle: 305,
+  },
+  {
+    soulbind: "Draven",
+    src: "DiagonalShort.png",
+    position: [393, 360],
+    angle: 55,
+  },
+  {
+    soulbind: "Draven",
+    src: "DiagonalShort.png",
+    position: [298, 435],
+    angle: 45,
+  },
+  {
+    soulbind: "Draven",
+    src: "DiagonalShort.png",
+    position: [298, 435],
+    angle: 315,
+  },
+  {
+    soulbind: "Draven",
+    src: "Vertical.PNG",
+    position: [298, 435],
+    angle: 0,
+  },
+  {
+    // Row 1 Middle Verticle
+    soulbind: "Draven",
+    src: "Vertical.PNG",
+    position: [298, 515],
+    angle: 0,
+  },
+  {
+    soulbind: "Draven",
+    src: "Vertical.PNG",
+    position: [203, 530],
+    angle: 0,
+  },
+  {
+    soulbind: "Draven",
+    src: "Vertical.PNG",
+    position: [393, 530],
+    angle: 0,
+  },
+
+  // Emeni
+  {
+    // Row 1 Top Left Diagonal
+    soulbind: "Emeni",
+    src: "DiagonalShort.png",
+    position: [287, 35],
+    angle: 45,
+  },
+  {
+    // Row 1 Top Right Diagonal
+    soulbind: "Emeni",
+    src: "DiagonalShort.png",
+    position: [305, 35],
+    angle: 315,
+  },
+  {
+    // Row 2 Middle Verticle
+    soulbind: "Emeni",
+    src: "Vertical.PNG",
+    position: [203, 100],
+    angle: 0,
+  },
+  {
+    soulbind: "Emeni",
+    src: "Vertical.PNG",
+    position: [393, 100],
+    angle: 0,
+  },
+  {
+    soulbind: "Emeni",
+    src: "DiagonalShort.png",
+    position: [202, 198],
+    angle: 305, // 55
+  },
+
+  {
+    soulbind: "Emeni",
+    src: "DiagonalShort.png",
+    position: [400, 198],
+    angle: 55, // 55
+  },
+  {
+    soulbind: "Emeni",
+    src: "DiagonalShort.png",
+    position: [285, 280],
+    angle: 55,
+  },
+  {
+    soulbind: "Emeni",
+    src: "DiagonalShort.png",
+    position: [305, 280],
+    angle: 305,
+  },
+  {
+    soulbind: "Emeni",
+    src: "DiagonalShort.png",
+    position: [203, 360],
+    angle: 305,
+  },
+  {
+    soulbind: "Emeni",
+    src: "DiagonalShort.png",
+    position: [393, 360],
+    angle: 55,
+  },
+  {
+    soulbind: "Emeni",
+    src: "DiagonalShort.png",
+    position: [298, 435],
+    angle: 45,
+  },
+  {
+    soulbind: "Emeni",
+    src: "DiagonalShort.png",
+    position: [298, 435],
+    angle: 315,
+  },
+  {
+    soulbind: "Emeni",
+    src: "Vertical.PNG",
+    position: [298, 435],
+    angle: 0,
+  },
+  {
+    // Row 1 Middle Verticle
+    soulbind: "Emeni",
+    src: "Vertical.PNG",
+    position: [298, 515],
+    angle: 0,
+  },
+  {
+    soulbind: "Emeni",
+    src: "Vertical.PNG",
+    position: [203, 530],
+    angle: 0,
+  },
+  {
+    soulbind: "Emeni",
+    src: "Vertical.PNG",
+    position: [393, 530],
+    angle: 0,
+  },
+
+  // Emeni
+  {
+    // Row 1 Top Left Diagonal
+    soulbind: "Heirmir",
+    src: "DiagonalShort.png",
+    position: [287, 35],
+    angle: 45,
+  },
+  {
+    // Row 1 Top Right Diagonal
+    soulbind: "Heirmir",
+    src: "DiagonalShort.png",
+    position: [305, 35],
+    angle: 315,
+  },
+  {
+    // Row 2 Middle Verticle
+    soulbind: "Heirmir",
+    src: "Vertical.PNG",
+    position: [203, 100],
+    angle: 0,
+  },
+  {
+    soulbind: "Heirmir",
+    src: "Vertical.PNG",
+    position: [393, 100],
+    angle: 0,
+  },
+  {
+    soulbind: "Heirmir",
+    src: "DiagonalShort.png",
+    position: [202, 198],
+    angle: 305, // 55
+  },
+
+  {
+    soulbind: "Heirmir",
+    src: "DiagonalShort.png",
+    position: [400, 198],
+    angle: 55, // 55
+  },
+  {
+    soulbind: "Heirmir",
+    src: "DiagonalShort.png",
+    position: [285, 280],
+    angle: 55,
+  },
+  {
+    soulbind: "Heirmir",
+    src: "DiagonalShort.png",
+    position: [305, 280],
+    angle: 305,
+  },
+  {
+    soulbind: "Heirmir",
+    src: "DiagonalShort.png",
+    position: [203, 360],
+    angle: 305,
+  },
+  {
+    soulbind: "Heirmir",
+    src: "DiagonalShort.png",
+    position: [393, 360],
+    angle: 55,
+  },
+  {
+    soulbind: "Heirmir",
+    src: "DiagonalShort.png",
+    position: [298, 435],
+    angle: 45,
+  },
+  {
+    soulbind: "Heirmir",
+    src: "DiagonalShort.png",
+    position: [298, 435],
+    angle: 315,
+  },
+  {
+    soulbind: "Heirmir",
+    src: "Vertical.PNG",
+    position: [298, 435],
+    angle: 0,
+  },
+  {
+    // Row 1 Middle Verticle
+    soulbind: "Heirmir",
+    src: "Vertical.PNG",
+    position: [298, 515],
+    angle: 0,
+  },
+  {
+    soulbind: "Heirmir",
+    src: "Vertical.PNG",
+    position: [203, 530],
+    angle: 0,
+  },
+  {
+    soulbind: "Heirmir",
+    src: "Vertical.PNG",
+    position: [393, 530],
+    angle: 0,
+  },
+];
+
+const columnPos = [195, 290, 385];
+const rowPos = [
+  [20, 100, 180, 260, 340, 390, 470, 550, 630],
+  [5, 85, 165, 245, 325, 405, 485, 565, 645],
+  [20, 100, 180, 260, 340, 390, 470, 550, 630],
+];
