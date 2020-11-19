@@ -735,7 +735,7 @@ function buildSoulbind(
                   }}
                 />
                 <Grid container spacing={1} style={{ maxWidth: 245 }} xs={12}>
-                  {potencyConduits.map((conduit, index) => (
+                  {potencyConduits.map((conduit, i) => (
                     <ConduitObject conduit={conduit} key={i} updateConduitLevel={updateConduitLevel} />
 
                   ))}
