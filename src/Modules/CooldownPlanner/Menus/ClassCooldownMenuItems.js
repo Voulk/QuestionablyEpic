@@ -37,7 +37,7 @@ export default function ClassCooldownMenuItems(props) {
           {(t) => t("CooldownPlannerClassAbilities.31821")}
         </Translation>
       </MenuItem>,
-      <Divider />,
+      <Divider key={"divider1"} />,
       <MenuItem value={31884} key={2}>
         <a data-wowhead="spell=31884">
           <img
@@ -77,7 +77,7 @@ export default function ClassCooldownMenuItems(props) {
           {(t) => t("CooldownPlannerClassAbilities.740")}
         </Translation>
       </MenuItem>,
-      <Divider />,
+      <Divider key={"divider2"} />,
       <MenuItem value={33891} key={4}>
         <a data-wowhead="spell=33891">
           <img
@@ -117,7 +117,7 @@ export default function ClassCooldownMenuItems(props) {
           {(t) => t("CooldownPlannerClassAbilities.265202")}
         </Translation>
       </MenuItem>,
-      <Divider />,
+      <Divider key={"divider3"} />,
       <MenuItem value={64843} key={6}>
         <a data-wowhead="spell=64843">
           <img
@@ -157,7 +157,7 @@ export default function ClassCooldownMenuItems(props) {
           {(t) => t("CooldownPlannerClassAbilities.62618")}
         </Translation>
       </MenuItem>,
-      <Divider />,
+      <Divider key={"divider4"} />,
       <MenuItem value={246287} key={8}>
         <a data-wowhead="spell=246287">
           <img
@@ -197,7 +197,7 @@ export default function ClassCooldownMenuItems(props) {
           {(t) => t("CooldownPlannerClassAbilities.108280")}
         </Translation>
       </MenuItem>,
-      <Divider />,
+      <Divider key={"divider5"} />,
       <MenuItem value={98008} key={10}>
         <a data-wowhead="spell=98008">
           <img
@@ -284,6 +284,6 @@ export default function ClassCooldownMenuItems(props) {
     ];
   }
   if (props === 0) {
-    return [<MenuItem> No Class Selected </MenuItem>];
+    return [<MenuItem key={0}> No Class Selected </MenuItem>];
   }
 }

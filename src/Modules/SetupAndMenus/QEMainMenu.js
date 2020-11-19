@@ -10,7 +10,6 @@ import { makeStyles } from "@material-ui/core/styles";
 
 // Warning: If a button name has to change, do it in the translation files. Consider the titles here to be ID's rather than strings.
 const mainMenuOptions = {
-
   /*
   "Top Gear": "/topgear",
   "Gear Quick Compare": "/quickcompare",
@@ -48,7 +47,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function QEMainMenu(props) {
   const { t, i18n } = useTranslation();
-  const currentLanguage = i18n.language;
+  // const currentLanguage = i18n.language;
   const classes = useStyles();
 
   return (
