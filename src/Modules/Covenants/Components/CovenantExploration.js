@@ -32,11 +32,7 @@ function TabPanel(props) {
       aria-labelledby={`simple-tab-${index}`}
       {...other}
     >
-      {value === index && (
-        <Box p={0}>
-          <Typography>{children}</Typography>
-        </Box>
-      )}
+      {value === index && <Box p={0}>{children}</Box>}
     </div>
   );
 }
@@ -74,10 +70,9 @@ const useStyles = makeStyles((theme) => ({
   },
   panel: {
     flexGrow: 1,
-    backgroundColor: theme.palette.background.paper,
+    backgroundColor: "#191c23",
     display: "flex",
     height: 700, // 609
-    backgroundColor: "#191c23",
   },
   tabs: {
     borderRight: `1px solid ${theme.palette.divider}`,
@@ -239,6 +234,7 @@ export default function SimpleTabs(props) {
               icon={
                 <img
                   height={100}
+                  alt="Pelagos"
                   src={
                     process.env.PUBLIC_URL + "/Images/Interface/pelagos.webp"
                   }
@@ -252,6 +248,7 @@ export default function SimpleTabs(props) {
               icon={
                 <img
                   height={100}
+                  alt="Kleia"
                   src={process.env.PUBLIC_URL + "/Images/Interface/kleia.webp"}
                 />
               }
@@ -263,6 +260,7 @@ export default function SimpleTabs(props) {
               icon={
                 <img
                   height={100}
+                  alt="Mikanikos"
                   src={
                     process.env.PUBLIC_URL +
                     "/Images/Interface/forgelite-prime-mikanikos.webp"
@@ -303,6 +301,7 @@ export default function SimpleTabs(props) {
               activateSoulbind,
               setConduitInSlot,
               updateConduitLevel,
+
             )}
           </TabPanel>
           <TabPanel
@@ -316,8 +315,10 @@ export default function SimpleTabs(props) {
               props.contentType,
               soulbindState,
               activateSoulbind,
+
               setConduitInSlot,
               updateConduitLevel,
+
             )}
           </TabPanel>
         </div>
@@ -339,6 +340,7 @@ export default function SimpleTabs(props) {
               icon={
                 <img
                   height={100}
+                  alt="Niya"
                   src={process.env.PUBLIC_URL + "/Images/Interface/niya.webp"}
                 />
               }
@@ -350,6 +352,7 @@ export default function SimpleTabs(props) {
               icon={
                 <img
                   height={100}
+                  alt="Dreamweaver"
                   src={
                     process.env.PUBLIC_URL +
                     "/Images/Interface/dreamweaver.webp"
@@ -364,6 +367,7 @@ export default function SimpleTabs(props) {
               icon={
                 <img
                   height={100}
+                  alt="Korayn"
                   src={process.env.PUBLIC_URL + "/Images/Interface/korayn.webp"}
                 />
               }
@@ -382,6 +386,7 @@ export default function SimpleTabs(props) {
               activateSoulbind,
               setConduitInSlot,
               updateConduitLevel,
+
             )}
           </TabPanel>
           <TabPanel value={soulbindValue} index={1}>
@@ -393,6 +398,7 @@ export default function SimpleTabs(props) {
               activateSoulbind,
               setConduitInSlot,
               updateConduitLevel,
+
             )}
           </TabPanel>
           <TabPanel value={soulbindValue} index={2}>
@@ -404,6 +410,7 @@ export default function SimpleTabs(props) {
               activateSoulbind,
               setConduitInSlot,
               updateConduitLevel,
+
             )}
           </TabPanel>
         </div>
@@ -425,6 +432,7 @@ export default function SimpleTabs(props) {
               icon={
                 <img
                   height={100}
+                  alt="Nadjia"
                   src={
                     process.env.PUBLIC_URL +
                     "/Images/Interface/nadjia-the-mistblade.webp"
@@ -439,6 +447,7 @@ export default function SimpleTabs(props) {
               icon={
                 <img
                   height={100}
+                  alt="Theotar"
                   src={
                     process.env.PUBLIC_URL +
                     "/Images/Interface/theotar-the-mad-duke.webp"
@@ -453,6 +462,7 @@ export default function SimpleTabs(props) {
               icon={
                 <img
                   height={100}
+                  alt="Draven"
                   src={
                     process.env.PUBLIC_URL +
                     "/Images/Interface/general-draven.webp"
@@ -474,6 +484,7 @@ export default function SimpleTabs(props) {
               activateSoulbind,
               setConduitInSlot,
               updateConduitLevel,
+
             )}
           </TabPanel>
           <TabPanel value={soulbindValue} index={1}>
@@ -485,6 +496,7 @@ export default function SimpleTabs(props) {
               activateSoulbind,
               setConduitInSlot,
               updateConduitLevel,
+
             )}
           </TabPanel>
           <TabPanel value={soulbindValue} index={2}>
@@ -496,6 +508,7 @@ export default function SimpleTabs(props) {
               activateSoulbind,
               setConduitInSlot,
               updateConduitLevel,
+
             )}
           </TabPanel>
         </div>
@@ -517,6 +530,7 @@ export default function SimpleTabs(props) {
               icon={
                 <img
                   height={100}
+                  alt="Marileth"
                   src={
                     process.env.PUBLIC_URL +
                     "/Images/Interface/plague-deviser-marileth.webp"
@@ -531,6 +545,7 @@ export default function SimpleTabs(props) {
               icon={
                 <img
                   height={100}
+                  alt="Emeni"
                   src={process.env.PUBLIC_URL + "/Images/Interface/emeni.webp"}
                 />
               }
@@ -542,6 +557,7 @@ export default function SimpleTabs(props) {
               icon={
                 <img
                   height={100}
+                  alt="Heirmir"
                   src={
                     process.env.PUBLIC_URL +
                     "/Images/Interface/bonesmith-heirmir.webp"
@@ -563,6 +579,7 @@ export default function SimpleTabs(props) {
               activateSoulbind,
               setConduitInSlot,
               updateConduitLevel,
+
             )}
           </TabPanel>
           <TabPanel value={soulbindValue} index={1}>
@@ -574,6 +591,7 @@ export default function SimpleTabs(props) {
               activateSoulbind,
               setConduitInSlot,
               updateConduitLevel,
+
             )}
           </TabPanel>
           <TabPanel value={soulbindValue} index={2}>
@@ -605,6 +623,7 @@ function buildSoulbind(
   activateSoulbind,
   setConduitInSlot,
   updateConduitLevel
+
 ) {
   //console.log(JSON.stringify(soulbindState));
   //console.log("Post: " + JSON.stringify(soulbindState))
@@ -717,7 +736,8 @@ function buildSoulbind(
                 />
                 <Grid container spacing={1} style={{ maxWidth: 245 }} xs={12}>
                   {potencyConduits.map((conduit, index) => (
-                    <ConduitObject conduit={conduit} updateConduitLevel={updateConduitLevel} />
+                    <ConduitObject conduit={conduit} key={i} updateConduitLevel={updateConduitLevel} />
+
                   ))}
                 </Grid>
               </Grid>
@@ -734,8 +754,8 @@ function buildSoulbind(
                   }}
                 />
                 <Grid container spacing={1} style={{ maxWidth: 245 }} xs={12}>
-                  {enduranceConduits.map((conduit, index) => (
-                    <ConduitObject conduit={conduit} updateConduitLevel={updateConduitLevel} />
+                  {enduranceConduits.map((conduit, i) => (
+                    <ConduitObject conduit={conduit} key={i} updateConduitLevel={updateConduitLevel} />
                   ))}
                 </Grid>
               </Grid>

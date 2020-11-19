@@ -549,8 +549,8 @@ export default function CooldownPlanner(props) {
                         MenuProps={menuStyle}
                       >
                         {rl
-                          .map((key) => (
-                            <MenuItem value={key.zoneID}>
+                          .map((key, i) => (
+                            <MenuItem key={"RS" + i} value={key.zoneID}>
                               {key.raidName}
                             </MenuItem>
                           ))
@@ -581,8 +581,8 @@ export default function CooldownPlanner(props) {
                           .filter((obj) => {
                             return obj.zoneID === currentRaid;
                           })
-                          .map((key) => (
-                            <MenuItem value={key.id}>
+                          .map((key, i) => (
+                            <MenuItem key={"BS" + i} value={key.id}>
                               {bossIcons(key.id)}
                               {key.name}
                             </MenuItem>
