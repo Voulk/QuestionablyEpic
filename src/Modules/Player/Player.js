@@ -42,14 +42,20 @@ class Player {
             "Wild Growth": [5, 154400, 0.2472, 1478],
             "Overall": [0, 90132, 1],
             "Light of Dawn": [20, 238400, 0.2082, 1316],
+            "Word of Glory": [4, 40800, 0.0357, 225],
             "Holy Shock": [27, 221400, 0.1934, 1222],
             "Holy Light": [29, 311600, 0.293, 1683],
             "Shock Barrier": [0, 98300, 0.0858, 542],
     },
         "Dungeon": {
-            "Rejuvenation": [35, 40213, 0.11],
-            "Wild Growth": 40,
-            "Overall": [0, 90132, 1]
+            "Rejuvenation": [17, 181000, 0.2909, 1566],
+            "Wild Growth": [5, 154400, 0.2472, 1478],
+            "Overall": [0, 90132, 1],
+            "Light of Dawn": [20, 238400, 0.2082, 1316],
+            "Word of Glory": [4, 40800, 0.0357, 225],
+            "Holy Shock": [27, 221400, 0.1934, 1222],
+            "Holy Light": [29, 311600, 0.293, 1683],
+            "Shock Barrier": [0, 98300, 0.0858, 542],
         }
     }
 
@@ -63,6 +69,7 @@ class Player {
         crit: 350,
         mastery: 0,
         versatility: 200,
+        stamina: 1490,
         hps: 6000,
         rawhps: 9420,
         fightLength: 180,
@@ -76,10 +83,10 @@ class Player {
     statWeights = {
         "Raid": {
             intellect: 1, 
-            haste: 0.5,
-            crit: 0.6,
-            mastery: 0.5,
-            versatility: 0.45,
+            haste: 0.4,
+            crit: 0.5,
+            mastery: 0.45,
+            versatility: 0.4,
             leech: 0.7,
         },
         "Dungeon": {
@@ -110,6 +117,7 @@ class Player {
         //console.log("Calculating Conduits")
         this.activeConduits.forEach(conduit => {
             conduit.setHPS(this, contentType)
+            
             //return conduit;
         })
     }
@@ -185,6 +193,10 @@ class Player {
             // Returns a multiplier that includes raw intellect. 
             mult = this.getStatPerc("Haste") * this.getStatPerc("Crit") * this.getStatPerc("Vers") * this.getStatPerc("Mastery") * this.activeStats.intellect;
         }
+        else if (flag === "NOHASTE") {
+            // Returns a multiplier that includes raw intellect. 
+            mult = this.getStatPerc("Haste") * this.getStatPerc("Crit") * this.getStatPerc("Vers") * this.getStatPerc("Mastery") * this.activeStats.intellect;
+        }
         else if (flag === "ALLSEC") {
             // Returns a multiplier that includes all secondaries but NOT intellect.
             mult = this.getStatPerc("Haste") * this.getStatPerc("Crit") * this.getStatPerc("Vers") * this.getStatPerc("Mastery");
@@ -204,6 +216,14 @@ class Player {
 
     }
 
+    updateConduitLevel = (id, newLevel) => {
+        for (let i = 0; i < this.activeConduits.length; i++) {
+            if (this.activeConduits[i].id === id) {
+                this.activeConduits[i].itemLevel = Math.max(145, Math.min(newLevel, 213));
+            }
+        }
+    
+    }
 
     getSpec = () => {
         return this.spec;
@@ -233,7 +253,7 @@ class Player {
     }
 
     getSingleCast = (spellName, contentType) => {
-        
+
         return this.castPattern[contentType][spellName][SPELL_HEALING_LOC] / this.castPattern[contentType][spellName][SPELL_CASTS_LOC]
     }
 

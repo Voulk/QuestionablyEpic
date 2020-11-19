@@ -14,6 +14,8 @@ import {getShamanConduit} from './Shaman/ShamanConduitFormulas'
 import {getMonkConduit} from './Monk/MonkConduitFormulas'
 import {getDruidConduit} from './Druid/DruidConduitFormulas'
 
+import {getPaladinCovAbility} from './Paladin/PaladinMiscFormulas'
+
 
 import SPEC from '../SPECS'
 
@@ -67,16 +69,32 @@ export function getEffectValue(effect, player, contentType, itemLevel = 0) {
     return bonus_stats;
 }
 
-export function getConduitFormula(effectID, player, contentType, itemLevel = 156) {
+function getConduitRank(itemLevel)  {
+    let ranks = {
+        145: 1,
+        158: 2,
+        171: 3,
+        184: 4,
+        200: 5,
+        213: 6,
+        226: 7,
+    }
+
+    return ranks[itemLevel];
+}
+
+export function getConduitFormula(effectID, player, contentType, itemLevel = 145) {
+    
+    let conduitRank = getConduitRank(itemLevel)
     let bonus_stats = {};
 
     switch(player.spec) {
         case(SPEC.DISCPRIEST):
         case(SPEC.HOLYPRIEST):
-            bonus_stats = getPriestConduit(effectID, player, contentType, itemLevel);
+            bonus_stats = getPriestConduit(effectID, player, contentType, conduitRank);
             break;
         case(SPEC.RESTODRUID):
-            bonus_stats = getDruidConduit(effectID, player, contentType, itemLevel);
+            bonus_stats = getDruidConduit(effectID, player, contentType, conduitRank);
             break;
         case(SPEC.RESTOSHAMAN):
             bonus_stats = getShamanConduit(effectID, player, contentType, itemLevel);
@@ -92,4 +110,20 @@ export function getConduitFormula(effectID, player, contentType, itemLevel = 156
 
     return bonus_stats;
 
+}
+
+export function getCovAbility(soulbindName, player, contentType) {
+    let bonus_stats = {};
+
+    switch(player.spec) {
+        case(SPEC.DISCPRIEST):
+        case(SPEC.HOLYPRIEST):
+            break;
+        case(SPEC.HOLYPALADIN):
+            bonus_stats = getPaladinCovAbility(soulbindName, player, contentType)
+            break;
+
+    }
+
+    return bonus_stats;
 }

@@ -1,4 +1,7 @@
-import {convertPPMToUptime} from '../EffectUtilities'
+import Player from '../../../Player/Player'
+import { STAT, STATPERONEPERCENT } from '../../STAT'
+import {convertPPMToUptime, getBestEnchant} from '../EffectUtilities'
+
 
 /* 
 == Generic Soulbind Effects ==
@@ -28,36 +31,61 @@ export function getSoulbindFormula(effectID, pl, contentType) {
     }
     // Focusing Mantra
     else if (effectID === 328261) {
-        bonus_stats.HPS = 0 // Placeholder.
+        // Left as 0 for now. While you might occasionally get some value from being able to vial slightly earlier, this is honestly 
+        // just going to be 0 throughput in most cases.
+        bonus_stats.HPS = 0 
+        
         
     }
     // Phial of Patience
+    // Your Phial heals for 35% additional health, but over 10 seconds.
     else if (effectID === 329777) {
-        bonus_stats.HPS = 0 // Placeholder.
+        let expected_overhealing = 0.55
+        let healing_bonus = pl.activeStats.stamina * 20 * 0.35;
+        let uses_per_combat = 1.5;
+
+        bonus_stats.HPS = healing_bonus * uses_per_combat * (1 - expected_overhealing) / pl.activeStats.fightLength;  // Placeholder.
         
     }
     // Let go of the Past
     else if (effectID === 328257) {
-        let averageStacks = 2.4 // Placeholder
-        bonus_stats.Versatility = averageStacks * 40; // Placeholder.
-        
+        // This was changed to a small magic damage DR and is given no value currently.
+        // Will likely be included when the stats panel expands to offer more specific detail.
+        bonus_stats.HPS = 0; 
+       
     }
 
     // -- Kleia --
     // Valiant Strikes
     else if (effectID === 329791) {
+        let average_health_pool = pl.activeStats.stamina * 20; // The players health is an acceptable average for an average target.
+        let ppm = 0.7 // POSTLIVE: Check against logs.
+
+        bonus_stats.HPS = average_health_pool * 0.2 * ppm / 60;
 
     }
     // Cleansing Rites
     else if (effectID === 329784) {
+        let health_pool = pl.activeStats.stamina * 20;
+
+        bonus_stats.HPS = health_pool * 0.1 / pl.activeStats.fightLength;
 
     }
     // Pointed Courage
     else if (effectID === 329778) {
+        let expected_allies = 7.8;
+
+        bonus_stats.Crit = 7.8 * STATPERONEPERCENT.CRIT;
 
     }
     // Resonant Accolades
     else if (effectID === 329781) {
+        // This one needs a check against log. It can obviously never exceed 4% total healing but is likely to be much less.
+        let percent_healing_above_70 = 0.8;
+        let expected_overhealing = 0.5;
+        let effect_power = 0.04;
+
+        bonus_stats.HPS = pl.activeStats.hps * percent_healing_above_70 * (1 - expected_overhealing) * effect_power;
 
     }
 
@@ -119,6 +147,8 @@ export function getSoulbindFormula(effectID, pl, contentType) {
 
     // Field of Blossoms
     else if (effectID === 319191) {
+        let expectedUptime = 1 / 6;
+        bonus_stats.Haste = 12 * STATPERONEPERCENT.HASTE * expectedUptime;
 
     }
 
@@ -137,21 +167,35 @@ export function getSoulbindFormula(effectID, pl, contentType) {
     // -- Nadjia --
     // Thrill Seeker
     else if (effectID === 331586) {
+        let average_uptime = 10 / 80;
+
+        bonus_stats.Haste = average_uptime * 20 * STATPERONEPERCENT.HASTE;
 
     }
 
     // Exacting Preparation
     else if (effectID === 331580) {
+        let flask_int = 70;
+        let feast_int = 18; // Should add something to offer an option of non-int food, but they are very close.
+        let enchant_int = getBestEnchant(pl, contentType);
+
+        bonus_stats.Intellect = (flask_int + feast_int + enchant_int) * 0.2;
 
     }
     // Dauntless Duelist
     else if (effectID === 331584) {
+        // 3% damage to one target + 1.5% DR. No value currently assigned to DR and it's unlikely you would take this as a healer.
 
     }
 
     // -- Theotar the Mad Duke
     // Soothing Shade
     else if (effectID === 336239) {
+        let chance_of_movement = 0.1
+        let uptime = convertPPMToUptime(1, 12) * (1 - chance_of_movement);
+
+        bonus_stats.Mastery = uptime * 525;
+        
 
     }
     // Token of Appreciation
@@ -213,11 +257,17 @@ export function getSoulbindFormula(effectID, pl, contentType) {
     // -- Emeni --
     // Lead by Example
     else if (effectID === 342156) {
+        let total_bonus = 0.05 + 0.02 * 4;
+        let uptime = 1/6;
+
+        bonus_stats.Intellect = pl.activeStats.intellect * total_bonus * uptime;
 
     }
 
     // Gnashing Chompers
     else if (effectID === 323919) {
+        // This will need to be implemented for Mythic+ primarily. It's raid value will really only play up on 1-2 fights.
+        // Probably needs to be a fight specific formula.
 
     }
 
@@ -231,10 +281,7 @@ export function getSoulbindFormula(effectID, pl, contentType) {
 
     }
 
-    
 
-    
-    
 
     return bonus_stats;
 }

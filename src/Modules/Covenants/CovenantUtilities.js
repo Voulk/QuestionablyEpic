@@ -9,7 +9,7 @@ import {getConduitFormula} from '../Engine/EffectFormulas/EffectEngine'
 // Should be stored on the Player character. 
 export function getAvailableClassConduits(spec) {
     let conduits = []
-    const defaultItemLevel = 156;
+    const defaultItemLevel = 145;
 
     if (spec === SPECS.RESTODRUID) {
         conduits.push(new ActiveConduit(340616, defaultItemLevel, "Flash of Clarity", "Potency"));
@@ -67,6 +67,7 @@ export function sumSelectedStats(soulbindName, soulbindDict) {
     
     let bonus_stats = {
         'HPS': 0,
+        'Intellect': 0,
         'Haste': 0,
         'Versatility': 0,
         'Crit': 0,
@@ -94,6 +95,9 @@ export function getEstimatedHPS(bonus_stats, player, contentType) {
     for (const [key, value] of Object.entries(bonus_stats)) {
         if (['Haste', 'Mastery', 'Crit', 'Versatility'].includes(key)) {
             estHPS += value * player.getStatWeight(contentType, key) / player.activeStats.intellect * player.activeStats.hps;
+        }
+        else if (key === 'Intellect') {
+            estHPS += value / player.activeStats.intellect * player.activeStats.hps;
         }
         else if (key === 'HPS') {
             estHPS += value;

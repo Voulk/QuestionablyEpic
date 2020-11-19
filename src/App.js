@@ -128,6 +128,13 @@ class App extends Component {
     this.setState({ characters: allChars });
   };
 
+  updatePlayerChar = (player) => {
+    let allChars = this.state.characters;
+    allChars.updatePlayerChar(player);
+    console.log("Setting State");
+    this.setState({ characters: allChars });
+  };
+
   setRegion = (props) => {
     this.setState({ playerRegion: props });
   };
@@ -282,6 +289,7 @@ class App extends Component {
                 <SimpleTabs 
                   pl={activePlayer}
                   contentType={this.state.contentType}
+                  updatePlayerChar={this.updatePlayerChar}
                 />} />
               <Route
                 path="/login"

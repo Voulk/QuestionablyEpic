@@ -6,18 +6,20 @@ import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
-import { soulbindDB } from "../SoulbindDB";
+import { soulbindDB, soulbindConnectors } from "../SoulbindDB";
 import SoulbindNode from "./SoulbindNode";
 import ConduitObject from "./ConduitObject";
 import Grid from "@material-ui/core/Grid";
 import { getSoulbindFormula } from "../../Engine/EffectFormulas/Generic/GenericSoulbindFormulas";
 import SoulbindStatPanel from "./SoulbindStatPanel";
+import {getCovAbility} from "../../Engine/EffectFormulas/EffectEngine";
 import {
   sumSelectedStats,
   getEstimatedHPS,
   getConduitIcon,
   buildConduitStats,
 } from "../CovenantUtilities";
+import "./CovenantExploration.css";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -86,6 +88,12 @@ export default function SimpleTabs(props) {
     buildBonusStats(soulbindDB, props.pl, props.contentType)
   );
 
+  function updateConduitLevel(id, newLevel) {
+    props.pl.updateConduitLevel(id, newLevel);
+    props.updatePlayerChar(props.pl);
+
+  }
+
   function buildBonusStats(soulbindTraits, player, contentType) {
     let updatedArray = soulbindTraits.map((trait) => {
       console.log("PL: " + player + ". CT: " + contentType);
@@ -138,17 +146,76 @@ export default function SimpleTabs(props) {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static">
+      <AppBar
+        position="static"
+        style={{ backgroundColor: "#424242" }}
+        elevation={0}
+      >
         <Tabs
           value={tabvalue}
           onChange={handleTabChange}
           aria-label="simple tabs example"
           variant="fullWidth"
         >
-          <Tab label="Kyrian" {...a11yProps(0)} />
-          <Tab label="Night Fae" {...a11yProps(1)} />
-          <Tab label="Venthyr" {...a11yProps(2)} />
-          <Tab label="Necrolords" {...a11yProps(3)} />
+          <Tab
+            icon={
+              <div className="container">
+                <img
+                  height={45}
+                  src={
+                    process.env.PUBLIC_URL +
+                    "/Images/Interface/Kyrian_Sigil.png"
+                  }
+                />
+                <div className="centered"> Kyrian </div>
+              </div>
+            }
+            {...a11yProps(0)}
+          />
+          <Tab
+            icon={
+              <div className="container">
+                <img
+                  height={45}
+                  src={
+                    process.env.PUBLIC_URL + "/Images/Interface/Fae_Sigil.png"
+                  }
+                />
+                <div className="centered"> Night Fae </div>
+              </div>
+            }
+            {...a11yProps(1)}
+          />
+          <Tab
+            icon={
+              <div className="container">
+                <img
+                  height={45}
+                  src={
+                    process.env.PUBLIC_URL +
+                    "/Images/Interface/Venthyr_Sigil.png"
+                  }
+                />
+                <div className="centered"> Venthyr </div>
+              </div>
+            }
+            {...a11yProps(2)}
+          />
+          <Tab
+            icon={
+              <div className="container">
+                <img
+                  height={45}
+                  src={
+                    process.env.PUBLIC_URL +
+                    "/Images/Interface/Death_Lords_Sigil.png"
+                  }
+                />
+                <div className="centered"> Necrolords </div>
+              </div>
+            }
+            {...a11yProps(3)}
+          />
         </Tabs>
       </AppBar>
 
@@ -217,7 +284,8 @@ export default function SimpleTabs(props) {
               props.contentType,
               soulbindState,
               activateSoulbind,
-              setConduitInSlot
+              setConduitInSlot,
+              updateConduitLevel,
             )}
           </TabPanel>
           <TabPanel
@@ -231,7 +299,9 @@ export default function SimpleTabs(props) {
               props.contentType,
               soulbindState,
               activateSoulbind,
-              setConduitInSlot
+              setConduitInSlot,
+              updateConduitLevel,
+
             )}
           </TabPanel>
           <TabPanel
@@ -245,7 +315,10 @@ export default function SimpleTabs(props) {
               props.contentType,
               soulbindState,
               activateSoulbind,
-              setConduitInSlot
+
+              setConduitInSlot,
+              updateConduitLevel,
+
             )}
           </TabPanel>
         </div>
@@ -311,7 +384,9 @@ export default function SimpleTabs(props) {
               props.contentType,
               soulbindState,
               activateSoulbind,
-              setConduitInSlot
+              setConduitInSlot,
+              updateConduitLevel,
+
             )}
           </TabPanel>
           <TabPanel value={soulbindValue} index={1}>
@@ -321,7 +396,9 @@ export default function SimpleTabs(props) {
               props.contentType,
               soulbindState,
               activateSoulbind,
-              setConduitInSlot
+              setConduitInSlot,
+              updateConduitLevel,
+
             )}
           </TabPanel>
           <TabPanel value={soulbindValue} index={2}>
@@ -331,7 +408,9 @@ export default function SimpleTabs(props) {
               props.contentType,
               soulbindState,
               activateSoulbind,
-              setConduitInSlot
+              setConduitInSlot,
+              updateConduitLevel,
+
             )}
           </TabPanel>
         </div>
@@ -403,7 +482,9 @@ export default function SimpleTabs(props) {
               props.contentType,
               soulbindState,
               activateSoulbind,
-              setConduitInSlot
+              setConduitInSlot,
+              updateConduitLevel,
+
             )}
           </TabPanel>
           <TabPanel value={soulbindValue} index={1}>
@@ -413,7 +494,9 @@ export default function SimpleTabs(props) {
               props.contentType,
               soulbindState,
               activateSoulbind,
-              setConduitInSlot
+              setConduitInSlot,
+              updateConduitLevel,
+
             )}
           </TabPanel>
           <TabPanel value={soulbindValue} index={2}>
@@ -423,7 +506,9 @@ export default function SimpleTabs(props) {
               props.contentType,
               soulbindState,
               activateSoulbind,
-              setConduitInSlot
+              setConduitInSlot,
+              updateConduitLevel,
+
             )}
           </TabPanel>
         </div>
@@ -492,7 +577,9 @@ export default function SimpleTabs(props) {
               props.contentType,
               soulbindState,
               activateSoulbind,
-              setConduitInSlot
+              setConduitInSlot,
+              updateConduitLevel,
+
             )}
           </TabPanel>
           <TabPanel value={soulbindValue} index={1}>
@@ -502,7 +589,9 @@ export default function SimpleTabs(props) {
               props.contentType,
               soulbindState,
               activateSoulbind,
-              setConduitInSlot
+              setConduitInSlot,
+              updateConduitLevel,
+
             )}
           </TabPanel>
           <TabPanel value={soulbindValue} index={2}>
@@ -512,7 +601,8 @@ export default function SimpleTabs(props) {
               props.contentType,
               soulbindState,
               activateSoulbind,
-              setConduitInSlot
+              setConduitInSlot,
+              updateConduitLevel,
             )}
           </TabPanel>
         </div>
@@ -531,12 +621,17 @@ function buildSoulbind(
   contentType,
   soulbindState,
   activateSoulbind,
-  setConduitInSlot
+  setConduitInSlot,
+  updateConduitLevel
+
 ) {
   //console.log(JSON.stringify(soulbindState));
   //console.log("Post: " + JSON.stringify(soulbindState))
   //let activeSoulbind = soulbindState[soulbindName];
   let activeSoulbind = soulbindState.filter(
+    (trait) => trait.soulbind === soulbindName
+  );
+  let activeConnectors = soulbindConnectors.filter(
     (trait) => trait.soulbind === soulbindName
   );
 
@@ -549,6 +644,7 @@ function buildSoulbind(
 
   let statSums = sumSelectedStats(soulbindName, soulbindState);
   let estimatedHPS = getEstimatedHPS(statSums, player, contentType);
+  let covAbility = getEstimatedHPS(getCovAbility(soulbindName, player, contentType));
   //let conduitList = ["Conduit 1", "Conduit 2", "Conduit 3", "Conduit 4", "Conduit 5"] // Pure, raw placeholder.
 
   //console.log("Y" + soulbindName);
@@ -570,6 +666,14 @@ function buildSoulbind(
             }
           />
           <div id="nodes" style={{}}>
+            {activeConnectors.map((trait, index) => (
+              <img 
+              src={process.env.PUBLIC_URL + "/Images/Interface/SoulbindsLine" + trait.src}
+              style={{position: 'absolute', zIndex: 0, transform: 'rotate(' + trait.angle + 'deg)', transformOrigin: 'top center', 
+                filter: 'grayscale(95%)', 
+                left: trait.position[0], top: trait.position[1]}}></img>
+            ))}
+
             {activeSoulbind.map((trait, index) => (
               <SoulbindNode
                 key={index}
@@ -630,9 +734,10 @@ function buildSoulbind(
                     paddingLeft: "8px",
                   }}
                 />
-                <Grid container spacing={1} style={{ maxWidth: 245 }}>
+                <Grid container spacing={1} style={{ maxWidth: 245 }} xs={12}>
                   {potencyConduits.map((conduit, i) => (
-                    <ConduitObject conduit={conduit} key={i} />
+                    <ConduitObject conduit={conduit} key={i} updateConduitLevel={updateConduitLevel} />
+
                   ))}
                 </Grid>
               </Grid>
@@ -648,17 +753,15 @@ function buildSoulbind(
                     paddingLeft: "8px",
                   }}
                 />
-                <Grid container spacing={1} style={{ maxWidth: 245 }}>
+                <Grid container spacing={1} style={{ maxWidth: 245 }} xs={12}>
                   {enduranceConduits.map((conduit, i) => (
-                    <ConduitObject conduit={conduit} key={i} />
+                    <ConduitObject conduit={conduit} key={i} updateConduitLevel={updateConduitLevel} />
                   ))}
                 </Grid>
               </Grid>
             </Grid>
             <Grid container>
-              <Grid item xs={12} style={{ paddingBottom: 4 }}>
-                <SoulbindStatPanel hps={estimatedHPS} stats={statSums} />
-              </Grid>
+              <SoulbindStatPanel hps={estimatedHPS} covAbility={covAbility} stats={statSums} />
             </Grid>
           </Grid>
         </div>
