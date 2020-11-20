@@ -336,6 +336,10 @@ export default function CharCards(props) {
                   size="small"
                   disabled={region === "" ? true : false}
                   id="server-select"
+                  value={server}
+                  onChange={(e, newValue) => {
+                    handleChangeServer(newValue);
+                  }}
                   options={serverList[region]}
                   inputValue={server}
                   getOptionLabel={(option) => option}

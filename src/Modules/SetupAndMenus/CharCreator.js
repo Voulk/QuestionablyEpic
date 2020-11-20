@@ -202,6 +202,11 @@ export default function AddNewChar(props) {
     allChars.addChar(name, spec, region, realm, race);
     updateChar(allChars);
     props.charAddedSnack();
+    setSelectedRace("");
+    setServer("");
+    setRegions("");
+    setCharName("");
+    setHealClass("");
   };
   const handleChangeSpec = (event) => {
     setHealClass(event.target.value);
