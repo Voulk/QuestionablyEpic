@@ -128,6 +128,15 @@ class Player {
         });
     }
 
+    getConduitLevel = (id) => {
+        let tempDict =  this.activeConduits.filter(function(conduits) {
+            return conduits.id === id;
+        });
+
+        if (tempDict.length > 0) return tempDict[0].itemLevel;
+        else return 142;
+    }
+
     // Used for the purpose of maximising stuff like ring enchants and gems. 
     // Returns the players stat that has the highest weight. We should consider how to handle tie breaks.
     getHighestStatWeight = (contentType) => {
