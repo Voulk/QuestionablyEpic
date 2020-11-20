@@ -63,6 +63,7 @@ class App extends Component {
 
     // binds the snack open handlers to this component so we can send it down to where we can trigger them in the relevant component
     this.handleCharSnackOpen = this.handleCharSnackOpen.bind(this);
+    this.handleCharUpdateSnackOpen = this.handleCharUpdateSnackOpen.bind(this);
     this.handleLoginSnackOpen = this.handleLoginSnackOpen.bind(this);
     this.handleSimCSnackOpen = this.handleSimCSnackOpen.bind(this);
 
@@ -78,6 +79,7 @@ class App extends Component {
       accessToken: "",
       contentType: "Raid",
       charSnackState: false,
+      charUpdateState: false,
       loginSnackState: false,
       simcSnackState: false,
     };
@@ -93,6 +95,16 @@ class App extends Component {
       return;
     }
     this.setState({ charSnackState: false });
+  };
+  // Character Updated
+  handleCharUpdateSnackOpen = () => {
+    this.setState({ charUpdateState: true });
+  };
+  handleCharUpdateSnackClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+    this.setState({ charUpdateState: false });
   };
 
   // Login
@@ -226,6 +238,20 @@ class App extends Component {
               </Alert>
             </Snackbar>
 
+            {/* // Char Updated Snackbar */}
+            <Snackbar
+              open={this.state.charUpdateState}
+              autoHideDuration={3000}
+              onClose={this.handleCharUpdateSnackClose}
+            >
+              <Alert
+                onClose={this.handleCharUpdateSnackClose}
+                severity="success"
+              >
+                Character Updated!
+              </Alert>
+            </Snackbar>
+
             {/* // Login Success Snackbar */}
             <Snackbar
               open={this.state.loginSnackState}
@@ -258,6 +284,8 @@ class App extends Component {
                     charUpdate={this.updatePlayerChars}
                     pl={this.state.player}
                     charAddedSnack={this.handleCharSnackOpen}
+                    charUpdatedSnack={this.handleCharUpdateSnackOpen}
+                    contentType={this.state.contentType}
                   />
                 )}
               />
@@ -285,12 +313,16 @@ class App extends Component {
                 )}
               />
 
-              <Route path="/soulbinds" render={() => 
-                <SimpleTabs 
-                  pl={activePlayer}
-                  contentType={this.state.contentType}
-                  updatePlayerChar={this.updatePlayerChar}
-                />} />
+              <Route
+                path="/soulbinds"
+                render={() => (
+                  <SimpleTabs
+                    pl={activePlayer}
+                    contentType={this.state.contentType}
+                    updatePlayerChar={this.updatePlayerChar}
+                  />
+                )}
+              />
               <Route
                 path="/login"
                 render={() => <QELogin setRegion={this.setRegion} />}

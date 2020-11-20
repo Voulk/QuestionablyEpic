@@ -12,7 +12,7 @@ var averageHoTCount = 1.4; // TODO: Build this in correctly and pull it from log
 
 
 class Player {
-    constructor(playerName, specName, charID, statWeights="default") {
+    constructor(playerName, specName, charID, region, realm, race, statWeights="default") {
         this.spec = specName;
         this.charName = playerName;
         this.charID = charID;
@@ -20,6 +20,10 @@ class Player {
         this.activeItems = [];
         this.activeConduits = [];
         this.renown = 0;
+
+        this.region = region;
+        this.realm = realm;
+        this.race = race;
 
         if (statWeights !== "default") this.statWeights = statWeights;
         this.activeConduits = getAvailableClassConduits(specName);
@@ -32,7 +36,10 @@ class Player {
     activeItems = [];
     activeConduits = [];
     renown = 0;
-    
+
+    region = "";
+    realm = "";
+    race = "";
 
     // A players spell casting patterns. These are averaged from entered logs and a default is provided too. 
     // CASTS, HEALING, HEALINGPERC, HPS, 
@@ -99,6 +106,10 @@ class Player {
         },
         "DefaultWeights": true
 
+    }
+
+    getRace = () => {
+        return this.race;
     }
 
     getStatWeight = (contentType, stat) => {
