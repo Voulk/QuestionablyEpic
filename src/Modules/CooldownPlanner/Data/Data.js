@@ -2789,7 +2789,7 @@ export const conduits = [
 
   {
     guid: 337790,
-    abilityIcon: "spell_holy_spiritualguidence.jpg",
+    abilityIcon: "spell_holy_spiritualguidence.jpg", // This is a blizzard misspelling, not mine. Just by the way.
     name: "Exaltation",
   },
   {

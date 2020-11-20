@@ -298,7 +298,7 @@ class Player {
 
     // Consider replacing this with an external table for cleanliness and ease of editing. 
     setupDefaults = (spec) => {
-        if (spec === "Restoration Druid") {
+        if (spec === SPEC.RESTODRUID) {
             this.activeStats = {
                 intellect: 1500,
                 haste: 400,
@@ -349,7 +349,7 @@ class Player {
             }
 
         }
-        else if (spec === "Holy Paladin") {
+        else if (spec === SPEC.HOLYPALADIN) {
             this.activeStats = {
                 intellect: 1500,
                 haste: 400,

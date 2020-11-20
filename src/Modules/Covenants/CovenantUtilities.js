@@ -58,7 +58,22 @@ export function getAvailableClassConduits(spec) {
         conduits.push(new ActiveConduit(336853, defaultItemLevel, "Fortified Ingredients", "Endurance"));
         conduits.push(new ActiveConduit(336632, defaultItemLevel, "Grounding Breath", "Endurance"));
         conduits.push(new ActiveConduit(336379, defaultItemLevel, "Harm Denial", "Endurance"));
+    }
+    else if (spec === SPECS.DISCPRIEST) {
+        conduits.push(new ActiveConduit(337790, defaultItemLevel, "Exaltation", "Potency"));
+        conduits.push(new ActiveConduit(337786, defaultItemLevel, "Pain Transformation", "Potency"));
+        conduits.push(new ActiveConduit(337778, defaultItemLevel, "Shining Radiance", "Potency"));
+        conduits.push(new ActiveConduit(337891, defaultItemLevel, "Swift Penitence", "Potency"));
 
+        conduits.push(new ActiveConduit(337966, defaultItemLevel, "Courageous Ascension", "Potency", "Kyrian"));
+        conduits.push(new ActiveConduit(338315, defaultItemLevel, "Shattered Perceptions", "Potency", "Venthyr"));
+        conduits.push(new ActiveConduit(337979, defaultItemLevel, "Festering Transfusion", "Potency", "Necrolord"));
+        conduits.push(new ActiveConduit(338305, defaultItemLevel, "Fae Fermata", "Potency", "Night Fae"));
+
+        // Endurance
+        conduits.push(new ActiveConduit(337715, defaultItemLevel, "Charitable Soul", "Endurance"));
+        conduits.push(new ActiveConduit(337748, defaultItemLevel, "Light's Inspiration", "Endurance"));
+        conduits.push(new ActiveConduit(337662, defaultItemLevel, "Translucent Image", "Endurance"));
     }
 
 

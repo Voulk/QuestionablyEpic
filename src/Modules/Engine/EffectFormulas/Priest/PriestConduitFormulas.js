@@ -1,7 +1,7 @@
 
 
 // Disc and Holy use one shared entry here since a lot of conduits overlap. 
-const getPriestConduit = (conduitID, pl, contentType, itemLevel = 156) => {
+export const getPriestConduit = (conduitID, pl, contentType, conduitLevel) => {
     let bonus_stats = {};
 
     // === Disc Potency Conduits ===
