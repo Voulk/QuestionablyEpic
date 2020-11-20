@@ -272,7 +272,7 @@ export function scoreItem(item, player, contentType) {
       item.effect,
       player,
       contentType,
-      item.itemLevel
+      item.level
     );
   }
 

@@ -35128,7 +35128,11 @@ export const itemDB = [
       ],
       "dropLoc": "",
       "selectable": "true",
-      "slot": "Trinket"
+      "slot": "Trinket",
+      "effect": {
+        "type": "trinket",
+        "name": "Lingering Sunmote"
+    }
   },
   {
       "id": 178851,
