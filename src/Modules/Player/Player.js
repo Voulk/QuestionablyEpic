@@ -247,28 +247,52 @@ class Player {
     }
 
     getSpellCasts = (spellName, contentType) => {
+        if (spellName in this.castPattern[contentType]) {
+            return this.castPattern[contentType][spellName][SPELL_CASTS_LOC];
+        }
+        else {
+            return 0;
+        }
         
-        return this.castPattern[contentType][spellName][SPELL_CASTS_LOC];
     }
 
     getSpellCastsPerMin = (spellName, contentType) => {
+        if (spellName in this.castPattern[contentType]) {
+            return this.castPattern[contentType][spellName][SPELL_CASTS_LOC] / this.activeStats.fightLength * 60;
+        }
+        else {
+            return 0;
+        }
         
-        return this.castPattern[contentType][spellName][SPELL_CASTS_LOC] / this.activeStats.fightLength * 60;
     }
 
     getSpellHealingPerc = (spellName, contentType) => {
-        
-        return this.castPattern[contentType][spellName][SPELL_HEALING_PERC]
+        if (spellName in this.castPattern[contentType]) {
+            return this.castPattern[contentType][spellName][SPELL_HEALING_PERC]
+        }
+        else {
+            return 0;
+        }
+
     }
 
     getSingleCast = (spellName, contentType) => {
-
-        return this.castPattern[contentType][spellName][SPELL_HEALING_LOC] / this.castPattern[contentType][spellName][SPELL_CASTS_LOC]
+        if (spellName in this.castPattern[contentType]) {
+            return this.castPattern[contentType][spellName][SPELL_HEALING_LOC] / this.castPattern[contentType][spellName][SPELL_CASTS_LOC]
+        }
+        else {
+            return 0;
+        }
     }
 
     getSpellHPS = (spellName, contentType) => {
+        if (spellName in this.castPattern[contentType]) {
+            return this.castPattern[contentType][spellName][SPELL_HPS]
+        }
+        else {
+            return 0;
+        }
         
-        return this.castPattern[contentType][spellName][SPELL_HPS]
     }
 
 
@@ -313,6 +337,7 @@ class Player {
             {   "Raid": {
                     "Rejuvenation": [17, 181000, 0.2909, 1566],
                     "Wild Growth": [5, 154400, 0.2472, 1478],
+                    "Regrowth": [10, 38000, 0.040, 673],
                     "Overall": [0, 90132, 1],
   
             },
