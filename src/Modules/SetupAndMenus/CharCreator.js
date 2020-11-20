@@ -19,7 +19,7 @@ import Typography from "@material-ui/core/Typography";
 import Avatar from "@material-ui/core/Avatar";
 import raceIcons from "../CooldownPlanner/Functions/IconFunctions/RaceIcons";
 import Autocomplete from "@material-ui/lab/Autocomplete";
-import { serverList } from "../CooldownPlanner/Data/Data";
+import { serverList, classRaceList } from "../CooldownPlanner/Data/Data";
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -317,14 +317,16 @@ export default function AddNewChar(props) {
                 <Select value={selectedRace} onChange={handleChangeRace}>
                   {healClass === ""
                     ? ""
-                    : classList[healClass.toString()].races.map((key, i) => (
-                        <MenuItem key={i} value={key}>
-                          <div style={{ display: "inline-flex" }}>
-                            {raceIcons(key)}
-                            {t(key)}
-                          </div>
-                        </MenuItem>
-                      ))}
+                    : classRaceList[healClass.toString()].races.map(
+                        (key, i) => (
+                          <MenuItem key={i} value={key}>
+                            <div style={{ display: "inline-flex" }}>
+                              {raceIcons(key)}
+                              {t(key)}
+                            </div>
+                          </MenuItem>
+                        )
+                      )}
                 </Select>
               </FormControl>
             </Grid>
