@@ -16,9 +16,14 @@ export function getAvailableClassConduits(spec) {
         conduits.push(new ActiveConduit(340621, defaultItemLevel, "Floral Recycling", "Potency"));
         conduits.push(new ActiveConduit(340550, defaultItemLevel, "Ready for Anything", "Potency"));
         conduits.push(new ActiveConduit(340549, defaultItemLevel, "Unstoppable Growth", "Potency"));
-        conduits.push(new ActiveConduit(341446, defaultItemLevel, "Conflux of Elements", "Potency"));
+        conduits.push(new ActiveConduit(341446, defaultItemLevel, "Conflux of Elements", "Potency", "Night Fae"));
+        conduits.push(new ActiveConduit(341378, defaultItemLevel, "Deep Allegiance", "Potency", "Kyrian"));
+        conduits.push(new ActiveConduit(341383, defaultItemLevel, "Endless Thirst", "Potency", "Venthyr"));
+        conduits.push(new ActiveConduit(341447, defaultItemLevel, "Evolved Swarm", "Potency", "Necrolord"));
+
         // TODO: Add the full set.
 
+        conduits.push(new ActiveConduit(340553, defaultItemLevel, "Well-Honed Instincts", "Endurance"));
         conduits.push(new ActiveConduit(340529, defaultItemLevel, "Tough as Bark", "Endurance"));
         conduits.push(new ActiveConduit(340540, defaultItemLevel, "Ursine Vigor", "Endurance"));
         conduits.push(new ActiveConduit(340543, defaultItemLevel, "Innate Resolve", "Endurance"));
@@ -28,7 +33,10 @@ export function getAvailableClassConduits(spec) {
         conduits.push(new ActiveConduit(339984, defaultItemLevel, "Focused Light", "Potency"));
         conduits.push(new ActiveConduit(339712, defaultItemLevel, "Resplendent Light", "Potency"));
         conduits.push(new ActiveConduit(339987, defaultItemLevel, "Untempered Dedication", "Potency"));
-        conduits.push(new ActiveConduit(340218, defaultItemLevel, "Ringing Clarity", "Potency"));
+        conduits.push(new ActiveConduit(340218, defaultItemLevel, "Ringing Clarity", "Potency", "Kyrian"));
+        conduits.push(new ActiveConduit(340212, defaultItemLevel, "Hallowed Discernment", "Potency", "Venthyr"));
+        conduits.push(new ActiveConduit(340192, defaultItemLevel, "Righteous Might", "Potency", "Necrolord"));
+        conduits.push(new ActiveConduit(340185, defaultItemLevel, "The Long Summer", "Potency", "Night Fae"));
 
         // Endurance
         conduits.push(new ActiveConduit(338741, defaultItemLevel, "Divine Call", "Endurance"));
@@ -41,6 +49,22 @@ export function getAvailableClassConduits(spec) {
     return conduits;
 
 }
+
+export function filterConduits(conduitList, covenantName) {
+    return conduitList.filter(function(conduits) {
+        return conduits.covenant === covenantName || conduits.covenant === "ALL";
+
+    });
+}
+
+export function getCovenant(soulbindName) {
+    if (['Kleia', 'Pelagos', 'Mikanikos'].includes(soulbindName)) return "Kyrian";
+    else if (['Nadjia', 'Theotar', 'Draven'].includes(soulbindName)) return "Venthyr";
+    else if (['Niya', 'Dreamweaver', 'Korayn'].includes(soulbindName)) return "Night Fae";
+    else if (['Marileth', 'Emeni', 'Heirmir'].includes(soulbindName)) return "Necrolord";
+
+}
+
 
 // Build Conduit Stats
 export function buildConduitStats(soulbindDict, player, contentType) {
