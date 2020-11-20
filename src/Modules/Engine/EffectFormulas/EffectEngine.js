@@ -97,13 +97,13 @@ export function getConduitFormula(effectID, player, contentType, itemLevel = 145
             bonus_stats = getDruidConduit(effectID, player, contentType, conduitRank);
             break;
         case(SPEC.RESTOSHAMAN):
-            bonus_stats = getShamanConduit(effectID, player, contentType, itemLevel);
+            bonus_stats = getShamanConduit(effectID, player, contentType, conduitRank);
             break;
         case(SPEC.HOLYPALADIN):
-            bonus_stats = getPaladinConduit(effectID, player, contentType, itemLevel);
+            bonus_stats = getPaladinConduit(effectID, player, contentType, conduitRank);
             break;
         case(SPEC.MISTWEAVERMONK):
-            bonus_stats = getMonkConduit(effectID, player, contentType, itemLevel);
+            bonus_stats = getMonkConduit(effectID, player, contentType, conduitRank);
             break;
 
     }

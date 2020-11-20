@@ -1,6 +1,6 @@
 
 
-const getMonkConduit = (conduitID, pl, contentType, itemLevel = 156) => {
+export const getMonkConduit = (conduitID, pl, contentType, itemLevel = 156) => {
     let bonus_stats = {};
 
     // === Potency Conduits ===

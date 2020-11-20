@@ -44,6 +44,22 @@ export function getAvailableClassConduits(spec) {
         conduits.push(new ActiveConduit(338787, defaultItemLevel, "Shielding Words", "Endurance"));
 
     }
+    else if (spec === SPECS.MISTWEAVERMONK) {
+        conduits.push(new ActiveConduit(336773, defaultItemLevel, "Jade Bond", "Potency"));
+        conduits.push(new ActiveConduit(337241, defaultItemLevel, "Nourishing Chi", "Potency"));
+        conduits.push(new ActiveConduit(336812, defaultItemLevel, "Resplendent Mist", "Potency"));
+        conduits.push(new ActiveConduit(337099, defaultItemLevel, "Rising Sun Revival", "Potency"));
+        conduits.push(new ActiveConduit(337286, defaultItemLevel, "Strike with Clarity", "Potency", "Kyrian"));
+        conduits.push(new ActiveConduit(337301, defaultItemLevel, "Imbued Reflections", "Potency", "Venthyr"));
+        conduits.push(new ActiveConduit(337295, defaultItemLevel, "Bone Marrow Hops", "Potency", "Necrolord"));
+        conduits.push(new ActiveConduit(337303, defaultItemLevel, "Way of the Fae", "Potency", "Night Fae"));
+
+        // Endurance
+        conduits.push(new ActiveConduit(336853, defaultItemLevel, "Fortified Ingredients", "Endurance"));
+        conduits.push(new ActiveConduit(336632, defaultItemLevel, "Grounding Breath", "Endurance"));
+        conduits.push(new ActiveConduit(336379, defaultItemLevel, "Harm Denial", "Endurance"));
+
+    }
 
 
     return conduits;

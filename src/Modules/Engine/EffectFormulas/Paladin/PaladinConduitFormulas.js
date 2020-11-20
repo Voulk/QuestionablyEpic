@@ -1,8 +1,7 @@
 
 
-export const getPaladinConduit = (conduitID, pl, contentType, itemLevel = 156) => {
+export const getPaladinConduit = (conduitID, pl, contentType, conduitLevel) => {
     let bonus_stats = {};
-    let conduitLevel = 1; // Convert the conduit item level to a rank.
     let expectedOverhealing = 0;
 
     // === Potency Conduits ===
@@ -51,14 +50,26 @@ export const getPaladinConduit = (conduitID, pl, contentType, itemLevel = 156) =
     }
     // Hallowed Discernment (Venthyr)
     else if (conduitID === 340212) {
+        // You can expect little to no overhealing on this since it specifically targets the lowest health ally during a period where you've popped a large cooldown.
+        let trait_bonus =  0.36 + conduitLevel * 0.04;
+        let ashen_tick_sp = 0.42;
+        let ashen_ticks = 15 * pl.getStatPerc('Haste');
+
+        bonus_stats.HPS = (trait_bonus * ashen_tick_sp * ashen_ticks * pl.getStatMultiplier('NOHASTE') / 240)
 
     }
     // Righteous Might (Necrolord)
     else if (conduitID === 340192) {
+        let trait_bonus = 0.18 + conduitLevel * 0.02;
+        let hammer_raw_dam = 1.36;
+        let expected_overhealing = 0.4;
+
+        bonus_stats.HPS = (trait_bonus * hammer_raw_dam * (1 - expected_overhealing) * pl.getStatMultiplier('NOHASTE') / 30)
 
     }
     // The Long Summer (Night Fae)
     else if (conduitID === 340185) {
+        
 
     }
 
