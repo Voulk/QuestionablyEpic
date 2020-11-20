@@ -5,7 +5,7 @@ export const STAT = {
     STRENGTH: 'strength',
     AGILITY: 'agility',
     INTELLECT: 'intellect',
-    CRITICAL_STRIKE: 'criticalstrike',
+    CRITICAL_STRIKE: 'crit',
     HASTE: 'haste',
     HASTE_HPCT: 'hastehpct',
     HASTE_HPM: 'hastehpm',

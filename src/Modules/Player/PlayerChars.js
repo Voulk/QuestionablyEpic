@@ -28,13 +28,13 @@ class PlayerChars  {
             playerChars.forEach(function(player) {
                 
                 // This could be changed later if we end up storing more information about a character. Say, the most recent log they were in.
-                charArray.push(new Player(player.charName, player.spec, player.charID, player.statWeights))
+                charArray.push(new Player(player.charName, player.spec, player.charID, player.region, player.realm, player.race, player.statWeights))
             }) 
         }
         else {
             // If we don't have any characters stored, initilize an empty array. For now we have a demo character inserted but on live
             // you'll just start without characters and it'll prompt you to create your first.
-            charArray = [new Player("VoulkDemo", "Restoration Druid", 0)]
+            charArray = [new Player("VoulkDemo", "Restoration Druid", 0, "QE", "Shadowlands", "Night Elf")]
         }
 
         this.allChar = charArray;
@@ -80,9 +80,9 @@ class PlayerChars  {
     }
 
     // Add a new character to the array then save it.
-    addChar = (name, spec) => {
+    addChar = (name, spec, region, realm, race) => {
         //alert("Adding new Character")
-        this.allChar.push(new Player(name, spec, this.allChar.length))
+        this.allChar.push(new Player(name, spec, this.allChar.length, region, realm, race))
         this.saveAllChar();
 
         //ls.set("allChar", JSON.stringify(this.allChar))

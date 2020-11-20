@@ -36,6 +36,8 @@ import { useTranslation } from "react-i18next";
 import raceIcons from "../CooldownPlanner/Functions/IconFunctions/RaceIcons";
 import classIcons from "../CooldownPlanner/Functions/IconFunctions/ClassIcons";
 
+import {STAT} from '../Engine/STAT';
+
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -131,21 +133,24 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function CharCards(props) {
+  const player = props.char;
+  const contentType = props.contentType;
+
   const { t } = useTranslation();
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
-  const [region, setRegion] = React.useState("");
+  const [region, setRegion] = React.useState(player.region);
   const [open, setOpen] = React.useState(false);
-  const [charName, setCharName] = React.useState(props.name);
-  const [healClass, setHealClass] = React.useState(props.char.spec);
-  const [selectedRace, setSelectedRace] = React.useState("");
-  const [intellect, setIntellect] = React.useState("1.5");
-  const [critical, setCritical] = React.useState("1.5");
-  const [haste, setHaste] = React.useState("1.5");
-  const [mastery, setMastery] = React.useState("1.5");
-  const [versatility, setVersatility] = React.useState("1.5");
-  const [leech, setLeech] = React.useState("1.5");
-  const [server, setServer] = React.useState("");
+  const [charName, setCharName] = React.useState(player.charName);
+  const [healClass, setHealClass] = React.useState(player.getSpec());
+  const [selectedRace, setSelectedRace] = React.useState(player.getRace());
+  const [intellect, setIntellect] = React.useState("1");
+  const [critical, setCritical] = React.useState(player.getStatWeight(props.contentType, STAT.CRITICAL_STRIKE));
+  const [haste, setHaste] = React.useState(player.getStatWeight(props.contentType, STAT.HASTE));
+  const [mastery, setMastery] = React.useState(player.getStatWeight(props.contentType, STAT.MASTERY));
+  const [versatility, setVersatility] = React.useState(player.getStatWeight(props.contentType, STAT.VERSATILITY));
+  const [leech, setLeech] = React.useState(player.getStatWeight(props.contentType, STAT.LEECH));
+  const [server, setServer] = React.useState(player.server);
 
   const handleChangeName = (event) => {
     setCharName(event.target.value);
@@ -190,6 +195,8 @@ export default function CharCards(props) {
   const handleLeech = (event) => {
     setLeech(event.target.value);
   };
+
+  // TODO
   const handleUpdateData = (name, spec, race, region, server) => {
     setOpen(false);
     //Update data Function Here
@@ -237,7 +244,7 @@ export default function CharCards(props) {
                 {props.name}
               </Typography>
               <Typography variant="caption" style={{ fontSize: 11 }}>
-                US-Frostmourne
+                {player.region + " " + player.realm}
               </Typography>
               <Divider />
               <Typography style={{ color: classColoursJS(spec), marginTop: 2 }}>

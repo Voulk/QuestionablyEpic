@@ -258,6 +258,7 @@ class App extends Component {
                     charUpdate={this.updatePlayerChars}
                     pl={this.state.player}
                     charAddedSnack={this.handleCharSnackOpen}
+                    contentType={this.state.contentType}
                   />
                 )}
               />

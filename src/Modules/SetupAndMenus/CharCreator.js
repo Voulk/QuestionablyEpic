@@ -196,9 +196,9 @@ export default function AddNewChar(props) {
   const handleClose = () => {
     setOpen(false);
   };
-  const handleAdd = (name, spec, allChars, updateChar) => {
+  const handleAdd = (name, spec, allChars, updateChar, region, realm, race) => {
     setOpen(false);
-    allChars.addChar(name, spec);
+    allChars.addChar(name, spec, region, realm, race);
     updateChar(allChars);
     props.charAddedSnack();
   };
@@ -338,7 +338,7 @@ export default function AddNewChar(props) {
           </Button>
           <Button
             onClick={() =>
-              handleAdd(charName, healClass, props.allChars, props.charUpdate)
+              handleAdd(charName, healClass, props.allChars, props.charUpdate, regions, "Stonemaul", selectedRace)
             }
             color="primary"
             disabled={selectedRace === "" ? true : false}
