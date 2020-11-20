@@ -186,6 +186,12 @@ export default function CharCards(props) {
   };
   const handleClose = () => {
     setOpen(false);
+    setCritical(player.getStatWeight(props.contentType, STAT.CRITICAL_STRIKE));
+    setHaste(player.getStatWeight(props.contentType, STAT.HASTE));
+    setMastery(player.getStatWeight(props.contentType, STAT.MASTERY));
+    setVersatility(player.getStatWeight(props.contentType, STAT.VERSATILITY));
+    setLeech(player.getStatWeight(props.contentType, STAT.LEECH));
+    setServer(player.realm);
   };
   const handleIntellect = (event) => {
     setIntellect(event.target.value);
@@ -222,10 +228,9 @@ export default function CharCards(props) {
   ) => {
     setOpen(false);
     //Update data Function Here
-    // Unimplemented Snackbar Here
-    // props.charAddedSnack();
+    props.charUpdatedSnack();
   };
-  console.log(server);
+
   const spec = props.cardType === "Char" ? props.char.spec : "";
 
   const rootClassName =
@@ -283,7 +288,7 @@ export default function CharCards(props) {
         aria-labelledby="form-dialog-title"
       >
         <div className={classes.tabRoot}>
-          <AppBar position="static">
+          <AppBar position="static" elevation={0}>
             <Tabs
               value={value}
               onChange={handleChange}
@@ -426,6 +431,7 @@ export default function CharCards(props) {
                   onChange={handleIntellect}
                   variant="outlined"
                   size="small"
+                  disabled={true}
                 />
               </Grid>
               <Grid item xs={6}>
@@ -473,7 +479,7 @@ export default function CharCards(props) {
                   id="LeechInput"
                   label="Leech"
                   value={leech}
-                  onChange={setLeech}
+                  onChange={handleLeech}
                   variant="outlined"
                   size="small"
                 />
@@ -488,7 +494,7 @@ export default function CharCards(props) {
           <Button onClick={handleClose} color="primary">
             Cancel
           </Button>
-          <Button onClick={handleClose} color="primary">
+          <Button onClick={() => handleUpdateData()} color="primary">
             Save
           </Button>
         </DialogActions>

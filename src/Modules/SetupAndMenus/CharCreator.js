@@ -62,125 +62,6 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const region = ["CN", "US", "TW", "EU"];
-
-const classList = {
-  "Holy Paladin": {
-    races: [
-      "Races.Draenei",
-      "Races.Dwarf",
-      "Races.Human",
-      "Races.Lightforged Draenei",
-      "Races.Dark Iron Dwarf",
-      "Races.Blood Elf",
-      "Races.Tauren",
-      "Races.Zandalari Troll",
-    ],
-  },
-  "Restoration Druid": {
-    races: [
-      "Races.Night Elf",
-      "Races.Worgen",
-      "Races.Kul Tiran",
-      "Races.Tauren",
-      "Races.Troll",
-      "Races.Highmountain Tauren",
-      "Races.Zandalari Troll",
-    ],
-  },
-  "Holy Priest": {
-    races: [
-      "Races.Draenei",
-      "Races.Dwarf",
-      "Races.Gnome",
-      "Races.Human",
-      "Races.Night Elf",
-      "Races.Worgen",
-      "Races.Void Elf",
-      "Races.Lightforged Draenei",
-      "Races.Dark Iron Dwarf",
-      "Races.Kul Tiran",
-      "Races.Mechagnome",
-      "Races.Pandaren",
-      "Races.Blood Elf",
-      "Races.Goblin",
-      "Races.Tauren",
-      "Races.Troll",
-      "Races.Undead",
-      "Races.Nightborne",
-      "Races.Mag'har",
-      "Races.Zandalari Troll",
-      "Races.Vulpera",
-    ],
-  },
-  "Discipline Priest": {
-    races: [
-      "Races.Draenei",
-      "Races.Dwarf",
-      "Races.Gnome",
-      "Races.Human",
-      "Races.Night Elf",
-      "Races.Worgen",
-      "Races.Void Elf",
-      "Races.Lightforged Draenei",
-      "Races.Dark Iron Dwarf",
-      "Races.Kul Tiran",
-      "Races.Mechagnome",
-      "Races.Pandaren",
-      "Races.Blood Elf",
-      "Races.Goblin",
-      "Races.Tauren",
-      "Races.Troll",
-      "Races.Undead",
-      "Races.Nightborne",
-      "Races.Mag'har",
-      "Races.Zandalari Troll",
-      "Races.Vulpera",
-    ],
-  },
-  "Restoration Shaman": {
-    races: [
-      "Races.Draenei",
-      "Races.Dwarf",
-      "Races.Dark Iron Dwarf",
-      "Races.Kul Tiran",
-      "Races.Pandaren",
-      "Races.Goblin",
-      "Races.Orc",
-      "Races.Tauren",
-      "Races.Troll",
-      "Races.Highmountain Tauren",
-      "Races.Mag'har",
-      "Races.Zandalari Troll",
-      "Races.Vulpera",
-    ],
-  },
-  "Mistweaver Monk": {
-    races: [
-      "Races.Draenei",
-      "Races.Dwarf",
-      "Races.Gnome",
-      "Races.Human",
-      "Races.Night Elf",
-      "Races.Void Elf",
-      "Races.Dark Iron Dwarf",
-      "Races.Kul Tiran",
-      "Races.Mechagnome",
-      "Races.Pandaren",
-      "Races.Blood Elf",
-      "Races.Orc",
-      "Races.Tauren",
-      "Races.Troll",
-      "Races.Undead",
-      "Races.Nightborne",
-      "Races.Highmountain Tauren",
-      "Races.Mag'har",
-      "Races.Zandalari Troll",
-      "Races.Vulpera",
-    ],
-  },
-};
-
 export default function AddNewChar(props) {
   const { t } = useTranslation();
   const classes = useStyles();
@@ -190,6 +71,7 @@ export default function AddNewChar(props) {
   const [regions, setRegions] = React.useState("");
   const [selectedRace, setSelectedRace] = React.useState("");
   const [server, setServer] = React.useState("");
+  const region = ["CN", "US", "TW", "EU"];
   const handleClickOpen = () => {
     setOpen(true);
   };
@@ -203,10 +85,10 @@ export default function AddNewChar(props) {
     updateChar(allChars);
     props.charAddedSnack();
     setSelectedRace("");
-    setServer("");
-    setRegions("");
-    setCharName("");
     setHealClass("");
+    setServer("");
+    // setRegions(null);
+    setCharName("");
   };
   const handleChangeSpec = (event) => {
     setHealClass(event.target.value);
@@ -267,6 +149,7 @@ export default function AddNewChar(props) {
                   variant="outlined"
                   size="small"
                   disabled={charName === "" ? true : false}
+                  label={t("Region")}
                 >
                   <InputLabel id="NewClassSelector">{t("Region")}</InputLabel>
                   <Select value={regions} onChange={handleChangeRegion}>
@@ -285,10 +168,9 @@ export default function AddNewChar(props) {
                   id="server-select"
                   options={serverList[regions]}
                   getOptionLabel={(option) => option}
-                  inputValue={server}
                   style={{ width: "100%" }}
-                  onInputChange={(e, newInputValue) => {
-                    handleChangeServer(newInputValue);
+                  onChange={(e, newValue) => {
+                    handleChangeServer(newValue);
                   }}
                   renderInput={(params) => (
                     <TextField
@@ -306,12 +188,13 @@ export default function AddNewChar(props) {
                 variant="outlined"
                 size="small"
                 disabled={regions === "" ? true : false}
+                label={t("Select Class")}
               >
                 <InputLabel id="NewClassSelector">
                   {t("Select Class")}
                 </InputLabel>
                 <Select value={healClass} onChange={handleChangeSpec}>
-                  {Object.getOwnPropertyNames(classList).map((key, i) => (
+                  {Object.getOwnPropertyNames(classRaceList).map((key, i) => (
                     <MenuItem key={i} value={key}>
                       {classIcons(key, 20)}
                       {key}
@@ -326,6 +209,7 @@ export default function AddNewChar(props) {
                 className={classes.formControl}
                 variant="outlined"
                 size="small"
+                label={t("Select Race")}
               >
                 <InputLabel id="NewRaceSelector">{t("Select Race")}</InputLabel>
                 <Select value={selectedRace} onChange={handleChangeRace}>
