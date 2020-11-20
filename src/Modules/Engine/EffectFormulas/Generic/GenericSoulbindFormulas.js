@@ -73,9 +73,9 @@ export function getSoulbindFormula(effectID, pl, contentType) {
     }
     // Pointed Courage
     else if (effectID === 329778) {
-        let expected_allies = 7.8;
+        let expected_allies = 4.8;
 
-        bonus_stats.Crit = 7.8 * STATPERONEPERCENT.CRIT;
+        bonus_stats.Crit = expected_allies * STATPERONEPERCENT.CRIT;
 
     }
     // Resonant Accolades
@@ -93,6 +93,16 @@ export function getSoulbindFormula(effectID, pl, contentType) {
     // Why does Mikanikos have so few throughput traits =( Poor Mikanikos.
     // Bron's Call to Action
     else if (effectID === 333950) {
+        // DOES reset stacks on raid boss pull. Doesn't in Mythic+. 
+        let casts_per_minute = 25; // Pull from logs. 
+        let brons_per_minute = casts_per_minute / 90;
+
+        let bron_sp = pl.activeStats.intellect * 2;
+        let anima_cannon_dps = 0.55 * bron_sp * 3; //* pl.getStatMultiplier("", ['Crit', 'Vers'])
+        let smash_dps = 0.25 * bron_sp * 1;
+        let vit_bolt_hps = 0.575 * bron_sp * 8;
+
+        bonus_stats.HPS = brons_per_minute * vit_bolt_hps * pl.getStatMultiplier(['Crit', 'Vers']) / 60;
 
     }
     // Hammer of Genesis
@@ -123,11 +133,14 @@ export function getSoulbindFormula(effectID, pl, contentType) {
     // -- Dreamwalker --
     // Podtender
     else if (effectID === 333950) {
+        // TODO: We'll see. The approaches to this one is maybe you have a "chance of death" and then include the healing portion but I'm not convinced
+        // that you get a great picture from that.
+        // It's a good trait, but not for HPS reasons.
 
     }
     // Social Butterfly
     else if (effectID === 319210) {
-        let expectedUptime = 1;
+        let expectedUptime = 1; // POSTLIVE: Check if this is falling off often in either content type.
         bonus_stats.Versatility = 1.5 * 40 * expectedUptime; // Placeholder.
 
     }
@@ -274,10 +287,16 @@ export function getSoulbindFormula(effectID, pl, contentType) {
     // -- Bonesmith Heirmir --
     // Forgeborne Reveries
     else if (effectID === 326514) {
+        bonus_stats.Intellect = pl.activeStats.intellect * 0.03;
 
     }
     // Heirmir's Arsenal: Marrowed Gemstone
     else if (effectID === 326572) {
+        // TODO, work out if you can collect stacks when it's on cooldown, or if the 10 crits have to take place after the cooldown.
+        // The uptime won't change much regardless but it'll be of slight impact. 
+        let uptime = 10/64; 
+
+        bonus_stats.Crit = STATPERONEPERCENT.CRIT * 18 * uptime;
 
     }
 
