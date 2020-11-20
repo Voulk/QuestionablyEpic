@@ -52,15 +52,12 @@ export function buildConduitStats(soulbindDict, player, contentType) {
 
         if ('type' in trait && 'slotted_id' in trait && trait.type.includes('Conduit')) {
             let itemLevel =  player.getConduitLevel(trait.slotted_id);
-            trait.bonus_stats = getConduitFormula(trait.slotted_id, player, contentType, itemLevel); // TODO: Pass item level.
-
+            trait.bonus_stats = getConduitFormula(trait.slotted_id, player, contentType, itemLevel);
         }
 
     }
 
     return tempDict;
-    
-
 }
 
 // Returns a bonus_stats dictionary that sums all active soulbind traits for your selected soulbind.
@@ -117,8 +114,14 @@ export function getConduitName(id, language = "en") {
 }
 
 export function getConduitIcon(id) {
-    let filteredDict = conduits.filter(trait => trait.guid === id);
-    if (filteredDict.length > 0) return filteredDict[0].abilityIcon;
-    else return "missing.jpg"
+    if (id === -1) {
+        return "EmptyConduit.jpg"
+    }
+    else {
+        let filteredDict = conduits.filter(trait => trait.guid === id);
+        if (filteredDict.length > 0) return filteredDict[0].abilityIcon;
+        else return "missing.jpg"
+    }
+
 }
 

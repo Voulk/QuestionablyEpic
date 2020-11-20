@@ -133,7 +133,7 @@ export default function SimpleTabs(props) {
           ...trait,
           slotted_id: conduitID,
           icon: getConduitIcon(conduitID),
-          active: true,
+          active: conduitID === -1 ? false : true,
         };
       }
       return trait;

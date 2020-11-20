@@ -227,6 +227,15 @@ export default function SoulbindNode(props) {
           open={Boolean(anchorEl)}
           onClose={handleClose}
         >
+          {trait.slotted_id > 0 ? 
+          <MenuItem
+            key={-1}
+            dense={true}
+            style={{ padding: "5px 10px" }}
+            onClick={() => setConduit(-1)}>
+              Remove
+            </MenuItem>
+            : ''}
           {conduitCollection.map((conduit, i) => (
             <MenuItem
               key={i}
