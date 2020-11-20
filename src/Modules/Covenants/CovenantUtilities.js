@@ -75,6 +75,38 @@ export function getAvailableClassConduits(spec) {
         conduits.push(new ActiveConduit(337748, defaultItemLevel, "Light's Inspiration", "Endurance"));
         conduits.push(new ActiveConduit(337662, defaultItemLevel, "Translucent Image", "Endurance"));
     }
+    else if (spec === SPECS.RESTOSHAMAN) {
+        conduits.push(new ActiveConduit(338329, defaultItemLevel, "Embrace of Earth", "Potency"));
+        conduits.push(new ActiveConduit(338343, defaultItemLevel, "Heavy Rainfall", "Potency"));
+        conduits.push(new ActiveConduit(338346, defaultItemLevel, "Nature's Focus", "Potency"));
+        conduits.push(new ActiveConduit(338339, defaultItemLevel, "Swirling Currents", "Potency"));
+
+        conduits.push(new ActiveConduit(339182, defaultItemLevel, "Elysian Dirge", "Potency", "Kyrian"));
+        conduits.push(new ActiveConduit(339185, defaultItemLevel, "Lavish Harvest", "Potency", "Venthyr"));
+        conduits.push(new ActiveConduit(339186, defaultItemLevel, "Tumbling Waves", "Potency", "Necrolord"));
+        conduits.push(new ActiveConduit(339183, defaultItemLevel, "Essential Extraction", "Potency", "Night Fae"));
+
+        // Endurance
+        conduits.push(new ActiveConduit(337964, defaultItemLevel, "Astral Protection", "Endurance"));
+        conduits.push(new ActiveConduit(337974, defaultItemLevel, "Refreshing Waters", "Endurance"));
+        conduits.push(new ActiveConduit(337981, defaultItemLevel, "Vital Accretion", "Endurance"));
+    }
+    else if (spec === SPECS.HOLYPRIEST) {
+        conduits.push(new ActiveConduit(337914, defaultItemLevel, "Focused Mending", "Potency"));
+        conduits.push(new ActiveConduit(338345, defaultItemLevel, "Holy Oration", "Potency"));
+        conduits.push(new ActiveConduit(337811, defaultItemLevel, "Lasting Spirit", "Potency"));
+        conduits.push(new ActiveConduit(337947, defaultItemLevel, "Resonant Words", "Potency"));
+
+        conduits.push(new ActiveConduit(337966, defaultItemLevel, "Courageous Ascension", "Potency", "Kyrian"));
+        conduits.push(new ActiveConduit(338315, defaultItemLevel, "Shattered Perceptions", "Potency", "Venthyr"));
+        conduits.push(new ActiveConduit(337979, defaultItemLevel, "Festering Transfusion", "Potency", "Necrolord"));
+        conduits.push(new ActiveConduit(338305, defaultItemLevel, "Fae Fermata", "Potency", "Night Fae"));
+
+        // Endurance
+        conduits.push(new ActiveConduit(337715, defaultItemLevel, "Charitable Soul", "Endurance"));
+        conduits.push(new ActiveConduit(337748, defaultItemLevel, "Light's Inspiration", "Endurance"));
+        conduits.push(new ActiveConduit(337662, defaultItemLevel, "Translucent Image", "Endurance"));
+    }
 
 
     return conduits;
