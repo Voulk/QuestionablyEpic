@@ -26,6 +26,12 @@ export default function ConduitObject(props) {
     let newLevel = oldLevel === 213 ? 145 : oldLevel === 184 ? 200 : oldLevel + 13;
     props.updateConduitLevel(props.conduit.id, newLevel);
   }
+  const conduitRightClicked = (e) => {
+    e.preventDefault();
+    let oldLevel = props.conduit.itemLevel;
+    let newLevel = oldLevel === 145 ? 213 : oldLevel === 200 ? 184 : oldLevel - 13;
+    props.updateConduitLevel(props.conduit.id, newLevel);
+  }
 
   const itemQuality = (itemLevel) => {
     if (itemLevel >= 213) {
@@ -59,7 +65,7 @@ export default function ConduitObject(props) {
   return (
     <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
       <Card className={classes.root} variant="outlined">
-        <CardActionArea disabled={false} onClick={conduitClicked}>
+        <CardActionArea disabled={false} onClick={conduitClicked} onContextMenu={(e) => conduitRightClicked(e)}>
           <Grid
             container
             display="inline-flex"

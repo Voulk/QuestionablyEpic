@@ -2599,6 +2599,11 @@ export const conduits = [
     name: "Tough as Bark",
   },
   {
+    guid: 340555,
+    abilityIcon: "ability_druid_tigersroar.jpg",
+    name: "Well-Honed Instincts",
+  },
+  {
     guid: 340540,
     abilityIcon: "ability_druid_markofursol.jpg",
     name: "Ursine Vigor",
@@ -2784,7 +2789,7 @@ export const conduits = [
 
   {
     guid: 337790,
-    abilityIcon: "spell_holy_spiritualguidence.jpg",
+    abilityIcon: "spell_holy_spiritualguidence.jpg", // This is a blizzard misspelling, not mine. Just by the way.
     name: "Exaltation",
   },
   {

@@ -1,6 +1,7 @@
 
-const getShamanConduit = (conduitID, pl, contentType, itemLevel = 156) => {
+export const getShamanConduit = (conduitID, pl, contentType, conduitLevel) => {
     let bonus_stats = {};
+    let expectedOverhealing = 0;
 
     // === Potency Conduits ===
     // Embrace of Earth
