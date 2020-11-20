@@ -325,13 +325,12 @@ export default function CharCards(props) {
                   variant="outlined"
                   fullWidth
                   size="small"
+                  label={t("Class")}
                   disabled={region === "" ? true : false}
                 >
-                  <InputLabel id="ClassSelector">
-                    {t("Select Class")}
-                  </InputLabel>
+                  <InputLabel id="ClassSelector">{t("Class")}</InputLabel>
                   <Select
-                    label={t("Select Class")}
+                    label={t("Class")}
                     value={healClass}
                     onChange={handleChangeSpec}
                   >
@@ -350,9 +349,14 @@ export default function CharCards(props) {
                   fullWidth
                   variant="outlined"
                   size="small"
+                  label={t("Race")}
                 >
-                  <InputLabel id="RaceSelector">{t("Select Race")}</InputLabel>
-                  <Select value={selectedRace} onChange={handleChangeRace}>
+                  <InputLabel id="RaceSelector">{t("Race")}</InputLabel>
+                  <Select
+                    value={selectedRace}
+                    onChange={handleChangeRace}
+                    label={t("Race")}
+                  >
                     {healClass === ""
                       ? ""
                       : classRaceList[healClass.toString()].races.map(
@@ -381,9 +385,7 @@ export default function CharCards(props) {
             >
               <Grid item xs={6}>
                 <TextField
-                  // fullWidth
-                  // className={classes.textInput}
-                  id="standard-basic"
+                  id="IntellectInput"
                   label="Intellect"
                   value={intellect}
                   onChange={handleIntellect}
@@ -393,9 +395,7 @@ export default function CharCards(props) {
               </Grid>
               <Grid item xs={6}>
                 <TextField
-                  // fullWidth
-                  // className={classes.textInput}
-                  id="standard-basic"
+                  id="CriticalInput"
                   label="Crit"
                   value={critical}
                   onChange={handleCrit}
@@ -405,9 +405,7 @@ export default function CharCards(props) {
               </Grid>
               <Grid item xs={6}>
                 <TextField
-                  // fullWidth
-                  // className={classes.textInput}
-                  id="standard-basic"
+                  id="HasteInput"
                   label="Haste"
                   value={haste}
                   onChange={handleHaste}
@@ -417,9 +415,7 @@ export default function CharCards(props) {
               </Grid>
               <Grid item xs={6}>
                 <TextField
-                  // fullWidth
-                  // className={classes.textInput}
-                  id="standard-basic"
+                  id="MasteryInput"
                   label="Mastery"
                   value={mastery}
                   onChange={handleMastery}
@@ -429,9 +425,7 @@ export default function CharCards(props) {
               </Grid>
               <Grid item xs={6}>
                 <TextField
-                  // fullWidth
-                  // className={classes.textInput}
-                  id="standard-basic"
+                  id="VersatilityInput"
                   label="Vers"
                   value={versatility}
                   onChange={handleVers}
@@ -441,9 +435,7 @@ export default function CharCards(props) {
               </Grid>
               <Grid item xs={6}>
                 <TextField
-                  // fullWidth
-                  // className={classes.textInput}
-                  id="standard-basic"
+                  id="LeechInput"
                   label="Leech"
                   value={leech}
                   onChange={setLeech}
@@ -457,21 +449,6 @@ export default function CharCards(props) {
             Item Three
           </TabPanel>
         </div>
-        {/* <DialogTitle id="form-dialog-title">Subscribe</DialogTitle>
-        <DialogContent>
-          <DialogContentText>
-            To subscribe to this website, please enter your email address here.
-            We will send updates occasionally.
-          </DialogContentText>
-          <TextField
-            autoFocus
-            margin="dense"
-            id="name"
-            label="Email Address"
-            type="email"
-            fullWidth
-          />
-        </DialogContent> */}
         <DialogActions>
           <Button onClick={handleClose} color="primary">
             Cancel
