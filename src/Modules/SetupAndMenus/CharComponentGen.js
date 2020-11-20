@@ -36,7 +36,7 @@ import { useTranslation } from "react-i18next";
 import raceIcons from "../CooldownPlanner/Functions/IconFunctions/RaceIcons";
 import classIcons from "../CooldownPlanner/Functions/IconFunctions/ClassIcons";
 
-import {STAT} from '../Engine/STAT';
+import { STAT } from "../Engine/STAT";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -145,18 +145,28 @@ export default function CharCards(props) {
   const [healClass, setHealClass] = React.useState(player.getSpec());
   const [selectedRace, setSelectedRace] = React.useState(player.getRace());
   const [intellect, setIntellect] = React.useState("1");
-  const [critical, setCritical] = React.useState(player.getStatWeight(props.contentType, STAT.CRITICAL_STRIKE));
-  const [haste, setHaste] = React.useState(player.getStatWeight(props.contentType, STAT.HASTE));
-  const [mastery, setMastery] = React.useState(player.getStatWeight(props.contentType, STAT.MASTERY));
-  const [versatility, setVersatility] = React.useState(player.getStatWeight(props.contentType, STAT.VERSATILITY));
-  const [leech, setLeech] = React.useState(player.getStatWeight(props.contentType, STAT.LEECH));
-  const [server, setServer] = React.useState(player.server);
+  const [critical, setCritical] = React.useState(
+    player.getStatWeight(props.contentType, STAT.CRITICAL_STRIKE)
+  );
+  const [haste, setHaste] = React.useState(
+    player.getStatWeight(props.contentType, STAT.HASTE)
+  );
+  const [mastery, setMastery] = React.useState(
+    player.getStatWeight(props.contentType, STAT.MASTERY)
+  );
+  const [versatility, setVersatility] = React.useState(
+    player.getStatWeight(props.contentType, STAT.VERSATILITY)
+  );
+  const [leech, setLeech] = React.useState(
+    player.getStatWeight(props.contentType, STAT.LEECH)
+  );
+  const [server, setServer] = React.useState(player.realm);
 
   const handleChangeName = (event) => {
     setCharName(event.target.value);
   };
-  const handleChangeServer = (event) => {
-    setServer(event.target.value);
+  const handleChangeServer = (serverName) => {
+    setServer(serverName);
   };
   const handleChangeSpec = (event) => {
     setHealClass(event.target.value);
@@ -197,13 +207,25 @@ export default function CharCards(props) {
   };
 
   // TODO
-  const handleUpdateData = (name, spec, race, region, server) => {
+  const handleUpdateData = (
+    name,
+    spec,
+    race,
+    region,
+    server,
+    intellect,
+    critical,
+    haste,
+    mastery,
+    versatility,
+    leech
+  ) => {
     setOpen(false);
     //Update data Function Here
     // Unimplemented Snackbar Here
     // props.charAddedSnack();
   };
-
+  console.log(server);
   const spec = props.cardType === "Char" ? props.char.spec : "";
 
   const rootClassName =
@@ -244,7 +266,7 @@ export default function CharCards(props) {
                 {props.name}
               </Typography>
               <Typography variant="caption" style={{ fontSize: 11 }}>
-                {player.region + " " + player.realm}
+                {player.region + " - " + player.realm}
               </Typography>
               <Divider />
               <Typography style={{ color: classColoursJS(spec), marginTop: 2 }}>
@@ -315,9 +337,11 @@ export default function CharCards(props) {
                   disabled={region === "" ? true : false}
                   id="server-select"
                   options={serverList[region]}
-                  // value={server}
-                  onChange={handleChangeServer}
+                  inputValue={server}
                   getOptionLabel={(option) => option}
+                  onInputChange={(e, newInputValue) => {
+                    handleChangeServer(newInputValue);
+                  }}
                   renderInput={(params) => (
                     <TextField
                       {...params}

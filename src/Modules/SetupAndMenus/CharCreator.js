@@ -189,6 +189,7 @@ export default function AddNewChar(props) {
   const [charName, setCharName] = React.useState("");
   const [regions, setRegions] = React.useState("");
   const [selectedRace, setSelectedRace] = React.useState("");
+  const [server, setServer] = React.useState("");
   const handleClickOpen = () => {
     setOpen(true);
   };
@@ -213,6 +214,10 @@ export default function AddNewChar(props) {
   };
   const handleChangeRegion = (event) => {
     setRegions(event.target.value);
+  };
+
+  const handleChangeServer = (serverName) => {
+    setServer(serverName);
   };
 
   return (
@@ -275,7 +280,11 @@ export default function AddNewChar(props) {
                   id="server-select"
                   options={serverList[regions]}
                   getOptionLabel={(option) => option}
+                  inputValue={server}
                   style={{ width: "100%" }}
+                  onInputChange={(e, newInputValue) => {
+                    handleChangeServer(newInputValue);
+                  }}
                   renderInput={(params) => (
                     <TextField
                       {...params}
@@ -338,7 +347,15 @@ export default function AddNewChar(props) {
           </Button>
           <Button
             onClick={() =>
-              handleAdd(charName, healClass, props.allChars, props.charUpdate, regions, "Stonemaul", selectedRace)
+              handleAdd(
+                charName,
+                healClass,
+                props.allChars,
+                props.charUpdate,
+                regions,
+                server,
+                selectedRace
+              )
             }
             color="primary"
             disabled={selectedRace === "" ? true : false}
