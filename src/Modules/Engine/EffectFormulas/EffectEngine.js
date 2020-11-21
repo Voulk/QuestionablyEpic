@@ -6,7 +6,7 @@ import {getMonkLegendary} from './Monk/MonkLegendaryFormulas'
 import {getShamanLegendary} from './Shaman/ShamanLegendaryFormulas'
 import {getPaladinLegendary} from './Paladin/PaladinLegendaryFormulas'
 import {getGenericLegendary} from './Generic/GenericLegendaryFormulas'
-import {getTrinketEffect} from './Generic/TrinketEffectFormulas'
+import {getTrinketEffect, testTrinkets} from './Generic/TrinketEffectFormulas'
 
 import {getPriestConduit} from './Priest/PriestConduitFormulas'
 import {getPaladinConduit} from './Paladin/PaladinConduitFormulas'
@@ -15,8 +15,6 @@ import {getMonkConduit} from './Monk/MonkConduitFormulas'
 import {getDruidConduit} from './Druid/DruidConduitFormulas'
 
 import {getPaladinCovAbility} from './Paladin/PaladinMiscFormulas'
-
-
 import SPEC from '../SPECS'
 
 
@@ -63,7 +61,8 @@ export function getEffectValue(effect, player, contentType, itemLevel = 0) {
         bonus_stats = getGenericLegendary(effectName, player, contentType);
     }
     else if (effectType === 'trinket') {
-        bonus_stats = getTrinketEffect(effectName, player, contentType, itemLevel);
+        //bonus_stats = getTrinketEffect(effectName, player, contentType, itemLevel);
+        testTrinkets(player, contentType); //TODO: Remove
     }
 
     return bonus_stats;

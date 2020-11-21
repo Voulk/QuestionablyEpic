@@ -75,7 +75,7 @@ export const trinket_data = [
                 benefit: 'hps', 
                 coefficient: 467.66378, // This represents the upper quartile of the given cards.  
                 table: -8, 
-                efficiency: 0.9, 
+                efficiency: 0.82, 
                 cooldown: 90, 
             }
         ]
@@ -117,7 +117,7 @@ export const trinket_data = [
         ]
     },
     {
-        name: 'Siphoning Phylactery', 
+        name: 'Siphoning Phylactery Shard', 
         effects: [
             { 
                 coefficient: 89.08621, // This represents the upper quartile of the given cards.  
@@ -157,14 +157,14 @@ export const trinket_data = [
                 coefficient: 2.269577,
                 table: -7,  
                 duration: 16, 
-                multiplier: 1.64, // This assumes your average boss health is just under 50% which feels like a fair average.  
-                cooldown: 90,
+                multiplier: 1.62, // This assumes your average boss health is just under 50% which feels like a fair average.  
+                cooldown: 120,
             },
             { 
                 coefficient: 51.64138,  
                 table: -8, 
                 efficiency: 0.3, // You are mostly popping this for the crit bonus and won't care if you're damaged or not.
-                cooldown: 90, 
+                cooldown: 120, 
             }
 
         ]
@@ -179,6 +179,36 @@ export const trinket_data = [
                 multiplier: 1, 
                 cooldown: 120,
             }
+        ]
+    },
+    {
+        name: 'Soulsifter Root', 
+        effects: [
+            { 
+                coefficient: 57.12069,  
+                table: -8, // TODO: Test the health transfer portion for vers / crit. It's going to be incredibly minor but worth it for accuracies sake.
+                ppm: 2,
+                efficiency: 0.9, // TODO: Check against logs. 
+            }
+        ]
+    }, 
+    {
+        name: "Boon of the Archon",
+        effects: [
+            { 
+                coefficient: 0.354898,
+                table: -7,  
+                duration: 14, // This one is tricky because the duration is refreshed if another player walks over one. Max duration is ~20 seconds per proc.
+                efficiency: 0.85, 
+                ppm: 1,
+            },
+            { 
+                coefficient: 11.89655,  
+                table: -8, 
+                efficiency: 0.72, // These are unlikely to overheal, but players have to run over them so some might naturally expire. Full health players can also waste them.
+                ppm: 1,
+            }
+
         ]
     },
     

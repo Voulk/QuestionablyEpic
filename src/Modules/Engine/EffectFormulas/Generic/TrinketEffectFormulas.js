@@ -102,6 +102,8 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel) {
 
         bonus_stats.hps =  getProcessedValue(heal_effect.coefficient, heal_effect.table, itemLevel, heal_effect.efficiency) / heal_effect.cooldown * player.getStatMultiplier('CRITVERS');
         bonus_stats.crit = getProcessedValue(crit_effect.coefficient, crit_effect.table, itemLevel) * crit_effect.duration * crit_effect.multiplier / crit_effect.cooldown;
+
+        console.log("Effect Name: " + effectName + " at level: " + itemLevel + " {" + JSON.stringify(bonus_stats))
     }
     else if (effectName === "Wakener's Frond") {
         let effect = activeTrinket.effects[0];
@@ -109,9 +111,18 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel) {
         bonus_stats.haste = getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.duration / effect.cooldown;
     }
     else if (effectName === "Soulsifter Root") {
-
+        let effect = activeTrinket.effects[0];
+        // Hastes impact on the trinket PPM is included in the secondary multiplier below.
+        bonus_stats.hps =  getProcessedValue(effect.coefficient, effect.table, itemLevel, effect.efficiency) / 60 * effect.ppm * player.getStatMultiplier('NOMAST');
     }
     else if (effectName === "Boon of the Archon") {
+        let heal_effect = activeTrinket.effects[1];
+        let vers_effect = activeTrinket.effects[0];
+
+        bonus_stats.hps =  getProcessedValue(heal_effect.coefficient, heal_effect.table, itemLevel, heal_effect.efficiency) 
+                            * heal_effect.ppm * player.getStatMultiplier('CRITVERS') / 60;
+        bonus_stats.versatility = getProcessedValue(vers_effect.coefficient, vers_effect.table, itemLevel) * 
+            convertPPMToUptime(vers_effect.ppm * player.getStatPerc('Haste'), vers_effect.duration);
 
     }
 
@@ -122,15 +133,48 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel) {
         bonus_stats[effect.benefit] = Math.round(netValue);
     } */
 
-    console.log("Effect Name: " + effectName + " at level: " + itemLevel + " {" + JSON.stringify(bonus_stats))
+    //console.log("Effect Name: " + effectName + " at level: " + itemLevel + " {" + JSON.stringify(bonus_stats))
     return bonus_stats;
 }
 
+export function testTrinkets(player, contentType, itemLevel = 226) {
+    let trinketList = trinket_data;
+
+    trinketList.forEach(trinket => {
+        if (trinket.name === "Darkmoon Deck: Repose") {
+            console.log(trinket.name + " (i200): " + getEstimatedHPS(getTrinketEffect(trinket.name, player, contentType, 200), player, contentType));
+        }
+        else {
+            console.log(trinket.name + ": " + getEstimatedHPS(getTrinketEffect(trinket.name, player, contentType, itemLevel), player, contentType));
+        }
+        
+    })
+
+}
+
+// Converts a bonus_stats dictionary to a singular estimated HPS number. 
+// TODO: Remove this. It's just for testing.
+function getEstimatedHPS(bonus_stats, player, contentType) {
+    let estHPS = 0;
+    for (const [key, value] of Object.entries(bonus_stats)) {
+        if (['haste', 'mastery', 'crit', 'versatility'].includes(key)) {
+            estHPS += value * player.getStatWeight(contentType, key) / player.activeStats.intellect * player.activeStats.hps;
+        }
+        else if (key === 'intellect') {
+            estHPS += value / player.activeStats.intellect * player.activeStats.hps;
+        }
+        else if (key === 'hps') {
+            estHPS += value;
+        }
+    }
+ 
+    return Math.round(estHPS);
+}
 
 function getProcessedValue(coefficient, table, itemLevel, efficiency = 1) {
     return coefficient * getScalarValue(table, itemLevel) * efficiency;
 }
-
+/*
 function getNetValue(effect, player, itemLevel) {
     const efficiency = ('expectedEfficiency' in effect ? effect.expectedEfficiency : 1);
     let netValue = Math.round(effect.coefficient * getScalarValue(effect.table, itemLevel) * efficiency * effect.targets);
@@ -173,3 +217,4 @@ function getNetValue(effect, player, itemLevel) {
 
     }
 }
+*/
