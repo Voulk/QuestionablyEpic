@@ -76,8 +76,7 @@ class Player {
         crit: 350,
         mastery: 0,
         versatility: 200,
-        stamina: 1490,
-        
+        stamina: 1490,  
     }
 
     fightInfo = {
@@ -336,6 +335,7 @@ class Player {
     }
 
     setActiveStats = (stats) => {
+        console.log("Setting Active Stats");
         this.activeStats = stats;
     }
 
@@ -400,6 +400,7 @@ class Player {
 
         }
         else if (spec === SPEC.HOLYPALADIN) {
+            console.log("Loading Holy Paladin");
             this.fightInfo = {
                 hps: 6000,
                 rawhps: 9420,
@@ -413,9 +414,6 @@ class Player {
                 mastery: 0,
                 versatility: 200,
                 stamina: 1490,
-                hps: 6000,
-                rawhps: 9420,
-                fightLength: 180,
                 
             }
            
