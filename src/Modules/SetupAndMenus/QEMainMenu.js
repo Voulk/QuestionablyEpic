@@ -76,7 +76,7 @@ export default function QEMainMenu(props) {
                 color="black"
                 style={{
                   width: "100%",
-                  height: "65px",
+                  height: "60px",
                   whiteSpace: "nowrap",
                   textAlign: "left",
                   paddingLeft: "0px",
