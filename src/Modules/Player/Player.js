@@ -252,6 +252,16 @@ class Player {
     
     }
 
+    getRealmString = () => {
+        if (this.realm !== undefined && this.region !== undefined) {
+            return this.region + " - " + this.realm
+        }
+        else {
+            return "Unknown Realm";
+        }
+
+    }
+
     getSpec = () => {
         return this.spec;
     }

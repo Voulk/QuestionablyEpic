@@ -34,7 +34,7 @@ export default function QEHeader(props) {
   return (
     <div style={{ backgroundColor: "#353535" }}>
       <AppBar position="static" color="inherit">
-        <Toolbar style={{ marginLeft: "18%", marginRight: "10%" }}>
+        <Toolbar style={{ marginLeft: "16%", marginRight: "16%" }}>
           <Grid
             container
             direction="row"

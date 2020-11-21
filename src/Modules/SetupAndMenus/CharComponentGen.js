@@ -271,7 +271,7 @@ export default function CharCards(props) {
                 {props.name}
               </Typography>
               <Typography variant="caption" style={{ fontSize: 11 }}>
-                {player.region + " - " + player.realm}
+                {player.getRealmString()}
               </Typography>
               <Divider />
               <Typography style={{ color: classColoursJS(spec), marginTop: 2 }}>
