@@ -279,7 +279,7 @@ class App extends Component {
 
             {/* // SimC Success Snackbar */}
             <Snackbar
-              open={this.state.logImportSnackState}
+              open={this.state.simcSnackState}
               autoHideDuration={3000}
               onClose={this.handleSimCSnackClose}
             >
@@ -290,7 +290,7 @@ class App extends Component {
 
             {/* Log Import Success Snackbar */}
             <Snackbar
-              open={this.state.simcSnackState}
+              open={this.state.logImportSnackState}
               autoHideDuration={3000}
               onClose={this.handleLogSnackClose}
             >
