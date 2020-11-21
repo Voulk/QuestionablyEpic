@@ -18,13 +18,13 @@ export default function FightSelectorButton(props) {
   };
 
   return (
-    <div style={{ whiteSpace: "nowrap", width: 129 }}>
+    <div style={{ whiteSpace: "nowrap" }}>
       <Button
         aria-controls="fight-selector"
         aria-haspopup="true"
         onClick={handleClick}
         variant="outlined"
-        style={{ whiteSpace: "nowrap", width: 129 }}
+        style={{ height: 40 }}
       >
         {t("CooldownPlannerUserInputs.fightButtonLabel")}
       </Button>
