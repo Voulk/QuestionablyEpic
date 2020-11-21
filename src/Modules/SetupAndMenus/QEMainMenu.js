@@ -81,7 +81,7 @@ export default function QEMainMenu(props) {
                   textAlign: "left",
                   paddingLeft: "0px",
                   backgroundColor: '#525252',
-                  color: '#EEBE58',
+                  color: '#F2BF59',
                 }}
                 component={Link}
                 to={mainMenuOptions[key][0]}
