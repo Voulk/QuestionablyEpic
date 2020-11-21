@@ -2,9 +2,12 @@ import {convertPPMToUptime, getScalarValue} from '../EffectUtilities';
 import {trinket_data, TAGS} from './TrinketData';
 import {STAT} from '../../STAT';
 
+
+// TODO: Write proper comments. See Lingering Sunmote for an example.
 export function getTrinketEffect(effectName, player, contentType, itemLevel) {
     let bonus_stats = {}
 
+    // Trinket Data holds a trinkets actual power values. Formulas here, data there.
     let activeTrinket = trinket_data.find(trinket => trinket.name === effectName);
 
     if (activeTrinket === undefined) {
@@ -12,8 +15,15 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel) {
         return null; // handle error shit on the calling side, or here i guess
     }
     else if (effectName === "Lingering Sunmote") {
+        // Trinket Effect: Creates a patch of light at target location for 12s. Allies within it split an absorb for X every 4 seconds.
+        // Absorbtion is increased by 15% per ally in the light, up to 60%.
+
+        // Notes:
         // We don't multiply our healing by number of targets because the heal is split among them.
         // The meteor effect is accounted for in the meteor_multiplier variable.
+
+        // Assumption: 
+        // No unique assumptions. Efficiency combines wasted shield and people running out of it.
         let effect = activeTrinket.effects[0];
         let meteor_multiplier = (1+ effect.targets * effect.meteor)
 
@@ -22,6 +32,7 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel) {
 
     }
     else if (effectName === "Manabound Mirror") {
+        // We can make this more accurate by writing a function to calculate expected_mana_spend based on the players log.
         let mana_heal_effect = activeTrinket.effects[0];
         let base_heal_effect = activeTrinket.effects[1];
         
@@ -43,8 +54,7 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel) {
         let dam_effect = activeTrinket.effects[0];
         let int_effect = activeTrinket.effects[1];
 
-        //console.log(JSON.stringify(dam_effect) + JSON.stringify(int_effect));
-
+        
         bonus_stats.dps =  getProcessedValue(dam_effect.coefficient, dam_effect.table, itemLevel) / dam_effect.cooldown * player.getStatMultiplier('CRITVERS');
         bonus_stats.intellect = getProcessedValue(int_effect.coefficient, int_effect.table, itemLevel, int_effect.efficiency) * int_effect.duration / int_effect.cooldown;
     }
@@ -174,47 +184,3 @@ function getEstimatedHPS(bonus_stats, player, contentType) {
 function getProcessedValue(coefficient, table, itemLevel, efficiency = 1) {
     return coefficient * getScalarValue(table, itemLevel) * efficiency;
 }
-/*
-function getNetValue(effect, player, itemLevel) {
-    const efficiency = ('expectedEfficiency' in effect ? effect.expectedEfficiency : 1);
-    let netValue = Math.round(effect.coefficient * getScalarValue(effect.table, itemLevel) * efficiency * effect.targets);
-    
-    // Effect boosters
-    if (effect.tags.includes(TAGS.TICKS)) {
-        netValue *= effect.ticks;
-    }
-    if (effect.tags.includes(TAGS.METEOR)) {
-        netValue = netValue * (1+effect.targets * effect.meteor);
-    }
-
-    let ppm = 0;
-    if (effect.tags.includes(TAGS.PPM)) {
-        ppm = effect.ppm;
-    }
-    if (effect.tags.includes(TAGS.HASTED_PPM)) {
-        ppm *= effect.ppm * player.getStatPerc(STAT.HASTE);
-    }
-    if (ppm > 0) {
-        if (effect.tags.includes(TAGS.DURATION_BASED)) {
-            return netValue *= convertPPMToUptime(ppm, effect.duration);
-        }
-        return netValue *= ppm;
-    }
-
-    if (effect.tags.includes(TAGS.DURATION) && effect.tags.includes(TAGS.ON_USE)) {
-        return netValue *= (effect.duration / effect.cooldown);
-    }
-    if (effect.tags.includes(TAGS.ON_USE)) {
-        return netValue /= effect.cooldown;
-    }
-
-    if (effect.tags.includes(TAGS.SPECIAL)) {
-        // Tags that don't fit any other category.
-        if (effect.name === "Manabound Mirror") {
-            let expected_mana_spend_min = 9000;
-            return netValue * (expected_mana_spend_min / 3240) / effect.cooldown;
-        }
-
-    }
-}
-*/
