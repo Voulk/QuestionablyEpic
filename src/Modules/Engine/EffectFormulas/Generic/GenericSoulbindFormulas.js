@@ -44,7 +44,7 @@ export function getSoulbindFormula(effectID, pl, contentType) {
         let healing_bonus = pl.activeStats.stamina * 20 * 0.35;
         let uses_per_combat = 1.5;
 
-        bonus_stats.HPS = healing_bonus * uses_per_combat * (1 - expected_overhealing) / pl.activeStats.fightLength;  // Placeholder.
+        bonus_stats.HPS = healing_bonus * uses_per_combat * (1 - expected_overhealing) / pl.getFightLength();  // Placeholder.
         
     }
     // Let go of the Past
@@ -68,7 +68,7 @@ export function getSoulbindFormula(effectID, pl, contentType) {
     else if (effectID === 329784) {
         let health_pool = pl.activeStats.stamina * 20;
 
-        bonus_stats.HPS = health_pool * 0.1 / pl.activeStats.fightLength;
+        bonus_stats.HPS = health_pool * 0.1 / pl.getFightLength();
 
     }
     // Pointed Courage
@@ -85,7 +85,7 @@ export function getSoulbindFormula(effectID, pl, contentType) {
         let expected_overhealing = 0.5;
         let effect_power = 0.04;
 
-        bonus_stats.HPS = pl.activeStats.hps * percent_healing_above_70 * (1 - expected_overhealing) * effect_power;
+        bonus_stats.HPS = pl.getHPS() * percent_healing_above_70 * (1 - expected_overhealing) * effect_power;
 
     }
 
@@ -151,9 +151,8 @@ export function getSoulbindFormula(effectID, pl, contentType) {
         console.log(JSON.stringify(pl));
         let trait_bonus = 0.1
         let shield_consumed = 0.95 // The percentage of our overhealing shield that gets consumed. Likely to be very high.
-        let overhealing = (pl.activeStats.rawhps - pl.activeStats.hps)
-
-        
+        let overhealing = (pl.getRawHPS() - pl.getHPS())
+     
         bonus_stats.HPS = trait_bonus * shield_consumed * overhealing;
 
     }

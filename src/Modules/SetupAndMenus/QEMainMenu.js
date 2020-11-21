@@ -7,17 +7,18 @@ import CharCards from "./CharComponentGen";
 import { Grid } from "@material-ui/core";
 import AddNewChar from "./CharCreator";
 import { makeStyles } from "@material-ui/core/styles";
+import Avatar from '@material-ui/core/Avatar';
 
 // Warning: If a button name has to change, do it in the translation files. Consider the titles here to be ID's rather than strings.
 const mainMenuOptions = {
 
-  "Top Gear": "/topgear",
-  "Gear Quick Compare": "/quickcompare",
-
-  "Legendary Analysis": "/legendaries",
-
-  "Explore Covenants": "/soulbinds",
-  "Cooldown Planner": "/holydiver",
+  "Top Gear (Coming Soon)": ["/topgear", false],
+  "Upgrade Finder (Coming Soon)": ["/upgradefinder", false],
+  "Gear Quick Compare": ["/quickcompare", true],
+  "Legendary Analysis": ["/legendaries", true],
+  "Trinket Analysis": ["/trinkets", false],
+  "Explore Covenants": ["/soulbinds", true],
+  "Cooldown Planner (Coming Soon)": ["/holydiver", false],
 };
 
 const useStyles = makeStyles((theme) => ({
@@ -60,23 +61,30 @@ export default function QEMainMenu(props) {
         //   justifyContent: "center",
         //   display: "block",
         // }}
+        /*startIcon={<Avatar src={''} />} */
       >
-        <p className="headers">{t("MainMenuItemsH")}</p>
-        <Grid container spacing={1}>
+        <p className="headers">{/*t("MainMenuItemsH") */}</p>
+        <Grid container spacing={2}>
           {Object.keys(mainMenuOptions).map((key, index) => (
             // Buttons are translated and printed from a dictionary.
             <Grid item xs={12} sm={12} md={6} lg={6} xl={6} key={index}>
               <Button
                 key={index}
                 variant="contained"
-                color="primary"
+                disabled={!mainMenuOptions[key][1]}
+
+                color="black"
                 style={{
                   width: "100%",
-                  height: "40px",
+                  height: "60px",
                   whiteSpace: "nowrap",
+                  textAlign: "left",
+                  paddingLeft: "0px",
+                  backgroundColor: '#525252',
+                  color: '#F2BF59',
                 }}
                 component={Link}
-                to={mainMenuOptions[key]}
+                to={mainMenuOptions[key][0]}
               >
                 {t(key)}
               </Button>

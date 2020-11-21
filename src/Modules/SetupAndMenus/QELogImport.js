@@ -225,6 +225,9 @@ export default function QELogImport(props) {
     setSummaryData(summary);
     setDamageData(damage);
     setCastData(casts);
+
+    convertLogSpellOutput(props.player, healerDataDetailed, timeend - time);
+    convertLogStatOutput(props.player, summaryData, currentPlayerID);
     
   };
 
@@ -238,8 +241,7 @@ export default function QELogImport(props) {
   console.log(castData);
   console.log(healerDataDetailed);
   */
-  convertLogSpellOutput(props.player, healerDataDetailed, timeend - time);
-  convertLogStatOutput(props.player, summaryData, currentPlayerID);
+
 
   return (
     <div>

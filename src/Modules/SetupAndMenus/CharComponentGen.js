@@ -69,9 +69,11 @@ function a11yProps(index) {
 
 // Spec Images.
 const specImages = {
-  "Restoration Druid": require("../../Images/DruidSmall.png"),
-  "Discipline Priest": require("../../Images/DiscSmall.png"),
+  "Restoration Druid": require("../../Images/DruidSmall.jpg"),
+  "Restoration Shaman": require("../../Images/ShamanSmall.png"),
+  "Discipline Priest": require("../../Images/DiscSmall.jpg"),
   "Holy Paladin": require("../../Images/PaladinSmall.png"),
+  "Holy Priest": require("../../Images/HPriestSmall.jpg"),
 };
 
 // Called when a character is clicked.
@@ -103,6 +105,8 @@ const useStyles = makeStyles((theme) => ({
   },
   activeChar: {
     borderColor: "ForestGreen",
+    borderWidth: "2px",
+    backgroundColor: "#424E42",
   },
 
   details: {
@@ -271,7 +275,7 @@ export default function CharCards(props) {
                 {props.name}
               </Typography>
               <Typography variant="caption" style={{ fontSize: 11 }}>
-                {player.region + " - " + player.realm}
+                {player.getRealmString()}
               </Typography>
               <Divider />
               <Typography style={{ color: classColoursJS(spec), marginTop: 2 }}>

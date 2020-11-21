@@ -76,8 +76,7 @@ class Player {
         crit: 350,
         mastery: 0,
         versatility: 200,
-        stamina: 1490,
-        
+        stamina: 1490,  
     }
 
     fightInfo = {
@@ -252,12 +251,30 @@ class Player {
     
     }
 
+    getRealmString = () => {
+        if (this.realm !== undefined && this.region !== undefined) {
+            return this.region + " - " + this.realm
+        }
+        else {
+            return "Unknown Realm";
+        }
+
+    }
+
     getSpec = () => {
         return this.spec;
     }
 
     getHPS = () => {
-        return this.activeStats.hps;
+        return this.fightInfo.hps;
+    }
+    // HPS including overhealing.
+    getRawHPS = () => {
+        return this.fightInfo.rawhps;
+    }
+
+    getFightLength = () => {
+        return this.fightInfo.fightLength;
     }
 
     getInt = () => {
@@ -276,7 +293,7 @@ class Player {
 
     getSpellCastsPerMin = (spellName, contentType) => {
         if (spellName in this.castPattern[contentType]) {
-            return this.castPattern[contentType][spellName][SPELL_CASTS_LOC] / this.activeStats.fightLength * 60;
+            return this.castPattern[contentType][spellName][SPELL_CASTS_LOC] / this.getFightLength() * 60;
         }
         else {
             return 0;
@@ -318,6 +335,7 @@ class Player {
     }
 
     setActiveStats = (stats) => {
+        console.log("Setting Active Stats");
         this.activeStats = stats;
     }
 
@@ -382,6 +400,7 @@ class Player {
 
         }
         else if (spec === SPEC.HOLYPALADIN) {
+            console.log("Loading Holy Paladin");
             this.fightInfo = {
                 hps: 6000,
                 rawhps: 9420,
@@ -395,9 +414,6 @@ class Player {
                 mastery: 0,
                 versatility: 200,
                 stamina: 1490,
-                hps: 6000,
-                rawhps: 9420,
-                fightLength: 180,
                 
             }
            

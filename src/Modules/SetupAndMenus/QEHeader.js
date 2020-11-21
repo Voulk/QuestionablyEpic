@@ -34,7 +34,7 @@ export default function QEHeader(props) {
   return (
     <div style={{ backgroundColor: "#353535" }}>
       <AppBar position="static" color="inherit">
-        <Toolbar style={{ marginLeft: "10%", marginRight: "10%" }}>
+        <Toolbar style={{ marginLeft: "16%", marginRight: "16%" }}>
           <Grid
             container
             direction="row"
@@ -46,6 +46,12 @@ export default function QEHeader(props) {
                 <img className={classes.qeLogo} src={logo} alt="QE Live" />
               </Link>
             </Grid>
+
+        {/*}
+                    <Grid item alignItems="left" justify="flex-start">
+                      <p className={classes.qeLogo} style={{color: 'white', textAlign: 'left'}}>Gearing Made Easy</p>
+          </Grid> */}
+
             <Grid item xs={12} sm={12} md={4} lg={4} xl={4}>
               <Grid
                 container
