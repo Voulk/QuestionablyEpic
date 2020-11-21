@@ -105,6 +105,8 @@ const useStyles = makeStyles((theme) => ({
   },
   activeChar: {
     borderColor: "ForestGreen",
+    borderWidth: "2px",
+    backgroundColor: "#424E42",
   },
 
   details: {
