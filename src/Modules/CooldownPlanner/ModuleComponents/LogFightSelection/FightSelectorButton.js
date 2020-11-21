@@ -18,13 +18,13 @@ export default function FightSelectorButton(props) {
   };
 
   return (
-    <div>
+    <div style={{ whiteSpace: "nowrap", width: 129 }}>
       <Button
         aria-controls="fight-selector"
         aria-haspopup="true"
         onClick={handleClick}
         variant="outlined"
-        style={{ whiteSpace: "nowrap" }}
+        style={{ whiteSpace: "nowrap", width: 129 }}
       >
         {t("CooldownPlannerUserInputs.fightButtonLabel")}
       </Button>
@@ -33,7 +33,7 @@ export default function FightSelectorButton(props) {
         id="fight-selector"
         anchorEl={anchorEl}
         MenuListProps={{
-          style: { paddingTop: 0, paddingBottom: 0 },
+          style: { paddingTop: 0, paddingBottom: 0, ...props.customStyle },
         }}
         // keepMounted
         open={Boolean(anchorEl)}

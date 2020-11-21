@@ -18,7 +18,7 @@ export default function LogLinkInput(props) {
       onChange={props.changed}
       value={props.loglink}
       size="small"
-      fullWidth
+      {...props.styleProps}
       // style={{ width: "85%" }}
     />
   );
