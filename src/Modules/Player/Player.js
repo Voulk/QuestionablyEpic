@@ -306,6 +306,10 @@ class Player {
         
     }
 
+    setSpellPattern = (contentType, casts) => {
+        this.castPattern[contentType] = casts;
+    }
+
 
     // Consider replacing this with an external table for cleanliness and ease of editing. 
     setupDefaults = (spec) => {
@@ -395,13 +399,13 @@ class Player {
             }
 
             this.castPattern =
-            // CASTS, HEALING, HEALINGPERC, HPS
+            // CASTS, HEALING, HEALINGPERC, HPS, OVERHEALING
             {   "Raid": {
-                    "Light of Dawn": [20, 238400, 0.2082, 1316],
-                    "Word of Glory": [4, 40800, 0.0357, 225],
-                    "Holy Shock": [27, 221400, 0.1934, 1222],
-                    "Holy Light": [29, 311600, 0.293, 1683],
-                    "Shock Barrier": [0, 98300, 0.0858, 542],
+                    "Light of Dawn": [20, 238400, 0.2082, 1316, 0.2],
+                    "Word of Glory": [4, 40800, 0.0357, 225, 0.2],
+                    "Holy Shock": [27, 221400, 0.1934, 1222, 0.2],
+                    "Holy Light": [29, 311600, 0.293, 1683, 0.2],
+                    "Shock Barrier": [0, 98300, 0.0858, 542, 0.2],
             },
                 "Dungeon": {
                     "Light of Dawn": [20, 238400, 0.2082, 1316],

@@ -23,6 +23,7 @@ import MenuItem from "@material-ui/core/MenuItem";
 import Typography from "@material-ui/core/Typography";
 import bossIcons from "../CooldownPlanner/Functions/IconFunctions/BossIcons";
 import axios from "axios";
+import {convertLogOutput} from '../Player/PlayerUtilities';
 
 const menuStyle = {
   style: { marginTop: 5 },
@@ -224,6 +225,7 @@ export default function QELogImport(props) {
     setSummaryData(summary);
     setDamageData(damage);
     setCastData(casts);
+    
   };
 
   const playerSelectedHandler = (e) => {
@@ -235,6 +237,7 @@ export default function QELogImport(props) {
   console.log(damageData);
   console.log(castData);
   console.log(healerDataDetailed);
+  convertLogOutput(props.player, healerDataDetailed, timeend - time);
 
   return (
     <div>
