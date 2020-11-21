@@ -49,21 +49,41 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel) {
         bonus_stats.intellect = getProcessedValue(int_effect.coefficient, int_effect.table, itemLevel, int_effect.efficiency) * int_effect.duration / int_effect.cooldown;
     }
     else if (effectName === "Unbound Changeling") {
+        // Unbound Changeling is a challenge because it comes in four different flavors.
+        // Given the player can "force" change their Changeling to their preferred secondary stat, this formula will for now take a "best case scenario" approach and ignore
+        // the rare possibility of a Tri-proc (which is only ~10% more stats anyway). When an advanced settings menu is added we can revisit this and maybe add some detail.
+        let effect = activeTrinket.effects[0];
+        let playerBestSecondary = player.getHighestStatWeight(contentType, ['vers']) // Exclude Vers since there isn't a Vers version.
+
+        bonus_stats[playerBestSecondary] = getProcessedValue(effect.coefficient, effect.table, itemLevel) * convertPPMToUptime(effect.ppm, effect.duration);
 
     }
     else if (effectName === "Cabalist's Hymnal") {
+        // Test
+        let effect = activeTrinket.effects[0];
+
+        bonus_stats.crit = getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.duration * effect.stacks / 60
 
     }
     else if (effectName === "Macabre Sheet Music") {
+        // Test
+        let effect = activeTrinket.effects[0];
 
+        bonus_stats.haste = getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.duration * effect.stacks / effect.cooldown;
     }
     else if (effectName === "Consumptive Infusion") {
+        // I don't really know what to do with this yet. It has some value, but probably not much of it.
 
     }
     else if (effectName === "Incrutable Quantum Device") {
+        // TODO.
 
     }
     else if (effectName === "Siphoning Phylactery Shard") {
+        // Test
+        let effect = activeTrinket.effects[0];
+
+        bonus_stats.hps =  getProcessedValue(effect.coefficient, effect.table, itemLevel, effect.efficiency) / effect.cooldown * player.getStatMultiplier('CRITVERS');
 
     }
     else if (effectName === "Overflowing Anima Cage") {
@@ -82,7 +102,7 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel) {
 
     }
     else if (effectName === "Boon of the Archon") {
-        
+
     }
 
 

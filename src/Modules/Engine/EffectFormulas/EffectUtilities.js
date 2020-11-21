@@ -1,3 +1,4 @@
+import { combat_ratings_mult_by_ilvl } from '../CombatMultByLevel';
 import {randPropPoints} from '../RandPropPointsBylevel'
 // This file contains utility formulas that might be useful for calculating Effect values. 
 
@@ -12,6 +13,9 @@ export function getScalarValue(table, itemLevel) {
     }
     else if (table === -1) {
         return randPropPoints[itemLevel]['slotValues'][0];
+    }
+    else if (table === -7) {
+        return randPropPoints[itemLevel]['slotValues'][0] * combat_ratings_mult_by_ilvl[itemLevel];
     }
     else {
         // return error

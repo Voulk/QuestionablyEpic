@@ -80,5 +80,54 @@ export const trinket_data = [
             }
         ]
     }, 
+    {
+        name: 'Unbound Changeling',
+        effects: [
+            { 
+                coefficient: 1.1, // Tooltip suggests 2.2 but in-game it gives you 1.1. TODO: Check after release. 
+                table: -1,  
+                duration: 12, 
+                ppm: 1.5 
+            }
+        ]
+    },
+    {
+        name: "Cabalist's Hymnal",
+        effects: [
+            { 
+                coefficient: 0.467903,
+                table: -7,  
+                duration: 30, 
+                stacks: 2, // You get 10s of one stack, 10 of two, then 10 of three.
+                multiplier: 1, // Every ally that wears it in your party gives a 5% increase. Not implemented for now, but add to Settings.
+                ppm: 1 
+            }
+        ]
+    },
+    {
+        name: "Macabre Sheet Music",
+        effects: [
+            { 
+                coefficient: 0.467903,
+                table: -7,  
+                duration: 26, // You get a 20 second duration every time you touch a new Spirit. They each live about 5 seconds.
+                stacks: 3.2, // You should be able to hit all four pretty reliably, but will spend some time with lower than four stacks as you meet each.
+                cooldown: 90,
+            }
+        ]
+    },
+    {
+        name: 'Siphoning Phylactery', // Drop: Sang Depths
+        effects: [
+            { 
+                coefficient: 89.08621, // This represents the upper quartile of the given cards.  
+                table: -8, 
+                efficiency: 0.65, // You do have to heal a sub 35% health target every 30s for max efficiency which doesn't seem at all likely. 
+                cooldown: 30, 
+            }
+        ]
+    }, 
+    
+    
 ]
 
