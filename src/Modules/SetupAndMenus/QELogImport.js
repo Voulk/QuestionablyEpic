@@ -23,6 +23,7 @@ import moment from "moment";
 
 export default function QELogImport(props) {
   // const classes = useStyles;
+
   const { t, i18n } = useTranslation();
   const [open, setOpen] = React.useState(false);
   const [errorMessage, setErrorMessage] = React.useState("");
@@ -59,6 +60,17 @@ export default function QELogImport(props) {
       setKillWipe(info[4]),
       setCurrentBossID(info[5]);
   };
+
+  console.log(
+    time,
+    timeend,
+    nextpage,
+    currentFighttime,
+    bossName,
+    killWipe,
+    currentBossID
+  );
+  //   const handlerNew = handler.bind(this);
 
   return (
     <div>
