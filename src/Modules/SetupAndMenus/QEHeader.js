@@ -56,7 +56,7 @@ export default function QEHeader(props) {
                 wrap="nowrap"
               >
                 <Grid item>
-                  <QELogImport />
+                  <QELogImport logImportSnack={props.logImportSnack} />
                 </Grid>
                 <Grid item>
                   <SimCraftInput

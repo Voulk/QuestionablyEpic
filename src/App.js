@@ -66,6 +66,7 @@ class App extends Component {
     this.handleCharUpdateSnackOpen = this.handleCharUpdateSnackOpen.bind(this);
     this.handleLoginSnackOpen = this.handleLoginSnackOpen.bind(this);
     this.handleSimCSnackOpen = this.handleSimCSnackOpen.bind(this);
+    this.handleLogSnackOpen = this.handleLogSnackOpen.bind(this);
 
     this.langSet = this.langSet.bind(this);
     this.userLogout = this.userLogout.bind(this);
@@ -82,6 +83,7 @@ class App extends Component {
       charUpdateState: false,
       loginSnackState: false,
       simcSnackState: false,
+      logImportSnackState: false,
     };
   }
 
@@ -127,6 +129,17 @@ class App extends Component {
       return;
     }
     this.setState({ simcSnackState: false });
+  };
+
+  // Log Import Snack
+  handleLogSnackOpen = () => {
+    this.setState({ logImportSnackState: true });
+  };
+  handleLogSnackClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+    this.setState({ logImportSnackState: false });
   };
 
   // ////////////////////////////////////////
@@ -225,6 +238,7 @@ class App extends Component {
               contentType={this.state.contentType}
               pl={activePlayer}
               simcSnack={this.handleSimCSnackOpen}
+              logImportSnack={this.handleLogSnackOpen}
             />
 
             {/* // Char Added Snackbar */}
@@ -265,12 +279,23 @@ class App extends Component {
 
             {/* // SimC Success Snackbar */}
             <Snackbar
-              open={this.state.simcSnackState}
+              open={this.state.logImportSnackState}
               autoHideDuration={3000}
               onClose={this.handleSimCSnackClose}
             >
               <Alert onClose={this.handleSimCSnackClose} severity="success">
                 SimC String Imported Successfully!
+              </Alert>
+            </Snackbar>
+
+            {/* Log Import Success Snackbar */}
+            <Snackbar
+              open={this.state.simcSnackState}
+              autoHideDuration={3000}
+              onClose={this.handleLogSnackClose}
+            >
+              <Alert onClose={this.handleLogSnackClose} severity="success">
+                Log Imported Successfully!
               </Alert>
             </Snackbar>
 

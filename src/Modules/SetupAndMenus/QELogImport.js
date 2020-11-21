@@ -78,7 +78,10 @@ export default function QELogImport(props) {
     setOpen(false);
   };
 
-  const handleSubmit = () => {};
+  const handleSubmit = () => {
+    setOpen(false);
+    props.logImportSnack();
+  };
 
   const reportidHandler = (event) => {
     setReportId(warcraftLogReportID(event.target.value));
