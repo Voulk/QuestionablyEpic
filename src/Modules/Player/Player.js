@@ -77,10 +77,13 @@ class Player {
         mastery: 0,
         versatility: 200,
         stamina: 1490,
+        
+    }
+
+    fightInfo = {
         hps: 6000,
         rawhps: 9420,
         fightLength: 180,
-        
     }
    
     // Stat weights are normalized around intellect. 
@@ -310,10 +313,23 @@ class Player {
         this.castPattern[contentType] = casts;
     }
 
+    setActiveStats = (stats) => {
+        this.activeStats = stats;
+    }
+
+    setFightInfo = (info) => {
+        this.fightInfo = info;
+    }
+
 
     // Consider replacing this with an external table for cleanliness and ease of editing. 
     setupDefaults = (spec) => {
         if (spec === SPEC.RESTODRUID) {
+            this.fightInfo = {
+                hps: 6000,
+                rawhps: 9420,
+                fightLength: 180,
+            }
             this.activeStats = {
                 intellect: 1500,
                 haste: 400,
@@ -321,9 +337,6 @@ class Player {
                 mastery: 0,
                 versatility: 200,
                 stamina: 1490,
-                hps: 6000,
-                rawhps: 9420,
-                fightLength: 180,
     
             }
            
@@ -365,6 +378,12 @@ class Player {
 
         }
         else if (spec === SPEC.HOLYPALADIN) {
+            this.fightInfo = {
+                hps: 6000,
+                rawhps: 9420,
+                fightLength: 180,
+            }
+            
             this.activeStats = {
                 intellect: 1500,
                 haste: 400,
