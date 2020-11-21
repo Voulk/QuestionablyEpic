@@ -231,12 +231,13 @@ export default function QELogImport(props) {
   const playerSelectedHandler = (e) => {
     setCurrentPlayerID(e);
   };
-
+  /*
   console.log(healerData);
   console.log(summaryData);
   console.log(damageData);
   console.log(castData);
   console.log(healerDataDetailed);
+  */
   convertLogSpellOutput(props.player, healerDataDetailed, timeend - time);
   convertLogStatOutput(props.player, summaryData, currentPlayerID);
 

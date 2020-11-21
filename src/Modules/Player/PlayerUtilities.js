@@ -42,8 +42,6 @@ export function convertLogSpellOutput(player, logOutput, fightLength) {
 
     //console.log(JSON.stringify(data));
     //console.log(JSON.stringify(player));
-
-
 }
 
 // We could also extract talent information if it was desired. 
