@@ -257,7 +257,7 @@ class Player {
     }
 
     getHPS = () => {
-        return this.activeStats.hps;
+        return this.fightInfo.hps;
     }
 
     getInt = () => {

@@ -294,7 +294,7 @@ export function scoreItem(item, player, contentType) {
 
   // Add any bonus HPS
   if ('bonus_stats' in item.stats && 'hps' in item.stats.bonus_stats) {
-    score += item.stats.bonus_stats.hps / player.activeStats.hps * player.activeStats.intellect;
+    score += item.stats.bonus_stats.hps / player.getHPS() * player.activeStats.intellect;
   }
 
   // Add Socket
