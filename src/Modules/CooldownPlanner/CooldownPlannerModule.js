@@ -207,7 +207,7 @@ class HolyDiver extends Component {
               justify="space-between"
             >
               {/* Grid Container for the User Input Components, With Paper as the Surface */}
-              <Grid item container xs={12} sm={12} md={6} lg={6} xl={6}>
+              <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
                 <Paper
                   style={{
                     display: "inline-flex",
@@ -218,17 +218,21 @@ class HolyDiver extends Component {
                   elevation={0}
                 >
                   {/* Grid Container for the Log Input/Fight Selection Button */}
-
-                  <LogLinkInput
-                    changed={this.reportidHandler}
-                    reportid={this.state.reportid}
-                  />
-
-                  <FightSelectorButton
-                    reportid={this.state.reportid}
-                    clicky={this.handler}
-                    update={this.updatechartdataNew}
-                  />
+                  <Grid container spacing={1}>
+                    <Grid item>
+                      <LogLinkInput
+                        changed={this.reportidHandler}
+                        reportid={this.state.reportid}
+                      />
+                    </Grid>
+                    <Grid item>
+                      <FightSelectorButton
+                        reportid={this.state.reportid}
+                        clicky={this.handler}
+                        update={this.updatechartdataNew}
+                      />
+                    </Grid>
+                  </Grid>
                 </Paper>
               </Grid>
               <Grid

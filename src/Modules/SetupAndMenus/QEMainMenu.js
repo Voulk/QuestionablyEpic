@@ -17,7 +17,7 @@ const mainMenuOptions = {
   "Legendary Analysis": "/legendaries",
   */
   "Explore Covenants": "/soulbinds",
-  //"Cooldown Planner": "/holydiver",
+  "Cooldown Planner": "/holydiver",
 };
 
 const useStyles = makeStyles((theme) => ({

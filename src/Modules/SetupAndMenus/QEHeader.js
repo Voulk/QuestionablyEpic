@@ -9,6 +9,7 @@ import ProfileSelector from "./ProfileButton";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import SimCraftInput from "./SimCraftDialog";
+import QELogImport from "./QELogImport";
 import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -55,9 +56,7 @@ export default function QEHeader(props) {
                 wrap="nowrap"
               >
                 <Grid item>
-                  <Button style={{ color: "white" }}>
-                    {t("QeHeader.InsertLogLabel")}
-                  </Button>
+                  <QELogImport />
                 </Grid>
                 <Grid item>
                   <SimCraftInput

@@ -19,7 +19,7 @@ export default function LogLinkInput(props) {
       value={props.loglink}
       size="small"
       fullWidth
-      style={{ width: "85%" }}
+      // style={{ width: "85%" }}
     />
   );
 }

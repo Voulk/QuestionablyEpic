@@ -419,7 +419,6 @@ export function logDifficulty(dif) {
   }
 }
 
-
 // Returns Array of Healer Information
 export async function importSummaryData(starttime, endtime, reportid) {
   const APISummary =
@@ -444,4 +443,44 @@ export async function importSummaryData(starttime, endtime, reportid) {
     });
 
   return summary;
+}
+
+export async function importLogDataQE(starttime, endtime, reportID) {
+  //  Set the Loading State of the loading spinner so that the user knows data is being loaded.
+  // Fight Length of the selected report is calculated and coverted to seconds as a string
+  const fightLength = moment
+    .duration(fightDurationCalculator(endtime, starttime))
+    .asSeconds()
+    .toString();
+
+  // Import Healer Info from the Logs healing table for each healing class.
+  // See: "importHealerLogData" in the functions file for more info.
+  const healers = await importHealerLogData(starttime, endtime, reportID);
+
+  // Import summary Info from the Logs Summary table.
+  // This contains our data for Gear, Stats, Conduits, Soulbinds etc etc.
+  // See: "importSummaryData" in the functions file for more info.
+  const summary = await importSummaryData(starttime, endtime, reportID);
+
+  // Import all the damage-taken from the log for friendly targets.
+  // See: "importDamageLogData" in the functions file for more info.
+  const damage = await importDamageLogData(starttime, endtime, reportID);
+
+  // Map Healer Data for ID, Name and Class.
+  const healerIDName = healers.map((key) => ({
+    id: key.id,
+    name: key.name,
+    class: key.type,
+  }));
+
+  // Import the log data for Casts for each healer in the log.
+  // See: "importCastsLogData" fpr mpre info.
+  const cooldowns = await importCastsLogData(
+    starttime,
+    endtime,
+    reportID,
+    healers.map((key) => key.id)
+  );
+
+  console.log(fightLength, healers, summary, damage, healerIDName);
 }
