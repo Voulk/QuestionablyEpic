@@ -279,14 +279,20 @@ export function scoreItem(item, player, contentType) {
   // Multiply the item's stats by our stat weights.
   for (var stat in item.stats) {
     if (stat !== "bonus_stats") {
+      
       let statSum =
         item.stats[stat] +
         (stat in item.stats["bonus_stats"]
           ? item.stats["bonus_stats"][stat]
           : 0);
       score += statSum * player.getStatWeight(contentType, stat);
-      //console.log("Stat: " + stat + " adds " + statSum * player.getStatWeight(contentType, stat) + " to score.");
+      console.log("Stat: " + stat + " adds " + statSum * player.getStatWeight(contentType, stat) + " to score.");
     }
+  }
+
+  // Add any bonus HPS
+  if ('bonus_stats' in item.stats && 'hps' in item.stats.bonus_stats) {
+    score += item.stats.bonus_stats.hps / player.activeStats.hps * player.activeStats.intellect;
   }
 
   // Add Socket

@@ -66486,7 +66486,11 @@ export const itemDB = [
       ],
       "dropLoc": "",
       "selectable": "true",
-      "slot": "Trinket"
+      "slot": "Trinket",
+      "effect": {
+        "type": "trinket",
+        "name": "Tuft of Smoldering Plumage"
+    },
   },
   {
       "id": 184021,
@@ -66661,7 +66665,11 @@ export const itemDB = [
       ],
       "dropLoc": "",
       "selectable": "true",
-      "slot": "Trinket"
+      "slot": "Trinket",
+      "effect": {
+        "type": "trinket",
+        "name": "Manabound Mirror"
+    },
   },
   {
       "id": 184030,

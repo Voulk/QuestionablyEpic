@@ -24,6 +24,14 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel) {
 function getNetValue(effect, player, itemLevel) {
     const efficiency = ('expectedEfficiency' in effect ? effect.expectedEfficiency : 1);
     let netValue = Math.round(effect.coefficient * getScalarValue(effect.table, itemLevel) * efficiency * effect.targets);
+    
+    // Effect boosters
+    if (effect.tags.includes(TAGS.TICKS)) {
+        netValue *= effect.ticks;
+    }
+    if (effect.tags.includes(TAGS.METEOR)) {
+        netValue = netValue * (1+effect.targets * effect.meteor);
+    }
 
     let ppm = 0;
     if (effect.tags.includes(TAGS.PPM)) {
@@ -44,5 +52,14 @@ function getNetValue(effect, player, itemLevel) {
     }
     if (effect.tags.includes(TAGS.ON_USE)) {
         return netValue /= effect.cooldown;
+    }
+
+    if (effect.tags.includes(TAGS.SPECIAL)) {
+        // Tags that don't fit any other category.
+        if (effect.name === "Manabound Mirror") {
+            let expected_mana_spend_min = 9000;
+            return netValue * (expected_mana_spend_min / 3240) / effect.cooldown;
+        }
+
     }
 }
