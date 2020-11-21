@@ -14,7 +14,6 @@ import {
   importHealerLogData,
   importSummaryData,
   importDamageLogData,
-  importCastsLogData,
 } from "../CooldownPlanner/Functions/Functions";
 import FightSelectorButton from "../CooldownPlanner/ModuleComponents/LogFightSelection/FightSelectorButton";
 import Grid from "@material-ui/core/Grid";
@@ -25,6 +24,7 @@ import Select from "@material-ui/core/Select";
 import MenuItem from "@material-ui/core/MenuItem";
 import Typography from "@material-ui/core/Typography";
 import bossIcons from "../CooldownPlanner/Functions/IconFunctions/BossIcons";
+import axios from "axios";
 
 // const useStyles = makeStyles((theme) => ({
 //   root: { height: 500 },
@@ -66,9 +66,13 @@ export default function QELogImport(props) {
   const [bossName, setBossName] = React.useState("");
   const [killWipe, setKillWipe] = React.useState("");
   const [currentBossID, setCurrentBossID] = React.useState("");
-  const [healers, setHealers] = React.useState([]);
   const [currentDifficulty, setCurrentDifficulty] = React.useState("");
   const [showSelectedFight, setShowSelectedFight] = React.useState(false);
+
+  const [healerData, setHealerData] = React.useState([]);
+  const [summaryData, setSummaryData] = React.useState([]);
+  const [damageData, setDamageData] = React.useState([]);
+  const [castData, setCastData] = React.useState([]);
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -99,14 +103,68 @@ export default function QELogImport(props) {
     setShowSelectedFight(true);
   };
 
-  const importLogDataQE = async (starttime, endtime, reportID) => {
-    //  Set the Loading State of the loading spinner so that the user knows data is being loaded.
-    // Fight Length of the selected report is calculated and coverted to seconds as a string
-    const fightLength = moment
-      .duration(fightDurationCalculator(endtime, starttime))
-      .asSeconds()
-      .toString();
+  const importCastsLogData = async (starttime, endtime, reportid, healerID) => {
+    const APICast = "https://www.warcraftlogs.com:443/v1/report/events/casts/";
+    const START = "?start=";
+    const END = "&end=";
+    const HOSTILITY = "&hostility=0";
+    const API2 = "&api_key=92fc5d4ae86447df22a8c0917c1404dc";
+    let nextpage = 0;
+    let casts = [];
 
+    await axios
+      .get(
+        APICast +
+          reportid +
+          START +
+          starttime +
+          END +
+          endtime +
+          HOSTILITY +
+          API2
+      )
+      .then((result) => {
+        casts = Object.keys(result.data.events).map(
+          (key) => result.data.events[key]
+        );
+        nextpage = result.data.nextPageTimestamp;
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+    // Loop of the import updating the next page until the next page is undefined (no next page from json return)
+    let i = 0;
+    if (nextpage !== undefined || null) {
+      do {
+        await axios
+          .get(
+            APICast +
+              reportid +
+              START +
+              nextpage +
+              END +
+              endtime +
+              HOSTILITY +
+              API2
+          )
+          .then((result) => {
+            casts = casts.concat(
+              Object.keys(result.data.events).map(
+                (key) => result.data.events[key]
+              )
+            );
+            nextpage = result.data.nextPageTimestamp;
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
+        i = i + 1;
+      } while (nextpage !== undefined || null);
+    }
+    return casts;
+  };
+
+  const importLogDataQE = async (starttime, endtime, reportID) => {
     // Import Healer Info from the Logs healing table for each healing class.
     // See: "importHealerLogData" in the functions file for more info.
     const healers = await importHealerLogData(starttime, endtime, reportID);
@@ -120,25 +178,34 @@ export default function QELogImport(props) {
     // See: "importDamageLogData" in the functions file for more info.
     const damage = await importDamageLogData(starttime, endtime, reportID);
 
-    // Map Healer Data for ID, Name and Class.
-    const healerIDName = healers.map((key) => ({
-      id: key.id,
-      name: key.name,
-      class: key.type,
-    }));
-
     // Import the log data for Casts for each healer in the log.
     // See: "importCastsLogData" fpr mpre info.
-    const cooldowns = await importCastsLogData(
+
+    const casts = await importCastsLogData(
       starttime,
       endtime,
       reportID,
       healers.map((key) => key.id)
     );
 
-    setHealers(healerIDName);
+    // an example of mapping these imports
+    // const healerIDName = healers.map((key) => ({
+    //   id: key.id,
+    //   name: key.name,
+    //   class: key.type,
+    // }));
+
+    setHealerData(healers);
+    setSummaryData(summary);
+    setDamageData(damage);
+    setCastData(casts);
   };
-  console.log(healers);
+
+  console.log(healerData);
+  console.log(summaryData);
+  console.log(damageData);
+  console.log(castData);
+
   return (
     <div>
       <Button style={{ color: "white" }} onClick={handleClickOpen}>
@@ -208,7 +275,7 @@ export default function QELogImport(props) {
                   onChange={(e) => {}}
                   MenuProps={menuStyle}
                 >
-                  {healers.map((key, i) => (
+                  {healerData.map((key, i) => (
                     <MenuItem key={i} value={key.name}>
                       {key.name}
                     </MenuItem>
