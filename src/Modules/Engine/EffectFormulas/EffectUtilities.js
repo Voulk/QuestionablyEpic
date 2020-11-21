@@ -11,7 +11,7 @@ export function getScalarValue(table, itemLevel) {
         return randPropPoints[itemLevel]['p8'];
     }
     else if (table === -1) {
-        return randPropPoints[itemLevel]['slotvalues'][0];
+        return randPropPoints[itemLevel]['slotValues'][0];
     }
     else {
         // return error

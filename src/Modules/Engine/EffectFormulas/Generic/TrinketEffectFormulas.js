@@ -11,14 +11,94 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel) {
         console.error('no trinket found');
         return null; // handle error shit on the calling side, or here i guess
     }
+    else if (effectName === "Lingering Sunmote") {
+        // We don't multiply our healing by number of targets because the heal is split among them.
+        // The meteor effect is accounted for in the meteor_multiplier variable.
+        let effect = activeTrinket.effects[0];
+        let meteor_multiplier = (1+ effect.targets * effect.meteor)
 
+        bonus_stats.hps =  getProcessedValue(effect.coefficient, effect.table, itemLevel, effect.efficiency) * 
+                effect.ticks * meteor_multiplier / effect.cooldown * player.getStatPerc('Vers');
+
+    }
+    else if (effectName === "Manabound Mirror") {
+        let mana_heal_effect = activeTrinket.effects[0];
+        let base_heal_effect = activeTrinket.effects[1];
+        
+
+        let expected_mana_spend = 9000; // Per minute.
+        let base_heal = getProcessedValue(base_heal_effect.coefficient, base_heal_effect.table, itemLevel)
+        let mana_heal = getProcessedValue(mana_heal_effect.coefficient, mana_heal_effect.table, itemLevel) * (expected_mana_spend / 3240)
+
+        bonus_stats.hps = (base_heal + mana_heal) * base_heal_effect.efficiency / base_heal_effect.cooldown * player.getStatMultiplier('CRITVERS');
+ 
+    }
+    else if (effectName === "Darkmoon Deck: Repose") {
+        let effect = activeTrinket.effects[0];
+
+        bonus_stats.hps =  getProcessedValue(effect.coefficient, effect.table, itemLevel, effect.efficiency) / effect.cooldown * player.getStatMultiplier('CRITVERS');
+
+    }
+    else if (effectName === "Sunblood Amethyst") {
+        let dam_effect = activeTrinket.effects[0];
+        let int_effect = activeTrinket.effects[1];
+
+        //console.log(JSON.stringify(dam_effect) + JSON.stringify(int_effect));
+
+        bonus_stats.dps =  getProcessedValue(dam_effect.coefficient, dam_effect.table, itemLevel) / dam_effect.cooldown * player.getStatMultiplier('CRITVERS');
+        bonus_stats.intellect = getProcessedValue(int_effect.coefficient, int_effect.table, itemLevel, int_effect.efficiency) * int_effect.duration / int_effect.cooldown;
+    }
+    else if (effectName === "Unbound Changeling") {
+
+    }
+    else if (effectName === "Cabalist's Hymnal") {
+
+    }
+    else if (effectName === "Macabre Sheet Music") {
+
+    }
+    else if (effectName === "Consumptive Infusion") {
+
+    }
+    else if (effectName === "Incrutable Quantum Device") {
+
+    }
+    else if (effectName === "Siphoning Phylactery Shard") {
+
+    }
+    else if (effectName === "Overflowing Anima Cage") {
+
+    }
+    else if (effectName === "Vial of Spectral Essence") {
+
+    }
+    else if (effectName === "Soulletting Ruby") {
+
+    }
+    else if (effectName === "Wakener's Frond") {
+
+    }
+    else if (effectName === "Soulsifter Root") {
+
+    }
+    else if (effectName === "Boon of the Archon") {
+        
+    }
+
+
+    /*
     for (const effect of activeTrinket.effects) {
         let netValue = getNetValue(effect, player, itemLevel);
         bonus_stats[effect.benefit] = Math.round(netValue);
-    }
+    } */
 
     console.log("Effect Name: " + effectName + " at level: " + itemLevel + " {" + JSON.stringify(bonus_stats))
     return bonus_stats;
+}
+
+
+function getProcessedValue(coefficient, table, itemLevel, efficiency = 1) {
+    return coefficient * getScalarValue(table, itemLevel) * efficiency;
 }
 
 function getNetValue(effect, player, itemLevel) {

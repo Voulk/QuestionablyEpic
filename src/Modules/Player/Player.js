@@ -225,6 +225,10 @@ class Player {
             // Returns a multiplier of Haste / Vers / Crit.
             mult = this.getStatPerc("Haste") * this.getStatPerc("Crit") * this.getStatPerc("Vers") 
         }
+        else if (flag === "CRITVERS") {
+            // Returns a multiplier that includes raw intellect. 
+            mult = this.getStatPerc("Crit") * this.getStatPerc("Vers");
+        }
         else {
             // Our multiplier consists of whatever is in the stat list array.
             statList.forEach(stat => {

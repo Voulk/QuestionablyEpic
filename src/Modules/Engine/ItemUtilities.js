@@ -286,7 +286,7 @@ export function scoreItem(item, player, contentType) {
           ? item.stats["bonus_stats"][stat]
           : 0);
       score += statSum * player.getStatWeight(contentType, stat);
-      console.log("Stat: " + stat + " adds " + statSum * player.getStatWeight(contentType, stat) + " to score.");
+      //console.log("Stat: " + stat + " adds " + statSum * player.getStatWeight(contentType, stat) + " to score.");
     }
   }
 

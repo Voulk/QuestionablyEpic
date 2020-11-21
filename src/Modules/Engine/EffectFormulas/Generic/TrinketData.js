@@ -19,7 +19,7 @@ export const trinket_data = [
                 benefit: 'hps', 
                 coefficient: 45.58441, 
                 table: -8, 
-                expectedEfficiency: 0.4, 
+                efficiency: 0.85, 
                 cooldown: 120, 
                 targets: 5,
                 ticks: 3,
@@ -28,25 +28,23 @@ export const trinket_data = [
         ]
     }, 
     {
-        name: 'Tear Anima',
+        name: 'Sunblood Amethyst',
         effects: [
             { 
                 tags: [TAGS.ON_USE], 
                 benefit: 'dps', 
-                coefficient: 54.7013, 
+                coefficient: 71.74138, 
                 table: -8, 
                 cooldown: 90, 
-                targets: 1 
             },
             { 
                 tags: [TAGS.DURATION, TAGS.ON_USE], 
                 benefit: 'intellect', 
-                coefficient: 1.086957, 
+                coefficient: 0.993548, 
                 table: -1, 
-                expectedEfficiency: 0.8, 
+                expectedEfficiency: 0.75, 
                 duration: 15, 
                 cooldown: 90, 
-                targets: 1 
             }
         ]
     },
@@ -58,20 +56,29 @@ export const trinket_data = [
                 benefit: 'hps', 
                 coefficient: 12.82759, 
                 table: -8, 
-                cooldown: 60, 
-                expectedEfficiency: 0.9,
-                targets: 1 
             },
             { 
                 tags: [TAGS.ON_USE], 
                 benefit: 'hps', 
                 coefficient: 80.17241, 
                 table: -8, 
-                expectedEfficiency: 0.9, 
                 cooldown: 60, 
-                targets: 1 
+                efficiency: 0.92,
             }
         ]
-    }
+    },
+    {
+        name: 'Darkmoon Deck: Repose', // Drop: Sang Depths
+        effects: [
+            { 
+                tags: [TAGS.ON_USE, TAGS.MULTIPLIER, TAGS.METEOR, TAGS.TICKS], 
+                benefit: 'hps', 
+                coefficient: 467.66378, // This represents the upper quartile of the given cards.  
+                table: -8, 
+                efficiency: 0.9, 
+                cooldown: 90, 
+            }
+        ]
+    }, 
 ]
 
