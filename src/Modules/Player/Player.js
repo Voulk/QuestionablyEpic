@@ -259,6 +259,14 @@ class Player {
     getHPS = () => {
         return this.fightInfo.hps;
     }
+    // HPS including overhealing.
+    getRawHPS = () => {
+        return this.fightInfo.rawhps;
+    }
+
+    getFightLength = () => {
+        return this.fightInfo.fightLength;
+    }
 
     getInt = () => {
         return this.activeStats.intellect;
@@ -276,7 +284,7 @@ class Player {
 
     getSpellCastsPerMin = (spellName, contentType) => {
         if (spellName in this.castPattern[contentType]) {
-            return this.castPattern[contentType][spellName][SPELL_CASTS_LOC] / this.activeStats.fightLength * 60;
+            return this.castPattern[contentType][spellName][SPELL_CASTS_LOC] / this.getFightLength() * 60;
         }
         else {
             return 0;
