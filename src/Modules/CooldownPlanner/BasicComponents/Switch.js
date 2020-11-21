@@ -36,6 +36,7 @@ export default function SwitchLabels(props) {
               onChange={handleChange}
               name="checkedA"
               size="small"
+              disabled={props.disabled}
             />
           }
           label={props.label}
