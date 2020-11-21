@@ -16,9 +16,9 @@ const mainMenuOptions = {
   "Upgrade Finder (Coming Soon)": ["/upgradefinder", false],
   "Gear Quick Compare": ["/quickcompare", true],
   "Legendary Analysis": ["/legendaries", true],
-  "Trinket Analysis": ["/trinkets", true],
+  "Trinket Analysis": ["/trinkets", false],
   "Explore Covenants": ["/soulbinds", true],
-  "Cooldown Planner": ["/holydiver", true],
+  "Cooldown Planner (Coming Soon)": ["/holydiver", false],
 };
 
 const useStyles = makeStyles((theme) => ({
