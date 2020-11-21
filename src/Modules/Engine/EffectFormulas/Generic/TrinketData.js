@@ -117,7 +117,7 @@ export const trinket_data = [
         ]
     },
     {
-        name: 'Siphoning Phylactery', // Drop: Sang Depths
+        name: 'Siphoning Phylactery', 
         effects: [
             { 
                 coefficient: 89.08621, // This represents the upper quartile of the given cards.  
@@ -127,6 +127,60 @@ export const trinket_data = [
             }
         ]
     }, 
+    {
+        name: "Overflowing Anima Cage",
+        effects: [
+            { 
+                coefficient: 0.985059,
+                table: -7,  
+                duration: 15, 
+                multiplier: 1, // Up to four allies do benefit from standing with you. Not included in the score for now.
+                cooldown: 150,
+            }
+        ]
+    },
+    {
+        name: 'Vial of Spectral Essence', 
+        effects: [
+            { 
+                coefficient: 161.3793,  
+                table: -8, // TODO: Test for Crit / Vers scaling.
+                efficiency: 0.95, // This should have quite a high efficiency rating because it won't heal full health targets and is split between nearby allies should it run out. 
+                cooldown: 90, 
+            }
+        ]
+    }, 
+    {
+        name: "Soulletting Ruby",
+        effects: [
+            { 
+                coefficient: 2.269577,
+                table: -7,  
+                duration: 16, 
+                multiplier: 1.64, // This assumes your average boss health is just under 50% which feels like a fair average.  
+                cooldown: 90,
+            },
+            { 
+                coefficient: 51.64138,  
+                table: -8, 
+                efficiency: 0.3, // You are mostly popping this for the crit bonus and won't care if you're damaged or not.
+                cooldown: 90, 
+            }
+
+        ]
+    },
+    {
+        name: "Wakener's Frond",
+        effects: [
+            { 
+                coefficient: 3.940237,
+                table: -7,  
+                duration: 12, 
+                multiplier: 1, 
+                cooldown: 120,
+            }
+        ]
+    },
     
     
 ]
