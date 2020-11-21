@@ -16,6 +16,10 @@ import {
 import FightSelectorButton from "../CooldownPlanner/ModuleComponents/LogFightSelection/FightSelectorButton";
 import Grid from "@material-ui/core/Grid";
 import moment from "moment";
+import InputLabel from "@material-ui/core/InputLabel";
+import FormControl from "@material-ui/core/FormControl";
+import Select from "@material-ui/core/Select";
+import MenuItem from "@material-ui/core/MenuItem";
 
 // const useStyles = makeStyles((theme) => ({
 //   root: { height: 500 },
@@ -36,6 +40,7 @@ export default function QELogImport(props) {
   const [bossName, setBossName] = React.useState(false);
   const [killWipe, setKillWipe] = React.useState(false);
   const [currentBossID, setCurrentBossID] = React.useState(false);
+  const [healers, setHealers] = React.useState([]);
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -80,12 +85,14 @@ export default function QELogImport(props) {
       <Dialog
         open={open}
         onClose={handleClose}
-        aria-labelledby="form-dialog-title"
-        maxWidth="xs"
-        fullWidth={true}
+        // aria-labelledby="form-dialog-title"
+        // maxWidth="xs"
+        // fullWidth={true}
       >
-        <DialogTitle id="form-dialog-title">Paste Your SimC String</DialogTitle>
-        <DialogContent style={{ height: 400 }}>
+        <DialogTitle id="form-dialog-title">
+          Paste Your Warcraft Logs Report Here
+        </DialogTitle>
+        <DialogContent>
           <Grid container spacing={1}>
             <Grid item xs={12}>
               <LogLinkInput changed={reportidHandler} reportid={reportId} />
@@ -96,6 +103,29 @@ export default function QELogImport(props) {
                 clicky={handler}
                 update={importLogDataQE}
               />
+            </Grid>
+            <Grid item xs={6}>
+              <FormControl
+                //   className={classes.formControl}
+                variant="outlined"
+                size="small"
+                fullWidth
+              >
+                <InputLabel id="HealerSelector">{t("Name")}</InputLabel>
+                <Select
+                  value={props.value}
+                  label={t("Name")}
+                  labelId="HealerSelector"
+                  onChange={(e) => {}}
+                  //   MenuProps={menuStyle}
+                >
+                  {healers.map((key, i) => (
+                    <MenuItem key={i} value={key.name}>
+                      {key.name}
+                    </MenuItem>
+                  ))}
+                </Select>
+              </FormControl>
             </Grid>
           </Grid>
         </DialogContent>
