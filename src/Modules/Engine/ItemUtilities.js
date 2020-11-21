@@ -264,6 +264,8 @@ export function correctCasing(string) {
 // Score is calculated by multiplying out an items stats against the players stat weights.
 // Special effects, sockets and leech are then added afterwards.
 export function scoreItem(item, player, contentType) {
+  
+
   let score = 0;
 
   // Calculate Effect.
@@ -272,13 +274,14 @@ export function scoreItem(item, player, contentType) {
       item.effect,
       player,
       contentType,
-      item.itemLevel
+      item.level
     );
   }
 
   // Multiply the item's stats by our stat weights.
   for (var stat in item.stats) {
     if (stat !== "bonus_stats") {
+      
       let statSum =
         item.stats[stat] +
         (stat in item.stats["bonus_stats"]
@@ -287,6 +290,11 @@ export function scoreItem(item, player, contentType) {
       score += statSum * player.getStatWeight(contentType, stat);
       //console.log("Stat: " + stat + " adds " + statSum * player.getStatWeight(contentType, stat) + " to score.");
     }
+  }
+
+  // Add any bonus HPS
+  if ('bonus_stats' in item.stats && 'hps' in item.stats.bonus_stats) {
+    score += item.stats.bonus_stats.hps / player.activeStats.hps * player.activeStats.intellect;
   }
 
   // Add Socket

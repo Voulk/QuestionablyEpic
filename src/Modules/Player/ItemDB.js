@@ -4186,7 +4186,11 @@ export const itemDB = [
       },
       "dropLoc": "",
       "selectable": "true",
-      "slot": "Trinket"
+      "slot": "Trinket",
+      "effect": {
+        "type": "trinket",
+        "name": "Darkmoon Deck: Repose"
+    }
   },
   {
       "id": 173131,
@@ -31462,7 +31466,11 @@ export const itemDB = [
       ],
       "dropLoc": "",
       "selectable": "true",
-      "slot": "Trinket"
+      "slot": "Trinket",
+      "effect": {
+        "type": "trinket",
+        "name": "Unbound Changeling"
+    }
   },
   {
       "id": 178709,
@@ -34231,7 +34239,11 @@ export const itemDB = [
       ],
       "dropLoc": "",
       "selectable": "true",
-      "slot": "Trinket"
+      "slot": "Trinket",
+      "effect": {
+        "type": "trinket",
+        "name": "Sunblood Amethyst"
+    }
   },
   {
       "id": 178827,
@@ -35128,7 +35140,11 @@ export const itemDB = [
       ],
       "dropLoc": "",
       "selectable": "true",
-      "slot": "Trinket"
+      "slot": "Trinket",
+      "effect": {
+        "type": "trinket",
+        "name": "Lingering Sunmote"
+    }
   },
   {
       "id": 178851,
@@ -66482,7 +66498,11 @@ export const itemDB = [
       ],
       "dropLoc": "",
       "selectable": "true",
-      "slot": "Trinket"
+      "slot": "Trinket",
+      "effect": {
+        "type": "trinket",
+        "name": "Tuft of Smoldering Plumage"
+    },
   },
   {
       "id": 184021,
@@ -66657,7 +66677,11 @@ export const itemDB = [
       ],
       "dropLoc": "",
       "selectable": "true",
-      "slot": "Trinket"
+      "slot": "Trinket",
+      "effect": {
+        "type": "trinket",
+        "name": "Manabound Mirror"
+    },
   },
   {
       "id": 184030,
