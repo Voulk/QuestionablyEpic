@@ -8,6 +8,7 @@ import { Grid } from "@material-ui/core";
 import AddNewChar from "./CharCreator";
 import { makeStyles } from "@material-ui/core/styles";
 import Avatar from "@material-ui/core/Avatar";
+import {dbCheckPatron} from './ConnectionUtilities';
 
 import Check from "@material-ui/icons/Check";
 
@@ -48,6 +49,7 @@ const useStyles = makeStyles((theme) => ({
 // <p>{props.pl.getSpec()}</p>
 
 export default function QEMainMenu(props) {
+  
   const { t, i18n } = useTranslation();
   // const currentLanguage = i18n.language;
   const classes = useStyles();
