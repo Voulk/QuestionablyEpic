@@ -45,10 +45,8 @@ export default function LegendaryObject(props) {
         <p className="legodesc">{t(item.name + ".desc")}</p>
         <div className="legostats">
           <p>
-            Expected HPS: {item.bonus_stats.HPS}
-            <br />
-            Expected DPS: {item.bonus_stats.DPS}
-            <br />
+            HPS: {item.bonus_stats.HPS}
+            {/*Expected DPS: {item.bonus_stats.DPS} */}
           </p>
         </div>
       </div>

@@ -194,6 +194,9 @@ class Player {
                 break;
             case "Mastery":
                 statPerc = 1; // TODO
+                if (this.spec === SPEC.HOLYPALADIN) {
+                    statPerc = 1.12 + (this.activeStats.mastery / 23.3 / 100)
+                }
                 break;
             case "Vers":
                 statPerc = 1 + this.activeStats.versatility / 40 / 100;
@@ -291,7 +294,7 @@ class Player {
         
     }
 
-    getSpellCastsPerMin = (spellName, contentType) => {
+    getSpellCPM = (spellName, contentType) => {
         if (spellName in this.castPattern[contentType]) {
             return this.castPattern[contentType][spellName][SPELL_CASTS_LOC] / this.getFightLength() * 60;
         }
@@ -350,14 +353,14 @@ class Player {
             this.fightInfo = {
                 hps: 6000,
                 rawhps: 9420,
-                fightLength: 180,
+                fightLength: 193,
             }
             this.activeStats = {
                 intellect: 1500,
-                haste: 400,
-                crit: 350,
-                mastery: 0,
-                versatility: 200,
+                haste: 650,
+                crit: 590,
+                mastery: 400,
+                versatility: 320,
                 stamina: 1490,
     
             }
@@ -385,16 +388,15 @@ class Player {
             this.castPattern =
             // CASTS, HEALING, HEALINGPERC, HPS
             {   "Raid": {
-                    "Rejuvenation": [17, 181000, 0.2909, 1566],
-                    "Wild Growth": [5, 154400, 0.2472, 1478],
-                    "Regrowth": [10, 38000, 0.040, 673],
-                    "Overall": [0, 90132, 1],
+                    "Rejuvenation": [46, 329400, 0.2909, 1706],
+                    "Wild Growth": [7, 346400, 0.2472, 1794],
+                    "Regrowth": [11, 105200, 0.000, 545],
+                    "Lifebloom": [7, 50400, 0.000, 256],
   
             },
                 "Dungeon": {
                     "Rejuvenation": [17, 181000, 0.2909, 1566],
                     "Wild Growth": [5, 154400, 0.2472, 1478],
-                    "Overall": [0, 90132, 1],
                 }
             }
 
@@ -409,10 +411,10 @@ class Player {
             
             this.activeStats = {
                 intellect: 1500,
-                haste: 400,
-                crit: 350,
-                mastery: 0,
-                versatility: 200,
+                haste: 850,
+                crit: 420,
+                mastery: 250,
+                versatility: 400,
                 stamina: 1490,
                 
             }

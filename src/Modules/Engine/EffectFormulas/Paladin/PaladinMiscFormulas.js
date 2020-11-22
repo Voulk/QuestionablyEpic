@@ -7,6 +7,27 @@ export function getOneHolyPower(player, contentType) {
     
 }
 
+export function getWingsHealingInc(critPerc) {
+    return ((critPerc + 0.3) / critPerc) * 1.3
+}
+
+ // Credit: Betsujin
+export function getAwakeningWingsUptime(player, contentType) {
+    let _cpm = 29; // Holy power generated / min
+
+    let basewings = 10.0
+    let awakeningseconds = 10.0
+    let spenders = _cpm / 3.0
+    let dpprocs = spenders * .15
+    dpprocs += dpprocs * .15
+    spenders += dpprocs
+    basewings += spenders*.15*awakeningseconds
+
+
+    return basewings / 60.0
+
+}
+
 export function getPaladinCovAbility(soulbindName, player, contentType) {
 
     let bonus_stats = {}
@@ -29,13 +50,13 @@ export function getPaladinCovAbility(soulbindName, player, contentType) {
         // Ashen Hallow (Venthyr)
 
         // The healing portion
-        let expected_uptime = 0.9;
-        let average_allies = 16;
-        let sqrt_mult = (7.8 * Math.log(0.112 * average_allies + 1.346) / average_allies); // Check how it scales first.
+        let expected_uptime = 0.95;
+        let average_allies = 18;
+        let sqrt_mult = Math.min(Math.sqrt(5 / average_allies), 1); // Check how it scales first.
         let ashen_tick_sp = 0.42;
         let ashen_ticks = 15 * player.getStatPerc('Haste');
         let ashen_healing_portion = (ashen_ticks * ashen_tick_sp * sqrt_mult * average_allies * expected_uptime * player.getStatMultiplier('NOHASTE'))
-
+  
         // The extra Holy Power
         let one_holy_power = getOneHolyPower(player, contentType);
         let expected_holy_power = (30 / 7.5 * expected_uptime);

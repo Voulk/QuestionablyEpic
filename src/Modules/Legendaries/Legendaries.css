@@ -23,15 +23,17 @@
     font-size: 12px;
     margin-left: 6px;
     margin-right: 6px;
-    margin-bottom: 14px;
+    margin-bottom: 8px;
 }
 
 .legostats {
-    font-size: 14px;
-    margin-left: 6px;
+    font-size: 15px;
+    margin-bottom: 0px;
     position: absolute;
     bottom: 0;
-    left: 0;
+    left: 25%;
+    right: 25%;
+    text-align: center;
 }
 
 .legodroploc {
@@ -50,7 +52,7 @@
     border: 2px Solid black;
     display: inline-block;
     margin: 7px;
-    width: 332px;
+    width: 320px;
     height: 200px;
     background-color: #DBA530;
     background-image: url("https://www.transparenttextures.com/patterns/crossword.png");
