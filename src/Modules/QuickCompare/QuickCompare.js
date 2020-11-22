@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 // import ReactDOM from "react-dom";
 import { makeStyles } from "@material-ui/core/styles";
 import "../SetupAndMenus/QEMainMenu.css";
-import ReactGA from 'react-ga';
+import ReactGA from "react-ga";
 // import Player from "../Player/Player";
 import Item from "../Player/Item";
 // import QEHeader from "../SetupAndMenus/QEHeader";
@@ -128,7 +128,6 @@ export default function QuickCompare(props) {
     ReactGA.pageview(window.location.pathname + window.location.search);
   }, []);
 
-  
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
   const classes = useStyles();
@@ -192,11 +191,17 @@ export default function QuickCompare(props) {
       ) {
         */
       if (
-          (slotName === item.slot && item.itemClass === 4  && acceptableArmorTypes.includes(item.itemSubClass)) ||
-          (slotName === "Offhands" && (item.slot === "Holdable" || item.slot === "Offhand" || item.slot === "Shield")) ||
-          (slotName === "Weapons" && item.itemClass === 2 && acceptableWeaponTypes.includes(item.itemSubClass))
-          ) {
-
+        (slotName === item.slot &&
+          item.itemClass === 4 &&
+          acceptableArmorTypes.includes(item.itemSubClass)) ||
+        (slotName === "Offhands" &&
+          (item.slot === "Holdable" ||
+            item.slot === "Offhand" ||
+            item.slot === "Shield")) ||
+        (slotName === "Weapons" &&
+          item.itemClass === 2 &&
+          acceptableWeaponTypes.includes(item.itemSubClass))
+      ) {
         // If the selected slot is "Weapons & Offhands" then our checks involve:
         // - Ensuring the item is a weapon (item class 2)
         // - Ensuring the player can wield that weapon type.
@@ -249,15 +254,15 @@ export default function QuickCompare(props) {
     handleClick();
   };
 
-const deleteItem = (unique) => {
-  let player = props.pl;
-  //console.log("AHHHHHHHH DELETING");
+  const deleteItem = (unique) => {
+    let player = props.pl;
+    //console.log("AHHHHHHHH DELETING");
 
-  player.deleteActiveItem(unique);
+    player.deleteActiveItem(unique);
 
-  setItemList([...player.getActiveItems(activeSlot)]);
-  handleClick();
-}
+    setItemList([...player.getActiveItems(activeSlot)]);
+    handleClick();
+  };
 
   const itemNameChanged = (event, val) => {
     if (val === null) {
@@ -269,7 +274,7 @@ const deleteItem = (unique) => {
     }
   };
 
-  const itemLevelChanged = (event, val) => {
+  const itemLevelChanged = (val) => {
     // removed parse int here, was missing radix parameter
     setItemLevel(val);
     setItemSocket("No");
@@ -408,31 +413,26 @@ const deleteItem = (unique) => {
                   className={classes.formControl}
                   variant="outlined"
                   size="small"
+                  label={t("QuickCompare.ItemLevel")}
                   disabled={itemID === "" ? true : false}
                 >
-                  <Autocomplete
-                    size="small"
-                    disabled={itemID === "" ? true : false}
+                  <TextField
                     id="Ilvl-select"
-                    onChange={itemLevelChanged}
-                    options={itemLevels}
-                    openOnFocus={true}
-                    getOptionLabel={(option) => option.toString()}
-                    getOptionSelected={(option, value) => option === value}
-                    ListboxProps={{
-                      style: {
-                        border: "1px solid rgba(255, 255, 255, 0.23)",
-                        padding: 0,
-                      },
+                    onChange={(e) => itemLevelChanged(e.target.value)}
+                    label={t("QuickCompare.ItemLevel")}
+                    disabled={itemID === "" ? true : false}
+                    onInput={(e) => {
+                      e.target.value = Math.max(0, parseInt(e.target.value))
+                        .toString()
+                        .slice(0, 3);
                     }}
-                    style={{ width: "100%" }}
-                    renderInput={(params) => (
-                      <TextField
-                        {...params}
-                        label={t("QuickCompare.ItemLevel")}
-                        variant="outlined"
-                      />
-                    )}
+                    variant="outlined"
+                    size="small"
+                    type="number"
+                    inputProps={{
+                      min: "0",
+                      max: "300",
+                    }}
                   />
                 </FormControl>
               </Grid>
@@ -613,7 +613,7 @@ const deleteItem = (unique) => {
               <Divider style={{ marginBottom: 10 }} />
               <Grid container spacing={1}>
                 {[...props.pl.getActiveItems("Hands")].map((item, index) => (
-                  <ItemCard key={index} item={item} delete={deleteItem}/>
+                  <ItemCard key={index} item={item} delete={deleteItem} />
                 ))}
               </Grid>
             </Grid>
@@ -677,9 +677,11 @@ const deleteItem = (unique) => {
               </Typography>
               <Divider style={{ marginBottom: 10 }} />
               <Grid container spacing={1}>
-                {[...props.pl.getActiveItems("1H Weapon")].map((item, index) => (
-                  <ItemCard key={index} item={item} delete={deleteItem} />
-                ))}
+                {[...props.pl.getActiveItems("1H Weapon")].map(
+                  (item, index) => (
+                    <ItemCard key={index} item={item} delete={deleteItem} />
+                  )
+                )}
               </Grid>
             </Grid>
 
@@ -690,11 +692,9 @@ const deleteItem = (unique) => {
               </Typography>
               <Divider style={{ marginBottom: 10 }} />
               <Grid container spacing={1}>
-                {[...props.pl.getActiveItems("Offhands")].map(
-                  (item, index) => (
-                    <ItemCard key={index} item={item} delete={deleteItem} />
-                  )
-                )}
+                {[...props.pl.getActiveItems("Offhands")].map((item, index) => (
+                  <ItemCard key={index} item={item} delete={deleteItem} />
+                ))}
               </Grid>
             </Grid>
 
@@ -705,11 +705,9 @@ const deleteItem = (unique) => {
               </Typography>
               <Divider style={{ marginBottom: 10 }} />
               <Grid container spacing={1}>
-                {wepCombos.map(
-                  (item, index) => (
-                    <ItemCard key={index} item={item} delete={deleteItem} />
-                  )
-                )}
+                {wepCombos.map((item, index) => (
+                  <ItemCard key={index} item={item} delete={deleteItem} />
+                ))}
               </Grid>
             </Grid>
           </Grid>
