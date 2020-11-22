@@ -20,7 +20,7 @@ const mainMenuOptions = {
   "Legendary Analysis": ["/legendaries", true],
   "Trinket Analysis": ["/trinkets", false],
   "Explore Covenants": ["/soulbinds", true],
-  "Cooldown Planner (Coming Soon)": ["/holydiver", true],
+  "Cooldown Planner (Coming Soon)": ["/holydiver", false],
 };
 
 const useStyles = makeStyles((theme) => ({
