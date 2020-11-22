@@ -1,3 +1,5 @@
+import Player from '../../../Player/Player';
+import { getOneHolyPower, getAwakeningWingsUptime, getWingsHealingInc } from './PaladinMiscFormulas'
 
 export const getPaladinLegendary = (effectName, pl, contentType) => {
     let result = 0.0;
@@ -40,7 +42,7 @@ export const getPaladinLegendary = (effectName, pl, contentType) => {
 
     else if (name === "Inflorescence of the Sunwell") {
         // Do Math
-        let infusionsPerMinute = pl.getSpellCastsPerMin('Holy Shock', contentType) * pl.getStatPerc('Crit') + 0.3;
+        let infusionsPerMinute = pl.getSpellCPM('Holy Shock', contentType) * pl.getStatPerc('Crit') + 0.3;
         let wastedInfusionPercentage = 0.2;
         let oneHolyLight = pl.getSingleCast('Holy Light', contentType);
         
@@ -57,8 +59,17 @@ export const getPaladinLegendary = (effectName, pl, contentType) => {
         bonus_stats.HPS = Math.round(infusionsPerMinute * wastedInfusionPercentage * (oneHolyLight * (0.3 + 0.5)) / 60)
     }
     else if (name === "Shadowbreaker, Dawn of the Sun") {
+        let lightOfDawnCPM = pl.getSpellCPM("Light of Dawn", contentType);
+        let lightOfDawnUptime = Math.min(1, lightOfDawnCPM * 6 / 60); // Technically doesn't account for the slight possible loss from casting LoD twice in a short period.
+        let averageMasteryEff = (pl.getStatPerc('Mastery')); // TODO: Improve with logs data.
+        let maxMasteryEff = ((pl.getStatPerc('Mastery')-1) / 0.7)+1 ;
+        let mastDiff = ((maxMasteryEff / averageMasteryEff)-1);
+        let percentHealingToHitTargets = 0.95;
 
-        bonus_stats.HPS = -1;
+        console.log("MastDiff: " + mastDiff + ". LoDUptime: " + lightOfDawnUptime + "Max: " + maxMasteryEff + ". Avg: " + averageMasteryEff);
+    
+        bonus_stats.HPS = Math.round(pl.getHPS() * mastDiff * lightOfDawnUptime * percentHealingToHitTargets);
+
     }
     else if (name === "Of Dusk and Dawn") {
 
@@ -75,6 +86,31 @@ export const getPaladinLegendary = (effectName, pl, contentType) => {
     else if (name === "Maraads Dying Breath") {
 
         bonus_stats.HPS = -1;
+    }
+    else if (name === "The Mad Paragon") {
+        // Considerations
+        // - Mad Paragon also itself expands the number of hammer CPM you can expect which isn't considered in the formula, which is based off our wings uptime without the legendary.
+        //    - This can and will be added to the formula, but might take place after the expansion is live.
+        // - Mad Paragon is incredibly GCD thirsty with added time to wings actually being less than the GCD you spend to get there. This is ok when you're cooldown capped, but is
+        //   a penalty when you are not. 
+        let isAwakening = false;
+
+        let wingsEffHealingIncrease = getWingsHealingInc(pl.getStatPerc('Crit')) 
+        let wingsBaseUptime = (20 + isAwakening ? 25 : 0) / 120; 
+        let hammerOfWrathCPM = 60 / (7.5 / pl.getStatPerc('Haste')) * wingsBaseUptime;
+        let healingIncUptime = hammerOfWrathCPM / 60;
+
+        let healingMult = (wingsEffHealingIncrease * healingIncUptime + 1 * (1 - healingIncUptime)) - 1;    
+        bonus_stats.HPS = Math.round(pl.getHPS() * healingMult);
+
+        console.log("FWS: " + wingsEffHealingIncrease);
+        // This technically needs to be increased based on the wings duration increase, but that is of minimal benefit.
+        bonus_stats.DPS = 1.2 * 0.3 * pl.getStatMultiplier("ALL") * hammerOfWrathCPM / 60;
+
+        
+        //let akn = 2.5 / 60; //getAwakeningWingsUptime(pl, contentType);
+        //let awakening_hps = (akn * wingsEffHealingIncrease + 1 * (1 - akn) );
+        //console.log("Wings Uptime: " + akn + ". Awakening healing increase:" + awakening_hps);
     }
 
     // Consider building in support for the conduit via SimC grab or something similar.

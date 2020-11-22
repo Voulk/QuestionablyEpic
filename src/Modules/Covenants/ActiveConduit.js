@@ -3,12 +3,13 @@ import { getConduitFormula } from '../Engine/EffectFormulas/EffectEngine';
 import {getEstimatedHPS} from '../Covenants/CovenantUtilities';
 
 class ActiveConduit {
-    constructor(id, itemLevel, itemName, type, player, contentType) {
+    constructor(id, itemLevel, itemName, type, covenant = "ALL") {
         this.id = id;
         this.itemLevel = itemLevel;
         this.name = itemName; // Placeholder. Names shouldn't be initialized and should be displayed dynamically based on language settings.
         this.type = type;
         this.icon = this.getIcon(this.id);
+        this.covenant = covenant;
         
         
     }
@@ -16,11 +17,13 @@ class ActiveConduit {
     id = 0;
     hps = -1;
     name = ""; // This needs to be localized. There are a few ways we can do it.
-    itemLevel = 156; 
+    itemLevel = 145; 
     icon = ""
     type = "" // Potency, Finesse or Endurance. We are mostly focusing on Potency and Endurance since Finesse are very scenario specific. 
+    covenant = "" // For those specific to a covenant. 
 
     setHPS = (player, contentType) => {
+        
         this.hps = getEstimatedHPS(getConduitFormula(this.id, player, contentType, this.itemLevel));
         //this.hps = 45;
     }

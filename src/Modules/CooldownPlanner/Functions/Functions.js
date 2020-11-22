@@ -419,7 +419,6 @@ export function logDifficulty(dif) {
   }
 }
 
-
 // Returns Array of Healer Information
 export async function importSummaryData(starttime, endtime, reportid) {
   const APISummary =

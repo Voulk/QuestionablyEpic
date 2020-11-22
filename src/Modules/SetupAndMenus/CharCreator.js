@@ -19,7 +19,7 @@ import Typography from "@material-ui/core/Typography";
 import Avatar from "@material-ui/core/Avatar";
 import raceIcons from "../CooldownPlanner/Functions/IconFunctions/RaceIcons";
 import Autocomplete from "@material-ui/lab/Autocomplete";
-import { serverList } from "../CooldownPlanner/Data/Data";
+import { serverList, classRaceList } from "../CooldownPlanner/Data/Data";
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -62,125 +62,6 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const region = ["CN", "US", "TW", "EU"];
-
-const classList = {
-  "Holy Paladin": {
-    races: [
-      "Races.Draenei",
-      "Races.Dwarf",
-      "Races.Human",
-      "Races.Lightforged Draenei",
-      "Races.Dark Iron Dwarf",
-      "Races.Blood Elf",
-      "Races.Tauren",
-      "Races.Zandalari Troll",
-    ],
-  },
-  "Restoration Druid": {
-    races: [
-      "Races.Night Elf",
-      "Races.Worgen",
-      "Races.Kul Tiran",
-      "Races.Tauren",
-      "Races.Troll",
-      "Races.Highmountain Tauren",
-      "Races.Zandalari Troll",
-    ],
-  },
-  "Holy Priest": {
-    races: [
-      "Races.Draenei",
-      "Races.Dwarf",
-      "Races.Gnome",
-      "Races.Human",
-      "Races.Night Elf",
-      "Races.Worgen",
-      "Races.Void Elf",
-      "Races.Lightforged Draenei",
-      "Races.Dark Iron Dwarf",
-      "Races.Kul Tiran",
-      "Races.Mechagnome",
-      "Races.Pandaren",
-      "Races.Blood Elf",
-      "Races.Goblin",
-      "Races.Tauren",
-      "Races.Troll",
-      "Races.Undead",
-      "Races.Nightborne",
-      "Races.Mag'har",
-      "Races.Zandalari Troll",
-      "Races.Vulpera",
-    ],
-  },
-  "Discipline Priest": {
-    races: [
-      "Races.Draenei",
-      "Races.Dwarf",
-      "Races.Gnome",
-      "Races.Human",
-      "Races.Night Elf",
-      "Races.Worgen",
-      "Races.Void Elf",
-      "Races.Lightforged Draenei",
-      "Races.Dark Iron Dwarf",
-      "Races.Kul Tiran",
-      "Races.Mechagnome",
-      "Races.Pandaren",
-      "Races.Blood Elf",
-      "Races.Goblin",
-      "Races.Tauren",
-      "Races.Troll",
-      "Races.Undead",
-      "Races.Nightborne",
-      "Races.Mag'har",
-      "Races.Zandalari Troll",
-      "Races.Vulpera",
-    ],
-  },
-  "Restoration Shaman": {
-    races: [
-      "Races.Draenei",
-      "Races.Dwarf",
-      "Races.Dark Iron Dwarf",
-      "Races.Kul Tiran",
-      "Races.Pandaren",
-      "Races.Goblin",
-      "Races.Orc",
-      "Races.Tauren",
-      "Races.Troll",
-      "Races.Highmountain Tauren",
-      "Races.Mag'har",
-      "Races.Zandalari Troll",
-      "Races.Vulpera",
-    ],
-  },
-  "Mistweaver Monk": {
-    races: [
-      "Races.Draenei",
-      "Races.Dwarf",
-      "Races.Gnome",
-      "Races.Human",
-      "Races.Night Elf",
-      "Races.Void Elf",
-      "Races.Dark Iron Dwarf",
-      "Races.Kul Tiran",
-      "Races.Mechagnome",
-      "Races.Pandaren",
-      "Races.Blood Elf",
-      "Races.Orc",
-      "Races.Tauren",
-      "Races.Troll",
-      "Races.Undead",
-      "Races.Nightborne",
-      "Races.Highmountain Tauren",
-      "Races.Mag'har",
-      "Races.Zandalari Troll",
-      "Races.Vulpera",
-    ],
-  },
-};
-
 export default function AddNewChar(props) {
   const { t } = useTranslation();
   const classes = useStyles();
@@ -189,6 +70,8 @@ export default function AddNewChar(props) {
   const [charName, setCharName] = React.useState("");
   const [regions, setRegions] = React.useState("");
   const [selectedRace, setSelectedRace] = React.useState("");
+  const [server, setServer] = React.useState("");
+  const region = ["CN", "US", "TW", "EU"];
   const handleClickOpen = () => {
     setOpen(true);
   };
@@ -196,11 +79,16 @@ export default function AddNewChar(props) {
   const handleClose = () => {
     setOpen(false);
   };
-  const handleAdd = (name, spec, allChars, updateChar) => {
+  const handleAdd = (name, spec, allChars, updateChar, region, realm, race) => {
     setOpen(false);
-    allChars.addChar(name, spec);
+    allChars.addChar(name, spec, region, realm, race);
     updateChar(allChars);
     props.charAddedSnack();
+    setSelectedRace("");
+    setHealClass("");
+    setServer("");
+    // setRegions(null);
+    setCharName("");
   };
   const handleChangeSpec = (event) => {
     setHealClass(event.target.value);
@@ -213,6 +101,10 @@ export default function AddNewChar(props) {
   };
   const handleChangeRegion = (event) => {
     setRegions(event.target.value);
+  };
+
+  const handleChangeServer = (serverName) => {
+    setServer(serverName);
   };
 
   return (
@@ -257,6 +149,7 @@ export default function AddNewChar(props) {
                   variant="outlined"
                   size="small"
                   disabled={charName === "" ? true : false}
+                  label={t("Region")}
                 >
                   <InputLabel id="NewClassSelector">{t("Region")}</InputLabel>
                   <Select value={regions} onChange={handleChangeRegion}>
@@ -276,6 +169,9 @@ export default function AddNewChar(props) {
                   options={serverList[regions]}
                   getOptionLabel={(option) => option}
                   style={{ width: "100%" }}
+                  onChange={(e, newValue) => {
+                    handleChangeServer(newValue);
+                  }}
                   renderInput={(params) => (
                     <TextField
                       {...params}
@@ -292,12 +188,13 @@ export default function AddNewChar(props) {
                 variant="outlined"
                 size="small"
                 disabled={regions === "" ? true : false}
+                label={t("Select Class")}
               >
                 <InputLabel id="NewClassSelector">
                   {t("Select Class")}
                 </InputLabel>
                 <Select value={healClass} onChange={handleChangeSpec}>
-                  {Object.getOwnPropertyNames(classList).map((key, i) => (
+                  {Object.getOwnPropertyNames(classRaceList).map((key, i) => (
                     <MenuItem key={i} value={key}>
                       {classIcons(key, 20)}
                       {key}
@@ -312,19 +209,22 @@ export default function AddNewChar(props) {
                 className={classes.formControl}
                 variant="outlined"
                 size="small"
+                label={t("Select Race")}
               >
                 <InputLabel id="NewRaceSelector">{t("Select Race")}</InputLabel>
                 <Select value={selectedRace} onChange={handleChangeRace}>
                   {healClass === ""
                     ? ""
-                    : classList[healClass.toString()].races.map((key, i) => (
-                        <MenuItem key={i} value={key}>
-                          <div style={{ display: "inline-flex" }}>
-                            {raceIcons(key)}
-                            {t(key)}
-                          </div>
-                        </MenuItem>
-                      ))}
+                    : classRaceList[healClass.toString()].races.map(
+                        (key, i) => (
+                          <MenuItem key={i} value={key}>
+                            <div style={{ display: "inline-flex" }}>
+                              {raceIcons(key)}
+                              {t(key)}
+                            </div>
+                          </MenuItem>
+                        )
+                      )}
                 </Select>
               </FormControl>
             </Grid>
@@ -336,7 +236,15 @@ export default function AddNewChar(props) {
           </Button>
           <Button
             onClick={() =>
-              handleAdd(charName, healClass, props.allChars, props.charUpdate)
+              handleAdd(
+                charName,
+                healClass,
+                props.allChars,
+                props.charUpdate,
+                regions,
+                server,
+                selectedRace
+              )
             }
             color="primary"
             disabled={selectedRace === "" ? true : false}

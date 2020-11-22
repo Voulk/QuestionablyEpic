@@ -5,7 +5,7 @@ export const STAT = {
     STRENGTH: 'strength',
     AGILITY: 'agility',
     INTELLECT: 'intellect',
-    CRITICAL_STRIKE: 'criticalstrike',
+    CRITICAL_STRIKE: 'crit',
     HASTE: 'haste',
     HASTE_HPCT: 'hastehpct',
     HASTE_HPM: 'hastehpm',
@@ -18,8 +18,8 @@ export const STAT = {
   };
 
   export const STATPERONEPERCENT = {
-    HASTE: 32,
-    CRIT: 0,
+    HASTE: 30,
+    CRIT: 33,
     VERSATILITY: 40,
     VERSATILITY_DR: 80,
     MASTERY: 0,

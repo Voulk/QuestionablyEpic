@@ -5,14 +5,18 @@ import Popover from "@material-ui/core/Popover";
 import PopupState, { bindTrigger, bindPopover } from "material-ui-popup-state";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
-import { getConduitName } from "../CovenantUtilities";
+import {
+  getConduitName,
+  filterConduits,
+  getCovenant,
+} from "../CovenantUtilities";
 import Paper from "@material-ui/core/Paper";
 
-const columnPos = [195, 290, 385];
+const columnPos = [200, 290, 380];
 const rowPos = [
-  [20, 100, 180, 260, 340, 390, 470, 550, 630],
-  [5, 85, 165, 245, 325, 405, 485, 565, 645],
-  [20, 100, 180, 260, 340, 390, 470, 550, 630],
+  [20, 100, 180, 260, 340, 445, 500, 580],
+  [5, 85, 165, 245, 355, 435, 515, 595],
+  [20, 100, 180, 260, 340, 445, 500, 580],
 ];
 
 const menuStyle = {
@@ -107,6 +111,16 @@ export default function SoulbindNode(props) {
     (trait.active ? "active" : "") +
     ".png";
 
+  const conduitTag = type.includes("Potency")
+    ? "/Images/Interface/PotencyConduitImg.png"
+    : type.includes("Endurance Conduit")
+    ? "/Images/Interface/EnduranceConduitImg.png"
+    : type.includes("Finesse Conduit")
+    ? "/Images/Interface/FinesseConduitImg.png"
+    : "";
+
+  const covenantName = getCovenant(trait.soulbind);
+
   let stat_bonus = trait.bonus_stats;
   let position = {
     row: trait.position[0],
@@ -115,10 +129,11 @@ export default function SoulbindNode(props) {
 
   const conduitCollection =
     type === "Potency Conduit"
-      ? props.potencyConduits
+      ? filterConduits(props.potencyConduits, covenantName)
       : type === "Endurance Conduit"
       ? props.enduranceConduits
       : [];
+
   const benefitString = getBenefitString(stat_bonus);
 
   // The CSS here is a bit of a nightmare. TODO.
@@ -144,6 +159,21 @@ export default function SoulbindNode(props) {
             top: getRowPos(position.column, position.row),
           }}
         />
+        {conduitTag !== "" ? (
+          <img
+            width={18}
+            height={18}
+            src={process.env.PUBLIC_URL + conduitTag}
+            style={{
+              position: "absolute",
+              zIndex: 3,
+              left: columnPos[position.column] + 15,
+              top: getRowPos(position.column, position.row) + 30,
+            }}
+          />
+        ) : (
+          ""
+        )}
 
         <img
           width={38}
@@ -204,8 +234,21 @@ export default function SoulbindNode(props) {
           open={Boolean(anchorEl)}
           onClose={handleClose}
         >
-          {conduitCollection.map((conduit, index) => (
+          {trait.slotted_id > 0 ? (
             <MenuItem
+              key={-1}
+              dense={true}
+              style={{ padding: "5px 10px" }}
+              onClick={() => setConduit(-1)}
+            >
+              Remove
+            </MenuItem>
+          ) : (
+            ""
+          )}
+          {conduitCollection.map((conduit, i) => (
+            <MenuItem
+              key={i}
               style={{ padding: "5px 10px" }}
               dense={true}
               onClick={() => setConduit(conduit.id)}

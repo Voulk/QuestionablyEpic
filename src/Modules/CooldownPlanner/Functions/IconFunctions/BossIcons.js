@@ -24,7 +24,7 @@ import SludgefistIcon from "../../../../Images/Bosses/CastleNathria/Sludgefist/I
 import StonebornGeneralsIcon from "../../../../Images/Bosses/CastleNathria/StoneLegionGenerals/Icons/StonebornGeneralsIcons.jpg";
 
 export default function bossIcons(props) {
-  let source = "";
+  let source = null;
   let alt = "";
 
   // Ny'alotha, the Waking City

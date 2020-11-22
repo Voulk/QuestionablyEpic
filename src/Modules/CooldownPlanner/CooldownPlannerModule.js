@@ -78,7 +78,7 @@ class HolyDiver extends Component {
       damageTableShow: false,
       logDetailsShow: false,
       healTableShow: false,
-      switchPanelShow: false,
+      switchPanelShow: true,
       ertList: [],
       currentFighttime: null,
       killWipe: null,
@@ -109,7 +109,7 @@ class HolyDiver extends Component {
       nextpage: info[0],
       boss: info[2],
       logDetailsShow: true,
-      switchPanelShow: true,
+      switchPanelShow: false,
       damageTableShow: true,
       healTableShow: true,
       currentFighttime: info[3],
@@ -198,89 +198,77 @@ class HolyDiver extends Component {
           {/* Main Grid for the Compoonent, this should control the base spacing of all the base components,
               any Grid Components within this with the item prop will have spacing  */}
           <Grid container spacing={1}>
-            <Grid
-              container
-              item
-              // spacing={1}
-              xs={12}
-              style={{ width: "100%" }}
-              justify="space-between"
-            >
-              {/* Grid Container for the User Input Components, With Paper as the Surface */}
-              <Grid item container xs={12} sm={12} md={6} lg={6} xl={6}>
-                <Paper
-                  style={{
-                    display: "inline-flex",
-                    margin: "0px 0px 4px 0px",
-                    padding: "10px 10px 10px 10px",
-                    width: "100%",
-                  }}
-                  elevation={0}
-                >
-                  {/* Grid Container for the Log Input/Fight Selection Button */}
-
-                  <LogLinkInput
-                    changed={this.reportidHandler}
-                    reportid={this.state.reportid}
-                  />
-
-                  <FightSelectorButton
-                    reportid={this.state.reportid}
-                    clicky={this.handler}
-                    update={this.updatechartdataNew}
-                  />
-                </Paper>
-              </Grid>
-              <Grid
-                item
-                container
-                xs={12}
-                sm={12}
-                md={6}
-                lg={6}
-                xl={6}
-                justify="flex-end"
+            {/* Grid Container for the User Input Components, With Paper as the Surface */}
+            <Grid item xs={12} sm={12} md={7} lg={7} xl={7}>
+              <Paper
                 style={{
-                  display: this.state.switchPanelShow ? "flex" : "none",
+                  display: "inline-flex",
+                  padding: 10,
+                  width: "100%",
                 }}
+                elevation={0}
               >
-                <Collapse in={this.state.switchPanelShow}>
-                  <Grow
-                    in={this.state.switchPanelShow}
-                    style={{ transformOrigin: "0 0 0" }}
-                    {...(this.state.switchPanelShow ? { timeout: 1000 } : {})}
-                  >
-                    <Paper
-                      style={{
-                        display: "inline-flex",
-                        margin: "0px 0px 4px 0px",
-                        padding: "10px 10px 10px 10px",
-                      }}
-                    >
-                      <SwitchLabels
-                        check={this.damageTableShow}
-                        label={"Log Chart"}
-                      />
-                      <SwitchLabels
-                        check={this.logDetailsShow}
-                        label={"Toggle Log Details"}
-                      />
-                      <SwitchLabels
-                        check={this.healTableShow}
-                        label={"Custom CD Chart"}
-                      />
-                      <SwitchLabels
-                        check={this.changeDataSet}
-                        label={
-                          this.state.chartData === true
-                            ? "Unmitigated"
-                            : "Mitigated"
-                        }
-                      />
-                    </Paper>
-                  </Grow>
-                </Collapse>
-              </Grid>
+                {/* Grid Container for the Log Input/Fight Selection Button */}
+                <Grid container spacing={1} justify="space-between">
+                  <Grid item xs={10}>
+                    <LogLinkInput
+                      changed={this.reportidHandler}
+                      reportid={this.state.reportid}
+                      styleProps={{ fullWidth: true }}
+                    />
+                  </Grid>
+                  <Grid item xs={2}>
+                    <FightSelectorButton
+                      reportid={this.state.reportid}
+                      clicky={this.handler}
+                      update={this.updatechartdataNew}
+                    />
+                  </Grid>
+                </Grid>
+              </Paper>
+            </Grid>
+            <Grid
+              item
+              container
+              xs={12}
+              sm={12}
+              md={5}
+              lg={5}
+              xl={5}
+              justify="flex-end"
+            >
+              <Paper
+                style={{
+                  display: "inline-flex",
+                  margin: "0px 0px 4px 0px",
+                  padding: "10px 10px 10px 10px",
+                }}
+                elevation={0}
+              >
+                {/* this.state.switchPanelShow */}
+                <SwitchLabels
+                  disabled={this.state.switchPanelShow}
+                  check={this.damageTableShow}
+                  label={"Log Chart"}
+                />
+                <SwitchLabels
+                  disabled={this.state.switchPanelShow}
+                  check={this.logDetailsShow}
+                  label={"Toggle Log Details"}
+                />
+                <SwitchLabels
+                  disabled={this.state.switchPanelShow}
+                  check={this.healTableShow}
+                  label={"Custom CD Chart"}
+                />
+                <SwitchLabels
+                  disabled={this.state.switchPanelShow}
+                  check={this.changeDataSet}
+                  label={
+                    this.state.chartData === true ? "Unmitigated" : "Mitigated"
+                  }
+                />
+              </Paper>
             </Grid>
 
             {/*

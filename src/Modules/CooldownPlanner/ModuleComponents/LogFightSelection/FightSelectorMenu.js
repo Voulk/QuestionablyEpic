@@ -70,7 +70,11 @@ class LogImport extends Component {
                 fight.zoneID,
               ]);
               this.props.close();
-              this.props.update(fight.start_time, fight.end_time);
+              this.props.update(
+                fight.start_time,
+                fight.end_time,
+                this.state.reportid
+              );
             }}
           >
             {bossIcons(fight.boss)}

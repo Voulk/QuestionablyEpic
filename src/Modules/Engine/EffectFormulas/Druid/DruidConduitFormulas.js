@@ -4,12 +4,14 @@ export const getDruidConduit = (
   conduitID,
   pl,
   contentType,
-  itemLevel = 156
+  conduitLevel
 ) => {
 
   let bonus_stats = {};
-  let conduitLevel = 6; // Convert the conduit item level to a rank.
+  //let conduitLevel = 6; // Convert the conduit item level to a rank.
   let expectedOverhealing = 0;
+
+  
 
   // === Potency Conduits ===
   // Flash of Clarity
@@ -85,12 +87,29 @@ export const getDruidConduit = (
   else if (conduitID === 340529) {
   }
 
+  // Well-Honed Instincts
+  else if (conduitID === 340553) {
+    let trait_bonus =  90 - conduitLevel * 6; // This is actually the cooldown on the effect. TODO: Improve the precision of the number. It's an odd one.
+    let time_spent_on_cooldown = 0.5;
+    let frenzied_regen_healing = pl.activeStats.stamina * 20 * 0.24;
+    
+    bonus_stats.HPS = frenzied_regen_healing * time_spent_on_cooldown / trait_bonus;
+
+  }
+
   // Ursine Vigor
   else if (conduitID === 340541) {
   }
 
   // Innate Resolve
   else if (conduitID === 340543) {
+    let trait_bonus = 0.12 + conduitLevel * 0.012;
+    let regrowth_hps = pl.getSpellHPS('Regrowth', contentType);
+    let frenzied_hps = pl.getSpellHPS('Frenzied Regeneration', contentType);
+    let percent_self_casts = 0.04;
+
+    bonus_stats.HPS = (regrowth_hps + frenzied_hps) * trait_bonus *percent_self_casts;
+
   }
 
   // =============================

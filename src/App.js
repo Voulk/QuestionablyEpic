@@ -21,8 +21,8 @@ import MuiAlert from "@material-ui/lab/Alert";
 const theme = createMuiTheme({
   palette: {
     type: "dark",
-    primary: { main: "#c8b054" },
-    secondary: { main: "#e0e0e0" },
+    primary: { main: "#F2BF59" },
+    secondary: { main: "#525252" },
   },
 
   // just messing around with themes here. Yellow colour is different in the below.
@@ -63,8 +63,10 @@ class App extends Component {
 
     // binds the snack open handlers to this component so we can send it down to where we can trigger them in the relevant component
     this.handleCharSnackOpen = this.handleCharSnackOpen.bind(this);
+    this.handleCharUpdateSnackOpen = this.handleCharUpdateSnackOpen.bind(this);
     this.handleLoginSnackOpen = this.handleLoginSnackOpen.bind(this);
     this.handleSimCSnackOpen = this.handleSimCSnackOpen.bind(this);
+    this.handleLogSnackOpen = this.handleLogSnackOpen.bind(this);
 
     this.langSet = this.langSet.bind(this);
     this.userLogout = this.userLogout.bind(this);
@@ -78,8 +80,10 @@ class App extends Component {
       accessToken: "",
       contentType: "Raid",
       charSnackState: false,
+      charUpdateState: false,
       loginSnackState: false,
       simcSnackState: false,
+      logImportSnackState: false,
     };
   }
 
@@ -93,6 +97,16 @@ class App extends Component {
       return;
     }
     this.setState({ charSnackState: false });
+  };
+  // Character Updated
+  handleCharUpdateSnackOpen = () => {
+    this.setState({ charUpdateState: true });
+  };
+  handleCharUpdateSnackClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+    this.setState({ charUpdateState: false });
   };
 
   // Login
@@ -117,6 +131,17 @@ class App extends Component {
     this.setState({ simcSnackState: false });
   };
 
+  // Log Import Snack
+  handleLogSnackOpen = () => {
+    this.setState({ logImportSnackState: true });
+  };
+  handleLogSnackClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+    this.setState({ logImportSnackState: false });
+  };
+
   // ////////////////////////////////////////
 
   langSet = (props) => {
@@ -125,6 +150,13 @@ class App extends Component {
   };
 
   updatePlayerChars = (allChars) => {
+    this.setState({ characters: allChars });
+  };
+
+  updatePlayerChar = (player) => {
+    let allChars = this.state.characters;
+    allChars.updatePlayerChar(player);
+    console.log("Setting State");
     this.setState({ characters: allChars });
   };
 
@@ -197,7 +229,7 @@ class App extends Component {
     return (
       <Router basename={"/qesl/"}>
         <ThemeProvider theme={theme}>
-          <div className="App">
+          <div className="App" style={{ marginTop: 96 }}>
             <QEHeader
               logFunc={this.userLogout}
               playerTag={this.state.playerBattleTag}
@@ -206,6 +238,7 @@ class App extends Component {
               contentType={this.state.contentType}
               pl={activePlayer}
               simcSnack={this.handleSimCSnackOpen}
+              logImportSnack={this.handleLogSnackOpen}
             />
 
             {/* // Char Added Snackbar */}
@@ -216,6 +249,20 @@ class App extends Component {
             >
               <Alert onClose={this.handleCharSnackClose} severity="success">
                 Character Added!
+              </Alert>
+            </Snackbar>
+
+            {/* // Char Updated Snackbar */}
+            <Snackbar
+              open={this.state.charUpdateState}
+              autoHideDuration={3000}
+              onClose={this.handleCharUpdateSnackClose}
+            >
+              <Alert
+                onClose={this.handleCharUpdateSnackClose}
+                severity="success"
+              >
+                Character Updated!
               </Alert>
             </Snackbar>
 
@@ -241,6 +288,17 @@ class App extends Component {
               </Alert>
             </Snackbar>
 
+            {/* Log Import Success Snackbar */}
+            <Snackbar
+              open={this.state.logImportSnackState}
+              autoHideDuration={3000}
+              onClose={this.handleLogSnackClose}
+            >
+              <Alert onClose={this.handleLogSnackClose} severity="success">
+                Log Imported Successfully!
+              </Alert>
+            </Snackbar>
+
             <Switch>
               <Route
                 exact
@@ -251,6 +309,8 @@ class App extends Component {
                     charUpdate={this.updatePlayerChars}
                     pl={this.state.player}
                     charAddedSnack={this.handleCharSnackOpen}
+                    charUpdatedSnack={this.handleCharUpdateSnackOpen}
+                    contentType={this.state.contentType}
                   />
                 )}
               />
@@ -278,11 +338,16 @@ class App extends Component {
                 )}
               />
 
-              <Route path="/soulbinds" render={() => 
-                <SimpleTabs 
-                  pl={activePlayer}
-                  contentType={this.state.contentType}
-                />} />
+              <Route
+                path="/soulbinds"
+                render={() => (
+                  <SimpleTabs
+                    pl={activePlayer}
+                    contentType={this.state.contentType}
+                    updatePlayerChar={this.updatePlayerChar}
+                  />
+                )}
+              />
               <Route
                 path="/login"
                 render={() => <QELogin setRegion={this.setRegion} />}

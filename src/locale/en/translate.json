@@ -38,6 +38,7 @@
       "Night Elf": "Night Elf",
       "Nightborne": "Nightborne",
       "Orc": "Orc",
+      "Pandaren": "Pandaren",
       "Tauren": "Tauren",
       "Troll": "Troll",
       "Undead": "Undead",
@@ -298,17 +299,17 @@
 
     "Vision of Unending Growth": {
       "name": "Vision of Unending Growth",
-      "desc": "Rejuvenation has a 2% chance to create a new Rejuvenation on a nearby target on tick.",
-      "droploc": "Currently Unknown"
+      "desc": "Rejuvenation has a 2.5% chance to create a new Rejuvenation on a nearby target on tick.",
+      "droploc": "Torghast"
     },
     "The Dark Titans Lesson": {
       "name": "The Dark Titans Lesson",
-      "desc": "You may apply Lifebloom to two targets at once, and Lifeblooms 'bloom' healing is increased by 25%.",
+      "desc": "You may apply Lifebloom to two targets at once, but your Lifebloom healing is reduced by 10%.",
       "droploc": "Halls of Atonement (Dungeon)"
     },
     "Verdant Infusion": {
       "name": "Verdant Infusion",
-      "desc": "Swiftmend no longer consumes a heal over time effect, and extends the duration of HoTs on the target by 6s.",
+      "desc": "Swiftmend no longer consumes a heal over time effect, and extends the duration of HoTs on the target by 8s.",
       "droploc": "Oranomonos (World Boss)"
     },
     "Lycaras Fleeting Glimpse": {
@@ -318,7 +319,7 @@
     },
     "Memory of the Mother Tree": {
       "name": "Memory of the Mother Tree",
-      "desc": "Wild Growth has a 50% chance to cause your next Rejuv or Regrowth to apply to 3 additional allies.",
+      "desc": "Wild Growth has a 40% chance to cause your next Rejuv or Regrowth to apply to 3 additional allies.",
       "droploc": "Inerva Darkvein (Raid)"
     },
     "Oath of the Elder Druid": {
@@ -363,7 +364,7 @@
     },
     "Shock Barrier": {
       "name": "Shock Barrier",
-      "desc": "Holy Shock protects the target for 18 seconds, absorbing X damage every 6 seconds. Maximum of 3 targets protected at a time.",
+      "desc": "Holy Shock protects the target for 18 seconds, absorbing 20% of it's healing every 6s. Maximum of 5 targets protected at a time.",
       "droploc": "Currently Unknown"
     }
   }

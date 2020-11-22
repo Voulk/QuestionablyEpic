@@ -12,14 +12,18 @@ var averageHoTCount = 1.4; // TODO: Build this in correctly and pull it from log
 
 
 class Player {
-    constructor(playerName, specName, charID, statWeights="default") {
+    constructor(playerName, specName, charID, region, realm, race, statWeights="default") {
         this.spec = specName;
         this.charName = playerName;
         this.charID = charID;
-        //this.setupDefaults(specName);
+        this.setupDefaults(specName);
         this.activeItems = [];
         this.activeConduits = [];
         this.renown = 0;
+
+        this.region = region;
+        this.realm = realm;
+        this.race = race;
 
         if (statWeights !== "default") this.statWeights = statWeights;
         this.activeConduits = getAvailableClassConduits(specName);
@@ -32,7 +36,10 @@ class Player {
     activeItems = [];
     activeConduits = [];
     renown = 0;
-    
+
+    region = "";
+    realm = "";
+    race = "";
 
     // A players spell casting patterns. These are averaged from entered logs and a default is provided too. 
     // CASTS, HEALING, HEALINGPERC, HPS, 
@@ -42,6 +49,7 @@ class Player {
             "Wild Growth": [5, 154400, 0.2472, 1478],
             "Overall": [0, 90132, 1],
             "Light of Dawn": [20, 238400, 0.2082, 1316],
+            "Word of Glory": [4, 40800, 0.0357, 225],
             "Holy Shock": [27, 221400, 0.1934, 1222],
             "Holy Light": [29, 311600, 0.293, 1683],
             "Shock Barrier": [0, 98300, 0.0858, 542],
@@ -80,10 +88,13 @@ class Player {
         crit: 350,
         mastery: 0,
         versatility: 200,
+        stamina: 1490,  
+    }
+
+    fightInfo = {
         hps: 6000,
         rawhps: 9420,
         fightLength: 180,
-        
     }
    
     // Stat weights are normalized around intellect.
@@ -111,6 +122,10 @@ class Player {
 
     }
 
+    getRace = () => {
+        return this.race;
+    }
+
     getStatWeight = (contentType, stat) => {
         const lcStat = stat.toLowerCase();
         if (!this.statWeights[contentType]) {
@@ -128,6 +143,7 @@ class Player {
         //console.log("Calculating Conduits")
         this.activeConduits.forEach(conduit => {
             conduit.setHPS(this, contentType)
+            
             //return conduit;
         })
     }
@@ -138,15 +154,24 @@ class Player {
         });
     }
 
+    getConduitLevel = (id) => {
+        let tempDict =  this.activeConduits.filter(function(conduits) {
+            return conduits.id === id;
+        });
+
+        if (tempDict.length > 0) return tempDict[0].itemLevel;
+        else return 142;
+    }
+
     // Used for the purpose of maximising stuff like ring enchants and gems. 
     // Returns the players stat that has the highest weight. We should consider how to handle tie breaks.
-    getHighestStatWeight = (contentType) => {
+    getHighestStatWeight = (contentType, ignore = []) => {
         let max = "";
         let maxValue = 0;
         let weights = this.statWeights[contentType]
 
         for (var stat in weights) {
-            if (weights[stat] > maxValue && ['crit', 'haste', 'mastery', 'vers'].includes(stat)) { max = stat; maxValue = weights[stat] };
+            if (weights[stat] > maxValue && !ignore.includes(stat) && ['crit', 'haste', 'mastery', 'vers'].includes(stat)) { max = stat; maxValue = weights[stat] };
         }
 
         return max;
@@ -182,6 +207,9 @@ class Player {
                 break;
             case "Mastery":
                 statPerc = 1; // TODO
+                if (this.spec === SPEC.HOLYPALADIN) {
+                    statPerc = (0.12 + (this.activeStats.mastery / 23.3 / 100)) * 0.7 + 1
+                }
                 break;
             case "Vers":
                 statPerc = 1 + this.activeStats.versatility / 40 / 100;
@@ -203,6 +231,10 @@ class Player {
             // Returns a multiplier that includes raw intellect. 
             mult = this.getStatPerc("Haste") * this.getStatPerc("Crit") * this.getStatPerc("Vers") * this.getStatPerc("Mastery") * this.activeStats.intellect;
         }
+        else if (flag === "NOHASTE") {
+            // Returns a multiplier that includes raw intellect. 
+            mult = this.getStatPerc("Haste") * this.getStatPerc("Crit") * this.getStatPerc("Vers") * this.getStatPerc("Mastery") * this.activeStats.intellect;
+        }
         else if (flag === "ALLSEC") {
             // Returns a multiplier that includes all secondaries but NOT intellect.
             mult = this.getStatPerc("Haste") * this.getStatPerc("Crit") * this.getStatPerc("Vers") * this.getStatPerc("Mastery");
@@ -210,6 +242,10 @@ class Player {
         else if (flag === "NOMAST") {
             // Returns a multiplier of Haste / Vers / Crit.
             mult = this.getStatPerc("Haste") * this.getStatPerc("Crit") * this.getStatPerc("Vers") 
+        }
+        else if (flag === "CRITVERS") {
+            // Returns a multiplier that includes raw intellect. 
+            mult = this.getStatPerc("Crit") * this.getStatPerc("Vers");
         }
         else {
             // Our multiplier consists of whatever is in the stat list array.
@@ -222,13 +258,39 @@ class Player {
 
     }
 
+    updateConduitLevel = (id, newLevel) => {
+        for (let i = 0; i < this.activeConduits.length; i++) {
+            if (this.activeConduits[i].id === id) {
+                this.activeConduits[i].itemLevel = Math.max(145, Math.min(newLevel, 213));
+            }
+        }
+    
+    }
+
+    getRealmString = () => {
+        if (this.realm !== undefined && this.region !== undefined) {
+            return this.region + " - " + this.realm
+        }
+        else {
+            return "Unknown Realm";
+        }
+
+    }
 
     getSpec = () => {
         return this.spec;
     }
 
     getHPS = () => {
-        return this.activeStats.hps;
+        return this.fightInfo.hps;
+    }
+    // HPS including overhealing.
+    getRawHPS = () => {
+        return this.fightInfo.rawhps;
+    }
+
+    getFightLength = () => {
+        return this.fightInfo.fightLength;
     }
 
     getInt = () => {
@@ -236,71 +298,84 @@ class Player {
     }
 
     getSpellCasts = (spellName, contentType) => {
+        if (spellName in this.castPattern[contentType]) {
+            return this.castPattern[contentType][spellName][SPELL_CASTS_LOC];
+        }
+        else {
+            return 0;
+        }
         
-        return this.castPattern[contentType][spellName][SPELL_CASTS_LOC];
     }
 
-    getSpellCastsPerMin = (spellName, contentType) => {
+    getSpellCPM = (spellName, contentType) => {
+        if (spellName in this.castPattern[contentType]) {
+            return this.castPattern[contentType][spellName][SPELL_CASTS_LOC] / this.getFightLength() * 60;
+        }
+        else {
+            return 0;
+        }
         
-        return this.castPattern[contentType][spellName][SPELL_CASTS_LOC] / this.activeStats.fightLength * 60;
     }
 
     getSpellHealingPerc = (spellName, contentType) => {
-        
-        return this.castPattern[contentType][spellName][SPELL_HEALING_PERC]
+        if (spellName in this.castPattern[contentType]) {
+            return this.castPattern[contentType][spellName][SPELL_HEALING_PERC]
+        }
+        else {
+            return 0;
+        }
+
     }
 
     getSingleCast = (spellName, contentType) => {
-        
-        return this.castPattern[contentType][spellName][SPELL_HEALING_LOC] / this.castPattern[contentType][spellName][SPELL_CASTS_LOC]
+        if (spellName in this.castPattern[contentType]) {
+            return this.castPattern[contentType][spellName][SPELL_HEALING_LOC] / this.castPattern[contentType][spellName][SPELL_CASTS_LOC]
+        }
+        else {
+            return 0;
+        }
     }
 
     getSpellHPS = (spellName, contentType) => {
+        if (spellName in this.castPattern[contentType]) {
+            return this.castPattern[contentType][spellName][SPELL_HPS]
+        }
+        else {
+            return 0;
+        }
         
-        return this.castPattern[contentType][spellName][SPELL_HPS]
     }
+
+    setSpellPattern = (contentType, casts) => {
+        this.castPattern[contentType] = casts;
+    }
+
+    setActiveStats = (stats) => {
+        console.log("Setting Active Stats");
+        this.activeStats = stats;
+    }
+
+    setFightInfo = (info) => {
+        this.fightInfo = info;
+    }
+
 
     // Consider replacing this with an external table for cleanliness and ease of editing. 
     setupDefaults = (spec) => {
-        console.log("Called");
-        if (spec === "Restoration Druid") {
-            this.activeStats = {
-                intellect: 0,
-                haste: 1,
-                crit: 0,
-                mastery: 0,
-                versatility: 0,
+        if (spec === SPEC.RESTODRUID) {
+            this.fightInfo = {
+                hps: 6000,
+                rawhps: 9420,
+                fightLength: 193,
             }
-           
-            this.statWeights = {
-                "Raid": {
-                    intellect: 1, 
-                    haste: 0.4,
-                    crit: 0.6,
-                    mastery: 0.5,
-                    versatility: 0.3,
-                    leech: 0.8,
-                },
-                "Dungeon": {
-                    intellect: 1, 
-                    haste: 0.4,
-                    crit: 0.6,
-                    mastery: 0.5,
-                    versatility: 0.3,
-                    leech: 0.8,
-                },
-                "DefaultWeights": true
-            }
-
-        }
-        else if (spec === "Holy Paladin") {
-            console.log("Setting up Holy Paladin")
             this.activeStats = {
-                intellect: 1600,
-                haste: 450,
-                crit: 600,
-                mastery: 0,
-                versatility: 200,
+                intellect: 1500,
+                haste: 650,
+                crit: 590,
+                mastery: 400,
+                versatility: 320,
+                stamina: 1490,
+    
             }
            
             this.statWeights = {
@@ -326,14 +401,72 @@ class Player {
             this.castPattern =
             // CASTS, HEALING, HEALINGPERC, HPS
             {   "Raid": {
+                    "Rejuvenation": [46, 329400, 0.2909, 1706],
+                    "Wild Growth": [7, 346400, 0.2472, 1794],
+                    "Regrowth": [11, 105200, 0.000, 545],
+                    "Lifebloom": [7, 50400, 0.000, 256],
+  
+            },
+                "Dungeon": {
+                    "Rejuvenation": [17, 181000, 0.2909, 1566],
+                    "Wild Growth": [5, 154400, 0.2472, 1478],
+                }
+            }
+
+        }
+        else if (spec === SPEC.HOLYPALADIN) {
+            console.log("Loading Holy Paladin");
+            this.fightInfo = {
+                hps: 6000,
+                rawhps: 9420,
+                fightLength: 180,
+            }
+            
+            this.activeStats = {
+                intellect: 1500,
+                haste: 600,
+                crit: 420,
+                mastery: 1200,
+                versatility: 400,
+                stamina: 1490,
+                
+            }
+           
+            this.statWeights = {
+                "Raid": {
+                    intellect: 1, 
+                    haste: 0.4,
+                    crit: 0.6,
+                    mastery: 0.5,
+                    versatility: 0.3,
+                    leech: 0.8,
+                },
+                "Dungeon": {
+                    intellect: 1, 
+                    haste: 0.4,
+                    crit: 0.6,
+                    mastery: 0.5,
+                    versatility: 0.3,
+                    leech: 0.8,
+                },
+                "DefaultWeights": true
+            }
+
+            this.castPattern =
+            // CASTS, HEALING, HEALINGPERC, HPS, OVERHEALING
+            {   "Raid": {
+                    "Light of Dawn": [20, 238400, 0.2082, 1316, 0.2],
+                    "Word of Glory": [4, 40800, 0.0357, 225, 0.2],
+                    "Holy Shock": [27, 221400, 0.1934, 1222, 0.2],
+                    "Holy Light": [29, 311600, 0.293, 1683, 0.2],
+                    "Shock Barrier": [0, 98300, 0.0858, 542, 0.2],
+            },
+                "Dungeon": {
                     "Light of Dawn": [20, 238400, 0.2082, 1316],
+                    "Word of Glory": [4, 40800, 0.0357, 225],
                     "Holy Shock": [27, 221400, 0.1934, 1222],
                     "Holy Light": [29, 311600, 0.293, 1683],
                     "Shock Barrier": [0, 98300, 0.0858, 542],
-                    "Overall": [0, 90132, 1]
-            },
-                "Dungeon": {
-
                 }
             }
 

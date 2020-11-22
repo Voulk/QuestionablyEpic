@@ -1,7 +1,6 @@
 import React from "react";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import Button from "@material-ui/core/Button";
+import { AppBar, Toolbar, Button, Typography } from "@material-ui/core";
+
 import logo from "../../Images/QeAssets/QELogo.png";
 import "./QEMainMenu.css";
 import LanguageSelector from "./LanguageButton";
@@ -9,6 +8,7 @@ import ProfileSelector from "./ProfileButton";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import SimCraftInput from "./SimCraftDialog";
+import QELogImport from "./QELogImport";
 import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -32,63 +32,81 @@ export default function QEHeader(props) {
 
   return (
     <div style={{ backgroundColor: "#353535" }}>
-      <AppBar position="static" color="inherit">
-        <Toolbar style={{ marginLeft: "10%", marginRight: "10%" }}>
+      <AppBar position="fixed" color="inherit">
+        <Toolbar style={{ marginLeft: "16%", marginRight: "16%" }}>
           <Grid
             container
             direction="row"
             justify="space-between"
             alignItems="center"
           >
-            <Grid item xs={12} sm={12} md={1} lg={1} xl={1} align="center">
-              <Link to={"/"}>
-                <img className={classes.qeLogo} src={logo} alt="QE Live" />
-              </Link>
+            <Grid item xs={12} sm={12} md={3} lg={3} xl={3} align="center">
+              <Grid
+                container
+                direction="row"
+                justify="space-between"
+                alignItems="center"
+              >
+                <Grid item xs={12} sm={12} md={12} lg={6} xl={36}>
+                  <Link to={"/"}>
+                    <img className={classes.qeLogo} src={logo} alt="QE Live" />
+                  </Link>
+                </Grid>
+                <Grid item xs={12} sm={12} md={12} lg={6} xl={6}>
+                  <Typography color="primary" variant="caption" align="left">
+                    Roll's Royce Edition
+                  </Typography>
+                </Grid>
+              </Grid>
             </Grid>
-            <Grid
-              container
-              xs={12}
-              sm={12}
-              md={4}
-              lg={4}
-              xl={4}
-              direction="row"
-              justify="flex-end"
-              alignItems="center"
-              spacing={1}
-              wrap="nowrap"
-            >
-              <Grid item>
-                <Button style={{ color: "white" }}>
-                  {t("QeHeader.InsertLogLabel")}
-                </Button>
-              </Grid>
-              <Grid item>
-                <SimCraftInput
-                  pl={props.pl}
-                  contentType={props.contentType}
-                  simcSnack={props.simcSnack}
-                />
-              </Grid>
-              <Grid item>
-                <Button
-                  style={{ color: "white" }}
-                  onClick={props.toggleContentType}
-                >
-                  {t(props.contentType)}
-                </Button>
-              </Grid>
-              <Grid item>
-                <ProfileSelector
-                  name={playerName}
-                  component={Link}
-                  to={linkTarget}
-                  logFunc={props.logFunc}
-                  setRegion={props.setRegion}
-                />
-              </Grid>
-              <Grid item>
-                <LanguageSelector />
+
+            {/*}
+                    <Grid item alignItems="left" justify="flex-start">
+                      <p className={classes.qeLogo} style={{color: 'white', textAlign: 'left'}}>Gearing Made Easy</p>
+          </Grid> */}
+
+            <Grid item xs={12} sm={12} md={4} lg={4} xl={4}>
+              <Grid
+                container
+                direction="row"
+                justify="flex-end"
+                alignItems="center"
+                spacing={1}
+                wrap="nowrap"
+              >
+                <Grid item>
+                  <QELogImport
+                    logImportSnack={props.logImportSnack}
+                    player={props.pl}
+                  />
+                </Grid>
+                <Grid item>
+                  <SimCraftInput
+                    pl={props.pl}
+                    contentType={props.contentType}
+                    simcSnack={props.simcSnack}
+                  />
+                </Grid>
+                <Grid item>
+                  <Button
+                    style={{ color: "white" }}
+                    onClick={props.toggleContentType}
+                  >
+                    {t(props.contentType)}
+                  </Button>
+                </Grid>
+                <Grid item>
+                  <ProfileSelector
+                    name={playerName}
+                    component={Link}
+                    to={linkTarget}
+                    logFunc={props.logFunc}
+                    setRegion={props.setRegion}
+                  />
+                </Grid>
+                <Grid item>
+                  <LanguageSelector />
+                </Grid>
               </Grid>
             </Grid>
           </Grid>
