@@ -40,7 +40,6 @@
     },
 
   "rules": {
-
     //
     //Possible Errors
     //
@@ -48,7 +47,7 @@
     //
     "comma-dangle": 0, // disallow or enforce trailing commas
     "no-cond-assign": 2, // disallow assignment in conditional expressions
-    "no-console": ["error", { allow: ["warn", "error", "log"] }], // disallow use of console (off by default in the node environment)
+    "no-console": ["error", { "allow": ["warn", "error", "log"] }], // disallow use of console (off by default in the node environment)
     "no-constant-condition": 2, // disallow use of constant expressions in conditions
     "no-control-regex": 2, // disallow control characters in regular expressions
     "no-debugger": 2, // disallow use of debugger
@@ -150,7 +149,7 @@
     "no-undef": 2, // disallow use of undeclared variables unless mentioned in a /*global */ block
     "no-undef-init": 2, // disallow use of undefined when initializing variables
     "no-undefined": 2, // disallow use of undefined variable (off by default)
-    "no-unused-vars": 2, // disallow declaration of variables that are not used in the code
+    "no-unused-vars": "off", // disallow declaration of variables that are not used in the code
     "no-use-before-define": 2, // disallow use of variables before they are defined
 
     //
@@ -169,11 +168,11 @@
     "func-style": 0, // enforces use of function declarations or expressions (off by default)
     "key-spacing": [1, {"beforeColon": false, "afterColon": true}], // enforces spacing between keys and values in object literal properties
     "max-nested-callbacks": [1, 3], // specify the maximum depth callbacks can be nested (off by default)
-    "new-cap": [1, {newIsCap: true, capIsNew: false}], // require a capital letter for constructors
+    "new-cap": [1, { "newIsCap": true, "capIsNew": false}], // require a capital letter for constructors
     "new-parens": 1, // disallow the omission of parentheses when invoking a constructor with no arguments
     "newline-after-var": 0, // allow/disallow an empty newline after var statement (off by default)
     "no-array-constructor": 1, // disallow use of the Array constructor
-    "no-inline-comments": 1, // disallow comments inline after code (off by default)
+    "no-inline-comments": "off", // disallow comments inline after code (off by default)
     "no-lonely-if": 1, // disallow if as the only statement in an else block (off by default)
     "no-mixed-spaces-and-tabs": 0, // disallow mixed spaces and tabs for indentation
     "no-multiple-empty-lines": [1, {"max": 2}], // disallow multiple empty lines (off by default)
@@ -186,7 +185,7 @@
     "one-var": [1, "never"], // allow just one var statement per function (off by default)
     "operator-assignment": [1, "never"], // require assignment operator shorthand where possible or prohibit it entirely (off by default)
     "padded-blocks": [1, "never"], // enforce padding within blocks (off by default)
-    "quotes": ["error", "double", { "allowTemplateLiterals": true }], // specify whether double or single quotes should be used
+    "quotes": ["error", "double", { "allowTemplateLiterals": true }], // specify whether double or single quotes should be used :pepeHands:
     "semi": [1, "always"], // require or disallow use of semicolons instead of ASI
     "semi-spacing": [1, {"before": false, "after": true}], // enforce spacing before and after semicolons
     "sort-vars": 0, // sort variables within the same declaration block (off by default)

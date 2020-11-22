@@ -45,11 +45,28 @@ class Player {
             "Holy Shock": [27, 221400, 0.1934, 1222],
             "Holy Light": [29, 311600, 0.293, 1683],
             "Shock Barrier": [0, 98300, 0.0858, 542],
+            "Riptide": [66, 693600, 23, 1491],
+            "Cloudburst Totem": [14, 0, 0, 0],
+            "Healing Rain": [18, 450000, 15, 967],
+            "Healing Tide Totem": [2, 0, 0, 0],
+            "Chain Heal": [20, 368000, 12, 791],
+            "Healing on Earth Shield": [0, 212000, 0, 456],
     },
         "Dungeon": {
-            "Rejuvenation": [35, 40213, 0.11],
-            "Wild Growth": 40,
-            "Overall": [0, 90132, 1]
+            "Rejuvenation": [17, 181000, 0.2909, 1566],
+            "Wild Growth": [5, 154400, 0.2472, 1478],
+            "Overall": [0, 90132, 1],
+            "Light of Dawn": [20, 238400, 0.2082, 1316],
+            "Word of Glory": [4, 40800, 0.0357, 225],
+            "Holy Shock": [27, 221400, 0.1934, 1222],
+            "Holy Light": [29, 311600, 0.293, 1683],
+            "Shock Barrier": [0, 98300, 0.0858, 542],
+            "Riptide": [66, 693600, 23, 1491],
+            "Cloudburst Totem": [14, 0, 0, 0],
+            "Healing Rain": [18, 450000, 15, 967],
+            "Healing Tide Totem": [2, 0, 0, 0],
+            "Chain Heal": [20, 368000, 12, 791],
+            "Healing on Earth Shield": [0, 212000, 0, 456],
         }
     }
 
@@ -69,41 +86,42 @@ class Player {
         
     }
    
-    // Stat weights are normalized around intellect. 
+    // Stat weights are normalized around intellect.
     // Players who don't insert their own stat weights can use the QE defaults.
     // - Since these change quite often we use a tag. If default = true then their weights will automatically update whenever they open the app.
-    // - If they manually enter weights on the other hand, then this automatic-update won't occur. 
+    // - If they manually enter weights on the other hand, then this automatic-update won't occur.
     statWeights = {
-        "Raid": {
-            intellect: 1, 
-            haste: 0.5,
-            crit: 0.6,
-            mastery: 0.5,
-            versatility: 0.45,
+        Raid: {
+            intellect: 1,
+            haste: 0.4,
+            crit: 0.5,
+            mastery: 0.45,
+            versatility: 0.4,
             leech: 0.7,
         },
-        "Dungeon": {
-            intellect: 1, 
+        Dungeon: {
+            intellect: 1,
             haste: 0.8,
             crit: 0.5,
             mastery: 0.4,
             versatility: 0.45,
             leech: 0.7,
         },
-        "DefaultWeights": true
+        DefaultWeights: true
 
     }
 
     getStatWeight = (contentType, stat) => {
-        stat = stat.toLowerCase();
-        
-        if (stat in this.statWeights[contentType]) {
-            return this.statWeights[contentType][stat]
-        }
-        else {
+        const lcStat = stat.toLowerCase();
+        if (!this.statWeights[contentType]) {
             return 0;
         }
-            
+        
+        if (lcStat in this.statWeights[contentType]) {
+            return this.statWeights[contentType][lcStat];
+        }
+
+        return 0;
     }
 
     calculateConduits = (contentType) => {
