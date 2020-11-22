@@ -49,6 +49,7 @@ const fillLegendaries = (container, spec, pl, contentType) => {
       "Maraads Dying Breath",
       "Shadowbreaker, Dawn of the Sun",
       "Shock Barrier",
+      "The Mad Paragon",
     ],
     "Restoration Shaman": [
       "Earthen Harmony",
@@ -157,7 +158,7 @@ const fillLegendaries = (container, spec, pl, contentType) => {
 
 const sortLegendaries = (container) => {
   // Current default sorting is by HPS but we could get creative here in future.
-  container.sort((a, b) => (a.expectedHPS < b.expectedHPS ? 1 : -1));
+  container.sort((a, b) => (a.bonus_stats.HPS < b.bonus_stats.HPS ? 1 : -1));
 };
 
 class Legendary {
