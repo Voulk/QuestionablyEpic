@@ -34,7 +34,8 @@ class PlayerChars  {
         else {
             // If we don't have any characters stored, initilize an empty array. For now we have a demo character inserted but on live
             // you'll just start without characters and it'll prompt you to create your first.
-            charArray = [new Player("VoulkDemo", "Restoration Druid", 0, "QE", "Shadowlands", "Night Elf")]
+            charArray = []
+            //charArray = [new Player("VoulkDemo", "Restoration Druid", 0, "QE", "Shadowlands", "Night Elf")]
         }
 
         this.allChar = charArray;
