@@ -61,8 +61,8 @@ export function getEffectValue(effect, player, contentType, itemLevel = 0) {
         bonus_stats = getGenericLegendary(effectName, player, contentType);
     }
     else if (effectType === 'trinket') {
-        //bonus_stats = getTrinketEffect(effectName, player, contentType, itemLevel);
-        testTrinkets(player, contentType); //TODO: Remove
+        bonus_stats = getTrinketEffect(effectName, player, contentType, itemLevel);
+        //testTrinkets(player, contentType); //TODO: Remove
     }
 
     return bonus_stats;

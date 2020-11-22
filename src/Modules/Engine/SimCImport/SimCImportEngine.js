@@ -103,10 +103,12 @@ function processItem(line, player, contentType) {
   for (var j = 0; j < infoArray.length; j++) {
     let info = infoArray[j];
 
-    if (j == 0)
-      itemSlot = correctCasing(
-        info.replace("1", "").replace("=", "").replace("# ", "")
-      );
+    if (j == 0) {
+      // Do nothing.
+    }
+      //itemSlot = correctCasing(
+      //  info.replace("1", "").replace("=", "").replace("# ", "")
+      //);
     else if (info.includes("bonus_id="))
       itemBonusIDs = info.split("=")[1].split("/");
     else if (info.includes("id=")) itemID = parseInt(info.split("=")[1]);
@@ -114,6 +116,7 @@ function processItem(line, player, contentType) {
 
   // Grab the items base level from our item database.
   itemLevel = getItemLevel(itemID);
+  itemSlot = getItemSlot(itemID);
 
   //console.log(itemID + ": " + itemSlot + ". Item Level:" + itemLevel + ". Bonus: " + itemBonusIDs);
   // Process our bonus ID's so that we can establish the items level and sockets / tertiaries.
@@ -155,7 +158,20 @@ function processItem(line, player, contentType) {
     item.effect = getItemEffect(itemID);
     item.softScore = scoreItem(item, player, contentType);
 
-    //console.log("Adding Item: " + item.id);
+    console.log("Adding Item: " + item.id + " in slot: " + itemSlot);
     player.addActiveItem(item);
   }
+}
+
+
+// Returns item stat allocations. MUST be converted to stats before it's used in any scoring capacity.
+export function getItemSlot(id) {
+  let temp = itemDB.filter(function (item) {
+    return item.id === id;
+  });
+
+  //console.log(JSON.stringify(temp) + temp.length)
+  //console.log(temp[0].icon)
+  if (temp.length > 0) return temp[0].slot;
+  else return 0;
 }

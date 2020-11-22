@@ -651,7 +651,7 @@ export default function QuickCompare(props) {
               </Typography>
               <Divider style={{ marginBottom: 10 }} />
               <Grid container spacing={1}>
-                {[...props.pl.getActiveItems("Weapons")].map((item, index) => (
+                {[...props.pl.getActiveItems("1H Weapon")].map((item, index) => (
                   <ItemCard key={index} item={item} />
                 ))}
               </Grid>
@@ -679,7 +679,7 @@ export default function QuickCompare(props) {
               </Typography>
               <Divider style={{ marginBottom: 10 }} />
               <Grid container spacing={1}>
-                {[...props.pl.getActiveItems("Off-Hands")].map(
+                {[...props.pl.getActiveItems("CallFunction")].map(
                   (item, index) => (
                     <ItemCard key={index} item={item} />
                   )

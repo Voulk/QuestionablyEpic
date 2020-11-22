@@ -252,6 +252,7 @@ export function buildStatString(stats, effect) {
 
   if (effect !== "") statString += "Effect / ";
 
+  
   return statString.slice(0, -3); // We slice here to remove excess slashes and white space from the end.
 }
 
@@ -280,6 +281,7 @@ export function scoreItem(item, player, contentType) {
 
   // Multiply the item's stats by our stat weights.
   for (var stat in item.stats) {
+    console.log(JSON.stringify(item.stats['bonus_stats']))
     if (stat !== "bonus_stats") {
       
       let statSum =
@@ -308,3 +310,4 @@ export function scoreItem(item, player, contentType) {
   }
   return Math.round(score);
 }
+
