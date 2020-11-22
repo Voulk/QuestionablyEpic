@@ -16,6 +16,7 @@ const mainMenuOptions = {
   "Top Gear (Coming Soon)": ["/topgear", false],
   "Upgrade Finder (Coming Soon)": ["/upgradefinder", false],
   "Gear Quick Compare": ["/quickcompare", true],
+  "The Great Vault": ["/greatvault", false],
   "Legendary Analysis": ["/legendaries", true],
   "Trinket Analysis": ["/trinkets", false],
   "Explore Covenants": ["/soulbinds", true],

@@ -422,10 +422,10 @@ class Player {
             this.statWeights = {
                 "Raid": {
                     intellect: 1, 
-                    haste: 0.4,
-                    crit: 0.6,
+                    haste: 0.6,
+                    crit: 0.5,
                     mastery: 0.5,
-                    versatility: 0.3,
+                    versatility: 0.45,
                     leech: 0.8,
                 },
                 "Dungeon": {

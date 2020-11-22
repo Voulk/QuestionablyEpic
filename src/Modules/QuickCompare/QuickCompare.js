@@ -647,7 +647,7 @@ export default function QuickCompare(props) {
             {/* Trinket */}
             <Grid item xs={12}>
               <Typography color="primary" variant="h5">
-                {t("slotNames.weapons")}
+                {t("Main Hands")}
               </Typography>
               <Divider style={{ marginBottom: 10 }} />
               <Grid container spacing={1}>
@@ -661,6 +661,21 @@ export default function QuickCompare(props) {
             <Grid item xs={12}>
               <Typography color="primary" variant="h5">
                 {t("slotNames.offhands")}
+              </Typography>
+              <Divider style={{ marginBottom: 10 }} />
+              <Grid container spacing={1}>
+                {[...props.pl.getActiveItems("Off-Hands")].map(
+                  (item, index) => (
+                    <ItemCard key={index} item={item} />
+                  )
+                )}
+              </Grid>
+            </Grid>
+
+            {/* Trinket */}
+            <Grid item xs={12}>
+              <Typography color="primary" variant="h5">
+                {t("Weapon Combos")}
               </Typography>
               <Divider style={{ marginBottom: 10 }} />
               <Grid container spacing={1}>
