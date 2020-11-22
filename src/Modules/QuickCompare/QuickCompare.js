@@ -430,6 +430,7 @@ export default function QuickCompare(props) {
 
               <Grid item>
                 <TextField
+                  error={itemLevel > 300 ? true : false}
                   className={classes.formControl}
                   id="Ilvl-select"
                   onChange={(e) => itemLevelChanged(e.target.value)}
