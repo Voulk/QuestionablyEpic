@@ -60,13 +60,13 @@ export const getPaladinLegendary = (effectName, pl, contentType) => {
     }
     else if (name === "Shadowbreaker, Dawn of the Sun") {
         let lightOfDawnCPM = pl.getSpellCPM("Light of Dawn", contentType);
-        let lightOfDawnUptime = lightOfDawnCPM * 6 / 60; // Technically doesn't account for the slight possible loss from casting LoD twice in a short period.
-        let averageMasteryEff = (pl.getStatPerc('Mastery')-1) * 0.7; // TODO: Improve with logs data.
-        let maxMasteryEff = pl.getStatPerc('Mastery')-1;
-        let mastDiff = ((maxMasteryEff - averageMasteryEff));
-        let percentHealingToHitTargets = 0.72;
+        let lightOfDawnUptime = Math.min(1, lightOfDawnCPM * 6 / 60); // Technically doesn't account for the slight possible loss from casting LoD twice in a short period.
+        let averageMasteryEff = (pl.getStatPerc('Mastery')); // TODO: Improve with logs data.
+        let maxMasteryEff = ((pl.getStatPerc('Mastery')-1) / 0.7)+1 ;
+        let mastDiff = ((maxMasteryEff / averageMasteryEff)-1);
+        let percentHealingToHitTargets = 0.95;
 
-        console.log("MastDiff: " + mastDiff + ". LoDUptime: " + lightOfDawnUptime);
+        console.log("MastDiff: " + mastDiff + ". LoDUptime: " + lightOfDawnUptime + "Max: " + maxMasteryEff + ". Avg: " + averageMasteryEff);
     
         bonus_stats.HPS = Math.round(pl.getHPS() * mastDiff * lightOfDawnUptime * percentHealingToHitTargets);
 

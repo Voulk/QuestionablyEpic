@@ -195,7 +195,7 @@ class Player {
             case "Mastery":
                 statPerc = 1; // TODO
                 if (this.spec === SPEC.HOLYPALADIN) {
-                    statPerc = 1.12 + (this.activeStats.mastery / 23.3 / 100)
+                    statPerc = (0.12 + (this.activeStats.mastery / 23.3 / 100)) * 0.7 + 1
                 }
                 break;
             case "Vers":
@@ -411,9 +411,9 @@ class Player {
             
             this.activeStats = {
                 intellect: 1500,
-                haste: 850,
+                haste: 600,
                 crit: 420,
-                mastery: 250,
+                mastery: 1200,
                 versatility: 400,
                 stamina: 1490,
                 
