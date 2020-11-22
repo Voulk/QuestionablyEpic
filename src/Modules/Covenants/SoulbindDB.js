@@ -2622,12 +2622,11 @@ export const soulbindConnectors = [
     position: [305, 35],
     angle: 315,
   },
-
   {
     // Row 2 Middle Verticle
     soulbind: "Pelagos",
     src: "Vertical.PNG",
-    position: [203, 100],
+    position: [208, 100],
     angle: 0,
   },
   {
@@ -2639,7 +2638,7 @@ export const soulbindConnectors = [
   {
     soulbind: "Pelagos",
     src: "Vertical.PNG",
-    position: [393, 100],
+    position: [388, 100],
     angle: 0,
   },
   {
@@ -2663,49 +2662,49 @@ export const soulbindConnectors = [
   {
     soulbind: "Pelagos",
     src: "DiagonalShort.png",
-    position: [285, 280],
-    angle: 55,
-  },
-  {
-    soulbind: "Pelagos",
-    src: "DiagonalShort.png",
-    position: [305, 280],
-    angle: 305,
-  },
-  {
-    soulbind: "Pelagos",
-    src: "DiagonalShort.png",
-    position: [203, 360],
-    angle: 305,
-  },
-  {
-    soulbind: "Pelagos",
-    src: "DiagonalShort.png",
-    position: [393, 360],
-    angle: 55,
-  },
-  {
-    soulbind: "Pelagos",
-    src: "DiagonalShort.png",
-    position: [298, 435],
+    position: [294, 275],
     angle: 45,
   },
   {
     soulbind: "Pelagos",
     src: "DiagonalShort.png",
-    position: [298, 435],
+    position: [304, 275],
     angle: 315,
   },
   {
     soulbind: "Pelagos",
     src: "DiagonalShort.png",
-    position: [203, 525],
+    position: [215, 377],
     angle: 315,
   },
   {
     soulbind: "Pelagos",
     src: "DiagonalShort.png",
-    position: [393, 525],
+    position: [380, 377],
+    angle: 45,
+  },
+  {
+    soulbind: "Pelagos",
+    src: "DiagonalShort.png",
+    position: [298, 460],
+    angle: 55,
+  },
+  {
+    soulbind: "Pelagos",
+    src: "DiagonalShort.png",
+    position: [298, 460],
+    angle: 305,
+  },
+  {
+    soulbind: "Pelagos",
+    src: "DiagonalShort.png",
+    position: [216, 533],
+    angle: 315,
+  },
+  {
+    soulbind: "Pelagos",
+    src: "DiagonalShort.png",
+    position: [380, 533],
     angle: 45,
   },
 
@@ -2728,13 +2727,13 @@ export const soulbindConnectors = [
     // Row 2 Middle Verticle
     soulbind: "Kleia",
     src: "Vertical.PNG",
-    position: [203, 100],
+    position: [208, 100],
     angle: 0,
   },
   {
     soulbind: "Kleia",
     src: "Vertical.PNG",
-    position: [393, 100],
+    position: [388, 100],
     angle: 0,
   },
   {
@@ -2752,38 +2751,38 @@ export const soulbindConnectors = [
   {
     soulbind: "Kleia",
     src: "DiagonalShort.png",
-    position: [285, 280],
-    angle: 55,
-  },
-  {
-    soulbind: "Kleia",
-    src: "DiagonalShort.png",
-    position: [305, 280],
-    angle: 305,
-  },
-  {
-    soulbind: "Kleia",
-    src: "DiagonalShort.png",
-    position: [203, 360],
-    angle: 305,
-  },
-  {
-    soulbind: "Kleia",
-    src: "DiagonalShort.png",
-    position: [393, 360],
-    angle: 55,
-  },
-  {
-    soulbind: "Kleia",
-    src: "DiagonalShort.png",
-    position: [298, 435],
+    position: [294, 275],
     angle: 45,
   },
   {
     soulbind: "Kleia",
     src: "DiagonalShort.png",
-    position: [298, 435],
+    position: [304, 275],
     angle: 315,
+  },
+  {
+    soulbind: "Kleia",
+    src: "DiagonalShort.png",
+    position: [215, 377],
+    angle: 315,
+  },
+  {
+    soulbind: "Kleia",
+    src: "DiagonalShort.png",
+    position: [380, 377],
+    angle: 45,
+  },
+  {
+    soulbind: "Kleia",
+    src: "DiagonalShort.png",
+    position: [298, 460],
+    angle: 55,
+  },
+  {
+    soulbind: "Kleia",
+    src: "DiagonalShort.png",
+    position: [298, 460],
+    angle: 305,
   },
   {
     soulbind: "Kleia",
@@ -2795,19 +2794,19 @@ export const soulbindConnectors = [
     // Row 1 Middle Verticle
     soulbind: "Kleia",
     src: "Vertical.PNG",
-    position: [298, 515],
+    position: [298, 510],
     angle: 0,
   },
   {
     soulbind: "Kleia",
     src: "Vertical.PNG",
-    position: [203, 530],
+    position: [208, 494],
     angle: 0,
   },
   {
     soulbind: "Kleia",
     src: "Vertical.PNG",
-    position: [393, 530],
+    position: [388, 494],
     angle: 0,
   },
 
@@ -2830,13 +2829,13 @@ export const soulbindConnectors = [
     // Row 2 Middle Verticle
     soulbind: "Mikanikos",
     src: "Vertical.PNG",
-    position: [203, 100],
+    position: [208, 100],
     angle: 0,
   },
   {
     soulbind: "Mikanikos",
     src: "Vertical.PNG",
-    position: [393, 100],
+    position: [388, 100],
     angle: 0,
   },
   {
@@ -2855,38 +2854,38 @@ export const soulbindConnectors = [
   {
     soulbind: "Mikanikos",
     src: "DiagonalShort.png",
-    position: [285, 280],
-    angle: 55,
-  },
-  {
-    soulbind: "Mikanikos",
-    src: "DiagonalShort.png",
-    position: [305, 280],
-    angle: 305,
-  },
-  {
-    soulbind: "Mikanikos",
-    src: "DiagonalShort.png",
-    position: [203, 360],
-    angle: 305,
-  },
-  {
-    soulbind: "Mikanikos",
-    src: "DiagonalShort.png",
-    position: [393, 360],
-    angle: 55,
-  },
-  {
-    soulbind: "Mikanikos",
-    src: "DiagonalShort.png",
-    position: [298, 435],
+    position: [294, 275],
     angle: 45,
   },
   {
     soulbind: "Mikanikos",
     src: "DiagonalShort.png",
-    position: [298, 435],
+    position: [304, 275],
     angle: 315,
+  },
+  {
+    soulbind: "Mikanikos",
+    src: "DiagonalShort.png",
+    position: [215, 377],
+    angle: 315,
+  },
+  {
+    soulbind: "Mikanikos",
+    src: "DiagonalShort.png",
+    position: [380, 377],
+    angle: 45,
+  },
+  {
+    soulbind: "Mikanikos",
+    src: "DiagonalShort.png",
+    position: [298, 460],
+    angle: 55,
+  },
+  {
+    soulbind: "Mikanikos",
+    src: "DiagonalShort.png",
+    position: [298, 460],
+    angle: 305,
   },
   {
     soulbind: "Mikanikos",
@@ -2898,19 +2897,19 @@ export const soulbindConnectors = [
     // Row 1 Middle Verticle
     soulbind: "Mikanikos",
     src: "Vertical.PNG",
-    position: [298, 515],
+    position: [298, 510],
     angle: 0,
   },
   {
     soulbind: "Mikanikos",
     src: "Vertical.PNG",
-    position: [203, 530],
+    position: [208, 494],
     angle: 0,
   },
   {
     soulbind: "Mikanikos",
     src: "Vertical.PNG",
-    position: [393, 530],
+    position: [388, 494],
     angle: 0,
   },
 
@@ -2933,13 +2932,13 @@ export const soulbindConnectors = [
     // Row 2 Middle Verticle
     soulbind: "Niya",
     src: "Vertical.PNG",
-    position: [203, 100],
+    position: [208, 100],
     angle: 0,
   },
   {
     soulbind: "Niya",
     src: "Vertical.PNG",
-    position: [393, 100],
+    position: [388, 100],
     angle: 0,
   },
   {
@@ -2958,38 +2957,38 @@ export const soulbindConnectors = [
   {
     soulbind: "Niya",
     src: "DiagonalShort.png",
-    position: [285, 280],
-    angle: 55,
-  },
-  {
-    soulbind: "Niya",
-    src: "DiagonalShort.png",
-    position: [305, 280],
-    angle: 305,
-  },
-  {
-    soulbind: "Niya",
-    src: "DiagonalShort.png",
-    position: [203, 360],
-    angle: 305,
-  },
-  {
-    soulbind: "Niya",
-    src: "DiagonalShort.png",
-    position: [393, 360],
-    angle: 55,
-  },
-  {
-    soulbind: "Niya",
-    src: "DiagonalShort.png",
-    position: [298, 435],
+    position: [294, 275],
     angle: 45,
   },
   {
     soulbind: "Niya",
     src: "DiagonalShort.png",
-    position: [298, 435],
+    position: [304, 275],
     angle: 315,
+  },
+  {
+    soulbind: "Niya",
+    src: "DiagonalShort.png",
+    position: [215, 377],
+    angle: 315,
+  },
+  {
+    soulbind: "Niya",
+    src: "DiagonalShort.png",
+    position: [380, 377],
+    angle: 45,
+  },
+  {
+    soulbind: "Niya",
+    src: "DiagonalShort.png",
+    position: [298, 460],
+    angle: 55,
+  },
+  {
+    soulbind: "Niya",
+    src: "DiagonalShort.png",
+    position: [298, 460],
+    angle: 305,
   },
   {
     soulbind: "Niya",
@@ -3001,19 +3000,19 @@ export const soulbindConnectors = [
     // Row 1 Middle Verticle
     soulbind: "Niya",
     src: "Vertical.PNG",
-    position: [298, 515],
+    position: [298, 510],
     angle: 0,
   },
   {
     soulbind: "Niya",
     src: "Vertical.PNG",
-    position: [203, 530],
+    position: [208, 494],
     angle: 0,
   },
   {
     soulbind: "Niya",
     src: "Vertical.PNG",
-    position: [393, 530],
+    position: [388, 494],
     angle: 0,
   },
 
@@ -3036,13 +3035,13 @@ export const soulbindConnectors = [
     // Row 2 Middle Verticle
     soulbind: "Korayn",
     src: "Vertical.PNG",
-    position: [203, 100],
+    position: [208, 100],
     angle: 0,
   },
   {
     soulbind: "Korayn",
     src: "Vertical.PNG",
-    position: [393, 100],
+    position: [388, 100],
     angle: 0,
   },
   {
@@ -3061,38 +3060,38 @@ export const soulbindConnectors = [
   {
     soulbind: "Korayn",
     src: "DiagonalShort.png",
-    position: [285, 280],
-    angle: 55,
-  },
-  {
-    soulbind: "Korayn",
-    src: "DiagonalShort.png",
-    position: [305, 280],
-    angle: 305,
-  },
-  {
-    soulbind: "Korayn",
-    src: "DiagonalShort.png",
-    position: [203, 360],
-    angle: 305,
-  },
-  {
-    soulbind: "Korayn",
-    src: "DiagonalShort.png",
-    position: [393, 360],
-    angle: 55,
-  },
-  {
-    soulbind: "Korayn",
-    src: "DiagonalShort.png",
-    position: [298, 435],
+    position: [294, 275],
     angle: 45,
   },
   {
     soulbind: "Korayn",
     src: "DiagonalShort.png",
-    position: [298, 435],
+    position: [304, 275],
     angle: 315,
+  },
+  {
+    soulbind: "Korayn",
+    src: "DiagonalShort.png",
+    position: [215, 377],
+    angle: 315,
+  },
+  {
+    soulbind: "Korayn",
+    src: "DiagonalShort.png",
+    position: [380, 377],
+    angle: 45,
+  },
+  {
+    soulbind: "Korayn",
+    src: "DiagonalShort.png",
+    position: [298, 460],
+    angle: 55,
+  },
+  {
+    soulbind: "Korayn",
+    src: "DiagonalShort.png",
+    position: [298, 460],
+    angle: 305,
   },
   {
     soulbind: "Korayn",
@@ -3104,19 +3103,19 @@ export const soulbindConnectors = [
     // Row 1 Middle Verticle
     soulbind: "Korayn",
     src: "Vertical.PNG",
-    position: [298, 515],
+    position: [298, 510],
     angle: 0,
   },
   {
     soulbind: "Korayn",
     src: "Vertical.PNG",
-    position: [203, 530],
+    position: [208, 494],
     angle: 0,
   },
   {
     soulbind: "Korayn",
     src: "Vertical.PNG",
-    position: [393, 530],
+    position: [388, 494],
     angle: 0,
   },
 
@@ -3139,13 +3138,13 @@ export const soulbindConnectors = [
     // Row 2 Middle Verticle
     soulbind: "Nadjia",
     src: "Vertical.PNG",
-    position: [203, 100],
+    position: [208, 100],
     angle: 0,
   },
   {
     soulbind: "Nadjia",
     src: "Vertical.PNG",
-    position: [393, 100],
+    position: [388, 100],
     angle: 0,
   },
   {
@@ -3171,21 +3170,21 @@ export const soulbindConnectors = [
   {
     soulbind: "Nadjia",
     src: "Vertical.PNG",
-    position: [298, 315],
+    position: [298, 350],
     angle: 0,
   },
 
   {
     soulbind: "Nadjia",
     src: "DiagonalShort.png",
-    position: [298, 435],
-    angle: 45,
+    position: [298, 460],
+    angle: 55,
   },
   {
     soulbind: "Nadjia",
     src: "DiagonalShort.png",
-    position: [298, 435],
-    angle: 315,
+    position: [298, 460],
+    angle: 305,
   },
   {
     soulbind: "Nadjia",
@@ -3197,19 +3196,19 @@ export const soulbindConnectors = [
     // Row 1 Middle Verticle
     soulbind: "Nadjia",
     src: "Vertical.PNG",
-    position: [298, 515],
+    position: [298, 510],
     angle: 0,
   },
   {
     soulbind: "Nadjia",
     src: "Vertical.PNG",
-    position: [203, 530],
+    position: [208, 494],
     angle: 0,
   },
   {
     soulbind: "Nadjia",
     src: "Vertical.PNG",
-    position: [393, 530],
+    position: [388, 494],
     angle: 0,
   },
 
@@ -3232,13 +3231,13 @@ export const soulbindConnectors = [
     // Row 2 Middle Verticle
     soulbind: "Theotar",
     src: "Vertical.PNG",
-    position: [203, 100],
+    position: [208, 100],
     angle: 0,
   },
   {
     soulbind: "Theotar",
     src: "Vertical.PNG",
-    position: [393, 100],
+    position: [388, 100],
     angle: 0,
   },
   {
@@ -3257,38 +3256,38 @@ export const soulbindConnectors = [
   {
     soulbind: "Theotar",
     src: "DiagonalShort.png",
-    position: [285, 280],
-    angle: 55,
-  },
-  {
-    soulbind: "Theotar",
-    src: "DiagonalShort.png",
-    position: [305, 280],
-    angle: 305,
-  },
-  {
-    soulbind: "Theotar",
-    src: "DiagonalShort.png",
-    position: [203, 360],
-    angle: 305,
-  },
-  {
-    soulbind: "Theotar",
-    src: "DiagonalShort.png",
-    position: [393, 360],
-    angle: 55,
-  },
-  {
-    soulbind: "Theotar",
-    src: "DiagonalShort.png",
-    position: [298, 435],
+    position: [294, 275],
     angle: 45,
   },
   {
     soulbind: "Theotar",
     src: "DiagonalShort.png",
-    position: [298, 435],
+    position: [304, 275],
     angle: 315,
+  },
+  {
+    soulbind: "Theotar",
+    src: "DiagonalShort.png",
+    position: [215, 377],
+    angle: 315,
+  },
+  {
+    soulbind: "Theotar",
+    src: "DiagonalShort.png",
+    position: [380, 377],
+    angle: 45,
+  },
+  {
+    soulbind: "Theotar",
+    src: "DiagonalShort.png",
+    position: [298, 460],
+    angle: 55,
+  },
+  {
+    soulbind: "Theotar",
+    src: "DiagonalShort.png",
+    position: [298, 460],
+    angle: 305,
   },
   {
     soulbind: "Theotar",
@@ -3300,19 +3299,19 @@ export const soulbindConnectors = [
     // Row 1 Middle Verticle
     soulbind: "Theotar",
     src: "Vertical.PNG",
-    position: [298, 515],
+    position: [298, 510],
     angle: 0,
   },
   {
     soulbind: "Theotar",
     src: "Vertical.PNG",
-    position: [203, 530],
+    position: [208, 494],
     angle: 0,
   },
   {
     soulbind: "Theotar",
     src: "Vertical.PNG",
-    position: [393, 530],
+    position: [388, 494],
     angle: 0,
   },
 

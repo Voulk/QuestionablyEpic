@@ -21,8 +21,8 @@ import MuiAlert from "@material-ui/lab/Alert";
 const theme = createMuiTheme({
   palette: {
     type: "dark",
-    primary: { main: "#c8b054" },
-    secondary: { main: "#e0e0e0" },
+    primary: { main: "#F2BF59" },
+    secondary: { main: "#525252" },
   },
 
   // just messing around with themes here. Yellow colour is different in the below.
@@ -229,7 +229,7 @@ class App extends Component {
     return (
       <Router basename={"/qesl/"}>
         <ThemeProvider theme={theme}>
-          <div className="App">
+          <div className="App" style={{ marginTop: 96 }}>
             <QEHeader
               logFunc={this.userLogout}
               playerTag={this.state.playerBattleTag}
