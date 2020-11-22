@@ -22,6 +22,7 @@ import {
   getItemAllocations,
   scoreItem,
   getItemEffect,
+  buildWepCombos,
 } from "../Engine/ItemUtilities";
 import Button from "@material-ui/core/Button";
 import ItemCard from "./ItemCard";
@@ -241,7 +242,7 @@ export default function QuickCompare(props) {
 
 const deleteItem = (unique) => {
   let player = props.pl;
-  console.log("AHHHHHHHH DELETING");
+  //console.log("AHHHHHHHH DELETING");
 
   player.deleteActiveItem(unique);
 
@@ -284,6 +285,7 @@ const deleteItem = (unique) => {
   const calculateScore = (item) => {};
 
   fillItems(activeSlot, props.pl.spec);
+  let wepCombos = buildWepCombos(props.pl);
 
   return (
     <div
@@ -694,7 +696,7 @@ const deleteItem = (unique) => {
               </Typography>
               <Divider style={{ marginBottom: 10 }} />
               <Grid container spacing={1}>
-                {[...props.pl.getActiveItems("CallFunction")].map(
+                {wepCombos.map(
                   (item, index) => (
                     <ItemCard key={index} item={item} delete={deleteItem} />
                   )

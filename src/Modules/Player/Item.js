@@ -22,6 +22,7 @@ class Item {
   tertiary = "";
   effect = "";
   uniqueHash = ""; // Technically not a hash.
+  offhandID = 0; // Only used for correctly translating weapon combos.
 
   // The stats on the item. These should already be adjusted for item level.
   // HPS is a calculated field. It includes any item effects that provide healing or absorbs.

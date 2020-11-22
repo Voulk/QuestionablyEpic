@@ -11,7 +11,7 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel) {
     let activeTrinket = trinket_data.find(trinket => trinket.name === effectName);
 
     if (activeTrinket === undefined) {
-        console.error('no trinket found');
+        //console.error('no trinket found');
         return bonus_stats; // handle error shit on the calling side, or here i guess
     }
     else if (effectName === "Lingering Sunmote") {
@@ -113,7 +113,7 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel) {
         bonus_stats.hps =  getProcessedValue(heal_effect.coefficient, heal_effect.table, itemLevel, heal_effect.efficiency) / heal_effect.cooldown * player.getStatMultiplier('CRITVERS');
         bonus_stats.crit = getProcessedValue(crit_effect.coefficient, crit_effect.table, itemLevel) * crit_effect.duration * crit_effect.multiplier / crit_effect.cooldown;
 
-        console.log("Effect Name: " + effectName + " at level: " + itemLevel + " {" + JSON.stringify(bonus_stats))
+        //console.log("Effect Name: " + effectName + " at level: " + itemLevel + " {" + JSON.stringify(bonus_stats))
     }
     else if (effectName === "Wakener's Frond") {
         let effect = activeTrinket.effects[0];

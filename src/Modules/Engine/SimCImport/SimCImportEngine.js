@@ -158,7 +158,7 @@ function processItem(line, player, contentType) {
     item.effect = getItemEffect(itemID);
     item.softScore = scoreItem(item, player, contentType);
 
-    console.log("Adding Item: " + item.id + " in slot: " + itemSlot);
+    //console.log("Adding Item: " + item.id + " in slot: " + itemSlot);
     player.addActiveItem(item);
   }
 }
