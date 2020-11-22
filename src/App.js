@@ -64,7 +64,7 @@ const theme = createMuiTheme({
   // },
 });
 
-ReactGA.initialize('UA-90234903-1', {debug: true});
+ReactGA.initialize('UA-90234903-1');
 
 
 class App extends Component {
