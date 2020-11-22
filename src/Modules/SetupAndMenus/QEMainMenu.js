@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import Button from "@material-ui/core/Button";
 import "./QEMainMenu.css";
 import { Link } from "react-router-dom";
@@ -8,7 +8,7 @@ import { Grid } from "@material-ui/core";
 import AddNewChar from "./CharCreator";
 import { makeStyles } from "@material-ui/core/styles";
 import Avatar from "@material-ui/core/Avatar";
-
+import ReactGA from 'react-ga';
 import Check from "@material-ui/icons/Check";
 
 // Warning: If a button name has to change, do it in the translation files. Consider the titles here to be ID's rather than strings.
@@ -49,6 +49,10 @@ const useStyles = makeStyles((theme) => ({
 // <p>{props.pl.getSpec()}</p>
 
 export default function QEMainMenu(props) {
+  
+  useEffect(() => {
+    ReactGA.pageview(window.location.pathname + window.location.search);
+  }, []);
   const { t, i18n } = useTranslation();
   // const currentLanguage = i18n.language;
   const classes = useStyles();

@@ -11,6 +11,7 @@ import SimCraftInput from "./SimCraftDialog";
 import QELogImport from "./QELogImport";
 import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
+import ReactGA from 'react-ga';
 
 const useStyles = makeStyles((theme) => ({
   qeLogo: {
@@ -23,6 +24,7 @@ const useStyles = makeStyles((theme) => ({
 export default function QEHeader(props) {
   const { t, i18n } = useTranslation();
   const classes = useStyles();
+  
 
   // If the player isn't logged in, then show a login button and redirect to the login page on click.
   // If the player IS logged in, show their battle tag and redirect to profile on click.

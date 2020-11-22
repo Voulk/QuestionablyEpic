@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 // import ReactDOM from "react-dom";
 import { makeStyles } from "@material-ui/core/styles";
 import "../SetupAndMenus/QEMainMenu.css";
-
+import ReactGA from 'react-ga';
 // import Player from "../Player/Player";
 import Item from "../Player/Item";
 // import QEHeader from "../SetupAndMenus/QEHeader";
@@ -122,6 +122,11 @@ function getSlots() {
 }
 
 export default function QuickCompare(props) {
+  useEffect(() => {
+    ReactGA.pageview(window.location.pathname + window.location.search);
+  }, []);
+
+  
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
   const classes = useStyles();
@@ -239,7 +244,7 @@ const deleteItem = (unique) => {
   console.log("AHHHHHHHH DELETING");
 
   player.deleteActiveItem(unique);
-  
+
   setItemList([...player.getActiveItems(activeSlot)]);
   handleClick();
 }

@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useEffect } from "react";
 import "./App.css";
 import HolyDiver from "./Modules/CooldownPlanner/CooldownPlannerModule";
 import QEMainMenu from "./Modules/SetupAndMenus/QEMainMenu";
@@ -14,9 +14,16 @@ import i18n from "./i18n";
 
 import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { useLocation } from 'react-router-dom';
 import ls from "local-storage";
 import Snackbar from "@material-ui/core/Snackbar";
 import MuiAlert from "@material-ui/lab/Alert";
+import { createBrowserHistory } from 'history';
+
+import ReactGA from 'react-ga';
+
+
+
 
 const theme = createMuiTheme({
   palette: {
@@ -57,6 +64,9 @@ const theme = createMuiTheme({
   // },
 });
 
+ReactGA.initialize('UA-90234903-1', {debug: true});
+
+
 class App extends Component {
   constructor() {
     super();
@@ -86,6 +96,8 @@ class App extends Component {
       logImportSnackState: false,
     };
   }
+
+  
 
   // --Snack Bar Handlers--
   // Character Added
@@ -207,6 +219,8 @@ class App extends Component {
 
   // When component mounts, check local storage for battle tag or ID.
   componentDidMount() {
+    //console.log("COMPONENT MOUNTED" + window.location.pathname + window.location.search);
+    
     this.setState({
       playerLoginID: ls.get("id") || "",
       playerBattleTag: ls.get("btag") || "",
@@ -216,16 +230,31 @@ class App extends Component {
 
     i18n.changeLanguage(ls.get("lang") || "en");
   }
+  
+
+  usePageViews() {
+    let location = useLocation()
+  
+    useEffect(
+      () => {
+        ReactGA.send(['pageview', location.pathname])
+      },
+      [location]
+    )
+  }
+
+
 
   render() {
+    
     let activePlayer = this.state.characters.getActiveChar();
     let allChars = this.state.characters;
-
+    
     function Alert(props) {
       return <MuiAlert elevation={6} variant="filled" {...props} />;
     }
     //alert(JSON.stringify(allChars[0]));
-
+    
     return (
       <Router basename={"/qesl/"}>
         <ThemeProvider theme={theme}>
