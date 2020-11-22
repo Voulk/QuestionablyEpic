@@ -23,6 +23,7 @@ import {
   scoreItem,
   getItemEffect,
   buildWepCombos,
+  getItemSlot,
 } from "../Engine/ItemUtilities";
 import Button from "@material-ui/core/Button";
 import ItemCard from "./ItemCard";
@@ -173,6 +174,7 @@ export default function QuickCompare(props) {
       //console.log(itemDB[i].name + itemDB[i].dropLoc );
       let item = itemDB[i];
 
+      /*
       if (
         (slotName === item.slot &&
           (slotName !== "Weapons" || slotName !== "Off-Hands") &&
@@ -188,6 +190,13 @@ export default function QuickCompare(props) {
           (item.slot === "Holdable" || item.slot === "Shield")) ||
         (slotName === item.slot && slotName === "Back")
       ) {
+        */
+      if (
+          (slotName === item.slot && item.itemClass === 4  && acceptableArmorTypes.includes(item.itemSubClass)) ||
+          (slotName === "Offhands" && (item.slot === "Holdable" || item.slot === "Offhand" || item.slot === "Shield")) ||
+          (slotName === "Weapons" && item.itemClass === 2 && acceptableWeaponTypes.includes(item.itemSubClass))
+          ) {
+
         // If the selected slot is "Weapons & Offhands" then our checks involve:
         // - Ensuring the item is a weapon (item class 2)
         // - Ensuring the player can wield that weapon type.
@@ -214,7 +223,7 @@ export default function QuickCompare(props) {
     let item = new Item(
       itemID,
       itemName,
-      activeSlot,
+      getItemSlot(itemID),
       itemSocket,
       itemTertiary,
       0,

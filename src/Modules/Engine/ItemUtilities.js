@@ -183,6 +183,18 @@ function getItemCat(slot) {
   }
 }
 
+// Returns item stat allocations. MUST be converted to stats before it's used in any scoring capacity.
+export function getItemSlot(id) {
+  let temp = itemDB.filter(function (item) {
+    return item.id === id;
+  });
+
+  //console.log(JSON.stringify(temp) + temp.length)
+  //console.log(temp[0].icon)
+  if (temp.length > 0) return temp[0].slot;
+  else return 0;
+}
+
 export function buildWepCombos(player) {
   let wep_list = [];
   let main_hands = player.getActiveItems("1H Weapon");
@@ -216,6 +228,11 @@ export function buildWepCombos(player) {
       wep_list.push(item);
 
     }
+  }
+
+  for (let j = 0; j < two_handers.length; j++) {
+    wep_list.push(two_handers[j]);
+
   }
 
   return wep_list;

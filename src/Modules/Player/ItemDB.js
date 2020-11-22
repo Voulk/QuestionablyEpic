@@ -3649,7 +3649,7 @@ export const itemDB = [
         },
         "dropLoc": "",
         "selectable": "true",
-        "slot": "RangedRight"
+        "slot": "1H Weapon"
     },
     {
         "id": 172905,
@@ -20605,7 +20605,7 @@ export const itemDB = [
         },
         "dropLoc": "",
         "selectable": "true",
-        "slot": "RangedRight"
+        "slot": "1H Weapon"
     },
     {
         "id": 178951,
@@ -24688,7 +24688,7 @@ export const itemDB = [
         },
         "dropLoc": "",
         "selectable": "true",
-        "slot": "RangedRight"
+        "slot": "1H Weapon"
     },
     {
         "id": 180019,
@@ -24717,7 +24717,7 @@ export const itemDB = [
         },
         "dropLoc": "",
         "selectable": "true",
-        "slot": "RangedRight"
+        "slot": "1H Weapon"
     },
     {
         "id": 180022,
@@ -24746,7 +24746,7 @@ export const itemDB = [
         },
         "dropLoc": "",
         "selectable": "true",
-        "slot": "RangedRight"
+        "slot": "1H Weapon"
     },
     {
         "id": 180023,
@@ -24775,7 +24775,7 @@ export const itemDB = [
         },
         "dropLoc": "",
         "selectable": "true",
-        "slot": "RangedRight"
+        "slot": "1H Weapon"
     },
     {
         "id": 180098,
@@ -32374,7 +32374,7 @@ export const itemDB = [
         },
         "dropLoc": "",
         "selectable": "true",
-        "slot": "RangedRight"
+        "slot": "1H Weapon"
     },
     {
         "id": 181686,

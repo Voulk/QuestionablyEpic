@@ -7,6 +7,7 @@ import {
   scoreItem,
   getItemEffect,
   correctCasing,
+  getItemSlot,
 } from "../ItemUtilities";
 import Item from "../../Player/Item";
 
@@ -164,14 +165,3 @@ function processItem(line, player, contentType) {
 }
 
 
-// Returns item stat allocations. MUST be converted to stats before it's used in any scoring capacity.
-export function getItemSlot(id) {
-  let temp = itemDB.filter(function (item) {
-    return item.id === id;
-  });
-
-  //console.log(JSON.stringify(temp) + temp.length)
-  //console.log(temp[0].icon)
-  if (temp.length > 0) return temp[0].slot;
-  else return 0;
-}
