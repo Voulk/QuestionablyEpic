@@ -62,6 +62,11 @@ export default function ItemCard(props) {
     }
   };
 
+  const deleteItemCard = () => {
+    console.log("Trying to delete");
+    props.delete(item.uniqueHash)
+  }
+
   const upgradeColor = (num) => {
     if (num > 0) {
       return "#4CBB17";
@@ -203,6 +208,7 @@ export default function ItemCard(props) {
                     <DeleteIcon
                       style={{ color: "#ad2c34", paddingTop: 2 }}
                       fontSize="small"
+                      onClick={deleteItemCard}
                     />
                   </IconButton>
                 </Grid>

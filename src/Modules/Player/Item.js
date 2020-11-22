@@ -10,6 +10,7 @@ class Item {
     this.socket = socket;
     this.tertiary = tertiary;
     this.softScore = softScore;
+    this.uniqueHash = this.getUnique(id);
   }
 
   id = 0; // The items ID
@@ -20,6 +21,7 @@ class Item {
   socket = false;
   tertiary = "";
   effect = "";
+  uniqueHash = ""; // Technically not a hash.
 
   // The stats on the item. These should already be adjusted for item level.
   // HPS is a calculated field. It includes any item effects that provide healing or absorbs.
@@ -41,6 +43,13 @@ class Item {
       hps: 0,
     },
   };
+
+
+  // To be replaced with a proper method of assigning ID's but this will do for now since duplicates will be very rare and 
+  // it isn't life crushing if they do ever dup.
+  getUnique(id) {
+    return id + "" + (Math.floor(Math.random() * 100000) + 1).toString();
+  }
 }
 
 export default Item;

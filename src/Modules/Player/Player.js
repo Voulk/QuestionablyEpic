@@ -187,6 +187,13 @@ class Player {
 
     }
 
+    deleteActiveItem = (unique) => {
+        let tempArray =  this.activeItems.filter(function(item) {
+            return item.uniqueHash !== unique;
+        });
+        this.activeItems = tempArray;
+    }
+
     sortItems = (container) => {
         // Current default sorting is by HPS but we could get creative here in future.
         container.sort((a, b) => (a.softScore < b.softScore ? 1 : -1));
