@@ -81,7 +81,7 @@ const fillSlot = (container, spec, pl, contentType) => {
 
 const sortItems = (container) => {
   // Current default sorting is by HPS but we could get creative here in future.
-  container.sort((a, b) => (a.expectedHPS < b.expectedHPS ? 1 : -1));
+  container.sort((a, b) => (a.softScore < b.softScore ? 1 : -1));
 };
 
 /*
@@ -664,7 +664,7 @@ export default function QuickCompare(props) {
               </Typography>
               <Divider style={{ marginBottom: 10 }} />
               <Grid container spacing={1}>
-                {[...props.pl.getActiveItems("Off-Hands")].map(
+                {[...props.pl.getActiveItems("Offhands")].map(
                   (item, index) => (
                     <ItemCard key={index} item={item} />
                   )
