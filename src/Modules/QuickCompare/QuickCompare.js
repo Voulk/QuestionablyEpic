@@ -35,6 +35,7 @@ import Snackbar from "@material-ui/core/Snackbar";
 import MuiAlert from "@material-ui/lab/Alert";
 import Autocomplete from "@material-ui/lab/Autocomplete";
 import TextField from "@material-ui/core/TextField";
+import Popover from "@material-ui/core/Popover";
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -43,6 +44,14 @@ const useStyles = makeStyles((theme) => ({
   },
   selectEmpty: {
     marginTop: theme.spacing(2),
+  },
+  paper: {
+    border: "1px solid",
+    padding: theme.spacing(1),
+    backgroundColor: theme.palette.background.paper,
+  },
+  typography: {
+    padding: theme.spacing(2),
   },
 }));
 
@@ -132,9 +141,16 @@ export default function QuickCompare(props) {
   const currentLanguage = i18n.language;
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const openPop = Boolean(anchorEl);
+  const idPop = open ? "simple-popover" : undefined;
 
   const handleClick = () => {
     setOpen(true);
+  };
+
+  const handleClosePop = () => {
+    setAnchorEl(null);
   };
 
   const handleClose = (event, reason) => {
@@ -223,9 +239,9 @@ export default function QuickCompare(props) {
   };
 
   // Add an item to our "Active Items" array.
-  const addItem = () => {
+  const addItem = (event) => {
     if (itemLevel > 300) {
-      alert("Ilvl Too High, Item Not Added. Ilvl Cap is 300");
+      setAnchorEl(anchorEl ? null : event.currentTarget);
       return null;
     }
     let player = props.pl;
@@ -507,6 +523,24 @@ export default function QuickCompare(props) {
                 >
                   {t("QuickCompare.AddButton")}
                 </Button>
+                <Popover
+                  id={idPop}
+                  open={openPop}
+                  anchorEl={anchorEl}
+                  onClose={handleClosePop}
+                  anchorOrigin={{
+                    vertical: "bottom",
+                    horizontal: "center",
+                  }}
+                  transformOrigin={{
+                    vertical: "top",
+                    horizontal: "center",
+                  }}
+                >
+                  <Typography className={classes.typography}>
+                    Item Not Added. Ilvl Cap is 300
+                  </Typography>
+                </Popover>
               </Grid>
               <Snackbar
                 open={open}
