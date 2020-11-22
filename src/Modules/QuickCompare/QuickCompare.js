@@ -224,6 +224,10 @@ export default function QuickCompare(props) {
 
   // Add an item to our "Active Items" array.
   const addItem = () => {
+    if (itemLevel > 300) {
+      alert("Ilvl Too High, Item Not Added. Ilvl Cap is 300");
+      return null;
+    }
     let player = props.pl;
     let item = new Item(
       itemID,
@@ -409,32 +413,25 @@ export default function QuickCompare(props) {
               </Grid>
 
               <Grid item>
-                <FormControl
+                <TextField
                   className={classes.formControl}
-                  variant="outlined"
-                  size="small"
+                  id="Ilvl-select"
+                  onChange={(e) => itemLevelChanged(e.target.value)}
                   label={t("QuickCompare.ItemLevel")}
                   disabled={itemID === "" ? true : false}
-                >
-                  <TextField
-                    id="Ilvl-select"
-                    onChange={(e) => itemLevelChanged(e.target.value)}
-                    label={t("QuickCompare.ItemLevel")}
-                    disabled={itemID === "" ? true : false}
-                    onInput={(e) => {
-                      e.target.value = Math.max(0, parseInt(e.target.value))
-                        .toString()
-                        .slice(0, 3);
-                    }}
-                    variant="outlined"
-                    size="small"
-                    type="number"
-                    inputProps={{
-                      min: "0",
-                      max: "300",
-                    }}
-                  />
-                </FormControl>
+                  onInput={(e) => {
+                    e.target.value = Math.max(0, parseInt(e.target.value))
+                      .toString()
+                      .slice(0, 3);
+                  }}
+                  variant="outlined"
+                  size="small"
+                  type="number"
+                  inputProps={{
+                    min: "50",
+                    max: "300",
+                  }}
+                />
               </Grid>
 
               <Grid item>
