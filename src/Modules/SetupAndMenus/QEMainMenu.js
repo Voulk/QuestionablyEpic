@@ -7,18 +7,19 @@ import CharCards from "./CharComponentGen";
 import { Grid } from "@material-ui/core";
 import AddNewChar from "./CharCreator";
 import { makeStyles } from "@material-ui/core/styles";
-import Avatar from '@material-ui/core/Avatar';
+import Avatar from "@material-ui/core/Avatar";
+
+import Check from "@material-ui/icons/Check";
 
 // Warning: If a button name has to change, do it in the translation files. Consider the titles here to be ID's rather than strings.
 const mainMenuOptions = {
-
   "Top Gear (Coming Soon)": ["/topgear", false],
   "Upgrade Finder (Coming Soon)": ["/upgradefinder", false],
   "Gear Quick Compare": ["/quickcompare", true],
   "Legendary Analysis": ["/legendaries", true],
   "Trinket Analysis": ["/trinkets", false],
   "Explore Covenants": ["/soulbinds", true],
-  "Cooldown Planner (Coming Soon)": ["/holydiver", false],
+  "Cooldown Planner (Coming Soon)": ["/holydiver", true],
 };
 
 const useStyles = makeStyles((theme) => ({
@@ -72,20 +73,19 @@ export default function QEMainMenu(props) {
                 key={index}
                 variant="contained"
                 disabled={!mainMenuOptions[key][1]}
-
-                color="black"
+                color="secondary"
                 style={{
                   width: "100%",
                   height: "60px",
                   whiteSpace: "nowrap",
-                  textAlign: "left",
-                  paddingLeft: "0px",
-                  backgroundColor: '#525252',
-                  color: '#F2BF59',
+                  justifyContent: "left",
+                  paddingLeft: "32px",
+                  color: !mainMenuOptions[key][1] ? "#9c9c9c" : "#F2BF59",
                 }}
                 component={Link}
                 to={mainMenuOptions[key][0]}
               >
+                <Check style={{ paddingRight: 32 }} />
                 {t(key)}
               </Button>
             </Grid>

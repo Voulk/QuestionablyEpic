@@ -235,8 +235,13 @@ export default function QuickCompare(props) {
   };
 
   const itemNameChanged = (event, val) => {
-    setItemID(val.value);
-    setItemName(val.name);
+    if (val === null) {
+      setItemID("");
+      setItemName("");
+    } else {
+      setItemID(val.value);
+      setItemName(val.name);
+    }
   };
 
   const itemLevelChanged = (event, val) => {
@@ -283,7 +288,7 @@ export default function QuickCompare(props) {
         }}
       >
         <Grid item xs={12}>
-          <Paper>
+          <Paper elevation={0}>
             <Typography
               variant="h4"
               align="center"
@@ -493,10 +498,180 @@ export default function QuickCompare(props) {
           </Paper>
         </Grid>
 
-        <Grid container item spacing={1}>
-          {itemList.map((item, index) => (
-            <ItemCard key={index} item={item} />
-          ))}
+        {/* this can be simplified into a map at some stage */}
+
+        <Grid item xs={12}>
+          <Grid container spacing={1}>
+            {/* Helm */}
+            <Grid item xs={12}>
+              <Typography color="primary" variant="h5">
+                {t("slotNames.head")}
+              </Typography>
+              <Divider style={{ marginBottom: 10 }} />
+              <Grid container spacing={1}>
+                {[...props.pl.getActiveItems("Head")].map((item, index) => (
+                  <ItemCard key={index} item={item} />
+                ))}
+              </Grid>
+            </Grid>
+
+            {/* Neck */}
+            <Grid item xs={12}>
+              <Typography color="primary" variant="h5">
+                {t("slotNames.neck")}
+              </Typography>
+              <Divider style={{ marginBottom: 10 }} />
+              <Grid container spacing={1}>
+                {[...props.pl.getActiveItems("Neck")].map((item, index) => (
+                  <ItemCard key={index} item={item} />
+                ))}
+              </Grid>
+            </Grid>
+
+            {/* Shoulder */}
+            <Grid item xs={12}>
+              <Typography color="primary" variant="h5">
+                {t("slotNames.shoulder")}
+              </Typography>
+              <Divider style={{ marginBottom: 10 }} />
+              <Grid container spacing={1}>
+                {[...props.pl.getActiveItems("Shoulder")].map((item, index) => (
+                  <ItemCard key={index} item={item} />
+                ))}
+              </Grid>
+            </Grid>
+            {/* Back */}
+            <Grid item xs={12}>
+              <Typography color="primary" variant="h5">
+                {t("slotNames.back")}
+              </Typography>
+              <Divider style={{ marginBottom: 10 }} />
+              <Grid container spacing={1}>
+                {[...props.pl.getActiveItems("Back")].map((item, index) => (
+                  <ItemCard key={index} item={item} />
+                ))}
+              </Grid>
+            </Grid>
+
+            {/* Chest */}
+            <Grid item xs={12}>
+              <Typography color="primary" variant="h5">
+                {t("slotNames.chest")}
+              </Typography>
+              <Divider style={{ marginBottom: 10 }} />
+              <Grid container spacing={1}>
+                {[...props.pl.getActiveItems("Chest")].map((item, index) => (
+                  <ItemCard key={index} item={item} />
+                ))}
+              </Grid>
+            </Grid>
+
+            {/* Wrist */}
+            <Grid item xs={12}>
+              <Typography color="primary" variant="h5">
+                {t("slotNames.wrists")}
+              </Typography>
+              <Divider style={{ marginBottom: 10 }} />
+              <Grid container spacing={1}>
+                {[...props.pl.getActiveItems("Wrist")].map((item, index) => (
+                  <ItemCard key={index} item={item} />
+                ))}
+              </Grid>
+            </Grid>
+
+            {/* Hands */}
+            <Grid item xs={12}>
+              <Typography color="primary" variant="h5">
+                {t("slotNames.hands")}
+              </Typography>
+              <Divider style={{ marginBottom: 10 }} />
+              <Grid container spacing={1}>
+                {[...props.pl.getActiveItems("Hands")].map((item, index) => (
+                  <ItemCard key={index} item={item} />
+                ))}
+              </Grid>
+            </Grid>
+
+            {/* Waist */}
+            <Grid item xs={12}>
+              <Typography color="primary" variant="h5">
+                {t("slotNames.waist")}
+              </Typography>
+              <Divider style={{ marginBottom: 10 }} />
+              <Grid container spacing={1}>
+                {[...props.pl.getActiveItems("Waist")].map((item, index) => (
+                  <ItemCard key={index} item={item} />
+                ))}
+              </Grid>
+            </Grid>
+
+            {/* Feet */}
+            <Grid item xs={12}>
+              <Typography color="primary" variant="h5">
+                {t("slotNames.feet")}
+              </Typography>
+              <Divider style={{ marginBottom: 10 }} />
+              <Grid container spacing={1}>
+                {[...props.pl.getActiveItems("Feet")].map((item, index) => (
+                  <ItemCard key={index} item={item} />
+                ))}
+              </Grid>
+            </Grid>
+
+            {/* Finger */}
+            <Grid item xs={12}>
+              <Typography color="primary" variant="h5">
+                {t("slotNames.finger")}
+              </Typography>
+              <Divider style={{ marginBottom: 10 }} />
+              <Grid container spacing={1}>
+                {[...props.pl.getActiveItems("Finger")].map((item, index) => (
+                  <ItemCard key={index} item={item} />
+                ))}
+              </Grid>
+            </Grid>
+
+            {/* Trinket */}
+            <Grid item xs={12}>
+              <Typography color="primary" variant="h5">
+                {t("slotNames.trinket")}
+              </Typography>
+              <Divider style={{ marginBottom: 10 }} />
+              <Grid container spacing={1}>
+                {[...props.pl.getActiveItems("Trinket")].map((item, index) => (
+                  <ItemCard key={index} item={item} />
+                ))}
+              </Grid>
+            </Grid>
+
+            {/* Trinket */}
+            <Grid item xs={12}>
+              <Typography color="primary" variant="h5">
+                {t("slotNames.weapons")}
+              </Typography>
+              <Divider style={{ marginBottom: 10 }} />
+              <Grid container spacing={1}>
+                {[...props.pl.getActiveItems("Weapons")].map((item, index) => (
+                  <ItemCard key={index} item={item} />
+                ))}
+              </Grid>
+            </Grid>
+
+            {/* Trinket */}
+            <Grid item xs={12}>
+              <Typography color="primary" variant="h5">
+                {t("slotNames.offhands")}
+              </Typography>
+              <Divider style={{ marginBottom: 10 }} />
+              <Grid container spacing={1}>
+                {[...props.pl.getActiveItems("Off-Hands")].map(
+                  (item, index) => (
+                    <ItemCard key={index} item={item} />
+                  )
+                )}
+              </Grid>
+            </Grid>
+          </Grid>
         </Grid>
       </Grid>
     </div>

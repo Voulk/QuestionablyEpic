@@ -23,7 +23,10 @@ import MenuItem from "@material-ui/core/MenuItem";
 import Typography from "@material-ui/core/Typography";
 import bossIcons from "../CooldownPlanner/Functions/IconFunctions/BossIcons";
 import axios from "axios";
-import {convertLogSpellOutput, convertLogStatOutput} from '../Player/PlayerUtilities';
+import {
+  convertLogSpellOutput,
+  convertLogStatOutput,
+} from "../Player/PlayerUtilities";
 
 const menuStyle = {
   style: { marginTop: 5 },
@@ -228,7 +231,6 @@ export default function QELogImport(props) {
 
     convertLogSpellOutput(props.player, healerDataDetailed, timeend - time);
     convertLogStatOutput(props.player, summaryData, currentPlayerID);
-    
   };
 
   const playerSelectedHandler = (e) => {
@@ -242,10 +244,12 @@ export default function QELogImport(props) {
   console.log(healerDataDetailed);
   */
 
-
   return (
     <div>
-      <Button style={{ color: "white" }} onClick={handleClickOpen}>
+      <Button
+        style={{ color: "white", whiteSpace: "nowrap" }}
+        onClick={handleClickOpen}
+      >
         {t("QeHeader.InsertLogLabel")}
       </Button>
       <Dialog

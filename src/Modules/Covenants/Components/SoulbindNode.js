@@ -5,14 +5,18 @@ import Popover from "@material-ui/core/Popover";
 import PopupState, { bindTrigger, bindPopover } from "material-ui-popup-state";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
-import { getConduitName, filterConduits, getCovenant } from "../CovenantUtilities";
+import {
+  getConduitName,
+  filterConduits,
+  getCovenant,
+} from "../CovenantUtilities";
 import Paper from "@material-ui/core/Paper";
 
-const columnPos = [195, 290, 385];
+const columnPos = [200, 290, 380];
 const rowPos = [
-  [20, 100, 180, 260, 325, 420, 500, 580, 660],
-  [5, 85, 165, 245, 325, 405, 485, 565, 645],
-  [20, 100, 180, 260, 325, 420, 500, 580, 660],
+  [20, 100, 180, 260, 340, 445, 500, 580],
+  [5, 85, 165, 245, 355, 435, 515, 595],
+  [20, 100, 180, 260, 340, 445, 500, 580],
 ];
 
 const menuStyle = {
@@ -130,7 +134,6 @@ export default function SoulbindNode(props) {
       ? props.enduranceConduits
       : [];
 
-
   const benefitString = getBenefitString(stat_bonus);
 
   // The CSS here is a bit of a nightmare. TODO.
@@ -231,17 +234,19 @@ export default function SoulbindNode(props) {
           open={Boolean(anchorEl)}
           onClose={handleClose}
         >
-          {trait.slotted_id > 0 ? 
-          <MenuItem
-            key={-1}
-            dense={true}
-            style={{ padding: "5px 10px" }}
-            onClick={() => setConduit(-1)}>
+          {trait.slotted_id > 0 ? (
+            <MenuItem
+              key={-1}
+              dense={true}
+              style={{ padding: "5px 10px" }}
+              onClick={() => setConduit(-1)}
+            >
               Remove
             </MenuItem>
-            : ''}
+          ) : (
+            ""
+          )}
           {conduitCollection.map((conduit, i) => (
-            
             <MenuItem
               key={i}
               style={{ padding: "5px 10px" }}

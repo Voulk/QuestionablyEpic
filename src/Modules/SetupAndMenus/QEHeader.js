@@ -1,7 +1,6 @@
 import React from "react";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import Button from "@material-ui/core/Button";
+import { AppBar, Toolbar, Button, Typography } from "@material-ui/core";
+
 import logo from "../../Images/QeAssets/QELogo.png";
 import "./QEMainMenu.css";
 import LanguageSelector from "./LanguageButton";
@@ -33,7 +32,7 @@ export default function QEHeader(props) {
 
   return (
     <div style={{ backgroundColor: "#353535" }}>
-      <AppBar position="static" color="inherit">
+      <AppBar position="fixed" color="inherit">
         <Toolbar style={{ marginLeft: "16%", marginRight: "16%" }}>
           <Grid
             container
@@ -41,13 +40,27 @@ export default function QEHeader(props) {
             justify="space-between"
             alignItems="center"
           >
-            <Grid item xs={12} sm={12} md={1} lg={1} xl={1} align="center">
-              <Link to={"/"}>
-                <img className={classes.qeLogo} src={logo} alt="QE Live" />
-              </Link>
+            <Grid item xs={12} sm={12} md={3} lg={3} xl={3} align="center">
+              <Grid
+                container
+                direction="row"
+                justify="space-between"
+                alignItems="center"
+              >
+                <Grid item xs={12} sm={12} md={12} lg={6} xl={36}>
+                  <Link to={"/"}>
+                    <img className={classes.qeLogo} src={logo} alt="QE Live" />
+                  </Link>
+                </Grid>
+                <Grid item xs={12} sm={12} md={12} lg={6} xl={6}>
+                  <Typography color="primary" variant="caption" align="left">
+                    Roll's Royce Edition
+                  </Typography>
+                </Grid>
+              </Grid>
             </Grid>
 
-        {/*}
+            {/*}
                     <Grid item alignItems="left" justify="flex-start">
                       <p className={classes.qeLogo} style={{color: 'white', textAlign: 'left'}}>Gearing Made Easy</p>
           </Grid> */}
@@ -62,7 +75,10 @@ export default function QEHeader(props) {
                 wrap="nowrap"
               >
                 <Grid item>
-                  <QELogImport logImportSnack={props.logImportSnack} player={props.pl} />
+                  <QELogImport
+                    logImportSnack={props.logImportSnack}
+                    player={props.pl}
+                  />
                 </Grid>
                 <Grid item>
                   <SimCraftInput
