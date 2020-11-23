@@ -168,7 +168,7 @@ class App extends Component {
     allChars.updatePlayerChar(player);
     console.log("Setting State");
     this.setState({ characters: allChars });
-
+    allChars.saveAllChar();
     
   };
 
