@@ -98,7 +98,7 @@
     "no-extend-native": 2, // disallow adding to native types
     "no-extra-bind": 2, // disallow unnecessary function binding
     "no-fallthrough": 2, // disallow fallthrough of case statements
-    "no-floating-decimal": 2, // disallow the use of leading or trailing decimal points in numeric literals (off by default)
+    "no-floating-decimal": "off", // disallow the use of leading or trailing decimal points in numeric literals (off by default)
     "no-implied-eval": 2, // disallow use of eval()-like methods
     "no-iterator": 2, // disallow usage of __iterator__ property
     "no-lone-blocks": 2, // disallow unnecessary nested blocks
@@ -120,7 +120,7 @@
     "no-self-compare": 2, // disallow comparisons where both sides are exactly the same (off by default)
     "no-sequences": 2, // disallow use of comma operator
     "no-throw-literal": 2, // restrict what can be thrown as an exception (off by default)
-    "no-unused-expressions": 2, // disallow usage of expressions in statement position
+    "no-unused-expressions": "off", // disallow usage of expressions in statement position
     "no-void": 2, // disallow use of void operator (off by default)
     "no-warning-comments": [0, {"terms": ["todo", "fixme"], "location": "start"}], // disallow usage of configurable warning terms in comments": 2, // e.g. TODO or FIXME (off by default)
     "no-with": 2, // disallow use of the with statement
