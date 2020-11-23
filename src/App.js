@@ -270,7 +270,7 @@ class App extends Component {
     function Alert(props) {
       return <MuiAlert elevation={6} variant="filled" {...props} />;
     }
-    //alert(JSON.stringify(allChars[0]));
+    
     return (
       <Router basename={process.env.REACT_APP_HOMEPAGE}>
         <ThemeProvider theme={theme}>

@@ -35,6 +35,7 @@ export default function QEHeader(props) {
     "Diamond Edition": "#FFB6C1",
     "Gold Edition": "#DAA520",
     "Standard Edition": "#FFFFFF",
+    "Basic Edition": "#FFFFFF",
   }
 
   return (
