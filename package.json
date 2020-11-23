@@ -1,6 +1,6 @@
 {
   "name": "questionably-epic-live",
-  "homepage": "https://questionablyepic.com/qesl/",
+  "homepage": "https://questionablyepic.com/live/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
