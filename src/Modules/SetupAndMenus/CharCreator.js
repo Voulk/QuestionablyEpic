@@ -177,7 +177,7 @@ export default function AddNewChar(props) {
                   size="small"
                   disabled={regions === "" ? true : false}
                   id="server-select"
-                  options={serverList[regions]}
+                  options={serverList[regions] || ""}
                   getOptionLabel={(option) => option}
                   style={{ width: "100%" }}
                   onChange={(e, newValue) => {

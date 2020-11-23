@@ -1,6 +1,5 @@
 import React from "react";
 import { AppBar, Toolbar, Button, Typography } from "@material-ui/core";
-
 import logo from "../../Images/QeAssets/QELogo.png";
 import "./QEMainMenu.css";
 import LanguageSelector from "./LanguageButton";
@@ -11,7 +10,7 @@ import SimCraftInput from "./SimCraftDialog";
 import QELogImport from "./QELogImport";
 import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
-import ReactGA from 'react-ga';
+// import ReactGA from "react-ga";
 
 const useStyles = makeStyles((theme) => ({
   qeLogo: {
@@ -24,7 +23,6 @@ const useStyles = makeStyles((theme) => ({
 export default function QEHeader(props) {
   const { t, i18n } = useTranslation();
   const classes = useStyles();
-  
 
   // If the player isn't logged in, then show a login button and redirect to the login page on click.
   // If the player IS logged in, show their battle tag and redirect to profile on click.
@@ -49,13 +47,17 @@ export default function QEHeader(props) {
                 justify="space-between"
                 alignItems="center"
               >
-                <Grid item xs={12} sm={12} md={12} lg={6} xl={36}>
+                <Grid item xs={12} sm={12} md={12} lg={6} xl={6}>
                   <Link to={"/"}>
                     <img className={classes.qeLogo} src={logo} alt="QE Live" />
                   </Link>
                 </Grid>
                 <Grid item xs={12} sm={12} md={12} lg={6} xl={6}>
-                  <Typography style={{color: "#04E07C"}} variant="body1" align="left">
+                  <Typography
+                    style={{ color: "#04E07C" }}
+                    variant="body1"
+                    align="left"
+                  >
                     Rolls Royce Edition
                   </Typography>
                 </Grid>
@@ -80,6 +82,7 @@ export default function QEHeader(props) {
                   <QELogImport
                     logImportSnack={props.logImportSnack}
                     player={props.pl}
+                    allChars={props.allChars}
                   />
                 </Grid>
                 <Grid item>

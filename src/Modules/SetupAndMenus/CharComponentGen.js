@@ -1,5 +1,4 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import CardActionArea from "@material-ui/core/CardActionArea";
@@ -9,6 +8,14 @@ import { classColoursJS } from "../CooldownPlanner/Functions/ClassColourFunction
 import Grid from "@material-ui/core/Grid";
 import Divider from "@material-ui/core/Divider";
 import classicons from "../CooldownPlanner/Functions/IconFunctions/ClassIcons.js";
+
+import {
+  createMuiTheme,
+  makeStyles,
+  ThemeProvider,
+} from "@material-ui/core/styles";
+
+import { red } from "@material-ui/core/colors";
 
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
@@ -136,6 +143,12 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const deleteTheme = createMuiTheme({
+  palette: {
+    primary: red,
+  },
+});
+
 export default function CharCards(props) {
   const player = props.char;
   const contentType = props.contentType;
@@ -217,20 +230,25 @@ export default function CharCards(props) {
   };
 
   // TODO
-  const handleUpdateData = (
-  ) => {
+  const handleUpdateData = () => {
     let newPlayer = props.char;
-    let weights = 
-    {            
-      intellect: 1, 
+    let weights = {
+      intellect: 1,
       haste: haste,
       crit: critical,
       mastery: mastery,
       versatility: versatility,
       leech: leech,
-    }
-    
-    newPlayer.editChar(props.contentType, charName, server, region, selectedRace, weights);
+    };
+
+    newPlayer.editChar(
+      props.contentType,
+      charName,
+      server,
+      region,
+      selectedRace,
+      weights
+    );
 
     setOpen(false);
     //Update data Function Here
@@ -433,7 +451,7 @@ export default function CharCards(props) {
               <Grid item xs={6}>
                 <TextField
                   id="IntellectInput"
-                  label="Intellect"
+                  label={t("Intellect")}
                   value={intellect}
                   onChange={handleIntellect}
                   variant="outlined"
@@ -444,7 +462,7 @@ export default function CharCards(props) {
               <Grid item xs={6}>
                 <TextField
                   id="CriticalInput"
-                  label="Crit"
+                  label={t("Crit")}
                   value={critical}
                   onChange={handleCrit}
                   variant="outlined"
@@ -454,7 +472,7 @@ export default function CharCards(props) {
               <Grid item xs={6}>
                 <TextField
                   id="HasteInput"
-                  label="Haste"
+                  label={t("Haste")}
                   value={haste}
                   onChange={handleHaste}
                   variant="outlined"
@@ -464,7 +482,7 @@ export default function CharCards(props) {
               <Grid item xs={6}>
                 <TextField
                   id="MasteryInput"
-                  label="Mastery"
+                  label={t("Mastery")}
                   value={mastery}
                   onChange={handleMastery}
                   variant="outlined"
@@ -474,7 +492,7 @@ export default function CharCards(props) {
               <Grid item xs={6}>
                 <TextField
                   id="VersatilityInput"
-                  label="Vers"
+                  label={t("Versatility")}
                   value={versatility}
                   onChange={handleVers}
                   variant="outlined"
@@ -484,7 +502,7 @@ export default function CharCards(props) {
               <Grid item xs={6}>
                 <TextField
                   id="LeechInput"
-                  label="Leech"
+                  label={t("Leech")}
                   value={leech}
                   onChange={handleLeech}
                   variant="outlined"
@@ -498,12 +516,27 @@ export default function CharCards(props) {
           </TabPanel>
         </div>
         <DialogActions>
-          <Button onClick={handleClose} color="primary">
-            Cancel
-          </Button>
-          <Button onClick={() => handleUpdateData()} color="primary">
-            Save
-          </Button>
+          <div
+            style={{
+              display: "inline-flex",
+              width: "100%",
+              justifyContent: "space-between",
+            }}
+          >
+            <ThemeProvider theme={deleteTheme}>
+              <Button onClick={handleClose} color="primary">
+                {t("Delete")}
+              </Button>
+            </ThemeProvider>
+            <div>
+              <Button onClick={handleClose} color="primary">
+                {t("Cancel")}
+              </Button>
+              <Button onClick={() => handleUpdateData()} color="primary">
+                {t("Save")}
+              </Button>
+            </div>
+          </div>
         </DialogActions>
       </Dialog>
     </Grid>
