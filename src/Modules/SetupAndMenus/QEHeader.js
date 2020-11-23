@@ -29,6 +29,13 @@ export default function QEHeader(props) {
   // TODO: Implement profile.
   let playerName = props.playerTag || t("HeaderLabels.Login");
   let linkTarget = props.playerTag === "" ? "/login" : "/profile";
+  let patronStatus = props.patronStatus !== "" ? props.patronStatus + " Edition" : "Standard Edition";
+  let color = {
+    "Rolls Royce Edition": "#04E07C",
+    "Diamond Edition": "#FFB6C1",
+    "Gold Edition": "#DAA520",
+    "Standard Edition": "#FFFFFF",
+  }
 
   return (
     <div style={{ backgroundColor: "#353535" }}>
@@ -54,11 +61,11 @@ export default function QEHeader(props) {
                 </Grid>
                 <Grid item xs={12} sm={12} md={12} lg={6} xl={6}>
                   <Typography
-                    style={{ color: "#04E07C" }}
+                    style={{ color: color[patronStatus] }}
                     variant="body1"
                     align="left"
                   >
-                    Rolls Royce Edition
+                    {patronStatus}
                   </Typography>
                 </Grid>
               </Grid>

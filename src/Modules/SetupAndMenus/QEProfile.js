@@ -29,6 +29,7 @@ export default function QEProfile(props) {
   const [email, setEmail] = React.useState("");
   const emailHandler = (event) => {
     setEmail(event);
+    props.setEmail(event);
   };
 
   return (
