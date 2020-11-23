@@ -55,7 +55,8 @@ export default function QEMainMenu(props) {
   const { t, i18n } = useTranslation();
   // const currentLanguage = i18n.language;
   const classes = useStyles();
-  const characterCount = props.allChars.length;
+  const characterCount = props.allChars.getAllChar().length;
+  console.log(characterCount);
 
   return (
     <div style={{ backgroundColor: "#313131" }}>
@@ -89,7 +90,7 @@ export default function QEMainMenu(props) {
               <Button
                 key={index}
                 variant="contained"
-                disabled={!(mainMenuOptions[key][1] && characterCount > 0)}
+                disabled={!mainMenuOptions[key][1] || characterCount == 0}
                 color="secondary"
                 style={{
                   width: "100%",
@@ -97,9 +98,7 @@ export default function QEMainMenu(props) {
                   whiteSpace: "nowrap",
                   justifyContent: "left",
                   paddingLeft: "32px",
-                  color: !(mainMenuOptions[key][1] && characterCount > 0)
-                    ? "#9c9c9c"
-                    : "#F2BF59",
+                  color: (mainMenuOptions[key][1] && characterCount > 0) ? "#F2BF59" : "#9c9c9c",
                 }}
                 component={Link}
                 to={mainMenuOptions[key][0]}
