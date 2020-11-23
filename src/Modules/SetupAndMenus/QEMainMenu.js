@@ -84,7 +84,7 @@ export default function QEMainMenu(props) {
               >
                 An expansion launch is a chaotic time and the game continues to
                 see frequent, decision-altering changes. Continue to use your
-                class discords as your primary resource for information. ~Voulk
+                class discords as your primary resource for information. ~Voulk v1.01
               </Typography>
             </Paper>
           </Grid>
