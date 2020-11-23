@@ -1,19 +1,18 @@
 import React from "react";
-import Button from "@material-ui/core/Button";
-import TextField from "@material-ui/core/TextField";
-import Dialog from "@material-ui/core/Dialog";
-import DialogActions from "@material-ui/core/DialogActions";
-import DialogContent from "@material-ui/core/DialogContent";
-import DialogTitle from "@material-ui/core/DialogTitle";
+import { useTranslation } from "react-i18next";
+import {
+  Button,
+  TextField,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogTitle,
+} from "@material-ui/core";
 import { runSimC } from "../Engine/SimCImport/SimCImportEngine";
 import { createEmitAndSemanticDiagnosticsBuilderProgram } from "typescript";
 
-// const useStyles = makeStyles((theme) => ({
-//   root: { height: 500 },
-// }));
-
 export default function SimCraftInput(props) {
-  // const classes = useStyles;
+  const { t, i18n } = useTranslation();
   const [open, setOpen] = React.useState(false);
   const [simC, setSimC] = React.useState("");
   const [errorMessage, setErrorMessage] = React.useState("");
@@ -36,13 +35,12 @@ export default function SimCraftInput(props) {
       handleClose,
       setSimC
     );
-    //setOpen(false);
   };
 
   return (
     <div>
       <Button style={{ color: "white" }} onClick={handleClickOpen}>
-        SimC
+        {t("SimCInput.SimCHeaderButtonLabel")}
       </Button>
       <Dialog
         open={open}
@@ -51,15 +49,16 @@ export default function SimCraftInput(props) {
         maxWidth="md"
         fullWidth={true}
       >
-        <DialogTitle id="form-dialog-title">Paste Your SimC String</DialogTitle>
+        <DialogTitle id="form-dialog-title">
+          {t("SimCInput.SimCDialogueTitle")}
+        </DialogTitle>
         <DialogContent style={{ height: 400 }}>
           <TextField
-            // className={classes.root}
             autoFocus
             multiline={true}
             margin="dense"
             id="simcentry"
-            label="SimC String"
+            label={t("SimCInput.SimCStringLabel")}
             fullWidth
             style={{ height: "100%" }}
             variant="outlined"
@@ -69,10 +68,10 @@ export default function SimCraftInput(props) {
         <DialogActions>
           <p id="SimCError">{errorMessage}</p>
           <Button onClick={handleClose} color="primary">
-            Cancel
+            {t("Cancel")}
           </Button>
           <Button onClick={handleSubmit} color="primary">
-            Submit
+            {t("Submit")}
           </Button>
         </DialogActions>
       </Dialog>

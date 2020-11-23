@@ -1,10 +1,19 @@
 import React from "react";
-import Button from "@material-ui/core/Button";
-import Dialog from "@material-ui/core/Dialog";
-import DialogActions from "@material-ui/core/DialogActions";
-import DialogContent from "@material-ui/core/DialogContent";
-import DialogTitle from "@material-ui/core/DialogTitle";
+import axios from "axios";
 import { useTranslation } from "react-i18next";
+import {
+  Button,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogTitle,
+  Grid,
+  InputLabel,
+  FormControl,
+  Select,
+  MenuItem,
+  Typography,
+} from "@material-ui/core";
 import LogLinkInput from "../CooldownPlanner/ModuleComponents/LogFightSelection/LogLinkInput";
 import {
   warcraftLogReportID,
@@ -13,14 +22,7 @@ import {
   importDamageLogData,
 } from "../CooldownPlanner/Functions/Functions";
 import FightSelectorButton from "../CooldownPlanner/ModuleComponents/LogFightSelection/FightSelectorButton";
-import Grid from "@material-ui/core/Grid";
-import InputLabel from "@material-ui/core/InputLabel";
-import FormControl from "@material-ui/core/FormControl";
-import Select from "@material-ui/core/Select";
-import MenuItem from "@material-ui/core/MenuItem";
-import Typography from "@material-ui/core/Typography";
 import bossIcons from "../CooldownPlanner/Functions/IconFunctions/BossIcons";
-import axios from "axios";
 import {
   convertLogSpellOutput,
   convertLogStatOutput,
@@ -67,6 +69,7 @@ export default function QELogImport(props) {
   const [castData, setCastData] = React.useState([]);
   const [currentPlayerID, setCurrentPlayerID] = React.useState("");
   const characterCount = props.allChars.getAllChar().length || 0;
+  const [selectValue, setSelectValue] = React.useState("");
 
   // This is passed down to the Fight Selection button and returns the data here.
   const handler = (info) => {
@@ -274,7 +277,14 @@ export default function QELogImport(props) {
 
   // Handler to set PLayer ID when player selected from dropdown
   const playerSelectedHandler = (e) => {
-    setCurrentPlayerID(e);
+    setSelectValue(e);
+    setCurrentPlayerID(
+      healerData
+        .filter((obj) => {
+          return obj.name === e;
+        })
+        .map((obj) => obj.id)
+    );
   };
 
   // Opens Dialogue on Button CLick
@@ -367,14 +377,14 @@ export default function QELogImport(props) {
               <FormControl variant="outlined" size="small" fullWidth>
                 <InputLabel id="HealerSelector">{t("Name")}</InputLabel>
                 <Select
-                  value={props.value}
+                  value={selectValue}
                   label={t("Name")}
                   labelId="HealerSelector"
                   onChange={(e) => playerSelectedHandler(e.target.value)}
                   MenuProps={menuStyle}
                 >
                   {healerData.map((key, i) => (
-                    <MenuItem key={i} value={key.id}>
+                    <MenuItem key={i} value={key.name}>
                       {key.name}
                     </MenuItem>
                   ))}

@@ -302,6 +302,11 @@
     "QeHeader": {
       "InsertLogLabel": "Insert Log"
     },
+    "SimCInput" :{
+      "SimCStringLabel": "SimC String",
+      "SimCHeaderButtonLabel": "SimC",
+      "SimCDialogueTitle": "Paste Your SimC String"
+    },
     "author": {
       "title": "Author Name",
       "value": "Tariqul"

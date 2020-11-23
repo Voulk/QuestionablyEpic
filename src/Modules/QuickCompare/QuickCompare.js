@@ -1,19 +1,24 @@
 import React, { useState, useEffect } from "react";
-// import ReactDOM from "react-dom";
 import { makeStyles } from "@material-ui/core/styles";
 import "../SetupAndMenus/QEMainMenu.css";
 import ReactGA from "react-ga";
-// import Player from "../Player/Player";
 import Item from "../Player/Item";
-// import QEHeader from "../SetupAndMenus/QEHeader";
 import "./QuickCompare.css";
 import { useTranslation } from "react-i18next";
-import InputLabel from "@material-ui/core/InputLabel";
-import MenuItem from "@material-ui/core/MenuItem";
-// import FormHelperText from "@material-ui/core/FormHelperText";
-import FormControl from "@material-ui/core/FormControl";
-import Select from "@material-ui/core/Select";
-// import NativeSelect from "@material-ui/core/NativeSelect";
+import {
+  InputLabel,
+  MenuItem,
+  FormControl,
+  Select,
+  Button,
+  Grid,
+  Paper,
+  Typography,
+  Divider,
+  Snackbar,
+  TextField,
+  Popover,
+} from "@material-ui/core";
 import { itemDB } from "../Player/ItemDB";
 import {
   getValidArmorTypes,
@@ -25,17 +30,9 @@ import {
   buildWepCombos,
   getItemSlot,
 } from "../Engine/ItemUtilities";
-import Button from "@material-ui/core/Button";
 import ItemCard from "./ItemCard";
-import Grid from "@material-ui/core/Grid";
-import Paper from "@material-ui/core/Paper";
-import Typography from "@material-ui/core/Typography";
-import Divider from "@material-ui/core/Divider";
-import Snackbar from "@material-ui/core/Snackbar";
 import MuiAlert from "@material-ui/lab/Alert";
 import Autocomplete from "@material-ui/lab/Autocomplete";
-import TextField from "@material-ui/core/TextField";
-import Popover from "@material-ui/core/Popover";
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -140,10 +137,28 @@ export default function QuickCompare(props) {
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
   const classes = useStyles();
+  // Snackbar State
   const [open, setOpen] = React.useState(false);
+  // Popover Props
   const [anchorEl, setAnchorEl] = React.useState(null);
+  // Define State.
+  const [itemLevel, setItemLevel] = useState("");
+  const [itemID, setItemID] = useState("");
+  const [itemName, setItemName] = useState("");
+  const [activeSlot, setSlot] = useState("");
+  const [itemSocket, setItemSocket] = useState("");
+  const [itemTertiary, setItemTertiary] = useState("");
+  const [itemList, setItemList] = useState(props.pl.getActiveItems(activeSlot));
+
   const openPop = Boolean(anchorEl);
-  const idPop = open ? "simple-popover" : undefined;
+  const idPop = openPop ? "simple-popover" : undefined;
+  const slots = getSlots();
+  const itemDropdown = []; // Filled later based on item slot and armor type.
+
+  // Right now the available item levels are static, but given the removal of titanforging each item could hypothetically share
+  // a list of available ilvls and the player could select from a smaller list instead.
+  // This is left as a TODO until key functionality is completed but is a moderate priority.
+  const itemTertiaries = ["Avoidance", "Leech", "None"];
 
   const handleClick = () => {
     setOpen(true);
@@ -160,24 +175,6 @@ export default function QuickCompare(props) {
 
     setOpen(false);
   };
-
-  const slots = getSlots();
-  const itemDropdown = []; // Filled later based on item slot and armor type.
-
-  // Right now the available item levels are static, but given the removal of titanforging each item could hypothetically share
-  // a list of available ilvls and the player could select from a smaller list instead.
-  // This is left as a TODO until key functionality is completed but is a moderate priority.
-  const itemLevels = [226, 213, 200, 187, 174, 161, 148, 131];
-  const itemTertiaries = ["Avoidance", "Leech", "None"];
-
-  // Define State.
-  const [itemLevel, setItemLevel] = useState("");
-  const [itemID, setItemID] = useState("");
-  const [itemName, setItemName] = useState("");
-  const [activeSlot, setSlot] = useState("");
-  const [itemSocket, setItemSocket] = useState("");
-  const [itemTertiary, setItemTertiary] = useState("");
-  const [itemList, setItemList] = useState(props.pl.getActiveItems(activeSlot));
 
   // Fill Items fills the ItemNames box with items appropriate to the given slot and spec.
   const fillItems = (slotName, spec) => {
@@ -385,11 +382,6 @@ export default function QuickCompare(props) {
                   </Select>
                 </FormControl>
               </Grid>
-              {/* <Divider
-                orientation="vertical"
-                flexItem
-                style={{ marginLeft: 4, marginRight: 4 }}
-              /> */}
 
               <Grid item>
                 <FormControl
