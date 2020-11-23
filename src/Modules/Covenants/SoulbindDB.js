@@ -298,6 +298,7 @@ export const soulbindDB = [
     renown: 9,
     active: false,
     stat_bonus: {},
+    type: "Finesse Conduit",
   },
   {
     id: 329784,
@@ -386,6 +387,7 @@ export const soulbindDB = [
     renown: 28,
     active: false,
     stat_bonus: {},
+    type: "Finesse Conduit",
   },
   {
     id: 329779,
@@ -521,6 +523,7 @@ export const soulbindDB = [
     renown: 0,
     active: false,
     stat_bonus: {},
+    type: "Finesse Conduit",
   },
   {
     id: 331726,
@@ -609,6 +612,7 @@ export const soulbindDB = [
     renown: 29,
     active: false,
     stat_bonus: {},
+    type: "Finesse Conduit",
   },
   {
     id: 331611,
@@ -713,6 +717,7 @@ export const soulbindDB = [
     renown: 0,
     active: false,
     stat_bonus: {},
+    type: "Finesse Conduit",
   },
   {
     id: 323091,
@@ -846,6 +851,7 @@ export const soulbindDB = [
     renown: 25,
     active: false,
     stat_bonus: {},
+    type: "Finesse Conduit",
   },
   {
     id: 323095,
@@ -950,6 +956,7 @@ export const soulbindDB = [
     renown: 7,
     active: false,
     stat_bonus: {},
+    type: "Finesse Conduit",
   },
   {
     id: 324440,
@@ -1038,6 +1045,7 @@ export const soulbindDB = [
     renown: 28,
     active: false,
     stat_bonus: {},
+    type: "Finesse Conduit",
   },
   {
     id: 323918,
@@ -1172,6 +1180,7 @@ export const soulbindDB = [
     renown: 0,
     active: false,
     stat_bonus: {},
+    type: "Finesse Conduit",
   },
   {
     id: 326512,
@@ -1260,6 +1269,7 @@ export const soulbindDB = [
     renown: 29,
     active: false,
     stat_bonus: {},
+    type: "Finesse Conduit",
   },
   {
     id: 326511,
@@ -1397,6 +1407,7 @@ export const soulbindDB = [
     renown: 7,
     active: false,
     stat_bonus: {},
+    type: "Finesse Conduit",
   },
   {
     id: 320668,
@@ -1485,6 +1496,7 @@ export const soulbindDB = [
     renown: 25,
     active: false,
     stat_bonus: {},
+    type: "Finesse Conduit",
   },
   {
     id: 320659,
@@ -1561,8 +1573,6 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Endurance Conduit",
     slotted_id: -1,
-    type: "Endurance Conduit",
-    slotted_id: -1,
   },
   {
     id: 7189321,
@@ -1576,6 +1586,7 @@ export const soulbindDB = [
     renown: 0,
     active: false,
     stat_bonus: {},
+    type: "Finesse Conduit",
   },
   {
     id: 89123123,
@@ -1589,8 +1600,6 @@ export const soulbindDB = [
     renown: 0,
     active: false,
     stat_bonus: {},
-    type: "Potency Conduit",
-    slotted_id: -1,
     type: "Potency Conduit",
     slotted_id: -1,
   },
@@ -1681,6 +1690,7 @@ export const soulbindDB = [
     renown: 13,
     active: false,
     stat_bonus: {},
+    type: "Finesse Conduit",
   },
   {
     id: 732891,
@@ -1832,6 +1842,7 @@ export const soulbindDB = [
     renown: 0,
     active: false,
     stat_bonus: {},
+    type: "Finesse Conduit",
   },
   {
     id: 325072,
@@ -1920,6 +1931,7 @@ export const soulbindDB = [
     renown: 28,
     active: false,
     stat_bonus: {},
+    type: "Finesse Conduit",
   },
   {
     id: 325068,
@@ -1997,6 +2009,8 @@ export const soulbindDB = [
     renown: 0,
     active: false,
     stat_bonus: {},
+    type: "Potency Conduit",
+    slotted_id: -1,
   },
   {
     id: 8000839215,
@@ -2010,6 +2024,8 @@ export const soulbindDB = [
     renown: 0,
     active: false,
     stat_bonus: {},
+    type: "Endurance Conduit",
+    slotted_id: -1,
   },
   {
     id: 331576,
@@ -2053,6 +2069,7 @@ export const soulbindDB = [
     renown: 7,
     active: false,
     stat_bonus: {},
+    type: "Finesse Conduit",
   },
   {
     id: 331579,
@@ -2081,6 +2098,8 @@ export const soulbindDB = [
     renown: 21,
     active: false,
     stat_bonus: {},
+    type: "Endurance Conduit",
+    slotted_id: -1,
   },
   {
     id: 8000839218,
@@ -2094,6 +2113,8 @@ export const soulbindDB = [
     renown: 25,
     active: false,
     stat_bonus: {},
+    type: "Potency Conduit",
+    slotted_id: -1,
   },
   {
     id: 8000839219,
@@ -2107,6 +2128,8 @@ export const soulbindDB = [
     renown: 25,
     active: false,
     stat_bonus: {},
+    type: "Endurance Conduit",
+    slotted_id: -1,
   },
   {
     id: 8000839221,
@@ -2120,6 +2143,7 @@ export const soulbindDB = [
     renown: 25,
     active: false,
     stat_bonus: {},
+    type: "Finesse Conduit",
   },
   {
     id: 331582,
@@ -2195,6 +2219,8 @@ export const soulbindDB = [
     renown: 0,
     active: false,
     stat_bonus: {},
+    type: "Endurance Conduit",
+    slotted_id: -1,
   },
   {
     id: 8000839223,
@@ -2208,6 +2234,7 @@ export const soulbindDB = [
     renown: 0,
     active: false,
     stat_bonus: {},
+    type: "Finesse Conduit",
   },
   {
     id: 336140,
@@ -2251,6 +2278,8 @@ export const soulbindDB = [
     renown: 9,
     active: false,
     stat_bonus: {},
+    type: "Potency Conduit",
+    slotted_id: -1,
   },
   {
     id: 336247,
@@ -2294,6 +2323,8 @@ export const soulbindDB = [
     renown: 18,
     active: false,
     stat_bonus: {},
+    type: "Endurance Conduit",
+    slotted_id: -1,
   },
   {
     id: 8000839226,
@@ -2307,6 +2338,8 @@ export const soulbindDB = [
     renown: 28,
     active: false,
     stat_bonus: {},
+    type: "Potency Conduit",
+    slotted_id: -1,
   },
   {
     id: 8000839227,
@@ -2320,6 +2353,8 @@ export const soulbindDB = [
     renown: 28,
     active: false,
     stat_bonus: {},
+    type: "Endurance Conduit",
+    slotted_id: -1,
   },
   {
     id: 8000839228,
@@ -2333,6 +2368,7 @@ export const soulbindDB = [
     renown: 28,
     active: false,
     stat_bonus: {},
+    type: "Finesse Conduit",
   },
   {
     id: 336245,
@@ -2408,6 +2444,8 @@ export const soulbindDB = [
     renown: 0,
     active: false,
     stat_bonus: {},
+    type: "Endurance Conduit",
+    slotted_id: -1,
   },
   {
     id: 9000839212,
@@ -2421,6 +2459,7 @@ export const soulbindDB = [
     renown: 0,
     active: false,
     stat_bonus: {},
+    type: "Finesse Conduit",
   },
   {
     id: 319982,
@@ -2464,6 +2503,8 @@ export const soulbindDB = [
     renown: 0,
     active: false,
     stat_bonus: {},
+    type: "Potency Conduit",
+    slotted_id: -1,
   },
   {
     id: 332755,
@@ -2507,6 +2548,8 @@ export const soulbindDB = [
     renown: 0,
     active: false,
     stat_bonus: {},
+    type: "Endurance Conduit",
+    slotted_id: -1,
   },
   {
     id: 9000839215,
@@ -2520,6 +2563,8 @@ export const soulbindDB = [
     renown: 29,
     active: false,
     stat_bonus: {},
+    type: "Potency Conduit",
+    slotted_id: -1,
   },
   {
     id: 9000839216,
@@ -2533,6 +2578,8 @@ export const soulbindDB = [
     renown: 29,
     active: false,
     stat_bonus: {},
+    type: "Endurance Conduit",
+    slotted_id: -1,
   },
   {
     id: 9000839217,
@@ -2546,6 +2593,7 @@ export const soulbindDB = [
     renown: 29,
     active: false,
     stat_bonus: {},
+    type: "Finesse Conduit",
   },
   {
     id: 332754,
@@ -3704,13 +3752,13 @@ export const soulbindConnectors = [
   {
     soulbind: "Dreamweaver",
     src: "DiagonalShort.png",
-    position: [198, 122],
+    position: [206, 121],
     angle: 305,
   },
   {
     soulbind: "Dreamweaver",
     src: "DiagonalShort.png",
-    position: [400, 122],
+    position: [395, 118],
     angle: 55,
   },
   {
@@ -3724,5 +3772,71 @@ export const soulbindConnectors = [
     src: "DiagonalShort.png",
     position: [304, 198],
     angle: 315,
+  },
+  {
+    soulbind: "Dreamweaver",
+    src: "Vertical.PNG",
+    position: [298, 160],
+    angle: 0,
+  },
+  {
+    soulbind: "Dreamweaver",
+    src: "Vertical.PNG",
+    position: [208, 255],
+    angle: 0,
+  },
+  {
+    soulbind: "Dreamweaver",
+    src: "Vertical.PNG",
+    position: [298, 255],
+    angle: 0,
+  },
+  {
+    soulbind: "Dreamweaver",
+    src: "Vertical.PNG",
+    position: [388, 255],
+    angle: 0,
+  },
+  {
+    soulbind: "Dreamweaver",
+    src: "Vertical.PNG",
+    position: [298, 350],
+    angle: 0,
+  },
+  {
+    soulbind: "Dreamweaver",
+    src: "DiagonalShort.png",
+    position: [215, 377],
+    angle: 315,
+  },
+  {
+    soulbind: "Dreamweaver",
+    src: "DiagonalShort.png",
+    position: [380, 377],
+    angle: 45,
+  },
+  {
+    soulbind: "Dreamweaver",
+    src: "DiagonalShort.png",
+    position: [298, 460],
+    angle: 55,
+  },
+  {
+    soulbind: "Dreamweaver",
+    src: "DiagonalShort.png",
+    position: [298, 460],
+    angle: 305,
+  },
+  {
+    soulbind: "Dreamweaver",
+    src: "DiagonalShort.png",
+    position: [216, 533],
+    angle: 315,
+  },
+  {
+    soulbind: "Dreamweaver",
+    src: "DiagonalShort.png",
+    position: [380, 533],
+    angle: 45,
   },
 ];
