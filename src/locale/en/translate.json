@@ -11,15 +11,56 @@
     "QuickCompare": {
       "Slot": "Slot",
       "ItemName": "Item Name",
-      "ItemLevel" : "Item Level",
-      "Socket" : "Socket",
-      "Tertiary" : "Tertiary",
-      "AddButton" : "Add"
+      "ItemLevel": "Item Level",
+      "Socket": "Socket",
+      "Tertiary": "Tertiary",
+      "AddButton": "Add"
     },
 
     "HeaderLabels": {
-      "Login" : "Login",
-      "" : ""
+      "Login": "Login",
+      "": ""
+    },
+    "InsertLog": {
+      "PlsSelectFight": "Please Select a Fight",
+      "InsertLogHeader": "Paste Your Warcraft Logs Report Here"
+    },
+
+    "Races": {
+      "Blood Elf": "Blood Elf",
+      "Dark Iron Dwarf": "Dark Iron Dwarf",
+      "Draenei": "Draenei",
+      "Dwarf": "Dwarf",
+      "Gnome": "Gnome",
+      "Goblin": "Goblin",
+      "Highmountain Tauren": "Highmountain Tauren",
+      "Human": "Human",
+      "Kul Tiran": "Kul Tiran",
+      "Lightforged Draenei": "Lightforged Draenei",
+      "Mag'har Orc": "Mag'har Orc",
+      "Mechagnome": "Mechagnome",
+      "Night Elf": "Night Elf",
+      "Nightborne": "Nightborne",
+      "Orc": "Orc",
+      "Pandaren": "Pandaren",
+      "Tauren": "Tauren",
+      "Troll": "Troll",
+      "Undead": "Undead",
+      "Void Elf": "Void Elf",
+      "Vulpera": "Vulpera",
+      "Worgen": "Worgen",
+      "Zandalari Troll": "Zandalari Troll"
+    },
+
+    "MainMenu": {
+      "TopGear": "Top Gear (Coming Soon)",
+      "UpgradeFinder": "Upgrade Finder (Coming Soon)",
+      "QuickCompare": "Gear Quick Compare",
+      "ExploreCovenants": "Explore Covenants",
+      "LegendaryAnalysis": "Legendary Analysis",
+      "TrinketAnalysis": "Trinket Analysis",
+      "GreatVault": "The Great Vault (Coming Soon)",
+      "CooldownPlanner":"Cooldown Planner (Coming Soon)"
     },
 
     "_Comments1": "Common Words",
@@ -29,8 +70,22 @@
     "Cooldown": "Cooldown",
     "Raid": "Raid",
     "Dungeon": "Dungeon",
+    "Cancel": "Cancel",
+    "Submit": "Submit",
+    "Save": "Save",
+    "Delete": "Delete",
+    "Intellect": "Intellect",
+    "Crit": "Crit",
+    "Haste": "Haste",
+    "Mastery": "Mastery",
+    "Versatility": "Versatility",
+    "Leech": "Leech",
+    "Region": "Region",
+    "Race": "Race",
+    "Select Class": "Select Class",
+    "Select Race": "Select Race",
 
-    "HDAccordianTitles": {
+    "CooldownPlannerHealerCards": {
       "_Comments1": "Translations for the Accordian for Healer Info",
       "StatsHeading": "Stats",
       "Item Level": "ilvl",
@@ -39,30 +94,218 @@
       "Mastery": "Mastery",
       "Versatility": "Versatility",
       "TalentHeader": "Talents",
-      "CovenantHeader": "Covenant Abilities",
-      "LegendaryHeader": "Legendaries"
+      "SoulbindAbilities": "Soulbind Abilities",
+      "SoulbindConduits": "Soulbind Conduits"
     },
-    "HDUserInputs": {
+    "CooldownPlannerUserInputs": {
       "_Comments1": "Translations for the User Input Components",
       "Loglink": "Paste WarcraftLog Link Here",
       "fightButtonLabel": "Select Fight"
     },
-    "HDTableLabels": {
+    "CooldownPlannerTableLabels": {
       "_Comments1": "Translations for HD Tables",
       "RaidSelectorLabel": "Select Raid",
       "BossSelectorLabel": "Select Boss",
-      "CastTimeLabel": "Cast Time",
+      "CastTimeLabel": "Cast",
       "BossAbilityLabel": "Boss Ability",
       "NotesLabel": "Notes",
-      "OffCooldownLabel": "Off Cooldown",
+      "OffCooldownLabel": "Off-CD",
       "HealTeamHeader": "Heal Team"
     },
-    "HDChartLabels": {
-        "_Comments1": "Translations for HD Charts",
-        "UnmitigatedDamageLabel": "Unmitigated Damage"
+    "CooldownPlannerChartLabels": {
+      "_Comments1": "Translations for HD Charts",
+      "UnmitigatedDamageLabel": "Unmitigated Damage"
+    },
+    "CooldownPlannerClasses": {
+      "undefined": "",
+      "HolyPaladin": "Holy Paladin",
+      "DisciplinePriest": "Discispline Priest",
+      "RestorationDruid": "Restoration Druid",
+      "HavocDemonHunter": "Havoc Demon Hunter",
+      "Warrior": "Warrior",
+      "HolyPriest": "Holy Priest",
+      "MistweaverMonk": "Mistweaver Monk",
+      "RestorationShaman": "Restoration Shaman"
+    },
+    "CooldownPlannerClassAbilities": {
+      "NoCD": "No Cooldown",
+      "undefined": "",
+      "HolyPaladinComment": "Holy Paladin Class Cooldowns",
+      "31821": "Aura Mastery",
+      "31884": "Avenging Wrath",
+      "RestorationDruidComment": "Restoration Druid Class Cooldowns",
+      "740": "Tranquility",
+      "33891": "Incarnation: Tree of Life",
+      "HolyPriestComment": "Holy Priest Class Cooldowns",
+      "265202": "Holy Word: Salvation",
+      "64843": "Divine Hymn",
+      "DisciplinePriestComment": "Discipline Priest Class Cooldowns",
+      "62618": "Power Word: Barrier",
+      "246287": "Evangelism",
+      "RestorationShamanComment": "Restoration Shaman Class Cooldowns",
+      "108280": "Healing Tide Totem",
+      "98008": "Spirit Link Totem",
+      "MistweaverMonkComment": "Mistweaver Monk Class Cooldowns",
+      "115310": "Revival",
+      "HavocDemonHunterComment": "Havoc Demon Hunter Cooldowns",
+      "196718": "Darkness",
+      "WarriorComment": "Warrior Cooldowns",
+      "97462": "Rallying Cry"
+    },
+    "BossAbilities": {
+      "undefined": "No Ability Selected",
+      "NzothComment": "Nzoth Abilities",
+      "309980": "Paranoia",
+      "317066": "Harvest Thoughts",
+      "318449": "Eternal Torment",
+      "309046": "Mindgate",
+      "317102": "Evoke Anguish",
+      "319350": "Cleansing Protocol",
+      "ShriekingComment": "Shriekwing Abilities",
+      "344112": "Reverberating Scream",
+      "344114": "Reverberating Scream",
+      "343021": "Deadly Descent",
+      "343022": "Echoing Sonar",
+      "330712": "Bloodcurdling Shriek",
+      "336005": "Bloodcurdling Shriek",
+      "343023": "Sonar Shriek",
+      "343005": "Blind Swipe",
+      "340324": "Sanguine Ichor",
+      "342923": "Descent",
+      "343384": "Bloodlight",
+      "328887": "Exsanguinating Bite",
+      "342866": "Echoing Screech",
+      "328897": "Exsanguinated",
+      "330711": "Earsplitting Shriek",
+      "HuntsmanAltimorComment": "Huntsman Altimor Abilities",
+      "335114": "Sinseeker",
+      "338615": "Vicious Bolt",
+      "338609": "Pierce Soul",
+      "338593": "Shatter Shot",
+      "334404": "Spreadshot",
+      "334939": "Vicious Lunge",
+      "334960": "Vicious Wound",
+      "334971": "Jagged Claws",
+      "334708": "Deathly Roar",
+      "334797": "Rip Soul",
+      "339639": "Unstable Soul",
+      "334860": "Crushing Stone",
+      "334852": "Petrifying Howl",
+      "334893": "Stone Shards",
+      "335016": "Shoot",
+      "SunKingsSalvationComment": "Sun King's Salvation Abilities",
+      "328579": "Smoldering Remnants",
+      "328659": "Smoldering Plumage",
+      "326455": "Fiery Strike",
+      "326456": "Burning Remnants",
+      "325877": "Ember Blast",
+      "326430": "Lingering Embers",
+      "329518": "Blazing Surge",
+      "325440": "Vanquishing Strike",
+      "325442": "Vanquished",
+      "325506": "Concussive Smash",
+      "341473": "Crimson Flurry",
+      "333002": "Vulgar Brand",
+      "325590": "Scornful Blast",
+      "335540": "Shattering Ruby",
+      "336398": "Fragmentation",
+      "328890": "Greater Castigation",
+      "339232": "Soul Infusion",
+      "ArtificerXymoxComment": "Artificer Xymox Comment",
+      "328437": "Dimensional Tear",
+      "325361": "Glyph of Destruction",
+      "326271": "Stasis Trap",
+      "329458": "Rift Blast",
+      "325399": "Hyperlight Spark",
+      "329770": "Root of Extinction",
+      "340860": "Withering Touch",
+      "328880": "Edge of Annihilation",
+      "340870": "Aura of Dread",
+      "340842": "Soul Singe",
+      "HungeringDestroyerComment": "Hungering Destroyer Abilities",
+      "329298": "Gluttonous Miasma",
+      "334522": "Consume",
+      "329742": "Expunge",
+      "329835": "Obliterating Rift",
+      "334064": "Volatile Ejection",
+      "329455": "Desolate",
+      "332294": "Hungering Strikes",
+      "329774": "Overwhelm",
+      "LadyInervaDarkveinComment": "Lady Inerva Darkvein Abilities",
+      "325184": "Loose Anima",
+      "325225": "Container Breach",
+      "341621": "Expose Desires",
+      "325382": "Warped Desires",
+      "335322": "Hidden Desire",
+      "341623": "Expose Cognition",
+      "325908": "Shared Cognition",
+      "341625": "Expose Heart",
+      "325384": "Change of Heart",
+      "325769": "Bottled Anima",
+      "329618": "Unleashed Volatility",
+      "342281": "Lingering Anima",
+      "324983": "Shared Suffering",
+      "331527": "Indemnification",
+      "342288": "Sins and Suffering",
+      "326538": "Anima Web",
+      "342290": "Greater Sins and Suffering",
+      "341590": "Unleashed Shadow",
+      "342320": "Lightly Concentrated Anima",
+      "342321": "Concentrated Anima",
+      "342322": "Highly Concentrated Anima",
+      "331573": "Unconscionable Guilt",
+      "331550": "Condemn",
+      "334017": "Condemn",
+      "325596": "Fragments of Shadow",
+      "CouncilofBloodComment": "Council of Blood Abilities",
+      "334909": "Oppressive Atmosphere",
+      "328334": "Tactical Advance",
+      "334948": "Unstoppable Charge",
+      "337110": "Bolt of Power",
+      "327475": "Anima Fountain",
+      "331708": "Scarlet Letter",
+      "330968": "Throw Food",
+      "327503": "Evasive Lunge",
+      "327619": "Waltz of Blood",
+      "342852": "Waltz of Blood",
+      "331634": "Dark Recital",
+      "SludgefistComment": "Sludgefist Abilities",
+      "331212": "Heedless Charge",
+      "332969": "Destructive Impact",
+      "332443": "Crumbling Foundation",
+      "332197": "Collapsing Foundation",
+      "341102": "Fractured Boulder",
+      "341482": "Fractured Impact",
+      "335300": "Chain Link",
+      "335295": "Shattering Chain",
+      "332318": "Destructive Stomp",
+      "340803": "Seismic Shift",
+      "332572": "Falling Rubble",
+      "335361": "Stonequake",
+      "332687": "Colossal Roar",
+      "335354": "Chain Slam",
+      "339189": "Chain Bleed",
+      "StoneLegionGeneralsComment": "Stone Legion Generals Ability",
+      "333913": "Wicked Laceration",
+      "334771": "Heart Hemorrhage",
+      "339728": "Pulverizing Meteor",
+      "333716": "Wicked Blast",
+      "334765": "Heart Rend",
+      "343063": "Stone Spike",
+      "342733": "Ravenous Feast",
+      "342253": "Wicked Slaughter",
+      "334929": "Serrated Swipe",
+      "339693": "Crystalline Burst",
+      "339690": "Crystalize",
+      "342740": "Ravenous Swipe"
     },
     "QeHeader": {
-        "InsertLogLabel": "Insert Log"
+      "InsertLogLabel": "Insert Log"
+    },
+    "SimCInput" :{
+      "SimCStringLabel": "SimC String",
+      "SimCHeaderButtonLabel": "SimC",
+      "SimCDialogueTitle": "Paste Your SimC String"
     },
     "author": {
       "title": "Author Name",
@@ -73,28 +316,36 @@
       "value": "Whenever I smell strong tobacco smos away from the smoker and fills the room."
     },
     "slotNames": {
-      "head" : "Helm",
-      "shoulder" : "Shoulders",
-      "back" : "Cape",
-      "chest" : "Chest",
-      "wrists" : "Bracers",
-      "hands" : "Gloves",
-      "waist" : "Belt"
+      "head": "Helm",
+      "neck": "Neck",
+      "shoulder": "Shoulders",
+      "back": "Cape",
+      "chest": "Chest",
+      "wrists": "Bracers",
+      "hands": "Gloves",
+      "waist": "Belt",
+      "feet": "Boots",
+      "trinket": "Trinkets",
+      "mainHands": "Weapons",
+      "offhands": "Off-Hands",
+      "finger": "Ring",
+      "weapons": "Weapons",
+      "weaponCombos": "Weapon Combos"
     },
 
     "Vision of Unending Growth": {
       "name": "Vision of Unending Growth",
-      "desc": "Rejuvenation has a 2% chance to create a new Rejuvenation on a nearby target on tick.",
-      "droploc": "Currently Unknown"
+      "desc": "Rejuvenation has a 2.5% chance to create a new Rejuvenation on a nearby target on tick.",
+      "droploc": "Torghast"
     },
     "The Dark Titans Lesson": {
       "name": "The Dark Titans Lesson",
-      "desc": "You may apply Lifebloom to two targets at once, and Lifeblooms 'bloom' healing is increased by 75%.",
+      "desc": "You may apply Lifebloom to two targets at once, but your Lifebloom healing is reduced by 10%.",
       "droploc": "Halls of Atonement (Dungeon)"
     },
     "Verdant Infusion": {
       "name": "Verdant Infusion",
-      "desc": "Swiftmend no longer consumes a heal over time effect, and extends the duration of HoTs on the target by 10s.",
+      "desc": "Swiftmend no longer consumes a heal over time effect, and extends the duration of HoTs on the target by 8s.",
       "droploc": "Oranomonos (World Boss)"
     },
     "Lycaras Fleeting Glimpse": {
@@ -104,7 +355,7 @@
     },
     "Memory of the Mother Tree": {
       "name": "Memory of the Mother Tree",
-      "desc": "Wild Growth has a 25% chance to cause your next Rejuv or Regrowth to apply to 2 additional allies.",
+      "desc": "Wild Growth has a 40% chance to cause your next Rejuv or Regrowth to apply to 3 additional allies.",
       "droploc": "Inerva Darkvein (Raid)"
     },
     "Oath of the Elder Druid": {
@@ -118,13 +369,13 @@
       "droploc": "Stone Legion Generals (Raid)"
     },
     "From Dusk till Dawn": {
-      "name": "From Dusk till Dawn",
-      "desc": "When you reach 5 Holy Power, gain 6% damage and healing for 10 seconds. When you reach 0 Holy Power, gain 6% DR for 10 seconds.",
+      "name": "Of Duck and Dawn",
+      "desc": "When you reach 5 Holy Power, gain 6% damage and healing for 8 seconds. When you reach 0 Holy Power, gain 3% DR for 10 seconds.",
       "droploc": "Stone Legion Generals (Raid)"
     },
     "Vanguards Momentum": {
       "name": "Vanguard's Momentum",
-      "desc": "Hammer of Wrath has two extra charges.",
+      "desc": "Hammer of Wrath has an extra charge and increases Holy Damage done by 3% for 8s. Stacks 3 times.",
       "droploc": "Currently Unknown"
     },
     "The Magistrates Judgment": {
@@ -144,13 +395,83 @@
     },
     "Shadowbreaker, Dawn of the Sun": {
       "name": "Shadowbreaker, Dawn of the Sun",
-      "desc": "Light of Dawns range is increased to 40 yards, and all allies healed receive +20% healing from you for 6 seconds.",
+      "desc": "Light of Dawns range is increased to 40 yards, and all allies healed receive full effect from your Mastery for 6s.",
       "droploc": "Sun Kings Salvation (Raid)"
     },
     "Shock Barrier": {
       "name": "Shock Barrier",
-      "desc": "Holy Shock protects the target for 18 seconds, absorbing X damage every 6 seconds. Maximum of 3 targets protected at a time.",
+      "desc": "Holy Shock protects the target for 18 seconds, absorbing 20% of it's healing every 6s. Maximum of 5 targets protected at a time.",
+      "droploc": "Currently Unknown"
+    },
+    "The Mad Paragon": {
+      "name": "The Mad Paragon",
+      "desc": "Hammer of Wrath deals 30% additional damage and extends the duration of Wings by 1s.",
+      "droploc": "Currently Unknown"
+    },
+
+    "Clarity of Mind": {
+      "name": "Clarity of Mind",
+      "desc": "Spirit Shell increases the duration of active atonements by 3s and reduces mana costs by 30%. During Rapture, PW:S costs 20% less mana and applies 6s longer atonements.",
+      "droploc": ""
+    },
+    "Crystalline Reflection": {
+      "name": "Crystalline Reflection",
+      "desc": "Power Word Shield instantly heals the target for 42% SP, and reflects 20% of damage absorbed.",
+      "droploc": ""
+    },
+    "Kiss of Death": {
+      "name": "Kiss of Death",
+      "desc": "Reduces Shadow Word: Death's cooldown by 8s and causes it's damage to trigger atonement when used on targets below 20% health.",
+      "droploc": "Currently Unknown"
+    },
+    "The Penitent One": {
+      "name": "The Penitent One",
+      "desc": "Power Word: Radiance has a 60% chance to cause your next Penance to be free and fire 3 extra bolts.",
+      "droploc": "Currently Unknown"
+    },
+    "Cauterizing Shadows": {
+      "name": "Cauterizing Shadows",
+      "desc": "When Shadow Word: Pain expires on a target, 3 allies within 30 yards of the target are healed.",
+      "droploc": "Currently Unknown"
+    },
+    "Measured Contemplation": {
+      "name": "Measured Contemplation",
+      "desc": "Every 15s that you do not cast Flash Heal / Shadow Mend, the healing of your next Flash Heal / Shadow Mend is increased by 50%. Stacks four times.",
+      "droploc": "Currently Unknown"
+    },
+    "Twins of the Sun Priestess": {
+      "name": "Twins of the Sun Priestess",
+      "desc": "Power Infusion also grants you 100% of its effects when used on an ally.",
+      "droploc": "Currently Unknown"
+    },
+    "Divine Image": {
+      "name": "Divine Image",
+      "desc": "When you use a Holy Word spell, you have a chance to summon a Naaru to your side. For 15s, the Naaru will cast similar spells to you.",
+      "droploc": "Currently Unknown"
+    },
+    "Flash Concentration": {
+      "name": "Flash Concentration",
+      "desc": "Each time you cast Flash Heal, Heal has it's casting time reduced by 0.1s and healing increased by 3%, stacking 5 times.",
+      "droploc": "Currently Unknown"
+    },
+    "Harmonious Apparatus": {
+      "name": "Harmonious Apparatus",
+      "desc": "Circle of healing reduces the cooldown on HW: Sanctify, Prayer of Mending reduces the cooldown on HW: Serenity, and Holy Fire reduces the cooldown on HW: Chastise by 4s.",
+      "droploc": "Currently Unknown"
+    },
+    "X'anshi, Return of Archbishop Benedictus": {
+      "name": "X'anshi, Return of Archbishop Benedictus",
+      "desc": "After Spirit of Redemption expires, you will revive at up to 100% health, based on your effectiveness during Spirit of Redemption. 10 minute cooldown after reviving.",
+      "droploc": "Currently Unknown"
+    },
+    "Vault of Heavens": {
+      "name": "Vault of Heavens",
+      "desc": "Leap of Faith instead causes you to leap to the target, and has two charges.",
       "droploc": "Currently Unknown"
     }
+
+
+
+
   }
 }

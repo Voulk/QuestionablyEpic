@@ -1,0 +1,56 @@
+.menBtn {
+    width: 95%;
+    margin-bottom: 27px;
+    padding: 7px;
+}
+
+
+.headers {
+    font-size: 32px;
+    color: Whitesmoke;
+    width: "280px";
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    padding: 0px;
+    margin-bottom: 5px;
+    margin-top: 50px;
+
+}
+
+.test {
+    background-color: green;
+    margin-left: auto,
+}
+
+
+body {
+    background-color: #313131;
+
+}
+
+.charComp {
+    position: relative;
+    border: 2px Solid black;
+    display: inline-block;
+    margin: 5px;
+    width: 240px;
+    height: 80px;
+    background-color: #DBA530;
+    background-image: url("https://www.transparenttextures.com/patterns/crossword.png");
+
+}
+
+.charLeft {
+    
+    width: 33%;
+    float: left;
+   
+}
+
+.charRight {
+    float: right;
+    width: 63%;
+
+}
+

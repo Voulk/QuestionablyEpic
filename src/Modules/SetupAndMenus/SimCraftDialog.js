@@ -1,0 +1,80 @@
+import React from "react";
+import { useTranslation } from "react-i18next";
+import {
+  Button,
+  TextField,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogTitle,
+} from "@material-ui/core";
+import { runSimC } from "../Engine/SimCImport/SimCImportEngine";
+import { createEmitAndSemanticDiagnosticsBuilderProgram } from "typescript";
+
+export default function SimCraftInput(props) {
+  const { t, i18n } = useTranslation();
+  const [open, setOpen] = React.useState(false);
+  const [simC, setSimC] = React.useState("");
+  const [errorMessage, setErrorMessage] = React.useState("");
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  const handleSubmit = () => {
+    runSimC(
+      simC,
+      props.pl,
+      props.contentType,
+      setErrorMessage,
+      props.simcSnack,
+      handleClose,
+      setSimC
+    );
+  };
+
+  return (
+    <div>
+      <Button style={{ color: "white" }} onClick={handleClickOpen}>
+        {t("SimCInput.SimCHeaderButtonLabel")}
+      </Button>
+      <Dialog
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="form-dialog-title"
+        maxWidth="md"
+        fullWidth={true}
+      >
+        <DialogTitle id="form-dialog-title">
+          {t("SimCInput.SimCDialogueTitle")}
+        </DialogTitle>
+        <DialogContent style={{ height: 400 }}>
+          <TextField
+            autoFocus
+            multiline={true}
+            margin="dense"
+            id="simcentry"
+            label={t("SimCInput.SimCStringLabel")}
+            fullWidth
+            style={{ height: "100%" }}
+            variant="outlined"
+            onChange={(evt) => setSimC(evt.target.value)}
+          />
+        </DialogContent>
+        <DialogActions>
+          <p id="SimCError">{errorMessage}</p>
+          <Button onClick={handleClose} color="primary">
+            {t("Cancel")}
+          </Button>
+          <Button onClick={handleSubmit} color="primary">
+            {t("Submit")}
+          </Button>
+        </DialogActions>
+      </Dialog>
+    </div>
+  );
+}
