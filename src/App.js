@@ -246,7 +246,7 @@ class App extends Component {
     }
     //alert(JSON.stringify(allChars[0]));
     return (
-      <Router basename={"/qesl/"}>
+      <Router basename={process.env.REACT_APP_HOMEPAGE}>
         <ThemeProvider theme={theme}>
           <div className="App" style={{ marginTop: 96 }}>
             <QEHeader
