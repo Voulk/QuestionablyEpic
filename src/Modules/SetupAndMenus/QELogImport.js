@@ -98,7 +98,7 @@ export default function QELogImport(props) {
     setShowSelectedFight(true);
   };
 
-  console.log(props.player.getSpec());
+  
 
   const specHelper = () => {};
 
