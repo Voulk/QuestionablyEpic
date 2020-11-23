@@ -1,15 +1,10 @@
-import React, {useEffect} from "react";
+import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
-import AppBar from "@material-ui/core/AppBar";
-import Tabs from "@material-ui/core/Tabs";
-import Tab from "@material-ui/core/Tab";
-import Typography from "@material-ui/core/Typography";
-import Box from "@material-ui/core/Box";
+import { Tabs, Tab, Box, AppBar, Grid } from "@material-ui/core";
 import { soulbindDB, soulbindConnectors } from "../SoulbindDB";
 import SoulbindNode from "./SoulbindNode";
 import ConduitObject from "./ConduitObject";
-import Grid from "@material-ui/core/Grid";
 import { getSoulbindFormula } from "../../Engine/EffectFormulas/Generic/GenericSoulbindFormulas";
 import SoulbindStatPanel from "./SoulbindStatPanel";
 import { getCovAbility } from "../../Engine/EffectFormulas/EffectEngine";
@@ -20,7 +15,7 @@ import {
   buildConduitStats,
 } from "../CovenantUtilities";
 import "./CovenantExploration.css";
-import ReactGA from 'react-ga';
+import ReactGA from "react-ga";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -73,7 +68,7 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     backgroundColor: "#191c23",
     display: "flex",
-    height: 700, // 609
+    height: 700,
   },
   tabs: {
     borderRight: `1px solid ${theme.palette.divider}`,
@@ -100,14 +95,12 @@ export default function SimpleTabs(props) {
 
   function buildBonusStats(soulbindTraits, player, contentType) {
     let updatedArray = soulbindTraits.map((trait) => {
-      console.log("PL: " + player + ". CT: " + contentType);
       return {
         ...trait,
         bonus_stats: getSoulbindFormula(trait.id, player, contentType),
       };
     });
     return updatedArray;
-    //setSoulbindState(updatedArray);
   }
 
   const handleTabChange = (event, newValue) => {
@@ -146,8 +139,6 @@ export default function SimpleTabs(props) {
     setSoulbindState(updatedArray);
   }
 
-  //console.log(">>>" + JSON.stringify(soulbindState));
-
   return (
     <div className={classes.root}>
       <AppBar
@@ -171,6 +162,7 @@ export default function SimpleTabs(props) {
                     process.env.PUBLIC_URL +
                     "/Images/Interface/Kyrian_Sigil.png"
                   }
+                  alt="Kyrian"
                 />
                 <div className="centered"> Kyrian </div>
               </div>
@@ -185,6 +177,7 @@ export default function SimpleTabs(props) {
                   src={
                     process.env.PUBLIC_URL + "/Images/Interface/Fae_Sigil.png"
                   }
+                  alt="Night Fae"
                 />
                 <div className="centered"> Night Fae </div>
               </div>
@@ -200,6 +193,7 @@ export default function SimpleTabs(props) {
                     process.env.PUBLIC_URL +
                     "/Images/Interface/Venthyr_Sigil.png"
                   }
+                  alt="Venthyr"
                 />
                 <div className="centered"> Venthyr </div>
               </div>
@@ -215,6 +209,7 @@ export default function SimpleTabs(props) {
                     process.env.PUBLIC_URL +
                     "/Images/Interface/Death_Lords_Sigil.png"
                   }
+                  alt="Necrolords"
                 />
                 <div className="centered"> Necrolords </div>
               </div>
@@ -278,7 +273,6 @@ export default function SimpleTabs(props) {
             />
           </Tabs>
 
-          {/* // need to figure out how to pass "pelagos" as the index or a value as a "soulbind1 prop" otherwise each 1st soulbind will show the pelagos tree */}
           <TabPanel
             value={soulbindValue}
             index={0}
@@ -333,7 +327,6 @@ export default function SimpleTabs(props) {
         <div className={classes.panel}>
           <Tabs
             orientation="vertical"
-            // variant="scrollable"
             value={soulbindValue}
             onChange={handleChange2}
             aria-label="Vertical tabs example"
@@ -381,7 +374,6 @@ export default function SimpleTabs(props) {
             />
           </Tabs>
 
-          {/* // need to figure out how to pass "pelagos" as the index or a value as a "soulbind1 prop" otherwise each 1st soulbind will show the pelagos tree */}
           <TabPanel value={soulbindValue} index={0}>
             {buildSoulbind(
               "Niya",
@@ -423,7 +415,6 @@ export default function SimpleTabs(props) {
         <div className={classes.panel}>
           <Tabs
             orientation="vertical"
-            // variant="scrollable"
             value={soulbindValue}
             onChange={handleChange2}
             aria-label="Vertical tabs example"
@@ -477,7 +468,6 @@ export default function SimpleTabs(props) {
             />
           </Tabs>
 
-          {/* // need to figure out how to pass "pelagos" as the index or a value as a "soulbind1 prop" otherwise each 1st soulbind will show the pelagos tree */}
           <TabPanel value={soulbindValue} index={0}>
             {buildSoulbind(
               "Nadjia",
@@ -519,7 +509,6 @@ export default function SimpleTabs(props) {
         <div className={classes.panel}>
           <Tabs
             orientation="vertical"
-            // variant="scrollable"
             value={soulbindValue}
             onChange={handleChange2}
             aria-label="Vertical tabs example"
@@ -570,7 +559,6 @@ export default function SimpleTabs(props) {
             />
           </Tabs>
 
-          {/* // need to figure out how to pass "pelagos" as the index or a value as a "soulbind1 prop" otherwise each 1st soulbind will show the pelagos tree */}
           <TabPanel value={soulbindValue} index={0}>
             {buildSoulbind(
               "Marileth",
@@ -623,9 +611,6 @@ function buildSoulbind(
   setConduitInSlot,
   updateConduitLevel
 ) {
-  //console.log(JSON.stringify(soulbindState));
-  //console.log("Post: " + JSON.stringify(soulbindState))
-  //let activeSoulbind = soulbindState[soulbindName];
   let activeSoulbind = soulbindState.filter(
     (trait) => trait.soulbind === soulbindName
   );
@@ -645,11 +630,6 @@ function buildSoulbind(
   let covAbility = getEstimatedHPS(
     getCovAbility(soulbindName, player, contentType)
   );
-  //let conduitList = ["Conduit 1", "Conduit 2", "Conduit 3", "Conduit 4", "Conduit 5"] // Pure, raw placeholder.
-
-  //console.log("Y" + soulbindName);
-  //console.log(activeSoulbind);
-
   return (
     <Grid
       id="soulbind"
@@ -664,10 +644,12 @@ function buildSoulbind(
               process.env.PUBLIC_URL +
               "/Images/Interface/SoulbindBackgroundFat.jpg"
             }
+            alt=""
           />
           <div id="nodes" style={{}}>
             {activeConnectors.map((trait, index) => (
               <img
+                key={index}
                 src={
                   process.env.PUBLIC_URL +
                   "/Images/Interface/SoulbindsLine" +
@@ -682,7 +664,8 @@ function buildSoulbind(
                   left: trait.position[0],
                   top: trait.position[1],
                 }}
-              ></img>
+                alt=""
+              />
             ))}
 
             {activeSoulbind.map((trait, index) => (
@@ -712,12 +695,6 @@ function buildSoulbind(
             maxHeight: 700, // 609 Slim
           }}
         >
-          {/* <img
-            src={
-              process.env.PUBLIC_URL + "/Images/Interface/ConduitContainer.jpg"
-            }
-          /> */}
-
           <Grid
             container
             direction="column"
@@ -744,8 +721,9 @@ function buildSoulbind(
                     width: "214px",
                     paddingLeft: "8px",
                   }}
+                  alt=""
                 />
-                <Grid container spacing={1} style={{ maxWidth: 245 }} xs={12}>
+                <Grid container spacing={1} style={{ maxWidth: 245 }}>
                   {potencyConduits.map((conduit, i) => (
                     <ConduitObject
                       conduit={conduit}
@@ -766,8 +744,9 @@ function buildSoulbind(
                     width: "214px",
                     paddingLeft: "8px",
                   }}
+                  alt=""
                 />
-                <Grid container spacing={1} style={{ maxWidth: 245 }} xs={12}>
+                <Grid container spacing={1} style={{ maxWidth: 245 }}>
                   {enduranceConduits.map((conduit, i) => (
                     <ConduitObject
                       conduit={conduit}

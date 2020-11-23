@@ -1,10 +1,19 @@
 import React from "react";
-import Button from "@material-ui/core/Button";
-import Dialog from "@material-ui/core/Dialog";
-import DialogActions from "@material-ui/core/DialogActions";
-import DialogContent from "@material-ui/core/DialogContent";
-import DialogTitle from "@material-ui/core/DialogTitle";
+import axios from "axios";
 import { useTranslation } from "react-i18next";
+import {
+  Button,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogTitle,
+  Grid,
+  InputLabel,
+  FormControl,
+  Select,
+  MenuItem,
+  Typography,
+} from "@material-ui/core";
 import LogLinkInput from "../CooldownPlanner/ModuleComponents/LogFightSelection/LogLinkInput";
 import {
   warcraftLogReportID,
@@ -13,14 +22,7 @@ import {
   importDamageLogData,
 } from "../CooldownPlanner/Functions/Functions";
 import FightSelectorButton from "../CooldownPlanner/ModuleComponents/LogFightSelection/FightSelectorButton";
-import Grid from "@material-ui/core/Grid";
-import InputLabel from "@material-ui/core/InputLabel";
-import FormControl from "@material-ui/core/FormControl";
-import Select from "@material-ui/core/Select";
-import MenuItem from "@material-ui/core/MenuItem";
-import Typography from "@material-ui/core/Typography";
 import bossIcons from "../CooldownPlanner/Functions/IconFunctions/BossIcons";
-import axios from "axios";
 import {
   convertLogSpellOutput,
   convertLogStatOutput,
@@ -60,32 +62,16 @@ export default function QELogImport(props) {
   const [currentBossID, setCurrentBossID] = React.useState("");
   const [currentDifficulty, setCurrentDifficulty] = React.useState("");
   const [showSelectedFight, setShowSelectedFight] = React.useState(false);
-
   const [healerData, setHealerData] = React.useState([]);
   const [healerDataDetailed, setHealerDataDetailed] = React.useState([]);
   const [summaryData, setSummaryData] = React.useState([]);
   const [damageData, setDamageData] = React.useState([]);
   const [castData, setCastData] = React.useState([]);
   const [currentPlayerID, setCurrentPlayerID] = React.useState("");
+  const characterCount = props.allChars.getAllChar().length || 0;
+  const [selectValue, setSelectValue] = React.useState("");
 
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
-
-  const handleSubmit = () => {
-    importHealerDetailedLogDataQE(time, timeend, reportId, currentPlayerID);
-    setOpen(false);
-    props.logImportSnack();
-  };
-
-  const reportidHandler = (event) => {
-    setReportId(warcraftLogReportID(event.target.value));
-  };
-
+  // This is passed down to the Fight Selection button and returns the data here.
   const handler = (info) => {
     setTime(info[0]),
       setTimeend(info[1]),
@@ -98,11 +84,7 @@ export default function QELogImport(props) {
     setShowSelectedFight(true);
   };
 
-  
-
-  const specHelper = () => {};
-
-  // Returns Array of Healer Information
+  // Returns data from the selected log based on the current characters specialization.
   const importHealerNamesFromLogsQE = async (starttime, endtime, reportid) => {
     let classSpec = "";
     let classIcon = "";
@@ -156,10 +138,10 @@ export default function QELogImport(props) {
       .catch(function (error) {
         console.log(error);
       });
-
     return healerNames;
   };
 
+  // Returns detailed data on the player specified from the dropdown
   const importHealerDetailedLogDataQE = async (
     starttime,
     endtime,
@@ -173,7 +155,6 @@ export default function QELogImport(props) {
     const START = "?start=";
     const END = "&end=";
     let healers = [];
-    // Class Casts Import
 
     await axios
       .get(
@@ -210,8 +191,8 @@ export default function QELogImport(props) {
     const END = "&end=";
     const HOSTILITY = "&hostility=0";
     const API2 = "&api_key=92fc5d4ae86447df22a8c0917c1404dc";
-    let nextpage = 0;
-    let cooldowns = [];
+    let nextPageCasts = 0;
+    let casts = [];
 
     await axios
       .get(
@@ -225,61 +206,59 @@ export default function QELogImport(props) {
           API2
       )
       .then((result) => {
-        cooldowns = Object.keys(result.data.events).map(
+        casts = Object.keys(result.data.events).map(
           (key) => result.data.events[key]
         );
-        nextpage = result.data.nextPageTimestamp;
+        nextPageCasts = result.data.nextPageTimestamp;
       })
       .catch(function (error) {
         console.log(error);
       });
     // Loop of the import updating the next page until the next page is undefined (no next page from json return)
     let i = 0;
-    if (nextpage !== undefined || null) {
+    if (nextPageCasts !== undefined || null) {
       do {
         await axios
           .get(
             APICast +
               reportid +
               START +
-              nextpage +
+              nextPageCasts +
               END +
               endtime +
               HOSTILITY +
               API2
           )
           .then((result) => {
-            cooldowns = cooldowns.concat(
+            casts = casts.concat(
               Object.keys(result.data.events).map(
                 (key) => result.data.events[key]
               )
             );
-            nextpage = result.data.nextPageTimestamp;
+            nextPageCasts = result.data.nextPageTimestamp;
           })
           .catch(function (error) {
             console.log(error);
           });
         i = i + 1;
-      } while (nextpage !== undefined || null);
+      } while (nextPageCasts !== undefined || null);
     }
-    return cooldowns;
+    return casts;
   };
 
   const importLogDataQE = async (starttime, endtime, reportID) => {
-    // Map the Healer Table for Each Spec to get the healer names.
+    // Map the Healer Table for the currently selected characters specialization
     const healers = await importHealerNamesFromLogsQE(
       starttime,
       endtime,
       reportID
     );
+    // set the returned names now so that the drop down populates asap.
     setHealerData(healers);
-    // Import summary Info from the Logs Summary table.
-    // This contains our data for Gear, Stats, Conduits, Soulbinds etc etc.
+    // Import summary Info from the Logs Summary table.This contains our data for Gear, Stats, Conduits, Soulbinds etc.
     const summary = await importSummaryData(starttime, endtime, reportID);
-
     // Import all the damage-taken from the log for friendly targets.
     const damage = await importDamageLogData(starttime, endtime, reportID);
-
     // Import the log data for Casts for each healer in the log.
     const casts = await importCastsLogDataQE(
       starttime,
@@ -287,31 +266,61 @@ export default function QELogImport(props) {
       reportID,
       healers.map((key) => key.id)
     );
-
+    // Set all the returned data to state
     setSummaryData(summary);
     setDamageData(damage);
     setCastData(casts);
-
+    // Stuff
     convertLogSpellOutput(props.player, healerDataDetailed, timeend - time);
     convertLogStatOutput(props.player, summaryData, currentPlayerID);
   };
 
+  // Handler to set PLayer ID when player selected from dropdown
   const playerSelectedHandler = (e) => {
-    setCurrentPlayerID(e);
+    setSelectValue(e);
+    setCurrentPlayerID(
+      healerData
+        .filter((obj) => {
+          return obj.name === e;
+        })
+        .map((obj) => obj.id)
+    );
   };
-  /*
-  console.log(healerData);
-  console.log(summaryData);
-  console.log(damageData);
-  console.log(castData);
-  console.log(healerDataDetailed);
-  */
+
+  // Opens Dialogue on Button CLick
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  // Handler when the dialogue closes, i.e cancel, clickaway or when called. Resets the log state variables.
+  const handleClose = () => {
+    setOpen(false);
+    setCurrentBossID("");
+    setBossName("");
+    setCurrentDifficulty("");
+    setCurrentFighttime("");
+    setKillWipe("");
+    setShowSelectedFight(false);
+  };
+
+  // On submit button click returns detailed data on the player, closes the dialogue and Activates the Confirmation Snackbar
+  const handleSubmit = () => {
+    importHealerDetailedLogDataQE(time, timeend, reportId, currentPlayerID);
+    handleClose();
+    props.logImportSnack();
+  };
+
+  // Handler for setting the report id pasted into the textfield.
+  const reportidHandler = (event) => {
+    setReportId(warcraftLogReportID(event.target.value));
+  };
 
   return (
     <div>
       <Button
-        style={{ color: "white", whiteSpace: "nowrap" }}
+        style={{ whiteSpace: "nowrap" }}
         onClick={handleClickOpen}
+        disabled={characterCount === 0}
       >
         {t("QeHeader.InsertLogLabel")}
       </Button>
@@ -323,7 +332,7 @@ export default function QELogImport(props) {
         fullWidth={true}
       >
         <DialogTitle id="form-dialog-title">
-          Paste Your Warcraft Logs Report Here
+          {t("InsertLog.InsertLogHeader")}
         </DialogTitle>
         <DialogContent>
           <Grid container spacing={1}>
@@ -361,26 +370,21 @@ export default function QELogImport(props) {
                     currentFighttime +
                     " - " +
                     killWipe
-                  : "Please Select a Fight"}
+                  : t("InsertLog.PlsSelectFight")}
               </Typography>
             </Grid>
             <Grid item xs={6}>
-              <FormControl
-                //   className={classes.formControl}
-                variant="outlined"
-                size="small"
-                fullWidth
-              >
+              <FormControl variant="outlined" size="small" fullWidth>
                 <InputLabel id="HealerSelector">{t("Name")}</InputLabel>
                 <Select
-                  value={props.value}
+                  value={selectValue}
                   label={t("Name")}
                   labelId="HealerSelector"
                   onChange={(e) => playerSelectedHandler(e.target.value)}
                   MenuProps={menuStyle}
                 >
                   {healerData.map((key, i) => (
-                    <MenuItem key={i} value={key.id}>
+                    <MenuItem key={i} value={key.name}>
                       {key.name}
                     </MenuItem>
                   ))}
@@ -391,10 +395,10 @@ export default function QELogImport(props) {
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose} color="primary">
-            Cancel
+            {t("Cancel")}
           </Button>
           <Button onClick={handleSubmit} color="primary">
-            Submit
+            {t("Submit")}
           </Button>
         </DialogActions>
       </Dialog>

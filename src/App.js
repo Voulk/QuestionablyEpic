@@ -164,13 +164,10 @@ class App extends Component {
   };
 
   updatePlayerChar = (player) => {
-    
     let allChars = this.state.characters;
     allChars.updatePlayerChar(player);
-    console.log("Setting State");
     this.setState({ characters: allChars });
     allChars.saveAllChar();
-    
   };
 
   setRegion = (props) => {
@@ -248,7 +245,6 @@ class App extends Component {
       return <MuiAlert elevation={6} variant="filled" {...props} />;
     }
     //alert(JSON.stringify(allChars[0]));
-
     return (
       <Router basename={"/qesl/"}>
         <ThemeProvider theme={theme}>
@@ -262,6 +258,7 @@ class App extends Component {
               pl={activePlayer}
               simcSnack={this.handleSimCSnackOpen}
               logImportSnack={this.handleLogSnackOpen}
+              allChars={allChars}
             />
 
             {/* // Char Added Snackbar */}

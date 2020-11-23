@@ -1,8 +1,5 @@
 import React from "react";
 import { getSoulbindFormula } from "../../Engine/EffectFormulas/Generic/GenericSoulbindFormulas";
-import Select from "@material-ui/core/Select";
-import Popover from "@material-ui/core/Popover";
-import PopupState, { bindTrigger, bindPopover } from "material-ui-popup-state";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 import {
@@ -158,6 +155,7 @@ export default function SoulbindNode(props) {
             left: columnPos[position.column],
             top: getRowPos(position.column, position.row),
           }}
+          alt=""
         />
         {conduitTag !== "" ? (
           <img
@@ -170,6 +168,7 @@ export default function SoulbindNode(props) {
               left: columnPos[position.column] + 15,
               top: getRowPos(position.column, position.row) + 30,
             }}
+            alt=""
           />
         ) : (
           ""
@@ -187,6 +186,7 @@ export default function SoulbindNode(props) {
             left: columnPos[position.column] + 5,
             top: getRowPos(position.column, position.row) + 5,
           }}
+          alt=""
         />
       </a>
       <Paper

@@ -110,7 +110,7 @@ export default function ProfileSelector(props) {
           onClick={handleToggle}
           onMouseOver={handleHoverOpen}
         >
-          <img src={BnetIcon} width="24px" height="24px" />
+          <img src={BnetIcon} width="24px" height="24px" alt="" />
           {props.name}
         </Button>
       );

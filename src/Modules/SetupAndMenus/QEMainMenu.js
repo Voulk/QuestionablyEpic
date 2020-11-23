@@ -7,20 +7,19 @@ import AddNewChar from "./CharCreator";
 import { makeStyles } from "@material-ui/core/styles";
 import ReactGA from "react-ga";
 import { dbCheckPatron } from "./ConnectionUtilities";
-import Check from "@material-ui/icons/Check";
 import ArrowForward from "@material-ui/icons/ArrowForward";
 import { Paper, Grid, Button, Typography } from "@material-ui/core";
 
 // Warning: If a button name has to change, do it in the translation files. Consider the titles here to be ID's rather than strings.
 const mainMenuOptions = {
-  "Top Gear (Coming Soon)": ["/topgear", false],
-  "Upgrade Finder (Coming Soon)": ["/upgradefinder", false],
-  "Gear Quick Compare": ["/quickcompare", true],
-  "Explore Covenants": ["/soulbinds", true],
-  "Legendary Analysis": ["/legendaries", true],
-  "Trinket Analysis": ["/trinkets", false],
-  "The Great Vault (Coming Soon)": ["/greatvault", false],
-  "Cooldown Planner (Coming Soon)": ["/holydiver", false],
+  "MainMenu.TopGear": ["/topgear", false],
+  "MainMenu.UpgradeFinder": ["/upgradefinder", false],
+  "MainMenu.QuickCompare": ["/quickcompare", true],
+  "MainMenu.ExploreCovenants": ["/soulbinds", true],
+  "MainMenu.LegendaryAnalysis": ["/legendaries", true],
+  "MainMenu.TrinketAnalysis": ["/trinkets", false],
+  "MainMenu.GreatVault": ["/greatvault", false],
+  "MainMenu.CooldownPlanner": ["/holydiver", false],
 };
 
 const useStyles = makeStyles((theme) => ({
@@ -57,7 +56,6 @@ export default function QEMainMenu(props) {
   // const currentLanguage = i18n.language;
   const classes = useStyles();
   const characterCount = props.allChars.getAllChar().length;
-  console.log(characterCount);
 
   return (
     <div style={{ backgroundColor: "#313131" }}>
@@ -76,12 +74,14 @@ export default function QEMainMenu(props) {
           <Grid item xs={12}>
             <Paper elevation={0} style={{ border: "1px", padding: 10 }}>
               <Typography
-                style={{color: "limegreen"}}
+                style={{ color: "limegreen" }}
                 align="left"
                 variant="subtitle1"
                 // gutterBottom
               >
-                An expansion launch is a chaotic time and the game continues to see frequent, decision-altering changes. Continue to use your class discords as your primary resource for information. ~Voulk
+                An expansion launch is a chaotic time and the game continues to
+                see frequent, decision-altering changes. Continue to use your
+                class discords as your primary resource for information. ~Voulk
               </Typography>
             </Paper>
           </Grid>
@@ -91,7 +91,7 @@ export default function QEMainMenu(props) {
               <Button
                 key={index}
                 variant="contained"
-                disabled={!mainMenuOptions[key][1] || characterCount == 0}
+                disabled={!mainMenuOptions[key][1] || characterCount === 0}
                 color="secondary"
                 style={{
                   width: "100%",
@@ -99,7 +99,10 @@ export default function QEMainMenu(props) {
                   whiteSpace: "nowrap",
                   justifyContent: "left",
                   paddingLeft: "32px",
-                  color: (mainMenuOptions[key][1] && characterCount > 0) ? "#F2BF59" : "#9c9c9c",
+                  color:
+                    mainMenuOptions[key][1] && characterCount > 0
+                      ? "#F2BF59"
+                      : "#9c9c9c",
                 }}
                 component={Link}
                 to={mainMenuOptions[key][0]}
@@ -112,7 +115,14 @@ export default function QEMainMenu(props) {
         </Grid>
 
         <p className="headers">{t("MainMenuCharactersH")}</p>
-        <Typography style={{color: 'white', marginBottom: '10px', fontStyle: 'italic'}} variant="body2" align='center'>Add your characters here. Right click to edit your stat weights, realm information and more.</Typography> 
+        <Typography
+          style={{ color: "white", marginBottom: "10px", fontStyle: "italic" }}
+          variant="body2"
+          align="center"
+        >
+          Add your characters here. Right click to edit your stat weights, realm
+          information and more.
+        </Typography>
 
         <Grid container spacing={2}>
           {props.allChars.getAllChar().length > 0

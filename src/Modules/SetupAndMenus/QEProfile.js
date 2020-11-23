@@ -1,6 +1,7 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Grid, Button, Typography, TextField, Paper } from "@material-ui/core";
+import { useTranslation } from "react-i18next";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -24,6 +25,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function QEProfile(props) {
   const classes = useStyles();
+  const { t, i18n } = useTranslation();
   const [email, setEmail] = React.useState("");
   const emailHandler = (event) => {
     setEmail(event);
@@ -57,7 +59,7 @@ export default function QEProfile(props) {
           </Grid>
           <Grid item xs="auto">
             <Button variant="contained" color="primary">
-              Save
+              {t("Save")}
             </Button>
           </Grid>
         </Grid>

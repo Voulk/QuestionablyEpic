@@ -177,7 +177,7 @@ export default function AddNewChar(props) {
                   size="small"
                   disabled={regions === "" ? true : false}
                   id="server-select"
-                  options={serverList[regions]}
+                  options={serverList[regions] || []}
                   getOptionLabel={(option) => option}
                   style={{ width: "100%" }}
                   onChange={(e, newValue) => {
@@ -204,7 +204,11 @@ export default function AddNewChar(props) {
                 <InputLabel id="NewClassSelector">
                   {t("Select Class")}
                 </InputLabel>
-                <Select value={healClass} onChange={handleChangeSpec}>
+                <Select
+                  label={t("Select Class")}
+                  value={healClass}
+                  onChange={handleChangeSpec}
+                >
                   {Object.getOwnPropertyNames(classRaceList).map((key, i) => (
                     <MenuItem key={i} value={key}>
                       {classIcons(key, 20)}
@@ -223,7 +227,11 @@ export default function AddNewChar(props) {
                 label={t("Select Race")}
               >
                 <InputLabel id="NewRaceSelector">{t("Select Race")}</InputLabel>
-                <Select value={selectedRace} onChange={handleChangeRace}>
+                <Select
+                  label={t("Select Race")}
+                  value={selectedRace}
+                  onChange={handleChangeRace}
+                >
                   {healClass === ""
                     ? ""
                     : classRaceList[healClass.toString()].races.map(

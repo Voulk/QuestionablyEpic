@@ -21,6 +21,10 @@
       "Login": "Login",
       "": ""
     },
+    "InsertLog": {
+      "PlsSelectFight": "Please Select a Fight",
+      "InsertLogHeader": "Paste Your Warcraft Logs Report Here"
+    },
 
     "Races": {
       "Blood Elf": "Blood Elf",
@@ -48,6 +52,17 @@
       "Zandalari Troll": "Zandalari Troll"
     },
 
+    "MainMenu": {
+      "TopGear": "Top Gear (Coming Soon)",
+      "UpgradeFinder": "Upgrade Finder (Coming Soon)",
+      "QuickCompare": "Gear Quick Compare",
+      "ExploreCovenants": "Explore Covenants",
+      "LegendaryAnalysis": "Legendary Analysis",
+      "TrinketAnalysis": "Trinket Analysis",
+      "GreatVault": "The Great Vault (Coming Soon)",
+      "CooldownPlanner":"Cooldown Planner (Coming Soon)"
+    },
+
     "_Comments1": "Common Words",
     "Login": "Login",
     "Name": "Name",
@@ -55,6 +70,20 @@
     "Cooldown": "Cooldown",
     "Raid": "Raid",
     "Dungeon": "Dungeon",
+    "Cancel": "Cancel",
+    "Submit": "Submit",
+    "Save": "Save",
+    "Delete": "Delete",
+    "Intellect": "Intellect",
+    "Crit": "Crit",
+    "Haste": "Haste",
+    "Mastery": "Mastery",
+    "Versatility": "Versatility",
+    "Leech": "Leech",
+    "Region": "Region",
+    "Race": "Race",
+    "Select Class": "Select Class",
+    "Select Race": "Select Race",
 
     "CooldownPlannerHealerCards": {
       "_Comments1": "Translations for the Accordian for Healer Info",
@@ -273,6 +302,11 @@
     "QeHeader": {
       "InsertLogLabel": "Insert Log"
     },
+    "SimCInput" :{
+      "SimCStringLabel": "SimC String",
+      "SimCHeaderButtonLabel": "SimC",
+      "SimCDialogueTitle": "Paste Your SimC String"
+    },
     "author": {
       "title": "Author Name",
       "value": "Tariqul"
@@ -292,9 +326,11 @@
       "waist": "Belt",
       "feet": "Boots",
       "trinket": "Trinkets",
-      "weapons": "Weapons",
+      "mainHands": "Weapons",
       "offhands": "Off-Hands",
-      "finger": "Ring"
+      "finger": "Ring",
+      "weapons": "Weapons",
+      "weaponCombos": "Weapon Combos"
     },
 
     "Vision of Unending Growth": {

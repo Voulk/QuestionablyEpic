@@ -29,7 +29,6 @@ import {
   bossAbilities,
 } from "../Data/Data";
 import { classColoursJS } from "../Functions/ClassColourFunctions";
-import { classMenus } from "../Menus/ClassMenuItems";
 import { useTranslation } from "react-i18next";
 import { localizationFR } from "../../../locale/fr/TableLocale";
 import { localizationEN } from "../../../locale/en/TableLocale";
