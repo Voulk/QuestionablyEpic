@@ -23,6 +23,7 @@ const legendaryImages = {
 export default function LegendaryObject(props) {
   const { t } = useTranslation();
   const item = props.item;
+  const hpsString = item.bonus_stats.HPS > 0 ? item.bonus_stats.HPS : "Coming Soon";
 
   return (
     <div className="lego">
@@ -45,7 +46,7 @@ export default function LegendaryObject(props) {
         <p className="legodesc">{t(item.name + ".desc")}</p>
         <div className="legostats">
           <p>
-            HPS: {item.bonus_stats.HPS}
+            HPS: {hpsString}
             {/*Expected DPS: {item.bonus_stats.DPS} */}
           </p>
         </div>

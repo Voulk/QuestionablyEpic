@@ -1,6 +1,6 @@
 
 
-const getMonkLegendary = (effectName, pl, contentType) => {
+export const getMonkLegendary = (effectName, pl, contentType) => {
     let result = 0.0;
     let name = effectName;
     let bonus_stats = {};

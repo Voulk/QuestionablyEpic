@@ -13,14 +13,17 @@ import { Paper, Grid, Button, Typography } from "@material-ui/core";
 // Warning: If a button name has to change, do it in the translation files. Consider the titles here to be ID's rather than strings.
 const mainMenuOptions = {
   "MainMenu.TopGear": ["/topgear", false],
-  "MainMenu.UpgradeFinder": ["/upgradefinder", false],
+  "MainMenu.GreatVault": ["/greatvault", false],
   "MainMenu.QuickCompare": ["/quickcompare", true],
   "MainMenu.ExploreCovenants": ["/soulbinds", true],
   "MainMenu.LegendaryAnalysis": ["/legendaries", true],
-  "MainMenu.TrinketAnalysis": ["/trinkets", false],
-  "MainMenu.GreatVault": ["/greatvault", false],
   "MainMenu.CooldownPlanner": ["/holydiver", false],
 };
+
+/* Buttons to be added back.
+  "MainMenu.UpgradeFinder": ["/upgradefinder", false],
+  "MainMenu.TrinketAnalysis": ["/trinkets", false],
+*/
 
 const useStyles = makeStyles((theme) => ({
   root: {

@@ -417,7 +417,7 @@ class Player {
 
         }
         else if (spec === SPEC.HOLYPALADIN) {
-            console.log("Loading Holy Paladin");
+            
             this.fightInfo = {
                 hps: 6000,
                 rawhps: 9420,
@@ -428,7 +428,7 @@ class Player {
                 intellect: 1500,
                 haste: 600,
                 crit: 420,
-                mastery: 1200,
+                mastery: 400,
                 versatility: 400,
                 stamina: 1490,
                 
