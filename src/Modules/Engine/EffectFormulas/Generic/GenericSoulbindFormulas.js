@@ -110,7 +110,9 @@ export function getSoulbindFormula(effectID, pl, contentType) {
   // === Night Fae ===
   // -- Niya --
   // Grove Invigoration
-  else if (effectID === 333950) {
+  else if (effectID === 322721) {
+    let expectedStacks = (2 * 30 / 60) + (8 * 30 / 120);
+    bonus_stats.Mastery = (expectedStacks * 25);
   }
   // Run without Tiring
   else if (effectID === 342270) {
@@ -119,7 +121,9 @@ export function getSoulbindFormula(effectID, pl, contentType) {
   else if (effectID === 320659) {
   }
   // Niya's Tools: Herbs
+  // This is basically 100% uptime on one target at a time. Personal benefit calculated only.
   else if (effectID === 320662) {
+    bonus_stats.Haste = 5 * STATPERONEPERCENT.HASTE / 20;
   }
 
   // -- Dreamwalker --
@@ -198,6 +202,8 @@ export function getSoulbindFormula(effectID, pl, contentType) {
   }
   // Wasteland Propriety
   else if (effectID === 319983) {
+    bonus_stats.Versatility = 6 * STATPERONEPERCENT.VERSATILITY * (10/60) // Arguably some classes won't be able to proc this on cooldown because of misaligned CDs but we'll see.
+
   }
 
   // -- General Draven --
@@ -209,12 +215,16 @@ export function getSoulbindFormula(effectID, pl, contentType) {
   }
   // Hold Your Ground
   else if (effectID === 332754) {
+    let expected_uptime = 0.85;
+    bonus_stats.HPS = expected_uptime * (pl.getHPS() * 0.04)
   }
   // Superior Tactics
   else if (effectID === 332753) {
   }
   // Built for War
   else if (effectID === 319973) {
+    let expected_stacks = 3.65;
+    bonus_stats.Intellect = expected_stacks * pl.activeStats.intellect * 0.01;
   }
 
   // === Necrolord ===

@@ -60,9 +60,11 @@ const itemQuality = (quality) => {
 function getBenefitString(bonus_stats) {
   let benefitString = "";
   Object.entries(bonus_stats).forEach(([key, value]) => {
-    if (value !== 0) benefitString += key + ": " + Math.round(value);
-  });
+    if (value !== 0 && typeof(value) === "number" && value !== undefined && !isNaN(value))  {
 
+      benefitString += key + ": " + Math.round(value);
+    }
+  });
   return benefitString;
 }
 

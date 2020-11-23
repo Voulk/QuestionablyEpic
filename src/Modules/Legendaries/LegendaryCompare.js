@@ -71,13 +71,6 @@ const fillLegendaries = (container, spec, pl, contentType) => {
       "Twins of the Sun Priestess",
       "Vault of Heavens",
     ],
-    "Mistweaver Monk": [
-      "Ancient Teachings of the Monastery",
-      "Clouded Focus",
-      "Tear of Morning",
-      "Yu'lon's Whisper",
-      "Invoker's Delight",
-    ],
     "Holy Priest": ["HolyPriestLegendary1",
       "Divine Image",
       "Flash Concentration",
@@ -87,7 +80,17 @@ const fillLegendaries = (container, spec, pl, contentType) => {
       "Measured Contemplation",
       "Twins of the Sun Priestess",
       "Vault of Heavens",
-  ],
+  ], 
+  "Mistweaver Monk": [
+  ]
+    /*
+  "Mistweaver Monk": [
+    "Ancient Teachings of the Monastery",
+    "Clouded Focus",
+    "Tear of Morning",
+    "Yu'lon's Whisper",
+    "Invoker's Delight",
+  ], */
   };
   
   /*

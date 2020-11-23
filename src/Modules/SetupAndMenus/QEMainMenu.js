@@ -55,6 +55,7 @@ export default function QEMainMenu(props) {
     ReactGA.pageview(window.location.pathname + window.location.search);
   }, []);
 
+  
   const { t, i18n } = useTranslation();
   // const currentLanguage = i18n.language;
   const classes = useStyles();
@@ -75,7 +76,7 @@ export default function QEMainMenu(props) {
         <p className="headers">{/*t("MainMenuItemsH") */}</p>
         <Grid container spacing={2}>
           <Grid item xs={12}>
-            <Paper elevation={0} style={{ border: "1px", padding: 10 }}>
+            <Paper elevation={0} style={{ border: "1px", padding: 12 }}>
               <Typography
                 style={{ color: "limegreen" }}
                 align="left"
@@ -84,7 +85,7 @@ export default function QEMainMenu(props) {
               >
                 An expansion launch is a chaotic time and the game continues to
                 see frequent, decision-altering changes. Continue to use your
-                class discords as your primary resource for information. ~Voulk V1.04 
+                class discords as your primary resource for information. ~Voulk
 
               </Typography>
             </Paper>

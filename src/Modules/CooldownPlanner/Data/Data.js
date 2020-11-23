@@ -2599,7 +2599,7 @@ export const conduits = [
     name: "Tough as Bark",
   },
   {
-    guid: 340555,
+    guid: 340553,
     abilityIcon: "ability_druid_tigersroar.jpg",
     name: "Well-Honed Instincts",
   },

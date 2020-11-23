@@ -20,6 +20,7 @@ import ls from "local-storage";
 import Snackbar from "@material-ui/core/Snackbar";
 import MuiAlert from "@material-ui/lab/Alert";
 import { createBrowserHistory } from "history";
+import { dbCheckPatron} from './Modules/SetupAndMenus/ConnectionUtilities';
 
 import ReactGA from "react-ga";
 
@@ -83,6 +84,7 @@ class App extends Component {
       characters: new PlayerChars(),
       playerRegion: "us",
       client_id: "1be64387daf6494da2de568527ad82cc",
+      email: "",
       // lang: "en",
       playerLoginID: "",
       playerBattleTag: "",
@@ -163,6 +165,25 @@ class App extends Component {
     this.setState({ characters: allChars });
   };
 
+  setPatron = (status) => {
+    //console.log("ST: " + status);
+    this.setState({patronStatus: status});
+  }
+
+  checkPatron = (email) => {
+    
+    if (email !== "") {
+      
+      dbCheckPatron(email, this.setPatron)
+    }
+
+  }
+
+  setEmail = (emailAdd) => {
+    this.setState({email: emailAdd})
+    ls.set("email", emailAdd);
+  }
+
   updatePlayerChar = (player) => {
     let allChars = this.state.characters;
     allChars.updatePlayerChar(player);
@@ -224,7 +245,9 @@ class App extends Component {
       playerBattleTag: ls.get("btag") || "",
       lang: ls.get("lang") || "en",
       contentType: ls.get("contentType") || "Raid",
+      email: ls.get("email") || "",
     });
+    this.checkPatron(ls.get("email"))
 
     i18n.changeLanguage(ls.get("lang") || "en");
   }
@@ -237,20 +260,24 @@ class App extends Component {
     }, [location]);
   }
 
+
   render() {
     let activePlayer = this.state.characters.getActiveChar();
     let allChars = this.state.characters;
+    //
+    
 
     function Alert(props) {
       return <MuiAlert elevation={6} variant="filled" {...props} />;
     }
     //alert(JSON.stringify(allChars[0]));
     return (
-      <Router basename={"/qesl/"}>
+      <Router basename={process.env.REACT_APP_HOMEPAGE}>
         <ThemeProvider theme={theme}>
           <div className="App" style={{ marginTop: 96 }}>
             <QEHeader
               logFunc={this.userLogout}
+              patronStatus={this.state.patronStatus}
               playerTag={this.state.playerBattleTag}
               setRegion={this.setRegion}
               toggleContentType={this.toggleContentType}
@@ -386,7 +413,9 @@ class App extends Component {
                   />
                 )}
               />
-              <Route path="/profile/" render={() => <QEProfile />} />
+              <Route path="/profile/" render={() => <QEProfile 
+                setEmail={this.setEmail}
+                />} />
             </Switch>
           </div>
         </ThemeProvider>

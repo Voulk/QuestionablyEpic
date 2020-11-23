@@ -212,6 +212,18 @@ class Player {
                 } else if (this.spec === SPEC.RESTOSHAMAN) {
                     statPerc = 1 + ((0.25 * 8 * 35 + this.activeStats.mastery) / (35 / 3)) / 100; // .25 is placeholder for mastery effectiveness
                 }
+                else if (this.spec === SPEC.RESTODRUID) {
+                    statPerc = 1 + (0.04 + (this.activeStats.mastery / 70 / 100)) * 1.8; // 1.8 is the average HoT multiplier.
+                }
+                else if (this.spec === SPEC.HOLYPRIEST) {
+                    statPerc = 1 + (0.1 + (this.activeStats.mastery / 27.95 / 100)) * 0.9; // Assumes 10% echo of light overhealing. TODO: revisit.
+                }
+                else if (this.spec === SPEC.DISCPRIEST) {
+                    statPerc = 1 + (0.108 + (this.activeStats.mastery / 25.9 / 100)); 
+                }
+                else if (this.spec === SPEC.MISTWEAVERMONK) {
+                    statPerc = 1; // TODO
+                }
                 break;
             case "Vers":
                 statPerc = 1 + this.activeStats.versatility / 40 / 100;
@@ -353,7 +365,7 @@ class Player {
     }
 
     setActiveStats = (stats) => {
-        console.log("Setting Active Stats");
+       
         this.activeStats = stats;
     }
 
@@ -518,6 +530,150 @@ class Player {
                     "Healing Surge": [40, 0, 0, 0],
                 }
             };
+        }
+        else if (spec === SPEC.DISCPRIEST) {
+            this.fightInfo = {
+                hps: 6000,
+                rawhps: 9420,
+                fightLength: 193,
+            }
+            this.activeStats = {
+                intellect: 1500,
+                haste: 650,
+                crit: 590,
+                mastery: 400,
+                versatility: 320,
+                stamina: 1490,
+    
+            }
+           
+            this.statWeights = {
+                "Raid": {
+                    intellect: 1, 
+                    haste: 0.6,
+                    crit: 0.55,
+                    mastery: 0.5,
+                    versatility: 0.45,
+                    leech: 0.8,
+                },
+                "Dungeon": {
+                    intellect: 1, 
+                    haste: 0.6,
+                    crit: 0.55,
+                    mastery: 0.5,
+                    versatility: 0.45,
+                    leech: 0.8,
+                },
+                "DefaultWeights": true
+            }
+
+            this.castPattern =
+            // CASTS, HEALING, HEALINGPERC, HPS
+            {   "Raid": {
+                    
+  
+            },
+                "Dungeon": {
+    
+                }
+            }
+
+        }
+        else if (spec === SPEC.HOLYPRIEST) {
+            this.fightInfo = {
+                hps: 6000,
+                rawhps: 9420,
+                fightLength: 193,
+            }
+            this.activeStats = {
+                intellect: 1500,
+                haste: 650,
+                crit: 540,
+                mastery: 550,
+                versatility: 320,
+                stamina: 1490,
+    
+            }
+           
+            this.statWeights = {
+                "Raid": {
+                    intellect: 1, 
+                    haste: 0.45,
+                    crit: 0.55,
+                    mastery: 0.55,
+                    versatility: 0.45,
+                    leech: 0.8,
+                },
+                "Dungeon": {
+                    intellect: 1, 
+                    haste: 0.5,
+                    crit: 0.55,
+                    mastery: 0.5,
+                    versatility: 0.45,
+                    leech: 0.4,
+                },
+                "DefaultWeights": true
+            }
+
+            this.castPattern =
+            // CASTS, HEALING, HEALINGPERC, HPS
+            {   "Raid": {
+                    
+  
+            },
+                "Dungeon": {
+    
+                }
+            }
+
+        }
+        else if (spec === SPEC.MISTWEAVERMONK) {
+            this.fightInfo = {
+                hps: 6000,
+                rawhps: 9420,
+                fightLength: 193,
+            }
+            this.activeStats = {
+                intellect: 1500,
+                haste: 450,
+                crit: 590,
+                mastery: 350,
+                versatility: 320,
+                stamina: 1490,
+    
+            }
+           
+            this.statWeights = {
+                "Raid": {
+                    intellect: 1, 
+                    haste: 0.45,
+                    crit: 0.55,
+                    mastery: 0.45,
+                    versatility: 0.55,
+                    leech: 0.8,
+                },
+                "Dungeon": {
+                    intellect: 1, 
+                    haste: 0.5,
+                    crit: 0.55,
+                    mastery: 0.5,
+                    versatility: 0.45,
+                    leech: 0.4,
+                },
+                "DefaultWeights": true
+            }
+
+            this.castPattern =
+            // CASTS, HEALING, HEALINGPERC, HPS
+            {   "Raid": {
+                    
+  
+            },
+                "Dungeon": {
+    
+                }
+            }
+
         }
 
     }

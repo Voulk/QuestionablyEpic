@@ -11,7 +11,7 @@ export function getGenericEffect(effectName, player, contentType) {
     let bonus_stats = {}
 
     if (effectName === "Ashjrakamas") {
-        bonus_stats.intellect = Math.round(359 * convertPPMToUptime(1.25, 15));
+        bonus_stats.intellect = 0
         
     }
     else if (effectName === "Effect2") {
