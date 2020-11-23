@@ -115,6 +115,7 @@ export const getShamanConduit = (conduitID, player, contentType, conduitRank) =>
      * great for dungeons
      */
     // TODO
+    bonusStats.HPS = 1;
   } else if (conduitID === VITAL_ACCRETION) {
     bonusStats.HPS = 0;
   }
