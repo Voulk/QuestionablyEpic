@@ -113,7 +113,12 @@ export default function AddNewChar(props) {
     <Grid item xs={12} sm={6} md={6} lg={4} xl={4}>
       <CardActionArea onClick={handleClickOpen}>
         <Card className={classes.root} variant="outlined" raised={true}>
-          <Avatar variant="square" alt="" className={classes.large} src={addBtn} />
+          <Avatar
+            variant="square"
+            alt=""
+            className={classes.large}
+            src={addBtn}
+          />
           <div className={classes.details}>
             <CardContent className={classes.content}>
               <Typography variant="h6" component="h4">
@@ -154,7 +159,11 @@ export default function AddNewChar(props) {
                   label={t("Region")}
                 >
                   <InputLabel id="NewClassSelector">{t("Region")}</InputLabel>
-                  <Select value={regions} onChange={handleChangeRegion}>
+                  <Select
+                    label={t("Region")}
+                    value={regions}
+                    onChange={handleChangeRegion}
+                  >
                     {Object.values(region).map((key, i) => (
                       <MenuItem key={i} value={key}>
                         {key}
