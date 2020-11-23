@@ -9,13 +9,11 @@ import LogLinkInput from "../CooldownPlanner/ModuleComponents/LogFightSelection/
 import {
   warcraftLogReportID,
   logDifficulty,
-  importHealerLogData,
   importSummaryData,
   importDamageLogData,
 } from "../CooldownPlanner/Functions/Functions";
 import FightSelectorButton from "../CooldownPlanner/ModuleComponents/LogFightSelection/FightSelectorButton";
 import Grid from "@material-ui/core/Grid";
-import moment from "moment";
 import InputLabel from "@material-ui/core/InputLabel";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
@@ -98,6 +96,68 @@ export default function QELogImport(props) {
       setKillWipe(info[4]),
       setCurrentBossID(info[5]);
     setShowSelectedFight(true);
+  };
+
+  
+
+  const specHelper = () => {};
+
+  // Returns Array of Healer Information
+  const importHealerNamesFromLogsQE = async (starttime, endtime, reportid) => {
+    let classSpec = "";
+    let classIcon = "";
+    let healerNames = [];
+    const APIHEALING =
+      "https://www.warcraftlogs.com:443/v1/report/tables/healing/";
+    const API2 = "&api_key=92fc5d4ae86447df22a8c0917c1404dc";
+    const START = "?start=";
+    const END = "&end=";
+    const spec = props.player.getSpec();
+    if (spec === "Restoration Druid") {
+      classSpec = "&sourceclass=Druid";
+      classIcon = "Druid-Restoration";
+    }
+    if (spec === "Mistweaver Monk") {
+      classSpec = "&sourceclass=Monk";
+      classIcon = "Monk-Mistweaver";
+    }
+    if (spec === "Restoration Shaman") {
+      classSpec = "&sourceclass=Shaman";
+      classIcon = "Shaman-Restoration";
+    }
+    if (spec === "Holy Paladin") {
+      classSpec = "&sourceclass=Paladin";
+      classIcon = "Paladin-Holy";
+    }
+    if (spec === "Holy Priest") {
+      classSpec = "&sourceclass=Priest";
+      classIcon = "Priest-Holy";
+    }
+    if (spec === "Discipline Priest") {
+      classSpec = "&sourceclass=Priest";
+      classIcon = "Priest-Discipline";
+    }
+    await axios
+      .get(
+        APIHEALING +
+          reportid +
+          START +
+          starttime +
+          END +
+          endtime +
+          classSpec +
+          API2
+      )
+      .then((result) => {
+        healerNames = Object.keys(result.data.entries)
+          .filter((key) => result.data.entries[key].icon === classIcon)
+          .map((key) => result.data.entries[key]);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+
+    return healerNames;
   };
 
   const importHealerDetailedLogDataQE = async (
@@ -207,8 +267,12 @@ export default function QELogImport(props) {
 
   const importLogDataQE = async (starttime, endtime, reportID) => {
     // Map the Healer Table for Each Spec to get the healer names.
-    const healers = await importHealerLogData(starttime, endtime, reportID);
-
+    const healers = await importHealerNamesFromLogsQE(
+      starttime,
+      endtime,
+      reportID
+    );
+    setHealerData(healers);
     // Import summary Info from the Logs Summary table.
     // This contains our data for Gear, Stats, Conduits, Soulbinds etc etc.
     const summary = await importSummaryData(starttime, endtime, reportID);
@@ -224,7 +288,6 @@ export default function QELogImport(props) {
       healers.map((key) => key.id)
     );
 
-    setHealerData(healers);
     setSummaryData(summary);
     setDamageData(damage);
     setCastData(casts);
