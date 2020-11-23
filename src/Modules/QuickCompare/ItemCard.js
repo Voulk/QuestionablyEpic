@@ -1,11 +1,13 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import Card from "@material-ui/core/Card";
-import CardActionArea from "@material-ui/core/CardActionArea";
-import CardContent from "@material-ui/core/CardContent";
-import Typography from "@material-ui/core/Typography";
-import Grid from "@material-ui/core/Grid";
-import Divider from "@material-ui/core/Divider";
+import {
+  Card,
+  CardContent,
+  Typography,
+  Grid,
+  Divider,
+  IconButton,
+} from "@material-ui/core";
 import {
   getTranslatedItemName,
   buildStatString,
@@ -13,7 +15,6 @@ import {
 } from "../Engine/ItemUtilities";
 import "./ItemCard.css";
 import DeleteIcon from "@material-ui/icons/Delete";
-import IconButton from "@material-ui/core/IconButton";
 import socketImage from "../../Images/Resources/EmptySocket.png";
 import { useTranslation } from "react-i18next";
 
@@ -41,8 +42,6 @@ export default function ItemCard(props) {
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
 
-  const test = false;
-
   const itemQuality = (quality) => {
     switch (quality) {
       case "Legendary":
@@ -64,8 +63,8 @@ export default function ItemCard(props) {
 
   const deleteItemCard = () => {
     console.log("Trying to delete");
-    props.delete(item.uniqueHash)
-  }
+    props.delete(item.uniqueHash);
+  };
 
   const upgradeColor = (num) => {
     if (num > 0) {
@@ -81,12 +80,13 @@ export default function ItemCard(props) {
   const deleteActive = item.offhandID === 0;
 
   if (item.offhandID > 0) {
-    itemName = getTranslatedItemName(item.id, currentLanguage) + " & " + getTranslatedItemName(item.offhandID, currentLanguage)
+    itemName =
+      getTranslatedItemName(item.id, currentLanguage) +
+      " & " +
+      getTranslatedItemName(item.offhandID, currentLanguage);
+  } else {
+    itemName = getTranslatedItemName(item.id, currentLanguage);
   }
-  else {
-    itemName = getTranslatedItemName(item.id, currentLanguage)
-  }
-  
 
   const socket =
     props.item.socket === "Yes" ? (
@@ -96,7 +96,8 @@ export default function ItemCard(props) {
           width={15}
           height={15}
           style={{ verticalAlign: "middle" }}
-        />{" "}
+          alt="Socket"
+        />
         /
       </div>
     ) : null;
@@ -215,14 +216,17 @@ export default function ItemCard(props) {
                 </Grid>
 
                 <Grid item xs={1} display="inline-flex" align="center">
-                  {deleteActive ? 
-                  <IconButton aria-label="delete" size="small">
-                    <DeleteIcon
-                      style={{ color: "#ad2c34", paddingTop: 2 }}
-                      fontSize="small"
-                      onClick={deleteItemCard}
-                    />
-                  </IconButton> : ''}
+                  {deleteActive ? (
+                    <IconButton aria-label="delete" size="small">
+                      <DeleteIcon
+                        style={{ color: "#ad2c34", paddingTop: 2 }}
+                        fontSize="small"
+                        onClick={deleteItemCard}
+                      />
+                    </IconButton>
+                  ) : (
+                    ""
+                  )}
                 </Grid>
               </Grid>
             </Grid>

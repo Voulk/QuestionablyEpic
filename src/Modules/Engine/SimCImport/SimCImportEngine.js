@@ -73,7 +73,7 @@ function checkSimCValid(simCHeader, length, playerClass, setErrorMessage) {
     let line = simCHeader[i];
 
     if (playerClass.includes(line.split("=")[0])) checks.class = true;
-    else if (line.split("=")[0] == "level" && line.split("=")[1] == "60")
+    else if (line.split("=")[0] === "level" && line.split("=")[1] === "60")
       checks.level = true;
   }
 
@@ -104,12 +104,12 @@ function processItem(line, player, contentType) {
   for (var j = 0; j < infoArray.length; j++) {
     let info = infoArray[j];
 
-    if (j == 0) {
+    if (j === 0) {
       // Do nothing.
     }
-      //itemSlot = correctCasing(
-      //  info.replace("1", "").replace("=", "").replace("# ", "")
-      //);
+    //itemSlot = correctCasing(
+    //  info.replace("1", "").replace("=", "").replace("# ", "")
+    //);
     else if (info.includes("bonus_id="))
       itemBonusIDs = info.split("=")[1].split("/");
     else if (info.includes("id=")) itemID = parseInt(info.split("=")[1]);
@@ -130,7 +130,7 @@ function processItem(line, player, contentType) {
         itemLevel += idPayload["level"];
       } else if ("socket" in idPayload) {
         itemSocket = true;
-      } else if (bonus_id == "41") {
+      } else if (bonus_id === "41") {
         itemTertiary = "Leech";
       }
     }
@@ -163,5 +163,3 @@ function processItem(line, player, contentType) {
     player.addActiveItem(item);
   }
 }
-
-
