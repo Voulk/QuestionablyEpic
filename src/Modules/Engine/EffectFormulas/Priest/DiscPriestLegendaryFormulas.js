@@ -1,6 +1,6 @@
 
 
-const getDiscPriestLegendary = (effectName, pl, contentType) => {
+export const getDiscPriestLegendary = (effectName, pl, contentType) => {
     let result = 0.0;
     let name = effectName;
     let bonus_stats = {};
