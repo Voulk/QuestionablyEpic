@@ -6,6 +6,7 @@ import TrinketCompare from "./Modules/TrinketCompare";
 import LegendaryCompare from "./Modules/Legendaries/LegendaryCompare";
 import QuickCompare from "./Modules/QuickCompare/QuickCompare";
 import QEHeader from "./Modules/SetupAndMenus/QEHeader";
+import QEProfile from "./Modules/SetupAndMenus/QEProfile";
 import PlayerChars from "./Modules/Player/PlayerChars";
 import SimpleTabs from "./Modules/Covenants/Components/CovenantExploration";
 import { ConfirmLogin, QELogin } from "./Modules/SetupAndMenus/QELogin";
@@ -14,16 +15,13 @@ import i18n from "./i18n";
 
 import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { useLocation } from 'react-router-dom';
+import { useLocation } from "react-router-dom";
 import ls from "local-storage";
 import Snackbar from "@material-ui/core/Snackbar";
 import MuiAlert from "@material-ui/lab/Alert";
-import { createBrowserHistory } from 'history';
+import { createBrowserHistory } from "history";
 
-import ReactGA from 'react-ga';
-
-
-
+import ReactGA from "react-ga";
 
 const theme = createMuiTheme({
   palette: {
@@ -64,8 +62,9 @@ const theme = createMuiTheme({
   // },
 });
 
-process.env.NODE_ENV !== 'production' ? '' : ReactGA.initialize('UA-90234903-1')
-
+process.env.NODE_ENV !== "production"
+  ? ""
+  : ReactGA.initialize("UA-90234903-1");
 
 class App extends Component {
   constructor() {
@@ -96,8 +95,6 @@ class App extends Component {
       logImportSnackState: false,
     };
   }
-
-  
 
   // --Snack Bar Handlers--
   // Character Added
@@ -220,7 +217,7 @@ class App extends Component {
   // When component mounts, check local storage for battle tag or ID.
   componentDidMount() {
     //console.log("COMPONENT MOUNTED" + window.location.pathname + window.location.search);
-    
+
     this.setState({
       playerLoginID: ls.get("id") || "",
       playerBattleTag: ls.get("btag") || "",
@@ -230,31 +227,24 @@ class App extends Component {
 
     i18n.changeLanguage(ls.get("lang") || "en");
   }
-  
 
   usePageViews() {
-    let location = useLocation()
-  
-    useEffect(
-      () => {
-        ReactGA.send(['pageview', location.pathname])
-      },
-      [location]
-    )
+    let location = useLocation();
+
+    useEffect(() => {
+      ReactGA.send(["pageview", location.pathname]);
+    }, [location]);
   }
 
-
-
   render() {
-    
     let activePlayer = this.state.characters.getActiveChar();
     let allChars = this.state.characters;
-    
+
     function Alert(props) {
       return <MuiAlert elevation={6} variant="filled" {...props} />;
     }
     //alert(JSON.stringify(allChars[0]));
-    
+
     return (
       <Router basename={"/qesl/"}>
         <ThemeProvider theme={theme}>
@@ -394,6 +384,7 @@ class App extends Component {
                   />
                 )}
               />
+              <Route path="/profile/" render={() => <QEProfile />} />
             </Switch>
           </div>
         </ThemeProvider>
