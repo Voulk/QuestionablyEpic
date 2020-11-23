@@ -369,13 +369,13 @@
       "droploc": "Stone Legion Generals (Raid)"
     },
     "From Dusk till Dawn": {
-      "name": "From Dusk till Dawn",
-      "desc": "When you reach 5 Holy Power, gain 6% damage and healing for 10 seconds. When you reach 0 Holy Power, gain 6% DR for 10 seconds.",
+      "name": "Of Duck and Dawn",
+      "desc": "When you reach 5 Holy Power, gain 6% damage and healing for 8 seconds. When you reach 0 Holy Power, gain 3% DR for 10 seconds.",
       "droploc": "Stone Legion Generals (Raid)"
     },
     "Vanguards Momentum": {
       "name": "Vanguard's Momentum",
-      "desc": "Hammer of Wrath has two extra charges.",
+      "desc": "Hammer of Wrath has an extra charge and increases Holy Damage done by 3% for 8s. Stacks 3 times.",
       "droploc": "Currently Unknown"
     },
     "The Magistrates Judgment": {
@@ -395,13 +395,83 @@
     },
     "Shadowbreaker, Dawn of the Sun": {
       "name": "Shadowbreaker, Dawn of the Sun",
-      "desc": "Light of Dawns range is increased to 40 yards, and all allies healed receive +20% healing from you for 6 seconds.",
+      "desc": "Light of Dawns range is increased to 40 yards, and all allies healed receive full effect from your Mastery for 6s.",
       "droploc": "Sun Kings Salvation (Raid)"
     },
     "Shock Barrier": {
       "name": "Shock Barrier",
       "desc": "Holy Shock protects the target for 18 seconds, absorbing 20% of it's healing every 6s. Maximum of 5 targets protected at a time.",
       "droploc": "Currently Unknown"
+    },
+    "The Mad Paragon": {
+      "name": "The Mad Paragon",
+      "desc": "Hammer of Wrath deals 30% additional damage and extends the duration of Wings by 1s.",
+      "droploc": "Currently Unknown"
+    },
+
+    "Clarity of Mind": {
+      "name": "Clarity of Mind",
+      "desc": "Spirit Shell increases the duration of active atonements by 3s and reduces mana costs by 30%. During Rapture, PW:S costs 20% less mana and applies 6s longer atonements.",
+      "droploc": ""
+    },
+    "Crystalline Reflection": {
+      "name": "Crystalline Reflection",
+      "desc": "Power Word Shield instantly heals the target for 42% SP, and reflects 20% of damage absorbed.",
+      "droploc": ""
+    },
+    "Kiss of Death": {
+      "name": "Kiss of Death",
+      "desc": "Reduces Shadow Word: Death's cooldown by 8s and causes it's damage to trigger atonement when used on targets below 20% health.",
+      "droploc": "Currently Unknown"
+    },
+    "The Penitent One": {
+      "name": "The Penitent One",
+      "desc": "Power Word: Radiance has a 60% chance to cause your next Penance to be free and fire 3 extra bolts.",
+      "droploc": "Currently Unknown"
+    },
+    "Cauterizing Shadows": {
+      "name": "Cauterizing Shadows",
+      "desc": "When Shadow Word: Pain expires on a target, 3 allies within 30 yards of the target are healed.",
+      "droploc": "Currently Unknown"
+    },
+    "Measured Contemplation": {
+      "name": "Measured Contemplation",
+      "desc": "Every 15s that you do not cast Flash Heal / Shadow Mend, the healing of your next Flash Heal / Shadow Mend is increased by 50%. Stacks four times.",
+      "droploc": "Currently Unknown"
+    },
+    "Twins of the Sun Priestess": {
+      "name": "Twins of the Sun Priestess",
+      "desc": "Power Infusion also grants you 100% of its effects when used on an ally.",
+      "droploc": "Currently Unknown"
+    },
+    "Divine Image": {
+      "name": "Divine Image",
+      "desc": "When you use a Holy Word spell, you have a chance to summon a Naaru to your side. For 15s, the Naaru will cast similar spells to you.",
+      "droploc": "Currently Unknown"
+    },
+    "Flash Concentration": {
+      "name": "Flash Concentration",
+      "desc": "Each time you cast Flash Heal, Heal has it's casting time reduced by 0.1s and healing increased by 3%, stacking 5 times.",
+      "droploc": "Currently Unknown"
+    },
+    "Harmonious Apparatus": {
+      "name": "Harmonious Apparatus",
+      "desc": "Circle of healing reduces the cooldown on HW: Sanctify, Prayer of Mending reduces the cooldown on HW: Serenity, and Holy Fire reduces the cooldown on HW: Chastise by 4s.",
+      "droploc": "Currently Unknown"
+    },
+    "X'anshi, Return of Archbishop Benedictus": {
+      "name": "X'anshi, Return of Archbishop Benedictus",
+      "desc": "After Spirit of Redemption expires, you will revive at up to 100% health, based on your effectiveness during Spirit of Redemption. 10 minute cooldown after reviving.",
+      "droploc": "Currently Unknown"
+    },
+    "Vault of Heavens": {
+      "name": "Vault of Heavens",
+      "desc": "Leap of Faith instead causes you to leap to the target, and has two charges.",
+      "droploc": "Currently Unknown"
     }
+
+
+
+
   }
 }
