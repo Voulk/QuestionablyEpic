@@ -130,7 +130,7 @@ function getPlayerTag(accessToken, updatePlayerID) {
         }
       },
       (error) => {
-        console.log("Error: " + error.message + ".");
+        console.error("Error: " + error.message + ".");
       }
     );
 }

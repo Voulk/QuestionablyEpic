@@ -171,9 +171,9 @@ class App extends Component {
   }
 
   checkPatron = (email) => {
-    console.log("Sending Request for request" + email)
+    
     if (email !== "") {
-      console.log("Sending Request")
+      
       dbCheckPatron(email, this.setPatron)
     }
 

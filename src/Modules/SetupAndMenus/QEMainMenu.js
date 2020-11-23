@@ -55,7 +55,7 @@ export default function QEMainMenu(props) {
     ReactGA.pageview(window.location.pathname + window.location.search);
   }, []);
 
-  console.log(process.env.REACT_APP_HOMEPAGE)
+  
   const { t, i18n } = useTranslation();
   // const currentLanguage = i18n.language;
   const classes = useStyles();
