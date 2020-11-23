@@ -42,30 +42,12 @@ class Player {
     race = "";
 
     // A players spell casting patterns. These are averaged from entered logs and a default is provided too. 
-    // CASTS, HEALING, HEALINGPERC, HPS, 
+    // CASTS, HEALING, HEALINGPERC, HPS,
     castPattern =
-    {   "Raid": {
-            "Rejuvenation": [17, 181000, 0.2909, 1566],
-            "Wild Growth": [5, 154400, 0.2472, 1478],
-            "Overall": [0, 90132, 1],
-            "Light of Dawn": [20, 238400, 0.2082, 1316],
-            "Word of Glory": [4, 40800, 0.0357, 225],
-            "Holy Shock": [27, 221400, 0.1934, 1222],
-            "Holy Light": [29, 311600, 0.293, 1683],
-            "Shock Barrier": [0, 98300, 0.0858, 542],
-    },
-        "Dungeon": {
-            "Rejuvenation": [17, 181000, 0.2909, 1566],
-            "Wild Growth": [5, 154400, 0.2472, 1478],
-            "Overall": [0, 90132, 1],
-            "Light of Dawn": [20, 238400, 0.2082, 1316],
-            "Word of Glory": [4, 40800, 0.0357, 225],
-            "Holy Shock": [27, 221400, 0.1934, 1222],
-            "Holy Light": [29, 311600, 0.293, 1683],
-            "Shock Barrier": [0, 98300, 0.0858, 542],
+        {
+            Raid: {},
+            Dungeon: {},
         }
-    }
-
    
     // The players active stats from their character page. These are raw rather than being percentages. 
     // They can either be pulled automatically from the entered log, or calculated from an entered SimC string.
@@ -85,28 +67,28 @@ class Player {
         fightLength: 180,
     }
    
-    // Stat weights are normalized around intellect. 
+    // Stat weights are normalized around intellect.
     // Players who don't insert their own stat weights can use the QE defaults.
     // - Since these change quite often we use a tag. If default = true then their weights will automatically update whenever they open the app.
-    // - If they manually enter weights on the other hand, then this automatic-update won't occur. 
+    // - If they manually enter weights on the other hand, then this automatic-update won't occur.
     statWeights = {
-        "Raid": {
-            intellect: 1, 
+        Raid: {
+            intellect: 1,
             haste: 0.4,
             crit: 0.5,
             mastery: 0.45,
             versatility: 0.4,
             leech: 0.7,
         },
-        "Dungeon": {
-            intellect: 1, 
+        Dungeon: {
+            intellect: 1,
             haste: 0.8,
             crit: 0.5,
             mastery: 0.4,
             versatility: 0.45,
             leech: 0.7,
         },
-        "DefaultWeights": true
+        DefaultWeights: true
 
     }
 
@@ -125,15 +107,16 @@ class Player {
     }
 
     getStatWeight = (contentType, stat) => {
-        stat = stat.toLowerCase();
-        
-        if (stat in this.statWeights[contentType]) {
-            return this.statWeights[contentType][stat]
-        }
-        else {
+        const lcStat = stat.toLowerCase();
+        if (!this.statWeights[contentType]) {
             return 0;
         }
-            
+        
+        if (lcStat in this.statWeights[contentType]) {
+            return this.statWeights[contentType][lcStat];
+        }
+
+        return 0;
     }
 
     calculateConduits = (contentType) => {
@@ -225,7 +208,9 @@ class Player {
             case "Mastery":
                 statPerc = 1; // TODO
                 if (this.spec === SPEC.HOLYPALADIN) {
-                    statPerc = (0.12 + (this.activeStats.mastery / 23.3 / 100)) * 0.7 + 1
+                    statPerc = (0.12 + (this.activeStats.mastery / 23.3 / 100)) * 0.7 + 1;
+                } else if (this.spec === SPEC.RESTOSHAMAN) {
+                    statPerc = 1 + ((0.25 * 8 * 35 + this.activeStats.mastery) / (35 / 3)) / 100; // .25 is placeholder for mastery effectiveness
                 }
                 break;
             case "Vers":
@@ -258,7 +243,7 @@ class Player {
         }
         else if (flag === "NOMAST") {
             // Returns a multiplier of Haste / Vers / Crit.
-            mult = this.getStatPerc("Haste") * this.getStatPerc("Crit") * this.getStatPerc("Vers") 
+            mult = this.getStatPerc("Haste") * this.getStatPerc("Crit") * this.getStatPerc("Vers");
         }
         else if (flag === "CRITVERS") {
             // Returns a multiplier that includes raw intellect. 
@@ -486,7 +471,53 @@ class Player {
                     "Shock Barrier": [0, 98300, 0.0858, 542],
                 }
             }
-
+        } else if (spec === SPEC.RESTOSHAMAN) { // all of this needs a proper input once
+            this.fightInfo = {
+                hps: 6500,
+                rawhps: 7000,
+                fightLength: 465,
+            }
+            this.statWeights = {
+                Raid: {
+                    intellect: 1,
+                    haste: 0.4,
+                    crit: 0.6,
+                    mastery: 0.5,
+                    versatility: 0.5,
+                    leech: 0.6,
+                },
+                Dungeon: {
+                    intellect: 1,
+                    haste: 0.4,
+                    crit: 0.6,
+                    mastery: 0.5,
+                    versatility: 0.5,
+                    leech: 0.6,
+                },
+                DefaultWeights: true
+            };
+            this.castPattern = {
+                Raid: {
+                    "Riptide": [66, 693600, 23, 1491],
+                    "Cloudburst Totem": [14, 0, 0, 0],
+                    "Healing Rain": [18, 450000, 15, 967],
+                    "Healing Tide Totem": [2, 0, 0, 0],
+                    "Chain Heal": [20, 368000, 12, 791],
+                    "Healing on Earth Shield": [0, 212000, 0, 456],
+                    "Mana Tide Totem": [2, 0, 0, 0],
+                    "Healing Surge": [20, 0, 0, 0],
+                },
+                Dungeon: {
+                    "Riptide": [66, 693600, 23, 1491],
+                    "Cloudburst Totem": [14, 0, 0, 0],
+                    "Healing Rain": [18, 450000, 15, 967],
+                    "Healing Tide Totem": [2, 0, 0, 0],
+                    "Chain Heal": [20, 368000, 12, 791],
+                    "Healing on Earth Shield": [0, 212000, 0, 456],
+                    "Mana Tide Totem": [2, 0, 0, 0],
+                    "Healing Surge": [40, 0, 0, 0],
+                }
+            };
         }
 
     }
