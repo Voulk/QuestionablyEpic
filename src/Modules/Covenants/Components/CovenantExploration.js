@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
@@ -20,6 +20,7 @@ import {
   buildConduitStats,
 } from "../CovenantUtilities";
 import "./CovenantExploration.css";
+import ReactGA from 'react-ga';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -81,6 +82,10 @@ const useStyles = makeStyles((theme) => ({
 
 // ==============================================
 export default function SimpleTabs(props) {
+  useEffect(() => {
+    ReactGA.pageview(window.location.pathname + window.location.search);
+  }, []);
+
   const classes = useStyles();
   const [tabvalue, setTabValue] = React.useState(0);
   const [soulbindValue, setSoulbindValue] = React.useState(0);
