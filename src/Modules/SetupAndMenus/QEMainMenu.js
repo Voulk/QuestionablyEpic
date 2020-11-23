@@ -1,16 +1,14 @@
-import React, {useEffect} from "react";
-import Button from "@material-ui/core/Button";
+import React, { useEffect } from "react";
 import "./QEMainMenu.css";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import CharCards from "./CharComponentGen";
-import { Grid } from "@material-ui/core";
 import AddNewChar from "./CharCreator";
 import { makeStyles } from "@material-ui/core/styles";
-import Avatar from "@material-ui/core/Avatar";
-import ReactGA from 'react-ga';
-import {dbCheckPatron} from './ConnectionUtilities';
+import ReactGA from "react-ga";
+import { dbCheckPatron } from "./ConnectionUtilities";
 import Check from "@material-ui/icons/Check";
+import { Paper, Grid, Button, Typography } from "@material-ui/core";
 
 // Warning: If a button name has to change, do it in the translation files. Consider the titles here to be ID's rather than strings.
 const mainMenuOptions = {
@@ -50,7 +48,6 @@ const useStyles = makeStyles((theme) => ({
 // <p>{props.pl.getSpec()}</p>
 
 export default function QEMainMenu(props) {
-  
   useEffect(() => {
     ReactGA.pageview(window.location.pathname + window.location.search);
   }, []);
@@ -74,8 +71,19 @@ export default function QEMainMenu(props) {
       >
         <p className="headers">{/*t("MainMenuItemsH") */}</p>
         <Grid container spacing={2}>
+          <Grid item xs={12}>
+            <Paper elevation={0} style={{ border: "1px", padding: 5 }}>
+              <Typography
+                color="primary"
+                align="center"
+                variant="subtitle1"
+                // gutterBottom
+              >
+                Blah Blah Blah Druids Suck
+              </Typography>
+            </Paper>
+          </Grid>
           {Object.keys(mainMenuOptions).map((key, index) => (
-            
             // Buttons are translated and printed from a dictionary.
             <Grid item xs={12} sm={12} md={6} lg={6} xl={6} key={index}>
               <Button
@@ -89,7 +97,9 @@ export default function QEMainMenu(props) {
                   whiteSpace: "nowrap",
                   justifyContent: "left",
                   paddingLeft: "32px",
-                  color: !(mainMenuOptions[key][1] && characterCount > 0) ? "#9c9c9c" : "#F2BF59",
+                  color: !(mainMenuOptions[key][1] && characterCount > 0)
+                    ? "#9c9c9c"
+                    : "#F2BF59",
                 }}
                 component={Link}
                 to={mainMenuOptions[key][0]}
