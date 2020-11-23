@@ -8,6 +8,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import ReactGA from "react-ga";
 import { dbCheckPatron } from "./ConnectionUtilities";
 import Check from "@material-ui/icons/Check";
+import ArrowForward from "@material-ui/icons/ArrowForward";
 import { Paper, Grid, Button, Typography } from "@material-ui/core";
 
 // Warning: If a button name has to change, do it in the translation files. Consider the titles here to be ID's rather than strings.
@@ -15,10 +16,10 @@ const mainMenuOptions = {
   "Top Gear (Coming Soon)": ["/topgear", false],
   "Upgrade Finder (Coming Soon)": ["/upgradefinder", false],
   "Gear Quick Compare": ["/quickcompare", true],
-  "The Great Vault": ["/greatvault", false],
+  "Explore Covenants": ["/soulbinds", true],
   "Legendary Analysis": ["/legendaries", true],
   "Trinket Analysis": ["/trinkets", false],
-  "Explore Covenants": ["/soulbinds", true],
+  "The Great Vault (Coming Soon)": ["/greatvault", false],
   "Cooldown Planner (Coming Soon)": ["/holydiver", false],
 };
 
@@ -73,14 +74,14 @@ export default function QEMainMenu(props) {
         <p className="headers">{/*t("MainMenuItemsH") */}</p>
         <Grid container spacing={2}>
           <Grid item xs={12}>
-            <Paper elevation={0} style={{ border: "1px", padding: 5 }}>
+            <Paper elevation={0} style={{ border: "1px", padding: 10 }}>
               <Typography
-                color="primary"
-                align="center"
+                style={{color: "limegreen"}}
+                align="left"
                 variant="subtitle1"
                 // gutterBottom
               >
-                Blah Blah Blah Druids Suck
+                An expansion launch is a chaotic time and the game continues to see frequent, decision-altering changes. Continue to use your class discords as your primary resource for information. ~Voulk
               </Typography>
             </Paper>
           </Grid>
@@ -103,7 +104,7 @@ export default function QEMainMenu(props) {
                 component={Link}
                 to={mainMenuOptions[key][0]}
               >
-                <Check style={{ paddingRight: 32 }} />
+                <ArrowForward style={{ paddingRight: 32 }} />
                 {t(key)}
               </Button>
             </Grid>
@@ -111,6 +112,7 @@ export default function QEMainMenu(props) {
         </Grid>
 
         <p className="headers">{t("MainMenuCharactersH")}</p>
+        <Typography style={{color: 'white', marginBottom: '10px', fontStyle: 'italic'}} variant="body2" align='center'>Add your characters here. Right click to edit your stat weights, realm information and more.</Typography> 
 
         <Grid container spacing={2}>
           {props.allChars.getAllChar().length > 0
@@ -124,6 +126,7 @@ export default function QEMainMenu(props) {
                     cardType="Char"
                     allChars={props.allChars}
                     charUpdate={props.charUpdate}
+                    singleUpdate={props.singleUpdate}
                     isActive={index === props.allChars.activeChar}
                     contentType={props.contentType}
                     charUpdatedSnack={props.charUpdatedSnack}

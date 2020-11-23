@@ -92,6 +92,16 @@ class Player {
 
     }
 
+
+    editChar = (contentType, name, realm, region, race, weights) => {
+        this.charName = name;
+        this.realm = realm;
+        this.region = region;
+        this.race = race;
+        this.statWeights[contentType] = weights;
+
+    }
+
     getRace = () => {
         return this.race;
     }

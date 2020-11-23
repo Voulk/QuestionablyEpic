@@ -218,20 +218,23 @@ export default function CharCards(props) {
 
   // TODO
   const handleUpdateData = (
-    name,
-    spec,
-    race,
-    region,
-    server,
-    intellect,
-    critical,
-    haste,
-    mastery,
-    versatility,
-    leech
   ) => {
+    let newPlayer = props.char;
+    let weights = 
+    {            
+      intellect: 1, 
+      haste: haste,
+      crit: critical,
+      mastery: mastery,
+      versatility: versatility,
+      leech: leech,
+    }
+    
+    newPlayer.editChar(props.contentType, charName, server, region, selectedRace, weights);
+
     setOpen(false);
     //Update data Function Here
+    props.singleUpdate(newPlayer);
     props.charUpdatedSnack();
   };
 
@@ -301,7 +304,7 @@ export default function CharCards(props) {
             >
               <Tab label="Info" {...a11yProps(0)} />
               <Tab label="Stat Weights" {...a11yProps(1)} />
-              <Tab label="Saved Logs" {...a11yProps(2)} />
+              <Tab disabled={true} label="Saved Logs" {...a11yProps(2)} />
             </Tabs>
           </AppBar>
           <TabPanel className={classes.tabPanel} value={value} index={0}>
@@ -324,7 +327,7 @@ export default function CharCards(props) {
                   size="small"
                   fullWidth
                   label={t("Region")}
-                  disabled={charName === "" ? true : false}
+                  disabled={true}
                 >
                   <InputLabel id="ClassSelector">{t("Region")}</InputLabel>
                   <Select
@@ -370,7 +373,7 @@ export default function CharCards(props) {
                   fullWidth
                   size="small"
                   label={t("Class")}
-                  disabled={region === "" ? true : false}
+                  disabled={true}
                 >
                   <InputLabel id="ClassSelector">{t("Class")}</InputLabel>
                   <Select

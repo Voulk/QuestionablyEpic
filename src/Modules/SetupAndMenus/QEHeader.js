@@ -55,8 +55,8 @@ export default function QEHeader(props) {
                   </Link>
                 </Grid>
                 <Grid item xs={12} sm={12} md={12} lg={6} xl={6}>
-                  <Typography color="primary" variant="caption" align="left">
-                    Roll's Royce Edition
+                  <Typography style={{color: "#04E07C"}} variant="body1" align="left">
+                    Rolls Royce Edition
                   </Typography>
                 </Grid>
               </Grid>

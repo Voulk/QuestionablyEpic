@@ -88,6 +88,7 @@ class App extends Component {
       playerBattleTag: "",
       accessToken: "",
       contentType: "Raid",
+      patronStatus: "",
       charSnackState: false,
       charUpdateState: false,
       loginSnackState: false,
@@ -163,10 +164,13 @@ class App extends Component {
   };
 
   updatePlayerChar = (player) => {
+    
     let allChars = this.state.characters;
     allChars.updatePlayerChar(player);
     console.log("Setting State");
     this.setState({ characters: allChars });
+    allChars.saveAllChar();
+    
   };
 
   setRegion = (props) => {
@@ -326,6 +330,7 @@ class App extends Component {
                   <QEMainMenu
                     allChars={allChars}
                     charUpdate={this.updatePlayerChars}
+                    singleUpdate={this.updatePlayerChar}
                     pl={this.state.player}
                     charAddedSnack={this.handleCharSnackOpen}
                     charUpdatedSnack={this.handleCharUpdateSnackOpen}

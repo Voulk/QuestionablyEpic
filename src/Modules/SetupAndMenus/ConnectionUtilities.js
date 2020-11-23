@@ -23,3 +23,7 @@ export function dbCheckPatron() {
 
     
   }
+
+export function dbUpdateChar() {
+  
+}
