@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import Button from "@material-ui/core/Button";
 import "./QEMainMenu.css";
 import { Link } from "react-router-dom";
@@ -8,7 +8,8 @@ import { Grid } from "@material-ui/core";
 import AddNewChar from "./CharCreator";
 import { makeStyles } from "@material-ui/core/styles";
 import Avatar from "@material-ui/core/Avatar";
-
+import ReactGA from 'react-ga';
+import {dbCheckPatron} from './ConnectionUtilities';
 import Check from "@material-ui/icons/Check";
 
 // Warning: If a button name has to change, do it in the translation files. Consider the titles here to be ID's rather than strings.
@@ -16,10 +17,11 @@ const mainMenuOptions = {
   "Top Gear (Coming Soon)": ["/topgear", false],
   "Upgrade Finder (Coming Soon)": ["/upgradefinder", false],
   "Gear Quick Compare": ["/quickcompare", true],
+  "The Great Vault": ["/greatvault", false],
   "Legendary Analysis": ["/legendaries", true],
   "Trinket Analysis": ["/trinkets", false],
   "Explore Covenants": ["/soulbinds", true],
-  "Cooldown Planner (Coming Soon)": ["/holydiver", true],
+  "Cooldown Planner (Coming Soon)": ["/holydiver", false],
 };
 
 const useStyles = makeStyles((theme) => ({
@@ -48,9 +50,15 @@ const useStyles = makeStyles((theme) => ({
 // <p>{props.pl.getSpec()}</p>
 
 export default function QEMainMenu(props) {
+  
+  useEffect(() => {
+    ReactGA.pageview(window.location.pathname + window.location.search);
+  }, []);
+
   const { t, i18n } = useTranslation();
   // const currentLanguage = i18n.language;
   const classes = useStyles();
+  const characterCount = props.allChars.length;
 
   return (
     <div style={{ backgroundColor: "#313131" }}>
@@ -67,12 +75,13 @@ export default function QEMainMenu(props) {
         <p className="headers">{/*t("MainMenuItemsH") */}</p>
         <Grid container spacing={2}>
           {Object.keys(mainMenuOptions).map((key, index) => (
+            
             // Buttons are translated and printed from a dictionary.
             <Grid item xs={12} sm={12} md={6} lg={6} xl={6} key={index}>
               <Button
                 key={index}
                 variant="contained"
-                disabled={!mainMenuOptions[key][1]}
+                disabled={!(mainMenuOptions[key][1] && characterCount > 0)}
                 color="secondary"
                 style={{
                   width: "100%",
@@ -80,7 +89,7 @@ export default function QEMainMenu(props) {
                   whiteSpace: "nowrap",
                   justifyContent: "left",
                   paddingLeft: "32px",
-                  color: !mainMenuOptions[key][1] ? "#9c9c9c" : "#F2BF59",
+                  color: !(mainMenuOptions[key][1] && characterCount > 0) ? "#9c9c9c" : "#F2BF59",
                 }}
                 component={Link}
                 to={mainMenuOptions[key][0]}

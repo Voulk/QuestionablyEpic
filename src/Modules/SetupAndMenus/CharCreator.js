@@ -21,6 +21,8 @@ import raceIcons from "../CooldownPlanner/Functions/IconFunctions/RaceIcons";
 import Autocomplete from "@material-ui/lab/Autocomplete";
 import { serverList, classRaceList } from "../CooldownPlanner/Data/Data";
 
+const addBtn = require("../../Images/AddBtn.jpg");
+
 const useStyles = makeStyles((theme) => ({
   formControl: {
     // margin: theme.spacing(0.5),
@@ -111,7 +113,7 @@ export default function AddNewChar(props) {
     <Grid item xs={12} sm={6} md={6} lg={4} xl={4}>
       <CardActionArea onClick={handleClickOpen}>
         <Card className={classes.root} variant="outlined" raised={true}>
-          <Avatar variant="square" alt="" className={classes.large} />
+          <Avatar variant="square" alt="" className={classes.large} src={addBtn} />
           <div className={classes.details}>
             <CardContent className={classes.content}>
               <Typography variant="h6" component="h4">

@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 // import ReactDOM from "react-dom";
 import { makeStyles } from "@material-ui/core/styles";
 import "../SetupAndMenus/QEMainMenu.css";
-
+import ReactGA from "react-ga";
 // import Player from "../Player/Player";
 import Item from "../Player/Item";
 // import QEHeader from "../SetupAndMenus/QEHeader";
@@ -22,6 +22,8 @@ import {
   getItemAllocations,
   scoreItem,
   getItemEffect,
+  buildWepCombos,
+  getItemSlot,
 } from "../Engine/ItemUtilities";
 import Button from "@material-ui/core/Button";
 import ItemCard from "./ItemCard";
@@ -33,6 +35,7 @@ import Snackbar from "@material-ui/core/Snackbar";
 import MuiAlert from "@material-ui/lab/Alert";
 import Autocomplete from "@material-ui/lab/Autocomplete";
 import TextField from "@material-ui/core/TextField";
+import Popover from "@material-ui/core/Popover";
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -41,6 +44,14 @@ const useStyles = makeStyles((theme) => ({
   },
   selectEmpty: {
     marginTop: theme.spacing(2),
+  },
+  paper: {
+    border: "1px solid",
+    padding: theme.spacing(1),
+    backgroundColor: theme.palette.background.paper,
+  },
+  typography: {
+    padding: theme.spacing(2),
   },
 }));
 
@@ -81,7 +92,7 @@ const fillSlot = (container, spec, pl, contentType) => {
 
 const sortItems = (container) => {
   // Current default sorting is by HPS but we could get creative here in future.
-  container.sort((a, b) => (a.expectedHPS < b.expectedHPS ? 1 : -1));
+  container.sort((a, b) => (a.softScore < b.softScore ? 1 : -1));
 };
 
 /*
@@ -115,20 +126,31 @@ function getSlots() {
     { value: "Finger", label: t("slotNames.finger") },
     { value: "Trinket", label: t("slotNames.trinket") },
     { value: "Weapons", label: t("slotNames.weapons") },
-    { value: "Off-Hands", label: t("slotNames.offhands") },
+    { value: "Offhands", label: t("slotNames.offhands") },
   ];
 
   return slots;
 }
 
 export default function QuickCompare(props) {
+  useEffect(() => {
+    ReactGA.pageview(window.location.pathname + window.location.search);
+  }, []);
+
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const openPop = Boolean(anchorEl);
+  const idPop = open ? "simple-popover" : undefined;
 
   const handleClick = () => {
     setOpen(true);
+  };
+
+  const handleClosePop = () => {
+    setAnchorEl(null);
   };
 
   const handleClose = (event, reason) => {
@@ -167,6 +189,7 @@ export default function QuickCompare(props) {
       //console.log(itemDB[i].name + itemDB[i].dropLoc );
       let item = itemDB[i];
 
+      /*
       if (
         (slotName === item.slot &&
           (slotName !== "Weapons" || slotName !== "Off-Hands") &&
@@ -181,6 +204,19 @@ export default function QuickCompare(props) {
           acceptableWeaponTypes.includes(item.itemSubClass) &&
           (item.slot === "Holdable" || item.slot === "Shield")) ||
         (slotName === item.slot && slotName === "Back")
+      ) {
+        */
+      if (
+        (slotName === item.slot &&
+          item.itemClass === 4 &&
+          acceptableArmorTypes.includes(item.itemSubClass)) ||
+        (slotName === "Offhands" &&
+          (item.slot === "Holdable" ||
+            item.slot === "Offhand" ||
+            item.slot === "Shield")) ||
+        (slotName === "Weapons" &&
+          item.itemClass === 2 &&
+          acceptableWeaponTypes.includes(item.itemSubClass))
       ) {
         // If the selected slot is "Weapons & Offhands" then our checks involve:
         // - Ensuring the item is a weapon (item class 2)
@@ -203,12 +239,16 @@ export default function QuickCompare(props) {
   };
 
   // Add an item to our "Active Items" array.
-  const addItem = () => {
+  const addItem = (event) => {
+    if (itemLevel > 300) {
+      setAnchorEl(anchorEl ? null : event.currentTarget);
+      return null;
+    }
     let player = props.pl;
     let item = new Item(
       itemID,
       itemName,
-      activeSlot,
+      getItemSlot(itemID),
       itemSocket,
       itemTertiary,
       0,
@@ -234,6 +274,16 @@ export default function QuickCompare(props) {
     handleClick();
   };
 
+  const deleteItem = (unique) => {
+    let player = props.pl;
+    //console.log("AHHHHHHHH DELETING");
+
+    player.deleteActiveItem(unique);
+
+    setItemList([...player.getActiveItems(activeSlot)]);
+    handleClick();
+  };
+
   const itemNameChanged = (event, val) => {
     if (val === null) {
       setItemID("");
@@ -244,7 +294,7 @@ export default function QuickCompare(props) {
     }
   };
 
-  const itemLevelChanged = (event, val) => {
+  const itemLevelChanged = (val) => {
     // removed parse int here, was missing radix parameter
     setItemLevel(val);
     setItemSocket("No");
@@ -269,6 +319,7 @@ export default function QuickCompare(props) {
   const calculateScore = (item) => {};
 
   fillItems(activeSlot, props.pl.spec);
+  let wepCombos = buildWepCombos(props.pl);
 
   return (
     <div
@@ -378,37 +429,26 @@ export default function QuickCompare(props) {
               </Grid>
 
               <Grid item>
-                <FormControl
+                <TextField
+                  error={itemLevel > 300 ? true : false}
                   className={classes.formControl}
+                  id="Ilvl-select"
+                  onChange={(e) => itemLevelChanged(e.target.value)}
+                  label={t("QuickCompare.ItemLevel")}
+                  disabled={itemID === "" ? true : false}
+                  onInput={(e) => {
+                    e.target.value = Math.max(0, parseInt(e.target.value))
+                      .toString()
+                      .slice(0, 3);
+                  }}
                   variant="outlined"
                   size="small"
-                  disabled={itemID === "" ? true : false}
-                >
-                  <Autocomplete
-                    size="small"
-                    disabled={itemID === "" ? true : false}
-                    id="Ilvl-select"
-                    onChange={itemLevelChanged}
-                    options={itemLevels}
-                    openOnFocus={true}
-                    getOptionLabel={(option) => option.toString()}
-                    getOptionSelected={(option, value) => option === value}
-                    ListboxProps={{
-                      style: {
-                        border: "1px solid rgba(255, 255, 255, 0.23)",
-                        padding: 0,
-                      },
-                    }}
-                    style={{ width: "100%" }}
-                    renderInput={(params) => (
-                      <TextField
-                        {...params}
-                        label={t("QuickCompare.ItemLevel")}
-                        variant="outlined"
-                      />
-                    )}
-                  />
-                </FormControl>
+                  type="number"
+                  inputProps={{
+                    min: "50",
+                    max: "300",
+                  }}
+                />
               </Grid>
 
               <Grid item>
@@ -484,6 +524,24 @@ export default function QuickCompare(props) {
                 >
                   {t("QuickCompare.AddButton")}
                 </Button>
+                <Popover
+                  id={idPop}
+                  open={openPop}
+                  anchorEl={anchorEl}
+                  onClose={handleClosePop}
+                  anchorOrigin={{
+                    vertical: "bottom",
+                    horizontal: "center",
+                  }}
+                  transformOrigin={{
+                    vertical: "top",
+                    horizontal: "center",
+                  }}
+                >
+                  <Typography className={classes.typography}>
+                    Item Not Added. Ilvl Cap is 300
+                  </Typography>
+                </Popover>
               </Grid>
               <Snackbar
                 open={open}
@@ -510,7 +568,7 @@ export default function QuickCompare(props) {
               <Divider style={{ marginBottom: 10 }} />
               <Grid container spacing={1}>
                 {[...props.pl.getActiveItems("Head")].map((item, index) => (
-                  <ItemCard key={index} item={item} />
+                  <ItemCard key={index} item={item} delete={deleteItem} />
                 ))}
               </Grid>
             </Grid>
@@ -523,7 +581,7 @@ export default function QuickCompare(props) {
               <Divider style={{ marginBottom: 10 }} />
               <Grid container spacing={1}>
                 {[...props.pl.getActiveItems("Neck")].map((item, index) => (
-                  <ItemCard key={index} item={item} />
+                  <ItemCard key={index} item={item} delete={deleteItem} />
                 ))}
               </Grid>
             </Grid>
@@ -536,7 +594,7 @@ export default function QuickCompare(props) {
               <Divider style={{ marginBottom: 10 }} />
               <Grid container spacing={1}>
                 {[...props.pl.getActiveItems("Shoulder")].map((item, index) => (
-                  <ItemCard key={index} item={item} />
+                  <ItemCard key={index} item={item} delete={deleteItem} />
                 ))}
               </Grid>
             </Grid>
@@ -548,7 +606,7 @@ export default function QuickCompare(props) {
               <Divider style={{ marginBottom: 10 }} />
               <Grid container spacing={1}>
                 {[...props.pl.getActiveItems("Back")].map((item, index) => (
-                  <ItemCard key={index} item={item} />
+                  <ItemCard key={index} item={item} delete={deleteItem} />
                 ))}
               </Grid>
             </Grid>
@@ -561,7 +619,7 @@ export default function QuickCompare(props) {
               <Divider style={{ marginBottom: 10 }} />
               <Grid container spacing={1}>
                 {[...props.pl.getActiveItems("Chest")].map((item, index) => (
-                  <ItemCard key={index} item={item} />
+                  <ItemCard key={index} item={item} delete={deleteItem} />
                 ))}
               </Grid>
             </Grid>
@@ -574,7 +632,7 @@ export default function QuickCompare(props) {
               <Divider style={{ marginBottom: 10 }} />
               <Grid container spacing={1}>
                 {[...props.pl.getActiveItems("Wrist")].map((item, index) => (
-                  <ItemCard key={index} item={item} />
+                  <ItemCard key={index} item={item} delete={deleteItem} />
                 ))}
               </Grid>
             </Grid>
@@ -587,7 +645,7 @@ export default function QuickCompare(props) {
               <Divider style={{ marginBottom: 10 }} />
               <Grid container spacing={1}>
                 {[...props.pl.getActiveItems("Hands")].map((item, index) => (
-                  <ItemCard key={index} item={item} />
+                  <ItemCard key={index} item={item} delete={deleteItem} />
                 ))}
               </Grid>
             </Grid>
@@ -600,7 +658,7 @@ export default function QuickCompare(props) {
               <Divider style={{ marginBottom: 10 }} />
               <Grid container spacing={1}>
                 {[...props.pl.getActiveItems("Waist")].map((item, index) => (
-                  <ItemCard key={index} item={item} />
+                  <ItemCard key={index} item={item} delete={deleteItem} />
                 ))}
               </Grid>
             </Grid>
@@ -613,7 +671,7 @@ export default function QuickCompare(props) {
               <Divider style={{ marginBottom: 10 }} />
               <Grid container spacing={1}>
                 {[...props.pl.getActiveItems("Feet")].map((item, index) => (
-                  <ItemCard key={index} item={item} />
+                  <ItemCard key={index} item={item} delete={deleteItem} />
                 ))}
               </Grid>
             </Grid>
@@ -626,7 +684,7 @@ export default function QuickCompare(props) {
               <Divider style={{ marginBottom: 10 }} />
               <Grid container spacing={1}>
                 {[...props.pl.getActiveItems("Finger")].map((item, index) => (
-                  <ItemCard key={index} item={item} />
+                  <ItemCard key={index} item={item} delete={deleteItem} />
                 ))}
               </Grid>
             </Grid>
@@ -639,7 +697,7 @@ export default function QuickCompare(props) {
               <Divider style={{ marginBottom: 10 }} />
               <Grid container spacing={1}>
                 {[...props.pl.getActiveItems("Trinket")].map((item, index) => (
-                  <ItemCard key={index} item={item} />
+                  <ItemCard key={index} item={item} delete={deleteItem} />
                 ))}
               </Grid>
             </Grid>
@@ -647,13 +705,15 @@ export default function QuickCompare(props) {
             {/* Trinket */}
             <Grid item xs={12}>
               <Typography color="primary" variant="h5">
-                {t("slotNames.weapons")}
+                {t("Main Hands")}
               </Typography>
               <Divider style={{ marginBottom: 10 }} />
               <Grid container spacing={1}>
-                {[...props.pl.getActiveItems("Weapons")].map((item, index) => (
-                  <ItemCard key={index} item={item} />
-                ))}
+                {[...props.pl.getActiveItems("1H Weapon")].map(
+                  (item, index) => (
+                    <ItemCard key={index} item={item} delete={deleteItem} />
+                  )
+                )}
               </Grid>
             </Grid>
 
@@ -664,11 +724,22 @@ export default function QuickCompare(props) {
               </Typography>
               <Divider style={{ marginBottom: 10 }} />
               <Grid container spacing={1}>
-                {[...props.pl.getActiveItems("Off-Hands")].map(
-                  (item, index) => (
-                    <ItemCard key={index} item={item} />
-                  )
-                )}
+                {[...props.pl.getActiveItems("Offhands")].map((item, index) => (
+                  <ItemCard key={index} item={item} delete={deleteItem} />
+                ))}
+              </Grid>
+            </Grid>
+
+            {/* Trinket */}
+            <Grid item xs={12}>
+              <Typography color="primary" variant="h5">
+                {t("Weapon Combos")}
+              </Typography>
+              <Divider style={{ marginBottom: 10 }} />
+              <Grid container spacing={1}>
+                {wepCombos.map((item, index) => (
+                  <ItemCard key={index} item={item} delete={deleteItem} />
+                ))}
               </Grid>
             </Grid>
           </Grid>

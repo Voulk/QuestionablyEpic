@@ -1,11 +1,11 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import "../SetupAndMenus/QEMainMenu.css";
 import LegendaryObject from "./LegendaryObject";
 import "./Legendaries.css";
 import { useTranslation } from "react-i18next";
 import {getEffectValue} from '../Engine/EffectFormulas/EffectEngine'
-
+import ReactGA from 'react-ga';
 // This is all shitty boilerplate code that'll be replaced. Do not copy.
 // const useStyles = makeStyles((theme) => ({
 //   root: {
@@ -18,6 +18,7 @@ import {getEffectValue} from '../Engine/EffectFormulas/EffectEngine'
 //     flexGrow: 5,
 //   },
 // }));
+
 
 const createLegendary = (legendaryName, container, spec, pl, contentType) => {
   let lego = new Legendary(legendaryName);
@@ -175,6 +176,9 @@ class Legendary {
 }
 
 export default function LegendaryCompare(props) {
+  useEffect(() => {
+    ReactGA.pageview(window.location.pathname + window.location.search);
+  }, []);
   const { t, i18n } = useTranslation();
 
   let legendaryList = [];

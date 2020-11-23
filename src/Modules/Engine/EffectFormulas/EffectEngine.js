@@ -26,7 +26,7 @@ export function getEffectValue(effect, player, contentType, itemLevel = 0) {
     const effectName = effect.name;
     const effectType = effect.type;
 
-    console.log("ITEM EFFECT" + effectName + effectType + "pl spec" + player.spec);
+    //console.log("ITEM EFFECT" + effectName + effectType + "pl spec" + player.spec);
 
     if (effect.type === 'special') {
         bonus_stats = getGenericEffect(effectName, player, contentType);
@@ -61,8 +61,8 @@ export function getEffectValue(effect, player, contentType, itemLevel = 0) {
         bonus_stats = getGenericLegendary(effectName, player, contentType);
     }
     else if (effectType === 'trinket') {
-        //bonus_stats = getTrinketEffect(effectName, player, contentType, itemLevel);
-        testTrinkets(player, contentType); //TODO: Remove
+        bonus_stats = getTrinketEffect(effectName, player, contentType, itemLevel);
+        //testTrinkets(player, contentType); //TODO: Remove
     }
 
     return bonus_stats;

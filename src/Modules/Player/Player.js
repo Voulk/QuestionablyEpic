@@ -188,11 +188,31 @@ class Player {
 
     getActiveItems = (slot) => {
         let temp = this.activeItems.filter(function(item) {
-            return item.slot === slot;
+            if (slot === "Offhands") {
+                return item.slot === "Holdable" || item.slot === "Offhand" || item.slot === "Shield"
+            }
+            else {
+                return item.slot === slot;
+            }
+            
         })
-        return temp;
+        return this.sortItems(temp);
 
     }
+
+    deleteActiveItem = (unique) => {
+        let tempArray =  this.activeItems.filter(function(item) {
+            return item.uniqueHash !== unique;
+        });
+        this.activeItems = tempArray;
+    }
+
+    sortItems = (container) => {
+        // Current default sorting is by HPS but we could get creative here in future.
+        container.sort((a, b) => (a.softScore < b.softScore ? 1 : -1));
+
+        return container;
+      };
 
     // Convert the players given stats into a percentage. 
     // TODO: Implement Mastery
@@ -435,10 +455,10 @@ class Player {
             this.statWeights = {
                 "Raid": {
                     intellect: 1, 
-                    haste: 0.4,
-                    crit: 0.6,
+                    haste: 0.6,
+                    crit: 0.5,
                     mastery: 0.5,
-                    versatility: 0.3,
+                    versatility: 0.45,
                     leech: 0.8,
                 },
                 "Dungeon": {

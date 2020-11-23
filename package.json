@@ -29,6 +29,7 @@
     "react-data-grid": "^7.0.0-canary.22",
     "react-dom": "^16.13.1",
     "react-duration-picker": "^1.1.1",
+    "react-ga": "^3.3.0",
     "react-google-login": "^5.1.21",
     "react-i18next": "^11.7.3",
     "react-loading-overlay": "^1.0.1",

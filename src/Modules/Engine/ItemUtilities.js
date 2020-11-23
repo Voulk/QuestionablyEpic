@@ -3,6 +3,7 @@ import { randPropPoints } from "./RandPropPointsBylevel";
 import { combat_ratings_mult_by_ilvl } from "./CombatMultByLevel";
 import { getEffectValue } from "./EffectFormulas/EffectEngine";
 import SPEC from "../Engine/SPECS";
+import Item from "../Player/Item";
 
 /*
 
@@ -57,7 +58,7 @@ export function getValidArmorTypes(spec) {
 // TODO
 export function getValidWeaponTypes(spec, slot) {
   switch (slot) {
-    case "Off-Hands":
+    case "Offhands":
       switch (spec) {
         case SPEC.RESTOSHAMAN:
         case SPEC.HOLYPALADIN:
@@ -173,12 +174,69 @@ function getItemCat(slot) {
       return 2;
 
     case "Offhand":
+    case "Holdable":
     case "Shield":
       return 3;
     default:
       return 3;
     // Raise error.
   }
+}
+
+// Returns item stat allocations. MUST be converted to stats before it's used in any scoring capacity.
+export function getItemSlot(id) {
+  let temp = itemDB.filter(function (item) {
+    return item.id === id;
+  });
+
+  //console.log(JSON.stringify(temp) + temp.length)
+  //console.log(temp[0].icon)
+  if (temp.length > 0) return temp[0].slot;
+  else return 0;
+}
+
+export function buildWepCombos(player) {
+  let wep_list = [];
+  let main_hands = player.getActiveItems("1H Weapon");
+  let off_hands = player.getActiveItems("Offhands");
+  let two_handers = player.getActiveItems("2H Weapon");
+
+  console.log("MH: " + main_hands.length + ". OH: " + off_hands.length);
+
+  for (let i = 0; i < main_hands.length; i++) {
+    // Some say j is the best variable for a nested loop, but are they right?
+    let main_hand = main_hands[i];
+    for (let k = 0; k < off_hands.length; k++) {
+      let off_hand = off_hands[k];
+
+      console.log("COMBO: " + main_hand.id + " - " + off_hand.id);
+      
+
+      let item = new Item(
+        main_hand.id,
+        "Combined Weapon", // TODO
+        "CombinedWeapon",
+        main_hand.socket + off_hand.socket, // Socket
+        "", // Tertiary
+        0,
+        ((main_hand.level + off_hand.level / 2))
+      ); 
+
+      item.softScore = main_hand.softScore + off_hand.softScore;
+      item.offhandID = off_hand.id;
+
+      wep_list.push(item);
+
+    }
+  }
+
+  for (let j = 0; j < two_handers.length; j++) {
+    wep_list.push(two_handers[j]);
+
+  }
+
+  return wep_list;
+
 }
 
 // Calculates the intellect and secondary stats an item should have at a given item level.
@@ -252,6 +310,7 @@ export function buildStatString(stats, effect) {
 
   if (effect !== "") statString += "Effect / ";
 
+  
   return statString.slice(0, -3); // We slice here to remove excess slashes and white space from the end.
 }
 
@@ -280,6 +339,7 @@ export function scoreItem(item, player, contentType) {
 
   // Multiply the item's stats by our stat weights.
   for (var stat in item.stats) {
+    //console.log(JSON.stringify(item.stats['bonus_stats']))
     if (stat !== "bonus_stats") {
       
       let statSum =
@@ -308,3 +368,4 @@ export function scoreItem(item, player, contentType) {
   }
   return Math.round(score);
 }
+

@@ -62,6 +62,11 @@ export default function ItemCard(props) {
     }
   };
 
+  const deleteItemCard = () => {
+    console.log("Trying to delete");
+    props.delete(item.uniqueHash)
+  }
+
   const upgradeColor = (num) => {
     if (num > 0) {
       return "#4CBB17";
@@ -71,6 +76,17 @@ export default function ItemCard(props) {
       return "#fff";
     }
   };
+
+  let itemName = "";
+  const deleteActive = item.offhandID === 0;
+
+  if (item.offhandID > 0) {
+    itemName = getTranslatedItemName(item.id, currentLanguage) + " & " + getTranslatedItemName(item.offhandID, currentLanguage)
+  }
+  else {
+    itemName = getTranslatedItemName(item.id, currentLanguage)
+  }
+  
 
   const socket =
     props.item.socket === "Yes" ? (
@@ -86,7 +102,7 @@ export default function ItemCard(props) {
     ) : null;
 
   const tertiary =
-    props.item.tertiary !== "None" ? (
+    props.item.tertiary !== "" ? (
       <div style={{ display: "inline" }}> / {props.item.tertiary} </div>
     ) : null;
 
@@ -150,7 +166,7 @@ export default function ItemCard(props) {
                     align="left"
                     style={{ color: itemQuality("Uncommon") }}
                   >
-                    {getTranslatedItemName(item.id, currentLanguage)}
+                    {itemName}
                   </Typography>
                 </Grid>
                 <Divider orientation="vertical" flexItem />
@@ -199,12 +215,14 @@ export default function ItemCard(props) {
                 </Grid>
 
                 <Grid item xs={1} display="inline-flex" align="center">
+                  {deleteActive ? 
                   <IconButton aria-label="delete" size="small">
                     <DeleteIcon
                       style={{ color: "#ad2c34", paddingTop: 2 }}
                       fontSize="small"
+                      onClick={deleteItemCard}
                     />
-                  </IconButton>
+                  </IconButton> : ''}
                 </Grid>
               </Grid>
             </Grid>
