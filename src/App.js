@@ -163,10 +163,13 @@ class App extends Component {
   };
 
   updatePlayerChar = (player) => {
+    
     let allChars = this.state.characters;
     allChars.updatePlayerChar(player);
     console.log("Setting State");
     this.setState({ characters: allChars });
+
+    
   };
 
   setRegion = (props) => {
@@ -326,6 +329,7 @@ class App extends Component {
                   <QEMainMenu
                     allChars={allChars}
                     charUpdate={this.updatePlayerChars}
+                    singleUpdate={this.updatePlayerChar}
                     pl={this.state.player}
                     charAddedSnack={this.handleCharSnackOpen}
                     charUpdatedSnack={this.handleCharUpdateSnackOpen}

@@ -73,14 +73,14 @@ export default function QEMainMenu(props) {
         <p className="headers">{/*t("MainMenuItemsH") */}</p>
         <Grid container spacing={2}>
           <Grid item xs={12}>
-            <Paper elevation={0} style={{ border: "1px", padding: 5 }}>
+            <Paper elevation={0} style={{ border: "1px", padding: 10 }}>
               <Typography
-                color="primary"
-                align="center"
+                style={{color: "limegreen"}}
+                align="left"
                 variant="subtitle1"
                 // gutterBottom
               >
-                Blah Blah Blah Druids Suck
+                Dev Note: An expansion launch is a chaotic time and the game continues to see frequent, decision-altering changes. Continue to use your class discords as your primary resource for information.
               </Typography>
             </Paper>
           </Grid>
@@ -124,6 +124,7 @@ export default function QEMainMenu(props) {
                     cardType="Char"
                     allChars={props.allChars}
                     charUpdate={props.charUpdate}
+                    singleUpdate={props.singleUpdate}
                     isActive={index === props.allChars.activeChar}
                     contentType={props.contentType}
                     charUpdatedSnack={props.charUpdatedSnack}
