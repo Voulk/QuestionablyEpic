@@ -11,4 +11,5 @@ ReactDOM.render(
     <App />
     </I18nextProvider>, 
     document.getElementById('root'));
-registerServiceWorker();
+unregister();
+//registerServiceWorker();
