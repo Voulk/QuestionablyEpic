@@ -212,6 +212,18 @@ class Player {
                 } else if (this.spec === SPEC.RESTOSHAMAN) {
                     statPerc = 1 + ((0.25 * 8 * 35 + this.activeStats.mastery) / (35 / 3)) / 100; // .25 is placeholder for mastery effectiveness
                 }
+                else if (this.spec === SPEC.RESTODRUID) {
+                    statPerc = 1 + (0.04 + (this.activeStats.mastery / 70 / 100)) * 1.8; // 1.8 is the average HoT multiplier.
+                }
+                else if (this.spec === SPEC.HOLYPRIEST) {
+                    statPerc = 1 + (0.1 + (this.activeStats.mastery / 27.95 / 100)) * 0.9; // Assumes 10% echo of light overhealing. TODO: revisit.
+                }
+                else if (this.spec === SPEC.DISCPRIEST) {
+                    statPerc = 1 + (0.108 + (this.activeStats.mastery / 25.9 / 100)); 
+                }
+                else if (this.spec === SPEC.MISTWEAVERMONK) {
+                    statPerc = 1; // TODO
+                }
                 break;
             case "Vers":
                 statPerc = 1 + this.activeStats.versatility / 40 / 100;
