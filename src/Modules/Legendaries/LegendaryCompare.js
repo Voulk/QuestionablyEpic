@@ -56,7 +56,7 @@ const fillLegendaries = (container, spec, pl, contentType) => {
       "Earthen Harmony",
       "Jonat's Natural Focus",
       "Primal Tide Core",
-      "Spirit Walker's Tidal Totem",
+      "Spiritwalkers Tidal Totem",
       "Ancestral Reminder",
       "Chains of Devastation",
       "Deeply Rooted Elements",
