@@ -88,14 +88,14 @@ export function getValidWeaponTypes(spec, slot) {
   }
 }
 
-// Returns true or false based on whether an ID exists in our item database. 
+// Returns true or false based on whether an ID exists in our item database.
 // Items that won't be found include stuff like shirts, low level items, quest items without stats and so on.
 // Importing these would be a waste of the user interface.
 export function checkItemExists(id) {
   let temp = itemDB.filter(function (item) {
     return item.id === id;
   });
-  return (temp.length > 0);
+  return temp.length > 0;
 }
 
 // Returns a translated item name based on an ID.
@@ -114,7 +114,7 @@ export function getItemEffect(id) {
     return item.id === id;
   });
 
-  if ((temp.length > 0) && ("effect" in temp[0])) return temp[0].effect;
+  if (temp.length > 0 && "effect" in temp[0]) return temp[0].effect;
   else return "";
 }
 
@@ -134,7 +134,7 @@ export function getItemIcon(id) {
     return item.id === id;
   });
 
-  if ((temp.length > 0) && ("icon" in temp[0]))
+  if (temp.length > 0 && "icon" in temp[0])
     return process.env.PUBLIC_URL + "/Images/Icons/" + temp[0].icon + ".jpg";
   else return process.env.PUBLIC_URL + "/Images/Icons/missing.jpg";
 }
@@ -201,7 +201,7 @@ export function buildWepCombos(player) {
   let off_hands = player.getActiveItems("Offhands");
   let two_handers = player.getActiveItems("2H Weapon");
 
-  console.log("MH: " + main_hands.length + ". OH: " + off_hands.length);
+  // console.log("MH: " + main_hands.length + ". OH: " + off_hands.length);
 
   for (let i = 0; i < main_hands.length; i++) {
     // Some say j is the best variable for a nested loop, but are they right?
@@ -210,7 +210,6 @@ export function buildWepCombos(player) {
       let off_hand = off_hands[k];
 
       console.log("COMBO: " + main_hand.id + " - " + off_hand.id);
-      
 
       let item = new Item(
         main_hand.id,
@@ -219,24 +218,21 @@ export function buildWepCombos(player) {
         main_hand.socket + off_hand.socket, // Socket
         "", // Tertiary
         0,
-        ((main_hand.level + off_hand.level / 2))
-      ); 
+        main_hand.level + off_hand.level / 2
+      );
 
       item.softScore = main_hand.softScore + off_hand.softScore;
       item.offhandID = off_hand.id;
 
       wep_list.push(item);
-
     }
   }
 
   for (let j = 0; j < two_handers.length; j++) {
     wep_list.push(two_handers[j]);
-
   }
 
   return wep_list;
-
 }
 
 // Calculates the intellect and secondary stats an item should have at a given item level.
@@ -310,7 +306,6 @@ export function buildStatString(stats, effect) {
 
   if (effect !== "") statString += "Effect / ";
 
-  
   return statString.slice(0, -3); // We slice here to remove excess slashes and white space from the end.
 }
 
@@ -323,8 +318,6 @@ export function correctCasing(string) {
 // Score is calculated by multiplying out an items stats against the players stat weights.
 // Special effects, sockets and leech are then added afterwards.
 export function scoreItem(item, player, contentType) {
-  
-
   let score = 0;
 
   // Calculate Effect.
@@ -341,7 +334,6 @@ export function scoreItem(item, player, contentType) {
   for (var stat in item.stats) {
     //console.log(JSON.stringify(item.stats['bonus_stats']))
     if (stat !== "bonus_stats") {
-      
       let statSum =
         item.stats[stat] +
         (stat in item.stats["bonus_stats"]
@@ -353,8 +345,10 @@ export function scoreItem(item, player, contentType) {
   }
 
   // Add any bonus HPS
-  if ('bonus_stats' in item.stats && 'hps' in item.stats.bonus_stats) {
-    score += item.stats.bonus_stats.hps / player.getHPS() * player.activeStats.intellect;
+  if ("bonus_stats" in item.stats && "hps" in item.stats.bonus_stats) {
+    score +=
+      (item.stats.bonus_stats.hps / player.getHPS()) *
+      player.activeStats.intellect;
   }
 
   // Add Socket
@@ -368,4 +362,3 @@ export function scoreItem(item, player, contentType) {
   }
   return Math.round(score);
 }
-

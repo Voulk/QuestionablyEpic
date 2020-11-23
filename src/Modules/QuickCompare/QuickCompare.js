@@ -80,20 +80,20 @@ function Alert(props) {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
 }
 
-const createItem = (legendaryName, container, spec, pl, contentType) => {
-  //let lego = new Legendary(legendaryName)
-  //getLegendaryInfo(lego, spec, pl, contentType)
-  //container.push(lego)
-};
+// const createItem = (legendaryName, container, spec, pl, contentType) => {
+//   //let lego = new Legendary(legendaryName)
+//   //getLegendaryInfo(lego, spec, pl, contentType)
+//   //container.push(lego)
+// };
 
-const fillSlot = (container, spec, pl, contentType) => {
-  //container = [];
-};
+// const fillSlot = (container, spec, pl, contentType) => {
+//   //container = [];
+// };
 
-const sortItems = (container) => {
-  // Current default sorting is by HPS but we could get creative here in future.
-  container.sort((a, b) => (a.softScore < b.softScore ? 1 : -1));
-};
+// const sortItems = (container) => {
+//   // Current default sorting is by HPS but we could get creative here in future.
+//   container.sort((a, b) => (a.softScore < b.softScore ? 1 : -1));
+// };
 
 /*
 class Legendary {
@@ -705,7 +705,7 @@ export default function QuickCompare(props) {
             {/* Trinket */}
             <Grid item xs={12}>
               <Typography color="primary" variant="h5">
-                {t("Main Hands")}
+                {t("slotNames.mainHands")}
               </Typography>
               <Divider style={{ marginBottom: 10 }} />
               <Grid container spacing={1}>
@@ -733,7 +733,7 @@ export default function QuickCompare(props) {
             {/* Trinket */}
             <Grid item xs={12}>
               <Typography color="primary" variant="h5">
-                {t("Weapon Combos")}
+                {t("slotNames.weaponCombos")}
               </Typography>
               <Divider style={{ marginBottom: 10 }} />
               <Grid container spacing={1}>

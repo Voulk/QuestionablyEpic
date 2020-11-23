@@ -321,9 +321,11 @@
       "waist": "Belt",
       "feet": "Boots",
       "trinket": "Trinkets",
-      "weapons": "Weapons",
+      "mainHands": "Weapons",
       "offhands": "Off-Hands",
-      "finger": "Ring"
+      "finger": "Ring",
+      "weapons": "Weapons",
+      "weaponCombos": "Weapon Combos"
     },
 
     "Vision of Unending Growth": {
