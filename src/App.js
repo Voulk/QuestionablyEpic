@@ -88,6 +88,7 @@ class App extends Component {
       playerBattleTag: "",
       accessToken: "",
       contentType: "Raid",
+      patronStatus: "",
       charSnackState: false,
       charUpdateState: false,
       loginSnackState: false,
