@@ -23,7 +23,7 @@ const legendaryImages = {
 export default function LegendaryObject(props) {
   const { t } = useTranslation();
   const item = props.item;
-  const hpsString = item.bonus_stats.HPS > 5 ? item.bonus_stats.HPS : "Coming Soon";
+  const hpsString = item.bonus_stats.HPS > 5 ? Math.round(item.bonus_stats.HPS) : "Coming Soon";
 
   return (
     <div className="lego">
