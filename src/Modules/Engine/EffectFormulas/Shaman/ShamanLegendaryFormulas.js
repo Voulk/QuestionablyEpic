@@ -1,5 +1,5 @@
 const PRIMAL_TIDE_CORE = "Primal Tide Core";
-const SPIRITWALKERS_TIDAL_TOTEM = "Spirit Walker's Tidal Totem";
+const SPIRITWALKERS_TIDAL_TOTEM = "Spiritwalkers Tidal Totem";
 const EARTHEN_HARMONY = "Earthen Harmony";
 const JONATS = "Jonat's Natural Focus";
 
