@@ -224,7 +224,7 @@ class App extends Component {
       return (
         "https://www.battlenet.com.cn/oauth/authorize?client_id=" +
         this.state.client_id +
-        "&redirect_uri=http://localhost:3000/confirmlogin/&response_type=code&scope=openid"
+        "&redirect_uri=http://questionablyepic.com/live/confirmlogin/&response_type=code&scope=openid"
       );
     }
     return (
@@ -232,7 +232,7 @@ class App extends Component {
       this.state.playerRegion +
       ".battle.net/oauth/authorize?client_id=" +
       this.state.client_id +
-      "&redirect_uri=http://localhost:3000/confirmlogin/&response_type=code&scope=openid"
+      "&redirect_uri=http://questionablyepic.com/live/confirmlogin/&response_type=code&scope=openid"
     );
   };
 
