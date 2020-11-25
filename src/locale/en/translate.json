@@ -60,7 +60,8 @@
       "LegendaryAnalysis": "Legendary Analysis",
       "TrinketAnalysis": "Trinket Analysis",
       "GreatVault": "The Great Vault (Coming Soon)",
-      "CooldownPlanner":"Cooldown Planner (Coming Soon)"
+      "CooldownPlanner":"Cooldown Planner (Coming Soon)",
+      "Profile":"Profile"
     },
 
     "_Comments1": "Common Words",
@@ -324,6 +325,7 @@
       "wrists": "Bracers",
       "hands": "Gloves",
       "waist": "Belt",
+      "legs": "Legs",
       "feet": "Boots",
       "trinket": "Trinkets",
       "mainHands": "Weapons",
