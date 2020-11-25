@@ -18,6 +18,7 @@ const mainMenuOptions = {
   "MainMenu.ExploreCovenants": ["/soulbinds", true],
   "MainMenu.LegendaryAnalysis": ["/legendaries", true],
   "MainMenu.CooldownPlanner": ["/holydiver", false],
+  "MainMenu.Profile": ["/profile", true],
 };
 
 /* Buttons to be added back.
@@ -55,7 +56,6 @@ export default function QEMainMenu(props) {
     ReactGA.pageview(window.location.pathname + window.location.search);
   }, []);
 
-  
   const { t, i18n } = useTranslation();
   // const currentLanguage = i18n.language;
   const classes = useStyles();
@@ -86,7 +86,6 @@ export default function QEMainMenu(props) {
                 An expansion launch is a chaotic time and the game continues to
                 see frequent, decision-altering changes. Continue to use your
                 class discords as your primary resource for information. ~Voulk
-
               </Typography>
             </Paper>
           </Grid>
