@@ -139,8 +139,8 @@ function processItem(line, player, contentType) {
           let curve = idPayload['curveId'];
           //console.log("CURVE: " + bonus_id);
 
-          if (bonus_id == 6706) itemLevel = 84 + (dropLevel - 50) * 6
-          else if (bonus_id == 6707) itemLevel = 92 + (dropLevel - 50) * 6
+          if (bonus_id == 6706) itemLevel = 92 + (dropLevel - 50) * 6
+          else if (bonus_id == 6707) itemLevel = 84 + (dropLevel - 50) * 6
           else if (bonus_id == 6908) {
             // This curve is a little painful since the item level only increases every 3 levels and not by a set amount.
             // We can probably make the code more efficient later but this is otherwise correct.
