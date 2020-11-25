@@ -190,6 +190,35 @@ export const itemDB = [
         "slot": "Waist"
     },
     {
+        "id": 168690,
+        "name": "A5C-3N-D3D Synthetic Specs",
+        "names": {
+            "cn": "",
+            "en": "A5C-3N-D3D Synthetic Specs",
+            "ru": "Синтетические очки типа \"B03-HE-C3HN3\"",
+            "es": "Lentes sintéticas A5C-3N-D1D4S",
+            "br": "Supralupas Sintéticas EL3-V4-D4S",
+            "kr": "",
+            "fr": "Bésicles synthétiques 5UB-L1-M35",
+            "de": "3R-WAC-HT3 synthetische Augengläser"
+        },
+        "icon": "inv_helm_goggles_draenortradeskill_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
         "id": 168691,
         "name": "Charged A5C-3N-D3D Synthetic Specs",
         "names": {
@@ -206,6 +235,35 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 1,
         "itemLevel": 100,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 168693,
+        "name": "A5C-3N-D3D Gearspun Goggles",
+        "names": {
+            "cn": "",
+            "en": "A5C-3N-D3D Gearspun Goggles",
+            "ru": "Защитные очки типа \"B03-HE-C3HN3\"",
+            "es": "Gafas entrelazadas A5C-3N-D1D4S",
+            "br": "Tecnóculos Telescópicos EL3-V4-D0S",
+            "kr": "",
+            "fr": "Lunettes à engrenages 5UB-L1-M35",
+            "de": "3R-WAC-HT3 zahnradgetriebene Schutzbrille"
+        },
+        "icon": "inv_helm_goggles_draenortradeskill_d_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 85,
         "stats": {
             "intellect": 10000,
             "stamina": 11500,
@@ -248,6 +306,35 @@ export const itemDB = [
         "slot": "Head"
     },
     {
+        "id": 168696,
+        "name": "A5C-3N-D3D Bionic Bifocals",
+        "names": {
+            "cn": "",
+            "en": "A5C-3N-D3D Bionic Bifocals",
+            "ru": "Бионические бифокальные очки типа \"B03-HE-C3HN3\"",
+            "es": "Lentes bifocales biónicas A5C-3N-D1D4S",
+            "br": "Bifocais Biônicos EL3-V4-D0S",
+            "kr": "",
+            "fr": "Verres bifocaux bioniques 5UB-L1-M35",
+            "de": "3R-WAC-HT3 bionische Zweistärkenbrille"
+        },
+        "icon": "inv_helm_goggles_draenortradeskill_d_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
         "id": 168697,
         "name": "Charged A5C-3N-D3D Bionic Bifocals",
         "names": {
@@ -264,6 +351,35 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 3,
         "itemLevel": 100,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 168699,
+        "name": "A5C-3N-D3D Orthogonal Optics",
+        "names": {
+            "cn": "",
+            "en": "A5C-3N-D3D Orthogonal Optics",
+            "ru": "Ортогональная оптика типа \"B03-HE-C3HN3\"",
+            "es": "Óptica ortogonal A5C-3N-D1D4",
+            "br": "Optovisores Ortogonais EL3-V4-D0S",
+            "kr": "",
+            "fr": "Binocles orthogonaux 5UB-L1-M35",
+            "de": "3R-WAC-HT3 orthogonale Optik"
+        },
+        "icon": "inv_helm_goggles_draenortradeskill_d_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 85,
         "stats": {
             "intellect": 10000,
             "stamina": 11500,
@@ -2695,6 +2811,180 @@ export const itemDB = [
         "slot": "Wrist"
     },
     {
+        "id": 172189,
+        "name": "Eyestalk of Il'gynoth",
+        "names": {
+            "cn": "",
+            "en": "Eyestalk of Il'gynoth",
+            "ru": "Стебельчатый глаз Ил'гинота",
+            "es": "Vara ocular de Il'gynoth",
+            "br": "Tentáculo com Olho de Il'gynoth",
+            "kr": "",
+            "fr": "Tentacule oculaire d’Il’gynoth",
+            "de": "Augenstiel von Il'gynoth"
+        },
+        "icon": "inv_wand_1h_nzothraid_d_01",
+        "itemClass": 2,
+        "itemSubClass": 19,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 25370,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 4697,
+            "mastery": 2303,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "1H Weapon"
+    },
+    {
+        "id": 172190,
+        "name": "Uhnish Vwah",
+        "names": {
+            "cn": "",
+            "en": "Uhnish Vwah",
+            "ru": "Аниш Ввах",
+            "es": "Uhnish Vwah",
+            "br": "Uhnish Vwah",
+            "kr": "",
+            "fr": "Uhnish Vwah",
+            "de": "Uhnish Vwah"
+        },
+        "icon": "inv_offhand_1h_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 16132,
+            "stamina": 7889,
+            "haste": 2996,
+            "crit": 4004,
+            "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Offhand"
+    },
+    {
+        "id": 172196,
+        "name": "Vorzz Yoq'al",
+        "names": {
+            "cn": "",
+            "en": "Vorzz Yoq'al",
+            "ru": "Ворзз Йок'ал",
+            "es": "Vorzz Yoq'al",
+            "br": "Vorzz Yoq'al",
+            "kr": "",
+            "fr": "Vorzz Yoq’al",
+            "de": "Vorzz Yoq'al"
+        },
+        "icon": "inv_mace_1h_nzothraid_d_02",
+        "itemClass": 2,
+        "itemSubClass": 4,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 25370,
+            "stamina": 7889,
+            "haste": 2716,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 4284
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "1H Weapon"
+    },
+    {
+        "id": 172198,
+        "name": "Mar'kowa, the Mindpiercer",
+        "names": {
+            "cn": "",
+            "en": "Mar'kowa, the Mindpiercer",
+            "ru": "Мар'кова, Пронзатель Разума",
+            "es": "Mar'kowa, la Perforamentes",
+            "br": "Mar'kowa, o Furamentes",
+            "kr": "",
+            "fr": "Mar’kowa la Tranche-Esprit",
+            "de": "Mar'kowa, Durchbohrer der Gedanken"
+        },
+        "icon": "inv_axe_1h_nzothraid_d_02",
+        "itemClass": 2,
+        "itemSubClass": 0,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 25370,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 4095,
+            "mastery": 0,
+            "vers": 2905
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "1H Weapon"
+    },
+    {
+        "id": 172201,
+        "name": "Bloodstained Ritual Athame",
+        "names": {
+            "cn": "",
+            "en": "Bloodstained Ritual Athame",
+            "ru": "Окровавленный ритуальный атам",
+            "es": "Athame ritual manchado de sangre",
+            "br": "Athame Ritual Ensanguentado",
+            "kr": "",
+            "fr": "Athamé rituel ensanglanté",
+            "de": "Blutbefleckte rituelle Athame"
+        },
+        "icon": "inv_knife_1h_nzothraid_d_03",
+        "itemClass": 2,
+        "itemSubClass": 15,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 25370,
+            "stamina": 7889,
+            "haste": 2408,
+            "crit": 0,
+            "mastery": 4592,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "1H Weapon"
+    },
+    {
+        "id": 172228,
+        "name": "Shandai, Watcher of Cosmos",
+        "names": {
+            "cn": "",
+            "en": "Shandai, Watcher of Cosmos",
+            "ru": "Шандай, Дозорный Космоса",
+            "es": "Shandai, Vigía del Cosmos",
+            "br": "Shandai, Vigia do Cosmos",
+            "kr": "",
+            "fr": "Shandai, gardien du Cosmos",
+            "de": "Shandai, Wächter des Kosmos"
+        },
+        "icon": "inv_staff_2h_nzothraid_d_01",
+        "itemClass": 2,
+        "itemSubClass": 10,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 18121,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 4354,
+            "vers": 2646
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "2H Weapon"
+    },
+    {
         "id": 172234,
         "name": "Desolate Leather Vest",
         "names": {
@@ -3794,7 +4084,7 @@ export const itemDB = [
         },
         "dropLoc": "",
         "selectable": "true",
-        "slot": "Holdable"
+        "slot": "Offhand"
     },
     {
         "id": 173054,
@@ -4990,6 +5280,1265 @@ export const itemDB = [
         "slot": "Wrist"
     },
     {
+        "id": 173315,
+        "name": "Judicious Aspirant's Helm",
+        "names": {
+            "cn": "",
+            "en": "Judicious Aspirant's Helm",
+            "ru": "Шлем рассудительного претендента",
+            "es": "Yelmo de aspirante juicioso",
+            "br": "Elmo do Aspirante Criterioso",
+            "kr": "",
+            "fr": "Heaume de l’aspirant judicieux",
+            "de": "Helm des besonnenen Aspiranten"
+        },
+        "icon": "inv_helm_plate_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3800,
+            "mastery": 0,
+            "vers": 3200
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 173316,
+        "name": "Skyloom Cloak",
+        "names": {
+            "cn": "",
+            "en": "Skyloom Cloak",
+            "ru": "Неботканый плащ",
+            "es": "Capa de telar celeste",
+            "br": "Manto do Céu Suspenso",
+            "kr": "",
+            "fr": "Cape volteciel",
+            "de": "Himmelsgewebter Umhang"
+        },
+        "icon": "inv_cape_plate_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3800,
+            "crit": 0,
+            "mastery": 3200,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Back"
+    },
+    {
+        "id": 173317,
+        "name": "Waylight Vestment",
+        "names": {
+            "cn": "",
+            "en": "Waylight Vestment",
+            "ru": "Одеяние путеводного света",
+            "es": "Vestimentas de vialuz",
+            "br": "Vestimenta da Senda Luminosa",
+            "kr": "",
+            "fr": "Habit falot",
+            "de": "Weglichtgewand"
+        },
+        "icon": "inv_robe_cloth_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3050,
+            "crit": 3950,
+            "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 173318,
+        "name": "Waylight Breastplate",
+        "names": {
+            "cn": "",
+            "en": "Waylight Breastplate",
+            "ru": "Кираса путеводного света",
+            "es": "Coraza de vialuz",
+            "br": "Peitoral da Senda Luminosa",
+            "kr": "",
+            "fr": "Cuirasse falote",
+            "de": "Weglichtbrustplatte"
+        },
+        "icon": "inv_chest_plate_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3800,
+            "crit": 3200,
+            "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 173319,
+        "name": "Waylight Chainmail",
+        "names": {
+            "cn": "",
+            "en": "Waylight Chainmail",
+            "ru": "Кольчуга путеводного света",
+            "es": "Malla de anillas de vialuz",
+            "br": "Malha de Anéis da Senda Luminosa",
+            "kr": "",
+            "fr": "Cotte de mailles falote",
+            "de": "Weglichtkettenpanzer"
+        },
+        "icon": "inv_mail_oribosquesting_b_01_chest",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3350,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 3650
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 173320,
+        "name": "Waylight Tunic",
+        "names": {
+            "cn": "",
+            "en": "Waylight Tunic",
+            "ru": "Мундир путеводного света",
+            "es": "Guerrera de vialuz",
+            "br": "Túnica da Senda Luminosa",
+            "kr": "",
+            "fr": "Tunique falote",
+            "de": "Weglichttunika"
+        },
+        "icon": "inv_chest_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3050,
+            "crit": 0,
+            "mastery": 3950,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 173321,
+        "name": "Footguards of Self-Reflection",
+        "names": {
+            "cn": "",
+            "en": "Footguards of Self-Reflection",
+            "ru": "Ботинки самосозерцания",
+            "es": "Guardapiés de reflejo propio",
+            "br": "Guarda-pés da Autoanálise",
+            "kr": "",
+            "fr": "Protège-tibias de reflet de soi",
+            "de": "Fußschützer der Selbstreflexion"
+        },
+        "icon": "inv_boot_plate_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3950,
+            "crit": 3050,
+            "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Feet"
+    },
+    {
+        "id": 173322,
+        "name": "Sandals of Soul's Clarity",
+        "names": {
+            "cn": "",
+            "en": "Sandals of Soul's Clarity",
+            "ru": "Сандалии ясности души",
+            "es": "Sandalias de claridad de alma",
+            "br": "Sandálias da Limpidez da Alma",
+            "kr": "",
+            "fr": "Sandales de clarté spirituelle",
+            "de": "Sandalen der Seelenklarheit"
+        },
+        "icon": "inv_boot_cloth_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 3800,
+            "vers": 3200
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Feet"
+    },
+    {
+        "id": 173323,
+        "name": "Contemplative Striders",
+        "names": {
+            "cn": "",
+            "en": "Contemplative Striders",
+            "ru": "Походные сапоги размышлений",
+            "es": "Zancos contemplativos",
+            "br": "Chapins Contemplativos",
+            "kr": "",
+            "fr": "Cuissardes contemplatives",
+            "de": "Besinnliche Schreiter"
+        },
+        "icon": "inv_mail_oribosquesting_b_01_boots",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3050,
+            "crit": 3950,
+            "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Feet"
+    },
+    {
+        "id": 173324,
+        "name": "Boots of Inner Calm",
+        "names": {
+            "cn": "",
+            "en": "Boots of Inner Calm",
+            "ru": "Сапоги внутреннего покоя",
+            "es": "Botas de calma interior",
+            "br": "Botas da Paz Interior",
+            "kr": "",
+            "fr": "Bottes de calme intérieur",
+            "de": "Stiefel der inneren Ruhe"
+        },
+        "icon": "inv_boot_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3350,
+            "crit": 3650,
+            "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Feet"
+    },
+    {
+        "id": 173325,
+        "name": "Sparring Trainer's Grips",
+        "names": {
+            "cn": "",
+            "en": "Sparring Trainer's Grips",
+            "ru": "Захваты боевого тренера",
+            "es": "Mandiletes del entrenador de lucha",
+            "br": "Guantes do Treinador de Pugilato",
+            "kr": "",
+            "fr": "Poignes d’entraîneur",
+            "de": "Handschutz des Sparringstrainers"
+        },
+        "icon": "inv_glove_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3050,
+            "crit": 3950,
+            "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
+        "id": 173326,
+        "name": "Sparring Trainer's Gauntlets",
+        "names": {
+            "cn": "",
+            "en": "Sparring Trainer's Gauntlets",
+            "ru": "Рукавицы боевого тренера",
+            "es": "Guanteletes del entrenador de lucha",
+            "br": "Manoplas do Treinador de Pugilato",
+            "kr": "",
+            "fr": "Gantelets d’entraîneur",
+            "de": "Stulpen des Sparringstrainers"
+        },
+        "icon": "inv_glove_plate_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3950,
+            "mastery": 3050,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
+        "id": 173327,
+        "name": "Sparring Trainer's Handwraps",
+        "names": {
+            "cn": "",
+            "en": "Sparring Trainer's Handwraps",
+            "ru": "Повязки боевого тренера",
+            "es": "Manijas del entrenador de lucha",
+            "br": "Mitenes do Treinador de Pugilato",
+            "kr": "",
+            "fr": "Protège-mains d’entraîneur",
+            "de": "Handwickel des Sparringstrainers"
+        },
+        "icon": "inv_glove_cloth_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3050,
+            "mastery": 0,
+            "vers": 3950
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
+        "id": 173328,
+        "name": "Sparring Trainer's Gloves",
+        "names": {
+            "cn": "",
+            "en": "Sparring Trainer's Gloves",
+            "ru": "Перчатки боевого тренера",
+            "es": "Guantes del entrenador de lucha",
+            "br": "Luvas do Treinador de Pugilato",
+            "kr": "",
+            "fr": "Gants d’entraîneur",
+            "de": "Handschuhe des Sparringstrainers"
+        },
+        "icon": "inv_mail_oribosquesting_b_01_glove",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3650,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 3350
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
+        "id": 173329,
+        "name": "Pure Aspirant's Hood",
+        "names": {
+            "cn": "",
+            "en": "Pure Aspirant's Hood",
+            "ru": "Капюшон непорочного претендента",
+            "es": "Caperuza de aspirante puro",
+            "br": "Capuz do Aspirante Puro",
+            "kr": "",
+            "fr": "Chaperon de l’aspirant pur",
+            "de": "Kapuze des reinen Aspiranten"
+        },
+        "icon": "inv_helm_cloth_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3800,
+            "mastery": 3200,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 173330,
+        "name": "Humble Aspirant's Helm",
+        "names": {
+            "cn": "",
+            "en": "Humble Aspirant's Helm",
+            "ru": "Шлем смиренного претендента",
+            "es": "Yelmo de aspirante humilde",
+            "br": "Elmo do Aspirante Humilde",
+            "kr": "",
+            "fr": "Heaume de l’aspirant modeste",
+            "de": "Helm des demütigen Aspiranten"
+        },
+        "icon": "inv_mail_oribosquesting_b_01_helm",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3650,
+            "mastery": 3350,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 173331,
+        "name": "Courageous Aspirant's Helm",
+        "names": {
+            "cn": "",
+            "en": "Courageous Aspirant's Helm",
+            "ru": "Шлем отважного претендента",
+            "es": "Yelmo de aspirante valiente",
+            "br": "Elmo do Aspirante Corajoso",
+            "kr": "",
+            "fr": "Heaume de l’aspirant courageux",
+            "de": "Helm des mutigen Aspiranten"
+        },
+        "icon": "inv_helm_leather_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3950,
+            "mastery": 0,
+            "vers": 3050
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 173332,
+        "name": "Judicious Aspirant's Legguards",
+        "names": {
+            "cn": "",
+            "en": "Judicious Aspirant's Legguards",
+            "ru": "Набедренники рассудительного претендента",
+            "es": "Musleras de aspirante juicioso",
+            "br": "Guarda-pernas do Aspirante Criterioso",
+            "kr": "",
+            "fr": "Garde-jambes de l’aspirant judicieux",
+            "de": "Beinschützer des besonnenen Aspiranten"
+        },
+        "icon": "inv_pant_plate_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 3950,
+            "vers": 3050
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 173333,
+        "name": "Pure Aspirant's Leggings",
+        "names": {
+            "cn": "",
+            "en": "Pure Aspirant's Leggings",
+            "ru": "Поножи непорочного претендента",
+            "es": "Leotardos de aspirante puro",
+            "br": "Perneiras do Aspirante Puro",
+            "kr": "",
+            "fr": "Jambières de l’aspirant pur",
+            "de": "Gamaschen des reinen Aspiranten"
+        },
+        "icon": "inv_pant_cloth_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 3950,
+            "vers": 3050
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 173334,
+        "name": "Humble Aspirant's Leggings",
+        "names": {
+            "cn": "",
+            "en": "Humble Aspirant's Leggings",
+            "ru": "Поножи смиренного претендента",
+            "es": "Leotardos de aspirante humilde",
+            "br": "Perneiras do Aspirante Humilde",
+            "kr": "",
+            "fr": "Jambières de l’aspirant modeste",
+            "de": "Gamaschen des demütigen Aspiranten"
+        },
+        "icon": "inv_mail_oribosquesting_b_01_pants",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 3800,
+            "vers": 3200
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 173335,
+        "name": "Courageous Aspirant's Breeches",
+        "names": {
+            "cn": "",
+            "en": "Courageous Aspirant's Breeches",
+            "ru": "Брюки отважного претендента",
+            "es": "Calzones de aspirante valiente",
+            "br": "Calções do Aspirante Corajoso",
+            "kr": "",
+            "fr": "Braies de l’aspirant courageux",
+            "de": "Bundhosen des mutigen Aspiranten"
+        },
+        "icon": "inv_pant_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3350,
+            "crit": 0,
+            "mastery": 3650,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 173336,
+        "name": "Waylight Epaulets",
+        "names": {
+            "cn": "",
+            "en": "Waylight Epaulets",
+            "ru": "Эполеты путеводного света",
+            "es": "Cubrehombros de vialuz",
+            "br": "Palas da Senda Luminosa",
+            "kr": "",
+            "fr": "Épaulettes falotes",
+            "de": "Weglichtschulterklappen"
+        },
+        "icon": "inv_shoulder_leather_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3950,
+            "crit": 0,
+            "mastery": 3050,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 173337,
+        "name": "Waylight Pauldrons",
+        "names": {
+            "cn": "",
+            "en": "Waylight Pauldrons",
+            "ru": "Наплечье путеводного света",
+            "es": "Espaldares de vialuz",
+            "br": "Brafoneiras da Senda Luminosa",
+            "kr": "",
+            "fr": "Espauliers falots",
+            "de": "Weglichtschulterstücke"
+        },
+        "icon": "inv_shoulder_plate_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3800,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 3200
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 173338,
+        "name": "Waylight Shoulderpads",
+        "names": {
+            "cn": "",
+            "en": "Waylight Shoulderpads",
+            "ru": "Подплечники путеводного света",
+            "es": "Hombreras de vialuz",
+            "br": "Ombreiras da Senda Luminosa",
+            "kr": "",
+            "fr": "Protège-épaules falots",
+            "de": "Weglichtschulterpolster"
+        },
+        "icon": "inv_shoulder_cloth_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3350,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 3650
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 173339,
+        "name": "Waylight Shoulderguards",
+        "names": {
+            "cn": "",
+            "en": "Waylight Shoulderguards",
+            "ru": "Наплечные щитки путеводного света",
+            "es": "Guardahombros de vialuz",
+            "br": "Guarda-ombros da Senda Luminosa",
+            "kr": "",
+            "fr": "Garde-épaules falots",
+            "de": "Weglichtschulterschützer"
+        },
+        "icon": "inv_mail_oribosquesting_b_01_shoulder",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3800,
+            "crit": 3200,
+            "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 173340,
+        "name": "Cincture of Uncertain Devotion",
+        "names": {
+            "cn": "",
+            "en": "Cincture of Uncertain Devotion",
+            "ru": "Опояска нерешительной преданности",
+            "es": "Ceñidor de devoción incierta",
+            "br": "Cíngulo da Devoção Incerta",
+            "kr": "",
+            "fr": "Cordelette de dévotion incertaine",
+            "de": "Umgürtelung der unsicheren Hingabe"
+        },
+        "icon": "inv_belt_plate_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3050,
+            "crit": 3950,
+            "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Waist"
+    },
+    {
+        "id": 173341,
+        "name": "Cord of Uncertain Devotion",
+        "names": {
+            "cn": "",
+            "en": "Cord of Uncertain Devotion",
+            "ru": "Шнурованный ремень нерешительной преданности",
+            "es": "Cordón de devoción incierta",
+            "br": "Cordão da Devoção Incerta",
+            "kr": "",
+            "fr": "Corde de dévotion incertaine",
+            "de": "Kordel der unsicheren Hingabe"
+        },
+        "icon": "inv_belt_cloth_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3200,
+            "mastery": 0,
+            "vers": 3800
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Waist"
+    },
+    {
+        "id": 173342,
+        "name": "Cinch of Uncertain Devotion",
+        "names": {
+            "cn": "",
+            "en": "Cinch of Uncertain Devotion",
+            "ru": "Кушак нерешительной преданности",
+            "es": "Cincho de devoción incierta",
+            "br": "Cilha da Devoção Incerta",
+            "kr": "",
+            "fr": "Cordelière de dévotion incertaine",
+            "de": "Hüftgurt der unsicheren Hingabe"
+        },
+        "icon": "inv_mail_oribosquesting_b_01_buckle",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3650,
+            "mastery": 0,
+            "vers": 3350
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Waist"
+    },
+    {
+        "id": 173343,
+        "name": "Belt of Uncertain Devotion",
+        "names": {
+            "cn": "",
+            "en": "Belt of Uncertain Devotion",
+            "ru": "Пояс нерешительной преданности",
+            "es": "Cinturón de devoción incierta",
+            "br": "Cinto da Devoção Incerta",
+            "kr": "",
+            "fr": "Ceinture de dévotion incertaine",
+            "de": "Gürtel der unsicheren Hingabe"
+        },
+        "icon": "inv_belt_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 3800,
+            "vers": 3200
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Waist"
+    },
+    {
+        "id": 173344,
+        "name": "Band of Chronicled Deeds",
+        "names": {
+            "cn": "",
+            "en": "Band of Chronicled Deeds",
+            "ru": "Кольцо изложенных подвигов",
+            "es": "Sortija de hazañas registradas",
+            "br": "Elo de Feitos Canonizados",
+            "kr": "",
+            "fr": "Bague des actes contés",
+            "de": "Band der aufgezeichneten Taten"
+        },
+        "icon": "inv_jewelry_ring_88",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "haste": 9750,
+            "crit": 7750,
+            "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Finger"
+    },
+    {
+        "id": 173345,
+        "name": "Cranefeather Bracers",
+        "names": {
+            "cn": "",
+            "en": "Cranefeather Bracers",
+            "ru": "Наручи из перьев журавля",
+            "es": "Brazales de plumas de grulla",
+            "br": "Braçadeiras de Pena de Garça",
+            "kr": "",
+            "fr": "Brassards en plumes de grue",
+            "de": "Kranichfederarmschienen"
+        },
+        "icon": "inv_bracer_cloth_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 3050,
+            "vers": 3950
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Wrist"
+    },
+    {
+        "id": 173346,
+        "name": "Beakblockers",
+        "names": {
+            "cn": "",
+            "en": "Beakblockers",
+            "ru": "Наручи птицелова",
+            "es": "Bloqueapicos",
+            "br": "Bloqueio-de-bico",
+            "kr": "",
+            "fr": "Pare-becs",
+            "de": "Schnabelblocker"
+        },
+        "icon": "inv_bracer_plate_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3650,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 3350
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Wrist"
+    },
+    {
+        "id": 173347,
+        "name": "Down-Lined Wristguards",
+        "names": {
+            "cn": "",
+            "en": "Down-Lined Wristguards",
+            "ru": "Подбитые нарукавники",
+            "es": "Guardamuñecas forrados por debajo",
+            "br": "Munhequeiras Forradas de Penugem",
+            "kr": "",
+            "fr": "Garde-poignets rembourrés de duvet",
+            "de": "Daunengefütterte Handgelenksschützer"
+        },
+        "icon": "inv_mail_oribosquesting_b_01_bracer",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 3050
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Wrist"
+    },
+    {
+        "id": 173348,
+        "name": "Gluttonous Wristwraps",
+        "names": {
+            "cn": "",
+            "en": "Gluttonous Wristwraps",
+            "ru": "Ненасытные напульсники",
+            "es": "Cubremuñecas glotones",
+            "br": "Munhequeiras Glutonas",
+            "kr": "",
+            "fr": "Bandelettes voraces",
+            "de": "Unersättliche Gelenkbänder"
+        },
+        "icon": "inv_bracer_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 3200,
+            "vers": 3800
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Wrist"
+    },
+    {
+        "id": 173349,
+        "name": "Misfiring Centurion Controller",
+        "names": {
+            "cn": "",
+            "en": "Misfiring Centurion Controller",
+            "ru": "Сбоящий контролер центурионов",
+            "es": "Controlador de centurión averiado",
+            "br": "Controlador de Centurião Engasgado",
+            "kr": "",
+            "fr": "Contrôleur de centurion défectueux",
+            "de": "Versagende Zenturiosteuerung"
+        },
+        "icon": "inv_engineering_loosetrigger",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 0,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 6666,
+            "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Trinket",
+        "effect": {
+            "type": "trinket",
+            "name": "Misfiring Centurion Controller"
+        }
+    },
+    {
+        "id": 173797,
+        "name": "Larion-Tooth Necklace",
+        "names": {
+            "cn": "",
+            "en": "Larion-Tooth Necklace",
+            "ru": "Ожерелье из зубов лариона",
+            "es": "Collar de dientes de larión",
+            "br": "Colar de Dente de Larião",
+            "kr": "",
+            "fr": "Collier en dents de volion",
+            "de": "Larionzahnhalskette"
+        },
+        "icon": "inv_misc_necklace_6_0_007",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "haste": 10000,
+            "crit": 7500,
+            "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Neck"
+    },
+    {
+        "id": 173944,
+        "name": "Forbidden Obsidian Claw",
+        "names": {
+            "cn": "",
+            "en": "Forbidden Obsidian Claw",
+            "ru": "Запретный обсидиановый коготь",
+            "es": "Garra de obsidiana prohibida",
+            "br": "Garra de Obsidiana Proibida",
+            "kr": "",
+            "fr": "Griffe d’obsidienne interdite",
+            "de": "Verbotene Obsidianklaue"
+        },
+        "icon": "inv_misc_bearclaw_nightmare",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 6666,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Trinket",
+        "effect": {
+            "type": "trinket",
+            "name": "Forbidden Obsidian Claw"
+        }
+    },
+    {
+        "id": 174044,
+        "name": "Humming Black Dragonscale",
+        "names": {
+            "cn": "",
+            "en": "Humming Black Dragonscale",
+            "ru": "Гудящая чешуйка черного дракона",
+            "es": "Dragontina negra zumbante",
+            "br": "Escama Zumbidora de Dragão Negro",
+            "kr": "",
+            "fr": "Écaille de dragon noir vrombissante",
+            "de": "Summende schwarze Drachenschuppe"
+        },
+        "icon": "inv_misc_scales_stonypale",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 6666,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Trinket",
+        "effect": {
+            "type": "trinket",
+            "name": "Humming Black Dragonscale"
+        }
+    },
+    {
+        "id": 174050,
+        "name": "Corrupted Ring - Revel in Violence",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Ring - Revel in Violence",
+            "ru": "Зараженное кольцо – упоительная жестокость",
+            "es": "Anillo corrupto: Deleitarse con la violencia",
+            "br": "Anel Corrompido - Prazer da Violência",
+            "kr": "",
+            "fr": "Anneau corrompu - Savourer la violence",
+            "de": "Verderbter Ring - Gewalt genießen"
+        },
+        "icon": "inv_70_raid_ring3c",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "haste": 5500,
+            "crit": 0,
+            "mastery": 12000,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Finger"
+    },
+    {
+        "id": 174051,
+        "name": "Corrupted Ring - Spontaneous Fury",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Ring - Spontaneous Fury",
+            "ru": "Зараженное кольцо – спонтанная ярость",
+            "es": "Anillo corrupto: Furia espontánea",
+            "br": "Anel Corrompido - Fúria Espontânea",
+            "kr": "",
+            "fr": "Anneau corrompu - Fureur spontanée",
+            "de": "Verderbter Ring - Spontaner Zorn"
+        },
+        "icon": "inv_70_quest_ring3c",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "haste": 5500,
+            "crit": 0,
+            "mastery": 12000,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Finger"
+    },
+    {
+        "id": 174052,
+        "name": "Corrupted Ring - Masochistic",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Ring - Masochistic",
+            "ru": "Зараженное кольцо – мазохизм",
+            "es": "Anillo corrupto: Masoquista",
+            "br": "Anel Corrompido - Masoquista",
+            "kr": "",
+            "fr": "Anneau corrompu - Masochisme",
+            "de": "Verderbter Ring - Masochistisch"
+        },
+        "icon": "inv_70_dungeon_ring6a",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "haste": 5500,
+            "crit": 0,
+            "mastery": 12000,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Finger"
+    },
+    {
+        "id": 174053,
+        "name": "Corrupted Ring - Overconfident",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Ring - Overconfident",
+            "ru": "Зараженное кольцо – самонадеянность",
+            "es": "Anillo corrupto: Exceso de confianza",
+            "br": "Anel Corrompido - Arrogante",
+            "kr": "",
+            "fr": "Anneau corrompu - Arrogance",
+            "de": "Verderbter Ring - Übermütig"
+        },
+        "icon": "inv_60dungeon_ring6b",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "haste": 5500,
+            "crit": 0,
+            "mastery": 12000,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Finger"
+    },
+    {
+        "id": 174054,
+        "name": "Corrupted Ring - Last Grasp",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Ring - Last Grasp",
+            "ru": "Зараженное кольцо – последняя хватка",
+            "es": "Anillo corrupto: Último agarre",
+            "br": "Anel Corrompido - Última Tentativa",
+            "kr": "",
+            "fr": "Anneau corrompu - Dernière chance",
+            "de": "Verderbter Ring - Letzter Griff"
+        },
+        "icon": "inv_70_dungeon_ring1c",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "haste": 5500,
+            "crit": 0,
+            "mastery": 12000,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Finger"
+    },
+    {
         "id": 174055,
         "name": "Corrupted Ring - Thing From Beyond",
         "names": {
@@ -5017,6 +6566,97 @@ export const itemDB = [
         "dropLoc": "",
         "selectable": "true",
         "slot": "Finger"
+    },
+    {
+        "id": 174056,
+        "name": "Corrupted Ring - Face the Truth",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Ring - Face the Truth",
+            "ru": "Зараженное кольцо – прими правду",
+            "es": "Anillo corrupto: Afrontar la verdad",
+            "br": "Anel Corrompido - Encare a Verdade",
+            "kr": "",
+            "fr": "Anneau corrompu - Confrontation de la vérité",
+            "de": "Verderbter Ring - Der Wahrheit ins Auge sehen"
+        },
+        "icon": "inv_60crafted_ring4a",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "haste": 5500,
+            "crit": 0,
+            "mastery": 12000,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Finger"
+    },
+    {
+        "id": 174057,
+        "name": "Corrupted Ring - Mesmerizing",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Ring - Mesmerizing",
+            "ru": "Зараженное кольцо – завораживание",
+            "es": "Anillo corrupto: Cautivar",
+            "br": "Anel Corrompido - Fascinante",
+            "kr": "",
+            "fr": "Anneau corrompu - Hypnotique",
+            "de": "Verderbter Ring - Hypnotisierend"
+        },
+        "icon": "inv_70_raid_ring8a",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "haste": 5500,
+            "crit": 0,
+            "mastery": 12000,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Finger"
+    },
+    {
+        "id": 174060,
+        "name": "Psyche Shredder",
+        "names": {
+            "cn": "",
+            "en": "Psyche Shredder",
+            "ru": "Рассекатель души",
+            "es": "Desgarrador de psiques",
+            "br": "Retalhador de Psiquê",
+            "kr": "",
+            "fr": "Déchiqueteur de psyché",
+            "de": "Psychenreißer"
+        },
+        "icon": "ability_demonhunter_soulcleave2",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 6666,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Trinket",
+        "effect": {
+            "type": "trinket",
+            "name": "Psyche Shredder"
+        }
     },
     {
         "id": 174103,
@@ -5081,6 +6721,64 @@ export const itemDB = [
         "slot": "1H Weapon"
     },
     {
+        "id": 174115,
+        "name": "Robe of the Fallen Keeper",
+        "names": {
+            "cn": "",
+            "en": "Robe of the Fallen Keeper",
+            "ru": "Одеяние падшего хранителя",
+            "es": "Toga del guardián caído",
+            "br": "Veste do Guardião Decaído",
+            "kr": "",
+            "fr": "Robe du gardien défunt",
+            "de": "Robe des gefallenen Wächters"
+        },
+        "icon": "inv_chest_cloth_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 174116,
+        "name": "Cowl of Unspeakable Horrors",
+        "names": {
+            "cn": "",
+            "en": "Cowl of Unspeakable Horrors",
+            "ru": "Клобук невыразимых ужасов",
+            "es": "Capucha de horrores inenarrables",
+            "br": "Capucho dos Horrores Indizíveis",
+            "kr": "",
+            "fr": "Capuche des horreurs innommables",
+            "de": "Gugel der unsäglichen Schrecken"
+        },
+        "icon": "inv_helm_cloth_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
         "id": 174117,
         "name": "Spaulders of Miasmic Mycelia",
         "names": {
@@ -5139,6 +6837,238 @@ export const itemDB = [
         "slot": "Head"
     },
     {
+        "id": 174119,
+        "name": "Robes of Unreality",
+        "names": {
+            "cn": "",
+            "en": "Robes of Unreality",
+            "ru": "Одеяния нереальности",
+            "es": "Togas de irrealidad",
+            "br": "Vestes da Irrealidade",
+            "kr": "",
+            "fr": "Robes d’irréalité",
+            "de": "Roben der Irrealität"
+        },
+        "icon": "inv_chest_cloth_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 174120,
+        "name": "Void Ascendant's Mantle",
+        "names": {
+            "cn": "",
+            "en": "Void Ascendant's Mantle",
+            "ru": "Оплечье перерожденного служителя Бездны",
+            "es": "Manto de ascendiente del Vacío",
+            "br": "Dragonas da Ascendente do Caos",
+            "kr": "",
+            "fr": "Mantelet d’ascendant du Vide",
+            "de": "Mantel des Leerenaszendenten"
+        },
+        "icon": "inv_shoulder_cloth_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 174121,
+        "name": "Trousers of Peculiar Potency",
+        "names": {
+            "cn": "",
+            "en": "Trousers of Peculiar Potency",
+            "ru": "Брюки необычной силы",
+            "es": "Calzas de potencia peculiar",
+            "br": "Calçotes da Potência Peculiar",
+            "kr": "",
+            "fr": "Pantalon de toute-puissance singulière",
+            "de": "Beinkleider der sonderbaren Potenz"
+        },
+        "icon": "inv_pant_cloth_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3276,
+            "crit": 3724,
+            "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 174122,
+        "name": "Void-Drenched Wristwraps",
+        "names": {
+            "cn": "",
+            "en": "Void-Drenched Wristwraps",
+            "ru": "Пропитанные Бездной напульсники",
+            "es": "Cubremuñecas calados de Vacío",
+            "br": "Munhequeiras Encharcadas de Caos",
+            "kr": "",
+            "fr": "Bandelettes trempées de Vide",
+            "de": "Leerengetränkte Gelenkbänder"
+        },
+        "icon": "inv_bracer_cloth_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 2492,
+            "crit": 4508,
+            "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Wrist"
+    },
+    {
+        "id": 174123,
+        "name": "Psychic's Subtle Slippers",
+        "names": {
+            "cn": "",
+            "en": "Psychic's Subtle Slippers",
+            "ru": "Мягкие сандалии ясновидца",
+            "es": "Zapatillas sutiles de psíquico",
+            "br": "Sapatilhas Sutis do Psíquico",
+            "kr": "",
+            "fr": "Mules de subtilité parapsychique",
+            "de": "Dezente Pantoffeln des Mediums"
+        },
+        "icon": "inv_boot_cloth_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3437,
+            "mastery": 3563,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Feet"
+    },
+    {
+        "id": 174124,
+        "name": "Mana-Infused Sash",
+        "names": {
+            "cn": "",
+            "en": "Mana-Infused Sash",
+            "ru": "Наполненный маной кушак",
+            "es": "Fajín imbuido de maná",
+            "br": "Faixa Imbuída de Mana",
+            "kr": "",
+            "fr": "Écharpe imprégnée de mana",
+            "de": "Manaerfüllte Schärpe"
+        },
+        "icon": "inv_belt_cloth_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 3682,
+            "vers": 3318
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Waist"
+    },
+    {
+        "id": 174125,
+        "name": "Emberscale Gloves",
+        "names": {
+            "cn": "",
+            "en": "Emberscale Gloves",
+            "ru": "Перчатки раскаленной чешуи",
+            "es": "Guantes de escamas de ascuas",
+            "br": "Luvas de Escamabrasa",
+            "kr": "",
+            "fr": "Gants en écailles de braise",
+            "de": "Glutschuppenhandschuhe"
+        },
+        "icon": "inv_glove_cloth_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3703,
+            "crit": 3297,
+            "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
+        "id": 174126,
+        "name": "Binding of Dark Heresies",
+        "names": {
+            "cn": "",
+            "en": "Binding of Dark Heresies",
+            "ru": "Пояс темной ереси",
+            "es": "Cinturón de herejías oscuras",
+            "br": "Amarra de Heresias Sombrias",
+            "kr": "",
+            "fr": "Liens des sombres hérésies",
+            "de": "Bindung der dunklen Ketzereien"
+        },
+        "icon": "inv_belt_cloth_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3157,
+            "crit": 0,
+            "mastery": 3843,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Waist"
+    },
+    {
         "id": 174127,
         "name": "Corporeal Supplicant's Trousers",
         "names": {
@@ -5168,6 +7098,151 @@ export const itemDB = [
         "slot": "Legs"
     },
     {
+        "id": 174128,
+        "name": "Boots of Wrought Shadow",
+        "names": {
+            "cn": "",
+            "en": "Boots of Wrought Shadow",
+            "ru": "Сапоги кованной тени",
+            "es": "Botas de sombra forjada",
+            "br": "Botas de Sombra Fundida",
+            "kr": "",
+            "fr": "Bottes d’ombre forgée",
+            "de": "Stiefel des gewirkten Schattens"
+        },
+        "icon": "inv_boot_cloth_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 4746,
+            "vers": 2254
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Feet"
+    },
+    {
+        "id": 174129,
+        "name": "Cuffs of Grim Conjuration",
+        "names": {
+            "cn": "",
+            "en": "Cuffs of Grim Conjuration",
+            "ru": "Манжеты мрачного колдовства",
+            "es": "Puños de conjuración macabra",
+            "br": "Manilhas da Conjuração Macabra",
+            "kr": "",
+            "fr": "Crispins de funeste abjuration",
+            "de": "Manschetten der finsteren Beschwörung"
+        },
+        "icon": "inv_bracer_cloth_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 2149,
+            "crit": 0,
+            "mastery": 4851,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Wrist"
+    },
+    {
+        "id": 174130,
+        "name": "Grips of Occult Reminiscence",
+        "names": {
+            "cn": "",
+            "en": "Grips of Occult Reminiscence",
+            "ru": "Захваты оккультных воспоминаний",
+            "es": "Mandiletes de reminiscencia oculta",
+            "br": "Guantes de Reminiscências Ocultas",
+            "kr": "",
+            "fr": "Poignes de réminiscence occulte",
+            "de": "Handschutz der okkulten Reminiszenz"
+        },
+        "icon": "inv_glove_cloth_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 3409,
+            "vers": 3591
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
+        "id": 174131,
+        "name": "Darkheart Robe",
+        "names": {
+            "cn": "",
+            "en": "Darkheart Robe",
+            "ru": "Одеяние темного сердца",
+            "es": "Toga de corazón oscuro",
+            "br": "Veste do Corenegro",
+            "kr": "",
+            "fr": "Robe sombrecœur",
+            "de": "Düsterherzrobe"
+        },
+        "icon": "inv_chest_leatherraidnzoth_d_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 174132,
+        "name": "Stygian Guise",
+        "names": {
+            "cn": "",
+            "en": "Stygian Guise",
+            "ru": "Стигийский капюшон",
+            "es": "Guisa estigia",
+            "br": "Socapa Estígia",
+            "kr": "",
+            "fr": "Semblance stygienne",
+            "de": "Stygische Haube"
+        },
+        "icon": "inv_helm_leatherraidnzoth_d_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
         "id": 174133,
         "name": "Pauldrons of the Great Convergence",
         "names": {
@@ -5184,6 +7259,64 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 2,
         "itemLevel": 95,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 174134,
+        "name": "Gibbering Maw",
+        "names": {
+            "cn": "",
+            "en": "Gibbering Maw",
+            "ru": "Бормочущая пасть",
+            "es": "Fauces balbuceantes",
+            "br": "Bocarra Balbuciante",
+            "kr": "",
+            "fr": "Gueule bredouillante",
+            "de": "Zeternder Schlund"
+        },
+        "icon": "inv_helm_leatherraidnzoth_d_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 174135,
+        "name": "Spaulders of Aberrant Allure",
+        "names": {
+            "cn": "",
+            "en": "Spaulders of Aberrant Allure",
+            "ru": "Наплечи аберрантного притяжения",
+            "es": "Bufas de atracción aberrante",
+            "br": "Espaldares do Fascínio Aberrante",
+            "kr": "",
+            "fr": "Spallières de séduction aberrante",
+            "de": "Schiftung der anomalen Verlockung"
+        },
+        "icon": "inv_shoulder_leatherraidnzoth_d_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 85,
         "stats": {
             "intellect": 10000,
             "stamina": 11500,
@@ -5226,6 +7359,209 @@ export const itemDB = [
         "slot": "Chest"
     },
     {
+        "id": 174137,
+        "name": "Chitinspine Gloves",
+        "names": {
+            "cn": "",
+            "en": "Chitinspine Gloves",
+            "ru": "Перчатки с хитиновыми шипами",
+            "es": "Guantes de espina quitinosa",
+            "br": "Luvas de Quitespinha",
+            "kr": "",
+            "fr": "Gants chitinépine",
+            "de": "Chitinstachelhandschuhe"
+        },
+        "icon": "inv_glove_leatherraidnzoth_d_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 4739,
+            "vers": 2261
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
+        "id": 174138,
+        "name": "Bracers of Dark Prophecy",
+        "names": {
+            "cn": "",
+            "en": "Bracers of Dark Prophecy",
+            "ru": "Наручи темного пророчества",
+            "es": "Brazales de profecía oscura",
+            "br": "Braçadeiras da Profecia Sombria",
+            "kr": "",
+            "fr": "Brassards de sombre prophétie",
+            "de": "Armschienen der dunklen Prophezeiung"
+        },
+        "icon": "inv_bracer_leatherraidnzoth_d_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3360,
+            "crit": 3640,
+            "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Wrist"
+    },
+    {
+        "id": 174139,
+        "name": "Onyx-Imbued Breeches",
+        "names": {
+            "cn": "",
+            "en": "Onyx-Imbued Breeches",
+            "ru": "Усиленные ониксом брюки",
+            "es": "Calzones imbuidos de ónice",
+            "br": "Calções Infusos em Ônix",
+            "kr": "",
+            "fr": "Braies imprégnées d’onyx",
+            "de": "Onyxerfüllte Bundhosen"
+        },
+        "icon": "inv_pant_leatherraidnzoth_d_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 4522,
+            "vers": 2478
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 174140,
+        "name": "Cord of Anguished Cries",
+        "names": {
+            "cn": "",
+            "en": "Cord of Anguished Cries",
+            "ru": "Шнурованный ремень криков агонии",
+            "es": "Cordón de llantos angustiados",
+            "br": "Cordão dos Gritos Angustiados",
+            "kr": "",
+            "fr": "Corde des pleurs angoissés",
+            "de": "Kordel der peinerfüllten Schreie"
+        },
+        "icon": "inv_belt_leatherraidnzoth_d_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3192,
+            "crit": 0,
+            "mastery": 3808,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Waist"
+    },
+    {
+        "id": 174141,
+        "name": "Boots of Manifest Shadow",
+        "names": {
+            "cn": "",
+            "en": "Boots of Manifest Shadow",
+            "ru": "Сапоги воплощенной тени",
+            "es": "Botas de sombra manifiesta",
+            "br": "Botas da Sombra Manifesta",
+            "kr": "",
+            "fr": "Bottes de l’ombre manifeste",
+            "de": "Stiefel des manifestierten Schattens"
+        },
+        "icon": "inv_boot_leatherraidnzoth_d_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3395,
+            "crit": 0,
+            "mastery": 3605,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Feet"
+    },
+    {
+        "id": 174142,
+        "name": "Belt of Braided Vessels",
+        "names": {
+            "cn": "",
+            "en": "Belt of Braided Vessels",
+            "ru": "Пояс переплетенных сосудов",
+            "es": "Cinturón de venas trenzadas",
+            "br": "Cinto dos Entrançados",
+            "kr": "",
+            "fr": "Ceinture des vaisseaux entrelacés",
+            "de": "Gürtel der geflochtenen Gefäße"
+        },
+        "icon": "inv_belt_leatherraidnzoth_d_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 4256,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 2744
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Waist"
+    },
+    {
+        "id": 174143,
+        "name": "Macabre Ritual Pants",
+        "names": {
+            "cn": "",
+            "en": "Macabre Ritual Pants",
+            "ru": "Штаны макабрического ритуала",
+            "es": "Pantalones de ritual macabro",
+            "br": "Calças do Ritual Macabro",
+            "kr": "",
+            "fr": "Pantalon du rituel macabre",
+            "de": "Hose des makabren Ritual"
+        },
+        "icon": "inv_pant_leatherraidnzoth_d_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 2387,
+            "mastery": 0,
+            "vers": 4613
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
         "id": 174144,
         "name": "Corpuscular Leather Greaves",
         "names": {
@@ -5255,6 +7591,64 @@ export const itemDB = [
         "slot": "Feet"
     },
     {
+        "id": 174145,
+        "name": "Wristwraps of Volatile Power",
+        "names": {
+            "cn": "",
+            "en": "Wristwraps of Volatile Power",
+            "ru": "Напульсники неустойчивой силы",
+            "es": "Cubremuñecas de poder volátil",
+            "br": "Munhequeiras do Poder Volátil",
+            "kr": "",
+            "fr": "Bandelettes du pouvoir volatil",
+            "de": "Gelenkbänder der flüchtigen Macht"
+        },
+        "icon": "inv_bracer_leatherraidnzoth_d_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 2198,
+            "crit": 0,
+            "mastery": 4802,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Wrist"
+    },
+    {
+        "id": 174146,
+        "name": "Gloves of Abyssal Authority",
+        "names": {
+            "cn": "",
+            "en": "Gloves of Abyssal Authority",
+            "ru": "Перчатки власти глубин",
+            "es": "Guantes de autoridad abisal",
+            "br": "Luvas da Autoridade Abissal",
+            "kr": "",
+            "fr": "Gants d’autorité abyssale",
+            "de": "Handschuhe der abyssischen Autorität"
+        },
+        "icon": "inv_glove_leatherraidnzoth_d_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3388,
+            "crit": 0,
+            "mastery": 3612,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
         "id": 174147,
         "name": "Last Vestige of Neltharion",
         "names": {
@@ -5271,6 +7665,93 @@ export const itemDB = [
         "itemClass": 4,
         "itemSubClass": 3,
         "itemLevel": 95,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 174148,
+        "name": "Helm of Deep Despair",
+        "names": {
+            "cn": "",
+            "en": "Helm of Deep Despair",
+            "ru": "Шлем глубокого отчаяния",
+            "es": "Yelmo de desesperación profunda",
+            "br": "Elmo do Desespero Profundo",
+            "kr": "",
+            "fr": "Heaume de profond désespoir",
+            "de": "Helm der tiefen Verzweiflung"
+        },
+        "icon": "inv_helm_mail_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 174149,
+        "name": "Dreamer's Unblinking Pauldrons",
+        "names": {
+            "cn": "",
+            "en": "Dreamer's Unblinking Pauldrons",
+            "ru": "Немигающее наплечье сновидца",
+            "es": "Espaldares insomnes de soñador",
+            "br": "Brafoneiras do Sonhador Vidrado",
+            "kr": "",
+            "fr": "Espauliers impassibles du rêveur",
+            "de": "Starrende Schulterstücke des Träumers"
+        },
+        "icon": "inv_shoulder_mail_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 174150,
+        "name": "Scales of the Scheming Behemoth",
+        "names": {
+            "cn": "",
+            "en": "Scales of the Scheming Behemoth",
+            "ru": "Чешуя коварного исполина",
+            "es": "Escamas de behemoth intrigante",
+            "br": "Escamas do Beemote Maquinante",
+            "kr": "",
+            "fr": "Écailles du béhémoth comploteur",
+            "de": "Schuppen des intriganten Ungetüms"
+        },
+        "icon": "inv_robe_mail_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 85,
         "stats": {
             "intellect": 10000,
             "stamina": 11500,
@@ -5313,6 +7794,180 @@ export const itemDB = [
         "slot": "Head"
     },
     {
+        "id": 174152,
+        "name": "Pauldrons of Ill Portent",
+        "names": {
+            "cn": "",
+            "en": "Pauldrons of Ill Portent",
+            "ru": "Наплечье дурного знамения",
+            "es": "Espaldares de mal presagio",
+            "br": "Brafoneiras do Mau Agouro",
+            "kr": "",
+            "fr": "Espauliers des mauvais présages",
+            "de": "Schulterstücke der bösen Omen"
+        },
+        "icon": "inv_shoulder_mail_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 174153,
+        "name": "Ebony Scaled Gauntlets",
+        "names": {
+            "cn": "",
+            "en": "Ebony Scaled Gauntlets",
+            "ru": "Перчатки из черной чешуи",
+            "es": "Guanteletes escamados de ébano",
+            "br": "Manoplas em Escamas de Ébano",
+            "kr": "",
+            "fr": "Gantelets en écailles d’ébène",
+            "de": "Tiefschwarze Schuppenstulpen"
+        },
+        "icon": "inv_glove_mail_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 4515,
+            "crit": 0,
+            "mastery": 2485,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
+        "id": 174154,
+        "name": "Nightmarish Chain Shackles",
+        "names": {
+            "cn": "",
+            "en": "Nightmarish Chain Shackles",
+            "ru": "Кошмарные кольчужные наручи",
+            "es": "Grilletes de eslabones de pesadilla",
+            "br": "Grilhões do Pesadelo",
+            "kr": "",
+            "fr": "Entraves en anneaux cauchemardesques",
+            "de": "Alptraumhafte Kettenfesseln"
+        },
+        "icon": "inv_bracer_mail_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3213,
+            "crit": 0,
+            "mastery": 3787,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Wrist"
+    },
+    {
+        "id": 174155,
+        "name": "Greaves of Forbidden Magics",
+        "names": {
+            "cn": "",
+            "en": "Greaves of Forbidden Magics",
+            "ru": "Наголенники запретной магии",
+            "es": "Grebas de magia prohibida",
+            "br": "Grevas das Magias Proibidas",
+            "kr": "",
+            "fr": "Grèves de magie interdite",
+            "de": "Schienbeinschützer der verbotenen Magie"
+        },
+        "icon": "inv_pant_mail_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 4375,
+            "mastery": 2625,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 174156,
+        "name": "Chainlink Belt of Ill Omens",
+        "names": {
+            "cn": "",
+            "en": "Chainlink Belt of Ill Omens",
+            "ru": "Плетеный пояс дурных предзнаменований",
+            "es": "Cinturón de tela metálica de malos augurios",
+            "br": "Cinto Encadeado dos Presságios Agourentos",
+            "kr": "",
+            "fr": "Ceinture en cotte de mailles des mauvais présages",
+            "de": "Kettengeflechtgürtel der bösen Vorzeichen"
+        },
+        "icon": "inv_belt_mail_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 2947,
+            "crit": 0,
+            "mastery": 4053,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Waist"
+    },
+    {
+        "id": 174157,
+        "name": "Talons of Grim Revelations",
+        "names": {
+            "cn": "",
+            "en": "Talons of Grim Revelations",
+            "ru": "Когти темных откровений",
+            "es": "Garfas de revelaciones lúgubres",
+            "br": "Garras das Revelações Macabras",
+            "kr": "",
+            "fr": "Serres des funestes révélations",
+            "de": "Krallen der finsteren Offenbarungen"
+        },
+        "icon": "inv_boot_mail_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 4893,
+            "vers": 2107
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Feet"
+    },
+    {
         "id": 174158,
         "name": "Watcher's Scheming Girdle",
         "names": {
@@ -5340,6 +7995,209 @@ export const itemDB = [
         "dropLoc": "",
         "selectable": "true",
         "slot": "Waist"
+    },
+    {
+        "id": 174159,
+        "name": "Spinebarb Legplates",
+        "names": {
+            "cn": "",
+            "en": "Spinebarb Legplates",
+            "ru": "Поножи с костяными шипами",
+            "es": "Quijotes espinosos",
+            "br": "Coxotes Espinobarba",
+            "kr": "",
+            "fr": "Cuissards à pointes barbelées",
+            "de": "Rückgratstachelbeinplatten"
+        },
+        "icon": "inv_pant_mail_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3143,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 3857
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 174160,
+        "name": "Greaves of the Twilight Drake",
+        "names": {
+            "cn": "",
+            "en": "Greaves of the Twilight Drake",
+            "ru": "Наголенники сумеречного дракона",
+            "es": "Grebas del draco Crepuscular",
+            "br": "Grevas do Draco do Crepúsculo",
+            "kr": "",
+            "fr": "Grèves de drake du Crépuscule",
+            "de": "Schienbeinschützer des Zwielichtdrachen"
+        },
+        "icon": "inv_boot_mail_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 4466,
+            "mastery": 0,
+            "vers": 2534
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Feet"
+    },
+    {
+        "id": 174161,
+        "name": "Bracers of Manifest Apathy",
+        "names": {
+            "cn": "",
+            "en": "Bracers of Manifest Apathy",
+            "ru": "Наручи воплощенной апатии",
+            "es": "Brazales de apatía manifiesta",
+            "br": "Braçadeiras da Apatia Manifesta",
+            "kr": "",
+            "fr": "Brassards d’apathie manifeste",
+            "de": "Armschienen der manifestierten Apathie"
+        },
+        "icon": "inv_bracer_mail_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 3528,
+            "vers": 3472
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Wrist"
+    },
+    {
+        "id": 174162,
+        "name": "Ego-Annihilating Grips",
+        "names": {
+            "cn": "",
+            "en": "Ego-Annihilating Grips",
+            "ru": "Уничтожающие эго захваты",
+            "es": "Mandiletes aniquiladores de ego",
+            "br": "Guantes Aniquiladores do Ego",
+            "kr": "",
+            "fr": "Poignes d’annihilation de l’ego",
+            "de": "Egovernichtender Handschutz"
+        },
+        "icon": "inv_glove_mail_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 4221,
+            "mastery": 0,
+            "vers": 2779
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
+        "id": 174163,
+        "name": "Second Sight Helm",
+        "names": {
+            "cn": "",
+            "en": "Second Sight Helm",
+            "ru": "Шлем второго зрения",
+            "es": "Yelmo de clarividencia",
+            "br": "Elmo da Vidência",
+            "kr": "",
+            "fr": "Heaume de seconde vue",
+            "de": "Helm des zweiten Gesichts"
+        },
+        "icon": "inv_helm_plate_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 174164,
+        "name": "Breastplate of Twilight Decimation",
+        "names": {
+            "cn": "",
+            "en": "Breastplate of Twilight Decimation",
+            "ru": "Кираса сумеречного истребления",
+            "es": "Coraza de exterminio Crepuscular",
+            "br": "Peitoral da Dizimação do Crepúsculo",
+            "kr": "",
+            "fr": "Cuirasse de décimation du Crépuscule",
+            "de": "Brustplatte der Zwielichtdezimierung"
+        },
+        "icon": "inv_chest_plate_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 174165,
+        "name": "Writhing Spaulders of Madness",
+        "names": {
+            "cn": "",
+            "en": "Writhing Spaulders of Madness",
+            "ru": "Извивающиеся наплечи безумия",
+            "es": "Bufas aviesas de locura",
+            "br": "Espaldares Convulsionantes da Loucura",
+            "kr": "",
+            "fr": "Spallières de démence grouillantes",
+            "de": "Zuckende Schiftung des Wahnsinns"
+        },
+        "icon": "inv_shoulder_plate_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
     },
     {
         "id": 174166,
@@ -5400,6 +8258,296 @@ export const itemDB = [
         "slot": "Head"
     },
     {
+        "id": 174168,
+        "name": "Carapace of Pulsing Vita",
+        "names": {
+            "cn": "",
+            "en": "Carapace of Pulsing Vita",
+            "ru": "Панцирь жизненной силы",
+            "es": "Caparazón de vita pulsante",
+            "br": "Carapaça da Vita Pulsante",
+            "kr": "",
+            "fr": "Carapace de vita vibrante",
+            "de": "Panzer der pulsierenden Vita"
+        },
+        "icon": "inv_chest_plate_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 174169,
+        "name": "Gauntlets of Foul Inquisition",
+        "names": {
+            "cn": "",
+            "en": "Gauntlets of Foul Inquisition",
+            "ru": "Рукавицы нечестивой инквизиции",
+            "es": "Guanteletes de inquisición abyecta",
+            "br": "Manoplas da Inquisição Imunda",
+            "kr": "",
+            "fr": "Gantelets d’inquisition infâme",
+            "de": "Stulpen der widerwärtigen Inquisition"
+        },
+        "icon": "inv_glove_plate_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 2919,
+            "mastery": 4081,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
+        "id": 174170,
+        "name": "Dragonbone Vambraces",
+        "names": {
+            "cn": "",
+            "en": "Dragonbone Vambraces",
+            "ru": "Наручи из драконьей кости",
+            "es": "Avambrazos de hueso de dragón",
+            "br": "Avambraços de Osso de Dragão",
+            "kr": "",
+            "fr": "Protège-bras en os de dragon",
+            "de": "Drachenknochenunterarmschienen"
+        },
+        "icon": "inv_bracer_plate_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 2660,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 4340
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Wrist"
+    },
+    {
+        "id": 174171,
+        "name": "Dark Crystalline Girdle",
+        "names": {
+            "cn": "",
+            "en": "Dark Crystalline Girdle",
+            "ru": "Ремень с темными кристаллами",
+            "es": "Faja cristalina oscura",
+            "br": "Cinturão de Cristal Escuro",
+            "kr": "",
+            "fr": "Ceinturon cristallin sombre",
+            "de": "Dunkler kristalliner Gurt"
+        },
+        "icon": "inv_belt_plate_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 4347,
+            "mastery": 0,
+            "vers": 2653
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Waist"
+    },
+    {
+        "id": 174172,
+        "name": "Living Obsidian Legguards",
+        "names": {
+            "cn": "",
+            "en": "Living Obsidian Legguards",
+            "ru": "Набедренники из живого обсидиана",
+            "es": "Musleras de obsidiana viviente",
+            "br": "Guarda-pernas de Obsidiana Viva",
+            "kr": "",
+            "fr": "Garde-jambes en obsidienne vivante",
+            "de": "Lebende Obsidianbeinschützer"
+        },
+        "icon": "inv_pant_plate_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3234,
+            "crit": 3766,
+            "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 174173,
+        "name": "Boots of Hallucinatory Reality",
+        "names": {
+            "cn": "",
+            "en": "Boots of Hallucinatory Reality",
+            "ru": "Сапоги воображаемой реальности",
+            "es": "Botas de realidad alucinatoria",
+            "br": "Botas da Realidade Alucinatória",
+            "kr": "",
+            "fr": "Bottes de réalité hallucinatoire",
+            "de": "Stiefel der halluzinierten Wirklichkeit"
+        },
+        "icon": "inv_boot_plate_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 4312,
+            "crit": 0,
+            "mastery": 2688,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Feet"
+    },
+    {
+        "id": 174174,
+        "name": "Belt of Muttering Truths",
+        "names": {
+            "cn": "",
+            "en": "Belt of Muttering Truths",
+            "ru": "Пояс тихих истин",
+            "es": "Cinturón de verdades murmurantes",
+            "br": "Cinto das Verdades Murmurantes",
+            "kr": "",
+            "fr": "Ceinture des vérités grondantes",
+            "de": "Gürtel der gemurmelten Wahrheiten"
+        },
+        "icon": "inv_belt_plate_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 4144,
+            "mastery": 2856,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Waist"
+    },
+    {
+        "id": 174175,
+        "name": "Reality-Defying Greaves",
+        "names": {
+            "cn": "",
+            "en": "Reality-Defying Greaves",
+            "ru": "Неподвластные реальности наголенники",
+            "es": "Grebas contrarias a la realidad",
+            "br": "Grevas Desafiantes da Realidade",
+            "kr": "",
+            "fr": "Grèves défiant la réalité",
+            "de": "Realitätstrotzende Schienbeinschützer"
+        },
+        "icon": "inv_pant_plate_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3906,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 3094
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 174176,
+        "name": "Sabatons of Malevolent Intent",
+        "names": {
+            "cn": "",
+            "en": "Sabatons of Malevolent Intent",
+            "ru": "Башмаки злобных намерений",
+            "es": "Escarpes de propósito malévolo",
+            "br": "Escarpes da Intenção Malévola",
+            "kr": "",
+            "fr": "Solerets d’intention malveillante",
+            "de": "Sabatons der bösen Absicht"
+        },
+        "icon": "inv_boot_plate_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3549,
+            "mastery": 0,
+            "vers": 3451
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Feet"
+    },
+    {
+        "id": 174177,
+        "name": "Bracers of Phantom Pains",
+        "names": {
+            "cn": "",
+            "en": "Bracers of Phantom Pains",
+            "ru": "Наручи фантомной боли",
+            "es": "Brazales de dolor fantasma",
+            "br": "Braçadeiras das Dores Fantasmas",
+            "kr": "",
+            "fr": "Brassards des souffrances fantomatiques",
+            "de": "Armschienen der Phantomschmerzen"
+        },
+        "icon": "inv_bracer_plate_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3675,
+            "mastery": 3325,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Wrist"
+    },
+    {
         "id": 174178,
         "name": "Mirage-Weaver's Gauntlets",
         "names": {
@@ -5427,6 +8575,300 @@ export const itemDB = [
         "dropLoc": "",
         "selectable": "true",
         "slot": "Hands"
+    },
+    {
+        "id": 174180,
+        "name": "Oozing Coagulum",
+        "names": {
+            "cn": "",
+            "en": "Oozing Coagulum",
+            "ru": "Сочащийся коагулят",
+            "es": "Coágulo rezumante",
+            "br": "Coágulo Gosmento",
+            "kr": "",
+            "fr": "Coagulum suintant",
+            "de": "Schleimiges Koagulum"
+        },
+        "icon": "ability_deathwing_bloodcorruption_earth",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 6666,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Trinket",
+        "effect": {
+            "type": "trinket",
+            "name": "Oozing Coagulum"
+        }
+    },
+    {
+        "id": 174234,
+        "name": "Maniacal Speaker's Cover",
+        "names": {
+            "cn": "",
+            "en": "Maniacal Speaker's Cover",
+            "ru": "Убор маниакального оратора",
+            "es": "Casquete del orador maníaco",
+            "br": "Murça do Mensageiro Maníaco",
+            "kr": "",
+            "fr": "Couvre-chef de l’oratrice maniaque",
+            "de": "Kopfbedeckung des irren Sprechers"
+        },
+        "icon": "inv_helm_cloth_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 174237,
+        "name": "Breeches of Faithful Execution",
+        "names": {
+            "cn": "",
+            "en": "Breeches of Faithful Execution",
+            "ru": "Штаны верной казни",
+            "es": "Calzones de ejecución fiel",
+            "br": "Calções da Execução Fiel",
+            "kr": "",
+            "fr": "Braies de fidèle exécution",
+            "de": "Bundhose der getreulichen Durchführung"
+        },
+        "icon": "inv_pant_cloth_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 4100,
+            "crit": 2900,
+            "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 174243,
+        "name": "Guise of the Voracious Prowler",
+        "names": {
+            "cn": "",
+            "en": "Guise of the Voracious Prowler",
+            "ru": "Облачение прожорливого хищника",
+            "es": "Apariencia del merodeador voraz",
+            "br": "Socapa do Predador Voraz",
+            "kr": "",
+            "fr": "Semblance de la rôdeuse vorace",
+            "de": "Blendwerk des gefräßigen Streuners"
+        },
+        "icon": "inv_helm_leatherraidnzoth_d_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 174247,
+        "name": "Grotesque Mutilator's Leggings",
+        "names": {
+            "cn": "",
+            "en": "Grotesque Mutilator's Leggings",
+            "ru": "Поножи гротескного изувера",
+            "es": "Leotardos de mutilador grotesco",
+            "br": "Perneiras do Mutilador Grotesco",
+            "kr": "",
+            "fr": "Jambières du mutilateur grotesque",
+            "de": "Gamaschen des grotesken Verstümmlers"
+        },
+        "icon": "inv_pant_leatherraidnzoth_d_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3800,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 3200
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 174250,
+        "name": "Psyche Tormentor's Visage",
+        "names": {
+            "cn": "",
+            "en": "Psyche Tormentor's Visage",
+            "ru": "Маска истязателя разума",
+            "es": "Rostro de torturador de psiques",
+            "br": "Semblante da Psiquê do Torturador",
+            "kr": "",
+            "fr": "Visage du tourmenteur psychique",
+            "de": "Antlitz des Peinigers der Psyche"
+        },
+        "icon": "inv_helm_mail_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 174255,
+        "name": "Greaves of Shattered Thoughts",
+        "names": {
+            "cn": "",
+            "en": "Greaves of Shattered Thoughts",
+            "ru": "Наголенники расколотых мыслей",
+            "es": "Grebas de pensamientos devastados",
+            "br": "Grevas das Ideias Despedaçadas",
+            "kr": "",
+            "fr": "Grèves des pensées brisées",
+            "de": "Schienbeinschützer der gebrochenen Gedanken"
+        },
+        "icon": "inv_pant_mail_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 4250,
+            "vers": 2750
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 174258,
+        "name": "Greathelm of Indiscriminate Brutality",
+        "names": {
+            "cn": "",
+            "en": "Greathelm of Indiscriminate Brutality",
+            "ru": "Большой шлем неразборчивой жестокости",
+            "es": "Gran yelmo de brutalidad indiscriminada",
+            "br": "Grande Elmo da Brutalidade Indiscriminada",
+            "kr": "",
+            "fr": "Grand heaume de brutalité aveugle",
+            "de": "Großhelm der willkürlichen Brutalität"
+        },
+        "icon": "inv_helm_plate_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 174264,
+        "name": "Chitinous Conqueror's Legplates",
+        "names": {
+            "cn": "",
+            "en": "Chitinous Conqueror's Legplates",
+            "ru": "Хитиновые ножные латы завоевателя",
+            "es": "Quijotes de conquistador quitinoso",
+            "br": "Coxotes do Conquistador Quitinoso",
+            "kr": "",
+            "fr": "Cuissards de conquérante en chitine",
+            "de": "Chitinbeinplatten des Eroberers"
+        },
+        "icon": "inv_pant_plate_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3950,
+            "crit": 0,
+            "mastery": 3050,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 174268,
+        "name": "Loop of Abhorrent Celerity",
+        "names": {
+            "cn": "",
+            "en": "Loop of Abhorrent Celerity",
+            "ru": "Кольцо противоестественной подвижности",
+            "es": "Aro de celeridad aberrante",
+            "br": "Aro da Celeridade Repugnante",
+            "kr": "",
+            "fr": "Jonc de célérité abjecte",
+            "de": "Reif der abscheulichen Schnelligkeit"
+        },
+        "icon": "inv_70_raid_ring3c",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "haste": 9500,
+            "crit": 8000,
+            "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Finger"
     },
     {
         "id": 174289,
@@ -5699,6 +9141,190 @@ export const itemDB = [
         "slot": "Back"
     },
     {
+        "id": 174469,
+        "name": "Band of Insidious Ruminations",
+        "names": {
+            "cn": "",
+            "en": "Band of Insidious Ruminations",
+            "ru": "Кольцо коварных размышлений",
+            "es": "Sortija de reflexión insidiosa",
+            "br": "Elo das Ruminações Insidiosas",
+            "kr": "",
+            "fr": "Bague des ruminations insidieuses",
+            "de": "Ring der heimtückischen Gedanken"
+        },
+        "icon": "inv_70_raid_ring3c",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 7500,
+            "vers": 10000
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Finger"
+    },
+    {
+        "id": 174500,
+        "name": "Vita-Charged Titanshard",
+        "names": {
+            "cn": "",
+            "en": "Vita-Charged Titanshard",
+            "ru": "Заряженный жизненной силой осколок титанов",
+            "es": "Fragmento titánico cargado de vita",
+            "br": "Estilhaço Titânico de Vita Carregada",
+            "kr": "",
+            "fr": "Éclat des Titans chargé de vita",
+            "de": "Vitageladener Titanensplitter"
+        },
+        "icon": "spell_nature_lightningoverload",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 85,
+        "itemSetId": 1452,
+        "stats": {
+            "intellect": 0,
+            "stamina": 0,
+            "haste": 6666,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Trinket",
+        "effect": {
+            "type": "trinket",
+            "name": "Vita-Charged Titanshard"
+        }
+    },
+    {
+        "id": 174528,
+        "name": "Void-Twisted Titanshard",
+        "names": {
+            "cn": "",
+            "en": "Void-Twisted Titanshard",
+            "ru": "Зараженный Бездной осколок титанов",
+            "es": "Fragmento titánico alterado por el Vacío",
+            "br": "Estilhaço Titânico Pervertido pelo Caos",
+            "kr": "",
+            "fr": "Éclat des Titans altéré par le Vide",
+            "de": "Leerenentstellter Titanensplitter"
+        },
+        "icon": "spell_priest_mindspike",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 85,
+        "itemSetId": 1452,
+        "stats": {
+            "intellect": 0,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 6666
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Trinket",
+        "effect": {
+            "type": "trinket",
+            "name": "Void-Twisted Titanshard"
+        }
+    },
+    {
+        "id": 174530,
+        "name": "Ring of Collective Consciousness",
+        "names": {
+            "cn": "",
+            "en": "Ring of Collective Consciousness",
+            "ru": "Кольцо коллективного сознания",
+            "es": "Anillo de consciencia colectiva",
+            "br": "Anel da Consciência Coletiva",
+            "kr": "",
+            "fr": "Anneau de conscience collective",
+            "de": "Ring des kollektiven Bewusstseins"
+        },
+        "icon": "inv_70_raid_ring8d",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "haste": 7500,
+            "crit": 10000,
+            "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Finger"
+    },
+    {
+        "id": 174531,
+        "name": "Void-Etched Band",
+        "names": {
+            "cn": "",
+            "en": "Void-Etched Band",
+            "ru": "Кольцо с гравировкой Бездны",
+            "es": "Sortija con grabados del Vacío",
+            "br": "Elo Cinzelado pelo Caos",
+            "kr": "",
+            "fr": "Bague gravée de Vide",
+            "de": "Leerengeätztes Band"
+        },
+        "icon": "inv_70_pvp_ring2c",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 11000,
+            "vers": 6500
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Finger"
+    },
+    {
+        "id": 174532,
+        "name": "Ichorspine Loop",
+        "names": {
+            "cn": "",
+            "en": "Ichorspine Loop",
+            "ru": "Кольцо ядовитых шипов",
+            "es": "Anillo de espinaicor",
+            "br": "Aro de Linfa-de-espinha",
+            "kr": "",
+            "fr": "Jonc ichorépine",
+            "de": "Sekretstachelschleife"
+        },
+        "icon": "inv_70_raid_ring6a",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 8000,
+            "mastery": 9500,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Finger"
+    },
+    {
         "id": 174533,
         "name": "Ring of Cosmic Potential",
         "names": {
@@ -5844,6 +9470,187 @@ export const itemDB = [
         "slot": "Wrist"
     },
     {
+        "id": 175004,
+        "name": "Legwraps of Horrifying Figments",
+        "names": {
+            "cn": "",
+            "en": "Legwraps of Horrifying Figments",
+            "ru": "Бриджи ужасных домыслов",
+            "es": "Ataduras de fantasías horribles",
+            "br": "Culotes da Fantasia Horripilante",
+            "kr": "",
+            "fr": "Jambards de fabulation horrifiante",
+            "de": "Beinwickel der entsetzlichen Einbildung"
+        },
+        "icon": "inv_pant_cloth_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 4408,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 2592
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 175005,
+        "name": "Belt of Concealed Intent",
+        "names": {
+            "cn": "",
+            "en": "Belt of Concealed Intent",
+            "ru": "Пояс тайного намерения",
+            "es": "Cinturón de la intención oculta",
+            "br": "Cinto das Intenções Ocultas",
+            "kr": "",
+            "fr": "Ceinture d’intention dissimulée",
+            "de": "Gürtel der verheimlichten Absichten"
+        },
+        "icon": "inv_belt_mail_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3992,
+            "crit": 0,
+            "mastery": 3008,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Waist"
+    },
+    {
+        "id": 175006,
+        "name": "Gauntlets of Nightmare Manifest",
+        "names": {
+            "cn": "",
+            "en": "Gauntlets of Nightmare Manifest",
+            "ru": "Перчатки воплощенного кошмара",
+            "es": "Guanteletes de pesadilla manifiesta",
+            "br": "Manoplas do Pesadelo Manifesto",
+            "kr": "",
+            "fr": "Gantelets de proclamation du cauchemar",
+            "de": "Stulpen des manifestierten Alptraums"
+        },
+        "icon": "inv_glove_plate_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 4111,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 2889
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
+        "id": 175007,
+        "name": "Footpads of Terrible Delusions",
+        "names": {
+            "cn": "",
+            "en": "Footpads of Terrible Delusions",
+            "ru": "Кожаные сапоги ужасных заблуждений",
+            "es": "Escarpines de delirios aterradores",
+            "br": "Pisantes das Desilusões Terríveis",
+            "kr": "",
+            "fr": "Souliers d’illusions terribles",
+            "de": "Fußpolster der schrecklichen Täuschung"
+        },
+        "icon": "inv_boot_leatherraidnzoth_d_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 4107,
+            "crit": 2893,
+            "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Feet"
+    },
+    {
+        "id": 175008,
+        "name": "Lurking Schemer's Band",
+        "names": {
+            "cn": "",
+            "en": "Lurking Schemer's Band",
+            "ru": "Кольцо скрывающегося махинатора",
+            "es": "Sortija del maquinador acechante",
+            "br": "Elo do Conspirador à Espreita",
+            "kr": "",
+            "fr": "Bague du comploteur tapi",
+            "de": "Band des lauernden Intriganten"
+        },
+        "icon": "inv_70_raid_ring8d",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 85,
+        "socketInfo": {
+            "sockets": [
+                {
+                    "type": "PRISMATIC"
+                }
+            ]
+        },
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "haste": 8992,
+            "crit": 8508,
+            "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Finger"
+    },
+    {
+        "id": 175009,
+        "name": "Zealous Ritualist's Reverie",
+        "names": {
+            "cn": "",
+            "en": "Zealous Ritualist's Reverie",
+            "ru": "Мечта фанатичного ритуалиста",
+            "es": "Ensueño del ritualista ferviente",
+            "br": "Devaneio do Ritualista Zeloso",
+            "kr": "",
+            "fr": "Rêverie du ritualiste zélé",
+            "de": "Träumerei des fanatischen Ritualisten"
+        },
+        "icon": "inv_offhand_1h_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 16132,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3306,
+            "mastery": 3694,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Offhand"
+    },
+    {
         "id": 175254,
         "name": "Burning Beacon of Hope",
         "names": {
@@ -5870,7 +9677,3023 @@ export const itemDB = [
         },
         "dropLoc": "",
         "selectable": "true",
-        "slot": "Holdable"
+        "slot": "Offhand"
+    },
+    {
+        "id": 175414,
+        "name": "Stoneforged Headgear",
+        "names": {
+            "cn": "",
+            "en": "Stoneforged Headgear",
+            "ru": "Головной убор камнерожденного",
+            "es": "Casco de forja de piedra",
+            "br": "Almofre Forjado em Pedra",
+            "kr": "",
+            "fr": "Couvre-chef de forge-pierre",
+            "de": "Steingeschmiedete Kopfbedeckung"
+        },
+        "icon": "inv_helm_plate_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3800,
+            "crit": 0,
+            "mastery": 3200,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 175415,
+        "name": "Vestments of Pained Absolution",
+        "names": {
+            "cn": "",
+            "en": "Vestments of Pained Absolution",
+            "ru": "Облачение болезненного искупления",
+            "es": "Vestimentas de absolución dolorida",
+            "br": "Vestimenta da Absolvição Dolorosa",
+            "kr": "",
+            "fr": "Habits d’absolution affligée",
+            "de": "Gewänder der schmerzvollen Absolution"
+        },
+        "icon": "inv_robe_cloth_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3350,
+            "crit": 0,
+            "mastery": 3650,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 175416,
+        "name": "Stoneforged Chestplate",
+        "names": {
+            "cn": "",
+            "en": "Stoneforged Chestplate",
+            "ru": "Бригантина камнерожденного",
+            "es": "Peto de forja de piedra",
+            "br": "Guarda-peito Forjado em Pedra",
+            "kr": "",
+            "fr": "Pansière de forge-pierre",
+            "de": "Steingeschmiedete Brustplatte"
+        },
+        "icon": "inv_chest_plate_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3650,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 3350
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 175417,
+        "name": "Soul Hunter's Hauberk",
+        "names": {
+            "cn": "",
+            "en": "Soul Hunter's Hauberk",
+            "ru": "Хауберк ловца душ",
+            "es": "Camisote del cazaalmas",
+            "br": "Cota do Caça-almas",
+            "kr": "",
+            "fr": "Haubert de chasseur d’âmes",
+            "de": "Seelenjägerhalsberge"
+        },
+        "icon": "inv_mail_oribosquesting_b_01_chest",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3200,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 3800
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 175418,
+        "name": "Nightcloaked Vest",
+        "names": {
+            "cn": "",
+            "en": "Nightcloaked Vest",
+            "ru": "Жилет покрова ночи",
+            "es": "Jubón cubierto por la noche",
+            "br": "Colete do Mantonócteo",
+            "kr": "",
+            "fr": "Gilet noctevoilé",
+            "de": "Nachtverhüllte Weste"
+        },
+        "icon": "inv_chest_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3950,
+            "crit": 0,
+            "mastery": 3050,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 175423,
+        "name": "Sure-Grip Parasol Gloves",
+        "names": {
+            "cn": "",
+            "en": "Sure-Grip Parasol Gloves",
+            "ru": "Перчатки для прыжков с зонтом",
+            "es": "Guantes de parasol de agarre firme",
+            "br": "Luvas de Guarda-sol Pulso-firme",
+            "kr": "",
+            "fr": "Gants assurés à parasol",
+            "de": "Rutschfeste Sonnenschirmhandschuhe"
+        },
+        "icon": "inv_glove_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3650,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 3350
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
+        "id": 175424,
+        "name": "Gubbins Polished Gauntlets",
+        "names": {
+            "cn": "",
+            "en": "Gubbins Polished Gauntlets",
+            "ru": "Начищенные перчатки Габбинса",
+            "es": "Guanteletes pulidos de Troche",
+            "br": "Manoplas Polidas do Treco",
+            "kr": "",
+            "fr": "Gantelets polis de Gubbins",
+            "de": "Gubbins' polierte Stulpen"
+        },
+        "icon": "inv_glove_plate_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 3350,
+            "vers": 3650
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
+        "id": 175425,
+        "name": "Tubbins Teapot Fire Mitts",
+        "names": {
+            "cn": "",
+            "en": "Tubbins Teapot Fire Mitts",
+            "ru": "Перчатки Таббинса для заваривания чая",
+            "es": "Mitones de fuego de tetera de Moche",
+            "br": "Luvetes de Fogo da Chaleira do Truco",
+            "kr": "",
+            "fr": "Maniques à théière de Tubbins",
+            "de": "Feuerfäustlinge von Tubbins' Teekanne"
+        },
+        "icon": "inv_glove_cloth_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3950,
+            "mastery": 0,
+            "vers": 3050
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
+        "id": 175426,
+        "name": "Ghoul-Tooth Resistant Grips",
+        "names": {
+            "cn": "",
+            "en": "Ghoul-Tooth Resistant Grips",
+            "ru": "Вурдалаконепрогрызаемые захваты",
+            "es": "Mandiletes resistentes de dientes de necrófago",
+            "br": "Guantes à Prova de Dente-de-Carniçal",
+            "kr": "",
+            "fr": "Poignes résistantes serties de dents de goule",
+            "de": "Ghulzahnresistenter Handschutz"
+        },
+        "icon": "inv_mail_oribosquesting_b_01_glove",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 3800,
+            "vers": 3200
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
+        "id": 175427,
+        "name": "Hood of Pained Absolution",
+        "names": {
+            "cn": "",
+            "en": "Hood of Pained Absolution",
+            "ru": "Капюшон болезненного искупления",
+            "es": "Caperuza de absolución dolorida",
+            "br": "Capuz da Absolvição Dolorosa",
+            "kr": "",
+            "fr": "Chaperon d’absolution affligée",
+            "de": "Kapuze der schmerzvollen Absolution"
+        },
+        "icon": "inv_helm_cloth_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3650,
+            "crit": 0,
+            "mastery": 3350,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 175428,
+        "name": "Soul Hunter's Helm",
+        "names": {
+            "cn": "",
+            "en": "Soul Hunter's Helm",
+            "ru": "Шлем ловца душ",
+            "es": "Yelmo del cazaalmas",
+            "br": "Elmo do Caça-almas",
+            "kr": "",
+            "fr": "Heaume de chasseur d’âmes",
+            "de": "Seelenjägerhelm"
+        },
+        "icon": "inv_mail_oribosquesting_b_01_helm",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3950,
+            "crit": 0,
+            "mastery": 3050,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 175429,
+        "name": "Nightcloaked Hood",
+        "names": {
+            "cn": "",
+            "en": "Nightcloaked Hood",
+            "ru": "Капюшон покрова ночи",
+            "es": "Caperuza cubierta por la noche",
+            "br": "Capuz do Mantonócteo",
+            "kr": "",
+            "fr": "Chaperon noctevoilé",
+            "de": "Nachtverhüllte Kapuze"
+        },
+        "icon": "inv_helm_leather_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3950,
+            "mastery": 0,
+            "vers": 3050
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 175430,
+        "name": "Stoneforged Legguards",
+        "names": {
+            "cn": "",
+            "en": "Stoneforged Legguards",
+            "ru": "Набедренники камнерожденного",
+            "es": "Musleras de forja de piedra",
+            "br": "Guarda-pernas Forjado em Pedra",
+            "kr": "",
+            "fr": "Garde-jambes de forge-pierre",
+            "de": "Steingeschmiedete Beinschützer"
+        },
+        "icon": "inv_pant_plate_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3800,
+            "crit": 3200,
+            "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 175431,
+        "name": "Leggings of Pained Absolution",
+        "names": {
+            "cn": "",
+            "en": "Leggings of Pained Absolution",
+            "ru": "Поножи болезненного искупления",
+            "es": "Leotardos de absolución dolorida",
+            "br": "Perneiras da Absolvição Dolorosa",
+            "kr": "",
+            "fr": "Jambières d’absolution affligée",
+            "de": "Gamaschen der schmerzvollen Absolution"
+        },
+        "icon": "inv_pant_cloth_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3650,
+            "crit": 3350,
+            "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 175432,
+        "name": "Soul Hunter's Leggings",
+        "names": {
+            "cn": "",
+            "en": "Soul Hunter's Leggings",
+            "ru": "Поножи ловца душ",
+            "es": "Leotardos del cazaalmas",
+            "br": "Perneiras do Caça-almas",
+            "kr": "",
+            "fr": "Jambières de chasseur d’âmes",
+            "de": "Seelenjägergamaschen"
+        },
+        "icon": "inv_mail_oribosquesting_b_01_pants",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3050,
+            "mastery": 3950,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 175433,
+        "name": "Nightcloaked Breeches",
+        "names": {
+            "cn": "",
+            "en": "Nightcloaked Breeches",
+            "ru": "Брюки покрова ночи",
+            "es": "Calzones cubiertos por la noche",
+            "br": "Calções do Mantonócteo",
+            "kr": "",
+            "fr": "Braies noctevoilées",
+            "de": "Nachtverhüllte Bundhosen"
+        },
+        "icon": "inv_pant_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3350,
+            "crit": 3650,
+            "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 175434,
+        "name": "Nightcloaked Spaulders",
+        "names": {
+            "cn": "",
+            "en": "Nightcloaked Spaulders",
+            "ru": "Наплеч покрова ночи",
+            "es": "Bufas cubiertas por la noche",
+            "br": "Espaldares do Mantonócteo",
+            "kr": "",
+            "fr": "Spallières noctevoilées",
+            "de": "Nachtverhüllte Schiftung"
+        },
+        "icon": "inv_shoulder_leather_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3800,
+            "crit": 0,
+            "mastery": 3200,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 175435,
+        "name": "Stoneforged Spaulders",
+        "names": {
+            "cn": "",
+            "en": "Stoneforged Spaulders",
+            "ru": "Наплеч камнерожденного",
+            "es": "Bufas de forja de piedra",
+            "br": "Espaldares Forjados em Pedra",
+            "kr": "",
+            "fr": "Spallières de forge-pierre",
+            "de": "Steingeschmiedete Schiftung"
+        },
+        "icon": "inv_shoulder_plate_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3950,
+            "mastery": 3050,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 175436,
+        "name": "Mantle of Pained Absolution",
+        "names": {
+            "cn": "",
+            "en": "Mantle of Pained Absolution",
+            "ru": "Оплечье болезненного искупления",
+            "es": "Manto de absolución dolorida",
+            "br": "Dragonas da Absolvição Dolorosa",
+            "kr": "",
+            "fr": "Mantelet d’absolution affligée",
+            "de": "Mantel der schmerzvollen Absolution"
+        },
+        "icon": "inv_shoulder_cloth_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 3050,
+            "vers": 3950
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 175437,
+        "name": "Soul Hunter's Monnion",
+        "names": {
+            "cn": "",
+            "en": "Soul Hunter's Monnion",
+            "ru": "Наплечники ловца душ",
+            "es": "Sobrehombreras del cazaalmas",
+            "br": "Espáduas do Caça-almas",
+            "kr": "",
+            "fr": "Espalières de chasseur d’âmes",
+            "de": "Seelenjägerschulterschutz"
+        },
+        "icon": "inv_mail_oribosquesting_b_01_shoulder",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3650,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 3350
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 175438,
+        "name": "Stoneforged Girdle",
+        "names": {
+            "cn": "",
+            "en": "Stoneforged Girdle",
+            "ru": "Ремень камнерожденного",
+            "es": "Faja de forja de piedra",
+            "br": "Cinturão Forjado em Pedra",
+            "kr": "",
+            "fr": "Ceinturon de forge-pierre",
+            "de": "Steingeschmiedete Gürtung"
+        },
+        "icon": "inv_belt_plate_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3200,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 3800
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Waist"
+    },
+    {
+        "id": 175439,
+        "name": "Sash of Pained Absolution",
+        "names": {
+            "cn": "",
+            "en": "Sash of Pained Absolution",
+            "ru": "Кушак болезненного искупления",
+            "es": "Fajín de absolución dolorida",
+            "br": "Faixa da Absolvição Dolorosa",
+            "kr": "",
+            "fr": "Écharpe d’absolution affligée",
+            "de": "Schärpe der schmerzvollen Absolution"
+        },
+        "icon": "inv_belt_cloth_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3800,
+            "crit": 3200,
+            "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Waist"
+    },
+    {
+        "id": 175440,
+        "name": "Soul Hunter's Belt",
+        "names": {
+            "cn": "",
+            "en": "Soul Hunter's Belt",
+            "ru": "Пояс ловца душ",
+            "es": "Cinturón del cazaalmas",
+            "br": "Cinto do Caça-almas",
+            "kr": "",
+            "fr": "Ceinture de chasseur d’âmes",
+            "de": "Seelenjägergürtel"
+        },
+        "icon": "inv_mail_oribosquesting_b_01_buckle",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3950,
+            "crit": 0,
+            "mastery": 3050,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Waist"
+    },
+    {
+        "id": 175441,
+        "name": "Nightcloaked Belt",
+        "names": {
+            "cn": "",
+            "en": "Nightcloaked Belt",
+            "ru": "Пояс покрова ночи",
+            "es": "Cinturón cubierto por la noche",
+            "br": "Cinto do Mantonócteo",
+            "kr": "",
+            "fr": "Ceinture noctevoilée",
+            "de": "Nachtverhüllter Gürtel"
+        },
+        "icon": "inv_belt_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3350,
+            "mastery": 0,
+            "vers": 3650
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Waist"
+    },
+    {
+        "id": 175442,
+        "name": "Wraps of Pained Absolution",
+        "names": {
+            "cn": "",
+            "en": "Wraps of Pained Absolution",
+            "ru": "Напульсники болезненного искупления",
+            "es": "Brazaletes de absolución dolorida",
+            "br": "Munhequeiras da Absolvição Dolorosa",
+            "kr": "",
+            "fr": "Couvre-bras d’absolution affligée",
+            "de": "Wickel der schmerzvollen Absolution"
+        },
+        "icon": "inv_bracer_cloth_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3650,
+            "mastery": 3350,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Wrist"
+    },
+    {
+        "id": 175443,
+        "name": "Stoneforged Vambraces",
+        "names": {
+            "cn": "",
+            "en": "Stoneforged Vambraces",
+            "ru": "Латные наручи камнерожденного",
+            "es": "Avambrazos de forja de piedra",
+            "br": "Avambraços Forjados em Pedra",
+            "kr": "",
+            "fr": "Protège-bras de forge-pierre",
+            "de": "Steingeschmiedete Unterarmschienen"
+        },
+        "icon": "inv_bracer_plate_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3650,
+            "crit": 0,
+            "mastery": 3350,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Wrist"
+    },
+    {
+        "id": 175444,
+        "name": "Soul Hunter's Bracers",
+        "names": {
+            "cn": "",
+            "en": "Soul Hunter's Bracers",
+            "ru": "Наручи ловца душ",
+            "es": "Brazales del cazaalmas",
+            "br": "Braçadeiras do Caça-almas",
+            "kr": "",
+            "fr": "Brassards de chasseur d’âmes",
+            "de": "Seelenjägerarmschienen"
+        },
+        "icon": "inv_mail_oribosquesting_b_01_bracer",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3800,
+            "mastery": 3200,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Wrist"
+    },
+    {
+        "id": 175445,
+        "name": "Nightcloaked Bindings",
+        "names": {
+            "cn": "",
+            "en": "Nightcloaked Bindings",
+            "ru": "Наручники покрова ночи",
+            "es": "Ataduras cubiertas por la noche",
+            "br": "Braceletes do Mantonócteo",
+            "kr": "",
+            "fr": "Manchettes noctevoilées",
+            "de": "Nachtverhüllte Bindungen"
+        },
+        "icon": "inv_bracer_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3950,
+            "mastery": 3050,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Wrist"
+    },
+    {
+        "id": 175446,
+        "name": "Cruel Executioner's Helmet",
+        "names": {
+            "cn": "",
+            "en": "Cruel Executioner's Helmet",
+            "ru": "Шлем жестокого палача",
+            "es": "Casco de verdugo cruel",
+            "br": "Capacete do Carrasco Cruel",
+            "kr": "",
+            "fr": "Casque d’exécuteur cruel",
+            "de": "Helm des grausamen Scharfrichters"
+        },
+        "icon": "inv_helm_plate_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3650,
+            "crit": 0,
+            "mastery": 3350,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 175447,
+        "name": "Corpse-Stitcher's Robe",
+        "names": {
+            "cn": "",
+            "en": "Corpse-Stitcher's Robe",
+            "ru": "Одеяние сшивателя трупов",
+            "es": "Toga de cosecadáveres",
+            "br": "Veste do Sutura-cadáver",
+            "kr": "",
+            "fr": "Robe du rapiéceur de cadavre",
+            "de": "Robe des Leichenflickers"
+        },
+        "icon": "inv_robe_cloth_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3800,
+            "mastery": 3200,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 175448,
+        "name": "Cruel Executioner's Chestplate",
+        "names": {
+            "cn": "",
+            "en": "Cruel Executioner's Chestplate",
+            "ru": "Бригантина жестокого палача",
+            "es": "Peto de verdugo cruel",
+            "br": "Guarda-peito do Carrasco Cruel",
+            "kr": "",
+            "fr": "Pansière d’exécuteur cruel",
+            "de": "Brustplatte des grausamen Scharfrichters"
+        },
+        "icon": "inv_chest_plate_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3050,
+            "crit": 0,
+            "mastery": 3950,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 175449,
+        "name": "Flesh Architect's Chainmail",
+        "names": {
+            "cn": "",
+            "en": "Flesh Architect's Chainmail",
+            "ru": "Кольчуга архитектора плоти",
+            "es": "Malla de anillas de artífice de la carne",
+            "br": "Malha de Anéis do Arquiteto da Carne",
+            "kr": "",
+            "fr": "Cotte de mailles d’architecte des chairs",
+            "de": "Kettenpanzer des Fleischarchitekten"
+        },
+        "icon": "inv_mail_oribosquesting_b_01_chest",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 3950,
+            "vers": 3050
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 175450,
+        "name": "Deceitful Agent's Vest",
+        "names": {
+            "cn": "",
+            "en": "Deceitful Agent's Vest",
+            "ru": "Жилет коварного агента",
+            "es": "Jubón de agente mentiroso",
+            "br": "Colete do Agente Trapaceiro",
+            "kr": "",
+            "fr": "Gilet d’agent véreux",
+            "de": "Weste des hinterlistigen Agenten"
+        },
+        "icon": "inv_chest_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3050,
+            "mastery": 0,
+            "vers": 3950
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 175451,
+        "name": "Cruel Executioner's Warboots",
+        "names": {
+            "cn": "",
+            "en": "Cruel Executioner's Warboots",
+            "ru": "Боевые сапоги жестокого палача",
+            "es": "Botas de guerra de verdugo cruel",
+            "br": "Coturnos do Carrasco Cruel",
+            "kr": "",
+            "fr": "Bottes de guerre d’exécuteur cruel",
+            "de": "Kriegsstiefel des grausamen Scharfrichters"
+        },
+        "icon": "inv_boot_plate_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3200,
+            "crit": 0,
+            "mastery": 3800,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Feet"
+    },
+    {
+        "id": 175452,
+        "name": "Corpse-Stitcher's Treads",
+        "names": {
+            "cn": "",
+            "en": "Corpse-Stitcher's Treads",
+            "ru": "Ботфорты сшивателя трупов",
+            "es": "Botines de cosecadáveres",
+            "br": "Botinas do Sutura-cadáver",
+            "kr": "",
+            "fr": "Bottines du rapiéceur de cadavre",
+            "de": "Treter des Leichenflickers"
+        },
+        "icon": "inv_boot_cloth_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3350,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 3650
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Feet"
+    },
+    {
+        "id": 175453,
+        "name": "Flesh Architect's Footguards",
+        "names": {
+            "cn": "",
+            "en": "Flesh Architect's Footguards",
+            "ru": "Ботинки архитектора плоти",
+            "es": "Guardapiés de artífice de la carne",
+            "br": "Guarda-pés do Arquiteto da Carne",
+            "kr": "",
+            "fr": "Protège-tibias d’architecte des chairs",
+            "de": "Fußschützer des Fleischarchitekten"
+        },
+        "icon": "inv_mail_oribosquesting_b_01_boots",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3350,
+            "crit": 3650,
+            "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Feet"
+    },
+    {
+        "id": 175454,
+        "name": "Deceitful Agent's Boots",
+        "names": {
+            "cn": "",
+            "en": "Deceitful Agent's Boots",
+            "ru": "Сапоги коварного агента",
+            "es": "Botas de agente mentiroso",
+            "br": "Botas do Agente Trapaceiro",
+            "kr": "",
+            "fr": "Bottes d’agent véreux",
+            "de": "Stiefel des hinterlistigen Agenten"
+        },
+        "icon": "inv_boot_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3200,
+            "crit": 0,
+            "mastery": 3800,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Feet"
+    },
+    {
+        "id": 175455,
+        "name": "Adored Apprentice's Gloves",
+        "names": {
+            "cn": "",
+            "en": "Adored Apprentice's Gloves",
+            "ru": "Перчатки послушного подмастерья",
+            "es": "Guantes de aprendiz adorado",
+            "br": "Luvas do Aprendiz Adorado",
+            "kr": "",
+            "fr": "Gants de l’apprenti adoré",
+            "de": "Handschuhe des angebeteten Lehrlings"
+        },
+        "icon": "inv_glove_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3950,
+            "mastery": 0,
+            "vers": 3050
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
+        "id": 175456,
+        "name": "Intimidating Initiate's Crushers",
+        "names": {
+            "cn": "",
+            "en": "Intimidating Initiate's Crushers",
+            "ru": "Рукавицы подлого посвященного",
+            "es": "Trituradores de iniciado intimidador",
+            "br": "Esmagadores do Iniciado Intimidador",
+            "kr": "",
+            "fr": "Écraseurs de l’initié intimidant",
+            "de": "Zermalmer des einschüchternden Initianden"
+        },
+        "icon": "inv_glove_plate_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3050,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 3950
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
+        "id": 175457,
+        "name": "Popular Pupil's Mitts",
+        "names": {
+            "cn": "",
+            "en": "Popular Pupil's Mitts",
+            "ru": "Перчатки умного ученика",
+            "es": "Mitones de pupilo popular",
+            "br": "Luvetes do Pupilo Popular",
+            "kr": "",
+            "fr": "Mitaines de l’excellent élève",
+            "de": "Fäustlinge des Lieblingsschülers"
+        },
+        "icon": "inv_glove_cloth_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 3800,
+            "vers": 3200
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
+        "id": 175458,
+        "name": "Favored Fanatic's Gauntlets",
+        "names": {
+            "cn": "",
+            "en": "Favored Fanatic's Gauntlets",
+            "ru": "Рукавицы философствующего фанатика",
+            "es": "Guanteletes de fanático favorecido",
+            "br": "Manoplas do Fanático Favorito",
+            "kr": "",
+            "fr": "Gantelets du fanatique favori",
+            "de": "Stulpen des begünstigten Fanatikers"
+        },
+        "icon": "inv_mail_oribosquesting_b_01_glove",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3800,
+            "mastery": 3200,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
+        "id": 175459,
+        "name": "Corpse-Stitcher's Hood",
+        "names": {
+            "cn": "",
+            "en": "Corpse-Stitcher's Hood",
+            "ru": "Капюшон сшивателя трупов",
+            "es": "Caperuza de cosecadáveres",
+            "br": "Capuz do Sutura-cadáver",
+            "kr": "",
+            "fr": "Chaperon du rapiéceur de cadavre",
+            "de": "Kapuze des Leichenflickers"
+        },
+        "icon": "inv_helm_cloth_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3950,
+            "crit": 3050,
+            "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 175460,
+        "name": "Flesh Architect's Coif",
+        "names": {
+            "cn": "",
+            "en": "Flesh Architect's Coif",
+            "ru": "Боевой капюшон архитектора плоти",
+            "es": "Almófar de artífice de la carne",
+            "br": "Coifa do Arquiteto da Carne",
+            "kr": "",
+            "fr": "Camail d’architecte des chairs",
+            "de": "Kappe des Fleischarchitekten"
+        },
+        "icon": "inv_mail_oribosquesting_b_01_helm",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 3950,
+            "vers": 3050
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 175461,
+        "name": "Deceitful Agent's Helm",
+        "names": {
+            "cn": "",
+            "en": "Deceitful Agent's Helm",
+            "ru": "Шлем коварного агента",
+            "es": "Yelmo de agente mentiroso",
+            "br": "Elmo do Agente Trapaceiro",
+            "kr": "",
+            "fr": "Heaume d’agent véreux",
+            "de": "Helm des hinterlistigen Agenten"
+        },
+        "icon": "inv_helm_leather_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3350,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 3650
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 175462,
+        "name": "Cruel Executioner's Legguards",
+        "names": {
+            "cn": "",
+            "en": "Cruel Executioner's Legguards",
+            "ru": "Набедренники жестокого палача",
+            "es": "Musleras de verdugo cruel",
+            "br": "Guarda-pernas do Carrasco Cruel",
+            "kr": "",
+            "fr": "Garde-jambes d’exécuteur cruel",
+            "de": "Beinschützer des grausamen Scharfrichters"
+        },
+        "icon": "inv_pant_plate_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 3200,
+            "vers": 3800
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 175463,
+        "name": "Corpse-Stitcher's Leggings",
+        "names": {
+            "cn": "",
+            "en": "Corpse-Stitcher's Leggings",
+            "ru": "Поножи сшивателя трупов",
+            "es": "Leotardos de cosecadáveres",
+            "br": "Perneiras do Sutura-cadáver",
+            "kr": "",
+            "fr": "Jambières du rapiéceur de cadavre",
+            "de": "Gamaschen des Leichenflickers"
+        },
+        "icon": "inv_pant_cloth_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3650,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 3350
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 175464,
+        "name": "Flesh Architect's Leggings",
+        "names": {
+            "cn": "",
+            "en": "Flesh Architect's Leggings",
+            "ru": "Поножи архитектора плоти",
+            "es": "Leotardos de artífice de la carne",
+            "br": "Perneiras do Arquiteto da Carne",
+            "kr": "",
+            "fr": "Jambières d’architecte des chairs",
+            "de": "Gamaschen des Fleischarchitekten"
+        },
+        "icon": "inv_mail_oribosquesting_b_01_pants",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3650,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 3350
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 175465,
+        "name": "Deceitful Agent's Breeches",
+        "names": {
+            "cn": "",
+            "en": "Deceitful Agent's Breeches",
+            "ru": "Штаны коварного агента",
+            "es": "Calzones de agente mentiroso",
+            "br": "Calções do Agente Trapaceiro",
+            "kr": "",
+            "fr": "Braies d’agent véreux",
+            "de": "Bundhosen des hinterlistigen Agenten"
+        },
+        "icon": "inv_pant_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3650,
+            "mastery": 3350,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 175466,
+        "name": "Deceitful Agent's Spaulders",
+        "names": {
+            "cn": "",
+            "en": "Deceitful Agent's Spaulders",
+            "ru": "Наплеч коварного агента",
+            "es": "Bufas de agente mentiroso",
+            "br": "Espaldares do Agente Trapaceiro",
+            "kr": "",
+            "fr": "Spallières d’agent véreux",
+            "de": "Schiftung des hinterlistigen Agenten"
+        },
+        "icon": "inv_shoulder_leather_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3650,
+            "crit": 0,
+            "mastery": 3350,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 175467,
+        "name": "Cruel Executioner's Shoulders",
+        "names": {
+            "cn": "",
+            "en": "Cruel Executioner's Shoulders",
+            "ru": "Наплечные щитки жестокого палача",
+            "es": "Sobrehombros de verdugo cruel",
+            "br": "Omoplatas do Carrasco Cruel",
+            "kr": "",
+            "fr": "Épaulières d’exécuteur cruel",
+            "de": "Schulterschutz des grausamen Scharfrichters"
+        },
+        "icon": "inv_shoulder_plate_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3800,
+            "mastery": 0,
+            "vers": 3200
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 175468,
+        "name": "Corpse-Stitcher's Mantle",
+        "names": {
+            "cn": "",
+            "en": "Corpse-Stitcher's Mantle",
+            "ru": "Оплечье сшивателя трупов",
+            "es": "Manto de cosecadáveres",
+            "br": "Dragonas do Sutura-cadáver",
+            "kr": "",
+            "fr": "Mantelet du rapiéceur de cadavre",
+            "de": "Mantel des Leichenflickers"
+        },
+        "icon": "inv_shoulder_cloth_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 3350,
+            "vers": 3650
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 175469,
+        "name": "Flesh Architect's Mantle",
+        "names": {
+            "cn": "",
+            "en": "Flesh Architect's Mantle",
+            "ru": "Оплечье архитектора плоти",
+            "es": "Manto de artífice de la carne",
+            "br": "Dragonas do Arquiteto da Carne",
+            "kr": "",
+            "fr": "Mantelet d’architecte des chairs",
+            "de": "Mantel des Fleischarchitekten"
+        },
+        "icon": "inv_mail_oribosquesting_b_01_shoulder",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 3650,
+            "vers": 3350
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 175470,
+        "name": "Cruel Executioner's Girdle",
+        "names": {
+            "cn": "",
+            "en": "Cruel Executioner's Girdle",
+            "ru": "Ремень жестокого палача",
+            "es": "Faja de verdugo cruel",
+            "br": "Cinturão do Carrasco Cruel",
+            "kr": "",
+            "fr": "Ceinturon d’exécuteur cruel",
+            "de": "Gürtung des grausamen Scharfrichters"
+        },
+        "icon": "inv_belt_plate_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3350,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 3650
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Waist"
+    },
+    {
+        "id": 175471,
+        "name": "Corpse-Stitcher's Cord",
+        "names": {
+            "cn": "",
+            "en": "Corpse-Stitcher's Cord",
+            "ru": "Шнурованный ремень сшивателя трупов",
+            "es": "Cordón de cosecadáveres",
+            "br": "Cordão do Sutura-cadáver",
+            "kr": "",
+            "fr": "Corde du rapiéceur de cadavre",
+            "de": "Kordel des Leichenflickers"
+        },
+        "icon": "inv_belt_cloth_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3200,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 3800
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Waist"
+    },
+    {
+        "id": 175472,
+        "name": "Flesh Architect's Belt",
+        "names": {
+            "cn": "",
+            "en": "Flesh Architect's Belt",
+            "ru": "Пояс архитектора плоти",
+            "es": "Cinturón de artífice de la carne",
+            "br": "Cinto do Arquiteto da Carne",
+            "kr": "",
+            "fr": "Ceinture d’architecte des chairs",
+            "de": "Gürtel des Fleischarchitekten"
+        },
+        "icon": "inv_mail_oribosquesting_b_01_buckle",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3200,
+            "mastery": 0,
+            "vers": 3800
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Waist"
+    },
+    {
+        "id": 175473,
+        "name": "Deceitful Agent's Belt",
+        "names": {
+            "cn": "",
+            "en": "Deceitful Agent's Belt",
+            "ru": "Пояс коварного агента",
+            "es": "Cinturón de agente mentiroso",
+            "br": "Cinto do Agente Trapaceiro",
+            "kr": "",
+            "fr": "Ceinture d’agent véreux",
+            "de": "Gürtel des hinterlistigen Agenten"
+        },
+        "icon": "inv_belt_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3200,
+            "crit": 0,
+            "mastery": 3800,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Waist"
+    },
+    {
+        "id": 175474,
+        "name": "Corpse-Stitcher's Wristwraps",
+        "names": {
+            "cn": "",
+            "en": "Corpse-Stitcher's Wristwraps",
+            "ru": "Напульсники сшивателя трупов",
+            "es": "Cubremuñecas de cosecadáveres",
+            "br": "Munhequeiras do Sutura-cadáver",
+            "kr": "",
+            "fr": "Bandelettes du rapiéceur de cadavre",
+            "de": "Gelenkbänder des Leichenflickers"
+        },
+        "icon": "inv_bracer_cloth_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 3950,
+            "vers": 3050
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Wrist"
+    },
+    {
+        "id": 175475,
+        "name": "Cruel Executioner's Wristwraps",
+        "names": {
+            "cn": "",
+            "en": "Cruel Executioner's Wristwraps",
+            "ru": "Напульсники жестокого палача",
+            "es": "Cubremuñecas de verdugo cruel",
+            "br": "Munhequeiras do Carrasco Cruel",
+            "kr": "",
+            "fr": "Bandelettes d’exécuteur cruel",
+            "de": "Gelenkbänder des grausamen Scharfrichters"
+        },
+        "icon": "inv_bracer_plate_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3950,
+            "mastery": 0,
+            "vers": 3050
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Wrist"
+    },
+    {
+        "id": 175476,
+        "name": "Flesh Architect's Wristwraps",
+        "names": {
+            "cn": "",
+            "en": "Flesh Architect's Wristwraps",
+            "ru": "Напульсники архитектора плоти",
+            "es": "Cubremuñecas de artífice de la carne",
+            "br": "Munhequeiras do Arquiteto da Carne",
+            "kr": "",
+            "fr": "Bandelettes d’architecte des chairs",
+            "de": "Gelenkbänder des Fleischarchitekten"
+        },
+        "icon": "inv_mail_oribosquesting_b_01_bracer",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3200,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 3800
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Wrist"
+    },
+    {
+        "id": 175477,
+        "name": "Deceitful Agent's Wristwraps",
+        "names": {
+            "cn": "",
+            "en": "Deceitful Agent's Wristwraps",
+            "ru": "Напульсники коварного агента",
+            "es": "Cubremuñecas de agente mentiroso",
+            "br": "Munhequeiras do Agente Trapaceiro",
+            "kr": "",
+            "fr": "Bandelettes d’agent véreux",
+            "de": "Gelenkbänder des hinterlistigen Agenten"
+        },
+        "icon": "inv_bracer_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 3800,
+            "vers": 3200
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Wrist"
+    },
+    {
+        "id": 175479,
+        "name": "Stoneforged Cover",
+        "names": {
+            "cn": "",
+            "en": "Stoneforged Cover",
+            "ru": "Убор камнерожденного",
+            "es": "Casquete de forja de piedra",
+            "br": "Murça Forjada em Pedra",
+            "kr": "",
+            "fr": "Coiffe de forge-pierre",
+            "de": "Steingeschmiedete Bedeckung"
+        },
+        "icon": "inv_helm_plate_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3350,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 3650
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 175480,
+        "name": "Robe of Pained Absolution",
+        "names": {
+            "cn": "",
+            "en": "Robe of Pained Absolution",
+            "ru": "Одеяние болезненного искупления",
+            "es": "Toga de absolución dolorida",
+            "br": "Veste da Absolvição Dolorosa",
+            "kr": "",
+            "fr": "Robe d’absolution affligée",
+            "de": "Robe der schmerzvollen Absolution"
+        },
+        "icon": "inv_robe_cloth_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3350,
+            "mastery": 0,
+            "vers": 3650
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 175481,
+        "name": "Stoneforged Hauberk",
+        "names": {
+            "cn": "",
+            "en": "Stoneforged Hauberk",
+            "ru": "Хауберк камнерожденного",
+            "es": "Camisote de forja de piedra",
+            "br": "Cota Forjada em Pedra",
+            "kr": "",
+            "fr": "Haubert de forge-pierre",
+            "de": "Steingeschmiedete Halsberge"
+        },
+        "icon": "inv_chest_plate_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3350,
+            "crit": 3650,
+            "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 175482,
+        "name": "Soul Hunter's Vest",
+        "names": {
+            "cn": "",
+            "en": "Soul Hunter's Vest",
+            "ru": "Жилет ловца душ",
+            "es": "Jubón del cazaalmas",
+            "br": "Colete do Caça-almas",
+            "kr": "",
+            "fr": "Gilet de chasseur d’âmes",
+            "de": "Seelenjägerweste"
+        },
+        "icon": "inv_mail_oribosquesting_b_01_chest",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3800,
+            "crit": 0,
+            "mastery": 3200,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 175483,
+        "name": "Nightcloaked Chestpiece",
+        "names": {
+            "cn": "",
+            "en": "Nightcloaked Chestpiece",
+            "ru": "Нагрудник покрова ночи",
+            "es": "Pechera cubierta por la noche",
+            "br": "Peito d'Armas do Mantonócteo",
+            "kr": "",
+            "fr": "Plastron noctevoilé",
+            "de": "Nachtverhüllter Brustharnisch"
+        },
+        "icon": "inv_chest_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3350,
+            "mastery": 3650,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 175484,
+        "name": "Stoneforged Sabatons",
+        "names": {
+            "cn": "",
+            "en": "Stoneforged Sabatons",
+            "ru": "Башмаки камнерожденного",
+            "es": "Escarpes de forja de piedra",
+            "br": "Escarpes Forjados em Pedra",
+            "kr": "",
+            "fr": "Solerets de forge-pierre",
+            "de": "Steingeschmiedete Sabatons"
+        },
+        "icon": "inv_boot_plate_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3350,
+            "crit": 0,
+            "mastery": 3650,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Feet"
+    },
+    {
+        "id": 175485,
+        "name": "Shoes of Pained Absolution",
+        "names": {
+            "cn": "",
+            "en": "Shoes of Pained Absolution",
+            "ru": "Ботинки болезненного искупления",
+            "es": "Zapatos de absolución dolorida",
+            "br": "Sapatos da Absolvição Dolorosa",
+            "kr": "",
+            "fr": "Chaussures d’absolution affligée",
+            "de": "Schuhe der schmerzvollen Absolution"
+        },
+        "icon": "inv_boot_cloth_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3200,
+            "crit": 3800,
+            "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Feet"
+    },
+    {
+        "id": 175486,
+        "name": "Soul Hunter's Boots",
+        "names": {
+            "cn": "",
+            "en": "Soul Hunter's Boots",
+            "ru": "Сапоги ловца душ",
+            "es": "Botas del cazaalmas",
+            "br": "Botas do Caça-almas",
+            "kr": "",
+            "fr": "Bottes de chasseur d’âmes",
+            "de": "Seelenjägerstiefel"
+        },
+        "icon": "inv_mail_oribosquesting_b_01_boots",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3200,
+            "mastery": 0,
+            "vers": 3800
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Feet"
+    },
+    {
+        "id": 175487,
+        "name": "Nightcloaked Shoes",
+        "names": {
+            "cn": "",
+            "en": "Nightcloaked Shoes",
+            "ru": "Ботинки покрова ночи",
+            "es": "Zapatos cubiertos por la noche",
+            "br": "Sapatos do Mantonócteo",
+            "kr": "",
+            "fr": "Chaussures noctevoilées",
+            "de": "Nachtverhüllte Schuhe"
+        },
+        "icon": "inv_boot_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3050,
+            "crit": 3950,
+            "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Feet"
+    },
+    {
+        "id": 175488,
+        "name": "Nightcloaked Grips",
+        "names": {
+            "cn": "",
+            "en": "Nightcloaked Grips",
+            "ru": "Захваты покрова ночи",
+            "es": "Mandiletes cubiertos por la noche",
+            "br": "Guantes do Mantonócteo",
+            "kr": "",
+            "fr": "Poignes noctevoilées",
+            "de": "Nachtverhüllter Handschutz"
+        },
+        "icon": "inv_glove_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 3650,
+            "vers": 3350
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
+        "id": 175489,
+        "name": "Stoneforged Gauntlets",
+        "names": {
+            "cn": "",
+            "en": "Stoneforged Gauntlets",
+            "ru": "Рукавицы камнерожденного",
+            "es": "Guanteletes de forja de piedra",
+            "br": "Manoplas Forjadas em Pedra",
+            "kr": "",
+            "fr": "Gantelets de forge-pierre",
+            "de": "Steingeschmiedete Stulpen"
+        },
+        "icon": "inv_glove_plate_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3950,
+            "crit": 3050,
+            "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
+        "id": 175490,
+        "name": "Gloves of Pained Absolution",
+        "names": {
+            "cn": "",
+            "en": "Gloves of Pained Absolution",
+            "ru": "Перчатки болезненного искупления",
+            "es": "Guantes de absolución dolorida",
+            "br": "Luvas da Absolvição Dolorosa",
+            "kr": "",
+            "fr": "Gants d’absolution affligée",
+            "de": "Handschuhe der schmerzvollen Absolution"
+        },
+        "icon": "inv_glove_cloth_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 3050,
+            "vers": 3950
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
+        "id": 175491,
+        "name": "Soul Hunter's Grips",
+        "names": {
+            "cn": "",
+            "en": "Soul Hunter's Grips",
+            "ru": "Захваты ловца душ",
+            "es": "Mandiletes del cazaalmas",
+            "br": "Guantes do Caça-almas",
+            "kr": "",
+            "fr": "Poignes de chasseur d’âmes",
+            "de": "Seelenjägerhandschutz"
+        },
+        "icon": "inv_mail_oribosquesting_b_01_glove",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3800,
+            "mastery": 3200,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
+        "id": 175492,
+        "name": "Cowl of Pained Absolution",
+        "names": {
+            "cn": "",
+            "en": "Cowl of Pained Absolution",
+            "ru": "Клобук болезненного искупления",
+            "es": "Capucha de absolución dolorida",
+            "br": "Capucho da Absolvição Dolorosa",
+            "kr": "",
+            "fr": "Capuche d’absolution affligée",
+            "de": "Gugel der schmerzvollen Absolution"
+        },
+        "icon": "inv_helm_cloth_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3950,
+            "mastery": 0,
+            "vers": 3050
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 175493,
+        "name": "Soul Hunter's Headgear",
+        "names": {
+            "cn": "",
+            "en": "Soul Hunter's Headgear",
+            "ru": "Головной убор ловца душ",
+            "es": "Casco del cazaalmas",
+            "br": "Almofre do Caça-almas",
+            "kr": "",
+            "fr": "Couvre-chef de chasseur d’âmes",
+            "de": "Seelenjägerkopfbedeckung"
+        },
+        "icon": "inv_mail_oribosquesting_b_01_helm",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3200,
+            "crit": 3800,
+            "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 175494,
+        "name": "Nightcloaked Helm",
+        "names": {
+            "cn": "",
+            "en": "Nightcloaked Helm",
+            "ru": "Шлем покрова ночи",
+            "es": "Yelmo cubierto por la noche",
+            "br": "Elmo do Mantonócteo",
+            "kr": "",
+            "fr": "Heaume noctevoilé",
+            "de": "Nachtverhüllter Helm"
+        },
+        "icon": "inv_helm_leather_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3050,
+            "crit": 0,
+            "mastery": 3950,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 175495,
+        "name": "Stoneforged Greaves",
+        "names": {
+            "cn": "",
+            "en": "Stoneforged Greaves",
+            "ru": "Наголенники камнерожденного",
+            "es": "Grebas de forja de piedra",
+            "br": "Grevas Forjadas em Pedra",
+            "kr": "",
+            "fr": "Grèves de forge-pierre",
+            "de": "Steingeschmiedete Schienbeinschützer"
+        },
+        "icon": "inv_pant_plate_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3050,
+            "mastery": 3950,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 175496,
+        "name": "Pantaloons of Pained Absolution",
+        "names": {
+            "cn": "",
+            "en": "Pantaloons of Pained Absolution",
+            "ru": "Кюлоты болезненного искупления",
+            "es": "Bombachos de absolución dolorida",
+            "br": "Pantalonas da Absolvição Dolorosa",
+            "kr": "",
+            "fr": "Culotte d’absolution affligée",
+            "de": "Pantalons der schmerzvollen Absolution"
+        },
+        "icon": "inv_pant_cloth_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 3950,
+            "vers": 3050
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 175497,
+        "name": "Soul Hunter's Legguards",
+        "names": {
+            "cn": "",
+            "en": "Soul Hunter's Legguards",
+            "ru": "Набедренники ловца душ",
+            "es": "Musleras del cazaalmas",
+            "br": "Guarda-pernas do Caça-almas",
+            "kr": "",
+            "fr": "Garde-jambes de chasseur d’âmes",
+            "de": "Seelenjägerbeinschützer"
+        },
+        "icon": "inv_mail_oribosquesting_b_01_pants",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3350,
+            "crit": 0,
+            "mastery": 3650,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 175498,
+        "name": "Nightcloaked Pants",
+        "names": {
+            "cn": "",
+            "en": "Nightcloaked Pants",
+            "ru": "Штаны покрова ночи",
+            "es": "Pantalones cubiertos por la noche",
+            "br": "Calças do Mantonócteo",
+            "kr": "",
+            "fr": "Pantalon noctevoilé",
+            "de": "Nachtverhüllte Hose"
+        },
+        "icon": "inv_pant_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3200,
+            "mastery": 0,
+            "vers": 3800
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 175499,
+        "name": "Nightcloaked Shoulderpads",
+        "names": {
+            "cn": "",
+            "en": "Nightcloaked Shoulderpads",
+            "ru": "Наплечники покрова ночи",
+            "es": "Hombreras cubiertas por la noche",
+            "br": "Ombreiras do Mantonócteo",
+            "kr": "",
+            "fr": "Protège-épaules noctevoilés",
+            "de": "Nachtverhüllte Schulterpolster"
+        },
+        "icon": "inv_shoulder_leather_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3350,
+            "crit": 0,
+            "mastery": 3650,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 175500,
+        "name": "Stoneforged Shoulderguards",
+        "names": {
+            "cn": "",
+            "en": "Stoneforged Shoulderguards",
+            "ru": "Наплечные щитки камнерожденного",
+            "es": "Guardahombros de forja de piedra",
+            "br": "Guarda-ombros Forjados em Pedra",
+            "kr": "",
+            "fr": "Garde-épaules de forge-pierre",
+            "de": "Steingeschmiedete Schulterschützer"
+        },
+        "icon": "inv_shoulder_plate_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3200,
+            "mastery": 0,
+            "vers": 3800
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 175501,
+        "name": "Shoulders of Pained Absolution",
+        "names": {
+            "cn": "",
+            "en": "Shoulders of Pained Absolution",
+            "ru": "Наплечье болезненного искупления",
+            "es": "Sobrehombros de absolución dolorida",
+            "br": "Omoplatas da Absolvição Dolorosa",
+            "kr": "",
+            "fr": "Épaulières d’absolution affligée",
+            "de": "Schulterstücke der schmerzvollen Absolution"
+        },
+        "icon": "inv_shoulder_cloth_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3800,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 3200
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 175502,
+        "name": "Soul Hunter's Mantle",
+        "names": {
+            "cn": "",
+            "en": "Soul Hunter's Mantle",
+            "ru": "Оплечье ловца душ",
+            "es": "Manto del cazaalmas",
+            "br": "Dragonas do Caça-almas",
+            "kr": "",
+            "fr": "Mantelet de chasseur d’âmes",
+            "de": "Seelenjägermantel"
+        },
+        "icon": "inv_mail_oribosquesting_b_01_shoulder",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3950,
+            "mastery": 3050,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 175503,
+        "name": "Stoneforged Greatbelt",
+        "names": {
+            "cn": "",
+            "en": "Stoneforged Greatbelt",
+            "ru": "Большой пояс камнерожденного",
+            "es": "Gran cinturón de forja de piedra",
+            "br": "Correão Forjado em Pedra",
+            "kr": "",
+            "fr": "Grande ceinture de forge-pierre",
+            "de": "Steingeschmiedeter Großgürtel"
+        },
+        "icon": "inv_belt_plate_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3200,
+            "mastery": 3800,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Waist"
+    },
+    {
+        "id": 175504,
+        "name": "Cord of Pained Absolution",
+        "names": {
+            "cn": "",
+            "en": "Cord of Pained Absolution",
+            "ru": "Шнурованный ремень болезненного искупления",
+            "es": "Cordón de absolución dolorida",
+            "br": "Cordão da Absolvição Dolorosa",
+            "kr": "",
+            "fr": "Corde d’absolution affligée",
+            "de": "Kordel der schmerzvollen Absolution"
+        },
+        "icon": "inv_belt_cloth_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3200,
+            "mastery": 3800,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Waist"
+    },
+    {
+        "id": 175505,
+        "name": "Soul Hunter's Cinch",
+        "names": {
+            "cn": "",
+            "en": "Soul Hunter's Cinch",
+            "ru": "Кушак ловца душ",
+            "es": "Cincho del cazaalmas",
+            "br": "Cilha do Caça-almas",
+            "kr": "",
+            "fr": "Cordelière de chasseur d’âmes",
+            "de": "Seelenjägerhüftgurt"
+        },
+        "icon": "inv_mail_oribosquesting_b_01_buckle",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3350,
+            "mastery": 3650,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Waist"
+    },
+    {
+        "id": 175506,
+        "name": "Nightcloaked Waistcord",
+        "names": {
+            "cn": "",
+            "en": "Nightcloaked Waistcord",
+            "ru": "Шнурованный ремень покрова ночи",
+            "es": "Ceñidor cubierto por la noche",
+            "br": "Cinto de Corda do Mantonócteo",
+            "kr": "",
+            "fr": "Corde cintrée noctevoilée",
+            "de": "Nachtverhüllter Hüftgürtel"
+        },
+        "icon": "inv_belt_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 3950,
+            "vers": 3050
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Waist"
+    },
+    {
+        "id": 175507,
+        "name": "Bindings of Pained Absolution",
+        "names": {
+            "cn": "",
+            "en": "Bindings of Pained Absolution",
+            "ru": "Путы болезненного искупления",
+            "es": "Ataduras de absolución dolorida",
+            "br": "Braceletes da Absolvição Dolorosa",
+            "kr": "",
+            "fr": "Manchettes d’absolution affligée",
+            "de": "Bindungen der schmerzvollen Absolution"
+        },
+        "icon": "inv_bracer_cloth_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3650,
+            "crit": 0,
+            "mastery": 3350,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Wrist"
+    },
+    {
+        "id": 175508,
+        "name": "Stoneforged Wristguards",
+        "names": {
+            "cn": "",
+            "en": "Stoneforged Wristguards",
+            "ru": "Нарукавники камнерожденного",
+            "es": "Guardamuñecas de forja de piedra",
+            "br": "Munhequeiras Forjadas em Pedra",
+            "kr": "",
+            "fr": "Garde-poignets de forge-pierre",
+            "de": "Steingeschmiedete Handgelenkschützer"
+        },
+        "icon": "inv_bracer_plate_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3350,
+            "crit": 3650,
+            "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Wrist"
+    },
+    {
+        "id": 175509,
+        "name": "Soul Hunter's Wristguards",
+        "names": {
+            "cn": "",
+            "en": "Soul Hunter's Wristguards",
+            "ru": "Нарукавники ловца душ",
+            "es": "Guardamuñecas del cazaalmas",
+            "br": "Munhequeiras do Caça-almas",
+            "kr": "",
+            "fr": "Garde-poignets de chasseur d’âmes",
+            "de": "Seelenjägerhandgelenksschützer"
+        },
+        "icon": "inv_mail_oribosquesting_b_01_bracer",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3800,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 3200
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Wrist"
+    },
+    {
+        "id": 175510,
+        "name": "Nightcloaked Bracers",
+        "names": {
+            "cn": "",
+            "en": "Nightcloaked Bracers",
+            "ru": "Наручи покрова ночи",
+            "es": "Brazales cubiertos por la noche",
+            "br": "Braçadeiras do Mantonócteo",
+            "kr": "",
+            "fr": "Brassards noctevoilés",
+            "de": "Nachtverhüllte Armschienen"
+        },
+        "icon": "inv_bracer_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3950,
+            "crit": 0,
+            "mastery": 3050,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Wrist"
+    },
+    {
+        "id": 175511,
+        "name": "Fallen Protector's Headguard",
+        "names": {
+            "cn": "",
+            "en": "Fallen Protector's Headguard",
+            "ru": "Наголовник павшего защитника",
+            "es": "Protegecabezas de protector caído",
+            "br": "Cimeira do Protetor Decaído",
+            "kr": "",
+            "fr": "Protège-front du protecteur déchu",
+            "de": "Kopfschutz des gefallenen Beschützers"
+        },
+        "icon": "inv_helm_plate_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3950,
+            "mastery": 3050,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 175512,
+        "name": "Corpse-Stitcher's Raiment",
+        "names": {
+            "cn": "",
+            "en": "Corpse-Stitcher's Raiment",
+            "ru": "Облачение сшивателя трупов",
+            "es": "Vestiduras de cosecadáveres",
+            "br": "Indumentária do Sutura-cadáver",
+            "kr": "",
+            "fr": "Grande tenue du rapiéceur de cadavre",
+            "de": "Gewandung des Leichenflickers"
+        },
+        "icon": "inv_robe_cloth_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3800,
+            "mastery": 0,
+            "vers": 3200
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 175513,
+        "name": "Cruel Executioner's Breastplate",
+        "names": {
+            "cn": "",
+            "en": "Cruel Executioner's Breastplate",
+            "ru": "Кираса жестокого палача",
+            "es": "Coraza de verdugo cruel",
+            "br": "Peitoral do Carrasco Cruel",
+            "kr": "",
+            "fr": "Cuirasse d’exécuteur cruel",
+            "de": "Brustpanzer des grausamen Scharfrichters"
+        },
+        "icon": "inv_chest_plate_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3350,
+            "mastery": 0,
+            "vers": 3650
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 175514,
+        "name": "Flesh Architect's Hauberk",
+        "names": {
+            "cn": "",
+            "en": "Flesh Architect's Hauberk",
+            "ru": "Хауберк архитектора плоти",
+            "es": "Camisote de artífice de la carne",
+            "br": "Cota do Arquiteto da Carne",
+            "kr": "",
+            "fr": "Haubert d’architecte des chairs",
+            "de": "Halsberge des Fleischarchitekten"
+        },
+        "icon": "inv_mail_oribosquesting_b_01_chest",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3050,
+            "crit": 3950,
+            "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 175515,
+        "name": "Deceitful Agent's Tunic",
+        "names": {
+            "cn": "",
+            "en": "Deceitful Agent's Tunic",
+            "ru": "Мундир коварного агента",
+            "es": "Guerrera de agente mentiroso",
+            "br": "Túnica do Agente Trapaceiro",
+            "kr": "",
+            "fr": "Tunique d’agent véreux",
+            "de": "Tunika des hinterlistigen Agenten"
+        },
+        "icon": "inv_chest_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3200,
+            "crit": 0,
+            "mastery": 3800,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 175524,
+        "name": "Risen Journeyman's Visage",
+        "names": {
+            "cn": "",
+            "en": "Risen Journeyman's Visage",
+            "ru": "Клобук оживленного эксперта",
+            "es": "Rostro de oficial resucitado",
+            "br": "Semblante do Profissional Reanimado",
+            "kr": "",
+            "fr": "Visage de compagnon ressuscité",
+            "de": "Fratze des auferstandenen Gesellen"
+        },
+        "icon": "inv_helm_cloth_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3950,
+            "mastery": 3050,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 175525,
+        "name": "Forgotten Pursuer's Cowl",
+        "names": {
+            "cn": "",
+            "en": "Forgotten Pursuer's Cowl",
+            "ru": "Клобук забытого преследователя",
+            "es": "Capucha de perseguidor olvidado",
+            "br": "Capucho do Perseguidor Esquecido",
+            "kr": "",
+            "fr": "Capuche du poursuivant oublié",
+            "de": "Gugel des vergessenen Verfolgers"
+        },
+        "icon": "inv_mail_oribosquesting_b_01_helm",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3800,
+            "mastery": 3200,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 175526,
+        "name": "Vicious Reclaimer's Cover",
+        "names": {
+            "cn": "",
+            "en": "Vicious Reclaimer's Cover",
+            "ru": "Убор беспощадного контрнаступления",
+            "es": "Casquete de reivindicador sañoso",
+            "br": "Murça do Recuperador Cruel",
+            "kr": "",
+            "fr": "Couvre-chef du récupérateur vicieux",
+            "de": "Bedeckung des boshaften Eroberers"
+        },
+        "icon": "inv_helm_leather_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3800,
+            "mastery": 3200,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 175527,
+        "name": "Cruel Executioner's Greaves",
+        "names": {
+            "cn": "",
+            "en": "Cruel Executioner's Greaves",
+            "ru": "Наголенники жестокого палача",
+            "es": "Grebas de verdugo cruel",
+            "br": "Grevas do Carrasco Cruel",
+            "kr": "",
+            "fr": "Grèves d’exécuteur cruel",
+            "de": "Schienbeinschützer des grausamen Scharfrichters"
+        },
+        "icon": "inv_pant_plate_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3350,
+            "mastery": 3650,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 175528,
+        "name": "Corpse-Stitcher's Trousers",
+        "names": {
+            "cn": "",
+            "en": "Corpse-Stitcher's Trousers",
+            "ru": "Брюки сшивателя трупов",
+            "es": "Calzas de cosecadáveres",
+            "br": "Calçotes do Sutura-cadáver",
+            "kr": "",
+            "fr": "Chausses du rapiéceur de cadavre",
+            "de": "Beinkleider des Leichenflickers"
+        },
+        "icon": "inv_pant_cloth_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3350,
+            "mastery": 3650,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 175529,
+        "name": "Flesh Architect's Greaves",
+        "names": {
+            "cn": "",
+            "en": "Flesh Architect's Greaves",
+            "ru": "Наголенники архитектора плоти",
+            "es": "Grebas de artífice de la carne",
+            "br": "Grevas do Arquiteto da Carne",
+            "kr": "",
+            "fr": "Grèves d’architecte des chairs",
+            "de": "Beinschützer des Fleischarchitekten"
+        },
+        "icon": "inv_mail_oribosquesting_b_01_pants",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3200,
+            "mastery": 0,
+            "vers": 3800
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 175530,
+        "name": "Deceitful Agent's Legwraps",
+        "names": {
+            "cn": "",
+            "en": "Deceitful Agent's Legwraps",
+            "ru": "Бриджи коварного агента",
+            "es": "Ataduras de agente mentiroso",
+            "br": "Culotes do Agente Trapaceiro",
+            "kr": "",
+            "fr": "Jambards d’agent véreux",
+            "de": "Beinwickel des hinterlistigen Agenten"
+        },
+        "icon": "inv_pant_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3950,
+            "crit": 3050,
+            "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
     },
     {
         "id": 175543,
@@ -7041,6 +13864,1572 @@ export const itemDB = [
         "slot": "Wrist"
     },
     {
+        "id": 175612,
+        "name": "Judicious Aspirant's Warboots",
+        "names": {
+            "cn": "",
+            "en": "Judicious Aspirant's Warboots",
+            "ru": "Боевые сапоги рассудительного претендента",
+            "es": "Botas de guerra de aspirante juicioso",
+            "br": "Coturnos do Aspirante Criterioso",
+            "kr": "",
+            "fr": "Bottes de guerre de l’aspirant judicieux",
+            "de": "Kriegsstiefel des besonnenen Aspiranten"
+        },
+        "icon": "inv_boot_plate_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3200,
+            "crit": 0,
+            "mastery": 3800,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Feet"
+    },
+    {
+        "id": 175613,
+        "name": "Pure Aspirant's Treads",
+        "names": {
+            "cn": "",
+            "en": "Pure Aspirant's Treads",
+            "ru": "Ботфорты непорочного претендента",
+            "es": "Botines de aspirante puro",
+            "br": "Botinas do Aspirante Puro",
+            "kr": "",
+            "fr": "Bottines de l’aspirant pur",
+            "de": "Treter des reinen Aspiranten"
+        },
+        "icon": "inv_boot_cloth_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3050,
+            "crit": 3950,
+            "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Feet"
+    },
+    {
+        "id": 175614,
+        "name": "Humble Aspirant's Sabatons",
+        "names": {
+            "cn": "",
+            "en": "Humble Aspirant's Sabatons",
+            "ru": "Башмаки смиренного претендента",
+            "es": "Escarpes de aspirante humilde",
+            "br": "Escarpes do Aspirante Humilde",
+            "kr": "",
+            "fr": "Solerets de l’aspirant modeste",
+            "de": "Sabatons des demütigen Aspiranten"
+        },
+        "icon": "inv_mail_oribosquesting_b_01_boots",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3350,
+            "crit": 0,
+            "mastery": 3650,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Feet"
+    },
+    {
+        "id": 175615,
+        "name": "Courageous Aspirant's Boots",
+        "names": {
+            "cn": "",
+            "en": "Courageous Aspirant's Boots",
+            "ru": "Сапоги отважного претендента",
+            "es": "Botas de aspirante valiente",
+            "br": "Botas do Aspirante Corajoso",
+            "kr": "",
+            "fr": "Bottes de l’aspirant courageux",
+            "de": "Stiefel des mutigen Aspiranten"
+        },
+        "icon": "inv_boot_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 3650,
+            "vers": 3350
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Feet"
+    },
+    {
+        "id": 175616,
+        "name": "Courageous Aspirant's Gloves",
+        "names": {
+            "cn": "",
+            "en": "Courageous Aspirant's Gloves",
+            "ru": "Перчатки отважного претендента",
+            "es": "Guantes de aspirante valiente",
+            "br": "Luvas do Aspirante Corajoso",
+            "kr": "",
+            "fr": "Gants de l’aspirant courageux",
+            "de": "Handschuhe des mutigen Aspiranten"
+        },
+        "icon": "inv_glove_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3800,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 3200
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
+        "id": 175617,
+        "name": "Judicious Aspirant's Gauntlets",
+        "names": {
+            "cn": "",
+            "en": "Judicious Aspirant's Gauntlets",
+            "ru": "Рукавицы рассудительного претендента",
+            "es": "Guanteletes de aspirante juicioso",
+            "br": "Manoplas do Aspirante Criterioso",
+            "kr": "",
+            "fr": "Gantelets de l’aspirant judicieux",
+            "de": "Stulpen des besonnenen Aspiranten"
+        },
+        "icon": "inv_glove_plate_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3350,
+            "mastery": 0,
+            "vers": 3650
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
+        "id": 175618,
+        "name": "Pure Aspirant's Gloves",
+        "names": {
+            "cn": "",
+            "en": "Pure Aspirant's Gloves",
+            "ru": "Перчатки непорочного претендента",
+            "es": "Guantes de aspirante puro",
+            "br": "Luvas do Aspirante Puro",
+            "kr": "",
+            "fr": "Gants de l’aspirant pur",
+            "de": "Handschuhe des reinen Aspiranten"
+        },
+        "icon": "inv_glove_cloth_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3650,
+            "crit": 3350,
+            "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
+        "id": 175619,
+        "name": "Humble Aspirant's Gauntlets",
+        "names": {
+            "cn": "",
+            "en": "Humble Aspirant's Gauntlets",
+            "ru": "Рукавицы смиренного претендента",
+            "es": "Guanteletes de aspirante humilde",
+            "br": "Manoplas do Aspirante Humilde",
+            "kr": "",
+            "fr": "Gantelets de l’aspirant modeste",
+            "de": "Stulpen des demütigen Aspiranten"
+        },
+        "icon": "inv_mail_oribosquesting_b_01_glove",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3950,
+            "crit": 0,
+            "mastery": 3050,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
+        "id": 175623,
+        "name": "Judicious Aspirant's Legguards",
+        "names": {
+            "cn": "",
+            "en": "Judicious Aspirant's Legguards",
+            "ru": "Набедренники рассудительного претендента",
+            "es": "Musleras de aspirante juicioso",
+            "br": "Guarda-pernas do Aspirante Criterioso",
+            "kr": "",
+            "fr": "Garde-jambes de l’aspirant judicieux",
+            "de": "Beinschützer des besonnenen Aspiranten"
+        },
+        "icon": "inv_pant_plate_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3200,
+            "mastery": 3800,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 175624,
+        "name": "Pure Aspirant's Leggings",
+        "names": {
+            "cn": "",
+            "en": "Pure Aspirant's Leggings",
+            "ru": "Поножи непорочного претендента",
+            "es": "Leotardos de aspirante puro",
+            "br": "Perneiras do Aspirante Puro",
+            "kr": "",
+            "fr": "Jambières de l’aspirant pur",
+            "de": "Gamaschen des reinen Aspiranten"
+        },
+        "icon": "inv_pant_cloth_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3200,
+            "crit": 0,
+            "mastery": 3800,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 175625,
+        "name": "Humble Aspirant's Leggings",
+        "names": {
+            "cn": "",
+            "en": "Humble Aspirant's Leggings",
+            "ru": "Поножи смиренного претендента",
+            "es": "Leotardos de aspirante humilde",
+            "br": "Perneiras do Aspirante Humilde",
+            "kr": "",
+            "fr": "Jambières de l’aspirant modeste",
+            "de": "Gamaschen des demütigen Aspiranten"
+        },
+        "icon": "inv_mail_oribosquesting_b_01_pants",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3350,
+            "mastery": 3650,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 175626,
+        "name": "Courageous Aspirant's Breeches",
+        "names": {
+            "cn": "",
+            "en": "Courageous Aspirant's Breeches",
+            "ru": "Брюки отважного претендента",
+            "es": "Calzones de aspirante valiente",
+            "br": "Calções do Aspirante Corajoso",
+            "kr": "",
+            "fr": "Braies de l’aspirant courageux",
+            "de": "Bundhosen des mutigen Aspiranten"
+        },
+        "icon": "inv_pant_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3050,
+            "mastery": 0,
+            "vers": 3950
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 175635,
+        "name": "Pure Aspirant's Wristwraps",
+        "names": {
+            "cn": "",
+            "en": "Pure Aspirant's Wristwraps",
+            "ru": "Кулачные обмотки непорочного претендента",
+            "es": "Cubremuñecas de aspirante puro",
+            "br": "Munhequeiras do Aspirante Puro",
+            "kr": "",
+            "fr": "Bandelettes de l’aspirant pur",
+            "de": "Gelenkbänder des reinen Aspiranten"
+        },
+        "icon": "inv_bracer_cloth_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3950,
+            "crit": 0,
+            "mastery": 3050,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Wrist"
+    },
+    {
+        "id": 175636,
+        "name": "Judicious Aspirant's Wristwraps",
+        "names": {
+            "cn": "",
+            "en": "Judicious Aspirant's Wristwraps",
+            "ru": "Напульсники рассудительного претендента",
+            "es": "Cubremuñecas de aspirante juicioso",
+            "br": "Munhequeiras do Aspirante Criterioso",
+            "kr": "",
+            "fr": "Bandelettes de l’aspirant judicieux",
+            "de": "Gelenkbänder des besonnenen Aspiranten"
+        },
+        "icon": "inv_bracer_plate_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3650,
+            "crit": 0,
+            "mastery": 3350,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Wrist"
+    },
+    {
+        "id": 175637,
+        "name": "Humble Aspirant's Wristwraps",
+        "names": {
+            "cn": "",
+            "en": "Humble Aspirant's Wristwraps",
+            "ru": "Кулачные обмотки смиренного претендента",
+            "es": "Cubremuñecas de aspirante humilde",
+            "br": "Munhequeiras do Aspirante Humilde",
+            "kr": "",
+            "fr": "Bandelettes de l’aspirant modeste",
+            "de": "Gelenkbänder des demütigen Aspiranten"
+        },
+        "icon": "inv_mail_oribosquesting_b_01_bracer",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3650,
+            "crit": 0,
+            "mastery": 3350,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Wrist"
+    },
+    {
+        "id": 175638,
+        "name": "Courageous Aspirant's Wristwraps",
+        "names": {
+            "cn": "",
+            "en": "Courageous Aspirant's Wristwraps",
+            "ru": "Кулачные обмотки отважного претендента",
+            "es": "Cubremuñecas de aspirante valiente",
+            "br": "Munhequeiras do Aspirante Corajoso",
+            "kr": "",
+            "fr": "Bandelettes de l’aspirant courageux",
+            "de": "Gelenkbänder des mutigen Aspiranten"
+        },
+        "icon": "inv_bracer_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3950,
+            "crit": 0,
+            "mastery": 3050,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Wrist"
+    },
+    {
+        "id": 175647,
+        "name": "Grove Warden's Greathelm",
+        "names": {
+            "cn": "",
+            "en": "Grove Warden's Greathelm",
+            "ru": "Большой шлем хранителя рощи",
+            "es": "Gran yelmo de celador de la Arboleda",
+            "br": "Grande Elmo do Guardião do Bosque",
+            "kr": "",
+            "fr": "Grand heaume de gardien du bosquet",
+            "de": "Großhelm des Hainwächters"
+        },
+        "icon": "inv_helm_plate_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3800,
+            "mastery": 3200,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 175648,
+        "name": "Spirit Tender's Robe",
+        "names": {
+            "cn": "",
+            "en": "Spirit Tender's Robe",
+            "ru": "Одеяние хранительницы духов",
+            "es": "Toga de cuidador de espíritus",
+            "br": "Veste do Espírito Conservador",
+            "kr": "",
+            "fr": "Robe de soigneur d’esprit",
+            "de": "Robe des Geistpflegers"
+        },
+        "icon": "inv_robe_cloth_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3950,
+            "crit": 0,
+            "mastery": 3050,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 175649,
+        "name": "Grove Warden's Breastplate",
+        "names": {
+            "cn": "",
+            "en": "Grove Warden's Breastplate",
+            "ru": "Кираса хранителя рощи",
+            "es": "Coraza de celador de la Arboleda",
+            "br": "Peitoral do Guardião do Bosque",
+            "kr": "",
+            "fr": "Cuirasse de gardien du bosquet",
+            "de": "Brustplatte des Hainwächters"
+        },
+        "icon": "inv_chest_plate_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3650,
+            "crit": 0,
+            "mastery": 3350,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 175650,
+        "name": "Dreamthorn Chainmail",
+        "names": {
+            "cn": "",
+            "en": "Dreamthorn Chainmail",
+            "ru": "Кольчуга шипов сна",
+            "es": "Malla de anillas de sueñospina",
+            "br": "Malha de Anéis de Onirispinho",
+            "kr": "",
+            "fr": "Cotte de mailles en épines oniriques",
+            "de": "Traumdornenkettenpanzer"
+        },
+        "icon": "inv_mail_oribosquesting_b_01_chest",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3650,
+            "crit": 0,
+            "mastery": 3350,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 175651,
+        "name": "Starshroud Vest",
+        "names": {
+            "cn": "",
+            "en": "Starshroud Vest",
+            "ru": "Жилет звездного покрова",
+            "es": "Jubón de velostrella",
+            "br": "Colete de Mortalha-estrela",
+            "kr": "",
+            "fr": "Gilet en voile astral",
+            "de": "Sternenschleierweste"
+        },
+        "icon": "inv_chest_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3800,
+            "crit": 0,
+            "mastery": 3200,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 175652,
+        "name": "Grove Warden's Warboots",
+        "names": {
+            "cn": "",
+            "en": "Grove Warden's Warboots",
+            "ru": "Боевые сапоги хранителя рощи",
+            "es": "Botas de guerra de celador de la Arboleda",
+            "br": "Coturnos do Guardião do Bosque",
+            "kr": "",
+            "fr": "Bottes de guerre de gardien du bosquet",
+            "de": "Kriegsstiefel des Hainwächters"
+        },
+        "icon": "inv_boot_plate_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3800,
+            "mastery": 0,
+            "vers": 3200
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Feet"
+    },
+    {
+        "id": 175653,
+        "name": "Spirit Tender's Slippers",
+        "names": {
+            "cn": "",
+            "en": "Spirit Tender's Slippers",
+            "ru": "Туфли хранительницы духов",
+            "es": "Zapatillas de cuidador de espíritus",
+            "br": "Sapatilhas do Espírito Conservador",
+            "kr": "",
+            "fr": "Mules de soigneur d’esprit",
+            "de": "Pantoffeln des Geistpflegers"
+        },
+        "icon": "inv_boot_cloth_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3650,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 3350
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Feet"
+    },
+    {
+        "id": 175654,
+        "name": "Dreamthorn Sabatons",
+        "names": {
+            "cn": "",
+            "en": "Dreamthorn Sabatons",
+            "ru": "Башмаки шипов сна",
+            "es": "Escarpes de sueñospina",
+            "br": "Escarpes de Onirispinho",
+            "kr": "",
+            "fr": "Solerets en épines oniriques",
+            "de": "Traumdornensabatons"
+        },
+        "icon": "inv_mail_oribosquesting_b_01_boots",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3800,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 3200
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Feet"
+    },
+    {
+        "id": 175655,
+        "name": "Starshroud Boots",
+        "names": {
+            "cn": "",
+            "en": "Starshroud Boots",
+            "ru": "Сапоги звездного покрова",
+            "es": "Botas de velostrella",
+            "br": "Botas de Mortalha-estrela",
+            "kr": "",
+            "fr": "Bottes en voile astral",
+            "de": "Sternenschleierstiefel"
+        },
+        "icon": "inv_boot_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3950,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 3050
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Feet"
+    },
+    {
+        "id": 175656,
+        "name": "Starshroud Gloves",
+        "names": {
+            "cn": "",
+            "en": "Starshroud Gloves",
+            "ru": "Перчатки звездного покрова",
+            "es": "Guantes de velostrella",
+            "br": "Luvas de Mortalha-estrela",
+            "kr": "",
+            "fr": "Gants en voile astral",
+            "de": "Sternenschleierhandschuhe"
+        },
+        "icon": "inv_glove_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3200,
+            "mastery": 3800,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
+        "id": 175657,
+        "name": "Grove Warden's Gauntlets",
+        "names": {
+            "cn": "",
+            "en": "Grove Warden's Gauntlets",
+            "ru": "Рукавицы хранителя рощи",
+            "es": "Guanteletes de celador de la Arboleda",
+            "br": "Manoplas do Guardião do Bosque",
+            "kr": "",
+            "fr": "Gantelets de gardien du bosquet",
+            "de": "Stulpen des Hainwächters"
+        },
+        "icon": "inv_glove_plate_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3350,
+            "crit": 3650,
+            "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
+        "id": 175658,
+        "name": "Spirit Tender's Handwraps",
+        "names": {
+            "cn": "",
+            "en": "Spirit Tender's Handwraps",
+            "ru": "Повязки хранительницы духов",
+            "es": "Manijas de cuidador de espíritus",
+            "br": "Mitenes do Espírito Conservador",
+            "kr": "",
+            "fr": "Protège-mains de soigneur d’esprit",
+            "de": "Handlappen des Geistpflegers"
+        },
+        "icon": "inv_glove_cloth_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3050,
+            "crit": 3950,
+            "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
+        "id": 175659,
+        "name": "Dreamthorn Handguards",
+        "names": {
+            "cn": "",
+            "en": "Dreamthorn Handguards",
+            "ru": "Боевые рукавицы шипов сна",
+            "es": "Manoplas de sueñospina",
+            "br": "Protetores de Mão Onirispinho",
+            "kr": "",
+            "fr": "Garde-mains en épines oniriques",
+            "de": "Traumdornenhandschützer"
+        },
+        "icon": "inv_mail_oribosquesting_b_01_glove",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3350,
+            "crit": 3650,
+            "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
+        "id": 175660,
+        "name": "Spirit Tender's Hood",
+        "names": {
+            "cn": "",
+            "en": "Spirit Tender's Hood",
+            "ru": "Капюшон хранительницы духов",
+            "es": "Caperuza de cuidador de espíritus",
+            "br": "Capuz do Espírito Conservador",
+            "kr": "",
+            "fr": "Chaperon de soigneur d’esprit",
+            "de": "Kapuze des Geistpflegers"
+        },
+        "icon": "inv_helm_cloth_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3650,
+            "mastery": 3350,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 175661,
+        "name": "Dreamthorn Headgear",
+        "names": {
+            "cn": "",
+            "en": "Dreamthorn Headgear",
+            "ru": "Головной убор шипов сна",
+            "es": "Casco de sueñospina",
+            "br": "Almofre Onirispinho",
+            "kr": "",
+            "fr": "Couvre-chef en épines oniriques",
+            "de": "Traumdornenkopfbedeckung"
+        },
+        "icon": "inv_mail_oribosquesting_b_01_helm",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3800,
+            "mastery": 3200,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 175662,
+        "name": "Starshroud Helm",
+        "names": {
+            "cn": "",
+            "en": "Starshroud Helm",
+            "ru": "Шлем звездного покрова",
+            "es": "Yelmo de velostrella",
+            "br": "Elmo de Mortalha-estrela",
+            "kr": "",
+            "fr": "Heaume en voile astral",
+            "de": "Sternenschleierhelm"
+        },
+        "icon": "inv_helm_leather_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3050,
+            "crit": 0,
+            "mastery": 3950,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 175663,
+        "name": "Grove Warden's Greaves",
+        "names": {
+            "cn": "",
+            "en": "Grove Warden's Greaves",
+            "ru": "Наголенники хранителя рощи",
+            "es": "Grebas de celador de la Arboleda",
+            "br": "Grevas do Guardião do Bosque",
+            "kr": "",
+            "fr": "Grèves de gardien du bosquet",
+            "de": "Beinschützer des Hainwächters"
+        },
+        "icon": "inv_pant_plate_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3950,
+            "mastery": 0,
+            "vers": 3050
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 175664,
+        "name": "Spirit Tender's Leggings",
+        "names": {
+            "cn": "",
+            "en": "Spirit Tender's Leggings",
+            "ru": "Поножи хранительницы духов",
+            "es": "Leotardos de cuidador de espíritus",
+            "br": "Perneiras do Espírito Conservador",
+            "kr": "",
+            "fr": "Jambières de soigneur d’esprit",
+            "de": "Gamaschen des Geistpflegers"
+        },
+        "icon": "inv_pant_cloth_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3800,
+            "mastery": 0,
+            "vers": 3200
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 175665,
+        "name": "Dreamthorn Legguards",
+        "names": {
+            "cn": "",
+            "en": "Dreamthorn Legguards",
+            "ru": "Набедренники шипов сна",
+            "es": "Musleras de sueñospina",
+            "br": "Guarda-pernas Onirispinho",
+            "kr": "",
+            "fr": "Garde-jambes en épines oniriques",
+            "de": "Traumdornenbeinschützer"
+        },
+        "icon": "inv_mail_oribosquesting_b_01_pants",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3950,
+            "mastery": 0,
+            "vers": 3050
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 175666,
+        "name": "Starshroud Breeches",
+        "names": {
+            "cn": "",
+            "en": "Starshroud Breeches",
+            "ru": "Штаны звездного покрова",
+            "es": "Calzones de velostrella",
+            "br": "Calções de Mortalha-estrela",
+            "kr": "",
+            "fr": "Braies en voile astral",
+            "de": "Sternenschleierbundhosen"
+        },
+        "icon": "inv_pant_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 3650,
+            "vers": 3350
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 175667,
+        "name": "Starshroud Shoulderpads",
+        "names": {
+            "cn": "",
+            "en": "Starshroud Shoulderpads",
+            "ru": "Наплечники звездного покрова",
+            "es": "Hombreras de velostrella",
+            "br": "Ombreiras de Mortalha-estrela",
+            "kr": "",
+            "fr": "Protège-épaules en voile astral",
+            "de": "Sternenschleierschulterpolster"
+        },
+        "icon": "inv_shoulder_leather_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3200,
+            "mastery": 0,
+            "vers": 3800
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 175668,
+        "name": "Grove Warden's Shoulderplates",
+        "names": {
+            "cn": "",
+            "en": "Grove Warden's Shoulderplates",
+            "ru": "Наплечные щитки хранителя рощи",
+            "es": "Hombreras de placas de celador de la Arboleda",
+            "br": "Placa d'Ombros do Guardião do Bosque",
+            "kr": "",
+            "fr": "Plaques d’épaule de gardien du bosquet",
+            "de": "Schulterplatten des Hainwächters"
+        },
+        "icon": "inv_shoulder_plate_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3350,
+            "crit": 0,
+            "mastery": 3650,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 175669,
+        "name": "Spirit Tender's Mantle",
+        "names": {
+            "cn": "",
+            "en": "Spirit Tender's Mantle",
+            "ru": "Оплечье хранительницы духов",
+            "es": "Manto de cuidador de espíritus",
+            "br": "Dragonas do Espírito Conservador",
+            "kr": "",
+            "fr": "Mantelet de soigneur d’esprit",
+            "de": "Mantel des Geistpflegers"
+        },
+        "icon": "inv_shoulder_cloth_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3350,
+            "mastery": 3650,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 175670,
+        "name": "Dreamthorn Spaulders",
+        "names": {
+            "cn": "",
+            "en": "Dreamthorn Spaulders",
+            "ru": "Наплеч шипов сна",
+            "es": "Bufas de sueñospina",
+            "br": "Espaldares Onirispinho",
+            "kr": "",
+            "fr": "Spallières en épines oniriques",
+            "de": "Traumdornenschiftung"
+        },
+        "icon": "inv_mail_oribosquesting_b_01_shoulder",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3350,
+            "mastery": 3650,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 175671,
+        "name": "Grove Warden's Girdle",
+        "names": {
+            "cn": "",
+            "en": "Grove Warden's Girdle",
+            "ru": "Ремень хранителя рощи",
+            "es": "Faja de celador de la Arboleda",
+            "br": "Cinturão do Guardião do Bosque",
+            "kr": "",
+            "fr": "Ceinturon de gardien du bosquet",
+            "de": "Gürtung des Hainwächters"
+        },
+        "icon": "inv_belt_plate_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3200,
+            "mastery": 3800,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Waist"
+    },
+    {
+        "id": 175672,
+        "name": "Spirit Tender's Cord",
+        "names": {
+            "cn": "",
+            "en": "Spirit Tender's Cord",
+            "ru": "Шнурованный ремень хранительницы духов",
+            "es": "Cordón de cuidador de espíritus",
+            "br": "Cordão do Espírito Conservador",
+            "kr": "",
+            "fr": "Corde de soigneur d’esprit",
+            "de": "Kordel des Geistpflegers"
+        },
+        "icon": "inv_belt_cloth_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3200,
+            "crit": 0,
+            "mastery": 3800,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Waist"
+    },
+    {
+        "id": 175673,
+        "name": "Dreamthorn Chain",
+        "names": {
+            "cn": "",
+            "en": "Dreamthorn Chain",
+            "ru": "Цепь шипов сна",
+            "es": "Anillas de sueñospina",
+            "br": "Corrente Onirispinho",
+            "kr": "",
+            "fr": "Chaîne en épines oniriques",
+            "de": "Traumdornenkette"
+        },
+        "icon": "inv_mail_oribosquesting_b_01_buckle",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3200,
+            "crit": 0,
+            "mastery": 3800,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Waist"
+    },
+    {
+        "id": 175674,
+        "name": "Starshroud Belt",
+        "names": {
+            "cn": "",
+            "en": "Starshroud Belt",
+            "ru": "Пояс звездного покрова",
+            "es": "Cinturón de velostrella",
+            "br": "Cinto de Mortalha-estrela",
+            "kr": "",
+            "fr": "Ceinture en voile astral",
+            "de": "Sternenschleiergürtel"
+        },
+        "icon": "inv_belt_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3050,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 3950
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Waist"
+    },
+    {
+        "id": 175675,
+        "name": "Spirit Tender's Cuffs",
+        "names": {
+            "cn": "",
+            "en": "Spirit Tender's Cuffs",
+            "ru": "Манжеты хранительницы духов",
+            "es": "Puños de cuidador de espíritus",
+            "br": "Manilhas do Espírito Conservador",
+            "kr": "",
+            "fr": "Crispins de soigneur d’esprit",
+            "de": "Manschetten des Geistpflegers"
+        },
+        "icon": "inv_bracer_cloth_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 3950,
+            "vers": 3050
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Wrist"
+    },
+    {
+        "id": 175676,
+        "name": "Grove Warden's Vambraces",
+        "names": {
+            "cn": "",
+            "en": "Grove Warden's Vambraces",
+            "ru": "Латные наручи хранителя рощи",
+            "es": "Avambrazos de celador de la Arboleda",
+            "br": "Avambraços do Guardião do Bosque",
+            "kr": "",
+            "fr": "Protège-bras de gardien du bosquet",
+            "de": "Unterarmschienen des Hainwächters"
+        },
+        "icon": "inv_bracer_plate_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 3950,
+            "vers": 3050
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Wrist"
+    },
+    {
+        "id": 175677,
+        "name": "Dreamthorn Wristguards",
+        "names": {
+            "cn": "",
+            "en": "Dreamthorn Wristguards",
+            "ru": "Нарукавники шипов сна",
+            "es": "Guardamuñecas de sueñospina",
+            "br": "Munhequeiras Onirispinho",
+            "kr": "",
+            "fr": "Garde-poignets en épines oniriques",
+            "de": "Traumdornenhandgelenkschützer"
+        },
+        "icon": "inv_mail_oribosquesting_b_01_bracer",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 3950,
+            "vers": 3050
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Wrist"
+    },
+    {
+        "id": 175678,
+        "name": "Starshroud Bracers",
+        "names": {
+            "cn": "",
+            "en": "Starshroud Bracers",
+            "ru": "Наручи звездного покрова",
+            "es": "Brazales de velostrella",
+            "br": "Braçadeiras de Mortalha-estrela",
+            "kr": "",
+            "fr": "Brassards en voile astral",
+            "de": "Sternenschleierarmschienen"
+        },
+        "icon": "inv_bracer_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 3350,
+            "vers": 3650
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Wrist"
+    },
+    {
+        "id": 175703,
+        "name": "Silverspire Signet",
+        "names": {
+            "cn": "",
+            "en": "Silverspire Signet",
+            "ru": "Печатка серебряного шпиля",
+            "es": "Sello de aguja plateada",
+            "br": "Sinete da Torre-de-prata",
+            "kr": "",
+            "fr": "Chevalière de la flèche argentée",
+            "de": "Silberspitzensiegelring"
+        },
+        "icon": "inv_jewelry_ring_57",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "haste": 8500,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 9000
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Finger"
+    },
+    {
+        "id": 175704,
+        "name": "Reverberating Silver Band",
+        "names": {
+            "cn": "",
+            "en": "Reverberating Silver Band",
+            "ru": "Реверберирующее серебряное кольцо",
+            "es": "Sortija de plata resonante",
+            "br": "Elo de Prata Reverberante",
+            "kr": "",
+            "fr": "Bague en argent réverbérante",
+            "de": "Nachhallendes Silberband"
+        },
+        "icon": "inv_jewelry_ring_140",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 9250,
+            "mastery": 8250,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Finger"
+    },
+    {
+        "id": 175706,
+        "name": "Mind-Torn Band",
+        "names": {
+            "cn": "",
+            "en": "Mind-Torn Band",
+            "ru": "Поврежденное силой мысли кольцо",
+            "es": "Sortija de mente rasgada",
+            "br": "Elo da Mente-arrasada",
+            "kr": "",
+            "fr": "Bague déchire-esprit",
+            "de": "Geistzerrissener Ring"
+        },
+        "icon": "inv_jewelry_ring_39",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "haste": 7750,
+            "crit": 0,
+            "mastery": 9750,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Finger"
+    },
+    {
+        "id": 175707,
+        "name": "Signet of the Learned",
+        "names": {
+            "cn": "",
+            "en": "Signet of the Learned",
+            "ru": "Печатка знающего",
+            "es": "Sello del erudito",
+            "br": "Sinete do Culto",
+            "kr": "",
+            "fr": "Chevalière des instruits",
+            "de": "Siegel des Gebildeten"
+        },
+        "icon": "inv_jewelry_ring_02",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 9000,
+            "mastery": 0,
+            "vers": 8500
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Finger"
+    },
+    {
+        "id": 175708,
+        "name": "Reconstructed Family Locket",
+        "names": {
+            "cn": "",
+            "en": "Reconstructed Family Locket",
+            "ru": "Восстановленный фамильный медальон",
+            "es": "Guardapelo familiar reconstruido",
+            "br": "Medalhão Familiar Restaurado",
+            "kr": "",
+            "fr": "Médaillon de famille restauré",
+            "de": "Rekonstruiertes Familienmedaillon"
+        },
+        "icon": "inv_neck_bastion_01_silver",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "haste": 12500,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 5000
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Neck"
+    },
+    {
+        "id": 175710,
+        "name": "Night Courtier's Ring",
+        "names": {
+            "cn": "",
+            "en": "Night Courtier's Ring",
+            "ru": "Перстень ночного придворного",
+            "es": "Anillo de cortesano de la noche",
+            "br": "Anel do Cortesão da Noite",
+            "kr": "",
+            "fr": "Anneau de courtisan de la Nuit",
+            "de": "Ring des Nachthöflings"
+        },
+        "icon": "inv_ring_ardenweald_02_white",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "haste": 8750,
+            "crit": 8750,
+            "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Finger"
+    },
+    {
         "id": 175711,
         "name": "Slumberwood Band",
         "names": {
@@ -7063,6 +15452,35 @@ export const itemDB = [
             "haste": 11500,
             "crit": 6000,
             "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Finger"
+    },
+    {
+        "id": 175712,
+        "name": "Shimmerbough Loop",
+        "names": {
+            "cn": "",
+            "en": "Shimmerbough Loop",
+            "ru": "Кольцо Мерцающей рощи",
+            "es": "Anillo de Ramacentella",
+            "br": "Aro Lumínea",
+            "kr": "",
+            "fr": "Jonc de Lumefronde",
+            "de": "Schimmergeästring"
+        },
+        "icon": "inv_jewelry_ring_01",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "haste": 8750,
+            "crit": 0,
+            "mastery": 8750,
             "vers": 0
         },
         "dropLoc": "",
@@ -7097,6 +15515,353 @@ export const itemDB = [
         "dropLoc": "",
         "selectable": "true",
         "slot": "Finger"
+    },
+    {
+        "id": 175714,
+        "name": "The Chamberlain's Tarnished Signet",
+        "names": {
+            "cn": "",
+            "en": "The Chamberlain's Tarnished Signet",
+            "ru": "Потускневшая печатка Камергера",
+            "es": "Sello deslustrado del chambelán",
+            "br": "Sinete Maculado do Camarista",
+            "kr": "",
+            "fr": "Chevalière ternie du chambellan",
+            "de": "Beflecktes Siegel des Kämmerers"
+        },
+        "icon": "inv_jewelry_ring_01",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "haste": 9000,
+            "crit": 0,
+            "mastery": 8500,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Finger"
+    },
+    {
+        "id": 175715,
+        "name": "Gargon Eye Ring",
+        "names": {
+            "cn": "",
+            "en": "Gargon Eye Ring",
+            "ru": "Кольцо гаргоньего глаза",
+            "es": "Anillo de ojo de gargon",
+            "br": "Anel de Olho de Gargono",
+            "kr": "",
+            "fr": "Anneau d’œil de gargon",
+            "de": "Gargonaugenring"
+        },
+        "icon": "inv_jewelry_ring_01",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "haste": 7750,
+            "crit": 0,
+            "mastery": 9750,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Finger"
+    },
+    {
+        "id": 175716,
+        "name": "Emberscorched Band",
+        "names": {
+            "cn": "",
+            "en": "Emberscorched Band",
+            "ru": "Кольцо жгучих углей",
+            "es": "Sortija ascuagostada",
+            "br": "Aro Calcinado em Brasas",
+            "kr": "",
+            "fr": "Bague brûlée par la braise",
+            "de": "Glutversengtes Band"
+        },
+        "icon": "inv_jewelry_ring_01",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 10000,
+            "mastery": 7500,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Finger"
+    },
+    {
+        "id": 175717,
+        "name": "Inquisitor's Signet",
+        "names": {
+            "cn": "",
+            "en": "Inquisitor's Signet",
+            "ru": "Печатка инквизитора",
+            "es": "Sello del inquisidor",
+            "br": "Sinete do Inquisidor",
+            "kr": "",
+            "fr": "Chevalière d’inquisiteur",
+            "de": "Siegel des Inquisitors"
+        },
+        "icon": "inv_jewelry_ring_01",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "haste": 7500,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 10000
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Finger"
+    },
+    {
+        "id": 175718,
+        "name": "Ascended Defender's Crest",
+        "names": {
+            "cn": "",
+            "en": "Ascended Defender's Crest",
+            "ru": "Знак отличия перерожденного защитника",
+            "es": "Cresta de defensor ascendido",
+            "br": "Brasão do Defensor Ascendido",
+            "kr": "",
+            "fr": "Écu du défenseur transcendé",
+            "de": "Emblem des aufgestiegenen Verteidigers"
+        },
+        "icon": "ability_priest_angelicbulwark",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 6666,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 6666,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Trinket",
+        "effect": {
+            "type": "trinket",
+            "name": "Ascended Defender's Crest"
+        }
+    },
+    {
+        "id": 175719,
+        "name": "Agitha's Void-Tinged Speartip",
+        "names": {
+            "cn": "",
+            "en": "Agitha's Void-Tinged Speartip",
+            "ru": "Тронутый Бездной наконечник копья Агфии",
+            "es": "Punta de lanza teñida de vacío de Agitha",
+            "br": "Ponta de Lança Manchada de Caos de Agitha",
+            "kr": "",
+            "fr": "Fer de lance teinté de Vide d’Agitha",
+            "de": "Agithas leerenberührte Speerspitze"
+        },
+        "icon": "ability_monk_spearhand",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 6666,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 6666,
+            "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Trinket",
+        "effect": {
+            "type": "trinket",
+            "name": "Agitha's Void-Tinged Speartip"
+        }
+    },
+    {
+        "id": 175722,
+        "name": "Vial of Caustic Liquid",
+        "names": {
+            "cn": "",
+            "en": "Vial of Caustic Liquid",
+            "ru": "Флакон с едкой жидкостью",
+            "es": "Vial de líquido cáustico",
+            "br": "Ampola de Líquido Cáustico",
+            "kr": "",
+            "fr": "Fiole de liquide caustique",
+            "de": "Phiole voll ätzender Flüssigkeit"
+        },
+        "icon": "inv_potion_19",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 6666,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Trinket",
+        "effect": {
+            "type": "trinket",
+            "name": "Vial of Caustic Liquid"
+        }
+    },
+    {
+        "id": 175723,
+        "name": "Rejuvenating Serum",
+        "names": {
+            "cn": "",
+            "en": "Rejuvenating Serum",
+            "ru": "Омолаживающая сыворотка",
+            "es": "Suero rejuvenecedor",
+            "br": "Soro Rejuvenescedor",
+            "kr": "",
+            "fr": "Sérum de récupération",
+            "de": "Verjüngungsserum"
+        },
+        "icon": "inv_trinket_maldraxxus_02_green",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 6666,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Trinket",
+        "effect": {
+            "type": "trinket",
+            "name": "Rejuvenating Serum"
+        }
+    },
+    {
+        "id": 175725,
+        "name": "Newcomer's Gladiatorial Badge",
+        "names": {
+            "cn": "",
+            "en": "Newcomer's Gladiatorial Badge",
+            "ru": "Гладиаторский значок новичка",
+            "es": "Distintivo gladiatorio de recién llegado",
+            "br": "Distintivo Gladiatório do Novato",
+            "kr": "",
+            "fr": "Écusson de gladiateur du nouveau venu",
+            "de": "Gladiatorenabzeichen des Neulings"
+        },
+        "icon": "inv_jewelry_talisman_14",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 6666,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 6666,
+            "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Trinket",
+        "effect": {
+            "type": "trinket",
+            "name": "Newcomer's Gladiatorial Badge"
+        }
+    },
+    {
+        "id": 175726,
+        "name": "Primalist's Kelpling",
+        "names": {
+            "cn": "",
+            "en": "Primalist's Kelpling",
+            "ru": "Водоросток шамана стихий",
+            "es": "Alguita de primalista",
+            "br": "Alguim do Primevista",
+            "kr": "",
+            "fr": "Alguelin de primaliste",
+            "de": "Tangling des Primalisten"
+        },
+        "icon": "inv_misc_herb_stranglekelp_blade",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 6666,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Trinket",
+        "effect": {
+            "type": "trinket",
+            "name": "Primalist's Kelpling"
+        }
+    },
+    {
+        "id": 175727,
+        "name": "Elder's Stormseed",
+        "names": {
+            "cn": "",
+            "en": "Elder's Stormseed",
+            "ru": "Семя бури старейшины",
+            "es": "Semilla de tormenta de anciano",
+            "br": "Semente-tempesta do Ancião",
+            "kr": "",
+            "fr": "Graine-orage d’ancien",
+            "de": "Sturmsaat des Ältesten"
+        },
+        "icon": "inv_farm_pumpkinseed_blue",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 6666,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Trinket",
+        "effect": {
+            "type": "trinket",
+            "name": "Elder's Stormseed"
+        }
     },
     {
         "id": 175728,
@@ -7165,6 +15930,192 @@ export const itemDB = [
         }
     },
     {
+        "id": 175731,
+        "name": "Stolen Maw Badge",
+        "names": {
+            "cn": "",
+            "en": "Stolen Maw Badge",
+            "ru": "Украденный жетон Утробы",
+            "es": "Insignia de Las Fauces robada",
+            "br": "Insígnia da Gorja Roubada",
+            "kr": "",
+            "fr": "Écusson de l’Antre dérobé",
+            "de": "Gestohlenes Schlundabzeichen"
+        },
+        "icon": "inv_misc_rune_09",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 6666,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Trinket",
+        "effect": {
+            "type": "trinket",
+            "name": "Stolen Maw Badge"
+        }
+    },
+    {
+        "id": 175732,
+        "name": "Tablet of Despair",
+        "names": {
+            "cn": "",
+            "en": "Tablet of Despair",
+            "ru": "Табличка отчаяния",
+            "es": "Tablilla de desesperación",
+            "br": "Tabuleta do Desespero",
+            "kr": "",
+            "fr": "Tablette de désespoir",
+            "de": "Tafel der Verzweiflung"
+        },
+        "icon": "inv_misc_stonetablet_11",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 6666,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Trinket",
+        "effect": {
+            "type": "trinket",
+            "name": "Tablet of Despair"
+        }
+    },
+    {
+        "id": 175733,
+        "name": "Brimming Ember Shard",
+        "names": {
+            "cn": "",
+            "en": "Brimming Ember Shard",
+            "ru": "Жарко тлеющий осколок",
+            "es": "Fragmento de ascua rebosante",
+            "br": "Estilhaço de Brasa Radiante",
+            "kr": "",
+            "fr": "Éclat de braise palpitant",
+            "de": "Aufgeladener Glutsplitter"
+        },
+        "icon": "ability_malkorok_blightofyshaarj_yellow",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 0,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 6666
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Trinket",
+        "effect": {
+            "type": "trinket",
+            "name": "Brimming Ember Shard"
+        }
+    },
+    {
+        "id": 175736,
+        "name": "Hopebreaker Pendant",
+        "names": {
+            "cn": "",
+            "en": "Hopebreaker Pendant",
+            "ru": "Подвеска сокрушителя надежды",
+            "es": "Colgante de rompeesperanzas",
+            "br": "Pingente do Quebrafé",
+            "kr": "",
+            "fr": "Pendentif de brisespoir",
+            "de": "Hoffnungsbrecheranhänger"
+        },
+        "icon": "inv_7_0raid_necklace_03a",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 9500,
+            "mastery": 8000,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Neck"
+    },
+    {
+        "id": 175737,
+        "name": "Samu's Inkwell Pendant",
+        "names": {
+            "cn": "",
+            "en": "Samu's Inkwell Pendant",
+            "ru": "Подвеска с чернильницей Самю",
+            "es": "Colgante de tintero de Samu",
+            "br": "Pingente de Tinteiro de Samu",
+            "kr": "",
+            "fr": "Pendentif encrier de Samo",
+            "de": "Samus Tintenfassanhänger"
+        },
+        "icon": "inv_7_0raid_necklace_03a",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "haste": 9750,
+            "crit": 0,
+            "mastery": 7750,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Neck"
+    },
+    {
+        "id": 175739,
+        "name": "Reclaimed Maldraxxi Choker",
+        "names": {
+            "cn": "",
+            "en": "Reclaimed Maldraxxi Choker",
+            "ru": "Переделанное малдраксийское колье",
+            "es": "Gargantilla maldraxxi recuperada",
+            "br": "Gargantilha Maldraxxi Recuperada",
+            "kr": "",
+            "fr": "Sautoir maldraxxi récupéré",
+            "de": "Wiederverwerteter maldraxxischer Halsreif"
+        },
+        "icon": "inv_jewelry_necklace_41",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "haste": 8000,
+            "crit": 9500,
+            "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Neck"
+    },
+    {
         "id": 175740,
         "name": "Valeshroud Torque",
         "names": {
@@ -7192,6 +16143,180 @@ export const itemDB = [
         "dropLoc": "",
         "selectable": "true",
         "slot": "Neck"
+    },
+    {
+        "id": 175741,
+        "name": "Gormgris Gorget",
+        "names": {
+            "cn": "",
+            "en": "Gormgris Gorget",
+            "ru": "Гормгрисовый горжет",
+            "es": "Gorjal de ámbar de gorm",
+            "br": "Gorjal de Gormgris",
+            "kr": "",
+            "fr": "Gorgerin en gras de gorm",
+            "de": "Gormgriskehlstück"
+        },
+        "icon": "inv_neck_ardenweald_01_green",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 8750,
+            "mastery": 0,
+            "vers": 8750
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Neck"
+    },
+    {
+        "id": 175762,
+        "name": "Larion Tamer's Cloak",
+        "names": {
+            "cn": "",
+            "en": "Larion Tamer's Cloak",
+            "ru": "Плащ укротителя ларионов",
+            "es": "Capa de domador de lariones",
+            "br": "Manto de Domador de Lariões",
+            "kr": "",
+            "fr": "Cape de dresseur de volion",
+            "de": "Umhang des Larionbändigers"
+        },
+        "icon": "inv_mail_oribosquesting_b_01_cape",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3650,
+            "mastery": 0,
+            "vers": 3350
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Back"
+    },
+    {
+        "id": 175763,
+        "name": "Salvaged Mercenary's Drape",
+        "names": {
+            "cn": "",
+            "en": "Salvaged Mercenary's Drape",
+            "ru": "Трофейная пелерина наемника",
+            "es": "Mantón de mercenario recuperado",
+            "br": "Clâmide do Mercenário Reciclada",
+            "kr": "",
+            "fr": "Drapé de mercenaire de récupération",
+            "de": "Geborgenes Tuch des Söldners"
+        },
+        "icon": "inv_cape_cloth_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3800,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 3200
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Back"
+    },
+    {
+        "id": 175765,
+        "name": "Dredwing Shroud",
+        "names": {
+            "cn": "",
+            "en": "Dredwing Shroud",
+            "ru": "Накидка грознокрыла",
+            "es": "Embozo de alatemible",
+            "br": "Mortalha de Terrorasa",
+            "kr": "",
+            "fr": "Voile d’aile de l’effroi",
+            "de": "Fledderschwingenschleier"
+        },
+        "icon": "inv_cape_leather_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 3800,
+            "vers": 3200
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Back"
+    },
+    {
+        "id": 175766,
+        "name": "Ilka's Hunting Cloak",
+        "names": {
+            "cn": "",
+            "en": "Ilka's Hunting Cloak",
+            "ru": "Охотничий плащ Илки",
+            "es": "Capa de caza de Ilka",
+            "br": "Manto de Caça de Ilka",
+            "kr": "",
+            "fr": "Cape de chasse d’Ilka",
+            "de": "Ilkas Jagdumhang"
+        },
+        "icon": "inv_mail_oribosquesting_b_01_cape",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3800,
+            "crit": 0,
+            "mastery": 3200,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Back"
+    },
+    {
+        "id": 175767,
+        "name": "Glitterwing Greatcloak",
+        "names": {
+            "cn": "",
+            "en": "Glitterwing Greatcloak",
+            "ru": "Теплый плащ из шкуры блескокрыла",
+            "es": "Gran capa de alafulgor",
+            "br": "Grande Manto Brilhasa",
+            "kr": "",
+            "fr": "Grande cape brasillaile",
+            "de": "Glitzerschwingengroßumhang"
+        },
+        "icon": "inv_cape_cloth_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3650,
+            "crit": 3350,
+            "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Back"
     },
     {
         "id": 175850,
@@ -9391,6 +18516,180 @@ export const itemDB = [
         }
     },
     {
+        "id": 175988,
+        "name": "Meadow Guardian's Staff",
+        "names": {
+            "cn": "",
+            "en": "Meadow Guardian's Staff",
+            "ru": "Посох лугового стража",
+            "es": "Bastón de guardián de la pradera",
+            "br": "Cajado do Guardião da Campina",
+            "kr": "",
+            "fr": "Bâton de gardien de la prairie",
+            "de": "Stab der Weidenwächterin"
+        },
+        "icon": "inv_staff_2h_ardenwealdquest_b_01",
+        "itemClass": 2,
+        "itemSubClass": 10,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 18121,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3350,
+            "mastery": 0,
+            "vers": 3650
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "2H Weapon"
+    },
+    {
+        "id": 176282,
+        "name": "Ruthless Contender's Wand",
+        "names": {
+            "cn": "",
+            "en": "Ruthless Contender's Wand",
+            "ru": "Жезл безжалостного соперника",
+            "es": "Varita de contendiente implacable",
+            "br": "Varinha do Competidor Inclemente",
+            "kr": "",
+            "fr": "Baguette du belligérant sans pitié",
+            "de": "Zauberstab des erbarmungslosen Streiters"
+        },
+        "icon": "inv_wand_1h_maldraxxusquest_b_01",
+        "itemClass": 2,
+        "itemSubClass": 19,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 25370,
+            "stamina": 7889,
+            "haste": 3950,
+            "crit": 3050,
+            "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "1H Weapon"
+    },
+    {
+        "id": 176285,
+        "name": "Ruthless Contender's Tome",
+        "names": {
+            "cn": "",
+            "en": "Ruthless Contender's Tome",
+            "ru": "Фолиант безжалостного соперника",
+            "es": "Tomo de contendiente implacable",
+            "br": "Tomo do Competidor Inclemente",
+            "kr": "",
+            "fr": "Tome du belligérant sans pitié",
+            "de": "Foliant des erbarmungslosen Streiters"
+        },
+        "icon": "inv_offhand_1h_maldraxxusquest_b_01",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 16132,
+            "stamina": 7889,
+            "haste": 3650,
+            "crit": 3350,
+            "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Offhand"
+    },
+    {
+        "id": 176335,
+        "name": "Chime of Melodic Reflection",
+        "names": {
+            "cn": "",
+            "en": "Chime of Melodic Reflection",
+            "ru": "Колокольчик мелодичного отражения",
+            "es": "Campana de reflejo melódico",
+            "br": "Carrilhão da Reflexão Melódica",
+            "kr": "",
+            "fr": "Carillon de réflexion mélodique",
+            "de": "Glocke der melodischen Reflexion"
+        },
+        "icon": "inv_offhand_1h_bastionquest_b_01",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 16132,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3350,
+            "mastery": 0,
+            "vers": 3650
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Offhand"
+    },
+    {
+        "id": 176388,
+        "name": "Guidenote Dagger",
+        "names": {
+            "cn": "",
+            "en": "Guidenote Dagger",
+            "ru": "Кинжал путеискателя",
+            "es": "Daga guiada",
+            "br": "Adaga Iniciante",
+            "kr": "",
+            "fr": "Dague guidenote",
+            "de": "Leittondolch"
+        },
+        "icon": "inv_knife_1h_bastionquest_b_01",
+        "itemClass": 2,
+        "itemSubClass": 15,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 25370,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3650,
+            "mastery": 3350,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "1H Weapon"
+    },
+    {
+        "id": 176390,
+        "name": "Silverchime Gavel",
+        "names": {
+            "cn": "",
+            "en": "Silverchime Gavel",
+            "ru": "Кувалда серебряного звона",
+            "es": "Mazo de campanillas plateadas",
+            "br": "Martelete de Sinargêntio",
+            "kr": "",
+            "fr": "Martelet tintargent",
+            "de": "Silberglockenhammer"
+        },
+        "icon": "inv_mace_1h_bastionquest_b_01",
+        "itemClass": 2,
+        "itemSubClass": 4,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 25370,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3050,
+            "mastery": 0,
+            "vers": 3950
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "1H Weapon"
+    },
+    {
         "id": 176761,
         "name": "Glimmerhoof Helm",
         "names": {
@@ -10345,7 +19644,7 @@ export const itemDB = [
         },
         "dropLoc": "",
         "selectable": "true",
-        "slot": "Holdable"
+        "slot": "Offhand"
     },
     {
         "id": 176802,
@@ -11604,6 +20903,271 @@ export const itemDB = [
         "slot": "Back"
     },
     {
+        "id": 177634,
+        "name": "Vial of Volatile Essence",
+        "names": {
+            "cn": "",
+            "en": "Vial of Volatile Essence",
+            "ru": "Флакон с нестабильной сущностью",
+            "es": "Vial de esencia volátil",
+            "br": "Ampola de Essência Volátil",
+            "kr": "",
+            "fr": "Fiole d’essence volatile",
+            "de": "Phiole mit flüchtiger Essenz"
+        },
+        "icon": "inv_offhand_1h_revendrethquest_b_01",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 16132,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3200,
+            "mastery": 0,
+            "vers": 3800
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Offhand"
+    },
+    {
+        "id": 177640,
+        "name": "Sinstealer's Staff",
+        "names": {
+            "cn": "",
+            "en": "Sinstealer's Staff",
+            "ru": "Посох похитителя грехов",
+            "es": "Bastón de robapecados",
+            "br": "Cajado do Rouba-pecado",
+            "kr": "",
+            "fr": "Bâton de vole-vice",
+            "de": "Stab des Sündendiebs"
+        },
+        "icon": "inv_staff_2h_revendrethquest_b_01",
+        "itemClass": 2,
+        "itemSubClass": 10,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 18121,
+            "stamina": 7889,
+            "haste": 3200,
+            "crit": 0,
+            "mastery": 3800,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "2H Weapon"
+    },
+    {
+        "id": 177641,
+        "name": "Sinfall Inquisitor's Dagger",
+        "names": {
+            "cn": "",
+            "en": "Sinfall Inquisitor's Dagger",
+            "ru": "Кинжал грехопадского инквизитора",
+            "es": "Daga de inquisidor del Salto del Pecado",
+            "br": "Adaga do Inquisidor de Pecádia",
+            "kr": "",
+            "fr": "Dague d’inquisiteur de Tombe-Vice",
+            "de": "Inquisitorendolch von Sündensturz"
+        },
+        "icon": "inv_knife_1h_revendrethquest_b_02",
+        "itemClass": 2,
+        "itemSubClass": 15,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 25370,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3200,
+            "mastery": 3800,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "1H Weapon"
+    },
+    {
+        "id": 177644,
+        "name": "Sinfall Reclaimer's Greatmace",
+        "names": {
+            "cn": "",
+            "en": "Sinfall Reclaimer's Greatmace",
+            "ru": "Двуручная булава грехопадского избавителя",
+            "es": "Maza suprema de reivindicador del Salto del Pecado",
+            "br": "Grande Maça do Recuperador de Pecádia",
+            "kr": "",
+            "fr": "Plombée de récupérateur de Tombe-Vice",
+            "de": "Rückeroberergroßstreitkolben von Sündensturz"
+        },
+        "icon": "inv_mace_1h_revendrethquest_b_01",
+        "itemClass": 2,
+        "itemSubClass": 5,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 18121,
+            "stamina": 7889,
+            "haste": 3050,
+            "crit": 3950,
+            "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "2H Weapon"
+    },
+    {
+        "id": 177653,
+        "name": "Bootus Hardeneds",
+        "names": {
+            "cn": "",
+            "en": "Bootus Hardeneds",
+            "ru": "Мощные башмаки Бутуса",
+            "es": "Durezas de Butus",
+            "br": "Botinus Resistance",
+            "kr": "",
+            "fr": "Bottoirs durcis",
+            "de": "Gehärtete Botten"
+        },
+        "icon": "inv_boot_plate_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3350,
+            "mastery": 3650,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Feet"
+    },
+    {
+        "id": 177654,
+        "name": "Bootus Shocks",
+        "names": {
+            "cn": "",
+            "en": "Bootus Shocks",
+            "ru": "Шокирующие сапоги Бутуса",
+            "es": "Choques de Butus",
+            "br": "Botinus Shock",
+            "kr": "",
+            "fr": "Bottoirs de choc",
+            "de": "Schockbotten"
+        },
+        "icon": "inv_mail_oribosquesting_b_01_boots",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3200,
+            "crit": 0,
+            "mastery": 3800,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Feet"
+    },
+    {
+        "id": 177655,
+        "name": "Air Bootuses",
+        "names": {
+            "cn": "",
+            "en": "Air Bootuses",
+            "ru": "Воздушные туфли Бутуса",
+            "es": "Air Butus",
+            "br": "Botinus Air",
+            "kr": "",
+            "fr": "Bottoirs à coussin d’air",
+            "de": "Luftbotten"
+        },
+        "icon": "inv_boot_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3050,
+            "mastery": 0,
+            "vers": 3950
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Feet"
+    },
+    {
+        "id": 177656,
+        "name": "Boot-a-Charge Flyers",
+        "names": {
+            "cn": "",
+            "en": "Boot-a-Charge Flyers",
+            "ru": "Крылатые сандалии Бутуса",
+            "es": "Voladores Butu-carga",
+            "br": "Botinus Performance",
+            "kr": "",
+            "fr": "Voltobottes volantes",
+            "de": "Stürmische Botten"
+        },
+        "icon": "inv_boot_cloth_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3050,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 3950
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Feet"
+    },
+    {
+        "id": 177657,
+        "name": "Overflowing Ember Mirror",
+        "names": {
+            "cn": "",
+            "en": "Overflowing Ember Mirror",
+            "ru": "Зеркало изобильных углей",
+            "es": "Espejo de ascuas desbordante",
+            "br": "Espelho da Brasa Vertente",
+            "kr": "",
+            "fr": "Miroir de braise débordant",
+            "de": "Überquellender Glutspiegel"
+        },
+        "icon": "inv_lightforgedmechsuit",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 6666,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Trinket",
+        "effect": {
+            "type": "trinket",
+            "name": "Overflowing Ember Mirror"
+        }
+    },
+    {
         "id": 177767,
         "name": "Avowed Tormenter's Vestment",
         "names": {
@@ -12558,7 +22122,7 @@ export const itemDB = [
         },
         "dropLoc": "",
         "selectable": "true",
-        "slot": "Holdable"
+        "slot": "Offhand"
     },
     {
         "id": 177803,
@@ -12823,7 +22387,7 @@ export const itemDB = [
         },
         "dropLoc": "",
         "selectable": "true",
-        "slot": "Holdable"
+        "slot": "Offhand"
     },
     {
         "id": 177870,
@@ -12852,7 +22416,442 @@ export const itemDB = [
         },
         "dropLoc": "",
         "selectable": "true",
-        "slot": "Holdable"
+        "slot": "Offhand"
+    },
+    {
+        "id": 178029,
+        "name": "Meadow Guardian's Focus",
+        "names": {
+            "cn": "",
+            "en": "Meadow Guardian's Focus",
+            "ru": "Средоточие лугового стража",
+            "es": "Enfoque de guardián de la pradera",
+            "br": "Concentração do Guardião da Campina",
+            "kr": "",
+            "fr": "Focalisateur de gardien de la prairie",
+            "de": "Fokus der Weidenwächterin"
+        },
+        "icon": "inv_offhand_1h_ardenwealdquest_b_01",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 16132,
+            "stamina": 7889,
+            "haste": 3650,
+            "crit": 0,
+            "mastery": 3350,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Offhand"
+    },
+    {
+        "id": 178059,
+        "name": "Sacred Morningstar",
+        "names": {
+            "cn": "",
+            "en": "Sacred Morningstar",
+            "ru": "Священный моргенштерн",
+            "es": "Lucero del alba sagrado",
+            "br": "Maça-estrela Consagrada",
+            "kr": "",
+            "fr": "Étoile du matin sacrée",
+            "de": "Heiliger Morgenstern"
+        },
+        "icon": "inv_mace_1h_revendrethquest_b_01",
+        "itemClass": 2,
+        "itemSubClass": 5,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 18121,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3350,
+            "mastery": 0,
+            "vers": 3650
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "2H Weapon"
+    },
+    {
+        "id": 178065,
+        "name": "Nightcloaked Mitts",
+        "names": {
+            "cn": "",
+            "en": "Nightcloaked Mitts",
+            "ru": "Полуперчатки покрова ночи",
+            "es": "Mitones cubiertos por la noche",
+            "br": "Luvetes do Mantonócteo",
+            "kr": "",
+            "fr": "Mitaines noctevoilées",
+            "de": "Nachtverhüllte Fäustlinge"
+        },
+        "icon": "inv_glove_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3950,
+            "crit": 3050,
+            "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
+        "id": 178066,
+        "name": "Stoneforged Gloves",
+        "names": {
+            "cn": "",
+            "en": "Stoneforged Gloves",
+            "ru": "Перчатки камнерожденного",
+            "es": "Guantes de forja de piedra",
+            "br": "Luvas Forjadas em Pedra",
+            "kr": "",
+            "fr": "Gants de forge-pierre",
+            "de": "Steingeschmiedete Handschuhe"
+        },
+        "icon": "inv_glove_plate_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3800,
+            "mastery": 0,
+            "vers": 3200
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
+        "id": 178067,
+        "name": "Mitts of Pained Absolution",
+        "names": {
+            "cn": "",
+            "en": "Mitts of Pained Absolution",
+            "ru": "Полуперчатки болезненного искупления",
+            "es": "Mitones de absolución dolorida",
+            "br": "Luvetes da Absolvição Dolorosa",
+            "kr": "",
+            "fr": "Mitaines d’absolution affligée",
+            "de": "Fäustlinge der schmerzvollen Absolution"
+        },
+        "icon": "inv_glove_cloth_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3350,
+            "crit": 0,
+            "mastery": 3650,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
+        "id": 178068,
+        "name": "Soul Hunter's Gloves",
+        "names": {
+            "cn": "",
+            "en": "Soul Hunter's Gloves",
+            "ru": "Перчатки ловца душ",
+            "es": "Guantes del cazaalmas",
+            "br": "Luvas do Caça-almas",
+            "kr": "",
+            "fr": "Gants de chasseur d’âmes",
+            "de": "Seelenjägerhandschuhe"
+        },
+        "icon": "inv_mail_oribosquesting_b_01_glove",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3350,
+            "mastery": 0,
+            "vers": 3650
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
+        "id": 178069,
+        "name": "Nightcloaked Mantle",
+        "names": {
+            "cn": "",
+            "en": "Nightcloaked Mantle",
+            "ru": "Оплечье покрова ночи",
+            "es": "Manto cubierto por la noche",
+            "br": "Dragonas do Mantonócteo",
+            "kr": "",
+            "fr": "Mantelet noctevoilé",
+            "de": "Nachtverhüllter Mantel"
+        },
+        "icon": "inv_shoulder_leather_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3200,
+            "mastery": 0,
+            "vers": 3800
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 178070,
+        "name": "Stoneforged Mantle",
+        "names": {
+            "cn": "",
+            "en": "Stoneforged Mantle",
+            "ru": "Оплечье камнерожденного",
+            "es": "Manto de forja de piedra",
+            "br": "Dragonas Forjadas em Pedra",
+            "kr": "",
+            "fr": "Mantelet de forge-pierre",
+            "de": "Steingeschmiedeter Mantel"
+        },
+        "icon": "inv_shoulder_plate_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3650,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 3350
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 178071,
+        "name": "Amice of Pained Absolution",
+        "names": {
+            "cn": "",
+            "en": "Amice of Pained Absolution",
+            "ru": "Нарамник болезненного искупления",
+            "es": "Amito de absolución dolorida",
+            "br": "Sobreveste da Absolvição Dolorosa",
+            "kr": "",
+            "fr": "Amict d’absolution affligée",
+            "de": "Amicia der schmerzvollen Absolution"
+        },
+        "icon": "inv_shoulder_cloth_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 3650,
+            "vers": 3350
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 178072,
+        "name": "Soul Hunter's Shoulderguards",
+        "names": {
+            "cn": "",
+            "en": "Soul Hunter's Shoulderguards",
+            "ru": "Наплечные щитки ловца душ",
+            "es": "Guardahombros del cazaalmas",
+            "br": "Guarda-ombros do Caça-almas",
+            "kr": "",
+            "fr": "Garde-épaules de chasseur d’âmes",
+            "de": "Seelenjägerschulterschützer"
+        },
+        "icon": "inv_mail_oribosquesting_b_01_shoulder",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3050,
+            "mastery": 3950,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 178073,
+        "name": "Stoneforged Helm",
+        "names": {
+            "cn": "",
+            "en": "Stoneforged Helm",
+            "ru": "Шлем камнерожденного",
+            "es": "Yelmo de forja de piedra",
+            "br": "Elmo Forjado em Pedra",
+            "kr": "",
+            "fr": "Heaume de forge-pierre",
+            "de": "Steingeschmiedeter Helm"
+        },
+        "icon": "inv_helm_plate_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3950,
+            "mastery": 3050,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 178074,
+        "name": "Cover of Pained Absolution",
+        "names": {
+            "cn": "",
+            "en": "Cover of Pained Absolution",
+            "ru": "Убор болезненного искупления",
+            "es": "Casquete de absolución dolorida",
+            "br": "Murça da Absolvição Dolorosa",
+            "kr": "",
+            "fr": "Couvre-chef d’absolution affligée",
+            "de": "Bedeckung der schmerzvollen Absolution"
+        },
+        "icon": "inv_helm_cloth_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3050,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 3950
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 178075,
+        "name": "Soul Hunter's Cover",
+        "names": {
+            "cn": "",
+            "en": "Soul Hunter's Cover",
+            "ru": "Убор ловца душ",
+            "es": "Casquete del cazaalmas",
+            "br": "Murça do Caça-almas",
+            "kr": "",
+            "fr": "Coiffe de chasseur d’âmes",
+            "de": "Seelenjägerbedeckung"
+        },
+        "icon": "inv_mail_oribosquesting_b_01_helm",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3650,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 3350
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 178076,
+        "name": "Nightcloaked Cover",
+        "names": {
+            "cn": "",
+            "en": "Nightcloaked Cover",
+            "ru": "Убор покрова ночи",
+            "es": "Casquete cubierto por la noche",
+            "br": "Murça do Mantonócteo",
+            "kr": "",
+            "fr": "Couvre-chef noctevoilé",
+            "de": "Nachtverhüllte Bedeckung"
+        },
+        "icon": "inv_helm_leather_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3800,
+            "mastery": 3200,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 178077,
+        "name": "Briarbane Signet",
+        "names": {
+            "cn": "",
+            "en": "Briarbane Signet",
+            "ru": "Печатка дома Брайрбейн",
+            "es": "Sello Aterrabrezo",
+            "br": "Sinete dos Espinheira",
+            "kr": "",
+            "fr": "Chevalière de Malbruyère",
+            "de": "Dornfluchsiegel"
+        },
+        "icon": "inv_jewelry_ring_01",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 9250,
+            "vers": 8250
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Finger"
     },
     {
         "id": 178153,
@@ -15520,7 +25519,7 @@ export const itemDB = [
         },
         "dropLoc": "",
         "selectable": "true",
-        "slot": "Holdable"
+        "slot": "Offhand"
     },
     {
         "id": 178481,
@@ -19125,7 +29124,7 @@ export const itemDB = [
         ],
         "dropLoc": "",
         "selectable": "true",
-        "slot": "Holdable"
+        "slot": "Offhand"
     },
     {
         "id": 178829,
@@ -20030,7 +30029,7 @@ export const itemDB = [
         ],
         "dropLoc": "",
         "selectable": "true",
-        "slot": "Holdable"
+        "slot": "Offhand"
     },
     {
         "id": 178856,
@@ -20225,7 +30224,7 @@ export const itemDB = [
         ],
         "dropLoc": "",
         "selectable": "true",
-        "slot": "Holdable"
+        "slot": "Offhand"
     },
     {
         "id": 178869,
@@ -20634,7 +30633,123 @@ export const itemDB = [
         },
         "dropLoc": "",
         "selectable": "true",
-        "slot": "Holdable"
+        "slot": "Offhand"
+    },
+    {
+        "id": 178956,
+        "name": "Courageous Aspirant's Mitts",
+        "names": {
+            "cn": "",
+            "en": "Courageous Aspirant's Mitts",
+            "ru": "Полуперчатки отважного претендента",
+            "es": "Mitones de aspirante valiente",
+            "br": "Luvetes do Aspirante Corajoso",
+            "kr": "",
+            "fr": "Mitaines de l’aspirant courageux",
+            "de": "Fäustlinge des mutigen Aspiranten"
+        },
+        "icon": "inv_glove_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3650,
+            "crit": 3350,
+            "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
+        "id": 178957,
+        "name": "Judicious Aspirant's Gloves",
+        "names": {
+            "cn": "",
+            "en": "Judicious Aspirant's Gloves",
+            "ru": "Перчатки рассудительного претендента",
+            "es": "Guantes de aspirante juicioso",
+            "br": "Luvas do Aspirante Criterioso",
+            "kr": "",
+            "fr": "Gants de l’aspirant judicieux",
+            "de": "Handschuhe des besonnenen Aspiranten"
+        },
+        "icon": "inv_glove_plate_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3950,
+            "crit": 0,
+            "mastery": 3050,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
+        "id": 178958,
+        "name": "Pure Aspirant's Handwraps",
+        "names": {
+            "cn": "",
+            "en": "Pure Aspirant's Handwraps",
+            "ru": "Повязки непорочного претендента",
+            "es": "Manijas de aspirante puro",
+            "br": "Mitenes do Aspirante Puro",
+            "kr": "",
+            "fr": "Protège-mains de l’aspirant pur",
+            "de": "Handlappen des reinen Aspiranten"
+        },
+        "icon": "inv_glove_cloth_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3050,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 3950
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
+        "id": 178959,
+        "name": "Humble Aspirant's Handguards",
+        "names": {
+            "cn": "",
+            "en": "Humble Aspirant's Handguards",
+            "ru": "Боевые рукавицы смиренного претендента",
+            "es": "Manoplas de aspirante humilde",
+            "br": "Protetores de Mão do Aspirante Humilde",
+            "kr": "",
+            "fr": "Garde-mains de l’aspirant modeste",
+            "de": "Handschützer des demütigen Aspiranten"
+        },
+        "icon": "inv_mail_oribosquesting_b_01_glove",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3200,
+            "mastery": 0,
+            "vers": 3800
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
     },
     {
         "id": 178971,
@@ -21766,7 +31881,7 @@ export const itemDB = [
         },
         "dropLoc": "",
         "selectable": "true",
-        "slot": "Holdable"
+        "slot": "Offhand"
     },
     {
         "id": 179565,
@@ -21795,7 +31910,7 @@ export const itemDB = [
         },
         "dropLoc": "",
         "selectable": "true",
-        "slot": "Holdable"
+        "slot": "Offhand"
     },
     {
         "id": 179566,
@@ -21824,7 +31939,7 @@ export const itemDB = [
         },
         "dropLoc": "",
         "selectable": "true",
-        "slot": "Holdable"
+        "slot": "Offhand"
     },
     {
         "id": 179569,
@@ -21853,7 +31968,7 @@ export const itemDB = [
         },
         "dropLoc": "",
         "selectable": "true",
-        "slot": "Holdable"
+        "slot": "Offhand"
     },
     {
         "id": 179570,
@@ -21882,7 +31997,7 @@ export const itemDB = [
         },
         "dropLoc": "",
         "selectable": "true",
-        "slot": "Holdable"
+        "slot": "Offhand"
     },
     {
         "id": 179571,
@@ -21911,7 +32026,7 @@ export const itemDB = [
         },
         "dropLoc": "",
         "selectable": "true",
-        "slot": "Holdable"
+        "slot": "Offhand"
     },
     {
         "id": 179593,
@@ -22233,6 +32348,35 @@ export const itemDB = [
         "dropLoc": "",
         "selectable": "true",
         "slot": "Back"
+    },
+    {
+        "id": 179653,
+        "name": "Light-Infused Hauberk",
+        "names": {
+            "cn": "",
+            "en": "Light-Infused Hauberk",
+            "ru": "Насыщенный Светом хауберк",
+            "es": "Camisote imbuido de luz",
+            "br": "Cota Imbuída na Luz",
+            "kr": "",
+            "fr": "Haubert imprégné de Lumière",
+            "de": "Lichterfüllte Halsberge"
+        },
+        "icon": "inv_mail_oribosquesting_b_01_chest",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
     },
     {
         "id": 179656,
@@ -24516,6 +34660,93 @@ export const itemDB = [
         "slot": "Chest"
     },
     {
+        "id": 179924,
+        "name": "Light-Infused Jacket",
+        "names": {
+            "cn": "",
+            "en": "Light-Infused Jacket",
+            "ru": "Насыщенная Светом куртка",
+            "es": "Chaqueta imbuida de luz",
+            "br": "Jaqueta Imbuída na Luz",
+            "kr": "",
+            "fr": "Veste imprégnée de Lumière",
+            "de": "Lichterfüllte Jacke"
+        },
+        "icon": "inv_chest_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 179925,
+        "name": "Light-Infused Breastplate",
+        "names": {
+            "cn": "",
+            "en": "Light-Infused Breastplate",
+            "ru": "Насыщенная Светом кираса",
+            "es": "Coraza imbuida de luz",
+            "br": "Peitoral Imbuído na Luz",
+            "kr": "",
+            "fr": "Cuirasse imprégnée de Lumière",
+            "de": "Lichterfüllte Brustplatte"
+        },
+        "icon": "inv_chest_plate_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 179926,
+        "name": "Light-Infused Tunic",
+        "names": {
+            "cn": "",
+            "en": "Light-Infused Tunic",
+            "ru": "Насыщенная Светом туника",
+            "es": "Guerrera imbuida de luz",
+            "br": "Túnica Imbuída na Luz",
+            "kr": "",
+            "fr": "Tunique imprégnée de Lumière",
+            "de": "Lichterfüllte Tunika"
+        },
+        "icon": "inv_chest_cloth_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
         "id": 179948,
         "name": "Selfless Forgelite's Drape",
         "names": {
@@ -24544,6 +34775,122 @@ export const itemDB = [
         "dropLoc": "",
         "selectable": "true",
         "slot": "Back"
+    },
+    {
+        "id": 179988,
+        "name": "Ash-Scored Girdle",
+        "names": {
+            "cn": "",
+            "en": "Ash-Scored Girdle",
+            "ru": "Травленый пеплом ремень",
+            "es": "Faja marcada con ceniza",
+            "br": "Cinturão com Marcas de Cinzas",
+            "kr": "",
+            "fr": "Ceinturon strié de cendres",
+            "de": "Aschebedeckte Gürtung"
+        },
+        "icon": "inv_belt_plate_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 3050,
+            "vers": 3950
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Waist"
+    },
+    {
+        "id": 179989,
+        "name": "Marquis's Lace Cuffs",
+        "names": {
+            "cn": "",
+            "en": "Marquis's Lace Cuffs",
+            "ru": "Кружевные манжеты маркиза",
+            "es": "Puños de encaje de marqués",
+            "br": "Manilhas de Renda do Marquês",
+            "kr": "",
+            "fr": "Crispins en dentelle du marquis",
+            "de": "Spitzenmanschetten des Marquis"
+        },
+        "icon": "inv_bracer_cloth_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3050,
+            "mastery": 3950,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Wrist"
+    },
+    {
+        "id": 179990,
+        "name": "Shattereye's Chestguard",
+        "names": {
+            "cn": "",
+            "en": "Shattereye's Chestguard",
+            "ru": "Нагрудный доспех Тресниглаза",
+            "es": "Coselete de Trizaojos",
+            "br": "Couraça do Estilhaçolhos",
+            "kr": "",
+            "fr": "Corselet de Brisœil",
+            "de": "Splitterauges Brustschutz"
+        },
+        "icon": "inv_chest_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3350,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 3650
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 179991,
+        "name": "Light-Bleached Greaves",
+        "names": {
+            "cn": "",
+            "en": "Light-Bleached Greaves",
+            "ru": "Выбеленные Светом наголенники",
+            "es": "Grebas decoloradas",
+            "br": "Grevas Alvejadas pela Luz",
+            "kr": "",
+            "fr": "Grèves décolorées par la Lumière",
+            "de": "Lichtgebleichte Beinschützer"
+        },
+        "icon": "inv_mail_oribosquesting_b_01_pants",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 3200
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
     },
     {
         "id": 180000,
@@ -25740,6 +36087,209 @@ export const itemDB = [
         "slot": "2H Weapon"
     },
     {
+        "id": 180319,
+        "name": "Sourwine Pendant",
+        "names": {
+            "cn": "",
+            "en": "Sourwine Pendant",
+            "ru": "Подвеска дома Саурвайн",
+            "es": "Colgante Vinoamargo",
+            "br": "Pingente de Vinacre",
+            "kr": "",
+            "fr": "Pendentif des Aigrevin",
+            "de": "Sauerweinanhänger"
+        },
+        "icon": "inv_7_0raid_necklace_03a",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 11500,
+            "mastery": 6000,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Neck"
+    },
+    {
+        "id": 180320,
+        "name": "Darkvein Choker",
+        "names": {
+            "cn": "",
+            "en": "Darkvein Choker",
+            "ru": "Колье дома Дарквейн",
+            "es": "Gargantilla Venaoscura",
+            "br": "Gargantilha dos Venumbra",
+            "kr": "",
+            "fr": "Sautoir Sombreveine",
+            "de": "Dunkeladerhalsreif"
+        },
+        "icon": "inv_neck_revendreth_01_silver",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "haste": 6000,
+            "crit": 0,
+            "mastery": 11500,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Neck"
+    },
+    {
+        "id": 180321,
+        "name": "Primrose Pendant",
+        "names": {
+            "cn": "",
+            "en": "Primrose Pendant",
+            "ru": "Подвеска дома Примроуз",
+            "es": "Colgante Prímula",
+            "br": "Pingente dos Prímula",
+            "kr": "",
+            "fr": "Pendentif des Primula",
+            "de": "Primulaanhänger"
+        },
+        "icon": "inv_7_0raid_necklace_17a",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "haste": 11500,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 6000
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Neck"
+    },
+    {
+        "id": 180322,
+        "name": "Sinfang Choker",
+        "names": {
+            "cn": "",
+            "en": "Sinfang Choker",
+            "ru": "Колье дома Синфэнг",
+            "es": "Gargantilla Sangrepérfida",
+            "br": "Gargantilha Sacrílega",
+            "kr": "",
+            "fr": "Sautoir des Vicecroc",
+            "de": "Sündfanghalsreif"
+        },
+        "icon": "inv_neck_revendreth_01_brown",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "haste": 6000,
+            "crit": 11500,
+            "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Neck"
+    },
+    {
+        "id": 180323,
+        "name": "Blackbale Neckpiece",
+        "names": {
+            "cn": "",
+            "en": "Blackbale Neckpiece",
+            "ru": "Ожерелье дома Блэкбейл",
+            "es": "Collar Balanegra",
+            "br": "Colar Fardonegro",
+            "kr": "",
+            "fr": "Chaîne des Malsorgue",
+            "de": "Schwärzeleidhalstuch"
+        },
+        "icon": "inv_7_0raid_necklace_09b",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "haste": 11500,
+            "crit": 0,
+            "mastery": 6000,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Neck"
+    },
+    {
+        "id": 180324,
+        "name": "Iremore Necklace",
+        "names": {
+            "cn": "",
+            "en": "Iremore Necklace",
+            "ru": "Ожерелье дома Айрмур",
+            "es": "Collar Inquina",
+            "br": "Colar de Iramore",
+            "kr": "",
+            "fr": "Collier des Irebrande",
+            "de": "Zornmeerhalskette"
+        },
+        "icon": "inv_7_0raid_necklace_02d",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 11500,
+            "vers": 6000
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Neck"
+    },
+    {
+        "id": 180325,
+        "name": "Redelev Pendant",
+        "names": {
+            "cn": "",
+            "en": "Redelev Pendant",
+            "ru": "Подвеска дома Ределав",
+            "es": "Colgante Redelav",
+            "br": "Pingente Rubrelav",
+            "kr": "",
+            "fr": "Pendentif des Redelav",
+            "de": "Redelavanhänger"
+        },
+        "icon": "inv_6_0raid_necklace_4b",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 6000,
+            "mastery": 0,
+            "vers": 11500
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Neck"
+    },
+    {
         "id": 180389,
         "name": "Banewood Treads",
         "names": {
@@ -26056,7 +36606,7 @@ export const itemDB = [
         },
         "dropLoc": "",
         "selectable": "true",
-        "slot": "Holdable"
+        "slot": "Offhand"
     },
     {
         "id": 180424,
@@ -26233,6 +36783,64 @@ export const itemDB = [
         "slot": "Waist"
     },
     {
+        "id": 180473,
+        "name": "Culexwood Spellmace",
+        "names": {
+            "cn": "",
+            "en": "Culexwood Spellmace",
+            "ru": "Кулексовая чародейская булава",
+            "es": "Maza de hechizo de madera de cilex",
+            "br": "Maça Mágica de Mosquiteira",
+            "kr": "",
+            "fr": "Sorcemasse en diptarbore",
+            "de": "Culexholzzauberstreitkolben"
+        },
+        "icon": "inv_mace_1h_ardenwealdquest_b_01",
+        "itemClass": 2,
+        "itemSubClass": 4,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 25370,
+            "stamina": 7889,
+            "haste": 3650,
+            "crit": 3350,
+            "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "1H Weapon"
+    },
+    {
+        "id": 180474,
+        "name": "Culexwood Dagger",
+        "names": {
+            "cn": "",
+            "en": "Culexwood Dagger",
+            "ru": "Кулексовый кинжал",
+            "es": "Daga de madera de cilex",
+            "br": "Adaga de Mosquiteira",
+            "kr": "",
+            "fr": "Dague en diptarbore",
+            "de": "Culexholzdolch"
+        },
+        "icon": "inv_knife_1h_ardenwealdquest_b_01",
+        "itemClass": 2,
+        "itemSubClass": 15,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 25370,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3050,
+            "mastery": 3950,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "1H Weapon"
+    },
+    {
         "id": 180488,
         "name": "Fist-Forged Breastplate",
         "names": {
@@ -26407,6 +37015,35 @@ export const itemDB = [
         "slot": "Back"
     },
     {
+        "id": 180501,
+        "name": "Skull-Formed Headcage",
+        "names": {
+            "cn": "",
+            "en": "Skull-Formed Headcage",
+            "ru": "Украшенный черепом наголовник",
+            "es": "Jaula de cabeza ósea",
+            "br": "Jaula Craniana de Caveira",
+            "kr": "",
+            "fr": "Cervelière cranioformée",
+            "de": "Kopfkäfig in Schädelform"
+        },
+        "icon": "inv_mail_oribosquesting_b_01_helm",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 4250,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 2750
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
         "id": 180502,
         "name": "Adrastia's Executioner Gloves",
         "names": {
@@ -26459,6 +37096,151 @@ export const itemDB = [
             "crit": 4250,
             "mastery": 0,
             "vers": 2750
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "1H Weapon"
+    },
+    {
+        "id": 180663,
+        "name": "War Scholar's Bonesaw",
+        "names": {
+            "cn": "",
+            "en": "War Scholar's Bonesaw",
+            "ru": "Костяная пила воинственного мудреца",
+            "es": "Sierrahuesos de erudito de guerra",
+            "br": "Serra-de-osso do Pesquisador da Guerra",
+            "kr": "",
+            "fr": "Scie à os de l’historien des guerres",
+            "de": "Knochensäge des Kriegsgelehrten"
+        },
+        "icon": "inv_knife_1h_maldraxxusquest_b_02_blue",
+        "itemClass": 2,
+        "itemSubClass": 15,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 25370,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3950,
+            "mastery": 0,
+            "vers": 3050
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "1H Weapon"
+    },
+    {
+        "id": 180668,
+        "name": "War Scholar's Wand",
+        "names": {
+            "cn": "",
+            "en": "War Scholar's Wand",
+            "ru": "Жезл воинственного мудреца",
+            "es": "Varita de erudito de guerra",
+            "br": "Varinha do Pesquisador da Guerra",
+            "kr": "",
+            "fr": "Baguette de l’historien des guerres",
+            "de": "Zauberstab des Kriegsgelehrten"
+        },
+        "icon": "inv_wand_1h_maldraxxusquest_b_01",
+        "itemClass": 2,
+        "itemSubClass": 19,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 25370,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 3650,
+            "vers": 3350
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "1H Weapon"
+    },
+    {
+        "id": 180671,
+        "name": "War Scholar's Tome",
+        "names": {
+            "cn": "",
+            "en": "War Scholar's Tome",
+            "ru": "Фолиант воинственного мудреца",
+            "es": "Escrito de erudito de guerra",
+            "br": "Tomo do Pesquisador da Guerra",
+            "kr": "",
+            "fr": "Tome de l’historien des guerres",
+            "de": "Foliant des Kriegsgelehrten"
+        },
+        "icon": "inv_offhand_1h_maldraxxusquest_b_01",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 16132,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 3200,
+            "vers": 3800
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Offhand"
+    },
+    {
+        "id": 180790,
+        "name": "War Scholar's Stave",
+        "names": {
+            "cn": "",
+            "en": "War Scholar's Stave",
+            "ru": "Посох воинственного мудреца",
+            "es": "Báculo de erudito de guerra",
+            "br": "Báculo do Pesquisador da Guerra",
+            "kr": "",
+            "fr": "Bâton de l’historien des guerres",
+            "de": "Stab des Kriegsgelehrten"
+        },
+        "icon": "inv_staff_2h_maldraxxusquest_b_01",
+        "itemClass": 2,
+        "itemSubClass": 10,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 18121,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 3800,
+            "vers": 3200
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "2H Weapon"
+    },
+    {
+        "id": 180792,
+        "name": "War Scholar's Shortsword",
+        "names": {
+            "cn": "",
+            "en": "War Scholar's Shortsword",
+            "ru": "Короткий меч воинственного мудреца",
+            "es": "Espada corta de erudito de guerra",
+            "br": "Espada Curta do Pesquisador da Guerra",
+            "kr": "",
+            "fr": "Épée courte de l’historien des guerres",
+            "de": "Kurzschwert des Kriegsgelehrten"
+        },
+        "icon": "inv_sword_1h_maldraxxusquest_b_01",
+        "itemClass": 2,
+        "itemSubClass": 7,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 25370,
+            "stamina": 7889,
+            "haste": 3950,
+            "crit": 0,
+            "mastery": 3050,
+            "vers": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -26552,6 +37334,64 @@ export const itemDB = [
         "slot": "1H Weapon"
     },
     {
+        "id": 180818,
+        "name": "Bonefused Bonesaw",
+        "names": {
+            "cn": "",
+            "en": "Bonefused Bonesaw",
+            "ru": "Серрейтор из костяного сплава",
+            "es": "Sierra huesofundido",
+            "br": "Serra-de-osso Fundido em Ossos",
+            "kr": "",
+            "fr": "Scie à os amalgame-os",
+            "de": "Knochenverschmolzene Knochensäge"
+        },
+        "icon": "inv_knife_1h_maldraxxusquest_b_02_blue",
+        "itemClass": 2,
+        "itemSubClass": 15,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 25370,
+            "stamina": 7889,
+            "haste": 3350,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 3650
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "1H Weapon"
+    },
+    {
+        "id": 180826,
+        "name": "Bonefused Shortsword",
+        "names": {
+            "cn": "",
+            "en": "Bonefused Shortsword",
+            "ru": "Короткий меч из костяного сплава",
+            "es": "Espada corta huesofundido",
+            "br": "Espada Curta Fundida em Ossos",
+            "kr": "",
+            "fr": "Épée courte amalgame-os",
+            "de": "Knochenverschmolzenes Kurzschwert"
+        },
+        "icon": "inv_sword_1h_maldraxxusquest_b_01",
+        "itemClass": 2,
+        "itemSubClass": 7,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 25370,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 3650,
+            "vers": 3350
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "1H Weapon"
+    },
+    {
         "id": 180854,
         "name": "Competitor's Medallion",
         "names": {
@@ -26636,7 +37476,7 @@ export const itemDB = [
         },
         "dropLoc": "",
         "selectable": "true",
-        "slot": "Holdable"
+        "slot": "Offhand"
     },
     {
         "id": 180900,
@@ -28761,7 +39601,7 @@ export const itemDB = [
         },
         "dropLoc": "",
         "selectable": "true",
-        "slot": "Holdable"
+        "slot": "Offhand"
     },
     {
         "id": 181211,
@@ -28936,6 +39776,35 @@ export const itemDB = [
         "dropLoc": "",
         "selectable": "true",
         "slot": "2H Weapon"
+    },
+    {
+        "id": 181234,
+        "name": "Dutybound Spellblade",
+        "names": {
+            "cn": "",
+            "en": "Dutybound Spellblade",
+            "ru": "Чародейский клинок верного долгу",
+            "es": "Hoja de hechizo vinculada al deber",
+            "br": "Magilâmina Incumbente",
+            "kr": "",
+            "fr": "Sorcelame feudataire",
+            "de": "Pflichtgebundene Zauberklinge"
+        },
+        "icon": "inv_knife_1h_bastionquest_b_01",
+        "itemClass": 2,
+        "itemSubClass": 15,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 25370,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3500,
+            "mastery": 0,
+            "vers": 3500
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "1H Weapon"
     },
     {
         "id": 181333,
@@ -30318,6 +41187,93 @@ export const itemDB = [
         }
     },
     {
+        "id": 181529,
+        "name": "Ruthless Contender's Blade",
+        "names": {
+            "cn": "",
+            "en": "Ruthless Contender's Blade",
+            "ru": "Клинок безжалостного соперника",
+            "es": "Hoja de contendiente implacable",
+            "br": "Lâmina do Competidor Inclemente",
+            "kr": "",
+            "fr": "Lame du belligérant sans pitié",
+            "de": "Klinge des erbarmungslosen Streiters"
+        },
+        "icon": "inv_knife_1h_maldraxxusquest_b_02_blue",
+        "itemClass": 2,
+        "itemSubClass": 15,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 25370,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3050,
+            "mastery": 3950,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "1H Weapon"
+    },
+    {
+        "id": 181531,
+        "name": "Ruthless Contender's Spellblade",
+        "names": {
+            "cn": "",
+            "en": "Ruthless Contender's Spellblade",
+            "ru": "Чародейский клинок безжалостного соперника",
+            "es": "Hoja de hechizo de contendiente implacable",
+            "br": "Magilâmina do Competidor Inclemente",
+            "kr": "",
+            "fr": "Sorcelame du belligérant sans pitié",
+            "de": "Zauberklinge des erbarmungslosen Streiters"
+        },
+        "icon": "inv_sword_1h_maldraxxusquest_b_01",
+        "itemClass": 2,
+        "itemSubClass": 7,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 25370,
+            "stamina": 7889,
+            "haste": 3950,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 3050
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "1H Weapon"
+    },
+    {
+        "id": 181534,
+        "name": "Ruthless Contender's Rod",
+        "names": {
+            "cn": "",
+            "en": "Ruthless Contender's Rod",
+            "ru": "Магический посох безжалостного соперника",
+            "es": "Vara de contendiente implacable",
+            "br": "Bastão do Competidor Inclemente",
+            "kr": "",
+            "fr": "Bâtonnet du belligérant sans pitié",
+            "de": "Rute des erbarmungslosen Streiters"
+        },
+        "icon": "inv_staff_2h_maldraxxusquest_b_01",
+        "itemClass": 2,
+        "itemSubClass": 10,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 18121,
+            "stamina": 7889,
+            "haste": 3800,
+            "crit": 0,
+            "mastery": 3200,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "2H Weapon"
+    },
+    {
         "id": 181569,
         "name": "Spiritmender's Robe",
         "names": {
@@ -31330,7 +42286,7 @@ export const itemDB = [
         },
         "dropLoc": "",
         "selectable": "true",
-        "slot": "Holdable"
+        "slot": "Offhand"
     },
     {
         "id": 181636,
@@ -32403,7 +43359,7 @@ export const itemDB = [
         },
         "dropLoc": "",
         "selectable": "true",
-        "slot": "Holdable"
+        "slot": "Offhand"
     },
     {
         "id": 181688,
@@ -33260,6 +44216,93 @@ export const itemDB = [
         "dropLoc": "",
         "selectable": "true",
         "slot": "Chest"
+    },
+    {
+        "id": 182190,
+        "name": "Tauralus Hide Collar",
+        "names": {
+            "cn": "",
+            "en": "Tauralus Hide Collar",
+            "ru": "Ошейник из шкуры таурала",
+            "es": "Collera de pellejo de tauralus",
+            "br": "Colar de Couro de Tauralus",
+            "kr": "",
+            "fr": "Collier en peau de tauralus",
+            "de": "Tauraluslederreif"
+        },
+        "icon": "inv_helm_leather_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 2900,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 4100
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 182192,
+        "name": "Knee-Obstructing Legguards",
+        "names": {
+            "cn": "",
+            "en": "Knee-Obstructing Legguards",
+            "ru": "Набедренники с негнущимися коленями",
+            "es": "Musleras obstructoras de rodillas",
+            "br": "Guarda-pernas até o Joelho",
+            "kr": "",
+            "fr": "Garde-jambes à mi-cuisse",
+            "de": "Knielange Beinschützer"
+        },
+        "icon": "inv_pant_plate_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 2750,
+            "mastery": 4250,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 182205,
+        "name": "Scarab-Shell Faceguard",
+        "names": {
+            "cn": "",
+            "en": "Scarab-Shell Faceguard",
+            "ru": "Большой шлем из панциря скарабея",
+            "es": "Visera de caparazón de escarabajo",
+            "br": "Viseira de Carapaça de Escaravelho",
+            "kr": "",
+            "fr": "Ventaille en carapace de scarabée",
+            "de": "Skarabäuspanzergesichtsschutz"
+        },
+        "icon": "inv_mail_oribosquesting_b_01_helm",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 2900,
+            "vers": 4100
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
     },
     {
         "id": 182250,
@@ -34455,7 +45498,7 @@ export const itemDB = [
         },
         "dropLoc": "",
         "selectable": "true",
-        "slot": "Holdable"
+        "slot": "Offhand"
     },
     {
         "id": 182404,
@@ -34571,7 +45614,7 @@ export const itemDB = [
         },
         "dropLoc": "",
         "selectable": "true",
-        "slot": "Holdable"
+        "slot": "Offhand"
     },
     {
         "id": 182417,
@@ -34687,7 +45730,7 @@ export const itemDB = [
         },
         "dropLoc": "",
         "selectable": "true",
-        "slot": "Holdable"
+        "slot": "Offhand"
     },
     {
         "id": 182451,
@@ -37609,6 +48652,35 @@ export const itemDB = [
         "slot": "Neck"
     },
     {
+        "id": 183120,
+        "name": "Partially Digested Encyclopedia",
+        "names": {
+            "cn": "",
+            "en": "Partially Digested Encyclopedia",
+            "ru": "Полупереваренная энциклопедия",
+            "es": "Enciclopedia parcialmente digerida",
+            "br": "Enciclopédia Parcialmente Digerida",
+            "kr": "",
+            "fr": "Encyclopédie partiellement digérée",
+            "de": "Teilweise verdaute Enzyklopädie"
+        },
+        "icon": "inv_offhand_1h_maldraxxusquest_b_01",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 16132,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 2450,
+            "mastery": 0,
+            "vers": 4550
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Offhand"
+    },
+    {
         "id": 183418,
         "name": "Hopebreaker's Boots",
         "names": {
@@ -37751,7 +48823,7 @@ export const itemDB = [
         },
         "dropLoc": "",
         "selectable": "true",
-        "slot": "Holdable"
+        "slot": "Offhand"
     },
     {
         "id": 183443,
@@ -37810,6 +48882,35 @@ export const itemDB = [
         "dropLoc": "",
         "selectable": "true",
         "slot": "1H Weapon"
+    },
+    {
+        "id": 183516,
+        "name": "Stained Bonefused Mantle",
+        "names": {
+            "cn": "",
+            "en": "Stained Bonefused Mantle",
+            "ru": "Усиленное костяное оплечье",
+            "es": "Manto de huesofundido manchado",
+            "br": "Dragonas Fundidas em Ossos Maculadas",
+            "kr": "",
+            "fr": "Mantelet amalgame-os taché",
+            "de": "Befleckter knochenverschmolzener Mantel"
+        },
+        "icon": "inv_shoulder_cloth_necromancer_b_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 2900,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 4100
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
     },
     {
         "id": 183524,
@@ -39998,7 +51099,7 @@ export const itemDB = [
         },
         "dropLoc": "",
         "selectable": "true",
-        "slot": "Holdable"
+        "slot": "Offhand"
     },
     {
         "id": 183613,
@@ -41484,6 +52585,238 @@ export const itemDB = [
         "slot": "Shoulder"
     },
     {
+        "id": 183700,
+        "name": "Forgotten Summoner's Shoulderpads",
+        "names": {
+            "cn": "",
+            "en": "Forgotten Summoner's Shoulderpads",
+            "ru": "Наплечье забытого призывателя",
+            "es": "Hombreras de invocador olvidado",
+            "br": "Ombreiras do Evocador Esquecido",
+            "kr": "",
+            "fr": "Protège-épaules de l’invocateur oublié",
+            "de": "Vergessene Schulterpolster des Beschwörers"
+        },
+        "icon": "inv_shoulder_cloth_necromancer_b_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 2750,
+            "mastery": 0,
+            "vers": 4250
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 183720,
+        "name": "Dredbatskin Jerkin",
+        "names": {
+            "cn": "",
+            "en": "Dredbatskin Jerkin",
+            "ru": "Жакет из шкуры жуткого нетопыря",
+            "es": "Chaleco de piel de murciélago aterrador",
+            "br": "Gibão de Pele de Deimorcego",
+            "kr": "",
+            "fr": "Gilet en peau de chiropteffroi",
+            "de": "Fleddermaushautwams"
+        },
+        "icon": "inv_chest_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 2600,
+            "mastery": 4400,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 183729,
+        "name": "Filth-Splattered Headcover",
+        "names": {
+            "cn": "",
+            "en": "Filth-Splattered Headcover",
+            "ru": "Испачканный жижей головной убор",
+            "es": "Cimera llena de inmundicia",
+            "br": "Barrete Respingado de Imundície",
+            "kr": "",
+            "fr": "Bassinet encrassé",
+            "de": "Dreckverspritzte Kopfbedeckung"
+        },
+        "icon": "inv_helm_leather_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 4550,
+            "vers": 2450
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 183730,
+        "name": "Sinstone-Studded Greathelm",
+        "names": {
+            "cn": "",
+            "en": "Sinstone-Studded Greathelm",
+            "ru": "Укрепленный камнями грехов большой шлем",
+            "es": "Gran yelmo con incrustaciones de piedras del pecado",
+            "br": "Grande Elmo Cravejado de Pedras de Pecado",
+            "kr": "",
+            "fr": "Grand heaume clouté de stèles du vice",
+            "de": "Sündensteinbesetzter Großhelm"
+        },
+        "icon": "inv_helm_plate_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 2900,
+            "mastery": 0,
+            "vers": 4100
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 183731,
+        "name": "Smolder-Tempered Legplates",
+        "names": {
+            "cn": "",
+            "en": "Smolder-Tempered Legplates",
+            "ru": "Ножные латы медленной закалки",
+            "es": "Quijotes templados a fuego",
+            "br": "Coxotes Temperados no Abrasar",
+            "kr": "",
+            "fr": "Cuissards pyrotrempés",
+            "de": "Glutgehärtete Beinplatten"
+        },
+        "icon": "inv_pant_plate_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 2600,
+            "vers": 4400
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 183732,
+        "name": "Sinstone-Linked Greaves",
+        "names": {
+            "cn": "",
+            "en": "Sinstone-Linked Greaves",
+            "ru": "Наголенники с камнями грехов",
+            "es": "Grebas vinculadas a piedra del pecado",
+            "br": "Grevas Articuladas com Pedras de Pecado",
+            "kr": "",
+            "fr": "Grèves ornées de stèles du vice",
+            "de": "Sündensteinverbundene Beinschützer"
+        },
+        "icon": "inv_mail_oribosquesting_b_01_pants",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 2450,
+            "crit": 0,
+            "mastery": 4550,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 183735,
+        "name": "Rogue Sinstealer's Mantle",
+        "names": {
+            "cn": "",
+            "en": "Rogue Sinstealer's Mantle",
+            "ru": "Оплечье негодного похитителя грехов",
+            "es": "Manto de robapecados pícaro",
+            "br": "Dragonas do Rouba-pecado Ladino",
+            "kr": "",
+            "fr": "Mantelet de vole-vice solitaire",
+            "de": "Mantel des abtrünnigen Sündendiebs"
+        },
+        "icon": "inv_shoulder_cloth_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 4250,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 2750
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 183736,
+        "name": "Pride Resistant Handwraps",
+        "names": {
+            "cn": "",
+            "en": "Pride Resistant Handwraps",
+            "ru": "Гордынеустойчивые повязки",
+            "es": "Manijas de resistencia al orgullo",
+            "br": "Mitenes Resistentes ao Orgulho",
+            "kr": "",
+            "fr": "Protège-mains anti-fierté",
+            "de": "Stolzresistente Handlappen"
+        },
+        "icon": "inv_glove_cloth_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 2900,
+            "crit": 4100,
+            "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
         "id": 183737,
         "name": "Aatron's Stone Girdle",
         "names": {
@@ -41542,6 +52875,105 @@ export const itemDB = [
         "slot": "Wrist"
     },
     {
+        "id": 183849,
+        "name": "Soulsifter Root",
+        "names": {
+            "cn": "",
+            "en": "Soulsifter Root",
+            "ru": "Корень просеивателя душ",
+            "es": "Raíz ciernealmas",
+            "br": "Raiz de Peneira-d'alma",
+            "kr": "",
+            "fr": "Racine tamisâme",
+            "de": "Seelensieberwurzeln"
+        },
+        "icon": "inv_trinket_ardenweald_01_white",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 6666,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Trinket",
+        "effect": {
+            "type": "trinket",
+            "name": "Soulsifter Root"
+        }
+    },
+    {
+        "id": 183850,
+        "name": "Wakener's Frond",
+        "names": {
+            "cn": "",
+            "en": "Wakener's Frond",
+            "ru": "Побег пробудителя",
+            "es": "Fronda del heraldo",
+            "br": "Fronde do Arauto do Despertar",
+            "kr": "",
+            "fr": "Fronde d’éveilleur",
+            "de": "Wedel des Erweckers"
+        },
+        "icon": "inv_trinket_ardenweald_02_purple",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 6666,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Trinket",
+        "effect": {
+            "type": "trinket",
+            "name": "Wakener's Frond"
+        }
+    },
+    {
+        "id": 183851,
+        "name": "Withergrove Shardling",
+        "names": {
+            "cn": "",
+            "en": "Withergrove Shardling",
+            "ru": "Осколыш племени Иссохшей рощи",
+            "es": "Fragmentizo sotomarchito",
+            "br": "Estilha do Bosque Murcho",
+            "kr": "",
+            "fr": "Éclaté fanebosquet",
+            "de": "Dörrhainsteinling"
+        },
+        "icon": "inv__drustvar",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 6666,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Trinket",
+        "effect": {
+            "type": "trinket",
+            "name": "Withergrove Shardling"
+        }
+    },
+    {
         "id": 183970,
         "name": "Royal Arcanist's Ritual Blade",
         "names": {
@@ -41564,6 +52996,35 @@ export const itemDB = [
             "haste": 0,
             "crit": 4550,
             "mastery": 2450,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "1H Weapon"
+    },
+    {
+        "id": 183971,
+        "name": "Depraved Ritualist's Kris",
+        "names": {
+            "cn": "",
+            "en": "Depraved Ritualist's Kris",
+            "ru": "Крис порочного ритуалиста",
+            "es": "Kris de ritualista depravado",
+            "br": "Cris Ritualística Depravada",
+            "kr": "",
+            "fr": "Kriss de ritualiste dépravé",
+            "de": "Kris des verkommenen Ritualisten"
+        },
+        "icon": "inv_knife_1h_revendreth_b_01",
+        "itemClass": 2,
+        "itemSubClass": 15,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 25370,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
             "vers": 0
         },
         "dropLoc": "",
@@ -43061,6 +54522,35 @@ export const itemDB = [
         "slot": "Neck"
     },
     {
+        "id": 184165,
+        "name": "Seal of Fordring",
+        "names": {
+            "cn": "",
+            "en": "Seal of Fordring",
+            "ru": "Печать Фордринга",
+            "es": "Sello de Vadín",
+            "br": "Selo de Fordring",
+            "kr": "",
+            "fr": "Sceau de Fordring",
+            "de": "Fordrings Siegel"
+        },
+        "icon": "inv_jewelry_ring_05",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "haste": 6000,
+            "crit": 6000,
+            "mastery": 6000,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Finger"
+    },
+    {
         "id": 184170,
         "name": "Doubtweaver's Handwraps",
         "names": {
@@ -43199,6 +54689,122 @@ export const itemDB = [
         "dropLoc": "",
         "selectable": "true",
         "slot": "Hands"
+    },
+    {
+        "id": 184174,
+        "name": "Clasp of Death",
+        "names": {
+            "cn": "",
+            "en": "Clasp of Death",
+            "ru": "Застежка смерти",
+            "es": "Broche de muerte",
+            "br": "Fecho da Morte",
+            "kr": "",
+            "fr": "Fermoir de la mort",
+            "de": "Schlinge des Todes"
+        },
+        "icon": "inv_ring_maldraxxus_01_violet",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "haste": 5000,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 12500
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Finger"
+    },
+    {
+        "id": 184175,
+        "name": "Bone-Blistering Wand",
+        "names": {
+            "cn": "",
+            "en": "Bone-Blistering Wand",
+            "ru": "Обжигающий кости жезл",
+            "es": "Varita abrasahuesos",
+            "br": "Varinha Escalda-ossos",
+            "kr": "",
+            "fr": "Baguette d’os et cloques",
+            "de": "Knochenversengender Zauberstab"
+        },
+        "icon": "inv_wand_1h_maldraxxusquest_b_01",
+        "itemClass": 2,
+        "itemSubClass": 19,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 25370,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 2450,
+            "mastery": 0,
+            "vers": 4550
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "1H Weapon"
+    },
+    {
+        "id": 184180,
+        "name": "Leeda's Unrefined Mask",
+        "names": {
+            "cn": "",
+            "en": "Leeda's Unrefined Mask",
+            "ru": "Грубая маска Леды",
+            "es": "Máscara sin pulir de Leeda",
+            "br": "Máscara Rudimentar de Leeda",
+            "kr": "",
+            "fr": "Masque rudimentaire de Leeda",
+            "de": "Leedas unbearbeitete Maske"
+        },
+        "icon": "inv_helm_cloth_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 4250,
+            "mastery": 0,
+            "vers": 2750
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 184185,
+        "name": "Grunge-Caked Collarbone",
+        "names": {
+            "cn": "",
+            "en": "Grunge-Caked Collarbone",
+            "ru": "Отвратительная ключица",
+            "es": "Clavícula llena de roña",
+            "br": "Clavícula Recoberta de Imundícies",
+            "kr": "",
+            "fr": "Clavicule couverte de crasse",
+            "de": "Dreckverkrustetes Schlüsselbein"
+        },
+        "icon": "inv_neck_maldraxxus_01_gold",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "haste": 7250,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 10250
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Neck"
     },
     {
         "id": 184211,
@@ -43430,7 +55036,7 @@ export const itemDB = [
         },
         "dropLoc": "",
         "selectable": "true",
-        "slot": "Holdable"
+        "slot": "Offhand"
     },
     {
         "id": 184247,
@@ -43546,7 +55152,7 @@ export const itemDB = [
         },
         "dropLoc": "",
         "selectable": "true",
-        "slot": "Holdable"
+        "slot": "Offhand"
     },
     {
         "id": 184259,
@@ -43694,6 +55300,387 @@ export const itemDB = [
         "slot": "1H Weapon"
     },
     {
+        "id": 184279,
+        "name": "Siphoning Blood-Drinker",
+        "names": {
+            "cn": "",
+            "en": "Siphoning Blood-Drinker",
+            "ru": "Вытягивающий кровопийца",
+            "es": "Bebesangre succionador",
+            "br": "Bebe-sangue Sifonante",
+            "kr": "",
+            "fr": "Buveur de sang siphonneur",
+            "de": "Entziehender Bluttrinker"
+        },
+        "icon": "inv_misc_ahnqirajtrinket_03",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 6666,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Trinket",
+        "effect": {
+            "type": "trinket",
+            "name": "Siphoning Blood-Drinker"
+        }
+    },
+    {
+        "id": 184280,
+        "name": "Dapper Threads",
+        "names": {
+            "cn": "",
+            "en": "Dapper Threads",
+            "ru": "Плетенка живчика",
+            "es": "Trapos elegantes",
+            "br": "Trapos Chiques",
+            "kr": "",
+            "fr": "Fils surfins",
+            "de": "Todschicke Kluft"
+        },
+        "icon": "inv_robe_cloth_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 4250,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 2750
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 184285,
+        "name": "Boneclutched Shackles",
+        "names": {
+            "cn": "",
+            "en": "Boneclutched Shackles",
+            "ru": "Укрепленные костью кандалы",
+            "es": "Grilletes huesudos",
+            "br": "Grilhões Revestidos de Ossos",
+            "kr": "",
+            "fr": "Entraves marquetées d’os",
+            "de": "Knochenumfasste Fesseln"
+        },
+        "icon": "inv_bracer_plate_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 2900,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 4100
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Wrist"
+    },
+    {
+        "id": 184287,
+        "name": "Scum-Caked Epaulettes",
+        "names": {
+            "cn": "",
+            "en": "Scum-Caked Epaulettes",
+            "ru": "Украшенные отбросами эполеты",
+            "es": "Charreteras cubiertas de roña",
+            "br": "Paletas Ludrosas",
+            "kr": "",
+            "fr": "Épaulettes couvertes de crasse",
+            "de": "Schlackeverkrustete Schulterklappen"
+        },
+        "icon": "inv_mail_oribosquesting_b_01_shoulder",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 2900,
+            "mastery": 0,
+            "vers": 4100
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 184289,
+        "name": "Spindlefang Spellblade",
+        "names": {
+            "cn": "",
+            "en": "Spindlefang Spellblade",
+            "ru": "Чародейский клинок - хелицера",
+            "es": "Hoja de hechizo husocolmillo",
+            "br": "Magilâmina Presa-de-roca",
+            "kr": "",
+            "fr": "Sorcelame fusecroc",
+            "de": "Spindelzahnzauberklinge"
+        },
+        "icon": "inv_sword_1h_maldraxxusquest_b_01",
+        "itemClass": 2,
+        "itemSubClass": 7,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 25370,
+            "stamina": 7889,
+            "haste": 2900,
+            "crit": 0,
+            "mastery": 4100,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "1H Weapon"
+    },
+    {
+        "id": 184290,
+        "name": "Blood-Dyed Bonesaw",
+        "names": {
+            "cn": "",
+            "en": "Blood-Dyed Bonesaw",
+            "ru": "Обагренная кровью костяная пила",
+            "es": "Sierrahuesos teñida de sangre",
+            "br": "Serra-de-osso Tingida de Sangue",
+            "kr": "",
+            "fr": "Scie à os ensanglantée",
+            "de": "Blutgefärbte Knochensäge"
+        },
+        "icon": "inv_knife_1h_maldraxxusquest_b_02_blue",
+        "itemClass": 2,
+        "itemSubClass": 15,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 25370,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 4550,
+            "mastery": 2450,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "1H Weapon"
+    },
+    {
+        "id": 184291,
+        "name": "Tempered Boneplate Waistguard",
+        "names": {
+            "cn": "",
+            "en": "Tempered Boneplate Waistguard",
+            "ru": "Воинский пояс из закаленной кости",
+            "es": "Guardarrenes de placas óseas templadas",
+            "br": "Cinta de Osteoplacas Temperada",
+            "kr": "",
+            "fr": "Sangle en plaques d’os trempées",
+            "de": "Gehärteter Knochenplattentaillenschutz"
+        },
+        "icon": "inv_belt_plate_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 2750,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 4250
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Waist"
+    },
+    {
+        "id": 184295,
+        "name": "Eternal Daybreak Necklace",
+        "names": {
+            "cn": "",
+            "en": "Eternal Daybreak Necklace",
+            "ru": "Ожерелье вечного рассвета",
+            "es": "Collar de amanecer eterno",
+            "br": "Colar do Amanhecer Eterno",
+            "kr": "",
+            "fr": "Collier de l’aube éternelle",
+            "de": "Halskette des ewigen Tagesanbruchs"
+        },
+        "icon": "inv_neck_bastion_01_silver",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 10750,
+            "mastery": 6750,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Neck"
+    },
+    {
+        "id": 184298,
+        "name": "Amalgamated Forsworn's Journal",
+        "names": {
+            "cn": "",
+            "en": "Amalgamated Forsworn's Journal",
+            "ru": "Журнал амальгамированного раскольника",
+            "es": "Diario del abjurante amalgamado",
+            "br": "Diário de Perjuro Amalgamado",
+            "kr": "",
+            "fr": "Journal de désavoué amalgamé",
+            "de": "Zusammengesetztes Verschmähtentagebuch"
+        },
+        "icon": "inv_offhand_1h_maldraxxusquest_b_01",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 16132,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 4400,
+            "mastery": 2600,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Offhand"
+    },
+    {
+        "id": 184299,
+        "name": "Goresoaked Carapace",
+        "names": {
+            "cn": "",
+            "en": "Goresoaked Carapace",
+            "ru": "Покрытый старой кровью панцирь",
+            "es": "Caparazón empapado en sangre",
+            "br": "Carapaça Encharcada de Sangue",
+            "kr": "",
+            "fr": "Carapace couverte de boyaux",
+            "de": "Blutverschmierter Brustpanzer"
+        },
+        "icon": "inv_chest_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 2450,
+            "crit": 4550,
+            "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 184300,
+        "name": "Fused Spineguard",
+        "names": {
+            "cn": "",
+            "en": "Fused Spineguard",
+            "ru": "Насыщенная накидка",
+            "es": "Guardaspina fusionado",
+            "br": "Guarda-espinha Fundido",
+            "kr": "",
+            "fr": "Garde-échine fusionné",
+            "de": "Verschmolzener Rückgratschützer"
+        },
+        "icon": "inv_cape_cloth_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 4550,
+            "mastery": 0,
+            "vers": 2450
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Back"
+    },
+    {
+        "id": 184301,
+        "name": "Twenty-Loop Violet Girdle",
+        "names": {
+            "cn": "",
+            "en": "Twenty-Loop Violet Girdle",
+            "ru": "Фиолетовый ремень 12-ти колец",
+            "es": "Faja violeta de veinte lazadas",
+            "br": "Cinturão Violeta das Vinte Voltas",
+            "kr": "",
+            "fr": "Ceinturon violet à vingt boucles",
+            "de": "Violetter Gurt mit zwanzig Schlaufen"
+        },
+        "icon": "inv_belt_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 2450,
+            "mastery": 0,
+            "vers": 4550
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Waist"
+    },
+    {
+        "id": 184302,
+        "name": "Residue-Coated Muck Waders",
+        "names": {
+            "cn": "",
+            "en": "Residue-Coated Muck Waders",
+            "ru": "Покрытые осадком жижеступы",
+            "es": "Perniles de mugre cubiertos de residuos",
+            "br": "Galochas de Lodo Cobertas de Resíduo",
+            "kr": "",
+            "fr": "Godillots bourbeux recouverts de résidus",
+            "de": "Unratstarrende Dreckwatstiefel"
+        },
+        "icon": "inv_mail_oribosquesting_b_01_boots",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 2750,
+            "mastery": 4250,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Feet"
+    },
+    {
         "id": 184311,
         "name": "Sinful Gladiator's Greatcloak",
         "names": {
@@ -43721,6 +55708,151 @@ export const itemDB = [
         "dropLoc": "",
         "selectable": "true",
         "slot": "Back"
+    },
+    {
+        "id": 184471,
+        "name": "Guidenote Dagger",
+        "names": {
+            "cn": "",
+            "en": "Guidenote Dagger",
+            "ru": "Кинжал путеискателя",
+            "es": "Daga guiada",
+            "br": "Adaga Iniciante",
+            "kr": "",
+            "fr": "Dague guidenote",
+            "de": "Leittondolch"
+        },
+        "icon": "inv_knife_1h_bastionquest_b_01",
+        "itemClass": 2,
+        "itemSubClass": 15,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 25370,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3500,
+            "mastery": 0,
+            "vers": 3500
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "1H Weapon"
+    },
+    {
+        "id": 184515,
+        "name": "Sacred Grove Sabatons",
+        "names": {
+            "cn": "",
+            "en": "Sacred Grove Sabatons",
+            "ru": "Башмаки священной рощи",
+            "es": "Escarpes de la Arboleda Sagrada",
+            "br": "Escarpes do Bosque Sagrado",
+            "kr": "",
+            "fr": "Solerets du bosquet Sacré",
+            "de": "Heilige Hainsabatons"
+        },
+        "icon": "inv_boot_plate_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3950,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 3050
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Feet"
+    },
+    {
+        "id": 184516,
+        "name": "Mistveil Sandals",
+        "names": {
+            "cn": "",
+            "en": "Mistveil Sandals",
+            "ru": "Сандалии Туманной Завесы",
+            "es": "Sandalias Velo de Niebla",
+            "br": "Sandálias do Véu da Névoa",
+            "kr": "",
+            "fr": "Sandales voile-de-brume",
+            "de": "Nebelschleiersandalen"
+        },
+        "icon": "inv_boot_cloth_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 3800,
+            "vers": 3200
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Feet"
+    },
+    {
+        "id": 184517,
+        "name": "Gladechewer Footguards",
+        "names": {
+            "cn": "",
+            "en": "Gladechewer Footguards",
+            "ru": "Ботинки древоточца",
+            "es": "Guardapiés de muerdeclaros",
+            "br": "Guarda-pés Arrasador de Clareira",
+            "kr": "",
+            "fr": "Protège-tibias mâche-prairie",
+            "de": "Fußschützer der Hainmalmer"
+        },
+        "icon": "inv_mail_oribosquesting_b_01_boots",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3050,
+            "mastery": 3950,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Feet"
+    },
+    {
+        "id": 184518,
+        "name": "Boots of the Oaken Assembly",
+        "names": {
+            "cn": "",
+            "en": "Boots of the Oaken Assembly",
+            "ru": "Сапоги Дубовой ассамблеи",
+            "es": "Botas de la Galería de Roble",
+            "br": "Botas da Confraria do Carvalho",
+            "kr": "",
+            "fr": "Bottes de l’assemblée des Chênes",
+            "de": "Stiefel des Eichengehölzes"
+        },
+        "icon": "inv_boot_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3650,
+            "crit": 3350,
+            "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Feet"
     },
     {
         "id": 184548,
@@ -44011,6 +56143,1195 @@ export const itemDB = [
         "dropLoc": "",
         "selectable": "true",
         "slot": "Wrist"
+    },
+    {
+        "id": 184712,
+        "name": "Refulgent Raiment",
+        "names": {
+            "cn": "",
+            "en": "Refulgent Raiment",
+            "ru": "Блистательное одеяние",
+            "es": "Vestiduras refulgentes",
+            "br": "Indumentária Refulgente",
+            "kr": "",
+            "fr": "Grande tenue éclatante",
+            "de": "Strahlende Gewandung"
+        },
+        "icon": "inv_robe_cloth_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3800,
+            "mastery": 3200,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 184713,
+        "name": "Refulgent Cuirass",
+        "names": {
+            "cn": "",
+            "en": "Refulgent Cuirass",
+            "ru": "Блистательная кираса",
+            "es": "Loriga refulgente",
+            "br": "Corselete Refulgente",
+            "kr": "",
+            "fr": "Cuirasse éclatante",
+            "de": "Strahlender Kürass"
+        },
+        "icon": "inv_chest_plate_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3350,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 3650
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 184714,
+        "name": "Refulgent Chestguard",
+        "names": {
+            "cn": "",
+            "en": "Refulgent Chestguard",
+            "ru": "Блистательный нагрудник",
+            "es": "Coselete refulgente",
+            "br": "Couraça Refulgente",
+            "kr": "",
+            "fr": "Corselet éclatant",
+            "de": "Strahlender Brustschutz"
+        },
+        "icon": "inv_mail_oribosquesting_b_01_chest",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3200,
+            "mastery": 3800,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 184715,
+        "name": "Refulgent Tunic",
+        "names": {
+            "cn": "",
+            "en": "Refulgent Tunic",
+            "ru": "Блистательный мундир",
+            "es": "Guerrera refulgente",
+            "br": "Túnica Refulgente",
+            "kr": "",
+            "fr": "Tunique éclatante",
+            "de": "Strahlende Tunika"
+        },
+        "icon": "inv_chest_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3200,
+            "mastery": 0,
+            "vers": 3800
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 184717,
+        "name": "Lord Chamberlain's Cloak",
+        "names": {
+            "cn": "",
+            "en": "Lord Chamberlain's Cloak",
+            "ru": "Плащ Лорда-камергера",
+            "es": "Capa del lord chambelán",
+            "br": "Manto do Lorde Camarista",
+            "kr": "",
+            "fr": "Cape du grand chambellan",
+            "de": "Umhang des Obersten Kämmerers"
+        },
+        "icon": "inv_cape_mail_oribosdungeon_c_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3200,
+            "crit": 3800,
+            "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Back"
+    },
+    {
+        "id": 184720,
+        "name": "Reflective Waistguard",
+        "names": {
+            "cn": "",
+            "en": "Reflective Waistguard",
+            "ru": "Отражающий воинский пояс",
+            "es": "Guardarrenes reflectante",
+            "br": "Cinta Reflexiva",
+            "kr": "",
+            "fr": "Sangle réfléchissante",
+            "de": "Reflexiver Taillenschutz"
+        },
+        "icon": "inv_belt_plate_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3850,
+            "crit": 3150,
+            "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Waist"
+    },
+    {
+        "id": 184721,
+        "name": "Flourished Cummerbund",
+        "names": {
+            "cn": "",
+            "en": "Flourished Cummerbund",
+            "ru": "Цветастый камербанд",
+            "es": "Faja de frac florecida",
+            "br": "Faixa Florescida",
+            "kr": "",
+            "fr": "Large ceinture à fioritures",
+            "de": "Verschnörkelter Kummerbund"
+        },
+        "icon": "inv_belt_cloth_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3850,
+            "crit": 3150,
+            "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Waist"
+    },
+    {
+        "id": 184722,
+        "name": "Ostentatious Buckle",
+        "names": {
+            "cn": "",
+            "en": "Ostentatious Buckle",
+            "ru": "Щегольской пояс с пряжкой",
+            "es": "Hebilla ostentosa",
+            "br": "Fivela Ostendadora",
+            "kr": "",
+            "fr": "Boucle ostentatoire",
+            "de": "Opulente Schnalle"
+        },
+        "icon": "inv_mail_oribosquesting_b_01_buckle",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3850,
+            "crit": 3150,
+            "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Waist"
+    },
+    {
+        "id": 184723,
+        "name": "Bedazzled Belt",
+        "names": {
+            "cn": "",
+            "en": "Bedazzled Belt",
+            "ru": "Ослепительный пояс",
+            "es": "Cinturón deslumbrante",
+            "br": "Cinto Deslumbrante",
+            "kr": "",
+            "fr": "Ceinture éblouissante",
+            "de": "Funkelnder Gürtel"
+        },
+        "icon": "inv_belt_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3850,
+            "crit": 3150,
+            "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Waist"
+    },
+    {
+        "id": 184724,
+        "name": "Courtier's Pauldron",
+        "names": {
+            "cn": "",
+            "en": "Courtier's Pauldron",
+            "ru": "Наплечье придворного",
+            "es": "Espaldar de cortesano",
+            "br": "Espaldares do Cortesão",
+            "kr": "",
+            "fr": "Espauliers de courtisan",
+            "de": "Höflingsschulterstück"
+        },
+        "icon": "inv_shoulder_leather_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3150,
+            "mastery": 0,
+            "vers": 3850
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 184725,
+        "name": "Courtier's Shoulderplate",
+        "names": {
+            "cn": "",
+            "en": "Courtier's Shoulderplate",
+            "ru": "Наплечные пластины придворного",
+            "es": "Hombrera de cortesano",
+            "br": "Placa d'Ombros do Cortesão",
+            "kr": "",
+            "fr": "Plaques d’épaule de courtisan",
+            "de": "Höflingsschulterplatte"
+        },
+        "icon": "inv_shoulder_plate_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3150,
+            "mastery": 0,
+            "vers": 3850
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 184726,
+        "name": "Courtier's Mantle",
+        "names": {
+            "cn": "",
+            "en": "Courtier's Mantle",
+            "ru": "Оплечье придворного",
+            "es": "Manto de cortesano",
+            "br": "Dragonas do Cortesão",
+            "kr": "",
+            "fr": "Mantelet de courtisan",
+            "de": "Höflingsmantel"
+        },
+        "icon": "inv_shoulder_cloth_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3150,
+            "mastery": 0,
+            "vers": 3850
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 184727,
+        "name": "Courtier's Shoulderguard",
+        "names": {
+            "cn": "",
+            "en": "Courtier's Shoulderguard",
+            "ru": "Наплечные щитки придворного",
+            "es": "Guardahombros de cortesano",
+            "br": "Guarda-ombros do Cortesão",
+            "kr": "",
+            "fr": "Garde-épaules de courtisan",
+            "de": "Höflingsschulterschutz"
+        },
+        "icon": "inv_mail_oribosquesting_b_01_shoulder",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3150,
+            "mastery": 0,
+            "vers": 3850
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 184728,
+        "name": "Casque of the Path",
+        "names": {
+            "cn": "",
+            "en": "Casque of the Path",
+            "ru": "Открытый шлем Пути",
+            "es": "Borgoñota del camino",
+            "br": "Casquete do Caminho",
+            "kr": "",
+            "fr": "Cabasset de la voie",
+            "de": "Helm des Pfads"
+        },
+        "icon": "inv_helm_plate_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3850,
+            "mastery": 3150,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 184729,
+        "name": "Masque of the Path",
+        "names": {
+            "cn": "",
+            "en": "Masque of the Path",
+            "ru": "Маска Пути",
+            "es": "Máscara del camino",
+            "br": "Máscara do Caminho",
+            "kr": "",
+            "fr": "Masque de la voie",
+            "de": "Maske des Pfads"
+        },
+        "icon": "inv_helm_cloth_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3850,
+            "mastery": 3150,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 184730,
+        "name": "Cowl of the Path",
+        "names": {
+            "cn": "",
+            "en": "Cowl of the Path",
+            "ru": "Клобук Пути",
+            "es": "Capucha del camino",
+            "br": "Capucho do Caminho",
+            "kr": "",
+            "fr": "Capuche de la voie",
+            "de": "Gugel des Pfads"
+        },
+        "icon": "inv_mail_oribosquesting_b_01_helm",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3850,
+            "mastery": 3150,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 184731,
+        "name": "Gorget of the Path",
+        "names": {
+            "cn": "",
+            "en": "Gorget of the Path",
+            "ru": "Горжет Пути",
+            "es": "Gorjal del camino",
+            "br": "Gorjal do Caminho",
+            "kr": "",
+            "fr": "Gorgerin de la voie",
+            "de": "Kehlstück des Pfads"
+        },
+        "icon": "inv_helm_leather_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3850,
+            "mastery": 3150,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 184732,
+        "name": "Manacles of Burden",
+        "names": {
+            "cn": "",
+            "en": "Manacles of Burden",
+            "ru": "Кандалы бремени",
+            "es": "Esposas de carga",
+            "br": "Algemas do Fardo",
+            "kr": "",
+            "fr": "Menottes de fardeau",
+            "de": "Schellen der Last"
+        },
+        "icon": "inv_bracer_cloth_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3850,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 3150
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Wrist"
+    },
+    {
+        "id": 184733,
+        "name": "Wristclamps of Remorse",
+        "names": {
+            "cn": "",
+            "en": "Wristclamps of Remorse",
+            "ru": "Запястные щитки раскаяния",
+            "es": "Sujetamuñecas de remordimiento",
+            "br": "Punheleiras do Remorso",
+            "kr": "",
+            "fr": "Serre-poignets de remords",
+            "de": "Gelenkklammern der Reue"
+        },
+        "icon": "inv_bracer_plate_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3850,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 3150
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Wrist"
+    },
+    {
+        "id": 184734,
+        "name": "Bracers of Regret",
+        "names": {
+            "cn": "",
+            "en": "Bracers of Regret",
+            "ru": "Наручи сожалений",
+            "es": "Brazales de pesar",
+            "br": "Braçadeiras do Arrependimento",
+            "kr": "",
+            "fr": "Brassards de regret",
+            "de": "Armschienen des Bedauerns"
+        },
+        "icon": "inv_mail_oribosquesting_b_01_bracer",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3850,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 3150
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Wrist"
+    },
+    {
+        "id": 184735,
+        "name": "Wristclasps of Shame",
+        "names": {
+            "cn": "",
+            "en": "Wristclasps of Shame",
+            "ru": "Запястные щитки стыда",
+            "es": "Fíbula de vergüenza",
+            "br": "Punheleiras da Vergonha",
+            "kr": "",
+            "fr": "Serre-poignets de honte",
+            "de": "Gelenkschnallen der Schande"
+        },
+        "icon": "inv_bracer_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3850,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 3150
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Wrist"
+    },
+    {
+        "id": 184736,
+        "name": "Robe of the March Warden",
+        "names": {
+            "cn": "",
+            "en": "Robe of the March Warden",
+            "ru": "Одеяние болотного стража",
+            "es": "Toga del celador de la marca",
+            "br": "Veste do Guardião da Marcha",
+            "kr": "",
+            "fr": "Robe de gardien de la marche",
+            "de": "Robe des Markwächters"
+        },
+        "icon": "inv_robe_cloth_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3150,
+            "crit": 0,
+            "mastery": 3850,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 184737,
+        "name": "Chestplate of the March Warden",
+        "names": {
+            "cn": "",
+            "en": "Chestplate of the March Warden",
+            "ru": "Бригантина болотного стража",
+            "es": "Peto del celador de la marca",
+            "br": "Guarda-peito do Guardião da Marcha",
+            "kr": "",
+            "fr": "Pansière de gardien de la marche",
+            "de": "Brustplatte des Markwächters"
+        },
+        "icon": "inv_chest_plate_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3150,
+            "crit": 0,
+            "mastery": 3850,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 184738,
+        "name": "Chainmail of the March Warden",
+        "names": {
+            "cn": "",
+            "en": "Chainmail of the March Warden",
+            "ru": "Кольчуга болотного стража",
+            "es": "Malla de anillas del celador de la marca",
+            "br": "Malha de Anéis do Guardião da Marcha",
+            "kr": "",
+            "fr": "Cotte de mailles de gardien de la marche",
+            "de": "Kettenpanzer des Markwächters"
+        },
+        "icon": "inv_mail_oribosquesting_b_01_chest",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3150,
+            "crit": 0,
+            "mastery": 3850,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 184739,
+        "name": "Pallid Stitched Gloves",
+        "names": {
+            "cn": "",
+            "en": "Pallid Stitched Gloves",
+            "ru": "Перчатки из мертвенной кожи",
+            "es": "Guantes cosidos pálidos",
+            "br": "Luvas da Pálida Sutura",
+            "kr": "",
+            "fr": "Gants cousus blêmes",
+            "de": "Bleiche Stickhandschuhe"
+        },
+        "icon": "inv_glove_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3850,
+            "mastery": 0,
+            "vers": 3150
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
+        "id": 184740,
+        "name": "Fortified Jawcrackers",
+        "names": {
+            "cn": "",
+            "en": "Fortified Jawcrackers",
+            "ru": "Укрепленные крушители челюстей",
+            "es": "Rompequijadas reforzados",
+            "br": "Quebraqueixo Fortificado",
+            "kr": "",
+            "fr": "Casse-mâchoires fortifiés",
+            "de": "Verstärkte Kieferknacker"
+        },
+        "icon": "inv_glove_plate_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3850,
+            "crit": 0,
+            "mastery": 3150,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
+        "id": 184741,
+        "name": "Apprentice Necromancer's Gloves",
+        "names": {
+            "cn": "",
+            "en": "Apprentice Necromancer's Gloves",
+            "ru": "Перчатки ученика некроманта",
+            "es": "Guantes de aprendiz de nigromante",
+            "br": "Luvas do Aprendiz de Necromante",
+            "kr": "",
+            "fr": "Gants d’apprenti nécromancien",
+            "de": "Nekromantenlehrlingshandschuhe"
+        },
+        "icon": "inv_glove_cloth_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3150,
+            "crit": 0,
+            "mastery": 3850,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
+        "id": 184742,
+        "name": "Rattling Bonefists",
+        "names": {
+            "cn": "",
+            "en": "Rattling Bonefists",
+            "ru": "Гремящие костяные накулачники",
+            "es": "Puños óseos resonantes",
+            "br": "Metacarpos Chacoalhantes",
+            "kr": "",
+            "fr": "Poings d’os cliquetants",
+            "de": "Klappernde Knochenfäuste"
+        },
+        "icon": "inv_mail_oribosquesting_b_01_glove",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3850,
+            "mastery": 3150,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
+        "id": 184744,
+        "name": "Gnarled Boneloop",
+        "names": {
+            "cn": "",
+            "en": "Gnarled Boneloop",
+            "ru": "Узловатое костяное кольцо",
+            "es": "Aro de hueso nudoso",
+            "br": "Elo d'Osso Roído",
+            "kr": "",
+            "fr": "Jonc d’os rongé",
+            "de": "Knorrige Knochenschleife"
+        },
+        "icon": "inv_jewelry_necklace_41",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "haste": 8250,
+            "crit": 0,
+            "mastery": 9250,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Finger"
+    },
+    {
+        "id": 184745,
+        "name": "Tunic of the March Warden",
+        "names": {
+            "cn": "",
+            "en": "Tunic of the March Warden",
+            "ru": "Мундир болотного стража",
+            "es": "Guerrera del celador de la marca",
+            "br": "Túnica do Guardião da Marcha",
+            "kr": "",
+            "fr": "Tunique de gardien de la marche",
+            "de": "Tunika des Markwächters"
+        },
+        "icon": "inv_chest_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3150,
+            "crit": 0,
+            "mastery": 3850,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 184746,
+        "name": "Gametender's Muckstompers",
+        "names": {
+            "cn": "",
+            "en": "Gametender's Muckstompers",
+            "ru": "Болотные ботинки егеря",
+            "es": "Pisamugres de venador",
+            "br": "Pisalamas do Tratador",
+            "kr": "",
+            "fr": "Croquenots boueux du giboyeur",
+            "de": "Wildhüterschlammstampfer"
+        },
+        "icon": "inv_boot_plate_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3850,
+            "mastery": 3150,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Feet"
+    },
+    {
+        "id": 184747,
+        "name": "Gamekeeper's Slippers",
+        "names": {
+            "cn": "",
+            "en": "Gamekeeper's Slippers",
+            "ru": "Туфли егеря",
+            "es": "Zapatillas de guardabosques",
+            "br": "Sapatilhas do Tratador",
+            "kr": "",
+            "fr": "Mules du giboyeur",
+            "de": "Wildhüterpantoffeln"
+        },
+        "icon": "inv_boot_cloth_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3850,
+            "mastery": 3150,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Feet"
+    },
+    {
+        "id": 184748,
+        "name": "Gametender's Wading Boots",
+        "names": {
+            "cn": "",
+            "en": "Gametender's Wading Boots",
+            "ru": "Болотные сапоги егеря",
+            "es": "Botas de agua de venador",
+            "br": "Galocheiras do Tratador",
+            "kr": "",
+            "fr": "Bottes de pêche du giboyeur",
+            "de": "Wildhüterwatstiefel"
+        },
+        "icon": "inv_mail_oribosquesting_b_01_boots",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3850,
+            "mastery": 3150,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Feet"
+    },
+    {
+        "id": 184749,
+        "name": "Gametender's Bramblewards",
+        "names": {
+            "cn": "",
+            "en": "Gametender's Bramblewards",
+            "ru": "Непрокалываемые сапоги егеря",
+            "es": "Quitazarzas de venador",
+            "br": "Espinheira do Tratador",
+            "kr": "",
+            "fr": "Garde-ronces du giboyeur",
+            "de": "Wildhüterdornenschützer"
+        },
+        "icon": "inv_boot_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3850,
+            "mastery": 3150,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Feet"
+    },
+    {
+        "id": 184750,
+        "name": "Amber-Plated Legguards",
+        "names": {
+            "cn": "",
+            "en": "Amber-Plated Legguards",
+            "ru": "Укрепленные янтарем набедренники",
+            "es": "Musleras chapadas de ámbar",
+            "br": "Guarda-pernas Ambarinadas",
+            "kr": "",
+            "fr": "Garde-jambes cuirassés d’ambre",
+            "de": "Bernsteingepanzerte Beinschützer"
+        },
+        "icon": "inv_pant_plate_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3150,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 3850
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 184751,
+        "name": "Cycle-Tender's Pantaloons",
+        "names": {
+            "cn": "",
+            "en": "Cycle-Tender's Pantaloons",
+            "ru": "Кюлоты хранителя цикла",
+            "es": "Bombachos de guardaciclos",
+            "br": "Pantalonas do Conservador do Ciclo",
+            "kr": "",
+            "fr": "Culotte de soigne-cycle",
+            "de": "Zykluspflegerpantalons"
+        },
+        "icon": "inv_pant_cloth_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3150,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 3850
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 184752,
+        "name": "Gormscale Leggings",
+        "names": {
+            "cn": "",
+            "en": "Gormscale Leggings",
+            "ru": "Поножи из чешуи горма",
+            "es": "Leotardos de escamas de gorm",
+            "br": "Perneiras de Escama de Gorm",
+            "kr": "",
+            "fr": "Jambières en écailles de gorm",
+            "de": "Gormschuppengamaschen"
+        },
+        "icon": "inv_mail_oribosquesting_b_01_pants",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3150,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 3850
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 184753,
+        "name": "Tree-Scaler's Britches",
+        "names": {
+            "cn": "",
+            "en": "Tree-Scaler's Britches",
+            "ru": "Брюки покорителя крон",
+            "es": "Calzones de trepaárboles",
+            "br": "Calcilhas do Escalador de Árvores",
+            "kr": "",
+            "fr": "Braies d’escaladeur d’arbres",
+            "de": "Baumklettererkniehosen"
+        },
+        "icon": "inv_pant_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3150,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 3850
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 184754,
+        "name": "Glitterwing Scarf",
+        "names": {
+            "cn": "",
+            "en": "Glitterwing Scarf",
+            "ru": "Шаль из крыльев блескокрыла",
+            "es": "Bufanda de alafulgor",
+            "br": "Cachecol de Brilhasa",
+            "kr": "",
+            "fr": "Foulard brasillaile",
+            "de": "Glitzerschwingenschal"
+        },
+        "icon": "inv_cape_cloth_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3850,
+            "crit": 3150,
+            "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Back"
+    },
+    {
+        "id": 184755,
+        "name": "Reinforced High Collar",
+        "names": {
+            "cn": "",
+            "en": "Reinforced High Collar",
+            "ru": "Укрепленный высокий воротник",
+            "es": "Cuello alto reforzado",
+            "br": "Colarinho Alto Reforçado",
+            "kr": "",
+            "fr": "Collier haut renforcé",
+            "de": "Verstärkter hoher Kragen"
+        },
+        "icon": "inv_jewelry_necklace_41",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "haste": 9250,
+            "crit": 0,
+            "mastery": 0,
+            "vers": 8250
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Neck"
+    },
+    {
+        "id": 184756,
+        "name": "Smoothed Loop of Contemplation",
+        "names": {
+            "cn": "",
+            "en": "Smoothed Loop of Contemplation",
+            "ru": "Полированное кольцо медитации",
+            "es": "Aro de contemplación alisado",
+            "br": "Aro Alisado da Contemplação",
+            "kr": "",
+            "fr": "Jonc de contemplation poli",
+            "de": "Geglättete Schleife des Nachsinnens"
+        },
+        "icon": "inv_ring_bastion_01_copper",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "haste": 8250,
+            "crit": 9250,
+            "mastery": 0,
+            "vers": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Finger"
     },
     {
         "id": 184757,

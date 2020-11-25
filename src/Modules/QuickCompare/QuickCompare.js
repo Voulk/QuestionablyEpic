@@ -119,6 +119,7 @@ function getSlots() {
     { value: "Wrist", label: t("slotNames.wrists") },
     { value: "Hands", label: t("slotNames.hands") },
     { value: "Waist", label: t("slotNames.waist") },
+    { value: "Legs", label: t("slotNames.legs") },
     { value: "Feet", label: t("slotNames.feet") },
     { value: "Finger", label: t("slotNames.finger") },
     { value: "Trinket", label: t("slotNames.trinket") },
@@ -650,6 +651,19 @@ export default function QuickCompare(props) {
               <Divider style={{ marginBottom: 10 }} />
               <Grid container spacing={1}>
                 {[...props.pl.getActiveItems("Waist")].map((item, index) => (
+                  <ItemCard key={index} item={item} delete={deleteItem} />
+                ))}
+              </Grid>
+            </Grid>
+
+            {/* Legs */}
+            <Grid item xs={12}>
+              <Typography color="primary" variant="h5">
+                {t("slotNames.legs")}
+              </Typography>
+              <Divider style={{ marginBottom: 10 }} />
+              <Grid container spacing={1}>
+                {[...props.pl.getActiveItems("Legs")].map((item, index) => (
                   <ItemCard key={index} item={item} delete={deleteItem} />
                 ))}
               </Grid>

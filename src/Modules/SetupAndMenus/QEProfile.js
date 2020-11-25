@@ -28,7 +28,6 @@ export default function QEProfile(props) {
   const { t, i18n } = useTranslation();
   const [email, setEmail] = React.useState("");
   const emailHandler = (event) => {
-    setEmail(event);
     props.setEmail(event);
   };
 
@@ -55,11 +54,15 @@ export default function QEProfile(props) {
               type="email"
               fullWidth
               size="small"
-              onChange={(e) => emailHandler(e.target.value)}
+              onChange={(e) => setEmail(e.target.value)}
             />
           </Grid>
           <Grid item xs="auto">
-            <Button variant="contained" color="primary">
+            <Button
+              variant="contained"
+              color="primary"
+              onClick={(e) => emailHandler(email)}
+            >
               {t("Save")}
             </Button>
           </Grid>

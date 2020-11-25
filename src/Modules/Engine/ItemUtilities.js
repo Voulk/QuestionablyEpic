@@ -209,7 +209,7 @@ export function buildWepCombos(player) {
     for (let k = 0; k < off_hands.length; k++) {
       let off_hand = off_hands[k];
 
-      console.log("COMBO: " + main_hand.id + " - " + off_hand.id);
+      //console.log("COMBO: " + main_hand.id + " - " + off_hand.id);
 
       let item = new Item(
         main_hand.id,
@@ -218,7 +218,7 @@ export function buildWepCombos(player) {
         main_hand.socket + off_hand.socket, // Socket
         "", // Tertiary
         0,
-        main_hand.level + off_hand.level / 2
+        (main_hand.level + off_hand.level) / 2
       );
 
       item.softScore = main_hand.softScore + off_hand.softScore;
