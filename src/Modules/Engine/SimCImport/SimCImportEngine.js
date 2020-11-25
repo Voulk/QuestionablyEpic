@@ -98,6 +98,7 @@ function processItem(line, player, contentType) {
   let itemLevel = -1;
   let itemSocket = false;
   let itemTertiary = "";
+  let dropLevel = 0;
 
   // Build out our item information.
   // This is not the finest code in the land but it is effective at pulling the information we need.
@@ -113,6 +114,7 @@ function processItem(line, player, contentType) {
     else if (info.includes("bonus_id="))
       itemBonusIDs = info.split("=")[1].split("/");
     else if (info.includes("id=")) itemID = parseInt(info.split("=")[1]);
+    else if (info.includes("drop_level=")) dropLevel = parseInt(info.split("=")[1]);
   }
 
   // Grab the items base level from our item database.
@@ -133,6 +135,23 @@ function processItem(line, player, contentType) {
       } else if (bonus_id === "41") {
         itemTertiary = "Leech";
       }
+        else if ('curveId' in idPayload) {
+          let curve = idPayload['curveId'];
+          //console.log("CURVE: " + bonus_id);
+
+          if (bonus_id == 6706) itemLevel = 84 + (dropLevel - 50) * 6
+          else if (bonus_id == 6707) itemLevel = 92 + (dropLevel - 50) * 6
+          else if (bonus_id == 6908) {
+            // This curve is a little painful since the item level only increases every 3 levels and not by a set amount.
+            // We can probably make the code more efficient later but this is otherwise correct.
+            if (dropLevel >= 50 && dropLevel <= 52) itemLevel = 81
+            else if (dropLevel >= 53 && dropLevel <= 55) itemLevel = 95
+            else if (dropLevel >= 56 && dropLevel <= 58) itemLevel = 113
+            else if (dropLevel >= 59) itemLevel = 131
+            console.log("After curving: " + itemLevel)
+          }
+
+        }
     }
   }
 
