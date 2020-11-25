@@ -20,7 +20,7 @@ import ls from "local-storage";
 import Snackbar from "@material-ui/core/Snackbar";
 import MuiAlert from "@material-ui/lab/Alert";
 import { createBrowserHistory } from "history";
-import { dbCheckPatron} from './Modules/SetupAndMenus/ConnectionUtilities';
+import { dbCheckPatron } from "./Modules/SetupAndMenus/ConnectionUtilities";
 
 import ReactGA from "react-ga";
 
@@ -77,6 +77,9 @@ class App extends Component {
     this.handleLoginSnackOpen = this.handleLoginSnackOpen.bind(this);
     this.handleSimCSnackOpen = this.handleSimCSnackOpen.bind(this);
     this.handleLogSnackOpen = this.handleLogSnackOpen.bind(this);
+    this.setEmail = this.setEmail.bind(this);
+    this.setPatron = this.setPatron.bind(this);
+    this.checkPatron = this.checkPatron.bind(this);
 
     this.langSet = this.langSet.bind(this);
     this.userLogout = this.userLogout.bind(this);
@@ -167,22 +170,20 @@ class App extends Component {
 
   setPatron = (status) => {
     //console.log("ST: " + status);
-    this.setState({patronStatus: status});
-  }
+    this.setState({ patronStatus: status });
+  };
 
   checkPatron = (email) => {
-    
     if (email !== "") {
-      
-      dbCheckPatron(email, this.setPatron)
+      dbCheckPatron(email, this.setPatron);
     }
-
-  }
+  };
 
   setEmail = (emailAdd) => {
-    this.setState({email: emailAdd})
+    this.setState({ email: emailAdd });
     ls.set("email", emailAdd);
-  }
+    this.checkPatron(emailAdd);
+  };
 
   updatePlayerChar = (player) => {
     let allChars = this.state.characters;
@@ -247,7 +248,7 @@ class App extends Component {
       contentType: ls.get("contentType") || "Raid",
       email: ls.get("email") || "",
     });
-    this.checkPatron(ls.get("email"))
+    this.checkPatron(ls.get("email"));
 
     i18n.changeLanguage(ls.get("lang") || "en");
   }
@@ -260,17 +261,15 @@ class App extends Component {
     }, [location]);
   }
 
-
   render() {
     let activePlayer = this.state.characters.getActiveChar();
     let allChars = this.state.characters;
     //
-    
 
     function Alert(props) {
       return <MuiAlert elevation={6} variant="filled" {...props} />;
     }
-    
+
     return (
       <Router basename={process.env.REACT_APP_HOMEPAGE}>
         <ThemeProvider theme={theme}>
@@ -413,9 +412,10 @@ class App extends Component {
                   />
                 )}
               />
-              <Route path="/profile/" render={() => <QEProfile 
-                setEmail={this.setEmail}
-                />} />
+              <Route
+                path="/profile/"
+                render={() => <QEProfile setEmail={this.setEmail} />}
+              />
             </Switch>
           </div>
         </ThemeProvider>
