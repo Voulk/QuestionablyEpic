@@ -159,7 +159,7 @@ export default function QuickCompare(props) {
   // Right now the available item levels are static, but given the removal of titanforging each item could hypothetically share
   // a list of available ilvls and the player could select from a smaller list instead.
   // This is left as a TODO until key functionality is completed but is a moderate priority.
-  const itemTertiaries = ["Avoidance", "Leech", "None"];
+  // const itemTertiaries = [{"Avoidance", "Avoidance"},{"Leech", "Leech"}, {"None", ""}];
 
   const handleClick = () => {
     setOpen(true);
@@ -269,7 +269,9 @@ export default function QuickCompare(props) {
     //player.getActiveItems(activeSlot)
     //console.log(item);
     setItemList([...player.getActiveItems(activeSlot)]);
-    handleClick();
+    setOpen(true);
+    // setItemSocket("");
+    // setItemTertiary("");
   };
 
   const deleteItem = (unique) => {
@@ -295,7 +297,7 @@ export default function QuickCompare(props) {
   const itemLevelChanged = (val) => {
     // removed parse int here, was missing radix parameter
     setItemLevel(val);
-    setItemSocket("No");
+    setItemSocket("");
     setItemTertiary("");
   };
 
@@ -455,7 +457,7 @@ export default function QuickCompare(props) {
                     {t("QuickCompare.Socket")}
                   </InputLabel>
                   <Select
-                    key={itemSocket}
+                    // key={1}
                     labelId="itemsocket"
                     value={itemSocket}
                     onChange={itemSocketChanged}
@@ -463,17 +465,17 @@ export default function QuickCompare(props) {
                     label={t("QuickCompare.Socket")}
                   >
                     {[
-                      <MenuItem key={"Yes"} label="Yes" value="Yes">
+                      <MenuItem key={1} label="Yes" value={true}>
                         Yes
                       </MenuItem>,
-                      <Divider key={1} />,
+                      <Divider key={2} />,
                     ]}
                     ,
                     {[
-                      <MenuItem key={"No"} label="No" value="No">
+                      <MenuItem key={3} label="No" value={false}>
                         No
                       </MenuItem>,
-                      <Divider key={2} />,
+                      <Divider key={4} />,
                     ]}
                   </Select>
                 </FormControl>
@@ -490,18 +492,42 @@ export default function QuickCompare(props) {
                     {t("QuickCompare.Tertiary")}
                   </InputLabel>
                   <Select
-                    key={itemTertiary}
+                    key={"TertiarySelect"}
                     labelId="itemtertiary"
                     value={itemTertiary}
                     onChange={itemTertiaryChanged}
                     MenuProps={menuStyle}
                     label={t("QuickCompare.Tertiary")}
                   >
-                    {itemTertiaries.map((x, y) => (
-                      <MenuItem key={y} value={x}>
-                        {x}
-                      </MenuItem>
-                    ))}
+                    {[
+                      <MenuItem key={"LeechItem"} label="Leech" value={"Leech"}>
+                        Leech
+                      </MenuItem>,
+                      <Divider key={1} />,
+                    ]}
+                    ,
+                    {[
+                      <MenuItem
+                        key={"AvoidanceItem"}
+                        label="Avoidance"
+                        value={"Avoidance"}
+                      >
+                        Avoidance
+                      </MenuItem>,
+                      <Divider key={2} />,
+                    ]}
+                    ,
+                    {[
+                      <MenuItem
+                        key={"NoneItem"}
+                        label="None"
+                        value={"None"}
+                        onClick={""}
+                      >
+                        None
+                      </MenuItem>,
+                      <Divider key={3} />,
+                    ]}
                   </Select>
                 </FormControl>
               </Grid>
