@@ -58,7 +58,6 @@ class Item {
         this.stats[stat] = this.stats[stat] + bonus_stats[stat]
       }
     }
-    console.log("Stats after: " + JSON.stringify(this.stats))
 
   }
 }

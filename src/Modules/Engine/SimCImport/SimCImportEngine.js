@@ -158,14 +158,11 @@ function processItem(line, player, contentType) {
             else if (dropLevel >= 53 && dropLevel <= 55) itemLevel = 95
             else if (dropLevel >= 56 && dropLevel <= 58) itemLevel = 113
             else if (dropLevel >= 59) itemLevel = 131
-            console.log("After curving: " + itemLevel)
+            
           }
           else if (bonus_id == 6893) {
             itemLevel = 151;
-            console.log("===== Item ID: ======" + itemID);
-            itemBonusStats = getSecondaryAllocationAtItemLevel(itemLevel, itemSlot, craftedStats);
-            
-            
+    
           }
           else if (bonus_id == 6891 || bonus_id == 6892) itemLevel = 165;
           else if (bonus_id == 6890) itemLevel = 129;
@@ -174,6 +171,7 @@ function processItem(line, player, contentType) {
  
     }
   }
+  if (craftedStats.length !== 0) itemBonusStats = getSecondaryAllocationAtItemLevel(itemLevel, itemSlot, craftedStats);
 
   // Add the new item to our characters item collection.
   if (itemLevel > 60 && itemID !== 0) {
@@ -225,6 +223,12 @@ function getSecondaryAllocationAtItemLevel(itemLevel, slot, crafted_stats = []) 
     if (itemLevel >= 168) allocation = 29;
     else if (itemLevel >= 151) allocation = 22;
     else if (itemLevel >= 129) allocation = 12;
+
+  }
+  else if (['Neck', 'Finger'].includes(slot)) {
+    if (itemLevel >= 168) allocation = 34;
+    else if (itemLevel >= 151) allocation = 29;
+    else if (itemLevel >= 117) allocation = 24;
 
   }
 

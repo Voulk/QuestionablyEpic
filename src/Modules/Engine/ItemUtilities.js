@@ -1,6 +1,6 @@
 import { itemDB } from "../Player/ItemDB";
 import { randPropPoints } from "./RandPropPointsBylevel";
-import { combat_ratings_mult_by_ilvl } from "./CombatMultByLevel";
+import { combat_ratings_mult_by_ilvl, combat_ratings_mult_by_ilvl_jewl } from "./CombatMultByLevel";
 import { getEffectValue } from "./EffectFormulas/EffectEngine";
 import SPEC from "../Engine/SPECS";
 import Item from "../Player/Item";
@@ -178,7 +178,9 @@ function getItemCat(slot) {
     case "Shield":
       return 3;
     default:
+      console.error("Item Cat going to Default" + slot);
       return 3;
+      
     // Raise error.
   }
 }
@@ -239,6 +241,7 @@ export function buildWepCombos(player) {
 // This uses the RandPropPointsByLevel and CombatMultByLevel tables and returns a dictionary object of stats.
 // Stat allocations are passed to the function from our Item Database.
 export function calcStatsAtLevel(itemLevel, slot, statAllocations, tertiary) {
+  let combat_mult = 0
   let stats = {
     intellect: 0,
     stamina: 0,
@@ -250,10 +253,11 @@ export function calcStatsAtLevel(itemLevel, slot, statAllocations, tertiary) {
     bonus_stats: {},
   };
 
-  //console.log("Calc Stats at Level: " + itemLevel + "/" + slot + "/" + statAllocations + "/" + tertiary);
+  console.log("Calc Stats at Level: " + itemLevel + "/" + slot + "/" + statAllocations + "/" + tertiary);
 
   let rand_prop = randPropPoints[itemLevel]["slotValues"][getItemCat(slot)];
-  let combat_mult = combat_ratings_mult_by_ilvl[itemLevel];
+  if (slot == "Finger" || slot == "Neck") combat_mult = combat_ratings_mult_by_ilvl_jewl[itemLevel];
+  else combat_mult = combat_ratings_mult_by_ilvl[itemLevel];
 
   // These stats should be precise, and never off by one.
   for (var key in statAllocations) {
@@ -332,7 +336,6 @@ export function scoreItem(item, player, contentType) {
 
   // Multiply the item's stats by our stat weights.
   for (var stat in item.stats) {
-    //console.log(JSON.stringify(item.stats['bonus_stats']))
     if (stat !== "bonus_stats") {
       let statSum =
         item.stats[stat] +
@@ -340,7 +343,7 @@ export function scoreItem(item, player, contentType) {
           ? item.stats["bonus_stats"][stat]
           : 0);
       score += statSum * player.getStatWeight(contentType, stat);
-      console.log("Stat: " + stat + " adds " + statSum * player.getStatWeight(contentType, stat) + " to score.");
+      //console.log("Stat: " + stat + " adds " + statSum * player.getStatWeight(contentType, stat) + " to score.");
     }
   }
 
