@@ -113,20 +113,6 @@ export default function QEHeader(props) {
                 wrap="nowrap"
               >
                 <Grid item>
-                  <QELogImport
-                    logImportSnack={props.logImportSnack}
-                    player={props.pl}
-                    allChars={props.allChars}
-                  />
-                </Grid>
-                <Grid item>
-                  <SimCraftInput
-                    pl={props.pl}
-                    contentType={props.contentType}
-                    simcSnack={props.simcSnack}
-                  />
-                </Grid>
-                <Grid item>
                   <Button
                     style={{ color: "white" }}
                     onClick={props.toggleContentType}
@@ -157,12 +143,27 @@ export default function QEHeader(props) {
                     disableRestoreFocus
                   >
                     <Typography>
-                      Change to{" "}
-                      {props.contentType === "Raid" ? "Dungeon" : "Raid"}{" "}
-                      Content
+                      {t("HeaderLabels.ContentTypeMsgStart")}{" "}
+                      {props.contentType === "Raid" ? t("Dungeon") : t("Raid")}{" "}
+                      {t("HeaderLabels.ContentTypeMsgEnd")}
                     </Typography>
                   </Popover>
                 </Grid>
+                <Grid item>
+                  <QELogImport
+                    logImportSnack={props.logImportSnack}
+                    player={props.pl}
+                    allChars={props.allChars}
+                  />
+                </Grid>
+                <Grid item>
+                  <SimCraftInput
+                    pl={props.pl}
+                    contentType={props.contentType}
+                    simcSnack={props.simcSnack}
+                  />
+                </Grid>
+
                 <Grid item>
                   <ProfileSelector
                     name={playerName}
