@@ -19,7 +19,8 @@
 
     "HeaderLabels": {
       "Login": "Login",
-      "": ""
+      "ContentTypeMsgStart": "Change to",
+      "ContentTypeMsgEnd": "Content"
     },
     "InsertLog": {
       "PlsSelectFight": "Please Select a Fight",

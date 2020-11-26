@@ -44,11 +44,11 @@ export default function ItemCard(props) {
   const itemLevel = item.level;
 
   const itemQuality = (itemLevel) => {
-      if (itemLevel > 184) return "#a73fee";
-      else if (itemLevel > 120) return "#328CE3";
-      else return "#1eff00";
+    if (itemLevel > 184) return "#a73fee";
+    else if (itemLevel > 120) return "#328CE3";
+    else return "#1eff00";
 
-      /*
+    /*
       case "Legendary":
         return "#ff8000";
         break;
@@ -70,7 +70,6 @@ export default function ItemCard(props) {
   };
 
   const deleteItemCard = () => {
-    console.log("Trying to delete");
     props.delete(item.uniqueHash);
   };
 
@@ -96,19 +95,18 @@ export default function ItemCard(props) {
     itemName = getTranslatedItemName(item.id, currentLanguage);
   }
 
-  const socket =
-    props.item.socket ? (
-      <div style={{ display: "inline" }}>
-        <img
-          src={socketImage}
-          width={15}
-          height={15}
-          style={{ verticalAlign: "middle" }}
-          alt="Socket"
-        />
-        /
-      </div>
-    ) : null;
+  const socket = props.item.socket ? (
+    <div style={{ display: "inline" }}>
+      <img
+        src={socketImage}
+        width={15}
+        height={15}
+        style={{ verticalAlign: "middle" }}
+        alt="Socket"
+      />
+      /
+    </div>
+  ) : null;
 
   const tertiary =
     props.item.tertiary !== "" ? (
@@ -225,11 +223,14 @@ export default function ItemCard(props) {
 
                 <Grid item xs={1} display="inline-flex" align="center">
                   {deleteActive ? (
-                    <IconButton aria-label="delete" size="small">
+                    <IconButton
+                      onClick={deleteItemCard}
+                      aria-label="delete"
+                      size="small"
+                    >
                       <DeleteIcon
                         style={{ color: "#ad2c34", paddingTop: 2 }}
                         fontSize="small"
-                        onClick={deleteItemCard}
                       />
                     </IconButton>
                   ) : (

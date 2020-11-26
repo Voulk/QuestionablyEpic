@@ -1,5 +1,11 @@
 import React from "react";
-import { AppBar, Toolbar, Button, Typography } from "@material-ui/core";
+import {
+  AppBar,
+  Toolbar,
+  Button,
+  Typography,
+  Popover,
+} from "@material-ui/core";
 import logo from "../../Images/QeAssets/QELogo.png";
 import "./QEMainMenu.css";
 import LanguageSelector from "./LanguageButton";
@@ -18,25 +24,45 @@ const useStyles = makeStyles((theme) => ({
       marginTop: "10px",
     },
   },
+  popover: {
+    pointerEvents: "none",
+  },
+  paper: {
+    padding: theme.spacing(1),
+  },
 }));
 
 export default function QEHeader(props) {
   const { t, i18n } = useTranslation();
   const classes = useStyles();
+  const [anchorEl, setAnchorEl] = React.useState(null);
+
+  const handlePopoverOpen = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handlePopoverClose = () => {
+    setAnchorEl(null);
+  };
+
+  const open = Boolean(anchorEl);
 
   // If the player isn't logged in, then show a login button and redirect to the login page on click.
   // If the player IS logged in, show their battle tag and redirect to profile on click.
   // TODO: Implement profile.
   let playerName = props.playerTag || t("HeaderLabels.Login");
   let linkTarget = props.playerTag === "" ? "/login" : "/profile";
-  let patronStatus = props.patronStatus !== "" ? props.patronStatus + " Edition" : "Standard Edition";
+  let patronStatus =
+    props.patronStatus !== ""
+      ? props.patronStatus + " Edition"
+      : "Standard Edition";
   let color = {
     "Rolls Royce Edition": "#04E07C",
     "Diamond Edition": "#FFB6C1",
     "Gold Edition": "#DAA520",
     "Standard Edition": "#FFFFFF",
     "Basic Edition": "#FFFFFF",
-  }
+  };
 
   return (
     <div style={{ backgroundColor: "#353535" }}>
@@ -87,6 +113,43 @@ export default function QEHeader(props) {
                 wrap="nowrap"
               >
                 <Grid item>
+                  <Button
+                    style={{ color: "white" }}
+                    onClick={props.toggleContentType}
+                    aria-owns={open ? "mouse-over-popover" : undefined}
+                    aria-haspopup="true"
+                    onMouseEnter={handlePopoverOpen}
+                    onMouseLeave={handlePopoverClose}
+                  >
+                    {t(props.contentType)}
+                  </Button>
+                  <Popover
+                    id="mouse-over-popover"
+                    className={classes.popover}
+                    classes={{
+                      paper: classes.paper,
+                    }}
+                    open={open}
+                    anchorEl={anchorEl}
+                    anchorOrigin={{
+                      vertical: "bottom",
+                      horizontal: "center",
+                    }}
+                    transformOrigin={{
+                      vertical: "top",
+                      horizontal: "center",
+                    }}
+                    onClose={handlePopoverClose}
+                    disableRestoreFocus
+                  >
+                    <Typography>
+                      {t("HeaderLabels.ContentTypeMsgStart")}{" "}
+                      {props.contentType === "Raid" ? t("Dungeon") : t("Raid")}{" "}
+                      {t("HeaderLabels.ContentTypeMsgEnd")}
+                    </Typography>
+                  </Popover>
+                </Grid>
+                <Grid item>
                   <QELogImport
                     logImportSnack={props.logImportSnack}
                     player={props.pl}
@@ -100,14 +163,7 @@ export default function QEHeader(props) {
                     simcSnack={props.simcSnack}
                   />
                 </Grid>
-                <Grid item>
-                  <Button
-                    style={{ color: "white" }}
-                    onClick={props.toggleContentType}
-                  >
-                    {t(props.contentType)}
-                  </Button>
-                </Grid>
+
                 <Grid item>
                   <ProfileSelector
                     name={playerName}

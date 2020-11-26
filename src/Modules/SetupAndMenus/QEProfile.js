@@ -2,6 +2,7 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Grid, Button, Typography, TextField, Paper } from "@material-ui/core";
 import { useTranslation } from "react-i18next";
+import ls from "local-storage";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -26,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
 export default function QEProfile(props) {
   const classes = useStyles();
   const { t, i18n } = useTranslation();
-  const [email, setEmail] = React.useState("");
+  const [email, setEmail] = React.useState(ls.get("email") || "");
   const emailHandler = (event) => {
     props.setEmail(event);
   };
