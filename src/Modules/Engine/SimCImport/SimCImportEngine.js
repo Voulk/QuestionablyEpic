@@ -108,6 +108,9 @@ function processItem(line, player, contentType) {
   let dropLevel = 0;
   let craftedStats = [];
   let itemBonusStats = {}; // Bonus_stats that don't naturally come on the item. Crafting and "of the X" items are the primary example.
+  let gemID = 0; // currently unused.
+  let enchantID = 0; // currently unused.
+  
 
   // Build out our item information.
   // This is not the finest code in the land but it is effective at pulling the information we need.
@@ -122,6 +125,8 @@ function processItem(line, player, contentType) {
     //);
     else if (info.includes("bonus_id="))
       itemBonusIDs = info.split("=")[1].split("/");
+    else if (info.includes("gem_id=")) gemID = parseInt(info.split("=")[1]);
+    else if (info.includes("enchant_id=")) enchantID = parseInt(info.split("=")[1]);
     else if (info.includes("id=")) itemID = parseInt(info.split("=")[1]);
     else if (info.includes("drop_level=")) dropLevel = parseInt(info.split("=")[1]);
     else if (info.includes("crafted_stats=")) craftedStats = info.split("=")[1].split("/");
@@ -130,6 +135,8 @@ function processItem(line, player, contentType) {
   // Grab the items base level from our item database.
   itemLevel = getItemLevel(itemID);
   itemSlot = getItemSlot(itemID);
+
+  //console.log("Base level: " + itemLevel + " id " + itemID)
 
   //console.log(itemID + ": " + itemSlot + ". Item Level:" + itemLevel + ". Bonus: " + itemBonusIDs);
   // Process our bonus ID's so that we can establish the items level and sockets / tertiaries.
@@ -140,6 +147,7 @@ function processItem(line, player, contentType) {
     if (idPayload !== undefined) {
       if ("level" in idPayload) {
         itemLevel += idPayload["level"];
+        console.log("Adding " + idPayload["level"]);
       } else if ("socket" in idPayload) {
         itemSocket = true;
       } else if (bonus_id === "41") {
@@ -147,7 +155,7 @@ function processItem(line, player, contentType) {
       }
         else if ('curveId' in idPayload) {
           let curve = idPayload['curveId'];
-          //console.log("CURVE: " + bonus_id);
+          console.log("CURVE: " + bonus_id);
 
           if (bonus_id == 6706) itemLevel = 92 + (dropLevel - 50) * 6
           else if (bonus_id == 6707) itemLevel = 84 + (dropLevel - 50) * 6
@@ -200,6 +208,9 @@ function processItem(line, player, contentType) {
 
     //console.log("Adding Item: " + item.id + " in slot: " + itemSlot);
     player.addActiveItem(item);
+  }
+  else {
+    //console.log("Item Level out of range: " + itemLevel);
   }
 }
 
