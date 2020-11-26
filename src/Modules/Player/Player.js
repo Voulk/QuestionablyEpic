@@ -25,7 +25,7 @@ class Player {
         this.realm = realm;
         this.race = race;
 
-        if (statWeights !== "default") this.statWeights = statWeights;
+        if (statWeights !== "default" && statWeights.DefaultWeights === false) this.statWeights = statWeights;
         this.activeConduits = getAvailableClassConduits(specName);
         //this.getStatPerc = getStatPerc;
     }
@@ -93,12 +93,13 @@ class Player {
     }
 
 
-    editChar = (contentType, name, realm, region, race, weights) => {
+    editChar = (contentType, name, realm, region, race, weights) => {  
         this.charName = name;
         this.realm = realm;
         this.region = region;
         this.race = race;
         this.statWeights[contentType] = weights;
+        this.statWeights.DefaultWeights = false;
 
     }
 
@@ -553,7 +554,7 @@ class Player {
                     haste: 0.6,
                     crit: 0.56,
                     mastery: 0.52,
-                    versatility: 0.5,
+                    versatility: 0.51,
                     leech: 0.8,
                 },
                 "Dungeon": {
