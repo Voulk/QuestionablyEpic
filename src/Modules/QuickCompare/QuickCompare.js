@@ -296,7 +296,7 @@ export default function QuickCompare(props) {
     // removed parse int here, was missing radix parameter
     setItemLevel(val);
     setItemSocket("No");
-    setItemTertiary("None");
+    setItemTertiary("");
   };
 
   const itemSocketChanged = (event) => {

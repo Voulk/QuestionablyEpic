@@ -100,7 +100,7 @@ export function getSoulbindFormula(effectID, pl, contentType) {
     bonus_stats.HPS =
       (brons_per_minute *
         vit_bolt_hps *
-        pl.getStatMultiplier(["Crit", "Vers"])) /
+        pl.getStatMultiplier(["Crit", "Versatility"])) /
       60;
   }
   // Hammer of Genesis

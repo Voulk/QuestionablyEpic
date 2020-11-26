@@ -41,13 +41,21 @@ export default function ItemCard(props) {
   const statString = buildStatString(item.stats, item.effect);
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
+  const itemLevel = item.level;
 
-  const itemQuality = (quality) => {
-    switch (quality) {
+  const itemQuality = (itemLevel) => {
+      if (itemLevel > 184) return "#a73fee";
+      else if (itemLevel > 120) return "#328CE3";
+      else return "#1eff00";
+
+      /*
       case "Legendary":
         return "#ff8000";
         break;
       case "Epic":
+        return "#a335ee";
+        break;
+      case "Rare":
         return "#a335ee";
         break;
       case "Uncommon":
@@ -58,7 +66,7 @@ export default function ItemCard(props) {
         break;
       default:
         return "#fff";
-    }
+        */
   };
 
   const deleteItemCard = () => {
@@ -89,7 +97,7 @@ export default function ItemCard(props) {
   }
 
   const socket =
-    props.item.socket === "Yes" ? (
+    props.item.socket ? (
       <div style={{ display: "inline" }}>
         <img
           src={socketImage}
@@ -134,7 +142,7 @@ export default function ItemCard(props) {
                     borderRadius: 4,
                     borderWidth: "1px",
                     borderStyle: "solid",
-                    borderColor: itemQuality("Uncommon"),
+                    borderColor: itemQuality(itemLevel),
                   }}
                 />
                 <div className="bottom-right"> {item.level} </div>
@@ -165,7 +173,7 @@ export default function ItemCard(props) {
                     wrap="nowrap"
                     display="inline"
                     align="left"
-                    style={{ color: itemQuality("Uncommon") }}
+                    style={{ color: itemQuality(itemLevel) }}
                   >
                     {itemName}
                   </Typography>

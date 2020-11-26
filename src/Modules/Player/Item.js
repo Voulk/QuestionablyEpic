@@ -11,6 +11,7 @@ class Item {
     this.tertiary = tertiary;
     this.softScore = softScore;
     this.uniqueHash = this.getUnique(id);
+    console.log("Socket: " + socket);
   }
 
   id = 0; // The items ID
@@ -31,7 +32,7 @@ class Item {
     stamina: 0,
     haste: 0,
     mastery: 0,
-    vers: 0,
+    versatility: 0,
     crit: 0,
     leech: 0,
     hps: 0,
@@ -39,7 +40,7 @@ class Item {
       intellect: 0,
       haste: 0,
       mastery: 0,
-      vers: 0,
+      versatility: 0,
       leech: 0,
       hps: 0,
     },
@@ -50,6 +51,15 @@ class Item {
   // it isn't life crushing if they do ever dup.
   getUnique(id) {
     return id + "" + (Math.floor(Math.random() * 100000) + 1).toString();
+  }
+
+  addStats(bonus_stats) {
+    for (var stat in this.stats) {
+      if (stat in bonus_stats) {
+        this.stats[stat] = this.stats[stat] + bonus_stats[stat]
+      }
+    }
+
   }
 }
 
