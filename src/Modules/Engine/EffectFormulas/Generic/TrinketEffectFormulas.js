@@ -63,7 +63,7 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel) {
         // Given the player can "force" change their Changeling to their preferred secondary stat, this formula will for now take a "best case scenario" approach and ignore
         // the rare possibility of a Tri-proc (which is only ~10% more stats anyway). When an advanced settings menu is added we can revisit this and maybe add some detail.
         let effect = activeTrinket.effects[0];
-        let playerBestSecondary = player.getHighestStatWeight(contentType, ['vers']) // Exclude Vers since there isn't a Vers version.
+        let playerBestSecondary = player.getHighestStatWeight(contentType, ['versatility']) // Exclude Vers since there isn't a Vers version.
 
         bonus_stats[playerBestSecondary] = getProcessedValue(effect.coefficient, effect.table, itemLevel) * convertPPMToUptime(effect.ppm, effect.duration);
 

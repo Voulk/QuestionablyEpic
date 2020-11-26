@@ -11,6 +11,13 @@ import {
 } from "../ItemUtilities";
 import Item from "../../Player/Item";
 
+const stat_ids = {
+  36: 'haste',
+  32: 'crit',
+  40: 'versatility',
+  49: 'mastery',
+}
+
 export function runSimC(
   simCInput,
   player,
@@ -99,6 +106,8 @@ function processItem(line, player, contentType) {
   let itemSocket = false;
   let itemTertiary = "";
   let dropLevel = 0;
+  let craftedStats = [];
+  let itemBonusStats = {}; // Bonus_stats that don't naturally come on the item. Crafting and "of the X" items are the primary example.
 
   // Build out our item information.
   // This is not the finest code in the land but it is effective at pulling the information we need.
@@ -115,6 +124,7 @@ function processItem(line, player, contentType) {
       itemBonusIDs = info.split("=")[1].split("/");
     else if (info.includes("id=")) itemID = parseInt(info.split("=")[1]);
     else if (info.includes("drop_level=")) dropLevel = parseInt(info.split("=")[1]);
+    else if (info.includes("crafted_stats=")) craftedStats = info.split("=")[1].split("/");
   }
 
   // Grab the items base level from our item database.
@@ -150,8 +160,18 @@ function processItem(line, player, contentType) {
             else if (dropLevel >= 59) itemLevel = 131
             console.log("After curving: " + itemLevel)
           }
-
+          else if (bonus_id == 6893) {
+            itemLevel = 151;
+            console.log("===== Item ID: ======" + itemID);
+            itemBonusStats = getSecondaryAllocationAtItemLevel(itemLevel, itemSlot, craftedStats);
+            
+            
+          }
+          else if (bonus_id == 6891 || bonus_id == 6892) itemLevel = 165;
+          else if (bonus_id == 6890) itemLevel = 129;
+          
         }
+ 
     }
   }
 
@@ -174,6 +194,7 @@ function processItem(line, player, contentType) {
       getItemAllocations(itemID),
       itemTertiary
     );
+    if (Object.keys(itemBonusStats).length > 0) item.addStats(itemBonusStats);
 
     item.effect = getItemEffect(itemID);
     item.softScore = scoreItem(item, player, contentType);
@@ -181,4 +202,36 @@ function processItem(line, player, contentType) {
     //console.log("Adding Item: " + item.id + " in slot: " + itemSlot);
     player.addActiveItem(item);
   }
+}
+
+
+
+function getSecondaryAllocationAtItemLevel(itemLevel, slot, crafted_stats = []) {
+  let allocation = 0;
+  let bonus_stats = {};
+
+  if (['Chest', 'Head', 'Legs'].includes(slot)) {
+      if (itemLevel >= 168) allocation = 50;
+      else if (itemLevel >= 151) allocation = 40;
+      else if (itemLevel >= 129) allocation = 24;
+  }
+  else if (['Shoulder', 'Waist', 'Hands', 'Feet'].includes(slot)) {
+      if (itemLevel >= 168) allocation = 37;
+      else if (itemLevel >= 151) allocation = 29;
+      else if (itemLevel >= 129) allocation = 18;
+
+  }
+  else if (['Back', 'Wrist'].includes(slot)) {
+    if (itemLevel >= 168) allocation = 29;
+    else if (itemLevel >= 151) allocation = 22;
+    else if (itemLevel >= 129) allocation = 12;
+
+  }
+
+  crafted_stats.forEach(stat => {
+    bonus_stats[stat_ids[stat]] = allocation;
+    
+    
+  })
+  return bonus_stats;
 }

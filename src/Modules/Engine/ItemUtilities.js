@@ -244,7 +244,7 @@ export function calcStatsAtLevel(itemLevel, slot, statAllocations, tertiary) {
     stamina: 0,
     haste: 0,
     mastery: 0,
-    vers: 0,
+    versatility: 0,
     crit: 0,
     leech: 0,
     bonus_stats: {},
@@ -259,7 +259,7 @@ export function calcStatsAtLevel(itemLevel, slot, statAllocations, tertiary) {
   for (var key in statAllocations) {
     let allocation = statAllocations[key];
 
-    if (["haste", "crit", "mastery", "vers"].includes(key)) {
+    if (["haste", "crit", "mastery", "versatility"].includes(key)) {
       stats[key] = Math.floor(
         Math.floor(rand_prop * allocation * 0.0001 + 0.5) * combat_mult
       );
@@ -276,7 +276,7 @@ export function calcStatsAtLevel(itemLevel, slot, statAllocations, tertiary) {
   if (tertiary === "Leech") {
     const terMult = slot === "Finger" || slot === "Neck" ? 0.170027 : 0.429132;
     stats.leech = Math.floor(
-      terMult * (stats.haste + stats.crit + stats.mastery + stats.vers)
+      terMult * (stats.haste + stats.crit + stats.mastery + stats.versatility)
     );
   }
   return stats;
@@ -290,7 +290,7 @@ export function buildStatString(stats, effect) {
     { key: "haste", val: stats["haste"] },
     { key: "crit", val: stats["crit"] },
     { key: "mastery", val: stats["mastery"] },
-    { key: "vers", val: stats["vers"] },
+    { key: "versatility", val: stats["versatility"] },
   ];
 
   statsList = statsList.sort(function (a, b) {
@@ -300,7 +300,7 @@ export function buildStatString(stats, effect) {
   for (var ind in statsList) {
     statString +=
       statsList[ind]["val"] > 0
-        ? correctCasing(statsList[ind]["key"]) + " / "
+        ? statsList[ind]["val"] + " " + correctCasing(statsList[ind]["key"]) + " / "
         : "";
   }
 
@@ -340,7 +340,7 @@ export function scoreItem(item, player, contentType) {
           ? item.stats["bonus_stats"][stat]
           : 0);
       score += statSum * player.getStatWeight(contentType, stat);
-      //console.log("Stat: " + stat + " adds " + statSum * player.getStatWeight(contentType, stat) + " to score.");
+      console.log("Stat: " + stat + " adds " + statSum * player.getStatWeight(contentType, stat) + " to score.");
     }
   }
 

@@ -151,7 +151,7 @@ class Player {
         let weights = this.statWeights[contentType]
 
         for (var stat in weights) {
-            if (weights[stat] > maxValue && !ignore.includes(stat) && ['crit', 'haste', 'mastery', 'vers'].includes(stat)) { max = stat; maxValue = weights[stat] };
+            if (weights[stat] > maxValue && !ignore.includes(stat) && ['crit', 'haste', 'mastery', 'versatility'].includes(stat)) { max = stat; maxValue = weights[stat] };
         }
 
         return max;
@@ -225,7 +225,7 @@ class Player {
                     statPerc = 1; // TODO
                 }
                 break;
-            case "Vers":
+            case "Versatility":
                 statPerc = 1 + this.activeStats.versatility / 40 / 100;
                 break;
             default:
@@ -243,23 +243,23 @@ class Player {
         let mult = 1;
         if (flag === "ALL") {
             // Returns a multiplier that includes raw intellect. 
-            mult = this.getStatPerc("Haste") * this.getStatPerc("Crit") * this.getStatPerc("Vers") * this.getStatPerc("Mastery") * this.activeStats.intellect;
+            mult = this.getStatPerc("Haste") * this.getStatPerc("Crit") * this.getStatPerc("Versatility") * this.getStatPerc("Mastery") * this.activeStats.intellect;
         }
         else if (flag === "NOHASTE") {
             // Returns a multiplier that includes raw intellect. 
-            mult = this.getStatPerc("Haste") * this.getStatPerc("Crit") * this.getStatPerc("Vers") * this.getStatPerc("Mastery") * this.activeStats.intellect;
+            mult = this.getStatPerc("Haste") * this.getStatPerc("Crit") * this.getStatPerc("Versatility") * this.getStatPerc("Mastery") * this.activeStats.intellect;
         }
         else if (flag === "ALLSEC") {
             // Returns a multiplier that includes all secondaries but NOT intellect.
-            mult = this.getStatPerc("Haste") * this.getStatPerc("Crit") * this.getStatPerc("Vers") * this.getStatPerc("Mastery");
+            mult = this.getStatPerc("Haste") * this.getStatPerc("Crit") * this.getStatPerc("Versatility") * this.getStatPerc("Mastery");
         }
         else if (flag === "NOMAST") {
             // Returns a multiplier of Haste / Vers / Crit.
-            mult = this.getStatPerc("Haste") * this.getStatPerc("Crit") * this.getStatPerc("Vers");
+            mult = this.getStatPerc("Haste") * this.getStatPerc("Crit") * this.getStatPerc("Versatility");
         }
         else if (flag === "CRITVERS") {
             // Returns a multiplier that includes raw intellect. 
-            mult = this.getStatPerc("Crit") * this.getStatPerc("Vers");
+            mult = this.getStatPerc("Crit") * this.getStatPerc("Versatility");
         }
         else {
             // Our multiplier consists of whatever is in the stat list array.
@@ -450,9 +450,9 @@ class Player {
                 "Raid": {
                     intellect: 1, 
                     haste: 0.6,
-                    crit: 0.5,
+                    crit: 0.54,
                     mastery: 0.5,
-                    versatility: 0.45,
+                    versatility: 0.49,
                     leech: 0.8,
                 },
                 "Dungeon": {
@@ -492,18 +492,18 @@ class Player {
             this.statWeights = {
                 Raid: {
                     intellect: 1,
-                    haste: 0.4,
+                    haste: 0.42,
                     crit: 0.6,
                     mastery: 0.5,
-                    versatility: 0.5,
+                    versatility: 0.51,
                     leech: 0.6,
                 },
                 Dungeon: {
                     intellect: 1,
-                    haste: 0.4,
+                    haste: 0.54,
                     crit: 0.6,
                     mastery: 0.5,
-                    versatility: 0.5,
+                    versatility: 0.52,
                     leech: 0.6,
                 },
                 DefaultWeights: true
@@ -551,18 +551,18 @@ class Player {
                 "Raid": {
                     intellect: 1, 
                     haste: 0.6,
-                    crit: 0.55,
-                    mastery: 0.5,
-                    versatility: 0.45,
+                    crit: 0.56,
+                    mastery: 0.52,
+                    versatility: 0.5,
                     leech: 0.8,
                 },
                 "Dungeon": {
                     intellect: 1, 
                     haste: 0.6,
-                    crit: 0.55,
-                    mastery: 0.5,
-                    versatility: 0.45,
-                    leech: 0.8,
+                    crit: 0.56,
+                    mastery: 0.52,
+                    versatility: 0.5,
+                    leech: 0.4,
                 },
                 "DefaultWeights": true
             }

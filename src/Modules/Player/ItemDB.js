@@ -31,7 +31,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 6666
+            "versatility": 6666
         },
         "dropLoc": "",
         "selectable": "true",
@@ -71,7 +71,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "faction": "alliance",
         "dropLoc": "",
@@ -108,7 +108,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "faction": "alliance",
         "dropLoc": "",
@@ -145,7 +145,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "faction": "horde",
         "dropLoc": "",
@@ -182,7 +182,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "faction": "horde",
         "dropLoc": "",
@@ -212,7 +212,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -241,7 +241,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -270,7 +270,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -299,7 +299,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -328,7 +328,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -357,7 +357,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -386,7 +386,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -415,7 +415,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -451,7 +451,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "faction": "alliance",
         "dropLoc": "",
@@ -488,7 +488,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "faction": "alliance",
         "dropLoc": "",
@@ -525,7 +525,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "faction": "horde",
         "dropLoc": "",
@@ -562,7 +562,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "faction": "horde",
         "dropLoc": "",
@@ -599,7 +599,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "faction": "alliance",
         "dropLoc": "",
@@ -636,7 +636,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "faction": "alliance",
         "dropLoc": "",
@@ -673,7 +673,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "faction": "horde",
         "dropLoc": "",
@@ -710,7 +710,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "faction": "horde",
         "dropLoc": "",
@@ -747,7 +747,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "faction": "alliance",
         "dropLoc": "",
@@ -784,7 +784,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "faction": "alliance",
         "dropLoc": "",
@@ -821,7 +821,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "faction": "horde",
         "dropLoc": "",
@@ -858,7 +858,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "faction": "horde",
         "dropLoc": "",
@@ -888,7 +888,7 @@ export const itemDB = [
             "haste": 2500,
             "crit": 2500,
             "mastery": 2500,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -924,7 +924,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -960,7 +960,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -996,7 +996,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -1032,7 +1032,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -1068,7 +1068,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -1104,7 +1104,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -1140,7 +1140,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -1176,7 +1176,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -1212,7 +1212,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -1248,7 +1248,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -1284,7 +1284,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -1320,7 +1320,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -1356,7 +1356,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -1392,7 +1392,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -1428,7 +1428,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -1464,7 +1464,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -1500,7 +1500,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -1536,7 +1536,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -1572,7 +1572,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -1608,7 +1608,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -1644,7 +1644,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -1680,7 +1680,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -1716,7 +1716,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -1752,7 +1752,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -1781,7 +1781,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -1810,7 +1810,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -1839,7 +1839,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -1868,7 +1868,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -1897,7 +1897,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -1926,7 +1926,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -1955,7 +1955,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -1984,7 +1984,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -2013,7 +2013,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -2042,7 +2042,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -2071,7 +2071,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -2100,7 +2100,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -2136,7 +2136,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 6666
+            "versatility": 6666
         },
         "dropLoc": "",
         "selectable": "true",
@@ -2176,7 +2176,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 6666
+            "versatility": 6666
         },
         "dropLoc": "",
         "selectable": "true",
@@ -2216,7 +2216,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 6666
+            "versatility": 6666
         },
         "dropLoc": "",
         "selectable": "true",
@@ -2249,7 +2249,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 6666
+            "versatility": 6666
         },
         "dropLoc": "",
         "selectable": "true",
@@ -2282,7 +2282,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -2311,7 +2311,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -2340,7 +2340,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -2369,7 +2369,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -2398,7 +2398,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -2427,7 +2427,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -2456,7 +2456,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -2485,7 +2485,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -2514,7 +2514,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -2543,7 +2543,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -2572,7 +2572,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -2601,7 +2601,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -2630,7 +2630,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -2659,7 +2659,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -2688,7 +2688,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -2717,7 +2717,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -2746,7 +2746,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -2775,7 +2775,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -2804,7 +2804,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -2833,7 +2833,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 4697,
             "mastery": 2303,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -2862,7 +2862,7 @@ export const itemDB = [
             "haste": 2996,
             "crit": 4004,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -2891,7 +2891,7 @@ export const itemDB = [
             "haste": 2716,
             "crit": 0,
             "mastery": 0,
-            "vers": 4284
+            "versatility": 4284
         },
         "dropLoc": "",
         "selectable": "true",
@@ -2920,7 +2920,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 4095,
             "mastery": 0,
-            "vers": 2905
+            "versatility": 2905
         },
         "dropLoc": "",
         "selectable": "true",
@@ -2949,7 +2949,7 @@ export const itemDB = [
             "haste": 2408,
             "crit": 0,
             "mastery": 4592,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -2978,7 +2978,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 4354,
-            "vers": 2646
+            "versatility": 2646
         },
         "dropLoc": "",
         "selectable": "true",
@@ -3007,7 +3007,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -3036,7 +3036,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -3065,7 +3065,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -3094,7 +3094,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -3123,7 +3123,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -3152,7 +3152,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -3181,7 +3181,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -3210,7 +3210,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -3239,7 +3239,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -3268,7 +3268,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -3297,7 +3297,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -3326,7 +3326,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -3355,7 +3355,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -3384,7 +3384,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -3413,7 +3413,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -3442,7 +3442,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -3471,7 +3471,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -3500,7 +3500,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -3529,7 +3529,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -3558,7 +3558,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -3587,7 +3587,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -3616,7 +3616,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -3645,7 +3645,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -3674,7 +3674,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -3703,7 +3703,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -3732,7 +3732,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -3761,7 +3761,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -3790,7 +3790,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -3819,7 +3819,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -3848,7 +3848,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -3877,7 +3877,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -3906,7 +3906,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -3935,7 +3935,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -3964,7 +3964,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -3993,7 +3993,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -4022,7 +4022,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -4051,7 +4051,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -4080,7 +4080,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -4109,7 +4109,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -4138,7 +4138,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -4171,7 +4171,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -4211,7 +4211,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 12500
+            "versatility": 12500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -4247,7 +4247,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 12500,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -4283,7 +4283,7 @@ export const itemDB = [
             "haste": 12500,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -4319,7 +4319,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 12500,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -4355,7 +4355,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 10000
+            "versatility": 10000
         },
         "dropLoc": "",
         "selectable": "true",
@@ -4391,7 +4391,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 10000,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -4427,7 +4427,7 @@ export const itemDB = [
             "haste": 10000,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -4463,7 +4463,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 10000,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -4499,7 +4499,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 10000
+            "versatility": 10000
         },
         "dropLoc": "",
         "selectable": "true",
@@ -4535,7 +4535,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 10000,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -4571,7 +4571,7 @@ export const itemDB = [
             "haste": 10000,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -4607,7 +4607,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 10000,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -4643,7 +4643,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 12500
+            "versatility": 12500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -4679,7 +4679,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 12500,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -4715,7 +4715,7 @@ export const itemDB = [
             "haste": 12500,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -4751,7 +4751,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 12500,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -4780,7 +4780,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -4809,7 +4809,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -4838,7 +4838,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -4867,7 +4867,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -4896,7 +4896,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -4925,7 +4925,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -4954,7 +4954,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -4983,7 +4983,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -5012,7 +5012,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -5041,7 +5041,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -5070,7 +5070,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -5099,7 +5099,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -5128,7 +5128,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -5157,7 +5157,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -5186,7 +5186,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -5215,7 +5215,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -5244,7 +5244,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -5273,7 +5273,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -5302,7 +5302,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3800,
             "mastery": 0,
-            "vers": 3200
+            "versatility": 3200
         },
         "dropLoc": "",
         "selectable": "true",
@@ -5331,7 +5331,7 @@ export const itemDB = [
             "haste": 3800,
             "crit": 0,
             "mastery": 3200,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -5360,7 +5360,7 @@ export const itemDB = [
             "haste": 3050,
             "crit": 3950,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -5389,7 +5389,7 @@ export const itemDB = [
             "haste": 3800,
             "crit": 3200,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -5418,7 +5418,7 @@ export const itemDB = [
             "haste": 3350,
             "crit": 0,
             "mastery": 0,
-            "vers": 3650
+            "versatility": 3650
         },
         "dropLoc": "",
         "selectable": "true",
@@ -5447,7 +5447,7 @@ export const itemDB = [
             "haste": 3050,
             "crit": 0,
             "mastery": 3950,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -5476,7 +5476,7 @@ export const itemDB = [
             "haste": 3950,
             "crit": 3050,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -5505,7 +5505,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 3800,
-            "vers": 3200
+            "versatility": 3200
         },
         "dropLoc": "",
         "selectable": "true",
@@ -5534,7 +5534,7 @@ export const itemDB = [
             "haste": 3050,
             "crit": 3950,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -5563,7 +5563,7 @@ export const itemDB = [
             "haste": 3350,
             "crit": 3650,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -5592,7 +5592,7 @@ export const itemDB = [
             "haste": 3050,
             "crit": 3950,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -5621,7 +5621,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3950,
             "mastery": 3050,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -5650,7 +5650,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3050,
             "mastery": 0,
-            "vers": 3950
+            "versatility": 3950
         },
         "dropLoc": "",
         "selectable": "true",
@@ -5679,7 +5679,7 @@ export const itemDB = [
             "haste": 3650,
             "crit": 0,
             "mastery": 0,
-            "vers": 3350
+            "versatility": 3350
         },
         "dropLoc": "",
         "selectable": "true",
@@ -5708,7 +5708,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3800,
             "mastery": 3200,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -5737,7 +5737,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3650,
             "mastery": 3350,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -5766,7 +5766,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3950,
             "mastery": 0,
-            "vers": 3050
+            "versatility": 3050
         },
         "dropLoc": "",
         "selectable": "true",
@@ -5795,7 +5795,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 3950,
-            "vers": 3050
+            "versatility": 3050
         },
         "dropLoc": "",
         "selectable": "true",
@@ -5824,7 +5824,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 3950,
-            "vers": 3050
+            "versatility": 3050
         },
         "dropLoc": "",
         "selectable": "true",
@@ -5853,7 +5853,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 3800,
-            "vers": 3200
+            "versatility": 3200
         },
         "dropLoc": "",
         "selectable": "true",
@@ -5882,7 +5882,7 @@ export const itemDB = [
             "haste": 3350,
             "crit": 0,
             "mastery": 3650,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -5911,7 +5911,7 @@ export const itemDB = [
             "haste": 3950,
             "crit": 0,
             "mastery": 3050,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -5940,7 +5940,7 @@ export const itemDB = [
             "haste": 3800,
             "crit": 0,
             "mastery": 0,
-            "vers": 3200
+            "versatility": 3200
         },
         "dropLoc": "",
         "selectable": "true",
@@ -5969,7 +5969,7 @@ export const itemDB = [
             "haste": 3350,
             "crit": 0,
             "mastery": 0,
-            "vers": 3650
+            "versatility": 3650
         },
         "dropLoc": "",
         "selectable": "true",
@@ -5998,7 +5998,7 @@ export const itemDB = [
             "haste": 3800,
             "crit": 3200,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -6027,7 +6027,7 @@ export const itemDB = [
             "haste": 3050,
             "crit": 3950,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -6056,7 +6056,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3200,
             "mastery": 0,
-            "vers": 3800
+            "versatility": 3800
         },
         "dropLoc": "",
         "selectable": "true",
@@ -6085,7 +6085,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3650,
             "mastery": 0,
-            "vers": 3350
+            "versatility": 3350
         },
         "dropLoc": "",
         "selectable": "true",
@@ -6114,7 +6114,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 3800,
-            "vers": 3200
+            "versatility": 3200
         },
         "dropLoc": "",
         "selectable": "true",
@@ -6143,7 +6143,7 @@ export const itemDB = [
             "haste": 9750,
             "crit": 7750,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -6172,7 +6172,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 3050,
-            "vers": 3950
+            "versatility": 3950
         },
         "dropLoc": "",
         "selectable": "true",
@@ -6201,7 +6201,7 @@ export const itemDB = [
             "haste": 3650,
             "crit": 0,
             "mastery": 0,
-            "vers": 3350
+            "versatility": 3350
         },
         "dropLoc": "",
         "selectable": "true",
@@ -6230,7 +6230,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 3050
+            "versatility": 3050
         },
         "dropLoc": "",
         "selectable": "true",
@@ -6259,7 +6259,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 3200,
-            "vers": 3800
+            "versatility": 3800
         },
         "dropLoc": "",
         "selectable": "true",
@@ -6288,7 +6288,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 6666,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -6321,7 +6321,7 @@ export const itemDB = [
             "haste": 10000,
             "crit": 7500,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -6350,7 +6350,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -6383,7 +6383,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -6416,7 +6416,7 @@ export const itemDB = [
             "haste": 5500,
             "crit": 0,
             "mastery": 12000,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -6445,7 +6445,7 @@ export const itemDB = [
             "haste": 5500,
             "crit": 0,
             "mastery": 12000,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -6474,7 +6474,7 @@ export const itemDB = [
             "haste": 5500,
             "crit": 0,
             "mastery": 12000,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -6503,7 +6503,7 @@ export const itemDB = [
             "haste": 5500,
             "crit": 0,
             "mastery": 12000,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -6532,7 +6532,7 @@ export const itemDB = [
             "haste": 5500,
             "crit": 0,
             "mastery": 12000,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -6561,7 +6561,7 @@ export const itemDB = [
             "haste": 5500,
             "crit": 0,
             "mastery": 12000,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -6590,7 +6590,7 @@ export const itemDB = [
             "haste": 5500,
             "crit": 0,
             "mastery": 12000,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -6619,7 +6619,7 @@ export const itemDB = [
             "haste": 5500,
             "crit": 0,
             "mastery": 12000,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -6648,7 +6648,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -6681,7 +6681,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -6714,7 +6714,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2205,
             "mastery": 4795,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -6743,7 +6743,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -6772,7 +6772,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -6801,7 +6801,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -6830,7 +6830,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -6859,7 +6859,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -6888,7 +6888,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -6917,7 +6917,7 @@ export const itemDB = [
             "haste": 3276,
             "crit": 3724,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -6946,7 +6946,7 @@ export const itemDB = [
             "haste": 2492,
             "crit": 4508,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -6975,7 +6975,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3437,
             "mastery": 3563,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -7004,7 +7004,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 3682,
-            "vers": 3318
+            "versatility": 3318
         },
         "dropLoc": "",
         "selectable": "true",
@@ -7033,7 +7033,7 @@ export const itemDB = [
             "haste": 3703,
             "crit": 3297,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -7062,7 +7062,7 @@ export const itemDB = [
             "haste": 3157,
             "crit": 0,
             "mastery": 3843,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -7091,7 +7091,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 2450,
-            "vers": 4550
+            "versatility": 4550
         },
         "dropLoc": "",
         "selectable": "true",
@@ -7120,7 +7120,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 4746,
-            "vers": 2254
+            "versatility": 2254
         },
         "dropLoc": "",
         "selectable": "true",
@@ -7149,7 +7149,7 @@ export const itemDB = [
             "haste": 2149,
             "crit": 0,
             "mastery": 4851,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -7178,7 +7178,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 3409,
-            "vers": 3591
+            "versatility": 3591
         },
         "dropLoc": "",
         "selectable": "true",
@@ -7207,7 +7207,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -7236,7 +7236,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -7265,7 +7265,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -7294,7 +7294,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -7323,7 +7323,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -7352,7 +7352,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -7381,7 +7381,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 4739,
-            "vers": 2261
+            "versatility": 2261
         },
         "dropLoc": "",
         "selectable": "true",
@@ -7410,7 +7410,7 @@ export const itemDB = [
             "haste": 3360,
             "crit": 3640,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -7439,7 +7439,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 4522,
-            "vers": 2478
+            "versatility": 2478
         },
         "dropLoc": "",
         "selectable": "true",
@@ -7468,7 +7468,7 @@ export const itemDB = [
             "haste": 3192,
             "crit": 0,
             "mastery": 3808,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -7497,7 +7497,7 @@ export const itemDB = [
             "haste": 3395,
             "crit": 0,
             "mastery": 3605,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -7526,7 +7526,7 @@ export const itemDB = [
             "haste": 4256,
             "crit": 0,
             "mastery": 0,
-            "vers": 2744
+            "versatility": 2744
         },
         "dropLoc": "",
         "selectable": "true",
@@ -7555,7 +7555,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2387,
             "mastery": 0,
-            "vers": 4613
+            "versatility": 4613
         },
         "dropLoc": "",
         "selectable": "true",
@@ -7584,7 +7584,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 4305,
             "mastery": 2695,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -7613,7 +7613,7 @@ export const itemDB = [
             "haste": 2198,
             "crit": 0,
             "mastery": 4802,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -7642,7 +7642,7 @@ export const itemDB = [
             "haste": 3388,
             "crit": 0,
             "mastery": 3612,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -7671,7 +7671,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -7700,7 +7700,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -7729,7 +7729,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -7758,7 +7758,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -7787,7 +7787,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -7816,7 +7816,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -7845,7 +7845,7 @@ export const itemDB = [
             "haste": 4515,
             "crit": 0,
             "mastery": 2485,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -7874,7 +7874,7 @@ export const itemDB = [
             "haste": 3213,
             "crit": 0,
             "mastery": 3787,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -7903,7 +7903,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 4375,
             "mastery": 2625,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -7932,7 +7932,7 @@ export const itemDB = [
             "haste": 2947,
             "crit": 0,
             "mastery": 4053,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -7961,7 +7961,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 4893,
-            "vers": 2107
+            "versatility": 2107
         },
         "dropLoc": "",
         "selectable": "true",
@@ -7990,7 +7990,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3346,
             "mastery": 0,
-            "vers": 3654
+            "versatility": 3654
         },
         "dropLoc": "",
         "selectable": "true",
@@ -8019,7 +8019,7 @@ export const itemDB = [
             "haste": 3143,
             "crit": 0,
             "mastery": 0,
-            "vers": 3857
+            "versatility": 3857
         },
         "dropLoc": "",
         "selectable": "true",
@@ -8048,7 +8048,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 4466,
             "mastery": 0,
-            "vers": 2534
+            "versatility": 2534
         },
         "dropLoc": "",
         "selectable": "true",
@@ -8077,7 +8077,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 3528,
-            "vers": 3472
+            "versatility": 3472
         },
         "dropLoc": "",
         "selectable": "true",
@@ -8106,7 +8106,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 4221,
             "mastery": 0,
-            "vers": 2779
+            "versatility": 2779
         },
         "dropLoc": "",
         "selectable": "true",
@@ -8135,7 +8135,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -8164,7 +8164,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -8193,7 +8193,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -8222,7 +8222,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -8251,7 +8251,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -8280,7 +8280,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -8309,7 +8309,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2919,
             "mastery": 4081,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -8338,7 +8338,7 @@ export const itemDB = [
             "haste": 2660,
             "crit": 0,
             "mastery": 0,
-            "vers": 4340
+            "versatility": 4340
         },
         "dropLoc": "",
         "selectable": "true",
@@ -8367,7 +8367,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 4347,
             "mastery": 0,
-            "vers": 2653
+            "versatility": 2653
         },
         "dropLoc": "",
         "selectable": "true",
@@ -8396,7 +8396,7 @@ export const itemDB = [
             "haste": 3234,
             "crit": 3766,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -8425,7 +8425,7 @@ export const itemDB = [
             "haste": 4312,
             "crit": 0,
             "mastery": 2688,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -8454,7 +8454,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 4144,
             "mastery": 2856,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -8483,7 +8483,7 @@ export const itemDB = [
             "haste": 3906,
             "crit": 0,
             "mastery": 0,
-            "vers": 3094
+            "versatility": 3094
         },
         "dropLoc": "",
         "selectable": "true",
@@ -8512,7 +8512,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3549,
             "mastery": 0,
-            "vers": 3451
+            "versatility": 3451
         },
         "dropLoc": "",
         "selectable": "true",
@@ -8541,7 +8541,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3675,
             "mastery": 3325,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -8570,7 +8570,7 @@ export const itemDB = [
             "haste": 3759,
             "crit": 3241,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -8599,7 +8599,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -8632,7 +8632,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -8661,7 +8661,7 @@ export const itemDB = [
             "haste": 4100,
             "crit": 2900,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -8690,7 +8690,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -8719,7 +8719,7 @@ export const itemDB = [
             "haste": 3800,
             "crit": 0,
             "mastery": 0,
-            "vers": 3200
+            "versatility": 3200
         },
         "dropLoc": "",
         "selectable": "true",
@@ -8748,7 +8748,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -8777,7 +8777,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 4250,
-            "vers": 2750
+            "versatility": 2750
         },
         "dropLoc": "",
         "selectable": "true",
@@ -8806,7 +8806,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -8835,7 +8835,7 @@ export const itemDB = [
             "haste": 3950,
             "crit": 0,
             "mastery": 3050,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -8864,7 +8864,7 @@ export const itemDB = [
             "haste": 9500,
             "crit": 8000,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -8894,7 +8894,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 4200,
             "mastery": 2800,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -8924,7 +8924,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 4350,
-            "vers": 2650
+            "versatility": 2650
         },
         "dropLoc": "",
         "selectable": "true",
@@ -8954,7 +8954,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 4500,
             "mastery": 2500,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -8984,7 +8984,7 @@ export const itemDB = [
             "haste": 2200,
             "crit": 0,
             "mastery": 0,
-            "vers": 4800
+            "versatility": 4800
         },
         "dropLoc": "",
         "selectable": "true",
@@ -9014,7 +9014,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 2350,
-            "vers": 4650
+            "versatility": 4650
         },
         "dropLoc": "",
         "selectable": "true",
@@ -9044,7 +9044,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 4500,
-            "vers": 2500
+            "versatility": 2500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -9074,7 +9074,7 @@ export const itemDB = [
             "haste": 2650,
             "crit": 4350,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -9104,7 +9104,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2650,
             "mastery": 0,
-            "vers": 4350
+            "versatility": 4350
         },
         "dropLoc": "",
         "selectable": "true",
@@ -9134,7 +9134,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 3250,
-            "vers": 3750
+            "versatility": 3750
         },
         "dropLoc": "",
         "selectable": "true",
@@ -9163,7 +9163,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 7500,
-            "vers": 10000
+            "versatility": 10000
         },
         "dropLoc": "",
         "selectable": "true",
@@ -9193,7 +9193,7 @@ export const itemDB = [
             "haste": 6666,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -9227,7 +9227,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 6666
+            "versatility": 6666
         },
         "dropLoc": "",
         "selectable": "true",
@@ -9260,7 +9260,7 @@ export const itemDB = [
             "haste": 7500,
             "crit": 10000,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -9289,7 +9289,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 11000,
-            "vers": 6500
+            "versatility": 6500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -9318,7 +9318,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 8000,
             "mastery": 9500,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -9347,7 +9347,7 @@ export const itemDB = [
             "haste": 7000,
             "crit": 0,
             "mastery": 0,
-            "vers": 10500
+            "versatility": 10500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -9376,7 +9376,7 @@ export const itemDB = [
             "haste": 3950,
             "crit": 3050,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -9405,7 +9405,7 @@ export const itemDB = [
             "haste": 3650,
             "crit": 3350,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -9434,7 +9434,7 @@ export const itemDB = [
             "haste": 4100,
             "crit": 0,
             "mastery": 0,
-            "vers": 2900
+            "versatility": 2900
         },
         "dropLoc": "",
         "selectable": "true",
@@ -9463,7 +9463,7 @@ export const itemDB = [
             "haste": 3800,
             "crit": 3200,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -9492,7 +9492,7 @@ export const itemDB = [
             "haste": 4408,
             "crit": 0,
             "mastery": 0,
-            "vers": 2592
+            "versatility": 2592
         },
         "dropLoc": "",
         "selectable": "true",
@@ -9521,7 +9521,7 @@ export const itemDB = [
             "haste": 3992,
             "crit": 0,
             "mastery": 3008,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -9550,7 +9550,7 @@ export const itemDB = [
             "haste": 4111,
             "crit": 0,
             "mastery": 0,
-            "vers": 2889
+            "versatility": 2889
         },
         "dropLoc": "",
         "selectable": "true",
@@ -9579,7 +9579,7 @@ export const itemDB = [
             "haste": 4107,
             "crit": 2893,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -9615,7 +9615,7 @@ export const itemDB = [
             "haste": 8992,
             "crit": 8508,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -9644,7 +9644,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3306,
             "mastery": 3694,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -9673,7 +9673,7 @@ export const itemDB = [
             "haste": 4550,
             "crit": 0,
             "mastery": 2450,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -9702,7 +9702,7 @@ export const itemDB = [
             "haste": 3800,
             "crit": 0,
             "mastery": 3200,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -9731,7 +9731,7 @@ export const itemDB = [
             "haste": 3350,
             "crit": 0,
             "mastery": 3650,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -9760,7 +9760,7 @@ export const itemDB = [
             "haste": 3650,
             "crit": 0,
             "mastery": 0,
-            "vers": 3350
+            "versatility": 3350
         },
         "dropLoc": "",
         "selectable": "true",
@@ -9789,7 +9789,7 @@ export const itemDB = [
             "haste": 3200,
             "crit": 0,
             "mastery": 0,
-            "vers": 3800
+            "versatility": 3800
         },
         "dropLoc": "",
         "selectable": "true",
@@ -9818,7 +9818,7 @@ export const itemDB = [
             "haste": 3950,
             "crit": 0,
             "mastery": 3050,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -9847,7 +9847,7 @@ export const itemDB = [
             "haste": 3650,
             "crit": 0,
             "mastery": 0,
-            "vers": 3350
+            "versatility": 3350
         },
         "dropLoc": "",
         "selectable": "true",
@@ -9876,7 +9876,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 3350,
-            "vers": 3650
+            "versatility": 3650
         },
         "dropLoc": "",
         "selectable": "true",
@@ -9905,7 +9905,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3950,
             "mastery": 0,
-            "vers": 3050
+            "versatility": 3050
         },
         "dropLoc": "",
         "selectable": "true",
@@ -9934,7 +9934,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 3800,
-            "vers": 3200
+            "versatility": 3200
         },
         "dropLoc": "",
         "selectable": "true",
@@ -9963,7 +9963,7 @@ export const itemDB = [
             "haste": 3650,
             "crit": 0,
             "mastery": 3350,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -9992,7 +9992,7 @@ export const itemDB = [
             "haste": 3950,
             "crit": 0,
             "mastery": 3050,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -10021,7 +10021,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3950,
             "mastery": 0,
-            "vers": 3050
+            "versatility": 3050
         },
         "dropLoc": "",
         "selectable": "true",
@@ -10050,7 +10050,7 @@ export const itemDB = [
             "haste": 3800,
             "crit": 3200,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -10079,7 +10079,7 @@ export const itemDB = [
             "haste": 3650,
             "crit": 3350,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -10108,7 +10108,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3050,
             "mastery": 3950,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -10137,7 +10137,7 @@ export const itemDB = [
             "haste": 3350,
             "crit": 3650,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -10166,7 +10166,7 @@ export const itemDB = [
             "haste": 3800,
             "crit": 0,
             "mastery": 3200,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -10195,7 +10195,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3950,
             "mastery": 3050,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -10224,7 +10224,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 3050,
-            "vers": 3950
+            "versatility": 3950
         },
         "dropLoc": "",
         "selectable": "true",
@@ -10253,7 +10253,7 @@ export const itemDB = [
             "haste": 3650,
             "crit": 0,
             "mastery": 0,
-            "vers": 3350
+            "versatility": 3350
         },
         "dropLoc": "",
         "selectable": "true",
@@ -10282,7 +10282,7 @@ export const itemDB = [
             "haste": 3200,
             "crit": 0,
             "mastery": 0,
-            "vers": 3800
+            "versatility": 3800
         },
         "dropLoc": "",
         "selectable": "true",
@@ -10311,7 +10311,7 @@ export const itemDB = [
             "haste": 3800,
             "crit": 3200,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -10340,7 +10340,7 @@ export const itemDB = [
             "haste": 3950,
             "crit": 0,
             "mastery": 3050,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -10369,7 +10369,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3350,
             "mastery": 0,
-            "vers": 3650
+            "versatility": 3650
         },
         "dropLoc": "",
         "selectable": "true",
@@ -10398,7 +10398,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3650,
             "mastery": 3350,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -10427,7 +10427,7 @@ export const itemDB = [
             "haste": 3650,
             "crit": 0,
             "mastery": 3350,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -10456,7 +10456,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3800,
             "mastery": 3200,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -10485,7 +10485,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3950,
             "mastery": 3050,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -10514,7 +10514,7 @@ export const itemDB = [
             "haste": 3650,
             "crit": 0,
             "mastery": 3350,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -10543,7 +10543,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3800,
             "mastery": 3200,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -10572,7 +10572,7 @@ export const itemDB = [
             "haste": 3050,
             "crit": 0,
             "mastery": 3950,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -10601,7 +10601,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 3950,
-            "vers": 3050
+            "versatility": 3050
         },
         "dropLoc": "",
         "selectable": "true",
@@ -10630,7 +10630,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3050,
             "mastery": 0,
-            "vers": 3950
+            "versatility": 3950
         },
         "dropLoc": "",
         "selectable": "true",
@@ -10659,7 +10659,7 @@ export const itemDB = [
             "haste": 3200,
             "crit": 0,
             "mastery": 3800,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -10688,7 +10688,7 @@ export const itemDB = [
             "haste": 3350,
             "crit": 0,
             "mastery": 0,
-            "vers": 3650
+            "versatility": 3650
         },
         "dropLoc": "",
         "selectable": "true",
@@ -10717,7 +10717,7 @@ export const itemDB = [
             "haste": 3350,
             "crit": 3650,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -10746,7 +10746,7 @@ export const itemDB = [
             "haste": 3200,
             "crit": 0,
             "mastery": 3800,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -10775,7 +10775,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3950,
             "mastery": 0,
-            "vers": 3050
+            "versatility": 3050
         },
         "dropLoc": "",
         "selectable": "true",
@@ -10804,7 +10804,7 @@ export const itemDB = [
             "haste": 3050,
             "crit": 0,
             "mastery": 0,
-            "vers": 3950
+            "versatility": 3950
         },
         "dropLoc": "",
         "selectable": "true",
@@ -10833,7 +10833,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 3800,
-            "vers": 3200
+            "versatility": 3200
         },
         "dropLoc": "",
         "selectable": "true",
@@ -10862,7 +10862,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3800,
             "mastery": 3200,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -10891,7 +10891,7 @@ export const itemDB = [
             "haste": 3950,
             "crit": 3050,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -10920,7 +10920,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 3950,
-            "vers": 3050
+            "versatility": 3050
         },
         "dropLoc": "",
         "selectable": "true",
@@ -10949,7 +10949,7 @@ export const itemDB = [
             "haste": 3350,
             "crit": 0,
             "mastery": 0,
-            "vers": 3650
+            "versatility": 3650
         },
         "dropLoc": "",
         "selectable": "true",
@@ -10978,7 +10978,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 3200,
-            "vers": 3800
+            "versatility": 3800
         },
         "dropLoc": "",
         "selectable": "true",
@@ -11007,7 +11007,7 @@ export const itemDB = [
             "haste": 3650,
             "crit": 0,
             "mastery": 0,
-            "vers": 3350
+            "versatility": 3350
         },
         "dropLoc": "",
         "selectable": "true",
@@ -11036,7 +11036,7 @@ export const itemDB = [
             "haste": 3650,
             "crit": 0,
             "mastery": 0,
-            "vers": 3350
+            "versatility": 3350
         },
         "dropLoc": "",
         "selectable": "true",
@@ -11065,7 +11065,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3650,
             "mastery": 3350,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -11094,7 +11094,7 @@ export const itemDB = [
             "haste": 3650,
             "crit": 0,
             "mastery": 3350,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -11123,7 +11123,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3800,
             "mastery": 0,
-            "vers": 3200
+            "versatility": 3200
         },
         "dropLoc": "",
         "selectable": "true",
@@ -11152,7 +11152,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 3350,
-            "vers": 3650
+            "versatility": 3650
         },
         "dropLoc": "",
         "selectable": "true",
@@ -11181,7 +11181,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 3650,
-            "vers": 3350
+            "versatility": 3350
         },
         "dropLoc": "",
         "selectable": "true",
@@ -11210,7 +11210,7 @@ export const itemDB = [
             "haste": 3350,
             "crit": 0,
             "mastery": 0,
-            "vers": 3650
+            "versatility": 3650
         },
         "dropLoc": "",
         "selectable": "true",
@@ -11239,7 +11239,7 @@ export const itemDB = [
             "haste": 3200,
             "crit": 0,
             "mastery": 0,
-            "vers": 3800
+            "versatility": 3800
         },
         "dropLoc": "",
         "selectable": "true",
@@ -11268,7 +11268,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3200,
             "mastery": 0,
-            "vers": 3800
+            "versatility": 3800
         },
         "dropLoc": "",
         "selectable": "true",
@@ -11297,7 +11297,7 @@ export const itemDB = [
             "haste": 3200,
             "crit": 0,
             "mastery": 3800,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -11326,7 +11326,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 3950,
-            "vers": 3050
+            "versatility": 3050
         },
         "dropLoc": "",
         "selectable": "true",
@@ -11355,7 +11355,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3950,
             "mastery": 0,
-            "vers": 3050
+            "versatility": 3050
         },
         "dropLoc": "",
         "selectable": "true",
@@ -11384,7 +11384,7 @@ export const itemDB = [
             "haste": 3200,
             "crit": 0,
             "mastery": 0,
-            "vers": 3800
+            "versatility": 3800
         },
         "dropLoc": "",
         "selectable": "true",
@@ -11413,7 +11413,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 3800,
-            "vers": 3200
+            "versatility": 3200
         },
         "dropLoc": "",
         "selectable": "true",
@@ -11442,7 +11442,7 @@ export const itemDB = [
             "haste": 3350,
             "crit": 0,
             "mastery": 0,
-            "vers": 3650
+            "versatility": 3650
         },
         "dropLoc": "",
         "selectable": "true",
@@ -11471,7 +11471,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3350,
             "mastery": 0,
-            "vers": 3650
+            "versatility": 3650
         },
         "dropLoc": "",
         "selectable": "true",
@@ -11500,7 +11500,7 @@ export const itemDB = [
             "haste": 3350,
             "crit": 3650,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -11529,7 +11529,7 @@ export const itemDB = [
             "haste": 3800,
             "crit": 0,
             "mastery": 3200,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -11558,7 +11558,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3350,
             "mastery": 3650,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -11587,7 +11587,7 @@ export const itemDB = [
             "haste": 3350,
             "crit": 0,
             "mastery": 3650,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -11616,7 +11616,7 @@ export const itemDB = [
             "haste": 3200,
             "crit": 3800,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -11645,7 +11645,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3200,
             "mastery": 0,
-            "vers": 3800
+            "versatility": 3800
         },
         "dropLoc": "",
         "selectable": "true",
@@ -11674,7 +11674,7 @@ export const itemDB = [
             "haste": 3050,
             "crit": 3950,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -11703,7 +11703,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 3650,
-            "vers": 3350
+            "versatility": 3350
         },
         "dropLoc": "",
         "selectable": "true",
@@ -11732,7 +11732,7 @@ export const itemDB = [
             "haste": 3950,
             "crit": 3050,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -11761,7 +11761,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 3050,
-            "vers": 3950
+            "versatility": 3950
         },
         "dropLoc": "",
         "selectable": "true",
@@ -11790,7 +11790,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3800,
             "mastery": 3200,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -11819,7 +11819,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3950,
             "mastery": 0,
-            "vers": 3050
+            "versatility": 3050
         },
         "dropLoc": "",
         "selectable": "true",
@@ -11848,7 +11848,7 @@ export const itemDB = [
             "haste": 3200,
             "crit": 3800,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -11877,7 +11877,7 @@ export const itemDB = [
             "haste": 3050,
             "crit": 0,
             "mastery": 3950,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -11906,7 +11906,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3050,
             "mastery": 3950,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -11935,7 +11935,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 3950,
-            "vers": 3050
+            "versatility": 3050
         },
         "dropLoc": "",
         "selectable": "true",
@@ -11964,7 +11964,7 @@ export const itemDB = [
             "haste": 3350,
             "crit": 0,
             "mastery": 3650,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -11993,7 +11993,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3200,
             "mastery": 0,
-            "vers": 3800
+            "versatility": 3800
         },
         "dropLoc": "",
         "selectable": "true",
@@ -12022,7 +12022,7 @@ export const itemDB = [
             "haste": 3350,
             "crit": 0,
             "mastery": 3650,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -12051,7 +12051,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3200,
             "mastery": 0,
-            "vers": 3800
+            "versatility": 3800
         },
         "dropLoc": "",
         "selectable": "true",
@@ -12080,7 +12080,7 @@ export const itemDB = [
             "haste": 3800,
             "crit": 0,
             "mastery": 0,
-            "vers": 3200
+            "versatility": 3200
         },
         "dropLoc": "",
         "selectable": "true",
@@ -12109,7 +12109,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3950,
             "mastery": 3050,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -12138,7 +12138,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3200,
             "mastery": 3800,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -12167,7 +12167,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3200,
             "mastery": 3800,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -12196,7 +12196,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3350,
             "mastery": 3650,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -12225,7 +12225,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 3950,
-            "vers": 3050
+            "versatility": 3050
         },
         "dropLoc": "",
         "selectable": "true",
@@ -12254,7 +12254,7 @@ export const itemDB = [
             "haste": 3650,
             "crit": 0,
             "mastery": 3350,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -12283,7 +12283,7 @@ export const itemDB = [
             "haste": 3350,
             "crit": 3650,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -12312,7 +12312,7 @@ export const itemDB = [
             "haste": 3800,
             "crit": 0,
             "mastery": 0,
-            "vers": 3200
+            "versatility": 3200
         },
         "dropLoc": "",
         "selectable": "true",
@@ -12341,7 +12341,7 @@ export const itemDB = [
             "haste": 3950,
             "crit": 0,
             "mastery": 3050,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -12370,7 +12370,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3950,
             "mastery": 3050,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -12399,7 +12399,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3800,
             "mastery": 0,
-            "vers": 3200
+            "versatility": 3200
         },
         "dropLoc": "",
         "selectable": "true",
@@ -12428,7 +12428,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3350,
             "mastery": 0,
-            "vers": 3650
+            "versatility": 3650
         },
         "dropLoc": "",
         "selectable": "true",
@@ -12457,7 +12457,7 @@ export const itemDB = [
             "haste": 3050,
             "crit": 3950,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -12486,7 +12486,7 @@ export const itemDB = [
             "haste": 3200,
             "crit": 0,
             "mastery": 3800,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -12515,7 +12515,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3950,
             "mastery": 3050,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -12544,7 +12544,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3800,
             "mastery": 3200,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -12573,7 +12573,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3800,
             "mastery": 3200,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -12602,7 +12602,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3350,
             "mastery": 3650,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -12631,7 +12631,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3350,
             "mastery": 3650,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -12660,7 +12660,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3200,
             "mastery": 0,
-            "vers": 3800
+            "versatility": 3800
         },
         "dropLoc": "",
         "selectable": "true",
@@ -12689,7 +12689,7 @@ export const itemDB = [
             "haste": 3950,
             "crit": 3050,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -12718,7 +12718,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -12747,7 +12747,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -12776,7 +12776,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -12805,7 +12805,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -12834,7 +12834,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -12863,7 +12863,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -12892,7 +12892,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -12921,7 +12921,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -12950,7 +12950,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -12979,7 +12979,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -13008,7 +13008,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -13037,7 +13037,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -13066,7 +13066,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -13095,7 +13095,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -13124,7 +13124,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -13153,7 +13153,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -13182,7 +13182,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -13211,7 +13211,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -13240,7 +13240,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -13269,7 +13269,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -13298,7 +13298,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -13327,7 +13327,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -13356,7 +13356,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -13385,7 +13385,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -13414,7 +13414,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -13443,7 +13443,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -13472,7 +13472,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -13501,7 +13501,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -13530,7 +13530,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -13559,7 +13559,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -13588,7 +13588,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -13617,7 +13617,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -13647,7 +13647,7 @@ export const itemDB = [
             "haste": 5000,
             "crit": 2000,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -13677,7 +13677,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 4700,
             "mastery": 2300,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -13707,7 +13707,7 @@ export const itemDB = [
             "haste": 5000,
             "crit": 0,
             "mastery": 0,
-            "vers": 2000
+            "versatility": 2000
         },
         "dropLoc": "",
         "selectable": "true",
@@ -13737,7 +13737,7 @@ export const itemDB = [
             "haste": 4850,
             "crit": 2150,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -13767,7 +13767,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 4700,
-            "vers": 2300
+            "versatility": 2300
         },
         "dropLoc": "",
         "selectable": "true",
@@ -13797,7 +13797,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2150,
             "mastery": 0,
-            "vers": 4850
+            "versatility": 4850
         },
         "dropLoc": "",
         "selectable": "true",
@@ -13827,7 +13827,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 2300,
-            "vers": 4700
+            "versatility": 4700
         },
         "dropLoc": "",
         "selectable": "true",
@@ -13857,7 +13857,7 @@ export const itemDB = [
             "haste": 5000,
             "crit": 2000,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -13886,7 +13886,7 @@ export const itemDB = [
             "haste": 3200,
             "crit": 0,
             "mastery": 3800,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -13915,7 +13915,7 @@ export const itemDB = [
             "haste": 3050,
             "crit": 3950,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -13944,7 +13944,7 @@ export const itemDB = [
             "haste": 3350,
             "crit": 0,
             "mastery": 3650,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -13973,7 +13973,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 3650,
-            "vers": 3350
+            "versatility": 3350
         },
         "dropLoc": "",
         "selectable": "true",
@@ -14002,7 +14002,7 @@ export const itemDB = [
             "haste": 3800,
             "crit": 0,
             "mastery": 0,
-            "vers": 3200
+            "versatility": 3200
         },
         "dropLoc": "",
         "selectable": "true",
@@ -14031,7 +14031,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3350,
             "mastery": 0,
-            "vers": 3650
+            "versatility": 3650
         },
         "dropLoc": "",
         "selectable": "true",
@@ -14060,7 +14060,7 @@ export const itemDB = [
             "haste": 3650,
             "crit": 3350,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -14089,7 +14089,7 @@ export const itemDB = [
             "haste": 3950,
             "crit": 0,
             "mastery": 3050,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -14118,7 +14118,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3200,
             "mastery": 3800,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -14147,7 +14147,7 @@ export const itemDB = [
             "haste": 3200,
             "crit": 0,
             "mastery": 3800,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -14176,7 +14176,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3350,
             "mastery": 3650,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -14205,7 +14205,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3050,
             "mastery": 0,
-            "vers": 3950
+            "versatility": 3950
         },
         "dropLoc": "",
         "selectable": "true",
@@ -14234,7 +14234,7 @@ export const itemDB = [
             "haste": 3950,
             "crit": 0,
             "mastery": 3050,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -14263,7 +14263,7 @@ export const itemDB = [
             "haste": 3650,
             "crit": 0,
             "mastery": 3350,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -14292,7 +14292,7 @@ export const itemDB = [
             "haste": 3650,
             "crit": 0,
             "mastery": 3350,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -14321,7 +14321,7 @@ export const itemDB = [
             "haste": 3950,
             "crit": 0,
             "mastery": 3050,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -14350,7 +14350,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3800,
             "mastery": 3200,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -14379,7 +14379,7 @@ export const itemDB = [
             "haste": 3950,
             "crit": 0,
             "mastery": 3050,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -14408,7 +14408,7 @@ export const itemDB = [
             "haste": 3650,
             "crit": 0,
             "mastery": 3350,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -14437,7 +14437,7 @@ export const itemDB = [
             "haste": 3650,
             "crit": 0,
             "mastery": 3350,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -14466,7 +14466,7 @@ export const itemDB = [
             "haste": 3800,
             "crit": 0,
             "mastery": 3200,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -14495,7 +14495,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3800,
             "mastery": 0,
-            "vers": 3200
+            "versatility": 3200
         },
         "dropLoc": "",
         "selectable": "true",
@@ -14524,7 +14524,7 @@ export const itemDB = [
             "haste": 3650,
             "crit": 0,
             "mastery": 0,
-            "vers": 3350
+            "versatility": 3350
         },
         "dropLoc": "",
         "selectable": "true",
@@ -14553,7 +14553,7 @@ export const itemDB = [
             "haste": 3800,
             "crit": 0,
             "mastery": 0,
-            "vers": 3200
+            "versatility": 3200
         },
         "dropLoc": "",
         "selectable": "true",
@@ -14582,7 +14582,7 @@ export const itemDB = [
             "haste": 3950,
             "crit": 0,
             "mastery": 0,
-            "vers": 3050
+            "versatility": 3050
         },
         "dropLoc": "",
         "selectable": "true",
@@ -14611,7 +14611,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3200,
             "mastery": 3800,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -14640,7 +14640,7 @@ export const itemDB = [
             "haste": 3350,
             "crit": 3650,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -14669,7 +14669,7 @@ export const itemDB = [
             "haste": 3050,
             "crit": 3950,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -14698,7 +14698,7 @@ export const itemDB = [
             "haste": 3350,
             "crit": 3650,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -14727,7 +14727,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3650,
             "mastery": 3350,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -14756,7 +14756,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3800,
             "mastery": 3200,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -14785,7 +14785,7 @@ export const itemDB = [
             "haste": 3050,
             "crit": 0,
             "mastery": 3950,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -14814,7 +14814,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3950,
             "mastery": 0,
-            "vers": 3050
+            "versatility": 3050
         },
         "dropLoc": "",
         "selectable": "true",
@@ -14843,7 +14843,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3800,
             "mastery": 0,
-            "vers": 3200
+            "versatility": 3200
         },
         "dropLoc": "",
         "selectable": "true",
@@ -14872,7 +14872,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3950,
             "mastery": 0,
-            "vers": 3050
+            "versatility": 3050
         },
         "dropLoc": "",
         "selectable": "true",
@@ -14901,7 +14901,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 3650,
-            "vers": 3350
+            "versatility": 3350
         },
         "dropLoc": "",
         "selectable": "true",
@@ -14930,7 +14930,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3200,
             "mastery": 0,
-            "vers": 3800
+            "versatility": 3800
         },
         "dropLoc": "",
         "selectable": "true",
@@ -14959,7 +14959,7 @@ export const itemDB = [
             "haste": 3350,
             "crit": 0,
             "mastery": 3650,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -14988,7 +14988,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3350,
             "mastery": 3650,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -15017,7 +15017,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3350,
             "mastery": 3650,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -15046,7 +15046,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3200,
             "mastery": 3800,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -15075,7 +15075,7 @@ export const itemDB = [
             "haste": 3200,
             "crit": 0,
             "mastery": 3800,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -15104,7 +15104,7 @@ export const itemDB = [
             "haste": 3200,
             "crit": 0,
             "mastery": 3800,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -15133,7 +15133,7 @@ export const itemDB = [
             "haste": 3050,
             "crit": 0,
             "mastery": 0,
-            "vers": 3950
+            "versatility": 3950
         },
         "dropLoc": "",
         "selectable": "true",
@@ -15162,7 +15162,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 3950,
-            "vers": 3050
+            "versatility": 3050
         },
         "dropLoc": "",
         "selectable": "true",
@@ -15191,7 +15191,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 3950,
-            "vers": 3050
+            "versatility": 3050
         },
         "dropLoc": "",
         "selectable": "true",
@@ -15220,7 +15220,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 3950,
-            "vers": 3050
+            "versatility": 3050
         },
         "dropLoc": "",
         "selectable": "true",
@@ -15249,7 +15249,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 3350,
-            "vers": 3650
+            "versatility": 3650
         },
         "dropLoc": "",
         "selectable": "true",
@@ -15278,7 +15278,7 @@ export const itemDB = [
             "haste": 8500,
             "crit": 0,
             "mastery": 0,
-            "vers": 9000
+            "versatility": 9000
         },
         "dropLoc": "",
         "selectable": "true",
@@ -15307,7 +15307,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 9250,
             "mastery": 8250,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -15336,7 +15336,7 @@ export const itemDB = [
             "haste": 7750,
             "crit": 0,
             "mastery": 9750,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -15365,7 +15365,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 9000,
             "mastery": 0,
-            "vers": 8500
+            "versatility": 8500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -15394,7 +15394,7 @@ export const itemDB = [
             "haste": 12500,
             "crit": 0,
             "mastery": 0,
-            "vers": 5000
+            "versatility": 5000
         },
         "dropLoc": "",
         "selectable": "true",
@@ -15423,7 +15423,7 @@ export const itemDB = [
             "haste": 8750,
             "crit": 8750,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -15452,7 +15452,7 @@ export const itemDB = [
             "haste": 11500,
             "crit": 6000,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -15481,7 +15481,7 @@ export const itemDB = [
             "haste": 8750,
             "crit": 0,
             "mastery": 8750,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -15510,7 +15510,7 @@ export const itemDB = [
             "haste": 10000,
             "crit": 0,
             "mastery": 0,
-            "vers": 7500
+            "versatility": 7500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -15539,7 +15539,7 @@ export const itemDB = [
             "haste": 9000,
             "crit": 0,
             "mastery": 8500,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -15568,7 +15568,7 @@ export const itemDB = [
             "haste": 7750,
             "crit": 0,
             "mastery": 9750,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -15597,7 +15597,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 10000,
             "mastery": 7500,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -15626,7 +15626,7 @@ export const itemDB = [
             "haste": 7500,
             "crit": 0,
             "mastery": 0,
-            "vers": 10000
+            "versatility": 10000
         },
         "dropLoc": "",
         "selectable": "true",
@@ -15655,7 +15655,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 6666,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -15688,7 +15688,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 6666,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -15721,7 +15721,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -15754,7 +15754,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -15787,7 +15787,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 6666,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -15820,7 +15820,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -15853,7 +15853,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -15886,7 +15886,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -15919,7 +15919,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -15952,7 +15952,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -15985,7 +15985,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -16018,7 +16018,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 6666
+            "versatility": 6666
         },
         "dropLoc": "",
         "selectable": "true",
@@ -16051,7 +16051,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 9500,
             "mastery": 8000,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -16080,7 +16080,7 @@ export const itemDB = [
             "haste": 9750,
             "crit": 0,
             "mastery": 7750,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -16109,7 +16109,7 @@ export const itemDB = [
             "haste": 8000,
             "crit": 9500,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -16138,7 +16138,7 @@ export const itemDB = [
             "haste": 9000,
             "crit": 8500,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -16167,7 +16167,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 8750,
             "mastery": 0,
-            "vers": 8750
+            "versatility": 8750
         },
         "dropLoc": "",
         "selectable": "true",
@@ -16196,7 +16196,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3650,
             "mastery": 0,
-            "vers": 3350
+            "versatility": 3350
         },
         "dropLoc": "",
         "selectable": "true",
@@ -16225,7 +16225,7 @@ export const itemDB = [
             "haste": 3800,
             "crit": 0,
             "mastery": 0,
-            "vers": 3200
+            "versatility": 3200
         },
         "dropLoc": "",
         "selectable": "true",
@@ -16254,7 +16254,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 3800,
-            "vers": 3200
+            "versatility": 3200
         },
         "dropLoc": "",
         "selectable": "true",
@@ -16283,7 +16283,7 @@ export const itemDB = [
             "haste": 3800,
             "crit": 0,
             "mastery": 3200,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -16312,7 +16312,7 @@ export const itemDB = [
             "haste": 3650,
             "crit": 3350,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -16341,7 +16341,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 2825,
-            "vers": 4175
+            "versatility": 4175
         },
         "dropLoc": "",
         "selectable": "true",
@@ -16370,7 +16370,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2900,
             "mastery": 0,
-            "vers": 4100
+            "versatility": 4100
         },
         "dropLoc": "",
         "selectable": "true",
@@ -16399,7 +16399,7 @@ export const itemDB = [
             "haste": 2825,
             "crit": 0,
             "mastery": 0,
-            "vers": 4175
+            "versatility": 4175
         },
         "dropLoc": "",
         "selectable": "true",
@@ -16428,7 +16428,7 @@ export const itemDB = [
             "haste": 3050,
             "crit": 0,
             "mastery": 0,
-            "vers": 3950
+            "versatility": 3950
         },
         "dropLoc": "",
         "selectable": "true",
@@ -16457,7 +16457,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2825,
             "mastery": 0,
-            "vers": 4175
+            "versatility": 4175
         },
         "dropLoc": "",
         "selectable": "true",
@@ -16486,7 +16486,7 @@ export const itemDB = [
             "haste": 3275,
             "crit": 0,
             "mastery": 0,
-            "vers": 3725
+            "versatility": 3725
         },
         "dropLoc": "",
         "selectable": "true",
@@ -16515,7 +16515,7 @@ export const itemDB = [
             "haste": 2825,
             "crit": 0,
             "mastery": 0,
-            "vers": 4175
+            "versatility": 4175
         },
         "dropLoc": "",
         "selectable": "true",
@@ -16544,7 +16544,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2975,
             "mastery": 0,
-            "vers": 4025
+            "versatility": 4025
         },
         "dropLoc": "",
         "selectable": "true",
@@ -16573,7 +16573,7 @@ export const itemDB = [
             "haste": 2825,
             "crit": 0,
             "mastery": 0,
-            "vers": 4175
+            "versatility": 4175
         },
         "dropLoc": "",
         "selectable": "true",
@@ -16602,7 +16602,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3125,
             "mastery": 0,
-            "vers": 3875
+            "versatility": 3875
         },
         "dropLoc": "",
         "selectable": "true",
@@ -16631,7 +16631,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 3050,
-            "vers": 3950
+            "versatility": 3950
         },
         "dropLoc": "",
         "selectable": "true",
@@ -16660,7 +16660,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3125,
             "mastery": 0,
-            "vers": 3875
+            "versatility": 3875
         },
         "dropLoc": "",
         "selectable": "true",
@@ -16689,7 +16689,7 @@ export const itemDB = [
             "haste": 2900,
             "crit": 0,
             "mastery": 0,
-            "vers": 4100
+            "versatility": 4100
         },
         "dropLoc": "",
         "selectable": "true",
@@ -16718,7 +16718,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3200,
             "mastery": 0,
-            "vers": 3800
+            "versatility": 3800
         },
         "dropLoc": "",
         "selectable": "true",
@@ -16747,7 +16747,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2750,
             "mastery": 0,
-            "vers": 4250
+            "versatility": 4250
         },
         "dropLoc": "",
         "selectable": "true",
@@ -16776,7 +16776,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3275,
             "mastery": 0,
-            "vers": 3725
+            "versatility": 3725
         },
         "dropLoc": "",
         "selectable": "true",
@@ -16805,7 +16805,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 3350,
-            "vers": 3650
+            "versatility": 3650
         },
         "dropLoc": "",
         "selectable": "true",
@@ -16834,7 +16834,7 @@ export const itemDB = [
             "haste": 3050,
             "crit": 0,
             "mastery": 0,
-            "vers": 3950
+            "versatility": 3950
         },
         "dropLoc": "",
         "selectable": "true",
@@ -16863,7 +16863,7 @@ export const itemDB = [
             "haste": 3050,
             "crit": 0,
             "mastery": 0,
-            "vers": 3950
+            "versatility": 3950
         },
         "dropLoc": "",
         "selectable": "true",
@@ -16892,7 +16892,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3275,
             "mastery": 0,
-            "vers": 3725
+            "versatility": 3725
         },
         "dropLoc": "",
         "selectable": "true",
@@ -16921,7 +16921,7 @@ export const itemDB = [
             "haste": 3275,
             "crit": 0,
             "mastery": 0,
-            "vers": 3725
+            "versatility": 3725
         },
         "dropLoc": "",
         "selectable": "true",
@@ -16950,7 +16950,7 @@ export const itemDB = [
             "haste": 3125,
             "crit": 0,
             "mastery": 0,
-            "vers": 3875
+            "versatility": 3875
         },
         "dropLoc": "",
         "selectable": "true",
@@ -16979,7 +16979,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3275,
             "mastery": 0,
-            "vers": 3725
+            "versatility": 3725
         },
         "dropLoc": "",
         "selectable": "true",
@@ -17008,7 +17008,7 @@ export const itemDB = [
             "haste": 3125,
             "crit": 0,
             "mastery": 0,
-            "vers": 3875
+            "versatility": 3875
         },
         "dropLoc": "",
         "selectable": "true",
@@ -17037,7 +17037,7 @@ export const itemDB = [
             "haste": 2750,
             "crit": 0,
             "mastery": 0,
-            "vers": 4250
+            "versatility": 4250
         },
         "dropLoc": "",
         "selectable": "true",
@@ -17066,7 +17066,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2750,
             "mastery": 0,
-            "vers": 4250
+            "versatility": 4250
         },
         "dropLoc": "",
         "selectable": "true",
@@ -17095,7 +17095,7 @@ export const itemDB = [
             "haste": 3125,
             "crit": 0,
             "mastery": 0,
-            "vers": 3875
+            "versatility": 3875
         },
         "dropLoc": "",
         "selectable": "true",
@@ -17124,7 +17124,7 @@ export const itemDB = [
             "haste": 3050,
             "crit": 0,
             "mastery": 0,
-            "vers": 3950
+            "versatility": 3950
         },
         "dropLoc": "",
         "selectable": "true",
@@ -17153,7 +17153,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2750,
             "mastery": 0,
-            "vers": 4250
+            "versatility": 4250
         },
         "dropLoc": "",
         "selectable": "true",
@@ -17182,7 +17182,7 @@ export const itemDB = [
             "haste": 6500,
             "crit": 0,
             "mastery": 0,
-            "vers": 11000
+            "versatility": 11000
         },
         "dropLoc": "",
         "selectable": "true",
@@ -17211,7 +17211,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3275,
             "mastery": 0,
-            "vers": 3725
+            "versatility": 3725
         },
         "dropLoc": "",
         "selectable": "true",
@@ -17240,7 +17240,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2850,
             "mastery": 0,
-            "vers": 4150
+            "versatility": 4150
         },
         "dropLoc": "",
         "selectable": "true",
@@ -17269,7 +17269,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 3200,
-            "vers": 3800
+            "versatility": 3800
         },
         "dropLoc": "",
         "selectable": "true",
@@ -17298,7 +17298,7 @@ export const itemDB = [
             "haste": 2850,
             "crit": 0,
             "mastery": 0,
-            "vers": 4150
+            "versatility": 4150
         },
         "dropLoc": "",
         "selectable": "true",
@@ -17328,7 +17328,7 @@ export const itemDB = [
             "haste": 6666,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -17361,7 +17361,7 @@ export const itemDB = [
             "haste": 6750,
             "crit": 0,
             "mastery": 0,
-            "vers": 10750
+            "versatility": 10750
         },
         "dropLoc": "",
         "selectable": "true",
@@ -17390,7 +17390,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 2175,
-            "vers": 4825
+            "versatility": 4825
         },
         "dropLoc": "",
         "selectable": "true",
@@ -17419,7 +17419,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2100,
             "mastery": 0,
-            "vers": 4900
+            "versatility": 4900
         },
         "dropLoc": "",
         "selectable": "true",
@@ -17448,7 +17448,7 @@ export const itemDB = [
             "haste": 2100,
             "crit": 0,
             "mastery": 0,
-            "vers": 4900
+            "versatility": 4900
         },
         "dropLoc": "",
         "selectable": "true",
@@ -17477,7 +17477,7 @@ export const itemDB = [
             "haste": 2350,
             "crit": 0,
             "mastery": 0,
-            "vers": 4650
+            "versatility": 4650
         },
         "dropLoc": "",
         "selectable": "true",
@@ -17506,7 +17506,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2175,
             "mastery": 0,
-            "vers": 4825
+            "versatility": 4825
         },
         "dropLoc": "",
         "selectable": "true",
@@ -17535,7 +17535,7 @@ export const itemDB = [
             "haste": 2550,
             "crit": 0,
             "mastery": 0,
-            "vers": 4450
+            "versatility": 4450
         },
         "dropLoc": "",
         "selectable": "true",
@@ -17564,7 +17564,7 @@ export const itemDB = [
             "haste": 2100,
             "crit": 0,
             "mastery": 0,
-            "vers": 4900
+            "versatility": 4900
         },
         "dropLoc": "",
         "selectable": "true",
@@ -17593,7 +17593,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2325,
             "mastery": 0,
-            "vers": 4675
+            "versatility": 4675
         },
         "dropLoc": "",
         "selectable": "true",
@@ -17622,7 +17622,7 @@ export const itemDB = [
             "haste": 2175,
             "crit": 0,
             "mastery": 0,
-            "vers": 4825
+            "versatility": 4825
         },
         "dropLoc": "",
         "selectable": "true",
@@ -17651,7 +17651,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2400,
             "mastery": 0,
-            "vers": 4600
+            "versatility": 4600
         },
         "dropLoc": "",
         "selectable": "true",
@@ -17680,7 +17680,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 2350,
-            "vers": 4650
+            "versatility": 4650
         },
         "dropLoc": "",
         "selectable": "true",
@@ -17709,7 +17709,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2400,
             "mastery": 0,
-            "vers": 4600
+            "versatility": 4600
         },
         "dropLoc": "",
         "selectable": "true",
@@ -17738,7 +17738,7 @@ export const itemDB = [
             "haste": 2250,
             "crit": 0,
             "mastery": 0,
-            "vers": 4750
+            "versatility": 4750
         },
         "dropLoc": "",
         "selectable": "true",
@@ -17767,7 +17767,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2475,
             "mastery": 0,
-            "vers": 4525
+            "versatility": 4525
         },
         "dropLoc": "",
         "selectable": "true",
@@ -17796,7 +17796,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2100,
             "mastery": 0,
-            "vers": 4900
+            "versatility": 4900
         },
         "dropLoc": "",
         "selectable": "true",
@@ -17825,7 +17825,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2550,
             "mastery": 0,
-            "vers": 4450
+            "versatility": 4450
         },
         "dropLoc": "",
         "selectable": "true",
@@ -17854,7 +17854,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 2600,
-            "vers": 4400
+            "versatility": 4400
         },
         "dropLoc": "",
         "selectable": "true",
@@ -17883,7 +17883,7 @@ export const itemDB = [
             "haste": 2350,
             "crit": 0,
             "mastery": 0,
-            "vers": 4650
+            "versatility": 4650
         },
         "dropLoc": "",
         "selectable": "true",
@@ -17912,7 +17912,7 @@ export const itemDB = [
             "haste": 2350,
             "crit": 0,
             "mastery": 0,
-            "vers": 4650
+            "versatility": 4650
         },
         "dropLoc": "",
         "selectable": "true",
@@ -17941,7 +17941,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2550,
             "mastery": 0,
-            "vers": 4450
+            "versatility": 4450
         },
         "dropLoc": "",
         "selectable": "true",
@@ -17970,7 +17970,7 @@ export const itemDB = [
             "haste": 2550,
             "crit": 0,
             "mastery": 0,
-            "vers": 4450
+            "versatility": 4450
         },
         "dropLoc": "",
         "selectable": "true",
@@ -17999,7 +17999,7 @@ export const itemDB = [
             "haste": 2400,
             "crit": 0,
             "mastery": 0,
-            "vers": 4600
+            "versatility": 4600
         },
         "dropLoc": "",
         "selectable": "true",
@@ -18028,7 +18028,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2600,
             "mastery": 0,
-            "vers": 4400
+            "versatility": 4400
         },
         "dropLoc": "",
         "selectable": "true",
@@ -18057,7 +18057,7 @@ export const itemDB = [
             "haste": 2400,
             "crit": 0,
             "mastery": 0,
-            "vers": 4600
+            "versatility": 4600
         },
         "dropLoc": "",
         "selectable": "true",
@@ -18086,7 +18086,7 @@ export const itemDB = [
             "haste": 2100,
             "crit": 0,
             "mastery": 0,
-            "vers": 4900
+            "versatility": 4900
         },
         "dropLoc": "",
         "selectable": "true",
@@ -18115,7 +18115,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2100,
             "mastery": 0,
-            "vers": 4900
+            "versatility": 4900
         },
         "dropLoc": "",
         "selectable": "true",
@@ -18144,7 +18144,7 @@ export const itemDB = [
             "haste": 2400,
             "crit": 0,
             "mastery": 0,
-            "vers": 4600
+            "versatility": 4600
         },
         "dropLoc": "",
         "selectable": "true",
@@ -18173,7 +18173,7 @@ export const itemDB = [
             "haste": 2400,
             "crit": 0,
             "mastery": 0,
-            "vers": 4600
+            "versatility": 4600
         },
         "dropLoc": "",
         "selectable": "true",
@@ -18202,7 +18202,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2100,
             "mastery": 0,
-            "vers": 4900
+            "versatility": 4900
         },
         "dropLoc": "",
         "selectable": "true",
@@ -18231,7 +18231,7 @@ export const itemDB = [
             "haste": 5500,
             "crit": 0,
             "mastery": 0,
-            "vers": 12000
+            "versatility": 12000
         },
         "dropLoc": "",
         "selectable": "true",
@@ -18260,7 +18260,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2600,
             "mastery": 0,
-            "vers": 4400
+            "versatility": 4400
         },
         "dropLoc": "",
         "selectable": "true",
@@ -18289,7 +18289,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2175,
             "mastery": 0,
-            "vers": 4825
+            "versatility": 4825
         },
         "dropLoc": "",
         "selectable": "true",
@@ -18318,7 +18318,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 2550,
-            "vers": 4450
+            "versatility": 4450
         },
         "dropLoc": "",
         "selectable": "true",
@@ -18347,7 +18347,7 @@ export const itemDB = [
             "haste": 2175,
             "crit": 0,
             "mastery": 0,
-            "vers": 4825
+            "versatility": 4825
         },
         "dropLoc": "",
         "selectable": "true",
@@ -18377,7 +18377,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 6666,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -18410,7 +18410,7 @@ export const itemDB = [
             "haste": 4000,
             "crit": 0,
             "mastery": 0,
-            "vers": 13500
+            "versatility": 13500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -18439,7 +18439,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 6666
+            "versatility": 6666
         },
         "dropLoc": "",
         "selectable": "true",
@@ -18472,7 +18472,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 6666
+            "versatility": 6666
         },
         "dropLoc": "",
         "selectable": "true",
@@ -18505,7 +18505,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 6666
+            "versatility": 6666
         },
         "dropLoc": "",
         "selectable": "true",
@@ -18538,7 +18538,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3350,
             "mastery": 0,
-            "vers": 3650
+            "versatility": 3650
         },
         "dropLoc": "",
         "selectable": "true",
@@ -18567,7 +18567,7 @@ export const itemDB = [
             "haste": 3950,
             "crit": 3050,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -18596,7 +18596,7 @@ export const itemDB = [
             "haste": 3650,
             "crit": 3350,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -18625,7 +18625,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3350,
             "mastery": 0,
-            "vers": 3650
+            "versatility": 3650
         },
         "dropLoc": "",
         "selectable": "true",
@@ -18654,7 +18654,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3650,
             "mastery": 3350,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -18683,7 +18683,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3050,
             "mastery": 0,
-            "vers": 3950
+            "versatility": 3950
         },
         "dropLoc": "",
         "selectable": "true",
@@ -18712,7 +18712,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -18741,7 +18741,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -18770,7 +18770,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -18799,7 +18799,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -18828,7 +18828,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -18857,7 +18857,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -18886,7 +18886,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -18915,7 +18915,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -18944,7 +18944,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -18973,7 +18973,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -19002,7 +19002,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -19031,7 +19031,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -19060,7 +19060,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -19089,7 +19089,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -19118,7 +19118,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -19147,7 +19147,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -19176,7 +19176,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -19205,7 +19205,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -19234,7 +19234,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -19263,7 +19263,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -19292,7 +19292,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -19321,7 +19321,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -19350,7 +19350,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -19379,7 +19379,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -19408,7 +19408,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -19437,7 +19437,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -19466,7 +19466,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -19495,7 +19495,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -19524,7 +19524,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -19553,7 +19553,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -19582,7 +19582,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -19611,7 +19611,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -19640,7 +19640,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -19669,7 +19669,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -19698,7 +19698,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -19727,7 +19727,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -19756,7 +19756,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -19785,7 +19785,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -19814,7 +19814,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -19843,7 +19843,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -19872,7 +19872,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -19901,7 +19901,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -19930,7 +19930,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -19959,7 +19959,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -19988,7 +19988,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -20017,7 +20017,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -20046,7 +20046,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -20075,7 +20075,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -20104,7 +20104,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -20133,7 +20133,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -20162,7 +20162,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -20191,7 +20191,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -20220,7 +20220,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -20249,7 +20249,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -20278,7 +20278,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -20307,7 +20307,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -20336,7 +20336,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -20365,7 +20365,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -20394,7 +20394,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -20423,7 +20423,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -20452,7 +20452,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -20481,7 +20481,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -20510,7 +20510,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -20539,7 +20539,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -20568,7 +20568,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -20597,7 +20597,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -20626,7 +20626,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -20656,7 +20656,7 @@ export const itemDB = [
             "haste": 3250,
             "crit": 3750,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -20686,7 +20686,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3750,
             "mastery": 0,
-            "vers": 3250
+            "versatility": 3250
         },
         "dropLoc": "",
         "selectable": "true",
@@ -20716,7 +20716,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3750,
             "mastery": 3250,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -20746,7 +20746,7 @@ export const itemDB = [
             "haste": 4800,
             "crit": 2200,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -20776,7 +20776,7 @@ export const itemDB = [
             "haste": 4800,
             "crit": 2200,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -20806,7 +20806,7 @@ export const itemDB = [
             "haste": 2500,
             "crit": 0,
             "mastery": 4500,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -20836,7 +20836,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2350,
             "mastery": 4650,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -20866,7 +20866,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 2650,
-            "vers": 4350
+            "versatility": 4350
         },
         "dropLoc": "",
         "selectable": "true",
@@ -20896,7 +20896,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 4050,
             "mastery": 2950,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -20925,7 +20925,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3200,
             "mastery": 0,
-            "vers": 3800
+            "versatility": 3800
         },
         "dropLoc": "",
         "selectable": "true",
@@ -20954,7 +20954,7 @@ export const itemDB = [
             "haste": 3200,
             "crit": 0,
             "mastery": 3800,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -20983,7 +20983,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3200,
             "mastery": 3800,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -21012,7 +21012,7 @@ export const itemDB = [
             "haste": 3050,
             "crit": 3950,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -21041,7 +21041,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3350,
             "mastery": 3650,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -21070,7 +21070,7 @@ export const itemDB = [
             "haste": 3200,
             "crit": 0,
             "mastery": 3800,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -21099,7 +21099,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3050,
             "mastery": 0,
-            "vers": 3950
+            "versatility": 3950
         },
         "dropLoc": "",
         "selectable": "true",
@@ -21128,7 +21128,7 @@ export const itemDB = [
             "haste": 3050,
             "crit": 0,
             "mastery": 0,
-            "vers": 3950
+            "versatility": 3950
         },
         "dropLoc": "",
         "selectable": "true",
@@ -21157,7 +21157,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -21190,7 +21190,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -21219,7 +21219,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -21248,7 +21248,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -21277,7 +21277,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -21306,7 +21306,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -21335,7 +21335,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -21364,7 +21364,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -21393,7 +21393,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -21422,7 +21422,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -21451,7 +21451,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -21480,7 +21480,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -21509,7 +21509,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -21538,7 +21538,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -21567,7 +21567,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -21596,7 +21596,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -21625,7 +21625,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -21654,7 +21654,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -21683,7 +21683,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -21712,7 +21712,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -21741,7 +21741,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -21770,7 +21770,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -21799,7 +21799,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -21828,7 +21828,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -21857,7 +21857,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -21886,7 +21886,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -21915,7 +21915,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -21944,7 +21944,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -21973,7 +21973,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -22002,7 +22002,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -22031,7 +22031,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -22060,7 +22060,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -22089,7 +22089,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -22118,7 +22118,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -22147,7 +22147,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -22176,7 +22176,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -22205,7 +22205,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -22234,7 +22234,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -22267,7 +22267,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -22296,7 +22296,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 4550,
-            "vers": 2450
+            "versatility": 2450
         },
         "dropLoc": "",
         "selectable": "true",
@@ -22325,7 +22325,7 @@ export const itemDB = [
             "haste": 2200,
             "crit": 0,
             "mastery": 0,
-            "vers": 4800
+            "versatility": 4800
         },
         "dropLoc": "",
         "selectable": "true",
@@ -22354,7 +22354,7 @@ export const itemDB = [
             "haste": 5000,
             "crit": 2000,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -22383,7 +22383,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2100,
             "mastery": 0,
-            "vers": 4900
+            "versatility": 4900
         },
         "dropLoc": "",
         "selectable": "true",
@@ -22412,7 +22412,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 4850,
-            "vers": 2150
+            "versatility": 2150
         },
         "dropLoc": "",
         "selectable": "true",
@@ -22441,7 +22441,7 @@ export const itemDB = [
             "haste": 3650,
             "crit": 0,
             "mastery": 3350,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -22470,7 +22470,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3350,
             "mastery": 0,
-            "vers": 3650
+            "versatility": 3650
         },
         "dropLoc": "",
         "selectable": "true",
@@ -22499,7 +22499,7 @@ export const itemDB = [
             "haste": 3950,
             "crit": 3050,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -22528,7 +22528,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3800,
             "mastery": 0,
-            "vers": 3200
+            "versatility": 3200
         },
         "dropLoc": "",
         "selectable": "true",
@@ -22557,7 +22557,7 @@ export const itemDB = [
             "haste": 3350,
             "crit": 0,
             "mastery": 3650,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -22586,7 +22586,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3350,
             "mastery": 0,
-            "vers": 3650
+            "versatility": 3650
         },
         "dropLoc": "",
         "selectable": "true",
@@ -22615,7 +22615,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3200,
             "mastery": 0,
-            "vers": 3800
+            "versatility": 3800
         },
         "dropLoc": "",
         "selectable": "true",
@@ -22644,7 +22644,7 @@ export const itemDB = [
             "haste": 3650,
             "crit": 0,
             "mastery": 0,
-            "vers": 3350
+            "versatility": 3350
         },
         "dropLoc": "",
         "selectable": "true",
@@ -22673,7 +22673,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 3650,
-            "vers": 3350
+            "versatility": 3350
         },
         "dropLoc": "",
         "selectable": "true",
@@ -22702,7 +22702,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3050,
             "mastery": 3950,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -22731,7 +22731,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3950,
             "mastery": 3050,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -22760,7 +22760,7 @@ export const itemDB = [
             "haste": 3050,
             "crit": 0,
             "mastery": 0,
-            "vers": 3950
+            "versatility": 3950
         },
         "dropLoc": "",
         "selectable": "true",
@@ -22789,7 +22789,7 @@ export const itemDB = [
             "haste": 3650,
             "crit": 0,
             "mastery": 0,
-            "vers": 3350
+            "versatility": 3350
         },
         "dropLoc": "",
         "selectable": "true",
@@ -22818,7 +22818,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3800,
             "mastery": 3200,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -22847,7 +22847,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 9250,
-            "vers": 8250
+            "versatility": 8250
         },
         "dropLoc": "",
         "selectable": "true",
@@ -22877,7 +22877,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 4650,
-            "vers": 2350
+            "versatility": 2350
         },
         "dropLoc": "",
         "selectable": "true",
@@ -22907,7 +22907,7 @@ export const itemDB = [
             "haste": 4350,
             "crit": 0,
             "mastery": 0,
-            "vers": 2650
+            "versatility": 2650
         },
         "dropLoc": "",
         "selectable": "true",
@@ -22937,7 +22937,7 @@ export const itemDB = [
             "haste": 3750,
             "crit": 0,
             "mastery": 0,
-            "vers": 3250
+            "versatility": 3250
         },
         "dropLoc": "",
         "selectable": "true",
@@ -22967,7 +22967,7 @@ export const itemDB = [
             "haste": 4650,
             "crit": 0,
             "mastery": 2350,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -22997,7 +22997,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 4500,
             "mastery": 0,
-            "vers": 2500
+            "versatility": 2500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -23027,7 +23027,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 4500,
             "mastery": 0,
-            "vers": 2500
+            "versatility": 2500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -23057,7 +23057,7 @@ export const itemDB = [
             "haste": 2200,
             "crit": 0,
             "mastery": 4800,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -23087,7 +23087,7 @@ export const itemDB = [
             "haste": 4500,
             "crit": 2500,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -23117,7 +23117,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3900,
             "mastery": 3100,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -23146,7 +23146,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2825,
             "mastery": 0,
-            "vers": 4175
+            "versatility": 4175
         },
         "dropLoc": "",
         "selectable": "true",
@@ -23175,7 +23175,7 @@ export const itemDB = [
             "haste": 3050,
             "crit": 0,
             "mastery": 0,
-            "vers": 3950
+            "versatility": 3950
         },
         "dropLoc": "",
         "selectable": "true",
@@ -23204,7 +23204,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3200,
             "mastery": 0,
-            "vers": 3800
+            "versatility": 3800
         },
         "dropLoc": "",
         "selectable": "true",
@@ -23233,7 +23233,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 3200,
-            "vers": 3800
+            "versatility": 3800
         },
         "dropLoc": "",
         "selectable": "true",
@@ -23262,7 +23262,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 2900,
-            "vers": 4100
+            "versatility": 4100
         },
         "dropLoc": "",
         "selectable": "true",
@@ -23291,7 +23291,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3200,
             "mastery": 0,
-            "vers": 3800
+            "versatility": 3800
         },
         "dropLoc": "",
         "selectable": "true",
@@ -23320,7 +23320,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2850,
             "mastery": 0,
-            "vers": 4150
+            "versatility": 4150
         },
         "dropLoc": "",
         "selectable": "true",
@@ -23349,7 +23349,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 2825,
-            "vers": 4175
+            "versatility": 4175
         },
         "dropLoc": "",
         "selectable": "true",
@@ -23378,7 +23378,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 3275,
-            "vers": 3725
+            "versatility": 3725
         },
         "dropLoc": "",
         "selectable": "true",
@@ -23407,7 +23407,7 @@ export const itemDB = [
             "haste": 3125,
             "crit": 0,
             "mastery": 0,
-            "vers": 3875
+            "versatility": 3875
         },
         "dropLoc": "",
         "selectable": "true",
@@ -23436,7 +23436,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2825,
             "mastery": 0,
-            "vers": 4175
+            "versatility": 4175
         },
         "dropLoc": "",
         "selectable": "true",
@@ -23465,7 +23465,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 2975,
-            "vers": 4025
+            "versatility": 4025
         },
         "dropLoc": "",
         "selectable": "true",
@@ -23494,7 +23494,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 3275,
-            "vers": 3725
+            "versatility": 3725
         },
         "dropLoc": "",
         "selectable": "true",
@@ -23523,7 +23523,7 @@ export const itemDB = [
             "haste": 3050,
             "crit": 0,
             "mastery": 0,
-            "vers": 3950
+            "versatility": 3950
         },
         "dropLoc": "",
         "selectable": "true",
@@ -23552,7 +23552,7 @@ export const itemDB = [
             "haste": 2975,
             "crit": 0,
             "mastery": 0,
-            "vers": 4025
+            "versatility": 4025
         },
         "dropLoc": "",
         "selectable": "true",
@@ -23581,7 +23581,7 @@ export const itemDB = [
             "haste": 2900,
             "crit": 0,
             "mastery": 0,
-            "vers": 4100
+            "versatility": 4100
         },
         "dropLoc": "",
         "selectable": "true",
@@ -23610,7 +23610,7 @@ export const itemDB = [
             "haste": 3050,
             "crit": 0,
             "mastery": 0,
-            "vers": 3950
+            "versatility": 3950
         },
         "dropLoc": "",
         "selectable": "true",
@@ -23639,7 +23639,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 3275,
-            "vers": 3725
+            "versatility": 3725
         },
         "dropLoc": "",
         "selectable": "true",
@@ -23668,7 +23668,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3350,
             "mastery": 0,
-            "vers": 3650
+            "versatility": 3650
         },
         "dropLoc": "",
         "selectable": "true",
@@ -23697,7 +23697,7 @@ export const itemDB = [
             "haste": 3050,
             "crit": 0,
             "mastery": 0,
-            "vers": 3950
+            "versatility": 3950
         },
         "dropLoc": "",
         "selectable": "true",
@@ -23726,7 +23726,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 3350,
-            "vers": 3650
+            "versatility": 3650
         },
         "dropLoc": "",
         "selectable": "true",
@@ -23755,7 +23755,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3200,
             "mastery": 0,
-            "vers": 3800
+            "versatility": 3800
         },
         "dropLoc": "",
         "selectable": "true",
@@ -23784,7 +23784,7 @@ export const itemDB = [
             "haste": 3050,
             "crit": 0,
             "mastery": 0,
-            "vers": 3950
+            "versatility": 3950
         },
         "dropLoc": "",
         "selectable": "true",
@@ -23813,7 +23813,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 3350,
-            "vers": 3650
+            "versatility": 3650
         },
         "dropLoc": "",
         "selectable": "true",
@@ -23842,7 +23842,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3350,
             "mastery": 0,
-            "vers": 3650
+            "versatility": 3650
         },
         "dropLoc": "",
         "selectable": "true",
@@ -23871,7 +23871,7 @@ export const itemDB = [
             "haste": 3050,
             "crit": 0,
             "mastery": 0,
-            "vers": 3950
+            "versatility": 3950
         },
         "dropLoc": "",
         "selectable": "true",
@@ -23900,7 +23900,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3125,
             "mastery": 0,
-            "vers": 3875
+            "versatility": 3875
         },
         "dropLoc": "",
         "selectable": "true",
@@ -23929,7 +23929,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3200,
             "mastery": 0,
-            "vers": 3800
+            "versatility": 3800
         },
         "dropLoc": "",
         "selectable": "true",
@@ -23958,7 +23958,7 @@ export const itemDB = [
             "haste": 3050,
             "crit": 0,
             "mastery": 0,
-            "vers": 3950
+            "versatility": 3950
         },
         "dropLoc": "",
         "selectable": "true",
@@ -23987,7 +23987,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 7000,
             "mastery": 0,
-            "vers": 10500
+            "versatility": 10500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -24016,7 +24016,7 @@ export const itemDB = [
             "haste": 3200,
             "crit": 0,
             "mastery": 0,
-            "vers": 3800
+            "versatility": 3800
         },
         "dropLoc": "",
         "selectable": "true",
@@ -24045,7 +24045,7 @@ export const itemDB = [
             "haste": 3125,
             "crit": 0,
             "mastery": 0,
-            "vers": 3875
+            "versatility": 3875
         },
         "dropLoc": "",
         "selectable": "true",
@@ -24074,7 +24074,7 @@ export const itemDB = [
             "haste": 3275,
             "crit": 0,
             "mastery": 0,
-            "vers": 3725
+            "versatility": 3725
         },
         "dropLoc": "",
         "selectable": "true",
@@ -24103,7 +24103,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3125,
             "mastery": 0,
-            "vers": 3875
+            "versatility": 3875
         },
         "dropLoc": "",
         "selectable": "true",
@@ -24133,7 +24133,7 @@ export const itemDB = [
             "haste": 6666,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -24166,7 +24166,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 7250,
             "mastery": 0,
-            "vers": 10250
+            "versatility": 10250
         },
         "dropLoc": "",
         "selectable": "true",
@@ -24195,7 +24195,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 3350,
-            "vers": 3650
+            "versatility": 3650
         },
         "dropLoc": "",
         "selectable": "true",
@@ -24224,7 +24224,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 8000,
-            "vers": 9500
+            "versatility": 9500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -24254,7 +24254,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -24287,7 +24287,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 7750,
-            "vers": 9750
+            "versatility": 9750
         },
         "dropLoc": "",
         "selectable": "true",
@@ -24316,7 +24316,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2175,
             "mastery": 0,
-            "vers": 4825
+            "versatility": 4825
         },
         "dropLoc": "",
         "selectable": "true",
@@ -24345,7 +24345,7 @@ export const itemDB = [
             "haste": 2250,
             "crit": 0,
             "mastery": 0,
-            "vers": 4750
+            "versatility": 4750
         },
         "dropLoc": "",
         "selectable": "true",
@@ -24374,7 +24374,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2475,
             "mastery": 0,
-            "vers": 4525
+            "versatility": 4525
         },
         "dropLoc": "",
         "selectable": "true",
@@ -24403,7 +24403,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 2475,
-            "vers": 4525
+            "versatility": 4525
         },
         "dropLoc": "",
         "selectable": "true",
@@ -24432,7 +24432,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 2250,
-            "vers": 4750
+            "versatility": 4750
         },
         "dropLoc": "",
         "selectable": "true",
@@ -24461,7 +24461,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2475,
             "mastery": 0,
-            "vers": 4525
+            "versatility": 4525
         },
         "dropLoc": "",
         "selectable": "true",
@@ -24490,7 +24490,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2175,
             "mastery": 0,
-            "vers": 4825
+            "versatility": 4825
         },
         "dropLoc": "",
         "selectable": "true",
@@ -24519,7 +24519,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 2100,
-            "vers": 4900
+            "versatility": 4900
         },
         "dropLoc": "",
         "selectable": "true",
@@ -24548,7 +24548,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 2550,
-            "vers": 4450
+            "versatility": 4450
         },
         "dropLoc": "",
         "selectable": "true",
@@ -24577,7 +24577,7 @@ export const itemDB = [
             "haste": 2400,
             "crit": 0,
             "mastery": 0,
-            "vers": 4600
+            "versatility": 4600
         },
         "dropLoc": "",
         "selectable": "true",
@@ -24606,7 +24606,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2100,
             "mastery": 0,
-            "vers": 4900
+            "versatility": 4900
         },
         "dropLoc": "",
         "selectable": "true",
@@ -24635,7 +24635,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 2325,
-            "vers": 4675
+            "versatility": 4675
         },
         "dropLoc": "",
         "selectable": "true",
@@ -24664,7 +24664,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 2550,
-            "vers": 4450
+            "versatility": 4450
         },
         "dropLoc": "",
         "selectable": "true",
@@ -24693,7 +24693,7 @@ export const itemDB = [
             "haste": 2350,
             "crit": 0,
             "mastery": 0,
-            "vers": 4650
+            "versatility": 4650
         },
         "dropLoc": "",
         "selectable": "true",
@@ -24722,7 +24722,7 @@ export const itemDB = [
             "haste": 2325,
             "crit": 0,
             "mastery": 0,
-            "vers": 4675
+            "versatility": 4675
         },
         "dropLoc": "",
         "selectable": "true",
@@ -24751,7 +24751,7 @@ export const itemDB = [
             "haste": 2250,
             "crit": 0,
             "mastery": 0,
-            "vers": 4750
+            "versatility": 4750
         },
         "dropLoc": "",
         "selectable": "true",
@@ -24780,7 +24780,7 @@ export const itemDB = [
             "haste": 2350,
             "crit": 0,
             "mastery": 0,
-            "vers": 4650
+            "versatility": 4650
         },
         "dropLoc": "",
         "selectable": "true",
@@ -24809,7 +24809,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 2600,
-            "vers": 4400
+            "versatility": 4400
         },
         "dropLoc": "",
         "selectable": "true",
@@ -24838,7 +24838,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2600,
             "mastery": 0,
-            "vers": 4400
+            "versatility": 4400
         },
         "dropLoc": "",
         "selectable": "true",
@@ -24867,7 +24867,7 @@ export const itemDB = [
             "haste": 2350,
             "crit": 0,
             "mastery": 0,
-            "vers": 4650
+            "versatility": 4650
         },
         "dropLoc": "",
         "selectable": "true",
@@ -24896,7 +24896,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 2600,
-            "vers": 4400
+            "versatility": 4400
         },
         "dropLoc": "",
         "selectable": "true",
@@ -24925,7 +24925,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2475,
             "mastery": 0,
-            "vers": 4525
+            "versatility": 4525
         },
         "dropLoc": "",
         "selectable": "true",
@@ -24954,7 +24954,7 @@ export const itemDB = [
             "haste": 2350,
             "crit": 0,
             "mastery": 0,
-            "vers": 4650
+            "versatility": 4650
         },
         "dropLoc": "",
         "selectable": "true",
@@ -24983,7 +24983,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 2600,
-            "vers": 4400
+            "versatility": 4400
         },
         "dropLoc": "",
         "selectable": "true",
@@ -25012,7 +25012,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2600,
             "mastery": 0,
-            "vers": 4400
+            "versatility": 4400
         },
         "dropLoc": "",
         "selectable": "true",
@@ -25041,7 +25041,7 @@ export const itemDB = [
             "haste": 2400,
             "crit": 0,
             "mastery": 0,
-            "vers": 4600
+            "versatility": 4600
         },
         "dropLoc": "",
         "selectable": "true",
@@ -25070,7 +25070,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2475,
             "mastery": 0,
-            "vers": 4525
+            "versatility": 4525
         },
         "dropLoc": "",
         "selectable": "true",
@@ -25099,7 +25099,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2475,
             "mastery": 0,
-            "vers": 4525
+            "versatility": 4525
         },
         "dropLoc": "",
         "selectable": "true",
@@ -25128,7 +25128,7 @@ export const itemDB = [
             "haste": 2400,
             "crit": 0,
             "mastery": 0,
-            "vers": 4600
+            "versatility": 4600
         },
         "dropLoc": "",
         "selectable": "true",
@@ -25157,7 +25157,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 5500,
             "mastery": 0,
-            "vers": 12000
+            "versatility": 12000
         },
         "dropLoc": "",
         "selectable": "true",
@@ -25186,7 +25186,7 @@ export const itemDB = [
             "haste": 2550,
             "crit": 0,
             "mastery": 0,
-            "vers": 4450
+            "versatility": 4450
         },
         "dropLoc": "",
         "selectable": "true",
@@ -25215,7 +25215,7 @@ export const itemDB = [
             "haste": 2475,
             "crit": 0,
             "mastery": 0,
-            "vers": 4525
+            "versatility": 4525
         },
         "dropLoc": "",
         "selectable": "true",
@@ -25244,7 +25244,7 @@ export const itemDB = [
             "haste": 2600,
             "crit": 0,
             "mastery": 0,
-            "vers": 4400
+            "versatility": 4400
         },
         "dropLoc": "",
         "selectable": "true",
@@ -25273,7 +25273,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2475,
             "mastery": 0,
-            "vers": 4525
+            "versatility": 4525
         },
         "dropLoc": "",
         "selectable": "true",
@@ -25303,7 +25303,7 @@ export const itemDB = [
             "haste": 6666,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -25336,7 +25336,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 4000,
             "mastery": 0,
-            "vers": 13500
+            "versatility": 13500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -25365,7 +25365,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 2550,
-            "vers": 4450
+            "versatility": 4450
         },
         "dropLoc": "",
         "selectable": "true",
@@ -25394,7 +25394,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 5500,
-            "vers": 12000
+            "versatility": 12000
         },
         "dropLoc": "",
         "selectable": "true",
@@ -25424,7 +25424,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -25457,7 +25457,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 4000,
-            "vers": 13500
+            "versatility": 13500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -25486,7 +25486,7 @@ export const itemDB = [
             "haste": 3200,
             "crit": 0,
             "mastery": 0,
-            "vers": 3800
+            "versatility": 3800
         },
         "dropLoc": "",
         "selectable": "true",
@@ -25515,7 +25515,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2825,
             "mastery": 0,
-            "vers": 4175
+            "versatility": 4175
         },
         "dropLoc": "",
         "selectable": "true",
@@ -25544,7 +25544,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 3150,
-            "vers": 3850
+            "versatility": 3850
         },
         "dropLoc": "",
         "selectable": "true",
@@ -25573,7 +25573,7 @@ export const itemDB = [
             "haste": 4550,
             "crit": 0,
             "mastery": 2450,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -25612,7 +25612,7 @@ export const itemDB = [
             "haste": 2450,
             "crit": 0,
             "mastery": 4550,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -25651,7 +25651,7 @@ export const itemDB = [
             "haste": 2450,
             "crit": 0,
             "mastery": 0,
-            "vers": 4550
+            "versatility": 4550
         },
         "sources": [
             {
@@ -25690,7 +25690,7 @@ export const itemDB = [
             "haste": 4550,
             "crit": 0,
             "mastery": 2450,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -25729,7 +25729,7 @@ export const itemDB = [
             "haste": 4400,
             "crit": 0,
             "mastery": 2600,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -25768,7 +25768,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 4250,
             "mastery": 0,
-            "vers": 2750
+            "versatility": 2750
         },
         "sources": [
             {
@@ -25807,7 +25807,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 4250,
-            "vers": 2750
+            "versatility": 2750
         },
         "sources": [
             {
@@ -25846,7 +25846,7 @@ export const itemDB = [
             "haste": 4100,
             "crit": 2900,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -25885,7 +25885,7 @@ export const itemDB = [
             "haste": 4400,
             "crit": 0,
             "mastery": 0,
-            "vers": 2600
+            "versatility": 2600
         },
         "sources": [
             {
@@ -25924,7 +25924,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 2750,
-            "vers": 4250
+            "versatility": 4250
         },
         "sources": [
             {
@@ -25963,7 +25963,7 @@ export const itemDB = [
             "haste": 2900,
             "crit": 0,
             "mastery": 4100,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -26002,7 +26002,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 4250,
             "mastery": 0,
-            "vers": 2750
+            "versatility": 2750
         },
         "sources": [
             {
@@ -26041,7 +26041,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 4100,
-            "vers": 2900
+            "versatility": 2900
         },
         "sources": [
             {
@@ -26080,7 +26080,7 @@ export const itemDB = [
             "haste": 4100,
             "crit": 0,
             "mastery": 0,
-            "vers": 2900
+            "versatility": 2900
         },
         "sources": [
             {
@@ -26119,7 +26119,7 @@ export const itemDB = [
             "haste": 4400,
             "crit": 2600,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -26158,7 +26158,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2600,
             "mastery": 4400,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -26197,7 +26197,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 6500,
             "mastery": 11000,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -26235,7 +26235,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -26278,7 +26278,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2450,
             "mastery": 4550,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -26317,7 +26317,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 2450,
-            "vers": 4550
+            "versatility": 4550
         },
         "sources": [
             {
@@ -26356,7 +26356,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2450,
             "mastery": 0,
-            "vers": 4550
+            "versatility": 4550
         },
         "sources": [
             {
@@ -26395,7 +26395,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 4400,
             "mastery": 2600,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -26434,7 +26434,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 2600,
-            "vers": 4400
+            "versatility": 4400
         },
         "sources": [
             {
@@ -26473,7 +26473,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 4250,
-            "vers": 2750
+            "versatility": 2750
         },
         "sources": [
             {
@@ -26512,7 +26512,7 @@ export const itemDB = [
             "haste": 11250,
             "crit": 0,
             "mastery": 0,
-            "vers": 6250
+            "versatility": 6250
         },
         "sources": [
             {
@@ -26551,7 +26551,7 @@ export const itemDB = [
             "haste": 2900,
             "crit": 4100,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -26590,7 +26590,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 4550,
             "mastery": 2450,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -26629,7 +26629,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 4400,
             "mastery": 2600,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -26668,7 +26668,7 @@ export const itemDB = [
             "haste": 4250,
             "crit": 0,
             "mastery": 2750,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -26707,7 +26707,7 @@ export const itemDB = [
             "haste": 4400,
             "crit": 0,
             "mastery": 0,
-            "vers": 2600
+            "versatility": 2600
         },
         "sources": [
             {
@@ -26746,7 +26746,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2900,
             "mastery": 4100,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -26785,7 +26785,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2900,
             "mastery": 0,
-            "vers": 4100
+            "versatility": 4100
         },
         "sources": [
             {
@@ -26824,7 +26824,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2450,
             "mastery": 4550,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -26863,7 +26863,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 4550,
             "mastery": 0,
-            "vers": 2450
+            "versatility": 2450
         },
         "sources": [
             {
@@ -26902,7 +26902,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 4400,
             "mastery": 2600,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -26941,7 +26941,7 @@ export const itemDB = [
             "haste": 2500,
             "crit": 0,
             "mastery": 0,
-            "vers": 4500
+            "versatility": 4500
         },
         "sources": [
             {
@@ -26980,7 +26980,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2900,
             "mastery": 4100,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -27019,7 +27019,7 @@ export const itemDB = [
             "haste": 2900,
             "crit": 4100,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -27058,7 +27058,7 @@ export const itemDB = [
             "haste": 4550,
             "crit": 0,
             "mastery": 2450,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -27097,7 +27097,7 @@ export const itemDB = [
             "haste": 2750,
             "crit": 0,
             "mastery": 4250,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -27136,7 +27136,7 @@ export const itemDB = [
             "haste": 2750,
             "crit": 0,
             "mastery": 0,
-            "vers": 4250
+            "versatility": 4250
         },
         "sources": [
             {
@@ -27175,7 +27175,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 4250,
             "mastery": 2750,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -27214,7 +27214,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 2600,
-            "vers": 4400
+            "versatility": 4400
         },
         "sources": [
             {
@@ -27253,7 +27253,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 4100,
             "mastery": 0,
-            "vers": 2900
+            "versatility": 2900
         },
         "sources": [
             {
@@ -27292,7 +27292,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 2450,
-            "vers": 4550
+            "versatility": 4550
         },
         "sources": [
             {
@@ -27331,7 +27331,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -27374,7 +27374,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -27417,7 +27417,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 4550,
             "mastery": 2450,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -27456,7 +27456,7 @@ export const itemDB = [
             "haste": 4400,
             "crit": 2600,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -27495,7 +27495,7 @@ export const itemDB = [
             "haste": 2750,
             "crit": 0,
             "mastery": 0,
-            "vers": 4250
+            "versatility": 4250
         },
         "sources": [
             {
@@ -27534,7 +27534,7 @@ export const itemDB = [
             "haste": 2900,
             "crit": 0,
             "mastery": 0,
-            "vers": 4100
+            "versatility": 4100
         },
         "sources": [
             {
@@ -27573,7 +27573,7 @@ export const itemDB = [
             "haste": 2750,
             "crit": 0,
             "mastery": 0,
-            "vers": 4250
+            "versatility": 4250
         },
         "sources": [
             {
@@ -27612,7 +27612,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 4250,
-            "vers": 2750
+            "versatility": 2750
         },
         "sources": [
             {
@@ -27651,7 +27651,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 6750,
             "mastery": 0,
-            "vers": 10750
+            "versatility": 10750
         },
         "sources": [
             {
@@ -27690,7 +27690,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 4100,
-            "vers": 2900
+            "versatility": 2900
         },
         "sources": [
             {
@@ -27729,7 +27729,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -27772,7 +27772,7 @@ export const itemDB = [
             "haste": 4100,
             "crit": 0,
             "mastery": 0,
-            "vers": 2900
+            "versatility": 2900
         },
         "sources": [
             {
@@ -27811,7 +27811,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2450,
             "mastery": 4550,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -27850,7 +27850,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2900,
             "mastery": 0,
-            "vers": 4100
+            "versatility": 4100
         },
         "sources": [
             {
@@ -27889,7 +27889,7 @@ export const itemDB = [
             "haste": 2450,
             "crit": 4550,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -27928,7 +27928,7 @@ export const itemDB = [
             "haste": 2600,
             "crit": 4400,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -27967,7 +27967,7 @@ export const itemDB = [
             "haste": 2600,
             "crit": 4400,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -28006,7 +28006,7 @@ export const itemDB = [
             "haste": 4100,
             "crit": 2900,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -28045,7 +28045,7 @@ export const itemDB = [
             "haste": 2750,
             "crit": 4250,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -28084,7 +28084,7 @@ export const itemDB = [
             "haste": 4100,
             "crit": 0,
             "mastery": 2900,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -28123,7 +28123,7 @@ export const itemDB = [
             "haste": 4250,
             "crit": 0,
             "mastery": 2750,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -28162,7 +28162,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 4550,
             "mastery": 2450,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -28201,7 +28201,7 @@ export const itemDB = [
             "haste": 4550,
             "crit": 0,
             "mastery": 2450,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -28240,7 +28240,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 2600,
-            "vers": 4400
+            "versatility": 4400
         },
         "sources": [
             {
@@ -28279,7 +28279,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 2900,
-            "vers": 4100
+            "versatility": 4100
         },
         "sources": [
             {
@@ -28318,7 +28318,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 4250,
             "mastery": 0,
-            "vers": 2750
+            "versatility": 2750
         },
         "sources": [
             {
@@ -28357,7 +28357,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 4250,
             "mastery": 0,
-            "vers": 2750
+            "versatility": 2750
         },
         "sources": [
             {
@@ -28396,7 +28396,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 2600,
-            "vers": 4400
+            "versatility": 4400
         },
         "sources": [
             {
@@ -28435,7 +28435,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -28478,7 +28478,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -28521,7 +28521,7 @@ export const itemDB = [
             "haste": 2750,
             "crit": 0,
             "mastery": 4250,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -28560,7 +28560,7 @@ export const itemDB = [
             "haste": 2450,
             "crit": 4550,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -28599,7 +28599,7 @@ export const itemDB = [
             "haste": 4550,
             "crit": 2450,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -28638,7 +28638,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2750,
             "mastery": 4250,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -28677,7 +28677,7 @@ export const itemDB = [
             "haste": 2450,
             "crit": 0,
             "mastery": 0,
-            "vers": 4550
+            "versatility": 4550
         },
         "sources": [
             {
@@ -28716,7 +28716,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 4400,
             "mastery": 2600,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -28755,7 +28755,7 @@ export const itemDB = [
             "haste": 2900,
             "crit": 0,
             "mastery": 0,
-            "vers": 4100
+            "versatility": 4100
         },
         "sources": [
             {
@@ -28794,7 +28794,7 @@ export const itemDB = [
             "haste": 2450,
             "crit": 0,
             "mastery": 4550,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -28833,7 +28833,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 2600,
-            "vers": 4400
+            "versatility": 4400
         },
         "sources": [
             {
@@ -28872,7 +28872,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 4400,
-            "vers": 2600
+            "versatility": 2600
         },
         "sources": [
             {
@@ -28911,7 +28911,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 4400,
             "mastery": 0,
-            "vers": 2600
+            "versatility": 2600
         },
         "sources": [
             {
@@ -28950,7 +28950,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 4100,
-            "vers": 2900
+            "versatility": 2900
         },
         "sources": [
             {
@@ -28989,7 +28989,7 @@ export const itemDB = [
             "haste": 5250,
             "crit": 0,
             "mastery": 12250,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -29028,7 +29028,7 @@ export const itemDB = [
             "haste": 6666,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -29071,7 +29071,7 @@ export const itemDB = [
             "haste": 12500,
             "crit": 0,
             "mastery": 5000,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -29110,7 +29110,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2900,
             "mastery": 0,
-            "vers": 4100
+            "versatility": 4100
         },
         "sources": [
             {
@@ -29149,7 +29149,7 @@ export const itemDB = [
             "haste": 4100,
             "crit": 2900,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -29188,7 +29188,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2900,
             "mastery": 4100,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -29227,7 +29227,7 @@ export const itemDB = [
             "haste": 4250,
             "crit": 2750,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -29266,7 +29266,7 @@ export const itemDB = [
             "haste": 2750,
             "crit": 0,
             "mastery": 0,
-            "vers": 4250
+            "versatility": 4250
         },
         "sources": [
             {
@@ -29305,7 +29305,7 @@ export const itemDB = [
             "haste": 2900,
             "crit": 4100,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -29344,7 +29344,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2450,
             "mastery": 0,
-            "vers": 4550
+            "versatility": 4550
         },
         "sources": [
             {
@@ -29383,7 +29383,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2450,
             "mastery": 0,
-            "vers": 4550
+            "versatility": 4550
         },
         "sources": [
             {
@@ -29422,7 +29422,7 @@ export const itemDB = [
             "haste": 2900,
             "crit": 4100,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -29461,7 +29461,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 4400,
             "mastery": 2600,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -29500,7 +29500,7 @@ export const itemDB = [
             "haste": 4400,
             "crit": 0,
             "mastery": 2600,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -29539,7 +29539,7 @@ export const itemDB = [
             "haste": 2900,
             "crit": 4100,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -29578,7 +29578,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2900,
             "mastery": 4100,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -29617,7 +29617,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 4400,
             "mastery": 0,
-            "vers": 2600
+            "versatility": 2600
         },
         "sources": [
             {
@@ -29656,7 +29656,7 @@ export const itemDB = [
             "haste": 4550,
             "crit": 0,
             "mastery": 0,
-            "vers": 2450
+            "versatility": 2450
         },
         "sources": [
             {
@@ -29695,7 +29695,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 2750,
-            "vers": 4250
+            "versatility": 4250
         },
         "sources": [
             {
@@ -29734,7 +29734,7 @@ export const itemDB = [
             "haste": 4250,
             "crit": 0,
             "mastery": 0,
-            "vers": 2750
+            "versatility": 2750
         },
         "sources": [
             {
@@ -29773,7 +29773,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 4250,
             "mastery": 0,
-            "vers": 2750
+            "versatility": 2750
         },
         "sources": [
             {
@@ -29812,7 +29812,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 2750,
-            "vers": 4250
+            "versatility": 4250
         },
         "sources": [
             {
@@ -29851,7 +29851,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 10250,
             "mastery": 0,
-            "vers": 7250
+            "versatility": 7250
         },
         "sources": [
             {
@@ -29890,7 +29890,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -29933,7 +29933,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -29976,7 +29976,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 4250,
             "mastery": 2750,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -30015,7 +30015,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 4400,
             "mastery": 2600,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -30054,7 +30054,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 2450,
-            "vers": 4550
+            "versatility": 4550
         },
         "sources": [
             {
@@ -30093,7 +30093,7 @@ export const itemDB = [
             "haste": 4400,
             "crit": 0,
             "mastery": 2600,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -30132,7 +30132,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 4100,
-            "vers": 2900
+            "versatility": 2900
         },
         "sources": [
             {
@@ -30171,7 +30171,7 @@ export const itemDB = [
             "haste": 2450,
             "crit": 0,
             "mastery": 4550,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -30210,7 +30210,7 @@ export const itemDB = [
             "haste": 4550,
             "crit": 0,
             "mastery": 0,
-            "vers": 2450
+            "versatility": 2450
         },
         "sources": [
             {
@@ -30249,7 +30249,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 5250,
             "mastery": 12250,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -30288,7 +30288,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 5500,
-            "vers": 12000
+            "versatility": 12000
         },
         "sources": [
             {
@@ -30327,7 +30327,7 @@ export const itemDB = [
             "haste": 10250,
             "crit": 7250,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -30366,7 +30366,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 11500,
             "mastery": 6000,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -30405,7 +30405,7 @@ export const itemDB = [
             "haste": 2600,
             "crit": 0,
             "mastery": 0,
-            "vers": 4400
+            "versatility": 4400
         },
         "sources": [
             {
@@ -30444,7 +30444,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 2900,
-            "vers": 4100
+            "versatility": 4100
         },
         "sources": [
             {
@@ -30483,7 +30483,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 4400,
             "mastery": 0,
-            "vers": 2600
+            "versatility": 2600
         },
         "sources": [
             {
@@ -30522,7 +30522,7 @@ export const itemDB = [
             "haste": 7000,
             "crit": 10500,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -30561,7 +30561,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 4550,
-            "vers": 2450
+            "versatility": 2450
         },
         "sources": [
             {
@@ -30600,7 +30600,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -30629,7 +30629,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -30658,7 +30658,7 @@ export const itemDB = [
             "haste": 3650,
             "crit": 3350,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -30687,7 +30687,7 @@ export const itemDB = [
             "haste": 3950,
             "crit": 0,
             "mastery": 3050,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -30716,7 +30716,7 @@ export const itemDB = [
             "haste": 3050,
             "crit": 0,
             "mastery": 0,
-            "vers": 3950
+            "versatility": 3950
         },
         "dropLoc": "",
         "selectable": "true",
@@ -30745,7 +30745,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3200,
             "mastery": 0,
-            "vers": 3800
+            "versatility": 3800
         },
         "dropLoc": "",
         "selectable": "true",
@@ -30774,7 +30774,7 @@ export const itemDB = [
             "haste": 2550,
             "crit": 0,
             "mastery": 0,
-            "vers": 4450
+            "versatility": 4450
         },
         "dropLoc": "",
         "selectable": "true",
@@ -30803,7 +30803,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2450,
             "mastery": 0,
-            "vers": 4550
+            "versatility": 4550
         },
         "dropLoc": "",
         "selectable": "true",
@@ -30832,7 +30832,7 @@ export const itemDB = [
             "haste": 2000,
             "crit": 0,
             "mastery": 5000,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -30861,7 +30861,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2450,
             "mastery": 0,
-            "vers": 4550
+            "versatility": 4550
         },
         "sources": [
             {
@@ -30900,7 +30900,7 @@ export const itemDB = [
             "haste": 4550,
             "crit": 0,
             "mastery": 2450,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -30939,7 +30939,7 @@ export const itemDB = [
             "haste": 4400,
             "crit": 2600,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -30978,7 +30978,7 @@ export const itemDB = [
             "haste": 4400,
             "crit": 0,
             "mastery": 0,
-            "vers": 2600
+            "versatility": 2600
         },
         "sources": [
             {
@@ -31017,7 +31017,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -31046,7 +31046,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2600,
             "mastery": 0,
-            "vers": 4400
+            "versatility": 4400
         },
         "sources": [
             {
@@ -31085,7 +31085,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2600,
             "mastery": 4400,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -31124,7 +31124,7 @@ export const itemDB = [
             "haste": 2450,
             "crit": 0,
             "mastery": 4550,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -31163,7 +31163,7 @@ export const itemDB = [
             "haste": 2450,
             "crit": 4550,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -31202,7 +31202,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 4250,
-            "vers": 2750
+            "versatility": 2750
         },
         "sources": [
             {
@@ -31241,7 +31241,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 4250,
-            "vers": 2750
+            "versatility": 2750
         },
         "sources": [
             {
@@ -31280,7 +31280,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 4100,
             "mastery": 0,
-            "vers": 2900
+            "versatility": 2900
         },
         "sources": [
             {
@@ -31319,7 +31319,7 @@ export const itemDB = [
             "haste": 4250,
             "crit": 2750,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -31358,7 +31358,7 @@ export const itemDB = [
             "haste": 2750,
             "crit": 4250,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -31397,7 +31397,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 4250,
-            "vers": 2750
+            "versatility": 2750
         },
         "sources": [
             {
@@ -31436,7 +31436,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -31479,7 +31479,7 @@ export const itemDB = [
             "haste": 4100,
             "crit": 0,
             "mastery": 2900,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -31518,7 +31518,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2750,
             "mastery": 4250,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -31557,7 +31557,7 @@ export const itemDB = [
             "haste": 4100,
             "crit": 2900,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -31596,7 +31596,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 4100,
             "mastery": 0,
-            "vers": 2900
+            "versatility": 2900
         },
         "sources": [
             {
@@ -31635,7 +31635,7 @@ export const itemDB = [
             "haste": 12500,
             "crit": 0,
             "mastery": 5000,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -31674,7 +31674,7 @@ export const itemDB = [
             "haste": 4250,
             "crit": 0,
             "mastery": 2750,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -31703,7 +31703,7 @@ export const itemDB = [
             "haste": 3650,
             "crit": 0,
             "mastery": 3350,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -31732,7 +31732,7 @@ export const itemDB = [
             "haste": 4250,
             "crit": 2750,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -31761,7 +31761,7 @@ export const itemDB = [
             "haste": 4050,
             "crit": 2950,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -31790,7 +31790,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 4550,
-            "vers": 2450
+            "versatility": 2450
         },
         "dropLoc": "",
         "selectable": "true",
@@ -31819,7 +31819,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 2500,
-            "vers": 4500
+            "versatility": 4500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -31848,7 +31848,7 @@ export const itemDB = [
             "haste": 5000,
             "crit": 2000,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -31877,7 +31877,7 @@ export const itemDB = [
             "haste": 3950,
             "crit": 0,
             "mastery": 0,
-            "vers": 3050
+            "versatility": 3050
         },
         "dropLoc": "",
         "selectable": "true",
@@ -31906,7 +31906,7 @@ export const itemDB = [
             "haste": 4550,
             "crit": 2450,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -31935,7 +31935,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 4850,
-            "vers": 2150
+            "versatility": 2150
         },
         "dropLoc": "",
         "selectable": "true",
@@ -31964,7 +31964,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 2100,
-            "vers": 4900
+            "versatility": 4900
         },
         "dropLoc": "",
         "selectable": "true",
@@ -31993,7 +31993,7 @@ export const itemDB = [
             "haste": 4550,
             "crit": 0,
             "mastery": 2450,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -32022,7 +32022,7 @@ export const itemDB = [
             "haste": 2500,
             "crit": 0,
             "mastery": 0,
-            "vers": 4500
+            "versatility": 4500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -32051,7 +32051,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -32080,7 +32080,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -32109,7 +32109,7 @@ export const itemDB = [
             "haste": 3500,
             "crit": 0,
             "mastery": 3500,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -32139,7 +32139,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2150,
             "mastery": 0,
-            "vers": 4850
+            "versatility": 4850
         },
         "dropLoc": "",
         "selectable": "true",
@@ -32168,7 +32168,7 @@ export const itemDB = [
             "haste": 3500,
             "crit": 0,
             "mastery": 3500,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -32198,7 +32198,7 @@ export const itemDB = [
             "haste": 4850,
             "crit": 0,
             "mastery": 0,
-            "vers": 2150
+            "versatility": 2150
         },
         "dropLoc": "",
         "selectable": "true",
@@ -32227,7 +32227,7 @@ export const itemDB = [
             "haste": 3500,
             "crit": 0,
             "mastery": 3500,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -32256,7 +32256,7 @@ export const itemDB = [
             "haste": 3500,
             "crit": 0,
             "mastery": 3500,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -32285,7 +32285,7 @@ export const itemDB = [
             "haste": 3500,
             "crit": 0,
             "mastery": 3500,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -32314,7 +32314,7 @@ export const itemDB = [
             "haste": 3500,
             "crit": 0,
             "mastery": 3500,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -32343,7 +32343,7 @@ export const itemDB = [
             "haste": 3500,
             "crit": 0,
             "mastery": 3500,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -32372,7 +32372,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -32401,7 +32401,7 @@ export const itemDB = [
             "haste": 3500,
             "crit": 0,
             "mastery": 3500,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -32431,7 +32431,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 5000,
-            "vers": 2000
+            "versatility": 2000
         },
         "dropLoc": "",
         "selectable": "true",
@@ -32460,7 +32460,7 @@ export const itemDB = [
             "haste": 3500,
             "crit": 0,
             "mastery": 3500,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -32489,7 +32489,7 @@ export const itemDB = [
             "haste": 3500,
             "crit": 0,
             "mastery": 3500,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -32518,7 +32518,7 @@ export const itemDB = [
             "haste": 3500,
             "crit": 3500,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -32547,7 +32547,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3500,
             "mastery": 3500,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -32576,7 +32576,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3500,
             "mastery": 3500,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -32605,7 +32605,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3500,
             "mastery": 0,
-            "vers": 3500
+            "versatility": 3500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -32634,7 +32634,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3500,
             "mastery": 3500,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -32663,7 +32663,7 @@ export const itemDB = [
             "haste": 3500,
             "crit": 0,
             "mastery": 3500,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -32693,7 +32693,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 4850,
-            "vers": 2150
+            "versatility": 2150
         },
         "dropLoc": "",
         "selectable": "true",
@@ -32723,7 +32723,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 5000,
             "mastery": 2000,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -32753,7 +32753,7 @@ export const itemDB = [
             "haste": 4850,
             "crit": 0,
             "mastery": 0,
-            "vers": 2150
+            "versatility": 2150
         },
         "dropLoc": "",
         "selectable": "true",
@@ -32783,7 +32783,7 @@ export const itemDB = [
             "haste": 4700,
             "crit": 2300,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -32813,7 +32813,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 5000,
-            "vers": 2000
+            "versatility": 2000
         },
         "dropLoc": "",
         "selectable": "true",
@@ -32843,7 +32843,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2300,
             "mastery": 0,
-            "vers": 4700
+            "versatility": 4700
         },
         "dropLoc": "",
         "selectable": "true",
@@ -32873,7 +32873,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 2000,
-            "vers": 5000
+            "versatility": 5000
         },
         "dropLoc": "",
         "selectable": "true",
@@ -32903,7 +32903,7 @@ export const itemDB = [
             "haste": 4850,
             "crit": 2150,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -32933,7 +32933,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 4700,
             "mastery": 2300,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -32963,7 +32963,7 @@ export const itemDB = [
             "haste": 4850,
             "crit": 2150,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -32992,7 +32992,7 @@ export const itemDB = [
             "haste": 3500,
             "crit": 0,
             "mastery": 3500,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -33021,7 +33021,7 @@ export const itemDB = [
             "haste": 3500,
             "crit": 0,
             "mastery": 3500,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -33050,7 +33050,7 @@ export const itemDB = [
             "haste": 3500,
             "crit": 0,
             "mastery": 3500,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -33079,7 +33079,7 @@ export const itemDB = [
             "haste": 3500,
             "crit": 3500,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -33108,7 +33108,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3500,
             "mastery": 3500,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -33137,7 +33137,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3500,
             "mastery": 3500,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -33166,7 +33166,7 @@ export const itemDB = [
             "haste": 3500,
             "crit": 0,
             "mastery": 3500,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -33195,7 +33195,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3500,
             "mastery": 0,
-            "vers": 3500
+            "versatility": 3500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -33224,7 +33224,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3500,
             "mastery": 3500,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -33253,7 +33253,7 @@ export const itemDB = [
             "haste": 3500,
             "crit": 0,
             "mastery": 3500,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -33282,7 +33282,7 @@ export const itemDB = [
             "haste": 3500,
             "crit": 0,
             "mastery": 3500,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -33311,7 +33311,7 @@ export const itemDB = [
             "haste": 3500,
             "crit": 0,
             "mastery": 3500,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -33340,7 +33340,7 @@ export const itemDB = [
             "haste": 3500,
             "crit": 3500,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -33369,7 +33369,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3500,
             "mastery": 3500,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -33398,7 +33398,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3500,
             "mastery": 3500,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -33427,7 +33427,7 @@ export const itemDB = [
             "haste": 3500,
             "crit": 0,
             "mastery": 3500,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -33456,7 +33456,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3500,
             "mastery": 3500,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -33485,7 +33485,7 @@ export const itemDB = [
             "haste": 3500,
             "crit": 0,
             "mastery": 3500,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -33514,7 +33514,7 @@ export const itemDB = [
             "haste": 3500,
             "crit": 0,
             "mastery": 3500,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -33543,7 +33543,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3500,
             "mastery": 3500,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -33572,7 +33572,7 @@ export const itemDB = [
             "haste": 3500,
             "crit": 0,
             "mastery": 3500,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -33601,7 +33601,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3500,
             "mastery": 3500,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -33630,7 +33630,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3500,
             "mastery": 3500,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -33659,7 +33659,7 @@ export const itemDB = [
             "haste": 3500,
             "crit": 3500,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -33688,7 +33688,7 @@ export const itemDB = [
             "haste": 3500,
             "crit": 0,
             "mastery": 3500,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -33717,7 +33717,7 @@ export const itemDB = [
             "haste": 3500,
             "crit": 0,
             "mastery": 3500,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -33746,7 +33746,7 @@ export const itemDB = [
             "haste": 3500,
             "crit": 0,
             "mastery": 3500,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -33775,7 +33775,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3500,
             "mastery": 3500,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -33804,7 +33804,7 @@ export const itemDB = [
             "haste": 3500,
             "crit": 0,
             "mastery": 3500,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -33833,7 +33833,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3500,
             "mastery": 3500,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -33862,7 +33862,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3500,
             "mastery": 3500,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -33891,7 +33891,7 @@ export const itemDB = [
             "haste": 3500,
             "crit": 3500,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -33920,7 +33920,7 @@ export const itemDB = [
             "haste": 3500,
             "crit": 0,
             "mastery": 3500,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -33949,7 +33949,7 @@ export const itemDB = [
             "haste": 3500,
             "crit": 0,
             "mastery": 3500,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -33978,7 +33978,7 @@ export const itemDB = [
             "haste": 3500,
             "crit": 0,
             "mastery": 3500,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -34007,7 +34007,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3500,
             "mastery": 3500,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -34036,7 +34036,7 @@ export const itemDB = [
             "haste": 3500,
             "crit": 0,
             "mastery": 3500,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -34065,7 +34065,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3500,
             "mastery": 3500,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -34094,7 +34094,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3500,
             "mastery": 3500,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -34123,7 +34123,7 @@ export const itemDB = [
             "haste": 3500,
             "crit": 3500,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -34152,7 +34152,7 @@ export const itemDB = [
             "haste": 3500,
             "crit": 0,
             "mastery": 3500,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -34181,7 +34181,7 @@ export const itemDB = [
             "haste": 3500,
             "crit": 0,
             "mastery": 3500,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -34211,7 +34211,7 @@ export const itemDB = [
             "haste": 4850,
             "crit": 2150,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -34241,7 +34241,7 @@ export const itemDB = [
             "haste": 2000,
             "crit": 5000,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -34271,7 +34271,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 4700,
             "mastery": 2300,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -34301,7 +34301,7 @@ export const itemDB = [
             "haste": 5000,
             "crit": 0,
             "mastery": 0,
-            "vers": 2000
+            "versatility": 2000
         },
         "dropLoc": "",
         "selectable": "true",
@@ -34331,7 +34331,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 4700,
-            "vers": 2300
+            "versatility": 2300
         },
         "dropLoc": "",
         "selectable": "true",
@@ -34361,7 +34361,7 @@ export const itemDB = [
             "haste": 2000,
             "crit": 0,
             "mastery": 5000,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -34391,7 +34391,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2150,
             "mastery": 0,
-            "vers": 4850
+            "versatility": 4850
         },
         "dropLoc": "",
         "selectable": "true",
@@ -34421,7 +34421,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 2300,
-            "vers": 4700
+            "versatility": 4700
         },
         "dropLoc": "",
         "selectable": "true",
@@ -34450,7 +34450,7 @@ export const itemDB = [
             "haste": 3500,
             "crit": 0,
             "mastery": 3500,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -34479,7 +34479,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3500,
             "mastery": 3500,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -34508,7 +34508,7 @@ export const itemDB = [
             "haste": 3500,
             "crit": 0,
             "mastery": 3500,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -34537,7 +34537,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3500,
             "mastery": 3500,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -34566,7 +34566,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3500,
             "mastery": 3500,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -34595,7 +34595,7 @@ export const itemDB = [
             "haste": 3500,
             "crit": 3500,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -34624,7 +34624,7 @@ export const itemDB = [
             "haste": 3500,
             "crit": 0,
             "mastery": 3500,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -34653,7 +34653,7 @@ export const itemDB = [
             "haste": 3500,
             "crit": 0,
             "mastery": 3500,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -34682,7 +34682,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -34711,7 +34711,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -34740,7 +34740,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -34770,7 +34770,7 @@ export const itemDB = [
             "haste": 2500,
             "crit": 0,
             "mastery": 0,
-            "vers": 4500
+            "versatility": 4500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -34799,7 +34799,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 3050,
-            "vers": 3950
+            "versatility": 3950
         },
         "dropLoc": "",
         "selectable": "true",
@@ -34828,7 +34828,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3050,
             "mastery": 3950,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -34857,7 +34857,7 @@ export const itemDB = [
             "haste": 3350,
             "crit": 0,
             "mastery": 0,
-            "vers": 3650
+            "versatility": 3650
         },
         "dropLoc": "",
         "selectable": "true",
@@ -34886,7 +34886,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 3200
+            "versatility": 3200
         },
         "dropLoc": "",
         "selectable": "true",
@@ -34915,7 +34915,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2450,
             "mastery": 0,
-            "vers": 4550
+            "versatility": 4550
         },
         "dropLoc": "",
         "selectable": "true",
@@ -34944,7 +34944,7 @@ export const itemDB = [
             "haste": 4050,
             "crit": 0,
             "mastery": 0,
-            "vers": 2950
+            "versatility": 2950
         },
         "dropLoc": "",
         "selectable": "true",
@@ -34973,7 +34973,7 @@ export const itemDB = [
             "haste": 2000,
             "crit": 0,
             "mastery": 5000,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -35002,7 +35002,7 @@ export const itemDB = [
             "haste": 2550,
             "crit": 0,
             "mastery": 0,
-            "vers": 4450
+            "versatility": 4450
         },
         "dropLoc": "",
         "selectable": "true",
@@ -35031,7 +35031,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 4200,
             "mastery": 0,
-            "vers": 2800
+            "versatility": 2800
         },
         "dropLoc": "",
         "selectable": "true",
@@ -35060,7 +35060,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2050,
             "mastery": 0,
-            "vers": 4950
+            "versatility": 4950
         },
         "dropLoc": "",
         "selectable": "true",
@@ -35089,7 +35089,7 @@ export const itemDB = [
             "haste": 5000,
             "crit": 2000,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -35118,7 +35118,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 4550,
-            "vers": 2450
+            "versatility": 2450
         },
         "dropLoc": "",
         "selectable": "true",
@@ -35147,7 +35147,7 @@ export const itemDB = [
             "haste": 4400,
             "crit": 2600,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -35186,7 +35186,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2750,
             "mastery": 4250,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -35225,7 +35225,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2900,
             "mastery": 0,
-            "vers": 4100
+            "versatility": 4100
         },
         "sources": [
             {
@@ -35264,7 +35264,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2450,
             "mastery": 4550,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -35303,7 +35303,7 @@ export const itemDB = [
             "haste": 2900,
             "crit": 4100,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -35342,7 +35342,7 @@ export const itemDB = [
             "haste": 4100,
             "crit": 2900,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -35381,7 +35381,7 @@ export const itemDB = [
             "haste": 4100,
             "crit": 2900,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -35420,7 +35420,7 @@ export const itemDB = [
             "haste": 2600,
             "crit": 0,
             "mastery": 0,
-            "vers": 4400
+            "versatility": 4400
         },
         "sources": [
             {
@@ -35459,7 +35459,7 @@ export const itemDB = [
             "haste": 2450,
             "crit": 0,
             "mastery": 0,
-            "vers": 4550
+            "versatility": 4550
         },
         "sources": [
             {
@@ -35498,7 +35498,7 @@ export const itemDB = [
             "haste": 2450,
             "crit": 0,
             "mastery": 4550,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -35537,7 +35537,7 @@ export const itemDB = [
             "haste": 2600,
             "crit": 0,
             "mastery": 0,
-            "vers": 4400
+            "versatility": 4400
         },
         "sources": [
             {
@@ -35576,7 +35576,7 @@ export const itemDB = [
             "haste": 4250,
             "crit": 0,
             "mastery": 0,
-            "vers": 2750
+            "versatility": 2750
         },
         "sources": [
             {
@@ -35615,7 +35615,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 4250,
-            "vers": 2750
+            "versatility": 2750
         },
         "sources": [
             {
@@ -35654,7 +35654,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 2750,
-            "vers": 4250
+            "versatility": 4250
         },
         "sources": [
             {
@@ -35693,7 +35693,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 4400,
-            "vers": 2600
+            "versatility": 2600
         },
         "sources": [
             {
@@ -35732,7 +35732,7 @@ export const itemDB = [
             "haste": 4550,
             "crit": 0,
             "mastery": 0,
-            "vers": 2450
+            "versatility": 2450
         },
         "sources": [
             {
@@ -35771,7 +35771,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 11750,
             "mastery": 0,
-            "vers": 5750
+            "versatility": 5750
         },
         "sources": [
             {
@@ -35810,7 +35810,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 6666,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -35853,7 +35853,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -35896,7 +35896,7 @@ export const itemDB = [
             "haste": 4500,
             "crit": 2500,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -35935,7 +35935,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -35964,7 +35964,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -35993,7 +35993,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -36022,7 +36022,7 @@ export const itemDB = [
             "haste": 4550,
             "crit": 0,
             "mastery": 0,
-            "vers": 2450
+            "versatility": 2450
         },
         "dropLoc": "",
         "selectable": "true",
@@ -36051,7 +36051,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -36080,7 +36080,7 @@ export const itemDB = [
             "haste": 4100,
             "crit": 0,
             "mastery": 2900,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -36109,7 +36109,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 11500,
             "mastery": 6000,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -36138,7 +36138,7 @@ export const itemDB = [
             "haste": 6000,
             "crit": 0,
             "mastery": 11500,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -36167,7 +36167,7 @@ export const itemDB = [
             "haste": 11500,
             "crit": 0,
             "mastery": 0,
-            "vers": 6000
+            "versatility": 6000
         },
         "dropLoc": "",
         "selectable": "true",
@@ -36196,7 +36196,7 @@ export const itemDB = [
             "haste": 6000,
             "crit": 11500,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -36225,7 +36225,7 @@ export const itemDB = [
             "haste": 11500,
             "crit": 0,
             "mastery": 6000,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -36254,7 +36254,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 11500,
-            "vers": 6000
+            "versatility": 6000
         },
         "dropLoc": "",
         "selectable": "true",
@@ -36283,7 +36283,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 6000,
             "mastery": 0,
-            "vers": 11500
+            "versatility": 11500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -36312,7 +36312,7 @@ export const itemDB = [
             "haste": 4100,
             "crit": 0,
             "mastery": 0,
-            "vers": 2900
+            "versatility": 2900
         },
         "dropLoc": "",
         "selectable": "true",
@@ -36341,7 +36341,7 @@ export const itemDB = [
             "haste": 4250,
             "crit": 0,
             "mastery": 2750,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -36370,7 +36370,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 4400,
             "mastery": 0,
-            "vers": 2600
+            "versatility": 2600
         },
         "dropLoc": "",
         "selectable": "true",
@@ -36399,7 +36399,7 @@ export const itemDB = [
             "haste": 4100,
             "crit": 0,
             "mastery": 0,
-            "vers": 2900
+            "versatility": 2900
         },
         "dropLoc": "",
         "selectable": "true",
@@ -36428,7 +36428,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2900,
             "mastery": 0,
-            "vers": 4100
+            "versatility": 4100
         },
         "dropLoc": "",
         "selectable": "true",
@@ -36457,7 +36457,7 @@ export const itemDB = [
             "haste": 2450,
             "crit": 4550,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -36486,7 +36486,7 @@ export const itemDB = [
             "haste": 4250,
             "crit": 2750,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -36515,7 +36515,7 @@ export const itemDB = [
             "haste": 4400,
             "crit": 0,
             "mastery": 0,
-            "vers": 2600
+            "versatility": 2600
         },
         "dropLoc": "",
         "selectable": "true",
@@ -36544,7 +36544,7 @@ export const itemDB = [
             "haste": 4550,
             "crit": 2450,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -36573,7 +36573,7 @@ export const itemDB = [
             "haste": 4100,
             "crit": 2900,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -36602,7 +36602,7 @@ export const itemDB = [
             "haste": 4550,
             "crit": 0,
             "mastery": 2450,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -36631,7 +36631,7 @@ export const itemDB = [
             "haste": 3500,
             "crit": 0,
             "mastery": 3500,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -36660,7 +36660,7 @@ export const itemDB = [
             "haste": 3500,
             "crit": 0,
             "mastery": 3500,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -36689,7 +36689,7 @@ export const itemDB = [
             "haste": 3500,
             "crit": 0,
             "mastery": 3500,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -36718,7 +36718,7 @@ export const itemDB = [
             "haste": 3500,
             "crit": 0,
             "mastery": 3500,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -36747,7 +36747,7 @@ export const itemDB = [
             "haste": 3500,
             "crit": 0,
             "mastery": 3500,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -36776,7 +36776,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2900,
             "mastery": 4100,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -36805,7 +36805,7 @@ export const itemDB = [
             "haste": 3650,
             "crit": 3350,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -36834,7 +36834,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3050,
             "mastery": 3950,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -36863,7 +36863,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -36892,7 +36892,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -36921,7 +36921,7 @@ export const itemDB = [
             "haste": 4100,
             "crit": 2900,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -36950,7 +36950,7 @@ export const itemDB = [
             "haste": 2750,
             "crit": 0,
             "mastery": 4250,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -36979,7 +36979,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 2750,
-            "vers": 4250
+            "versatility": 4250
         },
         "dropLoc": "",
         "selectable": "true",
@@ -37008,7 +37008,7 @@ export const itemDB = [
             "haste": 2600,
             "crit": 4400,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -37037,7 +37037,7 @@ export const itemDB = [
             "haste": 4250,
             "crit": 0,
             "mastery": 0,
-            "vers": 2750
+            "versatility": 2750
         },
         "dropLoc": "",
         "selectable": "true",
@@ -37066,7 +37066,7 @@ export const itemDB = [
             "haste": 2600,
             "crit": 4400,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -37095,7 +37095,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 4250,
             "mastery": 0,
-            "vers": 2750
+            "versatility": 2750
         },
         "dropLoc": "",
         "selectable": "true",
@@ -37124,7 +37124,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3950,
             "mastery": 0,
-            "vers": 3050
+            "versatility": 3050
         },
         "dropLoc": "",
         "selectable": "true",
@@ -37153,7 +37153,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 3650,
-            "vers": 3350
+            "versatility": 3350
         },
         "dropLoc": "",
         "selectable": "true",
@@ -37182,7 +37182,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 3200,
-            "vers": 3800
+            "versatility": 3800
         },
         "dropLoc": "",
         "selectable": "true",
@@ -37211,7 +37211,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 3800,
-            "vers": 3200
+            "versatility": 3200
         },
         "dropLoc": "",
         "selectable": "true",
@@ -37240,7 +37240,7 @@ export const itemDB = [
             "haste": 3950,
             "crit": 0,
             "mastery": 3050,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -37269,7 +37269,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -37298,7 +37298,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -37327,7 +37327,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -37356,7 +37356,7 @@ export const itemDB = [
             "haste": 3350,
             "crit": 0,
             "mastery": 0,
-            "vers": 3650
+            "versatility": 3650
         },
         "dropLoc": "",
         "selectable": "true",
@@ -37385,7 +37385,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 3650,
-            "vers": 3350
+            "versatility": 3350
         },
         "dropLoc": "",
         "selectable": "true",
@@ -37414,7 +37414,7 @@ export const itemDB = [
             "haste": 8750,
             "crit": 0,
             "mastery": 8750,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -37443,7 +37443,7 @@ export const itemDB = [
             "haste": 8750,
             "crit": 8750,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -37472,7 +37472,7 @@ export const itemDB = [
             "haste": 4850,
             "crit": 2150,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -37502,7 +37502,7 @@ export const itemDB = [
             "haste": 4850,
             "crit": 2150,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -37532,7 +37532,7 @@ export const itemDB = [
             "haste": 3050,
             "crit": 0,
             "mastery": 3950,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -37562,7 +37562,7 @@ export const itemDB = [
             "haste": 3950,
             "crit": 3050,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -37592,7 +37592,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2150,
             "mastery": 4850,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -37622,7 +37622,7 @@ export const itemDB = [
             "haste": 4550,
             "crit": 2450,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -37652,7 +37652,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 4400,
             "mastery": 2600,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -37682,7 +37682,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2900,
             "mastery": 0,
-            "vers": 4100
+            "versatility": 4100
         },
         "dropLoc": "",
         "selectable": "true",
@@ -37712,7 +37712,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 4400,
             "mastery": 2600,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -37742,7 +37742,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3800,
             "mastery": 3200,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -37772,7 +37772,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 4450,
             "mastery": 2550,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -37802,7 +37802,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 4850,
             "mastery": 2150,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -37832,7 +37832,7 @@ export const itemDB = [
             "haste": 2150,
             "crit": 0,
             "mastery": 4850,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -37862,7 +37862,7 @@ export const itemDB = [
             "haste": 3050,
             "crit": 3950,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -37892,7 +37892,7 @@ export const itemDB = [
             "haste": 5000,
             "crit": 2000,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -37922,7 +37922,7 @@ export const itemDB = [
             "haste": 5000,
             "crit": 0,
             "mastery": 2000,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -37952,7 +37952,7 @@ export const itemDB = [
             "haste": 4250,
             "crit": 0,
             "mastery": 2750,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -37982,7 +37982,7 @@ export const itemDB = [
             "haste": 3950,
             "crit": 0,
             "mastery": 3050,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -38012,7 +38012,7 @@ export const itemDB = [
             "haste": 3950,
             "crit": 3050,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -38042,7 +38042,7 @@ export const itemDB = [
             "haste": 4700,
             "crit": 2300,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -38072,7 +38072,7 @@ export const itemDB = [
             "haste": 2600,
             "crit": 4400,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -38102,7 +38102,7 @@ export const itemDB = [
             "haste": 2150,
             "crit": 4850,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -38132,7 +38132,7 @@ export const itemDB = [
             "haste": 2150,
             "crit": 0,
             "mastery": 4850,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -38162,7 +38162,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 4550,
             "mastery": 2450,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -38192,7 +38192,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 5000,
             "mastery": 2000,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -38222,7 +38222,7 @@ export const itemDB = [
             "haste": 4100,
             "crit": 0,
             "mastery": 2900,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -38252,7 +38252,7 @@ export const itemDB = [
             "haste": 2450,
             "crit": 4550,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -38282,7 +38282,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 4850,
             "mastery": 2150,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -38312,7 +38312,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2600,
             "mastery": 0,
-            "vers": 4400
+            "versatility": 4400
         },
         "dropLoc": "",
         "selectable": "true",
@@ -38342,7 +38342,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3950,
             "mastery": 3050,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -38372,7 +38372,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2150,
             "mastery": 4850,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -38402,7 +38402,7 @@ export const itemDB = [
             "haste": 3950,
             "crit": 0,
             "mastery": 3050,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -38432,7 +38432,7 @@ export const itemDB = [
             "haste": 4400,
             "crit": 0,
             "mastery": 2600,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -38462,7 +38462,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 4100,
-            "vers": 2900
+            "versatility": 2900
         },
         "dropLoc": "",
         "selectable": "true",
@@ -38492,7 +38492,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 4250,
             "mastery": 2750,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -38522,7 +38522,7 @@ export const itemDB = [
             "haste": 4700,
             "crit": 0,
             "mastery": 2300,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -38552,7 +38552,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2450,
             "mastery": 0,
-            "vers": 4550
+            "versatility": 4550
         },
         "dropLoc": "",
         "selectable": "true",
@@ -38581,7 +38581,7 @@ export const itemDB = [
             "haste": 2150,
             "crit": 4850,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -38610,7 +38610,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 4550,
             "mastery": 0,
-            "vers": 2450
+            "versatility": 2450
         },
         "dropLoc": "",
         "selectable": "true",
@@ -38639,7 +38639,7 @@ export const itemDB = [
             "haste": 2750,
             "crit": 0,
             "mastery": 0,
-            "vers": 4250
+            "versatility": 4250
         },
         "dropLoc": "",
         "selectable": "true",
@@ -38668,7 +38668,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3950,
             "mastery": 0,
-            "vers": 3050
+            "versatility": 3050
         },
         "dropLoc": "",
         "selectable": "true",
@@ -38697,7 +38697,7 @@ export const itemDB = [
             "haste": 3350,
             "crit": 3650,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -38726,7 +38726,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3800,
             "mastery": 3200,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -38755,7 +38755,7 @@ export const itemDB = [
             "haste": 3050,
             "crit": 3950,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -38784,7 +38784,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3650,
             "mastery": 3350,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -38813,7 +38813,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3950,
             "mastery": 0,
-            "vers": 3050
+            "versatility": 3050
         },
         "dropLoc": "",
         "selectable": "true",
@@ -38842,7 +38842,7 @@ export const itemDB = [
             "haste": 3350,
             "crit": 3650,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -38871,7 +38871,7 @@ export const itemDB = [
             "haste": 3050,
             "crit": 3950,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -38900,7 +38900,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3650,
             "mastery": 3350,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -38929,7 +38929,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3800,
             "mastery": 0,
-            "vers": 3200
+            "versatility": 3200
         },
         "dropLoc": "",
         "selectable": "true",
@@ -38958,7 +38958,7 @@ export const itemDB = [
             "haste": 3050,
             "crit": 3950,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -38987,7 +38987,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3800,
             "mastery": 3200,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -39016,7 +39016,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3950,
             "mastery": 3050,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -39045,7 +39045,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3650,
             "mastery": 0,
-            "vers": 3350
+            "versatility": 3350
         },
         "dropLoc": "",
         "selectable": "true",
@@ -39074,7 +39074,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3800,
             "mastery": 0,
-            "vers": 3200
+            "versatility": 3200
         },
         "dropLoc": "",
         "selectable": "true",
@@ -39103,7 +39103,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3950,
             "mastery": 0,
-            "vers": 3050
+            "versatility": 3050
         },
         "dropLoc": "",
         "selectable": "true",
@@ -39132,7 +39132,7 @@ export const itemDB = [
             "haste": 3350,
             "crit": 3650,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -39162,7 +39162,7 @@ export const itemDB = [
             "haste": 3200,
             "crit": 3800,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -39191,7 +39191,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3950,
             "mastery": 3050,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -39220,7 +39220,7 @@ export const itemDB = [
             "haste": 3200,
             "crit": 3800,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -39249,7 +39249,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3950,
             "mastery": 3050,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -39278,7 +39278,7 @@ export const itemDB = [
             "haste": 3350,
             "crit": 3650,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -39307,7 +39307,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3650,
             "mastery": 0,
-            "vers": 3350
+            "versatility": 3350
         },
         "dropLoc": "",
         "selectable": "true",
@@ -39336,7 +39336,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3800,
             "mastery": 0,
-            "vers": 3200
+            "versatility": 3200
         },
         "dropLoc": "",
         "selectable": "true",
@@ -39365,7 +39365,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3950,
             "mastery": 0,
-            "vers": 3050
+            "versatility": 3050
         },
         "dropLoc": "",
         "selectable": "true",
@@ -39394,7 +39394,7 @@ export const itemDB = [
             "haste": 3200,
             "crit": 3800,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -39423,7 +39423,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3950,
             "mastery": 3050,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -39452,7 +39452,7 @@ export const itemDB = [
             "haste": 3350,
             "crit": 3650,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -39481,7 +39481,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3800,
             "mastery": 3200,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -39510,7 +39510,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3800,
             "mastery": 3200,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -39539,7 +39539,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3650,
             "mastery": 0,
-            "vers": 3350
+            "versatility": 3350
         },
         "dropLoc": "",
         "selectable": "true",
@@ -39568,7 +39568,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3800,
             "mastery": 0,
-            "vers": 3200
+            "versatility": 3200
         },
         "dropLoc": "",
         "selectable": "true",
@@ -39597,7 +39597,7 @@ export const itemDB = [
             "haste": 3050,
             "crit": 3950,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -39626,7 +39626,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3650,
             "mastery": 3350,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -39655,7 +39655,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3800,
             "mastery": 3200,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -39684,7 +39684,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 9000,
             "mastery": 0,
-            "vers": 8500
+            "versatility": 8500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -39713,7 +39713,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 9500,
             "mastery": 8000,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -39742,7 +39742,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3950,
             "mastery": 0,
-            "vers": 3050
+            "versatility": 3050
         },
         "dropLoc": "",
         "selectable": "true",
@@ -39771,7 +39771,7 @@ export const itemDB = [
             "haste": 3350,
             "crit": 3650,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -39800,7 +39800,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3500,
             "mastery": 0,
-            "vers": 3500
+            "versatility": 3500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -39830,7 +39830,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -39863,7 +39863,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 6666,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -39897,7 +39897,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -39930,7 +39930,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -39963,7 +39963,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -39996,7 +39996,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 6666
+            "versatility": 6666
         },
         "dropLoc": "",
         "selectable": "true",
@@ -40029,7 +40029,7 @@ export const itemDB = [
             "haste": 3950,
             "crit": 0,
             "mastery": 3050,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -40058,7 +40058,7 @@ export const itemDB = [
             "haste": 3950,
             "crit": 0,
             "mastery": 3050,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -40087,7 +40087,7 @@ export const itemDB = [
             "haste": 3950,
             "crit": 0,
             "mastery": 3050,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -40116,7 +40116,7 @@ export const itemDB = [
             "haste": 3800,
             "crit": 0,
             "mastery": 0,
-            "vers": 3200
+            "versatility": 3200
         },
         "dropLoc": "",
         "selectable": "true",
@@ -40145,7 +40145,7 @@ export const itemDB = [
             "haste": 3650,
             "crit": 3350,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -40174,7 +40174,7 @@ export const itemDB = [
             "haste": 3800,
             "crit": 0,
             "mastery": 0,
-            "vers": 3200
+            "versatility": 3200
         },
         "dropLoc": "",
         "selectable": "true",
@@ -40203,7 +40203,7 @@ export const itemDB = [
             "haste": 3800,
             "crit": 0,
             "mastery": 0,
-            "vers": 3200
+            "versatility": 3200
         },
         "dropLoc": "",
         "selectable": "true",
@@ -40232,7 +40232,7 @@ export const itemDB = [
             "haste": 3650,
             "crit": 3350,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -40261,7 +40261,7 @@ export const itemDB = [
             "haste": 3950,
             "crit": 0,
             "mastery": 3050,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -40290,7 +40290,7 @@ export const itemDB = [
             "haste": 3800,
             "crit": 0,
             "mastery": 0,
-            "vers": 3200
+            "versatility": 3200
         },
         "dropLoc": "",
         "selectable": "true",
@@ -40319,7 +40319,7 @@ export const itemDB = [
             "haste": 3650,
             "crit": 3350,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -40348,7 +40348,7 @@ export const itemDB = [
             "haste": 3650,
             "crit": 3350,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -40377,7 +40377,7 @@ export const itemDB = [
             "haste": 3950,
             "crit": 0,
             "mastery": 3050,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -40406,7 +40406,7 @@ export const itemDB = [
             "haste": 3950,
             "crit": 0,
             "mastery": 3050,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -40435,7 +40435,7 @@ export const itemDB = [
             "haste": 3800,
             "crit": 0,
             "mastery": 0,
-            "vers": 3200
+            "versatility": 3200
         },
         "dropLoc": "",
         "selectable": "true",
@@ -40464,7 +40464,7 @@ export const itemDB = [
             "haste": 3650,
             "crit": 3350,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -40493,7 +40493,7 @@ export const itemDB = [
             "haste": 3800,
             "crit": 0,
             "mastery": 0,
-            "vers": 3200
+            "versatility": 3200
         },
         "dropLoc": "",
         "selectable": "true",
@@ -40522,7 +40522,7 @@ export const itemDB = [
             "haste": 3800,
             "crit": 0,
             "mastery": 0,
-            "vers": 3200
+            "versatility": 3200
         },
         "dropLoc": "",
         "selectable": "true",
@@ -40551,7 +40551,7 @@ export const itemDB = [
             "haste": 3650,
             "crit": 3350,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -40580,7 +40580,7 @@ export const itemDB = [
             "haste": 3950,
             "crit": 0,
             "mastery": 3050,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -40609,7 +40609,7 @@ export const itemDB = [
             "haste": 3800,
             "crit": 0,
             "mastery": 0,
-            "vers": 3200
+            "versatility": 3200
         },
         "dropLoc": "",
         "selectable": "true",
@@ -40638,7 +40638,7 @@ export const itemDB = [
             "haste": 3650,
             "crit": 3350,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -40667,7 +40667,7 @@ export const itemDB = [
             "haste": 3650,
             "crit": 3350,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -40696,7 +40696,7 @@ export const itemDB = [
             "haste": 3950,
             "crit": 0,
             "mastery": 3050,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -40725,7 +40725,7 @@ export const itemDB = [
             "haste": 3950,
             "crit": 0,
             "mastery": 3050,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -40754,7 +40754,7 @@ export const itemDB = [
             "haste": 3950,
             "crit": 0,
             "mastery": 3050,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -40783,7 +40783,7 @@ export const itemDB = [
             "haste": 3800,
             "crit": 0,
             "mastery": 0,
-            "vers": 3200
+            "versatility": 3200
         },
         "dropLoc": "",
         "selectable": "true",
@@ -40812,7 +40812,7 @@ export const itemDB = [
             "haste": 3650,
             "crit": 3350,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -40841,7 +40841,7 @@ export const itemDB = [
             "haste": 3800,
             "crit": 0,
             "mastery": 0,
-            "vers": 3200
+            "versatility": 3200
         },
         "dropLoc": "",
         "selectable": "true",
@@ -40870,7 +40870,7 @@ export const itemDB = [
             "haste": 3800,
             "crit": 0,
             "mastery": 0,
-            "vers": 3200
+            "versatility": 3200
         },
         "dropLoc": "",
         "selectable": "true",
@@ -40899,7 +40899,7 @@ export const itemDB = [
             "haste": 3650,
             "crit": 3350,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -40928,7 +40928,7 @@ export const itemDB = [
             "haste": 3950,
             "crit": 0,
             "mastery": 3050,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -40957,7 +40957,7 @@ export const itemDB = [
             "haste": 3950,
             "crit": 0,
             "mastery": 3050,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -40986,7 +40986,7 @@ export const itemDB = [
             "haste": 3950,
             "crit": 0,
             "mastery": 0,
-            "vers": 3050
+            "versatility": 3050
         },
         "dropLoc": "",
         "selectable": "true",
@@ -41015,7 +41015,7 @@ export const itemDB = [
             "haste": 3650,
             "crit": 3350,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -41044,7 +41044,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -41077,7 +41077,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -41110,7 +41110,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -41143,7 +41143,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -41176,7 +41176,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -41209,7 +41209,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3050,
             "mastery": 3950,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -41238,7 +41238,7 @@ export const itemDB = [
             "haste": 3950,
             "crit": 0,
             "mastery": 0,
-            "vers": 3050
+            "versatility": 3050
         },
         "dropLoc": "",
         "selectable": "true",
@@ -41267,7 +41267,7 @@ export const itemDB = [
             "haste": 3800,
             "crit": 0,
             "mastery": 3200,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -41296,7 +41296,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3050,
             "mastery": 3950,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -41325,7 +41325,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3350,
             "mastery": 3650,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -41354,7 +41354,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 3800,
-            "vers": 3200
+            "versatility": 3200
         },
         "dropLoc": "",
         "selectable": "true",
@@ -41383,7 +41383,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 3950,
-            "vers": 3050
+            "versatility": 3050
         },
         "dropLoc": "",
         "selectable": "true",
@@ -41412,7 +41412,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3350,
             "mastery": 3650,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -41441,7 +41441,7 @@ export const itemDB = [
             "haste": 3200,
             "crit": 0,
             "mastery": 3800,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -41470,7 +41470,7 @@ export const itemDB = [
             "haste": 3050,
             "crit": 0,
             "mastery": 3950,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -41499,7 +41499,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3350,
             "mastery": 3650,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -41528,7 +41528,7 @@ export const itemDB = [
             "haste": 3200,
             "crit": 0,
             "mastery": 3800,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -41557,7 +41557,7 @@ export const itemDB = [
             "haste": 3050,
             "crit": 0,
             "mastery": 3950,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -41586,7 +41586,7 @@ export const itemDB = [
             "haste": 3350,
             "crit": 0,
             "mastery": 3650,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -41615,7 +41615,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3200,
             "mastery": 3800,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -41644,7 +41644,7 @@ export const itemDB = [
             "haste": 3050,
             "crit": 0,
             "mastery": 3950,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -41673,7 +41673,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3350,
             "mastery": 3650,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -41702,7 +41702,7 @@ export const itemDB = [
             "haste": 3200,
             "crit": 0,
             "mastery": 3800,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -41731,7 +41731,7 @@ export const itemDB = [
             "haste": 3050,
             "crit": 0,
             "mastery": 3950,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -41760,7 +41760,7 @@ export const itemDB = [
             "haste": 3350,
             "crit": 0,
             "mastery": 3650,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -41789,7 +41789,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3200,
             "mastery": 3800,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -41818,7 +41818,7 @@ export const itemDB = [
             "haste": 3050,
             "crit": 0,
             "mastery": 3950,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -41847,7 +41847,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3350,
             "mastery": 3650,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -41876,7 +41876,7 @@ export const itemDB = [
             "haste": 3200,
             "crit": 0,
             "mastery": 3800,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -41905,7 +41905,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 3950,
-            "vers": 3050
+            "versatility": 3050
         },
         "dropLoc": "",
         "selectable": "true",
@@ -41934,7 +41934,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 3650,
-            "vers": 3350
+            "versatility": 3350
         },
         "dropLoc": "",
         "selectable": "true",
@@ -41963,7 +41963,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3200,
             "mastery": 3800,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -41992,7 +41992,7 @@ export const itemDB = [
             "haste": 3050,
             "crit": 0,
             "mastery": 3950,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -42021,7 +42021,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 3650,
-            "vers": 3350
+            "versatility": 3350
         },
         "dropLoc": "",
         "selectable": "true",
@@ -42050,7 +42050,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 3800,
-            "vers": 3200
+            "versatility": 3200
         },
         "dropLoc": "",
         "selectable": "true",
@@ -42079,7 +42079,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 3950,
-            "vers": 3050
+            "versatility": 3050
         },
         "dropLoc": "",
         "selectable": "true",
@@ -42108,7 +42108,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 3650,
-            "vers": 3350
+            "versatility": 3350
         },
         "dropLoc": "",
         "selectable": "true",
@@ -42137,7 +42137,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3200,
             "mastery": 3800,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -42166,7 +42166,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 3950,
-            "vers": 3050
+            "versatility": 3050
         },
         "dropLoc": "",
         "selectable": "true",
@@ -42195,7 +42195,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 3650,
-            "vers": 3350
+            "versatility": 3350
         },
         "dropLoc": "",
         "selectable": "true",
@@ -42224,7 +42224,7 @@ export const itemDB = [
             "haste": 7750,
             "crit": 0,
             "mastery": 0,
-            "vers": 9750
+            "versatility": 9750
         },
         "dropLoc": "",
         "selectable": "true",
@@ -42253,7 +42253,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 8250,
             "mastery": 0,
-            "vers": 9250
+            "versatility": 9250
         },
         "dropLoc": "",
         "selectable": "true",
@@ -42282,7 +42282,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3200,
             "mastery": 3800,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -42311,7 +42311,7 @@ export const itemDB = [
             "haste": 3050,
             "crit": 0,
             "mastery": 3950,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -42340,7 +42340,7 @@ export const itemDB = [
             "haste": 3200,
             "crit": 0,
             "mastery": 3800,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -42369,7 +42369,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 3050,
-            "vers": 3950
+            "versatility": 3950
         },
         "dropLoc": "",
         "selectable": "true",
@@ -42398,7 +42398,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3350,
             "mastery": 0,
-            "vers": 3650
+            "versatility": 3650
         },
         "dropLoc": "",
         "selectable": "true",
@@ -42427,7 +42427,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3200,
             "mastery": 0,
-            "vers": 3800
+            "versatility": 3800
         },
         "dropLoc": "",
         "selectable": "true",
@@ -42456,7 +42456,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3350,
             "mastery": 0,
-            "vers": 3650
+            "versatility": 3650
         },
         "dropLoc": "",
         "selectable": "true",
@@ -42485,7 +42485,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3050,
             "mastery": 0,
-            "vers": 3950
+            "versatility": 3950
         },
         "dropLoc": "",
         "selectable": "true",
@@ -42514,7 +42514,7 @@ export const itemDB = [
             "haste": 3350,
             "crit": 0,
             "mastery": 0,
-            "vers": 3650
+            "versatility": 3650
         },
         "dropLoc": "",
         "selectable": "true",
@@ -42543,7 +42543,7 @@ export const itemDB = [
             "haste": 3050,
             "crit": 0,
             "mastery": 0,
-            "vers": 3950
+            "versatility": 3950
         },
         "dropLoc": "",
         "selectable": "true",
@@ -42572,7 +42572,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3350,
             "mastery": 0,
-            "vers": 3650
+            "versatility": 3650
         },
         "dropLoc": "",
         "selectable": "true",
@@ -42601,7 +42601,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 3200,
-            "vers": 3800
+            "versatility": 3800
         },
         "dropLoc": "",
         "selectable": "true",
@@ -42630,7 +42630,7 @@ export const itemDB = [
             "haste": 3200,
             "crit": 0,
             "mastery": 0,
-            "vers": 3800
+            "versatility": 3800
         },
         "dropLoc": "",
         "selectable": "true",
@@ -42659,7 +42659,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3050,
             "mastery": 0,
-            "vers": 3950
+            "versatility": 3950
         },
         "dropLoc": "",
         "selectable": "true",
@@ -42688,7 +42688,7 @@ export const itemDB = [
             "haste": 3200,
             "crit": 0,
             "mastery": 0,
-            "vers": 3800
+            "versatility": 3800
         },
         "dropLoc": "",
         "selectable": "true",
@@ -42717,7 +42717,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 3050,
-            "vers": 3950
+            "versatility": 3950
         },
         "dropLoc": "",
         "selectable": "true",
@@ -42746,7 +42746,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 3350,
-            "vers": 3650
+            "versatility": 3650
         },
         "dropLoc": "",
         "selectable": "true",
@@ -42775,7 +42775,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3200,
             "mastery": 0,
-            "vers": 3800
+            "versatility": 3800
         },
         "dropLoc": "",
         "selectable": "true",
@@ -42804,7 +42804,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 3050,
-            "vers": 3950
+            "versatility": 3950
         },
         "dropLoc": "",
         "selectable": "true",
@@ -42833,7 +42833,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3350,
             "mastery": 0,
-            "vers": 3650
+            "versatility": 3650
         },
         "dropLoc": "",
         "selectable": "true",
@@ -42862,7 +42862,7 @@ export const itemDB = [
             "haste": 3050,
             "crit": 0,
             "mastery": 0,
-            "vers": 3950
+            "versatility": 3950
         },
         "dropLoc": "",
         "selectable": "true",
@@ -42891,7 +42891,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3350,
             "mastery": 0,
-            "vers": 3650
+            "versatility": 3650
         },
         "dropLoc": "",
         "selectable": "true",
@@ -42920,7 +42920,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3200,
             "mastery": 0,
-            "vers": 3800
+            "versatility": 3800
         },
         "dropLoc": "",
         "selectable": "true",
@@ -42949,7 +42949,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3200,
             "mastery": 0,
-            "vers": 3800
+            "versatility": 3800
         },
         "dropLoc": "",
         "selectable": "true",
@@ -42978,7 +42978,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 3050,
-            "vers": 3950
+            "versatility": 3950
         },
         "dropLoc": "",
         "selectable": "true",
@@ -43007,7 +43007,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 3200,
-            "vers": 3800
+            "versatility": 3800
         },
         "dropLoc": "",
         "selectable": "true",
@@ -43036,7 +43036,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3050,
             "mastery": 0,
-            "vers": 3950
+            "versatility": 3950
         },
         "dropLoc": "",
         "selectable": "true",
@@ -43065,7 +43065,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 3350,
-            "vers": 3650
+            "versatility": 3650
         },
         "dropLoc": "",
         "selectable": "true",
@@ -43094,7 +43094,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 3350,
-            "vers": 3650
+            "versatility": 3650
         },
         "dropLoc": "",
         "selectable": "true",
@@ -43123,7 +43123,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 3200,
-            "vers": 3800
+            "versatility": 3800
         },
         "dropLoc": "",
         "selectable": "true",
@@ -43152,7 +43152,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 3050,
-            "vers": 3950
+            "versatility": 3950
         },
         "dropLoc": "",
         "selectable": "true",
@@ -43181,7 +43181,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3350,
             "mastery": 0,
-            "vers": 3650
+            "versatility": 3650
         },
         "dropLoc": "",
         "selectable": "true",
@@ -43210,7 +43210,7 @@ export const itemDB = [
             "haste": 3350,
             "crit": 0,
             "mastery": 0,
-            "vers": 3650
+            "versatility": 3650
         },
         "dropLoc": "",
         "selectable": "true",
@@ -43239,7 +43239,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3050,
             "mastery": 0,
-            "vers": 3950
+            "versatility": 3950
         },
         "dropLoc": "",
         "selectable": "true",
@@ -43268,7 +43268,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 3200,
-            "vers": 3800
+            "versatility": 3800
         },
         "dropLoc": "",
         "selectable": "true",
@@ -43297,7 +43297,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 3200,
-            "vers": 3800
+            "versatility": 3800
         },
         "dropLoc": "",
         "selectable": "true",
@@ -43326,7 +43326,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3350,
             "mastery": 0,
-            "vers": 3650
+            "versatility": 3650
         },
         "dropLoc": "",
         "selectable": "true",
@@ -43355,7 +43355,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 3350,
-            "vers": 3650
+            "versatility": 3650
         },
         "dropLoc": "",
         "selectable": "true",
@@ -43384,7 +43384,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3050,
             "mastery": 0,
-            "vers": 3950
+            "versatility": 3950
         },
         "dropLoc": "",
         "selectable": "true",
@@ -43413,7 +43413,7 @@ export const itemDB = [
             "haste": 3050,
             "crit": 0,
             "mastery": 0,
-            "vers": 3950
+            "versatility": 3950
         },
         "dropLoc": "",
         "selectable": "true",
@@ -43442,7 +43442,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3050,
             "mastery": 0,
-            "vers": 3950
+            "versatility": 3950
         },
         "dropLoc": "",
         "selectable": "true",
@@ -43471,7 +43471,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 9250,
-            "vers": 8250
+            "versatility": 8250
         },
         "dropLoc": "",
         "selectable": "true",
@@ -43500,7 +43500,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 7500,
             "mastery": 10000,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -43529,7 +43529,7 @@ export const itemDB = [
             "haste": 3200,
             "crit": 0,
             "mastery": 3800,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -43558,7 +43558,7 @@ export const itemDB = [
             "haste": 7500,
             "crit": 10000,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -43587,7 +43587,7 @@ export const itemDB = [
             "haste": 7750,
             "crit": 0,
             "mastery": 9750,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -43617,7 +43617,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -43651,7 +43651,7 @@ export const itemDB = [
             "haste": 2000,
             "crit": 0,
             "mastery": 5000,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -43680,7 +43680,7 @@ export const itemDB = [
             "haste": 3500,
             "crit": 0,
             "mastery": 3500,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -43710,7 +43710,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 4700,
-            "vers": 2300
+            "versatility": 2300
         },
         "dropLoc": "",
         "selectable": "true",
@@ -43740,7 +43740,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 4850,
             "mastery": 2150,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -43770,7 +43770,7 @@ export const itemDB = [
             "haste": 4700,
             "crit": 0,
             "mastery": 0,
-            "vers": 2300
+            "versatility": 2300
         },
         "dropLoc": "",
         "selectable": "true",
@@ -43800,7 +43800,7 @@ export const itemDB = [
             "haste": 5000,
             "crit": 2000,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -43830,7 +43830,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 4850,
-            "vers": 2150
+            "versatility": 2150
         },
         "dropLoc": "",
         "selectable": "true",
@@ -43860,7 +43860,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2000,
             "mastery": 0,
-            "vers": 5000
+            "versatility": 5000
         },
         "dropLoc": "",
         "selectable": "true",
@@ -43890,7 +43890,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 2150,
-            "vers": 4850
+            "versatility": 4850
         },
         "dropLoc": "",
         "selectable": "true",
@@ -43920,7 +43920,7 @@ export const itemDB = [
             "haste": 4700,
             "crit": 2300,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -43949,7 +43949,7 @@ export const itemDB = [
             "haste": 3500,
             "crit": 0,
             "mastery": 3500,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -43978,7 +43978,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3500,
             "mastery": 3500,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -44007,7 +44007,7 @@ export const itemDB = [
             "haste": 3500,
             "crit": 0,
             "mastery": 3500,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -44036,7 +44036,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3500,
             "mastery": 3500,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -44065,7 +44065,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3500,
             "mastery": 3500,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -44094,7 +44094,7 @@ export const itemDB = [
             "haste": 3500,
             "crit": 3500,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -44123,7 +44123,7 @@ export const itemDB = [
             "haste": 3500,
             "crit": 0,
             "mastery": 3500,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -44152,7 +44152,7 @@ export const itemDB = [
             "haste": 3500,
             "crit": 0,
             "mastery": 3500,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -44181,7 +44181,7 @@ export const itemDB = [
             "haste": 3500,
             "crit": 0,
             "mastery": 3500,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -44211,7 +44211,7 @@ export const itemDB = [
             "haste": 4700,
             "crit": 2300,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -44240,7 +44240,7 @@ export const itemDB = [
             "haste": 2900,
             "crit": 0,
             "mastery": 0,
-            "vers": 4100
+            "versatility": 4100
         },
         "dropLoc": "",
         "selectable": "true",
@@ -44269,7 +44269,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2750,
             "mastery": 4250,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -44298,7 +44298,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 2900,
-            "vers": 4100
+            "versatility": 4100
         },
         "dropLoc": "",
         "selectable": "true",
@@ -44328,7 +44328,7 @@ export const itemDB = [
             "haste": 3050,
             "crit": 0,
             "mastery": 0,
-            "vers": 3950
+            "versatility": 3950
         },
         "dropLoc": "",
         "selectable": "true",
@@ -44358,7 +44358,7 @@ export const itemDB = [
             "haste": 3050,
             "crit": 0,
             "mastery": 0,
-            "vers": 3950
+            "versatility": 3950
         },
         "dropLoc": "",
         "selectable": "true",
@@ -44388,7 +44388,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3350,
             "mastery": 0,
-            "vers": 3650
+            "versatility": 3650
         },
         "dropLoc": "",
         "selectable": "true",
@@ -44418,7 +44418,7 @@ export const itemDB = [
             "haste": 3200,
             "crit": 0,
             "mastery": 0,
-            "vers": 3800
+            "versatility": 3800
         },
         "dropLoc": "",
         "selectable": "true",
@@ -44448,7 +44448,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3050,
             "mastery": 0,
-            "vers": 3950
+            "versatility": 3950
         },
         "dropLoc": "",
         "selectable": "true",
@@ -44478,7 +44478,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3350,
             "mastery": 0,
-            "vers": 3650
+            "versatility": 3650
         },
         "dropLoc": "",
         "selectable": "true",
@@ -44508,7 +44508,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 3200,
-            "vers": 3800
+            "versatility": 3800
         },
         "dropLoc": "",
         "selectable": "true",
@@ -44538,7 +44538,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3050,
             "mastery": 0,
-            "vers": 3950
+            "versatility": 3950
         },
         "dropLoc": "",
         "selectable": "true",
@@ -44568,7 +44568,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3350,
             "mastery": 0,
-            "vers": 3650
+            "versatility": 3650
         },
         "dropLoc": "",
         "selectable": "true",
@@ -44598,7 +44598,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3350,
             "mastery": 0,
-            "vers": 3650
+            "versatility": 3650
         },
         "dropLoc": "",
         "selectable": "true",
@@ -44628,7 +44628,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3200,
             "mastery": 0,
-            "vers": 3800
+            "versatility": 3800
         },
         "dropLoc": "",
         "selectable": "true",
@@ -44658,7 +44658,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3200,
             "mastery": 0,
-            "vers": 3800
+            "versatility": 3800
         },
         "dropLoc": "",
         "selectable": "true",
@@ -44688,7 +44688,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3200,
             "mastery": 0,
-            "vers": 3800
+            "versatility": 3800
         },
         "dropLoc": "",
         "selectable": "true",
@@ -44718,7 +44718,7 @@ export const itemDB = [
             "haste": 3350,
             "crit": 0,
             "mastery": 0,
-            "vers": 3650
+            "versatility": 3650
         },
         "dropLoc": "",
         "selectable": "true",
@@ -44748,7 +44748,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 3350,
-            "vers": 3650
+            "versatility": 3650
         },
         "dropLoc": "",
         "selectable": "true",
@@ -44778,7 +44778,7 @@ export const itemDB = [
             "haste": 3200,
             "crit": 0,
             "mastery": 0,
-            "vers": 3800
+            "versatility": 3800
         },
         "dropLoc": "",
         "selectable": "true",
@@ -44808,7 +44808,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3200,
             "mastery": 0,
-            "vers": 3800
+            "versatility": 3800
         },
         "dropLoc": "",
         "selectable": "true",
@@ -44838,7 +44838,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 3350,
-            "vers": 3650
+            "versatility": 3650
         },
         "dropLoc": "",
         "selectable": "true",
@@ -44868,7 +44868,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 3200,
-            "vers": 3800
+            "versatility": 3800
         },
         "dropLoc": "",
         "selectable": "true",
@@ -44898,7 +44898,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3050,
             "mastery": 0,
-            "vers": 3950
+            "versatility": 3950
         },
         "dropLoc": "",
         "selectable": "true",
@@ -44928,7 +44928,7 @@ export const itemDB = [
             "haste": 3200,
             "crit": 0,
             "mastery": 0,
-            "vers": 3800
+            "versatility": 3800
         },
         "dropLoc": "",
         "selectable": "true",
@@ -44958,7 +44958,7 @@ export const itemDB = [
             "haste": 3050,
             "crit": 0,
             "mastery": 0,
-            "vers": 3950
+            "versatility": 3950
         },
         "dropLoc": "",
         "selectable": "true",
@@ -44988,7 +44988,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3350,
             "mastery": 0,
-            "vers": 3650
+            "versatility": 3650
         },
         "dropLoc": "",
         "selectable": "true",
@@ -45018,7 +45018,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3200,
             "mastery": 0,
-            "vers": 3800
+            "versatility": 3800
         },
         "dropLoc": "",
         "selectable": "true",
@@ -45048,7 +45048,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3050,
             "mastery": 0,
-            "vers": 3950
+            "versatility": 3950
         },
         "dropLoc": "",
         "selectable": "true",
@@ -45078,7 +45078,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 3200,
-            "vers": 3800
+            "versatility": 3800
         },
         "dropLoc": "",
         "selectable": "true",
@@ -45108,7 +45108,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3350,
             "mastery": 0,
-            "vers": 3650
+            "versatility": 3650
         },
         "dropLoc": "",
         "selectable": "true",
@@ -45138,7 +45138,7 @@ export const itemDB = [
             "haste": 3050,
             "crit": 0,
             "mastery": 0,
-            "vers": 3950
+            "versatility": 3950
         },
         "dropLoc": "",
         "selectable": "true",
@@ -45168,7 +45168,7 @@ export const itemDB = [
             "haste": 3350,
             "crit": 0,
             "mastery": 0,
-            "vers": 3650
+            "versatility": 3650
         },
         "dropLoc": "",
         "selectable": "true",
@@ -45198,7 +45198,7 @@ export const itemDB = [
             "haste": 3350,
             "crit": 0,
             "mastery": 0,
-            "vers": 3650
+            "versatility": 3650
         },
         "dropLoc": "",
         "selectable": "true",
@@ -45228,7 +45228,7 @@ export const itemDB = [
             "haste": 3050,
             "crit": 0,
             "mastery": 0,
-            "vers": 3950
+            "versatility": 3950
         },
         "dropLoc": "",
         "selectable": "true",
@@ -45258,7 +45258,7 @@ export const itemDB = [
             "haste": 3050,
             "crit": 0,
             "mastery": 0,
-            "vers": 3950
+            "versatility": 3950
         },
         "dropLoc": "",
         "selectable": "true",
@@ -45288,7 +45288,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3350,
             "mastery": 0,
-            "vers": 3650
+            "versatility": 3650
         },
         "dropLoc": "",
         "selectable": "true",
@@ -45318,7 +45318,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 3350,
-            "vers": 3650
+            "versatility": 3650
         },
         "dropLoc": "",
         "selectable": "true",
@@ -45348,7 +45348,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3050,
             "mastery": 0,
-            "vers": 3950
+            "versatility": 3950
         },
         "dropLoc": "",
         "selectable": "true",
@@ -45378,7 +45378,7 @@ export const itemDB = [
             "haste": 3050,
             "crit": 0,
             "mastery": 0,
-            "vers": 3950
+            "versatility": 3950
         },
         "dropLoc": "",
         "selectable": "true",
@@ -45407,7 +45407,7 @@ export const itemDB = [
             "haste": 5000,
             "crit": 2000,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -45436,7 +45436,7 @@ export const itemDB = [
             "haste": 2000,
             "crit": 0,
             "mastery": 5000,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -45465,7 +45465,7 @@ export const itemDB = [
             "haste": 5000,
             "crit": 2000,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -45494,7 +45494,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 4850,
-            "vers": 2150
+            "versatility": 2150
         },
         "dropLoc": "",
         "selectable": "true",
@@ -45523,7 +45523,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 2500,
-            "vers": 4500
+            "versatility": 4500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -45552,7 +45552,7 @@ export const itemDB = [
             "haste": 2550,
             "crit": 0,
             "mastery": 0,
-            "vers": 4450
+            "versatility": 4450
         },
         "dropLoc": "",
         "selectable": "true",
@@ -45581,7 +45581,7 @@ export const itemDB = [
             "haste": 2200,
             "crit": 0,
             "mastery": 0,
-            "vers": 4800
+            "versatility": 4800
         },
         "dropLoc": "",
         "selectable": "true",
@@ -45610,7 +45610,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2100,
             "mastery": 0,
-            "vers": 4900
+            "versatility": 4900
         },
         "dropLoc": "",
         "selectable": "true",
@@ -45639,7 +45639,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 4550,
-            "vers": 2450
+            "versatility": 2450
         },
         "dropLoc": "",
         "selectable": "true",
@@ -45668,7 +45668,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2450,
             "mastery": 0,
-            "vers": 4550
+            "versatility": 4550
         },
         "dropLoc": "",
         "selectable": "true",
@@ -45697,7 +45697,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 4550,
-            "vers": 2450
+            "versatility": 2450
         },
         "dropLoc": "",
         "selectable": "true",
@@ -45726,7 +45726,7 @@ export const itemDB = [
             "haste": 4550,
             "crit": 0,
             "mastery": 2450,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -45755,7 +45755,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -45788,7 +45788,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -45821,7 +45821,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -45854,7 +45854,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -45887,7 +45887,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -45920,7 +45920,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -45949,7 +45949,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -45978,7 +45978,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -46007,7 +46007,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -46036,7 +46036,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2750,
             "mastery": 4250,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -46065,7 +46065,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3500,
             "mastery": 0,
-            "vers": 3500
+            "versatility": 3500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -46094,7 +46094,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -46128,7 +46128,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2750,
             "mastery": 4250,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -46158,7 +46158,7 @@ export const itemDB = [
             "haste": 2600,
             "crit": 0,
             "mastery": 0,
-            "vers": 4400
+            "versatility": 4400
         },
         "dropLoc": "",
         "selectable": "true",
@@ -46188,7 +46188,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 4400,
-            "vers": 2600
+            "versatility": 2600
         },
         "dropLoc": "",
         "selectable": "true",
@@ -46218,7 +46218,7 @@ export const itemDB = [
             "haste": 2600,
             "crit": 0,
             "mastery": 4400,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -46248,7 +46248,7 @@ export const itemDB = [
             "haste": 2750,
             "crit": 4250,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -46278,7 +46278,7 @@ export const itemDB = [
             "haste": 3350,
             "crit": 0,
             "mastery": 0,
-            "vers": 3650
+            "versatility": 3650
         },
         "dropLoc": "",
         "selectable": "true",
@@ -46308,7 +46308,7 @@ export const itemDB = [
             "haste": 4250,
             "crit": 0,
             "mastery": 2750,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -46337,7 +46337,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2750,
             "mastery": 4250,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -46366,7 +46366,7 @@ export const itemDB = [
             "haste": 2900,
             "crit": 4100,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -46395,7 +46395,7 @@ export const itemDB = [
             "haste": 2600,
             "crit": 0,
             "mastery": 4400,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -46424,7 +46424,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 4400,
             "mastery": 2600,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -46453,7 +46453,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 2375,
-            "vers": 4625
+            "versatility": 4625
         },
         "sources": [
             {
@@ -46488,7 +46488,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 4600,
             "mastery": 2400,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -46523,7 +46523,7 @@ export const itemDB = [
             "haste": 4800,
             "crit": 0,
             "mastery": 0,
-            "vers": 2200
+            "versatility": 2200
         },
         "dropLoc": "",
         "selectable": "true",
@@ -46552,7 +46552,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 4850,
             "mastery": 2150,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -46587,7 +46587,7 @@ export const itemDB = [
             "haste": 4750,
             "crit": 0,
             "mastery": 2250,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -46622,7 +46622,7 @@ export const itemDB = [
             "haste": 2425,
             "crit": 0,
             "mastery": 0,
-            "vers": 4575
+            "versatility": 4575
         },
         "sources": [
             {
@@ -46657,7 +46657,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 4850,
-            "vers": 2150
+            "versatility": 2150
         },
         "dropLoc": "",
         "selectable": "true",
@@ -46686,7 +46686,7 @@ export const itemDB = [
             "haste": 5000,
             "crit": 2000,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -46721,7 +46721,7 @@ export const itemDB = [
             "haste": 4900,
             "crit": 0,
             "mastery": 0,
-            "vers": 2100
+            "versatility": 2100
         },
         "sources": [
             {
@@ -46756,7 +46756,7 @@ export const itemDB = [
             "haste": 4625,
             "crit": 0,
             "mastery": 0,
-            "vers": 2375
+            "versatility": 2375
         },
         "sources": [
             {
@@ -46791,7 +46791,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 4775,
             "mastery": 2225,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -46826,7 +46826,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2300,
             "mastery": 4700,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -46861,7 +46861,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2425,
             "mastery": 4575,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -46896,7 +46896,7 @@ export const itemDB = [
             "haste": 4675,
             "crit": 2325,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -46931,7 +46931,7 @@ export const itemDB = [
             "haste": 4575,
             "crit": 2425,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -46960,7 +46960,7 @@ export const itemDB = [
             "haste": 2450,
             "crit": 4550,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -46995,7 +46995,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2225,
             "mastery": 4775,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -47030,7 +47030,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2350,
             "mastery": 4650,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -47065,7 +47065,7 @@ export const itemDB = [
             "haste": 2350,
             "crit": 4650,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -47100,7 +47100,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 4650,
             "mastery": 0,
-            "vers": 2350
+            "versatility": 2350
         },
         "sources": [
             {
@@ -47135,7 +47135,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2175,
             "mastery": 0,
-            "vers": 4825
+            "versatility": 4825
         },
         "sources": [
             {
@@ -47170,7 +47170,7 @@ export const itemDB = [
             "haste": 2100,
             "crit": 0,
             "mastery": 4900,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -47205,7 +47205,7 @@ export const itemDB = [
             "haste": 4775,
             "crit": 2225,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -47240,7 +47240,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2200,
             "mastery": 0,
-            "vers": 4800
+            "versatility": 4800
         },
         "sources": [
             {
@@ -47275,7 +47275,7 @@ export const itemDB = [
             "haste": 2425,
             "crit": 0,
             "mastery": 0,
-            "vers": 4575
+            "versatility": 4575
         },
         "sources": [
             {
@@ -47310,7 +47310,7 @@ export const itemDB = [
             "haste": 4875,
             "crit": 0,
             "mastery": 2125,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -47345,7 +47345,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 2250,
-            "vers": 4750
+            "versatility": 4750
         },
         "sources": [
             {
@@ -47380,7 +47380,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 4850,
-            "vers": 2150
+            "versatility": 2150
         },
         "sources": [
             {
@@ -47415,7 +47415,7 @@ export const itemDB = [
             "haste": 4875,
             "crit": 2125,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -47450,7 +47450,7 @@ export const itemDB = [
             "haste": 4725,
             "crit": 0,
             "mastery": 0,
-            "vers": 2275
+            "versatility": 2275
         },
         "sources": [
             {
@@ -47485,7 +47485,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 4900,
             "mastery": 2100,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -47520,7 +47520,7 @@ export const itemDB = [
             "haste": 2325,
             "crit": 0,
             "mastery": 0,
-            "vers": 4675
+            "versatility": 4675
         },
         "sources": [
             {
@@ -47555,7 +47555,7 @@ export const itemDB = [
             "haste": 2175,
             "crit": 4825,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -47584,7 +47584,7 @@ export const itemDB = [
             "haste": 2400,
             "crit": 0,
             "mastery": 0,
-            "vers": 4600
+            "versatility": 4600
         },
         "sources": [
             {
@@ -47619,7 +47619,7 @@ export const itemDB = [
             "haste": 2300,
             "crit": 4700,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -47648,7 +47648,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 4550,
-            "vers": 2450
+            "versatility": 2450
         },
         "sources": [
             {
@@ -47683,7 +47683,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 4800,
             "mastery": 2200,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -47718,7 +47718,7 @@ export const itemDB = [
             "haste": 2300,
             "crit": 4700,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -47747,7 +47747,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 5000,
             "mastery": 2000,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -47782,7 +47782,7 @@ export const itemDB = [
             "haste": 4750,
             "crit": 2250,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -47817,7 +47817,7 @@ export const itemDB = [
             "haste": 4875,
             "crit": 0,
             "mastery": 0,
-            "vers": 2125
+            "versatility": 2125
         },
         "sources": [
             {
@@ -47852,7 +47852,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 4675,
-            "vers": 2325
+            "versatility": 2325
         },
         "dropLoc": "",
         "selectable": "true",
@@ -47881,7 +47881,7 @@ export const itemDB = [
             "haste": 4725,
             "crit": 2275,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -47916,7 +47916,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 2225,
-            "vers": 4775
+            "versatility": 4775
         },
         "sources": [
             {
@@ -47951,7 +47951,7 @@ export const itemDB = [
             "haste": 4875,
             "crit": 2125,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -47986,7 +47986,7 @@ export const itemDB = [
             "haste": 2175,
             "crit": 0,
             "mastery": 4825,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -48021,7 +48021,7 @@ export const itemDB = [
             "haste": 2100,
             "crit": 0,
             "mastery": 4900,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -48056,7 +48056,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2000,
             "mastery": 0,
-            "vers": 5000
+            "versatility": 5000
         },
         "sources": [
             {
@@ -48091,7 +48091,7 @@ export const itemDB = [
             "haste": 2275,
             "crit": 0,
             "mastery": 4725,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -48126,7 +48126,7 @@ export const itemDB = [
             "haste": 4600,
             "crit": 0,
             "mastery": 2400,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -48161,7 +48161,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2175,
             "mastery": 4825,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -48196,7 +48196,7 @@ export const itemDB = [
             "haste": 4625,
             "crit": 0,
             "mastery": 2375,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -48231,7 +48231,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 4550,
             "mastery": 0,
-            "vers": 2450
+            "versatility": 2450
         },
         "sources": [
             {
@@ -48266,7 +48266,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2300,
             "mastery": 0,
-            "vers": 4700
+            "versatility": 4700
         },
         "sources": [
             {
@@ -48301,7 +48301,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 4850,
             "mastery": 0,
-            "vers": 2150
+            "versatility": 2150
         },
         "sources": [
             {
@@ -48336,7 +48336,7 @@ export const itemDB = [
             "haste": 2275,
             "crit": 0,
             "mastery": 0,
-            "vers": 4725
+            "versatility": 4725
         },
         "dropLoc": "",
         "selectable": "true",
@@ -48365,7 +48365,7 @@ export const itemDB = [
             "haste": 4800,
             "crit": 0,
             "mastery": 0,
-            "vers": 2200
+            "versatility": 2200
         },
         "sources": [
             {
@@ -48400,7 +48400,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 4750,
             "mastery": 2250,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -48435,7 +48435,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 2325,
-            "vers": 4675
+            "versatility": 4675
         },
         "sources": [
             {
@@ -48470,7 +48470,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3500,
             "mastery": 0,
-            "vers": 14000
+            "versatility": 14000
         },
         "dropLoc": "",
         "selectable": "true",
@@ -48499,7 +48499,7 @@ export const itemDB = [
             "haste": 13750,
             "crit": 0,
             "mastery": 3750,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -48534,7 +48534,7 @@ export const itemDB = [
             "haste": 13500,
             "crit": 4000,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -48569,7 +48569,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 4750,
-            "vers": 12750
+            "versatility": 12750
         },
         "sources": [
             {
@@ -48604,7 +48604,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 4250,
             "mastery": 13250,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -48639,7 +48639,7 @@ export const itemDB = [
             "haste": 4500,
             "crit": 0,
             "mastery": 13000,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -48674,7 +48674,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2450,
             "mastery": 0,
-            "vers": 4550
+            "versatility": 4550
         },
         "dropLoc": "",
         "selectable": "true",
@@ -48703,7 +48703,7 @@ export const itemDB = [
             "haste": 4250,
             "crit": 0,
             "mastery": 2750,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -48732,7 +48732,7 @@ export const itemDB = [
             "haste": 2750,
             "crit": 0,
             "mastery": 0,
-            "vers": 4250
+            "versatility": 4250
         },
         "dropLoc": "",
         "selectable": "true",
@@ -48761,7 +48761,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 4250,
             "mastery": 0,
-            "vers": 2750
+            "versatility": 2750
         },
         "dropLoc": "",
         "selectable": "true",
@@ -48790,7 +48790,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3250,
             "mastery": 0,
-            "vers": 3750
+            "versatility": 3750
         },
         "dropLoc": "",
         "selectable": "true",
@@ -48819,7 +48819,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2100,
             "mastery": 0,
-            "vers": 4900
+            "versatility": 4900
         },
         "dropLoc": "",
         "selectable": "true",
@@ -48848,7 +48848,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2600,
             "mastery": 0,
-            "vers": 4400
+            "versatility": 4400
         },
         "dropLoc": "",
         "selectable": "true",
@@ -48877,7 +48877,7 @@ export const itemDB = [
             "haste": 2200,
             "crit": 0,
             "mastery": 0,
-            "vers": 4800
+            "versatility": 4800
         },
         "dropLoc": "",
         "selectable": "true",
@@ -48906,7 +48906,7 @@ export const itemDB = [
             "haste": 2900,
             "crit": 0,
             "mastery": 0,
-            "vers": 4100
+            "versatility": 4100
         },
         "dropLoc": "",
         "selectable": "true",
@@ -48935,7 +48935,7 @@ export const itemDB = [
             "haste": 4750,
             "crit": 2250,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "faction": "alliance",
         "dropLoc": "",
@@ -48965,7 +48965,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 4375,
             "mastery": 2625,
-            "vers": 0
+            "versatility": 0
         },
         "faction": "alliance",
         "dropLoc": "",
@@ -48995,7 +48995,7 @@ export const itemDB = [
             "haste": 2375,
             "crit": 4625,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "faction": "alliance",
         "dropLoc": "",
@@ -49025,7 +49025,7 @@ export const itemDB = [
             "haste": 4700,
             "crit": 0,
             "mastery": 2300,
-            "vers": 0
+            "versatility": 0
         },
         "faction": "alliance",
         "dropLoc": "",
@@ -49055,7 +49055,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 2750,
-            "vers": 4250
+            "versatility": 4250
         },
         "faction": "alliance",
         "dropLoc": "",
@@ -49085,7 +49085,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2250,
             "mastery": 4750,
-            "vers": 0
+            "versatility": 0
         },
         "faction": "alliance",
         "dropLoc": "",
@@ -49115,7 +49115,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2750,
             "mastery": 4250,
-            "vers": 0
+            "versatility": 0
         },
         "faction": "alliance",
         "dropLoc": "",
@@ -49145,7 +49145,7 @@ export const itemDB = [
             "haste": 4750,
             "crit": 2250,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "faction": "alliance",
         "dropLoc": "",
@@ -49175,7 +49175,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 4750,
             "mastery": 0,
-            "vers": 2250
+            "versatility": 2250
         },
         "faction": "alliance",
         "dropLoc": "",
@@ -49205,7 +49205,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 4700,
             "mastery": 2300,
-            "vers": 0
+            "versatility": 0
         },
         "faction": "alliance",
         "dropLoc": "",
@@ -49235,7 +49235,7 @@ export const itemDB = [
             "haste": 2750,
             "crit": 0,
             "mastery": 0,
-            "vers": 4250
+            "versatility": 4250
         },
         "faction": "alliance",
         "dropLoc": "",
@@ -49265,7 +49265,7 @@ export const itemDB = [
             "haste": 4000,
             "crit": 0,
             "mastery": 3000,
-            "vers": 0
+            "versatility": 0
         },
         "faction": "horde",
         "dropLoc": "",
@@ -49295,7 +49295,7 @@ export const itemDB = [
             "haste": 4750,
             "crit": 2250,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "faction": "horde",
         "dropLoc": "",
@@ -49325,7 +49325,7 @@ export const itemDB = [
             "haste": 4375,
             "crit": 0,
             "mastery": 0,
-            "vers": 2625
+            "versatility": 2625
         },
         "faction": "horde",
         "dropLoc": "",
@@ -49355,7 +49355,7 @@ export const itemDB = [
             "haste": 4700,
             "crit": 0,
             "mastery": 2300,
-            "vers": 0
+            "versatility": 0
         },
         "faction": "horde",
         "dropLoc": "",
@@ -49385,7 +49385,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2250,
             "mastery": 4750,
-            "vers": 0
+            "versatility": 0
         },
         "faction": "horde",
         "dropLoc": "",
@@ -49415,7 +49415,7 @@ export const itemDB = [
             "haste": 4750,
             "crit": 2250,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "faction": "horde",
         "dropLoc": "",
@@ -49445,7 +49445,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 4750,
             "mastery": 0,
-            "vers": 2250
+            "versatility": 2250
         },
         "faction": "horde",
         "dropLoc": "",
@@ -49475,7 +49475,7 @@ export const itemDB = [
             "haste": 2600,
             "crit": 0,
             "mastery": 4400,
-            "vers": 0
+            "versatility": 0
         },
         "faction": "horde",
         "dropLoc": "",
@@ -49505,7 +49505,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 4700,
             "mastery": 2300,
-            "vers": 0
+            "versatility": 0
         },
         "faction": "horde",
         "dropLoc": "",
@@ -49535,7 +49535,7 @@ export const itemDB = [
             "haste": 2750,
             "crit": 0,
             "mastery": 0,
-            "vers": 4250
+            "versatility": 4250
         },
         "faction": "horde",
         "dropLoc": "",
@@ -49565,7 +49565,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 4250,
             "mastery": 2750,
-            "vers": 0
+            "versatility": 0
         },
         "faction": "alliance",
         "dropLoc": "",
@@ -49595,7 +49595,7 @@ export const itemDB = [
             "haste": 3000,
             "crit": 0,
             "mastery": 4000,
-            "vers": 0
+            "versatility": 0
         },
         "faction": "alliance",
         "dropLoc": "",
@@ -49625,7 +49625,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 4250,
             "mastery": 2750,
-            "vers": 0
+            "versatility": 0
         },
         "faction": "alliance",
         "dropLoc": "",
@@ -49655,7 +49655,7 @@ export const itemDB = [
             "haste": 4250,
             "crit": 0,
             "mastery": 0,
-            "vers": 2750
+            "versatility": 2750
         },
         "faction": "alliance",
         "dropLoc": "",
@@ -49685,7 +49685,7 @@ export const itemDB = [
             "haste": 4750,
             "crit": 2250,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "faction": "alliance",
         "dropLoc": "",
@@ -49715,7 +49715,7 @@ export const itemDB = [
             "haste": 2300,
             "crit": 4700,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "faction": "alliance",
         "dropLoc": "",
@@ -49745,7 +49745,7 @@ export const itemDB = [
             "haste": 2300,
             "crit": 4700,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "faction": "alliance",
         "dropLoc": "",
@@ -49775,7 +49775,7 @@ export const itemDB = [
             "haste": 2750,
             "crit": 0,
             "mastery": 4250,
-            "vers": 0
+            "versatility": 0
         },
         "faction": "horde",
         "dropLoc": "",
@@ -49805,7 +49805,7 @@ export const itemDB = [
             "haste": 2750,
             "crit": 0,
             "mastery": 4250,
-            "vers": 0
+            "versatility": 0
         },
         "faction": "horde",
         "dropLoc": "",
@@ -49835,7 +49835,7 @@ export const itemDB = [
             "haste": 2250,
             "crit": 0,
             "mastery": 0,
-            "vers": 4750
+            "versatility": 4750
         },
         "faction": "horde",
         "dropLoc": "",
@@ -49865,7 +49865,7 @@ export const itemDB = [
             "haste": 2250,
             "crit": 0,
             "mastery": 0,
-            "vers": 4750
+            "versatility": 4750
         },
         "faction": "horde",
         "dropLoc": "",
@@ -49895,7 +49895,7 @@ export const itemDB = [
             "haste": 4750,
             "crit": 0,
             "mastery": 2250,
-            "vers": 0
+            "versatility": 0
         },
         "faction": "alliance",
         "dropLoc": "",
@@ -49925,7 +49925,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 4625,
             "mastery": 0,
-            "vers": 2375
+            "versatility": 2375
         },
         "faction": "alliance",
         "dropLoc": "",
@@ -49955,7 +49955,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 4700,
-            "vers": 2300
+            "versatility": 2300
         },
         "faction": "alliance",
         "dropLoc": "",
@@ -49985,7 +49985,7 @@ export const itemDB = [
             "haste": 2300,
             "crit": 0,
             "mastery": 4700,
-            "vers": 0
+            "versatility": 0
         },
         "faction": "alliance",
         "dropLoc": "",
@@ -50015,7 +50015,7 @@ export const itemDB = [
             "haste": 4000,
             "crit": 3000,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "faction": "alliance",
         "dropLoc": "",
@@ -50045,7 +50045,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2500,
             "mastery": 0,
-            "vers": 4500
+            "versatility": 4500
         },
         "faction": "alliance",
         "dropLoc": "",
@@ -50075,7 +50075,7 @@ export const itemDB = [
             "haste": 2300,
             "crit": 4700,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "faction": "alliance",
         "dropLoc": "",
@@ -50105,7 +50105,7 @@ export const itemDB = [
             "haste": 4625,
             "crit": 0,
             "mastery": 2375,
-            "vers": 0
+            "versatility": 0
         },
         "faction": "alliance",
         "dropLoc": "",
@@ -50135,7 +50135,7 @@ export const itemDB = [
             "haste": 4750,
             "crit": 0,
             "mastery": 2250,
-            "vers": 0
+            "versatility": 0
         },
         "faction": "alliance",
         "dropLoc": "",
@@ -50165,7 +50165,7 @@ export const itemDB = [
             "haste": 4750,
             "crit": 0,
             "mastery": 0,
-            "vers": 2250
+            "versatility": 2250
         },
         "faction": "alliance",
         "dropLoc": "",
@@ -50195,7 +50195,7 @@ export const itemDB = [
             "haste": 2600,
             "crit": 0,
             "mastery": 4400,
-            "vers": 0
+            "versatility": 0
         },
         "faction": "alliance",
         "dropLoc": "",
@@ -50225,7 +50225,7 @@ export const itemDB = [
             "haste": 2250,
             "crit": 0,
             "mastery": 0,
-            "vers": 4750
+            "versatility": 4750
         },
         "faction": "alliance",
         "dropLoc": "",
@@ -50255,7 +50255,7 @@ export const itemDB = [
             "haste": 4750,
             "crit": 2250,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "faction": "alliance",
         "dropLoc": "",
@@ -50285,7 +50285,7 @@ export const itemDB = [
             "haste": 3000,
             "crit": 0,
             "mastery": 0,
-            "vers": 4000
+            "versatility": 4000
         },
         "faction": "alliance",
         "dropLoc": "",
@@ -50315,7 +50315,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 2250,
-            "vers": 4750
+            "versatility": 4750
         },
         "faction": "alliance",
         "dropLoc": "",
@@ -50345,7 +50345,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 2250,
-            "vers": 4750
+            "versatility": 4750
         },
         "faction": "alliance",
         "dropLoc": "",
@@ -50375,7 +50375,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 4400,
-            "vers": 2600
+            "versatility": 2600
         },
         "faction": "alliance",
         "dropLoc": "",
@@ -50405,7 +50405,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 5000,
             "mastery": 0,
-            "vers": 2000
+            "versatility": 2000
         },
         "faction": "alliance",
         "dropLoc": "",
@@ -50435,7 +50435,7 @@ export const itemDB = [
             "haste": 2875,
             "crit": 4125,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "faction": "horde",
         "dropLoc": "",
@@ -50465,7 +50465,7 @@ export const itemDB = [
             "haste": 2625,
             "crit": 0,
             "mastery": 4375,
-            "vers": 0
+            "versatility": 0
         },
         "faction": "horde",
         "dropLoc": "",
@@ -50495,7 +50495,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 4250,
             "mastery": 2750,
-            "vers": 0
+            "versatility": 0
         },
         "faction": "horde",
         "dropLoc": "",
@@ -50525,7 +50525,7 @@ export const itemDB = [
             "haste": 4250,
             "crit": 0,
             "mastery": 0,
-            "vers": 2750
+            "versatility": 2750
         },
         "faction": "horde",
         "dropLoc": "",
@@ -50555,7 +50555,7 @@ export const itemDB = [
             "haste": 2750,
             "crit": 0,
             "mastery": 0,
-            "vers": 4250
+            "versatility": 4250
         },
         "faction": "horde",
         "dropLoc": "",
@@ -50585,7 +50585,7 @@ export const itemDB = [
             "haste": 4500,
             "crit": 2500,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "faction": "horde",
         "dropLoc": "",
@@ -50615,7 +50615,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 2750,
-            "vers": 4250
+            "versatility": 4250
         },
         "faction": "horde",
         "dropLoc": "",
@@ -50645,7 +50645,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 4700,
-            "vers": 2300
+            "versatility": 2300
         },
         "faction": "horde",
         "dropLoc": "",
@@ -50675,7 +50675,7 @@ export const itemDB = [
             "haste": 2300,
             "crit": 0,
             "mastery": 4700,
-            "vers": 0
+            "versatility": 0
         },
         "faction": "horde",
         "dropLoc": "",
@@ -50705,7 +50705,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2250,
             "mastery": 0,
-            "vers": 4750
+            "versatility": 4750
         },
         "faction": "horde",
         "dropLoc": "",
@@ -50735,7 +50735,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2750,
             "mastery": 4250,
-            "vers": 0
+            "versatility": 0
         },
         "faction": "horde",
         "dropLoc": "",
@@ -50765,7 +50765,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 4125,
-            "vers": 2875
+            "versatility": 2875
         },
         "faction": "horde",
         "dropLoc": "",
@@ -50795,7 +50795,7 @@ export const itemDB = [
             "haste": 2300,
             "crit": 4700,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "faction": "horde",
         "dropLoc": "",
@@ -50825,7 +50825,7 @@ export const itemDB = [
             "haste": 4750,
             "crit": 0,
             "mastery": 2250,
-            "vers": 0
+            "versatility": 0
         },
         "faction": "horde",
         "dropLoc": "",
@@ -50855,7 +50855,7 @@ export const itemDB = [
             "haste": 4750,
             "crit": 0,
             "mastery": 0,
-            "vers": 2250
+            "versatility": 2250
         },
         "faction": "horde",
         "dropLoc": "",
@@ -50885,7 +50885,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2875,
             "mastery": 0,
-            "vers": 4125
+            "versatility": 4125
         },
         "faction": "horde",
         "dropLoc": "",
@@ -50915,7 +50915,7 @@ export const itemDB = [
             "haste": 4750,
             "crit": 2250,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "faction": "horde",
         "dropLoc": "",
@@ -50945,7 +50945,7 @@ export const itemDB = [
             "haste": 4125,
             "crit": 0,
             "mastery": 2875,
-            "vers": 0
+            "versatility": 0
         },
         "faction": "horde",
         "dropLoc": "",
@@ -50975,7 +50975,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 2250,
-            "vers": 4750
+            "versatility": 4750
         },
         "faction": "horde",
         "dropLoc": "",
@@ -51005,7 +51005,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 4375,
             "mastery": 0,
-            "vers": 2625
+            "versatility": 2625
         },
         "faction": "horde",
         "dropLoc": "",
@@ -51035,7 +51035,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 4400,
-            "vers": 2600
+            "versatility": 2600
         },
         "faction": "horde",
         "dropLoc": "",
@@ -51065,7 +51065,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 5000,
             "mastery": 0,
-            "vers": 2000
+            "versatility": 2000
         },
         "faction": "horde",
         "dropLoc": "",
@@ -51095,7 +51095,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2600,
             "mastery": 4400,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -51124,7 +51124,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 4400,
-            "vers": 2600
+            "versatility": 2600
         },
         "dropLoc": "",
         "selectable": "true",
@@ -51153,7 +51153,7 @@ export const itemDB = [
             "haste": 2750,
             "crit": 4250,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -51182,7 +51182,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 4400,
             "mastery": 2600,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -51211,7 +51211,7 @@ export const itemDB = [
             "haste": 5250,
             "crit": 12250,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -51240,7 +51240,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 14250,
             "mastery": 3250,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -51269,7 +51269,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3250,
             "mastery": 0,
-            "vers": 3750
+            "versatility": 3750
         },
         "dropLoc": "",
         "selectable": "true",
@@ -51298,7 +51298,7 @@ export const itemDB = [
             "haste": 3500,
             "crit": 3500,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -51327,7 +51327,7 @@ export const itemDB = [
             "haste": 3750,
             "crit": 3250,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -51356,7 +51356,7 @@ export const itemDB = [
             "haste": 3250,
             "crit": 3750,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -51385,7 +51385,7 @@ export const itemDB = [
             "haste": 3750,
             "crit": 3250,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -51414,7 +51414,7 @@ export const itemDB = [
             "haste": 2250,
             "crit": 4750,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -51443,7 +51443,7 @@ export const itemDB = [
             "haste": 2000,
             "crit": 5000,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -51472,7 +51472,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3500,
             "mastery": 0,
-            "vers": 3500
+            "versatility": 3500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -51501,7 +51501,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3500,
             "mastery": 0,
-            "vers": 3500
+            "versatility": 3500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -51530,7 +51530,7 @@ export const itemDB = [
             "haste": 5250,
             "crit": 0,
             "mastery": 0,
-            "vers": 1750
+            "versatility": 1750
         },
         "dropLoc": "",
         "selectable": "true",
@@ -51559,7 +51559,7 @@ export const itemDB = [
             "haste": 5250,
             "crit": 0,
             "mastery": 0,
-            "vers": 1750
+            "versatility": 1750
         },
         "dropLoc": "",
         "selectable": "true",
@@ -51588,7 +51588,7 @@ export const itemDB = [
             "haste": 3000,
             "crit": 4000,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -51617,7 +51617,7 @@ export const itemDB = [
             "haste": 3500,
             "crit": 0,
             "mastery": 0,
-            "vers": 3500
+            "versatility": 3500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -51646,7 +51646,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 1750,
             "mastery": 0,
-            "vers": 5250
+            "versatility": 5250
         },
         "dropLoc": "",
         "selectable": "true",
@@ -51675,7 +51675,7 @@ export const itemDB = [
             "haste": 3500,
             "crit": 3500,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -51704,7 +51704,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 6666,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -51737,7 +51737,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3500,
             "mastery": 0,
-            "vers": 3500
+            "versatility": 3500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -51766,7 +51766,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3500,
             "mastery": 0,
-            "vers": 3500
+            "versatility": 3500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -51795,7 +51795,7 @@ export const itemDB = [
             "haste": 2500,
             "crit": 0,
             "mastery": 4500,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -51824,7 +51824,7 @@ export const itemDB = [
             "haste": 3500,
             "crit": 3500,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -51853,7 +51853,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3500,
             "mastery": 3500,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -51882,7 +51882,7 @@ export const itemDB = [
             "haste": 3500,
             "crit": 3500,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -51911,7 +51911,7 @@ export const itemDB = [
             "haste": 12250,
             "crit": 5250,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -51940,7 +51940,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 4500,
             "mastery": 2500,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -51969,7 +51969,7 @@ export const itemDB = [
             "haste": 4750,
             "crit": 2250,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -51998,7 +51998,7 @@ export const itemDB = [
             "haste": 3750,
             "crit": 3250,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -52027,7 +52027,7 @@ export const itemDB = [
             "haste": 3500,
             "crit": 3500,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -52056,7 +52056,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 4000,
             "mastery": 0,
-            "vers": 3000
+            "versatility": 3000
         },
         "dropLoc": "",
         "selectable": "true",
@@ -52085,7 +52085,7 @@ export const itemDB = [
             "haste": 3500,
             "crit": 0,
             "mastery": 0,
-            "vers": 3500
+            "versatility": 3500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -52114,7 +52114,7 @@ export const itemDB = [
             "haste": 3500,
             "crit": 3500,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -52143,7 +52143,7 @@ export const itemDB = [
             "haste": 1750,
             "crit": 0,
             "mastery": 0,
-            "vers": 5250
+            "versatility": 5250
         },
         "dropLoc": "",
         "selectable": "true",
@@ -52172,7 +52172,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 3500
+            "versatility": 3500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -52201,7 +52201,7 @@ export const itemDB = [
             "haste": 5250,
             "crit": 1750,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -52230,7 +52230,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 5250,
             "mastery": 1750,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -52259,7 +52259,7 @@ export const itemDB = [
             "haste": 2500,
             "crit": 0,
             "mastery": 0,
-            "vers": 15000
+            "versatility": 15000
         },
         "dropLoc": "",
         "selectable": "true",
@@ -52288,7 +52288,7 @@ export const itemDB = [
             "haste": 3500,
             "crit": 3500,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -52317,7 +52317,7 @@ export const itemDB = [
             "haste": 3750,
             "crit": 3250,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -52346,7 +52346,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 5250,
-            "vers": 12250
+            "versatility": 12250
         },
         "dropLoc": "",
         "selectable": "true",
@@ -52375,7 +52375,7 @@ export const itemDB = [
             "haste": 3000,
             "crit": 4000,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -52404,7 +52404,7 @@ export const itemDB = [
             "haste": 3500,
             "crit": 3500,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -52433,7 +52433,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 5000,
             "mastery": 2000,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -52462,7 +52462,7 @@ export const itemDB = [
             "haste": 4250,
             "crit": 0,
             "mastery": 2750,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -52491,7 +52491,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3750,
             "mastery": 3250,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -52520,7 +52520,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 5250,
             "mastery": 0,
-            "vers": 12250
+            "versatility": 12250
         },
         "dropLoc": "",
         "selectable": "true",
@@ -52549,7 +52549,7 @@ export const itemDB = [
             "haste": 5250,
             "crit": 1750,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -52578,7 +52578,7 @@ export const itemDB = [
             "haste": 3000,
             "crit": 4000,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -52607,7 +52607,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2750,
             "mastery": 0,
-            "vers": 4250
+            "versatility": 4250
         },
         "dropLoc": "",
         "selectable": "true",
@@ -52636,7 +52636,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2600,
             "mastery": 4400,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -52665,7 +52665,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 4550,
-            "vers": 2450
+            "versatility": 2450
         },
         "dropLoc": "",
         "selectable": "true",
@@ -52694,7 +52694,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2900,
             "mastery": 0,
-            "vers": 4100
+            "versatility": 4100
         },
         "dropLoc": "",
         "selectable": "true",
@@ -52723,7 +52723,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 2600,
-            "vers": 4400
+            "versatility": 4400
         },
         "dropLoc": "",
         "selectable": "true",
@@ -52752,7 +52752,7 @@ export const itemDB = [
             "haste": 2450,
             "crit": 0,
             "mastery": 4550,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -52781,7 +52781,7 @@ export const itemDB = [
             "haste": 4250,
             "crit": 0,
             "mastery": 0,
-            "vers": 2750
+            "versatility": 2750
         },
         "dropLoc": "",
         "selectable": "true",
@@ -52810,7 +52810,7 @@ export const itemDB = [
             "haste": 2900,
             "crit": 4100,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -52839,7 +52839,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2600,
             "mastery": 4400,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -52868,7 +52868,7 @@ export const itemDB = [
             "haste": 2900,
             "crit": 4100,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -52897,7 +52897,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -52930,7 +52930,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -52963,7 +52963,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -52996,7 +52996,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 4550,
             "mastery": 2450,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -53025,7 +53025,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -53054,7 +53054,7 @@ export const itemDB = [
             "haste": 4700,
             "crit": 0,
             "mastery": 0,
-            "vers": 2300
+            "versatility": 2300
         },
         "dropLoc": "",
         "selectable": "true",
@@ -53083,7 +53083,7 @@ export const itemDB = [
             "haste": 4700,
             "crit": 0,
             "mastery": 0,
-            "vers": 2300
+            "versatility": 2300
         },
         "dropLoc": "",
         "selectable": "true",
@@ -53112,7 +53112,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -53151,7 +53151,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -53190,7 +53190,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -53229,7 +53229,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -53268,7 +53268,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -53307,7 +53307,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -53346,7 +53346,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -53385,7 +53385,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -53425,7 +53425,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -53459,7 +53459,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -53493,7 +53493,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -53526,7 +53526,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -53559,7 +53559,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -53592,7 +53592,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -53625,7 +53625,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -53658,7 +53658,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -53691,7 +53691,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -53725,7 +53725,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 5500,
             "mastery": 12000,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -53755,7 +53755,7 @@ export const itemDB = [
             "haste": 6250,
             "crit": 0,
             "mastery": 0,
-            "vers": 11250
+            "versatility": 11250
         },
         "dropLoc": "",
         "selectable": "true",
@@ -53785,7 +53785,7 @@ export const itemDB = [
             "haste": 2450,
             "crit": 0,
             "mastery": 0,
-            "vers": 4550
+            "versatility": 4550
         },
         "dropLoc": "",
         "selectable": "true",
@@ -53815,7 +53815,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 5250,
             "mastery": 0,
-            "vers": 12250
+            "versatility": 12250
         },
         "dropLoc": "",
         "selectable": "true",
@@ -53844,7 +53844,7 @@ export const itemDB = [
             "haste": 2900,
             "crit": 4100,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -53879,7 +53879,7 @@ export const itemDB = [
             "haste": 2600,
             "crit": 0,
             "mastery": 0,
-            "vers": 4400
+            "versatility": 4400
         },
         "sources": [
             {
@@ -53914,7 +53914,7 @@ export const itemDB = [
             "haste": 4200,
             "crit": 0,
             "mastery": 2800,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -53949,7 +53949,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 4550,
-            "vers": 2450
+            "versatility": 2450
         },
         "sources": [
             {
@@ -53984,7 +53984,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 4450,
             "mastery": 2550,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -54019,7 +54019,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2900,
             "mastery": 4100,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -54054,7 +54054,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 4500,
             "mastery": 2500,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -54089,7 +54089,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 4550,
             "mastery": 0,
-            "vers": 2450
+            "versatility": 2450
         },
         "sources": [
             {
@@ -54124,7 +54124,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 4350,
-            "vers": 2650
+            "versatility": 2650
         },
         "sources": [
             {
@@ -54159,7 +54159,7 @@ export const itemDB = [
             "haste": 2800,
             "crit": 0,
             "mastery": 0,
-            "vers": 4200
+            "versatility": 4200
         },
         "sources": [
             {
@@ -54194,7 +54194,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 2650,
-            "vers": 4350
+            "versatility": 4350
         },
         "sources": [
             {
@@ -54229,7 +54229,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 4250,
             "mastery": 2750,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -54264,7 +54264,7 @@ export const itemDB = [
             "haste": 2600,
             "crit": 4400,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -54299,7 +54299,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 4300,
             "mastery": 0,
-            "vers": 2700
+            "versatility": 2700
         },
         "sources": [
             {
@@ -54334,7 +54334,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 4150,
             "mastery": 0,
-            "vers": 2850
+            "versatility": 2850
         },
         "sources": [
             {
@@ -54369,7 +54369,7 @@ export const itemDB = [
             "haste": 4250,
             "crit": 0,
             "mastery": 2750,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -54404,7 +54404,7 @@ export const itemDB = [
             "haste": 2450,
             "crit": 4550,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -54439,7 +54439,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 9000,
             "mastery": 0,
-            "vers": 8500
+            "versatility": 8500
         },
         "sources": [
             {
@@ -54474,7 +54474,7 @@ export const itemDB = [
             "haste": 8000,
             "crit": 0,
             "mastery": 9500,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -54509,7 +54509,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 7500,
             "mastery": 0,
-            "vers": 10000
+            "versatility": 10000
         },
         "sources": [
             {
@@ -54544,7 +54544,7 @@ export const itemDB = [
             "haste": 6000,
             "crit": 6000,
             "mastery": 6000,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -54573,7 +54573,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 2850,
-            "vers": 4150
+            "versatility": 4150
         },
         "sources": [
             {
@@ -54608,7 +54608,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 4300,
-            "vers": 2700
+            "versatility": 2700
         },
         "sources": [
             {
@@ -54643,7 +54643,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2500,
             "mastery": 0,
-            "vers": 4500
+            "versatility": 4500
         },
         "sources": [
             {
@@ -54678,7 +54678,7 @@ export const itemDB = [
             "haste": 4450,
             "crit": 2550,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "sources": [
             {
@@ -54713,7 +54713,7 @@ export const itemDB = [
             "haste": 5000,
             "crit": 0,
             "mastery": 0,
-            "vers": 12500
+            "versatility": 12500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -54742,7 +54742,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2450,
             "mastery": 0,
-            "vers": 4550
+            "versatility": 4550
         },
         "dropLoc": "",
         "selectable": "true",
@@ -54771,7 +54771,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 4250,
             "mastery": 0,
-            "vers": 2750
+            "versatility": 2750
         },
         "dropLoc": "",
         "selectable": "true",
@@ -54800,7 +54800,7 @@ export const itemDB = [
             "haste": 7250,
             "crit": 0,
             "mastery": 0,
-            "vers": 10250
+            "versatility": 10250
         },
         "dropLoc": "",
         "selectable": "true",
@@ -54829,7 +54829,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 4550,
             "mastery": 0,
-            "vers": 2450
+            "versatility": 2450
         },
         "dropLoc": "",
         "selectable": "true",
@@ -54858,7 +54858,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 4550,
-            "vers": 2450
+            "versatility": 2450
         },
         "dropLoc": "",
         "selectable": "true",
@@ -54887,7 +54887,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -54916,7 +54916,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -54945,7 +54945,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 4100,
             "mastery": 2900,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -54974,7 +54974,7 @@ export const itemDB = [
             "haste": 2600,
             "crit": 4400,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -55003,7 +55003,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -55032,7 +55032,7 @@ export const itemDB = [
             "haste": 4550,
             "crit": 0,
             "mastery": 2450,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -55061,7 +55061,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 4550,
-            "vers": 2450
+            "versatility": 2450
         },
         "dropLoc": "",
         "selectable": "true",
@@ -55090,7 +55090,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2450,
             "mastery": 0,
-            "vers": 4550
+            "versatility": 4550
         },
         "dropLoc": "",
         "selectable": "true",
@@ -55119,7 +55119,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 4550,
-            "vers": 2450
+            "versatility": 2450
         },
         "dropLoc": "",
         "selectable": "true",
@@ -55148,7 +55148,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 4850,
-            "vers": 2150
+            "versatility": 2150
         },
         "dropLoc": "",
         "selectable": "true",
@@ -55177,7 +55177,7 @@ export const itemDB = [
             "haste": 5000,
             "crit": 2000,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -55206,7 +55206,7 @@ export const itemDB = [
             "haste": 2000,
             "crit": 0,
             "mastery": 5000,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -55235,7 +55235,7 @@ export const itemDB = [
             "haste": 5000,
             "crit": 2000,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -55264,7 +55264,7 @@ export const itemDB = [
             "haste": 5000,
             "crit": 2000,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -55293,7 +55293,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 2450
+            "versatility": 2450
         },
         "dropLoc": "",
         "selectable": "true",
@@ -55322,7 +55322,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -55355,7 +55355,7 @@ export const itemDB = [
             "haste": 4250,
             "crit": 0,
             "mastery": 0,
-            "vers": 2750
+            "versatility": 2750
         },
         "dropLoc": "",
         "selectable": "true",
@@ -55384,7 +55384,7 @@ export const itemDB = [
             "haste": 2900,
             "crit": 0,
             "mastery": 0,
-            "vers": 4100
+            "versatility": 4100
         },
         "dropLoc": "",
         "selectable": "true",
@@ -55413,7 +55413,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2900,
             "mastery": 0,
-            "vers": 4100
+            "versatility": 4100
         },
         "dropLoc": "",
         "selectable": "true",
@@ -55442,7 +55442,7 @@ export const itemDB = [
             "haste": 2900,
             "crit": 0,
             "mastery": 4100,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -55471,7 +55471,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 4550,
             "mastery": 2450,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -55500,7 +55500,7 @@ export const itemDB = [
             "haste": 2750,
             "crit": 0,
             "mastery": 0,
-            "vers": 4250
+            "versatility": 4250
         },
         "dropLoc": "",
         "selectable": "true",
@@ -55529,7 +55529,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 10750,
             "mastery": 6750,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -55558,7 +55558,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 4400,
             "mastery": 2600,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -55587,7 +55587,7 @@ export const itemDB = [
             "haste": 2450,
             "crit": 4550,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -55616,7 +55616,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 4550,
             "mastery": 0,
-            "vers": 2450
+            "versatility": 2450
         },
         "dropLoc": "",
         "selectable": "true",
@@ -55645,7 +55645,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2450,
             "mastery": 0,
-            "vers": 4550
+            "versatility": 4550
         },
         "dropLoc": "",
         "selectable": "true",
@@ -55674,7 +55674,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2750,
             "mastery": 4250,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -55703,7 +55703,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2350,
             "mastery": 4650,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -55732,7 +55732,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3500,
             "mastery": 0,
-            "vers": 3500
+            "versatility": 3500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -55761,7 +55761,7 @@ export const itemDB = [
             "haste": 3950,
             "crit": 0,
             "mastery": 0,
-            "vers": 3050
+            "versatility": 3050
         },
         "dropLoc": "",
         "selectable": "true",
@@ -55790,7 +55790,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 3800,
-            "vers": 3200
+            "versatility": 3200
         },
         "dropLoc": "",
         "selectable": "true",
@@ -55819,7 +55819,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3050,
             "mastery": 3950,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -55848,7 +55848,7 @@ export const itemDB = [
             "haste": 3650,
             "crit": 3350,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -55877,7 +55877,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2600,
             "mastery": 0,
-            "vers": 4400
+            "versatility": 4400
         },
         "dropLoc": "",
         "selectable": "true",
@@ -55906,7 +55906,7 @@ export const itemDB = [
             "haste": 2550,
             "crit": 0,
             "mastery": 0,
-            "vers": 4450
+            "versatility": 4450
         },
         "dropLoc": "",
         "selectable": "true",
@@ -55935,7 +55935,7 @@ export const itemDB = [
             "haste": 3900,
             "crit": 0,
             "mastery": 3100,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -55964,7 +55964,7 @@ export const itemDB = [
             "haste": 3700,
             "crit": 0,
             "mastery": 0,
-            "vers": 3300
+            "versatility": 3300
         },
         "dropLoc": "",
         "selectable": "true",
@@ -55993,7 +55993,7 @@ export const itemDB = [
             "haste": 4000,
             "crit": 0,
             "mastery": 0,
-            "vers": 3000
+            "versatility": 3000
         },
         "dropLoc": "",
         "selectable": "true",
@@ -56022,7 +56022,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 4000,
             "mastery": 0,
-            "vers": 3000
+            "versatility": 3000
         },
         "dropLoc": "",
         "selectable": "true",
@@ -56051,7 +56051,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2900,
             "mastery": 0,
-            "vers": 4100
+            "versatility": 4100
         },
         "dropLoc": "",
         "selectable": "true",
@@ -56080,7 +56080,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 3200,
-            "vers": 3800
+            "versatility": 3800
         },
         "dropLoc": "",
         "selectable": "true",
@@ -56109,7 +56109,7 @@ export const itemDB = [
             "haste": 2900,
             "crit": 0,
             "mastery": 4100,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -56138,7 +56138,7 @@ export const itemDB = [
             "haste": 3800,
             "crit": 0,
             "mastery": 0,
-            "vers": 3200
+            "versatility": 3200
         },
         "dropLoc": "",
         "selectable": "true",
@@ -56167,7 +56167,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3800,
             "mastery": 3200,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -56196,7 +56196,7 @@ export const itemDB = [
             "haste": 3350,
             "crit": 0,
             "mastery": 0,
-            "vers": 3650
+            "versatility": 3650
         },
         "dropLoc": "",
         "selectable": "true",
@@ -56225,7 +56225,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3200,
             "mastery": 3800,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -56254,7 +56254,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3200,
             "mastery": 0,
-            "vers": 3800
+            "versatility": 3800
         },
         "dropLoc": "",
         "selectable": "true",
@@ -56283,7 +56283,7 @@ export const itemDB = [
             "haste": 3200,
             "crit": 3800,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -56312,7 +56312,7 @@ export const itemDB = [
             "haste": 3850,
             "crit": 3150,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -56341,7 +56341,7 @@ export const itemDB = [
             "haste": 3850,
             "crit": 3150,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -56370,7 +56370,7 @@ export const itemDB = [
             "haste": 3850,
             "crit": 3150,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -56399,7 +56399,7 @@ export const itemDB = [
             "haste": 3850,
             "crit": 3150,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -56428,7 +56428,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3150,
             "mastery": 0,
-            "vers": 3850
+            "versatility": 3850
         },
         "dropLoc": "",
         "selectable": "true",
@@ -56457,7 +56457,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3150,
             "mastery": 0,
-            "vers": 3850
+            "versatility": 3850
         },
         "dropLoc": "",
         "selectable": "true",
@@ -56486,7 +56486,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3150,
             "mastery": 0,
-            "vers": 3850
+            "versatility": 3850
         },
         "dropLoc": "",
         "selectable": "true",
@@ -56515,7 +56515,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3150,
             "mastery": 0,
-            "vers": 3850
+            "versatility": 3850
         },
         "dropLoc": "",
         "selectable": "true",
@@ -56544,7 +56544,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3850,
             "mastery": 3150,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -56573,7 +56573,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3850,
             "mastery": 3150,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -56602,7 +56602,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3850,
             "mastery": 3150,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -56631,7 +56631,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3850,
             "mastery": 3150,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -56660,7 +56660,7 @@ export const itemDB = [
             "haste": 3850,
             "crit": 0,
             "mastery": 0,
-            "vers": 3150
+            "versatility": 3150
         },
         "dropLoc": "",
         "selectable": "true",
@@ -56689,7 +56689,7 @@ export const itemDB = [
             "haste": 3850,
             "crit": 0,
             "mastery": 0,
-            "vers": 3150
+            "versatility": 3150
         },
         "dropLoc": "",
         "selectable": "true",
@@ -56718,7 +56718,7 @@ export const itemDB = [
             "haste": 3850,
             "crit": 0,
             "mastery": 0,
-            "vers": 3150
+            "versatility": 3150
         },
         "dropLoc": "",
         "selectable": "true",
@@ -56747,7 +56747,7 @@ export const itemDB = [
             "haste": 3850,
             "crit": 0,
             "mastery": 0,
-            "vers": 3150
+            "versatility": 3150
         },
         "dropLoc": "",
         "selectable": "true",
@@ -56776,7 +56776,7 @@ export const itemDB = [
             "haste": 3150,
             "crit": 0,
             "mastery": 3850,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -56805,7 +56805,7 @@ export const itemDB = [
             "haste": 3150,
             "crit": 0,
             "mastery": 3850,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -56834,7 +56834,7 @@ export const itemDB = [
             "haste": 3150,
             "crit": 0,
             "mastery": 3850,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -56863,7 +56863,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3850,
             "mastery": 0,
-            "vers": 3150
+            "versatility": 3150
         },
         "dropLoc": "",
         "selectable": "true",
@@ -56892,7 +56892,7 @@ export const itemDB = [
             "haste": 3850,
             "crit": 0,
             "mastery": 3150,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -56921,7 +56921,7 @@ export const itemDB = [
             "haste": 3150,
             "crit": 0,
             "mastery": 3850,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -56950,7 +56950,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3850,
             "mastery": 3150,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -56979,7 +56979,7 @@ export const itemDB = [
             "haste": 8250,
             "crit": 0,
             "mastery": 9250,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -57008,7 +57008,7 @@ export const itemDB = [
             "haste": 3150,
             "crit": 0,
             "mastery": 3850,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -57037,7 +57037,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3850,
             "mastery": 3150,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -57066,7 +57066,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3850,
             "mastery": 3150,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -57095,7 +57095,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3850,
             "mastery": 3150,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -57124,7 +57124,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3850,
             "mastery": 3150,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -57153,7 +57153,7 @@ export const itemDB = [
             "haste": 3150,
             "crit": 0,
             "mastery": 0,
-            "vers": 3850
+            "versatility": 3850
         },
         "dropLoc": "",
         "selectable": "true",
@@ -57182,7 +57182,7 @@ export const itemDB = [
             "haste": 3150,
             "crit": 0,
             "mastery": 0,
-            "vers": 3850
+            "versatility": 3850
         },
         "dropLoc": "",
         "selectable": "true",
@@ -57211,7 +57211,7 @@ export const itemDB = [
             "haste": 3150,
             "crit": 0,
             "mastery": 0,
-            "vers": 3850
+            "versatility": 3850
         },
         "dropLoc": "",
         "selectable": "true",
@@ -57240,7 +57240,7 @@ export const itemDB = [
             "haste": 3150,
             "crit": 0,
             "mastery": 0,
-            "vers": 3850
+            "versatility": 3850
         },
         "dropLoc": "",
         "selectable": "true",
@@ -57269,7 +57269,7 @@ export const itemDB = [
             "haste": 3850,
             "crit": 3150,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -57298,7 +57298,7 @@ export const itemDB = [
             "haste": 9250,
             "crit": 0,
             "mastery": 0,
-            "vers": 8250
+            "versatility": 8250
         },
         "dropLoc": "",
         "selectable": "true",
@@ -57327,7 +57327,7 @@ export const itemDB = [
             "haste": 8250,
             "crit": 9250,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -57356,7 +57356,7 @@ export const itemDB = [
             "haste": 7250,
             "crit": 9750,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -57385,7 +57385,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 3050,
-            "vers": 3950
+            "versatility": 3950
         },
         "dropLoc": "",
         "selectable": "true",
@@ -57414,7 +57414,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2000,
             "mastery": 0,
-            "vers": 5000
+            "versatility": 5000
         },
         "dropLoc": "",
         "selectable": "true",
@@ -57443,7 +57443,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 4500,
-            "vers": 2500
+            "versatility": 2500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -57472,7 +57472,7 @@ export const itemDB = [
             "haste": 4500,
             "crit": 2500,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -57501,7 +57501,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 17500,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -57530,7 +57530,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 17500,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -57559,7 +57559,7 @@ export const itemDB = [
             "haste": 6750,
             "crit": 0,
             "mastery": 0,
-            "vers": 10750
+            "versatility": 10750
         },
         "dropLoc": "",
         "selectable": "true",
@@ -57588,7 +57588,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2800,
             "mastery": 4200,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -57617,7 +57617,7 @@ export const itemDB = [
             "haste": 3100,
             "crit": 0,
             "mastery": 3900,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -57646,7 +57646,7 @@ export const itemDB = [
             "haste": 4000,
             "crit": 3000,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -57675,7 +57675,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3000,
             "mastery": 4000,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -57704,7 +57704,7 @@ export const itemDB = [
             "haste": 3900,
             "crit": 3100,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -57733,7 +57733,7 @@ export const itemDB = [
             "haste": 2900,
             "crit": 0,
             "mastery": 0,
-            "vers": 4100
+            "versatility": 4100
         },
         "dropLoc": "",
         "selectable": "true",
@@ -57762,7 +57762,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3000,
             "mastery": 0,
-            "vers": 4000
+            "versatility": 4000
         },
         "dropLoc": "",
         "selectable": "true",
@@ -57791,7 +57791,7 @@ export const itemDB = [
             "haste": 2900,
             "crit": 4100,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -57820,7 +57820,7 @@ export const itemDB = [
             "haste": 3100,
             "crit": 0,
             "mastery": 3900,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -57849,7 +57849,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 4500,
             "mastery": 2500,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -57878,7 +57878,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 2700,
             "mastery": 4300,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -57907,7 +57907,7 @@ export const itemDB = [
             "haste": 4200,
             "crit": 0,
             "mastery": 2800,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -57936,7 +57936,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 3100,
             "mastery": 0,
-            "vers": 3900
+            "versatility": 3900
         },
         "dropLoc": "",
         "selectable": "true",
@@ -57965,7 +57965,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -57998,7 +57998,7 @@ export const itemDB = [
             "haste": 4200,
             "crit": 0,
             "mastery": 2800,
-            "vers": 0
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -58027,7 +58027,7 @@ export const itemDB = [
             "haste": 2800,
             "crit": 0,
             "mastery": 0,
-            "vers": 4200
+            "versatility": 4200
         },
         "dropLoc": "",
         "selectable": "true",
