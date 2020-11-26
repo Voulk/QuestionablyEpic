@@ -11,6 +11,7 @@ class Item {
     this.tertiary = tertiary;
     this.softScore = softScore;
     this.uniqueHash = this.getUnique(id);
+    console.log("Socket: " + socket);
   }
 
   id = 0; // The items ID

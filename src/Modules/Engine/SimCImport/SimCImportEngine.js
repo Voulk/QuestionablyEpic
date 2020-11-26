@@ -172,6 +172,7 @@ function processItem(line, player, contentType) {
     }
   }
   if (craftedStats.length !== 0) itemBonusStats = getSecondaryAllocationAtItemLevel(itemLevel, itemSlot, craftedStats);
+  
 
   // Add the new item to our characters item collection.
   if (itemLevel > 60 && itemID !== 0) {
@@ -179,7 +180,7 @@ function processItem(line, player, contentType) {
       itemID,
       "",
       itemSlot,
-      itemSocket,
+      checkDefaultSocket(itemID),
       itemTertiary,
       0,
       itemLevel
@@ -201,7 +202,6 @@ function processItem(line, player, contentType) {
     player.addActiveItem(item);
   }
 }
-
 
 
 function getSecondaryAllocationAtItemLevel(itemLevel, slot, crafted_stats = []) {
@@ -238,4 +238,15 @@ function getSecondaryAllocationAtItemLevel(itemLevel, slot, crafted_stats = []) 
     
   })
   return bonus_stats;
+}
+
+function checkDefaultSocket(id) {
+  
+  let temp = itemDB.filter(function (item) {
+    return item.id === id;
+  });
+
+  if (temp.length > 0) return ("socketInfo" in temp[0]);
+  else return 0;
+
 }

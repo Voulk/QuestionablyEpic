@@ -171,6 +171,7 @@ function getItemCat(slot) {
     case "Finger":
     case "Back":
     case "Wrists":
+    case "Wrist":
       return 2;
 
     case "Offhand":
@@ -253,7 +254,7 @@ export function calcStatsAtLevel(itemLevel, slot, statAllocations, tertiary) {
     bonus_stats: {},
   };
 
-  console.log("Calc Stats at Level: " + itemLevel + "/" + slot + "/" + statAllocations + "/" + tertiary);
+  //console.log("Calc Stats at Level: " + itemLevel + "/" + slot + "/" + statAllocations + "/" + tertiary);
 
   let rand_prop = randPropPoints[itemLevel]["slotValues"][getItemCat(slot)];
   if (slot == "Finger" || slot == "Neck") combat_mult = combat_ratings_mult_by_ilvl_jewl[itemLevel];
@@ -278,7 +279,7 @@ export function calcStatsAtLevel(itemLevel, slot, statAllocations, tertiary) {
 
   // This, on the other hand, is a close estimate that should be replaced before launch.
   if (tertiary === "Leech") {
-    const terMult = slot === "Finger" || slot === "Neck" ? 0.170027 : 0.429132;
+    const terMult = (slot === "Finger" || slot === "Neck") ? 0.170027 : 0.449132;
     stats.leech = Math.floor(
       terMult * (stats.haste + stats.crit + stats.mastery + stats.versatility)
     );
@@ -355,7 +356,7 @@ export function scoreItem(item, player, contentType) {
   }
 
   // Add Socket
-  if (item.socket === "Yes") {
+  if (item.socket) {
     score +=
       16 *
       player.getStatWeight(
