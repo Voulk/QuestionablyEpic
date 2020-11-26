@@ -1,6 +1,6 @@
 import { itemDB } from "../Player/ItemDB";
 import { randPropPoints } from "./RandPropPointsBylevel";
-import { combat_ratings_mult_by_ilvl } from "./CombatMultByLevel";
+import { combat_ratings_mult_by_ilvl, combat_ratings_mult_by_ilvl_jewl } from "./CombatMultByLevel";
 import { getEffectValue } from "./EffectFormulas/EffectEngine";
 import SPEC from "../Engine/SPECS";
 import Item from "../Player/Item";
@@ -171,6 +171,7 @@ function getItemCat(slot) {
     case "Finger":
     case "Back":
     case "Wrists":
+    case "Wrist":
       return 2;
 
     case "Offhand":
@@ -178,7 +179,9 @@ function getItemCat(slot) {
     case "Shield":
       return 3;
     default:
+      console.error("Item Cat going to Default" + slot);
       return 3;
+      
     // Raise error.
   }
 }
@@ -239,12 +242,13 @@ export function buildWepCombos(player) {
 // This uses the RandPropPointsByLevel and CombatMultByLevel tables and returns a dictionary object of stats.
 // Stat allocations are passed to the function from our Item Database.
 export function calcStatsAtLevel(itemLevel, slot, statAllocations, tertiary) {
+  let combat_mult = 0
   let stats = {
     intellect: 0,
     stamina: 0,
     haste: 0,
     mastery: 0,
-    vers: 0,
+    versatility: 0,
     crit: 0,
     leech: 0,
     bonus_stats: {},
@@ -253,13 +257,14 @@ export function calcStatsAtLevel(itemLevel, slot, statAllocations, tertiary) {
   //console.log("Calc Stats at Level: " + itemLevel + "/" + slot + "/" + statAllocations + "/" + tertiary);
 
   let rand_prop = randPropPoints[itemLevel]["slotValues"][getItemCat(slot)];
-  let combat_mult = combat_ratings_mult_by_ilvl[itemLevel];
+  if (slot == "Finger" || slot == "Neck") combat_mult = combat_ratings_mult_by_ilvl_jewl[itemLevel];
+  else combat_mult = combat_ratings_mult_by_ilvl[itemLevel];
 
   // These stats should be precise, and never off by one.
   for (var key in statAllocations) {
     let allocation = statAllocations[key];
 
-    if (["haste", "crit", "mastery", "vers"].includes(key)) {
+    if (["haste", "crit", "mastery", "versatility"].includes(key)) {
       stats[key] = Math.floor(
         Math.floor(rand_prop * allocation * 0.0001 + 0.5) * combat_mult
       );
@@ -274,9 +279,9 @@ export function calcStatsAtLevel(itemLevel, slot, statAllocations, tertiary) {
 
   // This, on the other hand, is a close estimate that should be replaced before launch.
   if (tertiary === "Leech") {
-    const terMult = slot === "Finger" || slot === "Neck" ? 0.170027 : 0.429132;
+    const terMult = (slot === "Finger" || slot === "Neck") ? 0.170027 : 0.449132;
     stats.leech = Math.floor(
-      terMult * (stats.haste + stats.crit + stats.mastery + stats.vers)
+      terMult * (stats.haste + stats.crit + stats.mastery + stats.versatility)
     );
   }
   return stats;
@@ -290,7 +295,7 @@ export function buildStatString(stats, effect) {
     { key: "haste", val: stats["haste"] },
     { key: "crit", val: stats["crit"] },
     { key: "mastery", val: stats["mastery"] },
-    { key: "vers", val: stats["vers"] },
+    { key: "versatility", val: stats["versatility"] },
   ];
 
   statsList = statsList.sort(function (a, b) {
@@ -300,7 +305,7 @@ export function buildStatString(stats, effect) {
   for (var ind in statsList) {
     statString +=
       statsList[ind]["val"] > 0
-        ? correctCasing(statsList[ind]["key"]) + " / "
+        ? statsList[ind]["val"] + " " + correctCasing(statsList[ind]["key"]) + " / "
         : "";
   }
 
@@ -332,7 +337,6 @@ export function scoreItem(item, player, contentType) {
 
   // Multiply the item's stats by our stat weights.
   for (var stat in item.stats) {
-    //console.log(JSON.stringify(item.stats['bonus_stats']))
     if (stat !== "bonus_stats") {
       let statSum =
         item.stats[stat] +
@@ -352,7 +356,7 @@ export function scoreItem(item, player, contentType) {
   }
 
   // Add Socket
-  if (item.socket === "Yes") {
+  if (item.socket) {
     score +=
       16 *
       player.getStatWeight(
