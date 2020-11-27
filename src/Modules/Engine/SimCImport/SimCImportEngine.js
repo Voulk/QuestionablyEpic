@@ -165,15 +165,24 @@ function processItem(line, player, contentType) {
             if (dropLevel >= 50 && dropLevel <= 52) itemLevel = 81
             else if (dropLevel >= 53 && dropLevel <= 55) itemLevel = 95
             else if (dropLevel >= 56 && dropLevel <= 58) itemLevel = 113
-            else if (dropLevel >= 59) itemLevel = 131
-            
+            else if (dropLevel >= 59) itemLevel = 131    
           }
+          else if (bonus_id == 6907) {
+            // This curve is a little painful since the item level only increases every 3 levels and not by a set amount.
+            // We can probably make the code more efficient later but this is otherwise correct.
+            if (dropLevel >= 50 && dropLevel <= 52) itemLevel = 80
+            else if (dropLevel >= 53 && dropLevel <= 55) itemLevel = 93
+            else if (dropLevel >= 56 && dropLevel <= 58) itemLevel = 111
+            else if (dropLevel >= 59) itemLevel = 129
+          }
+          else if (bonus_id == 6771) itemLevel = 92 + (dropLevel - 50) * 6
           else if (bonus_id == 6893) {
             itemLevel = 151;
     
           }
           else if (bonus_id == 6891 || bonus_id == 6892) itemLevel = 165;
           else if (bonus_id == 6890) itemLevel = 129;
+          else if (bonus_id == 7192) itemLevel = 126;
           
         }
  

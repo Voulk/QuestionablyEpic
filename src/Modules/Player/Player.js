@@ -460,7 +460,7 @@ class Player {
                     intellect: 1, 
                     haste: 0.6,
                     crit: 0.6,
-                    mastery: 0.45,
+                    mastery: 0.4,
                     versatility: 0.52,
                     leech: 0.4,
                 },
