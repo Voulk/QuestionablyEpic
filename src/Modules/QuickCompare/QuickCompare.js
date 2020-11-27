@@ -205,6 +205,7 @@ export default function QuickCompare(props) {
       ) {
         */
       if (
+        (slotName === item.slot && item.slot === "Back") || 
         (slotName === item.slot &&
           item.itemClass === 4 &&
           acceptableArmorTypes.includes(item.itemSubClass)) ||
@@ -256,7 +257,7 @@ export default function QuickCompare(props) {
     item.level = itemLevel;
     item.stats = calcStatsAtLevel(
       itemLevel,
-      activeSlot,
+      getItemSlot(itemID),
       getItemAllocations(itemID),
       itemTertiary
     );

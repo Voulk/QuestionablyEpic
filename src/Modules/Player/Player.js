@@ -396,19 +396,19 @@ class Player {
             this.statWeights = {
                 "Raid": {
                     intellect: 1, 
-                    haste: 0.4,
-                    crit: 0.6,
-                    mastery: 0.5,
-                    versatility: 0.3,
+                    haste: 0.6,
+                    crit: 0.58,
+                    mastery: 0.52,
+                    versatility: 0.51,
                     leech: 0.8,
                 },
                 "Dungeon": {
                     intellect: 1, 
-                    haste: 0.4,
-                    crit: 0.6,
-                    mastery: 0.5,
-                    versatility: 0.3,
-                    leech: 0.8,
+                    haste: 0.6,
+                    crit: 0.52,
+                    mastery: 0.59,
+                    versatility: 0.51,
+                    leech: 0.4,
                 },
                 "DefaultWeights": true
             }
@@ -423,8 +423,8 @@ class Player {
   
             },
                 "Dungeon": {
-                    "Rejuvenation": [17, 181000, 0.2909, 1566],
-                    "Wild Growth": [5, 154400, 0.2472, 1478],
+                    "Rejuvenation": [17, 181000, 0.2909, 400],
+                    "Wild Growth": [5, 154400, 0.2472, 1402],
                 }
             }
 
@@ -458,11 +458,11 @@ class Player {
                 },
                 "Dungeon": {
                     intellect: 1, 
-                    haste: 0.4,
+                    haste: 0.6,
                     crit: 0.6,
-                    mastery: 0.5,
-                    versatility: 0.3,
-                    leech: 0.8,
+                    mastery: 0.45,
+                    versatility: 0.52,
+                    leech: 0.4,
                 },
                 "DefaultWeights": true
             }
@@ -473,14 +473,14 @@ class Player {
                     "Light of Dawn": [20, 238400, 0.2082, 1316, 0.2],
                     "Word of Glory": [4, 40800, 0.0357, 225, 0.2],
                     "Holy Shock": [27, 221400, 0.1934, 1222, 0.2],
-                    "Holy Light": [29, 311600, 0.293, 1683, 0.2],
+                    "Holy Light": [29, 311600, 0.293, 620, 0.2],
                     "Shock Barrier": [0, 98300, 0.0858, 542, 0.2],
             },
                 "Dungeon": {
-                    "Light of Dawn": [20, 238400, 0.2082, 1316],
-                    "Word of Glory": [4, 40800, 0.0357, 225],
-                    "Holy Shock": [27, 221400, 0.1934, 1222],
-                    "Holy Light": [29, 311600, 0.293, 1683],
+                    "Light of Dawn": [20, 238400, 0.2082, 120],
+                    "Word of Glory": [4, 40800, 0.0357, 900],
+                    "Holy Shock": [27, 221400, 0.1934, 1280],
+                    "Holy Light": [29, 311600, 0.293, 10],
                     "Shock Barrier": [0, 98300, 0.0858, 542],
                 }
             }
