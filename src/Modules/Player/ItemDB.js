@@ -2579,6 +2579,35 @@ export const itemDB = [
         "slot": "1H Weapon"
     },
     {
+        "id": 171391,
+        "name": "Ceremonious Shield",
+        "names": {
+            "cn": "",
+            "en": "Ceremonious Shield",
+            "ru": "Церемониальный щит",
+            "es": "Escudo de ceremonia",
+            "br": "Escudo Cerimonioso",
+            "kr": "",
+            "fr": "Bouclier de cérémonie",
+            "de": "Zeremonieller Schild"
+        },
+        "icon": "inv_shield_1h_oribosdungeon_c_01",
+        "itemClass": 4,
+        "itemSubClass": 6,
+        "itemLevel": 100,
+        "stats": {
+            "intellect": 16132,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shield"
+    },
+    {
         "id": 171442,
         "name": "Shadowsteel Breastplate",
         "names": {
@@ -2809,6 +2838,35 @@ export const itemDB = [
         "dropLoc": "",
         "selectable": "true",
         "slot": "Wrist"
+    },
+    {
+        "id": 172188,
+        "name": "Precipice of Oblivion",
+        "names": {
+            "cn": "",
+            "en": "Precipice of Oblivion",
+            "ru": "Пропасть Забвения",
+            "es": "Precipicio del olvido",
+            "br": "Precipício do Esquecimento",
+            "kr": "",
+            "fr": "Précipice de l’Oubli",
+            "de": "Klippe des Vergessens"
+        },
+        "icon": "inv_shield_1h_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 6,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 16132,
+            "stamina": 7889,
+            "haste": 2177,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 4823
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shield"
     },
     {
         "id": 172189,
@@ -9141,6 +9199,93 @@ export const itemDB = [
         "slot": "Back"
     },
     {
+        "id": 174310,
+        "name": "Elysian Sentinel's Aegis",
+        "names": {
+            "cn": "",
+            "en": "Elysian Sentinel's Aegis",
+            "ru": "Эгида элизийского часового",
+            "es": "Égida de centinela elisio",
+            "br": "Égide da Sentinela Elísia",
+            "kr": "",
+            "fr": "Égide de sentinelle élyséenne",
+            "de": "Aegis der elysischen Wache"
+        },
+        "icon": "inv_shield_1h_bastion_d_01",
+        "itemClass": 4,
+        "itemSubClass": 6,
+        "itemLevel": 174,
+        "stats": {
+            "intellect": 16132,
+            "stamina": 7889,
+            "haste": 4550,
+            "crit": 2450,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shield"
+    },
+    {
+        "id": 174311,
+        "name": "Sinful Gladiator's Guard",
+        "names": {
+            "cn": "",
+            "en": "Sinful Gladiator's Guard",
+            "ru": "Защита грешного гладиатора",
+            "es": "Guarda de Gladiador pecaminoso",
+            "br": "Guarda do Gladiador Pecaminoso",
+            "kr": "",
+            "fr": "Protecteur du gladiateur impénitent",
+            "de": "Schutz des sündigen Gladiators"
+        },
+        "icon": "inv_shield_1h_bastion_d_01",
+        "itemClass": 4,
+        "itemSubClass": 6,
+        "itemLevel": 200,
+        "stats": {
+            "intellect": 16132,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 2300,
+            "mastery": 0,
+            "versatility": 4700
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shield"
+    },
+    {
+        "id": 174315,
+        "name": "Chyrus's Crest of Hope",
+        "names": {
+            "cn": "",
+            "en": "Chyrus's Crest of Hope",
+            "ru": "Гребень надежды Хирона",
+            "es": "Cresta de esperanza de Chyrus",
+            "br": "Brasão de Esperança de Quírus",
+            "kr": "",
+            "fr": "Écu d’espoir de Chyrus",
+            "de": "Chyrus' Wappen der Hoffnung"
+        },
+        "icon": "inv_shield_1h_bastion_d_01",
+        "itemClass": 4,
+        "itemSubClass": 6,
+        "itemLevel": 174,
+        "stats": {
+            "intellect": 16132,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 2150,
+            "versatility": 4850
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shield"
+    },
+    {
         "id": 174469,
         "name": "Band of Insidious Ruminations",
         "names": {
@@ -9649,6 +9794,35 @@ export const itemDB = [
         "dropLoc": "",
         "selectable": "true",
         "slot": "Offhand"
+    },
+    {
+        "id": 175010,
+        "name": "Maddened Adherent's Bulwark",
+        "names": {
+            "cn": "",
+            "en": "Maddened Adherent's Bulwark",
+            "ru": "Бастион обезумевшего приверженца",
+            "es": "Baluarte del adherente enloquecido",
+            "br": "Baluarte do Seguidor Enlouquecido",
+            "kr": "",
+            "fr": "Rempart de l’adhérent affolé",
+            "de": "Bollwerk des wahnsinnigen Anhängers"
+        },
+        "icon": "inv_shield_1h_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 6,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 16132,
+            "stamina": 7889,
+            "haste": 4204,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 2796
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shield"
     },
     {
         "id": 175254,
@@ -18545,6 +18719,35 @@ export const itemDB = [
         "slot": "2H Weapon"
     },
     {
+        "id": 175990,
+        "name": "Meadow Guardian's Shield",
+        "names": {
+            "cn": "",
+            "en": "Meadow Guardian's Shield",
+            "ru": "Щит лугового стража",
+            "es": "Escudo de guardián de la pradera",
+            "br": "Escudo do Guardião da Campina",
+            "kr": "",
+            "fr": "Bouclier de gardien de la prairie",
+            "de": "Schild der Weidenwächterin"
+        },
+        "icon": "inv_shield_1h_ardenwealdquest_b_01",
+        "itemClass": 4,
+        "itemSubClass": 6,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 16132,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 3050,
+            "versatility": 3950
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shield"
+    },
+    {
         "id": 176282,
         "name": "Ruthless Contender's Wand",
         "names": {
@@ -18574,6 +18777,35 @@ export const itemDB = [
         "slot": "1H Weapon"
     },
     {
+        "id": 176284,
+        "name": "Ruthless Contender's Shield",
+        "names": {
+            "cn": "",
+            "en": "Ruthless Contender's Shield",
+            "ru": "Щит безжалостного соперника",
+            "es": "Escudo de contendiente implacable",
+            "br": "Escudo do Competidor Inclemente",
+            "kr": "",
+            "fr": "Bouclier du belligérant sans pitié",
+            "de": "Schild des erbarmungslosen Streiters"
+        },
+        "icon": "inv_shield_1h_maldraxxus_b_01",
+        "itemClass": 4,
+        "itemSubClass": 6,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 16132,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 3800,
+            "versatility": 3200
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shield"
+    },
+    {
         "id": 176285,
         "name": "Ruthless Contender's Tome",
         "names": {
@@ -18601,6 +18833,35 @@ export const itemDB = [
         "dropLoc": "",
         "selectable": "true",
         "slot": "Offhand"
+    },
+    {
+        "id": 176333,
+        "name": "Melody Defender's Bulwark",
+        "names": {
+            "cn": "",
+            "en": "Melody Defender's Bulwark",
+            "ru": "Бастион мелодичного защитника",
+            "es": "Baluarte del defensor melodioso",
+            "br": "Baluarte do Defensor da Melodia",
+            "kr": "",
+            "fr": "Rempart du défenseur mélodique",
+            "de": "Bollwerk des Melodieverteidigers"
+        },
+        "icon": "inv_shield_1h_bastionquest_b_01",
+        "itemClass": 4,
+        "itemSubClass": 6,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 16132,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3050,
+            "mastery": 0,
+            "versatility": 3950
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shield"
     },
     {
         "id": 176335,
@@ -19616,6 +19877,35 @@ export const itemDB = [
         "dropLoc": "",
         "selectable": "true",
         "slot": "Wrist"
+    },
+    {
+        "id": 176795,
+        "name": "Defender's Aspis",
+        "names": {
+            "cn": "",
+            "en": "Defender's Aspis",
+            "ru": "Аспис защитника",
+            "es": "Aspis del defensor",
+            "br": "Áspide do Defensor",
+            "kr": "",
+            "fr": "Aspis du défenseur",
+            "de": "Hoplon des Verteidigers"
+        },
+        "icon": "inv_shield_1h_bastionquest_b_01",
+        "itemClass": 4,
+        "itemSubClass": 6,
+        "itemLevel": 100,
+        "stats": {
+            "intellect": 16132,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shield"
     },
     {
         "id": 176797,
@@ -20903,6 +21193,35 @@ export const itemDB = [
         "slot": "Back"
     },
     {
+        "id": 177633,
+        "name": "Steelbound Heater Shield",
+        "names": {
+            "cn": "",
+            "en": "Steelbound Heater Shield",
+            "ru": "Окованный сталью тарч",
+            "es": "Escudo romboide reforzado con acero",
+            "br": "Escudo Brasonado Aferrado",
+            "kr": "",
+            "fr": "Écu lige-acier",
+            "de": "Stahlgebundener Langschild"
+        },
+        "icon": "inv_shield_1h_revendrethquest_b_01",
+        "itemClass": 4,
+        "itemSubClass": 6,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 16132,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3350,
+            "mastery": 0,
+            "versatility": 3650
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shield"
+    },
+    {
         "id": 177634,
         "name": "Vial of Volatile Essence",
         "names": {
@@ -22094,6 +22413,35 @@ export const itemDB = [
         "dropLoc": "",
         "selectable": "true",
         "slot": "Shoulder"
+    },
+    {
+        "id": 177799,
+        "name": "Stoneborn Shield",
+        "names": {
+            "cn": "",
+            "en": "Stoneborn Shield",
+            "ru": "Щит камнерожденного",
+            "es": "Escudo natopiedra",
+            "br": "Escudo do Litonato",
+            "kr": "",
+            "fr": "Bouclier vive-pierre",
+            "de": "Steingeborenenschild"
+        },
+        "icon": "inv_shield_1h_revendrethquest_b_01",
+        "itemClass": 4,
+        "itemSubClass": 6,
+        "itemLevel": 100,
+        "stats": {
+            "intellect": 16132,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shield"
     },
     {
         "id": 177800,
@@ -25551,6 +25899,35 @@ export const itemDB = [
         "slot": "1H Weapon"
     },
     {
+        "id": 178490,
+        "name": "Sinful Aspirant's Barrier",
+        "names": {
+            "cn": "",
+            "en": "Sinful Aspirant's Barrier",
+            "ru": "Барьер грешного претендента",
+            "es": "Barrera de aspirante pecaminoso",
+            "br": "Barreira do Aspirante Pecaminoso",
+            "kr": "",
+            "fr": "Barrière de l’aspirant impénitent",
+            "de": "Barriere des sündigen Aspiranten"
+        },
+        "icon": "inv_shield_1h_oribosdungeon_c_01",
+        "itemClass": 4,
+        "itemSubClass": 6,
+        "itemLevel": 158,
+        "stats": {
+            "intellect": 16132,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 2950,
+            "mastery": 0,
+            "versatility": 4050
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shield"
+    },
+    {
         "id": 178691,
         "name": "Hood of the Hidden Path",
         "names": {
@@ -26295,6 +26672,45 @@ export const itemDB = [
         "slot": "1H Weapon"
     },
     {
+        "id": 178712,
+        "name": "Acidslough Bulwark",
+        "names": {
+            "cn": "",
+            "en": "Acidslough Bulwark",
+            "ru": "Бастион Кислотопи",
+            "es": "Baluarte desprendeácido",
+            "br": "Baluarte Gangrenácido",
+            "kr": "",
+            "fr": "Rempart en bourbacide",
+            "de": "Säuresuhlenbollwerk"
+        },
+        "icon": "inv_shield_1h_oribosdungeon_c_01",
+        "itemClass": 4,
+        "itemSubClass": 6,
+        "itemLevel": 158,
+        "stats": {
+            "intellect": 16132,
+            "stamina": 7889,
+            "haste": 2750,
+            "crit": 0,
+            "mastery": 4250,
+            "versatility": 0
+        },
+        "sources": [
+            {
+                "instanceId": -1,
+                "encounterId": 1184
+            },
+            {
+                "instanceId": 1184,
+                "encounterId": 2405
+            }
+        ],
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shield"
+    },
+    {
         "id": 178714,
         "name": "Lakali's Spire of Knowledge",
         "names": {
@@ -26878,6 +27294,45 @@ export const itemDB = [
         "dropLoc": "",
         "selectable": "true",
         "slot": "Shoulder"
+    },
+    {
+        "id": 178750,
+        "name": "Encrusted Canopic Lid",
+        "names": {
+            "cn": "",
+            "en": "Encrusted Canopic Lid",
+            "ru": "Инкрустированная крышка канопы",
+            "es": "Tapa de canope taraceada",
+            "br": "Tampa Canópica Incrustada",
+            "kr": "",
+            "fr": "Couvercle de canope incrusté",
+            "de": "Verkrusteter Kanopendeckel"
+        },
+        "icon": "inv_shield_1h_oribosdungeon_c_01",
+        "itemClass": 4,
+        "itemSubClass": 6,
+        "itemLevel": 158,
+        "stats": {
+            "intellect": 16132,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 4100,
+            "mastery": 0,
+            "versatility": 2900
+        },
+        "sources": [
+            {
+                "instanceId": -1,
+                "encounterId": 1182
+            },
+            {
+                "instanceId": 1182,
+                "encounterId": 2392
+            }
+        ],
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shield"
     },
     {
         "id": 178753,
@@ -30188,6 +30643,45 @@ export const itemDB = [
         "slot": "Head"
     },
     {
+        "id": 178867,
+        "name": "Barricade of the Endless Empire",
+        "names": {
+            "cn": "",
+            "en": "Barricade of the Endless Empire",
+            "ru": "Баррикада Вечной империи",
+            "es": "Barricada del imperio eterno",
+            "br": "Barricada do Império Infindo",
+            "kr": "",
+            "fr": "Barricade de l’empire sans fin",
+            "de": "Barrikade des endlosen Imperiums"
+        },
+        "icon": "inv_shield_1h_oribosdungeon_c_01",
+        "itemClass": 4,
+        "itemSubClass": 6,
+        "itemLevel": 158,
+        "stats": {
+            "intellect": 16132,
+            "stamina": 7889,
+            "haste": 4400,
+            "crit": 2600,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "sources": [
+            {
+                "instanceId": -1,
+                "encounterId": 1187
+            },
+            {
+                "instanceId": 1187,
+                "encounterId": 2417
+            }
+        ],
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shield"
+    },
+    {
         "id": 178868,
         "name": "Deathwalker's Promise",
         "names": {
@@ -30605,6 +31099,35 @@ export const itemDB = [
         "dropLoc": "",
         "selectable": "true",
         "slot": "1H Weapon"
+    },
+    {
+        "id": 178950,
+        "name": "Blackhound Bulwark",
+        "names": {
+            "cn": "",
+            "en": "Blackhound Bulwark",
+            "ru": "Бастион заставы Черного Пса",
+            "es": "Baluarte de Sabueso Negro",
+            "br": "Baluarte Cão Negro",
+            "kr": "",
+            "fr": "Rempart de Noir-Mâtin",
+            "de": "Schwarzhundbollwerk"
+        },
+        "icon": "inv_shield_1h_maldraxxus_b_01",
+        "itemClass": 4,
+        "itemSubClass": 6,
+        "itemLevel": 100,
+        "stats": {
+            "intellect": 16132,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shield"
     },
     {
         "id": 178951,
@@ -32085,6 +32608,180 @@ export const itemDB = [
         "dropLoc": "",
         "selectable": "true",
         "slot": "Head"
+    },
+    {
+        "id": 179603,
+        "name": "Nettlehusk Barrier",
+        "names": {
+            "cn": "",
+            "en": "Nettlehusk Barrier",
+            "ru": "Барьер из крапивного дуба",
+            "es": "Barrera de caparazón de ortigas",
+            "br": "Barreira de Casca-de-urtiga",
+            "kr": "",
+            "fr": "Barrière cosse-d’orties",
+            "de": "Nesselhülsenbarriere"
+        },
+        "icon": "inv_shield_1h_ardenwealdquest_b_01",
+        "itemClass": 4,
+        "itemSubClass": 6,
+        "itemLevel": 155,
+        "stats": {
+            "intellect": 16132,
+            "stamina": 7889,
+            "haste": 4400,
+            "crit": 2600,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shield"
+    },
+    {
+        "id": 179604,
+        "name": "Duskwarder Shield",
+        "names": {
+            "cn": "",
+            "en": "Duskwarder Shield",
+            "ru": "Щит сумеречного защитника",
+            "es": "Escudo de depositario del ocaso",
+            "br": "Escudo Guarda-ocaso",
+            "kr": "",
+            "fr": "Bouclier gardebrune",
+            "de": "Dämmerwärterschild"
+        },
+        "icon": "inv_shield_1h_ardenwealdquest_b_01",
+        "itemClass": 4,
+        "itemSubClass": 6,
+        "itemLevel": 148,
+        "stats": {
+            "intellect": 16132,
+            "stamina": 7889,
+            "haste": 3800,
+            "crit": 0,
+            "mastery": 3200,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shield"
+    },
+    {
+        "id": 179607,
+        "name": "Winterborn Bulwark",
+        "names": {
+            "cn": "",
+            "en": "Winterborn Bulwark",
+            "ru": "Бастион зиморожденного",
+            "es": "Baluarte de Natinvernal",
+            "br": "Baluarte do Filho do Inverno",
+            "kr": "",
+            "fr": "Rempart des frimas",
+            "de": "Winterbornbollwerk"
+        },
+        "icon": "inv_shield_1h_ardenweald_d_01",
+        "itemClass": 4,
+        "itemSubClass": 6,
+        "itemLevel": 155,
+        "stats": {
+            "intellect": 16132,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3500,
+            "mastery": 0,
+            "versatility": 3500
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shield"
+    },
+    {
+        "id": 179609,
+        "name": "Sinful Gladiator's Bulwark",
+        "names": {
+            "cn": "",
+            "en": "Sinful Gladiator's Bulwark",
+            "ru": "Бастион грешного гладиатора",
+            "es": "Baluarte de Gladiador pecaminoso",
+            "br": "Baluarte do Gladiador Pecaminoso",
+            "kr": "",
+            "fr": "Rempart du gladiateur impénitent",
+            "de": "Bollwerk des sündigen Gladiators"
+        },
+        "icon": "inv_shield_1h_ardenweald_d_01",
+        "itemClass": 4,
+        "itemSubClass": 6,
+        "itemLevel": 200,
+        "stats": {
+            "intellect": 16132,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 2300,
+            "mastery": 0,
+            "versatility": 4700
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shield"
+    },
+    {
+        "id": 179610,
+        "name": "Dredge-Giant's Warshield",
+        "names": {
+            "cn": "",
+            "en": "Dredge-Giant's Warshield",
+            "ru": "Боевой щит землероя-великана",
+            "es": "Escudo de guerra de gigante dragador",
+            "br": "Escudo de Guerra do Arrasta-gigantes",
+            "kr": "",
+            "fr": "Bouclier de guerre de géant bourbeux",
+            "de": "Kriegsschild des Gräberriesen"
+        },
+        "icon": "inv_shield_1h_ardenweald_d_01",
+        "itemClass": 4,
+        "itemSubClass": 6,
+        "itemLevel": 174,
+        "stats": {
+            "intellect": 16132,
+            "stamina": 7889,
+            "haste": 4550,
+            "crit": 2450,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shield"
+    },
+    {
+        "id": 179611,
+        "name": "Bulwark of the Unbowed",
+        "names": {
+            "cn": "",
+            "en": "Bulwark of the Unbowed",
+            "ru": "Бастион несклонившегося",
+            "es": "Baluarte del incólume",
+            "br": "Baluarte do Insubmisso",
+            "kr": "",
+            "fr": "Rempart des Frondeurs",
+            "de": "Bollwerk des Unbeugsamen"
+        },
+        "icon": "inv_shield_1h_ardenweald_d_01",
+        "itemClass": 4,
+        "itemSubClass": 6,
+        "itemLevel": 174,
+        "stats": {
+            "intellect": 16132,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 2150,
+            "versatility": 4850
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shield"
     },
     {
         "id": 179615,
@@ -36580,6 +37277,35 @@ export const itemDB = [
         "slot": "1H Weapon"
     },
     {
+        "id": 180402,
+        "name": "Barrier of the Forgotten",
+        "names": {
+            "cn": "",
+            "en": "Barrier of the Forgotten",
+            "ru": "Барьер Забытых",
+            "es": "Barrera de los olvidados",
+            "br": "Barreira dos Esquecidos",
+            "kr": "",
+            "fr": "Barrière des Oubliés",
+            "de": "Barriere der Vergessenen"
+        },
+        "icon": "inv_shield_1h_revendrethquest_b_01",
+        "itemClass": 4,
+        "itemSubClass": 6,
+        "itemLevel": 100,
+        "stats": {
+            "intellect": 16132,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 4550,
+            "mastery": 0,
+            "versatility": 2450
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shield"
+    },
+    {
         "id": 180403,
         "name": "Vessel of Distilled Regret",
         "names": {
@@ -36839,6 +37565,35 @@ export const itemDB = [
         "dropLoc": "",
         "selectable": "true",
         "slot": "1H Weapon"
+    },
+    {
+        "id": 180487,
+        "name": "Stonefist's Knuckle Cover",
+        "names": {
+            "cn": "",
+            "en": "Stonefist's Knuckle Cover",
+            "ru": "Кастет Камнерука",
+            "es": "Cubrenudillos de Puñopiedra",
+            "br": "Cobre-mão de Punhopétreo",
+            "kr": "",
+            "fr": "Couvre-main de Poing-de-Pierre",
+            "de": "Steinfausts Knöchelschutz"
+        },
+        "icon": "inv_shield_1h_revendrethquest_b_01",
+        "itemClass": 4,
+        "itemSubClass": 6,
+        "itemLevel": 100,
+        "stats": {
+            "intellect": 16132,
+            "stamina": 7889,
+            "haste": 4100,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shield"
     },
     {
         "id": 180488,
@@ -37160,6 +37915,35 @@ export const itemDB = [
         "slot": "1H Weapon"
     },
     {
+        "id": 180670,
+        "name": "Cruel Executioner's Bulwark",
+        "names": {
+            "cn": "",
+            "en": "Cruel Executioner's Bulwark",
+            "ru": "Бастион жестокого палача",
+            "es": "Baluarte de verdugo cruel",
+            "br": "Baluarte do Carrasco Cruel",
+            "kr": "",
+            "fr": "Rempart de l’exécuteur cruel",
+            "de": "Bollwerk des grausamen Scharfrichters"
+        },
+        "icon": "inv_shield_1h_maldraxxus_b_01",
+        "itemClass": 4,
+        "itemSubClass": 6,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 16132,
+            "stamina": 7889,
+            "haste": 3950,
+            "crit": 3050,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shield"
+    },
+    {
         "id": 180671,
         "name": "War Scholar's Tome",
         "names": {
@@ -37187,6 +37971,35 @@ export const itemDB = [
         "dropLoc": "",
         "selectable": "true",
         "slot": "Offhand"
+    },
+    {
+        "id": 180749,
+        "name": "Hauk's Battle-Scarred Bulwark",
+        "names": {
+            "cn": "",
+            "en": "Hauk's Battle-Scarred Bulwark",
+            "ru": "Потрепанный в бою бастион Хоука",
+            "es": "Baluarte dañado por la batalla de Hauk",
+            "br": "Baluarte de Muitas Guerras de Hauk",
+            "kr": "",
+            "fr": "Rempart entaillé de Hauk",
+            "de": "Hauks kampfgezeichnetes Bollwerk"
+        },
+        "icon": "inv_shield_1h_maldraxxus_b_01",
+        "itemClass": 4,
+        "itemSubClass": 6,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 16132,
+            "stamina": 7889,
+            "haste": 2600,
+            "crit": 4400,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shield"
     },
     {
         "id": 180790,
@@ -39575,6 +40388,35 @@ export const itemDB = [
         "slot": "Shoulder"
     },
     {
+        "id": 181207,
+        "name": "Dominance Keep Barrier",
+        "names": {
+            "cn": "",
+            "en": "Dominance Keep Barrier",
+            "ru": "Щит Крепости Господства",
+            "es": "Barrera de la Fortaleza de la Dominancia",
+            "br": "Barreira da Bastilha da Dominância",
+            "kr": "",
+            "fr": "Barrière du donjon de la Domination",
+            "de": "Barriere der Herrschaftsburg"
+        },
+        "icon": "inv_shield_1h_revendrethquest_b_01",
+        "itemClass": 4,
+        "itemSubClass": 6,
+        "itemLevel": 148,
+        "stats": {
+            "intellect": 16132,
+            "stamina": 7889,
+            "haste": 3350,
+            "crit": 3650,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shield"
+    },
+    {
         "id": 181208,
         "name": "Anima-Infused Muck",
         "names": {
@@ -40005,6 +40847,35 @@ export const itemDB = [
             "type": "trinket",
             "name": "Brimming Ember Shard"
         }
+    },
+    {
+        "id": 181393,
+        "name": "Sylvan Whiteshield",
+        "names": {
+            "cn": "",
+            "en": "Sylvan Whiteshield",
+            "ru": "Белый щит леса",
+            "es": "Escudoblanco nemoroso",
+            "br": "Escudo-branco Silvestre",
+            "kr": "",
+            "fr": "Bouclier blanc sylvestre",
+            "de": "Sylvanweißschild"
+        },
+        "icon": "inv_shield_1h_ardenwealdquest_b_01",
+        "itemClass": 4,
+        "itemSubClass": 6,
+        "itemLevel": 213,
+        "stats": {
+            "intellect": 16132,
+            "stamina": 7889,
+            "haste": 3500,
+            "crit": 0,
+            "mastery": 3500,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shield"
     },
     {
         "id": 181398,
@@ -42260,6 +43131,35 @@ export const itemDB = [
         "slot": "Finger"
     },
     {
+        "id": 181629,
+        "name": "Waylight Defender",
+        "names": {
+            "cn": "",
+            "en": "Waylight Defender",
+            "ru": "Защитник путеводного света",
+            "es": "Defensor de vialuz",
+            "br": "Defensor da Senda Luminosa",
+            "kr": "",
+            "fr": "Défenseur falot",
+            "de": "Wegeslichtverteidiger"
+        },
+        "icon": "inv_shield_1h_bastionquest_b_01",
+        "itemClass": 4,
+        "itemSubClass": 6,
+        "itemLevel": 148,
+        "stats": {
+            "intellect": 16132,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 3950,
+            "versatility": 3050
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shield"
+    },
+    {
         "id": 181631,
         "name": "Requiem Chime",
         "names": {
@@ -43331,6 +44231,35 @@ export const itemDB = [
         "dropLoc": "",
         "selectable": "true",
         "slot": "1H Weapon"
+    },
+    {
+        "id": 181685,
+        "name": "Gorewrought Barrier",
+        "names": {
+            "cn": "",
+            "en": "Gorewrought Barrier",
+            "ru": "Перекованный с кровью барьер",
+            "es": "Barrera de sangre forjada",
+            "br": "Barreira Ornada com Entranhas",
+            "kr": "",
+            "fr": "Barrière forge-tripe",
+            "de": "Blutgefertigte Barriere"
+        },
+        "icon": "inv_shield_1h_maldraxxus_b_01",
+        "itemClass": 4,
+        "itemSubClass": 6,
+        "itemLevel": 148,
+        "stats": {
+            "intellect": 16132,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 3050,
+            "versatility": 3950
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shield"
     },
     {
         "id": 181686,
@@ -45472,6 +46401,35 @@ export const itemDB = [
         "slot": "1H Weapon"
     },
     {
+        "id": 182399,
+        "name": "Stonewrought Gargoyles Barrier",
+        "names": {
+            "cn": "",
+            "en": "Stonewrought Gargoyles Barrier",
+            "ru": "Каменный барьер горгульи",
+            "es": "Barrera de gárgolas de Fraguapiedra",
+            "br": "Barreira das Gárgulas Forjadas em Ferro",
+            "kr": "",
+            "fr": "Barrière des gargouilles formepierre",
+            "de": "Barriere des Steinwerkgargoyles"
+        },
+        "icon": "inv_shield_1h_revendreth_d_01",
+        "itemClass": 4,
+        "itemSubClass": 6,
+        "itemLevel": 174,
+        "stats": {
+            "intellect": 16132,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 2150,
+            "versatility": 4850
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shield"
+    },
+    {
         "id": 182400,
         "name": "Master Stonewright's Chisel",
         "names": {
@@ -45588,6 +46546,35 @@ export const itemDB = [
         "slot": "1H Weapon"
     },
     {
+        "id": 182412,
+        "name": "Sinful Gladiator's Redoubt",
+        "names": {
+            "cn": "",
+            "en": "Sinful Gladiator's Redoubt",
+            "ru": "Оплот грешного гладиатора",
+            "es": "Reducto de Gladiador pecaminoso",
+            "br": "Reduto do Gladiador Pecaminoso",
+            "kr": "",
+            "fr": "Redoute du gladiateur impénitent",
+            "de": "Wehr des sündigen Gladiators"
+        },
+        "icon": "inv_shield_1h_revendreth_d_01",
+        "itemClass": 4,
+        "itemSubClass": 6,
+        "itemLevel": 200,
+        "stats": {
+            "intellect": 16132,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 2300,
+            "mastery": 0,
+            "versatility": 4700
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shield"
+    },
+    {
         "id": 182413,
         "name": "Sinful Gladiator's Spell Foci",
         "names": {
@@ -45702,6 +46689,35 @@ export const itemDB = [
         "dropLoc": "",
         "selectable": "true",
         "slot": "1H Weapon"
+    },
+    {
+        "id": 182425,
+        "name": "Builwark of the Stone Legion",
+        "names": {
+            "cn": "",
+            "en": "Builwark of the Stone Legion",
+            "ru": "Бастион Каменного легиона",
+            "es": "Baluarte de la Legión Pétrea",
+            "br": "Baluarte da Legião de Pedra",
+            "kr": "",
+            "fr": "Rempart de la Légion de pierre",
+            "de": "Bollwerk der Steinlegion"
+        },
+        "icon": "inv_shield_1h_revendreth_d_01",
+        "itemClass": 4,
+        "itemSubClass": 6,
+        "itemLevel": 174,
+        "stats": {
+            "intellect": 16132,
+            "stamina": 7889,
+            "haste": 4550,
+            "crit": 2450,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shield"
     },
     {
         "id": 182426,
@@ -46043,6 +47059,35 @@ export const itemDB = [
         "slot": "Back"
     },
     {
+        "id": 182570,
+        "name": "NPE Weapon Shield",
+        "names": {
+            "cn": "",
+            "en": "NPE Weapon Shield",
+            "ru": "NPE Weapon Shield",
+            "es": "Arma EJN Escudo",
+            "br": "NPE Weapon Shield",
+            "kr": "",
+            "fr": "Arme de débutant bouclier",
+            "de": "NPE Weapon Shield"
+        },
+        "icon": "inv_shield_1h_newplayer_a_01",
+        "itemClass": 4,
+        "itemSubClass": 6,
+        "itemLevel": 155,
+        "stats": {
+            "intellect": 16132,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3500,
+            "mastery": 0,
+            "versatility": 3500
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shield"
+    },
+    {
         "id": 182572,
         "name": "NPE Weapon Staff INT",
         "names": {
@@ -46070,6 +47115,35 @@ export const itemDB = [
         "dropLoc": "",
         "selectable": "true",
         "slot": "2H Weapon"
+    },
+    {
+        "id": 182576,
+        "name": "NPE Weapon Shield 2",
+        "names": {
+            "cn": "",
+            "en": "NPE Weapon Shield 2",
+            "ru": "NPE Weapon Shield 2",
+            "es": "Arma EJN Escudo 2",
+            "br": "NPE Weapon Shield 2",
+            "kr": "",
+            "fr": "Arme de débutant bouclier 2",
+            "de": "NPE Weapon Shield 2"
+        },
+        "icon": "inv_shield_1h_newplayer_a_01",
+        "itemClass": 4,
+        "itemSubClass": 6,
+        "itemLevel": 155,
+        "stats": {
+            "intellect": 16132,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3500,
+            "mastery": 0,
+            "versatility": 3500
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shield"
     },
     {
         "id": 182682,
@@ -48797,6 +49871,35 @@ export const itemDB = [
         "slot": "1H Weapon"
     },
     {
+        "id": 183438,
+        "name": "Sinful Gladiator's Redoubt",
+        "names": {
+            "cn": "",
+            "en": "Sinful Gladiator's Redoubt",
+            "ru": "Оплот грешного гладиатора",
+            "es": "Reducto de Gladiador pecaminoso",
+            "br": "Reduto do Gladiador Pecaminoso",
+            "kr": "",
+            "fr": "Redoute du gladiateur impénitent",
+            "de": "Wehr des sündigen Gladiators"
+        },
+        "icon": "inv_shield_1h_maldraxxus_d_01",
+        "itemClass": 4,
+        "itemSubClass": 6,
+        "itemLevel": 200,
+        "stats": {
+            "intellect": 16132,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 2300,
+            "mastery": 0,
+            "versatility": 4700
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shield"
+    },
+    {
         "id": 183439,
         "name": "Sinful Gladiator's Crystal",
         "names": {
@@ -51071,6 +52174,35 @@ export const itemDB = [
         "dropLoc": "",
         "selectable": "true",
         "slot": "Waist"
+    },
+    {
+        "id": 183606,
+        "name": "Bulwark of Echoing Courage",
+        "names": {
+            "cn": "",
+            "en": "Bulwark of Echoing Courage",
+            "ru": "Бастион многократной отваги",
+            "es": "Baluarte de coraje resonante",
+            "br": "Baluarte da Coragem Ecoante",
+            "kr": "",
+            "fr": "Rempart du courage retentissant",
+            "de": "Bollwerk des hallenden Mutes"
+        },
+        "icon": "inv_shield_1h_bastionquest_b_01",
+        "itemClass": 4,
+        "itemSubClass": 6,
+        "itemLevel": 144,
+        "stats": {
+            "intellect": 16132,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 4250,
+            "versatility": 2750
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shield"
     },
     {
         "id": 183608,
@@ -55010,6 +56142,35 @@ export const itemDB = [
         "slot": "Feet"
     },
     {
+        "id": 184245,
+        "name": "Barrier of the Chosen",
+        "names": {
+            "cn": "",
+            "en": "Barrier of the Chosen",
+            "ru": "Барьер Избранного",
+            "es": "Barrera de los Elegidos",
+            "br": "Barreira dos Escolhidos",
+            "kr": "",
+            "fr": "Barrière des Élus",
+            "de": "Barriere des Auserwählten"
+        },
+        "icon": "inv_shield_1h_maldraxxus_d_01",
+        "itemClass": 4,
+        "itemSubClass": 6,
+        "itemLevel": 174,
+        "stats": {
+            "intellect": 16132,
+            "stamina": 7889,
+            "haste": 4550,
+            "crit": 2450,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shield"
+    },
+    {
         "id": 184246,
         "name": "Frigid Invoker's Focus",
         "names": {
@@ -55124,6 +56285,35 @@ export const itemDB = [
         "dropLoc": "",
         "selectable": "true",
         "slot": "1H Weapon"
+    },
+    {
+        "id": 184257,
+        "name": "Burden of the Protectorate",
+        "names": {
+            "cn": "",
+            "en": "Burden of the Protectorate",
+            "ru": "Бремя протектората",
+            "es": "Carga del Protectorado",
+            "br": "Fardo do Protetorado",
+            "kr": "",
+            "fr": "Fardeau du protectorat",
+            "de": "Bürde des Protektorats"
+        },
+        "icon": "inv_shield_1h_maldraxxus_d_01",
+        "itemClass": 4,
+        "itemSubClass": 6,
+        "itemLevel": 174,
+        "stats": {
+            "intellect": 16132,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 2150,
+            "versatility": 4850
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shield"
     },
     {
         "id": 184258,
@@ -55420,6 +56610,35 @@ export const itemDB = [
         "slot": "Shoulder"
     },
     {
+        "id": 184288,
+        "name": "Ruthless Warlord's Barrier",
+        "names": {
+            "cn": "",
+            "en": "Ruthless Warlord's Barrier",
+            "ru": "Барьер безжалостного полководца",
+            "es": "Barrera de señor de la guerra implacable",
+            "br": "Barreira do Senhor da Guerra Inclemente",
+            "kr": "",
+            "fr": "Barrière du seigneur de guerre sans pitié",
+            "de": "Barriere des ruchlosen Kriegsfürsten"
+        },
+        "icon": "inv_shield_1h_maldraxxus_b_01",
+        "itemClass": 4,
+        "itemSubClass": 6,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 16132,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 2600,
+            "versatility": 4400
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shield"
+    },
+    {
         "id": 184289,
         "name": "Spindlefang Spellblade",
         "names": {
@@ -55708,6 +56927,35 @@ export const itemDB = [
         "dropLoc": "",
         "selectable": "true",
         "slot": "Back"
+    },
+    {
+        "id": 184365,
+        "name": "Aegis of Salvation",
+        "names": {
+            "cn": "",
+            "en": "Aegis of Salvation",
+            "ru": "Эгида спасения",
+            "es": "Égida de salvación",
+            "br": "Égide da Salvação",
+            "kr": "",
+            "fr": "Égide du salut",
+            "de": "Aegis der Errettung"
+        },
+        "icon": "inv_shield_1h_hyrja_d_01",
+        "itemClass": 4,
+        "itemSubClass": 6,
+        "itemLevel": 144,
+        "stats": {
+            "intellect": 16132,
+            "stamina": 7889,
+            "haste": 2750,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 4250
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shield"
     },
     {
         "id": 184471,
@@ -57941,6 +59189,35 @@ export const itemDB = [
         "dropLoc": "",
         "selectable": "true",
         "slot": "1H Weapon"
+    },
+    {
+        "id": 184806,
+        "name": "Kudebeh's Remarkable Targe",
+        "names": {
+            "cn": "",
+            "en": "Kudebeh's Remarkable Targe",
+            "ru": "Впечатляющий тарч Кудебеха",
+            "es": "Tarja excepcional de Kudebeh",
+            "br": "Tarja Notável de Kudebeh",
+            "kr": "",
+            "fr": "Rondache remarquable de Kudebeh",
+            "de": "Kudebehs bemerkenswerte Tartsche"
+        },
+        "icon": "inv_shield_1h_bastionquest_b_01",
+        "itemClass": 4,
+        "itemSubClass": 6,
+        "itemLevel": 213,
+        "stats": {
+            "intellect": 16132,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3900,
+            "mastery": 0,
+            "versatility": 3100
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shield"
     },
     {
         "id": 184807,
