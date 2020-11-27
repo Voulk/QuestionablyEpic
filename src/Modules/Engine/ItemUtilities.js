@@ -158,6 +158,7 @@ function getItemCat(slot) {
     case "Chest":
     case "Legs":
     case "Robe":
+    case "2H Weapon":
       return 0;
 
     case "Shoulder":
@@ -177,6 +178,7 @@ function getItemCat(slot) {
     case "Offhand":
     case "Holdable":
     case "Shield":
+    case "1H Weapon":
       return 3;
     default:
       console.error("Item Cat going to Default" + slot);
@@ -254,7 +256,7 @@ export function calcStatsAtLevel(itemLevel, slot, statAllocations, tertiary) {
     bonus_stats: {},
   };
 
-  //console.log("Calc Stats at Level: " + itemLevel + "/" + slot + "/" + statAllocations + "/" + tertiary);
+  console.log("Calc Stats at Level: " + itemLevel + "/" + slot + "/" + statAllocations + "/" + tertiary);
 
   let rand_prop = randPropPoints[itemLevel]["slotValues"][getItemCat(slot)];
   if (slot == "Finger" || slot == "Neck") combat_mult = combat_ratings_mult_by_ilvl_jewl[itemLevel];
