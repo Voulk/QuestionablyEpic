@@ -75,7 +75,7 @@ export const trinket_data = [
                 benefit: 'hps', 
                 coefficient: 467.66378, // This represents the upper quartile of the given cards.  
                 table: -8, 
-                efficiency: 0.82, 
+                efficiency: 0.62, 
                 cooldown: 90, 
             }
         ]
@@ -210,6 +210,50 @@ export const trinket_data = [
             }
 
         ]
+    },
+    {
+        name: 'Spiritual Alchemy Stone',
+        effects: [
+            { 
+                coefficient: 1.987097, // Tooltip suggests 2.2 but in-game it gives you 1.1. TODO: Check after release. 
+                table: -1,  
+                duration: 15, 
+                ppm: 1
+            },
+        ]
+    },
+    {
+        name: "Sinful Gladiator's Insignia of Alacrity",
+        effects: [
+            { 
+                coefficient: 1.00266, // Tooltip suggests 2.2 but in-game it gives you 1.1. TODO: Check after release. 
+                table: -1,  
+                duration: 20, 
+                ppm: 1.5
+            },
+        ]
+    },
+    {
+    name: "Sinful Gladiator's Badge of Ferocity",
+    effects: [
+        { 
+            coefficient: 2.095342, // Tooltip suggests 2.2 but in-game it gives you 1.1. TODO: Check after release. 
+            table: -1,  
+            duration: 15, 
+            cooldown: 60,
+        },
+    ]
+},
+    {
+    name: "Inscrutable Quantum Device",
+    effects: [
+        { 
+            coefficient: 3.55, // Tooltip suggests 2.2 but in-game it gives you 1.1. TODO: Check after release. 
+            table: -1,  
+            duration: 30, 
+            cooldown: 180,
+        },
+    ]
     },
     
     

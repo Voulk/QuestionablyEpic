@@ -44,8 +44,8 @@ export default function ItemCard(props) {
   const itemLevel = item.level;
 
   const itemQuality = (itemLevel) => {
-    if (itemLevel > 184) return "#a73fee";
-    else if (itemLevel > 120) return "#328CE3";
+    if (itemLevel >= 183) return "#a73fee";
+    else if (itemLevel >= 120) return "#328CE3";
     else return "#1eff00";
 
     /*
@@ -75,7 +75,7 @@ export default function ItemCard(props) {
 
   const upgradeColor = (num) => {
     if (num > 0) {
-      return "#4CBB17";
+      return "#FFDF14"; // #60e421
     } else if (num < 0) {
       return "#ad2c34";
     } else {
