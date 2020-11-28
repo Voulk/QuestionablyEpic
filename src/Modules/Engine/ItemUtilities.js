@@ -237,6 +237,7 @@ export function buildWepCombos(player) {
     wep_list.push(two_handers[j]);
   }
 
+  wep_list.sort((a, b) => (a.softScore < b.softScore ? 1 : -1));
   return wep_list;
 }
 
@@ -256,7 +257,7 @@ export function calcStatsAtLevel(itemLevel, slot, statAllocations, tertiary) {
     bonus_stats: {},
   };
 
-  console.log("Calc Stats at Level: " + itemLevel + "/" + slot + "/" + statAllocations + "/" + tertiary);
+  //console.log("Calc Stats at Level: " + itemLevel + "/" + slot + "/" + statAllocations + "/" + tertiary);
 
   let rand_prop = randPropPoints[itemLevel]["slotValues"][getItemCat(slot)];
   if (slot == "Finger" || slot == "Neck") combat_mult = combat_ratings_mult_by_ilvl_jewl[itemLevel];
