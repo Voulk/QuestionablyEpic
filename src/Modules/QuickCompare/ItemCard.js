@@ -75,7 +75,7 @@ export default function ItemCard(props) {
 
   const upgradeColor = (num) => {
     if (num > 0) {
-      return "#ffff31"; // #60e421
+      return "#FFDF14"; // #60e421
     } else if (num < 0) {
       return "#ad2c34";
     } else {

@@ -66,7 +66,7 @@ export const getPaladinLegendary = (effectName, pl, contentType) => {
         let mastDiff = ((maxMasteryEff / averageMasteryEff)-1);
         let percentHealingToHitTargets = 0.95;
 
-        console.log("MastDiff: " + mastDiff + ". LoDUptime: " + lightOfDawnUptime + "Max: " + maxMasteryEff + ". Avg: " + averageMasteryEff);
+        //console.log("MastDiff: " + mastDiff + ". LoDUptime: " + lightOfDawnUptime + "Max: " + maxMasteryEff + ". Avg: " + averageMasteryEff);
     
         bonus_stats.HPS = Math.round(pl.getHPS() * mastDiff * lightOfDawnUptime * percentHealingToHitTargets);
 
@@ -103,7 +103,7 @@ export const getPaladinLegendary = (effectName, pl, contentType) => {
         let healingMult = (wingsEffHealingIncrease * healingIncUptime + 1 * (1 - healingIncUptime)) - 1;    
         bonus_stats.HPS = Math.round(pl.getHPS() * healingMult);
 
-        console.log("FWS: " + wingsEffHealingIncrease);
+        //console.log("FWS: " + wingsEffHealingIncrease);
         // This technically needs to be increased based on the wings duration increase, but that is of minimal benefit.
         bonus_stats.DPS = 1.2 * 0.3 * pl.getStatMultiplier("ALL") * hammerOfWrathCPM / 60;
 

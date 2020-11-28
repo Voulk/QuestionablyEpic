@@ -147,7 +147,7 @@ function processItem(line, player, contentType) {
     if (idPayload !== undefined) {
       if ("level" in idPayload) {
         itemLevel += idPayload["level"];
-        console.log("Adding " + idPayload["level"]);
+        //console.log("Adding " + idPayload["level"]);
       } else if ("socket" in idPayload) {
         itemSocket = true;
       } else if (bonus_id === "41") {
@@ -155,7 +155,7 @@ function processItem(line, player, contentType) {
       }
         else if ('curveId' in idPayload) {
           let curve = idPayload['curveId'];
-          console.log("CURVE: " + bonus_id);
+          //console.log("CURVE: " + bonus_id);
 
           if (bonus_id == 6706) itemLevel = 92 + (dropLevel - 50) * 6
           else if (bonus_id == 6707) itemLevel = 84 + (dropLevel - 50) * 6
