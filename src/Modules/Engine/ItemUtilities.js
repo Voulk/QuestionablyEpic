@@ -237,6 +237,7 @@ export function buildWepCombos(player) {
     wep_list.push(two_handers[j]);
   }
 
+  wep_list.sort((a, b) => (a.softScore < b.softScore ? 1 : -1));
   return wep_list;
 }
 

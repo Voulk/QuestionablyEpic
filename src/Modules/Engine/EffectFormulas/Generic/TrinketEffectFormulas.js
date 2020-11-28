@@ -135,6 +135,40 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel) {
             convertPPMToUptime(vers_effect.ppm * player.getStatPerc('Haste'), vers_effect.duration);
 
     }
+    else if (effectName === "Spiritual Alchemy Stone") {
+        let effect = activeTrinket.effects[0];
+
+        bonus_stats.intellect = getProcessedValue(effect.coefficient, effect.table, itemLevel) * convertPPMToUptime(effect.ppm, effect.duration);
+
+        // Mana Potion Bonus
+        // Eventually we'll include mana in bonus_stats and calculate it at the end. Until then, we'll auto-convert to HPS.
+       
+
+        // Health Potion Bonus
+        bonus_stats.hps = 10000 * 0.4 / player.getFightLength() * 0.9; // 0.9 represents overhealing. We'll capture this better later.
+
+        //console.log("Int:" + bonus_stats.intellect + ". HPS: " + bonus_stats.hps)
+    }
+    else if (effectName === "Sinful Gladiator's Insignia of Alacrity") {
+        let effect = activeTrinket.effects[0];
+
+        bonus_stats.intellect = getProcessedValue(effect.coefficient, effect.table, itemLevel) * convertPPMToUptime(effect.ppm, effect.duration);
+
+    }
+    else if (effectName === "Sinful Gladiator's Badge of Ferocity") {
+        // Test
+        let effect = activeTrinket.effects[0];
+
+        bonus_stats.intellect = getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.duration / effect.cooldown;
+    }
+    else if (effectName === "Inscrutable Quantum Device") {
+
+        let effect = activeTrinket.effects[0];
+        let playerBestSecondary = player.getHighestStatWeight(contentType, ['versatility']) // Exclude Vers since there isn't a Vers version.
+
+        bonus_stats[playerBestSecondary] = getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.duration / effect.cooldown;
+
+    }
 
 
     /*
