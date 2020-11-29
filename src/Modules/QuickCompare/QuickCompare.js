@@ -814,6 +814,7 @@ export default function QuickCompare(props) {
                 ))}
               </Grid>
             </Grid>
+            <Grid item style={{ height: 100 }} xs={12} />
           </Grid>
         </Grid>
       </Grid>
