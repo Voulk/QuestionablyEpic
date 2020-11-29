@@ -53,7 +53,7 @@ export default function QEHeader(props) {
   let playerName = props.playerTag || t("HeaderLabels.Login");
   let linkTarget = props.playerTag === "" ? "/login" : "/profile";
   let patronStatus =
-    props.patronStatus !== ""
+    (props.patronStatus !== "" && props.patronStatus !== "Basic")
       ? props.patronStatus + " Edition"
       : "Standard Edition";
   let color = {

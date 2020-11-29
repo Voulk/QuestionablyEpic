@@ -1,7 +1,15 @@
 import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
-import { Tabs, Tab, Box, AppBar, Grid } from "@material-ui/core";
+import {
+  Tabs,
+  Tab,
+  Box,
+  AppBar,
+  Grid,
+  Paper,
+  Typography,
+} from "@material-ui/core";
 import { soulbindDB, soulbindConnectors } from "../SoulbindDB";
 import SoulbindNode from "./SoulbindNode";
 import ConduitObject from "./ConduitObject";
@@ -62,7 +70,7 @@ const useStyles = makeStyles((theme) => ({
     marginTop: "2%",
     flexGrow: 1,
     backgroundColor: theme.palette.background.paper,
-    maxWidth: 1010,
+    maxWidth: 1014,
   },
   panel: {
     flexGrow: 1,
@@ -708,8 +716,26 @@ function buildSoulbind(
               spacing={1}
               style={{
                 margin: 1,
+                maxWidth: 245,
               }}
             >
+              <Grid item xs={12}>
+                <Paper
+                  style={{
+                    padding: 4,
+                    whiteSpace: "nowrap",
+                    textAlign: "center",
+                  }}
+                >
+                  <Typography
+                    variant="h6"
+                    align="center"
+                    style={{ fontSize: 12 }}
+                  >
+                    Right/Left Click Conduits to change Ilvl
+                  </Typography>
+                </Paper>
+              </Grid>
               <Grid item xs={12}>
                 <img
                   src={
@@ -723,7 +749,7 @@ function buildSoulbind(
                   }}
                   alt=""
                 />
-                <Grid container spacing={1} style={{ maxWidth: 245 }}>
+                <Grid container spacing={1}>
                   {potencyConduits.map((conduit, i) => (
                     <ConduitObject
                       conduit={conduit}
@@ -746,7 +772,7 @@ function buildSoulbind(
                   }}
                   alt=""
                 />
-                <Grid container spacing={1} style={{ maxWidth: 245 }}>
+                <Grid container spacing={1}>
                   {enduranceConduits.map((conduit, i) => (
                     <ConduitObject
                       conduit={conduit}
@@ -757,7 +783,14 @@ function buildSoulbind(
                 </Grid>
               </Grid>
             </Grid>
-            <Grid container>
+            <Grid
+              container
+              spacing={1}
+              style={{
+                margin: 1,
+                maxWidth: 245,
+              }}
+            >
               <SoulbindStatPanel
                 hps={estimatedHPS}
                 covAbility={covAbility}

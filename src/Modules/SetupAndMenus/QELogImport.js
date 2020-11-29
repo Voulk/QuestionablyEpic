@@ -308,6 +308,9 @@ export default function QELogImport(props) {
     importHealerDetailedLogDataQE(time, timeend, reportId, currentPlayerID);
     handleClose();
     props.logImportSnack();
+    setReportId("");
+    setCurrentBossID("");
+    setSelectValue("");
   };
 
   // Handler for setting the report id pasted into the textfield.
@@ -345,6 +348,7 @@ export default function QELogImport(props) {
             </Grid>
             <Grid item xs={3}>
               <FightSelectorButton
+                disabled={reportId === "" ? true : false}
                 reportid={reportId}
                 clicky={handler}
                 update={importLogDataQE}
@@ -374,7 +378,12 @@ export default function QELogImport(props) {
               </Typography>
             </Grid>
             <Grid item xs={6}>
-              <FormControl variant="outlined" size="small" fullWidth>
+              <FormControl
+                variant="outlined"
+                size="small"
+                fullWidth
+                disabled={currentBossID === "" ? true : false}
+              >
                 <InputLabel id="HealerSelector">{t("Name")}</InputLabel>
                 <Select
                   value={selectValue}
@@ -397,7 +406,11 @@ export default function QELogImport(props) {
           <Button onClick={handleClose} color="primary">
             {t("Cancel")}
           </Button>
-          <Button onClick={handleSubmit} color="primary">
+          <Button
+            disabled={selectValue === "" ? true : false}
+            onClick={handleSubmit}
+            color="primary"
+          >
             {t("Submit")}
           </Button>
         </DialogActions>
