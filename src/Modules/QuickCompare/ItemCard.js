@@ -104,7 +104,7 @@ export default function ItemCard(props) {
         style={{ verticalAlign: "middle" }}
         alt="Socket"  
       />{" "}
-      /
+      
     </div>
   ) : null;
 
