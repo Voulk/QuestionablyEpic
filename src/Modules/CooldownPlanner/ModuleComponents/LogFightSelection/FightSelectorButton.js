@@ -22,6 +22,7 @@ export default function FightSelectorButton(props) {
       <Button
         aria-controls="fight-selector"
         aria-haspopup="true"
+        disabled={props.disabled || false}
         onClick={handleClick}
         variant="outlined"
         style={{ height: 40 }}
