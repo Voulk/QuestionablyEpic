@@ -8,6 +8,7 @@ import {
   getCovenant,
 } from "../CovenantUtilities";
 import Paper from "@material-ui/core/Paper";
+import { useTranslation } from "react-i18next";
 
 const columnPos = [200, 290, 380];
 const rowPos = [
@@ -60,8 +61,12 @@ const itemQuality = (quality) => {
 function getBenefitString(bonus_stats) {
   let benefitString = "";
   Object.entries(bonus_stats).forEach(([key, value]) => {
-    if (value !== 0 && typeof(value) === "number" && value !== undefined && !isNaN(value))  {
-
+    if (
+      value !== 0 &&
+      typeof value === "number" &&
+      value !== undefined &&
+      !isNaN(value)
+    ) {
       benefitString += key + ": " + Math.round(value);
     }
   });
@@ -82,6 +87,7 @@ function getRowPos(column, row) {
 
 export default function SoulbindNode(props) {
   const [anchorEl, setAnchorEl] = React.useState(null);
+  const { t, i18n } = useTranslation();
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -135,6 +141,30 @@ export default function SoulbindNode(props) {
 
   const benefitString = getBenefitString(stat_bonus);
 
+  const conduitToolTipPEF = (type) => {
+    if (type.includes("Potency")) {
+      return '<div class="no-wrap">' + t("Soulbinds.PotencyConduit") + "</div>";
+    } else if (type.includes("Endurance")) {
+      return (
+        '<div class="no-wrap">' + t("Soulbinds.EnduranceConduit") + "</div>"
+      );
+    } else if (type.includes("Finesse")) {
+      return '<div class="no-wrap">' + t("Soulbinds.FinesseConduit") + "</div>";
+    }
+    return "";
+  };
+
+  const conduitToolTipSpellID = (type) => {
+    if (
+      type.includes("Potency") ||
+      type.includes("Endurance") ||
+      type.includes("Finesse")
+    ) {
+      return "";
+    }
+    return "spell=" + trait.id;
+  };
+
   // The CSS here is a bit of a nightmare. TODO.
   return (
     <div
@@ -145,7 +175,10 @@ export default function SoulbindNode(props) {
         borderRadius: "50%",
       }}
     >
-      <a data-wowhead={"spell=" + trait.id}>
+      <a
+        data-simple-tooltip={conduitToolTipPEF(type)}
+        data-wowhead={conduitToolTipSpellID(type)}
+      >
         <img
           onClick={handleClick}
           width={48}
