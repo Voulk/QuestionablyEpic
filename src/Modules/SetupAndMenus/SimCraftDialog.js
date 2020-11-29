@@ -62,7 +62,14 @@ export default function SimCraftInput(props) {
             fullWidth
             style={{ height: "100%" }}
             variant="outlined"
-            onChange={(evt) => setSimC(evt.target.value)}
+            onChange={(e) => setSimC(e.target.value)}
+            onKeyPress={(e) => {
+              if (e.key === "Enter") {
+                // Do code here
+                e.preventDefault();
+                handleSubmit();
+              }
+            }}
           />
         </DialogContent>
         <DialogActions>
