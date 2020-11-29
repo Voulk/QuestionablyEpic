@@ -154,7 +154,7 @@ export default function QuickCompare(props) {
   const openPop = Boolean(anchorEl);
   const idPop = openPop ? "simple-popover" : undefined;
   const slots = getSlots();
-  const itemDropdown = []; // Filled later based on item slot and armor type.
+  const [itemDropdown, setItemDropdown] = useState([]); // Filled later based on item slot and armor type.
   const [AutoValue, setAutoValue] = React.useState(itemDropdown[0]);
   const [inputValue, setInputValue] = React.useState("");
 
@@ -315,6 +315,7 @@ export default function QuickCompare(props) {
   const changeSlot = (e, v) => {
     if (v === null) {
     } else {
+      setItemDropdown([]);
       setAutoValue(v.value);
       setInputValue("");
       setItemLevel("");

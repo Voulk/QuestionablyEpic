@@ -103,7 +103,7 @@ export default function ItemCard(props) {
         height={15}
         style={{ verticalAlign: "middle" }}
         alt="Socket"
-      />
+      />{" "}
       /
     </div>
   ) : null;
