@@ -139,9 +139,10 @@ export default function QuickCompare(props) {
   const currentLanguage = i18n.language;
   const classes = useStyles();
   // Snackbar State
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
+  const [openDelete, setOpenDelete] = useState(false);
   // Popover Props
-  const [anchorEl, setAnchorEl] = React.useState(null);
+  const [anchorEl, setAnchorEl] = useState(null);
   // Define State.
   const [itemLevel, setItemLevel] = useState("");
   const [itemID, setItemID] = useState("");
@@ -155,8 +156,8 @@ export default function QuickCompare(props) {
   const idPop = openPop ? "simple-popover" : undefined;
   const slots = getSlots();
   const [itemDropdown, setItemDropdown] = useState([]); // Filled later based on item slot and armor type.
-  const [AutoValue, setAutoValue] = React.useState(itemDropdown[0]);
-  const [inputValue, setInputValue] = React.useState("");
+  const [AutoValue, setAutoValue] = useState(itemDropdown[0]);
+  const [inputValue, setInputValue] = useState("");
 
   // Right now the available item levels are static, but given the removal of titanforging each item could hypothetically share
   // a list of available ilvls and the player could select from a smaller list instead.
@@ -167,6 +168,10 @@ export default function QuickCompare(props) {
     setOpen(true);
   };
 
+  const handleClickDelete = () => {
+    setOpenDelete(true);
+  };
+
   const handleClosePop = () => {
     setAnchorEl(null);
   };
@@ -175,8 +180,14 @@ export default function QuickCompare(props) {
     if (reason === "clickaway") {
       return;
     }
-
     setOpen(false);
+  };
+
+  const handleCloseDelete = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+    setOpenDelete(false);
   };
 
   // Fill Items fills the ItemNames box with items appropriate to the given slot and spec.
@@ -284,7 +295,7 @@ export default function QuickCompare(props) {
     player.deleteActiveItem(unique);
 
     setItemList([...player.getActiveItems(activeSlot)]);
-    handleClick();
+    handleClickDelete();
   };
 
   const itemNameChanged = (event, val) => {
@@ -580,6 +591,7 @@ export default function QuickCompare(props) {
                   </Typography>
                 </Popover>
               </Grid>
+              {/*item added snackbar */}
               <Snackbar
                 open={open}
                 autoHideDuration={3000}
@@ -587,6 +599,16 @@ export default function QuickCompare(props) {
               >
                 <Alert onClose={handleClose} severity="success">
                   Item Added!
+                </Alert>
+              </Snackbar>
+              {/*item deleted snackbar */}
+              <Snackbar
+                open={openDelete}
+                autoHideDuration={3000}
+                onClose={handleCloseDelete}
+              >
+                <Alert onClose={handleCloseDelete} severity="error">
+                  Item Deleted!
                 </Alert>
               </Snackbar>
             </Grid>
