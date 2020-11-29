@@ -27,6 +27,12 @@
       "InsertLogHeader": "Paste Your Warcraft Logs Report Here"
     },
 
+    "Soulbinds": {
+      "PotencyConduit": "Potency Conduit",
+      "EnduranceConduit": "Endurance Conduit",
+      "FinesseConduit": "Finesse Conduit"
+    },
+
     "Races": {
       "Blood Elf": "Blood Elf",
       "Dark Iron Dwarf": "Dark Iron Dwarf",

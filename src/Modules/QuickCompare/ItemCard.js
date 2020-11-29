@@ -103,7 +103,7 @@ export default function ItemCard(props) {
         height={15}
         style={{ verticalAlign: "middle" }}
         alt="Socket"
-      />
+      />{" "}
       /
     </div>
   ) : null;
@@ -130,7 +130,7 @@ export default function ItemCard(props) {
                 display: "inline-flex",
               }}
             >
-              <div className="container">
+              <div className="container-ItemCards">
                 <img
                   alt="img"
                   width={56}
@@ -143,7 +143,7 @@ export default function ItemCard(props) {
                     borderColor: itemQuality(itemLevel),
                   }}
                 />
-                <div className="bottom-right"> {item.level} </div>
+                <div className="bottom-right-ItemCards"> {item.level} </div>
               </div>
             </CardContent>
           </Grid>

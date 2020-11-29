@@ -77,6 +77,8 @@ class App extends Component {
     this.handleLoginSnackOpen = this.handleLoginSnackOpen.bind(this);
     this.handleSimCSnackOpen = this.handleSimCSnackOpen.bind(this);
     this.handleLogSnackOpen = this.handleLogSnackOpen.bind(this);
+    this.handleEmailSnackOpen = this.handleEmailSnackOpen.bind(this);
+    this.handleEmailErrorSnackOpen = this.handleEmailErrorSnackOpen.bind(this);
     this.setEmail = this.setEmail.bind(this);
     this.setPatron = this.setPatron.bind(this);
     this.checkPatron = this.checkPatron.bind(this);
@@ -99,6 +101,8 @@ class App extends Component {
       loginSnackState: false,
       simcSnackState: false,
       logImportSnackState: false,
+      emailSnackState: false,
+      emailSnackErrorState: false,
     };
   }
 
@@ -155,6 +159,28 @@ class App extends Component {
       return;
     }
     this.setState({ logImportSnackState: false });
+  };
+
+  // Log Import Snack
+  handleEmailSnackOpen = () => {
+    this.setState({ emailSnackState: true });
+  };
+  handleEmailSnackClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+    this.setState({ emailSnackState: false });
+  };
+
+  // Log Import Snack
+  handleEmailErrorSnackOpen = () => {
+    this.setState({ emailSnackErrorState: true });
+  };
+  handleEmailErrorSnackClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+    this.setState({ emailSnackErrorState: false });
   };
 
   // ////////////////////////////////////////
@@ -345,6 +371,28 @@ class App extends Component {
               </Alert>
             </Snackbar>
 
+            {/* Email Import Success Snackbar */}
+            <Snackbar
+              open={this.state.emailSnackState}
+              autoHideDuration={3000}
+              onClose={this.handleEmailSnackClose}
+            >
+              <Alert onClose={this.handleEmailSnackClose} severity="success">
+                Email Updated!
+              </Alert>
+            </Snackbar>
+
+            {/* Email Error Import Success Snackbar */}
+            <Snackbar
+              open={this.state.emailSnackErrorState}
+              autoHideDuration={3000}
+              onClose={this.handleEmailErrorSnackClose}
+            >
+              <Alert onClose={this.handleEmailErrorSnackClose} severity="error">
+                Please check the Email and try again
+              </Alert>
+            </Snackbar>
+
             <Switch>
               <Route
                 exact
@@ -414,7 +462,15 @@ class App extends Component {
               />
               <Route
                 path="/profile/"
-                render={() => <QEProfile setEmail={this.setEmail} />}
+                render={() => (
+                  <QEProfile
+                    setEmail={this.setEmail}
+                    playerTag={this.state.playerBattleTag}
+                    patronStatus={this.state.patronStatus}
+                    emailSnack={this.handleEmailSnackOpen}
+                    emailSnackError={this.handleEmailErrorSnackOpen}
+                  />
+                )}
               />
             </Switch>
           </div>
