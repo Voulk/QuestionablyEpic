@@ -152,6 +152,7 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel) {
         let effect = activeTrinket.effects[0];
 
         bonus_stats.intellect = getProcessedValue(effect.coefficient, effect.table, itemLevel) * convertPPMToUptime(effect.ppm, effect.duration);
+        console.log("INSIGNIA Int:" + bonus_stats.intellect + ". Proc: " + getProcessedValue(effect.coefficient, effect.table, itemLevel) + ". Uptime: " + convertPPMToUptime(effect.ppm, effect.duration))
 
     }
     else if (effectName === "Sinful Gladiator's Badge of Ferocity") {
@@ -159,6 +160,7 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel) {
         let effect = activeTrinket.effects[0];
 
         bonus_stats.intellect = getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.duration / effect.cooldown;
+        console.log("BADGE Int:" + bonus_stats.intellect)
     }
     else if (effectName === "Inscrutable Quantum Device") {
 

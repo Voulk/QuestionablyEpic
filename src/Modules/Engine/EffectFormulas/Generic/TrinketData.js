@@ -215,7 +215,7 @@ export const trinket_data = [
         name: 'Spiritual Alchemy Stone',
         effects: [
             { 
-                coefficient: 1.987097, // Tooltip suggests 2.2 but in-game it gives you 1.1. TODO: Check after release. 
+                coefficient: 1.987097, 
                 table: -1,  
                 duration: 15, 
                 ppm: 1
@@ -226,7 +226,7 @@ export const trinket_data = [
         name: "Sinful Gladiator's Insignia of Alacrity",
         effects: [
             { 
-                coefficient: 1.00266, // Tooltip suggests 2.2 but in-game it gives you 1.1. TODO: Check after release. 
+                coefficient: 1.00266, 
                 table: -1,  
                 duration: 20, 
                 ppm: 1.5
@@ -237,7 +237,7 @@ export const trinket_data = [
     name: "Sinful Gladiator's Badge of Ferocity",
     effects: [
         { 
-            coefficient: 2.095342, // Tooltip suggests 2.2 but in-game it gives you 1.1. TODO: Check after release. 
+            coefficient: 2.095342, 
             table: -1,  
             duration: 15, 
             cooldown: 60,
@@ -248,7 +248,7 @@ export const trinket_data = [
     name: "Inscrutable Quantum Device",
     effects: [
         { 
-            coefficient: 3.55, // Tooltip suggests 2.2 but in-game it gives you 1.1. TODO: Check after release. 
+            coefficient: 3.55, 
             table: -1,  
             duration: 30, 
             cooldown: 180,
