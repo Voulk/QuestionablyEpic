@@ -342,7 +342,7 @@ export default function QuickCompare(props) {
   const calculateScore = (item) => {};
 
   fillItems(activeSlot, props.pl.spec);
-  let wepCombos = buildWepCombos(props.pl);
+  const wepCombos = buildWepCombos(props.pl);
 
   return (
     <div
@@ -802,7 +802,7 @@ export default function QuickCompare(props) {
               </Grid>
             </Grid>
 
-            {/* Trinket */}
+            {/* Combos */}
             <Grid item xs={12}>
               <Typography color="primary" variant="h5">
                 {t("slotNames.weaponCombos")}

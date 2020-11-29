@@ -214,7 +214,7 @@ export function buildWepCombos(player) {
     for (let k = 0; k < off_hands.length; k++) {
       let off_hand = off_hands[k];
 
-      //console.log("COMBO: " + main_hand.id + " - " + off_hand.id);
+      console.log("Wep Loop" + i + "/" + k + ". " + main_hand.level + ". " + off_hand.level);
 
       let item = new Item(
         main_hand.id,
@@ -228,7 +228,7 @@ export function buildWepCombos(player) {
 
       item.softScore = main_hand.softScore + off_hand.softScore;
       item.offhandID = off_hand.id;
-
+      console.log("COMBO: " + main_hand.level + " - " + off_hand.level + ". Combined: " + item.level);
       wep_list.push(item);
     }
   }
@@ -238,6 +238,7 @@ export function buildWepCombos(player) {
   }
 
   wep_list.sort((a, b) => (a.softScore < b.softScore ? 1 : -1));
+  console.log(JSON.stringify(wep_list));
   return wep_list;
 }
 

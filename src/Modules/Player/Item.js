@@ -11,6 +11,7 @@ class Item {
     this.tertiary = tertiary;
     this.softScore = softScore;
     this.uniqueHash = this.getUnique(id);
+    console.log("Setting level to " + level);
     
   }
 

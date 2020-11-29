@@ -102,7 +102,7 @@ export default function ItemCard(props) {
         width={15}
         height={15}
         style={{ verticalAlign: "middle" }}
-        alt="Socket"
+        alt="Socket"  
       />{" "}
       /
     </div>
