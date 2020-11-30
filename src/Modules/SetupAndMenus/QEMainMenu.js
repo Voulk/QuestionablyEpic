@@ -60,6 +60,7 @@ export default function QEMainMenu(props) {
   // const currentLanguage = i18n.language;
   const classes = useStyles();
   const characterCount = props.allChars.getAllChar().length;
+  const patron = !(props.patreonStatus === "Basic" || props.patreonStatus === "Standard");
 
   return (
     <div style={{ backgroundColor: "#313131" }}>
@@ -75,6 +76,29 @@ export default function QEMainMenu(props) {
       >
         <p className="headers">{/*t("MainMenuItemsH") */}</p>
         <Grid container spacing={2}>
+          <Grid item xs={12}>
+          
+          <Button
+                key={321}
+                variant="contained"
+                onClick={() => window.open("https://patreon.com/questionablyepic", "_blank")}
+                color="secondary"
+                disabled={patron}
+                style={{
+                  width: "100%",
+                  height: "44px",
+                  whiteSpace: "nowrap",
+                  justifyContent: "center",
+                  textTransform: "none",
+                  paddingLeft: "32px",
+                  color: "#F2BF59"
+                  
+                }}
+                
+              >
+                {patron ? "Thank you so much for your support!" : "Love the app? Support the site on Patreon!" }
+              </Button>
+          </Grid>
           <Grid item xs={12}>
             <Paper elevation={0} style={{ border: "1px", padding: 10 }}>
               <Typography
