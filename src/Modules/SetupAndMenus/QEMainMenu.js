@@ -185,7 +185,6 @@ export default function QEMainMenu(props) {
 
         <p className="headers" style={{fontSize: "12px"}}>QE Live Update 7. Last Updated 30 November.</p>
         
-
       </div>
     </div>
   );
