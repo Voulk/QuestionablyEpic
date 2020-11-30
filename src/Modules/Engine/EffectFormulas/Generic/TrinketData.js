@@ -122,7 +122,7 @@ export const trinket_data = [
             { 
                 coefficient: 89.08621, // This represents the upper quartile of the given cards.  
                 table: -8, 
-                efficiency: 0.65, // You do have to heal a sub 35% health target every 30s for max efficiency which doesn't seem at all likely. 
+                efficiency: 0.62, // You do have to heal a sub 35% health target every 30s for max efficiency which doesn't seem at all likely. 
                 cooldown: 30, 
             }
         ]
@@ -254,6 +254,17 @@ export const trinket_data = [
             cooldown: 180,
         },
     ]
+},
+    {
+        name: "Flame of Battle",
+        effects: [
+            { 
+                coefficient: 2.955178, 
+                table: -1,  
+                duration: 12, 
+                cooldown: 90,
+            },
+        ]
     },
     
     

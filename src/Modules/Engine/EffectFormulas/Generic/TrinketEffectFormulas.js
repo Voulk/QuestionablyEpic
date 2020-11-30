@@ -160,7 +160,7 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel) {
         let effect = activeTrinket.effects[0];
 
         bonus_stats.intellect = getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.duration / effect.cooldown;
-        console.log("BADGE Int:" + bonus_stats.intellect)
+       
     }
     else if (effectName === "Inscrutable Quantum Device") {
 
@@ -169,6 +169,12 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel) {
 
         bonus_stats[playerBestSecondary] = getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.duration / effect.cooldown;
 
+    }
+    else if (effectName === "Flame of Battle") {
+        
+        let effect = activeTrinket.effects[0];
+
+        bonus_stats.intellect = getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.duration / effect.cooldown;
     }
 
 

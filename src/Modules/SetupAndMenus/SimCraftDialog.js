@@ -16,7 +16,7 @@ export default function SimCraftInput(props) {
   const [open, setOpen] = React.useState(false);
   const [simC, setSimC] = React.useState("");
   const [errorMessage, setErrorMessage] = React.useState("");
-
+  const characterCount = props.allChars.getAllChar().length || 0
   const handleClickOpen = () => {
     setOpen(true);
   };
@@ -39,7 +39,7 @@ export default function SimCraftInput(props) {
 
   return (
     <div>
-      <Button style={{ color: "white" }} onClick={handleClickOpen}>
+      <Button style={{ whiteSpace: "nowrap" }} onClick={handleClickOpen} disabled={characterCount === 0}>
         {t("SimCInput.SimCHeaderButtonLabel")}
       </Button>
       <Dialog

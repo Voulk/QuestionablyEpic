@@ -76,7 +76,7 @@ export default function QEMainMenu(props) {
         <p className="headers">{/*t("MainMenuItemsH") */}</p>
         <Grid container spacing={2}>
           <Grid item xs={12}>
-            <Paper elevation={0} style={{ border: "1px", padding: 12 }}>
+            <Paper elevation={0} style={{ border: "1px", padding: 10 }}>
               <Typography
                 style={{ color: "limegreen" }}
                 align="left"
@@ -157,6 +157,7 @@ export default function QEMainMenu(props) {
             ""
           )}
         </Grid>
+
       </div>
     </div>
   );
