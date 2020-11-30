@@ -150,6 +150,7 @@ function processItem(line, player, contentType) {
         //console.log("Adding " + idPayload["level"]);
       } else if ("socket" in idPayload) {
         itemSocket = true;
+        console.log("Socket found on item: " + itemID)
       } else if (bonus_id === "41") {
         itemTertiary = "Leech";
       }
@@ -197,7 +198,7 @@ function processItem(line, player, contentType) {
       itemID,
       "",
       itemSlot,
-      checkDefaultSocket(itemID),
+      (itemSocket || checkDefaultSocket(itemID)),
       itemTertiary,
       0,
       itemLevel

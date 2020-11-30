@@ -406,6 +406,7 @@ class App extends Component {
                     charAddedSnack={this.handleCharSnackOpen}
                     charUpdatedSnack={this.handleCharUpdateSnackOpen}
                     contentType={this.state.contentType}
+                    patronStatus={this.state.patronStatus}
                   />
                 )}
               />
