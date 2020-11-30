@@ -418,49 +418,49 @@ export const bossIds = [
 ];
 
 export const bossAbilities = [
-  //N'zoth
-  {
-    bossID: 2375,
-    ability: "Paranoia",
-    guid: 309980,
-    cooldownPlannerActive: true,
-    icon: require("../../../Images/Bosses/Nya'lotha/Nzoth/spell_arcane_mindmastery.jpg"),
-  },
-  {
-    bossID: 2375,
-    ability: "Harvest Thoughts",
-    guid: 317066,
-    cooldownPlannerActive: true,
-    icon: require("../../../Images/Bosses/Nya'lotha/Nzoth/spell_shadow_brainwash.jpg"),
-  },
-  {
-    bossID: 2375,
-    ability: "Eternal Torment",
-    guid: 318449,
-    cooldownPlannerActive: true,
-    icon: require("../../../Images/Bosses/Nya'lotha/Nzoth/spell_shadow_painandsuffering.jpg"),
-  },
-  {
-    bossID: 2375,
-    ability: "Mindgate",
-    guid: 309046,
-    cooldownPlannerActive: true,
-    icon: require("../../../Images/Bosses/Nya'lotha/Nzoth/ability_kaztik_dominatemind.jpg"),
-  },
-  {
-    bossID: 2375,
-    ability: "Evoke Anguish",
-    guid: 317102,
-    cooldownPlannerActive: true,
-    icon: require("../../../Images/Bosses/Nya'lotha/Nzoth/spell_shadow_shadetruesight.jpg"),
-  },
-  {
-    bossID: 2375,
-    ability: "Cleansing Protocol",
-    guid: 319350,
-    cooldownPlannerActive: true,
-    icon: require("../../../Images/Bosses/Nya'lotha/Nzoth/ability_titankeeper_cleansingorb.jpg"),
-  },
+  // //N'zoth
+  // {
+  //   bossID: 2375,
+  //   ability: "Paranoia",
+  //   guid: 309980,
+  //   cooldownPlannerActive: true,
+  //   icon: require("../../../Images/Bosses/Nya'lotha/Nzoth/spell_arcane_mindmastery.jpg"),
+  // },
+  // {
+  //   bossID: 2375,
+  //   ability: "Harvest Thoughts",
+  //   guid: 317066,
+  //   cooldownPlannerActive: true,
+  //   icon: require("../../../Images/Bosses/Nya'lotha/Nzoth/spell_shadow_brainwash.jpg"),
+  // },
+  // {
+  //   bossID: 2375,
+  //   ability: "Eternal Torment",
+  //   guid: 318449,
+  //   cooldownPlannerActive: true,
+  //   icon: require("../../../Images/Bosses/Nya'lotha/Nzoth/spell_shadow_painandsuffering.jpg"),
+  // },
+  // {
+  //   bossID: 2375,
+  //   ability: "Mindgate",
+  //   guid: 309046,
+  //   cooldownPlannerActive: true,
+  //   icon: require("../../../Images/Bosses/Nya'lotha/Nzoth/ability_kaztik_dominatemind.jpg"),
+  // },
+  // {
+  //   bossID: 2375,
+  //   ability: "Evoke Anguish",
+  //   guid: 317102,
+  //   cooldownPlannerActive: true,
+  //   icon: require("../../../Images/Bosses/Nya'lotha/Nzoth/spell_shadow_shadetruesight.jpg"),
+  // },
+  // {
+  //   bossID: 2375,
+  //   ability: "Cleansing Protocol",
+  //   guid: 319350,
+  //   cooldownPlannerActive: true,
+  //   icon: require("../../../Images/Bosses/Nya'lotha/Nzoth/ability_titankeeper_cleansingorb.jpg"),
+  // },
 
   // Hungering Destroyer
   {
@@ -1549,8 +1549,8 @@ export const talents = [
 ];
 
 export const raidList = [
-  { id: 0, zoneID: 2217, raidName: "Ny’alotha" },
-  { id: 1, zoneID: 2296, raidName: "Castle Nathria" },
+  // { id: 0, zoneID: 2217, raidName: "Ny’alotha" },
+  { id: 0, zoneID: 2296, raidName: "Castle Nathria" },
 ];
 export const bossList = [
   {
