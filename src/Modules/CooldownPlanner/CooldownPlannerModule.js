@@ -293,7 +293,7 @@ class HolyDiver extends Component {
                     style={{ transformOrigin: "0 0 0" }}
                     {...(this.state.damageTableShow ? { timeout: 1000 } : {})}
                   >
-                    <Paper bgcolor="#333">
+                    <Paper bgcolor="#333" elevation={0}>
                       <Grid item xs={12} padding={1} align="center">
                         <div
                           style={{
@@ -406,7 +406,10 @@ class HolyDiver extends Component {
                     <CooldownTimeline data={this.state.Updateddatacasts} />
                   </Grid>
                   <Grid item xs={12} sm={12} md={12} lg={4} xl={4} padding={1}>
-                    <Paper style={{ padding: 8, marginBottom: 8 }}>
+                    <Paper
+                      style={{ padding: 8, marginBottom: 8 }}
+                      elevation={0}
+                    >
                       <Typography
                         variant="h6"
                         color="primary"

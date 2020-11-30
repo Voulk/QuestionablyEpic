@@ -53,7 +53,7 @@ export default function HealerInfoCards(props) {
     <Grid container spacing={1} style={{ display: "block" }}>
       {props.heals.map((key, index) => (
         <Grid container item key={index} direction="row">
-          <Accordion style={{ width: "100%" }}>
+          <Accordion style={{ width: "100%" }} elevation={0}>
             <AccordionSummary
               expandIcon={<ExpandMoreIcon />}
               aria-controls="panel1a-content"
