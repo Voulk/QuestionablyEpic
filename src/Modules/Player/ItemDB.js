@@ -12667,6 +12667,122 @@ export const itemDB = [
         "slot": "Chest"
     },
     {
+        "id": 175516,
+        "name": "Cruel Executioner's Stompers",
+        "names": {
+            "cn": "",
+            "en": "Cruel Executioner's Stompers",
+            "ru": "Cruel Executioner's Stompers",
+            "es": "Cruel Executioner's Stompers",
+            "br": "Cruel Executioner's Stompers",
+            "kr": "",
+            "fr": "Cruel Executioner's Stompers",
+            "de": "Cruel Executioner's Stompers"
+        },
+        "icon": "inv_boot_plate_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3650,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 3350
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Feet"
+    },
+    {
+        "id": 175517,
+        "name": "Corpse-Stitcher's Slippers",
+        "names": {
+            "cn": "",
+            "en": "Corpse-Stitcher's Slippers",
+            "ru": "Corpse-Stitcher's Slippers",
+            "es": "Corpse-Stitcher's Slippers",
+            "br": "Corpse-Stitcher's Slippers",
+            "kr": "",
+            "fr": "Corpse-Stitcher's Slippers",
+            "de": "Corpse-Stitcher's Slippers"
+        },
+        "icon": "inv_boot_cloth_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3050,
+            "mastery": 3950,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Feet"
+    },
+    {
+        "id": 175518,
+        "name": "Flesh Architect's Galoshes",
+        "names": {
+            "cn": "",
+            "en": "Flesh Architect's Galoshes",
+            "ru": "Flesh Architect's Galoshes",
+            "es": "Flesh Architect's Galoshes",
+            "br": "Flesh Architect's Galoshes",
+            "kr": "",
+            "fr": "Flesh Architect's Galoshes",
+            "de": "Flesh Architect's Galoshes"
+        },
+        "icon": "inv_mail_oribosquesting_b_01_boots",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3350,
+            "mastery": 0,
+            "versatility": 3650
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Feet"
+    },
+    {
+        "id": 175519,
+        "name": "Deceitful Agent's Treads",
+        "names": {
+            "cn": "",
+            "en": "Deceitful Agent's Treads",
+            "ru": "Deceitful Agent's Treads",
+            "es": "Deceitful Agent's Treads",
+            "br": "Deceitful Agent's Treads",
+            "kr": "",
+            "fr": "Deceitful Agent's Treads",
+            "de": "Deceitful Agent's Treads"
+        },
+        "icon": "inv_boot_oribosquesting_b_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3650,
+            "mastery": 0,
+            "versatility": 3350
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Feet"
+    },
+    {
         "id": 175524,
         "name": "Risen Journeyman's Visage",
         "names": {
@@ -17509,7 +17625,7 @@ export const itemDB = [
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
-            "name": "Sinful Aspirant's Badge of Ferocity"
+            "name": "Sinful Gladiator's Badge of Ferocity"
         }
     },
     {
@@ -24488,7 +24604,7 @@ export const itemDB = [
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
-            "name": "Sinful Aspirant's Insignia of Alacrity"
+            "name": "Sinful Gladiator's Insignia of Alacrity"
         }
     },
     {
@@ -24609,7 +24725,7 @@ export const itemDB = [
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
-            "name": "Sinful Aspirant's Emblem"
+            "name": "Sinful Gladiator's Emblem"
         }
     },
     {
@@ -26603,7 +26719,6 @@ export const itemDB = [
             "fr": "Changelin délié",
             "de": "Unbändiger Wechselbalg"
         },
-        "icon": "inv_pet_spectralporcupinegreen",
         "itemClass": 4,
         "itemSubClass": 0,
         "itemLevel": 158,
@@ -37365,6 +37480,122 @@ export const itemDB = [
         "slot": "Back"
     },
     {
+        "id": 180425,
+        "name": "9.0 PvP - PvP Reward - Accessory - Cloak - 02",
+        "names": {
+            "cn": "",
+            "en": "9.0 PvP - PvP Reward - Accessory - Cloak - 02",
+            "ru": "9.0 PvP - PvP Reward - Accessory - Cloak - 02",
+            "es": "9.0 PvP - PvP Reward - Accessory - Cloak - 02",
+            "br": "9.0 JxJ - Recompensa de JxJ - Acessório - Manto - 02",
+            "kr": "",
+            "fr": "9.0 PvP - PvP Reward - Accessory - Cloak - 02",
+            "de": "9.0 PvP - PvP Reward - Accessory - Cloak - 02"
+        },
+        "icon": "inv_cape_90pvp_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 155,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3500,
+            "crit": 0,
+            "mastery": 3500,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Back"
+    },
+    {
+        "id": 180426,
+        "name": "9.0 PvP - PvP Reward - Accessory - Cloak - 03",
+        "names": {
+            "cn": "",
+            "en": "9.0 PvP - PvP Reward - Accessory - Cloak - 03",
+            "ru": "9.0 PvP - PvP Reward - Accessory - Cloak - 03",
+            "es": "9.0 PvP - PvP Reward - Accessory - Cloak - 03",
+            "br": "9.0 JxJ - Recompensa de JxJ - Acessório - Manto - 03",
+            "kr": "",
+            "fr": "9.0 PvP - PvP Reward - Accessory - Cloak - 03",
+            "de": "9.0 PvP - PvP Reward - Accessory - Cloak - 03"
+        },
+        "icon": "inv_cape_90pvp_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 155,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3500,
+            "crit": 0,
+            "mastery": 3500,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Back"
+    },
+    {
+        "id": 180427,
+        "name": "9.0 PvP - PvP Reward - Accessory - Cloak - 04",
+        "names": {
+            "cn": "",
+            "en": "9.0 PvP - PvP Reward - Accessory - Cloak - 04",
+            "ru": "9.0 PvP - PvP Reward - Accessory - Cloak - 04",
+            "es": "9.0 PvP - PvP Reward - Accessory - Cloak - 04",
+            "br": "9.0 JxJ - Recompensa de JxJ - Acessório - Manto - 04",
+            "kr": "",
+            "fr": "9.0 PvP - PvP Reward - Accessory - Cloak - 04",
+            "de": "9.0 PvP - PvP Reward - Accessory - Cloak - 04"
+        },
+        "icon": "inv_cape_90pvp_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 155,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3500,
+            "crit": 0,
+            "mastery": 3500,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Back"
+    },
+    {
+        "id": 180428,
+        "name": "9.0 PvP - PvP Reward - Accessory - Cloak - 05",
+        "names": {
+            "cn": "",
+            "en": "9.0 PvP - PvP Reward - Accessory - Cloak - 05",
+            "ru": "9.0 PvP - PvP Reward - Accessory - Cloak - 05",
+            "es": "9.0 PvP - PvP Reward - Accessory - Cloak - 05",
+            "br": "9.0 JxJ - Recompensa de JxJ - Acessório - Manto - 05",
+            "kr": "",
+            "fr": "9.0 PvP - PvP Reward - Accessory - Cloak - 05",
+            "de": "9.0 PvP - PvP Reward - Accessory - Cloak - 05"
+        },
+        "icon": "inv_cape_90pvp_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 155,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3500,
+            "crit": 0,
+            "mastery": 3500,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Back"
+    },
+    {
         "id": 180444,
         "name": "Harmonia's Chosen Belt",
         "names": {
@@ -39257,93 +39488,6 @@ export const itemDB = [
         "slot": "Back"
     },
     {
-        "id": 180939,
-        "name": "Mantle of the Forgemaster's Dark Blades",
-        "names": {
-            "cn": "",
-            "en": "Mantle of the Forgemaster's Dark Blades",
-            "ru": "Накидка темных клинков начальника кузни",
-            "es": "Manto de hojas oscuras del maestro de forja",
-            "br": "Dragonas das Lâminas Sombrias do Mestre Forjador",
-            "kr": "",
-            "fr": "Mantelet des lames sombres du maître-forge",
-            "de": "Mantel der Dunkelklingen des Schmiedemeisters"
-        },
-        "icon": "inv_cape_special_revendreth_d_02",
-        "itemClass": 4,
-        "itemSubClass": 1,
-        "itemLevel": 150,
-        "stats": {
-            "intellect": 5259,
-            "stamina": 7889,
-            "haste": 2150,
-            "crit": 4850,
-            "mastery": 0,
-            "versatility": 0
-        },
-        "dropLoc": "",
-        "selectable": "true",
-        "slot": "Back"
-    },
-    {
-        "id": 180940,
-        "name": "Ebony Crypt Keeper's Mantle",
-        "names": {
-            "cn": "",
-            "en": "Ebony Crypt Keeper's Mantle",
-            "ru": "Эбонитовая накидка хранителя склепа",
-            "es": "Manto de ébano del guardián de la cripta",
-            "br": "Dragonas do Guardião da Cripta Ebâneas",
-            "kr": "",
-            "fr": "Mantelet ébène de gardien des cryptes",
-            "de": "Tiefschwarzer Umhang des Grufthüters"
-        },
-        "icon": "inv_cape_special_revendreth_d_01",
-        "itemClass": 4,
-        "itemSubClass": 1,
-        "itemLevel": 154,
-        "stats": {
-            "intellect": 5259,
-            "stamina": 7889,
-            "haste": 0,
-            "crit": 4550,
-            "mastery": 0,
-            "versatility": 2450
-        },
-        "dropLoc": "",
-        "selectable": "true",
-        "slot": "Back"
-    },
-    {
-        "id": 180941,
-        "name": "Kael's Dark Sinstone Chain",
-        "names": {
-            "cn": "",
-            "en": "Kael's Dark Sinstone Chain",
-            "ru": "Цепочка камней грехов Келя",
-            "es": "Cadena de piedra del pecado oscura de Kael",
-            "br": "Corrente Sombria da Pedra de Pecado de Kael",
-            "kr": "",
-            "fr": "Chaîne de stèle du vice noire de Kael",
-            "de": "Kaels dunkle Sündensteinkette"
-        },
-        "icon": "inv_cape_special_revendreth_d_03",
-        "itemClass": 4,
-        "itemSubClass": 1,
-        "itemLevel": 155,
-        "stats": {
-            "intellect": 5259,
-            "stamina": 7889,
-            "haste": 2750,
-            "crit": 0,
-            "mastery": 0,
-            "versatility": 4250
-        },
-        "dropLoc": "",
-        "selectable": "true",
-        "slot": "Back"
-    },
-    {
         "id": 181175,
         "name": "Sincollector's Vestment",
         "names": {
@@ -40739,17 +40883,17 @@ export const itemDB = [
         "names": {
             "cn": "",
             "en": "Sylvan Whiteshield",
-            "ru": "Белый щит леса",
-            "es": "Escudoblanco nemoroso",
-            "br": "Escudo-branco Silvestre",
+            "ru": "Sylvan Whiteshield",
+            "es": "Sylvan Whiteshield",
+            "br": "Sylvan Whiteshield",
             "kr": "",
-            "fr": "Bouclier blanc sylvestre",
-            "de": "Sylvanweißschild"
+            "fr": "Sylvan Whiteshield",
+            "de": "Sylvan Whiteshield"
         },
         "icon": "inv_shield_1h_ardenwealdquest_b_01",
         "itemClass": 4,
         "itemSubClass": 6,
-        "itemLevel": 213,
+        "itemLevel": 190,
         "stats": {
             "intellect": 16132,
             "stamina": 7889,
@@ -47705,7 +47849,7 @@ export const itemDB = [
             "fr": "Cuissières chargées de souvenirs",
             "de": "Erinnerungserfüllte Beinschienen"
         },
-        "icon": "inv_helm_mail_revendrethraid_d_01",
+        "icon": "inv_pant_mail_revendrethraid_d_01",
         "itemClass": 4,
         "itemSubClass": 3,
         "itemLevel": 200,
@@ -48632,7 +48776,7 @@ export const itemDB = [
             "fr": "Grèves d’énergie énigmatique",
             "de": "Beinschützer der enigmatischen Energien"
         },
-        "icon": "inv_helm_mail_revendrethraid_d_01",
+        "icon": "inv_pant_mail_revendrethraid_d_01",
         "itemClass": 4,
         "itemSubClass": 3,
         "itemLevel": 200,
@@ -54449,7 +54593,7 @@ export const itemDB = [
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
-            "name": "Sinful Aspirant's Medallion"
+            "name": "Sinful Gladiator's Medallion"
         }
     },
     {
@@ -54483,7 +54627,7 @@ export const itemDB = [
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
-            "name": "Sinful Aspirant's Relentless Brooch"
+            "name": "Sinful Gladiator's Relentless Brooch"
         }
     },
     {
@@ -54517,7 +54661,7 @@ export const itemDB = [
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
-            "name": "Sinful Aspirant's Sigil of Adaptation"
+            "name": "Sinful Gladiator's Sigil of Adaptation"
         }
     },
     {
@@ -54649,7 +54793,7 @@ export const itemDB = [
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
-            "name": "Corrupted Aspirant's Medallion"
+            "name": "Corrupted Gladiator's Medallion"
         }
     },
     {
@@ -54682,7 +54826,7 @@ export const itemDB = [
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
-            "name": "Corrupted Aspirant's Relentless Brooch"
+            "name": "Corrupted Gladiator's Relentless Brooch"
         }
     },
     {
@@ -54715,7 +54859,7 @@ export const itemDB = [
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
-            "name": "Corrupted Aspirant's Sigil of Adaptation"
+            "name": "Corrupted Gladiator's Sigil of Adaptation"
         }
     },
     {
@@ -56814,6 +56958,35 @@ export const itemDB = [
         "slot": "Back"
     },
     {
+        "id": 184320,
+        "name": "Sinfall Initiate's Staff",
+        "names": {
+            "cn": "",
+            "en": "Sinfall Initiate's Staff",
+            "ru": "Sinfall Initiate's Staff",
+            "es": "Sinfall Initiate's Staff",
+            "br": "Sinfall Initiate's Staff",
+            "kr": "",
+            "fr": "Sinfall Initiate's Staff",
+            "de": "Sinfall Initiate's Staff"
+        },
+        "icon": "inv_staff_2h_revendrethquest_b_01",
+        "itemClass": 2,
+        "itemSubClass": 10,
+        "itemLevel": 85,
+        "stats": {
+            "intellect": 18121,
+            "stamina": 7889,
+            "haste": 3350,
+            "crit": 0,
+            "mastery": 3650,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "2H Weapon"
+    },
+    {
         "id": 184365,
         "name": "Aegis of Salvation",
         "names": {
@@ -57051,17 +57224,17 @@ export const itemDB = [
         "names": {
             "cn": "",
             "en": "Forgotten Shade's Shawl",
-            "ru": "Шаль забытой тени",
-            "es": "Chal de sombra olvidada",
-            "br": "Xale do Vulto Esquecido",
+            "ru": "Forgotten Shade's Shawl",
+            "es": "Forgotten Shade's Shawl",
+            "br": "Forgotten Shade's Shawl",
             "kr": "",
-            "fr": "Châle d’ombre oubliée",
-            "de": "Vergessener Schemenschal"
+            "fr": "Forgotten Shade's Shawl",
+            "de": "Forgotten Shade's Shawl"
         },
         "icon": "inv_robe_cloth_oribosdungeon_c_01",
         "itemClass": 4,
         "itemSubClass": 1,
-        "itemLevel": 158,
+        "itemLevel": 183,
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -57080,17 +57253,17 @@ export const itemDB = [
         "names": {
             "cn": "",
             "en": "Sash of the Ethereal Servant",
-            "ru": "Кушак эфирного слуги",
-            "es": "Fajín del sirviente etéreo",
-            "br": "Faixa do Serviçal Etéreo",
+            "ru": "Sash of the Ethereal Servant",
+            "es": "Sash of the Ethereal Servant",
+            "br": "Sash of the Ethereal Servant",
             "kr": "",
-            "fr": "Écharpe du serviteur éthérien",
-            "de": "Schärpe des astralen Dieners"
+            "fr": "Sash of the Ethereal Servant",
+            "de": "Sash of the Ethereal Servant"
         },
         "icon": "inv_belt_cloth_oribosdungeon_c_01",
         "itemClass": 4,
         "itemSubClass": 1,
-        "itemLevel": 158,
+        "itemLevel": 183,
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -57109,17 +57282,17 @@ export const itemDB = [
         "names": {
             "cn": "",
             "en": "Mawsworn Assassin's Doublet",
-            "ru": "Дублет Верного Утробе убийцы",
-            "es": "Jubón de asesino jurafauces",
-            "br": "Gibão do Górjuro Assassino",
+            "ru": "Mawsworn Assassin's Doublet",
+            "es": "Mawsworn Assassin's Doublet",
+            "br": "Mawsworn Assassin's Doublet",
             "kr": "",
-            "fr": "Doublet d’assassin antrelige",
-            "de": "Schlundgebundenes Assassinenwams"
+            "fr": "Mawsworn Assassin's Doublet",
+            "de": "Mawsworn Assassin's Doublet"
         },
         "icon": "inv_chest_leather_oribosdungeon_c_01",
         "itemClass": 4,
         "itemSubClass": 2,
-        "itemLevel": 158,
+        "itemLevel": 183,
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -57138,17 +57311,17 @@ export const itemDB = [
         "names": {
             "cn": "",
             "en": "Armguard of the Unseen Assailant",
-            "ru": "Боевые наручи незримого налетчика",
-            "es": "Guardabrazos del asaltante oculto",
-            "br": "Guarda-braços do Atacante Oculto",
+            "ru": "Armguard of the Unseen Assailant",
+            "es": "Armguard of the Unseen Assailant",
+            "br": "Armguard of the Unseen Assailant",
             "kr": "",
-            "fr": "Garde-bras de l’assaillant invisible",
-            "de": "Armschützer des unsichtbaren Angreifers"
+            "fr": "Armguard of the Unseen Assailant",
+            "de": "Armguard of the Unseen Assailant"
         },
         "icon": "inv_bracer_leather_oribosdungeon_c_01",
         "itemClass": 4,
         "itemSubClass": 2,
-        "itemLevel": 158,
+        "itemLevel": 183,
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -57167,17 +57340,17 @@ export const itemDB = [
         "names": {
             "cn": "",
             "en": "Dread Harrier's Pauldrons",
-            "ru": "Наплечье жуткой гончей",
-            "es": "Espaldares de hostigador aterrador",
-            "br": "Brafoneiras do Tartaranhão Pavoroso",
+            "ru": "Dread Harrier's Pauldrons",
+            "es": "Dread Harrier's Pauldrons",
+            "br": "Dread Harrier's Pauldrons",
             "kr": "",
-            "fr": "Espauliers de persécuteur de l’effroi",
-            "de": "Schulterstücke des Schreckenshetzers"
+            "fr": "Dread Harrier's Pauldrons",
+            "de": "Dread Harrier's Pauldrons"
         },
         "icon": "inv_shoulder_mail_oribosdungeon_c_01",
         "itemClass": 4,
         "itemSubClass": 3,
-        "itemLevel": 158,
+        "itemLevel": 183,
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -57196,17 +57369,17 @@ export const itemDB = [
         "names": {
             "cn": "",
             "en": "Grips of the Dreadhound Tamer",
-            "ru": "Захваты укротителя жутких гончих",
-            "es": "Mandiletes del domador de canes de terror",
-            "br": "Guantes do Domador de Cães Medonhos",
+            "ru": "Grips of the Dreadhound Tamer",
+            "es": "Grips of the Dreadhound Tamer",
+            "br": "Grips of the Dreadhound Tamer",
             "kr": "",
-            "fr": "Poignes du dresseur de chiens de l’effroi",
-            "de": "Handschutz des Schreckenshundzähmers"
+            "fr": "Grips of the Dreadhound Tamer",
+            "de": "Grips of the Dreadhound Tamer"
         },
         "icon": "inv_glove_mail_oribosdungeon_c_01",
         "itemClass": 4,
         "itemSubClass": 3,
-        "itemLevel": 158,
+        "itemLevel": 183,
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -57225,17 +57398,17 @@ export const itemDB = [
         "names": {
             "cn": "",
             "en": "Dreadguard's Greathelm",
-            "ru": "Большой шлем жуткого стража",
-            "es": "Gran yelmo del Guardia del Terror",
-            "br": "Grande Elmo do Deimoguarda",
+            "ru": "Dreadguard's Greathelm",
+            "es": "Dreadguard's Greathelm",
+            "br": "Dreadguard's Greathelm",
             "kr": "",
-            "fr": "Grand heaume de gardeffroi",
-            "de": "Großhelm der Schreckenswache"
+            "fr": "Dreadguard's Greathelm",
+            "de": "Dreadguard's Greathelm"
         },
         "icon": "inv_plate_oribosdungeon_c_01_helm",
         "itemClass": 4,
         "itemSubClass": 4,
-        "itemLevel": 158,
+        "itemLevel": 183,
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -57254,17 +57427,17 @@ export const itemDB = [
         "names": {
             "cn": "",
             "en": "Bracers of the Tenebrous Retinue",
-            "ru": "Наручи свиты теней",
-            "es": "Brazales del séquito tenebroso",
-            "br": "Braçadeiras do Cortejo Tenebroso",
+            "ru": "Bracers of the Tenebrous Retinue",
+            "es": "Bracers of the Tenebrous Retinue",
+            "br": "Bracers of the Tenebrous Retinue",
             "kr": "",
-            "fr": "Brassards du cortège ténébreux",
-            "de": "Armschienen des schattenhaften Gefolges"
+            "fr": "Bracers of the Tenebrous Retinue",
+            "de": "Bracers of the Tenebrous Retinue"
         },
         "icon": "inv_plate_oribosdungeon_c_01_bracer",
         "itemClass": 4,
         "itemSubClass": 4,
-        "itemLevel": 158,
+        "itemLevel": 183,
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -58530,12 +58703,12 @@ export const itemDB = [
         "names": {
             "cn": "",
             "en": "Decadent Nathrian Shawl",
-            "ru": "Декаденская нафрийская шаль",
-            "es": "Chal de Nathria suntuoso",
-            "br": "Xale Nathriano Decadente",
+            "ru": "Decadent Nathrian Shawl",
+            "es": "Decadent Nathrian Shawl",
+            "br": "Decadent Nathrian Shawl",
             "kr": "",
-            "fr": "Châle nathrian décadent",
-            "de": "Dekadenter Nathriaschal"
+            "fr": "Decadent Nathrian Shawl",
+            "de": "Decadent Nathrian Shawl"
         },
         "icon": "inv_cloth_revendrethraid_d_01_cape",
         "itemClass": 4,
@@ -58559,17 +58732,17 @@ export const itemDB = [
         "names": {
             "cn": "",
             "en": "Fate-Sewn Shawl",
-            "ru": "Шаль из нитей судьбы",
-            "es": "Chal cosido por el destino",
-            "br": "Xale Cosido em Sina",
+            "ru": "Fate-Sewn Shawl",
+            "es": "Fate-Sewn Shawl",
+            "br": "Fate-Sewn Shawl",
             "kr": "",
-            "fr": "Châle tissé par le destin",
-            "de": "Schicksalgenähter Schal"
+            "fr": "Fate-Sewn Shawl",
+            "de": "Fate-Sewn Shawl"
         },
         "icon": "inv_plate_oribosdungeon_c_01_cape",
         "itemClass": 4,
         "itemSubClass": 1,
-        "itemLevel": 213,
+        "itemLevel": 190,
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -58588,17 +58761,17 @@ export const itemDB = [
         "names": {
             "cn": "",
             "en": "Gast's Cloak of Compression",
-            "ru": "Призрачный плащ сжатия",
-            "es": "Capa de compresión de Gast",
-            "br": "Manto de Compressão de Gast",
+            "ru": "Gast's Cloak of Compression",
+            "es": "Gast's Cloak of Compression",
+            "br": "Gast's Cloak of Compression",
             "kr": "",
-            "fr": "Cape de compression de Gast",
-            "de": "Gasts Umhang der Kompression"
+            "fr": "Gast's Cloak of Compression",
+            "de": "Gast's Cloak of Compression"
         },
         "icon": "inv_mail_oribosquesting_b_01_cape",
         "itemClass": 4,
         "itemSubClass": 1,
-        "itemLevel": 213,
+        "itemLevel": 207,
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -58617,23 +58790,23 @@ export const itemDB = [
         "names": {
             "cn": "",
             "en": "Muirnne's Stormforged Signet",
-            "ru": "Бурекованая печатка Мьюрн",
-            "es": "Sello Tronaforjado de Muirnne",
-            "br": "Sinete Forjado em Tempestade de Muirnne",
+            "ru": "Muirnne's Stormforged Signet",
+            "es": "Muirnne's Stormforged Signet",
+            "br": "Muirnne's Stormforged Signet",
             "kr": "",
-            "fr": "Chevalière forge-foudre de Muirnne",
-            "de": "Muirnnes sturmgeschmiedetes Signet"
+            "fr": "Muirnne's Stormforged Signet",
+            "de": "Muirnne's Stormforged Signet"
         },
         "icon": "inv_70_dungeon_ring4b",
         "itemClass": 4,
         "itemSubClass": 0,
-        "itemLevel": 213,
+        "itemLevel": 190,
         "stats": {
             "intellect": 0,
             "stamina": 7889,
             "haste": 0,
-            "crit": 17500,
-            "mastery": 0,
+            "crit": 15000,
+            "mastery": 2500,
             "versatility": 0
         },
         "dropLoc": "",
@@ -58646,23 +58819,23 @@ export const itemDB = [
         "names": {
             "cn": "",
             "en": "Punishing Loop",
-            "ru": "Наказывающий обод",
-            "es": "Aro castigador",
-            "br": "Aro Castigador",
+            "ru": "Punishing Loop",
+            "es": "Punishing Loop",
+            "br": "Punishing Loop",
             "kr": "",
-            "fr": "Jonc punisseur",
-            "de": "Bestrafende Schlaufe"
+            "fr": "Punishing Loop",
+            "de": "Punishing Loop"
         },
         "icon": "inv_ring_revendreth_02_silver",
         "itemClass": 4,
         "itemSubClass": 0,
-        "itemLevel": 213,
+        "itemLevel": 207,
         "stats": {
             "intellect": 0,
             "stamina": 7889,
-            "haste": 0,
+            "haste": 2500,
             "crit": 0,
-            "mastery": 17500,
+            "mastery": 15000,
             "versatility": 0
         },
         "dropLoc": "",
@@ -58675,17 +58848,17 @@ export const itemDB = [
         "names": {
             "cn": "",
             "en": "Gaiazelle's Spiked Collar",
-            "ru": "Шипастый ошейник Гайязель",
-            "es": "Collera con pinchos de Gaiazelle",
-            "br": "Coleira Farpada de Gaiazelle",
+            "ru": "Gaiazelle's Spiked Collar",
+            "es": "Gaiazelle's Spiked Collar",
+            "br": "Gaiazelle's Spiked Collar",
             "kr": "",
-            "fr": "Collerette à pointes de Gaïazelle",
-            "de": "Gaiazelles Stachelhalsband"
+            "fr": "Gaiazelle's Spiked Collar",
+            "de": "Gaiazelle's Spiked Collar"
         },
         "icon": "inv_jewelry_necklace_42",
         "itemClass": 4,
         "itemSubClass": 0,
-        "itemLevel": 213,
+        "itemLevel": 207,
         "stats": {
             "intellect": 0,
             "stamina": 7889,
@@ -58704,17 +58877,17 @@ export const itemDB = [
         "names": {
             "cn": "",
             "en": "Joyia's Raiment of Conviction",
-            "ru": "Облачение решимости Джойи",
-            "es": "Vestiduras de convicción de Joyia",
-            "br": "Indumentária da Convicção de Joyia",
+            "ru": "Joyia's Raiment of Conviction",
+            "es": "Joyia's Raiment of Conviction",
+            "br": "Joyia's Raiment of Conviction",
             "kr": "",
-            "fr": "Grande tenue de condamnation de Joyia",
-            "de": "Joyias Gewandung der Überzeugung"
+            "fr": "Joyia's Raiment of Conviction",
+            "de": "Joyia's Raiment of Conviction"
         },
         "icon": "inv_robe_cloth_oribosdungeon_c_01",
         "itemClass": 4,
         "itemSubClass": 1,
-        "itemLevel": 213,
+        "itemLevel": 207,
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -58733,17 +58906,17 @@ export const itemDB = [
         "names": {
             "cn": "",
             "en": "Elohin's Burden of Patience",
-            "ru": "Бремя терпения Элохина",
-            "es": "Carga de paciencia de Elohin",
-            "br": "Fardo da Paciência de Elohin",
+            "ru": "Elohin's Burden of Patience",
+            "es": "Elohin's Burden of Patience",
+            "br": "Elohin's Burden of Patience",
             "kr": "",
-            "fr": "Fardeau de patience d’Élohin",
-            "de": "Elohins Last der Geduld"
+            "fr": "Elohin's Burden of Patience",
+            "de": "Elohin's Burden of Patience"
         },
         "icon": "inv_shoulder_cloth_oribosdungeon_c_01",
         "itemClass": 4,
         "itemSubClass": 1,
-        "itemLevel": 213,
+        "itemLevel": 207,
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -58762,17 +58935,17 @@ export const itemDB = [
         "names": {
             "cn": "",
             "en": "Kit Jin's Sultry Cinch",
-            "ru": "Фривольный кушак Кит Джин",
-            "es": "Cincho voluptuoso de Kit Jin",
-            "br": "Cilha Sensual de Kit Jin",
+            "ru": "Kit Jin's Sultry Cinch",
+            "es": "Kit Jin's Sultry Cinch",
+            "br": "Kit Jin's Sultry Cinch",
             "kr": "",
-            "fr": "Cordelière étouffante de Kit Jin",
-            "de": "Kit Jins aufreizender Hüftgurt"
+            "fr": "Kit Jin's Sultry Cinch",
+            "de": "Kit Jin's Sultry Cinch"
         },
         "icon": "inv_belt_cloth_oribosdungeon_c_01",
         "itemClass": 4,
         "itemSubClass": 1,
-        "itemLevel": 213,
+        "itemLevel": 190,
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -58791,17 +58964,17 @@ export const itemDB = [
         "names": {
             "cn": "",
             "en": "Nyte's Mischievous Treads",
-            "ru": "Зловредные ботфорты Нита",
-            "es": "Botines traviesos de Nyte",
-            "br": "Botinas Traquinas de Nyte",
+            "ru": "Nyte's Mischievous Treads",
+            "es": "Nyte's Mischievous Treads",
+            "br": "Nyte's Mischievous Treads",
             "kr": "",
-            "fr": "Bottines espiègles de Nyte",
-            "de": "Nytes verschmitzte Treter"
+            "fr": "Nyte's Mischievous Treads",
+            "de": "Nyte's Mischievous Treads"
         },
         "icon": "inv_boot_leather_oribosdungeon_c_01",
         "itemClass": 4,
         "itemSubClass": 2,
-        "itemLevel": 213,
+        "itemLevel": 190,
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -58820,17 +58993,17 @@ export const itemDB = [
         "names": {
             "cn": "",
             "en": "Archdruid Van-Yali's Greenthumbs",
-            "ru": "Зеленые пальцы верховного друида Ван-Яли",
-            "es": "Manos de jardinero del archidruida Van-Yali",
-            "br": "Dedos Verdes do Arquidruida Van-Yali",
+            "ru": "Archdruid Van-Yali's Greenthumbs",
+            "es": "Archdruid Van-Yali's Greenthumbs",
+            "br": "Archdruid Van-Yali's Greenthumbs",
             "kr": "",
-            "fr": "Pouces verts de l’archidruide Van-Yali",
-            "de": "Erzdruide Van-Yalis grüne Daumen"
+            "fr": "Archdruid Van-Yali's Greenthumbs",
+            "de": "Archdruid Van-Yali's Greenthumbs"
         },
         "icon": "inv_glove_leather_oribosdungeon_c_01",
         "itemClass": 4,
         "itemSubClass": 2,
-        "itemLevel": 213,
+        "itemLevel": 207,
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -58849,17 +59022,17 @@ export const itemDB = [
         "names": {
             "cn": "",
             "en": "Azsharys' Lunar Veil",
-            "ru": "Лунный покров Азшарисы",
-            "es": "Velo lunar de Azsharys",
-            "br": "Véu Lunar de Azsharys",
+            "ru": "Azsharys' Lunar Veil",
+            "es": "Azsharys' Lunar Veil",
+            "br": "Azsharys' Lunar Veil",
             "kr": "",
-            "fr": "Voile lunaire d’Azsharys",
-            "de": "Azsharys' Mondschleier"
+            "fr": "Azsharys' Lunar Veil",
+            "de": "Azsharys' Lunar Veil"
         },
         "icon": "inv_helm_leather_oribosdungeon_c_01",
         "itemClass": 4,
         "itemSubClass": 2,
-        "itemLevel": 213,
+        "itemLevel": 207,
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -58878,17 +59051,17 @@ export const itemDB = [
         "names": {
             "cn": "",
             "en": "Haru Kiemund's Sabatons",
-            "ru": "Башмаки Гару Кьемунда",
-            "es": "Escarpes de Haru Kiemund",
-            "br": "Escarpes de Haru Kiemund",
+            "ru": "Haru Kiemund's Sabatons",
+            "es": "Haru Kiemund's Sabatons",
+            "br": "Haru Kiemund's Sabatons",
             "kr": "",
-            "fr": "Solerets d’Haru Kiemund",
-            "de": "Haru Kiemunds Sabatons"
+            "fr": "Haru Kiemund's Sabatons",
+            "de": "Haru Kiemund's Sabatons"
         },
         "icon": "inv_boot_mail_oribosdungeon_c_01",
         "itemClass": 4,
         "itemSubClass": 3,
-        "itemLevel": 213,
+        "itemLevel": 190,
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -58907,17 +59080,17 @@ export const itemDB = [
         "names": {
             "cn": "",
             "en": "Huntmaster Sullivan's Greaves",
-            "ru": "Наголенники верховного следопыта Салливана",
-            "es": "Grebas del maestro de caza Sullivan",
-            "br": "Grevas do Mestre da Caça Sullivan",
+            "ru": "Huntmaster Sullivan's Greaves",
+            "es": "Huntmaster Sullivan's Greaves",
+            "br": "Huntmaster Sullivan's Greaves",
             "kr": "",
-            "fr": "Grèves du maître chasseur Sullivan",
-            "de": "Meisterjäger Sullivans Beinschützer"
+            "fr": "Huntmaster Sullivan's Greaves",
+            "de": "Huntmaster Sullivan's Greaves"
         },
         "icon": "inv_pant_mail_oribosdungeon_c_01",
         "itemClass": 4,
         "itemSubClass": 3,
-        "itemLevel": 213,
+        "itemLevel": 207,
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -58936,17 +59109,17 @@ export const itemDB = [
         "names": {
             "cn": "",
             "en": "Viller's Traveling Chain",
-            "ru": "Путевая цепь Виллера",
-            "es": "Cadena de viaje de Viller",
-            "br": "Corrente de Viagem de Viller",
+            "ru": "Viller's Traveling Chain",
+            "es": "Viller's Traveling Chain",
+            "br": "Viller's Traveling Chain",
             "kr": "",
-            "fr": "Chaîne de voyage de Viller",
-            "de": "Villers Reisekette"
+            "fr": "Viller's Traveling Chain",
+            "de": "Viller's Traveling Chain"
         },
         "icon": "inv_belt_mail_oribosdungeon_c_01",
         "itemClass": 4,
         "itemSubClass": 3,
-        "itemLevel": 213,
+        "itemLevel": 207,
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -58965,17 +59138,17 @@ export const itemDB = [
         "names": {
             "cn": "",
             "en": "Tharatos' Charred Chestplate",
-            "ru": "Обугленная бригантина Таратоса",
-            "es": "Peto carbonizado de Tharatos",
-            "br": "Guarda-peito Galhardo de Tharatos",
+            "ru": "Tharatos' Charred Chestplate",
+            "es": "Tharatos' Charred Chestplate",
+            "br": "Tharatos' Charred Chestplate",
             "kr": "",
-            "fr": "Pansière brûlée de Tharatos",
-            "de": "Tharatos' verkohlte Brustplatte"
+            "fr": "Tharatos' Charred Chestplate",
+            "de": "Tharatos' Charred Chestplate"
         },
         "icon": "inv_plate_oribosdungeon_c_01_chest",
         "itemClass": 4,
         "itemSubClass": 4,
-        "itemLevel": 213,
+        "itemLevel": 207,
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -58994,17 +59167,17 @@ export const itemDB = [
         "names": {
             "cn": "",
             "en": "Baetheas' Ironclad Warboots",
-            "ru": "Окованные боевые сапоги Баэфеса",
-            "es": "Botas de guerra acorazadas de Baetheas",
-            "br": "Coturnos Couraçados de Baetheas",
+            "ru": "Baetheas' Ironclad Warboots",
+            "es": "Baetheas' Ironclad Warboots",
+            "br": "Baetheas' Ironclad Warboots",
             "kr": "",
-            "fr": "Bottes de guerre cuirassées de Bæthéas",
-            "de": "Baetheas' eisenbeschlagende Kriegsstiefel"
+            "fr": "Baetheas' Ironclad Warboots",
+            "de": "Baetheas' Ironclad Warboots"
         },
         "icon": "inv_plate_oribosdungeon_c_01_boots",
         "itemClass": 4,
         "itemSubClass": 4,
-        "itemLevel": 213,
+        "itemLevel": 207,
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -59023,17 +59196,17 @@ export const itemDB = [
         "names": {
             "cn": "",
             "en": "Hishtar's Severe Stiletto",
-            "ru": "Жестокий стилет Хиштар",
-            "es": "Estilete severo de Hishtar",
-            "br": "Estilete Esquivo de Hishtar",
+            "ru": "Hishtar's Severe Stiletto",
+            "es": "Hishtar's Severe Stiletto",
+            "br": "Hishtar's Severe Stiletto",
             "kr": "",
-            "fr": "Stylet sévère d’Hishtar",
-            "de": "Hishtars strenges Stilett"
+            "fr": "Hishtar's Severe Stiletto",
+            "de": "Hishtar's Severe Stiletto"
         },
         "icon": "inv_knife_1h_revendrethquest_b_01",
         "itemClass": 2,
         "itemSubClass": 15,
-        "itemLevel": 213,
+        "itemLevel": 190,
         "stats": {
             "intellect": 25370,
             "stamina": 7889,
@@ -59052,17 +59225,17 @@ export const itemDB = [
         "names": {
             "cn": "",
             "en": "Locke's Essential Scepter",
-            "ru": "Скипетр сущности Локки",
-            "es": "Cetro esencial de Locke",
-            "br": "Cetro Circunspecto de Locke",
+            "ru": "Locke's Essential Scepter",
+            "es": "Locke's Essential Scepter",
+            "br": "Locke's Essential Scepter",
             "kr": "",
-            "fr": "Sceptre essentiel de Locke",
-            "de": "Lockes essenzielles Szepter"
+            "fr": "Locke's Essential Scepter",
+            "de": "Locke's Essential Scepter"
         },
         "icon": "inv_mace_1h_revendrethquest_b_01",
         "itemClass": 2,
         "itemSubClass": 4,
-        "itemLevel": 213,
+        "itemLevel": 190,
         "stats": {
             "intellect": 25370,
             "stamina": 7889,
@@ -59081,17 +59254,17 @@ export const itemDB = [
         "names": {
             "cn": "",
             "en": "Kudebeh's Remarkable Targe",
-            "ru": "Впечатляющий тарч Кудебеха",
-            "es": "Tarja excepcional de Kudebeh",
-            "br": "Tarja Notável de Kudebeh",
+            "ru": "Kudebeh's Remarkable Targe",
+            "es": "Kudebeh's Remarkable Targe",
+            "br": "Kudebeh's Remarkable Targe",
             "kr": "",
-            "fr": "Rondache remarquable de Kudebeh",
-            "de": "Kudebehs bemerkenswerte Tartsche"
+            "fr": "Kudebeh's Remarkable Targe",
+            "de": "Kudebeh's Remarkable Targe"
         },
         "icon": "inv_shield_1h_bastionquest_b_01",
         "itemClass": 4,
         "itemSubClass": 6,
-        "itemLevel": 213,
+        "itemLevel": 190,
         "stats": {
             "intellect": 16132,
             "stamina": 7889,
@@ -59110,17 +59283,17 @@ export const itemDB = [
         "names": {
             "cn": "",
             "en": "Relic of the First Ones",
-            "ru": "Реликвия Предвечных",
-            "es": "Reliquia de los Primeros",
-            "br": "Relíquia dos Primogênitos",
+            "ru": "Relic of the First Ones",
+            "es": "Relic of the First Ones",
+            "br": "Relic of the First Ones",
             "kr": "",
-            "fr": "Relique des Fondateurs",
-            "de": "Relikt der Ersten"
+            "fr": "Relic of the First Ones",
+            "de": "Relic of the First Ones"
         },
         "icon": "inv_trinket_oribos_01_brass",
         "itemClass": 4,
         "itemSubClass": 0,
-        "itemLevel": 213,
+        "itemLevel": 207,
         "stats": {
             "intellect": 6666,
             "stamina": 0,
@@ -59143,17 +59316,17 @@ export const itemDB = [
         "names": {
             "cn": "",
             "en": "Desm's Fistos",
-            "ru": "Кулак Дезма",
-            "es": "Puños de Desm",
-            "br": "Punhescos de Desm",
+            "ru": "Desm's Fistos",
+            "es": "Desm's Fistos",
+            "br": "Desm's Fistos",
             "kr": "",
-            "fr": "Poings de Desm",
-            "de": "Desms Fäustlinge"
+            "fr": "Desm's Fistos",
+            "de": "Desm's Fistos"
         },
         "icon": "inv_plate_oribosdungeon_c_01_glove",
         "itemClass": 4,
         "itemSubClass": 4,
-        "itemLevel": 213,
+        "itemLevel": 190,
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -59172,17 +59345,17 @@ export const itemDB = [
         "names": {
             "cn": "",
             "en": "Tabone's Branded Pauldrons",
-            "ru": "Клеймленное наплечье Табона",
-            "es": "Espaldares marcados de Tabone",
-            "br": "Brafoneiras Marcadas de Tabone",
+            "ru": "Tabone's Branded Pauldrons",
+            "es": "Tabone's Branded Pauldrons",
+            "br": "Tabone's Branded Pauldrons",
             "kr": "",
-            "fr": "Espauliers marqués de Tabone",
-            "de": "Tabones gebrandmarkte Schulterstücke"
+            "fr": "Tabone's Branded Pauldrons",
+            "de": "Tabone's Branded Pauldrons"
         },
         "icon": "inv_plate_oribosdungeon_c_01_shoulder",
         "itemClass": 4,
         "itemSubClass": 4,
-        "itemLevel": 213,
+        "itemLevel": 190,
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -59194,5 +59367,137 @@ export const itemDB = [
         "dropLoc": "",
         "selectable": "true",
         "slot": "Shoulder"
+    },
+    {
+        "id": 184839,
+        "name": "Misfiring Centurion Controller",
+        "names": {
+            "cn": "",
+            "en": "Misfiring Centurion Controller",
+            "ru": "Misfiring Centurion Controller",
+            "es": "Misfiring Centurion Controller",
+            "br": "Misfiring Centurion Controller",
+            "kr": "",
+            "fr": "Misfiring Centurion Controller",
+            "de": "Misfiring Centurion Controller"
+        },
+        "icon": "inv_engineering_loosetrigger",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 148,
+        "stats": {
+            "intellect": 0,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 6666,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Trinket",
+        "effect": {
+            "type": "trinket",
+            "name": "Misfiring Centurion Controller"
+        }
+    },
+    {
+        "id": 184840,
+        "name": "Hymnal of the Path",
+        "names": {
+            "cn": "",
+            "en": "Hymnal of the Path",
+            "ru": "Hymnal of the Path",
+            "es": "Hymnal of the Path",
+            "br": "Hymnal of the Path",
+            "kr": "",
+            "fr": "Hymnal of the Path",
+            "de": "Hymnal of the Path"
+        },
+        "icon": "inv_relics_libramoftruth",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 148,
+        "stats": {
+            "intellect": 0,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 6666
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Trinket",
+        "effect": {
+            "type": "trinket",
+            "name": "Hymnal of the Path"
+        }
+    },
+    {
+        "id": 184841,
+        "name": "Lyre of Sacred Purpose",
+        "names": {
+            "cn": "",
+            "en": "Lyre of Sacred Purpose",
+            "ru": "Lyre of Sacred Purpose",
+            "es": "Lyre of Sacred Purpose",
+            "br": "Lyre of Sacred Purpose",
+            "kr": "",
+            "fr": "Lyre of Sacred Purpose",
+            "de": "Lyre of Sacred Purpose"
+        },
+        "icon": "trade_archaeology_carved_harp_of_exotic_wood",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 148,
+        "stats": {
+            "intellect": 6666,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Trinket",
+        "effect": {
+            "type": "trinket",
+            "name": "Lyre of Sacred Purpose"
+        }
+    },
+    {
+        "id": 184842,
+        "name": "Instructor's Divine Bell",
+        "names": {
+            "cn": "",
+            "en": "Instructor's Divine Bell",
+            "ru": "Instructor's Divine Bell",
+            "es": "Instructor's Divine Bell",
+            "br": "Instructor's Divine Bell",
+            "kr": "",
+            "fr": "Instructor's Divine Bell",
+            "de": "Instructor's Divine Bell"
+        },
+        "icon": "inv_misc_bell_01",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 148,
+        "stats": {
+            "intellect": 6666,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Trinket",
+        "effect": {
+            "type": "trinket",
+            "name": "Instructor's Divine Bell"
+        }
     }
 ]
