@@ -17509,7 +17509,7 @@ export const itemDB = [
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
-            "name": "Sinful Aspirant's Badge of Ferocity"
+            "name": "Sinful Gladiator's Badge of Ferocity"
         }
     },
     {
@@ -24488,7 +24488,7 @@ export const itemDB = [
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
-            "name": "Sinful Aspirant's Insignia of Alacrity"
+            "name": "Sinful Gladiator's Insignia of Alacrity"
         }
     },
     {
