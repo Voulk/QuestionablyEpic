@@ -161,6 +161,7 @@ export default function QEHeader(props) {
                     pl={props.pl}
                     contentType={props.contentType}
                     simcSnack={props.simcSnack}
+                    allChars={props.allChars}
                   />
                 </Grid>
 

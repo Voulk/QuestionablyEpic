@@ -81,6 +81,7 @@ const specImages = {
   "Discipline Priest": require("../../Images/DiscSmall.jpg"),
   "Holy Paladin": require("../../Images/PaladinSmall.png"),
   "Holy Priest": require("../../Images/HPriestSmall.jpg"),
+  "Mistweaver Monk": require("../../Images/MistweaverSmall.jpg"),
 };
 
 // Called when a character is clicked.
