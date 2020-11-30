@@ -194,60 +194,29 @@ export default function QuickCompare(props) {
   const fillItems = (slotName, spec) => {
     const acceptableArmorTypes = getValidArmorTypes(spec);
     const acceptableWeaponTypes = getValidWeaponTypes(spec, slotName);
+    let newItemList = [];
 
-    let i = 0;
-    for (i = 0; i < itemDB.length; i++) {
-      //console.log(itemDB[i].name + itemDB[i].dropLoc );
-      let item = itemDB[i];
+    itemDB
+      .filter(
+        (key) =>
+          (slotName === key.slot && key.slot === "Back") ||
+          (slotName === key.slot &&
+            key.itemClass === 4 &&
+            acceptableArmorTypes.includes(key.itemSubClass)) ||
+          (slotName === "Offhands" &&
+            (key.slot === "Holdable" ||
+              key.slot === "Offhand" ||
+              key.slot === "Shield")) ||
+          (slotName === "Weapons" &&
+            key.itemClass === 2 &&
+            acceptableWeaponTypes.includes(key.itemSubClass))
+      )
+      .map((key) =>
+        newItemList.push({ value: key.id, label: key.names[currentLanguage] })
+      );
 
-      /*
-      if (
-        (slotName === item.slot &&
-          (slotName !== "Weapons" || slotName !== "Off-Hands") &&
-          item.itemClass === 4 &&
-          acceptableArmorTypes.includes(item.itemSubClass)) ||
-        (slotName === "Weapons" &&
-          item.itemClass === 2 &&
-          acceptableWeaponTypes.includes(item.itemSubClass) &&
-          (item.slot === "Weapon" || item.slot === "2HWeapon")) ||
-        (slotName === "Off-Hands" &&
-          item.itemClass === 4 &&
-          acceptableWeaponTypes.includes(item.itemSubClass) &&
-          (item.slot === "Holdable" || item.slot === "Shield")) ||
-        (slotName === item.slot && slotName === "Back")
-      ) {
-        */
-      if (
-        (slotName === item.slot && item.slot === "Back") ||
-        (slotName === item.slot &&
-          item.itemClass === 4 &&
-          acceptableArmorTypes.includes(item.itemSubClass)) ||
-        (slotName === "Offhands" &&
-          (item.slot === "Holdable" ||
-            item.slot === "Offhand" ||
-            item.slot === "Shield")) ||
-        (slotName === "Weapons" &&
-          item.itemClass === 2 &&
-          acceptableWeaponTypes.includes(item.itemSubClass))
-      ) {
-        // If the selected slot is "Weapons & Offhands" then our checks involve:
-        // - Ensuring the item is a weapon (item class 2)
-        // - Ensuring the player can wield that weapon type.
-
-        // If it's not a weapon then we are checking for:
-        // - Ensuring the item isn't a weapon (item class 4 covers us here).
-        // - Ensuring the players spec is able to wear the armor type (Shamans shouldn't show plate, nor leather items for example).
-
-        // If item is valid, add to our selection.
-        //console.log(item.name + item.dropLoc);
-        itemDropdown.push({
-          value: item.id,
-          label: item.names[currentLanguage],
-        });
-      }
-    }
-
-    itemDropdown.sort((a, b) => (a.label > b.label ? 1 : -1));
+    newItemList.sort((a, b) => (a.label > b.label ? 1 : -1));
+    setItemDropdown(newItemList);
   };
 
   // Add an item to our "Active Items" array.
@@ -277,23 +246,14 @@ export default function QuickCompare(props) {
 
     item.effect = getItemEffect(itemID);
     item.softScore = scoreItem(item, player, props.contentType);
-
     player.addActiveItem(item);
-
-    //player.getActiveItems(activeSlot)
-    //console.log(item);
     setItemList([...player.getActiveItems(activeSlot)]);
     setOpen(true);
-    // setItemSocket("");
-    // setItemTertiary("");
   };
 
   const deleteItem = (unique) => {
     let player = props.pl;
-    //console.log("AHHHHHHHH DELETING");
-
     player.deleteActiveItem(unique);
-
     setItemList([...player.getActiveItems(activeSlot)]);
     handleClickDelete();
   };
@@ -309,7 +269,6 @@ export default function QuickCompare(props) {
   };
 
   const itemLevelChanged = (val) => {
-    // removed parse int here, was missing radix parameter
     setItemLevel(val);
     setItemSocket("");
     setItemTertiary("");
@@ -333,15 +292,16 @@ export default function QuickCompare(props) {
       setItemSocket("");
       setItemTertiary("");
     }
+
     setSlot(e.target.value);
     setItemList([...props.pl.getActiveItems(e.target.value)]);
+    fillItems(e.target.value, props.pl.spec);
   };
 
   // TODO. Calculate the score for a given item.
   // Score is calculated by multiplying out stat weights and then adding any special effects.
   const calculateScore = (item) => {};
 
-  fillItems(activeSlot, props.pl.spec);
   const wepCombos = buildWepCombos(props.pl);
 
   return (
