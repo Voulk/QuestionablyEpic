@@ -37,12 +37,14 @@ export default function QEProfile(props) {
   const [email, setEmail] = React.useState(ls.get("email") || "");
   const [emailTemp, setEmailTemp] = React.useState("");
   const emailHandler = (event) => {
-    if (
+    if (emailTemp.length > 3 && emailTemp.length < 32)
+
+      /*
       RegExp(
         /^([A-Z|a-z|0-9](\.|_){0,1})+[A-Z|a-z|0-9]\@([A-Z|a-z|0-9])+((\.){0,1}[A-Z|a-z|0-9]){2}\.[a-z]{2,3}$/gm
       ).test(emailTemp) ||
       emailTemp === ""
-    ) {
+    ) */{
       props.setEmail(event);
       setEmail(event);
       props.emailSnack();

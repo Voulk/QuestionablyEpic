@@ -89,6 +89,7 @@ export default function QEMainMenu(props) {
               </Typography>
             </Paper>
           </Grid>
+          
           {Object.keys(mainMenuOptions).map((key, index) => (
             // Buttons are translated and printed from a dictionary.
             <Grid item xs={12} sm={12} md={6} lg={6} xl={6} key={index}>
