@@ -223,12 +223,12 @@ export function buildWepCombos(player) {
         main_hand.socket + off_hand.socket, // Socket
         "", // Tertiary
         0,
-        (main_hand.level + off_hand.level) / 2
+        Math.round((main_hand.level + off_hand.level) / 2)
       );
 
       item.softScore = main_hand.softScore + off_hand.softScore;
       item.offhandID = off_hand.id;
-      console.log("COMBO: " + main_hand.level + " - " + off_hand.level + ". Combined: " + item.level);
+      //console.log("COMBO: " + main_hand.level + " - " + off_hand.level + ". Combined: " + item.level);
       wep_list.push(item);
     }
   }
