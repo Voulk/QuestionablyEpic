@@ -12,6 +12,7 @@ import SimpleTabs from "./Modules/Covenants/Components/CovenantExploration";
 import { ConfirmLogin, QELogin } from "./Modules/SetupAndMenus/QELogin";
 import { withTranslation } from "react-i18next";
 import i18n from "./i18n";
+import TopGear from "./Modules/TopGear/TopGear";
 
 import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -419,6 +420,15 @@ class App extends Component {
                 path="/quickcompare"
                 render={() => (
                   <QuickCompare
+                    pl={activePlayer}
+                    contentType={this.state.contentType}
+                  />
+                )}
+              />
+              <Route
+                path="/topgear"
+                render={() => (
+                  <TopGear
                     pl={activePlayer}
                     contentType={this.state.contentType}
                   />
