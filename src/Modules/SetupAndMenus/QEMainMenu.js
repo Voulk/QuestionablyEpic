@@ -60,7 +60,9 @@ export default function QEMainMenu(props) {
   // const currentLanguage = i18n.language;
   const classes = useStyles();
   const characterCount = props.allChars.getAllChar().length;
-  const patron = !(props.patreonStatus === "Basic" || props.patreonStatus === "Standard");
+  const patron = ["Diamond", "Gold", "Rolls Royce", "Sapphire"].includes(props.patronStatus);
+  console.log(props.patronStatus);
+  
 
   return (
     <div style={{ backgroundColor: "#313131" }}>
