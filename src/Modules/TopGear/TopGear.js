@@ -300,6 +300,13 @@ export default function TopGear(props) {
     fillItems(e.target.value, props.pl.spec);
   };
 
+  const activateItem = (unique) => {
+    let player = props.pl;
+    player.activateItem(unique);
+    setItemList([...player.getActiveItems(activeSlot)]);
+    
+  }
+
   const slotList = ["Head", "Shoulder", "Back", "Chest", "Wrist", "Hands", "Waist", "Legs", "Feet", "Finger", "Trinkets"]
 
   // TODO. Calculate the score for a given item.
@@ -321,7 +328,7 @@ export default function TopGear(props) {
         justify="center"
         style={{
           margin: "auto",
-          width: "65%",
+          width: "55%",
           display: "block",
         }}
       >
@@ -352,10 +359,10 @@ export default function TopGear(props) {
                         {key}
 
                     </Typography>
-                    <Divider style={{ marginBottom: 10, width: '30%' }} />
+                    <Divider style={{ marginBottom: 10, width: '42%' }} />
                     <Grid container spacing={1}>
                         {[...props.pl.getActiveItems(key)].map((item, index) => (
-                            <MiniItemCard key={index} item={item} delete={deleteItem} />
+                            <MiniItemCard key={index} item={item} activateItem={activateItem} />
                         ))}
                     </Grid>
                 </Grid>

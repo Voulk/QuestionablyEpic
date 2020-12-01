@@ -187,6 +187,13 @@ class Player {
         });
         this.activeItems = tempArray;
     }
+    activateItem = (unique) => {
+        let tempArray =  this.activeItems.filter(function(item) {
+            if (item.uniqueHash === unique) item.active = !item.active;
+            return item;
+        });
+        this.activeItems = tempArray;
+    }
 
     sortItems = (container) => {
         // Current default sorting is by HPS but we could get creative here in future.

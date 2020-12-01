@@ -17,10 +17,21 @@ import "./MiniItemCard.css";
 import DeleteIcon from "@material-ui/icons/Delete";
 import socketImage from "../../Images/Resources/EmptySocket.png";
 import { useTranslation } from "react-i18next";
+import CardActionArea from "@material-ui/core/CardActionArea";
 
 const useStyles = makeStyles({
   root: {
-    minWidth: 250,
+    minWidth: 200,
+    borderRadius: 1,
+    borderColor: "grey",
+    borderRadius: "5px",
+  },
+  selected: {
+    minWidth: 200,
+    borderRadius: 3,
+    borderColor: "Green",
+    borderRadius: "5px",
+    backgroundColor: "#424E42"
   },
   bullet: {
     display: "inline-block",
@@ -28,10 +39,10 @@ const useStyles = makeStyles({
     transform: "scale(0.8)",
   },
   title: {
-    fontSize: 14,
+    fontSize: 12,
   },
   pos: {
-    marginBottom: 12,
+    marginBottom: 10,
   },
 });
 
@@ -47,30 +58,11 @@ export default function ItemCard(props) {
     if (itemLevel >= 183) return "#a73fee";
     else if (itemLevel >= 120) return "#328CE3";
     else return "#1eff00";
-
-    /*
-      case "Legendary":
-        return "#ff8000";
-        break;
-      case "Epic":
-        return "#a335ee";
-        break;
-      case "Rare":
-        return "#a335ee";
-        break;
-      case "Uncommon":
-        return "#328CE3"; // Previously #0070dd
-        break;
-      case "Common":
-        return "#1eff00";
-        break;
-      default:
-        return "#fff";
-        */
   };
 
-  const deleteItemCard = () => {
-    props.delete(item.uniqueHash);
+  const activateItemCard = () => {
+      console.log("Activating item with Hash: " + item.uniqueHash)
+    props.activateItem(item.uniqueHash);
   };
 
   const upgradeColor = (num) => {
@@ -115,7 +107,8 @@ export default function ItemCard(props) {
 
   return (
     <Grid item xs={12} sm={6} md={6} lg={4} xl={4}>
-      <Card className={classes.root} variant="outlined">
+      <Card className={item.active ? classes.selected : classes.root} variant="outlined">
+        <CardActionArea onClick={activateItemCard}> 
         {/* <CardActionArea disabled={true}> */}
         <Grid
           container
@@ -126,15 +119,15 @@ export default function ItemCard(props) {
           <Grid item xs="auto">
             <CardContent
               style={{
-                padding: "4.5px 4.5px 0.5px 4.5px",
+                padding: "2px 2px 0.4px 2px",
                 display: "inline-flex",
               }}
             >
               <div className="container-ItemCards">
                 <img
                   alt="img"
-                  width={56}
-                  height={56}
+                  width={44}
+                  height={44}
                   src={getItemIcon(item.id)}
                   style={{
                     borderRadius: 4,
@@ -148,7 +141,7 @@ export default function ItemCard(props) {
             </CardContent>
           </Grid>
           <Divider orientation="vertical" flexItem />
-          <CardContent style={{ padding: 4, width: "100%" }}>
+          <CardContent style={{ padding: 2, width: "100%" }}>
             <Grid
               item
               container
@@ -176,30 +169,7 @@ export default function ItemCard(props) {
                     {itemName}
                   </Typography>
                 </Grid>
-                <Divider orientation="vertical" flexItem />
-                <Grid
-                  item
-                  xs={1}
-                  style={{
-                    display: "inline-flex",
-                    justifyContent: "center",
-                    paddingLeft: 2,
-                  }}
-                >
-                  <Typography
-                    variant="subtitle1"
-                    wrap="nowrap"
-                    display="inline"
-                    align="center"
-                    style={{
-                      color: upgradeColor(props.item.softScore),
-                      paddingLeft: "2px",
-                      paddingRight: "2px",
-                    }}
-                  >
-                    {props.item.softScore}
-                  </Typography>
-                </Grid>
+
               </Grid>
               <Divider />
               <Grid
@@ -212,36 +182,22 @@ export default function ItemCard(props) {
               >
                 <Grid item xs={11}>
                   <Typography
-                    variant="subtitle1"
+                    variant="subtitle2"
                     wrap="nowrap"
                     display="block"
                     align="left"
+                    style={{fontSize: '12px'}}
                   >
                     {socket} {statString} {tertiary}
                   </Typography>
                 </Grid>
 
-                <Grid item xs={1} display="inline-flex" align="center">
-                  {deleteActive ? (
-                    <IconButton
-                      onClick={deleteItemCard}
-                      aria-label="delete"
-                      size="small"
-                    >
-                      <DeleteIcon
-                        style={{ color: "#ad2c34", paddingTop: 2 }}
-                        fontSize="small"
-                      />
-                    </IconButton>
-                  ) : (
-                    ""
-                  )}
-                </Grid>
+
               </Grid>
             </Grid>
           </CardContent>
         </Grid>
-        {/* </CardActionArea> */}
+        </CardActionArea> 
       </Card>
     </Grid>
   );
