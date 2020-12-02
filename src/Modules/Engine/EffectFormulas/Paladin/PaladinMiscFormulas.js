@@ -11,7 +11,7 @@ export function getWingsHealingInc(critPerc) {
     return ((critPerc + 0.3) / critPerc) * 1.3
 }
 
- // Credit: Betsujin
+// Credit: Betsujin
 export function getAwakeningWingsUptime(player, contentType) {
     let _cpm = 29; // Holy power generated / min
 
