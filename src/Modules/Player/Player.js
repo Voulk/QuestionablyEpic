@@ -181,6 +181,17 @@ class Player {
 
     }
 
+    // TODO: Right now this just returns all items for testing. Remove the comment to return to it's intended functionality.
+    getSelectedItems = () => {
+        let temp = this.activeItems.filter(function(item) {
+
+            //return item.active === true;
+            return item;
+      
+        });
+        return this.sortItems(temp);
+    }
+
     deleteActiveItem = (unique) => {
         let tempArray =  this.activeItems.filter(function(item) {
             return item.uniqueHash !== unique;

@@ -21,7 +21,7 @@ import {
   Popover,
 } from "@material-ui/core";
 import { itemDB } from "../Player/ItemDB";
-
+import {runTopGear} from "./TopGearEngine";
 import {
   getValidArmorTypes,
   getValidWeaponTypes,
@@ -170,7 +170,8 @@ export default function TopGear(props) {
 
   const unleashTopGear = () => {
     // Call to the Top Gear Engine. Lock the app down.
-
+    let itemList = props.pl.getSelectedItems();
+    runTopGear(props.pl, props.contentType, itemList)
 
   }
 
@@ -181,7 +182,7 @@ export default function TopGear(props) {
     
   }
 
-  const slotList = ["Head", "Shoulder", "Back", "Chest", "Wrist", "Hands", "Waist", "Legs", "Feet", "Finger", "Trinkets"]
+  const slotList = ["Head", "Neck", "Shoulder", "Back", "Chest", "Wrist", "Hands", "Waist", "Legs", "Feet", "Finger", "Trinkets"]
 
   // TODO. Calculate the score for a given item.
   // Score is calculated by multiplying out stat weights and then adding any special effects.
