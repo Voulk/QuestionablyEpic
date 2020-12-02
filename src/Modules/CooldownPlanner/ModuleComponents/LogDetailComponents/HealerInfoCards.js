@@ -17,6 +17,7 @@ import Accordion from "@material-ui/core/Accordion";
 import AccordionSummary from "@material-ui/core/AccordionSummary";
 import AccordionDetails from "@material-ui/core/AccordionDetails";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import { STATPERONEPERCENT } from "../../../Engine/STAT";
 
 const useStyles = makeStyles((theme) => ({
   heading: {
@@ -49,10 +50,15 @@ export default function HealerInfoCards(props) {
   const { t } = useTranslation();
   const classes = useStyles();
 
+  const roundTo = (value, places) => {
+    let power = Math.pow(10, places);
+    return Math.round(value * power) / power;
+  };
+  console.log(props.heals);
   return (
     <Grid container spacing={1} style={{ display: "block" }}>
       {props.heals.map((key, index) => (
-        <Grid container item key={index} direction="row">
+        <Grid item key={index} direction="row">
           <Accordion style={{ width: "100%" }} elevation={0}>
             <AccordionSummary
               expandIcon={<ExpandMoreIcon />}
@@ -70,20 +76,20 @@ export default function HealerInfoCards(props) {
                 }}
               >
                 {classicons(key.icon, 20)}
-                {key.name}
+                {key.name} - {t("CooldownPlannerHealerCards.Item Level")}{" "}
+                {key.stats.map((stats) => stats.ilvl)}
               </Typography>
             </AccordionSummary>
             <AccordionDetails style={{ padding: 0 }}>
               <Grid
                 container
-                item
                 justify="center"
                 style={{ margin: 4 }}
                 spacing={1}
               >
                 <Grid
                   item
-                  xs={3}
+                  xs={4}
                   style={{
                     display: "inline-flex",
                     justifyContent: "space-evenly",
@@ -112,51 +118,71 @@ export default function HealerInfoCards(props) {
                       <div key={i}>
                         <Typography
                           style={{
-                            textAlign: "center",
+                            paddingLeft: 2,
+                            textAlign: "left",
                             whiteSpace: "nowrap",
-                            fontSize: 14,
+                            fontSize: 12,
                           }}
                         >
-                          {t("CooldownPlannerHealerCards.Item Level")}:{" "}
-                          {stats.ilvl}
+                          {t("Intellect")}: {stats.intellect}
                         </Typography>
                         <Typography
                           style={{
-                            textAlign: "center",
+                            paddingLeft: 2,
+                            textAlign: "left",
                             whiteSpace: "nowrap",
-                            fontSize: 14,
+                            fontSize: 12,
                           }}
                         >
-                          {t("CooldownPlannerHealerCards.Crit")}: {stats.crit}
+                          {t("CooldownPlannerHealerCards.Crit")}:{" "}
+                          {roundTo(stats.crit / STATPERONEPERCENT.CRIT + 5, 2)}
+                          {"% "}
+                          {"(" + stats.crit + ")"}
                         </Typography>
                         <Typography
                           style={{
-                            textAlign: "center",
+                            paddingLeft: 2,
+                            textAlign: "left",
                             whiteSpace: "nowrap",
-                            fontSize: 14,
+                            fontSize: 12,
                           }}
                         >
-                          {t("CooldownPlannerHealerCards.Haste")}: {stats.haste}
+                          {t("CooldownPlannerHealerCards.Haste")}:{" "}
+                          {roundTo(stats.haste / STATPERONEPERCENT.HASTE, 2)}
+                          {"% "}
+                          {"(" + stats.haste + ")"}
                         </Typography>
                         <Typography
                           style={{
-                            textAlign: "center",
+                            paddingLeft: 2,
+                            textAlign: "left",
                             whiteSpace: "nowrap",
-                            fontSize: 14,
+                            fontSize: 12,
                           }}
                         >
                           {t("CooldownPlannerHealerCards.Mastery")}:{" "}
-                          {stats.mastery}
+                          {roundTo(
+                            stats.mastery / STATPERONEPERCENT.MASTERY[key.icon],
+                            2
+                          )}
+                          {"% "}
+                          {"(" + stats.mastery + ")"}
                         </Typography>
                         <Typography
                           style={{
-                            textAlign: "center",
+                            paddingLeft: 2,
+                            textAlign: "left",
                             whiteSpace: "nowrap",
-                            fontSize: 14,
+                            fontSize: 12,
                           }}
                         >
                           {t("CooldownPlannerHealerCards.Versatility")}:{" "}
-                          {stats.versatility}
+                          {roundTo(
+                            stats.versatility / STATPERONEPERCENT.VERSATILITY,
+                            2
+                          )}
+                          {"% "}
+                          {"(" + stats.versatility + ")"}
                         </Typography>
                       </div>
                     ))}
@@ -165,7 +191,7 @@ export default function HealerInfoCards(props) {
                 {/* <Divider orientation="vertical" flexItem /> */}
                 <Grid
                   item
-                  xs={9}
+                  xs={8}
                   justify="flex-start"
                   alignItems="flex-start"
                   style={{ display: "inline" }}
