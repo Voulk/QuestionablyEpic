@@ -226,7 +226,7 @@ export const trinket_data = [
         name: "Sinful Gladiator's Insignia of Alacrity",
         effects: [
             { 
-                coefficient: 1.00266, 
+                coefficient: 1.116129, 
                 table: -1,  
                 duration: 20, 
                 ppm: 1.5
@@ -237,7 +237,7 @@ export const trinket_data = [
     name: "Sinful Gladiator's Badge of Ferocity",
     effects: [
         { 
-            coefficient: 2.095342, 
+            coefficient: 1.322581, 
             table: -1,  
             duration: 15, 
             cooldown: 60,
