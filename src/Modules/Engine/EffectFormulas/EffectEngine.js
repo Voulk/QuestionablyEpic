@@ -16,6 +16,7 @@ import {getDruidConduit} from './Druid/DruidConduitFormulas'
 
 import {getPaladinCovAbility} from './Paladin/PaladinMiscFormulas'
 import SPEC from '../SPECS'
+import { getShamanCovAbility } from './Shaman/ShamanCovenantFormulas'
 
 
 // Effect is a small "dictionary" with two key : value pairs. 
@@ -121,6 +122,8 @@ export function getCovAbility(soulbindName, player, contentType) {
         case(SPEC.HOLYPALADIN):
             bonus_stats = getPaladinCovAbility(soulbindName, player, contentType)
             break;
+        case(SPEC.RESTOSHAMAN):
+            return getShamanCovAbility(soulbindName, player, contentType);
 
     }
 

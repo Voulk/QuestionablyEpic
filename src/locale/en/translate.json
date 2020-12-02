@@ -482,37 +482,37 @@
     "Earthen Harmony": {
       "name": "Earthen Harmony",
       "desc": "Earth Shield healing is increased by 150% if your earth shield target is below 75% health, and healing wave adds a stack of Earth Shield to your target.",
-      "droploc": "Currently Unknown"
+      "droploc": "Sanguine Depths, General Kaal"
     },
     "Jonat's Natural Focus": {
       "name": "Jonat's Natural Focus",
       "desc": "Healing Wave and Healing Surge increase the healing done by your next chain heal by 10%, stacking up to 5 times.",
-      "droploc": "Currently Unknown"
+      "droploc": "Torghast, Skoldus Hall, Layer 3+"
     },
     "Primal Tide Core": {
       "name": "Primal Tide Core",
       "desc": "Every 4 casts of Riptide also applies Riptide to another friendly target near your Riptide target.",
-      "droploc": "Currently Unknown"
+      "droploc": "Torghast, The Soulforges, Layer 3+"
     },
     "Ancestral Reminder": {
       "name": "Ancestral Reminder",
       "desc": "Heroism / Bloodlust lasts an extra 20s on you, and you gain an extra 10% haste from it's effect.",
-      "droploc": "Currently Unknown"
+      "droploc": "Castle Nathria, Stone Legion Generals"
     },
     "Chains of Devastation": {
       "name": "Chains of Devastation",
       "desc": "Casting Chain Heal makes your next Chain Lightning instant cast. Casting Chain Lightning makes your next Chain Heal instant cast.",
-      "droploc": "Currently Unknown"
+      "droploc": "PvP Honor Vendor"
     },
     "Deeply Rooted Elements": {
       "name": "Deeply Rooted Elements",
       "desc": "Casting Riptide has a 7% chance to activate Ascendance for 6 seconds.",
-      "droploc": "Currently Unknown"
+      "droploc": "The Great Vault"
     },
     "Spiritwalkers Tidal Totem": {
       "name": "Spiritwalker's Tidal Totem",
       "desc": "After using Mana Tide Totem, the cast time of Healing Wave and Chain Heal is reduced by 50% and the mana cost by 25% for 10s.",
-      "droploc": "Currently Unknown"
+      "droploc": "Castle Nathria, Huntsman Altimor"
     }
 
 
