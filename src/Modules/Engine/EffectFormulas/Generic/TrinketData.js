@@ -84,7 +84,7 @@ export const trinket_data = [
         name: 'Unbound Changeling',
         effects: [
             { 
-                coefficient: 1.1, // Tooltip suggests 2.2 but in-game it gives you 1.1. TODO: Check after release. 
+                coefficient: 2.2, // Has been fixed on Dec 1
                 table: -1,  
                 duration: 12, 
                 ppm: 1.5 
