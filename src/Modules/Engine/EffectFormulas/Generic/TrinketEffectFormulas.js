@@ -1,7 +1,7 @@
 import {convertPPMToUptime, getScalarValue} from '../EffectUtilities';
 import {trinket_data, TAGS} from './TrinketData';
 import {STAT} from '../../STAT';
-
+import SPEC from '../../SPECS';
 
 // TODO: Write proper comments. See Lingering Sunmote for an example.
 export function getTrinketEffect(effectName, player, contentType, itemLevel) {
@@ -152,7 +152,7 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel) {
         let effect = activeTrinket.effects[0];
 
         bonus_stats.intellect = getProcessedValue(effect.coefficient, effect.table, itemLevel) * convertPPMToUptime(effect.ppm, effect.duration);
-        console.log("INSIGNIA Int:" + bonus_stats.intellect + ". Proc: " + getProcessedValue(effect.coefficient, effect.table, itemLevel) + ". Uptime: " + convertPPMToUptime(effect.ppm, effect.duration))
+        //console.log("INSIGNIA Int:" + bonus_stats.intellect + ". Proc: " + getProcessedValue(effect.coefficient, effect.table, itemLevel) + ". Uptime: " + convertPPMToUptime(effect.ppm, effect.duration))
 
     }
     else if (effectName === "Sinful Gladiator's Badge of Ferocity") {
@@ -160,7 +160,10 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel) {
         let effect = activeTrinket.effects[0];
 
         bonus_stats.intellect = getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.duration / effect.cooldown;
-       
+        
+
+        if (player.getSpec() === SPEC.HOLYPALADIN) bonus_stats.intellect *= 1.47; // This needs to be refined, but represents the power increase from combining with Divine Toll.
+        //console.log("BADGE Int:" + bonus_stats.intellect + ". Flat: " + getProcessedValue(effect.coefficient, effect.table, itemLevel) + ". Uptime: 25%")
     }
     else if (effectName === "Inscrutable Quantum Device") {
 
@@ -174,7 +177,7 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel) {
         
         let effect = activeTrinket.effects[0];
 
-        bonus_stats.intellect = getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.duration / effect.cooldown;
+        bonus_stats.versatility = getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.duration / effect.cooldown;
     }
 
 
