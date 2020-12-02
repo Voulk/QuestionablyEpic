@@ -5,6 +5,7 @@ import ReactGA from "react-ga";
 import Item from "../Player/Item";
 import "./../QuickCompare/QuickCompare.css";
 import { useTranslation } from "react-i18next";
+import {testTrinkets } from "../Engine/EffectFormulas/Generic/TrinketEffectFormulas"
 import {
   InputLabel,
   MenuItem,
@@ -163,10 +164,15 @@ export default function TopGear(props) {
   // a list of available ilvls and the player could select from a smaller list instead.
   // This is left as a TODO until key functionality is completed but is a moderate priority.
   // const itemTertiaries = [{"Avoidance", "Avoidance"},{"Leech", "Leech"}, {"None", ""}];
-
+  //testTrinkets(props.pl, "Raid", 184)
 
   // Fill Items fills the ItemNames box with items appropriate to the given slot and spec.  };
 
+  const unleashTopGear = () => {
+    // Call to the Top Gear Engine. Lock the app down.
+
+
+  }
 
   const activateItem = (unique) => {
     let player = props.pl;
@@ -237,6 +243,48 @@ export default function TopGear(props) {
                             
                 })}
         </Grid>
+
+        <div style={{
+            position: 'fixed',
+            bottom: 0,
+            left: 0,
+            right: 0,
+            height: '50px',          
+            backgroundColor: '#424242',
+            width: '100%',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+
+        }}>
+
+            <div style={{
+                display: 'flex',
+                width: '80%',
+                flexDirection: 'row',
+                justifyContent: 'space-evenly',
+                alignItems: 'center',
+                
+            }}>
+            <Typography
+                variant="Subtitle2"
+                align="center"
+                style={{ padding: "10px 10px 5px 10px"}}
+                color="primary"
+                >
+                {("Selected Items: 2/32")}
+                </Typography>
+            <Button
+                    variant="contained"
+                    color="secondary"
+                    align="center"
+                    style={{height: '68%', width: '180px' }}
+                    onClick={unleashTopGear}>
+                    Go!
+                </Button>
+            </div>
+
+        </div>
     </div>
   );
 }
