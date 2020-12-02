@@ -38,7 +38,8 @@
     "reactstrap": "^8.6.0",
     "recharts": "^1.8.5",
     "simple-oauth2": "^4.1.0",
-    "typescript": "^3.9.7"
+    "typescript": "^3.9.7",
+    "workerize": "^0.1.8"
   },
   "scripts": {
     "predeploy": "npm run build",
@@ -67,6 +68,7 @@
     "eslint-plugin-react-hooks": "4.1.0",
     "prettier": "2.0.5",
     "prettier-eslint": "11.0.0",
-    "prettier-eslint-cli": "5.0.0"
+    "prettier-eslint-cli": "5.0.0",
+    "workerize-loader": "^1.3.0"
   }
 }

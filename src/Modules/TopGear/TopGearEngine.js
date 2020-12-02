@@ -1,11 +1,22 @@
 import ItemSet from './ItemSet';
 import Item from "../Player/Item";
+import React, { useState, useEffect } from "react";
 // Most of our sets will fall into a bucket where totalling the individual stats is enough to tell us they aren't viable. By slicing these out in a preliminary phase,
 // we can run our full algorithm on far fewer items. The net benefit to the player is being able to include more items, with a quicker return.
 // This does run into some problems when it comes to set bonuses and could be re-evaluated at the time. The likely strat is to auto-include anything with a bonus, or to run
 // our set bonus algorithm before we sort and slice. There are no current set bonuses that are relevant to raid / dungeon so left as a thought experiment for now.
-const softSlice = 2; // TODO. Adjust to 1000 for prod. Being tested at lower values.
+//const softSlice = 2; // TODO. Adjust to 1000 for prod. Being tested at lower values.
 
+
+// block for `time` ms, then return the number of loops we could run in that time:
+export function expensive(time) {
+    let start = Date.now(),
+        count = 0
+    while (Date.now() - start < time) count++
+    return count
+}
+
+  /*
 export function runTopGear(player, contentType, itemList) {
     
     var t0 = performance.now()
@@ -165,4 +176,4 @@ function sumScore(obj) {
       }
     }
     return sum;
-}
+} */

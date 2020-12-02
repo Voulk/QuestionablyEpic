@@ -21,7 +21,7 @@ import {
   Popover,
 } from "@material-ui/core";
 import { itemDB } from "../Player/ItemDB";
-import {runTopGear} from "./TopGearEngine";
+import topGearEngine from "./TopGearEngine";
 import {
   getValidArmorTypes,
   getValidWeaponTypes,
@@ -36,6 +36,7 @@ import ItemCard from "./../QuickCompare/ItemCard";
 import MiniItemCard from "./MiniItemCard";
 import MuiAlert from "@material-ui/lab/Alert";
 import Autocomplete from "@material-ui/lab/Autocomplete";
+import worker from 'workerize-loader!./TopGearEngine' // eslint-disable-line import/no-webpack-loader-syntax
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -80,58 +81,7 @@ function Alert(props) {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
 }
 
-// const createItem = (legendaryName, container, spec, pl, contentType) => {
-//   //let lego = new Legendary(legendaryName)
-//   //getLegendaryInfo(lego, spec, pl, contentType)
-//   //container.push(lego)
-// };
 
-// const fillSlot = (container, spec, pl, contentType) => {
-//   //container = [];
-// };
-
-// const sortItems = (container) => {
-//   // Current default sorting is by HPS but we could get creative here in future.
-//   container.sort((a, b) => (a.softScore < b.softScore ? 1 : -1));
-// };
-
-/*
-class Legendary {
-    constructor(name) {
-        this.name = name;
-        this.description = "Legendary Description";
-        this.image = 0;
-        this.expectedHps = 0;
-        this.expectedDps = 0;
-        this.singleTargetHPS = 0;
-    }
-     
-} */
-
-// Consider moving to somewhere more globally accessible.
-// These are value : label pairs that automatically pull the translated version of the slot name.
-// TODO: Add the remaining slots.
-function getSlots() {
-  const { t, i18n } = useTranslation();
-  let slots = [
-    { value: "Head", label: t("slotNames.head") },
-    { value: "Neck", label: t("slotNames.neck") },
-    { value: "Shoulder", label: t("slotNames.shoulder") },
-    { value: "Back", label: t("slotNames.back") },
-    { value: "Chest", label: t("slotNames.chest") },
-    { value: "Wrist", label: t("slotNames.wrists") },
-    { value: "Hands", label: t("slotNames.hands") },
-    { value: "Waist", label: t("slotNames.waist") },
-    { value: "Legs", label: t("slotNames.legs") },
-    { value: "Feet", label: t("slotNames.feet") },
-    { value: "Finger", label: t("slotNames.finger") },
-    { value: "Trinket", label: t("slotNames.trinket") },
-    { value: "Weapons", label: t("slotNames.weapons") },
-    { value: "Offhands", label: t("slotNames.offhands") },
-  ];
-
-  return slots;
-}
 
 export default function TopGear(props) {
   useEffect(() => {
@@ -155,7 +105,6 @@ export default function TopGear(props) {
 
   const openPop = Boolean(anchorEl);
   const idPop = openPop ? "simple-popover" : undefined;
-  const slots = getSlots();
   const [itemDropdown, setItemDropdown] = useState([]); // Filled later based on item slot and armor type.
   const [AutoValue, setAutoValue] = useState(itemDropdown[0]);
   const [inputValue, setInputValue] = useState("");
@@ -168,10 +117,17 @@ export default function TopGear(props) {
 
   // Fill Items fills the ItemNames box with items appropriate to the given slot and spec.  };
 
+
+
   const unleashTopGear = () => {
     // Call to the Top Gear Engine. Lock the app down.
     let itemList = props.pl.getSelectedItems();
-    runTopGear(props.pl, props.contentType, itemList)
+    //runTopGear(props.pl, props.contentType, itemList)
+    let instance = worker()  // `new` is optional
+
+    instance.expensive(1000).then( count => {
+      console.log(`Ran ${count} loops`)
+    })
 
   }
 
