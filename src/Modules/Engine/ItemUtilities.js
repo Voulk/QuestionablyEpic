@@ -71,7 +71,7 @@ export function getValidWeaponTypes(spec, slot) {
         case SPEC.RESTODRUID:
           return [4, 5, 6, 10, 13, 15];
         case SPEC.MISTWEAVERMONK:
-          return [0, 4, 6, 7, 13];
+          return [0, 4, 6, 7, 10, 13];
         case SPEC.HOLYPALADIN:
           return [0, 1, 4, 5, 6, 7, 8];
         case SPEC.RESTOSHAMAN:
