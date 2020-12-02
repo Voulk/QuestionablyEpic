@@ -37,6 +37,7 @@ import MiniItemCard from "./MiniItemCard";
 import MuiAlert from "@material-ui/lab/Alert";
 import Autocomplete from "@material-ui/lab/Autocomplete";
 import worker from 'workerize-loader!./TopGearEngine' // eslint-disable-line import/no-webpack-loader-syntax
+import { useHistory, useLocation } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -117,7 +118,7 @@ export default function TopGear(props) {
 
   // Fill Items fills the ItemNames box with items appropriate to the given slot and spec.  };
 
-
+  let history = useHistory();
 
   const unleashTopGear = () => {
     // Call to the Top Gear Engine. Lock the app down.
@@ -125,9 +126,12 @@ export default function TopGear(props) {
     //runTopGear(props.pl, props.contentType, itemList)
     let instance = worker()  // `new` is optional
 
-    instance.expensive(1000).then( count => {
-      console.log(`Ran ${count} loops`)
+    instance.runTopGear(itemList).then( set => {
+      console.log(`Loop returned`);
+      props.setTopSet(set)
+      history.push("/report/");
     })
+
 
   }
 
