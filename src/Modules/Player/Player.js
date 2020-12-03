@@ -400,7 +400,7 @@ class Player {
                     crit: 0.58,
                     mastery: 0.52,
                     versatility: 0.51,
-                    leech: 0.8,
+                    leech: 0.68,
                 },
                 "Dungeon": {
                     intellect: 1, 
@@ -454,7 +454,7 @@ class Player {
                     crit: 0.5,
                     mastery: 0.54,
                     versatility: 0.51,
-                    leech: 0.8,
+                    leech: 0.68,
                 },
                 "Dungeon": {
                     intellect: 1, 
@@ -497,7 +497,7 @@ class Player {
                     crit: 0.6,
                     mastery: 0.48,
                     versatility: 0.52,
-                    leech: 0.6,
+                    leech: 0.68,
                 },
                 Dungeon: {
                     intellect: 1,
@@ -555,7 +555,7 @@ class Player {
                     crit: 0.56,
                     mastery: 0.52,
                     versatility: 0.51,
-                    leech: 0.8,
+                    leech: 0.68,
                 },
                 "Dungeon": {
                     intellect: 1, 
@@ -603,7 +603,7 @@ class Player {
                     crit: 0.55,
                     mastery: 0.55,
                     versatility: 0.45,
-                    leech: 0.8,
+                    leech: 0.68,
                 },
                 "Dungeon": {
                     intellect: 1, 
@@ -651,7 +651,7 @@ class Player {
                     crit: 0.56,
                     mastery: 0.44,
                     versatility: 0.55,
-                    leech: 0.8,
+                    leech: 0.68,
                 },
                 "Dungeon": {
                     intellect: 1, 

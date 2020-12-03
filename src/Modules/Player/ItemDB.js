@@ -56542,7 +56542,8 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "versatility": 0
+            "versatility": 0,
+            "leech": 6666,
         },
         "dropLoc": "",
         "selectable": "true",

@@ -258,7 +258,7 @@ export function calcStatsAtLevel(itemLevel, slot, statAllocations, tertiary) {
     bonus_stats: {},
   };
 
-  //console.log("Calc Stats at Level: " + itemLevel + "/" + slot + "/" + statAllocations + "/" + tertiary);
+  
 
   let rand_prop = randPropPoints[itemLevel]["slotValues"][getItemCat(slot)];
   if (slot == "Finger" || slot == "Neck") combat_mult = combat_ratings_mult_by_ilvl_jewl[itemLevel];
@@ -268,7 +268,7 @@ export function calcStatsAtLevel(itemLevel, slot, statAllocations, tertiary) {
   for (var key in statAllocations) {
     let allocation = statAllocations[key];
 
-    if (["haste", "crit", "mastery", "versatility"].includes(key)) {
+    if (["haste", "crit", "mastery", "versatility", "leech"].includes(key)) {
       stats[key] = Math.floor(
         Math.floor(rand_prop * allocation * 0.0001 + 0.5) * combat_mult
       );
@@ -280,7 +280,7 @@ export function calcStatsAtLevel(itemLevel, slot, statAllocations, tertiary) {
       // todo
     }
   }
-
+  console.log("Calc Stats at Level: " + itemLevel + "/" + slot + "/" + JSON.stringify(stats) + "/" + tertiary);
   // This, on the other hand, is a close estimate that should be replaced before launch.
   if (tertiary === "Leech") {
     if (slot === "Trinket") {
