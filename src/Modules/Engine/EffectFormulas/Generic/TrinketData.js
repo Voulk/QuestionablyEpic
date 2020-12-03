@@ -288,6 +288,22 @@ export const trinket_data = [
             },
         ]
     },
+    {
+        name: "Glimmerdust's Grand Design",
+        effects: [
+            {   // HoT Portion
+                coefficient: 1.931035,
+                table: -8,  
+                efficiency: 0.6, // Falls off when the target falls below 35% health. Efficiency in this case is the HoT uptime.
+                totalTicks: 40, // 120 / 3. This scales with haste, which will be applied during the trinket formula.
+            },
+            {   // Absorb Portion
+                coefficient: 249.431,
+                table: -8,  
+                efficiency: 0.9, // It's incredibly likely that your priority target will drop below 35% over a two minute period.
+            },
+        ]
+    }
     
     
 ]
