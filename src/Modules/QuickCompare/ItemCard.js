@@ -165,7 +165,7 @@ export default function ItemCard(props) {
                 alignItems="center"
                 style={{ width: "100%" }}
               >
-                <Grid item xs={11} display="inline">
+                <Grid item xs={10} display="inline">
                   <Typography
                     variant="subtitle1"
                     wrap="nowrap"
@@ -179,7 +179,7 @@ export default function ItemCard(props) {
                 <Divider orientation="vertical" flexItem />
                 <Grid
                   item
-                  xs={1}
+                  xs={2}
                   style={{
                     display: "inline-flex",
                     justifyContent: "center",
@@ -187,7 +187,7 @@ export default function ItemCard(props) {
                   }}
                 >
                   <Typography
-                    variant="h5"
+                    variant="h6"
                     wrap="nowrap"
                     display="inline"
                     align="center"
