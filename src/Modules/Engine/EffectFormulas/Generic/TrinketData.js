@@ -266,6 +266,28 @@ export const trinket_data = [
             },
         ]
     },
+    {
+        name: "Misfiring Centurion Controller",
+        effects: [
+            { 
+                coefficient: 1.406452, 
+                table: -1,  
+                duration: 15, 
+                ppm: 1.5
+            },
+        ]
+    },
+    {
+        name: "Book-Borrower Identification",
+        effects: [
+            { 
+                coefficient: 1.319979, 
+                table: -1,  
+                duration: 12, 
+                ppm: 2
+            },
+        ]
+    },
     
     
 ]

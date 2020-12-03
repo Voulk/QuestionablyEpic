@@ -280,7 +280,7 @@ export function calcStatsAtLevel(itemLevel, slot, statAllocations, tertiary) {
       // todo
     }
   }
-  console.log("Calc Stats at Level: " + itemLevel + "/" + slot + "/" + JSON.stringify(stats) + "/" + tertiary);
+  //console.log("Calc Stats at Level: " + itemLevel + "/" + slot + "/" + JSON.stringify(stats) + "/" + tertiary);
   // This, on the other hand, is a close estimate that should be replaced before launch.
   if (tertiary === "Leech") {
     if (slot === "Trinket") {

@@ -179,6 +179,20 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel) {
 
         bonus_stats.versatility = getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.duration / effect.cooldown;
     }
+    else if (effectName === "Misfiring Centurion Controller") {
+        let effect = activeTrinket.effects[0];
+
+        bonus_stats.intellect = getProcessedValue(effect.coefficient, effect.table, itemLevel) * convertPPMToUptime(effect.ppm, effect.duration);
+        //console.log("INSIGNIA Int:" + bonus_stats.intellect + ". Proc: " + getProcessedValue(effect.coefficient, effect.table, itemLevel) + ". Uptime: " + convertPPMToUptime(effect.ppm, effect.duration))
+
+    }
+    else if (effectName === "Book-Borrower Identification") {
+        let effect = activeTrinket.effects[0];
+
+        bonus_stats.mastery = getProcessedValue(effect.coefficient, effect.table, itemLevel) * convertPPMToUptime(effect.ppm, effect.duration);
+        //console.log("INSIGNIA Int:" + bonus_stats.intellect + ". Proc: " + getProcessedValue(effect.coefficient, effect.table, itemLevel) + ". Uptime: " + convertPPMToUptime(effect.ppm, effect.duration))
+
+    }
 
 
     /*
