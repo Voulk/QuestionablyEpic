@@ -8,7 +8,7 @@ class Item {
     this.level = level;
     this.slot = slot;
     this.socket = socket;
-    this.tertiary = tertiary;
+    this.tertiary = (tertiary === "Leech" || tertiary === "Avoidance") ? tertiary : "";
     this.softScore = softScore;
     this.uniqueHash = this.getUnique(id);
     //console.log("Setting level to " + level);

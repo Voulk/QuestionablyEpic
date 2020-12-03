@@ -183,18 +183,18 @@ export default function ItemCard(props) {
                   style={{
                     display: "inline-flex",
                     justifyContent: "center",
-                    paddingLeft: 2,
+                    paddingLeft: 3,
                   }}
                 >
                   <Typography
-                    variant="subtitle1"
+                    variant="h5"
                     wrap="nowrap"
                     display="inline"
                     align="center"
                     style={{
                       color: upgradeColor(props.item.softScore),
-                      paddingLeft: "2px",
-                      paddingRight: "2px",
+                      paddingLeft: "3px",
+                      paddingRight: "3px",
                     }}
                   >
                     {props.item.softScore}

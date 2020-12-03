@@ -71,7 +71,7 @@ export function getValidWeaponTypes(spec, slot) {
         case SPEC.RESTODRUID:
           return [4, 5, 6, 10, 13, 15];
         case SPEC.MISTWEAVERMONK:
-          return [0, 4, 6, 7, 13];
+          return [0, 4, 6, 7, 10, 13];
         case SPEC.HOLYPALADIN:
           return [0, 1, 4, 5, 6, 7, 8];
         case SPEC.RESTOSHAMAN:
@@ -258,7 +258,7 @@ export function calcStatsAtLevel(itemLevel, slot, statAllocations, tertiary) {
     bonus_stats: {},
   };
 
-  //console.log("Calc Stats at Level: " + itemLevel + "/" + slot + "/" + statAllocations + "/" + tertiary);
+  
 
   let rand_prop = randPropPoints[itemLevel]["slotValues"][getItemCat(slot)];
   if (slot == "Finger" || slot == "Neck") combat_mult = combat_ratings_mult_by_ilvl_jewl[itemLevel];
@@ -268,7 +268,7 @@ export function calcStatsAtLevel(itemLevel, slot, statAllocations, tertiary) {
   for (var key in statAllocations) {
     let allocation = statAllocations[key];
 
-    if (["haste", "crit", "mastery", "versatility"].includes(key)) {
+    if (["haste", "crit", "mastery", "versatility", "leech"].includes(key)) {
       stats[key] = Math.floor(
         Math.floor(rand_prop * allocation * 0.0001 + 0.5) * combat_mult
       );
@@ -280,13 +280,21 @@ export function calcStatsAtLevel(itemLevel, slot, statAllocations, tertiary) {
       // todo
     }
   }
-
+  //console.log("Calc Stats at Level: " + itemLevel + "/" + slot + "/" + JSON.stringify(stats) + "/" + tertiary);
   // This, on the other hand, is a close estimate that should be replaced before launch.
   if (tertiary === "Leech") {
-    const terMult = (slot === "Finger" || slot === "Neck") ? 0.170027 : 0.449132;
-    stats.leech = Math.floor(
-      terMult * (stats.haste + stats.crit + stats.mastery + stats.versatility)
-    );
+    if (slot === "Trinket") {
+      // This is an occasionally off-by-one formula for leech that should be rewritten. 
+      stats.leech = Math.ceil(28 + 0.2413 * (itemLevel - 155))
+      
+    }
+    else {
+      const terMult = (slot === "Finger" || slot === "Neck") ? 0.170027 : 0.449132;
+      stats.leech = Math.floor(
+        terMult * (stats.haste + stats.crit + stats.mastery + stats.versatility)
+      );
+    }
+
   }
   return stats;
 }

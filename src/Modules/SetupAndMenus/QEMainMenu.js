@@ -185,7 +185,7 @@ export default function QEMainMenu(props) {
           )}
         </Grid>
 
-        <p className="headers" style={{fontSize: "12px"}}>QE Live Update 7. Last Updated 30 November.</p>
+        <p className="headers" style={{fontSize: "12px"}}>QE Live Update 8. Last Updated 3 December.</p>
         
       </div>
     </div>

@@ -84,7 +84,7 @@ export const trinket_data = [
         name: 'Unbound Changeling',
         effects: [
             { 
-                coefficient: 1.1, // Tooltip suggests 2.2 but in-game it gives you 1.1. TODO: Check after release. 
+                coefficient: 2.2, // Has been fixed on Dec 1
                 table: -1,  
                 duration: 12, 
                 ppm: 1.5 
@@ -226,7 +226,7 @@ export const trinket_data = [
         name: "Sinful Gladiator's Insignia of Alacrity",
         effects: [
             { 
-                coefficient: 1.00266, // 1.116129
+                coefficient: 1.116129, 
                 table: -1,  
                 duration: 20, 
                 ppm: 1.5
@@ -266,6 +266,44 @@ export const trinket_data = [
             },
         ]
     },
+    {
+        name: "Misfiring Centurion Controller",
+        effects: [
+            { 
+                coefficient: 1.406452, 
+                table: -1,  
+                duration: 15, 
+                ppm: 1.5
+            },
+        ]
+    },
+    {
+        name: "Book-Borrower Identification",
+        effects: [
+            { 
+                coefficient: 1.319979, 
+                table: -1,  
+                duration: 12, 
+                ppm: 2
+            },
+        ]
+    },
+    {
+        name: "Glimmerdust's Grand Design",
+        effects: [
+            {   // HoT Portion
+                coefficient: 1.931035,
+                table: -8,  
+                efficiency: 0.6, // Falls off when the target falls below 35% health. Efficiency in this case is the HoT uptime.
+                totalTicks: 40, // 120 / 3. This scales with haste, which will be applied during the trinket formula.
+            },
+            {   // Absorb Portion
+                coefficient: 249.431,
+                table: -8,  
+                efficiency: 0.9, // It's incredibly likely that your priority target will drop below 35% over a two minute period.
+            },
+        ]
+    }
     
     
 ]

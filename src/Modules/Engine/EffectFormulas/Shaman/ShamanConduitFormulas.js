@@ -1,3 +1,5 @@
+import { PRIMORDIAL_WAVE_SP, RIPTIDE_HOT_SP, RIPTIDE_INITIAL_SP, HEALING_WAVE_COPY_SP, UNLEASH_LIFE_MULT, FAE_TRANSFUSION_SP, RESTO_SHAMAN_DPS_AURA } from "./constants";
+
 // Conduit Spell IDs
 const EMBRACE_OF_EARTH = 338329;
 const NATURES_FOCUS = 338346;
@@ -22,11 +24,6 @@ const LAVISH_HARVEST_RANKS = [10, 10.5, 11, 11.5, 12, 12.5, 13, 13.5, 14, 14.5, 
 const ESSENTIAL_EXTRACTION_RANKS = [-25000, -26000, -27000, -28000, -29000, -30000, -31000, -33000, -34000, -35000, -36000, -37000, -38000, -39000, -40000];
 
 // Helper Functions
-const HEALING_WAVE_COPY_SP = 1.8;
-const PRIMORDIAL_WAVE_SP = 0.65;
-const RIPTIDE_INITIAL_SP = 1.7; // Check for Torrent
-const RIPTIDE_HOT_SP = 1.32;
-
 function tumblingWaves(player) {
   const avgWavesPerCast = 4.4; // aka riptides / placeholder
   return (RIPTIDE_INITIAL_SP + PRIMORDIAL_WAVE_SP + (HEALING_WAVE_COPY_SP * avgWavesPerCast)) * player.getStatMultiplier("NOHASTE") + RIPTIDE_HOT_SP * player.getStatMultiplier("ALL");
@@ -52,9 +49,17 @@ export const getShamanConduit = (conduitID, player, contentType, conduitRank) =>
     const hrHPS = player.getSpellHPS("Healing Rain", contentType);
     const hrCasts = player.getSpellCasts("Healing Rain", contentType);
     const httCasts = player.getSpellCasts("Healing Tide Totem", contentType);
+    //if (hrHPS && hrCasts && httCasts) {
     const buffedCasts = httCasts * 1.8;
     const avgHRCast = hrHPS / hrCasts;
     bonusStats.HPS = (buffedCasts * avgHRCast) * traitBonus;
+    //} else {
+    //  const cooldown = 180;
+    //  const targets = 6;
+    //  const ticks = 12 * 0.8;
+    //  const totalSP = .297 * ticks * targets * traitBonus;
+    //  bonusStats.HPS = (totalSP * player.getStatMultiplier("ALL")) / cooldown;
+    //}
   } else if (conduitID === NATURES_FOCUS) {
     /**
      * Increases the initial healing of Chain Heal by x%.
@@ -81,31 +86,39 @@ export const getShamanConduit = (conduitID, player, contentType, conduitRank) =>
      */
     const traitBonus = ELYSIAN_DIRGE_RANKS[conduitRank] / 100;
     const vesperSpellpower = 2.19;
-    bonusStats.HPS = (vesperSpellpower * traitBonus * player.getStatMultiplier("NOHASTE")) / 60;
+    const cooldown = 60;
+    bonusStats.HPS = (vesperSpellpower * traitBonus * player.getStatMultiplier("NOHASTE")) / cooldown;
   } else if (conduitID === LAVISH_HARVEST) {
     /**
      * increases crit chance of RCH
      * doubled for the cdr
      */
     const traitBonus = LAVISH_HARVEST_RANKS[conduitRank] / 100;
-    const rchSpellpower = 3.15 * 5;
-    bonusStats.HPS = (rchSpellpower * traitBonus * 2 * player.getStatMultiplier("NOHASTE")) / 60;
+    const targets = 5;
+    const cdr = 10;
+    const cooldown = 90 - ((player.getStatPerc("Crit") - 1 + traitBonus) * cdr * (targets * 2));
+    const rchSpellpower = 3.15 * targets * UNLEASH_LIFE_MULT;
+    bonusStats.HPS = (rchSpellpower * traitBonus * player.getStatMultiplier("NOHASTE")) / cooldown;
   } else if (conduitID === TUMBLING_WAVES) {
     /**
      * Chance to reset pwave, needs some lower efficiency
      */
     const traitBonus = TUMBLING_WAVES_RANKS[conduitRank] / 1000; // careful, extra 0
     const cast = tumblingWaves(player);
-    bonusStats.HPS = (cast * traitBonus) / 60;
+    const cooldown = 45;
+    bonusStats.HPS = (cast * traitBonus) / cooldown;
   } else if (conduitID === ESSENTIAL_EXTRACTION) {
     /**
      * Reduces the cd of fae transfusion by x seconds
      */
     const traitBonus = ESSENTIAL_EXTRACTION_RANKS[conduitRank] / 1000; // careful, extra 0
-    const faeSpellpower = (.94 * 7) * .4;
-    const faeCooldown = 180;
-    const gain = faeCooldown / (faeCooldown - traitBonus);
-    bonusStats.HPS = (faeSpellpower * (1 - gain) * player.getStatMultiplier("NOHASTE")) / 60;
+    const ticks = 7;
+    const healPart = .4;
+    const targets = 4;
+    const cooldown = 120;
+    const totalSP = FAE_TRANSFUSION_SP * ticks * healPart * targets * RESTO_SHAMAN_DPS_AURA;
+    const gain = cooldown / (cooldown - traitBonus);
+    bonusStats.HPS = (totalSP * (1 - gain) * player.getStatMultiplier("NOHASTE")) / cooldown;
   } else if (conduitID === ASTRAL_PROTECTION) {
     bonusStats.HPS = 0;
   } else if (conduitID === REFRESHING_WATERS) {
