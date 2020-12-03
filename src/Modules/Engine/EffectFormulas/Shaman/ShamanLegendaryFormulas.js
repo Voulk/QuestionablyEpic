@@ -15,26 +15,31 @@ export const getShamanLegendary = (effectName, player, contentType) => {
      * if somebody already has ptc
      * (casts / hits) * healing
      */
-    const rtHPS = player.getSpellHPS("Riptide", contentType);
-    bonusStats.HPS = rtHPS * 0.25;
+    // const rtHPS = player.getSpellHPS("Riptide", contentType);
+    // bonusStats.HPS = rtHPS * 0.25;
+    const oneRiptide = 1.7 * player.getStatMultiplier("NOHASTE") + (18 / 3) * .22 * player.getStatMultiplier("ALL"); // todo torrent
+    const rtPerMinute = 60 / 7; // todo echo
+    bonusStats.HPS = (oneRiptide * rtPerMinute * .25) / 60;
   } else if (effectName === SPIRITWALKERS_TIDAL_TOTEM) {
     /**
      * every mtt use gain 10 seconds of quicker chhw casts
+     * missing: mana saved
      */
-    const mttCasts = player.getSpellCasts("Mana Tide Totem", contentType);
-    const chHPS = player.getSingleCast("Chain Heal", contentType) / player.getFightLength();
+    // const mttCasts = player.getSpellCasts("Mana Tide Totem", contentType);
+    // const chHPS = player.getSingleCast("Chain Heal", contentType) / player.getFightLength();
+    // debug && console.log(SPIRITWALKERS_TIDAL_TOTEM, mttCasts, gain, possibleCasts);
     const gain = (2.5 / 1.5) - 1; // tooltip says double but you hit the GCD wall
     const buffDuration = 9;
     const castDuration = 2.5 / player.getStatPerc("Haste");
     const possibleCasts = Math.ceil(buffDuration / castDuration);
-    debug && console.log(SPIRITWALKERS_TIDAL_TOTEM, mttCasts, gain, possibleCasts);
-    bonusStats.HPS = mttCasts * (possibleCasts * (chHPS * gain));
+    const chHeal = 5.3 * player.getStatMultiplier("NOHASTE");
+    bonusStats.HPS = (possibleCasts * (chHeal * gain)) / 180;
   } else if (effectName === EARTHEN_HARMONY) {
     /**
      * if earth shield target is below 75%, earth shield heals 150% more
      */
     const thisSpellpower = .438 * 1.5;
-    const assumedEfficiency = 0.3;
+    const assumedEfficiency = 0.4;
     bonusStats.HPS = (thisSpellpower * player.getStatMultiplier("NOHASTE") * (player.getFightLength() / 3) * assumedEfficiency) / player.getFightLength();
   } else if (effectName === JONATS) {
     /**
