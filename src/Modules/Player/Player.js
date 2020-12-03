@@ -53,7 +53,7 @@ class Player {
     // They can either be pulled automatically from the entered log, or calculated from an entered SimC string.
     // These are used for items like trinkets or conduits, where a flat healing portion might scale with various secondary stats. 
     activeStats = {
-        intellect: 1500,
+        intellect: 1420,
         haste: 400,
         crit: 350,
         mastery: 0,
@@ -384,12 +384,12 @@ class Player {
                 fightLength: 193,
             }
             this.activeStats = {
-                intellect: 1500,
-                haste: 650,
-                crit: 590,
-                mastery: 400,
-                versatility: 320,
-                stamina: 1490,
+                intellect: 1420,
+                haste: 500,
+                crit: 280,
+                mastery: 270,
+                versatility: 220,
+                stamina: 1400,
     
             }
            
@@ -438,11 +438,11 @@ class Player {
             }
             
             this.activeStats = {
-                intellect: 1500,
-                haste: 600,
-                crit: 420,
-                mastery: 400,
-                versatility: 400,
+                intellect: 1420,
+                haste: 500,
+                crit: 200,
+                mastery: 210,
+                versatility: 240,
                 stamina: 1490,
                 
             }
@@ -450,19 +450,19 @@ class Player {
             this.statWeights = {
                 "Raid": {
                     intellect: 1, 
-                    haste: 0.61,
-                    crit: 0.5,
-                    mastery: 0.54,
-                    versatility: 0.51,
-                    leech: 0.68,
+                    haste: 0.4,
+                    crit: 0.27,
+                    mastery: 0.33,
+                    versatility: 0.32,
+                    leech: 0.6,
                 },
                 "Dungeon": {
                     intellect: 1, 
-                    haste: 0.62,
-                    crit: 0.58,
-                    mastery: 0.4,
-                    versatility: 0.52,
-                    leech: 0.4,
+                    haste: 0.4,
+                    crit: 0.36,
+                    mastery: 0.21,
+                    versatility: 0.33,
+                    leech: 0.25,
                 },
                 "DefaultWeights": true
             }
@@ -490,22 +490,30 @@ class Player {
                 rawhps: 7000,
                 fightLength: 465,
             }
+            this.activeStats = {
+                intellect: 1420,
+                haste: 125,
+                crit: 590,
+                mastery: 200,
+                versatility: 370,
+                stamina: 1490,
+            }
             this.statWeights = {
                 Raid: {
                     intellect: 1,
-                    haste: 0.42,
-                    crit: 0.6,
-                    mastery: 0.48,
-                    versatility: 0.52,
-                    leech: 0.68,
+                    haste: 0.31,
+                    crit: 0.36,
+                    mastery: 0.29,
+                    versatility: 0.36,
+                    leech: 0.55,
                 },
                 Dungeon: {
                     intellect: 1,
-                    haste: 0.54,
-                    crit: 0.6,
-                    mastery: 0.47,
-                    versatility: 0.52,
-                    leech: 0.6,
+                    haste: 0.34,
+                    crit: 0.33,
+                    mastery: 0.29,
+                    versatility: 0.34,
+                    leech: 0.24,
                 },
                 DefaultWeights: true
             };
@@ -539,31 +547,31 @@ class Player {
                 fightLength: 193,
             }
             this.activeStats = {
-                intellect: 1500,
-                haste: 650,
-                crit: 590,
-                mastery: 400,
-                versatility: 320,
-                stamina: 1490,
+                intellect: 1420,
+                haste: 500,
+                crit: 280,
+                mastery: 270,
+                versatility: 220,
+                stamina: 1400,
     
             }
            
             this.statWeights = {
                 "Raid": {
                     intellect: 1, 
-                    haste: 0.6,
-                    crit: 0.56,
-                    mastery: 0.52,
-                    versatility: 0.51,
-                    leech: 0.68,
+                    haste: 0.35,
+                    crit: 0.34,
+                    mastery: 0.32,
+                    versatility: 0.33,
+                    leech: 0.6,
                 },
                 "Dungeon": {
                     intellect: 1, 
-                    haste: 0.6,
-                    crit: 0.56,
-                    mastery: 0.52,
-                    versatility: 0.5,
-                    leech: 0.4,
+                    haste: 0.35,
+                    crit: 0.34,
+                    mastery: 0.31,
+                    versatility: 0.33,
+                    leech: 0.25,
                 },
                 "DefaultWeights": true
             }
@@ -587,31 +595,31 @@ class Player {
                 fightLength: 193,
             }
             this.activeStats = {
-                intellect: 1500,
-                haste: 650,
-                crit: 540,
-                mastery: 550,
-                versatility: 320,
-                stamina: 1490,
+                intellect: 1420,
+                haste: 125,
+                crit: 475,
+                mastery: 470,
+                versatility: 400,
+                stamina: 1400,
     
             }
            
             this.statWeights = {
                 "Raid": {
                     intellect: 1, 
-                    haste: 0.45,
-                    crit: 0.55,
-                    mastery: 0.55,
-                    versatility: 0.45,
-                    leech: 0.68,
+                    haste: 0.28,
+                    crit: 0.35,
+                    mastery: 0.35,
+                    versatility: 0.34,
+                    leech: 0.6,
                 },
                 "Dungeon": {
                     intellect: 1, 
-                    haste: 0.5,
-                    crit: 0.55,
-                    mastery: 0.5,
-                    versatility: 0.45,
-                    leech: 0.4,
+                    haste: 0.32,
+                    crit: 0.35,
+                    mastery: 0.28,
+                    versatility: 0.35,
+                    leech: 0.25,
                 },
                 "DefaultWeights": true
             }
@@ -635,11 +643,11 @@ class Player {
                 fightLength: 193,
             }
             this.activeStats = {
-                intellect: 1500,
-                haste: 450,
+                intellect: 1420,
+                haste: 125,
                 crit: 590,
-                mastery: 350,
-                versatility: 320,
+                mastery: 200,
+                versatility: 370,
                 stamina: 1490,
     
             }
@@ -647,19 +655,19 @@ class Player {
             this.statWeights = {
                 "Raid": {
                     intellect: 1, 
-                    haste: 0.45,
-                    crit: 0.56,
-                    mastery: 0.44,
-                    versatility: 0.55,
-                    leech: 0.68,
+                    haste: 0.29,
+                    crit: 0.35,
+                    mastery: 0.28,
+                    versatility: 0.34,
+                    leech: 0.6,
                 },
                 "Dungeon": {
                     intellect: 1, 
-                    haste: 0.5,
-                    crit: 0.55,
-                    mastery: 0.5,
-                    versatility: 0.45,
-                    leech: 0.4,
+                    haste: 0.34,
+                    crit: 0.35,
+                    mastery: 0.29,
+                    versatility: 0.35,
+                    leech: 0.25,
                 },
                 "DefaultWeights": true
             }
