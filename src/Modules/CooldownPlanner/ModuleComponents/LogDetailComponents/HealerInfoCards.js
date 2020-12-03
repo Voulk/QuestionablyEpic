@@ -54,11 +54,11 @@ export default function HealerInfoCards(props) {
     let power = Math.pow(10, places);
     return Math.round(value * power) / power;
   };
-  console.log(props.heals);
+
   return (
     <Grid container spacing={1} style={{ display: "block" }}>
       {props.heals.map((key, index) => (
-        <Grid item key={index} direction="row">
+        <Grid item key={index}>
           <Accordion style={{ width: "100%" }} elevation={0}>
             <AccordionSummary
               expandIcon={<ExpandMoreIcon />}
@@ -77,9 +77,10 @@ export default function HealerInfoCards(props) {
               >
                 {classicons(key.icon, 20)}
                 {key.name} - {t("CooldownPlannerHealerCards.Item Level")}{" "}
-                {key.stats.map((stats) => stats.ilvl)}
+                {key.stats.map((stats) => stats.ilvl)} - {key.icon}
               </Typography>
             </AccordionSummary>
+            <Divider style={{ marginTop: 4 }} />
             <AccordionDetails style={{ padding: 0 }}>
               <Grid
                 container
@@ -118,46 +119,42 @@ export default function HealerInfoCards(props) {
                       <div key={i}>
                         <Typography
                           style={{
-                            paddingLeft: 2,
-                            textAlign: "left",
+                            textAlign: "center",
                             whiteSpace: "nowrap",
-                            fontSize: 12,
+                            fontSize: 14,
                           }}
                         >
                           {t("Intellect")}: {stats.intellect}
                         </Typography>
                         <Typography
                           style={{
-                            paddingLeft: 2,
-                            textAlign: "left",
+                            textAlign: "center",
                             whiteSpace: "nowrap",
-                            fontSize: 12,
+                            fontSize: 14,
                           }}
                         >
                           {t("CooldownPlannerHealerCards.Crit")}:{" "}
                           {roundTo(stats.crit / STATPERONEPERCENT.CRIT + 5, 2)}
-                          {"% "}
-                          {"(" + stats.crit + ")"}
+                          {"%"}
+                          {/* {"(" + stats.crit + ")"} */}
                         </Typography>
                         <Typography
                           style={{
-                            paddingLeft: 2,
-                            textAlign: "left",
+                            textAlign: "center",
                             whiteSpace: "nowrap",
-                            fontSize: 12,
+                            fontSize: 14,
                           }}
                         >
                           {t("CooldownPlannerHealerCards.Haste")}:{" "}
                           {roundTo(stats.haste / STATPERONEPERCENT.HASTE, 2)}
-                          {"% "}
-                          {"(" + stats.haste + ")"}
+                          {"%"}
+                          {/* {"(" + stats.haste + ")"} */}
                         </Typography>
                         <Typography
                           style={{
-                            paddingLeft: 2,
-                            textAlign: "left",
+                            textAlign: "center",
                             whiteSpace: "nowrap",
-                            fontSize: 12,
+                            fontSize: 14,
                           }}
                         >
                           {t("CooldownPlannerHealerCards.Mastery")}:{" "}
@@ -165,15 +162,14 @@ export default function HealerInfoCards(props) {
                             stats.mastery / STATPERONEPERCENT.MASTERY[key.icon],
                             2
                           )}
-                          {"% "}
-                          {"(" + stats.mastery + ")"}
+                          {"%"}
+                          {/* {"(" + stats.mastery + ")"} */}
                         </Typography>
                         <Typography
                           style={{
-                            paddingLeft: 2,
-                            textAlign: "left",
+                            textAlign: "center",
                             whiteSpace: "nowrap",
-                            fontSize: 12,
+                            fontSize: 14,
                           }}
                         >
                           {t("CooldownPlannerHealerCards.Versatility")}:{" "}
@@ -181,8 +177,8 @@ export default function HealerInfoCards(props) {
                             stats.versatility / STATPERONEPERCENT.VERSATILITY,
                             2
                           )}
-                          {"% "}
-                          {"(" + stats.versatility + ")"}
+                          {"%"}
+                          {/* {"(" + stats.versatility + ")"} */}
                         </Typography>
                       </div>
                     ))}
@@ -192,8 +188,8 @@ export default function HealerInfoCards(props) {
                 <Grid
                   item
                   xs={8}
-                  justify="flex-start"
-                  alignItems="flex-start"
+                  // justify="flex-start"
+                  // alignItems="flex-start"
                   style={{ display: "inline" }}
                 >
                   <Paper

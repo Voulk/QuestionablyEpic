@@ -101,30 +101,30 @@ export const healerCooldownsDetailed = [
     cooldown: 180,
   },
   // --------------Covenant Abilities---------------
-  {
-    name: "Divine Toll",
-    guid: 304971,
-    duration: 1,
-    cooldown: 60,
-  },
-  {
-    name: "Ashen Hallow",
-    guid: 316958,
-    duration: 30,
-    cooldown: 240,
-  },
-  {
-    name: "Vanquisher's Hammer",
-    guid: 328204,
-    duration: 1,
-    cooldown: 30,
-  },
-  {
-    name: "Blessing of the Seasons",
-    guid: 328278,
-    duration: 1,
-    cooldown: 30,
-  },
+  // {
+  //   name: "Divine Toll",
+  //   guid: 304971,
+  //   duration: 1,
+  //   cooldown: 60,
+  // },
+  // {
+  //   name: "Ashen Hallow",
+  //   guid: 316958,
+  //   duration: 30,
+  //   cooldown: 240,
+  // },
+  // {
+  //   name: "Vanquisher's Hammer",
+  //   guid: 328204,
+  //   duration: 1,
+  //   cooldown: 30,
+  // },
+  // {
+  //   name: "Blessing of the Seasons",
+  //   guid: 328278,
+  //   duration: 1,
+  //   cooldown: 30,
+  // },
   // --------------------Priest---------------------
   // ----------------Base Abilities-----------------
   {
@@ -152,30 +152,30 @@ export const healerCooldownsDetailed = [
     cooldown: 720,
   },
   // --------------Covenant Abilities---------------
-  {
-    name: "Boon of the Ascended",
-    guid: 325013,
-    duration: 10,
-    cooldown: 180,
-  },
-  {
-    name: "Mindgames",
-    guid: 323673,
-    duration: 5,
-    cooldown: 45,
-  },
-  {
-    name: "Unholy Nova",
-    guid: 324724,
-    duration: 15,
-    cooldown: 60,
-  },
-  {
-    name: "Fae Blessings",
-    guid: 327661,
-    duraton: 1,
-    cooldown: 90,
-  },
+  // {
+  //   name: "Boon of the Ascended",
+  //   guid: 325013,
+  //   duration: 10,
+  //   cooldown: 180,
+  // },
+  // {
+  //   name: "Mindgames",
+  //   guid: 323673,
+  //   duration: 5,
+  //   cooldown: 45,
+  // },
+  // {
+  //   name: "Unholy Nova",
+  //   guid: 324724,
+  //   duration: 15,
+  //   cooldown: 60,
+  // },
+  // {
+  //   name: "Fae Blessings",
+  //   guid: 327661,
+  //   duraton: 1,
+  //   cooldown: 90,
+  // },
   // ---------------------Druid---------------------
   {
     name: "Incarnation: Tree of Life",
@@ -190,30 +190,30 @@ export const healerCooldownsDetailed = [
     cooldown: 180,
   },
   // --------------Covenant Abilities---------------
-  {
-    name: "Kindred Spirits",
-    guid: 326434,
-    duration: 10,
-    cooldown: 60,
-  },
-  {
-    name: "Ravenous Frenzy",
-    guid: 323546,
-    duration: 20,
-    cooldown: 180,
-  },
-  {
-    name: "Adaptive Swarm",
-    guid: 325727,
-    duration: 12,
-    cooldown: 25,
-  },
-  {
-    name: "Convoke the Spirits",
-    guid: 323764,
-    duration: 4,
-    cooldown: 120,
-  },
+  // {
+  //   name: "Kindred Spirits",
+  //   guid: 326434,
+  //   duration: 10,
+  //   cooldown: 60,
+  // },
+  // {
+  //   name: "Ravenous Frenzy",
+  //   guid: 323546,
+  //   duration: 20,
+  //   cooldown: 180,
+  // },
+  // {
+  //   name: "Adaptive Swarm",
+  //   guid: 325727,
+  //   duration: 12,
+  //   cooldown: 25,
+  // },
+  // {
+  //   name: "Convoke the Spirits",
+  //   guid: 323764,
+  //   duration: 4,
+  //   cooldown: 120,
+  // },
   // --------------------Monk-----------------------
   // ----------------Base Abilities-----------------
   {
@@ -223,30 +223,30 @@ export const healerCooldownsDetailed = [
     cooldown: 180,
   },
   // --------------Covenant Abilities---------------
-  {
-    name: "Weapons of Order",
-    guid: 310454,
-    duration: 30,
-    cooldown: 120,
-  },
-  {
-    name: "Fallen Order",
-    guid: 326860,
-    duration: 24,
-    cooldown: 180,
-  },
-  {
-    name: "Bonedust Brew",
-    guid: 325216,
-    duration: 10,
-    cooldown: 60,
-  },
-  {
-    name: "Faeline Stomp",
-    guid: 327104,
-    duration: 30,
-    cooldown: 30,
-  },
+  // {
+  //   name: "Weapons of Order",
+  //   guid: 310454,
+  //   duration: 30,
+  //   cooldown: 120,
+  // },
+  // {
+  //   name: "Fallen Order",
+  //   guid: 326860,
+  //   duration: 24,
+  //   cooldown: 180,
+  // },
+  // {
+  //   name: "Bonedust Brew",
+  //   guid: 325216,
+  //   duration: 10,
+  //   cooldown: 60,
+  // },
+  // {
+  //   name: "Faeline Stomp",
+  //   guid: 327104,
+  //   duration: 30,
+  //   cooldown: 30,
+  // },
   // -------------------Shaman----------------------
   // ----------------Base Abilities-----------------
   {
@@ -262,30 +262,30 @@ export const healerCooldownsDetailed = [
     cooldown: 180,
   },
   // --------------Covenant Abilities---------------
-  {
-    name: "Vesper Totem",
-    guid: 324386,
-    duration: 30,
-    cooldown: 60,
-  },
-  {
-    name: "Chain Harvest",
-    guid: 320674,
-    duration: 1,
-    cooldown: 90,
-  },
-  {
-    name: "Primordial Wave",
-    guid: 326059,
-    duration: 1,
-    cooldown: 45,
-  },
-  {
-    name: "Fae Transfusion",
-    guid: 328923,
-    duration: 3,
-    cooldown: 120,
-  },
+  // {
+  //   name: "Vesper Totem",
+  //   guid: 324386,
+  //   duration: 30,
+  //   cooldown: 60,
+  // },
+  // {
+  //   name: "Chain Harvest",
+  //   guid: 320674,
+  //   duration: 1,
+  //   cooldown: 90,
+  // },
+  // {
+  //   name: "Primordial Wave",
+  //   guid: 326059,
+  //   duration: 1,
+  //   cooldown: 45,
+  // },
+  // {
+  //   name: "Fae Transfusion",
+  //   guid: 328923,
+  //   duration: 3,
+  //   cooldown: 120,
+  // },
 
   // Utility Cooldowns
   {

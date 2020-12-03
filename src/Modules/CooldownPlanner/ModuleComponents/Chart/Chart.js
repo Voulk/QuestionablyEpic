@@ -172,14 +172,17 @@ class Chart extends Component {
               stroke="#f5f5f5"
               tickFormatter={DataFormater}
               label={{
-                value: i18n.t(
-                  "CooldownPlannerChartLabels.UnmitigatedDamageLabel"
-                ),
+                value:
+                  this.props.dataToShow === true
+                    ? i18n.t(
+                        "CooldownPlannerChartLabels.UnmitigatedDamageLabel"
+                      )
+                    : i18n.t("CooldownPlannerChartLabels.MitigatedDamageLabel"),
                 angle: -90,
                 fill: "#f5f5f5",
                 fontWeight: "bold",
-                position: "left",
-                offset: 12,
+                position: "insideLeft",
+                offset: -12,
               }}
             />
             <YAxis

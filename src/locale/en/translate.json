@@ -122,7 +122,8 @@
     },
     "CooldownPlannerChartLabels": {
       "_Comments1": "Translations for HD Charts",
-      "UnmitigatedDamageLabel": "Unmitigated Damage"
+      "UnmitigatedDamageLabel": "Unmitigated",
+      "MitigatedDamageLabel": "Mitigated"
     },
     "CooldownPlannerClasses": {
       "undefined": "",

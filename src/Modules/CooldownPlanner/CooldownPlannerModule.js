@@ -190,7 +190,6 @@ class HolyDiver extends Component {
 
   render() {
     let spinnershow = this.state.loadingcheck;
-    console.log(this.state.cooldownPlannerCurrentRaid);
 
     return (
       <div>
