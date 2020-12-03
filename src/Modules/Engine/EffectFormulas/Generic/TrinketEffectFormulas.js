@@ -179,6 +179,37 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel) {
 
         bonus_stats.versatility = getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.duration / effect.cooldown;
     }
+    else if (effectName === "Misfiring Centurion Controller") {
+        let effect = activeTrinket.effects[0];
+
+        bonus_stats.intellect = getProcessedValue(effect.coefficient, effect.table, itemLevel) * convertPPMToUptime(effect.ppm, effect.duration);
+        //console.log("INSIGNIA Int:" + bonus_stats.intellect + ". Proc: " + getProcessedValue(effect.coefficient, effect.table, itemLevel) + ". Uptime: " + convertPPMToUptime(effect.ppm, effect.duration))
+
+    }
+    else if (effectName === "Book-Borrower Identification") {
+        let effect = activeTrinket.effects[0];
+
+        bonus_stats.mastery = getProcessedValue(effect.coefficient, effect.table, itemLevel) * convertPPMToUptime(effect.ppm, effect.duration);
+        //console.log("INSIGNIA Int:" + bonus_stats.intellect + ". Proc: " + getProcessedValue(effect.coefficient, effect.table, itemLevel) + ". Uptime: " + convertPPMToUptime(effect.ppm, effect.duration))
+
+    }
+    else if (effectName === "Glimmerdust's Grand Design") {
+        // Test
+        let hotEffect = activeTrinket.effects[0];
+        let absorbEffect = activeTrinket.effects[1];
+        
+        let hotHPS = getProcessedValue(hotEffect.coefficient, hotEffect.table, itemLevel, hotEffect.efficiency) * (hotEffect.totalTicks * player.getStatPerc('Haste')) 
+                        * player.getStatMultiplier('CRITVERS') / 120;
+        let absorbHPS = getProcessedValue(absorbEffect.coefficient, absorbEffect.table, itemLevel, absorbEffect.efficiency) * player.getStatPerc('Versatility') / 120;
+
+        console.log("Hot: " + hotHPS + " AbsorbHPS: " + absorbHPS);
+        console.log("Raw HoT: " + getProcessedValue(hotEffect.coefficient, hotEffect.table, itemLevel, hotEffect.efficiency) + ". RawAbsorb: " + 
+                        getProcessedValue(absorbEffect.coefficient, absorbEffect.table, itemLevel, absorbEffect.efficiency));
+
+        bonus_stats.hps = hotHPS + absorbHPS;
+      
+
+    }
 
 
     /*
