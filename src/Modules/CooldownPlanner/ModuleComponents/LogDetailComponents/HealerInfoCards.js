@@ -1,21 +1,20 @@
-import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import Typography from "@material-ui/core/Typography";
+import React, { useState, useEffect } from "react";
+import {
+  Typography,
+  Paper,
+  Divider,
+  Grid,
+  Accordion,
+  AccordionSummary,
+  AccordionDetails,
+  makeStyles,
+} from "@material-ui/core";
 import classicons from "../../Functions/IconFunctions/ClassIcons.js";
 import talentIcons from "../../Functions/IconFunctions/TalentIcons";
 import { classColoursJS } from "../../Functions/ClassColourFunctions";
 import { useTranslation } from "react-i18next";
-import Paper from "@material-ui/core/Paper";
-import Card from "@material-ui/core/Card";
-import CardActions from "@material-ui/core/CardActions";
-import CardContent from "@material-ui/core/CardContent";
-import Divider from "@material-ui/core/Divider";
-import Grid from "@material-ui/core/Grid";
-import { getItemIcon } from "../../../Engine/ItemUtilities";
+// import { getItemIcon } from "../../../Engine/ItemUtilities";
 import "./HealerCardInfo.css";
-import Accordion from "@material-ui/core/Accordion";
-import AccordionSummary from "@material-ui/core/AccordionSummary";
-import AccordionDetails from "@material-ui/core/AccordionDetails";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import { STATPERONEPERCENT } from "../../../Engine/STAT";
 
@@ -55,11 +54,45 @@ export default function HealerInfoCards(props) {
     return Math.round(value * power) / power;
   };
 
+  const masteryCalc = (healClass, mastery) => {
+    let statPerc = 0;
+
+    if (healClass === "Paladin-Holy") {
+      statPerc = 12 + mastery / 23.33;
+    } else if (healClass === "Shaman-Restoration") {
+      statPerc = 24 + mastery / 11.66;
+    } else if (healClass === "Druid-Restoration") {
+      statPerc = 4 + mastery / 70;
+    } else if (healClass === "Priest-Holy") {
+      statPerc = 10 + mastery / 28;
+    } else if (healClass === "Priest-Discipline") {
+      statPerc = 10.8 + mastery / 25.93;
+    } else if (healClass === "Monk-Mistweaver") {
+      statPerc = 24 + mastery / 8.33;
+    }
+    return statPerc;
+  };
+
+  const [expanded, setExpanded] = useState("panel");
+
+  useEffect(() => {
+    setExpanded("panel");
+  }, [props.heals]);
+
+  const handleChange = (panel) => (event, newExpanded) => {
+    setExpanded(newExpanded ? panel : false);
+  };
+
   return (
     <Grid container spacing={1} style={{ display: "block" }}>
       {props.heals.map((key, index) => (
         <Grid item key={index}>
-          <Accordion style={{ width: "100%" }} elevation={0}>
+          <Accordion
+            style={{ width: "100%" }}
+            elevation={0}
+            expanded={expanded === `panel_${index}`}
+            onChange={handleChange(`panel_${index}`)}
+          >
             <AccordionSummary
               expandIcon={<ExpandMoreIcon />}
               aria-controls="panel1a-content"
@@ -158,10 +191,7 @@ export default function HealerInfoCards(props) {
                           }}
                         >
                           {t("CooldownPlannerHealerCards.Mastery")}:{" "}
-                          {roundTo(
-                            stats.mastery / STATPERONEPERCENT.MASTERY[key.icon],
-                            2
-                          )}
+                          {roundTo(masteryCalc(key.icon, stats.mastery), 2)}
                           {"%"}
                           {/* {"(" + stats.mastery + ")"} */}
                         </Typography>
