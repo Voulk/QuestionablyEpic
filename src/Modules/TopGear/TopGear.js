@@ -82,7 +82,7 @@ function Alert(props) {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
 }
 
-
+const TOPGEARCAP = 36;
 
 export default function TopGear(props) {
   useEffect(() => {
@@ -134,6 +134,8 @@ export default function TopGear(props) {
 
 
   }
+
+  const selectedItemCount = props.pl.getSelectedItems().length;
 
   const activateItem = (unique) => {
     let player = props.pl;
@@ -233,7 +235,7 @@ export default function TopGear(props) {
                 style={{ padding: "10px 10px 5px 10px"}}
                 color="primary"
                 >
-                {("Selected Items: 2/32")}
+                {("Selected Items: " + selectedItemCount + "/" + TOPGEARCAP)}
                 </Typography>
             <Button
                     variant="contained"
