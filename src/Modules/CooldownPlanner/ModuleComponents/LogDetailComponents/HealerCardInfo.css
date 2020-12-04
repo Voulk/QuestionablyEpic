@@ -1,9 +1,8 @@
 /* Container holding the image and the text */
-.container {
+.container-healerCards {
   position: relative;
   text-align: center;
   color: white;
-
 }
 /* Bottom left text */
 .bottom-left {
@@ -24,11 +23,10 @@
   position: absolute;
   top: 8px;
   right: 16px;
-
 }
 
 /* Bottom right text */
-.bottom-right {
+.bottom-right-healerCards {
   position: absolute;
   bottom: 5px;
   right: 6px;

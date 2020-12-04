@@ -97,7 +97,7 @@
       "_Comments1": "Translations for the Accordian for Healer Info",
       "StatsHeading": "Stats",
       "Item Level": "ilvl",
-      "Crit": "Crit",
+      "Crit": "Critical",
       "Haste": "Haste",
       "Mastery": "Mastery",
       "Versatility": "Versatility",
@@ -122,7 +122,8 @@
     },
     "CooldownPlannerChartLabels": {
       "_Comments1": "Translations for HD Charts",
-      "UnmitigatedDamageLabel": "Unmitigated Damage"
+      "UnmitigatedDamageLabel": "Unmitigated",
+      "MitigatedDamageLabel": "Mitigated"
     },
     "CooldownPlannerClasses": {
       "undefined": "",
