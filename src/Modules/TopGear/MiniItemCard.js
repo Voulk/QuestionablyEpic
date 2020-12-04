@@ -160,7 +160,7 @@ export default function ItemCard(props) {
               >
                 <Grid item xs={11} display="inline">
                   <Typography
-                    variant="subtitle1"
+                    variant="subtitle2"
                     wrap="nowrap"
                     display="inline"
                     align="left"
