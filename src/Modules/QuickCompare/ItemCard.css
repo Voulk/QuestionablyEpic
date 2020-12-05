@@ -42,3 +42,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+.et_pb_image.diagonal-overlay img {
+  -webkit-clip-path: polygon(0 0, 0% 100%, 100% 0);
+  clip-path: polygon(0 0, 0% 100%, 100% 0);
+}

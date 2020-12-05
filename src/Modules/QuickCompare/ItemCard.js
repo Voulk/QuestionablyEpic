@@ -84,13 +84,13 @@ export default function ItemCard(props) {
   };
 
   let itemName = "";
+  let itemName2 = "";
   const deleteActive = item.offhandID === 0;
 
   if (item.offhandID > 0) {
-    itemName =
-      getTranslatedItemName(item.id, currentLanguage) +
-      " & " +
-      getTranslatedItemName(item.offhandID, currentLanguage);
+    itemName = getTranslatedItemName(item.id, currentLanguage);
+    itemName2 = getTranslatedItemName(item.offhandID, currentLanguage);
+    console.log(item);
   } else {
     itemName = getTranslatedItemName(item.id, currentLanguage);
   }
@@ -102,9 +102,8 @@ export default function ItemCard(props) {
         width={15}
         height={15}
         style={{ verticalAlign: "middle" }}
-        alt="Socket"  
+        alt="Socket"
       />{" "}
-      
     </div>
   ) : null;
 
@@ -112,6 +111,133 @@ export default function ItemCard(props) {
     props.item.tertiary !== "" ? (
       <div style={{ display: "inline" }}> / {props.item.tertiary} </div>
     ) : null;
+
+  // If item.offHandID > 0 then return this card which handles the double names + stats
+  if (item.offhandID > 0) {
+    return (
+      <Grid item xs={12} sm={6} md={6} lg={4} xl={4}>
+        <Card className={classes.root} variant="outlined">
+          {/* <CardActionArea disabled={true}> */}
+          <Grid
+            container
+            display="inline-flex"
+            wrap="nowrap"
+            justify="space-between"
+          >
+            <Grid item xs="auto">
+              <CardContent
+                style={{
+                  padding: "4.5px 4.5px 0.5px 4.5px",
+                  display: "inline-flex",
+                }}
+              >
+                <div className="container-ItemCards">
+                  <img
+                    alt="img"
+                    width={56}
+                    height={56}
+                    src={getItemIcon(item.offhandID)}
+                    style={{
+                      borderRadius: 4,
+                      borderWidth: "1px",
+                      borderStyle: "solid",
+                      borderColor: itemQuality(itemLevel),
+                      position: "absolute",
+                    }}
+                  />
+                  <img
+                    className="et_pb_image.diagonal-overlay"
+                    alt="img"
+                    width={56}
+                    height={56}
+                    src={getItemIcon(item.id)}
+                    style={{
+                      borderRadius: 4,
+                      borderWidth: "1px",
+                      borderStyle: "solid",
+                      borderColor: itemQuality(itemLevel),
+                      WebkitClipPath: "polygon(0 0, 0% 100%, 100% 0)",
+                      clipPath: "polygon(0 0, 0% 100%, 100% 0)",
+                    }}
+                  />
+                  <div className="bottom-right-ItemCards"> {item.level} </div>
+                </div>
+              </CardContent>
+            </Grid>
+            <Divider orientation="vertical" flexItem />
+            <CardContent style={{ padding: 4, width: "100%" }}>
+              <Grid
+                item
+                container
+                display="inline"
+                direction="column"
+                justify="space-around"
+                xs="auto"
+              >
+                <Grid
+                  container
+                  item
+                  wrap="nowrap"
+                  justify="space-between"
+                  alignItems="center"
+                  style={{ width: "100%" }}
+                >
+                  <Grid item xs={10} display="inline">
+                    <Typography
+                      variant="subtitle1"
+                      wrap="nowrap"
+                      display="inline"
+                      align="left"
+                      style={{ color: itemQuality(itemLevel) }}
+                    >
+                      {itemName}
+                    </Typography>
+                  </Grid>
+                  <Divider orientation="vertical" flexItem />
+                  <Grid
+                    item
+                    xs={2}
+                    style={{
+                      display: "inline-flex",
+                      justifyContent: "center",
+                      paddingLeft: 3,
+                    }}
+                  >
+                    <Typography
+                      variant="h6"
+                      wrap="nowrap"
+                      display="inline"
+                      align="center"
+                      style={{
+                        color: upgradeColor(props.item.softScore),
+                        paddingLeft: "3px",
+                        paddingRight: "3px",
+                      }}
+                    >
+                      {props.item.softScore}
+                    </Typography>
+                  </Grid>
+                </Grid>
+                <Divider />
+                <Grid item xs={10}>
+                  <Typography
+                    variant="subtitle1"
+                    wrap="nowrap"
+                    display="block"
+                    align="left"
+                    style={{ color: itemQuality(itemLevel) }}
+                  >
+                    {itemName2}
+                  </Typography>
+                </Grid>
+              </Grid>
+            </CardContent>
+          </Grid>
+          {/* </CardActionArea> */}
+        </Card>
+      </Grid>
+    );
+  }
 
   return (
     <Grid item xs={12} sm={6} md={6} lg={4} xl={4}>

@@ -1,6 +1,9 @@
 import { itemDB } from "../Player/ItemDB";
 import { randPropPoints } from "./RandPropPointsBylevel";
-import { combat_ratings_mult_by_ilvl, combat_ratings_mult_by_ilvl_jewl } from "./CombatMultByLevel";
+import {
+  combat_ratings_mult_by_ilvl,
+  combat_ratings_mult_by_ilvl_jewl,
+} from "./CombatMultByLevel";
 import { getEffectValue } from "./EffectFormulas/EffectEngine";
 import SPEC from "../Engine/SPECS";
 import Item from "../Player/Item";
@@ -183,7 +186,7 @@ function getItemCat(slot) {
     default:
       console.error("Item Cat going to Default" + slot);
       return 3;
-      
+
     // Raise error.
   }
 }
@@ -214,7 +217,8 @@ export function buildWepCombos(player) {
     for (let k = 0; k < off_hands.length; k++) {
       let off_hand = off_hands[k];
 
-      console.log("Wep Loop" + i + "/" + k + ". " + main_hand.level + ". " + off_hand.level);
+      console.log(main_hands);
+      // console.log("Wep Loop" + i + "/" + k + ". " + main_hand.level + ". " + off_hand.level);
 
       let item = new Item(
         main_hand.id,
@@ -246,7 +250,7 @@ export function buildWepCombos(player) {
 // This uses the RandPropPointsByLevel and CombatMultByLevel tables and returns a dictionary object of stats.
 // Stat allocations are passed to the function from our Item Database.
 export function calcStatsAtLevel(itemLevel, slot, statAllocations, tertiary) {
-  let combat_mult = 0
+  let combat_mult = 0;
   let stats = {
     intellect: 0,
     stamina: 0,
@@ -258,10 +262,9 @@ export function calcStatsAtLevel(itemLevel, slot, statAllocations, tertiary) {
     bonus_stats: {},
   };
 
-  
-
   let rand_prop = randPropPoints[itemLevel]["slotValues"][getItemCat(slot)];
-  if (slot == "Finger" || slot == "Neck") combat_mult = combat_ratings_mult_by_ilvl_jewl[itemLevel];
+  if (slot == "Finger" || slot == "Neck")
+    combat_mult = combat_ratings_mult_by_ilvl_jewl[itemLevel];
   else combat_mult = combat_ratings_mult_by_ilvl[itemLevel];
 
   // These stats should be precise, and never off by one.
@@ -284,17 +287,15 @@ export function calcStatsAtLevel(itemLevel, slot, statAllocations, tertiary) {
   // This, on the other hand, is a close estimate that should be replaced before launch.
   if (tertiary === "Leech") {
     if (slot === "Trinket") {
-      // This is an occasionally off-by-one formula for leech that should be rewritten. 
-      stats.leech = Math.ceil(28 + 0.2413 * (itemLevel - 155))
-      
-    }
-    else {
-      const terMult = (slot === "Finger" || slot === "Neck") ? 0.170027 : 0.449132;
+      // This is an occasionally off-by-one formula for leech that should be rewritten.
+      stats.leech = Math.ceil(28 + 0.2413 * (itemLevel - 155));
+    } else {
+      const terMult =
+        slot === "Finger" || slot === "Neck" ? 0.170027 : 0.449132;
       stats.leech = Math.floor(
         terMult * (stats.haste + stats.crit + stats.mastery + stats.versatility)
       );
     }
-
   }
   return stats;
 }
@@ -317,7 +318,10 @@ export function buildStatString(stats, effect) {
   for (var ind in statsList) {
     statString +=
       statsList[ind]["val"] > 0
-        ? statsList[ind]["val"] + " " + correctCasing(statsList[ind]["key"]) + " / "
+        ? statsList[ind]["val"] +
+          " " +
+          correctCasing(statsList[ind]["key"]) +
+          " / "
         : "";
   }
 
