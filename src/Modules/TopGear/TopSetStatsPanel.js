@@ -7,14 +7,15 @@ import { Paper, Grid, Typography, Divider } from "@material-ui/core";
 // The soulbind stat panel sums up all of the active soulbinds in the tree.
 export default function TopSetStatsPanel(props) {
   const covAbilityEst = props.covAbility > 0 ? props.covAbility : "NA";
+  const statList = props.statList;
   const stats = [
-      ["Int", '321'],
-      ["Haste", '19%'],
-      ["Crit", '18.5%'],
-      ["Mastery", '21%'],
-      ["Versatility", '4%'],
-      ["Bonus HPS", '291'],
-      ["Bonus DPS", '90']
+      ["Int", statList.intellect],
+      ["Haste", statList.haste],
+      ["Crit", statList.crit],
+      ["Mastery", statList.mastery],
+      ["Versatility", statList.versatility],
+      ["Bonus HPS", statList.hps],
+      ["Bonus DPS", statList.dps],
 ]
 
   return (
