@@ -18,6 +18,7 @@ class ItemSet {
     // and optimal gemming. 
     sumSoftScore = 0; 
     hardScore = 0; 
+    sockets = 0;
 
     // A list of all items in the set. 
     itemList = [];
@@ -29,7 +30,8 @@ class ItemSet {
 
     // This is for testing purposes only. It will print every item in the collection to the console.
     printSet() {
-        console.log("Printing Set with ID: " + this.id + " with stats: " + JSON.stringify(this.setStats))
+        console.log("Printing Set with ID: " + this.id + " with stats: " + JSON.stringify(this.setStats));
+        console.log("Sockets: " + this.setSockets);
         for (var i = 0; i < this.itemList.length; i++) {
             console.log("Slot: " + this.itemList[i].slot + "Name: " + getTranslatedItemName(this.itemList[i].id, "en") + ". Effect: " + this.itemList[i].effect.name)
         }
@@ -49,6 +51,7 @@ class ItemSet {
             hps: 0,
             dps: 0,
         };
+        let setSockets = 0;
         for (var i = 0; i < this.itemList.length; i++) {
             let item = this.itemList[i];        
 
@@ -59,9 +62,12 @@ class ItemSet {
                     if (stat in item.stats["bonus_stats"]) setStats[stat] += item.stats["bonus_stats"][stat];
                 }
             }
+
+            if (item.socket) setSockets ++;
         }
         
         this.setStats = setStats;
+        this.setSockets = setSockets;
         return this;
         
 

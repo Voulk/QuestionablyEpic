@@ -1,6 +1,6 @@
 import Player from "../../../Player/Player";
 import { STAT, STATPERONEPERCENT } from "../../STAT";
-import { convertPPMToUptime, getBestEnchant } from "../EffectUtilities";
+import { convertPPMToUptime, getBestWeaponEnchant } from "../EffectUtilities";
 
 /* 
 == Generic Soulbind Effects ==
@@ -177,7 +177,7 @@ export function getSoulbindFormula(effectID, pl, contentType) {
   else if (effectID === 331580) {
     let flask_int = 70;
     let feast_int = 18; // Should add something to offer an option of non-int food, but they are very close.
-    let enchant_int = getBestEnchant(pl, contentType);
+    let enchant_int = getBestWeaponEnchant(pl, contentType);
 
     bonus_stats.Intellect = (flask_int + feast_int + enchant_int) * 0.2;
   }

@@ -17,7 +17,7 @@ export function expensive(time) {
 }
 
 
-export function runTopGear(itemList, player, contentType, ) {
+export function runTopGear(itemList, player, contentType) {
     
     var t0 = performance.now()
     console.log("Running Top Gear");
@@ -27,7 +27,7 @@ export function runTopGear(itemList, player, contentType, ) {
     itemSets = pruneItems(itemSets);
     
     for (var i = 0; i < itemSets.length; i++) {
-        itemSets[i] = evalSet(itemSets[i]);
+        itemSets[i] = evalSet(itemSets[i], player, contentType);
         //console.log(itemSets[i].id + ": " + itemSets[i].sumSoftScore)
         itemSets[i].printSet();
         console.log("====================");
@@ -182,7 +182,38 @@ function sumScore(obj) {
 
 
 // A true evaluation function on a set. 
-function evalSet(itemSet) {
-    return itemSet.compileStats();
+function evalSet(itemSet, player, contentType) {
+    // Get Base Stats
+    let builtSet = itemSet.compileStats();
 
+    let bonus_stats = {
+       intellect: 0,
+       haste: 0,
+       crit: 0,
+       versatility: 0,
+       leech: 0,
+       hps: 0,
+       dps: 0,
+    }
+
+    // Apply consumables if ticked.
+
+
+    // Apply Enchants & Gems
+    
+
+    // 5% int boost for wearing the same items.
+    // The system doesn't actually allow you to add items of different armor types so this is always on.
+    bonus_stats.intellect += (builtSet.setStats.intellect + bonus_stats.intellect) * 0.05;
+
+    // Take care of some stat weight rebalancing
+
+    // Calculate a hard score using the rebalanced stat weights.
+
+
+    return builtSet; // Temp
+}
+
+function getEnchant(slot, player, itemSet) {
+    
 }
