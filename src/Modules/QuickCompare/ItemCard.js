@@ -197,7 +197,7 @@ export default function ItemCard(props) {
                       paddingRight: "3px",
                     }}
                   >
-                    {props.item.softScore}
+                    {Math.round(props.item.softScore)}
                   </Typography>
                 </Grid>
               </Grid>

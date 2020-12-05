@@ -238,7 +238,7 @@ export function buildWepCombos(player) {
   }
 
   wep_list.sort((a, b) => (a.softScore < b.softScore ? 1 : -1));
-  console.log(JSON.stringify(wep_list));
+  //console.log(JSON.stringify(wep_list));
   return wep_list.slice(0, 9);
 }
 
@@ -255,6 +255,8 @@ export function calcStatsAtLevel(itemLevel, slot, statAllocations, tertiary) {
     versatility: 0,
     crit: 0,
     leech: 0,
+    hps: 0,
+    dps: 0,
     bonus_stats: {},
   };
 
@@ -376,5 +378,5 @@ export function scoreItem(item, player, contentType) {
         player.getHighestStatWeight(contentType)
       );
   }
-  return Math.round(score);
+  return Math.round(100*score)/100;
 }

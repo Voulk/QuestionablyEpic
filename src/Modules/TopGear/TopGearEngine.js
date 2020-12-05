@@ -5,7 +5,7 @@ import React, { useState, useEffect } from "react";
 // we can run our full algorithm on far fewer items. The net benefit to the player is being able to include more items, with a quicker return.
 // This does run into some problems when it comes to set bonuses and could be re-evaluated at the time. The likely strat is to auto-include anything with a bonus, or to run
 // our set bonus algorithm before we sort and slice. There are no current set bonuses that are relevant to raid / dungeon so left as a thought experiment for now.
-const softSlice = 2; // TODO. Adjust to 1000 for prod. Being tested at lower values.
+const softSlice =1 ; // TODO. Adjust to 1000 for prod. Being tested at lower values.
 
 
 // block for `time` ms, then return the number of loops we could run in that time:
@@ -27,9 +27,12 @@ export function runTopGear(itemList, player, contentType, ) {
     itemSets = pruneItems(itemSets);
     
     for (var i = 0; i < itemSets.length; i++) {
-        console.log(itemSets[i].id + ": " + itemSets[i].sumSoftScore)
+        itemSets[i] = evalSet(itemSets[i]);
+        //console.log(itemSets[i].id + ": " + itemSets[i].sumSoftScore)
         itemSets[i].printSet();
         console.log("====================");
+
+        
     }
 
     var t1 = performance.now()
@@ -176,3 +179,10 @@ function sumScore(obj) {
     }
     return sum;
 } 
+
+
+// A true evaluation function on a set. 
+function evalSet(itemSet) {
+    return itemSet.compileStats();
+
+}

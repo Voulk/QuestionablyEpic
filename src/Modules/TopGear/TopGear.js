@@ -129,7 +129,7 @@ export default function TopGear(props) {
     instance.runTopGear(itemList).then( set => {
       console.log(`Loop returned`);
       props.setTopSet(set)
-      history.push("/report/");
+      //history.push("/report/");
     })
 
 

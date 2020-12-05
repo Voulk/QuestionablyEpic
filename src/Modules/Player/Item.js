@@ -38,6 +38,7 @@ class Item {
     crit: 0,
     leech: 0,
     hps: 0,
+    dps: 0,
     bonus_stats: {
       intellect: 0,
       haste: 0,
