@@ -59,12 +59,17 @@ export default class Example extends PureComponent {
                 backgroundColor: "#1b1b1b",
                 border: "1px solid #1b1b1b",
               }}
-              cursor
+              cursor={{ stroke: "#F2BF59", fill: "#1f1f1f" }}
               wrapperStyle={{ color: "#1b1b1b" }}
               // labelFormatter={(timeStr) => moment(timeStr).format("mm:ss")}
             />
             <XAxis type="number" stroke="#f5f5f5" />
-            <YAxis type="category" dataKey="ability" stroke="#f5f5f5" />
+            <YAxis
+              type="category"
+              dataKey="ability"
+              stroke="#f5f5f5"
+              interval={0}
+            />
             <Bar
               label={{ fill: "#f5f5f5", fontSize: 12, position: "right" }}
               dataKey="damage"

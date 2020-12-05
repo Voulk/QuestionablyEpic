@@ -238,8 +238,8 @@ export function buildWepCombos(player) {
   }
 
   wep_list.sort((a, b) => (a.softScore < b.softScore ? 1 : -1));
-  //console.log(JSON.stringify(wep_list));
-  return wep_list;
+  console.log(JSON.stringify(wep_list));
+  return wep_list.slice(0, 9);
 }
 
 // Calculates the intellect and secondary stats an item should have at a given item level.
