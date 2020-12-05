@@ -20,6 +20,7 @@ function TopGearReport(props) {
         crit: 831,
         mastery: 31,
         versatility: 91,
+        leech: 49,
         hps: 911,
         dps: 893,
     };

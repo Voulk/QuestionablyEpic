@@ -18,6 +18,7 @@ export const STAT = {
 };
 
 export const STATPERONEPERCENT = {
+  LEECH: 21,
   HASTE: 30,
   CRIT: 33,
   VERSATILITY: 40,

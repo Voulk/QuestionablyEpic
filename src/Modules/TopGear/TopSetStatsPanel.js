@@ -3,20 +3,32 @@
 
 import React from "react";
 import { Paper, Grid, Typography, Divider } from "@material-ui/core";
+import { STATPERONEPERCENT } from "../Engine/STAT";
 
 // The soulbind stat panel sums up all of the active soulbinds in the tree.
 export default function TopSetStatsPanel(props) {
   const covAbilityEst = props.covAbility > 0 ? props.covAbility : "NA";
   const statList = props.statList;
+  
   const stats = [
       ["Int", statList.intellect],
-      ["Haste", statList.haste],
-      ["Crit", statList.crit],
+      ["Haste", statList.haste / STATPERONEPERCENT.HASTE],
+      ["Crit", statList.crit / STATPERONEPERCENT.CRIT],
       ["Mastery", statList.mastery],
-      ["Versatility", statList.versatility],
+      ["Versatility", statList.versatility / STATPERONEPERCENT.VERSATILITY],
+      ["Leech", statList.leech / STATPERONEPERCENT.LEECH],
       ["Bonus HPS", statList.hps],
       ["Bonus DPS", statList.dps],
 ]
+
+  // Returns a formatted string for the stat panel. 
+  function printStat(stat, value) {
+    if (['Haste', 'Crit', 'Versatility', 'Mastery', 'Leech'].includes(stat)) {
+      return stat + ": " + Math.round(100*value)/100 + "%";
+
+    }
+    else return stat + ": " + value;
+  }
 
   return (
     // <div className="statPanel">
@@ -53,7 +65,8 @@ export default function TopSetStatsPanel(props) {
                 variant="body1"
                 align="left"
             >
-                {stat[0] + ": " + stat[1]} 
+              {console.log(stat)}
+                {printStat(stat[0], stat[1])} 
             </Typography>
             </Grid>
 
