@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import MiniItemCard from "./MiniItemCard";
 import TopSetComponent from "./TopSetComponent";
+import TopSetStatsPanel from "./TopSetStatsPanel";
 import { testList } from "./TestData";
 
 function TopGearReport(props) {
@@ -19,12 +20,25 @@ function TopGearReport(props) {
                 margin: "auto",
                 width: "70%",
                 display: "block",
-                backgroundColor: "pink",
+                
             }}
         >
-            <TopSetComponent 
+            <div
+                style={{
+                    display: 'flex',
+                    flexDirection: 'row',
+                    justifyContent: 'center',
+                
+                }}
+                >
+                <TopSetComponent 
                 itemList = {itemList}
-            />
+                />
+                <TopSetStatsPanel />
+
+            </div>
+
+           
 
 
         </div>

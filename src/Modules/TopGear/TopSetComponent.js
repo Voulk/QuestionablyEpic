@@ -8,7 +8,8 @@ export default function TopSetComponent(props) {
     return(
         <div
             style={{
-                
+                minWidth: '750px',
+                maxHeight: '20%',
             }}>
             {itemList.map((item, index) => (
                 <MiniItemCard key={index} item={item} activateItem={true} />
