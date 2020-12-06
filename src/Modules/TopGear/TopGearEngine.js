@@ -2,6 +2,7 @@ import ItemSet from './ItemSet';
 import Item from "../Player/Item";
 import React, { useState, useEffect } from "react";
 import {STATPERONEPERCENT} from "../Engine/STAT";
+import {convertPPMToUptime} from "../Engine/EffectFormulas/EffectUtilities";
 // Most of our sets will fall into a bucket where totalling the individual stats is enough to tell us they aren't viable. By slicing these out in a preliminary phase,
 // we can run our full algorithm on far fewer items. The net benefit to the player is being able to include more items, with a quicker return.
 // This does run into some problems when it comes to set bonuses and could be re-evaluated at the time. The likely strat is to auto-include anything with a bonus, or to run
@@ -199,6 +200,11 @@ function evalSet(itemSet, player, contentType) {
     let setStats = builtSet.setStats;
     let hardScore = 0;
 
+    // We might display this as data somewhere in future, but it's for testing purposes right now. 
+    let enchant_test_breakdown = {
+
+    }
+
     let bonus_stats = {
        intellect: 0,
        haste: 0,
@@ -230,7 +236,14 @@ function evalSet(itemSet, player, contentType) {
 
 
     // Apply Enchants & Gems
-    
+    // Weapon - Celestial Guidance
+    let expected_uptime = convertPPMToUptime(3, 10);
+    bonus_stats.intellect = (setStats.intellect + bonus_stats.intellect) * 0.05 * expected_uptime;
+
+    // Rings - Best secondary.
+    let highestWeight = getHighestWeight(player, contentType);
+
+
 
     // 5% int boost for wearing the same items.
     // The system doesn't actually allow you to add items of different armor types so this is always on.
@@ -254,7 +267,7 @@ function evalSet(itemSet, player, contentType) {
             continue;
         }
         else {
-            hardScore += setStats[stat] * adjusted_weights[stat];
+            hardScore += (setStats[stat] + (stat in bonus_stats ? bonus_stats[stat] : 0)) * adjusted_weights[stat];
             //console.log(setStats[stat] + " stat: " + stat + " adds " + setStats[stat] * adjusted_weights[stat] + " to score.");
           }
         }
@@ -264,6 +277,17 @@ function evalSet(itemSet, player, contentType) {
     return builtSet; // Temp
 }
 
-function getEnchant(slot, player, itemSet) {
+
+//
+function getHighestWeight(player, contentType) {
+    let max = "";
+    let maxValue = 0;
+    let weights = player.statWeights[contentType]
+
+    for (var stat in weights) {
+        if (weights[stat] > maxValue && ['crit', 'haste', 'mastery', 'versatility'].includes(stat)) { max = stat; maxValue = weights[stat] };
+    }
+
+    return max;
 
 }
