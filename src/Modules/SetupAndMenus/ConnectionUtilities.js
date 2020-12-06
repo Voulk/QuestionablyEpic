@@ -19,7 +19,7 @@ export function dbCheckPatron(email, setPatron) {
 }
 
 // export function dbUpdateChar() {}
-export function apiGetPlayerImage(player) {
+export async function apiGetPlayerImage(player) {
   let region = player.region.toLowerCase();
   let name = player.charName.toLowerCase();
   let realm = player.realm.toLowerCase();
@@ -31,12 +31,13 @@ export function apiGetPlayerImage(player) {
     name +
     "&prealm=" +
     realm;
-  fetch(fetchUrl)
+  await fetch(fetchUrl)
     .then((res) => res.text())
     .then((response) => {
-      urlReturned = response;
+      console.log(response);
+      urlReturned = response.toString();
     })
     .catch((err) => console.log(err));
-
+  console.log(urlReturned);
   return urlReturned;
 }
