@@ -108,7 +108,9 @@ export default function ItemCard(props) {
     <Grid item xs={12}>
       <Card
         className={item.active ? classes.selected : classes.root}
-        variant="outlined"
+        elevation={0}
+        style={{ backgroundColor: "rgba(66, 66, 66, 0.7)" }}
+        // variant="outlined"
         // style={{ width: "100%" }}
       >
         <CardActionArea onClick={activateItemCard}>
