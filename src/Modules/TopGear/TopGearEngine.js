@@ -1,12 +1,13 @@
 import ItemSet from './ItemSet';
 import Item from "../Player/Item";
 import React, { useState, useEffect } from "react";
+import {STATPERONEPERCENT} from "../Engine/STAT";
 // Most of our sets will fall into a bucket where totalling the individual stats is enough to tell us they aren't viable. By slicing these out in a preliminary phase,
 // we can run our full algorithm on far fewer items. The net benefit to the player is being able to include more items, with a quicker return.
 // This does run into some problems when it comes to set bonuses and could be re-evaluated at the time. The likely strat is to auto-include anything with a bonus, or to run
 // our set bonus algorithm before we sort and slice. There are no current set bonuses that are relevant to raid / dungeon so left as a thought experiment for now.
-const softSlice =1 ; // TODO. Adjust to 1000 for prod. Being tested at lower values.
-
+const softSlice = 1000 ; // TODO. Adjust to 1000 for prod. Being tested at lower values.
+const DR_CONST = 0.00968569230769231;
 
 // block for `time` ms, then return the number of loops we could run in that time:
 export function expensive(time) {
@@ -28,15 +29,25 @@ export function runTopGear(itemList, player, contentType) {
     
     for (var i = 0; i < itemSets.length; i++) {
         itemSets[i] = evalSet(itemSets[i], player, contentType);
-        //console.log(itemSets[i].id + ": " + itemSets[i].sumSoftScore)
-        itemSets[i].printSet();
-        console.log("====================");
-
-        
+   
     }
+
+    itemSets.sort((a, b) => (a.hardScore < b.hardScore ? 1 : -1));
+
+    // TEST LOOP ONLY FOR CONSOLE PRINTS.
+    for (var i = 0; i < itemSets.length; i++) {
+        
+        console.log("ID: " + itemSets[i].id + ". Soft: " + itemSets[i].sumSoftScore + ". Hard: " + itemSets[i].hardScore);
+        //itemSets[i].printSet();
+        //console.log("====================");
+   
+    }
+
+    // ----
 
     var t1 = performance.now()
     console.log("Call to doSomething took " + (t1 - t0) + " milliseconds with count ")
+    itemSets[0].printSet()
     return itemSets[0];
 
 }
@@ -185,6 +196,8 @@ function sumScore(obj) {
 function evalSet(itemSet, player, contentType) {
     // Get Base Stats
     let builtSet = itemSet.compileStats();
+    let setStats = builtSet.setStats;
+    let hardScore = 0;
 
     let bonus_stats = {
        intellect: 0,
@@ -196,6 +209,23 @@ function evalSet(itemSet, player, contentType) {
        dps: 0,
     }
 
+    let adjusted_weights = {
+        intellect: 1,
+        haste: player.statWeights[contentType]['haste'],
+        crit: player.statWeights[contentType]['crit'],
+        mastery: player.statWeights[contentType]['mastery'],
+        versatility: player.statWeights[contentType]['versatility'],
+        leech: player.statWeights[contentType]['leech'],
+    }
+    //console.log("Weights Before: " + JSON.stringify(adjusted_weights));
+
+    adjusted_weights.haste = (adjusted_weights.haste + (adjusted_weights.haste * (1 - DR_CONST * setStats.haste / STATPERONEPERCENT.HASTE))) / 2;
+    adjusted_weights.crit = (adjusted_weights.crit + (adjusted_weights.crit * (1 - DR_CONST * setStats.crit / STATPERONEPERCENT.CRIT))) / 2;
+    adjusted_weights.versatility = (adjusted_weights.versatility + (adjusted_weights.versatility * (1 - DR_CONST * setStats.versatility / STATPERONEPERCENT.VERSATILITY))) / 2;
+    //adjusted_weights.mastery = (adjusted_weights.mastery + (adjusted_weights.mastery * (1 - DR_CONST * setStats.mastery / STATPERONEPERCENT.MASTERY[player.spec]))) / 2;
+    // TODO: Leech, which has a DR larger than secondary stats. 
+    //console.log("Weights After: " + JSON.stringify(adjusted_weights));
+
     // Apply consumables if ticked.
 
 
@@ -204,16 +234,36 @@ function evalSet(itemSet, player, contentType) {
 
     // 5% int boost for wearing the same items.
     // The system doesn't actually allow you to add items of different armor types so this is always on.
-    bonus_stats.intellect += (builtSet.setStats.intellect + bonus_stats.intellect) * 0.05;
+    //bonus_stats.intellect += (builtSet.setStats.intellect + bonus_stats.intellect) * 0.05; //TODO: Renable.
 
-    // Take care of some stat weight rebalancing
+    // Take care of some stat weight rebalancing.
+    // TODO: Explain this better.
+
+
 
     // Calculate a hard score using the rebalanced stat weights.
+    for (var stat in setStats) {
+        if (stat === "hps") {
+            /*score +=
+            (item.stats.bonus_stats.hps / player.getHPS()) *
+            player.activeStats.intellect; */
+            hardScore += setStats[stat] / player.fightInfo.hps * player.activeStats.intellect;
+            
+        }
+        else if (stat === "dps") {
+            continue;
+        }
+        else {
+            hardScore += setStats[stat] * adjusted_weights[stat];
+            //console.log(setStats[stat] + " stat: " + stat + " adds " + setStats[stat] * adjusted_weights[stat] + " to score.");
+          }
+        }
 
-
+    //console.log("Soft Score: " + builtSet.sumSoftScore + ". Hard Score: " + hardScore);
+    builtSet.hardScore = Math.round(1000*hardScore)/1000;
     return builtSet; // Temp
 }
 
 function getEnchant(slot, player, itemSet) {
-    
+
 }

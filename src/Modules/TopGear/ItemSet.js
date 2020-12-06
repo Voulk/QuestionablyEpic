@@ -7,7 +7,7 @@ class ItemSet {
     constructor(id, itemList, sumSoft) {
         this.id = id;
         this.itemList = itemList;
-        this.sumSoftScore = sumSoft;
+        this.sumSoftScore = Math.round(1000*sumSoft)/1000;
     }
 
     id = 0;
@@ -30,19 +30,19 @@ class ItemSet {
 
     // This is for testing purposes only. It will print every item in the collection to the console.
     printSet() {
-        console.log("Printing Set with ID: " + this.id + " with stats: " + JSON.stringify(this.setStats));
+        console.log("Printing Set with ID: " + this.id + ". Soft score: " + this.sumSoftScore + " with stats: " + JSON.stringify(this.setStats));
         console.log("Sockets: " + this.setSockets);
         for (var i = 0; i < this.itemList.length; i++) {
-            console.log("Slot: " + this.itemList[i].slot + "Name: " + getTranslatedItemName(this.itemList[i].id, "en") + ". Effect: " + this.itemList[i].effect.name)
+            console.log(getTranslatedItemName(this.itemList[i].id, "en") + ". Soft: " + this.itemList[i].softScore + ". Crit: " + this.itemList[i].stats.crit)
         }
 
     }
 
     // Compiles the stats from the individual item list.
     compileStats() {
-        console.log("Compiling Stats for Item List of legnth: " + this.itemList.length);
+        //console.log("Compiling Stats for Item List of legnth: " + this.itemList.length);
         let setStats = {
-            intellect: 450,
+            intellect: 0, // TODO: 450
             haste: 0,
             crit: 0,
             mastery: 0,
@@ -59,6 +59,7 @@ class ItemSet {
                
                 if (stat in setStats) {
                     setStats[stat] += value;  
+                    //if (stat === "intellect") console.log("Adding Int: " + value) // Tester;
                     if (stat in item.stats["bonus_stats"]) setStats[stat] += item.stats["bonus_stats"][stat];
                 }
             }

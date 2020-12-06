@@ -425,7 +425,7 @@ class App extends Component {
               />
               <Route
                 path="/report"
-                render={() => <TopGearReport pl={this.state.player} topSet={this.state.topSet} />}
+                render={() => <TopGearReport pl={this.state.player} topSet={this.state.topSet} contentType={this.state.contentType} />}
               />
               <Route
                 path="/quickcompare"

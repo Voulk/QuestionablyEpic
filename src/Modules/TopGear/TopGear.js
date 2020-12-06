@@ -125,8 +125,9 @@ export default function TopGear(props) {
     let itemList = props.pl.getSelectedItems();
     //runTopGear(props.pl, props.contentType, itemList)
     let instance = worker()  // `new` is optional
-
-    instance.runTopGear(itemList).then( set => {
+    let strippedPlayer = JSON.parse(JSON.stringify(props.pl));
+    //console.log("Pl: " + JSON.stringify(props.pl));
+    instance.runTopGear(itemList, strippedPlayer, props.contentType).then( set => {
       console.log(`Loop returned`);
       props.setTopSet(set)
       //history.push("/report/");
