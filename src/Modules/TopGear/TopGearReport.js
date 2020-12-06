@@ -4,6 +4,7 @@ import TopSetStatsPanel from "./TopSetStatsPanel";
 import { testList } from "./TestData";
 import { Grid } from "@material-ui/core";
 import { useHistory, useLocation } from "react-router-dom";
+import { apiGetPlayerImage } from "../SetupAndMenus/ConnectionUtilities";
 
 function TopGearReport(props) {
   let topSet = props.topSet;
@@ -26,65 +27,8 @@ function TopGearReport(props) {
     dps: 893,
   };
 
-  function useQuery() {
-    return new URLSearchParams(useLocation().search);
-  }
-  const getBGfromBliz = (accessToken) => {
-    let player = props.pl;
-    let region = player.region.toLowerCase();
-    let serverName = player.realm.toLowerCase();
-    let charName = player.charName.toLowerCase();
-    let nameSpace = (region) => {
-      switch (region) {
-        case "us":
-          return "profile-us";
-          break;
-        case "cn":
-          return "profile-cn";
-          break;
-        case "eu":
-          return "profile-eu";
-          break;
-        case "tw":
-          return "profile-tw";
-          break;
-        default:
-          break;
-      }
-    };
-    fetch(
-      "https://" +
-        region +
-        ".api.blizzard.com/profile/wow/character/" +
-        serverName +
-        "/" +
-        charName +
-        "/character-media?namespace=" +
-        nameSpace(region) +
-        "&locale=en_US&access_token=" +
-        accessToken
-    )
-      .then((res) => res.json())
-      .then(
-        (result) => {
-          console.log(result);
-        },
-        (error) => {
-          console.error("Error: " + error.message + ".");
-        }
-      );
-  };
-
-  const getPlayerBackground = () => {
-    let query = useQuery();
-    fetch("https://questionablyepic.com/getTok.php?code=" + query.get("code"))
-      .then((res) => res.text())
-      .then((response) => {
-        console.log(response);
-        getBGfromBliz(response);
-      })
-      .catch((err) => console.log(err));
-  };
+  let playerImage = apiGetPlayerImage(props.pl);
+  console.log(playerImage);
   return (
     <div
       style={{
@@ -93,13 +37,12 @@ function TopGearReport(props) {
         display: "block",
       }}
     >
-      {getPlayerBackground()}
       <div
         style={{
           //   display: "flex",
           //   flexDirection: "row",
           justifyContent: "center",
-          backgroundImage: `url(${require("./Ptolemy.jpg")})`,
+          backgroundImage: `url(${playerImage})`,
           backgroundSize: "cover",
           padding: 16,
         }}
