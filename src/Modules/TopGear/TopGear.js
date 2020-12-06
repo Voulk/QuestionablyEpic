@@ -193,7 +193,6 @@ export default function TopGear(props) {
               >
                 {"Top Gear"}
               </Typography>
-              <Divider variant="middle" />
             </Paper>
           </Grid>
         }

@@ -46,7 +46,7 @@ const useStyles = makeStyles({
   },
 });
 
-export default function ItemCard(props) {
+export default function ItemCardReport(props) {
   const classes = useStyles();
   const item = props.item;
   const statString = buildStatString(item.stats, item.effect);
@@ -105,11 +105,12 @@ export default function ItemCard(props) {
     ) : null;
 
   return (
-    <Grid item xs={12} sm={6} md={6} lg={4} xl={4}>
+    <Grid item xs={12}>
       <Card
         className={item.active ? classes.selected : classes.root}
         elevation={0}
-        variant="outlined"
+        style={{ backgroundColor: "rgba(44, 44, 44, 0.5)" }}
+        // variant="outlined"
         // style={{ width: "100%" }}
       >
         <CardActionArea onClick={activateItemCard}>

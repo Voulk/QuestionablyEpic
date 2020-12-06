@@ -3,11 +3,13 @@
 import React from "react";
 import { Paper, Grid, Typography, Divider } from "@material-ui/core";
 import { STATPERONEPERCENT } from "../Engine/STAT";
+import { useTranslation } from "react-i18next";
 
 // The soulbind stat panel sums up all of the active soulbinds in the tree.
 export default function TopSetStatsPanel(props) {
   const covAbilityEst = props.covAbility > 0 ? props.covAbility : "NA";
   const statList = props.statList;
+  const { t, i18n } = useTranslation();
 
   const stats = [
     ["Int", statList.intellect],
@@ -32,11 +34,13 @@ export default function TopSetStatsPanel(props) {
     <Grid item xs={12} style={{ paddingBottom: 8 }}>
       <Paper
         // elevation={0}
-        variant="outlined"
+        // variant="outlined"
         style={{
           fontSize: "12px",
           textAlign: "left",
           minHeight: 90,
+          maxWidth: 300,
+          backgroundColor: "rgba(44, 44, 44, 0.5)",
         }}
       >
         <Grid container direction="column" spacing={1}>
@@ -51,10 +55,10 @@ export default function TopSetStatsPanel(props) {
             </Typography>
             <Divider variant="middle" />
           </Grid>
-          <div>
-            <Grid container direction="column">
+          <Grid item xs={12} style={{ padding: "4px 16px 16px 16px" }}>
+            <Grid container direction="row" spacing={1}>
               {stats.map((stat, index) => (
-                <Grid item xs={12} style={{ marginLeft: "7px" }}>
+                <Grid item xs={6}>
                   <Typography
                     style={{ fontSize: 16, marginLeft: "4px" }}
                     variant="body1"
@@ -66,7 +70,7 @@ export default function TopSetStatsPanel(props) {
                 </Grid>
               ))}
             </Grid>
-          </div>
+          </Grid>
           {/*}
           <Grid container direction="column">
             <Grid item xs={12}>

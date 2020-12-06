@@ -1,27 +1,24 @@
 import React, { useEffect, useState } from "react";
-import MiniItemCard from "./MiniItemCard";
+import ItemCardReport from "./MiniItemCardReport";
 import TopSetStatsPanel from "./TopSetStatsPanel";
 import { testList } from "./TestData";
 import { Grid } from "@material-ui/core";
 import { useHistory, useLocation } from "react-router-dom";
 import { apiGetPlayerImage } from "../SetupAndMenus/ConnectionUtilities";
+import { useTranslation } from "react-i18next";
 
 function TopGearReport(props) {
-
-  
   const [backgroundImage, setBackgroundImage] = useState("");
+  const { t, i18n } = useTranslation();
 
   useEffect(() => {
-
     async function setImg() {
       const img = await apiGetPlayerImage(props.pl);
       console.log("IMG: " + img);
       setBackgroundImage(img);
-
     }
 
     setImg();
-    
   }, []);
 
   let topSet = props.topSet;
@@ -62,11 +59,12 @@ function TopGearReport(props) {
           justifyContent: "center",
           backgroundImage: `url("${backgroundImage}")`,
           backgroundSize: "cover",
+          backgroundPositionY: "-160px",
           padding: 16,
         }}
       >
-        <Grid container direction="row" spacing={1}>
-          <Grid item xs={10}>
+        <Grid container direction="row" spacing={1} style={{ marginTop: 40 }}>
+          <Grid item xs={12}>
             <Grid container direction="row">
               <Grid item xs={3} style={{ width: "100%" }}>
                 <Grid container spacing={1}>
@@ -80,7 +78,7 @@ function TopGearReport(props) {
                         key.slot === "Wrist"
                     )
                     .map((item, index) => (
-                      <MiniItemCard
+                      <ItemCardReport
                         key={index}
                         item={item}
                         activateItem={true}
@@ -104,7 +102,7 @@ function TopGearReport(props) {
                         key.slot === "Trinket"
                     )
                     .map((item, index) => (
-                      <MiniItemCard
+                      <ItemCardReport
                         key={index}
                         item={item}
                         activateItem={true}
@@ -114,7 +112,7 @@ function TopGearReport(props) {
               </Grid>
             </Grid>
           </Grid>
-          <Grid item xs={2}>
+          <Grid item xs={12}>
             <Grid container spacing={1} direction="column">
               <TopSetStatsPanel statList={statList} />
             </Grid>
