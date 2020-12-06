@@ -159,7 +159,6 @@ function getItemCat(slot) {
     case "Legs":
     case "Robe":
     case "2H Weapon":
-      console.log("Returning " + 0);
       return 0;
 
     case "Shoulder":
@@ -182,7 +181,7 @@ function getItemCat(slot) {
     case "1H Weapon":
       return 3;
     default:
-      console.error("Item Cat going to Default" + slot);
+      //console.error("Item Cat going to Default" + slot);
       return 3;
       
     // Raise error.
