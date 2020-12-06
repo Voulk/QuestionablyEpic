@@ -1,5 +1,4 @@
-// This is the stats panel for the Top Gear current best set. 
-
+// This is the stats panel for the Top Gear current best set.
 
 import React from "react";
 import { Paper, Grid, Typography, Divider } from "@material-ui/core";
@@ -9,25 +8,23 @@ import { STATPERONEPERCENT } from "../Engine/STAT";
 export default function TopSetStatsPanel(props) {
   const covAbilityEst = props.covAbility > 0 ? props.covAbility : "NA";
   const statList = props.statList;
-  
+
   const stats = [
-      ["Int", statList.intellect],
-      ["Haste", statList.haste / STATPERONEPERCENT.HASTE],
-      ["Crit", statList.crit / STATPERONEPERCENT.CRIT],
-      ["Mastery", statList.mastery],
-      ["Versatility", statList.versatility / STATPERONEPERCENT.VERSATILITY],
-      ["Leech", statList.leech / STATPERONEPERCENT.LEECH],
-      ["Bonus HPS", statList.hps],
-      ["Bonus DPS", statList.dps],
-]
+    ["Int", statList.intellect],
+    ["Haste", statList.haste / STATPERONEPERCENT.HASTE],
+    ["Crit", statList.crit / STATPERONEPERCENT.CRIT],
+    ["Mastery", statList.mastery],
+    ["Versatility", statList.versatility / STATPERONEPERCENT.VERSATILITY],
+    ["Leech", statList.leech / STATPERONEPERCENT.LEECH],
+    ["Bonus HPS", statList.hps],
+    ["Bonus DPS", statList.dps],
+  ];
 
-  // Returns a formatted string for the stat panel. 
+  // Returns a formatted string for the stat panel.
   function printStat(stat, value) {
-    if (['Haste', 'Crit', 'Versatility', 'Mastery', 'Leech'].includes(stat)) {
-      return stat + ": " + Math.round(100*value)/100 + "%";
-
-    }
-    else return stat + ": " + value;
+    if (["Haste", "Crit", "Versatility", "Mastery", "Leech"].includes(stat)) {
+      return stat + ": " + Math.round(100 * value) / 100 + "%";
+    } else return stat + ": " + value;
   }
 
   return (
@@ -35,7 +32,7 @@ export default function TopSetStatsPanel(props) {
     <Grid item xs={12} style={{ paddingBottom: 8 }}>
       <Paper
         // elevation={0}
-        // variant="outlined"
+        variant="outlined"
         style={{
           fontSize: "12px",
           textAlign: "left",
@@ -55,25 +52,22 @@ export default function TopSetStatsPanel(props) {
             <Divider variant="middle" />
           </Grid>
           <div>
-          <Grid container direction="column">
-          {stats.map((stat, index) => (
-            
-            <Grid item xs={12}
-                style={{marginLeft: '7px'}}>
-            <Typography
-                style={{ fontSize: 16, marginLeft: '4px' }}
-                variant="body1"
-                align="left"
-            >
-              {console.log(stat)}
-                {printStat(stat[0], stat[1])} 
-            </Typography>
+            <Grid container direction="column">
+              {stats.map((stat, index) => (
+                <Grid item xs={12} style={{ marginLeft: "7px" }}>
+                  <Typography
+                    style={{ fontSize: 16, marginLeft: "4px" }}
+                    variant="body1"
+                    align="left"
+                  >
+                    {console.log(stat)}
+                    {printStat(stat[0], stat[1])}
+                  </Typography>
+                </Grid>
+              ))}
             </Grid>
-
-            ))}
-            </Grid>
-        </div>
-        {/*}
+          </div>
+          {/*}
           <Grid container direction="column">
             <Grid item xs={12}>
               <Typography

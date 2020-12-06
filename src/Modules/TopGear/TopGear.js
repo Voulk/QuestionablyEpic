@@ -5,7 +5,7 @@ import ReactGA from "react-ga";
 import Item from "../Player/Item";
 import "./../QuickCompare/QuickCompare.css";
 import { useTranslation } from "react-i18next";
-import {testTrinkets } from "../Engine/EffectFormulas/Generic/TrinketEffectFormulas"
+import { testTrinkets } from "../Engine/EffectFormulas/Generic/TrinketEffectFormulas";
 import {
   InputLabel,
   MenuItem,
@@ -36,7 +36,7 @@ import ItemCard from "./../QuickCompare/ItemCard";
 import MiniItemCard from "./MiniItemCard";
 import MuiAlert from "@material-ui/lab/Alert";
 import Autocomplete from "@material-ui/lab/Autocomplete";
-import worker from 'workerize-loader!./TopGearEngine' // eslint-disable-line import/no-webpack-loader-syntax
+import worker from "workerize-loader!./TopGearEngine"; // eslint-disable-line import/no-webpack-loader-syntax
 import { useHistory, useLocation } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
@@ -124,17 +124,17 @@ export default function TopGear(props) {
     // Call to the Top Gear Engine. Lock the app down.
     let itemList = props.pl.getSelectedItems();
     //runTopGear(props.pl, props.contentType, itemList)
-    let instance = worker()  // `new` is optional
+    let instance = worker(); // `new` is optional
     let strippedPlayer = JSON.parse(JSON.stringify(props.pl));
     //console.log("Pl: " + JSON.stringify(props.pl));
-    instance.runTopGear(itemList, strippedPlayer, props.contentType).then( set => {
-      console.log(`Loop returned`);
-      props.setTopSet(set)
-      //history.push("/report/");
-    })
-
-
-  }
+    instance
+      .runTopGear(itemList, strippedPlayer, props.contentType)
+      .then((set) => {
+        console.log(`Loop returned`);
+        props.setTopSet(set);
+        //history.push("/report/");
+      });
+  };
 
   const selectedItemCount = props.pl.getSelectedItems().length;
 
@@ -142,10 +142,22 @@ export default function TopGear(props) {
     let player = props.pl;
     player.activateItem(unique);
     setItemList([...player.getActiveItems(activeSlot)]);
-    
-  }
+  };
 
-  const slotList = ["Head", "Neck", "Shoulder", "Back", "Chest", "Wrist", "Hands", "Waist", "Legs", "Feet", "Finger", "Trinkets"]
+  const slotList = [
+    "Head",
+    "Neck",
+    "Shoulder",
+    "Back",
+    "Chest",
+    "Wrist",
+    "Hands",
+    "Waist",
+    "Legs",
+    "Feet",
+    "Finger",
+    "Trinkets",
+  ];
 
   // TODO. Calculate the score for a given item.
   // Score is calculated by multiplying out stat weights and then adding any special effects.
@@ -170,85 +182,89 @@ export default function TopGear(props) {
           display: "block",
         }}
       >
-          {
-        <Grid item xs={12}>
+        {
+          <Grid item xs={12}>
             <Paper elevation={0}>
-                <Typography
+              <Typography
                 variant="h4"
                 align="center"
                 style={{ padding: "10px 10px 5px 10px" }}
                 color="primary"
-                >
-                {("Top Gear")}
-                </Typography>
-                <Divider variant="middle" />
-
+              >
+                {"Top Gear"}
+              </Typography>
+              <Divider variant="middle" />
             </Paper>
-        </Grid> }
+          </Grid>
+        }
 
+        {/* this can be simplified into a map at some stage */}
 
-         {/* this can be simplified into a map at some stage */}
+        {slotList.map((key, index) => {
+          return (
+            <Grid item xs={12}>
+              <Typography style={{ color: "white" }} variant="h5">
+                {key}
+              </Typography>
+              <Divider style={{ marginBottom: 10, width: "42%" }} />
+              <Grid container spacing={1}>
+                {[...props.pl.getActiveItems(key)].map((item, index) => (
+                  <MiniItemCard
+                    key={index}
+                    item={item}
+                    activateItem={activateItem}
+                  />
+                ))}
+              </Grid>
+            </Grid>
+          );
+        })}
+      </Grid>
 
-            {slotList.map((key, index) => {
-
-            
-                return <Grid item xs={12}>
-                    <Typography style={{color: "white"}} variant="h5">
-                        {key}
-
-                    </Typography>
-                    <Divider style={{ marginBottom: 10, width: '42%' }} />
-                    <Grid container spacing={1}>
-                        {[...props.pl.getActiveItems(key)].map((item, index) => (
-                            <MiniItemCard key={index} item={item} activateItem={activateItem} />
-                        ))}
-                    </Grid>
-                </Grid>
-                            
-                })}
-        </Grid>
-
-        <div style={{
-            position: 'fixed',
-            bottom: 0,
-            left: 0,
-            right: 0,
-            height: '50px',          
-            backgroundColor: '#424242',
-            width: '100%',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-
-        }}>
-
-            <div style={{
-                display: 'flex',
-                width: '80%',
-                flexDirection: 'row',
-                justifyContent: 'space-evenly',
-                alignItems: 'center',
-                
-            }}>
-            <Typography
-                variant="Subtitle2"
-                align="center"
-                style={{ padding: "10px 10px 5px 10px"}}
-                color="primary"
-                >
-                {("Selected Items: " + selectedItemCount + "/" + TOPGEARCAP)}
-                </Typography>
-            <Button
-                    variant="contained"
-                    color="secondary"
-                    align="center"
-                    style={{height: '68%', width: '180px' }}
-                    onClick={unleashTopGear}>
-                    Go!
-                </Button>
-            </div>
-
+      <div
+        style={{
+          position: "fixed",
+          bottom: 0,
+          left: 0,
+          right: 0,
+          height: "50px",
+          backgroundColor: "#424242",
+          width: "100%",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          backgroundImage: "../../Images/Ptolemy.jpg",
+        }}
+      >
+        <img src={"../../Images/Ptolemy.jpg"} />
+        <div
+          style={{
+            display: "flex",
+            width: "80%",
+            flexDirection: "row",
+            justifyContent: "space-evenly",
+            alignItems: "center",
+          }}
+        >
+          <Typography
+            variant="Subtitle2"
+            align="center"
+            style={{ padding: "10px 10px 5px 10px" }}
+            color="primary"
+          >
+            {"Selected Items: " + selectedItemCount + "/" + TOPGEARCAP}
+          </Typography>
+          <Button
+            variant="contained"
+            color="secondary"
+            align="center"
+            style={{ height: "68%", width: "180px" }}
+            onClick={unleashTopGear}
+          >
+            Go!
+          </Button>
         </div>
+      </div>
     </div>
   );
 }

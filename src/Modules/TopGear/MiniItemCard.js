@@ -31,7 +31,7 @@ const useStyles = makeStyles({
     borderRadius: 3,
     borderColor: "Green",
     borderRadius: "5px",
-    backgroundColor: "#424E42"
+    backgroundColor: "#424E42",
   },
   bullet: {
     display: "inline-block",
@@ -61,7 +61,7 @@ export default function ItemCard(props) {
   };
 
   const activateItemCard = () => {
-      console.log("Activating item with Hash: " + item.uniqueHash)
+    console.log("Activating item with Hash: " + item.uniqueHash);
     props.activateItem(item.uniqueHash);
   };
 
@@ -94,9 +94,8 @@ export default function ItemCard(props) {
         width={15}
         height={15}
         style={{ verticalAlign: "middle" }}
-        alt="Socket"  
+        alt="Socket"
       />{" "}
-      
     </div>
   ) : null;
 
@@ -106,98 +105,99 @@ export default function ItemCard(props) {
     ) : null;
 
   return (
-    <Grid item xs={12} sm={6} md={6} lg={4} xl={4}>
-      <Card className={item.active ? classes.selected : classes.root} variant="outlined">
-        <CardActionArea onClick={activateItemCard}> 
-        {/* <CardActionArea disabled={true}> */}
-        <Grid
-          container
-          display="inline-flex"
-          wrap="nowrap"
-          justify="space-between"
-        >
-          <Grid item xs="auto">
-            <CardContent
-              style={{
-                padding: "2px 2px 0.4px 2px",
-                display: "inline-flex",
-              }}
-            >
-              <div className="container-ItemCards">
-                <img
-                  alt="img"
-                  width={44}
-                  height={44}
-                  src={getItemIcon(item.id)}
-                  style={{
-                    borderRadius: 4,
-                    borderWidth: "1px",
-                    borderStyle: "solid",
-                    borderColor: itemQuality(itemLevel),
-                  }}
-                />
-                <div className="bottom-right-ItemCards"> {item.level} </div>
-              </div>
-            </CardContent>
-          </Grid>
-          <Divider orientation="vertical" flexItem />
-          <CardContent style={{ padding: 2, width: "100%" }}>
-            <Grid
-              item
-              container
-              display="inline"
-              direction="column"
-              justify="space-around"
-              xs="auto"
-            >
-              <Grid
-                container
-                item
-                wrap="nowrap"
-                justify="space-between"
-                alignItems="center"
-                style={{ width: "100%" }}
+    <Grid item xs={12}>
+      <Card
+        className={item.active ? classes.selected : classes.root}
+        variant="outlined"
+        // style={{ width: "100%" }}
+      >
+        <CardActionArea onClick={activateItemCard}>
+          {/* <CardActionArea disabled={true}> */}
+          <Grid
+            container
+            display="inline-flex"
+            wrap="nowrap"
+            justify="space-between"
+          >
+            <Grid item xs="auto">
+              <CardContent
+                style={{
+                  padding: "2px 2px 0.4px 2px",
+                  display: "inline-flex",
+                }}
               >
-                <Grid item xs={11} display="inline">
-                  <Typography
-                    variant="subtitle2"
-                    wrap="nowrap"
-                    display="inline"
-                    align="left"
-                    style={{ color: itemQuality(itemLevel) }}
-                  >
-                    {itemName}
-                  </Typography>
-                </Grid>
-
-              </Grid>
-              <Divider />
+                <div className="container-ItemCards">
+                  <img
+                    alt="img"
+                    width={44}
+                    height={44}
+                    src={getItemIcon(item.id)}
+                    style={{
+                      borderRadius: 4,
+                      borderWidth: "1px",
+                      borderStyle: "solid",
+                      borderColor: itemQuality(itemLevel),
+                    }}
+                  />
+                  <div className="bottom-right-ItemCards"> {item.level} </div>
+                </div>
+              </CardContent>
+            </Grid>
+            <Divider orientation="vertical" flexItem />
+            <CardContent style={{ padding: 2, width: "100%" }}>
               <Grid
                 item
                 container
                 display="inline"
-                direction="row"
+                direction="column"
+                justify="space-around"
                 xs="auto"
-                justify="space-between"
               >
-                <Grid item xs={11}>
-                  <Typography
-                    variant="subtitle2"
-                    wrap="nowrap"
-                    display="block"
-                    align="left"
-                    style={{fontSize: '12px'}}
-                  >
-                    {socket} {statString} {tertiary}
-                  </Typography>
+                <Grid
+                  container
+                  item
+                  wrap="nowrap"
+                  justify="space-between"
+                  alignItems="center"
+                  style={{ width: "100%" }}
+                >
+                  <Grid item xs={11} display="inline">
+                    <Typography
+                      variant="subtitle2"
+                      wrap="nowrap"
+                      display="inline"
+                      align="left"
+                      style={{ color: itemQuality(itemLevel) }}
+                    >
+                      {itemName}
+                    </Typography>
+                  </Grid>
                 </Grid>
-
-
+                <Divider />
+                <Grid
+                  item
+                  container
+                  display="inline"
+                  direction="row"
+                  xs="auto"
+                  justify="space-between"
+                >
+                  <Grid item xs={11}>
+                    <Typography
+                      variant="subtitle2"
+                      wrap="nowrap"
+                      display="block"
+                      align="left"
+                      style={{ fontSize: "12px" }}
+                    >
+                      {socket} {statString} {tertiary}
+                    </Typography>
+                  </Grid>
+                </Grid>
               </Grid>
-            </Grid>
-          </CardContent>
-        </Grid>
-        </CardActionArea> 
+            </CardContent>
+          </Grid>
+        </CardActionArea>
       </Card>
     </Grid>
   );
