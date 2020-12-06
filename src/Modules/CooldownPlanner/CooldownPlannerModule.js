@@ -197,6 +197,49 @@ class HolyDiver extends Component {
           {/* Main Grid for the Compoonent, this should control the base spacing of all the base components,
               any Grid Components within this with the item prop will have spacing  */}
           <Grid container spacing={1}>
+            <Grid item xs={12}>
+              <Paper elevation={0} style={{ border: "1px", padding: 10 }}>
+                <Typography
+                  style={{ color: "limegreen" }}
+                  align="centre"
+                  variant="subtitle1"
+                  // gutterBottom
+                >
+                  Welcome to the Cooldown Planner!
+                </Typography>
+                <Typography
+                  style={{ color: "limegreen" }}
+                  align="left"
+                  variant="subtitle1"
+                  // gutterBottom
+                >
+                  To Begin, start by adding Healers to your Heal Team. Importing
+                  a log will bring up the damage pattern of the selected fight,
+                  with the cooldowns used on the log overlayed to give an
+                  indication of what they were used for, what they were used
+                  etc. A timeline of the abilities will show in the Timeline
+                  Component. Healer information shows a card for each healer
+                  showing their stats, talents, conduit choices The DTPS chart
+                  shows the damaging abilities over the entire fight. Below that
+                  another Chart is shown with the damage pattern from the log,
+                  this has no cooldowns from the log shown, but cooldowns you
+                  enter into the planner (with times) will be shown on this
+                  chart.
+                </Typography>
+                <Typography
+                  style={{ color: "limegreen" }}
+                  align="left"
+                  variant="subtitle1"
+                  // gutterBottom
+                >
+                  The Planner itself will unlock after you enter your healers
+                  into the Heal Team. Enter your Healers, Cooldowns you want
+                  used, time to cast (If Applicable, you CAN enter cooldowns
+                  without a time, they will just not show up on the Chart/ERT
+                  Note), the ability to use it for etc.
+                </Typography>
+              </Paper>
+            </Grid>
             {/* Grid Container for the User Input Components, With Paper as the Surface */}
             <Grid item xs={12} sm={12} md={7} lg={7} xl={7}>
               <Paper
