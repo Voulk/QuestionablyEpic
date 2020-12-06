@@ -236,14 +236,24 @@ function evalSet(itemSet, player, contentType) {
 
 
     // Apply Enchants & Gems
-    // Weapon - Celestial Guidance
-    let expected_uptime = convertPPMToUptime(3, 10);
-    bonus_stats.intellect = (setStats.intellect + bonus_stats.intellect) * 0.05 * expected_uptime;
+
 
     // Rings - Best secondary.
     let highestWeight = getHighestWeight(player, contentType);
+    bonus_stats[highestWeight] += 32; // 16 x 2.
 
+    // Bracers
+    bonus_stats.intellect += 15;
 
+    // Chest
+    bonus_stats.intellect += 30;
+
+    // Cape
+    bonus_stats.leech += 20;
+
+    // Weapon - Celestial Guidance
+    let expected_uptime = convertPPMToUptime(3, 10);
+    bonus_stats.intellect = (setStats.intellect + bonus_stats.intellect) * 0.05 * expected_uptime;
 
     // 5% int boost for wearing the same items.
     // The system doesn't actually allow you to add items of different armor types so this is always on.
