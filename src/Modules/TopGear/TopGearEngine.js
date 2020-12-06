@@ -239,6 +239,8 @@ function evalSet(itemSet, player, contentType) {
 
 
     // Rings - Best secondary.
+    // We use the players highest stat weight here. Using the adjusted weight could be more accurate, but the difference is likely to be the smallest fraction of a 
+    // single percentage. The stress this could cause a player is likely not worth the optimization. 
     let highestWeight = getHighestWeight(player, contentType);
     bonus_stats[highestWeight] += 32; // 16 x 2.
 
@@ -246,23 +248,23 @@ function evalSet(itemSet, player, contentType) {
     bonus_stats.intellect += 15;
 
     // Chest
+    // TODO: Add the mana enchant. In practice they are very similar. 
     bonus_stats.intellect += 30;
 
     // Cape
     bonus_stats.leech += 20;
 
     // Weapon - Celestial Guidance
+    // Eternal Grace is so poor right now that I don't even think it deserves inclusion.
     let expected_uptime = convertPPMToUptime(3, 10);
     bonus_stats.intellect = (setStats.intellect + bonus_stats.intellect) * 0.05 * expected_uptime;
 
     // 5% int boost for wearing the same items.
     // The system doesn't actually allow you to add items of different armor types so this is always on.
-    //bonus_stats.intellect += (builtSet.setStats.intellect + bonus_stats.intellect) * 0.05; //TODO: Renable.
+    bonus_stats.intellect += (builtSet.setStats.intellect + bonus_stats.intellect) * 0.05; //TODO: Renable.
 
-    // Take care of some stat weight rebalancing.
-    // TODO: Explain this better.
-
-
+    // Sockets
+    bonus_stats[highestWeight] += 16 * builtSet.sockets;
 
     // Calculate a hard score using the rebalanced stat weights.
     for (var stat in setStats) {

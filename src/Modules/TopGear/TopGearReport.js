@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import MiniItemCard from "./MiniItemCard";
 import TopSetStatsPanel from "./TopSetStatsPanel";
 import { testList } from "./TestData";
@@ -7,6 +7,23 @@ import { useHistory, useLocation } from "react-router-dom";
 import { apiGetPlayerImage } from "../SetupAndMenus/ConnectionUtilities";
 
 function TopGearReport(props) {
+
+  
+  const [backgroundImage, setBackgroundImage] = useState("");
+
+  useEffect(() => {
+
+    async function setImg() {
+      const img = await apiGetPlayerImage(props.pl);
+      console.log("IMG: " + img);
+      setBackgroundImage(img);
+
+    }
+
+    setImg();
+    
+  }, []);
+
   let topSet = props.topSet;
   console.log(topSet);
   let itemList = topSet !== null && "itemList" in topSet ? topSet.itemList : [];
@@ -27,8 +44,9 @@ function TopGearReport(props) {
     dps: 893,
   };
 
-  let playerImage = apiGetPlayerImage(props.pl);
-  console.log(playerImage);
+  //let playerImage = apiGetPlayerImage(props.pl);
+  //let playerImage = "https://render-us.worldofwarcraft.com/character/frostmourne/212/180358868-main.jpg"
+  console.log(backgroundImage);
   return (
     <div
       style={{
@@ -42,7 +60,7 @@ function TopGearReport(props) {
           //   display: "flex",
           //   flexDirection: "row",
           justifyContent: "center",
-          backgroundImage: `url(${playerImage})`,
+          backgroundImage: `url("${backgroundImage}")`,
           backgroundSize: "cover",
           padding: 16,
         }}
