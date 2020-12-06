@@ -2509,7 +2509,7 @@ export const itemDB = [
         "itemSubClass": 5,
         "itemLevel": 100,
         "stats": {
-            "intellect": 18121,
+            "intellect": 23380,
             "stamina": 7889,
             "haste": 0,
             "crit": 0,
@@ -2538,7 +2538,7 @@ export const itemDB = [
         "itemSubClass": 1,
         "itemLevel": 100,
         "stats": {
-            "intellect": 18121,
+            "intellect": 23380,
             "stamina": 7889,
             "haste": 0,
             "crit": 0,
@@ -2567,7 +2567,7 @@ export const itemDB = [
         "itemSubClass": 15,
         "itemLevel": 100,
         "stats": {
-            "intellect": 25370,
+            "intellect": 30629,
             "stamina": 7889,
             "haste": 0,
             "crit": 0,
@@ -2886,7 +2886,7 @@ export const itemDB = [
         "itemSubClass": 19,
         "itemLevel": 85,
         "stats": {
-            "intellect": 25370,
+            "intellect": 30629,
             "stamina": 7889,
             "haste": 0,
             "crit": 4697,
@@ -2944,7 +2944,7 @@ export const itemDB = [
         "itemSubClass": 4,
         "itemLevel": 85,
         "stats": {
-            "intellect": 25370,
+            "intellect": 30629,
             "stamina": 7889,
             "haste": 2716,
             "crit": 0,
@@ -2973,7 +2973,7 @@ export const itemDB = [
         "itemSubClass": 0,
         "itemLevel": 85,
         "stats": {
-            "intellect": 25370,
+            "intellect": 30629,
             "stamina": 7889,
             "haste": 0,
             "crit": 4095,
@@ -3002,7 +3002,7 @@ export const itemDB = [
         "itemSubClass": 15,
         "itemLevel": 85,
         "stats": {
-            "intellect": 25370,
+            "intellect": 30629,
             "stamina": 7889,
             "haste": 2408,
             "crit": 0,
@@ -3031,7 +3031,7 @@ export const itemDB = [
         "itemSubClass": 10,
         "itemLevel": 85,
         "stats": {
-            "intellect": 18121,
+            "intellect": 23380,
             "stamina": 7889,
             "haste": 0,
             "crit": 0,
@@ -3959,7 +3959,7 @@ export const itemDB = [
         "itemSubClass": 13,
         "itemLevel": 100,
         "stats": {
-            "intellect": 25370,
+            "intellect": 30629,
             "stamina": 7889,
             "haste": 0,
             "crit": 0,
@@ -3988,7 +3988,7 @@ export const itemDB = [
         "itemSubClass": 19,
         "itemLevel": 100,
         "stats": {
-            "intellect": 25370,
+            "intellect": 30629,
             "stamina": 7889,
             "haste": 0,
             "crit": 0,
@@ -4133,7 +4133,7 @@ export const itemDB = [
         "itemSubClass": 0,
         "itemLevel": 100,
         "stats": {
-            "intellect": 16132,
+            "intellect": 24021,
             "stamina": 7889,
             "haste": 0,
             "crit": 0,
@@ -4162,7 +4162,7 @@ export const itemDB = [
         "itemSubClass": 10,
         "itemLevel": 100,
         "stats": {
-            "intellect": 25370,
+            "intellect": 33259,
             "stamina": 7889,
             "haste": 0,
             "crit": 0,
@@ -6767,7 +6767,7 @@ export const itemDB = [
         "itemSubClass": 7,
         "itemLevel": 95,
         "stats": {
-            "intellect": 25370,
+            "intellect": 30629,
             "stamina": 7889,
             "haste": 0,
             "crit": 2205,
@@ -18823,7 +18823,7 @@ export const itemDB = [
         "itemSubClass": 10,
         "itemLevel": 85,
         "stats": {
-            "intellect": 18121,
+            "intellect": 23380,
             "stamina": 7889,
             "haste": 0,
             "crit": 3350,
@@ -18881,7 +18881,7 @@ export const itemDB = [
         "itemSubClass": 19,
         "itemLevel": 85,
         "stats": {
-            "intellect": 25370,
+            "intellect": 30629,
             "stamina": 7889,
             "haste": 3950,
             "crit": 3050,
@@ -19026,7 +19026,7 @@ export const itemDB = [
         "itemSubClass": 15,
         "itemLevel": 85,
         "stats": {
-            "intellect": 25370,
+            "intellect": 30629,
             "stamina": 7889,
             "haste": 0,
             "crit": 3650,
@@ -19055,7 +19055,7 @@ export const itemDB = [
         "itemSubClass": 4,
         "itemLevel": 85,
         "stats": {
-            "intellect": 25370,
+            "intellect": 30629,
             "stamina": 7889,
             "haste": 0,
             "crit": 3050,
@@ -20070,7 +20070,7 @@ export const itemDB = [
         "itemSubClass": 15,
         "itemLevel": 100,
         "stats": {
-            "intellect": 25370,
+            "intellect": 30629,
             "stamina": 7889,
             "haste": 0,
             "crit": 0,
@@ -20099,7 +20099,7 @@ export const itemDB = [
         "itemSubClass": 4,
         "itemLevel": 100,
         "stats": {
-            "intellect": 25370,
+            "intellect": 30629,
             "stamina": 7889,
             "haste": 0,
             "crit": 0,
@@ -21384,7 +21384,7 @@ export const itemDB = [
         "itemSubClass": 10,
         "itemLevel": 85,
         "stats": {
-            "intellect": 18121,
+            "intellect": 23380,
             "stamina": 7889,
             "haste": 3200,
             "crit": 0,
@@ -21413,7 +21413,7 @@ export const itemDB = [
         "itemSubClass": 15,
         "itemLevel": 85,
         "stats": {
-            "intellect": 25370,
+            "intellect": 30629,
             "stamina": 7889,
             "haste": 0,
             "crit": 3200,
@@ -21442,7 +21442,7 @@ export const itemDB = [
         "itemSubClass": 5,
         "itemLevel": 85,
         "stats": {
-            "intellect": 18121,
+            "intellect": 23380,
             "stamina": 7889,
             "haste": 3050,
             "crit": 3950,
@@ -22606,7 +22606,7 @@ export const itemDB = [
         "itemSubClass": 10,
         "itemLevel": 100,
         "stats": {
-            "intellect": 18121,
+            "intellect": 23380,
             "stamina": 7889,
             "haste": 0,
             "crit": 0,
@@ -22635,7 +22635,7 @@ export const itemDB = [
         "itemSubClass": 15,
         "itemLevel": 100,
         "stats": {
-            "intellect": 25370,
+            "intellect": 30629,
             "stamina": 7889,
             "haste": 0,
             "crit": 0,
@@ -22664,7 +22664,7 @@ export const itemDB = [
         "itemSubClass": 5,
         "itemLevel": 100,
         "stats": {
-            "intellect": 18121,
+            "intellect": 23380,
             "stamina": 7889,
             "haste": 0,
             "crit": 0,
@@ -22755,7 +22755,7 @@ export const itemDB = [
         "itemSubClass": 7,
         "itemLevel": 174,
         "stats": {
-            "intellect": 25370,
+            "intellect": 30629,
             "stamina": 7889,
             "haste": 0,
             "crit": 0,
@@ -22784,7 +22784,7 @@ export const itemDB = [
         "itemSubClass": 7,
         "itemLevel": 200,
         "stats": {
-            "intellect": 25370,
+            "intellect": 30629,
             "stamina": 7889,
             "haste": 2200,
             "crit": 0,
@@ -22813,7 +22813,7 @@ export const itemDB = [
         "itemSubClass": 7,
         "itemLevel": 174,
         "stats": {
-            "intellect": 25370,
+            "intellect": 30629,
             "stamina": 7889,
             "haste": 5000,
             "crit": 2000,
@@ -22929,7 +22929,7 @@ export const itemDB = [
         "itemSubClass": 5,
         "itemLevel": 85,
         "stats": {
-            "intellect": 18121,
+            "intellect": 23380,
             "stamina": 7889,
             "haste": 0,
             "crit": 3350,
@@ -25945,7 +25945,7 @@ export const itemDB = [
         "itemSubClass": 10,
         "itemLevel": 158,
         "stats": {
-            "intellect": 18121,
+            "intellect": 23380,
             "stamina": 7889,
             "haste": 3200,
             "crit": 0,
@@ -26003,7 +26003,7 @@ export const itemDB = [
         "itemSubClass": 4,
         "itemLevel": 158,
         "stats": {
-            "intellect": 25370,
+            "intellect": 30629,
             "stamina": 7889,
             "haste": 0,
             "crit": 0,
@@ -26719,7 +26719,6 @@ export const itemDB = [
             "fr": "Changelin délié",
             "de": "Unbändiger Wechselbalg"
         },
-        "icon": "inv_pet_spectralporcupinegreen",
         "itemClass": 4,
         "itemSubClass": 0,
         "itemLevel": 158,
@@ -26767,7 +26766,7 @@ export const itemDB = [
         "itemSubClass": 4,
         "itemLevel": 158,
         "stats": {
-            "intellect": 25370,
+            "intellect": 30629,
             "stamina": 7889,
             "haste": 0,
             "crit": 2450,
@@ -26845,7 +26844,7 @@ export const itemDB = [
         "itemSubClass": 10,
         "itemLevel": 158,
         "stats": {
-            "intellect": 18121,
+            "intellect": 23380,
             "stamina": 7889,
             "haste": 0,
             "crit": 0,
@@ -27079,7 +27078,7 @@ export const itemDB = [
         "itemSubClass": 7,
         "itemLevel": 158,
         "stats": {
-            "intellect": 25370,
+            "intellect": 30629,
             "stamina": 7889,
             "haste": 2900,
             "crit": 4100,
@@ -27469,7 +27468,7 @@ export const itemDB = [
         "itemSubClass": 15,
         "itemLevel": 158,
         "stats": {
-            "intellect": 25370,
+            "intellect": 30629,
             "stamina": 7889,
             "haste": 0,
             "crit": 4400,
@@ -28339,7 +28338,7 @@ export const itemDB = [
         "itemSubClass": 15,
         "itemLevel": 158,
         "stats": {
-            "intellect": 25370,
+            "intellect": 30629,
             "stamina": 7889,
             "haste": 4100,
             "crit": 0,
@@ -29716,7 +29715,7 @@ export const itemDB = [
         "itemSubClass": 10,
         "itemLevel": 158,
         "stats": {
-            "intellect": 18121,
+            "intellect": 23380,
             "stamina": 7889,
             "haste": 4100,
             "crit": 2900,
@@ -30621,7 +30620,7 @@ export const itemDB = [
         "itemSubClass": 7,
         "itemLevel": 158,
         "stats": {
-            "intellect": 25370,
+            "intellect": 30629,
             "stamina": 7889,
             "haste": 0,
             "crit": 0,
@@ -31206,7 +31205,7 @@ export const itemDB = [
         "itemSubClass": 19,
         "itemLevel": 100,
         "stats": {
-            "intellect": 25370,
+            "intellect": 30629,
             "stamina": 7889,
             "haste": 0,
             "crit": 0,
@@ -31409,7 +31408,7 @@ export const itemDB = [
         "itemSubClass": 10,
         "itemLevel": 200,
         "stats": {
-            "intellect": 18121,
+            "intellect": 23380,
             "stamina": 7889,
             "haste": 2550,
             "crit": 0,
@@ -31438,7 +31437,7 @@ export const itemDB = [
         "itemSubClass": 10,
         "itemLevel": 174,
         "stats": {
-            "intellect": 18121,
+            "intellect": 23380,
             "stamina": 7889,
             "haste": 0,
             "crit": 2450,
@@ -31467,7 +31466,7 @@ export const itemDB = [
         "itemSubClass": 10,
         "itemLevel": 174,
         "stats": {
-            "intellect": 18121,
+            "intellect": 23380,
             "stamina": 7889,
             "haste": 2000,
             "crit": 0,
@@ -31652,7 +31651,7 @@ export const itemDB = [
         "itemSubClass": 4,
         "itemLevel": 100,
         "stats": {
-            "intellect": 25370,
+            "intellect": 30629,
             "stamina": 7889,
             "haste": 0,
             "crit": 0,
@@ -31837,7 +31836,7 @@ export const itemDB = [
         "itemSubClass": 10,
         "itemLevel": 158,
         "stats": {
-            "intellect": 18121,
+            "intellect": 23380,
             "stamina": 7889,
             "haste": 0,
             "crit": 0,
@@ -32309,7 +32308,7 @@ export const itemDB = [
         "itemSubClass": 13,
         "itemLevel": 125,
         "stats": {
-            "intellect": 25370,
+            "intellect": 30629,
             "stamina": 7889,
             "haste": 4250,
             "crit": 0,
@@ -32338,7 +32337,7 @@ export const itemDB = [
         "itemSubClass": 10,
         "itemLevel": 148,
         "stats": {
-            "intellect": 18121,
+            "intellect": 23380,
             "stamina": 7889,
             "haste": 3650,
             "crit": 0,
@@ -32367,7 +32366,7 @@ export const itemDB = [
         "itemSubClass": 10,
         "itemLevel": 155,
         "stats": {
-            "intellect": 18121,
+            "intellect": 23380,
             "stamina": 7889,
             "haste": 4250,
             "crit": 2750,
@@ -32396,7 +32395,7 @@ export const itemDB = [
         "itemSubClass": 4,
         "itemLevel": 155,
         "stats": {
-            "intellect": 25370,
+            "intellect": 30629,
             "stamina": 7889,
             "haste": 4050,
             "crit": 2950,
@@ -32425,7 +32424,7 @@ export const itemDB = [
         "itemSubClass": 4,
         "itemLevel": 174,
         "stats": {
-            "intellect": 25370,
+            "intellect": 30629,
             "stamina": 7889,
             "haste": 0,
             "crit": 0,
@@ -32454,7 +32453,7 @@ export const itemDB = [
         "itemSubClass": 4,
         "itemLevel": 200,
         "stats": {
-            "intellect": 25370,
+            "intellect": 30629,
             "stamina": 7889,
             "haste": 0,
             "crit": 0,
@@ -32483,7 +32482,7 @@ export const itemDB = [
         "itemSubClass": 4,
         "itemLevel": 174,
         "stats": {
-            "intellect": 25370,
+            "intellect": 30629,
             "stamina": 7889,
             "haste": 5000,
             "crit": 2000,
@@ -35724,7 +35723,7 @@ export const itemDB = [
         "itemSubClass": 10,
         "itemLevel": 174,
         "stats": {
-            "intellect": 18121,
+            "intellect": 23380,
             "stamina": 7889,
             "haste": 0,
             "crit": 2450,
@@ -35753,7 +35752,7 @@ export const itemDB = [
         "itemSubClass": 10,
         "itemLevel": 155,
         "stats": {
-            "intellect": 18121,
+            "intellect": 23380,
             "stamina": 7889,
             "haste": 4050,
             "crit": 0,
@@ -35782,7 +35781,7 @@ export const itemDB = [
         "itemSubClass": 10,
         "itemLevel": 174,
         "stats": {
-            "intellect": 18121,
+            "intellect": 23380,
             "stamina": 7889,
             "haste": 2000,
             "crit": 0,
@@ -35811,7 +35810,7 @@ export const itemDB = [
         "itemSubClass": 10,
         "itemLevel": 200,
         "stats": {
-            "intellect": 18121,
+            "intellect": 23380,
             "stamina": 7889,
             "haste": 2550,
             "crit": 0,
@@ -35840,7 +35839,7 @@ export const itemDB = [
         "itemSubClass": 19,
         "itemLevel": 155,
         "stats": {
-            "intellect": 25370,
+            "intellect": 30629,
             "stamina": 7889,
             "haste": 0,
             "crit": 4200,
@@ -35869,7 +35868,7 @@ export const itemDB = [
         "itemSubClass": 19,
         "itemLevel": 200,
         "stats": {
-            "intellect": 25370,
+            "intellect": 30629,
             "stamina": 7889,
             "haste": 0,
             "crit": 2050,
@@ -35898,7 +35897,7 @@ export const itemDB = [
         "itemSubClass": 19,
         "itemLevel": 174,
         "stats": {
-            "intellect": 25370,
+            "intellect": 30629,
             "stamina": 7889,
             "haste": 5000,
             "crit": 2000,
@@ -35927,7 +35926,7 @@ export const itemDB = [
         "itemSubClass": 19,
         "itemLevel": 174,
         "stats": {
-            "intellect": 25370,
+            "intellect": 30629,
             "stamina": 7889,
             "haste": 0,
             "crit": 0,
@@ -36773,7 +36772,7 @@ export const itemDB = [
         "itemSubClass": 10,
         "itemLevel": 155,
         "stats": {
-            "intellect": 18121,
+            "intellect": 23380,
             "stamina": 7889,
             "haste": 0,
             "crit": 0,
@@ -36802,7 +36801,7 @@ export const itemDB = [
         "itemSubClass": 10,
         "itemLevel": 155,
         "stats": {
-            "intellect": 18121,
+            "intellect": 23380,
             "stamina": 7889,
             "haste": 0,
             "crit": 0,
@@ -36831,7 +36830,7 @@ export const itemDB = [
         "itemSubClass": 10,
         "itemLevel": 155,
         "stats": {
-            "intellect": 18121,
+            "intellect": 23380,
             "stamina": 7889,
             "haste": 4550,
             "crit": 0,
@@ -36860,7 +36859,7 @@ export const itemDB = [
         "itemSubClass": 10,
         "itemLevel": 155,
         "stats": {
-            "intellect": 18121,
+            "intellect": 23380,
             "stamina": 7889,
             "haste": 0,
             "crit": 0,
@@ -36889,7 +36888,7 @@ export const itemDB = [
         "itemSubClass": 10,
         "itemLevel": 155,
         "stats": {
-            "intellect": 18121,
+            "intellect": 23380,
             "stamina": 7889,
             "haste": 4100,
             "crit": 0,
@@ -37382,7 +37381,7 @@ export const itemDB = [
         "itemSubClass": 15,
         "itemLevel": 100,
         "stats": {
-            "intellect": 25370,
+            "intellect": 30629,
             "stamina": 7889,
             "haste": 4100,
             "crit": 2900,
@@ -37643,7 +37642,7 @@ export const itemDB = [
         "itemSubClass": 4,
         "itemLevel": 85,
         "stats": {
-            "intellect": 25370,
+            "intellect": 30629,
             "stamina": 7889,
             "haste": 3650,
             "crit": 3350,
@@ -37672,7 +37671,7 @@ export const itemDB = [
         "itemSubClass": 15,
         "itemLevel": 85,
         "stats": {
-            "intellect": 25370,
+            "intellect": 30629,
             "stamina": 7889,
             "haste": 0,
             "crit": 3050,
@@ -37962,7 +37961,7 @@ export const itemDB = [
         "itemSubClass": 15,
         "itemLevel": 100,
         "stats": {
-            "intellect": 25370,
+            "intellect": 30629,
             "stamina": 7889,
             "haste": 0,
             "crit": 4250,
@@ -37991,7 +37990,7 @@ export const itemDB = [
         "itemSubClass": 15,
         "itemLevel": 85,
         "stats": {
-            "intellect": 25370,
+            "intellect": 30629,
             "stamina": 7889,
             "haste": 0,
             "crit": 3950,
@@ -38020,7 +38019,7 @@ export const itemDB = [
         "itemSubClass": 19,
         "itemLevel": 85,
         "stats": {
-            "intellect": 25370,
+            "intellect": 30629,
             "stamina": 7889,
             "haste": 0,
             "crit": 0,
@@ -38136,7 +38135,7 @@ export const itemDB = [
         "itemSubClass": 10,
         "itemLevel": 85,
         "stats": {
-            "intellect": 18121,
+            "intellect": 23380,
             "stamina": 7889,
             "haste": 0,
             "crit": 0,
@@ -38165,7 +38164,7 @@ export const itemDB = [
         "itemSubClass": 7,
         "itemLevel": 85,
         "stats": {
-            "intellect": 25370,
+            "intellect": 30629,
             "stamina": 7889,
             "haste": 3950,
             "crit": 0,
@@ -38194,7 +38193,7 @@ export const itemDB = [
         "itemSubClass": 10,
         "itemLevel": 100,
         "stats": {
-            "intellect": 18121,
+            "intellect": 23380,
             "stamina": 7889,
             "haste": 0,
             "crit": 0,
@@ -38223,7 +38222,7 @@ export const itemDB = [
         "itemSubClass": 7,
         "itemLevel": 100,
         "stats": {
-            "intellect": 25370,
+            "intellect": 30629,
             "stamina": 7889,
             "haste": 0,
             "crit": 0,
@@ -38252,7 +38251,7 @@ export const itemDB = [
         "itemSubClass": 15,
         "itemLevel": 100,
         "stats": {
-            "intellect": 25370,
+            "intellect": 30629,
             "stamina": 7889,
             "haste": 0,
             "crit": 0,
@@ -38281,7 +38280,7 @@ export const itemDB = [
         "itemSubClass": 15,
         "itemLevel": 85,
         "stats": {
-            "intellect": 25370,
+            "intellect": 30629,
             "stamina": 7889,
             "haste": 3350,
             "crit": 0,
@@ -38310,7 +38309,7 @@ export const itemDB = [
         "itemSubClass": 7,
         "itemLevel": 85,
         "stats": {
-            "intellect": 25370,
+            "intellect": 30629,
             "stamina": 7889,
             "haste": 0,
             "crit": 0,
@@ -40493,7 +40492,7 @@ export const itemDB = [
         "itemSubClass": 15,
         "itemLevel": 148,
         "stats": {
-            "intellect": 25370,
+            "intellect": 30629,
             "stamina": 7889,
             "haste": 0,
             "crit": 3650,
@@ -40522,7 +40521,7 @@ export const itemDB = [
         "itemSubClass": 5,
         "itemLevel": 148,
         "stats": {
-            "intellect": 18121,
+            "intellect": 23380,
             "stamina": 7889,
             "haste": 0,
             "crit": 3800,
@@ -40609,7 +40608,7 @@ export const itemDB = [
         "itemSubClass": 4,
         "itemLevel": 148,
         "stats": {
-            "intellect": 25370,
+            "intellect": 30629,
             "stamina": 7889,
             "haste": 0,
             "crit": 3950,
@@ -40638,7 +40637,7 @@ export const itemDB = [
         "itemSubClass": 10,
         "itemLevel": 148,
         "stats": {
-            "intellect": 18121,
+            "intellect": 23380,
             "stamina": 7889,
             "haste": 3350,
             "crit": 3650,
@@ -40667,7 +40666,7 @@ export const itemDB = [
         "itemSubClass": 15,
         "itemLevel": 85,
         "stats": {
-            "intellect": 25370,
+            "intellect": 30629,
             "stamina": 7889,
             "haste": 0,
             "crit": 3500,
@@ -41882,7 +41881,7 @@ export const itemDB = [
         "itemSubClass": 15,
         "itemLevel": 148,
         "stats": {
-            "intellect": 25370,
+            "intellect": 30629,
             "stamina": 7889,
             "haste": 3950,
             "crit": 0,
@@ -41911,7 +41910,7 @@ export const itemDB = [
         "itemSubClass": 4,
         "itemLevel": 148,
         "stats": {
-            "intellect": 25370,
+            "intellect": 30629,
             "stamina": 7889,
             "haste": 3650,
             "crit": 3350,
@@ -42105,7 +42104,7 @@ export const itemDB = [
         "itemSubClass": 15,
         "itemLevel": 85,
         "stats": {
-            "intellect": 25370,
+            "intellect": 30629,
             "stamina": 7889,
             "haste": 0,
             "crit": 3050,
@@ -42134,7 +42133,7 @@ export const itemDB = [
         "itemSubClass": 7,
         "itemLevel": 85,
         "stats": {
-            "intellect": 25370,
+            "intellect": 30629,
             "stamina": 7889,
             "haste": 3950,
             "crit": 0,
@@ -42163,7 +42162,7 @@ export const itemDB = [
         "itemSubClass": 10,
         "itemLevel": 85,
         "stats": {
-            "intellect": 18121,
+            "intellect": 23380,
             "stamina": 7889,
             "haste": 3800,
             "crit": 0,
@@ -43236,7 +43235,7 @@ export const itemDB = [
         "itemSubClass": 15,
         "itemLevel": 148,
         "stats": {
-            "intellect": 25370,
+            "intellect": 30629,
             "stamina": 7889,
             "haste": 3050,
             "crit": 0,
@@ -43265,7 +43264,7 @@ export const itemDB = [
         "itemSubClass": 4,
         "itemLevel": 148,
         "stats": {
-            "intellect": 25370,
+            "intellect": 30629,
             "stamina": 7889,
             "haste": 3200,
             "crit": 0,
@@ -44251,7 +44250,7 @@ export const itemDB = [
         "itemSubClass": 19,
         "itemLevel": 148,
         "stats": {
-            "intellect": 25370,
+            "intellect": 30629,
             "stamina": 7889,
             "haste": 0,
             "crit": 3350,
@@ -44338,7 +44337,7 @@ export const itemDB = [
         "itemSubClass": 10,
         "itemLevel": 148,
         "stats": {
-            "intellect": 18121,
+            "intellect": 23380,
             "stamina": 7889,
             "haste": 0,
             "crit": 3050,
@@ -44367,7 +44366,7 @@ export const itemDB = [
         "itemSubClass": 15,
         "itemLevel": 148,
         "stats": {
-            "intellect": 25370,
+            "intellect": 30629,
             "stamina": 7889,
             "haste": 3050,
             "crit": 0,
@@ -44396,7 +44395,7 @@ export const itemDB = [
         "itemSubClass": 7,
         "itemLevel": 148,
         "stats": {
-            "intellect": 25370,
+            "intellect": 30629,
             "stamina": 7889,
             "haste": 0,
             "crit": 3050,
@@ -46361,7 +46360,7 @@ export const itemDB = [
         "itemSubClass": 4,
         "itemLevel": 174,
         "stats": {
-            "intellect": 25370,
+            "intellect": 30629,
             "stamina": 7889,
             "haste": 5000,
             "crit": 2000,
@@ -46390,7 +46389,7 @@ export const itemDB = [
         "itemSubClass": 10,
         "itemLevel": 174,
         "stats": {
-            "intellect": 18121,
+            "intellect": 23380,
             "stamina": 7889,
             "haste": 2000,
             "crit": 0,
@@ -46419,7 +46418,7 @@ export const itemDB = [
         "itemSubClass": 7,
         "itemLevel": 174,
         "stats": {
-            "intellect": 25370,
+            "intellect": 30629,
             "stamina": 7889,
             "haste": 5000,
             "crit": 2000,
@@ -46506,7 +46505,7 @@ export const itemDB = [
         "itemSubClass": 4,
         "itemLevel": 200,
         "stats": {
-            "intellect": 25370,
+            "intellect": 30629,
             "stamina": 7889,
             "haste": 0,
             "crit": 0,
@@ -46535,7 +46534,7 @@ export const itemDB = [
         "itemSubClass": 10,
         "itemLevel": 200,
         "stats": {
-            "intellect": 18121,
+            "intellect": 23380,
             "stamina": 7889,
             "haste": 2550,
             "crit": 0,
@@ -46564,7 +46563,7 @@ export const itemDB = [
         "itemSubClass": 7,
         "itemLevel": 200,
         "stats": {
-            "intellect": 25370,
+            "intellect": 30629,
             "stamina": 7889,
             "haste": 2200,
             "crit": 0,
@@ -46651,7 +46650,7 @@ export const itemDB = [
         "itemSubClass": 4,
         "itemLevel": 174,
         "stats": {
-            "intellect": 25370,
+            "intellect": 30629,
             "stamina": 7889,
             "haste": 0,
             "crit": 0,
@@ -46680,7 +46679,7 @@ export const itemDB = [
         "itemSubClass": 10,
         "itemLevel": 174,
         "stats": {
-            "intellect": 18121,
+            "intellect": 23380,
             "stamina": 7889,
             "haste": 0,
             "crit": 2450,
@@ -46709,7 +46708,7 @@ export const itemDB = [
         "itemSubClass": 7,
         "itemLevel": 174,
         "stats": {
-            "intellect": 25370,
+            "intellect": 30629,
             "stamina": 7889,
             "haste": 0,
             "crit": 0,
@@ -47135,7 +47134,7 @@ export const itemDB = [
         "itemSubClass": 10,
         "itemLevel": 155,
         "stats": {
-            "intellect": 18121,
+            "intellect": 23380,
             "stamina": 7889,
             "haste": 0,
             "crit": 3500,
@@ -49889,7 +49888,7 @@ export const itemDB = [
         "itemSubClass": 15,
         "itemLevel": 158,
         "stats": {
-            "intellect": 25370,
+            "intellect": 30629,
             "stamina": 7889,
             "haste": 0,
             "crit": 3250,
@@ -49976,7 +49975,7 @@ export const itemDB = [
         "itemSubClass": 15,
         "itemLevel": 200,
         "stats": {
-            "intellect": 25370,
+            "intellect": 30629,
             "stamina": 7889,
             "haste": 0,
             "crit": 2600,
@@ -50005,7 +50004,7 @@ export const itemDB = [
         "itemSubClass": 4,
         "itemLevel": 200,
         "stats": {
-            "intellect": 25370,
+            "intellect": 30629,
             "stamina": 7889,
             "haste": 2200,
             "crit": 0,
@@ -52281,7 +52280,7 @@ export const itemDB = [
         "itemSubClass": 15,
         "itemLevel": 144,
         "stats": {
-            "intellect": 25370,
+            "intellect": 30629,
             "stamina": 7889,
             "haste": 0,
             "crit": 0,
@@ -52310,7 +52309,7 @@ export const itemDB = [
         "itemSubClass": 4,
         "itemLevel": 144,
         "stats": {
-            "intellect": 25370,
+            "intellect": 30629,
             "stamina": 7889,
             "haste": 2750,
             "crit": 4250,
@@ -52339,7 +52338,7 @@ export const itemDB = [
         "itemSubClass": 10,
         "itemLevel": 167,
         "stats": {
-            "intellect": 18121,
+            "intellect": 23380,
             "stamina": 7889,
             "haste": 0,
             "crit": 4400,
@@ -52426,7 +52425,7 @@ export const itemDB = [
         "itemSubClass": 6,
         "itemLevel": 100,
         "stats": {
-            "intellect": 16132,
+            "intellect": 21391,
             "stamina": 7889,
             "haste": 0,
             "crit": 3250,
@@ -52571,7 +52570,7 @@ export const itemDB = [
         "itemSubClass": 15,
         "itemLevel": 100,
         "stats": {
-            "intellect": 25370,
+            "intellect": 30629,
             "stamina": 7889,
             "haste": 2250,
             "crit": 4750,
@@ -53648,7 +53647,7 @@ export const itemDB = [
         "itemSubClass": 6,
         "itemLevel": 100,
         "stats": {
-            "intellect": 16132,
+            "intellect": 21391,
             "stamina": 7889,
             "haste": 0,
             "crit": 3750,
@@ -54153,7 +54152,7 @@ export const itemDB = [
         "itemSubClass": 15,
         "itemLevel": 100,
         "stats": {
-            "intellect": 25370,
+            "intellect": 30629,
             "stamina": 7889,
             "haste": 0,
             "crit": 4550,
@@ -54182,7 +54181,7 @@ export const itemDB = [
         "itemSubClass": 15,
         "itemLevel": 85,
         "stats": {
-            "intellect": 25370,
+            "intellect": 30629,
             "stamina": 7889,
             "haste": 0,
             "crit": 0,
@@ -54211,7 +54210,7 @@ export const itemDB = [
         "itemSubClass": 15,
         "itemLevel": 100,
         "stats": {
-            "intellect": 25370,
+            "intellect": 30629,
             "stamina": 7889,
             "haste": 4700,
             "crit": 0,
@@ -54240,7 +54239,7 @@ export const itemDB = [
         "itemSubClass": 15,
         "itemLevel": 100,
         "stats": {
-            "intellect": 25370,
+            "intellect": 30629,
             "stamina": 7889,
             "haste": 4700,
             "crit": 0,
@@ -55899,7 +55898,7 @@ export const itemDB = [
         "itemSubClass": 19,
         "itemLevel": 85,
         "stats": {
-            "intellect": 25370,
+            "intellect": 30629,
             "stamina": 7889,
             "haste": 0,
             "crit": 2450,
@@ -56247,7 +56246,7 @@ export const itemDB = [
         "itemSubClass": 4,
         "itemLevel": 174,
         "stats": {
-            "intellect": 25370,
+            "intellect": 30629,
             "stamina": 7889,
             "haste": 0,
             "crit": 0,
@@ -56276,7 +56275,7 @@ export const itemDB = [
         "itemSubClass": 10,
         "itemLevel": 174,
         "stats": {
-            "intellect": 18121,
+            "intellect": 23380,
             "stamina": 7889,
             "haste": 0,
             "crit": 2450,
@@ -56305,7 +56304,7 @@ export const itemDB = [
         "itemSubClass": 15,
         "itemLevel": 174,
         "stats": {
-            "intellect": 25370,
+            "intellect": 30629,
             "stamina": 7889,
             "haste": 0,
             "crit": 0,
@@ -56392,7 +56391,7 @@ export const itemDB = [
         "itemSubClass": 4,
         "itemLevel": 174,
         "stats": {
-            "intellect": 25370,
+            "intellect": 30629,
             "stamina": 7889,
             "haste": 5000,
             "crit": 2000,
@@ -56421,7 +56420,7 @@ export const itemDB = [
         "itemSubClass": 10,
         "itemLevel": 174,
         "stats": {
-            "intellect": 18121,
+            "intellect": 23380,
             "stamina": 7889,
             "haste": 2000,
             "crit": 0,
@@ -56450,7 +56449,7 @@ export const itemDB = [
         "itemSubClass": 15,
         "itemLevel": 174,
         "stats": {
-            "intellect": 25370,
+            "intellect": 30629,
             "stamina": 7889,
             "haste": 5000,
             "crit": 2000,
@@ -56479,7 +56478,7 @@ export const itemDB = [
         "itemSubClass": 15,
         "itemLevel": 174,
         "stats": {
-            "intellect": 25370,
+            "intellect": 30629,
             "stamina": 7889,
             "haste": 5000,
             "crit": 2000,
@@ -56508,7 +56507,7 @@ export const itemDB = [
         "itemSubClass": 15,
         "itemLevel": 174,
         "stats": {
-            "intellect": 25370,
+            "intellect": 30629,
             "stamina": 7889,
             "haste": 0,
             "crit": 0,
@@ -56542,8 +56541,7 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "versatility": 0,
-            "leech": 6666,
+            "versatility": 0
         },
         "dropLoc": "",
         "selectable": "true",
@@ -56687,7 +56685,7 @@ export const itemDB = [
         "itemSubClass": 7,
         "itemLevel": 85,
         "stats": {
-            "intellect": 25370,
+            "intellect": 30629,
             "stamina": 7889,
             "haste": 2900,
             "crit": 0,
@@ -56716,7 +56714,7 @@ export const itemDB = [
         "itemSubClass": 15,
         "itemLevel": 85,
         "stats": {
-            "intellect": 25370,
+            "intellect": 30629,
             "stamina": 7889,
             "haste": 0,
             "crit": 4550,
@@ -56977,7 +56975,7 @@ export const itemDB = [
         "itemSubClass": 10,
         "itemLevel": 85,
         "stats": {
-            "intellect": 18121,
+            "intellect": 23380,
             "stamina": 7889,
             "haste": 3350,
             "crit": 0,
@@ -57035,7 +57033,7 @@ export const itemDB = [
         "itemSubClass": 15,
         "itemLevel": 85,
         "stats": {
-            "intellect": 25370,
+            "intellect": 30629,
             "stamina": 7889,
             "haste": 0,
             "crit": 3500,
@@ -57180,7 +57178,7 @@ export const itemDB = [
         "itemSubClass": 15,
         "itemLevel": 200,
         "stats": {
-            "intellect": 25370,
+            "intellect": 30629,
             "stamina": 7889,
             "haste": 0,
             "crit": 2600,
@@ -57209,7 +57207,7 @@ export const itemDB = [
         "itemSubClass": 10,
         "itemLevel": 200,
         "stats": {
-            "intellect": 18121,
+            "intellect": 23380,
             "stamina": 7889,
             "haste": 2550,
             "crit": 0,
@@ -59210,7 +59208,7 @@ export const itemDB = [
         "itemSubClass": 15,
         "itemLevel": 190,
         "stats": {
-            "intellect": 25370,
+            "intellect": 30629,
             "stamina": 7889,
             "haste": 4200,
             "crit": 0,
@@ -59239,7 +59237,7 @@ export const itemDB = [
         "itemSubClass": 4,
         "itemLevel": 190,
         "stats": {
-            "intellect": 25370,
+            "intellect": 30629,
             "stamina": 7889,
             "haste": 0,
             "crit": 3100,

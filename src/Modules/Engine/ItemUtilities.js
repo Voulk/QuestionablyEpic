@@ -159,6 +159,7 @@ function getItemCat(slot) {
     case "Legs":
     case "Robe":
     case "2H Weapon":
+      console.log("Returning " + 0);
       return 0;
 
     case "Shoulder":
