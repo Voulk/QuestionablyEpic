@@ -160,7 +160,7 @@ export default function CooldownPlanner(props) {
   const currentBoss = props.currentBoss;
   const currentRaid = props.currentRaid;
   const currentData = props.data;
-  const [plan, setPlan] = useState("");
+  const [plan, setPlan] = useState(1);
   const handleChangeRaid = props.raidHandler;
   const handleChangeBoss = props.bossHandler;
   const handleChangePlan = (event) => {
@@ -422,6 +422,12 @@ export default function CooldownPlanner(props) {
       if (ls.get(key.zoneID + "." + key.id + ".1") === null) {
         ls.set(key.zoneID + "." + key.id + ".1", []);
       }
+      // if (ls.get(key.zoneID + "." + key.id + ".2") === null) {
+      //   ls.set(key.zoneID + "." + key.id + ".2", []);
+      // }
+      // if (ls.get(key.zoneID + "." + key.id + ".3") === null) {
+      //   ls.set(key.zoneID + "." + key.id + ".3", []);
+      // }
     });
     if (ls.get("healerInfo") === null || ls.get("healerInfo") === undefined) {
       ls.set("healerInfo", []);
@@ -445,11 +451,12 @@ export default function CooldownPlanner(props) {
   };
 
   let updateStorage = (props) => {
-    if (ls.get(currentRaid + "." + currentBoss + ".1") === null) {
-      ls.set(currentRaid + "." + currentBoss + ".1", []);
+    console.log(currentRaid + "." + currentBoss + "." + plan);
+    if (ls.get(currentRaid + "." + currentBoss + "." + plan) === null) {
+      ls.set(currentRaid + "." + currentBoss + "." + plan, []);
     }
     ls.set(
-      currentRaid + "." + currentBoss + ".1",
+      currentRaid + "." + currentBoss + "." + plan,
       props.sort((a, b) => (a.time > b.time ? 1 : -1))
     );
   };
@@ -595,7 +602,7 @@ export default function CooldownPlanner(props) {
                       style={{ minWidth: 200 }}
                       variant="outlined"
                       size="small"
-                      disabled={boss === "" ? true : false}
+                      disabled={currentBoss === "" ? true : false}
                     >
                       <InputLabel id="RaidSelector">
                         {t("Select Plan")}
@@ -605,10 +612,10 @@ export default function CooldownPlanner(props) {
                         value={plan}
                         onChange={handleChangePlan}
                       >
-                        <MenuItem value={"plan1"}>Plan 1</MenuItem>
-                        <MenuItem value={"plan2"}>Plan 2</MenuItem>
-                        <MenuItem value={"plan3"}>Plan 3</MenuItem>
-                        <MenuItem value={"plan4"}>Plan 4</MenuItem>
+                        <MenuItem value={1}>Plan 1</MenuItem>
+                        <MenuItem value={2}>Plan 2</MenuItem>
+                        <MenuItem value={3}>Plan 3</MenuItem>
+                        <MenuItem value={4}>Plan 4</MenuItem>
                       </Select>
                     </FormControl>
                   </Grid> */}
