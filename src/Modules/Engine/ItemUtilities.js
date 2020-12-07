@@ -194,7 +194,7 @@ function getItemCat(slot) {
     case "1H Weapon":
       return 3;
     default:
-      console.error("Item Cat going to Default" + slot);
+      //console.error("Item Cat going to Default" + slot);
       return 3;
       
     // Raise error.
