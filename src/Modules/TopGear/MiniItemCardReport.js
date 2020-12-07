@@ -53,7 +53,7 @@ export default function ItemCardReport(props) {
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
   const itemLevel = item.level;
-  const isLegendary = 'effect' in item && item.effect.type === 'spec legendary';
+  const isLegendary = "effect" in item && item.effect.type === "spec legendary";
 
   const itemQuality = (itemLevel) => {
     if (isLegendary) return "#ff8000";
@@ -86,8 +86,9 @@ export default function ItemCardReport(props) {
       " & " +
       getTranslatedItemName(item.offhandID, currentLanguage);
   } else {
-      if (isLegendary) itemName = item.effect.name;  // Add translations to this.
-      else itemName = getTranslatedItemName(item.id, currentLanguage);
+    if (isLegendary) itemName = item.effect.name;
+    // Add translations to this.
+    else itemName = getTranslatedItemName(item.id, currentLanguage);
   }
 
   const socket = props.item.socket ? (
@@ -116,7 +117,7 @@ export default function ItemCardReport(props) {
         // variant="outlined"
         // style={{ width: "100%" }}
       >
-        <CardActionArea onClick={activateItemCard}>
+        <CardActionArea disbled={true}>
           {/* <CardActionArea disabled={true}> */}
           <Grid
             container
