@@ -140,14 +140,27 @@ export function getItemIcon(id) {
 }
 
 // Returns item stat allocations. MUST be converted to stats before it's used in any scoring capacity.
-export function getItemAllocations(id) {
+export function getItemAllocations(id, missiveStats = []) {
   let temp = itemDB.filter(function (item) {
     return item.id === id;
   });
 
+  let stats = {};
+  if (temp.length > 0) {
+    stats = temp[0].stats;
+    if ('unallocated' in temp[0].stats) {
+      for (var i = 0; i < missiveStats.length; i++) {
+        let mStat = missiveStats[i]
+        stats[mStat] += temp[0].stats.unallocated;
+        
+      }
+    }
+
+  }
+  //console.log("Finished Stats: " + JSON.stringify(stats));
   //console.log(JSON.stringify(temp) + temp.length)
   //console.log(temp[0].icon)
-  if (temp.length > 0) return temp[0].stats;
+  if (temp.length > 0) return stats;
   else return 0;
 }
 
@@ -194,8 +207,6 @@ export function getItemSlot(id) {
     return item.id === id;
   });
 
-  //console.log(JSON.stringify(temp) + temp.length)
-  //console.log(temp[0].icon)
   if (temp.length > 0) return temp[0].slot;
   else return 0;
 }
@@ -261,7 +272,6 @@ export function calcStatsAtLevel(itemLevel, slot, statAllocations, tertiary) {
   };
 
   
-
   let rand_prop = randPropPoints[itemLevel]["slotValues"][getItemCat(slot)];
   if (slot == "Finger" || slot == "Neck") combat_mult = combat_ratings_mult_by_ilvl_jewl[itemLevel];
   else combat_mult = combat_ratings_mult_by_ilvl[itemLevel];
@@ -347,6 +357,7 @@ export function scoreItem(item, player, contentType) {
       contentType,
       item.level
     );
+    console.log("Getting Effect" + JSON.stringify(item.stats.bonus_stats));
   }
 
   // Multiply the item's stats by our stat weights.
@@ -364,6 +375,7 @@ export function scoreItem(item, player, contentType) {
 
   // Add any bonus HPS
   if ("bonus_stats" in item.stats && "hps" in item.stats.bonus_stats) {
+    console.log("Adding bonus_stats to score");
     score +=
       (item.stats.bonus_stats.hps / player.getHPS()) *
       player.activeStats.intellect;

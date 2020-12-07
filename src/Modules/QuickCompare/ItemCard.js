@@ -42,9 +42,11 @@ export default function ItemCard(props) {
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
   const itemLevel = item.level;
+  const isLegendary = 'effect' in item && item.effect.type === 'spec legendary';
 
   const itemQuality = (itemLevel) => {
-    if (itemLevel >= 183) return "#a73fee";
+    if (isLegendary) return "#ff8000";
+    else if (itemLevel >= 183) return "#a73fee";
     else if (itemLevel >= 120) return "#328CE3";
     else return "#1eff00";
 

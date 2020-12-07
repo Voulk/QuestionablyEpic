@@ -235,7 +235,7 @@ export default function TopGear(props) {
           backgroundImage: "../../Images/Ptolemy.jpg",
         }}
       >
-        <img src={"../../Images/Ptolemy.jpg"} />
+        {/*<img src={"../../Images/Ptolemy.jpg"} /> */}
         <div
           style={{
             display: "flex",

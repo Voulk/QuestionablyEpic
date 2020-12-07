@@ -7,7 +7,7 @@ const debug = false;
 
 export const getShamanLegendary = (effectName, player, contentType) => {
   const bonusStats = {};
-  bonusStats.HPS = -1;
+  bonusStats.hps = -1;
 
   if (effectName === PRIMAL_TIDE_CORE) {
     /**
@@ -16,10 +16,10 @@ export const getShamanLegendary = (effectName, player, contentType) => {
      * (casts / hits) * healing
      */
     // const rtHPS = player.getSpellHPS("Riptide", contentType);
-    // bonusStats.HPS = rtHPS * 0.25;
+    // bonusStats.hps = rtHPS * 0.25;
     const oneRiptide = 1.7 * player.getStatMultiplier("NOHASTE") + (18 / 3) * .22 * player.getStatMultiplier("ALL"); // todo torrent
     const rtPerMinute = 60 / 7; // todo echo
-    bonusStats.HPS = (oneRiptide * rtPerMinute * .25) / 60;
+    bonusStats.hps = (oneRiptide * rtPerMinute * .25) / 60;
   } else if (effectName === SPIRITWALKERS_TIDAL_TOTEM) {
     /**
      * every mtt use gain 10 seconds of quicker chhw casts
@@ -33,14 +33,14 @@ export const getShamanLegendary = (effectName, player, contentType) => {
     const castDuration = 2.5 / player.getStatPerc("Haste");
     const possibleCasts = Math.ceil(buffDuration / castDuration);
     const chHeal = 5.3 * player.getStatMultiplier("NOHASTE");
-    bonusStats.HPS = (possibleCasts * (chHeal * gain)) / 180;
+    bonusStats.hps = (possibleCasts * (chHeal * gain)) / 180;
   } else if (effectName === EARTHEN_HARMONY) {
     /**
      * if earth shield target is below 75%, earth shield heals 150% more
      */
     const thisSpellpower = .438 * 1.5;
     const assumedEfficiency = 0.4;
-    bonusStats.HPS = (thisSpellpower * player.getStatMultiplier("NOHASTE") * (player.getFightLength() / 3) * assumedEfficiency) / player.getFightLength();
+    bonusStats.hps = (thisSpellpower * player.getStatMultiplier("NOHASTE") * (player.getFightLength() / 3) * assumedEfficiency) / player.getFightLength();
   } else if (effectName === JONATS) {
     /**
      * hw hs buff the heal of your next ch by x%, stacking up to 5
@@ -50,7 +50,7 @@ export const getShamanLegendary = (effectName, player, contentType) => {
     const chCasts = player.getSpellCasts("Chain Heal", contentType);
     const ratio = Math.min(Math.max(triggerCasts / chCasts, 0.01), 5);
     debug && console.log(JONATS, chHPS, triggerCasts, chCasts, ratio);
-    bonusStats.HPS = chHPS * (ratio / 10);
+    bonusStats.hps = chHPS * (ratio / 10);
   }
   return bonusStats;
 };
