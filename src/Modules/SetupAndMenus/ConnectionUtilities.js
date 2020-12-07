@@ -34,7 +34,7 @@ export async function apiGetPlayerImage(player) {
   await fetch(fetchUrl)
     .then((res) => res.text())
     .then((response) => {
-      console.log(response);
+      console.log("Res: " + response + " " + fetchUrl);
       urlReturned = response.toString();
     })
     .catch((err) => console.log(err));

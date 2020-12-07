@@ -26,7 +26,7 @@ export default function TopSetStatsPanel(props) {
   function printStat(stat, value) {
     if (["Haste", "Crit", "Versatility", "Mastery", "Leech"].includes(stat)) {
       return stat + ": " + Math.round(100 * value) / 100 + "%";
-    } else return stat + ": " + value;
+    } else return stat + ": " + Math.round(value);
   }
 
   return (
