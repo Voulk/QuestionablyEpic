@@ -27794,6 +27794,7 @@ export const itemDB = [
             "fr": "Changelin délié",
             "de": "Unbändiger Wechselbalg"
         },
+        "icon": "inv_pet_spectralporcupinegreen",
         "itemClass": 4,
         "itemSubClass": 0,
         "itemLevel": 158,

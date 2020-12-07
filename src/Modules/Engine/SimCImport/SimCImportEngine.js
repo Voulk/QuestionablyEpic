@@ -234,7 +234,7 @@ function processItem(line, player, contentType) {
     );
     if (Object.keys(itemBonusStats).length > 0) item.addStats(itemBonusStats);
 
-    item.effect = itemEffect !== {} ? itemEffect : getItemEffect(itemID);
+    item.effect = Object.keys(itemEffect).length !== 0 ? itemEffect : getItemEffect(itemID);
     item.softScore = scoreItem(item, player, contentType);
 
     //console.log("Adding Item: " + item.id + " in slot: " + itemSlot);

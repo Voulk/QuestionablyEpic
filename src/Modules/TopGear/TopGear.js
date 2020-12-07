@@ -156,7 +156,7 @@ export default function TopGear(props) {
     "Legs",
     "Feet",
     "Finger",
-    "Trinkets",
+    "Trinket",
   ];
 
   // TODO. Calculate the score for a given item.
@@ -218,7 +218,25 @@ export default function TopGear(props) {
             </Grid>
           );
         })}
+      <Grid item xs={12}>
+        <Typography style={{ color: "white" }} variant="h5">
+        {"Weapon Combos"}
+      </Typography>
+      <Divider style={{ marginBottom: 10, width: "42%" }} />
+      <Grid container spacing={1}>
+        {wepCombos.map((item, index) => (
+          <MiniItemCard
+            key={index}
+            item={item}
+            activateItem={activateItem}
+          />
+        ))}
       </Grid>
+    </Grid>
+
+      <Grid item style={{ height: 100 }} xs={12} />
+      </Grid>
+
 
       <div
         style={{
