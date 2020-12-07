@@ -8,7 +8,7 @@ import {convertPPMToUptime} from "../Engine/EffectFormulas/EffectUtilities";
 // we can run our full algorithm on far fewer items. The net benefit to the player is being able to include more items, with a quicker return.
 // This does run into some problems when it comes to set bonuses and could be re-evaluated at the time. The likely strat is to auto-include anything with a bonus, or to run
 // our set bonus algorithm before we sort and slice. There are no current set bonuses that are relevant to raid / dungeon so left as a thought experiment for now.
-const softSlice = 1000 ; // TODO. Adjust to 1000 for prod. Being tested at lower values.
+const softSlice = 3 ; // TODO. Adjust to 1000 for prod. Being tested at lower values.
 const DR_CONST = 0.00098569230769231;
 
 // block for `time` ms, then return the number of loops we could run in that time:
@@ -241,8 +241,8 @@ function evalSet(itemSet, player, contentType) {
     let setStats = builtSet.setStats;
     let hardScore = 0;
 
-    // We might display this as data somewhere in future, but it's for testing purposes right now. 
-    let enchant_test_breakdown = {
+    
+    let enchants = {
 
     }
 
@@ -284,21 +284,26 @@ function evalSet(itemSet, player, contentType) {
     // single percentage. The stress this could cause a player is likely not worth the optimization. 
     let highestWeight = getHighestWeight(player, contentType);
     bonus_stats[highestWeight] += 32; // 16 x 2.
+    enchants['finger'] = '+16 ' + highestWeight;
 
     // Bracers
     bonus_stats.intellect += 15;
+    enchants['wrist'] = '+15 int';
 
     // Chest
     // TODO: Add the mana enchant. In practice they are very similar. 
     bonus_stats.intellect += 30;
+    enchants['chest'] = '+30 stats';
 
     // Cape
     bonus_stats.leech += 20;
+    enchants['back'] = '+20 leech';
 
     // Weapon - Celestial Guidance
     // Eternal Grace is so poor right now that I don't even think it deserves inclusion.
     let expected_uptime = convertPPMToUptime(3, 10);
     bonus_stats.intellect = (setStats.intellect + bonus_stats.intellect) * 0.05 * expected_uptime;
+    enchants['weapon'] = 'Celestial Guidance';
 
     // 5% int boost for wearing the same items.
     // The system doesn't actually allow you to add items of different armor types so this is always on.
@@ -326,7 +331,9 @@ function evalSet(itemSet, player, contentType) {
         }
 
     //console.log("Soft Score: " + builtSet.sumSoftScore + ". Hard Score: " + hardScore);
+    //console.log("Enchants: " + JSON.stringify(enchants));
     builtSet.hardScore = Math.round(1000*hardScore)/1000;
+    builtSet.enchantBreakdown = enchants;
     return builtSet; // Temp
 }
 

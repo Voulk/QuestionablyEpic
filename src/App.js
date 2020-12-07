@@ -426,13 +426,13 @@ class App extends Component {
               />
               <Route
                 path="/report"
-                render={() => (
+                render={this.state.topSet !== null ? () => (
                   <TopGearReport
                     pl={activePlayer}
                     result={this.state.topSet}
                     contentType={this.state.contentType}
                   />
-                )}
+                ) : ""}
               />
               <Route
                 path="/quickcompare"
