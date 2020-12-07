@@ -85,9 +85,7 @@ function Alert(props) {
 const TOPGEARCAP = 36;
 
 export default function TopGear(props) {
-  useEffect(() => {
-    ReactGA.pageview(window.location.pathname + window.location.search);
-  }, []);
+
 
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
@@ -107,9 +105,18 @@ export default function TopGear(props) {
   const openPop = Boolean(anchorEl);
   const idPop = openPop ? "simple-popover" : undefined;
   const [itemDropdown, setItemDropdown] = useState([]); // Filled later based on item slot and armor type.
-  const [AutoValue, setAutoValue] = useState(itemDropdown[0]);
-  const [inputValue, setInputValue] = useState("");
+  const [wepCombos, setWepCombos] = useState([]);
+  
+  
+  useEffect(() => {
+    ReactGA.pageview(window.location.pathname + window.location.search);
+  }, []);
 
+  useEffect(() => {
+    console.log("Setting weapon combos");
+    //setWepCombos(buildWepCombos(props.pl));
+    console.log("Wep: " + wepCombos);
+  })
   // Right now the available item levels are static, but given the removal of titanforging each item could hypothetically share
   // a list of available ilvls and the player could select from a smaller list instead.
   // This is left as a TODO until key functionality is completed but is a moderate priority.
@@ -119,11 +126,12 @@ export default function TopGear(props) {
   // Fill Items fills the ItemNames box with items appropriate to the given slot and spec.  };
 
   let history = useHistory();
-  const wepCombos = buildWepCombos(props.pl);
+  
 
   const unleashTopGear = () => {
     // Call to the Top Gear Engine. Lock the app down.
     let itemList = props.pl.getSelectedItems();
+    let wepCombos = buildWepCombos(props.pl, true)
     //runTopGear(props.pl, props.contentType, itemList)
     let instance = worker(); // `new` is optional
     let strippedPlayer = JSON.parse(JSON.stringify(props.pl));
@@ -145,6 +153,11 @@ export default function TopGear(props) {
     setItemList([...player.getActiveItems(activeSlot)]);
   };
 
+  const activateWeapon = (index) => {
+    wepCombos[index].active = true;
+    setWepCombos(...wepCombos)
+  }
+
   const slotList = [
     "Head",
     "Neck",
@@ -158,10 +171,11 @@ export default function TopGear(props) {
     "Feet",
     "Finger",
     "Trinket",
+    
   ];
 
 
-  
+  console.log("ewqe" + wepCombos);
 
   return (
     <div
@@ -218,11 +232,26 @@ export default function TopGear(props) {
         })}
       <Grid item xs={12}>
         <Typography style={{ color: "white" }} variant="h5">
-        {"Weapon Combos"}
+        {"Main Hands & 2 Handers"}
       </Typography>
       <Divider style={{ marginBottom: 10, width: "42%" }} />
       <Grid container spacing={1}>
-        {wepCombos.map((item, index) => (
+        {[...props.pl.getActiveItems("AllMainhands")].map((item, index) => (
+          <MiniItemCard
+            key={index}
+            item={item}
+            activateItem={activateItem}
+          />
+        ))}
+      </Grid>
+    </Grid>
+    <Grid item xs={12}>
+        <Typography style={{ color: "white" }} variant="h5">
+        {"Offhands & Shields"}
+      </Typography>
+      <Divider style={{ marginBottom: 10, width: "42%" }} />
+      <Grid container spacing={1}>
+        {[...props.pl.getActiveItems("Offhands")].map((item, index) => (
           <MiniItemCard
             key={index}
             item={item}

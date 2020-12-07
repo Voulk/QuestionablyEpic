@@ -211,13 +211,24 @@ export function getItemSlot(id) {
   else return 0;
 }
 
-export function buildWepCombos(player) {
-  let wep_list = [];
-  let main_hands = player.getActiveItems("1H Weapon");
-  let off_hands = player.getActiveItems("Offhands");
-  let two_handers = player.getActiveItems("2H Weapon");
+function sumObjectsByKey(...objs) {
+  return objs.reduce((a, b) => {
+    for (let k in b) {
+      if (b.hasOwnProperty(k))
+        a[k] = (a[k] || 0) + b[k];
+    }
+    return a;
+  }, {});
+}
 
-  // console.log("MH: " + main_hands.length + ". OH: " + off_hands.length);
+export function buildWepCombos(player, active=false) {
+  let wep_list = [];
+  let main_hands = player.getActiveItems("1H Weapon", active);
+  let off_hands = player.getActiveItems("Offhands", active);
+  let two_handers = player.getActiveItems("2H Weapon", active);
+
+
+  console.log("MH: " + main_hands.length + ". OH: " + off_hands.length);
 
   for (let i = 0; i < main_hands.length; i++) {
     // Some say j is the best variable for a nested loop, but are they right?
@@ -236,7 +247,9 @@ export function buildWepCombos(player) {
         0,
         Math.round((main_hand.level + off_hand.level) / 2)
       );
-
+      item.stats = sumObjectsByKey(main_hand.stats, off_hand.stats);
+      item.stats.bonus_stats = {};
+      
       item.softScore = main_hand.softScore + off_hand.softScore;
       item.offhandID = off_hand.id;
       //console.log("COMBO: " + main_hand.level + " - " + off_hand.level + ". Combined: " + item.level);

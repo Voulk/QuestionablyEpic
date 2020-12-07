@@ -34,6 +34,7 @@ class Player {
     spec = "";
     charID = 0;
     activeItems = [];
+    activeWeaponCombos = [];
     activeConduits = [];
     renown = 0;
 
@@ -167,13 +168,16 @@ class Player {
         this.activeItems = [];
     }
 
-    getActiveItems = (slot) => {
+    getActiveItems = (slot, active = false) => {
         let temp = this.activeItems.filter(function(item) {
-            if (slot === "Offhands") {
-                return item.slot === "Holdable" || item.slot === "Offhand" || item.slot === "Shield"
+            if (slot === "AllMainhands") {
+                return (item.slot === "1H Weapon" || item.slot === "2H Weapon") && (!active || item.active);
+            }
+            else if (slot === "Offhands" ) {
+                return (item.slot === "Holdable" || item.slot === "Offhand" || item.slot === "Shield") && (!active || item.active);
             }
             else {
-                return item.slot === slot;
+                return item.slot === slot && (!active || item.active);
             }
             
         })
@@ -181,12 +185,14 @@ class Player {
 
     }
 
+
+
     // TODO: Right now this just returns all items for testing. Remove the comment to return to it's intended functionality.
     getSelectedItems = () => {
         let temp = this.activeItems.filter(function(item) {
 
-            //return item.active === true;
-            return item;
+            return item.active === true;
+            //return item;
       
         });
         return this.sortItems(temp);

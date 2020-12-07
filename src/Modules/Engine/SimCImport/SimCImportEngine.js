@@ -112,6 +112,7 @@ function processItem(line, player, contentType) {
   let enchantID = 0; // currently unused.
   let missiveStats = [];
   let itemEffect = {}; // This is called automatically for everything except Legendaries. 
+  let itemEquipped = !line.includes("#");
   
 
   // Build out our item information.
@@ -224,7 +225,7 @@ function processItem(line, player, contentType) {
       0,
       itemLevel
     );
-
+    item.active = itemEquipped;
     item.level = itemLevel;
     item.stats = calcStatsAtLevel(
       itemLevel,
