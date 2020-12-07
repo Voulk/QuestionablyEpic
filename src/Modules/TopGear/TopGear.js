@@ -119,6 +119,7 @@ export default function TopGear(props) {
   // Fill Items fills the ItemNames box with items appropriate to the given slot and spec.  };
 
   let history = useHistory();
+  const wepCombos = buildWepCombos(props.pl);
 
   const unleashTopGear = () => {
     // Call to the Top Gear Engine. Lock the app down.
@@ -128,7 +129,7 @@ export default function TopGear(props) {
     let strippedPlayer = JSON.parse(JSON.stringify(props.pl));
     //console.log("Pl: " + JSON.stringify(props.pl));
     instance
-      .runTopGear(itemList, strippedPlayer, props.contentType)
+      .runTopGear(itemList, wepCombos, strippedPlayer, props.contentType)
       .then((set) => {
         console.log(`Loop returned`);
         props.setTopSet(set);
@@ -159,11 +160,8 @@ export default function TopGear(props) {
     "Trinket",
   ];
 
-  // TODO. Calculate the score for a given item.
-  // Score is calculated by multiplying out stat weights and then adding any special effects.
-  const calculateScore = (item) => {};
 
-  const wepCombos = buildWepCombos(props.pl);
+  
 
   return (
     <div
