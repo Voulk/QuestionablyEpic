@@ -94,7 +94,8 @@ export default function ItemCard(props) {
       " & " +
       getTranslatedItemName(item.offhandID, currentLanguage);
   } else {
-    itemName = getTranslatedItemName(item.id, currentLanguage);
+    if (isLegendary) itemName = item.effect.name;  // Add translations to this.
+    else itemName = getTranslatedItemName(item.id, currentLanguage);
   }
 
   const socket = props.item.socket ? (

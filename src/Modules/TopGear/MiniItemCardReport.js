@@ -53,8 +53,10 @@ export default function ItemCardReport(props) {
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
   const itemLevel = item.level;
+  const isLegendary = 'effect' in item && item.effect.type === 'spec legendary';
 
   const itemQuality = (itemLevel) => {
+    if (isLegendary) return "#ff8000";
     if (itemLevel >= 183) return "#a73fee";
     else if (itemLevel >= 120) return "#328CE3";
     else return "#1eff00";
@@ -84,7 +86,8 @@ export default function ItemCardReport(props) {
       " & " +
       getTranslatedItemName(item.offhandID, currentLanguage);
   } else {
-    itemName = getTranslatedItemName(item.id, currentLanguage);
+      if (isLegendary) itemName = item.effect.name;  // Add translations to this.
+      else itemName = getTranslatedItemName(item.id, currentLanguage);
   }
 
   const socket = props.item.socket ? (
