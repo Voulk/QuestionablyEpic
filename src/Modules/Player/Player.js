@@ -34,7 +34,6 @@ class Player {
     spec = "";
     charID = 0;
     activeItems = [];
-    activeWeaponCombos = [];
     activeConduits = [];
     renown = 0;
 

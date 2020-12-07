@@ -105,18 +105,12 @@ export default function TopGear(props) {
   const openPop = Boolean(anchorEl);
   const idPop = openPop ? "simple-popover" : undefined;
   const [itemDropdown, setItemDropdown] = useState([]); // Filled later based on item slot and armor type.
-  const [wepCombos, setWepCombos] = useState([]);
   
   
   useEffect(() => {
     ReactGA.pageview(window.location.pathname + window.location.search);
   }, []);
 
-  useEffect(() => {
-    console.log("Setting weapon combos");
-    //setWepCombos(buildWepCombos(props.pl));
-    console.log("Wep: " + wepCombos);
-  })
   // Right now the available item levels are static, but given the removal of titanforging each item could hypothetically share
   // a list of available ilvls and the player could select from a smaller list instead.
   // This is left as a TODO until key functionality is completed but is a moderate priority.
@@ -153,10 +147,6 @@ export default function TopGear(props) {
     setItemList([...player.getActiveItems(activeSlot)]);
   };
 
-  const activateWeapon = (index) => {
-    wepCombos[index].active = true;
-    setWepCombos(...wepCombos)
-  }
 
   const slotList = [
     "Head",
@@ -175,7 +165,6 @@ export default function TopGear(props) {
   ];
 
 
-  console.log("ewqe" + wepCombos);
 
   return (
     <div
