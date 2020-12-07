@@ -238,7 +238,7 @@ function evalSet(itemSet, player, contentType) {
     adjusted_weights.haste = (adjusted_weights.haste + (adjusted_weights.haste * (1 - DR_CONST * setStats.haste / STATPERONEPERCENT.HASTE))) / 2;
     adjusted_weights.crit = (adjusted_weights.crit + (adjusted_weights.crit * (1 - DR_CONST * setStats.crit / STATPERONEPERCENT.CRIT))) / 2;
     adjusted_weights.versatility = (adjusted_weights.versatility + (adjusted_weights.versatility * (1 - DR_CONST * setStats.versatility / STATPERONEPERCENT.VERSATILITY))) / 2;
-    //adjusted_weights.mastery = (adjusted_weights.mastery + (adjusted_weights.mastery * (1 - DR_CONST * setStats.mastery / STATPERONEPERCENT.MASTERY[player.spec]))) / 2;
+    adjusted_weights.mastery = (adjusted_weights.mastery + (adjusted_weights.mastery * (1 - DR_CONST * setStats.mastery / STATPERONEPERCENT.MASTERYA[player.spec]))) / 2;
     // TODO: Leech, which has a DR larger than secondary stats. 
     //console.log("Weights After: " + JSON.stringify(adjusted_weights));
 

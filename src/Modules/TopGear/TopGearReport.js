@@ -76,6 +76,7 @@ function TopGearReport(props) {
                       (key) =>
                         key.slot === "Head" ||
                         key.slot === "Neck" ||
+                        key.slot === "Back" ||
                         key.slot === "Shoulder" ||
                         key.slot === "Chest" ||
                         key.slot === "Wrist" ||
@@ -118,7 +119,7 @@ function TopGearReport(props) {
           </Grid>
           <Grid item xs={12}>
             <Grid container spacing={1} direction="column">
-              <TopSetStatsPanel statList={statList} />
+              <TopSetStatsPanel statList={statList} spec={props.pl.spec} />
             </Grid>
           </Grid>
         </Grid>
