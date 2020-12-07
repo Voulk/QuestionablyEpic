@@ -112,7 +112,7 @@ export default function ItemCardReport(props) {
       <Card
         className={item.active ? classes.selected : classes.root}
         elevation={0}
-        style={{ backgroundColor: "rgba(44, 44, 44, 0.5)" }}
+        style={{ backgroundColor: "rgba(34, 34, 34, 0.52)" }}
         // variant="outlined"
         // style={{ width: "100%" }}
       >

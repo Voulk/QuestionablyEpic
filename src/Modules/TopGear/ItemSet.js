@@ -42,7 +42,7 @@ class ItemSet {
     compileStats() {
         //console.log("Compiling Stats for Item List of legnth: " + this.itemList.length);
         let setStats = {
-            intellect: 0, // TODO: 450
+            intellect: 450, // TODO: 450
             haste: 0,
             crit: 0,
             mastery: 0,

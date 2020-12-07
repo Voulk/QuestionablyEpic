@@ -110,7 +110,8 @@ class App extends Component {
     };
   }
 
-  setTopSet = (set) => {
+  setTopResult = (set) => {
+    
     this.setState({ topSet: set });
   };
 
@@ -428,7 +429,7 @@ class App extends Component {
                 render={() => (
                   <TopGearReport
                     pl={activePlayer}
-                    topSet={this.state.topSet}
+                    result={this.state.topSet}
                     contentType={this.state.contentType}
                   />
                 )}
@@ -448,7 +449,7 @@ class App extends Component {
                   <TopGear
                     pl={activePlayer}
                     contentType={this.state.contentType}
-                    setTopSet={this.setTopSet}
+                    setTopResult={this.setTopResult}
                   />
                 )}
               />

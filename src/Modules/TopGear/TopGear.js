@@ -132,9 +132,10 @@ export default function TopGear(props) {
     //console.log("Pl: " + JSON.stringify(props.pl));
     instance
       .runTopGear(itemList, wepCombos, strippedPlayer, props.contentType)
-      .then((set) => {
+      .then((result) => {
         console.log(`Loop returned`);
-        props.setTopSet(set);
+        
+        props.setTopResult(result);
         history.push("/report/");
       });
   };

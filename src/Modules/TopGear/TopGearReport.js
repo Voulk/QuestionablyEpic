@@ -20,10 +20,13 @@ function TopGearReport(props) {
 
     setImg();
   }, []);
-
-  let topSet = props.topSet;
+  let result = props.result;
+  let topSet = result.itemSet;
+  let differentials = result.differentials;
   console.log(topSet);
+  console.log(differentials);
   let itemList = topSet !== null && "itemList" in topSet ? topSet.itemList : [];
+  
   let statList =
     topSet !== null && "setStats" in topSet ? topSet.setStats : {};
   //console.log("Top Set: " + JSON.stringify(itemList));
