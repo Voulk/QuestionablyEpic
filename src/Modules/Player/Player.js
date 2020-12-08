@@ -75,15 +75,15 @@ class Player {
         Raid: {
             intellect: 1,
             haste: 0.4,
-            crit: 0.5,
+            crit: 0.4,
             mastery: 0.45,
             versatility: 0.4,
             leech: 0.7,
         },
         Dungeon: {
             intellect: 1,
-            haste: 0.8,
-            crit: 0.5,
+            haste: 0.4,
+            crit: 0.4,
             mastery: 0.4,
             versatility: 0.45,
             leech: 0.7,
@@ -419,7 +419,7 @@ class Player {
             this.statWeights = {
                 "Raid": {
                     intellect: 1, 
-                    haste: 0.37,
+                    haste: 0.38,
                     crit: 0.34,
                     mastery: 0.31,
                     versatility: 0.32,
@@ -473,7 +473,7 @@ class Player {
             this.statWeights = {
                 "Raid": {
                     intellect: 1, 
-                    haste: 0.4,
+                    haste: 0.39,
                     crit: 0.27,
                     mastery: 0.33,
                     versatility: 0.32,
@@ -582,7 +582,7 @@ class Player {
             this.statWeights = {
                 "Raid": {
                     intellect: 1, 
-                    haste: 0.35,
+                    haste: 0.36,
                     crit: 0.34,
                     mastery: 0.32,
                     versatility: 0.33,
