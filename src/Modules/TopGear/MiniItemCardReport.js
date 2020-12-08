@@ -50,8 +50,7 @@ export default function ItemCardReport(props) {
   const classes = useStyles();
   const item = props.item;
   const statString = buildStatString(item.stats, item.effect);
-  const enchant = item.enchantName;
-  console.log(enchant);
+  const enchants = props.enchants;
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
   const itemLevel = item.level;
@@ -65,7 +64,6 @@ export default function ItemCardReport(props) {
   };
 
   const activateItemCard = () => {
-    console.log("Activating item with Hash: " + item.uniqueHash);
     props.activateItem(item.uniqueHash);
   };
 
@@ -105,6 +103,30 @@ export default function ItemCardReport(props) {
     </div>
   ) : null;
 
+  const enchantCheck = (item) => {
+    if (
+      item.slot === "Chest" ||
+      item.slot === "Wrist" ||
+      item.slot === "Finger" ||
+      item.slot === "Back"
+    ) {
+      let typo = (
+        <Typography
+          variant="subtitle2"
+          wrap="nowrap"
+          display="block"
+          align="left"
+          style={{ fontSize: "12px", color: "#36ed21" }}
+        >
+          {enchants[item.slot]}
+        </Typography>
+      );
+      return typo;
+    }
+
+    return null;
+  };
+
   const tertiary =
     props.item.tertiary !== "" ? (
       <div style={{ display: "inline" }}> / {props.item.tertiary} </div>
@@ -116,8 +138,6 @@ export default function ItemCardReport(props) {
         className={item.active ? classes.selected : classes.root}
         elevation={0}
         style={{ backgroundColor: "rgba(34, 34, 34, 0.52)" }}
-        // variant="outlined"
-        // style={{ width: "100%" }}
       >
         <CardActionArea disbled={true}>
           {/* <CardActionArea disabled={true}> */}
@@ -190,7 +210,7 @@ export default function ItemCardReport(props) {
                   xs="auto"
                   justify="space-between"
                 >
-                  <Grid item xs={12}>
+                  <Grid item xs={12} style={{ display: "contents" }}>
                     <Typography
                       variant="subtitle2"
                       wrap="nowrap"
@@ -200,6 +220,7 @@ export default function ItemCardReport(props) {
                     >
                       {socket} {statString} {tertiary}
                     </Typography>
+                    {enchantCheck(item)}
                   </Grid>
                 </Grid>
               </Grid>
