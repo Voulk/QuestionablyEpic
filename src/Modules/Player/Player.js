@@ -1,6 +1,7 @@
 import { getAvailableClassConduits } from '../Covenants/CovenantUtilities';
 import SPEC from '../Engine/SPECS';
-import STAT from '../Engine/STAT'
+import STAT from '../Engine/STAT';
+import {getUnique} from "./PlayerUtilities";
 
 var SPELL_CASTS_LOC = 0;
 var SPELL_HEALING_LOC = 1;
@@ -24,13 +25,14 @@ class Player {
         this.region = region;
         this.realm = realm;
         this.race = race;
+        this.uniqueHash = getUnique();
 
         if (statWeights !== "default" && statWeights.DefaultWeights === false) this.statWeights = statWeights;
         this.activeConduits = getAvailableClassConduits(specName);
         //this.getStatPerc = getStatPerc;
     }
 
-
+    uniqueHash = ""; // used for deletion purposes.
     spec = "";
     charID = 0;
     activeItems = [];

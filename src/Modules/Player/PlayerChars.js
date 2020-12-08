@@ -94,6 +94,15 @@ class PlayerChars  {
         this.allChar.splice(this.activeChar, 1)
     }
 
+    delSpecificChar = (unique) => {
+        let tempArray =  this.allChar.filter(function(char) {
+            return char.uniqueHash !== unique;
+        });
+        this.allChar = tempArray;
+    }
+
+
+
 
 }
 

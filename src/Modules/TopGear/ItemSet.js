@@ -2,6 +2,7 @@
 // Represents a full set of items. 
 import {getTranslatedItemName} from "../Engine/ItemUtilities";
 import Item from "../Player/Item";
+import {STATPERONEPERCENT, BASESTAT} from "../Engine/STAT";
 
 class ItemSet {
     constructor(id, itemList, sumSoft) {
@@ -50,7 +51,7 @@ class ItemSet {
         let setStats = {
             intellect: 450, // TODO: 450
             haste: 0,
-            crit: 0,
+            crit: 175,
             mastery: 0,
             versatility: 0,
             leech: 0,

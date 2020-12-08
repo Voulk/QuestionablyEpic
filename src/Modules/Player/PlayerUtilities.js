@@ -5,6 +5,10 @@ This file contains utility functions that center around the player or players cl
 
 */
 
+export function getUnique() {
+    return (Math.floor(Math.random() * 3000000) + 1).toString();
+}
+
 // This function converts raw log output to a form that's easier to use around the app. 
 // If you need an extra field that you can easily add it here.
 export function convertLogSpellOutput(player, logOutput, fightLength) {

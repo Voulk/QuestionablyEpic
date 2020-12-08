@@ -108,7 +108,8 @@ export default function ItemCardReport(props) {
       item.slot === "Chest" ||
       item.slot === "Wrist" ||
       item.slot === "Finger" ||
-      item.slot === "Back"
+      item.slot === "Back" ||
+      item.slot === "CombinedWeapon"
     ) {
       let typo = (
         <Typography
