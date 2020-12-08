@@ -109,7 +109,7 @@ export default function ItemCardReport(props) {
     props.item.tertiary !== "" ? (
       <div style={{ display: "inline" }}> / {props.item.tertiary} </div>
     ) : null;
-
+  console.log(item);
   return (
     <Grid item xs={12}>
       <Card
@@ -190,7 +190,7 @@ export default function ItemCardReport(props) {
                   xs="auto"
                   justify="space-between"
                 >
-                  <Grid item xs={12}>
+                  <Grid item xs={12} style={{ display: "contents" }}>
                     <Typography
                       variant="subtitle2"
                       wrap="nowrap"
@@ -198,7 +198,16 @@ export default function ItemCardReport(props) {
                       align="left"
                       style={{ fontSize: "12px" }}
                     >
-                      {socket} {statString} {tertiary}
+                      {socket} {statString} {tertiary} {item.enchant}
+                    </Typography>
+                    <Typography
+                      variant="subtitle2"
+                      wrap="nowrap"
+                      display="block"
+                      align="left"
+                      style={{ fontSize: "12px", color: "#36ed21" }}
+                    >
+                      Enchant Here
                     </Typography>
                   </Grid>
                 </Grid>
