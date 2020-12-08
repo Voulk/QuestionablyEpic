@@ -37,7 +37,7 @@ import ItemCard from "./../QuickCompare/ItemCard";
 import MiniItemCard from "./MiniItemCard";
 import MuiAlert from "@material-ui/lab/Alert";
 import Autocomplete from "@material-ui/lab/Autocomplete";
-import worker from "workerize-loader!./TopGearEngine"; // eslint-disable-line import/no-webpack-loader-syntax
+//import worker from "workerize-loader!./TopGearEngine"; // eslint-disable-line import/no-webpack-loader-syntax
 import { useHistory, useLocation } from "react-router-dom";
 import HelpText from "../SetupAndMenus/HelpText";
 
@@ -169,8 +169,8 @@ export default function TopGear(props) {
       setBtnActive(false);
       let itemList = props.pl.getSelectedItems();
       let wepCombos = buildWepCombos(props.pl, true)
-      
-      let instance = worker(); // `new` is optional
+      const worker =  require('workerize-loader!./TopGearEngine'); // eslint-disable-line import/no-webpack-loader-syntax
+      let instance = new worker();
       let strippedPlayer = JSON.parse(JSON.stringify(props.pl));
       //console.log("Pl: " + JSON.stringify(props.pl));
       instance
