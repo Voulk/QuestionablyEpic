@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from "react";
 import ItemCardReport from "./MiniItemCardReport";
 import TopSetStatsPanel from "./TopSetStatsPanel";
-import { testList, differentialsTest} from "./TestData";
-import { Grid } from "@material-ui/core";
-import { useHistory, useLocation } from "react-router-dom";
+import { testList, differentialsTest } from "./TestData";
 import { apiGetPlayerImage } from "../SetupAndMenus/ConnectionUtilities";
 import { useTranslation } from "react-i18next";
-import { Button, Paper, Typography, Divider } from "@material-ui/core";
+import { Button, Paper, Typography, Divider, Grid } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import { getItemIcon, getTranslatedItemName } from "../Engine/ItemUtilities";
 
@@ -18,7 +16,6 @@ function TopGearReport(props) {
   useEffect(() => {
     async function setImg() {
       const img = await apiGetPlayerImage(props.pl);
-      //console.log("IMG: " + img);
       setBackgroundImage(img);
     }
 
@@ -48,8 +45,13 @@ function TopGearReport(props) {
   //statList = topSet.stats;
   let itemList = testList;
   let differentials = differentialsTest;
-  let enchants = {chest: '+30 stats', bracers: '+15 int', finger: '+16 haste'};
-  
+  let enchants = {
+    Chest: "+30 Stats",
+    Wrist: "+15 Int",
+    Finger: "+16 Haste",
+    Back: "+20 Stam +30 Leech",
+  };
+
   let statList = {
     intellect: 321,
     haste: 931,
@@ -59,11 +61,8 @@ function TopGearReport(props) {
     leech: 49,
     hps: 911,
     dps: 893,
-  }; 
+  };
 
-  //let playerImage = apiGetPlayerImage(props.pl);
-  //let playerImage = "https://render-us.worldofwarcraft.com/character/frostmourne/212/180358868-main.jpg"
-  console.log(differentials);
   return (
     <div
       style={{
@@ -114,6 +113,7 @@ function TopGearReport(props) {
                               key={index}
                               item={item}
                               activateItem={true}
+                              enchants={enchants}
                             />
                           ))}
                       </Grid>
@@ -139,6 +139,7 @@ function TopGearReport(props) {
                               key={index}
                               item={item}
                               activateItem={true}
+                              enchants={enchants}
                             />
                           ))}
                       </Grid>
