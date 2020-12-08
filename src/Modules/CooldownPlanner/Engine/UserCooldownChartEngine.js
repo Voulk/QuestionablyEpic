@@ -22,7 +22,14 @@ export default function chartCooldownUpdater(tableData) {
 
   // Map the data from the Cooldown Planner into a unique list of Healer Names + Cooldowns for dataKeys for the Chart.
   let uniqueCooldownListArray = Array.from(
-    new Set(tableData.map((key) => key.name + " - " + key.Cooldown))
+    new Set(
+      tableData.map(
+        (key) =>
+          key.name +
+          " - " +
+          i18n.t("CooldownPlannerClassAbilities." + key.Cooldown)
+      )
+    )
   );
 
   // Map the Data from the Cooldown Planner and create a new array of objects. These are then mapped using the durationmaker function to create the data for the length of the cooldown and pushed into a new array customCooldownDurations.
@@ -30,7 +37,10 @@ export default function chartCooldownUpdater(tableData) {
     .map((key) => ({
       ability: key.Cooldown,
       timestamp: moment.duration("00:" + key.time).asMilliseconds(),
-      abilityname: key.name + " - " + key.Cooldown,
+      abilityname:
+        key.name +
+        " - " +
+        i18n.t("CooldownPlannerClassAbilities." + key.Cooldown),
     }))
     .map((key) =>
       customCooldownDurations.push(
@@ -49,7 +59,8 @@ export default function chartCooldownUpdater(tableData) {
         )
       )
     );
-
+  console.log(tableData);
+  console.log(customCooldownDurations);
   let customCooldownDurationFlatArray = customCooldownDurations.flat();
 
   // Join the Cooldown Durates with the Damage Taken Data (The original data before any data from the table was entered.

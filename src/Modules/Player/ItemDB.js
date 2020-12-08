@@ -2282,7 +2282,8 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "versatility": 0
+            "versatility": 0,
+            "unallocated": 3500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -2311,7 +2312,8 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "versatility": 0
+            "versatility": 0,
+            "unallocated": 3500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -2340,7 +2342,8 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "versatility": 0
+            "versatility": 0,
+            "unallocated": 3500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -2369,7 +2372,8 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "versatility": 0
+            "versatility": 0,
+            "unallocated": 3500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -2398,7 +2402,8 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "versatility": 0
+            "versatility": 0,
+            "unallocated": 3500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -2427,7 +2432,8 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "versatility": 0
+            "versatility": 0,
+            "unallocated": 3500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -2456,7 +2462,8 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "versatility": 0
+            "versatility": 0,
+            "unallocated": 3500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -2485,7 +2492,8 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "versatility": 0
+            "versatility": 0,
+            "unallocated": 3500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -2514,7 +2522,8 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "versatility": 0
+            "versatility": 0,
+            "unallocated": 3500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -2543,7 +2552,8 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "versatility": 0
+            "versatility": 0,
+            "unallocated": 3500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -2572,7 +2582,8 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "versatility": 0
+            "versatility": 0,
+            "unallocated": 3500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -2601,11 +2612,252 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "versatility": 0
+            "versatility": 0,
+            "unallocated": 3500
         },
         "dropLoc": "",
         "selectable": "true",
         "slot": "Shield"
+    },
+    {
+        "id": 171412,
+        "name": "Shadowghast Breastplate",
+        "names": {
+            "cn": "",
+            "en": "Shadowghast Breastplate",
+            "ru": "Эребиевая кираса",
+            "es": "Coraza de terror sombrío",
+            "br": "Peitoral de Umbromedo",
+            "kr": "",
+            "fr": "Cuirasse ombrepeur",
+            "de": "Schattenschreckbrustplatte"
+        },
+        "icon": "inv_chest_plate_mawraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 175,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 171413,
+        "name": "Shadowghast Sabatons",
+        "names": {
+            "cn": "",
+            "en": "Shadowghast Sabatons",
+            "ru": "Эребиевые башмаки",
+            "es": "Escarpes de terror sombrío",
+            "br": "Escarpes de Umbromedo",
+            "kr": "",
+            "fr": "Solerets ombrepeur",
+            "de": "Schattenschrecksabatons"
+        },
+        "icon": "inv_boot_plate_mawraidmythic_d_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 175,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Feet"
+    },
+    {
+        "id": 171414,
+        "name": "Shadowghast Gauntlets",
+        "names": {
+            "cn": "",
+            "en": "Shadowghast Gauntlets",
+            "ru": "Эребиевые рукавицы",
+            "es": "Guanteletes de terror sombrío",
+            "br": "Manoplas de Umbromedo",
+            "kr": "",
+            "fr": "Gantelets ombrepeur",
+            "de": "Schattenschreckstulpen"
+        },
+        "icon": "inv_glove_plate_mawraidmythic_d_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 175,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
+        "id": 171415,
+        "name": "Shadowghast Helm",
+        "names": {
+            "cn": "",
+            "en": "Shadowghast Helm",
+            "ru": "Эребиевый шлем",
+            "es": "Yelmo de terror sombrío",
+            "br": "Elmo de Umbromedo",
+            "kr": "",
+            "fr": "Heaume ombrepeur",
+            "de": "Schattenschreckhelm"
+        },
+        "icon": "inv_helm_plate_mawraidmythic_d_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 175,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 171416,
+        "name": "Shadowghast Greaves",
+        "names": {
+            "cn": "",
+            "en": "Shadowghast Greaves",
+            "ru": "Эребиевые наголенники",
+            "es": "Grebas de terror sombrío",
+            "br": "Grevas de Umbromedo",
+            "kr": "",
+            "fr": "Grèves ombrepeur",
+            "de": "Schattenschreckbeinschützer"
+        },
+        "icon": "inv_pant_plate_mawraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 175,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 171417,
+        "name": "Shadowghast Pauldrons",
+        "names": {
+            "cn": "",
+            "en": "Shadowghast Pauldrons",
+            "ru": "Эребиевое наплечье",
+            "es": "Espaldares de terror sombrío",
+            "br": "Brafoneiras de Umbromedo",
+            "kr": "",
+            "fr": "Espauliers ombrepeur",
+            "de": "Schattenschreckschulterstücke"
+        },
+        "icon": "inv_shoulder_plate_mawraidmythic_d_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 175,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 171418,
+        "name": "Shadowghast Waistguard",
+        "names": {
+            "cn": "",
+            "en": "Shadowghast Waistguard",
+            "ru": "Эребиевый воинский пояс",
+            "es": "Guardarrenes de terror sombrío",
+            "br": "Cinta de Umbromedo",
+            "kr": "",
+            "fr": "Sangle ombrepeur",
+            "de": "Schattenschrecktaillenschutz"
+        },
+        "icon": "inv_belt_plate_mawraidmythic_d_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 175,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Waist"
+    },
+    {
+        "id": 171419,
+        "name": "Shadowghast Armguards",
+        "names": {
+            "cn": "",
+            "en": "Shadowghast Armguards",
+            "ru": "Эребиевые боевые наручи",
+            "es": "Guardabrazos de terror sombrío",
+            "br": "Guarda-braços de Umbromedo",
+            "kr": "",
+            "fr": "Garde-bras ombrepeur",
+            "de": "Schattenschreckarmschützer"
+        },
+        "icon": "inv_bracer_plate_mawraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 175,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Wrist"
     },
     {
         "id": 171442,
@@ -2630,7 +2882,8 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "versatility": 0
+            "versatility": 0,
+            "unallocated": 3500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -2659,7 +2912,8 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "versatility": 0
+            "versatility": 0,
+            "unallocated": 3500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -2688,7 +2942,8 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "versatility": 0
+            "versatility": 0,
+            "unallocated": 3500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -2717,7 +2972,8 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "versatility": 0
+            "versatility": 0,
+            "unallocated": 3500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -2746,7 +3002,8 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "versatility": 0
+            "versatility": 0,
+            "unallocated": 3500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -2775,7 +3032,8 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "versatility": 0
+            "versatility": 0,
+            "unallocated": 3500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -2804,7 +3062,8 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "versatility": 0
+            "versatility": 0,
+            "unallocated": 3500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -2833,7 +3092,8 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "versatility": 0
+            "versatility": 0,
+            "unallocated": 3500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -3065,7 +3325,8 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "versatility": 0
+            "versatility": 0,
+            "unallocated": 3500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -3094,7 +3355,8 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "versatility": 0
+            "versatility": 0,
+            "unallocated": 3500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -3123,7 +3385,8 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "versatility": 0
+            "versatility": 0,
+            "unallocated": 3500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -3152,7 +3415,8 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "versatility": 0
+            "versatility": 0,
+            "unallocated": 3500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -3181,7 +3445,8 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "versatility": 0
+            "versatility": 0,
+            "unallocated": 3500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -3210,7 +3475,8 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "versatility": 0
+            "versatility": 0,
+            "unallocated": 3500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -3239,7 +3505,8 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "versatility": 0
+            "versatility": 0,
+            "unallocated": 3500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -3268,7 +3535,8 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "versatility": 0
+            "versatility": 0,
+            "unallocated": 3500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -3297,7 +3565,8 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "versatility": 0
+            "versatility": 0,
+            "unallocated": 3500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -3326,7 +3595,8 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "versatility": 0
+            "versatility": 0,
+            "unallocated": 3500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -3355,7 +3625,8 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "versatility": 0
+            "versatility": 0,
+            "unallocated": 3500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -3384,7 +3655,8 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "versatility": 0
+            "versatility": 0,
+            "unallocated": 3500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -3413,7 +3685,8 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "versatility": 0
+            "versatility": 0,
+            "unallocated": 3500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -3442,7 +3715,8 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "versatility": 0
+            "versatility": 0,
+            "unallocated": 3500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -3471,7 +3745,8 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "versatility": 0
+            "versatility": 0,
+            "unallocated": 3500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -3500,7 +3775,8 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "versatility": 0
+            "versatility": 0,
+            "unallocated": 3500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -3529,7 +3805,8 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "versatility": 0
+            "versatility": 0,
+            "unallocated": 3500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -3558,7 +3835,8 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "versatility": 0
+            "versatility": 0,
+            "unallocated": 3500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -3587,7 +3865,8 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "versatility": 0
+            "versatility": 0,
+            "unallocated": 3500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -3616,7 +3895,8 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "versatility": 0
+            "versatility": 0,
+            "unallocated": 3500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -3645,7 +3925,8 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "versatility": 0
+            "versatility": 0,
+            "unallocated": 3500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -3674,7 +3955,8 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "versatility": 0
+            "versatility": 0,
+            "unallocated": 3500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -3703,7 +3985,8 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "versatility": 0
+            "versatility": 0,
+            "unallocated": 3500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -3732,7 +4015,8 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "versatility": 0
+            "versatility": 0,
+            "unallocated": 3500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -3761,7 +4045,8 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "versatility": 0
+            "versatility": 0,
+            "unallocated": 3500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -3790,7 +4075,8 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "versatility": 0
+            "versatility": 0,
+            "unallocated": 3500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -3819,7 +4105,8 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "versatility": 0
+            "versatility": 0,
+            "unallocated": 3500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -3848,7 +4135,8 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "versatility": 0
+            "versatility": 0,
+            "unallocated": 3500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -3877,7 +4165,8 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "versatility": 0
+            "versatility": 0,
+            "unallocated": 3500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -3906,7 +4195,8 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "versatility": 0
+            "versatility": 0,
+            "unallocated": 3500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -3935,7 +4225,488 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "versatility": 0
+            "versatility": 0,
+            "unallocated": 3500
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Wrist"
+    },
+    {
+        "id": 172314,
+        "name": "Umbrahide Vest",
+        "names": {
+            "cn": "",
+            "en": "Umbrahide Vest",
+            "ru": "Жилет из темной шкуры",
+            "es": "Jubón de pellejo umbrío",
+            "br": "Colete de Courúmbreo",
+            "kr": "",
+            "fr": "Gilet en peau ombreuse",
+            "de": "Umbralederweste"
+        },
+        "icon": "inv_chest_leather_mawraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 175,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 172315,
+        "name": "Umbrahide Treads",
+        "names": {
+            "cn": "",
+            "en": "Umbrahide Treads",
+            "ru": "Ботфорты из темной шкуры",
+            "es": "Botines de pellejo umbrío",
+            "br": "Botinas de Courúmbreo",
+            "kr": "",
+            "fr": "Bottines en peau ombreuse",
+            "de": "Umbraledertreter"
+        },
+        "icon": "inv_boot_leather_mawraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 175,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Feet"
+    },
+    {
+        "id": 172316,
+        "name": "Umbrahide Gauntlets",
+        "names": {
+            "cn": "",
+            "en": "Umbrahide Gauntlets",
+            "ru": "Рукавицы из темной шкуры",
+            "es": "Guanteletes de pellejo umbrío",
+            "br": "Manoplas de Courúmbreo",
+            "kr": "",
+            "fr": "Gantelets en peau ombreuse",
+            "de": "Umbralederstulpen"
+        },
+        "icon": "inv_glove_leather_mawraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 175,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
+        "id": 172317,
+        "name": "Umbrahide Helm",
+        "names": {
+            "cn": "",
+            "en": "Umbrahide Helm",
+            "ru": "Шлем из темной шкуры",
+            "es": "Yelmo de pellejo umbrío",
+            "br": "Elmo de Courúmbreo",
+            "kr": "",
+            "fr": "Heaume en peau ombreuse",
+            "de": "Umbralederhelm"
+        },
+        "icon": "inv_helm_leather_mawraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 175,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 172318,
+        "name": "Umbrahide Leggings",
+        "names": {
+            "cn": "",
+            "en": "Umbrahide Leggings",
+            "ru": "Поножи из темной шкуры",
+            "es": "Leotardos de pellejo umbrío",
+            "br": "Perneiras de Courúmbreo",
+            "kr": "",
+            "fr": "Jambières en peau ombreuse",
+            "de": "Umbraledergamaschen"
+        },
+        "icon": "inv_pant_leather_mawraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 175,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 172319,
+        "name": "Umbrahide Pauldrons",
+        "names": {
+            "cn": "",
+            "en": "Umbrahide Pauldrons",
+            "ru": "Наплечье из темной шкуры",
+            "es": "Espaldares de pellejo umbrío",
+            "br": "Brafoneiras de Courúmbreo",
+            "kr": "",
+            "fr": "Espauliers en peau ombreuse",
+            "de": "Umbralederschulterstücke"
+        },
+        "icon": "inv_shoulder_leather_mawraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 175,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 172320,
+        "name": "Umbrahide Waistguard",
+        "names": {
+            "cn": "",
+            "en": "Umbrahide Waistguard",
+            "ru": "Воинский пояс из темной шкуры",
+            "es": "Guardarrenes de pellejo umbrío",
+            "br": "Cinta de Courúmbreo",
+            "kr": "",
+            "fr": "Sangle en peau ombreuse",
+            "de": "Umbraledertaillenschutz"
+        },
+        "icon": "inv_belt_leather_mawraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 175,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Waist"
+    },
+    {
+        "id": 172321,
+        "name": "Umbrahide Armguards",
+        "names": {
+            "cn": "",
+            "en": "Umbrahide Armguards",
+            "ru": "Боевые наручи из темной шкуры",
+            "es": "Guardabrazos de pellejo umbrío",
+            "br": "Guarda-braços de Courúmbreo",
+            "kr": "",
+            "fr": "Garde-bras en peau ombreuse",
+            "de": "Umbralederarmschützer"
+        },
+        "icon": "inv_mail_mawraid_d_01_bracer",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 175,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Wrist"
+    },
+    {
+        "id": 172322,
+        "name": "Boneshatter Vest",
+        "names": {
+            "cn": "",
+            "en": "Boneshatter Vest",
+            "ru": "Жилет костедробителя",
+            "es": "Jubón de triturahuesos",
+            "br": "Colete Tritura-ossos",
+            "kr": "",
+            "fr": "Gilet fracasse-os",
+            "de": "Knochenschmetternde Weste"
+        },
+        "icon": "inv_mail_mawraid_d_01_chest",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 175,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 172323,
+        "name": "Boneshatter Treads",
+        "names": {
+            "cn": "",
+            "en": "Boneshatter Treads",
+            "ru": "Ботфорты костедробителя",
+            "es": "Botines de triturahuesos",
+            "br": "Botinas Tritura-ossos",
+            "kr": "",
+            "fr": "Bottines fracasse-os",
+            "de": "Knochenschmetternde Treter"
+        },
+        "icon": "inv_mail_mawraid_d_01_boots",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 175,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Feet"
+    },
+    {
+        "id": 172324,
+        "name": "Boneshatter Gauntlets",
+        "names": {
+            "cn": "",
+            "en": "Boneshatter Gauntlets",
+            "ru": "Рукавицы костедробителя",
+            "es": "Guanteletes de triturahuesos",
+            "br": "Manoplas Tritura-ossos",
+            "kr": "",
+            "fr": "Gantelets fracasse-os",
+            "de": "Knochenschmetternde Stulpen"
+        },
+        "icon": "inv_mail_mawraid_d_01_glove",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 175,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
+        "id": 172325,
+        "name": "Boneshatter Helm",
+        "names": {
+            "cn": "",
+            "en": "Boneshatter Helm",
+            "ru": "Шлем костедробителя",
+            "es": "Yelmo de triturahuesos",
+            "br": "Elmo Tritura-ossos",
+            "kr": "",
+            "fr": "Heaume fracasse-os",
+            "de": "Knochenschmetternder Helm"
+        },
+        "icon": "inv_mail_mawraid_d_01_helm",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 175,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 172326,
+        "name": "Boneshatter Greaves",
+        "names": {
+            "cn": "",
+            "en": "Boneshatter Greaves",
+            "ru": "Наголенники костедробителя",
+            "es": "Grebas de triturahuesos",
+            "br": "Grevas Tritura-ossos",
+            "kr": "",
+            "fr": "Grèves fracasse-os",
+            "de": "Knochenschmetternde Beinschützer"
+        },
+        "icon": "inv_mail_mawraid_d_01_pants",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 175,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 172327,
+        "name": "Boneshatter Pauldrons",
+        "names": {
+            "cn": "",
+            "en": "Boneshatter Pauldrons",
+            "ru": "Наплечье костедробителя",
+            "es": "Espaldares de triturahuesos",
+            "br": "Brafoneiras Tritura-ossos",
+            "kr": "",
+            "fr": "Espauliers fracasse-os",
+            "de": "Knochenschmetternde Schulterstücke"
+        },
+        "icon": "inv_mail_mawraid_d_01_shoulder",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 175,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 172328,
+        "name": "Boneshatter Waistguard",
+        "names": {
+            "cn": "",
+            "en": "Boneshatter Waistguard",
+            "ru": "Воинский пояс костедробителя",
+            "es": "Guardarrenes de triturahuesos",
+            "br": "Cinta Tritura-ossos",
+            "kr": "",
+            "fr": "Sangle fracasse-os",
+            "de": "Knochenschmetternder Taillenschutz"
+        },
+        "icon": "inv_mail_mawraid_d_01_buckle",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 175,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Waist"
+    },
+    {
+        "id": 172329,
+        "name": "Boneshatter Armguards",
+        "names": {
+            "cn": "",
+            "en": "Boneshatter Armguards",
+            "ru": "Боевые наручи костедробителя",
+            "es": "Guardabrazos de triturahuesos",
+            "br": "Guarda-braços Tritura-ossos",
+            "kr": "",
+            "fr": "Garde-bras fracasse-os",
+            "de": "Knochenschmetternde Armschützer"
+        },
+        "icon": "inv_mail_mawraid_d_01_bracer",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 175,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -3964,7 +4735,8 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "versatility": 0
+            "versatility": 0,
+            "unallocated": 3500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -3993,7 +4765,8 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "versatility": 0
+            "versatility": 0,
+            "unallocated": 3500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -4022,7 +4795,8 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "versatility": 0
+            "versatility": 0,
+            "unallocated": 3500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -4051,7 +4825,8 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "versatility": 0
+            "versatility": 0,
+            "unallocated": 3500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -4080,7 +4855,8 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "versatility": 0
+            "versatility": 0,
+            "unallocated": 3500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -4109,7 +4885,8 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "versatility": 0
+            "versatility": 0,
+            "unallocated": 3500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -4138,7 +4915,8 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "versatility": 0
+            "versatility": 0,
+            "unallocated": 3500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -4167,7 +4945,8 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "versatility": 0
+            "versatility": 0,
+            "unallocated": 3500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -4269,7 +5048,8 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "versatility": 12500
+            "versatility": 12500,
+            "unallocated": 5000
         },
         "dropLoc": "",
         "selectable": "true",
@@ -4305,7 +5085,8 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 12500,
-            "versatility": 0
+            "versatility": 0,
+            "unallocated": 5000
         },
         "dropLoc": "",
         "selectable": "true",
@@ -4341,7 +5122,8 @@ export const itemDB = [
             "haste": 12500,
             "crit": 0,
             "mastery": 0,
-            "versatility": 0
+            "versatility": 0,
+            "unallocated": 5000
         },
         "dropLoc": "",
         "selectable": "true",
@@ -4377,7 +5159,8 @@ export const itemDB = [
             "haste": 0,
             "crit": 12500,
             "mastery": 0,
-            "versatility": 0
+            "versatility": 0,
+            "unallocated": 5000
         },
         "dropLoc": "",
         "selectable": "true",
@@ -4701,7 +5484,8 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "versatility": 12500
+            "versatility": 12500,
+            "unallocated": 5000
         },
         "dropLoc": "",
         "selectable": "true",
@@ -4737,7 +5521,8 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 12500,
-            "versatility": 0
+            "versatility": 0,
+            "unallocated": 5000
         },
         "dropLoc": "",
         "selectable": "true",
@@ -4773,7 +5558,8 @@ export const itemDB = [
             "haste": 12500,
             "crit": 0,
             "mastery": 0,
-            "versatility": 0
+            "versatility": 0,
+            "unallocated": 5000
         },
         "dropLoc": "",
         "selectable": "true",
@@ -4809,7 +5595,8 @@ export const itemDB = [
             "haste": 0,
             "crit": 12500,
             "mastery": 0,
-            "versatility": 0
+            "versatility": 0,
+            "unallocated": 5000
         },
         "dropLoc": "",
         "selectable": "true",
@@ -4838,7 +5625,8 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "versatility": 0
+            "versatility": 0,
+            "unallocated": 3500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -4867,7 +5655,8 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "versatility": 0
+            "versatility": 0,
+            "unallocated": 3500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -4896,7 +5685,8 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "versatility": 0
+            "versatility": 0,
+            "unallocated": 3500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -4925,7 +5715,8 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "versatility": 0
+            "versatility": 0,
+            "unallocated": 3500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -4954,7 +5745,8 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "versatility": 0
+            "versatility": 0,
+            "unallocated": 3500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -4983,7 +5775,8 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "versatility": 0
+            "versatility": 0,
+            "unallocated": 3500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -5012,7 +5805,8 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "versatility": 0
+            "versatility": 0,
+            "unallocated": 3500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -5041,7 +5835,8 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "versatility": 0
+            "versatility": 0,
+            "unallocated": 3500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -5070,7 +5865,8 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "versatility": 0
+            "versatility": 0,
+            "unallocated": 3500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -5099,7 +5895,8 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "versatility": 0
+            "versatility": 0,
+            "unallocated": 3500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -5128,7 +5925,8 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "versatility": 0
+            "versatility": 0,
+            "unallocated": 3500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -5157,7 +5955,8 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "versatility": 0
+            "versatility": 0,
+            "unallocated": 3500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -5186,7 +5985,8 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "versatility": 0
+            "versatility": 0,
+            "unallocated": 3500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -5215,7 +6015,8 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "versatility": 0
+            "versatility": 0,
+            "unallocated": 3500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -5244,7 +6045,8 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "versatility": 0
+            "versatility": 0,
+            "unallocated": 3500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -5273,7 +6075,8 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "versatility": 0
+            "versatility": 0,
+            "unallocated": 3500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -5302,7 +6105,8 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "versatility": 0
+            "versatility": 0,
+            "unallocated": 3500
         },
         "dropLoc": "",
         "selectable": "true",
@@ -5331,7 +6135,278 @@ export const itemDB = [
             "haste": 0,
             "crit": 0,
             "mastery": 0,
-            "versatility": 0
+            "versatility": 0,
+            "unallocated": 3500
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Wrist"
+    },
+    {
+        "id": 173241,
+        "name": "Grim-Veiled Robe",
+        "names": {
+            "cn": "",
+            "en": "Grim-Veiled Robe",
+            "ru": "Одеяние мрачной завесы",
+            "es": "Toga de velo lúgubre",
+            "br": "Veste de Véu Atroz",
+            "kr": "",
+            "fr": "Robe voilée-de-deuil",
+            "de": "Gramschleierrobe"
+        },
+        "icon": "inv_cloth_mawraid_d_01_robe",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 175,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 173242,
+        "name": "Grim-Veiled Cape",
+        "names": {
+            "cn": "",
+            "en": "Grim-Veiled Cape",
+            "ru": "Накидка мрачной завесы",
+            "es": "Manteo de velo lúgubre",
+            "br": "Capa de Véu Atroz",
+            "kr": "",
+            "fr": "Cape voilée-de-deuil",
+            "de": "Gramschleiercape"
+        },
+        "icon": "inv_cloth_mawraid_d_01_cape",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 175,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Back"
+    },
+    {
+        "id": 173243,
+        "name": "Grim-Veiled Sandals",
+        "names": {
+            "cn": "",
+            "en": "Grim-Veiled Sandals",
+            "ru": "Сандалии мрачной завесы",
+            "es": "Sandalias de velo lúgubre",
+            "br": "Sandálias de Véu Atroz",
+            "kr": "",
+            "fr": "Sandales voilées-de-deuil",
+            "de": "Gramschleiersandalen"
+        },
+        "icon": "inv_cloth_mawraid_d_01_boot",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 175,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Feet"
+    },
+    {
+        "id": 173244,
+        "name": "Grim-Veiled Mittens",
+        "names": {
+            "cn": "",
+            "en": "Grim-Veiled Mittens",
+            "ru": "Полуперчатки мрачной завесы",
+            "es": "Mitones de velo lúgubre",
+            "br": "Meias-luvas de Véu Atroz",
+            "kr": "",
+            "fr": "Mitaines voilées-de-deuil",
+            "de": "Gramschleierfäustlinge"
+        },
+        "icon": "inv_cloth_mawraid_d_01_glove",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 175,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
+        "id": 173245,
+        "name": "Grim-Veiled Hood",
+        "names": {
+            "cn": "",
+            "en": "Grim-Veiled Hood",
+            "ru": "Капюшон мрачной завесы",
+            "es": "Caperuza de velo lúgubre",
+            "br": "Capuz de Véu Atroz",
+            "kr": "",
+            "fr": "Chaperon voilé-de-deuil",
+            "de": "Gramschleierkapuze"
+        },
+        "icon": "inv_cloth_mawraid_d_01_helm",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 175,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 173246,
+        "name": "Grim-Veiled Pants",
+        "names": {
+            "cn": "",
+            "en": "Grim-Veiled Pants",
+            "ru": "Штаны мрачной завесы",
+            "es": "Pantalones de velo lúgubre",
+            "br": "Calças de Véu Atroz",
+            "kr": "",
+            "fr": "Pantalon voilé-de-deuil",
+            "de": "Gramschleierhose"
+        },
+        "icon": "inv_cloth_mawraid_d_01_pant",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 175,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 173247,
+        "name": "Grim-Veiled Spaulders",
+        "names": {
+            "cn": "",
+            "en": "Grim-Veiled Spaulders",
+            "ru": "Наплеч мрачной завесы",
+            "es": "Bufas de velo lúgubre",
+            "br": "Espaldares de Véu Atroz",
+            "kr": "",
+            "fr": "Spallières voilées-de-deuil",
+            "de": "Gramschleierschiftung"
+        },
+        "icon": "inv_cloth_mawraid_d_01_shoulder",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 175,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 173248,
+        "name": "Grim-Veiled Belt",
+        "names": {
+            "cn": "",
+            "en": "Grim-Veiled Belt",
+            "ru": "Пояс мрачной завесы",
+            "es": "Cinturón de velo lúgubre",
+            "br": "Cinto de Véu Atroz",
+            "kr": "",
+            "fr": "Ceinture voilée-de-deuil",
+            "de": "Gramschleiergürtel"
+        },
+        "icon": "inv_cloth_mawraid_d_01_belt",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 175,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Waist"
+    },
+    {
+        "id": 173249,
+        "name": "Grim-Veiled Bracers",
+        "names": {
+            "cn": "",
+            "en": "Grim-Veiled Bracers",
+            "ru": "Наручи мрачной завесы",
+            "es": "Brazales de velo lúgubre",
+            "br": "Braçadeiras de Véu Atroz",
+            "kr": "",
+            "fr": "Brassards voilés-de-deuil",
+            "de": "Gramschleierarmschienen"
+        },
+        "icon": "inv_cloth_mawraid_d_01_bracer",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 175,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 3500
         },
         "dropLoc": "",
         "selectable": "true",

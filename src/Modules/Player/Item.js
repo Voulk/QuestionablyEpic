@@ -11,7 +11,7 @@ class Item {
     this.tertiary = (tertiary === "Leech" || tertiary === "Avoidance") ? tertiary : "";
     this.softScore = softScore;
     this.uniqueHash = this.getUnique(id);
-    console.log("Setting level to " + level);
+    //console.log("Setting level to " + level);
     
   }
 
@@ -25,6 +25,8 @@ class Item {
   effect = "";
   uniqueHash = ""; // Technically not a hash.
   offhandID = 0; // Only used for correctly translating weapon combos.
+  active = false;
+  overriddenName = false; // If true, the effect will be used as the items name instead of its ID. So far this is just used for legendaries. 
 
   // The stats on the item. These should already be adjusted for item level.
   // HPS is a calculated field. It includes any item effects that provide healing or absorbs.
@@ -37,6 +39,7 @@ class Item {
     crit: 0,
     leech: 0,
     hps: 0,
+    dps: 0,
     bonus_stats: {
       intellect: 0,
       haste: 0,

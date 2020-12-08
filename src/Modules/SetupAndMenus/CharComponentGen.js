@@ -230,6 +230,11 @@ export default function CharCards(props) {
     setLeech(event.target.value);
   };
 
+  const handleDelete = () => {
+    props.delChar(player.uniqueHash);
+    handleClose();
+  }
+
   // TODO
   const handleUpdateData = () => {
     let newPlayer = props.char;
@@ -525,7 +530,7 @@ export default function CharCards(props) {
             }}
           >
             <ThemeProvider theme={deleteTheme}>
-              <Button onClick={handleClose} color="primary">
+              <Button onClick={handleDelete} color="primary">
                 {t("Delete")}
               </Button>
             </ThemeProvider>

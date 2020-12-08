@@ -1,6 +1,7 @@
 import { getAvailableClassConduits } from '../Covenants/CovenantUtilities';
 import SPEC from '../Engine/SPECS';
-import STAT from '../Engine/STAT'
+import STAT from '../Engine/STAT';
+import {getUnique} from "./PlayerUtilities";
 
 var SPELL_CASTS_LOC = 0;
 var SPELL_HEALING_LOC = 1;
@@ -24,13 +25,14 @@ class Player {
         this.region = region;
         this.realm = realm;
         this.race = race;
+        this.uniqueHash = getUnique();
 
         if (statWeights !== "default" && statWeights.DefaultWeights === false) this.statWeights = statWeights;
         this.activeConduits = getAvailableClassConduits(specName);
         //this.getStatPerc = getStatPerc;
     }
 
-
+    uniqueHash = ""; // used for deletion purposes.
     spec = "";
     charID = 0;
     activeItems = [];
@@ -75,15 +77,15 @@ class Player {
         Raid: {
             intellect: 1,
             haste: 0.4,
-            crit: 0.5,
+            crit: 0.4,
             mastery: 0.45,
             versatility: 0.4,
             leech: 0.7,
         },
         Dungeon: {
             intellect: 1,
-            haste: 0.8,
-            crit: 0.5,
+            haste: 0.4,
+            crit: 0.4,
             mastery: 0.4,
             versatility: 0.45,
             leech: 0.7,
@@ -167,13 +169,16 @@ class Player {
         this.activeItems = [];
     }
 
-    getActiveItems = (slot) => {
+    getActiveItems = (slot, active = false) => {
         let temp = this.activeItems.filter(function(item) {
-            if (slot === "Offhands") {
-                return item.slot === "Holdable" || item.slot === "Offhand" || item.slot === "Shield"
+            if (slot === "AllMainhands") {
+                return (item.slot === "1H Weapon" || item.slot === "2H Weapon") && (!active || item.active);
+            }
+            else if (slot === "Offhands" ) {
+                return (item.slot === "Holdable" || item.slot === "Offhand" || item.slot === "Shield") && (!active || item.active);
             }
             else {
-                return item.slot === slot;
+                return item.slot === slot && (!active || item.active);
             }
             
         })
@@ -181,9 +186,29 @@ class Player {
 
     }
 
+
+
+    // TODO: Right now this just returns all items for testing. Remove the comment to return to it's intended functionality.
+    getSelectedItems = () => {
+        let temp = this.activeItems.filter(function(item) {
+
+            return item.active === true;
+            //return item;
+      
+        });
+        return this.sortItems(temp);
+    }
+
     deleteActiveItem = (unique) => {
         let tempArray =  this.activeItems.filter(function(item) {
             return item.uniqueHash !== unique;
+        });
+        this.activeItems = tempArray;
+    }
+    activateItem = (unique) => {
+        let tempArray =  this.activeItems.filter(function(item) {
+            if (item.uniqueHash === unique) item.active = !item.active;
+            return item;
         });
         this.activeItems = tempArray;
     }
@@ -396,7 +421,7 @@ class Player {
             this.statWeights = {
                 "Raid": {
                     intellect: 1, 
-                    haste: 0.37,
+                    haste: 0.38,
                     crit: 0.34,
                     mastery: 0.31,
                     versatility: 0.32,
@@ -450,7 +475,7 @@ class Player {
             this.statWeights = {
                 "Raid": {
                     intellect: 1, 
-                    haste: 0.4,
+                    haste: 0.39,
                     crit: 0.27,
                     mastery: 0.33,
                     versatility: 0.32,
@@ -559,7 +584,7 @@ class Player {
             this.statWeights = {
                 "Raid": {
                     intellect: 1, 
-                    haste: 0.35,
+                    haste: 0.36,
                     crit: 0.34,
                     mastery: 0.32,
                     versatility: 0.33,

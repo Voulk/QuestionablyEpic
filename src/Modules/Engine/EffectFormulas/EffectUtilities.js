@@ -24,7 +24,7 @@ export function getScalarValue(table, itemLevel) {
 }
 
 
-export function getBestEnchant(player, contentType) {
+export function getBestWeaponEnchant(player, contentType) {
     let bonus_stats = {};
 
     // Celestial Guidance ~140 HPS.
