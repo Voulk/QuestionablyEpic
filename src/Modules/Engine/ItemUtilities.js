@@ -140,14 +140,27 @@ export function getItemIcon(id) {
 }
 
 // Returns item stat allocations. MUST be converted to stats before it's used in any scoring capacity.
-export function getItemAllocations(id) {
+export function getItemAllocations(id, missiveStats = []) {
   let temp = itemDB.filter(function (item) {
     return item.id === id;
   });
 
+  let stats = {};
+  if (temp.length > 0) {
+    stats = temp[0].stats;
+    if ('unallocated' in temp[0].stats) {
+      for (var i = 0; i < missiveStats.length; i++) {
+        let mStat = missiveStats[i]
+        stats[mStat] += temp[0].stats.unallocated;
+        
+      }
+    }
+
+  }
+  //console.log("Finished Stats: " + JSON.stringify(stats));
   //console.log(JSON.stringify(temp) + temp.length)
   //console.log(temp[0].icon)
-  if (temp.length > 0) return temp[0].stats;
+  if (temp.length > 0) return stats;
   else return 0;
 }
 
@@ -194,19 +207,28 @@ export function getItemSlot(id) {
     return item.id === id;
   });
 
-  //console.log(JSON.stringify(temp) + temp.length)
-  //console.log(temp[0].icon)
   if (temp.length > 0) return temp[0].slot;
   else return 0;
 }
 
-export function buildWepCombos(player) {
-  let wep_list = [];
-  let main_hands = player.getActiveItems("1H Weapon");
-  let off_hands = player.getActiveItems("Offhands");
-  let two_handers = player.getActiveItems("2H Weapon");
+function sumObjectsByKey(...objs) {
+  return objs.reduce((a, b) => {
+    for (let k in b) {
+      if (b.hasOwnProperty(k))
+        a[k] = (a[k] || 0) + b[k];
+    }
+    return a;
+  }, {});
+}
 
-  // console.log("MH: " + main_hands.length + ". OH: " + off_hands.length);
+export function buildWepCombos(player, active=false) {
+  let wep_list = [];
+  let main_hands = player.getActiveItems("1H Weapon", active);
+  let off_hands = player.getActiveItems("Offhands", active);
+  let two_handers = player.getActiveItems("2H Weapon", active);
+
+
+  console.log("MH: " + main_hands.length + ". OH: " + off_hands.length);
 
   for (let i = 0; i < main_hands.length; i++) {
     // Some say j is the best variable for a nested loop, but are they right?
@@ -214,7 +236,7 @@ export function buildWepCombos(player) {
     for (let k = 0; k < off_hands.length; k++) {
       let off_hand = off_hands[k];
 
-      console.log("Wep Loop" + i + "/" + k + ". " + main_hand.level + ". " + off_hand.level);
+      //console.log("Wep Loop" + i + "/" + k + ". " + main_hand.level + ". " + off_hand.level);
 
       let item = new Item(
         main_hand.id,
@@ -225,7 +247,9 @@ export function buildWepCombos(player) {
         0,
         Math.round((main_hand.level + off_hand.level) / 2)
       );
-
+      item.stats = sumObjectsByKey(main_hand.stats, off_hand.stats);
+      item.stats.bonus_stats = {};
+      
       item.softScore = main_hand.softScore + off_hand.softScore;
       item.offhandID = off_hand.id;
       //console.log("COMBO: " + main_hand.level + " - " + off_hand.level + ". Combined: " + item.level);
@@ -238,7 +262,7 @@ export function buildWepCombos(player) {
   }
 
   wep_list.sort((a, b) => (a.softScore < b.softScore ? 1 : -1));
-  console.log(JSON.stringify(wep_list));
+  //console.log(JSON.stringify(wep_list));
   return wep_list.slice(0, 9);
 }
 
@@ -255,11 +279,12 @@ export function calcStatsAtLevel(itemLevel, slot, statAllocations, tertiary) {
     versatility: 0,
     crit: 0,
     leech: 0,
+    hps: 0,
+    dps: 0,
     bonus_stats: {},
   };
 
   
-
   let rand_prop = randPropPoints[itemLevel]["slotValues"][getItemCat(slot)];
   if (slot == "Finger" || slot == "Neck") combat_mult = combat_ratings_mult_by_ilvl_jewl[itemLevel];
   else combat_mult = combat_ratings_mult_by_ilvl[itemLevel];
@@ -345,6 +370,7 @@ export function scoreItem(item, player, contentType) {
       contentType,
       item.level
     );
+    console.log("Getting Effect" + JSON.stringify(item.stats.bonus_stats));
   }
 
   // Multiply the item's stats by our stat weights.
@@ -362,6 +388,7 @@ export function scoreItem(item, player, contentType) {
 
   // Add any bonus HPS
   if ("bonus_stats" in item.stats && "hps" in item.stats.bonus_stats) {
+    console.log("Adding bonus_stats to score");
     score +=
       (item.stats.bonus_stats.hps / player.getHPS()) *
       player.activeStats.intellect;
@@ -376,5 +403,5 @@ export function scoreItem(item, player, contentType) {
         player.getHighestStatWeight(contentType)
       );
   }
-  return Math.round(score);
+  return Math.round(100*score)/100;
 }

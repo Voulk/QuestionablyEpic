@@ -20,7 +20,7 @@ export const getPaladinLegendary = (effectName, pl, contentType) => {
 
         // Return result.
         */
-       bonus_stats.HPS = 5
+       bonus_stats.hps = 5
 
     }
 
@@ -37,7 +37,7 @@ export const getPaladinLegendary = (effectName, pl, contentType) => {
         let wastedShield = 0.12;
         //console.log("HSI: " + holyShockIncrease);
 
-        bonus_stats.HPS = Math.round(holyShockIncrease * 3 * (1 - wastedShield) * pl.getSpellHPS('Holy Shock', contentType));
+        bonus_stats.hps = Math.round(holyShockIncrease * 3 * (1 - wastedShield) * pl.getSpellHPS('Holy Shock', contentType));
     }
 
     else if (name === "Inflorescence of the Sunwell") {
@@ -56,7 +56,7 @@ export const getPaladinLegendary = (effectName, pl, contentType) => {
         */
         //
 
-        bonus_stats.HPS = Math.round(infusionsPerMinute * wastedInfusionPercentage * (oneHolyLight * (0.3 + 0.5)) / 60)
+        bonus_stats.hps = Math.round(infusionsPerMinute * wastedInfusionPercentage * (oneHolyLight * (0.3 + 0.5)) / 60)
     }
     else if (name === "Shadowbreaker, Dawn of the Sun") {
         let lightOfDawnCPM = pl.getSpellCPM("Light of Dawn", contentType);
@@ -68,24 +68,24 @@ export const getPaladinLegendary = (effectName, pl, contentType) => {
 
         //console.log("MastDiff: " + mastDiff + ". LoDUptime: " + lightOfDawnUptime + "Max: " + maxMasteryEff + ". Avg: " + averageMasteryEff);
     
-        bonus_stats.HPS = Math.round(pl.getHPS() * mastDiff * lightOfDawnUptime * percentHealingToHitTargets);
+        bonus_stats.hps = Math.round(pl.getHPS() * mastDiff * lightOfDawnUptime * percentHealingToHitTargets);
 
     }
     else if (name === "Of Dusk and Dawn") {
 
-        bonus_stats.HPS = -1;
+        bonus_stats.hps = -1;
     }
     else if (name === "Vanguards Momentum") {
 
-        bonus_stats.HPS = -1;
+        bonus_stats.hps = -1;
     }
     else if (name === "The Magistrates Judgment") {
 
-        bonus_stats.HPS = -1;
+        bonus_stats.hps = -1;
     }
     else if (name === "Maraads Dying Breath") {
 
-        bonus_stats.HPS = -1;
+        bonus_stats.hps = -1;
     }
     else if (name === "The Mad Paragon") {
         // Considerations
@@ -101,7 +101,7 @@ export const getPaladinLegendary = (effectName, pl, contentType) => {
         let healingIncUptime = hammerOfWrathCPM / 60;
 
         let healingMult = (wingsEffHealingIncrease * healingIncUptime + 1 * (1 - healingIncUptime)) - 1;    
-        bonus_stats.HPS = Math.round(pl.getHPS() * healingMult);
+        bonus_stats.hps = Math.round(pl.getHPS() * healingMult);
 
         //console.log("FWS: " + wingsEffHealingIncrease);
         // This technically needs to be increased based on the wings duration increase, but that is of minimal benefit.
@@ -116,8 +116,8 @@ export const getPaladinLegendary = (effectName, pl, contentType) => {
     // Consider building in support for the conduit via SimC grab or something similar.
 
     else {
-        bonus_stats.HPS = -2;
-        bonus_stats.HPS = -2;
+        bonus_stats.hps = -2;
+        bonus_stats.hps = -2;
     }
 
     return bonus_stats;

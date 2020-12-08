@@ -102,8 +102,8 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel) {
     }
     else if (effectName === "Vial of Spectral Essence") {
         let effect = activeTrinket.effects[0];
-
         bonus_stats.hps =  getProcessedValue(effect.coefficient, effect.table, itemLevel, effect.efficiency) / effect.cooldown * player.getStatMultiplier('CRITVERS');
+        console.log("Vial: " + bonus_stats.hps);
     }
     else if (effectName === "Soulletting Ruby") {
         let heal_effect = activeTrinket.effects[1];
@@ -129,7 +129,7 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel) {
         let vers_effect = activeTrinket.effects[0];
 
         bonus_stats.hps =  getProcessedValue(heal_effect.coefficient, heal_effect.table, itemLevel, heal_effect.efficiency) 
-                            * heal_effect.ppm * player.getStatMultiplier('CRITVERS') / 60;
+                            * heal_effect.ppm * 4 * player.getStatMultiplier('CRITVERS') / 60;
         bonus_stats.versatility = getProcessedValue(vers_effect.coefficient, vers_effect.table, itemLevel) * 
             convertPPMToUptime(vers_effect.ppm * player.getStatPerc('Haste'), vers_effect.duration);
 
@@ -230,7 +230,9 @@ export function testTrinkets(player, contentType, itemLevel = 226) {
             console.log(trinket.name + " (i200): " + getEstimatedHPS(getTrinketEffect(trinket.name, player, contentType, 200), player, contentType));
         }
         else {
-            console.log(trinket.name + ": " + getEstimatedHPS(getTrinketEffect(trinket.name, player, contentType, itemLevel), player, contentType));
+            //console.log(trinket.name + ": " + getEstimatedHPS(getTrinketEffect(trinket.name, player, contentType, itemLevel), player, contentType));
+            let trinketEffect = getTrinketEffect(trinket.name, player, contentType, itemLevel);
+            console.log(trinket.name + ": " + JSON.stringify(trinketEffect) + ". Est HPS: " + getEstimatedHPS(trinketEffect, player, contentType));
         }
         
     })
