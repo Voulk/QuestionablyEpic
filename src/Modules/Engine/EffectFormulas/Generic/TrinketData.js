@@ -110,7 +110,7 @@ export const trinket_data = [
             { 
                 coefficient: 0.467903,
                 table: -7,  
-                duration: 26, // You get a 20 second duration every time you touch a new Spirit. They each live about 5 seconds.
+                duration: 25, // You get a 20 second duration every time you touch a new Spirit. They each live about 5 seconds.
                 stacks: 3.2, // You should be able to hit all four pretty reliably, but will spend some time with lower than four stacks as you meet each.
                 cooldown: 90,
             }
