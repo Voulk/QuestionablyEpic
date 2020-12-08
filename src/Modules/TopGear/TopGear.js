@@ -83,7 +83,7 @@ function Alert(props) {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
 }
 
-const TOPGEARCAP = 34; //TODO
+const TOPGEARCAP = 34; // TODO
 
 export default function TopGear(props) {
 
@@ -123,24 +123,68 @@ export default function TopGear(props) {
 
   let history = useHistory();
   
+  const checkTopGearValid = () => {
+    // Check that the player has selected an item in every slot. 
+    let topgearOk = true;
+    let itemList = props.pl.getSelectedItems();
+    let slotLengths = {
+      "Head": 0,
+      "Neck": 0,
+      "Shoulder": 0,
+      "Back": 0,
+      "Chest": 0,
+      "Wrist": 0,
+      "Hands": 0,
+      "Waist": 0,
+      "Legs": 0,
+      "Feet": 0,
+      "Finger": 0,
+      "Trinket": 0,
+      /*
+      "2H Weapon" : 0,
+      "1H Weapon" : 0,
+      "Offhand" : 0, */
+    }
+    
+    for (var i = 0; i < itemList.length; i++) {
+      let slot = itemList[i].slot;
+      if (slot in slotLengths) {
+          slotLengths[slot] += 1;
+      }
+    } 
+    for (const key in slotLengths) {
+      if ((key === "Finger" || key === "Trinket") && slotLengths[key] < 2) topgearOk = false;
+      else if (slotLengths[key] === 0) topgearOk = false;
+      console.log("Sloot Length: " + key + " " + slotLengths[key])
+    }
+
+    return topgearOk;
+
+  }
 
   const unleashTopGear = () => {
     // Call to the Top Gear Engine. Lock the app down.
-    setBtnActive(false);
-    let itemList = props.pl.getSelectedItems();
-    let wepCombos = buildWepCombos(props.pl, true)
-    
-    let instance = worker(); // `new` is optional
-    let strippedPlayer = JSON.parse(JSON.stringify(props.pl));
-    //console.log("Pl: " + JSON.stringify(props.pl));
-    instance
-      .runTopGear(itemList, wepCombos, strippedPlayer, props.contentType)
-      .then((result) => {
-        console.log(`Loop returned`);
-        
-        props.setTopResult(result);
-        history.push("/report/");
-      });
+    if (checkTopGearValid) {
+      setBtnActive(false);
+      let itemList = props.pl.getSelectedItems();
+      let wepCombos = buildWepCombos(props.pl, true)
+      
+      let instance = worker(); // `new` is optional
+      let strippedPlayer = JSON.parse(JSON.stringify(props.pl));
+      //console.log("Pl: " + JSON.stringify(props.pl));
+      instance
+        .runTopGear(itemList, wepCombos, strippedPlayer, props.contentType)
+        .then((result) => {
+          console.log(`Loop returned`);
+          
+          props.setTopResult(result);
+          history.push("/report/");
+        });
+    }
+    else {
+      // Return error.
+    }
+
   };
 
   const selectedItemCount = props.pl.getSelectedItems().length;
@@ -153,6 +197,7 @@ export default function TopGear(props) {
       let player = props.pl;
       player.activateItem(unique);
       setItemList([...player.getActiveItems(activeSlot)]);
+      setBtnActive(checkTopGearValid());
     }
 
   };
