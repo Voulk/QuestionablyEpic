@@ -8,7 +8,7 @@ import {convertPPMToUptime} from "../Engine/EffectFormulas/EffectUtilities";
 // we can run our full algorithm on far fewer items. The net benefit to the player is being able to include more items, with a quicker return.
 // This does run into some problems when it comes to set bonuses and could be re-evaluated at the time. The likely strat is to auto-include anything with a bonus, or to run
 // our set bonus algorithm before we sort and slice. There are no current set bonuses that are relevant to raid / dungeon so left as a thought experiment for now.
-const softSlice = 3 ; // TODO. Adjust to 1000 for prod. Being tested at lower values.
+const softSlice = 10 ; // TODO. Adjust to 1000 for prod. Being tested at lower values.
 const DR_CONST = 0.00098569230769231;
 
 // block for `time` ms, then return the number of loops we could run in that time:
@@ -54,7 +54,7 @@ export function runTopGear(itemList, wepCombos, player, contentType) {
     // Build Differentials
     let differentials = []
     let primeSet = itemSets[0];
-    for (var i = 1; i < Math.min(2, itemSets.length); i++) {
+    for (var i = 1; i < Math.min(5, itemSets.length); i++) {
         differentials.push(buildDifferential(itemSets[i], primeSet));
     }
 

@@ -1,4 +1,159 @@
 // This provides a sample item output from a Top Gear "simulation". This let's us test and build our reports module without having to constantly re-run the function.
+export const differentialsTest = 
+[
+  {
+    "items": [
+      {
+        "id": 178859,
+        "level": 184,
+        "name": "",
+        "slot": "Shoulder",
+        "softScore": 67.91,
+        "socket": false,
+        "tertiary": "",
+        "effect": "",
+        "uniqueHash": "17885956546",
+        "offhandID": 0,
+        "active": true,
+        "overriddenName": false,
+        "stats": {
+          "intellect": 41,
+          "stamina": 0,
+          "haste": 0,
+          "mastery": 48,
+          "versatility": 35,
+          "crit": 0,
+          "leech": 0,
+          "hps": 0,
+          "dps": 0,
+          "bonus_stats": {}
+        }
+      }
+    ],
+    "scoreDifference": 0.70900000000006
+  },
+  {
+    "items": [
+      {
+        "id": 178822,
+        "level": 184,
+        "name": "",
+        "slot": "Waist",
+        "softScore": 68.24,
+        "socket": false,
+        "tertiary": "",
+        "effect": "",
+        "uniqueHash": "17882243478",
+        "offhandID": 0,
+        "active": true,
+        "overriddenName": false,
+        "stats": {
+          "intellect": 41,
+          "stamina": 0,
+          "haste": 0,
+          "mastery": 0,
+          "versatility": 30,
+          "crit": 51,
+          "leech": 0,
+          "hps": 0,
+          "dps": 0,
+          "bonus_stats": {}
+        }
+      }
+    ],
+    "scoreDifference": 0.7460000000000946
+  },
+  {
+    "items": [
+      {
+        "id": 179322,
+        "level": 184,
+        "name": "",
+        "slot": "Feet",
+        "softScore": 68.01,
+        "socket": false,
+        "tertiary": "",
+        "effect": "",
+        "uniqueHash": "17932266737",
+        "offhandID": 0,
+        "active": true,
+        "overriddenName": false,
+        "stats": {
+          "intellect": 41,
+          "stamina": 0,
+          "haste": 0,
+          "mastery": 0,
+          "versatility": 53,
+          "crit": 28,
+          "leech": 0,
+          "hps": 0,
+          "dps": 0,
+          "bonus_stats": {}
+        }
+      }
+    ],
+    "scoreDifference": 1.441000000000031
+  },
+  {
+    "items": [
+      {
+        "id": 178859,
+        "level": 184,
+        "name": "",
+        "slot": "Shoulder",
+        "softScore": 67.91,
+        "socket": false,
+        "tertiary": "",
+        "effect": "",
+        "uniqueHash": "17885956546",
+        "offhandID": 0,
+        "active": true,
+        "overriddenName": false,
+        "stats": {
+          "intellect": 41,
+          "stamina": 0,
+          "haste": 0,
+          "mastery": 48,
+          "versatility": 35,
+          "crit": 0,
+          "leech": 0,
+          "hps": 0,
+          "dps": 0,
+          "bonus_stats": {}
+        }
+      },
+      {
+        "id": 178822,
+        "level": 184,
+        "name": "",
+        "slot": "Waist",
+        "softScore": 68.24,
+        "socket": false,
+        "tertiary": "",
+        "effect": "",
+        "uniqueHash": "17882243478",
+        "offhandID": 0,
+        "active": true,
+        "overriddenName": false,
+        "stats": {
+          "intellect": 41,
+          "stamina": 0,
+          "haste": 0,
+          "mastery": 0,
+          "versatility": 30,
+          "crit": 51,
+          "leech": 0,
+          "hps": 0,
+          "dps": 0,
+          "bonus_stats": {}
+        }
+      }
+    ],
+    "scoreDifference": 1.4839999999999236
+  }
+]
+
+
 export const testList = [
     {
       "id": 178692,
