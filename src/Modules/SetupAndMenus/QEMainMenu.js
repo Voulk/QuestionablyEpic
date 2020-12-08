@@ -61,7 +61,7 @@ export default function QEMainMenu(props) {
   const classes = useStyles();
   const characterCount = props.allChars.getAllChar().length;
   const patron = ["Diamond", "Gold", "Rolls Royce", "Sapphire"].includes(props.patronStatus);
-  console.log(props.patronStatus);
+  //console.log(props.patronStatus);
   
 
   return (

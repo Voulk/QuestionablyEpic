@@ -187,6 +187,7 @@ export default function TopGear(props) {
           display: "block",
         }}
       >
+
         {
           <Grid item xs={12}>
             <Paper elevation={0}>
@@ -200,11 +201,38 @@ export default function TopGear(props) {
               </Typography>
             </Paper>
           </Grid>
-        }
+        }        
+        <Grid item xs={12}>
+        <Paper elevation={0} style={{ border: "1px", padding: 10 }}>
+          <Typography
+            style={{ color: "limegreen" }}
+            align="left"
+            variant="h6"
+            
+            // gutterBottom
+          >
+            How to
+            
+          </Typography>
+          <Typography
+            style={{ color: "##fffff7" }}
+            align="left"
+            variant="subtitle1"
+            display="inline"
+            paragraph
+            // gutterBottom
+          >
+            Top Gear allows you to generate an entire gear set at once. Start by entering your SimC string above, then click to highlight any items you want included
+            in the comparison. When you're all set, hit "Go" at the bottom of the page. To enter items manually, return to the main menu and include them in QE Quick
+            Compare. 
+            
+          </Typography>
+        </Paper>
+      </Grid>
 
-        {/* this can be simplified into a map at some stage */}
+        
 
-        {slotList.map((key, index) => {
+        {props.pl.activeItems.length > 0 ? slotList.map((key, index) => {
           return (
             <Grid item xs={12}>
               <Typography style={{ color: "white" }} variant="h5">
@@ -218,11 +246,12 @@ export default function TopGear(props) {
                     item={item}
                     activateItem={activateItem}
                   />
-                ))}
+                )) }
               </Grid>
             </Grid>
           );
-        })}
+        }) : 
+      <Typography style={{ color: "white", fontStyle:"italic", marginLeft: '10px'}} variant="h6">Your items will go here after you import.</Typography> }
       <Grid item style={{ height: 100 }} xs={12} />
       </Grid>
 
