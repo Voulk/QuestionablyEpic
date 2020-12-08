@@ -51,6 +51,9 @@ class HolyDiver extends Component {
     this.handleChangeDataCooldownPlanner = this.handleChangeDataCooldownPlanner.bind(
       this
     );
+    this.handleChangePlanCooldownPlanner = this.handleChangePlanCooldownPlanner.bind(
+      this
+    );
     // We set our state for the cooldown Planner Module.
     this.state = {
       currentBossID: null,
@@ -96,6 +99,7 @@ class HolyDiver extends Component {
       cooldownPlannerCurrentData: [],
       cooldownPlannerCurrentRaid: "",
       cooldownPlannerCurrentBoss: "",
+      cooldownPlannerCurrentPlan: "",
     };
   }
 
@@ -130,19 +134,51 @@ class HolyDiver extends Component {
   };
 
   handleChangeRaidCooldownPlanner = (event) => {
-    this.setState({ cooldownPlannerCurrentRaid: event });
+    this.setState({
+      cooldownPlannerCurrentRaid: event,
+    });
   };
 
   handleChangeBossCooldownPlanner = (event) => {
-    this.setState({ cooldownPlannerCurrentBoss: event });
-    if (
-      ls.get(this.state.cooldownPlannerCurrentRaid + "." + event + ".1") ===
-      null
-    ) {
-      ls.set(this.state.cooldownPlannerCurrentRaid + "." + event + ".1", []);
-    }
+    this.setState({
+      cooldownPlannerCurrentBoss: event,
+      cooldownPlannerCurrentPlan: 1,
+    });
     let data = ls.get(
       this.state.cooldownPlannerCurrentRaid + "." + event + ".1"
+    );
+    this.setState({
+      cooldownPlannerCurrentData: data,
+    });
+  };
+
+  handleChangePlanCooldownPlanner = (event) => {
+    console.log(event);
+    this.setState({ cooldownPlannerCurrentPlan: event });
+    if (
+      ls.get(
+        this.state.cooldownPlannerCurrentRaid +
+          "." +
+          this.state.cooldownPlannerCurrentBoss +
+          "." +
+          event
+      ) === null
+    ) {
+      ls.set(
+        this.state.cooldownPlannerCurrentRaid +
+          "." +
+          this.state.cooldownPlannerCurrentBoss +
+          "." +
+          event,
+        []
+      );
+    }
+    let data = ls.get(
+      this.state.cooldownPlannerCurrentRaid +
+        "." +
+        this.state.cooldownPlannerCurrentBoss +
+        "." +
+        event
     );
     this.setState({
       cooldownPlannerCurrentData: data,
@@ -530,6 +566,8 @@ class HolyDiver extends Component {
                   bossHandler={this.handleChangeBossCooldownPlanner}
                   currentRaid={this.state.cooldownPlannerCurrentRaid}
                   raidHandler={this.handleChangeRaidCooldownPlanner}
+                  planHandler={this.handleChangePlanCooldownPlanner}
+                  currentPlan={this.state.cooldownPlannerCurrentPlan}
                   dataUpdateHandler={this.handleChangeDataCooldownPlanner}
                 />
               </Grid>

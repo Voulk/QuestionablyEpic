@@ -159,13 +159,14 @@ export default function CooldownPlanner(props) {
   const setData = props.dataUpdateHandler;
   const currentBoss = props.currentBoss;
   const currentRaid = props.currentRaid;
+  const currentPlan = props.currentPlan;
   const currentData = props.data;
   const [plan, setPlan] = useState(1);
   const handleChangeRaid = props.raidHandler;
   const handleChangeBoss = props.bossHandler;
-  const handleChangePlan = (event) => {
-    setPlan(event.target.value);
-  };
+  const handleChangePlan = props.planHandler;
+
+  console.log(currentPlan);
 
   const timeCheck = (rowData) => {
     let time = moment(rowData.time, "mm:ss")
@@ -422,12 +423,12 @@ export default function CooldownPlanner(props) {
       if (ls.get(key.zoneID + "." + key.id + ".1") === null) {
         ls.set(key.zoneID + "." + key.id + ".1", []);
       }
-      // if (ls.get(key.zoneID + "." + key.id + ".2") === null) {
-      //   ls.set(key.zoneID + "." + key.id + ".2", []);
-      // }
-      // if (ls.get(key.zoneID + "." + key.id + ".3") === null) {
-      //   ls.set(key.zoneID + "." + key.id + ".3", []);
-      // }
+      if (ls.get(key.zoneID + "." + key.id + ".2") === null) {
+        ls.set(key.zoneID + "." + key.id + ".2", []);
+      }
+      if (ls.get(key.zoneID + "." + key.id + ".3") === null) {
+        ls.set(key.zoneID + "." + key.id + ".3", []);
+      }
     });
     if (ls.get("healerInfo") === null || ls.get("healerInfo") === undefined) {
       ls.set("healerInfo", []);
@@ -451,12 +452,12 @@ export default function CooldownPlanner(props) {
   };
 
   let updateStorage = (props) => {
-    console.log(currentRaid + "." + currentBoss + "." + plan);
-    if (ls.get(currentRaid + "." + currentBoss + "." + plan) === null) {
-      ls.set(currentRaid + "." + currentBoss + "." + plan, []);
+    console.log(currentRaid + "." + currentBoss + "." + currentPlan);
+    if (ls.get(currentRaid + "." + currentBoss + "." + currentPlan) === null) {
+      ls.set(currentRaid + "." + currentBoss + "." + currentPlan, []);
     }
     ls.set(
-      currentRaid + "." + currentBoss + "." + plan,
+      currentRaid + "." + currentBoss + "." + currentPlan,
       props.sort((a, b) => (a.time > b.time ? 1 : -1))
     );
   };
@@ -597,7 +598,7 @@ export default function CooldownPlanner(props) {
                       </Select>
                     </FormControl>
                   </Grid>
-                  {/* <Grid item xs="auto">
+                  <Grid item xs="auto">
                     <FormControl
                       style={{ minWidth: 200 }}
                       variant="outlined"
@@ -609,16 +610,15 @@ export default function CooldownPlanner(props) {
                       </InputLabel>
                       <Select
                         labelId="RaidSelector"
-                        value={plan}
-                        onChange={handleChangePlan}
+                        value={currentPlan}
+                        onChange={(e) => handleChangePlan(e.target.value)}
                       >
                         <MenuItem value={1}>Plan 1</MenuItem>
                         <MenuItem value={2}>Plan 2</MenuItem>
                         <MenuItem value={3}>Plan 3</MenuItem>
-                        <MenuItem value={4}>Plan 4</MenuItem>
                       </Select>
                     </FormControl>
-                  </Grid> */}
+                  </Grid>
                 </Grid>
                 <Grid item xs="auto">
                   {currentBoss === "" ? null : (
