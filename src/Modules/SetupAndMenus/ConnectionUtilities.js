@@ -7,7 +7,7 @@ export function dbCheckPatron(email, setPatron) {
     "&pname=" +
     name +
     "&prealm=" +
-    realm;
+    encodeURIComponent(realm);
 
   fetch(fetchUrl)
     .then((res) => res.text())
@@ -22,13 +22,13 @@ export function dbCheckPatron(email, setPatron) {
 export async function apiGetPlayerImage(player) {
   let region = player.region.toLowerCase();
   let name = player.charName.toLowerCase();
-  let realm = player.realm.toLowerCase();
+  let realm = player.realm.toLowerCase().replace(" ", "-");
   let urlReturned = "";
-  let fetchUrl =
+  let fetchUrl = 
     "https://questionablyepic.com/api/getplayerimage.php?pregion=" +
     region +
     "&pname=" +
-    name +
+    encodeURIComponent(name) +
     "&prealm=" +
     realm;
   await fetch(fetchUrl)

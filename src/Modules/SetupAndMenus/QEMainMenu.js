@@ -88,7 +88,7 @@ export default function QEMainMenu(props) {
                 disabled={patron}
                 style={{
                   width: "100%",
-                  height: "44px",
+                  height: "46px",
                   whiteSpace: "nowrap",
                   justifyContent: "center",
                   textTransform: "none",

@@ -102,6 +102,7 @@ export default function TopGear(props) {
   const [itemSocket, setItemSocket] = useState("");
   const [itemTertiary, setItemTertiary] = useState("");
   const [itemList, setItemList] = useState(props.pl.getActiveItems(activeSlot));
+  const [btnActive, setBtnActive] = useState(true);
 
   const openPop = Boolean(anchorEl);
   const idPop = openPop ? "simple-popover" : undefined;
@@ -125,9 +126,10 @@ export default function TopGear(props) {
 
   const unleashTopGear = () => {
     // Call to the Top Gear Engine. Lock the app down.
+    setBtnActive(false);
     let itemList = props.pl.getSelectedItems();
     let wepCombos = buildWepCombos(props.pl, true)
-    //runTopGear(props.pl, props.contentType, itemList)
+    
     let instance = worker(); // `new` is optional
     let strippedPlayer = JSON.parse(JSON.stringify(props.pl));
     //console.log("Pl: " + JSON.stringify(props.pl));
@@ -246,7 +248,7 @@ export default function TopGear(props) {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          backgroundImage: "../../Images/Ptolemy.jpg",
+          //backgroundImage: "../../Images/Ptolemy.jpg",
         }}
       >
         {/*<img src={"../../Images/Ptolemy.jpg"} /> */}
@@ -272,6 +274,7 @@ export default function TopGear(props) {
             color="secondary"
             align="center"
             style={{ height: "68%", width: "180px" }}
+            disabled={!btnActive}
             onClick={unleashTopGear}
           >
             Go!

@@ -62,7 +62,7 @@ function TopGearReport(props) {
     }
   };
 
-  /*
+  
   let result = props.result;
 
   let topSet = result.itemSet;
@@ -75,18 +75,20 @@ function TopGearReport(props) {
 
   let statList = topSet !== null && "setStats" in topSet ? topSet.setStats : {};
 
-  */
+  
   //console.log("Top Set: " + JSON.stringify(itemList));
-
-  //statList = topSet.stats;
-  let itemList = testList;
-  let differentials = differentialsTest;
-  let enchants = {
-    Chest: "+30 Stats",
+/* TEST DATA
+  enchants = {
+    chest: "+30 Stats",
     Wrist: "+15 Int",
     Finger: "+16 Haste",
     Back: "+20 Stam +30 Leech",
+    Weapon: "Celestial Guidance",
   };
+  
+  let itemList = testList;
+  let differentials = differentialsTest;
+
 
   let statList = {
     intellect: 321,
@@ -97,7 +99,7 @@ function TopGearReport(props) {
     leech: 49,
     hps: 911,
     dps: 893,
-  };
+  }; */
 
   return (
     <div
@@ -349,8 +351,10 @@ function TopGearReport(props) {
                   ))}
                 </Grid>
               </Grid>
+              
             </Grid>
           </Paper>
+          <Grid item style={{ height: 40 }} xs={12} />
         </Grid>
       </Grid>
     </div>
