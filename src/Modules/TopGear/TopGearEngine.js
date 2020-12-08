@@ -8,7 +8,7 @@ import {convertPPMToUptime} from "../Engine/EffectFormulas/EffectUtilities";
 // we can run our full algorithm on far fewer items. The net benefit to the player is being able to include more items, with a quicker return.
 // This does run into some problems when it comes to set bonuses and could be re-evaluated at the time. The likely strat is to auto-include anything with a bonus, or to run
 // our set bonus algorithm before we sort and slice. There are no current set bonuses that are relevant to raid / dungeon so left as a thought experiment for now.
-const softSlice = 10 ; // TODO. Adjust to 1000 for prod. Being tested at lower values.
+const softSlice = 1000 ; // TODO. Adjust to 1000 for prod. Being tested at lower values.
 const DR_CONST = 0.00098569230769231;
 
 // block for `time` ms, then return the number of loops we could run in that time:
@@ -24,9 +24,11 @@ export function runTopGear(itemList, wepCombos, player, contentType) {
     //console.log("WEP COMBOS: " + JSON.stringify(wepCombos));
     var t0 = performance.now()
     console.log("Running Top Gear");
+    let count = 0;
 
     let itemSets = createSets(itemList, wepCombos);
     itemSets.sort((a, b) => (a.sumSoftScore < b.sumSoftScore ? 1 : -1));
+    count = itemSets.length;
     itemSets = pruneItems(itemSets);
     
     for (var i = 0; i < itemSets.length; i++) {
@@ -39,7 +41,7 @@ export function runTopGear(itemList, wepCombos, player, contentType) {
     // TEST LOOP ONLY FOR CONSOLE PRINTS.
     for (var i = 0; i < itemSets.length; i++) {
         
-        console.log("ID: " + itemSets[i].id + ". Soft: " + itemSets[i].sumSoftScore + ". Hard: " + itemSets[i].hardScore);
+        //console.log("ID: " + itemSets[i].id + ". Soft: " + itemSets[i].sumSoftScore + ". Hard: " + itemSets[i].hardScore);
         //itemSets[i].printSet();
         //console.log("====================");
    
@@ -60,6 +62,7 @@ export function runTopGear(itemList, wepCombos, player, contentType) {
 
     itemSets[0].printSet()
     let result = new TopGearResult(itemSets[0], differentials);
+    result.itemsCompared = count;
     return result;
 
 }
@@ -298,8 +301,8 @@ function evalSet(itemSet, player, contentType) {
     enchants['Chest'] = '+30 stats';
 
     // Cape
-    bonus_stats.leech += 20;
-    enchants['Back'] = '+20 leech';
+    bonus_stats.leech += 30;
+    enchants['Back'] = '+30 leech';
 
     // Weapon - Celestial Guidance
     // Eternal Grace is so poor right now that I don't even think it deserves inclusion.

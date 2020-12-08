@@ -8,6 +8,7 @@ class TopGearResult {
 
     itemSet = [];
     differentials = [];
+    itemsCompared = 0;
 
 }
 

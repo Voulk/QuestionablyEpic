@@ -6,6 +6,7 @@ import Item from "../Player/Item";
 import "./../QuickCompare/QuickCompare.css";
 import { useTranslation } from "react-i18next";
 import { testTrinkets } from "../Engine/EffectFormulas/Generic/TrinketEffectFormulas";
+import {apiSendTopGearSet} from "../SetupAndMenus/ConnectionUtilities";
 import {
   InputLabel,
   MenuItem,
@@ -175,8 +176,8 @@ export default function TopGear(props) {
       instance
         .runTopGear(itemList, wepCombos, strippedPlayer, props.contentType)
         .then((result) => {
-          console.log(`Loop returned`);
-          
+          //console.log(`Loop returned`);
+          apiSendTopGearSet(props.pl, props.contentType, result.itemSet.hardScore, result.itemsCompared);
           props.setTopResult(result);
           history.push("/report/");
         });

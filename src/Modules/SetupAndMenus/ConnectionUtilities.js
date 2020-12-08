@@ -18,6 +18,30 @@ export function dbCheckPatron(email, setPatron) {
     .catch((err) => console.log(err));
 }
 
+export async function apiSendTopGearSet(player, content, score, compared) {
+  let name = player.charName;
+  let contentType = content;
+  let itemsCompared = compared;
+  let hardScore = Math.round(score);
+  let fetchUrl =
+    "https://questionablyepic.com/api/addTopGear.php?btag=" +
+    encodeURIComponent(name) +
+    "&content=" +
+    contentType +
+    "&itemscompared=" +
+    itemsCompared + 
+    "&hardscore=" +
+    hardScore;
+  //console.log(fetchUrl)
+  fetch(fetchUrl)
+    .then((res) => res.text())
+    .then((response) => {
+      // alert("Success |" + response + "|");
+      
+    })
+    .catch((err) => console.log(err));
+}
+
 // export function dbUpdateChar() {}
 export async function apiGetPlayerImage(player) {
   let region = player.region.toLowerCase();
@@ -34,10 +58,10 @@ export async function apiGetPlayerImage(player) {
   await fetch(fetchUrl)
     .then((res) => res.text())
     .then((response) => {
-      console.log("Res: " + response + " " + fetchUrl);
+      //console.log("Res: " + response + " " + fetchUrl);
       urlReturned = response.toString();
     })
     .catch((err) => console.log(err));
-  console.log(urlReturned);
+  //console.log(urlReturned);
   return urlReturned;
 }
