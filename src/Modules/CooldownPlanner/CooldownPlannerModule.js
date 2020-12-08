@@ -4,6 +4,9 @@ import {
   Collapse,
   CircularProgress,
   Grid,
+  Accordion,
+  AccordionSummary,
+  AccordionDetails,
 } from "@material-ui/core";
 import LogLinkInput from "../CooldownPlanner/ModuleComponents/LogFightSelection/LogLinkInput";
 import Chart from "./ModuleComponents/Chart/Chart";
@@ -27,6 +30,7 @@ import HealTeam from "../CooldownPlanner/ModuleComponents/HealTeamTable";
 import updatechartdata from "./Engine/LogImportEngine.js";
 import chartCooldownUpdater from "./Engine/UserCooldownChartEngine.js";
 import Divider from "@material-ui/core/Divider";
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import ls from "local-storage";
 
 class HolyDiver extends Component {
@@ -234,47 +238,103 @@ class HolyDiver extends Component {
               any Grid Components within this with the item prop will have spacing  */}
           <Grid container spacing={1}>
             <Grid item xs={12}>
-              <Paper elevation={0} style={{ border: "1px", padding: 10 }}>
-                <Typography
-                  style={{ color: "limegreen" }}
-                  align="centre"
-                  variant="subtitle1"
-                  // gutterBottom
+              <Accordion>
+                <AccordionSummary
+                  expandIcon={<ExpandMoreIcon />}
+                  aria-controls="panel1a-content"
+                  id="panel1a-header"
                 >
-                  Welcome to the Cooldown Planner!
-                </Typography>
-                <Typography
-                  style={{ color: "limegreen" }}
-                  align="left"
-                  variant="subtitle1"
-                  // gutterBottom
-                >
-                  To Begin, start by adding Healers to your Heal Team. Importing
-                  a log will bring up the damage pattern of the selected fight,
-                  with the cooldowns used on the log overlayed to give an
-                  indication of what they were used for, what they were used
-                  etc. A timeline of the abilities will show in the Timeline
-                  Component. Healer information shows a card for each healer
-                  showing their stats, talents, conduit choices The DTPS chart
-                  shows the damaging abilities over the entire fight. Below that
-                  another Chart is shown with the damage pattern from the log,
-                  this has no cooldowns from the log shown, but cooldowns you
-                  enter into the planner (with times) will be shown on this
-                  chart.
-                </Typography>
-                <Typography
-                  style={{ color: "limegreen" }}
-                  align="left"
-                  variant="subtitle1"
-                  // gutterBottom
-                >
-                  The Planner itself will unlock after you enter your healers
-                  into the Heal Team. Enter your Healers, Cooldowns you want
-                  used, time to cast (If Applicable, you CAN enter cooldowns
-                  without a time, they will just not show up on the Chart/ERT
-                  Note), the ability to use it for etc.
-                </Typography>
-              </Paper>
+                  <Typography
+                    style={{ color: "limegreen" }}
+                    align="centre"
+                    variant="subtitle1"
+                    // gutterBottom
+                  >
+                    Welcome to the Cooldown Planner!
+                  </Typography>
+                </AccordionSummary>
+                <AccordionDetails>
+                  <Typography
+                    style={{ color: "limegreen" }}
+                    align="left"
+                    variant="subtitle1"
+                    // gutterBottom
+                  >
+                    To Begin start by adding Healers to your Heal Team.
+                    Importing a log will bring up the damage pattern of the
+                    selected fight, with the cooldowns used on the log overlayed
+                    to give an indication of what they were used for, what they
+                    were used etc.
+                  </Typography>
+                </AccordionDetails>
+
+                <AccordionDetails>
+                  <Typography
+                    style={{ color: "limegreen" }}
+                    align="left"
+                    variant="subtitle1"
+                    // gutterBottom
+                  >
+                    A timeline of the abilities will show in the Timeline
+                    Component.
+                  </Typography>
+                </AccordionDetails>
+
+                <AccordionDetails>
+                  <Typography
+                    style={{ color: "limegreen" }}
+                    align="left"
+                    variant="subtitle1"
+                    // gutterBottom
+                  >
+                    Healer information shows a card for each healer showing
+                    their stats, talents, conduit choices.
+                  </Typography>
+                </AccordionDetails>
+
+                <AccordionDetails>
+                  <Typography
+                    style={{ color: "limegreen" }}
+                    align="left"
+                    variant="subtitle1"
+                    // gutterBottom
+                  >
+                    The DTPS chart shows the damaging abilities over the entire
+                    fight.
+                  </Typography>
+                </AccordionDetails>
+
+                <AccordionDetails>
+                  <Typography
+                    style={{ color: "limegreen" }}
+                    align="left"
+                    variant="subtitle1"
+                    // gutterBottom
+                  >
+                    Below that another Chart is shown with the damage pattern
+                    from the log, this has no cooldowns from the log shown, but
+                    cooldowns you enter into the planner (with times) will be
+                    shown on this chart.
+                  </Typography>
+                </AccordionDetails>
+
+                <AccordionDetails>
+                  <Typography
+                    style={{ color: "limegreen" }}
+                    align="left"
+                    variant="subtitle1"
+                    // gutterBottom
+                  >
+                    The Planner itself will unlock after you enter your healers
+                    into the Heal Team. Enter your Healers, Cooldowns you want
+                    used, time to cast (If Applicable, you CAN enter cooldowns
+                    without a time, they will just not show up on the Chart/ERT
+                    Note, to keep them in order you should currently use numbers
+                    to keep them in order, i.e 1, 2 3), the ability to use it
+                    for etc.
+                  </Typography>
+                </AccordionDetails>
+              </Accordion>
             </Grid>
             {/* Grid Container for the User Input Components, With Paper as the Surface */}
             <Grid item xs={12} sm={12} md={7} lg={7} xl={7}>
