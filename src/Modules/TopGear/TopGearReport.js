@@ -26,7 +26,7 @@ function TopGearReport(props) {
   }, []);
   const roundTo = (value, places) => {
     let power = Math.pow(10, places);
-    return Math.round(value * power) / power;
+    return (Math.round(value * power) / power) * -1;
   };
   let result = props.result;
 
@@ -158,40 +158,55 @@ function TopGearReport(props) {
         <Grid item xs={12}>
           <Paper style={{ padding: 16 }} elevation={0}>
             <Grid container spacing={1}>
-              {differentials.map((key) => (
-                <Grid item xs={3}>
-                  <Paper
-                    elevation={0}
-                    style={{
-                      padding: 10,
-                      backgroundColor: "rgba(34, 34, 34, 0.52)",
-                    }}
-                  >
-                    <Grid container spacing={1}>
-                      <Grid item xs={12} alignContent="center">
-                        <Typography
-                          variant="caption"
-                          align="center"
-                          style={{ width: "100%" }}
-                        >
-                          {roundTo(key.scoreDifference, 2)}
-                        </Typography>
-                        <Divider />
-                      </Grid>
-                      {key.items.map((item) => (
-                        <Grid item xs={12}>
-                          <img
-                            src={getItemIcon(item.id)}
-                            height={20}
-                            width={20}
-                          />{" "}
-                          {getTranslatedItemName(item.id, currentLanguage)}
+              <Grid item xs={12}>
+                <Typography
+                  variant="h6"
+                  align="left"
+                  style={{ width: "100%" }}
+                  color="primary"
+                >
+                  Competitive Alternatives
+                </Typography>
+                <Divider />
+              </Grid>
+              <Grid item xs={12}>
+                <Grid container spacing={1}>
+                  {differentials.map((key) => (
+                    <Grid item xs={3}>
+                      <Paper
+                        elevation={0}
+                        style={{
+                          padding: 10,
+                          backgroundColor: "rgba(34, 34, 34, 0.52)",
+                        }}
+                      >
+                        <Grid container spacing={1}>
+                          <Grid item xs={12} alignContent="center">
+                            <Typography
+                              variant="caption"
+                              align="center"
+                              style={{ width: "100%" }}
+                            >
+                              {roundTo(key.scoreDifference, 2)}
+                            </Typography>
+                            <Divider />
+                          </Grid>
+                          {key.items.map((item) => (
+                            <Grid item xs={12}>
+                              <img
+                                src={getItemIcon(item.id)}
+                                height={20}
+                                width={20}
+                              />{" "}
+                              {getTranslatedItemName(item.id, currentLanguage)}
+                            </Grid>
+                          ))}
                         </Grid>
-                      ))}
+                      </Paper>
                     </Grid>
-                  </Paper>
+                  ))}
                 </Grid>
-              ))}
+              </Grid>
             </Grid>
           </Paper>
         </Grid>
