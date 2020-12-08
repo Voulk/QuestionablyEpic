@@ -83,7 +83,7 @@ function Alert(props) {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
 }
 
-const TOPGEARCAP = 36;
+const TOPGEARCAP = 34; //TODO
 
 export default function TopGear(props) {
 
@@ -149,9 +149,12 @@ export default function TopGear(props) {
   Compare.`
 
   const activateItem = (unique) => {
-    let player = props.pl;
-    player.activateItem(unique);
-    setItemList([...player.getActiveItems(activeSlot)]);
+    if (selectedItemCount < TOPGEARCAP) {
+      let player = props.pl;
+      player.activateItem(unique);
+      setItemList([...player.getActiveItems(activeSlot)]);
+    }
+
   };
 
 
