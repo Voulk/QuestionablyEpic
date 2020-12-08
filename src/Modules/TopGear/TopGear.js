@@ -150,20 +150,23 @@ export default function TopGear(props) {
 
 
   const slotList = [
-    "Head",
-    "Neck",
-    "Shoulder",
-    "Back",
-    "Chest",
-    "Wrist",
-    "Hands",
-    "Waist",
-    "Legs",
-    "Feet",
-    "Finger",
-    "Trinket",
-    
-  ];
+    {label: "Head", slotName: "Head"},
+    {label: "Neck", slotName: "Neck"},
+    {label: "Shoulder", slotName: "Shoulder"},
+    {label: "Back", slotName: "Back"},
+    {label: "Chest", slotName: "Chest"},
+    {label: "Wrist", slotName: "Wrist"},
+    {label: "Hands", slotName: "Hands"},
+    {label: "Waist", slotName: "Waist"},
+    {label: "Legs", slotName: "Legs"},
+    {label: "Feet", slotName: "Feet"},
+    {label: "Finger", slotName: "Finger"},
+    {label: "Trinket", slotName: "Trinket"}, 
+    {label: "Main Hands & 2 Handers", slotName: "AllMainhands"},
+    {label: "Offhands & Shields", slotName: "Offhands"},
+  ];  
+
+  //const slotList = [];
 
 
 
@@ -205,11 +208,11 @@ export default function TopGear(props) {
           return (
             <Grid item xs={12}>
               <Typography style={{ color: "white" }} variant="h5">
-                {key}
+                {key.label}
               </Typography>
               <Divider style={{ marginBottom: 10, width: "42%" }} />
               <Grid container spacing={1}>
-                {[...props.pl.getActiveItems(key)].map((item, index) => (
+                {[...props.pl.getActiveItems(key.slotName)].map((item, index) => (
                   <MiniItemCard
                     key={index}
                     item={item}
@@ -220,37 +223,6 @@ export default function TopGear(props) {
             </Grid>
           );
         })}
-      <Grid item xs={12}>
-        <Typography style={{ color: "white" }} variant="h5">
-        {"Main Hands & 2 Handers"}
-      </Typography>
-      <Divider style={{ marginBottom: 10, width: "42%" }} />
-      <Grid container spacing={1}>
-        {[...props.pl.getActiveItems("AllMainhands")].map((item, index) => (
-          <MiniItemCard
-            key={index}
-            item={item}
-            activateItem={activateItem}
-          />
-        ))}
-      </Grid>
-    </Grid>
-    <Grid item xs={12}>
-        <Typography style={{ color: "white" }} variant="h5">
-        {"Offhands & Shields"}
-      </Typography>
-      <Divider style={{ marginBottom: 10, width: "42%" }} />
-      <Grid container spacing={1}>
-        {[...props.pl.getActiveItems("Offhands")].map((item, index) => (
-          <MiniItemCard
-            key={index}
-            item={item}
-            activateItem={activateItem}
-          />
-        ))}
-      </Grid>
-    </Grid>
-
       <Grid item style={{ height: 100 }} xs={12} />
       </Grid>
 
