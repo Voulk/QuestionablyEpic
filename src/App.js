@@ -227,6 +227,13 @@ class App extends Component {
     allChars.saveAllChar();
   };
 
+  deletePlayerChar = (unique) => {
+    let allChars = this.state.characters;
+    allChars.delSpecificChar(unique)
+    this.setState({ characters: allChars });
+    allChars.saveAllChar();
+  }
+
   setRegion = (props) => {
     this.setState({ playerRegion: props });
   };
@@ -416,6 +423,7 @@ class App extends Component {
                     charUpdatedSnack={this.handleCharUpdateSnackOpen}
                     contentType={this.state.contentType}
                     patronStatus={this.state.patronStatus}
+                    delChar={this.deletePlayerChar}
                   />
                 )}
               />

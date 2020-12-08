@@ -163,6 +163,9 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel) {
         
 
         if (player.getSpec() === SPEC.HOLYPALADIN) bonus_stats.intellect *= 1.47; // This needs to be refined, but represents the power increase from combining with Divine Toll.
+        if (player.getSpec() === SPEC.DISCPRIEST) bonus_stats.intellect *= 1.32; // This needs to be refined, but represents the power increase from combining with Spirit Shell.
+        // We need a better way to model interaction with spec cooldowns. 
+        
         //console.log("BADGE Int:" + bonus_stats.intellect + ". Flat: " + getProcessedValue(effect.coefficient, effect.table, itemLevel) + ". Uptime: 25%")
     }
     else if (effectName === "Inscrutable Quantum Device") {

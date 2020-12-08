@@ -33,6 +33,7 @@ import {
 import ItemCard from "./ItemCard";
 import MuiAlert from "@material-ui/lab/Alert";
 import Autocomplete from "@material-ui/lab/Autocomplete";
+import HelpText from "../SetupAndMenus/HelpText";
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -158,11 +159,8 @@ export default function QuickCompare(props) {
   const [itemDropdown, setItemDropdown] = useState([]); // Filled later based on item slot and armor type.
   const [AutoValue, setAutoValue] = useState(itemDropdown[0]);
   const [inputValue, setInputValue] = useState("");
-
-  // Right now the available item levels are static, but given the removal of titanforging each item could hypothetically share
-  // a list of available ilvls and the player could select from a smaller list instead.
-  // This is left as a TODO until key functionality is completed but is a moderate priority.
-  // const itemTertiaries = [{"Avoidance", "Avoidance"},{"Leech", "Leech"}, {"None", ""}];
+  const helpText = `Quick Compare allows you to compare items one by one. You can add items manually using the dropdowns above, or all at once using a string from the SimC
+                    addon. The score is automatically shown in the top right corner in yellow, and items are ordered by strength.`
 
   const handleClick = () => {
     setOpen(true);
@@ -578,6 +576,7 @@ export default function QuickCompare(props) {
         {/* this can be simplified into a map at some stage */}
 
         <Grid item xs={12}>
+        <HelpText text={helpText} />
           <Grid container spacing={1}>
             {/* Helm */}
             <Grid item xs={12}>

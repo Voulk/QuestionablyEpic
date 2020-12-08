@@ -61,32 +61,42 @@ function TopGearReport(props) {
         break;
     }
   };
-
-  /*
+  let resultValid = true;
+  
   let result = props.result;
+  let topSet = "";
+  let enchants = {};
+  let differentials = {};
+  let itemList = {};
+  let statList = {};
 
-  let topSet = result.itemSet;
-  let enchants = topSet.enchantBreakdown;
-  console.log(enchants);
-  let differentials = result.differentials;
-  console.log(topSet);
-  console.log(differentials);
-  let itemList = topSet !== null && "itemList" in topSet ? topSet.itemList : [];
+  if (result !== null) {
+    topSet = result.itemSet;
+    enchants = topSet.enchantBreakdown;
+    differentials = result.differentials;
+    itemList = topSet !== null && "itemList" in topSet ? topSet.itemList : [];
+    statList = topSet !== null && "setStats" in topSet ? topSet.setStats : {};
+  }
+  else {
+    resultValid = false;
+  }
 
-  let statList = topSet !== null && "setStats" in topSet ? topSet.setStats : {};
 
-  */
+
+  
   //console.log("Top Set: " + JSON.stringify(itemList));
-
-  //statList = topSet.stats;
-  let itemList = testList;
-  let differentials = differentialsTest;
-  let enchants = {
-    Chest: "+30 Stats",
+/* TEST DATA
+  enchants = {
+    chest: "+30 Stats",
     Wrist: "+15 Int",
     Finger: "+16 Haste",
     Back: "+20 Stam +30 Leech",
+    Weapon: "Celestial Guidance",
   };
+  
+  let itemList = testList;
+  let differentials = differentialsTest;
+
 
   let statList = {
     intellect: 321,
@@ -97,7 +107,7 @@ function TopGearReport(props) {
     leech: 49,
     hps: 911,
     dps: 893,
-  };
+  }; */
 
   return (
     <div
@@ -107,6 +117,7 @@ function TopGearReport(props) {
         display: "block",
       }}
     >
+      {resultValid ? 
       <Grid container spacing={1}>
         <Grid item xs={12}>
           <Paper elevation={0} style={{ padding: 10 }}>
@@ -349,10 +360,15 @@ function TopGearReport(props) {
                   ))}
                 </Grid>
               </Grid>
+              
             </Grid>
           </Paper>
+          
+          <Grid item style={{ height: 40 }} xs={12} />
         </Grid>
       </Grid>
+      : 
+      <Typography style={{textAlign: 'center', color: 'white'}}>Woops, seems you've run into an error. Try going back to the main menu and trying again.</Typography>}
     </div>
   );
 }

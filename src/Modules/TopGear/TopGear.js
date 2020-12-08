@@ -6,6 +6,7 @@ import Item from "../Player/Item";
 import "./../QuickCompare/QuickCompare.css";
 import { useTranslation } from "react-i18next";
 import { testTrinkets } from "../Engine/EffectFormulas/Generic/TrinketEffectFormulas";
+import {apiSendTopGearSet} from "../SetupAndMenus/ConnectionUtilities";
 import {
   InputLabel,
   MenuItem,
@@ -38,6 +39,7 @@ import MuiAlert from "@material-ui/lab/Alert";
 import Autocomplete from "@material-ui/lab/Autocomplete";
 import worker from "workerize-loader!./TopGearEngine"; // eslint-disable-line import/no-webpack-loader-syntax
 import { useHistory, useLocation } from "react-router-dom";
+import HelpText from "../SetupAndMenus/HelpText";
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -82,7 +84,7 @@ function Alert(props) {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
 }
 
-const TOPGEARCAP = 36;
+const TOPGEARCAP = 34; // TODO
 
 export default function TopGear(props) {
 
@@ -101,6 +103,7 @@ export default function TopGear(props) {
   const [itemSocket, setItemSocket] = useState("");
   const [itemTertiary, setItemTertiary] = useState("");
   const [itemList, setItemList] = useState(props.pl.getActiveItems(activeSlot));
+  const [btnActive, setBtnActive] = useState(true);
 
   const openPop = Boolean(anchorEl);
   const idPop = openPop ? "simple-popover" : undefined;
@@ -121,31 +124,83 @@ export default function TopGear(props) {
 
   let history = useHistory();
   
+  const checkTopGearValid = () => {
+    // Check that the player has selected an item in every slot. 
+    let topgearOk = true;
+    let itemList = props.pl.getSelectedItems();
+    let slotLengths = {
+      "Head": 0,
+      "Neck": 0,
+      "Shoulder": 0,
+      "Back": 0,
+      "Chest": 0,
+      "Wrist": 0,
+      "Hands": 0,
+      "Waist": 0,
+      "Legs": 0,
+      "Feet": 0,
+      "Finger": 0,
+      "Trinket": 0,
+      /*
+      "2H Weapon" : 0,
+      "1H Weapon" : 0,
+      "Offhand" : 0, */
+    }
+    
+    for (var i = 0; i < itemList.length; i++) {
+      let slot = itemList[i].slot;
+      if (slot in slotLengths) {
+          slotLengths[slot] += 1;
+      }
+    } 
+    for (const key in slotLengths) {
+      if ((key === "Finger" || key === "Trinket") && slotLengths[key] < 2) topgearOk = false;
+      else if (slotLengths[key] === 0) topgearOk = false;
+      //console.log("Sloot Length: " + key + " " + slotLengths[key])
+    }
+
+    return topgearOk;
+
+  }
 
   const unleashTopGear = () => {
     // Call to the Top Gear Engine. Lock the app down.
-    let itemList = props.pl.getSelectedItems();
-    let wepCombos = buildWepCombos(props.pl, true)
-    //runTopGear(props.pl, props.contentType, itemList)
-    let instance = worker(); // `new` is optional
-    let strippedPlayer = JSON.parse(JSON.stringify(props.pl));
-    //console.log("Pl: " + JSON.stringify(props.pl));
-    instance
-      .runTopGear(itemList, wepCombos, strippedPlayer, props.contentType)
-      .then((result) => {
-        console.log(`Loop returned`);
-        
-        props.setTopResult(result);
-        history.push("/report/");
-      });
+    if (checkTopGearValid) {
+      setBtnActive(false);
+      let itemList = props.pl.getSelectedItems();
+      let wepCombos = buildWepCombos(props.pl, true)
+      
+      let instance = worker(); // `new` is optional
+      let strippedPlayer = JSON.parse(JSON.stringify(props.pl));
+      //console.log("Pl: " + JSON.stringify(props.pl));
+      instance
+        .runTopGear(itemList, wepCombos, strippedPlayer, props.contentType)
+        .then((result) => {
+          //console.log(`Loop returned`);
+          apiSendTopGearSet(props.pl, props.contentType, result.itemSet.hardScore, result.itemsCompared);
+          props.setTopResult(result);
+          history.push("/report/");
+        });
+    }
+    else {
+      // Return error.
+    }
+
   };
 
   const selectedItemCount = props.pl.getSelectedItems().length;
+  const helpText = `Top Gear allows you to generate an entire gear set at once. Start by entering your SimC string above, then click to highlight any items you want included
+  in the comparison. When you're all set, hit "Go" at the bottom of the page. To enter items manually, return to the main menu and include them in QE Quick
+  Compare.`
 
   const activateItem = (unique) => {
-    let player = props.pl;
-    player.activateItem(unique);
-    setItemList([...player.getActiveItems(activeSlot)]);
+    if (selectedItemCount < TOPGEARCAP) {
+      let player = props.pl;
+      player.activateItem(unique);
+      setItemList([...player.getActiveItems(activeSlot)]);
+      setBtnActive(checkTopGearValid());
+    }
+
   };
 
 
@@ -187,6 +242,7 @@ export default function TopGear(props) {
           display: "block",
         }}
       >
+
         {
           <Grid item xs={12}>
             <Paper elevation={0}>
@@ -200,11 +256,12 @@ export default function TopGear(props) {
               </Typography>
             </Paper>
           </Grid>
-        }
-
-        {/* this can be simplified into a map at some stage */}
-
-        {slotList.map((key, index) => {
+        }        
+        <Grid item xs={12}>
+        <HelpText text={helpText} />
+      </Grid>
+      
+        {props.pl.activeItems.length > 0 ? slotList.map((key, index) => {
           return (
             <Grid item xs={12}>
               <Typography style={{ color: "white" }} variant="h5">
@@ -218,11 +275,12 @@ export default function TopGear(props) {
                     item={item}
                     activateItem={activateItem}
                   />
-                ))}
+                )) }
               </Grid>
             </Grid>
           );
-        })}
+        }) : 
+      <Typography style={{ color: "white", fontStyle:"italic", marginLeft: '10px'}} variant="h6">Your items will go here after you import.</Typography> }
       <Grid item style={{ height: 100 }} xs={12} />
       </Grid>
 
@@ -239,7 +297,7 @@ export default function TopGear(props) {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          backgroundImage: "../../Images/Ptolemy.jpg",
+          //backgroundImage: "../../Images/Ptolemy.jpg",
         }}
       >
         {/*<img src={"../../Images/Ptolemy.jpg"} /> */}
@@ -265,6 +323,7 @@ export default function TopGear(props) {
             color="secondary"
             align="center"
             style={{ height: "68%", width: "180px" }}
+            disabled={!btnActive}
             onClick={unleashTopGear}
           >
             Go!

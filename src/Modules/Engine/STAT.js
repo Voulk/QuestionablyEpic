@@ -17,6 +17,18 @@ export const STAT = {
   SPEED: "speed",
 };
 
+export const BASESTAT = {
+  CRIT: 0.05,
+  MASTERY: {
+    "Restoration Druid": 0.04,
+    "Mistweaver Monk": 1,
+    "Holy Paladin": 0.12,
+    "Holy Priest": 0.1,
+    "Discipline Priest": 0.108,
+    "Restoration Shaman": 0.25,
+  }
+}
+
 export const STATPERONEPERCENT = {
   LEECH: 21,
   HASTE: 30,

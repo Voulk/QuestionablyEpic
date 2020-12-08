@@ -2,13 +2,13 @@ import ItemSet from './ItemSet';
 import TopGearResult from "./TopGearResult";
 import Item from "../Player/Item";
 import React, { useState, useEffect } from "react";
-import {STATPERONEPERCENT} from "../Engine/STAT";
+import {STATPERONEPERCENT, BASESTAT} from "../Engine/STAT";
 import {convertPPMToUptime} from "../Engine/EffectFormulas/EffectUtilities";
 // Most of our sets will fall into a bucket where totalling the individual stats is enough to tell us they aren't viable. By slicing these out in a preliminary phase,
 // we can run our full algorithm on far fewer items. The net benefit to the player is being able to include more items, with a quicker return.
 // This does run into some problems when it comes to set bonuses and could be re-evaluated at the time. The likely strat is to auto-include anything with a bonus, or to run
 // our set bonus algorithm before we sort and slice. There are no current set bonuses that are relevant to raid / dungeon so left as a thought experiment for now.
-const softSlice = 10 ; // TODO. Adjust to 1000 for prod. Being tested at lower values.
+const softSlice = 1000 ; // TODO. Adjust to 1000 for prod. Being tested at lower values.
 const DR_CONST = 0.00098569230769231;
 
 // block for `time` ms, then return the number of loops we could run in that time:
@@ -24,9 +24,11 @@ export function runTopGear(itemList, wepCombos, player, contentType) {
     //console.log("WEP COMBOS: " + JSON.stringify(wepCombos));
     var t0 = performance.now()
     console.log("Running Top Gear");
+    let count = 0;
 
     let itemSets = createSets(itemList, wepCombos);
     itemSets.sort((a, b) => (a.sumSoftScore < b.sumSoftScore ? 1 : -1));
+    count = itemSets.length;
     itemSets = pruneItems(itemSets);
     
     for (var i = 0; i < itemSets.length; i++) {
@@ -39,7 +41,7 @@ export function runTopGear(itemList, wepCombos, player, contentType) {
     // TEST LOOP ONLY FOR CONSOLE PRINTS.
     for (var i = 0; i < itemSets.length; i++) {
         
-        console.log("ID: " + itemSets[i].id + ". Soft: " + itemSets[i].sumSoftScore + ". Hard: " + itemSets[i].hardScore);
+        //console.log("ID: " + itemSets[i].id + ". Soft: " + itemSets[i].sumSoftScore + ". Hard: " + itemSets[i].hardScore);
         //itemSets[i].printSet();
         //console.log("====================");
    
@@ -60,6 +62,7 @@ export function runTopGear(itemList, wepCombos, player, contentType) {
 
     itemSets[0].printSet()
     let result = new TopGearResult(itemSets[0], differentials);
+    result.itemsCompared = count;
     return result;
 
 }
@@ -142,6 +145,7 @@ function createSets(itemList, wepCombos) {
                                             for (var weapon = 0; weapon < slotLengths.Weapon; weapon++) {
                                                 //softScore.weapon = splitItems.Feet[feet].softScore; //
                                                 softScore.weapon = wepCombos[weapon].softScore;
+                                                wepCombos[weapon].slot = "CombinedWeapon";
 
                                                 for (var finger = 1; finger < slotLengths.Finger; finger++) {
                                                     softScore.finger = splitItems.Finger[finger].softScore;
@@ -251,6 +255,7 @@ function evalSet(itemSet, player, contentType) {
        haste: 0,
        crit: 0,
        versatility: 0,
+       mastery: (STATPERONEPERCENT.MASTERYA[player.spec] * BASESTAT.MASTERY[player.spec] * 100),
        leech: 0,
        hps: 0,
        dps: 0,
@@ -284,26 +289,26 @@ function evalSet(itemSet, player, contentType) {
     // single percentage. The stress this could cause a player is likely not worth the optimization. 
     let highestWeight = getHighestWeight(player, contentType);
     bonus_stats[highestWeight] += 32; // 16 x 2.
-    enchants['finger'] = '+16 ' + highestWeight;
+    enchants['Finger'] = '+16 ' + highestWeight;
 
     // Bracers
     bonus_stats.intellect += 15;
-    enchants['wrist'] = '+15 int';
+    enchants['Wrist'] = '+15 int';
 
     // Chest
     // TODO: Add the mana enchant. In practice they are very similar. 
     bonus_stats.intellect += 30;
-    enchants['chest'] = '+30 stats';
+    enchants['Chest'] = '+30 stats';
 
     // Cape
-    bonus_stats.leech += 20;
-    enchants['back'] = '+20 leech';
+    bonus_stats.leech += 30;
+    enchants['Back'] = '+30 leech';
 
     // Weapon - Celestial Guidance
     // Eternal Grace is so poor right now that I don't even think it deserves inclusion.
     let expected_uptime = convertPPMToUptime(3, 10);
     bonus_stats.intellect = (setStats.intellect + bonus_stats.intellect) * 0.05 * expected_uptime;
-    enchants['weapon'] = 'Celestial Guidance';
+    enchants['CombinedWeapon'] = 'Celestial Guidance';
 
     // 5% int boost for wearing the same items.
     // The system doesn't actually allow you to add items of different armor types so this is always on.
@@ -325,7 +330,9 @@ function evalSet(itemSet, player, contentType) {
             continue;
         }
         else {
-            hardScore += (setStats[stat] + (stat in bonus_stats ? bonus_stats[stat] : 0)) * adjusted_weights[stat];
+            setStats[stat] += (stat in bonus_stats ? bonus_stats[stat] : 0)
+            hardScore += setStats[stat] * adjusted_weights[stat];
+            console.log("Adding" + stat + " to set: " + (stat in bonus_stats ? bonus_stats[stat] : 0))
             //console.log(setStats[stat] + " stat: " + stat + " adds " + setStats[stat] * adjusted_weights[stat] + " to score.");
           }
         }
@@ -333,6 +340,7 @@ function evalSet(itemSet, player, contentType) {
     //console.log("Soft Score: " + builtSet.sumSoftScore + ". Hard Score: " + hardScore);
     //console.log("Enchants: " + JSON.stringify(enchants));
     builtSet.hardScore = Math.round(1000*hardScore)/1000;
+    builtSet.setStats = setStats;
     builtSet.enchantBreakdown = enchants;
     return builtSet; // Temp
 }

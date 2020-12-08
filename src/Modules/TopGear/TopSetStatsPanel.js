@@ -64,7 +64,7 @@ export default function TopSetStatsPanel(props) {
                   variant="body1"
                   align="left"
                 >
-                  {console.log(stat)}
+                  
                   {printStat(stat[0], stat[1])}
                 </Typography>
               </Grid>
