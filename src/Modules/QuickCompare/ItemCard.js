@@ -42,7 +42,7 @@ export default function ItemCard(props) {
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
   const itemLevel = item.level;
-  const isLegendary = 'effect' in item && item.effect.type === 'spec legendary';
+  const isLegendary = "effect" in item && item.effect.type === "spec legendary";
 
   const itemQuality = (itemLevel) => {
     if (isLegendary) return "#ff8000";
@@ -94,7 +94,8 @@ export default function ItemCard(props) {
       " & " +
       getTranslatedItemName(item.offhandID, currentLanguage);
   } else {
-    if (isLegendary) itemName = item.effect.name;  // Add translations to this.
+    if (isLegendary) itemName = item.effect.name;
+    // Add translations to this.
     else itemName = getTranslatedItemName(item.id, currentLanguage);
   }
 
@@ -105,9 +106,8 @@ export default function ItemCard(props) {
         width={15}
         height={15}
         style={{ verticalAlign: "middle" }}
-        alt="Socket"  
+        alt="Socket"
       />{" "}
-      
     </div>
   ) : null;
 
@@ -115,6 +115,8 @@ export default function ItemCard(props) {
     props.item.tertiary !== "" ? (
       <div style={{ display: "inline" }}> / {props.item.tertiary} </div>
     ) : null;
+
+  console.log(props.item);
 
   return (
     <Grid item xs={12} sm={6} md={6} lg={4} xl={4}>

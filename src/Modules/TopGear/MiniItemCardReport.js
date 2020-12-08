@@ -50,6 +50,8 @@ export default function ItemCardReport(props) {
   const classes = useStyles();
   const item = props.item;
   const statString = buildStatString(item.stats, item.effect);
+  const enchant = item.enchantName;
+  console.log(enchant);
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
   const itemLevel = item.level;
@@ -167,7 +169,7 @@ export default function ItemCardReport(props) {
                   alignItems="center"
                   style={{ width: "100%" }}
                 >
-                  <Grid item xs={11} display="inline">
+                  <Grid item xs={12} display="inline">
                     <Typography
                       variant="subtitle2"
                       wrap="nowrap"
@@ -188,7 +190,7 @@ export default function ItemCardReport(props) {
                   xs="auto"
                   justify="space-between"
                 >
-                  <Grid item xs={11}>
+                  <Grid item xs={12}>
                     <Typography
                       variant="subtitle2"
                       wrap="nowrap"
