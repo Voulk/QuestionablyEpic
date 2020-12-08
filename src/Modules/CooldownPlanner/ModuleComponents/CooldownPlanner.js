@@ -610,6 +610,7 @@ export default function CooldownPlanner(props) {
                       </InputLabel>
                       <Select
                         labelId="RaidSelector"
+                        label={t("Select Plan")}
                         value={currentPlan}
                         onChange={(e) => handleChangePlan(e.target.value)}
                       >
