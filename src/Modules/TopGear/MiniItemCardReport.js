@@ -116,7 +116,7 @@ export default function ItemCardReport(props) {
           wrap="nowrap"
           display="block"
           align="left"
-          style={{ fontSize: "12px", color: "#36ed21" }}
+          style={{ fontSize: "12px", color: "#36ed21", paddingRight: 4 }}
         >
           {enchants[item.slot]}
         </Typography>
