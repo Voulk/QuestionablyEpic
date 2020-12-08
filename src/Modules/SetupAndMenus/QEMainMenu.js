@@ -13,10 +13,10 @@ import { Paper, Grid, Button, Typography } from "@material-ui/core";
 // Warning: If a button name has to change, do it in the translation files. Consider the titles here to be ID's rather than strings.
 const mainMenuOptions = {
   "MainMenu.TopGear": ["/topgear", true],
-  "MainMenu.GreatVault": ["/greatvault", false],
   "MainMenu.QuickCompare": ["/quickcompare", true],
   "MainMenu.ExploreCovenants": ["/soulbinds", true],
   "MainMenu.LegendaryAnalysis": ["/legendaries", true],
+  "MainMenu.GreatVault": ["/greatvault", false],
   "MainMenu.CooldownPlanner": ["/holydiver", false],
   "MainMenu.Profile": ["/profile", true],
 };
@@ -171,6 +171,7 @@ export default function QEMainMenu(props) {
                     isActive={index === props.allChars.activeChar}
                     contentType={props.contentType}
                     charUpdatedSnack={props.charUpdatedSnack}
+                    delChar={props.delChar}
                   />
                 ))
             : ""}

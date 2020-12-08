@@ -155,7 +155,7 @@ export default function TopGear(props) {
     for (const key in slotLengths) {
       if ((key === "Finger" || key === "Trinket") && slotLengths[key] < 2) topgearOk = false;
       else if (slotLengths[key] === 0) topgearOk = false;
-      console.log("Sloot Length: " + key + " " + slotLengths[key])
+      //console.log("Sloot Length: " + key + " " + slotLengths[key])
     }
 
     return topgearOk;
