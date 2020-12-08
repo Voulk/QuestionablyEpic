@@ -1,6 +1,7 @@
 import moment from "moment";
 import axios from "axios";
 import { damageExclusions, healerCooldownsDetailed } from "../Data/Data";
+import i18n from "i18next";
 
 // Returns Seconds from 0 to Loglength
 export function addMissingTimestamps(loglength) {
@@ -63,12 +64,20 @@ export function durationmaker(
       return obj.guid === ability;
     })
     .map((obj) => obj.duration);
-  let newarray = [{ timestamp: originalTimestamp, [abilityname]: 1 }];
+  let newarray = [
+    {
+      timestamp: originalTimestamp,
+      [abilityname]: 1,
+    },
+  ];
   let tickcount = originalTimestamp;
   for (let i = 0; i < duration; i++) {
     if (endtime !== tickcount) {
       tickcount = tickcount + 1000;
-      newarray.push({ timestamp: tickcount, [abilityname]: 1 });
+      newarray.push({
+        timestamp: tickcount,
+        [abilityname]: 1,
+      });
     }
   }
   return newarray;

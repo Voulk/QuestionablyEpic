@@ -11,7 +11,7 @@ export function classColoursERT(props) {
     return "|cfffefefe";
   }
 
-  if (props === "DiscisplinePriest") {
+  if (props === "DisciplinePriest") {
     return "|cfffefefe";
   }
 
@@ -42,9 +42,9 @@ export function classColoursJS(props) {
   if (
     props === "HolyPriest" ||
     props === "Priest" ||
-    props === "DiscisplinePriest" ||
+    props === "DisciplinePriest" ||
     props === "Holy Priest" ||
-    props === "Discispline Priest"
+    props === "Discipline Priest"
   ) {
     return "#FFFFFF";
   }
