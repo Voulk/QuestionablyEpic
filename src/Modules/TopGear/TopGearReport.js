@@ -7,11 +7,22 @@ import { useTranslation } from "react-i18next";
 import { Button, Paper, Typography, Divider, Grid } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import { getItemIcon, getTranslatedItemName } from "../Engine/ItemUtilities";
+import { classColoursJS } from "../CooldownPlanner/Functions/ClassColourFunctions";
 
 function TopGearReport(props) {
   const [backgroundImage, setBackgroundImage] = useState("");
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
+
+  const upgradeColor = (num) => {
+    if (num > 0) {
+      return "#FFDF14"; // #60e421
+    } else if (num < 0) {
+      return "#f20d0d";
+    } else {
+      return "#fff";
+    }
+  };
 
   useEffect(() => {
     async function setImg() {
@@ -24,6 +35,31 @@ function TopGearReport(props) {
   const roundTo = (value, places) => {
     let power = Math.pow(10, places);
     return (Math.round(value * power) / power) * -1;
+  };
+
+  const classIcon = () => {
+    switch (props.pl.spec) {
+      case "Holy Paladin":
+        return require("../../Images/Classes/Paladin/icon-paladin.png");
+        break;
+      case "Restoration Shaman":
+        return require("../../Images/Classes/Shaman/icon-shaman.png");
+        break;
+      case "Holy Priest":
+        return require("../../Images/Classes/Priest/icon-priest.png");
+        break;
+      case "Discipline Priest":
+        return require("../../Images/Classes/Priest/icon-priest.png");
+        break;
+      case "Restoration Druid":
+        return require("../../Images/Classes/Druid/icon-druid.png");
+        break;
+      case "Mistweaver Monk":
+        return require("../../Images/Classes/Monk/icon-monk.png");
+        break;
+      default:
+        break;
+    }
   };
 
   /*
@@ -148,11 +184,97 @@ function TopGearReport(props) {
                 </Grid>
                 <Grid item xs={12}>
                   {/* Stat Panel */}
-                  <Grid container spacing={1} direction="column">
-                    <TopSetStatsPanel
-                      statList={statList}
-                      spec={props.pl.spec}
-                    />
+                  <Grid
+                    container
+                    spacing={1}
+                    direction="row"
+                    justify="space-between"
+                  >
+                    <Grid item xs={3} style={{ paddingBottom: 8 }}>
+                      <Grid container justify="flex-start">
+                        <TopSetStatsPanel
+                          statList={statList}
+                          spec={props.pl.spec}
+                        />
+                      </Grid>
+                    </Grid>
+                    <Grid
+                      item
+                      xs={3}
+                      style={{ paddingBottom: 8, alignSelf: "flex-end" }}
+                    >
+                      <Grid container justify="flex-end">
+                        <Paper
+                          // elevation={0}
+                          // variant="outlined"
+                          style={{
+                            fontSize: "12px",
+                            textAlign: "left",
+                            maxWidth: 300,
+                            backgroundColor: "rgba(44, 44, 44, 0.5)",
+                            display: "block",
+                          }}
+                        >
+                          <Grid container direction="row">
+                            <Grid item xs="auto">
+                              <Grid container direction="row">
+                                <img
+                                  src={classIcon()}
+                                  height={80}
+                                  width={80}
+                                  style={{ padding: 4 }}
+                                />
+                              </Grid>
+                            </Grid>
+                            <Grid item xs={8}>
+                              <Grid
+                                container
+                                direction="row"
+                                style={{ paddingTop: 9, paddingBopttom: 9 }}
+                              >
+                                <Grid item xs={12}>
+                                  <Typography
+                                    variant="h5"
+                                    wrap="nowrap"
+                                    display="inline"
+                                    align="left"
+                                    style={{
+                                      color: classColoursJS(props.pl.spec),
+                                    }}
+                                  >
+                                    {props.pl.charName}
+                                  </Typography>
+                                  <Divider />
+                                </Grid>
+                                <Grid item xs={12}>
+                                  <Typography
+                                    variant="caption"
+                                    wrap="nowrap"
+                                    display="inline"
+                                    align="left"
+                                    style={{
+                                      color: classColoursJS(props.pl.spec),
+                                    }}
+                                  >
+                                    {props.pl.spec}
+                                  </Typography>
+                                </Grid>
+                                <Grid item xs={12}>
+                                  <Typography
+                                    variant="caption"
+                                    wrap="nowrap"
+                                    display="inline"
+                                    align="left"
+                                  >
+                                    {props.pl.region}-{props.pl.realm}
+                                  </Typography>
+                                </Grid>
+                              </Grid>
+                            </Grid>
+                          </Grid>
+                        </Paper>
+                      </Grid>
+                    </Grid>
                   </Grid>
                 </Grid>
               </Grid>
@@ -185,27 +307,42 @@ function TopGearReport(props) {
                           backgroundColor: "rgba(34, 34, 34, 0.52)",
                         }}
                       >
-                        <Grid container spacing={1}>
-                          <Grid item xs={12} alignContent="center">
-                            <Typography
-                              variant="caption"
-                              align="center"
-                              style={{ width: "100%" }}
-                            >
-                              {roundTo(key.scoreDifference, 2)}
-                            </Typography>
-                            <Divider />
-                          </Grid>
-                          {key.items.map((item) => (
-                            <Grid item xs={12}>
-                              <img
-                                src={getItemIcon(item.id)}
-                                height={20}
-                                width={20}
-                              />{" "}
-                              {getTranslatedItemName(item.id, currentLanguage)}
+                        <Grid container direction="row">
+                          <Grid item xs={10}>
+                            <Grid container spacing={1}>
+                              {key.items.map((item) => (
+                                <Grid item xs={12}>
+                                  <img
+                                    src={getItemIcon(item.id)}
+                                    height={20}
+                                    width={20}
+                                  />{" "}
+                                  {getTranslatedItemName(
+                                    item.id,
+                                    currentLanguage
+                                  )}
+                                </Grid>
+                              ))}
                             </Grid>
-                          ))}
+                          </Grid>
+
+                          <Grid item xs={2}>
+                            <Grid container spacing={1}>
+                              <Grid item xs={12} alignContent="center">
+                                <div
+                                  style={{
+                                    paddingTop: 4,
+                                    width: "100%",
+                                    color: upgradeColor(
+                                      roundTo(key.scoreDifference, 2)
+                                    ),
+                                  }}
+                                >
+                                  {roundTo(key.scoreDifference, 2)}
+                                </div>
+                              </Grid>
+                            </Grid>
+                          </Grid>
                         </Grid>
                       </Paper>
                     </Grid>

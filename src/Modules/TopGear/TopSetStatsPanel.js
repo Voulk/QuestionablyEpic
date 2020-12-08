@@ -31,47 +31,47 @@ export default function TopSetStatsPanel(props) {
 
   return (
     // <div className="statPanel">
-    <Grid item xs={12} style={{ paddingBottom: 8 }}>
-      <Paper
-        // elevation={0}
-        // variant="outlined"
-        style={{
-          fontSize: "12px",
-          textAlign: "left",
-          minHeight: 90,
-          maxWidth: 300,
-          backgroundColor: "rgba(44, 44, 44, 0.5)",
-        }}
-      >
-        <Grid container direction="column" spacing={1}>
-          <Grid item xs={12}>
-            <Typography
-              style={{ fontSize: 18 }}
-              variant="h6"
-              align="center"
-              color="primary"
-            >
-              Stats
-            </Typography>
-            <Divider variant="middle" />
+
+    <Paper
+      // elevation={0}
+      // variant="outlined"
+      style={{
+        fontSize: "12px",
+        textAlign: "left",
+        minHeight: 90,
+        maxWidth: 300,
+        backgroundColor: "rgba(44, 44, 44, 0.5)",
+      }}
+    >
+      <Grid container direction="column" spacing={1}>
+        <Grid item xs={12}>
+          <Typography
+            style={{ fontSize: 18 }}
+            variant="h6"
+            align="center"
+            color="primary"
+          >
+            Stats
+          </Typography>
+          <Divider variant="middle" />
+        </Grid>
+        <Grid item xs={12} style={{ padding: "4px 16px 16px 16px" }}>
+          <Grid container direction="row" spacing={1}>
+            {stats.map((stat, index) => (
+              <Grid item xs={6}>
+                <Typography
+                  style={{ fontSize: 16, marginLeft: "4px" }}
+                  variant="body1"
+                  align="left"
+                >
+                  {console.log(stat)}
+                  {printStat(stat[0], stat[1])}
+                </Typography>
+              </Grid>
+            ))}
           </Grid>
-          <Grid item xs={12} style={{ padding: "4px 16px 16px 16px" }}>
-            <Grid container direction="row" spacing={1}>
-              {stats.map((stat, index) => (
-                <Grid item xs={6}>
-                  <Typography
-                    style={{ fontSize: 16, marginLeft: "4px" }}
-                    variant="body1"
-                    align="left"
-                  >
-                    {console.log(stat)}
-                    {printStat(stat[0], stat[1])}
-                  </Typography>
-                </Grid>
-              ))}
-            </Grid>
-          </Grid>
-          {/*}
+        </Grid>
+        {/*}
           <Grid container direction="column">
             <Grid item xs={12}>
               <Typography
@@ -103,9 +103,8 @@ export default function TopSetStatsPanel(props) {
           
           </Grid>
           */}
-        </Grid>
-      </Paper>
-    </Grid>
+      </Grid>
+    </Paper>
     // </div>
   );
 }
