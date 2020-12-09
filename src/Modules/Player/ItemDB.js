@@ -27821,7 +27821,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Unbound Changeling"
-        }
+        },
+        "icon": "inv_pet_spectralporcupinegreen"
     },
     {
         "id": 178709,
@@ -32066,6 +32067,66 @@ export const itemDB = [
         "dropLoc": "",
         "selectable": "true",
         "slot": "Finger"
+    },
+    {
+        "id": 178926,
+        "name": "Shadowghast Ring",
+        "names": {
+            "cn": "",
+            "en": "Shadowghast Ring",
+            "ru": "Эребиевый перстень",
+            "es": "Anillo de terror sombrío",
+            "br": "Anel de Umbromedo",
+            "kr": "",
+            "fr": "Anneau ombrepeur",
+            "de": "Schattenschreckring"
+        },
+        "icon": "inv_jewelcrafting_90_maxlvlring_red",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 175,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 8750
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Finger"
+    },
+    {
+        "id": 178927,
+        "name": "Shadowghast Necklace",
+        "names": {
+            "cn": "",
+            "en": "Shadowghast Necklace",
+            "ru": "Эребиевое ожерелье",
+            "es": "Collar de terror sombrío",
+            "br": "Colar de Umbromedo",
+            "kr": "",
+            "fr": "Collier ombrepeur",
+            "de": "Schattenschreckhalskette"
+        },
+        "icon": "inv_jewelcrafting_90_maxlvlneck_red",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 175,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0,
+            "unallocated": 8750
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Neck"
     },
     {
         "id": 178930,
