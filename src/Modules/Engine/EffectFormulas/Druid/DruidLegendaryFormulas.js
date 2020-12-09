@@ -85,7 +85,6 @@ export const getDruidLegendary = (effectName, player, contentType) => {
     let deduction = lifebloomHPS * 0.1;
 
     bonus_stats.hps = Math.round(hps_betterCast + hps_clearcasting - deduction);
-    console.log("Returning Dark Titans @ " + bonus_stats.hps);
   }
 
   // Consider building in support for the conduit via SimC grab or something similar.
