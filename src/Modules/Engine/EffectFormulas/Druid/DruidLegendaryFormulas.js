@@ -59,7 +59,7 @@ export const getDruidLegendary = (effectName, player, contentType) => {
     bonus_stats.hps = Math.round(
       (power / 60) * player.getStatMultiplier("ALL")
     );
-  } else if (name === "The Dark Titans Lesson") {
+  } else if (name === "The Dark Titans Lesson" || name === "The Dark Titan's Lesson") {
     // Do Math
 
     let percentClearcastsUsed = 0.75;

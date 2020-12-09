@@ -69,6 +69,7 @@ function TopGearReport(props) {
   let differentials = {};
   let itemList = {};
   let statList = {};
+  console.log(differentials);
 
   if (result !== null) {
     topSet = result.itemSet;
@@ -331,7 +332,7 @@ function TopGearReport(props) {
                                   {getTranslatedItemName(
                                     item.id,
                                     currentLanguage
-                                  )}
+                                  ) + " " + item.level}
                                 </Grid>
                               ))}
                             </Grid>
