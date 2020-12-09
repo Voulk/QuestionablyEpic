@@ -42,7 +42,7 @@ export function runTopGear(itemList, wepCombos, player, contentType) {
     for (var i = 0; i < itemSets.length; i++) {
         
         //console.log("ID: " + itemSets[i].id + ". Soft: " + itemSets[i].sumSoftScore + ". Hard: " + itemSets[i].hardScore);
-        //itemSets[i].printSet();
+        itemSets[i].printSet();
         //console.log("====================");
    
     }
@@ -58,6 +58,7 @@ export function runTopGear(itemList, wepCombos, player, contentType) {
     let primeSet = itemSets[0];
     for (var i = 1; i < Math.min(5, itemSets.length); i++) {
         differentials.push(buildDifferential(itemSets[i], primeSet));
+        
     }
 
     itemSets[0].printSet()
@@ -212,12 +213,12 @@ function buildDifferential(itemSet, primeSet) {
     //console.log("Diff List: " + JSON.stringify(diffList))
 
     for (var x = 0; x < primeList.length; x++) {
-        if (primeList[x].id !== diffList[x].id) {
+        if (primeList[x].uniqueHash !== diffList[x].uniqueHash) {
             //console.log("Something happeneing here: " + x);
             differentials.items.push(diffList[x])
         }
     }
-    //console.log(JSON.stringify(differentials));
+    console.log(JSON.stringify(differentials));
     return differentials;
 
 }
@@ -315,7 +316,8 @@ function evalSet(itemSet, player, contentType) {
     bonus_stats.intellect += (builtSet.setStats.intellect + bonus_stats.intellect) * 0.05; //TODO: Renable.
 
     // Sockets
-    bonus_stats[highestWeight] += 16 * builtSet.sockets;
+    bonus_stats[highestWeight] += 16 * builtSet.setSockets;
+    //console.log("Sockets added : " + 16 * builtSet.setSockets + " to " + highestWeight);
 
     // Calculate a hard score using the rebalanced stat weights.
     for (var stat in setStats) {
