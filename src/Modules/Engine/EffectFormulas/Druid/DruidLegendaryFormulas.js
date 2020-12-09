@@ -59,7 +59,7 @@ export const getDruidLegendary = (effectName, player, contentType) => {
     bonus_stats.hps = Math.round(
       (power / 60) * player.getStatMultiplier("ALL")
     );
-  } else if (name === "The Dark Titans Lesson") {
+  } else if (name === "The Dark Titans Lesson" || name === "The Dark Titan's Lesson") {
     // Do Math
 
     let percentClearcastsUsed = 0.75;
@@ -85,6 +85,7 @@ export const getDruidLegendary = (effectName, player, contentType) => {
     let deduction = lifebloomHPS * 0.1;
 
     bonus_stats.hps = Math.round(hps_betterCast + hps_clearcasting - deduction);
+    console.log("Returning Dark Titans @ " + bonus_stats.hps);
   }
 
   // Consider building in support for the conduit via SimC grab or something similar.
