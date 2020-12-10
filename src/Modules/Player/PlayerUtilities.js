@@ -6,75 +6,78 @@ This file contains utility functions that center around the player or players cl
 */
 
 export function getUnique() {
-    return (Math.floor(Math.random() * 3000000) + 1).toString();
+  return (Math.floor(Math.random() * 3000000) + 1).toString();
 }
 
-// This function converts raw log output to a form that's easier to use around the app. 
+// This function converts raw log output to a form that's easier to use around the app.
 // If you need an extra field that you can easily add it here.
 export function convertLogSpellOutput(player, logOutput, fightLength) {
-    console.log(logOutput)
-    let data = {};
-    let totalHealing = 0;
-    let totalOverhealing = 0;
+  console.log(logOutput);
+  let data = {};
+  let totalHealing = 0;
+  let totalOverhealing = 0;
 
-    let duration = Math.round(100 * fightLength / 1000) / 100;
-    let fightInfo = {
-        hps: 0,
-        rawhps: 0,
-        fightLength: duration,
-    };
+  let duration = Math.round((100 * fightLength) / 1000) / 100;
+  let fightInfo = {
+    hps: 0,
+    rawhps: 0,
+    fightLength: duration,
+  };
 
-    for (let i = 0; i < logOutput.length; i++) {
-        let spell = logOutput[i];
-        let spellName = spell.name
-        let casts = 'uses' in spell ? spell.uses : 0;
-        let spellHPS = Math.round(spell.total / duration * 100) / 100;
-        let overHealingPerc = 'overheal' in spell ? (Math.round(100 * spell.overheal / (spell.overheal + spell.total)) / 100) : 0;
+  for (let i = 0; i < logOutput.length; i++) {
+    let spell = logOutput[i];
+    let spellName = spell.name;
+    let casts = "uses" in spell ? spell.uses : 0;
+    let spellHPS = Math.round((spell.total / duration) * 100) / 100;
+    let overHealingPerc =
+      "overheal" in spell
+        ? Math.round((100 * spell.overheal) / (spell.overheal + spell.total)) /
+          100
+        : 0;
 
-        data[spellName] = [casts, spell.total, 0, spellHPS, overHealingPerc];
+    data[spellName] = [casts, spell.total, 0, spellHPS, overHealingPerc];
 
-        totalHealing += logOutput[i].total;
-        totalOverhealing += 'overheal' in spell ? spell.overheal : 0;
-        
-    }
+    totalHealing += logOutput[i].total;
+    totalOverhealing += "overheal" in spell ? spell.overheal : 0;
+  }
 
-    fightInfo.hps = Math.round(totalHealing / duration);
-    fightInfo.rawhps = Math.round((totalHealing + totalOverhealing) / duration);
+  fightInfo.hps = Math.round(totalHealing / duration);
+  fightInfo.rawhps = Math.round((totalHealing + totalOverhealing) / duration);
 
-    player.setSpellPattern("Raid", data);
-    player.setFightInfo(fightInfo);
+  player.setSpellPattern("Raid", data);
+  player.setFightInfo(fightInfo);
 
-    console.log(JSON.stringify(data));
-    console.log(JSON.stringify(player));
+  console.log(JSON.stringify(data));
+  console.log(JSON.stringify(player));
 }
 
-// We could also extract talent information if it was desired. 
+// We could also extract talent information if it was desired.
 export function convertLogStatOutput(player, logOutput, id) {
+  console.log(logOutput);
+  console.log(player);
+  console.log(id);
+  let data = {};
 
-    
-    let data = {}
+  let output = logOutput.filter((entry) => entry.id === id);
 
-    let output = logOutput.filter(entry => entry.id === id);
+  if (output.length > 0) {
+    let info = output[0].combatantInfo.stats;
 
-    if (output.length > 0) {
-        let info = output[0].combatantInfo.stats;
+    data.intellect = info.Intellect.min;
+    data.stamina = info.Stamina.min;
 
-        data.intellect = info.Intellect.min;
-        data.stamina = info.Stamina.min;
+    data.crit = info.Crit.min;
+    data.haste = info.Haste.min;
+    data.mastery = info.Mastery.min;
+    data.versatility = info.Versatility.min;
 
-        data.crit = info.Crit.min;
-        data.haste = info.Haste.min;
-        data.mastery = info.Mastery.min;
-        data.versatility = info.Versatility.min;
+    data.leech = info.Leech.min;
+  }
 
-        data.leech = info.Leech.min;
-        
-    }
-
-    player.setActiveStats(data);
-    console.log("Stats After");
-    console.log(JSON.stringify(player));
-    /*
+  player.setActiveStats(data);
+  console.log("Stats After");
+  console.log(JSON.stringify(player));
+  /*
 
                     intellect: 1500,
                 haste: 400,
@@ -87,5 +90,4 @@ export function convertLogStatOutput(player, logOutput, id) {
                 fightLength: 180,
 
     */
-
 }

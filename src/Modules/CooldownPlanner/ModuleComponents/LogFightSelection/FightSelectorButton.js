@@ -8,7 +8,6 @@ import { useTranslation } from "react-i18next";
 export default function FightSelectorButton(props) {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const { t } = useTranslation();
-
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
