@@ -109,9 +109,7 @@ export default function QEMainMenu(props) {
                 variant="subtitle1"
                 // gutterBottom
               >
-                An expansion launch is a chaotic time and the game continues to
-                see frequent, decision-altering changes. Continue to use your
-                class discords as your primary resource for information. ~Voulk
+                Log Entry has been temporarily disabled while a bug is investigated. Sorry about the inconvenience.
               </Typography>
             </Paper>
           </Grid>
@@ -186,7 +184,7 @@ export default function QEMainMenu(props) {
           )}
         </Grid>
 
-        <p className="headers" style={{fontSize: "12px"}}>QE Live Update 10. Last Updated 8 December.</p>
+        <p className="headers" style={{fontSize: "12px"}}>QE Live Update 10a. Last Updated 10 December.</p>
         
       </div>
     </div>
