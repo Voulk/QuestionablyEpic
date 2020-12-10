@@ -176,7 +176,7 @@ export default function QELogImport(props) {
       .catch(function (error) {
         console.log(error);
       });
-
+    console.log(healers);
     setHealerDataDetailed(healers);
   };
 
@@ -247,6 +247,7 @@ export default function QELogImport(props) {
   };
 
   const importLogDataQE = async (starttime, endtime, reportID) => {
+    console.log("Importing Log Data");
     // Map the Healer Table for the currently selected characters specialization
     const healers = await importHealerNamesFromLogsQE(
       starttime,
@@ -271,9 +272,12 @@ export default function QELogImport(props) {
     setDamageData(damage);
     setCastData(casts);
     // Stuff
+    console.log(healerDataDetailed);
     convertLogSpellOutput(props.player, healerDataDetailed, timeend - time);
     convertLogStatOutput(props.player, summaryData, currentPlayerID);
   };
+
+
 
   // Handler to set PLayer ID when player selected from dropdown
   const playerSelectedHandler = (e) => {
@@ -306,6 +310,7 @@ export default function QELogImport(props) {
   // On submit button click returns detailed data on the player, closes the dialogue and Activates the Confirmation Snackbar
   const handleSubmit = () => {
     importHealerDetailedLogDataQE(time, timeend, reportId, currentPlayerID);
+    convertLogSpellOutput(props.player, healerDataDetailed, timeend - time);
     handleClose();
     props.logImportSnack();
     setReportId("");
@@ -323,7 +328,8 @@ export default function QELogImport(props) {
       <Button
         style={{ whiteSpace: "nowrap" }}
         onClick={handleClickOpen}
-        disabled={characterCount === 0}
+        //disabled={characterCount === 0}
+        disabled={true}
       >
         {t("QeHeader.InsertLogLabel")}
       </Button>
