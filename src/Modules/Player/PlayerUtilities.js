@@ -13,7 +13,7 @@ export function getUnique() {
 // If you need an extra field that you can easily add it here.
 export function convertLogSpellOutput(player, logOutput, fightLength) {
   //console.log(player);
-  console.log(logOutput);
+  //console.log(logOutput);
  // console.log(fightLength);
 
   //console.log(logOutput);
@@ -48,12 +48,12 @@ export function convertLogSpellOutput(player, logOutput, fightLength) {
   fightInfo.hps = Math.round(totalHealing / duration);
   fightInfo.rawhps = Math.round((totalHealing + totalOverhealing) / duration);
   
-  console.log(JSON.stringify(data));
+  //console.log(JSON.stringify(data));
   player.setSpellPattern(data);
   player.setFightInfo(fightInfo);
 
   
-  console.log(JSON.stringify(player));
+  //console.log(JSON.stringify(player));
 }
 
 // We could also extract talent information if it was desired.

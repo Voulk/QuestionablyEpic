@@ -176,7 +176,7 @@ export default function QELogImport(props) {
       .catch(function (error) {
         console.log(error);
       });
-    console.log(healers);
+    //console.log(healers);
     setHealerDataDetailed(healers);
 
     return healers;
@@ -253,7 +253,7 @@ export default function QELogImport(props) {
   };
 
   const importLogDataQE = async (starttime, endtime, reportID) => {
-    console.log("Importing Log Data");
+    //console.log("Importing Log Data");
     // Map the Healer Table for the currently selected characters specialization
     const healers = await importHealerNamesFromLogsQE(
       starttime,

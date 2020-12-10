@@ -388,16 +388,17 @@ class Player {
 
     setSpellPattern = (castPat) => {
         console.log(castPat);
-        this.castPattern["Raid"] = castPat;
+        if (castPat !== {}) this.castPattern["Raid"] = castPat;
+        
     }
 
     setActiveStats = (stats) => {
        
-        this.activeStats = stats;
+        if (Object.keys(stats).length > 0) this.activeStats = stats;
     }
 
     setFightInfo = (info) => {
-        this.fightInfo = info;
+        if (Object.keys(info).length > 0) this.fightInfo = info;
     }
 
 
