@@ -12,6 +12,10 @@ export function getUnique() {
 // This function converts raw log output to a form that's easier to use around the app.
 // If you need an extra field that you can easily add it here.
 export function convertLogSpellOutput(player, logOutput, fightLength) {
+  console.log(player);
+  console.log(logOutput);
+  console.log(fightLength);
+
   console.log(logOutput);
   let data = {};
   let totalHealing = 0;
@@ -58,7 +62,8 @@ export function convertLogStatOutput(player, logOutput, id) {
   console.log(id);
   let data = {};
 
-  let output = logOutput.filter((entry) => entry.id === id);
+  let output = logOutput.filter((entry) => entry.id === id[0]);
+  console.log(output);
 
   if (output.length > 0) {
     let info = output[0].combatantInfo.stats;

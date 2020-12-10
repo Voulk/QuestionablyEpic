@@ -319,8 +319,6 @@ export default function QELogImport(props) {
       reportId,
       currentPlayerID
     );
-    console.log(returnedHealerDetailed);
-    console.log(summaryData);
     convertLogSpellOutput(props.player, returnedHealerDetailed, timeend - time);
     convertLogStatOutput(props.player, summaryData, currentPlayerID);
     handleClose();
