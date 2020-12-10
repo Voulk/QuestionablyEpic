@@ -386,8 +386,9 @@ class Player {
         
     }
 
-    setSpellPattern = (contentType, casts) => {
-        this.castPattern[contentType] = casts;
+    setSpellPattern = (castPat) => {
+        console.log(castPat);
+        this.castPattern["Raid"] = castPat;
     }
 
     setActiveStats = (stats) => {
