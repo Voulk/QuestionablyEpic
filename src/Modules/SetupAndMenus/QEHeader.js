@@ -154,6 +154,7 @@ export default function QEHeader(props) {
                     logImportSnack={props.logImportSnack}
                     player={props.pl}
                     allChars={props.allChars}
+                    
                   />
                 </Grid>
                 <Grid item>
