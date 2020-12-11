@@ -103,7 +103,7 @@ class HolyDiver extends Component {
       cooldownPlannerCurrentData: [],
       cooldownPlannerCurrentRaid: "",
       cooldownPlannerCurrentBoss: "",
-      cooldownPlannerCurrentPlan: "",
+      cooldownPlannerCurrentPlan: 1,
     };
   }
 
