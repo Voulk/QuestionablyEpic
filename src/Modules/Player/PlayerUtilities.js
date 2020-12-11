@@ -5,10 +5,14 @@ This file contains utility functions that center around the player or players cl
 
 */
 
+export function getUnique() {
+    return (Math.floor(Math.random() * 3000000) + 1).toString();
+}
+
 // This function converts raw log output to a form that's easier to use around the app. 
 // If you need an extra field that you can easily add it here.
 export function convertLogSpellOutput(player, logOutput, fightLength) {
-
+    console.log(logOutput)
     let data = {};
     let totalHealing = 0;
     let totalOverhealing = 0;
@@ -40,8 +44,8 @@ export function convertLogSpellOutput(player, logOutput, fightLength) {
     player.setSpellPattern("Raid", data);
     player.setFightInfo(fightInfo);
 
-    //console.log(JSON.stringify(data));
-    //console.log(JSON.stringify(player));
+    console.log(JSON.stringify(data));
+    console.log(JSON.stringify(player));
 }
 
 // We could also extract talent information if it was desired. 
@@ -68,7 +72,8 @@ export function convertLogStatOutput(player, logOutput, id) {
     }
 
     player.setActiveStats(data);
-    //console.log(JSON.stringify(player));
+    console.log("Stats After");
+    console.log(JSON.stringify(player));
     /*
 
                     intellect: 1500,

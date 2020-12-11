@@ -77,7 +77,7 @@ export default function ERTTable(props) {
   };
 
   const copyToClipboard = () => {
-    const copyText = props.data.map((key) => key.ert).join("");
+    const copyText = props.data.map((key) => key.ert, <br />);
     console.log(copyText);
     if (navigator.clipboard) {
       navigator.clipboard.writeText(copyText).then(

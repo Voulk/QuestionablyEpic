@@ -6,12 +6,14 @@ import TrinketCompare from "./Modules/TrinketCompare";
 import LegendaryCompare from "./Modules/Legendaries/LegendaryCompare";
 import QuickCompare from "./Modules/QuickCompare/QuickCompare";
 import QEHeader from "./Modules/SetupAndMenus/QEHeader";
+import TopGearReport from "./Modules/TopGear/TopGearReport";
 import QEProfile from "./Modules/SetupAndMenus/QEProfile";
 import PlayerChars from "./Modules/Player/PlayerChars";
 import SimpleTabs from "./Modules/Covenants/Components/CovenantExploration";
 import { ConfirmLogin, QELogin } from "./Modules/SetupAndMenus/QELogin";
 import { withTranslation } from "react-i18next";
 import i18n from "./i18n";
+import TopGear from "./Modules/TopGear/TopGear";
 
 import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -23,6 +25,7 @@ import { createBrowserHistory } from "history";
 import { dbCheckPatron } from "./Modules/SetupAndMenus/ConnectionUtilities";
 
 import ReactGA from "react-ga";
+import ItemSet from "./Modules/TopGear/ItemSet";
 
 const theme = createMuiTheme({
   palette: {
@@ -103,8 +106,14 @@ class App extends Component {
       logImportSnackState: false,
       emailSnackState: false,
       emailSnackErrorState: false,
+      topSet: null,
     };
   }
+
+  setTopResult = (set) => {
+    
+    this.setState({ topSet: set });
+  };
 
   // --Snack Bar Handlers--
   // Character Added
@@ -217,6 +226,13 @@ class App extends Component {
     this.setState({ characters: allChars });
     allChars.saveAllChar();
   };
+
+  deletePlayerChar = (unique) => {
+    let allChars = this.state.characters;
+    allChars.delSpecificChar(unique)
+    this.setState({ characters: allChars });
+    allChars.saveAllChar();
+  }
 
   setRegion = (props) => {
     this.setState({ playerRegion: props });
@@ -407,6 +423,7 @@ class App extends Component {
                     charUpdatedSnack={this.handleCharUpdateSnackOpen}
                     contentType={this.state.contentType}
                     patronStatus={this.state.patronStatus}
+                    delChar={this.deletePlayerChar}
                   />
                 )}
               />
@@ -416,11 +433,31 @@ class App extends Component {
                 render={() => <TrinketCompare pl={this.state.player} />}
               />
               <Route
+                path="/report"
+                render={() => (
+                  <TopGearReport
+                    pl={activePlayer}
+                    result={this.state.topSet}
+                    contentType={this.state.contentType}
+                  />
+                )}
+              />
+              <Route
                 path="/quickcompare"
                 render={() => (
                   <QuickCompare
                     pl={activePlayer}
                     contentType={this.state.contentType}
+                  />
+                )}
+              />
+              <Route
+                path="/topgear"
+                render={() => (
+                  <TopGear
+                    pl={activePlayer}
+                    contentType={this.state.contentType}
+                    setTopResult={this.setTopResult}
                   />
                 )}
               />

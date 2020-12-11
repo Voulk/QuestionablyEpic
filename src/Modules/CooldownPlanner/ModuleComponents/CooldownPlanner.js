@@ -159,13 +159,14 @@ export default function CooldownPlanner(props) {
   const setData = props.dataUpdateHandler;
   const currentBoss = props.currentBoss;
   const currentRaid = props.currentRaid;
+  const currentPlan = props.currentPlan;
   const currentData = props.data;
-  const [plan, setPlan] = useState("");
+  const [plan, setPlan] = useState(1);
   const handleChangeRaid = props.raidHandler;
   const handleChangeBoss = props.bossHandler;
-  const handleChangePlan = (event) => {
-    setPlan(event.target.value);
-  };
+  const handleChangePlan = props.planHandler;
+
+  console.log(currentPlan);
 
   const timeCheck = (rowData) => {
     let time = moment(rowData.time, "mm:ss")
@@ -422,6 +423,12 @@ export default function CooldownPlanner(props) {
       if (ls.get(key.zoneID + "." + key.id + ".1") === null) {
         ls.set(key.zoneID + "." + key.id + ".1", []);
       }
+      if (ls.get(key.zoneID + "." + key.id + ".2") === null) {
+        ls.set(key.zoneID + "." + key.id + ".2", []);
+      }
+      if (ls.get(key.zoneID + "." + key.id + ".3") === null) {
+        ls.set(key.zoneID + "." + key.id + ".3", []);
+      }
     });
     if (ls.get("healerInfo") === null || ls.get("healerInfo") === undefined) {
       ls.set("healerInfo", []);
@@ -445,11 +452,12 @@ export default function CooldownPlanner(props) {
   };
 
   let updateStorage = (props) => {
-    if (ls.get(currentRaid + "." + currentBoss + ".1") === null) {
-      ls.set(currentRaid + "." + currentBoss + ".1", []);
+    console.log(currentRaid + "." + currentBoss + "." + currentPlan);
+    if (ls.get(currentRaid + "." + currentBoss + "." + currentPlan) === null) {
+      ls.set(currentRaid + "." + currentBoss + "." + currentPlan, []);
     }
     ls.set(
-      currentRaid + "." + currentBoss + ".1",
+      currentRaid + "." + currentBoss + "." + currentPlan,
       props.sort((a, b) => (a.time > b.time ? 1 : -1))
     );
   };
@@ -590,28 +598,28 @@ export default function CooldownPlanner(props) {
                       </Select>
                     </FormControl>
                   </Grid>
-                  {/* <Grid item xs="auto">
+                  <Grid item xs="auto">
                     <FormControl
                       style={{ minWidth: 200 }}
                       variant="outlined"
                       size="small"
-                      disabled={boss === "" ? true : false}
+                      disabled={currentBoss === "" ? true : false}
                     >
                       <InputLabel id="RaidSelector">
                         {t("Select Plan")}
                       </InputLabel>
                       <Select
                         labelId="RaidSelector"
-                        value={plan}
-                        onChange={handleChangePlan}
+                        label={t("Select Plan")}
+                        value={currentPlan}
+                        onChange={(e) => handleChangePlan(e.target.value)}
                       >
-                        <MenuItem value={"plan1"}>Plan 1</MenuItem>
-                        <MenuItem value={"plan2"}>Plan 2</MenuItem>
-                        <MenuItem value={"plan3"}>Plan 3</MenuItem>
-                        <MenuItem value={"plan4"}>Plan 4</MenuItem>
+                        <MenuItem value={1}>Plan 1</MenuItem>
+                        <MenuItem value={2}>Plan 2</MenuItem>
+                        <MenuItem value={3}>Plan 3</MenuItem>
                       </Select>
                     </FormControl>
-                  </Grid> */}
+                  </Grid>
                 </Grid>
                 <Grid item xs="auto">
                   {currentBoss === "" ? null : (

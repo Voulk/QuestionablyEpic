@@ -42,9 +42,11 @@ export default function ItemCard(props) {
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
   const itemLevel = item.level;
+  const isLegendary = "effect" in item && item.effect.type === "spec legendary";
 
   const itemQuality = (itemLevel) => {
-    if (itemLevel >= 183) return "#a73fee";
+    if (isLegendary) return "#ff8000";
+    else if (itemLevel >= 183) return "#a73fee";
     else if (itemLevel >= 120) return "#328CE3";
     else return "#1eff00";
 
@@ -92,7 +94,9 @@ export default function ItemCard(props) {
     itemName2 = getTranslatedItemName(item.offhandID, currentLanguage);
     console.log(item);
   } else {
-    itemName = getTranslatedItemName(item.id, currentLanguage);
+    if (isLegendary) itemName = item.effect.name;
+    // Add translations to this.
+    else itemName = getTranslatedItemName(item.id, currentLanguage);
   }
 
   const socket = props.item.socket ? (
@@ -323,7 +327,7 @@ export default function ItemCard(props) {
                       paddingRight: "3px",
                     }}
                   >
-                    {props.item.softScore}
+                    {Math.round(props.item.softScore)}
                   </Typography>
                 </Grid>
               </Grid>

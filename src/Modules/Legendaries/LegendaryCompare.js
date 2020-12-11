@@ -162,7 +162,7 @@ const fillLegendaries = (container, spec, pl, contentType) => {
 
 const sortLegendaries = (container) => {
   // Current default sorting is by HPS but we could get creative here in future.
-  container.sort((a, b) => (a.bonus_stats.HPS < b.bonus_stats.HPS ? 1 : -1));
+  container.sort((a, b) => (a.bonus_stats.hps < b.bonus_stats.hps ? 1 : -1));
 };
 
 class Legendary {

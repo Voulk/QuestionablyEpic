@@ -18,7 +18,7 @@ export const getDruidLegendary = (effectName, player, contentType) => {
 
     // console.log("Expected Increase: " + rejuvHealingInc);
     // Return result.
-    bonus_stats.HPS = expectedHPS;
+    bonus_stats.hps = expectedHPS;
   } else if (name === "Memory of the Mother Tree") {
     let wildGrowthCPM = player.getSpellCPM("Wild Growth", contentType);
     let procChance = 0.4;
@@ -26,7 +26,7 @@ export const getDruidLegendary = (effectName, player, contentType) => {
 
     let freeRejuvsPerMinute = wildGrowthCPM * procChance * 3;
 
-    bonus_stats.HPS = Math.round((freeRejuvsPerMinute * oneRejuv) / 60);
+    bonus_stats.hps = Math.round((freeRejuvsPerMinute * oneRejuv) / 60);
   } else if (name === "Verdant Infusion") {
 
   /* 
@@ -56,10 +56,10 @@ export const getDruidLegendary = (effectName, player, contentType) => {
           spell.extensionsPerMin)
     );
 
-    bonus_stats.HPS = Math.round(
+    bonus_stats.hps = Math.round(
       (power / 60) * player.getStatMultiplier("ALL")
     );
-  } else if (name === "The Dark Titans Lesson") {
+  } else if (name === "The Dark Titans Lesson" || name === "The Dark Titan's Lesson") {
     // Do Math
 
     let percentClearcastsUsed = 0.75;
@@ -84,7 +84,7 @@ export const getDruidLegendary = (effectName, player, contentType) => {
     let lifebloomHPS = player.getSpellHPS("Lifebloom", contentType);
     let deduction = lifebloomHPS * 0.1;
 
-    bonus_stats.HPS = Math.round(hps_betterCast + hps_clearcasting - deduction);
+    bonus_stats.hps = Math.round(hps_betterCast + hps_clearcasting - deduction);
   }
 
   // Consider building in support for the conduit via SimC grab or something similar.
@@ -97,17 +97,17 @@ export const getDruidLegendary = (effectName, player, contentType) => {
       player.getStatMultiplier("ALLSEC") *
       (1 - expectedOverhealing);
 
-    bonus_stats.HPS = Math.round((oneWildGrowth * (60 / 45)) / 60);
+    bonus_stats.hps = Math.round((oneWildGrowth * (60 / 45)) / 60);
   } else if (name === "Oath of the Elder Druid") {
     let legendaryIncrease = 0.75;
     let playerHealth = player.activeStats.stamina * 20;
     let yseras = playerHealth * 0.03 * legendaryIncrease;
 
-    bonus_stats.HPS = Math.round(yseras / 5);
+    bonus_stats.hps = Math.round(yseras / 5);
   } else if (name === "Circle of Life and Death") {
-    bonus_stats.HPS = -1;
+    bonus_stats.hps = -1;
   } else {
-    bonus_stats.HPS = 0;
+    bonus_stats.hps = 0;
     bonus_stats.DPS = 0;
   }
 
@@ -130,7 +130,7 @@ const getPaladinLegendary = (legendary, player, contentType) => {
 
         // Return result.
      
-       bonus_stats.HPS = 9999;
+       bonus_stats.hps = 9999;
 
     }
 
@@ -142,12 +142,12 @@ const getPaladinLegendary = (legendary, player, contentType) => {
   
     else if (name === "Shock Barrier") {
         // Do Math
-        bonus_stats.HPS = -1;
+        bonus_stats.hps = -1;
     }
 
     else if (name === "The Dark Titans Lesson") {
         // Do Math
-        bonus_stats.HPS = 7;
+        bonus_stats.hps = 7;
     }
 
     // Consider building in support for the conduit via SimC grab or something similar.
@@ -157,11 +157,11 @@ const getPaladinLegendary = (legendary, player, contentType) => {
         let oneWildGrowth =  0.91 * 6 * player.getInt() * player.getStatMultiplayerier("ALLSEC") * (1 - expectedOverhealing);
 
 
-        bonus_stats.HPS = Math.round(oneWildGrowth * (60 / 45) / 60);
+        bonus_stats.hps = Math.round(oneWildGrowth * (60 / 45) / 60);
     }
 
     else {
-        bonus_stats.HPS = 0;
+        bonus_stats.hps = 0;
         bonus_stats.DPS = 0;
     }
     
