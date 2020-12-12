@@ -303,6 +303,18 @@ export const trinket_data = [
                 efficiency: 0.9, // It's incredibly likely that your priority target will drop below 35% over a two minute period.
             },
         ]
+    },
+    {
+        name: "Consumptive Infusion",
+        effects: [
+            {   // HoT Portion
+                coefficient: 1.65,
+                table: -7,  
+                efficiency: 0.42,
+                duration: 10, // Falls off when the target falls below 35% health. Efficiency in this case is the HoT uptime.
+                cooldown: 30, // 120 / 3. This scales with haste, which will be applied during the trinket formula.
+            },
+        ]
     }
     
     
