@@ -118,6 +118,12 @@ export default function LegendaryObject(props) {
               width={40}
               src={legendaryImages[item.name]}
               alt=""
+              style={{
+                borderRadius: 4,
+                borderWidth: "1px",
+                borderStyle: "solid",
+                borderColor: "#ff8000",
+              }}
             />
           </div>
           <Divider style={{ marginTop: 4 }} />
