@@ -77,7 +77,6 @@ const fillLegendaries = (container, spec, pl, contentType) => {
       "Vault of Heavens",
     ],
     "Holy Priest": [
-      "HolyPriestLegendary1",
       "Divine Image",
       "Flash Concentration",
       "Harmonious Apparatus",
