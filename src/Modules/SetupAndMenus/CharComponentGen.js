@@ -240,11 +240,11 @@ export default function CharCards(props) {
     let newPlayer = props.char;
     let weights = {
       intellect: 1,
-      haste: haste,
-      crit: critical,
-      mastery: mastery,
-      versatility: versatility,
-      leech: leech,
+      haste: Math.max(0, Math.min(1.4, haste)),
+      crit: Math.max(0, Math.min(1.4, critical)),
+      mastery: Math.max(0, Math.min(1.4, mastery)),
+      versatility: Math.max(0, Math.min(1.4, versatility)),
+      leech: Math.max(0, Math.min(2.1, leech)),
     };
 
     newPlayer.editChar(
