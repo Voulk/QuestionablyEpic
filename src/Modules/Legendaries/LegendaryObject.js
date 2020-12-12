@@ -95,8 +95,13 @@ export default function LegendaryObject(props) {
     <Grid item xs={3}>
       <Card className={classes.root} variant="outlined">
         <CardContent className={classes.content}>
-          <div style={{ display: "flex", justifyContent: "space-between" }}>
-            <div>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+            }}
+          >
+            <div style={{ alignSelf: "center" }}>
               <Typography
                 color="primary"
                 variant="h6"
