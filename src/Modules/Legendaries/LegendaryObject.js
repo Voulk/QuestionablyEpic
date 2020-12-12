@@ -171,7 +171,11 @@ export default function LegendaryObject(props) {
         </CardContent>
         <Divider />
         <CardActions>
-          <Typography variant="caption" component="p">
+          <Typography
+            variant="caption"
+            component="p"
+            style={{ padding: "0px 8px" }}
+          >
             Drops: {t(item.name + ".droploc")}
           </Typography>
         </CardActions>
