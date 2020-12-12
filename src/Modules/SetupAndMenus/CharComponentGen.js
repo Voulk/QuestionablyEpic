@@ -233,7 +233,7 @@ export default function CharCards(props) {
   const handleDelete = () => {
     props.delChar(player.uniqueHash);
     handleClose();
-  }
+  };
 
   // TODO
   const handleUpdateData = () => {
@@ -457,7 +457,9 @@ export default function CharCards(props) {
               <Grid item xs={6}>
                 <TextField
                   id="IntellectInput"
+                  type="number"
                   label={t("Intellect")}
+                  inputProps={{ step: 0.01 }}
                   value={intellect}
                   onChange={handleIntellect}
                   variant="outlined"
@@ -469,6 +471,8 @@ export default function CharCards(props) {
                 <TextField
                   id="CriticalInput"
                   label={t("Crit")}
+                  inputProps={{ step: 0.01 }}
+                  type="number"
                   value={critical}
                   onChange={handleCrit}
                   variant="outlined"
@@ -479,6 +483,8 @@ export default function CharCards(props) {
                 <TextField
                   id="HasteInput"
                   label={t("Haste")}
+                  inputProps={{ step: 0.01 }}
+                  type="number"
                   value={haste}
                   onChange={handleHaste}
                   variant="outlined"
@@ -489,6 +495,8 @@ export default function CharCards(props) {
                 <TextField
                   id="MasteryInput"
                   label={t("Mastery")}
+                  inputProps={{ step: 0.01 }}
+                  type="number"
                   value={mastery}
                   onChange={handleMastery}
                   variant="outlined"
@@ -499,6 +507,8 @@ export default function CharCards(props) {
                 <TextField
                   id="VersatilityInput"
                   label={t("Versatility")}
+                  inputProps={{ step: 0.01 }}
+                  type="number"
                   value={versatility}
                   onChange={handleVers}
                   variant="outlined"
@@ -509,6 +519,8 @@ export default function CharCards(props) {
                 <TextField
                   id="LeechInput"
                   label={t("Leech")}
+                  inputProps={{ step: 0.01 }}
+                  type="number"
                   value={leech}
                   onChange={handleLeech}
                   variant="outlined"
