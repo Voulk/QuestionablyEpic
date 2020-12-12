@@ -214,7 +214,12 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel) {
         //console.log("INSIGNIA Int:" + bonus_stats.intellect + ". Proc: " + getProcessedValue(effect.coefficient, effect.table, itemLevel) + ". Uptime: " + convertPPMToUptime(effect.ppm, effect.duration))
 
     }
-    console.log("Trinket2: |" + effectName + "|");
+    else if (effectName === "Tuft of Smoldering Plumage") {
+        let effect = activeTrinket.effects[0];
+        bonus_stats.hps =  getProcessedValue(effect.coefficient, effect.table, itemLevel, effect.efficiency) / effect.cooldown * player.getStatMultiplier('CRITVERS');
+        console.log("Tuft: " + bonus_stats.hps);
+    }
+    
 
     /*
     for (const effect of activeTrinket.effects) {

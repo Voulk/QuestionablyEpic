@@ -315,7 +315,21 @@ export const trinket_data = [
                 cooldown: 30, // 120 / 3. This scales with haste, which will be applied during the trinket formula.
             },
         ]
-    }
+    },
+    {
+        name: 'Tuft of Smoldering Plumage', 
+        effects: [
+            { 
+                coefficient: 326.7931,  
+                table: -8, // TODO: Test for Crit / Vers scaling.
+                efficiency: 0.82, 
+                // This one is very awkward. You're using it as a Guardian Spirit effect more often than using it because the heal is useful. 
+                // A massive heal on an injured target has massive life-saving potential, but I'm not sure how well it can be modelled except
+                // to assume the heal will have quite a high efficiency in dangerous scenarios.
+                cooldown: 120, 
+            }
+        ]
+    }, 
     
     
 ]
