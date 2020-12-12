@@ -71,6 +71,10 @@
       "Profile":"Profile"
     },
 
+    "CharacterCreator": {
+      "StatMessage": "To get updated stat weights use WowAnalyzer.com with a recent log and enter the values here from the 'Statistics' tab."
+    },
+
     "_Comments1": "Common Words",
     "Login": "Login",
     "Name": "Name",
