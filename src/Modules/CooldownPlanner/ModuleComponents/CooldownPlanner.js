@@ -153,20 +153,17 @@ const tableIcons = {
 export default function CooldownPlanner(props) {
   const classes = useStyles();
   const { t, i18n } = useTranslation();
-  const currentLanguage = i18n.language;
   const { useState } = React;
+  const currentLanguage = i18n.language;
   const rl = raidList;
   const setData = props.dataUpdateHandler;
   const currentBoss = props.currentBoss;
   const currentRaid = props.currentRaid;
   const currentPlan = props.currentPlan;
   const currentData = props.data;
-  const [plan, setPlan] = useState(1);
   const handleChangeRaid = props.raidHandler;
   const handleChangeBoss = props.bossHandler;
   const handleChangePlan = props.planHandler;
-
-  console.log(currentPlan);
 
   const timeCheck = (rowData) => {
     let time = moment(rowData.time, "mm:ss")
@@ -188,6 +185,7 @@ export default function CooldownPlanner(props) {
   };
 
   let columns = [
+    // Healer Name Column. Contains the Drop Down of Healer names generated from the Heal Team.
     {
       title: t("Name"),
       field: "name",
@@ -196,11 +194,13 @@ export default function CooldownPlanner(props) {
         whiteSpace: "nowrap",
         paddingLeft: 8,
       },
+      // This renders the healer name outside of Edit Mode.
       render: (rowData) => (
         <div style={{ color: classColoursJS(rowData.class) }}>
           {rowData.name}
         </div>
       ),
+      // This is the Component for name selection when the table is in edit mode.
       editComponent: (props) => (
         <ThemeProvider theme={themeCooldownTable}>
           <FormControl
@@ -226,7 +226,6 @@ export default function CooldownPlanner(props) {
                   .toString();
                 data.Cooldown = "NoCD";
                 props.onRowDataChange(data);
-                // props.onChange(e.target.value);
               }}
               MenuProps={menuStyle}
             >
@@ -243,6 +242,7 @@ export default function CooldownPlanner(props) {
         </ThemeProvider>
       ),
     },
+    // Class column. This is generated from the selected healer from the Name column.
     {
       title: t("Class"),
       field: "class",
@@ -250,12 +250,14 @@ export default function CooldownPlanner(props) {
       cellStyle: {
         whiteSpace: "nowrap",
       },
+      // Renders the Name for the healer in the relevant row in the data.
       render: (rowData) => (
         <div style={{ color: classColoursJS(rowData.class) }}>
           {rowData.class === undefined ? "" : classIcons(rowData.class, 20)}
           {t("CooldownPlannerClasses." + rowData.class)}
         </div>
       ),
+      // Shows the selected healers class in edit mode.
       editComponent: (props, rowData) => {
         let data = { ...props.rowData };
         return (
@@ -267,18 +269,21 @@ export default function CooldownPlanner(props) {
       },
     },
     {
+      // The Column for Cooldown Selection
       title: t("Cooldown"),
       field: "Cooldown",
       width: "12%",
       cellStyle: {
         whiteSpace: "nowrap",
       },
+      // Renders the Ability name that was set for this row.
       render: (rowData) => (
         <div>
           {abilityIcons(rowData.Cooldown)}
           {t("CooldownPlannerClassAbilities." + rowData.Cooldown)}
         </div>
       ),
+      // The Edit Mode Component. Generated based off the healers class.
       editComponent: (props, rowData) => {
         let data = { ...props.rowData };
         return (
@@ -305,12 +310,16 @@ export default function CooldownPlanner(props) {
       },
     },
     {
+      // The Cast Time Column. This is where the time the user expects the cooldown to be cast.
       title: t("CooldownPlannerTableLabels.CastTimeLabel"),
       field: "time",
       width: "6%",
       cellStyle: {
         whiteSpace: "nowrap",
       },
+      // Times currently must be entered in the 00:00 format.
+      // Currently due to sorting, the user must either use a time, or label the cooldowns, 1, 2, 3, 4 etc to keep them in order.
+      // This can probably be handled a lot better than how it handled currently.
       editComponent: (props) => (
         <TextField
           error={
@@ -334,6 +343,7 @@ export default function CooldownPlanner(props) {
       ),
     },
     {
+      // Render only, should the user when the cooldown will be available again to be used.
       title: t("CooldownPlannerTableLabels.OffCooldownLabel"),
       width: "4%",
       cellStyle: {
@@ -342,6 +352,7 @@ export default function CooldownPlanner(props) {
       render: (rowData) => <div>{timeCheck(rowData)}</div>,
     },
     {
+      // Here the user can select which ability the cooldown should cover.
       title: t("CooldownPlannerTableLabels.BossAbilityLabel"),
       field: "bossAbility",
       width: "15%",
@@ -398,6 +409,7 @@ export default function CooldownPlanner(props) {
       ),
     },
     {
+      // Under Input Notes for the cooldown. I.e "Use just before this ability" or something else they wish to note.
       title: t("CooldownPlannerTableLabels.NotesLabel"),
       field: "notes",
       width: "20%",
@@ -418,6 +430,7 @@ export default function CooldownPlanner(props) {
     },
   ];
 
+  // Generates the blank plan arrays in the local storage if they don't exist already.
   useEffect(() => {
     bossList.map((key) => {
       if (ls.get(key.zoneID + "." + key.id + ".1") === null) {
@@ -435,10 +448,12 @@ export default function CooldownPlanner(props) {
     }
   });
 
+  // When the currently loaded data is updated the props.update function passed from the cooldown planner module will update the state also.
   useEffect(() => {
     props.update(currentData);
   }, [currentData]);
 
+  // Sets the localization of the table based on the users selected language in i18
   let curLang = () => {
     if (currentLanguage === "en") {
       return localizationEN;
@@ -452,7 +467,6 @@ export default function CooldownPlanner(props) {
   };
 
   let updateStorage = (props) => {
-    console.log(currentRaid + "." + currentBoss + "." + currentPlan);
     if (ls.get(currentRaid + "." + currentBoss + "." + currentPlan) === null) {
       ls.set(currentRaid + "." + currentBoss + "." + currentPlan, []);
     }
@@ -615,7 +629,9 @@ export default function CooldownPlanner(props) {
                         onChange={(e) => handleChangePlan(e.target.value)}
                       >
                         <MenuItem value={1}>Plan 1</MenuItem>
+                        <Divider />
                         <MenuItem value={2}>Plan 2</MenuItem>
+                        <Divider />
                         <MenuItem value={3}>Plan 3</MenuItem>
                       </Select>
                     </FormControl>
