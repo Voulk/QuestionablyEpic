@@ -454,77 +454,120 @@ export default function CharCards(props) {
               spacing={1}
               style={{ width: 440 }}
             >
-              <Grid item xs={6}>
+              <Grid item xs={4}>
                 <TextField
                   id="IntellectInput"
                   type="number"
                   label={t("Intellect")}
-                  inputProps={{ step: 0.01 }}
+                  style={{ textAlignLast: "center" }}
+                  inputProps={{
+                    step: 0.01,
+                    style: { fontSize: "1.2rem", textAlignLast: "center" },
+                  }}
+                  InputProps={{
+                    style: { fontSize: "1.2rem", textAlignLast: "center" },
+                  }}
                   value={intellect}
                   onChange={handleIntellect}
                   variant="outlined"
-                  size="small"
+                  size="medium"
                   disabled={true}
                 />
               </Grid>
-              <Grid item xs={6}>
+              <Grid item xs={4}>
                 <TextField
                   id="CriticalInput"
                   label={t("Crit")}
-                  inputProps={{ step: 0.01 }}
+                  style={{ textAlignLast: "center" }}
+                  type="text"
+                  inputProps={{
+                    step: 0.01,
+                    style: { fontSize: "1.2rem", textAlignLast: "center" },
+                  }}
+                  InputProps={{
+                    style: { fontSize: "1.2rem", textAlignLast: "center" },
+                  }}
                   type="number"
                   value={critical}
                   onChange={handleCrit}
                   variant="outlined"
-                  size="small"
+                  size="medium"
                 />
               </Grid>
-              <Grid item xs={6}>
+              <Grid item xs={4}>
                 <TextField
                   id="HasteInput"
                   label={t("Haste")}
-                  inputProps={{ step: 0.01 }}
+                  style={{ textAlignLast: "center" }}
+                  inputProps={{
+                    step: 0.01,
+                    style: { fontSize: "1.2rem", textAlignLast: "center" },
+                  }}
+                  InputProps={{
+                    style: { fontSize: "1.2rem", textAlignLast: "center" },
+                  }}
                   type="number"
                   value={haste}
                   onChange={handleHaste}
                   variant="outlined"
-                  size="small"
+                  size="medium"
                 />
               </Grid>
-              <Grid item xs={6}>
+              <Grid item xs={4}>
                 <TextField
                   id="MasteryInput"
                   label={t("Mastery")}
-                  inputProps={{ step: 0.01 }}
+                  style={{ textAlignLast: "center" }}
+                  inputProps={{
+                    step: 0.01,
+                    style: { fontSize: "1.2rem", textAlignLast: "center" },
+                  }}
+                  InputProps={{
+                    style: { fontSize: "1.2rem", textAlignLast: "center" },
+                  }}
                   type="number"
                   value={mastery}
                   onChange={handleMastery}
                   variant="outlined"
-                  size="small"
+                  size="medium"
                 />
               </Grid>
-              <Grid item xs={6}>
+              <Grid item xs={4}>
                 <TextField
                   id="VersatilityInput"
                   label={t("Versatility")}
-                  inputProps={{ step: 0.01 }}
+                  style={{ textAlignLast: "center" }}
+                  inputProps={{
+                    step: 0.01,
+                    style: { fontSize: "1.2rem", textAlignLast: "center" },
+                  }}
+                  InputProps={{
+                    style: { fontSize: "1.2rem", textAlignLast: "center" },
+                  }}
                   type="number"
                   value={versatility}
                   onChange={handleVers}
                   variant="outlined"
-                  size="small"
+                  size="medium"
                 />
               </Grid>
-              <Grid item xs={6}>
+              <Grid item xs={4}>
                 <TextField
                   id="LeechInput"
                   label={t("Leech")}
-                  inputProps={{ step: 0.01 }}
+                  style={{ textAlignLast: "center" }}
+                  inputProps={{
+                    step: 0.01,
+                    style: { fontSize: "1.2rem", textAlignLast: "center" },
+                  }}
+                  InputProps={{
+                    style: { fontSize: "1.2rem", textAlignLast: "center" },
+                  }}
                   type="number"
                   value={leech}
                   onChange={handleLeech}
                   variant="outlined"
-                  size="small"
+                  size="medium"
                 />
               </Grid>
             </Grid>
