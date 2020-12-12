@@ -426,7 +426,7 @@
       "name": "Earthen Harmony",
       "slot": "Chest or Back",
       "desc": "Earth Shield healing is increased by 150% if your earth shield target is below 75% health, and healing wave adds a stack of Earth Shield to your target.",
-      "droploc": "Sanguine Depths, General Kaal"
+      "droploc": "General Kaal, Sanguine Depths"
     },
     "Jonat's Natural Focus": {
       "name": "Jonat's Natural Focus",
@@ -444,7 +444,7 @@
       "name": "Ancestral Reminder",
       "slot": "Wrist or Finger",
       "desc": "Heroism / Bloodlust lasts an extra 20s on you, and you gain an extra 10% haste from it's effect.",
-      "droploc": "Castle Nathria, Stone Legion Generals"
+      "droploc": "Stone Legion Generals, Castle Nathria"
     },
     "Chains of Devastation": {
       "name": "Chains of Devastation",
@@ -462,7 +462,7 @@
       "name": "Spiritwalker's Tidal Totem",
       "slot": "Legs or Back",
       "desc": "After using Mana Tide Totem, the cast time of Healing Wave and Chain Heal is reduced by 50% and the mana cost by 25% for 10s.",
-      "droploc": "Castle Nathria, Huntsman Altimor"
+      "droploc": "Huntsman Altimor, Castle Nathria"
     },
 
     "MonkLegendariesComment": "MonkLegendariesComment",
