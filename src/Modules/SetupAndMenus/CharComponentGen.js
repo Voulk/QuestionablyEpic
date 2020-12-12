@@ -1,48 +1,41 @@
 import React from "react";
 import Card from "@material-ui/core/Card";
-import CardContent from "@material-ui/core/CardContent";
-import CardActionArea from "@material-ui/core/CardActionArea";
-import Typography from "@material-ui/core/Typography";
-import Avatar from "@material-ui/core/Avatar";
+import {
+  Paper,
+  Button,
+  Box,
+  CardContent,
+  CardActionArea,
+  Divider,
+  Typography,
+  Avatar,
+  Grid,
+  TextField,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  AppBar,
+  Tabs,
+  Tab,
+  Select,
+  MenuItem,
+  FormControl,
+  InputLabel,
+} from "@material-ui/core";
 import { classColoursJS } from "../CooldownPlanner/Functions/ClassColourFunctions.js";
-import Grid from "@material-ui/core/Grid";
-import Divider from "@material-ui/core/Divider";
 import classicons from "../CooldownPlanner/Functions/IconFunctions/ClassIcons.js";
-
 import {
   createMuiTheme,
   makeStyles,
   ThemeProvider,
 } from "@material-ui/core/styles";
-
 import { red } from "@material-ui/core/colors";
-
-import Button from "@material-ui/core/Button";
-import TextField from "@material-ui/core/TextField";
-import Dialog from "@material-ui/core/Dialog";
-import DialogActions from "@material-ui/core/DialogActions";
-import DialogContent from "@material-ui/core/DialogContent";
-import DialogContentText from "@material-ui/core/DialogContentText";
-import DialogTitle from "@material-ui/core/DialogTitle";
-
 import PropTypes from "prop-types";
-import AppBar from "@material-ui/core/AppBar";
-import Tabs from "@material-ui/core/Tabs";
-import Tab from "@material-ui/core/Tab";
-import Box from "@material-ui/core/Box";
-
 import Autocomplete from "@material-ui/lab/Autocomplete";
 import { serverList, classRaceList } from "../CooldownPlanner/Data/Data";
-
-import Select from "@material-ui/core/Select";
-import MenuItem from "@material-ui/core/MenuItem";
-import FormControl from "@material-ui/core/FormControl";
-import InputLabel from "@material-ui/core/InputLabel";
 import { useTranslation } from "react-i18next";
-
 import raceIcons from "../CooldownPlanner/Functions/IconFunctions/RaceIcons";
 import classIcons from "../CooldownPlanner/Functions/IconFunctions/ClassIcons";
-
 import { STAT } from "../Engine/STAT";
 
 function TabPanel(props) {
@@ -233,7 +226,7 @@ export default function CharCards(props) {
   const handleDelete = () => {
     props.delChar(player.uniqueHash);
     handleClose();
-  }
+  };
 
   // TODO
   const handleUpdateData = () => {
@@ -266,7 +259,6 @@ export default function CharCards(props) {
 
   const rootClassName =
     classes.root + " " + (props.isActive ? classes.activeChar : "");
-  //alert(rootClassName);
 
   const regions = ["CN", "US", "TW", "EU"];
 
@@ -336,7 +328,6 @@ export default function CharCards(props) {
               <Grid item xs={9}>
                 <TextField
                   fullWidth
-                  // className={classes.textInput}
                   id="standard-basic"
                   label="Character Name"
                   value={charName}
@@ -454,65 +445,131 @@ export default function CharCards(props) {
               spacing={1}
               style={{ width: 440 }}
             >
-              <Grid item xs={6}>
+              <Grid item xs={12}>
+                <Paper elevation={0} style={{ border: "1px", padding: 10 }}>
+                  <Typography
+                    style={{ color: "limegreen" }}
+                    align="left"
+                    variant="subtitle2"
+                  >
+                    {t("CharacterCreator.StatMessage")}
+                  </Typography>
+                </Paper>
+              </Grid>
+              <Grid item xs={4}>
                 <TextField
                   id="IntellectInput"
+                  type="number"
                   label={t("Intellect")}
+                  style={{ textAlignLast: "center" }}
+                  inputProps={{
+                    step: 0.01,
+                    style: { fontSize: "1.2rem", textAlignLast: "center" },
+                  }}
+                  InputProps={{
+                    style: { fontSize: "1.2rem", textAlignLast: "center" },
+                  }}
                   value={intellect}
                   onChange={handleIntellect}
                   variant="outlined"
-                  size="small"
+                  size="medium"
                   disabled={true}
                 />
               </Grid>
-              <Grid item xs={6}>
+              <Grid item xs={4}>
                 <TextField
                   id="CriticalInput"
                   label={t("Crit")}
+                  style={{ textAlignLast: "center" }}
+                  type="text"
+                  inputProps={{
+                    step: 0.01,
+                    style: { fontSize: "1.2rem", textAlignLast: "center" },
+                  }}
+                  InputProps={{
+                    style: { fontSize: "1.2rem", textAlignLast: "center" },
+                  }}
+                  type="number"
                   value={critical}
                   onChange={handleCrit}
                   variant="outlined"
-                  size="small"
+                  size="medium"
                 />
               </Grid>
-              <Grid item xs={6}>
+              <Grid item xs={4}>
                 <TextField
                   id="HasteInput"
                   label={t("Haste")}
+                  style={{ textAlignLast: "center" }}
+                  inputProps={{
+                    step: 0.01,
+                    style: { fontSize: "1.2rem", textAlignLast: "center" },
+                  }}
+                  InputProps={{
+                    style: { fontSize: "1.2rem", textAlignLast: "center" },
+                  }}
+                  type="number"
                   value={haste}
                   onChange={handleHaste}
                   variant="outlined"
-                  size="small"
+                  size="medium"
                 />
               </Grid>
-              <Grid item xs={6}>
+              <Grid item xs={4}>
                 <TextField
                   id="MasteryInput"
                   label={t("Mastery")}
+                  style={{ textAlignLast: "center" }}
+                  inputProps={{
+                    step: 0.01,
+                    style: { fontSize: "1.2rem", textAlignLast: "center" },
+                  }}
+                  InputProps={{
+                    style: { fontSize: "1.2rem", textAlignLast: "center" },
+                  }}
+                  type="number"
                   value={mastery}
                   onChange={handleMastery}
                   variant="outlined"
-                  size="small"
+                  size="medium"
                 />
               </Grid>
-              <Grid item xs={6}>
+              <Grid item xs={4}>
                 <TextField
                   id="VersatilityInput"
                   label={t("Versatility")}
+                  style={{ textAlignLast: "center" }}
+                  inputProps={{
+                    step: 0.01,
+                    style: { fontSize: "1.2rem", textAlignLast: "center" },
+                  }}
+                  InputProps={{
+                    style: { fontSize: "1.2rem", textAlignLast: "center" },
+                  }}
+                  type="number"
                   value={versatility}
                   onChange={handleVers}
                   variant="outlined"
-                  size="small"
+                  size="medium"
                 />
               </Grid>
-              <Grid item xs={6}>
+              <Grid item xs={4}>
                 <TextField
                   id="LeechInput"
                   label={t("Leech")}
+                  style={{ textAlignLast: "center" }}
+                  inputProps={{
+                    step: 0.01,
+                    style: { fontSize: "1.2rem", textAlignLast: "center" },
+                  }}
+                  InputProps={{
+                    style: { fontSize: "1.2rem", textAlignLast: "center" },
+                  }}
+                  type="number"
                   value={leech}
                   onChange={handleLeech}
                   variant="outlined"
-                  size="small"
+                  size="medium"
                 />
               </Grid>
             </Grid>
