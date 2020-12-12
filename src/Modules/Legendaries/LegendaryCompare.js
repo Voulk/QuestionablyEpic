@@ -1,11 +1,12 @@
-import React, {useEffect} from "react";
+import React, { useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import "../SetupAndMenus/QEMainMenu.css";
 import LegendaryObject from "./LegendaryObject";
 import "./Legendaries.css";
 import { useTranslation } from "react-i18next";
-import {getEffectValue} from '../Engine/EffectFormulas/EffectEngine'
-import ReactGA from 'react-ga';
+import { getEffectValue } from "../Engine/EffectFormulas/EffectEngine";
+import ReactGA from "react-ga";
+import { Grid, Typography } from "@material-ui/core";
 // This is all shitty boilerplate code that'll be replaced. Do not copy.
 // const useStyles = makeStyles((theme) => ({
 //   root: {
@@ -19,10 +20,13 @@ import ReactGA from 'react-ga';
 //   },
 // }));
 
-
 const createLegendary = (legendaryName, container, spec, pl, contentType) => {
   let lego = new Legendary(legendaryName);
-  lego.bonus_stats = getEffectValue({name: lego.name, type: 'spec legendary'}, pl, contentType);
+  lego.bonus_stats = getEffectValue(
+    { name: lego.name, type: "spec legendary" },
+    pl,
+    contentType
+  );
 
   container.push(lego);
 };
@@ -30,8 +34,8 @@ const createLegendary = (legendaryName, container, spec, pl, contentType) => {
 const fillLegendaries = (container, spec, pl, contentType) => {
   //container = [];
 
-  // These are used in the legendary snapshot module. 
-  
+  // These are used in the legendary snapshot module.
+
   let choices = {
     "Restoration Druid": [
       "Vision of Unending Growth",
@@ -51,12 +55,13 @@ const fillLegendaries = (container, spec, pl, contentType) => {
       "Shadowbreaker, Dawn of the Sun",
       "Shock Barrier",
       "The Mad Paragon",
+      "Relentless Inquisitor",
     ],
     "Restoration Shaman": [
       "Earthen Harmony",
       "Jonat's Natural Focus",
       "Primal Tide Core",
-      "Spiritwalkers Tidal Totem",
+      "Spiritwalker's Tidal Totem",
       "Ancestral Reminder",
       "Chains of Devastation",
       "Deeply Rooted Elements",
@@ -71,7 +76,7 @@ const fillLegendaries = (container, spec, pl, contentType) => {
       "Twins of the Sun Priestess",
       "Vault of Heavens",
     ],
-    "Holy Priest": ["HolyPriestLegendary1",
+    "Holy Priest": [
       "Divine Image",
       "Flash Concentration",
       "Harmonious Apparatus",
@@ -80,9 +85,20 @@ const fillLegendaries = (container, spec, pl, contentType) => {
       "Measured Contemplation",
       "Twins of the Sun Priestess",
       "Vault of Heavens",
-  ], 
-  "Mistweaver Monk": [
-  ]
+    ],
+    "Mistweaver Monk": [
+      "Escape from Reality",
+      "Invoker's Delight",
+      "Roll Out",
+      "Fatal Touch",
+      "Ancient Teachings of the Monastery",
+      "Yu'lon's Whisper",
+      "Clouded Focus",
+      "Tear of Morning",
+      "Vitality Sacrifice",
+      "Sephuz's Proclamation",
+      "Echo of Eonar",
+    ],
     /*
   "Mistweaver Monk": [
     "Ancient Teachings of the Monastery",
@@ -92,7 +108,7 @@ const fillLegendaries = (container, spec, pl, contentType) => {
     "Invoker's Delight",
   ], */
   };
-  
+
   /*
  let choices = {
   "Restoration Druid": [
@@ -196,16 +212,24 @@ export default function LegendaryCompare(props) {
       <div
         style={{
           margin: "auto",
-          width: "55%",
+          width: "70%",
           justifyContent: "space-between",
           display: "block",
         }}
       >
-        <p className="headers">{t("LegendaryCompareTitle")}</p>
-
-        {legendaryList.map((item, index) => (
-          <LegendaryObject key={index} item={item} />
-        ))}
+        <Typography
+          color="primary"
+          variant="h4"
+          align="center"
+          style={{ paddingBottom: 16 }}
+        >
+          {t("LegendaryCompareTitle")}
+        </Typography>
+        <Grid container spacing={1} direction="row">
+          {legendaryList.map((item, index) => (
+            <LegendaryObject key={index} item={item} />
+          ))}
+        </Grid>
       </div>
     </div>
   );
