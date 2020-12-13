@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import axios from "axios";
 import { useTranslation } from "react-i18next";
 import {
@@ -176,9 +176,15 @@ export default function QELogImport(props) {
       .catch(function (error) {
         console.log(error);
       });
-    console.log(healers);
+    //console.log(healers);
     setHealerDataDetailed(healers);
+
+    return healers;
   };
+
+  useEffect(() => {
+    console.log(healerDataDetailed);
+  }, [healerDataDetailed]);
 
   const importCastsLogDataQE = async (
     starttime,
@@ -247,7 +253,7 @@ export default function QELogImport(props) {
   };
 
   const importLogDataQE = async (starttime, endtime, reportID) => {
-    console.log("Importing Log Data");
+    //console.log("Importing Log Data");
     // Map the Healer Table for the currently selected characters specialization
     const healers = await importHealerNamesFromLogsQE(
       starttime,
@@ -259,25 +265,23 @@ export default function QELogImport(props) {
     // Import summary Info from the Logs Summary table.This contains our data for Gear, Stats, Conduits, Soulbinds etc.
     const summary = await importSummaryData(starttime, endtime, reportID);
     // Import all the damage-taken from the log for friendly targets.
-    const damage = await importDamageLogData(starttime, endtime, reportID);
+    // const damage = await importDamageLogData(starttime, endtime, reportID);
     // Import the log data for Casts for each healer in the log.
-    const casts = await importCastsLogDataQE(
-      starttime,
-      endtime,
-      reportID,
-      healers.map((key) => key.id)
-    );
+    // const casts = await importCastsLogDataQE(
+    //   starttime,
+    //   endtime,
+    //   reportID,
+    //   healers.map((key) => key.id)
+    // );
     // Set all the returned data to state
+    let summaryReturned = summary;
     setSummaryData(summary);
-    setDamageData(damage);
-    setCastData(casts);
+    // setDamageData(damage);
+    // setCastData(casts);
     // Stuff
-    console.log(healerDataDetailed);
-    convertLogSpellOutput(props.player, healerDataDetailed, timeend - time);
-    convertLogStatOutput(props.player, summaryData, currentPlayerID);
+    // convertLogSpellOutput(props.player, healerDataDetailed, timeend - time);
+    // convertLogStatOutput(props.player, summaryReturned, currentPlayerID);
   };
-
-
 
   // Handler to set PLayer ID when player selected from dropdown
   const playerSelectedHandler = (e) => {
@@ -308,9 +312,15 @@ export default function QELogImport(props) {
   };
 
   // On submit button click returns detailed data on the player, closes the dialogue and Activates the Confirmation Snackbar
-  const handleSubmit = () => {
-    importHealerDetailedLogDataQE(time, timeend, reportId, currentPlayerID);
-    convertLogSpellOutput(props.player, healerDataDetailed, timeend - time);
+  const handleSubmit = async () => {
+    let returnedHealerDetailed = await importHealerDetailedLogDataQE(
+      time,
+      timeend,
+      reportId,
+      currentPlayerID
+    );
+    convertLogSpellOutput(props.player, returnedHealerDetailed, timeend - time);
+    convertLogStatOutput(props.player, summaryData, currentPlayerID);
     handleClose();
     props.logImportSnack();
     setReportId("");
@@ -329,7 +339,7 @@ export default function QELogImport(props) {
         style={{ whiteSpace: "nowrap" }}
         onClick={handleClickOpen}
         //disabled={characterCount === 0}
-        disabled={true}
+        // disabled={true}
       >
         {t("QeHeader.InsertLogLabel")}
       </Button>

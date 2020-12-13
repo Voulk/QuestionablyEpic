@@ -24,11 +24,12 @@ class PlayerChars  {
         // We can't load our players in directly because if we don't instantiate new Player objects they won't have the necessary functions
         // that we need for each module. 
         if (playerChars.length !== 0) {
-            
+            let index = 0;
             playerChars.forEach(function(player) {
                 
                 // This could be changed later if we end up storing more information about a character. Say, the most recent log they were in.
-                charArray.push(new Player(player.charName, player.spec, player.charID, player.region, player.realm, player.race, player.statWeights))
+                charArray.push(new Player(player.charName, player.spec, index, player.region, player.realm, player.race, player.statWeights))
+                index += 1;
             }) 
         }
         else {
@@ -95,10 +96,18 @@ class PlayerChars  {
     }
 
     delSpecificChar = (unique) => {
+        let delIndex = 0;
         let tempArray =  this.allChar.filter(function(char) {
             return char.uniqueHash !== unique;
         });
+        delIndex = this.allChar.findIndex(player => player.uniqueHash === unique);
+        
+        for (var i = this.allChar.length-1; i > delIndex; i--) {
+            this.allChar[i].charID -= 1;
+        }
         this.allChar = tempArray;
+
+        
     }
 
 

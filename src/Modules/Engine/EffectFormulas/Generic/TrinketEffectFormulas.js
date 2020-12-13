@@ -6,6 +6,7 @@ import SPEC from '../../SPECS';
 // TODO: Write proper comments. See Lingering Sunmote for an example.
 export function getTrinketEffect(effectName, player, contentType, itemLevel) {
     let bonus_stats = {}
+    console.log("Getting trinket effect: " + effectName);
 
     // Trinket Data holds a trinkets actual power values. Formulas here, data there.
     let activeTrinket = trinket_data.find(trinket => trinket.name === effectName);
@@ -79,14 +80,6 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel) {
         let effect = activeTrinket.effects[0];
 
         bonus_stats.haste = getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.duration * effect.stacks / effect.cooldown;
-    }
-    else if (effectName === "Consumptive Infusion") {
-        // I don't really know what to do with this yet. It has some value, but probably not much of it.
-
-    }
-    else if (effectName === "Incrutable Quantum Device") {
-        // TODO.
-
     }
     else if (effectName === "Siphoning Phylactery Shard") {
         // Test
@@ -211,9 +204,22 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel) {
 
         bonus_stats.hps = hotHPS + absorbHPS;
       
+    }
+    
+    else if (effectName === "Consumptive Infusion") {
+        let effect = activeTrinket.effects[0];
+
+        bonus_stats.leech = getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.efficiency * effect.duration / effect.cooldown;
+        console.log("BONUS LEECH: " + bonus_stats.leech + ". Raw: " + getProcessedValue(effect.coefficient, effect.table, itemLevel));
+        //console.log("INSIGNIA Int:" + bonus_stats.intellect + ". Proc: " + getProcessedValue(effect.coefficient, effect.table, itemLevel) + ". Uptime: " + convertPPMToUptime(effect.ppm, effect.duration))
 
     }
-
+    else if (effectName === "Tuft of Smoldering Plumage") {
+        let effect = activeTrinket.effects[0];
+        bonus_stats.hps =  getProcessedValue(effect.coefficient, effect.table, itemLevel, effect.efficiency) / effect.cooldown * player.getStatMultiplier('CRITVERS');
+        console.log("Tuft: " + bonus_stats.hps);
+    }
+    
 
     /*
     for (const effect of activeTrinket.effects) {

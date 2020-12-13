@@ -75,7 +75,7 @@ export const trinket_data = [
                 benefit: 'hps', 
                 coefficient: 467.66378, // This represents the upper quartile of the given cards.  
                 table: -8, 
-                efficiency: 0.62, 
+                efficiency: 0.55, 
                 cooldown: 90, 
             }
         ]
@@ -303,7 +303,33 @@ export const trinket_data = [
                 efficiency: 0.9, // It's incredibly likely that your priority target will drop below 35% over a two minute period.
             },
         ]
-    }
+    },
+    {
+        name: "Consumptive Infusion",
+        effects: [
+            {   // HoT Portion
+                coefficient: 1.65,
+                table: -7,  
+                efficiency: 0.42,
+                duration: 10, // Falls off when the target falls below 35% health. Efficiency in this case is the HoT uptime.
+                cooldown: 30, // 120 / 3. This scales with haste, which will be applied during the trinket formula.
+            },
+        ]
+    },
+    {
+        name: 'Tuft of Smoldering Plumage', 
+        effects: [
+            { 
+                coefficient: 326.7931,  
+                table: -8, // TODO: Test for Crit / Vers scaling.
+                efficiency: 0.82, 
+                // This one is very awkward. You're using it as a Guardian Spirit effect more often than using it because the heal is useful. 
+                // A massive heal on an injured target has massive life-saving potential, but I'm not sure how well it can be modelled except
+                // to assume the heal will have quite a high efficiency in dangerous scenarios.
+                cooldown: 120, 
+            }
+        ]
+    }, 
     
     
 ]

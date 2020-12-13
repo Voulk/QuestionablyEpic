@@ -386,17 +386,19 @@ class Player {
         
     }
 
-    setSpellPattern = (contentType, casts) => {
-        this.castPattern[contentType] = casts;
+    setSpellPattern = (castPat) => {
+        console.log(castPat);
+        if (castPat !== {}) this.castPattern["Raid"] = castPat;
+        
     }
 
     setActiveStats = (stats) => {
        
-        this.activeStats = stats;
+        if (Object.keys(stats).length > 0) this.activeStats = stats;
     }
 
     setFightInfo = (info) => {
-        this.fightInfo = info;
+        if (Object.keys(info).length > 0) this.fightInfo = info;
     }
 
 
@@ -450,6 +452,8 @@ class Player {
                 "Dungeon": {
                     "Rejuvenation": [17, 181000, 0.2909, 400],
                     "Wild Growth": [5, 154400, 0.2472, 1402],
+                    "Regrowth": [11, 105200, 0.000, 545],
+                    "Lifebloom": [7, 50400, 0.000, 256],
                 }
             }
 
