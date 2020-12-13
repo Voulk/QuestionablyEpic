@@ -14,6 +14,7 @@ const useStyles = makeStyles({
   root: {
     minWidth: 275,
     minHeight: 200,
+    borderColor: 'goldenrod',
   },
   content: {
     height: 150,
@@ -44,6 +45,8 @@ const legendaryImages = {
   "Maraads Dying Breath": require("../../Images/Legendaries/MaraadsDyingBreath.jpg"),
   "Shadowbreaker, Dawn of the Sun": require("../../Images/Legendaries/ShadowbreakerDawnOfTheSun.jpg"),
   "Shock Barrier": require("../../Images/Legendaries/ShockBarrier.jpg"),
+  "The Mad Paragon": require("../../Images/Legendaries/ability_paladin_conviction.jpg"),
+  "Relentless Inquisitor": require("../../Images/Legendaries/spell_holy_divinepurpose.jpg"),
 
   // Monk
   "Escape from Reality": require("../../Images/Legendaries/EscapeFromReality.jpg"),
@@ -153,16 +156,16 @@ export default function LegendaryObject(props) {
               </CardContent>
             </Grid>
             <Grid item xs={12}>
-              <CardContent style={{ padding: 0, height: 20 }}>
+              <CardContent style={{ padding: 0, height: 20}}>
                 <Typography
                   align="center"
                   variant="caption"
                   component="p"
-                  style={{ lineHeight: 1.1 }}
+                  style={{ lineHeight: 1.1, fontSize: '16px'}}
                 >
                   HPS: {hpsString}
                   <br />
-                  Expected DPS: Coming Soon
+                  
                   {/* {item.bonus_stats.DPS} */}
                 </Typography>
               </CardContent>

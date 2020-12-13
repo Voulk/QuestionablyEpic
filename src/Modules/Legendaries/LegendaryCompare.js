@@ -47,7 +47,6 @@ const fillLegendaries = (container, spec, pl, contentType) => {
       "Memory of the Mother Tree",
     ],
     "Holy Paladin": [
-      "Of Dusk and Dawn",
       "Vanguards Momentum",
       "The Magistrates Judgment",
       "Inflorescence of the Sunwell",
