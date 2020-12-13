@@ -452,6 +452,8 @@ class Player {
                 "Dungeon": {
                     "Rejuvenation": [17, 181000, 0.2909, 400],
                     "Wild Growth": [5, 154400, 0.2472, 1402],
+                    "Regrowth": [11, 105200, 0.000, 545],
+                    "Lifebloom": [7, 50400, 0.000, 256],
                 }
             }
 

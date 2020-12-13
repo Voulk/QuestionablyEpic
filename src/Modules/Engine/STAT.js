@@ -21,7 +21,7 @@ export const BASESTAT = {
   CRIT: 0.05,
   MASTERY: {
     "Restoration Druid": 0.04,
-    "Mistweaver Monk": 1,
+    "Mistweaver Monk": 0.336,
     "Holy Paladin": 0.12,
     "Holy Priest": 0.1,
     "Discipline Priest": 0.108,

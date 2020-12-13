@@ -503,7 +503,7 @@
     "Yu'lon's Whisper": {
       "name": "Yu'lon's Whisper",
       "slot": "Shoulder or Finger",
-      "desc": "Activating Thunder Focus Tea causes you to exhale the breath of Yu'lon, healing up to 6 allies within 15 yards for [(60% of Spell power) * (3)] over 2 sec.",
+      "desc": "Activating Thunder Focus Tea causes you to exhale the breath of Yu'lon, healing up to 6 allies within 15 yards over 2 sec.",
       "droploc": "Torghast, Fracture Chambers, Layer 3+"
     },
     "Clouded Focus": {
@@ -533,7 +533,7 @@
     "Echo of Eonar": {
       "name": "Echo of Eonar",
       "slot": "Waist, Wrist, or Finger",
-      "desc": "Approximately 1 procs per minute. Your spells and abilities have a low chance to summon a spiritual familiar to your side, increasing your damage by 10%, healing by 10% or damage reduction by 10% for 10 sec based on your role. This effect is duplicated on up to 3 allies at 50% effectiveness, preferring allies with the same role.",
+      "desc": "Your spells and abilities have a low chance to summon a familiar to your side, increasing your healing by 10% for 10s. This effect is duplicated on up to 3 allies at 50% effectiveness, preferring allies with the same role.",
       "droploc": "Wild Hunt Reputation, Revered"
     }
 
