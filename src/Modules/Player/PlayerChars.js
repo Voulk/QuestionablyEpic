@@ -96,10 +96,18 @@ class PlayerChars  {
     }
 
     delSpecificChar = (unique) => {
+        let delIndex = 0;
         let tempArray =  this.allChar.filter(function(char) {
             return char.uniqueHash !== unique;
         });
+        delIndex = this.allChar.findIndex(player => player.uniqueHash === unique);
+        
+        for (var i = this.allChar.length-1; i > delIndex; i--) {
+            this.allChar[i].charID -= 1;
+        }
         this.allChar = tempArray;
+
+        
     }
 
 

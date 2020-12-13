@@ -61,6 +61,14 @@ function TopGearReport(props) {
         break;
     }
   };
+
+  const checkResult = (result) => {  
+    return ((result !== 'undefined' && result) && 
+            (result.itemSet.hardScore && result.itemSet.hardScore > 1) && 
+            (result.itemSet.setStats) &&
+            (result.itemSet.itemList));
+  }
+
   let resultValid = true;
   
   let result = props.result;
@@ -71,12 +79,12 @@ function TopGearReport(props) {
   let statList = {};
   console.log(differentials);
 
-  if (result !== null) {
+  if (checkResult(result)) {
     topSet = result.itemSet;
     enchants = topSet.enchantBreakdown;
     differentials = result.differentials;
-    itemList = topSet !== null && "itemList" in topSet ? topSet.itemList : [];
-    statList = topSet !== null && "setStats" in topSet ? topSet.setStats : {};
+    itemList = topSet.itemList;
+    statList = topSet.setStats;
   }
   else {
     resultValid = false;
@@ -369,7 +377,7 @@ function TopGearReport(props) {
         </Grid>
       </Grid>
       : 
-      <Typography style={{textAlign: 'center', color: 'white'}}>Woops, seems you've run into an error. Try going back to the main menu and trying again.</Typography>}
+      <Typography style={{textAlign: 'center', color: 'white'}}>So sorry, seems you've run into an error. Try going back to the main menu and trying again.</Typography>}
     </div>
   );
 }
