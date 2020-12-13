@@ -151,6 +151,18 @@ export const healerCooldownsDetailed = [
     duration: 1,
     cooldown: 720,
   },
+    {
+    name: "Rapture",
+    guid: 47536,
+    duration: 8,
+    cooldown: 90,
+  },
+  {
+    name: "Spirit Shell,
+    guid: 109964,
+    duration: 10,
+    cooldown: 60,
+  },
   // --------------Covenant Abilities---------------
   // {
   //   name: "Boon of the Ascended",
