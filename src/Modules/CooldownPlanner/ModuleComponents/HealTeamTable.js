@@ -341,6 +341,20 @@ export default function HealTeam(props) {
                 resolve();
               }, 1000);
             }),
+          onBulkUpdate: (changes) =>
+            new Promise((resolve, reject) => {
+              setTimeout(() => {
+                console.log(changes);
+
+                const dataUpdate = [...changes.oldData];
+                const index = changes.oldData.tableData.id;
+                dataUpdate[changes.oldData.tableData.id] = changes.newData;
+                setData([...dataUpdate]);
+                updateStorage([...dataUpdate]);
+
+                resolve();
+              }, 1000);
+            }),
         }}
       />
     </ThemeProvider>

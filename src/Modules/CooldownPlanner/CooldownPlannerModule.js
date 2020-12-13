@@ -232,7 +232,12 @@ class HolyDiver extends Component {
     let spinnershow = this.state.loadingcheck;
 
     return (
-      <div>
+      <div
+        style={{
+          // backgroundColor: "#313131",
+          marginTop: 32,
+        }}
+      >
         <div style={{ margin: "20px 12% 20px 12%" }}>
           {/* Main Grid for the Compoonent, this should control the base spacing of all the base components,
               any Grid Components within this with the item prop will have spacing  */}
@@ -637,6 +642,7 @@ class HolyDiver extends Component {
               <Grid item xs={12} sm={12} md={12} lg={5} xl={5} padding={1}>
                 <ERTTable data={this.state.ertList} />
               </Grid>
+              <Grid item xs={12} style={{ height: 350 }} />
             </Grid>
           </Grid>
         </div>
