@@ -51,7 +51,7 @@ export default function TopSetStatsPanel(props) {
             align="center"
             color="primary"
           >
-            Stats
+            Average Stats (In combat, includes procs)
           </Typography>
           <Divider variant="middle" />
         </Grid>
