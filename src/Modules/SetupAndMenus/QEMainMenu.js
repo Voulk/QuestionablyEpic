@@ -109,7 +109,7 @@ export default function QEMainMenu(props) {
                 variant="subtitle1"
                 // gutterBottom
               >
-                Log Entry has been temporarily disabled while a bug is investigated. Sorry about the inconvenience.
+                Log Entry has been temporarily disabled while a bug is investigated. Legendary effects are not yet implemented for Mistweaver and the two priest specs.
               </Typography>
             </Paper>
           </Grid>
@@ -184,7 +184,7 @@ export default function QEMainMenu(props) {
           )}
         </Grid>
 
-        <p className="headers" style={{fontSize: "12px"}}>QE Live Update 11. Last Updated 10 December.</p>
+        <p className="headers" style={{fontSize: "12px"}}>QE Live Update 11. Last Updated 12 December.</p>
         
       </div>
     </div>
