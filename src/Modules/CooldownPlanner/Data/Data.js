@@ -158,7 +158,7 @@ export const healerCooldownsDetailed = [
     cooldown: 90,
   },
   {
-    name: "Spirit Shell,
+    name: "Spirit Shell",
     guid: 109964,
     duration: 10,
     cooldown: 60,
