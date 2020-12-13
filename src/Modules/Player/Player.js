@@ -406,15 +406,15 @@ class Player {
     setupDefaults = (spec) => {
         if (spec === SPEC.RESTODRUID) {
             this.fightInfo = {
-                hps: 6000,
+                hps: 5500,
                 rawhps: 9420,
-                fightLength: 193,
+                fightLength: 340,
             }
             this.activeStats = {
                 intellect: 1420,
-                haste: 500,
+                haste: 690,
                 crit: 280,
-                mastery: 270,
+                mastery: 230,
                 versatility: 220,
                 stamina: 1400,
     
@@ -443,17 +443,17 @@ class Player {
             this.castPattern =
             // CASTS, HEALING, HEALINGPERC, HPS
             {   "Raid": {
-                    "Rejuvenation": [46, 329400, 0.2909, 1706],
-                    "Wild Growth": [7, 346400, 0.2472, 1794],
-                    "Regrowth": [11, 105200, 0.000, 545],
-                    "Lifebloom": [7, 50400, 0.000, 256],
+                    "Rejuvenation": [100, 455000, 0.0, 1433],
+                    "Wild Growth": [19, 449400, 0.0, 1323],
+                    "Regrowth": [29, 194225, 0.000, 571],
+                    "Lifebloom": [17, 89150, 0.000, 262],
   
             },
                 "Dungeon": {
-                    "Rejuvenation": [17, 181000, 0.2909, 400],
-                    "Wild Growth": [5, 154400, 0.2472, 1402],
+                    "Rejuvenation": [25, 113750, 0.0, 324],
+                    "Wild Growth": [17, 395000, 0.2472, 1402],
                     "Regrowth": [11, 105200, 0.000, 545],
-                    "Lifebloom": [7, 50400, 0.000, 256],
+                    "Lifebloom": [17, 89150, 0.000, 262],
                 }
             }
 
@@ -461,7 +461,7 @@ class Player {
         else if (spec === SPEC.HOLYPALADIN) {
             
             this.fightInfo = {
-                hps: 6000,
+                hps: 5500,
                 rawhps: 9420,
                 fightLength: 180,
             }
@@ -515,7 +515,7 @@ class Player {
             }
         } else if (spec === SPEC.RESTOSHAMAN) { // all of this needs a proper input once
             this.fightInfo = {
-                hps: 6500,
+                hps: 5500,
                 rawhps: 7000,
                 fightLength: 465,
             }
@@ -571,7 +571,7 @@ class Player {
         }
         else if (spec === SPEC.DISCPRIEST) {
             this.fightInfo = {
-                hps: 6000,
+                hps: 5500,
                 rawhps: 9420,
                 fightLength: 193,
             }
@@ -619,7 +619,7 @@ class Player {
         }
         else if (spec === SPEC.HOLYPRIEST) {
             this.fightInfo = {
-                hps: 6000,
+                hps: 5500,
                 rawhps: 9420,
                 fightLength: 193,
             }
@@ -667,7 +667,7 @@ class Player {
         }
         else if (spec === SPEC.MISTWEAVERMONK) {
             this.fightInfo = {
-                hps: 6000,
+                hps: 5500,
                 rawhps: 9420,
                 fightLength: 193,
             }
