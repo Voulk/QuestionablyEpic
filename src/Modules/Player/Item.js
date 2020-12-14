@@ -24,6 +24,7 @@ class Item {
   tertiary = "";
   effect = "";
   uniqueHash = ""; // Technically not a hash.
+  uniqueEquip = "" // Unique Equip type if relevant. 
   offhandID = 0; // Only used for correctly translating weapon combos.
   active = false;
   overriddenName = false; // If true, the effect will be used as the items name instead of its ID. So far this is just used for legendaries. 

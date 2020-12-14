@@ -224,7 +224,14 @@ function buildDifferential(itemSet, primeSet) {
 }
 
 function pruneItems(itemSets) {
-    return itemSets.slice(0, softSlice);
+    let temp = itemSets.filter(function(set) {
+
+        const uniques = set.uniques;
+
+        return (!uniques.legendaries || uniques.legendaries <= 1);
+    });
+
+    return temp.slice(0, softSlice);
 
 }
 
