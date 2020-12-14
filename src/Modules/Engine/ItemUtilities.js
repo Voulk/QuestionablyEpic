@@ -194,7 +194,8 @@ function getItemCat(slot) {
     case "1H Weapon":
       return 3;
     default:
-      //console.error("Item Cat going to Default" + slot);
+      console.error("Item Cat going to Default" + slot);
+      
       return 3;
       
     // Raise error.
@@ -229,6 +230,7 @@ export function buildWepCombos(player, active=false) {
 
 
   console.log("MH: " + main_hands.length + ". OH: " + off_hands.length);
+  
 
   for (let i = 0; i < main_hands.length; i++) {
     // Some say j is the best variable for a nested loop, but are they right?

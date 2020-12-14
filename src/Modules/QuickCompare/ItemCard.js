@@ -116,7 +116,7 @@ export default function ItemCard(props) {
       <div style={{ display: "inline" }}> / {props.item.tertiary} </div>
     ) : null;
 
-  console.log(props.item);
+  //console.log(props.item);
 
   return (
     <Grid item xs={12} sm={6} md={6} lg={4} xl={4}>

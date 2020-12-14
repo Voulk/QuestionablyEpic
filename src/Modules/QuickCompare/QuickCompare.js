@@ -302,6 +302,7 @@ export default function QuickCompare(props) {
 
   const wepCombos = buildWepCombos(props.pl);
 
+
   return (
     <div
       style={{
