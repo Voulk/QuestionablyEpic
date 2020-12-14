@@ -38,7 +38,11 @@ export const damageExclusions = [
   // Shadow Mend - Priest
   186263,
   // Shadow Word: Death - Priest
-  32379,
+  32409,
+  // Splintered Heart of Al'ar
+  344909,
+  // Soul Ignition
+  345211,
 ];
 
 export const paladinCooldownNames = [
@@ -151,7 +155,7 @@ export const healerCooldownsDetailed = [
     duration: 1,
     cooldown: 720,
   },
-    {
+  {
     name: "Rapture",
     guid: 47536,
     duration: 8,
@@ -1107,6 +1111,13 @@ export const bossAbilities = [
     guid: 334909,
     cooldownPlannerActive: true,
     icon: require("../../../Images/Bosses/CastleNathria/TheCouncilOfBlood/Icons/OppressiveAtmosphereIcon.jpg"),
+  },
+  {
+    bossID: 2412,
+    ability: "Prideful Eruption",
+    guid: 346660,
+    cooldownPlannerActive: true,
+    icon: require("../../../Images/Bosses/CastleNathria/TheCouncilOfBlood/Icons/PridefulEruption.jpg"),
   },
 
   // Inactive Abilities
