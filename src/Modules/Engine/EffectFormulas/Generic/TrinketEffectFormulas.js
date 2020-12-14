@@ -96,7 +96,7 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel) {
     else if (effectName === "Vial of Spectral Essence") {
         let effect = activeTrinket.effects[0];
         bonus_stats.hps =  getProcessedValue(effect.coefficient, effect.table, itemLevel, effect.efficiency) / effect.cooldown * player.getStatMultiplier('CRITVERS');
-        console.log("Vial: " + bonus_stats.hps);
+        //console.log("Vial: " + bonus_stats.hps);
     }
     else if (effectName === "Soulletting Ruby") {
         let heal_effect = activeTrinket.effects[1];
@@ -198,9 +198,9 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel) {
                         * player.getStatMultiplier('CRITVERS') / 120;
         let absorbHPS = getProcessedValue(absorbEffect.coefficient, absorbEffect.table, itemLevel, absorbEffect.efficiency) * player.getStatPerc('Versatility') / 120;
 
-        console.log("Hot: " + hotHPS + " AbsorbHPS: " + absorbHPS);
-        console.log("Raw HoT: " + getProcessedValue(hotEffect.coefficient, hotEffect.table, itemLevel, hotEffect.efficiency) + ". RawAbsorb: " + 
-                        getProcessedValue(absorbEffect.coefficient, absorbEffect.table, itemLevel, absorbEffect.efficiency));
+        //console.log("Hot: " + hotHPS + " AbsorbHPS: " + absorbHPS);
+        //console.log("Raw HoT: " + getProcessedValue(hotEffect.coefficient, hotEffect.table, itemLevel, hotEffect.efficiency) + ". RawAbsorb: " + 
+        //getProcessedValue(absorbEffect.coefficient, absorbEffect.table, itemLevel, absorbEffect.efficiency));
 
         bonus_stats.hps = hotHPS + absorbHPS;
       
@@ -210,14 +210,14 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel) {
         let effect = activeTrinket.effects[0];
 
         bonus_stats.leech = getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.efficiency * effect.duration / effect.cooldown;
-        console.log("BONUS LEECH: " + bonus_stats.leech + ". Raw: " + getProcessedValue(effect.coefficient, effect.table, itemLevel));
+        //console.log("BONUS LEECH: " + bonus_stats.leech + ". Raw: " + getProcessedValue(effect.coefficient, effect.table, itemLevel));
         //console.log("INSIGNIA Int:" + bonus_stats.intellect + ". Proc: " + getProcessedValue(effect.coefficient, effect.table, itemLevel) + ". Uptime: " + convertPPMToUptime(effect.ppm, effect.duration))
 
     }
     else if (effectName === "Tuft of Smoldering Plumage") {
         let effect = activeTrinket.effects[0];
         bonus_stats.hps =  getProcessedValue(effect.coefficient, effect.table, itemLevel, effect.efficiency) / effect.cooldown * player.getStatMultiplier('CRITVERS');
-        console.log("Tuft: " + bonus_stats.hps);
+        //console.log("Tuft: " + bonus_stats.hps);
     }
     
 

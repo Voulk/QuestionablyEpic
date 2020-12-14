@@ -236,7 +236,7 @@ export function buildWepCombos(player, active=false) {
   let two_handers = player.getActiveItems("2H Weapon", active);
 
 
-  console.log("MH: " + main_hands.length + ". OH: " + off_hands.length);
+  //console.log("MH: " + main_hands.length + ". OH: " + off_hands.length);
   
 
   for (let i = 0; i < main_hands.length; i++) {
@@ -379,7 +379,7 @@ export function scoreItem(item, player, contentType) {
       contentType,
       item.level
     );
-    console.log("Getting Effect" + JSON.stringify(item.stats.bonus_stats));
+    //console.log("Getting Effect" + JSON.stringify(item.stats.bonus_stats));
   }
 
   // Multiply the item's stats by our stat weights.
@@ -397,7 +397,7 @@ export function scoreItem(item, player, contentType) {
 
   // Add any bonus HPS
   if ("bonus_stats" in item.stats && "hps" in item.stats.bonus_stats) {
-    console.log("Adding bonus_stats to score");
+    //console.log("Adding bonus_stats to score");
     score +=
       (item.stats.bonus_stats.hps / player.getHPS()) *
       player.activeStats.intellect;
