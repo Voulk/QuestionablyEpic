@@ -99,13 +99,20 @@ export function checkItemExists(id) {
 }
 
 // Returns a translated item name based on an ID.
-export function getTranslatedItemName(id, lang) {
-  let temp = itemDB.filter(function (item) {
-    return item.id === id;
-  });
+export function getTranslatedItemName(id, lang, effect) {
+  if (effect && effect.type === 'spec legendary') {
+    return effect.name;
+  }
+  else {
+    let temp = itemDB.filter(function (item) {
+      return item.id === id;
+    });
+  
+    if (temp.length > 0) return temp[0].names[lang];
+    else return "Unknown Item";
+  }
 
-  if (temp.length > 0) return temp[0].names[lang];
-  else return "Unknown Item";
+
 }
 
 // Returns a translated item name based on an ID.
@@ -194,7 +201,8 @@ function getItemCat(slot) {
     case "1H Weapon":
       return 3;
     default:
-      //console.error("Item Cat going to Default" + slot);
+      console.error("Item Cat going to Default" + slot);
+      
       return 3;
       
     // Raise error.
@@ -229,6 +237,7 @@ export function buildWepCombos(player, active=false) {
 
 
   console.log("MH: " + main_hands.length + ". OH: " + off_hands.length);
+  
 
   for (let i = 0; i < main_hands.length; i++) {
     // Some say j is the best variable for a nested loop, but are they right?

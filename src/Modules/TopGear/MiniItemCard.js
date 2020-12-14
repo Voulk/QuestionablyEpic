@@ -30,8 +30,10 @@ const useStyles = makeStyles({
     minWidth: 200,
     borderRadius: 3,
     borderColor: "Green",
-    borderRadius: "5px",
-    backgroundColor: "#424E42",
+    //borderRadius: "5px",
+    //backgroundColor: "#424E42",
+    borderColor: "Goldenrod",
+    backgroundColor: "#494a3d",
   },
   bullet: {
     display: "inline-block",

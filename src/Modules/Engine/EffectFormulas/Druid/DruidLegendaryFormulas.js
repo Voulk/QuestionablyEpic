@@ -16,17 +16,19 @@ export const getDruidLegendary = (effectName, player, contentType) => {
     let rejuvHealingInc = expectedTicksWithLegendary / baseTicks - 1;
     let expectedHPS = Math.round(rejuvHealingInc * rejuvHealingHPS);
 
-    // console.log("Expected Increase: " + rejuvHealingInc);
+    console.log("Expected Increase: " + rejuvHealingInc);
     // Return result.
     bonus_stats.hps = expectedHPS;
+
   } else if (name === "Memory of the Mother Tree") {
     let wildGrowthCPM = player.getSpellCPM("Wild Growth", contentType);
     let procChance = 0.4;
     let oneRejuv = player.getSingleCast("Rejuvenation", contentType);
 
     let freeRejuvsPerMinute = wildGrowthCPM * procChance * 3;
-
+    console.log("Free rejuvs a min: " + freeRejuvsPerMinute + ", one rejuv: " + oneRejuv);
     bonus_stats.hps = Math.round((freeRejuvsPerMinute * oneRejuv) / 60);
+
   } else if (name === "Verdant Infusion") {
 
   /* 

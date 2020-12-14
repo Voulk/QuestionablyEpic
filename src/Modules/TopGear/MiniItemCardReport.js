@@ -15,7 +15,11 @@ import {
 } from "../Engine/ItemUtilities";
 import "./MiniItemCard.css";
 import DeleteIcon from "@material-ui/icons/Delete";
-import socketImage from "../../Images/Resources/EmptySocket.png";
+//import socketImage from "../../Images/Resources/EmptySocket.png";
+import hasteSocket from "../../Images/Resources/hasteSocket.jpg";
+import critSocket from "../../Images/Resources/critSocket.jpg";
+import masterySocket from "../../Images/Resources/masterySocket.jpg";
+import versSocket from "../../Images/Resources/versSocket.jpg";
 import { useTranslation } from "react-i18next";
 import CardActionArea from "@material-ui/core/CardActionArea";
 
@@ -32,6 +36,7 @@ const useStyles = makeStyles({
     borderColor: "Green",
     borderRadius: "5px",
     backgroundColor: "#424E42",
+
   },
   bullet: {
     display: "inline-block",
@@ -55,7 +60,13 @@ export default function ItemCardReport(props) {
   const currentLanguage = i18n.language;
   const itemLevel = item.level;
   const isLegendary = "effect" in item && item.effect.type === "spec legendary";
-
+  const socketImg = {
+    'haste': hasteSocket,
+    'crit': critSocket,
+    'mastery': masterySocket,
+    'vers': versSocket,
+  }
+  const socketImage = socketImg[enchants['Gems']];
   const itemQuality = (itemLevel) => {
     if (isLegendary) return "#ff8000";
     if (itemLevel >= 183) return "#a73fee";

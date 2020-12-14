@@ -319,6 +319,7 @@ function TopGearReport(props) {
               <Grid item xs={12}>
                 <Grid container spacing={1}>
                   {differentials.map((key) => (
+                    
                     <Grid item xs={3}>
                       <Paper
                         elevation={0}
@@ -339,7 +340,8 @@ function TopGearReport(props) {
                                   />{" "}
                                   {getTranslatedItemName(
                                     item.id,
-                                    currentLanguage
+                                    currentLanguage,
+                                    item.effect,
                                   ) + " " + item.level}
                                 </Grid>
                               ))}
