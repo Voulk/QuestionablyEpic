@@ -1,6 +1,7 @@
 import { getAvailableClassConduits } from '../Covenants/CovenantUtilities';
 import SPEC from '../Engine/SPECS';
 import STAT from '../Engine/STAT';
+import {scoreItem} from "../Engine/ItemUtilities";
 import {getUnique} from "./PlayerUtilities";
 
 var SPELL_CASTS_LOC = 0;
@@ -183,6 +184,16 @@ class Player {
             
         })
         return this.sortItems(temp);
+
+    }
+
+    scoreActiveItems = (contentType) => {
+        for (var i = 0; i < this.activeItems.length; i++) {
+            let item = this.activeItems[i];
+            console.log(item);
+            item.softScore = scoreItem(item, this, contentType)
+            console.log("Updating Score");
+        }
 
     }
 

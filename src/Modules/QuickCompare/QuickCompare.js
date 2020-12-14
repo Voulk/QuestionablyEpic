@@ -134,7 +134,7 @@ function getSlots() {
 export default function QuickCompare(props) {
   useEffect(() => {
     ReactGA.pageview(window.location.pathname + window.location.search);
-  }, []);
+  }, props.pl.scoreActiveItems(props.contentType));
 
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
@@ -162,6 +162,9 @@ export default function QuickCompare(props) {
   const helpText = `Quick Compare allows you to compare items one by one. You can add items manually using the dropdowns above, or all at once using a string from the SimC
                     addon. The score is automatically shown in the top right corner in yellow, and items are ordered by strength.`
 
+
+  
+                    
   const handleClick = () => {
     setOpen(true);
   };
