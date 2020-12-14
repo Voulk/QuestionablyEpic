@@ -317,6 +317,7 @@ function evalSet(itemSet, player, contentType) {
 
     // Sockets
     bonus_stats[highestWeight] += 16 * builtSet.setSockets;
+    enchants['Gems'] = highestWeight;
     //console.log("Sockets added : " + 16 * builtSet.setSockets + " to " + highestWeight);
 
     // Calculate a hard score using the rebalanced stat weights.
