@@ -32,6 +32,7 @@ import { localizationCH } from "../../../locale/ch/TableLocale";
 import ls from "local-storage";
 import Divider from "@material-ui/core/Divider";
 import Paper from "@material-ui/core/Paper";
+import { KeyboardArrowDown } from "@material-ui/icons";
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -341,6 +342,26 @@ export default function HealTeam(props) {
                 resolve();
               }, 1000);
             }),
+          // onBulkUpdate: (changes) =>
+          //   new Promise((resolve, reject) => {
+          //     setTimeout(() => {
+          //       console.log(changes);
+          //       console.log(changes.oldData);
+          //       console.log(changes.newData);
+
+          //       const dataUpdate = [...data];
+          //       Object.entries(changes).map((key) => {
+          //         console.log(key);
+          //         // dataUpdate[key] = key.newData[key];
+          //       });
+          //       // const index = changes.oldData.tableData.id;
+          //       // dataUpdate[changes.oldData.tableData.id] = changes.newData;
+          //       setData([...dataUpdate]);
+          //       updateStorage([...dataUpdate]);
+
+          //       resolve();
+          //     }, 1000);
+          // }),
         }}
       />
     </ThemeProvider>

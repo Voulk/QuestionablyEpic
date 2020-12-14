@@ -29,7 +29,7 @@ export default function FightSelectorButton(props) {
         {t("CooldownPlannerUserInputs.fightButtonLabel")}
       </Button>
       <Menu
-        style={{ marginTop: 5 }}
+        style={{ marginTop: 5, height: 500 }}
         id="fight-selector"
         anchorEl={anchorEl}
         MenuListProps={{
