@@ -29,21 +29,22 @@ export function runTopGear(itemList, wepCombos, player, contentType) {
     let itemSets = createSets(itemList, wepCombos);
     itemSets.sort((a, b) => (a.sumSoftScore < b.sumSoftScore ? 1 : -1));
     count = itemSets.length;
-    itemSets = pruneItems(itemSets);
+    
     
     for (var i = 0; i < itemSets.length; i++) {
         itemSets[i] = evalSet(itemSets[i], player, contentType);
    
     }
+    itemSets = pruneItems(itemSets);
 
     itemSets.sort((a, b) => (a.hardScore < b.hardScore ? 1 : -1));
 
     // TEST LOOP ONLY FOR CONSOLE PRINTS.
     for (var i = 0; i < itemSets.length; i++) {
         
-        //console.log("ID: " + itemSets[i].id + ". Soft: " + itemSets[i].sumSoftScore + ". Hard: " + itemSets[i].hardScore);
+        console.log("ID: " + itemSets[i].id + ". Soft: " + itemSets[i].sumSoftScore + ". Hard: " + itemSets[i].hardScore);
         itemSets[i].printSet();
-        //console.log("====================");
+        console.log("====================");
    
     }
 
@@ -226,9 +227,7 @@ function buildDifferential(itemSet, primeSet) {
 function pruneItems(itemSets) {
     let temp = itemSets.filter(function(set) {
 
-        const uniques = set.uniques;
-
-        return (!uniques.legendaries || uniques.legendaries <= 1);
+        return (set.verifySet());
     });
 
     return temp.slice(0, softSlice);

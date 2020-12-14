@@ -99,13 +99,20 @@ export function checkItemExists(id) {
 }
 
 // Returns a translated item name based on an ID.
-export function getTranslatedItemName(id, lang) {
-  let temp = itemDB.filter(function (item) {
-    return item.id === id;
-  });
+export function getTranslatedItemName(id, lang, effect) {
+  if (effect && effect.type === 'spec legendary') {
+    return effect.name;
+  }
+  else {
+    let temp = itemDB.filter(function (item) {
+      return item.id === id;
+    });
+  
+    if (temp.length > 0) return temp[0].names[lang];
+    else return "Unknown Item";
+  }
 
-  if (temp.length > 0) return temp[0].names[lang];
-  else return "Unknown Item";
+
 }
 
 // Returns a translated item name based on an ID.

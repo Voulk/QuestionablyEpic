@@ -36,6 +36,7 @@ const useStyles = makeStyles({
     borderColor: "Green",
     borderRadius: "5px",
     backgroundColor: "#424E42",
+
   },
   bullet: {
     display: "inline-block",

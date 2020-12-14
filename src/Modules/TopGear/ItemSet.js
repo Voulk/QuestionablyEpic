@@ -80,9 +80,22 @@ class ItemSet {
         
         this.setStats = setStats;
         this.setSockets = setSockets;
+        
         return this;
         
 
+    }
+
+    verifySet() {
+        // Verifies that the set is possible.
+        if (this.uniques['legendary'] && this.uniques['legendary'] > 1) {
+            //this.softScore = -1
+            //console.log("SET NOT VIABLE");
+            return false;
+        }
+        else {
+            return true;
+        }
     }
 
 
