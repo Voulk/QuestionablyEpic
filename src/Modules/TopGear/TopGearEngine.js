@@ -62,10 +62,19 @@ export function runTopGear(itemList, wepCombos, player, contentType) {
         
     }
 
-    itemSets[0].printSet()
-    let result = new TopGearResult(itemSets[0], differentials);
-    result.itemsCompared = count;
-    return result;
+    //itemSets[0].printSet()
+
+    if (itemSets.length === 0) {
+        let result = new TopGearResult([], []);
+        result.itemsCompared = count;
+        return result
+    }
+    else {
+        let result = new TopGearResult(itemSets[0], differentials);
+        result.itemsCompared = count;
+        return result;
+    }
+
 
 }
 

@@ -25,6 +25,7 @@ const useStyles = makeStyles({
   vault: {
     borderColor: "#0288d1",
     backgroundColor: "#464E5B",
+    borderStyle: "dashed",
     minWidth: 250,
   },
   bullet: {
@@ -228,7 +229,7 @@ export default function ItemCard(props) {
                     display="block"
                     align="left"
                   >
-                    {socket} {statString} {tertiary} {isVault ? " / VAULT" : ""}
+                    {socket} {statString} {tertiary} {isVault ? " / Great Vault" : ""}
                   </Typography>
                 </Grid>
 
