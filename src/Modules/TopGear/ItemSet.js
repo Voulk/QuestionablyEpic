@@ -93,6 +93,9 @@ class ItemSet {
             //console.log("SET NOT VIABLE");
             return false;
         }
+        else if (this.uniques['vault'] && this.uniques['vault'] > 1) {
+            return false;
+        }
         else {
             return true;
         }

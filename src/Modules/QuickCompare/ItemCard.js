@@ -22,6 +22,12 @@ const useStyles = makeStyles({
   root: {
     minWidth: 250,
   },
+  vault: {
+    borderColor: "#0288d1",
+    backgroundColor: "#464E5B",
+    borderStyle: "dashed",
+    minWidth: 250,
+  },
   bullet: {
     display: "inline-block",
     margin: "0 2px",
@@ -86,6 +92,7 @@ export default function ItemCard(props) {
   };
 
   let itemName = "";
+  let isVault = item.vaultItem;
   const deleteActive = item.offhandID === 0;
 
   if (item.offhandID > 0) {
@@ -120,7 +127,7 @@ export default function ItemCard(props) {
 
   return (
     <Grid item xs={12} sm={6} md={6} lg={4} xl={4}>
-      <Card className={classes.root} variant="outlined">
+      <Card className={isVault ? classes.vault : classes.root} variant="outlined">
         {/* <CardActionArea disabled={true}> */}
         <Grid
           container
@@ -222,7 +229,7 @@ export default function ItemCard(props) {
                     display="block"
                     align="left"
                   >
-                    {socket} {statString} {tertiary}
+                    {socket} {statString} {tertiary} {isVault ? " / Great Vault" : ""}
                   </Typography>
                 </Grid>
 

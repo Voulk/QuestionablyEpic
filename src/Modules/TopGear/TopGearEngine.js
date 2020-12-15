@@ -42,8 +42,8 @@ export function runTopGear(itemList, wepCombos, player, contentType) {
     // TEST LOOP ONLY FOR CONSOLE PRINTS.
     for (var i = 0; i < itemSets.length; i++) {
         
-        console.log("ID: " + itemSets[i].id + ". Soft: " + itemSets[i].sumSoftScore + ". Hard: " + itemSets[i].hardScore);
-        itemSets[i].printSet();
+        //console.log("ID: " + itemSets[i].id + ". Soft: " + itemSets[i].sumSoftScore + ". Hard: " + itemSets[i].hardScore);
+        //itemSets[i].printSet();
         console.log("====================");
    
     }
@@ -62,10 +62,19 @@ export function runTopGear(itemList, wepCombos, player, contentType) {
         
     }
 
-    itemSets[0].printSet()
-    let result = new TopGearResult(itemSets[0], differentials);
-    result.itemsCompared = count;
-    return result;
+    //itemSets[0].printSet()
+
+    if (itemSets.length === 0) {
+        let result = new TopGearResult([], []);
+        result.itemsCompared = count;
+        return result
+    }
+    else {
+        let result = new TopGearResult(itemSets[0], differentials);
+        result.itemsCompared = count;
+        return result;
+    }
+
 
 }
 
