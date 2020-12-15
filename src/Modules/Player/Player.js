@@ -190,7 +190,7 @@ class Player {
     scoreActiveItems = (contentType) => {
         for (var i = 0; i < this.activeItems.length; i++) {
             let item = this.activeItems[i];
-            console.log(item);
+            //console.log(item);
             item.softScore = scoreItem(item, this, contentType)
             //console.log("Updating Score");
         }

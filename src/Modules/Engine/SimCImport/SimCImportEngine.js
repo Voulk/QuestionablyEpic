@@ -49,13 +49,23 @@ export function runSimC(
     
             We should take care that we never use the Name tags in the string.
         */
+
+    let vaultItems = lines.indexOf("### Weekly Reward Choices");
+    let linkedItems = lines.indexOf("### Linked gear");
+    console.log("VaultItems: " + vaultItems);
+    console.log("Linked Items: " + linkedItems);
+
     for (var i = 8; i < lines.length; i++) {
       let line = lines[i];
+      let type = (i > vaultItems || i < linkedItems) ? "Vault" : "Regular";
       // If our line doesn't include an item ID, skip it.
       if (line.includes("id=")) {
-        processItem(line, player, contentType);
+        processItem(line, player, contentType, type);
       }
     }
+
+
+
     snackHandler();
     closeDialog();
     clearSimCInput("");
@@ -96,7 +106,7 @@ function checkSimCValid(simCHeader, length, playerClass, setErrorMessage) {
   return checks.class && checks.version && checks.level && checks.length;
 }
 
-function processItem(line, player, contentType) {
+function processItem(line, player, contentType, type) {
   // Split string.
   let infoArray = line.split(",");
   let itemID = -1;
@@ -225,7 +235,8 @@ function processItem(line, player, contentType) {
       0,
       itemLevel
     );
-    item.active = itemEquipped;
+    item.vaultItem = (type === "Vault")
+    item.active = itemEquipped || item.vaultItem;
     item.level = itemLevel;
     item.stats = calcStatsAtLevel(
       itemLevel,

@@ -29,12 +29,24 @@ const useStyles = makeStyles({
   selected: {
     minWidth: 200,
     borderRadius: 3,
-    borderColor: "Green",
     //borderRadius: "5px",
     //backgroundColor: "#424E42",
     borderColor: "Goldenrod",
     backgroundColor: "#494a3d",
   },
+  vault: {
+    borderColor: "#0288d1",
+    backgroundColor: "#3E4651",
+    minWidth: 200,
+    borderStyle: "dashed",
+  },
+  selectedVault: {
+    borderColor: "#0288d1",
+    backgroundColor: "#494a3d",
+    minWidth: 200,
+    borderStyle: "dashed",
+  },
+
   bullet: {
     display: "inline-block",
     margin: "0 2px",
@@ -80,6 +92,7 @@ export default function ItemCard(props) {
   };
 
   let itemName = "";
+  let isVault = item.vaultItem;
   const deleteActive = item.offhandID === 0;
 
   if (item.offhandID > 0) {
@@ -112,7 +125,7 @@ export default function ItemCard(props) {
   return (
     <Grid item xs={12} sm={6} md={6} lg={4} xl={4}>
       <Card
-        className={item.active ? classes.selected : classes.root}
+        className={(item.active && isVault) ? classes.selectedVault : item.active ? classes.selected : isVault ? classes.vault : classes.root}
         elevation={0}
         variant="outlined"
         // style={{ width: "100%" }}
@@ -196,7 +209,7 @@ export default function ItemCard(props) {
                       align="left"
                       style={{ fontSize: "12px" }}
                     >
-                      {socket} {statString} {tertiary}
+                      {socket} {statString} {tertiary} {isVault ? " / Great Vault Item" : ""}
                     </Typography>
                   </Grid>
                 </Grid>
