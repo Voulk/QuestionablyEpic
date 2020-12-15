@@ -42,8 +42,8 @@ export function runTopGear(itemList, wepCombos, player, contentType) {
     // TEST LOOP ONLY FOR CONSOLE PRINTS.
     for (var i = 0; i < itemSets.length; i++) {
         
-        console.log("ID: " + itemSets[i].id + ". Soft: " + itemSets[i].sumSoftScore + ". Hard: " + itemSets[i].hardScore);
-        itemSets[i].printSet();
+        //console.log("ID: " + itemSets[i].id + ". Soft: " + itemSets[i].sumSoftScore + ". Hard: " + itemSets[i].hardScore);
+        //itemSets[i].printSet();
         console.log("====================");
    
     }

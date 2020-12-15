@@ -248,6 +248,7 @@ function processItem(line, player, contentType, type) {
 
     item.effect = Object.keys(itemEffect).length !== 0 ? itemEffect : getItemEffect(itemID);
     if (item.effect.type && item.effect.type === "spec legendary") item.uniqueEquip = "legendary";
+    else if (item.vaultItem) item.uniqueEquip = "vault";
     item.softScore = scoreItem(item, player, contentType);
 
     //console.log("Adding Item: " + item.id + " in slot: " + itemSlot);
