@@ -1,6 +1,7 @@
 import { getAvailableClassConduits } from '../Covenants/CovenantUtilities';
 import SPEC from '../Engine/SPECS';
 import STAT from '../Engine/STAT';
+import {scoreItem} from "../Engine/ItemUtilities";
 import {getUnique} from "./PlayerUtilities";
 
 var SPELL_CASTS_LOC = 0;
@@ -183,6 +184,16 @@ class Player {
             
         })
         return this.sortItems(temp);
+
+    }
+
+    scoreActiveItems = (contentType) => {
+        for (var i = 0; i < this.activeItems.length; i++) {
+            let item = this.activeItems[i];
+            console.log(item);
+            item.softScore = scoreItem(item, this, contentType)
+            //console.log("Updating Score");
+        }
 
     }
 
@@ -406,15 +417,15 @@ class Player {
     setupDefaults = (spec) => {
         if (spec === SPEC.RESTODRUID) {
             this.fightInfo = {
-                hps: 6000,
+                hps: 5500,
                 rawhps: 9420,
-                fightLength: 193,
+                fightLength: 340,
             }
             this.activeStats = {
                 intellect: 1420,
-                haste: 500,
+                haste: 690,
                 crit: 280,
-                mastery: 270,
+                mastery: 230,
                 versatility: 220,
                 stamina: 1400,
     
@@ -427,7 +438,7 @@ class Player {
                     crit: 0.34,
                     mastery: 0.31,
                     versatility: 0.32,
-                    leech: 0.6,
+                    leech: 0.55,
                 },
                 "Dungeon": {
                     intellect: 1, 
@@ -435,7 +446,7 @@ class Player {
                     crit: 0.33,
                     mastery: 0.37,
                     versatility: 0.34,
-                    leech: 0.25,
+                    leech: 0.23,
                 },
                 "DefaultWeights": true
             }
@@ -443,17 +454,17 @@ class Player {
             this.castPattern =
             // CASTS, HEALING, HEALINGPERC, HPS
             {   "Raid": {
-                    "Rejuvenation": [46, 329400, 0.2909, 1706],
-                    "Wild Growth": [7, 346400, 0.2472, 1794],
-                    "Regrowth": [11, 105200, 0.000, 545],
-                    "Lifebloom": [7, 50400, 0.000, 256],
+                    "Rejuvenation": [100, 455000, 0.0, 1433],
+                    "Wild Growth": [19, 449400, 0.0, 1323],
+                    "Regrowth": [29, 194225, 0.000, 571],
+                    "Lifebloom": [17, 89150, 0.000, 262],
   
             },
                 "Dungeon": {
-                    "Rejuvenation": [17, 181000, 0.2909, 400],
-                    "Wild Growth": [5, 154400, 0.2472, 1402],
+                    "Rejuvenation": [25, 113750, 0.0, 324],
+                    "Wild Growth": [17, 395000, 0.2472, 1402],
                     "Regrowth": [11, 105200, 0.000, 545],
-                    "Lifebloom": [7, 50400, 0.000, 256],
+                    "Lifebloom": [17, 89150, 0.000, 262],
                 }
             }
 
@@ -461,7 +472,7 @@ class Player {
         else if (spec === SPEC.HOLYPALADIN) {
             
             this.fightInfo = {
-                hps: 6000,
+                hps: 5500,
                 rawhps: 9420,
                 fightLength: 180,
             }
@@ -483,7 +494,7 @@ class Player {
                     crit: 0.27,
                     mastery: 0.33,
                     versatility: 0.32,
-                    leech: 0.6,
+                    leech: 0.51,
                 },
                 "Dungeon": {
                     intellect: 1, 
@@ -491,7 +502,7 @@ class Player {
                     crit: 0.36,
                     mastery: 0.21,
                     versatility: 0.33,
-                    leech: 0.25,
+                    leech: 0.2,
                 },
                 "DefaultWeights": true
             }
@@ -515,7 +526,7 @@ class Player {
             }
         } else if (spec === SPEC.RESTOSHAMAN) { // all of this needs a proper input once
             this.fightInfo = {
-                hps: 6500,
+                hps: 5500,
                 rawhps: 7000,
                 fightLength: 465,
             }
@@ -534,7 +545,7 @@ class Player {
                     crit: 0.36,
                     mastery: 0.29,
                     versatility: 0.36,
-                    leech: 0.55,
+                    leech: 0.45,
                 },
                 Dungeon: {
                     intellect: 1,
@@ -542,7 +553,7 @@ class Player {
                     crit: 0.33,
                     mastery: 0.29,
                     versatility: 0.34,
-                    leech: 0.24,
+                    leech: 0.19,
                 },
                 DefaultWeights: true
             };
@@ -571,7 +582,7 @@ class Player {
         }
         else if (spec === SPEC.DISCPRIEST) {
             this.fightInfo = {
-                hps: 6000,
+                hps: 5500,
                 rawhps: 9420,
                 fightLength: 193,
             }
@@ -592,7 +603,7 @@ class Player {
                     crit: 0.34,
                     mastery: 0.32,
                     versatility: 0.33,
-                    leech: 0.6,
+                    leech: 0.56,
                 },
                 "Dungeon": {
                     intellect: 1, 
@@ -600,7 +611,7 @@ class Player {
                     crit: 0.34,
                     mastery: 0.31,
                     versatility: 0.33,
-                    leech: 0.25,
+                    leech: 0.23,
                 },
                 "DefaultWeights": true
             }
@@ -619,7 +630,7 @@ class Player {
         }
         else if (spec === SPEC.HOLYPRIEST) {
             this.fightInfo = {
-                hps: 6000,
+                hps: 5500,
                 rawhps: 9420,
                 fightLength: 193,
             }
@@ -640,7 +651,7 @@ class Player {
                     crit: 0.35,
                     mastery: 0.35,
                     versatility: 0.34,
-                    leech: 0.6,
+                    leech: 0.56,
                 },
                 "Dungeon": {
                     intellect: 1, 
@@ -667,7 +678,7 @@ class Player {
         }
         else if (spec === SPEC.MISTWEAVERMONK) {
             this.fightInfo = {
-                hps: 6000,
+                hps: 5500,
                 rawhps: 9420,
                 fightLength: 193,
             }
@@ -688,7 +699,7 @@ class Player {
                     crit: 0.35,
                     mastery: 0.28,
                     versatility: 0.34,
-                    leech: 0.6,
+                    leech: 0.54,
                 },
                 "Dungeon": {
                     intellect: 1, 

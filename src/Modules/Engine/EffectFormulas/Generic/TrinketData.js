@@ -75,7 +75,7 @@ export const trinket_data = [
                 benefit: 'hps', 
                 coefficient: 467.66378, // This represents the upper quartile of the given cards.  
                 table: -8, 
-                efficiency: 0.55, 
+                efficiency: 0.54, 
                 cooldown: 90, 
             }
         ]

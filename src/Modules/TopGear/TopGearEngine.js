@@ -29,21 +29,22 @@ export function runTopGear(itemList, wepCombos, player, contentType) {
     let itemSets = createSets(itemList, wepCombos);
     itemSets.sort((a, b) => (a.sumSoftScore < b.sumSoftScore ? 1 : -1));
     count = itemSets.length;
-    itemSets = pruneItems(itemSets);
+    
     
     for (var i = 0; i < itemSets.length; i++) {
         itemSets[i] = evalSet(itemSets[i], player, contentType);
    
     }
+    itemSets = pruneItems(itemSets);
 
     itemSets.sort((a, b) => (a.hardScore < b.hardScore ? 1 : -1));
 
     // TEST LOOP ONLY FOR CONSOLE PRINTS.
     for (var i = 0; i < itemSets.length; i++) {
         
-        //console.log("ID: " + itemSets[i].id + ". Soft: " + itemSets[i].sumSoftScore + ". Hard: " + itemSets[i].hardScore);
+        console.log("ID: " + itemSets[i].id + ". Soft: " + itemSets[i].sumSoftScore + ". Hard: " + itemSets[i].hardScore);
         itemSets[i].printSet();
-        //console.log("====================");
+        console.log("====================");
    
     }
 
@@ -224,7 +225,12 @@ function buildDifferential(itemSet, primeSet) {
 }
 
 function pruneItems(itemSets) {
-    return itemSets.slice(0, softSlice);
+    let temp = itemSets.filter(function(set) {
+
+        return (set.verifySet());
+    });
+
+    return temp.slice(0, softSlice);
 
 }
 
@@ -317,6 +323,7 @@ function evalSet(itemSet, player, contentType) {
 
     // Sockets
     bonus_stats[highestWeight] += 16 * builtSet.setSockets;
+    enchants['Gems'] = highestWeight;
     //console.log("Sockets added : " + 16 * builtSet.setSockets + " to " + highestWeight);
 
     // Calculate a hard score using the rebalanced stat weights.

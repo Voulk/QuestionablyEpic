@@ -20,6 +20,9 @@ class ItemSet {
     sumSoftScore = 0; 
     hardScore = 0; 
     setSockets = 0;
+    uniques = {
+
+    }
 
     // Enchant Breakdown consists of key: value combos where key is the slot, and the value is the *name* of the enchant.
     // We only use it for display purposes on the report end. 
@@ -72,13 +75,27 @@ class ItemSet {
             }
 
             if (item.socket) setSockets ++;
+            if (item.uniqueEquip) this.uniques[item.uniqueEquip] = (this.uniques[item.uniqueEquip] || 0) + 1;
         }
         
         this.setStats = setStats;
         this.setSockets = setSockets;
+        
         return this;
         
 
+    }
+
+    verifySet() {
+        // Verifies that the set is possible.
+        if (this.uniques['legendary'] && this.uniques['legendary'] > 1) {
+            //this.softScore = -1
+            //console.log("SET NOT VIABLE");
+            return false;
+        }
+        else {
+            return true;
+        }
     }
 
 

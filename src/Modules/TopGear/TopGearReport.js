@@ -40,22 +40,22 @@ function TopGearReport(props) {
   const classIcon = () => {
     switch (props.pl.spec) {
       case "Holy Paladin":
-        return require("../../Images/Classes/Paladin/icon-paladin.png");
+        return require("../../Images/Classes/Paladin/icon-paladin.png").default;
         break;
       case "Restoration Shaman":
-        return require("../../Images/Classes/Shaman/icon-shaman.png");
+        return require("../../Images/Classes/Shaman/icon-shaman.png").default;
         break;
       case "Holy Priest":
-        return require("../../Images/Classes/Priest/icon-priest.png");
+        return require("../../Images/Classes/Priest/icon-priest.png").default;
         break;
       case "Discipline Priest":
-        return require("../../Images/Classes/Priest/icon-priest.png");
+        return require("../../Images/Classes/Priest/icon-priest.png").default;
         break;
       case "Restoration Druid":
-        return require("../../Images/Classes/Druid/icon-druid.png");
+        return require("../../Images/Classes/Druid/icon-druid.png").default;
         break;
       case "Mistweaver Monk":
-        return require("../../Images/Classes/Monk/icon-monk.png");
+        return require("../../Images/Classes/Monk/icon-monk.png").default;
         break;
       default:
         break;
@@ -319,6 +319,7 @@ function TopGearReport(props) {
               <Grid item xs={12}>
                 <Grid container spacing={1}>
                   {differentials.map((key) => (
+                    
                     <Grid item xs={3}>
                       <Paper
                         elevation={0}
@@ -339,7 +340,8 @@ function TopGearReport(props) {
                                   />{" "}
                                   {getTranslatedItemName(
                                     item.id,
-                                    currentLanguage
+                                    currentLanguage,
+                                    item.effect,
                                   ) + " " + item.level}
                                 </Grid>
                               ))}

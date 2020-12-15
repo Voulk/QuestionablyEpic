@@ -77,6 +77,8 @@ const specImages = {
   "Mistweaver Monk": require("../../Images/MistweaverSmall.jpg"),
 };
 
+
+
 // Called when a character is clicked.
 // TODO: Add Logic
 const charClicked = (char, cardType, allChars, updateChar) => {
@@ -256,6 +258,7 @@ export default function CharCards(props) {
   };
 
   const spec = props.cardType === "Char" ? props.char.spec : "";
+  console.log(specImages[spec].default);
 
   const rootClassName =
     classes.root + " " + (props.isActive ? classes.activeChar : "");
@@ -278,7 +281,7 @@ export default function CharCards(props) {
       >
         <Card className={rootClassName} variant="outlined" raised={true}>
           <Avatar
-            src={specImages[spec]}
+            src={specImages[spec].default}
             variant="square"
             alt=""
             className={classes.large}

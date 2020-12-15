@@ -8,7 +8,7 @@
     "nconf": true
   },
   "parser": "babel-eslint",
-  "plugins": ["react"],
+  "plugins": ["react", "only-warn"],
   
   "parserOptions": {
     "ecmaVersion": 6,
@@ -67,7 +67,7 @@
     "no-negated-in-lhs": 2, // disallow negation of the left operand of an in expression
     "no-obj-calls": 2, // disallow the use of object properties of the global object (Math and JSON) as functions
     "no-regex-spaces": 2, // disallow multiple spaces in a regular expression literal
-    "quote-props": ["error", "as-needed"], // disallow reserved words being used as object literal keys (off by default)
+    //"quote-props": [0, "as-needed"], // disallow reserved words being used as object literal keys (off by default)
     "no-sparse-arrays": 2, // disallow sparse arrays
     "no-unreachable": 2, // disallow unreachable statements after a return, throw, continue, or break statement
     "use-isnan": 2, // disallow comparisons with the value NaN
@@ -157,7 +157,9 @@
     //
     // These rules are purely matters of style and are quite subjective.
     //
-    "indent": [1, 2], // this option sets a specific tab width for your code (off by default)
+    "indent": ["off", 2, {
+      "ignoredNodes": ["TemplateLiteral"]
+    }], // this option sets a specific tab width for your code (off by default)
     "brace-style": 1, // enforce one true brace style (off by default)
     "camelcase": 0, // require camel case names
     "comma-spacing": [1, {"before": false, "after": true}], // enforce spacing before and after comma
@@ -185,7 +187,7 @@
     "one-var": [1, "never"], // allow just one var statement per function (off by default)
     "operator-assignment": [1, "never"], // require assignment operator shorthand where possible or prohibit it entirely (off by default)
     "padded-blocks": [1, "never"], // enforce padding within blocks (off by default)
-    "quotes": ["error", "double", { "allowTemplateLiterals": true }], // specify whether double or single quotes should be used :pepeHands:
+    "quotes": ["off", "double", { "allowTemplateLiterals": true }], // specify whether double or single quotes should be used :pepeHands:
     "semi": [1, "always"], // require or disallow use of semicolons instead of ASI
     "semi-spacing": [1, {"before": false, "after": true}], // enforce spacing before and after semicolons
     "sort-vars": 0, // sort variables within the same declaration block (off by default)
@@ -198,6 +200,8 @@
     "space-unary-ops": [1, {"words": true, "nonwords": false}], // Require or disallow spaces before/after unary operators (words on by default, nonwords off by default)
     "spaced-comment": [1, "always"], // require or disallow a space immediately following the // in a line comment (off by default)
     "wrap-regex": 0, // require regex literals to be wrapped in parentheses (off by default)
+    "template-curly-spacing" : "off",
+
 
     //
     // ECMAScript 6
@@ -227,7 +231,7 @@
     // React specific linting rules for ESLint
     //
     "react/display-name": 0, // Prevent missing displayName in a React component definition
-    "jsx-quotes": ["error", "prefer-double"], // Enforce quote style for JSX attributes
+    "jsx-quotes": ["off", "prefer-double"], // Enforce quote style for JSX attributes
     "react/jsx-no-undef": 2, // Disallow undeclared variables in JSX
     "react/jsx-sort-props": 0, // Enforce props alphabetical sorting
     "react/jsx-uses-react": 2, // Prevent React to be incorrectly marked as unused

@@ -154,7 +154,7 @@ function processItem(line, player, contentType) {
         //console.log("Adding " + idPayload["level"]);
       } else if ("socket" in idPayload) {
         itemSocket = true;
-        console.log("Socket found on item: " + itemID)
+        //console.log("Socket found on item: " + itemID)
       } else if (bonus_id === "41") {
         itemTertiary = "Leech";
       }
@@ -236,6 +236,7 @@ function processItem(line, player, contentType) {
     if (Object.keys(itemBonusStats).length > 0) item.addStats(itemBonusStats);
 
     item.effect = Object.keys(itemEffect).length !== 0 ? itemEffect : getItemEffect(itemID);
+    if (item.effect.type && item.effect.type === "spec legendary") item.uniqueEquip = "legendary";
     item.softScore = scoreItem(item, player, contentType);
 
     //console.log("Adding Item: " + item.id + " in slot: " + itemSlot);

@@ -14,6 +14,7 @@ import { ConfirmLogin, QELogin } from "./Modules/SetupAndMenus/QELogin";
 import { withTranslation } from "react-i18next";
 import i18n from "./i18n";
 import TopGear from "./Modules/TopGear/TopGear";
+import ErrorBoundary from "./Modules/ErrorLogging/ErrorBoundary.js";
 
 import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -313,6 +314,7 @@ class App extends Component {
     }
 
     return (
+      <ErrorBoundary>
       <Router basename={process.env.REACT_APP_HOMEPAGE}>
         <ThemeProvider theme={theme}>
           <div className="App" style={{ marginTop: 96 }}>
@@ -408,7 +410,7 @@ class App extends Component {
                 Please check the Email and try again
               </Alert>
             </Snackbar>
-
+            
             <Switch>
               <Route
                 exact
@@ -511,9 +513,11 @@ class App extends Component {
                 )}
               />
             </Switch>
+            
           </div>
         </ThemeProvider>
       </Router>
+      </ErrorBoundary>
     );
   }
 }
