@@ -36,13 +36,13 @@ const useStyles = makeStyles({
   },
   vault: {
     borderColor: "#0288d1",
-    backgroundColor: "#3E4651",
+    //backgroundColor: "#131619",
     minWidth: 200,
     borderStyle: "dashed",
   },
   selectedVault: {
     borderColor: "#0288d1",
-    backgroundColor: "#494a3d",
+    backgroundColor: "#464F5B",
     minWidth: 200,
     borderStyle: "dashed",
   },

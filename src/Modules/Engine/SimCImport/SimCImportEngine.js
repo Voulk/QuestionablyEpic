@@ -50,10 +50,10 @@ export function runSimC(
             We should take care that we never use the Name tags in the string.
         */
 
-    let vaultItems = lines.indexOf("### Weekly Reward Choices");
-    let linkedItems = lines.indexOf("### Linked gear");
-    console.log("VaultItems: " + vaultItems);
-    console.log("Linked Items: " + linkedItems);
+    let vaultItems = lines.indexOf("### Weekly Reward Choices") !== -1 ? lines.indexOf("### Weekly Reward Choices") : lines.length;
+    let linkedItems = lines.indexOf("### Linked gear") !== -1 ? lines.indexOf("### Linked gear") : 0;
+    //console.log("VaultItems: " + vaultItems);
+    //console.log("Linked Items: " + linkedItems);
 
     for (var i = 8; i < lines.length; i++) {
       let line = lines[i];

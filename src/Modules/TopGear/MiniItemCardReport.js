@@ -236,7 +236,7 @@ export default function ItemCardReport(props) {
                       align="left"
                       style={{ fontSize: "12px" }}
                     >
-                      {socket} {statString} {tertiary}
+                      {socket} {statString} {tertiary} {isVault ? " / Vault" : ""}
                     </Typography>
                     {enchantCheck(item)}
                   </Grid>
