@@ -9,6 +9,7 @@ import ReactGA from "react-ga";
 import { dbCheckPatron } from "./ConnectionUtilities";
 import ArrowForward from "@material-ui/icons/ArrowForward";
 import { Paper, Grid, Button, Typography } from "@material-ui/core";
+import HallOfFame from "../HallOfFame/HallOfFame";
 
 // Warning: If a button name has to change, do it in the translation files. Consider the titles here to be ID's rather than strings.
 const mainMenuOptions = {
@@ -60,9 +61,10 @@ export default function QEMainMenu(props) {
   // const currentLanguage = i18n.language;
   const classes = useStyles();
   const characterCount = props.allChars.getAllChar().length;
-  const patron = ["Diamond", "Gold", "Rolls Royce", "Sapphire"].includes(props.patronStatus);
+  const patron = ["Diamond", "Gold", "Rolls Royce", "Sapphire"].includes(
+    props.patronStatus
+  );
   //console.log(props.patronStatus);
-  
 
   return (
     <div style={{ backgroundColor: "#313131" }}>
@@ -79,27 +81,28 @@ export default function QEMainMenu(props) {
         <p className="headers">{/*t("MainMenuItemsH") */}</p>
         <Grid container spacing={2}>
           <Grid item xs={12}>
-          
-          <Button
-                key={321}
-                variant="contained"
-                onClick={() => window.open("https://patreon.com/questionablyepic", "_blank")}
-                color="secondary"
-                disabled={patron}
-                style={{
-                  width: "100%",
-                  height: "46px",
-                  whiteSpace: "nowrap",
-                  justifyContent: "center",
-                  textTransform: "none",
-                  paddingLeft: "32px",
-                  color: "#F2BF59"
-                  
-                }}
-                
-              >
-                {patron ? "Thank you so much for your support!" : "Love the app? Support the site on Patreon!" }
-              </Button>
+            <Button
+              key={321}
+              variant="contained"
+              onClick={() =>
+                window.open("https://patreon.com/questionablyepic", "_blank")
+              }
+              color="secondary"
+              disabled={patron}
+              style={{
+                width: "100%",
+                height: "46px",
+                whiteSpace: "nowrap",
+                justifyContent: "center",
+                textTransform: "none",
+                paddingLeft: "32px",
+                color: "#F2BF59",
+              }}
+            >
+              {patron
+                ? "Thank you so much for your support!"
+                : "Love the app? Support the site on Patreon!"}
+            </Button>
           </Grid>
           <Grid item xs={12}>
             <Paper elevation={0} style={{ border: "1px", padding: 10 }}>
@@ -109,11 +112,13 @@ export default function QEMainMenu(props) {
                 variant="subtitle1"
                 // gutterBottom
               >
-                Log Entry has been temporarily disabled while a bug is investigated. Legendary effects are not yet implemented for Mistweaver and the two priest specs.
+                Log Entry has been temporarily disabled while a bug is
+                investigated. Legendary effects are not yet implemented for
+                Mistweaver and the two priest specs.
               </Typography>
             </Paper>
           </Grid>
-          
+
           {Object.keys(mainMenuOptions).map((key, index) => (
             // Buttons are translated and printed from a dictionary.
             <Grid item xs={12} sm={12} md={6} lg={6} xl={6} key={index}>
@@ -184,8 +189,10 @@ export default function QEMainMenu(props) {
           )}
         </Grid>
 
-        <p className="headers" style={{fontSize: "12px"}}>QE Live Update 12. Last Updated 14 December.</p>
-        
+        <p className="headers" style={{ fontSize: "12px" }}>
+          QE Live Update 12. Last Updated 14 December.
+        </p>
+        <HallOfFame />
       </div>
     </div>
   );
