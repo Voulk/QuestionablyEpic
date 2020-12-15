@@ -191,7 +191,7 @@ export default function TopGear(props) {
   const selectedItemCount = props.pl.getSelectedItems().length;
   const helpText = `Top Gear allows you to generate an entire gear set at once. Start by entering your SimC string above, then click to highlight any items you want included
   in the comparison. When you're all set, hit "Go" at the bottom of the page. To enter items manually, return to the main menu and include them in QE Quick
-  Compare.`
+  Compare. Great Vault items are added automatically though for the first week consider your choice carefully outside of the app.`
 
   const activateItem = (unique) => {
     if (selectedItemCount < TOPGEARCAP) {

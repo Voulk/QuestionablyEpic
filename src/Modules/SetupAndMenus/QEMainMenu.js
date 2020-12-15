@@ -16,7 +16,7 @@ const mainMenuOptions = {
   "MainMenu.QuickCompare": ["/quickcompare", true],
   "MainMenu.ExploreCovenants": ["/soulbinds", true],
   "MainMenu.LegendaryAnalysis": ["/legendaries", true],
-  "MainMenu.GreatVault": ["/greatvault", false],
+  //"MainMenu.GreatVault": ["/greatvault", false],
   "MainMenu.CooldownPlanner": ["/holydiver", false],
   "MainMenu.Profile": ["/profile", true],
 };
@@ -109,7 +109,7 @@ export default function QEMainMenu(props) {
                 variant="subtitle1"
                 // gutterBottom
               >
-                Log Entry has been temporarily disabled while a bug is investigated. Legendary effects are not yet implemented for Mistweaver and the two priest specs.
+                Great Vault support is now in beta. Keep your common sense about you while using it. Legendary effects are not yet implemented for Mistweaver and the two priest specs.
               </Typography>
             </Paper>
           </Grid>
@@ -184,7 +184,7 @@ export default function QEMainMenu(props) {
           )}
         </Grid>
 
-        <p className="headers" style={{fontSize: "12px"}}>QE Live Update 12. Last Updated 14 December.</p>
+        <p className="headers" style={{fontSize: "12px"}}>QE Live Update 13. Last Updated 15 December.</p>
         
       </div>
     </div>

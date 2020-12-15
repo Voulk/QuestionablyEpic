@@ -247,22 +247,30 @@ export function buildWepCombos(player, active=false) {
 
       //console.log("Wep Loop" + i + "/" + k + ". " + main_hand.level + ". " + off_hand.level);
 
-      let item = new Item(
-        main_hand.id,
-        "Combined Weapon", // TODO
-        "CombinedWeapon",
-        main_hand.socket + off_hand.socket, // Socket
-        "", // Tertiary
-        0,
-        Math.round((main_hand.level + off_hand.level) / 2)
-      );
-      item.stats = sumObjectsByKey(main_hand.stats, off_hand.stats);
-      item.stats.bonus_stats = {};
-      
-      item.softScore = main_hand.softScore + off_hand.softScore;
-      item.offhandID = off_hand.id;
-      //console.log("COMBO: " + main_hand.level + " - " + off_hand.level + ". Combined: " + item.level);
-      wep_list.push(item);
+      if (main_hand.vaultItem && off_hand.vaultItem) {
+        // If both main hand and off hand are vault items, then we can't make a combination out of them.
+        continue;
+      }
+      else {
+        let item = new Item(
+          main_hand.id,
+          "Combined Weapon", // TODO
+          "CombinedWeapon",
+          main_hand.socket + off_hand.socket, // Socket
+          "", // Tertiary
+          0,
+          Math.round((main_hand.level + off_hand.level) / 2)
+        );
+        item.stats = sumObjectsByKey(main_hand.stats, off_hand.stats);
+        item.stats.bonus_stats = {};
+        item.vaultItem = main_hand.vaultItem || off_hand.vaultItem;
+        
+        item.softScore = main_hand.softScore + off_hand.softScore;
+        item.offhandID = off_hand.id;
+        //console.log("COMBO: " + main_hand.level + " - " + off_hand.level + ". Combined: " + item.level);
+        wep_list.push(item);
+      }
+
     }
   }
 
