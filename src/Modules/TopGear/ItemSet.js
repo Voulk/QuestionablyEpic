@@ -90,12 +90,14 @@ class ItemSet {
         // Verifies that the set is possible.
         if (this.uniques['legendary'] && this.uniques['legendary'] > 1) {
             //this.softScore = -1
-            //console.log("SET NOT VIABLE");
+            console.log("SET NOT VIABLE - Legendary");
             return false;
         }
         else if (this.uniques['vault'] && this.uniques['vault'] > 1) {
+            console.log("SET NOT VIABLE - Vault");
             return false;
         }
+        
         else {
             return true;
         }
