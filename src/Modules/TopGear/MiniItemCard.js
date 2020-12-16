@@ -41,8 +41,8 @@ const useStyles = makeStyles({
     borderStyle: "dashed",
   },
   selectedVault: {
-    borderColor: "#0288d1",
-    backgroundColor: "#464F5B",
+    borderColor: "Goldenrod",
+    backgroundColor: "#494a3d",
     minWidth: 200,
     borderStyle: "dashed",
   },
