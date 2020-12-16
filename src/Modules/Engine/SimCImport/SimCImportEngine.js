@@ -1,4 +1,4 @@
-import { itemDB } from "../../Player/ItemDB";
+import { itemDB, tokenDB } from "../../Player/ItemDB";
 import { bonus_IDs } from "../BonusIDs";
 import { getItemLevel } from "../ItemUtilities";
 import {
@@ -60,7 +60,9 @@ export function runSimC(
       let type = (i > vaultItems || i < linkedItems) ? "Vault" : "Regular";
       // If our line doesn't include an item ID, skip it.
       if (line.includes("id=")) {
-        processItem(line, player, contentType, type);
+        if (line.includes("unknown")) processToken(line, player, contentType, type)
+        else processItem(line, player, contentType, type);
+        
       }
     }
 
@@ -106,6 +108,31 @@ function checkSimCValid(simCHeader, length, playerClass, setErrorMessage) {
   return checks.class && checks.version && checks.level && checks.length;
 }
 
+function processToken(line, player, contentType, type) {
+  let infoArray = line.split(",");
+  let tokenID = -1;
+  let tokenLevel = -1;
+  let itemBonusIDs = [];
+
+  for (var j = 0; j < infoArray.length; j++) {
+    let info = infoArray[j];
+
+    if (j === 0) {
+      // Do nothing.
+    }
+    else if (info.includes("bonus_id="))
+      itemBonusIDs = info.split("=")[1].split("/");
+    else if (info.includes("id=")) tokenID = parseInt(info.split("=")[1]);
+  }
+
+  // Loop through bonus IDs until we find the item level one. Set Token Item Level.
+
+  // Loop through items in the token list. We check if it's equippable, and if it is we create an item of it's type.
+
+    console.log("Creating Token with level" + tokenLevel + ", and ID: " + tokenID);
+
+}
+
 function processItem(line, player, contentType, type) {
   // Split string.
   let infoArray = line.split(",");
@@ -144,6 +171,8 @@ function processItem(line, player, contentType, type) {
     else if (info.includes("drop_level=")) dropLevel = parseInt(info.split("=")[1]);
     else if (info.includes("crafted_stats=")) craftedStats = info.split("=")[1].split("/");
   }
+
+
 
   // Grab the items base level from our item database.
   itemLevel = getItemLevel(itemID);

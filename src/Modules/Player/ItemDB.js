@@ -1,5 +1,29 @@
 // 
 // Effect types: 'Class Legendary', 'Generic Legendary', 'Trinket', 'Special', 'Conduit'
+export const tokenDB = [
+    {
+        183894: {
+            "itemLevel": 207,
+            "venthyr": [182400, 182399],
+        },
+        183895: {
+            "itemLevel": 207,
+            "venthyr": [182400, 182399]
+        },
+        183888: {
+            "itemLevel": 200,
+            "venthyr": [182426, 182425]
+        },
+        183889: {
+            "itemLevel": 200,
+            "venthyr": [182426, 182425]
+        },
+
+        
+    }
+]
+
+
 export const itemDB = [
     {
         "id": 168676,
