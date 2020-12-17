@@ -152,7 +152,8 @@ export default function TopGear(props) {
     for (var i = 0; i < itemList.length; i++) {
       let slot = itemList[i].slot;
       if (slot in slotLengths) {
-          slotLengths[slot] += 1;
+        if (itemList[i].vaultItem === false) slotLengths[slot] += 1;
+          
       }
     } 
     for (const key in slotLengths) {
