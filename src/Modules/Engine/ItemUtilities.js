@@ -4,6 +4,7 @@ import { combat_ratings_mult_by_ilvl, combat_ratings_mult_by_ilvl_jewl } from ".
 import { getEffectValue } from "./EffectFormulas/EffectEngine";
 import SPEC from "../Engine/SPECS";
 import Item from "../Player/Item";
+import { useTranslation } from "react-i18next";
 
 /*
 
@@ -353,6 +354,7 @@ export function calcStatsAtLevel(itemLevel, slot, statAllocations, tertiary) {
 // Builds a stat string out of an items given stats and effect.
 // Stats should be listed in order of quantity.
 export function buildStatString(stats, effect) {
+  const { t, i18n } = useTranslation();
   let statString = "";
   let statsList = [
     { key: "haste", val: stats["haste"] },
@@ -368,11 +370,11 @@ export function buildStatString(stats, effect) {
   for (var ind in statsList) {
     statString +=
       statsList[ind]["val"] > 0
-        ? statsList[ind]["val"] + " " + correctCasing(statsList[ind]["key"]) + " / "
+        ? statsList[ind]["val"] + " " + correctCasing(t("stats." + statsList[ind]["key"])) + " / "
         : "";
   }
 
-  if (effect !== "") statString += "Effect / ";
+  if (effect !== "") statString += t("itemTags.effect") + " / ";
 
   return statString.slice(0, -3); // We slice here to remove excess slashes and white space from the end.
 }
