@@ -224,12 +224,13 @@ export default function ItemCard(props) {
               >
                 <Grid item xs={11}>
                   <Typography
-                    variant="subtitle1"
+                    variant="subtitle2"
                     wrap="nowrap"
                     display="block"
+                    paddingTop="2px"
                     align="left"
                   >
-                    {socket} {statString} {tertiary} {isVault ? " / Great Vault" : ""}
+                    {socket} {statString} {tertiary} {isVault ? " / " + t("itemTags.greatvault") : ""}
                   </Typography>
                 </Grid>
 

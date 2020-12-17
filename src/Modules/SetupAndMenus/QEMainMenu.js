@@ -98,7 +98,7 @@ export default function QEMainMenu(props) {
                 }}
                 
               >
-                {patron ? "Thank you so much for your support!" : "Love the app? Support the site on Patreon!" }
+                {patron ? t("MainMenu.PatronThanks") : t("MainMenu.PatronInvite")}
               </Button>
           </Grid>
           <Grid item xs={12}>
@@ -143,14 +143,13 @@ export default function QEMainMenu(props) {
           ))}
         </Grid>
 
-        <p className="headers">{t("MainMenuCharactersH")}</p>
+        <p className="headers">{t("MainMenu.CharHeader")}</p>
         <Typography
           style={{ color: "white", marginBottom: "10px", fontStyle: "italic" }}
           variant="body2"
           align="center"
         >
-          Add your characters here. Right click to edit your stat weights, realm
-          information and more.
+          {t("MainMenu.CharHelpText")}
         </Typography>
 
         <Grid container spacing={2}>
