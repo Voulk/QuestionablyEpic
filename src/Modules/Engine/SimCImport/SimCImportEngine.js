@@ -50,18 +50,16 @@ export function runSimC(
                 - Bonus IDs can also identify a Timewalking item.
     
             We should take care that we never use the Name tags in the string.
-        */
+    */
 
     let vaultItems = lines.indexOf("### Weekly Reward Choices") !== -1 ? lines.indexOf("### Weekly Reward Choices") : lines.length;
     let linkedItems = lines.indexOf("### Linked gear") !== -1 ? lines.indexOf("### Linked gear") : 0;
-    let covenantInd = lines.indexOf('covenant')
 
     // We only use the covenant variable to expand weapon tokens. Setting a default is a better approach than showing none if it's missing,
     // given the weapons and offhands are near identical anyway. 
-    const covenant = (covenantInd !== -1) ? lines[covenantInd].split("=")[1].toLowerCase() : "venthyr"; 
-    //console.log("VaultItems: " + vaultItems);
-    //console.log("Linked Items: " + linkedItems);
-    console.log("Cov: " + covenant);
+    const covenantLine = lines.filter(x => x.includes("covenant"));
+    const covenant = covenantLine.length > 0 ? covenantLine[0].split("=")[1].toLowerCase() : "venthyr";
+
 
     for (var i = 8; i < lines.length; i++) {
       let line = lines[i];
@@ -73,8 +71,6 @@ export function runSimC(
         
       }
     }
-
-
 
     snackHandler();
     closeDialog();
@@ -145,7 +141,7 @@ function processToken(line, player, contentType, type, covenant) {
   }
 
   // Loop through items in the token list. We check if it's equippable, and if it is we create an item of it's type.
-  const itemList = token['venthyr'];
+  const itemList = token[covenant];
   
   for (var x = 0; x < itemList.length; x++) {
     //console.log("ItemID: " + itemList[x]);
