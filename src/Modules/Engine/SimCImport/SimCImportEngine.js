@@ -1,13 +1,15 @@
 import { itemDB, tokenDB } from "../../Player/ItemDB";
 import { bonus_IDs } from "../BonusIDs";
-import { getItemLevel } from "../ItemUtilities";
+import { getItemLevel} from "../ItemUtilities";
 import {
   calcStatsAtLevel,
   getItemAllocations,
   scoreItem,
   getItemEffect,
   correctCasing,
+  getValidWeaponTypes,
   getItemSlot,
+  getItemSubclass
 } from "../ItemUtilities";
 import Item from "../../Player/Item";
 
@@ -52,15 +54,21 @@ export function runSimC(
 
     let vaultItems = lines.indexOf("### Weekly Reward Choices") !== -1 ? lines.indexOf("### Weekly Reward Choices") : lines.length;
     let linkedItems = lines.indexOf("### Linked gear") !== -1 ? lines.indexOf("### Linked gear") : 0;
+    let covenantInd = lines.indexOf('covenant')
+
+    // We only use the covenant variable to expand weapon tokens. Setting a default is a better approach than showing none if it's missing,
+    // given the weapons and offhands are near identical anyway. 
+    const covenant = (covenantInd !== -1) ? lines[covenantInd].split("=")[1].toLowerCase() : "venthyr"; 
     //console.log("VaultItems: " + vaultItems);
     //console.log("Linked Items: " + linkedItems);
+    console.log("Cov: " + covenant);
 
     for (var i = 8; i < lines.length; i++) {
       let line = lines[i];
       let type = (i > vaultItems || i < linkedItems) ? "Vault" : "Regular";
       // If our line doesn't include an item ID, skip it.
       if (line.includes("id=")) {
-        if (line.includes("unknown")) processToken(line, player, contentType, type)
+        if (line.includes("unknown")) processToken(line, player, contentType, type, covenant)
         else processItem(line, player, contentType, type);
         
       }
@@ -108,11 +116,12 @@ function checkSimCValid(simCHeader, length, playerClass, setErrorMessage) {
   return checks.class && checks.version && checks.level && checks.length;
 }
 
-function processToken(line, player, contentType, type) {
+function processToken(line, player, contentType, type, covenant) {
   let infoArray = line.split(",");
   let tokenID = -1;
   let tokenLevel = -1;
   let itemBonusIDs = [];
+  let tokenSlot = "";
 
   for (var j = 0; j < infoArray.length; j++) {
     let info = infoArray[j];
@@ -124,10 +133,53 @@ function processToken(line, player, contentType, type) {
       itemBonusIDs = info.split("=")[1].split("/");
     else if (info.includes("id=")) tokenID = parseInt(info.split("=")[1]);
   }
-
+  console.log("Creating Token with level" + tokenLevel + ", and ID: " + tokenID);
+  let token = tokenDB[tokenID.toString()];
+  tokenLevel = token.itemLevel;
+  tokenSlot = token.slotType;
   // Loop through bonus IDs until we find the item level one. Set Token Item Level.
+  for (var k = 0; k < itemBonusIDs.length; k++) {
+    let bonus_id = itemBonusIDs[k];
+
+    if (bonus_id >= 1459 && bonus_id <= 1502) tokenLevel += bonus_id - 1472;
+  }
 
   // Loop through items in the token list. We check if it's equippable, and if it is we create an item of it's type.
+  const itemList = token['venthyr'];
+  
+  for (var x = 0; x < itemList.length; x++) {
+    //console.log("ItemID: " + itemList[x]);
+    let itemID = itemList[x];
+    const validArmorTypes = getValidWeaponTypes(player.spec, tokenSlot)
+    const itemSlot = getItemSlot(itemID);
+    const itemSubClass = getItemSubclass(itemID);
+
+    if (validArmorTypes.includes(itemSubClass)) {
+      console.log("Subclass is valid, importing Item");
+      let item = new Item(
+        itemID, "", itemSlot, false, "", 0, tokenLevel
+      );
+      item.vaultItem = (type === "Vault")
+      item.active = item.vaultItem;
+      let itemAllocations = getItemAllocations(itemID);
+      item.stats = calcStatsAtLevel(
+        tokenLevel,
+        itemSlot,
+        itemAllocations,
+        ""
+      );
+
+
+      item.softScore = scoreItem(item, player, contentType);
+      if (item.vaultItem) item.uniqueEquip = "vault";
+
+      console.log("Adding Item from Token: " + item.id + " in slot: " + itemSlot);
+      player.addActiveItem(item);
+
+
+    }
+  }
+  
 
     console.log("Creating Token with level" + tokenLevel + ", and ID: " + tokenID);
 

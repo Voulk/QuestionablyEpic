@@ -1,27 +1,67 @@
 // 
 // Effect types: 'Class Legendary', 'Generic Legendary', 'Trinket', 'Special', 'Conduit'
-export const tokenDB = [
-    {
-        183894: {
-            "itemLevel": 207,
-            "venthyr": [182400, 182399],
-        },
-        183895: {
-            "itemLevel": 207,
-            "venthyr": [182400, 182399]
-        },
-        183888: {
-            "itemLevel": 200,
-            "venthyr": [182426, 182425]
-        },
-        183889: {
-            "itemLevel": 200,
-            "venthyr": [182426, 182425]
-        },
+export const tokenDB = {
+    // Offhands
+    // High Tokens
+    "183894": {
+        "itemLevel": 207,
+        "slotType": "Offhands",
+        "venthyr": [182400, 182399],
+    },
+    "183895": {
+        "itemLevel": 207,
+        "slotType": "Offhands",
+        "venthyr": [182400, 182399]
+    },
+    // Low Tokens
+    "183888": {
+        "itemLevel": 200,
+        "slotType": "Offhands",
+        "venthyr": [182426, 182425]
+    },
+    "183889": {
+        "itemLevel": 200,
+        "slotType": "Offhands",
+        "venthyr": [182426, 182425]
+    },
 
-        
-    }
-]
+    // Weapon Tokens
+    // High Tokens
+    "183897": {
+        "itemLevel": 207,
+        "slotType": "Weapons",
+        "venthyr": [182391, 182392, 182396],
+    },
+    "183898": {
+        "itemLevel": 207,
+        "slotType": "Weapons",
+        "venthyr": [182391, 182392, 182396],
+
+    },
+    "183899": {
+        "itemLevel": 207,
+        "slotType": "Weapons",
+        "venthyr": [182391, 182392, 182396],
+    },
+
+    // Low Tokens
+    "183892": {
+        "itemLevel": 200,
+        "slotType": "Weapons",
+        "venthyr": [182417, 182422, 182418],
+    },
+    "183891": {
+        "itemLevel": 200,
+        "slotType": "Weapons",
+        "venthyr": [182417, 182422, 182418],
+    },
+    "183890": {
+        "itemLevel": 200,
+        "slotType": "Weapons",
+        "venthyr": [182417, 182422, 182418],
+    },
+
+}
 
 
 export const itemDB = [
