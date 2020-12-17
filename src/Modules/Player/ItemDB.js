@@ -1,5 +1,101 @@
 // 
 // Effect types: 'Class Legendary', 'Generic Legendary', 'Trinket', 'Special', 'Conduit'
+export const tokenDB = {
+    // Offhands
+    // High Tokens
+    "183894": {
+        "itemLevel": 207,
+        "slotType": "Offhands",
+        "venthyr": [182400, 182399],
+        "necrolord": [184257, 184258],
+        "kyrian": [177870, 174315],
+        "night_fae": [179566, 179611],
+    },
+    "183895": {
+        "itemLevel": 207,
+        "slotType": "Offhands",
+        "venthyr": [182400, 182399],
+        "necrolord": [184257, 184258],
+        "kyrian": [177870, 174315],
+        "night_fae": [179566, 179611],
+        
+    },
+    // Low Tokens
+    "183888": {
+        "itemLevel": 200,
+        "slotType": "Offhands",
+        "venthyr": [182426, 182425],
+        "necrolord": [184245, 184246], 
+        "kyrian": [174310, 175254],
+        "night_fae": [179570, 179610],
+    },
+    "183889": {
+        "itemLevel": 200,
+        "slotType": "Offhands",
+        "venthyr": [182426, 182425],
+        "necrolord": [184245, 184246], 
+        "kyrian": [174310, 175254],
+        "night_fae": [179570, 179610],
+    },
+
+    // Weapon Tokens
+    // High Tokens
+    "183897": {
+        "itemLevel": 207,
+        "slotType": "Weapons",
+        "venthyr": [182391, 182392, 182396],
+        "night_fae": [180002, 179561, 180022],
+        "kyrian": [184270, 177850, 178973],
+        "necrolord": [184266, 184259, 184261],
+        
+    },
+    "183898": {
+        "itemLevel": 207,
+        "slotType": "Weapons",
+        "venthyr": [182391, 182392, 182396],
+        "night_fae": [180002, 179561, 180022],
+        "kyrian": [184270, 177850, 178973],
+        "necrolord": [184266, 184259, 184261],
+
+    },
+    "183899": {
+        "itemLevel": 207,
+        "slotType": "Weapons",
+        "venthyr": [182391, 182392, 182396],
+        "night_fae": [180002, 179561, 180022],
+        "kyrian": [184270, 177850, 178973],
+        "necrolord": [184266, 184259, 184261],
+    },
+
+    // Low Tokens
+    "183892": {
+        "itemLevel": 200,
+        "slotType": "Weapons",
+        "venthyr": [182417, 182422, 182418],
+        "night_fae": [180000, 180023, 179557],
+        "kyrian": [184273, 177850, 178973],
+        "necrolord": [184244, 184247, 184249],
+    },
+    "183891": {
+        "itemLevel": 200,
+        "slotType": "Weapons",
+        "venthyr": [182417, 182422, 182418],
+        "night_fae": [180000, 180023, 179557],
+        "kyrian": [184273, 177850, 178973],
+        "necrolord": [184244, 184247, 184249],
+    },
+    "183890": {
+        "itemLevel": 200,
+        "slotType": "Weapons",
+        "venthyr": [182417, 182422, 182418],
+        "night_fae": [180000, 180023, 179557],
+        "kyrian": [184273, 177850, 178973],
+        "necrolord": [184244, 184247, 184249],
+    },
+
+}
+
+
 export const itemDB = [
     {
         "id": 168676,

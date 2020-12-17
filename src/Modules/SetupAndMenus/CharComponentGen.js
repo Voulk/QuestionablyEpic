@@ -102,14 +102,14 @@ const useStyles = makeStyles((theme) => ({
     // maxWidth: "260px",
     width: "100%",
     maxHeight: "80px",
-    borderColor: "Gold",
+    borderColor: "Grey",
     padding: "0px",
     marginRight: "0px",
   },
   activeChar: {
-    borderColor: "ForestGreen",
+    borderColor: "Goldenrod",
     borderWidth: "2px",
-    backgroundColor: "#424E42",
+    backgroundColor: "#494a3d",
   },
 
   details: {

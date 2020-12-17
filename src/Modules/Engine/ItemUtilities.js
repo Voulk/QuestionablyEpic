@@ -111,8 +111,6 @@ export function getTranslatedItemName(id, lang, effect) {
     if (temp.length > 0) return temp[0].names[lang];
     else return "Unknown Item";
   }
-
-
 }
 
 // Returns a translated item name based on an ID.
@@ -122,6 +120,16 @@ export function getItemEffect(id) {
   });
 
   if (temp.length > 0 && "effect" in temp[0]) return temp[0].effect;
+  else return "";
+}
+
+// Returns a translated item name based on an ID.
+export function getItemSubclass(id) {
+  let temp = itemDB.filter(function (item) {
+    return item.id === id;
+  });
+
+  if (temp.length > 0 && "itemSubClass" in temp[0]) return temp[0].itemSubClass;
   else return "";
 }
 

@@ -22,9 +22,9 @@ import CardActionArea from "@material-ui/core/CardActionArea";
 const useStyles = makeStyles({
   root: {
     minWidth: 200,
-    borderRadius: 1,
+    borderRadius: 3,
     borderColor: "grey",
-    borderRadius: "5px",
+    borderWidth: "1px",
   },
   selected: {
     minWidth: 200,
@@ -33,6 +33,7 @@ const useStyles = makeStyles({
     //backgroundColor: "#424E42",
     borderColor: "Goldenrod",
     backgroundColor: "#494a3d",
+    borderWidth: "2px",
   },
   vault: {
     borderColor: "#0288d1",
