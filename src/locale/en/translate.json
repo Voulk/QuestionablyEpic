@@ -135,7 +135,40 @@
     "Select Class": "Select Class",
     "Select Race": "Select Race",
 
-    "CooldownPlannerHealerCards": {
+    "CooldownPlanner": {
+      "Classes": {
+        "undefined": "",
+        "HolyPaladin": "Holy Paladin",
+        "DisciplinePriest": "Discipline Priest",
+        "RestorationDruid": "Restoration Druid",
+        "HavocDemonHunter": "Havoc Demon Hunter",
+        "Warrior": "Warrior",
+        "HolyPriest": "Holy Priest",
+        "MistweaverMonk": "Mistweaver Monk",
+        "RestorationShaman": "Restoration Shaman"
+    },
+    "ChartLabels": {
+      "_Comments1": "Translations for HD Charts",
+      "UnmitigatedDamageLabel": "Unmitigated",
+      "MitigatedDamageLabel": "Mitigated"
+    },
+    "TableLabels": {
+      "_Comments1": "Translations for HD Tables",
+      "RaidSelectorLabel": "Select Raid",
+      "BossSelectorLabel": "Select Boss",
+      "CastTimeLabel": "Cast",
+      "BossAbilityLabel": "Boss Ability",
+      "NotesLabel": "Notes",
+      "OffCooldownLabel": "Off-CD",
+      "HealTeamHeader": "Heal Team",
+      "TypeSelector": "Formats"
+    },
+    "UserInputs": {
+      "_Comments1": "Translations for the User Input Components",
+      "Loglink": "Paste WarcraftLog Link Here",
+      "fightButtonLabel": "Select Fight"
+    },
+    "HealerCards": {
       "_Comments1": "Translations for the Accordian for Healer Info",
       "StatsHeading": "Stats",
       "Item Level": "ilvl",
@@ -147,39 +180,7 @@
       "SoulbindAbilities": "Soulbind Abilities",
       "SoulbindConduits": "Soulbind Conduits"
     },
-    "CooldownPlannerUserInputs": {
-      "_Comments1": "Translations for the User Input Components",
-      "Loglink": "Paste WarcraftLog Link Here",
-      "fightButtonLabel": "Select Fight"
-    },
-    "CooldownPlannerTableLabels": {
-      "_Comments1": "Translations for HD Tables",
-      "RaidSelectorLabel": "Select Raid",
-      "BossSelectorLabel": "Select Boss",
-      "CastTimeLabel": "Cast",
-      "BossAbilityLabel": "Boss Ability",
-      "NotesLabel": "Notes",
-      "OffCooldownLabel": "Off-CD",
-      "HealTeamHeader": "Heal Team",
-      "TypeSelector": "Formats"
-    },
-    "CooldownPlannerChartLabels": {
-      "_Comments1": "Translations for HD Charts",
-      "UnmitigatedDamageLabel": "Unmitigated",
-      "MitigatedDamageLabel": "Mitigated"
-    },
-    "CooldownPlannerClasses": {
-      "undefined": "",
-      "HolyPaladin": "Holy Paladin",
-      "DisciplinePriest": "Discipline Priest",
-      "RestorationDruid": "Restoration Druid",
-      "HavocDemonHunter": "Havoc Demon Hunter",
-      "Warrior": "Warrior",
-      "HolyPriest": "Holy Priest",
-      "MistweaverMonk": "Mistweaver Monk",
-      "RestorationShaman": "Restoration Shaman"
-    },
-    "CooldownPlannerClassAbilities": {
+    "ClassAbilities": {
       "NoCD": "No Cooldown",
       "undefined": "",
       "HolyPaladinComment": "Holy Paladin Class Cooldowns",
@@ -254,7 +255,7 @@
       "330627": "Hand of Destruction",
       "336162": "Crescendo",
       "326707": "Cleansing Pain" 
-    },
+    }},
     "QeHeader": {
       "InsertLogLabel": "Insert Log"
     },
