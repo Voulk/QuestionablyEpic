@@ -98,18 +98,20 @@ export default function QEMainMenu(props) {
                 }}
                 
               >
-                {patron ? "Thank you so much for your support!" : "Love the app? Support the site on Patreon!" }
+                {patron ? t("MainMenu.PatronThanks") : t("MainMenu.PatronInvite")}
               </Button>
           </Grid>
           <Grid item xs={12}>
-            <Paper elevation={0} style={{ border: "1px", padding: 10 }}>
+            <Paper elevation={0} style={{ border: "1px", padding: 2, paddingLeft: 15 }}>
               <Typography
-                style={{ color: "limegreen" }}
+                style={{ color: "limegreen", lineHeight: '10px'}}
                 align="left"
-                variant="subtitle1"
+                variant="body1"
                 // gutterBottom
               >
-                Great Vault support is now in beta. Keep your common sense about you while using it. Legendary effects are not yet implemented for Mistweaver and the two priest specs.
+                <p>- Logs input disabled briefly while a bug is fixed. Sorry!</p>
+                <p>- Legendary effects coming soon for Mistweavers & Priests. </p>
+                <p>- Great Vault support in, including weapon tokens!</p>
               </Typography>
             </Paper>
           </Grid>
@@ -143,14 +145,13 @@ export default function QEMainMenu(props) {
           ))}
         </Grid>
 
-        <p className="headers">{t("MainMenuCharactersH")}</p>
+        <p className="headers">{t("MainMenu.CharHeader")}</p>
         <Typography
           style={{ color: "white", marginBottom: "10px", fontStyle: "italic" }}
           variant="body2"
           align="center"
         >
-          Add your characters here. Right click to edit your stat weights, realm
-          information and more.
+          {t("MainMenu.CharHelpText")}
         </Typography>
 
         <Grid container spacing={2}>
@@ -184,7 +185,7 @@ export default function QEMainMenu(props) {
           )}
         </Grid>
 
-        <p className="headers" style={{fontSize: "12px"}}>QE Live Update 13. Last Updated 15 December.</p>
+        <p className="headers" style={{fontSize: "12px"}}>QE Live Update 14. Last Updated 17 December.</p>
         
       </div>
     </div>

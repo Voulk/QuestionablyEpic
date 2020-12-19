@@ -20,7 +20,7 @@
       "GreatVault": "The Great Vault (Coming Soon)",
       "CooldownPlanner":"Cooldown Planner (Coming Soon)",
       "Profile":"Profile",
-      "CharHeader": "Characters",
+      "CharHeader": "Personnages",
       "CharHelpText": "Add your characters here. Right click to edit your stat weights, realm information and more."
       
     },
@@ -35,34 +35,34 @@
     },
 
     "slotNames": {
-      "head": "Helm",
-      "neck": "Neck",
-      "shoulder": "Shoulders",
-      "back": "Cape",
-      "chest": "Chest",
-      "wrists": "Bracers",
-      "hands": "Gloves",
-      "waist": "Belt",
-      "legs": "Legs",
-      "feet": "Boots",
-      "trinket": "Trinkets",
-      "mainHands": "Weapons",
-      "offhands": "Off-Hands",
-      "finger": "Ring",
-      "weapons": "Weapons",
-      "weaponCombos": "Weapon Combos"
+      "head": "Kopf",
+      "neck": "Hals",
+      "shoulder": "Schulter",
+      "back": "Rücken",
+      "chest": "Brust",
+      "wrists": "Handgelenk",
+      "hands": "Hände",
+      "waist": "Taille",
+      "legs": "Beine",
+      "feet": "Füße",
+      "trinket": "Schmuck",
+      "mainHands": "Waffen",
+      "offhands": "Schildhand",
+      "finger": "Finger",
+      "weapons": "Waffen",
+      "weaponCombos": "Waffenkombinationen"
     },
 
     "stats": {
-      "crit": "Crit",
-      "haste": "Haste",
-      "mastery": "Mastery",
-      "versatility": "Versatility"
+      "crit": "Kritische Trefferwertung",
+      "haste": "Tempo",
+      "mastery": "Meisterschaft",
+      "versatility": "Vielseitigkeit"
     },
 
     "itemTags": {
-      "greatvault": "Great Vault",
-      "effect": "Effect"
+      "greatvault": "Große Schatzkammer",
+      "effect": "Bewirken"
 
     },
 
