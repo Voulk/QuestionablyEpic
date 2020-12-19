@@ -86,7 +86,12 @@ class HolyDiver extends Component {
       logDetailsShow: false,
       healTableShow: false,
       switchPanelShow: true,
-      ertList: [],
+      ertListTimeNoIcons: [],
+      ertListBossAbility: [],
+      ertListAbilityNoTimeIconsAll: [],
+      ertListTimeIcons: [],
+      ertListNoteIcons: [],
+      ertListNoteNoIcons: [],
       currentFighttime: null,
       killWipe: null,
       showname: false,
@@ -640,7 +645,16 @@ class HolyDiver extends Component {
                 <HealTeam />
               </Grid>
               <Grid item xs={12} sm={12} md={12} lg={5} xl={5} padding={1}>
-                <ERTTable data={this.state.ertList} />
+                <ERTTable
+                  ertListTimeNoIcons={this.state.ertListTimeNoIcons}
+                  ertListBossAbility={this.state.ertListBossAbility}
+                  ertListAbilityNoTimeIconsAll={
+                    this.state.ertListAbilityNoTimeIconsAll
+                  }
+                  ertListTimeIcons={this.state.ertListTimeIcons}
+                  ertListNoteIcons={this.state.ertListNoteIcons}
+                  ertListNoteNoIcons={this.state.ertListNoteNoIcons}
+                />
               </Grid>
               <Grid item xs={12} style={{ height: 350 }} />
             </Grid>

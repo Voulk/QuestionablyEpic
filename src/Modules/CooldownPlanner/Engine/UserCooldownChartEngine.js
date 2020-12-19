@@ -86,7 +86,60 @@ export default function chartCooldownUpdater(tableData) {
   );
 
   // Map the ERT note from the Table Data
-  const ertNote = tableData.map((key) => ({
+
+  // Time + No Icons
+  const ertNoteTimeNoIcons = tableData.map((key) => ({
+    ert:
+      "{time:" +
+      key.time +
+      "}" +
+      " - " +
+      classColoursERT(key.class) +
+      key.name +
+      "|r" +
+      " - " +
+      i18n.t("CooldownPlannerClassAbilities." + key.Cooldown),
+    // This is for Sorting by Time
+    time: key.time,
+  }));
+
+  // Ability + No Icons
+  const ertNoteAbilityNoIcons = tableData.map((key) => ({
+    ert:
+      i18n.t("BossAbilities." + key.bossAbility) +
+      " - " +
+      classColoursERT(key.class) +
+      key.name +
+      "|r" +
+      " - " +
+      i18n.t("CooldownPlannerClassAbilities." + key.Cooldown),
+    // This is for Sorting by Time
+    time: key.time,
+  }));
+
+  // Ability + Icons All
+  const ertNoteAbilityNoTimeIconsAll = tableData.map((key) => ({
+    ert:
+      i18n.t("BossAbilities." + key.bossAbility) +
+      " " +
+      "{spell:" +
+      key.bossAbility +
+      "}" +
+      " - " +
+      classColoursERT(key.class) +
+      key.name +
+      "|r" +
+      " - " +
+      i18n.t("CooldownPlannerClassAbilities." + key.Cooldown) +
+      " " +
+      "{spell:" +
+      key.Cooldown +
+      "}",
+    time: key.time,
+  }));
+
+  // Time + Icons
+  const ertNoteTimeIcons = tableData.map((key) => ({
     ert:
       "{time:" +
       key.time +
@@ -97,9 +150,40 @@ export default function chartCooldownUpdater(tableData) {
       "|r" +
       " - " +
       i18n.t("CooldownPlannerClassAbilities." + key.Cooldown) +
+      " " +
       "{spell:" +
       key.Cooldown +
       "}",
+    time: key.time,
+  }));
+
+  // Notes + Icons
+  const ertNoteNoteIcons = tableData.map((key) => ({
+    ert:
+      key.notes +
+      " - " +
+      classColoursERT(key.class) +
+      key.name +
+      "|r" +
+      " - " +
+      i18n.t("CooldownPlannerClassAbilities." + key.Cooldown) +
+      " " +
+      "{spell:" +
+      key.Cooldown +
+      "}",
+    time: key.time,
+  }));
+
+  // Notes + No Icons
+  const ertNoteNoteNoIcons = tableData.map((key) => ({
+    ert:
+      key.notes +
+      " - " +
+      classColoursERT(key.class) +
+      key.name +
+      "|r" +
+      " - " +
+      i18n.t("CooldownPlannerClassAbilities." + key.Cooldown),
     time: key.time,
   }));
 
@@ -107,6 +191,11 @@ export default function chartCooldownUpdater(tableData) {
     mitigatedChartDataNoCooldowns: mitigatedChartDataNoCooldowns,
     unmitigatedChartDataNoCooldowns: unmitigatedChartDataNoCooldowns,
     cooldownlistcustom2: uniqueCooldownListArray,
-    ertList: ertNote,
+    ertListTimeNoIcons: ertNoteTimeNoIcons,
+    ertListBossAbility: ertNoteAbilityNoIcons,
+    ertListAbilityNoTimeIconsAll: ertNoteAbilityNoTimeIconsAll,
+    ertListTimeIcons: ertNoteTimeIcons,
+    ertListNoteIcons: ertNoteNoteIcons,
+    ertListNoteNoIcons: ertNoteNoteNoIcons,
   });
 }

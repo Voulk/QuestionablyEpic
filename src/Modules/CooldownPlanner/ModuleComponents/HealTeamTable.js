@@ -292,7 +292,7 @@ export default function HealTeam(props) {
           Toolbar: (props) => (
             <div style={{ marginBottom: 8 }}>
               <MTableToolbar {...props} />
-              <Divider />
+              {/* <Divider /> */}
             </div>
           ),
         }}
