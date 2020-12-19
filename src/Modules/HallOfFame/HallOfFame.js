@@ -23,6 +23,165 @@ export default function HallOfFame(props) {
     { tier: "Diamond", name: "SmokinJoe" },
     { tier: "Diamond", name: "Diamond Steve" },
     { tier: "Gold", name: "Bruce" },
+    { tier: "Rolls Royce", name: "Bill Murray" },
+    { tier: "Rolls Royce", name: "Jennifer Phillips" },
+    { tier: "Rolls Royce", name: "Ptolemy" },
+    { tier: "Diamond", name: "SmokinJoe" },
+    { tier: "Diamond", name: "Diamond Steve" },
+    { tier: "Gold", name: "Bruce" },
+    { tier: "Rolls Royce", name: "Bill Murray" },
+    { tier: "Rolls Royce", name: "Jennifer Phillips" },
+    { tier: "Rolls Royce", name: "Ptolemy" },
+    { tier: "Diamond", name: "SmokinJoe" },
+    { tier: "Diamond", name: "Diamond Steve" },
+    { tier: "Gold", name: "Bruce" },
+    { tier: "Rolls Royce", name: "Bill Murray" },
+    { tier: "Rolls Royce", name: "Jennifer Phillips" },
+    { tier: "Rolls Royce", name: "Ptolemy" },
+    { tier: "Diamond", name: "SmokinJoe" },
+    { tier: "Diamond", name: "Diamond Steve" },
+    { tier: "Gold", name: "Bruce" },
+    { tier: "Rolls Royce", name: "Bill Murray" },
+    { tier: "Rolls Royce", name: "Jennifer Phillips" },
+    { tier: "Rolls Royce", name: "Ptolemy" },
+    { tier: "Diamond", name: "SmokinJoe" },
+    { tier: "Diamond", name: "Diamond Steve" },
+    { tier: "Gold", name: "Bruce" },
+    { tier: "Rolls Royce", name: "Bill Murray" },
+    { tier: "Rolls Royce", name: "Jennifer Phillips" },
+    { tier: "Rolls Royce", name: "Ptolemy" },
+    { tier: "Diamond", name: "SmokinJoe" },
+    { tier: "Diamond", name: "Diamond Steve" },
+    { tier: "Gold", name: "Bruce" },
+    { tier: "Rolls Royce", name: "Bill Murray" },
+    { tier: "Rolls Royce", name: "Jennifer Phillips" },
+    { tier: "Rolls Royce", name: "Ptolemy" },
+    { tier: "Diamond", name: "SmokinJoe" },
+    { tier: "Diamond", name: "Diamond Steve" },
+    { tier: "Gold", name: "Bruce" },
+    { tier: "Rolls Royce", name: "Bill Murray" },
+    { tier: "Rolls Royce", name: "Jennifer Phillips" },
+    { tier: "Rolls Royce", name: "Ptolemy" },
+    { tier: "Diamond", name: "SmokinJoe" },
+    { tier: "Diamond", name: "Diamond Steve" },
+    { tier: "Gold", name: "Bruce" },
+    { tier: "Rolls Royce", name: "Bill Murray" },
+    { tier: "Rolls Royce", name: "Jennifer Phillips" },
+    { tier: "Rolls Royce", name: "Ptolemy" },
+    { tier: "Diamond", name: "SmokinJoe" },
+    { tier: "Diamond", name: "Diamond Steve" },
+    { tier: "Gold", name: "Bruce" },
+    { tier: "Rolls Royce", name: "Bill Murray" },
+    { tier: "Rolls Royce", name: "Jennifer Phillips" },
+    { tier: "Rolls Royce", name: "Ptolemy" },
+    { tier: "Diamond", name: "SmokinJoe" },
+    { tier: "Diamond", name: "Diamond Steve" },
+    { tier: "Gold", name: "Bruce" },
+    { tier: "Rolls Royce", name: "Bill Murray" },
+    { tier: "Rolls Royce", name: "Jennifer Phillips" },
+    { tier: "Rolls Royce", name: "Ptolemy" },
+    { tier: "Diamond", name: "SmokinJoe" },
+    { tier: "Diamond", name: "Diamond Steve" },
+    { tier: "Gold", name: "Bruce" },
+    { tier: "Rolls Royce", name: "Bill Murray" },
+    { tier: "Rolls Royce", name: "Jennifer Phillips" },
+    { tier: "Rolls Royce", name: "Ptolemy" },
+    { tier: "Diamond", name: "SmokinJoe" },
+    { tier: "Diamond", name: "Diamond Steve" },
+    { tier: "Gold", name: "Bruce" },
+    { tier: "Rolls Royce", name: "Bill Murray" },
+    { tier: "Rolls Royce", name: "Jennifer Phillips" },
+    { tier: "Rolls Royce", name: "Ptolemy" },
+    { tier: "Diamond", name: "SmokinJoe" },
+    { tier: "Diamond", name: "Diamond Steve" },
+    { tier: "Gold", name: "Bruce" },
+    { tier: "Rolls Royce", name: "Bill Murray" },
+    { tier: "Rolls Royce", name: "Jennifer Phillips" },
+    { tier: "Rolls Royce", name: "Ptolemy" },
+    { tier: "Diamond", name: "SmokinJoe" },
+    { tier: "Diamond", name: "Diamond Steve" },
+    { tier: "Gold", name: "Bruce" },
+    { tier: "Rolls Royce", name: "Bill Murray" },
+    { tier: "Rolls Royce", name: "Jennifer Phillips" },
+    { tier: "Rolls Royce", name: "Ptolemy" },
+    { tier: "Diamond", name: "SmokinJoe" },
+    { tier: "Diamond", name: "Diamond Steve" },
+    { tier: "Gold", name: "Bruce" },
+    { tier: "Rolls Royce", name: "Bill Murray" },
+    { tier: "Rolls Royce", name: "Jennifer Phillips" },
+    { tier: "Rolls Royce", name: "Ptolemy" },
+    { tier: "Diamond", name: "SmokinJoe" },
+    { tier: "Diamond", name: "Diamond Steve" },
+    { tier: "Gold", name: "Bruce" },
+    { tier: "Rolls Royce", name: "Bill Murray" },
+    { tier: "Rolls Royce", name: "Jennifer Phillips" },
+    { tier: "Rolls Royce", name: "Ptolemy" },
+    { tier: "Diamond", name: "SmokinJoe" },
+    { tier: "Diamond", name: "Diamond Steve" },
+    { tier: "Gold", name: "Bruce" },
+    { tier: "Rolls Royce", name: "Bill Murray" },
+    { tier: "Rolls Royce", name: "Jennifer Phillips" },
+    { tier: "Rolls Royce", name: "Ptolemy" },
+    { tier: "Diamond", name: "SmokinJoe" },
+    { tier: "Diamond", name: "Diamond Steve" },
+    { tier: "Gold", name: "Bruce" },
+    { tier: "Rolls Royce", name: "Bill Murray" },
+    { tier: "Rolls Royce", name: "Jennifer Phillips" },
+    { tier: "Rolls Royce", name: "Ptolemy" },
+    { tier: "Diamond", name: "SmokinJoe" },
+    { tier: "Diamond", name: "Diamond Steve" },
+    { tier: "Gold", name: "Bruce" },
+    { tier: "Rolls Royce", name: "Bill Murray" },
+    { tier: "Rolls Royce", name: "Jennifer Phillips" },
+    { tier: "Rolls Royce", name: "Ptolemy" },
+    { tier: "Diamond", name: "SmokinJoe" },
+    { tier: "Diamond", name: "Diamond Steve" },
+    { tier: "Gold", name: "Bruce" },
+    { tier: "Rolls Royce", name: "Bill Murray" },
+    { tier: "Rolls Royce", name: "Jennifer Phillips" },
+    { tier: "Rolls Royce", name: "Ptolemy" },
+    { tier: "Diamond", name: "SmokinJoe" },
+    { tier: "Rolls Royce", name: "Ptolemy" },
+    { tier: "Diamond", name: "SmokinJoe" },
+    { tier: "Diamond", name: "Diamond Steve" },
+    { tier: "Gold", name: "Bruce" },
+    { tier: "Rolls Royce", name: "Bill Murray" },
+    { tier: "Rolls Royce", name: "Jennifer Phillips" },
+    { tier: "Rolls Royce", name: "Ptolemy" },
+    { tier: "Diamond", name: "SmokinJoe" },
+    { tier: "Diamond", name: "Diamond Steve" },
+    { tier: "Gold", name: "Bruce" },
+    { tier: "Rolls Royce", name: "Bill Murray" },
+    { tier: "Rolls Royce", name: "Jennifer Phillips" },
+    { tier: "Rolls Royce", name: "Ptolemy" },
+    { tier: "Diamond", name: "SmokinJoe" },
+    { tier: "Diamond", name: "Diamond Steve" },
+    { tier: "Gold", name: "Bruce" },
+    { tier: "Rolls Royce", name: "Bill Murray" },
+    { tier: "Rolls Royce", name: "Jennifer Phillips" },
+    { tier: "Rolls Royce", name: "Ptolemy" },
+    { tier: "Diamond", name: "SmokinJoe" },
+    { tier: "Diamond", name: "Diamond Steve" },
+    { tier: "Gold", name: "Bruce" },
+    { tier: "Rolls Royce", name: "Bill Murray" },
+    { tier: "Rolls Royce", name: "Jennifer Phillips" },
+    { tier: "Rolls Royce", name: "Ptolemy" },
+    { tier: "Diamond", name: "SmokinJoe" },
+    { tier: "Diamond", name: "Diamond Steve" },
+    { tier: "Gold", name: "Bruce" },
+    { tier: "Rolls Royce", name: "Bill Murray" },
+    { tier: "Rolls Royce", name: "Jennifer Phillips" },
+    { tier: "Rolls Royce", name: "Ptolemy" },
+    { tier: "Diamond", name: "SmokinJoe" },
+    { tier: "Diamond", name: "Diamond Steve" },
+    { tier: "Gold", name: "Bruce" },
+    { tier: "Rolls Royce", name: "Bill Murray" },
+    { tier: "Rolls Royce", name: "Jennifer Phillips" },
+    { tier: "Rolls Royce", name: "Ptolemy" },
+    { tier: "Diamond", name: "SmokinJoe" },
+    { tier: "Diamond", name: "Diamond Steve" },
+    { tier: "Gold", name: "Bruce" },
+    { tier: "Rolls Royce", name: "Bill Murray" },
   ];
   const { t, i18n } = useTranslation();
   const [open, setOpen] = React.useState(false);
@@ -60,7 +219,7 @@ export default function HallOfFame(props) {
         fullWidth={true}
         scroll="body"
       >
-        <AppBar position="static" elevation={1}>
+        <AppBar position="static" elevation={1} style={{ padding: "8px 0px" }}>
           {/* <DialogTitle
           disableTypography
           color="primary"
@@ -72,17 +231,19 @@ export default function HallOfFame(props) {
             {t("HallOfFame.title")}
           </Typography>
         </AppBar>
-        <Typography align="center" style={{ color: "limegreen" }} variant="h6">
-          Below are the mighty patrons of Questionably Epic, without their
-          contributions this site could not continue. As thanks we name them for
-          their contributions
+        <Typography
+          align="center"
+          style={{ color: "limegreen", marginTop: 8, marginBottom: 8 }}
+          variant="h6"
+        >
+          {t("HallOfFame.introduction")}
         </Typography>
         {/* </DialogTitle> */}
 
-        <DialogContent style={{ height: 400 }}>
+        <DialogContent style={{ minHeight: 400 }}>
           <Grid
             container
-            spacing={1}
+            spacing={2}
             direction="row"
             justify="flex-start"
             alignItems="center"
@@ -90,13 +251,13 @@ export default function HallOfFame(props) {
             <Grid item xs={12}>
               <Grid
                 container
-                spacing={1}
+                spacing={2}
                 direction="row"
                 justify="flex-start"
                 alignItems="center"
               >
                 <Grid item xs={12}>
-                  <Paper elevation={1} style={{ backgroundColor: "#525252" }}>
+                  <Paper elevation={0} style={{ backgroundColor: "#525252" }}>
                     <AppBar
                       elevation={0}
                       position="static"
@@ -110,10 +271,14 @@ export default function HallOfFame(props) {
                       </Typography>
                     </AppBar>
 
-                    <Grid item xs={12}>
+                    <Grid
+                      item
+                      xs={12}
+                      style={{ marginTop: 8, paddingBottom: 8 }}
+                    >
                       <Grid
                         container
-                        spacing={1}
+                        spacing={2}
                         direction="row"
                         justify="flex-start"
                         alignItems="center"
@@ -131,6 +296,7 @@ export default function HallOfFame(props) {
                               >
                                 {key.name}
                               </Typography>
+                              <Divider variant="middle" />
                             </Grid>
                           ))}
                       </Grid>
@@ -148,7 +314,7 @@ export default function HallOfFame(props) {
                 alignItems="center"
               >
                 <Grid item xs={12}>
-                  <Paper elevation={1} style={{ backgroundColor: "#525252" }}>
+                  <Paper elevation={0} style={{ backgroundColor: "#525252" }}>
                     <AppBar
                       elevation={0}
                       position="static"
@@ -162,10 +328,14 @@ export default function HallOfFame(props) {
                       </Typography>
                     </AppBar>
 
-                    <Grid item xs={12}>
+                    <Grid
+                      item
+                      xs={12}
+                      style={{ marginTop: 8, paddingBottom: 8 }}
+                    >
                       <Grid
                         container
-                        spacing={1}
+                        spacing={2}
                         direction="row"
                         justify="flex-start"
                         alignItems="center"
@@ -183,6 +353,7 @@ export default function HallOfFame(props) {
                               >
                                 {key.name}
                               </Typography>
+                              <Divider variant="middle" />
                             </Grid>
                           ))}
                       </Grid>
@@ -200,7 +371,7 @@ export default function HallOfFame(props) {
                 alignItems="center"
               >
                 <Grid item xs={12}>
-                  <Paper elevation={1} style={{ backgroundColor: "#525252" }}>
+                  <Paper elevation={0} style={{ backgroundColor: "#525252" }}>
                     <AppBar
                       elevation={0}
                       position="static"
@@ -214,10 +385,14 @@ export default function HallOfFame(props) {
                       </Typography>
                     </AppBar>
 
-                    <Grid item xs={12}>
+                    <Grid
+                      item
+                      xs={12}
+                      style={{ marginTop: 8, paddingBottom: 8 }}
+                    >
                       <Grid
                         container
-                        spacing={1}
+                        spacing={2}
                         direction="row"
                         justify="flex-start"
                         alignItems="center"
@@ -235,6 +410,7 @@ export default function HallOfFame(props) {
                               >
                                 {key.name}
                               </Typography>
+                              <Divider variant="middle" />
                             </Grid>
                           ))}
                       </Grid>
