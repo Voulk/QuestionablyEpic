@@ -1,4 +1,12 @@
 export const getDruidLegendary = (effectName, player, contentType) => {
+
+  // These are going to be moved to a proper file soon.
+  const IDREJUV = 774;
+  const IDLIFEBLOOM = 33763;
+  const IDREGROWTH = 8936;
+  const IDWILDGROWTH = 48438;
+
+
   let result = 0.0;
   let bonus_stats = {};
   let name = effectName;
@@ -10,7 +18,7 @@ export const getDruidLegendary = (effectName, player, contentType) => {
     TODO: When accepting log input we will eventually have to take into account those already wearing it since it changes our formula slightly.
     */
   if (name === "Vision of Unending Growth") {
-    let rejuvHealingHPS = player.getSpellHPS("Rejuvenation", contentType);
+    let rejuvHealingHPS = player.getSpellHPS(IDREJUV, contentType);
     let baseTicks = 1 + 5 * player.getStatPerc("Haste");
     let expectedTicksWithLegendary = baseTicks / (1 - 0.025 * baseTicks);
     let rejuvHealingInc = expectedTicksWithLegendary / baseTicks - 1;
@@ -21,9 +29,9 @@ export const getDruidLegendary = (effectName, player, contentType) => {
     bonus_stats.hps = expectedHPS;
 
   } else if (name === "Memory of the Mother Tree") {
-    let wildGrowthCPM = player.getSpellCPM("Wild Growth", contentType);
+    let wildGrowthCPM = player.getSpellCPM(IDWILDGROWTH, contentType);
     let procChance = 0.4;
-    let oneRejuv = player.getSingleCast("Rejuvenation", contentType);
+    let oneRejuv = player.getSingleCast(IDREJUV, contentType);
 
     let freeRejuvsPerMinute = wildGrowthCPM * procChance * 3;
     console.log("Free rejuvs a min: " + freeRejuvsPerMinute + ", one rejuv: " + oneRejuv);
@@ -68,7 +76,7 @@ export const getDruidLegendary = (effectName, player, contentType) => {
     let secondLifebloomUptime = 0.8;
     let freeClearcasts =
       60 * secondLifebloomUptime * player.getStatPerc("Haste") * 0.04;
-    let oneRegrowth = player.getSingleCast("Regrowth", contentType);
+    let oneRegrowth = player.getSingleCast(IDREGROWTH, contentType);
     let hps_clearcasting =
       (oneRegrowth * freeClearcasts * percentClearcastsUsed) / 60;
     // --
@@ -76,14 +84,14 @@ export const getDruidLegendary = (effectName, player, contentType) => {
     // console.log("saew" + hps_clearcasting + ". " + oneRegrowth + '. ' + freeClearcasts);
 
     // Lifebloom is a more efficient spell than Rejuv so we can factor in the increased healing we get from the cast.
-    let oneRejuv = player.getSingleCast("Rejuvenation", contentType);
-    let oneLifebloom = player.getSingleCast("Lifebloom", contentType);
+    let oneRejuv = player.getSingleCast(IDREJUV, contentType);
+    let oneLifebloom = player.getSingleCast(IDLIFEBLOOM, contentType);
     let hps_betterCast = (oneLifebloom - oneRejuv) / 15;
 
     // Photosynthesis... (TODO)
 
     // 10% Lifebloom Penalty
-    let lifebloomHPS = player.getSpellHPS("Lifebloom", contentType);
+    let lifebloomHPS = player.getSpellHPS(IDLIFEBLOOM, contentType);
     let deduction = lifebloomHPS * 0.1;
 
     bonus_stats.hps = Math.round(hps_betterCast + hps_clearcasting - deduction);
