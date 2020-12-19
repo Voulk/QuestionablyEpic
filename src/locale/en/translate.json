@@ -160,7 +160,8 @@
       "BossAbilityLabel": "Boss Ability",
       "NotesLabel": "Notes",
       "OffCooldownLabel": "Off-CD",
-      "HealTeamHeader": "Heal Team"
+      "HealTeamHeader": "Heal Team",
+      "TypeSelector": "Formats"
     },
     "CooldownPlannerChartLabels": {
       "_Comments1": "Translations for HD Charts",
