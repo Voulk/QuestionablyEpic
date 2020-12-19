@@ -157,6 +157,36 @@ export default function chartCooldownUpdater(tableData) {
     time: key.time,
   }));
 
+  // Notes + Icons
+  const ertNoteNoteIcons = tableData.map((key) => ({
+    ert:
+      key.notes +
+      " - " +
+      classColoursERT(key.class) +
+      key.name +
+      "|r" +
+      " - " +
+      i18n.t("CooldownPlannerClassAbilities." + key.Cooldown) +
+      " " +
+      "{spell:" +
+      key.Cooldown +
+      "}",
+    time: key.time,
+  }));
+
+  // Notes + No Icons
+  const ertNoteNoteNoIcons = tableData.map((key) => ({
+    ert:
+      key.notes +
+      " - " +
+      classColoursERT(key.class) +
+      key.name +
+      "|r" +
+      " - " +
+      i18n.t("CooldownPlannerClassAbilities." + key.Cooldown),
+    time: key.time,
+  }));
+
   this.setState({
     mitigatedChartDataNoCooldowns: mitigatedChartDataNoCooldowns,
     unmitigatedChartDataNoCooldowns: unmitigatedChartDataNoCooldowns,
@@ -165,5 +195,7 @@ export default function chartCooldownUpdater(tableData) {
     ertListBossAbility: ertNoteAbilityNoIcons,
     ertListAbilityNoTimeIconsAll: ertNoteAbilityNoTimeIconsAll,
     ertListTimeIcons: ertNoteTimeIcons,
+    ertListNoteIcons: ertNoteNoteIcons,
+    ertListNoteNoIcons: ertNoteNoteNoIcons,
   });
 }

@@ -90,6 +90,8 @@ class HolyDiver extends Component {
       ertListBossAbility: [],
       ertListAbilityNoTimeIconsAll: [],
       ertListTimeIcons: [],
+      ertListNoteIcons: [],
+      ertListNoteNoIcons: [],
       currentFighttime: null,
       killWipe: null,
       showname: false,
@@ -650,6 +652,8 @@ class HolyDiver extends Component {
                     this.state.ertListAbilityNoTimeIconsAll
                   }
                   ertListTimeIcons={this.state.ertListTimeIcons}
+                  ertListNoteIcons={this.state.ertListNoteIcons}
+                  ertListNoteNoIcons={this.state.ertListNoteNoIcons}
                 />
               </Grid>
               <Grid item xs={12} style={{ height: 350 }} />

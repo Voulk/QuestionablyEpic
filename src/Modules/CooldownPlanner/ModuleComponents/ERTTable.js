@@ -135,13 +135,13 @@ export default function ERTTable(props) {
 
   const copyToClipboard = (ertType) => {
     let data = ertFormat(ertType);
-    const copyText = data.map((key) => key.ert, <br />);
-    console.log(copyText);
+    const copyText = data.map((key) => key.ert);
+    // console.log(copyText);
     if (navigator.clipboard) {
       navigator.clipboard.writeText(copyText).then(
-        () => {
-          console.log("copy success");
-        },
+        // () => {
+        //   console.log("copy success");
+        // },
         (error) => {
           console.log(error);
         }
@@ -162,6 +162,10 @@ export default function ERTTable(props) {
         return props.ertListBossAbility;
       case "Boss Ability - Icons":
         return props.ertListAbilityNoTimeIconsAll;
+      case "Notes - Icons":
+        return props.ertListNoteIcons;
+      case "Notes - No Icons":
+        return props.ertListNoteNoIcons;
       default:
         return props.ertListTimeNoIcons;
     }
@@ -244,6 +248,7 @@ export default function ERTTable(props) {
                         <MenuItem key={"ert2"} value={"Time - Icons"}>
                           Time - Icons
                         </MenuItem>
+                        <Divider />
                         <MenuItem
                           key={"ert3"}
                           value={"Boss Ability - No Icons"}
@@ -253,6 +258,14 @@ export default function ERTTable(props) {
                         <Divider />
                         <MenuItem key={"ert4"} value={"Boss Ability - Icons"}>
                           Boss Ability - Icons
+                        </MenuItem>
+                        <Divider />
+                        <MenuItem key={"ert5"} value={"Notes - Icons"}>
+                          Notes - Icons
+                        </MenuItem>
+                        <Divider />
+                        <MenuItem key={"ert6"} value={"Notes - No Icons"}>
+                          Notes - No Icons
                         </MenuItem>
                         <Divider />
                       </Select>
