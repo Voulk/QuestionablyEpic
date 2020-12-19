@@ -102,14 +102,16 @@ export default function QEMainMenu(props) {
               </Button>
           </Grid>
           <Grid item xs={12}>
-            <Paper elevation={0} style={{ border: "1px", padding: 10 }}>
+            <Paper elevation={0} style={{ border: "1px", padding: 2, paddingLeft: 15 }}>
               <Typography
-                style={{ color: "limegreen" }}
+                style={{ color: "limegreen", lineHeight: '10px'}}
                 align="left"
-                variant="subtitle1"
+                variant="body1"
                 // gutterBottom
               >
-                Great Vault support is now in beta. Keep your common sense about you while using it. Legendary effects are not yet implemented for Mistweaver and the two priest specs.
+                <p>- Logs input disabled briefly while a bug is fixed. Sorry!</p>
+                <p>- Legendary effects coming soon for Mistweavers & Priests. </p>
+                <p>- Great Vault support in, including weapon tokens!</p>
               </Typography>
             </Paper>
           </Grid>

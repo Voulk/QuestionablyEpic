@@ -339,9 +339,10 @@ export default function QELogImport(props) {
         style={{ whiteSpace: "nowrap" }}
         onClick={handleClickOpen}
         //disabled={characterCount === 0}
-        // disabled={true}
+        disabled={true}
       >
         {t("QeHeader.InsertLogLabel")}
+ 
       </Button>
       <Dialog
         open={open}
