@@ -1,9 +1,13 @@
 
-
+const IDLIGHTOFDAWN = 85222;
+const IDHOLYLIGHT = 82326;
+const IDHOLYSHOCK = 20473;
+const IDSHOCKBARRIER = 337824;
+const IDWORDOFGLORY = 85673;
 
 // Returns the expected HPS of the player getting one Holy Power.
 export function getOneHolyPower(player, contentType) {
-    return Math.round(player.getSingleCast('Light of Dawn', contentType) / 3);
+    return Math.round(player.getSingleCast(IDLIGHTOFDAWN, contentType) / 3);
     
 }
 
@@ -68,7 +72,7 @@ export function getPaladinCovAbility(soulbindName, player, contentType) {
     else if (['Marileth', 'Emeni', 'Heirmir'].includes(soulbindName)) {
         // Vanquishers Hammer (Necrolord)
 
-        bonus_stats.HPS = (player.getSingleCast('Word of Glory', contentType) / 30)
+        bonus_stats.HPS = (player.getSingleCast(IDWORDOFGLORY, contentType) / 30)
 
     }
     

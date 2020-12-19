@@ -15,6 +15,12 @@ const FORTIFYING_INGREDIENTS = .12;
 const HARM_DEINAL = .25;
 //const GROUND_BREATH = .15;
 
+const IDVIVIFY = 116670;
+const IDCHIJI = 325197;
+const IDSOOTHINGBREATH = 343737;
+const IDREVIVAL = 115310;
+const FORTIFYINGBREW = 115203;
+
 function conduitScaling(rankOne, requiredRank){
   const scalingFactor = rankOne * .1;
   const rankZero = rankOne - scalingFactor;

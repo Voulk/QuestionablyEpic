@@ -5,6 +5,10 @@ const JONATS = "Jonat's Natural Focus";
 
 const debug = false;
 
+const IDCHAINHEAL = 85222;
+const IDHEALINGWAVE = 82326;
+const IDHEALINGSURGE = 20473;
+
 export const getShamanLegendary = (effectName, player, contentType) => {
   const bonusStats = {};
   bonusStats.hps = -1;
@@ -45,9 +49,9 @@ export const getShamanLegendary = (effectName, player, contentType) => {
     /**
      * hw hs buff the heal of your next ch by x%, stacking up to 5
      */
-    const chHPS = player.getSpellHPS("Chain Heal", contentType);
-    const triggerCasts = player.getSpellCasts("Healing Wave", contentType) + player.getSpellCasts("Healing Surge", contentType);
-    const chCasts = player.getSpellCasts("Chain Heal", contentType);
+    const chHPS = player.getSpellHPS(IDCHAINHEAL, contentType);
+    const triggerCasts = player.getSpellCasts(IDHEALINGWAVE, contentType) + player.getSpellCasts(IDHEALINGSURGE, contentType);
+    const chCasts = player.getSpellCasts(IDCHAINHEAL, contentType);
     const ratio = Math.min(Math.max(triggerCasts / chCasts, 0.01), 5);
     debug && console.log(JONATS, chHPS, triggerCasts, chCasts, ratio);
     bonusStats.hps = chHPS * (ratio / 10);
