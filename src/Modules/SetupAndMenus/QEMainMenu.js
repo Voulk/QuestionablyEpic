@@ -19,6 +19,7 @@ const mainMenuOptions = {
   //"MainMenu.GreatVault": ["/greatvault", false],
   "MainMenu.CooldownPlanner": ["/holydiver", false],
   "MainMenu.Profile": ["/profile", true],
+  "MainMenu.Trinket": ["/trinkets", true],
 };
 
 /* Buttons to be added back.
@@ -60,9 +61,10 @@ export default function QEMainMenu(props) {
   // const currentLanguage = i18n.language;
   const classes = useStyles();
   const characterCount = props.allChars.getAllChar().length;
-  const patron = ["Diamond", "Gold", "Rolls Royce", "Sapphire"].includes(props.patronStatus);
+  const patron = ["Diamond", "Gold", "Rolls Royce", "Sapphire"].includes(
+    props.patronStatus
+  );
   //console.log(props.patronStatus);
-  
 
   return (
     <div style={{ backgroundColor: "#313131" }}>
@@ -79,43 +81,49 @@ export default function QEMainMenu(props) {
         <p className="headers">{/*t("MainMenuItemsH") */}</p>
         <Grid container spacing={2}>
           <Grid item xs={12}>
-          
-          <Button
-                key={321}
-                variant="contained"
-                onClick={() => window.open("https://patreon.com/questionablyepic", "_blank")}
-                color="secondary"
-                disabled={patron}
-                style={{
-                  width: "100%",
-                  height: "46px",
-                  whiteSpace: "nowrap",
-                  justifyContent: "center",
-                  textTransform: "none",
-                  paddingLeft: "32px",
-                  color: "#F2BF59"
-                  
-                }}
-                
-              >
-                {patron ? t("MainMenu.PatronThanks") : t("MainMenu.PatronInvite")}
-              </Button>
+            <Button
+              key={321}
+              variant="contained"
+              onClick={() =>
+                window.open("https://patreon.com/questionablyepic", "_blank")
+              }
+              color="secondary"
+              disabled={patron}
+              style={{
+                width: "100%",
+                height: "46px",
+                whiteSpace: "nowrap",
+                justifyContent: "center",
+                textTransform: "none",
+                paddingLeft: "32px",
+                color: "#F2BF59",
+              }}
+            >
+              {patron ? t("MainMenu.PatronThanks") : t("MainMenu.PatronInvite")}
+            </Button>
           </Grid>
           <Grid item xs={12}>
-            <Paper elevation={0} style={{ border: "1px", padding: 2, paddingLeft: 15 }}>
+            <Paper
+              elevation={0}
+              style={{ border: "1px", padding: 2, paddingLeft: 15 }}
+            >
               <Typography
-                style={{ color: "limegreen", lineHeight: '10px'}}
+                style={{ color: "limegreen", lineHeight: "10px" }}
                 align="left"
                 variant="body1"
                 // gutterBottom
               >
-                <p>- Logs input disabled briefly while a bug is fixed. Sorry!</p>
-                <p>- Legendary effects coming soon for Mistweavers & Priests. </p>
+                <p>
+                  - Logs input disabled briefly while a bug is fixed. Sorry!
+                </p>
+                <p>
+                  - Legendary effects coming soon for Mistweavers & Priests.{" "}
+                </p>
                 <p>- Great Vault support in, including weapon tokens!</p>
               </Typography>
             </Paper>
           </Grid>
-          
+
           {Object.keys(mainMenuOptions).map((key, index) => (
             // Buttons are translated and printed from a dictionary.
             <Grid item xs={12} sm={12} md={6} lg={6} xl={6} key={index}>
@@ -185,8 +193,9 @@ export default function QEMainMenu(props) {
           )}
         </Grid>
 
-        <p className="headers" style={{fontSize: "12px"}}>QE Live Update 14. Last Updated 17 December.</p>
-        
+        <p className="headers" style={{ fontSize: "12px" }}>
+          QE Live Update 14. Last Updated 17 December.
+        </p>
       </div>
     </div>
   );
