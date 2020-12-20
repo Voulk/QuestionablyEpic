@@ -1,5 +1,5 @@
 const PRIMAL_TIDE_CORE = "Primal Tide Core";
-const SPIRITWALKERS_TIDAL_TOTEM = "Spiritwalkers Tidal Totem";
+const SPIRITWALKERS_TIDAL_TOTEM = "Spiritwalker's Tidal Totem";
 const EARTHEN_HARMONY = "Earthen Harmony";
 const JONATS = "Jonat's Natural Focus";
 
@@ -30,8 +30,8 @@ export const getShamanLegendary = (effectName, player, contentType) => {
      * missing: mana saved
      */
     // const mttCasts = player.getSpellCasts("Mana Tide Totem", contentType);
-    // const chHPS = player.getSingleCast("Chain Heal", contentType) / player.getFightLength();
-    // debug && console.log(SPIRITWALKERS_TIDAL_TOTEM, mttCasts, gain, possibleCasts);
+    //const chHPS = player.getSingleCast("Chain Heal", contentType) / player.getFightLength();
+    //console.log(SPIRITWALKERS_TIDAL_TOTEM, mttCasts, gain, possibleCasts);
     const gain = (2.5 / 1.5) - 1; // tooltip says double but you hit the GCD wall
     const buffDuration = 9;
     const castDuration = 2.5 / player.getStatPerc("Haste");
