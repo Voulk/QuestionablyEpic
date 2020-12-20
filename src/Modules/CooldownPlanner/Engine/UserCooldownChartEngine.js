@@ -27,7 +27,7 @@ export default function chartCooldownUpdater(tableData) {
         (key) =>
           key.name +
           " - " +
-          i18n.t("CooldownPlannerClassAbilities." + key.Cooldown)
+          i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown)
       )
     )
   );
@@ -40,7 +40,7 @@ export default function chartCooldownUpdater(tableData) {
       abilityname:
         key.name +
         " - " +
-        i18n.t("CooldownPlannerClassAbilities." + key.Cooldown),
+        i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown),
     }))
     .map((key) =>
       customCooldownDurations.push(
@@ -59,8 +59,7 @@ export default function chartCooldownUpdater(tableData) {
         )
       )
     );
-  console.log(tableData);
-  console.log(customCooldownDurations);
+
   let customCooldownDurationFlatArray = customCooldownDurations.flat();
 
   // Join the Cooldown Durates with the Damage Taken Data (The original data before any data from the table was entered.
@@ -98,7 +97,7 @@ export default function chartCooldownUpdater(tableData) {
       key.name +
       "|r" +
       " - " +
-      i18n.t("CooldownPlannerClassAbilities." + key.Cooldown),
+      i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown),
     // This is for Sorting by Time
     time: key.time,
   }));
@@ -106,13 +105,13 @@ export default function chartCooldownUpdater(tableData) {
   // Ability + No Icons
   const ertNoteAbilityNoIcons = tableData.map((key) => ({
     ert:
-      i18n.t("BossAbilities." + key.bossAbility) +
+      i18n.t("CooldownPlanner.BossAbilities." + key.bossAbility) +
       " - " +
       classColoursERT(key.class) +
       key.name +
       "|r" +
       " - " +
-      i18n.t("CooldownPlannerClassAbilities." + key.Cooldown),
+      i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown),
     // This is for Sorting by Time
     time: key.time,
   }));
@@ -120,7 +119,7 @@ export default function chartCooldownUpdater(tableData) {
   // Ability + Icons All
   const ertNoteAbilityNoTimeIconsAll = tableData.map((key) => ({
     ert:
-      i18n.t("BossAbilities." + key.bossAbility) +
+      i18n.t("CooldownPlanner.BossAbilities." + key.bossAbility) +
       " " +
       "{spell:" +
       key.bossAbility +
@@ -130,7 +129,7 @@ export default function chartCooldownUpdater(tableData) {
       key.name +
       "|r" +
       " - " +
-      i18n.t("CooldownPlannerClassAbilities." + key.Cooldown) +
+      i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown) +
       " " +
       "{spell:" +
       key.Cooldown +
@@ -149,7 +148,7 @@ export default function chartCooldownUpdater(tableData) {
       key.name +
       "|r" +
       " - " +
-      i18n.t("CooldownPlannerClassAbilities." + key.Cooldown) +
+      i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown) +
       " " +
       "{spell:" +
       key.Cooldown +
@@ -166,7 +165,7 @@ export default function chartCooldownUpdater(tableData) {
       key.name +
       "|r" +
       " - " +
-      i18n.t("CooldownPlannerClassAbilities." + key.Cooldown) +
+      i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown) +
       " " +
       "{spell:" +
       key.Cooldown +
@@ -183,7 +182,7 @@ export default function chartCooldownUpdater(tableData) {
       key.name +
       "|r" +
       " - " +
-      i18n.t("CooldownPlannerClassAbilities." + key.Cooldown),
+      i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown),
     time: key.time,
   }));
 

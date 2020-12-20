@@ -232,13 +232,13 @@ export default function ERTTable(props) {
                       size="small"
                     >
                       <InputLabel id="BossSelector">
-                        {t("CooldownPlannerTableLabels.TypeSelector")}
+                        {t("CooldownPlanner.TableLabels.TypeSelector")}
                       </InputLabel>
                       <Select
                         labelId="BossSelector"
                         value={ertType}
                         onChange={(e) => setErtType(e.target.value)}
-                        label={t("CooldownPlannerTableLabels.TypeSelector")}
+                        label={t("CooldownPlanner.TableLabels.TypeSelector")}
                         MenuProps={menuStyle}
                       >
                         <MenuItem key={"ert1"} value={"Time - No Icons"}>

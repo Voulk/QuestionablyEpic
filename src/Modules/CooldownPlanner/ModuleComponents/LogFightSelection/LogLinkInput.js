@@ -11,7 +11,7 @@ export default function LogLinkInput(props) {
       id="filled-basic"
       label={
         props.reportid !== "err"
-          ? t("CooldownPlannerUserInputs.Loglink")
+          ? t("CooldownPlanner.UserInputs.Loglink")
           : "Incorrect Link / Report ID Provided :("
       }
       variant="outlined"
