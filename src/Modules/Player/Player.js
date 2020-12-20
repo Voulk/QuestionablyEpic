@@ -10,6 +10,10 @@ var SPELL_HEALING_PERC = 2;
 var SPELL_HPS = 3;
 var SPELL_OVERHEALING_LOC = 5;
 
+// These are going to be moved!
+
+
+
 var averageHoTCount = 1.4; // TODO: Build this in correctly and pull it from logs where applicable.
 
 
@@ -358,6 +362,7 @@ class Player {
 
     getSpellCasts = (spellName, contentType) => {
         if (spellName in this.castPattern[contentType]) {
+            
             return this.castPattern[contentType][spellName][SPELL_CASTS_LOC];
         }
         else {
@@ -407,6 +412,7 @@ class Player {
 
     getSpellHPS = (spellName, contentType) => {
         if (spellName in this.castPattern[contentType]) {
+            console.log("Getting data for: " + spellName + ". HPS: " + this.castPattern[contentType][spellName][SPELL_HPS]);
             return this.castPattern[contentType][spellName][SPELL_HPS]
         }
         else {
@@ -468,21 +474,23 @@ class Player {
                 },
                 "DefaultWeights": true
             }
+            
+
 
             this.castPattern =
             // CASTS, HEALING, HEALINGPERC, HPS
             {   "Raid": {
-                    "Rejuvenation": [100, 455000, 0.0, 1433],
-                    "Wild Growth": [19, 449400, 0.0, 1323],
-                    "Regrowth": [29, 194225, 0.000, 571],
-                    "Lifebloom": [17, 89150, 0.000, 262],
+                    774: [100, 455000, 0.0, 1433], // Rejuv
+                    48438: [19, 449400, 0.0, 1323], // Wild Growth
+                    8936: [29, 194225, 0.000, 571], // Regrowth
+                    33763: [17, 89150, 0.000, 262], // Lifebloom
   
             },
                 "Dungeon": {
-                    "Rejuvenation": [25, 113750, 0.0, 324],
-                    "Wild Growth": [17, 395000, 0.2472, 1402],
-                    "Regrowth": [11, 105200, 0.000, 545],
-                    "Lifebloom": [17, 89150, 0.000, 262],
+                    774: [25, 113750, 0.0, 324],
+                    48438: [17, 395000, 0.2472, 1402],
+                    8936: [11, 105200, 0.000, 545],
+                    33763: [17, 89150, 0.000, 262],
                 }
             }
             this.specialQueries = 
@@ -534,21 +542,27 @@ class Player {
                 "DefaultWeights": true
             }
 
+            const IDLIGHTOFDAWN = 85222;
+            const IDHOLYLIGHT = 82326;
+            const IDHOLYSHOCK = 20473;
+            const IDSHOCKBARRIER = 337824;
+            const IDWORDOFGLORY = 85673;
+
             this.castPattern =
             // CASTS, HEALING, HEALINGPERC, HPS, OVERHEALING
             {   "Raid": {
-                    "Light of Dawn": [20, 238400, 0.2082, 1316, 0.2],
-                    "Word of Glory": [4, 40800, 0.0357, 225, 0.2],
-                    "Holy Shock": [27, 221400, 0.1934, 1222, 0.2],
-                    "Holy Light": [29, 311600, 0.293, 620, 0.2],
-                    "Shock Barrier": [0, 98300, 0.0858, 542, 0.2],
+                    85222: [20, 238400, 0.2082, 1316, 0.2], // LoD
+                    85673: [4, 40800, 0.0357, 225, 0.2], // WoG
+                    20473: [27, 221400, 0.1934, 1222, 0.2], // Holy Shock
+                    82326: [29, 311600, 0.293, 620, 0.2], // Holy Light
+                    337824: [0, 98300, 0.0858, 542, 0.2], // Shock Barrier
             },
                 "Dungeon": {
-                    "Light of Dawn": [20, 238400, 0.2082, 120],
-                    "Word of Glory": [4, 40800, 0.0357, 900],
-                    "Holy Shock": [27, 221400, 0.1934, 1280],
-                    "Holy Light": [29, 311600, 0.293, 10],
-                    "Shock Barrier": [0, 98300, 0.0858, 542],
+                    85222: [20, 238400, 0.2082, 120],
+                    85673: [4, 40800, 0.0357, 900],
+                    20473: [27, 221400, 0.1934, 1280],
+                    82326: [29, 311600, 0.293, 10],
+                    337824: [0, 98300, 0.0858, 542],
                 }
             }
         } else if (spec === SPEC.RESTOSHAMAN) { // all of this needs a proper input once
@@ -584,26 +598,26 @@ class Player {
                 },
                 DefaultWeights: true
             };
+
+
             this.castPattern = {
                 Raid: {
-                    "Riptide": [66, 693600, 23, 1491],
-                    "Cloudburst Totem": [14, 0, 0, 0],
-                    "Healing Rain": [18, 450000, 15, 967],
-                    "Healing Tide Totem": [2, 0, 0, 0],
-                    "Chain Heal": [20, 368000, 12, 791],
-                    "Healing on Earth Shield": [0, 212000, 0, 456],
-                    "Mana Tide Totem": [2, 0, 0, 0],
-                    "Healing Surge": [20, 0, 0, 0],
+                    61295: [66, 693600, 23, 1491], // Riptide
+                    157153: [14, 0, 0, 0], // Cloudburst
+                    73920: [18, 450000, 15, 967], // Healing Rain
+                    108280: [2, 0, 0, 0], // Healing Tide Totem
+                    85222: [20, 368000, 12, 791], // Chain Heal
+                    16191: [2, 0, 0, 0], // Mana Tide Totem
+                    20473: [20, 0, 0, 0], // Healing Surge
                 },
                 Dungeon: {
-                    "Riptide": [66, 693600, 23, 1491],
-                    "Cloudburst Totem": [14, 0, 0, 0],
-                    "Healing Rain": [18, 450000, 15, 967],
-                    "Healing Tide Totem": [2, 0, 0, 0],
-                    "Chain Heal": [20, 368000, 12, 791],
-                    "Healing on Earth Shield": [0, 212000, 0, 456],
-                    "Mana Tide Totem": [2, 0, 0, 0],
-                    "Healing Surge": [40, 0, 0, 0],
+                    61295: [66, 693600, 23, 1491],
+                    157153: [14, 0, 0, 0],
+                    73920: [18, 450000, 15, 967],
+                    108280: [2, 0, 0, 0],
+                    85222: [20, 368000, 12, 791],
+                    16191: [2, 0, 0, 0],
+                    20473: [40, 0, 0, 0], // Healing Surge
                 }
             };
             this.specialQueries = 
@@ -748,28 +762,27 @@ class Player {
                 "DefaultWeights": true
             }
 
+            const IDVIVIFY = 116670;
+            const IDSOOTHINGBREATH = 343737;
+            const IDREVIVAL = 115310;
+            const IDFORTIFYINGBREW = 115203;
+            const IDGUSTOFMISTS = 117907;
+
             this.castPattern =
             // CASTS, HEALING, HEALINGPERC, HPS
             {   "Raid": {
-                    "Enveloping Mist": [	9,	165317,	14.33,	1183.8],
-                    "Vivify": [	13,	143871,	12.47,	1030.2],
-                    "Revival": [	1,	123536,	10.71,	884.6],
-                    "Gust of Mists": [	0,	123408,	10.7,	883.7],
-                    "Enveloping Breath": [	0,	116780,	10.12,	836.2],
-                    "Essence Font": [	5,	109532,	9.5,	784.3],
-                    "Renewing Mist": [	14,	106834,	9.26,	765],
-                    "Chi-ji Gust of Mists": [	0,	94204,	8.17,	674.6],
-                    "Leech": [	0,	56104,	4.86,	401.8],
-                    "Rising Mist": [	0,	26087,	2.26,	186.8],
-                    "Life Cocoon": [	1,	25454,	2.21,	182.3],
-                    "Enveloping Mist": [	0,	16191,	1.4,	115.9],
-                    "Weapons of Order": [	1,	13857,	1.2,	99.2],
-                    "Soothing Mist": [	4,	11977,	1.04,	85.8],
-                    "Embalmer's Oil": [	0,	7955,	0.69,	57],
-                    "Fortifying Ingredients": [	0,	5294,	0.46,	37.9],
-                    "Purify Soul": [	1,	4768,	0.41,	34.1],
-                    "Embalmer's Oil": [	0,	2292,	0.2,	16.4],
-                    "HoT Healing During LC": [0, 13600, 1.18, 97.8],//only from monk... idk if we want all all or just healin increase for you
+                    124682: [	9,	165317,	14.33,	1183.8], // EnV
+                    116670: [	13,	143871,	12.47,	1030.2], // Vivify
+                    115310: [	1,	123536,	10.71,	884.6], // Revival
+                    117907: [	0,	123408,	10.7,	883.7], // Gust of Mists
+                    343655: [	0,	116780,	10.12,	836.2], // Enveloping Breath
+                    191837: [	5,	109532,	9.5,	784.3], // Essence Font
+                    115151: [	14,	106834,	9.26,	765], // Renewing Mist
+                    143924: [	0,	56104,	4.86,	401.8], // Leech
+                    274909: [	0,	26087,	2.26,	186.8], // Rising Mist
+                    116849: [	1,	25454,	2.21,	182.3], // Life Cocoon
+                    0: [	1,	13857,	1.2,	99.2], // Weapons of Order
+                    115175: [	4,	11977,	1.04,	85.8],
             },
                 "Dungeon": {
     

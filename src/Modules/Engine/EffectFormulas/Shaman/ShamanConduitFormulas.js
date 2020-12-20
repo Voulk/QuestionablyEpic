@@ -47,7 +47,7 @@ export const getShamanConduit = (conduitID, player, contentType, conduitRank) =>
      * for generic values probably need to go through logs.
      */
     const traitBonus = EMBRACE_OF_EARTH_RANKS[conduitRank] / 100;
-    const esHPS = player.getSpellHPS("Healing on Earth Shield", contentType);
+    const esHPS = player.getSpecialQuery("HPSOnEarthShield", contentType);
     bonusStats.HPS = esHPS * traitBonus;
   } else if (conduitID === HEAVY_RAINFALL) {
     /**
