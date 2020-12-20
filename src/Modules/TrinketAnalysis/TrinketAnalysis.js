@@ -1,5 +1,11 @@
 import React, { useEffect } from "react";
-import { makeStyles } from "@material-ui/core/styles";
+import {
+  makeStyles,
+  Paper,
+  Typography,
+  Grid,
+  Divider,
+} from "@material-ui/core";
 import { useTranslation } from "react-i18next";
 import { itemDB } from "../Player/ItemDB";
 import Item from "../Player/Item";
@@ -53,7 +59,7 @@ export default function TrinketAnalysis(props) {
     activeTrinkets.push(trinketAtLevels);
   }
 
-  activeTrinkets.sort((a, b) => (a.i200 < b.i200 ? 1 : -1));
+  activeTrinkets.sort((a, b) => (a.i226 < b.i226 ? 1 : -1));
   console.log(activeTrinkets);
 
   return (
@@ -65,8 +71,19 @@ export default function TrinketAnalysis(props) {
         display: "block",
       }}
     >
-      Trinket Analysis Page
-      <VerticalChart data={activeTrinkets} />
+      <Paper>
+        <Grid container spacing={1}>
+          <Grid item xs={12} style={{ marginTop: 20 }}>
+            <Typography color="primary" align="center" variant="h5">
+              Trinket Analysis Page
+            </Typography>
+            <Divider variant="middle" />
+          </Grid>
+          <Grid item xs={12}>
+            <VerticalChart data={activeTrinkets} />
+          </Grid>
+        </Grid>
+      </Paper>
     </div>
   );
 }
