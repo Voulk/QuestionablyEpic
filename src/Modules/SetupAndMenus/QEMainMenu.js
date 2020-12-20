@@ -9,6 +9,7 @@ import ReactGA from "react-ga";
 import { dbCheckPatron } from "./ConnectionUtilities";
 import ArrowForward from "@material-ui/icons/ArrowForward";
 import { Paper, Grid, Button, Typography } from "@material-ui/core";
+import HallOfFame from "../HallOfFame/HallOfFame";
 
 // Warning: If a button name has to change, do it in the translation files. Consider the titles here to be ID's rather than strings.
 const mainMenuOptions = {
