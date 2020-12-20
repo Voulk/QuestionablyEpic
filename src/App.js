@@ -4,6 +4,7 @@ import HolyDiver from "./Modules/CooldownPlanner/CooldownPlannerModule";
 import QEMainMenu from "./Modules/SetupAndMenus/QEMainMenu";
 import TrinketCompare from "./Modules/TrinketCompare";
 import LegendaryCompare from "./Modules/Legendaries/LegendaryCompare";
+import TrinketAnalysis from "./Modules/TrinketAnalysis/TrinketAnalysis";
 import QuickCompare from "./Modules/QuickCompare/QuickCompare";
 import QEHeader from "./Modules/SetupAndMenus/QEHeader";
 import TopGearReport from "./Modules/TopGear/TopGearReport";
@@ -431,10 +432,6 @@ class App extends Component {
               />
               <Route path="/holydiver" render={() => <HolyDiver />} />
               <Route
-                path="/trinkets"
-                render={() => <TrinketCompare pl={this.state.player} />}
-              />
-              <Route
                 path="/report"
                 render={() => (
                   <TopGearReport
@@ -468,6 +465,15 @@ class App extends Component {
                 render={() => (
                   <LegendaryCompare
                     pl={activePlayer}
+                    contentType={this.state.contentType}
+                  />
+                )}
+              />
+              <Route
+                path="/trinkets"
+                render={() => (
+                  <TrinketAnalysis
+                    player={activePlayer}
                     contentType={this.state.contentType}
                   />
                 )}
