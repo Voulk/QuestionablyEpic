@@ -178,7 +178,7 @@ export default function HealTeam(props) {
       render: (rowData) => (
         <div style={{ color: classColoursJS(rowData.class) }}>
           {classIcons(rowData.class, 20)}
-          {t("CooldownPlannerClasses." + rowData.class)}
+          {t("CooldownPlanner.Classes." + rowData.class)}
         </div>
       ),
       editComponent: (props) => (
@@ -204,7 +204,7 @@ export default function HealTeam(props) {
       ),
     },
     {
-      title: t("CooldownPlannerTableLabels.NotesLabel"),
+      title: t("CooldownPlanner.TableLabels.NotesLabel"),
       field: "notes",
       cellStyle: {
         whiteSpace: "nowrap",
@@ -246,7 +246,7 @@ export default function HealTeam(props) {
     <ThemeProvider theme={themeCooldownTable}>
       <MaterialTable
         icons={tableIcons}
-        title={t("CooldownPlannerTableLabels.HealTeamHeader")}
+        title={t("CooldownPlanner.TableLabels.HealTeamHeader")}
         columns={columns}
         data={data}
         style={{
@@ -292,7 +292,7 @@ export default function HealTeam(props) {
           Toolbar: (props) => (
             <div style={{ marginBottom: 8 }}>
               <MTableToolbar {...props} />
-              <Divider />
+              {/* <Divider /> */}
             </div>
           ),
         }}

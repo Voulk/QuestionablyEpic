@@ -132,7 +132,7 @@ export default function LanguageSelector(props) {
                       />
                       EN
                     </MenuItem>
-                    
+                    {/*}
                     <MenuItem onClick={(e) => handleClose(e, "fr")}>
                       <ReactCountryFlag
                         countryCode="FR"
@@ -140,7 +140,7 @@ export default function LanguageSelector(props) {
                         style={{ marginRight: "5px" }}
                       />
                       FR
-                    </MenuItem>
+                  </MenuItem> */}
                     {/*
                     <MenuItem onClick={(e) => handleClose(e, "ru")}>
                       <ReactCountryFlag

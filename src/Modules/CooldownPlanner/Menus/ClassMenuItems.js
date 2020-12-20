@@ -27,7 +27,7 @@ export const classMenus = [
       alt="Holy Paladin"
     />
     <Translation>
-      {(t, { i18n }) => t("CooldownPlannerClasses.HolyPaladin")}
+      {(t, { i18n }) => t("CooldownPlanner.Classes.HolyPaladin")}
     </Translation>
   </MenuItem>,
   <Divider />,
@@ -43,7 +43,7 @@ export const classMenus = [
       alt="Restoration Druid"
     />
     <Translation>
-      {(t, { i18n }) => t("CooldownPlannerClasses.RestorationDruid")}
+      {(t, { i18n }) => t("CooldownPlanner.Classes.RestorationDruid")}
     </Translation>
   </MenuItem>,
   <Divider />,
@@ -59,7 +59,7 @@ export const classMenus = [
       alt="Holy Priest"
     />
     <Translation>
-      {(t, { i18n }) => t("CooldownPlannerClasses.HolyPriest")}
+      {(t, { i18n }) => t("CooldownPlanner.Classes.HolyPriest")}
     </Translation>
   </MenuItem>,
   <Divider />,
@@ -75,7 +75,7 @@ export const classMenus = [
       alt="Discipline Priest"
     />
     <Translation>
-      {(t, { i18n }) => t("CooldownPlannerClasses.DisciplinePriest")}
+      {(t, { i18n }) => t("CooldownPlanner.Classes.DisciplinePriest")}
     </Translation>
   </MenuItem>,
   <Divider />,
@@ -91,7 +91,7 @@ export const classMenus = [
       alt="Restoration Shaman"
     />
     <Translation>
-      {(t, { i18n }) => t("CooldownPlannerClasses.RestorationShaman")}
+      {(t, { i18n }) => t("CooldownPlanner.Classes.RestorationShaman")}
     </Translation>
   </MenuItem>,
   <Divider />,
@@ -107,7 +107,7 @@ export const classMenus = [
       alt="Mistweaver Monk"
     />
     <Translation>
-      {(t, { i18n }) => t("CooldownPlannerClasses.MistweaverMonk")}
+      {(t, { i18n }) => t("CooldownPlanner.Classes.MistweaverMonk")}
     </Translation>
   </MenuItem>,
   <Divider />,
@@ -125,7 +125,7 @@ export const classMenus = [
       alt="Havoc Demon Hunter"
     />
     <Translation>
-      {(t, { i18n }) => t("CooldownPlannerClasses.HavocDemonHunter")}
+      {(t, { i18n }) => t("CooldownPlanner.Classes.HavocDemonHunter")}
     </Translation>
   </MenuItem>,
   <Divider />,
@@ -141,7 +141,7 @@ export const classMenus = [
       alt="Warrior"
     />
     <Translation>
-      {(t, { i18n }) => t("CooldownPlannerClasses.Warrior")}
+      {(t, { i18n }) => t("CooldownPlanner.Classes.Warrior")}
     </Translation>
   </MenuItem>,
   <Divider />,

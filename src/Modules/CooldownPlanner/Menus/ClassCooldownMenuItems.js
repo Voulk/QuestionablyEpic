@@ -34,7 +34,7 @@ export default function ClassCooldownMenuItems(props) {
           />
         </a>
         <Translation>
-          {(t) => t("CooldownPlannerClassAbilities.31821")}
+          {(t) => t("CooldownPlanner.ClassAbilities.31821")}
         </Translation>
       </MenuItem>,
       <Divider key={"divider1"} />,
@@ -52,7 +52,7 @@ export default function ClassCooldownMenuItems(props) {
           />
         </a>
         <Translation>
-          {(t) => t("CooldownPlannerClassAbilities.31884")}
+          {(t) => t("CooldownPlanner.ClassAbilities.31884")}
         </Translation>
       </MenuItem>,
     ];
@@ -74,7 +74,7 @@ export default function ClassCooldownMenuItems(props) {
           />
         </a>
         <Translation>
-          {(t) => t("CooldownPlannerClassAbilities.740")}
+          {(t) => t("CooldownPlanner.ClassAbilities.740")}
         </Translation>
       </MenuItem>,
       <Divider key={"divider2"} />,
@@ -92,7 +92,7 @@ export default function ClassCooldownMenuItems(props) {
           />
         </a>
         <Translation>
-          {(t) => t("CooldownPlannerClassAbilities.33891")}
+          {(t) => t("CooldownPlanner.ClassAbilities.33891")}
         </Translation>
       </MenuItem>,
     ];
@@ -114,7 +114,7 @@ export default function ClassCooldownMenuItems(props) {
           />
         </a>
         <Translation>
-          {(t) => t("CooldownPlannerClassAbilities.265202")}
+          {(t) => t("CooldownPlanner.ClassAbilities.265202")}
         </Translation>
       </MenuItem>,
       <Divider key={"divider3"} />,
@@ -132,7 +132,7 @@ export default function ClassCooldownMenuItems(props) {
           />
         </a>
         <Translation>
-          {(t) => t("CooldownPlannerClassAbilities.64843")}
+          {(t) => t("CooldownPlanner.ClassAbilities.64843")}
         </Translation>
       </MenuItem>,
     ];
@@ -154,7 +154,7 @@ export default function ClassCooldownMenuItems(props) {
           />
         </a>
         <Translation>
-          {(t) => t("CooldownPlannerClassAbilities.62618")}
+          {(t) => t("CooldownPlanner.ClassAbilities.62618")}
         </Translation>
       </MenuItem>,
       <Divider key={"divider4"} />,
@@ -172,7 +172,7 @@ export default function ClassCooldownMenuItems(props) {
           />
         </a>
         <Translation>
-          {(t) => t("CooldownPlannerClassAbilities.246287")}
+          {(t) => t("CooldownPlanner.ClassAbilities.246287")}
         </Translation>
       </MenuItem>,
     ];
@@ -194,7 +194,7 @@ export default function ClassCooldownMenuItems(props) {
           />
         </a>
         <Translation>
-          {(t) => t("CooldownPlannerClassAbilities.108280")}
+          {(t) => t("CooldownPlanner.ClassAbilities.108280")}
         </Translation>
       </MenuItem>,
       <Divider key={"divider5"} />,
@@ -212,7 +212,7 @@ export default function ClassCooldownMenuItems(props) {
           />
         </a>
         <Translation>
-          {(t) => t("CooldownPlannerClassAbilities.98008")}
+          {(t) => t("CooldownPlanner.ClassAbilities.98008")}
         </Translation>
       </MenuItem>,
     ];
@@ -234,7 +234,7 @@ export default function ClassCooldownMenuItems(props) {
           />
         </a>
         <Translation>
-          {(t) => t("CooldownPlannerClassAbilities.115310")}
+          {(t) => t("CooldownPlanner.ClassAbilities.115310")}
         </Translation>
       </MenuItem>,
     ];
@@ -256,7 +256,7 @@ export default function ClassCooldownMenuItems(props) {
           />
         </a>
         <Translation>
-          {(t) => t("CooldownPlannerClassAbilities.196718")}
+          {(t) => t("CooldownPlanner.ClassAbilities.196718")}
         </Translation>
       </MenuItem>,
     ];
@@ -278,7 +278,7 @@ export default function ClassCooldownMenuItems(props) {
           />
         </a>
         <Translation>
-          {(t) => t("CooldownPlannerClassAbilities.97462")}
+          {(t) => t("CooldownPlanner.ClassAbilities.97462")}
         </Translation>
       </MenuItem>,
     ];

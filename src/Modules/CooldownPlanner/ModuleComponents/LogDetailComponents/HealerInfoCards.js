@@ -109,7 +109,7 @@ export default function HealerInfoCards(props) {
                 }}
               >
                 {classicons(key.icon, 20)}
-                {key.name} - {t("CooldownPlannerHealerCards.Item Level")}{" "}
+                {key.name} - {t("CooldownPlanner.HealerCards.Item Level")}{" "}
                 {key.stats.map((stats) => stats.ilvl)} - {key.icon}
               </Typography>
             </AccordionSummary>
@@ -145,7 +145,7 @@ export default function HealerInfoCards(props) {
                         borderRadius: "4px 4px 0px 0px",
                       }}
                     >
-                      {t("CooldownPlannerHealerCards.StatsHeading")}
+                      {t("CooldownPlanner.HealerCards.StatsHeading")}
                     </Typography>
                     <Divider />
                     {key.stats.map((stats, i) => (
@@ -166,7 +166,7 @@ export default function HealerInfoCards(props) {
                             fontSize: 14,
                           }}
                         >
-                          {t("CooldownPlannerHealerCards.Crit")}:{" "}
+                          {t("CooldownPlanner.HealerCards.Crit")}:{" "}
                           {roundTo(stats.crit / STATPERONEPERCENT.CRIT + 5, 2)}
                           {"%"}
                           {/* {"(" + stats.crit + ")"} */}
@@ -178,7 +178,7 @@ export default function HealerInfoCards(props) {
                             fontSize: 14,
                           }}
                         >
-                          {t("CooldownPlannerHealerCards.Haste")}:{" "}
+                          {t("CooldownPlanner.HealerCards.Haste")}:{" "}
                           {roundTo(stats.haste / STATPERONEPERCENT.HASTE, 2)}
                           {"%"}
                           {/* {"(" + stats.haste + ")"} */}
@@ -190,7 +190,7 @@ export default function HealerInfoCards(props) {
                             fontSize: 14,
                           }}
                         >
-                          {t("CooldownPlannerHealerCards.Mastery")}:{" "}
+                          {t("CooldownPlanner.HealerCards.Mastery")}:{" "}
                           {roundTo(masteryCalc(key.icon, stats.mastery), 2)}
                           {"%"}
                           {/* {"(" + stats.mastery + ")"} */}
@@ -202,7 +202,7 @@ export default function HealerInfoCards(props) {
                             fontSize: 14,
                           }}
                         >
-                          {t("CooldownPlannerHealerCards.Versatility")}:{" "}
+                          {t("CooldownPlanner.HealerCards.Versatility")}:{" "}
                           {roundTo(
                             stats.versatility / STATPERONEPERCENT.VERSATILITY,
                             2
@@ -242,7 +242,7 @@ export default function HealerInfoCards(props) {
                             borderRadius: "4px 4px 0px 0px",
                           }}
                         >
-                          {t("CooldownPlannerHealerCards.TalentHeader")}
+                          {t("CooldownPlanner.HealerCards.TalentHeader")}
                         </Typography>
                         <Divider />
                         <div
@@ -265,7 +265,7 @@ export default function HealerInfoCards(props) {
                             backgroundColor: "rgba(255, 255, 255, 0.12)",
                           }}
                         >
-                          {t("CooldownPlannerHealerCards.SoulbindAbilities")}
+                          {t("CooldownPlanner.HealerCards.SoulbindAbilities")}
                         </Typography>
                         <Divider />
                         <div
@@ -304,7 +304,7 @@ export default function HealerInfoCards(props) {
                             backgroundColor: "rgba(255, 255, 255, 0.12)",
                           }}
                         >
-                          {t("CooldownPlannerHealerCards.SoulbindConduits")}
+                          {t("CooldownPlanner.HealerCards.SoulbindConduits")}
                         </Typography>
                         <Divider />
                         <div
