@@ -192,7 +192,6 @@ export default function QEMainMenu(props) {
         <p className="headers" style={{ fontSize: "12px" }}>
           QE Live Update 12. Last Updated 14 December.
         </p>
-        <HallOfFame />
       </div>
     </div>
   );
