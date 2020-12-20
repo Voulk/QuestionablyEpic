@@ -67,7 +67,7 @@ class Player {
     fightInfo = {
         hps: 6000,
         rawhps: 9420,
-        fightLength: 180,
+        fightLength: 139,
     }
    
     // Stat weights are normalized around intellect.
@@ -190,7 +190,7 @@ class Player {
     scoreActiveItems = (contentType) => {
         for (var i = 0; i < this.activeItems.length; i++) {
             let item = this.activeItems[i];
-            console.log(item);
+            //console.log(item);
             item.softScore = scoreItem(item, this, contentType)
             //console.log("Updating Score");
         }
@@ -715,8 +715,25 @@ class Player {
             this.castPattern =
             // CASTS, HEALING, HEALINGPERC, HPS
             {   "Raid": {
-                    
-  
+                    "Enveloping Mist": [	9,	165317,	14.33,	1183.8],
+                    "Vivify": [	13,	143871,	12.47,	1030.2],
+                    "Revival": [	1,	123536,	10.71,	884.6],
+                    "Gust of Mists": [	0,	123408,	10.7,	883.7],
+                    "Enveloping Breath": [	0,	116780,	10.12,	836.2],
+                    "Essence Font": [	5,	109532,	9.5,	784.3],
+                    "Renewing Mist": [	14,	106834,	9.26,	765],
+                    "Chi-ji Gust of Mists": [	0,	94204,	8.17,	674.6],
+                    "Leech": [	0,	56104,	4.86,	401.8],
+                    "Rising Mist": [	0,	26087,	2.26,	186.8],
+                    "Life Cocoon": [	1,	25454,	2.21,	182.3],
+                    "Enveloping Mist": [	0,	16191,	1.4,	115.9],
+                    "Weapons of Order": [	1,	13857,	1.2,	99.2],
+                    "Soothing Mist": [	4,	11977,	1.04,	85.8],
+                    "Embalmer's Oil": [	0,	7955,	0.69,	57],
+                    "Fortifying Ingredients": [	0,	5294,	0.46,	37.9],
+                    "Purify Soul": [	1,	4768,	0.41,	34.1],
+                    "Embalmer's Oil": [	0,	2292,	0.2,	16.4],
+                    "HoT Healing During LC": [0, 13600, 1.18, 97.8],//only from monk... idk if we want all all or just healin increase for you
             },
                 "Dungeon": {
     

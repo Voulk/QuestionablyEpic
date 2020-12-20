@@ -26,7 +26,7 @@ export default function FightSelectorButton(props) {
         variant="outlined"
         style={{ height: 40 }}
       >
-        {t("CooldownPlannerUserInputs.fightButtonLabel")}
+        {t("CooldownPlanner.UserInputs.fightButtonLabel")}
       </Button>
       <Menu
         style={{ marginTop: 5, height: 500 }}

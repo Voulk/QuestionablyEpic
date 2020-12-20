@@ -160,11 +160,8 @@ export default function QuickCompare(props) {
   const [AutoValue, setAutoValue] = useState(itemDropdown[0]);
   const [inputValue, setInputValue] = useState("");
   const helpText = `Quick Compare allows you to compare items one by one. You can add items manually using the dropdowns above, or all at once using a string from the SimC
-                    addon. The score is automatically shown in the top right corner in yellow, and items are ordered by strength.`
+                    addon. The score is automatically shown in the top right corner in yellow, and items are ordered by strength.`;
 
-
-  
-                    
   const handleClick = () => {
     setOpen(true);
   };
@@ -305,7 +302,6 @@ export default function QuickCompare(props) {
 
   const wepCombos = buildWepCombos(props.pl);
 
-
   return (
     <div
       style={{
@@ -331,7 +327,7 @@ export default function QuickCompare(props) {
               style={{ padding: "10px 10px 5px 10px" }}
               color="primary"
             >
-              {t("ModuleTitles.QuickCompare")}
+              {t("QuickCompare.Title")}
             </Typography>
             <Divider variant="middle" />
 
@@ -580,7 +576,7 @@ export default function QuickCompare(props) {
         {/* this can be simplified into a map at some stage */}
 
         <Grid item xs={12}>
-        <HelpText text={helpText} />
+          <HelpText text={helpText} />
           <Grid container spacing={1}>
             {/* Helm */}
             <Grid item xs={12}>

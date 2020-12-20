@@ -222,7 +222,7 @@ export default function LegendaryCompare(props) {
           align="center"
           style={{ paddingBottom: 16 }}
         >
-          {t("LegendaryCompareTitle")}
+          {t("LegendaryCompare.Title")}
         </Typography>
         <Grid container spacing={1} direction="row">
           {legendaryList.map((item, index) => (

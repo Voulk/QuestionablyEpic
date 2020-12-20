@@ -4,6 +4,7 @@ import { combat_ratings_mult_by_ilvl, combat_ratings_mult_by_ilvl_jewl } from ".
 import { getEffectValue } from "./EffectFormulas/EffectEngine";
 import SPEC from "../Engine/SPECS";
 import Item from "../Player/Item";
+import { useTranslation } from "react-i18next";
 
 /*
 
@@ -111,8 +112,6 @@ export function getTranslatedItemName(id, lang, effect) {
     if (temp.length > 0) return temp[0].names[lang];
     else return "Unknown Item";
   }
-
-
 }
 
 // Returns a translated item name based on an ID.
@@ -122,6 +121,16 @@ export function getItemEffect(id) {
   });
 
   if (temp.length > 0 && "effect" in temp[0]) return temp[0].effect;
+  else return "";
+}
+
+// Returns a translated item name based on an ID.
+export function getItemSubclass(id) {
+  let temp = itemDB.filter(function (item) {
+    return item.id === id;
+  });
+
+  if (temp.length > 0 && "itemSubClass" in temp[0]) return temp[0].itemSubClass;
   else return "";
 }
 
@@ -247,22 +256,31 @@ export function buildWepCombos(player, active=false) {
 
       //console.log("Wep Loop" + i + "/" + k + ". " + main_hand.level + ". " + off_hand.level);
 
-      let item = new Item(
-        main_hand.id,
-        "Combined Weapon", // TODO
-        "CombinedWeapon",
-        main_hand.socket + off_hand.socket, // Socket
-        "", // Tertiary
-        0,
-        Math.round((main_hand.level + off_hand.level) / 2)
-      );
-      item.stats = sumObjectsByKey(main_hand.stats, off_hand.stats);
-      item.stats.bonus_stats = {};
-      
-      item.softScore = main_hand.softScore + off_hand.softScore;
-      item.offhandID = off_hand.id;
-      //console.log("COMBO: " + main_hand.level + " - " + off_hand.level + ". Combined: " + item.level);
-      wep_list.push(item);
+      if (main_hand.vaultItem && off_hand.vaultItem) {
+        // If both main hand and off hand are vault items, then we can't make a combination out of them.
+        continue;
+      }
+      else {
+        let item = new Item(
+          main_hand.id,
+          "Combined Weapon", // TODO
+          "CombinedWeapon",
+          main_hand.socket + off_hand.socket, // Socket
+          "", // Tertiary
+          0,
+          Math.round((main_hand.level + off_hand.level) / 2)
+        );
+        item.stats = sumObjectsByKey(main_hand.stats, off_hand.stats);
+        item.stats.bonus_stats = {};
+        item.vaultItem = main_hand.vaultItem || off_hand.vaultItem;
+        item.uniqueEquip = item.vaultItem ? "vault" : "";
+        
+        item.softScore = main_hand.softScore + off_hand.softScore;
+        item.offhandID = off_hand.id;
+        //console.log("COMBO: " + main_hand.level + " - " + off_hand.level + ". Combined: " + item.level);
+        wep_list.push(item);
+      }
+
     }
   }
 
@@ -336,6 +354,7 @@ export function calcStatsAtLevel(itemLevel, slot, statAllocations, tertiary) {
 // Builds a stat string out of an items given stats and effect.
 // Stats should be listed in order of quantity.
 export function buildStatString(stats, effect) {
+  //const { t, i18n } = useTranslation();
   let statString = "";
   let statsList = [
     { key: "haste", val: stats["haste"] },
@@ -351,11 +370,11 @@ export function buildStatString(stats, effect) {
   for (var ind in statsList) {
     statString +=
       statsList[ind]["val"] > 0
-        ? statsList[ind]["val"] + " " + correctCasing(statsList[ind]["key"]) + " / "
+        ? statsList[ind]["val"] + " " + correctCasing(statsList[ind]["key"]) + " / " // t("stats." + statsList[ind]["key"])
         : "";
   }
 
-  if (effect !== "") statString += "Effect / ";
+  if (effect !== "") statString += ("Effect") + " / "; // t("itemTags.effect")
 
   return statString.slice(0, -3); // We slice here to remove excess slashes and white space from the end.
 }

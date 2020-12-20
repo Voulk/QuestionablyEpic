@@ -104,6 +104,7 @@ export default function TopGear(props) {
   const [itemTertiary, setItemTertiary] = useState("");
   const [itemList, setItemList] = useState(props.pl.getActiveItems(activeSlot));
   const [btnActive, setBtnActive] = useState(true);
+  const [errorMessage, setErrorMessage] = useState("");
 
   const openPop = Boolean(anchorEl);
   const idPop = openPop ? "simple-popover" : undefined;
@@ -128,6 +129,7 @@ export default function TopGear(props) {
     // Check that the player has selected an item in every slot. 
     let topgearOk = true;
     let itemList = props.pl.getSelectedItems();
+    let errorMessage = "";
     let slotLengths = {
       "Head": 0,
       "Neck": 0,
@@ -150,15 +152,24 @@ export default function TopGear(props) {
     for (var i = 0; i < itemList.length; i++) {
       let slot = itemList[i].slot;
       if (slot in slotLengths) {
-          slotLengths[slot] += 1;
+        if (itemList[i].vaultItem === false) slotLengths[slot] += 1;
+          
       }
     } 
     for (const key in slotLengths) {
-      if ((key === "Finger" || key === "Trinket") && slotLengths[key] < 2) topgearOk = false;
-      else if (slotLengths[key] === 0) topgearOk = false;
+      if ((key === "Finger" || key === "Trinket") && slotLengths[key] < 2) 
+      {
+        topgearOk = false;
+        errorMessage = "Error: Add a " + t("slotNames." + key.toLowerCase()) + " item";
+      }
+      else if (slotLengths[key] === 0) {
+        topgearOk = false;
+        errorMessage = "Error: Add a " + t("slotNames." + key.toLowerCase()) + " item";
+        
+      }
       //console.log("Sloot Length: " + key + " " + slotLengths[key])
     }
-
+    setErrorMessage(errorMessage);
     return topgearOk;
 
   }
@@ -191,7 +202,7 @@ export default function TopGear(props) {
   const selectedItemCount = props.pl.getSelectedItems().length;
   const helpText = `Top Gear allows you to generate an entire gear set at once. Start by entering your SimC string above, then click to highlight any items you want included
   in the comparison. When you're all set, hit "Go" at the bottom of the page. To enter items manually, return to the main menu and include them in QE Quick
-  Compare.`
+  Compare. Great Vault items are added automatically though for the first week consider your choice carefully outside of the app.`
 
   const activateItem = (unique) => {
     if (selectedItemCount < TOPGEARCAP) {
@@ -304,7 +315,7 @@ export default function TopGear(props) {
         <div
           style={{
             display: "flex",
-            width: "80%",
+            width: "90%",
             flexDirection: "row",
             justifyContent: "space-evenly",
             alignItems: "center",
@@ -318,16 +329,28 @@ export default function TopGear(props) {
           >
             {"Selected Items: " + selectedItemCount + "/" + TOPGEARCAP}
           </Typography>
-          <Button
-            variant="contained"
-            color="secondary"
-            align="center"
-            style={{ height: "68%", width: "180px" }}
-            disabled={!btnActive}
-            onClick={unleashTopGear}
-          >
-            Go!
-          </Button>
+          <div>
+            <Typography
+              variant="Subtitle2"
+              align="center"
+              style={{ padding: "10px 10px 5px 10px", marginRight: "5px" }}
+              color="primary"
+            >
+              {errorMessage}
+            </Typography>
+            <Button
+              variant="contained"
+              color="secondary"
+              align="center"
+              style={{ height: "68%", width: "180px" }}
+              disabled={!btnActive}
+              onClick={unleashTopGear}
+            >
+              Go!
+            </Button>
+
+          </div>
+
         </div>
       </div>
     </div>

@@ -77,6 +77,8 @@ const specImages = {
   "Mistweaver Monk": require("../../Images/MistweaverSmall.jpg"),
 };
 
+
+
 // Called when a character is clicked.
 // TODO: Add Logic
 const charClicked = (char, cardType, allChars, updateChar) => {
@@ -100,14 +102,14 @@ const useStyles = makeStyles((theme) => ({
     // maxWidth: "260px",
     width: "100%",
     maxHeight: "80px",
-    borderColor: "Gold",
+    borderColor: "Grey",
     padding: "0px",
     marginRight: "0px",
   },
   activeChar: {
-    borderColor: "ForestGreen",
+    borderColor: "Goldenrod",
     borderWidth: "2px",
-    backgroundColor: "#424E42",
+    backgroundColor: "#494a3d",
   },
 
   details: {
@@ -256,6 +258,7 @@ export default function CharCards(props) {
   };
 
   const spec = props.cardType === "Char" ? props.char.spec : "";
+  console.log(specImages[spec].default);
 
   const rootClassName =
     classes.root + " " + (props.isActive ? classes.activeChar : "");
@@ -278,7 +281,7 @@ export default function CharCards(props) {
       >
         <Card className={rootClassName} variant="outlined" raised={true}>
           <Avatar
-            src={specImages[spec]}
+            src={specImages[spec].default}
             variant="square"
             alt=""
             className={classes.large}

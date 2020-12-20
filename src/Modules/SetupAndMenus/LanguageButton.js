@@ -115,8 +115,7 @@ export default function LanguageSelector(props) {
                       paddingBottom: 0,
                     }}
                   >
-                    {/*
-                    <MenuItem onClick={(e) => handleClose(e, "ch")}>
+                    {/* <MenuItem onClick={(e) => handleClose(e, "ch")}>
                       <ReactCountryFlag
                         countryCode="CN"
                         svg
@@ -132,16 +131,15 @@ export default function LanguageSelector(props) {
                       />
                       EN
                     </MenuItem>
-                    {/*
-                    <MenuItem onClick={(e) => handleClose(e, "fr")}>
+                    {/* <MenuItem onClick={(e) => handleClose(e, "fr")}>
                       <ReactCountryFlag
                         countryCode="FR"
                         svg
                         style={{ marginRight: "5px" }}
                       />
                       FR
-                    </MenuItem>
-                    <MenuItem onClick={(e) => handleClose(e, "ru")}>
+                    </MenuItem> */}
+                    {/* <MenuItem onClick={(e) => handleClose(e, "ru")}>
                       <ReactCountryFlag
                         countryCode="RU"
                         svg

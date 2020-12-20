@@ -175,9 +175,11 @@ class Chart extends Component {
                 value:
                   this.props.dataToShow === true
                     ? i18n.t(
-                        "CooldownPlannerChartLabels.UnmitigatedDamageLabel"
+                        "CooldownPlanner.ChartLabels.UnmitigatedDamageLabel"
                       )
-                    : i18n.t("CooldownPlannerChartLabels.MitigatedDamageLabel"),
+                    : i18n.t(
+                        "CooldownPlanner.ChartLabels.MitigatedDamageLabel"
+                      ),
                 angle: -90,
                 fill: "#f5f5f5",
                 fontWeight: "bold",

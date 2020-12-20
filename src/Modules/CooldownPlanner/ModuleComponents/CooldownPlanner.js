@@ -254,7 +254,7 @@ export default function CooldownPlanner(props) {
       render: (rowData) => (
         <div style={{ color: classColoursJS(rowData.class) }}>
           {rowData.class === undefined ? "" : classIcons(rowData.class, 20)}
-          {t("CooldownPlannerClasses." + rowData.class)}
+          {t("CooldownPlanner.Classes." + rowData.class)}
         </div>
       ),
       // Shows the selected healers class in edit mode.
@@ -263,7 +263,7 @@ export default function CooldownPlanner(props) {
         return (
           <div style={{ color: classColoursJS(data.class) }}>
             {data.class === undefined ? "" : classIcons(data.class, 20)}
-            {t("CooldownPlannerClasses." + data.class)}
+            {t("CooldownPlanner.Classes." + data.class)}
           </div>
         );
       },
@@ -280,7 +280,7 @@ export default function CooldownPlanner(props) {
       render: (rowData) => (
         <div>
           {abilityIcons(rowData.Cooldown)}
-          {t("CooldownPlannerClassAbilities." + rowData.Cooldown)}
+          {t("CooldownPlanner.ClassAbilities." + rowData.Cooldown)}
         </div>
       ),
       // The Edit Mode Component. Generated based off the healers class.
@@ -311,7 +311,7 @@ export default function CooldownPlanner(props) {
     },
     {
       // The Cast Time Column. This is where the time the user expects the cooldown to be cast.
-      title: t("CooldownPlannerTableLabels.CastTimeLabel"),
+      title: t("CooldownPlanner.TableLabels.CastTimeLabel"),
       field: "time",
       width: "6%",
       cellStyle: {
@@ -334,7 +334,7 @@ export default function CooldownPlanner(props) {
           size="small"
           variant="outlined"
           id="standard-basic"
-          label={t("CooldownPlannerTableLabels.CastTimeLabel")}
+          label={t("CooldownPlanner.TableLabels.CastTimeLabel")}
           placeholder="00:00"
           value={props.value}
           style={{ whiteSpace: "nowrap", width: "100%", marginTop: 6 }}
@@ -344,7 +344,7 @@ export default function CooldownPlanner(props) {
     },
     {
       // Render only, should the user when the cooldown will be available again to be used.
-      title: t("CooldownPlannerTableLabels.OffCooldownLabel"),
+      title: t("CooldownPlanner.TableLabels.OffCooldownLabel"),
       width: "4%",
       cellStyle: {
         whiteSpace: "nowrap",
@@ -353,7 +353,7 @@ export default function CooldownPlanner(props) {
     },
     {
       // Here the user can select which ability the cooldown should cover.
-      title: t("CooldownPlannerTableLabels.BossAbilityLabel"),
+      title: t("CooldownPlanner.TableLabels.BossAbilityLabel"),
       field: "bossAbility",
       width: "15%",
       cellStyle: {
@@ -364,7 +364,7 @@ export default function CooldownPlanner(props) {
           <a data-wowhead={"spell=" + rowData.bossAbility}>
             {bossAbilityIcons(rowData.bossAbility)}
           </a>
-          {t("BossAbilities." + rowData.bossAbility)}
+          {t("CooldownPlanner.BossAbilities." + rowData.bossAbility)}
         </div>
       ),
       editComponent: (props) => (
@@ -376,12 +376,12 @@ export default function CooldownPlanner(props) {
             style={{ marginTop: 6 }}
           >
             <InputLabel id="BossAbilitySelector">
-              {t("CooldownPlannerTableLabels.BossAbilityLabel")}
+              {t("CooldownPlanner.TableLabels.BossAbilityLabel")}
             </InputLabel>
             <Select
               value={props.value}
               labelId="BossAbilitySelector"
-              label={t("CooldownPlannerTableLabels.BossAbilityLabel")}
+              label={t("CooldownPlanner.TableLabels.BossAbilityLabel")}
               onChange={(e) => {
                 props.onChange(e.target.value);
               }}
@@ -399,7 +399,7 @@ export default function CooldownPlanner(props) {
                     <a data-wowhead={"spell=" + key.guid}>
                       {bossAbilityIcons(key.guid)}
                     </a>
-                    {t("BossAbilities." + key.guid)}
+                    {t("CooldownPlanner.BossAbilities." + key.guid)}
                   </MenuItem>
                 ))
                 .map((key) => [key, <Divider />])}
@@ -410,7 +410,7 @@ export default function CooldownPlanner(props) {
     },
     {
       // Under Input Notes for the cooldown. I.e "Use just before this ability" or something else they wish to note.
-      title: t("CooldownPlannerTableLabels.NotesLabel"),
+      title: t("CooldownPlanner.TableLabels.NotesLabel"),
       field: "notes",
       width: "20%",
       cellStyle: {
@@ -422,7 +422,7 @@ export default function CooldownPlanner(props) {
           size="small"
           variant="outlined"
           id="standard-basic"
-          label={t("CooldownPlannerTableLabels.NotesLabel")}
+          label={t("CooldownPlanner.TableLabels.NotesLabel")}
           value={props.value}
           onChange={(e) => props.onChange(e.target.value)}
         />
@@ -558,14 +558,14 @@ export default function CooldownPlanner(props) {
                       size="small"
                     >
                       <InputLabel id="RaidSelector">
-                        {t("CooldownPlannerTableLabels.RaidSelectorLabel")}
+                        {t("CooldownPlanner.TableLabels.RaidSelectorLabel")}
                       </InputLabel>
                       <Select
                         labelId="RaidSelector"
                         value={currentRaid}
                         onChange={(e) => handleChangeRaid(e.target.value)}
                         label={t(
-                          "CooldownPlannerTableLabels.RaidSelectorLabel"
+                          "CooldownPlanner.TableLabels.RaidSelectorLabel"
                         )}
                         MenuProps={menuStyle}
                       >
@@ -587,14 +587,14 @@ export default function CooldownPlanner(props) {
                       disabled={currentRaid === "" ? true : false}
                     >
                       <InputLabel id="BossSelector">
-                        {t("CooldownPlannerTableLabels.BossSelectorLabel")}
+                        {t("CooldownPlanner.TableLabels.BossSelectorLabel")}
                       </InputLabel>
                       <Select
                         labelId="BossSelector"
                         value={currentBoss}
                         onChange={(e) => handleChangeBoss(e.target.value)}
                         label={t(
-                          "CooldownPlannerTableLabels.BossSelectorLabel"
+                          "CooldownPlanner.TableLabels.BossSelectorLabel"
                         )}
                         MenuProps={menuStyle}
                       >

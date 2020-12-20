@@ -29,8 +29,19 @@ export function runTopGear(itemList, wepCombos, player, contentType) {
     let itemSets = createSets(itemList, wepCombos);
     itemSets.sort((a, b) => (a.sumSoftScore < b.sumSoftScore ? 1 : -1));
     count = itemSets.length;
+
+    // TEST LOOP ONLY FOR CONSOLE PRINTS.
+    /*
+    for (var i = 0; i < itemSets.length; i++) {
+        
+        //console.log("ID: " + itemSets[i].id + ". Soft: " + itemSets[i].sumSoftScore + ". Hard: " + itemSets[i].hardScore);
+        //itemSets[i].printSet();
+        console.log(itemSets[i]);
+        console.log("====================");
+   
+    }
     
-    
+    */
     for (var i = 0; i < itemSets.length; i++) {
         itemSets[i] = evalSet(itemSets[i], player, contentType);
    
@@ -38,15 +49,6 @@ export function runTopGear(itemList, wepCombos, player, contentType) {
     itemSets = pruneItems(itemSets);
 
     itemSets.sort((a, b) => (a.hardScore < b.hardScore ? 1 : -1));
-
-    // TEST LOOP ONLY FOR CONSOLE PRINTS.
-    for (var i = 0; i < itemSets.length; i++) {
-        
-        console.log("ID: " + itemSets[i].id + ". Soft: " + itemSets[i].sumSoftScore + ". Hard: " + itemSets[i].hardScore);
-        itemSets[i].printSet();
-        console.log("====================");
-   
-    }
 
     // ----
 
@@ -62,10 +64,19 @@ export function runTopGear(itemList, wepCombos, player, contentType) {
         
     }
 
-    itemSets[0].printSet()
-    let result = new TopGearResult(itemSets[0], differentials);
-    result.itemsCompared = count;
-    return result;
+    //itemSets[0].printSet()
+
+    if (itemSets.length === 0) {
+        let result = new TopGearResult([], []);
+        result.itemsCompared = count;
+        return result
+    }
+    else {
+        let result = new TopGearResult(itemSets[0], differentials);
+        result.itemsCompared = count;
+        return result;
+    }
+
 
 }
 
@@ -114,6 +125,7 @@ function createSets(itemList, wepCombos) {
     slotLengths.Weapon = Object.keys(wepCombos).length;
 
     console.log(JSON.stringify(slotLengths));
+    console.log(splitItems.Finger);
 
     for (var head = 0; head < slotLengths.Head; head++ ) {
         let softScore = {'head': splitItems.Head[head].softScore};
@@ -149,40 +161,61 @@ function createSets(itemList, wepCombos) {
                                                 softScore.weapon = wepCombos[weapon].softScore;
                                                 wepCombos[weapon].slot = "CombinedWeapon";
 
-                                                for (var finger = 1; finger < slotLengths.Finger; finger++) {
+                                                for (var finger = 0; finger < slotLengths.Finger-1; finger++) {
                                                     softScore.finger = splitItems.Finger[finger].softScore;
-                                                    softScore.finger2 = splitItems.Finger[finger-1].softScore;
+                                                    
 
-                                                    for (var trinket = 1; trinket < slotLengths.Trinket; trinket++) {
-                                                        softScore.trinket = splitItems.Trinket[trinket].softScore;
-                                                        softScore.trinket2 = splitItems.Trinket[trinket-1].softScore;
+                                                    for (var finger2 = 1; finger2 < slotLengths.Finger; finger2++) {
+                                                        softScore.finger2 = splitItems.Finger[finger2].softScore;
 
-                                                        //console.log("WepL: " + wepCombos[weapon].name + ". Soft: " + softScore.weapon);
+                                                        
+                                                    if (splitItems.Finger[finger].id !== splitItems.Finger[finger2].id) {
 
-                                                        let includedItems = [
-                                                            splitItems.Head[head],
-                                                            splitItems.Neck[neck],
-                                                            splitItems.Shoulder[shoulder],
-                                                            splitItems.Back[back],
-                                                            splitItems.Chest[chest],
-                                                            splitItems.Wrist[wrist],
-                                                            splitItems.Hands[hands],
-                                                            splitItems.Waist[waist],
-                                                            splitItems.Legs[legs],
-                                                            splitItems.Feet[feet],
-                                                            splitItems.Finger[finger],
-                                                            splitItems.Finger[finger-1],
-                                                            splitItems.Trinket[trinket],
-                                                            splitItems.Trinket[trinket-1],
-                                                            wepCombos[weapon],
-        
-                                                        ];
-                                                        let sumSoft = sumScore(softScore);
-                                                        itemSets.push(new ItemSet(setCount, includedItems, sumSoft))
-                                                        setCount ++;
+                                                        for (var trinket = 0; trinket < slotLengths.Trinket-1; trinket++) {
+                                                            softScore.trinket = splitItems.Trinket[trinket].softScore;
+
+
+                                                            for (var trinket2 = 1; trinket2 < slotLengths.Trinket; trinket2++) {
+                                                                softScore.trinket2 = splitItems.Trinket[trinket2].softScore;
+
+                                                                if (splitItems.Trinket[trinket].id !== splitItems.Trinket[trinket2].id) {
+                                                                    let includedItems = [
+                                                                        splitItems.Head[head],
+                                                                        splitItems.Neck[neck],
+                                                                        splitItems.Shoulder[shoulder],
+                                                                        splitItems.Back[back],
+                                                                        splitItems.Chest[chest],
+                                                                        splitItems.Wrist[wrist],
+                                                                        splitItems.Hands[hands],
+                                                                        splitItems.Waist[waist],
+                                                                        splitItems.Legs[legs],
+                                                                        splitItems.Feet[feet],
+                                                                        splitItems.Finger[finger],
+                                                                        splitItems.Finger[finger2],
+                                                                        splitItems.Trinket[trinket],
+                                                                        splitItems.Trinket[trinket2],
+                                                                        wepCombos[weapon],
+                    
+                                                                    ];
+                                                                    let sumSoft = sumScore(softScore);
+                                                                    itemSets.push(new ItemSet(setCount, includedItems, sumSoft))
+                                                                    setCount ++;
+
+                                                                }
+    
+   
+
+
+                                                            }
+           
+                                                        }
+                                                    }
+
 
                                                     }
-     
+
+
+
                                                 //console.log("Incl Items: " + JSON.stringify(includedItems) + " " + finger + " " + feet + " " + legs + " " + waist + " " + hands);
                                                 }
                                             }
@@ -219,7 +252,7 @@ function buildDifferential(itemSet, primeSet) {
             differentials.items.push(diffList[x])
         }
     }
-    console.log(JSON.stringify(differentials));
+    //console.log(JSON.stringify(differentials));
     return differentials;
 
 }
@@ -341,7 +374,7 @@ function evalSet(itemSet, player, contentType) {
         else {
             setStats[stat] += (stat in bonus_stats ? bonus_stats[stat] : 0)
             hardScore += setStats[stat] * adjusted_weights[stat];
-            console.log("Adding" + stat + " to set: " + (stat in bonus_stats ? bonus_stats[stat] : 0))
+            //console.log("Adding" + stat + " to set: " + (stat in bonus_stats ? bonus_stats[stat] : 0))
             //console.log(setStats[stat] + " stat: " + stat + " adds " + setStats[stat] * adjusted_weights[stat] + " to score.");
           }
         }
