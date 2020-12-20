@@ -50,10 +50,10 @@ export default function QEHeader(props) {
   // If the player isn't logged in, then show a login button and redirect to the login page on click.
   // If the player IS logged in, show their battle tag and redirect to profile on click.
   // TODO: Implement profile.
-  let playerName = props.playerTag || t("HeaderLabels.Login");
+  let playerName = props.playerTag || t("QeHeader.Login");
   let linkTarget = props.playerTag === "" ? "/login" : "/profile";
   let patronStatus =
-    (props.patronStatus !== "" && props.patronStatus !== "Basic")
+    props.patronStatus !== "" && props.patronStatus !== "Basic"
       ? props.patronStatus + " Edition"
       : "Standard Edition";
   let color = {
@@ -143,9 +143,9 @@ export default function QEHeader(props) {
                     disableRestoreFocus
                   >
                     <Typography>
-                      {t("HeaderLabels.ContentTypeMsgStart")}{" "}
+                      {t("QeHeader.ContentTypeMsgStart")}{" "}
                       {props.contentType === "Raid" ? t("Dungeon") : t("Raid")}{" "}
-                      {t("HeaderLabels.ContentTypeMsgEnd")}
+                      {t("QeHeader.ContentTypeMsgEnd")}
                     </Typography>
                   </Popover>
                 </Grid>
@@ -154,7 +154,6 @@ export default function QEHeader(props) {
                     logImportSnack={props.logImportSnack}
                     player={props.pl}
                     allChars={props.allChars}
-                    
                   />
                 </Grid>
                 <Grid item>
