@@ -12,7 +12,7 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel) {
     let activeTrinket = trinket_data.find(trinket => trinket.name === effectName);
 
     if (activeTrinket === undefined) {
-        //console.error('no trinket found');
+        console.error('no trinket found');
         return bonus_stats; // handle error shit on the calling side, or here i guess
     }
     else if (effectName === "Lingering Sunmote") {
@@ -46,9 +46,10 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel) {
  
     }
     else if (effectName === "Darkmoon Deck: Repose") {
+        
         let effect = activeTrinket.effects[0];
-
-        bonus_stats.hps =  getProcessedValue(effect.coefficient, effect.table, itemLevel, effect.efficiency) / effect.cooldown * player.getStatMultiplier('CRITVERS');
+        //console.log("Efficiency: " + effect.efficiency[contentType]);
+        bonus_stats.hps =  getProcessedValue(effect.coefficient, effect.table, itemLevel, effect.efficiency[contentType]) / effect.cooldown * player.getStatMultiplier('CRITVERS');
 
     }
     else if (effectName === "Sunblood Amethyst") {
@@ -208,16 +209,23 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel) {
     
     else if (effectName === "Consumptive Infusion") {
         let effect = activeTrinket.effects[0];
+        
+        let expectedThroughput = effect.expectedTargetThroughput;
+        let leechPerOnePercent = 21;
+        let uptime = effect.duration / effect.cooldown;
+        let leechPercentage = getProcessedValue(effect.coefficient, effect.table, itemLevel) / leechPerOnePercent / 100;
+        //console.log("Uptime: " + uptime + ". Leech Percent: " + leechPercentage + ". HPS: " + (leechPercentage * expectedThroughput * effect.efficiency * uptime));
 
-        bonus_stats.leech = getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.efficiency * effect.duration / effect.cooldown;
-        //console.log("BONUS LEECH: " + bonus_stats.leech + ". Raw: " + getProcessedValue(effect.coefficient, effect.table, itemLevel));
-        //console.log("INSIGNIA Int:" + bonus_stats.intellect + ". Proc: " + getProcessedValue(effect.coefficient, effect.table, itemLevel) + ". Uptime: " + convertPPMToUptime(effect.ppm, effect.duration))
+        bonus_stats.hps =  leechPercentage * expectedThroughput * effect.efficiency * uptime;
 
     }
     else if (effectName === "Tuft of Smoldering Plumage") {
         let effect = activeTrinket.effects[0];
         bonus_stats.hps =  getProcessedValue(effect.coefficient, effect.table, itemLevel, effect.efficiency) / effect.cooldown * player.getStatMultiplier('CRITVERS');
         //console.log("Tuft: " + bonus_stats.hps);
+    }
+    else {
+        console.error("No Trinket Found");
     }
     
 
