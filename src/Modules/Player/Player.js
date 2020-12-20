@@ -51,7 +51,15 @@ class Player {
             Raid: {},
             Dungeon: {},
         }
-   
+    
+    // Consider special queries a sister dictionary to CastPattern. CastPattern includes *raw* spell data pulled from logs but sometimes
+    // we need something more particular. Healing done while channeling Convoke or healing done to a specific target for example.
+    // We'll store these here instead for easy access. 
+    specialQueries = 
+    {
+        Raid: {},
+        Dungeon: {},
+    }
     // The players active stats from their character page. These are raw rather than being percentages. 
     // They can either be pulled automatically from the entered log, or calculated from an entered SimC string.
     // These are used for items like trinkets or conduits, where a flat healing portion might scale with various secondary stats. 
@@ -368,6 +376,16 @@ class Player {
         
     }
 
+    getSpecialQuery = (spellIdentifier, contentType) => {
+        if (spellIdentifier in this.specialQueries[contentType]) {
+            //console.log("Found: " + spellIdentifier + ". " + JSON.stringify(this.specialQueries[contentType]));
+            return this.specialQueries[contentType][spellIdentifier];
+        }
+        else {
+            return 0;
+        }
+    }
+
     getSpellHealingPerc = (spellName, contentType) => {
         if (spellName in this.castPattern[contentType]) {
             return this.castPattern[contentType][spellName][SPELL_HEALING_PERC]
@@ -466,6 +484,15 @@ class Player {
                     "Regrowth": [11, 105200, 0.000, 545],
                     "Lifebloom": [17, 89150, 0.000, 262],
                 }
+            }
+            this.specialQueries = 
+            {   "Raid": {
+                    "ConvokeChannelHPS": 480,
+            },
+                "Dungeon": {
+                    "ConvokeChannelHPS": 480, 
+                }
+
             }
 
         }
@@ -579,6 +606,15 @@ class Player {
                     "Healing Surge": [40, 0, 0, 0],
                 }
             };
+            this.specialQueries = 
+            {   "Raid": {
+                    "HPSOnEarthShield": 456,
+            },
+                "Dungeon": {
+                    "HPSOnEarthShield": 456, 
+                }
+
+            }
         }
         else if (spec === SPEC.DISCPRIEST) {
             this.fightInfo = {
@@ -738,6 +774,21 @@ class Player {
                 "Dungeon": {
     
                 }
+            };
+            this.specialQueries = 
+            {   "Raid": {
+                    "HPSChijiGusts": 674,
+                    "HPSHotHealingDuringLC" : 98,
+                    "HPSHotHealingAfterLC": 0,
+                    "HPSExpelHarmOnSelf": 0,
+            },
+                "Dungeon": {
+                    "HPSChijiGusts": 674,
+                    "HPSHotHealingDuringLC" : 98,
+                    "HPSHotHealingAfterLC": 0,
+                    "HPSExpelHarmOnSelf": 0,
+                }
+
             }
 
         }
