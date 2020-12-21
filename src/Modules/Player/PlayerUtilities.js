@@ -30,7 +30,9 @@ export function convertLogSpellOutput(player, logOutput, fightLength) {
 
   for (let i = 0; i < logOutput.length; i++) {
     let spell = logOutput[i];
+    console.log(logOutput[i]);
     let spellName = spell.name;
+    let spellID = spell.guid;
     let casts = "uses" in spell ? spell.uses : 0;
     let spellHPS = Math.round((spell.total / duration) * 100) / 100;
     let overHealingPerc =
@@ -39,7 +41,7 @@ export function convertLogSpellOutput(player, logOutput, fightLength) {
           100
         : 0;
 
-    data[spellName] = [casts, spell.total, 0, spellHPS, overHealingPerc];
+    data[spellID] = [casts, spell.total, 0, spellHPS, overHealingPerc];
     //console.log("Adding " + spellName + "C: " + casts + ". Total: " + spell.total + ". HPS: " + spellHPS + ". OH: " + overHealingPerc);
     totalHealing += logOutput[i].total;
     totalOverhealing += "overheal" in spell ? spell.overheal : 0;

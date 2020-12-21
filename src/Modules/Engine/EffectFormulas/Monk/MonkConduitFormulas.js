@@ -15,6 +15,12 @@ const FORTIFYING_INGREDIENTS = .12;
 const HARM_DEINAL = .25;
 //const GROUND_BREATH = .15;
 
+const IDVIVIFY = 116670;
+const IDSOOTHINGBREATH = 343737;
+const IDREVIVAL = 115310;
+const IDFORTIFYINGBREW = 115203;
+const IDGUSTOFMISTS = 117907;
+
 function conduitScaling(rankOne, requiredRank){
   const scalingFactor = rankOne * .1;
   const rankZero = rankOne - scalingFactor;
@@ -31,7 +37,7 @@ export const getMonkConduit = (conduitID,  player, contentType, conduitLevel) =>
     if (conduitID === 336773) {
       const conduitPower = conduitScaling(JADE_BOND, conduitLevel);
       // You can only have one of the two so its gonna be 0 + real or real + 0 so we can cheat and be lazy
-      const chijiAndYulonHelaing = player.getSpellHPS("Chi-ji Gust of Mists", contentType) + player.getSpellHPS("Soothing Breath", contentType);
+      const chijiAndYulonHelaing = player.getSpecialQuery("HPSChijiGusts", contentType) + player.getSpellHPS(IDSOOTHINGBREATH, contentType);
       const directHealingIncrease =  chijiAndYulonHelaing * conduitPower;
 
       // TODO cdr stuffs ???
@@ -44,11 +50,11 @@ export const getMonkConduit = (conduitID,  player, contentType, conduitLevel) =>
 
       //TODO Do we care about other healers hps or just ours?
       const conduitPower = conduitScaling(NOURISHING_CHI, conduitLevel);
-      const hotsDuringLC = player.getSpellHPS("HoT Healing During LC", contentType);
+      const hotsDuringLC = player.getSpecialQuery("HPSHotHealingDuringLC", contentType);
       const hotHealingBeforeBoosts = hotsDuringLC / 1.5;
       const healingIncreaseDuringLC =  hotHealingBeforeBoosts * conduitPower;
 
-      const hotsAfterLC = player.getSpellHPS("HoT Healing After LC", contentType);
+      const hotsAfterLC = player.getSpecialQuery("HPSHotHealingAfterLC", contentType);
       const healingIncreaseAfterLC =  hotsAfterLC * conduitPower;
 
       bonus_stats.HPS = healingIncreaseDuringLC + healingIncreaseAfterLC;
@@ -57,7 +63,7 @@ export const getMonkConduit = (conduitID,  player, contentType, conduitLevel) =>
     else if (conduitID === 336812) {
       const conduitPower = conduitScaling(RESPLENDENT_MIST, conduitLevel);
       const conduitChance = .3;
-      const hrHPS = player.getSpellHPS("Gust of Mists", contentType);
+      const hrHPS = player.getSpellHPS(IDGUSTOFMISTS, contentType);
       const directHealingIncrease =  hrHPS * conduitPower * conduitChance;
 
       bonus_stats.HPS = directHealingIncrease;
@@ -65,7 +71,7 @@ export const getMonkConduit = (conduitID,  player, contentType, conduitLevel) =>
     // Rising Sun Revival
     else if (conduitID === 337099) {
       const conduitPower = conduitScaling(RISING_SUN_REVIVAL, conduitLevel);
-      const hrHPS = player.getSpellHPS("Revival", contentType);
+      const hrHPS = player.getSpellHPS(IDREVIVAL, contentType);
       const directHealingIncrease =  hrHPS * conduitPower;
 
       // TODO cdr stuff
@@ -127,7 +133,7 @@ export const getMonkConduit = (conduitID,  player, contentType, conduitLevel) =>
       const actualIncreaseForBDB = (1 + conduitPower) * .35;
       const actualIncreaseFromBMH = actualIncreaseForBDB - conduitPower;
 
-      const totalHPS = player.getHPS();
+      const totalHPS = player.getHPS(contentType);
 
       const directHealingIncrease =  totalHPS * actualIncreaseFromBMH * normalUptime;
       const extraUptimeHPS = totalHPS * actualIncreaseForBDB * netUptimeFromBMH;
@@ -150,7 +156,7 @@ export const getMonkConduit = (conduitID,  player, contentType, conduitLevel) =>
 
       const shield = maxHP * versPercent * conduitPower;
 
-      const cpm = player.getSpellCPM("Fortifying Brew", contentType);
+      const cpm = player.getSpellCPM(IDFORTIFYINGBREW, contentType);
 
       const hps = shield * cpm / 60;
 
@@ -158,9 +164,9 @@ export const getMonkConduit = (conduitID,  player, contentType, conduitLevel) =>
     }
     // Grounding Breath
     else if (conduitID === 336632) {
-      const healingPerVivify = player.getSingleCast("Vivify", contentType);
+      const healingPerVivify = player.getSingleCast(IDVIVIFY, contentType);
 
-      const durationOfFight = player.getFightLength();
+      const durationOfFight = player.getFightLength(contentType);
       const numberOfExtraVivifies = Math.ceil(durationOfFight/60);
 
       const bonusHPS = healingPerVivify * numberOfExtraVivifies / durationOfFight;
@@ -175,7 +181,7 @@ export const getMonkConduit = (conduitID,  player, contentType, conduitLevel) =>
       //Bugged right now so like it only boosts the one on yourself and not the other one`
 
       const conduitPower = conduitScaling(HARM_DEINAL, conduitLevel);
-      const yourExpelHarm = player.getSpellHPS("Expel Harm On Self", contentType);
+      const yourExpelHarm = player.getSpecialQuery("HPSExpelHarmOnSelf", contentType);
       //const otherExpelHarm = player.getSpellHPS("Expel Harm On other Person", contentType);
       const directHealingIncrease =  yourExpelHarm * conduitPower; //+ otherExpelHarm * conduitPower;
 

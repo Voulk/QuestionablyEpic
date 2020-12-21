@@ -75,7 +75,7 @@ export const trinket_data = [
                 benefit: 'hps', 
                 coefficient: 467.66378, // This represents the upper quartile of the given cards.  
                 table: -8, 
-                efficiency: 0.54, 
+                efficiency: {Raid: 0.54, Dungeon: 0.4},
                 cooldown: 90, 
             }
         ]
@@ -313,6 +313,7 @@ export const trinket_data = [
                 efficiency: 0.42,
                 duration: 10, // Falls off when the target falls below 35% health. Efficiency in this case is the HoT uptime.
                 cooldown: 30, // 120 / 3. This scales with haste, which will be applied during the trinket formula.
+                expectedTargetThroughput: 4800, // Could technically be pulled from logs
             },
         ]
     },

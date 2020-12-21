@@ -1,9 +1,13 @@
 const PRIMAL_TIDE_CORE = "Primal Tide Core";
-const SPIRITWALKERS_TIDAL_TOTEM = "Spiritwalkers Tidal Totem";
+const SPIRITWALKERS_TIDAL_TOTEM = "Spiritwalker's Tidal Totem";
 const EARTHEN_HARMONY = "Earthen Harmony";
 const JONATS = "Jonat's Natural Focus";
 
 const debug = false;
+
+const IDCHAINHEAL = 85222;
+const IDHEALINGWAVE = 82326;
+const IDHEALINGSURGE = 20473;
 
 export const getShamanLegendary = (effectName, player, contentType) => {
   const bonusStats = {};
@@ -26,8 +30,8 @@ export const getShamanLegendary = (effectName, player, contentType) => {
      * missing: mana saved
      */
     // const mttCasts = player.getSpellCasts("Mana Tide Totem", contentType);
-    // const chHPS = player.getSingleCast("Chain Heal", contentType) / player.getFightLength();
-    // debug && console.log(SPIRITWALKERS_TIDAL_TOTEM, mttCasts, gain, possibleCasts);
+    //const chHPS = player.getSingleCast("Chain Heal", contentType) / player.getFightLength();
+    //console.log(SPIRITWALKERS_TIDAL_TOTEM, mttCasts, gain, possibleCasts);
     const gain = (2.5 / 1.5) - 1; // tooltip says double but you hit the GCD wall
     const buffDuration = 9;
     const castDuration = 2.5 / player.getStatPerc("Haste");
@@ -40,14 +44,14 @@ export const getShamanLegendary = (effectName, player, contentType) => {
      */
     const thisSpellpower = .438 * 1.5;
     const assumedEfficiency = 0.4;
-    bonusStats.hps = (thisSpellpower * player.getStatMultiplier("NOHASTE") * (player.getFightLength() / 3) * assumedEfficiency) / player.getFightLength();
+    bonusStats.hps = (thisSpellpower * player.getStatMultiplier("NOHASTE") * (player.getFightLength(contentType) / 3) * assumedEfficiency) / player.getFightLength(contentType);
   } else if (effectName === JONATS) {
     /**
      * hw hs buff the heal of your next ch by x%, stacking up to 5
      */
-    const chHPS = player.getSpellHPS("Chain Heal", contentType);
-    const triggerCasts = player.getSpellCasts("Healing Wave", contentType) + player.getSpellCasts("Healing Surge", contentType);
-    const chCasts = player.getSpellCasts("Chain Heal", contentType);
+    const chHPS = player.getSpellHPS(IDCHAINHEAL, contentType);
+    const triggerCasts = player.getSpellCasts(IDHEALINGWAVE, contentType) + player.getSpellCasts(IDHEALINGSURGE, contentType);
+    const chCasts = player.getSpellCasts(IDCHAINHEAL, contentType);
     const ratio = Math.min(Math.max(triggerCasts / chCasts, 0.01), 5);
     debug && console.log(JONATS, chHPS, triggerCasts, chCasts, ratio);
     bonusStats.hps = chHPS * (ratio / 10);

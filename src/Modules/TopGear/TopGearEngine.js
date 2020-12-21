@@ -363,7 +363,7 @@ function evalSet(itemSet, player, contentType) {
     for (var stat in setStats) {
         if (stat === "hps") {
             /*score +=
-            (item.stats.bonus_stats.hps / player.getHPS()) *
+            (item.stats.bonus_stats.hps / player.getHPS(contentType)) *
             player.activeStats.intellect; */
             hardScore += setStats[stat] / player.fightInfo.hps * player.activeStats.intellect;
             
