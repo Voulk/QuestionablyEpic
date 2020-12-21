@@ -5,16 +5,6 @@ import {scoreItem} from "../Engine/ItemUtilities";
 import {getUnique} from "./PlayerUtilities";
 import CastModel from "./CastModel";
 
-var SPELL_CASTS_LOC = 0;
-var SPELL_HEALING_LOC = 1;
-var SPELL_HEALING_PERC = 2;
-var SPELL_HPS = 3;
-var SPELL_OVERHEALING_LOC = 5;
-
-// These are going to be moved!
-
-
-
 var averageHoTCount = 1.4; // TODO: Build this in correctly and pull it from logs where applicable.
 
 
@@ -350,11 +340,12 @@ class Player {
         return this.castModel[contentType].getFightInfo('hps')
     }
     // HPS including overhealing.
-    getRawHPS = () => {
+    getRawHPS = (contentType) => {
         return this.castModel[contentType].getFightInfo('rawhps')
     }
 
     getFightLength = (contentType) => {
+        //console.log("Fight Length: " + contentType);
         return this.castModel[contentType].getFightInfo('fightLength');
     }
 
@@ -513,37 +504,6 @@ class Player {
                 DefaultWeights: true
             };
 
-            /*
-            this.castPattern = {
-                Raid: {
-                    61295: [66, 693600, 23, 1491], // Riptide
-                    157153: [14, 0, 0, 0], // Cloudburst
-                    73920: [18, 450000, 15, 967], // Healing Rain
-                    108280: [2, 0, 0, 0], // Healing Tide Totem
-                    85222: [20, 368000, 12, 791], // Chain Heal
-                    16191: [2, 0, 0, 0], // Mana Tide Totem
-                    20473: [20, 0, 0, 0], // Healing Surge
-                },
-                Dungeon: {
-                    61295: [66, 693600, 23, 1491],
-                    157153: [14, 0, 0, 0],
-                    73920: [18, 450000, 15, 967],
-                    108280: [2, 0, 0, 0],
-                    85222: [20, 368000, 12, 791],
-                    16191: [2, 0, 0, 0],
-                    20473: [40, 0, 0, 0], // Healing Surge
-                }
-            };
-            this.specialQueries = 
-            {   "Raid": {
-                    "HPSOnEarthShield": 456,
-            },
-                "Dungeon": {
-                    "HPSOnEarthShield": 456, 
-                }
-
-            }
-            */
         }
         else if (spec === SPEC.DISCPRIEST) {
             this.fightInfo = {
@@ -581,24 +541,9 @@ class Player {
                 "DefaultWeights": true
             }
 
-            this.castPattern =
-            // CASTS, HEALING, HEALINGPERC, HPS
-            {   "Raid": {
-                    
-  
-            },
-                "Dungeon": {
-    
-                }
-            }
 
         }
         else if (spec === SPEC.HOLYPRIEST) {
-            this.fightInfo = {
-                hps: 5500,
-                rawhps: 9420,
-                fightLength: 193,
-            }
             this.activeStats = {
                 intellect: 1420,
                 haste: 125,
@@ -627,17 +572,6 @@ class Player {
                     leech: 0.25,
                 },
                 "DefaultWeights": true
-            }
-
-            this.castPattern =
-            // CASTS, HEALING, HEALINGPERC, HPS
-            {   "Raid": {
-                    
-  
-            },
-                "Dungeon": {
-    
-                }
             }
 
         }
@@ -675,48 +609,6 @@ class Player {
                     leech: 0.25,
                 },
                 "DefaultWeights": true
-            }
-
-            const IDVIVIFY = 116670;
-            const IDSOOTHINGBREATH = 343737;
-            const IDREVIVAL = 115310;
-            const IDFORTIFYINGBREW = 115203;
-            const IDGUSTOFMISTS = 117907;
-
-            this.castPattern =
-            // CASTS, HEALING, HEALINGPERC, HPS
-            {   "Raid": {
-                    124682: [	9,	165317,	14.33,	1183.8], // EnV
-                    116670: [	13,	143871,	12.47,	1030.2], // Vivify
-                    115310: [	1,	123536,	10.71,	884.6], // Revival
-                    117907: [	0,	123408,	10.7,	883.7], // Gust of Mists
-                    343655: [	0,	116780,	10.12,	836.2], // Enveloping Breath
-                    191837: [	5,	109532,	9.5,	784.3], // Essence Font
-                    115151: [	14,	106834,	9.26,	765], // Renewing Mist
-                    143924: [	0,	56104,	4.86,	401.8], // Leech
-                    274909: [	0,	26087,	2.26,	186.8], // Rising Mist
-                    116849: [	1,	25454,	2.21,	182.3], // Life Cocoon
-                    0: [	1,	13857,	1.2,	99.2], // Weapons of Order
-                    115175: [	4,	11977,	1.04,	85.8],
-            },
-                "Dungeon": {
-    
-                }
-            };
-            this.specialQueries = 
-            {   "Raid": {
-                    "HPSChijiGusts": 674,
-                    "HPSHotHealingDuringLC" : 98,
-                    "HPSHotHealingAfterLC": 0,
-                    "HPSExpelHarmOnSelf": 0,
-            },
-                "Dungeon": {
-                    "HPSChijiGusts": 674,
-                    "HPSHotHealingDuringLC" : 98,
-                    "HPSHotHealingAfterLC": 0,
-                    "HPSExpelHarmOnSelf": 0,
-                }
-
             }
 
         }

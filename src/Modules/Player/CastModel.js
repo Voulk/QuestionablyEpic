@@ -4,12 +4,8 @@ import SPEC from '../Engine/SPECS';
 import {druidDefaultSpecialQueries, druidDefaultSpellData} from "./ClassDefaults/DruidDefaults";
 import {paladinDefaultSpecialQueries, paladinDefaultSpellData} from "./ClassDefaults/PaladinDefaults";
 import {shamanDefaultSpecialQueries, shamanDefaultSpellData} from "./ClassDefaults/ShamanDefaults";
+import {monkDefaultSpecialQueries, monkDefaultSpellData} from "./ClassDefaults/MonkDefaults";
 
-const SPELL_CASTS_LOC = 0;
-const SPELL_HEALING_LOC = 1;
-const SPELL_HEALING_PERC = 2;
-const SPELL_HPS = 3;
-const SPELL_OVERHEALING_LOC = 5;
 
 // THIS IS NOT YET IN USE BUT WILL BE VERY SHORTLY.
 class CastModel {
@@ -74,9 +70,13 @@ class CastModel {
             specialQueries = paladinDefaultSpecialQueries(contentType);
         }
         else if (spec === SPEC.RESTOSHAMAN) {
-            console.log("Loading Sham");
+            
             spellList = shamanDefaultSpellData(contentType);
             specialQueries = shamanDefaultSpecialQueries(contentType);
+        }
+        else if (spec === SPEC.MISTWEAVERMONK) {
+            spellList = monkDefaultSpellData(contentType);
+            specialQueries = monkDefaultSpecialQueries(contentType);
         }
 
         else {

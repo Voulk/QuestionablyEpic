@@ -62,7 +62,7 @@ export function getSoulbindFormula(effectID, pl, contentType) {
   else if (effectID === 329784) {
     let health_pool = pl.activeStats.stamina * 20;
 
-    bonus_stats.HPS = (health_pool * 0.1) / pl.getFightLength();
+    bonus_stats.HPS = (health_pool * 0.1) / pl.getFightLength(contentType);
   }
   // Pointed Courage
   else if (effectID === 329778) {
