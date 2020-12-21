@@ -5,7 +5,8 @@ import {druidDefaultSpecialQueries, druidDefaultSpellData} from "./ClassDefaults
 import {paladinDefaultSpecialQueries, paladinDefaultSpellData} from "./ClassDefaults/PaladinDefaults";
 import {shamanDefaultSpecialQueries, shamanDefaultSpellData} from "./ClassDefaults/ShamanDefaults";
 import {monkDefaultSpecialQueries, monkDefaultSpellData} from "./ClassDefaults/MonkDefaults";
-
+import {holyPriestDefaultSpecialQueries, holyPriestDefaultSpellData} from "./ClassDefaults/HolyPriestDefaults";
+import {discPriestDefaultSpecialQueries, discPriestDefaultSpellData} from "./ClassDefaults/DiscPriestDefaults";
 
 // THIS IS NOT YET IN USE BUT WILL BE VERY SHORTLY.
 class CastModel {
@@ -78,6 +79,15 @@ class CastModel {
             spellList = monkDefaultSpellData(contentType);
             specialQueries = monkDefaultSpecialQueries(contentType);
         }
+        else if (spec === SPEC.DISCPRIEST) {
+            spellList = discPriestDefaultSpellData(contentType);
+            specialQueries = discPriestDefaultSpecialQueries(contentType);
+        }
+        else if (spec === SPEC.HOLYPRIEST) {
+            spellList = holyPriestDefaultSpellData(contentType);
+            specialQueries = holyPriestDefaultSpecialQueries(contentType);
+        }
+
 
         else {
             spellList = {};
