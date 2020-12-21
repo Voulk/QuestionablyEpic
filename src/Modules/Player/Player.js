@@ -3,6 +3,7 @@ import SPEC from '../Engine/SPECS';
 import STAT from '../Engine/STAT';
 import {scoreItem} from "../Engine/ItemUtilities";
 import {getUnique} from "./PlayerUtilities";
+import CastModel from "./CastModel";
 
 var SPELL_CASTS_LOC = 0;
 var SPELL_HEALING_LOC = 1;
@@ -43,6 +44,7 @@ class Player {
     activeItems = [];
     activeConduits = [];
     renown = 0;
+    castModel = {};
 
     region = "";
     realm = "";
@@ -345,80 +347,47 @@ class Player {
     }
 
     getHPS = () => {
-        return this.fightInfo.hps;
+        return this.castModel[contentType].getFightInfo('hps')
     }
     // HPS including overhealing.
     getRawHPS = () => {
-        return this.fightInfo.rawhps;
+        return this.castModel[contentType].getFightInfo('rawhps')
     }
 
-    getFightLength = () => {
-        return this.fightInfo.fightLength;
+    getFightLength = (contentType) => {
+        return this.castModel[contentType].getFightInfo('fightLength');
     }
 
     getInt = () => {
         return this.activeStats.intellect;
     }
 
-    getSpellCasts = (spellName, contentType) => {
-        if (spellName in this.castPattern[contentType]) {
-            
-            return this.castPattern[contentType][spellName][SPELL_CASTS_LOC];
-        }
-        else {
-            return 0;
-        }
+
+    getSpecialQuery = (queryIdentifier, contentType) => {
+        return this.castModel[contentType].getSpecialQuery(queryIdentifier)
+
+    }
+
+    getSingleCast = (spellID, contentType) => {
+        return this.castModel[contentType].getSpellData(spellID, "healing") / this.castModel[contentType].getSpellData(spellID, "casts");
+
+    }
+
+    getSpellCPM = (spellID, contentType) => {
+        return this.getSpellCasts(spellID, contentType) / this.getFightLength(contentType) * 60;
+
         
     }
 
-    getSpellCPM = (spellName, contentType) => {
-        if (spellName in this.castPattern[contentType]) {
-            return this.castPattern[contentType][spellName][SPELL_CASTS_LOC] / this.getFightLength() * 60;
-        }
-        else {
-            return 0;
-        }
-        
-    }
-
-    getSpecialQuery = (spellIdentifier, contentType) => {
-        if (spellIdentifier in this.specialQueries[contentType]) {
-            //console.log("Found: " + spellIdentifier + ". " + JSON.stringify(this.specialQueries[contentType]));
-            return this.specialQueries[contentType][spellIdentifier];
-        }
-        else {
-            return 0;
-        }
-    }
-
-    getSpellHealingPerc = (spellName, contentType) => {
-        if (spellName in this.castPattern[contentType]) {
-            return this.castPattern[contentType][spellName][SPELL_HEALING_PERC]
-        }
-        else {
-            return 0;
-        }
+    getSpellCasts = (spellID, contentType) => {
+        return this.castModel[contentType].getSpellData(spellID, "casts");
 
     }
 
-    getSingleCast = (spellName, contentType) => {
-        if (spellName in this.castPattern[contentType]) {
-            return this.castPattern[contentType][spellName][SPELL_HEALING_LOC] / this.castPattern[contentType][spellName][SPELL_CASTS_LOC]
-        }
-        else {
-            return 0;
-        }
-    }
 
-    getSpellHPS = (spellName, contentType) => {
-        if (spellName in this.castPattern[contentType]) {
-            console.log("Getting data for: " + spellName + ". HPS: " + this.castPattern[contentType][spellName][SPELL_HPS]);
-            return this.castPattern[contentType][spellName][SPELL_HPS]
-        }
-        else {
-            return 0;
-        }
-        
+    getSpellHPS = (spellID, contentType) => {
+        return this.castModel[contentType].getSpellData(spellID, "hps");
+ 
     }
 
     setSpellPattern = (castPat) => {
@@ -428,7 +397,6 @@ class Player {
     }
 
     setActiveStats = (stats) => {
-       
         if (Object.keys(stats).length > 0) this.activeStats = stats;
     }
 
@@ -440,11 +408,16 @@ class Player {
     // Consider replacing this with an external table for cleanliness and ease of editing. 
     setupDefaults = (spec) => {
         if (spec === SPEC.RESTODRUID) {
+            this.castModel = {
+                Raid: new CastModel(spec, "Raid"),
+                Dungeon: new CastModel(spec, "Dungeon")
+            };
+            /*
             this.fightInfo = {
                 hps: 5500,
                 rawhps: 9420,
                 fightLength: 340,
-            }
+            } */
             this.activeStats = {
                 intellect: 1420,
                 haste: 690,
@@ -476,7 +449,7 @@ class Player {
             }
             
 
-
+            /*
             this.castPattern =
             // CASTS, HEALING, HEALINGPERC, HPS
             {   "Raid": {
@@ -502,6 +475,7 @@ class Player {
                 }
 
             }
+            */
 
         }
         else if (spec === SPEC.HOLYPALADIN) {
