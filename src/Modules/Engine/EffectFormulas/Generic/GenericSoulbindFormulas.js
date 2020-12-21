@@ -78,7 +78,7 @@ export function getSoulbindFormula(effectID, pl, contentType) {
     let effect_power = 0.04;
 
     bonus_stats.HPS =
-      pl.getHPS() *
+      pl.getHPS(contentType) *
       percent_healing_above_70 *
       (1 - expected_overhealing) *
       effect_power;
@@ -144,7 +144,7 @@ export function getSoulbindFormula(effectID, pl, contentType) {
   else if (effectID === 319213) {
     let trait_bonus = 0.1;
     let shield_consumed = 0.95; // The percentage of our overhealing shield that gets consumed. Likely to be very high.
-    let overhealing = pl.getRawHPS() - pl.getHPS();
+    let overhealing = pl.getRawHPS(contentType) - pl.getHPS(contentType);
 
     bonus_stats.HPS = trait_bonus * shield_consumed * overhealing;
   }
@@ -216,7 +216,7 @@ export function getSoulbindFormula(effectID, pl, contentType) {
   // Hold Your Ground
   else if (effectID === 332754) {
     let expected_uptime = 0.85;
-    bonus_stats.HPS = expected_uptime * (pl.getHPS() * 0.04)
+    bonus_stats.HPS = expected_uptime * (pl.getHPS(contentType) * 0.04)
   }
   // Superior Tactics
   else if (effectID === 332753) {

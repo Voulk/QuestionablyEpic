@@ -1,6 +1,8 @@
 
 import { createModifiersFromModifierFlags } from 'typescript';
 import SPEC from '../Engine/SPECS';
+import {druidDefaultSpecialQueries, druidDefaultSpellData} from "./ClassDefaults/DruidDefaults";
+import {paladinDefaultSpecialQueries, paladinDefaultSpellData} from "./ClassDefaults/PaladinDefaults";
 
 const SPELL_CASTS_LOC = 0;
 const SPELL_HEALING_LOC = 1;
@@ -22,6 +24,10 @@ class CastModel {
 
     setSpellList = (spellListing) => {
         this.spellList = spellListing;
+    }
+
+    setFightInfo = (info) => {
+        this.fightInfo = info;
     }
 
     getSpellData = (spellName, tag) => {
@@ -58,34 +64,19 @@ class CastModel {
         let spellList = {}
         let specialQueries = {}
         if (spec === SPEC.RESTODRUID) {
-            if (contentType === "Raid") {
-                spellList = {
-                    774: {casts: 100, healing: 455000, hps: 1433, overhealing: 0}, // Rejuv
-                    48438: {casts: 19, healing: 449400, hps: 1323, overhealing: 0}, // Wild Growth
-                    8936: {casts: 29, healing: 194225, hps: 571, overhealing: 0}, // Regrowth
-                    33763: {casts: 17, healing: 89150, hps: 262, overhealing: 0}, // Lifebloom
-
-                };
-                specialQueries = 
-                {   
-                    "ConvokeChannelHPS": 480,          
-                };
+                spellList = druidDefaultSpellData(contentType);
+                specialQueries = druidDefaultSpecialQueries(contentType);
             }
-            else if (contentType === "Dungeon") {
-                spellList = {
-                    774: {casts: 25, healing: 113750, hps: 324, overhealing: 0},
-                    48438: {casts: 17, healing: 395000, hps: 1402, overhealing: 0},
-                    8936: {casts: 11, healing: 105200, hps: 545, overhealing: 0},
-                    33763: {casts: 17, healing: 89150, hps: 262, overhealing: 0},
+        else if (spec === SPEC.HOLYPALADIN) {
+            console.log("Setting Paladin defaults");
+            spellList = paladinDefaultSpellData(contentType);
+            specialQueries = paladinDefaultSpecialQueries(contentType);
+        }
 
-                };
-                specialQueries = 
-                {   
-                    "ConvokeChannelHPS": 480,   
-                };
-            }
-
-            }
+        else {
+            spellList = {};
+            specialQueries = {};
+        }
 
 
         this.setSpellList(spellList);

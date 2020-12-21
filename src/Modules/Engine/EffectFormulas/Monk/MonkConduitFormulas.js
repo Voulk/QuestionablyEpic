@@ -133,7 +133,7 @@ export const getMonkConduit = (conduitID,  player, contentType, conduitLevel) =>
       const actualIncreaseForBDB = (1 + conduitPower) * .35;
       const actualIncreaseFromBMH = actualIncreaseForBDB - conduitPower;
 
-      const totalHPS = player.getHPS();
+      const totalHPS = player.getHPS(contentType);
 
       const directHealingIncrease =  totalHPS * actualIncreaseFromBMH * normalUptime;
       const extraUptimeHPS = totalHPS * actualIncreaseForBDB * netUptimeFromBMH;

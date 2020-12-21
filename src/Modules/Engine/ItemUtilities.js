@@ -419,7 +419,7 @@ export function scoreItem(item, player, contentType) {
   if ("bonus_stats" in item.stats && "hps" in item.stats.bonus_stats) {
     //console.log("Adding bonus_stats to score");
     score +=
-      (item.stats.bonus_stats.hps / player.getHPS()) *
+      (item.stats.bonus_stats.hps / player.getHPS(contentType)) *
       player.activeStats.intellect;
   }
 

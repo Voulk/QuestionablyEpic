@@ -74,7 +74,7 @@ export const getPaladinLegendary = (effectName, pl, contentType) => {
 
         //console.log("MastDiff: " + mastDiff + ". LoDUptime: " + lightOfDawnUptime + "Max: " + maxMasteryEff + ". Avg: " + averageMasteryEff);
     
-        bonus_stats.hps = Math.round(pl.getHPS() * mastDiff * lightOfDawnUptime * percentHealingToHitTargets);
+        bonus_stats.hps = Math.round(pl.getHPS(contentType) * mastDiff * lightOfDawnUptime * percentHealingToHitTargets);
 
     }
     else if (name === "Of Dusk and Dawn") {
@@ -107,7 +107,7 @@ export const getPaladinLegendary = (effectName, pl, contentType) => {
         let healingIncUptime = hammerOfWrathCPM / 60;
 
         let healingMult = (wingsEffHealingIncrease * healingIncUptime + 1 * (1 - healingIncUptime)) - 1;    
-        bonus_stats.hps = Math.round(pl.getHPS() * healingMult);
+        bonus_stats.hps = Math.round(pl.getHPS(contentType) * healingMult);
 
         //console.log("FWS: " + wingsEffHealingIncrease);
         // This technically needs to be increased based on the wings duration increase, but that is of minimal benefit.

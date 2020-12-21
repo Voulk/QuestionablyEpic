@@ -346,7 +346,7 @@ class Player {
         return this.spec;
     }
 
-    getHPS = () => {
+    getHPS = (contentType) => {
         return this.castModel[contentType].getFightInfo('hps')
     }
     // HPS including overhealing.
@@ -387,12 +387,10 @@ class Player {
 
     getSpellHPS = (spellID, contentType) => {
         return this.castModel[contentType].getSpellData(spellID, "hps");
- 
     }
 
-    setSpellPattern = (castPat) => {
-        console.log(castPat);
-        if (castPat !== {}) this.castPattern["Raid"] = castPat;
+    setSpellPattern = (spellList) => {
+        if (spellList !== {}) this.castModel["Raid"].setSpellList(spellList);
         
     }
 
@@ -401,23 +399,18 @@ class Player {
     }
 
     setFightInfo = (info) => {
-        if (Object.keys(info).length > 0) this.fightInfo = info;
+        if (Object.keys(info).length > 0) this.castModel["Raid"].setFightInfo(info);
     }
 
 
     // Consider replacing this with an external table for cleanliness and ease of editing. 
     setupDefaults = (spec) => {
+        this.castModel = {
+            Raid: new CastModel(spec, "Raid"),
+            Dungeon: new CastModel(spec, "Dungeon")
+        };
+
         if (spec === SPEC.RESTODRUID) {
-            this.castModel = {
-                Raid: new CastModel(spec, "Raid"),
-                Dungeon: new CastModel(spec, "Dungeon")
-            };
-            /*
-            this.fightInfo = {
-                hps: 5500,
-                rawhps: 9420,
-                fightLength: 340,
-            } */
             this.activeStats = {
                 intellect: 1420,
                 haste: 690,
@@ -425,9 +418,7 @@ class Player {
                 mastery: 230,
                 versatility: 220,
                 stamina: 1400,
-    
             }
-           
             this.statWeights = {
                 "Raid": {
                     intellect: 1, 
@@ -448,37 +439,9 @@ class Player {
                 "DefaultWeights": true
             }
             
-
-            /*
-            this.castPattern =
-            // CASTS, HEALING, HEALINGPERC, HPS
-            {   "Raid": {
-                    774: [100, 455000, 0.0, 1433], // Rejuv
-                    48438: [19, 449400, 0.0, 1323], // Wild Growth
-                    8936: [29, 194225, 0.000, 571], // Regrowth
-                    33763: [17, 89150, 0.000, 262], // Lifebloom
-  
-            },
-                "Dungeon": {
-                    774: [25, 113750, 0.0, 324],
-                    48438: [17, 395000, 0.2472, 1402],
-                    8936: [11, 105200, 0.000, 545],
-                    33763: [17, 89150, 0.000, 262],
-                }
-            }
-            this.specialQueries = 
-            {   "Raid": {
-                    "ConvokeChannelHPS": 480,
-            },
-                "Dungeon": {
-                    "ConvokeChannelHPS": 480, 
-                }
-
-            }
-            */
-
         }
         else if (spec === SPEC.HOLYPALADIN) {
+
             
             this.fightInfo = {
                 hps: 5500,
@@ -516,6 +479,7 @@ class Player {
                 "DefaultWeights": true
             }
 
+            /*
             this.castPattern =
             // CASTS, HEALING, HEALINGPERC, HPS, OVERHEALING
             {   "Raid": {
@@ -533,6 +497,7 @@ class Player {
                     337824: [0, 98300, 0.0858, 542],
                 }
             }
+            */
         } else if (spec === SPEC.RESTOSHAMAN) { // all of this needs a proper input once
             this.fightInfo = {
                 hps: 5500,
