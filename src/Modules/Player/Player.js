@@ -542,12 +542,6 @@ class Player {
                 "DefaultWeights": true
             }
 
-            const IDLIGHTOFDAWN = 85222;
-            const IDHOLYLIGHT = 82326;
-            const IDHOLYSHOCK = 20473;
-            const IDSHOCKBARRIER = 337824;
-            const IDWORDOFGLORY = 85673;
-
             this.castPattern =
             // CASTS, HEALING, HEALINGPERC, HPS, OVERHEALING
             {   "Raid": {

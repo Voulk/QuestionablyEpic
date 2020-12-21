@@ -8,13 +8,15 @@ const SPELL_HPS = 3;
 const SPELL_OVERHEALING_LOC = 5;
 
 // THIS IS NOT YET IN USE BUT WILL BE VERY SHORTLY.
-class Castmodel {
+class FightModel {
     constructor(spec, contentType) {
         this.contentType = contentType;
         this.setDefaults(spec);
     }
 
     spellList = {};
+    specialQueries = {};
+    fightInfo = {};
     contentType = "";
 
     setSpellList = (spellListing) => {
@@ -23,6 +25,13 @@ class Castmodel {
 
 
     setDefaults = (spec, contentType) => {
+        this.fightInfo = {
+            hps: 5500,
+            rawhps: 9420,
+            fightLength: 193,
+        }
+
+
         let spellList = {}
         if (spec === SPEC.RESTODRUID) {
             if (contentType === "Raid") {
