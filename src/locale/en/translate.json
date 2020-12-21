@@ -1,16 +1,170 @@
 {
   "translations": {
-    "MainMenuItemsH": "Items & Gearing",
-    "MainMenuCharactersH": "Characters",
-    "LegendaryCompareTitle": "Legendaries at a Glance",
-
-    "ModuleTitles": {
-      "QuickCompare": "Quick Compare"
+    "CharacterCreator": {
+      "StatMessage": "To get updated stat weights use WowAnalyzer.com with a recent log and enter the values here from the 'Statistics' tab."
     },
+
+    "_Comments1": "Common Words",
+    "Login": "Login",
+    "Name": "Name",
+    "Class": "Class",
+    "Cooldown": "Cooldown",
+    "Raid": "Raid",
+    "Dungeon": "Dungeon",
+    "Cancel": "Cancel",
+    "Submit": "Submit",
+    "Save": "Save",
+    "Delete": "Delete",
+    "Intellect": "Intellect",
+    "Crit": "Crit",
+    "Haste": "Haste",
+    "Mastery": "Mastery",
+    "Versatility": "Versatility",
+    "Leech": "Leech",
+    "Region": "Region",
+    "Race": "Race",
+    "Select Class": "Select Class",
+    "Select Race": "Select Race",
+
+    "CooldownPlanner": {
+      "Classes": {
+        "undefined": "",
+        "HolyPaladin": "Holy Paladin",
+        "DisciplinePriest": "Discipline Priest",
+        "RestorationDruid": "Restoration Druid",
+        "HavocDemonHunter": "Havoc Demon Hunter",
+        "Warrior": "Warrior",
+        "HolyPriest": "Holy Priest",
+        "MistweaverMonk": "Mistweaver Monk",
+        "RestorationShaman": "Restoration Shaman"
+      },
+      "ChartLabels": {
+        "_Comments1": "Translations for HD Charts",
+        "UnmitigatedDamageLabel": "Unmitigated",
+        "MitigatedDamageLabel": "Mitigated"
+      },
+      "TableLabels": {
+        "_Comments1": "Translations for HD Tables",
+        "RaidSelectorLabel": "Select Raid",
+        "BossSelectorLabel": "Select Boss",
+        "CastTimeLabel": "Cast",
+        "BossAbilityLabel": "Boss Ability",
+        "NotesLabel": "Notes",
+        "OffCooldownLabel": "Off-CD",
+        "HealTeamHeader": "Heal Team",
+        "TypeSelector": "Formats"
+      },
+      "UserInputs": {
+        "_Comments1": "Translations for the User Input Components",
+        "Loglink": "Paste WarcraftLog Link Here",
+        "fightButtonLabel": "Select Fight"
+      },
+      "HealerCards": {
+        "_Comments1": "Translations for the Accordian for Healer Info",
+        "StatsHeading": "Stats",
+        "Item Level": "ilvl",
+        "Crit": "Critical",
+        "Haste": "Haste",
+        "Mastery": "Mastery",
+        "Versatility": "Versatility",
+        "TalentHeader": "Talents",
+        "SoulbindAbilities": "Soulbind Abilities",
+        "SoulbindConduits": "Soulbind Conduits"
+      },
+      "ClassAbilities": {
+        "NoCD": "No Cooldown",
+        "undefined": "",
+        "HolyPaladinComment": "Holy Paladin Class Cooldowns",
+        "31821": "Aura Mastery",
+        "31884": "Avenging Wrath",
+        "RestorationDruidComment": "Restoration Druid Class Cooldowns",
+        "740": "Tranquility",
+        "33891": "Incarnation: Tree of Life",
+        "HolyPriestComment": "Holy Priest Class Cooldowns",
+        "265202": "Holy Word: Salvation",
+        "64843": "Divine Hymn",
+        "DisciplinePriestComment": "Discipline Priest Class Cooldowns",
+        "62618": "Power Word: Barrier",
+        "246287": "Evangelism",
+        "109964": "Spirit Shell",
+        "RestorationShamanComment": "Restoration Shaman Class Cooldowns",
+        "108280": "Healing Tide Totem",
+        "98008": "Spirit Link Totem",
+        "MistweaverMonkComment": "Mistweaver Monk Class Cooldowns",
+        "115310": "Revival",
+        "HavocDemonHunterComment": "Havoc Demon Hunter Cooldowns",
+        "196718": "Darkness",
+        "WarriorComment": "Warrior Cooldowns",
+        "97462": "Rallying Cry"
+      },
+      "BossAbilities": {
+        "undefined": "No Ability Selected",
+        "ShriekingComment": "Shriekwing Abilities",
+        "345397": "Wave of Blood",
+        "343384": "Bloodlight",
+        "330711": "Earsplitting Shriek",
+        "HuntsmanAltimorComment": "Huntsman Altimor Abilities",
+        "334860": "Crushing Stone",
+        "334797": "Rip Soul",
+        "335114": "Sinseeker",
+        "SunKingsSalvationComment": "Sun King's Salvation Abilities",
+        "328579": "Smoldering Remnants",
+        "328659": "Smoldering Plumage",
+        "326455": "Fiery Strike",
+        "326456": "Burning Remnants",
+        "325877": "Ember Blast",
+        "326430": "Lingering Embers",
+        "329518": "Blazing Surge",
+        "325440": "Vanquishing Strike",
+        "325442": "Vanquished",
+        "325506": "Concussive Smash",
+        "341473": "Crimson Flurry",
+        "333002": "Vulgar Brand",
+        "325590": "Scornful Blast",
+        "335540": "Shattering Ruby",
+        "336398": "Fragmentation",
+        "328890": "Greater Castigation",
+        "339232": "Soul Infusion",
+        "ArtificerXymoxComment": "Artificer Xymox Comment",
+        "325361": "Glyph of Destruction",
+        "325399": "Hyperlight Spark",
+        "340870": "Aura of Dread",
+        "340842": "Soul Singe",
+        "HungeringDestroyerComment": "Hungering Destroyer Abilities",
+        "334522": "Consume",
+        "329742": "Expunge",
+        "329455": "Desolate",
+        "329298": "Gluttonous Miasma",
+        "LadyInervaDarkveinComment": "Lady Inerva Darkvein Abilities",
+        "325384": "Change of Heart",
+        "CouncilofBloodComment": "Council of Blood Abilities",
+        "334909": "Oppressive Atmosphere",
+        "SludgefistComment": "Sludgefist Abilities",
+        "332687": "Colossal Roar",
+        "StoneLegionGeneralsComment": "Stone Legion Generals Ability",
+        "339728": "Pulverizing Meteor",
+        "DenathriusComment": "Denathrius Abilities",
+        "330627": "Hand of Destruction",
+        "336162": "Crescendo",
+        "326707": "Cleansing Pain"
+      }
+    },
+
+    "InsertLog": {
+      "PlsSelectFight": "Please Select a Fight",
+      "InsertLogHeader": "Paste Your Warcraft Logs Report Here"
+    },
+
+    "itemTags": {
+      "greatvault": "Great Vault",
+      "effect": "Effect"
+    },
+
+    "LegendaryCompare": { "Title": "Legendaries at a Glance" },
 
     "MainMenu": {
       "PatronInvite": "Love the app? Support the site on Patreon!",
-      "PatronThanks" : "Thank you so much for your support!",
+      "PatronThanks": "Thank you so much for your support!",
       "TopGear": "Top Gear (Beta)",
       "UpgradeFinder": "Upgrade Finder (Coming Soon)",
       "QuickCompare": "Gear Quick Compare",
@@ -18,11 +172,17 @@
       "LegendaryAnalysis": "Legendary Analysis",
       "TrinketAnalysis": "Trinket Analysis",
       "GreatVault": "The Great Vault (Coming Soon)",
-      "CooldownPlanner":"Cooldown Planner (Coming Soon)",
-      "Profile":"Profile",
+      "CooldownPlanner": "Cooldown Planner (Coming Soon)",
+      "Profile": "Profile",
       "CharHeader": "Characters",
       "CharHelpText": "Add your characters here. Right click to edit your stat weights, realm information and more."
-      
+    },
+
+    "QeHeader": {
+      "InsertLogLabel": "Insert Log",
+      "Login": "Login",
+      "ContentTypeMsgStart": "Change to",
+      "ContentTypeMsgEnd": "Content"
     },
 
     "QuickCompare": {
@@ -31,55 +191,8 @@
       "ItemLevel": "Item Level",
       "Socket": "Socket",
       "Tertiary": "Tertiary",
-      "AddButton": "Add"
-    },
-
-    "slotNames": {
-      "head": "Helm",
-      "neck": "Neck",
-      "shoulder": "Shoulders",
-      "back": "Cape",
-      "chest": "Chest",
-      "wrists": "Bracers",
-      "hands": "Gloves",
-      "waist": "Belt",
-      "legs": "Legs",
-      "feet": "Boots",
-      "trinket": "Trinkets",
-      "mainHands": "Weapons",
-      "offhands": "Off-Hands",
-      "finger": "Ring",
-      "weapons": "Weapons",
-      "weaponCombos": "Weapon Combos"
-    },
-
-    "stats": {
-      "crit": "Crit",
-      "haste": "Haste",
-      "mastery": "Mastery",
-      "versatility": "Versatility"
-    },
-
-    "itemTags": {
-      "greatvault": "Great Vault",
-      "effect": "Effect"
-
-    },
-
-    "HeaderLabels": {
-      "Login": "Login",
-      "ContentTypeMsgStart": "Change to",
-      "ContentTypeMsgEnd": "Content"
-    },
-    "InsertLog": {
-      "PlsSelectFight": "Please Select a Fight",
-      "InsertLogHeader": "Paste Your Warcraft Logs Report Here"
-    },
-
-    "Soulbinds": {
-      "PotencyConduit": "Potency Conduit",
-      "EnduranceConduit": "Endurance Conduit",
-      "FinesseConduit": "Finesse Conduit"
+      "AddButton": "Add",
+      "Title": "Quick Compare"
     },
 
     "Races": {
@@ -108,171 +221,45 @@
       "Zandalari Troll": "Zandalari Troll"
     },
 
-
-    "CharacterCreator": {
-      "StatMessage": "To get updated stat weights use WowAnalyzer.com with a recent log and enter the values here from the 'Statistics' tab."
-    },
-
-    "_Comments1": "Common Words",
-    "Login": "Login",
-    "Name": "Name",
-    "Class": "Class",
-    "Cooldown": "Cooldown",
-    "Raid": "Raid",
-    "Dungeon": "Dungeon",
-    "Cancel": "Cancel",
-    "Submit": "Submit",
-    "Save": "Save",
-    "Delete": "Delete Char (!)",
-    "Intellect": "Intellect",
-    "Crit": "Crit",
-    "Haste": "Haste",
-    "Mastery": "Mastery",
-    "Versatility": "Versatility",
-    "Leech": "Leech",
-    "Region": "Region",
-    "Race": "Race",
-    "Select Class": "Select Class",
-    "Select Race": "Select Race",
-
-    "CooldownPlanner": {
-      "Classes": {
-        "undefined": "",
-        "HolyPaladin": "Holy Paladin",
-        "DisciplinePriest": "Discipline Priest",
-        "RestorationDruid": "Restoration Druid",
-        "HavocDemonHunter": "Havoc Demon Hunter",
-        "Warrior": "Warrior",
-        "HolyPriest": "Holy Priest",
-        "MistweaverMonk": "Mistweaver Monk",
-        "RestorationShaman": "Restoration Shaman"
-    },
-    "ChartLabels": {
-      "_Comments1": "Translations for HD Charts",
-      "UnmitigatedDamageLabel": "Unmitigated",
-      "MitigatedDamageLabel": "Mitigated"
-    },
-    "TableLabels": {
-      "_Comments1": "Translations for HD Tables",
-      "RaidSelectorLabel": "Select Raid",
-      "BossSelectorLabel": "Select Boss",
-      "CastTimeLabel": "Cast",
-      "BossAbilityLabel": "Boss Ability",
-      "NotesLabel": "Notes",
-      "OffCooldownLabel": "Off-CD",
-      "HealTeamHeader": "Heal Team",
-      "TypeSelector": "Formats"
-    },
-    "UserInputs": {
-      "_Comments1": "Translations for the User Input Components",
-      "Loglink": "Paste WarcraftLog Link Here",
-      "fightButtonLabel": "Select Fight"
-    },
-    "HealerCards": {
-      "_Comments1": "Translations for the Accordian for Healer Info",
-      "StatsHeading": "Stats",
-      "Item Level": "ilvl",
-      "Crit": "Critical",
-      "Haste": "Haste",
-      "Mastery": "Mastery",
-      "Versatility": "Versatility",
-      "TalentHeader": "Talents",
-      "SoulbindAbilities": "Soulbind Abilities",
-      "SoulbindConduits": "Soulbind Conduits"
-    },
-    "ClassAbilities": {
-      "NoCD": "No Cooldown",
-      "undefined": "",
-      "HolyPaladinComment": "Holy Paladin Class Cooldowns",
-      "31821": "Aura Mastery",
-      "31884": "Avenging Wrath",
-      "RestorationDruidComment": "Restoration Druid Class Cooldowns",
-      "740": "Tranquility",
-      "33891": "Incarnation: Tree of Life",
-      "HolyPriestComment": "Holy Priest Class Cooldowns",
-      "265202": "Holy Word: Salvation",
-      "64843": "Divine Hymn",
-      "DisciplinePriestComment": "Discipline Priest Class Cooldowns",
-      "62618": "Power Word: Barrier",
-      "246287": "Evangelism",
-      "RestorationShamanComment": "Restoration Shaman Class Cooldowns",
-      "108280": "Healing Tide Totem",
-      "98008": "Spirit Link Totem",
-      "MistweaverMonkComment": "Mistweaver Monk Class Cooldowns",
-      "115310": "Revival",
-      "HavocDemonHunterComment": "Havoc Demon Hunter Cooldowns",
-      "196718": "Darkness",
-      "WarriorComment": "Warrior Cooldowns",
-      "97462": "Rallying Cry"
-    },
-    "BossAbilities": {
-      "undefined": "No Ability Selected",
-      "ShriekingComment": "Shriekwing Abilities",
-      "345397": "Wave of Blood",
-      "343384": "Bloodlight",
-      "330711": "Earsplitting Shriek",
-      "HuntsmanAltimorComment": "Huntsman Altimor Abilities",
-      "334860": "Crushing Stone",
-      "334797": "Rip Soul",
-      "335114": "Sinseeker",
-      "SunKingsSalvationComment": "Sun King's Salvation Abilities",
-      "328579": "Smoldering Remnants",
-      "328659": "Smoldering Plumage",
-      "326455": "Fiery Strike",
-      "326456": "Burning Remnants",
-      "325877": "Ember Blast",
-      "326430": "Lingering Embers",
-      "329518": "Blazing Surge",
-      "325440": "Vanquishing Strike",
-      "325442": "Vanquished",
-      "325506": "Concussive Smash",
-      "341473": "Crimson Flurry",
-      "333002": "Vulgar Brand",
-      "325590": "Scornful Blast",
-      "335540": "Shattering Ruby",
-      "336398": "Fragmentation",
-      "328890": "Greater Castigation",
-      "339232": "Soul Infusion",
-      "ArtificerXymoxComment": "Artificer Xymox Comment",
-      "325361": "Glyph of Destruction",
-      "325399": "Hyperlight Spark",
-      "340870": "Aura of Dread",
-      "340842": "Soul Singe",
-      "HungeringDestroyerComment": "Hungering Destroyer Abilities",
-      "334522": "Consume",
-      "329742": "Expunge",
-      "329455": "Desolate",
-      "329298": "Gluttonous Miasma",
-      "LadyInervaDarkveinComment": "Lady Inerva Darkvein Abilities",
-      "325384": "Change of Heart",
-      "CouncilofBloodComment": "Council of Blood Abilities",
-      "334909": "Oppressive Atmosphere",
-      "SludgefistComment": "Sludgefist Abilities",
-      "332687": "Colossal Roar",
-      "StoneLegionGeneralsComment": "Stone Legion Generals Ability",
-      "339728": "Pulverizing Meteor",
-      "DenathriusComment": "Denathrius Abilities",
-      "330627": "Hand of Destruction",
-      "336162": "Crescendo",
-      "326707": "Cleansing Pain" 
-    }},
-    "QeHeader": {
-      "InsertLogLabel": "Insert Log"
-    },
-    "SimCInput" :{
+    "SimCInput": {
       "SimCStringLabel": "SimC String",
       "SimCHeaderButtonLabel": "SimC",
       "SimCDialogueTitle": "Paste Your SimC String"
     },
-    "author": {
-      "title": "Author Name",
-      "value": "Tariqul"
-    },
-    "description": {
-      "title": "description",
-      "value": "Whenever I smell strong tobacco smos away from the smoker and fills the room."
+
+    "slotNames": {
+      "head": "Helm",
+      "neck": "Neck",
+      "shoulder": "Shoulders",
+      "back": "Cape",
+      "chest": "Chest",
+      "wrists": "Bracers",
+      "hands": "Gloves",
+      "waist": "Belt",
+      "legs": "Legs",
+      "feet": "Boots",
+      "trinket": "Trinkets",
+      "mainHands": "Weapons",
+      "offhands": "Off-Hands",
+      "finger": "Ring",
+      "weapons": "Weapons",
+      "weaponCombos": "Weapon Combos"
     },
 
+    "Soulbinds": {
+      "PotencyConduit": "Potency Conduit",
+      "EnduranceConduit": "Endurance Conduit",
+      "FinesseConduit": "Finesse Conduit"
+    },
+
+    "stats": {
+      "crit": "Crit",
+      "haste": "Haste",
+      "mastery": "Mastery",
+      "versatility": "Versatility"
+    },
+
+    "Top Gear": { "Title": "Top Gear" },
 
     "DruidLegendariesComment": "DruidLegendariesComment",
     "Vision of Unending Growth": {
@@ -558,10 +545,11 @@
       "slot": "Waist, Wrist, or Finger",
       "desc": "Your spells and abilities have a low chance to summon a familiar to your side, increasing your healing by 10% for 10s. This effect is duplicated on up to 3 allies at 50% effectiveness, preferring allies with the same role.",
       "droploc": "Wild Hunt Reputation, Revered"
+    },
+    "HallOfFame": {
+      "title": "Welcome to the Hall of Fame",
+      "buttonLabel": "Hall of Fame",
+      "introduction": "Insert Blurb Here about thanking patrons."
     }
-
-
-
-
   }
 }
