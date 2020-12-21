@@ -41,7 +41,7 @@ export function getSoulbindFormula(effectID, pl, contentType) {
 
     bonus_stats.HPS =
       (healing_bonus * uses_per_combat * (1 - expected_overhealing)) /
-      pl.getFightLength(); // Placeholder.
+      pl.getFightLength(contentType); // Placeholder.
   }
   // Let go of the Past
   else if (effectID === 328257) {

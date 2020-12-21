@@ -166,7 +166,7 @@ export const getMonkConduit = (conduitID,  player, contentType, conduitLevel) =>
     else if (conduitID === 336632) {
       const healingPerVivify = player.getSingleCast(IDVIVIFY, contentType);
 
-      const durationOfFight = player.getFightLength();
+      const durationOfFight = player.getFightLength(contentType);
       const numberOfExtraVivifies = Math.ceil(durationOfFight/60);
 
       const bonusHPS = healingPerVivify * numberOfExtraVivifies / durationOfFight;

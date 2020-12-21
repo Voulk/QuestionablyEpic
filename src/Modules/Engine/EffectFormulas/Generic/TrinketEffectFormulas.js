@@ -138,7 +138,7 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel) {
        
 
         // Health Potion Bonus
-        bonus_stats.hps = 10000 * 0.4 / player.getFightLength() * 0.9; // 0.9 represents overhealing. We'll capture this better later.
+        bonus_stats.hps = 10000 * 0.4 / player.getFightLength(contentType) * 0.9; // 0.9 represents overhealing. We'll capture this better later.
 
         //console.log("Int:" + bonus_stats.intellect + ". HPS: " + bonus_stats.hps)
     }

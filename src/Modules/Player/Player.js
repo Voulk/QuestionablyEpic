@@ -479,25 +479,6 @@ class Player {
                 "DefaultWeights": true
             }
 
-            /*
-            this.castPattern =
-            // CASTS, HEALING, HEALINGPERC, HPS, OVERHEALING
-            {   "Raid": {
-                    85222: [20, 238400, 0.2082, 1316, 0.2], // LoD
-                    85673: [4, 40800, 0.0357, 225, 0.2], // WoG
-                    20473: [27, 221400, 0.1934, 1222, 0.2], // Holy Shock
-                    82326: [29, 311600, 0.293, 620, 0.2], // Holy Light
-                    337824: [0, 98300, 0.0858, 542, 0.2], // Shock Barrier
-            },
-                "Dungeon": {
-                    85222: [20, 238400, 0.2082, 120],
-                    85673: [4, 40800, 0.0357, 900],
-                    20473: [27, 221400, 0.1934, 1280],
-                    82326: [29, 311600, 0.293, 10],
-                    337824: [0, 98300, 0.0858, 542],
-                }
-            }
-            */
         } else if (spec === SPEC.RESTOSHAMAN) { // all of this needs a proper input once
             this.fightInfo = {
                 hps: 5500,
@@ -532,7 +513,7 @@ class Player {
                 DefaultWeights: true
             };
 
-
+            /*
             this.castPattern = {
                 Raid: {
                     61295: [66, 693600, 23, 1491], // Riptide
@@ -562,6 +543,7 @@ class Player {
                 }
 
             }
+            */
         }
         else if (spec === SPEC.DISCPRIEST) {
             this.fightInfo = {

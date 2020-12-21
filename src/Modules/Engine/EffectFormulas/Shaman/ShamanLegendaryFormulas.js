@@ -44,7 +44,7 @@ export const getShamanLegendary = (effectName, player, contentType) => {
      */
     const thisSpellpower = .438 * 1.5;
     const assumedEfficiency = 0.4;
-    bonusStats.hps = (thisSpellpower * player.getStatMultiplier("NOHASTE") * (player.getFightLength() / 3) * assumedEfficiency) / player.getFightLength();
+    bonusStats.hps = (thisSpellpower * player.getStatMultiplier("NOHASTE") * (player.getFightLength(contentType) / 3) * assumedEfficiency) / player.getFightLength(contentType);
   } else if (effectName === JONATS) {
     /**
      * hw hs buff the heal of your next ch by x%, stacking up to 5

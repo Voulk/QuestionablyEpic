@@ -3,6 +3,7 @@ import { createModifiersFromModifierFlags } from 'typescript';
 import SPEC from '../Engine/SPECS';
 import {druidDefaultSpecialQueries, druidDefaultSpellData} from "./ClassDefaults/DruidDefaults";
 import {paladinDefaultSpecialQueries, paladinDefaultSpellData} from "./ClassDefaults/PaladinDefaults";
+import {shamanDefaultSpecialQueries, shamanDefaultSpellData} from "./ClassDefaults/ShamanDefaults";
 
 const SPELL_CASTS_LOC = 0;
 const SPELL_HEALING_LOC = 1;
@@ -68,9 +69,14 @@ class CastModel {
                 specialQueries = druidDefaultSpecialQueries(contentType);
             }
         else if (spec === SPEC.HOLYPALADIN) {
-            console.log("Setting Paladin defaults");
+            
             spellList = paladinDefaultSpellData(contentType);
             specialQueries = paladinDefaultSpecialQueries(contentType);
+        }
+        else if (spec === SPEC.RESTOSHAMAN) {
+            console.log("Loading Sham");
+            spellList = shamanDefaultSpellData(contentType);
+            specialQueries = shamanDefaultSpecialQueries(contentType);
         }
 
         else {
