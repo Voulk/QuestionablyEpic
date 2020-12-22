@@ -162,22 +162,24 @@ export function getItemAllocations(id, missiveStats = []) {
     return item.id === id;
   });
 
-  let stats = {};
+  let statArray = {};
   if (temp.length > 0) {
-    stats = temp[0].stats;
+    statArray = {...temp[0].stats};
     if ('unallocated' in temp[0].stats) {
       for (var i = 0; i < missiveStats.length; i++) {
-        let mStat = missiveStats[i]
-        stats[mStat] += temp[0].stats.unallocated;
+        let mStat = missiveStats[i];
+        statArray[mStat] += temp[0].stats.unallocated;
         
       }
     }
 
   }
-  //console.log("Finished Stats: " + JSON.stringify(stats));
+  console.log("Finished Stats: " + JSON.stringify(statArray));
+  console.log(temp);
+  console.log(missiveStats);
   //console.log(JSON.stringify(temp) + temp.length)
   //console.log(temp[0].icon)
-  if (temp.length > 0) return stats;
+  if (temp.length > 0) return statArray;
   else return 0;
 }
 
