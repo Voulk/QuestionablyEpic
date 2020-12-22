@@ -276,6 +276,11 @@ function processItem(line, player, contentType, type) {
         else if (bonus_id == 6891 || bonus_id == 6892) itemLevel = 165;
         else if (bonus_id == 6890) itemLevel = 129;
         else if (bonus_id == 7192) itemLevel = 126;
+        else if (bonus_id == 7238) itemLevel = 164;
+        else if (bonus_id == 7239) itemLevel = 181;
+        else if (bonus_id == 7240) itemLevel = 200;
+        else if (bonus_id == 7241) itemLevel = 180;
+
         
       }
       else if ("name_override" in idPayload) {
