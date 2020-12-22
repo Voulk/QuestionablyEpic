@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {getItemLevel, getItemAllocations, calcStatsAtLevel, getValidArmorTypes, getItemSubclass, getValidWeaponTypes,
-        getTranslatedItemName, getItemEffect} from './ItemUtilities';
+        getTranslatedItemName, getItemEffect, getItemIcon, checkItemExists, getItemSlot} from './ItemUtilities';
 import SPEC from "../Engine/SPECS";
 import each from 'jest-each';
 
@@ -169,6 +169,49 @@ describe("GetItemEffect func", () => {
         const expectedResult = {type: "trinket", name:"Sinful Gladiator's Badge of Ferocity"};
         expect(getItemEffect(id)).toEqual(expectedResult);
 
+    });
+
+    // Add new tests
+});
+
+describe("GetItemIcon func", () => {
+    test("Icon Test: Unbound Changeling", () => {
+        const id = 178708;
+        const expectedResult = "/Images/Icons/inv_pet_spectralporcupinegreen.jpg";
+        expect(getItemIcon(id)).toEqual(expectedResult);
+
+    });
+
+    // Add new tests
+});
+
+describe("CheckItemExists func", () => {
+    test("Exists Test: Trailspinner Pendant", () => {
+        const id = 178707;
+        const expectedResult = true;
+        expect(checkItemExists(id)).toEqual(expectedResult);
+    });
+
+    test("Check Invalid Item ID doesn't exist", () => {
+        const id = 9999999;
+        const expectedResult = false;
+        expect(checkItemExists(id)).toEqual(expectedResult);
+    });
+
+    // Add new tests
+});
+
+describe("getItemSlot func", () => {
+    test("Slot Check Scythewood Scepter (1H Weapon)", () => {
+        const id = 178709;
+        const expectedResult = "1H Weapon";
+        expect(getItemSlot(id)).toEqual(expectedResult);
+    });
+
+    test("Slot Check: Invalid Item ID", () => {
+        const id = 9999999;
+        const expectedResult = 0;
+        expect(getItemSlot(id)).toEqual(expectedResult);
     });
 
     // Add new tests
