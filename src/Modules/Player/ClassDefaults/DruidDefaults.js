@@ -5,7 +5,7 @@ export const druidDefaultSpellData = (contentType) => {
     if (contentType === "Raid") {
         spellList = {
             774: {casts: 100, healing: 455000, hps: 1433, overhealing: 0}, // Rejuv
-            48438: {casts: 19, healing: 449400, hps: 1323, overhealing: 0}, // Wild Growth
+            48438: {casts: 19, healing: 449400, hps: 1339, overhealing: 0}, // Wild Growth
             8936: {casts: 29, healing: 194225, hps: 571, overhealing: 0}, // Regrowth
             33763: {casts: 17, healing: 89150, hps: 262, overhealing: 0}, // Lifebloom
 
@@ -33,13 +33,13 @@ export const druidDefaultSpecialQueries = (contentType) => {
     if (contentType === "Raid") {
         specialQueries = 
         {   
-            "ConvokeChannelHPS": 480,   
+            "ConvokeChannelHPS": 360,   
         };
     }
     else if (contentType === "Dungeon") {
         specialQueries = 
         {   
-            "ConvokeChannelHPS": 480,   
+            "ConvokeChannelHPS": 360,   
         };
     }
     else {

@@ -54,10 +54,10 @@ export const getDruidConduit = (
     // TODO: This is a rough trait estimate but should be fine tuned. 
     // TODO: If the player is already wearing the conduit, then it should be deducted from their wild growth healing before we perform calculations.
     let trait_bonus = 0.18 + conduitLevel * 0.02;
-    let wildGrowthHPS = pl.getSpellHPS("Wild Growth", contentType);
+    let wildGrowthHPS = pl.getSpellHPS(48438, contentType);
 
     let wildGrowthPercentIncrease = (trait_bonus * 0.26);
-
+    //console.log(wildGrowthHPS);
     bonus_stats.HPS = wildGrowthHPS * wildGrowthPercentIncrease;
   }
 
@@ -77,7 +77,7 @@ export const getDruidConduit = (
   // TODO: This is using a placeholder formula
   else if (conduitID === 341446) {
     let trait_bonus = 0.135 + conduitLevel * 0.015;
-    let HPSDuringConvoke = 480; // PLACEHOLDER
+    let HPSDuringConvoke = 360; // PLACEHOLDER
 
     bonus_stats.HPS = trait_bonus * HPSDuringConvoke * (1 - expectedOverhealing);
   }
