@@ -241,7 +241,7 @@ function buildDifferential(itemSet, primeSet) {
     let diffList = itemSet.itemList;
     let differentials = {
         items: [],
-        scoreDifference: (primeSet.hardScore - itemSet.hardScore),
+        scoreDifference: (Math.round(primeSet.hardScore - itemSet.hardScore) / primeSet.hardScore*100),
     }
     //console.log("Prime List: " + JSON.stringify(primeSet));
     //console.log("Diff List: " + JSON.stringify(diffList))

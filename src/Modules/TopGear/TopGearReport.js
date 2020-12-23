@@ -34,7 +34,9 @@ function TopGearReport(props) {
   }, []);
   const roundTo = (value, places) => {
     let power = Math.pow(10, places);
-    return (Math.round(value * power) / power) * -1;
+    let diff = (Math.round(value * power) / power) * -1;
+    if (Math.abs(diff) < 0.01) return "<0.01";
+    return diff;
   };
 
   const classIcon = () => {
@@ -77,7 +79,7 @@ function TopGearReport(props) {
   let differentials = {};
   let itemList = {};
   let statList = {};
-  console.log(differentials);
+  
 
   if (checkResult(result)) {
     topSet = result.itemSet;
@@ -91,7 +93,7 @@ function TopGearReport(props) {
   }
 
 
-
+  //console.log(differentials);
   
   //console.log("Top Set: " + JSON.stringify(itemList));
 /* TEST DATA
@@ -355,12 +357,10 @@ function TopGearReport(props) {
                                   style={{
                                     paddingTop: 4,
                                     width: "100%",
-                                    color: upgradeColor(
-                                      roundTo(key.scoreDifference, 2)
-                                    ),
+                                    color: "#f20d0d",
                                   }}
                                 >
-                                  {roundTo(key.scoreDifference, 2)}
+                                  {roundTo(key.scoreDifference, 2) + "%"}
                                 </div>
                               </Grid>
                             </Grid>
