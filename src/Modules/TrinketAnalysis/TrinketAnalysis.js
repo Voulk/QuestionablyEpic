@@ -61,7 +61,7 @@ export default function TrinketAnalysis(props) {
 
   activeTrinkets.sort((a, b) => (a.i226 < b.i226 ? 1 : -1));
   console.log(activeTrinkets);
-
+  activeTrinkets = activeTrinkets.slice(0, 20);
   return (
     <div
       style={{
@@ -72,15 +72,17 @@ export default function TrinketAnalysis(props) {
       }}
     >
       <Paper>
-        <Grid container spacing={1}>
+        <Grid container spacing={1} justify="center">
           <Grid item xs={12} style={{ marginTop: 20 }}>
             <Typography color="primary" align="center" variant="h5">
               Trinket Analysis Page
             </Typography>
             <Divider variant="middle" />
           </Grid>
-          <Grid item xs={12}>
-            <VerticalChart data={activeTrinkets} />
+          <Grid item xs={8}>
+            <Paper style={{ backgroundColor: "rgb(28, 28, 28, 0.5)" }}>
+              <VerticalChart data={activeTrinkets} />
+            </Paper>
           </Grid>
         </Grid>
       </Paper>
