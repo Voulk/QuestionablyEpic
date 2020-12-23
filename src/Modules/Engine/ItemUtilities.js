@@ -174,9 +174,6 @@ export function getItemAllocations(id, missiveStats = []) {
     }
 
   }
-  console.log("Finished Stats: " + JSON.stringify(statArray));
-  console.log(temp);
-  console.log(missiveStats);
   //console.log(JSON.stringify(temp) + temp.length)
   //console.log(temp[0].icon)
   if (temp.length > 0) return statArray;
