@@ -55,7 +55,7 @@ export const getShamanConduit = (conduitID, player, contentType, conduitRank) =>
      */
     const traitBonus = HEAVY_RAINFALL_RANKS[conduitRank] / 100;
     const hrHPS = player.getSpellHPS(IDHEALINGRAIN, contentType);
-    const hrCasts = player.getSpellCasts(IFHEALINGRAIN, contentType);
+    const hrCasts = player.getSpellCasts(IDHEALINGRAIN, contentType);
     const httCasts = player.getSpellCasts(IDHEALINGTIDETOTEM, contentType);
     //if (hrHPS && hrCasts && httCasts) {
     const buffedCasts = httCasts * 1.8;

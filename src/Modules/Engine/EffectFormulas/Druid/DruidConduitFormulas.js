@@ -104,8 +104,8 @@ export const getDruidConduit = (
   // Innate Resolve
   else if (conduitID === 340543) {
     let trait_bonus = 0.12 + conduitLevel * 0.012;
-    let regrowth_hps = pl.getSpellHPS('Regrowth', contentType);
-    let frenzied_hps = pl.getSpellHPS('Frenzied Regeneration', contentType);
+    let regrowth_hps = pl.getSpellHPS(8936, contentType);
+    let frenzied_hps = 0;     //pl.getSpellHPS('Frenzied Regeneration', contentType);
     let percent_self_casts = 0.04;
 
     bonus_stats.HPS = (regrowth_hps + frenzied_hps) * trait_bonus *percent_self_casts;
