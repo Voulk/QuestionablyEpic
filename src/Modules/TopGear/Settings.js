@@ -1,5 +1,4 @@
-import { render } from "react-dom";
-import React from "react";
+import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import {
   Accordion,
@@ -47,9 +46,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function HelpText(props) {
+export default function TopGearSettingsdAccordion() {
   const classes = useStyles();
-  let helpText = props.text;
+  const [value, setValue] = useState(5);
 
   return (
     <div className={classes.root}>
@@ -60,30 +59,31 @@ export default function HelpText(props) {
           id="panel1c-header"
         >
           <div className={classes.column}>
-            <Typography
-              className={classes.heading}
-              style={{ color: "limegreen" }}
-              align="left"
-              variant="h6"
-
-              // gutterBottom
-            >
-              How to
-            </Typography>
+            <Typography className={classes.heading}>Settings</Typography>
           </div>
         </AccordionSummary>
         <Divider variant="middle" />
         <AccordionDetails className={classes.details}>
-          <Typography
-            style={{ color: "##fffff7" }}
-            align="left"
-            variant="subtitle1"
-            display="inline"
-            paragraph
-            // gutterBottom
-          >
-            {helpText}
-          </Typography>
+          <Grid container spacing={1}>
+            <Grid item xs={3}>
+              <Grid container spacing={1}>
+                <Grid item xs={12}>
+                  <Typography> Allies With Hymnal </Typography>
+                </Grid>
+                <Grid item xs={12}>
+                  <TextField
+                    label="Allies"
+                    id="AlliesNumber"
+                    value={value}
+                    onChange={(e) => setValue(e.target.value)}
+                    defaultValue={5}
+                    variant="outlined"
+                    size="small"
+                  />
+                </Grid>
+              </Grid>
+            </Grid>
+          </Grid>
         </AccordionDetails>
       </Accordion>
     </div>
