@@ -23,6 +23,14 @@ const ELYSIAN_DIRGE_RANKS = [40, 43, 46, 49, 52, 55, 58, 61, 64, 67, 70, 73, 76,
 const LAVISH_HARVEST_RANKS = [10, 10.5, 11, 11.5, 12, 12.5, 13, 13.5, 14, 14.5, 15, 15.5, 16, 16.5, 17];
 const ESSENTIAL_EXTRACTION_RANKS = [-25000, -26000, -27000, -28000, -29000, -30000, -31000, -33000, -34000, -35000, -36000, -37000, -38000, -39000, -40000];
 
+const IDCHAINHEAL = 85222;
+const IDHEALINGWAVE = 82326;
+const IDHEALINGSURGE = 20473;
+const IDHEALINGRAIN = 73920;
+const IDHEALINGTIDETOTEM = 108280;
+const IDRIPTIDE = 61295;
+const IDCLOUDBURST = 157153;
+
 // Helper Functions
 function tumblingWaves(player) {
   const avgWavesPerCast = 4.4; // aka riptides / placeholder
@@ -39,16 +47,16 @@ export const getShamanConduit = (conduitID, player, contentType, conduitRank) =>
      * for generic values probably need to go through logs.
      */
     const traitBonus = EMBRACE_OF_EARTH_RANKS[conduitRank] / 100;
-    const esHPS = player.getSpellHPS("Healing on Earth Shield", contentType);
+    const esHPS = player.getSpecialQuery("HPSOnEarthShield", contentType);
     bonusStats.HPS = esHPS * traitBonus;
   } else if (conduitID === HEAVY_RAINFALL) {
     /**
      * Increases the healing of your Healing Rain by x% for 20s after using Healing Tide.
      */
     const traitBonus = HEAVY_RAINFALL_RANKS[conduitRank] / 100;
-    const hrHPS = player.getSpellHPS("Healing Rain", contentType);
-    const hrCasts = player.getSpellCasts("Healing Rain", contentType);
-    const httCasts = player.getSpellCasts("Healing Tide Totem", contentType);
+    const hrHPS = player.getSpellHPS(IDHEALINGRAIN, contentType);
+    const hrCasts = player.getSpellCasts(IDHEALINGRAIN, contentType);
+    const httCasts = player.getSpellCasts(IDHEALINGTIDETOTEM, contentType);
     //if (hrHPS && hrCasts && httCasts) {
     const buffedCasts = httCasts * 1.8;
     const avgHRCast = hrHPS / hrCasts;
@@ -65,7 +73,7 @@ export const getShamanConduit = (conduitID, player, contentType, conduitRank) =>
      * Increases the initial healing of Chain Heal by x%.
      */
     const traitBonus = NATURES_FOCUS_RANKS[conduitRank] / 100;
-    const chHPS = player.getSpellHPS("Chain Heal", contentType);
+    const chHPS = player.getSpellHPS(IDCHAINHEAL, contentType);
     const roughInitial = chHPS * 0.4; // 40% is about what the initial hit of the chain heal is doing, could probably use something better
     bonusStats.HPS = roughInitial * traitBonus;
   } else if (conduitID === SWIRLING_CURRENTS) {
@@ -73,9 +81,9 @@ export const getShamanConduit = (conduitID, player, contentType, conduitRank) =>
      * After using CBT/HST it increases the healing of your next 3 RT/HW/HS casts.
      */
     const traitBonus = SWIRLING_CURRENTS_RANKS[conduitRank] / 100;
-    const rtHPS = player.getSpellHPS("Riptide", contentType);
-    const rtCasts = player.getSpellCasts("Riptide", contentType);
-    const cbtCasts = player.getSpellCasts("Cloudburst Totem", contentType);
+    const rtHPS = player.getSpellHPS(IDRIPTIDE, contentType);
+    const rtCasts = player.getSpellCasts(IDRIPTIDE, contentType);
+    const cbtCasts = player.getSpellCasts(IDCLOUDBURST, contentType);
     const avgRTCast = rtHPS / rtCasts;
     const buffedCasts = cbtCasts * 3;
     // add overhealing, efficiency

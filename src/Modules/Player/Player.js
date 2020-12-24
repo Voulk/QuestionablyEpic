@@ -3,12 +3,7 @@ import SPEC from '../Engine/SPECS';
 import STAT from '../Engine/STAT';
 import {scoreItem} from "../Engine/ItemUtilities";
 import {getUnique} from "./PlayerUtilities";
-
-var SPELL_CASTS_LOC = 0;
-var SPELL_HEALING_LOC = 1;
-var SPELL_HEALING_PERC = 2;
-var SPELL_HPS = 3;
-var SPELL_OVERHEALING_LOC = 5;
+import CastModel from "./CastModel";
 
 var averageHoTCount = 1.4; // TODO: Build this in correctly and pull it from logs where applicable.
 
@@ -39,6 +34,7 @@ class Player {
     activeItems = [];
     activeConduits = [];
     renown = 0;
+    castModel = {};
 
     region = "";
     realm = "";
@@ -51,7 +47,15 @@ class Player {
             Raid: {},
             Dungeon: {},
         }
-   
+    
+    // Consider special queries a sister dictionary to CastPattern. CastPattern includes *raw* spell data pulled from logs but sometimes
+    // we need something more particular. Healing done while channeling Convoke or healing done to a specific target for example.
+    // We'll store these here instead for easy access. 
+    specialQueries = 
+    {
+        Raid: {},
+        Dungeon: {},
+    }
     // The players active stats from their character page. These are raw rather than being percentages. 
     // They can either be pulled automatically from the entered log, or calculated from an entered SimC string.
     // These are used for items like trinkets or conduits, where a flat healing portion might scale with various secondary stats. 
@@ -312,7 +316,7 @@ class Player {
     updateConduitLevel = (id, newLevel) => {
         for (let i = 0; i < this.activeConduits.length; i++) {
             if (this.activeConduits[i].id === id) {
-                this.activeConduits[i].itemLevel = Math.max(145, Math.min(newLevel, 213));
+                this.activeConduits[i].itemLevel = Math.max(145, Math.min(newLevel, 226));
             }
         }
     
@@ -332,95 +336,72 @@ class Player {
         return this.spec;
     }
 
-    getHPS = () => {
-        return this.fightInfo.hps;
+    getHPS = (contentType) => {
+        return this.castModel[contentType].getFightInfo('hps')
     }
     // HPS including overhealing.
-    getRawHPS = () => {
-        return this.fightInfo.rawhps;
+    getRawHPS = (contentType) => {
+        return this.castModel[contentType].getFightInfo('rawhps')
     }
 
-    getFightLength = () => {
-        return this.fightInfo.fightLength;
+    getFightLength = (contentType) => {
+        //console.log("Fight Length: " + contentType);
+        return this.castModel[contentType].getFightInfo('fightLength');
     }
 
     getInt = () => {
         return this.activeStats.intellect;
     }
 
-    getSpellCasts = (spellName, contentType) => {
-        if (spellName in this.castPattern[contentType]) {
-            return this.castPattern[contentType][spellName][SPELL_CASTS_LOC];
-        }
-        else {
-            return 0;
-        }
+
+    getSpecialQuery = (queryIdentifier, contentType) => {
+        return this.castModel[contentType].getSpecialQuery(queryIdentifier)
+
+    }
+
+    getSingleCast = (spellID, contentType) => {
+        return this.castModel[contentType].getSpellData(spellID, "healing") / this.castModel[contentType].getSpellData(spellID, "casts");
+
+    }
+
+    getSpellCPM = (spellID, contentType) => {
+        return this.getSpellCasts(spellID, contentType) / this.getFightLength(contentType) * 60;
+
         
     }
 
-    getSpellCPM = (spellName, contentType) => {
-        if (spellName in this.castPattern[contentType]) {
-            return this.castPattern[contentType][spellName][SPELL_CASTS_LOC] / this.getFightLength() * 60;
-        }
-        else {
-            return 0;
-        }
-        
-    }
-
-    getSpellHealingPerc = (spellName, contentType) => {
-        if (spellName in this.castPattern[contentType]) {
-            return this.castPattern[contentType][spellName][SPELL_HEALING_PERC]
-        }
-        else {
-            return 0;
-        }
+    getSpellCasts = (spellID, contentType) => {
+        return this.castModel[contentType].getSpellData(spellID, "casts");
 
     }
 
-    getSingleCast = (spellName, contentType) => {
-        if (spellName in this.castPattern[contentType]) {
-            return this.castPattern[contentType][spellName][SPELL_HEALING_LOC] / this.castPattern[contentType][spellName][SPELL_CASTS_LOC]
-        }
-        else {
-            return 0;
-        }
+
+    getSpellHPS = (spellID, contentType) => {
+        return this.castModel[contentType].getSpellData(spellID, "hps");
     }
 
-    getSpellHPS = (spellName, contentType) => {
-        if (spellName in this.castPattern[contentType]) {
-            return this.castPattern[contentType][spellName][SPELL_HPS]
-        }
-        else {
-            return 0;
-        }
-        
-    }
-
-    setSpellPattern = (castPat) => {
-        console.log(castPat);
-        if (castPat !== {}) this.castPattern["Raid"] = castPat;
+    setSpellPattern = (spellList) => {
+        if (spellList !== {}) this.castModel["Raid"].setSpellList(spellList);
         
     }
 
     setActiveStats = (stats) => {
-       
         if (Object.keys(stats).length > 0) this.activeStats = stats;
     }
 
     setFightInfo = (info) => {
-        if (Object.keys(info).length > 0) this.fightInfo = info;
+        if (Object.keys(info).length > 0) this.castModel["Raid"].setFightInfo(info);
     }
 
 
     // Consider replacing this with an external table for cleanliness and ease of editing. 
     setupDefaults = (spec) => {
+        this.castModel = {
+            Raid: new CastModel(spec, "Raid"),
+            Dungeon: new CastModel(spec, "Dungeon")
+        };
+
         if (spec === SPEC.RESTODRUID) {
-            this.fightInfo = {
-                hps: 5500,
-                rawhps: 9420,
-                fightLength: 340,
-            }
             this.activeStats = {
                 intellect: 1420,
                 haste: 690,
@@ -428,9 +409,7 @@ class Player {
                 mastery: 230,
                 versatility: 220,
                 stamina: 1400,
-    
             }
-           
             this.statWeights = {
                 "Raid": {
                     intellect: 1, 
@@ -450,26 +429,10 @@ class Player {
                 },
                 "DefaultWeights": true
             }
-
-            this.castPattern =
-            // CASTS, HEALING, HEALINGPERC, HPS
-            {   "Raid": {
-                    "Rejuvenation": [100, 455000, 0.0, 1433],
-                    "Wild Growth": [19, 449400, 0.0, 1323],
-                    "Regrowth": [29, 194225, 0.000, 571],
-                    "Lifebloom": [17, 89150, 0.000, 262],
-  
-            },
-                "Dungeon": {
-                    "Rejuvenation": [25, 113750, 0.0, 324],
-                    "Wild Growth": [17, 395000, 0.2472, 1402],
-                    "Regrowth": [11, 105200, 0.000, 545],
-                    "Lifebloom": [17, 89150, 0.000, 262],
-                }
-            }
-
+            
         }
         else if (spec === SPEC.HOLYPALADIN) {
+
             
             this.fightInfo = {
                 hps: 5500,
@@ -507,23 +470,6 @@ class Player {
                 "DefaultWeights": true
             }
 
-            this.castPattern =
-            // CASTS, HEALING, HEALINGPERC, HPS, OVERHEALING
-            {   "Raid": {
-                    "Light of Dawn": [20, 238400, 0.2082, 1316, 0.2],
-                    "Word of Glory": [4, 40800, 0.0357, 225, 0.2],
-                    "Holy Shock": [27, 221400, 0.1934, 1222, 0.2],
-                    "Holy Light": [29, 311600, 0.293, 620, 0.2],
-                    "Shock Barrier": [0, 98300, 0.0858, 542, 0.2],
-            },
-                "Dungeon": {
-                    "Light of Dawn": [20, 238400, 0.2082, 120],
-                    "Word of Glory": [4, 40800, 0.0357, 900],
-                    "Holy Shock": [27, 221400, 0.1934, 1280],
-                    "Holy Light": [29, 311600, 0.293, 10],
-                    "Shock Barrier": [0, 98300, 0.0858, 542],
-                }
-            }
         } else if (spec === SPEC.RESTOSHAMAN) { // all of this needs a proper input once
             this.fightInfo = {
                 hps: 5500,
@@ -557,28 +503,7 @@ class Player {
                 },
                 DefaultWeights: true
             };
-            this.castPattern = {
-                Raid: {
-                    "Riptide": [66, 693600, 23, 1491],
-                    "Cloudburst Totem": [14, 0, 0, 0],
-                    "Healing Rain": [18, 450000, 15, 967],
-                    "Healing Tide Totem": [2, 0, 0, 0],
-                    "Chain Heal": [20, 368000, 12, 791],
-                    "Healing on Earth Shield": [0, 212000, 0, 456],
-                    "Mana Tide Totem": [2, 0, 0, 0],
-                    "Healing Surge": [20, 0, 0, 0],
-                },
-                Dungeon: {
-                    "Riptide": [66, 693600, 23, 1491],
-                    "Cloudburst Totem": [14, 0, 0, 0],
-                    "Healing Rain": [18, 450000, 15, 967],
-                    "Healing Tide Totem": [2, 0, 0, 0],
-                    "Chain Heal": [20, 368000, 12, 791],
-                    "Healing on Earth Shield": [0, 212000, 0, 456],
-                    "Mana Tide Totem": [2, 0, 0, 0],
-                    "Healing Surge": [40, 0, 0, 0],
-                }
-            };
+
         }
         else if (spec === SPEC.DISCPRIEST) {
             this.fightInfo = {
@@ -600,40 +525,25 @@ class Player {
                 "Raid": {
                     intellect: 1, 
                     haste: 0.36,
-                    crit: 0.34,
-                    mastery: 0.32,
-                    versatility: 0.33,
-                    leech: 0.56,
+                    crit: 0.33,
+                    mastery: 0.34,
+                    versatility: 0.32,
+                    leech: 0.49,
                 },
                 "Dungeon": {
                     intellect: 1, 
-                    haste: 0.35,
+                    haste: 0.38,
                     crit: 0.34,
-                    mastery: 0.31,
+                    mastery: 0.30,
                     versatility: 0.33,
                     leech: 0.23,
                 },
                 "DefaultWeights": true
             }
 
-            this.castPattern =
-            // CASTS, HEALING, HEALINGPERC, HPS
-            {   "Raid": {
-                    
-  
-            },
-                "Dungeon": {
-    
-                }
-            }
 
         }
         else if (spec === SPEC.HOLYPRIEST) {
-            this.fightInfo = {
-                hps: 5500,
-                rawhps: 9420,
-                fightLength: 193,
-            }
             this.activeStats = {
                 intellect: 1420,
                 haste: 125,
@@ -662,17 +572,6 @@ class Player {
                     leech: 0.25,
                 },
                 "DefaultWeights": true
-            }
-
-            this.castPattern =
-            // CASTS, HEALING, HEALINGPERC, HPS
-            {   "Raid": {
-                    
-  
-            },
-                "Dungeon": {
-    
-                }
             }
 
         }
@@ -710,34 +609,6 @@ class Player {
                     leech: 0.25,
                 },
                 "DefaultWeights": true
-            }
-
-            this.castPattern =
-            // CASTS, HEALING, HEALINGPERC, HPS
-            {   "Raid": {
-                    "Enveloping Mist": [	9,	165317,	14.33,	1183.8],
-                    "Vivify": [	13,	143871,	12.47,	1030.2],
-                    "Revival": [	1,	123536,	10.71,	884.6],
-                    "Gust of Mists": [	0,	123408,	10.7,	883.7],
-                    "Enveloping Breath": [	0,	116780,	10.12,	836.2],
-                    "Essence Font": [	5,	109532,	9.5,	784.3],
-                    "Renewing Mist": [	14,	106834,	9.26,	765],
-                    "Chi-ji Gust of Mists": [	0,	94204,	8.17,	674.6],
-                    "Leech": [	0,	56104,	4.86,	401.8],
-                    "Rising Mist": [	0,	26087,	2.26,	186.8],
-                    "Life Cocoon": [	1,	25454,	2.21,	182.3],
-                    "Enveloping Mist": [	0,	16191,	1.4,	115.9],
-                    "Weapons of Order": [	1,	13857,	1.2,	99.2],
-                    "Soothing Mist": [	4,	11977,	1.04,	85.8],
-                    "Embalmer's Oil": [	0,	7955,	0.69,	57],
-                    "Fortifying Ingredients": [	0,	5294,	0.46,	37.9],
-                    "Purify Soul": [	1,	4768,	0.41,	34.1],
-                    "Embalmer's Oil": [	0,	2292,	0.2,	16.4],
-                    "HoT Healing During LC": [0, 13600, 1.18, 97.8],//only from monk... idk if we want all all or just healin increase for you
-            },
-                "Dungeon": {
-    
-                }
             }
 
         }

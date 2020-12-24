@@ -1,6 +1,12 @@
 import Player from '../../../Player/Player';
 import { getOneHolyPower, getAwakeningWingsUptime, getWingsHealingInc } from './PaladinMiscFormulas'
 
+const IDLIGHTOFDAWN = 85222;
+const IDHOLYLIGHT = 82326;
+const IDHOLYSHOCK = 20473;
+const IDSHOCKBARRIER = 337824;
+const IDWORDOFGLORY = 85673;
+
 export const getPaladinLegendary = (effectName, pl, contentType) => {
     let result = 0.0;
     let bonus_stats = {};
@@ -37,14 +43,14 @@ export const getPaladinLegendary = (effectName, pl, contentType) => {
         let wastedShield = 0.12;
         //console.log("HSI: " + holyShockIncrease);
 
-        bonus_stats.hps = Math.round(holyShockIncrease * 3 * (1 - wastedShield) * pl.getSpellHPS('Holy Shock', contentType));
+        bonus_stats.hps = Math.round(holyShockIncrease * 3 * (1 - wastedShield) * pl.getSpellHPS(IDHOLYSHOCK, contentType));
     }
 
     else if (name === "Inflorescence of the Sunwell") {
         // Do Math
-        let infusionsPerMinute = pl.getSpellCPM('Holy Shock', contentType) * pl.getStatPerc('Crit') + 0.3;
+        let infusionsPerMinute = pl.getSpellCPM(IDHOLYSHOCK, contentType) * pl.getStatPerc('Crit') + 0.3;
         let wastedInfusionPercentage = 0.2;
-        let oneHolyLight = pl.getSingleCast('Holy Light', contentType);
+        let oneHolyLight = pl.getSingleCast(IDHOLYLIGHT, contentType);
         
         // Resplendent tests
         /*
@@ -59,7 +65,7 @@ export const getPaladinLegendary = (effectName, pl, contentType) => {
         bonus_stats.hps = Math.round(infusionsPerMinute * wastedInfusionPercentage * (oneHolyLight * (0.3 + 0.5)) / 60)
     }
     else if (name === "Shadowbreaker, Dawn of the Sun") {
-        let lightOfDawnCPM = pl.getSpellCPM("Light of Dawn", contentType);
+        let lightOfDawnCPM = pl.getSpellCPM(IDLIGHTOFDAWN, contentType);
         let lightOfDawnUptime = Math.min(1, lightOfDawnCPM * 6 / 60); // Technically doesn't account for the slight possible loss from casting LoD twice in a short period.
         let averageMasteryEff = (pl.getStatPerc('Mastery')); // TODO: Improve with logs data.
         let maxMasteryEff = ((pl.getStatPerc('Mastery')-1) / 0.7)+1 ;
@@ -68,7 +74,7 @@ export const getPaladinLegendary = (effectName, pl, contentType) => {
 
         //console.log("MastDiff: " + mastDiff + ". LoDUptime: " + lightOfDawnUptime + "Max: " + maxMasteryEff + ". Avg: " + averageMasteryEff);
     
-        bonus_stats.hps = Math.round(pl.getHPS() * mastDiff * lightOfDawnUptime * percentHealingToHitTargets);
+        bonus_stats.hps = Math.round(pl.getHPS(contentType) * mastDiff * lightOfDawnUptime * percentHealingToHitTargets);
 
     }
     else if (name === "Of Dusk and Dawn") {
@@ -101,7 +107,7 @@ export const getPaladinLegendary = (effectName, pl, contentType) => {
         let healingIncUptime = hammerOfWrathCPM / 60;
 
         let healingMult = (wingsEffHealingIncrease * healingIncUptime + 1 * (1 - healingIncUptime)) - 1;    
-        bonus_stats.hps = Math.round(pl.getHPS() * healingMult);
+        bonus_stats.hps = Math.round(pl.getHPS(contentType) * healingMult);
 
         //console.log("FWS: " + wingsEffHealingIncrease);
         // This technically needs to be increased based on the wings duration increase, but that is of minimal benefit.

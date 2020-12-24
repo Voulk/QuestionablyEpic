@@ -1,5 +1,11 @@
 
 
+const IDLIGHTOFDAWN = 85222;
+const IDHOLYLIGHT = 82326;
+const IDHOLYSHOCK = 20473;
+const IDSHOCKBARRIER = 337824;
+const IDWORDOFGLORY = 85673;
+
 export const getPaladinConduit = (conduitID, pl, contentType, conduitLevel) => {
     let bonus_stats = {};
     let expectedOverhealing = 0;
@@ -8,7 +14,7 @@ export const getPaladinConduit = (conduitID, pl, contentType, conduitLevel) => {
     // Enkindled Spirits
     if (conduitID === 339570) {
         let trait_bonus = 0.27 + conduitLevel * 0.03;
-        let one_lod = pl.getSingleCast("Light of Dawn", contentType)
+        let one_lod = pl.getSingleCast(IDLIGHTOFDAWN, contentType)
         
         bonus_stats.HPS = trait_bonus * one_lod * 3 / 180;
     }
@@ -20,7 +26,7 @@ export const getPaladinConduit = (conduitID, pl, contentType, conduitLevel) => {
         let holyShockIncrease = ((holyShockBaseCrit + trait_bonus) / holyShockBaseCrit) - 1;
         //console.log("HSI: " + holyShockIncrease);
 
-        bonus_stats.HPS = holyShockIncrease * (pl.getSpellHPS('Holy Shock', contentType) + pl.getSpellHPS('Shock Barrier', contentType));
+        bonus_stats.HPS = holyShockIncrease * (pl.getSpellHPS(IDHOLYSHOCK, contentType) + pl.getSpellHPS(IDSHOCKBARRIER, contentType));
 
 
     }
@@ -28,7 +34,7 @@ export const getPaladinConduit = (conduitID, pl, contentType, conduitLevel) => {
     else if (conduitID === 339712) {
         let trait_bonus =  0.036 + conduitLevel * 0.004;
         let targets = 4.8;
-        let holyLightHPS = pl.getSpellHPS('Holy Light', contentType);
+        let holyLightHPS = pl.getSpellHPS(IDHOLYLIGHT, contentType);
         expectedOverhealing = 0.3;
 
         bonus_stats.HPS = (trait_bonus * targets * holyLightHPS * (1 - expectedOverhealing));
@@ -42,7 +48,7 @@ export const getPaladinConduit = (conduitID, pl, contentType, conduitLevel) => {
     // Ringing Clarity (Kyrian)
     else if (conduitID === 340218) {
         let trait_bonus =  0.36 + conduitLevel * 0.04;
-        let oneHolyShock = pl.getSpellHPS('Holy Shock', contentType)
+        let oneHolyShock = pl.getSpellHPS(IDHOLYSHOCK, contentType)
         expectedOverhealing = 0.5;
 
         bonus_stats.HPS = (trait_bonus * oneHolyShock * 3 * (1 - expectedOverhealing)) / 60;
@@ -92,7 +98,7 @@ export const getPaladinConduit = (conduitID, pl, contentType, conduitLevel) => {
         let trait_bonus =  0.135 + conduitLevel * 0.015;
         expectedOverhealing = 0.04;
 
-        bonus_stats.HPS = trait_bonus * (1 - expectedOverhealing) * pl.getSpellHPS('Word of Glory', contentType)
+        bonus_stats.HPS = trait_bonus * (1 - expectedOverhealing) * pl.getSpellHPS(IDWORDOFGLORY, contentType)
 
 
     }

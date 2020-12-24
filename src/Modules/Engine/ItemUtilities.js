@@ -5,6 +5,7 @@ import { getEffectValue } from "./EffectFormulas/EffectEngine";
 import SPEC from "../Engine/SPECS";
 import Item from "../Player/Item";
 import { useTranslation } from "react-i18next";
+import {i18n} from 'react-i18next';
 
 /*
 
@@ -161,22 +162,21 @@ export function getItemAllocations(id, missiveStats = []) {
     return item.id === id;
   });
 
-  let stats = {};
+  let statArray = {};
   if (temp.length > 0) {
-    stats = temp[0].stats;
+    statArray = {...temp[0].stats};
     if ('unallocated' in temp[0].stats) {
       for (var i = 0; i < missiveStats.length; i++) {
-        let mStat = missiveStats[i]
-        stats[mStat] += temp[0].stats.unallocated;
+        let mStat = missiveStats[i];
+        statArray[mStat] += temp[0].stats.unallocated;
         
       }
     }
 
   }
-  //console.log("Finished Stats: " + JSON.stringify(stats));
   //console.log(JSON.stringify(temp) + temp.length)
   //console.log(temp[0].icon)
-  if (temp.length > 0) return stats;
+  if (temp.length > 0) return statArray;
   else return 0;
 }
 
@@ -418,7 +418,7 @@ export function scoreItem(item, player, contentType) {
   if ("bonus_stats" in item.stats && "hps" in item.stats.bonus_stats) {
     //console.log("Adding bonus_stats to score");
     score +=
-      (item.stats.bonus_stats.hps / player.getHPS()) *
+      (item.stats.bonus_stats.hps / player.getHPS(contentType)) *
       player.activeStats.intellect;
   }
 

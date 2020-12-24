@@ -23,18 +23,18 @@ export default function ConduitObject(props) {
 
   const conduitClicked = () => {
     let oldLevel = props.conduit.itemLevel;
-    let newLevel = oldLevel === 213 ? 145 : oldLevel === 184 ? 200 : oldLevel + 13;
+    let newLevel = oldLevel === 226 ? 145 : oldLevel === 184 ? 200 : oldLevel + 13;
     props.updateConduitLevel(props.conduit.id, newLevel);
   }
   const conduitRightClicked = (e) => {
     e.preventDefault();
     let oldLevel = props.conduit.itemLevel;
-    let newLevel = oldLevel === 145 ? 213 : oldLevel === 200 ? 184 : oldLevel - 13;
+    let newLevel = oldLevel === 145 ? 226 : oldLevel === 200 ? 184 : oldLevel - 13;
     props.updateConduitLevel(props.conduit.id, newLevel);
   }
 
   const itemQuality = (itemLevel) => {
-    if (itemLevel >= 213) {
+    if (itemLevel >= 226) {
       return "#ff8000"; // Legendary
     }
     else if (itemLevel >= 200) {

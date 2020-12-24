@@ -54,10 +54,10 @@ export const getDruidConduit = (
     // TODO: This is a rough trait estimate but should be fine tuned. 
     // TODO: If the player is already wearing the conduit, then it should be deducted from their wild growth healing before we perform calculations.
     let trait_bonus = 0.18 + conduitLevel * 0.02;
-    let wildGrowthHPS = pl.getSpellHPS("Wild Growth", contentType);
+    let wildGrowthHPS = pl.getSpellHPS(48438, contentType);
 
     let wildGrowthPercentIncrease = (trait_bonus * 0.26);
-
+    //console.log(wildGrowthHPS);
     bonus_stats.HPS = wildGrowthHPS * wildGrowthPercentIncrease;
   }
 
@@ -77,7 +77,7 @@ export const getDruidConduit = (
   // TODO: This is using a placeholder formula
   else if (conduitID === 341446) {
     let trait_bonus = 0.135 + conduitLevel * 0.015;
-    let HPSDuringConvoke = 480; // PLACEHOLDER
+    let HPSDuringConvoke = 360; // PLACEHOLDER
 
     bonus_stats.HPS = trait_bonus * HPSDuringConvoke * (1 - expectedOverhealing);
   }
@@ -104,8 +104,8 @@ export const getDruidConduit = (
   // Innate Resolve
   else if (conduitID === 340543) {
     let trait_bonus = 0.12 + conduitLevel * 0.012;
-    let regrowth_hps = pl.getSpellHPS('Regrowth', contentType);
-    let frenzied_hps = pl.getSpellHPS('Frenzied Regeneration', contentType);
+    let regrowth_hps = pl.getSpellHPS(8936, contentType);
+    let frenzied_hps = 0;     //pl.getSpellHPS('Frenzied Regeneration', contentType);
     let percent_self_casts = 0.04;
 
     bonus_stats.HPS = (regrowth_hps + frenzied_hps) * trait_bonus *percent_self_casts;

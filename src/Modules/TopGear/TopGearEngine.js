@@ -241,7 +241,7 @@ function buildDifferential(itemSet, primeSet) {
     let diffList = itemSet.itemList;
     let differentials = {
         items: [],
-        scoreDifference: (primeSet.hardScore - itemSet.hardScore),
+        scoreDifference: (Math.round(primeSet.hardScore - itemSet.hardScore) / primeSet.hardScore*100),
     }
     //console.log("Prime List: " + JSON.stringify(primeSet));
     //console.log("Diff List: " + JSON.stringify(diffList))
@@ -363,7 +363,7 @@ function evalSet(itemSet, player, contentType) {
     for (var stat in setStats) {
         if (stat === "hps") {
             /*score +=
-            (item.stats.bonus_stats.hps / player.getHPS()) *
+            (item.stats.bonus_stats.hps / player.getHPS(contentType)) *
             player.activeStats.intellect; */
             hardScore += setStats[stat] / player.fightInfo.hps * player.activeStats.intellect;
             
