@@ -61,7 +61,6 @@ export default function TrinketAnalysis(props) {
 
   activeTrinkets.sort((a, b) => (a.i226 < b.i226 ? 1 : -1));
   console.log(activeTrinkets);
-  activeTrinkets = activeTrinkets.slice(0, 20);
   return (
     <div
       style={{
@@ -79,8 +78,11 @@ export default function TrinketAnalysis(props) {
             </Typography>
             <Divider variant="middle" />
           </Grid>
-          <Grid item xs={8}>
-            <Paper style={{ backgroundColor: "rgb(28, 28, 28, 0.5)" }}>
+          <Grid item xs={8} style={{ marginTop: 20, marginBottom: 20 }}>
+            <Paper
+              style={{ backgroundColor: "rgb(28, 28, 28, 0.5)" }}
+              elevation={0}
+            >
               <VerticalChart data={activeTrinkets} />
             </Paper>
           </Grid>

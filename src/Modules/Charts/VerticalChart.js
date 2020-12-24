@@ -14,6 +14,7 @@ import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 import Divider from "@material-ui/core/Divider";
 import chroma from "chroma-js";
+import "./VerticalChart.css";
 
 export default class VerticalChart extends PureComponent {
   constructor(props) {
@@ -21,7 +22,7 @@ export default class VerticalChart extends PureComponent {
   }
 
   render(props) {
-    const data = this.props.data;
+    const data = this.props.data.slice(0, 20);
 
     const Ilvls = ["i226", "i213", "i200", "i187", "i174", "i161"];
     let len = Ilvls.length;
@@ -45,20 +46,29 @@ export default class VerticalChart extends PureComponent {
       <ResponsiveContainer
         className="ResponsiveContainer2"
         width="100%"
-        aspect={1 / 0.4}
+        aspect={1 / 0.5}
       >
         <BarChart
-          // barSize={10}
+          barCategoryGap="15%"
           data={arr}
           layout="vertical"
           margin={{
             top: 20,
-            right: 80,
+            right: 40,
             bottom: 20,
-            left: 200,
+            left: 220,
           }}
         >
           <XAxis type="number" stroke="#f5f5f5" />
+          <XAxis
+            type="number"
+            stroke="#f5f5f5"
+            orientation="top"
+            xAxisId={1}
+            padding={0}
+            height={1}
+          />
+
           <Legend />
           <CartesianGrid vertical={true} horizontal={false} />
           <YAxis
