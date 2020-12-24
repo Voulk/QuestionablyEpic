@@ -65,7 +65,7 @@ export default function TopGearSettingsdAccordion() {
         <Divider variant="middle" />
         <AccordionDetails className={classes.details}>
           <Grid container spacing={1}>
-            <Grid item xs={3}>
+            <Grid item xs={2}>
               <Grid container spacing={1}>
                 <Grid item xs={12}>
                   <Typography> Allies With Hymnal </Typography>
@@ -75,10 +75,12 @@ export default function TopGearSettingsdAccordion() {
                     label="Allies"
                     id="AlliesNumber"
                     value={value}
+                    style={{ maxWidth: 75 }}
                     onChange={(e) => setValue(e.target.value)}
                     defaultValue={5}
                     variant="outlined"
                     size="small"
+                    type="number"
                   />
                 </Grid>
               </Grid>
