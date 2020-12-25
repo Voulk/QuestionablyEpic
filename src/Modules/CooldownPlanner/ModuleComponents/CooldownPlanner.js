@@ -4,23 +4,34 @@ import MaterialTable, {
   MTableBody,
   MTableHeader,
 } from "material-table";
-import AddBox from "@material-ui/icons/AddBox";
-import ArrowDownward from "@material-ui/icons/ArrowDownward";
-import Check from "@material-ui/icons/Check";
-import Clear from "@material-ui/icons/Clear";
-import DeleteOutline from "@material-ui/icons/DeleteOutline";
-import Edit from "@material-ui/icons/Edit";
-import FilterList from "@material-ui/icons/FilterList";
-import Search from "@material-ui/icons/Search";
 import ClassCooldownMenuItems from "../Menus/ClassCooldownMenuItems";
-import { Select, Grid } from "@material-ui/core";
-import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
-import TextField from "@material-ui/core/TextField";
-import InputLabel from "@material-ui/core/InputLabel";
-import FormControl from "@material-ui/core/FormControl";
-import { makeStyles } from "@material-ui/core/styles";
-import abilityIcons from "../Functions/IconFunctions/AbilityIcons";
-import classIcons from "../Functions/IconFunctions/ClassIcons";
+import {
+  AddBox,
+  ArrowDownward,
+  Check,
+  Clear,
+  DeleteOutline,
+  Edit,
+  FilterList,
+  Search,
+} from "@material-ui/icons";
+import {
+  Button,
+  TextField,
+  InputLabel,
+  FormControl,
+  Grow,
+  MenuItem,
+  Divider,
+  Paper,
+  Select,
+  Grid,
+} from "@material-ui/core";
+import {
+  ThemeProvider,
+  createMuiTheme,
+  makeStyles,
+} from "@material-ui/core/styles";
 import moment from "moment";
 import {
   healerCooldownsDetailed,
@@ -34,13 +45,11 @@ import { localizationFR } from "../../../locale/fr/TableLocale";
 import { localizationEN } from "../../../locale/en/TableLocale";
 import { localizationRU } from "../../../locale/ru/TableLocale";
 import { localizationCH } from "../../../locale/ch/TableLocale";
-import MenuItem from "@material-ui/core/MenuItem";
-import Grow from "@material-ui/core/Grow";
+import abilityIcons from "../Functions/IconFunctions/AbilityIcons";
 import bossIcons from "../Functions/IconFunctions/BossIcons";
 import bossAbilityIcons from "../Functions/IconFunctions/BossAbilityIcons";
-import Divider from "@material-ui/core/Divider";
+import classIcons from "../Functions/IconFunctions/ClassIcons";
 import ls from "local-storage";
-import Paper from "@material-ui/core/Paper";
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -164,6 +173,8 @@ export default function CooldownPlanner(props) {
   const handleChangeRaid = props.raidHandler;
   const handleChangeBoss = props.bossHandler;
   const handleChangePlan = props.planHandler;
+  const ertDialogOpen = props.ertDialogOpen;
+  const healTeamDialogOpen = props.healTeamDialogOpen;
 
   const timeCheck = (rowData) => {
     let time = moment(rowData.time, "mm:ss")
@@ -550,7 +561,24 @@ export default function CooldownPlanner(props) {
                   marginBottom: (currentBoss === "" ? false : true) ? 5 : 0,
                 }}
               >
-                <Grid item container spacing={1} xs={7} alignItems="center">
+                <Grid
+                  item
+                  container
+                  spacing={1}
+                  xs={7}
+                  alignItems="center"
+                  wrap="nowrap"
+                >
+                  <Grid item xs="auto">
+                    <Button
+                      variant="outlined"
+                      style={{ height: 40, whiteSpace: "nowrap" }}
+                      color="primary"
+                      onClick={() => healTeamDialogOpen()}
+                    >
+                      Heal Team
+                    </Button>
+                  </Grid>
                   <Grid item xs="auto">
                     <FormControl
                       style={{ minWidth: 200 }}
@@ -635,6 +663,16 @@ export default function CooldownPlanner(props) {
                         <MenuItem value={3}>Plan 3</MenuItem>
                       </Select>
                     </FormControl>
+                  </Grid>
+                  <Grid item xs="auto">
+                    <Button
+                      color="primary"
+                      variant="outlined"
+                      style={{ height: 40, whiteSpace: "nowrap" }}
+                      onClick={() => ertDialogOpen()}
+                    >
+                      ERT Note
+                    </Button>
                   </Grid>
                 </Grid>
                 <Grid item xs="auto">
