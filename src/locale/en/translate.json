@@ -175,7 +175,15 @@
       "CooldownPlanner": "Cooldown Planner (Coming Soon)",
       "Profile": "Profile",
       "CharHeader": "Characters",
-      "CharHelpText": "Add your characters here. Right click to edit your stat weights, realm information and more."
+      "CharHelpText": "Add your characters here. Right click to edit your stat weights, realm information and more.",
+      "Tooltips": {
+        "TopGear": "Find your Top Gear here! Insert a SimC string and let us do the work for you",
+        "QuickCompare": "Want to see how certain pieces of gear match up against others?",
+        "ExploreCovenants": "Unsure what Conduits and Soulbinds are the best for you?",
+        "LegendaryAnalysis": "Which Legendary is the best for you? Where do they come from? Click here to find out",
+        "CooldownPlanner": "Plan your cooldowns using our tool. Create your own or look at logs to help you learn damage patterns",
+        "Profile": "Enter your email here to Connect to Patreon"
+      }
     },
 
     "QeHeader": {
