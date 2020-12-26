@@ -19,7 +19,7 @@ const mainMenuOptions = {
   //"MainMenu.GreatVault": ["/greatvault", false],
   "MainMenu.CooldownPlanner": ["/holydiver", false],
   "MainMenu.Profile": ["/profile", true],
-  "MainMenu.Trinket": ["/trinkets", true],
+  // "MainMenu.Trinket": ["/trinkets", false],
 };
 
 /* Buttons to be added back.
