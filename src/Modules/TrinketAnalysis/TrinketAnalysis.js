@@ -60,7 +60,7 @@ export default function TrinketAnalysis(props) {
   }
 
   activeTrinkets.sort((a, b) => (a.i226 < b.i226 ? 1 : -1));
-  console.log(activeTrinkets);
+  // console.log(activeTrinkets);
   return (
     <div
       style={{

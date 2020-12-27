@@ -128,6 +128,7 @@ export default function QEMainMenu(props) {
               <Tooltip
                 title={t("MainMenu.Tooltips." + mainMenuOptions[key][2])}
                 placement={oddEven(index)}
+                arrow
               >
                 <Button
                   key={index}
