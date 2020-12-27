@@ -8,18 +8,19 @@ import { makeStyles } from "@material-ui/core/styles";
 import ReactGA from "react-ga";
 import { dbCheckPatron } from "./ConnectionUtilities";
 import ArrowForward from "@material-ui/icons/ArrowForward";
-import { Paper, Grid, Button, Typography } from "@material-ui/core";
+import { Paper, Grid, Button, Typography, Tooltip } from "@material-ui/core";
 import HallOfFame from "../HallOfFame/HallOfFame";
 
 // Warning: If a button name has to change, do it in the translation files. Consider the titles here to be ID's rather than strings.
+// [route, show button?, tooltip]
 const mainMenuOptions = {
-  "MainMenu.TopGear": ["/topgear", true],
-  "MainMenu.QuickCompare": ["/quickcompare", true],
-  "MainMenu.ExploreCovenants": ["/soulbinds", true],
-  "MainMenu.LegendaryAnalysis": ["/legendaries", true],
-  //"MainMenu.GreatVault": ["/greatvault", false],
-  "MainMenu.CooldownPlanner": ["/holydiver", false],
-  "MainMenu.Profile": ["/profile", true],
+  "MainMenu.TopGear": ["/topgear", true, "TopGear"],
+  "MainMenu.QuickCompare": ["/quickcompare", true, "QuickCompare"],
+  "MainMenu.ExploreCovenants": ["/soulbinds", true, "ExploreCovenants"],
+  "MainMenu.LegendaryAnalysis": ["/legendaries", true, "LegendaryAnalysis"],
+  //"MainMenu.GreatVault": ["/greatvault", false, "GreatVault"],
+  "MainMenu.CooldownPlanner": ["/holydiver", false, "CooldownPlanner"],
+  "MainMenu.Profile": ["/profile", true, "Profile"],
   // "MainMenu.Trinket": ["/trinkets", false],
 };
 
@@ -65,6 +66,13 @@ export default function QEMainMenu(props) {
   const patron = ["Diamond", "Gold", "Rolls Royce", "Sapphire"].includes(
     props.patronStatus
   );
+
+  const oddEven = (number) => {
+    if (number % 2 == 0) {
+      return "left";
+    }
+    return "right";
+  };
   //console.log(props.patronStatus);
 
   return (
@@ -117,28 +125,34 @@ export default function QEMainMenu(props) {
           {Object.keys(mainMenuOptions).map((key, index) => (
             // Buttons are translated and printed from a dictionary.
             <Grid item xs={12} sm={12} md={6} lg={6} xl={6} key={index}>
-              <Button
-                key={index}
-                variant="contained"
-                disabled={!mainMenuOptions[key][1] || characterCount === 0}
-                color="secondary"
-                style={{
-                  width: "100%",
-                  height: "60px",
-                  whiteSpace: "nowrap",
-                  justifyContent: "left",
-                  paddingLeft: "32px",
-                  color:
-                    mainMenuOptions[key][1] && characterCount > 0
-                      ? "#F2BF59"
-                      : "#9c9c9c",
-                }}
-                component={Link}
-                to={mainMenuOptions[key][0]}
+              <Tooltip
+                title={t("MainMenu.Tooltips." + mainMenuOptions[key][2])}
+                placement={oddEven(index)}
+                arrow
               >
-                <ArrowForward style={{ paddingRight: 32 }} />
-                {t(key)}
-              </Button>
+                <Button
+                  key={index}
+                  variant="contained"
+                  disabled={!mainMenuOptions[key][1] || characterCount === 0}
+                  color="secondary"
+                  style={{
+                    width: "100%",
+                    height: "60px",
+                    whiteSpace: "nowrap",
+                    justifyContent: "left",
+                    paddingLeft: "32px",
+                    color:
+                      mainMenuOptions[key][1] && characterCount > 0
+                        ? "#F2BF59"
+                        : "#9c9c9c",
+                  }}
+                  component={Link}
+                  to={mainMenuOptions[key][0]}
+                >
+                  <ArrowForward style={{ paddingRight: 32 }} />
+                  {t(key)}
+                </Button>
+              </Tooltip>
             </Grid>
           ))}
         </Grid>

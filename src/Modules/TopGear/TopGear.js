@@ -327,7 +327,6 @@ export default function TopGear(props) {
           }}
         >
           <Typography
-            variant="Subtitle2"
             align="center"
             style={{ padding: "10px 10px 5px 10px" }}
             color="primary"

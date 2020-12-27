@@ -1,7 +1,8 @@
 {
   "translations": {
     "CharacterCreator": {
-      "StatMessage": "To get updated stat weights use WowAnalyzer.com with a recent log and enter the values here from the 'Statistics' tab."
+      "StatMessage": "To get updated stat weights use WowAnalyzer.com with a recent log and enter the values here from the 'Statistics' tab.",
+      "DeleteCharacter": "Delete Character"
     },
 
     "_Comments1": "Common Words",
@@ -175,14 +176,29 @@
       "CooldownPlanner": "Cooldown Planner (Coming Soon)",
       "Profile": "Profile",
       "CharHeader": "Characters",
-      "CharHelpText": "Add your characters here. Right click to edit your stat weights, realm information and more."
+      "CharHelpText": "Add your characters here. Right click to edit your stat weights, realm information and more.",
+      "Tooltips": {
+        "TopGear": "Find your best gear set",
+        "QuickCompare": "Compare Items for each slot.",
+        "ExploreCovenants": "Explore Soulbinds for each covenant.",
+        "LegendaryAnalysis": "Find your best legendary power and where to get it",
+        "CooldownPlanner": "Plan your cooldowns. Create your own or analyse logs",
+        "Profile": "Edit your details"
+      }
     },
 
     "QeHeader": {
       "InsertLogLabel": "Insert Log",
       "Login": "Login",
-      "ContentTypeMsgStart": "Change to",
-      "ContentTypeMsgEnd": "Content"
+      "Tooltip": {
+        "ContentTypeMsgStart": "Change to",
+        "ContentTypeMsgEnd": "Content",
+        "InsertLog": "Insert a log to increase accuracy.",
+        "SimC": "Insert a SimC string to import your gear.",
+        "Login": "Login to your Battle.net Account",
+        "Language": "Change Language",
+        "Home": "Main Menu"
+      }
     },
 
     "QuickCompare": {

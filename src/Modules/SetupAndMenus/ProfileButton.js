@@ -1,16 +1,18 @@
 import React from "react";
-import Button from "@material-ui/core/Button";
-import ClickAwayListener from "@material-ui/core/ClickAwayListener";
-import Grow from "@material-ui/core/Grow";
-import Paper from "@material-ui/core/Paper";
-import Popper from "@material-ui/core/Popper";
-import MenuItem from "@material-ui/core/MenuItem";
-import MenuList from "@material-ui/core/MenuList";
-import { makeStyles } from "@material-ui/core/styles";
+import {
+  Button,
+  ClickAwayListener,
+  Dialog,
+  Grow,
+  MenuItem,
+  MenuList,
+  Paper,
+  Popper,
+  Tooltip,
+} from "@material-ui/core";
+import { makeStyles, withStyles } from "@material-ui/core/styles";
 import { useTranslation } from "react-i18next";
 import BnetIcon from "../../Images/QeAssets/BattleNetIcon.png";
-import { withStyles } from "@material-ui/core/styles";
-import Dialog from "@material-ui/core/Dialog";
 import MuiDialogContent from "@material-ui/core/DialogContent";
 import { QELogin } from "./QELogin";
 
@@ -89,7 +91,9 @@ export default function ProfileSelector(props) {
     if (name === t("QeHeader.Login")) {
       return (
         <div>
-          <Button onClick={handleDialogOpen}>{t("QeHeader.Login")}</Button>
+          <Tooltip title={t("QeHeader.Tooltip.Login")} arrow>
+            <Button onClick={handleDialogOpen}>{t("QeHeader.Login")}</Button>
+          </Tooltip>
           <Dialog
             onClose={handleCloseDialog}
             aria-labelledby="customized-dialog-title"

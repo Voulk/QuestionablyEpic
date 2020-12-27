@@ -58,13 +58,12 @@ export default function TopSetStatsPanel(props) {
         <Grid item xs={12} style={{ padding: "4px 16px 16px 16px" }}>
           <Grid container direction="row" spacing={1}>
             {stats.map((stat, index) => (
-              <Grid item xs={6}>
+              <Grid item xs={6} key={index}>
                 <Typography
                   style={{ fontSize: 16, marginLeft: "4px" }}
                   variant="body1"
                   align="left"
                 >
-                  
                   {printStat(stat[0], stat[1])}
                 </Typography>
               </Grid>

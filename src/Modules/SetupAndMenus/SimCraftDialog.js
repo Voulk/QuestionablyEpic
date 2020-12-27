@@ -7,6 +7,7 @@ import {
   DialogActions,
   DialogContent,
   DialogTitle,
+  Tooltip,
 } from "@material-ui/core";
 import { runSimC } from "../Engine/SimCImport/SimCImportEngine";
 import { createEmitAndSemanticDiagnosticsBuilderProgram } from "typescript";
@@ -16,7 +17,7 @@ export default function SimCraftInput(props) {
   const [open, setOpen] = React.useState(false);
   const [simC, setSimC] = React.useState("");
   const [errorMessage, setErrorMessage] = React.useState("");
-  const characterCount = props.allChars.getAllChar().length || 0
+  const characterCount = props.allChars.getAllChar().length || 0;
   const handleClickOpen = () => {
     setOpen(true);
   };
@@ -39,9 +40,15 @@ export default function SimCraftInput(props) {
 
   return (
     <div>
-      <Button style={{ whiteSpace: "nowrap" }} onClick={handleClickOpen} disabled={characterCount === 0}>
-        {t("SimCInput.SimCHeaderButtonLabel")}
-      </Button>
+      <Tooltip title={t("QeHeader.Tooltip.SimC")} arrow>
+        <Button
+          style={{ whiteSpace: "nowrap" }}
+          onClick={handleClickOpen}
+          disabled={characterCount === 0}
+        >
+          {t("SimCInput.SimCHeaderButtonLabel")}
+        </Button>
+      </Tooltip>
       <Dialog
         open={open}
         onClose={handleClose}

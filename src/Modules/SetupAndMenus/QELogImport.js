@@ -13,6 +13,7 @@ import {
   Select,
   MenuItem,
   Typography,
+  Tooltip,
 } from "@material-ui/core";
 import LogLinkInput from "../CooldownPlanner/ModuleComponents/LogFightSelection/LogLinkInput";
 import {
@@ -176,15 +177,14 @@ export default function QELogImport(props) {
       .catch(function (error) {
         console.log(error);
       });
-    //console.log(healers);
     setHealerDataDetailed(healers);
 
     return healers;
   };
 
-  useEffect(() => {
-    console.log(healerDataDetailed);
-  }, [healerDataDetailed]);
+  // useEffect(() => {
+  //   console.log(healerDataDetailed);
+  // }, [healerDataDetailed]);
 
   const importCastsLogDataQE = async (
     starttime,
@@ -335,15 +335,16 @@ export default function QELogImport(props) {
 
   return (
     <div>
-      <Button
-        style={{ whiteSpace: "nowrap" }}
-        onClick={handleClickOpen}
-        //disabled={characterCount === 0}
-        disabled={true}
-      >
-        {t("QeHeader.InsertLogLabel")}
- 
-      </Button>
+      <Tooltip title={t("QeHeader.Tooltip.InsertLog")} arrow>
+        <Button
+          style={{ whiteSpace: "nowrap" }}
+          onClick={handleClickOpen}
+          //disabled={characterCount === 0}
+          disabled={true}
+        >
+          {t("QeHeader.InsertLogLabel")}
+        </Button>
+      </Tooltip>
       <Dialog
         open={open}
         onClose={handleClose}

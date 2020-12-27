@@ -5,6 +5,7 @@ import {
   Button,
   Typography,
   Popover,
+  Tooltip,
 } from "@material-ui/core";
 import logo from "../../Images/QeAssets/QELogo.png";
 import "./QEMainMenu.css";
@@ -16,7 +17,7 @@ import SimCraftInput from "./SimCraftDialog";
 import QELogImport from "./QELogImport";
 import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
-// import ReactGA from "react-ga";
+// import ReactGA from "react-ga";n
 
 const useStyles = makeStyles((theme) => ({
   qeLogo: {
@@ -83,7 +84,13 @@ export default function QEHeader(props) {
               >
                 <Grid item xs={12} sm={12} md={12} lg={6} xl={6}>
                   <Link to={"/"}>
-                    <img className={classes.qeLogo} src={logo} alt="QE Live" />
+                    <Tooltip title={t("QeHeader.Tooltip.Home")} arrow>
+                      <img
+                        className={classes.qeLogo}
+                        src={logo}
+                        alt="QE Live"
+                      />
+                    </Tooltip>
                   </Link>
                 </Grid>
                 <Grid item xs={12} sm={12} md={12} lg={6} xl={6}>
@@ -113,41 +120,29 @@ export default function QEHeader(props) {
                 wrap="nowrap"
               >
                 <Grid item>
-                  <Button
-                    style={{ color: "white" }}
-                    onClick={props.toggleContentType}
-                    aria-owns={open ? "mouse-over-popover" : undefined}
-                    aria-haspopup="true"
-                    onMouseEnter={handlePopoverOpen}
-                    onMouseLeave={handlePopoverClose}
+                  <Tooltip
+                    title={
+                      t("QeHeader.Tooltip.ContentTypeMsgStart") +
+                      " " +
+                      (props.contentType === "Raid"
+                        ? t("Dungeon")
+                        : t("Raid")) +
+                      " " +
+                      t("QeHeader.Tooltip.ContentTypeMsgEnd")
+                    }
+                    arrow
                   >
-                    {t(props.contentType)}
-                  </Button>
-                  <Popover
-                    id="mouse-over-popover"
-                    className={classes.popover}
-                    classes={{
-                      paper: classes.paper,
-                    }}
-                    open={open}
-                    anchorEl={anchorEl}
-                    anchorOrigin={{
-                      vertical: "bottom",
-                      horizontal: "center",
-                    }}
-                    transformOrigin={{
-                      vertical: "top",
-                      horizontal: "center",
-                    }}
-                    onClose={handlePopoverClose}
-                    disableRestoreFocus
-                  >
-                    <Typography>
-                      {t("QeHeader.ContentTypeMsgStart")}{" "}
-                      {props.contentType === "Raid" ? t("Dungeon") : t("Raid")}{" "}
-                      {t("QeHeader.ContentTypeMsgEnd")}
-                    </Typography>
-                  </Popover>
+                    <Button
+                      style={{ color: "white" }}
+                      onClick={props.toggleContentType}
+                      aria-owns={open ? "mouse-over-popover" : undefined}
+                      aria-haspopup="true"
+                      onMouseEnter={handlePopoverOpen}
+                      onMouseLeave={handlePopoverClose}
+                    >
+                      {t(props.contentType)}
+                    </Button>
+                  </Tooltip>
                 </Grid>
                 <Grid item>
                   <QELogImport
@@ -164,7 +159,6 @@ export default function QEHeader(props) {
                     allChars={props.allChars}
                   />
                 </Grid>
-
                 <Grid item>
                   <ProfileSelector
                     name={playerName}
