@@ -66,6 +66,13 @@ export default function QEMainMenu(props) {
   const patron = ["Diamond", "Gold", "Rolls Royce", "Sapphire"].includes(
     props.patronStatus
   );
+
+  const oddEven = (number) => {
+    if (number % 2 == 0) {
+      return "left";
+    }
+    return "right";
+  };
   //console.log(props.patronStatus);
 
   return (
@@ -120,6 +127,7 @@ export default function QEMainMenu(props) {
             <Grid item xs={12} sm={12} md={6} lg={6} xl={6} key={index}>
               <Tooltip
                 title={t("MainMenu.Tooltips." + mainMenuOptions[key][2])}
+                placement={oddEven(index)}
               >
                 <Button
                   key={index}

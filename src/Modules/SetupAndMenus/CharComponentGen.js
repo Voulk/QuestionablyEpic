@@ -77,8 +77,6 @@ const specImages = {
   "Mistweaver Monk": require("../../Images/MistweaverSmall.jpg"),
 };
 
-
-
 // Called when a character is clicked.
 // TODO: Add Logic
 const charClicked = (char, cardType, allChars, updateChar) => {
@@ -258,7 +256,6 @@ export default function CharCards(props) {
   };
 
   const spec = props.cardType === "Char" ? props.char.spec : "";
-  console.log(specImages[spec].default);
 
   const rootClassName =
     classes.root + " " + (props.isActive ? classes.activeChar : "");
@@ -591,7 +588,7 @@ export default function CharCards(props) {
           >
             <ThemeProvider theme={deleteTheme}>
               <Button onClick={handleDelete} color="primary">
-                {t("Delete")}
+                {t("CharacterCreator.DeleteCharacter")}
               </Button>
             </ThemeProvider>
             <div>
