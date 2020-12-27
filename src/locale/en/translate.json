@@ -26,6 +26,7 @@
     "Race": "Race",
     "Select Class": "Select Class",
     "Select Race": "Select Race",
+    "HowToUse": "How to Use",
 
     "CooldownPlanner": {
       "Classes": {
@@ -149,6 +150,11 @@
         "336162": "Crescendo",
         "326707": "Cleansing Pain"
       }
+    },
+    "HallOfFame": {
+      "title": "Welcome to the Hall of Fame",
+      "buttonLabel": "Hall of Fame",
+      "introduction": "Insert Blurb Here about thanking patrons."
     },
 
     "InsertLog": {
@@ -274,7 +280,33 @@
       "mastery": "Mastery",
       "versatility": "Versatility"
     },
-
+    "Settings": {
+      "SettingsTitle": "Settings",
+      "Setting0Spacer": "--------------------------------------------------------------------",
+      "Setting0Tooltip": "The equip effect of 'Cabalist's Hymnal' is increased by 5% per Ally",
+      "Setting0Title": "Allies With Hymnal",
+      "Setting0TextFieldLabel": "Allies",
+      "Setting1Spacer": "--------------------------------------------------------------------",
+      "Setting1Tooltip": "",
+      "Setting1Title": "",
+      "Setting1TextFieldLabel": "",
+      "Setting2Spacer": "--------------------------------------------------------------------",
+      "Setting2Tooltip": "",
+      "Setting2Title": "",
+      "Setting2TextFieldLabel": "",
+      "Setting3Spacer": "--------------------------------------------------------------------",
+      "Setting3Tooltip": "",
+      "Setting3Title": "",
+      "Setting3TextFieldLabel": "",
+      "Setting4Spacer": "--------------------------------------------------------------------",
+      "Setting4Tooltip": "",
+      "Setting4Title": "",
+      "Setting4TextFieldLabel": "",
+      "Setting5Spacer": "--------------------------------------------------------------------",
+      "Setting5Tooltip": "",
+      "Setting5Title": "",
+      "Setting5TextFieldLabel": ""
+    },
     "Top Gear": { "Title": "Top Gear" },
 
     "DruidLegendariesComment": "DruidLegendariesComment",
@@ -561,11 +593,6 @@
       "slot": "Waist, Wrist, or Finger",
       "desc": "Your spells and abilities have a low chance to summon a familiar to your side, increasing your healing by 10% for 10s. This effect is duplicated on up to 3 allies at 50% effectiveness, preferring allies with the same role.",
       "droploc": "Wild Hunt Reputation, Revered"
-    },
-    "HallOfFame": {
-      "title": "Welcome to the Hall of Fame",
-      "buttonLabel": "Hall of Fame",
-      "introduction": "Insert Blurb Here about thanking patrons."
     }
   }
 }

@@ -11,6 +11,7 @@ import {
   Tooltip,
 } from "@material-ui/core";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import { useTranslation } from "react-i18next";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -47,8 +48,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function TopGearSettingsdAccordion() {
+export default function TopGearSettingsAccordion() {
   const classes = useStyles();
+  const { t, i18n } = useTranslation();
   // Hymnal State
   const [value, setValue] = useState(5);
   // Free State
@@ -59,6 +61,8 @@ export default function TopGearSettingsdAccordion() {
   const [value3, setValue3] = useState(5);
   // Free State
   const [value4, setValue4] = useState(5);
+  // Free State
+  const [value5, setValue5] = useState(5);
 
   return (
     <div className={classes.root}>
@@ -69,7 +73,9 @@ export default function TopGearSettingsdAccordion() {
           id="panel1c-header"
         >
           <div className={classes.column}>
-            <Typography className={classes.heading}>Settings</Typography>
+            <Typography className={classes.heading}>
+              {t("Settings.SettingsTitle")}
+            </Typography>
           </div>
         </AccordionSummary>
         <Divider variant="middle" />
@@ -80,15 +86,17 @@ export default function TopGearSettingsdAccordion() {
               <Grid container spacing={1} style={{ paddingLeft: 8 }}>
                 <Grid item xs={12}>
                   <Tooltip
-                    title="The equip effect of 'Cabalist's Hymnal' is increased by 5% per Ally"
+                    title={t("Settings.Setting0Tooltip")}
                     placement="top-start"
                   >
-                    <Typography color="primary">Allies With Hymnal</Typography>
+                    <Typography color="primary">
+                      {t("Settings.Setting0Title")}
+                    </Typography>
                   </Tooltip>
                 </Grid>
                 <Grid item xs={12}>
                   <TextField
-                    label="Allies"
+                    label={t("Settings.Setting0TextFieldLabel")}
                     id="AlliesNumber"
                     value={value}
                     style={{ maxWidth: 70 }}
@@ -100,23 +108,22 @@ export default function TopGearSettingsdAccordion() {
                 </Grid>
               </Grid>
             </Grid>
-            {/* <Divider orientation="vertical" flexItem />
-            <Grid item xs={2}>
+            <Divider orientation="vertical" flexItem />
+            {/* <Grid item xs={2}>
               <Grid container spacing={1} style={{ paddingLeft: 8 }}>
                 <Grid item xs={12}>
                   <Tooltip
-                    title="The equip effect of 'Cabalist's Hymnal' is increased by 5% per Ally"
+                    title={t("Settings.Setting1Tooltip")}
                     placement="top-start"
                   >
                     <Typography color="primary">
-                      {" "}
-                      Allies With Hymnal{" "}
+                      {t("Settings.Setting1Title")}
                     </Typography>
                   </Tooltip>
                 </Grid>
                 <Grid item xs={12}>
                   <TextField
-                    label="Allies"
+                    label={t("Settings.Setting1TextFieldLabel")}
                     id="AlliesNumber"
                     value={value1}
                     style={{ maxWidth: 75 }}
@@ -133,18 +140,17 @@ export default function TopGearSettingsdAccordion() {
               <Grid container spacing={1} style={{ paddingLeft: 8 }}>
                 <Grid item xs={12}>
                   <Tooltip
-                    title="The equip effect of 'Cabalist's Hymnal' is increased by 5% per Ally"
+                    title={t("Settings.Setting2Tooltip")}
                     placement="top-start"
                   >
                     <Typography color="primary">
-                      {" "}
-                      Allies With Hymnal{" "}
+                      {t("Settings.Setting2Title")}
                     </Typography>
                   </Tooltip>
                 </Grid>
                 <Grid item xs={12}>
                   <TextField
-                    label="Allies"
+                    label={t("Settings.Setting2TextFieldLabel")}
                     id="AlliesNumber"
                     value={value2}
                     style={{ maxWidth: 75 }}
@@ -161,18 +167,17 @@ export default function TopGearSettingsdAccordion() {
               <Grid container spacing={1} style={{ paddingLeft: 8 }}>
                 <Grid item xs={12}>
                   <Tooltip
-                    title="The equip effect of 'Cabalist's Hymnal' is increased by 5% per Ally"
+                    title={t("Settings.Setting3Tooltip")}
                     placement="top-start"
                   >
                     <Typography color="primary">
-                      {" "}
-                      Allies With Hymnal{" "}
+                      {t("Settings.Setting3Title")}
                     </Typography>
                   </Tooltip>
                 </Grid>
                 <Grid item xs={12}>
                   <TextField
-                    label="Allies"
+                    label={t("Settings.Setting3TextFieldLabel")}
                     id="AlliesNumber"
                     value={value3}
                     style={{ maxWidth: 75 }}
@@ -189,18 +194,17 @@ export default function TopGearSettingsdAccordion() {
               <Grid container spacing={1} style={{ paddingLeft: 8 }}>
                 <Grid item xs={12}>
                   <Tooltip
-                    title="The equip effect of 'Cabalist's Hymnal' is increased by 5% per Ally"
+                    title={t("Settings.Setting4Tooltip")}
                     placement="top-start"
                   >
                     <Typography color="primary">
-                      {" "}
-                      Allies With Hymnal{" "}
+                      {t("Settings.Setting4Title")}
                     </Typography>
                   </Tooltip>
                 </Grid>
                 <Grid item xs={12}>
                   <TextField
-                    label="Allies"
+                    label={t("Settings.Setting4TextFieldLabel")}
                     id="AlliesNumber"
                     value={value4}
                     style={{ maxWidth: 75 }}
@@ -217,18 +221,17 @@ export default function TopGearSettingsdAccordion() {
               <Grid container spacing={1} style={{ paddingLeft: 8 }}>
                 <Grid item xs={12}>
                   <Tooltip
-                    title="The equip effect of 'Cabalist's Hymnal' is increased by 5% per Ally"
+                    title={t("Settings.Setting5Tooltip")}
                     placement="top-start"
                   >
                     <Typography color="primary">
-                      {" "}
-                      Allies With Hymnal{" "}
+                      {t("Settings.Setting5Title")}
                     </Typography>
                   </Tooltip>
                 </Grid>
                 <Grid item xs={12}>
                   <TextField
-                    label="Allies"
+                    label={t("Settings.Setting5TextFieldLabel")}
                     id="AlliesNumber"
                     value={value5}
                     style={{ maxWidth: 75 }}
