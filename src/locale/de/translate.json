@@ -1,7 +1,8 @@
 {
   "translations": {
     "CharacterCreator": {
-      "StatMessage": "To get updated stat weights use WowAnalyzer.com with a recent log and enter the values here from the 'Statistics' tab.DE"
+      "StatMessage": "To get updated stat weights use WowAnalyzer.com with a recent log and enter the values here from the 'Statistics' tab.DE",
+      "DeleteCharacter": "Delete CharacterDE"
     },
 
     "_Comments1": "Common Words",
@@ -25,6 +26,7 @@
     "Race": "RaceDE",
     "Select Class": "Select ClassDE",
     "Select Race": "Select RaceDE",
+    "HowToUse": "How to UseDE",
 
     "CooldownPlanner": {
       "Classes": {
@@ -149,6 +151,11 @@
         "326707": "Cleansing PainDE"
       }
     },
+    "HallOfFame": {
+      "title": "Welcome to the Hall of FameDE",
+      "buttonLabel": "Hall of FameDE",
+      "introduction": "Insert Blurb Here about thanking patronsDE."
+    },
 
     "InsertLog": {
       "PlsSelectFight": "Please Select a FightDE",
@@ -175,14 +182,29 @@
       "CooldownPlanner": "Cooldown Planner (Coming Soon)DE",
       "Profile": "ProfileDE",
       "CharHeader": "CharactersDE",
-      "CharHelpText": "Add your characters here. Right click to edit your stat weights, realm information and more.DE"
+      "CharHelpText": "Add your characters here. Right click to edit your stat weights, realm information and more.DE",
+      "Tooltips": {
+        "TopGear": "Find your best gear setDE",
+        "QuickCompare": "Compare Items for each slotDE.",
+        "ExploreCovenants": "Explore Soulbinds for each covenantDE.",
+        "LegendaryAnalysis": "Find your best legendary power and where to get itDE",
+        "CooldownPlanner": "Plan your cooldowns. Create your own or analyse logsDE",
+        "Profile": "Edit your detailsDE"
+      }
     },
 
     "QeHeader": {
       "InsertLogLabel": "Insert LogDE",
       "Login": "LoginDE",
-      "ContentTypeMsgStart": "Change toDE",
-      "ContentTypeMsgEnd": "ContentDE"
+      "Tooltip": {
+        "ContentTypeMsgStart": "Change toDE",
+        "ContentTypeMsgEnd": "ContentDE",
+        "InsertLog": "Insert a log to increase accuracyDE.",
+        "SimC": "Insert a SimC string to import your gearDE.",
+        "Login": "Login to your Battle.net AccountDE",
+        "Language": "Change LanguageDE",
+        "Home": "Main MenuDE"
+      }
     },
 
     "QuickCompare": {
@@ -257,6 +279,33 @@
       "haste": "Tempo",
       "mastery": "Meisterschaft",
       "versatility": "Vielseitigkeit"
+    },
+    "Settings": {
+      "SettingsTitle": "SettingsDE",
+      "Setting0Spacer": "--------------------------------------------------------------------",
+      "Setting0Tooltip": "The equip effect of 'Cabalist's Hymnal' is increased by 5% per AllyDE",
+      "Setting0Title": "Allies With HymnalDE",
+      "Setting0TextFieldLabel": "AlliesDE",
+      "Setting1Spacer": "--------------------------------------------------------------------",
+      "Setting1Tooltip": "",
+      "Setting1Title": "",
+      "Setting1TextFieldLabel": "",
+      "Setting2Spacer": "--------------------------------------------------------------------",
+      "Setting2Tooltip": "",
+      "Setting2Title": "",
+      "Setting2TextFieldLabel": "",
+      "Setting3Spacer": "--------------------------------------------------------------------",
+      "Setting3Tooltip": "",
+      "Setting3Title": "",
+      "Setting3TextFieldLabel": "",
+      "Setting4Spacer": "--------------------------------------------------------------------",
+      "Setting4Tooltip": "",
+      "Setting4Title": "",
+      "Setting4TextFieldLabel": "",
+      "Setting5Spacer": "--------------------------------------------------------------------",
+      "Setting5Tooltip": "",
+      "Setting5Title": "",
+      "Setting5TextFieldLabel": ""
     },
 
     "Top Gear": { "Title": "Top GearDE" },

@@ -1,7 +1,8 @@
 {
   "translations": {
     "CharacterCreator": {
-      "StatMessage": "To get updated stat weights use WowAnalyzer.com with a recent log and enter the values here from the 'Statistics' tab.FR"
+      "StatMessage": "To get updated stat weights use WowAnalyzer.com with a recent log and enter the values here from the 'Statistics' tab.FR",
+      "DeleteCharacter": "Delete CharacterFR"
     },
 
     "_Comments1": "Common Words - All these need translating stillFR",
@@ -25,6 +26,7 @@
     "Race": "Race",
     "Select Class": "Select Class",
     "Select Race": "Select Race",
+    "HowToUse": "How to UseFR",
 
     "CooldownPlanner": {
       "Classes": {
@@ -146,6 +148,11 @@
         "326707": "Souffrance purificatrice"
       }
     },
+    "HallOfFame": {
+      "title": "Welcome to the Hall of FameFR",
+      "buttonLabel": "Hall of FameFR",
+      "introduction": "Insert Blurb Here about thanking patrons.FR"
+    },
 
     "InsertLog": {
       "PlsSelectFight": "Please Select a FightFR",
@@ -170,14 +177,29 @@
       "CooldownPlanner": "Planificateur de cooldown (Coming Soon)",
       "Profile": "Profil",
       "CharHeader": "Personnages",
-      "CharHelpText": "Ajouter vos personnages ici. Clique-droit pour modifier vos informations liés aux Stats Weights, nom de votre serveur et autre."
+      "CharHelpText": "Ajouter vos personnages ici. Clique-droit pour modifier vos informations liés aux Stats Weights, nom de votre serveur et autre.",
+      "Tooltips": {
+        "TopGear": "Find your best gear setFR",
+        "QuickCompare": "Compare Items for each slotFR.",
+        "ExploreCovenants": "Explore Soulbinds for each covenantFR.",
+        "LegendaryAnalysis": "Find your best legendary power and where to get itFR",
+        "CooldownPlanner": "Plan your cooldowns. Create your own or analyse logsFR",
+        "Profile": "Edit your detailsFR"
+      }
     },
 
     "QeHeader": {
       "InsertLogLabel": "Insert LogFR",
       "Login": "LoginFR",
-      "ContentTypeMsgStart": "Change toFR",
-      "ContentTypeMsgEnd": "ContentFR"
+      "Tooltip": {
+        "ContentTypeMsgStart": "Change toFR",
+        "ContentTypeMsgEnd": "ContentFR",
+        "InsertLog": "Insert a log to increase accuracyFR.",
+        "SimC": "Insert a SimC string to import your gearFR.",
+        "Login": "Login to your Battle.net AccountFR",
+        "Language": "Change LanguageFR",
+        "Home": "Main MenuFR"
+      }
     },
 
     "QuickCompare": {
@@ -252,6 +274,33 @@
       "haste": "Hâte",
       "mastery": "Maîtrise",
       "versatility": "Versatilité"
+    },
+    "Settings": {
+      "SettingsTitle": "SettingsFR",
+      "Setting0Spacer": "--------------------------------------------------------------------",
+      "Setting0Tooltip": "The equip effect of 'Cabalist's Hymnal' is increased by 5% per AllyFR",
+      "Setting0Title": "Allies With HymnalFR",
+      "Setting0TextFieldLabel": "AlliesFR",
+      "Setting1Spacer": "--------------------------------------------------------------------",
+      "Setting1Tooltip": "",
+      "Setting1Title": "",
+      "Setting1TextFieldLabel": "",
+      "Setting2Spacer": "--------------------------------------------------------------------",
+      "Setting2Tooltip": "",
+      "Setting2Title": "",
+      "Setting2TextFieldLabel": "",
+      "Setting3Spacer": "--------------------------------------------------------------------",
+      "Setting3Tooltip": "",
+      "Setting3Title": "",
+      "Setting3TextFieldLabel": "",
+      "Setting4Spacer": "--------------------------------------------------------------------",
+      "Setting4Tooltip": "",
+      "Setting4Title": "",
+      "Setting4TextFieldLabel": "",
+      "Setting5Spacer": "--------------------------------------------------------------------",
+      "Setting5Tooltip": "",
+      "Setting5Title": "",
+      "Setting5TextFieldLabel": ""
     },
 
     "Top Gear": { "Title": "Top GearFR" },

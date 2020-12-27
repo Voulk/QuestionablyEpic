@@ -40,7 +40,7 @@ import Autocomplete from "@material-ui/lab/Autocomplete";
 //import worker from "workerize-loader!./TopGearEngine"; // eslint-disable-line import/no-webpack-loader-syntax
 import { useHistory, useLocation } from "react-router-dom";
 import HelpText from "../SetupAndMenus/HelpText";
-import TopGearSettingsdAccordion from "./Settings";
+import TopGearSettingsAccordion from "./TopGearSettings";
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -249,7 +249,6 @@ export default function TopGear(props) {
       >
         {
           <Grid item xs={12}>
-            {/* <Paper elevation={0}> */}
             <Typography
               variant="h4"
               align="center"
@@ -258,14 +257,13 @@ export default function TopGear(props) {
             >
               {"Top Gear"}
             </Typography>
-            {/* </Paper> */}
           </Grid>
         }
         <Grid item xs={12}>
           <HelpText text={helpText} />
         </Grid>
         <Grid item xs={12}>
-          <TopGearSettingsdAccordion />
+          <TopGearSettingsAccordion />
         </Grid>
 
         {props.pl.activeItems.length > 0 ? (
@@ -313,10 +311,8 @@ export default function TopGear(props) {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          //backgroundImage: "../../Images/Ptolemy.jpg",
         }}
       >
-        {/*<img src={"../../Images/Ptolemy.jpg"} /> */}
         <div
           style={{
             display: "flex",

@@ -11,6 +11,7 @@ import {
   TextField,
 } from "@material-ui/core";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import { useTranslation } from "react-i18next";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -49,6 +50,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function HelpText(props) {
   const classes = useStyles();
+  const { t, i18n } = useTranslation();
   let helpText = props.text;
 
   return (
@@ -65,10 +67,8 @@ export default function HelpText(props) {
               style={{ color: "limegreen" }}
               align="left"
               variant="h6"
-
-              // gutterBottom
             >
-              How to
+              {t("HowToUse")}
             </Typography>
           </div>
         </AccordionSummary>
@@ -80,7 +80,6 @@ export default function HelpText(props) {
             variant="subtitle1"
             display="inline"
             paragraph
-            // gutterBottom
           >
             {helpText}
           </Typography>
