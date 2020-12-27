@@ -311,7 +311,7 @@ export default function QuickCompare(props) {
     >
       <Grid
         container
-        spacing={2}
+        spacing={1}
         justify="center"
         style={{
           margin: "auto",
@@ -320,17 +320,17 @@ export default function QuickCompare(props) {
         }}
       >
         <Grid item xs={12}>
+          <Typography
+            variant="h4"
+            align="center"
+            style={{ padding: "10px 10px 5px 10px" }}
+            color="primary"
+          >
+            {t("QuickCompare.Title")}
+          </Typography>
+        </Grid>
+        <Grid item xs={12}>
           <Paper elevation={0}>
-            <Typography
-              variant="h4"
-              align="center"
-              style={{ padding: "10px 10px 5px 10px" }}
-              color="primary"
-            >
-              {t("QuickCompare.Title")}
-            </Typography>
-            <Divider variant="middle" />
-
             <Grid
               container
               direction="row"
@@ -574,9 +574,10 @@ export default function QuickCompare(props) {
         </Grid>
 
         {/* this can be simplified into a map at some stage */}
-
         <Grid item xs={12}>
           <HelpText text={helpText} />
+        </Grid>
+        <Grid item xs={12}>
           <Grid container spacing={1}>
             {/* Helm */}
             <Grid item xs={12}>
