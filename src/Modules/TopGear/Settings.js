@@ -93,7 +93,6 @@ export default function TopGearSettingsdAccordion() {
                     value={value}
                     style={{ maxWidth: 70 }}
                     onChange={(e) => setValue(e.target.value)}
-                    defaultValue={5}
                     variant="outlined"
                     size="small"
                     type="number"
@@ -122,7 +121,6 @@ export default function TopGearSettingsdAccordion() {
                     value={value1}
                     style={{ maxWidth: 75 }}
                     onChange={(e) => setValue1(e.target.value)}
-                    defaultValue={5}
                     variant="outlined"
                     size="small"
                     type="number"
@@ -151,7 +149,6 @@ export default function TopGearSettingsdAccordion() {
                     value={value2}
                     style={{ maxWidth: 75 }}
                     onChange={(e) => setValue2(e.target.value)}
-                    defaultValue={5}
                     variant="outlined"
                     size="small"
                     type="number"
@@ -180,7 +177,6 @@ export default function TopGearSettingsdAccordion() {
                     value={value3}
                     style={{ maxWidth: 75 }}
                     onChange={(e) => setValue3(e.target.value)}
-                    defaultValue={5}
                     variant="outlined"
                     size="small"
                     type="number"
@@ -209,7 +205,6 @@ export default function TopGearSettingsdAccordion() {
                     value={value4}
                     style={{ maxWidth: 75 }}
                     onChange={(e) => setValue4(e.target.value)}
-                    defaultValue={5}
                     variant="outlined"
                     size="small"
                     type="number"
@@ -238,7 +233,6 @@ export default function TopGearSettingsdAccordion() {
                     value={value5}
                     style={{ maxWidth: 75 }}
                     onChange={(e) => setValue5(e.target.value)}
-                    defaultValue={5}
                     variant="outlined"
                     size="small"
                     type="number"
