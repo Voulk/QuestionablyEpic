@@ -37,15 +37,15 @@ export default function QEProfile(props) {
   const [email, setEmail] = React.useState(ls.get("email") || "");
   const [emailTemp, setEmailTemp] = React.useState("");
   const emailHandler = (event) => {
-    if (emailTemp.length > 3 && emailTemp.length < 32)
-
+    if (emailTemp.length > 3 && emailTemp.length < 32) {
       /*
       RegExp(
         /^([A-Z|a-z|0-9](\.|_){0,1})+[A-Z|a-z|0-9]\@([A-Z|a-z|0-9])+((\.){0,1}[A-Z|a-z|0-9]){2}\.[a-z]{2,3}$/gm
       ).test(emailTemp) ||
       emailTemp === ""
-    ) */{
-      props.setEmail(event);
+    ) */ props.setEmail(
+        event
+      );
       setEmail(event);
       props.emailSnack();
     } else {
@@ -70,11 +70,16 @@ export default function QEProfile(props) {
     <div className={classes.root}>
       <Grid container spacing={1}>
         <Grid item xs={12}>
+          <Typography
+            variant="h4"
+            color="primary"
+            align="center"
+            style={{ padding: "10px 10px 5px 10px" }}
+          >
+            Profile Information
+          </Typography>
+          {/* <Divider style={{ marginBottom: 10 }} /> */}
           <Paper elevation={0} style={{ padding: 10 }}>
-            <Typography variant="h6" color="primary" align="center">
-              Profile Information
-            </Typography>
-            <Divider style={{ marginBottom: 10 }} />
             <Typography
               variant="body1"
               gutterBottom

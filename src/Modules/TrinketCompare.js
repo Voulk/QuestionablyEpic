@@ -26,7 +26,7 @@ const trinketList = [
   "Flat Stat Stick",
 ];
 
-export default class QEMainMenu extends Component {
+export default class TrinketCompare extends Component {
   render() {
     return (
       <div

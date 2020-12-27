@@ -7,6 +7,7 @@ import {
   Accordion,
   AccordionSummary,
   AccordionDetails,
+  Dialog,
 } from "@material-ui/core";
 import LogLinkInput from "../CooldownPlanner/ModuleComponents/LogFightSelection/LogLinkInput";
 import Chart from "./ModuleComponents/Chart/Chart";
@@ -58,6 +59,8 @@ class HolyDiver extends Component {
     this.handleChangePlanCooldownPlanner = this.handleChangePlanCooldownPlanner.bind(
       this
     );
+    this.handleERTClickOpen = this.handleERTClickOpen.bind(this);
+    this.handleHealTeamClickOpen = this.handleHealTeamClickOpen.bind(this);
     // We set our state for the cooldown Planner Module.
     this.state = {
       currentBossID: null,
@@ -109,6 +112,8 @@ class HolyDiver extends Component {
       cooldownPlannerCurrentRaid: "",
       cooldownPlannerCurrentBoss: "",
       cooldownPlannerCurrentPlan: 1,
+      ertDialogState: false,
+      healTeamDialogState: false,
     };
   }
 
@@ -231,6 +236,25 @@ class HolyDiver extends Component {
     this.setState((prevState) => ({
       timelineshowhide: !prevState.timelineshowhide,
     }));
+  };
+
+  // ERT Dialog Handlers
+  handleERTClickOpen = () => {
+    this.setState({ ertDialogState: true });
+  };
+
+  handleERTClose = (value) => {
+    this.setState({ ertDialogState: false });
+  };
+
+  // Heal Team Dialog Handlers
+
+  handleHealTeamClickOpen = () => {
+    this.setState({ healTeamDialogState: true });
+  };
+
+  handleHealTeamClose = (value) => {
+    this.setState({ healTeamDialogState: false });
   };
 
   render() {
@@ -639,27 +663,63 @@ class HolyDiver extends Component {
                   planHandler={this.handleChangePlanCooldownPlanner}
                   currentPlan={this.state.cooldownPlannerCurrentPlan}
                   dataUpdateHandler={this.handleChangeDataCooldownPlanner}
+                  ertDialogOpen={this.handleERTClickOpen}
+                  healTeamDialogOpen={this.handleHealTeamClickOpen}
                 />
               </Grid>
-              <Grid item xs={12} sm={12} md={12} lg={7} xl={7} padding={1}>
-                <HealTeam />
-              </Grid>
-              <Grid item xs={12} sm={12} md={12} lg={5} xl={5} padding={1}>
-                <ERTTable
-                  ertListTimeNoIcons={this.state.ertListTimeNoIcons}
-                  ertListBossAbility={this.state.ertListBossAbility}
-                  ertListAbilityNoTimeIconsAll={
-                    this.state.ertListAbilityNoTimeIconsAll
-                  }
-                  ertListTimeIcons={this.state.ertListTimeIcons}
-                  ertListNoteIcons={this.state.ertListNoteIcons}
-                  ertListNoteNoIcons={this.state.ertListNoteNoIcons}
-                />
-              </Grid>
+              <Grid
+                item
+                xs={12}
+                sm={12}
+                md={12}
+                lg={7}
+                xl={7}
+                padding={1}
+              ></Grid>
+              <Grid
+                item
+                xs={12}
+                sm={12}
+                md={12}
+                lg={5}
+                xl={5}
+                padding={1}
+              ></Grid>
               <Grid item xs={12} style={{ height: 350 }} />
             </Grid>
           </Grid>
         </div>
+
+        <Dialog
+          onClose={this.handleERTClose}
+          aria-labelledby="ERT-Dialog"
+          open={this.state.ertDialogState}
+          maxWidth="md"
+          fullWidth
+          PaperProps={{ style: { minWidth: 300 } }}
+        >
+          <ERTTable
+            ertListTimeNoIcons={this.state.ertListTimeNoIcons}
+            ertListBossAbility={this.state.ertListBossAbility}
+            ertListAbilityNoTimeIconsAll={
+              this.state.ertListAbilityNoTimeIconsAll
+            }
+            ertListTimeIcons={this.state.ertListTimeIcons}
+            ertListNoteIcons={this.state.ertListNoteIcons}
+            ertListNoteNoIcons={this.state.ertListNoteNoIcons}
+          />
+        </Dialog>
+
+        <Dialog
+          onClose={this.handleHealTeamClose}
+          aria-labelledby="ERT-Dialog"
+          open={this.state.healTeamDialogState}
+          maxWidth="lg"
+          fullWidth
+          PaperProps={{ style: { minWidth: 300 } }}
+        >
+          <HealTeam />
+        </Dialog>
       </div>
     );
   }
