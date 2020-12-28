@@ -52,11 +52,11 @@ export default function SimCraftInput(props) {
       <Dialog
         open={open}
         onClose={handleClose}
-        aria-labelledby="form-dialog-title"
+        aria-labelledby="simc-dialog-title"
         maxWidth="md"
         fullWidth={true}
       >
-        <DialogTitle id="form-dialog-title">
+        <DialogTitle id="simc-dialog-title">
           {t("SimCInput.SimCDialogueTitle")}
         </DialogTitle>
         <DialogContent style={{ height: 400 }}>

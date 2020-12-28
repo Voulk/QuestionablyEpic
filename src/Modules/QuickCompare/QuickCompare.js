@@ -159,8 +159,7 @@ export default function QuickCompare(props) {
   const [itemDropdown, setItemDropdown] = useState([]); // Filled later based on item slot and armor type.
   const [AutoValue, setAutoValue] = useState(itemDropdown[0]);
   const [inputValue, setInputValue] = useState("");
-  const helpText = `Quick Compare allows you to compare items one by one. You can add items manually using the dropdowns above, or all at once using a string from the SimC
-                    addon. The score is automatically shown in the top right corner in yellow, and items are ordered by strength.`;
+  const helpText = t("QuickCompare.HelpText");
 
   const handleClick = () => {
     setOpen(true);
@@ -452,15 +451,15 @@ export default function QuickCompare(props) {
                     label={t("QuickCompare.Socket")}
                   >
                     {[
-                      <MenuItem key={1} label="Yes" value={true}>
-                        Yes
+                      <MenuItem key={1} label={t("Yes")} value={true}>
+                        {t("Yes")}
                       </MenuItem>,
                       <Divider key={2} />,
                     ]}
                     ,
                     {[
-                      <MenuItem key={3} label="No" value={false}>
-                        No
+                      <MenuItem key={3} label={t("No")} value={false}>
+                        {t("No")}
                       </MenuItem>,
                       <Divider key={4} />,
                     ]}
@@ -487,8 +486,12 @@ export default function QuickCompare(props) {
                     label={t("QuickCompare.Tertiary")}
                   >
                     {[
-                      <MenuItem key={"LeechItem"} label="Leech" value={"Leech"}>
-                        Leech
+                      <MenuItem
+                        key={"LeechItem"}
+                        label={t("Leech")}
+                        value={"Leech"}
+                      >
+                        {t("Leech")}
                       </MenuItem>,
                       <Divider key={1} />,
                     ]}
@@ -496,10 +499,10 @@ export default function QuickCompare(props) {
                     {[
                       <MenuItem
                         key={"AvoidanceItem"}
-                        label="Avoidance"
+                        label={t("Avoidance")}
                         value={"Avoidance"}
                       >
-                        Avoidance
+                        {t("Avoidance")}
                       </MenuItem>,
                       <Divider key={2} />,
                     ]}
@@ -507,11 +510,11 @@ export default function QuickCompare(props) {
                     {[
                       <MenuItem
                         key={"NoneItem"}
-                        label="None"
+                        label={t("None")}
                         value={"None"}
                         onClick={""}
                       >
-                        None
+                        {t("None")}
                       </MenuItem>,
                       <Divider key={3} />,
                     ]}
@@ -545,7 +548,7 @@ export default function QuickCompare(props) {
                   }}
                 >
                   <Typography className={classes.typography}>
-                    Item Not Added. Ilvl Cap is 300
+                    {t("QuickCompare.ItemErrorMsg")}
                   </Typography>
                 </Popover>
               </Grid>
@@ -556,7 +559,7 @@ export default function QuickCompare(props) {
                 onClose={handleClose}
               >
                 <Alert onClose={handleClose} severity="success">
-                  Item Added!
+                  {t("QuickCompare.ItemAdded")}
                 </Alert>
               </Snackbar>
               {/*item deleted snackbar */}
@@ -566,7 +569,7 @@ export default function QuickCompare(props) {
                 onClose={handleCloseDelete}
               >
                 <Alert onClose={handleCloseDelete} severity="error">
-                  Item Deleted!
+                  {t("QuickCompare.ItemDeleted")}
                 </Alert>
               </Snackbar>
             </Grid>

@@ -2,7 +2,10 @@
   "translations": {
     "CharacterCreator": {
       "StatMessage": "To get updated stat weights use WowAnalyzer.com with a recent log and enter the values here from the 'Statistics' tab.",
-      "DeleteCharacter": "Delete Character"
+      "DeleteCharacter": "Delete Character",
+      "CreateChar": "Create New Character",
+      "AddChar": "Add Character",
+      "CharName": "Character Name"
     },
 
     "_Comments1": "Common Words",
@@ -22,11 +25,16 @@
     "Mastery": "Mastery",
     "Versatility": "Versatility",
     "Leech": "Leech",
+    "Avoidance": "Avoidance",
     "Region": "Region",
     "Race": "Race",
     "Select Class": "Select Class",
     "Select Race": "Select Race",
     "HowToUse": "How to Use",
+    "Yes": "Yes",
+    "No": "No",
+    "None": "None",
+    "Add": "Add",
 
     "CooldownPlanner": {
       "Classes": {
@@ -207,6 +215,16 @@
       }
     },
 
+    "QeProfile": {
+      "EmailMsg": "Enter/Update your Email to link to Patreon",
+      "NoEmail": "No Email Entered",
+      "QeTier": "QE Live Tier",
+      "ProfileHeader": "Profile Information",
+      "EditionAffix": "Edition",
+      "StandardEdition": "Standard Edition",
+      "NoBattleTag": "No Battlenet Account Linked"
+    },
+
     "QuickCompare": {
       "Slot": "Slot",
       "ItemName": "Item Name",
@@ -214,7 +232,11 @@
       "Socket": "Socket",
       "Tertiary": "Tertiary",
       "AddButton": "Add",
-      "Title": "Quick Compare"
+      "Title": "Quick Compare",
+      "HelpText": "Quick Compare allows you to compare items one by one. You can add items manually using the dropdowns above, or all at once using a string from the SimC addon. The score is automatically shown in the top right corner in yellow, and items are ordered by strength.",
+      "ItemErrorMsg": "Item Not Added. Ilvl Cap is 300",
+      "ItemAdded": "Item Added!",
+      "ItemDeleted": "Item Deleted!"
     },
 
     "Races": {
@@ -307,7 +329,14 @@
       "Setting5Title": "",
       "Setting5TextFieldLabel": ""
     },
-    "Top Gear": { "Title": "Top Gear" },
+    "TopGear": {
+      "Title": "Top Gear",
+      "HelpText": "Top Gear allows you to generate an entire gear set at once. Start by entering your SimC string above, then click to highlight any items you want included in the comparison. When you're all set, hit 'Go' at the bottom of the page. To enter items manually, return to the main menu and include them in QE Quick Compare. Great Vault items are added automatically though for the first week consider your choice carefully outside of the app.",
+      "ItemsHereMessage": "Your items will go here after you import.",
+      "GoMsg": "Go!",
+      "SelectedItems": "Selected Items",
+      "StatPanel": { "AvgStats": "Average Stats (includes procs)" }
+    },
 
     "DruidLegendariesComment": "DruidLegendariesComment",
     "Vision of Unending Growth": {

@@ -51,7 +51,7 @@ export default function TopSetStatsPanel(props) {
             align="center"
             color="primary"
           >
-            Average Stats (includes procs)
+            {t("TopGear.StatPanel.AvgStats")}
           </Typography>
           <Divider variant="middle" />
         </Grid>
