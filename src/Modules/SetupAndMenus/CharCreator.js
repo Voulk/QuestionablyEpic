@@ -122,7 +122,7 @@ export default function AddNewChar(props) {
           <div className={classes.details}>
             <CardContent className={classes.content}>
               <Typography variant="h6" component="h4">
-                Add Character
+                {t("CharacterCreator.AddChar")}
               </Typography>
             </CardContent>
           </div>
@@ -134,16 +134,18 @@ export default function AddNewChar(props) {
         maxWidth="xs"
         open={open}
         onClose={handleClose}
-        aria-labelledby="form-dialog-title"
+        aria-labelledby="char-dialog-title"
       >
-        <DialogTitle id="form-dialog-title">Create New Character</DialogTitle>
+        <DialogTitle id="char-dialog-title">
+          {t("CharacterCreator.CreateChar")}
+        </DialogTitle>
         <DialogContent>
           <Grid container spacing={1} direction="column">
             <Grid item xs={12}>
               <TextField
                 className={classes.textInput}
-                id="standard-basic"
-                label="Character Name"
+                id="char-name"
+                label={t("CharacterCreator.CharName")}
                 onChange={handleChangeName}
                 variant="outlined"
                 size="small"
@@ -251,7 +253,7 @@ export default function AddNewChar(props) {
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose} color="primary">
-            Cancel
+            {t("Cancel")}
           </Button>
           <Button
             onClick={() =>
@@ -268,7 +270,7 @@ export default function AddNewChar(props) {
             color="primary"
             disabled={selectedRace === "" ? true : false}
           >
-            Add
+            {t("Add")}
           </Button>
         </DialogActions>
       </Dialog>

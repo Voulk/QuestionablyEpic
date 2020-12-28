@@ -2,7 +2,10 @@
   "translations": {
     "CharacterCreator": {
       "StatMessage": "To get updated stat weights use WowAnalyzer.com with a recent log and enter the values here from the 'Statistics' tab.CH",
-      "DeleteCharacter": "Delete CharacterCH"
+      "DeleteCharacter": "Delete CharacterCH",
+      "CreateChar": "Create New Character",
+      "AddChar": "Add Character",
+      "CharName": "Character Name"
     },
 
     "_Comments1": "Common Words",
@@ -27,6 +30,10 @@
     "Select Class": "Select ClassCH",
     "Select Race": "Select RaceCH",
     "HowToUse": "How to UseCH",
+    "Yes": "Yes",
+    "No": "No",
+    "None": "None",
+    "Add": "Add",
 
     "CooldownPlanner": {
       "Classes": {
@@ -207,6 +214,16 @@
       }
     },
 
+    "QeProfile": {
+      "EmailMsg": "Enter/Update your Email to link to PatreonCH",
+      "NoEmail": "No Email EnteredCH",
+      "QeTier": "QE Live TierCH",
+      "ProfileHeader": "Profile InformationCH",
+      "EditionAffix": "EditionCH",
+      "StandardEdition": "Standard EditionCH",
+      "NoBattleTag": "No Battlenet Account LinkedCH"
+    },
+
     "QuickCompare": {
       "Slot": "物品栏",
       "ItemName": "名称",
@@ -214,7 +231,11 @@
       "Socket": "SocketCH",
       "Tertiary": "TertiaryCH",
       "AddButton": "AddCH",
-      "Title": "Quick CompareCH"
+      "Title": "Quick CompareCH",
+      "HelpText": "Quick Compare allows you to compare items one by one. You can add items manually using the dropdowns above, or all at once using a string from the SimC addon. The score is automatically shown in the top right corner in yellow, and items are ordered by strength.CH",
+      "ItemErrorMsg": "Item Not Added. Ilvl Cap is 300CH",
+      "ItemAdded": "Item Added!CH",
+      "ItemDeleted": "Item Deleted!CH"
     },
 
     "Races": {
@@ -307,7 +328,15 @@
       "Setting5Title": "",
       "Setting5TextFieldLabel": ""
     },
-    "Top Gear": { "Title": "者名" },
+
+    "TopGear": {
+      "Title": "者名",
+      "HelpText": "Top Gear allows you to generate an entire gear set at once. Start by entering your SimC string above, then click to highlight any items you want included in the comparison. When you're all set, hit 'Go' at the bottom of the page. To enter items manually, return to the main menu and include them in QE Quick Compare. Great Vault items are added automatically though for the first week consider your choice carefully outside of the app.CH",
+      "ItemsHereMessage": "Your items will go here after you import.CH",
+      "GoMsg": "Go!CH",
+      "SelectedItems": "Selected ItemsCH",
+      "StatPanel": { "AvgStats": "Average Stats (includes procs)CH" }
+    },
 
     "DruidLegendariesComment": "DruidLegendariesComment",
     "Vision of Unending Growth": {

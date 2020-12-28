@@ -198,9 +198,7 @@ export default function TopGear(props) {
   };
 
   const selectedItemCount = props.pl.getSelectedItems().length;
-  const helpText = `Top Gear allows you to generate an entire gear set at once. Start by entering your SimC string above, then click to highlight any items you want included
-  in the comparison. When you're all set, hit "Go" at the bottom of the page. To enter items manually, return to the main menu and include them in QE Quick
-  Compare. Great Vault items are added automatically though for the first week consider your choice carefully outside of the app.`;
+  const helpText = t("TopGear.HelpText");
 
   const activateItem = (unique) => {
     if (selectedItemCount < TOPGEARCAP) {
@@ -255,7 +253,7 @@ export default function TopGear(props) {
               style={{ padding: "10px 10px 5px 10px" }}
               color="primary"
             >
-              {"Top Gear"}
+              {t("TopGear.Title")}
             </Typography>
           </Grid>
         }
@@ -293,7 +291,7 @@ export default function TopGear(props) {
             style={{ color: "white", fontStyle: "italic", marginLeft: "10px" }}
             variant="h6"
           >
-            Your items will go here after you import.
+            {t("TopGear.ItemsHereMessage")}
           </Typography>
         )}
         <Grid item style={{ height: 100 }} xs={12} />
@@ -327,7 +325,12 @@ export default function TopGear(props) {
             style={{ padding: "10px 10px 5px 10px" }}
             color="primary"
           >
-            {"Selected Items: " + selectedItemCount + "/" + TOPGEARCAP}
+            {t("TopGear.SelectedItems") +
+              ":" +
+              " " +
+              selectedItemCount +
+              "/" +
+              TOPGEARCAP}
           </Typography>
           <div>
             <Typography
@@ -346,7 +349,7 @@ export default function TopGear(props) {
               disabled={!btnActive}
               onClick={unleashTopGear}
             >
-              Go!
+              {t("TopGear.GoMsg")}
             </Button>
           </div>
         </div>
