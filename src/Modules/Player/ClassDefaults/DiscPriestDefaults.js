@@ -27,13 +27,13 @@ export const discPriestDefaultSpecialQueries = (contentType) => {
     if (contentType === "Raid") {
         specialQueries = 
         {   
-            
+            "OneManaHPS": 0,
         };
     }
     else if (contentType === "Dungeon") {
         specialQueries = 
         {   
-            
+            "OneManaHPS": 0,
         };
     }
     else {

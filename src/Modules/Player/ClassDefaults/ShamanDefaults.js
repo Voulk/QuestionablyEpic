@@ -39,12 +39,14 @@ export const shamanDefaultSpecialQueries = (contentType) => {
         specialQueries = 
         {   
             "HPSOnEarthShield": 456,
+            "OneManaHPS": 0,
         };
     }
     else if (contentType === "Dungeon") {
         specialQueries = 
         {   
             "HPSOnEarthShield": 456,
+            "OneManaHPS": 0,
         };
     }
     else {

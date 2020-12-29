@@ -331,6 +331,126 @@ export const trinket_data = [
             }
         ]
     }, 
+
+    // ULDUAR TIMEWALKING TRINKETS
+    // Two interesting mana options + nine generic stat procs / on-use options.
+    {
+        name: "Elemental Focus Stone", // Haste proc on damaging spells.
+        effects: [
+            { 
+                coefficient: 1.99949,
+                table: -1,  
+                duration: 10, 
+                ppm: {"Restoration Druid": 1.2, "Discipline Priest": 1.5, "Holy Paladin": 1.5, 
+                    "Mistweaver Monk": 1.4, "Restoration Shaman": 1.2, "Holy Priest": 1.2}, 
+
+            }
+        ]
+    },
+    {
+        name: "Energy Siphon", // Crit on-use trinket
+        effects: [
+            { 
+                coefficient: 2.399108,
+                table: -1,  
+                duration: 20, 
+                cooldown: 120,
+            }
+        ]
+    },
+    {
+        name: "Eye of the Broodmother", 
+        // Int on spell cast, effectively has a 100% uptime since the ramp up is near immediate. 
+        effects: [
+            { 
+                coefficient: 0.10503,
+                table: -1,  
+                stacks: 5,
+                uptime: 1, 
+            }
+        ]
+    },
+    {
+        name: "Flare of the Heavens", // Int proc on damaging spells.
+        effects: [
+            { 
+                coefficient: 2.353487,
+                table: -1,  
+                duration: 10, 
+                ppm: {"Restoration Druid": 1.1, "Discipline Priest": 1.25, "Holy Paladin": 1.25, 
+                    "Mistweaver Monk": 1.2, "Restoration Shaman": 1.1, "Holy Priest": 1.1}, 
+
+            }
+        ]
+    },
+    {
+        name: "Living Flame", // Int on-use trinket
+        effects: [
+            { 
+                coefficient: 2.000788,
+                table: -1,  
+                duration: 20, 
+                cooldown: 120,
+            }
+        ]
+    },
+    {
+        name: "Pandora's Plea", // Int proc
+        effects: [
+            { 
+                coefficient: 1.561615,
+                table: -1,  
+                duration: 10, 
+                ppm: 2,
+
+            }
+        ]
+    },
+    {
+        name: "Scale of Fates", // Haste proc
+        effects: [
+            { 
+                coefficient: 2.39909,
+                table: -1,  
+                duration: 20, 
+                cooldown: 120,
+
+            }
+        ]
+    },
+    {
+        name: "Sif's Remembrance", // Int proc on healing spells
+        effects: [
+            { 
+                coefficient: 1.125146,
+                table: -1,  
+                duration: 15, 
+                ppm: 2,
+
+            }
+        ]
+    },
+    {
+        name: "Show of Faith", // Mana Proc
+        effects: [
+            { 
+                coefficient: 8.996611,
+                table: -7,  
+                ppm: 2,
+
+            }
+        ]
+    },
+    {
+        name: "Spark of Hope", // Mana cost reduction on spells
+        effects: [
+            { 
+                coefficient: 0.450353,
+                table: -7,  
+
+            }
+        ]
+    },
     
     
 ]

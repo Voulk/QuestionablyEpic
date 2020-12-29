@@ -33,13 +33,15 @@ export const druidDefaultSpecialQueries = (contentType) => {
     if (contentType === "Raid") {
         specialQueries = 
         {   
-            "ConvokeChannelHPS": 360,   
+            "ConvokeChannelHPS": 360,
+            "OneManaHPS": 9999,
         };
     }
     else if (contentType === "Dungeon") {
         specialQueries = 
         {   
-            "ConvokeChannelHPS": 360,   
+            "ConvokeChannelHPS": 360,  
+            "OneManaHPS": 0, 
         };
     }
     else {
