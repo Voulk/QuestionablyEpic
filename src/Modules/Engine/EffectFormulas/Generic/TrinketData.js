@@ -75,7 +75,7 @@ export const trinket_data = [
                 benefit: 'hps', 
                 coefficient: 467.66378, // This represents the upper quartile of the given cards.  
                 table: -8, 
-                efficiency: {Raid: 0.54, Dungeon: 0.4},
+                efficiency: {Raid: 0.52, Dungeon: 0.4},
                 cooldown: 90, 
             }
         ]
@@ -110,8 +110,8 @@ export const trinket_data = [
             { 
                 coefficient: 0.467903,
                 table: -7,  
-                duration: 25, // You get a 20 second duration every time you touch a new Spirit. They each live about 5 seconds.
-                stacks: 3.2, // You should be able to hit all four pretty reliably, but will spend some time with lower than four stacks as you meet each.
+                duration: 23, // You get a 20 second duration every time you touch a new Spirit. They each live about 5 seconds.
+                stacks: 3.1, // You should be able to hit all four pretty reliably, but will spend some time with lower than four stacks as you meet each.
                 cooldown: 90,
             }
         ]
@@ -122,7 +122,7 @@ export const trinket_data = [
             { 
                 coefficient: 89.08621, // This represents the upper quartile of the given cards.  
                 table: -8, 
-                efficiency: 0.61, // You do have to heal a sub 35% health target every 30s for max efficiency which doesn't seem at all likely. 
+                efficiency: 0.56, // You do have to heal a sub 35% health target every 30s for max efficiency which doesn't seem at all likely. 
                 cooldown: 30, 
             }
         ]
@@ -310,10 +310,10 @@ export const trinket_data = [
             {   // HoT Portion
                 coefficient: 1.65,
                 table: -7,  
-                efficiency: 0.42,
+                efficiency: 0.41,
                 duration: 10, // Falls off when the target falls below 35% health. Efficiency in this case is the HoT uptime.
-                cooldown: 30, // 120 / 3. This scales with haste, which will be applied during the trinket formula.
-                expectedTargetThroughput: 4800, // Could technically be pulled from logs
+                cooldown: 30, 
+                expectedTargetThroughput: 4600, // Could technically be pulled from logs
             },
         ]
     },
