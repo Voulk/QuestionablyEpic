@@ -13130,9 +13130,9 @@ export const itemDB = [
         "itemSubClass": 0,
         "itemLevel": 35,
         "stats": {
-            "intellect": 6708,
+            "intellect": 0,
             "stamina": 0,
-            "haste": 0,
+            "haste": 6666,
             "crit": 0,
             "mastery": 0,
             "versatility": 0
@@ -17500,10 +17500,10 @@ export const itemDB = [
         "itemSubClass": 0,
         "itemLevel": 35,
         "stats": {
-            "intellect": 0,
+            "intellect": 6666,
             "stamina": 0,
             "haste": 0,
-            "crit": 7200,
+            "crit": 0,
             "mastery": 0,
             "versatility": 0
         },
