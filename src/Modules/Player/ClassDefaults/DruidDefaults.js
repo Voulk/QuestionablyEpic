@@ -34,14 +34,16 @@ export const druidDefaultSpecialQueries = (contentType) => {
         specialQueries = 
         {   
             "ConvokeChannelHPS": 360,
-            "OneManaHPS": 9999,
+            "OneManaHealing": 4.1,
+            "CastsPerMinute": 32, // ONLY tracks spells with a mana cost.
         };
     }
     else if (contentType === "Dungeon") {
         specialQueries = 
         {   
             "ConvokeChannelHPS": 360,  
-            "OneManaHPS": 0, 
+            "OneManaHealing": 1.2, 
+            "CastsPerMinute": 30,
         };
     }
     else {

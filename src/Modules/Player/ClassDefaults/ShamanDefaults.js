@@ -39,14 +39,16 @@ export const shamanDefaultSpecialQueries = (contentType) => {
         specialQueries = 
         {   
             "HPSOnEarthShield": 456,
-            "OneManaHPS": 0,
+            "OneManaHealing": 2.9,
+            "CastsPerMinute": 24,
         };
     }
     else if (contentType === "Dungeon") {
         specialQueries = 
         {   
             "HPSOnEarthShield": 456,
-            "OneManaHPS": 0,
+            "OneManaHealing": 0.4,
+            "CastsPerMinute": 30,
         };
     }
     else {

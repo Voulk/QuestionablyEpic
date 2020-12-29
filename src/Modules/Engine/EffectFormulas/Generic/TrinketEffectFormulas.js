@@ -224,6 +224,20 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel) {
         bonus_stats.hps =  getProcessedValue(effect.coefficient, effect.table, itemLevel, effect.efficiency) / effect.cooldown * player.getStatMultiplier('CRITVERS');
         //console.log("Tuft: " + bonus_stats.hps);
     }
+    else if (effectName === "Show of Faith") {
+      let effect = activeTrinket.effects[0];
+
+      bonus_stats.mana =  getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.ppm / 60;
+      console.log("Show: " + getProcessedValue(effect.coefficient, effect.table, itemLevel) + " . mana: " + bonus_stats.mana);
+      //console.log("Tuft: " + bonus_stats.hps);
+  }
+  else if (effectName === "Spark of Hope") {
+    let effect = activeTrinket.effects[0];
+
+    bonus_stats.mana =  getProcessedValue(effect.coefficient, effect.table, itemLevel) * player.getSpecialQuery("CastsPerMinute", contentType) / 60;
+    console.log("Spark: " + getProcessedValue(effect.coefficient, effect.table, itemLevel) * player.getSpecialQuery("CastsPerMinute", contentType) + " . mana: " + bonus_stats.mana);
+    //console.log("Tuft: " + bonus_stats.hps);
+}
     else {
         console.error("No Trinket Found");
     }

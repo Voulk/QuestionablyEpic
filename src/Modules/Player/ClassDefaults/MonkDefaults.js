@@ -52,7 +52,7 @@ export const monkDefaultSpecialQueries = (contentType) => {
             "HPSHotHealingDuringLC" : 98,
             "HPSHotHealingAfterLC": 0,
             "HPSExpelHarmOnSelf": 0,
-            "OneManaHPS": 0,
+            "OneManaHealing": 4.2,
         };
     }
     else if (contentType === "Dungeon") {
@@ -62,7 +62,7 @@ export const monkDefaultSpecialQueries = (contentType) => {
             "HPSHotHealingDuringLC" : 98,
             "HPSHotHealingAfterLC": 0,
             "HPSExpelHarmOnSelf": 0,
-            "OneManaHPS": 0,
+            "OneManaHealing": 1.4,
         };
     }
     else {

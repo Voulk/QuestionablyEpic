@@ -426,7 +426,7 @@ export function scoreItem(item, player, contentType) {
   if ("bonus_stats" in item.stats && "mana" in item.stats.bonus_stats) {
     //console.log("Adding bonus_stats to score");
     score +=
-      (item.stats.bonus_stats.mana * player.getSpecialQuery("OneManaHPS") / player.getHPS(contentType)) *
+      (item.stats.bonus_stats.mana * player.getSpecialQuery("OneManaHealing", contentType) / player.getHPS(contentType)) *
       player.activeStats.intellect
   }
 
