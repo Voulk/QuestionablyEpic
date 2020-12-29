@@ -244,13 +244,25 @@ export default function UpgradeFinder(props) {
               ))}
             </Tabs>
 
-            <TabPanel value={gearSource} index={0}>
+            <TabPanel
+              value={gearSource}
+              index={0}
+              style={{ display: "inline-flex" }}
+            >
               test4
             </TabPanel>
-            <TabPanel value={gearSource} index={1}>
+            <TabPanel
+              value={gearSource}
+              index={1}
+              style={{ display: "inline-flex" }}
+            >
               test3
             </TabPanel>
-            <TabPanel value={gearSource} index={2}>
+            <TabPanel
+              value={gearSource}
+              index={2}
+              style={{ display: "inline-flex" }}
+            >
               test2
             </TabPanel>
           </div>
