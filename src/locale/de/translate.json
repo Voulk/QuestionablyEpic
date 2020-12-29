@@ -264,6 +264,30 @@
       "Zandalari Troll": "Zandalari TrollDE"
     },
 
+    "BossNames": {
+      "2398": "Schrillschwinge",
+      "2418": "Jäger Altimor",
+      "2402": "Sun King's Salvation",
+      "2405": "Konstrukteur Xy'mox",
+      "2383": "Hungernder Zerstörer",
+      "2406": "Lady Inerva Dunkelader",
+      "2412": "The Council of Blood",
+      "2399": "Schlickfaust",
+      "2417": "Stone Legion Generals",
+      "2407": "Graf Denathrius"
+    },
+
+    "DungeonNames": {
+      "12831": "Hallen der Sühne",
+      "13334": "Die Nebel von Tirna Scithe",
+      "12916": "Die Nekrotische Schneise",
+      "13228": "Seuchensturz",
+      "12842": "Die Blutigen Tiefen",
+      "12841": "Theater der Schmerzen",
+      "13309": "Die Andre Seite",
+      "12837": "Spitzen des Aufstiegs"
+    },
+
     "SimCInput": {
       "SimCStringLabel": "SimC StringDE",
       "SimCHeaderButtonLabel": "SimCDE",

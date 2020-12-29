@@ -264,6 +264,30 @@
       "Zandalari Troll": "赞达拉巨魔"
     },
 
+    "BossNames": {
+      "2398": "ShriekwingCH",
+      "2418": "猎手阿尔迪莫",
+      "2402": "Sun King's SalvationCH",
+      "2405": "圣物匠赛·墨克斯",
+      "2383": "饥饿的毁灭者",
+      "2406": "伊涅瓦·暗脉女勋爵",
+      "2412": "The Council of BloodCH",
+      "2399": "泥拳",
+      "2417": "Stone Legion Generals",
+      "2407": "德纳修斯大帝"
+    },
+
+    "DungeonNames": {
+      "12831": "赎罪大厅",
+      "13334": "塞兹仙林的迷雾",
+      "12916": "通灵战潮",
+      "13228": "凋魂之殇",
+      "12842": "赤红深渊",
+      "12841": "伤逝剧场",
+      "13309": "彼界",
+      "12837": "晋升高塔"
+    },
+
     "SimCInput": {
       "SimCStringLabel": "SimC StringCH",
       "SimCHeaderButtonLabel": "SimC",

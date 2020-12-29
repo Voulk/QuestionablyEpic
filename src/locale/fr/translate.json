@@ -259,6 +259,30 @@
       "Zandalari Troll": "Troll zandalari"
     },
 
+    "BossNames": {
+      "2398": "Hurlaile",
+      "2418": "Altimor le Veneur",
+      "2402": "Sun King's Salvation",
+      "2405": "Artificier Xy'mox",
+      "2383": "Destructeur affamé",
+      "2406": "Dame Inerva Sombreveine",
+      "2412": "The Council of Blood",
+      "2399": "Fangepoing",
+      "2417": "Stone Legion Generals",
+      "2407": "Sire Denathrius"
+    },
+
+    "DungeonNames": {
+      "12831": "Salles de l’Expiation",
+      "13334": "Brumes de Tirna Scithe",
+      "12916": "Sillage nécrotique",
+      "13228": "Malepeste",
+      "12842": "Profondeurs Sanguines",
+      "12841": "Théâtre de la Souffrance",
+      "13309": "L’Autre côté",
+      "12837": "Flèches de l’Ascension"
+    },
+
     "SimCInput": {
       "SimCStringLabel": "SimC StringFR",
       "SimCHeaderButtonLabel": "SimC",

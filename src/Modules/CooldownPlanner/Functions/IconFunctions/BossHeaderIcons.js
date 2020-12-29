@@ -43,7 +43,7 @@ import BlockadeHeader from "../../../../Images/Bosses/Dazaralor/blockade/blockad
 import MekkatorqueHeader from "../../../../Images/Bosses/Dazaralor/mekkatorque/mekkatorque.png";
 import JainaHeader from "../../../../Images/Bosses/Dazaralor/jaina/jaina.png";
 
-export default function bossHeaders(props) {
+export default function bossHeaders(props, style) {
   let source = "";
 
   // Castle Nathria
@@ -216,17 +216,5 @@ export default function bossHeaders(props) {
     source = JainaHeader;
   }
 
-  return (
-    <img
-      style={{
-        height: 64,
-        width: 128,
-        padding: "0px 5px 0px 5px",
-        verticalAlign: "middle",
-        marginRight: "-50px",
-      }}
-      src={source}
-      alt={props}
-    />
-  );
+  return <img style={{ ...style }} src={source} alt={props} />;
 }

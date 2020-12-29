@@ -29,6 +29,8 @@ import { dbCheckPatron } from "./Modules/SetupAndMenus/ConnectionUtilities";
 import ReactGA from "react-ga";
 import ItemSet from "./Modules/TopGear/ItemSet";
 
+import UpgradeFinder from "./Modules/UpgradeFinder/UpgradeFinder";
+
 const theme = createMuiTheme({
   palette: {
     type: "dark",
@@ -508,6 +510,11 @@ class App extends Component {
                       updatePlayerID={this.updatePlayerID}
                     />
                   )}
+                />
+
+                <Route
+                  path="/UpgradeFinder/"
+                  render={() => <UpgradeFinder />}
                 />
                 <Route
                   path="/profile/"

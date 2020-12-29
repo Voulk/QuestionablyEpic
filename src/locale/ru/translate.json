@@ -1,7 +1,11 @@
 {
   "translations": {
     "CharacterCreator": {
-      "StatMessage": "To get updated stat weights use WowAnalyzer.com with a recent log and enter the values here from the 'Statistics' tab.RU"
+      "StatMessage": "To get updated stat weights use WowAnalyzer.com with a recent log and enter the values here from the 'Statistics' tab.RU",
+      "DeleteCharacter": "Delete CharacterRU",
+      "CreateChar": "Create New CharacterRU",
+      "AddChar": "Add CharacterRU",
+      "CharName": "Character NameRU"
     },
 
     "_Comments1": "Common Words",
@@ -25,6 +29,11 @@
     "Race": "RaceRU",
     "Select Class": "Select ClassRU",
     "Select Race": "Select RaceRU",
+    "HowToUse": "How to UseRU",
+    "Yes": "YesRU",
+    "No": "NoRU",
+    "None": "NoneRU",
+    "Add": "AddRU",
 
     "CooldownPlanner": {
       "Classes": {
@@ -147,6 +156,12 @@
       }
     },
 
+    "HallOfFame": {
+      "title": "Welcome to the Hall of Fame",
+      "buttonLabel": "Hall of Fame",
+      "introduction": "Insert Blurb Here about thanking patrons."
+    },
+
     "InsertLog": {
       "PlsSelectFight": "Please Select a FightRU",
       "InsertLogHeader": "Paste Your Warcraft Logs Report HereRU"
@@ -172,14 +187,39 @@
       "CooldownPlanner": "Cooldown Planner (Coming Soon)RU",
       "Profile": "ProfileRU",
       "CharHeader": "CharactersRU",
-      "CharHelpText": "Add your characters here. Right click to edit your stat weights, realm information and more.RU"
+      "CharHelpText": "Add your characters here. Right click to edit your stat weights, realm information and more.RU",
+      "Tooltips": {
+        "TopGear": "Find your best gear setRU",
+        "QuickCompare": "Compare Items for each slot.RU",
+        "ExploreCovenants": "Explore Soulbinds for each covenant.RU",
+        "LegendaryAnalysis": "Find your best legendary power and where to get itRU",
+        "CooldownPlanner": "Plan your cooldowns. Create your own or analyse logsRU",
+        "Profile": "Edit your detailsRU"
+      }
     },
 
     "QeHeader": {
       "InsertLogLabel": "Insert Log",
       "Login": "Login",
-      "ContentTypeMsgStart": "Change to",
-      "ContentTypeMsgEnd": "Content"
+      "Tooltip": {
+        "ContentTypeMsgStart": "Change to",
+        "ContentTypeMsgEnd": "Content",
+        "InsertLog": "Insert a log to increase accuracy.",
+        "SimC": "Insert a SimC string to import your gear.",
+        "Login": "Login to your Battle.net Account",
+        "Language": "Change Language",
+        "Home": "Main Menu"
+      }
+    },
+
+    "QeProfile": {
+      "EmailMsg": "Enter/Update your Email to link to Patreon",
+      "NoEmail": "No Email Entered",
+      "QeTier": "QE Live Tier",
+      "ProfileHeader": "Profile Information",
+      "EditionAffix": "Edition",
+      "StandardEdition": "Standard Edition",
+      "NoBattleTag": "No Battlenet Account Linked"
     },
 
     "QuickCompare": {
@@ -189,7 +229,11 @@
       "Socket": "Socket",
       "Tertiary": "Tertiary",
       "AddButton": "Add",
-      "Title": "Quick Compare"
+      "Title": "Quick Compare",
+      "HelpText": "Quick Compare allows you to compare items one by one. You can add items manually using the dropdowns above, or all at once using a string from the SimC addon. The score is automatically shown in the top right corner in yellow, and items are ordered by strength.",
+      "ItemErrorMsg": "Item Not Added. Ilvl Cap is 300",
+      "ItemAdded": "Item Added!",
+      "ItemDeleted": "Item Deleted!"
     },
 
     "Races": {
@@ -216,6 +260,30 @@
       "Vulpera": "Вульпера",
       "Worgen": "Ворген",
       "Zandalari Troll": "Зандалар"
+    },
+
+    "BossNames": {
+      "2398": "Визгунья",
+      "2418": "Ловчий Альтимор",
+      "2402": "Sun King's Salvation",
+      "2405": "Изобретатель Зи'Мокс",
+      "2383": "Алчущий разрушитель",
+      "2406": "Леди Инерва Дарквейн",
+      "2412": "The Council of Blood",
+      "2399": "Грязешмяк",
+      "2417": "Stone Legion Generals",
+      "2407": "Сир Денатрий"
+    },
+
+    "DungeonNames": {
+      "12831": "Чертоги Покаяния",
+      "13334": "Туманы Тирна Скитта",
+      "12916": "Смертельная тризна",
+      "13228": "Чумные каскады",
+      "12842": "Кровавые катакомбы",
+      "12841": "Театр Боли",
+      "13309": "Та Сторона",
+      "12837": "Шпили Перерождения"
     },
 
     "SimCInput": {
@@ -255,8 +323,42 @@
       "mastery": "к искусности",
       "versatility": "к универсальности"
     },
+    "Settings": {
+      "SettingsTitle": "SettingsRU",
+      "Setting0Spacer": "--------------------------------------------------------------------",
+      "Setting0Tooltip": "The equip effect of 'Cabalist's Hymnal' is increased by 5% per AllyRU",
+      "Setting0Title": "Allies With HymnalRU",
+      "Setting0TextFieldLabel": "AlliesRU",
+      "Setting1Spacer": "--------------------------------------------------------------------",
+      "Setting1Tooltip": "",
+      "Setting1Title": "",
+      "Setting1TextFieldLabel": "",
+      "Setting2Spacer": "--------------------------------------------------------------------",
+      "Setting2Tooltip": "",
+      "Setting2Title": "",
+      "Setting2TextFieldLabel": "",
+      "Setting3Spacer": "--------------------------------------------------------------------",
+      "Setting3Tooltip": "",
+      "Setting3Title": "",
+      "Setting3TextFieldLabel": "",
+      "Setting4Spacer": "--------------------------------------------------------------------",
+      "Setting4Tooltip": "",
+      "Setting4Title": "",
+      "Setting4TextFieldLabel": "",
+      "Setting5Spacer": "--------------------------------------------------------------------",
+      "Setting5Tooltip": "",
+      "Setting5Title": "",
+      "Setting5TextFieldLabel": ""
+    },
 
-    "Top Gear": { "Title": "Top GearRU" },
+    "Top Gear": {
+      "Title": "Top GearRU",
+      "HelpText": "Top Gear allows you to generate an entire gear set at once. Start by entering your SimC string above, then click to highlight any items you want included in the comparison. When you're all set, hit 'Go' at the bottom of the page. To enter items manually, return to the main menu and include them in QE Quick Compare. Great Vault items are added automatically though for the first week consider your choice carefully outside of the app.RU",
+      "ItemsHereMessage": "Your items will go here after you import.RU",
+      "GoMsg": "Go!RU",
+      "SelectedItems": "Selected ItemsRU",
+      "StatPanel": { "AvgStats": "Average Stats (includes procs)RU" }
+    },
 
     "DruidLegendariesComment": "DruidLegendariesComment",
     "Vision of Unending Growth": {

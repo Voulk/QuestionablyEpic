@@ -265,6 +265,30 @@
       "Zandalari Troll": "Zandalari Troll"
     },
 
+    "BossNames": {
+      "2398": "Shriekwing",
+      "2418": "Huntsman Altimor",
+      "2402": "Sun King's Salvation",
+      "2405": "Artificer Xy'mox",
+      "2383": "Hungering Destroyer",
+      "2406": "Lady Inerva Darkvein",
+      "2412": "The Council of Blood",
+      "2399": "Sludgefist",
+      "2417": "Stone Legion Generals",
+      "2407": "Sire Denathrius"
+    },
+
+    "DungeonNames": {
+      "12831": "Halls of Atonement",
+      "13334": "Mists of Tirna Scithe",
+      "12916": "The Necrotic Wake",
+      "13228": "Plaguefall",
+      "12842": "Sanguine Depths",
+      "12841": "Theater of Pain",
+      "13309": "De Other Side",
+      "12837": "Spires of Ascension"
+    },
+
     "SimCInput": {
       "SimCStringLabel": "SimC String",
       "SimCHeaderButtonLabel": "SimC",
