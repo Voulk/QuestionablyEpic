@@ -1,7 +1,11 @@
 {
   "translations": {
     "CharacterCreator": {
-      "StatMessage": "To get updated stat weights use WowAnalyzer.com with a recent log and enter the values here from the 'Statistics' tab.DE"
+      "StatMessage": "To get updated stat weights use WowAnalyzer.com with a recent log and enter the values here from the 'Statistics' tab.DE",
+      "DeleteCharacter": "Delete CharacterDE",
+      "CreateChar": "Create New CharacterDE",
+      "AddChar": "Add CharacterDE",
+      "CharName": "Character NameDE"
     },
 
     "_Comments1": "Common Words",
@@ -25,6 +29,11 @@
     "Race": "RaceDE",
     "Select Class": "Select ClassDE",
     "Select Race": "Select RaceDE",
+    "HowToUse": "How to UseDE",
+    "Yes": "Yes",
+    "No": "No",
+    "None": "None",
+    "Add": "Add",
 
     "CooldownPlanner": {
       "Classes": {
@@ -149,6 +158,11 @@
         "326707": "Cleansing PainDE"
       }
     },
+    "HallOfFame": {
+      "title": "Welcome to the Hall of FameDE",
+      "buttonLabel": "Hall of FameDE",
+      "introduction": "Insert Blurb Here about thanking patronsDE."
+    },
 
     "InsertLog": {
       "PlsSelectFight": "Please Select a FightDE",
@@ -175,14 +189,39 @@
       "CooldownPlanner": "Cooldown Planner (Coming Soon)DE",
       "Profile": "ProfileDE",
       "CharHeader": "CharactersDE",
-      "CharHelpText": "Add your characters here. Right click to edit your stat weights, realm information and more.DE"
+      "CharHelpText": "Add your characters here. Right click to edit your stat weights, realm information and more.DE",
+      "Tooltips": {
+        "TopGear": "Find your best gear setDE",
+        "QuickCompare": "Compare Items for each slotDE.",
+        "ExploreCovenants": "Explore Soulbinds for each covenantDE.",
+        "LegendaryAnalysis": "Find your best legendary power and where to get itDE",
+        "CooldownPlanner": "Plan your cooldowns. Create your own or analyse logsDE",
+        "Profile": "Edit your detailsDE"
+      }
     },
 
     "QeHeader": {
       "InsertLogLabel": "Insert LogDE",
       "Login": "LoginDE",
-      "ContentTypeMsgStart": "Change toDE",
-      "ContentTypeMsgEnd": "ContentDE"
+      "Tooltip": {
+        "ContentTypeMsgStart": "Change toDE",
+        "ContentTypeMsgEnd": "ContentDE",
+        "InsertLog": "Insert a log to increase accuracyDE.",
+        "SimC": "Insert a SimC string to import your gearDE.",
+        "Login": "Login to your Battle.net AccountDE",
+        "Language": "Change LanguageDE",
+        "Home": "Main MenuDE"
+      }
+    },
+
+    "QeProfile": {
+      "EmailMsg": "Enter/Update your Email to link to PatreonDE",
+      "NoEmail": "No Email EnteredDE",
+      "QeTier": "QE Live TierDE",
+      "ProfileHeader": "Profile InformationDE",
+      "EditionAffix": "EditionDE",
+      "StandardEdition": "Standard EditionDE",
+      "NoBattleTag": "No Battlenet Account LinkedDE"
     },
 
     "QuickCompare": {
@@ -192,7 +231,11 @@
       "Socket": "SocketDE",
       "Tertiary": "TertiaryDE",
       "AddButton": "AddDE",
-      "Title": "Quick CompareDE"
+      "Title": "Quick CompareDE",
+      "HelpText": "Quick Compare allows you to compare items one by one. You can add items manually using the dropdowns above, or all at once using a string from the SimC addon. The score is automatically shown in the top right corner in yellow, and items are ordered by strength.DE",
+      "ItemErrorMsg": "Item Not Added. Ilvl Cap is 300DE",
+      "ItemAdded": "Item Added!DE",
+      "ItemDeleted": "Item Deleted!DE"
     },
 
     "Races": {
@@ -258,8 +301,42 @@
       "mastery": "Meisterschaft",
       "versatility": "Vielseitigkeit"
     },
+    "Settings": {
+      "SettingsTitle": "SettingsDE",
+      "Setting0Spacer": "--------------------------------------------------------------------",
+      "Setting0Tooltip": "The equip effect of 'Cabalist's Hymnal' is increased by 5% per AllyDE",
+      "Setting0Title": "Allies With HymnalDE",
+      "Setting0TextFieldLabel": "AlliesDE",
+      "Setting1Spacer": "--------------------------------------------------------------------",
+      "Setting1Tooltip": "",
+      "Setting1Title": "",
+      "Setting1TextFieldLabel": "",
+      "Setting2Spacer": "--------------------------------------------------------------------",
+      "Setting2Tooltip": "",
+      "Setting2Title": "",
+      "Setting2TextFieldLabel": "",
+      "Setting3Spacer": "--------------------------------------------------------------------",
+      "Setting3Tooltip": "",
+      "Setting3Title": "",
+      "Setting3TextFieldLabel": "",
+      "Setting4Spacer": "--------------------------------------------------------------------",
+      "Setting4Tooltip": "",
+      "Setting4Title": "",
+      "Setting4TextFieldLabel": "",
+      "Setting5Spacer": "--------------------------------------------------------------------",
+      "Setting5Tooltip": "",
+      "Setting5Title": "",
+      "Setting5TextFieldLabel": ""
+    },
 
-    "Top Gear": { "Title": "Top GearDE" },
+    "TopGear": {
+      "Title": "Top GearDE",
+      "HelpText": "Top Gear allows you to generate an entire gear set at once. Start by entering your SimC string above, then click to highlight any items you want included in the comparison. When you're all set, hit 'Go' at the bottom of the page. To enter items manually, return to the main menu and include them in QE Quick Compare. Great Vault items are added automatically though for the first week consider your choice carefully outside of the app.DE",
+      "ItemsHereMessage": "Your items will go here after you import.DE",
+      "GoMsg": "Go!DE",
+      "SelectedItems": "Selected ItemsDE",
+      "StatPanel": { "AvgStats": "Average Stats (includes procs)DE" }
+    },
 
     "DruidLegendariesComment": "DruidLegendariesComment",
     "Vision of Unending Growth": {

@@ -34,13 +34,15 @@ export const paladinDefaultSpecialQueries = (contentType) => {
     if (contentType === "Raid") {
         specialQueries = 
         {   
-              
+            "OneManaHealing": 0.4,
+            "CastsPerMinute": 27,
         };
     }
     else if (contentType === "Dungeon") {
         specialQueries = 
         {   
-            
+            "OneManaHealing": 0.2,
+            "CastsPerMinute": 30,
         };
     }
     else {

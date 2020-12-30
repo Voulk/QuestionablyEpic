@@ -4,6 +4,7 @@ import HolyDiver from "./Modules/CooldownPlanner/CooldownPlannerModule";
 import QEMainMenu from "./Modules/SetupAndMenus/QEMainMenu";
 import TrinketCompare from "./Modules/TrinketCompare";
 import LegendaryCompare from "./Modules/Legendaries/LegendaryCompare";
+import TrinketAnalysis from "./Modules/TrinketAnalysis/TrinketAnalysis";
 import QuickCompare from "./Modules/QuickCompare/QuickCompare";
 import QEHeader from "./Modules/SetupAndMenus/QEHeader";
 import TopGearReport from "./Modules/TopGear/TopGearReport";
@@ -112,7 +113,6 @@ class App extends Component {
   }
 
   setTopResult = (set) => {
-    
     this.setState({ topSet: set });
   };
 
@@ -230,10 +230,10 @@ class App extends Component {
 
   deletePlayerChar = (unique) => {
     let allChars = this.state.characters;
-    allChars.delSpecificChar(unique)
+    allChars.delSpecificChar(unique);
     this.setState({ characters: allChars });
     allChars.saveAllChar();
-  }
+  };
 
   setRegion = (props) => {
     this.setState({ playerRegion: props });
@@ -242,6 +242,7 @@ class App extends Component {
   toggleContentType = () => {
     let newType = this.state.contentType === "Raid" ? "Dungeon" : "Raid";
     this.setState({ contentType: newType });
+    console.log(this.state.contentType);
     ls.set("contentType", newType);
   };
 
@@ -315,208 +316,215 @@ class App extends Component {
 
     return (
       <ErrorBoundary>
-      <Router basename={process.env.REACT_APP_HOMEPAGE}>
-        <ThemeProvider theme={theme}>
-          <div className="App" style={{ marginTop: 96 }}>
-            <QEHeader
-              logFunc={this.userLogout}
-              patronStatus={this.state.patronStatus}
-              playerTag={this.state.playerBattleTag}
-              setRegion={this.setRegion}
-              toggleContentType={this.toggleContentType}
-              contentType={this.state.contentType}
-              pl={activePlayer}
-              simcSnack={this.handleSimCSnackOpen}
-              logImportSnack={this.handleLogSnackOpen}
-              allChars={allChars}
-            />
+        <Router basename={process.env.REACT_APP_HOMEPAGE}>
+          <ThemeProvider theme={theme}>
+            <div className="App" style={{ marginTop: 96 }}>
+              <QEHeader
+                logFunc={this.userLogout}
+                patronStatus={this.state.patronStatus}
+                playerTag={this.state.playerBattleTag}
+                setRegion={this.setRegion}
+                toggleContentType={this.toggleContentType}
+                contentType={this.state.contentType}
+                pl={activePlayer}
+                simcSnack={this.handleSimCSnackOpen}
+                logImportSnack={this.handleLogSnackOpen}
+                allChars={allChars}
+              />
 
-            {/* // Char Added Snackbar */}
-            <Snackbar
-              open={this.state.charSnackState}
-              autoHideDuration={3000}
-              onClose={this.handleCharSnackClose}
-            >
-              <Alert onClose={this.handleCharSnackClose} severity="success">
-                Character Added!
-              </Alert>
-            </Snackbar>
-
-            {/* // Char Updated Snackbar */}
-            <Snackbar
-              open={this.state.charUpdateState}
-              autoHideDuration={3000}
-              onClose={this.handleCharUpdateSnackClose}
-            >
-              <Alert
-                onClose={this.handleCharUpdateSnackClose}
-                severity="success"
+              {/* // Char Added Snackbar */}
+              <Snackbar
+                open={this.state.charSnackState}
+                autoHideDuration={3000}
+                onClose={this.handleCharSnackClose}
               >
-                Character Updated!
-              </Alert>
-            </Snackbar>
+                <Alert onClose={this.handleCharSnackClose} severity="success">
+                  Character Added!
+                </Alert>
+              </Snackbar>
 
-            {/* // Login Success Snackbar */}
-            <Snackbar
-              open={this.state.loginSnackState}
-              autoHideDuration={3000}
-              onClose={this.handleLoginClose}
-            >
-              <Alert onClose={this.handleLoginClose} severity="success">
-                Logged in Successfully!
-              </Alert>
-            </Snackbar>
+              {/* // Char Updated Snackbar */}
+              <Snackbar
+                open={this.state.charUpdateState}
+                autoHideDuration={3000}
+                onClose={this.handleCharUpdateSnackClose}
+              >
+                <Alert
+                  onClose={this.handleCharUpdateSnackClose}
+                  severity="success"
+                >
+                  Character Updated!
+                </Alert>
+              </Snackbar>
 
-            {/* // SimC Success Snackbar */}
-            <Snackbar
-              open={this.state.simcSnackState}
-              autoHideDuration={3000}
-              onClose={this.handleSimCSnackClose}
-            >
-              <Alert onClose={this.handleSimCSnackClose} severity="success">
-                SimC String Imported Successfully!
-              </Alert>
-            </Snackbar>
+              {/* // Login Success Snackbar */}
+              <Snackbar
+                open={this.state.loginSnackState}
+                autoHideDuration={3000}
+                onClose={this.handleLoginClose}
+              >
+                <Alert onClose={this.handleLoginClose} severity="success">
+                  Logged in Successfully!
+                </Alert>
+              </Snackbar>
 
-            {/* Log Import Success Snackbar */}
-            <Snackbar
-              open={this.state.logImportSnackState}
-              autoHideDuration={3000}
-              onClose={this.handleLogSnackClose}
-            >
-              <Alert onClose={this.handleLogSnackClose} severity="success">
-                Log Imported Successfully!
-              </Alert>
-            </Snackbar>
+              {/* // SimC Success Snackbar */}
+              <Snackbar
+                open={this.state.simcSnackState}
+                autoHideDuration={3000}
+                onClose={this.handleSimCSnackClose}
+              >
+                <Alert onClose={this.handleSimCSnackClose} severity="success">
+                  SimC String Imported Successfully!
+                </Alert>
+              </Snackbar>
 
-            {/* Email Import Success Snackbar */}
-            <Snackbar
-              open={this.state.emailSnackState}
-              autoHideDuration={3000}
-              onClose={this.handleEmailSnackClose}
-            >
-              <Alert onClose={this.handleEmailSnackClose} severity="success">
-                Email Updated!
-              </Alert>
-            </Snackbar>
+              {/* Log Import Success Snackbar */}
+              <Snackbar
+                open={this.state.logImportSnackState}
+                autoHideDuration={3000}
+                onClose={this.handleLogSnackClose}
+              >
+                <Alert onClose={this.handleLogSnackClose} severity="success">
+                  Log Imported Successfully!
+                </Alert>
+              </Snackbar>
 
-            {/* Email Error Import Success Snackbar */}
-            <Snackbar
-              open={this.state.emailSnackErrorState}
-              autoHideDuration={3000}
-              onClose={this.handleEmailErrorSnackClose}
-            >
-              <Alert onClose={this.handleEmailErrorSnackClose} severity="error">
-                Please check the Email and try again
-              </Alert>
-            </Snackbar>
-            
-            <Switch>
-              <Route
-                exact
-                path="/"
-                render={() => (
-                  <QEMainMenu
-                    allChars={allChars}
-                    charUpdate={this.updatePlayerChars}
-                    singleUpdate={this.updatePlayerChar}
-                    pl={this.state.player}
-                    charAddedSnack={this.handleCharSnackOpen}
-                    charUpdatedSnack={this.handleCharUpdateSnackOpen}
-                    contentType={this.state.contentType}
-                    patronStatus={this.state.patronStatus}
-                    delChar={this.deletePlayerChar}
-                  />
-                )}
-              />
-              <Route path="/holydiver" render={() => <HolyDiver />} />
-              <Route
-                path="/trinkets"
-                render={() => <TrinketCompare pl={this.state.player} />}
-              />
-              <Route
-                path="/report"
-                render={() => (
-                  <TopGearReport
-                    pl={activePlayer}
-                    result={this.state.topSet}
-                    contentType={this.state.contentType}
-                  />
-                )}
-              />
-              <Route
-                path="/quickcompare"
-                render={() => (
-                  <QuickCompare
-                    pl={activePlayer}
-                    contentType={this.state.contentType}
-                  />
-                )}
-              />
-              <Route
-                path="/topgear"
-                render={() => (
-                  <TopGear
-                    pl={activePlayer}
-                    contentType={this.state.contentType}
-                    setTopResult={this.setTopResult}
-                  />
-                )}
-              />
-              <Route
-                path="/legendaries"
-                render={() => (
-                  <LegendaryCompare
-                    pl={activePlayer}
-                    contentType={this.state.contentType}
-                  />
-                )}
-              />
+              {/* Email Import Success Snackbar */}
+              <Snackbar
+                open={this.state.emailSnackState}
+                autoHideDuration={3000}
+                onClose={this.handleEmailSnackClose}
+              >
+                <Alert onClose={this.handleEmailSnackClose} severity="success">
+                  Email Updated!
+                </Alert>
+              </Snackbar>
 
-              <Route
-                path="/soulbinds"
-                render={() => (
-                  <SimpleTabs
-                    pl={activePlayer}
-                    contentType={this.state.contentType}
-                    updatePlayerChar={this.updatePlayerChar}
-                  />
-                )}
-              />
-              <Route
-                path="/login"
-                render={() => <QELogin setRegion={this.setRegion} />}
-              />
-              <Route
-                path="/attemptlogin"
-                component={() => (window.location = this.buildLoginURL())}
-              />
-              <Route
-                path="/confirmlogin/"
-                render={() => (
-                  <ConfirmLogin
-                    loginSnackOpen={this.handleLoginSnackOpen}
-                    updatePlayerID={this.updatePlayerID}
-                  />
-                )}
-              />
-              <Route
-                path="/profile/"
-                render={() => (
-                  <QEProfile
-                    setEmail={this.setEmail}
-                    playerTag={this.state.playerBattleTag}
-                    patronStatus={this.state.patronStatus}
-                    emailSnack={this.handleEmailSnackOpen}
-                    emailSnackError={this.handleEmailErrorSnackOpen}
-                  />
-                )}
-              />
-            </Switch>
-            
-          </div>
-        </ThemeProvider>
-      </Router>
+              {/* Email Error Import Success Snackbar */}
+              <Snackbar
+                open={this.state.emailSnackErrorState}
+                autoHideDuration={3000}
+                onClose={this.handleEmailErrorSnackClose}
+              >
+                <Alert
+                  onClose={this.handleEmailErrorSnackClose}
+                  severity="error"
+                >
+                  Please check the Email and try again
+                </Alert>
+              </Snackbar>
+
+              <Switch>
+                <Route
+                  exact
+                  path="/"
+                  render={() => (
+                    <QEMainMenu
+                      allChars={allChars}
+                      charUpdate={this.updatePlayerChars}
+                      singleUpdate={this.updatePlayerChar}
+                      pl={this.state.player}
+                      charAddedSnack={this.handleCharSnackOpen}
+                      charUpdatedSnack={this.handleCharUpdateSnackOpen}
+                      contentType={this.state.contentType}
+                      patronStatus={this.state.patronStatus}
+                      delChar={this.deletePlayerChar}
+                    />
+                  )}
+                />
+                <Route path="/holydiver" render={() => <HolyDiver />} />
+                <Route
+                  path="/report"
+                  render={() => (
+                    <TopGearReport
+                      pl={activePlayer}
+                      result={this.state.topSet}
+                      contentType={this.state.contentType}
+                    />
+                  )}
+                />
+                <Route
+                  path="/quickcompare"
+                  render={() => (
+                    <QuickCompare
+                      pl={activePlayer}
+                      contentType={this.state.contentType}
+                    />
+                  )}
+                />
+                <Route
+                  path="/topgear"
+                  render={() => (
+                    <TopGear
+                      pl={activePlayer}
+                      contentType={this.state.contentType}
+                      setTopResult={this.setTopResult}
+                    />
+                  )}
+                />
+                <Route
+                  path="/legendaries"
+                  render={() => (
+                    <LegendaryCompare
+                      pl={activePlayer}
+                      contentType={this.state.contentType}
+                    />
+                  )}
+                />
+                <Route
+                  path="/trinkets"
+                  render={() => (
+                    <TrinketAnalysis
+                      player={activePlayer}
+                      contentType={this.state.contentType}
+                    />
+                  )}
+                />
+
+                <Route
+                  path="/soulbinds"
+                  render={() => (
+                    <SimpleTabs
+                      pl={activePlayer}
+                      contentType={this.state.contentType}
+                      updatePlayerChar={this.updatePlayerChar}
+                    />
+                  )}
+                />
+                <Route
+                  path="/login"
+                  render={() => <QELogin setRegion={this.setRegion} />}
+                />
+                <Route
+                  path="/attemptlogin"
+                  component={() => (window.location = this.buildLoginURL())}
+                />
+                <Route
+                  path="/confirmlogin/"
+                  render={() => (
+                    <ConfirmLogin
+                      loginSnackOpen={this.handleLoginSnackOpen}
+                      updatePlayerID={this.updatePlayerID}
+                    />
+                  )}
+                />
+                <Route
+                  path="/profile/"
+                  render={() => (
+                    <QEProfile
+                      setEmail={this.setEmail}
+                      playerTag={this.state.playerBattleTag}
+                      patronStatus={this.state.patronStatus}
+                      emailSnack={this.handleEmailSnackOpen}
+                      emailSnackError={this.handleEmailErrorSnackOpen}
+                    />
+                  )}
+                />
+              </Switch>
+            </div>
+          </ThemeProvider>
+        </Router>
       </ErrorBoundary>
     );
   }

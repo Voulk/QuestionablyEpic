@@ -224,9 +224,66 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel) {
         bonus_stats.hps =  getProcessedValue(effect.coefficient, effect.table, itemLevel, effect.efficiency) / effect.cooldown * player.getStatMultiplier('CRITVERS');
         //console.log("Tuft: " + bonus_stats.hps);
     }
-    else {
-        console.error("No Trinket Found");
-    }
+    else if (effectName === "Show of Faith") {
+      let effect = activeTrinket.effects[0];
+
+      bonus_stats.mana =  getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.ppm / 60;
+      console.log("Show: " + getProcessedValue(effect.coefficient, effect.table, itemLevel) + " . mana: " + bonus_stats.mana);
+      //console.log("Tuft: " + bonus_stats.hps);
+  }
+  else if (effectName === "Spark of Hope") {
+    let effect = activeTrinket.effects[0];
+
+    bonus_stats.mana =  getProcessedValue(effect.coefficient, effect.table, itemLevel) * player.getSpecialQuery("CastsPerMinute", contentType) / 60;
+    console.log("Spark: " + getProcessedValue(effect.coefficient, effect.table, itemLevel) * player.getSpecialQuery("CastsPerMinute", contentType) + " . mana: " + bonus_stats.mana);
+    //console.log("Tuft: " + bonus_stats.hps);
+}
+  else if (effectName === "Elemental Focus Stone") {
+    let effect = activeTrinket.effects[0];
+
+    bonus_stats.haste = getProcessedValue(effect.coefficient, effect.table, itemLevel) * convertPPMToUptime(effect.ppm[player.getSpec()], effect.duration);
+  }
+  else if (effectName === "Flare of the Heavens") {
+    let effect = activeTrinket.effects[0];
+
+    bonus_stats.intellect = getProcessedValue(effect.coefficient, effect.table, itemLevel) * convertPPMToUptime(effect.ppm[player.getSpec()], effect.duration);
+  }
+  else if (effectName === "Pandora's Plea") {
+    let effect = activeTrinket.effects[0];
+
+    bonus_stats.intellect = getProcessedValue(effect.coefficient, effect.table, itemLevel) * convertPPMToUptime(effect.ppm, effect.duration);
+  }
+  else if (effectName === "Sif's Remembrance") {
+    let effect = activeTrinket.effects[0];
+
+    bonus_stats.intellect = getProcessedValue(effect.coefficient, effect.table, itemLevel) * convertPPMToUptime(effect.ppm, effect.duration);
+  }
+  else if (effectName === "Eye of the Broodmother") {
+    let effect = activeTrinket.effects[0];
+
+    bonus_stats.intellect = getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.stacks;
+  }
+  else if (effectName === "Energy Siphon") {
+        
+    let effect = activeTrinket.effects[0];
+
+    bonus_stats.crit = getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.duration / effect.cooldown;
+}
+  else if (effectName === "Living Flame") {
+          
+    let effect = activeTrinket.effects[0];
+
+    bonus_stats.intellect = getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.duration / effect.cooldown;
+  }
+  else if (effectName === "Scale of Fates") {
+        
+    let effect = activeTrinket.effects[0];
+
+    bonus_stats.haste = getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.duration / effect.cooldown;
+}
+  else {
+      console.error("No Trinket Found");
+  }
     
 
     /*
@@ -235,7 +292,7 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel) {
         bonus_stats[effect.benefit] = Math.round(netValue);
     } */
 
-    //console.log("Effect Name: " + effectName + " at level: " + itemLevel + " {" + JSON.stringify(bonus_stats))
+    console.log("Effect Name: " + effectName + " at level: " + itemLevel + " {" + JSON.stringify(bonus_stats))
     return bonus_stats;
 }
 

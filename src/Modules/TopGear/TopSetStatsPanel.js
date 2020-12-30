@@ -51,20 +51,19 @@ export default function TopSetStatsPanel(props) {
             align="center"
             color="primary"
           >
-            Average Stats (includes procs)
+            {t("TopGear.StatPanel.AvgStats")}
           </Typography>
           <Divider variant="middle" />
         </Grid>
         <Grid item xs={12} style={{ padding: "4px 16px 16px 16px" }}>
           <Grid container direction="row" spacing={1}>
             {stats.map((stat, index) => (
-              <Grid item xs={6}>
+              <Grid item xs={6} key={index}>
                 <Typography
                   style={{ fontSize: 16, marginLeft: "4px" }}
                   variant="body1"
                   align="left"
                 >
-                  
                   {printStat(stat[0], stat[1])}
                 </Typography>
               </Grid>

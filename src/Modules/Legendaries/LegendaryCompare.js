@@ -206,30 +206,26 @@ export default function LegendaryCompare(props) {
 
   return (
     <div
-    // style={{ backgroundColor: "#313131" }}
+      style={{
+        margin: "auto",
+        width: "70%",
+        justifyContent: "space-between",
+        display: "block",
+      }}
     >
-      <div
-        style={{
-          margin: "auto",
-          width: "70%",
-          justifyContent: "space-between",
-          display: "block",
-        }}
+      <Typography
+        color="primary"
+        variant="h4"
+        align="center"
+        style={{ paddingBottom: 16 }}
       >
-        <Typography
-          color="primary"
-          variant="h4"
-          align="center"
-          style={{ paddingBottom: 16 }}
-        >
-          {t("LegendaryCompare.Title")}
-        </Typography>
-        <Grid container spacing={1} direction="row">
-          {legendaryList.map((item, index) => (
-            <LegendaryObject key={index} item={item} />
-          ))}
-        </Grid>
-      </div>
+        {t("LegendaryCompare.Title")}
+      </Typography>
+      <Grid container spacing={1} direction="row">
+        {legendaryList.map((item, index) => (
+          <LegendaryObject key={index} item={item} />
+        ))}
+      </Grid>
     </div>
   );
 }

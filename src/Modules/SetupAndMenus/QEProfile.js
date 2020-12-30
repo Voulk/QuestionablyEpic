@@ -37,14 +37,7 @@ export default function QEProfile(props) {
   const [email, setEmail] = React.useState(ls.get("email") || "");
   const [emailTemp, setEmailTemp] = React.useState("");
   const emailHandler = (event) => {
-    if (emailTemp.length > 3 && emailTemp.length < 32)
-
-      /*
-      RegExp(
-        /^([A-Z|a-z|0-9](\.|_){0,1})+[A-Z|a-z|0-9]\@([A-Z|a-z|0-9])+((\.){0,1}[A-Z|a-z|0-9]){2}\.[a-z]{2,3}$/gm
-      ).test(emailTemp) ||
-      emailTemp === ""
-    ) */{
+    if (emailTemp.length > 3 && emailTemp.length < 32) {
       props.setEmail(event);
       setEmail(event);
       props.emailSnack();
@@ -55,8 +48,8 @@ export default function QEProfile(props) {
 
   let patronStatus =
     props.patronStatus !== ""
-      ? props.patronStatus + " Edition"
-      : "Standard Edition";
+      ? props.patronStatus + " " + t("QeProfile.EditionAffix")
+      : t("QeProfile.StandardEdition");
 
   let color = {
     "Rolls Royce Edition": "#04E07C",
@@ -70,11 +63,16 @@ export default function QEProfile(props) {
     <div className={classes.root}>
       <Grid container spacing={1}>
         <Grid item xs={12}>
+          <Typography
+            variant="h4"
+            color="primary"
+            align="center"
+            style={{ padding: "10px 10px 5px 10px" }}
+          >
+            {t("QeProfile.ProfileHeader")}
+          </Typography>
+          {/* <Divider style={{ marginBottom: 10 }} /> */}
           <Paper elevation={0} style={{ padding: 10 }}>
-            <Typography variant="h6" color="primary" align="center">
-              Profile Information
-            </Typography>
-            <Divider style={{ marginBottom: 10 }} />
             <Typography
               variant="body1"
               gutterBottom
@@ -84,7 +82,7 @@ export default function QEProfile(props) {
             >
               Battletag:
               <div style={{ paddingLeft: 10, color: "#fff" }}>
-                {props.playerTag || "No Battlenet Account Linked"}
+                {props.playerTag || t("QeProfile.NoBattleTag")}
               </div>
             </Typography>
             <Typography
@@ -96,7 +94,7 @@ export default function QEProfile(props) {
             >
               Email:
               <div style={{ paddingLeft: 10, color: "#fff" }}>
-                {email || "No Email Entered"}
+                {email || t("QeProfile.NoEmail")}
               </div>
             </Typography>
             <Typography
@@ -107,7 +105,7 @@ export default function QEProfile(props) {
               wrap="nowrap"
               style={{ display: "inline-flex" }}
             >
-              QELive Tier:
+              {t("QeProfile.QeTier")}:
               <div style={{ paddingLeft: 10, color: color[patronStatus] }}>
                 {patronStatus}
               </div>
@@ -117,7 +115,7 @@ export default function QEProfile(props) {
         <Grid item xs={12}>
           <Paper elevation={0} style={{ padding: 10 }}>
             <Typography variant="h6" gutterBottom color="primary">
-              Enter/Update your Email to link to Patreon
+              {t("QeProfile.EmailMsg")}
             </Typography>
             <Grid
               container

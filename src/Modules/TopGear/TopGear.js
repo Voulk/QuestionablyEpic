@@ -6,7 +6,7 @@ import Item from "../Player/Item";
 import "./../QuickCompare/QuickCompare.css";
 import { useTranslation } from "react-i18next";
 import { testTrinkets } from "../Engine/EffectFormulas/Generic/TrinketEffectFormulas";
-import {apiSendTopGearSet} from "../SetupAndMenus/ConnectionUtilities";
+import { apiSendTopGearSet } from "../SetupAndMenus/ConnectionUtilities";
 import {
   InputLabel,
   MenuItem,
@@ -40,6 +40,7 @@ import Autocomplete from "@material-ui/lab/Autocomplete";
 //import worker from "workerize-loader!./TopGearEngine"; // eslint-disable-line import/no-webpack-loader-syntax
 import { useHistory, useLocation } from "react-router-dom";
 import HelpText from "../SetupAndMenus/HelpText";
+import TopGearSettingsAccordion from "./TopGearSettings";
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -87,8 +88,6 @@ function Alert(props) {
 const TOPGEARCAP = 34; // TODO
 
 export default function TopGear(props) {
-
-
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
   const classes = useStyles();
@@ -109,8 +108,7 @@ export default function TopGear(props) {
   const openPop = Boolean(anchorEl);
   const idPop = openPop ? "simple-popover" : undefined;
   const [itemDropdown, setItemDropdown] = useState([]); // Filled later based on item slot and armor type.
-  
-  
+
   useEffect(() => {
     ReactGA.pageview(window.location.pathname + window.location.search);
   }, []);
@@ -124,63 +122,60 @@ export default function TopGear(props) {
   // Fill Items fills the ItemNames box with items appropriate to the given slot and spec.  };
 
   let history = useHistory();
-  
+
   const checkTopGearValid = () => {
-    // Check that the player has selected an item in every slot. 
+    // Check that the player has selected an item in every slot.
     let topgearOk = true;
     let itemList = props.pl.getSelectedItems();
     let errorMessage = "";
     let slotLengths = {
-      "Head": 0,
-      "Neck": 0,
-      "Shoulder": 0,
-      "Back": 0,
-      "Chest": 0,
-      "Wrist": 0,
-      "Hands": 0,
-      "Waist": 0,
-      "Legs": 0,
-      "Feet": 0,
-      "Finger": 0,
-      "Trinket": 0,
+      Head: 0,
+      Neck: 0,
+      Shoulder: 0,
+      Back: 0,
+      Chest: 0,
+      Wrist: 0,
+      Hands: 0,
+      Waist: 0,
+      Legs: 0,
+      Feet: 0,
+      Finger: 0,
+      Trinket: 0,
       /*
       "2H Weapon" : 0,
       "1H Weapon" : 0,
       "Offhand" : 0, */
-    }
-    
+    };
+
     for (var i = 0; i < itemList.length; i++) {
       let slot = itemList[i].slot;
       if (slot in slotLengths) {
         if (itemList[i].vaultItem === false) slotLengths[slot] += 1;
-          
       }
-    } 
+    }
     for (const key in slotLengths) {
-      if ((key === "Finger" || key === "Trinket") && slotLengths[key] < 2) 
-      {
+      if ((key === "Finger" || key === "Trinket") && slotLengths[key] < 2) {
         topgearOk = false;
-        errorMessage = "Error: Add a " + t("slotNames." + key.toLowerCase()) + " item";
-      }
-      else if (slotLengths[key] === 0) {
+        errorMessage =
+          "Error: Add a " + t("slotNames." + key.toLowerCase()) + " item";
+      } else if (slotLengths[key] === 0) {
         topgearOk = false;
-        errorMessage = "Error: Add a " + t("slotNames." + key.toLowerCase()) + " item";
-        
+        errorMessage =
+          "Error: Add a " + t("slotNames." + key.toLowerCase()) + " item";
       }
       //console.log("Sloot Length: " + key + " " + slotLengths[key])
     }
     setErrorMessage(errorMessage);
     return topgearOk;
-
-  }
+  };
 
   const unleashTopGear = () => {
     // Call to the Top Gear Engine. Lock the app down.
     if (checkTopGearValid) {
       setBtnActive(false);
       let itemList = props.pl.getSelectedItems();
-      let wepCombos = buildWepCombos(props.pl, true)
-      const worker =  require('workerize-loader!./TopGearEngine'); // eslint-disable-line import/no-webpack-loader-syntax
+      let wepCombos = buildWepCombos(props.pl, true);
+      const worker = require("workerize-loader!./TopGearEngine"); // eslint-disable-line import/no-webpack-loader-syntax
       let instance = new worker();
       let strippedPlayer = JSON.parse(JSON.stringify(props.pl));
       //console.log("Pl: " + JSON.stringify(props.pl));
@@ -188,21 +183,22 @@ export default function TopGear(props) {
         .runTopGear(itemList, wepCombos, strippedPlayer, props.contentType)
         .then((result) => {
           //console.log(`Loop returned`);
-          apiSendTopGearSet(props.pl, props.contentType, result.itemSet.hardScore, result.itemsCompared);
+          apiSendTopGearSet(
+            props.pl,
+            props.contentType,
+            result.itemSet.hardScore,
+            result.itemsCompared
+          );
           props.setTopResult(result);
           history.push("/report/");
         });
-    }
-    else {
+    } else {
       // Return error.
     }
-
   };
 
   const selectedItemCount = props.pl.getSelectedItems().length;
-  const helpText = `Top Gear allows you to generate an entire gear set at once. Start by entering your SimC string above, then click to highlight any items you want included
-  in the comparison. When you're all set, hit "Go" at the bottom of the page. To enter items manually, return to the main menu and include them in QE Quick
-  Compare. Great Vault items are added automatically though for the first week consider your choice carefully outside of the app.`
+  const helpText = t("TopGear.HelpText");
 
   const activateItem = (unique) => {
     if (selectedItemCount < TOPGEARCAP) {
@@ -211,30 +207,26 @@ export default function TopGear(props) {
       setItemList([...player.getActiveItems(activeSlot)]);
       setBtnActive(checkTopGearValid());
     }
-
   };
 
-
   const slotList = [
-    {label: "Head", slotName: "Head"},
-    {label: "Neck", slotName: "Neck"},
-    {label: "Shoulder", slotName: "Shoulder"},
-    {label: "Back", slotName: "Back"},
-    {label: "Chest", slotName: "Chest"},
-    {label: "Wrist", slotName: "Wrist"},
-    {label: "Hands", slotName: "Hands"},
-    {label: "Waist", slotName: "Waist"},
-    {label: "Legs", slotName: "Legs"},
-    {label: "Feet", slotName: "Feet"},
-    {label: "Finger", slotName: "Finger"},
-    {label: "Trinket", slotName: "Trinket"}, 
-    {label: "Main Hands & 2 Handers", slotName: "AllMainhands"},
-    {label: "Offhands & Shields", slotName: "Offhands"},
-  ];  
+    { label: "Head", slotName: "Head" },
+    { label: "Neck", slotName: "Neck" },
+    { label: "Shoulder", slotName: "Shoulder" },
+    { label: "Back", slotName: "Back" },
+    { label: "Chest", slotName: "Chest" },
+    { label: "Wrist", slotName: "Wrist" },
+    { label: "Hands", slotName: "Hands" },
+    { label: "Waist", slotName: "Waist" },
+    { label: "Legs", slotName: "Legs" },
+    { label: "Feet", slotName: "Feet" },
+    { label: "Finger", slotName: "Finger" },
+    { label: "Trinket", slotName: "Trinket" },
+    { label: "Main Hands & 2 Handers", slotName: "AllMainhands" },
+    { label: "Offhands & Shields", slotName: "Offhands" },
+  ];
 
   //const slotList = [];
-
-
 
   return (
     <div
@@ -245,7 +237,7 @@ export default function TopGear(props) {
     >
       <Grid
         container
-        spacing={2}
+        spacing={1}
         justify="center"
         style={{
           margin: "auto",
@@ -253,48 +245,57 @@ export default function TopGear(props) {
           display: "block",
         }}
       >
-
         {
           <Grid item xs={12}>
-            <Paper elevation={0}>
-              <Typography
-                variant="h4"
-                align="center"
-                style={{ padding: "10px 10px 5px 10px" }}
-                color="primary"
-              >
-                {"Top Gear"}
-              </Typography>
-            </Paper>
+            <Typography
+              variant="h4"
+              align="center"
+              style={{ padding: "10px 10px 5px 10px" }}
+              color="primary"
+            >
+              {t("TopGear.Title")}
+            </Typography>
           </Grid>
-        }        
+        }
         <Grid item xs={12}>
-        <HelpText text={helpText} />
-      </Grid>
-      
-        {props.pl.activeItems.length > 0 ? slotList.map((key, index) => {
-          return (
-            <Grid item xs={12}>
-              <Typography style={{ color: "white" }} variant="h5">
-                {key.label}
-              </Typography>
-              <Divider style={{ marginBottom: 10, width: "42%" }} />
-              <Grid container spacing={1}>
-                {[...props.pl.getActiveItems(key.slotName)].map((item, index) => (
-                  <MiniItemCard
-                    key={index}
-                    item={item}
-                    activateItem={activateItem}
-                  />
-                )) }
-              </Grid>
-            </Grid>
-          );
-        }) : 
-      <Typography style={{ color: "white", fontStyle:"italic", marginLeft: '10px'}} variant="h6">Your items will go here after you import.</Typography> }
-      <Grid item style={{ height: 100 }} xs={12} />
-      </Grid>
+          <HelpText text={helpText} />
+        </Grid>
+        <Grid item xs={12}>
+          <TopGearSettingsAccordion />
+        </Grid>
 
+        {props.pl.activeItems.length > 0 ? (
+          slotList.map((key, index) => {
+            return (
+              <Grid item xs={12}>
+                <Typography style={{ color: "white" }} variant="h5">
+                  {key.label}
+                </Typography>
+                <Divider style={{ marginBottom: 10, width: "42%" }} />
+                <Grid container spacing={1}>
+                  {[...props.pl.getActiveItems(key.slotName)].map(
+                    (item, index) => (
+                      <MiniItemCard
+                        key={index}
+                        item={item}
+                        activateItem={activateItem}
+                      />
+                    )
+                  )}
+                </Grid>
+              </Grid>
+            );
+          })
+        ) : (
+          <Typography
+            style={{ color: "white", fontStyle: "italic", marginLeft: "10px" }}
+            variant="h6"
+          >
+            {t("TopGear.ItemsHereMessage")}
+          </Typography>
+        )}
+        <Grid item style={{ height: 100 }} xs={12} />
+      </Grid>
 
       <div
         style={{
@@ -308,10 +309,8 @@ export default function TopGear(props) {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          //backgroundImage: "../../Images/Ptolemy.jpg",
         }}
       >
-        {/*<img src={"../../Images/Ptolemy.jpg"} /> */}
         <div
           style={{
             display: "flex",
@@ -322,12 +321,16 @@ export default function TopGear(props) {
           }}
         >
           <Typography
-            variant="Subtitle2"
             align="center"
             style={{ padding: "10px 10px 5px 10px" }}
             color="primary"
           >
-            {"Selected Items: " + selectedItemCount + "/" + TOPGEARCAP}
+            {t("TopGear.SelectedItems") +
+              ":" +
+              " " +
+              selectedItemCount +
+              "/" +
+              TOPGEARCAP}
           </Typography>
           <div>
             <Typography
@@ -346,11 +349,9 @@ export default function TopGear(props) {
               disabled={!btnActive}
               onClick={unleashTopGear}
             >
-              Go!
+              {t("TopGear.GoMsg")}
             </Button>
-
           </div>
-
         </div>
       </div>
     </div>

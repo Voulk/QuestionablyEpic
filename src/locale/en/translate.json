@@ -1,7 +1,11 @@
 {
   "translations": {
     "CharacterCreator": {
-      "StatMessage": "To get updated stat weights use WowAnalyzer.com with a recent log and enter the values here from the 'Statistics' tab."
+      "StatMessage": "To get updated stat weights use WowAnalyzer.com with a recent log and enter the values here from the 'Statistics' tab.",
+      "DeleteCharacter": "Delete Character",
+      "CreateChar": "Create New Character",
+      "AddChar": "Add Character",
+      "CharName": "Character Name"
     },
 
     "_Comments1": "Common Words",
@@ -21,10 +25,16 @@
     "Mastery": "Mastery",
     "Versatility": "Versatility",
     "Leech": "Leech",
+    "Avoidance": "Avoidance",
     "Region": "Region",
     "Race": "Race",
     "Select Class": "Select Class",
     "Select Race": "Select Race",
+    "HowToUse": "How to Use",
+    "Yes": "Yes",
+    "No": "No",
+    "None": "None",
+    "Add": "Add",
 
     "CooldownPlanner": {
       "Classes": {
@@ -149,6 +159,11 @@
         "326707": "Cleansing Pain"
       }
     },
+    "HallOfFame": {
+      "title": "Welcome to the Hall of Fame",
+      "buttonLabel": "Hall of Fame",
+      "introduction": "Insert Blurb Here about thanking patrons."
+    },
 
     "InsertLog": {
       "PlsSelectFight": "Please Select a Fight",
@@ -175,14 +190,39 @@
       "CooldownPlanner": "Cooldown Planner (Coming Soon)",
       "Profile": "Profile",
       "CharHeader": "Characters",
-      "CharHelpText": "Add your characters here. Right click to edit your stat weights, realm information and more."
+      "CharHelpText": "Add your characters here. Right click to edit your stat weights, realm information and more.",
+      "Tooltips": {
+        "TopGear": "Find your best gear set",
+        "QuickCompare": "Compare Items for each slot.",
+        "ExploreCovenants": "Explore Soulbinds for each covenant.",
+        "LegendaryAnalysis": "Find your best legendary power and where to get it",
+        "CooldownPlanner": "Plan your cooldowns. Create your own or analyse logs",
+        "Profile": "Edit your details"
+      }
     },
 
     "QeHeader": {
       "InsertLogLabel": "Insert Log",
       "Login": "Login",
-      "ContentTypeMsgStart": "Change to",
-      "ContentTypeMsgEnd": "Content"
+      "Tooltip": {
+        "ContentTypeMsgStart": "Change to",
+        "ContentTypeMsgEnd": "Content",
+        "InsertLog": "Insert a log to increase accuracy.",
+        "SimC": "Insert a SimC string to import your gear.",
+        "Login": "Login to your Battle.net Account",
+        "Language": "Change Language",
+        "Home": "Main Menu"
+      }
+    },
+
+    "QeProfile": {
+      "EmailMsg": "Enter/Update your Email to link to Patreon",
+      "NoEmail": "No Email Entered",
+      "QeTier": "QE Live Tier",
+      "ProfileHeader": "Profile Information",
+      "EditionAffix": "Edition",
+      "StandardEdition": "Standard Edition",
+      "NoBattleTag": "No Battlenet Account Linked"
     },
 
     "QuickCompare": {
@@ -192,7 +232,11 @@
       "Socket": "Socket",
       "Tertiary": "Tertiary",
       "AddButton": "Add",
-      "Title": "Quick Compare"
+      "Title": "Quick Compare",
+      "HelpText": "Quick Compare allows you to compare items one by one. You can add items manually using the dropdowns above, or all at once using a string from the SimC addon. The score is automatically shown in the top right corner in yellow, and items are ordered by strength.",
+      "ItemErrorMsg": "Item Not Added. Ilvl Cap is 300",
+      "ItemAdded": "Item Added!",
+      "ItemDeleted": "Item Deleted!"
     },
 
     "Races": {
@@ -258,8 +302,41 @@
       "mastery": "Mastery",
       "versatility": "Versatility"
     },
-
-    "Top Gear": { "Title": "Top Gear" },
+    "Settings": {
+      "SettingsTitle": "Settings",
+      "Setting0Spacer": "--------------------------------------------------------------------",
+      "Setting0Tooltip": "The equip effect of 'Cabalist's Hymnal' is increased by 5% per Ally",
+      "Setting0Title": "Allies With Hymnal",
+      "Setting0TextFieldLabel": "Allies",
+      "Setting1Spacer": "--------------------------------------------------------------------",
+      "Setting1Tooltip": "",
+      "Setting1Title": "",
+      "Setting1TextFieldLabel": "",
+      "Setting2Spacer": "--------------------------------------------------------------------",
+      "Setting2Tooltip": "",
+      "Setting2Title": "",
+      "Setting2TextFieldLabel": "",
+      "Setting3Spacer": "--------------------------------------------------------------------",
+      "Setting3Tooltip": "",
+      "Setting3Title": "",
+      "Setting3TextFieldLabel": "",
+      "Setting4Spacer": "--------------------------------------------------------------------",
+      "Setting4Tooltip": "",
+      "Setting4Title": "",
+      "Setting4TextFieldLabel": "",
+      "Setting5Spacer": "--------------------------------------------------------------------",
+      "Setting5Tooltip": "",
+      "Setting5Title": "",
+      "Setting5TextFieldLabel": ""
+    },
+    "TopGear": {
+      "Title": "Top Gear",
+      "HelpText": "Top Gear allows you to generate an entire gear set at once. Start by entering your SimC string above, then click to highlight any items you want included in the comparison. When you're all set, hit 'Go' at the bottom of the page. To enter items manually, return to the main menu and include them in QE Quick Compare. Great Vault items are added automatically though for the first week consider your choice carefully outside of the app.",
+      "ItemsHereMessage": "Your items will go here after you import.",
+      "GoMsg": "Go!",
+      "SelectedItems": "Selected Items",
+      "StatPanel": { "AvgStats": "Average Stats (includes procs)" }
+    },
 
     "DruidLegendariesComment": "DruidLegendariesComment",
     "Vision of Unending Growth": {
@@ -545,11 +622,6 @@
       "slot": "Waist, Wrist, or Finger",
       "desc": "Your spells and abilities have a low chance to summon a familiar to your side, increasing your healing by 10% for 10s. This effect is duplicated on up to 3 allies at 50% effectiveness, preferring allies with the same role.",
       "droploc": "Wild Hunt Reputation, Revered"
-    },
-    "HallOfFame": {
-      "title": "Welcome to the Hall of Fame",
-      "buttonLabel": "Hall of Fame",
-      "introduction": "Insert Blurb Here about thanking patrons."
     }
   }
 }

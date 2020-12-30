@@ -127,7 +127,10 @@ export default function ItemCard(props) {
 
   return (
     <Grid item xs={12} sm={6} md={6} lg={4} xl={4}>
-      <Card className={isVault ? classes.vault : classes.root} variant="outlined">
+      <Card
+        className={isVault ? classes.vault : classes.root}
+        variant="outlined"
+      >
         {/* <CardActionArea disabled={true}> */}
         <Grid
           container
@@ -227,10 +230,11 @@ export default function ItemCard(props) {
                     variant="subtitle2"
                     wrap="nowrap"
                     display="block"
-                    paddingTop="2px"
+                    style={{ paddingTop: "4px" }}
                     align="left"
                   >
-                    {socket} {statString} {tertiary} {isVault ? " / " + t("itemTags.greatvault") : ""}
+                    {socket} {statString} {tertiary}{" "}
+                    {isVault ? " / " + t("itemTags.greatvault") : ""}
                   </Typography>
                 </Grid>
 

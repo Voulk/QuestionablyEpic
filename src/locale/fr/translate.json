@@ -1,30 +1,39 @@
 {
   "translations": {
     "CharacterCreator": {
-      "StatMessage": "To get updated stat weights use WowAnalyzer.com with a recent log and enter the values here from the 'Statistics' tab.FR"
+      "StatMessage": "To get updated stat weights use WowAnalyzer.com with a recent log and enter the values here from the 'Statistics' tab.FR",
+      "DeleteCharacter": "Delete CharacterFR",
+      "CreateChar": "Create New Character",
+      "AddChar": "Add Character",
+      "CharName": "Character Name"
     },
 
     "_Comments1": "Common Words - All these need translating stillFR",
-    "Login": "Login",
-    "Name": "Name",
-    "Class": "Class",
-    "Cooldown": "Cooldown",
-    "Raid": "Raid",
-    "Dungeon": "Dungeon",
-    "Cancel": "Cancel",
-    "Submit": "Submit",
-    "Save": "Save",
-    "Delete": "Delete",
-    "Intellect": "Intellect",
-    "Crit": "Crit",
-    "Haste": "Haste",
-    "Mastery": "Mastery",
-    "Versatility": "Versatility",
-    "Leech": "Leech",
-    "Region": "Region",
-    "Race": "Race",
-    "Select Class": "Select Class",
-    "Select Race": "Select Race",
+    "Login": "LoginFR",
+    "Name": "NameFR",
+    "Class": "ClassFR",
+    "Cooldown": "CooldownFR",
+    "Raid": "RaidFR",
+    "Dungeon": "DungeonFR",
+    "Cancel": "CancelFR",
+    "Submit": "SubmitFR",
+    "Save": "SaveFR",
+    "Delete": "DeleteFR",
+    "Intellect": "IntellectFR",
+    "Crit": "CritFR",
+    "Haste": "HasteFR",
+    "Mastery": "MasteryFR",
+    "Versatility": "VersatilityFR",
+    "Leech": "LeechFR",
+    "Region": "RegionFR",
+    "Race": "RaceFR",
+    "Select Class": "Select ClassFR",
+    "Select Race": "Select RaceFR",
+    "HowToUse": "How to UseFR",
+    "Yes": "YesFR",
+    "No": "NoFR",
+    "None": "NoneFR",
+    "Add": "AddFR",
 
     "CooldownPlanner": {
       "Classes": {
@@ -146,6 +155,11 @@
         "326707": "Souffrance purificatrice"
       }
     },
+    "HallOfFame": {
+      "title": "Welcome to the Hall of FameFR",
+      "buttonLabel": "Hall of FameFR",
+      "introduction": "Insert Blurb Here about thanking patrons.FR"
+    },
 
     "InsertLog": {
       "PlsSelectFight": "Please Select a FightFR",
@@ -170,14 +184,39 @@
       "CooldownPlanner": "Planificateur de cooldown (Coming Soon)",
       "Profile": "Profil",
       "CharHeader": "Personnages",
-      "CharHelpText": "Ajouter vos personnages ici. Clique-droit pour modifier vos informations liés aux Stats Weights, nom de votre serveur et autre."
+      "CharHelpText": "Ajouter vos personnages ici. Clique-droit pour modifier vos informations liés aux Stats Weights, nom de votre serveur et autre.",
+      "Tooltips": {
+        "TopGear": "Find your best gear setFR",
+        "QuickCompare": "Compare Items for each slotFR.",
+        "ExploreCovenants": "Explore Soulbinds for each covenantFR.",
+        "LegendaryAnalysis": "Find your best legendary power and where to get itFR",
+        "CooldownPlanner": "Plan your cooldowns. Create your own or analyse logsFR",
+        "Profile": "Edit your detailsFR"
+      }
     },
 
     "QeHeader": {
       "InsertLogLabel": "Insert LogFR",
       "Login": "LoginFR",
-      "ContentTypeMsgStart": "Change toFR",
-      "ContentTypeMsgEnd": "ContentFR"
+      "Tooltip": {
+        "ContentTypeMsgStart": "Change toFR",
+        "ContentTypeMsgEnd": "ContentFR",
+        "InsertLog": "Insert a log to increase accuracyFR.",
+        "SimC": "Insert a SimC string to import your gearFR.",
+        "Login": "Login to your Battle.net AccountFR",
+        "Language": "Change LanguageFR",
+        "Home": "Main MenuFR"
+      }
+    },
+
+    "QeProfile": {
+      "EmailMsg": "Enter/Update your Email to link to PatreonFR",
+      "NoEmail": "No Email EnteredFR",
+      "QeTier": "QE Live TierFR",
+      "ProfileHeader": "Profile InformationFR",
+      "EditionAffix": "EditionFR",
+      "StandardEdition": "Standard EditionFR",
+      "NoBattleTag": "No Battlenet Account LinkedFR"
     },
 
     "QuickCompare": {
@@ -187,7 +226,11 @@
       "Socket": "SocketFR",
       "Tertiary": "TertiaryFR",
       "AddButton": "AddFR",
-      "Title": "Quick CompareFR"
+      "Title": "Quick CompareFR",
+      "HelpText": "Quick Compare allows you to compare items one by one. You can add items manually using the dropdowns above, or all at once using a string from the SimC addon. The score is automatically shown in the top right corner in yellow, and items are ordered by strength.FR",
+      "ItemErrorMsg": "Item Not Added. Ilvl Cap is 300FR",
+      "ItemAdded": "Item Added!FR",
+      "ItemDeleted": "Item Deleted!FR"
     },
 
     "Races": {
@@ -253,8 +296,42 @@
       "mastery": "Maîtrise",
       "versatility": "Versatilité"
     },
+    "Settings": {
+      "SettingsTitle": "SettingsFR",
+      "Setting0Spacer": "--------------------------------------------------------------------",
+      "Setting0Tooltip": "The equip effect of 'Cabalist's Hymnal' is increased by 5% per AllyFR",
+      "Setting0Title": "Allies With HymnalFR",
+      "Setting0TextFieldLabel": "AlliesFR",
+      "Setting1Spacer": "--------------------------------------------------------------------",
+      "Setting1Tooltip": "",
+      "Setting1Title": "",
+      "Setting1TextFieldLabel": "",
+      "Setting2Spacer": "--------------------------------------------------------------------",
+      "Setting2Tooltip": "",
+      "Setting2Title": "",
+      "Setting2TextFieldLabel": "",
+      "Setting3Spacer": "--------------------------------------------------------------------",
+      "Setting3Tooltip": "",
+      "Setting3Title": "",
+      "Setting3TextFieldLabel": "",
+      "Setting4Spacer": "--------------------------------------------------------------------",
+      "Setting4Tooltip": "",
+      "Setting4Title": "",
+      "Setting4TextFieldLabel": "",
+      "Setting5Spacer": "--------------------------------------------------------------------",
+      "Setting5Tooltip": "",
+      "Setting5Title": "",
+      "Setting5TextFieldLabel": ""
+    },
 
-    "Top Gear": { "Title": "Top GearFR" },
+    "TopGear": {
+      "Title": "Top GearFR",
+      "HelpText": "Top Gear allows you to generate an entire gear set at once. Start by entering your SimC string above, then click to highlight any items you want included in the comparison. When you're all set, hit 'Go' at the bottom of the page. To enter items manually, return to the main menu and include them in QE Quick Compare. Great Vault items are added automatically though for the first week consider your choice carefully outside of the appFR.",
+      "ItemsHereMessage": "Your items will go here after you importFR.",
+      "GoMsg": "Go!FR",
+      "SelectedItems": "Selected ItemsFR",
+      "StatPanel": { "AvgStats": "Average Stats (includes procs)FR" }
+    },
 
     "DruidLegendariesComment": "DruidLegendariesComment",
     "Vision of Unending Growth": {
