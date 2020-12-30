@@ -66,7 +66,7 @@ export default function TopGearSettingsAccordion() {
 
   return (
     <div className={classes.root}>
-      <Accordion defaultExpanded={false} elevation={0}>
+      <Accordion defaultExpanded={false} disabled={true} elevation={0}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1c-content"
