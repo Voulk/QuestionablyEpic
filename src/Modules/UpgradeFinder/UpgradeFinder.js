@@ -13,7 +13,7 @@ import {
 import { useTranslation } from "react-i18next";
 import bossHeaders from "../CooldownPlanner/Functions/IconFunctions/BossHeaderIcons";
 import DungeonHeaderIcons from "../CooldownPlanner/Functions/IconFunctions/DungeonHeaderIcons";
-
+import {runUpgradeFinder} from "./UpgradeFinderEngine";
 import { bossList, raidList, dungeonList } from "../CooldownPlanner/Data/Data";
 
 import ReactGA from "react-ga";
@@ -54,6 +54,10 @@ function a11yPropsVert(index) {
   };
 }
 
+// Test
+runUpgradeFinder();
+//
+
 const useStyles = makeStyles((theme) => ({
   root: {
     justifyContent: "center",
@@ -85,6 +89,8 @@ export default function UpgradeFinder(props) {
   const [tabvalue, setTabValue] = React.useState(0);
   const [gearSource, setGearSource] = React.useState(0);
   const { t, i18n } = useTranslation();
+
+
 
   const handleTabChange = (event, newValue) => {
     setTabValue(newValue);

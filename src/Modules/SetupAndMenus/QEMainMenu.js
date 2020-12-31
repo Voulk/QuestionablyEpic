@@ -15,9 +15,12 @@ import HallOfFame from "../HallOfFame/HallOfFame";
 // [route, show button?, tooltip]
 const mainMenuOptions = {
   "MainMenu.TopGear": ["/topgear", true, "TopGear"],
+  "MainMenu.UpgradeFinder": ["/upgradefinder", false, "UpgradeFinder"],
   "MainMenu.QuickCompare": ["/quickcompare", true, "QuickCompare"],
   "MainMenu.ExploreCovenants": ["/soulbinds", true, "ExploreCovenants"],
   "MainMenu.LegendaryAnalysis": ["/legendaries", true, "LegendaryAnalysis"],
+  "MainMenu.TrinketAnalysis": ["/trinkets", false, "TrinketAnalysis"],
+  
   //"MainMenu.GreatVault": ["/greatvault", false, "GreatVault"],
   "MainMenu.CooldownPlanner": ["/holydiver", false, "CooldownPlanner"],
   "MainMenu.Profile": ["/profile", true, "Profile"],
@@ -25,8 +28,7 @@ const mainMenuOptions = {
 };
 
 /* Buttons to be added back.
-  "MainMenu.UpgradeFinder": ["/upgradefinder", false],
-  "MainMenu.TrinketAnalysis": ["/trinkets", false],
+
 */
 
 const useStyles = makeStyles((theme) => ({
