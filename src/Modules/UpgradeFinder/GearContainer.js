@@ -129,4 +129,3 @@ export default function RaidGearContainer(props) {
     </div>
   );
 }
-s;

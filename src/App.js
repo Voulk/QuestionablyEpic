@@ -514,7 +514,7 @@ class App extends Component {
 
                 <Route
                   path="/UpgradeFinder/"
-                  render={() => <UpgradeFinder />}
+                  render={() => <UpgradeFinder pl={activePlayer} />}
                 />
                 <Route
                   path="/profile/"
