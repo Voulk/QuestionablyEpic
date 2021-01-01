@@ -12,13 +12,9 @@ import {
 } from "@material-ui/core";
 import { useTranslation } from "react-i18next";
 import DungeonHeaderIcons from "../CooldownPlanner/Functions/IconFunctions/DungeonHeaderIcons";
-import {runUpgradeFinder} from "./UpgradeFinderEngine";
+import { runUpgradeFinder } from "./UpgradeFinderEngine";
 import { bossList, raidList, dungeonList } from "../CooldownPlanner/Data/Data";
-<<<<<<< Updated upstream
-
-=======
 import GearContainer from "./GearContainer";
->>>>>>> Stashed changes
 import ReactGA from "react-ga";
 
 function TabPanel(props) {
@@ -68,13 +64,8 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: "auto",
     marginRight: "auto",
     flexGrow: 1,
-<<<<<<< Updated upstream
-    backgroundColor: theme.palette.background.paper,
-    maxWidth: 1014,
-=======
     // backgroundColor: theme.palette.background.paper,
     maxWidth: "70%",
->>>>>>> Stashed changes
   },
   panel: {
     flexGrow: 1,
@@ -97,8 +88,6 @@ export default function UpgradeFinder(props) {
   const [tabvalue, setTabValue] = React.useState(0);
   const [gearSource, setGearSource] = React.useState(0);
   const { t, i18n } = useTranslation();
-
-
 
   const handleTabChange = (event, newValue) => {
     setTabValue(newValue);
@@ -172,63 +161,7 @@ export default function UpgradeFinder(props) {
         {/* Raid */}
         <TabPanel value={tabvalue} index={0}>
           <div className={classes.panel}>
-<<<<<<< Updated upstream
-            <Tabs
-              orientation="vertical"
-              value={gearSource}
-              onChange={handleChange2}
-              aria-label="Vertical tabs example"
-              className={classes.tabs}
-              variant="scrollable"
-              scrollButtons="auto"
-              indicatorColor="primary"
-              //   TabIndicatorProps={{ style: { backgroundColor: "#F2BF59" } }}
-            >
-              {bossList
-                .filter((filter) => filter.zoneID === 2296)
-                .map((key) => (
-                  <Tab
-                    style={{
-                      color: "white",
-                      padding: 0,
-                      fontSize: "12px",
-                      width: 100,
-                    }}
-                    icon={bossHeaders(key.id, {
-                      height: 64,
-                      width: 128,
-                      verticalAlign: "middle",
-                      marginRight: "-25px",
-                    })}
-                    label={t("BossNames." + key.id)}
-                    {...a11yPropsVert(0)}
-                  />
-                ))}
-            </Tabs>
-            <TabPanel
-              value={gearSource}
-              index={0}
-              style={{ display: "inline-flex" }}
-            >
-              3
-            </TabPanel>
-            <TabPanel
-              value={gearSource}
-              index={1}
-              style={{ display: "inline-flex" }}
-            >
-              2
-            </TabPanel>
-            <TabPanel
-              value={gearSource}
-              index={2}
-              style={{ display: "inline-flex" }}
-            >
-              1
-            </TabPanel>
-=======
             <GearContainer pl={props.pl} type="raid" />
->>>>>>> Stashed changes
           </div>
         </TabPanel>
 
