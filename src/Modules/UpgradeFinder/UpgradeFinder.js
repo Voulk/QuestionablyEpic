@@ -11,11 +11,14 @@ import {
   Typography,
 } from "@material-ui/core";
 import { useTranslation } from "react-i18next";
-import bossHeaders from "../CooldownPlanner/Functions/IconFunctions/BossHeaderIcons";
 import DungeonHeaderIcons from "../CooldownPlanner/Functions/IconFunctions/DungeonHeaderIcons";
 import {runUpgradeFinder} from "./UpgradeFinderEngine";
 import { bossList, raidList, dungeonList } from "../CooldownPlanner/Data/Data";
+<<<<<<< Updated upstream
 
+=======
+import GearContainer from "./GearContainer";
+>>>>>>> Stashed changes
 import ReactGA from "react-ga";
 
 function TabPanel(props) {
@@ -65,14 +68,19 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: "auto",
     marginRight: "auto",
     flexGrow: 1,
+<<<<<<< Updated upstream
     backgroundColor: theme.palette.background.paper,
     maxWidth: 1014,
+=======
+    // backgroundColor: theme.palette.background.paper,
+    maxWidth: "70%",
+>>>>>>> Stashed changes
   },
   panel: {
     flexGrow: 1,
     backgroundColor: "#191c23",
     display: "flex",
-    height: 700,
+    borderRadius: "0px 0px 4px 4px",
   },
   tabs: {
     borderRight: `1px solid ${theme.palette.divider}`,
@@ -114,7 +122,10 @@ export default function UpgradeFinder(props) {
       <div className={classes.root}>
         <AppBar
           position="static"
-          style={{ backgroundColor: "#424242" }}
+          style={{
+            backgroundColor: "#424242",
+            borderRadius: "4px 4px 0px 0px",
+          }}
           elevation={0}
         >
           <Tabs
@@ -158,9 +169,10 @@ export default function UpgradeFinder(props) {
           </Tabs>
         </AppBar>
 
-        {/* Shriekwing */}
+        {/* Raid */}
         <TabPanel value={tabvalue} index={0}>
           <div className={classes.panel}>
+<<<<<<< Updated upstream
             <Tabs
               orientation="vertical"
               value={gearSource}
@@ -214,66 +226,38 @@ export default function UpgradeFinder(props) {
             >
               1
             </TabPanel>
+=======
+            <GearContainer pl={props.pl} type="raid" />
+>>>>>>> Stashed changes
           </div>
         </TabPanel>
 
         {/* Mythic Plus */}
         <TabPanel value={tabvalue} index={1}>
           <div className={classes.panel}>
-            <Tabs
-              orientation="vertical"
-              value={gearSource}
-              onChange={handleChange2}
-              aria-label="Vertical tabs example"
-              className={classes.tabs}
-              variant="scrollable"
-              scrollButtons="auto"
-              TabIndicatorProps={{ style: { backgroundColor: "#F2BF59" } }}
-            >
-              {dungeonList.map((key) => (
-                <Tab
-                  style={{
-                    color: "white",
-                    padding: 0,
-                    fontSize: "12px",
-                    width: 100,
-                  }}
-                  icon={DungeonHeaderIcons(key.zoneID, {
-                    height: 64,
-                    width: 128,
-                    verticalAlign: "middle",
-                    marginRight: "-25px",
-                  })}
-                  label={t("DungeonNames." + key.zoneID)}
-                  {...a11yPropsVert(0)}
-                />
-              ))}
-            </Tabs>
-
-            <TabPanel
-              value={gearSource}
-              index={0}
-              style={{ display: "inline-flex" }}
-            >
-              test4
-            </TabPanel>
-            <TabPanel
-              value={gearSource}
-              index={1}
-              style={{ display: "inline-flex" }}
-            >
-              test3
-            </TabPanel>
-            <TabPanel
-              value={gearSource}
-              index={2}
-              style={{ display: "inline-flex" }}
-            >
-              test2
-            </TabPanel>
+            <GearContainer pl={props.pl} type="dungeon" />
           </div>
         </TabPanel>
       </div>
     </div>
   );
 }
+
+// {dungeonList.map((key) => (
+//   <Tab
+//     style={{
+//       color: "white",
+//       padding: 0,
+//       fontSize: "12px",
+//       width: 100,
+//     }}
+//     icon={DungeonHeaderIcons(key.zoneID, {
+//       height: 64,
+//       width: 128,
+//       verticalAlign: "middle",
+//       marginRight: "-25px",
+//     })}
+//     label={t("DungeonNames." + key.zoneID)}
+//     {...a11yPropsVert(0)}
+//   />
+// ))}

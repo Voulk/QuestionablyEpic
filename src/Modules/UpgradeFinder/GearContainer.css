@@ -1,0 +1,45 @@
+.container-UpgradeCards {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+/* Bottom left text */
+.bottom-left-UpgradeCards {
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+}
+
+/* Top left text */
+.top-left-UpgradeCards {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+}
+
+/* Top right text */
+.top-right-UpgradeCards {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+}
+
+/* Bottom right text */
+.bottom-right-UpgradeCards {
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+  font-weight: bold;
+  font-size: 16px;
+  text-shadow: 1px 1px 4px black;
+}
+
+/* Centered text */
+.centered-UpgradeCards {
+  position: absolute;
+  text-shadow: 1px 1px 4px black;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
