@@ -125,7 +125,12 @@ export default function UpgradeFinder(props) {
             <Tab
               icon={
                 <div className="container">
-                  <div className="centered-ItemCards"> Castle Nathria </div>
+                  <div
+                    className="centered-ItemCards"
+                    style={{ fontSize: "1.1rem" }}
+                  >
+                    Castle Nathria
+                  </div>
                 </div>
               }
               {...a11yProps(0)}
@@ -137,7 +142,7 @@ export default function UpgradeFinder(props) {
                 borderRadius: "4px 0px 0px 0px",
                 height: 75,
                 whiteSpace: "nowrap",
-                textShadow: "1px 1px 4px black",
+                textShadow: "3px 3px 4px black",
               }}
             />
 
@@ -151,7 +156,9 @@ export default function UpgradeFinder(props) {
                     }
                     alt="Night Fae"
                   /> */}
-                  <div className="centered"> Mythic Plus </div>
+                  <div className="centered" style={{ fontSize: "1.1rem" }}>
+                    Mythic Plus
+                  </div>
                 </div>
               }
               {...a11yProps(1)}
@@ -161,7 +168,7 @@ export default function UpgradeFinder(props) {
                     .default
                 })`,
                 whiteSpace: "nowrap",
-                textShadow: "1px 1px 4px black",
+                textShadow: "3px 3px 4px black",
               }}
             />
             <Tab
@@ -174,7 +181,9 @@ export default function UpgradeFinder(props) {
                     }
                     alt="Night Fae"
                   />*/}
-                  <div className="centered"> PVP </div>
+                  <div className="centered" style={{ fontSize: "1.1rem" }}>
+                    PvP
+                  </div>
                 </div>
               }
               {...a11yProps(2)}
@@ -185,7 +194,7 @@ export default function UpgradeFinder(props) {
                 borderRadius: "4px 0px 0px 0px",
                 height: 75,
                 whiteSpace: "nowrap",
-                textShadow: "1px 1px 4px black",
+                textShadow: "3px 3px 4px black",
               }}
             />
             <Tab
@@ -198,7 +207,9 @@ export default function UpgradeFinder(props) {
                     }
                     alt="Night Fae"
                   /> */}
-                  <div className="centered"> World Bosses </div>
+                  <div className="centered" style={{ fontSize: "1.1rem" }}>
+                    World Bosses
+                  </div>
                 </div>
               }
               {...a11yProps(3)}
@@ -208,7 +219,7 @@ export default function UpgradeFinder(props) {
                 })`,
                 borderRadius: "0px 4px 0px 0px",
                 whiteSpace: "nowrap",
-                textShadow: "1px 1px 4px black",
+                textShadow: "3px 3px 4px black",
               }}
             />
           </Tabs>
