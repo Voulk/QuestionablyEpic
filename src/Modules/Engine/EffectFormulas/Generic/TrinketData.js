@@ -75,7 +75,7 @@ export const trinket_data = [
                 benefit: 'hps', 
                 coefficient: 467.66378, // This represents the upper quartile of the given cards.  
                 table: -8, 
-                efficiency: {Raid: 0.52, Dungeon: 0.4},
+                efficiency: {Raid: 0.51, Dungeon: 0.4},
                 cooldown: 90, 
             }
         ]
@@ -339,7 +339,7 @@ export const trinket_data = [
         effects: [
             { 
                 coefficient: 1.99949,
-                table: -1,  
+                table: -7,  
                 duration: 10, 
                 ppm: {"Restoration Druid": 1.2, "Discipline Priest": 1.5, "Holy Paladin": 1.5, 
                     "Mistweaver Monk": 1.4, "Restoration Shaman": 1.2, "Holy Priest": 1.2}, 
@@ -352,7 +352,7 @@ export const trinket_data = [
         effects: [
             { 
                 coefficient: 2.399108,
-                table: -1,  
+                table: -7,  
                 duration: 20, 
                 cooldown: 120,
             }
@@ -411,7 +411,7 @@ export const trinket_data = [
         effects: [
             { 
                 coefficient: 2.39909,
-                table: -1,  
+                table: -7,  
                 duration: 20, 
                 cooldown: 120,
 
