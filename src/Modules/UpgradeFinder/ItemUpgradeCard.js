@@ -145,21 +145,26 @@ export default function ItemCard(props) {
                 display: "inline-flex",
               }}
             >
-              <div className="container-ItemCards">
-                <img
-                  alt="img"
-                  width={56}
-                  height={56}
-                  src={getItemIcon(item.id)}
-                  style={{
-                    borderRadius: 4,
-                    borderWidth: "1px",
-                    borderStyle: "solid",
-                    borderColor: itemQuality(itemLevel),
-                  }}
-                />
-                <div className="bottom-right-ItemCards"> {item.level} </div>
-              </div>
+              <a
+                data-wowhead={"item=" + item.id + "&" + "ilvl=" + item.level}
+                key={i}
+              >
+                <div className="container-ItemCards">
+                  <img
+                    alt="img"
+                    width={28}
+                    height={28}
+                    src={getItemIcon(item.id)}
+                    style={{
+                      borderRadius: 4,
+                      borderWidth: "1px",
+                      borderStyle: "solid",
+                      borderColor: itemQuality(itemLevel),
+                    }}
+                  />
+                  <div className="bottom-right-ItemCards"> {item.level} </div>
+                </div>
+              </a>
             </CardContent>
           </Grid>
           <Divider orientation="vertical" flexItem />
@@ -213,27 +218,6 @@ export default function ItemCard(props) {
                     }}
                   >
                     {Math.round(props.item.softScore)}
-                  </Typography>
-                </Grid>
-              </Grid>
-              <Divider />
-              <Grid
-                item
-                container
-                display="inline"
-                direction="row"
-                xs="auto"
-                justify="space-between"
-              >
-                <Grid item xs={11}>
-                  <Typography
-                    variant="subtitle2"
-                    wrap="nowrap"
-                    display="block"
-                    style={{ paddingTop: "4px" }}
-                    align="left"
-                  >
-                    {statString}
                   </Typography>
                 </Grid>
               </Grid>

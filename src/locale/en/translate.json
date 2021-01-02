@@ -362,6 +362,10 @@
       "StatPanel": { "AvgStats": "Average Stats (includes procs)" }
     },
 
+    "UpgradeFinder": {
+      "Header": "Upgrade Finder"
+    },
+
     "DruidLegendariesComment": "DruidLegendariesComment",
     "Vision of Unending Growth": {
       "name": "Vision of Unending Growth",

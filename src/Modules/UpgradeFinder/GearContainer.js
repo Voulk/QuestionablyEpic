@@ -33,98 +33,148 @@ export default function RaidGearContainer(props) {
   const classes = useStyles();
   const { t, i18n } = useTranslation();
 
+  const contentGenerator = (type) => {
+    if (type === "raid") {
+      return bossList
+        .filter((key) => key.zoneID === 2296)
+        .map((key) => (
+          <Grid item xs={12}>
+            <Grid container spacing={2}>
+              <Grid item>
+                <div
+                  style={{ width: 200, paddingLeft: 10 }}
+                  className="container-UpgradeCards"
+                >
+                  {bossHeaders(key.id)}
+                  <Typography
+                    variant="h6"
+                    noWrap
+                    className="centered-UpgradeCards"
+                  >
+                    {t("BossNames." + key.id)}
+                  </Typography>
+                </div>
+              </Grid>
+              <Divider
+                orientation="vertical"
+                flexItem
+                style={{ marginRight: 4 }}
+              />
+              <Grid item xs={12} sm container direction="column" spacing={1}>
+                <Grid item xs={12} sm container direction="row" spacing={1}>
+                  <Grid item xs={1}>
+                    <Typography
+                      variant="h6"
+                      color="primary"
+                      align="center"
+                      style={{
+                        backgroundColor: "rgba(255, 255, 255, 0.12)",
+                        height: "100%",
+                        borderRadius: 4,
+                      }}
+                    >
+                      Mythic
+                    </Typography>
+                  </Grid>
+                  <Grid item xs={11} sm container spacing={1}>
+                    {[...props.pl.getActiveItems("1H Weapon")].map(
+                      (item, index) => (
+                        <ItemUpgradeCard key={index} item={item} />
+                      )
+                    )}
+                  </Grid>
+                </Grid>
+
+                <Grid item>
+                  <Divider />
+                </Grid>
+
+                <Grid item xs={12} sm container direction="row" spacing={1}>
+                  <Grid item xs={1}>
+                    <Typography
+                      variant="h6"
+                      color="primary"
+                      align="center"
+                      style={{
+                        backgroundColor: "rgba(255, 255, 255, 0.12)",
+                        height: "100%",
+                        borderRadius: 4,
+                      }}
+                    >
+                      Heroic
+                    </Typography>
+                  </Grid>
+                  <Grid item xs={11} sm container spacing={1}>
+                    {[...props.pl.getActiveItems("1H Weapon")].map(
+                      (item, index) => (
+                        <ItemUpgradeCard key={index} item={item} />
+                      )
+                    )}
+                  </Grid>
+                </Grid>
+              </Grid>
+            </Grid>
+          </Grid>
+        ))
+        .map((key) => [
+          key,
+          <Grid item xs={12}>
+            <Divider />
+          </Grid>,
+        ]);
+    }
+    if (type === "dungeon") {
+      return dungeonList
+        .map((key) => (
+          <Grid item xs={12}>
+            <Grid container spacing={2}>
+              <Grid item>
+                <div
+                  style={{ width: 200, paddingLeft: 10 }}
+                  className="container-UpgradeCards"
+                >
+                  {DungeonHeaderIcons(key.zoneID, {
+                    verticalAlign: "middle",
+                    marginRight: "-75px",
+                  })}
+                  <Typography
+                    variant="h6"
+                    noWrap
+                    className="centered-UpgradeCards-Dungeons"
+                  >
+                    {t("DungeonNames." + key.zoneID)}
+                  </Typography>
+                </div>
+              </Grid>
+
+              <Grid item xs={12} sm container spacing={1}>
+                <Divider
+                  orientation="vertical"
+                  flexItem
+                  style={{ marginRight: 4 }}
+                />
+                {[...props.pl.getActiveItems("1H Weapon")].map(
+                  (item, index) => (
+                    <ItemUpgradeCard key={index} item={item} />
+                  )
+                )}
+              </Grid>
+            </Grid>
+          </Grid>
+        ))
+        .map((key) => [
+          key,
+          <Grid item xs={12}>
+            <Divider />
+          </Grid>,
+        ]);
+    }
+  };
+
   return (
     <div className={classes.root}>
       <Grid container spacing={1}>
-        {props.type === "raid"
-          ? bossList
-              .filter((key) => key.zoneID === 2296)
-              .map((key) => (
-                <Grid item xs={12}>
-                  <Grid container spacing={2}>
-                    <Grid item>
-                      <div
-                        style={{ width: 200, paddingLeft: 10 }}
-                        className="container-UpgradeCards"
-                      >
-                        {bossHeaders(key.id)}
-                        <Typography
-                          variant="h6"
-                          noWrap
-                          className="centered-UpgradeCards"
-                        >
-                          {t("BossNames." + key.id)}
-                        </Typography>
-                      </div>
-                    </Grid>
-
-                    <Grid item xs={12} sm container spacing={1}>
-                      <Divider
-                        orientation="vertical"
-                        flexItem
-                        style={{ marginRight: 4 }}
-                      />
-                      {[...props.pl.getActiveItems("1H Weapon")].map(
-                        (item, index) => (
-                          <ItemUpgradeCard key={index} item={item} />
-                        )
-                      )}
-                    </Grid>
-                  </Grid>
-                </Grid>
-              ))
-              .map((key) => [
-                key,
-                <Grid item xs={12}>
-                  <Divider />
-                </Grid>,
-              ])
-          : dungeonList
-              .map((key) => (
-                <Grid item xs={12}>
-                  <Grid container spacing={2}>
-                    <Grid item>
-                      <div
-                        style={{ width: 200, paddingLeft: 10 }}
-                        className="container-UpgradeCards"
-                      >
-                        {DungeonHeaderIcons(key.zoneID, {
-                          height: 64,
-                          width: 128,
-                          verticalAlign: "middle",
-                          marginRight: "-25px",
-                        })}
-                        <Typography
-                          variant="h6"
-                          noWrap
-                          className="centered-UpgradeCards"
-                        >
-                          {t("DungeonNames." + key.zoneID)}
-                        </Typography>
-                      </div>
-                    </Grid>
-
-                    <Grid item xs={12} sm container spacing={1}>
-                      <Divider
-                        orientation="vertical"
-                        flexItem
-                        style={{ marginRight: 4 }}
-                      />
-                      {[...props.pl.getActiveItems("1H Weapon")].map(
-                        (item, index) => (
-                          <ItemUpgradeCard key={index} item={item} />
-                        )
-                      )}
-                    </Grid>
-                  </Grid>
-                </Grid>
-              ))
-              .map((key) => [
-                key,
-                <Grid item xs={12}>
-                  <Divider />
-                </Grid>,
-              ])}
+        {contentGenerator(props.type)}
       </Grid>
     </div>
   );
