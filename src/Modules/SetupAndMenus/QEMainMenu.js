@@ -15,7 +15,8 @@ import HallOfFame from "../HallOfFame/HallOfFame";
 // [route, show button?, tooltip]
 const mainMenuOptions = {
   "MainMenu.TopGear": ["/topgear", true, "TopGear"],
-  "MainMenu.UpgradeFinder": ["/upgradefinder", true, "UpgradeFinder"],
+  "MainMenu.UpgradeFinder": ["/UpgradeFinderReport", true, "UpgradeFinder"],
+  "MainMenu.UpgradeFinderFront": ["/UpgradeFinderFront", true, "UpgradeFinder"],
   "MainMenu.QuickCompare": ["/quickcompare", true, "QuickCompare"],
   "MainMenu.ExploreCovenants": ["/soulbinds", true, "ExploreCovenants"],
   "MainMenu.LegendaryAnalysis": ["/legendaries", true, "LegendaryAnalysis"],

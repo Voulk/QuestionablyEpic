@@ -118,7 +118,7 @@ export default function UpgradeFinderResults(props) {
   };
 
   return (
-    <div>
+    <div className={classes.root}>
       <Typography
         variant="h4"
         color="primary"
@@ -127,77 +127,75 @@ export default function UpgradeFinderResults(props) {
       >
         {t("UpgradeFinder.Header")}
       </Typography>
-      <div className={classes.root}>
-        <AppBar
-          position="static"
-          style={{
-            backgroundColor: "#000",
-            borderRadius: "4px 4px 0px 0px",
-          }}
-          elevation={0}
+      <AppBar
+        position="static"
+        style={{
+          backgroundColor: "#000",
+          borderRadius: "4px 4px 0px 0px",
+        }}
+        elevation={0}
+      >
+        <Tabs
+          value={tabvalue}
+          onChange={handleTabChange}
+          aria-label="simple tabs example"
+          variant="fullWidth"
+          TabIndicatorProps={{ style: { backgroundColor: "#F2BF59" } }}
         >
-          <Tabs
-            value={tabvalue}
-            onChange={handleTabChange}
-            aria-label="simple tabs example"
-            variant="fullWidth"
-            TabIndicatorProps={{ style: { backgroundColor: "#F2BF59" } }}
-          >
-            {/* Raid */}
-            <Tab
-              className={classes.raidHeaderStyle}
-              label="Castle Nathria"
-              {...a11yProps(0)}
-            />
-            {/* Mythic Plus */}
-            <Tab
-              className={classes.mythicPlusHeaderStyle}
-              label="Mythic Plus"
-              {...a11yProps(1)}
-            />
-            {/* PVP */}
-            <Tab
-              className={classes.pvpHeaderStyle}
-              label="PvP"
-              {...a11yProps(2)}
-            />
-            {/* World Bosses */}
-            <Tab
-              className={classes.worldBossHeaderStyle}
-              label="World Bosses"
-              {...a11yProps(3)}
-            />
-          </Tabs>
-        </AppBar>
+          {/* Raid */}
+          <Tab
+            className={classes.raidHeaderStyle}
+            label="Castle Nathria"
+            {...a11yProps(0)}
+          />
+          {/* Mythic Plus */}
+          <Tab
+            className={classes.mythicPlusHeaderStyle}
+            label="Mythic Plus"
+            {...a11yProps(1)}
+          />
+          {/* PVP */}
+          <Tab
+            className={classes.pvpHeaderStyle}
+            label="PvP"
+            {...a11yProps(2)}
+          />
+          {/* World Bosses */}
+          <Tab
+            className={classes.worldBossHeaderStyle}
+            label="World Bosses"
+            {...a11yProps(3)}
+          />
+        </Tabs>
+      </AppBar>
 
-        {/* Raid */}
-        <TabPanel value={tabvalue} index={0}>
-          <div className={classes.panel}>
-            <RaidGearContainer pl={props.pl} items="" />
-          </div>
-        </TabPanel>
+      {/* Raid */}
+      <TabPanel value={tabvalue} index={0}>
+        <div className={classes.panel}>
+          <RaidGearContainer pl={props.pl} items="" />
+        </div>
+      </TabPanel>
 
-        {/* Mythic Plus */}
-        <TabPanel value={tabvalue} index={1}>
-          <div className={classes.panel}>
-            <MythicPlusGearContainer pl={props.pl} items="" />
-          </div>
-        </TabPanel>
+      {/* Mythic Plus */}
+      <TabPanel value={tabvalue} index={1}>
+        <div className={classes.panel}>
+          <MythicPlusGearContainer pl={props.pl} items="" />
+        </div>
+      </TabPanel>
 
-        {/* PVP */}
-        <TabPanel value={tabvalue} index={2}>
-          <div className={classes.panel}>
-            <PvPGearContainer pl={props.pl} items="" />
-          </div>
-        </TabPanel>
+      {/* PVP */}
+      <TabPanel value={tabvalue} index={2}>
+        <div className={classes.panel}>
+          <PvPGearContainer pl={props.pl} items="" />
+        </div>
+      </TabPanel>
 
-        {/* World Bosses */}
-        <TabPanel value={tabvalue} index={3}>
-          <div className={classes.panel}>
-            <WorldBossGearContainer pl={props.pl} items="" />
-          </div>
-        </TabPanel>
-      </div>
+      {/* World Bosses */}
+      <TabPanel value={tabvalue} index={3}>
+        <div className={classes.panel}>
+          <WorldBossGearContainer pl={props.pl} items="" />
+        </div>
+      </TabPanel>
     </div>
   );
 }

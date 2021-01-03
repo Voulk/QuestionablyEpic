@@ -10,7 +10,8 @@ import QEHeader from "./Modules/SetupAndMenus/QEHeader";
 import TopGearReport from "./Modules/TopGear/TopGearReport";
 import QEProfile from "./Modules/SetupAndMenus/QEProfile";
 import PlayerChars from "./Modules/Player/PlayerChars";
-import SimpleTabs from "./Modules/Covenants/Components/CovenantExploration";
+import CovenantExploration from "./Modules/Covenants/Components/CovenantExploration";
+import UpgradeFinderFront from "./Modules/UpgradeFinder/UpgradeFinderFront";
 import { ConfirmLogin, QELogin } from "./Modules/SetupAndMenus/QELogin";
 import { withTranslation } from "react-i18next";
 import i18n from "./i18n";
@@ -487,7 +488,7 @@ class App extends Component {
                 <Route
                   path="/soulbinds"
                   render={() => (
-                    <SimpleTabs
+                    <CovenantExploration
                       pl={activePlayer}
                       contentType={this.state.contentType}
                       updatePlayerChar={this.updatePlayerChar}
@@ -513,7 +514,11 @@ class App extends Component {
                 />
 
                 <Route
-                  path="/UpgradeFinder/"
+                  path="/UpgradeFinderFront/"
+                  render={() => <UpgradeFinderFront pl={activePlayer} />}
+                />
+                <Route
+                  path="/UpgradeFinderReport/"
                   render={() => <UpgradeFinderResults pl={activePlayer} />}
                 />
                 <Route
