@@ -77,9 +77,54 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: "#191c23",
     display: "flex",
     height: 700,
+    borderRadius: "0px 0px 4px 4px",
   },
   tabs: {
     borderRight: `1px solid ${theme.palette.divider}`,
+  },
+  kyrianHeaderStyle: {
+    backgroundImage: `url(${
+      require("../../../Images/Classes/Paladin/CovenantAbilities/VanquishersHammer.jpg")
+        .default
+    })`,
+    borderRadius: "4px 0px 0px 0px",
+    // height: 75,
+    // whiteSpace: "nowrap",
+    // textShadow: "3px 3px 4px black",
+    // color: "#fff",
+    // fontSize: "1.1rem",
+  },
+  nightFaeHeaderStyle: {
+    backgroundImage: `url(${
+      require("../../../Images/Classes/Paladin/CovenantAbilities/VanquishersHammer.jpg")
+        .default
+    })`,
+    // height: 75,
+    // whiteSpace: "nowrap",
+    // textShadow: "3px 3px 4px black",
+    // color: "#fff",
+    // fontSize: "1.1rem",
+  },
+  venthyrHeaderStyle: {
+    backgroundImage: `url(${
+      require("../../../Images/VenthyrHeader.png").default
+    })`,
+    // height: 75,
+    // whiteSpace: "nowrap",
+    // textShadow: "3px 3px 4px black",
+    // color: "#fff",
+    // fontSize: "1.1rem",
+  },
+  necrolordHeaderStyle: {
+    backgroundImage: `url(${
+      require("../../../Images/NecroHeader.png").default
+    })`,
+    borderRadius: "0px 4px 0px 0px",
+    // height: 75,
+    // whiteSpace: "nowrap",
+    // textShadow: "3px 3px 4px black",
+    // color: "#fff",
+    // fontSize: "1.1rem",
   },
 }));
 
@@ -151,7 +196,7 @@ export default function SimpleTabs(props) {
     <div className={classes.root}>
       <AppBar
         position="static"
-        style={{ backgroundColor: "#424242" }}
+        style={{ backgroundColor: "#000", borderRadius: "4px 4px 0px 0px" }}
         elevation={0}
       >
         <Tabs
@@ -162,6 +207,7 @@ export default function SimpleTabs(props) {
           TabIndicatorProps={{ style: { backgroundColor: "#F2BF59" } }}
         >
           <Tab
+            className={classes.kyrianHeaderStyle}
             icon={
               <div className="container">
                 <img
@@ -178,6 +224,7 @@ export default function SimpleTabs(props) {
             {...a11yProps(0)}
           />
           <Tab
+            className={classes.kyrianHeaderStyle}
             icon={
               <div className="container">
                 <img
@@ -193,6 +240,7 @@ export default function SimpleTabs(props) {
             {...a11yProps(1)}
           />
           <Tab
+            className={classes.venthyrHeaderStyle}
             icon={
               <div className="container">
                 <img
@@ -209,6 +257,7 @@ export default function SimpleTabs(props) {
             {...a11yProps(2)}
           />
           <Tab
+            className={classes.necrolordHeaderStyle}
             icon={
               <div className="container">
                 <img
