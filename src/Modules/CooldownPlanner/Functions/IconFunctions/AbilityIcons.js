@@ -32,6 +32,7 @@ import BonedustBrewIcon from "../../../../Images/Classes/Monk/CovenantAbilities/
 import FaelineStompIcon from "../../../../Images/Classes/Monk/CovenantAbilities/FaelineStomp.jpg";
 import DarknessIcon from "../../../../Images/Classes/DemonHunter/DemonHunterIcon.jpg";
 import RallyingCryIcon from "../../../../Images/Classes/Warrior/RallyingCryIcon.jpg";
+import SpiritShellIcon from "../../../../Images/Classes/Priest/Specialisation/Discipline/Icons/Talents/SpiritShellIcon.jpg";
 
 // Should probably work this off GUID
 
@@ -126,6 +127,11 @@ export default function abilityIcons(props) {
     spell = "spell=246287";
     source = EvangelismIcon;
     alt = "Evangelism";
+  }
+  if (props === 109964) {
+    spell = "spell=109964";
+    source = SpiritShellIcon;
+    alt = "Spirit Shell";
   }
   // Priest Covenant Abilities
   if (props === 325013) {
