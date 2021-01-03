@@ -29,7 +29,7 @@ import { dbCheckPatron } from "./Modules/SetupAndMenus/ConnectionUtilities";
 import ReactGA from "react-ga";
 import ItemSet from "./Modules/TopGear/ItemSet";
 
-import UpgradeFinder from "./Modules/UpgradeFinder/UpgradeFinder";
+import UpgradeFinderResults from "./Modules/UpgradeFinder/UpgradeFinderResults";
 
 const theme = createMuiTheme({
   palette: {
@@ -514,7 +514,7 @@ class App extends Component {
 
                 <Route
                   path="/UpgradeFinder/"
-                  render={() => <UpgradeFinder pl={activePlayer} />}
+                  render={() => <UpgradeFinderResults pl={activePlayer} />}
                 />
                 <Route
                   path="/profile/"

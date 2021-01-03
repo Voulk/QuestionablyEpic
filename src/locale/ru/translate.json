@@ -286,6 +286,18 @@
       "12837": "Шпили Перерождения"
     },
 
+    "PvPCurrency": {
+      "Honor": "Честь",
+      "Conquest": "Очки завоевания"
+    },
+
+    "WorldBosses": {
+      "167524": "Валинор",
+      "173104": "Мортанис",
+      "167527": "Ораномонос",
+      "167526": "Нургаш "
+    },
+
     "SimCInput": {
       "SimCStringLabel": "SimC StringRU",
       "SimCHeaderButtonLabel": "SimC",

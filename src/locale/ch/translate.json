@@ -288,6 +288,18 @@
       "12837": "晋升高塔"
     },
 
+    "PvPCurrency": {
+      "Honor": "荣誉点数",
+      "Conquest": "征服点数"
+    },
+
+    "WorldBosses": {
+      "167524": "Valinor",
+      "173104": "Mortanis",
+      "167527": "长青之枝",
+      "167526": "诺尔伽什"
+    },
+
     "SimCInput": {
       "SimCStringLabel": "SimC StringCH",
       "SimCHeaderButtonLabel": "SimC",

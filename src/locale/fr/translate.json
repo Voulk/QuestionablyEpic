@@ -283,6 +283,18 @@
       "12837": "Flèches de l’Ascension"
     },
 
+    "PvPCurrency": {
+      "Honor": "Honneur",
+      "Conquest": "Points de conquête"
+    },
+
+    "WorldBosses": {
+      "167524": "Valinor",
+      "173104": "Mortanis",
+      "167527": "Oranomonos",
+      "167526": "Nurgash"
+    },
+
     "SimCInput": {
       "SimCStringLabel": "SimC StringFR",
       "SimCHeaderButtonLabel": "SimC",

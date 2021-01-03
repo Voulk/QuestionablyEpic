@@ -288,6 +288,18 @@
       "12837": "Spitzen des Aufstiegs"
     },
 
+    "PvPCurrency": {
+      "Honor": "Ehre",
+      "Conquest": "Eroberung"
+    },
+
+    "WorldBosses": {
+      "167524": "Valinor",
+      "173104": "Mortanis",
+      "167527": "Oranomonos",
+      "167526": "Nurgash"
+    },
+
     "SimCInput": {
       "SimCStringLabel": "SimC StringDE",
       "SimCHeaderButtonLabel": "SimCDE",
