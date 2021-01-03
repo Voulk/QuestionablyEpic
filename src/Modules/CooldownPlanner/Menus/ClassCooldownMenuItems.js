@@ -13,6 +13,7 @@ import TranquilityIcon from "../../../Images/Classes/Druid/Specialisation/Restor
 import TreeofLifeIcon from "../../../Images/Classes/Druid/Specialisation/Restoration/Icons/TreeofLife.jpg";
 import DarknessIcon from "../../../Images/Classes/DemonHunter/DemonHunterIcon.jpg";
 import RallyingCryIcon from "../../../Images/Classes/Warrior/RallyingCryIcon.jpg";
+import SpiritShell from "../../../Images/Classes/Priest/Specialisation/Discipline/Icons/Talents/SpiritShellIcon.jpg";
 import { Translation } from "react-i18next";
 import Divider from "@material-ui/core/Divider";
 
@@ -140,6 +141,24 @@ export default function ClassCooldownMenuItems(props) {
   // Discipline Priest
   if (props === "DisciplinePriest") {
     return [
+      <MenuItem value={246287} key={8}>
+        <a data-wowhead="spell=246287">
+          <img
+            style={{
+              height: 20,
+              width: 20,
+              padding: "0px 5px 0px 5px",
+              verticalAlign: "middle",
+            }}
+            src={EvangelismIcon}
+            alt="Evangelism"
+          />
+        </a>
+        <Translation>
+          {(t) => t("CooldownPlanner.ClassAbilities.246287")}
+        </Translation>
+      </MenuItem>,
+      <Divider key={"divider4"} />,
       <MenuItem value={62618} key={7}>
         <a data-wowhead="spell=62618">
           <img
@@ -157,9 +176,9 @@ export default function ClassCooldownMenuItems(props) {
           {(t) => t("CooldownPlanner.ClassAbilities.62618")}
         </Translation>
       </MenuItem>,
-      <Divider key={"divider4"} />,
-      <MenuItem value={246287} key={8}>
-        <a data-wowhead="spell=246287">
+      <Divider key={"divider5"} />,
+      <MenuItem value={109964} key={7}>
+        <a data-wowhead="spell=109964">
           <img
             style={{
               height: 20,
@@ -167,12 +186,12 @@ export default function ClassCooldownMenuItems(props) {
               padding: "0px 5px 0px 5px",
               verticalAlign: "middle",
             }}
-            src={EvangelismIcon}
-            alt="Evangelism"
+            src={SpiritShell}
+            alt="109964"
           />
         </a>
         <Translation>
-          {(t) => t("CooldownPlanner.ClassAbilities.246287")}
+          {(t) => t("CooldownPlanner.ClassAbilities.109964")}
         </Translation>
       </MenuItem>,
     ];
@@ -197,7 +216,7 @@ export default function ClassCooldownMenuItems(props) {
           {(t) => t("CooldownPlanner.ClassAbilities.108280")}
         </Translation>
       </MenuItem>,
-      <Divider key={"divider5"} />,
+      <Divider key={"divider6"} />,
       <MenuItem value={98008} key={10}>
         <a data-wowhead="spell=98008">
           <img
