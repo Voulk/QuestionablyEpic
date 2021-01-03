@@ -1794,6 +1794,36 @@ export const dungeonList = [
   },
 ];
 
+export const pvpCurrency = [
+  {
+    name: "Honor",
+    icon: require("../../../Images/Bosses/HonorIcon.jpg").default,
+  },
+  {
+    name: "Conquest",
+    icon: require("../../../Images/Bosses/ConquestIcon.jpg").default,
+  },
+];
+
+export const worldBosses = [
+  {
+    name: "Valinor",
+    id: 167524,
+  },
+  {
+    name: "Mortanis",
+    id: 173104,
+  },
+  {
+    name: "Oranomonos",
+    id: 167527,
+  },
+  {
+    name: "Nurgash ",
+    id: 167526,
+  },
+];
+
 // Boss Notes?
 // Shriekwing - Reverberating Scream consists of large damage on hit, follwoed by a dot.
 export const serverList = {

@@ -14,7 +14,12 @@ import ItemUpgradeCard from "./ItemUpgradeCard";
 import bossHeaders from "../CooldownPlanner/Functions/IconFunctions/BossHeaderIcons";
 import DungeonHeaderIcons from "../CooldownPlanner/Functions/IconFunctions/DungeonHeaderIcons";
 import "./GearContainer.css";
-import { bossList, dungeonList } from "../CooldownPlanner/Data/Data";
+import {
+  bossList,
+  dungeonList,
+  pvpCurrency,
+  worldBosses,
+} from "../CooldownPlanner/Data/Data";
 import { useTranslation } from "react-i18next";
 
 const useStyles = makeStyles((theme) => ({
@@ -143,6 +148,94 @@ export default function RaidGearContainer(props) {
                     className="centered-UpgradeCards-Dungeons"
                   >
                     {t("DungeonNames." + key.zoneID)}
+                  </Typography>
+                </div>
+              </Grid>
+
+              <Grid item xs={12} sm container spacing={1}>
+                <Divider
+                  orientation="vertical"
+                  flexItem
+                  style={{ marginRight: 4 }}
+                />
+                {[...props.pl.getActiveItems("1H Weapon")].map(
+                  (item, index) => (
+                    <ItemUpgradeCard key={index} item={item} />
+                  )
+                )}
+              </Grid>
+            </Grid>
+          </Grid>
+        ))
+        .map((key) => [
+          key,
+          <Grid item xs={12}>
+            <Divider />
+          </Grid>,
+        ]);
+    }
+
+    if (type === "pvp") {
+      return pvpCurrency
+        .map((key) => (
+          <Grid item xs={12}>
+            <Grid container spacing={2}>
+              <Grid item>
+                <div
+                  style={{ width: 200, paddingLeft: 10 }}
+                  className="container-UpgradeCards"
+                >
+                  <img src={key.icon} style={{ borderRadius: 4 }} />
+                  <Typography
+                    variant="h6"
+                    noWrap
+                    className="centered-UpgradeCards-Dungeons"
+                  >
+                    {t("PvPCurrency." + key.name)}
+                  </Typography>
+                </div>
+              </Grid>
+
+              <Grid item xs={12} sm container spacing={1}>
+                <Divider
+                  orientation="vertical"
+                  flexItem
+                  style={{ marginRight: 4 }}
+                />
+                {[...props.pl.getActiveItems("1H Weapon")].map(
+                  (item, index) => (
+                    <ItemUpgradeCard key={index} item={item} />
+                  )
+                )}
+              </Grid>
+            </Grid>
+          </Grid>
+        ))
+        .map((key) => [
+          key,
+          <Grid item xs={12}>
+            <Divider />
+          </Grid>,
+        ]);
+    }
+
+    if (type === "worldBosses") {
+      return worldBosses
+        .map((key) => (
+          <Grid item xs={12}>
+            <Grid container spacing={2}>
+              <Grid item>
+                <div
+                  style={{ width: 200, paddingLeft: 10 }}
+                  className="container-UpgradeCards"
+                >
+                  {bossHeaders(key.id)}
+                  <Typography
+                    variant="h6"
+                    noWrap
+                    className="centered-UpgradeCards-Dungeons"
+                  >
+                    {t("WorldBosses." + key.id)}
                   </Typography>
                 </div>
               </Grid>

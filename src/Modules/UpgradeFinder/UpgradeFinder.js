@@ -149,13 +149,6 @@ export default function UpgradeFinder(props) {
             <Tab
               icon={
                 <div className="container">
-                  {/* <img
-                    height={45}
-                    src={
-                      process.env.PUBLIC_URL + "/Images/Interface/Fae_Sigil.png"
-                    }
-                    alt="Night Fae"
-                  /> */}
                   <div className="centered" style={{ fontSize: "1.1rem" }}>
                     Mythic Plus
                   </div>
@@ -164,8 +157,7 @@ export default function UpgradeFinder(props) {
               {...a11yProps(1)}
               style={{
                 backgroundImage: `url(${
-                  require("../../Images/Bosses/CastleNathria/loadingScreenArt.png")
-                    .default
+                  require("../../Images/Bosses/MythicPlus.png").default
                 })`,
                 whiteSpace: "nowrap",
                 textShadow: "3px 3px 4px black",
@@ -174,13 +166,6 @@ export default function UpgradeFinder(props) {
             <Tab
               icon={
                 <div className="container">
-                  {/* <img
-                    height={45}
-                    src={
-                      process.env.PUBLIC_URL + "/Images/Interface/Fae_Sigil.png"
-                    }
-                    alt="Night Fae"
-                  />*/}
                   <div className="centered" style={{ fontSize: "1.1rem" }}>
                     PvP
                   </div>
@@ -200,13 +185,6 @@ export default function UpgradeFinder(props) {
             <Tab
               icon={
                 <div className="container">
-                  {/* <img
-                    height={45}
-                    src={
-                      process.env.PUBLIC_URL + "/Images/Interface/Fae_Sigil.png"
-                    }
-                    alt="Night Fae"
-                  /> */}
                   <div className="centered" style={{ fontSize: "1.1rem" }}>
                     World Bosses
                   </div>
@@ -242,21 +220,14 @@ export default function UpgradeFinder(props) {
         {/* PVP */}
         <TabPanel value={tabvalue} index={2}>
           <div className={classes.panel}>
-            <GearContainer pl={props.pl} type="dungeon" />
-          </div>
-        </TabPanel>
-
-        {/* World Quests */}
-        <TabPanel value={tabvalue} index={3}>
-          <div className={classes.panel}>
-            <GearContainer pl={props.pl} type="dungeon" />
+            <GearContainer pl={props.pl} type="pvp" />
           </div>
         </TabPanel>
 
         {/* World Bosses */}
-        <TabPanel value={tabvalue} index={4}>
+        <TabPanel value={tabvalue} index={3}>
           <div className={classes.panel}>
-            <GearContainer pl={props.pl} type="dungeon" />
+            <GearContainer pl={props.pl} type="worldBosses" />
           </div>
         </TabPanel>
       </div>
