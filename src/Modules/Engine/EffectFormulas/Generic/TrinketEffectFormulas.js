@@ -217,7 +217,7 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel) {
         let leechPercentage = getProcessedValue(effect.coefficient, effect.table, itemLevel) / leechPerOnePercent / 100;
         //console.log("Uptime: " + uptime + ". Leech Percent: " + leechPercentage + ". HPS: " + (leechPercentage * expectedThroughput * effect.efficiency * uptime));
 
-        bonus_stats.hps =  leechPercentage * expectedThroughput * effect.efficiency * uptime;
+        bonus_stats.hps =  leechPercentage * expectedThroughput * effect.efficiency[player.getSpec()] * uptime;
 
     }
     else if (effectName === "Tuft of Smoldering Plumage") {
