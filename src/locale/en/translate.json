@@ -377,6 +377,13 @@
     "UpgradeFinder": {
       "Header": "Upgrade Finder Results"
     },
+    "UpgradeFinderFront": {
+      "Header": "Upgrade Finder",
+      "RaidDifficultyHeader": "Raid Difficulty",
+      "MythicPlusHeader": "Mythic Plus Key Level",
+      "PvPHeader": "PvP Currency",
+      "HelpText": "Insert HelpText Here"
+    },
 
     "DruidLegendariesComment": "DruidLegendariesComment",
     "Vision of Unending Growth": {
