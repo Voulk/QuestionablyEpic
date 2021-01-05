@@ -310,11 +310,11 @@ export const trinket_data = [
             {   // HoT Portion
                 coefficient: 1.65,
                 table: -7,  
-                efficiency: {"Restoration Druid": 0.36, "Discipline Priest": 0.42, "Holy Paladin": 0.42, 
-                "Mistweaver Monk": 0.4, "Restoration Shaman": 0.32, "Holy Priest": 0.33},
+                efficiency: {"Restoration Druid": 0.32, "Discipline Priest": 0.38, "Holy Paladin": 0.37, 
+                "Mistweaver Monk": 0.34, "Restoration Shaman": 0.3, "Holy Priest": 0.3},
                 duration: 10, // Falls off when the target falls below 35% health. Efficiency in this case is the HoT uptime.
                 cooldown: 30, 
-                expectedTargetThroughput: 4500, // Could technically be pulled from logs
+                expectedTargetThroughput: 4300, // Could technically be pulled from logs
             },
         ]
     },
