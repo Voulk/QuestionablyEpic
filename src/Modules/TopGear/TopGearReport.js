@@ -381,8 +381,9 @@ function TopGearReport(props) {
         </Grid>
       ) : (
         <Typography style={{ textAlign: "center", color: "white" }}>
-          So sorry, seems you've run into an error. Try going back to the main
-          menu and trying again.
+          So sorry, seems you've run into an error. This is usually caused by not being able to create any valid sets. Check that you have
+          a valid weapon selected, two or more rings and two or more trinkets. If multiple legendaries are selected then there must be a valid
+          alternative for each. 
         </Typography>
       )}
     </div>
