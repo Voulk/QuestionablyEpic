@@ -1,23 +1,20 @@
 import React from "react";
-import {
-  makeStyles,
-  createMuiTheme,
-  ThemeProvider,
-} from "@material-ui/core/styles";
-import { Paper, Grid, Typography, Slider, Divider } from "@material-ui/core";
+import { makeStyles, createMuiTheme } from "@material-ui/core/styles";
+import { Paper, Grid, Typography } from "@material-ui/core";
 import { useTranslation } from "react-i18next";
-import ButtonBase from "@material-ui/core/ButtonBase";
-import Button from "@material-ui/core/Button";
 import HelpText from "../SetupAndMenus/HelpText";
+import UpgradeFinderSlider from "./Slider";
+import ToggleButton from "@material-ui/lab/ToggleButton";
 
-import { withStyles } from "@material-ui/core/styles";
-import FormGroup from "@material-ui/core/FormGroup";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
-import Checkbox from "@material-ui/core/Checkbox";
-import CheckBoxOutlineBlankIcon from "@material-ui/icons/CheckBoxOutlineBlank";
-import CheckBoxIcon from "@material-ui/icons/CheckBox";
-import Favorite from "@material-ui/icons/Favorite";
-import FavoriteBorder from "@material-ui/icons/FavoriteBorder";
+const theme = createMuiTheme({
+  overrides: {
+    MuiToggleButton: {
+      selected: {
+        backgroundColor: "#F2BF59",
+      },
+    },
+  },
+});
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -33,26 +30,21 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "center",
   },
   button: {
-    width: 200,
-    height: 75,
+    width: 150,
+    height: 50,
   },
-}));
-
-const theme = createMuiTheme({
-  overrides: {
-    MuiSlider: {
-      markLabel: {
-        width: 50,
-        whiteSpace: "wrap",
-        textAlign: "center",
-        color: "#fff",
-      },
-      markLabelActive: {
-        color: "#F2BF59",
-      },
+  red: {},
+  selectedRed: {
+    "&$red": {
+      color: "#000",
+      backgroundColor: "#F2BF59",
+    },
+    "&$red:hover": {
+      color: "#000",
+      backgroundColor: "rgb(169, 133, 62)",
     },
   },
-});
+}));
 
 const raidDifficulty = ["Raid Finder", "Normal", "Heroic", "Mythic"];
 const pvpCurrency = ["Honor", "Conquest"];
@@ -60,54 +52,95 @@ const pvpCurrency = ["Honor", "Conquest"];
 const marks = [
   {
     value: 0,
-    label: "M0 184ilvl",
+    label: "M 0",
   },
   {
     value: 1,
-    label: "M2 187ilvl",
+    label: "M 2",
   },
   {
     value: 2,
-    label: "M3 190ilvl",
+    label: "M 3",
   },
   {
     value: 4,
-    label: "M4-5 193ilvl",
+    label: "M 4-5",
   },
   {
     value: 5,
-    label: "M6 197ilvl",
+    label: "M 6",
   },
   {
     value: 8,
-    label: "M7-9 200ilvl",
+    label: "M 7-9",
   },
   {
     value: 10,
-    label: "M10-11 203ilvl",
+    label: "M 10-11",
   },
   {
     value: 13,
-    label: "M12-14 207ilvl",
+    label: "M 12-14",
   },
   {
     value: 14,
-    label: "M15 210ilvl",
+    label: "M 15",
   },
 ];
 
-function valuetext(value) {
-  return `${value}`;
-}
-
-function valueLabelFormat(value) {
-  return marks.findIndex((mark) => mark.value === value) + 1;
-}
+const PvPRating = [
+  {
+    value: 0,
+    label: "Combatant 1400-1599",
+  },
+  {
+    value: 200,
+    label: "Challenger  1600-1799",
+  },
+  {
+    value: 400,
+    label: "Rival 1800-2099",
+  },
+  {
+    value: 700,
+    label: "Duelist 2100-2399",
+  },
+  {
+    value: 1000,
+    label: "Elite 2400+",
+  },
+];
 
 export default function UpgradeFinderFront(props) {
   const classes = useStyles();
   const { t, i18n } = useTranslation();
   const helpText = t("UpgradeFinderFront.HelpText");
+
+  const [selectedRaidFinder, setSelectedRaidFinder] = React.useState(false);
+  const [selectedNormal, setSelectedNormal] = React.useState(false);
+  const [selectedHeroic, setSelectedHeroic] = React.useState(false);
+  const [selectedMythic, setSelectedMythic] = React.useState(false);
+
+  const [selectedHonor, setSelectedHonor] = React.useState(false);
+  const [selectedConquest, setSelectedConquest] = React.useState(false);
+
+  const selectsPvE = [
+    selectedRaidFinder,
+    selectedNormal,
+    selectedHeroic,
+    selectedMythic,
+  ];
+  const setsPvE = [
+    setSelectedRaidFinder,
+    setSelectedNormal,
+    setSelectedHeroic,
+    setSelectedMythic,
+  ];
+
+  const selectsPvP = [selectedHonor, selectedConquest];
+
+  const setsPvP = [setSelectedHonor, setSelectedConquest];
+
   return (
     <div className={classes.root}>
       <Typography
@@ -120,21 +153,30 @@ export default function UpgradeFinderFront(props) {
       </Typography>
 
       <Grid container spacing={2} style={{ marginTop: 20 }}>
+        {/* Help Text Section */}
+
         <Grid item xs={12}>
           <HelpText text={helpText} />
         </Grid>
+
+        {/* Raid Section */}
+
         <Grid item xs={12} spacing={1}>
           <Paper elevation={0} style={{ padding: 10 }}>
-            <Typography
-              color="primary"
-              align="center"
-              variant="h4"
-              style={{ padding: "10px 10px 5px 10px" }}
-            >
-              {t("UpgradeFinderFront.RaidDifficultyHeader")}
-            </Typography>
-
             <Grid container justify="center" spacing={1}>
+              <Grid item xs={12}>
+                <Typography color="primary" align="center" variant="h4">
+                  {t("UpgradeFinderFront.RaidDifficultyHeader")}
+                </Typography>
+                <Grid item xs={12}>
+                  <Typography align="center">
+                    {t("UpgradeFinderFront.RaidDifficultyBody")}
+                  </Typography>
+                </Grid>
+              </Grid>
+            </Grid>
+
+            {/* <Grid container justify="center" spacing={1}>
               {raidDifficulty.map((key) => (
                 <Grid item justify="center" xs="auto">
                   <Button
@@ -147,61 +189,121 @@ export default function UpgradeFinderFront(props) {
                   </Button>
                 </Grid>
               ))}
+            </Grid> */}
+            <Grid container justify="center" spacing={1}>
+              {raidDifficulty.map((key, i) => (
+                <Grid item justify="center" xs="auto">
+                  <ToggleButton
+                    classes={{
+                      root: classes.red,
+                      selected: classes.selectedRed,
+                    }}
+                    value="check"
+                    selected={selectsPvE[i]}
+                    style={{ width: 150, height: 50 }}
+                    onChange={() => {
+                      setsPvE[i](!selectsPvE[i]);
+                    }}
+                  >
+                    {key}
+                  </ToggleButton>
+                </Grid>
+              ))}
             </Grid>
           </Paper>
         </Grid>
 
-        <Grid item xs={12}>
-          <Paper elevation={0} style={{ textAlign: "center" }}>
-            <Typography
-              color="primary"
-              align="center"
-              variant="h4"
-              style={{ padding: "10px 10px 5px 10px" }}
-            >
-              {t("UpgradeFinderFront.MythicPlusHeader")}
-            </Typography>
+        {/* Mythic Plus Section */}
 
-            <ThemeProvider theme={theme}>
-              <Slider
-                className={classes.slider}
-                style={{ color: "#52af77" }}
-                defaultValue={0}
-                valueLabelFormat={valueLabelFormat}
-                getAriaValueText={valuetext}
-                aria-labelledby="discrete-slider-restrict"
-                step={null}
-                valueLabelDisplay="off"
-                marks={marks}
-                max={14}
-              />
-            </ThemeProvider>
+        <Grid item xs={12} spacing={1}>
+          <Paper elevation={0} style={{ padding: 10, textAlign: "center" }}>
+            <Grid container justify="center" spacing={1}>
+              <Grid item xs={12}>
+                <Typography color="primary" align="center" variant="h4">
+                  {t("UpgradeFinderFront.MythicPlusHeader")}
+                </Typography>
+                <Grid item xs={12}>
+                  <Typography align="center">
+                    {t("UpgradeFinderFront.MythicPlusBody")}
+                  </Typography>
+                </Grid>
+              </Grid>
+            </Grid>
+
+            <UpgradeFinderSlider
+              className={classes.slider}
+              style={{ color: "#52af77" }}
+              defaultValue={0}
+              step={null}
+              valueLabelDisplay="off"
+              marks={marks}
+              max={14}
+            />
           </Paper>
         </Grid>
+
+        {/* PvP Section */}
+
         <Grid item xs={12} spacing={1}>
           <Paper elevation={0} style={{ padding: 10 }}>
-            <Typography
-              color="primary"
-              align="center"
-              variant="h4"
-              style={{ padding: "10px 10px 5px 10px" }}
-            >
-              {t("UpgradeFinderFront.PvPHeader")}
-            </Typography>
-
             <Grid container justify="center" spacing={1}>
-              {pvpCurrency.map((key) => (
+              <Grid item xs={12}>
+                <Typography color="primary" align="center" variant="h4">
+                  {t("UpgradeFinderFront.PvPHeader")}
+                </Typography>
+                <Grid item xs={12}>
+                  <Typography align="center">
+                    {t("UpgradeFinderFront.PvPBody")}
+                  </Typography>
+                </Grid>
+              </Grid>
+            </Grid>
+
+            <Grid
+              container
+              justify="center"
+              spacing={1}
+              style={{ marginTop: 10 }}
+            >
+              {pvpCurrency.map((key, i) => (
                 <Grid item justify="center" xs="auto">
-                  <Button
-                    className={classes.button}
-                    variant="contained"
-                    color="primary"
-                    disableElevation
+                  <ToggleButton
+                    classes={{
+                      root: classes.red,
+                      selected: classes.selectedRed,
+                    }}
+                    value="check"
+                    selected={selectsPvP[i]}
+                    style={{ width: 150, height: 50 }}
+                    onChange={() => {
+                      setsPvP[i](!selectsPvP[i]);
+                    }}
                   >
                     {key}
-                  </Button>
+                  </ToggleButton>
                 </Grid>
+                // <Grid item justify="center" xs="auto">
+                //   <Button
+                //     className={classes.button}
+                //     variant="contained"
+                //     color="primary"
+                //     disableElevation
+                //   >
+                //     {key}
+                //   </Button>
+                // </Grid>
               ))}
+              <Grid item style={{ textAlign: "center" }} xs={12}>
+                <UpgradeFinderSlider
+                  className={classes.slider}
+                  style={{ color: "#af5050" }}
+                  defaultValue={0}
+                  step={null}
+                  valueLabelDisplay="off"
+                  marks={PvPRating}
+                  max={1000}
+                />
+              </Grid>
             </Grid>
           </Paper>
         </Grid>

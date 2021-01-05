@@ -380,8 +380,11 @@
     "UpgradeFinderFront": {
       "Header": "Upgrade Finder",
       "RaidDifficultyHeader": "Raid Difficulty",
+      "RaidDifficultyBody": "Select up to two difficulties to find upgrades from",
       "MythicPlusHeader": "Mythic Plus Key Level",
+      "MythicPlusBody": "Use the Slider to Select the level of keys you usually complete",
       "PvPHeader": "PvP Currency",
+      "PvPBody": "Select  your currency and Rating",
       "HelpText": "Insert HelpText Here"
     },
 
