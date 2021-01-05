@@ -112,9 +112,6 @@ export default function QEMainMenu(props) {
                 variant="body1"
               >
                 <p>
-                  - Logs input disabled briefly while a bug is fixed. Sorry!
-                </p>
-                <p>
                   - Legendary effects coming soon for Mistweavers & Priests.{" "}
                 </p>
                 <p>- Great Vault support in, including weapon tokens!</p>
