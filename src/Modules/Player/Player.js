@@ -50,6 +50,7 @@ class Player {
 
   // A players spell casting patterns. These are averaged from entered logs and a default is provided too.
   // CASTS, HEALING, HEALINGPERC, HPS,
+  // NO LONGER USED.
   castPattern = {
     Raid: {},
     Dungeon: {},

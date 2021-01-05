@@ -39,7 +39,7 @@ export const shamanDefaultSpecialQueries = (contentType) => {
         specialQueries = 
         {   
             "HPSOnEarthShield": 456,
-            "OneManaHealing": 2.9,
+            "OneManaHealing": 2.4,
             "CastsPerMinute": 24,
         };
     }

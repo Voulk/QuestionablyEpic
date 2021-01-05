@@ -41,7 +41,7 @@ export function convertLogSpellOutput(player, logOutput, fightLength) {
           100
         : 0;
 
-    data[spellID] = [casts, spell.total, 0, spellHPS, overHealingPerc];
+    data[spellID] = {casts: casts, healing: spell.total, hps: spellHPS, overhealing: overHealingPerc};
     //console.log("Adding " + spellName + "C: " + casts + ". Total: " + spell.total + ". HPS: " + spellHPS + ". OH: " + overHealingPerc);
     totalHealing += logOutput[i].total;
     totalOverhealing += "overheal" in spell ? spell.overheal : 0;
