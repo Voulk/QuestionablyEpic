@@ -9,7 +9,7 @@ import {getConduitFormula} from '../Engine/EffectFormulas/EffectEngine'
 // Should be stored on the Player character. 
 export function getAvailableClassConduits(spec) {
     let conduits = []
-    const defaultItemLevel = 145;
+    const defaultItemLevel = 184;
 
     if (spec === SPECS.RESTODRUID) {
         conduits.push(new ActiveConduit(340616, defaultItemLevel, "Flash of Clarity", "Potency"));
