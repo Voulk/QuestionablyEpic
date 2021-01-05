@@ -55,7 +55,7 @@ export default function HelpText(props) {
 
   return (
     <div className={classes.root}>
-      <Accordion defaultExpanded={false} elevation={0}>
+      <Accordion defaultExpanded={true} elevation={0}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1c-content"

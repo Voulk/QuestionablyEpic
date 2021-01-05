@@ -75,7 +75,7 @@ export const trinket_data = [
                 benefit: 'hps', 
                 coefficient: 467.66378, // This represents the upper quartile of the given cards.  
                 table: -8, 
-                efficiency: {Raid: 0.54, Dungeon: 0.4},
+                efficiency: {Raid: 0.49, Dungeon: 0.4},
                 cooldown: 90, 
             }
         ]
@@ -110,8 +110,8 @@ export const trinket_data = [
             { 
                 coefficient: 0.467903,
                 table: -7,  
-                duration: 25, // You get a 20 second duration every time you touch a new Spirit. They each live about 5 seconds.
-                stacks: 3.2, // You should be able to hit all four pretty reliably, but will spend some time with lower than four stacks as you meet each.
+                duration: 23, // You get a 20 second duration every time you touch a new Spirit. They each live about 5 seconds.
+                stacks: 3.1, // You should be able to hit all four pretty reliably, but will spend some time with lower than four stacks as you meet each.
                 cooldown: 90,
             }
         ]
@@ -122,7 +122,7 @@ export const trinket_data = [
             { 
                 coefficient: 89.08621, // This represents the upper quartile of the given cards.  
                 table: -8, 
-                efficiency: 0.61, // You do have to heal a sub 35% health target every 30s for max efficiency which doesn't seem at all likely. 
+                efficiency: 0.56, // You do have to heal a sub 35% health target every 30s for max efficiency which doesn't seem at all likely. 
                 cooldown: 30, 
             }
         ]
@@ -272,7 +272,7 @@ export const trinket_data = [
             { 
                 coefficient: 1.406452, 
                 table: -1,  
-                duration: 15, 
+                duration: 15,
                 ppm: 1.5
             },
         ]
@@ -310,10 +310,11 @@ export const trinket_data = [
             {   // HoT Portion
                 coefficient: 1.65,
                 table: -7,  
-                efficiency: 0.42,
+                efficiency: {"Restoration Druid": 0.32, "Discipline Priest": 0.38, "Holy Paladin": 0.37, 
+                "Mistweaver Monk": 0.34, "Restoration Shaman": 0.3, "Holy Priest": 0.3},
                 duration: 10, // Falls off when the target falls below 35% health. Efficiency in this case is the HoT uptime.
-                cooldown: 30, // 120 / 3. This scales with haste, which will be applied during the trinket formula.
-                expectedTargetThroughput: 4800, // Could technically be pulled from logs
+                cooldown: 30, 
+                expectedTargetThroughput: 4300, // Could technically be pulled from logs
             },
         ]
     },
@@ -323,7 +324,7 @@ export const trinket_data = [
             { 
                 coefficient: 326.7931,  
                 table: -8, // TODO: Test for Crit / Vers scaling.
-                efficiency: 0.82, 
+                efficiency: 0.84, 
                 // This one is very awkward. You're using it as a Guardian Spirit effect more often than using it because the heal is useful. 
                 // A massive heal on an injured target has massive life-saving potential, but I'm not sure how well it can be modelled except
                 // to assume the heal will have quite a high efficiency in dangerous scenarios.
@@ -331,6 +332,126 @@ export const trinket_data = [
             }
         ]
     }, 
+
+    // ULDUAR TIMEWALKING TRINKETS
+    // Two interesting mana options + nine generic stat procs / on-use options.
+    {
+        name: "Elemental Focus Stone", // Haste proc on damaging spells.
+        effects: [
+            { 
+                coefficient: 1.99949,
+                table: -7,  
+                duration: 10, 
+                ppm: {"Restoration Druid": 1.2, "Discipline Priest": 1.5, "Holy Paladin": 1.5, 
+                    "Mistweaver Monk": 1.4, "Restoration Shaman": 1.2, "Holy Priest": 1.2}, 
+
+            }
+        ]
+    },
+    {
+        name: "Energy Siphon", // Crit on-use trinket
+        effects: [
+            { 
+                coefficient: 2.399108,
+                table: -7,  
+                duration: 20, 
+                cooldown: 120,
+            }
+        ]
+    },
+    {
+        name: "Eye of the Broodmother", 
+        // Int on spell cast, effectively has a 100% uptime since the ramp up is near immediate. 
+        effects: [
+            { 
+                coefficient: 0.10503,
+                table: -1,  
+                stacks: 5,
+                uptime: 1, 
+            }
+        ]
+    },
+    {
+        name: "Flare of the Heavens", // Int proc on damaging spells.
+        effects: [
+            { 
+                coefficient: 2.353487,
+                table: -1,  
+                duration: 10, 
+                ppm: {"Restoration Druid": 1.1, "Discipline Priest": 1.25, "Holy Paladin": 1.25, 
+                    "Mistweaver Monk": 1.2, "Restoration Shaman": 1.1, "Holy Priest": 1.1}, 
+
+            }
+        ]
+    },
+    {
+        name: "Living Flame", // Int on-use trinket
+        effects: [
+            { 
+                coefficient: 2.000788,
+                table: -1,  
+                duration: 20, 
+                cooldown: 120,
+            }
+        ]
+    },
+    {
+        name: "Pandora's Plea", // Int proc
+        effects: [
+            { 
+                coefficient: 1.561615,
+                table: -1,  
+                duration: 10, 
+                ppm: 2,
+
+            }
+        ]
+    },
+    {
+        name: "Scale of Fates", // Haste proc
+        effects: [
+            { 
+                coefficient: 2.39909,
+                table: -7,  
+                duration: 20, 
+                cooldown: 120,
+
+            }
+        ]
+    },
+    {
+        name: "Sif's Remembrance", // Int proc on healing spells
+        effects: [
+            { 
+                coefficient: 1.125146,
+                table: -1,  
+                duration: 15, 
+                ppm: 2,
+
+            }
+        ]
+    },
+    {
+        name: "Show of Faith", // Mana Proc
+        effects: [
+            { 
+                coefficient: 8.996611,
+                table: -7,  
+                ppm: 2,
+
+            }
+        ]
+    },
+    {
+        name: "Spark of Hope", // Mana cost reduction on spells
+        effects: [
+            { 
+                coefficient: 0.450353,
+                table: -7,  
+
+            }
+        ]
+    },
     
     
 ]

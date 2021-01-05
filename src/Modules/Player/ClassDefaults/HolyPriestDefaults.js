@@ -27,13 +27,15 @@ export const holyPriestDefaultSpecialQueries = (contentType) => {
     if (contentType === "Raid") {
         specialQueries = 
         {   
-            
+            "OneManaHealing": 3.5,
+            "CastsPerMinute": 28,
         };
     }
     else if (contentType === "Dungeon") {
         specialQueries = 
         {   
-            
+            "OneManaHealing": 0.4,
+            "CastsPerMinute": 30,
         };
     }
     else {

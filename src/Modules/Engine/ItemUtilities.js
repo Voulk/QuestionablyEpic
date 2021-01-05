@@ -422,6 +422,14 @@ export function scoreItem(item, player, contentType) {
       player.activeStats.intellect;
   }
 
+  // Add any bonus Mana
+  if ("bonus_stats" in item.stats && "mana" in item.stats.bonus_stats) {
+    //console.log("Adding bonus_stats to score");
+    score +=
+      (item.stats.bonus_stats.mana * player.getSpecialQuery("OneManaHealing", contentType) / player.getHPS(contentType)) *
+      player.activeStats.intellect
+  }
+
   // Add Socket
   if (item.socket) {
     score +=
