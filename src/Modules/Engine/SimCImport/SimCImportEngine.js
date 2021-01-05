@@ -320,6 +320,7 @@ function processItem(line, player, contentType, type) {
     item.vaultItem = (type === "Vault")
     item.active = itemEquipped || item.vaultItem;
     item.level = itemLevel;
+    item.isEquipped = itemEquipped;
     item.stats = calcStatsAtLevel(
       itemLevel,
       itemSlot,

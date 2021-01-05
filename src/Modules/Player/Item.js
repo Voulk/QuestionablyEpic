@@ -29,6 +29,7 @@ class Item {
   active = false;
   overriddenName = false; // If true, the effect will be used as the items name instead of its ID. So far this is just used for legendaries.
   vaultItem = false;
+  isEquipped = false;
 
   // The stats on the item. These should already be adjusted for item level.
   // HPS is a calculated field. It includes any item effects that provide healing or absorbs.

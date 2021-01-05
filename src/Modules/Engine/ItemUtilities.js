@@ -238,11 +238,11 @@ function sumObjectsByKey(...objs) {
   }, {});
 }
 
-export function buildWepCombos(player, active=false) {
+export function buildWepCombos(player, active=false, equipped=false) {
   let wep_list = [];
-  let main_hands = player.getActiveItems("1H Weapon", active);
-  let off_hands = player.getActiveItems("Offhands", active);
-  let two_handers = player.getActiveItems("2H Weapon", active);
+  let main_hands = player.getActiveItems("1H Weapon", active, equipped);
+  let off_hands = player.getActiveItems("Offhands", active, equipped);
+  let two_handers = player.getActiveItems("2H Weapon", active, equipped);
 
 
   //console.log("MH: " + main_hands.length + ". OH: " + off_hands.length);

@@ -515,11 +515,11 @@ class App extends Component {
 
                 <Route
                   path="/UpgradeFinderFront/"
-                  render={() => <UpgradeFinderFront pl={activePlayer} />}
+                  render={() => <UpgradeFinderFront player={activePlayer} contentType={this.state.contentType} />}
                 />
                 <Route
                   path="/UpgradeFinderReport/"
-                  render={() => <UpgradeFinderResults pl={activePlayer} />}
+                  render={() => <UpgradeFinderResults player={activePlayer} contentType={this.state.contentType} />}
                 />
                 <Route
                   path="/profile/"

@@ -1,4 +1,6 @@
 import {itemDB} from "../Player/ItemDB";
+import {runTopGear} from "../TopGear/TopGearEngine";
+import {buildWepCombos} from "../Engine/ItemUtilities";
 /*
 
 The core Upgrade Finder loop is as follows:
@@ -14,8 +16,16 @@ The core Upgrade Finder loop is as follows:
 
 */
 
-export function runUpgradeFinder() {
+export function runUpgradeFinder(player, contentType) {
     console.log("Running Upgrade Finder. Strap in.");
+    console.log(player);
+    const baseItemList = player.getEquippedItems();
+    
+    const baseTGSet = runTopGear(baseItemList, buildWepCombos(player, false, true), player, contentType)
+    const baseScore = baseSet.itemSet.baseScore;
+    console.log(baseItemList);
+
+
     const itemPoss = buildItemPossibilities();
 
 }

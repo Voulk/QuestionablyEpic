@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 import HelpText from "../SetupAndMenus/HelpText";
 import UpgradeFinderSlider from "./Slider";
 import ToggleButton from "@material-ui/lab/ToggleButton";
+import {runUpgradeFinder} from "./UpgradeFinderEngine";
 
 const theme = createMuiTheme({
   overrides: {
@@ -136,6 +137,8 @@ export default function UpgradeFinderFront(props) {
     setSelectedHeroic,
     setSelectedMythic,
   ];
+
+  runUpgradeFinder(props.player, props.contentType);
 
   const selectsPvP = [selectedHonor, selectedConquest];
 

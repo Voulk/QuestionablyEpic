@@ -184,7 +184,7 @@ class Player {
     this.activeItems = [];
   };
 
-  getActiveItems = (slot, active = false) => {
+  getActiveItems = (slot, active = false, equipped = false) => {
     let temp = this.activeItems.filter(function (item) {
       if (slot === "AllMainhands") {
         return (
@@ -196,14 +196,24 @@ class Player {
           (item.slot === "Holdable" ||
             item.slot === "Offhand" ||
             item.slot === "Shield") &&
-          (!active || item.active)
+          (!active || item.active) &&
+          (!equipped || item.isEquipped)
         );
       } else {
-        return item.slot === slot && (!active || item.active);
+        return item.slot === slot && (!active || item.active) && (!equipped || item.isEquipped);
       }
     });
     return this.sortItems(temp);
   };
+
+  
+  getEquippedItems = () => {
+    let temp = this.activeItems.filter(function (item) {
+      return item.isEquipped;
+    });
+
+    return temp;
+  }
 
   scoreActiveItems = (contentType) => {
     for (var i = 0; i < this.activeItems.length; i++) {
