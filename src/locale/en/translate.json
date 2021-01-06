@@ -385,6 +385,9 @@
       "MythicPlusBody": "Use the Slider to Select the level of keys you usually complete",
       "PvPHeader": "PvP Currency",
       "PvPBody": "Select  your currency and Rating",
+      "SimCHeader": "SimC Import",
+      "SimCBody1": "Current SimC String Status:",
+      "SimCBody2": "Current Equipped Gear:",
       "HelpText": "Insert HelpText Here"
     },
 

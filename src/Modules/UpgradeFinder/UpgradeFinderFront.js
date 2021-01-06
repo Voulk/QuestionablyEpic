@@ -1,11 +1,13 @@
 import React from "react";
 import { makeStyles, createMuiTheme } from "@material-ui/core/styles";
-import { Paper, Grid, Typography } from "@material-ui/core";
+import { Paper, Grid, Typography, Button } from "@material-ui/core";
 import { useTranslation } from "react-i18next";
 import HelpText from "../SetupAndMenus/HelpText";
 import UpgradeFinderSlider from "./Slider";
 import ToggleButton from "@material-ui/lab/ToggleButton";
-import {runUpgradeFinder} from "./UpgradeFinderEngine";
+import TopGearSettingsAccordion from "../TopGear/TopGearSettings";
+import UpgradeFinderSimC from "./UpgradeFinderSimCImport";
+// import {runUpgradeFinder} from "./UpgradeFinderEngine";
 
 const theme = createMuiTheme({
   overrides: {
@@ -138,7 +140,7 @@ export default function UpgradeFinderFront(props) {
     setSelectedMythic,
   ];
 
-  runUpgradeFinder(props.player, props.contentType);
+  // runUpgradeFinder(props.player, props.contentType);
 
   const selectsPvP = [selectedHonor, selectedConquest];
 
@@ -155,11 +157,20 @@ export default function UpgradeFinderFront(props) {
         {t("UpgradeFinderFront.Header")}
       </Typography>
 
-      <Grid container spacing={2} style={{ marginTop: 20 }}>
+      <Grid container spacing={1}>
         {/* Help Text Section */}
 
         <Grid item xs={12}>
           <HelpText text={helpText} />
+        </Grid>
+
+        <Grid item xs={12}>
+          <UpgradeFinderSimC
+            player={props.player}
+            contentType={props.contentType}
+            simcSnack={props.simcSnack}
+            allChars={props.allChars}
+          />
         </Grid>
 
         {/* Raid Section */}
@@ -168,7 +179,7 @@ export default function UpgradeFinderFront(props) {
           <Paper elevation={0} style={{ padding: 10 }}>
             <Grid container justify="center" spacing={1}>
               <Grid item xs={12}>
-                <Typography color="primary" align="center" variant="h4">
+                <Typography color="primary" align="center" variant="h5">
                   {t("UpgradeFinderFront.RaidDifficultyHeader")}
                 </Typography>
                 <Grid item xs={12}>
@@ -219,10 +230,13 @@ export default function UpgradeFinderFront(props) {
         {/* Mythic Plus Section */}
 
         <Grid item xs={12} spacing={1}>
-          <Paper elevation={0} style={{ padding: 10, textAlign: "center" }}>
+          <Paper
+            elevation={0}
+            style={{ padding: "10px 10px 0px 10px", textAlign: "center" }}
+          >
             <Grid container justify="center" spacing={1}>
               <Grid item xs={12}>
-                <Typography color="primary" align="center" variant="h4">
+                <Typography color="primary" align="center" variant="h5">
                   {t("UpgradeFinderFront.MythicPlusHeader")}
                 </Typography>
                 <Grid item xs={12}>
@@ -251,7 +265,7 @@ export default function UpgradeFinderFront(props) {
           <Paper elevation={0} style={{ padding: 10 }}>
             <Grid container justify="center" spacing={1}>
               <Grid item xs={12}>
-                <Typography color="primary" align="center" variant="h4">
+                <Typography color="primary" align="center" variant="h5">
                   {t("UpgradeFinderFront.PvPHeader")}
                 </Typography>
                 <Grid item xs={12}>
@@ -266,7 +280,7 @@ export default function UpgradeFinderFront(props) {
               container
               justify="center"
               spacing={1}
-              style={{ marginTop: 10 }}
+              style={{ marginTop: "10px 10px 0px 10px" }}
             >
               {pvpCurrency.map((key, i) => (
                 <Grid item justify="center" xs="auto">
@@ -310,7 +324,63 @@ export default function UpgradeFinderFront(props) {
             </Grid>
           </Paper>
         </Grid>
+        <Grid item xs={12}>
+          <TopGearSettingsAccordion />
+        </Grid>
       </Grid>
+
+      <div
+        style={{
+          position: "fixed",
+          bottom: 0,
+          left: 0,
+          right: 0,
+          height: "50px",
+          backgroundColor: "#424242",
+          width: "100%",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <div
+          style={{
+            display: "flex",
+            width: "90%",
+            flexDirection: "row",
+            justifyContent: "space-evenly",
+            alignItems: "center",
+          }}
+        >
+          <Typography
+            align="center"
+            style={{ padding: "10px 10px 5px 10px" }}
+            color="primary"
+          >
+            {t("TopGear.SelectedItems")}
+          </Typography>
+          <div>
+            <Typography
+              variant="Subtitle2"
+              align="center"
+              style={{ padding: "10px 10px 5px 10px", marginRight: "5px" }}
+              color="primary"
+            >
+              {/* {errorMessage} */}
+            </Typography>
+            <Button
+              variant="contained"
+              color="secondary"
+              align="center"
+              style={{ height: "68%", width: "180px" }}
+              // disabled={!btnActive}
+              // onClick={unleashTopGear}
+            >
+              {t("TopGear.GoMsg")}
+            </Button>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

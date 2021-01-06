@@ -1,6 +1,6 @@
-import {itemDB} from "../Player/ItemDB";
-import {runTopGear} from "../TopGear/TopGearEngine";
-import {buildWepCombos} from "../Engine/ItemUtilities";
+import { itemDB } from "../Player/ItemDB";
+import { runTopGear } from "../TopGear/TopGearEngine";
+import { buildWepCombos } from "../Engine/ItemUtilities";
 /*
 
 The core Upgrade Finder loop is as follows:
@@ -17,30 +17,31 @@ The core Upgrade Finder loop is as follows:
 */
 
 export function runUpgradeFinder(player, contentType) {
-    console.log("Running Upgrade Finder. Strap in.");
-    console.log(player);
-    const baseItemList = player.getEquippedItems();
-    
-    const baseSet = runTopGear(baseItemList, buildWepCombos(player, false, true), player, contentType)
-    const baseScore = baseSet.itemSet.baseScore;
-    //console.log(baseItemList);
+  console.log("Running Upgrade Finder. Strap in.");
+  console.log(player);
+  const baseItemList = player.getEquippedItems();
 
+  const baseTGSet = runTopGear(
+    baseItemList,
+    buildWepCombos(player, false, true),
+    player,
+    contentType
+  );
+  const baseScore = baseSet.itemSet.baseScore;
+  console.log(baseItemList);
 
-    const itemPoss = buildItemPossibilities();
-
+  const itemPoss = buildItemPossibilities();
 }
 
 function buildItemPossibilities() {
-    let itemPoss = [];
+  let itemPoss = [];
 
-    for (var i = 0; i < itemDB.length; i++) {
-        const item = itemDB[i];
-        if ("sources" in item) {
-            itemPoss.push(item);
-        }
-
+  for (var i = 0; i < itemDB.length; i++) {
+    const item = itemDB[i];
+    if ("sources" in item) {
+      itemPoss.push(item);
     }
+  }
 
-    console.log(itemPoss.length);
-
+  console.log(itemPoss.length);
 }
