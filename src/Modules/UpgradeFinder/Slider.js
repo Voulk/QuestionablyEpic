@@ -10,7 +10,7 @@ import { useTranslation } from "react-i18next";
 const useStyles = makeStyles((theme) => ({
   slider: {
     width: "90%",
-    margin: "0px 20px 50px 20px",
+    margin: "0px 20px 35px 20px",
     textAlign: "center",
   },
 }));
