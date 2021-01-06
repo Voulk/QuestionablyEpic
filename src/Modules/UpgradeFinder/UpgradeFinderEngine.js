@@ -21,9 +21,9 @@ export function runUpgradeFinder(player, contentType) {
     console.log(player);
     const baseItemList = player.getEquippedItems();
     
-    const baseTGSet = runTopGear(baseItemList, buildWepCombos(player, false, true), player, contentType)
+    const baseSet = runTopGear(baseItemList, buildWepCombos(player, false, true), player, contentType)
     const baseScore = baseSet.itemSet.baseScore;
-    console.log(baseItemList);
+    //console.log(baseItemList);
 
 
     const itemPoss = buildItemPossibilities();
