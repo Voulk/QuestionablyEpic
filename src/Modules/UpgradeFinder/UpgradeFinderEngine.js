@@ -17,8 +17,19 @@ The core Upgrade Finder loop is as follows:
 
 */
 
+const itemLevels = {
+  raid: [187, 200, 213, 226],
+  dungeon: [184, 184, 187, 190, 194, 194, 197, 200, 200, 200, 203, 203, 207, 207, 207, 210],
+  pvp: [200, 207, 213, 220, 226],
+}
+
 export function runUpgradeFinder(player, contentType) {
+  // TEMP VARIABLES
+  const playerSettings = {raid: 3, dungeon: 15, pvp: 4};
+  //
+  
   const completedItemList = []
+  
   console.log("Running Upgrade Finder. Strap in.");
   console.log(player);
   const baseItemList = player.getEquippedItems();
@@ -34,7 +45,7 @@ export function runUpgradeFinder(player, contentType) {
   const baseScore = baseSet.itemSet.hardScore;
   //console.log(baseSet);
   
-  const itemPoss = buildItemPossibilities(player, contentType);
+  const itemPoss = buildItemPossibilities(player, contentType, playerSettings);
 
   for (var x = 0; x < itemPoss.length; x++) {
     completedItemList.push(processItem(itemPoss[x], baseItemList, baseScore, player, contentType));
@@ -46,35 +57,33 @@ export function runUpgradeFinder(player, contentType) {
   
 }
 
-function checkItemViable(rawItem, player) {
-  const spec = player.getSpec();
-  const acceptableArmorTypes = getValidArmorTypes(spec);
-  const acceptableWeaponTypes = getValidWeaponTypes(spec, "Weapons");
-  const acceptableOffhands = getValidWeaponTypes(spec, "Offhands");
+function getSetItemLevel(itemSource, playerSettings) {
+  let itemLevel = 0;
+  const instanceID = itemSource.instanceId;
+  const bossID = itemSource.encounterId;
 
-  return ((rawItem.slot === "Back") ||
+  if (instanceID === 1190) itemLevel = itemLevels.raid[playerSettings.raid];
+  else if (instanceID === -1) itemLevel = itemLevels.dungeon[playerSettings.dungeon];
+  else if (instanceID === -16) itemLevel = 184;
+  else if (instanceID === -17) itemLevel = itemLevels.pvp[playerSettings.pvp];
+  if (bossID === 2425 || bossID === 2424) itemLevel += 7; // Denathrius / Stone Legion Generals
 
-      (rawItem.itemClass === 4 &&
-        acceptableArmorTypes.includes(rawItem.itemSubClass)) ||
+  return itemLevel
 
-      ((rawItem.slot === "Holdable" ||
-          rawItem.slot === "Offhand" ||
-          rawItem.slot === "Shield") && acceptableOffhands.includes(rawItem.itemSubClass)) ||
-
-      (rawItem.itemClass === 2 &&
-        acceptableWeaponTypes.includes(rawItem.itemSubClass)))
 
 }
 
-function buildItemPossibilities(player, contentType) {
+
+function buildItemPossibilities(player, contentType, playerSettings) {
   let itemPoss = [];
 
   for (var i = 0; i < itemDB.length; i++) {
     const rawItem = itemDB[i];
     if ("sources" in rawItem && checkItemViable(rawItem, player)) {
+      const itemSource = rawItem.sources[0];
       const itemSlot = rawItem.slot;
       const itemID = rawItem.id;
-      const itemLevel = 120; //TODO
+      const itemLevel = getSetItemLevel(itemSource, playerSettings)
 
       let item = new Item(itemID, "", itemSlot, false, "", 0, itemLevel);
       let itemAllocations = getItemAllocations(itemID, []);
@@ -85,13 +94,14 @@ function buildItemPossibilities(player, contentType) {
         ""
       );
       item.softScore = scoreItem(item, player, contentType);
+      item.source = itemSource;
 
       itemPoss.push(item);
     }
   }
 
   console.log(itemPoss.length);
-  return itemPoss.slice(1, 19); // TODO: Remove Slice. It's just for testing in a smaller environment. 
+  return itemPoss; // TODO: Remove Slice. It's just for testing in a smaller environment. 
 }
 
 // Returns a small dict 
@@ -114,6 +124,26 @@ function processItem(item, baseItemList, baseScore, player, contentType) {
 
 
 
-  return {item: item.id, score: differential};
+  return {item: item.id, level: item.level, score: differential};
+
+}
+
+function checkItemViable(rawItem, player) {
+  const spec = player.getSpec();
+  const acceptableArmorTypes = getValidArmorTypes(spec);
+  const acceptableWeaponTypes = getValidWeaponTypes(spec, "Weapons");
+  const acceptableOffhands = getValidWeaponTypes(spec, "Offhands");
+
+  return ((rawItem.slot === "Back") ||
+
+      (rawItem.itemClass === 4 &&
+        acceptableArmorTypes.includes(rawItem.itemSubClass)) ||
+
+      ((rawItem.slot === "Holdable" ||
+          rawItem.slot === "Offhand" ||
+          rawItem.slot === "Shield") && acceptableOffhands.includes(rawItem.itemSubClass)) ||
+
+      (rawItem.itemClass === 2 &&
+        acceptableWeaponTypes.includes(rawItem.itemSubClass)))
 
 }

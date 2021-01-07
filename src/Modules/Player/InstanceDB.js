@@ -18,7 +18,8 @@ export const encounterDB = {
     "2420": "Inerva Darkvein",
     "2426": "Council of Blood",
     "2394": "Sludgefist",
-    "2425": "Sire Denathrius",
+    "2425": "Stone Legion Generals",
+    "2424": "Sire Denathrius",
 
     "2430": "Valinor, the Light of Eons",
     "2431": "Mortanis",
