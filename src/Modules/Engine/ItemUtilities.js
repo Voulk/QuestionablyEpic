@@ -245,7 +245,7 @@ export function buildWepCombos(player, active=false, equipped=false) {
   let two_handers = player.getActiveItems("2H Weapon", active, equipped);
 
 
-  //console.log("MH: " + main_hands.length + ". OH: " + off_hands.length);
+  console.log("MH: " + main_hands.length + ". OH: " + off_hands.length + ". 2H: " + two_handers.length);
   
 
   for (let i = 0; i < main_hands.length; i++) {

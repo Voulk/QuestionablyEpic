@@ -215,6 +215,17 @@ class Player {
     return temp;
   }
 
+  // Returns the players weapons and offhands. 
+  getTopWeapons = () => {
+    let wepArray = [];
+
+    let temp = this.activeItems.filter(function (item) {
+      return ['Holdable', 'Shield', 'Offhand', '1H Weapon', '2H Weapon'].includes(item.slot);
+      //return item;
+    });
+    return this.sortItems(temp);
+  }
+
   scoreActiveItems = (contentType) => {
     for (var i = 0; i < this.activeItems.length; i++) {
       let item = this.activeItems[i];

@@ -7,7 +7,7 @@ import UpgradeFinderSlider from "./Slider";
 import ToggleButton from "@material-ui/lab/ToggleButton";
 import TopGearSettingsAccordion from "../TopGear/TopGearSettings";
 import UpgradeFinderSimC from "./UpgradeFinderSimCImport";
-// import {runUpgradeFinder} from "./UpgradeFinderEngine";
+import {runUpgradeFinder} from "./UpgradeFinderEngine";
 
 const theme = createMuiTheme({
   overrides: {
@@ -140,7 +140,9 @@ export default function UpgradeFinderFront(props) {
     setSelectedMythic,
   ];
 
-  // runUpgradeFinder(props.player, props.contentType);
+  const unleashUpgradeFinder = () => {
+    runUpgradeFinder(props.player, props.contentType);
+  }
 
   const selectsPvP = [selectedHonor, selectedConquest];
 
@@ -340,7 +342,7 @@ export default function UpgradeFinderFront(props) {
               align="center"
               style={{ height: "68%", width: "180px" }}
               // disabled={!btnActive}
-              // onClick={unleashTopGear}
+              onClick={unleashUpgradeFinder}
             >
               {t("TopGear.GoMsg")}
             </Button>
