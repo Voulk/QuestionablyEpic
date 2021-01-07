@@ -50,7 +50,7 @@ export default function SimCraftInput(props) {
           disabled={characterCount === 0}
           variant={buttonVariant}
         >
-          {t("SimCInput.SimCHeaderButtonLabel")}
+          {props.buttonLabel}
         </Button>
       </Tooltip>
       <Dialog

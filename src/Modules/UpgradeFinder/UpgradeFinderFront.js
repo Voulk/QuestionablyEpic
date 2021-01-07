@@ -282,34 +282,6 @@ export default function UpgradeFinderFront(props) {
               spacing={1}
               style={{ marginTop: "10px 10px 0px 10px" }}
             >
-              {pvpCurrency.map((key, i) => (
-                <Grid item justify="center" xs="auto">
-                  <ToggleButton
-                    classes={{
-                      root: classes.red,
-                      selected: classes.selectedRed,
-                    }}
-                    value="check"
-                    selected={selectsPvP[i]}
-                    style={{ width: 150, height: 50 }}
-                    onChange={() => {
-                      setsPvP[i](!selectsPvP[i]);
-                    }}
-                  >
-                    {key}
-                  </ToggleButton>
-                </Grid>
-                // <Grid item justify="center" xs="auto">
-                //   <Button
-                //     className={classes.button}
-                //     variant="contained"
-                //     color="primary"
-                //     disableElevation
-                //   >
-                //     {key}
-                //   </Button>
-                // </Grid>
-              ))}
               <Grid item style={{ textAlign: "center" }} xs={12}>
                 <UpgradeFinderSlider
                   className={classes.slider}
@@ -327,6 +299,7 @@ export default function UpgradeFinderFront(props) {
         <Grid item xs={12}>
           <TopGearSettingsAccordion />
         </Grid>
+        <Grid item xs={12} style={{ marginBottom: 100 }} />
       </Grid>
 
       <div
@@ -352,13 +325,6 @@ export default function UpgradeFinderFront(props) {
             alignItems: "center",
           }}
         >
-          <Typography
-            align="center"
-            style={{ padding: "10px 10px 5px 10px" }}
-            color="primary"
-          >
-            {t("TopGear.SelectedItems")}
-          </Typography>
           <div>
             <Typography
               variant="Subtitle2"
