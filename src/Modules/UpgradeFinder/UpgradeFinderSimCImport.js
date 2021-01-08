@@ -65,10 +65,11 @@ export default function UpgradeFinderSimC(props) {
                         "&" +
                         "ilvl=" +
                         key.level +
-                        (key.tertiary === "Leech" ? "&bonus=41" : "") +
-                        (key.tertiary === "Avoidance" ? "&bonus=40" : "") +
-                        (key.tertiary === "Speed" ? "&bonus=42" : "") +
-                        (key.socket === true ? "&bonus=565" : "")
+                        "&bonus=6646" +
+                        (key.tertiary === "Leech" ? ":41" : "") +
+                        (key.tertiary === "Avoidance" ? ":40" : "") +
+                        (key.tertiary === "Speed" ? ":42" : "") +
+                        (key.socket === true ? ":565" : "")
                       }
                     >
                       <img

@@ -7,7 +7,8 @@ import UpgradeFinderSlider from "./Slider";
 import ToggleButton from "@material-ui/lab/ToggleButton";
 import TopGearSettingsAccordion from "../TopGear/TopGearSettings";
 import UpgradeFinderSimC from "./UpgradeFinderSimCImport";
-import {runUpgradeFinder} from "./UpgradeFinderEngine";
+import { runUpgradeFinder } from "./UpgradeFinderEngine";
+import { useHistory, useLocation } from "react-router-dom";
 
 const theme = createMuiTheme({
   overrides: {
@@ -94,22 +95,26 @@ const marks = [
 const PvPRating = [
   {
     value: 0,
+    label: "Unranked",
+  },
+  {
+    value: 600,
     label: "Combatant 1400-1599",
   },
   {
-    value: 200,
+    value: 800,
     label: "Challenger  1600-1799",
   },
   {
-    value: 400,
+    value: 1000,
     label: "Rival 1800-2099",
   },
   {
-    value: 700,
+    value: 1300,
     label: "Duelist 2100-2399",
   },
   {
-    value: 1000,
+    value: 1600,
     label: "Elite 2400+",
   },
 ];
@@ -127,6 +132,8 @@ export default function UpgradeFinderFront(props) {
   const [selectedHonor, setSelectedHonor] = React.useState(false);
   const [selectedConquest, setSelectedConquest] = React.useState(false);
 
+  let history = useHistory();
+
   const selectsPvE = [
     selectedRaidFinder,
     selectedNormal,
@@ -142,7 +149,8 @@ export default function UpgradeFinderFront(props) {
 
   const unleashUpgradeFinder = () => {
     runUpgradeFinder(props.player, props.contentType);
-  }
+    history.push("/UpgradeFinderReport/");
+  };
 
   const selectsPvP = [selectedHonor, selectedConquest];
 
@@ -252,7 +260,7 @@ export default function UpgradeFinderFront(props) {
             <UpgradeFinderSlider
               className={classes.slider}
               style={{ color: "#52af77" }}
-              defaultValue={0}
+              defaultValue={10}
               step={null}
               valueLabelDisplay="off"
               marks={marks}
@@ -292,7 +300,7 @@ export default function UpgradeFinderFront(props) {
                   step={null}
                   valueLabelDisplay="off"
                   marks={PvPRating}
-                  max={1000}
+                  max={1600}
                 />
               </Grid>
             </Grid>

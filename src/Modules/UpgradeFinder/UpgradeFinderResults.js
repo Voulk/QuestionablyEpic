@@ -169,28 +169,28 @@ export default function UpgradeFinderResults(props) {
       {/* Raid */}
       <TabPanel value={tabvalue} index={0}>
         <div className={classes.panel}>
-          <RaidGearContainer pl={props.pl} items="" />
+          <RaidGearContainer pl={props.player} items="" />
         </div>
       </TabPanel>
 
       {/* Mythic Plus */}
       <TabPanel value={tabvalue} index={1}>
         <div className={classes.panel}>
-          <MythicPlusGearContainer pl={props.pl} items="" />
+          <MythicPlusGearContainer pl={props.player} items="" />
         </div>
       </TabPanel>
 
       {/* PVP */}
       <TabPanel value={tabvalue} index={2}>
         <div className={classes.panel}>
-          <PvPGearContainer pl={props.pl} items="" />
+          <PvPGearContainer pl={props.player} items="" />
         </div>
       </TabPanel>
 
       {/* World Bosses */}
       <TabPanel value={tabvalue} index={3}>
         <div className={classes.panel}>
-          <WorldBossGearContainer pl={props.pl} items="" />
+          <WorldBossGearContainer pl={props.player} items="" />
         </div>
       </TabPanel>
     </div>
