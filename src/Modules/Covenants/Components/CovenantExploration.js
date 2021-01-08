@@ -72,6 +72,7 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     backgroundColor: theme.palette.background.paper,
     maxWidth: 1014,
+    borderRadius: "4px 4px 0px 0px",
   },
   panel: {
     flexGrow: 1,
