@@ -23,15 +23,12 @@ export default function MythicPlusGearContainer(props) {
     return dungeonList
       .map((key) => (
         <Grid item xs={12}>
-          <Grid container spacing={2}>
+          <Grid container spacing={1}>
             <Grid item>
-              <div
-                style={{ width: 200, paddingLeft: 10 }}
-                className="container-UpgradeCards"
-              >
+              <div style={{ width: 200 }} className="container-UpgradeCards">
                 {DungeonHeaderIcons(key.zoneID, {
                   verticalAlign: "middle",
-                  marginRight: "-75px",
+                  // marginRight: "-75px",
                 })}
                 <Typography
                   variant="h6"
@@ -42,13 +39,12 @@ export default function MythicPlusGearContainer(props) {
                 </Typography>
               </div>
             </Grid>
-
+            <Divider
+              orientation="vertical"
+              flexItem
+              style={{ marginRight: 4 }}
+            />
             <Grid item xs={12} sm container spacing={1}>
-              <Divider
-                orientation="vertical"
-                flexItem
-                style={{ marginRight: 4 }}
-              />
               {[...props.pl.getActiveItems("1H Weapon")].map((item, index) => (
                 <ItemUpgradeCard key={index} item={item} />
               ))}

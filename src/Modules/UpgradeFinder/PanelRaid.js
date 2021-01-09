@@ -27,7 +27,7 @@ export default function RaidGearContainer(props) {
       .map((key) => (
         <Grid item xs={12}>
           <Grid container spacing={2}>
-            <Grid item>
+            <Grid item style={{ alignSelf: "center" }}>
               <div
                 style={{ width: 200, paddingLeft: 10 }}
                 className="container-UpgradeCards"

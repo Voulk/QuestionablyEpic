@@ -17,9 +17,39 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const itemQuality = (itemLevel) => {
+  // const isLegendary = "effect" in item && item.effect.type === "spec legendary";
+
+  // if (isLegendary) return "#ff8000";
+  if (itemLevel >= 183) return "#a73fee";
+  else if (itemLevel >= 120) return "#328CE3";
+  else return "#1eff00";
+
+  /*
+    case "Legendary":
+      return "#ff8000";
+      break;
+    case "Epic":
+      return "#a335ee";
+      break;
+    case "Rare":
+      return "#a335ee";
+      break;
+    case "Uncommon":
+      return "#328CE3"; // Previously #0070dd
+      break;
+    case "Common":
+      return "#1eff00";
+      break;
+    default:
+      return "#fff";
+      */
+};
+
 export default function UpgradeFinderSimC(props) {
   const classes = useStyles();
   const { t, i18n } = useTranslation();
+
   console.log(props.player);
   return (
     <Grid item xs={12}>
@@ -59,6 +89,7 @@ export default function UpgradeFinderSimC(props) {
                   .filter((key) => key.isEquipped === true)
                   .map((key) => (
                     <a
+                      style={{ padding: 2 }}
                       data-wowhead={
                         "item=" +
                         key.id +
@@ -74,11 +105,13 @@ export default function UpgradeFinderSimC(props) {
                     >
                       <img
                         style={{
-                          height: 25,
-                          width: 25,
-                          padding: 4,
+                          height: 22,
+                          width: 22,
+
                           verticalAlign: "middle",
                           borderRadius: "8px",
+                          border: "1px solid",
+                          borderColor: itemQuality(key.level),
                         }}
                         src={getItemIcon(key.id)}
                         //   alt={alt}
