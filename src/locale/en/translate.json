@@ -25,7 +25,6 @@
     "Mastery": "Mastery",
     "Versatility": "Versatility",
     "Leech": "Leech",
-    "Avoidance": "Avoidance",
     "Region": "Region",
     "Race": "Race",
     "Select Class": "Select Class",
@@ -35,6 +34,7 @@
     "No": "No",
     "None": "None",
     "Add": "Add",
+    "Avoidance": "Avoidance",
 
     "CooldownPlanner": {
       "Classes": {

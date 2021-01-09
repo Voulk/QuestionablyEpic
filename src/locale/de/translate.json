@@ -34,6 +34,7 @@
     "No": "No",
     "None": "None",
     "Add": "Add",
+    "Avoidance": "Avoidance",
 
     "CooldownPlanner": {
       "Classes": {
@@ -372,6 +373,24 @@
       "GoMsg": "Go!DE",
       "SelectedItems": "Selected ItemsDE",
       "StatPanel": { "AvgStats": "Average Stats (includes procs)DE" }
+    },
+
+    "UpgradeFinder": {
+      "Header": "Upgrade Finder Results"
+    },
+    "UpgradeFinderFront": {
+      "Header": "Upgrade Finder",
+      "RaidDifficultyHeader": "Raid Difficulty",
+      "RaidDifficultyBody": "Select up to two difficulties to find upgrades from",
+      "MythicPlusHeader": "Mythic Plus Key Level",
+      "MythicPlusBody": "Use the Slider to Select the level of keys you usually complete",
+      "PvPHeader": "PvP Rating",
+      "PvPBody": "Select  your currency and Rating",
+      "SimCHeader": "SimC Import",
+      "SimCBody1": "Current SimC String Status:",
+      "SimCBody2": "Current Equipped Gear:",
+      "SimCButton": "Import SimC",
+      "HelpText": "Insert a SimC String, Select up to two raid difficulties, your standard mythic keystone level, and your PVP rating to see where you can find your next upgrade!"
     },
 
     "DruidLegendariesComment": "DruidLegendariesComment",

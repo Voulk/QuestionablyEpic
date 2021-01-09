@@ -34,6 +34,7 @@
     "No": "NoRU",
     "None": "NoneRU",
     "Add": "AddRU",
+    "Avoidance": "Avoidance",
 
     "CooldownPlanner": {
       "Classes": {
@@ -49,7 +50,8 @@
       },
       "ChartLabels": {
         "_Comments1": "Translations for HD Charts",
-        "UnmitigatedDamageLabel": "Unmitigated DamageRU"
+        "UnmitigatedDamageLabel": "Unmitigated DamageRU",
+        "MitigatedDamageLabel": "MitigatedRU"
       },
       "TableLabels": {
         "_Comments1": "Translations for HD Tables",
@@ -59,7 +61,8 @@
         "BossAbilityLabel": "Boss AbilityRU",
         "NotesLabel": "NotesRU",
         "OffCooldownLabel": "Off CooldownRU",
-        "HealTeamHeader": "Heal TeamRU"
+        "HealTeamHeader": "Heal TeamRU",
+        "TypeSelector": "FormatsRU"
       },
       "UserInputs": {
         "_Comments1": "Translations for the User Input Components",
@@ -75,10 +78,11 @@
         "Mastery": "MasteryRU",
         "Versatility": "VersatilityRU",
         "TalentHeader": "TalentsRU",
-        "CovenantHeader": "Covenant AbilitiesRU",
-        "LegendaryHeader": "LegendariesRU"
+        "SoulbindAbilities": "Soulbind Abilities",
+        "SoulbindConduits": "Soulbind Conduits"
       },
       "ClassAbilities": {
+        "NoCD": "No Cooldown",
         "undefined": "",
         "HolyPaladinComment": "Holy Paladin Class Cooldowns",
         "31821": "Владение аурами",
@@ -370,6 +374,24 @@
       "GoMsg": "Go!RU",
       "SelectedItems": "Selected ItemsRU",
       "StatPanel": { "AvgStats": "Average Stats (includes procs)RU" }
+    },
+
+    "UpgradeFinder": {
+      "Header": "Upgrade Finder Results"
+    },
+    "UpgradeFinderFront": {
+      "Header": "Upgrade Finder",
+      "RaidDifficultyHeader": "Raid Difficulty",
+      "RaidDifficultyBody": "Select up to two difficulties to find upgrades from",
+      "MythicPlusHeader": "Mythic Plus Key Level",
+      "MythicPlusBody": "Use the Slider to Select the level of keys you usually complete",
+      "PvPHeader": "PvP Rating",
+      "PvPBody": "Select  your currency and Rating",
+      "SimCHeader": "SimC Import",
+      "SimCBody1": "Current SimC String Status:",
+      "SimCBody2": "Current Equipped Gear:",
+      "SimCButton": "Import SimC",
+      "HelpText": "Insert a SimC String, Select up to two raid difficulties, your standard mythic keystone level, and your PVP rating to see where you can find your next upgrade!"
     },
 
     "DruidLegendariesComment": "DruidLegendariesComment",
