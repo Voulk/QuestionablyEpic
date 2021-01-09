@@ -262,6 +262,8 @@ export default function CharCards(props) {
 
   const regions = ["CN", "US", "TW", "EU"];
 
+  console.log(props.char.castModel[props.contentType]);
+
   return (
     <Grid item xs={12} sm={6} md={6} lg={4} xl={4}>
       <CardActionArea
@@ -320,7 +322,7 @@ export default function CharCards(props) {
             >
               <Tab label="Info" {...a11yProps(0)} />
               <Tab label="Stat Weights" {...a11yProps(1)} />
-              <Tab disabled={true} label="Saved Logs" {...a11yProps(2)} />
+              <Tab label="Saved Logs" {...a11yProps(2)} />
             </Tabs>
           </AppBar>
           <TabPanel className={classes.tabPanel} value={value} index={0}>
@@ -575,7 +577,39 @@ export default function CharCards(props) {
             </Grid>
           </TabPanel>
           <TabPanel className={classes.tabPanel} value={value} index={2}>
-            Item Three
+            <Grid container spacing={1}>
+              <Grid item>
+                <Typography>
+                  Fight Length:{" "}
+                  {
+                    props.char.castModel[props.contentType].fightInfo
+                      .fightLength
+                  }
+                </Typography>
+              </Grid>
+              <Grid item>
+                <Typography>
+                  HPS: {props.char.castModel[props.contentType].fightInfo.hps}
+                </Typography>
+              </Grid>
+              <Grid item>
+                <Typography>
+                  Raw HPS:{" "}
+                  {props.char.castModel[props.contentType].fightInfo.rawhps}
+                </Typography>
+              </Grid>
+              {Object.keys(
+                props.char.castModel[props.contentType].spellList
+              ).map((key) =>
+                Object.entries(
+                  props.char.castModel[props.contentType].spellList[key]
+                ).map((key2, value) => (
+                  <Grid item>
+                    <Typography>{`${key2} ${value}`}</Typography>
+                  </Grid>
+                ))
+              )}
+            </Grid>
           </TabPanel>
         </div>
         <DialogActions>
