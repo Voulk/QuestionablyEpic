@@ -244,9 +244,10 @@
     },
 
     "Soulbinds": {
-      "PotencyConduit": "Potency Conduit",
-      "EnduranceConduit": "Endurance Conduit",
-      "FinesseConduit": "Finesse Conduit"
+      "Header": "Covenant ExplorationRU",
+      "PotencyConduit": "Potency ConduitRU",
+      "EnduranceConduit": "Endurance ConduitRU",
+      "FinesseConduit": "Finesse ConduitRU"
     },
 
     "stats": {
