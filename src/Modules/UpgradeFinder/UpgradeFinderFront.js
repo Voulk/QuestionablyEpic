@@ -9,6 +9,7 @@ import TopGearSettingsAccordion from "../TopGear/TopGearSettings";
 import UpgradeFinderSimC from "./UpgradeFinderSimCImport";
 import { runUpgradeFinder } from "./UpgradeFinderEngine";
 import { useHistory, useLocation } from "react-router-dom";
+import UpgradeFinderResult from "./UpgradeFinderResult";
 
 const theme = createMuiTheme({
   overrides: {
@@ -148,8 +149,11 @@ export default function UpgradeFinderFront(props) {
   ];
 
   const unleashUpgradeFinder = () => {
-    runUpgradeFinder(props.player, props.contentType);
-    history.push("/UpgradeFinderReport/");
+    const playerSettings = {raid: 3, dungeon: 15, pvp: 4}
+    const result = runUpgradeFinder(props.player, props.contentType, playerSettings);
+    props.setItemSelection(result);
+    props.setShowReport(true);
+    //history.push("/UpgradeFinderReport/");
   };
 
   const selectsPvP = [selectedHonor, selectedConquest];

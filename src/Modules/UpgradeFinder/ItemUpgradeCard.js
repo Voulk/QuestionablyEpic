@@ -21,6 +21,13 @@ import { useTranslation } from "react-i18next";
 const useStyles = makeStyles({
   root: {
     minWidth: 250,
+    //backgroundColor: "#464E5B",
+    //backgroundColor: "#464E5B",
+  },
+  downgrade: {
+    minWidth: 250,
+    backgroundColor: "#303030",
+    opacity: 0.5,
   },
   vault: {
     borderColor: "#0288d1",
@@ -49,6 +56,7 @@ export default function ItemCard(props) {
   const currentLanguage = i18n.language;
   const itemLevel = item.level;
   const isLegendary = "effect" in item && item.effect.type === "spec legendary";
+  const itemDifferential = props.itemDifferential;
 
   const itemQuality = (itemLevel) => {
     if (isLegendary) return "#ff8000";
@@ -84,10 +92,9 @@ export default function ItemCard(props) {
   const upgradeColor = (num) => {
     if (num > 0) {
       return "#FFDF14"; // #60e421
-    } else if (num < 0) {
-      return "#ad2c34";
-    } else {
-      return "#fff";
+    } 
+    else {
+      return "#C16719";
     }
   };
 
@@ -128,8 +135,9 @@ export default function ItemCard(props) {
   return (
     <Grid item xs={12} sm={6} md={6} lg={4} xl={4}>
       <Card
-        className={isVault ? classes.vault : classes.root}
+        className={itemDifferential == 0 ? classes.downgrade : classes.root}
         variant="outlined"
+        
       >
         {/* <CardActionArea disabled={true}> */}
         <Grid
@@ -212,12 +220,12 @@ export default function ItemCard(props) {
                     display="inline"
                     align="center"
                     style={{
-                      color: upgradeColor(props.item.softScore),
+                      color: upgradeColor(itemDifferential),
                       paddingLeft: "3px",
                       paddingRight: "3px",
                     }}
                   >
-                    {Math.round(props.item.softScore)}
+                    {itemDifferential}
                   </Typography>
                 </Grid>
               </Grid>

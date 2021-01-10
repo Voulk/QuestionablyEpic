@@ -2,6 +2,7 @@ import { itemDB } from "../Player/ItemDB";
 import Item from "../Player/Item";
 import { runTopGear } from "../TopGear/TopGearEngine";
 import { buildWepCombos, calcStatsAtLevel, getItemAllocations, scoreItem, getValidArmorTypes, getValidWeaponTypes } from "../Engine/ItemUtilities";
+import UpgradeFinderResult from "./UpgradeFinderResult";
 /*
 
 The core Upgrade Finder loop is as follows:
@@ -23,15 +24,14 @@ const itemLevels = {
   pvp: [200, 207, 213, 220, 226],
 }
 
-export function runUpgradeFinder(player, contentType) {
+export function runUpgradeFinder(player, contentType, playerSettings) {
   // TEMP VARIABLES
-  const playerSettings = {raid: 3, dungeon: 15, pvp: 4};
+  //const playerSettings = {raid: 3, dungeon: 15, pvp: 4};
   //
   
   const completedItemList = []
   
   console.log("Running Upgrade Finder. Strap in.");
-  console.log(player);
   const baseItemList = player.getEquippedItems();
   buildWepCombos(player, false, false) // TODO: DEL
   
@@ -51,8 +51,11 @@ export function runUpgradeFinder(player, contentType) {
     completedItemList.push(processItem(itemPoss[x], baseItemList, baseScore, player, contentType));
   }
 
-  console.log(completedItemList);
+  const result = new UpgradeFinderResult(itemPoss, completedItemList);
+  //console.log(result);
   console.log("=== Upgrade Finder Finished ===");
+
+  return result;
 
   
 }
@@ -73,6 +76,26 @@ function getSetItemLevel(itemSource, playerSettings) {
 
 }
 
+function buildItem(player, contentType, rawItem, itemLevel) {
+  const itemSource = rawItem.sources[0];
+  const itemSlot = rawItem.slot;
+  const itemID = rawItem.id;
+  
+
+  let item = new Item(itemID, "", itemSlot, false, "", 0, itemLevel);
+  let itemAllocations = getItemAllocations(itemID, []);
+  item.stats = calcStatsAtLevel(
+    itemLevel,
+    itemSlot,
+    itemAllocations,
+    ""
+  );
+  item.softScore = scoreItem(item, player, contentType);
+  item.source = itemSource;
+
+  return item;
+}
+
 
 function buildItemPossibilities(player, contentType, playerSettings) {
   let itemPoss = [];
@@ -81,20 +104,9 @@ function buildItemPossibilities(player, contentType, playerSettings) {
     const rawItem = itemDB[i];
     if ("sources" in rawItem && checkItemViable(rawItem, player)) {
       const itemSource = rawItem.sources[0];
-      const itemSlot = rawItem.slot;
-      const itemID = rawItem.id;
-      const itemLevel = getSetItemLevel(itemSource, playerSettings)
 
-      let item = new Item(itemID, "", itemSlot, false, "", 0, itemLevel);
-      let itemAllocations = getItemAllocations(itemID, []);
-      item.stats = calcStatsAtLevel(
-        itemLevel,
-        itemSlot,
-        itemAllocations,
-        ""
-      );
-      item.softScore = scoreItem(item, player, contentType);
-      item.source = itemSource;
+      const itemLevel = getSetItemLevel(itemSource, playerSettings);
+      const item = buildItem(player, contentType, rawItem, itemLevel);
 
       itemPoss.push(item);
     }

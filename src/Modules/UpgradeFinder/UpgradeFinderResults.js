@@ -4,6 +4,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import { Tabs, Tab, Box, AppBar, Typography } from "@material-ui/core";
 import { useTranslation } from "react-i18next";
 import { runUpgradeFinder } from "./UpgradeFinderEngine";
+import UpgradeFinderResult from "./UpgradeFinderResult";
 import MythicPlusGearContainer from "./PanelMythicPlus";
 import PvPGearContainer from "./PanelPvP";
 import RaidGearContainer from "./PanelRaid";
@@ -109,6 +110,11 @@ export default function UpgradeFinderResults(props) {
   const classes = useStyles();
   const [tabvalue, setTabValue] = React.useState(0);
   const { t, i18n } = useTranslation();
+  const result = props.itemSelection;
+  const itemList = result.itemSet;
+  const itemDifferentials = result.differentials;
+  //const raidItems = filterItemSetBySource(itemList, 1190, 0);
+
 
   const handleTabChange = (event, newValue) => {
     setTabValue(newValue);
@@ -169,7 +175,7 @@ export default function UpgradeFinderResults(props) {
       {/* Raid */}
       <TabPanel value={tabvalue} index={0}>
         <div className={classes.panel}>
-          <RaidGearContainer pl={props.player} items="" />
+          <RaidGearContainer pl={props.player} itemList={itemList} itemDifferentials={itemDifferentials} />
         </div>
       </TabPanel>
 

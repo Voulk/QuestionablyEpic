@@ -12,6 +12,7 @@ import QEProfile from "./Modules/SetupAndMenus/QEProfile";
 import PlayerChars from "./Modules/Player/PlayerChars";
 import CovenantExploration from "./Modules/Covenants/Components/CovenantExploration";
 import UpgradeFinderFront from "./Modules/UpgradeFinder/UpgradeFinderFront";
+import { UpgradeFinder } from "./Modules/UpgradeFinder/UpgradeFinder";
 import { ConfirmLogin, QELogin } from "./Modules/SetupAndMenus/QELogin";
 import { withTranslation } from "react-i18next";
 import i18n from "./i18n";
@@ -512,7 +513,17 @@ class App extends Component {
                     />
                   )}
                 />
-
+                <Route
+                  path="/UpgradeFinder/"
+                  render={() => (
+                    <UpgradeFinder
+                      player={activePlayer}
+                      contentType={this.state.contentType}
+                      simcSnack={this.handleSimCSnackOpen}
+                      allChars={allChars}
+                    />
+                  )}
+                />
                 <Route
                   path="/UpgradeFinderFront/"
                   render={() => (

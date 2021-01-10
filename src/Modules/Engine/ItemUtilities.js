@@ -90,6 +90,29 @@ export function getValidWeaponTypes(spec, slot) {
   }
 }
 
+export function filterItemListBySource(itemList, sourceInstance, sourceBoss) {
+
+  let temp = itemList.filter(function (item) {
+      return ((item.source.instanceId == sourceInstance && item.source.encounterId == sourceBoss) ||
+              (item.source.instanceId == sourceInstance && sourceBoss == 0));
+  });
+
+  return temp;
+
+}
+
+export function getDifferentialByID(diffList, id) {
+  //console.log(diffList);
+  console.log("ID: " + id);
+  let temp = diffList.filter(function (item) {
+    //console.log(item);
+    return (item.item == id);
+  });
+
+  if (temp.length > 0) return temp[0].score;
+  else return -99;
+}
+
 // Returns true or false based on whether an ID exists in our item database.
 // Items that won't be found include stuff like shirts, low level items, quest items without stats and so on.
 // Importing these would be a waste of the user interface.

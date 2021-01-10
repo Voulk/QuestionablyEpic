@@ -5,7 +5,9 @@ import ItemUpgradeCard from "./ItemUpgradeCard";
 import bossHeaders from "../CooldownPlanner/Functions/IconFunctions/BossHeaderIcons";
 import "./Panels.css";
 import { bossList } from "../CooldownPlanner/Data/Data";
+import { encounterDB } from "../Player/InstanceDB";
 import { useTranslation } from "react-i18next";
+import { filterItemListBySource, getDifferentialByID } from "../Engine/ItemUtilities";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -18,12 +20,15 @@ const useStyles = makeStyles((theme) => ({
 export default function RaidGearContainer(props) {
   const classes = useStyles();
   const { t, i18n } = useTranslation();
+  const raidID = 1190;
+  const itemList = props.itemList;
+  const itemDifferentials = props.itemDifferentials;
 
   const contentGenerator = (items) => {
     // Raid Panel
 
-    return bossList
-      .filter((key) => key.zoneID === 2296)
+    return Object.keys(encounterDB[1190])
+      //.filter((key) => key === raidID)
       .map((key) => (
         <Grid item xs={12}>
           <Grid container spacing={2}>
@@ -32,13 +37,14 @@ export default function RaidGearContainer(props) {
                 style={{ width: 200, paddingLeft: 10 }}
                 className="container-UpgradeCards"
               >
-                {bossHeaders(key.id)}
+                {bossHeaders(key)}
                 <Typography
                   variant="h6"
                   noWrap
                   className="centered-UpgradeCards"
                 >
-                  {t("BossNames." + key.id)}
+                  {t("BossNames." + key)}
+                 
                 </Typography>
               </div>
             </Grid>
@@ -64,9 +70,9 @@ export default function RaidGearContainer(props) {
                   </Typography>
                 </Grid>
                 <Grid item xs={12} sm container spacing={1}>
-                  {[...props.pl.getActiveItems("1H Weapon")].map(
+                  {[...filterItemListBySource(itemList, 1190, key)].map(
                     (item, index) => (
-                      <ItemUpgradeCard key={index} item={item} />
+                      <ItemUpgradeCard key={index} item={item} itemDifferential={getDifferentialByID(itemDifferentials, item.id)} />
                     )
                   )}
                 </Grid>
@@ -92,9 +98,9 @@ export default function RaidGearContainer(props) {
                   </Typography>
                 </Grid>
                 <Grid item xs={12} sm container spacing={1}>
-                  {[...props.pl.getActiveItems("1H Weapon")].map(
+                  {[...filterItemListBySource(itemList, 1190, key)].map(
                     (item, index) => (
-                      <ItemUpgradeCard key={index} item={item} />
+                      <ItemUpgradeCard key={index} item={item} itemDifferential={0} />
                     )
                   )}
                 </Grid>
