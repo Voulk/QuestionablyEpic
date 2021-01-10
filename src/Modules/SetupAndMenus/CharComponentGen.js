@@ -37,6 +37,7 @@ import { useTranslation } from "react-i18next";
 import raceIcons from "../CooldownPlanner/Functions/IconFunctions/RaceIcons";
 import classIcons from "../CooldownPlanner/Functions/IconFunctions/ClassIcons";
 import { STAT } from "../Engine/STAT";
+import LogDetailsTable from "./CharacterLogDetailsTable";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -579,8 +580,11 @@ export default function CharCards(props) {
           <TabPanel className={classes.tabPanel} value={value} index={2}>
             <Grid container spacing={1}>
               <Grid item>
+                <Typography>Data: Default</Typography>
+              </Grid>
+              <Grid item>
                 <Typography>
-                  Fight Length:{" "}
+                  Fight Length:
                   {
                     props.char.castModel[props.contentType].fightInfo
                       .fightLength
@@ -598,22 +602,9 @@ export default function CharCards(props) {
                   {props.char.castModel[props.contentType].fightInfo.rawhps}
                 </Typography>
               </Grid>
-              {Object.getOwnPropertyNames(
-                props.char.castModel[props.contentType].spellList
-              ).map((key) => (
-                <Grid container xs={12} wrap="noWrap">
-                  <Grid item xs={2}>
-                    <Typography>{key + ": "}</Typography>
-                  </Grid>
-                  {Object.entries(
-                    props.char.castModel[props.contentType].spellList[key]
-                  ).map(([key2, value]) => (
-                    <Grid item xs={2} wrap="noWrap">
-                      <Typography>{key2 + ": " + value}</Typography>
-                    </Grid>
-                  ))}
-                </Grid>
-              ))}
+              <LogDetailsTable
+                data={props.char.castModel[props.contentType].spellList}
+              />
             </Grid>
           </TabPanel>
         </div>
