@@ -49,7 +49,7 @@ export default function RaidGearContainer(props) {
             />
             <Grid item xs={12} sm container direction="column" spacing={1}>
               <Grid item xs={12} sm container direction="row" spacing={1}>
-                <Grid item xs={1}>
+                <Grid item xs={12}>
                   <Typography
                     variant="h6"
                     color="primary"
@@ -63,7 +63,7 @@ export default function RaidGearContainer(props) {
                     Mythic
                   </Typography>
                 </Grid>
-                <Grid item xs={11} sm container spacing={1}>
+                <Grid item xs={12} sm container spacing={1}>
                   {[...props.pl.getActiveItems("1H Weapon")].map(
                     (item, index) => (
                       <ItemUpgradeCard key={index} item={item} />
@@ -77,7 +77,7 @@ export default function RaidGearContainer(props) {
               </Grid>
 
               <Grid item xs={12} sm container direction="row" spacing={1}>
-                <Grid item xs={1}>
+                <Grid item xs={12}>
                   <Typography
                     variant="h6"
                     color="primary"
@@ -91,7 +91,7 @@ export default function RaidGearContainer(props) {
                     Heroic
                   </Typography>
                 </Grid>
-                <Grid item xs={11} sm container spacing={1}>
+                <Grid item xs={12} sm container spacing={1}>
                   {[...props.pl.getActiveItems("1H Weapon")].map(
                     (item, index) => (
                       <ItemUpgradeCard key={index} item={item} />
