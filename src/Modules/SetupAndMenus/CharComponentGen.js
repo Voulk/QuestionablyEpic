@@ -598,17 +598,22 @@ export default function CharCards(props) {
                   {props.char.castModel[props.contentType].fightInfo.rawhps}
                 </Typography>
               </Grid>
-              {Object.keys(
+              {Object.getOwnPropertyNames(
                 props.char.castModel[props.contentType].spellList
-              ).map((key) =>
-                Object.entries(
-                  props.char.castModel[props.contentType].spellList[key]
-                ).map((key2, value) => (
-                  <Grid item>
-                    <Typography>{`${key2} ${value}`}</Typography>
+              ).map((key) => (
+                <Grid container xs={12} wrap="noWrap">
+                  <Grid item xs={2}>
+                    <Typography>{key + ": "}</Typography>
                   </Grid>
-                ))
-              )}
+                  {Object.entries(
+                    props.char.castModel[props.contentType].spellList[key]
+                  ).map(([key2, value]) => (
+                    <Grid item xs={2} wrap="noWrap">
+                      <Typography>{key2 + ": " + value}</Typography>
+                    </Grid>
+                  ))}
+                </Grid>
+              ))}
             </Grid>
           </TabPanel>
         </div>
