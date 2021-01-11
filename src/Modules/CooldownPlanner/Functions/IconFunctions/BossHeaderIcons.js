@@ -10,6 +10,9 @@ import ShriekwingHeader from "../../../../Images/Bosses/CastleNathria/Shriekwing
 import SireDenathriusHeader from "../../../../Images/Bosses/CastleNathria/SireDenathrius/SireDenathriusEJ.png";
 import SludgefistHeader from "../../../../Images/Bosses/CastleNathria/Sludgefist/SludgefistEJ.png";
 import StonebornGeneralsHeader from "../../../../Images/Bosses/CastleNathria/StoneLegionGenerals/StoneLegionGeneralsEJ.png";
+import Hunstaman from "../../../../Images/Bosses/CastleNathria/HuntsmanAltimor/HuntsmanAltimor.png";
+import SW from "../../../../Images/Bosses/CastleNathria/Shriekwing/Shriekwing.png";
+import Sun from "../../../../Images/Bosses/CastleNathria/SunKingsSalvation/SunKing.png";
 
 // World Bosses
 import ValinorHeader from "../../../../Images/Bosses/WorldBosses/valinor.png";
@@ -37,7 +40,7 @@ export default function bossHeaders(props, style) {
   }
   // Huntsman Altimor
   if (props === 2418 || props === 2429) {
-    source = HuntsmanAltimorHeader;
+    source = Hunstaman;
   }
   // Hungering Destroyer
   if (props === 2383 || props === 2428) {
@@ -61,7 +64,7 @@ export default function bossHeaders(props, style) {
   }
   // Shriekwing
   if (props === 2398 || props === 2393) {
-    source = ShriekwingHeader;
+    source = SW;
   }
   // Sludgefist
   if (props === 2399 || props === 2394) {
@@ -69,7 +72,7 @@ export default function bossHeaders(props, style) {
   }
   // Kael'thas
   if (props === 2402 || props === 2422) {
-    source = SunKingsSalvationHeader;
+    source = Sun;
   }
 
   // World Bosses

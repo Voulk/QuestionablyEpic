@@ -39,10 +39,10 @@ export default function RaidGearContainer(props) {
             <Grid container spacing={2}>
               <Grid item style={{ alignSelf: "center" }}>
                 <div
-                  style={{ width: 200, paddingLeft: 10 }}
+                  style={{ paddingLeft: 10 }}
                   className="container-UpgradeCards"
                 >
-                  {bossHeaders(key, { width: "100%" })}
+                  {bossHeaders(key, { width: "100%", height: "auto" })}
                   <Typography
                     variant="h6"
                     noWrap
@@ -66,7 +66,6 @@ export default function RaidGearContainer(props) {
                       align="center"
                       style={{
                         backgroundColor: "rgba(255, 255, 255, 0.12)",
-                        height: "100%",
                         borderRadius: 4,
                       }}
                     >
@@ -101,7 +100,6 @@ export default function RaidGearContainer(props) {
                       align="center"
                       style={{
                         backgroundColor: "rgba(255, 255, 255, 0.12)",
-                        height: "100%",
                         borderRadius: 4,
                       }}
                     >
