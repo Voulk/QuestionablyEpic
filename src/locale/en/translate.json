@@ -327,6 +327,7 @@
     },
 
     "Soulbinds": {
+      "Header": "Covenant Exploration",
       "PotencyConduit": "Potency Conduit",
       "EnduranceConduit": "Endurance Conduit",
       "FinesseConduit": "Finesse Conduit"
@@ -390,6 +391,11 @@
       "SimCBody2": "Current Equipped Gear:",
       "SimCButton": "Import SimC",
       "HelpText": "Insert a SimC String, Select up to two raid difficulties, your standard mythic keystone level, and your PVP rating to see where you can find your next upgrade!"
+    },
+
+    "TrinketAnalysis": {
+      "Header": "Trinket Analysis",
+      "HelpText": "Trinket Help Here"
     },
 
     "DruidLegendariesComment": "DruidLegendariesComment",

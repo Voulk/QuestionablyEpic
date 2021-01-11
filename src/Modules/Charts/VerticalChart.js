@@ -5,14 +5,9 @@ import {
   XAxis,
   YAxis,
   ResponsiveContainer,
-  Tooltip,
   Legend,
-  CartesianAxis,
   CartesianGrid,
 } from "recharts";
-import Paper from "@material-ui/core/Paper";
-import Typography from "@material-ui/core/Typography";
-import Divider from "@material-ui/core/Divider";
 import chroma from "chroma-js";
 import "./VerticalChart.css";
 
@@ -22,7 +17,7 @@ export default class VerticalChart extends PureComponent {
   }
 
   render(props) {
-    const data = this.props.data.slice(0, 20);
+    const data = this.props.data;
 
     const Ilvls = ["i226", "i213", "i200", "i187", "i174", "i161"];
     let len = Ilvls.length;
@@ -46,7 +41,7 @@ export default class VerticalChart extends PureComponent {
       <ResponsiveContainer
         className="ResponsiveContainer2"
         width="100%"
-        aspect={1 / 0.5}
+        aspect={1 / 2}
       >
         <BarChart
           barCategoryGap="15%"
@@ -59,7 +54,7 @@ export default class VerticalChart extends PureComponent {
             left: 220,
           }}
         >
-          <XAxis type="number" stroke="#f5f5f5" />
+          <XAxis type="number" stroke="#f5f5f5" axisLine={false} />
           <XAxis
             type="number"
             stroke="#f5f5f5"
@@ -67,9 +62,10 @@ export default class VerticalChart extends PureComponent {
             xAxisId={1}
             padding={0}
             height={1}
+            axisLine={false}
           />
 
-          <Legend />
+          <Legend verticalAlign="top" />
           <CartesianGrid vertical={true} horizontal={false} />
           <YAxis
             type="category"
