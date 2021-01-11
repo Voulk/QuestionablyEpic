@@ -21,6 +21,9 @@ import {
   MenuItem,
   FormControl,
   InputLabel,
+  Accordion,
+  AccordionSummary,
+  AccordionDetails,
 } from "@material-ui/core";
 import { classColoursJS } from "../CooldownPlanner/Functions/ClassColourFunctions.js";
 import classicons from "../CooldownPlanner/Functions/IconFunctions/ClassIcons.js";
@@ -38,6 +41,7 @@ import raceIcons from "../CooldownPlanner/Functions/IconFunctions/RaceIcons";
 import classIcons from "../CooldownPlanner/Functions/IconFunctions/ClassIcons";
 import { STAT } from "../Engine/STAT";
 import LogDetailsTable from "./CharacterLogDetailsTable";
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -579,32 +583,48 @@ export default function CharCards(props) {
           </TabPanel>
           <TabPanel className={classes.tabPanel} value={value} index={2}>
             <Grid container spacing={1}>
-              <Grid item>
-                <Typography>Data: Default</Typography>
-              </Grid>
-              <Grid item>
-                <Typography>
-                  Fight Length:
-                  {
-                    props.char.castModel[props.contentType].fightInfo
-                      .fightLength
-                  }
-                </Typography>
-              </Grid>
-              <Grid item>
-                <Typography>
-                  HPS: {props.char.castModel[props.contentType].fightInfo.hps}
-                </Typography>
-              </Grid>
-              <Grid item>
-                <Typography>
-                  Raw HPS:{" "}
-                  {props.char.castModel[props.contentType].fightInfo.rawhps}
-                </Typography>
-              </Grid>
-              <LogDetailsTable
-                data={props.char.castModel[props.contentType].spellList}
-              />
+              <Accordion style={{ backgroundColor: "#525252" }}>
+                <AccordionSummary
+                  expandIcon={<ExpandMoreIcon />}
+                  aria-controls="panel1a-content"
+                  id="panel1a-header"
+                >
+                  <Grid container spacing={1}>
+                    <Grid item>
+                      <Typography>Data: Default</Typography>
+                    </Grid>
+                    <Grid item>
+                      <Typography>
+                        Fight Length:
+                        {
+                          props.char.castModel[props.contentType].fightInfo
+                            .fightLength
+                        }
+                      </Typography>
+                    </Grid>
+                    <Grid item>
+                      <Typography>
+                        HPS:{" "}
+                        {props.char.castModel[props.contentType].fightInfo.hps}
+                      </Typography>
+                    </Grid>
+                    <Grid item>
+                      <Typography>
+                        Raw HPS:{" "}
+                        {
+                          props.char.castModel[props.contentType].fightInfo
+                            .rawhps
+                        }
+                      </Typography>
+                    </Grid>
+                  </Grid>
+                </AccordionSummary>
+                <AccordionDetails>
+                  <LogDetailsTable
+                    data={props.char.castModel[props.contentType].spellList}
+                  />
+                </AccordionDetails>
+              </Accordion>
             </Grid>
           </TabPanel>
         </div>

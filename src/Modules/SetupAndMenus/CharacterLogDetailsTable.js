@@ -10,7 +10,7 @@ import Paper from "@material-ui/core/Paper";
 import { useTranslation } from "react-i18next";
 
 const useStyles = makeStyles({
-  table: {},
+  table: { width: "100%" },
 });
 
 export default function LogDetailsTable(props) {
@@ -26,14 +26,16 @@ export default function LogDetailsTable(props) {
         <TableHead>
           <TableRow>
             <TableCell style={{ width: 30 }}>Spell</TableCell>
-            <TableCell align="right">Casts</TableCell>
-            <TableCell align="right" style={{ width: 30 }}>
+            <TableCell align="right" style={{ width: 20, paddingRight: 8 }}>
+              Casts
+            </TableCell>
+            <TableCell align="right" style={{ width: 20, paddingRight: 8 }}>
               Healing
             </TableCell>
-            <TableCell align="right" style={{ width: 30 }}>
+            <TableCell align="right" style={{ width: 30, paddingRight: 8 }}>
               HPS
             </TableCell>
-            <TableCell align="right" style={{ width: 30 }}>
+            <TableCell align="right" style={{ width: 30, paddingRight: 8 }}>
               Overhealing
             </TableCell>
           </TableRow>
@@ -62,10 +64,18 @@ export default function LogDetailsTable(props) {
                   {t("SpellNames." + row)}
                 </div>
               </TableCell>
-              <TableCell align="right">{rows[row].casts}</TableCell>
-              <TableCell align="right">{rows[row].healing}</TableCell>
-              <TableCell align="right">{rows[row].hps}</TableCell>
-              <TableCell align="right">{rows[row].overhealing}</TableCell>
+              <TableCell align="right" style={{ paddingRight: 8 }}>
+                {rows[row].casts}
+              </TableCell>
+              <TableCell align="right" style={{ paddingRight: 8 }}>
+                {rows[row].healing}
+              </TableCell>
+              <TableCell align="right" style={{ paddingRight: 8 }}>
+                {rows[row].hps}
+              </TableCell>
+              <TableCell align="right" style={{ paddingRight: 8 }}>
+                {rows[row].overhealing}
+              </TableCell>
             </TableRow>
           ))}
         </TableBody>
