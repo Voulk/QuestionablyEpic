@@ -42,6 +42,7 @@ import classIcons from "../CooldownPlanner/Functions/IconFunctions/ClassIcons";
 import { STAT } from "../Engine/STAT";
 import LogDetailsTable from "./CharacterLogDetailsTable";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import moment from "moment";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -267,7 +268,16 @@ export default function CharCards(props) {
 
   const regions = ["CN", "US", "TW", "EU"];
 
-  console.log(props.char.castModel[props.contentType]);
+  const sec2hmmss = (seconds) => {
+    let sec = seconds % 60;
+    let min = parseInt(seconds / 60);
+    if (sec.toString().length == 1) {
+      sec = "0" + sec;
+    }
+    return min + ":" + sec;
+  };
+
+  console.log(props.char);
 
   return (
     <Grid item xs={12} sm={6} md={6} lg={4} xl={4}>
@@ -583,48 +593,55 @@ export default function CharCards(props) {
           </TabPanel>
           <TabPanel className={classes.tabPanel} value={value} index={2}>
             <Grid container spacing={1}>
-              <Accordion style={{ backgroundColor: "#525252" }}>
-                <AccordionSummary
-                  expandIcon={<ExpandMoreIcon />}
-                  aria-controls="panel1a-content"
-                  id="panel1a-header"
-                >
-                  <Grid container spacing={1}>
-                    <Grid item>
-                      <Typography>Data: Default</Typography>
+              {/* map here */}
+              <Grid item xs={12}>
+                <Accordion style={{ backgroundColor: "#525252" }}>
+                  <AccordionSummary
+                    expandIcon={<ExpandMoreIcon />}
+                    aria-controls="panel1a-content"
+                    id="panel1a-header"
+                  >
+                    <Grid container spacing={1}>
+                      <Grid item>
+                        <Typography>Data: Default |</Typography>
+                      </Grid>
+                      <Grid item>
+                        <Typography>
+                          Fight Length:
+                          {" " +
+                            sec2hmmss(
+                              props.char.castModel[props.contentType].fightInfo
+                                .fightLength
+                            ) +
+                            " |"}
+                        </Typography>
+                      </Grid>
+                      <Grid item>
+                        <Typography>
+                          HPS:
+                          {" " +
+                            props.char.castModel[props.contentType].fightInfo
+                              .hps +
+                            " |"}
+                        </Typography>
+                      </Grid>
+                      <Grid item>
+                        <Typography>
+                          Raw HPS:
+                          {" " +
+                            props.char.castModel[props.contentType].fightInfo
+                              .rawhps}
+                        </Typography>
+                      </Grid>
                     </Grid>
-                    <Grid item>
-                      <Typography>
-                        Fight Length:
-                        {
-                          props.char.castModel[props.contentType].fightInfo
-                            .fightLength
-                        }
-                      </Typography>
-                    </Grid>
-                    <Grid item>
-                      <Typography>
-                        HPS:{" "}
-                        {props.char.castModel[props.contentType].fightInfo.hps}
-                      </Typography>
-                    </Grid>
-                    <Grid item>
-                      <Typography>
-                        Raw HPS:{" "}
-                        {
-                          props.char.castModel[props.contentType].fightInfo
-                            .rawhps
-                        }
-                      </Typography>
-                    </Grid>
-                  </Grid>
-                </AccordionSummary>
-                <AccordionDetails>
-                  <LogDetailsTable
-                    data={props.char.castModel[props.contentType].spellList}
-                  />
-                </AccordionDetails>
-              </Accordion>
+                  </AccordionSummary>
+                  <AccordionDetails>
+                    <LogDetailsTable
+                      data={props.char.castModel[props.contentType].spellList}
+                    />
+                  </AccordionDetails>
+                </Accordion>
+              </Grid>
             </Grid>
           </TabPanel>
         </div>
