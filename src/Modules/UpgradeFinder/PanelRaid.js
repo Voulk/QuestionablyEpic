@@ -7,7 +7,10 @@ import "./Panels.css";
 import { bossList } from "../CooldownPlanner/Data/Data";
 import { encounterDB } from "../Player/InstanceDB";
 import { useTranslation } from "react-i18next";
-import { filterItemListBySource, getDifferentialByID } from "../Engine/ItemUtilities";
+import {
+  filterItemListBySource,
+  getDifferentialByID,
+} from "../Engine/ItemUtilities";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -27,94 +30,107 @@ export default function RaidGearContainer(props) {
   const contentGenerator = (items) => {
     // Raid Panel
 
-    return encounterDB[1190]
-      //.filter((key) => key === raidID)
-      .map((key) => (
-        <Grid item xs={12}>
-          <Grid container spacing={2}>
-            <Grid item style={{ alignSelf: "center" }}>
-              <div
-                style={{ width: 200, paddingLeft: 10 }}
-                className="container-UpgradeCards"
-              >
-                {bossHeaders(key)}
-                <Typography
-                  variant="h6"
-                  noWrap
-                  className="centered-UpgradeCards"
+    return (
+      encounterDB[1190]
+        //.filter((key) => key === raidID)
+        .map((key) => (
+          <Grid item xs={12}>
+            {console.log(key)}
+            <Grid container spacing={2}>
+              <Grid item style={{ alignSelf: "center" }}>
+                <div
+                  style={{ width: 200, paddingLeft: 10 }}
+                  className="container-UpgradeCards"
                 >
-                  {t("BossNames." + key)}
-                 
-                </Typography>
-              </div>
-            </Grid>
-            <Divider
-              orientation="vertical"
-              flexItem
-              style={{ marginRight: 4 }}
-            />
-            <Grid item xs={12} sm container direction="column" spacing={1}>
-              <Grid item xs={12} sm container direction="row" spacing={1}>
-                <Grid item xs={12}>
+                  {bossHeaders(key, { width: "100%" })}
                   <Typography
                     variant="h6"
-                    color="primary"
-                    align="center"
-                    style={{
-                      backgroundColor: "rgba(255, 255, 255, 0.12)",
-                      height: "100%",
-                      borderRadius: 4,
-                    }}
+                    noWrap
+                    className="centered-UpgradeCards"
                   >
-                    Mythic
+                    {t("BossNames." + key)}
                   </Typography>
-                </Grid>
-                <Grid item xs={12} sm container spacing={1}>
-                  {[...filterItemListBySource(itemList, 1190, key)].map(
-                    (item, index) => (
-                      <ItemUpgradeCard key={index} item={item} itemDifferential={getDifferentialByID(itemDifferentials, item.id)} />
-                    )
-                  )}
-                </Grid>
+                </div>
               </Grid>
-
-              <Grid item>
-                <Divider />
-              </Grid>
-
-              <Grid item xs={12} sm container direction="row" spacing={1}>
-                <Grid item xs={12}>
-                  <Typography
-                    variant="h6"
-                    color="primary"
-                    align="center"
-                    style={{
-                      backgroundColor: "rgba(255, 255, 255, 0.12)",
-                      height: "100%",
-                      borderRadius: 4,
-                    }}
-                  >
-                    Heroic
-                  </Typography>
+              <Divider
+                orientation="vertical"
+                flexItem
+                style={{ marginRight: 4 }}
+              />
+              <Grid item xs={12} sm container direction="column" spacing={1}>
+                <Grid item xs={12} sm container direction="row" spacing={1}>
+                  <Grid item xs={12}>
+                    <Typography
+                      variant="h6"
+                      color="primary"
+                      align="center"
+                      style={{
+                        backgroundColor: "rgba(255, 255, 255, 0.12)",
+                        height: "100%",
+                        borderRadius: 4,
+                      }}
+                    >
+                      Mythic
+                    </Typography>
+                  </Grid>
+                  <Grid item xs={12} sm container spacing={1}>
+                    {[...filterItemListBySource(itemList, 1190, key)].map(
+                      (item, index) => (
+                        <ItemUpgradeCard
+                          key={index}
+                          item={item}
+                          itemDifferential={getDifferentialByID(
+                            itemDifferentials,
+                            item.id
+                          )}
+                        />
+                      )
+                    )}
+                  </Grid>
                 </Grid>
-                <Grid item xs={12} sm container spacing={1}>
-                  {[...filterItemListBySource(itemList, 1190, key)].map(
-                    (item, index) => (
-                      <ItemUpgradeCard key={index} item={item} itemDifferential={0} />
-                    )
-                  )}
+
+                <Grid item>
+                  <Divider />
+                </Grid>
+
+                <Grid item xs={12} sm container direction="row" spacing={1}>
+                  <Grid item xs={12}>
+                    <Typography
+                      variant="h6"
+                      color="primary"
+                      align="center"
+                      style={{
+                        backgroundColor: "rgba(255, 255, 255, 0.12)",
+                        height: "100%",
+                        borderRadius: 4,
+                      }}
+                    >
+                      Heroic
+                    </Typography>
+                  </Grid>
+                  <Grid item xs={12} sm container spacing={1}>
+                    {[...filterItemListBySource(itemList, 1190, key)].map(
+                      (item, index) => (
+                        <ItemUpgradeCard
+                          key={index}
+                          item={item}
+                          itemDifferential={0}
+                        />
+                      )
+                    )}
+                  </Grid>
                 </Grid>
               </Grid>
             </Grid>
           </Grid>
-        </Grid>
-      ))
-      .map((key) => [
-        key,
-        <Grid item xs={12}>
-          <Divider />
-        </Grid>,
-      ]);
+        ))
+        .map((key) => [
+          key,
+          <Grid item xs={12}>
+            <Divider />
+          </Grid>,
+        ])
+    );
   };
 
   return (

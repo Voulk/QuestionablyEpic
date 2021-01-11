@@ -525,26 +525,6 @@ class App extends Component {
                   )}
                 />
                 <Route
-                  path="/UpgradeFinderFront/"
-                  render={() => (
-                    <UpgradeFinderFront
-                      player={activePlayer}
-                      contentType={this.state.contentType}
-                      simcSnack={this.handleSimCSnackOpen}
-                      allChars={allChars}
-                    />
-                  )}
-                />
-                <Route
-                  path="/UpgradeFinderReport/"
-                  render={() => (
-                    <UpgradeFinderResults
-                      player={activePlayer}
-                      contentType={this.state.contentType}
-                    />
-                  )}
-                />
-                <Route
                   path="/profile/"
                   render={() => (
                     <QEProfile
