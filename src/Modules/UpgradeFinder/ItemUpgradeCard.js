@@ -215,7 +215,7 @@ export default function ItemCard(props) {
                   }}
                 >
                   <Typography
-                    variant="h6"
+                    variant="subtitle1" // h6 formerly
                     wrap="nowrap"
                     display="inline"
                     align="center"
@@ -225,7 +225,7 @@ export default function ItemCard(props) {
                       paddingRight: "3px",
                     }}
                   >
-                    {itemDifferential}
+                    {"+" + itemDifferential + "%"}
                   </Typography>
                 </Grid>
               </Grid>
