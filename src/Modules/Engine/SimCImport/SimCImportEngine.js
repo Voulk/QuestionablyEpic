@@ -275,8 +275,10 @@ function processItem(line, player, contentType, type) {
         }
         else if (bonus_id == 6891 || bonus_id == 6892) itemLevel = 165;
         else if (bonus_id == 6890) itemLevel = 129;
-        else if (bonus_id == 7192) itemLevel = 126;
+        else if (bonus_id == 7192) itemLevel = 138;
+        else if (bonus_id == 7191) itemLevel = 158;
         else if (bonus_id == 7238) itemLevel = 164;
+        else if (bonus_id == 7185) itemLevel = 168;
         else if (bonus_id == 7239) itemLevel = 181;
         else if (bonus_id == 7240) itemLevel = 200;
         else if (bonus_id == 7241) itemLevel = 180;
