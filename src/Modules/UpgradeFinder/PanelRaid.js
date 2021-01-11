@@ -35,7 +35,7 @@ export default function RaidGearContainer(props) {
         //.filter((key) => key === raidID)
         .map((key) => (
           <Grid item xs={12}>
-            {console.log(key)}
+            {/* {console.log(key)} */}
             <Grid container spacing={2}>
               <Grid item style={{ alignSelf: "center" }}>
                 <div

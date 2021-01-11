@@ -11,15 +11,17 @@ import { runUpgradeFinder } from "./UpgradeFinderEngine";
 import { useHistory, useLocation } from "react-router-dom";
 import UpgradeFinderResult from "./UpgradeFinderResult";
 
-const theme = createMuiTheme({
-  overrides: {
-    MuiToggleButton: {
-      selected: {
-        backgroundColor: "#F2BF59",
-      },
-    },
-  },
-});
+// const theme = createMuiTheme({
+//   overrides: {
+//     MuiToggleButton: {
+//       root: {
+//         "&$selected": {
+//           backgroundColor: "#F2BF59",
+//         },
+//       },
+//     },
+//   },
+// });
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -149,8 +151,12 @@ export default function UpgradeFinderFront(props) {
   ];
 
   const unleashUpgradeFinder = () => {
-    const playerSettings = {raid: 3, dungeon: 15, pvp: 4}
-    const result = runUpgradeFinder(props.player, props.contentType, playerSettings);
+    const playerSettings = { raid: 3, dungeon: 15, pvp: 4 };
+    const result = runUpgradeFinder(
+      props.player,
+      props.contentType,
+      playerSettings
+    );
     props.setItemSelection(result);
     props.setShowReport(true);
     //history.push("/UpgradeFinderReport/");
@@ -220,7 +226,7 @@ export default function UpgradeFinderFront(props) {
             </Grid> */}
             <Grid container justify="center" spacing={1}>
               {raidDifficulty.map((key, i) => (
-                <Grid item justify="center" xs="auto">
+                <Grid item xs="auto">
                   <ToggleButton
                     classes={{
                       root: classes.red,
@@ -343,7 +349,7 @@ export default function UpgradeFinderFront(props) {
             <Typography
               variant="Subtitle2"
               align="center"
-              style={{ padding: "10px 10px 5px 10px", marginRight: "5px" }}
+              style={{ padding: "5px 10px 5px 10px" }}
               color="primary"
             >
               {/* {errorMessage} */}

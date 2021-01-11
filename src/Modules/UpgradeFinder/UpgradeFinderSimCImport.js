@@ -50,7 +50,7 @@ export default function UpgradeFinderSimC(props) {
   const classes = useStyles();
   const { t, i18n } = useTranslation();
 
-  console.log(props.player);
+  // console.log(props.player);
   return (
     <Grid item xs={12}>
       <Paper elevation={0} style={{ padding: 10 }}>
