@@ -27,7 +27,7 @@ export default function RaidGearContainer(props) {
   const contentGenerator = (items) => {
     // Raid Panel
 
-    return Object.keys(encounterDB[1190])
+    return encounterDB[1190]
       //.filter((key) => key === raidID)
       .map((key) => (
         <Grid item xs={12}>
