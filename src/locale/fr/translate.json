@@ -285,6 +285,7 @@
     },
 
     "Soulbinds": {
+      "Header": "Covenant ExplorationFR",
       "PotencyConduit": "Potency ConduitFR",
       "EnduranceConduit": "Endurance ConduitFR",
       "FinesseConduit": "Finesse ConduitFR"
