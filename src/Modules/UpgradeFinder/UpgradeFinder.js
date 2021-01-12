@@ -9,7 +9,7 @@ import { useTranslation } from "react-i18next";
 export function UpgradeFinder(props) {
   const [itemSelection, setItemSelection] = React.useState([]);
   const [showReport, setShowReport] = React.useState(false);
-  const [playerSettings, setPlayerSettings] = React.useState({ raid: [2,3], dungeon: 14, pvp: 4 })
+  const [playerSettings, setPlayerSettings] = React.useState({ raid: [2,3], dungeon: 10, pvp: 4 })
 
   const setRaidDifficulty = (difficulty) =>  {
     let currDiff = playerSettings.raid;
@@ -23,14 +23,18 @@ export function UpgradeFinder(props) {
     
   }
 
+  const setDungeonDifficulty = (event, difficulty) => {
+    if (difficulty <= 15 && difficulty >= 0) setPlayerSettings({...playerSettings, dungeon: difficulty});
+  }
+
   const player = props.player;
   const contentType = props.contentType;
   const allChars = props.allChars;
   const simcSnack = props.simcSnack;
   //const playerSettings = { raid: [0,1], dungeon: 15, pvp: 4 };
 
-  console.log("== Item Selection ==");
-  console.log(itemSelection);
+  //console.log("== Item Selection ==");
+  //console.log(itemSelection);
 
   return showReport ? (
     <UpgradeFinderResults
@@ -49,6 +53,7 @@ export function UpgradeFinder(props) {
       setShowReport={setShowReport}
       playerSettings={playerSettings}
       setRaidDifficulty={setRaidDifficulty}
+      setDungeonDifficulty={setDungeonDifficulty}
     />
   );
 }

@@ -62,23 +62,23 @@ const marks = [
     label: "M 0",
   },
   {
-    value: 1,
+    value: 2,
     label: "M 2",
   },
   {
-    value: 2,
+    value: 3,
     label: "M 3",
   },
   {
-    value: 4,
+    value: 5,
     label: "M 4-5",
   },
   {
-    value: 5,
+    value: 6,
     label: "M 6",
   },
   {
-    value: 8,
+    value: 7,
     label: "M 7-9",
   },
   {
@@ -86,11 +86,11 @@ const marks = [
     label: "M 10-11",
   },
   {
-    value: 13,
+    value: 12,
     label: "M 12-14",
   },
   {
-    value: 14,
+    value: 15,
     label: "M 15",
   },
 ];
@@ -165,6 +165,7 @@ export default function UpgradeFinderFront(props) {
   const selectsPvP = [selectedHonor, selectedConquest];
 
   const setsPvP = [setSelectedHonor, setSelectedConquest];
+
 
   return (
     <div className={classes.root}>
@@ -276,7 +277,8 @@ export default function UpgradeFinderFront(props) {
               step={null}
               valueLabelDisplay="off"
               marks={marks}
-              max={14}
+              max={15}
+              change={props.setDungeonDifficulty}
             />
           </Paper>
         </Grid>

@@ -56,6 +56,7 @@ export default function UpgradeFinderSlider(props) {
           valueLabelDisplay="off"
           marks={props.marks}
           max={props.max}
+          onChangeCommitted={props.change}
         />
       </ThemeProvider>
     </Grid>

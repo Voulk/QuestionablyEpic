@@ -12,6 +12,13 @@ import {
 } from "../Engine/ItemUtilities";
 import { encounterDB } from "../Player/InstanceDB";
 
+// TODO: Move these to somewhere more accessible since they are used in multiple places.
+const itemLevels = {
+  raid: [187, 200, 213, 226],
+  dungeon: [184, 184, 187, 190, 194, 194, 197, 200, 200, 200, 203, 203, 207, 207, 207, 210],
+  pvp: [200, 207, 213, 220, 226],
+}
+
 const useStyles = makeStyles((theme) => ({
   root: {
     width: "100%",
@@ -26,7 +33,7 @@ export default function MythicPlusGearContainer(props) {
   const raidID = 1190;
   const itemList = props.itemList;
   const itemDifferentials = props.itemDifferentials;
-  const difficulties = props.playerSettings.dungeon;
+  const difficulty = props.playerSettings.dungeon;
 
   const contentGenerator = (type) => {
     return encounterDB[1]
@@ -55,7 +62,7 @@ export default function MythicPlusGearContainer(props) {
             />
             <Grid item xs={12} sm container spacing={1}>
             {console.log("Zone: " + key)}
-              {[...filterItemListBySource(itemList, -1, key, 207)].map((item, index) => (       
+              {[...filterItemListBySource(itemList, -1, key, itemLevels.dungeon[difficulty])].map((item, index) => (       
                 <ItemUpgradeCard
                   key={index}
                   item={item}

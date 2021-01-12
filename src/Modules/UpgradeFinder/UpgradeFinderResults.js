@@ -129,7 +129,7 @@ export default function UpgradeFinderResults(props) {
         align="center"
         style={{ padding: "10px 10px 5px 10px" }}
       >
-        {t("UpgradeFinder.Header")}
+        {t("UpgradeFinder.Header") + " - " + props.contentType}
       </Typography>
       <AppBar
         position="static"
