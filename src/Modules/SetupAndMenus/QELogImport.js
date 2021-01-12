@@ -319,7 +319,13 @@ export default function QELogImport(props) {
       reportId,
       currentPlayerID
     );
-    convertLogSpellOutput(props.player, returnedHealerDetailed, timeend - time);
+    convertLogSpellOutput(
+      props.player,
+      returnedHealerDetailed,
+      timeend - time,
+      reportId,
+      bossName
+    );
     convertLogStatOutput(props.player, summaryData, currentPlayerID);
     handleClose();
     props.logImportSnack();

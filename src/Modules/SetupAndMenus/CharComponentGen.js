@@ -269,7 +269,7 @@ export default function CharCards(props) {
   const regions = ["CN", "US", "TW", "EU"];
 
   const sec2hmmss = (seconds) => {
-    let sec = seconds % 60;
+    let sec = Math.round(seconds % 60);
     let min = parseInt(seconds / 60);
     if (sec.toString().length == 1) {
       sec = "0" + sec;
@@ -595,42 +595,84 @@ export default function CharCards(props) {
             <Grid container spacing={1}>
               {/* map here */}
               <Grid item xs={12}>
-                <Accordion style={{ backgroundColor: "#525252" }}>
+                <Accordion
+                  onClick={() => ""}
+                  style={{ backgroundColor: "#525252" }}
+                >
                   <AccordionSummary
                     expandIcon={<ExpandMoreIcon />}
                     aria-controls="panel1a-content"
                     id="panel1a-header"
                   >
                     <Grid container spacing={1}>
-                      <Grid item>
-                        <Typography>Data: Default |</Typography>
+                      <Grid item xs={6}>
+                        <Typography style={{ display: "inline-flex" }}>
+                          Report:
+                          <Typography
+                            color="primary"
+                            style={{ paddingLeft: 4 }}
+                          >
+                            {
+                              props.char.castModel[props.contentType].fightInfo
+                                .reportID
+                            }
+                          </Typography>
+                        </Typography>
+                      </Grid>
+                      <Grid item xs={6}>
+                        <Typography style={{ display: "inline-flex" }}>
+                          Boss:
+                          <Typography
+                            color="primary"
+                            style={{ paddingLeft: 4 }}
+                          >
+                            {
+                              props.char.castModel[props.contentType].fightInfo
+                                .bossName
+                            }
+                          </Typography>
+                        </Typography>
                       </Grid>
                       <Grid item>
-                        <Typography>
+                        <Typography style={{ display: "inline-flex" }}>
                           Fight Length:
-                          {" " +
-                            sec2hmmss(
+                          <Typography
+                            color="primary"
+                            style={{ paddingLeft: 4 }}
+                          >
+                            {sec2hmmss(
                               props.char.castModel[props.contentType].fightInfo
                                 .fightLength
-                            ) +
-                            " |"}
+                            )}
+                          </Typography>
                         </Typography>
                       </Grid>
                       <Grid item>
-                        <Typography>
+                        <Typography style={{ display: "inline-flex" }}>
                           HPS:
-                          {" " +
-                            props.char.castModel[props.contentType].fightInfo
-                              .hps +
-                            " |"}
+                          <Typography
+                            color="primary"
+                            style={{ paddingLeft: 4 }}
+                          >
+                            {
+                              props.char.castModel[props.contentType].fightInfo
+                                .hps
+                            }
+                          </Typography>
                         </Typography>
                       </Grid>
                       <Grid item>
-                        <Typography>
+                        <Typography style={{ display: "inline-flex" }}>
                           Raw HPS:
-                          {" " +
-                            props.char.castModel[props.contentType].fightInfo
-                              .rawhps}
+                          <Typography
+                            color="primary"
+                            style={{ paddingLeft: 4 }}
+                          >
+                            {
+                              props.char.castModel[props.contentType].fightInfo
+                                .rawhps
+                            }
+                          </Typography>
                         </Typography>
                       </Grid>
                     </Grid>
