@@ -20,7 +20,6 @@ export function UpgradeFinder(props) {
       if (currDiff.length > 2) currDiff.splice(0, 1);
     }
     setPlayerSettings({...playerSettings, raid: currDiff});
-    console.log(playerSettings);
     
   }
 

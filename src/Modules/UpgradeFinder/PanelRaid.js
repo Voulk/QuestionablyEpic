@@ -60,7 +60,8 @@ export default function RaidGearContainer(props) {
   const raidID = 1190;
   const itemList = props.itemList;
   const itemDifferentials = props.itemDifferentials;
-  const difficulties = [0, 1];
+  const difficulties = props.playerSettings.raid;
+  difficulties.sort().reverse();
   const firstDifficulty = difficulties[0];
   const secondDifficulty = difficulties.length === 2 ? difficulties[1] : -1;
 
