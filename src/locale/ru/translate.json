@@ -46,7 +46,9 @@
         "Warrior": "WarriorRU",
         "HolyPriest": "Holy PriestRU",
         "MistweaverMonk": "Mistweaver MonkRU",
-        "RestorationShaman": "Restoration ShamanRU"
+        "RestorationShaman": "Restoration ShamanRU",
+        "DeathKnight": "Death KnightRU",
+        "ShadowPriest": "Shadow PriestRU"
       },
       "ChartLabels": {
         "_Comments1": "Translations for HD Charts",
@@ -105,7 +107,11 @@
         "HavocDemonHunterComment": "Havoc Demon Hunter Cooldowns",
         "196718": "Мрак",
         "WarriorComment": "Warrior Cooldowns",
-        "97462": "Ободряющий клич"
+        "97462": "Ободряющий клич",
+        "DeathKnightComment": "Death Knight Cooldowns",
+        "15286": "Объятия вампира",
+        "ShadowPriestComment": "Shadow Priest Cooldowns",
+        "51052": "Зона антимагии"
       },
       "BossAbilities": {
         "undefined": "No Ability Selected",

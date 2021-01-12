@@ -46,7 +46,9 @@
         "Warrior": "Warrior",
         "HolyPriest": "Holy Priest",
         "MistweaverMonk": "Mistweaver Monk",
-        "RestorationShaman": "Restoration Shaman"
+        "RestorationShaman": "Restoration Shaman",
+        "DeathKnight": "Death Knight",
+        "ShadowPriest": "Shadow Priest"
       },
       "ChartLabels": {
         "_Comments1": "Translations for HD Charts",
@@ -105,7 +107,11 @@
         "HavocDemonHunterComment": "Havoc Demon Hunter Cooldowns",
         "196718": "Darkness",
         "WarriorComment": "Warrior Cooldowns",
-        "97462": "Rallying Cry"
+        "97462": "Rallying Cry",
+        "DeathKnightComment": "Death Knight Cooldowns",
+        "15286": "Vampiric Embrace",
+        "ShadowPriestComment": "Shadow Priest Cooldowns",
+        "51052": "Anti-Magic Zone"
       },
       "BossAbilities": {
         "undefined": "No Ability Selected",
