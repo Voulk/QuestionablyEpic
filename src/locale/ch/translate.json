@@ -45,7 +45,9 @@
         "Warrior": "WarriorCH",
         "HolyPriest": "Holy PriestCH",
         "MistweaverMonk": "Mistweaver MonkCH",
-        "RestorationShaman": "Restoration ShamanCH"
+        "RestorationShaman": "Restoration ShamanCH",
+        "DeathKnight": "Death KnightCH",
+        "ShadowPriest": "Shadow PriestCH"
       },
       "ChartLabels": {
         "_Comments1": "Translations for HD Charts",
@@ -104,7 +106,11 @@
         "HavocDemonHunterComment": "Havoc Demon Hunter Cooldowns",
         "196718": "幻影打击",
         "WarriorComment": "Warrior Cooldowns",
-        "97462": "集结呐喊"
+        "97462": "集结呐喊",
+        "DeathKnightComment": "Death Knight Cooldowns",
+        "15286": "吸血鬼的拥抱",
+        "ShadowPriestComment": "Shadow Priest Cooldowns",
+        "51052": "反魔法领域"
       },
       "BossAbilities": {
         "undefined": "No Ability Selected",

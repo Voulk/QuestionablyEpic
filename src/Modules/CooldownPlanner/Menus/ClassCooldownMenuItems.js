@@ -14,6 +14,9 @@ import TreeofLifeIcon from "../../../Images/Classes/Druid/Specialisation/Restora
 import DarknessIcon from "../../../Images/Classes/DemonHunter/DemonHunterIcon.jpg";
 import RallyingCryIcon from "../../../Images/Classes/Warrior/RallyingCryIcon.jpg";
 import SpiritShell from "../../../Images/Classes/Priest/Specialisation/Discipline/Icons/Talents/SpiritShellIcon.jpg";
+import AntiMagicZoneIcon from "../../../Images/Classes/DeathKnight/AntiMagicZone.jpg";
+import VampiricEmbraceIcon from "../../../Images/Classes/Priest/Specialisation/Shadow/VampiricEmbrace.jpg";
+
 import { Translation } from "react-i18next";
 import Divider from "@material-ui/core/Divider";
 
@@ -298,6 +301,50 @@ export default function ClassCooldownMenuItems(props) {
         </a>
         <Translation>
           {(t) => t("CooldownPlanner.ClassAbilities.97462")}
+        </Translation>
+      </MenuItem>,
+    ];
+  }
+
+  if (props === "DeathKnight") {
+    return [
+      <MenuItem value={51052} key={14}>
+        <a data-wowhead="spell=51052">
+          <img
+            style={{
+              height: 20,
+              width: 20,
+              padding: "0px 5px 0px 5px",
+              verticalAlign: "middle",
+            }}
+            src={AntiMagicZoneIcon}
+            alt="51052"
+          />
+        </a>
+        <Translation>
+          {(t) => t("CooldownPlanner.ClassAbilities.51052")}
+        </Translation>
+      </MenuItem>,
+    ];
+  }
+
+  if (props === "ShadowPriest") {
+    return [
+      <MenuItem value={15286} key={15}>
+        <a data-wowhead="spell=15286">
+          <img
+            style={{
+              height: 20,
+              width: 20,
+              padding: "0px 5px 0px 5px",
+              verticalAlign: "middle",
+            }}
+            src={VampiricEmbraceIcon}
+            alt="15286"
+          />
+        </a>
+        <Translation>
+          {(t) => t("CooldownPlanner.ClassAbilities.15286")}
         </Translation>
       </MenuItem>,
     ];
