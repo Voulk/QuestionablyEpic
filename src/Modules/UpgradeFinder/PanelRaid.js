@@ -2,7 +2,7 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Typography, Grid, Divider } from "@material-ui/core";
 import ItemUpgradeCard from "./ItemUpgradeCard";
-import bossHeaders from "../CooldownPlanner/Functions/IconFunctions/BossHeaderIcons";
+import UpgradeFinderBossImages from "./BossImages";
 import "./Panels.css";
 import { bossList } from "../CooldownPlanner/Data/Data";
 import { encounterDB } from "../Player/InstanceDB";
@@ -39,10 +39,13 @@ export default function RaidGearContainer(props) {
             <Grid container spacing={2}>
               <Grid item style={{ alignSelf: "center" }}>
                 <div
-                  style={{ width: 200, paddingLeft: 10 }}
+                  style={{ paddingLeft: 10 }}
                   className="container-UpgradeCards"
                 >
-                  {bossHeaders(key, { width: "100%" })}
+                  {UpgradeFinderBossImages(key, {
+                    width: "100%",
+                    height: "auto",
+                  })}
                   <Typography
                     variant="h6"
                     noWrap
@@ -66,7 +69,6 @@ export default function RaidGearContainer(props) {
                       align="center"
                       style={{
                         backgroundColor: "rgba(255, 255, 255, 0.12)",
-                        height: "100%",
                         borderRadius: 4,
                       }}
                     >
@@ -101,7 +103,6 @@ export default function RaidGearContainer(props) {
                       align="center"
                       style={{
                         backgroundColor: "rgba(255, 255, 255, 0.12)",
-                        height: "100%",
                         borderRadius: 4,
                       }}
                     >
