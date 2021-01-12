@@ -233,10 +233,12 @@ export default function UpgradeFinderFront(props) {
                       selected: classes.selectedRed,
                     }}
                     value="check"
-                    selected={selectsPvE[i]}
+                    //selected={selectsPvE[i]}
+                    selected={props.playerSettings.raid.includes(i)}
                     style={{ width: 150, height: 50 }}
                     onChange={() => {
                       setsPvE[i](!selectsPvE[i]);
+                      props.setRaidDifficulty(i);
                     }}
                   >
                     {key}
