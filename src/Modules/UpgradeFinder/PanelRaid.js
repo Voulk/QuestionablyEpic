@@ -20,12 +20,49 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const getDifficultyName = (difficulty) => {
+  switch(difficulty) {
+    case 0:
+      return "LFR";
+      break;
+    case 1:
+      return "Normal";
+      break;
+    case 2:
+      return "Heroic";
+      break;
+    case 3:
+      return "Mythic";
+      break;
+  }
+}
+
+const getDifficultyBaseLevel = (difficulty) => {
+  switch(difficulty) {
+    case 0:
+      return 187;
+      break;
+    case 1:
+      return 200;
+      break;
+    case 2:
+      return 213;
+      break;
+    case 3:
+      return 226;
+      break;
+  }
+}
+
 export default function RaidGearContainer(props) {
   const classes = useStyles();
   const { t, i18n } = useTranslation();
   const raidID = 1190;
   const itemList = props.itemList;
   const itemDifferentials = props.itemDifferentials;
+  const difficulties = [0, 1];
+  const firstDifficulty = difficulties[0];
+  const secondDifficulty = difficulties.length === 2 ? difficulties[1] : -1;
 
   const contentGenerator = (items) => {
     // Raid Panel
@@ -72,11 +109,11 @@ export default function RaidGearContainer(props) {
                         borderRadius: 4,
                       }}
                     >
-                      Mythic
+                      {getDifficultyName(firstDifficulty)}
                     </Typography>
                   </Grid>
                   <Grid item xs={12} sm container spacing={1}>
-                    {[...filterItemListBySource(itemList, 1190, key, 226)].map(
+                    {[...filterItemListBySource(itemList, 1190, key, getDifficultyBaseLevel(firstDifficulty))].map(
                       (item, index) => (
                         <ItemUpgradeCard
                           key={index}
@@ -107,11 +144,11 @@ export default function RaidGearContainer(props) {
                         borderRadius: 4,
                       }}
                     >
-                      Heroic
+                      {getDifficultyName(secondDifficulty)}
                     </Typography>
                   </Grid>
                   <Grid item xs={12} sm container spacing={1}>
-                    {[...filterItemListBySource(itemList, 1190, key, 213)].map(
+                    {[...filterItemListBySource(itemList, 1190, key, getDifficultyBaseLevel(secondDifficulty))].map(
                       (item, index) => (
                         <ItemUpgradeCard
                           key={index}

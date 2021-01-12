@@ -151,7 +151,7 @@ export default function UpgradeFinderFront(props) {
   ];
 
   const unleashUpgradeFinder = () => {
-    const playerSettings = { raid: [2,3], dungeon: 15, pvp: 4 };
+    const playerSettings = props.playerSettings
     const result = runUpgradeFinder(
       props.player,
       props.contentType,

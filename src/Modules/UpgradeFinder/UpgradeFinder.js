@@ -14,6 +14,7 @@ export function UpgradeFinder(props) {
   const contentType = props.contentType;
   const allChars = props.allChars;
   const simcSnack = props.simcSnack;
+  const playerSettings = { raid: [0,1], dungeon: 15, pvp: 4 };
 
   console.log("== Item Selection ==");
   console.log(itemSelection);
@@ -23,6 +24,7 @@ export function UpgradeFinder(props) {
       player={player}
       contentType={contentType}
       itemSelection={itemSelection}
+      playerSettings={playerSettings}
     />
   ) : (
     <UpgradeFinderFront
@@ -32,6 +34,7 @@ export function UpgradeFinder(props) {
       allChars={allChars}
       setItemSelection={setItemSelection}
       setShowReport={setShowReport}
+      playerSettings={playerSettings}
     />
   );
 }

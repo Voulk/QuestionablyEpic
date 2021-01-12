@@ -175,7 +175,7 @@ export default function UpgradeFinderResults(props) {
       {/* Raid */}
       <TabPanel value={tabvalue} index={0}>
         <div className={classes.panel}>
-          <RaidGearContainer pl={props.player} itemList={itemList} itemDifferentials={itemDifferentials} />
+          <RaidGearContainer pl={props.player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={props.playerSettings} />
         </div>
       </TabPanel>
 

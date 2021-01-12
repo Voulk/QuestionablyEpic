@@ -93,7 +93,11 @@ export function getValidWeaponTypes(spec, slot) {
 export function filterItemListBySource(itemList, sourceInstance, sourceBoss, level) {
 
   let temp = itemList.filter(function (item) {
-      return (item.level == level &&
+    let itemEncounter = item.source.encounterId;
+    let expectedItemLevel = (itemEncounter == 2425 || itemEncounter == 2424) ? level + 7 : level;
+    console.log(expectedItemLevel);
+
+      return (item.level == expectedItemLevel &&
               ((item.source.instanceId == sourceInstance && item.source.encounterId == sourceBoss) ||
               (item.source.instanceId == sourceInstance && sourceBoss == 0)));
   });
