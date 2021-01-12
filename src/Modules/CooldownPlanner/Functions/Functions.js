@@ -94,6 +94,7 @@ export async function importHealerLogData(starttime, endtime, reportid) {
   const apiShaman = "&sourceclass=Shaman";
   const apiWarrior = "&sourceclass=Warrior";
   const apiDemonHunter = "&sourceclass=DemonHunter";
+  const apiDeathKnight = "&sourceclass=DeathKnight";
   const API2 = "&api_key=92fc5d4ae86447df22a8c0917c1404dc";
   const START = "?start=";
   const END = "&end=";
@@ -238,6 +239,26 @@ export async function importHealerLogData(starttime, endtime, reportid) {
         END +
         endtime +
         apiDemonHunter +
+        API2
+    )
+    .then((result) => {
+      healers = healers.concat(
+        Object.keys(result.data.entries).map((key) => result.data.entries[key])
+      );
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+
+  await axios
+    .get(
+      APIHEALING +
+        reportid +
+        START +
+        starttime +
+        END +
+        endtime +
+        apiDeathKnight +
         API2
     )
     .then((result) => {

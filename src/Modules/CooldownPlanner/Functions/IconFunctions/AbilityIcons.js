@@ -34,6 +34,7 @@ import DarknessIcon from "../../../../Images/Classes/DemonHunter/DarknessIcon.jp
 import RallyingCryIcon from "../../../../Images/Classes/Warrior/RallyingCryIcon.jpg";
 import SpiritShellIcon from "../../../../Images/Classes/Priest/Specialisation/Discipline/Icons/Talents/SpiritShellIcon.jpg";
 import VampiricEmbraceIcon from "../../../../Images/Classes/Priest/Specialisation/Shadow/VampiricEmbrace.jpg";
+import AntiMagicZoneIcon from "../../../../Images/Classes/DeathKnight/AntiMagicZone.jpg";
 
 // Should probably work this off GUID
 
@@ -228,6 +229,11 @@ export default function abilityIcons(props) {
     spell = "spell=15286";
     source = VampiricEmbraceIcon;
     alt = "Vampiric Embrace";
+  }
+  if (props === 51052) {
+    spell = "spell=51052";
+    source = AntiMagicZoneIcon;
+    alt = "Anti Magic Zone";
   }
 
   return (

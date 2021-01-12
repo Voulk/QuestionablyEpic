@@ -68,7 +68,15 @@ export function classColoursJS(props) {
   if (props === "Warrior") {
     return "#C79C6E";
   }
-  if (props === "HavocDemonHunter") {
+  if (
+    props === "HavocDemonHunter" ||
+    props === "Havoc Demon Hunter" ||
+    props === "DemonHunter" ||
+    props === "Demon Hunter"
+  ) {
     return "#AC44CE ";
+  }
+  if (props === "DeathKnight" || props === "Death Knight") {
+    return "#C41E3A	 ";
   }
 }

@@ -8,6 +8,7 @@ import RestorationDruidIcon from "../../../../Images/Classes/Druid/Specialisatio
 import RestorationShamanIcon from "../../../../Images/Classes/Shaman/Specialisation/Restoration/Icons/RestorationShaman.jpg";
 import WarriorIcon from "../../../../Images/Classes/Warrior/WarriorIcon.jpg";
 import DemonHunterIcon from "../../../../Images/Classes/DemonHunter/DemonHunterIcon.jpg";
+import DeathKnightIcon from "../../../../Images/Classes/DeathKnight/DeathKnightIcon.jpg";
 
 export default function classIcons(props, iconSize) {
   let src = "";
@@ -108,6 +109,18 @@ export default function classIcons(props, iconSize) {
   ) {
     src = DemonHunterIcon;
     alt = "Havoc Demon Hunter";
+  }
+
+  // Death KNight
+  if (
+    props === "Death Knight" ||
+    props === "DeathKnight" ||
+    props === "DeathKnight-Frost" ||
+    props === "DeathKnight-Unholy" ||
+    props === "DeathKnight-Blood"
+  ) {
+    src = DeathKnightIcon;
+    alt = "Death Knight";
   }
 
   return (
