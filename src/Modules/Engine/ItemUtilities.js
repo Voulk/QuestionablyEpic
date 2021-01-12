@@ -95,7 +95,7 @@ export function filterItemListBySource(itemList, sourceInstance, sourceBoss, lev
   let temp = itemList.filter(function (item) {
     let itemEncounter = item.source.encounterId;
     let expectedItemLevel = (itemEncounter == 2425 || itemEncounter == 2424) ? level + 7 : level;
-    console.log(expectedItemLevel);
+   //console.log(expectedItemLevel);
 
       return (item.level == expectedItemLevel &&
               ((item.source.instanceId == sourceInstance && item.source.encounterId == sourceBoss) ||

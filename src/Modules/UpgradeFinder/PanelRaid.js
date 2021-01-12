@@ -133,7 +133,8 @@ export default function RaidGearContainer(props) {
                 <Grid item>
                   <Divider />
                 </Grid>
-
+                
+                {secondDifficulty !== -1 ? 
                 <Grid item xs={12} sm container direction="row" spacing={1}>
                   <Grid item xs={12}>
                     <Typography
@@ -163,7 +164,7 @@ export default function RaidGearContainer(props) {
                       )
                     )}
                   </Grid>
-                </Grid>
+                </Grid> : ""}
               </Grid>
             </Grid>
           </Grid>

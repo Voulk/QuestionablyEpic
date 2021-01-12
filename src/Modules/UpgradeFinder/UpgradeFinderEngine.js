@@ -128,7 +128,7 @@ function buildItemPossibilities(player, contentType, playerSettings) {
     }
   }
 
-  console.log(itemPoss.length);
+  //console.log(itemPoss.length);
   return itemPoss; // TODO: Remove Slice. It's just for testing in a smaller environment. 
 }
 

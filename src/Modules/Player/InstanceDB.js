@@ -26,13 +26,15 @@ export const encounterDB = {
     2432, // "Oranomonos the Everbranching",
     2433, //"Nurgash Muckformed",
   ],
+  1: [
+    1182, //"Necrotic Wake",
+    1183, //"Plaguefall",
+    1184, //"Mists of Tirna Scithe",
+    1185, //"Halls of Atonement",
+    1186, //"Spires of Ascension",
+    1187, //"Theater of Pain",
+    1188, //"De Other Side",
+    1189, //"Sanguine Depths",
 
-  "1182": "Necrotic Wake",
-  "1183": "Plaguefall",
-  "1184": "Mists of Tirna Scithe",
-  "1185": "Halls of Atonement",
-  "1186": "Spires of Ascension",
-  "1187": "Theater of Pain",
-  "1188": "De Other Side",
-  "1189": "Sanguine Depths",
+  ],
 };

@@ -114,6 +114,7 @@ export default function UpgradeFinderResults(props) {
   const itemList = result.itemSet;
   const itemDifferentials = result.differentials;
   //const raidItems = filterItemSetBySource(itemList, 1190, 0);
+  console.log(itemList);
 
 
   const handleTabChange = (event, newValue) => {
@@ -182,7 +183,7 @@ export default function UpgradeFinderResults(props) {
       {/* Mythic Plus */}
       <TabPanel value={tabvalue} index={1}>
         <div className={classes.panel}>
-          <MythicPlusGearContainer pl={props.player} items="" />
+          <MythicPlusGearContainer pl={props.player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={props.playerSettings} />
         </div>
       </TabPanel>
 

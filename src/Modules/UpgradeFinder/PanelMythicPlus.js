@@ -6,6 +6,11 @@ import DungeonHeaderIcons from "../CooldownPlanner/Functions/IconFunctions/Dunge
 import "./Panels.css";
 import { dungeonList } from "../CooldownPlanner/Data/Data";
 import { useTranslation } from "react-i18next";
+import {
+  filterItemListBySource,
+  getDifferentialByID,
+} from "../Engine/ItemUtilities";
+import { encounterDB } from "../Player/InstanceDB";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -18,15 +23,19 @@ const useStyles = makeStyles((theme) => ({
 export default function MythicPlusGearContainer(props) {
   const classes = useStyles();
   const { t, i18n } = useTranslation();
+  const raidID = 1190;
+  const itemList = props.itemList;
+  const itemDifferentials = props.itemDifferentials;
+  const difficulties = props.playerSettings.dungeon;
 
   const contentGenerator = (type) => {
-    return dungeonList
+    return encounterDB[1]
       .map((key) => (
         <Grid item xs={12}>
           <Grid container spacing={1}>
             <Grid item>
               <div style={{ width: 200 }} className="container-UpgradeCards">
-                {DungeonHeaderIcons(key.zoneID, {
+                {DungeonHeaderIcons(key, {
                   verticalAlign: "middle",
                   // marginRight: "-75px",
                 })}
@@ -35,7 +44,7 @@ export default function MythicPlusGearContainer(props) {
                   noWrap
                   className="centered-UpgradeCards-Dungeons"
                 >
-                  {t("DungeonNames." + key.zoneID)}
+                  {t("DungeonNames." + key)}
                 </Typography>
               </div>
             </Grid>
@@ -45,8 +54,17 @@ export default function MythicPlusGearContainer(props) {
               style={{ marginRight: 4 }}
             />
             <Grid item xs={12} sm container spacing={1}>
-              {[...props.pl.getActiveItems("1H Weapon")].map((item, index) => (
-                <ItemUpgradeCard key={index} item={item} />
+            {console.log("Zone: " + key)}
+              {[...filterItemListBySource(itemList, -1, key, 207)].map((item, index) => (       
+                <ItemUpgradeCard
+                  key={index}
+                  item={item}
+                  itemDifferential={getDifferentialByID(
+                    itemDifferentials,
+                    item.id,
+                    item.level,
+                )}
+              />
               ))}
             </Grid>
           </Grid>

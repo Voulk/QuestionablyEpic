@@ -155,7 +155,7 @@ export default function ItemCard(props) {
             >
               <a
                 data-wowhead={"item=" + item.id + "&" + "ilvl=" + item.level}
-                key={i}
+                //key={i}
               >
                 <div className="container-ItemCards">
                   <img
