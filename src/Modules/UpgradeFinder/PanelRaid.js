@@ -76,14 +76,15 @@ export default function RaidGearContainer(props) {
                     </Typography>
                   </Grid>
                   <Grid item xs={12} sm container spacing={1}>
-                    {[...filterItemListBySource(itemList, 1190, key)].map(
+                    {[...filterItemListBySource(itemList, 1190, key, 226)].map(
                       (item, index) => (
                         <ItemUpgradeCard
                           key={index}
                           item={item}
                           itemDifferential={getDifferentialByID(
                             itemDifferentials,
-                            item.id
+                            item.id,
+                            item.level,
                           )}
                         />
                       )
@@ -110,12 +111,16 @@ export default function RaidGearContainer(props) {
                     </Typography>
                   </Grid>
                   <Grid item xs={12} sm container spacing={1}>
-                    {[...filterItemListBySource(itemList, 1190, key)].map(
+                    {[...filterItemListBySource(itemList, 1190, key, 213)].map(
                       (item, index) => (
                         <ItemUpgradeCard
                           key={index}
                           item={item}
-                          itemDifferential={0}
+                          itemDifferential={getDifferentialByID(
+                            itemDifferentials,
+                            item.id,
+                            item.level,
+                          )}
                         />
                       )
                     )}

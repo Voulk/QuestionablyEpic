@@ -60,12 +60,12 @@ export function runUpgradeFinder(player, contentType, playerSettings) {
   
 }
 
-function getSetItemLevel(itemSource, playerSettings) {
+function getSetItemLevel(itemSource, playerSettings, raidIndex = 0) {
   let itemLevel = 0;
   const instanceID = itemSource.instanceId;
   const bossID = itemSource.encounterId;
 
-  if (instanceID === 1190) itemLevel = itemLevels.raid[playerSettings.raid];
+  if (instanceID === 1190) itemLevel = itemLevels.raid[playerSettings.raid[raidIndex]];
   else if (instanceID === -1) itemLevel = itemLevels.dungeon[playerSettings.dungeon];
   else if (instanceID === -16) itemLevel = 184;
   else if (instanceID === -17) itemLevel = itemLevels.pvp[playerSettings.pvp];
@@ -90,6 +90,7 @@ function buildItem(player, contentType, rawItem, itemLevel) {
     itemAllocations,
     ""
   );
+  item.level = itemLevel;
   item.softScore = scoreItem(item, player, contentType);
   item.source = itemSource;
 
@@ -105,10 +106,25 @@ function buildItemPossibilities(player, contentType, playerSettings) {
     if ("sources" in rawItem && checkItemViable(rawItem, player)) {
       const itemSource = rawItem.sources[0];
 
-      const itemLevel = getSetItemLevel(itemSource, playerSettings);
-      const item = buildItem(player, contentType, rawItem, itemLevel);
+      if (itemSource.instanceId === 1190) { 
+        for (var x = 0; x < playerSettings.raid.length; x++) {
+          
 
-      itemPoss.push(item);
+          const itemLevel = getSetItemLevel(itemSource, playerSettings, x);
+          const item = buildItem(player, contentType, rawItem, itemLevel);
+          //console.log("Difficulty: " + playerSettings.raid[x] + ". Item level: " + itemLevel)
+          itemPoss.push(item);
+        }
+
+      }
+      else {   
+        const itemLevel = getSetItemLevel(itemSource, playerSettings);
+        const item = buildItem(player, contentType, rawItem, itemLevel);
+
+        itemPoss.push(item);
+
+      }
+
     }
   }
 
@@ -120,7 +136,7 @@ function buildItemPossibilities(player, contentType, playerSettings) {
 function processItem(item, baseItemList, baseScore, player, contentType) {
   let newItemList = [...baseItemList];
   newItemList.push(item);
-  console.log(player);
+  //console.log(player);
 
   const newTGSet = runTopGear(
     newItemList,

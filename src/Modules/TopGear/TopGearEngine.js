@@ -31,7 +31,7 @@ export function runTopGear(itemList, wepCombos, player, contentType) {
   itemSets.sort((a, b) => (a.sumSoftScore < b.sumSoftScore ? 1 : -1));
   count = itemSets.length;
 
-  console.log("Count: " + count);
+  //console.log("Count: " + count);
   // TEST LOOP ONLY FOR CONSOLE PRINTS.
     /*
     for (var i = 0; i < itemSets.length; i++) {
@@ -122,7 +122,7 @@ function createSets(itemList, rawWepCombos) {
   }
   slotLengths.Weapon = Object.keys(wepCombos).length;
 
-  console.log(JSON.stringify(slotLengths));
+  //console.log(JSON.stringify(slotLengths));
   // console.log(splitItems.Finger);
 
   for (var head = 0; head < slotLengths.Head; head++) {

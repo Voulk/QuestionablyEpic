@@ -90,23 +90,24 @@ export function getValidWeaponTypes(spec, slot) {
   }
 }
 
-export function filterItemListBySource(itemList, sourceInstance, sourceBoss) {
+export function filterItemListBySource(itemList, sourceInstance, sourceBoss, level) {
 
   let temp = itemList.filter(function (item) {
-      return ((item.source.instanceId == sourceInstance && item.source.encounterId == sourceBoss) ||
-              (item.source.instanceId == sourceInstance && sourceBoss == 0));
+      return (item.level == level &&
+              ((item.source.instanceId == sourceInstance && item.source.encounterId == sourceBoss) ||
+              (item.source.instanceId == sourceInstance && sourceBoss == 0)));
   });
 
   return temp;
 
 }
 
-export function getDifferentialByID(diffList, id) {
+export function getDifferentialByID(diffList, id, level) {
   //console.log(diffList);
-  console.log("ID: " + id);
+  //console.log("ID: " + id);
   let temp = diffList.filter(function (item) {
     //console.log(item);
-    return (item.item == id);
+    return (item.item == id && item.level == level);
   });
 
   if (temp.length > 0) return temp[0].score;
@@ -268,7 +269,7 @@ export function buildWepCombos(player, active=false, equipped=false) {
   let two_handers = player.getActiveItems("2H Weapon", active, equipped);
 
 
-  console.log("MH: " + main_hands.length + ". OH: " + off_hands.length + ". 2H: " + two_handers.length);
+  //console.log("MH: " + main_hands.length + ". OH: " + off_hands.length + ". 2H: " + two_handers.length);
   
 
   for (let i = 0; i < main_hands.length; i++) {
