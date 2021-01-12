@@ -10,9 +10,6 @@ import ShriekwingHeader from "../../../../Images/Bosses/CastleNathria/Shriekwing
 import SireDenathriusHeader from "../../../../Images/Bosses/CastleNathria/SireDenathrius/SireDenathriusEJ.png";
 import SludgefistHeader from "../../../../Images/Bosses/CastleNathria/Sludgefist/SludgefistEJ.png";
 import StonebornGeneralsHeader from "../../../../Images/Bosses/CastleNathria/StoneLegionGenerals/StoneLegionGeneralsEJ.png";
-import Hunstaman from "../../../../Images/Bosses/CastleNathria/HuntsmanAltimor/HuntsmanAltimor.png";
-import SW from "../../../../Images/Bosses/CastleNathria/Shriekwing/Shriekwing.png";
-import Sun from "../../../../Images/Bosses/CastleNathria/SunKingsSalvation/SunKing.png";
 
 // World Bosses
 import ValinorHeader from "../../../../Images/Bosses/WorldBosses/valinor.png";
@@ -22,57 +19,47 @@ import NurgashHeader from "../../../../Images/Bosses/WorldBosses/nurgash.png";
 
 export default function bossHeaders(props, style) {
   let source = "";
-  // "2393", //"Shriekwing",
-  // "2429", //"Huntsman Altimor",
-  // "2422", //"Sun Kings Salvation",
-  // "2418", //"Artificer Xy'mox",
-  // "2428", //"Hungering Destroyer",
-  // "2420", //"Inerva Darkvein",
-  // "2426", //"Council of Blood",
-  // "2394", //"Sludgefist",
-  // "2425", //"Stone Legion Generals",
-  // "2424", //"Sire Denathrius",
 
   // Castle Nathria
   // Broker Curator
-  if (props === 2405 || props === 2418) {
+  if (props === 2405) {
     source = ArtificerHeader;
   }
   // Huntsman Altimor
-  if (props === 2418 || props === 2429) {
-    source = Hunstaman;
+  if (props === 2418) {
+    source = HuntsmanAltimorHeader;
   }
   // Hungering Destroyer
-  if (props === 2383 || props === 2428) {
+  if (props === 2383) {
     source = HungeringDestroyerHeader;
   }
   // Lady Inerva Darkvein
-  if (props === 2406 || props === 2420) {
+  if (props === 2406) {
     source = LadyInervaDarkveinHeader;
   }
   // The Council of Blood
-  if (props === 2412 || props === 2426) {
+  if (props === 2412) {
     source = CouncilHeader;
   }
   // Sire Denathrius
-  if (props === 2407 || props === 2424) {
+  if (props === 2407) {
     source = SireDenathriusHeader;
   }
   // Stone Legion Generals
-  if (props === 2417 || props === 2425) {
+  if (props === 2417) {
     source = StonebornGeneralsHeader;
   }
   // Shriekwing
-  if (props === 2398 || props === 2393) {
-    source = SW;
+  if (props === 2398) {
+    source = ShriekwingHeader;
   }
   // Sludgefist
-  if (props === 2399 || props === 2394) {
+  if (props === 2399) {
     source = SludgefistHeader;
   }
   // Kael'thas
-  if (props === 2402 || props === 2422) {
-    source = Sun;
+  if (props === 2402) {
+    source = SunKingsSalvationHeader;
   }
 
   // World Bosses

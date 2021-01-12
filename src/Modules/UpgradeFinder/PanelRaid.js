@@ -2,7 +2,7 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Typography, Grid, Divider } from "@material-ui/core";
 import ItemUpgradeCard from "./ItemUpgradeCard";
-import bossHeaders from "../CooldownPlanner/Functions/IconFunctions/BossHeaderIcons";
+import UpgradeFinderBossImages from "./BossImages";
 import "./Panels.css";
 import { bossList } from "../CooldownPlanner/Data/Data";
 import { encounterDB } from "../Player/InstanceDB";
@@ -42,7 +42,10 @@ export default function RaidGearContainer(props) {
                   style={{ paddingLeft: 10 }}
                   className="container-UpgradeCards"
                 >
-                  {bossHeaders(key, { width: "100%", height: "auto" })}
+                  {UpgradeFinderBossImages(key, {
+                    width: "100%",
+                    height: "auto",
+                  })}
                   <Typography
                     variant="h6"
                     noWrap

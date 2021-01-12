@@ -2,10 +2,11 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Typography, Grid, Divider } from "@material-ui/core";
 import ItemUpgradeCard from "./ItemUpgradeCard";
-import bossHeaders from "../CooldownPlanner/Functions/IconFunctions/BossHeaderIcons";
+import UpgradeFinderBossImages from "./BossImages";
 import "./Panels.css";
 import { worldBosses } from "../CooldownPlanner/Data/Data";
 import { useTranslation } from "react-i18next";
+import { encounterDB } from "../Player/InstanceDB";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -20,7 +21,7 @@ export default function WorldBossGearContainer(props) {
   const { t, i18n } = useTranslation();
 
   const contentGenerator = (type) => {
-    return worldBosses
+    return encounterDB[123456789]
       .map((key) => (
         <Grid item xs={12}>
           <Grid container spacing={2}>
@@ -29,13 +30,16 @@ export default function WorldBossGearContainer(props) {
                 style={{ width: 200, paddingLeft: 10 }}
                 className="container-UpgradeCards"
               >
-                {bossHeaders(key.id)}
+                {UpgradeFinderBossImages(key, {
+                  width: "100%",
+                  height: "auto",
+                })}
                 <Typography
                   variant="h6"
                   noWrap
                   className="centered-UpgradeCards-Dungeons"
                 >
-                  {t("WorldBosses." + key.id)}
+                  {t("WorldBosses." + key)}
                 </Typography>
               </div>
             </Grid>
