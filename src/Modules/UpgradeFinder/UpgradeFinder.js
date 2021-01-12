@@ -9,7 +9,7 @@ import { useTranslation } from "react-i18next";
 export function UpgradeFinder(props) {
   const [itemSelection, setItemSelection] = React.useState([]);
   const [showReport, setShowReport] = React.useState(false);
-  const [playerSettings, setPlayerSettings] = React.useState({ raid: [0,1], dungeon: 14, pvp: 4 })
+  const [playerSettings, setPlayerSettings] = React.useState({ raid: [2,3], dungeon: 14, pvp: 4 })
 
   const setRaidDifficulty = (difficulty) =>  {
     let currDiff = playerSettings.raid;
