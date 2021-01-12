@@ -296,7 +296,7 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel) {
         bonus_stats[effect.benefit] = Math.round(netValue);
     } */
 
-    //console.log("Effect Name: " + effectName + " at level: " + itemLevel + " {" + JSON.stringify(bonus_stats))
+    console.log("Effect Name: " + effectName + " at level: " + itemLevel + " {" + JSON.stringify(bonus_stats))
     return bonus_stats;
 }
 

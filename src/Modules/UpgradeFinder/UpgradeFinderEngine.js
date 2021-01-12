@@ -1,7 +1,7 @@
 import { itemDB } from "../Player/ItemDB";
 import Item from "../Player/Item";
 import { runTopGear } from "../TopGear/TopGearEngine";
-import { buildWepCombos, calcStatsAtLevel, getItemAllocations, scoreItem, getValidArmorTypes, getValidWeaponTypes } from "../Engine/ItemUtilities";
+import { buildWepCombos, calcStatsAtLevel, getItemAllocations, scoreItem, getValidArmorTypes, getValidWeaponTypes, getItemEffect } from "../Engine/ItemUtilities";
 import UpgradeFinderResult from "./UpgradeFinderResult";
 /*
 
@@ -90,6 +90,7 @@ function buildItem(player, contentType, rawItem, itemLevel) {
     itemAllocations,
     ""
   );
+  item.effect = getItemEffect(itemID)
   item.level = itemLevel;
   item.softScore = scoreItem(item, player, contentType);
   item.source = itemSource;
