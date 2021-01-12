@@ -44,7 +44,9 @@ export function classColoursJS(props) {
     props === "Priest" ||
     props === "DisciplinePriest" ||
     props === "Holy Priest" ||
-    props === "Discipline Priest"
+    props === "Discipline Priest" ||
+    props === "Shadow Priest" ||
+    props === "ShadowPriest"
   ) {
     return "#FFFFFF";
   }

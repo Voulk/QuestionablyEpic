@@ -317,6 +317,15 @@ export const healerCooldownsDetailed = [
     duration: 10,
     cooldown: 180,
   },
+
+  {
+    guid: 15286,
+    name: "Vampiric Embrace",
+    wowhead: "https://www.wowhead.com/spell=15286/vampiric-embrace",
+    icon: "spell_shadow_unsummonbuilding",
+    duration: 15,
+    cooldown: 120,
+  },
 ];
 
 export const bossIds = [

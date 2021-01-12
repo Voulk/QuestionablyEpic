@@ -1,6 +1,7 @@
 import React from "react";
 import HolyPaladinIcon from "../../../../Images/Classes/Paladin/Specialisation/Holy/Icons/HolyPaladin.jpg";
 import DiscPriestIcon from "../../../../Images/Classes/Priest/Specialisation/Discipline/Icons/DisciplinePriest.jpg";
+import ShadowPriestIcon from "../../../../Images/Classes/Priest/Specialisation/Shadow/ShadowPriest.jpg";
 import HolyPriestIcon from "../../../../Images/Classes/Priest/Specialisation/Holy/Icons/HolyPriest.jpg";
 import MistweaverIcon from "../../../../Images/Classes/Monk/Specialisation/Mistweaver/Icons/MistWeaverMonk.jpg";
 import RestorationDruidIcon from "../../../../Images/Classes/Druid/Specialisation/Restoration/Icons/RestorationDruid.jpg";
@@ -11,6 +12,7 @@ import DemonHunterIcon from "../../../../Images/Classes/DemonHunter/DemonHunterI
 export default function classIcons(props, iconSize) {
   let src = "";
   let alt = "";
+  console.log(props);
 
   // Paladin Cooldowns
   if (
@@ -39,10 +41,23 @@ export default function classIcons(props, iconSize) {
     props === "HolyPriest" ||
     props === "Holy Priest" ||
     props === "Priest-Holy" ||
-    props === "Priest"
+    props === "Priest" ||
+    props === "ShadowPriest" ||
+    props === "Shadow Priest" ||
+    props === "Priest-Shadow"
   ) {
     src = HolyPriestIcon;
     alt = "Holy Priest";
+  }
+
+  // ShadowPriest
+  if (
+    props === "ShadowPriest" ||
+    props === "Shadow Priest" ||
+    props === "Priest-Shadow"
+  ) {
+    src = ShadowPriestIcon;
+    alt = "Shadow Priest";
   }
 
   // Discipline Priest
@@ -84,7 +99,13 @@ export default function classIcons(props, iconSize) {
   }
 
   // Demon Hunter
-  if (props === "HavocDemonHunter" || props === "Havoc Demon Hunter") {
+  if (
+    props === "HavocDemonHunter" ||
+    props === "Havoc Demon Hunter" ||
+    props === "DemonHunter-Havoc" ||
+    props === "Demon Hunter" ||
+    props === "DemonHunter"
+  ) {
     src = DemonHunterIcon;
     alt = "Havoc Demon Hunter";
   }
