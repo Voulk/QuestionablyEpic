@@ -31,6 +31,7 @@ const useStyles = makeStyles((theme) => ({
   },
   details: {
     alignItems: "center",
+    padding: "8px 16px 8px 16px",
   },
   column: {
     flexBasis: "33.33%",
@@ -75,7 +76,7 @@ export default function HelpText(props) {
         <Divider variant="middle" />
         <AccordionDetails className={classes.details}>
           <Typography
-            style={{ color: "##fffff7" }}
+            style={{ color: "##fffff7", marginBottom: 0 }}
             align="left"
             variant="subtitle1"
             display="inline"

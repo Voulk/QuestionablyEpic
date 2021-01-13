@@ -13,7 +13,6 @@ import DeathKnightIcon from "../../../../Images/Classes/DeathKnight/DeathKnightI
 export default function classIcons(props, iconSize) {
   let src = "";
   let alt = "";
-  console.log(props);
 
   // Paladin Cooldowns
   if (

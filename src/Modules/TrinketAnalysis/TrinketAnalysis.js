@@ -22,7 +22,7 @@ import HelpText from "../SetupAndMenus/HelpText";
 // [{TrinketID: 90321, i173: 92, i187: 94, i200: 99, i213: 104, i226: 116}]
 
 const getTrinketAtItemLevel = (id, itemLevel, player, contentType) => {
-  let item = new Item(id, "", "Trinket", false, "", 0, itemLevel);
+  let item = new Item(id, "", "Trinket", false, "", 0, itemLevel, "");
   let itemAllocations = getItemAllocations(id);
   item.stats = calcStatsAtLevel(itemLevel, "Trinket", itemAllocations, "");
   item.effect = getItemEffect(id);

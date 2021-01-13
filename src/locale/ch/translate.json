@@ -34,6 +34,7 @@
     "No": "No",
     "None": "None",
     "Add": "Add",
+    "Avoidance": "Avoidance",
 
     "CooldownPlanner": {
       "Classes": {
@@ -84,6 +85,7 @@
       },
 
       "ClassAbilities": {
+        "NoCD": "No Cooldown",
         "undefined": "",
         "HolyPaladinComment": "Holy Paladin Class Cooldowns",
         "31821": "光环掌握",
@@ -270,6 +272,42 @@
       "Zandalari Troll": "赞达拉巨魔"
     },
 
+    "BossNames": {
+      "2398": "ShriekwingCH",
+      "2418": "猎手阿尔迪莫",
+      "2402": "Sun King's SalvationCH",
+      "2405": "圣物匠赛·墨克斯",
+      "2383": "饥饿的毁灭者",
+      "2406": "伊涅瓦·暗脉女勋爵",
+      "2412": "The Council of BloodCH",
+      "2399": "泥拳",
+      "2417": "Stone Legion Generals",
+      "2407": "德纳修斯大帝"
+    },
+
+    "DungeonNames": {
+      "12831": "赎罪大厅",
+      "13334": "塞兹仙林的迷雾",
+      "12916": "通灵战潮",
+      "13228": "凋魂之殇",
+      "12842": "赤红深渊",
+      "12841": "伤逝剧场",
+      "13309": "彼界",
+      "12837": "晋升高塔"
+    },
+
+    "PvPCurrency": {
+      "Honor": "荣誉点数",
+      "Conquest": "征服点数"
+    },
+
+    "WorldBosses": {
+      "2430": "Valinor",
+      "2431": "Mortanis",
+      "2432": "长青之枝",
+      "2433": "诺尔伽什"
+    },
+
     "SimCInput": {
       "SimCStringLabel": "SimC StringCH",
       "SimCHeaderButtonLabel": "SimC",
@@ -343,6 +381,24 @@
       "GoMsg": "Go!CH",
       "SelectedItems": "Selected ItemsCH",
       "StatPanel": { "AvgStats": "Average Stats (includes procs)CH" }
+    },
+
+    "UpgradeFinder": {
+      "Header": "Upgrade Finder Results"
+    },
+    "UpgradeFinderFront": {
+      "Header": "Upgrade Finder",
+      "RaidDifficultyHeader": "Raid Difficulty",
+      "RaidDifficultyBody": "Select up to two difficulties to find upgrades from",
+      "MythicPlusHeader": "Mythic Plus Key Level",
+      "MythicPlusBody": "Use the Slider to Select the level of keys you usually complete",
+      "PvPHeader": "PvP Rating",
+      "PvPBody": "Select  your currency and Rating",
+      "SimCHeader": "SimC Import",
+      "SimCBody1": "Current SimC String Status:",
+      "SimCBody2": "Current Equipped Gear:",
+      "SimCButton": "Import SimC",
+      "HelpText": "Insert a SimC String, Select up to two raid difficulties, your standard mythic keystone level, and your PVP rating to see where you can find your next upgrade!"
     },
 
     "DruidLegendariesComment": "DruidLegendariesComment",

@@ -25,7 +25,6 @@
     "Mastery": "Mastery",
     "Versatility": "Versatility",
     "Leech": "Leech",
-    "Avoidance": "Avoidance",
     "Region": "Region",
     "Race": "Race",
     "Select Class": "Select Class",
@@ -35,6 +34,7 @@
     "No": "No",
     "None": "None",
     "Add": "Add",
+    "Avoidance": "Avoidance",
 
     "CooldownPlanner": {
       "Classes": {
@@ -187,7 +187,7 @@
       "PatronInvite": "Love the app? Support the site on Patreon!",
       "PatronThanks": "Thank you so much for your support!",
       "TopGear": "Top Gear (Beta)",
-      "UpgradeFinder": "Upgrade Finder (Coming Soon)",
+      "UpgradeFinder": "Upgrade Finder (Alpha)",
       "QuickCompare": "Gear Quick Compare",
       "ExploreCovenants": "Explore Covenants",
       "LegendaryAnalysis": "Legendary Analysis",
@@ -271,6 +271,53 @@
       "Zandalari Troll": "Zandalari Troll"
     },
 
+    "BossNames": {
+      "2393": "Shriekwing",
+      "2429": "Huntsman Altimor",
+      "2422": "Sun King's Salvation",
+      "2418": "Artificer Xy'mox",
+      "2428": "Hungering Destroyer",
+      "2420": "Lady Inerva Darkvein",
+      "2426": "The Council of Blood",
+      "2394": "Sludgefist",
+      "2425": "Stone Legion Generals",
+      "2424": "Sire Denathrius"
+    },
+
+    "DungeonNames": {
+      "12831": "Halls of Atonement",
+      "13334": "Mists of Tirna Scithe",
+      "12916": "The Necrotic Wake",
+      "13228": "Plaguefall",
+      "12842": "Sanguine Depths",
+      "12841": "Theater of Pain",
+      "13309": "De Other Side",
+      "12837": "Spires of Ascension",
+
+      "1182": "Necrotic Wake",
+      "1183": "Plaguefall",
+      "1184": "Mists of Tirna Scithe",
+      "1185": "Halls of Atonement",
+      "1186": "Spires of Ascension",
+      "1187": "Theater of Pain",
+      "1188": "De Other Side",
+      "1189": "Sanguine Depths"
+    },
+
+    "PvPCurrency": {
+      "Honor": "Honor",
+      "Conquest": "Conquest",
+      "-16": "Honor",
+      "-17": "Conquest"
+    },
+
+    "WorldBosses": {
+      "2430": "Valinor",
+      "2431": "Mortanis",
+      "2432": "Oranomonos",
+      "2433": "Nurgash"
+    },
+
     "SimCInput": {
       "SimCStringLabel": "SimC String",
       "SimCHeaderButtonLabel": "SimC",
@@ -343,6 +390,26 @@
       "GoMsg": "Go!",
       "SelectedItems": "Selected Items",
       "StatPanel": { "AvgStats": "Average Stats (includes procs)" }
+    },
+
+    "UpgradeFinder": {
+      "Header": "Report"
+    },
+    "UpgradeFinderFront": {
+      "Header": "Upgrade Finder",
+      "RaidDifficultyHeader": "Raid Difficulty",
+      "RaidDifficultyBody": "Select up to two difficulties to find upgrades from",
+      "MythicPlusHeader": "Mythic Plus Key Level",
+      "MythicPlusBody": "Use the Slider to Select the level of keys you usually complete",
+      "PvPHeader": "PvP Rating",
+      "PvPBody": "Select  your currency and Rating",
+      "SimCHeader": "SimC Import",
+      "SimCBody1Good": "SimC Status - All Set!",
+      "SimCBody1Invalid": "SimC Status - Empty Item Slot",
+      "SimCBody1Missing": "SimC Status - Missing",
+      "SimCBody2": "Current Equipped Gear:",
+      "SimCButton": "Import SimC",
+      "HelpText": "Insert a SimC String, select up to two raid difficulties, your standard mythic keystone level, and your PVP rating to see where you can find your next upgrade! All results are based on the gear you are actively wearing."
     },
 
     "TrinketAnalysis": {

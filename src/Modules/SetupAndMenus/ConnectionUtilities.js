@@ -42,6 +42,24 @@ export async function apiSendTopGearSet(player, content, score, compared) {
     .catch((err) => console.log(err));
 }
 
+export async function apiSendUpgradeFinder(player, content) {
+  let name = player.charName;
+  let contentType = content;
+
+  let fetchUrl =
+    "https://questionablyepic.com/api/addUpgradeFinder.php?btag=" +
+    encodeURIComponent(name) +
+    "&content=" +
+    contentType
+  fetch(fetchUrl)
+    .then((res) => res.text())
+    .then((response) => {
+      // alert("Success |" + response + "|");
+      
+    })
+    .catch((err) => console.log(err));
+}
+
 // export function dbUpdateChar() {}
 export async function apiGetPlayerImage(player) {
   let region = player.region.toLowerCase();

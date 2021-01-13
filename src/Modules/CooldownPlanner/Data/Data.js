@@ -1848,6 +1848,71 @@ export const bossList = [
   },
 ];
 
+export const dungeonList = [
+  {
+    name: "Halls of Atonement",
+    zoneID: 12831,
+  },
+  {
+    name: "Mists of Tirna Scithe",
+    zoneID: 13334,
+  },
+  {
+    name: "The Necrotic Wake",
+    zoneID: 12916,
+  },
+  {
+    name: "Plaguefall",
+    zoneID: 13228,
+  },
+  {
+    name: "Sanguine Depths",
+    zoneID: 12842,
+  },
+  {
+    name: "Theater of Pain",
+    zoneID: 12841,
+  },
+  {
+    name: "De Other Side",
+    zoneID: 13309,
+  },
+  {
+    name: "Spires of Ascension",
+    zoneID: 12837,
+  },
+];
+
+export const pvpCurrency = [
+  {
+    name: "Honor",
+    icon: require("../../../Images/Bosses/HonorIcon.jpg").default,
+  },
+  {
+    name: "Conquest",
+    icon: require("../../../Images/Bosses/ConquestIcon.jpg").default,
+  },
+];
+
+export const worldBosses = [
+  {
+    name: "Valinor",
+    id: 167524,
+  },
+  {
+    name: "Mortanis",
+    id: 173104,
+  },
+  {
+    name: "Oranomonos",
+    id: 167527,
+  },
+  {
+    name: "Nurgash ",
+    id: 167526,
+  },
+];
+
 // Boss Notes?
 // Shriekwing - Reverberating Scream consists of large damage on hit, follwoed by a dot.
 export const serverList = {

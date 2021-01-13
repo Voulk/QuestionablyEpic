@@ -514,7 +514,13 @@ class HolyDiver extends Component {
                             justifyContent: "center",
                           }}
                         >
-                          {bossHeaders(this.state.currentBossID)}
+                          {bossHeaders(this.state.currentBossID, {
+                            height: 64,
+                            width: 128,
+                            padding: "0px 5px 0px 5px",
+                            verticalAlign: "middle",
+                            marginRight: "-50px",
+                          })}
                           <div>
                             {this.state.showname ? (
                               <Typography

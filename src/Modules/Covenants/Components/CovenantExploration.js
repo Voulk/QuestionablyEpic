@@ -129,7 +129,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 // ==============================================
-export default function SimpleTabs(props) {
+export default function CovenantExploration(props) {
   useEffect(() => {
     ReactGA.pageview(window.location.pathname + window.location.search);
   }, []);
