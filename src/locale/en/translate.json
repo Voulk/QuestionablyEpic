@@ -306,7 +306,9 @@
 
     "PvPCurrency": {
       "Honor": "Honor",
-      "Conquest": "Conquest"
+      "Conquest": "Conquest",
+      "-16": "Honor",
+      "-17": "Conquest"
     },
 
     "WorldBosses": {

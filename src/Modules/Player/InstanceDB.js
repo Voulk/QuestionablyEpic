@@ -37,4 +37,9 @@ export const encounterDB = {
     1189, //"Sanguine Depths",
 
   ],
+
+  2: [
+    -16,
+    -17
+  ]
 };

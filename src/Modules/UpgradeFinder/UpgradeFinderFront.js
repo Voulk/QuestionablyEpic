@@ -315,6 +315,7 @@ export default function UpgradeFinderFront(props) {
                   valueLabelDisplay="off"
                   marks={PvPRating}
                   max={1600}
+                  change={props.setPVPDifficulty}
                 />
               </Grid>
             </Grid>

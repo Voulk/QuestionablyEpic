@@ -193,7 +193,7 @@ export default function UpgradeFinderResults(props) {
       {/* PVP */}
       <TabPanel value={tabvalue} index={2}>
         <div className={classes.panel}>
-          <PvPGearContainer pl={props.player} items="" />
+          <PvPGearContainer pl={props.player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={props.playerSettings} />
         </div>
       </TabPanel>
 

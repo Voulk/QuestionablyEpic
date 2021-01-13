@@ -30,7 +30,6 @@ const useStyles = makeStyles((theme) => ({
 export default function MythicPlusGearContainer(props) {
   const classes = useStyles();
   const { t, i18n } = useTranslation();
-  const raidID = 1190;
   const itemList = props.itemList;
   const itemDifferentials = props.itemDifferentials;
   const difficulty = props.playerSettings.dungeon;

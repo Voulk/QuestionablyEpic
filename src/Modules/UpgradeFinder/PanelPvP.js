@@ -5,6 +5,11 @@ import ItemUpgradeCard from "./ItemUpgradeCard";
 import "./Panels.css";
 import { pvpCurrency } from "../CooldownPlanner/Data/Data";
 import { useTranslation } from "react-i18next";
+import {
+  filterItemListBySource,
+  getDifferentialByID,
+} from "../Engine/ItemUtilities";
+import { encounterDB } from "../Player/InstanceDB";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -14,12 +19,27 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const getPVPItemLevel = (sourceID, difficulty) => {
+    if (sourceID === -17) return itemLevels.pvp[difficulty];
+    else if (sourceID === -16) return 184;
+    else return -1;
+}
+
+const itemLevels = {
+  raid: [187, 200, 213, 226],
+  dungeon: [184, 184, 187, 190, 194, 194, 197, 200, 200, 200, 203, 203, 207, 207, 207, 210],
+  pvp: [200, 207, 213, 220, 226],
+}
+
 export default function PvPGearContainer(props) {
   const classes = useStyles();
   const { t, i18n } = useTranslation();
+  const itemList = props.itemList;
+  const itemDifferentials = props.itemDifferentials;
+  const difficulty = props.playerSettings.pvp;
 
   const contentGenerator = (type) => {
-    return pvpCurrency
+    return encounterDB[2]
       .map((key) => (
         <Grid item xs={12}>
           <Grid container spacing={2}>
@@ -34,7 +54,7 @@ export default function PvPGearContainer(props) {
                   noWrap
                   className="centered-UpgradeCards-Dungeons"
                 >
-                  {t("PvPCurrency." + key.name)}
+                  {t("PvPCurrency." + key)}
                 </Typography>
               </div>
             </Grid>
@@ -45,8 +65,13 @@ export default function PvPGearContainer(props) {
                 flexItem
                 style={{ marginRight: 4 }}
               />
-              {[...props.pl.getActiveItems("1H Weapon")].map((item, index) => (
-                <ItemUpgradeCard key={index} item={item} />
+              {[...filterItemListBySource(itemList, key, 0, getPVPItemLevel(key, difficulty))].map((item, index) => (
+                <ItemUpgradeCard key={index} item={item}
+                  itemDifferential={getDifferentialByID(
+                    itemDifferentials,
+                    item.id,
+                    item.level,
+              )}/>
               ))}
             </Grid>
           </Grid>

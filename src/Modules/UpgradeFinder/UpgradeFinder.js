@@ -27,6 +27,39 @@ export function UpgradeFinder(props) {
     if (difficulty <= 15 && difficulty >= 0) setPlayerSettings({...playerSettings, dungeon: difficulty});
   }
 
+  const setPVPDifficulty = (event, rating) => {
+    let newRank = -1;
+    switch(rating) {
+      case 0:
+        newRank = 0;
+        break;
+
+      case 600:
+        newRank = 1;
+        break;
+
+      case 800:
+        newRank = 2;
+        break;
+
+      case 1000:
+        newRank = 3;
+        break;
+
+      case 1300:
+        newRank = 4;
+        break;  
+
+      case 1600:
+        newRank = 5;
+        break;
+
+    }
+
+
+    if (newRank <= 5 && newRank >= 0) setPlayerSettings({...playerSettings, pvp: newRank});
+  }
+
   const player = props.player;
   const contentType = props.contentType;
   const allChars = props.allChars;
