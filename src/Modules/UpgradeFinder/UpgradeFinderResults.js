@@ -5,6 +5,7 @@ import { Tabs, Tab, Box, AppBar, Typography } from "@material-ui/core";
 import { useTranslation } from "react-i18next";
 import { runUpgradeFinder } from "./UpgradeFinderEngine";
 import UpgradeFinderResult from "./UpgradeFinderResult";
+import { getDifferentialByID } from "../Engine/ItemUtilities";
 import MythicPlusGearContainer from "./PanelMythicPlus";
 import PvPGearContainer from "./PanelPvP";
 import RaidGearContainer from "./PanelRaid";
@@ -115,6 +116,8 @@ export default function UpgradeFinderResults(props) {
   const itemDifferentials = result.differentials;
   //const raidItems = filterItemSetBySource(itemList, 1190, 0);
   console.log(itemList);
+
+  itemList.sort((a, b) => (getDifferentialByID(itemDifferentials, a.id, a.level) < getDifferentialByID(itemDifferentials, b.id, b.level) ? 1 : -1));
 
 
   const handleTabChange = (event, newValue) => {

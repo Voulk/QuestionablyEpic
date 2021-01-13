@@ -61,7 +61,7 @@ export default function MythicPlusGearContainer(props) {
               style={{ marginRight: 4 }}
             />
             <Grid item xs={12} sm container spacing={1}>
-            {console.log("Zone: " + key)}
+            
               {[...filterItemListBySource(itemList, -1, key, itemLevels.dungeon[difficulty])].map((item, index) => (       
                 <ItemUpgradeCard
                   key={index}
