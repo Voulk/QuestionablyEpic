@@ -87,6 +87,7 @@ export function UpgradeFinder(props) {
       playerSettings={playerSettings}
       setRaidDifficulty={setRaidDifficulty}
       setDungeonDifficulty={setDungeonDifficulty}
+      setPVPDifficulty={setPVPDifficulty}
     />
   );
 }
