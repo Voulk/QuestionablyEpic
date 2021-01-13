@@ -246,7 +246,8 @@ export function getSoulbindFormula(effectID, pl, contentType) {
   // -- Emeni --
   // Lead by Example
   else if (effectID === 342156) {
-    let total_bonus = 0.05 + 0.02 * 4;
+    let total_bonus = 0.05 + 0.02 * 4; 
+    total_bonus += (0.02 * 4); // The buff TO your party. Treated as your own.
     let uptime = 1 / 6;
 
     bonus_stats.Intellect = pl.activeStats.intellect * total_bonus * uptime;

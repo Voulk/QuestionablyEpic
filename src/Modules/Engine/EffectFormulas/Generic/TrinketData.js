@@ -63,7 +63,7 @@ export const trinket_data = [
                 coefficient: 80.17241, 
                 table: -8, 
                 cooldown: 60, 
-                efficiency: 0.92,
+                efficiency: 0.85,
             }
         ]
     },
