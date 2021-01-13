@@ -39,7 +39,7 @@ export const encounterDB = {
   ],
 
   2: [
-    -16,
-    -17
+    -17,
+    -16
   ]
 };

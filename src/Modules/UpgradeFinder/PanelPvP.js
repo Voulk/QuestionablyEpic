@@ -50,7 +50,7 @@ const itemLevels = {
     207,
     210,
   ],
-  pvp: [200, 207, 213, 220, 226],
+  pvp: [200, 207, 213, 220, 226, 226],
 };
 
 export default function PvPGearContainer(props) {
