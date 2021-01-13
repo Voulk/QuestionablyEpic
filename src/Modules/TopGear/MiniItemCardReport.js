@@ -66,12 +66,12 @@ export default function ItemCardReport(props) {
   const itemLevel = item.level;
   const isLegendary = "effect" in item && item.effect.type === "spec legendary";
   const socketImg = {
-    'haste': hasteSocket,
-    'crit': critSocket,
-    'mastery': masterySocket,
-    'vers': versSocket,
-  }
-  const socketImage = socketImg[enchants['Gems']];
+    haste: hasteSocket,
+    crit: critSocket,
+    mastery: masterySocket,
+    vers: versSocket,
+  };
+  const socketImage = socketImg[enchants["Gems"]];
   const itemQuality = (itemLevel) => {
     if (isLegendary) return "#ff8000";
     if (itemLevel >= 183) return "#a73fee";
@@ -150,10 +150,18 @@ export default function ItemCardReport(props) {
       <div style={{ display: "inline" }}> / {props.item.tertiary} </div>
     ) : null;
 
+  console.log(props.item);
+
   return (
     <Grid item xs={12}>
       <Card
-        className={isVault ? classes.vault : item.active ? classes.selected : classes.root}
+        className={
+          isVault
+            ? classes.vault
+            : item.active
+            ? classes.selected
+            : classes.root
+        }
         elevation={0}
         style={{ backgroundColor: "rgba(34, 34, 34, 0.52)" }}
       >
@@ -173,18 +181,32 @@ export default function ItemCardReport(props) {
                 }}
               >
                 <div className="container-ItemCards">
-                  <img
-                    alt="img"
-                    width={44}
-                    height={44}
-                    src={getItemIcon(item.id)}
-                    style={{
-                      borderRadius: 4,
-                      borderWidth: "1px",
-                      borderStyle: "solid",
-                      borderColor: itemQuality(itemLevel),
-                    }}
-                  />
+                  <a
+                    data-wowhead={
+                      item.slot === "Trinket"
+                        ? "item=" +
+                          item.id +
+                          "&" +
+                          "ilvl=" +
+                          item.level +
+                          "&bonus=" +
+                          item.bonusIDS
+                        : ""
+                    }
+                  >
+                    <img
+                      alt="img"
+                      width={44}
+                      height={44}
+                      src={getItemIcon(item.id)}
+                      style={{
+                        borderRadius: 4,
+                        borderWidth: "1px",
+                        borderStyle: "solid",
+                        borderColor: itemQuality(itemLevel),
+                      }}
+                    />
+                  </a>
                   <div className="bottom-right-ItemCards"> {item.level} </div>
                 </div>
               </CardContent>
@@ -236,7 +258,8 @@ export default function ItemCardReport(props) {
                       align="left"
                       style={{ fontSize: "12px" }}
                     >
-                      {socket} {statString} {tertiary} {isVault ? " / Vault" : ""}
+                      {socket} {statString} {tertiary}{" "}
+                      {isVault ? " / Vault" : ""}
                     </Typography>
                     {enchantCheck(item)}
                   </Grid>
