@@ -7,6 +7,10 @@ import "./Panels.css";
 import { worldBosses } from "../CooldownPlanner/Data/Data";
 import { useTranslation } from "react-i18next";
 import { encounterDB } from "../Player/InstanceDB";
+import {
+  filterItemListBySource,
+  getDifferentialByID,
+} from "../Engine/ItemUtilities";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -19,9 +23,11 @@ const useStyles = makeStyles((theme) => ({
 export default function WorldBossGearContainer(props) {
   const classes = useStyles();
   const { t, i18n } = useTranslation();
+  const itemList = props.itemList;
+  const itemDifferentials = props.itemDifferentials;
 
   const contentGenerator = (type) => {
-    return encounterDB[123456789]
+    return encounterDB[1192]
       .map((key) => (
         <Grid item xs={12}>
           <Grid container spacing={2}>
@@ -50,8 +56,14 @@ export default function WorldBossGearContainer(props) {
                 flexItem
                 style={{ marginRight: 4 }}
               />
-              {[...props.pl.getActiveItems("1H Weapon")].map((item, index) => (
-                <ItemUpgradeCard key={index} item={item} />
+              {[...filterItemListBySource(itemList, 1192, key, 207)].map((item, index) => (
+                <ItemUpgradeCard key={index}
+                item={item}
+                itemDifferential={getDifferentialByID(
+                  itemDifferentials,
+                  item.id,
+                  item.level,
+                )}/>
               ))}
             </Grid>
           </Grid>

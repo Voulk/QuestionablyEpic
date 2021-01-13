@@ -200,7 +200,7 @@ export default function UpgradeFinderResults(props) {
       {/* World Bosses */}
       <TabPanel value={tabvalue} index={3}>
         <div className={classes.panel}>
-          <WorldBossGearContainer pl={props.player} items="" />
+          <WorldBossGearContainer pl={props.player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={props.playerSettings}/>
         </div>
       </TabPanel>
     </div>

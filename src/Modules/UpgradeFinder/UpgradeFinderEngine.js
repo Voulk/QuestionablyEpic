@@ -66,6 +66,7 @@ function getSetItemLevel(itemSource, playerSettings, raidIndex = 0) {
   const bossID = itemSource.encounterId;
 
   if (instanceID === 1190) itemLevel = itemLevels.raid[playerSettings.raid[raidIndex]];
+  if (instanceID === 1192) itemLevel = 207; // World Bosses
   else if (instanceID === -1) itemLevel = itemLevels.dungeon[playerSettings.dungeon];
   else if (instanceID === -16) itemLevel = 184;
   else if (instanceID === -17) itemLevel = itemLevels.pvp[playerSettings.pvp];

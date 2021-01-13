@@ -20,7 +20,7 @@ export const encounterDB = {
     2425, //"Stone Legion Generals",
     2424, //"Sire Denathrius",
   ],
-  123456789: [
+  1192: [
     2430, // "Valinor, the Light of Eons",
     2431, //"Mortanis",
     2432, // "Oranomonos the Everbranching",
