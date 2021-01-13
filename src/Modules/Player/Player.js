@@ -189,7 +189,8 @@ class Player {
       if (slot === "AllMainhands") {
         return (
           (item.slot === "1H Weapon" || item.slot === "2H Weapon") &&
-          (!active || item.active)
+          (!active || item.active) &&
+          (!equipped || item.isEquipped)
         );
       } else if (slot === "Offhands") {
         return (

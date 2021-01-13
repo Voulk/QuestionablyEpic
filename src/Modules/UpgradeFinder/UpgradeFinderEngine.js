@@ -122,8 +122,8 @@ export function runUpgradeFinder(player, contentType, playerSettings) {
     contentType
   );
   const baseScore = baseSet.itemSet.hardScore;
-  console.log(wepList);
-  console.log(baseItemList);
+  //console.log(wepList);
+  //console.log(baseItemList);
 
   const itemPoss = buildItemPossibilities(player, contentType, playerSettings);
 

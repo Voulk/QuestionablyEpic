@@ -25,9 +25,26 @@ const itemQuality = (itemLevel, effectCheck) => {
   else return "#1eff00";
 };
 
+/*
+const getSimCStatus = (player) => {
+  if (player.activeItems.length === 0) return "Missing";
+  else if (checkCharacterValid(player) === false) return "Invalid";
+  else return "Good";
+
+}
+
+const checkCharacterValid = (player) => {
+  const weaponSet = player.getActiveItems("AllMainhands", false, true);
+  const weapon = weaponSet.length > 0 ? weaponSet[0] : "";
+
+  return ((weapon.slot === "2H Weapon" && player.getEquippedItems().length === 15) ||
+          (weapon.slot === "1H Weapon" && player.getEquippedItems().length === 16));
+}
+*/
 export default function UpgradeFinderSimC(props) {
   const classes = useStyles();
   const { t, i18n } = useTranslation();
+  const simcStatus = "UpgradeFinderFront.SimCBody1" + props.getSimCStatus(props.player);
 
   return (
     <Grid item xs={12}>
@@ -36,7 +53,8 @@ export default function UpgradeFinderSimC(props) {
           <Grid item xs={6} container justify="center" spacing={1}>
             <Grid item xs={12}>
               <Typography color="primary" align="center" variant="h5">
-                {t("UpgradeFinderFront.SimCBody1") + " Loaded"}
+                {/*t("UpgradeFinderFront.SimCBody1") + "" + getSimCStatus(props.player) */}
+                {t(simcStatus)}
               </Typography>
             </Grid>
 

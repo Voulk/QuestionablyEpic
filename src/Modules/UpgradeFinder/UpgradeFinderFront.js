@@ -162,6 +162,25 @@ export default function UpgradeFinderFront(props) {
     //history.push("/UpgradeFinderReport/");
   };
 
+  const getUpgradeFinderReady = (player) => {
+    return (getSimCStatus(player) === "Good" && props.playerSettings.raid.length > 0);
+  }
+
+  const getSimCStatus = (player) => {
+    if (player.activeItems.length === 0) return "Missing";
+    else if (checkCharacterValid(player) === false) return "Invalid";
+    else return "Good";
+  
+  }
+  
+  const checkCharacterValid = (player) => {
+    const weaponSet = player.getActiveItems("AllMainhands", false, true);
+    const weapon = weaponSet.length > 0 ? weaponSet[0] : "";
+  
+    return ((weapon.slot === "2H Weapon" && player.getEquippedItems().length === 15) ||
+            (weapon.slot === "1H Weapon" && player.getEquippedItems().length === 16));
+  }
+
   const selectsPvP = [selectedHonor, selectedConquest];
 
   const setsPvP = [setSelectedHonor, setSelectedConquest];
@@ -191,6 +210,8 @@ export default function UpgradeFinderFront(props) {
             contentType={props.contentType}
             simcSnack={props.simcSnack}
             allChars={props.allChars}
+            getSimCStatus={getSimCStatus}
+            checkCharacterValid={checkCharacterValid}
           />
         </Grid>
 
@@ -364,7 +385,7 @@ export default function UpgradeFinderFront(props) {
               color="secondary"
               align="center"
               style={{ height: "68%", width: "180px" }}
-              // disabled={!btnActive}
+              disabled={!getUpgradeFinderReady(props.player)}
               onClick={unleashUpgradeFinder}
             >
               {t("TopGear.GoMsg")}
