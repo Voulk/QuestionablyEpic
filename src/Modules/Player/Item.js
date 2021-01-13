@@ -21,7 +21,7 @@ class Item {
       tertiary === "Leech" || tertiary === "Avoidance" ? tertiary : "";
     this.softScore = softScore;
     this.uniqueHash = this.getUnique(id);
-    this.bonusIDS = bonusIDS;
+    this.bonusIDS = bonusIDS || "";
     //console.log("Setting level to " + level);
   }
 

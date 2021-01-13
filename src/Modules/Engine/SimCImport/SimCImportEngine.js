@@ -161,7 +161,7 @@ function processToken(line, player, contentType, type, covenant) {
 
     if (validArmorTypes.includes(itemSubClass)) {
       console.log("Subclass is valid, importing Item");
-      let item = new Item(itemID, "", itemSlot, false, "", 0, tokenLevel);
+      let item = new Item(itemID, "", itemSlot, false, "", 0, tokenLevel, "");
       item.vaultItem = type === "Vault";
       item.active = item.vaultItem;
       let itemAllocations = getItemAllocations(itemID);

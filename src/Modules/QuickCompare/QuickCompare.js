@@ -230,7 +230,8 @@ export default function QuickCompare(props) {
       itemSocket,
       itemTertiary,
       0,
-      itemLevel
+      itemLevel,
+      ""
     );
 
     item.level = itemLevel;

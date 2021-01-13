@@ -1,11 +1,14 @@
 import { itemDB } from "../Player/ItemDB";
 import { randPropPoints } from "./RandPropPointsBylevel";
-import { combat_ratings_mult_by_ilvl, combat_ratings_mult_by_ilvl_jewl } from "./CombatMultByLevel";
+import {
+  combat_ratings_mult_by_ilvl,
+  combat_ratings_mult_by_ilvl_jewl,
+} from "./CombatMultByLevel";
 import { getEffectValue } from "./EffectFormulas/EffectEngine";
 import SPEC from "../Engine/SPECS";
 import Item from "../Player/Item";
 import { useTranslation } from "react-i18next";
-import {i18n} from 'react-i18next';
+import { i18n } from "react-i18next";
 
 /*
 
@@ -90,20 +93,27 @@ export function getValidWeaponTypes(spec, slot) {
   }
 }
 
-export function filterItemListBySource(itemList, sourceInstance, sourceBoss, level) {
-
+export function filterItemListBySource(
+  itemList,
+  sourceInstance,
+  sourceBoss,
+  level
+) {
   let temp = itemList.filter(function (item) {
     let itemEncounter = item.source.encounterId;
-    let expectedItemLevel = (itemEncounter == 2425 || itemEncounter == 2424) ? level + 7 : level;
-   //console.log(expectedItemLevel);
+    let expectedItemLevel =
+      itemEncounter == 2425 || itemEncounter == 2424 ? level + 7 : level;
+    //console.log(expectedItemLevel);
 
-      return (item.level == expectedItemLevel &&
-              ((item.source.instanceId == sourceInstance && item.source.encounterId == sourceBoss) ||
-              (item.source.instanceId == sourceInstance && sourceBoss == 0)));
+    return (
+      item.level == expectedItemLevel &&
+      ((item.source.instanceId == sourceInstance &&
+        item.source.encounterId == sourceBoss) ||
+        (item.source.instanceId == sourceInstance && sourceBoss == 0))
+    );
   });
 
   return temp;
-
 }
 
 export function getDifferentialByID(diffList, id, level) {
@@ -111,7 +121,7 @@ export function getDifferentialByID(diffList, id, level) {
   //console.log("ID: " + id);
   let temp = diffList.filter(function (item) {
     //console.log(item);
-    return (item.item == id && item.level == level);
+    return item.item == id && item.level == level;
   });
 
   if (temp.length > 0) return temp[0].score;
@@ -130,14 +140,13 @@ export function checkItemExists(id) {
 
 // Returns a translated item name based on an ID.
 export function getTranslatedItemName(id, lang, effect) {
-  if (effect && effect.type === 'spec legendary') {
+  if (effect && effect.type === "spec legendary") {
     return effect.name;
-  }
-  else {
+  } else {
     let temp = itemDB.filter(function (item) {
       return item.id === id;
     });
-  
+
     if (temp.length > 0) return temp[0].names[lang];
     else return "Unknown Item";
   }
@@ -192,15 +201,13 @@ export function getItemAllocations(id, missiveStats = []) {
 
   let statArray = {};
   if (temp.length > 0) {
-    statArray = {...temp[0].stats};
-    if ('unallocated' in temp[0].stats) {
+    statArray = { ...temp[0].stats };
+    if ("unallocated" in temp[0].stats) {
       for (var i = 0; i < missiveStats.length; i++) {
         let mStat = missiveStats[i];
         statArray[mStat] += temp[0].stats.unallocated;
-        
       }
     }
-
   }
   //console.log(JSON.stringify(temp) + temp.length)
   //console.log(temp[0].icon)
@@ -239,9 +246,9 @@ function getItemCat(slot) {
       return 3;
     default:
       console.error("Item Cat going to Default" + slot);
-      
+
       return 3;
-      
+
     // Raise error.
   }
 }
@@ -259,22 +266,19 @@ export function getItemSlot(id) {
 function sumObjectsByKey(...objs) {
   return objs.reduce((a, b) => {
     for (let k in b) {
-      if (b.hasOwnProperty(k))
-        a[k] = (a[k] || 0) + b[k];
+      if (b.hasOwnProperty(k)) a[k] = (a[k] || 0) + b[k];
     }
     return a;
   }, {});
 }
 
-export function buildWepCombos(player, active=false, equipped=false) {
+export function buildWepCombos(player, active = false, equipped = false) {
   let wep_list = [];
   let main_hands = player.getActiveItems("1H Weapon", active, equipped);
   let off_hands = player.getActiveItems("Offhands", active, equipped);
   let two_handers = player.getActiveItems("2H Weapon", active, equipped);
 
-
   //console.log("MH: " + main_hands.length + ". OH: " + off_hands.length + ". 2H: " + two_handers.length);
-  
 
   for (let i = 0; i < main_hands.length; i++) {
     // Some say j is the best variable for a nested loop, but are they right?
@@ -287,8 +291,7 @@ export function buildWepCombos(player, active=false, equipped=false) {
       if (main_hand.vaultItem && off_hand.vaultItem) {
         // If both main hand and off hand are vault items, then we can't make a combination out of them.
         continue;
-      }
-      else {
+      } else {
         let item = new Item(
           main_hand.id,
           "Combined Weapon", // TODO
@@ -296,19 +299,19 @@ export function buildWepCombos(player, active=false, equipped=false) {
           main_hand.socket + off_hand.socket, // Socket
           "", // Tertiary
           0,
-          Math.round((main_hand.level + off_hand.level) / 2)
+          Math.round((main_hand.level + off_hand.level) / 2),
+          "" // Bonus Ids
         );
         item.stats = sumObjectsByKey(main_hand.stats, off_hand.stats);
         item.stats.bonus_stats = {};
         item.vaultItem = main_hand.vaultItem || off_hand.vaultItem;
         item.uniqueEquip = item.vaultItem ? "vault" : "";
-        
+
         item.softScore = main_hand.softScore + off_hand.softScore;
         item.offhandID = off_hand.id;
         //console.log("COMBO: " + main_hand.level + " - " + off_hand.level + ". Combined: " + item.level);
         wep_list.push(item);
       }
-
     }
   }
 
@@ -325,7 +328,7 @@ export function buildWepCombos(player, active=false, equipped=false) {
 // This uses the RandPropPointsByLevel and CombatMultByLevel tables and returns a dictionary object of stats.
 // Stat allocations are passed to the function from our Item Database.
 export function calcStatsAtLevel(itemLevel, slot, statAllocations, tertiary) {
-  let combat_mult = 0
+  let combat_mult = 0;
   let stats = {
     intellect: 0,
     stamina: 0,
@@ -339,9 +342,9 @@ export function calcStatsAtLevel(itemLevel, slot, statAllocations, tertiary) {
     bonus_stats: {},
   };
 
-  
   let rand_prop = randPropPoints[itemLevel]["slotValues"][getItemCat(slot)];
-  if (slot == "Finger" || slot == "Neck") combat_mult = combat_ratings_mult_by_ilvl_jewl[itemLevel];
+  if (slot == "Finger" || slot == "Neck")
+    combat_mult = combat_ratings_mult_by_ilvl_jewl[itemLevel];
   else combat_mult = combat_ratings_mult_by_ilvl[itemLevel];
 
   // These stats should be precise, and never off by one.
@@ -364,17 +367,15 @@ export function calcStatsAtLevel(itemLevel, slot, statAllocations, tertiary) {
   // This, on the other hand, is a close estimate that should be replaced before launch.
   if (tertiary === "Leech") {
     if (slot === "Trinket") {
-      // This is an occasionally off-by-one formula for leech that should be rewritten. 
-      stats.leech = Math.ceil(28 + 0.2413 * (itemLevel - 155))
-      
-    }
-    else {
-      const terMult = (slot === "Finger" || slot === "Neck") ? 0.170027 : 0.449132;
+      // This is an occasionally off-by-one formula for leech that should be rewritten.
+      stats.leech = Math.ceil(28 + 0.2413 * (itemLevel - 155));
+    } else {
+      const terMult =
+        slot === "Finger" || slot === "Neck" ? 0.170027 : 0.449132;
       stats.leech = Math.floor(
         terMult * (stats.haste + stats.crit + stats.mastery + stats.versatility)
       );
     }
-
   }
   return stats;
 }
@@ -398,11 +399,14 @@ export function buildStatString(stats, effect) {
   for (var ind in statsList) {
     statString +=
       statsList[ind]["val"] > 0
-        ? statsList[ind]["val"] + " " + correctCasing(statsList[ind]["key"]) + " / " // t("stats." + statsList[ind]["key"])
+        ? statsList[ind]["val"] +
+          " " +
+          correctCasing(statsList[ind]["key"]) +
+          " / " // t("stats." + statsList[ind]["key"])
         : "";
   }
 
-  if (effect !== "") statString += ("Effect") + " / "; // t("itemTags.effect")
+  if (effect !== "") statString += "Effect" + " / "; // t("itemTags.effect")
 
   return statString.slice(0, -3); // We slice here to remove excess slashes and white space from the end.
 }
@@ -454,8 +458,10 @@ export function scoreItem(item, player, contentType) {
   if ("bonus_stats" in item.stats && "mana" in item.stats.bonus_stats) {
     //console.log("Adding bonus_stats to score");
     score +=
-      (item.stats.bonus_stats.mana * player.getSpecialQuery("OneManaHealing", contentType) / player.getHPS(contentType)) *
-      player.activeStats.intellect
+      ((item.stats.bonus_stats.mana *
+        player.getSpecialQuery("OneManaHealing", contentType)) /
+        player.getHPS(contentType)) *
+      player.activeStats.intellect;
   }
 
   // Add Socket
@@ -467,5 +473,5 @@ export function scoreItem(item, player, contentType) {
         player.getHighestStatWeight(contentType)
       );
   }
-  return Math.round(100*score)/100;
+  return Math.round(100 * score) / 100;
 }
