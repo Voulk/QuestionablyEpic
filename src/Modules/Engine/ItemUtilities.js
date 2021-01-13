@@ -367,7 +367,7 @@ export function calcStatsAtLevel(itemLevel, slot, statAllocations, tertiary) {
     dps: 0,
     bonus_stats: {},
   };
-
+  
   let rand_prop = randPropPoints[itemLevel]["slotValues"][getItemCat(slot)];
   if (slot == "Finger" || slot == "Neck")
     combat_mult = combat_ratings_mult_by_ilvl_jewl[itemLevel];
