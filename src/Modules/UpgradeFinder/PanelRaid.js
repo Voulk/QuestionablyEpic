@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const getDifficultyName = (difficulty) => {
-  switch(difficulty) {
+  switch (difficulty) {
     case 0:
       return "LFR";
       break;
@@ -35,10 +35,10 @@ const getDifficultyName = (difficulty) => {
       return "Mythic";
       break;
   }
-}
+};
 
 const getDifficultyBaseLevel = (difficulty) => {
-  switch(difficulty) {
+  switch (difficulty) {
     case 0:
       return 187;
       break;
@@ -52,7 +52,7 @@ const getDifficultyBaseLevel = (difficulty) => {
       return 226;
       break;
   }
-}
+};
 
 export default function RaidGearContainer(props) {
   const classes = useStyles();
@@ -114,57 +114,66 @@ export default function RaidGearContainer(props) {
                     </Typography>
                   </Grid>
                   <Grid item xs={12} sm container spacing={1}>
-                    {[...filterItemListBySource(itemList, 1190, key, getDifficultyBaseLevel(firstDifficulty))].map(
-                      (item, index) => (
-                        <ItemUpgradeCard
-                          key={index}
-                          item={item}
-                          itemDifferential={getDifferentialByID(
-                            itemDifferentials,
-                            item.id,
-                            item.level,
-                          )}
-                        />
-                      )
-                    )}
+                    {[
+                      ...filterItemListBySource(
+                        itemList,
+                        1190,
+                        key,
+                        getDifficultyBaseLevel(firstDifficulty)
+                      ),
+                    ].map((item, index) => (
+                      <ItemUpgradeCard
+                        key={index}
+                        item={item}
+                        itemDifferential={getDifferentialByID(
+                          itemDifferentials,
+                          item.id,
+                          item.level
+                        )}
+                      />
+                    ))}
                   </Grid>
                 </Grid>
 
-                <Grid item>
-                  <Divider />
-                </Grid>
-                
-                {secondDifficulty !== -1 ? 
-                <Grid item xs={12} sm container direction="row" spacing={1}>
-                  <Grid item xs={12}>
-                    <Typography
-                      variant="h6"
-                      color="primary"
-                      align="center"
-                      style={{
-                        backgroundColor: "rgba(255, 255, 255, 0.12)",
-                        borderRadius: 4,
-                      }}
-                    >
-                      {getDifficultyName(secondDifficulty)}
-                    </Typography>
-                  </Grid>
-                  <Grid item xs={12} sm container spacing={1}>
-                    {[...filterItemListBySource(itemList, 1190, key, getDifficultyBaseLevel(secondDifficulty))].map(
-                      (item, index) => (
+                {secondDifficulty !== -1 ? (
+                  <Grid item xs={12} sm container direction="row" spacing={1}>
+                    <Grid item xs={12}>
+                      <Typography
+                        variant="h6"
+                        color="primary"
+                        align="center"
+                        style={{
+                          backgroundColor: "rgba(255, 255, 255, 0.12)",
+                          borderRadius: 4,
+                        }}
+                      >
+                        {getDifficultyName(secondDifficulty)}
+                      </Typography>
+                    </Grid>
+                    <Grid item xs={12} sm container spacing={1}>
+                      {[
+                        ...filterItemListBySource(
+                          itemList,
+                          1190,
+                          key,
+                          getDifficultyBaseLevel(secondDifficulty)
+                        ),
+                      ].map((item, index) => (
                         <ItemUpgradeCard
                           key={index}
                           item={item}
                           itemDifferential={getDifferentialByID(
                             itemDifferentials,
                             item.id,
-                            item.level,
+                            item.level
                           )}
                         />
-                      )
-                    )}
+                      ))}
+                    </Grid>
                   </Grid>
-                </Grid> : ""}
+                ) : (
+                  ""
+                )}
               </Grid>
             </Grid>
           </Grid>

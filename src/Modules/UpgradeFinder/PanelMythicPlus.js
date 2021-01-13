@@ -15,9 +15,26 @@ import { encounterDB } from "../Player/InstanceDB";
 // TODO: Move these to somewhere more accessible since they are used in multiple places.
 const itemLevels = {
   raid: [187, 200, 213, 226],
-  dungeon: [184, 184, 187, 190, 194, 194, 197, 200, 200, 200, 203, 203, 207, 207, 207, 210],
+  dungeon: [
+    184,
+    184,
+    187,
+    190,
+    194,
+    194,
+    197,
+    200,
+    200,
+    200,
+    203,
+    203,
+    207,
+    207,
+    207,
+    210,
+  ],
   pvp: [200, 207, 213, 220, 226],
-}
+};
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -38,9 +55,12 @@ export default function MythicPlusGearContainer(props) {
     return encounterDB[1]
       .map((key) => (
         <Grid item xs={12}>
-          <Grid container spacing={1}>
+          <Grid container spacing={2}>
             <Grid item>
-              <div style={{ width: 200 }} className="container-UpgradeCards">
+              <div
+                style={{ width: 181, paddingLeft: 10 }}
+                className="container-UpgradeCards"
+              >
                 {DungeonHeaderIcons(key, {
                   verticalAlign: "middle",
                   // marginRight: "-75px",
@@ -59,18 +79,31 @@ export default function MythicPlusGearContainer(props) {
               flexItem
               style={{ marginRight: 4 }}
             />
-            <Grid item xs={12} sm container spacing={1}>
-            
-              {[...filterItemListBySource(itemList, -1, key, itemLevels.dungeon[difficulty])].map((item, index) => (       
+            <Grid
+              item
+              xs={12}
+              sm
+              container
+              spacing={1}
+              style={{ marginRight: 6 }}
+            >
+              {[
+                ...filterItemListBySource(
+                  itemList,
+                  -1,
+                  key,
+                  itemLevels.dungeon[difficulty]
+                ),
+              ].map((item, index) => (
                 <ItemUpgradeCard
                   key={index}
                   item={item}
                   itemDifferential={getDifferentialByID(
                     itemDifferentials,
                     item.id,
-                    item.level,
-                )}
-              />
+                    item.level
+                  )}
+                />
               ))}
             </Grid>
           </Grid>

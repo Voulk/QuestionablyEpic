@@ -33,7 +33,7 @@ export default function WorldBossGearContainer(props) {
           <Grid container spacing={2}>
             <Grid item>
               <div
-                style={{ width: 200, paddingLeft: 10 }}
+                style={{ paddingLeft: 10 }}
                 className="container-UpgradeCards"
               >
                 {UpgradeFinderBossImages(key, {
@@ -49,22 +49,32 @@ export default function WorldBossGearContainer(props) {
                 </Typography>
               </div>
             </Grid>
-
-            <Grid item xs={12} sm container spacing={1}>
-              <Divider
-                orientation="vertical"
-                flexItem
-                style={{ marginRight: 4 }}
-              />
-              {[...filterItemListBySource(itemList, 1192, key, 207)].map((item, index) => (
-                <ItemUpgradeCard key={index}
-                item={item}
-                itemDifferential={getDifferentialByID(
-                  itemDifferentials,
-                  item.id,
-                  item.level,
-                )}/>
-              ))}
+            <Divider
+              orientation="vertical"
+              flexItem
+              style={{ marginRight: 4 }}
+            />
+            <Grid
+              item
+              xs={12}
+              sm
+              container
+              spacing={1}
+              style={{ marginRight: 6 }}
+            >
+              {[...filterItemListBySource(itemList, 1192, key, 207)].map(
+                (item, index) => (
+                  <ItemUpgradeCard
+                    key={index}
+                    item={item}
+                    itemDifferential={getDifferentialByID(
+                      itemDifferentials,
+                      item.id,
+                      item.level
+                    )}
+                  />
+                )
+              )}
             </Grid>
           </Grid>
         </Grid>
