@@ -207,9 +207,9 @@ class Player {
   };
 
   
-  getEquippedItems = () => {
+  getEquippedItems = (weaponFlag = false) => {
     let temp = this.activeItems.filter(function (item) {
-      return item.isEquipped;
+      return (item.isEquipped || (weaponFlag && ["Offhand", "Shield", "1H Weapon", "2H Weapon"].includes(item.slot)));
     });
 
     return temp;

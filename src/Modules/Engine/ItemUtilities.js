@@ -116,6 +116,32 @@ export function filterItemListBySource(
   return temp;
 }
 
+export function filterItemListByType(itemList, slot) {
+  let temp = itemList.filter(function (item) {
+    if (slot === "AllMainhands") {
+      return (
+        (item.slot === "1H Weapon" || item.slot === "2H Weapon")
+      );
+    } else if (slot === "Offhands") {
+      return (
+        (item.slot === "Holdable" ||
+          item.slot === "Offhand" ||
+          item.slot === "Shield")
+      );
+    } else {
+      return item.slot === slot;
+    }
+  });
+  return sortItems(temp);
+};
+
+function sortItems(container) {
+  // Current default sorting is by HPS but we could get creative here in future.
+  container.sort((a, b) => (a.softScore < b.softScore ? 1 : -1));
+
+  return container;
+};
+
 export function getDifferentialByID(diffList, id, level) {
   //console.log(diffList);
   //console.log("ID: " + id);

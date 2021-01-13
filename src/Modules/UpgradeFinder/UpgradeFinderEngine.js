@@ -9,6 +9,7 @@ import {
   getValidArmorTypes,
   getValidWeaponTypes,
   getItemEffect,
+  filterItemListByType,
 } from "../Engine/ItemUtilities";
 import UpgradeFinderResult from "./UpgradeFinderResult";
 /*
@@ -49,6 +50,59 @@ const itemLevels = {
   pvp: [200, 207, 213, 220, 226],
 };
 
+// This is a copy paste from buildWepCombos. 
+// TODO: Make buildWepCombos accept a generic list of items instead of auto-using the players set. Then fold this function into it. 
+export function buildWepCombosUF(player, itemList) {
+  let wep_list = [];
+  let main_hands = filterItemListByType(itemList, "1H Weapon");
+  let off_hands = filterItemListByType(itemList, "Offhands");
+  let two_handers = filterItemListByType(itemList, "2H Weapon");
+
+  //console.log("MH: " + main_hands.length + ". OH: " + off_hands.length + ". 2H: " + two_handers.length);
+
+  for (let i = 0; i < main_hands.length; i++) {
+    // Some say j is the best variable for a nested loop, but are they right?
+    let main_hand = main_hands[i];
+    for (let k = 0; k < off_hands.length; k++) {
+      let off_hand = off_hands[k];
+
+      //console.log("Wep Loop" + i + "/" + k + ". " + main_hand.level + ". " + off_hand.level);
+
+      if (main_hand.vaultItem && off_hand.vaultItem) {
+        // If both main hand and off hand are vault items, then we can't make a combination out of them.
+        continue;
+      } else {
+        let item = new Item(
+          main_hand.id,
+          "Combined Weapon", // TODO
+          "CombinedWeapon",
+          main_hand.socket + off_hand.socket, // Socket
+          "", // Tertiary
+          0,
+          Math.round((main_hand.level + off_hand.level) / 2),
+          "" // Bonus Ids
+        );
+        item.stats = sumObjectsByKey(main_hand.stats, off_hand.stats);
+        item.stats.bonus_stats = {};
+        item.uniqueEquip = item.vaultItem ? "vault" : "";
+
+        item.softScore = main_hand.softScore + off_hand.softScore;
+        item.offhandID = off_hand.id;
+        //console.log("COMBO: " + main_hand.level + " - " + off_hand.level + ". Combined: " + item.level);
+        wep_list.push(item);
+      }
+    }
+  }
+
+  for (let j = 0; j < two_handers.length; j++) {
+    wep_list.push(two_handers[j]);
+  }
+
+  wep_list.sort((a, b) => (a.softScore < b.softScore ? 1 : -1));
+  //console.log(JSON.stringify(wep_list));
+  return wep_list.slice(0, 9);
+}
+
 export function runUpgradeFinder(player, contentType, playerSettings) {
   // TEMP VARIABLES
   //const playerSettings = {raid: 3, dungeon: 15, pvp: 4};
@@ -57,17 +111,19 @@ export function runUpgradeFinder(player, contentType, playerSettings) {
   const completedItemList = [];
 
   console.log("Running Upgrade Finder. Strap in.");
-  const baseItemList = player.getEquippedItems();
-  buildWepCombos(player, false, false); // TODO: DEL
+  const baseItemList = player.getEquippedItems(true);
+  const wepList = buildWepCombosUF(player, baseItemList);
+  //buildWepCombos(player, false, false); // TODO: DEL
 
   const baseSet = runTopGear(
     baseItemList,
-    buildWepCombos(player, false, false),
+    wepList,
     player,
     contentType
   );
   const baseScore = baseSet.itemSet.hardScore;
-  //console.log(baseSet);
+  console.log(wepList);
+  console.log(baseItemList);
 
   const itemPoss = buildItemPossibilities(player, contentType, playerSettings);
 
@@ -151,10 +207,10 @@ function processItem(item, baseItemList, baseScore, player, contentType) {
   let newItemList = [...baseItemList];
   newItemList.push(item);
   //console.log(player);
-
+  const wepList = buildWepCombosUF(player, newItemList);
   const newTGSet = runTopGear(
     newItemList,
-    buildWepCombos(player, false, false),
+    wepList,
     player,
     contentType
   );
@@ -185,4 +241,13 @@ function checkItemViable(rawItem, player) {
     (rawItem.itemClass === 2 &&
       acceptableWeaponTypes.includes(rawItem.itemSubClass))
   );
+}
+
+function sumObjectsByKey(...objs) {
+  return objs.reduce((a, b) => {
+    for (let k in b) {
+      if (b.hasOwnProperty(k)) a[k] = (a[k] || 0) + b[k];
+    }
+    return a;
+  }, {});
 }
