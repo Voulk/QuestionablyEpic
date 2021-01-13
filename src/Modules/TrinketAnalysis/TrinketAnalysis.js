@@ -17,11 +17,12 @@ import {
   getTranslatedItemName,
 } from "../Engine/ItemUtilities";
 import VerticalChart from "../Charts/VerticalChart";
+import HelpText from "../SetupAndMenus/HelpText";
 
 // [{TrinketID: 90321, i173: 92, i187: 94, i200: 99, i213: 104, i226: 116}]
 
 const getTrinketAtItemLevel = (id, itemLevel, player, contentType) => {
-  let item = new Item(id, "", "Trinket", false, "", 0, itemLevel);
+  let item = new Item(id, "", "Trinket", false, "", 0, itemLevel, "");
   let itemAllocations = getItemAllocations(id);
   item.stats = calcStatsAtLevel(itemLevel, "Trinket", itemAllocations, "");
   item.effect = getItemEffect(id);
@@ -35,9 +36,11 @@ export default function TrinketAnalysis(props) {
       ReactGA.pageview(window.location.pathname + window.location.search);
     }, []); */
 
+  const { t, i18n } = useTranslation();
   const itemLevel = 213;
   const itemLevels = [161, 174, 187, 200, 213, 226];
   const trinketDB = itemDB.filter((key) => key.slot === "Trinket");
+  const helpText = t("TrinketAnalysis.HelpText");
 
   let activeTrinkets = [];
 
@@ -65,29 +68,40 @@ export default function TrinketAnalysis(props) {
     <div
       style={{
         margin: "auto",
-        width: "70%",
+        width: "60%",
         justifyContent: "space-between",
         display: "block",
       }}
     >
-      <Paper>
-        <Grid container spacing={1} justify="center">
-          <Grid item xs={12} style={{ marginTop: 20 }}>
-            <Typography color="primary" align="center" variant="h5">
-              Trinket Analysis Page
-            </Typography>
-            <Divider variant="middle" />
-          </Grid>
-          <Grid item xs={8} style={{ marginTop: 20, marginBottom: 20 }}>
-            <Paper
-              style={{ backgroundColor: "rgb(28, 28, 28, 0.5)" }}
-              elevation={0}
-            >
-              <VerticalChart data={activeTrinkets} />
-            </Paper>
-          </Grid>
+      <Grid container spacing={1}>
+        <Grid item xs={12}>
+          <Typography
+            variant="h4"
+            align="center"
+            style={{ padding: "10px 10px 5px 10px" }}
+            color="primary"
+          >
+            {t("TrinketAnalysis.Header")}
+          </Typography>
         </Grid>
-      </Paper>
+        <Grid item xs={12}>
+          <HelpText text={helpText} />
+        </Grid>
+        <Grid item xs={12}>
+          <Paper style={{ padding: 20 }}>
+            <Grid container spacing={1} justify="center">
+              <Grid item xs={12}>
+                <Paper
+                  style={{ backgroundColor: "rgb(28, 28, 28, 0.5)" }}
+                  elevation={0}
+                >
+                  <VerticalChart data={activeTrinkets} />
+                </Paper>
+              </Grid>
+            </Grid>
+          </Paper>
+        </Grid>
+      </Grid>
     </div>
   );
 }

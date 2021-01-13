@@ -153,6 +153,7 @@ export default function QEHeader(props) {
                 </Grid>
                 <Grid item>
                   <SimCraftInput
+                    buttonLabel={t("SimCInput.SimCHeaderButtonLabel")}
                     pl={props.pl}
                     contentType={props.contentType}
                     simcSnack={props.simcSnack}

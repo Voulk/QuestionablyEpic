@@ -146,18 +146,32 @@ export default function ItemCard(props) {
               }}
             >
               <div className="container-ItemCards">
-                <img
-                  alt="img"
-                  width={56}
-                  height={56}
-                  src={getItemIcon(item.id)}
-                  style={{
-                    borderRadius: 4,
-                    borderWidth: "1px",
-                    borderStyle: "solid",
-                    borderColor: itemQuality(itemLevel),
-                  }}
-                />
+                <a
+                  data-wowhead={
+                    item.slot === "Trinket"
+                      ? "item=" +
+                        item.id +
+                        "&" +
+                        "ilvl=" +
+                        item.level +
+                        "&bonus=" +
+                        item.bonusIDS
+                      : ""
+                  }
+                >
+                  <img
+                    alt="img"
+                    width={56}
+                    height={56}
+                    src={getItemIcon(item.id)}
+                    style={{
+                      borderRadius: 4,
+                      borderWidth: "1px",
+                      borderStyle: "solid",
+                      borderColor: itemQuality(itemLevel),
+                    }}
+                  />
+                </a>
                 <div className="bottom-right-ItemCards"> {item.level} </div>
               </div>
             </CardContent>

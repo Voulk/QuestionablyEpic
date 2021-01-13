@@ -34,6 +34,7 @@
     "No": "No",
     "None": "None",
     "Add": "Add",
+    "Avoidance": "Avoidance",
 
     "CooldownPlanner": {
       "Classes": {
@@ -45,7 +46,9 @@
         "Warrior": "WarriorDE",
         "HolyPriest": "Holy PriestDE",
         "MistweaverMonk": "Mistweaver MonkDE",
-        "RestorationShaman": "Restoration ShamanDE"
+        "RestorationShaman": "Restoration ShamanDE",
+        "DeathKnight": "Death KnightDE",
+        "ShadowPriest": "Shadow PriestDE"
       },
       "ChartLabels": {
         "_Comments1": "Translations for HD Charts",
@@ -104,7 +107,11 @@
         "HavocDemonHunterComment": "Havoc Demon Hunter Cooldowns",
         "196718": "DarknessDE",
         "WarriorComment": "Warrior Cooldowns",
-        "97462": "Rallying CryDE"
+        "97462": "Rallying CryDE",
+        "DeathKnightComment": "Death Knight Cooldowns",
+        "15286": "Vampirumarmung",
+        "ShadowPriestComment": "Shadow Priest Cooldowns",
+        "51052": "Antimagisches Feld"
       },
       "BossAbilities": {
         "undefined": "No Ability SelectedDE",
@@ -264,6 +271,42 @@
       "Zandalari Troll": "Zandalari TrollDE"
     },
 
+    "BossNames": {
+      "2398": "Schrillschwinge",
+      "2418": "Jäger Altimor",
+      "2402": "Sun King's Salvation",
+      "2405": "Konstrukteur Xy'mox",
+      "2383": "Hungernder Zerstörer",
+      "2406": "Lady Inerva Dunkelader",
+      "2412": "The Council of Blood",
+      "2399": "Schlickfaust",
+      "2417": "Stone Legion Generals",
+      "2407": "Graf Denathrius"
+    },
+
+    "DungeonNames": {
+      "12831": "Hallen der Sühne",
+      "13334": "Die Nebel von Tirna Scithe",
+      "12916": "Die Nekrotische Schneise",
+      "13228": "Seuchensturz",
+      "12842": "Die Blutigen Tiefen",
+      "12841": "Theater der Schmerzen",
+      "13309": "Die Andre Seite",
+      "12837": "Spitzen des Aufstiegs"
+    },
+
+    "PvPCurrency": {
+      "Honor": "Ehre",
+      "Conquest": "Eroberung"
+    },
+
+    "WorldBosses": {
+      "2430": "Valinor",
+      "2431": "Mortanis",
+      "2432": "Oranomonos",
+      "2433": "Nurgash"
+    },
+
     "SimCInput": {
       "SimCStringLabel": "SimC StringDE",
       "SimCHeaderButtonLabel": "SimCDE",
@@ -290,6 +333,7 @@
     },
 
     "Soulbinds": {
+      "Header": "Covenant ExplorationDE",
       "PotencyConduit": "Potency ConduitDE",
       "EnduranceConduit": "Endurance ConduitDE",
       "FinesseConduit": "Finesse ConduitDE"
@@ -336,6 +380,24 @@
       "GoMsg": "Go!DE",
       "SelectedItems": "Selected ItemsDE",
       "StatPanel": { "AvgStats": "Average Stats (includes procs)DE" }
+    },
+
+    "UpgradeFinder": {
+      "Header": "Upgrade Finder Results"
+    },
+    "UpgradeFinderFront": {
+      "Header": "Upgrade Finder",
+      "RaidDifficultyHeader": "Raid Difficulty",
+      "RaidDifficultyBody": "Select up to two difficulties to find upgrades from",
+      "MythicPlusHeader": "Mythic Plus Key Level",
+      "MythicPlusBody": "Use the Slider to Select the level of keys you usually complete",
+      "PvPHeader": "PvP Rating",
+      "PvPBody": "Select  your currency and Rating",
+      "SimCHeader": "SimC Import",
+      "SimCBody1": "Current SimC String Status:",
+      "SimCBody2": "Current Equipped Gear:",
+      "SimCButton": "Import SimC",
+      "HelpText": "Insert a SimC String, Select up to two raid difficulties, your standard mythic keystone level, and your PVP rating to see where you can find your next upgrade!"
     },
 
     "DruidLegendariesComment": "DruidLegendariesComment",

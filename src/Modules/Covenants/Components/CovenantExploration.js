@@ -24,6 +24,7 @@ import {
 } from "../CovenantUtilities";
 import "./CovenantExploration.css";
 import ReactGA from "react-ga";
+import { useTranslation } from "react-i18next";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -67,28 +68,72 @@ const useStyles = makeStyles((theme) => ({
     display: "block",
     marginLeft: "auto",
     marginRight: "auto",
-    marginTop: "2%",
+    // marginTop: "2%",
     flexGrow: 1,
     backgroundColor: theme.palette.background.paper,
     maxWidth: 1014,
+    borderRadius: "4px 4px 4px 4px",
   },
   panel: {
     flexGrow: 1,
     backgroundColor: "#191c23",
     display: "flex",
     height: 700,
+    borderRadius: "0px 0px 4px 4px",
   },
   tabs: {
     borderRight: `1px solid ${theme.palette.divider}`,
   },
+  kyrianHeaderStyle: {
+    backgroundImage: `url(${
+      require("../../../Images/BastionHeader.png").default
+    })`,
+    borderRadius: "4px 0px 0px 0px",
+    // height: 75,
+    // whiteSpace: "nowrap",
+    // textShadow: "3px 3px 4px black",
+    // color: "#fff",
+    // fontSize: "1.1rem",
+  },
+  nightFaeHeaderStyle: {
+    backgroundImage: `url(${
+      require("../../../Images/NightFaeHeader.png").default
+    })`,
+    // height: 75,
+    // whiteSpace: "nowrap",
+    // textShadow: "3px 3px 4px black",
+    // color: "#fff",
+    // fontSize: "1.1rem",
+  },
+  venthyrHeaderStyle: {
+    backgroundImage: `url(${
+      require("../../../Images/VenthyrHeader.png").default
+    })`,
+    // height: 75,
+    // whiteSpace: "nowrap",
+    // textShadow: "3px 3px 4px black",
+    // color: "#fff",
+    // fontSize: "1.1rem",
+  },
+  necrolordHeaderStyle: {
+    backgroundImage: `url(${
+      require("../../../Images/NecroHeader.png").default
+    })`,
+    borderRadius: "0px 4px 0px 0px",
+    // height: 75,
+    // whiteSpace: "nowrap",
+    // textShadow: "3px 3px 4px black",
+    // color: "#fff",
+    // fontSize: "1.1rem",
+  },
 }));
 
 // ==============================================
-export default function SimpleTabs(props) {
+export default function CovenantExploration(props) {
   useEffect(() => {
     ReactGA.pageview(window.location.pathname + window.location.search);
   }, []);
-
+  const { t, i18n } = useTranslation();
   const classes = useStyles();
   const [tabvalue, setTabValue] = React.useState(0);
   const [soulbindValue, setSoulbindValue] = React.useState(0);
@@ -148,460 +193,481 @@ export default function SimpleTabs(props) {
   }
 
   return (
-    <div className={classes.root}>
-      <AppBar
-        position="static"
-        style={{ backgroundColor: "#424242" }}
-        elevation={0}
+    <div>
+      <Typography
+        variant="h4"
+        align="center"
+        style={{ padding: "10px 10px 5px 10px" }}
+        color="primary"
       >
-        <Tabs
-          value={tabvalue}
-          onChange={handleTabChange}
-          aria-label="simple tabs example"
-          variant="fullWidth"
-          TabIndicatorProps={{ style: { backgroundColor: "#F2BF59" } }}
+        {t("Soulbinds.Header")}
+      </Typography>
+
+      <div className={classes.root}>
+        <AppBar
+          position="static"
+          style={{ backgroundColor: "#000", borderRadius: "4px 4px 0px 0px" }}
+          elevation={0}
         >
-          <Tab
-            icon={
-              <div className="container">
-                <img
-                  height={45}
-                  src={
-                    process.env.PUBLIC_URL +
-                    "/Images/Interface/Kyrian_Sigil.png"
-                  }
-                  alt="Kyrian"
-                />
-                <div className="centered"> Kyrian </div>
-              </div>
-            }
-            {...a11yProps(0)}
-          />
-          <Tab
-            icon={
-              <div className="container">
-                <img
-                  height={45}
-                  src={
-                    process.env.PUBLIC_URL + "/Images/Interface/Fae_Sigil.png"
-                  }
-                  alt="Night Fae"
-                />
-                <div className="centered"> Night Fae </div>
-              </div>
-            }
-            {...a11yProps(1)}
-          />
-          <Tab
-            icon={
-              <div className="container">
-                <img
-                  height={45}
-                  src={
-                    process.env.PUBLIC_URL +
-                    "/Images/Interface/Venthyr_Sigil.png"
-                  }
-                  alt="Venthyr"
-                />
-                <div className="centered"> Venthyr </div>
-              </div>
-            }
-            {...a11yProps(2)}
-          />
-          <Tab
-            icon={
-              <div className="container">
-                <img
-                  height={45}
-                  src={
-                    process.env.PUBLIC_URL +
-                    "/Images/Interface/Death_Lords_Sigil.png"
-                  }
-                  alt="Necrolords"
-                />
-                <div className="centered"> Necrolords </div>
-              </div>
-            }
-            {...a11yProps(3)}
-          />
-        </Tabs>
-      </AppBar>
-
-      {/* Kyrian */}
-      <TabPanel value={tabvalue} index={0}>
-        <div className={classes.panel}>
           <Tabs
-            orientation="vertical"
-            value={soulbindValue}
-            onChange={handleChange2}
-            aria-label="Vertical tabs example"
-            className={classes.tabs}
+            value={tabvalue}
+            onChange={handleTabChange}
+            aria-label="simple tabs example"
+            variant="fullWidth"
             TabIndicatorProps={{ style: { backgroundColor: "#F2BF59" } }}
           >
             <Tab
-              style={{ color: "white" }}
+              className={classes.kyrianHeaderStyle}
               icon={
-                <img
-                  height={100}
-                  alt="Pelagos"
-                  src={
-                    process.env.PUBLIC_URL + "/Images/Interface/pelagos.webp"
-                  }
-                />
+                <div className="container">
+                  <img
+                    height={45}
+                    src={
+                      process.env.PUBLIC_URL +
+                      "/Images/Interface/Kyrian_Sigil.png"
+                    }
+                    alt="Kyrian"
+                  />
+                  <div className="centered"> Kyrian </div>
+                </div>
               }
-              label="Pelagos"
-              {...a11yPropsVert(0)}
+              {...a11yProps(0)}
             />
             <Tab
-              style={{ color: "white" }}
+              className={classes.nightFaeHeaderStyle}
               icon={
-                <img
-                  height={100}
-                  alt="Kleia"
-                  src={process.env.PUBLIC_URL + "/Images/Interface/kleia.webp"}
-                />
+                <div className="container">
+                  <img
+                    height={45}
+                    src={
+                      process.env.PUBLIC_URL + "/Images/Interface/Fae_Sigil.png"
+                    }
+                    alt="Night Fae"
+                  />
+                  <div className="centered"> Night Fae </div>
+                </div>
               }
-              label="Kleia"
-              {...a11yPropsVert(1)}
+              {...a11yProps(1)}
             />
             <Tab
-              style={{ color: "white" }}
+              className={classes.venthyrHeaderStyle}
               icon={
-                <img
-                  height={100}
-                  alt="Mikanikos"
-                  src={
-                    process.env.PUBLIC_URL +
-                    "/Images/Interface/forgelite-prime-mikanikos.webp"
-                  }
-                />
+                <div className="container">
+                  <img
+                    height={45}
+                    src={
+                      process.env.PUBLIC_URL +
+                      "/Images/Interface/Venthyr_Sigil.png"
+                    }
+                    alt="Venthyr"
+                  />
+                  <div className="centered"> Venthyr </div>
+                </div>
               }
-              label="Mikanikos"
-              {...a11yPropsVert(2)}
+              {...a11yProps(2)}
+            />
+            <Tab
+              className={classes.necrolordHeaderStyle}
+              icon={
+                <div className="container">
+                  <img
+                    height={45}
+                    src={
+                      process.env.PUBLIC_URL +
+                      "/Images/Interface/Death_Lords_Sigil.png"
+                    }
+                    alt="Necrolords"
+                  />
+                  <div className="centered"> Necrolords </div>
+                </div>
+              }
+              {...a11yProps(3)}
             />
           </Tabs>
+        </AppBar>
 
-          <TabPanel
-            value={soulbindValue}
-            index={0}
-            style={{ display: "inline-flex" }}
-          >
-            {buildSoulbind(
-              "Pelagos",
-              props.pl,
-              props.contentType,
-              soulbindState,
-              activateSoulbind,
-              setConduitInSlot,
-              updateConduitLevel
-            )}
-          </TabPanel>
-          <TabPanel
-            value={soulbindValue}
-            index={1}
-            style={{ display: "inline-flex" }}
-          >
-            {buildSoulbind(
-              "Kleia",
-              props.pl,
-              props.contentType,
-              soulbindState,
-              activateSoulbind,
-              setConduitInSlot,
-              updateConduitLevel
-            )}
-          </TabPanel>
-          <TabPanel
-            value={soulbindValue}
-            index={2}
-            style={{ display: "inline-flex" }}
-          >
-            {buildSoulbind(
-              "Mikanikos",
-              props.pl,
-              props.contentType,
-              soulbindState,
-              activateSoulbind,
+        {/* Kyrian */}
+        <TabPanel value={tabvalue} index={0}>
+          <div className={classes.panel}>
+            <Tabs
+              orientation="vertical"
+              value={soulbindValue}
+              onChange={handleChange2}
+              aria-label="Vertical tabs example"
+              className={classes.tabs}
+              TabIndicatorProps={{ style: { backgroundColor: "#F2BF59" } }}
+            >
+              <Tab
+                style={{ color: "white" }}
+                icon={
+                  <img
+                    height={100}
+                    alt="Pelagos"
+                    src={
+                      process.env.PUBLIC_URL + "/Images/Interface/pelagos.webp"
+                    }
+                  />
+                }
+                label="Pelagos"
+                {...a11yPropsVert(0)}
+              />
+              <Tab
+                style={{ color: "white" }}
+                icon={
+                  <img
+                    height={100}
+                    alt="Kleia"
+                    src={
+                      process.env.PUBLIC_URL + "/Images/Interface/kleia.webp"
+                    }
+                  />
+                }
+                label="Kleia"
+                {...a11yPropsVert(1)}
+              />
+              <Tab
+                style={{ color: "white" }}
+                icon={
+                  <img
+                    height={100}
+                    alt="Mikanikos"
+                    src={
+                      process.env.PUBLIC_URL +
+                      "/Images/Interface/forgelite-prime-mikanikos.webp"
+                    }
+                  />
+                }
+                label="Mikanikos"
+                {...a11yPropsVert(2)}
+              />
+            </Tabs>
 
-              setConduitInSlot,
-              updateConduitLevel
-            )}
-          </TabPanel>
-        </div>
-      </TabPanel>
+            <TabPanel
+              value={soulbindValue}
+              index={0}
+              style={{ display: "inline-flex" }}
+            >
+              {buildSoulbind(
+                "Pelagos",
+                props.pl,
+                props.contentType,
+                soulbindState,
+                activateSoulbind,
+                setConduitInSlot,
+                updateConduitLevel
+              )}
+            </TabPanel>
+            <TabPanel
+              value={soulbindValue}
+              index={1}
+              style={{ display: "inline-flex" }}
+            >
+              {buildSoulbind(
+                "Kleia",
+                props.pl,
+                props.contentType,
+                soulbindState,
+                activateSoulbind,
+                setConduitInSlot,
+                updateConduitLevel
+              )}
+            </TabPanel>
+            <TabPanel
+              value={soulbindValue}
+              index={2}
+              style={{ display: "inline-flex" }}
+            >
+              {buildSoulbind(
+                "Mikanikos",
+                props.pl,
+                props.contentType,
+                soulbindState,
+                activateSoulbind,
 
-      {/* Night Fae */}
-      <TabPanel value={tabvalue} index={1}>
-        <div className={classes.panel}>
-          <Tabs
-            orientation="vertical"
-            value={soulbindValue}
-            onChange={handleChange2}
-            aria-label="Vertical tabs example"
-            className={classes.tabs}
-            TabIndicatorProps={{ style: { backgroundColor: "#F2BF59" } }}
-          >
-            <Tab
-              style={{ color: "white" }}
-              icon={
-                <img
-                  height={100}
-                  alt="Niya"
-                  src={process.env.PUBLIC_URL + "/Images/Interface/niya.webp"}
-                />
-              }
-              label="Niya"
-              {...a11yPropsVert(0)}
-            />
-            <Tab
-              style={{ color: "white" }}
-              icon={
-                <img
-                  height={100}
-                  alt="Dreamweaver"
-                  src={
-                    process.env.PUBLIC_URL +
-                    "/Images/Interface/dreamweaver.webp"
-                  }
-                />
-              }
-              label="Dreamweaver"
-              {...a11yPropsVert(1)}
-            />
-            <Tab
-              style={{ color: "white" }}
-              icon={
-                <img
-                  height={100}
-                  alt="Korayn"
-                  src={process.env.PUBLIC_URL + "/Images/Interface/korayn.webp"}
-                />
-              }
-              label="Korayn"
-              {...a11yPropsVert(2)}
-            />
-          </Tabs>
+                setConduitInSlot,
+                updateConduitLevel
+              )}
+            </TabPanel>
+          </div>
+        </TabPanel>
 
-          <TabPanel value={soulbindValue} index={0}>
-            {buildSoulbind(
-              "Niya",
-              props.pl,
-              props.contentType,
-              soulbindState,
-              activateSoulbind,
-              setConduitInSlot,
-              updateConduitLevel
-            )}
-          </TabPanel>
-          <TabPanel value={soulbindValue} index={1}>
-            {buildSoulbind(
-              "Dreamweaver",
-              props.pl,
-              props.contentType,
-              soulbindState,
-              activateSoulbind,
-              setConduitInSlot,
-              updateConduitLevel
-            )}
-          </TabPanel>
-          <TabPanel value={soulbindValue} index={2}>
-            {buildSoulbind(
-              "Korayn",
-              props.pl,
-              props.contentType,
-              soulbindState,
-              activateSoulbind,
-              setConduitInSlot,
-              updateConduitLevel
-            )}
-          </TabPanel>
-        </div>
-      </TabPanel>
+        {/* Night Fae */}
+        <TabPanel value={tabvalue} index={1}>
+          <div className={classes.panel}>
+            <Tabs
+              orientation="vertical"
+              value={soulbindValue}
+              onChange={handleChange2}
+              aria-label="Vertical tabs example"
+              className={classes.tabs}
+              TabIndicatorProps={{ style: { backgroundColor: "#F2BF59" } }}
+            >
+              <Tab
+                style={{ color: "white" }}
+                icon={
+                  <img
+                    height={100}
+                    alt="Niya"
+                    src={process.env.PUBLIC_URL + "/Images/Interface/niya.webp"}
+                  />
+                }
+                label="Niya"
+                {...a11yPropsVert(0)}
+              />
+              <Tab
+                style={{ color: "white" }}
+                icon={
+                  <img
+                    height={100}
+                    alt="Dreamweaver"
+                    src={
+                      process.env.PUBLIC_URL +
+                      "/Images/Interface/dreamweaver.webp"
+                    }
+                  />
+                }
+                label="Dreamweaver"
+                {...a11yPropsVert(1)}
+              />
+              <Tab
+                style={{ color: "white" }}
+                icon={
+                  <img
+                    height={100}
+                    alt="Korayn"
+                    src={
+                      process.env.PUBLIC_URL + "/Images/Interface/korayn.webp"
+                    }
+                  />
+                }
+                label="Korayn"
+                {...a11yPropsVert(2)}
+              />
+            </Tabs>
 
-      {/* Venthyr */}
-      <TabPanel value={tabvalue} index={2}>
-        <div className={classes.panel}>
-          <Tabs
-            orientation="vertical"
-            value={soulbindValue}
-            onChange={handleChange2}
-            aria-label="Vertical tabs example"
-            className={classes.tabs}
-            TabIndicatorProps={{ style: { backgroundColor: "#F2BF59" } }}
-          >
-            <Tab
-              style={{ color: "white" }}
-              icon={
-                <img
-                  height={100}
-                  alt="Nadjia"
-                  src={
-                    process.env.PUBLIC_URL +
-                    "/Images/Interface/nadjia-the-mistblade.webp"
-                  }
-                />
-              }
-              label="Nadjia"
-              {...a11yPropsVert(0)}
-            />
-            <Tab
-              style={{ color: "white" }}
-              icon={
-                <img
-                  height={100}
-                  alt="Theotar"
-                  src={
-                    process.env.PUBLIC_URL +
-                    "/Images/Interface/theotar-the-mad-duke.webp"
-                  }
-                />
-              }
-              label="Theotar"
-              {...a11yPropsVert(1)}
-            />
-            <Tab
-              style={{ color: "white" }}
-              icon={
-                <img
-                  height={100}
-                  alt="Draven"
-                  src={
-                    process.env.PUBLIC_URL +
-                    "/Images/Interface/general-draven.webp"
-                  }
-                />
-              }
-              label="Draven"
-              {...a11yPropsVert(2)}
-            />
-          </Tabs>
+            <TabPanel value={soulbindValue} index={0}>
+              {buildSoulbind(
+                "Niya",
+                props.pl,
+                props.contentType,
+                soulbindState,
+                activateSoulbind,
+                setConduitInSlot,
+                updateConduitLevel
+              )}
+            </TabPanel>
+            <TabPanel value={soulbindValue} index={1}>
+              {buildSoulbind(
+                "Dreamweaver",
+                props.pl,
+                props.contentType,
+                soulbindState,
+                activateSoulbind,
+                setConduitInSlot,
+                updateConduitLevel
+              )}
+            </TabPanel>
+            <TabPanel value={soulbindValue} index={2}>
+              {buildSoulbind(
+                "Korayn",
+                props.pl,
+                props.contentType,
+                soulbindState,
+                activateSoulbind,
+                setConduitInSlot,
+                updateConduitLevel
+              )}
+            </TabPanel>
+          </div>
+        </TabPanel>
 
-          <TabPanel value={soulbindValue} index={0}>
-            {buildSoulbind(
-              "Nadjia",
-              props.pl,
-              props.contentType,
-              soulbindState,
-              activateSoulbind,
-              setConduitInSlot,
-              updateConduitLevel
-            )}
-          </TabPanel>
-          <TabPanel value={soulbindValue} index={1}>
-            {buildSoulbind(
-              "Theotar",
-              props.pl,
-              props.contentType,
-              soulbindState,
-              activateSoulbind,
-              setConduitInSlot,
-              updateConduitLevel
-            )}
-          </TabPanel>
-          <TabPanel value={soulbindValue} index={2}>
-            {buildSoulbind(
-              "Draven",
-              props.pl,
-              props.contentType,
-              soulbindState,
-              activateSoulbind,
-              setConduitInSlot,
-              updateConduitLevel
-            )}
-          </TabPanel>
-        </div>
-      </TabPanel>
+        {/* Venthyr */}
+        <TabPanel value={tabvalue} index={2}>
+          <div className={classes.panel}>
+            <Tabs
+              orientation="vertical"
+              value={soulbindValue}
+              onChange={handleChange2}
+              aria-label="Vertical tabs example"
+              className={classes.tabs}
+              TabIndicatorProps={{ style: { backgroundColor: "#F2BF59" } }}
+            >
+              <Tab
+                style={{ color: "white" }}
+                icon={
+                  <img
+                    height={100}
+                    alt="Nadjia"
+                    src={
+                      process.env.PUBLIC_URL +
+                      "/Images/Interface/nadjia-the-mistblade.webp"
+                    }
+                  />
+                }
+                label="Nadjia"
+                {...a11yPropsVert(0)}
+              />
+              <Tab
+                style={{ color: "white" }}
+                icon={
+                  <img
+                    height={100}
+                    alt="Theotar"
+                    src={
+                      process.env.PUBLIC_URL +
+                      "/Images/Interface/theotar-the-mad-duke.webp"
+                    }
+                  />
+                }
+                label="Theotar"
+                {...a11yPropsVert(1)}
+              />
+              <Tab
+                style={{ color: "white" }}
+                icon={
+                  <img
+                    height={100}
+                    alt="Draven"
+                    src={
+                      process.env.PUBLIC_URL +
+                      "/Images/Interface/general-draven.webp"
+                    }
+                  />
+                }
+                label="Draven"
+                {...a11yPropsVert(2)}
+              />
+            </Tabs>
 
-      {/* Necrolords */}
-      <TabPanel value={tabvalue} index={3}>
-        <div className={classes.panel}>
-          <Tabs
-            orientation="vertical"
-            value={soulbindValue}
-            onChange={handleChange2}
-            aria-label="Vertical tabs example"
-            className={classes.tabs}
-            TabIndicatorProps={{ style: { backgroundColor: "#F2BF59" } }}
-          >
-            <Tab
-              style={{ color: "white" }}
-              icon={
-                <img
-                  height={100}
-                  alt="Marileth"
-                  src={
-                    process.env.PUBLIC_URL +
-                    "/Images/Interface/plague-deviser-marileth.webp"
-                  }
-                />
-              }
-              label="Marileth"
-              {...a11yPropsVert(0)}
-            />
-            <Tab
-              style={{ color: "white" }}
-              icon={
-                <img
-                  height={100}
-                  alt="Emeni"
-                  src={process.env.PUBLIC_URL + "/Images/Interface/emeni.webp"}
-                />
-              }
-              label="Emeni"
-              {...a11yPropsVert(1)}
-            />
-            <Tab
-              style={{ color: "white" }}
-              icon={
-                <img
-                  height={100}
-                  alt="Heirmir"
-                  src={
-                    process.env.PUBLIC_URL +
-                    "/Images/Interface/bonesmith-heirmir.webp"
-                  }
-                />
-              }
-              label="Heirmir"
-              {...a11yPropsVert(2)}
-            />
-          </Tabs>
+            <TabPanel value={soulbindValue} index={0}>
+              {buildSoulbind(
+                "Nadjia",
+                props.pl,
+                props.contentType,
+                soulbindState,
+                activateSoulbind,
+                setConduitInSlot,
+                updateConduitLevel
+              )}
+            </TabPanel>
+            <TabPanel value={soulbindValue} index={1}>
+              {buildSoulbind(
+                "Theotar",
+                props.pl,
+                props.contentType,
+                soulbindState,
+                activateSoulbind,
+                setConduitInSlot,
+                updateConduitLevel
+              )}
+            </TabPanel>
+            <TabPanel value={soulbindValue} index={2}>
+              {buildSoulbind(
+                "Draven",
+                props.pl,
+                props.contentType,
+                soulbindState,
+                activateSoulbind,
+                setConduitInSlot,
+                updateConduitLevel
+              )}
+            </TabPanel>
+          </div>
+        </TabPanel>
 
-          <TabPanel value={soulbindValue} index={0}>
-            {buildSoulbind(
-              "Marileth",
-              props.pl,
-              props.contentType,
-              soulbindState,
-              activateSoulbind,
-              setConduitInSlot,
-              updateConduitLevel
-            )}
-          </TabPanel>
-          <TabPanel value={soulbindValue} index={1}>
-            {buildSoulbind(
-              "Emeni",
-              props.pl,
-              props.contentType,
-              soulbindState,
-              activateSoulbind,
-              setConduitInSlot,
-              updateConduitLevel
-            )}
-          </TabPanel>
-          <TabPanel value={soulbindValue} index={2}>
-            {buildSoulbind(
-              "Heirmir",
-              props.pl,
-              props.contentType,
-              soulbindState,
-              activateSoulbind,
-              setConduitInSlot,
-              updateConduitLevel
-            )}
-          </TabPanel>
-        </div>
-      </TabPanel>
+        {/* Necrolords */}
+        <TabPanel value={tabvalue} index={3}>
+          <div className={classes.panel}>
+            <Tabs
+              orientation="vertical"
+              value={soulbindValue}
+              onChange={handleChange2}
+              aria-label="Vertical tabs example"
+              className={classes.tabs}
+              TabIndicatorProps={{ style: { backgroundColor: "#F2BF59" } }}
+            >
+              <Tab
+                style={{ color: "white" }}
+                icon={
+                  <img
+                    height={100}
+                    alt="Marileth"
+                    src={
+                      process.env.PUBLIC_URL +
+                      "/Images/Interface/plague-deviser-marileth.webp"
+                    }
+                  />
+                }
+                label="Marileth"
+                {...a11yPropsVert(0)}
+              />
+              <Tab
+                style={{ color: "white" }}
+                icon={
+                  <img
+                    height={100}
+                    alt="Emeni"
+                    src={
+                      process.env.PUBLIC_URL + "/Images/Interface/emeni.webp"
+                    }
+                  />
+                }
+                label="Emeni"
+                {...a11yPropsVert(1)}
+              />
+              <Tab
+                style={{ color: "white" }}
+                icon={
+                  <img
+                    height={100}
+                    alt="Heirmir"
+                    src={
+                      process.env.PUBLIC_URL +
+                      "/Images/Interface/bonesmith-heirmir.webp"
+                    }
+                  />
+                }
+                label="Heirmir"
+                {...a11yPropsVert(2)}
+              />
+            </Tabs>
+
+            <TabPanel value={soulbindValue} index={0}>
+              {buildSoulbind(
+                "Marileth",
+                props.pl,
+                props.contentType,
+                soulbindState,
+                activateSoulbind,
+                setConduitInSlot,
+                updateConduitLevel
+              )}
+            </TabPanel>
+            <TabPanel value={soulbindValue} index={1}>
+              {buildSoulbind(
+                "Emeni",
+                props.pl,
+                props.contentType,
+                soulbindState,
+                activateSoulbind,
+                setConduitInSlot,
+                updateConduitLevel
+              )}
+            </TabPanel>
+            <TabPanel value={soulbindValue} index={2}>
+              {buildSoulbind(
+                "Heirmir",
+                props.pl,
+                props.contentType,
+                soulbindState,
+                activateSoulbind,
+                setConduitInSlot,
+                updateConduitLevel
+              )}
+            </TabPanel>
+          </div>
+        </TabPanel>
+      </div>
     </div>
   );
 }

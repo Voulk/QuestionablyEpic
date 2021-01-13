@@ -143,7 +143,7 @@ export function getSoulbindFormula(effectID, pl, contentType) {
   // Double check the shield_consumed is a fair approximation when the expansion goes live.
   else if (effectID === 319213) {
     let trait_bonus = 0.1;
-    let shield_consumed = 0.95; // The percentage of our overhealing shield that gets consumed. Likely to be very high.
+    let shield_consumed = contentType = "Raid" ? 0.92 : 0.4; // The percentage of our overhealing shield that gets consumed. Likely to be very high.
     let overhealing = pl.getRawHPS(contentType) - pl.getHPS(contentType);
 
     bonus_stats.HPS = trait_bonus * shield_consumed * overhealing;
@@ -246,7 +246,8 @@ export function getSoulbindFormula(effectID, pl, contentType) {
   // -- Emeni --
   // Lead by Example
   else if (effectID === 342156) {
-    let total_bonus = 0.05 + 0.02 * 4;
+    let total_bonus = 0.05 + 0.02 * 4; 
+    total_bonus += (0.02 * 4); // The buff TO your party. Treated as your own.
     let uptime = 1 / 6;
 
     bonus_stats.Intellect = pl.activeStats.intellect * total_bonus * uptime;

@@ -184,26 +184,48 @@ class Player {
     this.activeItems = [];
   };
 
-  getActiveItems = (slot, active = false) => {
+  getActiveItems = (slot, active = false, equipped = false) => {
     let temp = this.activeItems.filter(function (item) {
       if (slot === "AllMainhands") {
         return (
           (item.slot === "1H Weapon" || item.slot === "2H Weapon") &&
-          (!active || item.active)
+          (!active || item.active) &&
+          (!equipped || item.isEquipped)
         );
       } else if (slot === "Offhands") {
         return (
           (item.slot === "Holdable" ||
             item.slot === "Offhand" ||
             item.slot === "Shield") &&
-          (!active || item.active)
+          (!active || item.active) &&
+          (!equipped || item.isEquipped)
         );
       } else {
-        return item.slot === slot && (!active || item.active);
+        return item.slot === slot && (!active || item.active) && (!equipped || item.isEquipped);
       }
     });
     return this.sortItems(temp);
   };
+
+  
+  getEquippedItems = (weaponFlag = false) => {
+    let temp = this.activeItems.filter(function (item) {
+      return (item.isEquipped || (weaponFlag && ["Offhand", "Shield", "1H Weapon", "2H Weapon"].includes(item.slot)));
+    });
+
+    return temp;
+  }
+
+  // Returns the players weapons and offhands. 
+  getTopWeapons = () => {
+    let wepArray = [];
+
+    let temp = this.activeItems.filter(function (item) {
+      return ['Holdable', 'Shield', 'Offhand', '1H Weapon', '2H Weapon'].includes(item.slot);
+      //return item;
+    });
+    return this.sortItems(temp);
+  }
 
   scoreActiveItems = (contentType) => {
     for (var i = 0; i < this.activeItems.length; i++) {
