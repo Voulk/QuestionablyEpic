@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
-import { Tabs, Tab, Box, AppBar, Typography } from "@material-ui/core";
+import { Tabs, Tab, Box, AppBar, Typography, Grid } from "@material-ui/core";
 import { useTranslation } from "react-i18next";
 import { runUpgradeFinder } from "./UpgradeFinderEngine";
 import UpgradeFinderResult from "./UpgradeFinderResult";
@@ -117,8 +117,12 @@ export default function UpgradeFinderResults(props) {
   //const raidItems = filterItemSetBySource(itemList, 1190, 0);
   console.log(itemList);
 
-  itemList.sort((a, b) => (getDifferentialByID(itemDifferentials, a.id, a.level) < getDifferentialByID(itemDifferentials, b.id, b.level) ? 1 : -1));
-
+  itemList.sort((a, b) =>
+    getDifferentialByID(itemDifferentials, a.id, a.level) <
+    getDifferentialByID(itemDifferentials, b.id, b.level)
+      ? 1
+      : -1
+  );
 
   const handleTabChange = (event, newValue) => {
     setTabValue(newValue);
@@ -179,28 +183,56 @@ export default function UpgradeFinderResults(props) {
       {/* Raid */}
       <TabPanel value={tabvalue} index={0}>
         <div className={classes.panel}>
-          <RaidGearContainer pl={props.player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={props.playerSettings} />
+          <Grid container>
+            <RaidGearContainer
+              pl={props.player}
+              itemList={itemList}
+              itemDifferentials={itemDifferentials}
+              playerSettings={props.playerSettings}
+            />
+          </Grid>
         </div>
       </TabPanel>
 
       {/* Mythic Plus */}
       <TabPanel value={tabvalue} index={1}>
         <div className={classes.panel}>
-          <MythicPlusGearContainer pl={props.player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={props.playerSettings} />
+          <Grid container>
+            <MythicPlusGearContainer
+              pl={props.player}
+              itemList={itemList}
+              itemDifferentials={itemDifferentials}
+              playerSettings={props.playerSettings}
+            />
+          </Grid>
         </div>
       </TabPanel>
 
       {/* PVP */}
       <TabPanel value={tabvalue} index={2}>
         <div className={classes.panel}>
-          <PvPGearContainer pl={props.player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={props.playerSettings} />
+          <Grid container>
+            <PvPGearContainer
+              pl={props.player}
+              itemList={itemList}
+              itemDifferentials={itemDifferentials}
+              playerSettings={props.playerSettings}
+            />
+          </Grid>
         </div>
       </TabPanel>
 
       {/* World Bosses */}
       <TabPanel value={tabvalue} index={3}>
         <div className={classes.panel}>
-          <WorldBossGearContainer pl={props.player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={props.playerSettings}/>
+          <Grid container>
+            <WorldBossGearContainer
+              pl={props.player}
+              itemList={itemList}
+              itemDifferentials={itemDifferentials}
+              playerSettings={props.playerSettings}
+            />
+          </Grid>
         </div>
       </TabPanel>
     </div>

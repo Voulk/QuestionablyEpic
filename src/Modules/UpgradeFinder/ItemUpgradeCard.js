@@ -92,8 +92,7 @@ export default function ItemCard(props) {
   const upgradeColor = (num) => {
     if (num > 0) {
       return "#FFDF14"; // #60e421
-    } 
-    else {
+    } else {
       return "#C16719";
     }
   };
@@ -133,11 +132,10 @@ export default function ItemCard(props) {
   //console.log(props.item);
 
   return (
-    <Grid item xs={12} sm={6} md={6} lg={4} xl={4}>
+    <Grid item xs={12} sm={12} md={12} lg={6} xl={4}>
       <Card
         className={itemDifferential == 0 ? classes.downgrade : classes.root}
         variant="outlined"
-        
       >
         {/* <CardActionArea disabled={true}> */}
         <Grid
@@ -195,7 +193,7 @@ export default function ItemCard(props) {
               >
                 <Grid item xs={10} display="inline">
                   <Typography
-                    variant= {itemName.length > 30 ? "subtitle2" : "subtitle1"}
+                    variant={itemName.length > 30 ? "subtitle2" : "subtitle1"}
                     wrap="nowrap"
                     display="inline"
                     align="left"
