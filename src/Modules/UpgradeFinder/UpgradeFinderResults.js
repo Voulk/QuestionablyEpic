@@ -115,7 +115,7 @@ export default function UpgradeFinderResults(props) {
   const itemList = result.itemSet;
   const itemDifferentials = result.differentials;
   //const raidItems = filterItemSetBySource(itemList, 1190, 0);
-  console.log(itemList);
+  //console.log(itemList);
 
   itemList.sort((a, b) =>
     getDifferentialByID(itemDifferentials, a.id, a.level) <
