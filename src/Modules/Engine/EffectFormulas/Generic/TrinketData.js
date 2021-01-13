@@ -110,8 +110,8 @@ export const trinket_data = [
             { 
                 coefficient: 0.467903,
                 table: -7,  
-                duration: 23, // You get a 20 second duration every time you touch a new Spirit. They each live about 5 seconds.
-                stacks: 3.1, // You should be able to hit all four pretty reliably, but will spend some time with lower than four stacks as you meet each.
+                duration: 21, // You get a 20 second duration every time you touch a new Spirit. They each live about 5 seconds.
+                stacks: 3.0, // You should be able to hit all four pretty reliably, but will spend some time with lower than four stacks as you meet each.
                 cooldown: 90,
             }
         ]
@@ -310,11 +310,11 @@ export const trinket_data = [
             {   // HoT Portion
                 coefficient: 1.65,
                 table: -7,  
-                efficiency: {"Restoration Druid": 0.32, "Discipline Priest": 0.38, "Holy Paladin": 0.37, 
-                "Mistweaver Monk": 0.34, "Restoration Shaman": 0.3, "Holy Priest": 0.3},
+                efficiency: {"Restoration Druid": 0.28, "Discipline Priest": 0.32, "Holy Paladin": 0.34, 
+                "Mistweaver Monk": 0.31, "Restoration Shaman": 0.3, "Holy Priest": 0.3},
                 duration: 10, // Falls off when the target falls below 35% health. Efficiency in this case is the HoT uptime.
                 cooldown: 30, 
-                expectedTargetThroughput: 4300, // Could technically be pulled from logs
+                expectedTargetThroughput: 4250, // Could technically be pulled from logs
             },
         ]
     },
@@ -324,7 +324,7 @@ export const trinket_data = [
             { 
                 coefficient: 326.7931,  
                 table: -8, // TODO: Test for Crit / Vers scaling.
-                efficiency: 0.84, 
+                efficiency: {raid: 0.74, dungeon: 0.85}, 
                 // This one is very awkward. You're using it as a Guardian Spirit effect more often than using it because the heal is useful. 
                 // A massive heal on an injured target has massive life-saving potential, but I'm not sure how well it can be modelled except
                 // to assume the heal will have quite a high efficiency in dangerous scenarios.

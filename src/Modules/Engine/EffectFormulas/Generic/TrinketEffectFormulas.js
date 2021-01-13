@@ -222,7 +222,7 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel) {
     }
     else if (effectName === "Tuft of Smoldering Plumage") {
         let effect = activeTrinket.effects[0];
-        bonus_stats.hps =  getProcessedValue(effect.coefficient, effect.table, itemLevel, effect.efficiency) / effect.cooldown * player.getStatMultiplier('CRITVERS');
+        bonus_stats.hps =  getProcessedValue(effect.coefficient, effect.table, itemLevel, effect.efficiency[contentType]) / effect.cooldown * player.getStatMultiplier('CRITVERS');
         //console.log("Tuft: " + bonus_stats.hps);
     }
     else if (effectName === "Show of Faith") {
