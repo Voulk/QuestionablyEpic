@@ -318,6 +318,9 @@ class App extends Component {
       return <MuiAlert elevation={6} variant="filled" {...props} />;
     }
 
+    const vertical = "bottom";
+    const horizontal = "left";
+
     return (
       <ErrorBoundary>
         <Router basename={process.env.REACT_APP_HOMEPAGE}>
@@ -377,6 +380,7 @@ class App extends Component {
                 open={this.state.simcSnackState}
                 autoHideDuration={3000}
                 onClose={this.handleSimCSnackClose}
+                anchorOrigin={{ vertical, horizontal }}
               >
                 <Alert onClose={this.handleSimCSnackClose} severity="success">
                   SimC String Imported Successfully!
