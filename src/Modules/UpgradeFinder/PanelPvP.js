@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
 
 const getPVPItemLevel = (sourceID, difficulty) => {
   if (sourceID === -17) return itemLevels.pvp[difficulty];
-  else if (sourceID === -16) return 184;
+  else if (sourceID === -16) return 197;
   else return -1;
 };
 

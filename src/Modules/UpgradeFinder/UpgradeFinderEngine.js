@@ -151,7 +151,7 @@ function getSetItemLevel(itemSource, playerSettings, raidIndex = 0) {
   // World Bosses
   else if (instanceID === -1)
     itemLevel = itemLevels.dungeon[playerSettings.dungeon];
-  else if (instanceID === -16) itemLevel = 184;
+  else if (instanceID === -16) itemLevel = 197;
   else if (instanceID === -17) itemLevel = itemLevels.pvp[playerSettings.pvp];
   if (bossID === 2425 || bossID === 2424) itemLevel += 7; // Denathrius / Stone Legion Generals
 
