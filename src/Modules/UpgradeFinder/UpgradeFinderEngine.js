@@ -12,6 +12,7 @@ import {
   filterItemListByType,
 } from "../Engine/ItemUtilities";
 import UpgradeFinderResult from "./UpgradeFinderResult";
+import { apiSendUpgradeFinder } from "../SetupAndMenus/ConnectionUtilities";
 /*
 
 The core Upgrade Finder loop is as follows:
@@ -136,6 +137,7 @@ export function runUpgradeFinder(player, contentType, playerSettings) {
   const result = new UpgradeFinderResult(itemPoss, completedItemList);
   //console.log(result);
   console.log("=== Upgrade Finder Finished ===");
+  apiSendUpgradeFinder(player, contentType);
 
   return result;
 }
