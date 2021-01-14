@@ -1,6 +1,5 @@
 import React, { forwardRef } from "react";
 import MaterialTable, { MTableToolbar } from "material-table";
-import ArrowDownward from "@material-ui/icons/ArrowDownward";
 import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import abilityIcons from "../../Functions/IconFunctions/AbilityIcons.js";
 import { localizationFR } from "../../../../locale/fr/TableLocale";
@@ -8,12 +7,10 @@ import { localizationEN } from "../../../../locale/en/TableLocale";
 import { localizationRU } from "../../../../locale/ru/TableLocale";
 import { localizationCH } from "../../../../locale/ch/TableLocale";
 import moment from "moment";
-import { externalsDetailed } from "../../Data/Data.js";
 import Divider from "@material-ui/core/Divider";
 import Paper from "@material-ui/core/Paper";
 import { useTranslation } from "react-i18next";
-import { classColoursJS } from "../../Functions/ClassColourFunctions";
-import classIcons from "../../Functions/IconFunctions/ClassIcons";
+import { ArrowDownward, ChevronRight, FilterList } from "@material-ui/icons";
 
 const theme = createMuiTheme({
   overrides: {
@@ -36,13 +33,39 @@ const theme = createMuiTheme({
     secondary: { main: "#e0e0e0" },
   },
 });
+
+// const SearchFieldOverride = createMuiTheme({
+//   overrides: {
+//     MuiOutlinedInput: {
+//       input: { padding: 10 },
+//     },
+//     MuiToolbar: {
+//       regular: {
+//         minHeight: 0,
+//         "@media (min-width: 600px)": {
+//           minHeight: "0px",
+//         },
+//       },
+//     },
+//   },
+//   palette: {
+//     type: "dark",
+//     primary: { main: "#d3bc47" },
+//     secondary: { main: "#e0e0e0" },
+//   },
+// });
+
 const tableIcons = {
   SortArrow: forwardRef((props, ref) => (
     <ArrowDownward {...props} style={{ color: "#ffee77" }} ref={ref} />
   )),
+  DetailPanel: forwardRef((props, ref) => (
+    <ChevronRight {...props} style={{ color: "#ffee77" }} ref={ref} />
+  )),
+  Filter: forwardRef((props, ref) => <FilterList {...props} ref={ref} />),
 };
 
-export default function ExternalTimeline(props) {
+export default function EnemyCastsTimeline(props) {
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
 
@@ -64,8 +87,8 @@ export default function ExternalTimeline(props) {
         icons={tableIcons}
         columns={[
           {
-            title: t("Caster"),
-            field: "caster",
+            title: t("Enemy"),
+            field: "name",
             cellStyle: {
               whiteSpace: "nowrap",
               // borderRight: "1px solid rgb(81 81 81)",
@@ -75,42 +98,11 @@ export default function ExternalTimeline(props) {
             headerStyle: {
               fontSize: 14,
             },
-            render: (rowData) => (
-              <div style={{ color: classColoursJS(rowData.casterClass) }}>
-                {classIcons(rowData.casterClass, 20)}
-                {rowData.caster}
-              </div>
-            ),
+            // render: (rowData) => <div>{rowData.name}</div>,
+            defaultGroupOrder: 0,
           },
           {
-            field: "casterClass",
-            hidden: true,
-          },
-          {
-            field: "targetClass",
-            hidden: true,
-          },
-          {
-            title: t("Target"),
-            field: "target",
-            cellStyle: {
-              whiteSpace: "nowrap",
-              // borderRight: "1px solid rgb(81 81 81)",
-              padding: "2px 0px",
-              fontSize: 14,
-            },
-            headerStyle: {
-              fontSize: 14,
-            },
-            render: (rowData) => (
-              <div style={{ color: classColoursJS(rowData.targetClass) }}>
-                {classIcons(rowData.targetClass, 20)}
-                {rowData.target}
-              </div>
-            ),
-          },
-          {
-            title: t("External"),
+            title: t("Ability"),
             field: "ability",
             cellStyle: {
               whiteSpace: "nowrap",
@@ -141,36 +133,15 @@ export default function ExternalTimeline(props) {
             headerStyle: {
               fontSize: 14,
             },
+            filtering: false,
           },
           {
-            title: t("CooldownPlanner.TableLabels.OffCooldownLabel"),
-            width: "2%",
-            cellStyle: {
-              whiteSpace: "nowrap",
-              padding: "2px 8px",
-              fontSize: 14,
-            },
-            headerStyle: {
-              fontSize: 14,
-            },
-            render: (rowData) => (
-              <div>
-                {moment(rowData.timestamp, "mm:ss")
-                  .add(
-                    externalsDetailed
-                      .filter((obj) => {
-                        return obj.guid === rowData.guid;
-                      })
-                      .map((obj) => obj.cooldown)
-                      .toString(),
-                    "s"
-                  )
-                  .format("mm:ss")}
-              </div>
-            ),
+            field: "id",
+            hidden: true,
           },
         ]}
-        title={t("CooldownPlanner.Headers.ExternalTimeline")}
+        title={t("CooldownPlanner.Headers.EnemyCastTimeline")}
+        icons={tableIcons}
         header={true}
         data={props.data}
         style={{
@@ -185,7 +156,9 @@ export default function ExternalTimeline(props) {
           Container: (props) => <Paper {...props} elevation={0} />,
           Toolbar: (props) => (
             <div style={{ marginBottom: 8 }}>
+              {/* <ThemeProvider theme={SearchFieldOverride}> */}
               <MTableToolbar {...props} />
+              {/* </ThemeProvider> */}
               <Divider />
             </div>
           ),
@@ -195,6 +168,9 @@ export default function ExternalTimeline(props) {
           toolbar: true,
           header: true,
           search: false,
+          searchFieldVariant: "outlined",
+          // grouping: true,
+          filtering: false,
           headerStyle: {
             border: "1px solid #c8b054",
             padding: "0px 8px 0px 8px",

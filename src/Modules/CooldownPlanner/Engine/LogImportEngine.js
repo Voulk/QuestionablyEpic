@@ -11,6 +11,8 @@ import {
   importSummaryData,
   importExternalCastsLogData,
   importCharacterIds,
+  importEnemyCasts,
+  importEnemyIds,
 } from "../Functions/Functions";
 import moment from "moment";
 
@@ -70,7 +72,11 @@ export default async function updatechartdata(starttime, endtime) {
     this.state.reportid
   );
 
-  console.log(playerIDs);
+  const enemyIDs = await importEnemyIds(
+    starttime,
+    endtime,
+    this.state.reportid
+  );
 
   // Import summary Info from the Logs Summary table.
   // This contains our data for Gear, Stats, Conduits, Soulbinds etc etc.
@@ -112,7 +118,13 @@ export default async function updatechartdata(starttime, endtime) {
     healers.map((key) => key.id)
   );
 
-  console.log(externals);
+  const enemyCasts = await importEnemyCasts(
+    starttime,
+    endtime,
+    this.state.reportid
+  );
+  console.log(enemyCasts);
+
   // Map the damaging abilities and guids to an array of objects.
   damage.map((key) =>
     damagingAbilities.push({
@@ -269,6 +281,23 @@ export default async function updatechartdata(starttime, endtime) {
   }));
 
   console.log(updateddatacastsExternalsTimeline);
+
+  // Map cooldown casts for the Timeline Table.
+  const enemyCastsTimeline = enemyCasts.map((key) => ({
+    ability: key.ability.name,
+    guid: key.ability.guid,
+    timestamp: moment(fightDurationCalculator(key.timestamp, this.state.time))
+      .startOf("second")
+      .format("mm:ss"),
+    name: enemyIDs
+      .filter((obj) => {
+        return obj.id === key.sourceID;
+      })
+      .map((obj) => obj.name)
+      .toString(),
+    id: key.sourceID,
+    parentId: key.sourceID,
+  }));
 
   const updateddatacastsExternalTimeline = cooldowns.map((key) => ({
     ability: key.ability.name,
@@ -436,5 +465,6 @@ export default async function updatechartdata(starttime, endtime) {
     summedUnmitigatedDamagePerSecond: summedUnmitigatedDamagePerSecond,
     summedMitigationDamagePerSecond: summedMitigationDamagePerSecond,
     externalUsageTimelineData: updateddatacastsExternalsTimeline,
+    enemyCastsTimelineData: enemyCastsTimeline,
   });
 }

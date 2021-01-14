@@ -55,6 +55,10 @@
         "UnmitigatedDamageLabel": "Unmitigated DamageFR",
         "MitigatedDamageLabel": "MitigatedFR"
       },
+      "Headers": {
+        "CooldownTimeline": "Cooldown TimelineFR",
+        "ExternalTimeline": "External TimelineFR"
+      },
       "TableLabels": {
         "_Comments1": "Translations for HD Tables",
         "RaidSelectorLabel": "Select RaidFR",

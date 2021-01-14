@@ -394,7 +394,7 @@ export const externalsDetailed = [
   },
 
   {
-    id: 116849,
+    guid: 116849,
     name: {
       en: "Life Cocoon",
       de: "Lebenskokon",
@@ -402,7 +402,7 @@ export const externalsDetailed = [
       ru: "Исцеляющий кокон",
       ch: "作茧缚命",
     },
-    wowhead: "https://www.wowhead.com/spell=10060/power-infusion",
+    wowhead: "https://www.wowhead.com/spell=116849/life-cocoon",
     icon: "ability_monk_chicocoon",
     cooldown: 120,
   },

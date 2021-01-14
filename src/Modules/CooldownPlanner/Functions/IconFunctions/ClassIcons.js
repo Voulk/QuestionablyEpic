@@ -9,6 +9,10 @@ import RestorationShamanIcon from "../../../../Images/Classes/Shaman/Specialisat
 import WarriorIcon from "../../../../Images/Classes/Warrior/WarriorIcon.jpg";
 import DemonHunterIcon from "../../../../Images/Classes/DemonHunter/DemonHunterIcon.jpg";
 import DeathKnightIcon from "../../../../Images/Classes/DeathKnight/DeathKnightIcon.jpg";
+import RogueIcon from "../../../../Images/Classes/Rogue/Icons/RogueIcon.jpg";
+import WarlockIcon from "../../../../Images/Classes/Warlock/Icons/WarlockIcon.jpg";
+import MageIcon from "../../../../Images/Classes/Mage/Icons/MageIcon.jpg";
+import HunterIcon from "../../../../Images/Classes/Hunter/Icons/HunterIcon.jpg";
 
 export default function classIcons(props, iconSize) {
   let src = "";
@@ -120,6 +124,27 @@ export default function classIcons(props, iconSize) {
   ) {
     src = DeathKnightIcon;
     alt = "Death Knight";
+  }
+
+  // Rogue
+  if (props === "Rogue") {
+    src = RogueIcon;
+    alt = "Rogue";
+  }
+  // Warlock
+  if (props === "Warlock") {
+    src = WarlockIcon;
+    alt = "Warlock";
+  }
+  // Hunter
+  if (props === "Hunter") {
+    src = HunterIcon;
+    alt = "Hunter";
+  }
+  // Mage
+  if (props === "Mage") {
+    src = MageIcon;
+    alt = "Mage";
   }
 
   return (

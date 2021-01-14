@@ -55,6 +55,10 @@
         "UnmitigatedDamageLabel": "Unmitigated DamageRU",
         "MitigatedDamageLabel": "MitigatedRU"
       },
+      "Headers": {
+        "CooldownTimeline": "Cooldown TimelineRU",
+        "ExternalTimeline": "External TimelineRU"
+      },
       "TableLabels": {
         "_Comments1": "Translations for HD Tables",
         "RaidSelectorLabel": "Select RaidRU",

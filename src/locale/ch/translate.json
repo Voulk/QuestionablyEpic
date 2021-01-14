@@ -55,6 +55,10 @@
         "UnmitigatedDamageLabel": "UnmitigatedCH",
         "MitigatedDamageLabel": "MitigatedCH"
       },
+      "Headers": {
+        "CooldownTimeline": "Cooldown TimelineCH",
+        "ExternalTimeline": "External TimelineCH"
+      },
       "TableLabels": {
         "_Comments1": "Translations for HD Tables",
         "RaidSelectorLabel": "Select RaidCH",

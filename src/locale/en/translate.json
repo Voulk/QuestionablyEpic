@@ -35,6 +35,7 @@
     "None": "None",
     "Add": "Add",
     "Avoidance": "Avoidance",
+    "External": "External",
 
     "CooldownPlanner": {
       "Classes": {
@@ -54,6 +55,11 @@
         "_Comments1": "Translations for HD Charts",
         "UnmitigatedDamageLabel": "Unmitigated",
         "MitigatedDamageLabel": "Mitigated"
+      },
+      "Headers": {
+        "CooldownTimeline": "Cooldown Timeline",
+        "ExternalTimeline": "External Timeline",
+        "EnemyCastTimeline": "Enemy Cast Timeline"
       },
       "TableLabels": {
         "_Comments1": "Translations for HD Tables",
