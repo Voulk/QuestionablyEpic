@@ -23831,7 +23831,7 @@ export const itemDB = [
             "fr": "Mâchoires de défaite",
             "de": "Fänge des Schicksals"
         },
-        "icon": "trade_archaeology_shark_jaws",
+        "icon": "trade_archaeology_shark jaws",
         "itemClass": 4,
         "itemSubClass": 0,
         "itemLevel": 60,
