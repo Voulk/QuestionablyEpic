@@ -142,7 +142,7 @@ export function runUpgradeFinder(player, contentType, playerSettings) {
   return result;
 }
 
-function getSetItemLevel(itemSource, playerSettings, raidIndex = 0) {
+function getSetItemLevel(itemSource, playerSettings, raidIndex = 0, slot) {
   let itemLevel = 0;
   const instanceID = itemSource.instanceId;
   const bossID = itemSource.encounterId;
@@ -154,7 +154,12 @@ function getSetItemLevel(itemSource, playerSettings, raidIndex = 0) {
   else if (instanceID === -1)
     itemLevel = itemLevels.dungeon[playerSettings.dungeon];
   else if (instanceID === -16) itemLevel = 197;
-  else if (instanceID === -17) itemLevel = itemLevels.pvp[playerSettings.pvp];
+  else if (instanceID === -17) {
+    // Conquest
+    itemLevel = itemLevels.pvp[playerSettings.pvp];
+    if (playerSettings.pvp === 5 && ["1H Weapon", "2H Weapon", "Offhand", "Shield"].includes(slot)) itemLevel += 7;
+    
+  }
   if (bossID === 2425 || bossID === 2424) itemLevel += 7; // Denathrius / Stone Legion Generals
 
   return itemLevel;
@@ -186,13 +191,13 @@ function buildItemPossibilities(player, contentType, playerSettings) {
 
       if (itemSource.instanceId === 1190) {
         for (var x = 0; x < playerSettings.raid.length; x++) {
-          const itemLevel = getSetItemLevel(itemSource, playerSettings, x);
+          const itemLevel = getSetItemLevel(itemSource, playerSettings, x, rawItem.slot);
           const item = buildItem(player, contentType, rawItem, itemLevel);
           //console.log("Difficulty: " + playerSettings.raid[x] + ". Item level: " + itemLevel)
           itemPoss.push(item);
         }
       } else {
-        const itemLevel = getSetItemLevel(itemSource, playerSettings);
+        const itemLevel = getSetItemLevel(itemSource, playerSettings, 0,  rawItem.slot);
         const item = buildItem(player, contentType, rawItem, itemLevel);
 
         itemPoss.push(item);
