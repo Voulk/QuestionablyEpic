@@ -35,6 +35,7 @@
     "None": "None",
     "Add": "Add",
     "Avoidance": "Avoidance",
+    "External": "External",
 
     "CooldownPlanner": {
       "Classes": {
@@ -54,6 +55,11 @@
         "_Comments1": "Translations for HD Charts",
         "UnmitigatedDamageLabel": "Unmitigated",
         "MitigatedDamageLabel": "Mitigated"
+      },
+      "Headers": {
+        "CooldownTimeline": "Cooldown Timeline",
+        "ExternalTimeline": "External Timeline",
+        "EnemyCastTimeline": "Enemy Cast Timeline"
       },
       "TableLabels": {
         "_Comments1": "Translations for HD Tables",
@@ -281,7 +287,8 @@
       "2426": "The Council of Blood",
       "2394": "Sludgefist",
       "2425": "Stone Legion Generals",
-      "2424": "Sire Denathrius"
+      "2424": "Sire Denathrius",
+      "999": "BoE Trash Drops"
     },
 
     "DungeonNames": {

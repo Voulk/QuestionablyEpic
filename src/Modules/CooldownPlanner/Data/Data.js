@@ -337,9 +337,9 @@ export const healerCooldownsDetailed = [
   },
 ];
 
-const externals = [
+export const externalsDetailed = [
   {
-    id: 47788,
+    guid: 47788,
     name: {
       en: "Guardian Spirit",
       de: "Schutzgeist",
@@ -353,7 +353,7 @@ const externals = [
   },
 
   {
-    id: 6940,
+    guid: 6940,
     name: {
       en: "Blessing of Sacrifice",
       de: "Segen der Aufopferung",
@@ -366,7 +366,7 @@ const externals = [
     cooldown: 120,
   },
   {
-    id: 102342,
+    guid: 102342,
     name: {
       en: "Ironbark",
       de: "Eisenborke",
@@ -380,7 +380,7 @@ const externals = [
   },
 
   {
-    id: 10060,
+    guid: 10060,
     name: {
       en: "Power Infusion",
       de: "Seele der Macht",
@@ -394,7 +394,7 @@ const externals = [
   },
 
   {
-    id: 116849,
+    guid: 116849,
     name: {
       en: "Life Cocoon",
       de: "Lebenskokon",
@@ -402,7 +402,7 @@ const externals = [
       ru: "Исцеляющий кокон",
       ch: "作茧缚命",
     },
-    wowhead: "https://www.wowhead.com/spell=10060/power-infusion",
+    wowhead: "https://www.wowhead.com/spell=116849/life-cocoon",
     icon: "ability_monk_chicocoon",
     cooldown: 120,
   },

@@ -19,8 +19,10 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const getPVPItemLevel = (sourceID, difficulty) => {
-  if (sourceID === -17) return itemLevels.pvp[difficulty];
+const getPVPItemLevel = (sourceID, difficulty, slot) => {
+  if (sourceID === -17) {
+    return itemLevels.pvp[difficulty];
+  }
   else if (sourceID === -16) return 197;
   else return -1;
 };
@@ -99,7 +101,8 @@ export default function PvPGearContainer(props) {
                   itemList,
                   key,
                   0,
-                  getPVPItemLevel(key, difficulty)
+                  getPVPItemLevel(key, difficulty),
+                  difficulty
                 ),
               ].map((item, index) => (
                 <ItemUpgradeCard

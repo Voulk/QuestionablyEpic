@@ -17588,6 +17588,184 @@ export const itemDB = [
         "slot": "Back"
     },
     {
+        "id": 170128,
+        "name": "Majestic Shirakess Greatstaff",
+        "names": {
+            "cn": "",
+            "en": "Majestic Shirakess Greatstaff",
+            "ru": "Величественный великий посох ширакесс",
+            "es": "Gran bastón Shirakess majestuoso",
+            "br": "Grande Cajado Majestoso de Shirakess",
+            "kr": "",
+            "fr": "Grand bâton shirakess majestueux",
+            "de": "Majestätischer Großstab der Shirakess"
+        },
+        "icon": "inv_staff_2h_naga_c_01",
+        "itemClass": 2,
+        "itemSubClass": 10,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 23380,
+            "stamina": 7889,
+            "haste": 2800,
+            "crit": 4200,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "2H Weapon"
+    },
+    {
+        "id": 170129,
+        "name": "Salgos' Volatile Basher",
+        "names": {
+            "cn": "",
+            "en": "Salgos' Volatile Basher",
+            "ru": "Нестабильный колотун Салгоса",
+            "es": "Azotador volátil de Salgos",
+            "br": "Porrete Volátil de Salgos",
+            "kr": "",
+            "fr": "Cogneur explosif de Talgos",
+            "de": "Salgos' instabiler Schläger"
+        },
+        "icon": "inv_mace_1h_naga_a_01",
+        "itemClass": 2,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 30629,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 4200,
+            "mastery": 2800,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "1H Weapon"
+    },
+    {
+        "id": 170131,
+        "name": "Tidal Wand of Malevolence",
+        "names": {
+            "cn": "",
+            "en": "Tidal Wand of Malevolence",
+            "ru": "Приливный жезл злобы",
+            "es": "Varita de mareas de malevolencia",
+            "br": "Varinha Mareante da Malevolência",
+            "kr": "",
+            "fr": "Baguette des marées de malveillance",
+            "de": "Gezeitenstab der Böswilligkeit"
+        },
+        "icon": "inv_wand_1h_naga_c_01",
+        "itemClass": 2,
+        "itemSubClass": 19,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 30629,
+            "stamina": 7889,
+            "haste": 4200,
+            "crit": 0,
+            "mastery": 2800,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "1H Weapon"
+    },
+    {
+        "id": 170138,
+        "name": "Scroll of Violent Tides",
+        "names": {
+            "cn": "",
+            "en": "Scroll of Violent Tides",
+            "ru": "Свиток неистовых приливов",
+            "es": "Pergamino de mareas violentas",
+            "br": "Pergaminho das Marés Violentas",
+            "kr": "",
+            "fr": "Parchemin des flots tumultueux",
+            "de": "Schriftrolle der heftigen Fluten"
+        },
+        "icon": "inv_offhand_1h_naga_c_01",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 16132,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 4200,
+            "mastery": 0,
+            "versatility": 2800
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Offhand"
+    },
+    {
+        "id": 170273,
+        "name": "Oxidized Refuse Remover",
+        "names": {
+            "cn": "",
+            "en": "Oxidized Refuse Remover",
+            "ru": "Окисленный утилизатор отходов",
+            "es": "Eliminador de desechos oxidado",
+            "br": "Removedor de Refugo Oxidado",
+            "kr": "",
+            "fr": "Destructeur de déchets oxydés",
+            "de": "Oxidierter Unratentferner"
+        },
+        "icon": "inv_mechagon_junkyardtinkeringcrafting",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 0,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 6666,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Trinket",
+        "effect": {
+            "type": "trinket",
+            "name": "Oxidized Refuse Remover"
+        }
+    },
+    {
+        "id": 170383,
+        "name": "Coralspine Bulwark",
+        "names": {
+            "cn": "",
+            "en": "Coralspine Bulwark",
+            "ru": "Бастион коралловых шипов",
+            "es": "Baluarte espinacoral",
+            "br": "Baluarte Coralespeto",
+            "kr": "",
+            "fr": "Rempart à pointes de corail",
+            "de": "Bollwerk der Korallenstacheln"
+        },
+        "icon": "inv_shield_1h_nazjatarraid_d_02",
+        "itemClass": 4,
+        "itemSubClass": 6,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 16132,
+            "stamina": 7889,
+            "haste": 4500,
+            "crit": 0,
+            "mastery": 2500,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shield"
+    },
+    {
         "id": 170386,
         "name": "Unsettling Osmenite Legguards",
         "names": {
@@ -18452,6 +18630,35 @@ export const itemDB = [
         "slot": "Legs"
     },
     {
+        "id": 170470,
+        "name": "Reinforced Grease Deflector",
+        "names": {
+            "cn": "",
+            "en": "Reinforced Grease Deflector",
+            "ru": "Хорошо смазанный усиленный отражатель",
+            "es": "Deflector de grasa reforzado",
+            "br": "Defletor de Graxa Reforçado",
+            "kr": "",
+            "fr": "Déflecteur de graisse renforcé",
+            "de": "Verstärkter Schmierdeflektor"
+        },
+        "icon": "inv_shield_1h_mechagnome_c_01",
+        "itemClass": 4,
+        "itemSubClass": 6,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 16132,
+            "stamina": 7889,
+            "haste": 3800,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 3200
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shield"
+    },
+    {
         "id": 171003,
         "name": "Paramount Gearspun Goggles",
         "names": {
@@ -18918,6 +19125,66 @@ export const itemDB = [
             "type": "trinket",
             "name": "Unbound Alchemist Stone"
         }
+    },
+    {
+        "id": 171154,
+        "name": "Notorious Gladiator's Staff",
+        "names": {
+            "cn": "",
+            "en": "Notorious Gladiator's Staff",
+            "ru": "Посох отъявленного гладиатора",
+            "es": "Bastón de Gladiador déspota",
+            "br": "Cajado do Gladiador Notório",
+            "kr": "",
+            "fr": "Bâton du gladiateur notoire",
+            "de": "Stab des berüchtigten Gladiators"
+        },
+        "icon": "inv_staff_2h_nazjatarraid_d_02",
+        "itemClass": 2,
+        "itemSubClass": 10,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 23380,
+            "stamina": 7889,
+            "haste": 2600,
+            "crit": 4400,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "2H Weapon"
+    },
+    {
+        "id": 171155,
+        "name": "Notorious Gladiator's Staff",
+        "names": {
+            "cn": "",
+            "en": "Notorious Gladiator's Staff",
+            "ru": "Посох отъявленного гладиатора",
+            "es": "Bastón de Gladiador déspota",
+            "br": "Cajado do Gladiador Notório",
+            "kr": "",
+            "fr": "Bâton du gladiateur notoire",
+            "de": "Stab des berüchtigten Gladiators"
+        },
+        "icon": "inv_staff_2h_nazjatarraid_d_02",
+        "itemClass": 2,
+        "itemSubClass": 10,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 23380,
+            "stamina": 7889,
+            "haste": 2600,
+            "crit": 4400,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "2H Weapon"
     },
     {
         "id": 171323,
@@ -19791,6 +20058,12824 @@ export const itemDB = [
         "dropLoc": "",
         "selectable": "true",
         "slot": "Wrist"
+    },
+    {
+        "id": 171471,
+        "name": "Krakken-Heart Breastplate",
+        "names": {
+            "cn": "",
+            "en": "Krakken-Heart Breastplate",
+            "ru": "Кираса Сердца Краккена",
+            "es": "Coraza de corazón de kraken",
+            "br": "Peitoral do Coração do Krakken",
+            "kr": "",
+            "fr": "Cuirasse cœur-de-kraken",
+            "de": "Krakenherzbrustplatte"
+        },
+        "icon": "inv_chest_plate11",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 5000,
+            "mastery": 0,
+            "versatility": 2000
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 171473,
+        "name": "Cobra-Lash Boots",
+        "names": {
+            "cn": "",
+            "en": "Cobra-Lash Boots",
+            "ru": "Сапоги выпада кобры",
+            "es": "Botas de piel de cobra",
+            "br": "Botas do Golpe da Naja",
+            "kr": "",
+            "fr": "Bottes fouette-cobra",
+            "de": "Kobraschlingenstiefel"
+        },
+        "icon": "inv_boots_chain_04",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 4550,
+            "mastery": 0,
+            "versatility": 2450
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Feet"
+    },
+    {
+        "id": 171475,
+        "name": "Belt of One-Hundred Deaths",
+        "names": {
+            "cn": "",
+            "en": "Belt of One-Hundred Deaths",
+            "ru": "Пояс Сотни Смертей",
+            "es": "Cinturón de cien muertes",
+            "br": "Cinto das Cem Mortes",
+            "kr": "",
+            "fr": "Ceinture des cent façons de mourir",
+            "de": "Gürtel der hundert Tode"
+        },
+        "icon": "inv_belt_26",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 5000,
+            "mastery": 0,
+            "versatility": 2000
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Waist"
+    },
+    {
+        "id": 171476,
+        "name": "Vestments of the Sea-Witch",
+        "names": {
+            "cn": "",
+            "en": "Vestments of the Sea-Witch",
+            "ru": "Одежды Морской ведьмы",
+            "es": "Vestimentas de la bruja marina",
+            "br": "Vestimenta da Bruxa do Mar",
+            "kr": "",
+            "fr": "Habit de la sorcière des mers",
+            "de": "Gewand der Meerhexe"
+        },
+        "icon": "inv_chest_cloth_17",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 2750,
+            "crit": 4250,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 171477,
+        "name": "Lightfathom Scepter",
+        "names": {
+            "cn": "",
+            "en": "Lightfathom Scepter",
+            "ru": "Светосаженный скипетр",
+            "es": "Cetro de profundidades de la Luz",
+            "br": "Cetro Sondaluz",
+            "kr": "",
+            "fr": "Sceptre Sondelumière",
+            "de": "Szepter der Lichtertiefe"
+        },
+        "icon": "inv_weapon_shortblade_43",
+        "itemClass": 2,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 30629,
+            "stamina": 7889,
+            "haste": 2000,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 5000
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "1H Weapon"
+    },
+    {
+        "id": 171478,
+        "name": "Ring of Endless Coils",
+        "names": {
+            "cn": "",
+            "en": "Ring of Endless Coils",
+            "ru": "Кольцо бесконечных изгибов",
+            "es": "Anillo de serpenteo infinito",
+            "br": "Anel das Espirais Infinitas",
+            "kr": "",
+            "fr": "Anneau des ondulations infinies",
+            "de": "Ring der Endlosschleife"
+        },
+        "icon": "inv_jewelry_ring_44",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 12500,
+            "mastery": 0,
+            "versatility": 5000
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Finger"
+    },
+    {
+        "id": 171479,
+        "name": "Coral Band of the Revived",
+        "names": {
+            "cn": "",
+            "en": "Coral Band of the Revived",
+            "ru": "Коралловое кольцо Возрожденных",
+            "es": "Sortija de coral de los Revividos",
+            "br": "Elo de Coral dos Revividos",
+            "kr": "",
+            "fr": "Bague de corail du ranimé",
+            "de": "Korallenband des Wiederbelebten"
+        },
+        "icon": "inv_jewelry_ring_35",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "haste": 5000,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 12500
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Finger"
+    },
+    {
+        "id": 171480,
+        "name": "Runetotem's Mantle",
+        "names": {
+            "cn": "",
+            "en": "Runetotem's Mantle",
+            "ru": "Оплечье Рунического Тотема",
+            "es": "Manto de Tótem de Runa",
+            "br": "Dragonas do Totem Rúnico",
+            "kr": "",
+            "fr": "Mantelet du totem runique",
+            "de": "Runentotems Mantelung"
+        },
+        "icon": "inv_shoulder_07",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 2000,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 5000
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 171481,
+        "name": "Glorious Gauntlets of Crestfall",
+        "names": {
+            "cn": "",
+            "en": "Glorious Gauntlets of Crestfall",
+            "ru": "Знаменитые рукавицы Ниспадающего гребня",
+            "es": "Guanteletes gloriosos de Catacresta",
+            "br": "Manoplas Gloriosas da Ilha do Desalento",
+            "kr": "",
+            "fr": "Gantelets glorieux de découragement",
+            "de": "Stulpen von Wappenfall"
+        },
+        "icon": "inv_gauntlets_20",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 2000,
+            "crit": 5000,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
+        "id": 171482,
+        "name": "Prism of Inner Calm",
+        "names": {
+            "cn": "",
+            "en": "Prism of Inner Calm",
+            "ru": "Призма Внутреннего Покоя",
+            "es": "Prisma de calma interior",
+            "br": "Prisma da Calma Interior",
+            "kr": "",
+            "fr": "Prisme du calme intérieur",
+            "de": "Prisma der inneren Ruhe"
+        },
+        "icon": "inv_misc_gem_diamond_07",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 0,
+            "stamina": 9999,
+            "haste": 0,
+            "crit": 6666,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Trinket",
+        "effect": {
+            "type": "trinket",
+            "name": "Prism of Inner Calm"
+        }
+    },
+    {
+        "id": 171484,
+        "name": "Gauntlets of the Sun King",
+        "names": {
+            "cn": "",
+            "en": "Gauntlets of the Sun King",
+            "ru": "Рукавицы Солнечного короля",
+            "es": "Guanteletes del Rey del Sol",
+            "br": "Manoplas do Rei Sol",
+            "kr": "",
+            "fr": "Gantelets du roi-soleil",
+            "de": "Stulpen des Sonnenkönigs"
+        },
+        "icon": "inv_gauntlets_17",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 4100,
+            "mastery": 0,
+            "versatility": 2900
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
+        "id": 171485,
+        "name": "The Nexus Key",
+        "names": {
+            "cn": "",
+            "en": "The Nexus Key",
+            "ru": "Астральный ключ",
+            "es": "La llave de El Nexo",
+            "br": "A Chave do Nexus",
+            "kr": "",
+            "fr": "La clé du Nexus",
+            "de": "Der Nexusschlüssel"
+        },
+        "icon": "inv_staff_43",
+        "itemClass": 2,
+        "itemSubClass": 10,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 23380,
+            "stamina": 7889,
+            "haste": 2000,
+            "crit": 5000,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "2H Weapon"
+    },
+    {
+        "id": 171486,
+        "name": "Sunshower Light Cloak",
+        "names": {
+            "cn": "",
+            "en": "Sunshower Light Cloak",
+            "ru": "Плащ солнечных лучей",
+            "es": "Capa de luz de lluvia de Sol",
+            "br": "Manto Leve Banho-de-sol",
+            "kr": "",
+            "fr": "Cape légère de la bruine solaire",
+            "de": "Leichter Umhang des Sonnenregens"
+        },
+        "icon": "inv_misc_cape_06",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3350,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 3650
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Back"
+    },
+    {
+        "id": 171487,
+        "name": "Crown of the Sun",
+        "names": {
+            "cn": "",
+            "en": "Crown of the Sun",
+            "ru": "Корона Солнца",
+            "es": "Corona del Sol",
+            "br": "Coroa do Sol",
+            "kr": "",
+            "fr": "Couronne du soleil",
+            "de": "Krone der Sonne"
+        },
+        "icon": "inv_helmet_32",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 2000,
+            "mastery": 0,
+            "versatility": 5000
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 171488,
+        "name": "Sunhawk Leggings",
+        "names": {
+            "cn": "",
+            "en": "Sunhawk Leggings",
+            "ru": "Поножи Солнечного Ястреба",
+            "es": "Leotardos de Halcón del Sol",
+            "br": "Perneiras Falconélius",
+            "kr": "",
+            "fr": "Jambières d’Epervier du soleil",
+            "de": "Gamaschen der Sonnenfalken"
+        },
+        "icon": "inv_pants_plate_07",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3350,
+            "mastery": 0,
+            "versatility": 3650
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 171489,
+        "name": "Royal Cloak of the Sunstriders",
+        "names": {
+            "cn": "",
+            "en": "Royal Cloak of the Sunstriders",
+            "ru": "Королевский плащ Солнечных Скитальцев",
+            "es": "Capa real de los Caminantes del Sol",
+            "br": "Manto Real dos Andassol",
+            "kr": "",
+            "fr": "Cape royale des Haut-Soleil",
+            "de": "Königlicher Umhang der Sonnenwanderer"
+        },
+        "icon": "inv_misc_cape_10",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 4250,
+            "crit": 2750,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Back"
+    },
+    {
+        "id": 171491,
+        "name": "Thalassian Wildercloak",
+        "names": {
+            "cn": "",
+            "en": "Thalassian Wildercloak",
+            "ru": "Кель'таласский мохнатый плащ",
+            "es": "Capa salvaje thalassiana",
+            "br": "Manto Largo Thalassiano",
+            "kr": "",
+            "fr": "Cape sauvage thalassienne",
+            "de": "Thalassischer Wildumhang"
+        },
+        "icon": "inv_misc_cape_15",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 2450,
+            "mastery": 0,
+            "versatility": 4550
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Back"
+    },
+    {
+        "id": 171492,
+        "name": "Leggings of Murderous Intent",
+        "names": {
+            "cn": "",
+            "en": "Leggings of Murderous Intent",
+            "ru": "Поножи смертоносного намерения",
+            "es": "Leotardos de tentativa asesina",
+            "br": "Perneiras da Intenção Assassina",
+            "kr": "",
+            "fr": "Jambières des intentions meurtrières",
+            "de": "Gamaschen der mörderischen Absicht"
+        },
+        "icon": "inv_pants_leather_25",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3050,
+            "crit": 3950,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 171494,
+        "name": "Band of the Ranger-General",
+        "names": {
+            "cn": "",
+            "en": "Band of the Ranger-General",
+            "ru": "Кольцо предводителя следопытов",
+            "es": "Sortija de la General Forestal",
+            "br": "Elo do General-patrulheiro",
+            "kr": "",
+            "fr": "Bague du général des forestiers",
+            "de": "Band des Waldläufergenerals"
+        },
+        "icon": "inv_jewelry_ring_55",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "haste": 7000,
+            "crit": 10500,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Finger"
+    },
+    {
+        "id": 171495,
+        "name": "Royal Gauntlets of Silvermoon",
+        "names": {
+            "cn": "",
+            "en": "Royal Gauntlets of Silvermoon",
+            "ru": "Луносветские королевские рукавицы",
+            "es": "Guanteletes reales de Lunargenta",
+            "br": "Manoplas Reais de Luaprata",
+            "kr": "",
+            "fr": "Gantelets royaux de Lune-d’Argent",
+            "de": "Königliche Stulpen von Silbermond"
+        },
+        "icon": "inv_gauntlets_29",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 4850,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 2150
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
+        "id": 171497,
+        "name": "Legguards of Endless Rage",
+        "names": {
+            "cn": "",
+            "en": "Legguards of Endless Rage",
+            "ru": "Набедренники Бесконечной ярости",
+            "es": "Musleras de ira infinita",
+            "br": "Guarda-pernas da Raiva Infinita",
+            "kr": "",
+            "fr": "Garde-jambes de la rage infinie",
+            "de": "Beinschützer des endlosen Zorns"
+        },
+        "icon": "inv_pants_plate_21",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 2000,
+            "crit": 5000,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 171498,
+        "name": "Savior's Grasp",
+        "names": {
+            "cn": "",
+            "en": "Savior's Grasp",
+            "ru": "Напоясник спасителя",
+            "es": "Garra de salvador",
+            "br": "Agarra do Salvador",
+            "kr": "",
+            "fr": "Emprise du sauveur",
+            "de": "Umklammerung des Retters"
+        },
+        "icon": "inv_chest_plate02",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 4250,
+            "mastery": 0,
+            "versatility": 2750
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 171499,
+        "name": "Midnight Chestguard",
+        "names": {
+            "cn": "",
+            "en": "Midnight Chestguard",
+            "ru": "Полуночный нагрудный доспех",
+            "es": "Coselete de medianoche",
+            "br": "Couraça da Meia-noite",
+            "kr": "",
+            "fr": "Corselet de minuit",
+            "de": "Mitternachtsbrustschutz"
+        },
+        "icon": "inv_chest_plate02",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 2750,
+            "crit": 4250,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 171501,
+        "name": "Mail of Fevered Pursuit",
+        "names": {
+            "cn": "",
+            "en": "Mail of Fevered Pursuit",
+            "ru": "Доспех лихорадочной погони",
+            "es": "Malla de persecución férvida",
+            "br": "Malha da Perseguição Febril",
+            "kr": "",
+            "fr": "Cotte de mailles de la poursuite fiévreuse",
+            "de": "Panzer der fieberhaften Jagd"
+        },
+        "icon": "inv_chest_chain_17",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 2900,
+            "crit": 4100,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 171502,
+        "name": "Apostle of Argus",
+        "names": {
+            "cn": "",
+            "en": "Apostle of Argus",
+            "ru": "Предстоятель Аргуса",
+            "es": "Apóstol de Argus",
+            "br": "Apóstolo de Argus",
+            "kr": "",
+            "fr": "Apôtre d’Argus",
+            "de": "Apostel von Argus"
+        },
+        "icon": "inv_staff_54",
+        "itemClass": 2,
+        "itemSubClass": 10,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 23380,
+            "stamina": 7889,
+            "haste": 2000,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 5000
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "2H Weapon"
+    },
+    {
+        "id": 171503,
+        "name": "Antonidas' Aegis of Rapt Concentration",
+        "names": {
+            "cn": "",
+            "en": "Antonidas' Aegis of Rapt Concentration",
+            "ru": "Эгида Сосредоточения Антонидаса",
+            "es": "Égida de la concentración impasible de Antonidas",
+            "br": "Égide do Fascínio de Antônidas",
+            "kr": "",
+            "fr": "Egide de la concentration captivée d’Antonidas",
+            "de": "Antonidas' Aegis der Konzentration"
+        },
+        "icon": "inv_shield_40",
+        "itemClass": 4,
+        "itemSubClass": 6,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 16132,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 4100,
+            "mastery": 0,
+            "versatility": 2900
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shield"
+    },
+    {
+        "id": 171504,
+        "name": "Tempest of Chaos",
+        "names": {
+            "cn": "",
+            "en": "Tempest of Chaos",
+            "ru": "Ураган Хаоса",
+            "es": "Tempestad de caos",
+            "br": "Tempestade de Caos",
+            "kr": "",
+            "fr": "Tempête de chaos",
+            "de": "Sturm des Chaos"
+        },
+        "icon": "inv_sword_90",
+        "itemClass": 2,
+        "itemSubClass": 7,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 30629,
+            "stamina": 7889,
+            "haste": 2900,
+            "crit": 4100,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "1H Weapon"
+    },
+    {
+        "id": 171505,
+        "name": "Scepter of Purification",
+        "names": {
+            "cn": "",
+            "en": "Scepter of Purification",
+            "ru": "Скипетр очищения",
+            "es": "Cetro de purificación",
+            "br": "Cetro de Purificação",
+            "kr": "",
+            "fr": "Sceptre de purification",
+            "de": "Szepter der Läuterung"
+        },
+        "icon": "inv_offhand_draenei_a_01",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 16132,
+            "stamina": 7889,
+            "haste": 2000,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 5000
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Offhand"
+    },
+    {
+        "id": 171506,
+        "name": "Leggings of Eternity",
+        "names": {
+            "cn": "",
+            "en": "Leggings of Eternity",
+            "ru": "Поножи вечности",
+            "es": "Leotardos de eternidad",
+            "br": "Perneiras da Eternidade",
+            "kr": "",
+            "fr": "Jambières de l’éternité",
+            "de": "Gamaschen der Ewigkeit"
+        },
+        "icon": "inv_pants_cloth_14",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3350,
+            "mastery": 0,
+            "versatility": 3650
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 171507,
+        "name": "Robes of Rhonin",
+        "names": {
+            "cn": "",
+            "en": "Robes of Rhonin",
+            "ru": "Одеяния Ронина",
+            "es": "Togas de Rhonin",
+            "br": "Vestes de Rhonin",
+            "kr": "",
+            "fr": "Robe de Rhonin",
+            "de": "Rhonins Roben"
+        },
+        "icon": "inv_chest_cloth_49",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3650,
+            "crit": 3350,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 171508,
+        "name": "Leggings of Colossal Strides",
+        "names": {
+            "cn": "",
+            "en": "Leggings of Colossal Strides",
+            "ru": "Поножи семимильных шагов",
+            "es": "Leotardos de zancada colosal",
+            "br": "Perneiras dos Passos Colossais",
+            "kr": "",
+            "fr": "Jambières de foulées colossales",
+            "de": "Gamaschen der gigantischen Schritte"
+        },
+        "icon": "inv_pants_03",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3050,
+            "crit": 3950,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 171509,
+        "name": "Breastplate of Tormented Rage",
+        "names": {
+            "cn": "",
+            "en": "Breastplate of Tormented Rage",
+            "ru": "Кираса нестерпимого гнева",
+            "es": "Coraza de rabia atormentada",
+            "br": "Peitoral da Raiva Atormentada",
+            "kr": "",
+            "fr": "Cuirasse de la rage tourmentée",
+            "de": "Brustplatte des gepeinigten Zorns"
+        },
+        "icon": "inv_chest_plate08",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 2000,
+            "mastery": 0,
+            "versatility": 5000
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 171510,
+        "name": "Legguards of the Apostle",
+        "names": {
+            "cn": "",
+            "en": "Legguards of the Apostle",
+            "ru": "Апостольские набедренники",
+            "es": "Musleras del apóstol",
+            "br": "Guarda-pernas do Apóstolo",
+            "kr": "",
+            "fr": "Garde-jambes de l’apôtre",
+            "de": "Beinschützer des Apostels"
+        },
+        "icon": "inv_pants_plate_20",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3950,
+            "crit": 3050,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 171511,
+        "name": "Stalk-Skin Belt",
+        "names": {
+            "cn": "",
+            "en": "Stalk-Skin Belt",
+            "ru": "Камуфляжный пояс",
+            "es": "Cinturón de piel de acechador",
+            "br": "Cinto de Pele de Tocaia",
+            "kr": "",
+            "fr": "Ceinture de traque-peau",
+            "de": "Stängelhautgürtel"
+        },
+        "icon": "inv_belt_15",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 2600,
+            "crit": 4400,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Waist"
+    },
+    {
+        "id": 171512,
+        "name": "Iron-Spring Jumpers",
+        "names": {
+            "cn": "",
+            "en": "Iron-Spring Jumpers",
+            "ru": "Пружинные прыгуны",
+            "es": "Botas de resortes de hierro",
+            "br": "Saltadores de Mola de Ferro",
+            "kr": "",
+            "fr": "Souliers à ressort d’acier",
+            "de": "Eisenfedertreter"
+        },
+        "icon": "inv_boots_plate_05",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 4700,
+            "crit": 2300,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Feet"
+    },
+    {
+        "id": 171515,
+        "name": "Bindings of the Decrepit",
+        "names": {
+            "cn": "",
+            "en": "Bindings of the Decrepit",
+            "ru": "Наручники дряхлости",
+            "es": "Ataduras del decrépito",
+            "br": "Braçadeiras do Decrépito",
+            "kr": "",
+            "fr": "Manchettes du décati",
+            "de": "Bindungen des Klapprigen"
+        },
+        "icon": "inv_bracer_17",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3500,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 3500
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Wrist"
+    },
+    {
+        "id": 171516,
+        "name": "Chestguard of Bitter Charms",
+        "names": {
+            "cn": "",
+            "en": "Chestguard of Bitter Charms",
+            "ru": "Нагрудный доспех горьких оберегов",
+            "es": "Coselete de talismanes amargos",
+            "br": "Couraça dos Encantos Mordazes",
+            "kr": "",
+            "fr": "Corselet des charmes amers",
+            "de": "Brustschutz der bitteren Reize"
+        },
+        "icon": "inv_chest_plate11",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3800,
+            "mastery": 0,
+            "versatility": 3200
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 171518,
+        "name": "Heigan's Putrid Vestments",
+        "names": {
+            "cn": "",
+            "en": "Heigan's Putrid Vestments",
+            "ru": "Гнилые одежды Хейгана",
+            "es": "Vestimentas pútridas de Heigan",
+            "br": "Vestimenta Pútrida de Heigan",
+            "kr": "",
+            "fr": "Habits putrides de Heigan",
+            "de": "Heigans faulige Gewänder"
+        },
+        "icon": "inv_chest_cloth_49",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3500,
+            "crit": 3500,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 171519,
+        "name": "Helm of Pilgrimage",
+        "names": {
+            "cn": "",
+            "en": "Helm of Pilgrimage",
+            "ru": "Шлем странствий",
+            "es": "Yelmo de peregrinación",
+            "br": "Elmo da Peregrinação",
+            "kr": "",
+            "fr": "Heaume de pèlerinage",
+            "de": "Wallfahrtshelm"
+        },
+        "icon": "inv_helmet_18",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3500,
+            "mastery": 0,
+            "versatility": 3500
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 171520,
+        "name": "Serene Echoes",
+        "names": {
+            "cn": "",
+            "en": "Serene Echoes",
+            "ru": "Безмятежные отголоски",
+            "es": "Ecos serenos",
+            "br": "Ecos Serenos",
+            "kr": "",
+            "fr": "Echos sereins",
+            "de": "Tragende Echos"
+        },
+        "icon": "inv_boots_cloth_16",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3350,
+            "mastery": 0,
+            "versatility": 3650
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Feet"
+    },
+    {
+        "id": 171521,
+        "name": "Eruption-Scarred Boots",
+        "names": {
+            "cn": "",
+            "en": "Eruption-Scarred Boots",
+            "ru": "Поврежденные взрывом сапоги",
+            "es": "Botas marcadas por erupción",
+            "br": "Botas Bexiguentas",
+            "kr": "",
+            "fr": "Bottes marquées par une éruption",
+            "de": "Eruptionsgezeichnete Stiefel"
+        },
+        "icon": "inv_boots_chain_12",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3350,
+            "crit": 3650,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Feet"
+    },
+    {
+        "id": 171522,
+        "name": "Gloves of the Dancing Bear",
+        "names": {
+            "cn": "",
+            "en": "Gloves of the Dancing Bear",
+            "ru": "Перчатки пляшущего медведя",
+            "es": "Guantes del oso danzante",
+            "br": "Luvas do Urso Dançante",
+            "kr": "",
+            "fr": "Gants de l’ours danseur",
+            "de": "Handschuhe des Tanzbären"
+        },
+        "icon": "inv_gauntlets_13",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3200,
+            "mastery": 0,
+            "versatility": 3800
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
+        "id": 171523,
+        "name": "Waistguard of Deathly Dominion",
+        "names": {
+            "cn": "",
+            "en": "Waistguard of Deathly Dominion",
+            "ru": "Воинский пояс смертельной власти",
+            "es": "Guardarrenes de dominio sepulcral",
+            "br": "Cinta da Dominação Mortal",
+            "kr": "",
+            "fr": "Sangle de domination mortelle",
+            "de": "Taillenschutz der tödlichen Vorherrschaft"
+        },
+        "icon": "inv_belt_45a",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3500,
+            "crit": 3500,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Waist"
+    },
+    {
+        "id": 171524,
+        "name": "Greaves of the Saronite Citadel",
+        "names": {
+            "cn": "",
+            "en": "Greaves of the Saronite Citadel",
+            "ru": "Наголенники саронитовой цитадели",
+            "es": "Grebas de la ciudadela de saronita",
+            "br": "Grevas da Cidadela Saronita",
+            "kr": "",
+            "fr": "Grèves de la citadelle de saronite",
+            "de": "Schienbeinschützer der Saronitzitadelle"
+        },
+        "icon": "inv_boots_plate_08",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3500,
+            "crit": 3500,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Feet"
+    },
+    {
+        "id": 171525,
+        "name": "Armbands of Dark Determination",
+        "names": {
+            "cn": "",
+            "en": "Armbands of Dark Determination",
+            "ru": "Поручи мрачной решимости",
+            "es": "Bandas de determinación oscura",
+            "br": "Embraces da Determinação Sombria",
+            "kr": "",
+            "fr": "Bracières de la sombre détermination",
+            "de": "Armbänder des dunklen Beschlusses"
+        },
+        "icon": "inv_bracer_36a",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3500,
+            "crit": 3500,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Wrist"
+    },
+    {
+        "id": 171527,
+        "name": "Band of the Traitor King",
+        "names": {
+            "cn": "",
+            "en": "Band of the Traitor King",
+            "ru": "Кольцо короля-предателя",
+            "es": "Sortija del rey traidor",
+            "br": "Elo do Rei Traidor",
+            "kr": "",
+            "fr": "Bague du roi traître",
+            "de": "Band des Verräterkönigs"
+        },
+        "icon": "inv_jewelry_ring_57",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "haste": 10500,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 7000
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Finger"
+    },
+    {
+        "id": 171528,
+        "name": "Reign of the Dead",
+        "names": {
+            "cn": "",
+            "en": "Reign of the Dead",
+            "ru": "Власть мертвых",
+            "es": "Reino de los muertos",
+            "br": "Rédeas dos Mortos",
+            "kr": "",
+            "fr": "Règne de la mort",
+            "de": "Herrschaft der Toten"
+        },
+        "icon": "inv_crown_13",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 6666,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Trinket",
+        "effect": {
+            "type": "trinket",
+            "name": "Reign of the Dead"
+        }
+    },
+    {
+        "id": 171529,
+        "name": "Breeches of the Deepening Void",
+        "names": {
+            "cn": "",
+            "en": "Breeches of the Deepening Void",
+            "ru": "Брюки разрастающейся бездны",
+            "es": "Calzones del Vacío ahondado",
+            "br": "Calções do Vácuo Profundo",
+            "kr": "",
+            "fr": "Braies du vide profond",
+            "de": "Bundhosen der anwachsenden Leere"
+        },
+        "icon": "inv_pants_cloth_02",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3500,
+            "crit": 3500,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 171530,
+        "name": "Leggings of the Awakening",
+        "names": {
+            "cn": "",
+            "en": "Leggings of the Awakening",
+            "ru": "Поножи пробуждения",
+            "es": "Leotardos del Despertar",
+            "br": "Perneiras do Despertar",
+            "kr": "",
+            "fr": "Jambières de l’éveil",
+            "de": "Gamaschen des Erwachens"
+        },
+        "icon": "inv_pants_leather_30a",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3500,
+            "crit": 3500,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 171531,
+        "name": "Leggings of the Lurking Threat",
+        "names": {
+            "cn": "",
+            "en": "Leggings of the Lurking Threat",
+            "ru": "Поножи скрытой угрозы",
+            "es": "Leotardos de amenaza acechante",
+            "br": "Perneiras da Ameaça Espreitadora",
+            "kr": "",
+            "fr": "Jambières de la menace tapie",
+            "de": "Gamaschen der lauernden Bedrohung"
+        },
+        "icon": "inv_pants_mail_24",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 2450,
+            "crit": 4550,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 171532,
+        "name": "Might of the Nerub",
+        "names": {
+            "cn": "",
+            "en": "Might of the Nerub",
+            "ru": "Мощь нерубов",
+            "es": "Poderío de los Nerub",
+            "br": "Poder dos Nerub",
+            "kr": "",
+            "fr": "Puissance des nérubiens",
+            "de": "Macht der Neruber"
+        },
+        "icon": "inv_misc_cape_08",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3200,
+            "crit": 3800,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Back"
+    },
+    {
+        "id": 171533,
+        "name": "Boots of the Icy Floe",
+        "names": {
+            "cn": "",
+            "en": "Boots of the Icy Floe",
+            "ru": "Сапоги плавучей льдины",
+            "es": "Botas del témpano helado",
+            "br": "Botinas da Ilha de Gelo",
+            "kr": "",
+            "fr": "Bottes de la banquise",
+            "de": "Stiefel der Eisscholle"
+        },
+        "icon": "inv_boots_cloth_17",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3500,
+            "crit": 3500,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Feet"
+    },
+    {
+        "id": 171534,
+        "name": "Suffering's End",
+        "names": {
+            "cn": "",
+            "en": "Suffering's End",
+            "ru": "Конец страданий",
+            "es": "Fin del sufrimiento",
+            "br": "Fim do Sofrimento",
+            "kr": "",
+            "fr": "Fin de la souffrance",
+            "de": "Ende des Leides"
+        },
+        "icon": "inv_mace_103",
+        "itemClass": 2,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 30629,
+            "stamina": 7889,
+            "haste": 4250,
+            "crit": 2750,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "1H Weapon"
+    },
+    {
+        "id": 171535,
+        "name": "Girdle of the Forgotten Martyr",
+        "names": {
+            "cn": "",
+            "en": "Girdle of the Forgotten Martyr",
+            "ru": "Ремень забытого мученика",
+            "es": "Faja del mártir olvidado",
+            "br": "Cinturão do Mártir Esquecido",
+            "kr": "",
+            "fr": "Ceinturon du martyr oublié",
+            "de": "Gurt des vergessenen Märtyrers"
+        },
+        "icon": "inv_belt_51",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3500,
+            "mastery": 0,
+            "versatility": 3500
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Waist"
+    },
+    {
+        "id": 171536,
+        "name": "Bindings of the Ashen Saint",
+        "names": {
+            "cn": "",
+            "en": "Bindings of the Ashen Saint",
+            "ru": "Наручники пепельного святого",
+            "es": "Ataduras del santo cinéreo",
+            "br": "Braceletes do Santo Pálido",
+            "kr": "",
+            "fr": "Manchettes du saint cendreux",
+            "de": "Bindungen des leichenblassen Heiligen"
+        },
+        "icon": "inv_bracer_24b",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3500,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 3500
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Wrist"
+    },
+    {
+        "id": 171537,
+        "name": "Cuirass of Flowing Elements",
+        "names": {
+            "cn": "",
+            "en": "Cuirass of Flowing Elements",
+            "ru": "Панцирь струящихся элементов",
+            "es": "Loriga de elementos sueltos",
+            "br": "Corselete dos Elementos Fluidos",
+            "kr": "",
+            "fr": "Thorax des éléments fluides",
+            "de": "Kürass der fließenden Elemente"
+        },
+        "icon": "inv_chest_mail_07",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3500,
+            "mastery": 0,
+            "versatility": 3500
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 171538,
+        "name": "Handwraps of the Lifeless Touch",
+        "names": {
+            "cn": "",
+            "en": "Handwraps of the Lifeless Touch",
+            "ru": "Повязки безжизненного прикосновения",
+            "es": "Manijas de toque inerte",
+            "br": "Mitenes do Toque sem Vida",
+            "kr": "",
+            "fr": "Protège-mains de la caresse sans vie",
+            "de": "Handwickel der leblosen Berührung"
+        },
+        "icon": "inv_gauntlets_56",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3500,
+            "crit": 3500,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
+        "id": 171539,
+        "name": "Lurid Manifestation",
+        "names": {
+            "cn": "",
+            "en": "Lurid Manifestation",
+            "ru": "Проявление Лурида",
+            "es": "Manifestación escabrosa",
+            "br": "Manifestação Lúrida",
+            "kr": "",
+            "fr": "Manifestation horrible",
+            "de": "Blutrünstige Offenbarung"
+        },
+        "icon": "inv_jewelry_ring_55",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 9750,
+            "mastery": 0,
+            "versatility": 7750
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Finger"
+    },
+    {
+        "id": 171540,
+        "name": "Maiden's Adoration",
+        "names": {
+            "cn": "",
+            "en": "Maiden's Adoration",
+            "ru": "Девичья любовь",
+            "es": "Adoración de doncella",
+            "br": "Adoração da Donzela",
+            "kr": "",
+            "fr": "Adoration de la damoiselle",
+            "de": "Verehrung der Maid"
+        },
+        "icon": "inv_misc_cape_18",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3500,
+            "mastery": 0,
+            "versatility": 3500
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Back"
+    },
+    {
+        "id": 171542,
+        "name": "Gauntlets of Bitter Reprisal",
+        "names": {
+            "cn": "",
+            "en": "Gauntlets of Bitter Reprisal",
+            "ru": "Рукавицы мучительного возмездия",
+            "es": "Guanteletes de represalia amarga",
+            "br": "Manoplas da Represália Implacável",
+            "kr": "",
+            "fr": "Gantelets des représailles amères",
+            "de": "Stulpen der bitteren Erwiderung"
+        },
+        "icon": "inv_gauntlets_53",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3500,
+            "crit": 3500,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
+        "id": 171543,
+        "name": "Band of Deplorable Violence",
+        "names": {
+            "cn": "",
+            "en": "Band of Deplorable Violence",
+            "ru": "Кольцо удручающего насилия",
+            "es": "Sortija de violencia deplorable",
+            "br": "Elo da Deplorável Violência",
+            "kr": "",
+            "fr": "Bague de violence déplorable",
+            "de": "Band der bedauernswerten Gewalt"
+        },
+        "icon": "inv_jewelry_ring_55",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 9500,
+            "mastery": 0,
+            "versatility": 8000
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Finger"
+    },
+    {
+        "id": 171545,
+        "name": "Signet of the Traitor King",
+        "names": {
+            "cn": "",
+            "en": "Signet of the Traitor King",
+            "ru": "Перстень короля-предателя",
+            "es": "Sello del rey traidor",
+            "br": "Sinete do Rei Traidor",
+            "kr": "",
+            "fr": "Chevalière du roi traître",
+            "de": "Siegel des Verräterkönigs"
+        },
+        "icon": "inv_jewelry_ring_57",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "haste": 10500,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 7000
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Finger"
+    },
+    {
+        "id": 171546,
+        "name": "Greaves of the 7th Legion",
+        "names": {
+            "cn": "",
+            "en": "Greaves of the 7th Legion",
+            "ru": "Наголенники 7-го легиона",
+            "es": "Grebas de la Séptima Legión",
+            "br": "Grevas da 7ª Legião",
+            "kr": "",
+            "fr": "Grèves de la 7e Légion",
+            "de": "Schienbeinschützer der 7. Legion"
+        },
+        "icon": "inv_boots_plate_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3500,
+            "crit": 3500,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Feet"
+    },
+    {
+        "id": 171547,
+        "name": "Bracers of Dark Determination",
+        "names": {
+            "cn": "",
+            "en": "Bracers of Dark Determination",
+            "ru": "Наручи мрачной решимости",
+            "es": "Brazales de determinación oscura",
+            "br": "Embraces da Determinação Sombria",
+            "kr": "",
+            "fr": "Brassards de la sombre détermination",
+            "de": "Armschienen des dunklen Beschlusses"
+        },
+        "icon": "inv_bracer_23b",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3500,
+            "crit": 3500,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Wrist"
+    },
+    {
+        "id": 171548,
+        "name": "Belt of Deathly Dominion",
+        "names": {
+            "cn": "",
+            "en": "Belt of Deathly Dominion",
+            "ru": "Пояс смертельной власти",
+            "es": "Cinturón de dominio sepulcral",
+            "br": "Cinto da Dominação Mortal",
+            "kr": "",
+            "fr": "Ceinture de domination mortelle",
+            "de": "Gürtel der tödlichen Vorherrschaft"
+        },
+        "icon": "inv_belt_45a",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3500,
+            "crit": 3500,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Waist"
+    },
+    {
+        "id": 171549,
+        "name": "Reign of the Unliving",
+        "names": {
+            "cn": "",
+            "en": "Reign of the Unliving",
+            "ru": "Власть неживых",
+            "es": "Reino de los sin vida",
+            "br": "Rédeas do Vivo-morto",
+            "kr": "",
+            "fr": "Règne des non-vivants",
+            "de": "Herrschaft der Leblosen"
+        },
+        "icon": "inv_crown_13",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 6666,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Trinket",
+        "effect": {
+            "type": "trinket",
+            "name": "Reign of the Unliving"
+        }
+    },
+    {
+        "id": 171550,
+        "name": "Strength of the Nerub",
+        "names": {
+            "cn": "",
+            "en": "Strength of the Nerub",
+            "ru": "Сила нерубов",
+            "es": "Fuerza de los Nerub",
+            "br": "Força dos Nerub",
+            "kr": "",
+            "fr": "Force des nérubiens",
+            "de": "Stärke der Neruber"
+        },
+        "icon": "inv_misc_cape_05",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3200,
+            "crit": 3800,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Back"
+    },
+    {
+        "id": 171551,
+        "name": "Legguards of the Lurking Threat",
+        "names": {
+            "cn": "",
+            "en": "Legguards of the Lurking Threat",
+            "ru": "Набедренники скрытой угрозы",
+            "es": "Musleras de amenaza acechante",
+            "br": "Guarda-pernas da Ameaça Espreitadora",
+            "kr": "",
+            "fr": "Garde-jambes de la menace tapie",
+            "de": "Beinschützer der lauernden Bedrohung"
+        },
+        "icon": "inv_pants_mail_25",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 2450,
+            "crit": 4550,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 171552,
+        "name": "Legwraps of the Awakening",
+        "names": {
+            "cn": "",
+            "en": "Legwraps of the Awakening",
+            "ru": "Бриджи пробуждения",
+            "es": "Ataduras del Despertar",
+            "br": "Culotes do Despertar",
+            "kr": "",
+            "fr": "Jambards de l’éveil",
+            "de": "Beinwickel des Erwachens"
+        },
+        "icon": "inv_pants_leather_28",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3500,
+            "crit": 3500,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 171553,
+        "name": "Leggings of the Deepening Void",
+        "names": {
+            "cn": "",
+            "en": "Leggings of the Deepening Void",
+            "ru": "Поножи разрастающейся бездны",
+            "es": "Leotardos del Vacío ahondado",
+            "br": "Perneiras do Vácuo Profundo",
+            "kr": "",
+            "fr": "Jambières du vide profond",
+            "de": "Gamaschen der anwachsenden Leere"
+        },
+        "icon": "inv_pants_cloth_33",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3500,
+            "crit": 3500,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 171554,
+        "name": "Misery's End",
+        "names": {
+            "cn": "",
+            "en": "Misery's End",
+            "ru": "Конец невзгод",
+            "es": "Fin de la miseria",
+            "br": "Fim do Padecimento",
+            "kr": "",
+            "fr": "Fin de la détresse",
+            "de": "Ende des Jammers"
+        },
+        "icon": "inv_mace_107",
+        "itemClass": 2,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 30629,
+            "stamina": 7889,
+            "haste": 4250,
+            "crit": 2750,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "1H Weapon"
+    },
+    {
+        "id": 171555,
+        "name": "Footpads of the Icy Floe",
+        "names": {
+            "cn": "",
+            "en": "Footpads of the Icy Floe",
+            "ru": "Башмаки плавучей льдины",
+            "es": "Escarpines del témpano helado",
+            "br": "Pisantes da Ilha de Gelo",
+            "kr": "",
+            "fr": "Souliers de la banquise",
+            "de": "Fußpolster der Eisscholle"
+        },
+        "icon": "inv_boots_cloth_23",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3500,
+            "crit": 3500,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Feet"
+    },
+    {
+        "id": 171556,
+        "name": "Belt of the Forgotten Martyr",
+        "names": {
+            "cn": "",
+            "en": "Belt of the Forgotten Martyr",
+            "ru": "Пояс забытого мученика",
+            "es": "Cinturón del mártir olvidado",
+            "br": "Cinto do Mártir Esquecido",
+            "kr": "",
+            "fr": "Ceinture du martyr oublié",
+            "de": "Gürtel des vergessenen Märtyrers"
+        },
+        "icon": "inv_belt_49c",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3500,
+            "mastery": 0,
+            "versatility": 3500
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Waist"
+    },
+    {
+        "id": 171557,
+        "name": "Armbands of the Ashen Saint",
+        "names": {
+            "cn": "",
+            "en": "Armbands of the Ashen Saint",
+            "ru": "Поручи пепельного святого",
+            "es": "Bandas del santo cinéreo",
+            "br": "Embraces do Santo Pálido",
+            "kr": "",
+            "fr": "Bracières du saint cendreux",
+            "de": "Armbänder des leichenfahlen Heiligen"
+        },
+        "icon": "inv_bracer_37",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3500,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 3500
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Wrist"
+    },
+    {
+        "id": 171558,
+        "name": "Chestguard of Flowing Elements",
+        "names": {
+            "cn": "",
+            "en": "Chestguard of Flowing Elements",
+            "ru": "Нагрудный доспех струящихся элементов",
+            "es": "Coselete de elementos sueltos",
+            "br": "Couraça dos Elementos Fluidos",
+            "kr": "",
+            "fr": "Corselet des éléments fluides",
+            "de": "Brustschutz der fließenden Elemente"
+        },
+        "icon": "inv_chest_mail_07",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3500,
+            "mastery": 0,
+            "versatility": 3500
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 171559,
+        "name": "Maiden's Favor",
+        "names": {
+            "cn": "",
+            "en": "Maiden's Favor",
+            "ru": "Девичья благосклонность",
+            "es": "Favor de Doncella",
+            "br": "Benevolência da Donzela",
+            "kr": "",
+            "fr": "Faveur de la damoiselle",
+            "de": "Gabe der Maid"
+        },
+        "icon": "inv_misc_cape_02",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3500,
+            "mastery": 0,
+            "versatility": 3500
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Back"
+    },
+    {
+        "id": 171561,
+        "name": "Gloves of Bitter Reprisal",
+        "names": {
+            "cn": "",
+            "en": "Gloves of Bitter Reprisal",
+            "ru": "Перчатки мучительного возмездия",
+            "es": "Guantes de represalia amarga",
+            "br": "Luvas da Represália Amarga",
+            "kr": "",
+            "fr": "Gants des représailles amères",
+            "de": "Handschuhe der bitteren Erwiderung"
+        },
+        "icon": "inv_gauntlets_75",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3500,
+            "crit": 3500,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
+        "id": 171562,
+        "name": "Gloves of the Lifeless Touch",
+        "names": {
+            "cn": "",
+            "en": "Gloves of the Lifeless Touch",
+            "ru": "Перчатки безжизненного прикосновения",
+            "es": "Guantes de toque inerte",
+            "br": "Luvas do Toque sem Vida",
+            "kr": "",
+            "fr": "Gants de la caresse sans vie",
+            "de": "Handschuhe der leblosen Berührung"
+        },
+        "icon": "inv_gauntlets_79",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3500,
+            "crit": 3500,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
+        "id": 171569,
+        "name": "Bloodsurge, Kel'Thuzad's Blade of Agony",
+        "names": {
+            "cn": "",
+            "en": "Bloodsurge, Kel'Thuzad's Blade of Agony",
+            "ru": "Прилив Крови, клинок агонии Кел'Тузада",
+            "es": "Oleada de sangre, hoja de agonía de Kel'Thuzad",
+            "br": "Jorrassangue, Lâmina da Agonia de Kel'Thuzad",
+            "kr": "",
+            "fr": "Coup-de-sang, la lame d’agonie de Kel’Thuzad",
+            "de": "Blutschäumer, Kel'Thuzads Klinge der Pein"
+        },
+        "icon": "inv_sword_150",
+        "itemClass": 2,
+        "itemSubClass": 7,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 30629,
+            "stamina": 7889,
+            "haste": 3500,
+            "crit": 3500,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "1H Weapon"
+    },
+    {
+        "id": 171570,
+        "name": "Royal Scepter of Terenas II",
+        "names": {
+            "cn": "",
+            "en": "Royal Scepter of Terenas II",
+            "ru": "Королевский скипетр Теренаса II",
+            "es": "Cetro real de Terenas II",
+            "br": "Cetro Real de Terenas II",
+            "kr": "",
+            "fr": "Sceptre royal de Terenas II",
+            "de": "Königliches Szepter von Terenas II"
+        },
+        "icon": "inv_mace_115",
+        "itemClass": 2,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 30629,
+            "stamina": 7889,
+            "haste": 3500,
+            "crit": 3500,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "1H Weapon"
+    },
+    {
+        "id": 171571,
+        "name": "Archus, Greatstaff of Antonidas",
+        "names": {
+            "cn": "",
+            "en": "Archus, Greatstaff of Antonidas",
+            "ru": "Аркус, великий посох Антонидаса",
+            "es": "Archus, gran bastón de Antonidas",
+            "br": "Archus, Grande Cajado de Antônidas",
+            "kr": "",
+            "fr": "Archus, grand bâton d’Antonidas",
+            "de": "Archus, Hohestab des Antonidas"
+        },
+        "icon": "inv_staff_108",
+        "itemClass": 2,
+        "itemSubClass": 10,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 23380,
+            "stamina": 7889,
+            "haste": 3500,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 3500
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "2H Weapon"
+    },
+    {
+        "id": 171575,
+        "name": "Valius, Gavel of the Lightbringer",
+        "names": {
+            "cn": "",
+            "en": "Valius, Gavel of the Lightbringer",
+            "ru": "Валий, молот Светоносного",
+            "es": "Valius, mazo del Iluminado",
+            "br": "Valius, Martelete do Arauto da Luz",
+            "kr": "",
+            "fr": "Valius, martelet du porteur de Lumière",
+            "de": "Valius, Hammer des Lichtbringers"
+        },
+        "icon": "inv_mace_115",
+        "itemClass": 2,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 30629,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3500,
+            "mastery": 0,
+            "versatility": 3500
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "1H Weapon"
+    },
+    {
+        "id": 171576,
+        "name": "Halion, Staff of Forgotten Love",
+        "names": {
+            "cn": "",
+            "en": "Halion, Staff of Forgotten Love",
+            "ru": "Халион, посох забытой любви",
+            "es": "Halion, bastón del amor olvidado",
+            "br": "Halion, Cajado do Amor Esquecido",
+            "kr": "",
+            "fr": "Halion, le bâton de l’amour oublié",
+            "de": "Halion, Stab der vergessenen Liebe"
+        },
+        "icon": "inv_staff_109",
+        "itemClass": 2,
+        "itemSubClass": 10,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 23380,
+            "stamina": 7889,
+            "haste": 3050,
+            "crit": 3950,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "2H Weapon"
+    },
+    {
+        "id": 171580,
+        "name": "Tel'thas, Dagger of the Blood King",
+        "names": {
+            "cn": "",
+            "en": "Tel'thas, Dagger of the Blood King",
+            "ru": "Тель'тас, кинжал Кровавого короля",
+            "es": "Tel'thas, daga del rey de sangre",
+            "br": "Tel'thas, Adaga do Rei Sanguinário",
+            "kr": "",
+            "fr": "Tel’thas, dague du roi de sang",
+            "de": "Tel'thas, Dolch des Blutkönigs"
+        },
+        "icon": "inv_weapon_shortblade_101",
+        "itemClass": 2,
+        "itemSubClass": 15,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 30629,
+            "stamina": 7889,
+            "haste": 3950,
+            "crit": 3050,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "1H Weapon"
+    },
+    {
+        "id": 171583,
+        "name": "Argent Resolve",
+        "names": {
+            "cn": "",
+            "en": "Argent Resolve",
+            "ru": "Серебряная решимость",
+            "es": "Resolución Argenta",
+            "br": "Determinação Argêntea",
+            "kr": "",
+            "fr": "Résolution d’argent",
+            "de": "Argentumentschlossenheit"
+        },
+        "icon": "inv_mace_107",
+        "itemClass": 2,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 30629,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3500,
+            "mastery": 0,
+            "versatility": 3500
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "1H Weapon"
+    },
+    {
+        "id": 171585,
+        "name": "Chestguard of the Warden",
+        "names": {
+            "cn": "",
+            "en": "Chestguard of the Warden",
+            "ru": "Нагрудный доспех тюремщика",
+            "es": "Coselete del celador",
+            "br": "Couraça do Guardião",
+            "kr": "",
+            "fr": "Corselet du gardien",
+            "de": "Brustschutz des Aufsehers"
+        },
+        "icon": "inv_chest_plate20",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 2450,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 4550
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 171586,
+        "name": "Vigilant Ward",
+        "names": {
+            "cn": "",
+            "en": "Vigilant Ward",
+            "ru": "Бдительный страж",
+            "es": "Resguardo alerta",
+            "br": "Proteção Vigilante",
+            "kr": "",
+            "fr": "Garde vigilante",
+            "de": "Wachsamer Zauberschutz"
+        },
+        "icon": "inv_shield_69",
+        "itemClass": 4,
+        "itemSubClass": 6,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 16132,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3200,
+            "mastery": 0,
+            "versatility": 3800
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shield"
+    },
+    {
+        "id": 171587,
+        "name": "Helmet of the Crypt Lord",
+        "names": {
+            "cn": "",
+            "en": "Helmet of the Crypt Lord",
+            "ru": "Полный шлем владыки склепа",
+            "es": "Casco del Señor de la cripta",
+            "br": "Capacete do Senhor da Cripta",
+            "kr": "",
+            "fr": "Casque du seigneur des cryptes",
+            "de": "Visier des Gruftlords"
+        },
+        "icon": "inv_helmet_95",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3350,
+            "crit": 3650,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 171589,
+        "name": "Cold Convergence",
+        "names": {
+            "cn": "",
+            "en": "Cold Convergence",
+            "ru": "Холодное сосредоточение",
+            "es": "Convergencia fría",
+            "br": "Convergência Gélida",
+            "kr": "",
+            "fr": "Convergence froide",
+            "de": "Kalte Konvergenz"
+        },
+        "icon": "inv_staff_98",
+        "itemClass": 2,
+        "itemSubClass": 10,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 23380,
+            "stamina": 7889,
+            "haste": 3950,
+            "crit": 3050,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "2H Weapon"
+    },
+    {
+        "id": 171591,
+        "name": "Pauldrons of the Timeless Hunter",
+        "names": {
+            "cn": "",
+            "en": "Pauldrons of the Timeless Hunter",
+            "ru": "Наплечье вневременного охотника",
+            "es": "Espaldares del Cazador intemporal",
+            "br": "Brafoneiras do Caçador Atemporal",
+            "kr": "",
+            "fr": "Espauliers du chasseur intemporel",
+            "de": "Schulterstücke des zeitlosen Jägers"
+        },
+        "icon": "inv_shoulder_107",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 2600,
+            "crit": 4400,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 171592,
+        "name": "Legplates of the Silver Hand",
+        "names": {
+            "cn": "",
+            "en": "Legplates of the Silver Hand",
+            "ru": "Ножные латы ордена Серебряной Длани",
+            "es": "Quijotes de la Mano de Plata",
+            "br": "Coxotes do Punho de Prata",
+            "kr": "",
+            "fr": "Cuissards de la Main d’argent",
+            "de": "Beinplatten der Silbernen Hand"
+        },
+        "icon": "inv_pants_plate_20",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 4100,
+            "crit": 2900,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 171593,
+        "name": "Spaulders of the Snow Bandit",
+        "names": {
+            "cn": "",
+            "en": "Spaulders of the Snow Bandit",
+            "ru": "Наплеч снежного бандита",
+            "es": "Bufas del bandido de nieve",
+            "br": "Espaldares do Bandoleiro das Neves",
+            "kr": "",
+            "fr": "Spallières du bandit des neiges",
+            "de": "Schiftung des Schneebanditen"
+        },
+        "icon": "inv_shoulder_89",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3650,
+            "crit": 3350,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 171595,
+        "name": "Bulwark of the Royal Guard",
+        "names": {
+            "cn": "",
+            "en": "Bulwark of the Royal Guard",
+            "ru": "Щит королевского стражника",
+            "es": "Baluarte de la Guardia Real",
+            "br": "Baluarte da Guarda Real",
+            "kr": "",
+            "fr": "Rempart de la garde royale",
+            "de": "Bollwerk der Königswache"
+        },
+        "icon": "inv_shield_68",
+        "itemClass": 4,
+        "itemSubClass": 6,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 16132,
+            "stamina": 7889,
+            "haste": 4250,
+            "crit": 0,
+            "mastery": 2750,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shield"
+    },
+    {
+        "id": 171596,
+        "name": "Legplates of the Immortal Spider",
+        "names": {
+            "cn": "",
+            "en": "Legplates of the Immortal Spider",
+            "ru": "Ножные латы бессмертного паука",
+            "es": "Quijotes de la araña inmortal",
+            "br": "Coxotes da Aranha Imortal",
+            "kr": "",
+            "fr": "Cuissards de l’araignée immortelle",
+            "de": "Beinplatten der unsterblichen Spinne"
+        },
+        "icon": "inv_pants_plate_15",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3500,
+            "mastery": 0,
+            "versatility": 3500
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 171597,
+        "name": "Cinch of the Undying",
+        "names": {
+            "cn": "",
+            "en": "Cinch of the Undying",
+            "ru": "Кушак Неумирающего",
+            "es": "Cincho del Indestructible",
+            "br": "Cilha do Imortal",
+            "kr": "",
+            "fr": "Cordelière de l’impérissable",
+            "de": "Sattelgurt der Unsterblichen"
+        },
+        "icon": "inv_belt_52",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3200,
+            "mastery": 0,
+            "versatility": 3800
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Waist"
+    },
+    {
+        "id": 171598,
+        "name": "Vestments of the Sleepless",
+        "names": {
+            "cn": "",
+            "en": "Vestments of the Sleepless",
+            "ru": "Одежды Неспящих",
+            "es": "Vestimentas del Insomne",
+            "br": "Vestimenta do Insone",
+            "kr": "",
+            "fr": "Habit du sans-sommeil",
+            "de": "Weste des Schlaflosen"
+        },
+        "icon": "inv_chest_cloth_75",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3950,
+            "crit": 3050,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 171599,
+        "name": "Mace of the Earthborn Chieftain",
+        "names": {
+            "cn": "",
+            "en": "Mace of the Earthborn Chieftain",
+            "ru": "Палица земного вождя",
+            "es": "Maza del cabecilla Portaterra",
+            "br": "Maça do Chefe Terreno",
+            "kr": "",
+            "fr": "Masse du chef terrestre",
+            "de": "Streitkolben des erdgeborenen Häuptlings"
+        },
+        "icon": "inv_mace_103",
+        "itemClass": 2,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 30629,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3500,
+            "mastery": 0,
+            "versatility": 3500
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "1H Weapon"
+    },
+    {
+        "id": 171600,
+        "name": "Pride of the Kor'kron",
+        "names": {
+            "cn": "",
+            "en": "Pride of the Kor'kron",
+            "ru": "Гордость кор'крона",
+            "es": "Orgullo de los Kor'kron",
+            "br": "Orgulho dos Kor'kron",
+            "kr": "",
+            "fr": "Orgueil des kor’krons",
+            "de": "Stolz der Kor'kron"
+        },
+        "icon": "inv_shield_70",
+        "itemClass": 4,
+        "itemSubClass": 6,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 16132,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3200,
+            "mastery": 0,
+            "versatility": 3800
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shield"
+    },
+    {
+        "id": 171601,
+        "name": "Stoneskin Chestplate",
+        "names": {
+            "cn": "",
+            "en": "Stoneskin Chestplate",
+            "ru": "Бригантина каменной кожи",
+            "es": "Peto de piel de piedra",
+            "br": "Guarda-peito de Litopele",
+            "kr": "",
+            "fr": "Pansière peau-de-pierre",
+            "de": "Steinhautbrustplatte"
+        },
+        "icon": "inv_chest_plate_23",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 2450,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 4550
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 171602,
+        "name": "Helm of the Crypt Lord",
+        "names": {
+            "cn": "",
+            "en": "Helm of the Crypt Lord",
+            "ru": "Шлем владыки склепа",
+            "es": "Yelmo del Señor de la cripta",
+            "br": "Elmo do Senhor da Cripta",
+            "kr": "",
+            "fr": "Heaume du seigneur des cryptes",
+            "de": "Helm des Gruftlords"
+        },
+        "icon": "inv_helmet_100",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3350,
+            "crit": 3650,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 171605,
+        "name": "Perdition",
+        "names": {
+            "cn": "",
+            "en": "Perdition",
+            "ru": "Вечные муки",
+            "es": "Perdición",
+            "br": "Perdição",
+            "kr": "",
+            "fr": "Perdition",
+            "de": "Verderben"
+        },
+        "icon": "inv_staff_102",
+        "itemClass": 2,
+        "itemSubClass": 10,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 23380,
+            "stamina": 7889,
+            "haste": 3950,
+            "crit": 3050,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "2H Weapon"
+    },
+    {
+        "id": 171606,
+        "name": "Pauldrons of the Shadow Hunter",
+        "names": {
+            "cn": "",
+            "en": "Pauldrons of the Shadow Hunter",
+            "ru": "Наплечье темного охотника",
+            "es": "Espaldares del cazador de las Sombras",
+            "br": "Brafoneiras do Caçador Sombrio",
+            "kr": "",
+            "fr": "Espauliers du chasseur des ombres",
+            "de": "Schulterstücke des Schattenjägers"
+        },
+        "icon": "inv_shoulder_100",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 2600,
+            "crit": 4400,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 171607,
+        "name": "Legplates of Redeemed Blood",
+        "names": {
+            "cn": "",
+            "en": "Legplates of Redeemed Blood",
+            "ru": "Ножные латы искупленной крови",
+            "es": "Quijotes de sangre redimida",
+            "br": "Coxotes do Sangue Redimido",
+            "kr": "",
+            "fr": "Cuissards du sang racheté",
+            "de": "Beinplatten des begnadigten Blutes"
+        },
+        "icon": "inv_pants_plate_30",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 4100,
+            "crit": 2900,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 171609,
+        "name": "Shoulderpads of the Snow Bandit",
+        "names": {
+            "cn": "",
+            "en": "Shoulderpads of the Snow Bandit",
+            "ru": "Наплечные щитки снежного бандита",
+            "es": "Hombreras del bandido de nieve",
+            "br": "Ombreiras do Bandoleiro das Neves",
+            "kr": "",
+            "fr": "Protège-épaules du bandit des neiges",
+            "de": "Schulterpolster des Schneebanditen"
+        },
+        "icon": "inv_shoulder_109a",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3650,
+            "crit": 3350,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 171611,
+        "name": "Robes of the Sleepless",
+        "names": {
+            "cn": "",
+            "en": "Robes of the Sleepless",
+            "ru": "Одеяния Неспящих",
+            "es": "Togas del Insomne",
+            "br": "Vestes do Insone",
+            "kr": "",
+            "fr": "Robe du sans-sommeil",
+            "de": "Roben des Schlaflosen"
+        },
+        "icon": "inv_chest_cloth_64",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3950,
+            "crit": 3050,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 171613,
+        "name": "Sunwalker Legguards",
+        "names": {
+            "cn": "",
+            "en": "Sunwalker Legguards",
+            "ru": "Набедренники Служителя Солнца",
+            "es": "Musleras del caminasol",
+            "br": "Guarda-pernas do Andarilho do Sol",
+            "kr": "",
+            "fr": "Garde-jambes de marche-soleil",
+            "de": "Beinschützer des Sonnenläufers"
+        },
+        "icon": "inv_pants_plate_30",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3500,
+            "mastery": 0,
+            "versatility": 3500
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 171614,
+        "name": "Belt of the Eternal",
+        "names": {
+            "cn": "",
+            "en": "Belt of the Eternal",
+            "ru": "Пояс Вечного",
+            "es": "Cinturón del eterno",
+            "br": "Cinto do Eterno",
+            "kr": "",
+            "fr": "Ceinture de l’éternel",
+            "de": "Gürtel des Ewigen"
+        },
+        "icon": "inv_belt_52",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3200,
+            "mastery": 0,
+            "versatility": 3800
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Waist"
+    },
+    {
+        "id": 171615,
+        "name": "Aegis of the Coliseum",
+        "names": {
+            "cn": "",
+            "en": "Aegis of the Coliseum",
+            "ru": "Эгида Колизея",
+            "es": "Égida del Coliseo",
+            "br": "Égide do Coliseu",
+            "kr": "",
+            "fr": "Egide du colisée",
+            "de": "Aegis des Kolosseums"
+        },
+        "icon": "inv_shield_71",
+        "itemClass": 4,
+        "itemSubClass": 6,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 16132,
+            "stamina": 7889,
+            "haste": 4250,
+            "crit": 0,
+            "mastery": 2750,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shield"
+    },
+    {
+        "id": 171618,
+        "name": "Amulet of Autopsy",
+        "names": {
+            "cn": "",
+            "en": "Amulet of Autopsy",
+            "ru": "Амулет посмертного вскрытия",
+            "es": "Amuleto de autopsia",
+            "br": "Amuleto da Autópsia",
+            "kr": "",
+            "fr": "Amulette d’autopsie",
+            "de": "Amulett der Autopsie"
+        },
+        "icon": "inv_jewelry_necklace_30naxxramas",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 12500,
+            "mastery": 0,
+            "versatility": 5000
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Neck"
+    },
+    {
+        "id": 171619,
+        "name": "Cuffs of Dark Shadows",
+        "names": {
+            "cn": "",
+            "en": "Cuffs of Dark Shadows",
+            "ru": "Манжеты Темных теней",
+            "es": "Puños de sombras oscuras",
+            "br": "Manilhas das Sombras Tenebrosas",
+            "kr": "",
+            "fr": "Crispins des ombres obscures",
+            "de": "Manschetten der dunklen Schatten"
+        },
+        "icon": "inv_bracer_18",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3050,
+            "crit": 3950,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Wrist"
+    },
+    {
+        "id": 171620,
+        "name": "Tunic of the Lost Pack",
+        "names": {
+            "cn": "",
+            "en": "Tunic of the Lost Pack",
+            "ru": "Мундир Заблудившейся стаи",
+            "es": "Guerrera de la manada perdida",
+            "br": "Túnica do Bando Perdido",
+            "kr": "",
+            "fr": "Tunique de la meute perdue",
+            "de": "Tunika des verlorenen Rudels"
+        },
+        "icon": "inv_chest_leather_02",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3200,
+            "crit": 3800,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 171621,
+        "name": "Shoulderplates of Bloodshed",
+        "names": {
+            "cn": "",
+            "en": "Shoulderplates of Bloodshed",
+            "ru": "Латные наплечники кровопролития",
+            "es": "Hombreras de placas de derramamiento de sangre",
+            "br": "Placa d'Ombros do Sangue Derramado",
+            "kr": "",
+            "fr": "Plaques d’épaule d’effusion de sang",
+            "de": "Schulterplatten des Blutvergießens"
+        },
+        "icon": "inv_shoulder_78",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 2150,
+            "crit": 4850,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 171622,
+        "name": "Ring of Holy Cleansing",
+        "names": {
+            "cn": "",
+            "en": "Ring of Holy Cleansing",
+            "ru": "Кольцо святого очищения",
+            "es": "Anillo de limpieza sagrada",
+            "br": "Anel da Sagrada Purificação",
+            "kr": "",
+            "fr": "Anneau de purification sacrée",
+            "de": "Ring der heiligen Läuterung"
+        },
+        "icon": "inv_jewelry_ring_50naxxramas",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "haste": 9750,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 7750
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Finger"
+    },
+    {
+        "id": 171623,
+        "name": "Necrogenic Belt",
+        "names": {
+            "cn": "",
+            "en": "Necrogenic Belt",
+            "ru": "Некрогенный пояс",
+            "es": "Cinturón necrogénico",
+            "br": "Cinto Necrogênico",
+            "kr": "",
+            "fr": "Ceinture nécrogénique",
+            "de": "Nekrogenischer Gürtel"
+        },
+        "icon": "inv_belt_15",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3350,
+            "mastery": 0,
+            "versatility": 3650
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Waist"
+    },
+    {
+        "id": 171624,
+        "name": "Preceptor's Bindings",
+        "names": {
+            "cn": "",
+            "en": "Preceptor's Bindings",
+            "ru": "Наручники наставника",
+            "es": "Ataduras de preceptor",
+            "br": "Braçadeiras do Preceptor",
+            "kr": "",
+            "fr": "Manchettes de précepteur",
+            "de": "Bindungen des Mentors"
+        },
+        "icon": "inv_bracer_17",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3500,
+            "crit": 3500,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Wrist"
+    },
+    {
+        "id": 171625,
+        "name": "Saltarello Shoes",
+        "names": {
+            "cn": "",
+            "en": "Saltarello Shoes",
+            "ru": "Бальные туфли",
+            "es": "Botas de saltarello",
+            "br": "Sapatos de Saltarello",
+            "kr": "",
+            "fr": "Chaussures saltarelles",
+            "de": "Saltarelloschuhe"
+        },
+        "icon": "inv_boots_cloth_16",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 2750,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 4250
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Feet"
+    },
+    {
+        "id": 171627,
+        "name": "Spaulders of the Scarred Lady",
+        "names": {
+            "cn": "",
+            "en": "Spaulders of the Scarred Lady",
+            "ru": "Наплеч дамы со шрамами",
+            "es": "Bufas de la dama con cicatrices",
+            "br": "Espaldares da Dama da Cicatriz",
+            "kr": "",
+            "fr": "Spallières de la dame balafrée",
+            "de": "Schiftung der vernarbten Dame"
+        },
+        "icon": "inv_shoulder_mail_raidhunter_i_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3500,
+            "mastery": 3500,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 171628,
+        "name": "Belt of the Nightmare",
+        "names": {
+            "cn": "",
+            "en": "Belt of the Nightmare",
+            "ru": "Пояс кошмара",
+            "es": "Cinturón de la pesadilla",
+            "br": "Cinto do Pesadelo",
+            "kr": "",
+            "fr": "Ceinture du cauchemar",
+            "de": "Gürtel des Alptraums"
+        },
+        "icon": "inv_belt_leather_raiddruid_i_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3500,
+            "mastery": 0,
+            "versatility": 3500
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Waist"
+    },
+    {
+        "id": 171629,
+        "name": "Mantle of Nefarius",
+        "names": {
+            "cn": "",
+            "en": "Mantle of Nefarius",
+            "ru": "Мантия Нефария",
+            "es": "Manto de Nefarius",
+            "br": "Dragonas de Nefarius",
+            "kr": "",
+            "fr": "Mantelet de Nefarius",
+            "de": "Mantel von Nefarius"
+        },
+        "icon": "inv_shoulder_cloth_raidpriest_i_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3500,
+            "mastery": 0,
+            "versatility": 3500
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 171630,
+        "name": "Pauldrons of the Apocalypse",
+        "names": {
+            "cn": "",
+            "en": "Pauldrons of the Apocalypse",
+            "ru": "Наплечье апокалипсиса",
+            "es": "Espaldares del Apocalipsis",
+            "br": "Brafoneiras do Apocalipse",
+            "kr": "",
+            "fr": "Espauliers de l’apocalypse",
+            "de": "Schulterstücke der Apokalypse"
+        },
+        "icon": "inv_shoulder_plate_raidwarrior_i_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 2300,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 4700
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 171632,
+        "name": "Rage of Ages",
+        "names": {
+            "cn": "",
+            "en": "Rage of Ages",
+            "ru": "Ярость веков",
+            "es": "Ira de las Eras",
+            "br": "Fúria das Eras",
+            "kr": "",
+            "fr": "La colère des âges",
+            "de": "Wut der Zeiten"
+        },
+        "icon": "inv_misc_necklacea8",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 8750,
+            "mastery": 8750,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Neck"
+    },
+    {
+        "id": 171634,
+        "name": "Akmin-Kurai, Dominion's Shield",
+        "names": {
+            "cn": "",
+            "en": "Akmin-Kurai, Dominion's Shield",
+            "ru": "Акмин-Курай, Щит Владычества",
+            "es": "Akmin-Kurai, el escudo de dominio",
+            "br": "Akmin-Kurai, o Escudo do Domínio",
+            "kr": "",
+            "fr": "Akmin-Kurai, bouclier de domination",
+            "de": "Akmin-Kurai, Schild der Herrschaft"
+        },
+        "icon": "inv_shield_bwdraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 6,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 16132,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 3500,
+            "versatility": 3500
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shield"
+    },
+    {
+        "id": 171635,
+        "name": "Belt of the Blackhand",
+        "names": {
+            "cn": "",
+            "en": "Belt of the Blackhand",
+            "ru": "Пояс Чернорука",
+            "es": "Cinturón de los Puño Negro",
+            "br": "Cinto da Mão Negra",
+            "kr": "",
+            "fr": "Ceinture de la Main-Noire",
+            "de": "Gürtel der Schwarzfaust"
+        },
+        "icon": "inv_belt_plate_raidpaladin_i_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3500,
+            "mastery": 0,
+            "versatility": 3500
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Waist"
+    },
+    {
+        "id": 171636,
+        "name": "Shadowblaze Robes",
+        "names": {
+            "cn": "",
+            "en": "Shadowblaze Robes",
+            "ru": "Одеяния пламени тени",
+            "es": "Togas de Llamarada de las Sombras",
+            "br": "Vestes da Labareda Sombria",
+            "kr": "",
+            "fr": "Robe d’Ombrase",
+            "de": "Schattenfeuerroben"
+        },
+        "icon": "inv_chest_robe_raidmage_i_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3500,
+            "mastery": 3500,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 171637,
+        "name": "Shadow of Dread",
+        "names": {
+            "cn": "",
+            "en": "Shadow of Dread",
+            "ru": "Тень ужаса",
+            "es": "Sombra de terror",
+            "br": "Sombra do Medo",
+            "kr": "",
+            "fr": "Ombre d’effroi",
+            "de": "Schatten der Furcht"
+        },
+        "icon": "inv_misc_cape_cataclysm_caster_c_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3500,
+            "mastery": 3500,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Back"
+    },
+    {
+        "id": 171638,
+        "name": "Andoros, Fist of the Dragon King",
+        "names": {
+            "cn": "",
+            "en": "Andoros, Fist of the Dragon King",
+            "ru": "Андорос, Десница Короля Драконов",
+            "es": "Andoros, puño del Rey Dragón",
+            "br": "Andoros, o Punho do Rei Dragão",
+            "kr": "",
+            "fr": "Andoros, poing du roi-dragon",
+            "de": "Andoros, Faust des Drachenkönigs"
+        },
+        "icon": "inv_mace_1h_bwdraid_d_01",
+        "itemClass": 2,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 30629,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 3500,
+            "versatility": 3500
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "1H Weapon"
+    },
+    {
+        "id": 171640,
+        "name": "Variable Pulse Lightning Capacitor",
+        "names": {
+            "cn": "",
+            "en": "Variable Pulse Lightning Capacitor",
+            "ru": "Нестабильный конденсатор молний",
+            "es": "Condensador de relámpagos de pulso variable",
+            "br": "Capacitor de Relâmpagos de Pulso Variável",
+            "kr": "",
+            "fr": "Condensateur de foudre à pulsation variable",
+            "de": "Wechselimpulsblitzkondensator"
+        },
+        "icon": "inv_trinket_naxxramas06",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 6666,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Trinket",
+        "effect": {
+            "type": "trinket",
+            "name": "Variable Pulse Lightning Capacitor"
+        }
+    },
+    {
+        "id": 171641,
+        "name": "Jaws of Defeat",
+        "names": {
+            "cn": "",
+            "en": "Jaws of Defeat",
+            "ru": "Челюсти погибели",
+            "es": "Mandíbulas de la derrota",
+            "br": "Mandíbulas da Derrota",
+            "kr": "",
+            "fr": "Mâchoires de défaite",
+            "de": "Fänge des Schicksals"
+        },
+        "icon": "trade_archaeology_shark jaws",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 6666,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Trinket",
+        "effect": {
+            "type": "trinket",
+            "name": "Jaws of Defeat"
+        }
+    },
+    {
+        "id": 171643,
+        "name": "Spidersilk Spindle",
+        "names": {
+            "cn": "",
+            "en": "Spidersilk Spindle",
+            "ru": "Веретено паучьего шелка",
+            "es": "Huso de seda de araña",
+            "br": "Fuso de Seda de Aranha",
+            "kr": "",
+            "fr": "Fuseau à soie d’araignée",
+            "de": "Spinnenseidenspindel"
+        },
+        "icon": "inv_trinket_firelands_02",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 0,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 6666,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Trinket",
+        "effect": {
+            "type": "trinket",
+            "name": "Spidersilk Spindle"
+        }
+    },
+    {
+        "id": 171644,
+        "name": "Necromantic Focus",
+        "names": {
+            "cn": "",
+            "en": "Necromantic Focus",
+            "ru": "Средоточие некромантии",
+            "es": "Foco nigromántico",
+            "br": "Foco Necromântico",
+            "kr": "",
+            "fr": "Focalisation nécromantique",
+            "de": "Nekromantischer Fokus"
+        },
+        "icon": "inv_trinket_firelands_03",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 6666,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Trinket",
+        "effect": {
+            "type": "trinket",
+            "name": "Necromantic Focus"
+        }
+    },
+    {
+        "id": 171645,
+        "name": "Eye of Blazing Power",
+        "names": {
+            "cn": "",
+            "en": "Eye of Blazing Power",
+            "ru": "Око пылающей энергии",
+            "es": "Ojo de Poder llameante",
+            "br": "Olho do Poder Fulgurante",
+            "kr": "",
+            "fr": "Œil de la puissance flamboyante",
+            "de": "Auge der lodernden Kraft"
+        },
+        "icon": "inv_trinket_firelands_01",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 6666,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Trinket",
+        "effect": {
+            "type": "trinket",
+            "name": "Eye of Blazing Power"
+        }
+    },
+    {
+        "id": 171650,
+        "name": "Greathelm of the Voracious Maw",
+        "names": {
+            "cn": "",
+            "en": "Greathelm of the Voracious Maw",
+            "ru": "Большой шлем прожорливой пасти",
+            "es": "Gran yelmo de la fauce voraz",
+            "br": "Grande Elmo da Bocarra Voraz",
+            "kr": "",
+            "fr": "Grand heaume de la gueule vorace",
+            "de": "Großhelm des schlingenden Mauls"
+        },
+        "icon": "inv_helmet_plate_raiddeathknight_j_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3350,
+            "mastery": 3650,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 171651,
+        "name": "Flickering Wristbands",
+        "names": {
+            "cn": "",
+            "en": "Flickering Wristbands",
+            "ru": "Мерцающее нарукавье",
+            "es": "Braciles chisporroteantes",
+            "br": "Munhequeiras Tremeluzentes",
+            "kr": "",
+            "fr": "Protège-poignets aux flammes vacillantes",
+            "de": "Flackernde Gelenkbänder"
+        },
+        "icon": "inv_bracer_leather_raidrogue_j_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Wrist"
+    },
+    {
+        "id": 171652,
+        "name": "Moltenfeather Leggings",
+        "names": {
+            "cn": "",
+            "en": "Moltenfeather Leggings",
+            "ru": "Поножи из опаляющих перьев",
+            "es": "Leotardos pluma de magma",
+            "br": "Perneiras de Penamagma",
+            "kr": "",
+            "fr": "Jambières de plumes de feu",
+            "de": "Mausergamaschen"
+        },
+        "icon": "inv_pants_mail_raidhunter_j_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3500,
+            "mastery": 3500,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 171653,
+        "name": "Spaulders of Recurring Flame",
+        "names": {
+            "cn": "",
+            "en": "Spaulders of Recurring Flame",
+            "ru": "Наплеч возрожденного пламени",
+            "es": "Bufas de llama recurrente",
+            "br": "Espaldares da Chama Recorrente",
+            "kr": "",
+            "fr": "Spallières de la flamme récurrente",
+            "de": "Schiftung der wiederkehrenden Flamme"
+        },
+        "icon": "inv_shoulder_plate_raidwarrior_j_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3050,
+            "crit": 0,
+            "mastery": 3950,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 171654,
+        "name": "Alysrazor's Band",
+        "names": {
+            "cn": "",
+            "en": "Alysrazor's Band",
+            "ru": "Перстень Алисразор",
+            "es": "Anillo de Alysrazor",
+            "br": "Anel de Alysrazor",
+            "kr": "",
+            "fr": "Bague d’Alysrazor",
+            "de": "Alysrazars Band"
+        },
+        "icon": "inv_jewelry_ring_firelandsraid_01a",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "haste": 8000,
+            "crit": 9500,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Finger"
+    },
+    {
+        "id": 171655,
+        "name": "Lavaworm Legplates",
+        "names": {
+            "cn": "",
+            "en": "Lavaworm Legplates",
+            "ru": "Ножные латы огненного червя",
+            "es": "Quijotes de gusano de lava",
+            "br": "Coxotes do Verme de Lava",
+            "kr": "",
+            "fr": "Cuissards de ver de lave",
+            "de": "Lavawurmbeinplatten"
+        },
+        "icon": "inv_pant_plate_raiddeathknight_j_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3650,
+            "mastery": 3350,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 171656,
+        "name": "Cracked Obsidian Stompers",
+        "names": {
+            "cn": "",
+            "en": "Cracked Obsidian Stompers",
+            "ru": "Треснувшие обсидиановые высокие ботинки",
+            "es": "Apisonadoras de obsidiana rajada",
+            "br": "Pisoteadores Obsidianos Rachados",
+            "kr": "",
+            "fr": "Croquenots d’obsidienne craquelés",
+            "de": "Gesprungene Obsidianstampfer"
+        },
+        "icon": "inv_boots_plate_raidwarrior_j_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 2300,
+            "mastery": 4700,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Feet"
+    },
+    {
+        "id": 171657,
+        "name": "Legplates of Frenzied Devotion",
+        "names": {
+            "cn": "",
+            "en": "Legplates of Frenzied Devotion",
+            "ru": "Ножные латы бешеной преданности",
+            "es": "Quijotes de devoción demente",
+            "br": "Coxotes da Devoção Frenética",
+            "kr": "",
+            "fr": "Cuissards de dévotion frénétique",
+            "de": "Beinplatten der tobenden Hingabe"
+        },
+        "icon": "inv_glove_pants_raidwarrior_j_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 3800,
+            "versatility": 3200
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 171658,
+        "name": "Carapace of Imbibed Flame",
+        "names": {
+            "cn": "",
+            "en": "Carapace of Imbibed Flame",
+            "ru": "Панцирь поглощенного пламени",
+            "es": "Caparazón de llamas embebidas",
+            "br": "Carapaça da Chama Embebida",
+            "kr": "",
+            "fr": "Carapace imbibée de flammes",
+            "de": "Panzer der inkorporierten Flamme"
+        },
+        "icon": "inv_chest_plate_raidwarrior_j_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 3650,
+            "versatility": 3350
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 171659,
+        "name": "Shard of Torment",
+        "names": {
+            "cn": "",
+            "en": "Shard of Torment",
+            "ru": "Осколок мучений",
+            "es": "Fragmento de tormento",
+            "br": "Fragmento do Tormento",
+            "kr": "",
+            "fr": "Éclat de tourment",
+            "de": "Splitter der Qual"
+        },
+        "icon": "inv_shield_firelandsraid_d_02",
+        "itemClass": 4,
+        "itemSubClass": 6,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 16132,
+            "stamina": 7889,
+            "haste": 3650,
+            "crit": 3350,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shield"
+    },
+    {
+        "id": 171660,
+        "name": "Helm of Blazing Glory",
+        "names": {
+            "cn": "",
+            "en": "Helm of Blazing Glory",
+            "ru": "Шлем пылающей славы",
+            "es": "Yelmo de gloria llameante",
+            "br": "Elmo da Glória Fulgurante",
+            "kr": "",
+            "fr": "Heaume de gloire flamboyante",
+            "de": "Helm des strahlenden Ruhms"
+        },
+        "icon": "inv_helm_plate_raidwarrior_j_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 3350,
+            "versatility": 3650
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 171661,
+        "name": "Flickering Handguards",
+        "names": {
+            "cn": "",
+            "en": "Flickering Handguards",
+            "ru": "Мерцающие боевые рукавицы",
+            "es": "Manoplas chisporroteantes",
+            "br": "Protetores de Mão Tremeluzentes",
+            "kr": "",
+            "fr": "Garde-mains aux flammes vacillantes",
+            "de": "Flackernde Handschützer"
+        },
+        "icon": "inv_glove_plate_raidwarrior_j_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
+        "id": 171662,
+        "name": "Bracers of the Fiery Path",
+        "names": {
+            "cn": "",
+            "en": "Bracers of the Fiery Path",
+            "ru": "Наручи огненного пути",
+            "es": "Brazales del sendero ígneo",
+            "br": "Braçadeiras do Caminho Flamejante",
+            "kr": "",
+            "fr": "Brassards de la voie embrasée",
+            "de": "Armschienen des feurigen Pfads"
+        },
+        "icon": "inv_bracer_plate_raiddeathknight_j_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3650,
+            "crit": 0,
+            "mastery": 3350,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Wrist"
+    },
+    {
+        "id": 171663,
+        "name": "Pauldrons of Roaring Flame",
+        "names": {
+            "cn": "",
+            "en": "Pauldrons of Roaring Flame",
+            "ru": "Наплечье ревущего пламени",
+            "es": "Espaldares de llama rugidora",
+            "br": "Brafoneiras do Fogaréu",
+            "kr": "",
+            "fr": "Espauliers de la flamme ronflante",
+            "de": "Schulterstücke der brüllenden Flammen"
+        },
+        "icon": "inv_plate_firelands_d_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 4700,
+            "mastery": 2300,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 171665,
+        "name": "Craterflame Spaulders",
+        "names": {
+            "cn": "",
+            "en": "Craterflame Spaulders",
+            "ru": "Наплеч кратерного пламени",
+            "es": "Bufas del cráter en llamas",
+            "br": "Espaldares do Fogo da Cratera",
+            "kr": "",
+            "fr": "Spallières des flammes du cratère",
+            "de": "Kraterflammenschiftung"
+        },
+        "icon": "inv_shoulder_mail_raidshaman_j_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3500,
+            "crit": 3500,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 171666,
+        "name": "Clawshaper Gauntlets",
+        "names": {
+            "cn": "",
+            "en": "Clawshaper Gauntlets",
+            "ru": "Рукавицы крылатого мстителя",
+            "es": "Guanteletes tallagarras",
+            "br": "Manoplas Afiagarra",
+            "kr": "",
+            "fr": "Gantelets de sculptegriffe",
+            "de": "Klauenformerstulpen"
+        },
+        "icon": "inv_gauntlets_mail_raidshaman_j_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 3050,
+            "versatility": 3950
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
+        "id": 171667,
+        "name": "Phoenix-Down Treads",
+        "names": {
+            "cn": "",
+            "en": "Phoenix-Down Treads",
+            "ru": "Ботфорты падения феникса",
+            "es": "Botines de fénix derribado",
+            "br": "Botinas do Descenso da Fênix",
+            "kr": "",
+            "fr": "Bottines à duvet de phénix",
+            "de": "Phönixfedertreter"
+        },
+        "icon": "inv_boots_leather_raiddruid_j_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 3200,
+            "versatility": 3800
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Feet"
+    },
+    {
+        "id": 171668,
+        "name": "Clutch of the Firemother",
+        "names": {
+            "cn": "",
+            "en": "Clutch of the Firemother",
+            "ru": "Хватка огненной матери",
+            "es": "Agarre de la madre de fuego",
+            "br": "Peitoral da Ignimáter",
+            "kr": "",
+            "fr": "Étreinte de la mère du feu",
+            "de": "Griff der Feuermutter"
+        },
+        "icon": "inv_chest_plate_raidpaladin_j_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3500,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 3500
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 171669,
+        "name": "Leggings of Billowing Fire",
+        "names": {
+            "cn": "",
+            "en": "Leggings of Billowing Fire",
+            "ru": "Поножи клубящегося огня",
+            "es": "Leotardos de fuego vaporoso",
+            "br": "Perneiras da Onda de Fogo",
+            "kr": "",
+            "fr": "Jambières de feu tourbillonnant",
+            "de": "Gamaschen des wogenden Feuers"
+        },
+        "icon": "inv_pants_robe_raidmage_j_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3650,
+            "crit": 3350,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 171670,
+        "name": "Wings of Flame",
+        "names": {
+            "cn": "",
+            "en": "Wings of Flame",
+            "ru": "Огненные крылья",
+            "es": "Alas de llamas",
+            "br": "Asas de Chamas",
+            "kr": "",
+            "fr": "Ailes de flamme",
+            "de": "Flammenschwingen"
+        },
+        "icon": "inv_cape_firelands_fireset_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3350,
+            "mastery": 3650,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Back"
+    },
+    {
+        "id": 171672,
+        "name": "Dreadfire Drape",
+        "names": {
+            "cn": "",
+            "en": "Dreadfire Drape",
+            "ru": "Пелерина наводящего ужас огня",
+            "es": "Mantón de fuego aterrador",
+            "br": "Clâmide do Fogo Mórbido",
+            "kr": "",
+            "fr": "Drapé du feu d’effroi",
+            "de": "Schreckensfeuertuch"
+        },
+        "icon": "inv_cape_firelands_fireset_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3650,
+            "crit": 0,
+            "mastery": 3350,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Back"
+    },
+    {
+        "id": 171673,
+        "name": "Fireskin Gauntlets",
+        "names": {
+            "cn": "",
+            "en": "Fireskin Gauntlets",
+            "ru": "Рукавицы из огнекожи",
+            "es": "Guanteletes piel de fuego",
+            "br": "Manoplas de Pelefogo",
+            "kr": "",
+            "fr": "Gantelets de la peau de feu",
+            "de": "Feuerhautstulpen"
+        },
+        "icon": "inv_glove_plate_raiddeathknight_j_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3650,
+            "mastery": 3350,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
+        "id": 171674,
+        "name": "Hood of Rampant Disdain",
+        "names": {
+            "cn": "",
+            "en": "Hood of Rampant Disdain",
+            "ru": "Капюшон безудержного презрения",
+            "es": "Caperuza de desdén rampante",
+            "br": "Capuz do Desdém Agressivo",
+            "kr": "",
+            "fr": "Chaperon de dédain rampant",
+            "de": "Kapuze der ungezügelten Verachtung"
+        },
+        "icon": "inv_helmet_leather_raidrogue_j_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3950,
+            "crit": 3050,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 171675,
+        "name": "Earthcrack Bracers",
+        "names": {
+            "cn": "",
+            "en": "Earthcrack Bracers",
+            "ru": "Наручи дрожащей земли",
+            "es": "Brazales hiendetierra",
+            "br": "Braçadeiras Rachaterra",
+            "kr": "",
+            "fr": "Brassards de la fissure terrestre",
+            "de": "Erdrissarmschienen"
+        },
+        "icon": "inv_bracer_plate_raidwarrior_j_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3350,
+            "crit": 3650,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Wrist"
+    },
+    {
+        "id": 171676,
+        "name": "Flaming Core Chestguard",
+        "names": {
+            "cn": "",
+            "en": "Flaming Core Chestguard",
+            "ru": "Нагрудный доспех пылающего ядра",
+            "es": "Coselete de núcleo llameante",
+            "br": "Couraça do Imo Flamejante",
+            "kr": "",
+            "fr": "Corselet au cœur enflammé",
+            "de": "Flammenkernbrustschutz"
+        },
+        "icon": "inv_chest_mail_raidhunter_j_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3200,
+            "crit": 3800,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 171677,
+        "name": "Volcanospike",
+        "names": {
+            "cn": "",
+            "en": "Volcanospike",
+            "ru": "Вулканический шип",
+            "es": "Puntavolcán",
+            "br": "Aguilhão de Lava",
+            "kr": "",
+            "fr": "Pointe du volcan",
+            "de": "Vulkanstachel"
+        },
+        "icon": "inv_sword_1h_firelandsraid_d_04",
+        "itemClass": 2,
+        "itemSubClass": 7,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 30629,
+            "stamina": 7889,
+            "haste": 3800,
+            "crit": 3200,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "1H Weapon"
+    },
+    {
+        "id": 171678,
+        "name": "Grips of the Raging Giant",
+        "names": {
+            "cn": "",
+            "en": "Grips of the Raging Giant",
+            "ru": "Захваты свирепого великана",
+            "es": "Mandiletes del gigante enfurecido",
+            "br": "Manoplas do Gigante em Fúria",
+            "kr": "",
+            "fr": "Poignes du géant enragé",
+            "de": "Handschutz des wütenden Riesen"
+        },
+        "icon": "inv_gauntlets_plate_raidpaladin_j_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3350,
+            "mastery": 0,
+            "versatility": 3650
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
+        "id": 171679,
+        "name": "Lava Line Wristbands",
+        "names": {
+            "cn": "",
+            "en": "Lava Line Wristbands",
+            "ru": "Нарукавье лавовой линии",
+            "es": "Braciles Línea de lava",
+            "br": "Munhequeiras da Linha de Lava",
+            "kr": "",
+            "fr": "Protège-poignets de ligne de lave",
+            "de": "Gelenkbänder des Lavakanals"
+        },
+        "icon": "inv_bracer_mail_pvphunter_c_02",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3350,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 3650
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Wrist"
+    },
+    {
+        "id": 171680,
+        "name": "Incendic Chestguard",
+        "names": {
+            "cn": "",
+            "en": "Incendic Chestguard",
+            "ru": "Пламеносный нагрудный доспех",
+            "es": "Coselete incendiario",
+            "br": "Couraça Incêndica",
+            "kr": "",
+            "fr": "Corselet incendique",
+            "de": "Anfachender Brustschutz"
+        },
+        "icon": "inv_chest_leather_raiddruid_j_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3200,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 3800
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 171681,
+        "name": "Flickering Cowl",
+        "names": {
+            "cn": "",
+            "en": "Flickering Cowl",
+            "ru": "Мерцающий клобук",
+            "es": "Capucha chisporroteante",
+            "br": "Capucho Tremeluzente",
+            "kr": "",
+            "fr": "Capuche vacillante",
+            "de": "Flackernde Gugel"
+        },
+        "icon": "inv_helm_robe_raidwarlock_j_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 171682,
+        "name": "Heartstone of Rhyolith",
+        "names": {
+            "cn": "",
+            "en": "Heartstone of Rhyolith",
+            "ru": "Сердечник Риолита",
+            "es": "Piedra corazón de Piroclasto",
+            "br": "Pedra de Regresso de Rhyolith",
+            "kr": "",
+            "fr": "Pierre de cœur de Rhyolith",
+            "de": "Herzstein von Rhyolith"
+        },
+        "icon": "inv_misc_necklace_firelands_2",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 8000,
+            "versatility": 9500
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Neck"
+    },
+    {
+        "id": 171685,
+        "name": "Scalp of the Bandit Prince",
+        "names": {
+            "cn": "",
+            "en": "Scalp of the Bandit Prince",
+            "ru": "Скальп бандитского магната",
+            "es": "Cabellera del príncipe bandido",
+            "br": "Escalpo do Príncipe dos Bandidos",
+            "kr": "",
+            "fr": "Scalp du prince bandit",
+            "de": "Skalp des Banditenprinzen"
+        },
+        "icon": "inv_helm_mail_raidhunter_j_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3650,
+            "mastery": 3350,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 171686,
+        "name": "Necklace of Fetishes",
+        "names": {
+            "cn": "",
+            "en": "Necklace of Fetishes",
+            "ru": "Ожерелье фетишей",
+            "es": "Collar de fetiches",
+            "br": "Colar de Fetiches",
+            "kr": "",
+            "fr": "Collier de fétiches",
+            "de": "Halskette der Fetische"
+        },
+        "icon": "inv_jewelry_necklace_53",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "haste": 7500,
+            "crit": 10000,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Neck"
+    },
+    {
+        "id": 171687,
+        "name": "Gloves of Dissolving Smoke",
+        "names": {
+            "cn": "",
+            "en": "Gloves of Dissolving Smoke",
+            "ru": "Перчатки рассеивающегося дыма",
+            "es": "Guantes de humo desvanecido",
+            "br": "Luvas da Fumaça Dissoluta",
+            "kr": "",
+            "fr": "Gants de fumée dissolvante",
+            "de": "Handschuhe des gelichteten Rauchs"
+        },
+        "icon": "inv_gauntlet_leather_raidrogue_j_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3350,
+            "mastery": 3650,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
+        "id": 171688,
+        "name": "Uncrushable Belt of Fury",
+        "names": {
+            "cn": "",
+            "en": "Uncrushable Belt of Fury",
+            "ru": "Несокрушимый пояс ярости",
+            "es": "Cinturón de furia acerado",
+            "br": "Cinto Indestrutível da Fúria",
+            "kr": "",
+            "fr": "Ceinture infroissable de la fureur",
+            "de": "Unzerstörbarer Gürtel des Zorns"
+        },
+        "icon": "inv_belt_plate_raidwarrior_j_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 2300,
+            "mastery": 4700,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Waist"
+    },
+    {
+        "id": 171689,
+        "name": "Goblet of Anger",
+        "names": {
+            "cn": "",
+            "en": "Goblet of Anger",
+            "ru": "Кубок гнева",
+            "es": "Cáliz de inquina",
+            "br": "Cálice de Raiva",
+            "kr": "",
+            "fr": "Coupe de colère",
+            "de": "Kelch der Wut"
+        },
+        "icon": "inv_offhand_1h_firelandsraid_d_02",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 16132,
+            "stamina": 7889,
+            "haste": 3800,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 3200
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Offhand"
+    },
+    {
+        "id": 171690,
+        "name": "Coalwalker Sandals",
+        "names": {
+            "cn": "",
+            "en": "Coalwalker Sandals",
+            "ru": "Сандалии углехода",
+            "es": "Sandalias pisacarbón",
+            "br": "Sandálias da Trilha de Carvão",
+            "kr": "",
+            "fr": "Sandales du foule-braises",
+            "de": "Kohlengängersandalen"
+        },
+        "icon": "inv_boots_robe_raidwarlock_j_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3350,
+            "crit": 3650,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Feet"
+    },
+    {
+        "id": 171691,
+        "name": "Crystal Prison Band",
+        "names": {
+            "cn": "",
+            "en": "Crystal Prison Band",
+            "ru": "Перстень кристаллической тюрьмы",
+            "es": "Anillo Prisión de cristal",
+            "br": "Anel da Prisão de Cristal",
+            "kr": "",
+            "fr": "Bague de la prison de cristal",
+            "de": "Band des Kristallgefängnisses"
+        },
+        "icon": "inv_jewelry_ring_firelandsraid_03c",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 8000,
+            "mastery": 9500,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Finger"
+    },
+    {
+        "id": 171692,
+        "name": "Flickering Shoulderpads",
+        "names": {
+            "cn": "",
+            "en": "Flickering Shoulderpads",
+            "ru": "Мерцающие наплечные пластины",
+            "es": "Guardahombros chisporroteantes",
+            "br": "Ombreiras Tremeluzentes",
+            "kr": "",
+            "fr": "Protège-épaules aux flammes vacillantes",
+            "de": "Flackernde Schulterpolster"
+        },
+        "icon": "inv_shoulder_leather_raiddruid_j_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 171693,
+        "name": "Bracers of the Dread Hunter",
+        "names": {
+            "cn": "",
+            "en": "Bracers of the Dread Hunter",
+            "ru": "Наручи зловещего охотника",
+            "es": "Brazales del cazador aterrador",
+            "br": "Braçadeiras do Caçador Medonho",
+            "kr": "",
+            "fr": "Brassards du chasseur redouté",
+            "de": "Armschienen des Schreckenjägers"
+        },
+        "icon": "inv_bracer_plate_raidpaladin_j_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 3650,
+            "versatility": 3350
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Wrist"
+    },
+    {
+        "id": 171694,
+        "name": "Treads of Implicit Obedience",
+        "names": {
+            "cn": "",
+            "en": "Treads of Implicit Obedience",
+            "ru": "Ботфорты беспрекословного послушания",
+            "es": "Botines de obediencia implícita",
+            "br": "Botinas da Obediência Implícita",
+            "kr": "",
+            "fr": "Bottines de l’obéissance implicite",
+            "de": "Treter des bedingungslosen Gehorsams"
+        },
+        "icon": "inv_boots_mail_raidshaman_j_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3650,
+            "mastery": 0,
+            "versatility": 3350
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Feet"
+    },
+    {
+        "id": 171695,
+        "name": "Legplates of Absolute Control",
+        "names": {
+            "cn": "",
+            "en": "Legplates of Absolute Control",
+            "ru": "Ножные латы абсолютного контроля",
+            "es": "Quijotes de control absoluto",
+            "br": "Coxotes do Controle Absoluto",
+            "kr": "",
+            "fr": "Cuissards du contrôle absolu",
+            "de": "Beinplatten der absoluten Kontrolle"
+        },
+        "icon": "inv_pants_plate_raidpaladin_j_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3050,
+            "mastery": 0,
+            "versatility": 3950
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 171696,
+        "name": "Arachnaflame Treads",
+        "names": {
+            "cn": "",
+            "en": "Arachnaflame Treads",
+            "ru": "Ботфорты арахнопламени",
+            "es": "Botines Flamaraña",
+            "br": "Botinas Aracnochama",
+            "kr": "",
+            "fr": "Bottines d’araignée embrasée",
+            "de": "Arachnaflammentreter"
+        },
+        "icon": "inv_boot_plate_raiddeathknight_j_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3500,
+            "crit": 3500,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Feet"
+    },
+    {
+        "id": 171697,
+        "name": "Flickering Shoulders",
+        "names": {
+            "cn": "",
+            "en": "Flickering Shoulders",
+            "ru": "Мерцающие наплечники",
+            "es": "Sobrehombros chisporroteantes",
+            "br": "Omoplatas Tremeluzentes",
+            "kr": "",
+            "fr": "Epaulières vacillantes",
+            "de": "Flackernde Schultern"
+        },
+        "icon": "inv_shoulder_mail_raidhunter_j_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 171698,
+        "name": "Cinderweb Leggings",
+        "names": {
+            "cn": "",
+            "en": "Cinderweb Leggings",
+            "ru": "Поножи из пеплопряжи",
+            "es": "Leotardos Telaceniza",
+            "br": "Perneiras Teia de Cinzas",
+            "kr": "",
+            "fr": "Jambières braisetoile",
+            "de": "Aschenwebergamaschen"
+        },
+        "icon": "inv_pants_leather_raidrogue_j_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3350,
+            "crit": 0,
+            "mastery": 3650,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 171699,
+        "name": "Widow's Kiss",
+        "names": {
+            "cn": "",
+            "en": "Widow's Kiss",
+            "ru": "Поцелуй Вдовы",
+            "es": "Beso de viuda",
+            "br": "Beijo da Viúva",
+            "kr": "",
+            "fr": "Le baiser de la veuve",
+            "de": "Witwenkuss"
+        },
+        "icon": "inv_jewelry_ring_91",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "haste": 10000,
+            "crit": 0,
+            "mastery": 7500,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Finger"
+    },
+    {
+        "id": 171700,
+        "name": "Ward of the Red Widow",
+        "names": {
+            "cn": "",
+            "en": "Ward of the Red Widow",
+            "ru": "Страж Красной Вдовы",
+            "es": "Resguardo de la Viuda Roja",
+            "br": "Proteção da Viúva Vermelha",
+            "kr": "",
+            "fr": "Bouclier de la veuve rouge",
+            "de": "Zauberschutz der Roten Witwe"
+        },
+        "icon": "inv_shield_49",
+        "itemClass": 4,
+        "itemSubClass": 6,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 16132,
+            "stamina": 7889,
+            "haste": 3350,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 3650
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shield"
+    },
+    {
+        "id": 171701,
+        "name": "Funeral Pyre",
+        "names": {
+            "cn": "",
+            "en": "Funeral Pyre",
+            "ru": "Погребальный костер",
+            "es": "Pira funeraria",
+            "br": "Pira Funeral",
+            "kr": "",
+            "fr": "Bûcher funéraire",
+            "de": "Scheiterhaufen"
+        },
+        "icon": "inv_stave_2h_firelandsraid_d_01",
+        "itemClass": 2,
+        "itemSubClass": 10,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 23380,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3800,
+            "mastery": 3200,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "2H Weapon"
+    },
+    {
+        "id": 171702,
+        "name": "Cowl of the Clicking Menace",
+        "names": {
+            "cn": "",
+            "en": "Cowl of the Clicking Menace",
+            "ru": "Клобук явной угрозы",
+            "es": "Capucha de la amenaza apremiante",
+            "br": "Cocar da Ameaça Clicante",
+            "kr": "",
+            "fr": "Capuche de la menace cliquetante",
+            "de": "Gugel der klackernden Bedrohung"
+        },
+        "icon": "inv_helmet_leather_raiddruid_j_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3350,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 3650
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 171703,
+        "name": "Robes of Smoldering Devastation",
+        "names": {
+            "cn": "",
+            "en": "Robes of Smoldering Devastation",
+            "ru": "Одеяния тлеющего опустошения",
+            "es": "Togas de devastación humeante",
+            "br": "Vestes da Devastação Fumegante",
+            "kr": "",
+            "fr": "Robe de dévastation fumante",
+            "de": "Roben der schwelenden Verwüstung"
+        },
+        "icon": "inv_chest_robe_raidwarlock_j_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3350,
+            "crit": 0,
+            "mastery": 3650,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 171704,
+        "name": "Thoracic Flame Kilt",
+        "names": {
+            "cn": "",
+            "en": "Thoracic Flame Kilt",
+            "ru": "Килт торакального пламени",
+            "es": "Falda de llama torácica",
+            "br": "Kilt da Chama Torácica",
+            "kr": "",
+            "fr": "Kilt de la flamme thoracique",
+            "de": "Thoraxflammenkilt"
+        },
+        "icon": "inv_pants_mail_raidshaman_j_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3650,
+            "mastery": 0,
+            "versatility": 3350
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 171705,
+        "name": "Spaulders of Manifold Eyes",
+        "names": {
+            "cn": "",
+            "en": "Spaulders of Manifold Eyes",
+            "ru": "Наплеч множества глаз",
+            "es": "Bufas de los ojos múltiples",
+            "br": "Espaldares dos Olhos Variados",
+            "kr": "",
+            "fr": "Spallières des yeux multiples",
+            "de": "Schiftung der unzähligen Augen"
+        },
+        "icon": "inv_shoulder_plate_raidpaladin_j_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 3200,
+            "versatility": 3800
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 171706,
+        "name": "Cindersilk Gloves",
+        "names": {
+            "cn": "",
+            "en": "Cindersilk Gloves",
+            "ru": "Перчатки из пеплошелка",
+            "es": "Guantes de seda ceniza",
+            "br": "Luvas de Sedacinza",
+            "kr": "",
+            "fr": "Gants de cendre-soie",
+            "de": "Aschenseidenhandschuhe"
+        },
+        "icon": "inv_gauntlets_leather_raiddruid_j_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3350,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 3650
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
+        "id": 171708,
+        "name": "Sandals of Leaping Coals",
+        "names": {
+            "cn": "",
+            "en": "Sandals of Leaping Coals",
+            "ru": "Сандалии прыгающих углей",
+            "es": "Sandalias de carbón inquieto",
+            "br": "Sandálias dos Carvões Saltitantes",
+            "kr": "",
+            "fr": "Sandales de charbons sauteurs",
+            "de": "Sandalen des Kohlenspringens"
+        },
+        "icon": "inv_boot_leather_raidrogue_j_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 2750,
+            "mastery": 4250,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Feet"
+    },
+    {
+        "id": 171709,
+        "name": "Breastplate of the Incendiary Soul",
+        "names": {
+            "cn": "",
+            "en": "Breastplate of the Incendiary Soul",
+            "ru": "Кираса опаляющей души",
+            "es": "Coraza del alma incendiaria",
+            "br": "Peitoral da Alma Incendiária",
+            "kr": "",
+            "fr": "Cuirasse de l’âme incendiaire",
+            "de": "Brustplatte der brennenden Seele"
+        },
+        "icon": "inv_chest_leather_raidrogue_j_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3350,
+            "crit": 0,
+            "mastery": 3650,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 171710,
+        "name": "Decimation Treads",
+        "names": {
+            "cn": "",
+            "en": "Decimation Treads",
+            "ru": "Ботфорты травли",
+            "es": "Botines exterminadores",
+            "br": "Botinas da Dizimação",
+            "kr": "",
+            "fr": "Bottines de décimation",
+            "de": "Dezimationstreter"
+        },
+        "icon": "inv_boots_mail_raidhunter_j_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3200,
+            "crit": 3800,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Feet"
+    },
+    {
+        "id": 171711,
+        "name": "Molten Scream",
+        "names": {
+            "cn": "",
+            "en": "Molten Scream",
+            "ru": "Раскаленный крик",
+            "es": "Grito de magma",
+            "br": "Grito Derretido",
+            "kr": "",
+            "fr": "Cri de la fournaise",
+            "de": "Geschmolzener Schrei"
+        },
+        "icon": "inv_offhand_1h_firelandsraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 16132,
+            "stamina": 7889,
+            "haste": 3350,
+            "crit": 3650,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Offhand"
+    },
+    {
+        "id": 171712,
+        "name": "Gatekeeper's Embrace",
+        "names": {
+            "cn": "",
+            "en": "Gatekeeper's Embrace",
+            "ru": "Облачение привратника",
+            "es": "El abrazo del Guardián de la Puerta",
+            "br": "Abraço do Guardião dos Portões",
+            "kr": "",
+            "fr": "Étreinte du gardien de la porte",
+            "de": "Umarmung des Torwächters"
+        },
+        "icon": "inv_chest_mail_raidshaman_j_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 3350,
+            "versatility": 3650
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 171713,
+        "name": "Glowing Wing Bracers",
+        "names": {
+            "cn": "",
+            "en": "Glowing Wing Bracers",
+            "ru": "Светящиеся крылатые наручи",
+            "es": "Brazales de alas resplandecientes",
+            "br": "Braçadeiras de Asas Brilhantes",
+            "kr": "",
+            "fr": "Brassards de l’aile luminescente",
+            "de": "Armschienen der glühenden Schwingen"
+        },
+        "icon": "inv_bracer_leather_raiddruid_j_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3350,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 3650
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Wrist"
+    },
+    {
+        "id": 171714,
+        "name": "Casque of Flame",
+        "names": {
+            "cn": "",
+            "en": "Casque of Flame",
+            "ru": "Каска пламени",
+            "es": "Borgoñota de llama",
+            "br": "Capacete da Chama",
+            "kr": "",
+            "fr": "Cabasset de flammes",
+            "de": "Flammenhelm"
+        },
+        "icon": "inv_helmet_plate_raidpaladin_j_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 3200,
+            "versatility": 3800
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 171715,
+        "name": "Mantle of Closed Doors",
+        "names": {
+            "cn": "",
+            "en": "Mantle of Closed Doors",
+            "ru": "Мантия закрытых дверей",
+            "es": "Manto de puertas cerradas",
+            "br": "Dragonas das Portas Fechadas",
+            "kr": "",
+            "fr": "Mantelet des portes fermées",
+            "de": "Mantelung der geschlossenen Türen"
+        },
+        "icon": "inv_shoulder_robe_raidmage_j_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3650,
+            "mastery": 3350,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 171716,
+        "name": "Breastplate of Shifting Visions",
+        "names": {
+            "cn": "",
+            "en": "Breastplate of Shifting Visions",
+            "ru": "Кираса изменчивых видений",
+            "es": "Coraza de visiones cambiantes",
+            "br": "Peitoral das Visões Oscilantes",
+            "kr": "",
+            "fr": "Cuirasse de visions mouvantes",
+            "de": "Brustplatte der veränderlichen Visionen"
+        },
+        "icon": "inv_chest_plate_raiddeathknight_j_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3350,
+            "crit": 0,
+            "mastery": 3650,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 171717,
+        "name": "Shoulderpads of the Forgotten Gate",
+        "names": {
+            "cn": "",
+            "en": "Shoulderpads of the Forgotten Gate",
+            "ru": "Наплечные пластины заброшенных ворот",
+            "es": "Hombreras de la puerta olvidada",
+            "br": "Ombreiras do Portão Esquecido",
+            "kr": "",
+            "fr": "Protège-épaules de la porte oubliée",
+            "de": "Schulterpolster des vergessenen Tors"
+        },
+        "icon": "inv_shoulders_leather_raidrogue_j_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 4250,
+            "crit": 2750,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 171718,
+        "name": "Grips of Unerring Precision",
+        "names": {
+            "cn": "",
+            "en": "Grips of Unerring Precision",
+            "ru": "Захваты образцовой точности",
+            "es": "Mandiletes de precisión infalible",
+            "br": "Guantes da Precisão Infalível",
+            "kr": "",
+            "fr": "Poignes de précision infaillible",
+            "de": "Handschutz der unfehlbaren Präzision"
+        },
+        "icon": "inv_glove_mail_raidhunter_j_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3800,
+            "crit": 0,
+            "mastery": 3200,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
+        "id": 171719,
+        "name": "Stinger of the Flaming Scorpion",
+        "names": {
+            "cn": "",
+            "en": "Stinger of the Flaming Scorpion",
+            "ru": "Жало пылающего скорпиона",
+            "es": "Aguijón del escorpión llameante",
+            "br": "Aguilhoador do Escorpião Flamejante",
+            "kr": "",
+            "fr": "Aiguillon du scorpion enflammé",
+            "de": "Stachel des flammenden Skorpions"
+        },
+        "icon": "inv_wand_1h_firelandsraid_d_01",
+        "itemClass": 2,
+        "itemSubClass": 19,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 30629,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3800,
+            "mastery": 3200,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "1H Weapon"
+    },
+    {
+        "id": 171720,
+        "name": "Flowform Choker",
+        "names": {
+            "cn": "",
+            "en": "Flowform Choker",
+            "ru": "Пластичное колье",
+            "es": "Gargantilla de forma fluída",
+            "br": "Gargantilha da Forma Fluida",
+            "kr": "",
+            "fr": "Sautoir de fluideforme",
+            "de": "Fließformhalsreif"
+        },
+        "icon": "inv_misc_necklace_firelands_1",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "haste": 9250,
+            "crit": 0,
+            "mastery": 8250,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Neck"
+    },
+    {
+        "id": 171721,
+        "name": "Firecat Leggings",
+        "names": {
+            "cn": "",
+            "en": "Firecat Leggings",
+            "ru": "Поножи огненной кошки",
+            "es": "Leotardos de felino de fuego",
+            "br": "Perneiras do Gato de Fogo",
+            "kr": "",
+            "fr": "Jambières de félin des flammes",
+            "de": "Feuerkatzengamaschen"
+        },
+        "icon": "inv_pants_leather_raiddruid_j_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3650,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 3350
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 171722,
+        "name": "Wristwraps of Arrogant Doom",
+        "names": {
+            "cn": "",
+            "en": "Wristwraps of Arrogant Doom",
+            "ru": "Напульсники высокомерной смерти",
+            "es": "Cubremuñecas de condena arrogante",
+            "br": "Munhequeiras da Ruína Arrogante",
+            "kr": "",
+            "fr": "Bandelettes de condamnation arrogante",
+            "de": "Handgelenkwickel des arroganten Niedergangs"
+        },
+        "icon": "inv_bracer_robe_raidmage_j_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3800,
+            "crit": 3200,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Wrist"
+    },
+    {
+        "id": 171723,
+        "name": "Treads of the Penitent Man",
+        "names": {
+            "cn": "",
+            "en": "Treads of the Penitent Man",
+            "ru": "Ботфорты кающегося",
+            "es": "Botines del penitente",
+            "br": "Botinas do Homem Penitente",
+            "kr": "",
+            "fr": "Bottines du pénitent",
+            "de": "Treter des reumütigen Mannes"
+        },
+        "icon": "inv_boots_plate_raidpaladin_j_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3350,
+            "mastery": 0,
+            "versatility": 3650
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Feet"
+    },
+    {
+        "id": 171726,
+        "name": "Choker of the Vanquished Lord",
+        "names": {
+            "cn": "",
+            "en": "Choker of the Vanquished Lord",
+            "ru": "Колье поверженного вождя",
+            "es": "Gargantilla del señor vencido",
+            "br": "Gargantilha do Lorde Derrotado",
+            "kr": "",
+            "fr": "Sautoir de seigneur vaincu",
+            "de": "Halsreif des bezwungenen Fürsten"
+        },
+        "icon": "inv_neck_firelands_03",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "haste": 8750,
+            "crit": 0,
+            "mastery": 8750,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Neck"
+    },
+    {
+        "id": 171727,
+        "name": "Ko'gun, Hammer of the Firelord",
+        "names": {
+            "cn": "",
+            "en": "Ko'gun, Hammer of the Firelord",
+            "ru": "Ко'гун, молот повелителя огня",
+            "es": "Ko'gun, Martillo del Señor del Fuego",
+            "br": "Ko'gun, Martelo do Senhor do Fogo",
+            "kr": "",
+            "fr": "Ko’gun, marteau du seigneur du Feu",
+            "de": "Ko'gun, Hammer des Feuerfürsten"
+        },
+        "icon": "inv_mace_1h_firelandsraid_d_04",
+        "itemClass": 2,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 30629,
+            "stamina": 7889,
+            "haste": 3050,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 3950
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "1H Weapon"
+    },
+    {
+        "id": 171728,
+        "name": "Crown of Flame",
+        "names": {
+            "cn": "",
+            "en": "Crown of Flame",
+            "ru": "Корона пламени",
+            "es": "Corona de llamas",
+            "br": "Coroa da Chama",
+            "kr": "",
+            "fr": "Couronne des flammes",
+            "de": "Flammenkrone"
+        },
+        "icon": "inv_helm_circlet_firelands_d_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3350,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 3650
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 171729,
+        "name": "Majordomo's Chain of Office",
+        "names": {
+            "cn": "",
+            "en": "Majordomo's Chain of Office",
+            "ru": "Оковы службы мажордома",
+            "es": "Cadena de oficio de mayordomo",
+            "br": "Corrente de Ofício do Senescal",
+            "kr": "",
+            "fr": "Chaîne de fonction du chambellan",
+            "de": "Amtskette des Majordomus"
+        },
+        "icon": "inv_belt_robe_raidpriest_j_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3800,
+            "crit": 0,
+            "mastery": 3200,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Waist"
+    },
+    {
+        "id": 171730,
+        "name": "Fingers of Incineration",
+        "names": {
+            "cn": "",
+            "en": "Fingers of Incineration",
+            "ru": "Испепеляющие перста",
+            "es": "Dedos de incineración",
+            "br": "Dedos da Incineração",
+            "kr": "",
+            "fr": "Doigts d’incinération",
+            "de": "Finger der Einäscherung"
+        },
+        "icon": "inv_gauntlets_robe_raidmage_j_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3350,
+            "crit": 3650,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
+        "id": 171731,
+        "name": "Sho'ravon, Greatstaff of Annihilation",
+        "names": {
+            "cn": "",
+            "en": "Sho'ravon, Greatstaff of Annihilation",
+            "ru": "Шо'равон, великий посох истребления",
+            "es": "Sho'ravon, gran báculo de aniquilación",
+            "br": "Sho'ravon, Grande Cajado da Aniquilação",
+            "kr": "",
+            "fr": "Sho’ravon, grand bâton d’annihilation",
+            "de": "Sho'ravon, Großstab der Vernichtung"
+        },
+        "icon": "inv_stave_2h_firelandsraid_d_03_stage2",
+        "itemClass": 2,
+        "itemSubClass": 10,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 23380,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3050,
+            "mastery": 3950,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "2H Weapon"
+    },
+    {
+        "id": 171732,
+        "name": "Sho'ravon, Greatstaff of Annihilation",
+        "names": {
+            "cn": "",
+            "en": "Sho'ravon, Greatstaff of Annihilation",
+            "ru": "Шо'равон, великий посох истребления",
+            "es": "Sho'ravon, gran báculo de aniquilación",
+            "br": "Sho'ravon, Grande Cajado da Aniquilação",
+            "kr": "",
+            "fr": "Sho’ravon, grand bâton d’annihilation",
+            "de": "Sho'ravon, Großstab der Vernichtung"
+        },
+        "icon": "inv_stave_2h_firelandsraid_d_03_stage2",
+        "itemClass": 2,
+        "itemSubClass": 10,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 23380,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3050,
+            "mastery": 3950,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "2H Weapon"
+    },
+    {
+        "id": 171733,
+        "name": "Elementium Deathplate Shoulderguards",
+        "names": {
+            "cn": "",
+            "en": "Elementium Deathplate Shoulderguards",
+            "ru": "Элементиевые латные наплечные щитки смерти",
+            "es": "Guardahombros de placamuerte de elementium",
+            "br": "Guarda-ombros de Necroplacas de Elemêntio",
+            "kr": "",
+            "fr": "Garde-épaules de plates mortelles en élémentium",
+            "de": "Elementiumtodesplattenschulterschutz"
+        },
+        "icon": "inv_shoulder_plate_raiddeathknight_j_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 2600,
+            "mastery": 4400,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 171734,
+        "name": "Elementium Deathplate Legguards",
+        "names": {
+            "cn": "",
+            "en": "Elementium Deathplate Legguards",
+            "ru": "Элементиевые латные набедренники смерти",
+            "es": "Musleras de placamuerte de elementium",
+            "br": "Guarda-pernas de Necroplacas de Elemêntio",
+            "kr": "",
+            "fr": "Garde-jambes de plates mortelles en élémentium",
+            "de": "Elementiumtodesplattenbeinschützer"
+        },
+        "icon": "inv_pant_plate_raiddeathknight_j_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 3350,
+            "versatility": 3650
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 171735,
+        "name": "Elementium Deathplate Handguards",
+        "names": {
+            "cn": "",
+            "en": "Elementium Deathplate Handguards",
+            "ru": "Элементиевые латные боевые рукавицы смерти",
+            "es": "Manoplas de placamuerte de elementium",
+            "br": "Protetores de Mão de Necroplacas de Elemêntio",
+            "kr": "",
+            "fr": "Garde-mains de plates mortelles en élémentium",
+            "de": "Elementiumtodesplattenhandschützer"
+        },
+        "icon": "inv_glove_plate_raiddeathknight_j_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3350,
+            "crit": 0,
+            "mastery": 3650,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
+        "id": 171736,
+        "name": "Elementium Deathplate Faceguard",
+        "names": {
+            "cn": "",
+            "en": "Elementium Deathplate Faceguard",
+            "ru": "Элементиевый большой латный шлем смерти",
+            "es": "Visera de placamuerte de elementium",
+            "br": "Viseira de Necroplacas de Elemêntio",
+            "kr": "",
+            "fr": "Ventaille de plates mortelles en élémentium",
+            "de": "Elementiumtodesplattengesichtsschutz"
+        },
+        "icon": "inv_helmet_plate_raiddeathknight_j_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 2300,
+            "mastery": 4700,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 171737,
+        "name": "Elementium Deathplate Chestguard",
+        "names": {
+            "cn": "",
+            "en": "Elementium Deathplate Chestguard",
+            "ru": "Элементиевый латный нагрудный доспех смерти",
+            "es": "Coselete de placamuerte de elementium",
+            "br": "Couraça de Necroplacas de Elemêntio",
+            "kr": "",
+            "fr": "Corselet de plates mortelles en élémentium",
+            "de": "Elementiumtodesplattenbrustschutz"
+        },
+        "icon": "inv_chest_plate_raiddeathknight_j_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3650,
+            "mastery": 0,
+            "versatility": 3350
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 171738,
+        "name": "Elementium Deathplate Breastplate",
+        "names": {
+            "cn": "",
+            "en": "Elementium Deathplate Breastplate",
+            "ru": "Элементиевая латная кираса смерти",
+            "es": "Placa de batalla de placamuerte de elementium",
+            "br": "Peitoral de Necroplacas de Elemêntio",
+            "kr": "",
+            "fr": "Cuirasse de plates mortelles en élémentium",
+            "de": "Elementiumtodesplattenbrustplatte"
+        },
+        "icon": "inv_chest_plate_raiddeathknight_j_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3650,
+            "mastery": 3350,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 171739,
+        "name": "Elementium Deathplate Gauntlets",
+        "names": {
+            "cn": "",
+            "en": "Elementium Deathplate Gauntlets",
+            "ru": "Элементиевые латные рукавицы смерти",
+            "es": "Guanteletes de placamuerte de elementium",
+            "br": "Manoplas de Necroplacas de Elemêntio",
+            "kr": "",
+            "fr": "Gantelets de plates mortelles en élémentium",
+            "de": "Elementiumtodesplattenstulpen"
+        },
+        "icon": "inv_glove_plate_raiddeathknight_j_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3650,
+            "mastery": 3350,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
+        "id": 171740,
+        "name": "Elementium Deathplate Helmet",
+        "names": {
+            "cn": "",
+            "en": "Elementium Deathplate Helmet",
+            "ru": "Элементиевый латный полный шлем смерти",
+            "es": "Yelmo de placamuerte de elementium",
+            "br": "Capacete de Necroplacas de Elemêntio",
+            "kr": "",
+            "fr": "Casque de plates mortelles en élémentium",
+            "de": "Elementiumtodesplattenhelm"
+        },
+        "icon": "inv_helmet_plate_raiddeathknight_j_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3650,
+            "crit": 3350,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 171741,
+        "name": "Elementium Deathplate Greaves",
+        "names": {
+            "cn": "",
+            "en": "Elementium Deathplate Greaves",
+            "ru": "Элементиевые латные наголенники смерти",
+            "es": "Quijotes de placamuerte de elementium",
+            "br": "Grevas de Necroplacas de Elemêntio",
+            "kr": "",
+            "fr": "Grèves de plates mortelles en élémentium",
+            "de": "Elementiumtodesplattenschienbeinschützer"
+        },
+        "icon": "inv_pant_plate_raiddeathknight_j_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3200,
+            "crit": 3800,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 171742,
+        "name": "Elementium Deathplate Pauldrons",
+        "names": {
+            "cn": "",
+            "en": "Elementium Deathplate Pauldrons",
+            "ru": "Элементиевое латное наплечье смерти",
+            "es": "Espaldares de placamuerte de elementium",
+            "br": "Brafoneiras de Necroplacas de Elemêntio",
+            "kr": "",
+            "fr": "Espauliers de plates mortelles en élémentium",
+            "de": "Elementiumtodesplattenschulterstücke"
+        },
+        "icon": "inv_shoulder_plate_raiddeathknight_j_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3650,
+            "crit": 0,
+            "mastery": 3350,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 171743,
+        "name": "Obsidian Arborweave Grips",
+        "names": {
+            "cn": "",
+            "en": "Obsidian Arborweave Grips",
+            "ru": "Обсидиановые древотканые захваты",
+            "es": "Mandiletes de enramada obsidiana",
+            "br": "Guantes de Tramarbórea Obsidiana",
+            "kr": "",
+            "fr": "Poignes tisse-feuillage en obsidienne",
+            "de": "Obsidianholzgewebehandschutz"
+        },
+        "icon": "inv_gauntlets_leather_raiddruid_j_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3650,
+            "crit": 3350,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
+        "id": 171744,
+        "name": "Obsidian Arborweave Headpiece",
+        "names": {
+            "cn": "",
+            "en": "Obsidian Arborweave Headpiece",
+            "ru": "Обсидиановый древотканый головной убор",
+            "es": "Celada de enramada obsidiana",
+            "br": "Bacinete de Tramarbórea Obsidiana",
+            "kr": "",
+            "fr": "Chapel tisse-feuillage en obsidienne",
+            "de": "Obsidianholzgewebekopfstück"
+        },
+        "icon": "inv_helmet_leather_raiddruid_j_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3650,
+            "crit": 3350,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 171745,
+        "name": "Obsidian Arborweave Legguards",
+        "names": {
+            "cn": "",
+            "en": "Obsidian Arborweave Legguards",
+            "ru": "Обсидиановые древотканые набедренники",
+            "es": "Musleras de enramada obsidiana",
+            "br": "Guarda-pernas de Tramarbórea Obsidiana",
+            "kr": "",
+            "fr": "Garde-jambes tisse-feuillage en obsidienne",
+            "de": "Obsidianholzgewebebeinschützer"
+        },
+        "icon": "inv_pants_leather_raiddruid_j_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 2750,
+            "mastery": 4250,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 171746,
+        "name": "Obsidian Arborweave Raiment",
+        "names": {
+            "cn": "",
+            "en": "Obsidian Arborweave Raiment",
+            "ru": "Обсидиановое древотканое облачение",
+            "es": "Vestiduras de enramada obsidiana",
+            "br": "Traje de Tramarbórea Obsidiana",
+            "kr": "",
+            "fr": "Grande tenue tisse-feuillage en obsidienne",
+            "de": "Obsidianholzgewebegewandung"
+        },
+        "icon": "inv_chest_leather_raiddruid_j_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3350,
+            "crit": 3650,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 171747,
+        "name": "Obsidian Arborweave Spaulders",
+        "names": {
+            "cn": "",
+            "en": "Obsidian Arborweave Spaulders",
+            "ru": "Обсидиановый древотканый наплеч",
+            "es": "Bufas de enramada obsidiana",
+            "br": "Espaldares de Tramarbórea Obsidiana",
+            "kr": "",
+            "fr": "Spallières tisse-feuillage en obsidienne",
+            "de": "Obsidianholzgewebeschiftung"
+        },
+        "icon": "inv_shoulder_leather_raiddruid_j_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3200,
+            "mastery": 3800,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 171748,
+        "name": "Obsidian Arborweave Handwraps",
+        "names": {
+            "cn": "",
+            "en": "Obsidian Arborweave Handwraps",
+            "ru": "Обсидиановые древотканые повязки",
+            "es": "Manijas de enramada obsidiana",
+            "br": "Mitenes de Tramarbórea Obsidiana",
+            "kr": "",
+            "fr": "Protège-mains tisse-feuillage en obsidienne",
+            "de": "Obsidianholzgewebehandlappen"
+        },
+        "icon": "inv_gauntlets_leather_raiddruid_j_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3350,
+            "mastery": 3650,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
+        "id": 171749,
+        "name": "Obsidian Arborweave Helm",
+        "names": {
+            "cn": "",
+            "en": "Obsidian Arborweave Helm",
+            "ru": "Обсидиановый древотканый шлем",
+            "es": "Yelmo de enramada obsidiana",
+            "br": "Elmo de Tramarbórea Obsidiana",
+            "kr": "",
+            "fr": "Heaume tisse-feuillage en obsidienne",
+            "de": "Obsidianholzgewebehelm"
+        },
+        "icon": "inv_helmet_leather_raiddruid_j_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 3350,
+            "versatility": 3650
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 171750,
+        "name": "Obsidian Arborweave Legwraps",
+        "names": {
+            "cn": "",
+            "en": "Obsidian Arborweave Legwraps",
+            "ru": "Обсидиановые древотканые бриджи",
+            "es": "Ataduras de enramada obsidiana",
+            "br": "Culotes de Tramarbórea Obsidiana",
+            "kr": "",
+            "fr": "Jambards tisse-feuillage en obsidienne",
+            "de": "Obsidianholzgewebebeinwickel"
+        },
+        "icon": "inv_pants_leather_raiddruid_j_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 3350,
+            "versatility": 3650
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 171751,
+        "name": "Obsidian Arborweave Tunic",
+        "names": {
+            "cn": "",
+            "en": "Obsidian Arborweave Tunic",
+            "ru": "Обсидиановые древотканые одеяния",
+            "es": "Guerrera de enramada obsidiana",
+            "br": "Túnica de Tramarbórea Obsidiana",
+            "kr": "",
+            "fr": "Tunique tisse-feuillage en obsidienne",
+            "de": "Obsidianholzgewebetunika"
+        },
+        "icon": "inv_chest_leather_raiddruid_j_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3200,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 3800
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 171752,
+        "name": "Obsidian Arborweave Mantle",
+        "names": {
+            "cn": "",
+            "en": "Obsidian Arborweave Mantle",
+            "ru": "Обсидиановая древотканая мантия",
+            "es": "Manto de enramada obsidiana",
+            "br": "Dragonas de Tramarbórea Obsidiana",
+            "kr": "",
+            "fr": "Mantelet tisse-feuillage en obsidienne",
+            "de": "Obsidianholzgewebemantel"
+        },
+        "icon": "inv_shoulder_leather_raiddruid_j_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3500,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 3500
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 171753,
+        "name": "Obsidian Arborweave Gloves",
+        "names": {
+            "cn": "",
+            "en": "Obsidian Arborweave Gloves",
+            "ru": "Обсидиановые древотканые перчатки",
+            "es": "Guantes de enramada obsidiana",
+            "br": "Luvas de Tramarbórea Obsidiana",
+            "kr": "",
+            "fr": "Gants tisse-feuillage en obsidienne",
+            "de": "Obsidianholzgewebehandschuhe"
+        },
+        "icon": "inv_gauntlets_leather_raiddruid_j_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3650,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 3350
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
+        "id": 171754,
+        "name": "Obsidian Arborweave Cover",
+        "names": {
+            "cn": "",
+            "en": "Obsidian Arborweave Cover",
+            "ru": "Обсидиановый древотканый убор",
+            "es": "Casquete de enramada obsidiana",
+            "br": "Cimeira de Tramarbórea Obsidiana",
+            "kr": "",
+            "fr": "Couvre-chef tisse-feuillage en obsidienne",
+            "de": "Obsidianholzgewebebedeckung"
+        },
+        "icon": "inv_helmet_leather_raiddruid_j_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3350,
+            "crit": 0,
+            "mastery": 3650,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 171755,
+        "name": "Obsidian Arborweave Leggings",
+        "names": {
+            "cn": "",
+            "en": "Obsidian Arborweave Leggings",
+            "ru": "Обсидиановые древотканые поножи",
+            "es": "Leotardos de enramada obsidiana",
+            "br": "Perneiras de Tramarbórea Obsidiana",
+            "kr": "",
+            "fr": "Jambières tisse-feuillage en obsidienne",
+            "de": "Obsidianholzgewebegamaschen"
+        },
+        "icon": "inv_pants_leather_raiddruid_j_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3500,
+            "mastery": 0,
+            "versatility": 3500
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 171756,
+        "name": "Obsidian Arborweave Vestment",
+        "names": {
+            "cn": "",
+            "en": "Obsidian Arborweave Vestment",
+            "ru": "Обсидиановое древотканое одеяние",
+            "es": "Vestimentas de enramada obsidiana",
+            "br": "Vestimenta de Tramarbórea Obsidiana",
+            "kr": "",
+            "fr": "Habit tisse-feuillage en obsidienne",
+            "de": "Obsidianholzgewebetracht"
+        },
+        "icon": "inv_chest_leather_raiddruid_j_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3350,
+            "crit": 0,
+            "mastery": 3650,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 171757,
+        "name": "Obsidian Arborweave Shoulderwraps",
+        "names": {
+            "cn": "",
+            "en": "Obsidian Arborweave Shoulderwraps",
+            "ru": "Обсидиановый древотканый наплечный покров",
+            "es": "Jinetas de enramada obsidiana",
+            "br": "Escápulas de Tramarbórea Obsidiana",
+            "kr": "",
+            "fr": "Drape-épaules tisse-feuillage en obsidienne",
+            "de": "Obsidianholzgewebeschulterwickel"
+        },
+        "icon": "inv_shoulder_leather_raiddruid_j_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3800,
+            "mastery": 3200,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 171758,
+        "name": "Shoulderguards of the Molten Giant",
+        "names": {
+            "cn": "",
+            "en": "Shoulderguards of the Molten Giant",
+            "ru": "Наплечные щитки огненного великана",
+            "es": "Guardahombros del gigante fundido",
+            "br": "Guarda-ombros do Gigante Derretido",
+            "kr": "",
+            "fr": "Garde-épaules du géant de lave",
+            "de": "Schulterschützer des geschmolzenen Riesen"
+        },
+        "icon": "inv_shoulder_plate_raidwarrior_j_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 2600,
+            "mastery": 4400,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 171759,
+        "name": "Legguards of the Molten Giant",
+        "names": {
+            "cn": "",
+            "en": "Legguards of the Molten Giant",
+            "ru": "Набедренники огненного великана",
+            "es": "Musleras del gigante fundido",
+            "br": "Guarda-pernas do Gigante Derretido",
+            "kr": "",
+            "fr": "Garde-jambes du géant de lave",
+            "de": "Beinschützer des geschmolzenen Riesen"
+        },
+        "icon": "inv_glove_pants_raidwarrior_j_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3650,
+            "crit": 0,
+            "mastery": 3350,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 171760,
+        "name": "Handguards of the Molten Giant",
+        "names": {
+            "cn": "",
+            "en": "Handguards of the Molten Giant",
+            "ru": "Боевые рукавицы огненного великана",
+            "es": "Manoplas del gigante fundido",
+            "br": "Protetores de Mão do Gigante Derretido",
+            "kr": "",
+            "fr": "Garde-mains du géant de lave",
+            "de": "Handschützer des geschmolzenen Riesen"
+        },
+        "icon": "inv_glove_plate_raidwarrior_j_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3350,
+            "crit": 0,
+            "mastery": 3650,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
+        "id": 171761,
+        "name": "Faceguard of the Molten Giant",
+        "names": {
+            "cn": "",
+            "en": "Faceguard of the Molten Giant",
+            "ru": "Большой шлем огненного великана",
+            "es": "Visera del gigante fundido",
+            "br": "Viseira do Gigante Derretido",
+            "kr": "",
+            "fr": "Ventaille du géant de lave",
+            "de": "Gesichtsschutz des geschmolzenen Riesen"
+        },
+        "icon": "inv_helm_plate_raidwarrior_j_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 4700,
+            "crit": 2300,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 171762,
+        "name": "Chestguard of the Molten Giant",
+        "names": {
+            "cn": "",
+            "en": "Chestguard of the Molten Giant",
+            "ru": "Нагрудный доспех огненного великана",
+            "es": "Coselete del gigante fundido",
+            "br": "Couraça do Gigante Derretido",
+            "kr": "",
+            "fr": "Corselet du géant de lave",
+            "de": "Brustschutz des geschmolzenen Riesen"
+        },
+        "icon": "inv_chest_plate_raidwarrior_j_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 3350,
+            "versatility": 3650
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 171763,
+        "name": "Immolation Shoulderguards",
+        "names": {
+            "cn": "",
+            "en": "Immolation Shoulderguards",
+            "ru": "Обжигающие наплечные щитки",
+            "es": "Guardahombros de inmolación",
+            "br": "Guarda-ombros da Imolação",
+            "kr": "",
+            "fr": "Garde-épaules de l’immolation",
+            "de": "Feuerbrandschulterschützer"
+        },
+        "icon": "inv_shoulder_plate_raidpaladin_j_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 2600,
+            "mastery": 4400,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 171764,
+        "name": "Immolation Legguards",
+        "names": {
+            "cn": "",
+            "en": "Immolation Legguards",
+            "ru": "Обжигающие набедренники",
+            "es": "Musleras de inmolación",
+            "br": "Guarda-pernas da Imolação",
+            "kr": "",
+            "fr": "Garde-jambes de l’immolation",
+            "de": "Feuerbrandbeinschützer"
+        },
+        "icon": "inv_pants_plate_raidpaladin_j_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3650,
+            "crit": 0,
+            "mastery": 3350,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 171765,
+        "name": "Immolation Faceguard",
+        "names": {
+            "cn": "",
+            "en": "Immolation Faceguard",
+            "ru": "Обжигающий большой шлем",
+            "es": "Visera de inmolación",
+            "br": "Viseira da Imolação",
+            "kr": "",
+            "fr": "Ventaille de l’immolation",
+            "de": "Feuerbrandgesichtsschutz"
+        },
+        "icon": "inv_helmet_plate_raidpaladin_j_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 2300,
+            "mastery": 0,
+            "versatility": 4700
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 171766,
+        "name": "Immolation Handguards",
+        "names": {
+            "cn": "",
+            "en": "Immolation Handguards",
+            "ru": "Обжигающие боевые рукавицы",
+            "es": "Manoplas de inmolación",
+            "br": "Protetores de Mão da Imolação",
+            "kr": "",
+            "fr": "Garde-mains de l’immolation",
+            "de": "Feuerbrandhandschützer"
+        },
+        "icon": "inv_gauntlets_plate_raidpaladin_j_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 3650,
+            "versatility": 3350
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
+        "id": 171767,
+        "name": "Immolation Chestguard",
+        "names": {
+            "cn": "",
+            "en": "Immolation Chestguard",
+            "ru": "Обжигающий нагрудный доспех",
+            "es": "Coselete de inmolación",
+            "br": "Couraça da Imolação",
+            "kr": "",
+            "fr": "Corselet de l’immolation",
+            "de": "Feuerbrandbrustschutz"
+        },
+        "icon": "inv_chest_plate_raidpaladin_j_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3650,
+            "mastery": 3350,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 171768,
+        "name": "Dark Phoenix Tunic",
+        "names": {
+            "cn": "",
+            "en": "Dark Phoenix Tunic",
+            "ru": "Мундир темного феникса",
+            "es": "Guerrera de fénix oscuro",
+            "br": "Túnica da Fênix Negra",
+            "kr": "",
+            "fr": "Tunique du phénix sombre",
+            "de": "Tunika des dunklen Phönix"
+        },
+        "icon": "inv_chest_leather_raidrogue_j_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3800,
+            "crit": 3200,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 171769,
+        "name": "Dark Phoenix Gloves",
+        "names": {
+            "cn": "",
+            "en": "Dark Phoenix Gloves",
+            "ru": "Перчатки темного феникса",
+            "es": "Guantes de fénix oscuro",
+            "br": "Luvas da Fênix Negra",
+            "kr": "",
+            "fr": "Gants du phénix sombre",
+            "de": "Handschuhe des dunklen Phönix"
+        },
+        "icon": "inv_gauntlet_leather_raidrogue_j_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 4250,
+            "crit": 2750,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
+        "id": 171770,
+        "name": "Dark Phoenix Helmet",
+        "names": {
+            "cn": "",
+            "en": "Dark Phoenix Helmet",
+            "ru": "Шлем темного феникса",
+            "es": "Yelmo de fénix oscuro",
+            "br": "Capacete da Fênix Negra",
+            "kr": "",
+            "fr": "Casque du phénix sombre",
+            "de": "Helm des dunklen Phönix"
+        },
+        "icon": "inv_helmet_leather_raidrogue_j_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3650,
+            "crit": 3350,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 171771,
+        "name": "Dark Phoenix Legguards",
+        "names": {
+            "cn": "",
+            "en": "Dark Phoenix Legguards",
+            "ru": "Набедренники темного феникса",
+            "es": "Musleras de fénix oscuro",
+            "br": "Guarda-pernas da Fênix Negra",
+            "kr": "",
+            "fr": "Garde-jambes du phénix sombre",
+            "de": "Beinschützer des dunklen Phönix"
+        },
+        "icon": "inv_pants_leather_raidrogue_j_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3650,
+            "crit": 3350,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 171772,
+        "name": "Dark Phoenix Spaulders",
+        "names": {
+            "cn": "",
+            "en": "Dark Phoenix Spaulders",
+            "ru": "Наплеч темного феникса",
+            "es": "Bufas de fénix oscuro",
+            "br": "Espaldares da Fênix Negra",
+            "kr": "",
+            "fr": "Spallières du phénix sombre",
+            "de": "Schiftung des dunklen Phönix"
+        },
+        "icon": "inv_shoulders_leather_raidrogue_j_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3650,
+            "crit": 0,
+            "mastery": 3350,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 171773,
+        "name": "Flamewaker's Gloves",
+        "names": {
+            "cn": "",
+            "en": "Flamewaker's Gloves",
+            "ru": "Перчатки поджигателя",
+            "es": "Guantes de despiertallamas",
+            "br": "Luvas do Ardilante",
+            "kr": "",
+            "fr": "Gants d’attise-flammes",
+            "de": "Handschuhe des Flammenschürers"
+        },
+        "icon": "inv_glove_mail_raidhunter_j_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3350,
+            "crit": 3650,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
+        "id": 171774,
+        "name": "Flamewaker's Headguard",
+        "names": {
+            "cn": "",
+            "en": "Flamewaker's Headguard",
+            "ru": "Наголовник поджигателя",
+            "es": "Protegecabezas de despiertallamas",
+            "br": "Cimeira do Ardilante",
+            "kr": "",
+            "fr": "Protège-front d’attise-flammes",
+            "de": "Kopfschutz des Flammenschürers"
+        },
+        "icon": "inv_helm_mail_raidhunter_j_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3350,
+            "crit": 3650,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 171775,
+        "name": "Flamewaker's Legguards",
+        "names": {
+            "cn": "",
+            "en": "Flamewaker's Legguards",
+            "ru": "Набедренники поджигателя",
+            "es": "Musleras de despiertallamas",
+            "br": "Guarda-pernas do Ardilante",
+            "kr": "",
+            "fr": "Garde-jambes d’attise-flammes",
+            "de": "Beinschützer des Flammenschürers"
+        },
+        "icon": "inv_pants_mail_raidhunter_j_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3200,
+            "crit": 3800,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 171776,
+        "name": "Flamewaker's Spaulders",
+        "names": {
+            "cn": "",
+            "en": "Flamewaker's Spaulders",
+            "ru": "Наплеч поджигателя",
+            "es": "Bufas de despiertallamas",
+            "br": "Espaldares do Ardilante",
+            "kr": "",
+            "fr": "Spallières d’attise-flammes",
+            "de": "Schiftung des Flammenschürers"
+        },
+        "icon": "inv_shoulder_mail_raidhunter_j_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3350,
+            "crit": 0,
+            "mastery": 3650,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 171777,
+        "name": "Flamewaker's Tunic",
+        "names": {
+            "cn": "",
+            "en": "Flamewaker's Tunic",
+            "ru": "Мундир поджигателя",
+            "es": "Túnica de despiertallamas",
+            "br": "Túnica do Ardilante",
+            "kr": "",
+            "fr": "Tunique d’attise-flammes",
+            "de": "Tunika des Flammenschürers"
+        },
+        "icon": "inv_chest_mail_raidhunter_j_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3650,
+            "mastery": 3350,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 171778,
+        "name": "Immolation Battleplate",
+        "names": {
+            "cn": "",
+            "en": "Immolation Battleplate",
+            "ru": "Обжигающий боевой доспех",
+            "es": "Placa de batalla de inmolación",
+            "br": "Loriga da Imolação",
+            "kr": "",
+            "fr": "Harnois de bataille de l’immolation",
+            "de": "Feuerbrandkampfplatte"
+        },
+        "icon": "inv_chest_plate_raidpaladin_j_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3500,
+            "crit": 3500,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 171779,
+        "name": "Immolation Gauntlets",
+        "names": {
+            "cn": "",
+            "en": "Immolation Gauntlets",
+            "ru": "Обжигающие рукавицы",
+            "es": "Guanteletes de inmolación",
+            "br": "Manoplas da Imolação",
+            "kr": "",
+            "fr": "Gantelets de l’immolation",
+            "de": "Feuerbrandstulpen"
+        },
+        "icon": "inv_gauntlets_plate_raidpaladin_j_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3350,
+            "mastery": 3650,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
+        "id": 171780,
+        "name": "Immolation Helmet",
+        "names": {
+            "cn": "",
+            "en": "Immolation Helmet",
+            "ru": "Обжигающий полный шлем",
+            "es": "Yelmo de inmolación",
+            "br": "Capacete da Imolação",
+            "kr": "",
+            "fr": "Casque de l’immolation",
+            "de": "Feuerbrandhelm"
+        },
+        "icon": "inv_helmet_plate_raidpaladin_j_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3350,
+            "crit": 3650,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 171781,
+        "name": "Immolation Legplates",
+        "names": {
+            "cn": "",
+            "en": "Immolation Legplates",
+            "ru": "Обжигающие ножные латы",
+            "es": "Quijotes de inmolación",
+            "br": "Coxotes da Imolação",
+            "kr": "",
+            "fr": "Cuissards de l’immolation",
+            "de": "Feuerbrandbeinplatten"
+        },
+        "icon": "inv_pants_plate_raidpaladin_j_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3350,
+            "mastery": 3650,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 171782,
+        "name": "Immolation Pauldrons",
+        "names": {
+            "cn": "",
+            "en": "Immolation Pauldrons",
+            "ru": "Обжигающее наплечье",
+            "es": "Espaldares de inmolación",
+            "br": "Brafoneiras da Imolação",
+            "kr": "",
+            "fr": "Espauliers de l’immolation",
+            "de": "Feuerbrandschulterstücke"
+        },
+        "icon": "inv_shoulder_plate_raidpaladin_j_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3350,
+            "crit": 3650,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 171783,
+        "name": "Battleplate of the Molten Giant",
+        "names": {
+            "cn": "",
+            "en": "Battleplate of the Molten Giant",
+            "ru": "Боевой доспех огненного великана",
+            "es": "Placa de batalla del gigante fundido",
+            "br": "Loriga do Gigante Derretido",
+            "kr": "",
+            "fr": "Harnois de bataille du géant de lave",
+            "de": "Kampfplatte des geschmolzenen Riesen"
+        },
+        "icon": "inv_chest_plate_raidwarrior_j_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3200,
+            "crit": 3800,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 171784,
+        "name": "Gauntlets of the Molten Giant",
+        "names": {
+            "cn": "",
+            "en": "Gauntlets of the Molten Giant",
+            "ru": "Рукавицы огненного великана",
+            "es": "Guanteletes del gigante fundido",
+            "br": "Manoplas do Gigante Derretido",
+            "kr": "",
+            "fr": "Gantelets du géant de lave",
+            "de": "Stulpen des geschmolzenen Riesen"
+        },
+        "icon": "inv_glove_plate_raidwarrior_j_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3500,
+            "mastery": 3500,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
+        "id": 171785,
+        "name": "Helmet of the Molten Giant",
+        "names": {
+            "cn": "",
+            "en": "Helmet of the Molten Giant",
+            "ru": "Шлем огненного великана",
+            "es": "Casco del gigante fundido",
+            "br": "Capacete do Gigante Derretido",
+            "kr": "",
+            "fr": "Casque du géant de lave",
+            "de": "Helm des geschmolzenen Riesen"
+        },
+        "icon": "inv_helm_plate_raidwarrior_j_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3650,
+            "crit": 0,
+            "mastery": 3350,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 171786,
+        "name": "Legplates of the Molten Giant",
+        "names": {
+            "cn": "",
+            "en": "Legplates of the Molten Giant",
+            "ru": "Ножные латы огненного великана",
+            "es": "Quijotes del gigante fundido",
+            "br": "Coxotes do Gigante Derretido",
+            "kr": "",
+            "fr": "Cuissards du géant de lave",
+            "de": "Beinplatten des geschmolzenen Riesen"
+        },
+        "icon": "inv_glove_pants_raidwarrior_j_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3650,
+            "crit": 3350,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 171787,
+        "name": "Pauldrons of the Molten Giant",
+        "names": {
+            "cn": "",
+            "en": "Pauldrons of the Molten Giant",
+            "ru": "Наплечье огненного великана",
+            "es": "Espaldares del gigante fundido",
+            "br": "Brafoneiras do Gigante Derretido",
+            "kr": "",
+            "fr": "Espauliers du géant de lave",
+            "de": "Schulterstücke des geschmolzenen Riesen"
+        },
+        "icon": "inv_shoulder_plate_raidwarrior_j_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3350,
+            "crit": 3650,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 171788,
+        "name": "Immolation Breastplate",
+        "names": {
+            "cn": "",
+            "en": "Immolation Breastplate",
+            "ru": "Обжигающая кираса",
+            "es": "Coraza de inmolación",
+            "br": "Peitoral da Imolação",
+            "kr": "",
+            "fr": "Cuirasse de l’immolation",
+            "de": "Feuerbrandbrustplatte"
+        },
+        "icon": "inv_chest_plate_raidpaladin_j_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3350,
+            "mastery": 0,
+            "versatility": 3650
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 171789,
+        "name": "Immolation Gloves",
+        "names": {
+            "cn": "",
+            "en": "Immolation Gloves",
+            "ru": "Обжигающие перчатки",
+            "es": "Guantes de inmolación",
+            "br": "Luvas da Imolação",
+            "kr": "",
+            "fr": "Gants de l’immolation",
+            "de": "Feuerbrandhandschuhe"
+        },
+        "icon": "inv_gauntlets_plate_raidpaladin_j_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3650,
+            "crit": 3350,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
+        "id": 171790,
+        "name": "Immolation Headguard",
+        "names": {
+            "cn": "",
+            "en": "Immolation Headguard",
+            "ru": "Обжигающий наголовник",
+            "es": "Protegecabezas de inmolación",
+            "br": "Cimeira da Imolação",
+            "kr": "",
+            "fr": "Protège-front de l’immolation",
+            "de": "Feuerbrandkopfschutz"
+        },
+        "icon": "inv_helmet_plate_raidpaladin_j_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3500,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 3500
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 171791,
+        "name": "Immolation Greaves",
+        "names": {
+            "cn": "",
+            "en": "Immolation Greaves",
+            "ru": "Обжигающие наголенники",
+            "es": "Grebas de inmolación",
+            "br": "Grevas da Imolação",
+            "kr": "",
+            "fr": "Grèves de l’immolation",
+            "de": "Feuerbrandschienbeinschützer"
+        },
+        "icon": "inv_pants_plate_raidpaladin_j_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3500,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 3500
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 171792,
+        "name": "Immolation Mantle",
+        "names": {
+            "cn": "",
+            "en": "Immolation Mantle",
+            "ru": "Обжигающая мантия",
+            "es": "Manto de inmolación",
+            "br": "Dragonas da Imolação",
+            "kr": "",
+            "fr": "Mantelet de l’immolation",
+            "de": "Feuerbrandmantel"
+        },
+        "icon": "inv_shoulder_plate_raidpaladin_j_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 2750,
+            "mastery": 0,
+            "versatility": 4250
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 171793,
+        "name": "Handwraps of the Cleansing Flame",
+        "names": {
+            "cn": "",
+            "en": "Handwraps of the Cleansing Flame",
+            "ru": "Повязки очищающего пламени",
+            "es": "Manijas de la llama purificadora",
+            "br": "Mitenes da Chama Purificante",
+            "kr": "",
+            "fr": "Protège-mains de la flamme purificatrice",
+            "de": "Handwickel der reinigenden Flamme"
+        },
+        "icon": "inv_gauntlets_robe_raidpriest_j_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3350,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 3650
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
+        "id": 171794,
+        "name": "Cowl of the Cleansing Flame",
+        "names": {
+            "cn": "",
+            "en": "Cowl of the Cleansing Flame",
+            "ru": "Клобук очищающего пламени",
+            "es": "Capucha de la llama purificadora",
+            "br": "Capucho da Chama Purificante",
+            "kr": "",
+            "fr": "Capuche de la flamme purificatrice",
+            "de": "Gugel der reinigenden Flamme"
+        },
+        "icon": "inv_helmet_robe_raidpriest_j_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 3500,
+            "versatility": 3500
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 171795,
+        "name": "Legwraps of the Cleansing Flame",
+        "names": {
+            "cn": "",
+            "en": "Legwraps of the Cleansing Flame",
+            "ru": "Бриджи очищающего пламени",
+            "es": "Ataduras de la llama purificadora",
+            "br": "Culotes da Chama Purificante",
+            "kr": "",
+            "fr": "Jambards de la flamme purificatrice",
+            "de": "Beinwickel der reinigenden Flamme"
+        },
+        "icon": "inv_pants_robe_raidpriest_j_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3200,
+            "mastery": 0,
+            "versatility": 3800
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 171796,
+        "name": "Robes of the Cleansing Flame",
+        "names": {
+            "cn": "",
+            "en": "Robes of the Cleansing Flame",
+            "ru": "Одеяния очищающего пламени",
+            "es": "Togas de la llama purificadora",
+            "br": "Vestes da Chama Purificante",
+            "kr": "",
+            "fr": "Robe de la flamme purificatrice",
+            "de": "Roben der reinigenden Flamme"
+        },
+        "icon": "inv_chest_robe_raidpriest_j_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 3500,
+            "versatility": 3500
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 171797,
+        "name": "Mantle of the Cleansing Flame",
+        "names": {
+            "cn": "",
+            "en": "Mantle of the Cleansing Flame",
+            "ru": "Оплечье очищающего пламени",
+            "es": "Manto de la llama purificadora",
+            "br": "Dragonas da Chama Purificante",
+            "kr": "",
+            "fr": "Mantelet de la flamme purificatrice",
+            "de": "Mantelung der reinigenden Flamme"
+        },
+        "icon": "inv_shoulder_robe_raidpriest_j_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3500,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 3500
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 171798,
+        "name": "Gloves of the Cleansing Flame",
+        "names": {
+            "cn": "",
+            "en": "Gloves of the Cleansing Flame",
+            "ru": "Перчатки очищающего пламени",
+            "es": "Guantes de la llama purificadora",
+            "br": "Luvas da Chama Purificante",
+            "kr": "",
+            "fr": "Gants de la flamme purificatrice",
+            "de": "Handschuhe der reinigenden Flamme"
+        },
+        "icon": "inv_gauntlets_robe_raidpriest_j_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3800,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 3200
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
+        "id": 171799,
+        "name": "Hood of the Cleansing Flame",
+        "names": {
+            "cn": "",
+            "en": "Hood of the Cleansing Flame",
+            "ru": "Капюшон очищающего пламени",
+            "es": "Caperuza de la llama purificadora",
+            "br": "Capuz da Chama Purificante",
+            "kr": "",
+            "fr": "Chaperon de la flamme purificatrice",
+            "de": "Kapuze der reinigenden Flamme"
+        },
+        "icon": "inv_helmet_robe_raidpriest_j_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3500,
+            "crit": 0,
+            "mastery": 3500,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 171800,
+        "name": "Leggings of the Cleansing Flame",
+        "names": {
+            "cn": "",
+            "en": "Leggings of the Cleansing Flame",
+            "ru": "Поножи очищающего пламени",
+            "es": "Leotardos de la llama purificadora",
+            "br": "Perneiras da Chama Purificante",
+            "kr": "",
+            "fr": "Jambières de la flamme purificatrice",
+            "de": "Gamaschen der reinigenden Flamme"
+        },
+        "icon": "inv_pants_robe_raidpriest_j_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3500,
+            "mastery": 3500,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 171801,
+        "name": "Vestment of the Cleansing Flame",
+        "names": {
+            "cn": "",
+            "en": "Vestment of the Cleansing Flame",
+            "ru": "Одеяние очищающего пламени",
+            "es": "Vestimentas de la llama purificadora",
+            "br": "Vestimentas da Chama Purificante",
+            "kr": "",
+            "fr": "Habit de la flamme purificatrice",
+            "de": "Tracht der reinigenden Flamme"
+        },
+        "icon": "inv_chest_robe_raidpriest_j_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3650,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 3350
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 171802,
+        "name": "Shoulderwraps of the Cleansing Flame",
+        "names": {
+            "cn": "",
+            "en": "Shoulderwraps of the Cleansing Flame",
+            "ru": "Наплечный покров очищающего пламени",
+            "es": "Jinetas de la llama purificadora",
+            "br": "Escápulas da Chama Purificante",
+            "kr": "",
+            "fr": "Drape-épaules de la flamme purificatrice",
+            "de": "Schulterwickel der reinigenden Flamme"
+        },
+        "icon": "inv_shoulder_robe_raidpriest_j_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3500,
+            "crit": 3500,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 171803,
+        "name": "Balespider's Handwraps",
+        "names": {
+            "cn": "",
+            "en": "Balespider's Handwraps",
+            "ru": "Повязки паучьей боли",
+            "es": "Manijas de araña corpulenta",
+            "br": "Mitenes de Tormentaranha",
+            "kr": "",
+            "fr": "Protège-mains de l’araignée torve",
+            "de": "Handwickel der Spinnenbedrohung"
+        },
+        "icon": "inv_glove_robe_raidwarlock_j_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3800,
+            "crit": 3200,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
+        "id": 171804,
+        "name": "Balespider's Hood",
+        "names": {
+            "cn": "",
+            "en": "Balespider's Hood",
+            "ru": "Капюшон паучьей боли",
+            "es": "Caperuza de araña corpulenta",
+            "br": "Capuz de Tormentaranha",
+            "kr": "",
+            "fr": "Chaperon de l’araignée torve",
+            "de": "Kapuze der Spinnenbedrohung"
+        },
+        "icon": "inv_helm_robe_raidwarlock_j_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3350,
+            "crit": 0,
+            "mastery": 3650,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 171805,
+        "name": "Balespider's Leggings",
+        "names": {
+            "cn": "",
+            "en": "Balespider's Leggings",
+            "ru": "Поножи паучьей боли",
+            "es": "Leotardos de araña corpulenta",
+            "br": "Perneiras de Tormentaranha",
+            "kr": "",
+            "fr": "Jambières de l’araignée torve",
+            "de": "Gamaschen der Spinnenbedrohung"
+        },
+        "icon": "inv_pants_robe_raidwarlock_j_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3500,
+            "mastery": 3500,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 171806,
+        "name": "Balespider's Robes",
+        "names": {
+            "cn": "",
+            "en": "Balespider's Robes",
+            "ru": "Одеяния паучьей боли",
+            "es": "Togas de araña corpulenta",
+            "br": "Vestes de Tormentaranha",
+            "kr": "",
+            "fr": "Robe de l’araignée torve",
+            "de": "Roben der Spinnenbedrohung"
+        },
+        "icon": "inv_chest_robe_raidwarlock_j_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3650,
+            "crit": 3350,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 171807,
+        "name": "Balespider's Mantle",
+        "names": {
+            "cn": "",
+            "en": "Balespider's Mantle",
+            "ru": "Оплечье паучьей боли",
+            "es": "Manto de araña corpulenta",
+            "br": "Dragonas de Tormentaranha",
+            "kr": "",
+            "fr": "Mantelet de l’araignée torve",
+            "de": "Mantelung der Spinnenbedrohung"
+        },
+        "icon": "inv_shoulder_robe_raidwarlock_j_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3500,
+            "crit": 3500,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 171808,
+        "name": "Firehawk Gloves",
+        "names": {
+            "cn": "",
+            "en": "Firehawk Gloves",
+            "ru": "Перчатки огненного ястреба",
+            "es": "Guantes de halcón de fuego",
+            "br": "Luvas do Falcão de Fogo",
+            "kr": "",
+            "fr": "Gants faucon-de-feu",
+            "de": "Feuerfalkenhandschuhe"
+        },
+        "icon": "inv_gauntlets_robe_raidmage_j_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3800,
+            "crit": 3200,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
+        "id": 171809,
+        "name": "Firehawk Hood",
+        "names": {
+            "cn": "",
+            "en": "Firehawk Hood",
+            "ru": "Капюшон огненного ястреба",
+            "es": "Caperuza de halcón de fuego",
+            "br": "Capuz do Falcão de Fogo",
+            "kr": "",
+            "fr": "Chaperon faucon-de-feu",
+            "de": "Feuerfalkenkapuze"
+        },
+        "icon": "inv_helmet_robe_raidmage_j_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3350,
+            "crit": 0,
+            "mastery": 3650,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 171810,
+        "name": "Firehawk Leggings",
+        "names": {
+            "cn": "",
+            "en": "Firehawk Leggings",
+            "ru": "Поножи огненного ястреба",
+            "es": "Leotardos de halcón de fuego",
+            "br": "Perneiras do Falcão de Fogo",
+            "kr": "",
+            "fr": "Jambières faucon-de-feu",
+            "de": "Feuerfalkengamaschen"
+        },
+        "icon": "inv_pants_robe_raidmage_j_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3500,
+            "mastery": 3500,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 171811,
+        "name": "Firehawk Robes",
+        "names": {
+            "cn": "",
+            "en": "Firehawk Robes",
+            "ru": "Одеяния огненного ястреба",
+            "es": "Togas de halcón de fuego",
+            "br": "Vestes do Falcão de Fogo",
+            "kr": "",
+            "fr": "Robe faucon-de-feu",
+            "de": "Feuerfalkenroben"
+        },
+        "icon": "inv_chest_robe_raidmage_j_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3650,
+            "crit": 3350,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 171812,
+        "name": "Firehawk Mantle",
+        "names": {
+            "cn": "",
+            "en": "Firehawk Mantle",
+            "ru": "Оплечье огненного ястреба",
+            "es": "Manto de halcón de fuego",
+            "br": "Dragonas do Falcão de Fogo",
+            "kr": "",
+            "fr": "Mantelet faucon-de-feu",
+            "de": "Feuerfalkenmantelung"
+        },
+        "icon": "inv_shoulder_robe_raidmage_j_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3500,
+            "crit": 3500,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 171813,
+        "name": "Erupting Volcanic Hauberk",
+        "names": {
+            "cn": "",
+            "en": "Erupting Volcanic Hauberk",
+            "ru": "Хауберк извергающегося вулкана",
+            "es": "Camisote volcánico en erupción",
+            "br": "Cota da Erupção Vulcânica",
+            "kr": "",
+            "fr": "Haubert de l’éruption volcanique",
+            "de": "Halsberge des ausbrechenden Vulkans"
+        },
+        "icon": "inv_chest_mail_raidshaman_j_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3500,
+            "crit": 0,
+            "mastery": 3500,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 171814,
+        "name": "Erupting Volcanic Gloves",
+        "names": {
+            "cn": "",
+            "en": "Erupting Volcanic Gloves",
+            "ru": "Перчатки извергающегося вулкана",
+            "es": "Guantes volcánicos en erupción",
+            "br": "Luvas da Erupção Vulcânica",
+            "kr": "",
+            "fr": "Gants de l’éruption volcanique",
+            "de": "Handschuhe des ausbrechenden Vulkans"
+        },
+        "icon": "inv_gauntlets_mail_raidshaman_j_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3350,
+            "crit": 3650,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
+        "id": 171815,
+        "name": "Erupting Volcanic Headpiece",
+        "names": {
+            "cn": "",
+            "en": "Erupting Volcanic Headpiece",
+            "ru": "Головной убор извергающегося вулкана",
+            "es": "Celada volcánica en erupción",
+            "br": "Bacinete da Erupção Vulcânica",
+            "kr": "",
+            "fr": "Chapel de l’éruption volcanique",
+            "de": "Kopfstück des ausbrechenden Vulkans"
+        },
+        "icon": "inv_helmet_mail_raidshaman_j_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 4250,
+            "crit": 2750,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 171816,
+        "name": "Erupting Volcanic Kilt",
+        "names": {
+            "cn": "",
+            "en": "Erupting Volcanic Kilt",
+            "ru": "Килт извергающегося вулкана",
+            "es": "Falda volcánica en erupción",
+            "br": "Kilt da Erupção Vulcânica",
+            "kr": "",
+            "fr": "Kilt de l’éruption volcanique",
+            "de": "Kilt des ausbrechenden Vulkans"
+        },
+        "icon": "inv_pants_mail_raidshaman_j_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3650,
+            "crit": 0,
+            "mastery": 3350,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 171817,
+        "name": "Erupting Volcanic Shoulderwraps",
+        "names": {
+            "cn": "",
+            "en": "Erupting Volcanic Shoulderwraps",
+            "ru": "Наплечный покров извергающегося вулкана",
+            "es": "Jinetas volcánicas en erupción",
+            "br": "Escápulas da Erupção Vulcânica",
+            "kr": "",
+            "fr": "Drape-épaules de l’éruption volcanique",
+            "de": "Schulterwickel des ausbrechenden Vulkans"
+        },
+        "icon": "inv_shoulder_mail_raidshaman_j_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3500,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 3500
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 171818,
+        "name": "Erupting Volcanic Tunic",
+        "names": {
+            "cn": "",
+            "en": "Erupting Volcanic Tunic",
+            "ru": "Мундир извергающегося вулкана",
+            "es": "Túnica volcánica en erupción",
+            "br": "Túnica da Erupção Vulcânica",
+            "kr": "",
+            "fr": "Tunique de l’éruption volcanique",
+            "de": "Tunika des ausbrechenden Vulkans"
+        },
+        "icon": "inv_chest_mail_raidshaman_j_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3350,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 3650
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 171819,
+        "name": "Erupting Volcanic Handwraps",
+        "names": {
+            "cn": "",
+            "en": "Erupting Volcanic Handwraps",
+            "ru": "Повязки извергающегося вулкана",
+            "es": "Manijas volcánicas en erupción",
+            "br": "Mitenes da Erupção Vulcânica",
+            "kr": "",
+            "fr": "Protège-mains de l’éruption volcanique",
+            "de": "Handwickel des ausbrechenden Vulkans"
+        },
+        "icon": "inv_gauntlets_mail_raidshaman_j_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3500,
+            "mastery": 0,
+            "versatility": 3500
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
+        "id": 171820,
+        "name": "Erupting Volcanic Faceguard",
+        "names": {
+            "cn": "",
+            "en": "Erupting Volcanic Faceguard",
+            "ru": "Большой шлем извергающегося вулкана",
+            "es": "Visera volcánica en erupción",
+            "br": "Viseira da Erupção Vulcânica",
+            "kr": "",
+            "fr": "Ventaille de l’éruption volcanique",
+            "de": "Gesichtsschutz des ausbrechenden Vulkans"
+        },
+        "icon": "inv_helmet_mail_raidshaman_j_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3350,
+            "mastery": 0,
+            "versatility": 3650
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 171821,
+        "name": "Erupting Volcanic Legwraps",
+        "names": {
+            "cn": "",
+            "en": "Erupting Volcanic Legwraps",
+            "ru": "Бриджи извергающегося вулкана",
+            "es": "Ataduras volcánicas en erupción",
+            "br": "Culotes da Erupção Vulcânica",
+            "kr": "",
+            "fr": "Jambards de l’éruption volcanique",
+            "de": "Beinwickel des ausbrechenden Vulkans"
+        },
+        "icon": "inv_pants_mail_raidshaman_j_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 3350,
+            "versatility": 3650
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 171822,
+        "name": "Erupting Volcanic Mantle",
+        "names": {
+            "cn": "",
+            "en": "Erupting Volcanic Mantle",
+            "ru": "Оплечье извергающегося вулкана",
+            "es": "Manto volcánico en erupción",
+            "br": "Dragonas da Erupção Vulcânica",
+            "kr": "",
+            "fr": "Mantelet de l’éruption volcanique",
+            "de": "Mantelung des ausbrechenden Vulkans"
+        },
+        "icon": "inv_shoulder_mail_raidshaman_j_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 3500,
+            "versatility": 3500
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 171823,
+        "name": "Erupting Volcanic Cuirass",
+        "names": {
+            "cn": "",
+            "en": "Erupting Volcanic Cuirass",
+            "ru": "Панцирь извергающегося вулкана",
+            "es": "Loriga volcánica en erupción",
+            "br": "Corselete da Erupção Vulcânica",
+            "kr": "",
+            "fr": "Cuirasse de l’éruption volcanique",
+            "de": "Kürass des ausbrechenden Vulkans"
+        },
+        "icon": "inv_chest_mail_raidshaman_j_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3500,
+            "mastery": 3500,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 171824,
+        "name": "Erupting Volcanic Grips",
+        "names": {
+            "cn": "",
+            "en": "Erupting Volcanic Grips",
+            "ru": "Захваты извергающегося вулкана",
+            "es": "Mandiletes volcánicos en erupción",
+            "br": "Guantes da Erupção Vulcânica",
+            "kr": "",
+            "fr": "Poignes de l’éruption volcanique",
+            "de": "Handgriffe des ausbrechenden Vulkans"
+        },
+        "icon": "inv_gauntlets_mail_raidshaman_j_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3650,
+            "mastery": 3350,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
+        "id": 171825,
+        "name": "Erupting Volcanic Helmet",
+        "names": {
+            "cn": "",
+            "en": "Erupting Volcanic Helmet",
+            "ru": "Полный шлем извергающегося вулкана",
+            "es": "Casco volcánico en erupción",
+            "br": "Capacete da Erupção Vulcânica",
+            "kr": "",
+            "fr": "Casque de l’éruption volcanique",
+            "de": "Helm des ausbrechenden Vulkans"
+        },
+        "icon": "inv_helmet_mail_raidshaman_j_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3650,
+            "crit": 0,
+            "mastery": 3350,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 171826,
+        "name": "Erupting Volcanic Legguards",
+        "names": {
+            "cn": "",
+            "en": "Erupting Volcanic Legguards",
+            "ru": "Набедренники извергающегося вулкана",
+            "es": "Musleras volcánicas en erupción",
+            "br": "Guarda-pernas da Erupção Vulcânica",
+            "kr": "",
+            "fr": "Garde-jambes de l’éruption volcanique",
+            "de": "Beinschützer des ausbrechenden Vulkans"
+        },
+        "icon": "inv_pants_mail_raidshaman_j_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3800,
+            "crit": 3200,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 171827,
+        "name": "Erupting Volcanic Spaulders",
+        "names": {
+            "cn": "",
+            "en": "Erupting Volcanic Spaulders",
+            "ru": "Наплеч извергающегося вулкана",
+            "es": "Bufas volcánicas en erupción",
+            "br": "Espaldares da Erupção Vulcânica",
+            "kr": "",
+            "fr": "Spallières de l’éruption volcanique",
+            "de": "Schiftung des ausbrechenden Vulkans"
+        },
+        "icon": "inv_shoulder_mail_raidshaman_j_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3350,
+            "crit": 3650,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 171843,
+        "name": "Coil of Ten-Thousand Screams",
+        "names": {
+            "cn": "",
+            "en": "Coil of Ten-Thousand Screams",
+            "ru": "Вервие тысячи криков",
+            "es": "Espiral de diez mil gritos",
+            "br": "Espiral de Dez Mil Clamores",
+            "kr": "",
+            "fr": "Torsade des dix mille cris",
+            "de": "Schlinge der zehntausend Schreie"
+        },
+        "icon": "inv_belt_mail_raidhunter_i_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3500,
+            "crit": 3500,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Waist"
+    },
+    {
+        "id": 171844,
+        "name": "Battleplate of the Apocalypse",
+        "names": {
+            "cn": "",
+            "en": "Battleplate of the Apocalypse",
+            "ru": "Боевой доспех Апокалипсиса",
+            "es": "Placa de batalla del Apocalipsis",
+            "br": "Loriga do Apocalipse",
+            "kr": "",
+            "fr": "Harnois de bataille de l’Apocalypse",
+            "de": "Kampfplatte der Apokalypse"
+        },
+        "icon": "inv_chest_plate_raidwarrior_i_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3500,
+            "mastery": 3500,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 171845,
+        "name": "Helm of Maddening Whispers",
+        "names": {
+            "cn": "",
+            "en": "Helm of Maddening Whispers",
+            "ru": "Шлем сводящего с ума шепота",
+            "es": "Yelmo de susurros enloquecedores",
+            "br": "Elmo dos Sussurros Enlouquecedores",
+            "kr": "",
+            "fr": "Heaume de murmures exaspérants",
+            "de": "Helm des unerträglichen Flüsterns"
+        },
+        "icon": "inv_helmet_plate_raiddeathknight_i_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3500,
+            "crit": 3500,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 171846,
+        "name": "Membrane of C'Thun",
+        "names": {
+            "cn": "",
+            "en": "Membrane of C'Thun",
+            "ru": "Мембрана К'Туна",
+            "es": "Membrana de C'Thun",
+            "br": "Membrana de C'Thun",
+            "kr": "",
+            "fr": "Membrane de C’Thun",
+            "de": "Membran von C'Thun"
+        },
+        "icon": "inv_helmet_leatherraidrogue_i_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3500,
+            "crit": 3500,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 171848,
+        "name": "Treads of Hideous Transformation",
+        "names": {
+            "cn": "",
+            "en": "Treads of Hideous Transformation",
+            "ru": "Ботфорты чудовищных изменений",
+            "es": "Botines de transformación hórrida",
+            "br": "Botinas da Transformação Horrenda",
+            "kr": "",
+            "fr": "Bottines de transformation hideuse",
+            "de": "Treter der abscheulichen Transformation"
+        },
+        "icon": "inv_boots_leather_raiddruid_i_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3500,
+            "mastery": 0,
+            "versatility": 3500
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Feet"
+    },
+    {
+        "id": 171849,
+        "name": "Shackles of the End of Days",
+        "names": {
+            "cn": "",
+            "en": "Shackles of the End of Days",
+            "ru": "Кандалы конца дней",
+            "es": "Grilletes del fin de los días",
+            "br": "Grilhões do Fim dos Dias",
+            "kr": "",
+            "fr": "Menottes de la fin des temps",
+            "de": "Fesseln des Endes aller Tage"
+        },
+        "icon": "inv_bracer_plate_raidpaladin_i_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3500,
+            "mastery": 0,
+            "versatility": 3500
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Wrist"
+    },
+    {
+        "id": 171850,
+        "name": "Hands of the Twilight Council",
+        "names": {
+            "cn": "",
+            "en": "Hands of the Twilight Council",
+            "ru": "Руки Сумеречного Совета",
+            "es": "Manos del Consejo Crepuscular",
+            "br": "Mãos do Conselho do Crepúsculo",
+            "kr": "",
+            "fr": "Mains du conseil du Crépuscule",
+            "de": "Hände des Zwielichtrates"
+        },
+        "icon": "inv_gauntlets_cloth_raidwarlock_i_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3500,
+            "crit": 3500,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
+        "id": 171851,
+        "name": "Kilt of the Forgotten Battle",
+        "names": {
+            "cn": "",
+            "en": "Kilt of the Forgotten Battle",
+            "ru": "Килт забытой битвы",
+            "es": "Falda de la batalla olvidada",
+            "br": "Kilt da Batalha Esquecida",
+            "kr": "",
+            "fr": "Kilt de la bataille oubliée",
+            "de": "Kilt der vergessenen Schlacht"
+        },
+        "icon": "inv_pant_raidshaman_i_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 3500,
+            "versatility": 3500
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 171852,
+        "name": "Fall of Mortality",
+        "names": {
+            "cn": "",
+            "en": "Fall of Mortality",
+            "ru": "Поступь смерти",
+            "es": "Caída de mortalidad",
+            "br": "Queda da Mortalidade",
+            "kr": "",
+            "fr": "Baisse de la mortalité",
+            "de": "Untergang der Sterblichen"
+        },
+        "icon": "inv_misc_cat_trinket12",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 6666,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Trinket",
+        "effect": {
+            "type": "trinket",
+            "name": "Fall of Mortality"
+        }
+    },
+    {
+        "id": 171853,
+        "name": "Signet of the Fifth Circle",
+        "names": {
+            "cn": "",
+            "en": "Signet of the Fifth Circle",
+            "ru": "Печатка пятого круга",
+            "es": "Sello del quinto círculo",
+            "br": "Sinete do Quinto Círculo",
+            "kr": "",
+            "fr": "Chevalière du cinquième cercle",
+            "de": "Signet des fünften Zirkels"
+        },
+        "icon": "inv_misc_diamondring2",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "haste": 8250,
+            "crit": 0,
+            "mastery": 9250,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Finger"
+    },
+    {
+        "id": 171854,
+        "name": "Twilight's Hammer",
+        "names": {
+            "cn": "",
+            "en": "Twilight's Hammer",
+            "ru": "Сумеречный Молот",
+            "es": "Martillo Crepuscular",
+            "br": "Martelo do Crepúsculo",
+            "kr": "",
+            "fr": "Marteau du crépuscule",
+            "de": "Hammer des Zwielichts"
+        },
+        "icon": "inv_mace_1h_hammeroftwilight_d_01",
+        "itemClass": 2,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 30629,
+            "stamina": 7889,
+            "haste": 3500,
+            "crit": 3500,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "1H Weapon"
+    },
+    {
+        "id": 171855,
+        "name": "Firelord's Mantle",
+        "names": {
+            "cn": "",
+            "en": "Firelord's Mantle",
+            "ru": "Оплечье повелителя огня",
+            "es": "Manto del Señor del Fuego",
+            "br": "Dragonas do Senhor do Fogo",
+            "kr": "",
+            "fr": "Mantelet de seigneur du Feu",
+            "de": "Mantel des Feuerlords"
+        },
+        "icon": "inv_shoulder_robe_raidmage_i_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3500,
+            "crit": 3500,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 171856,
+        "name": "Shadowflame Mantle",
+        "names": {
+            "cn": "",
+            "en": "Shadowflame Mantle",
+            "ru": "Оплечье пламени Тьмы",
+            "es": "Manto de Pirosombra",
+            "br": "Dragonas da Chama Sombria",
+            "kr": "",
+            "fr": "Mantelet d’Ombreflamme",
+            "de": "Schattenflammenmantel"
+        },
+        "icon": "inv_shoulder_cloth_raidwarlock_i_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3500,
+            "crit": 3500,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 171857,
+        "name": "Mercurial Shoulderwraps",
+        "names": {
+            "cn": "",
+            "en": "Mercurial Shoulderwraps",
+            "ru": "Переменчивый наплечный покров",
+            "es": "Jinetas mercúricas",
+            "br": "Escápulas Mercuriais",
+            "kr": "",
+            "fr": "Drape-épaules mercurien",
+            "de": "Quecksilbrige Schulterwickel"
+        },
+        "icon": "inv_shoulder_cloth_raidpriest_i_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3500,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 3500
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 171858,
+        "name": "Mercurial Mantle",
+        "names": {
+            "cn": "",
+            "en": "Mercurial Mantle",
+            "ru": "Переменчивое оплечье",
+            "es": "Manto mercúrico",
+            "br": "Dragonas Mercuriais",
+            "kr": "",
+            "fr": "Mantelet mercurien",
+            "de": "Quecksilbrige Mantelung"
+        },
+        "icon": "inv_shoulder_cloth_raidpriest_i_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3500,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 3500
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 171859,
+        "name": "Stormrider's Mantle",
+        "names": {
+            "cn": "",
+            "en": "Stormrider's Mantle",
+            "ru": "Оплечье странника бурь",
+            "es": "Manto de jinete de la tormenta",
+            "br": "Dragonas do Cavalgaventos",
+            "kr": "",
+            "fr": "Mantelet du chevaucheur de tempête",
+            "de": "Mantel des Sturmreiters"
+        },
+        "icon": "inv_shoulder_leather_raiddruid_i_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 3500,
+            "versatility": 3500
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 171860,
+        "name": "Stormrider's Shoulderwraps",
+        "names": {
+            "cn": "",
+            "en": "Stormrider's Shoulderwraps",
+            "ru": "Наплечный покров странника бурь",
+            "es": "Jinetas de jinete de la tormenta",
+            "br": "Escápulas do Cavalgaventos",
+            "kr": "",
+            "fr": "Drape-épaules du chevaucheur de tempête",
+            "de": "Schulterwickel des Sturmreiters"
+        },
+        "icon": "inv_shoulder_leather_raiddruid_i_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3500,
+            "crit": 0,
+            "mastery": 3500,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 171861,
+        "name": "Stormrider's Spaulders",
+        "names": {
+            "cn": "",
+            "en": "Stormrider's Spaulders",
+            "ru": "Наплеч странника бурь",
+            "es": "Bufas de jinete de la tormenta",
+            "br": "Espaldares do Cavalgaventos",
+            "kr": "",
+            "fr": "Spallières du chevaucheur de tempête",
+            "de": "Schiftung des Sturmreiters"
+        },
+        "icon": "inv_shoulder_leather_raiddruid_i_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3500,
+            "crit": 3500,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 171862,
+        "name": "Wind Dancer's Spaulders",
+        "names": {
+            "cn": "",
+            "en": "Wind Dancer's Spaulders",
+            "ru": "Наплеч танцующего с ветром",
+            "es": "Bufas de Bailavientos",
+            "br": "Espaldares do Dançarino dos Ventos",
+            "kr": "",
+            "fr": "Spallières du danseur du vent",
+            "de": "Schiftung des Windtänzers"
+        },
+        "icon": "inv_shoulder_leatherraidrogue_i_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3500,
+            "crit": 3500,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 171863,
+        "name": "Lightning-Charged Spaulders",
+        "names": {
+            "cn": "",
+            "en": "Lightning-Charged Spaulders",
+            "ru": "Заряженный молнией наплеч",
+            "es": "Bufas cargadas de relámpago",
+            "br": "Espaldares Eletrificados",
+            "kr": "",
+            "fr": "Spallières chargées de foudre",
+            "de": "Blitzgeladene Schiftung"
+        },
+        "icon": "inv_shoulder_mail_raidhunter_i_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3500,
+            "crit": 0,
+            "mastery": 3500,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 171864,
+        "name": "Mantle of the Raging Elements",
+        "names": {
+            "cn": "",
+            "en": "Mantle of the Raging Elements",
+            "ru": "Оплечье бушующих стихий",
+            "es": "Manto de los elementos enfurecidos",
+            "br": "Dragonas dos Elementos em Fúria",
+            "kr": "",
+            "fr": "Mantelet des éléments déchaînés",
+            "de": "Mantel der wütenden Elemente"
+        },
+        "icon": "inv_shoulder_mail_raidshaman_i_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 3500,
+            "versatility": 3500
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 171865,
+        "name": "Shoulderwraps of the Raging Elements",
+        "names": {
+            "cn": "",
+            "en": "Shoulderwraps of the Raging Elements",
+            "ru": "Наплечный покров бушующих стихий",
+            "es": "Jinetas de los elementos enfurecidos",
+            "br": "Escápulas dos Elementos em Fúria",
+            "kr": "",
+            "fr": "Drape-épaules des éléments déchaînés",
+            "de": "Schulterwickel der wütenden Elemente"
+        },
+        "icon": "inv_shoulder_mail_raidshaman_i_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3500,
+            "mastery": 3500,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 171866,
+        "name": "Spaulders of the Raging Elements",
+        "names": {
+            "cn": "",
+            "en": "Spaulders of the Raging Elements",
+            "ru": "Наплеч бушующих стихий",
+            "es": "Bufas de los elementos enfurecidos",
+            "br": "Espaldares dos Elementos em Fúria",
+            "kr": "",
+            "fr": "Spallières des éléments déchaînés",
+            "de": "Schiftung der wütenden Elemente"
+        },
+        "icon": "inv_shoulder_mail_raidshaman_i_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3500,
+            "crit": 0,
+            "mastery": 3500,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 171867,
+        "name": "Earthen Pauldrons",
+        "names": {
+            "cn": "",
+            "en": "Earthen Pauldrons",
+            "ru": "Наплечье земли",
+            "es": "Espaldares terráneos",
+            "br": "Brafoneiras Terranas",
+            "kr": "",
+            "fr": "Espauliers terrestres",
+            "de": "Schulterstücke der Irdenen"
+        },
+        "icon": "inv_shoulder_plate_raidwarrior_i_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3500,
+            "crit": 3500,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 171868,
+        "name": "Earthen Shoulderguards",
+        "names": {
+            "cn": "",
+            "en": "Earthen Shoulderguards",
+            "ru": "Наплечные щитки земли",
+            "es": "Guardahombros terráneos",
+            "br": "Guarda-ombros Terrano",
+            "kr": "",
+            "fr": "Garde-épaules terrestre",
+            "de": "Schulterschutz der Irdenen"
+        },
+        "icon": "inv_shoulder_plate_raidwarrior_i_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 2800,
+            "mastery": 4200,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 171869,
+        "name": "Magma Plated Pauldrons",
+        "names": {
+            "cn": "",
+            "en": "Magma Plated Pauldrons",
+            "ru": "Наплечье из магматических пластин",
+            "es": "Espaldares de placas de magma",
+            "br": "Brafoneiras de Placa Magma",
+            "kr": "",
+            "fr": "Espauliers cuirassés de magma",
+            "de": "Magmaplattenschulterstücke"
+        },
+        "icon": "inv_shoulder_92",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3500,
+            "crit": 3500,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 171870,
+        "name": "Reinforced Sapphirium Pauldrons",
+        "names": {
+            "cn": "",
+            "en": "Reinforced Sapphirium Pauldrons",
+            "ru": "Усиленное сапфировое наплечье",
+            "es": "Espaldares de zafirium reforzado",
+            "br": "Brafoneiras Reforçadas de Safirium",
+            "kr": "",
+            "fr": "Espauliers en saphirium renforcé",
+            "de": "Verstärkte Saphiriumschulterstücke"
+        },
+        "icon": "inv_shoulder_plate_raidpaladin_i_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3500,
+            "crit": 3500,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 171871,
+        "name": "Magma Plated Shoulderguards",
+        "names": {
+            "cn": "",
+            "en": "Magma Plated Shoulderguards",
+            "ru": "Наплечные щитки из магматических пластин",
+            "es": "Guardahombros de placas de magma",
+            "br": "Guarda-ombros de Placa Magma",
+            "kr": "",
+            "fr": "Garde-épaules cuirassés de magma",
+            "de": "Magmaplattenschulterschutz"
+        },
+        "icon": "inv_shoulder_92",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 2800,
+            "mastery": 4200,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 171872,
+        "name": "Reinforced Sapphirium Shoulderguards",
+        "names": {
+            "cn": "",
+            "en": "Reinforced Sapphirium Shoulderguards",
+            "ru": "Усиленные сапфировые наплечные щитки",
+            "es": "Guardahombros de zafirium reforzado",
+            "br": "Guarda-ombros Reforçado de Safirium",
+            "kr": "",
+            "fr": "Garde-épaules en saphirium renforcé",
+            "de": "Verstärkter Saphiriumschulterschutz"
+        },
+        "icon": "inv_shoulder_plate_raidpaladin_i_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 2800,
+            "mastery": 4200,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 171873,
+        "name": "Reinforced Sapphirium Mantle",
+        "names": {
+            "cn": "",
+            "en": "Reinforced Sapphirium Mantle",
+            "ru": "Усиленное сапфировое оплечье",
+            "es": "Manto de zafirium reforzado",
+            "br": "Dragonas Reforçadas de Safirium",
+            "kr": "",
+            "fr": "Mantelet en saphirium renforcé",
+            "de": "Verstärkter Saphiriummantel"
+        },
+        "icon": "inv_shoulder_plate_raidpaladin_i_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3500,
+            "mastery": 0,
+            "versatility": 3500
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 171874,
+        "name": "Firelord's Hood",
+        "names": {
+            "cn": "",
+            "en": "Firelord's Hood",
+            "ru": "Капюшон повелителя огня",
+            "es": "Caperuza del Señor del Fuego",
+            "br": "Capuz do Senhor do Fogo",
+            "kr": "",
+            "fr": "Chaperon de seigneur du Feu",
+            "de": "Kapuze des Feuerlords"
+        },
+        "icon": "inv_helm_robe_raidmage_i_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3500,
+            "crit": 0,
+            "mastery": 3500,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 171875,
+        "name": "Shadowflame Hood",
+        "names": {
+            "cn": "",
+            "en": "Shadowflame Hood",
+            "ru": "Капюшон пламени Тьмы",
+            "es": "Caperuza de Pirosombra",
+            "br": "Capuz da Chama Sombria",
+            "kr": "",
+            "fr": "Chaperon d’Ombreflamme",
+            "de": "Schattenflammenkapuze"
+        },
+        "icon": "inv_helmet_cloth_raidwarlock_i_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3500,
+            "crit": 0,
+            "mastery": 3500,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 171876,
+        "name": "Mercurial Hood",
+        "names": {
+            "cn": "",
+            "en": "Mercurial Hood",
+            "ru": "Переменчивый капюшон",
+            "es": "Caperuza mercúrica",
+            "br": "Capuz Mercurial",
+            "kr": "",
+            "fr": "Chaperon mercurien",
+            "de": "Quecksilbrige Kapuze"
+        },
+        "icon": "inv_helmet_cloth_raidpriest_i_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3500,
+            "crit": 0,
+            "mastery": 3500,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 171877,
+        "name": "Mercurial Cowl",
+        "names": {
+            "cn": "",
+            "en": "Mercurial Cowl",
+            "ru": "Переменчивый клобук",
+            "es": "Capucha mercúrica",
+            "br": "Capucho Mercurial",
+            "kr": "",
+            "fr": "Capuche mercurienne",
+            "de": "Quecksilbrige Gugel"
+        },
+        "icon": "inv_helmet_cloth_raidpriest_i_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3500,
+            "mastery": 0,
+            "versatility": 3500
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 171878,
+        "name": "Stormrider's Helm",
+        "names": {
+            "cn": "",
+            "en": "Stormrider's Helm",
+            "ru": "Шлем странника бурь",
+            "es": "Yelmo de jinete de la tormenta",
+            "br": "Elmo do Cavalgaventos",
+            "kr": "",
+            "fr": "Heaume du chevaucheur de tempête",
+            "de": "Helm des Sturmreiters"
+        },
+        "icon": "inv_helmet_leather_raiddruid_i_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3500,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 3500
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 171879,
+        "name": "Stormrider's Cover",
+        "names": {
+            "cn": "",
+            "en": "Stormrider's Cover",
+            "ru": "Убор странника бурь",
+            "es": "Casquete de jinete de la tormenta",
+            "br": "Mantel do Cavalgaventos",
+            "kr": "",
+            "fr": "Coiffe du chevaucheur de tempête",
+            "de": "Bedeckung des Sturmreiters"
+        },
+        "icon": "inv_helmet_leather_raiddruid_i_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3500,
+            "crit": 3500,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 171880,
+        "name": "Stormrider's Headpiece",
+        "names": {
+            "cn": "",
+            "en": "Stormrider's Headpiece",
+            "ru": "Головной убор странника бурь",
+            "es": "Celada de jinete de la tormenta",
+            "br": "Bacinete do Cavalgaventos",
+            "kr": "",
+            "fr": "Chapel du chevaucheur de tempête",
+            "de": "Kopfstück des Sturmreiters"
+        },
+        "icon": "inv_helmet_leather_raiddruid_i_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3500,
+            "crit": 3500,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 171881,
+        "name": "Wind Dancer's Helmet",
+        "names": {
+            "cn": "",
+            "en": "Wind Dancer's Helmet",
+            "ru": "Полный шлем танцующего с ветром",
+            "es": "Casco de Bailavientos",
+            "br": "Capacete do Dançarino dos Ventos",
+            "kr": "",
+            "fr": "Casque du danseur du vent",
+            "de": "Helm des Windtänzers"
+        },
+        "icon": "inv_helmet_leatherraidrogue_i_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3500,
+            "crit": 3500,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 171882,
+        "name": "Lightning-Charged Headguard",
+        "names": {
+            "cn": "",
+            "en": "Lightning-Charged Headguard",
+            "ru": "Заряженный молнией наголовник",
+            "es": "Protegecabezas cargado de relámpago",
+            "br": "Cimeira Eletrificada",
+            "kr": "",
+            "fr": "Protège-front chargé de foudre",
+            "de": "Blitzgeladener Kopfschutz"
+        },
+        "icon": "inv_helm_mail_raidhunter_i_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3500,
+            "mastery": 3500,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 171883,
+        "name": "Faceguard of the Raging Elements",
+        "names": {
+            "cn": "",
+            "en": "Faceguard of the Raging Elements",
+            "ru": "Большой шлем бушующих стихий",
+            "es": "Visera de los elementos enfurecidos",
+            "br": "Viseira dos Elementos em Fúria",
+            "kr": "",
+            "fr": "Ventaille des éléments déchaînés",
+            "de": "Gesichtsschutz der wütenden Elemente"
+        },
+        "icon": "inv_helmet_raidshaman_i_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 3500,
+            "versatility": 3500
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 171884,
+        "name": "Headpiece of the Raging Elements",
+        "names": {
+            "cn": "",
+            "en": "Headpiece of the Raging Elements",
+            "ru": "Головной убор бушующих стихий",
+            "es": "Celada de los elementos enfurecidos",
+            "br": "Bacinete dos Elementos em Fúria",
+            "kr": "",
+            "fr": "Chapel des éléments déchaînés",
+            "de": "Kopfstück der wütenden Elemente"
+        },
+        "icon": "inv_helmet_raidshaman_i_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3500,
+            "crit": 0,
+            "mastery": 3500,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 171885,
+        "name": "Helmet of the Raging Elements",
+        "names": {
+            "cn": "",
+            "en": "Helmet of the Raging Elements",
+            "ru": "Полный шлем бушующих стихий",
+            "es": "Casco de los elementos enfurecidos",
+            "br": "Capacete dos Elementos em Fúria",
+            "kr": "",
+            "fr": "Casque des éléments déchaînés",
+            "de": "Helm der wütenden Elemente"
+        },
+        "icon": "inv_helmet_raidshaman_i_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3500,
+            "mastery": 3500,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 171886,
+        "name": "Earthen Helmet",
+        "names": {
+            "cn": "",
+            "en": "Earthen Helmet",
+            "ru": "Шлем земли",
+            "es": "Casco terráneo",
+            "br": "Capacete Terrano",
+            "kr": "",
+            "fr": "Casque terrestre",
+            "de": "Helm der Irdenen"
+        },
+        "icon": "inv_helmet_plate_raidwarrior_i_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3500,
+            "crit": 3500,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 171887,
+        "name": "Earthen Faceguard",
+        "names": {
+            "cn": "",
+            "en": "Earthen Faceguard",
+            "ru": "Большой шлем земли",
+            "es": "Visera terránea",
+            "br": "Viseira Terrana",
+            "kr": "",
+            "fr": "Ventaille terrestre",
+            "de": "Gesichtsschutz der Irdenen"
+        },
+        "icon": "inv_helmet_plate_raidwarrior_i_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 2800,
+            "mastery": 4200,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 171888,
+        "name": "Magma Plated Helmet",
+        "names": {
+            "cn": "",
+            "en": "Magma Plated Helmet",
+            "ru": "Полный шлем из магматических пластин",
+            "es": "Yelmo de placas de magma",
+            "br": "Capacete de Placa Magma",
+            "kr": "",
+            "fr": "Casque cuirassé de magma",
+            "de": "Magmaplattenhelm"
+        },
+        "icon": "inv_helmet_plate_raiddeathknight_i_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3500,
+            "crit": 3500,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 171889,
+        "name": "Reinforced Sapphirium Helmet",
+        "names": {
+            "cn": "",
+            "en": "Reinforced Sapphirium Helmet",
+            "ru": "Усиленный сапфировый полный шлем",
+            "es": "Casco de zafirium reforzado",
+            "br": "Capacete Reforçado de Safirium",
+            "kr": "",
+            "fr": "Casque en saphirium renforcé",
+            "de": "Verstärkter Saphiriumhelm"
+        },
+        "icon": "inv_helmet_plate_raidpaladin_i_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3500,
+            "crit": 3500,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 171890,
+        "name": "Magma Plated Faceguard",
+        "names": {
+            "cn": "",
+            "en": "Magma Plated Faceguard",
+            "ru": "Большой шлем из магматических пластин",
+            "es": "Visera de placas de magma",
+            "br": "Viseira de Placa Magma",
+            "kr": "",
+            "fr": "Ventaille cuirassée de magma",
+            "de": "Magmaplattengesichtsschutz"
+        },
+        "icon": "inv_helmet_plate_raiddeathknight_i_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 2800,
+            "mastery": 4200,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 171891,
+        "name": "Reinforced Sapphirium Faceguard",
+        "names": {
+            "cn": "",
+            "en": "Reinforced Sapphirium Faceguard",
+            "ru": "Усиленный сапфировый большой шлем",
+            "es": "Visera de zafirium reforzado",
+            "br": "Viseira Reforçada de Safirium",
+            "kr": "",
+            "fr": "Ventaille en saphirium renforcé",
+            "de": "Verstärkter Saphiriumgesichtsschutz"
+        },
+        "icon": "inv_helmet_plate_raidpaladin_i_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 2800,
+            "mastery": 4200,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 171892,
+        "name": "Reinforced Sapphirium Headguard",
+        "names": {
+            "cn": "",
+            "en": "Reinforced Sapphirium Headguard",
+            "ru": "Усиленный сапфировый наголовник",
+            "es": "Protegecabezas de zafirium reforzado",
+            "br": "Cimeira Reforçada de Safirium",
+            "kr": "",
+            "fr": "Protège-front en saphirium renforcé",
+            "de": "Verstärkter Saphiriumkopfschutz"
+        },
+        "icon": "inv_helmet_plate_raidpaladin_i_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3500,
+            "mastery": 0,
+            "versatility": 3500
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 171893,
+        "name": "Destroyer Chestguard",
+        "names": {
+            "cn": "",
+            "en": "Destroyer Chestguard",
+            "ru": "Нагрудный доспех разрушителя",
+            "es": "Coselete de destructor",
+            "br": "Couraça Destruidora",
+            "kr": "",
+            "fr": "Corselet de destructeur",
+            "de": "Brustschutz des Zerstörers"
+        },
+        "icon": "inv_chest_plate21",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 4250,
+            "crit": 2750,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 171894,
+        "name": "Destroyer Breastplate",
+        "names": {
+            "cn": "",
+            "en": "Destroyer Breastplate",
+            "ru": "Кираса Разрушителя",
+            "es": "Coraza de destructor",
+            "br": "Peitoral Destruidor",
+            "kr": "",
+            "fr": "Cuirasse de destructeur",
+            "de": "Brustplatte des Zerstörers"
+        },
+        "icon": "inv_chest_plate21",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 2150,
+            "crit": 4850,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 171895,
+        "name": "Crystalforge Chestguard",
+        "names": {
+            "cn": "",
+            "en": "Crystalforge Chestguard",
+            "ru": "Нагрудный доспех Хрустальной Кузницы",
+            "es": "Coselete forjacristal",
+            "br": "Couraça da Forja de Cristal",
+            "kr": "",
+            "fr": "Corselet de Cristalforge",
+            "de": "Kristallgeschmiedeter Brustschutz"
+        },
+        "icon": "inv_chest_plate19",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3200,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 3800
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 171896,
+        "name": "Crystalforge Breastplate",
+        "names": {
+            "cn": "",
+            "en": "Crystalforge Breastplate",
+            "ru": "Кираса Хрустальной Кузницы",
+            "es": "Coraza forjacristal",
+            "br": "Peitoral da Forja de Cristal",
+            "kr": "",
+            "fr": "Cuirasse de Cristalforge",
+            "de": "Kristallgeschmiedete Brustplatte"
+        },
+        "icon": "inv_chest_plate19",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3050,
+            "crit": 3950,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 171897,
+        "name": "Crystalforge Chestpiece",
+        "names": {
+            "cn": "",
+            "en": "Crystalforge Chestpiece",
+            "ru": "Нагрудник Хрустальной Кузницы",
+            "es": "Pechera forjacristal",
+            "br": "Peito d'Armas da Forja de Cristal",
+            "kr": "",
+            "fr": "Plastron de Cristalforge",
+            "de": "Kristallgeschmiedeter Brustharnisch"
+        },
+        "icon": "inv_chest_plate19",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 5000,
+            "mastery": 0,
+            "versatility": 2000
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 171898,
+        "name": "Rift Stalker Hauberk",
+        "names": {
+            "cn": "",
+            "en": "Rift Stalker Hauberk",
+            "ru": "Хауберк следопыта ущелий",
+            "es": "Camisote de acechador de falla",
+            "br": "Cota do Espreitador do Abismo",
+            "kr": "",
+            "fr": "Haubert de traqueur des failles",
+            "de": "Halsberge des Dimensionswandlers"
+        },
+        "icon": "inv_chest_chain_15",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 4700,
+            "crit": 2300,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 171899,
+        "name": "Deathmantle Chestguard",
+        "names": {
+            "cn": "",
+            "en": "Deathmantle Chestguard",
+            "ru": "Нагрудный доспех мантии смерти",
+            "es": "Coselete de manto de la muerte",
+            "br": "Couraça do Manto da Morte",
+            "kr": "",
+            "fr": "Corselet de mantemort",
+            "de": "Brustschutz des Todeshauchs"
+        },
+        "icon": "inv_chest_leather_13",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 5000,
+            "mastery": 0,
+            "versatility": 2000
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 171900,
+        "name": "Vestments of the Avatar",
+        "names": {
+            "cn": "",
+            "en": "Vestments of the Avatar",
+            "ru": "Одежды Аватары",
+            "es": "Vestimentas de avatar",
+            "br": "Vestimenta do Avatar",
+            "kr": "",
+            "fr": "Habits de l’avatar",
+            "de": "Gewänder des Avatars"
+        },
+        "icon": "inv_chest_cloth_65",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 2000,
+            "mastery": 0,
+            "versatility": 5000
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 171901,
+        "name": "Shroud of the Avatar",
+        "names": {
+            "cn": "",
+            "en": "Shroud of the Avatar",
+            "ru": "Накидка Аватары",
+            "es": "Embozo del avatar",
+            "br": "Mortalha do Avatar",
+            "kr": "",
+            "fr": "Voile de l’avatar",
+            "de": "Tuch des Avatars"
+        },
+        "icon": "inv_chest_cloth_65",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3500,
+            "crit": 3500,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 171902,
+        "name": "Cataclysm Chestguard",
+        "names": {
+            "cn": "",
+            "en": "Cataclysm Chestguard",
+            "ru": "Нагрудный доспех катаклизма",
+            "es": "Coselete de cataclismo",
+            "br": "Couraça do Cataclismo",
+            "kr": "",
+            "fr": "Corselet du cataclysme",
+            "de": "Brustschutz der Verheerung"
+        },
+        "icon": "inv_chest_plate08",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3200,
+            "mastery": 0,
+            "versatility": 3800
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 171903,
+        "name": "Cataclysm Chestpiece",
+        "names": {
+            "cn": "",
+            "en": "Cataclysm Chestpiece",
+            "ru": "Нагрудник катаклизма",
+            "es": "Pechera de cataclismo",
+            "br": "Peito d'Armas do Cataclismo",
+            "kr": "",
+            "fr": "Plastron du cataclysme",
+            "de": "Brustharnisch der Verheerung"
+        },
+        "icon": "inv_chest_plate08",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3350,
+            "mastery": 0,
+            "versatility": 3650
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 171904,
+        "name": "Cataclysm Chestplate",
+        "names": {
+            "cn": "",
+            "en": "Cataclysm Chestplate",
+            "ru": "Бригантина катаклизма",
+            "es": "Peto de cataclismo",
+            "br": "Guarda-peito do Cataclismo",
+            "kr": "",
+            "fr": "Pansière du cataclysme",
+            "de": "Brustplatte der Verheerung"
+        },
+        "icon": "inv_chest_plate08",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 2600,
+            "crit": 4400,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 171905,
+        "name": "Robes of Tirisfal",
+        "names": {
+            "cn": "",
+            "en": "Robes of Tirisfal",
+            "ru": "Тирисфальские одеяния",
+            "es": "Togas de Tirisfal",
+            "br": "Vestes de Tirisfal",
+            "kr": "",
+            "fr": "Robe de Tirisfal",
+            "de": "Roben von Tirisfal"
+        },
+        "icon": "inv_chest_cloth_61",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3500,
+            "mastery": 0,
+            "versatility": 3500
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 171906,
+        "name": "Robe of the Corruptor",
+        "names": {
+            "cn": "",
+            "en": "Robe of the Corruptor",
+            "ru": "Одеяние Осквернителя",
+            "es": "Toga del corruptor",
+            "br": "Veste do Corruptor",
+            "kr": "",
+            "fr": "Robe du corrupteur",
+            "de": "Robe des Verderbers"
+        },
+        "icon": "inv_chest_cloth_63",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 5000,
+            "mastery": 0,
+            "versatility": 2000
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 171907,
+        "name": "Nordrassil Chestguard",
+        "names": {
+            "cn": "",
+            "en": "Nordrassil Chestguard",
+            "ru": "Нагрудный доспех Нордрассила",
+            "es": "Coselete de Nordrassil",
+            "br": "Couraça de Nordrassil",
+            "kr": "",
+            "fr": "Corselet de Nordrassil",
+            "de": "Brustschutz von Nordrassil"
+        },
+        "icon": "inv_chest_leather_12",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 2000,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 5000
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 171908,
+        "name": "Nordrassil Chestplate",
+        "names": {
+            "cn": "",
+            "en": "Nordrassil Chestplate",
+            "ru": "Бригантина Нордрассила",
+            "es": "Peto de Nordrassil",
+            "br": "Guarda-peito de Nordrassil",
+            "kr": "",
+            "fr": "Pansière de Nordrassil",
+            "de": "Brustplatte von Nordrassil"
+        },
+        "icon": "inv_chest_leather_12",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 2000,
+            "crit": 5000,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 171909,
+        "name": "Nordrassil Chestpiece",
+        "names": {
+            "cn": "",
+            "en": "Nordrassil Chestpiece",
+            "ru": "Нагрудник Нордрассила",
+            "es": "Pechera de Nordrassil",
+            "br": "Peito d'Armas de Nordrassil",
+            "kr": "",
+            "fr": "Plastron de Nordrassil",
+            "de": "Brustharnisch von Nordrassil"
+        },
+        "icon": "inv_chest_leather_12",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 2600,
+            "crit": 4400,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 171910,
+        "name": "Destroyer Greathelm",
+        "names": {
+            "cn": "",
+            "en": "Destroyer Greathelm",
+            "ru": "Большой шлем Разрушителя",
+            "es": "Gran yelmo de destructor",
+            "br": "Grande Elmo Destruidor",
+            "kr": "",
+            "fr": "Grand heaume de destructeur",
+            "de": "Großhelm des Zerstörers"
+        },
+        "icon": "inv_helmet_92",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 5000,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 2000
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 171911,
+        "name": "Destroyer Battle-Helm",
+        "names": {
+            "cn": "",
+            "en": "Destroyer Battle-Helm",
+            "ru": "Боевой шлем Разрушителя",
+            "es": "Yelmo de batalla de destructor",
+            "br": "Elmo de Batalha Destruidor",
+            "kr": "",
+            "fr": "Heaume de bataille de destructeur",
+            "de": "Kampfhelm des Zerstörers"
+        },
+        "icon": "inv_helmet_92",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 2600,
+            "crit": 4400,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 171912,
+        "name": "Crystalforge Faceguard",
+        "names": {
+            "cn": "",
+            "en": "Crystalforge Faceguard",
+            "ru": "Большой шлем Хрустальной Кузницы",
+            "es": "Visera forjacristal",
+            "br": "Viseira da Forja de Cristal",
+            "kr": "",
+            "fr": "Ventaille de Cristalforge",
+            "de": "Kristallgeschmiedeter Gesichtsschutz"
+        },
+        "icon": "inv_helmet_78",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 2000,
+            "mastery": 0,
+            "versatility": 5000
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 171913,
+        "name": "Crystalforge War-Helm",
+        "names": {
+            "cn": "",
+            "en": "Crystalforge War-Helm",
+            "ru": "Боевой шлем Хрустальной Кузницы",
+            "es": "Yelmo de guerra forjacristal",
+            "br": "Elmo de Guerra da Forja de Cristal",
+            "kr": "",
+            "fr": "Heaume de guerre de Cristalforge",
+            "de": "Kristallgeschmiedeter Kriegshelm"
+        },
+        "icon": "inv_helmet_78",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3650,
+            "crit": 3350,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 171914,
+        "name": "Crystalforge Greathelm",
+        "names": {
+            "cn": "",
+            "en": "Crystalforge Greathelm",
+            "ru": "Большой шлем Хрустальной Кузницы",
+            "es": "Gran yelmo forjacristal",
+            "br": "Grande Elmo da Forja de Cristal",
+            "kr": "",
+            "fr": "Grand heaume de Cristalforge",
+            "de": "Kristallgeschmiedeter Großhelm"
+        },
+        "icon": "inv_helmet_78",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3350,
+            "mastery": 0,
+            "versatility": 3650
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 171915,
+        "name": "Rift Stalker Helm",
+        "names": {
+            "cn": "",
+            "en": "Rift Stalker Helm",
+            "ru": "Шлем следопыта ущелий",
+            "es": "Yelmo de acechador de falla",
+            "br": "Capacete do Espreitador do Abismo",
+            "kr": "",
+            "fr": "Heaume de traqueur des failles",
+            "de": "Helm des Dimensionswandlers"
+        },
+        "icon": "inv_helmet_15",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 2750,
+            "crit": 4250,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 171916,
+        "name": "Deathmantle Helm",
+        "names": {
+            "cn": "",
+            "en": "Deathmantle Helm",
+            "ru": "Шлем мантии смерти",
+            "es": "Yelmo de manto de la muerte",
+            "br": "Elmo do Manto da Morte",
+            "kr": "",
+            "fr": "Casque de mantemort",
+            "de": "Helm des Todeshauchs"
+        },
+        "icon": "inv_helmet_87",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 5000,
+            "mastery": 0,
+            "versatility": 2000
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 171917,
+        "name": "Cowl of the Avatar",
+        "names": {
+            "cn": "",
+            "en": "Cowl of the Avatar",
+            "ru": "Клобук аватары",
+            "es": "Capucha de avatar",
+            "br": "Capucho do Avatar",
+            "kr": "",
+            "fr": "Capuche de l’avatar",
+            "de": "Gugel des Avatars"
+        },
+        "icon": "inv_helmet_93",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 2000,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 5000
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 171918,
+        "name": "Hood of the Avatar",
+        "names": {
+            "cn": "",
+            "en": "Hood of the Avatar",
+            "ru": "Капюшон Аватары",
+            "es": "Caperuza del avatar",
+            "br": "Capuz do Avatar",
+            "kr": "",
+            "fr": "Chaperon de l’avatar",
+            "de": "Kapuze des Avatars"
+        },
+        "icon": "inv_helmet_93",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3500,
+            "crit": 3500,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 171919,
+        "name": "Cataclysm Headguard",
+        "names": {
+            "cn": "",
+            "en": "Cataclysm Headguard",
+            "ru": "Обруч катаклизма",
+            "es": "Protegecabezas de cataclismo",
+            "br": "Cimeira do Cataclismo",
+            "kr": "",
+            "fr": "Protège-front du cataclysme",
+            "de": "Kopfschutz der Verheerung"
+        },
+        "icon": "inv_helmet_54",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 2000,
+            "crit": 5000,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 171920,
+        "name": "Cataclysm Headpiece",
+        "names": {
+            "cn": "",
+            "en": "Cataclysm Headpiece",
+            "ru": "Головной убор катаклизма",
+            "es": "Celada de cataclismo",
+            "br": "Bacinete do Cataclismo",
+            "kr": "",
+            "fr": "Chapel du cataclysme",
+            "de": "Kopfstück der Verheerung"
+        },
+        "icon": "inv_helmet_54",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 2350,
+            "crit": 4650,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 171921,
+        "name": "Cataclysm Helm",
+        "names": {
+            "cn": "",
+            "en": "Cataclysm Helm",
+            "ru": "Шлем катаклизма",
+            "es": "Yelmo de cataclismo",
+            "br": "Elmo do Cataclismo",
+            "kr": "",
+            "fr": "Heaume du cataclysme",
+            "de": "Helm der Verheerung"
+        },
+        "icon": "inv_helmet_54",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 2750,
+            "crit": 4250,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 171922,
+        "name": "Cowl of Tirisfal",
+        "names": {
+            "cn": "",
+            "en": "Cowl of Tirisfal",
+            "ru": "Тирисфальский клобук",
+            "es": "Capucha de Tirisfal",
+            "br": "Capucho de Tirisfal",
+            "kr": "",
+            "fr": "Capuche de Tirisfal",
+            "de": "Gugel von Tirisfal"
+        },
+        "icon": "inv_helmet_86",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3500,
+            "mastery": 0,
+            "versatility": 3500
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 171923,
+        "name": "Hood of the Corruptor",
+        "names": {
+            "cn": "",
+            "en": "Hood of the Corruptor",
+            "ru": "Капюшон Осквернителя",
+            "es": "Caperuza del corruptor",
+            "br": "Capuz do Corruptor",
+            "kr": "",
+            "fr": "Chaperon du corrupteur",
+            "de": "Kapuze des Verderbers"
+        },
+        "icon": "inv_helmet_90",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 5000,
+            "mastery": 0,
+            "versatility": 2000
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 171924,
+        "name": "Nordrassil Headguard",
+        "names": {
+            "cn": "",
+            "en": "Nordrassil Headguard",
+            "ru": "Шлем Нордрассила",
+            "es": "Protegecabezas de Nordrassil",
+            "br": "Cimeira de Nordrassil",
+            "kr": "",
+            "fr": "Protège-front de Nordrassil",
+            "de": "Kopfschutz von Nordrassil"
+        },
+        "icon": "inv_helmet_85",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 2000,
+            "mastery": 0,
+            "versatility": 5000
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 171925,
+        "name": "Nordrassil Headdress",
+        "names": {
+            "cn": "",
+            "en": "Nordrassil Headdress",
+            "ru": "Головной убор Нордрассила",
+            "es": "Ornato de Nordrassil",
+            "br": "Alfaia de Nordrassil",
+            "kr": "",
+            "fr": "Coiffure de Nordrassil",
+            "de": "Kopfputz von Nordrassil"
+        },
+        "icon": "inv_helmet_85",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 5000,
+            "crit": 2000,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 171926,
+        "name": "Nordrassil Headpiece",
+        "names": {
+            "cn": "",
+            "en": "Nordrassil Headpiece",
+            "ru": "Оголовье Нордрассила",
+            "es": "Celada de Nordrassil",
+            "br": "Bacinete de Nordrassil",
+            "kr": "",
+            "fr": "Chapel de Nordrassil",
+            "de": "Kopfstück von Nordrassil"
+        },
+        "icon": "inv_helmet_85",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 2000,
+            "crit": 5000,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 171927,
+        "name": "Onslaught Battle-Helm",
+        "names": {
+            "cn": "",
+            "en": "Onslaught Battle-Helm",
+            "ru": "Боевой шлем натиска",
+            "es": "Yelmo de batalla de acometida",
+            "br": "Elmo de Batalha da Ofensiva",
+            "kr": "",
+            "fr": "Heaume de bataille d’assaut",
+            "de": "Kampfhelm des Ansturms"
+        },
+        "icon": "inv_helmet_98",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 2000,
+            "crit": 5000,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 171928,
+        "name": "Onslaught Greathelm",
+        "names": {
+            "cn": "",
+            "en": "Onslaught Greathelm",
+            "ru": "Большой шлем натиска",
+            "es": "Gran yelmo de acometida",
+            "br": "Grande Elmo da Ofensiva",
+            "kr": "",
+            "fr": "Grand heaume d’assaut",
+            "de": "Großhelm des Ansturms"
+        },
+        "icon": "inv_helmet_98",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 2000,
+            "mastery": 0,
+            "versatility": 5000
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 171929,
+        "name": "Lightbringer Faceguard",
+        "names": {
+            "cn": "",
+            "en": "Lightbringer Faceguard",
+            "ru": "Большой шлем Светоносного",
+            "es": "Visera de Iluminado",
+            "br": "Viseira do Arauto da Luz",
+            "kr": "",
+            "fr": "Ventaille du porteur de Lumière",
+            "de": "Gesichtsschutz des Lichtbringers"
+        },
+        "icon": "inv_helmet_96",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 5000,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 2000
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 171930,
+        "name": "Lightbringer Greathelm",
+        "names": {
+            "cn": "",
+            "en": "Lightbringer Greathelm",
+            "ru": "Большой шлем Светоносного",
+            "es": "Gran yelmo de Iluminado",
+            "br": "Grande Elmo do Arauto da Luz",
+            "kr": "",
+            "fr": "Grand heaume du porteur de Lumière",
+            "de": "Großhelm des Lichtbringers"
+        },
+        "icon": "inv_helmet_96",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 5000,
+            "mastery": 0,
+            "versatility": 2000
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 171931,
+        "name": "Lightbringer War-Helm",
+        "names": {
+            "cn": "",
+            "en": "Lightbringer War-Helm",
+            "ru": "Боевой шлем Светоносного",
+            "es": "Yelmo de guerra de Iluminado",
+            "br": "Elmo de Guerra do Arauto da Luz",
+            "kr": "",
+            "fr": "Heaume de guerre du porteur de Lumière",
+            "de": "Kriegshelm des Lichtbringers"
+        },
+        "icon": "inv_helmet_96",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3950,
+            "crit": 3050,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 171932,
+        "name": "Gronnstalker's Helmet",
+        "names": {
+            "cn": "",
+            "en": "Gronnstalker's Helmet",
+            "ru": "Полный шлем охотника на гроннов",
+            "es": "Casco de acechagronns",
+            "br": "Capacete do Espreita-gronns",
+            "kr": "",
+            "fr": "Casque de traqueur de Gronn",
+            "de": "Helm des Gronnjägers"
+        },
+        "icon": "inv_helmet_95",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 2150,
+            "crit": 4850,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 171933,
+        "name": "Skyshatter Helmet",
+        "names": {
+            "cn": "",
+            "en": "Skyshatter Helmet",
+            "ru": "Полный шлем Небокрушителя",
+            "es": "Casco de Devastador del Cielo",
+            "br": "Capacete Rasga-céus",
+            "kr": "",
+            "fr": "Casque Brise-ciel",
+            "de": "Helm des Himmelsdonners"
+        },
+        "icon": "inv_helmet_97",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 2000,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 5000
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 171934,
+        "name": "Skyshatter Headguard",
+        "names": {
+            "cn": "",
+            "en": "Skyshatter Headguard",
+            "ru": "Наголовник Небокрушителя",
+            "es": "Protegecabezas de Devastador del Cielo",
+            "br": "Cimeira Rasga-céus",
+            "kr": "",
+            "fr": "Protège-front Brise-ciel",
+            "de": "Kopfschutz des Himmelsdonners"
+        },
+        "icon": "inv_helmet_97",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 4550,
+            "mastery": 0,
+            "versatility": 2450
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 171935,
+        "name": "Skyshatter Cover",
+        "names": {
+            "cn": "",
+            "en": "Skyshatter Cover",
+            "ru": "Убор Небокрушителя",
+            "es": "Casquete de Devastador del Cielo",
+            "br": "Mantel Rasga-céus",
+            "kr": "",
+            "fr": "Couvre-chef Brise-ciel",
+            "de": "Bedeckung des Himmelsdonners"
+        },
+        "icon": "inv_helmet_97",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 2450,
+            "crit": 4550,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 171936,
+        "name": "Slayer's Helm",
+        "names": {
+            "cn": "",
+            "en": "Slayer's Helm",
+            "ru": "Шлем убийцы",
+            "es": "Yelmo de destripador",
+            "br": "Elmo do Matador",
+            "kr": "",
+            "fr": "Heaume de tueur",
+            "de": "Helm des Schlächters"
+        },
+        "icon": "inv_helmet_102",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 2450,
+            "crit": 4550,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 171937,
+        "name": "Thunderheart Helmet",
+        "names": {
+            "cn": "",
+            "en": "Thunderheart Helmet",
+            "ru": "Полный шлем Громового Сердца",
+            "es": "Casco de Corazón Atronador",
+            "br": "Capacete do Coração Trovejante",
+            "kr": "",
+            "fr": "Casque Cœur-de-Tonnerre",
+            "de": "Helm des Donnerherzens"
+        },
+        "icon": "inv_helmet_94",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 2000,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 5000
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 171938,
+        "name": "Thunderheart Cover",
+        "names": {
+            "cn": "",
+            "en": "Thunderheart Cover",
+            "ru": "Убор Громового Сердца",
+            "es": "Casquete de Corazón Atronador",
+            "br": "Mantel do Coração Trovejante",
+            "kr": "",
+            "fr": "Couvre-chef Cœur-de-Tonnerre",
+            "de": "Bedeckung des Donnerherzens"
+        },
+        "icon": "inv_helmet_94",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 5000,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 2000
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 171939,
+        "name": "Thunderheart Headguard",
+        "names": {
+            "cn": "",
+            "en": "Thunderheart Headguard",
+            "ru": "Наголовник Громового Сердца",
+            "es": "Protegecabezas de Corazón Atronador",
+            "br": "Cimeira do Coração Trovejante",
+            "kr": "",
+            "fr": "Protège-front Cœur-de-Tonnerre",
+            "de": "Kopfschutz des Donnerherzens"
+        },
+        "icon": "inv_helmet_94",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 2000,
+            "crit": 5000,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 171940,
+        "name": "Hood of the Malefic",
+        "names": {
+            "cn": "",
+            "en": "Hood of the Malefic",
+            "ru": "Капюшон Пагубы",
+            "es": "Caperuza del maléfico",
+            "br": "Capuz do Malefício",
+            "kr": "",
+            "fr": "Chaperon du maléfice",
+            "de": "Kapuze der Boshaftigkeit"
+        },
+        "icon": "inv_helmet_103",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 2300,
+            "crit": 4700,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 171941,
+        "name": "Cowl of the Tempest",
+        "names": {
+            "cn": "",
+            "en": "Cowl of the Tempest",
+            "ru": "Клобук урагана",
+            "es": "Capucha de la tempestad",
+            "br": "Capucho da Tormenta",
+            "kr": "",
+            "fr": "Capuche de la tempête",
+            "de": "Gugel des Gewittersturms"
+        },
+        "icon": "inv_helmet_101",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 2000,
+            "crit": 5000,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 171942,
+        "name": "Cowl of Absolution",
+        "names": {
+            "cn": "",
+            "en": "Cowl of Absolution",
+            "ru": "Клобук отпущения грехов",
+            "es": "Capucha de absolución",
+            "br": "Capucho da Absolvição",
+            "kr": "",
+            "fr": "Capuche d’absolution",
+            "de": "Gugel der Absolution"
+        },
+        "icon": "inv_helmet_99",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 2000,
+            "mastery": 0,
+            "versatility": 5000
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 171943,
+        "name": "Hood of Absolution",
+        "names": {
+            "cn": "",
+            "en": "Hood of Absolution",
+            "ru": "Капюшон отпущения грехов",
+            "es": "Caperuza de absolución",
+            "br": "Capuz da Absolvição",
+            "kr": "",
+            "fr": "Chaperon d’absolution",
+            "de": "Kapuze der Absolution"
+        },
+        "icon": "inv_helmet_99",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 2000,
+            "mastery": 0,
+            "versatility": 5000
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 171995,
+        "name": "Coldstep Slippers",
+        "names": {
+            "cn": "",
+            "en": "Coldstep Slippers",
+            "ru": "Туфли-хладоступы",
+            "es": "Zapatillas de pasofrío",
+            "br": "Sapatilhas Passofrio",
+            "kr": "",
+            "fr": "Mules de frisquepas",
+            "de": "Kaltstufenpantoffeln"
+        },
+        "icon": "inv_boots_cloth_17",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3800,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 3200
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Feet"
+    },
+    {
+        "id": 171999,
+        "name": "Coldstep Sandals",
+        "names": {
+            "cn": "",
+            "en": "Coldstep Sandals",
+            "ru": "Сандалии-хладоступы",
+            "es": "Sandalias de pasofrío",
+            "br": "Sandálias Passofrio",
+            "kr": "",
+            "fr": "Sandales de frisquepas",
+            "de": "Kaltstufensandalen"
+        },
+        "icon": "inv_boots_cloth_18",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3800,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 3200
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Feet"
+    },
+    {
+        "id": 172098,
+        "name": "Frostwolf Legionnaire's Cloak",
+        "names": {
+            "cn": "",
+            "en": "Frostwolf Legionnaire's Cloak",
+            "ru": "Плащ легионера из клана Северного Волка",
+            "es": "Capa de Legionario Lobo Gélido",
+            "br": "Manto do Legionário Lobo do Gelo",
+            "kr": "",
+            "fr": "Cape de légionnaire loup-de-givre",
+            "de": "Legionärsumhang der Frostwölfe"
+        },
+        "icon": "inv_misc_cape_16",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3800,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 3200
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Back"
+    },
+    {
+        "id": 172099,
+        "name": "Stormpike Soldier's Cloak",
+        "names": {
+            "cn": "",
+            "en": "Stormpike Soldier's Cloak",
+            "ru": "Плащ солдата Грозовой Вершины",
+            "es": "Capa de Soldado Pico Tormenta",
+            "br": "Manto do Soldado Lançatroz",
+            "kr": "",
+            "fr": "Cape de soldat foudrepique",
+            "de": "Umhang des Soldaten der Sturmlanzen"
+        },
+        "icon": "inv_misc_cape_18",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3800,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 3200
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Back"
+    },
+    {
+        "id": 172100,
+        "name": "Frostwolf Advisor's Cloak",
+        "names": {
+            "cn": "",
+            "en": "Frostwolf Advisor's Cloak",
+            "ru": "Плащ советника из клана Северного Волка",
+            "es": "Capa de consejero Lobo Gélido",
+            "br": "Manto do Conselheiro Lobo do Gelo",
+            "kr": "",
+            "fr": "Cape de conseiller loup-de-givre",
+            "de": "Mentorenumhang der Frostwölfe"
+        },
+        "icon": "inv_misc_cape_16",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 2900,
+            "crit": 4100,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Back"
+    },
+    {
+        "id": 172101,
+        "name": "Stormpike Sage's Cloak",
+        "names": {
+            "cn": "",
+            "en": "Stormpike Sage's Cloak",
+            "ru": "Плащ книжника Грозовой Вершины",
+            "es": "Capa de sabio Pico Tormenta",
+            "br": "Manto do Sábio Lançatroz",
+            "kr": "",
+            "fr": "Cape de sage foudrepique",
+            "de": "Umhang des Weisen der Sturmlanzen"
+        },
+        "icon": "inv_misc_cape_04",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 2900,
+            "crit": 4100,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Back"
+    },
+    {
+        "id": 172102,
+        "name": "Frostwolf Plate Belt",
+        "names": {
+            "cn": "",
+            "en": "Frostwolf Plate Belt",
+            "ru": "Латный пояс клана Северного Волка",
+            "es": "Cinturón de placas Lobo Gélido",
+            "br": "Cinto de Placa dos Lobo do Gelo",
+            "kr": "",
+            "fr": "Ceinture loup-de-givre en plaques",
+            "de": "Plattengürtel der Frostwölfe"
+        },
+        "icon": "inv_belt_13",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3050,
+            "crit": 3950,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Waist"
+    },
+    {
+        "id": 172103,
+        "name": "Frostwolf Mail Belt",
+        "names": {
+            "cn": "",
+            "en": "Frostwolf Mail Belt",
+            "ru": "Кольчужный пояс клана Северного Волка",
+            "es": "Cinturón de malla Lobo Gélido",
+            "br": "Cinto de Malha dos Lobo do Gelo",
+            "kr": "",
+            "fr": "Ceinture de mailles loup-de-givre",
+            "de": "Panzergürtel der Frostwölfe"
+        },
+        "icon": "inv_belt_22",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 5000,
+            "mastery": 0,
+            "versatility": 2000
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Waist"
+    },
+    {
+        "id": 172104,
+        "name": "Frostwolf Leather Belt",
+        "names": {
+            "cn": "",
+            "en": "Frostwolf Leather Belt",
+            "ru": "Кожаный пояс клана Северного Волка",
+            "es": "Cinturón de cuero Lobo Gélido",
+            "br": "Cinto de Couro dos Lobo do Gelo",
+            "kr": "",
+            "fr": "Ceinture de cuir loup-de-givre",
+            "de": "Ledergürtel der Frostwölfe"
+        },
+        "icon": "inv_belt_15",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 4250,
+            "crit": 2750,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Waist"
+    },
+    {
+        "id": 172105,
+        "name": "Frostwolf Cloth Belt",
+        "names": {
+            "cn": "",
+            "en": "Frostwolf Cloth Belt",
+            "ru": "Матерчатый пояс клана Северного Волка",
+            "es": "Cinturón de paño Lobo Gélido",
+            "br": "Cinto de Tecido dos Lobo do Gelo",
+            "kr": "",
+            "fr": "Ceinture de tissu loup-de-givre",
+            "de": "Stoffgürtel der Frostwölfe"
+        },
+        "icon": "inv_belt_04",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3800,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 3200
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Waist"
+    },
+    {
+        "id": 172106,
+        "name": "Stormpike Plate Girdle",
+        "names": {
+            "cn": "",
+            "en": "Stormpike Plate Girdle",
+            "ru": "Латный ремень Грозовой Вершины",
+            "es": "Faja de placas Pico Tormenta",
+            "br": "Cinturão de Placa Lançatroz",
+            "kr": "",
+            "fr": "Ceinturon foudrepique en plaques",
+            "de": "Plattengurt der Sturmlanzen"
+        },
+        "icon": "inv_belt_35",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3050,
+            "crit": 3950,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Waist"
+    },
+    {
+        "id": 172107,
+        "name": "Stormpike Mail Girdle",
+        "names": {
+            "cn": "",
+            "en": "Stormpike Mail Girdle",
+            "ru": "Кольчужный ремень Грозовой Вершины",
+            "es": "Faja de malla Pico Tormenta",
+            "br": "Cinturão de Malha Lançatroz",
+            "kr": "",
+            "fr": "Ceinturon foudrepique en mailles",
+            "de": "Panzergurt der Sturmlanzen"
+        },
+        "icon": "inv_belt_06",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 5000,
+            "mastery": 0,
+            "versatility": 2000
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Waist"
+    },
+    {
+        "id": 172108,
+        "name": "Stormpike Leather Girdle",
+        "names": {
+            "cn": "",
+            "en": "Stormpike Leather Girdle",
+            "ru": "Кожаный ремень Грозовой Вершины",
+            "es": "Faja de cuero Pico Tormenta",
+            "br": "Cinturão de Couro Lançatroz",
+            "kr": "",
+            "fr": "Ceinturon foudrepique en cuir",
+            "de": "Ledergurt der Sturmlanzen"
+        },
+        "icon": "inv_belt_13",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 4250,
+            "crit": 2750,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Waist"
+    },
+    {
+        "id": 172109,
+        "name": "Stormpike Cloth Girdle",
+        "names": {
+            "cn": "",
+            "en": "Stormpike Cloth Girdle",
+            "ru": "Матерчатый ремень Грозовой Вершины",
+            "es": "Faja de paño Pico Tormenta",
+            "br": "Cinturão de Tecido Lançatroz",
+            "kr": "",
+            "fr": "Ceinturon foudrepique en tissu",
+            "de": "Stoffgurt der Sturmlanzen"
+        },
+        "icon": "inv_belt_29",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3800,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 3200
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Waist"
+    },
+    {
+        "id": 172110,
+        "name": "Frostwolf Legionnaire's Pendant",
+        "names": {
+            "cn": "",
+            "en": "Frostwolf Legionnaire's Pendant",
+            "ru": "Подвеска легионера из клана Северного Волка",
+            "es": "Colgante de Legionario Lobo Gélido",
+            "br": "Pingente do Legionário Lobo do Gelo",
+            "kr": "",
+            "fr": "Pendentif de légionnaire loup-de-givre",
+            "de": "Legionärsanhänger der Frostwölfe"
+        },
+        "icon": "inv_jewelry_necklace_16",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "haste": 7000,
+            "crit": 10500,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Neck"
+    },
+    {
+        "id": 172111,
+        "name": "Frostwolf Advisor's Pendant",
+        "names": {
+            "cn": "",
+            "en": "Frostwolf Advisor's Pendant",
+            "ru": "Подвеска советника из клана Северного Волка",
+            "es": "Colgante de consejero Lobo Gélido",
+            "br": "Pingente do Conselheiro Lobo do Gelo",
+            "kr": "",
+            "fr": "Pendentif de conseiller loup-de-givre",
+            "de": "Mentorenanhänger der Frostwölfe"
+        },
+        "icon": "inv_jewelry_necklace_07",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 2500,
+            "mastery": 0,
+            "versatility": 15000
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Neck"
+    },
+    {
+        "id": 172112,
+        "name": "Stormpike Soldier's Pendant",
+        "names": {
+            "cn": "",
+            "en": "Stormpike Soldier's Pendant",
+            "ru": "Подвеска солдата Грозовой Вершины",
+            "es": "Colgante de Soldado Pico Tormenta",
+            "br": "Pingente do Soldado Lançatroz",
+            "kr": "",
+            "fr": "Pendentif de soldat foudrepique",
+            "de": "Anhänger des Soldaten der Sturmlanzen"
+        },
+        "icon": "inv_jewelry_necklace_15",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "haste": 7000,
+            "crit": 10500,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Neck"
+    },
+    {
+        "id": 172113,
+        "name": "Stormpike Sage's Pendant",
+        "names": {
+            "cn": "",
+            "en": "Stormpike Sage's Pendant",
+            "ru": "Подвеска книжника Грозовой Вершины",
+            "es": "Colgante de sabio Pico Tormenta",
+            "br": "Pingente do Sábio Lançatroz",
+            "kr": "",
+            "fr": "Pendentif de sage foudrepique",
+            "de": "Anhänger des Weisen der Sturmlanzen"
+        },
+        "icon": "inv_jewelry_necklace_08",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 2500,
+            "mastery": 0,
+            "versatility": 15000
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Neck"
+    },
+    {
+        "id": 172116,
+        "name": "Whiteout Staff",
+        "names": {
+            "cn": "",
+            "en": "Whiteout Staff",
+            "ru": "Убеленный посох",
+            "es": "Bastón de tormenta de nieve",
+            "br": "Cajado de Tormento Gélido",
+            "kr": "",
+            "fr": "Bâton blanchi",
+            "de": "Blendstab"
+        },
+        "icon": "inv_staff_30",
+        "itemClass": 2,
+        "itemSubClass": 10,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 23380,
+            "stamina": 7889,
+            "haste": 4400,
+            "crit": 2600,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "2H Weapon"
+    },
+    {
+        "id": 172117,
+        "name": "Crackling Staff",
+        "names": {
+            "cn": "",
+            "en": "Crackling Staff",
+            "ru": "Трескучий посох",
+            "es": "Bastón resonante",
+            "br": "Cajado Estalante",
+            "kr": "",
+            "fr": "Bâton crépitant",
+            "de": "Knisterstab"
+        },
+        "icon": "inv_staff_20",
+        "itemClass": 2,
+        "itemSubClass": 10,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 23380,
+            "stamina": 7889,
+            "haste": 4400,
+            "crit": 2600,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "2H Weapon"
+    },
+    {
+        "id": 172120,
+        "name": "Frost Runed Headdress",
+        "names": {
+            "cn": "",
+            "en": "Frost Runed Headdress",
+            "ru": "Тюрбан Ледяных рун",
+            "es": "Ornato de runas de escarcha",
+            "br": "Turbante de Geada Rúnica",
+            "kr": "",
+            "fr": "Turban de runes de givre",
+            "de": "Frostrunenverzierter Kopfputz"
+        },
+        "icon": "inv_helmet_61",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 2450,
+            "crit": 4550,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 172123,
+        "name": "Wand of Biting Cold",
+        "names": {
+            "cn": "",
+            "en": "Wand of Biting Cold",
+            "ru": "Жезл лютого холода",
+            "es": "Varita de Frío cortante",
+            "br": "Varinha do Frio Penetrante",
+            "kr": "",
+            "fr": "Baguette du froid mordant",
+            "de": "Zauberstab der beißenden Kälte"
+        },
+        "icon": "inv_wand_05",
+        "itemClass": 2,
+        "itemSubClass": 19,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 30629,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 4250,
+            "mastery": 0,
+            "versatility": 2750
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "1H Weapon"
+    },
+    {
+        "id": 172124,
+        "name": "Deep Rooted Ring",
+        "names": {
+            "cn": "",
+            "en": "Deep Rooted Ring",
+            "ru": "Кольцо глубинных корней",
+            "es": "Anillo raíces profundas",
+            "br": "Anel Bastante Enraizado",
+            "kr": "",
+            "fr": "Anneau des racines profondes",
+            "de": "Wurzelring"
+        },
+        "icon": "inv_jewelry_ring_35",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "haste": 14000,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 3500
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Finger"
+    },
+    {
+        "id": 172126,
+        "name": "Winteraxe Epaulets",
+        "names": {
+            "cn": "",
+            "en": "Winteraxe Epaulets",
+            "ru": "Эполеты Ледяной Секиры",
+            "es": "Cubrehombros de Hacha Invernal",
+            "br": "Palas de Invernacha",
+            "kr": "",
+            "fr": "Épaulettes haches-d'hiver",
+            "de": "Winteraxschulterklappen"
+        },
+        "icon": "inv_shoulder_07",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3350,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 3650
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 172127,
+        "name": "Frozen Steel Vambraces",
+        "names": {
+            "cn": "",
+            "en": "Frozen Steel Vambraces",
+            "ru": "Застывшие стальные тяжелые наручи",
+            "es": "Avambrazos de acero congelados",
+            "br": "Avambraços de Aço Congelado",
+            "kr": "",
+            "fr": "Protège-bras d’acier glacé",
+            "de": "Eisüberzogene Stahlunterarmschienen"
+        },
+        "icon": "inv_bracer_18",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 5000,
+            "mastery": 0,
+            "versatility": 2000
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Wrist"
+    },
+    {
+        "id": 172128,
+        "name": "Yeti Hide Bracers",
+        "names": {
+            "cn": "",
+            "en": "Yeti Hide Bracers",
+            "ru": "Наручи из шкуры йети",
+            "es": "Brazales de pellejo de yeti",
+            "br": "Braçadeiras de Pelego de Yeti",
+            "kr": "",
+            "fr": "Brassards en cuir de yéti",
+            "de": "Yetibalgarmschienen"
+        },
+        "icon": "inv_bracer_14",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 2600,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 4400
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Wrist"
+    },
+    {
+        "id": 172129,
+        "name": "Tome of Arcane Domination",
+        "names": {
+            "cn": "",
+            "en": "Tome of Arcane Domination",
+            "ru": "Фолиант Чародейской силы",
+            "es": "Escrito sobre Dominación Arcana",
+            "br": "Tomo de Dominação Arcana",
+            "kr": "",
+            "fr": "Tome de domination des Arcanes",
+            "de": "Foliant der arkanen Beherrschung"
+        },
+        "icon": "inv_misc_book_09",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 16132,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3200,
+            "mastery": 0,
+            "versatility": 3800
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Offhand"
+    },
+    {
+        "id": 172130,
+        "name": "Tome of Shadow Force",
+        "names": {
+            "cn": "",
+            "en": "Tome of Shadow Force",
+            "ru": "Фолиант Силы тени",
+            "es": "Escrito sobre Fuerza de las Sombras",
+            "br": "Tomo do Poder da Sombra",
+            "kr": "",
+            "fr": "Tome de force d'ombre",
+            "de": "Foliant der Schattengewalt"
+        },
+        "icon": "inv_misc_book_09",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 16132,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 5000,
+            "mastery": 0,
+            "versatility": 2000
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Offhand"
+    },
+    {
+        "id": 172131,
+        "name": "Tome of the Ice Lord",
+        "names": {
+            "cn": "",
+            "en": "Tome of the Ice Lord",
+            "ru": "Фолиант Ледяного лорда",
+            "es": "Escrito del Señor del Hielo",
+            "br": "Tomo do Senhor do Gelo",
+            "kr": "",
+            "fr": "Tome du Seigneur des glaces",
+            "de": "Foliant des Eislords"
+        },
+        "icon": "inv_misc_book_09",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 16132,
+            "stamina": 7889,
+            "haste": 4250,
+            "crit": 2750,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Offhand"
+    },
+    {
+        "id": 172132,
+        "name": "Tome of Fiery Arcana",
+        "names": {
+            "cn": "",
+            "en": "Tome of Fiery Arcana",
+            "ru": "Фолиант Огненных чар",
+            "es": "Escrito sobre Arcana ígnea",
+            "br": "Tomo de Arcano Abrasador",
+            "kr": "",
+            "fr": "Tome de l'arcane ardente",
+            "de": "Foliant der feurigen Arkane"
+        },
+        "icon": "inv_misc_book_09",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 16132,
+            "stamina": 7889,
+            "haste": 4400,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 2600
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Offhand"
+    },
+    {
+        "id": 172133,
+        "name": "Lei of the Lifegiver",
+        "names": {
+            "cn": "",
+            "en": "Lei of the Lifegiver",
+            "ru": "Гирлянда дарующего жизнь",
+            "es": "Lei del Vivificador",
+            "br": "Flores do Vivificador",
+            "kr": "",
+            "fr": "Lei du Donneur de vie",
+            "de": "Kranz des Lebensspenders"
+        },
+        "icon": "inv_misc_flower_02",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 16132,
+            "stamina": 7889,
+            "haste": 3050,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 3950
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Offhand"
+    },
+    {
+        "id": 172134,
+        "name": "Therazane's Touch",
+        "names": {
+            "cn": "",
+            "en": "Therazane's Touch",
+            "ru": "Касание Теразан",
+            "es": "Toque de Therazane",
+            "br": "Toque de Therazane",
+            "kr": "",
+            "fr": "Toucher de Therazane",
+            "de": "Therazanes Berührung"
+        },
+        "icon": "inv_misc_branch_01",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 16132,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Offhand"
+    },
+    {
+        "id": 172135,
+        "name": "The Immovable Object",
+        "names": {
+            "cn": "",
+            "en": "The Immovable Object",
+            "ru": "Недвижимый объект",
+            "es": "El objeto inamovible",
+            "br": "O Objeto Inamovível",
+            "kr": "",
+            "fr": "L’Objet inébranlable",
+            "de": "Das unbewegliche Objekt"
+        },
+        "icon": "spell_frost_chillingarmor",
+        "itemClass": 4,
+        "itemSubClass": 6,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 16132,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 2600,
+            "mastery": 0,
+            "versatility": 4400
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shield"
+    },
+    {
+        "id": 172138,
+        "name": "Don Julio's Band",
+        "names": {
+            "cn": "",
+            "en": "Don Julio's Band",
+            "ru": "Кольцо дона Хулио",
+            "es": "Sortija de don Julio",
+            "br": "Elo de Dom Julio",
+            "kr": "",
+            "fr": "Bague de don Julio",
+            "de": "Don Julios Band"
+        },
+        "icon": "inv_jewelry_ring_35",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "haste": 7000,
+            "crit": 10500,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Finger"
+    },
+    {
+        "id": 172139,
+        "name": "Cold Forged Hammer",
+        "names": {
+            "cn": "",
+            "en": "Cold Forged Hammer",
+            "ru": "Холоднокованный молот",
+            "es": "Martillo forjado en frío",
+            "br": "Martelo Forjado a Frio",
+            "kr": "",
+            "fr": "Marteau forgé à froid",
+            "de": "Kaltgeschmiedeter Hammer"
+        },
+        "icon": "inv_hammer_06",
+        "itemClass": 2,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 30629,
+            "stamina": 7889,
+            "haste": 2000,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 5000
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "1H Weapon"
+    },
+    {
+        "id": 172140,
+        "name": "Don Rodrigo's Band",
+        "names": {
+            "cn": "",
+            "en": "Don Rodrigo's Band",
+            "ru": "Кольцо дона Родриго",
+            "es": "Sortija de don Rodrigo",
+            "br": "Elo de Dom Rodrigo",
+            "kr": "",
+            "fr": "Bague de don Rodrigue",
+            "de": "Don Rodrigos Band"
+        },
+        "icon": "inv_jewelry_ring_34",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 6000,
+            "mastery": 0,
+            "versatility": 11500
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Finger"
     },
     {
         "id": 172188,
@@ -21466,6 +34551,9241 @@ export const itemDB = [
         "slot": "1H Weapon"
     },
     {
+        "id": 172523,
+        "name": "Corrupted Gladiator's Silk Robe",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Silk Robe",
+            "ru": "Шелковое одеяние падшего гладиатора",
+            "es": "Toga de seda de Gladiador corrupto",
+            "br": "Veste de Seda do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Robe du gladiateur corrompu en soie",
+            "de": "Seidene Robe des verderbten Gladiators"
+        },
+        "icon": "inv_chest_cloth_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 172524,
+        "name": "Corrupted Gladiator's Silk Treads",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Silk Treads",
+            "ru": "Шелковые ботфорты падшего гладиатора",
+            "es": "Botines de seda de Gladiador corrupto",
+            "br": "Botinas de Seda do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Bottines du gladiateur corrompu en soie",
+            "de": "Seidene Treter des verderbten Gladiators"
+        },
+        "icon": "inv_boot_cloth_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 5000,
+            "crit": 2000,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Feet"
+    },
+    {
+        "id": 172525,
+        "name": "Corrupted Gladiator's Silk Gloves",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Silk Gloves",
+            "ru": "Шелковые перчатки падшего гладиатора",
+            "es": "Guantes de seda de Gladiador corrupto",
+            "br": "Luvas de Seda do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Gants du gladiateur corrompu en soie",
+            "de": "Seidenhandschuhe des verderbten Gladiators"
+        },
+        "icon": "inv_glove_cloth_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 2400,
+            "crit": 4600,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
+        "id": 172526,
+        "name": "Corrupted Gladiator's Silk Hood",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Silk Hood",
+            "ru": "Шелковый капюшон падшего гладиатора",
+            "es": "Caperuza de seda de Gladiador corrupto",
+            "br": "Capuz de Seda do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Chaperon du gladiateur corrompu en soie",
+            "de": "Seidenkapuze des verderbten Gladiators"
+        },
+        "icon": "inv_helm_cloth_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 172527,
+        "name": "Corrupted Gladiator's Silk Leggings",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Silk Leggings",
+            "ru": "Шелковые поножи падшего гладиатора",
+            "es": "Leotardos de seda de Gladiador corrupto",
+            "br": "Perneiras de Seda do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Jambières du gladiateur corrompu en soie",
+            "de": "Seidengamaschen des verderbten Gladiators"
+        },
+        "icon": "inv_pant_cloth_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 5400,
+            "crit": 0,
+            "mastery": 1600,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 172528,
+        "name": "Corrupted Gladiator's Silk Mantle",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Silk Mantle",
+            "ru": "Шелковая мантия падшего гладиатора",
+            "es": "Manto de seda de Gladiador corrupto",
+            "br": "Dragonas de Seda do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Mantelet du gladiateur corrompu en soie",
+            "de": "Seidenmantel des verderbten Gladiators"
+        },
+        "icon": "inv_shoulder_cloth_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 172529,
+        "name": "Corrupted Gladiator's Silk Cuffs",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Silk Cuffs",
+            "ru": "Шелковые манжеты падшего гладиатора",
+            "es": "Puños de seda de Gladiador corrupto",
+            "br": "Manilhas de Seda do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Crispins du gladiateur corrompu en soie",
+            "de": "Seidenmanschetten des verderbten Gladiators"
+        },
+        "icon": "inv_bracer_cloth_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 4600,
+            "crit": 2400,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Wrist"
+    },
+    {
+        "id": 172530,
+        "name": "Corrupted Gladiator's Silk Cord",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Silk Cord",
+            "ru": "Шелковый шнурованный ремень падшего гладиатора",
+            "es": "Cordón de seda de Gladiador corrupto",
+            "br": "Cordão de Seda do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Corde du gladiateur corrompu en soie",
+            "de": "Seidene Kordel des verderbten Gladiators"
+        },
+        "icon": "inv_belt_cloth_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 5000,
+            "mastery": 0,
+            "versatility": 2000
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Waist"
+    },
+    {
+        "id": 172531,
+        "name": "Corrupted Gladiator's Leather Tunic",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Leather Tunic",
+            "ru": "Кожаный мундир падшего гладиатора",
+            "es": "Guerrera de cuero de Gladiador corrupto",
+            "br": "Túnica de Couro do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Tunique du gladiateur corrompu en cuir",
+            "de": "Ledertunika des verderbten Gladiators"
+        },
+        "icon": "inv_chest_leatherraidnzoth_d_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 172532,
+        "name": "Corrupted Gladiator's Leather Boots",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Leather Boots",
+            "ru": "Кожаные сапоги падшего гладиатора",
+            "es": "Botas de cuero de Gladiador corrupto",
+            "br": "Botas de Couro do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Bottes du gladiateur corrompu en cuir",
+            "de": "Lederstiefel des verderbten Gladiators"
+        },
+        "icon": "inv_boot_leatherraidnzoth_d_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 5400,
+            "crit": 1600,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Feet"
+    },
+    {
+        "id": 172533,
+        "name": "Corrupted Gladiator's Leather Gloves",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Leather Gloves",
+            "ru": "Кожаные перчатки падшего гладиатора",
+            "es": "Guantes de cuero de Gladiador corrupto",
+            "br": "Luvas de Couro do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Gants du gladiateur corrompu en cuir",
+            "de": "Lederhandschuhe des verderbten Gladiators"
+        },
+        "icon": "inv_glove_leatherraidnzoth_d_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 2000,
+            "crit": 5000,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
+        "id": 172534,
+        "name": "Corrupted Gladiator's Leather Helm",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Leather Helm",
+            "ru": "Кожаный шлем падшего гладиатора",
+            "es": "Yelmo de cuero de Gladiador corrupto",
+            "br": "Elmo de Couro do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Heaume du gladiateur corrompu en cuir",
+            "de": "Lederhelm des verderbten Gladiators"
+        },
+        "icon": "inv_helm_leatherraidnzoth_d_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 172535,
+        "name": "Corrupted Gladiator's Leather Legguards",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Leather Legguards",
+            "ru": "Кожаные набедренники падшего гладиатора",
+            "es": "Musleras de cuero de Gladiador corrupto",
+            "br": "Guarda-pernas de Couro do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Garde-jambes du gladiateur corrompu en cuir",
+            "de": "Lederbeinschützer des verderbten Gladiators"
+        },
+        "icon": "inv_pant_leatherraidnzoth_d_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 4600,
+            "crit": 0,
+            "mastery": 2400,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 172536,
+        "name": "Corrupted Gladiator's Leather Spaulders",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Leather Spaulders",
+            "ru": "Кожаный наплеч падшего гладиатора",
+            "es": "Bufas de cuero de Gladiador corrupto",
+            "br": "Espaldares de Couro do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Spallières du gladiateur corrompu en cuir",
+            "de": "Lederschiftung des verderbten Gladiators"
+        },
+        "icon": "inv_shoulder_leatherraidnzoth_d_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 172537,
+        "name": "Corrupted Gladiator's Leather Belt",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Leather Belt",
+            "ru": "Кожаный пояс падшего гладиатора",
+            "es": "Cinturón de cuero de Gladiador corrupto",
+            "br": "Cinto de Couro do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Ceinture du gladiateur corrompu en cuir",
+            "de": "Ledergürtel des verderbten Gladiators"
+        },
+        "icon": "inv_belt_leatherraidnzoth_d_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 5400,
+            "mastery": 0,
+            "versatility": 1600
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Waist"
+    },
+    {
+        "id": 172538,
+        "name": "Corrupted Gladiator's Leather Bindings",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Leather Bindings",
+            "ru": "Кожаные наручи падшего гладиатора",
+            "es": "Ataduras de cuero de Gladiador corrupto",
+            "br": "Braceletes de Couro do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Manchettes du gladiateur corrompu en cuir",
+            "de": "Lederbindungen des verderbten Gladiators"
+        },
+        "icon": "inv_bracer_leatherraidnzoth_d_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 5000,
+            "crit": 2000,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Wrist"
+    },
+    {
+        "id": 172539,
+        "name": "Corrupted Gladiator's Chain Armor",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Chain Armor",
+            "ru": "Плетеный доспех падшего гладиатора",
+            "es": "Armadura de anillas de Gladiador corrupto",
+            "br": "Armadura Encadeada do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Cotte d’anneaux du gladiateur corrompu",
+            "de": "Kettenrüstung des verderbten Gladiators"
+        },
+        "icon": "inv_robe_mail_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 172540,
+        "name": "Corrupted Gladiator's Chain Sabatons",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Chain Sabatons",
+            "ru": "Плетеные башмаки падшего гладиатора",
+            "es": "Escarpes de anillas de Gladiador corrupto",
+            "br": "Escarpes Encadeados do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Solerets du gladiateur corrompu en anneaux",
+            "de": "Kettensabatons des verderbten Gladiators"
+        },
+        "icon": "inv_boot_mail_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 4600,
+            "crit": 2400,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Feet"
+    },
+    {
+        "id": 172541,
+        "name": "Corrupted Gladiator's Chain Gauntlets",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Chain Gauntlets",
+            "ru": "Плетеные рукавицы падшего гладиатора",
+            "es": "Guanteletes de anillas de Gladiador corrupto",
+            "br": "Manoplas Encadeadas do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Gantelets du gladiateur corrompu en anneaux",
+            "de": "Kettenstulpen des verderbten Gladiators"
+        },
+        "icon": "inv_glove_mail_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 1600,
+            "crit": 5400,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
+        "id": 172542,
+        "name": "Corrupted Gladiator's Chain Helm",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Chain Helm",
+            "ru": "Плетеный шлем падшего гладиатора",
+            "es": "Yelmo de anillas de Gladiador corrupto",
+            "br": "Elmo Encadeado do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Heaume du gladiateur corrompu en anneaux",
+            "de": "Kettenhelm des verderbten Gladiators"
+        },
+        "icon": "inv_helm_mail_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 172543,
+        "name": "Corrupted Gladiator's Chain Leggings",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Chain Leggings",
+            "ru": "Плетеные поножи падшего гладиатора",
+            "es": "Leotardos de anillas de Gladiador corrupto",
+            "br": "Perneiras Encadeadas do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Jambières du gladiateur corrompu en anneaux",
+            "de": "Kettengamaschen des verderbten Gladiators"
+        },
+        "icon": "inv_pant_mail_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 5000,
+            "crit": 0,
+            "mastery": 2000,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 172544,
+        "name": "Corrupted Gladiator's Chain Spaulders",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Chain Spaulders",
+            "ru": "Плетеный наплеч падшего гладиатора",
+            "es": "Bufas de anillas de Gladiador corrupto",
+            "br": "Espaldares Encadeados do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Spallières du gladiateur corrompu en anneaux",
+            "de": "Kettenschiftung des verderbten Gladiators"
+        },
+        "icon": "inv_shoulder_mail_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 172545,
+        "name": "Corrupted Gladiator's Chain Waistguard",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Chain Waistguard",
+            "ru": "Плетеный воинский пояс падшего гладиатора",
+            "es": "Guardarrenes de anillas de Gladiador corrupto",
+            "br": "Cinta Encadeada do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Sangle du gladiateur corrompu en anneaux",
+            "de": "Kettentaillenschutz des verderbten Gladiators"
+        },
+        "icon": "inv_belt_mail_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 4600,
+            "mastery": 0,
+            "versatility": 2400
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Waist"
+    },
+    {
+        "id": 172546,
+        "name": "Corrupted Gladiator's Chain Armbands",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Chain Armbands",
+            "ru": "Плетеные поручи падшего гладиатора",
+            "es": "Bandas de anillas de Gladiador corrupto",
+            "br": "Embraces Encadeados do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Bracières du gladiateur corrompu en anneaux",
+            "de": "Kettenarmbinden des verderbten Gladiators"
+        },
+        "icon": "inv_bracer_mail_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 5400,
+            "crit": 1600,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Wrist"
+    },
+    {
+        "id": 172547,
+        "name": "Corrupted Gladiator's Plate Helm",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Plate Helm",
+            "ru": "Латный шлем падшего гладиатора",
+            "es": "Yelmo de placas de Gladiador corrupto",
+            "br": "Elmo de Placa do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Heaume du gladiateur corrompu en plaques",
+            "de": "Plattenhelm des verderbten Gladiators"
+        },
+        "icon": "inv_helm_plate_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 172548,
+        "name": "Corrupted Gladiator's Plate Chestpiece",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Plate Chestpiece",
+            "ru": "Латный нагрудник падшего гладиатора",
+            "es": "Pechera de placas de Gladiador corrupto",
+            "br": "Peito d'Armas de Placa do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Plastron du gladiateur corrompu en plaques",
+            "de": "Plattenbrustharnisch des verderbten Gladiators"
+        },
+        "icon": "inv_chest_plate_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 172549,
+        "name": "Corrupted Gladiator's Plate Warboots",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Plate Warboots",
+            "ru": "Латные боевые сапоги падшего гладиатора",
+            "es": "Botas de guerra de placas de Gladiador corrupto",
+            "br": "Coturnos de Placa do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Bottes de guerre du gladiateur corrompu en plaques",
+            "de": "Plattenkriegsstiefel des verderbten Gladiators"
+        },
+        "icon": "inv_boot_plate_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 5000,
+            "crit": 2000,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Feet"
+    },
+    {
+        "id": 172550,
+        "name": "Corrupted Gladiator's Plate Gauntlets",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Plate Gauntlets",
+            "ru": "Латные рукавицы падшего гладиатора",
+            "es": "Guanteletes de placas de Gladiador corrupto",
+            "br": "Manoplas de Placa do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Gantelets du gladiateur corrompu en plaques",
+            "de": "Plattenstulpen des verderbten Gladiators"
+        },
+        "icon": "inv_glove_plate_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 2400,
+            "crit": 4600,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
+        "id": 172551,
+        "name": "Corrupted Gladiator's Plate Legguards",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Plate Legguards",
+            "ru": "Латные набедренники падшего гладиатора",
+            "es": "Musleras de placas de Gladiador corrupto",
+            "br": "Guarda-pernas de Placa do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Garde-jambes du gladiateur corrompu en plaques",
+            "de": "Plattenbeinschützer des verderbten Gladiators"
+        },
+        "icon": "inv_pant_plate_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 5400,
+            "crit": 0,
+            "mastery": 1600,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 172552,
+        "name": "Corrupted Gladiator's Plate Pauldrons",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Plate Pauldrons",
+            "ru": "Латное наплечье падшего гладиатора",
+            "es": "Espaldares de placas de Gladiador corrupto",
+            "br": "Brafoneiras de Placa do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Espauliers du gladiateur corrompu en plaques",
+            "de": "Plattenschulterstücke des verderbten Gladiators"
+        },
+        "icon": "inv_shoulder_plate_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 172553,
+        "name": "Corrupted Gladiator's Plate Girdle",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Plate Girdle",
+            "ru": "Латный ремень падшего гладиатора",
+            "es": "Faja de placas de Gladiador corrupto",
+            "br": "Cinturão de Placa do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Ceinturon du gladiateur corrompu en plaques",
+            "de": "Plattengurt des verderbten Gladiators"
+        },
+        "icon": "inv_belt_plate_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 5000,
+            "mastery": 0,
+            "versatility": 2000
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Waist"
+    },
+    {
+        "id": 172554,
+        "name": "Corrupted Gladiator's Plate Armguards",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Plate Armguards",
+            "ru": "Латные боевые наручи падшего гладиатора",
+            "es": "Guardabrazos de placas de Gladiador corrupto",
+            "br": "Guarda-braços de Placa do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Garde-bras du gladiateur corrompu en plaques",
+            "de": "Plattenarmschützer des verderbten Gladiators"
+        },
+        "icon": "inv_bracer_plate_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 4600,
+            "crit": 2400,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Wrist"
+    },
+    {
+        "id": 172555,
+        "name": "Corrupted Gladiator's Plate Helm",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Plate Helm",
+            "ru": "Латный шлем падшего гладиатора",
+            "es": "Yelmo de placas de Gladiador corrupto",
+            "br": "Elmo de Placa do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Heaume du gladiateur corrompu en plaques",
+            "de": "Plattenhelm des verderbten Gladiators"
+        },
+        "icon": "inv_helm_plate_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 172556,
+        "name": "Corrupted Gladiator's Silk Robe",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Silk Robe",
+            "ru": "Шелковое одеяние падшего гладиатора",
+            "es": "Toga de seda de Gladiador corrupto",
+            "br": "Veste de Seda do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Robe du gladiateur corrompu en soie",
+            "de": "Seidene Robe des verderbten Gladiators"
+        },
+        "icon": "inv_chest_cloth_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 172557,
+        "name": "Corrupted Gladiator's Plate Chestpiece",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Plate Chestpiece",
+            "ru": "Латный нагрудник падшего гладиатора",
+            "es": "Pechera de placas de Gladiador corrupto",
+            "br": "Peito d'Armas de Placa do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Plastron du gladiateur corrompu en plaques",
+            "de": "Plattenbrustharnisch des verderbten Gladiators"
+        },
+        "icon": "inv_chest_plate_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 172558,
+        "name": "Corrupted Gladiator's Chain Armor",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Chain Armor",
+            "ru": "Плетеный доспех падшего гладиатора",
+            "es": "Armadura de anillas de Gladiador corrupto",
+            "br": "Armadura Encadeada do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Cotte d’anneaux du gladiateur corrompu",
+            "de": "Kettenrüstung des verderbten Gladiators"
+        },
+        "icon": "inv_robe_mail_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 172559,
+        "name": "Corrupted Gladiator's Leather Tunic",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Leather Tunic",
+            "ru": "Кожаный мундир падшего гладиатора",
+            "es": "Guerrera de cuero de Gladiador corrupto",
+            "br": "Túnica de Couro do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Tunique du gladiateur corrompu en cuir",
+            "de": "Ledertunika des verderbten Gladiators"
+        },
+        "icon": "inv_chest_leatherraidnzoth_d_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 172560,
+        "name": "Corrupted Gladiator's Plate Warboots",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Plate Warboots",
+            "ru": "Латные боевые сапоги падшего гладиатора",
+            "es": "Botas de guerra de placas de Gladiador corrupto",
+            "br": "Coturnos de Placa do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Bottes de guerre du gladiateur corrompu en plaques",
+            "de": "Plattenkriegsstiefel des verderbten Gladiators"
+        },
+        "icon": "inv_boot_plate_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 4600,
+            "crit": 2400,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Feet"
+    },
+    {
+        "id": 172561,
+        "name": "Corrupted Gladiator's Silk Treads",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Silk Treads",
+            "ru": "Шелковые ботфорты падшего гладиатора",
+            "es": "Botines de seda de Gladiador corrupto",
+            "br": "Botinas de Seda do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Bottines du gladiateur corrompu en soie",
+            "de": "Seidene Treter des verderbten Gladiators"
+        },
+        "icon": "inv_boot_cloth_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 4600,
+            "crit": 2400,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Feet"
+    },
+    {
+        "id": 172562,
+        "name": "Corrupted Gladiator's Chain Sabatons",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Chain Sabatons",
+            "ru": "Плетеные башмаки падшего гладиатора",
+            "es": "Escarpes de anillas de Gladiador corrupto",
+            "br": "Escarpes Encadeados do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Solerets du gladiateur corrompu en anneaux",
+            "de": "Kettensabatons des verderbten Gladiators"
+        },
+        "icon": "inv_boot_mail_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 5400,
+            "crit": 1600,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Feet"
+    },
+    {
+        "id": 172563,
+        "name": "Corrupted Gladiator's Leather Boots",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Leather Boots",
+            "ru": "Кожаные сапоги падшего гладиатора",
+            "es": "Botas de cuero de Gladiador corrupto",
+            "br": "Botas de Couro do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Bottes du gladiateur corrompu en cuir",
+            "de": "Lederstiefel des verderbten Gladiators"
+        },
+        "icon": "inv_boot_leatherraidnzoth_d_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 5000,
+            "crit": 2000,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Feet"
+    },
+    {
+        "id": 172564,
+        "name": "Corrupted Gladiator's Leather Gloves",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Leather Gloves",
+            "ru": "Кожаные перчатки падшего гладиатора",
+            "es": "Guantes de cuero de Gladiador corrupto",
+            "br": "Luvas de Couro do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Gants du gladiateur corrompu en cuir",
+            "de": "Lederhandschuhe des verderbten Gladiators"
+        },
+        "icon": "inv_glove_leatherraidnzoth_d_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 2400,
+            "crit": 4600,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
+        "id": 172565,
+        "name": "Corrupted Gladiator's Plate Gauntlets",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Plate Gauntlets",
+            "ru": "Латные рукавицы падшего гладиатора",
+            "es": "Guanteletes de placas de Gladiador corrupto",
+            "br": "Manoplas de Placa do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Gantelets du gladiateur corrompu en plaques",
+            "de": "Plattenstulpen des verderbten Gladiators"
+        },
+        "icon": "inv_glove_plate_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 1600,
+            "crit": 5400,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
+        "id": 172566,
+        "name": "Corrupted Gladiator's Silk Gloves",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Silk Gloves",
+            "ru": "Шелковые перчатки падшего гладиатора",
+            "es": "Guantes de seda de Gladiador corrupto",
+            "br": "Luvas de Seda do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Gants du gladiateur corrompu en soie",
+            "de": "Seidenhandschuhe des verderbten Gladiators"
+        },
+        "icon": "inv_glove_cloth_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 1600,
+            "crit": 5400,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
+        "id": 172567,
+        "name": "Corrupted Gladiator's Chain Gauntlets",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Chain Gauntlets",
+            "ru": "Плетеные рукавицы падшего гладиатора",
+            "es": "Guanteletes de anillas de Gladiador corrupto",
+            "br": "Manoplas Encadeadas do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Gantelets du gladiateur corrompu en anneaux",
+            "de": "Kettenstulpen des verderbten Gladiators"
+        },
+        "icon": "inv_glove_mail_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 2000,
+            "crit": 5000,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
+        "id": 172568,
+        "name": "Corrupted Gladiator's Silk Hood",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Silk Hood",
+            "ru": "Шелковый капюшон падшего гладиатора",
+            "es": "Caperuza de seda de Gladiador corrupto",
+            "br": "Capuz de Seda do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Chaperon du gladiateur corrompu en soie",
+            "de": "Seidenkapuze des verderbten Gladiators"
+        },
+        "icon": "inv_helm_cloth_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 172569,
+        "name": "Corrupted Gladiator's Chain Helm",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Chain Helm",
+            "ru": "Плетеный шлем падшего гладиатора",
+            "es": "Yelmo de anillas de Gladiador corrupto",
+            "br": "Elmo Encadeado do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Heaume du gladiateur corrompu en anneaux",
+            "de": "Kettenhelm des verderbten Gladiators"
+        },
+        "icon": "inv_helm_mail_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 172570,
+        "name": "Corrupted Gladiator's Leather Helm",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Leather Helm",
+            "ru": "Кожаный шлем падшего гладиатора",
+            "es": "Yelmo de cuero de Gladiador corrupto",
+            "br": "Elmo de Couro do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Heaume du gladiateur corrompu en cuir",
+            "de": "Lederhelm des verderbten Gladiators"
+        },
+        "icon": "inv_helm_leatherraidnzoth_d_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 172571,
+        "name": "Corrupted Gladiator's Plate Legguards",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Plate Legguards",
+            "ru": "Латные набедренники падшего гладиатора",
+            "es": "Musleras de placas de Gladiador corrupto",
+            "br": "Guarda-pernas de Placa do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Garde-jambes du gladiateur corrompu en plaques",
+            "de": "Plattenbeinschützer des verderbten Gladiators"
+        },
+        "icon": "inv_pant_plate_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 5000,
+            "crit": 0,
+            "mastery": 2000,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 172572,
+        "name": "Corrupted Gladiator's Silk Leggings",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Silk Leggings",
+            "ru": "Шелковые поножи падшего гладиатора",
+            "es": "Leotardos de seda de Gladiador corrupto",
+            "br": "Perneiras de Seda do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Jambières du gladiateur corrompu en soie",
+            "de": "Seidengamaschen des verderbten Gladiators"
+        },
+        "icon": "inv_pant_cloth_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 5000,
+            "crit": 0,
+            "mastery": 2000,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 172573,
+        "name": "Corrupted Gladiator's Chain Leggings",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Chain Leggings",
+            "ru": "Плетеные поножи падшего гладиатора",
+            "es": "Leotardos de anillas de Gladiador corrupto",
+            "br": "Perneiras Encadeadas do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Jambières du gladiateur corrompu en anneaux",
+            "de": "Kettengamaschen des verderbten Gladiators"
+        },
+        "icon": "inv_pant_mail_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 4600,
+            "crit": 0,
+            "mastery": 2400,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 172574,
+        "name": "Corrupted Gladiator's Leather Legguards",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Leather Legguards",
+            "ru": "Кожаные набедренники падшего гладиатора",
+            "es": "Musleras de cuero de Gladiador corrupto",
+            "br": "Guarda-pernas de Couro do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Garde-jambes du gladiateur corrompu en cuir",
+            "de": "Lederbeinschützer des verderbten Gladiators"
+        },
+        "icon": "inv_pant_leatherraidnzoth_d_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 5400,
+            "crit": 0,
+            "mastery": 1600,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 172575,
+        "name": "Corrupted Gladiator's Leather Spaulders",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Leather Spaulders",
+            "ru": "Кожаный наплеч падшего гладиатора",
+            "es": "Bufas de cuero de Gladiador corrupto",
+            "br": "Espaldares de Couro do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Spallières du gladiateur corrompu en cuir",
+            "de": "Lederschiftung des verderbten Gladiators"
+        },
+        "icon": "inv_shoulder_leatherraidnzoth_d_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 172576,
+        "name": "Corrupted Gladiator's Plate Pauldrons",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Plate Pauldrons",
+            "ru": "Латное наплечье падшего гладиатора",
+            "es": "Espaldares de placas de Gladiador corrupto",
+            "br": "Brafoneiras de Placa do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Espauliers du gladiateur corrompu en plaques",
+            "de": "Plattenschulterstücke des verderbten Gladiators"
+        },
+        "icon": "inv_shoulder_plate_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 172577,
+        "name": "Corrupted Gladiator's Silk Mantle",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Silk Mantle",
+            "ru": "Шелковая мантия падшего гладиатора",
+            "es": "Manto de seda de Gladiador corrupto",
+            "br": "Dragonas de Seda do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Mantelet du gladiateur corrompu en soie",
+            "de": "Seidenmantel des verderbten Gladiators"
+        },
+        "icon": "inv_shoulder_cloth_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 172578,
+        "name": "Corrupted Gladiator's Chain Spaulders",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Chain Spaulders",
+            "ru": "Плетеный наплеч падшего гладиатора",
+            "es": "Bufas de anillas de Gladiador corrupto",
+            "br": "Espaldares Encadeados do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Spallières du gladiateur corrompu en anneaux",
+            "de": "Kettenschiftung des verderbten Gladiators"
+        },
+        "icon": "inv_shoulder_mail_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 172579,
+        "name": "Corrupted Gladiator's Plate Girdle",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Plate Girdle",
+            "ru": "Латный ремень падшего гладиатора",
+            "es": "Faja de placas de Gladiador corrupto",
+            "br": "Cinturão de Placa do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Ceinturon du gladiateur corrompu en plaques",
+            "de": "Plattengurt des verderbten Gladiators"
+        },
+        "icon": "inv_belt_plate_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 4600,
+            "mastery": 0,
+            "versatility": 2400
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Waist"
+    },
+    {
+        "id": 172580,
+        "name": "Corrupted Gladiator's Silk Cord",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Silk Cord",
+            "ru": "Шелковый шнурованный ремень падшего гладиатора",
+            "es": "Cordón de seda de Gladiador corrupto",
+            "br": "Cordão de Seda do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Corde du gladiateur corrompu en soie",
+            "de": "Seidene Kordel des verderbten Gladiators"
+        },
+        "icon": "inv_belt_cloth_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 4600,
+            "mastery": 0,
+            "versatility": 2400
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Waist"
+    },
+    {
+        "id": 172581,
+        "name": "Corrupted Gladiator's Chain Waistguard",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Chain Waistguard",
+            "ru": "Плетеный воинский пояс падшего гладиатора",
+            "es": "Guardarrenes de anillas de Gladiador corrupto",
+            "br": "Cinta Encadeada do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Sangle du gladiateur corrompu en anneaux",
+            "de": "Kettentaillenschutz des verderbten Gladiators"
+        },
+        "icon": "inv_belt_mail_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 5400,
+            "mastery": 0,
+            "versatility": 1600
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Waist"
+    },
+    {
+        "id": 172582,
+        "name": "Corrupted Gladiator's Leather Belt",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Leather Belt",
+            "ru": "Кожаный пояс падшего гладиатора",
+            "es": "Cinturón de cuero de Gladiador corrupto",
+            "br": "Cinto de Couro do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Ceinture du gladiateur corrompu en cuir",
+            "de": "Ledergürtel des verderbten Gladiators"
+        },
+        "icon": "inv_belt_leatherraidnzoth_d_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 5000,
+            "mastery": 0,
+            "versatility": 2000
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Waist"
+    },
+    {
+        "id": 172583,
+        "name": "Corrupted Gladiator's Silk Cuffs",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Silk Cuffs",
+            "ru": "Шелковые манжеты падшего гладиатора",
+            "es": "Puños de seda de Gladiador corrupto",
+            "br": "Manilhas de Seda do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Crispins du gladiateur corrompu en soie",
+            "de": "Seidenmanschetten des verderbten Gladiators"
+        },
+        "icon": "inv_bracer_cloth_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 5400,
+            "crit": 1600,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Wrist"
+    },
+    {
+        "id": 172584,
+        "name": "Corrupted Gladiator's Plate Armguards",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Plate Armguards",
+            "ru": "Латные боевые наручи падшего гладиатора",
+            "es": "Guardabrazos de placas de Gladiador corrupto",
+            "br": "Guarda-braços de Placa do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Garde-bras du gladiateur corrompu en plaques",
+            "de": "Plattenarmschützer des verderbten Gladiators"
+        },
+        "icon": "inv_bracer_plate_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 5400,
+            "crit": 1600,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Wrist"
+    },
+    {
+        "id": 172585,
+        "name": "Corrupted Gladiator's Chain Armbands",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Chain Armbands",
+            "ru": "Плетеные поручи падшего гладиатора",
+            "es": "Bandas de anillas de Gladiador corrupto",
+            "br": "Embraces Encadeados do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Bracières du gladiateur corrompu en anneaux",
+            "de": "Kettenarmbinden des verderbten Gladiators"
+        },
+        "icon": "inv_bracer_mail_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 5000,
+            "crit": 2000,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Wrist"
+    },
+    {
+        "id": 172586,
+        "name": "Corrupted Gladiator's Leather Bindings",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Leather Bindings",
+            "ru": "Кожаные наручи падшего гладиатора",
+            "es": "Ataduras de cuero de Gladiador corrupto",
+            "br": "Braceletes de Couro do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Manchettes du gladiateur corrompu en cuir",
+            "de": "Lederbindungen des verderbten Gladiators"
+        },
+        "icon": "inv_bracer_leatherraidnzoth_d_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 4600,
+            "crit": 2400,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Wrist"
+    },
+    {
+        "id": 172587,
+        "name": "Corrupted Gladiator's Silk Raiment",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Silk Raiment",
+            "ru": "Шелковое облачение падшего гладиатора",
+            "es": "Vestiduras de seda de Gladiador corrupto",
+            "br": "Traje de Seda do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Grande tenue du gladiateur corrompu en soie",
+            "de": "Seidene Gewandung des verderbten Gladiators"
+        },
+        "icon": "inv_chest_cloth_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 172588,
+        "name": "Corrupted Gladiator's Silk Slippers",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Silk Slippers",
+            "ru": "Шелковые сандалии падшего гладиатора",
+            "es": "Zapatillas de seda de Gladiador corrupto",
+            "br": "Sapatilhas de Seda do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Mules du gladiateur corrompu en soie",
+            "de": "Seidenpantoffeln des verderbten Gladiators"
+        },
+        "icon": "inv_boot_cloth_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 2400,
+            "versatility": 4600
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Feet"
+    },
+    {
+        "id": 172589,
+        "name": "Corrupted Gladiator's Silk Handguards",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Silk Handguards",
+            "ru": "Шелковые боевые рукавицы падшего гладиатора",
+            "es": "Manoplas de seda de Gladiador corrupto",
+            "br": "Protetores de Mão de Seda do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Garde-mains du gladiateur corrompu en soie",
+            "de": "Seidene Handschützer des verderbten Gladiators"
+        },
+        "icon": "inv_glove_cloth_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 5400,
+            "versatility": 1600
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
+        "id": 172590,
+        "name": "Corrupted Gladiator's Silk Cowl",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Silk Cowl",
+            "ru": "Шелковый клобук падшего гладиатора",
+            "es": "Capucha de seda de Gladiador corrupto",
+            "br": "Capucho de Seda do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Capuche du gladiateur corrompu en soie",
+            "de": "Seidene Gugel des verderbten Gladiators"
+        },
+        "icon": "inv_helm_cloth_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 172591,
+        "name": "Corrupted Gladiator's Silk Trousers",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Silk Trousers",
+            "ru": "Шелковые брюки падшего гладиатора",
+            "es": "Calzas de seda de Gladiador corrupto",
+            "br": "Calças de Seda do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Chausses du gladiateur corrompu en soie",
+            "de": "Seidene Beinkleider des verderbten Gladiators"
+        },
+        "icon": "inv_pant_cloth_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 2000,
+            "mastery": 0,
+            "versatility": 5000
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 172592,
+        "name": "Corrupted Gladiator's Silk Amice",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Silk Amice",
+            "ru": "Шелковый нарамник падшего гладиатора",
+            "es": "Amito de seda de Gladiador corrupto",
+            "br": "Sobreveste de Seda do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Amict du gladiateur corrompu en soie",
+            "de": "Seidene Amicia des verderbten Gladiators"
+        },
+        "icon": "inv_shoulder_cloth_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 172593,
+        "name": "Corrupted Gladiator's Silk Bracers",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Silk Bracers",
+            "ru": "Шелковые наручи падшего гладиатора",
+            "es": "Brazales de seda de Gladiador corrupto",
+            "br": "Braçadeiras de Seda do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Brassards du gladiateur corrompu en soie",
+            "de": "Seidene Armschienen des verderbten Gladiators"
+        },
+        "icon": "inv_bracer_cloth_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 1600,
+            "versatility": 5400
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Wrist"
+    },
+    {
+        "id": 172594,
+        "name": "Corrupted Gladiator's Silk Sash",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Silk Sash",
+            "ru": "Шелковый кушак падшего гладиатора",
+            "es": "Fajín de seda de Gladiador corrupto",
+            "br": "Faixa de Seda do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Écharpe du gladiateur corrompu en soie",
+            "de": "Seidenschärpe des verderbten Gladiators"
+        },
+        "icon": "inv_belt_cloth_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 2400,
+            "crit": 0,
+            "mastery": 4600,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Waist"
+    },
+    {
+        "id": 172595,
+        "name": "Corrupted Gladiator's Leather Vest",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Leather Vest",
+            "ru": "Кожаный жилет падшего гладиатора",
+            "es": "Jubón de cuero de Gladiador corrupto",
+            "br": "Colete de Couro do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Gilet du gladiateur corrompu en cuir",
+            "de": "Lederweste des verderbten Gladiators"
+        },
+        "icon": "inv_chest_leatherraidnzoth_d_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 172596,
+        "name": "Corrupted Gladiator's Leather Footguards",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Leather Footguards",
+            "ru": "Кожаные прочные ботинки падшего гладиатора",
+            "es": "Guardapiés de cuero de Gladiador corrupto",
+            "br": "Guarda-pés de Couro do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Protège-tibias du gladiateur corrompu en cuir",
+            "de": "Lederfußschützer des verderbten Gladiators"
+        },
+        "icon": "inv_boot_leatherraidnzoth_d_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 2000,
+            "versatility": 5000
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Feet"
+    },
+    {
+        "id": 172597,
+        "name": "Corrupted Gladiator's Leather Handguards",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Leather Handguards",
+            "ru": "Кожаные боевые рукавицы падшего гладиатора",
+            "es": "Manoplas de cuero de Gladiador corrupto",
+            "br": "Protetores de Mão de Couro do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Garde-mains du gladiateur corrompu en cuir",
+            "de": "Lederhandschützer des verderbten Gladiators"
+        },
+        "icon": "inv_glove_leatherraidnzoth_d_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 4600,
+            "versatility": 2400
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
+        "id": 172598,
+        "name": "Corrupted Gladiator's Leather Hood",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Leather Hood",
+            "ru": "Кожаный капюшон падшего гладиатора",
+            "es": "Caperuza de cuero de Gladiador corrupto",
+            "br": "Capuz de Couro do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Chaperon du gladiateur corrompu en cuir",
+            "de": "Lederkapuze des verderbten Gladiators"
+        },
+        "icon": "inv_helm_leatherraidnzoth_d_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 172599,
+        "name": "Corrupted Gladiator's Leather Pants",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Leather Pants",
+            "ru": "Кожаные штаны падшего гладиатора",
+            "es": "Pantalones de cuero de Gladiador corrupto",
+            "br": "Calças de Couro do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Pantalon du gladiateur corrompu en cuir",
+            "de": "Lederhose des verderbten Gladiators"
+        },
+        "icon": "inv_pant_leatherraidnzoth_d_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 1600,
+            "mastery": 0,
+            "versatility": 5400
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 172600,
+        "name": "Corrupted Gladiator's Leather Mantle",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Leather Mantle",
+            "ru": "Кожаное оплечье падшего гладиатора",
+            "es": "Manto de cuero de Gladiador corrupto",
+            "br": "Dragonas de Couro do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Mantelet du gladiateur corrompu en cuir",
+            "de": "Ledermantel des verderbten Gladiators"
+        },
+        "icon": "inv_shoulder_leatherraidnzoth_d_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 172601,
+        "name": "Corrupted Gladiator's Leather Waistband",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Leather Waistband",
+            "ru": "Кожаный боевой пояс падшего гладиатора",
+            "es": "Pretina de cuero de Gladiador corrupto",
+            "br": "Cintel de Couro do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Baudrier du gladiateur corrompu en cuir",
+            "de": "Ledergürtelbund des verderbten Gladiators"
+        },
+        "icon": "inv_belt_leatherraidnzoth_d_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 2000,
+            "crit": 0,
+            "mastery": 5000,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Waist"
+    },
+    {
+        "id": 172602,
+        "name": "Corrupted Gladiator's Leather Armwraps",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Leather Armwraps",
+            "ru": "Кожаные наручные обмотки падшего гладиатора",
+            "es": "Brazaletes de cuero de Gladiador corrupto",
+            "br": "Braceleiras de Couro do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Couvre-bras du gladiateur corrompu en cuir",
+            "de": "Lederarmwickel des verderbten Gladiators"
+        },
+        "icon": "inv_bracer_leatherraidnzoth_d_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 2400,
+            "versatility": 4600
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Wrist"
+    },
+    {
+        "id": 172603,
+        "name": "Corrupted Gladiator's Chain Chestguard",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Chain Chestguard",
+            "ru": "Плетеный нагрудный доспех падшего гладиатора",
+            "es": "Coselete de anillas de Gladiador corrupto",
+            "br": "Couraça Encadeada do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Corselet du gladiateur corrompu en anneaux",
+            "de": "Kettenbrustschutz des verderbten Gladiators"
+        },
+        "icon": "inv_chest_mail_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 172604,
+        "name": "Corrupted Gladiator's Chain Footguards",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Chain Footguards",
+            "ru": "Плетеные ботинки падшего гладиатора",
+            "es": "Guardapiés de anillas de Gladiador corrupto",
+            "br": "Guarda-pés Encadeados do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Protège-tibias du gladiateur corrompu en anneaux",
+            "de": "Kettenfußschützer des verderbten Gladiators"
+        },
+        "icon": "inv_boot_mail_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 1600,
+            "versatility": 5400
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Feet"
+    },
+    {
+        "id": 172605,
+        "name": "Corrupted Gladiator's Chain Handguards",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Chain Handguards",
+            "ru": "Плетеные боевые рукавицы падшего гладиатора",
+            "es": "Manoplas de anillas de Gladiador corrupto",
+            "br": "Protetores de Mão Encadeados do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Garde-mains du gladiateur corrompu en anneaux",
+            "de": "Kettenhandschützer des verderbten Gladiators"
+        },
+        "icon": "inv_glove_mail_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 5000,
+            "versatility": 2000
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
+        "id": 172606,
+        "name": "Corrupted Gladiator's Chain Headpiece",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Chain Headpiece",
+            "ru": "Плетеный головной убор падшего гладиатора",
+            "es": "Celada de anillas de Gladiador corrupto",
+            "br": "Bacinete Encadeado do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Chapel du gladiateur corrompu en anneaux",
+            "de": "Kettenkopfstück des verderbten Gladiators"
+        },
+        "icon": "inv_helm_mail_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 172607,
+        "name": "Corrupted Gladiator's Chain Legguards",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Chain Legguards",
+            "ru": "Плетеные набедренники падшего гладиатора",
+            "es": "Musleras de anillas de Gladiador corrupto",
+            "br": "Guarda-pernas Encadeado do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Garde-jambes du gladiateur corrompu en anneaux",
+            "de": "Kettenbeinschützer des verderbten Gladiators"
+        },
+        "icon": "inv_pant_mail_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 2400,
+            "mastery": 0,
+            "versatility": 4600
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 172608,
+        "name": "Corrupted Gladiator's Chain Shoulderguards",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Chain Shoulderguards",
+            "ru": "Плетеные наплечные щитки падшего гладиатора",
+            "es": "Guardahombros de anillas de Gladiador corrupto",
+            "br": "Guarda-ombros Encadeados do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Garde-épaules du gladiateur corrompu en anneaux",
+            "de": "Kettenschulterschützer des verderbten Gladiators"
+        },
+        "icon": "inv_shoulder_mail_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 172609,
+        "name": "Corrupted Gladiator's Chain Clasp",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Chain Clasp",
+            "ru": "Плетеная застежка падшего гладиатора",
+            "es": "Cinto de anillas de Gladiador corrupto",
+            "br": "Fecho Encadeado do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Fermoir du gladiateur corrompu en anneaux",
+            "de": "Kettenschnallengürtel des verderbten Gladiators"
+        },
+        "icon": "inv_belt_mail_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 1600,
+            "crit": 0,
+            "mastery": 5400,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Waist"
+    },
+    {
+        "id": 172610,
+        "name": "Corrupted Gladiator's Chain Wristguards",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Chain Wristguards",
+            "ru": "Плетеные нарукавники падшего гладиатора",
+            "es": "Guardamuñecas de anillas de Gladiador corrupto",
+            "br": "Munhequeiras Encadeadas do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Garde-poignets du gladiateur corrompu en anneaux",
+            "de": "Kettenhandgelenksschützer des verderbten Gladiators"
+        },
+        "icon": "inv_bracer_mail_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 2000,
+            "versatility": 5000
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Wrist"
+    },
+    {
+        "id": 172611,
+        "name": "Corrupted Gladiator's Plate Headcover",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Plate Headcover",
+            "ru": "Латный головной покров падшего гладиатора",
+            "es": "Cimera de placas de Gladiador corrupto",
+            "br": "Barrete de Placa do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Bassinet du gladiateur corrompu en plaques",
+            "de": "Plattenkopfbedeckung des verderbten Gladiators"
+        },
+        "icon": "inv_helm_plate_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 172612,
+        "name": "Corrupted Gladiator's Plate Chestguard",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Plate Chestguard",
+            "ru": "Латный нагрудный доспех падшего гладиатора",
+            "es": "Coselete de placas de Gladiador corrupto",
+            "br": "Couraça de Placa do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Corselet du gladiateur corrompu en plaques",
+            "de": "Plattenbrustschutz des verderbten Gladiators"
+        },
+        "icon": "inv_chest_plate_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 172613,
+        "name": "Corrupted Gladiator's Plate Greaves",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Plate Greaves",
+            "ru": "Латные наголенники падшего гладиатора",
+            "es": "Grebas de placas de Gladiador corrupto",
+            "br": "Grevas de Placa do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Grèves du gladiateur corrompu en plaques",
+            "de": "Plattenschienbeinschützer des verderbten Gladiators"
+        },
+        "icon": "inv_boot_plate_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 2400,
+            "versatility": 4600
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Feet"
+    },
+    {
+        "id": 172614,
+        "name": "Corrupted Gladiator's Plate Gloves",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Plate Gloves",
+            "ru": "Латные перчатки падшего гладиатора",
+            "es": "Guantes de placas de Gladiador corrupto",
+            "br": "Luvas de Placa do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Gants du gladiateur corrompu en plaques",
+            "de": "Plattenhandschuhe des verderbten Gladiators"
+        },
+        "icon": "inv_glove_plate_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 5400,
+            "versatility": 1600
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
+        "id": 172615,
+        "name": "Corrupted Gladiator's Plate Leg Armor",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Plate Leg Armor",
+            "ru": "Латные поножи падшего гладиатора",
+            "es": "Armadura de placas para pierna de Gladiador corrupto",
+            "br": "Armadura de Perna de Placa do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Armure de jambe du gladiateur corrompu en plaques",
+            "de": "Plattenbeinrüstung des verderbten Gladiators"
+        },
+        "icon": "inv_pant_plate_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 2000,
+            "mastery": 0,
+            "versatility": 5000
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 172616,
+        "name": "Corrupted Gladiator's Plate Shoulders",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Plate Shoulders",
+            "ru": "Латные наплечники падшего гладиатора",
+            "es": "Sobrehombros de placas de Gladiador corrupto",
+            "br": "Omoplatas de Placa do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Épaulières du gladiateur corrompu en plaques",
+            "de": "Plattenschultern des verderbten Gladiators"
+        },
+        "icon": "inv_shoulder_plate_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 172617,
+        "name": "Corrupted Gladiator's Plate Clasp",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Plate Clasp",
+            "ru": "Латная застежка падшего гладиатора",
+            "es": "Cinto de placas de Gladiador corrupto",
+            "br": "Fecho de Placa do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Fermoir du gladiateur corrompu en plaques",
+            "de": "Plattenschnallengürtel des verderbten Gladiators"
+        },
+        "icon": "inv_belt_plate_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 2400,
+            "crit": 0,
+            "mastery": 4600,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Waist"
+    },
+    {
+        "id": 172618,
+        "name": "Corrupted Gladiator's Plate Vambraces",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Plate Vambraces",
+            "ru": "Латные наручи падшего гладиатора",
+            "es": "Avambrazos de placas de Gladiador corrupto",
+            "br": "Avambraços de Placa do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Protège-bras du gladiateur corrompu en plaques",
+            "de": "Plattenunterarmschienen des verderbten Gladiators"
+        },
+        "icon": "inv_bracer_plate_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 1600,
+            "versatility": 5400
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Wrist"
+    },
+    {
+        "id": 172619,
+        "name": "Corrupted Gladiator's Plate Headcover",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Plate Headcover",
+            "ru": "Латный головной покров падшего гладиатора",
+            "es": "Cimera de placas de Gladiador corrupto",
+            "br": "Barrete de Placa do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Bassinet du gladiateur corrompu en plaques",
+            "de": "Plattenkopfbedeckung des verderbten Gladiators"
+        },
+        "icon": "inv_helm_plate_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 172620,
+        "name": "Corrupted Gladiator's Silk Raiment",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Silk Raiment",
+            "ru": "Шелковое облачение падшего гладиатора",
+            "es": "Vestiduras de seda de Gladiador corrupto",
+            "br": "Traje de Seda do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Grande tenue du gladiateur corrompu en soie",
+            "de": "Seidene Gewandung des verderbten Gladiators"
+        },
+        "icon": "inv_chest_cloth_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 172621,
+        "name": "Corrupted Gladiator's Plate Chestguard",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Plate Chestguard",
+            "ru": "Латный нагрудный доспех падшего гладиатора",
+            "es": "Coselete de placas de Gladiador corrupto",
+            "br": "Couraça de Placa do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Corselet du gladiateur corrompu en plaques",
+            "de": "Plattenbrustschutz des verderbten Gladiators"
+        },
+        "icon": "inv_chest_plate_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 172622,
+        "name": "Corrupted Gladiator's Chain Chestguard",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Chain Chestguard",
+            "ru": "Плетеный нагрудный доспех падшего гладиатора",
+            "es": "Coselete de anillas de Gladiador corrupto",
+            "br": "Couraça Encadeada do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Corselet du gladiateur corrompu en anneaux",
+            "de": "Kettenbrustschutz des verderbten Gladiators"
+        },
+        "icon": "inv_chest_mail_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 172623,
+        "name": "Corrupted Gladiator's Leather Vest",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Leather Vest",
+            "ru": "Кожаный жилет падшего гладиатора",
+            "es": "Jubón de cuero de Gladiador corrupto",
+            "br": "Colete de Couro do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Gilet du gladiateur corrompu en cuir",
+            "de": "Lederweste des verderbten Gladiators"
+        },
+        "icon": "inv_chest_leatherraidnzoth_d_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 172624,
+        "name": "Corrupted Gladiator's Plate Greaves",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Plate Greaves",
+            "ru": "Латные наголенники падшего гладиатора",
+            "es": "Grebas de placas de Gladiador corrupto",
+            "br": "Grevas de Placa do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Grèves du gladiateur corrompu en plaques",
+            "de": "Plattenschienbeinschützer des verderbten Gladiators"
+        },
+        "icon": "inv_boot_plate_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 1600,
+            "versatility": 5400
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Feet"
+    },
+    {
+        "id": 172625,
+        "name": "Corrupted Gladiator's Silk Slippers",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Silk Slippers",
+            "ru": "Шелковые сандалии падшего гладиатора",
+            "es": "Zapatillas de seda de Gladiador corrupto",
+            "br": "Sapatilhas de Seda do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Mules du gladiateur corrompu en soie",
+            "de": "Seidenpantoffeln des verderbten Gladiators"
+        },
+        "icon": "inv_boot_cloth_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 1600,
+            "versatility": 5400
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Feet"
+    },
+    {
+        "id": 172626,
+        "name": "Corrupted Gladiator's Chain Footguards",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Chain Footguards",
+            "ru": "Плетеные ботинки падшего гладиатора",
+            "es": "Guardapiés de anillas de Gladiador corrupto",
+            "br": "Guarda-pés Encadeados do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Protège-tibias du gladiateur corrompu en anneaux",
+            "de": "Kettenfußschützer des verderbten Gladiators"
+        },
+        "icon": "inv_boot_mail_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 2000,
+            "versatility": 5000
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Feet"
+    },
+    {
+        "id": 172627,
+        "name": "Corrupted Gladiator's Leather Footguards",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Leather Footguards",
+            "ru": "Кожаные прочные ботинки падшего гладиатора",
+            "es": "Guardapiés de cuero de Gladiador corrupto",
+            "br": "Guarda-pés de Couro do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Protège-tibias du gladiateur corrompu en cuir",
+            "de": "Lederfußschützer des verderbten Gladiators"
+        },
+        "icon": "inv_boot_leatherraidnzoth_d_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 2400,
+            "versatility": 4600
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Feet"
+    },
+    {
+        "id": 172628,
+        "name": "Corrupted Gladiator's Leather Handguards",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Leather Handguards",
+            "ru": "Кожаные боевые рукавицы падшего гладиатора",
+            "es": "Manoplas de cuero de Gladiador corrupto",
+            "br": "Protetores de Mão de Couro do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Garde-mains du gladiateur corrompu en cuir",
+            "de": "Lederhandschützer des verderbten Gladiators"
+        },
+        "icon": "inv_glove_leatherraidnzoth_d_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 5400,
+            "versatility": 1600
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
+        "id": 172629,
+        "name": "Corrupted Gladiator's Plate Gloves",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Plate Gloves",
+            "ru": "Латные перчатки падшего гладиатора",
+            "es": "Guantes de placas de Gladiador corrupto",
+            "br": "Luvas de Placa do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Gants du gladiateur corrompu en plaques",
+            "de": "Plattenhandschuhe des verderbten Gladiators"
+        },
+        "icon": "inv_glove_plate_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 5000,
+            "versatility": 2000
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
+        "id": 172630,
+        "name": "Corrupted Gladiator's Silk Handguards",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Silk Handguards",
+            "ru": "Шелковые боевые рукавицы падшего гладиатора",
+            "es": "Manoplas de seda de Gladiador corrupto",
+            "br": "Protetores de Mão de Seda do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Garde-mains du gladiateur corrompu en soie",
+            "de": "Seidene Handschützer des verderbten Gladiators"
+        },
+        "icon": "inv_glove_cloth_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 5000,
+            "versatility": 2000
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
+        "id": 172631,
+        "name": "Corrupted Gladiator's Chain Handguards",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Chain Handguards",
+            "ru": "Плетеные боевые рукавицы падшего гладиатора",
+            "es": "Manoplas de anillas de Gladiador corrupto",
+            "br": "Protetores de Mão Encadeados do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Garde-mains du gladiateur corrompu en anneaux",
+            "de": "Kettenhandschützer des verderbten Gladiators"
+        },
+        "icon": "inv_glove_mail_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 4600,
+            "versatility": 2400
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
+        "id": 172632,
+        "name": "Corrupted Gladiator's Silk Cowl",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Silk Cowl",
+            "ru": "Шелковый клобук падшего гладиатора",
+            "es": "Capucha de seda de Gladiador corrupto",
+            "br": "Capucho de Seda do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Capuche du gladiateur corrompu en soie",
+            "de": "Seidene Gugel des verderbten Gladiators"
+        },
+        "icon": "inv_helm_cloth_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 172633,
+        "name": "Corrupted Gladiator's Chain Headpiece",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Chain Headpiece",
+            "ru": "Плетеный головной убор падшего гладиатора",
+            "es": "Celada de anillas de Gladiador corrupto",
+            "br": "Bacinete Encadeado do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Chapel du gladiateur corrompu en anneaux",
+            "de": "Kettenkopfstück des verderbten Gladiators"
+        },
+        "icon": "inv_helm_mail_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 172634,
+        "name": "Corrupted Gladiator's Leather Hood",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Leather Hood",
+            "ru": "Кожаный капюшон падшего гладиатора",
+            "es": "Caperuza de cuero de Gladiador corrupto",
+            "br": "Capuz de Couro do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Chaperon du gladiateur corrompu en cuir",
+            "de": "Lederkapuze des verderbten Gladiators"
+        },
+        "icon": "inv_helm_leatherraidnzoth_d_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 172635,
+        "name": "Corrupted Gladiator's Plate Leg Armor",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Plate Leg Armor",
+            "ru": "Латные поножи падшего гладиатора",
+            "es": "Armadura de placas para pierna de Gladiador corrupto",
+            "br": "Armadura de Perna de Placa do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Armure de jambe du gladiateur corrompu en plaques",
+            "de": "Plattenbeinrüstung des verderbten Gladiators"
+        },
+        "icon": "inv_pant_plate_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 2400,
+            "mastery": 0,
+            "versatility": 4600
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 172636,
+        "name": "Corrupted Gladiator's Silk Trousers",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Silk Trousers",
+            "ru": "Шелковые брюки падшего гладиатора",
+            "es": "Calzas de seda de Gladiador corrupto",
+            "br": "Calças de Seda do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Chausses du gladiateur corrompu en soie",
+            "de": "Seidene Beinkleider des verderbten Gladiators"
+        },
+        "icon": "inv_pant_cloth_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 2400,
+            "mastery": 0,
+            "versatility": 4600
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 172637,
+        "name": "Corrupted Gladiator's Chain Legguards",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Chain Legguards",
+            "ru": "Плетеные набедренники падшего гладиатора",
+            "es": "Musleras de anillas de Gladiador corrupto",
+            "br": "Guarda-pernas Encadeado do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Garde-jambes du gladiateur corrompu en anneaux",
+            "de": "Kettenbeinschützer des verderbten Gladiators"
+        },
+        "icon": "inv_pant_mail_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 1600,
+            "mastery": 0,
+            "versatility": 5400
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 172638,
+        "name": "Corrupted Gladiator's Leather Pants",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Leather Pants",
+            "ru": "Кожаные штаны падшего гладиатора",
+            "es": "Pantalones de cuero de Gladiador corrupto",
+            "br": "Calças de Couro do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Pantalon du gladiateur corrompu en cuir",
+            "de": "Lederhose des verderbten Gladiators"
+        },
+        "icon": "inv_pant_leatherraidnzoth_d_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 2000,
+            "mastery": 0,
+            "versatility": 5000
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 172639,
+        "name": "Corrupted Gladiator's Leather Mantle",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Leather Mantle",
+            "ru": "Кожаное оплечье падшего гладиатора",
+            "es": "Manto de cuero de Gladiador corrupto",
+            "br": "Dragonas de Couro do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Mantelet du gladiateur corrompu en cuir",
+            "de": "Ledermantel des verderbten Gladiators"
+        },
+        "icon": "inv_shoulder_leatherraidnzoth_d_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 172640,
+        "name": "Corrupted Gladiator's Plate Shoulders",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Plate Shoulders",
+            "ru": "Латные наплечники падшего гладиатора",
+            "es": "Sobrehombros de placas de Gladiador corrupto",
+            "br": "Omoplatas de Placa do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Épaulières du gladiateur corrompu en plaques",
+            "de": "Plattenschultern des verderbten Gladiators"
+        },
+        "icon": "inv_shoulder_plate_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 172641,
+        "name": "Corrupted Gladiator's Silk Amice",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Silk Amice",
+            "ru": "Шелковый нарамник падшего гладиатора",
+            "es": "Amito de seda de Gladiador corrupto",
+            "br": "Sobreveste de Seda do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Amict du gladiateur corrompu en soie",
+            "de": "Seidene Amicia des verderbten Gladiators"
+        },
+        "icon": "inv_shoulder_cloth_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 172642,
+        "name": "Corrupted Gladiator's Chain Shoulderguards",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Chain Shoulderguards",
+            "ru": "Плетеные наплечные щитки падшего гладиатора",
+            "es": "Guardahombros de anillas de Gladiador corrupto",
+            "br": "Guarda-ombros Encadeados do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Garde-épaules du gladiateur corrompu en anneaux",
+            "de": "Kettenschulterschützer des verderbten Gladiators"
+        },
+        "icon": "inv_shoulder_mail_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 172643,
+        "name": "Corrupted Gladiator's Plate Clasp",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Plate Clasp",
+            "ru": "Латная застежка падшего гладиатора",
+            "es": "Cinto de placas de Gladiador corrupto",
+            "br": "Fecho de Placa do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Fermoir du gladiateur corrompu en plaques",
+            "de": "Plattenschnallengürtel des verderbten Gladiators"
+        },
+        "icon": "inv_belt_plate_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 1600,
+            "crit": 0,
+            "mastery": 5400,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Waist"
+    },
+    {
+        "id": 172644,
+        "name": "Corrupted Gladiator's Silk Sash",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Silk Sash",
+            "ru": "Шелковый кушак падшего гладиатора",
+            "es": "Fajín de seda de Gladiador corrupto",
+            "br": "Faixa de Seda do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Écharpe du gladiateur corrompu en soie",
+            "de": "Seidenschärpe des verderbten Gladiators"
+        },
+        "icon": "inv_belt_cloth_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 1600,
+            "crit": 0,
+            "mastery": 5400,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Waist"
+    },
+    {
+        "id": 172645,
+        "name": "Corrupted Gladiator's Chain Clasp",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Chain Clasp",
+            "ru": "Плетеная застежка падшего гладиатора",
+            "es": "Cinto de anillas de Gladiador corrupto",
+            "br": "Fecho Encadeado do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Fermoir du gladiateur corrompu en anneaux",
+            "de": "Kettenschnallengürtel des verderbten Gladiators"
+        },
+        "icon": "inv_belt_mail_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 2000,
+            "crit": 0,
+            "mastery": 5000,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Waist"
+    },
+    {
+        "id": 172646,
+        "name": "Corrupted Gladiator's Leather Waistband",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Leather Waistband",
+            "ru": "Кожаный боевой пояс падшего гладиатора",
+            "es": "Pretina de cuero de Gladiador corrupto",
+            "br": "Cintel de Couro do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Baudrier du gladiateur corrompu en cuir",
+            "de": "Ledergürtelbund des verderbten Gladiators"
+        },
+        "icon": "inv_belt_leatherraidnzoth_d_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 2400,
+            "crit": 0,
+            "mastery": 4600,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Waist"
+    },
+    {
+        "id": 172647,
+        "name": "Corrupted Gladiator's Silk Bracers",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Silk Bracers",
+            "ru": "Шелковые наручи падшего гладиатора",
+            "es": "Brazales de seda de Gladiador corrupto",
+            "br": "Braçadeiras de Seda do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Brassards du gladiateur corrompu en soie",
+            "de": "Seidene Armschienen des verderbten Gladiators"
+        },
+        "icon": "inv_bracer_cloth_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 2000,
+            "versatility": 5000
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Wrist"
+    },
+    {
+        "id": 172648,
+        "name": "Corrupted Gladiator's Plate Vambraces",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Plate Vambraces",
+            "ru": "Латные наручи падшего гладиатора",
+            "es": "Avambrazos de placas de Gladiador corrupto",
+            "br": "Avambraços de Placa do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Protège-bras du gladiateur corrompu en plaques",
+            "de": "Plattenunterarmschienen des verderbten Gladiators"
+        },
+        "icon": "inv_bracer_plate_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 2000,
+            "versatility": 5000
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Wrist"
+    },
+    {
+        "id": 172649,
+        "name": "Corrupted Gladiator's Chain Wristguards",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Chain Wristguards",
+            "ru": "Плетеные нарукавники падшего гладиатора",
+            "es": "Guardamuñecas de anillas de Gladiador corrupto",
+            "br": "Munhequeiras Encadeadas do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Garde-poignets du gladiateur corrompu en anneaux",
+            "de": "Kettenhandgelenksschützer des verderbten Gladiators"
+        },
+        "icon": "inv_bracer_mail_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 2400,
+            "versatility": 4600
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Wrist"
+    },
+    {
+        "id": 172650,
+        "name": "Corrupted Gladiator's Leather Armwraps",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Leather Armwraps",
+            "ru": "Кожаные наручные обмотки падшего гладиатора",
+            "es": "Brazaletes de cuero de Gladiador corrupto",
+            "br": "Braceleiras de Couro do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Couvre-bras du gladiateur corrompu en cuir",
+            "de": "Lederarmwickel des verderbten Gladiators"
+        },
+        "icon": "inv_bracer_leatherraidnzoth_d_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 1600,
+            "versatility": 5400
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Wrist"
+    },
+    {
+        "id": 172653,
+        "name": "Corrupted Gladiator's Shield Wall",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Shield Wall",
+            "ru": "Осадный щит падшего гладиатора",
+            "es": "Escudo muro de Gladiador corrupto",
+            "br": "Muralha de Escudos do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Grand pavois du gladiateur corrompu",
+            "de": "Schildwall des verderbten Gladiators"
+        },
+        "icon": "inv_shield_1h_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 6,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 16132,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 2000,
+            "mastery": 0,
+            "versatility": 5000
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shield"
+    },
+    {
+        "id": 172654,
+        "name": "Corrupted Gladiator's Shield Wall",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Shield Wall",
+            "ru": "Осадный щит падшего гладиатора",
+            "es": "Escudo muro de Gladiador corrupto",
+            "br": "Muralha de Escudos do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Grand pavois du gladiateur corrompu",
+            "de": "Schildwall des verderbten Gladiators"
+        },
+        "icon": "inv_shield_1h_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 6,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 16132,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 1600,
+            "mastery": 0,
+            "versatility": 5400
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shield"
+    },
+    {
+        "id": 172663,
+        "name": "Corrupted Gladiator's Ring",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Ring",
+            "ru": "Перстень падшего гладиатора",
+            "es": "Anillo de Gladiador corrupto",
+            "br": "Anel do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Anneau du gladiateur corrompu",
+            "de": "Ring des verderbten Gladiators"
+        },
+        "icon": "inv_ring_80_02e",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "haste": 5500,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 12000
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Finger"
+    },
+    {
+        "id": 172664,
+        "name": "Corrupted Gladiator's Band",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Band",
+            "ru": "Кольцо падшего гладиатора",
+            "es": "Sortija de Gladiador corrupto",
+            "br": "Elo do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Bague du gladiateur corrompu",
+            "de": "Band des verderbten Gladiators"
+        },
+        "icon": "inv_ring_80_02d",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 12000,
+            "mastery": 0,
+            "versatility": 5500
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Finger"
+    },
+    {
+        "id": 172665,
+        "name": "Corrupted Gladiator's Signet",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Signet",
+            "ru": "Печатка падшего гладиатора",
+            "es": "Sello de Gladiador corrupto",
+            "br": "Sinete do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Chevalière du gladiateur corrompu",
+            "de": "Signet des verderbten Gladiators"
+        },
+        "icon": "inv_ring_80_02c",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 5500,
+            "mastery": 12000,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Finger"
+    },
+    {
+        "id": 172666,
+        "name": "Corrupted Gladiator's Medallion",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Medallion",
+            "ru": "Медальон падшего гладиатора",
+            "es": "Medallón de Gladiador corrupto",
+            "br": "Medalhão do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Médaillon du gladiateur corrompu",
+            "de": "Medaillon des verderbten Gladiators"
+        },
+        "icon": "spell_arcane_rune",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 6666,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Trinket",
+        "effect": {
+            "type": "trinket",
+            "name": "Corrupted Gladiator's Medallion"
+        }
+    },
+    {
+        "id": 172667,
+        "name": "Corrupted Gladiator's Emblem",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Emblem",
+            "ru": "Эмблема падшего гладиатора",
+            "es": "Emblema de Gladiador corrupto",
+            "br": "Emblema do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Emblème du gladiateur corrompu",
+            "de": "Emblem des verderbten Gladiators"
+        },
+        "icon": "ability_warrior_endlessrage",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 6666,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Trinket",
+        "effect": {
+            "type": "trinket",
+            "name": "Corrupted Gladiator's Emblem"
+        }
+    },
+    {
+        "id": 172668,
+        "name": "Corrupted Gladiator's Insignia",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Insignia",
+            "ru": "Знак падшего гладиатора",
+            "es": "Insignia de Gladiador corrupto",
+            "br": "Insígnia do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Insigne du gladiateur corrompu",
+            "de": "Insigne des verderbten Gladiators"
+        },
+        "icon": "inv_misc_token_argentdawn3",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 0,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 6666
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Trinket",
+        "effect": {
+            "type": "trinket",
+            "name": "Corrupted Gladiator's Insignia"
+        }
+    },
+    {
+        "id": 172669,
+        "name": "Corrupted Gladiator's Badge",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Badge",
+            "ru": "Жетон падшего гладиатора",
+            "es": "Distintivo de Gladiador corrupto",
+            "br": "Distintivo do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Écusson du gladiateur corrompu",
+            "de": "Abzeichen des verderbten Gladiators"
+        },
+        "icon": "spell_holy_championsbond",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 0,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 6666
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Trinket",
+        "effect": {
+            "type": "trinket",
+            "name": "Corrupted Gladiator's Badge"
+        }
+    },
+    {
+        "id": 172672,
+        "name": "Corrupted Gladiator's Maledict",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Maledict",
+            "ru": "Темный фетиш падшего гладиатора",
+            "es": "Maldición de Gladiador corrupto",
+            "br": "Imprecação do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Bijou maudit du gladiateur corrompu",
+            "de": "Verhängnis des verderbten Gladiators"
+        },
+        "icon": "inv_60pvp_trinket2d",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 6666,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Trinket",
+        "effect": {
+            "type": "trinket",
+            "name": "Corrupted Gladiator's Maledict"
+        }
+    },
+    {
+        "id": 172673,
+        "name": "Corrupted Gladiator's Safeguard",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Safeguard",
+            "ru": "Оберег падшего гладиатора",
+            "es": "Salvaguarda de Gladiador corrupto",
+            "br": "Salvaguarda do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Sauvegarde du gladiateur corrompu",
+            "de": "Schutzwall des verderbten Gladiators"
+        },
+        "icon": "inv_60pvp_trinket1a",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 6666,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Trinket",
+        "effect": {
+            "type": "trinket",
+            "name": "Corrupted Gladiator's Safeguard"
+        }
+    },
+    {
+        "id": 172674,
+        "name": "Corrupted Gladiator's Silk Helm",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Silk Helm",
+            "ru": "Шелковый шлем падшего гладиатора",
+            "es": "Yelmo de seda de Gladiador corrupto",
+            "br": "Elmo de Seda do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Heaume du gladiateur corrompu en soie",
+            "de": "Seidenhelm des verderbten Gladiators"
+        },
+        "icon": "inv_helm_cloth_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 172675,
+        "name": "Corrupted Gladiator's Leather Cap",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Leather Cap",
+            "ru": "Кожаная шапка падшего гладиатора",
+            "es": "Almete de cuero de Gladiador corrupto",
+            "br": "Casquete de Couro do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Coiffe du gladiateur corrompu en cuir",
+            "de": "Lederkappe des verderbten Gladiators"
+        },
+        "icon": "inv_helm_leatherraidnzoth_d_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 172676,
+        "name": "Corrupted Gladiator's Chain Coif",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Chain Coif",
+            "ru": "Плетеный капюшон падшего гладиатора",
+            "es": "Almófar de anillas de Gladiador corrupto",
+            "br": "Coifa Encadeada do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Camail du gladiateur corrompu en anneaux",
+            "de": "Kettenhelmkappe des verderbten Gladiators"
+        },
+        "icon": "inv_helm_mail_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 172677,
+        "name": "Corrupted Gladiator's Plate Warhelm",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Plate Warhelm",
+            "ru": "Латный боевой шлем падшего гладиатора",
+            "es": "Yelmo de guerra de placas de Gladiador corrupto",
+            "br": "Elmo Bélico de Placa do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Heaume de guerre du gladiateur corrompu en plaques",
+            "de": "Plattenkriegshelm des verderbten Gladiators"
+        },
+        "icon": "inv_helm_plate_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 172678,
+        "name": "Corrupted Gladiator's Plate Warhelm",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Plate Warhelm",
+            "ru": "Латный боевой шлем падшего гладиатора",
+            "es": "Yelmo de guerra de placas de Gladiador corrupto",
+            "br": "Elmo Bélico de Placa do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Heaume de guerre du gladiateur corrompu en plaques",
+            "de": "Plattenkriegshelm des verderbten Gladiators"
+        },
+        "icon": "inv_helm_plate_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 172679,
+        "name": "Corrupted Gladiator's Silk Helm",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Silk Helm",
+            "ru": "Шелковый шлем падшего гладиатора",
+            "es": "Yelmo de seda de Gladiador corrupto",
+            "br": "Elmo de Seda do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Heaume du gladiateur corrompu en soie",
+            "de": "Seidenhelm des verderbten Gladiators"
+        },
+        "icon": "inv_helm_cloth_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 172680,
+        "name": "Corrupted Gladiator's Chain Coif",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Chain Coif",
+            "ru": "Плетеный капюшон падшего гладиатора",
+            "es": "Almófar de anillas de Gladiador corrupto",
+            "br": "Coifa Encadeada do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Camail du gladiateur corrompu en anneaux",
+            "de": "Kettenhelmkappe des verderbten Gladiators"
+        },
+        "icon": "inv_helm_mail_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 172681,
+        "name": "Corrupted Gladiator's Leather Cap",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Leather Cap",
+            "ru": "Кожаная шапка падшего гладиатора",
+            "es": "Almete de cuero de Gladiador corrupto",
+            "br": "Casquete de Couro do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Coiffe du gladiateur corrompu en cuir",
+            "de": "Lederkappe des verderbten Gladiators"
+        },
+        "icon": "inv_helm_leatherraidnzoth_d_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 172682,
+        "name": "Corrupted Gladiator's Silk Cover",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Silk Cover",
+            "ru": "Шелковый убор падшего гладиатора",
+            "es": "Casquete de seda de Gladiador corrupto",
+            "br": "Murça de Seda do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Couvre-chef du gladiateur corrompu en soie",
+            "de": "Seidenbedeckung des verderbten Gladiators"
+        },
+        "icon": "inv_helm_cloth_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 172683,
+        "name": "Corrupted Gladiator's Leather Skullguard",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Leather Skullguard",
+            "ru": "Кожаный защитный шлем падшего гладиатора",
+            "es": "Guardacráneo de cuero de Gladiador corrupto",
+            "br": "Guarda-crânio de Couro do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Garde-crâne du gladiateur corrompu en cuir",
+            "de": "Lederschädelschutz des verderbten Gladiators"
+        },
+        "icon": "inv_helm_leatherraidnzoth_d_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 172684,
+        "name": "Corrupted Gladiator's Chain Headgear",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Chain Headgear",
+            "ru": "Плетеное оголовье падшего гладиатора",
+            "es": "Casco de anillas de Gladiador corrupto",
+            "br": "Almofre Encadeado do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Couvre-chef du gladiateur corrompu en anneaux",
+            "de": "Kettenkopfbedeckung des verderbten Gladiators"
+        },
+        "icon": "inv_helm_mail_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 172685,
+        "name": "Corrupted Gladiator's Plate Greathelm",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Plate Greathelm",
+            "ru": "Латный большой шлем падшего гладиатора",
+            "es": "Gran yelmo de placas de Gladiador corrupto",
+            "br": "Grande Elmo de Placa do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Grand heaume du gladiateur corrompu en plaques",
+            "de": "Plattengroßhelm des verderbten Gladiators"
+        },
+        "icon": "inv_helm_plate_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 172686,
+        "name": "Corrupted Gladiator's Plate Greathelm",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Plate Greathelm",
+            "ru": "Латный большой шлем падшего гладиатора",
+            "es": "Gran yelmo de placas de Gladiador corrupto",
+            "br": "Grande Elmo de Placa do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Grand heaume du gladiateur corrompu en plaques",
+            "de": "Plattengroßhelm des verderbten Gladiators"
+        },
+        "icon": "inv_helm_plate_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 172687,
+        "name": "Corrupted Gladiator's Silk Cover",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Silk Cover",
+            "ru": "Шелковый убор падшего гладиатора",
+            "es": "Casquete de seda de Gladiador corrupto",
+            "br": "Murça de Seda do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Couvre-chef du gladiateur corrompu en soie",
+            "de": "Seidenbedeckung des verderbten Gladiators"
+        },
+        "icon": "inv_helm_cloth_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 172688,
+        "name": "Corrupted Gladiator's Chain Headgear",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Chain Headgear",
+            "ru": "Плетеное оголовье падшего гладиатора",
+            "es": "Casco de anillas de Gladiador corrupto",
+            "br": "Almofre Encadeado do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Couvre-chef du gladiateur corrompu en anneaux",
+            "de": "Kettenkopfbedeckung des verderbten Gladiators"
+        },
+        "icon": "inv_helm_mail_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 172689,
+        "name": "Corrupted Gladiator's Leather Skullguard",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Leather Skullguard",
+            "ru": "Кожаный защитный шлем падшего гладиатора",
+            "es": "Guardacráneo de cuero de Gladiador corrupto",
+            "br": "Guarda-crânio de Couro do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Garde-crâne du gladiateur corrompu en cuir",
+            "de": "Lederschädelschutz des verderbten Gladiators"
+        },
+        "icon": "inv_helm_leatherraidnzoth_d_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 172690,
+        "name": "Corrupted Gladiator's Silk Cap",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Silk Cap",
+            "ru": "Шелковая шляпа падшего гладиатора",
+            "es": "Almete de seda de Gladiador corrupto",
+            "br": "Casquete de Seda do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Coiffe du gladiateur corrompu en soie",
+            "de": "Seidenkappe des verderbten Gladiators"
+        },
+        "icon": "inv_helm_cloth_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 172691,
+        "name": "Corrupted Gladiator's Leather Headpiece",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Leather Headpiece",
+            "ru": "Кожаный головной убор падшего гладиатора",
+            "es": "Celada de cuero de Gladiador corrupto",
+            "br": "Bacinete de Couro do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Chapel du gladiateur corrompu en cuir",
+            "de": "Lederkopfstück des verderbten Gladiators"
+        },
+        "icon": "inv_helm_leatherraidnzoth_d_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 172692,
+        "name": "Corrupted Gladiator's Chain Skullcover",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Chain Skullcover",
+            "ru": "Плетеная каска падшего гладиатора",
+            "es": "Guardacráneo de anillas de Gladiador corrupto",
+            "br": "Cobre-crânio Encadeado do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Couvre-crâne du gladiateur corrompu en anneaux",
+            "de": "Kettenkopfschutz des verderbten Gladiators"
+        },
+        "icon": "inv_helm_mail_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 172693,
+        "name": "Corrupted Gladiator's Plate Skullguard",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Plate Skullguard",
+            "ru": "Латный защитный шлем падшего гладиатора",
+            "es": "Guardacráneo de placas de Gladiador corrupto",
+            "br": "Guarda-crânio de Placas do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Garde-crâne du gladiateur corrompu en plaques",
+            "de": "Plattenschädelschutz des verderbten Gladiators"
+        },
+        "icon": "inv_helm_plate_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 172694,
+        "name": "Corrupted Gladiator's Plate Skullguard",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Plate Skullguard",
+            "ru": "Латный защитный шлем падшего гладиатора",
+            "es": "Guardacráneo de placas de Gladiador corrupto",
+            "br": "Guarda-crânio de Placas do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Garde-crâne du gladiateur corrompu en plaques",
+            "de": "Plattenschädelschutz des verderbten Gladiators"
+        },
+        "icon": "inv_helm_plate_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 172695,
+        "name": "Corrupted Gladiator's Silk Cap",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Silk Cap",
+            "ru": "Шелковая шляпа падшего гладиатора",
+            "es": "Almete de seda de Gladiador corrupto",
+            "br": "Casquete de Seda do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Coiffe du gladiateur corrompu en soie",
+            "de": "Seidenkappe des verderbten Gladiators"
+        },
+        "icon": "inv_helm_cloth_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 172696,
+        "name": "Corrupted Gladiator's Chain Skullcover",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Chain Skullcover",
+            "ru": "Плетеная каска падшего гладиатора",
+            "es": "Guardacráneo de anillas de Gladiador corrupto",
+            "br": "Cobre-crânio Encadeado do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Couvre-crâne du gladiateur corrompu en anneaux",
+            "de": "Kettenkopfschutz des verderbten Gladiators"
+        },
+        "icon": "inv_helm_mail_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 172697,
+        "name": "Corrupted Gladiator's Leather Headpiece",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Leather Headpiece",
+            "ru": "Кожаный головной убор падшего гладиатора",
+            "es": "Celada de cuero de Gladiador corrupto",
+            "br": "Bacinete de Couro do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Chapel du gladiateur corrompu en cuir",
+            "de": "Lederkopfstück des verderbten Gladiators"
+        },
+        "icon": "inv_helm_leatherraidnzoth_d_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 172698,
+        "name": "Corrupted Gladiator's Silk Vestments",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Silk Vestments",
+            "ru": "Шелковое облачение падшего гладиатора",
+            "es": "Vestimentas de seda de Gladiador corrupto",
+            "br": "Vestimenta de Seda do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Habit du gladiateur corrompu en soie",
+            "de": "Seidentracht des verderbten Gladiators"
+        },
+        "icon": "inv_chest_cloth_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 172699,
+        "name": "Corrupted Gladiator's Leather Jerkin",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Leather Jerkin",
+            "ru": "Кожаный жакет падшего гладиатора",
+            "es": "Chaleco de cuero de Gladiador corrupto",
+            "br": "Gibão de Couro do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Pourpoint du gladiateur corrompu en cuir",
+            "de": "Lederwams des verderbten Gladiators"
+        },
+        "icon": "inv_chest_leatherraidnzoth_d_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 172700,
+        "name": "Corrupted Gladiator's Chain Hauberk",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Chain Hauberk",
+            "ru": "Плетеный хауберк падшего гладиатора",
+            "es": "Camisote de anillas de Gladiador corrupto",
+            "br": "Cota Encadeada do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Haubert du gladiateur corrompu en anneaux",
+            "de": "Kettenhalsberge des verderbten Gladiators"
+        },
+        "icon": "inv_chest_mail_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 172701,
+        "name": "Corrupted Gladiator's Plate Armor",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Plate Armor",
+            "ru": "Латный доспех падшего гладиатора",
+            "es": "Armadura de placas de Gladiador corrupto",
+            "br": "Armadura de Placa do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Armure de plaques du gladiateur corrompu",
+            "de": "Plattenrüstung des verderbten Gladiators"
+        },
+        "icon": "inv_chest_plate_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 172702,
+        "name": "Corrupted Gladiator's Silk Vestments",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Silk Vestments",
+            "ru": "Шелковое облачение падшего гладиатора",
+            "es": "Vestimentas de seda de Gladiador corrupto",
+            "br": "Vestimenta de Seda do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Habit du gladiateur corrompu en soie",
+            "de": "Seidentracht des verderbten Gladiators"
+        },
+        "icon": "inv_chest_cloth_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 172703,
+        "name": "Corrupted Gladiator's Plate Armor",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Plate Armor",
+            "ru": "Латный доспех падшего гладиатора",
+            "es": "Armadura de placas de Gladiador corrupto",
+            "br": "Armadura de Placa do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Armure de plaques du gladiateur corrompu",
+            "de": "Plattenrüstung des verderbten Gladiators"
+        },
+        "icon": "inv_chest_plate_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 172704,
+        "name": "Corrupted Gladiator's Chain Hauberk",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Chain Hauberk",
+            "ru": "Плетеный хауберк падшего гладиатора",
+            "es": "Camisote de anillas de Gladiador corrupto",
+            "br": "Cota Encadeada do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Haubert du gladiateur corrompu en anneaux",
+            "de": "Kettenhalsberge des verderbten Gladiators"
+        },
+        "icon": "inv_chest_mail_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 172705,
+        "name": "Corrupted Gladiator's Leather Jerkin",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Leather Jerkin",
+            "ru": "Кожаный жакет падшего гладиатора",
+            "es": "Chaleco de cuero de Gladiador corrupto",
+            "br": "Gibão de Couro do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Pourpoint du gladiateur corrompu en cuir",
+            "de": "Lederwams des verderbten Gladiators"
+        },
+        "icon": "inv_chest_leatherraidnzoth_d_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 172706,
+        "name": "Corrupted Gladiator's Silk Chestwrap",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Silk Chestwrap",
+            "ru": "Шелковый нагрудник падшего гладиатора",
+            "es": "Cubrepecho de seda de Gladiador corrupto",
+            "br": "Cotão de Seda do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Protège-torse du gladiateur corrompu en soie",
+            "de": "Seidenbrustwickel des verderbten Gladiators"
+        },
+        "icon": "inv_chest_cloth_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 172707,
+        "name": "Corrupted Gladiator's Leather Chestguard",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Leather Chestguard",
+            "ru": "Кожаный нагрудный доспех падшего гладиатора",
+            "es": "Coselete de cuero de Gladiador corrupto",
+            "br": "Couraça de Couro do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Corselet du gladiateur corrompu en cuir",
+            "de": "Lederbrustschutz des verderbten Gladiators"
+        },
+        "icon": "inv_chest_leatherraidnzoth_d_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 172708,
+        "name": "Corrupted Gladiator's Chainmail",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Chainmail",
+            "ru": "Кольчуга падшего гладиатора",
+            "es": "Malla de anillas de Gladiador corrupto",
+            "br": "Malha de Anéis do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Cotte de mailles du gladiateur corrompu",
+            "de": "Kettenpanzer des verderbten Gladiators"
+        },
+        "icon": "inv_robe_mail_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 172709,
+        "name": "Corrupted Gladiator's Plate Breastplate",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Plate Breastplate",
+            "ru": "Латная кираса падшего гладиатора",
+            "es": "Coraza de placas de Gladiador corrupto",
+            "br": "Peitoral de Placa do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Cuirasse du gladiateur corrompu en plaques",
+            "de": "Plattenbrustplatte des verderbten Gladiators"
+        },
+        "icon": "inv_chest_plate_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 172710,
+        "name": "Corrupted Gladiator's Silk Chestwrap",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Silk Chestwrap",
+            "ru": "Шелковый нагрудник падшего гладиатора",
+            "es": "Cubrepecho de seda de Gladiador corrupto",
+            "br": "Cotão de Seda do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Protège-torse du gladiateur corrompu en soie",
+            "de": "Seidenbrustwickel des verderbten Gladiators"
+        },
+        "icon": "inv_chest_cloth_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 172711,
+        "name": "Corrupted Gladiator's Plate Breastplate",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Plate Breastplate",
+            "ru": "Латная кираса падшего гладиатора",
+            "es": "Coraza de placas de Gladiador corrupto",
+            "br": "Peitoral de Placa do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Cuirasse du gladiateur corrompu en plaques",
+            "de": "Plattenbrustplatte des verderbten Gladiators"
+        },
+        "icon": "inv_chest_plate_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 172712,
+        "name": "Corrupted Gladiator's Chainmail",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Chainmail",
+            "ru": "Кольчуга падшего гладиатора",
+            "es": "Malla de anillas de Gladiador corrupto",
+            "br": "Malha de Anéis do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Cotte de mailles du gladiateur corrompu",
+            "de": "Kettenpanzer des verderbten Gladiators"
+        },
+        "icon": "inv_robe_mail_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 172713,
+        "name": "Corrupted Gladiator's Leather Chestguard",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Leather Chestguard",
+            "ru": "Кожаный нагрудный доспех падшего гладиатора",
+            "es": "Coselete de cuero de Gladiador corrupto",
+            "br": "Couraça de Couro do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Corselet du gladiateur corrompu en cuir",
+            "de": "Lederbrustschutz des verderbten Gladiators"
+        },
+        "icon": "inv_chest_leatherraidnzoth_d_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 172714,
+        "name": "Corrupted Gladiator's Silk Armor",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Silk Armor",
+            "ru": "Шелковый доспех падшего гладиатора",
+            "es": "Armadura de seda de Gladiador corrupto",
+            "br": "Armadura de Seda do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Armure du gladiateur corrompu en soie",
+            "de": "Seidenrüstung des verderbten Gladiators"
+        },
+        "icon": "inv_chest_cloth_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 172715,
+        "name": "Corrupted Gladiator's Leather Harness",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Leather Harness",
+            "ru": "Кожаная куртка падшего гладиатора",
+            "es": "Arnés de cuero de Gladiador corrupto",
+            "br": "Arnês de Couro do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Harnais du gladiateur corrompu en cuir",
+            "de": "Lederharnisch des verderbten Gladiators"
+        },
+        "icon": "inv_chest_leatherraidnzoth_d_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 172716,
+        "name": "Corrupted Gladiator's Chain Vest",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Chain Vest",
+            "ru": "Плетеный жилет падшего гладиатора",
+            "es": "Jubón de anillas de Gladiador corrupto",
+            "br": "Colete Encadeado do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Gilet du gladiateur corrompu en anneaux",
+            "de": "Kettenweste des verderbten Gladiators"
+        },
+        "icon": "inv_chest_mail_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 172717,
+        "name": "Corrupted Gladiator's Plate Chestplate",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Plate Chestplate",
+            "ru": "Латная бригантина падшего гладиатора",
+            "es": "Peto de placas de Gladiador corrupto",
+            "br": "Guarda-peito de Placa do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Pansière du gladiateur corrompu en plaques",
+            "de": "Plattenbrustpanzer des verderbten Gladiators"
+        },
+        "icon": "inv_chest_plate_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 172718,
+        "name": "Corrupted Gladiator's Silk Armor",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Silk Armor",
+            "ru": "Шелковый доспех падшего гладиатора",
+            "es": "Armadura de seda de Gladiador corrupto",
+            "br": "Armadura de Seda do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Armure du gladiateur corrompu en soie",
+            "de": "Seidenrüstung des verderbten Gladiators"
+        },
+        "icon": "inv_chest_cloth_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 172719,
+        "name": "Corrupted Gladiator's Plate Chestplate",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Plate Chestplate",
+            "ru": "Латная бригантина падшего гладиатора",
+            "es": "Peto de placas de Gladiador corrupto",
+            "br": "Guarda-peito de Placa do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Pansière du gladiateur corrompu en plaques",
+            "de": "Plattenbrustpanzer des verderbten Gladiators"
+        },
+        "icon": "inv_chest_plate_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 172720,
+        "name": "Corrupted Gladiator's Chain Vest",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Chain Vest",
+            "ru": "Плетеный жилет падшего гладиатора",
+            "es": "Jubón de anillas de Gladiador corrupto",
+            "br": "Colete Encadeado do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Gilet du gladiateur corrompu en anneaux",
+            "de": "Kettenweste des verderbten Gladiators"
+        },
+        "icon": "inv_chest_mail_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 172721,
+        "name": "Corrupted Gladiator's Leather Harness",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Leather Harness",
+            "ru": "Кожаная куртка падшего гладиатора",
+            "es": "Arnés de cuero de Gladiador corrupto",
+            "br": "Arnês de Couro do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Harnais du gladiateur corrompu en cuir",
+            "de": "Lederharnisch des verderbten Gladiators"
+        },
+        "icon": "inv_chest_leatherraidnzoth_d_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 172722,
+        "name": "Corrupted Gladiator's Silk Epaulets",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Silk Epaulets",
+            "ru": "Шелковые эполеты падшего гладиатора",
+            "es": "Cubrehombros de seda de Gladiador corrupto",
+            "br": "Palas de Seda do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Épaulettes du gladiateur corrompu en soie",
+            "de": "Seidenschulterklappen des verderbten Gladiators"
+        },
+        "icon": "inv_shoulder_cloth_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 172723,
+        "name": "Corrupted Gladiator's Leather Shoulderguards",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Leather Shoulderguards",
+            "ru": "Кожаные наплечные щитки падшего гладиатора",
+            "es": "Guardahombros de cuero de Gladiador corrupto",
+            "br": "Guarda-ombros de Couro do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Garde-épaules du gladiateur corrompu en cuir",
+            "de": "Lederschulterschützer des verderbten Gladiators"
+        },
+        "icon": "inv_shoulder_leatherraidnzoth_d_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 172724,
+        "name": "Corrupted Gladiator's Chain Pauldrons",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Chain Pauldrons",
+            "ru": "Плетеное наплечье падшего гладиатора",
+            "es": "Espaldares de anillas de Gladiador corrupto",
+            "br": "Brafoneiras Encadeadas do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Espauliers du gladiateur corrompu en anneaux",
+            "de": "Kettenschulterstücke des verderbten Gladiators"
+        },
+        "icon": "inv_shoulder_mail_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 172725,
+        "name": "Corrupted Gladiator's Plate Spaulders",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Plate Spaulders",
+            "ru": "Латные наплечи падшего гладиатора",
+            "es": "Bufas de placas de Gladiador corrupto",
+            "br": "Espaldares de Placa do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Spallières du gladiateur corrompu en plaques",
+            "de": "Plattenschiftung des verderbten Gladiators"
+        },
+        "icon": "inv_shoulder_plate_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 172726,
+        "name": "Corrupted Gladiator's Leather Shoulderguards",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Leather Shoulderguards",
+            "ru": "Кожаные наплечные щитки падшего гладиатора",
+            "es": "Guardahombros de cuero de Gladiador corrupto",
+            "br": "Guarda-ombros de Couro do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Garde-épaules du gladiateur corrompu en cuir",
+            "de": "Lederschulterschützer des verderbten Gladiators"
+        },
+        "icon": "inv_shoulder_leatherraidnzoth_d_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 172727,
+        "name": "Corrupted Gladiator's Plate Spaulders",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Plate Spaulders",
+            "ru": "Латные наплечи падшего гладиатора",
+            "es": "Bufas de placas de Gladiador corrupto",
+            "br": "Espaldares de Placa do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Spallières du gladiateur corrompu en plaques",
+            "de": "Plattenschiftung des verderbten Gladiators"
+        },
+        "icon": "inv_shoulder_plate_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 172728,
+        "name": "Corrupted Gladiator's Silk Epaulets",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Silk Epaulets",
+            "ru": "Шелковые эполеты падшего гладиатора",
+            "es": "Cubrehombros de seda de Gladiador corrupto",
+            "br": "Palas de Seda do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Épaulettes du gladiateur corrompu en soie",
+            "de": "Seidenschulterklappen des verderbten Gladiators"
+        },
+        "icon": "inv_shoulder_cloth_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 172729,
+        "name": "Corrupted Gladiator's Chain Pauldrons",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Chain Pauldrons",
+            "ru": "Плетеное наплечье падшего гладиатора",
+            "es": "Espaldares de anillas de Gladiador corrupto",
+            "br": "Brafoneiras Encadeadas do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Espauliers du gladiateur corrompu en anneaux",
+            "de": "Kettenschulterstücke des verderbten Gladiators"
+        },
+        "icon": "inv_shoulder_mail_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 172730,
+        "name": "Corrupted Gladiator's Silk Shoulderpads",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Silk Shoulderpads",
+            "ru": "Шелковые наплечные пластины падшего гладиатора",
+            "es": "Hombreras de seda de Gladiador corrupto",
+            "br": "Ombreiras de Seda do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Protège-épaules du gladiateur corrompu en soie",
+            "de": "Seidenschulterpolster des verderbten Gladiators"
+        },
+        "icon": "inv_shoulder_cloth_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 172731,
+        "name": "Corrupted Gladiator's Leather Pauldrons",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Leather Pauldrons",
+            "ru": "Кожаное наплечье падшего гладиатора",
+            "es": "Espaldares de cuero de Gladiador corrupto",
+            "br": "Brafoneiras de Couro do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Espauliers du gladiateur corrompu en cuir",
+            "de": "Lederschulterstücke des verderbten Gladiators"
+        },
+        "icon": "inv_shoulder_leatherraidnzoth_d_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 172732,
+        "name": "Corrupted Gladiator's Chain Mantle",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Chain Mantle",
+            "ru": "Плетеное оплечье падшего гладиатора",
+            "es": "Manto de anillas de Gladiador corrupto",
+            "br": "Dragonas Encadeadas do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Mantelet du gladiateur corrompu en anneaux",
+            "de": "Kettenmantelung des verderbten Gladiators"
+        },
+        "icon": "inv_shoulder_mail_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 172733,
+        "name": "Corrupted Gladiator's Plate Shoulderguards",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Plate Shoulderguards",
+            "ru": "Латные наплечные щитки падшего гладиатора",
+            "es": "Guardahombros de placas de Gladiador corrupto",
+            "br": "Guarda-ombros de Placa do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Garde-épaules du gladiateur corrompu en plaques",
+            "de": "Plattenschulterschützer des verderbten Gladiators"
+        },
+        "icon": "inv_shoulder_plate_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 172734,
+        "name": "Corrupted Gladiator's Leather Pauldrons",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Leather Pauldrons",
+            "ru": "Кожаное наплечье падшего гладиатора",
+            "es": "Espaldares de cuero de Gladiador corrupto",
+            "br": "Brafoneiras de Couro do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Espauliers du gladiateur corrompu en cuir",
+            "de": "Lederschulterstücke des verderbten Gladiators"
+        },
+        "icon": "inv_shoulder_leatherraidnzoth_d_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 172735,
+        "name": "Corrupted Gladiator's Plate Shoulderguards",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Plate Shoulderguards",
+            "ru": "Латные наплечные щитки падшего гладиатора",
+            "es": "Guardahombros de placas de Gladiador corrupto",
+            "br": "Guarda-ombros de Placa do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Garde-épaules du gladiateur corrompu en plaques",
+            "de": "Plattenschulterschützer des verderbten Gladiators"
+        },
+        "icon": "inv_shoulder_plate_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 172736,
+        "name": "Corrupted Gladiator's Silk Shoulderpads",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Silk Shoulderpads",
+            "ru": "Шелковые наплечные пластины падшего гладиатора",
+            "es": "Hombreras de seda de Gladiador corrupto",
+            "br": "Ombreiras de Seda do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Protège-épaules du gladiateur corrompu en soie",
+            "de": "Seidenschulterpolster des verderbten Gladiators"
+        },
+        "icon": "inv_shoulder_cloth_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 172737,
+        "name": "Corrupted Gladiator's Chain Mantle",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Chain Mantle",
+            "ru": "Плетеное оплечье падшего гладиатора",
+            "es": "Manto de anillas de Gladiador corrupto",
+            "br": "Dragonas Encadeadas do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Mantelet du gladiateur corrompu en anneaux",
+            "de": "Kettenmantelung des verderbten Gladiators"
+        },
+        "icon": "inv_shoulder_mail_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 172738,
+        "name": "Corrupted Gladiator's Silk Shoulderguards",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Silk Shoulderguards",
+            "ru": "Шелковые наплечные щитки падшего гладиатора",
+            "es": "Guardahombros de seda de Gladiador corrupto",
+            "br": "Guarda-ombros de Seda do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Garde-épaules du gladiateur corrompu en soie",
+            "de": "Seidenschulterschützer des verderbten Gladiators"
+        },
+        "icon": "inv_shoulder_cloth_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 172739,
+        "name": "Corrupted Gladiator's Leather Shoulderpads",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Leather Shoulderpads",
+            "ru": "Кожаные наплечные пластины падшего гладиатора",
+            "es": "Hombreras de cuero de Gladiador corrupto",
+            "br": "Ombreiras de Couro do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Protège-épaules du gladiateur corrompu en cuir",
+            "de": "Lederschulterpolster des verderbten Gladiators"
+        },
+        "icon": "inv_shoulder_leatherraidnzoth_d_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 172740,
+        "name": "Corrupted Gladiator's Chain Epaulets",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Chain Epaulets",
+            "ru": "Плетеные эполеты падшего гладиатора",
+            "es": "Cubrehombros de anillas de Gladiador corrupto",
+            "br": "Palas Encadeadas do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Épaulettes du gladiateur corrompu en anneaux",
+            "de": "Kettenschulterklappen des verderbten Gladiators"
+        },
+        "icon": "inv_shoulder_mail_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 172741,
+        "name": "Corrupted Gladiator's Shoulderplates",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Shoulderplates",
+            "ru": "Наплечные щитки падшего гладиатора",
+            "es": "Hombreras de placas de Gladiador corrupto",
+            "br": "Placa d'Ombros do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Plaques d’épaule du gladiateur corrompu",
+            "de": "Schulterplatten des verderbten Gladiators"
+        },
+        "icon": "inv_shoulder_plate_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 172742,
+        "name": "Corrupted Gladiator's Leather Shoulderpads",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Leather Shoulderpads",
+            "ru": "Кожаные наплечные пластины падшего гладиатора",
+            "es": "Hombreras de cuero de Gladiador corrupto",
+            "br": "Ombreiras de Couro do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Protège-épaules du gladiateur corrompu en cuir",
+            "de": "Lederschulterpolster des verderbten Gladiators"
+        },
+        "icon": "inv_shoulder_leatherraidnzoth_d_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 172743,
+        "name": "Corrupted Gladiator's Shoulderplates",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Shoulderplates",
+            "ru": "Наплечные щитки падшего гладиатора",
+            "es": "Hombreras de placas de Gladiador corrupto",
+            "br": "Placa d'Ombros do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Plaques d’épaule du gladiateur corrompu",
+            "de": "Schulterplatten des verderbten Gladiators"
+        },
+        "icon": "inv_shoulder_plate_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 172744,
+        "name": "Corrupted Gladiator's Silk Shoulderguards",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Silk Shoulderguards",
+            "ru": "Шелковые наплечные щитки падшего гладиатора",
+            "es": "Guardahombros de seda de Gladiador corrupto",
+            "br": "Guarda-ombros de Seda do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Garde-épaules du gladiateur corrompu en soie",
+            "de": "Seidenschulterschützer des verderbten Gladiators"
+        },
+        "icon": "inv_shoulder_cloth_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 172745,
+        "name": "Corrupted Gladiator's Chain Epaulets",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Chain Epaulets",
+            "ru": "Плетеные эполеты падшего гладиатора",
+            "es": "Cubrehombros de anillas de Gladiador corrupto",
+            "br": "Palas Encadeadas do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Épaulettes du gladiateur corrompu en anneaux",
+            "de": "Kettenschulterklappen des verderbten Gladiators"
+        },
+        "icon": "inv_shoulder_mail_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 172760,
+        "name": "Corrupted Gladiator's Wand",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Wand",
+            "ru": "Жезл падшего гладиатора",
+            "es": "Varita de Gladiador corrupto",
+            "br": "Varinha do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Baguette du gladiateur corrompu",
+            "de": "Zauberstab des verderbten Gladiators"
+        },
+        "icon": "inv_wand_1h_nzothraid_d_01",
+        "itemClass": 2,
+        "itemSubClass": 19,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 30629,
+            "stamina": 7889,
+            "haste": 2000,
+            "crit": 0,
+            "mastery": 5000,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "1H Weapon"
+    },
+    {
+        "id": 172761,
+        "name": "Corrupted Gladiator's Wand",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Wand",
+            "ru": "Жезл падшего гладиатора",
+            "es": "Varita de Gladiador corrupto",
+            "br": "Varinha do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Baguette du gladiateur corrompu",
+            "de": "Zauberstab des verderbten Gladiators"
+        },
+        "icon": "inv_wand_1h_nzothraid_d_01",
+        "itemClass": 2,
+        "itemSubClass": 19,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 30629,
+            "stamina": 7889,
+            "haste": 2400,
+            "crit": 0,
+            "mastery": 4600,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "1H Weapon"
+    },
+    {
+        "id": 172764,
+        "name": "Corrupted Gladiator's Reprieve",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Reprieve",
+            "ru": "Отсрочка падшего гладиатора",
+            "es": "Indulto de Gladiador corrupto",
+            "br": "Alívio do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Sursis du gladiateur corrompu",
+            "de": "Begnadigung des verderbten Gladiators"
+        },
+        "icon": "inv_offhand_1h_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 16132,
+            "stamina": 7889,
+            "haste": 4600,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 2400
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Offhand"
+    },
+    {
+        "id": 172765,
+        "name": "Corrupted Gladiator's Reprieve",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Reprieve",
+            "ru": "Отсрочка падшего гладиатора",
+            "es": "Indulto de Gladiador corrupto",
+            "br": "Alívio do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Sursis du gladiateur corrompu",
+            "de": "Begnadigung des verderbten Gladiators"
+        },
+        "icon": "inv_offhand_1h_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 16132,
+            "stamina": 7889,
+            "haste": 5000,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 2000
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Offhand"
+    },
+    {
+        "id": 172766,
+        "name": "Corrupted Gladiator's War Staff",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's War Staff",
+            "ru": "Воинский посох падшего гладиатора",
+            "es": "Bastón de guerra de Gladiador corrupto",
+            "br": "Cajado de Guerra do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Bâton de guerre du gladiateur corrompu",
+            "de": "Kriegsstab des verderbten Gladiators"
+        },
+        "icon": "inv_staff_2h_nzothraid_d_02",
+        "itemClass": 2,
+        "itemSubClass": 10,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 23380,
+            "stamina": 7889,
+            "haste": 2000,
+            "crit": 5000,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "2H Weapon"
+    },
+    {
+        "id": 172772,
+        "name": "Corrupted Gladiator's Gavel",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Gavel",
+            "ru": "Молоток падшего гладиатора",
+            "es": "Mazo de Gladiador corrupto",
+            "br": "Martelete do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Martelet du gladiateur corrompu",
+            "de": "Hammer des verderbten Gladiators"
+        },
+        "icon": "inv_mace_1h_nzothraid_d_01",
+        "itemClass": 2,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 30629,
+            "stamina": 7889,
+            "haste": 4600,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 2400
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "1H Weapon"
+    },
+    {
+        "id": 172773,
+        "name": "Corrupted Gladiator's Gavel",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Gavel",
+            "ru": "Молоток падшего гладиатора",
+            "es": "Mazo de Gladiador corrupto",
+            "br": "Martelete do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Martelet du gladiateur corrompu",
+            "de": "Hammer des verderbten Gladiators"
+        },
+        "icon": "inv_mace_1h_nzothraid_d_01",
+        "itemClass": 2,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 30629,
+            "stamina": 7889,
+            "haste": 5000,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 2000
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "1H Weapon"
+    },
+    {
+        "id": 172774,
+        "name": "Corrupted Gladiator's Staff",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Staff",
+            "ru": "Посох падшего гладиатора",
+            "es": "Bastón de Gladiador corrupto",
+            "br": "Cajado do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Bâton du gladiateur corrompu",
+            "de": "Stab des verderbten Gladiators"
+        },
+        "icon": "inv_staff_2h_nzothraid_d_01",
+        "itemClass": 2,
+        "itemSubClass": 10,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 23380,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 1600,
+            "versatility": 5400
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "2H Weapon"
+    },
+    {
+        "id": 172775,
+        "name": "Corrupted Gladiator's Staff",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Staff",
+            "ru": "Посох падшего гладиатора",
+            "es": "Bastón de Gladiador corrupto",
+            "br": "Cajado do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Bâton du gladiateur corrompu",
+            "de": "Stab des verderbten Gladiators"
+        },
+        "icon": "inv_staff_2h_nzothraid_d_01",
+        "itemClass": 2,
+        "itemSubClass": 10,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 23380,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 2000,
+            "versatility": 5000
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "2H Weapon"
+    },
+    {
+        "id": 172776,
+        "name": "Corrupted Gladiator's War Staff",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's War Staff",
+            "ru": "Воинский посох падшего гладиатора",
+            "es": "Bastón de guerra de Gladiador corrupto",
+            "br": "Cajado de Guerra do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Bâton de guerre du gladiateur corrompu",
+            "de": "Kriegsstab des verderbten Gladiators"
+        },
+        "icon": "inv_staff_2h_nzothraid_d_02",
+        "itemClass": 2,
+        "itemSubClass": 10,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 23380,
+            "stamina": 7889,
+            "haste": 2400,
+            "crit": 4600,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "2H Weapon"
+    },
+    {
+        "id": 172780,
+        "name": "Corrupted Aspirant's Silk Robe",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Aspirant's Silk Robe",
+            "ru": "Шелковое одеяние падшего претендента",
+            "es": "Toga de seda de aspirante corrupto",
+            "br": "Veste de Seda do Aspirante Corrompido",
+            "kr": "",
+            "fr": "Robe de l’aspirant corrompu en soie",
+            "de": "Seidenrobe des verderbten Aspiranten"
+        },
+        "icon": "inv_chest_cloth_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 172781,
+        "name": "Corrupted Aspirant's Silk Treads",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Aspirant's Silk Treads",
+            "ru": "Шелковые ботфорты падшего претендента",
+            "es": "Botines de seda de aspirante corrupto",
+            "br": "Botinas de Seda do Aspirante Corrompido",
+            "kr": "",
+            "fr": "Bottines de l’aspirant corrompu en soie",
+            "de": "Seidene Treter des verderbten Aspiranten"
+        },
+        "icon": "inv_boot_cloth_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 2400,
+            "mastery": 0,
+            "versatility": 4600
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Feet"
+    },
+    {
+        "id": 172782,
+        "name": "Corrupted Aspirant's Silk Gloves",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Aspirant's Silk Gloves",
+            "ru": "Шелковые перчатки падшего претендента",
+            "es": "Guantes de seda de aspirante corrupto",
+            "br": "Luvas de Seda do Aspirante Corrompido",
+            "kr": "",
+            "fr": "Gants de l’aspirant corrompu en soie",
+            "de": "Seidenhandschuhe des verderbten Aspiranten"
+        },
+        "icon": "inv_glove_cloth_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 5000,
+            "mastery": 2000,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
+        "id": 172783,
+        "name": "Corrupted Aspirant's Silk Hood",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Aspirant's Silk Hood",
+            "ru": "Шелковый капюшон падшего претендента",
+            "es": "Caperuza de seda de aspirante corrupto",
+            "br": "Capuz de Seda do Aspirante Corrompido",
+            "kr": "",
+            "fr": "Chaperon de l’aspirant corrompu en soie",
+            "de": "Seidenkapuze des verderbten Aspiranten"
+        },
+        "icon": "inv_helm_cloth_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 172784,
+        "name": "Corrupted Aspirant's Silk Leggings",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Aspirant's Silk Leggings",
+            "ru": "Шелковые поножи падшего претендента",
+            "es": "Leotardos de seda de aspirante corrupto",
+            "br": "Perneiras de Seda do Aspirante Corrompido",
+            "kr": "",
+            "fr": "Jambières de l’aspirant corrompu en soie",
+            "de": "Seidengamaschen des verderbten Aspiranten"
+        },
+        "icon": "inv_pant_cloth_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 1600,
+            "crit": 0,
+            "mastery": 5400,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 172785,
+        "name": "Corrupted Aspirant's Silk Mantle",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Aspirant's Silk Mantle",
+            "ru": "Шелковое оплечье падшего претендента",
+            "es": "Manto de seda de aspirante corrupto",
+            "br": "Dragonas de Seda do Aspirante Corrompido",
+            "kr": "",
+            "fr": "Mantelet de l’aspirant corrompu en soie",
+            "de": "Seidenmantel des verderbten Aspiranten"
+        },
+        "icon": "inv_shoulder_cloth_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 172786,
+        "name": "Corrupted Aspirant's Silk Cuffs",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Aspirant's Silk Cuffs",
+            "ru": "Шелковые манжеты падшего претендента",
+            "es": "Puños de seda de aspirante corrupto",
+            "br": "Manilhas de Seda do Aspirante Corrompido",
+            "kr": "",
+            "fr": "Crispins de l’aspirant corrompu en soie",
+            "de": "Seidenmanschetten des verderbten Aspiranten"
+        },
+        "icon": "inv_bracer_cloth_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 2000,
+            "mastery": 0,
+            "versatility": 5000
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Wrist"
+    },
+    {
+        "id": 172787,
+        "name": "Corrupted Aspirant's Silk Cord",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Aspirant's Silk Cord",
+            "ru": "Шелковый шнурованный ремень падшего претендента",
+            "es": "Cordón de seda de aspirante corrupto",
+            "br": "Cordão de Seda do Aspirante Corrompido",
+            "kr": "",
+            "fr": "Corde de l’aspirant corrompu en soie",
+            "de": "Seidene Kordel des verderbten Aspiranten"
+        },
+        "icon": "inv_belt_cloth_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 4600,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 2400
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Waist"
+    },
+    {
+        "id": 172788,
+        "name": "Corrupted Aspirant's Leather Tunic",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Aspirant's Leather Tunic",
+            "ru": "Кожаный мундир падшего претендента",
+            "es": "Guerrera de cuero de aspirante corrupto",
+            "br": "Túnica de Couro do Aspirante Corrompido",
+            "kr": "",
+            "fr": "Tunique de l’aspirant corrompu en cuir",
+            "de": "Ledertunika des verderbten Aspiranten"
+        },
+        "icon": "inv_chest_leatherraidnzoth_d_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 172789,
+        "name": "Corrupted Aspirant's Leather Boots",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Aspirant's Leather Boots",
+            "ru": "Кожаные сапоги падшего претендента",
+            "es": "Botas de cuero de aspirante corrupto",
+            "br": "Botas de Couro do Aspirante Corrompido",
+            "kr": "",
+            "fr": "Bottes de l’aspirant corrompu en cuir",
+            "de": "Lederstiefel des verderbten Aspiranten"
+        },
+        "icon": "inv_boot_leatherraidnzoth_d_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 2400,
+            "mastery": 0,
+            "versatility": 4600
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Feet"
+    },
+    {
+        "id": 172790,
+        "name": "Corrupted Aspirant's Leather Gloves",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Aspirant's Leather Gloves",
+            "ru": "Кожаные перчатки падшего претендента",
+            "es": "Guantes de cuero de aspirante corrupto",
+            "br": "Luvas de Couro do Aspirante Corrompido",
+            "kr": "",
+            "fr": "Gants de l’aspirant corrompu en cuir",
+            "de": "Lederhandschuhe des verderbten Aspiranten"
+        },
+        "icon": "inv_glove_leatherraidnzoth_d_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 5000,
+            "mastery": 2000,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
+        "id": 172791,
+        "name": "Corrupted Aspirant's Leather Helm",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Aspirant's Leather Helm",
+            "ru": "Кожаный шлем падшего претендента",
+            "es": "Yelmo de cuero de aspirante corrupto",
+            "br": "Elmo de Couro do Aspirante Corrompido",
+            "kr": "",
+            "fr": "Heaume de l’aspirant corrompu en cuir",
+            "de": "Lederhelm des verderbten Aspiranten"
+        },
+        "icon": "inv_helm_leatherraidnzoth_d_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 172792,
+        "name": "Corrupted Aspirant's Leather Legguards",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Aspirant's Leather Legguards",
+            "ru": "Кожаные набедренники падшего претендента",
+            "es": "Musleras de cuero de aspirante corrupto",
+            "br": "Guarda-pernas de Couro do Aspirante Corrompido",
+            "kr": "",
+            "fr": "Garde-jambes de l’aspirant corrompu en cuir",
+            "de": "Lederbeinschützer des verderbten Aspiranten"
+        },
+        "icon": "inv_pant_leatherraidnzoth_d_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 1600,
+            "crit": 0,
+            "mastery": 5400,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 172793,
+        "name": "Corrupted Aspirant's Leather Spaulders",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Aspirant's Leather Spaulders",
+            "ru": "Кожаный наплеч падшего претендента",
+            "es": "Bufas de cuero de aspirante corrupto",
+            "br": "Espaldares de Couro do Aspirante Corrompido",
+            "kr": "",
+            "fr": "Spallières de l’aspirant corrompu en cuir",
+            "de": "Lederschiftung des verderbten Aspiranten"
+        },
+        "icon": "inv_shoulder_leatherraidnzoth_d_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 172794,
+        "name": "Corrupted Aspirant's Leather Belt",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Aspirant's Leather Belt",
+            "ru": "Кожаный пояс падшего претендента",
+            "es": "Cinturón de cuero de aspirante corrupto",
+            "br": "Cinto de Couro do Aspirante Corrompido",
+            "kr": "",
+            "fr": "Ceinture de l’aspirant corrompu en cuir",
+            "de": "Ledergürtel des verderbten Aspiranten"
+        },
+        "icon": "inv_belt_leatherraidnzoth_d_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 4600,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 2400
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Waist"
+    },
+    {
+        "id": 172795,
+        "name": "Corrupted Aspirant's Leather Bindings",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Aspirant's Leather Bindings",
+            "ru": "Кожаные наручи падшего претендента",
+            "es": "Ataduras de cuero de aspirante corrupto",
+            "br": "Braceletes de Couro do Aspirante Corrompido",
+            "kr": "",
+            "fr": "Manchettes de l’aspirant corrompu en cuir",
+            "de": "Lederbindungen des verderbten Aspiranten"
+        },
+        "icon": "inv_bracer_leatherraidnzoth_d_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 2000,
+            "mastery": 0,
+            "versatility": 5000
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Wrist"
+    },
+    {
+        "id": 172796,
+        "name": "Corrupted Aspirant's Chain Armor",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Aspirant's Chain Armor",
+            "ru": "Плетеный доспех падшего претендента",
+            "es": "Armadura de anillas de aspirante corrupto",
+            "br": "Armadura Encadeada do Aspirante Corrompido",
+            "kr": "",
+            "fr": "Cotte d’anneaux de l’aspirant corrompu",
+            "de": "Kettenrüstung des verderbten Aspiranten"
+        },
+        "icon": "inv_chest_mail_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 172797,
+        "name": "Corrupted Aspirant's Chain Sabatons",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Aspirant's Chain Sabatons",
+            "ru": "Кольчужные башмаки падшего претендента",
+            "es": "Escarpes de anillas de aspirante corrupto",
+            "br": "Escarpes Encadeados do Aspirante Corrompido",
+            "kr": "",
+            "fr": "Solerets de l’aspirant corrompu en anneaux",
+            "de": "Kettensabatons des verderbten Aspiranten"
+        },
+        "icon": "inv_boot_mail_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 1600,
+            "mastery": 0,
+            "versatility": 5400
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Feet"
+    },
+    {
+        "id": 172798,
+        "name": "Corrupted Aspirant's Chain Gauntlets",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Aspirant's Chain Gauntlets",
+            "ru": "Плетеные рукавицы падшего претендента",
+            "es": "Guanteletes de anillas de aspirante corrupto",
+            "br": "Manoplas Encadeadas do Aspirante Corrompido",
+            "kr": "",
+            "fr": "Gantelets de l’aspirant corrompu en anneaux",
+            "de": "Kettenstulpen des verderbten Aspiranten"
+        },
+        "icon": "inv_glove_mail_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 4600,
+            "mastery": 2400,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
+        "id": 172799,
+        "name": "Corrupted Aspirant's Chain Helm",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Aspirant's Chain Helm",
+            "ru": "Плетеный шлем падшего претендента",
+            "es": "Yelmo de anillas de aspirante corrupto",
+            "br": "Elmo Encadeado do Aspirante Corrompido",
+            "kr": "",
+            "fr": "Heaume de l’aspirant corrompu en anneaux",
+            "de": "Kettenhelm des verderbten Aspiranten"
+        },
+        "icon": "inv_helm_mail_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 172800,
+        "name": "Corrupted Aspirant's Chain Leggings",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Aspirant's Chain Leggings",
+            "ru": "Плетеные поножи падшего претендента",
+            "es": "Leotardos de anillas de aspirante corrupto",
+            "br": "Perneiras Encadeadas do Aspirante Corrompido",
+            "kr": "",
+            "fr": "Jambières de l’aspirant corrompu en anneaux",
+            "de": "Kettengamaschen des verderbten Aspiranten"
+        },
+        "icon": "inv_pant_mail_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 2000,
+            "crit": 0,
+            "mastery": 5000,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 172801,
+        "name": "Corrupted Aspirant's Chain Spaulders",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Aspirant's Chain Spaulders",
+            "ru": "Плетеный наплеч падшего претендента",
+            "es": "Bufas de anillas de aspirante corrupto",
+            "br": "Espaldares Encadeados do Aspirante Corrompido",
+            "kr": "",
+            "fr": "Spallières de l’aspirant corrompu en anneaux",
+            "de": "Kettenschiftung des verderbten Aspiranten"
+        },
+        "icon": "inv_shoulder_mail_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 172802,
+        "name": "Corrupted Aspirant's Chain Waistguard",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Aspirant's Chain Waistguard",
+            "ru": "Плетеный воинский пояс падшего претендента",
+            "es": "Guardarrenes de anillas de aspirante corrupto",
+            "br": "Cinta Encadeada do Aspirante Corrompido",
+            "kr": "",
+            "fr": "Sangle de l’aspirant corrompu en anneaux",
+            "de": "Kettentaillenschutz des verderbten Aspiranten"
+        },
+        "icon": "inv_belt_mail_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 5400,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 1600
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Waist"
+    },
+    {
+        "id": 172803,
+        "name": "Corrupted Aspirant's Chain Armbands",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Aspirant's Chain Armbands",
+            "ru": "Плетеные поручи падшего претендента",
+            "es": "Bandas de anillas de aspirante corrupto",
+            "br": "Embraces Encadeados do Aspirante Corrompido",
+            "kr": "",
+            "fr": "Bracières de l’aspirant corrompu en anneaux",
+            "de": "Kettenarmbinden des verderbten Aspiranten"
+        },
+        "icon": "inv_bracer_mail_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 2400,
+            "mastery": 0,
+            "versatility": 4600
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Wrist"
+    },
+    {
+        "id": 172804,
+        "name": "Corrupted Aspirant's Plate Helm",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Aspirant's Plate Helm",
+            "ru": "Латный шлем падшего претендента",
+            "es": "Yelmo de placas de aspirante corrupto",
+            "br": "Elmo de Placa do Aspirante Corrompido",
+            "kr": "",
+            "fr": "Heaume de l’aspirant corrompu en plaques",
+            "de": "Plattenhelm des verderbten Aspiranten"
+        },
+        "icon": "inv_helm_plate_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 172805,
+        "name": "Corrupted Aspirant's Plate Chestpiece",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Aspirant's Plate Chestpiece",
+            "ru": "Латный нагрудник падшего претендента",
+            "es": "Pechera de placas de aspirante corrupto",
+            "br": "Peito d'Armas de Placa do Aspirante Corrompido",
+            "kr": "",
+            "fr": "Plastron de l’aspirant corrompu en plaques",
+            "de": "Plattenbrustharnisch des verderbten Aspiranten"
+        },
+        "icon": "inv_chest_plate_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 172806,
+        "name": "Corrupted Aspirant's Plate Warboots",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Aspirant's Plate Warboots",
+            "ru": "Латные боевые сапоги падшего претендента",
+            "es": "Botas de guerra de placas de aspirante corrupto",
+            "br": "Coturnos de Placa do Aspirante Corrompido",
+            "kr": "",
+            "fr": "Bottes de guerre de l’aspirant corrompu en plaques",
+            "de": "Plattenkriegsstiefel des verderbten Aspiranten"
+        },
+        "icon": "inv_boot_plate_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 2000,
+            "mastery": 0,
+            "versatility": 5000
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Feet"
+    },
+    {
+        "id": 172807,
+        "name": "Corrupted Aspirant's Plate Gauntlets",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Aspirant's Plate Gauntlets",
+            "ru": "Латные перчатки падшего претендента",
+            "es": "Guanteletes de placas de aspirante corrupto",
+            "br": "Manoplas de Placa do Aspirante Corrompido",
+            "kr": "",
+            "fr": "Gantelets de l’aspirant corrompu en plaques",
+            "de": "Plattenstulpen des verderbten Aspiranten"
+        },
+        "icon": "inv_glove_plate_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 5400,
+            "mastery": 1600,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
+        "id": 172808,
+        "name": "Corrupted Aspirant's Plate Legguards",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Aspirant's Plate Legguards",
+            "ru": "Латные набедренники падшего претендента",
+            "es": "Musleras de placas de aspirante corrupto",
+            "br": "Guarda-pernas de Placa do Aspirante Corrompido",
+            "kr": "",
+            "fr": "Garde-jambes de l’aspirant corrompu en plaques",
+            "de": "Plattenbeinschützer des verderbten Aspiranten"
+        },
+        "icon": "inv_pant_plate_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 2400,
+            "crit": 0,
+            "mastery": 4600,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 172809,
+        "name": "Corrupted Aspirant's Plate Pauldrons",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Aspirant's Plate Pauldrons",
+            "ru": "Латное наплечье падшего претендента",
+            "es": "Espaldares de placas de aspirante corrupto",
+            "br": "Brafoneiras de Placa do Aspirante Corrompido",
+            "kr": "",
+            "fr": "Espauliers de l’aspirant corrompu en plaques",
+            "de": "Plattenschulterstücke des verderbten Aspiranten"
+        },
+        "icon": "inv_shoulder_plate_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 172810,
+        "name": "Corrupted Aspirant's Plate Girdle",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Aspirant's Plate Girdle",
+            "ru": "Латный ремень падшего претендента",
+            "es": "Faja de placas de aspirante corrupto",
+            "br": "Cinturão de Placa do Aspirante Corrompido",
+            "kr": "",
+            "fr": "Ceinturon de l’aspirant corrompu en plaques",
+            "de": "Plattengurt des verderbten Aspiranten"
+        },
+        "icon": "inv_belt_plate_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 5000,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 2000
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Waist"
+    },
+    {
+        "id": 172811,
+        "name": "Corrupted Aspirant's Plate Armguards",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Aspirant's Plate Armguards",
+            "ru": "Латные наручи падшего претендента",
+            "es": "Guardabrazos de placas de aspirante corrupto",
+            "br": "Guarda-braços de Placa do Aspirante Corrompido",
+            "kr": "",
+            "fr": "Garde-bras de l’aspirant corrompu en plaques",
+            "de": "Plattenarmschützer des verderbten Aspiranten"
+        },
+        "icon": "inv_bracer_plate_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 1600,
+            "mastery": 0,
+            "versatility": 5400
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Wrist"
+    },
+    {
+        "id": 172812,
+        "name": "Corrupted Aspirant's Plate Helm",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Aspirant's Plate Helm",
+            "ru": "Латный шлем падшего претендента",
+            "es": "Yelmo de placas de aspirante corrupto",
+            "br": "Elmo de Placa do Aspirante Corrompido",
+            "kr": "",
+            "fr": "Heaume de l’aspirant corrompu en plaques",
+            "de": "Plattenhelm des verderbten Aspiranten"
+        },
+        "icon": "inv_helm_plate_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 172813,
+        "name": "Corrupted Aspirant's Silk Robe",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Aspirant's Silk Robe",
+            "ru": "Шелковое одеяние падшего претендента",
+            "es": "Toga de seda de aspirante corrupto",
+            "br": "Veste de Seda do Aspirante Corrompido",
+            "kr": "",
+            "fr": "Robe de l’aspirant corrompu en soie",
+            "de": "Seidenrobe des verderbten Aspiranten"
+        },
+        "icon": "inv_chest_cloth_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 172814,
+        "name": "Corrupted Aspirant's Plate Chestpiece",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Aspirant's Plate Chestpiece",
+            "ru": "Латный нагрудник падшего претендента",
+            "es": "Pechera de placas de aspirante corrupto",
+            "br": "Peito d'Armas de Placa do Aspirante Corrompido",
+            "kr": "",
+            "fr": "Plastron de l’aspirant corrompu en plaques",
+            "de": "Plattenbrustharnisch des verderbten Aspiranten"
+        },
+        "icon": "inv_chest_plate_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 172815,
+        "name": "Corrupted Aspirant's Chain Armor",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Aspirant's Chain Armor",
+            "ru": "Плетеный доспех падшего претендента",
+            "es": "Armadura de anillas de aspirante corrupto",
+            "br": "Armadura Encadeada do Aspirante Corrompido",
+            "kr": "",
+            "fr": "Cotte d’anneaux de l’aspirant corrompu",
+            "de": "Kettenrüstung des verderbten Aspiranten"
+        },
+        "icon": "inv_chest_mail_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 172816,
+        "name": "Corrupted Aspirant's Leather Tunic",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Aspirant's Leather Tunic",
+            "ru": "Кожаный мундир падшего претендента",
+            "es": "Guerrera de cuero de aspirante corrupto",
+            "br": "Túnica de Couro do Aspirante Corrompido",
+            "kr": "",
+            "fr": "Tunique de l’aspirant corrompu en cuir",
+            "de": "Ledertunika des verderbten Aspiranten"
+        },
+        "icon": "inv_chest_leatherraidnzoth_d_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 172817,
+        "name": "Corrupted Aspirant's Plate Warboots",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Aspirant's Plate Warboots",
+            "ru": "Латные боевые сапоги падшего претендента",
+            "es": "Botas de guerra de placas de aspirante corrupto",
+            "br": "Coturnos de Placa do Aspirante Corrompido",
+            "kr": "",
+            "fr": "Bottes de guerre de l’aspirant corrompu en plaques",
+            "de": "Plattenkriegsstiefel des verderbten Aspiranten"
+        },
+        "icon": "inv_boot_plate_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 1600,
+            "mastery": 0,
+            "versatility": 5400
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Feet"
+    },
+    {
+        "id": 172818,
+        "name": "Corrupted Aspirant's Silk Treads",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Aspirant's Silk Treads",
+            "ru": "Шелковые ботфорты падшего претендента",
+            "es": "Botines de seda de aspirante corrupto",
+            "br": "Botinas de Seda do Aspirante Corrompido",
+            "kr": "",
+            "fr": "Bottines de l’aspirant corrompu en soie",
+            "de": "Seidene Treter des verderbten Aspiranten"
+        },
+        "icon": "inv_boot_cloth_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 2000,
+            "mastery": 0,
+            "versatility": 5000
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Feet"
+    },
+    {
+        "id": 172819,
+        "name": "Corrupted Aspirant's Chain Sabatons",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Aspirant's Chain Sabatons",
+            "ru": "Кольчужные башмаки падшего претендента",
+            "es": "Escarpes de anillas de aspirante corrupto",
+            "br": "Escarpes Encadeados do Aspirante Corrompido",
+            "kr": "",
+            "fr": "Solerets de l’aspirant corrompu en anneaux",
+            "de": "Kettensabatons des verderbten Aspiranten"
+        },
+        "icon": "inv_boot_mail_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 2400,
+            "mastery": 0,
+            "versatility": 4600
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Feet"
+    },
+    {
+        "id": 172820,
+        "name": "Corrupted Aspirant's Leather Boots",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Aspirant's Leather Boots",
+            "ru": "Кожаные сапоги падшего претендента",
+            "es": "Botas de cuero de aspirante corrupto",
+            "br": "Botas de Couro do Aspirante Corrompido",
+            "kr": "",
+            "fr": "Bottes de l’aspirant corrompu en cuir",
+            "de": "Lederstiefel des verderbten Aspiranten"
+        },
+        "icon": "inv_boot_leatherraidnzoth_d_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 2000,
+            "mastery": 0,
+            "versatility": 5000
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Feet"
+    },
+    {
+        "id": 172821,
+        "name": "Corrupted Aspirant's Leather Gloves",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Aspirant's Leather Gloves",
+            "ru": "Кожаные перчатки падшего претендента",
+            "es": "Guantes de cuero de aspirante corrupto",
+            "br": "Luvas de Couro do Aspirante Corrompido",
+            "kr": "",
+            "fr": "Gants de l’aspirant corrompu en cuir",
+            "de": "Lederhandschuhe des verderbten Aspiranten"
+        },
+        "icon": "inv_glove_leatherraidnzoth_d_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 5400,
+            "mastery": 1600,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
+        "id": 172822,
+        "name": "Corrupted Aspirant's Plate Gauntlets",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Aspirant's Plate Gauntlets",
+            "ru": "Латные перчатки падшего претендента",
+            "es": "Guanteletes de placas de aspirante corrupto",
+            "br": "Manoplas de Placa do Aspirante Corrompido",
+            "kr": "",
+            "fr": "Gantelets de l’aspirant corrompu en plaques",
+            "de": "Plattenstulpen des verderbten Aspiranten"
+        },
+        "icon": "inv_glove_plate_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 4600,
+            "mastery": 2400,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
+        "id": 172823,
+        "name": "Corrupted Aspirant's Silk Gloves",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Aspirant's Silk Gloves",
+            "ru": "Шелковые перчатки падшего претендента",
+            "es": "Guantes de seda de aspirante corrupto",
+            "br": "Luvas de Seda do Aspirante Corrompido",
+            "kr": "",
+            "fr": "Gants de l’aspirant corrompu en soie",
+            "de": "Seidenhandschuhe des verderbten Aspiranten"
+        },
+        "icon": "inv_glove_cloth_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 5400,
+            "mastery": 1600,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
+        "id": 172824,
+        "name": "Corrupted Aspirant's Chain Gauntlets",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Aspirant's Chain Gauntlets",
+            "ru": "Плетеные рукавицы падшего претендента",
+            "es": "Guanteletes de anillas de aspirante corrupto",
+            "br": "Manoplas Encadeadas do Aspirante Corrompido",
+            "kr": "",
+            "fr": "Gantelets de l’aspirant corrompu en anneaux",
+            "de": "Kettenstulpen des verderbten Aspiranten"
+        },
+        "icon": "inv_glove_mail_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 5000,
+            "mastery": 2000,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
+        "id": 172825,
+        "name": "Corrupted Aspirant's Silk Hood",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Aspirant's Silk Hood",
+            "ru": "Шелковый капюшон падшего претендента",
+            "es": "Caperuza de seda de aspirante corrupto",
+            "br": "Capuz de Seda do Aspirante Corrompido",
+            "kr": "",
+            "fr": "Chaperon de l’aspirant corrompu en soie",
+            "de": "Seidenkapuze des verderbten Aspiranten"
+        },
+        "icon": "inv_helm_cloth_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 172826,
+        "name": "Corrupted Aspirant's Chain Helm",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Aspirant's Chain Helm",
+            "ru": "Плетеный шлем падшего претендента",
+            "es": "Yelmo de anillas de aspirante corrupto",
+            "br": "Elmo Encadeado do Aspirante Corrompido",
+            "kr": "",
+            "fr": "Heaume de l’aspirant corrompu en anneaux",
+            "de": "Kettenhelm des verderbten Aspiranten"
+        },
+        "icon": "inv_helm_mail_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 172827,
+        "name": "Corrupted Aspirant's Leather Helm",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Aspirant's Leather Helm",
+            "ru": "Кожаный шлем падшего претендента",
+            "es": "Yelmo de cuero de aspirante corrupto",
+            "br": "Elmo de Couro do Aspirante Corrompido",
+            "kr": "",
+            "fr": "Heaume de l’aspirant corrompu en cuir",
+            "de": "Lederhelm des verderbten Aspiranten"
+        },
+        "icon": "inv_helm_leatherraidnzoth_d_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 172828,
+        "name": "Corrupted Aspirant's Plate Legguards",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Aspirant's Plate Legguards",
+            "ru": "Латные набедренники падшего претендента",
+            "es": "Musleras de placas de aspirante corrupto",
+            "br": "Guarda-pernas de Placa do Aspirante Corrompido",
+            "kr": "",
+            "fr": "Garde-jambes de l’aspirant corrompu en plaques",
+            "de": "Plattenbeinschützer des verderbten Aspiranten"
+        },
+        "icon": "inv_pant_plate_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 2000,
+            "crit": 0,
+            "mastery": 5000,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 172829,
+        "name": "Corrupted Aspirant's Silk Leggings",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Aspirant's Silk Leggings",
+            "ru": "Шелковые поножи падшего претендента",
+            "es": "Leotardos de seda de aspirante corrupto",
+            "br": "Perneiras de Seda do Aspirante Corrompido",
+            "kr": "",
+            "fr": "Jambières de l’aspirant corrompu en soie",
+            "de": "Seidengamaschen des verderbten Aspiranten"
+        },
+        "icon": "inv_pant_cloth_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 2400,
+            "crit": 0,
+            "mastery": 4600,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 172830,
+        "name": "Corrupted Aspirant's Chain Leggings",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Aspirant's Chain Leggings",
+            "ru": "Плетеные поножи падшего претендента",
+            "es": "Leotardos de anillas de aspirante corrupto",
+            "br": "Perneiras Encadeadas do Aspirante Corrompido",
+            "kr": "",
+            "fr": "Jambières de l’aspirant corrompu en anneaux",
+            "de": "Kettengamaschen des verderbten Aspiranten"
+        },
+        "icon": "inv_pant_mail_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 1600,
+            "crit": 0,
+            "mastery": 5400,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 172831,
+        "name": "Corrupted Aspirant's Leather Legguards",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Aspirant's Leather Legguards",
+            "ru": "Кожаные набедренники падшего претендента",
+            "es": "Musleras de cuero de aspirante corrupto",
+            "br": "Guarda-pernas de Couro do Aspirante Corrompido",
+            "kr": "",
+            "fr": "Garde-jambes de l’aspirant corrompu en cuir",
+            "de": "Lederbeinschützer des verderbten Aspiranten"
+        },
+        "icon": "inv_pant_leatherraidnzoth_d_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 2400,
+            "crit": 0,
+            "mastery": 4600,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 172832,
+        "name": "Corrupted Aspirant's Leather Spaulders",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Aspirant's Leather Spaulders",
+            "ru": "Кожаный наплеч падшего претендента",
+            "es": "Bufas de cuero de aspirante corrupto",
+            "br": "Espaldares de Couro do Aspirante Corrompido",
+            "kr": "",
+            "fr": "Spallières de l’aspirant corrompu en cuir",
+            "de": "Lederschiftung des verderbten Aspiranten"
+        },
+        "icon": "inv_shoulder_leatherraidnzoth_d_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 172833,
+        "name": "Corrupted Aspirant's Plate Pauldrons",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Aspirant's Plate Pauldrons",
+            "ru": "Латное наплечье падшего претендента",
+            "es": "Espaldares de placas de aspirante corrupto",
+            "br": "Brafoneiras de Placa do Aspirante Corrompido",
+            "kr": "",
+            "fr": "Espauliers de l’aspirant corrompu en plaques",
+            "de": "Plattenschulterstücke des verderbten Aspiranten"
+        },
+        "icon": "inv_shoulder_plate_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 172834,
+        "name": "Corrupted Aspirant's Silk Mantle",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Aspirant's Silk Mantle",
+            "ru": "Шелковое оплечье падшего претендента",
+            "es": "Manto de seda de aspirante corrupto",
+            "br": "Dragonas de Seda do Aspirante Corrompido",
+            "kr": "",
+            "fr": "Mantelet de l’aspirant corrompu en soie",
+            "de": "Seidenmantel des verderbten Aspiranten"
+        },
+        "icon": "inv_shoulder_cloth_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 172835,
+        "name": "Corrupted Aspirant's Chain Spaulders",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Aspirant's Chain Spaulders",
+            "ru": "Плетеный наплеч падшего претендента",
+            "es": "Bufas de anillas de aspirante corrupto",
+            "br": "Espaldares Encadeados do Aspirante Corrompido",
+            "kr": "",
+            "fr": "Spallières de l’aspirant corrompu en anneaux",
+            "de": "Kettenschiftung des verderbten Aspiranten"
+        },
+        "icon": "inv_shoulder_mail_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 10000,
+            "stamina": 11500,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 172836,
+        "name": "Corrupted Aspirant's Plate Girdle",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Aspirant's Plate Girdle",
+            "ru": "Латный ремень падшего претендента",
+            "es": "Faja de placas de aspirante corrupto",
+            "br": "Cinturão de Placa do Aspirante Corrompido",
+            "kr": "",
+            "fr": "Ceinturon de l’aspirant corrompu en plaques",
+            "de": "Plattengurt des verderbten Aspiranten"
+        },
+        "icon": "inv_belt_plate_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 5400,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 1600
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Waist"
+    },
+    {
+        "id": 172837,
+        "name": "Corrupted Aspirant's Silk Cord",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Aspirant's Silk Cord",
+            "ru": "Шелковый шнурованный ремень падшего претендента",
+            "es": "Cordón de seda de aspirante corrupto",
+            "br": "Cordão de Seda do Aspirante Corrompido",
+            "kr": "",
+            "fr": "Corde de l’aspirant corrompu en soie",
+            "de": "Seidene Kordel des verderbten Aspiranten"
+        },
+        "icon": "inv_belt_cloth_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 5000,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 2000
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Waist"
+    },
+    {
+        "id": 172838,
+        "name": "Corrupted Aspirant's Chain Waistguard",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Aspirant's Chain Waistguard",
+            "ru": "Плетеный воинский пояс падшего претендента",
+            "es": "Guardarrenes de anillas de aspirante corrupto",
+            "br": "Cinta Encadeada do Aspirante Corrompido",
+            "kr": "",
+            "fr": "Sangle de l’aspirant corrompu en anneaux",
+            "de": "Kettentaillenschutz des verderbten Aspiranten"
+        },
+        "icon": "inv_belt_mail_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 4600,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 2400
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Waist"
+    },
+    {
+        "id": 172839,
+        "name": "Corrupted Aspirant's Leather Belt",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Aspirant's Leather Belt",
+            "ru": "Кожаный пояс падшего претендента",
+            "es": "Cinturón de cuero de aspirante corrupto",
+            "br": "Cinto de Couro do Aspirante Corrompido",
+            "kr": "",
+            "fr": "Ceinture de l’aspirant corrompu en cuir",
+            "de": "Ledergürtel des verderbten Aspiranten"
+        },
+        "icon": "inv_belt_leatherraidnzoth_d_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 5000,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 2000
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Waist"
+    },
+    {
+        "id": 172840,
+        "name": "Corrupted Aspirant's Silk Cuffs",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Aspirant's Silk Cuffs",
+            "ru": "Шелковые манжеты падшего претендента",
+            "es": "Puños de seda de aspirante corrupto",
+            "br": "Manilhas de Seda do Aspirante Corrompido",
+            "kr": "",
+            "fr": "Crispins de l’aspirant corrompu en soie",
+            "de": "Seidenmanschetten des verderbten Aspiranten"
+        },
+        "icon": "inv_bracer_cloth_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 1600,
+            "mastery": 0,
+            "versatility": 5400
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Wrist"
+    },
+    {
+        "id": 172841,
+        "name": "Corrupted Aspirant's Plate Armguards",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Aspirant's Plate Armguards",
+            "ru": "Латные наручи падшего претендента",
+            "es": "Guardabrazos de placas de aspirante corrupto",
+            "br": "Guarda-braços de Placa do Aspirante Corrompido",
+            "kr": "",
+            "fr": "Garde-bras de l’aspirant corrompu en plaques",
+            "de": "Plattenarmschützer des verderbten Aspiranten"
+        },
+        "icon": "inv_bracer_plate_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 2400,
+            "mastery": 0,
+            "versatility": 4600
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Wrist"
+    },
+    {
+        "id": 172842,
+        "name": "Corrupted Aspirant's Chain Armbands",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Aspirant's Chain Armbands",
+            "ru": "Плетеные поручи падшего претендента",
+            "es": "Bandas de anillas de aspirante corrupto",
+            "br": "Embraces Encadeados do Aspirante Corrompido",
+            "kr": "",
+            "fr": "Bracières de l’aspirant corrompu en anneaux",
+            "de": "Kettenarmbinden des verderbten Aspiranten"
+        },
+        "icon": "inv_bracer_mail_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 2000,
+            "mastery": 0,
+            "versatility": 5000
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Wrist"
+    },
+    {
+        "id": 172843,
+        "name": "Corrupted Aspirant's Leather Bindings",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Aspirant's Leather Bindings",
+            "ru": "Кожаные наручи падшего претендента",
+            "es": "Ataduras de cuero de aspirante corrupto",
+            "br": "Braceletes de Couro do Aspirante Corrompido",
+            "kr": "",
+            "fr": "Manchettes de l’aspirant corrompu en cuir",
+            "de": "Lederbindungen des verderbten Aspiranten"
+        },
+        "icon": "inv_bracer_leatherraidnzoth_d_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 1600,
+            "mastery": 0,
+            "versatility": 5400
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Wrist"
+    },
+    {
+        "id": 172844,
+        "name": "Corrupted Aspirant's Ring",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Aspirant's Ring",
+            "ru": "Перстень падшего претендента",
+            "es": "Anillo de aspirante corrupto",
+            "br": "Anel do Aspirante Corrompido",
+            "kr": "",
+            "fr": "Anneau de l’aspirant corrompu",
+            "de": "Ring des verderbten Aspiranten"
+        },
+        "icon": "inv_ring_80_02e",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "haste": 5500,
+            "crit": 12000,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Finger"
+    },
+    {
+        "id": 172845,
+        "name": "Corrupted Aspirant's Band",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Aspirant's Band",
+            "ru": "Кольцо падшего претендента",
+            "es": "Sortija de aspirante corrupto",
+            "br": "Elo do Aspirante Corrompido",
+            "kr": "",
+            "fr": "Bague de l’aspirant corrompu",
+            "de": "Band des verderbten Aspiranten"
+        },
+        "icon": "inv_ring_80_02c",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 12000,
+            "versatility": 5500
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Finger"
+    },
+    {
+        "id": 172846,
+        "name": "Corrupted Aspirant's Bauble",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Aspirant's Bauble",
+            "ru": "Безделушка падшего претендента",
+            "es": "Adorno de aspirante corrupto",
+            "br": "Berloque do Aspirante Corrompido",
+            "kr": "",
+            "fr": "Babiole de l’aspirant corrompu",
+            "de": "Kleinod des verderbten Aspiranten"
+        },
+        "icon": "spell_arcane_rune",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 6666,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Trinket",
+        "effect": {
+            "type": "trinket",
+            "name": "Corrupted Gladiator's Bauble"
+        }
+    },
+    {
+        "id": 172847,
+        "name": "Corrupted Aspirant's Emblem",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Aspirant's Emblem",
+            "ru": "Эмблема падшего претендента",
+            "es": "Emblema de aspirante corrupto",
+            "br": "Emblema do Aspirante Corrompido",
+            "kr": "",
+            "fr": "Emblème de l’aspirant corrompu",
+            "de": "Emblem des verderbten Aspiranten"
+        },
+        "icon": "ability_warrior_endlessrage",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 6666,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Trinket",
+        "effect": {
+            "type": "trinket",
+            "name": "Corrupted Gladiator's Emblem"
+        }
+    },
+    {
+        "id": 172848,
+        "name": "Corrupted Aspirant's Insignia",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Aspirant's Insignia",
+            "ru": "Знак падшего претендента",
+            "es": "Insignia de aspirante corrupto",
+            "br": "Insígnia do Aspirante Corrompido",
+            "kr": "",
+            "fr": "Insigne de l’aspirant corrompu",
+            "de": "Insigne des verderbten Aspiranten"
+        },
+        "icon": "inv_misc_token_argentdawn3",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 0,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 6666
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Trinket",
+        "effect": {
+            "type": "trinket",
+            "name": "Corrupted Gladiator's Insignia"
+        }
+    },
+    {
+        "id": 172849,
+        "name": "Corrupted Aspirant's Badge",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Aspirant's Badge",
+            "ru": "Жетон падшего претендента",
+            "es": "Distintivo de aspirante corrupto",
+            "br": "Distintivo do Aspirante Corrompido",
+            "kr": "",
+            "fr": "Écusson de l’aspirant corrompu",
+            "de": "Abzeichen des verderbten Aspiranten"
+        },
+        "icon": "spell_holy_championsbond",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 0,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 6666
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Trinket",
+        "effect": {
+            "type": "trinket",
+            "name": "Corrupted Gladiator's Badge"
+        }
+    },
+    {
+        "id": 172850,
+        "name": "Corrupted Aspirant's Shawl",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Aspirant's Shawl",
+            "ru": "Шаль падшего претендента",
+            "es": "Chal de aspirante corrupto",
+            "br": "Xale do Aspirante Corrompido",
+            "kr": "",
+            "fr": "Châle de l’aspirant corrompu",
+            "de": "Schal des verderbten Aspiranten"
+        },
+        "icon": "inv_cape_cloth_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 5400,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 1600
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Back"
+    },
+    {
+        "id": 172852,
+        "name": "Corrupted Aspirant's Drape",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Aspirant's Drape",
+            "ru": "Пелерина падшего претендента",
+            "es": "Mantón de aspirante corrupto",
+            "br": "Clâmide do Aspirante Corrompido",
+            "kr": "",
+            "fr": "Drapé de l’aspirant corrompu",
+            "de": "Tuch des verderbten Aspiranten"
+        },
+        "icon": "inv_cape_mail_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 5000,
+            "mastery": 2000,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Back"
+    },
+    {
+        "id": 172853,
+        "name": "Corrupted Aspirant's Cape",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Aspirant's Cape",
+            "ru": "Накидка падшего претендента",
+            "es": "Manteo de aspirante corrupto",
+            "br": "Capa do Aspirante Corrompido",
+            "kr": "",
+            "fr": "Pèlerine de l’aspirant corrompu",
+            "de": "Cape des verderbten Aspiranten"
+        },
+        "icon": "inv_cape_plate_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 1600,
+            "crit": 0,
+            "mastery": 5400,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Back"
+    },
+    {
+        "id": 172854,
+        "name": "Corrupted Aspirant's Shawl",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Aspirant's Shawl",
+            "ru": "Шаль падшего претендента",
+            "es": "Chal de aspirante corrupto",
+            "br": "Xale do Aspirante Corrompido",
+            "kr": "",
+            "fr": "Châle de l’aspirant corrompu",
+            "de": "Schal des verderbten Aspiranten"
+        },
+        "icon": "inv_cape_cloth_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 4600,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 2400
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Back"
+    },
+    {
+        "id": 172856,
+        "name": "Corrupted Aspirant's Drape",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Aspirant's Drape",
+            "ru": "Пелерина падшего претендента",
+            "es": "Mantón de aspirante corrupto",
+            "br": "Clâmide do Aspirante Corrompido",
+            "kr": "",
+            "fr": "Drapé de l’aspirant corrompu",
+            "de": "Tuch des verderbten Aspiranten"
+        },
+        "icon": "inv_cape_mail_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 5400,
+            "mastery": 1600,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Back"
+    },
+    {
+        "id": 172857,
+        "name": "Corrupted Aspirant's Cape",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Aspirant's Cape",
+            "ru": "Накидка падшего претендента",
+            "es": "Manteo de aspirante corrupto",
+            "br": "Capa do Aspirante Corrompido",
+            "kr": "",
+            "fr": "Pèlerine de l’aspirant corrompu",
+            "de": "Cape des verderbten Aspiranten"
+        },
+        "icon": "inv_cape_plate_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 2400,
+            "crit": 0,
+            "mastery": 4600,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Back"
+    },
+    {
+        "id": 172862,
+        "name": "Corrupted Aspirant's Wand",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Aspirant's Wand",
+            "ru": "Жезл падшего претендента",
+            "es": "Varita de aspirante corrupto",
+            "br": "Varinha do Aspirante Corrompido",
+            "kr": "",
+            "fr": "Baguette de l’aspirant corrompu",
+            "de": "Zauberstab des verderbten Aspiranten"
+        },
+        "icon": "inv_wand_1h_nzothraid_d_01",
+        "itemClass": 2,
+        "itemSubClass": 19,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 30629,
+            "stamina": 7889,
+            "haste": 1600,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 5400
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "1H Weapon"
+    },
+    {
+        "id": 172863,
+        "name": "Corrupted Aspirant's Wand",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Aspirant's Wand",
+            "ru": "Жезл падшего претендента",
+            "es": "Varita de aspirante corrupto",
+            "br": "Varinha do Aspirante Corrompido",
+            "kr": "",
+            "fr": "Baguette de l’aspirant corrompu",
+            "de": "Zauberstab des verderbten Aspiranten"
+        },
+        "icon": "inv_wand_1h_nzothraid_d_01",
+        "itemClass": 2,
+        "itemSubClass": 19,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 30629,
+            "stamina": 7889,
+            "haste": 2000,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 5000
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "1H Weapon"
+    },
+    {
+        "id": 172864,
+        "name": "Corrupted Aspirant's Staff",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Aspirant's Staff",
+            "ru": "Посох падшего претендента",
+            "es": "Bastón de aspirante corrupto",
+            "br": "Cajado do Aspirante Corrompido",
+            "kr": "",
+            "fr": "Bâton de l’aspirant corrompu",
+            "de": "Stab des verderbten Aspiranten"
+        },
+        "icon": "inv_staff_2h_nzothraid_d_01",
+        "itemClass": 2,
+        "itemSubClass": 10,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 23380,
+            "stamina": 7889,
+            "haste": 2400,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 4600
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "2H Weapon"
+    },
+    {
+        "id": 172865,
+        "name": "Corrupted Aspirant's Staff",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Aspirant's Staff",
+            "ru": "Посох падшего претендента",
+            "es": "Bastón de aspirante corrupto",
+            "br": "Cajado do Aspirante Corrompido",
+            "kr": "",
+            "fr": "Bâton de l’aspirant corrompu",
+            "de": "Stab des verderbten Aspiranten"
+        },
+        "icon": "inv_staff_2h_nzothraid_d_01",
+        "itemClass": 2,
+        "itemSubClass": 10,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 23380,
+            "stamina": 7889,
+            "haste": 1600,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 5400
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "2H Weapon"
+    },
+    {
+        "id": 172866,
+        "name": "Corrupted Aspirant's Reprieve",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Aspirant's Reprieve",
+            "ru": "Отсрочка падшего претендента",
+            "es": "Indulto de aspirante corrupto",
+            "br": "Alívio do Aspirante Corrompido",
+            "kr": "",
+            "fr": "Sursis de l’aspirant corrompu",
+            "de": "Begnadigung des verderbten Aspiranten"
+        },
+        "icon": "inv_offhand_1h_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 16132,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 1600,
+            "mastery": 5400,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Offhand"
+    },
+    {
+        "id": 172867,
+        "name": "Corrupted Aspirant's Reprieve",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Aspirant's Reprieve",
+            "ru": "Отсрочка падшего претендента",
+            "es": "Indulto de aspirante corrupto",
+            "br": "Alívio do Aspirante Corrompido",
+            "kr": "",
+            "fr": "Sursis de l’aspirant corrompu",
+            "de": "Begnadigung des verderbten Aspiranten"
+        },
+        "icon": "inv_offhand_1h_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 16132,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 2000,
+            "mastery": 5000,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Offhand"
+    },
+    {
+        "id": 172868,
+        "name": "Corrupted Aspirant's Shield Wall",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Aspirant's Shield Wall",
+            "ru": "Осадный щит падшего претендента",
+            "es": "Escudo muro de aspirante corrupto",
+            "br": "Muralha de Escudos do Aspirante Corrompido",
+            "kr": "",
+            "fr": "Grand pavois de l’aspirant corrompu",
+            "de": "Schildwall des verderbten Aspiranten"
+        },
+        "icon": "inv_shield_1h_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 6,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 16132,
+            "stamina": 7889,
+            "haste": 4600,
+            "crit": 0,
+            "mastery": 2400,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shield"
+    },
+    {
+        "id": 172869,
+        "name": "Corrupted Aspirant's Shield Wall",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Aspirant's Shield Wall",
+            "ru": "Осадный щит падшего претендента",
+            "es": "Escudo muro de aspirante corrupto",
+            "br": "Muralha de Escudos do Aspirante Corrompido",
+            "kr": "",
+            "fr": "Grand pavois de l’aspirant corrompu",
+            "de": "Schildwall des verderbten Aspiranten"
+        },
+        "icon": "inv_shield_1h_nzothraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 6,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 16132,
+            "stamina": 7889,
+            "haste": 5000,
+            "crit": 0,
+            "mastery": 2000,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shield"
+    },
+    {
+        "id": 172872,
+        "name": "Corrupted Aspirant's Gavel",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Aspirant's Gavel",
+            "ru": "Молоток падшего претендента",
+            "es": "Mazo de aspirante corrupto",
+            "br": "Martelete do Aspirante Corrompido",
+            "kr": "",
+            "fr": "Martelet de l’aspirant corrompu",
+            "de": "Hammer des verderbten Aspiranten"
+        },
+        "icon": "inv_mace_1h_nzothraid_d_01",
+        "itemClass": 2,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 30629,
+            "stamina": 7889,
+            "haste": 2000,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 5000
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "1H Weapon"
+    },
+    {
+        "id": 172873,
+        "name": "Corrupted Aspirant's Gavel",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Aspirant's Gavel",
+            "ru": "Молоток падшего претендента",
+            "es": "Mazo de aspirante corrupto",
+            "br": "Martelete do Aspirante Corrompido",
+            "kr": "",
+            "fr": "Martelet de l’aspirant corrompu",
+            "de": "Hammer des verderbten Aspiranten"
+        },
+        "icon": "inv_mace_1h_nzothraid_d_01",
+        "itemClass": 2,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 30629,
+            "stamina": 7889,
+            "haste": 2400,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 4600
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "1H Weapon"
+    },
+    {
         "id": 172905,
         "name": "Flexible Ectoplasmic Specs",
         "names": {
@@ -23106,6 +45426,153 @@ export const itemDB = [
         "slot": "Wrist"
     },
     {
+        "id": 173273,
+        "name": "Smoldering Censer of Purity",
+        "names": {
+            "cn": "",
+            "en": "Smoldering Censer of Purity",
+            "ru": "Тлеющее кадило чистоты",
+            "es": "Incensario humeante de pureza",
+            "br": "Incenso Incandescente da Pureza",
+            "kr": "",
+            "fr": "Encensoir de pureté fumant",
+            "de": "Schwelendes Rauchgefäß der Reinheit"
+        },
+        "icon": "inv_stave_2h_firelandsraid_d_01",
+        "itemClass": 2,
+        "itemSubClass": 10,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 23380,
+            "stamina": 7889,
+            "haste": 2800,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 4200
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "2H Weapon"
+    },
+    {
+        "id": 173274,
+        "name": "Eye of Purification",
+        "names": {
+            "cn": "",
+            "en": "Eye of Purification",
+            "ru": "Око очищения",
+            "es": "Ojo de purificación",
+            "br": "Olho da Purificação",
+            "kr": "",
+            "fr": "Oeil de purification",
+            "de": "Auge der Läuterung"
+        },
+        "icon": "inv_axe_1h_firelandsraid_d_01",
+        "itemClass": 2,
+        "itemSubClass": 0,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 30629,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 3000,
+            "versatility": 4000
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "1H Weapon"
+    },
+    {
+        "id": 173275,
+        "name": "Firethorn Mindslicer",
+        "names": {
+            "cn": "",
+            "en": "Firethorn Mindslicer",
+            "ru": "Огничный мозгорез",
+            "es": "Cercenamentes espino de fuego",
+            "br": "Retalhadora de Mentes Espinho de Fogo",
+            "kr": "",
+            "fr": "Tranche-cerveau épine-de-feu",
+            "de": "Gedankenreißender Feuerdorn"
+        },
+        "icon": "inv_sword_1h_firelandsraid_d_01",
+        "itemClass": 2,
+        "itemSubClass": 7,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 30629,
+            "stamina": 7889,
+            "haste": 2400,
+            "crit": 4600,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "1H Weapon"
+    },
+    {
+        "id": 173303,
+        "name": "Corrupted Gladiator's Spellblade",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Spellblade",
+            "ru": "Чародейский клинок падшего гладиатора",
+            "es": "Hoja de hechizo de Gladiador corrupto",
+            "br": "Lâmina Enfeitiçada do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Sorcelame du gladiateur corrompu",
+            "de": "Zauberklinge des verderbten Gladiators"
+        },
+        "icon": "inv_knife_1h_nzothraid_d_03",
+        "itemClass": 2,
+        "itemSubClass": 15,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 30629,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 5000,
+            "mastery": 2000,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "1H Weapon"
+    },
+    {
+        "id": 173305,
+        "name": "Corrupted Gladiator's Spellblade",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Spellblade",
+            "ru": "Чародейский клинок падшего гладиатора",
+            "es": "Hoja de hechizo de Gladiador corrupto",
+            "br": "Lâmina Enfeitiçada do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Sorcelame du gladiateur corrompu",
+            "de": "Zauberklinge des verderbten Gladiators"
+        },
+        "icon": "inv_knife_1h_nzothraid_d_03",
+        "itemClass": 2,
+        "itemSubClass": 15,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 30629,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 5400,
+            "mastery": 1600,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "1H Weapon"
+    },
+    {
         "id": 173315,
         "name": "Judicious Aspirant's Helm",
         "names": {
@@ -24185,6 +46652,503 @@ export const itemDB = [
             "type": "trinket",
             "name": "Forbidden Obsidian Claw"
         }
+    },
+    {
+        "id": 174010,
+        "name": "Corrupted Aspirant's Spellblade",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Aspirant's Spellblade",
+            "ru": "Чародейский клинок падшего претендента",
+            "es": "Hoja de hechizo de aspirante corrupto",
+            "br": "Magilâmina do Aspirante Corrompido",
+            "kr": "",
+            "fr": "Sorcelame de l’aspirant corrompu",
+            "de": "Zauberklinge des verderbten Aspiranten"
+        },
+        "icon": "inv_knife_1h_nzothraid_d_03",
+        "itemClass": 2,
+        "itemSubClass": 15,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 30629,
+            "stamina": 7889,
+            "haste": 2000,
+            "crit": 0,
+            "mastery": 5000,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "1H Weapon"
+    },
+    {
+        "id": 174011,
+        "name": "Corrupted Aspirant's Spellblade",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Aspirant's Spellblade",
+            "ru": "Чародейский клинок падшего претендента",
+            "es": "Hoja de hechizo de aspirante corrupto",
+            "br": "Magilâmina do Aspirante Corrompido",
+            "kr": "",
+            "fr": "Sorcelame de l’aspirant corrompu",
+            "de": "Zauberklinge des verderbten Aspiranten"
+        },
+        "icon": "inv_knife_1h_nzothraid_d_03",
+        "itemClass": 2,
+        "itemSubClass": 15,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 30629,
+            "stamina": 7889,
+            "haste": 2400,
+            "crit": 0,
+            "mastery": 4600,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "1H Weapon"
+    },
+    {
+        "id": 174018,
+        "name": "Corrupted Aspirant's War Staff",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Aspirant's War Staff",
+            "ru": "Воинский посох падшего претендента",
+            "es": "Bastón de guerra de aspirante corrupto",
+            "br": "Cajado de Guerra do Aspirante Corrompido",
+            "kr": "",
+            "fr": "Bâton de guerre de l’aspirant corrompu",
+            "de": "Kriegsstab des verderbten Aspiranten"
+        },
+        "icon": "inv_staff_2h_nzothraid_d_02",
+        "itemClass": 2,
+        "itemSubClass": 10,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 23380,
+            "stamina": 7889,
+            "haste": 1600,
+            "crit": 5400,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "2H Weapon"
+    },
+    {
+        "id": 174019,
+        "name": "Corrupted Aspirant's War Staff",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Aspirant's War Staff",
+            "ru": "Воинский посох падшего претендента",
+            "es": "Bastón de guerra de aspirante corrupto",
+            "br": "Cajado de Guerra do Aspirante Corrompido",
+            "kr": "",
+            "fr": "Bâton de guerre de l’aspirant corrompu",
+            "de": "Kriegsstab des verderbten Aspiranten"
+        },
+        "icon": "inv_staff_2h_nzothraid_d_02",
+        "itemClass": 2,
+        "itemSubClass": 10,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 23380,
+            "stamina": 7889,
+            "haste": 2400,
+            "crit": 4600,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "2H Weapon"
+    },
+    {
+        "id": 174025,
+        "name": "7th Legionnaire's Garb",
+        "names": {
+            "cn": "",
+            "en": "7th Legionnaire's Garb",
+            "ru": "Одеяние 7-го легиона",
+            "es": "Atuendo de la Séptima Legión",
+            "br": "Induto do Legionário da 7ª",
+            "kr": "",
+            "fr": "Atours de légionnaire de la 7e",
+            "de": "Gewand der 7. Legion"
+        },
+        "icon": "inv_chest_icons_cloth_warfrontsalliance_c_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 4750,
+            "mastery": 0,
+            "versatility": 2250
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 174026,
+        "name": "7th Legionnaire's Footcover",
+        "names": {
+            "cn": "",
+            "en": "7th Legionnaire's Footcover",
+            "ru": "Поножи 7-го легиона",
+            "es": "Cubrepiés de la Séptima Legión",
+            "br": "Cobre-pés do Legionário da 7ª",
+            "kr": "",
+            "fr": "Couvre-pieds de légionnaire de la 7e",
+            "de": "Fußschutz der 7. Legion"
+        },
+        "icon": "inv_boot_icons_cloth_warfrontsalliance_c_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 4700,
+            "crit": 0,
+            "mastery": 2300,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Feet"
+    },
+    {
+        "id": 174027,
+        "name": "7th Legionnaire's Gloves",
+        "names": {
+            "cn": "",
+            "en": "7th Legionnaire's Gloves",
+            "ru": "Перчатки 7-го легиона",
+            "es": "Guantes de la Séptima Legión",
+            "br": "Luvas do Legionário da 7ª",
+            "kr": "",
+            "fr": "Gants de légionnaire de la 7e",
+            "de": "Handschuhe der 7. Legion"
+        },
+        "icon": "inv_leather_warfrontsalliance_b_01_glove",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 2750,
+            "versatility": 4250
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Hands"
+    },
+    {
+        "id": 174028,
+        "name": "7th Legionnaire's Vambraces",
+        "names": {
+            "cn": "",
+            "en": "7th Legionnaire's Vambraces",
+            "ru": "Тяжелые наручи 7-го легиона",
+            "es": "Avambrazos de la Séptima Legión",
+            "br": "Avambraços do Legionário da 7ª",
+            "kr": "",
+            "fr": "Protège-bras de légionnaire de la 7e",
+            "de": "Unterarmschienen der 7. Legion"
+        },
+        "icon": "inv_leather_warfrontsalliance_b_01_bracer",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 2750,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 4250
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Wrist"
+    },
+    {
+        "id": 174029,
+        "name": "7th Legionnaire's Wristbangles",
+        "names": {
+            "cn": "",
+            "en": "7th Legionnaire's Wristbangles",
+            "ru": "Наручи 7-го легиона",
+            "es": "Pulseras de la Séptima Legión",
+            "br": "Pulseletes do Legionário da 7ª",
+            "kr": "",
+            "fr": "Bracelets de légionnaire de la 7e",
+            "de": "Handgelenkreife der 7. Legion"
+        },
+        "icon": "inv_bracer_mail_warfrontsalliance_b_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 4700,
+            "mastery": 2300,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Wrist"
+    },
+    {
+        "id": 174030,
+        "name": "7th Legionnaire's Britches",
+        "names": {
+            "cn": "",
+            "en": "7th Legionnaire's Britches",
+            "ru": "Брюки 7-го легиона",
+            "es": "Calzones de la Séptima Legión",
+            "br": "Calcilhas do Legionário da 7ª",
+            "kr": "",
+            "fr": "Braies de légionnaire de la 7e",
+            "de": "Kniehosen der 7. Legion"
+        },
+        "icon": "inv_pant_mail_warfrontsalliance_b_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 2750,
+            "mastery": 4250,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 174031,
+        "name": "Honorbound Artificer's Toeslips",
+        "names": {
+            "cn": "",
+            "en": "Honorbound Artificer's Toeslips",
+            "ru": "Штиблеты изобретателя из Армии Чести",
+            "es": "Pantuflas de artificiero de los Defensores del Honor",
+            "br": "Sapatilhas do Artífice Brigadista",
+            "kr": "",
+            "fr": "Tessies de l’artificier honorable",
+            "de": "Zehenschutz des eidgebundenen Konstrukteurs"
+        },
+        "icon": "ivn_boot_cloth_warfrontshorde_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 4700,
+            "crit": 0,
+            "mastery": 2300,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Feet"
+    },
+    {
+        "id": 174032,
+        "name": "Honorbound Artificer's Pantaloons",
+        "names": {
+            "cn": "",
+            "en": "Honorbound Artificer's Pantaloons",
+            "ru": "Шаровары изобретателя из Армии Чести",
+            "es": "Bombachos de artificiero de los Defensores del Honor",
+            "br": "Pantalonas do Artífice Brigadista",
+            "kr": "",
+            "fr": "Culotte de l’artificier honorable",
+            "de": "Pantalons des eidgebundenen Konstrukteurs"
+        },
+        "icon": "ivn_pant_cloth_warfrontshorde_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 2250,
+            "mastery": 4750,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Legs"
+    },
+    {
+        "id": 174033,
+        "name": "Honorbound Artificer's Wristwraps",
+        "names": {
+            "cn": "",
+            "en": "Honorbound Artificer's Wristwraps",
+            "ru": "Кулачные обмотки изобретателя из Армии Чести",
+            "es": "Cubremuñecas de artificiero de los Defensores del Honor",
+            "br": "Munhequeiras do Artífice Brigadista",
+            "kr": "",
+            "fr": "Bandelettes de l’artificier honorable",
+            "de": "Gelenkbänder des eidgebundenen Konstrukteurs"
+        },
+        "icon": "ivn_bracer_cloth_warfrontshorde_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 4750,
+            "mastery": 0,
+            "versatility": 2250
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Wrist"
+    },
+    {
+        "id": 174034,
+        "name": "Honorbound Outrider's Wristcover",
+        "names": {
+            "cn": "",
+            "en": "Honorbound Outrider's Wristcover",
+            "ru": "Пластины наездника из Армии Чести",
+            "es": "Muñecas de escolta de los Defensores del Honor",
+            "br": "Braceletes do Pioneiro Brigadista",
+            "kr": "",
+            "fr": "Couvre-poignet du voltigeur honorable",
+            "de": "Gelenkschutz des eidgebundenen Vorreiters"
+        },
+        "icon": "inv_leather_warfrontshorde_d_01_bracer",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 2750,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 4250
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Wrist"
+    },
+    {
+        "id": 174035,
+        "name": "Honorbound Outrider's Chestcover",
+        "names": {
+            "cn": "",
+            "en": "Honorbound Outrider's Chestcover",
+            "ru": "Нагрудник наездника из Армии Чести",
+            "es": "Pechera de escolta de los Defensores del Honor",
+            "br": "Peitoral do Pioneiro Brigadista",
+            "kr": "",
+            "fr": "Cuirasse du voltigeur honorable",
+            "de": "Brustschutz des eidgebundenen Vorreiters"
+        },
+        "icon": "inv_leather_warfrontshorde_d_01_chest",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 4750,
+            "mastery": 0,
+            "versatility": 2250
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 174036,
+        "name": "Honorbound Vanguard's Bracers",
+        "names": {
+            "cn": "",
+            "en": "Honorbound Vanguard's Bracers",
+            "ru": "Наручи авангарда из Армии Чести",
+            "es": "Brazales de vanguardia de los Defensores del Honor",
+            "br": "Braçadeiras da Vanguarda Brigadista",
+            "kr": "",
+            "fr": "Brassards de l’avant-garde honorable",
+            "de": "Armschienen der eidgebundenen Vorhut"
+        },
+        "icon": "inv_bracer_mail_warfrontshorde_b_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 4700,
+            "mastery": 2300,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Wrist"
+    },
+    {
+        "id": 174037,
+        "name": "Honorbound Centurion's Wristplates",
+        "names": {
+            "cn": "",
+            "en": "Honorbound Centurion's Wristplates",
+            "ru": "Пластины центуриона из Армии Чести",
+            "es": "Muñequeras de centurión de los Defensores del Honor",
+            "br": "Braceletes do Centurião Brigadista",
+            "kr": "",
+            "fr": "Plates de poignets du centurion honorable",
+            "de": "Gelenkplatten des eidgebundenen Zenturios"
+        },
+        "icon": "inv_plate_bracer_warfrontshorde_d_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 2600,
+            "crit": 0,
+            "mastery": 4400,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Wrist"
     },
     {
         "id": 174044,
@@ -26697,6 +49661,39 @@ export const itemDB = [
         "slot": "Finger"
     },
     {
+        "id": 174276,
+        "name": "Corrupted Gladiator's Breach",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Breach",
+            "ru": "Пролом падшего гладиатора",
+            "es": "Brecha de Gladiador corrupto",
+            "br": "Fenda do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Brèche du gladiateur corrompu",
+            "de": "Bresche des verderbten Gladiators"
+        },
+        "icon": "inv_trinket_80_titan01e",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 6666,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Trinket",
+        "effect": {
+            "type": "trinket",
+            "name": "Corrupted Gladiator's Breach"
+        }
+    },
+    {
         "id": 174289,
         "name": "Selfless Collector's GreatHelm",
         "names": {
@@ -27087,6 +50084,39 @@ export const itemDB = [
         "dropLoc": "",
         "selectable": "true",
         "slot": "Finger"
+    },
+    {
+        "id": 174472,
+        "name": "Corrupted Gladiator's Spite",
+        "names": {
+            "cn": "",
+            "en": "Corrupted Gladiator's Spite",
+            "ru": "Злоба падшего гладиатора",
+            "es": "Maldad de Gladiador corrupto",
+            "br": "Malevolência do Gladiador Corrompido",
+            "kr": "",
+            "fr": "Dépit du gladiateur corrompu",
+            "de": "Groll des verderbten Gladiators"
+        },
+        "icon": "inv_7_0raid_trinket_07d",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 6666,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Trinket",
+        "effect": {
+            "type": "trinket",
+            "name": "Corrupted Gladiator's Spite"
+        }
     },
     {
         "id": 174500,
@@ -39513,6 +62543,254 @@ export const itemDB = [
         "dropLoc": "",
         "selectable": "true",
         "slot": "Back"
+    },
+    {
+        "id": 177145,
+        "name": "Sea Sapphire Band",
+        "names": {
+            "cn": "",
+            "en": "Sea Sapphire Band",
+            "ru": "Печатка с морским сапфиром",
+            "es": "Sortija de zafiro marino",
+            "br": "Elo de Safira do Mar",
+            "kr": "",
+            "fr": "Bague en saphir marin",
+            "de": "Meeressaphirband"
+        },
+        "icon": "inv_misc_60raid_ring_2d",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 11000,
+            "versatility": 6500
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Finger"
+    },
+    {
+        "id": 177146,
+        "name": "Shaleshell Pendant",
+        "names": {
+            "cn": "",
+            "en": "Shaleshell Pendant",
+            "ru": "Кулон из плоской ракушки",
+            "es": "Colgante de conchaesquisto",
+            "br": "Pingente de Casca Xistosa",
+            "kr": "",
+            "fr": "Pendentif en carapace schisteuse",
+            "de": "Schiefermuschelanhänger"
+        },
+        "icon": "inv_misc_necklace_shell07",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "haste": 6000,
+            "crit": 11500,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Neck"
+    },
+    {
+        "id": 177149,
+        "name": "Shimmering Rune",
+        "names": {
+            "cn": "",
+            "en": "Shimmering Rune",
+            "ru": "Мерцающая руна",
+            "es": "Runa fulgurante",
+            "br": "Runa Cintilante",
+            "kr": "",
+            "fr": "Rune chatoyante",
+            "de": "Schimmernde Rune"
+        },
+        "icon": "inv_misc_rune_02",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 6666,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Trinket",
+        "effect": {
+            "type": "trinket",
+            "name": "Shimmering Rune"
+        }
+    },
+    {
+        "id": 177151,
+        "name": "Oceanographer's Weather Log",
+        "names": {
+            "cn": "",
+            "en": "Oceanographer's Weather Log",
+            "ru": "Журнал погоды океанографа",
+            "es": "Informe meteorológico de oceanógrafo",
+            "br": "Registro Climático do Oceanógrafo",
+            "kr": "",
+            "fr": "Journal météorologique d’océanographe",
+            "de": "Wetteraufzeichnungen des Meeresforschers"
+        },
+        "icon": "inv_misc_book_09",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 6666,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Trinket",
+        "effect": {
+            "type": "trinket",
+            "name": "Oceanographer's Weather Log"
+        }
+    },
+    {
+        "id": 177155,
+        "name": "Shimmering Rune",
+        "names": {
+            "cn": "",
+            "en": "Shimmering Rune",
+            "ru": "Мерцающая руна",
+            "es": "Runa fulgurante",
+            "br": "Runa Cintilante",
+            "kr": "",
+            "fr": "Rune chatoyante",
+            "de": "Schimmernde Rune"
+        },
+        "icon": "inv_misc_rune_02",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 6666,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Trinket",
+        "effect": {
+            "type": "trinket",
+            "name": "Shimmering Rune"
+        }
+    },
+    {
+        "id": 177157,
+        "name": "Bijou of the Golden City",
+        "names": {
+            "cn": "",
+            "en": "Bijou of the Golden City",
+            "ru": "Украшение Золотого города",
+            "es": "Joya de la ciudad dorada",
+            "br": "Bijuteria da Cidade Dourada",
+            "kr": "",
+            "fr": "Bijou de la cité d’or",
+            "de": "Schmuckstück der Goldenen Stadt"
+        },
+        "icon": "inv_bijou_gold",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 6666,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Trinket",
+        "effect": {
+            "type": "trinket",
+            "name": "Bijou of the Golden City"
+        }
+    },
+    {
+        "id": 177164,
+        "name": "Sea Sapphire Band",
+        "names": {
+            "cn": "",
+            "en": "Sea Sapphire Band",
+            "ru": "Печатка с морским сапфиром",
+            "es": "Sortija de zafiro marino",
+            "br": "Elo de Safira do Mar",
+            "kr": "",
+            "fr": "Bague en saphir marin",
+            "de": "Meeressaphirband"
+        },
+        "icon": "inv_misc_60raid_ring_2d",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 11000,
+            "versatility": 6500
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Finger"
+    },
+    {
+        "id": 177165,
+        "name": "Shaleshell Pendant",
+        "names": {
+            "cn": "",
+            "en": "Shaleshell Pendant",
+            "ru": "Кулон из плоской ракушки",
+            "es": "Colgante de conchaesquisto",
+            "br": "Pingente de Casca Xistosa",
+            "kr": "",
+            "fr": "Pendentif en carapace schisteuse",
+            "de": "Schiefermuschelanhänger"
+        },
+        "icon": "inv_misc_necklace_shell07",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "haste": 6000,
+            "crit": 11500,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Neck"
     },
     {
         "id": 177633,
@@ -66830,7 +90108,13 @@ export const itemDB = [
         },
         "dropLoc": "",
         "selectable": "true",
-        "slot": "Wrist"
+        "slot": "Wrist",
+        "sources": [
+            {
+                "instanceId": 1190,
+                "encounterId": 999
+            }
+        ]
     },
     {
         "id": 182979,
@@ -66964,7 +90248,13 @@ export const itemDB = [
         },
         "dropLoc": "",
         "selectable": "true",
-        "slot": "Wrist"
+        "slot": "Wrist",
+        "sources": [
+            {
+                "instanceId": 1190,
+                "encounterId": 999
+            }
+        ]
     },
     {
         "id": 182983,
@@ -67238,7 +90528,13 @@ export const itemDB = [
         },
         "dropLoc": "",
         "selectable": "true",
-        "slot": "Feet"
+        "slot": "Feet",
+        "sources": [
+            {
+                "instanceId": 1190,
+                "encounterId": 999
+            }
+        ]
     },
     {
         "id": 182991,
@@ -67862,7 +91158,13 @@ export const itemDB = [
         },
         "dropLoc": "",
         "selectable": "true",
-        "slot": "Hands"
+        "slot": "Hands",
+        "sources": [
+            {
+                "instanceId": 1190,
+                "encounterId": 999
+            }
+        ]
     },
     {
         "id": 183009,
@@ -67926,7 +91228,13 @@ export const itemDB = [
         },
         "dropLoc": "",
         "selectable": "true",
-        "slot": "Feet"
+        "slot": "Feet",
+        "sources": [
+            {
+                "instanceId": 1190,
+                "encounterId": 999
+            }
+        ]
     },
     {
         "id": 183011,
@@ -68025,7 +91333,13 @@ export const itemDB = [
         },
         "dropLoc": "",
         "selectable": "true",
-        "slot": "Hands"
+        "slot": "Hands",
+        "sources": [
+            {
+                "instanceId": 1190,
+                "encounterId": 999
+            }
+        ]
     },
     {
         "id": 183014,
@@ -68159,7 +91473,13 @@ export const itemDB = [
         },
         "dropLoc": "",
         "selectable": "true",
-        "slot": "Wrist"
+        "slot": "Wrist",
+        "sources": [
+            {
+                "instanceId": 1190,
+                "encounterId": 999
+            }
+        ]
     },
     {
         "id": 183018,
@@ -68643,7 +91963,13 @@ export const itemDB = [
         },
         "dropLoc": "",
         "selectable": "true",
-        "slot": "Wrist"
+        "slot": "Wrist",
+        "sources": [
+            {
+                "instanceId": 1190,
+                "encounterId": 999
+            }
+        ]
     },
     {
         "id": 183032,
@@ -68777,7 +92103,13 @@ export const itemDB = [
         },
         "dropLoc": "",
         "selectable": "true",
-        "slot": "Finger"
+        "slot": "Finger",
+        "sources": [
+            {
+                "instanceId": 1190,
+                "encounterId": 999
+            }
+        ]
     },
     {
         "id": 183036,
@@ -73438,6 +96770,726 @@ export const itemDB = [
         "dropLoc": "",
         "selectable": "true",
         "slot": "Wrist"
+    },
+    {
+        "id": 183762,
+        "name": "Moonpriest's Coronet",
+        "names": {
+            "cn": "",
+            "en": "Moonpriest's Coronet",
+            "ru": "Венец лунного жреца",
+            "es": "Nimbo de sacerdote de la luna",
+            "br": "Diadema do Sacerdote da Lua",
+            "kr": "",
+            "fr": "Cerclet de prêtre de la lune",
+            "de": "Kronenreif des Mondpriesters"
+        },
+        "icon": "inv_helm_cloth_warfrontsnightelf_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 4000,
+            "crit": 3000,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 183763,
+        "name": "Moonpriest's Mantle",
+        "names": {
+            "cn": "",
+            "en": "Moonpriest's Mantle",
+            "ru": "Оплечье лунного жреца",
+            "es": "Manto de sacerdote de la luna",
+            "br": "Dragonas do Sacerdote da Lua",
+            "kr": "",
+            "fr": "Mantelet de prêtre de la lune",
+            "de": "Mantel des Mondpriesters"
+        },
+        "icon": "inv_shoulder_cloth_warfrontsnightelf_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 2750,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 4250
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 183764,
+        "name": "Darkwood Sentinel's Tunic",
+        "names": {
+            "cn": "",
+            "en": "Darkwood Sentinel's Tunic",
+            "ru": "Мундир часового темного леса",
+            "es": "Guerrera de centinela de Bosque Oscuro",
+            "br": "Túnica da Sentinela Lenhanegra",
+            "kr": "",
+            "fr": "Tunique de sentinelle de Sombrebois",
+            "de": "Tunika der Finsterwaldschildwache"
+        },
+        "icon": "inv_chest_leather_warfrontsnightelf_d_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 4250,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 2750
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 183765,
+        "name": "Darkwood Sentinel's Cowl",
+        "names": {
+            "cn": "",
+            "en": "Darkwood Sentinel's Cowl",
+            "ru": "Клобук часового темного леса",
+            "es": "Capucha de centinela de Bosque Oscuro",
+            "br": "Capucho da Sentinela Lenhanegra",
+            "kr": "",
+            "fr": "Capuche de sentinelle de Sombrebois",
+            "de": "Gugel der Finsterwaldschildwache"
+        },
+        "icon": "inv_helm_leather_warfrontsnightelf_d_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 2000,
+            "versatility": 5000
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 183766,
+        "name": "Darkwood Sentinel's Monnions",
+        "names": {
+            "cn": "",
+            "en": "Darkwood Sentinel's Monnions",
+            "ru": "Наплечники часового темного леса",
+            "es": "Sobrehombreras de centinela de Bosque Oscuro",
+            "br": "Espáduas da Sentinela Lenhanegra",
+            "kr": "",
+            "fr": "Espalières de sentinelle de Sombrebois",
+            "de": "Schulterschutz der Finsterwaldschildwache"
+        },
+        "icon": "inv_shoulder_leather_warfrontsnightelf_d_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 3750,
+            "versatility": 3250
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 183767,
+        "name": "Kaldorei Archer's Chainmail",
+        "names": {
+            "cn": "",
+            "en": "Kaldorei Archer's Chainmail",
+            "ru": "Кольчуга лучника калдорай",
+            "es": "Malla de anillas de arquero kaldorei",
+            "br": "Malha de Anéis do Arqueiro Kaldorei",
+            "kr": "",
+            "fr": "Cotte de mailles d’archer kaldorei",
+            "de": "Kettenpanzer der Kaldoreibogenschützin"
+        },
+        "icon": "inv_chest_mail_warfrontsnightelf_d_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 5000,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 2000
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 183768,
+        "name": "Kaldorei Archer's Hood",
+        "names": {
+            "cn": "",
+            "en": "Kaldorei Archer's Hood",
+            "ru": "Капюшон лучника калдорай",
+            "es": "Caperuza de arquero kaldorei",
+            "br": "Capuz do Arqueiro Kaldorei",
+            "kr": "",
+            "fr": "Chaperon d’archer kaldorei",
+            "de": "Kapuze der Kaldoreibogenschützin"
+        },
+        "icon": "inv_helm_mail_warfrontsnightelf_d_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3000,
+            "mastery": 0,
+            "versatility": 4000
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 183769,
+        "name": "Kaldorei Archer's Shoulderguards",
+        "names": {
+            "cn": "",
+            "en": "Kaldorei Archer's Shoulderguards",
+            "ru": "Наплечные щитки лучника калдорай",
+            "es": "Guardahombros de arquero kaldorei",
+            "br": "Guarda-ombros do Arqueiro Kaldorei",
+            "kr": "",
+            "fr": "Garde-épaules d’archer kaldorei",
+            "de": "Schulterschützer der Kaldoreibogenschützin"
+        },
+        "icon": "inv_shoulder_cape_mail_warfrontsnightelf_d_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3250,
+            "mastery": 3750,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 183770,
+        "name": "Wardenguard's Chestplate",
+        "names": {
+            "cn": "",
+            "en": "Wardenguard's Chestplate",
+            "ru": "Бригантина боевого стража",
+            "es": "Peto de guardia celador",
+            "br": "Guarda-peito da Guarda Vigilante",
+            "kr": "",
+            "fr": "Pansière de la garde du front",
+            "de": "Brustplatte des Wächterinnenregiments"
+        },
+        "icon": "inv_chest_plate_warfrontsnightelf_d_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 4500,
+            "mastery": 2500,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 183771,
+        "name": "Wardenguard's Greathelm",
+        "names": {
+            "cn": "",
+            "en": "Wardenguard's Greathelm",
+            "ru": "Большой шлем боевого стража",
+            "es": "Gran yelmo de guardia celador",
+            "br": "Grande Elmo da Guarda Vigilante",
+            "kr": "",
+            "fr": "Grand heaume de la garde du front",
+            "de": "Großhelm des Wächterinnenregiments"
+        },
+        "icon": "inv_helm_plate_warfrontsnightelf_d_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 4250,
+            "mastery": 0,
+            "versatility": 2750
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 183772,
+        "name": "Moonpriest's Vestments",
+        "names": {
+            "cn": "",
+            "en": "Moonpriest's Vestments",
+            "ru": "Одежды лунного жреца",
+            "es": "Vestimentas de sacerdote de la luna",
+            "br": "Vestimenta do Sacerdote da Lua",
+            "kr": "",
+            "fr": "Habit de prêtre de la lune",
+            "de": "Gewänder des Mondpriesters"
+        },
+        "icon": "inv_chest_cloth_warfrontsnightelf_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 2000,
+            "mastery": 5000,
+            "versatility": 0
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 183773,
+        "name": "Wardenguard's Pauldrons",
+        "names": {
+            "cn": "",
+            "en": "Wardenguard's Pauldrons",
+            "ru": "Наплечье боевого стража",
+            "es": "Espaldares de guardia celador",
+            "br": "Brafoneiras da Guarda Vigilante",
+            "kr": "",
+            "fr": "Espauliers de la garde du front",
+            "de": "Schulterstücke des Wächterinnenregiments"
+        },
+        "icon": "inv_shoulder_plate_warfrontsnightelf_d_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 2500,
+            "mastery": 0,
+            "versatility": 4500
+        },
+        "faction": "alliance",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 183774,
+        "name": "Plaguebringer's Cowl",
+        "names": {
+            "cn": "",
+            "en": "Plaguebringer's Cowl",
+            "ru": "Клобук разносчика чумы",
+            "es": "Capucha de pesteador",
+            "br": "Capucho do Pestífero",
+            "kr": "",
+            "fr": "Capuche de porte-peste",
+            "de": "Gugel des Pestbringers"
+        },
+        "icon": "inv_helm_cloth_warfrontsforsaken_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 4000,
+            "crit": 3000,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 183775,
+        "name": "Plaguebringer's Shoulderguards",
+        "names": {
+            "cn": "",
+            "en": "Plaguebringer's Shoulderguards",
+            "ru": "Наплечные щитки разносчика чумы",
+            "es": "Guardahombros de pesteador",
+            "br": "Guarda-ombros do Pestífero",
+            "kr": "",
+            "fr": "Garde-épaules de porte-peste",
+            "de": "Schulterschützer des Pestbringers"
+        },
+        "icon": "inv_shoulders_cloth_warfrontsforsaken_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 2750,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 4250
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 183776,
+        "name": "Deathstalker's Chestpiece",
+        "names": {
+            "cn": "",
+            "en": "Deathstalker's Chestpiece",
+            "ru": "Нагрудник ловчего смерти",
+            "es": "Pechera de mortacechador",
+            "br": "Peito d'Armas do Sicário",
+            "kr": "",
+            "fr": "Plastron de nécrotraqueur",
+            "de": "Brustharnisch des Todespirschers"
+        },
+        "icon": "inv_leather_warfrontsforsaken_d_01chest",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 4250,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 2750
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 183777,
+        "name": "Deathstalker's Collar",
+        "names": {
+            "cn": "",
+            "en": "Deathstalker's Collar",
+            "ru": "Капюшон ловчего смерти",
+            "es": "Collera de mortacechador",
+            "br": "Gola do Sicário",
+            "kr": "",
+            "fr": "Collerette de nécrotraqueur",
+            "de": "Kragen des Todespirschers"
+        },
+        "icon": "inv_leather_warfrontsforsaken_d_01helm",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 2000,
+            "versatility": 5000
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 183778,
+        "name": "Deathstalker's Shoulderguards",
+        "names": {
+            "cn": "",
+            "en": "Deathstalker's Shoulderguards",
+            "ru": "Наплечные щитки ловчего смерти",
+            "es": "Guardahombros de mortacechador",
+            "br": "Guarda-ombros do Sicário",
+            "kr": "",
+            "fr": "Garde-épaules de nécrotraqueur",
+            "de": "Schulterschützer des Todespirschers"
+        },
+        "icon": "inv_leather_warfrontsforsaken_d_01shoulder",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 3750,
+            "versatility": 3250
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 183779,
+        "name": "Blightguard's Harness",
+        "names": {
+            "cn": "",
+            "en": "Blightguard's Harness",
+            "ru": "Куртка чумного стража",
+            "es": "Arnés de guardia de añublo",
+            "br": "Arnês do Guardapeste",
+            "kr": "",
+            "fr": "Harnais de chancregarde",
+            "de": "Harnisch der Seuchenwache"
+        },
+        "icon": "inv_chest_mail_warfrontsforsaken_d_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 5000,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 2000
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 183780,
+        "name": "Blightguard's Helmet",
+        "names": {
+            "cn": "",
+            "en": "Blightguard's Helmet",
+            "ru": "Шлем чумного стража",
+            "es": "Yelmo de guardia de añublo",
+            "br": "Capacete do Guardapeste",
+            "kr": "",
+            "fr": "Casque de chancregarde",
+            "de": "Helm der Seuchenwache"
+        },
+        "icon": "inv_helm_mail_warfrontsforsaken_d_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3000,
+            "mastery": 0,
+            "versatility": 4000
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 183781,
+        "name": "Blightguard's Shoulderguards",
+        "names": {
+            "cn": "",
+            "en": "Blightguard's Shoulderguards",
+            "ru": "Наплечные щитки чумного стража",
+            "es": "Guardahombros de guardia de añublo",
+            "br": "Guarda-ombros do Guardapeste",
+            "kr": "",
+            "fr": "Garde-épaules de chancregarde",
+            "de": "Schulterschützer der Seuchenwache"
+        },
+        "icon": "inv_shoulders_mail_warfrontsforsaken_d_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 3250,
+            "mastery": 3750,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
+    },
+    {
+        "id": 183782,
+        "name": "Deathguard's Chestplate",
+        "names": {
+            "cn": "",
+            "en": "Deathguard's Chestplate",
+            "ru": "Бригантина стража смерти",
+            "es": "Peto de guardia de la muerte",
+            "br": "Guarda-peito do Necroguarda",
+            "kr": "",
+            "fr": "Pansière de nécrogarde",
+            "de": "Brustplatte der Todeswache"
+        },
+        "icon": "inv_chest_plate_warfrontsforsaken_d_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 4500,
+            "mastery": 2500,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 183783,
+        "name": "Deathguard's Helm",
+        "names": {
+            "cn": "",
+            "en": "Deathguard's Helm",
+            "ru": "Шлем стража смерти",
+            "es": "Yelmo de guardia de la muerte",
+            "br": "Elmo do Necroguarda",
+            "kr": "",
+            "fr": "Heaume de nécrogarde",
+            "de": "Helm der Todeswache"
+        },
+        "icon": "inv_helm_plate_warfrontsforsaken_d_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 4250,
+            "mastery": 0,
+            "versatility": 2750
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Head"
+    },
+    {
+        "id": 183784,
+        "name": "Plaguebringer's Robe",
+        "names": {
+            "cn": "",
+            "en": "Plaguebringer's Robe",
+            "ru": "Одеяние разносчика чумы",
+            "es": "Toga de pesteador",
+            "br": "Veste do Pestífero",
+            "kr": "",
+            "fr": "Robe de porte-peste",
+            "de": "Robe des Pestbringers"
+        },
+        "icon": "inv_chest_cloth_warfrontsforsaken_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 2000,
+            "mastery": 5000,
+            "versatility": 0
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Chest"
+    },
+    {
+        "id": 183785,
+        "name": "Deathguard's Pauldrons",
+        "names": {
+            "cn": "",
+            "en": "Deathguard's Pauldrons",
+            "ru": "Наплечье стража смерти",
+            "es": "Espaldares de guardia de la muerte",
+            "br": "Brafoneiras do Necroguarda",
+            "kr": "",
+            "fr": "Espauliers de nécrogarde",
+            "de": "Schulterstücke der Todeswache"
+        },
+        "icon": "inv_shoulder_plate_warfrontsforsaken_d_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 0,
+            "crit": 2500,
+            "mastery": 0,
+            "versatility": 4500
+        },
+        "faction": "horde",
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Shoulder"
     },
     {
         "id": 183849,
@@ -78396,7 +102448,13 @@ export const itemDB = [
         },
         "dropLoc": "",
         "selectable": "true",
-        "slot": "Back"
+        "slot": "Back",
+        "sources": [
+            {
+                "instanceId": 1190,
+                "encounterId": 999
+            }
+        ]
     },
     {
         "id": 184781,
