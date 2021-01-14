@@ -8,7 +8,7 @@ import { localizationEN } from "../../../../locale/en/TableLocale";
 import { localizationRU } from "../../../../locale/ru/TableLocale";
 import { localizationCH } from "../../../../locale/ch/TableLocale";
 import moment from "moment";
-import { healerCooldownsDetailed } from "../../Data/Data.js";
+import { externalsDetailed } from "../../Data/Data.js";
 import Divider from "@material-ui/core/Divider";
 import Paper from "@material-ui/core/Paper";
 import { useTranslation } from "react-i18next";
@@ -42,7 +42,7 @@ const tableIcons = {
   )),
 };
 
-export default function CooldownTimeline(props) {
+export default function ExternalTimeline(props) {
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
 
@@ -64,8 +64,8 @@ export default function CooldownTimeline(props) {
         icons={tableIcons}
         columns={[
           {
-            title: t("Name"),
-            field: "name",
+            title: t("Caster"),
+            field: "caster",
             cellStyle: {
               whiteSpace: "nowrap",
               // borderRight: "1px solid rgb(81 81 81)",
@@ -76,18 +76,41 @@ export default function CooldownTimeline(props) {
               fontSize: 14,
             },
             render: (rowData) => (
-              <div style={{ color: classColoursJS(rowData.class) }}>
-                {classIcons(rowData.class, 20)}
-                {rowData.name}
+              <div style={{ color: classColoursJS(rowData.casterClass) }}>
+                {classIcons(rowData.casterClass, 20)}
+                {rowData.caster}
               </div>
             ),
           },
           {
-            field: "class",
+            field: "casterClass",
             hidden: true,
           },
           {
-            title: t("Cooldown"),
+            field: "targetClass",
+            hidden: true,
+          },
+          {
+            title: t("Target"),
+            field: "target",
+            cellStyle: {
+              whiteSpace: "nowrap",
+              // borderRight: "1px solid rgb(81 81 81)",
+              padding: "2px 0px",
+              fontSize: 14,
+            },
+            headerStyle: {
+              fontSize: 14,
+            },
+            render: (rowData) => (
+              <div style={{ color: classColoursJS(rowData.targetClass) }}>
+                {classIcons(rowData.targetClass, 20)}
+                {rowData.target}
+              </div>
+            ),
+          },
+          {
+            title: t("External"),
             field: "ability",
             cellStyle: {
               whiteSpace: "nowrap",
@@ -134,7 +157,7 @@ export default function CooldownTimeline(props) {
               <div>
                 {moment(rowData.timestamp, "mm:ss")
                   .add(
-                    healerCooldownsDetailed
+                    externalsDetailed
                       .filter((obj) => {
                         return obj.guid === rowData.guid;
                       })
@@ -147,7 +170,7 @@ export default function CooldownTimeline(props) {
             ),
           },
         ]}
-        title={t("CooldownPlanner.Headers.CooldownTimeline")}
+        title={t("CooldownPlanner.Headers.ExternalTimeline")}
         header={true}
         data={props.data}
         style={{

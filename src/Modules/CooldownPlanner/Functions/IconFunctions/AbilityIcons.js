@@ -35,6 +35,10 @@ import RallyingCryIcon from "../../../../Images/Classes/Warrior/RallyingCryIcon.
 import SpiritShellIcon from "../../../../Images/Classes/Priest/Specialisation/Discipline/Icons/Talents/SpiritShellIcon.jpg";
 import VampiricEmbraceIcon from "../../../../Images/Classes/Priest/Specialisation/Shadow/VampiricEmbrace.jpg";
 import AntiMagicZoneIcon from "../../../../Images/Classes/DeathKnight/AntiMagicZone.jpg";
+import PowerInfusionIcon from "../../../../Images/Classes/Priest/Specialisation/Discipline/Icons/PowerInfusion.jpg";
+import IronbarkIcon from "../../../../Images/Classes/Druid/Specialisation/Restoration/Icons/Ironbark.jpg";
+import BlessingOfSacrificeIcon from "../../../../Images/Classes/Paladin/Specialisation/Holy/Icons/BlessingOfSacrifice.jpg";
+import LifeCocoonIcon from "../../../../Images/Classes/Monk/Specialisation/Mistweaver/Icons/LifeCocoon.jpg";
 
 // Should probably work this off GUID
 
@@ -234,6 +238,26 @@ export default function abilityIcons(props) {
     spell = "spell=51052";
     source = AntiMagicZoneIcon;
     alt = "Anti Magic Zone";
+  }
+  if (props === 10060) {
+    spell = "spell=10060";
+    source = PowerInfusionIcon;
+    alt = "Power Infusion";
+  }
+  if (props === 102342) {
+    spell = "spell=102342";
+    source = IronbarkIcon;
+    alt = "Ironbark";
+  }
+  if (props === 6940) {
+    spell = "spell=6940";
+    source = BlessingOfSacrificeIcon;
+    alt = "Blessing of Sacrifice";
+  }
+  if (props === 116849) {
+    spell = "spell=116849";
+    source = LifeCocoonIcon;
+    alt = "Blessing of Sacrifice";
   }
 
   return (

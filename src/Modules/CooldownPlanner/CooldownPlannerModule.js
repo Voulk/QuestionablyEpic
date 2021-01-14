@@ -33,6 +33,8 @@ import chartCooldownUpdater from "./Engine/UserCooldownChartEngine.js";
 import Divider from "@material-ui/core/Divider";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import ls from "local-storage";
+import ExternalTimeline from "./ModuleComponents/LogDetailComponents/ExternalTimelineTable";
+import EnemyCastsTimeline from "./ModuleComponents/LogDetailComponents/EnemyCasts";
 
 class HolyDiver extends Component {
   constructor(props) {
@@ -114,6 +116,8 @@ class HolyDiver extends Component {
       cooldownPlannerCurrentPlan: 1,
       ertDialogState: false,
       healTeamDialogState: false,
+      externalUsageTimelineData: [],
+      enemyCastsTimelineData: [],
     };
   }
 
@@ -620,9 +624,23 @@ class HolyDiver extends Component {
                   alignItems="flex-start"
                   spacing={1}
                 >
-                  <Grid item xs={12} sm={12} md={12} lg={4} xl={4} padding={1}>
+                  <Grid item xs={12} sm={12} md={12} lg={6} xl={6} padding={1}>
                     <CooldownTimeline data={this.state.Updateddatacasts} />
                   </Grid>
+                  <Grid item xs={12} sm={12} md={12} lg={6} xl={6} padding={1}>
+                    <ExternalTimeline
+                      data={this.state.externalUsageTimelineData}
+                    />
+                  </Grid>
+
+                  <Grid item xs={12} sm={12} md={12} lg={4} xl={4} padding={1}>
+                    <Example
+                      dataToShow={this.state.chartData}
+                      mitigated={this.state.summedMitigationDamagePerSecond}
+                      unmitigated={this.state.summedUnmitigatedDamagePerSecond}
+                    />
+                  </Grid>
+
                   <Grid item xs={12} sm={12} md={12} lg={4} xl={4} padding={1}>
                     <Paper
                       style={{ padding: 8, marginBottom: 8 }}
@@ -639,11 +657,9 @@ class HolyDiver extends Component {
                     </Paper>
                     <HealerInfoTable heals={this.state.healernames} />
                   </Grid>
-                  <Grid item xs={12} sm={12} md={12} lg={4} xl={4} padding={1}>
-                    <Example
-                      dataToShow={this.state.chartData}
-                      mitigated={this.state.summedMitigationDamagePerSecond}
-                      unmitigated={this.state.summedUnmitigatedDamagePerSecond}
+                  <Grid item xs={12} sm={12} md={12} lg={6} xl={6} padding={1}>
+                    <EnemyCastsTimeline
+                      data={this.state.enemyCastsTimelineData}
                     />
                   </Grid>
                 </Grid>

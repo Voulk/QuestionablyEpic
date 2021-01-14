@@ -55,6 +55,11 @@
         "UnmitigatedDamageLabel": "UnmitigatedDE",
         "MitigatedDamageLabel": "MitigatedDE"
       },
+      "Headers": {
+        "CooldownTimeline": "Cooldown TimelineDE",
+        "ExternalTimeline": "External TimelineDE",
+        "EnemyCastTimeline": "Enemy Cast TimelineDE"
+      },
       "TableLabels": {
         "_Comments1": "Translations for HD TablesDE",
         "RaidSelectorLabel": "Select RaidDE",
