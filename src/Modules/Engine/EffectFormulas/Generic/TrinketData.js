@@ -255,6 +255,17 @@ export const trinket_data = [
         },
     ]
 },
+{
+    name: "Instructor's Divine Bell",
+    effects: [
+        { 
+            coefficient: 3.940237, 
+            table: -7,  
+            duration: 9, 
+            cooldown: 90,
+        },
+    ]
+},
     {
         name: "Flame of Battle",
         effects: [
