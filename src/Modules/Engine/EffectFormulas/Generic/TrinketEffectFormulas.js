@@ -286,6 +286,30 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel) {
     bonus_stats.haste = getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.duration / effect.cooldown;
     
 }
+
+  // Firelands Trinkets
+  else if (effectName === "Eye of Blazing Power") {      
+    let effect = activeTrinket.effects[0];
+    bonus_stats.hps =  getProcessedValue(effect.coefficient, effect.table, itemLevel, effect.efficiency) / 60 * effect.ppm * player.getStatMultiplier('CRITVERS');
+    
+}   
+    // Jaws of Defeat
+   else if (effectName === "Jaws of Defeat") {
+    let effect = activeTrinket.effects[0];
+    let manaPerStack = effect.coefficient;
+    let playerHaste = player.getStatPerc("Haste");
+    let castsInDuration = effect.efficiency * (20 / 1.5 / playerHaste);
+    let manaSaved = (manaPerStack*5*10) + ((castsInDuration-10) * manaPerStack * 10);
+
+    bonus_stats.mana =  manaSaved / effect.cooldown;
+    //console.log("Spark: " + getProcessedValue(effect.coefficient, effect.table, itemLevel) * player.getSpecialQuery("CastsPerMinute", contentType) + " . mana: " + bonus_stats.mana);
+    //console.log("Tuft: " + bonus_stats.hps);
+}
+    else if (effectName === "Necromantic Focus") {
+        let effect = activeTrinket.effects[0];
+        bonus_stats.mastery = effect.coefficient * effect.stacks[player.getSpec()];
+    }
+
   else {
       console.error("No Trinket Found");
   }

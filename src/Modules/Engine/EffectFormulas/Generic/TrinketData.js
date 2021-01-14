@@ -452,6 +452,40 @@ export const trinket_data = [
             }
         ]
     },
+    // === Firelands Timewalking Trinkets
+    {
+        name: 'Eye of Blazing Power', 
+        effects: [
+            { 
+                coefficient: 118.3393,  
+                table: -8, // TODO: Test the health transfer portion for vers / crit. It's going to be incredibly minor but worth it for accuracies sake.
+                ppm: 1.08, // 45s ICD, 10% proc chance on heal. This assumes we proc it very quickly but should be double checked.
+                efficiency: 0.9, // TODO: Check against logs. 
+            }
+        ]
+    }, 
+    {
+        name: 'Jaws of Defeat', 
+        effects: [
+            { 
+                coefficient: 17,  // This is the amount of mana reduction rather than a coefficient. The trinket is only available at 200 item level. 
+                duration: 20,
+                cooldown: 120,
+                efficiency: 0.9, // TODO: Check against logs. 
+            }
+        ]
+    }, 
+    {
+        name: "Necromantic Focus",
+        effects: [
+            { 
+                coefficient: 10, // Flat value
+                stacks: {"Restoration Druid": 7, "Discipline Priest": 10, "Holy Paladin": 0, 
+                "Mistweaver Monk": 0, "Restoration Shaman": 2.4, "Holy Priest": 0.4}
+
+            }
+        ]
+    },
     
     
 ]
