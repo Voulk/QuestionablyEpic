@@ -337,9 +337,9 @@ export const healerCooldownsDetailed = [
   },
 ];
 
-const externals = [
+export const externalsDetailed = [
   {
-    id: 47788,
+    guid: 47788,
     name: {
       en: "Guardian Spirit",
       de: "Schutzgeist",
@@ -353,7 +353,7 @@ const externals = [
   },
 
   {
-    id: 6940,
+    guid: 6940,
     name: {
       en: "Blessing of Sacrifice",
       de: "Segen der Aufopferung",
@@ -366,7 +366,7 @@ const externals = [
     cooldown: 120,
   },
   {
-    id: 102342,
+    guid: 102342,
     name: {
       en: "Ironbark",
       de: "Eisenborke",
@@ -380,7 +380,7 @@ const externals = [
   },
 
   {
-    id: 10060,
+    guid: 10060,
     name: {
       en: "Power Infusion",
       de: "Seele der Macht",

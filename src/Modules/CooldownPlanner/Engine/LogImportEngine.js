@@ -9,6 +9,8 @@ import {
   durationmaker,
   sumDamage,
   importSummaryData,
+  importExternalCastsLogData,
+  importCharacterIds,
 } from "../Functions/Functions";
 import moment from "moment";
 
@@ -62,6 +64,14 @@ export default async function updatechartdata(starttime, endtime) {
     this.state.reportid
   );
 
+  const playerIDs = await importCharacterIds(
+    starttime,
+    endtime,
+    this.state.reportid
+  );
+
+  console.log(playerIDs);
+
   // Import summary Info from the Logs Summary table.
   // This contains our data for Gear, Stats, Conduits, Soulbinds etc etc.
   // See: "importSummaryData" in the functions file for more info.
@@ -95,6 +105,14 @@ export default async function updatechartdata(starttime, endtime) {
     healers.map((key) => key.id)
   );
 
+  const externals = await importExternalCastsLogData(
+    starttime,
+    endtime,
+    this.state.reportid,
+    healers.map((key) => key.id)
+  );
+
+  console.log(externals);
   // Map the damaging abilities and guids to an array of objects.
   damage.map((key) =>
     damagingAbilities.push({
@@ -198,6 +216,61 @@ export default async function updatechartdata(starttime, endtime) {
 
   // Map cooldown casts for the Timeline Table.
   const updateddatacastsTimeline = cooldowns.map((key) => ({
+    ability: key.ability.name,
+    guid: key.ability.guid,
+    timestamp: moment(fightDurationCalculator(key.timestamp, this.state.time))
+      .startOf("second")
+      .format("mm:ss"),
+    name: healerIDName
+      .filter((obj) => {
+        return obj.id === key.sourceID;
+      })
+      .map((obj) => obj.name)
+      .toString(),
+    class: healerIDName
+      .filter((obj) => {
+        return obj.id === key.sourceID;
+      })
+      .map((obj) => obj.class)
+      .toString(),
+  }));
+
+  // Map cooldown casts for the Timeline Table.
+  const updateddatacastsExternalsTimeline = externals.map((key) => ({
+    ability: key.ability.name,
+    guid: key.ability.guid,
+    timestamp: moment(fightDurationCalculator(key.timestamp, this.state.time))
+      .startOf("second")
+      .format("mm:ss"),
+    caster: healerIDName
+      .filter((obj) => {
+        return obj.id === key.sourceID;
+      })
+      .map((obj) => obj.name)
+      .toString(),
+    target: playerIDs
+      .filter((obj) => {
+        return obj.id === key.targetID;
+      })
+      .map((obj) => obj.name)
+      .toString(),
+    casterClass: healerIDName
+      .filter((obj) => {
+        return obj.id === key.sourceID;
+      })
+      .map((obj) => obj.class)
+      .toString(),
+    targetClass: playerIDs
+      .filter((obj) => {
+        return obj.id === key.targetID;
+      })
+      .map((obj) => obj.class)
+      .toString(),
+  }));
+
+  console.log(updateddatacastsExternalsTimeline);
+
+  const updateddatacastsExternalTimeline = cooldowns.map((key) => ({
     ability: key.ability.name,
     guid: key.ability.guid,
     timestamp: moment(fightDurationCalculator(key.timestamp, this.state.time))
@@ -362,5 +435,6 @@ export default async function updatechartdata(starttime, endtime) {
     currentStartTime: starttime,
     summedUnmitigatedDamagePerSecond: summedUnmitigatedDamagePerSecond,
     summedMitigationDamagePerSecond: summedMitigationDamagePerSecond,
+    externalUsageTimelineData: updateddatacastsExternalsTimeline,
   });
 }

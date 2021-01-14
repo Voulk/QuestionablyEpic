@@ -33,6 +33,7 @@ import chartCooldownUpdater from "./Engine/UserCooldownChartEngine.js";
 import Divider from "@material-ui/core/Divider";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import ls from "local-storage";
+import ExternalTimeline from "./ModuleComponents/LogDetailComponents/ExternalTimelineTable";
 
 class HolyDiver extends Component {
   constructor(props) {
@@ -114,6 +115,7 @@ class HolyDiver extends Component {
       cooldownPlannerCurrentPlan: 1,
       ertDialogState: false,
       healTeamDialogState: false,
+      externalUsageTimelineData: [],
     };
   }
 
@@ -644,6 +646,11 @@ class HolyDiver extends Component {
                       dataToShow={this.state.chartData}
                       mitigated={this.state.summedMitigationDamagePerSecond}
                       unmitigated={this.state.summedUnmitigatedDamagePerSecond}
+                    />
+                  </Grid>
+                  <Grid item xs={12} sm={12} md={12} lg={4} xl={4} padding={1}>
+                    <ExternalTimeline
+                      data={this.state.externalUsageTimelineData}
                     />
                   </Grid>
                 </Grid>
