@@ -57,7 +57,8 @@
       },
       "Headers": {
         "CooldownTimeline": "Cooldown TimelineFR",
-        "ExternalTimeline": "External TimelineFR"
+        "ExternalTimeline": "External TimelineFR",
+        "EnemyCastTimeline": "Enemy Cast TimelineFR"
       },
       "TableLabels": {
         "_Comments1": "Translations for HD Tables",
