@@ -160,7 +160,7 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel) {
         if (player.getSpec() === SPEC.DISCPRIEST) bonus_stats.intellect *= 1.62; // This needs to be refined, but represents the power increase from combining with Spirit Shell.
         // We need a better way to model interaction with spec cooldowns. 
         
-        console.log("BADGE Int:" + bonus_stats.intellect + ". Flat: " + getProcessedValue(effect.coefficient, effect.table, itemLevel) + ". Uptime: 25%")
+        //console.log("BADGE Int:" + bonus_stats.intellect + ". Flat: " + getProcessedValue(effect.coefficient, effect.table, itemLevel) + ". Uptime: 25%")
     }
     else if (effectName === "Inscrutable Quantum Device") {
 
@@ -206,6 +206,16 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel) {
 
         bonus_stats.hps = hotHPS + absorbHPS;
       
+    }
+    else if (effectName === "Instructor's Divine Bell") {
+        // Test
+        let effect = activeTrinket.effects[0];
+
+        bonus_stats.mastery = getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.duration / effect.cooldown;
+        
+        if (player.getSpec() === SPEC.RESODRUID) bonus_stats.mastery *= 1.2; // Bell is combined with Flourish.
+        // We need a better way to model interaction with spec cooldowns. 
+        
     }
     
     else if (effectName === "Consumptive Infusion") {
@@ -286,6 +296,30 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel) {
     bonus_stats.haste = getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.duration / effect.cooldown;
     
 }
+
+  // Firelands Trinkets
+  else if (effectName === "Eye of Blazing Power") {      
+    let effect = activeTrinket.effects[0];
+    bonus_stats.hps =  getProcessedValue(effect.coefficient, effect.table, itemLevel, effect.efficiency) / 60 * effect.ppm * player.getStatMultiplier('CRITVERS');
+    
+}   
+    // Jaws of Defeat
+   else if (effectName === "Jaws of Defeat") {
+    let effect = activeTrinket.effects[0];
+    let manaPerStack = effect.coefficient;
+    let playerHaste = player.getStatPerc("Haste");
+    let castsInDuration = effect.efficiency * (20 / (1.5 / playerHaste));
+    let manaSaved = (manaPerStack*5*10) + ((castsInDuration-10) * manaPerStack * 10);
+    console.log("Casts in Dur: " + castsInDuration + ". Mana Saved: " + manaSaved + "Haste: " + playerHaste);
+    bonus_stats.mana =  manaSaved / effect.cooldown;
+    //console.log("Spark: " + getProcessedValue(effect.coefficient, effect.table, itemLevel) * player.getSpecialQuery("CastsPerMinute", contentType) + " . mana: " + bonus_stats.mana);
+    //console.log("Tuft: " + bonus_stats.hps);
+}
+    else if (effectName === "Necromantic Focus") {
+        let effect = activeTrinket.effects[0];
+        bonus_stats.mastery = effect.coefficient * effect.stacks[player.getSpec()];
+    }
+
   else {
       console.error("No Trinket Found");
   }
