@@ -10,6 +10,7 @@ import ShriekwingHeader from "../../Images/Bosses/CastleNathria/Shriekwing/Shrie
 import SireDenathriusHeader from "../../Images/Bosses/CastleNathria/SireDenathrius/Denathrius.png";
 import SludgefistHeader from "../../Images/Bosses/CastleNathria/Sludgefist/Sludgefist.png";
 import StonebornGeneralsHeader from "../../Images/Bosses/CastleNathria/StoneLegionGenerals/StoneLegion.png";
+import BoeHeader from "../../Images/Bosses/BOE.png";
 
 // World Bosses
 import ValinorHeader from "../../Images/Bosses/WorldBosses/ValinorUGF.png";
@@ -88,6 +89,9 @@ export default function UpgradeFinderBossImages(props, style) {
   // Nurgash
   if (props === 2433) {
     source = NurgashHeader;
+  }
+  else if (props === 999) {
+    source = BoeHeader;
   }
 
   return <img style={{ ...style }} src={source} alt={props} />;
