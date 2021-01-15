@@ -694,7 +694,25 @@
       "Kyrian": "Kyrianer",
       "Necrolords": "Nekrolords",
       "Venthyr": "Venthyr",
-      "NightFae": "Nachtfae"
+      "NightFae": "Nachtfae",
+      "Soulbinds": {
+        "KyrianSoulbinds": "",
+        "Pelagos": "Pelagos",
+        "Kleia": "Kleia",
+        "Mikanikos": "Mikanikos",
+        "NecrolordSoulbinds": "",
+        "Marileth": "Marileth",
+        "Emeni": "Emeni",
+        "Heirmir": "Heirmir",
+        "NightFaeSoulbinds": "",
+        "Niya": "Niya",
+        "Dreamweaver": "Traumweber",
+        "Korayn": "Korayn",
+        "VenthyrSoulbinds": "",
+        "Nadija": "Nadija",
+        "Theotar": "Theotar",
+        "Draven": "Draven"
+      }
     }
   }
 }

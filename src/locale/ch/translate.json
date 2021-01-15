@@ -695,7 +695,25 @@
       "Kyrian": "格里恩",
       "Necrolords": "通灵领主",
       "Venthyr": "温西尔",
-      "NightFae": "法夜"
+      "NightFae": "法夜",
+      "Soulbinds": {
+        "KyrianSoulbinds": "",
+        "Pelagos": "裴拉戈斯",
+        "Kleia": "克雷雅",
+        "Mikanikos": "掌炉宗师米卡尼科斯",
+        "NecrolordSoulbinds": "",
+        "Marileth": "魔药设计师马里莱斯",
+        "Emeni": "艾米妮",
+        "Heirmir": "骨匠海尔米尔",
+        "NightFaeSoulbinds": "",
+        "Niya": "尼娅",
+        "Dreamweaver": "织梦者",
+        "Korayn": "柯莱恩",
+        "VenthyrSoulbinds": "",
+        "Nadija": "娜德佳，迷雾之刃",
+        "Theotar": "癫狂公爵西塔尔",
+        "Draven": "德莱文将军"
+      }
     }
   }
 }

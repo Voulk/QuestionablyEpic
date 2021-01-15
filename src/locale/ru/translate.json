@@ -695,7 +695,25 @@
       "Kyrian": "Кирии",
       "Necrolords": "Некролорды",
       "Venthyr": "Вентиры",
-      "NightFae": "Ночной народец"
+      "NightFae": "Ночной народец",
+      "Soulbinds": {
+        "KyrianSoulbinds": "",
+        "Pelagos": "Пелагий",
+        "Kleia": "Клейя",
+        "Mikanikos": "Миканикос",
+        "NecrolordSoulbinds": "",
+        "Marileth": "Изобретатель чумы Марилет",
+        "Emeni": "Эмени",
+        "Heirmir": "Костоплав Гейрмир",
+        "NightFaeSoulbinds": "",
+        "Niya": "Ния",
+        "Dreamweaver": "Творец Снов",
+        "Korayn": "Корейн",
+        "VenthyrSoulbinds": "",
+        "Nadija": "Наджия, Клинок Туманов",
+        "Theotar": "Безумный герцог Теотар",
+        "Draven": "Генерал Дрейвен"
+      }
     }
   }
 }
