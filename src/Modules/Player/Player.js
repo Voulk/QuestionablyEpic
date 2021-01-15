@@ -383,7 +383,6 @@ class Player {
   };
 
   getFightLength = (contentType) => {
-    //console.log("Fight Length: " + contentType);
     return this.castModel[contentType].getFightInfo("fightLength");
   };
 
