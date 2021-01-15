@@ -68,7 +68,6 @@ const useStyles = makeStyles((theme) => ({
     display: "block",
     marginLeft: "auto",
     marginRight: "auto",
-    // marginTop: "2%",
     flexGrow: 1,
     backgroundColor: theme.palette.background.paper,
     maxWidth: 1014,
@@ -89,42 +88,22 @@ const useStyles = makeStyles((theme) => ({
       require("../../../Images/BastionHeader.png").default
     })`,
     borderRadius: "4px 0px 0px 0px",
-    // height: 75,
-    // whiteSpace: "nowrap",
-    // textShadow: "3px 3px 4px black",
-    // color: "#fff",
-    // fontSize: "1.1rem",
   },
   nightFaeHeaderStyle: {
     backgroundImage: `url(${
       require("../../../Images/NightFaeHeader.png").default
     })`,
-    // height: 75,
-    // whiteSpace: "nowrap",
-    // textShadow: "3px 3px 4px black",
-    // color: "#fff",
-    // fontSize: "1.1rem",
   },
   venthyrHeaderStyle: {
     backgroundImage: `url(${
       require("../../../Images/VenthyrHeader.png").default
     })`,
-    // height: 75,
-    // whiteSpace: "nowrap",
-    // textShadow: "3px 3px 4px black",
-    // color: "#fff",
-    // fontSize: "1.1rem",
   },
   necrolordHeaderStyle: {
     backgroundImage: `url(${
       require("../../../Images/NecroHeader.png").default
     })`,
     borderRadius: "0px 4px 0px 0px",
-    // height: 75,
-    // whiteSpace: "nowrap",
-    // textShadow: "3px 3px 4px black",
-    // color: "#fff",
-    // fontSize: "1.1rem",
   },
 }));
 
@@ -672,10 +651,6 @@ export default function CovenantExploration(props) {
   );
 }
 
-/* 
-
-
-*/
 function buildSoulbind(
   soulbindName,
   player,
@@ -685,6 +660,7 @@ function buildSoulbind(
   setConduitInSlot,
   updateConduitLevel
 ) {
+  const { t, i18n } = useTranslation();
   let activeSoulbind = soulbindState.filter(
     (trait) => trait.soulbind === soulbindName
   );
@@ -798,7 +774,7 @@ function buildSoulbind(
                     align="center"
                     style={{ fontSize: 12 }}
                   >
-                    Right/Left Click Conduits to change Ilvl
+                    {t("Soulbinds.ConduitInstructions")}
                   </Typography>
                 </Paper>
               </Grid>

@@ -11,6 +11,9 @@ export function getAvailableClassConduits(spec) {
     let conduits = []
     const defaultItemLevel = 184;
 
+    const conduitInfo = [{ id: 340616, name: { en: "Flash of Clarity", cn: "", de: "", fr: "", ru: "" }, type: "Potency", class: "Restoration Druid" }];
+
+
     if (spec === SPECS.RESTODRUID) {
         conduits.push(new ActiveConduit(340616, defaultItemLevel, "Flash of Clarity", "Potency"));
         conduits.push(new ActiveConduit(340621, defaultItemLevel, "Floral Recycling", "Potency"));

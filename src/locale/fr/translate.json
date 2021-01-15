@@ -341,7 +341,14 @@
       "Header": "Covenant ExplorationFR",
       "PotencyConduit": "Potency ConduitFR",
       "EnduranceConduit": "Endurance ConduitFR",
-      "FinesseConduit": "Finesse ConduitFR"
+      "FinesseConduit": "Finesse ConduitFR",
+      "ConduitInstructions": "Right/Left Click Conduits to change IlvlFR",
+      "StatPanel": {
+        "Summary": "SummaryFR",
+        "Score": "ScoreFR",
+        "CovenantEstimate": "Covenant Ability EstFR",
+        "SelectedNodes": "Selected NodesFR"
+      }
     },
 
     "stats": {

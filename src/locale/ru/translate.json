@@ -342,7 +342,14 @@
       "Header": "Covenant ExplorationRU",
       "PotencyConduit": "Potency ConduitRU",
       "EnduranceConduit": "Endurance ConduitRU",
-      "FinesseConduit": "Finesse ConduitRU"
+      "FinesseConduit": "Finesse ConduitRU",
+      "ConduitInstructions": "Right/Left Click Conduits to change IlvlRU",
+      "StatPanel": {
+        "Summary": "SummaryRU",
+        "Score": "ScoreRU",
+        "CovenantEstimate": "Covenant Ability EstRU",
+        "SelectedNodes": "Selected NodesRU"
+      }
     },
 
     "stats": {

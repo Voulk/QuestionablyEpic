@@ -67,7 +67,7 @@ export default function LanguageSelector(props) {
       return (
         <ReactCountryFlag countryCode="RU" svg style={{ marginRight: "5px" }} />
       );
-    } else if (currentLanguage === "ch") {
+    } else if (currentLanguage === "cn") {
       return (
         <ReactCountryFlag countryCode="CN" svg style={{ marginRight: "5px" }} />
       );
@@ -120,7 +120,7 @@ export default function LanguageSelector(props) {
                       paddingBottom: 0,
                     }}
                   >
-                    <MenuItem onClick={(e) => handleClose(e, "ch")}>
+                    <MenuItem onClick={(e) => handleClose(e, "cn")}>
                       <ReactCountryFlag
                         countryCode="CN"
                         svg
