@@ -708,6 +708,12 @@
       "slot": "Waist, Wrist, or Finger",
       "desc": "Your spells and abilities have a low chance to summon a familiar to your side, increasing your healing by 10% for 10s. This effect is duplicated on up to 3 allies at 50% effectiveness, preferring allies with the same role.",
       "droploc": "Wild Hunt Reputation, Revered"
+    },
+    "Covenants": {
+      "Kyrian": "Kyrian",
+      "Necrolords": "Necrolords",
+      "Venthyr": "Venthyr",
+      "NightFae": "Night Fae"
     }
   }
 }

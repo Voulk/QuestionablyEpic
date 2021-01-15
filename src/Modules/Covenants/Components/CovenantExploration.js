@@ -228,7 +228,7 @@ export default function CovenantExploration(props) {
                     }
                     alt="Kyrian"
                   />
-                  <div className="centered"> Kyrian </div>
+                  <div className="centered"> {t("Covenants.Kyrian")} </div>
                 </div>
               }
               {...a11yProps(0)}
@@ -244,7 +244,7 @@ export default function CovenantExploration(props) {
                     }
                     alt="Night Fae"
                   />
-                  <div className="centered"> Night Fae </div>
+                  <div className="centered"> {t("Covenants.NightFae")} </div>
                 </div>
               }
               {...a11yProps(1)}
@@ -261,7 +261,7 @@ export default function CovenantExploration(props) {
                     }
                     alt="Venthyr"
                   />
-                  <div className="centered"> Venthyr </div>
+                  <div className="centered"> {t("Covenants.Venthyr")} </div>
                 </div>
               }
               {...a11yProps(2)}
@@ -278,7 +278,7 @@ export default function CovenantExploration(props) {
                     }
                     alt="Necrolords"
                   />
-                  <div className="centered"> Necrolords </div>
+                  <div className="centered"> {t("Covenants.Necrolords")} </div>
                 </div>
               }
               {...a11yProps(3)}
