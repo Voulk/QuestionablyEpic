@@ -1,7 +1,7 @@
 
 import SPECS from '../Engine/SPECS'
 import ActiveConduit from './ActiveConduit'
-import {conduits} from '../CooldownPlanner/Data/Data'
+import {conduitDB} from '../CooldownPlanner/Data/Data'
 import {getConduitFormula} from '../Engine/EffectFormulas/EffectEngine'
 
 // Returns a full list of all class conduits in the form of an ActiveSoulbind array.

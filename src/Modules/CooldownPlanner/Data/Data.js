@@ -2844,7 +2844,7 @@ export const serverList = {
   ],
 };
 
-export const conduits = [
+export const conduitDB = [
   {
     guid: 0,
     icon: "inv_axe_02",
