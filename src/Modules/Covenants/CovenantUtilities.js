@@ -11,23 +11,37 @@ export function getAvailableClassConduits(spec) {
     let conduits = []
     const defaultItemLevel = 184;
 
-    const conduitInfo = [{ id: 340616, name: { en: "Flash of Clarity", cn: "", de: "", fr: "", ru: "" }, type: "Potency", class: "Restoration Druid" }];
-
+    // example of potential rework
+            // conduits
+        //   .filter(
+        //     (key) => key.spec === "RestorationDruid" && key.type === "Potency" && key.show === true
+        //   )
+        //   .map((key) =>
+        //     conduits.push(
+        //       new ActiveConduit(
+        //         key.guid,
+        //         defaultItemLevel,
+        //         key.name[ActiveLanguage],
+        //         key.type
+        //       )
+        //     )
+        //   );
 
     if (spec === SPECS.RESTODRUID) {
-        conduits.push(new ActiveConduit(340616, defaultItemLevel, "Flash of Clarity", "Potency"));
-        conduits.push(new ActiveConduit(340621, defaultItemLevel, "Floral Recycling", "Potency"));
-        conduits.push(new ActiveConduit(340550, defaultItemLevel, "Ready for Anything", "Potency"));
-        conduits.push(new ActiveConduit(340549, defaultItemLevel, "Unstoppable Growth", "Potency"));
-        conduits.push(new ActiveConduit(341446, defaultItemLevel, "Conflux of Elements", "Potency", "Night Fae"));
-        conduits.push(new ActiveConduit(341378, defaultItemLevel, "Deep Allegiance", "Potency", "Kyrian"));
-        conduits.push(new ActiveConduit(341383, defaultItemLevel, "Endless Thirst", "Potency", "Venthyr"));
-        conduits.push(new ActiveConduit(341447, defaultItemLevel, "Evolved Swarm", "Potency", "Necrolord"));
+
+        conduits.push(new ActiveConduit(340616, defaultItemLevel, "Flash of Clarity", "Potency")); // done
+        conduits.push(new ActiveConduit(340621, defaultItemLevel, "Floral Recycling", "Potency")); // done
+        conduits.push(new ActiveConduit(340550, defaultItemLevel, "Ready for Anything", "Potency")); // done
+        conduits.push(new ActiveConduit(340549, defaultItemLevel, "Unstoppable Growth", "Potency")); // done
+        conduits.push(new ActiveConduit(341446, defaultItemLevel, "Conflux of Elements", "Potency", "Night Fae"));// done
+        conduits.push(new ActiveConduit(341378, defaultItemLevel, "Deep Allegiance", "Potency", "Kyrian")); // done
+        conduits.push(new ActiveConduit(341383, defaultItemLevel, "Endless Thirst", "Potency", "Venthyr")); // done
+        conduits.push(new ActiveConduit(341447, defaultItemLevel, "Evolved Swarm", "Potency", "Necrolord"));// done
 
         // TODO: Add the full set.
 
         conduits.push(new ActiveConduit(340553, defaultItemLevel, "Well-Honed Instincts", "Endurance"));
-        conduits.push(new ActiveConduit(340529, defaultItemLevel, "Tough as Bark", "Endurance"));
+        conduits.push(new ActiveConduit(340529, defaultItemLevel, "Tough as Bark", "Endurance")); // done
         conduits.push(new ActiveConduit(340540, defaultItemLevel, "Ursine Vigor", "Endurance"));
         conduits.push(new ActiveConduit(340543, defaultItemLevel, "Innate Resolve", "Endurance"));
     }
