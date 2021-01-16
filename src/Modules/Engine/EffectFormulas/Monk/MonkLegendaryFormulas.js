@@ -10,10 +10,10 @@ export const getMonkLegendary = (effectName, player, contentType) => {
     */
     if (name === "Ancient Teachings of the Monastery") {
         const EssenceFontCPM = 2.9;
-        const dpsDuringDuration = 650;
+        const dpsDuringDuration = 700;
         const multiplier = 2.5;
-        const buffUptime = 15 * EssenceFontCPM / 60;
-        const expectedOverhealing = 0.5;
+        const buffUptime = 12 * EssenceFontCPM / 60; // While the buff lasts 15s, the Essence Font channel lasts 3. 
+        const expectedOverhealing = 0.35;
 
         bonus_stats.hps = buffUptime * multiplier * dpsDuringDuration * (1 - expectedOverhealing)
 
