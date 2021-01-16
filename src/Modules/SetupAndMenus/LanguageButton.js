@@ -75,6 +75,10 @@ export default function LanguageSelector(props) {
       return (
         <ReactCountryFlag countryCode="FR" svg style={{ marginRight: "5px" }} />
       );
+    } else if (currentLanguage === "de") {
+      return (
+        <ReactCountryFlag countryCode="DE" svg style={{ marginRight: "5px" }} />
+      );
     }
   };
 
@@ -151,6 +155,14 @@ export default function LanguageSelector(props) {
                         style={{ marginRight: "5px" }}
                       />
                       RU
+                    </MenuItem>
+                    <MenuItem onClick={(e) => handleClose(e, "de")}>
+                      <ReactCountryFlag
+                        countryCode="DE"
+                        svg
+                        style={{ marginRight: "5px" }}
+                      />
+                      DE
                     </MenuItem>
                   </MenuList>
                 </ClickAwayListener>

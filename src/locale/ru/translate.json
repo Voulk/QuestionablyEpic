@@ -340,9 +340,9 @@
 
     "Soulbinds": {
       "Header": "Covenant ExplorationRU",
-      "PotencyConduit": "Potency ConduitRU",
-      "EnduranceConduit": "Endurance ConduitRU",
-      "FinesseConduit": "Finesse ConduitRU",
+      "PotencyConduit": "Проводник силы",
+      "EnduranceConduit": "Проводник выносливости",
+      "FinesseConduit": "Проводник точности",
       "ConduitInstructions": "Right/Left Click Conduits to change IlvlRU",
       "StatPanel": {
         "Summary": "SummaryRU",

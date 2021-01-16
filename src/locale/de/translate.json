@@ -339,9 +339,9 @@
 
     "Soulbinds": {
       "Header": "Covenant ExplorationDE",
-      "PotencyConduit": "Potency ConduitDE",
-      "EnduranceConduit": "Endurance ConduitDE",
-      "FinesseConduit": "Finesse ConduitDE",
+      "PotencyConduit": "Potenzmedium",
+      "EnduranceConduit": "Widerstandsmedium",
+      "FinesseConduit": "Finessemedium",
       "ConduitInstructions": "Right/Left Click Conduits to change IlvlDE",
       "StatPanel": {
         "Summary": "SummaryDE",

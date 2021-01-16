@@ -339,9 +339,9 @@
 
     "Soulbinds": {
       "Header": "Covenant ExplorationFR",
-      "PotencyConduit": "Potency ConduitFR",
-      "EnduranceConduit": "Endurance ConduitFR",
-      "FinesseConduit": "Finesse ConduitFR",
+      "PotencyConduit": "Intermédiaire de puissance",
+      "EnduranceConduit": "Intermédiaire d’endurance",
+      "FinesseConduit": "Intermédiaire de finesse",
       "ConduitInstructions": "Right/Left Click Conduits to change IlvlFR",
       "StatPanel": {
         "Summary": "SummaryFR",

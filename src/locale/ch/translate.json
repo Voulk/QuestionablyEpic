@@ -340,9 +340,9 @@
 
     "Soulbinds": {
       "Header": "Covenant ExplorationCH",
-      "PotencyConduit": "Potency ConduitCH",
-      "EnduranceConduit": "Endurance ConduitCH",
-      "FinesseConduit": "Finesse ConduitCH",
+      "PotencyConduit": "效能导灵器",
+      "EnduranceConduit": "韧如树皮",
+      "FinesseConduit": "灵巧导灵器",
       "ConduitInstructions": "Right/Left Click Conduits to change IlvlCH",
       "StatPanel": {
         "Summary": "SummaryCH",
