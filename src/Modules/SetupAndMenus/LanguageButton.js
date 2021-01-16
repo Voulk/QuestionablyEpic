@@ -12,6 +12,7 @@ import ClickAwayListener from "@material-ui/core/ClickAwayListener";
 import { makeStyles } from "@material-ui/core/styles";
 import { useTranslation } from "react-i18next";
 import ReactCountryFlag from "react-country-flag";
+import ls from "local-storage";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -38,6 +39,7 @@ export default function LanguageSelector(props) {
       return;
     }
     i18n.changeLanguage(lang);
+    ls.set("lang", lang)
     setOpen(false);
   };
 
