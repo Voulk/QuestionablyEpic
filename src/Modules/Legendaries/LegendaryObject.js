@@ -95,7 +95,7 @@ export default function LegendaryObject(props) {
 
   const classes = useStyles();
   const bull = <span className={classes.bullet}>•</span>;
-  console.log(item);
+  //console.log(item);
   
 
 
