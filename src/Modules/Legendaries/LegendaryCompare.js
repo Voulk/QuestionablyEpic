@@ -69,7 +69,7 @@ const fillLegendaries = (container, spec, pl, contentType) => {
       "Memory of the Mother Tree",
     ],
     "Holy Paladin": [
-      "Vanguards Momentum",
+      //"Vanguards Momentum",
       "The Magistrates Judgment",
       "Inflorescence of the Sunwell",
       "Maraads Dying Breath",
@@ -84,7 +84,7 @@ const fillLegendaries = (container, spec, pl, contentType) => {
       "Primal Tide Core",
       "Spiritwalker's Tidal Totem",
       "Ancestral Reminder",
-      "Chains of Devastation",
+      //"Chains of Devastation",
       "Deeply Rooted Elements",
     ],
     "Discipline Priest": [
@@ -95,7 +95,7 @@ const fillLegendaries = (container, spec, pl, contentType) => {
       "Cauterizing Shadows",
       "Measured Contemplation",
       "Twins of the Sun Priestess",
-      "Vault of Heavens",
+      //"Vault of Heavens",
     ],
     "Holy Priest": [
       "Divine Image",
@@ -105,12 +105,12 @@ const fillLegendaries = (container, spec, pl, contentType) => {
       "Cauterizing Shadows",
       "Measured Contemplation",
       "Twins of the Sun Priestess",
-      "Vault of Heavens",
+      //"Vault of Heavens",
     ],
     "Mistweaver Monk": [
-      "Escape from Reality",
+      //"Escape from Reality",
       "Invoker's Delight",
-      "Roll Out",
+      //"Roll Out",
       //"Fatal Touch",
       "Ancient Teachings of the Monastery",
       "Yu'lon's Whisper",
