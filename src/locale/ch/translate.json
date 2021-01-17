@@ -634,70 +634,58 @@
 
     "MonkLegendariesComment": "MonkLegendariesComment",
     "Escape from Reality": {
-      "name": "Escape from Reality",
-      "slot": "Neck or Chest",
-      "desc": "After you use Transcendence: Transfer, you can use Transcendence: Transfer again within 10 sec, ignoring its cooldown. During this time, if you cast Vivify on yourself, its healing is increased by 70% and 50% of its cost is refunded.",
-      "droploc": "The Great Vault"
+      "name": "魂游天外",
+      "slot": "颈部、胸部",
+      "desc": "在你使用魂体双分：转移后，你可以无视冷却时间在10 sec内再次使用魂体双分：转移。 在此期间，如果你对自己施放活血术，治疗效果会提高70%，并会返还消耗法力值的50%。",
+      "droploc": "任务：宏伟宝库"
     },
     "Invoker's Delight": {
-      "name": "Invoker's Delight",
-      "slot": "Head or Shoulder",
-      "desc": "You gain 33% haste for 20 sec after summoning your Celestial.",
-      "droploc": "Stone Legion Generals, Castle Nathria"
-    },
-    "Roll Out": {
-      "name": "Roll Out",
-      "slot": "Waist or Feet",
-      "desc": "During (Chi Torpedo / Roll), you are immune to roots and snares.",
-      "droploc": "PvP Honor Vendor"
-    },
-    "Fatal Touch": {
-      "name": "Fatal Touch",
-      "slot": "Wrist or Finger",
-      "desc": "Touch of Death cooldown reduced by 120 sec.",
-      "droploc": "Mueh'zala, De Other Side"
+      "name": "祈求者之愉",
+      "slot": "头部、肩部",
+      "desc": "在召唤天神后，你将在20 sec内获得33%的急速。",
+      "droploc": "顽石军团干将"
     },
     "Ancient Teachings of the Monastery": {
-      "name": "Ancient Teachings of the Monastery",
-      "slot": "Wrist or Hands",
-      "desc": "After casting Essence Font, your Tiger Palm, Blackout Kick, and Rising Sun Kick heal an injured ally within 20 yards for 250% of the damage done. Lasts 15 sec.",
-      "droploc": "Devos, Spires of Ascension"
+      "name": "禅院古训",
+      "slot": "腕部、手",
+      "desc": "施放精华之拳后，猛虎掌、幻灭踢和旭日东升踢将治疗20码范围内一位受伤的盟友，造成的治疗量相当于伤害量的250%。持续15 sec",
+      "droploc": "疑虑圣杰德沃丝"
     },
     "Yu'lon's Whisper": {
-      "name": "Yu'lon's Whisper",
-      "slot": "Shoulder or Finger",
-      "desc": "Activating Thunder Focus Tea causes you to exhale the breath of Yu'lon, healing up to 6 allies within 15 yards over 2 sec.",
-      "droploc": "Torghast, Fracture Chambers, Layer 3+"
+      "name": "玉珑的低语",
+      "slot": "肩部、手指",
+      "desc": "激活雷光聚神茶使你能够呼出玉珑之息，在2 sec内为15码范围内至多6名盟友恢复[(60% of Spell power) * (3)]点生命值。",
+      "droploc": "断骨密室，难度3+"
     },
     "Clouded Focus": {
-      "name": "Clouded Focus",
-      "slot": "Neck or Wrist",
-      "desc": "Healing with Enveloping Mists or Vivify while channeling Soothing Mists increases their healing done by 15% and reduces their mana cost by 15%. Stacks up to 3 times. When your Soothing Mists channel ends, this effect is cancelled.",
-      "droploc": "Torghast, Fracture Chambers, Layer 3+"
+      "name": "雾云专注",
+      "slot": "颈部、腕部",
+      "desc": "在引导抚慰之雾时使用氤氲之雾或活血术进行治疗，会使这两个技能的治疗效果提高15%、法力消耗降低15%。至多叠加3次。 当你的抚慰之雾引导结束时，该效果取消。",
+      "droploc": "斯科杜斯之厅，难度3+"
     },
     "Tear of Morning": {
-      "name": "Tear of Morning",
-      "slot": "Head or Waist",
-      "desc": "Casting Vivify or Enveloping Mist on a target with Renewing Mist has a 10% chance to spread the Renewing Mist to another target. Your Vivify healing through Renewing Mist is increased by 20% and your Enveloping Mist also heals allies with Renewing Mist for 20% of its healing.",
-      "droploc": "Sludgefist, Castle Nathria"
+      "name": "晨晖之露",
+      "slot": "头部、腰部",
+      "desc": "对一个已经具有复苏之雾的目标施放活血术或氤氲之雾时有10的几率将复苏之雾扩散到另一个目标身上。 通过复苏之雾造成的活血术的治疗量提高20%，氤氲之雾同时会为复苏之雾的盟友恢复其治疗量20%的生命值。",
+      "droploc": "泥拳"
     },
     "Vitality Sacrifice": {
-      "name": "Vitality Sacrifice",
-      "slot": "Head, Shoulder, or Chest",
-      "desc": "Taking significant damage from a player or Elite enemy increases your damage and healing by 3% of the damage taken, up to a maximum of 9% for 20 sec. This effect can only occur every 30 sec.",
-      "droploc": "The Great Vault"
+      "name": "活力献祭",
+      "slot": "头部、肩部、胸部",
+      "desc": "从一名玩家或精英敌人处受到大量伤害时会使你的伤害和治疗提高，效果相当于受到伤害的3%，最高可达9%，持续20 sec。 此效果每30秒只能触发一次。",
+      "droploc": "从名望军需官处用心能购买。"
     },
     "Sephuz's Proclamation": {
-      "name": "Sephuz's Proclamation",
-      "slot": "Neck, Shoulder, or Chest",
-      "desc": "Reduce the effectiveness of crowd controlling effects by 10%. Successfully applying a loss of control effect to an enemy, interrupting an enemy, or dispelling any target will increase all your secondary stats by 80 for 15 sec. This effect cannot occur more than once every 30 seconds.",
-      "droploc": "PvP Honor Vendor"
+      "name": "塞弗斯的宣言",
+      "slot": "颈部、肩部、胸部",
+      "desc": "受到的群体控制效果降低10%。成功对一名敌人施加失控效果、打断一名敌人或驱散任意目标后，你的次要属性提高80，持续15 sec。这个效果每30秒最多触发一次。",
+      "droploc": "用荣誉点数从承销商佐·库尔处购买。"
     },
     "Echo of Eonar": {
-      "name": "Echo of Eonar",
-      "slot": "Waist, Wrist, or Finger",
-      "desc": "Your spells and abilities have a low chance to summon a familiar to your side, increasing your healing by 10% for 10s. This effect is duplicated on up to 3 allies at 50% effectiveness, preferring allies with the same role.",
-      "droploc": "Wild Hunt Reputation, Revered"
+      "name": "艾欧娜尔的回响",
+      "slot": "腰部、腕部、手指",
+      "desc": "你的法术和技能有几率召唤一个心灵魔仆为你而战，根据你的职责而使你造成的伤害提高10%，或者治疗提高10%，或者受到的伤害降低10%，持续10 sec。此效果可以复制到最多0名盟友身上，效果为原来的50%，优先复制到具有同样职责的盟友身上。",
+      "droploc": "你必须在荒猎团阵营达到崇敬声望而且解锁了符文铭刻才能购买此回忆。"
     },
     "Covenants": {
       "Kyrian": "格里恩",

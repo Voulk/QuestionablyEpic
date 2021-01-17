@@ -88,14 +88,14 @@ const fillLegendaries = (container, spec, pl, contentType) => {
     "Mistweaver Monk": [
       "Escape from Reality",
       "Invoker's Delight",
-      "Roll Out",
-      //"Fatal Touch",
+      // "Roll Out",
+      // "Fatal Touch",
       "Ancient Teachings of the Monastery",
       "Yu'lon's Whisper",
       "Clouded Focus",
       "Tear of Morning",
-      //"Vitality Sacrifice",
-      //"Sephuz's Proclamation",
+      // "Vitality Sacrifice",
+      // "Sephuz's Proclamation",
       "Echo of Eonar",
     ],
     /*

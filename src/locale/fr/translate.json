@@ -633,70 +633,58 @@
 
     "MonkLegendariesComment": "MonkLegendariesComment",
     "Escape from Reality": {
-      "name": "Escape from Reality",
-      "slot": "Neck or Chest",
-      "desc": "After you use Transcendence: Transfer, you can use Transcendence: Transfer again within 10 sec, ignoring its cooldown. During this time, if you cast Vivify on yourself, its healing is increased by 70% and 50% of its cost is refunded.",
-      "droploc": "The Great Vault"
+      "name": "Fuir la réalité",
+      "slot": "Cou, Torse",
+      "desc": "Vous pouvez réutiliser Transcendance : Transfert dans les 10 sec qui suivent son utilisation en ignorant son temps de recharge. Pendant cette durée, lorsque vous lancez Vivifier sur vous-même, les soins prodigués sont augmentés de 50% et son coût est réduit de 70%.",
+      "droploc": "Quête : La grande chambre forte"
     },
     "Invoker's Delight": {
-      "name": "Invoker's Delight",
-      "slot": "Head or Shoulder",
-      "desc": "You gain 33% haste for 20 sec after summoning your Celestial.",
-      "droploc": "Stone Legion Generals, Castle Nathria"
-    },
-    "Roll Out": {
-      "name": "Roll Out",
-      "slot": "Waist or Feet",
-      "desc": "During (Chi Torpedo / Roll), you are immune to roots and snares.",
-      "droploc": "PvP Honor Vendor"
-    },
-    "Fatal Touch": {
-      "name": "Fatal Touch",
-      "slot": "Wrist or Finger",
-      "desc": "Touch of Death cooldown reduced by 120 sec.",
-      "droploc": "Mueh'zala, De Other Side"
+      "name": "Délice de l’invocateur",
+      "slot": "Tête, Épaule",
+      "desc": "Vous gagnez un bonus à la Hâte de 33% pendant 20 sec après avoir invoqué votre astre vénérable.",
+      "droploc": "généraux de la Légion de pierre"
     },
     "Ancient Teachings of the Monastery": {
-      "name": "Ancient Teachings of the Monastery",
-      "slot": "Wrist or Hands",
-      "desc": "After casting Essence Font, your Tiger Palm, Blackout Kick, and Rising Sun Kick heal an injured ally within 20 yards for 250% of the damage done. Lasts 15 sec.",
-      "droploc": "Devos, Spires of Ascension"
+      "name": "Enseignements ancestraux du monastère",
+      "slot": "Poignets, Mains",
+      "desc": "Après avoir lancé Réceptacle d’essence, Paume du tigre, Frappe du voile noir et Coup de pied du soleil levant rendent à un allié blessé à moins de 20 mètres un montant de points de vie égal à 250% des dégâts infligés. Dure 15 sec.",
+      "droploc": "Déva, le parangon de doute"
     },
     "Yu'lon's Whisper": {
-      "name": "Yu'lon's Whisper",
-      "slot": "Shoulder or Finger",
-      "desc": "Activating Thunder Focus Tea causes you to exhale the breath of Yu'lon, healing up to 6 allies within 15 yards over 2 sec.",
-      "droploc": "Torghast, Fracture Chambers, Layer 3+"
+      "name": "Murmure de Yu’lon",
+      "slot": "Épaule, Doigt",
+      "desc": "Activer Thé de concentration foudroyante vous fait expirer le souffle de Yu’lon, qui rend à 6 alliés à moins de 15 mètres [(60% of Spell power) * (3)] points de vie en 2 sec.",
+      "droploc": "Chambres aux Fractures, échelon 3 ou plus"
     },
     "Clouded Focus": {
-      "name": "Clouded Focus",
-      "slot": "Neck or Wrist",
-      "desc": "Healing with Enveloping Mists or Vivify while channeling Soothing Mists increases their healing done by 15% and reduces their mana cost by 15%. Stacks up to 3 times. When your Soothing Mists channel ends, this effect is cancelled.",
-      "droploc": "Torghast, Fracture Chambers, Layer 3+"
+      "name": "Focalisateur nébuleux",
+      "slot": "Cou, Poignets",
+      "desc": "Lancer Brumes enveloppantes ou Vivifier tout en canalisant Brumes apaisantes augmente les soins prodigués par ces techniques de 15% et réduit leur coût en mana de 15%. Cumulable jusqu’à 3 fois. Quand la canalisation de Brumes apaisantes prend fin, l’effet est annulé.",
+      "droploc": "Salle de Skoldus, échelon 3 ou plus"
     },
     "Tear of Morning": {
-      "name": "Tear of Morning",
-      "slot": "Head or Waist",
-      "desc": "Casting Vivify or Enveloping Mist on a target with Renewing Mist has a 10% chance to spread the Renewing Mist to another target. Your Vivify healing through Renewing Mist is increased by 20% and your Enveloping Mist also heals allies with Renewing Mist for 20% of its healing.",
-      "droploc": "Sludgefist, Castle Nathria"
+      "name": "Larme matinale",
+      "slot": "Tête, Taille",
+      "desc": "Lancer Vivifier ou Brume enveloppante sur une cible affectée par Brume de rénovation a 10% de chances de propager Brume de rénovation à une autre cible. Les soins prodigués par Vivifier au travers de Brume de rénovation sont augmentés de 20% et votre Brume enveloppante prodigue également 20% de ses soins aux alliés.",
+      "droploc": "Fangepoing"
     },
     "Vitality Sacrifice": {
-      "name": "Vitality Sacrifice",
-      "slot": "Head, Shoulder, or Chest",
-      "desc": "Taking significant damage from a player or Elite enemy increases your damage and healing by 3% of the damage taken, up to a maximum of 9% for 20 sec. This effect can only occur every 30 sec.",
-      "droploc": "The Great Vault"
+      "name": "Sacrifice de vitalité",
+      "slot": "Tête, Épaule, Torse",
+      "desc": "Quand un personnage-joueur ou un ennemi d’élite vous inflige des dégâts importants, vos dégâts et vos soins sont augmentés à raison de 3% des dégâts subis, jusqu’à un maximum de 9% pendant 20 sec. Cet effet ne peut se produire plus d’une fois toutes les 30 s.",
+      "droploc": "À acheter contre de l’anima auprès de l’intendant de renom."
     },
     "Sephuz's Proclamation": {
-      "name": "Sephuz's Proclamation",
-      "slot": "Neck, Shoulder, or Chest",
-      "desc": "Reduce the effectiveness of crowd controlling effects by 10%. Successfully applying a loss of control effect to an enemy, interrupting an enemy, or dispelling any target will increase all your secondary stats by 80 for 15 sec. This effect cannot occur more than once every 30 seconds.",
-      "droploc": "PvP Honor Vendor"
+      "name": "Proclamation de Sephuz",
+      "slot": "Cou, Épaule, Torse",
+      "desc": "Réduit l’efficacité des effets de contrôle de 10%. Appliquer un effet de perte de contrôle ou d’interruption sur un ennemi, ou bien de dissipation sur une cible, augmente toutes vos caractéristiques secondaires de 80 pendant 15 sec. Cet effet ne peut se produire plus d’une fois toutes les 30 secondes.",
+      "droploc": "À acheter contre des points d’honneur auprès du pourvoyeur Zo’kuul."
     },
     "Echo of Eonar": {
-      "name": "Echo of Eonar",
-      "slot": "Waist, Wrist, or Finger",
-      "desc": "Your spells and abilities have a low chance to summon a familiar to your side, increasing your healing by 10% for 10s. This effect is duplicated on up to 3 allies at 50% effectiveness, preferring allies with the same role.",
-      "droploc": "Wild Hunt Reputation, Revered"
+      "name": "Écho d’Eonar",
+      "slot": "Taille, Poignets, Doigt",
+      "desc": "Vos sorts et techniques ont une faible chance d’invoquer à vos côtés un familier spirituel qui augmente vos dégâts de 10%, vos soins de 10% ou votre réduction de dégâts de 10% pendant 10 sec selon votre rôle. Cet effet affecte également un maximum de 0 alliés, ayant de préférence le même rôle, à 50% de son efficacité.",
+      "droploc": "Vous devez être révéré auprès de l’Hallali et avoir débloqué la gravure runique pour acheter ce souvenir."
     },
     "Covenants": {
       "Kyrian": "Kyrians",

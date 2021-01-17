@@ -634,70 +634,58 @@
 
     "MonkLegendariesComment": "MonkLegendariesComment",
     "Escape from Reality": {
-      "name": "Escape from Reality",
-      "slot": "Neck or Chest",
-      "desc": "After you use Transcendence: Transfer, you can use Transcendence: Transfer again within 10 sec, ignoring its cooldown. During this time, if you cast Vivify on yourself, its healing is increased by 70% and 50% of its cost is refunded.",
-      "droploc": "The Great Vault"
+      "name": "Бегство от реальности",
+      "slot": "Шея, Грудь",
+      "desc": "После применения 'Трансцендентности: перенос' вы можете снова применить 'Трансцендентность: перенос' в течение 10 sec., несмотря на время восстановления. Если в это время вы применяете 'Оживить' к себе, исцеление от него усиливается на 70%%, а вы восполняете 50% затраченного ресурса.",
+      "droploc": "Задание 'Великое хранилище'"
     },
     "Invoker's Delight": {
-      "name": "Invoker's Delight",
-      "slot": "Head or Shoulder",
-      "desc": "You gain 33% haste for 20 sec after summoning your Celestial.",
-      "droploc": "Stone Legion Generals, Castle Nathria"
-    },
-    "Roll Out": {
-      "name": "Roll Out",
-      "slot": "Waist or Feet",
-      "desc": "During (Chi Torpedo / Roll), you are immune to roots and snares.",
-      "droploc": "PvP Honor Vendor"
-    },
-    "Fatal Touch": {
-      "name": "Fatal Touch",
-      "slot": "Wrist or Finger",
-      "desc": "Touch of Death cooldown reduced by 120 sec.",
-      "droploc": "Mueh'zala, De Other Side"
+      "name": "Радость заклинателя",
+      "slot": "Голова, Плечо",
+      "desc": "Повышает скорость на 33% на 20 sec. после призыва небожителя.",
+      "droploc": "генералы Каменного легиона"
     },
     "Ancient Teachings of the Monastery": {
-      "name": "Ancient Teachings of the Monastery",
-      "slot": "Wrist or Hands",
-      "desc": "After casting Essence Font, your Tiger Palm, Blackout Kick, and Rising Sun Kick heal an injured ally within 20 yards for 250% of the damage done. Lasts 15 sec.",
-      "droploc": "Devos, Spires of Ascension"
+      "name": "Древние монастырские учения",
+      "slot": "Запястья, Кисти рук",
+      "desc": "После применения 'Купели сущности' следующие 'Лапа тигра', 'Нокаутирующий удар' и 'Удар восходящего солнца' исцеляют раненого союзника в радиусе 20 м, восполняя ему здоровье в объеме 250% нанесенного урона. Время действия – 15 sec.",
+      "droploc": "Девия, идеал Сомнения"
     },
     "Yu'lon's Whisper": {
-      "name": "Yu'lon's Whisper",
-      "slot": "Shoulder or Finger",
-      "desc": "Activating Thunder Focus Tea causes you to exhale the breath of Yu'lon, healing up to 6 allies within 15 yards over 2 sec.",
-      "droploc": "Torghast, Fracture Chambers, Layer 3+"
+      "name": "Шепот Юй-лун",
+      "slot": "Плечо, Палец",
+      "desc": "После активации 'Громового чая' от вас исходит дыхание Юй-лун, восполняющее максимум 6 союзникам в радиусе 15 м [(60% of Spell power) * (3)] ед. здоровья за 2 sec.",
+      "droploc": "Костоломни, этаж 3+"
     },
     "Clouded Focus": {
-      "name": "Clouded Focus",
-      "slot": "Neck or Wrist",
-      "desc": "Healing with Enveloping Mists or Vivify while channeling Soothing Mists increases their healing done by 15% and reduces their mana cost by 15%. Stacks up to 3 times. When your Soothing Mists channel ends, this effect is cancelled.",
-      "droploc": "Torghast, Fracture Chambers, Layer 3+"
+      "name": "Затуманенная концентрация",
+      "slot": "Шея, Запястья",
+      "desc": "Когда вы применяете 'Окутывающий туман' или 'Оживить' во время поддержания 'Успокаивающего тумана', исцеление от них усиливается на 15%, а их стоимость снижается на 15%. Суммируется до 3 раз. Действие заканчивается по окончании поддержания 'Успокаивающего тумана'.",
+      "droploc": "Чертоги Скольда, этаж 3+"
     },
     "Tear of Morning": {
-      "name": "Tear of Morning",
-      "slot": "Head or Waist",
-      "desc": "Casting Vivify or Enveloping Mist on a target with Renewing Mist has a 10% chance to spread the Renewing Mist to another target. Your Vivify healing through Renewing Mist is increased by 20% and your Enveloping Mist also heals allies with Renewing Mist for 20% of its healing.",
-      "droploc": "Sludgefist, Castle Nathria"
+      "name": "Утренняя слеза",
+      "slot": "Голова, Пояс",
+      "desc": "'Оживить' и 'Окутывающий туман', примененные к цели 'Заживляющего тумана', с вероятностью 10% распространяют 'Заживляющий туман' на другую цель. Исцеление от 'Оживить', примененное через 'Заживляющий туман', усиливается на 20%, а 'Окутывающий туман' также исцеляет союзников с 'Заживляющим туманом' с эффективностью 20%.",
+      "droploc": "Грязешмяк"
     },
     "Vitality Sacrifice": {
-      "name": "Vitality Sacrifice",
-      "slot": "Head, Shoulder, or Chest",
-      "desc": "Taking significant damage from a player or Elite enemy increases your damage and healing by 3% of the damage taken, up to a maximum of 9% for 20 sec. This effect can only occur every 30 sec.",
-      "droploc": "The Great Vault"
+      "name": "Жертвование здоровьем",
+      "slot": "Голова, Плечо, Грудь",
+      "desc": "При получении существенного урона от игрока или элитного противника ваш урон и объем исцеления на 20 sec. увеличиваются на 3% объема полученного урона (вплоть до 9%). Срабатывает не чаще раза в 30 сек.",
+      "droploc": "Покупается у торговца товарами за известность."
     },
     "Sephuz's Proclamation": {
-      "name": "Sephuz's Proclamation",
-      "slot": "Neck, Shoulder, or Chest",
-      "desc": "Reduce the effectiveness of crowd controlling effects by 10%. Successfully applying a loss of control effect to an enemy, interrupting an enemy, or dispelling any target will increase all your secondary stats by 80 for 15 sec. This effect cannot occur more than once every 30 seconds.",
-      "droploc": "PvP Honor Vendor"
+      "name": "Декларация Сефуза",
+      "slot": "Шея, Плечо, Грудь",
+      "desc": "Ослабляет эффекты контроля на 10%. Когда вы успешно применяете к противнику эффекты контроля, прерываете способности или рассеиваете эффекты, ваши второстепенные характеристики повышаются на 80 на 15 sec. Срабатывает не чаще раза в 30 сек.",
+      "droploc": "Покупается за очки чести у поставщика Зо'куула."
     },
     "Echo of Eonar": {
-      "name": "Echo of Eonar",
-      "slot": "Waist, Wrist, or Finger",
-      "desc": "Your spells and abilities have a low chance to summon a familiar to your side, increasing your healing by 10% for 10s. This effect is duplicated on up to 3 allies at 50% effectiveness, preferring allies with the same role.",
-      "droploc": "Wild Hunt Reputation, Revered"
+      "name": "Эхо Эонар",
+      "slot": "Пояс, Запястья, Палец",
+      "desc": "Ваши заклинания и способности могут с небольшой вероятностью призвать духовного фамилиара-помощника, увеличивающего на 10 sec. урон на 10%, объем исцеления на 10% или защиту от урона на 10% в зависимости от роли. Бонус копируется на максимум 0 союзников с 50% эффективностью. Предпочтение отдается союзникам с такой же ролью, как у вас.",
+      "droploc": "Добейтесь почтения Дикой Охоты и откройте вырезание рун, чтобы приобрести это воспоминание."
     },
     "Covenants": {
       "Kyrian": "Кирии",

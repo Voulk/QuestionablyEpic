@@ -662,19 +662,7 @@
       "desc": "You gain 33% haste for 20 sec after summoning your Celestial.",
       "droploc": "Stone Legion Generals, Castle Nathria"
     },
-    "Roll Out": {
-      "name": "Roll Out",
-      "slot": "Waist or Feet",
-      "desc": "During (Chi Torpedo / Roll), you are immune to roots and snares.",
-      "droploc": "PvP Honor Vendor"
-    },
-    "Fatal Touch": {
-      "name": "Fatal Touch",
-      "slot": "Wrist or Finger",
-      "desc": "Touch of Death cooldown reduced by 120 sec.",
-      "droploc": "Mueh'zala, De Other Side"
-    },
-    "Ancient Teachings of the Monastery": {
+     "Ancient Teachings of the Monastery": {
       "name": "Ancient Teachings of the Monastery",
       "slot": "Wrist or Hands",
       "desc": "After casting Essence Font, your Tiger Palm, Blackout Kick, and Rising Sun Kick heal an injured ally within 20 yards for 250% of the damage done. Lasts 15 sec.",
