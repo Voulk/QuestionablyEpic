@@ -35,6 +35,7 @@
     "None": "None",
     "Add": "Add",
     "Avoidance": "Avoidance",
+    "Source": "来源",
 
     "CooldownPlanner": {
       "Classes": {
@@ -415,46 +416,46 @@
 
     "DruidLegendariesComment": "DruidLegendariesComment",
     "Vision of Unending Growth": {
-      "name": "Vision of Unending Growth",
-      "slot": "Head or Feet",
-      "desc": "Rejuvenation has a 2.5% chance to create a new Rejuvenation on a nearby target on tick.",
-      "droploc": "Torghast, Fracture Chambers, Layer 3+"
+      "name": "无尽春天的愿景",
+      "slot": "头部、脚",
+      "desc": "回春术有2.5%的几率在一个附近目标身上生成一个新的回春术。",
+      "droploc": "断骨密室，难度3+"
     },
     "The Dark Titans Lesson": {
-      "name": "The Dark Titans Lesson",
-      "slot": "Neck or Back",
-      "desc": "You may apply Lifebloom to two targets at once, but your Lifebloom healing is reduced by 10%.",
-      "droploc": "Lord Chamberlain, Halls of Atonement"
+      "name": "黑暗泰坦之训",
+      "slot": "颈部、背部",
+      "desc": "你的生命绽放可以同时在两个目标身上生效，但生命绽放的治疗效果降低10%。",
+      "droploc": "地下城掉落：宫务大臣"
     },
     "Verdant Infusion": {
-      "name": "Verdant Infusion",
-      "slot": "Shoulder or Hands",
-      "desc": "Swiftmend no longer consumes a heal over time effect, and extends the duration of HoTs on the target by 8s.",
-      "droploc": "Oranomonos, World Boss"
+      "name": "翡翠灌注",
+      "slot": "肩部、手",
+      "desc": "迅捷治愈不再消耗一个持续治疗效果，并使你在目标身上的持续治疗效果的持续时间延长8秒。",
+      "droploc": "“长青之枝”奥拉诺莫诺斯"
     },
     "Lycaras Fleeting Glimpse": {
-      "name": "Lycara's Fleeting Glimpse",
-      "slot": "Waist or Feet",
-      "desc": "Every 45s while in combat, cast a spell based on your form (Wild Growth, Primal Wrath, Starfall, Stampeding Roar).",
-      "droploc": "Mordretha, Theater of Pain"
+      "name": "莱卡拉的惊鸿一瞥",
+      "slot": "腰部、脚",
+      "desc": "在战斗中，每45秒基于你的形态施放一个法术：野性成长, 原始之怒, 树皮术, 星辰坠落, 狂奔怒吼",
+      "droploc": "无尽女皇莫德蕾莎"
     },
     "Memory of the Mother Tree": {
-      "name": "Memory of the Mother Tree",
-      "slot": "Legs or Wrist",
-      "desc": "Wild Growth has a 40% chance to cause your next Rejuv or Regrowth to apply to 3 additional allies.",
-      "droploc": "Lady Invera Darkvein, Castle Nathria"
+      "name": "母亲之树的回忆",
+      "slot": "腿部、腕部",
+      "desc": "野性成长有40%几率使你的下一个回春术或愈合能够施加给目标20码范围内额外3名盟友。",
+      "droploc": "伊涅瓦·暗脉女勋爵"
     },
     "Oath of the Elder Druid": {
-      "name": "Oath of the Elder Druid",
-      "slot": "Shoulder or Wrist",
-      "desc": "Effects of Thick Hide, Astral Influence, Feline Swiftness and Ysera's Gift increased by 75%. Free Heart of the Wild per minute.",
-      "droploc": "PVP Honor Vendor"
+      "name": "德鲁伊长者之誓",
+      "slot": "肩部、腕部",
+      "desc": "厚皮、星界支配、豹之迅捷和伊瑟拉之赐的效果提高75%。 当你变形成亲和的形态时，你每1 min会获得一次持续10秒的野性之心效果。",
+      "droploc": "用荣誉点数从承销商佐·库尔处购买。"
     },
     "Circle of Life and Death": {
-      "name": "Circle of Life and Death",
-      "slot": "Head or Finger",
-      "desc": "DoT's deal damage in 25% less time, HoTs in 15% less time.",
-      "droploc": "Stone Legion Generals, Castle Nathria"
+      "name": "生死循环",
+      "slot": "头部、手指",
+      "desc": "你的持续伤害效果造成全部伤害所需时间减少25%，你的持续治疗效果造成全部治疗所需时间减少15%。",
+      "droploc": "顽石军团干将"
     },
 
     "PaladinLegendariesComment": "PaladinLegendariesComment",

@@ -35,6 +35,7 @@
     "None": "None",
     "Add": "Add",
     "Avoidance": "Avoidance",
+    "Source": "Quelle",
 
     "CooldownPlanner": {
       "Classes": {
@@ -414,46 +415,46 @@
 
     "DruidLegendariesComment": "DruidLegendariesComment",
     "Vision of Unending Growth": {
-      "name": "Vision of Unending Growth",
-      "slot": "Head or Feet",
-      "desc": "Rejuvenation has a 2.5% chance to create a new Rejuvenation on a nearby target on tick.",
-      "droploc": "Torghast, Fracture Chambers, Layer 3+"
+      "name": "Vision des unendlichen Wachstums",
+      "slot": "Kopf, Füße",
+      "desc": "Heilung von 'Verjüngung' hat eine Chance von 2.5%, dass ein weiteres Ziel in der Nähe mit 'Verjüngung' belegt wird.",
+      "droploc": "Frakturkammern, Ebene 3+"
     },
     "The Dark Titans Lesson": {
-      "name": "The Dark Titans Lesson",
-      "slot": "Neck or Back",
-      "desc": "You may apply Lifebloom to two targets at once, but your Lifebloom healing is reduced by 10%.",
-      "droploc": "Lord Chamberlain, Halls of Atonement"
+      "name": "Die Lektion des Dunklen Titanen",
+      "slot": "Hals, Rücken",
+      "desc": "'Blühendes Leben' kann auf zwei Zielen gleichzeitig aktiv sein, aber die Heilung von 'Blühendes Leben' ist um 10% verringert.",
+      "droploc": "Der Oberste Kämmerer"
     },
     "Verdant Infusion": {
-      "name": "Verdant Infusion",
-      "slot": "Shoulder or Hands",
-      "desc": "Swiftmend no longer consumes a heal over time effect, and extends the duration of HoTs on the target by 8s.",
-      "droploc": "Oranomonos, World Boss"
+      "name": "Üppige Infusion",
+      "slot": "Schulter, Hände",
+      "desc": "'Rasche Heilung' verbraucht keinen regelmäßigen Heilungseffekt mehr und verlängert die Dauer Eurer aktiven regelmäßigen Heilungseffekte auf dem Ziel um 8 Sek.",
+      "droploc": "Oranomonos die Immersprießende"
     },
     "Lycaras Fleeting Glimpse": {
-      "name": "Lycara's Fleeting Glimpse",
-      "slot": "Waist or Feet",
-      "desc": "Every 45s while in combat, cast a spell based on your form (Wild Growth, Primal Wrath, Starfall, Stampeding Roar).",
-      "droploc": "Mordretha, Theater of Pain"
+      "name": "Lycaras flüchtiger Blick",
+      "slot": "Taille, Füße",
+      "desc": "Setzt im Kampf alle 45 Sek. einen Zauber ein, der von Eurer Gestalt abhängt: Wildwuchs, Urzorn, Baumrinde, Sternenregen, Anstachelndes Gebrüll",
+      "droploc": "Mordretha, die Unendliche Kaiserin"
     },
     "Memory of the Mother Tree": {
-      "name": "Memory of the Mother Tree",
-      "slot": "Legs or Wrist",
-      "desc": "Wild Growth has a 40% chance to cause your next Rejuv or Regrowth to apply to 3 additional allies.",
-      "droploc": "Lady Invera Darkvein, Castle Nathria"
+      "name": "Erinnerung an den Mutterbaum",
+      "slot": "Beine, Handgelenk",
+      "desc": "'Wildwuchs' hat eine Chance von 40%, dass Euer nächster Einsatz von 'Verjüngung' oder 'Nachwachsen' sich auf 3 zusätzliche Verbündete innerhalb von 20 Metern um das Ziel auswirkt.",
+      "droploc": "Lady Inerva Dunkelader"
     },
     "Oath of the Elder Druid": {
-      "name": "Oath of the Elder Druid",
-      "slot": "Shoulder or Wrist",
-      "desc": "Effects of Thick Hide, Astral Influence, Feline Swiftness and Ysera's Gift increased by 75%. Free Heart of the Wild per minute.",
-      "droploc": "PVP Honor Vendor"
+      "name": "Eid des Druidenältesten",
+      "slot": "Schulter, Handgelenk",
+      "desc": "Erhöht die Effekte von 'Dickes Fell', 'Astraler Einfluss', 'Schnelligkeit der Wildnis' und 'Yseras Gabe' um 75%. Wenn Ihr in die zu Eurer Affinität gehörende Gestalt wechselt, erhaltet Ihr für 10 Sek. 'Herz der Wildnis'. Kann einmal alle 1 min auftreten.",
+      "droploc": "Gegen Ehre von Lieferant Zo'kuul erhältlich"
     },
     "Circle of Life and Death": {
-      "name": "Circle of Life and Death",
-      "slot": "Head or Finger",
-      "desc": "DoT's deal damage in 25% less time, HoTs in 15% less time.",
-      "droploc": "Stone Legion Generals, Castle Nathria"
+      "name": "Kreislauf aus Leben und Tod",
+      "slot": "Kopf, Finger",
+      "desc": "Eure regelmäßigen Schadenseffekte verursachen ihren Schaden in 25% kürzerer Zeit und Eure regelmäßigen Heileffekte ihre Heilung in 15% kürzerer Zeit.",
+      "droploc": "Generäle der Steinlegion"
     },
 
     "PaladinLegendariesComment": "PaladinLegendariesComment",

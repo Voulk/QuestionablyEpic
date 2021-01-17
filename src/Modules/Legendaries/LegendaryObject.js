@@ -179,45 +179,10 @@ export default function LegendaryObject(props) {
             component="p"
             style={{ padding: "0px 8px" }}
           >
-            Drops: {t(item.name + ".droploc")}
+            {t("Source")}: {t(item.name + ".droploc")}
           </Typography>
         </CardActions>
       </Card>
     </Grid>
   );
-
-  // return (
-  //   <div className="lego">
-  //     <div className="titleBox">
-  //       <p
-  //         style={{
-  //           fontSize: "16px",
-  //           marginTop: "5px",
-  //           marginLeft: "5px",
-  //           fontWeight: "bold",
-  //           display: "inline-block",
-  //         }}
-  //       >
-  //         {t(item.name + ".name")}
-  //       </p>
-  //       <img src={legendaryImages[item.name]} alt="" />
-  //     </div>
-
-  //     <div style={{ height: "60%", position: "relative" }}>
-  //       <p className="legodesc">{t(item.name + ".desc")}</p>
-  //       <div className="legostats">
-  //         <p>
-  //           HPS: {hpsString}
-  //           {/*Expected DPS: {item.bonus_stats.DPS} */}
-  //         </p>
-  //       </div>
-  //     </div>
-
-  //     <div className="legodroploc">
-  //       <p style={{ marginTop: "4px" }}>
-  //         Drops from: {t(item.name + ".droploc")}
-  //       </p>
-  //     </div>
-  //   </div>
-  // );
 }

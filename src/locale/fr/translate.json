@@ -35,6 +35,7 @@
     "None": "NoneFR",
     "Add": "AddFR",
     "Avoidance": "Avoidance",
+    "Source": "Source",
 
     "CooldownPlanner": {
       "Classes": {
@@ -414,46 +415,46 @@
 
     "DruidLegendariesComment": "DruidLegendariesComment",
     "Vision of Unending Growth": {
-      "name": "Vision of Unending Growth",
-      "slot": "Head or Feet",
-      "desc": "Rejuvenation has a 2.5% chance to create a new Rejuvenation on a nearby target on tick.",
-      "droploc": "Torghast, Fracture Chambers, Layer 3+"
+      "name": "Vision de croissance sans fin",
+      "slot": "Tête, Pieds",
+      "desc": "Les soins de Récupération ont 2.5% de chances de créer une nouvelle Récupération sur une cible proche.",
+      "droploc": "Chambres aux Fractures, échelon 3 ou plus"
     },
     "The Dark Titans Lesson": {
-      "name": "The Dark Titans Lesson",
-      "slot": "Neck or Back",
-      "desc": "You may apply Lifebloom to two targets at once, but your Lifebloom healing is reduced by 10%.",
-      "droploc": "Lord Chamberlain, Halls of Atonement"
+      "name": "Leçon du Titan noir",
+      "slot": "Cou, Dos",
+      "desc": "Vous pouvez utiliser Fleur de vie sur 2 cibles à la fois, mais les soins du sort sont réduits de 10%.",
+      "droploc": "Butin de donjon : grand chambellan"
     },
     "Verdant Infusion": {
-      "name": "Verdant Infusion",
-      "slot": "Shoulder or Hands",
-      "desc": "Swiftmend no longer consumes a heal over time effect, and extends the duration of HoTs on the target by 8s.",
-      "droploc": "Oranomonos, World Boss"
+      "name": "Infusion verdoyante",
+      "slot": "Épaule, Mains",
+      "desc": "Prompte guérison ne consomme plus d’effet de soins sur la durée, et prolonge de 8 s ceux qui affectent la cible.",
+      "droploc": "Oranomonos la Mille-Rameaux"
     },
     "Lycaras Fleeting Glimpse": {
-      "name": "Lycara's Fleeting Glimpse",
-      "slot": "Waist or Feet",
-      "desc": "Every 45s while in combat, cast a spell based on your form (Wild Growth, Primal Wrath, Starfall, Stampeding Roar).",
-      "droploc": "Mordretha, Theater of Pain"
+      "name": "Aperçu éphémère de Lycara",
+      "slot": "Taille, Pieds",
+      "desc": "Toutes les 45 s en combat, vous lancez un sort en fonction de votre forme: Croissance sauvage, Colère primitive, Ecorce, Météores, Ruée rugissante",
+      "droploc": "Mordretha, l’impératrice immortelle"
     },
     "Memory of the Mother Tree": {
-      "name": "Memory of the Mother Tree",
-      "slot": "Legs or Wrist",
-      "desc": "Wild Growth has a 40% chance to cause your next Rejuv or Regrowth to apply to 3 additional allies.",
-      "droploc": "Lady Invera Darkvein, Castle Nathria"
+      "name": "Souvenir de l’Arbre-Mère",
+      "slot": "Jambes, Poignets",
+      "desc": "Croissance sauvage a 40% de chances de permettre à votre prochain sort Récupération ou Rétablissement de s’appliquer à 3 alliés supplémentaires à moins de 20 mètres de la cible.",
+      "droploc": "dame Inverva Sombreveine"
     },
     "Oath of the Elder Druid": {
-      "name": "Oath of the Elder Druid",
-      "slot": "Shoulder or Wrist",
-      "desc": "Effects of Thick Hide, Astral Influence, Feline Swiftness and Ysera's Gift increased by 75%. Free Heart of the Wild per minute.",
-      "droploc": "PVP Honor Vendor"
+      "name": "Serment de l’ancien druide",
+      "slot": "Épaule, Poignets",
+      "desc": "Effets de Peau épaisse, Influence astrale, Rapidité féline et Don d’Ysera augmentés de 75%. Lorsque vous prenez la forme correspondant à votre affinité, vous bénéficiez de Cœur de fauve pendant 10 s, une fois toutes les 1 min.",
+      "droploc": "À acheter contre des points d’honneur auprès du pourvoyeur Zo’kuul."
     },
     "Circle of Life and Death": {
-      "name": "Circle of Life and Death",
-      "slot": "Head or Finger",
-      "desc": "DoT's deal damage in 25% less time, HoTs in 15% less time.",
-      "droploc": "Stone Legion Generals, Castle Nathria"
+      "name": "Cycle de la vie et la mort",
+      "slot": "Tête, Doigt",
+      "desc": "Vos effets de dégâts sur la durée infligent leurs dégâts 25% plus vite. Vos effets de soins sur la durée soignent 15% plus vite.",
+      "droploc": "généraux de la Légion de pierre"
     },
 
     "PaladinLegendariesComment": "PaladinLegendariesComment",

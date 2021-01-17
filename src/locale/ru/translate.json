@@ -35,6 +35,7 @@
     "None": "NoneRU",
     "Add": "AddRU",
     "Avoidance": "Avoidance",
+    "Source": "Источник",
 
     "CooldownPlanner": {
       "Classes": {
@@ -415,46 +416,46 @@
 
     "DruidLegendariesComment": "DruidLegendariesComment",
     "Vision of Unending Growth": {
-      "name": "Vision of Unending Growth",
-      "slot": "Head or Feet",
-      "desc": "Rejuvenation has a 2.5% chance to create a new Rejuvenation on a nearby target on tick.",
-      "droploc": "Torghast, Fracture Chambers, Layer 3+"
+      "name": "Видение бесконечного роста",
+      "slot": "Голова, Ступни",
+      "desc": "Исцеляющий эффект 'Омоложения' с вероятностью 2.5% применяет к находящейся рядом цели новый эффект 'Омоложения'.",
+      "droploc": "Костоломни, этаж 3+"
     },
     "The Dark Titans Lesson": {
-      "name": "The Dark Titans Lesson",
-      "slot": "Neck or Back",
-      "desc": "You may apply Lifebloom to two targets at once, but your Lifebloom healing is reduced by 10%.",
-      "droploc": "Lord Chamberlain, Halls of Atonement"
+      "name": "Урок Темного титана",
+      "slot": "Шея, Спина",
+      "desc": "Вы можете применять 'Жизнецвет' к двум целям единовременно, но исцеление от него ослабляется на 10%.",
+      "droploc": "Добыча из подземелья: Лорд-камергер"
     },
     "Verdant Infusion": {
-      "name": "Verdant Infusion",
-      "slot": "Shoulder or Hands",
-      "desc": "Swiftmend no longer consumes a heal over time effect, and extends the duration of HoTs on the target by 8s.",
-      "droploc": "Oranomonos, World Boss"
+      "name": "Живительное насыщение",
+      "slot": "Плечо, Кисти рук",
+      "desc": "'Быстрое восстановление' больше не поглощает эффект периодического исцеления и продлевает время действия ваших периодических эффектов исцеления на цели на 8 сек.",
+      "droploc": "Ораномонос Вечноветвящаяся"
     },
     "Lycaras Fleeting Glimpse": {
-      "name": "Lycara's Fleeting Glimpse",
-      "slot": "Waist or Feet",
-      "desc": "Every 45s while in combat, cast a spell based on your form (Wild Growth, Primal Wrath, Starfall, Stampeding Roar).",
-      "droploc": "Mordretha, Theater of Pain"
+      "name": "Мимолетное видение Ликары",
+      "slot": "Пояс, Ступни",
+      "desc": "Каждые 45 сек. во время боя вы применяете заклинание в зависимости от вашего текущего облика. (Буйный рост, Первобытный гнев, Дубовая кожа, Звездопад, Тревожный рев",
+      "droploc": "Мордрета, Вечная императрица"
     },
     "Memory of the Mother Tree": {
-      "name": "Memory of the Mother Tree",
-      "slot": "Legs or Wrist",
-      "desc": "Wild Growth has a 40% chance to cause your next Rejuv or Regrowth to apply to 3 additional allies.",
-      "droploc": "Lady Invera Darkvein, Castle Nathria"
+      "name": "Память об Изначальном Древе",
+      "slot": "Ноги, Запястья",
+      "desc": "При применении 'Буйного роста' с вероятностью 40% ваше следующее 'Омоложение' или 'Восстановление' будет применено еще к 3 союзникам:союзникам в радиусе 20 м от основной цели.",
+      "droploc": "леди Инверва Дарквейн"
     },
     "Oath of the Elder Druid": {
-      "name": "Oath of the Elder Druid",
-      "slot": "Shoulder or Wrist",
-      "desc": "Effects of Thick Hide, Astral Influence, Feline Swiftness and Ysera's Gift increased by 75%. Free Heart of the Wild per minute.",
-      "droploc": "PVP Honor Vendor"
+      "name": "Клятва старейшего друида",
+      "slot": "Плечо, Запястья",
+      "desc": "Эффективность 'Плотной шкуры', 'Родства с астралом', 'Стремительности кошки' и 'Дара Изеры' увеличена на 75%. Когда вы принимаете родственный облик, вы раз в 1 min. на 10 сек. получаете эффект 'Сердце дикой природы'.",
+      "droploc": "Покупается за очки чести у поставщика Зо'куула"
     },
     "Circle of Life and Death": {
-      "name": "Circle of Life and Death",
-      "slot": "Head or Finger",
-      "desc": "DoT's deal damage in 25% less time, HoTs in 15% less time.",
-      "droploc": "Stone Legion Generals, Castle Nathria"
+      "name": "Круг жизни и смерти",
+      "slot": "Голова, Палец",
+      "desc": "Ваши эффекты периодического урона наносят полный урон на 25% быстрее, а эффекты периодического исцеления восполняют здоровье на 15% быстрее.",
+      "droploc": "генералы Каменного легиона"
     },
 
     "PaladinLegendariesComment": "PaladinLegendariesComment",
