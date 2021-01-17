@@ -46,7 +46,7 @@ const useStyles = makeStyles((theme) => ({
     // maxWidth: "260px",
     width: "100%",
     maxHeight: "80px",
-    borderColor: "Gold",
+    borderColor: "White",
     padding: "0px",
     marginRight: "0px",
   },
