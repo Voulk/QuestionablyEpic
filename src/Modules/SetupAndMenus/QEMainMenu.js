@@ -19,12 +19,11 @@ const mainMenuOptions = {
   "MainMenu.QuickCompare": ["/quickcompare", true, "QuickCompare"],
   "MainMenu.ExploreCovenants": ["/soulbinds", true, "ExploreCovenants"],
   "MainMenu.LegendaryAnalysis": ["/legendaries", true, "LegendaryAnalysis"],
-  "MainMenu.TrinketAnalysis": ["/trinkets", false, "TrinketAnalysis"],
+  //"MainMenu.TrinketAnalysis": ["/trinkets", false, "TrinketAnalysis"],
 
-  //"MainMenu.GreatVault": ["/greatvault", false, "GreatVault"],
   "MainMenu.CooldownPlanner": ["/holydiver", false, "CooldownPlanner"],
   "MainMenu.Profile": ["/profile", true, "Profile"],
-  // "MainMenu.Trinket": ["/trinkets", false],
+
 };
 
 /* Buttons to be added back.
@@ -114,9 +113,10 @@ export default function QEMainMenu(props) {
                 variant="body1"
               >
                 <p>
-                  - Legendary effects coming soon for Mistweavers & Priests.{" "}
+                  - Legendary effects coming soon for Priests. Mistweaver now live!{" "}
                 </p>
                 <p>- Great Vault support in, including weapon tokens!</p>
+                <p>- Upgrade Finder now live!</p>
               </Typography>
             </Paper>
           </Grid>
@@ -197,7 +197,7 @@ export default function QEMainMenu(props) {
         </Grid>
 
         <p className="headers" style={{ fontSize: "12px" }}>
-          QE Live Update 17. Last Updated 13 January.
+          QE Live Update 18. Last Updated 17 January.
         </p>
       </div>
     </div>

@@ -93,6 +93,12 @@ export const getPaladinLegendary = (effectName, pl, contentType) => {
 
         bonus_stats.hps = -1;
     }
+    else if (name === "Relentless Inquisitor") {
+
+        const averageStacks = 4.8;
+
+        bonus_stats.haste = averageStacks * 33;
+    }
     else if (name === "The Mad Paragon") {
         // Considerations
         // - Mad Paragon also itself expands the number of hammer CPM you can expect which isn't considered in the formula, which is based off our wings uptime without the legendary.
