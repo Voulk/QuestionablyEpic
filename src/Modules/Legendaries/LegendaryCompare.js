@@ -20,6 +20,27 @@ import { Grid, Typography } from "@material-ui/core";
 //   },
 // }));
 
+const convertToHPS = (bonus_stats, player, contentType) => {
+  // Multiply the item's stats by our stat weights.
+  let score = 0;
+
+  for (var stat in bonus_stats) {
+      let statSum = bonus_stats[stat]
+      score += statSum * player.getStatWeight(contentType, stat);
+      score = score / player.activeStats.intellect * player.getHPS(contentType);
+    
+  }
+
+      // Add any bonus HPS
+  if ("hps" in bonus_stats) {
+    //console.log("Adding bonus_stats to score");
+    score += bonus_stats.hps
+      
+  }
+
+  return score;
+}
+
 const createLegendary = (legendaryName, container, spec, pl, contentType) => {
   let lego = new Legendary(legendaryName);
   lego.bonus_stats = getEffectValue(
@@ -27,6 +48,7 @@ const createLegendary = (legendaryName, container, spec, pl, contentType) => {
     pl,
     contentType
   );
+  lego.effectiveHPS = convertToHPS(lego.bonus_stats, pl, contentType);
 
   container.push(lego);
 };
@@ -177,7 +199,7 @@ const fillLegendaries = (container, spec, pl, contentType) => {
 
 const sortLegendaries = (container) => {
   // Current default sorting is by HPS but we could get creative here in future.
-  container.sort((a, b) => (a.bonus_stats.hps < b.bonus_stats.hps ? 1 : -1));
+  container.sort((a, b) => (a.effectiveHPS < b.effectiveHPS ? 1 : -1));
 };
 
 class Legendary {
@@ -187,6 +209,7 @@ class Legendary {
     this.description = "Legendary Description";
     this.image = 0;
     this.bonus_stats = {};
+    this.effectiveHPS = 0;
     //this.expectedHps = 0;
     //this.expectedDps = 0;
     //this.singleTargetHPS = 0;
@@ -223,7 +246,7 @@ export default function LegendaryCompare(props) {
       </Typography>
       <Grid container spacing={1} direction="row">
         {legendaryList.map((item, index) => (
-          <LegendaryObject key={index} item={item} />
+          <LegendaryObject key={index} item={item} player={props.pl} contentType={props.contentType}/>
         ))}
       </Grid>
     </div>

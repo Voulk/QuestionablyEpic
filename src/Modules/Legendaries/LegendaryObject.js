@@ -88,11 +88,16 @@ const legendaryImages = {
 export default function LegendaryObject(props) {
   const { t } = useTranslation();
   const item = props.item;
+  const player = props.player;
   const hpsString =
-    item.bonus_stats.hps > 5 ? Math.round(item.bonus_stats.hps) : "Coming Soon";
+    item.effectiveHPS > 5 ? Math.round(item.effectiveHPS) : "Coming Soon";
+    
 
   const classes = useStyles();
   const bull = <span className={classes.bullet}>•</span>;
+  console.log(item);
+  
+
 
   return (
     <Grid item xs={3}>
