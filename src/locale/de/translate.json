@@ -4,7 +4,7 @@
       "StatMessage": "To get updated stat weights use WowAnalyzer.com with a recent log and enter the values here from the 'Statistics' tab.DE",
       "DeleteCharacter": "Delete CharacterDE",
       "CreateChar": "Create New CharacterDE",
-      "AddChar": "Add CharacterDE",
+      "AddChar": "Charakter hinzufügen",
       "CharName": "Character NameDE"
     },
 
@@ -13,11 +13,11 @@
     "Name": "NameDE",
     "Class": "ClassDE",
     "Cooldown": "CooldownDE",
-    "Raid": "RaidDE",
-    "Dungeon": "DungeonDE",
-    "Cancel": "CancelDE",
+    "Raid": "Schlachtzug",
+    "Dungeon": "Instanz",
+    "Cancel": "Abbrechen",
     "Submit": "SubmitDE",
-    "Save": "SaveDE",
+    "Save": "Speichern",
     "Delete": "DeleteDE",
     "Intellect": "IntellectDE",
     "Crit": "CritDE",
@@ -29,7 +29,7 @@
     "Race": "RaceDE",
     "Select Class": "Select ClassDE",
     "Select Race": "Select RaceDE",
-    "HowToUse": "How to UseDE",
+    "HowToUse": "Hilfe!",
     "Yes": "Yes",
     "No": "No",
     "None": "None",
@@ -178,8 +178,8 @@
     },
 
     "InsertLog": {
-      "PlsSelectFight": "Please Select a FightDE",
-      "InsertLogHeader": "Paste Your Warcraft Logs Report HereDE"
+      "PlsSelectFight": "Bitte wähle einen Kampf aus",
+      "InsertLogHeader": "Füge deinen Warcraftlogbericht hier ein"
     },
 
     "itemTags": {
@@ -190,19 +190,19 @@
     "LegendaryCompare": { "Title": "Legendaries at a GlanceDE" },
 
     "MainMenu": {
-      "PatronInvite": "Love the app? Support the site on Patreon!DE",
+      "PatronInvite": "Gefällt dir die App? Dann unterstütze uns jetzt auf Patreon!",
       "PatronThanks": "Thank you so much for your support!DE",
-      "TopGear": "Top Gear (Beta)DE",
-      "UpgradeFinder": "Upgrade Finder (Coming Soon)DE",
-      "QuickCompare": "Gear Quick CompareDE",
-      "ExploreCovenants": "Explore CovenantsDE",
-      "LegendaryAnalysis": "Legendary AnalysisDE",
+      "TopGear": "Beste Ausrüstung",
+      "UpgradeFinder": "Upgradeanzeige",
+      "QuickCompare": "Schnellvergleich",
+      "ExploreCovenants": "Erkunde die Pakte",
+      "LegendaryAnalysis": "Analyse der legendären Effekte",
       "TrinketAnalysis": "Trinket AnalysisDE",
       "GreatVault": "The Great Vault (Coming Soon)DE",
-      "CooldownPlanner": "Cooldown Planner (Coming Soon)DE",
-      "Profile": "ProfileDE",
-      "CharHeader": "CharactersDE",
-      "CharHelpText": "Add your characters here. Right click to edit your stat weights, realm information and more.DE",
+      "CooldownPlanner": "Cooldownplaner (Coming Soon)",
+      "Profile": "Profil",
+      "CharHeader": "Charaktere",
+      "CharHelpText": "Füge deine Charaktere hier hinzu. Rechtsklick um deine Wertegewichtungen, Serverinformationen und mehr zu bearbeiten.",
       "Tooltips": {
         "TopGear": "Find your best gear setDE",
         "QuickCompare": "Compare Items for each slotDE.",
@@ -214,10 +214,10 @@
     },
 
     "QeHeader": {
-      "InsertLogLabel": "Insert LogDE",
+      "InsertLogLabel": "Warcraftlog einfügen",
       "Login": "LoginDE",
       "Tooltip": {
-        "ContentTypeMsgStart": "Change toDE",
+        "ContentTypeMsgStart": "Wechsle zu den",
         "ContentTypeMsgEnd": "ContentDE",
         "InsertLog": "Insert a log to increase accuracyDE.",
         "SimC": "Insert a SimC string to import your gearDE.",
@@ -228,7 +228,7 @@
     },
 
     "QeProfile": {
-      "EmailMsg": "Enter/Update your Email to link to PatreonDE",
+      "EmailMsg": "Füge deine E-Mailadresse ein oder aktualisiere sie, um dich mit Patreon zu verbinden.",
       "NoEmail": "No Email EnteredDE",
       "QeTier": "QE Live TierDE",
       "ProfileHeader": "Profile InformationDE",
@@ -244,8 +244,8 @@
       "Socket": "SocketDE",
       "Tertiary": "TertiaryDE",
       "AddButton": "AddDE",
-      "Title": "Quick CompareDE",
-      "HelpText": "Quick Compare allows you to compare items one by one. You can add items manually using the dropdowns above, or all at once using a string from the SimC addon. The score is automatically shown in the top right corner in yellow, and items are ordered by strength.DE",
+      "Title": "Schnellvergleich",
+      "HelpText": "Der Schnellvergleich erlaubt es dir, Gegenstände Kopf an Kopf zu vergleichen. Du kannst manuell Gegenstände hinzufügen, indem du die Dropdown-Menüs weiter oben verwendest oder indem du einen 'SimC'-String des gleichnamigen Addons einfügst. Die Wertung der Items wird automatisch in gelber Farbe oben rechts in der Ecke angezeigt und die Gegenstände sind nach ihrer Stärke geordnet.",
       "ItemErrorMsg": "Item Not Added. Ilvl Cap is 300DE",
       "ItemAdded": "Item Added!DE",
       "ItemDeleted": "Item Deleted!DE"
@@ -343,12 +343,12 @@
       "PotencyConduit": "Potenzmedium",
       "EnduranceConduit": "Widerstandsmedium",
       "FinesseConduit": "Finessemedium",
-      "ConduitInstructions": "Right/Left Click Conduits to change IlvlDE",
+      "ConduitInstructions": "Rechts-/Linksklicke auf ein Medium, um die Gegenstandsstufe zu verändern.",
       "StatPanel": {
-        "Summary": "SummaryDE",
-        "Score": "ScoreDE",
-        "CovenantEstimate": "Covenant Ability EstDE",
-        "SelectedNodes": "Selected NodesDE"
+        "Summary": "Zusammenfassung",
+        "Score": "Wertung",
+        "CovenantEstimate": "Geschätzter Einfluss des Paktes:",
+        "SelectedNodes": "Ausgewählte Seelenbande:"
       }
     },
 
@@ -387,12 +387,14 @@
     },
 
     "TopGear": {
-      "Title": "Top GearDE",
-      "HelpText": "Top Gear allows you to generate an entire gear set at once. Start by entering your SimC string above, then click to highlight any items you want included in the comparison. When you're all set, hit 'Go' at the bottom of the page. To enter items manually, return to the main menu and include them in QE Quick Compare. Great Vault items are added automatically though for the first week consider your choice carefully outside of the app.DE",
-      "ItemsHereMessage": "Your items will go here after you import.DE",
-      "GoMsg": "Go!DE",
-      "SelectedItems": "Selected ItemsDE",
-      "StatPanel": { "AvgStats": "Average Stats (includes procs)DE" }
+      "Title": "Beste Ausrüstung",
+      "HelpText": "'Beste Ausrüstung' erlaubt es dir, ein ganzes Ausrüstungsset auf einmal zu generieren. Beginne, indem du deinen 'SimC'-Addontext oben einfügst. Dann brauchst du nur noch alle Gegenstände anklicken, die du vergleichen willst und auf 'Start!' drücken, wenn du fertig bist. Wenn du die Gegenstände lieber manuell vergleichen willst, kannst du ins Hauptmenü zurückkehren und den 'QE Schnellvergleich' nutzen.",
+      "ItemsHereMessage": "Deine Items werden hier erscheinen, wenn sie importiert sind.",
+      "ErrorMessage": "Entschuldige bitte, es scheint ein Fehler aufgetreten zu sein. Versuche, ins Hauptmenü zurückzukehren und es noch einmal zu probieren.",
+      "GoMsg": "Start!",
+      "SelectedItems": "Ausgewählte Gegenstände",
+      "CompetitiveAlternative": "Gleichwertige Alternativen",
+      "StatPanel": { "AvgStats": "Durchschnittliche Werte (inkl. aller zufälligen Effekte)" }
     },
 
     "UpgradeFinder": {
