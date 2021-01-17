@@ -460,58 +460,58 @@
 
     "PaladinLegendariesComment": "PaladinLegendariesComment",
     "Of Dusk and Dawn": {
-      "name": "Of Dusk and Dawn",
-      "slot": "Head or Shoulder",
-      "desc": "When you reach 5 Holy Power, gain 6% damage and healing for 8 seconds. When you reach 0 Holy Power, gain 3% DR for 10 seconds.",
-      "droploc": "Stone Legion Generals, Castle Nathria"
+      "name": "黄昏与黎明",
+      "slot": "头部、肩部",
+      "desc": "当你拥有5层神圣能量时，你将获得黎明祝福。 当你拥有0层神圣能量时，你将获得黄昏祝福。 黎明祝福: 伤害和治疗效果提高6%，持续8 sec。 黄昏祝福: 受到的伤害降低3%，持续8 sec。",
+      "droploc": "顽石军团干将"
     },
     "Vanguards Momentum": {
-      "name": "Vanguard's Momentum",
-      "slot": "Head or Hands",
-      "desc": "Hammer of Wrath has an extra charge and increases Holy Damage done by 3% for 8s. Stacks 3 times.",
-      "droploc": "Sire Denathrius, Castle Nathria"
+      "name": "先锋之势",
+      "slot": "头部、手",
+      "desc": "愤怒之锤额外拥有1层充能，并使你造成的神圣伤害提高3%，持续8 sec，可以叠加3层。",
+      "droploc": "德纳修斯大帝"
     },
     "The Magistrates Judgment": {
-      "name": "The Magistrate's Judgment",
-      "slot": "Wrist or Finger",
-      "desc": "Judgment has a 60% chance to reduce the cost of your next Holy Power spender by 60%.",
-      "droploc": "Xav the Unfallen, Theater of Pain"
+      "name": "法官的审判",
+      "slot": "腕部、手指",
+      "desc": "审判有75%的几率使你下一个消耗神圣能量的技能的消耗减少1点。",
+      "droploc": "无堕者哈夫"
     },
     "Inflorescence of the Sunwell": {
-      "name": "Inflorescence of the Sunwell",
-      "slot": "Feet or Back",
-      "desc": "Infusion of Light has 1 additional charge and its effects are increased by 20%.",
-      "droploc": "Torghast, The Soulforges, Layer 3+"
+      "name": "太阳井之花",
+      "slot": "脚、背部",
+      "desc": "圣光灌注获得1次额外使用次数，且效果提高20%。",
+      "droploc": "罪魂之塔。灵魂熔炉，难度3+"
     },
     "Maraads Dying Breath": {
-      "name": "Maraad's Dying Breath",
-      "slot": "Chest or Finger",
-      "desc": "Light of Dawn causes your next Light of the Martyr to also heal your Beacon of Light. Each ally hit by LoD increases Light of the Martyr healing by 10%.",
-      "droploc": "Grand Proctor Beryllia, Sanguine Depths"
+      "name": "玛尔拉德的临终之息",
+      "slot": "胸部、手指",
+      "desc": "使用黎明之光治疗之后，你的下一次殉道者之光还会同时治疗你的圣光道标的目标。黎明之光每治疗一个盟友，就会使殉道者之光的治疗量提高10%。",
+      "droploc": "大学监贝律莉娅"
     },
     "Shadowbreaker, Dawn of the Sun": {
-      "name": "Shadowbreaker, Dawn of the Sun",
-      "slot": "Shoulder or Hands",
-      "desc": "Light of Dawns range is increased to 40 yards, and all allies healed receive full effect from your Mastery for 6s.",
-      "droploc": "Sun King's Salvation, Castle Nathria"
+      "name": "破影者，日之破晓",
+      "slot": "肩部、手",
+      "desc": "黎明之光的射程提高到40码。黎明之光中所有盟友从你的精通：光明使者中受到的加成将与在10码时受到的加成相同，持续6 sec。 荣耀圣言从你的精通中受到的加成提高50%。",
+      "droploc": "太阳之王的救赎"
     },
     "Shock Barrier": {
-      "name": "Shock Barrier",
-      "slot": "Legs or Feet",
-      "desc": "Holy Shock protects the target for 18 seconds, absorbing 20% of it's healing every 6s. Maximum of 5 targets protected at a time.",
-      "droploc": "Torghast, Coldheart Interstitia, Layer 3+"
+      "name": "震击屏障",
+      "slot": "腿部、脚",
+      "desc": "神圣震击使用圣光护盾保护目标，持续18 sec，每6秒最多可吸收神圣震击治疗量20%的伤害。只能保护5个目标。",
+      "droploc": "罪魂之塔。凇心间隙，难度3+"
     },
     "The Mad Paragon": {
-      "name": "The Mad Paragon",
-      "slot": "Waist or Feet",
-      "desc": "Hammer of Wrath deals 30% additional damage and extends the duration of Wings by 1s.",
-      "droploc": "The Great Vault"
+      "name": "疯狂圣贤",
+      "slot": "腰部、脚",
+      "desc": "愤怒之锤造成的伤害提高30%，并会使复仇之怒的持续时间延长1秒。",
+      "droploc": "任务：宏伟宝库"
     },
     "Relentless Inquisitor": {
-      "name": "Relentless Inquisitor (Retribution)",
-      "slot": "Legs or Back",
-      "desc": "Spending Holy Power grants you 1% haste per finisher for 12 sec, stacking up to 5 times.",
-      "droploc": "Torghast, The Upper Reaches, Layer 3+"
+      "name": "无情审讯",
+      "slot": "腿部、背部",
+      "desc": "使用终结技时每消耗一点神圣能量，就会使你的急速提高1%，持续12 sec，最多可叠加5次。",
+      "droploc": "上层区域，难度3+"
     },
 
     "PriestLegendariesComment": "PriestLegendariesComment",
