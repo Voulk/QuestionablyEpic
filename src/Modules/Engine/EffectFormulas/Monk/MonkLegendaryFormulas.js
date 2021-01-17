@@ -3,9 +3,9 @@ const IDSOOTHINGBREATH = 343737;
 const IDREVIVAL = 115310;
 const IDFORTIFYINGBREW = 115203;
 const IDGUSTOFMISTS = 117907;
-const IDRENEWINGMIST = 115151;
+const IDRENEWINGMIST = 119611;
 const IDENVELOPINGMIST = 124682;
-const IDESSENCEFONT = 191837;
+const IDESSENCEFONT = 191840;
 
 export const getMonkLegendary = (effectName, player, contentType) => {
     let result = 0.0;
@@ -46,7 +46,10 @@ export const getMonkLegendary = (effectName, player, contentType) => {
         const HPSViv = vivifyCleaveRatio * vivify.hps * 0.2;
 
         const HPSEnv = envelopingMist.singleCast * renewingMist.avgStacks * envelopingMist.cpm * 0.2 / 60;
-
+        
+        console.log(vivify);
+        console.log(envelopingMist);
+        console.log(renewingMist);
         bonus_stats.hps = HPSRem + HPSViv + HPSEnv;
     }
 

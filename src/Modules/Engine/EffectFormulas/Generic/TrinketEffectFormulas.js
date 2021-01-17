@@ -26,7 +26,7 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel) {
         // Assumption: 
         // No unique assumptions. Efficiency combines wasted shield and people running out of it.
         let effect = activeTrinket.effects[0];
-        let meteor_multiplier = (1+ effect.targets * effect.meteor)
+        let meteor_multiplier = (1+ effect.targets[contentType] * effect.meteor)
 
         bonus_stats.hps =  getProcessedValue(effect.coefficient, effect.table, itemLevel, effect.efficiency) * 
                 effect.ticks * meteor_multiplier / effect.cooldown * player.getStatPerc('Vers');
