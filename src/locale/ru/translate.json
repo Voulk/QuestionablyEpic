@@ -590,46 +590,46 @@
 
     "ShamanLegendariesComment": "ShamanLegendariesComment",
     "Earthen Harmony": {
-      "name": "Earthen Harmony",
-      "slot": "Chest or Back",
-      "desc": "Earth Shield healing is increased by 150% if your earth shield target is below 75% health, and healing wave adds a stack of Earth Shield to your target.",
-      "droploc": "General Kaal, Sanguine Depths"
+      "name": "Земная гармония",
+      "slot": "Грудь, Спина",
+      "desc": "Если запас здоровья цели, на которую наложен ваш 'Щит земли', составляет менее 75%, сила исцеления от 'Щита земли' увеличивается на 150%, а 'Волна исцеления' увеличивает количество эффектов 'Щита земли' на 1. Максимальное количество эффектов – 9.",
+      "droploc": "генерал Кааль"
     },
     "Jonat's Natural Focus": {
-      "name": "Jonat's Natural Focus",
-      "slot": "Waist or Legs",
-      "desc": "Healing Wave and Healing Surge increase the healing done by your next chain heal by 10%, stacking up to 5 times.",
-      "droploc": "Torghast, Skoldus Hall, Layer 3+"
+      "name": "Природное средоточие Джоната",
+      "slot": "Пояс, Ноги",
+      "desc": "'Волна исцеления' и 'Исцеляющий всплеск' усиливают исцеление от следующего 'Цепного исцеления' на 10%. Суммируется до 5 раз.",
+      "droploc": "Чертоги Скольда, этаж 3+"
     },
     "Primal Tide Core": {
-      "name": "Primal Tide Core",
-      "slot": "Head or Hands",
-      "desc": "Every 4 casts of Riptide also applies Riptide to another friendly target near your Riptide target.",
-      "droploc": "Torghast, The Soulforges, Layer 3+"
+      "name": "Изначальное сердце волн",
+      "slot": "Голова, Кисти рук",
+      "desc": "Каждое 4-е применение 'Быстрины' также применяет 'Быстрину' к другому союзнику рядом с целью.",
+      "droploc": "Кузни душ, этаж 3+"
     },
     "Ancestral Reminder": {
-      "name": "Ancestral Reminder",
-      "slot": "Wrist or Finger",
-      "desc": "Heroism / Bloodlust lasts an extra 20s on you, and you gain an extra 10% haste from it's effect.",
-      "droploc": "Stone Legion Generals, Castle Nathria"
+      "name": "Напоминание предков",
+      "slot": "Запястья, Палец",
+      "desc": "'Жажда крови' и другие аналогичные эффекты воздействуют на вас на 20.0 сек. дольше. Кроме того, эффекты типа 'Жажды крови' повышают вашу скорость еще на 10%.",
+      "droploc": "генералы Каменного легиона"
     },
     "Chains of Devastation": {
-      "name": "Chains of Devastation",
-      "slot": "Neck or Chest",
-      "desc": "Casting Chain Heal makes your next Chain Lightning instant cast. Casting Chain Lightning makes your next Chain Heal instant cast.",
-      "droploc": "PvP Honor Vendor"
+      "name": "Разрушительные цепи",
+      "slot": "Шея, Грудь",
+      "desc": "Применение 'Цепного исцеления' позволяет применить следующую 'Цепную молнию' мгновенно[. Эта 'Цепная молния' наносит на 50% больше урона]. Применение 'Цепной молнии' позволяет применить следующее 'Цепное исцеление' мгновенно[. Это 'Цепное исцеление' не требует маны].",
+      "droploc": "Покупается за очки чести у поставщика Зо'куула."
     },
     "Deeply Rooted Elements": {
-      "name": "Deeply Rooted Elements",
-      "slot": "Head or Shoulder",
-      "desc": "Casting Riptide has a 7% chance to activate Ascendance for 6 seconds.",
-      "droploc": "The Great Vault"
+      "name": "Укоренившиеся стихии",
+      "slot": "Голова, Плечо",
+      "desc": "Применение 'Удара бури' с вероятностью 8% на 6.0 сек. активирует 'Перерождение'.",
+      "droploc": "Задание 'Великое хранилище'"
     },
     "Spiritwalker's Tidal Totem": {
-      "name": "Spiritwalker's Tidal Totem",
-      "slot": "Legs or Back",
-      "desc": "After using Mana Tide Totem, the cast time of Healing Wave and Chain Heal is reduced by 50% and the mana cost by 25% for 10s.",
-      "droploc": "Huntsman Altimor, Castle Nathria"
+      "name": "Тотем волн духостранника",
+      "slot": "Ноги, Спина",
+      "desc": "Когда вы призываете тотем прилива маны, время применения 'Волны исцеления' и 'Цепного исцеления' сокращается на 50%, а затраты маны на применение 'Цепного исцеления' и 'Волны исцеления' снижаются на 25%. Время действия – 10 sec.",
+      "droploc": "ловчий Альтимор"
     },
 
     "MonkLegendariesComment": "MonkLegendariesComment",

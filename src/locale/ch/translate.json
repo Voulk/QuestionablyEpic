@@ -590,46 +590,46 @@
 
     "ShamanLegendariesComment": "ShamanLegendariesComment",
     "Earthen Harmony": {
-      "name": "Earthen Harmony",
-      "slot": "Chest or Back",
-      "desc": "Earth Shield healing is increased by 150% if your earth shield target is below 75% health, and healing wave adds a stack of Earth Shield to your target.",
-      "droploc": "General Kaal, Sanguine Depths"
+      "name": "大地祥和",
+      "slot": "胸部、背部",
+      "desc": "治疗波可以添加一层大地之盾效果，至多9层最大层数。如果你的大地之盾的目标低于75%生命值，大地之盾的治疗效果提高150%。",
+      "droploc": "卡尔将军"
     },
     "Jonat's Natural Focus": {
-      "name": "Jonat's Natural Focus",
-      "slot": "Waist or Legs",
-      "desc": "Healing Wave and Healing Surge increase the healing done by your next chain heal by 10%, stacking up to 5 times.",
-      "droploc": "Torghast, Skoldus Hall, Layer 3+"
+      "name": "约纳特的自然专注",
+      "slot": "腰部、腿部",
+      "desc": "施放治疗波或治疗之涌后，你下一个治疗链的治疗效果提高10%，最多叠加5次。",
+      "droploc": "斯科杜斯之厅，难度3+"
     },
     "Primal Tide Core": {
-      "name": "Primal Tide Core",
-      "slot": "Head or Hands",
-      "desc": "Every 4 casts of Riptide also applies Riptide to another friendly target near your Riptide target.",
-      "droploc": "Torghast, The Soulforges, Layer 3+"
+      "name": "始源之潮核心",
+      "slot": "头部、手",
+      "desc": "每施放4次激流，你的激流就会施加给初始激流目标附近的另一个友方目标。",
+      "droploc": "灵魂熔炉，难度3+"
     },
     "Ancestral Reminder": {
-      "name": "Ancestral Reminder",
-      "slot": "Wrist or Finger",
-      "desc": "Heroism / Bloodlust lasts an extra 20s on you, and you gain an extra 10% haste from it's effect.",
-      "droploc": "Stone Legion Generals, Castle Nathria"
+      "name": "先祖之忆",
+      "slot": "腕部、手指",
+      "desc": "嗜血以及其他相似效果在你身上的持续时间延长20.0秒，嗜血以及其他相似效果还会使你额外获得10%的急速。",
+      "droploc": "顽石军团干将"
     },
     "Chains of Devastation": {
-      "name": "Chains of Devastation",
-      "slot": "Neck or Chest",
-      "desc": "Casting Chain Heal makes your next Chain Lightning instant cast. Casting Chain Lightning makes your next Chain Heal instant cast.",
-      "droploc": "PvP Honor Vendor"
+      "name": "毁灭之链",
+      "slot": "颈部、胸部",
+      "desc": "施放治疗链会使你的下一个闪电链变为瞬发[，并且造成的伤害提高50%]。施放闪电链会使你的下一个治疗链变为瞬发[，且不消耗法力值]。",
+      "droploc": "用荣誉点数从承销商佐·库尔处购买。"
     },
     "Deeply Rooted Elements": {
-      "name": "Deeply Rooted Elements",
-      "slot": "Head or Shoulder",
-      "desc": "Casting Riptide has a 7% chance to activate Ascendance for 6 seconds.",
-      "droploc": "The Great Vault"
+      "name": "根深蒂固的元素",
+      "slot": "头部、肩部",
+      "desc": "施放 风暴打击有8%的几率激活升腾，持续6.0秒。",
+      "droploc": "任务：宏伟宝库"
     },
     "Spiritwalker's Tidal Totem": {
-      "name": "Spiritwalker's Tidal Totem",
-      "slot": "Legs or Back",
-      "desc": "After using Mana Tide Totem, the cast time of Healing Wave and Chain Heal is reduced by 50% and the mana cost by 25% for 10s.",
-      "droploc": "Huntsman Altimor, Castle Nathria"
+      "name": "灵魂行者的潮汐图腾",
+      "slot": "腿部、背部",
+      "desc": "使用法力之潮图腾后，治疗波和治疗链的施法时间缩短50%，法力值消耗减少25%，持续10 sec。",
+      "droploc": "猎手阿尔迪莫"
     },
 
     "MonkLegendariesComment": "MonkLegendariesComment",

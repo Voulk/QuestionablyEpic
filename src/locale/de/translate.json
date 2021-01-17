@@ -589,46 +589,46 @@
 
     "ShamanLegendariesComment": "ShamanLegendariesComment",
     "Earthen Harmony": {
-      "name": "Earthen Harmony",
-      "slot": "Chest or Back",
-      "desc": "Earth Shield healing is increased by 150% if your earth shield target is below 75% health, and healing wave adds a stack of Earth Shield to your target.",
-      "droploc": "General Kaal, Sanguine Depths"
+      "name": "Irdene Harmonie",
+      "slot": "Brust, Rücken",
+      "desc": "Die Heilung von 'Erdschild' wird um 150% erhöht, wenn das Ziel Eures Erdschilds weniger als 75% Gesundheit hat. Zusätzlich gewährt 'Welle der Heilung' dem Ziel einen Stapel von 'Erdschild', bis zu maximal 9 Stapeln.",
+      "droploc": "General Kaal"
     },
     "Jonat's Natural Focus": {
-      "name": "Jonat's Natural Focus",
-      "slot": "Waist or Legs",
-      "desc": "Healing Wave and Healing Surge increase the healing done by your next chain heal by 10%, stacking up to 5 times.",
-      "droploc": "Torghast, Skoldus Hall, Layer 3+"
+      "name": "Jonats Naturfokus",
+      "slot": "Taille, Beine",
+      "desc": "'Welle der Heilung' und 'Heilende Woge' erhöhen die Heilung Eures nächsten Einsatzes von 'Kettenheilung' um 10%. Dieser Effekt ist bis zu 5-mal stapelbar.",
+      "droploc": "Skoldushalle, Ebene 3+"
     },
     "Primal Tide Core": {
-      "name": "Primal Tide Core",
-      "slot": "Head or Hands",
-      "desc": "Every 4 casts of Riptide also applies Riptide to another friendly target near your Riptide target.",
-      "droploc": "Torghast, The Soulforges, Layer 3+"
+      "name": "Urzeitlicher Flutenkern",
+      "slot": "Kopf, Hände",
+      "desc": "Alle 4 Einsätze von 'Springflut' wird 'Springflut' einem zusätzlichen verbündeten Ziel in der Nähe des Ziels der Fähigkeit gewährt.",
+      "droploc": "Die Seelenschmieden, Ebene 3+"
     },
     "Ancestral Reminder": {
-      "name": "Ancestral Reminder",
-      "slot": "Wrist or Finger",
-      "desc": "Heroism / Bloodlust lasts an extra 20s on you, and you gain an extra 10% haste from it's effect.",
-      "droploc": "Stone Legion Generals, Castle Nathria"
+      "name": "Erinnerung der Ahnen",
+      "slot": "Handgelenk, Finger",
+      "desc": "'Kampfrausch' und ähnliche Effekte halten bei Euch 20.0 Sek. länger an und Effekte wie 'Kampfrausch' erhöhen Euer Tempo um zusätzlich 10%.",
+      "droploc": "Generäle der Steinlegion"
     },
     "Chains of Devastation": {
-      "name": "Chains of Devastation",
-      "slot": "Neck or Chest",
-      "desc": "Casting Chain Heal makes your next Chain Lightning instant cast. Casting Chain Lightning makes your next Chain Heal instant cast.",
-      "droploc": "PvP Honor Vendor"
+      "name": "Ketten der Verheerung",
+      "slot": "Hals, Brust",
+      "desc": "'Kettenheilung' macht Euren nächsten Einsatz von 'Kettenblitzschlag' zum Spontanzauber[und lässt ihn 50% mehr Schaden verursachen]. 'Kettenblitzschlag' macht Euren nächsten Einsatz von 'Kettenheilung' zum Spontanzauber[und lässt ihn kein Mana verbrauchen].",
+      "droploc": "Gegen Ehre von Lieferant Zo'kuul erhältlich."
     },
     "Deeply Rooted Elements": {
-      "name": "Deeply Rooted Elements",
-      "slot": "Head or Shoulder",
-      "desc": "Casting Riptide has a 7% chance to activate Ascendance for 6 seconds.",
-      "droploc": "The Great Vault"
+      "name": "Tief verwurzelte Elemente",
+      "slot": "Kopf, Schulter",
+      "desc": "Der Einsatz von 'Sturmschlag' hat eine Chance von 8%, für 6.0 Sek. 'Aszendenz' zu aktivieren.",
+      "droploc": "Quest: Die Große Schatzkammer"
     },
     "Spiritwalker's Tidal Totem": {
-      "name": "Spiritwalker's Tidal Totem",
-      "slot": "Legs or Back",
-      "desc": "After using Mana Tide Totem, the cast time of Healing Wave and Chain Heal is reduced by 50% and the mana cost by 25% for 10s.",
-      "droploc": "Huntsman Altimor, Castle Nathria"
+      "name": "Gezeitentotem des Geistwandlers",
+      "slot": "Beine, Rücken",
+      "desc": "Nach dem Aufstellen Eures Totems der Manaflut wird die Zauberzeit von 'Welle der Heilung' und 'Kettenheilung' um 50% verringert und die Manakosten von 'Kettenheilung' und 'Welle der Heilung' werden um 25% verringert. Hält 10 sec lang an.",
+      "droploc": "Jäger Altimor"
     },
 
     "MonkLegendariesComment": "MonkLegendariesComment",
