@@ -469,7 +469,7 @@ class Player {
       this.fightInfo = {
         hps: 5500,
         rawhps: 9420,
-        fightLength: 180,
+        fightLength: 465,
       };
 
       this.activeStats = {
