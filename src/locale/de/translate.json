@@ -515,76 +515,76 @@
 
     "PriestLegendariesComment": "PriestLegendariesComment",
     "Clarity of Mind": {
-      "name": "Clarity of Mind",
-      "slot": "Chest or Finger",
-      "desc": "Spirit Shell increases the duration of active atonements by 3s and reduces mana costs by 30%. During Rapture, PW:S costs 20% less mana and applies 6s longer atonements.",
-      "droploc": "Sludgefist, Castle Nathria"
+      "name": "Klarheit der Gedanken",
+      "slot": "Brust, Finger",
+      "desc": "Während 'Euphorie' aktiv ist, kostet 'Machtwort: Schild' 20% weniger Mana und der damit angewendete Effekt 'Abbitte' hält 6 Sek. länger an.",
+      "droploc": "Schlickfaust"
     },
     "Crystalline Reflection": {
-      "name": "Crystalline Reflection",
-      "slot": "Shoulder or Hands",
-      "desc": "Power Word Shield instantly heals the target for 42% SP, and reflects 20% of damage absorbed.",
-      "droploc": "Margrave Stradama, Plaguefall"
+      "name": "Kristalline Reflexion",
+      "slot": "Schulter, Hände",
+      "desc": "'Machtwort: Schild' heilt das Ziel sofort um (42% of Spell power) Gesundheit und reflektiert 20% des absorbierten Schadens.",
+      "droploc": "Markgräfin Stradama"
     },
     "Kiss of Death": {
-      "name": "Kiss of Death",
-      "slot": "Legs or Feet",
-      "desc": "Reduces Shadow Word: Death's cooldown by 8s and causes it's damage to trigger atonement when used on targets below 20% health.",
-      "droploc": "Torghast, Mort'regar, Layer 3+"
+      "name": "Kuss des Todes",
+      "slot": "Beine, Füße",
+      "desc": "Verringert die Abklingzeit von 'Schattenwort: Tod' um 8 Sek. und lässt den Schaden dieser Fähigkeit 'Abbitte' auslösen, wenn sie gegen Ziele mit weniger als 20% Gesundheit eingesetzt wird.",
+      "droploc": "Torghast, Mort'regar, Ebene 3+"
     },
     "The Penitent One": {
-      "name": "The Penitent One",
-      "slot": "Feet or Back",
-      "desc": "Power Word: Radiance has a 60% chance to cause your next Penance to be free and fire 3 extra bolts.",
-      "droploc": "Torghast, The Soulforges, Layer 3+"
+      "name": "Der Bußfertige",
+      "slot": "Füße, Rücken",
+      "desc": "'Machtwort: Glanz' hat eine Chance von 60%, Euren nächsten Einsatz von 'Sühne' kostenlos zu machen und ihn 3 zusätzliches Geschoss verschießen zu lassen.",
+      "droploc": "Die Seelenschmieden, Ebene 3+"
     },
     "Cauterizing Shadows": {
-      "name": "Cauterizing Shadows",
-      "slot": "Waist or Feet",
-      "desc": "When Shadow Word: Pain expires on a target, 3 allies within 30 yards of the target are healed.",
-      "droploc": "Mordretha, Theater of Pain"
+      "name": "Kauterisierende Schatten",
+      "slot": "Taille, Füße",
+      "desc": "Wenn 'Schattenwort: Schmerz' bei einem Ziel abläuft, werden 3 Verbündete innerhalb von 30 Metern um das betroffene Ziel um (55% of Spell power) Gesundheit geheilt.",
+      "droploc": "Mordretha, die Unendliche Kaiserin"
     },
     "Measured Contemplation": {
-      "name": "Measured Contemplation",
-      "slot": "Neck or Chest",
-      "desc": "Every 15s that you do not cast Flash Heal / Shadow Mend, the healing of your next Flash Heal / Shadow Mend is increased by 50%. Stacks four times.",
-      "droploc": "The Great Vault"
+      "name": "Bedächtiges Nachsinnen",
+      "slot": "Hals, Brust",
+      "desc": "Pro 15 Sek., in denen Ihr 'Schattenheilung' nicht einsetzt, wird die Heilung Eures nächsten Einsatzes von 'Schattenheilung' um 50% erhöht. Dieser Effekt ist bis zu 4-mal stapelbar.",
+      "droploc": "Quest: Die Große Schatzkammer"
     },
     "Twins of the Sun Priestess": {
-      "name": "Twins of the Sun Priestess",
-      "slot": "Head or Shoulder",
-      "desc": "Power Infusion also grants you 100% of its effects when used on an ally.",
-      "droploc": "Stone Legion Generals, Castle Nathria"
+      "name": "Zwillinge der Sonnenpriesterin",
+      "slot": "Kopf, Schulter",
+      "desc": "'Seele der Macht' gewährt auch bei Anwendung auf Verbündete 100% seines Effekts.",
+      "droploc": "Generäle der Steinlegion"
     },
     "Divine Image": {
-      "name": "Divine Image",
-      "slot": "Head or Waist",
-      "desc": "When you use a Holy Word spell, you have a chance to summon a Naaru to your side. For 15s, the Naaru will cast similar spells to you.",
-      "droploc": "Torghast, Coldheart Interstitia, Layer 3+"
+      "name": "Göttliches Abbild",
+      "slot": "Kopf, Taille",
+      "desc": "Beim Einsatz eines Segensworts besteht eine Chance, dass ein Abbild eines Naaru an Eure Seite beschworen wird. Für die nächsten 15 sec imitiert der Naaru alle von Euch gewirkten Zauber.",
+      "droploc": "Kaltherzinterstitia, Ebene 3+"
     },
     "Flash Concentration": {
-      "name": "Flash Concentration",
-      "slot": "Neck or Wrist",
-      "desc": "Each time you cast Flash Heal, Heal has it's casting time reduced by 0.1s and healing increased by 3%, stacking 5 times.",
-      "droploc": "Grand Proctor Beryllia, Sanguine Depths"
+      "name": "Blitzkonzentration",
+      "slot": "Hals, Handgelenk",
+      "desc": "Jedes Mal, wenn Ihr 'Blitzheilung' wirkt, wird die Zauberzeit von 'Heilung' um 0.2 Sek. verringert und seine Heilung um 3% erhöht. Bis zu 5-mal stapelbar.",
+      "droploc": "Großaufseherin Beryllia"
     },
     "Harmonious Apparatus": {
-      "name": "Harmonious Apparatus",
-      "slot": "Shoulder or Finger",
-      "desc": "Circle of healing reduces the cooldown on HW: Sanctify, Prayer of Mending reduces the cooldown on HW: Serenity, and Holy Fire reduces the cooldown on HW: Chastise by 4s.",
-      "droploc": "Sire Denathrius, Castle Nathria"
+      "name": "Harmonischer Apparat",
+      "slot": "Schulter, Finger",
+      "desc": "'Kreis der Heilung' verringert die Abklingzeit von 'Segenswort: Heiligung', 'Gebet der Besserung' verringert die Abklingzeit von 'Segenswort: Epiphanie' und 'Heiliges Feuer' verringert die Abklingzeit von 'Segenswort: Züchtigung' um 4 Sek.",
+      "droploc": "Graf Denathrius"
     },
     "X'anshi, Return of Archbishop Benedictus": {
-      "name": "X'anshi, Return of Archbishop Benedictus",
-      "slot": "Legs or Back",
-      "desc": "After Spirit of Redemption expires, you will revive at up to 100% health, based on your effectiveness during Spirit of Redemption. 10 minute cooldown after reviving.",
-      "droploc": "Valinor, World Boss"
+      "name": "X'anshi, Rückkehr von Erzbischof Benedictus",
+      "slot": "Beine, Rücken",
+      "desc": "Wenn Euer Geist der Erlösung abläuft, werdet Ihr mit bis zu 100% Gesundheit wiederbelebt, abhängig davon, wie effektiv Ihr als Geist der Erlösung wart. Nach Eurer Wiederbelebung kann der Geist der Erlösung 10 min lang nicht erneut ausgelöst werden.",
+      "droploc": "Valinor, das Licht der Äonen"
     },
     "Vault of Heavens": {
-      "name": "Vault of Heavens",
-      "slot": "Wrist or Finger",
-      "desc": "Leap of Faith instead causes you to leap to the target, and has two charges.",
-      "droploc": "PvP Honor Vendor"
+      "name": "Sprung der Himmel",
+      "slot": "Handgelenk, Finger",
+      "desc": "'Glaubenssprung' lässt Euch zu Eurem Ziel springen und hat 2 Aufladungen.",
+      "droploc": "Gegen Ehre von Lieferant Zo'kuul erhältlich."
     },
 
     "ShamanLegendariesComment": "ShamanLegendariesComment",

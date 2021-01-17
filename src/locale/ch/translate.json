@@ -516,76 +516,76 @@
 
     "PriestLegendariesComment": "PriestLegendariesComment",
     "Clarity of Mind": {
-      "name": "Clarity of Mind",
-      "slot": "Chest or Finger",
-      "desc": "Spirit Shell increases the duration of active atonements by 3s and reduces mana costs by 30%. During Rapture, PW:S costs 20% less mana and applies 6s longer atonements.",
-      "droploc": "Sludgefist, Castle Nathria"
+      "name": "坚定意志",
+      "slot": "胸部、手指",
+      "desc": "全神贯注期间，真言术：盾消耗的法力值降低20%，施加的救赎效果延长6秒。",
+      "droploc": "泥拳"
     },
     "Crystalline Reflection": {
-      "name": "Crystalline Reflection",
-      "slot": "Shoulder or Hands",
-      "desc": "Power Word Shield instantly heals the target for 42% SP, and reflects 20% of damage absorbed.",
-      "droploc": "Margrave Stradama, Plaguefall"
+      "name": "晶化反射",
+      "slot": "肩部、手",
+      "desc": "真言术：盾立即为目标恢复(42% of Spell power)点生命值，并反射吸收伤害的20%。",
+      "droploc": "斯特拉达玛侯爵"
     },
     "Kiss of Death": {
-      "name": "Kiss of Death",
-      "slot": "Legs or Feet",
-      "desc": "Reduces Shadow Word: Death's cooldown by 8s and causes it's damage to trigger atonement when used on targets below 20% health.",
-      "droploc": "Torghast, Mort'regar, Layer 3+"
+      "name": "死神之吻",
+      "slot": "腿部、脚",
+      "desc": "使暗言术：灭的冷却时间缩短8秒，且暗言术：灭对生命值低于20%的目标造成伤害时可以触发救赎。",
+      "droploc": "莫尔特雷加，难度3+"
     },
     "The Penitent One": {
-      "name": "The Penitent One",
-      "slot": "Feet or Back",
-      "desc": "Power Word: Radiance has a 60% chance to cause your next Penance to be free and fire 3 extra bolts.",
-      "droploc": "Torghast, The Soulforges, Layer 3+"
+      "name": "悔罪者",
+      "slot": "脚、背部",
+      "desc": "真言术：耀有60%的几率使你下一次苦修不消耗法力值，且额外发射3支圣光之矢。",
+      "droploc": "灵魂熔炉，难度3+"
     },
     "Cauterizing Shadows": {
-      "name": "Cauterizing Shadows",
-      "slot": "Waist or Feet",
-      "desc": "When Shadow Word: Pain expires on a target, 3 allies within 30 yards of the target are healed.",
-      "droploc": "Mordretha, Theater of Pain"
+      "name": "烧灼暗影",
+      "slot": "腰部、脚",
+      "desc": "当暗言术：痛在一名目标身上消失时，该目标30码范围内的3名盟友将恢复(55% of Spell power)点生命值。",
+      "droploc": "无尽女皇莫德蕾莎"
     },
     "Measured Contemplation": {
-      "name": "Measured Contemplation",
-      "slot": "Neck or Chest",
-      "desc": "Every 15s that you do not cast Flash Heal / Shadow Mend, the healing of your next Flash Heal / Shadow Mend is increased by 50%. Stacks four times.",
-      "droploc": "The Great Vault"
+      "name": "审慎沉思",
+      "slot": "颈部、胸部",
+      "desc": "当你不施放暗影愈合时，会使你的下一次暗影愈合的效果提高50%。该效果每15秒生效一次，最多叠加4次。",
+      "droploc": "宏伟宝库"
     },
     "Twins of the Sun Priestess": {
-      "name": "Twins of the Sun Priestess",
-      "slot": "Head or Shoulder",
-      "desc": "Power Infusion also grants you 100% of its effects when used on an ally.",
-      "droploc": "Stone Legion Generals, Castle Nathria"
+      "name": "双子太阳女祭司",
+      "slot": "头部、肩部",
+      "desc": "对盟友使用能量灌注时，也会使你获得其100%的效果。",
+      "droploc": "顽石军团干将"
     },
     "Divine Image": {
-      "name": "Divine Image",
-      "slot": "Head or Waist",
-      "desc": "When you use a Holy Word spell, you have a chance to summon a Naaru to your side. For 15s, the Naaru will cast similar spells to you.",
-      "droploc": "Torghast, Coldheart Interstitia, Layer 3+"
+      "name": "神圣镜像",
+      "slot": "头部、腰部",
+      "desc": "当你使用圣言法术时，有几率在你身边召唤一个纳鲁镜像。在15 sec内，你每施放一个法术，纳鲁也将施放一个类似的法术。",
+      "droploc": "凇心间隙，难度3+"
     },
     "Flash Concentration": {
-      "name": "Flash Concentration",
-      "slot": "Neck or Wrist",
-      "desc": "Each time you cast Flash Heal, Heal has it's casting time reduced by 0.1s and healing increased by 3%, stacking 5 times.",
-      "droploc": "Grand Proctor Beryllia, Sanguine Depths"
+      "name": "快速专注",
+      "slot": "颈部、腕部",
+      "desc": "每当你施放快速治疗时，治疗术的施法时间缩短0.2秒，治疗效果提高3%，该效果最多可叠加5次。",
+      "droploc": "大学监贝律莉娅"
     },
     "Harmonious Apparatus": {
-      "name": "Harmonious Apparatus",
-      "slot": "Shoulder or Finger",
-      "desc": "Circle of healing reduces the cooldown on HW: Sanctify, Prayer of Mending reduces the cooldown on HW: Serenity, and Holy Fire reduces the cooldown on HW: Chastise by 4s.",
-      "droploc": "Sire Denathrius, Castle Nathria"
+      "name": "谐律装置",
+      "slot": "肩部、手指",
+      "desc": "治疗之环会使圣言术：灵的冷却时间缩短，愈合祷言会使圣言术：静的冷却时间缩短，神圣之火会使圣言术：罚的冷却时间缩短，缩短的数值均为4秒。",
+      "droploc": "德纳修斯大帝"
     },
     "X'anshi, Return of Archbishop Benedictus": {
-      "name": "X'anshi, Return of Archbishop Benedictus",
-      "slot": "Legs or Back",
-      "desc": "After Spirit of Redemption expires, you will revive at up to 100% health, based on your effectiveness during Spirit of Redemption. 10 minute cooldown after reviving.",
-      "droploc": "Valinor, World Boss"
+      "name": "萨什，大主教本尼迪塔斯的归来",
+      "slot": "腿部、背部",
+      "desc": "在救赎之魂消失后，你将会复活，恢复最多100%的生命值，恢复的生命值由你在救赎之魂下产生的有效治疗决定。每10 min只能触发一次。",
+      "droploc": "瓦里诺，万古之光"
     },
     "Vault of Heavens": {
-      "name": "Vault of Heavens",
-      "slot": "Wrist or Finger",
-      "desc": "Leap of Faith instead causes you to leap to the target, and has two charges.",
-      "droploc": "PvP Honor Vendor"
+      "name": "天堂之跃",
+      "slot": "腕部、手指",
+      "desc": "信仰飞跃现在会使你向目标跳去，并且可以使用2次。",
+      "droploc": "用荣誉点数从承销商佐·库尔处购买。"
     },
 
     "ShamanLegendariesComment": "ShamanLegendariesComment",

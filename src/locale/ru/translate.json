@@ -516,76 +516,76 @@
 
     "PriestLegendariesComment": "PriestLegendariesComment",
     "Clarity of Mind": {
-      "name": "Clarity of Mind",
-      "slot": "Chest or Finger",
-      "desc": "Spirit Shell increases the duration of active atonements by 3s and reduces mana costs by 30%. During Rapture, PW:S costs 20% less mana and applies 6s longer atonements.",
-      "droploc": "Sludgefist, Castle Nathria"
+      "name": "Ясность разума",
+      "slot": "Грудь, Палец",
+      "desc": "Пока действует 'Вознесение', стоимость 'Слова силы: Щит' снижается на 20%, а 'Искупление вины' от него длится на 6 сек. дольше.",
+      "droploc": "Грязешмяк"
     },
     "Crystalline Reflection": {
-      "name": "Crystalline Reflection",
-      "slot": "Shoulder or Hands",
-      "desc": "Power Word Shield instantly heals the target for 42% SP, and reflects 20% of damage absorbed.",
-      "droploc": "Margrave Stradama, Plaguefall"
+      "name": "Кристальное отражение",
+      "slot": "Плечо, Кисти рук",
+      "desc": "'Слово силы: Щит' мгновенно восполняет цели (42% of Spell power) здоровья и отражает 20% поглощенного урона в атакующего противника.",
+      "droploc": "маркграфиня Страдама"
     },
     "Kiss of Death": {
-      "name": "Kiss of Death",
-      "slot": "Legs or Feet",
-      "desc": "Reduces Shadow Word: Death's cooldown by 8s and causes it's damage to trigger atonement when used on targets below 20% health.",
-      "droploc": "Torghast, Mort'regar, Layer 3+"
+      "name": "Поцелуй смерти",
+      "slot": "Ноги, Ступни",
+      "desc": "Сокращает время восстановления 'Слова Тьмы: Смерть' на 8 сек. Урон от этой способности активирует эффект 'Искупление вины' при применении к цели с запасом здоровья менее 20%.",
+      "droploc": "Морт'регар, этаж 3+"
     },
     "The Penitent One": {
-      "name": "The Penitent One",
-      "slot": "Feet or Back",
-      "desc": "Power Word: Radiance has a 60% chance to cause your next Penance to be free and fire 3 extra bolts.",
-      "droploc": "Torghast, The Soulforges, Layer 3+"
+      "name": "Кающийся грешник",
+      "slot": "Ступни, Спина",
+      "desc": "'Слово силы: Сияние' с вероятностью 60% позволяет применить следующую 'Исповедь' без затрат ресурса и увеличивает количество снарядов на 3.",
+      "droploc": "Кузни душ, этаж 3+"
     },
     "Cauterizing Shadows": {
-      "name": "Cauterizing Shadows",
-      "slot": "Waist or Feet",
-      "desc": "When Shadow Word: Pain expires on a target, 3 allies within 30 yards of the target are healed.",
-      "droploc": "Mordretha, Theater of Pain"
+      "name": "Прижигающие тени",
+      "slot": "Пояс, Ступни",
+      "desc": "По истечении времени действия 'Слова Тьмы: Боль' 3 союзник в радиусе 30 м от цели восполняют (55% of Spell power) ед. здоровья.",
+      "droploc": "Мордрета, Вечная императрица"
     },
     "Measured Contemplation": {
-      "name": "Measured Contemplation",
-      "slot": "Neck or Chest",
-      "desc": "Every 15s that you do not cast Flash Heal / Shadow Mend, the healing of your next Flash Heal / Shadow Mend is increased by 50%. Stacks four times.",
-      "droploc": "The Great Vault"
+      "name": "Спокойное созерцание",
+      "slot": "Шея, Грудь",
+      "desc": "За каждые 15 сек., что вы не применяете 'Темное восстановление', объем исцеления от следующего 'Темного восстановления' увеличивается на 50%. Суммируется до 4 раз.",
+      "droploc": "Задание 'Великое хранилище'"
     },
     "Twins of the Sun Priestess": {
-      "name": "Twins of the Sun Priestess",
-      "slot": "Head or Shoulder",
-      "desc": "Power Infusion also grants you 100% of its effects when used on an ally.",
-      "droploc": "Stone Legion Generals, Castle Nathria"
+      "name": "Близнецы жрицы Солнца",
+      "slot": "Голова, Плечо",
+      "desc": "Когда вы применяете 'Придание сил' к союзнику, то тоже получаете 100% его эффекта.",
+      "droploc": "генералы Каменного легиона"
     },
     "Divine Image": {
-      "name": "Divine Image",
-      "slot": "Head or Waist",
-      "desc": "When you use a Holy Word spell, you have a chance to summon a Naaru to your side. For 15s, the Naaru will cast similar spells to you.",
-      "droploc": "Torghast, Coldheart Interstitia, Layer 3+"
+      "name": "Божественный обра",
+      "slot": "Голова, Пояс",
+      "desc": "Применяя 'Слово Света', вы можете призвать образ наару. В течение 15 sec. при каждом применении вами заклинания призванный наару будет применять аналогичное заклинание.",
+      "droploc": "Междумирье Бессердечных, этаж 3+"
     },
     "Flash Concentration": {
-      "name": "Flash Concentration",
-      "slot": "Neck or Wrist",
-      "desc": "Each time you cast Flash Heal, Heal has it's casting time reduced by 0.1s and healing increased by 3%, stacking 5 times.",
-      "droploc": "Grand Proctor Beryllia, Sanguine Depths"
+      "name": "Быстрая концентрация",
+      "slot": "Шея, Запястьяt",
+      "desc": "'Исцеление', примененное после 'Быстрого исцеления', требует на 0.2 сек. меньше времени на применение и восполняет на 3% больше здоровья. Суммируется до 5 раз.",
+      "droploc": "верховная надзирательница Бериллия"
     },
     "Harmonious Apparatus": {
-      "name": "Harmonious Apparatus",
-      "slot": "Shoulder or Finger",
-      "desc": "Circle of healing reduces the cooldown on HW: Sanctify, Prayer of Mending reduces the cooldown on HW: Serenity, and Holy Fire reduces the cooldown on HW: Chastise by 4s.",
-      "droploc": "Sire Denathrius, Castle Nathria"
+      "name": "Аппарат гармонии",
+      "slot": "Плечо, Палец",
+      "desc": "'Круг исцеления' сокращает время восстановления 'Слова Света: Освящение', 'Молитва восстановления' сокращает время восстановления 'Слова Света: Безмятежность', а 'Священный огонь' сокращает время восстановления 'Слова Света: Наказание' на 4 сек.",
+      "droploc": "сир Денатрий"
     },
     "X'anshi, Return of Archbishop Benedictus": {
-      "name": "X'anshi, Return of Archbishop Benedictus",
-      "slot": "Legs or Back",
-      "desc": "After Spirit of Redemption expires, you will revive at up to 100% health, based on your effectiveness during Spirit of Redemption. 10 minute cooldown after reviving.",
-      "droploc": "Valinor, World Boss"
+      "name": "Кс'анши, Возвращение архиепископа Бенедикта",
+      "slot": "Ноги, Спина",
+      "desc": "По истечении времени действия 'Духа воздаяния' вы возрождаетесь с запасом здоровья до 100% максимального в зависимости от эффективности действий в облике духа воздаяния. После возрождения этот эффект не срабатывает в течение 10 min.",
+      "droploc": "'Валинор', Светоч Эпох"
     },
     "Vault of Heavens": {
-      "name": "Vault of Heavens",
-      "slot": "Wrist or Finger",
-      "desc": "Leap of Faith instead causes you to leap to the target, and has two charges.",
-      "droploc": "PvP Honor Vendor"
+      "name": "Небесный прыжок",
+      "slot": "Запястья, Палец",
+      "desc": "'Духовное рвение' имеет 2 заряда и переносит вас к цели.",
+      "droploc": "Покупается за очки чести у поставщика Зо'куула."
     },
 
     "ShamanLegendariesComment": "ShamanLegendariesComment",

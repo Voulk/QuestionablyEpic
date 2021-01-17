@@ -480,7 +480,7 @@
       "name": "Inflorescence du Puits de soleil",
       "slot": "Pieds, Dos",
       "desc": "Imprégnation de lumière a 1 charge supplémentaire et ses effets sont augmentés de 20%.",
-      "droploc": "Tourment, Forges des Âmes, échelon 3 ou plus"
+      "droploc": "Forges des Âmes, échelon 3 ou plus"
     },
     "Maraads Dying Breath": {
       "name": "Dernier souffle de Maraad",
@@ -515,76 +515,76 @@
 
     "PriestLegendariesComment": "PriestLegendariesComment",
     "Clarity of Mind": {
-      "name": "Clarity of Mind",
-      "slot": "Chest or Finger",
-      "desc": "Spirit Shell increases the duration of active atonements by 3s and reduces mana costs by 30%. During Rapture, PW:S costs 20% less mana and applies 6s longer atonements.",
-      "droploc": "Sludgefist, Castle Nathria"
+      "name": "Clarté d’esprit",
+      "slot": "Torse, Doigt",
+      "desc": "Pendant Extase, le coût en mana de Mot de pouvoir : Bouclier est réduit de 20% et la durée des Expiations qu’il applique est augmentée de 6 s.",
+      "droploc": "Fangepoing"
     },
     "Crystalline Reflection": {
-      "name": "Crystalline Reflection",
-      "slot": "Shoulder or Hands",
-      "desc": "Power Word Shield instantly heals the target for 42% SP, and reflects 20% of damage absorbed.",
-      "droploc": "Margrave Stradama, Plaguefall"
+      "name": "Reflet cristallin",
+      "slot": "Épaule, Mains",
+      "desc": "Mot de pouvoir : Bouclier rend instantanément (42% of Spell power) points de vie à la cible et renvoie 20% des dégâts absorbés.",
+      "droploc": "margrave Stradama"
     },
     "Kiss of Death": {
-      "name": "Kiss of Death",
-      "slot": "Legs or Feet",
-      "desc": "Reduces Shadow Word: Death's cooldown by 8s and causes it's damage to trigger atonement when used on targets below 20% health.",
-      "droploc": "Torghast, Mort'regar, Layer 3+"
+      "name": "Baiser de la mort",
+      "slot": "Jambes, Pieds",
+      "desc": "Réduit de 8 s le temps de recharge de Mot de l’ombre : Mort et permet à ses dégâts de déclencher Expiation sur les cibles disposant de moins de 20% de leurs points de vie.",
+      "droploc": "Mort’regar, échelon 3 ou plus"
     },
     "The Penitent One": {
-      "name": "The Penitent One",
-      "slot": "Feet or Back",
-      "desc": "Power Word: Radiance has a 60% chance to cause your next Penance to be free and fire 3 extra bolts.",
-      "droploc": "Torghast, The Soulforges, Layer 3+"
+      "name": "Le pénitent",
+      "slot": "Pieds, Dos",
+      "desc": "Mot de pouvoir : Radiance a 60% de chances de permettre à la prochaine Pénitence de tirer 3 salves supplémentaires.",
+      "droploc": "Forges des Âmes, échelon 3 ou plus"
     },
     "Cauterizing Shadows": {
-      "name": "Cauterizing Shadows",
-      "slot": "Waist or Feet",
-      "desc": "When Shadow Word: Pain expires on a target, 3 allies within 30 yards of the target are healed.",
-      "droploc": "Mordretha, Theater of Pain"
+      "name": "Ombres cautérisantes",
+      "slot": "Taille, Pieds",
+      "desc": "Lorsque Mot de l’ombre : Douleur prend fin sur une cible, 3 alliés à moins de 30 mètres de la cible récupèrent (55% of Spell power) points de vie.",
+      "droploc": "Mordretha, l’impératrice immortelle"
     },
     "Measured Contemplation": {
-      "name": "Measured Contemplation",
-      "slot": "Neck or Chest",
-      "desc": "Every 15s that you do not cast Flash Heal / Shadow Mend, the healing of your next Flash Heal / Shadow Mend is increased by 50%. Stacks four times.",
-      "droploc": "The Great Vault"
+      "name": "Contemplation mesurée",
+      "slot": "Cou, Torse",
+      "desc": "Pour chaque période de 15 s écoulées sans lancer Guérison de l’ombre, les soins prodigués par votre prochaine incantation de ce sort sont augmentés de 50%. Cet effet est cumulable jusqu’à 4 fois.",
+      "droploc": "Quête : La grande chambre forte"
     },
     "Twins of the Sun Priestess": {
-      "name": "Twins of the Sun Priestess",
-      "slot": "Head or Shoulder",
-      "desc": "Power Infusion also grants you 100% of its effects when used on an ally.",
-      "droploc": "Stone Legion Generals, Castle Nathria"
+      "name": "Prêtresse des Jumeaux du soleil",
+      "slot": "Tête, Épaule",
+      "desc": "Infusion de puissance vous confère également 100% de ses effets lorsque vous l’utilisez sur un allié.",
+      "droploc": "généraux de la Légion de pierre"
     },
     "Divine Image": {
-      "name": "Divine Image",
-      "slot": "Head or Waist",
-      "desc": "When you use a Holy Word spell, you have a chance to summon a Naaru to your side. For 15s, the Naaru will cast similar spells to you.",
-      "droploc": "Torghast, Coldheart Interstitia, Layer 3+"
+      "name": "Image divine",
+      "slot": "Tête, Taille",
+      "desc": "Lorsque vous lancez un sort Mot sacré, vous avez une chance d’invoquer une image d’un Naaru à vos côtés. Pendant 15 sec, chaque fois que vous lancez un sort, le Naaru le lance également.",
+      "droploc": "Interstice Cœur-Algide, échelon 3 ou plus"
     },
     "Flash Concentration": {
-      "name": "Flash Concentration",
-      "slot": "Neck or Wrist",
-      "desc": "Each time you cast Flash Heal, Heal has it's casting time reduced by 0.1s and healing increased by 3%, stacking 5 times.",
-      "droploc": "Grand Proctor Beryllia, Sanguine Depths"
+      "name": "Concentration éclair",
+      "slot": "Cou, Poignets",
+      "desc": "Chaque fois que vous lancez Soins rapides, votre sort Soins voit son temps d’incantation réduit de 0.2 s et ses soins augmentés de 3%. Cumulable jusqu’à 5 fois.",
+      "droploc": "grande déléguée Beryllia"
     },
     "Harmonious Apparatus": {
-      "name": "Harmonious Apparatus",
-      "slot": "Shoulder or Finger",
-      "desc": "Circle of healing reduces the cooldown on HW: Sanctify, Prayer of Mending reduces the cooldown on HW: Serenity, and Holy Fire reduces the cooldown on HW: Chastise by 4s.",
-      "droploc": "Sire Denathrius, Castle Nathria"
+      "name": "Appareil harmonieux",
+      "slot": "Épaule, Doigt",
+      "desc": "Cercle de soins réduit le temps de recharge de Mot sacré : Sanctification, Prière de guérison réduit le temps de recharge de Mot sacré : Sérénité, et Flammes sacrées réduit le temps de recharge de Mot sacré : Châtier de 4 s.",
+      "droploc": "sire Denathrius"
     },
     "X'anshi, Return of Archbishop Benedictus": {
-      "name": "X'anshi, Return of Archbishop Benedictus",
-      "slot": "Legs or Back",
-      "desc": "After Spirit of Redemption expires, you will revive at up to 100% health, based on your effectiveness during Spirit of Redemption. 10 minute cooldown after reviving.",
-      "droploc": "Valinor, World Boss"
+      "name": "X’anshi, retour de l’archevêque Benedictus",
+      "slot": "Jambes, Dos",
+      "desc": "Après la dissipation d’Esprit de rédemption, vous revenez à la vie avec un maximum de 100% de vos points de vie, en fonction de l’efficacité dont vous avez fait preuve sous votre forme d’Esprit de rédemption. Après être revenu à la vie, vous ne pouvez pas bénéficier de cet effet pendant 10 min.",
+      "droploc": "Valinor, la Lumière des éons"
     },
     "Vault of Heavens": {
-      "name": "Vault of Heavens",
-      "slot": "Wrist or Finger",
-      "desc": "Leap of Faith instead causes you to leap to the target, and has two charges.",
-      "droploc": "PvP Honor Vendor"
+      "name": "Voûte céleste",
+      "slot": "Poignets, Doigt",
+      "desc": "Saut de foi vous permet de bondir jusqu’à votre cible et possède 2 charges.",
+      "droploc": " À acheter contre des points d’honneur auprès du pourvoyeur Zo’kuul."
     },
 
     "ShamanLegendariesComment": "ShamanLegendariesComment",
