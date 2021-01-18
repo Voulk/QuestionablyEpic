@@ -9,7 +9,7 @@
     },
 
     "_Comments1": "Common Words",
-    "Login": "LoginCH",
+    "Login": "登录",
     "Name": "NameCH",
     "Class": "ClassCH",
     "Cooldown": "CooldownCH",
@@ -199,7 +199,6 @@
       "ExploreCovenants": "Explore CovenantsCH",
       "LegendaryAnalysis": "Legendary AnalysisCH",
       "TrinketAnalysis": "Trinket AnalysisCH",
-      "GreatVault": "The Great Vault (Coming Soon)CH",
       "CooldownPlanner": "Cooldown Planner (Coming Soon)CH",
       "Profile": "ProfileCH",
       "CharHeader": "CharactersCH",

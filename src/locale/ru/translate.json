@@ -9,7 +9,7 @@
     },
 
     "_Comments1": "Common Words",
-    "Login": "LoginRU",
+    "Login": "Войти",
     "Name": "NameRU",
     "Class": "ClassRU",
     "Cooldown": "CooldownRU",
@@ -199,7 +199,6 @@
       "ExploreCovenants": "Explore CovenantsRU",
       "LegendaryAnalysis": "Legendary AnalysisRU",
       "TrinketAnalysis": "Trinket AnalysisRU",
-      "GreatVault": "The Great Vault (Coming Soon)RU",
       "CooldownPlanner": "Cooldown Planner (Coming Soon)RU",
       "Profile": "ProfileRU",
       "CharHeader": "CharactersRU",

@@ -9,7 +9,7 @@
     },
 
     "_Comments1": "Common Words",
-    "Login": "LoginDE",
+    "Login": "Einloggen",
     "Name": "NameDE",
     "Class": "ClassDE",
     "Cooldown": "CooldownDE",
@@ -198,7 +198,6 @@
       "ExploreCovenants": "Erkunde die Pakte",
       "LegendaryAnalysis": "Analyse der legendären Effekte",
       "TrinketAnalysis": "Trinket AnalysisDE",
-      "GreatVault": "The Great Vault (Coming Soon)DE",
       "CooldownPlanner": "Cooldownplaner (Coming Soon)",
       "Profile": "Profil",
       "CharHeader": "Charaktere",
