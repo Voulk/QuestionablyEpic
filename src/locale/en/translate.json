@@ -193,7 +193,7 @@
       "PatronInvite": "Love the app? Support the site on Patreon!",
       "PatronThanks": "Thank you so much for your support!",
       "TopGear": "Top Gear (Beta)",
-      "UpgradeFinder": "Upgrade Finder (Alpha)",
+      "UpgradeFinder": "Upgrade Finder (Beta)",
       "QuickCompare": "Gear Quick Compare",
       "ExploreCovenants": "Explore Covenants",
       "LegendaryAnalysis": "Legendary Analysis",
@@ -245,7 +245,7 @@
       "Tertiary": "Tertiary",
       "AddButton": "Add",
       "Title": "Quick Compare",
-      "HelpText": "Quick Compare allows you to compare items one by one. You can add items manually using the dropdowns above, or all at once using a string from the SimC addon. The score is automatically shown in the top right corner in yellow, and items are ordered by strength.",
+      "HelpText": "Quick Compare allows you to compare items one by one. The score is automatically shown in the top right corner in yellow, and items are ordered by strength. You can add items manually using the dropdowns above, or all at once using a string from the SimC addon.",
       "ItemErrorMsg": "Item Not Added. Ilvl Cap is 300",
       "ItemAdded": "Item Added!",
       "ItemDeleted": "Item Deleted!"

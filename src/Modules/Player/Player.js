@@ -383,7 +383,6 @@ class Player {
   };
 
   getFightLength = (contentType) => {
-    //console.log("Fight Length: " + contentType);
     return this.castModel[contentType].getFightInfo("fightLength");
   };
 
@@ -469,7 +468,7 @@ class Player {
       this.fightInfo = {
         hps: 5500,
         rawhps: 9420,
-        fightLength: 180,
+        fightLength: 465,
       };
 
       this.activeStats = {
@@ -522,7 +521,7 @@ class Player {
           crit: 0.36,
           mastery: 0.29,
           versatility: 0.36,
-          leech: 0.45,
+          leech: 0.44,
         },
         Dungeon: {
           intellect: 1,
@@ -553,10 +552,10 @@ class Player {
         Raid: {
           intellect: 1,
           haste: 0.36,
-          crit: 0.33,
+          crit: 0.34,
           mastery: 0.34,
           versatility: 0.32,
-          leech: 0.49,
+          leech: 0.4,
         },
         Dungeon: {
           intellect: 1,
@@ -564,7 +563,7 @@ class Player {
           crit: 0.34,
           mastery: 0.3,
           versatility: 0.33,
-          leech: 0.23,
+          leech: 0.21,
         },
         DefaultWeights: true,
       };

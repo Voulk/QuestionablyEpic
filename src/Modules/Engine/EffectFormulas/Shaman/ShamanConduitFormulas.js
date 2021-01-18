@@ -26,7 +26,7 @@ const ESSENTIAL_EXTRACTION_RANKS = [-25000, -26000, -27000, -28000, -29000, -300
 const IDCHAINHEAL = 85222;
 const IDHEALINGWAVE = 82326;
 const IDHEALINGSURGE = 20473;
-const IDHEALINGRAIN = 73920;
+const IDHEALINGRAIN = 73921;
 const IDHEALINGTIDETOTEM = 108280;
 const IDRIPTIDE = 61295;
 const IDCLOUDBURST = 157153;
@@ -83,7 +83,7 @@ export const getShamanConduit = (conduitID, player, contentType, conduitRank) =>
     const traitBonus = SWIRLING_CURRENTS_RANKS[conduitRank] / 100;
     const rtHPS = player.getSpellHPS(IDRIPTIDE, contentType);
     const rtCasts = player.getSpellCasts(IDRIPTIDE, contentType);
-    const cbtCasts = player.getSpellCasts(IDCLOUDBURST, contentType);
+    const cbtCasts = 0.033 * player.getFightLength(contentType); //player.getSpellCasts(IDCLOUDBURST, contentType);
     const avgRTCast = rtHPS / rtCasts;
     const buffedCasts = cbtCasts * 3;
     // add overhealing, efficiency
