@@ -214,7 +214,6 @@
 
     "QeHeader": {
       "InsertLogLabel": "Warcraftlog einfügen",
-      "Login": "LoginDE",
       "Tooltip": {
         "ContentTypeMsgStart": "Wechsle zu den",
         "ContentTypeMsgEnd": "ContentDE",
