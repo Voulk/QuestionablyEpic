@@ -765,7 +765,7 @@ function buildSoulbind(
                 <Paper
                   style={{
                     padding: 4,
-                    whiteSpace: "nowrap",
+                    // whiteSpace: "nowrap",
                     textAlign: "center",
                   }}
                 >

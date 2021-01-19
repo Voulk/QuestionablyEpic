@@ -206,7 +206,7 @@ export default function ItemCard(props) {
                 >
                   <Grid item xs={11} display="inline">
                     <Typography
-                      variant="subtitle2"
+                      variant={itemName.length > 30 ? "subtitle2" : "subtitle1"}
                       wrap="nowrap"
                       display="inline"
                       align="left"

@@ -346,7 +346,7 @@
       "StatPanel": {
         "Summary": "Résumé",
         "Score": "Pointage",
-        "CovenantEstimate": "Pointage estimé de l'abilité du Covenant:",
+        "CovenantEstimate": "Pointage estimé de l'abilité du Covenant",
         "SelectedNodes": "Les nodes choisient"
       }
     },
