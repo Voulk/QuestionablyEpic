@@ -216,8 +216,8 @@
       "InsertLogLabel": "Inséré le rapport",
       "Login": "Connexion",
       "Tooltip": {
-        "ContentTypeMsgStart": "Changer pour le contenu de",
-        "ContentTypeMsgEnd": "Changer pour le contenu de",
+        "ChangeToRaid": "Changer pour le contenu de Raid",
+        "ChangeToDungeon": "Changer pour le contenu de Donjon",
         "InsertLog": "Insert a log to increase accuracyFR.",
         "SimC": "Insert a SimC string to import your gearFR.",
         "Login": "Login to your Battle.net AccountFR",

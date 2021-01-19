@@ -217,8 +217,8 @@
       "InsertLogLabel": "Insert Log",
       "Login": "Login",
       "Tooltip": {
-        "ContentTypeMsgStart": "Change to",
-        "ContentTypeMsgEnd": "Content",
+        "ChangeToRaid": "Change to Raid Content",
+        "ChangeToDungeon": "Change to Dungeon Content",
         "InsertLog": "Insert a log to increase accuracy.",
         "SimC": "Insert a SimC string to import your gear.",
         "Login": "Login to your Battle.net Account",

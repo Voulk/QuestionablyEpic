@@ -215,10 +215,9 @@
 
     "QeHeader": {
       "InsertLogLabel": "Insert LogCH",
-      "Login": "LoginCH",
       "Tooltip": {
-        "ContentTypeMsgStart": "Change toCH",
-        "ContentTypeMsgEnd": "ContentCH",
+        "ChangeToRaid": "Change to Raid Content",
+        "ChangeToDungeon": "Change to Dungeon Content",
         "InsertLog": "Insert a log to increase accuracyCH.",
         "SimC": "Insert a SimC string to import your gearCH.",
         "Login": "Login to your Battle.net AccountCH",

@@ -214,16 +214,15 @@
     },
 
     "QeHeader": {
-      "InsertLogLabel": "Insert Log",
-      "Login": "Login",
+      "InsertLogLabel": "Insert LogRU",
       "Tooltip": {
-        "ContentTypeMsgStart": "Change to",
-        "ContentTypeMsgEnd": "Content",
-        "InsertLog": "Insert a log to increase accuracy.",
-        "SimC": "Insert a SimC string to import your gear.",
-        "Login": "Login to your Battle.net Account",
+        "ChangeToRaid": "Change to Raid ContentRU",
+        "ChangeToDungeon": "Change to Dungeon ContentRU",
+        "InsertLog": "Insert a log to increase accuracy.RU",
+        "SimC": "Insert a SimC string to import your gear.RU",
+        "Login": "Login to your Battle.net AccountRU",
         "Language": "Change Language",
-        "Home": "Main Menu"
+        "Home": "Main MenuRU"
       }
     },
 

@@ -215,8 +215,8 @@
     "QeHeader": {
       "InsertLogLabel": "Warcraftlog einfügen",
       "Tooltip": {
-        "ContentTypeMsgStart": "Wechsle zu den",
-        "ContentTypeMsgEnd": "ContentDE",
+        "ChangeToRaid": "Wechsle zu den Schlachtzugsinhalten",
+        "ChangeToDungeon": "Wechsle zu den Instanzinhalten",
         "InsertLog": "Insert a log to increase accuracyDE.",
         "SimC": "Insert a SimC string to import your gearDE.",
         "Login": "Login to your Battle.net AccountDE",
