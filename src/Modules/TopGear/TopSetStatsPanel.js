@@ -42,7 +42,7 @@ export default function TopSetStatsPanel(props) {
         fontSize: "12px",
         textAlign: "left",
         minHeight: 90,
-        maxWidth: 340,
+        maxWidth: 400,
         backgroundColor: "rgba(44, 44, 44, 0.5)",
       }}
     >
