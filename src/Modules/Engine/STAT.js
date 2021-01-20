@@ -86,16 +86,23 @@ export const translatedStat = {
     "intellect": {
       "en": "Int",
       "fr": "Int",
-      "de": "Int",
-      "cn": "CNCr",
-      "ru": "RuCr",
+      "de": "Int", // Intelligenz shortened
+      "cn": "智力",
+      "ru": "к интеллекту",
     },
     "leech": {
       "en": "Leech",
-      "fr": "Leech",
-      "de": "Leech",
-      "cn": "CNCr",
-      "ru": "RuCr",
+      "fr": "Vol de Vie",
+      "de": "Lebensraub",
+      "cn": "吸血",
+      "ru": "Самоисцеление",
+    },
+    "avoidance": {
+      "en": "Avoidance",
+      "fr": "Evitement",
+      "de": "Vermeidung",
+      "cn": "回避",
+      "ru": "Уклонение",
     },
     "effect": {
       "en": "Effect",
