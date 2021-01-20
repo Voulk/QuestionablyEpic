@@ -116,8 +116,8 @@ const fillLegendaries = (container, spec, pl, contentType) => {
       "Yu'lon's Whisper",
       "Clouded Focus",
       "Tear of Morning",
-      //"Vitality Sacrifice",
-      //"Sephuz's Proclamation",
+      // "Vitality Sacrifice",
+      // "Sephuz's Proclamation",
       "Echo of Eonar",
     ],
     /*

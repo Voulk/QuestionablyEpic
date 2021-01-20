@@ -35,10 +35,12 @@ import MuiAlert from "@material-ui/lab/Alert";
 import Autocomplete from "@material-ui/lab/Autocomplete";
 import HelpText from "../SetupAndMenus/HelpText";
 
+
 const useStyles = makeStyles((theme) => ({
   formControl: {
     margin: theme.spacing(0.5),
     minWidth: 120,
+    whiteSpace: "noWrap",
   },
   selectEmpty: {
     marginTop: theme.spacing(2),
@@ -74,8 +76,10 @@ const menuStyle = {
   getContentAnchorEl: null,
 };
 
+
+
 function Alert(props) {
-  return <MuiAlert elevation={6} variant="filled" {...props} />;
+  return <MuiAlert elevation={6} vari ant="filled" {...props} />;
 }
 
 // const createItem = (legendaryName, container, spec, pl, contentType) => {
@@ -305,7 +309,6 @@ export default function QuickCompare(props) {
   return (
     <div
       style={{
-        // backgroundColor: "#313131",
         marginTop: 32,
       }}
     >
@@ -410,27 +413,33 @@ export default function QuickCompare(props) {
               </Grid>
 
               <Grid item>
-                <TextField
-                  error={itemLevel > 300 ? true : false}
+                <FormControl
                   className={classes.formControl}
-                  id="Ilvl-select"
-                  onChange={(e) => itemLevelChanged(e.target.value)}
-                  value={itemLevel}
-                  label={t("QuickCompare.ItemLevel")}
-                  disabled={itemID === "" ? true : false}
-                  onInput={(e) => {
-                    e.target.value = Math.max(0, parseInt(e.target.value))
-                      .toString()
-                      .slice(0, 3);
-                  }}
                   variant="outlined"
                   size="small"
-                  type="number"
-                  inputProps={{
-                    min: "50",
-                    max: "300",
-                  }}
-                />
+                  style={{width: t("QuickCompare.ItemLevel").length > 10 ? 160 : 120}}
+                >
+                  <TextField
+                    error={itemLevel > 300 ? true : false}
+                    id="Ilvl-select"
+                    onChange={(e) => itemLevelChanged(e.target.value)}
+                    value={itemLevel}
+                    label={t("QuickCompare.ItemLevel")}
+                    disabled={itemID === "" ? true : false}
+                    onInput={(e) => {
+                      e.target.value = Math.max(0, parseInt(e.target.value))
+                        .toString()
+                        .slice(0, 3);
+                    }}
+                    variant="outlined"
+                    size="small"
+                    type="number"
+                    inputProps={{
+                      min: "50",
+                      max: "300",
+                    }}
+                  />
+                </FormControl>
               </Grid>
 
               <Grid item>
@@ -473,6 +482,7 @@ export default function QuickCompare(props) {
                   className={classes.formControl}
                   variant="outlined"
                   size="small"
+                  style={{width: t("QuickCompare.ItemLevel").length > 10 ? 160 : 120}}
                   disabled={itemLevel === "" ? true : false}
                 >
                   <InputLabel id="itemtertiary">

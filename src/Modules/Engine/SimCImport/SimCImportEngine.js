@@ -69,6 +69,8 @@ export function runSimC(
         ? covenantLine[0].split("=")[1].toLowerCase()
         : "venthyr";
 
+    player.setCovenant(covenant);
+
     for (var i = 8; i < lines.length; i++) {
       let line = lines[i];
       let type = i > vaultItems || i < linkedItems ? "Vault" : "Regular";

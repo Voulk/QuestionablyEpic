@@ -6,6 +6,8 @@ export const tokenDB = {
     "183894": {
         "itemLevel": 207,
         "slotType": "Offhands",
+        "specs": ["Restoration Shaman", "Restoration Druid"],
+        "encounterId": 2425, // Stone Legion Generals
         "venthyr": [182400, 182399],
         "necrolord": [184257, 184258],
         "kyrian": [177870, 174315],
@@ -14,6 +16,8 @@ export const tokenDB = {
     "183895": {
         "itemLevel": 207,
         "slotType": "Offhands",
+        "specs": ["Discipline Priest", "Holy Priest", "Holy Paladin", "Mistweaver Monk"],
+        "encounterId": 2425, // Stone Legion Generals
         "venthyr": [182400, 182399],
         "necrolord": [184257, 184258],
         "kyrian": [177870, 174315],
@@ -24,6 +28,8 @@ export const tokenDB = {
     "183888": {
         "itemLevel": 200,
         "slotType": "Offhands",
+        "specs": ["Discipline Priest", "Holy Priest", "Holy Paladin", "Mistweaver Monk"],
+        "encounterId": 2418, // Artificer
         "venthyr": [182426, 182425],
         "necrolord": [184245, 184246], 
         "kyrian": [174310, 175254],
@@ -32,17 +38,21 @@ export const tokenDB = {
     "183889": {
         "itemLevel": 200,
         "slotType": "Offhands",
+        "specs": ["Restoration Shaman", "Restoration Druid"],
+        "encounterId": 2418, // Inerva Darkvein
         "venthyr": [182426, 182425],
         "necrolord": [184245, 184246], 
         "kyrian": [174310, 175254],
         "night_fae": [179570, 179610],
     },
-
+    
     // Weapon Tokens
     // High Tokens
     "183897": {
         "itemLevel": 207,
         "slotType": "Weapons",
+        "specs": ["Restoration Druid"],
+        "encounterId": 2424, // Sire Denathrius
         "venthyr": [182391, 182392, 182396],
         "night_fae": [180002, 179561, 180022],
         "kyrian": [184270, 177850, 178973],
@@ -52,6 +62,8 @@ export const tokenDB = {
     "183898": {
         "itemLevel": 207,
         "slotType": "Weapons",
+        "specs": ["Discipline Priest", "Holy Priest", "Holy Paladin", "Restoration Shaman"],
+        "encounterId": 2424, // Sire Denathrius
         "venthyr": [182391, 182392, 182396],
         "night_fae": [180002, 179561, 180022],
         "kyrian": [184270, 177850, 178973],
@@ -61,6 +73,8 @@ export const tokenDB = {
     "183899": {
         "itemLevel": 207,
         "slotType": "Weapons",
+        "specs": ["Mistweaver Monk"],
+        "encounterId": 2424, // Sire Denathrius
         "venthyr": [182391, 182392, 182396],
         "night_fae": [180002, 179561, 180022],
         "kyrian": [184270, 177850, 178973],
@@ -71,6 +85,8 @@ export const tokenDB = {
     "183892": {
         "itemLevel": 200,
         "slotType": "Weapons",
+        "specs": ["Restoration Druid"],
+        "encounterId": 2429, // Huntsman Altimor
         "venthyr": [182417, 182422, 182418],
         "night_fae": [180000, 180023, 179557],
         "kyrian": [184273, 177850, 178973],
@@ -79,6 +95,8 @@ export const tokenDB = {
     "183891": {
         "itemLevel": 200,
         "slotType": "Weapons",
+        "specs": ["Discipline Priest", "Holy Priest", "Holy Paladin", "Restoration Shaman"],
+        "encounterId": 2428, // Hungering Destroyer
         "venthyr": [182417, 182422, 182418],
         "night_fae": [180000, 180023, 179557],
         "kyrian": [184273, 177850, 178973],
@@ -87,11 +105,14 @@ export const tokenDB = {
     "183890": {
         "itemLevel": 200,
         "slotType": "Weapons",
+        "specs": ["Mistweaver Monk"],
+        "encounterId": 2426, // Council of Blood
         "venthyr": [182417, 182422, 182418],
         "night_fae": [180000, 180023, 179557],
         "kyrian": [184273, 177850, 178973],
         "necrolord": [184244, 184247, 184249],
     },
+    
 
 }
 

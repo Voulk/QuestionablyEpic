@@ -15,6 +15,16 @@ const useStyles = makeStyles((theme) => ({
     margin: "0px 20px 35px 20px",
     textAlign: "center",
   },
+  simcerror: {
+    borderColor: "red", 
+    borderWidth: "2px", 
+    borderStyle: "Solid"
+  },
+  simcok: {
+    borderStyle: "None"
+  }
+
+
 }));
 
 const itemQuality = (itemLevel, effectCheck) => {
@@ -44,17 +54,18 @@ const checkCharacterValid = (player) => {
 export default function UpgradeFinderSimC(props) {
   const classes = useStyles();
   const { t, i18n } = useTranslation();
-  const simcStatus = "UpgradeFinderFront.SimCBody1" + props.getSimCStatus(props.player);
+  const simcStatus = props.getSimCStatus(props.player);
+  const simcString = "UpgradeFinderFront.SimCBody1" + simcStatus;
 
   return (
     <Grid item xs={12}>
-      <Paper elevation={0} style={{ padding: 10 }}>
+      <Paper elevation={0} className={(simcStatus === "Good" || simcStatus === "Missing") ? classes.simcok : classes.simcerror} style={{ padding: 10, }}>
         <Grid container spacing={1}>
           <Grid item xs={6} container justify="center" spacing={1}>
             <Grid item xs={12}>
               <Typography color="primary" align="center" variant="h5">
                 {/*t("UpgradeFinderFront.SimCBody1") + "" + getSimCStatus(props.player) */}
-                {t(simcStatus)}
+                {t(simcString)}
               </Typography>
             </Grid>
 
@@ -93,7 +104,9 @@ export default function UpgradeFinderSimC(props) {
                         "ilvl=" +
                         key.level +
                         "&bonus=" +
-                        key.bonusIDS
+                        key.bonusIDS +
+                        "&domain=" +
+                        currentLanguage
                       }
                     >
                       <img

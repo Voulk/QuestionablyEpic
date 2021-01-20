@@ -6,6 +6,7 @@ import {
 } from "./CombatMultByLevel";
 import { getEffectValue } from "./EffectFormulas/EffectEngine";
 import SPEC from "../Engine/SPECS";
+import {translatedStat} from "../Engine/STAT";
 import Item from "../Player/Item";
 import { useTranslation } from "react-i18next";
 import { i18n } from "react-i18next";
@@ -101,12 +102,14 @@ export function filterItemListBySource(
   pvpRank = 0
 ) {
   let temp = itemList.filter(function (item) {
+    console.log("Filtering: " + item.id);
+    console.log(item);
     let itemEncounter = item.source.encounterId;
     let expectedItemLevel = level;
     if (itemEncounter == 2425 || itemEncounter == 2424) expectedItemLevel += 7;
     else if (sourceInstance === -17 && pvpRank === 5 && ["1H Weapon", "2H Weapon", "Offhand", "Shield"].includes(item.slot)) expectedItemLevel += 7;
 
-    console.log(expectedItemLevel);
+    //console.log(expectedItemLevel);
 
     return (
       item.level == expectedItemLevel &&
@@ -198,6 +201,14 @@ export function getItemSubclass(id) {
   });
 
   if (temp.length > 0 && "itemSubClass" in temp[0]) return temp[0].itemSubClass;
+  else return "";
+}
+
+export function getFullItem(id) {
+  let temp = itemDB.filter(function (item) {
+    return item.id === id;
+  });
+  if (temp.length > 0) return temp[0];
   else return "";
 }
 
@@ -411,7 +422,7 @@ export function calcStatsAtLevel(itemLevel, slot, statAllocations, tertiary) {
 
 // Builds a stat string out of an items given stats and effect.
 // Stats should be listed in order of quantity.
-export function buildStatString(stats, effect) {
+export function buildStatString(stats, effect, lang = "en") {
   //const { t, i18n } = useTranslation();
   let statString = "";
   let statsList = [
@@ -426,12 +437,15 @@ export function buildStatString(stats, effect) {
   });
 
   for (var ind in statsList) {
+    let statKey = statsList[ind]["key"];
+    console.log("Stat: " + statKey);
+    
     statString +=
       statsList[ind]["val"] > 0
         ? statsList[ind]["val"] +
-          " " +
-          correctCasing(statsList[ind]["key"]) +
-          " / " // t("stats." + statsList[ind]["key"])
+          " " + translatedStat[statKey][lang] + 
+          //correctCasing(statsList[ind]["key"]) +
+          " / " //t("stats." + statsList[ind]["key"])
         : "";
   }
 

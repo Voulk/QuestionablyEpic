@@ -37,6 +37,20 @@
     "Avoidance": "Avoidance",
     "External": "External",
 
+    "Classes": {
+      "undefined": "",
+      "HolyPaladin": "Holy Paladin",
+      "DisciplinePriest": "Discipline Priest",
+      "RestorationDruid": "Restoration Druid",
+      "HavocDemonHunter": "Havoc Demon Hunter",
+      "Warrior": "Warrior",
+      "HolyPriest": "Holy Priest",
+      "MistweaverMonk": "Mistweaver Monk",
+      "RestorationShaman": "Restoration Shaman",
+      "DeathKnight": "Death Knight",
+      "ShadowPriest": "Shadow Priest"
+    },
+
     "CooldownPlanner": {
       "Classes": {
         "undefined": "",
@@ -209,7 +223,8 @@
         "ExploreCovenants": "Explore Soulbinds for each covenant.",
         "LegendaryAnalysis": "Find your best legendary power and where to get it",
         "CooldownPlanner": "Plan your cooldowns. Create your own or analyse logs",
-        "Profile": "Edit your details"
+        "Profile": "Edit your details",
+        "UpgradeFinder": "Find your next piece of gear!"
       }
     },
 
@@ -217,8 +232,8 @@
       "InsertLogLabel": "Insert Log",
       "Login": "Login",
       "Tooltip": {
-        "ContentTypeMsgStart": "Change to",
-        "ContentTypeMsgEnd": "Content",
+        "ChangeToRaid": "Change to Raid Content",
+        "ChangeToDungeon": "Change to Dungeon Content",
         "InsertLog": "Insert a log to increase accuracy.",
         "SimC": "Insert a SimC string to import your gear.",
         "Login": "Login to your Battle.net Account",
@@ -354,7 +369,14 @@
       "Header": "Covenant Exploration",
       "PotencyConduit": "Potency Conduit",
       "EnduranceConduit": "Endurance Conduit",
-      "FinesseConduit": "Finesse Conduit"
+      "FinesseConduit": "Finesse Conduit",
+      "ConduitInstructions": "Right/Left Click Conduits to change Ilvl",
+      "StatPanel": {
+        "Summary": "Summary",
+        "Score": "Score",
+        "CovenantEstimate": "Covenant Ability Est",
+        "SelectedNodes": "Selected Nodes"
+      }
     },
 
     "stats": {
@@ -394,8 +416,11 @@
       "Title": "Top Gear",
       "HelpText": "Top Gear allows you to generate an entire gear set at once. Start by entering your SimC string above, then click to highlight any items you want included in the comparison. When you're all set, hit 'Go' at the bottom of the page. To enter items manually, return to the main menu and include them in QE Quick Compare. Great Vault items are added automatically though for the first week consider your choice carefully outside of the app.",
       "ItemsHereMessage": "Your items will go here after you import.",
+      "ErrorMessage": "So sorry, seems you've run into an error. This is usually caused by not being able to create any valid sets. Check that you have a valid weapon selected, two or more rings and two or more trinkets. If multiple legendaries are selected then there must be a valid alternative for each.",
       "GoMsg": "Go!",
       "SelectedItems": "Selected Items",
+      "BackToGearSelection": "Back to Gear Selection",
+      "CompetitiveAlternative": "Competitive Alternatives",
       "StatPanel": { "AvgStats": "Average Stats (includes procs)" }
     },
 
@@ -655,19 +680,7 @@
       "desc": "You gain 33% haste for 20 sec after summoning your Celestial.",
       "droploc": "Stone Legion Generals, Castle Nathria"
     },
-    "Roll Out": {
-      "name": "Roll Out",
-      "slot": "Waist or Feet",
-      "desc": "During (Chi Torpedo / Roll), you are immune to roots and snares.",
-      "droploc": "PvP Honor Vendor"
-    },
-    "Fatal Touch": {
-      "name": "Fatal Touch",
-      "slot": "Wrist or Finger",
-      "desc": "Touch of Death cooldown reduced by 120 sec.",
-      "droploc": "Mueh'zala, De Other Side"
-    },
-    "Ancient Teachings of the Monastery": {
+     "Ancient Teachings of the Monastery": {
       "name": "Ancient Teachings of the Monastery",
       "slot": "Wrist or Hands",
       "desc": "After casting Essence Font, your Tiger Palm, Blackout Kick, and Rising Sun Kick heal an injured ally within 20 yards for 250% of the damage done. Lasts 15 sec.",
@@ -708,6 +721,30 @@
       "slot": "Waist, Wrist, or Finger",
       "desc": "Your spells and abilities have a low chance to summon a familiar to your side, increasing your healing by 10% for 10s. This effect is duplicated on up to 3 allies at 50% effectiveness, preferring allies with the same role.",
       "droploc": "Wild Hunt Reputation, Revered"
+    },
+    "Covenants": {
+      "Kyrian": "Kyrian",
+      "Necrolords": "Necrolords",
+      "Venthyr": "Venthyr",
+      "NightFae": "Night Fae",
+      "Soulbinds": {
+        "KyrianSoulbinds": "",
+        "Pelagos": "Pelagos",
+        "Kleia": "Kleia",
+        "Mikanikos": "Mikanikos",
+        "NecrolordSoulbinds": "",
+        "Marileth": "Marileth",
+        "Emeni": "Emeni",
+        "Heirmir": "Heirmir",
+        "NightFaeSoulbinds": "",
+        "Niya": "Niya",
+        "Dreamweaver": "Dreamweaver",
+        "Korayn": "Korayn",
+        "VenthyrSoulbinds": "",
+        "Nadjia": "Nadjia",
+        "Theotar": "Theotar",
+        "Draven": "Draven"
+      }
     }
   }
 }

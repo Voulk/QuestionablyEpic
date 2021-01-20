@@ -1,4 +1,4 @@
-import {conduits} from '../CooldownPlanner/Data/Data'
+import {conduitDB} from '../CooldownPlanner/Data/Data'
 import { getConduitFormula } from '../Engine/EffectFormulas/EffectEngine';
 import {getEstimatedHPS} from '../Covenants/CovenantUtilities';
 
@@ -29,7 +29,7 @@ class ActiveConduit {
     }
 
     getIcon = (id) => {
-        let temp = conduits.filter(function (conduit) {
+        let temp = conduitDB.filter(function (conduit) {
             return conduit.guid === id;
             });
             

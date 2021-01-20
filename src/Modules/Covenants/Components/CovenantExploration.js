@@ -68,7 +68,6 @@ const useStyles = makeStyles((theme) => ({
     display: "block",
     marginLeft: "auto",
     marginRight: "auto",
-    // marginTop: "2%",
     flexGrow: 1,
     backgroundColor: theme.palette.background.paper,
     maxWidth: 1014,
@@ -89,42 +88,22 @@ const useStyles = makeStyles((theme) => ({
       require("../../../Images/BastionHeader.png").default
     })`,
     borderRadius: "4px 0px 0px 0px",
-    // height: 75,
-    // whiteSpace: "nowrap",
-    // textShadow: "3px 3px 4px black",
-    // color: "#fff",
-    // fontSize: "1.1rem",
   },
   nightFaeHeaderStyle: {
     backgroundImage: `url(${
       require("../../../Images/NightFaeHeader.png").default
     })`,
-    // height: 75,
-    // whiteSpace: "nowrap",
-    // textShadow: "3px 3px 4px black",
-    // color: "#fff",
-    // fontSize: "1.1rem",
   },
   venthyrHeaderStyle: {
     backgroundImage: `url(${
       require("../../../Images/VenthyrHeader.png").default
     })`,
-    // height: 75,
-    // whiteSpace: "nowrap",
-    // textShadow: "3px 3px 4px black",
-    // color: "#fff",
-    // fontSize: "1.1rem",
   },
   necrolordHeaderStyle: {
     backgroundImage: `url(${
       require("../../../Images/NecroHeader.png").default
     })`,
     borderRadius: "0px 4px 0px 0px",
-    // height: 75,
-    // whiteSpace: "nowrap",
-    // textShadow: "3px 3px 4px black",
-    // color: "#fff",
-    // fontSize: "1.1rem",
   },
 }));
 
@@ -226,9 +205,9 @@ export default function CovenantExploration(props) {
                       process.env.PUBLIC_URL +
                       "/Images/Interface/Kyrian_Sigil.png"
                     }
-                    alt="Kyrian"
+                    alt={t("Covenants.Kyrian")}
                   />
-                  <div className="centered"> Kyrian </div>
+                  <div className="centered"> {t("Covenants.Kyrian")} </div>
                 </div>
               }
               {...a11yProps(0)}
@@ -242,9 +221,9 @@ export default function CovenantExploration(props) {
                     src={
                       process.env.PUBLIC_URL + "/Images/Interface/Fae_Sigil.png"
                     }
-                    alt="Night Fae"
+                    alt={t("Covenants.NightFae")}
                   />
-                  <div className="centered"> Night Fae </div>
+                  <div className="centered"> {t("Covenants.NightFae")} </div>
                 </div>
               }
               {...a11yProps(1)}
@@ -259,9 +238,9 @@ export default function CovenantExploration(props) {
                       process.env.PUBLIC_URL +
                       "/Images/Interface/Venthyr_Sigil.png"
                     }
-                    alt="Venthyr"
+                    alt={t("Covenants.Venthyr")}
                   />
-                  <div className="centered"> Venthyr </div>
+                  <div className="centered"> {t("Covenants.Venthyr")} </div>
                 </div>
               }
               {...a11yProps(2)}
@@ -276,9 +255,9 @@ export default function CovenantExploration(props) {
                       process.env.PUBLIC_URL +
                       "/Images/Interface/Death_Lords_Sigil.png"
                     }
-                    alt="Necrolords"
+                    alt={t("Covenants.Necrolords")}
                   />
-                  <div className="centered"> Necrolords </div>
+                  <div className="centered"> {t("Covenants.Necrolords")} </div>
                 </div>
               }
               {...a11yProps(3)}
@@ -302,13 +281,13 @@ export default function CovenantExploration(props) {
                 icon={
                   <img
                     height={100}
-                    alt="Pelagos"
+                    alt={t("Covenants.Soulbinds.Pelagos")}
                     src={
                       process.env.PUBLIC_URL + "/Images/Interface/pelagos.webp"
                     }
                   />
                 }
-                label="Pelagos"
+                label={t("Covenants.Soulbinds.Pelagos")}
                 {...a11yPropsVert(0)}
               />
               <Tab
@@ -316,13 +295,13 @@ export default function CovenantExploration(props) {
                 icon={
                   <img
                     height={100}
-                    alt="Kleia"
+                    alt={t("Covenants.Soulbinds.Kleia")}
                     src={
                       process.env.PUBLIC_URL + "/Images/Interface/kleia.webp"
                     }
                   />
                 }
-                label="Kleia"
+                label={t("Covenants.Soulbinds.Kleia")}
                 {...a11yPropsVert(1)}
               />
               <Tab
@@ -330,14 +309,14 @@ export default function CovenantExploration(props) {
                 icon={
                   <img
                     height={100}
-                    alt="Mikanikos"
+                    alt={t("Covenants.Soulbinds.Mikanikos")}
                     src={
                       process.env.PUBLIC_URL +
                       "/Images/Interface/forgelite-prime-mikanikos.webp"
                     }
                   />
                 }
-                label="Mikanikos"
+                label={t("Covenants.Soulbinds.Mikanikos")}
                 {...a11yPropsVert(2)}
               />
             </Tabs>
@@ -407,11 +386,11 @@ export default function CovenantExploration(props) {
                 icon={
                   <img
                     height={100}
-                    alt="Niya"
+                    alt={t("Covenants.Soulbinds.Niya")}
                     src={process.env.PUBLIC_URL + "/Images/Interface/niya.webp"}
                   />
                 }
-                label="Niya"
+                label={t("Covenants.Soulbinds.Niya")}
                 {...a11yPropsVert(0)}
               />
               <Tab
@@ -419,14 +398,14 @@ export default function CovenantExploration(props) {
                 icon={
                   <img
                     height={100}
-                    alt="Dreamweaver"
+                    alt={t("Covenants.Soulbinds.Dreamweaver")}
                     src={
                       process.env.PUBLIC_URL +
                       "/Images/Interface/dreamweaver.webp"
                     }
                   />
                 }
-                label="Dreamweaver"
+                label={t("Covenants.Soulbinds.Dreamweaver")}
                 {...a11yPropsVert(1)}
               />
               <Tab
@@ -434,13 +413,13 @@ export default function CovenantExploration(props) {
                 icon={
                   <img
                     height={100}
-                    alt="Korayn"
+                    alt={t("Covenants.Soulbinds.Korayn")}
                     src={
                       process.env.PUBLIC_URL + "/Images/Interface/korayn.webp"
                     }
                   />
                 }
-                label="Korayn"
+                label={t("Covenants.Soulbinds.Korayn")}
                 {...a11yPropsVert(2)}
               />
             </Tabs>
@@ -497,14 +476,14 @@ export default function CovenantExploration(props) {
                 icon={
                   <img
                     height={100}
-                    alt="Nadjia"
+                    alt={t("Covenants.Soulbinds.Nadjia")}
                     src={
                       process.env.PUBLIC_URL +
                       "/Images/Interface/nadjia-the-mistblade.webp"
                     }
                   />
                 }
-                label="Nadjia"
+                label={t("Covenants.Soulbinds.Nadjia")}
                 {...a11yPropsVert(0)}
               />
               <Tab
@@ -512,14 +491,14 @@ export default function CovenantExploration(props) {
                 icon={
                   <img
                     height={100}
-                    alt="Theotar"
+                    alt={t("Covenants.Soulbinds.Theotar")}
                     src={
                       process.env.PUBLIC_URL +
                       "/Images/Interface/theotar-the-mad-duke.webp"
                     }
                   />
                 }
-                label="Theotar"
+                label={t("Covenants.Soulbinds.Theotar")}
                 {...a11yPropsVert(1)}
               />
               <Tab
@@ -527,14 +506,14 @@ export default function CovenantExploration(props) {
                 icon={
                   <img
                     height={100}
-                    alt="Draven"
+                    alt={t("Covenants.Soulbinds.Draven")}
                     src={
                       process.env.PUBLIC_URL +
                       "/Images/Interface/general-draven.webp"
                     }
                   />
                 }
-                label="Draven"
+                label={t("Covenants.Soulbinds.Draven")}
                 {...a11yPropsVert(2)}
               />
             </Tabs>
@@ -591,14 +570,14 @@ export default function CovenantExploration(props) {
                 icon={
                   <img
                     height={100}
-                    alt="Marileth"
+                    alt={t("Covenants.Soulbinds.Marileth")}
                     src={
                       process.env.PUBLIC_URL +
                       "/Images/Interface/plague-deviser-marileth.webp"
                     }
                   />
                 }
-                label="Marileth"
+                label={t("Covenants.Soulbinds.Marileth")}
                 {...a11yPropsVert(0)}
               />
               <Tab
@@ -606,13 +585,13 @@ export default function CovenantExploration(props) {
                 icon={
                   <img
                     height={100}
-                    alt="Emeni"
+                    alt={t("Covenants.Soulbinds.Emeni")}
                     src={
                       process.env.PUBLIC_URL + "/Images/Interface/emeni.webp"
                     }
                   />
                 }
-                label="Emeni"
+                label={t("Covenants.Soulbinds.Emeni")}
                 {...a11yPropsVert(1)}
               />
               <Tab
@@ -620,14 +599,14 @@ export default function CovenantExploration(props) {
                 icon={
                   <img
                     height={100}
-                    alt="Heirmir"
+                    alt={t("Covenants.Soulbinds.Heirmir")}
                     src={
                       process.env.PUBLIC_URL +
                       "/Images/Interface/bonesmith-heirmir.webp"
                     }
                   />
                 }
-                label="Heirmir"
+                label={t("Covenants.Soulbinds.Heirmir")}
                 {...a11yPropsVert(2)}
               />
             </Tabs>
@@ -672,10 +651,6 @@ export default function CovenantExploration(props) {
   );
 }
 
-/* 
-
-
-*/
 function buildSoulbind(
   soulbindName,
   player,
@@ -685,6 +660,7 @@ function buildSoulbind(
   setConduitInSlot,
   updateConduitLevel
 ) {
+  const { t, i18n } = useTranslation();
   let activeSoulbind = soulbindState.filter(
     (trait) => trait.soulbind === soulbindName
   );
@@ -789,7 +765,7 @@ function buildSoulbind(
                 <Paper
                   style={{
                     padding: 4,
-                    whiteSpace: "nowrap",
+                    // whiteSpace: "nowrap",
                     textAlign: "center",
                   }}
                 >
@@ -798,7 +774,7 @@ function buildSoulbind(
                     align="center"
                     style={{ fontSize: 12 }}
                   >
-                    Right/Left Click Conduits to change Ilvl
+                    {t("Soulbinds.ConduitInstructions")}
                   </Typography>
                 </Paper>
               </Grid>
