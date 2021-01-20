@@ -54,6 +54,7 @@ const checkCharacterValid = (player) => {
 export default function UpgradeFinderSimC(props) {
   const classes = useStyles();
   const { t, i18n } = useTranslation();
+  const currentLanguage = i18n.currentLanguage;
   const simcStatus = props.getSimCStatus(props.player);
   const simcString = "UpgradeFinderFront.SimCBody1" + simcStatus;
 
