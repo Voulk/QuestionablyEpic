@@ -230,7 +230,7 @@ function buildItemPossibilities(player, contentType, playerSettings) {
           if (checkItemViable(rawItem, player)) {
           const itemLevel = getSetItemLevel(itemSource, playerSettings, x, rawItem.slot);
           const item = buildItem(player, contentType, rawItem, itemLevel, itemSource);
-          console.log(item);
+          //console.log(item);
           itemPoss.push(item);
           }
           
