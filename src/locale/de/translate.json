@@ -406,6 +406,7 @@
       "GoMsg": "Start!",
       "SelectedItems": "Ausgewählte Gegenstände",
       "CompetitiveAlternative": "Gleichwertige Alternativen",
+      "BackToGearSelection": "Zurück zum Auswahlbildschirm",
       "StatPanel": { "AvgStats": "Durchschnittliche Werte (inkl. aller zufälligen Effekte)" }
     },
 

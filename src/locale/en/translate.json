@@ -419,6 +419,7 @@
       "ErrorMessage": "So sorry, seems you've run into an error. This is usually caused by not being able to create any valid sets. Check that you have a valid weapon selected, two or more rings and two or more trinkets. If multiple legendaries are selected then there must be a valid alternative for each.",
       "GoMsg": "Go!",
       "SelectedItems": "Selected Items",
+      "BackToGearSelection": "Back to Gear Selection",
       "CompetitiveAlternative": "Competitive Alternatives",
       "StatPanel": { "AvgStats": "Average Stats (includes procs)" }
     },
