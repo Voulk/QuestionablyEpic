@@ -226,12 +226,15 @@ function buildItemPossibilities(player, contentType, playerSettings) {
       for (var j = 0; j < newItemIDs.length; j++) {
         for (var x = 0; x < playerSettings.raid.length; x++) {
           const rawItem = getFullItem(newItemIDs[j]);
-          //console.log(rawItem);
-          
+
+          if (checkItemViable(rawItem, player)) {
           const itemLevel = getSetItemLevel(itemSource, playerSettings, x, rawItem.slot);
           const item = buildItem(player, contentType, rawItem, itemLevel, itemSource);
           console.log(item);
           itemPoss.push(item);
+          }
+          
+
         }
 
 
