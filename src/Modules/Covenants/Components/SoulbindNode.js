@@ -163,7 +163,7 @@ export default function SoulbindNode(props) {
     ) {
       return "";
     }
-    return "spell=" + trait.id;
+    return "spell=" + trait.id + "&domain=" + currentLanguage;
   };
 
   // The CSS here is a bit of a nightmare. TODO.

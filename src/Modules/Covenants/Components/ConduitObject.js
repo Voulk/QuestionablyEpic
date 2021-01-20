@@ -78,7 +78,7 @@ export default function ConduitObject(props) {
           >
             <Grid item xs="auto">
               <div className="container">
-                <a data-wowhead={"spell=" + conduit.id}>
+                <a data-wowhead={"spell=" + conduit.id + "&domain=" + currentLanguage}>
                   <img
                     alt=""
                     width={24}

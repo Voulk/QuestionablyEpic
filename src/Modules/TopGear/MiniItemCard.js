@@ -166,7 +166,7 @@ export default function ItemCard(props) {
                           "ilvl=" +
                           item.level +
                           "&bonus=" +
-                          item.bonusIDS
+                          item.bonusIDS + "&domain=" + currentLanguage
                         : ""
                     }
                   >

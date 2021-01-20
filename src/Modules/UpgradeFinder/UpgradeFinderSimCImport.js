@@ -44,7 +44,8 @@ const checkCharacterValid = (player) => {
 export default function UpgradeFinderSimC(props) {
   const classes = useStyles();
   const { t, i18n } = useTranslation();
-  const simcStatus = "UpgradeFinderFront.SimCBody1" + props.getSimCStatus(props.player);
+  const simcStatus =
+    "UpgradeFinderFront.SimCBody1" + props.getSimCStatus(props.player);
 
   return (
     <Grid item xs={12}>
@@ -93,7 +94,9 @@ export default function UpgradeFinderSimC(props) {
                         "ilvl=" +
                         key.level +
                         "&bonus=" +
-                        key.bonusIDS
+                        key.bonusIDS +
+                        "&domain=" +
+                        currentLanguage
                       }
                     >
                       <img

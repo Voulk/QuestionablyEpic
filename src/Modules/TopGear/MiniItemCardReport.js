@@ -192,7 +192,7 @@ export default function ItemCardReport(props) {
                           "ilvl=" +
                           item.level +
                           "&bonus=" +
-                          item.bonusIDS
+                          item.bonusIDS + "&domain=" + currentLanguage
                         : ""
                     }
                   >
