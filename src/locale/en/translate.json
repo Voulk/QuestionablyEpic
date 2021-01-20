@@ -37,6 +37,20 @@
     "Avoidance": "Avoidance",
     "External": "External",
 
+    "Classes": {
+      "undefined": "",
+      "HolyPaladin": "Holy Paladin",
+      "DisciplinePriest": "Discipline Priest",
+      "RestorationDruid": "Restoration Druid",
+      "HavocDemonHunter": "Havoc Demon Hunter",
+      "Warrior": "Warrior",
+      "HolyPriest": "Holy Priest",
+      "MistweaverMonk": "Mistweaver Monk",
+      "RestorationShaman": "Restoration Shaman",
+      "DeathKnight": "Death Knight",
+      "ShadowPriest": "Shadow Priest"
+    },
+
     "CooldownPlanner": {
       "Classes": {
         "undefined": "",

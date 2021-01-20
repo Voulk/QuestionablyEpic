@@ -419,9 +419,6 @@ export default function QuickCompare(props) {
                   size="small"
                   style={{width: t("QuickCompare.ItemLevel").length > 10 ? 160 : 120}}
                 >
-                  <InputLabel id="Ilvl-select">
-                    {t("QuickCompare.ItemLevel")}
-                  </InputLabel>
                   <TextField
                     error={itemLevel > 300 ? true : false}
                     id="Ilvl-select"

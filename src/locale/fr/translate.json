@@ -37,6 +37,20 @@
     "Avoidance": "Avoidance",
     "Source": "Source",
 
+    "Classes": {
+      "undefined": "",
+      "HolyPaladin": "Holy PaladinFR",
+      "DisciplinePriest": "Discipline PriestFR",
+      "RestorationDruid": "Restoration DruidFR",
+      "HavocDemonHunter": "Havoc Demon HunterFR",
+      "Warrior": "WarriorFR",
+      "HolyPriest": "Holy PriestFR",
+      "MistweaverMonk": "Mistweaver MonkFR",
+      "RestorationShaman": "Restoration ShamanFR",
+      "DeathKnight": "Death KnightFR",
+      "ShadowPriest": "Shadow PriestFR"
+    },
+
     "CooldownPlanner": {
       "Classes": {
         "undefined": "",

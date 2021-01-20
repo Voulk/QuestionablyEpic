@@ -1,11 +1,11 @@
 {
   "translations": {
     "CharacterCreator": {
-      "StatMessage": "To get updated stat weights use WowAnalyzer.com with a recent log and enter the values here from the 'Statistics' tab.DE",
-      "DeleteCharacter": "Delete CharacterDE",
+      "StatMessage": "Um aktuelle Attributsgewichtungen zu bekommen, nutze Wowanalyzer.com mit einem aktuellen Log und füge hier die Werte aus dem Reiter 'Statistik' ein.",
+      "DeleteCharacter": "Charakter löschen",
       "CreateChar": "Create New CharacterDE",
       "AddChar": "Charakter hinzufügen",
-      "CharName": "Character NameDE"
+      "CharName": "Charaktername"
     },
 
     "_Comments1": "Common Words",
@@ -16,7 +16,7 @@
     "Raid": "Schlachtzug",
     "Dungeon": "Instanz",
     "Cancel": "Abbrechen",
-    "Submit": "SubmitDE",
+    "Submit": "Einfügen",
     "Save": "Speichern",
     "Delete": "DeleteDE",
     "Intellect": "IntellectDE",
@@ -25,31 +25,45 @@
     "Mastery": "MasteryDE",
     "Versatility": "VersatilityDE",
     "Leech": "LeechDE",
-    "Region": "RegionDE",
-    "Race": "RaceDE",
-    "Select Class": "Select ClassDE",
-    "Select Race": "Select RaceDE",
+    "Region": "Region",
+    "Race": "Rasse",
+    "Select Class": "Klasse auswählen",
+    "Select Race": "Rasse auswählen",
     "HowToUse": "Hilfe!",
     "Yes": "Yes",
     "No": "No",
-    "None": "None",
-    "Add": "Add",
+    "None": "Kein Tertiärattribut",
+    "Add": "Hinzufügen",
     "Avoidance": "Avoidance",
     "Source": "Quelle",
+
+    "Classes": {
+      "undefined": "",
+      "HolyPaladin": "Heilig Paladin",
+      "DisciplinePriest": "Disziplin Priester",
+      "RestorationDruid": "Wiederherstellung Druide",
+      "HavocDemonHunter": "Verwüstung Dämonenjäger",
+      "Warrior": "Krieger",
+      "HolyPriest": "Heilig Priester",
+      "MistweaverMonk": "Nebelwirker Mönch",
+      "RestorationShaman": "Wiederherstellung Schamane",
+      "DeathKnight": "Todesritter",
+      "ShadowPriest": "Schattenpriester"
+    },
 
     "CooldownPlanner": {
       "Classes": {
         "undefined": "",
-        "HolyPaladin": "Holy PaladinDE",
-        "DisciplinePriest": "Discipline PriestDE",
-        "RestorationDruid": "Restoration DruidDE",
-        "HavocDemonHunter": "Havoc Demon HunterDE",
-        "Warrior": "WarriorDE",
-        "HolyPriest": "Holy PriestDE",
-        "MistweaverMonk": "Mistweaver MonkDE",
-        "RestorationShaman": "Restoration ShamanDE",
-        "DeathKnight": "Death KnightDE",
-        "ShadowPriest": "Shadow PriestDE"
+        "HolyPaladin": "Heilig Paladin",
+        "DisciplinePriest": "Disziplin Priester",
+        "RestorationDruid": "Wiederherstellung Druide",
+        "HavocDemonHunter": "Verwüstung Dämonenjäger",
+        "Warrior": "Krieger",
+        "HolyPriest": "Heilig Priester",
+        "MistweaverMonk": "Nebelwirker Mönch",
+        "RestorationShaman": "Wiederherstellung Schamane",
+        "DeathKnight": "Todesritter",
+        "ShadowPriest": "Schattenpriester"
       },
       "ChartLabels": {
         "_Comments1": "Translations for HD Charts",
@@ -187,11 +201,11 @@
       "effect": "Bewirken"
     },
 
-    "LegendaryCompare": { "Title": "Legendaries at a GlanceDE" },
+    "LegendaryCompare": { "Title": "Legendäre Effekte auf einen Blick" },
 
     "MainMenu": {
       "PatronInvite": "Gefällt dir die App? Dann unterstütze uns jetzt auf Patreon!",
-      "PatronThanks": "Thank you so much for your support!DE",
+      "PatronThanks": "Vielen Dank für deine Unterstützung!",
       "TopGear": "Beste Ausrüstung",
       "UpgradeFinder": "Upgradeanzeige",
       "QuickCompare": "Schnellvergleich",
@@ -203,12 +217,12 @@
       "CharHeader": "Charaktere",
       "CharHelpText": "Füge deine Charaktere hier hinzu. Rechtsklick um deine Wertegewichtungen, Serverinformationen und mehr zu bearbeiten.",
       "Tooltips": {
-        "TopGear": "Find your best gear setDE",
-        "QuickCompare": "Compare Items for each slotDE.",
-        "ExploreCovenants": "Explore Soulbinds for each covenantDE.",
-        "LegendaryAnalysis": "Find your best legendary power and where to get itDE",
+        "TopGear": "Finde dein bestes Ausrüstungsset.",
+        "QuickCompare": "Vergleiche Gegenstände für jeden Slot.",
+        "ExploreCovenants": "Entdecke die Seelenbande für jeden Pakt.",
+        "LegendaryAnalysis": "Finde deinen besten legendären Effekt und finde heraus, woher du ihn bekommst.",
         "CooldownPlanner": "Plan your cooldowns. Create your own or analyse logsDE",
-        "Profile": "Edit your detailsDE"
+        "Profile": "Bearbeite deine Angaben"
       }
     },
 
@@ -217,36 +231,36 @@
       "Tooltip": {
         "ChangeToRaid": "Wechsle zu den Schlachtzugsinhalten",
         "ChangeToDungeon": "Wechsle zu den Instanzinhalten",
-        "InsertLog": "Insert a log to increase accuracyDE.",
-        "SimC": "Insert a SimC string to import your gearDE.",
-        "Login": "Login to your Battle.net AccountDE",
-        "Language": "Change LanguageDE",
-        "Home": "Main MenuDE"
+        "InsertLog": "Füge ein Log ein, um die Genauigkeit der Angaben zu erhöhen",
+        "SimC": "Füge einen SimC String ein, um deine Ausrüstung zu importieren",
+        "Login": "Logge dich in deinen Battle.net Account ein",
+        "Language": "Sprache ändern",
+        "Home": "Hauptmenü"
       }
     },
 
     "QeProfile": {
       "EmailMsg": "Füge deine E-Mailadresse ein oder aktualisiere sie, um dich mit Patreon zu verbinden.",
-      "NoEmail": "No Email EnteredDE",
+      "NoEmail": "Keine E-Mailadresse vorhanden",
       "QeTier": "QE Live TierDE",
-      "ProfileHeader": "Profile InformationDE",
+      "ProfileHeader": "Profilinformation",
       "EditionAffix": "EditionDE",
       "StandardEdition": "Standard EditionDE",
-      "NoBattleTag": "No Battlenet Account LinkedDE"
+      "NoBattleTag": "Kein Battle.net Account verbunden"
     },
 
     "QuickCompare": {
-      "Slot": "SlotDE",
-      "ItemName": "Item NameDE",
-      "ItemLevel": "Item LevelDE",
-      "Socket": "SocketDE",
-      "Tertiary": "TertiaryDE",
+      "Slot": "Slot",
+      "ItemName": "Name des Gegenstands",
+      "ItemLevel": "Gegenstandsstufe",
+      "Socket": "Sockel",
+      "Tertiary": "Tertiärattribut",
       "AddButton": "AddDE",
       "Title": "Schnellvergleich",
       "HelpText": "Der Schnellvergleich erlaubt es dir, Gegenstände Kopf an Kopf zu vergleichen. Du kannst manuell Gegenstände hinzufügen, indem du die Dropdown-Menüs weiter oben verwendest oder indem du einen 'SimC'-String des gleichnamigen Addons einfügst. Die Wertung der Items wird automatisch in gelber Farbe oben rechts in der Ecke angezeigt und die Gegenstände sind nach ihrer Stärke geordnet.",
       "ItemErrorMsg": "Item Not Added. Ilvl Cap is 300DE",
-      "ItemAdded": "Item Added!DE",
-      "ItemDeleted": "Item Deleted!DE"
+      "ItemAdded": "Gegenstand hinzugefügt!",
+      "ItemDeleted": "Gegenstand entfernt!"
     },
 
     "Races": {
@@ -312,9 +326,9 @@
     },
 
     "SimCInput": {
-      "SimCStringLabel": "SimC StringDE",
-      "SimCHeaderButtonLabel": "SimCDE",
-      "SimCDialogueTitle": "Paste Your SimC StringDE"
+      "SimCStringLabel": "SimC String",
+      "SimCHeaderButtonLabel": "SimC",
+      "SimCDialogueTitle": "Füge deinen SimC String hier ein"
     },
 
     "slotNames": {
@@ -345,7 +359,7 @@
       "StatPanel": {
         "Summary": "Zusammenfassung",
         "Score": "Wertung",
-        "CovenantEstimate": "Geschätzter Einfluss des Paktes:",
+        "CovenantEstimate": "Geschätzter Einfluss des Paktes",
         "SelectedNodes": "Ausgewählte Seelenbande:"
       }
     },
@@ -396,21 +410,21 @@
     },
 
     "UpgradeFinder": {
-      "Header": "Upgrade Finder Results"
+      "Header": "Resultate des Upgradefinders"
     },
     "UpgradeFinderFront": {
-      "Header": "Upgrade Finder",
-      "RaidDifficultyHeader": "Raid Difficulty",
-      "RaidDifficultyBody": "Select up to two difficulties to find upgrades from",
-      "MythicPlusHeader": "Mythic Plus Key Level",
-      "MythicPlusBody": "Use the Slider to Select the level of keys you usually complete",
-      "PvPHeader": "PvP Rating",
+      "Header": "Upgradefinder",
+      "RaidDifficultyHeader": "Schlachtzugsschwierigkeit",
+      "RaidDifficultyBody": "Wähle bis zu zwei verschiedene Schwierigkeitsstufen, um mögliche Upgrades zu finden",
+      "MythicPlusHeader": "Mythisch Plus Schlüsselsteinlevel",
+      "MythicPlusBody": "Nutze den Regler, um die durchschnittliche Höhe der Schlüsselsteine anzugeben, die du bewältigst",
+      "PvPHeader": "PvP Wertung",
       "PvPBody": "Select  your currency and Rating",
       "SimCHeader": "SimC Import",
-      "SimCBody1": "Current SimC String Status:",
-      "SimCBody2": "Current Equipped Gear:",
-      "SimCButton": "Import SimC",
-      "HelpText": "Insert a SimC String, Select up to two raid difficulties, your standard mythic keystone level, and your PVP rating to see where you can find your next upgrade!"
+      "SimCBody1": "Aktueller Status des SimC Strings:",
+      "SimCBody2": "Aktuell ausgerüstete Ausrüstung:",
+      "SimCButton": "Import vom SimC Addon",
+      "HelpText": "Kopiere deinen SimC String hier herein, wähle bis zu zwei Schlachtzugsschwierigkeiten, dein durchschnittliches Schlüsselsteinlevel und deine PvP Wertung aus, um herauszufinden, wo du dein nächstes Upgrade finden kannst!"
     },
 
     "DruidLegendariesComment": "DruidLegendariesComment",
