@@ -16,9 +16,9 @@ i18n
   .init({
     resources: {
       en: languageEN,
-      cn: languageCH,
-      ru: languageRU,
-      fr: languageFR,
+      //cn: languageCH,
+      //ru: languageRU,
+      //fr: languageFR,
       de: languageDE
     },
     /* default language when load the website in browser */
