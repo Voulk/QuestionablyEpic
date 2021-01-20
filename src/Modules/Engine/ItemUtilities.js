@@ -101,12 +101,14 @@ export function filterItemListBySource(
   pvpRank = 0
 ) {
   let temp = itemList.filter(function (item) {
+    console.log("Filtering: " + item.id);
+    console.log(item);
     let itemEncounter = item.source.encounterId;
     let expectedItemLevel = level;
     if (itemEncounter == 2425 || itemEncounter == 2424) expectedItemLevel += 7;
     else if (sourceInstance === -17 && pvpRank === 5 && ["1H Weapon", "2H Weapon", "Offhand", "Shield"].includes(item.slot)) expectedItemLevel += 7;
 
-    console.log(expectedItemLevel);
+    //console.log(expectedItemLevel);
 
     return (
       item.level == expectedItemLevel &&
@@ -198,6 +200,14 @@ export function getItemSubclass(id) {
   });
 
   if (temp.length > 0 && "itemSubClass" in temp[0]) return temp[0].itemSubClass;
+  else return "";
+}
+
+export function getFullItem(id) {
+  let temp = itemDB.filter(function (item) {
+    return item.id === id;
+  });
+  if (temp.length > 0) return temp[0];
   else return "";
 }
 

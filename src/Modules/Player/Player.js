@@ -43,6 +43,7 @@ class Player {
   activeConduits = [];
   renown = 0;
   castModel = {};
+  covenant = "";
 
   region = "";
   realm = "";
@@ -130,6 +131,16 @@ class Player {
 
     return 0;
   };
+
+  getCovenant = () => {
+    return this.covenant;
+  }
+
+  setCovenant = (cov) => {
+    if (["night_fae", "venthyr", "necrolord", "kyrian"].includes(cov)) this.covenant = cov;
+    // Else raise error.
+    
+  }
 
   calculateConduits = (contentType) => {
     //console.log("Calculating Conduits")
