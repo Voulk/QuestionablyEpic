@@ -10,7 +10,7 @@
 
     "_Comments1": "Common Words",
     "Login": "Einloggen",
-    "Name": "NameDE",
+    "Name": "Charaktername",
     "Class": "ClassDE",
     "Cooldown": "CooldownDE",
     "Raid": "Schlachtzug",
@@ -88,8 +88,8 @@
       },
       "UserInputs": {
         "_Comments1": "Translations for the User Input Components",
-        "Loglink": "Paste WarcraftLog Link HereDE",
-        "fightButtonLabel": "Select FightDE"
+        "Loglink": "Füge deinen Warcraftlogbericht hier ein",
+        "fightButtonLabel": "Bitte wähle einen Kampf aus"
       },
       "HealerCards": {
         "_Comments1": "Translations for the Accordian for Healer Info",
