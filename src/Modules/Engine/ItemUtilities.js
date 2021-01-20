@@ -6,6 +6,7 @@ import {
 } from "./CombatMultByLevel";
 import { getEffectValue } from "./EffectFormulas/EffectEngine";
 import SPEC from "../Engine/SPECS";
+import {translatedStat} from "../Engine/STAT";
 import Item from "../Player/Item";
 import { useTranslation } from "react-i18next";
 import { i18n } from "react-i18next";
@@ -411,7 +412,7 @@ export function calcStatsAtLevel(itemLevel, slot, statAllocations, tertiary) {
 
 // Builds a stat string out of an items given stats and effect.
 // Stats should be listed in order of quantity.
-export function buildStatString(stats, effect) {
+export function buildStatString(stats, effect, lang = "en") {
   //const { t, i18n } = useTranslation();
   let statString = "";
   let statsList = [
@@ -426,12 +427,15 @@ export function buildStatString(stats, effect) {
   });
 
   for (var ind in statsList) {
+    let statKey = statsList[ind]["key"];
+    console.log("Stat: " + statKey);
+    console.log(translatedStat[statKey]["en"]);
     statString +=
       statsList[ind]["val"] > 0
         ? statsList[ind]["val"] +
-          " " +
-          correctCasing(statsList[ind]["key"]) +
-          " / " // t("stats." + statsList[ind]["key"])
+          " " + translatedStat[statKey][lang] + 
+          //correctCasing(statsList[ind]["key"]) +
+          " / " //t("stats." + statsList[ind]["key"])
         : "";
   }
 

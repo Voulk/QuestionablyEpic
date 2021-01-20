@@ -52,3 +52,59 @@ export const STATPERONEPERCENT = {
     "Shaman-Restoration": 11.66,
   },
 };
+
+export const translatedStat = {
+    "haste": {
+      "en": "Haste",
+      "fr": "Hâte",
+      "de": "Tempo",
+      "cn": "CNHaste",
+      "ru": "RuHaste",
+      
+    },
+    "crit": {
+      "en": "Crit",
+      "fr": "Score de crit",
+      "de": "Kritische Trefferwertung",
+      "cn": "CNCr",
+      "ru": "RuCr",
+    },
+    "mastery": {
+      "en": "Mastery",
+      "fr": "Maîtrise",
+      "de": "Meisterschaft",
+      "cn": "CNCr",
+      "ru": "RuCr",
+    },
+    "versatility": {
+      "en": "Vers",
+      "fr": "Versatilité",
+      "de": "Vielseitigkeit",
+      "cn": "CNCr",
+      "ru": "RuCr",
+    },
+    "intellect": {
+      "en": "Int",
+      "fr": "Int",
+      "de": "Int",
+      "cn": "CNCr",
+      "ru": "RuCr",
+    },
+    "leech": {
+      "en": "Leech",
+      "fr": "Leech",
+      "de": "Leech",
+      "cn": "CNCr",
+      "ru": "RuCr",
+    },
+    "effect": {
+      "en": "Effect",
+      "fr": "Effect",
+      "de": "Effect",
+      "cn": "CNCr",
+      "ru": "RuCr",
+    },
+
+
+
+}

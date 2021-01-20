@@ -173,6 +173,7 @@ export default function TopGear(props) {
     // Call to the Top Gear Engine. Lock the app down.
     if (checkTopGearValid) {
       setBtnActive(false);
+      const currentLanguage = i18n.language;
       let itemList = props.pl.getSelectedItems();
       let wepCombos = buildWepCombos(props.pl, true);
       const worker = require("workerize-loader!./TopGearEngine"); // eslint-disable-line import/no-webpack-loader-syntax
@@ -180,7 +181,7 @@ export default function TopGear(props) {
       let strippedPlayer = JSON.parse(JSON.stringify(props.pl));
       //console.log("Pl: " + JSON.stringify(props.pl));
       instance
-        .runTopGear(itemList, wepCombos, strippedPlayer, props.contentType)
+        .runTopGear(itemList, wepCombos, strippedPlayer, props.contentType, currentLanguage)
         .then((result) => {
           //console.log(`Loop returned`);
           apiSendTopGearSet(

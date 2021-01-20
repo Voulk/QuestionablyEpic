@@ -64,9 +64,10 @@ const useStyles = makeStyles({
 export default function ItemCard(props) {
   const classes = useStyles();
   const item = props.item;
-  const statString = buildStatString(item.stats, item.effect);
+  
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
+  const statString = buildStatString(item.stats, item.effect, currentLanguage);
   const itemLevel = item.level;
   const isLegendary = "effect" in item && item.effect.type === "spec legendary";
 
