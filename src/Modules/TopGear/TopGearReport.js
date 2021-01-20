@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 import { getItemIcon, getTranslatedItemName } from "../Engine/ItemUtilities";
 import { classColoursJS } from "../CooldownPlanner/Functions/ClassColourFunctions";
 
+
 function TopGearReport(props) {
   const [backgroundImage, setBackgroundImage] = useState("");
   const { t, i18n } = useTranslation();
@@ -218,6 +219,7 @@ function TopGearReport(props) {
                           <TopSetStatsPanel
                             statList={statList}
                             spec={props.pl.spec}
+                            currentLanguage={currentLanguage}
                           />
                         </Grid>
                       </Grid>
@@ -315,7 +317,7 @@ function TopGearReport(props) {
                     style={{ width: "100%" }}
                     color="primary"
                   >
-                    Competitive Alternatives
+                    {t("TopGear.CompetitiveAlternative")}
                   </Typography>
                   <Divider />
                 </Grid>
@@ -381,9 +383,7 @@ function TopGearReport(props) {
         </Grid>
       ) : (
         <Typography style={{ textAlign: "center", color: "white" }}>
-          So sorry, seems you've run into an error. This is usually caused by not being able to create any valid sets. Check that you have
-          a valid weapon selected, two or more rings and two or more trinkets. If multiple legendaries are selected then there must be a valid
-          alternative for each. 
+          {t("TopGear.ErrorMessage")}
         </Typography>
       )}
     </div>

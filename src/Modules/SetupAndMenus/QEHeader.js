@@ -122,13 +122,9 @@ export default function QEHeader(props) {
                 <Grid item>
                   <Tooltip
                     title={
-                      t("QeHeader.Tooltip.ContentTypeMsgStart") +
-                      " " +
                       (props.contentType === "Raid"
-                        ? t("Dungeon")
-                        : t("Raid")) +
-                      " " +
-                      t("QeHeader.Tooltip.ContentTypeMsgEnd")
+                        ? t("QeHeader.Tooltip.ChangeToDungeon")
+                        : t("QeHeader.Tooltip.ChangeToRaid")) 
                     }
                     arrow
                   >

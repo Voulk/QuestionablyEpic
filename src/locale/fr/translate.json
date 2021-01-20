@@ -3,38 +3,53 @@
     "CharacterCreator": {
       "StatMessage": "To get updated stat weights use WowAnalyzer.com with a recent log and enter the values here from the 'Statistics' tab.FR",
       "DeleteCharacter": "Delete CharacterFR",
-      "CreateChar": "Create New Character",
-      "AddChar": "Add Character",
-      "CharName": "Character Name"
+      "CreateChar": "Create New CharacterFR",
+      "AddChar": "Ajouter un personnage",
+      "CharName": "Character NameFR"
     },
 
     "_Comments1": "Common Words - All these need translating stillFR",
-    "Login": "LoginFR",
-    "Name": "NameFR",
-    "Class": "ClassFR",
-    "Cooldown": "CooldownFR",
-    "Raid": "RaidFR",
-    "Dungeon": "DungeonFR",
-    "Cancel": "CancelFR",
+    "Login": "Connexion",
+    "Name": "Nom",
+    "Class": "Classe",
+    "Cooldown": "Recharge",
+    "Raid": "Raid",
+    "Dungeon": "Donjon",
+    "Cancel": "Annuler",
     "Submit": "SubmitFR",
-    "Save": "SaveFR",
+    "Save": "Sauvegarder",
     "Delete": "DeleteFR",
-    "Intellect": "IntellectFR",
-    "Crit": "CritFR",
-    "Haste": "HasteFR",
-    "Mastery": "MasteryFR",
-    "Versatility": "VersatilityFR",
+    "Intellect": "Intelligence",
+    "Crit": "Score de crit",
+    "Haste": "Hâte",
+    "Mastery": "Maîtrise",
+    "Versatility": "Versatilité",
     "Leech": "LeechFR",
     "Region": "RegionFR",
     "Race": "RaceFR",
     "Select Class": "Select ClassFR",
     "Select Race": "Select RaceFR",
-    "HowToUse": "How to UseFR",
-    "Yes": "YesFR",
-    "No": "NoFR",
+    "HowToUse": "Comment-faire",
+    "Yes": "Oui",
+    "No": "Non",
     "None": "NoneFR",
     "Add": "AddFR",
     "Avoidance": "Avoidance",
+    "Source": "Source",
+
+    "Classes": {
+      "undefined": "",
+      "HolyPaladin": "Holy PaladinFR",
+      "DisciplinePriest": "Discipline PriestFR",
+      "RestorationDruid": "Restoration DruidFR",
+      "HavocDemonHunter": "Havoc Demon HunterFR",
+      "Warrior": "WarriorFR",
+      "HolyPriest": "Holy PriestFR",
+      "MistweaverMonk": "Mistweaver MonkFR",
+      "RestorationShaman": "Restoration ShamanFR",
+      "DeathKnight": "Death KnightFR",
+      "ShadowPriest": "Shadow PriestFR"
+    },
 
     "CooldownPlanner": {
       "Classes": {
@@ -80,8 +95,8 @@
         "_Comments1": "Translations for the Accordian for Healer Info",
         "StatsHeading": "StatsFR",
         "Item Level": "ilvl",
-        "Crit": "Crit",
-        "Haste": "Haste",
+        "Crit": "Score de crit",
+        "Haste": "Hâte",
         "Mastery": "Mastery",
         "Versatility": "Versatility",
         "TalentHeader": "Talents",
@@ -177,8 +192,8 @@
     },
 
     "InsertLog": {
-      "PlsSelectFight": "Please Select a FightFR",
-      "InsertLogHeader": "Paste Your Warcraft Logs Report HereFR"
+      "PlsSelectFight": "Veuillez choisir un combat",
+      "InsertLogHeader": "Collez votre lien de rapport Warcraft (Logs) ici"
     },
 
     "itemTags": {
@@ -192,12 +207,11 @@
       "PatronInvite": "Vous aimez l'application? Vous pouvez montrer votre support sur Patreon!",
       "PatronThanks": "Thank you so much for your support!",
       "TopGear": "Meilleur équipement (Bêta)",
-      "UpgradeFinder": "Upgrade Finder (Coming Soon)",
+      "UpgradeFinder": "Trouver de meilleur équipement",
       "QuickCompare": "Comparaison rapide d'équipement",
       "ExploreCovenants": "Explorer les Covenants",
       "LegendaryAnalysis": "Analyse de Légendaire",
       "TrinketAnalysis": "Trinket Analysis",
-      "GreatVault": "The Great Vault (Coming Soon)",
       "CooldownPlanner": "Planificateur de cooldown (Coming Soon)",
       "Profile": "Profil",
       "CharHeader": "Personnages",
@@ -214,11 +228,11 @@
     },
 
     "QeHeader": {
-      "InsertLogLabel": "Insert LogFR",
-      "Login": "LoginFR",
+      "InsertLogLabel": "Inséré le rapport",
+      "Login": "Connexion",
       "Tooltip": {
-        "ContentTypeMsgStart": "Change toFR",
-        "ContentTypeMsgEnd": "ContentFR",
+        "ChangeToRaid": "Changer pour le contenu de Raid",
+        "ChangeToDungeon": "Changer pour le contenu de Donjon",
         "InsertLog": "Insert a log to increase accuracyFR.",
         "SimC": "Insert a SimC string to import your gearFR.",
         "Login": "Login to your Battle.net AccountFR",
@@ -228,7 +242,7 @@
     },
 
     "QeProfile": {
-      "EmailMsg": "Enter/Update your Email to link to PatreonFR",
+      "EmailMsg": "Entrez/Changez votre courriel pour lier avec Patreon",
       "NoEmail": "No Email EnteredFR",
       "QeTier": "QE Live TierFR",
       "ProfileHeader": "Profile InformationFR",
@@ -238,14 +252,14 @@
     },
 
     "QuickCompare": {
-      "Slot": "SlotFR",
-      "ItemName": "Item NameFR",
-      "ItemLevel": "Item LevelFR",
-      "Socket": "SocketFR",
-      "Tertiary": "TertiaryFR",
+      "Slot": "Slot",
+      "ItemName": "Nom de la pièce",
+      "ItemLevel": "Niveau de la pièce",
+      "Socket": "Socket",
+      "Tertiary": "Stats Tertiaire",
       "AddButton": "AddFR",
-      "Title": "Quick CompareFR",
-      "HelpText": "Quick Compare allows you to compare items one by one. You can add items manually using the dropdowns above, or all at once using a string from the SimC addon. The score is automatically shown in the top right corner in yellow, and items are ordered by strength.FR",
+      "Title": "Comparaison rapide d'équipement",
+      "HelpText": "La fonction 'Comparaison rapide d'équipement' vous permets de comparer vos pièces individuellement. Vous pouvez ajouter des équipements manuellement en utilisant le menu déroulant ci-dessus ou via l'importation de vos données SimC. Le pointage est automatiquement affiché dans le coin supérieur droit en jaune, et les équipements sont ensuite triés en commençant par la pièce ayant le meilleur pointage.",
       "ItemErrorMsg": "Item Not Added. Ilvl Cap is 300FR",
       "ItemAdded": "Item Added!FR",
       "ItemDeleted": "Item Deleted!FR"
@@ -339,10 +353,17 @@
     },
 
     "Soulbinds": {
-      "Header": "Covenant ExplorationFR",
-      "PotencyConduit": "Potency ConduitFR",
-      "EnduranceConduit": "Endurance ConduitFR",
-      "FinesseConduit": "Finesse ConduitFR"
+      "Header": "Explorer les Covenants",
+      "PotencyConduit": "Intermédiaire de puissance",
+      "EnduranceConduit": "Intermédiaire d’endurance",
+      "FinesseConduit": "Intermédiaire de finesse",
+      "ConduitInstructions": "Clique droit/gauche sur les Conduits pour changer le niveau (iLvl)",
+      "StatPanel": {
+        "Summary": "Résumé",
+        "Score": "Pointage",
+        "CovenantEstimate": "Pointage estimé de l'abilité du Covenant",
+        "SelectedNodes": "Les nodes choisient"
+      }
     },
 
     "stats": {
@@ -352,7 +373,7 @@
       "versatility": "Versatilité"
     },
     "Settings": {
-      "SettingsTitle": "SettingsFR",
+      "SettingsTitle": "Paramètres",
       "Setting0Spacer": "--------------------------------------------------------------------",
       "Setting0Tooltip": "The equip effect of 'Cabalist's Hymnal' is increased by 5% per AllyFR",
       "Setting0Title": "Allies With HymnalFR",
@@ -380,25 +401,26 @@
     },
 
     "TopGear": {
-      "Title": "Top GearFR",
-      "HelpText": "Top Gear allows you to generate an entire gear set at once. Start by entering your SimC string above, then click to highlight any items you want included in the comparison. When you're all set, hit 'Go' at the bottom of the page. To enter items manually, return to the main menu and include them in QE Quick Compare. Great Vault items are added automatically though for the first week consider your choice carefully outside of the appFR.",
-      "ItemsHereMessage": "Your items will go here after you importFR.",
-      "GoMsg": "Go!FR",
-      "SelectedItems": "Selected ItemsFR",
-      "StatPanel": { "AvgStats": "Average Stats (includes procs)FR" }
+      "Title": "Meilleur équipement",
+      "HelpText": "La fonction 'Meilleur équipement' vous permet de générer un ensemble d'équipement complet. Commencez par entrer vos données SimC ci-dessus, ensuite veuillez cliquer sur les équipements que vous voulez comparer. Quand vous avez terminé, cliquez sur 'Go!' au bas de la page. Pour entrer des équipements manuellement, retournez au menu principal et veuillez les inclures dans la fonction 'Comparaison rapide d'équipement'.",
+      "ItemsHereMessage": "Vos pièces iront ici après l'importation.",
+      "ErrorMessage": "Désolé, mais il semble qu'une erreur se soit produite. Retournez au menu principal et veuillez essayer à nouveau.",
+      "GoMsg": "Go!",
+      "SelectedItems": "Pièces choisies:",
+      "CompetitiveAlternative": "Les alternatives intéressantes",
+      "StatPanel": { "AvgStats": "Moyenne de stats (Incluant les procs)" }
     },
 
     "UpgradeFinder": {
       "Header": "Upgrade Finder Results"
     },
     "UpgradeFinderFront": {
-      "Header": "Upgrade Finder",
+      "Header": "Trouver de meilleur équipement",
       "RaidDifficultyHeader": "Raid Difficulty",
       "RaidDifficultyBody": "Select up to two difficulties to find upgrades from",
       "MythicPlusHeader": "Mythic Plus Key Level",
       "MythicPlusBody": "Use the Slider to Select the level of keys you usually complete",
       "PvPHeader": "PvP Rating",
-      "PvPBody": "Select  your currency and Rating",
       "SimCHeader": "SimC Import",
       "SimCBody1": "Current SimC String Status:",
       "SimCBody2": "Current Equipped Gear:",
@@ -408,288 +430,300 @@
 
     "DruidLegendariesComment": "DruidLegendariesComment",
     "Vision of Unending Growth": {
-      "name": "Vision of Unending Growth",
-      "slot": "Head or Feet",
-      "desc": "Rejuvenation has a 2.5% chance to create a new Rejuvenation on a nearby target on tick.",
-      "droploc": "Torghast, Fracture Chambers, Layer 3+"
+      "name": "Vision de croissance sans fin",
+      "slot": "Tête, Pieds",
+      "desc": "Les soins de Récupération ont 2.5% de chances de créer une nouvelle Récupération sur une cible proche.",
+      "droploc": "Chambres aux Fractures, échelon 3 ou plus"
     },
     "The Dark Titans Lesson": {
-      "name": "The Dark Titans Lesson",
-      "slot": "Neck or Back",
-      "desc": "You may apply Lifebloom to two targets at once, but your Lifebloom healing is reduced by 10%.",
-      "droploc": "Lord Chamberlain, Halls of Atonement"
+      "name": "Leçon du Titan noir",
+      "slot": "Cou, Dos",
+      "desc": "Vous pouvez utiliser Fleur de vie sur 2 cibles à la fois, mais les soins du sort sont réduits de 10%.",
+      "droploc": "Butin de donjon : grand chambellan"
     },
     "Verdant Infusion": {
-      "name": "Verdant Infusion",
-      "slot": "Shoulder or Hands",
-      "desc": "Swiftmend no longer consumes a heal over time effect, and extends the duration of HoTs on the target by 8s.",
-      "droploc": "Oranomonos, World Boss"
+      "name": "Infusion verdoyante",
+      "slot": "Épaule, Mains",
+      "desc": "Prompte guérison ne consomme plus d’effet de soins sur la durée, et prolonge de 8 s ceux qui affectent la cible.",
+      "droploc": "Oranomonos la Mille-Rameaux"
     },
     "Lycaras Fleeting Glimpse": {
-      "name": "Lycara's Fleeting Glimpse",
-      "slot": "Waist or Feet",
-      "desc": "Every 45s while in combat, cast a spell based on your form (Wild Growth, Primal Wrath, Starfall, Stampeding Roar).",
-      "droploc": "Mordretha, Theater of Pain"
+      "name": "Aperçu éphémère de Lycara",
+      "slot": "Taille, Pieds",
+      "desc": "Toutes les 45 s en combat, vous lancez un sort en fonction de votre forme: Croissance sauvage, Colère primitive, Ecorce, Météores, Ruée rugissante",
+      "droploc": "Mordretha, l’impératrice immortelle"
     },
     "Memory of the Mother Tree": {
-      "name": "Memory of the Mother Tree",
-      "slot": "Legs or Wrist",
-      "desc": "Wild Growth has a 40% chance to cause your next Rejuv or Regrowth to apply to 3 additional allies.",
-      "droploc": "Lady Invera Darkvein, Castle Nathria"
+      "name": "Souvenir de l’Arbre-Mère",
+      "slot": "Jambes, Poignets",
+      "desc": "Croissance sauvage a 40% de chances de permettre à votre prochain sort Récupération ou Rétablissement de s’appliquer à 3 alliés supplémentaires à moins de 20 mètres de la cible.",
+      "droploc": "dame Inverva Sombreveine"
     },
     "Oath of the Elder Druid": {
-      "name": "Oath of the Elder Druid",
-      "slot": "Shoulder or Wrist",
-      "desc": "Effects of Thick Hide, Astral Influence, Feline Swiftness and Ysera's Gift increased by 75%. Free Heart of the Wild per minute.",
-      "droploc": "PVP Honor Vendor"
+      "name": "Serment de l’ancien druide",
+      "slot": "Épaule, Poignets",
+      "desc": "Effets de Peau épaisse, Influence astrale, Rapidité féline et Don d’Ysera augmentés de 75%. Lorsque vous prenez la forme correspondant à votre affinité, vous bénéficiez de Cœur de fauve pendant 10 s, une fois toutes les 1 min.",
+      "droploc": "À acheter contre des points d’honneur auprès du pourvoyeur Zo’kuul."
     },
     "Circle of Life and Death": {
-      "name": "Circle of Life and Death",
-      "slot": "Head or Finger",
-      "desc": "DoT's deal damage in 25% less time, HoTs in 15% less time.",
-      "droploc": "Stone Legion Generals, Castle Nathria"
+      "name": "Cycle de la vie et la mort",
+      "slot": "Tête, Doigt",
+      "desc": "Vos effets de dégâts sur la durée infligent leurs dégâts 25% plus vite. Vos effets de soins sur la durée soignent 15% plus vite.",
+      "droploc": "généraux de la Légion de pierre"
     },
 
     "PaladinLegendariesComment": "PaladinLegendariesComment",
     "Of Dusk and Dawn": {
-      "name": "Of Dusk and Dawn",
-      "slot": "Head or Shoulder",
-      "desc": "When you reach 5 Holy Power, gain 6% damage and healing for 8 seconds. When you reach 0 Holy Power, gain 3% DR for 10 seconds.",
-      "droploc": "Stone Legion Generals, Castle Nathria"
+      "name": "Aube et crépuscule",
+      "slot": "Tête, Épaule",
+      "desc": "À 5 point de puissance sacrée, vous bénéficiez de Bénédiction de l’aube. À 0 point de puissance sacrée, vous bénéficiez de Bénédiction du crépuscule. Bénédiction de l’aube: Dégâts et soins augmentés de 6% pendant 8 sec. Bénédiction du crépuscule: Dégâts subis réduits de 3% pendant 8 sec.",
+      "droploc": "généraux de la Légion de pierre"
     },
     "Vanguards Momentum": {
-      "name": "Vanguard's Momentum",
-      "slot": "Head or Hands",
-      "desc": "Hammer of Wrath has an extra charge and increases Holy Damage done by 3% for 8s. Stacks 3 times.",
-      "droploc": "Sire Denathrius, Castle Nathria"
+      "name": "Impulsion de l’avant-garde",
+      "slot": "Tête, Mains",
+      "desc": "Marteau de courroux a 1 charge supplémentaire et augmente de 3% les dégâts du Sacré pendant 8 sec. Cumulable jusqu’à 3 fois.",
+      "droploc": "sire Denathrius"
     },
     "The Magistrates Judgment": {
-      "name": "The Magistrate's Judgment",
-      "slot": "Wrist or Finger",
-      "desc": "Judgment has a 60% chance to reduce the cost of your next Holy Power spender by 60%.",
-      "droploc": "Xav the Unfallen, Theater of Pain"
+      "name": "Jugement du magistrat",
+      "slot": "Poignets, Doigt",
+      "desc": "Jugement a 75% de chances de réduire de 1 le coût de votre prochaine technique consommant de la puissance sacrée.",
+      "droploc": "Xav l’Invaincu"
     },
     "Inflorescence of the Sunwell": {
-      "name": "Inflorescence of the Sunwell",
-      "slot": "Feet or Back",
-      "desc": "Infusion of Light has 1 additional charge and its effects are increased by 20%.",
-      "droploc": "Torghast, The Soulforges, Layer 3+"
+      "name": "Inflorescence du Puits de soleil",
+      "slot": "Pieds, Dos",
+      "desc": "Imprégnation de lumière a 1 charge supplémentaire et ses effets sont augmentés de 20%.",
+      "droploc": "Forges des Âmes, échelon 3 ou plus"
     },
     "Maraads Dying Breath": {
-      "name": "Maraad's Dying Breath",
-      "slot": "Chest or Finger",
-      "desc": "Light of Dawn causes your next Light of the Martyr to also heal your Beacon of Light. Each ally hit by LoD increases Light of the Martyr healing by 10%.",
-      "droploc": "Grand Proctor Beryllia, Sanguine Depths"
+      "name": "Dernier souffle de Maraad",
+      "slot": "Torse, Doigt",
+      "desc": "Les soins de Lumière de l’aube permettent à votre prochaine Lumière du martyr de soigner également votre Guide de lumière. Chaque allié soigné par Lumière de l’aube augmente de 10% les soins de Lumière du martyr.",
+      "droploc": "grande déléguée Beryllia"
     },
     "Shadowbreaker, Dawn of the Sun": {
-      "name": "Shadowbreaker, Dawn of the Sun",
-      "slot": "Shoulder or Hands",
-      "desc": "Light of Dawns range is increased to 40 yards, and all allies healed receive full effect from your Mastery for 6s.",
-      "droploc": "Sun King's Salvation, Castle Nathria"
+      "name": "Brisombre, le lever de soleil",
+      "slot": "Épaule, Mains",
+      "desc": "La portée de Lumière de l’aube est augmentée de 40 mètres. Les alliés dans sa zone d’effet bénéficient de Maîtrise : Porteur de Lumière comme s’ils se trouvaient à moins de 10 mètres pendant 6 sec. L’effet de votre Maîtrise sur Mot de gloire est augmenté de 50%.",
+      "droploc": "salut du roi-soleil"
     },
     "Shock Barrier": {
-      "name": "Shock Barrier",
-      "slot": "Legs or Feet",
-      "desc": "Holy Shock protects the target for 18 seconds, absorbing 20% of it's healing every 6s. Maximum of 5 targets protected at a time.",
-      "droploc": "Torghast, Coldheart Interstitia, Layer 3+"
+      "name": "Barrière de choc",
+      "slot": "Jambes, Pieds",
+      "desc": "Horion sacré confère à la cible un bouclier de Lumière sacrée qui dure 18 sec et absorbe un montant de dégâts égal à 20% des dégâts d’Horion sacré toutes les 6 s. Peut protéger jusqu’à 5 cibles.",
+      "droploc": "Interstice Cœur-Algide, échelon 3 ou plus"
     },
     "The Mad Paragon": {
-      "name": "The Mad Paragon",
-      "slot": "Waist or Feet",
-      "desc": "Hammer of Wrath deals 30% additional damage and extends the duration of Wings by 1s.",
-      "droploc": "The Great Vault"
+      "name": "Parangon fou",
+      "slot": "Taille, Pieds",
+      "desc": "Marteau de courroux inflige 30% de dégâts supplémentaires et augmente la durée de Courroux vengeur de 1 s.",
+      "droploc": "Quête : La grande chambre forte"
     },
     "Relentless Inquisitor": {
-      "name": "Relentless Inquisitor (Retribution)",
-      "slot": "Legs or Back",
-      "desc": "Spending Holy Power grants you 1% haste per finisher for 12 sec, stacking up to 5 times.",
-      "droploc": "Torghast, The Upper Reaches, Layer 3+"
+      "name": "Inquisiteur implacable",
+      "slot": "Jambes, Dos",
+      "desc": "Dépenser de la puissance sacrée augmente la Hâte de 1% par coup de grâce asséné pendant 12 sec. Cumulable jusqu’à 5 fois.",
+      "droploc": "Étages supérieurs, échelon 3 ou plus"
     },
 
     "PriestLegendariesComment": "PriestLegendariesComment",
     "Clarity of Mind": {
-      "name": "Clarity of Mind",
-      "slot": "Chest or Finger",
-      "desc": "Spirit Shell increases the duration of active atonements by 3s and reduces mana costs by 30%. During Rapture, PW:S costs 20% less mana and applies 6s longer atonements.",
-      "droploc": "Sludgefist, Castle Nathria"
+      "name": "Clarté d’esprit",
+      "slot": "Torse, Doigt",
+      "desc": "Pendant Extase, le coût en mana de Mot de pouvoir : Bouclier est réduit de 20% et la durée des Expiations qu’il applique est augmentée de 6 s.",
+      "droploc": "Fangepoing"
     },
     "Crystalline Reflection": {
-      "name": "Crystalline Reflection",
-      "slot": "Shoulder or Hands",
-      "desc": "Power Word Shield instantly heals the target for 42% SP, and reflects 20% of damage absorbed.",
-      "droploc": "Margrave Stradama, Plaguefall"
+      "name": "Reflet cristallin",
+      "slot": "Épaule, Mains",
+      "desc": "Mot de pouvoir : Bouclier rend instantanément (42% of Spell power) points de vie à la cible et renvoie 20% des dégâts absorbés.",
+      "droploc": "margrave Stradama"
     },
     "Kiss of Death": {
-      "name": "Kiss of Death",
-      "slot": "Legs or Feet",
-      "desc": "Reduces Shadow Word: Death's cooldown by 8s and causes it's damage to trigger atonement when used on targets below 20% health.",
-      "droploc": "Torghast, Mort'regar, Layer 3+"
+      "name": "Baiser de la mort",
+      "slot": "Jambes, Pieds",
+      "desc": "Réduit de 8 s le temps de recharge de Mot de l’ombre : Mort et permet à ses dégâts de déclencher Expiation sur les cibles disposant de moins de 20% de leurs points de vie.",
+      "droploc": "Mort’regar, échelon 3 ou plus"
     },
     "The Penitent One": {
-      "name": "The Penitent One",
-      "slot": "Feet or Back",
-      "desc": "Power Word: Radiance has a 60% chance to cause your next Penance to be free and fire 3 extra bolts.",
-      "droploc": "Torghast, The Soulforges, Layer 3+"
+      "name": "Le pénitent",
+      "slot": "Pieds, Dos",
+      "desc": "Mot de pouvoir : Radiance a 60% de chances de permettre à la prochaine Pénitence de tirer 3 salves supplémentaires.",
+      "droploc": "Forges des Âmes, échelon 3 ou plus"
     },
     "Cauterizing Shadows": {
-      "name": "Cauterizing Shadows",
-      "slot": "Waist or Feet",
-      "desc": "When Shadow Word: Pain expires on a target, 3 allies within 30 yards of the target are healed.",
-      "droploc": "Mordretha, Theater of Pain"
+      "name": "Ombres cautérisantes",
+      "slot": "Taille, Pieds",
+      "desc": "Lorsque Mot de l’ombre : Douleur prend fin sur une cible, 3 alliés à moins de 30 mètres de la cible récupèrent (55% of Spell power) points de vie.",
+      "droploc": "Mordretha, l’impératrice immortelle"
     },
     "Measured Contemplation": {
-      "name": "Measured Contemplation",
-      "slot": "Neck or Chest",
-      "desc": "Every 15s that you do not cast Flash Heal / Shadow Mend, the healing of your next Flash Heal / Shadow Mend is increased by 50%. Stacks four times.",
-      "droploc": "The Great Vault"
+      "name": "Contemplation mesurée",
+      "slot": "Cou, Torse",
+      "desc": "Pour chaque période de 15 s écoulées sans lancer Guérison de l’ombre, les soins prodigués par votre prochaine incantation de ce sort sont augmentés de 50%. Cet effet est cumulable jusqu’à 4 fois.",
+      "droploc": "Quête : La grande chambre forte"
     },
     "Twins of the Sun Priestess": {
-      "name": "Twins of the Sun Priestess",
-      "slot": "Head or Shoulder",
-      "desc": "Power Infusion also grants you 100% of its effects when used on an ally.",
-      "droploc": "Stone Legion Generals, Castle Nathria"
+      "name": "Prêtresse des Jumeaux du soleil",
+      "slot": "Tête, Épaule",
+      "desc": "Infusion de puissance vous confère également 100% de ses effets lorsque vous l’utilisez sur un allié.",
+      "droploc": "généraux de la Légion de pierre"
     },
     "Divine Image": {
-      "name": "Divine Image",
-      "slot": "Head or Waist",
-      "desc": "When you use a Holy Word spell, you have a chance to summon a Naaru to your side. For 15s, the Naaru will cast similar spells to you.",
-      "droploc": "Torghast, Coldheart Interstitia, Layer 3+"
+      "name": "Image divine",
+      "slot": "Tête, Taille",
+      "desc": "Lorsque vous lancez un sort Mot sacré, vous avez une chance d’invoquer une image d’un Naaru à vos côtés. Pendant 15 sec, chaque fois que vous lancez un sort, le Naaru le lance également.",
+      "droploc": "Interstice Cœur-Algide, échelon 3 ou plus"
     },
     "Flash Concentration": {
-      "name": "Flash Concentration",
-      "slot": "Neck or Wrist",
-      "desc": "Each time you cast Flash Heal, Heal has it's casting time reduced by 0.1s and healing increased by 3%, stacking 5 times.",
-      "droploc": "Grand Proctor Beryllia, Sanguine Depths"
+      "name": "Concentration éclair",
+      "slot": "Cou, Poignets",
+      "desc": "Chaque fois que vous lancez Soins rapides, votre sort Soins voit son temps d’incantation réduit de 0.2 s et ses soins augmentés de 3%. Cumulable jusqu’à 5 fois.",
+      "droploc": "grande déléguée Beryllia"
     },
     "Harmonious Apparatus": {
-      "name": "Harmonious Apparatus",
-      "slot": "Shoulder or Finger",
-      "desc": "Circle of healing reduces the cooldown on HW: Sanctify, Prayer of Mending reduces the cooldown on HW: Serenity, and Holy Fire reduces the cooldown on HW: Chastise by 4s.",
-      "droploc": "Sire Denathrius, Castle Nathria"
+      "name": "Appareil harmonieux",
+      "slot": "Épaule, Doigt",
+      "desc": "Cercle de soins réduit le temps de recharge de Mot sacré : Sanctification, Prière de guérison réduit le temps de recharge de Mot sacré : Sérénité, et Flammes sacrées réduit le temps de recharge de Mot sacré : Châtier de 4 s.",
+      "droploc": "sire Denathrius"
     },
     "X'anshi, Return of Archbishop Benedictus": {
-      "name": "X'anshi, Return of Archbishop Benedictus",
-      "slot": "Legs or Back",
-      "desc": "After Spirit of Redemption expires, you will revive at up to 100% health, based on your effectiveness during Spirit of Redemption. 10 minute cooldown after reviving.",
-      "droploc": "Valinor, World Boss"
+      "name": "X’anshi, retour de l’archevêque Benedictus",
+      "slot": "Jambes, Dos",
+      "desc": "Après la dissipation d’Esprit de rédemption, vous revenez à la vie avec un maximum de 100% de vos points de vie, en fonction de l’efficacité dont vous avez fait preuve sous votre forme d’Esprit de rédemption. Après être revenu à la vie, vous ne pouvez pas bénéficier de cet effet pendant 10 min.",
+      "droploc": "Valinor, la Lumière des éons"
     },
     "Vault of Heavens": {
-      "name": "Vault of Heavens",
-      "slot": "Wrist or Finger",
-      "desc": "Leap of Faith instead causes you to leap to the target, and has two charges.",
-      "droploc": "PvP Honor Vendor"
+      "name": "Voûte céleste",
+      "slot": "Poignets, Doigt",
+      "desc": "Saut de foi vous permet de bondir jusqu’à votre cible et possède 2 charges.",
+      "droploc": " À acheter contre des points d’honneur auprès du pourvoyeur Zo’kuul."
     },
 
     "ShamanLegendariesComment": "ShamanLegendariesComment",
     "Earthen Harmony": {
-      "name": "Earthen Harmony",
-      "slot": "Chest or Back",
-      "desc": "Earth Shield healing is increased by 150% if your earth shield target is below 75% health, and healing wave adds a stack of Earth Shield to your target.",
-      "droploc": "General Kaal, Sanguine Depths"
+      "name": "Harmonie terrestre",
+      "slot": "Torse, Dos",
+      "desc": "Les soins de Bouclier de terre sont augmentés de 150% si sa cible a moins de 75% de ses points de vie. Vague de soins ajoute une charge de Bouclier de terre sur la cible, à concurrence de 9 charges maximum.",
+      "droploc": "général Kaal"
     },
     "Jonat's Natural Focus": {
-      "name": "Jonat's Natural Focus",
-      "slot": "Waist or Legs",
-      "desc": "Healing Wave and Healing Surge increase the healing done by your next chain heal by 10%, stacking up to 5 times.",
-      "droploc": "Torghast, Skoldus Hall, Layer 3+"
+      "name": "Focalisation naturelle de Jonat",
+      "slot": "Taille, Jambes",
+      "desc": "Vague de soins et Afflux de soins augmentent de 10% les soins de la prochaine Salve de guérison. Cumulable jusqu’à 5 fois.",
+      "droploc": "Salle de Skoldus, échelon 3 ou plus"
     },
     "Primal Tide Core": {
-      "name": "Primal Tide Core",
-      "slot": "Head or Hands",
-      "desc": "Every 4 casts of Riptide also applies Riptide to another friendly target near your Riptide target.",
-      "droploc": "Torghast, The Soulforges, Layer 3+"
+      "name": "Noyau de marée primordiale",
+      "slot": "Tête, Mains",
+      "desc": "Toutes les 4 incantations de Remous, applique cette technique à un allié supplémentaire proche de la cible initiale.",
+      "droploc": "Forges des Âmes, échelon 3 ou plus"
     },
     "Ancestral Reminder": {
-      "name": "Ancestral Reminder",
-      "slot": "Wrist or Finger",
-      "desc": "Heroism / Bloodlust lasts an extra 20s on you, and you gain an extra 10% haste from it's effect.",
-      "droploc": "Stone Legion Generals, Castle Nathria"
+      "name": "Réminiscence ancestrale",
+      "slot": "Poignets, Doigt",
+      "desc": "La durée",
+      "droploc": "généraux de la Légion de pierre"
     },
     "Chains of Devastation": {
-      "name": "Chains of Devastation",
-      "slot": "Neck or Chest",
-      "desc": "Casting Chain Heal makes your next Chain Lightning instant cast. Casting Chain Lightning makes your next Chain Heal instant cast.",
-      "droploc": "PvP Honor Vendor"
+      "name": "Chaînes de dévastation",
+      "slot": "Cou, Torse",
+      "desc": "Salve de guérison rend votre prochaine incantation de Chaîne d’éclairs instantanée[et augmente ses dégâts de 50%]. Chaîne d’éclairs rend votre prochaine incantation de Salve de guérison instantanée[et annule son coût en mana].",
+      "droploc": "À acheter contre des points d’honneur auprès du pourvoyeur Zo’kuul."
     },
     "Deeply Rooted Elements": {
-      "name": "Deeply Rooted Elements",
-      "slot": "Head or Shoulder",
-      "desc": "Casting Riptide has a 7% chance to activate Ascendance for 6 seconds.",
-      "droploc": "The Great Vault"
+      "name": "Éléments profondément enracinés",
+      "slot": "Tête, Épaule",
+      "desc": "Lancer Frappe-tempête a 8% de chances d’activer Ascendance pendant 6.0 s.",
+      "droploc": "Quête : La grande chambre forte"
     },
     "Spiritwalker's Tidal Totem": {
-      "name": "Spiritwalker's Tidal Totem",
-      "slot": "Legs or Back",
-      "desc": "After using Mana Tide Totem, the cast time of Healing Wave and Chain Heal is reduced by 50% and the mana cost by 25% for 10s.",
-      "droploc": "Huntsman Altimor, Castle Nathria"
+      "name": "Totem des marées du marcheur des esprits",
+      "slot": "Jambes, Dos",
+      "desc": "Après utilisation de Totem de vague de mana, le temps d’incantation de Vague de soins et Salve de guérison est réduit de 50%, et leur coût en mana est réduit de 25% pendant 10 sec.",
+      "droploc": "Altimor le Veneur"
     },
 
     "MonkLegendariesComment": "MonkLegendariesComment",
     "Escape from Reality": {
-      "name": "Escape from Reality",
-      "slot": "Neck or Chest",
-      "desc": "After you use Transcendence: Transfer, you can use Transcendence: Transfer again within 10 sec, ignoring its cooldown. During this time, if you cast Vivify on yourself, its healing is increased by 70% and 50% of its cost is refunded.",
-      "droploc": "The Great Vault"
+      "name": "Fuir la réalité",
+      "slot": "Cou, Torse",
+      "desc": "Vous pouvez réutiliser Transcendance : Transfert dans les 10 sec qui suivent son utilisation en ignorant son temps de recharge. Pendant cette durée, lorsque vous lancez Vivifier sur vous-même, les soins prodigués sont augmentés de 50% et son coût est réduit de 70%.",
+      "droploc": "Quête : La grande chambre forte"
     },
     "Invoker's Delight": {
-      "name": "Invoker's Delight",
-      "slot": "Head or Shoulder",
-      "desc": "You gain 33% haste for 20 sec after summoning your Celestial.",
-      "droploc": "Stone Legion Generals, Castle Nathria"
-    },
-    "Roll Out": {
-      "name": "Roll Out",
-      "slot": "Waist or Feet",
-      "desc": "During (Chi Torpedo / Roll), you are immune to roots and snares.",
-      "droploc": "PvP Honor Vendor"
-    },
-    "Fatal Touch": {
-      "name": "Fatal Touch",
-      "slot": "Wrist or Finger",
-      "desc": "Touch of Death cooldown reduced by 120 sec.",
-      "droploc": "Mueh'zala, De Other Side"
+      "name": "Délice de l’invocateur",
+      "slot": "Tête, Épaule",
+      "desc": "Vous gagnez un bonus à la Hâte de 33% pendant 20 sec après avoir invoqué votre astre vénérable.",
+      "droploc": "généraux de la Légion de pierre"
     },
     "Ancient Teachings of the Monastery": {
-      "name": "Ancient Teachings of the Monastery",
-      "slot": "Wrist or Hands",
-      "desc": "After casting Essence Font, your Tiger Palm, Blackout Kick, and Rising Sun Kick heal an injured ally within 20 yards for 250% of the damage done. Lasts 15 sec.",
-      "droploc": "Devos, Spires of Ascension"
+      "name": "Enseignements ancestraux du monastère",
+      "slot": "Poignets, Mains",
+      "desc": "Après avoir lancé Réceptacle d’essence, Paume du tigre, Frappe du voile noir et Coup de pied du soleil levant rendent à un allié blessé à moins de 20 mètres un montant de points de vie égal à 250% des dégâts infligés. Dure 15 sec.",
+      "droploc": "Déva, le parangon de doute"
     },
     "Yu'lon's Whisper": {
-      "name": "Yu'lon's Whisper",
-      "slot": "Shoulder or Finger",
-      "desc": "Activating Thunder Focus Tea causes you to exhale the breath of Yu'lon, healing up to 6 allies within 15 yards over 2 sec.",
-      "droploc": "Torghast, Fracture Chambers, Layer 3+"
+      "name": "Murmure de Yu’lon",
+      "slot": "Épaule, Doigt",
+      "desc": "Activer Thé de concentration foudroyante vous fait expirer le souffle de Yu’lon, qui rend à 6 alliés à moins de 15 mètres [(60% of Spell power) * (3)] points de vie en 2 sec.",
+      "droploc": "Chambres aux Fractures, échelon 3 ou plus"
     },
     "Clouded Focus": {
-      "name": "Clouded Focus",
-      "slot": "Neck or Wrist",
-      "desc": "Healing with Enveloping Mists or Vivify while channeling Soothing Mists increases their healing done by 15% and reduces their mana cost by 15%. Stacks up to 3 times. When your Soothing Mists channel ends, this effect is cancelled.",
-      "droploc": "Torghast, Fracture Chambers, Layer 3+"
+      "name": "Focalisateur nébuleux",
+      "slot": "Cou, Poignets",
+      "desc": "Lancer Brumes enveloppantes ou Vivifier tout en canalisant Brumes apaisantes augmente les soins prodigués par ces techniques de 15% et réduit leur coût en mana de 15%. Cumulable jusqu’à 3 fois. Quand la canalisation de Brumes apaisantes prend fin, l’effet est annulé.",
+      "droploc": "Salle de Skoldus, échelon 3 ou plus"
     },
     "Tear of Morning": {
-      "name": "Tear of Morning",
-      "slot": "Head or Waist",
-      "desc": "Casting Vivify or Enveloping Mist on a target with Renewing Mist has a 10% chance to spread the Renewing Mist to another target. Your Vivify healing through Renewing Mist is increased by 20% and your Enveloping Mist also heals allies with Renewing Mist for 20% of its healing.",
-      "droploc": "Sludgefist, Castle Nathria"
+      "name": "Larme matinale",
+      "slot": "Tête, Taille",
+      "desc": "Lancer Vivifier ou Brume enveloppante sur une cible affectée par Brume de rénovation a 10% de chances de propager Brume de rénovation à une autre cible. Les soins prodigués par Vivifier au travers de Brume de rénovation sont augmentés de 20% et votre Brume enveloppante prodigue également 20% de ses soins aux alliés.",
+      "droploc": "Fangepoing"
     },
     "Vitality Sacrifice": {
-      "name": "Vitality Sacrifice",
-      "slot": "Head, Shoulder, or Chest",
-      "desc": "Taking significant damage from a player or Elite enemy increases your damage and healing by 3% of the damage taken, up to a maximum of 9% for 20 sec. This effect can only occur every 30 sec.",
-      "droploc": "The Great Vault"
+      "name": "Sacrifice de vitalité",
+      "slot": "Tête, Épaule, Torse",
+      "desc": "Quand un personnage-joueur ou un ennemi d’élite vous inflige des dégâts importants, vos dégâts et vos soins sont augmentés à raison de 3% des dégâts subis, jusqu’à un maximum de 9% pendant 20 sec. Cet effet ne peut se produire plus d’une fois toutes les 30 s.",
+      "droploc": "À acheter contre de l’anima auprès de l’intendant de renom."
     },
     "Sephuz's Proclamation": {
-      "name": "Sephuz's Proclamation",
-      "slot": "Neck, Shoulder, or Chest",
-      "desc": "Reduce the effectiveness of crowd controlling effects by 10%. Successfully applying a loss of control effect to an enemy, interrupting an enemy, or dispelling any target will increase all your secondary stats by 80 for 15 sec. This effect cannot occur more than once every 30 seconds.",
-      "droploc": "PvP Honor Vendor"
+      "name": "Proclamation de Sephuz",
+      "slot": "Cou, Épaule, Torse",
+      "desc": "Réduit l’efficacité des effets de contrôle de 10%. Appliquer un effet de perte de contrôle ou d’interruption sur un ennemi, ou bien de dissipation sur une cible, augmente toutes vos caractéristiques secondaires de 80 pendant 15 sec. Cet effet ne peut se produire plus d’une fois toutes les 30 secondes.",
+      "droploc": "À acheter contre des points d’honneur auprès du pourvoyeur Zo’kuul."
     },
     "Echo of Eonar": {
-      "name": "Echo of Eonar",
-      "slot": "Waist, Wrist, or Finger",
-      "desc": "Your spells and abilities have a low chance to summon a familiar to your side, increasing your healing by 10% for 10s. This effect is duplicated on up to 3 allies at 50% effectiveness, preferring allies with the same role.",
-      "droploc": "Wild Hunt Reputation, Revered"
+      "name": "Écho d’Eonar",
+      "slot": "Taille, Poignets, Doigt",
+      "desc": "Vos sorts et techniques ont une faible chance d’invoquer à vos côtés un familier spirituel qui augmente vos dégâts de 10%, vos soins de 10% ou votre réduction de dégâts de 10% pendant 10 sec selon votre rôle. Cet effet affecte également un maximum de 0 alliés, ayant de préférence le même rôle, à 50% de son efficacité.",
+      "droploc": "Vous devez être révéré auprès de l’Hallali et avoir débloqué la gravure runique pour acheter ce souvenir."
+    },
+    "Covenants": {
+      "Kyrian": "Kyrians",
+      "Necrolords": "Nécro-seigneurs",
+      "Venthyr": "Venthyrs",
+      "NightFae": "Faë nocturnes",
+      "Soulbinds": {
+        "KyrianSoulbinds": "",
+        "Pelagos": "Pélagos",
+        "Kleia": "Kléia",
+        "Mikanikos": "Premier forgelite Mikanikos",
+        "NecrolordSoulbinds": "",
+        "Marileth": "Marileth, catalyseur de peste",
+        "Emeni": "Eméni",
+        "Heirmir": "Forge-os Heirmir",
+        "NightFaeSoulbinds": "",
+        "Niya": "Niya",
+        "Dreamweaver": "Tisse-Rêves",
+        "Korayn": "Korayn",
+        "VenthyrSoulbinds": "",
+        "Nadjia": "Nadjia la Lame fantôme",
+        "Theotar": "Théotar le duc fou",
+        "Draven": "Général Draven"
+      }
     }
   }
 }

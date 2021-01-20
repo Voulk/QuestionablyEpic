@@ -9,7 +9,7 @@
     },
 
     "_Comments1": "Common Words",
-    "Login": "LoginRU",
+    "Login": "Войти",
     "Name": "NameRU",
     "Class": "ClassRU",
     "Cooldown": "CooldownRU",
@@ -35,6 +35,21 @@
     "None": "NoneRU",
     "Add": "AddRU",
     "Avoidance": "Avoidance",
+    "Source": "Источник",
+
+    "Classes": {
+      "undefined": "",
+      "HolyPaladin": "Holy PaladinRU",
+      "DisciplinePriest": "Discipline PriestRU",
+      "RestorationDruid": "Restoration DruidRU",
+      "HavocDemonHunter": "Havoc Demon HunterRU",
+      "Warrior": "WarriorRU",
+      "HolyPriest": "Holy PriestRU",
+      "MistweaverMonk": "Mistweaver MonkRU",
+      "RestorationShaman": "Restoration ShamanRU",
+      "DeathKnight": "Death KnightRU",
+      "ShadowPriest": "Shadow PriestRU"
+    },
 
     "CooldownPlanner": {
       "Classes": {
@@ -198,7 +213,6 @@
       "ExploreCovenants": "Explore CovenantsRU",
       "LegendaryAnalysis": "Legendary AnalysisRU",
       "TrinketAnalysis": "Trinket AnalysisRU",
-      "GreatVault": "The Great Vault (Coming Soon)RU",
       "CooldownPlanner": "Cooldown Planner (Coming Soon)RU",
       "Profile": "ProfileRU",
       "CharHeader": "CharactersRU",
@@ -215,16 +229,15 @@
     },
 
     "QeHeader": {
-      "InsertLogLabel": "Insert Log",
-      "Login": "Login",
+      "InsertLogLabel": "Insert LogRU",
       "Tooltip": {
-        "ContentTypeMsgStart": "Change to",
-        "ContentTypeMsgEnd": "Content",
-        "InsertLog": "Insert a log to increase accuracy.",
-        "SimC": "Insert a SimC string to import your gear.",
-        "Login": "Login to your Battle.net Account",
+        "ChangeToRaid": "Change to Raid ContentRU",
+        "ChangeToDungeon": "Change to Dungeon ContentRU",
+        "InsertLog": "Insert a log to increase accuracy.RU",
+        "SimC": "Insert a SimC string to import your gear.RU",
+        "Login": "Login to your Battle.net AccountRU",
         "Language": "Change Language",
-        "Home": "Main Menu"
+        "Home": "Main MenuRU"
       }
     },
 
@@ -341,9 +354,16 @@
 
     "Soulbinds": {
       "Header": "Covenant ExplorationRU",
-      "PotencyConduit": "Potency ConduitRU",
-      "EnduranceConduit": "Endurance ConduitRU",
-      "FinesseConduit": "Finesse ConduitRU"
+      "PotencyConduit": "Проводник силы",
+      "EnduranceConduit": "Проводник выносливости",
+      "FinesseConduit": "Проводник точности",
+      "ConduitInstructions": "Right/Left Click Conduits to change IlvlRU",
+      "StatPanel": {
+        "Summary": "SummaryRU",
+        "Score": "ScoreRU",
+        "CovenantEstimate": "Covenant Ability EstRU",
+        "SelectedNodes": "Selected NodesRU"
+      }
     },
 
     "stats": {
@@ -384,8 +404,10 @@
       "Title": "Top GearRU",
       "HelpText": "Top Gear allows you to generate an entire gear set at once. Start by entering your SimC string above, then click to highlight any items you want included in the comparison. When you're all set, hit 'Go' at the bottom of the page. To enter items manually, return to the main menu and include them in QE Quick Compare. Great Vault items are added automatically though for the first week consider your choice carefully outside of the app.RU",
       "ItemsHereMessage": "Your items will go here after you import.RU",
+      "ErrorMessage": "So sorry, seems you've run into an error. This is usually caused by not being able to create any valid sets. Check that you have a valid weapon selected, two or more rings and two or more trinkets. If multiple legendaries are selected then there must be a valid alternative for eachRU.",
       "GoMsg": "Go!RU",
       "SelectedItems": "Selected ItemsRU",
+      "CompetitiveAlternative": "Competitive AlternativesRU",
       "StatPanel": { "AvgStats": "Average Stats (includes procs)RU" }
     },
 
@@ -409,288 +431,300 @@
 
     "DruidLegendariesComment": "DruidLegendariesComment",
     "Vision of Unending Growth": {
-      "name": "Vision of Unending Growth",
-      "slot": "Head or Feet",
-      "desc": "Rejuvenation has a 2.5% chance to create a new Rejuvenation on a nearby target on tick.",
-      "droploc": "Torghast, Fracture Chambers, Layer 3+"
+      "name": "Видение бесконечного роста",
+      "slot": "Голова, Ступни",
+      "desc": "Исцеляющий эффект 'Омоложения' с вероятностью 2.5% применяет к находящейся рядом цели новый эффект 'Омоложения'.",
+      "droploc": "Костоломни, этаж 3+"
     },
     "The Dark Titans Lesson": {
-      "name": "The Dark Titans Lesson",
-      "slot": "Neck or Back",
-      "desc": "You may apply Lifebloom to two targets at once, but your Lifebloom healing is reduced by 10%.",
-      "droploc": "Lord Chamberlain, Halls of Atonement"
+      "name": "Урок Темного титана",
+      "slot": "Шея, Спина",
+      "desc": "Вы можете применять 'Жизнецвет' к двум целям единовременно, но исцеление от него ослабляется на 10%.",
+      "droploc": "Добыча из подземелья: Лорд-камергер"
     },
     "Verdant Infusion": {
-      "name": "Verdant Infusion",
-      "slot": "Shoulder or Hands",
-      "desc": "Swiftmend no longer consumes a heal over time effect, and extends the duration of HoTs on the target by 8s.",
-      "droploc": "Oranomonos, World Boss"
+      "name": "Живительное насыщение",
+      "slot": "Плечо, Кисти рук",
+      "desc": "'Быстрое восстановление' больше не поглощает эффект периодического исцеления и продлевает время действия ваших периодических эффектов исцеления на цели на 8 сек.",
+      "droploc": "Ораномонос Вечноветвящаяся"
     },
     "Lycaras Fleeting Glimpse": {
-      "name": "Lycara's Fleeting Glimpse",
-      "slot": "Waist or Feet",
-      "desc": "Every 45s while in combat, cast a spell based on your form (Wild Growth, Primal Wrath, Starfall, Stampeding Roar).",
-      "droploc": "Mordretha, Theater of Pain"
+      "name": "Мимолетное видение Ликары",
+      "slot": "Пояс, Ступни",
+      "desc": "Каждые 45 сек. во время боя вы применяете заклинание в зависимости от вашего текущего облика. (Буйный рост, Первобытный гнев, Дубовая кожа, Звездопад, Тревожный рев",
+      "droploc": "Мордрета, Вечная императрица"
     },
     "Memory of the Mother Tree": {
-      "name": "Memory of the Mother Tree",
-      "slot": "Legs or Wrist",
-      "desc": "Wild Growth has a 40% chance to cause your next Rejuv or Regrowth to apply to 3 additional allies.",
-      "droploc": "Lady Invera Darkvein, Castle Nathria"
+      "name": "Память об Изначальном Древе",
+      "slot": "Ноги, Запястья",
+      "desc": "При применении 'Буйного роста' с вероятностью 40% ваше следующее 'Омоложение' или 'Восстановление' будет применено еще к 3 союзникам:союзникам в радиусе 20 м от основной цели.",
+      "droploc": "леди Инверва Дарквейн"
     },
     "Oath of the Elder Druid": {
-      "name": "Oath of the Elder Druid",
-      "slot": "Shoulder or Wrist",
-      "desc": "Effects of Thick Hide, Astral Influence, Feline Swiftness and Ysera's Gift increased by 75%. Free Heart of the Wild per minute.",
-      "droploc": "PVP Honor Vendor"
+      "name": "Клятва старейшего друида",
+      "slot": "Плечо, Запястья",
+      "desc": "Эффективность 'Плотной шкуры', 'Родства с астралом', 'Стремительности кошки' и 'Дара Изеры' увеличена на 75%. Когда вы принимаете родственный облик, вы раз в 1 min. на 10 сек. получаете эффект 'Сердце дикой природы'.",
+      "droploc": "Покупается за очки чести у поставщика Зо'куула"
     },
     "Circle of Life and Death": {
-      "name": "Circle of Life and Death",
-      "slot": "Head or Finger",
-      "desc": "DoT's deal damage in 25% less time, HoTs in 15% less time.",
-      "droploc": "Stone Legion Generals, Castle Nathria"
+      "name": "Круг жизни и смерти",
+      "slot": "Голова, Палец",
+      "desc": "Ваши эффекты периодического урона наносят полный урон на 25% быстрее, а эффекты периодического исцеления восполняют здоровье на 15% быстрее.",
+      "droploc": "генералы Каменного легиона"
     },
 
     "PaladinLegendariesComment": "PaladinLegendariesComment",
     "Of Dusk and Dawn": {
-      "name": "Of Dusk and Dawn",
-      "slot": "Head or Shoulder",
-      "desc": "When you reach 5 Holy Power, gain 6% damage and healing for 8 seconds. When you reach 0 Holy Power, gain 3% DR for 10 seconds.",
-      "droploc": "Stone Legion Generals, Castle Nathria"
+      "name": "Закат и рассвет",
+      "slot": "Голова, Плечо",
+      "desc": "Накопив 5 ед. энергии Света, вы получаете 'Благословение рассвета'. Накопив 0 ед. энергии Света, вы получаете 'Благословение заката'. Благословение рассвета: Увеличивает урон и объем исцеления на 6% на 8 sec. Благословение заката: Уменьшает получаемый урон на 3% на 8 sec.",
+      "droploc": "генералы Каменного легиона"
     },
     "Vanguards Momentum": {
-      "name": "Vanguard's Momentum",
-      "slot": "Head or Hands",
-      "desc": "Hammer of Wrath has an extra charge and increases Holy Damage done by 3% for 8s. Stacks 3 times.",
-      "droploc": "Sire Denathrius, Castle Nathria"
+      "name": "Напор авангарда",
+      "slot": "Голова, Кисти рук",
+      "desc": "'Молот гнева' получает еще 1 заряд и увеличивает наносимый урон от светлой магии на 3% на 8 sec. Суммируется до 3 раз.",
+      "droploc": "сир Денатрий"
     },
     "The Magistrates Judgment": {
-      "name": "The Magistrate's Judgment",
-      "slot": "Wrist or Finger",
-      "desc": "Judgment has a 60% chance to reduce the cost of your next Holy Power spender by 60%.",
-      "droploc": "Xav the Unfallen, Theater of Pain"
+      "name": "Правосудие мирового судьи",
+      "slot": "Запястья, Палец",
+      "desc": "'Правосудие' с вероятностью 75% снижает стоимость следующей способности, расходующей энергию Света, на 1 ед.",
+      "droploc": "Ксав Несломленный"
     },
     "Inflorescence of the Sunwell": {
-      "name": "Inflorescence of the Sunwell",
-      "slot": "Feet or Back",
-      "desc": "Infusion of Light has 1 additional charge and its effects are increased by 20%.",
-      "droploc": "Torghast, The Soulforges, Layer 3+"
+      "name": "Цветение Солнечного Колодца",
+      "slot": "Ступни, Спина",
+      "desc": "'Прилив Света' получает еще 1 $lзаряд:заряда:зарядов, а его эффективность повышается на 20%.",
+      "droploc": "Кузни душ, этаж 3+"
     },
     "Maraads Dying Breath": {
-      "name": "Maraad's Dying Breath",
-      "slot": "Chest or Finger",
-      "desc": "Light of Dawn causes your next Light of the Martyr to also heal your Beacon of Light. Each ally hit by LoD increases Light of the Martyr healing by 10%.",
-      "droploc": "Grand Proctor Beryllia, Sanguine Depths"
+      "name": "Предсмертный вздох Мараада",
+      "slot": "Грудь, Палец",
+      "desc": "Если 'Свет зари' восполнил здоровье, следующий 'Свет мученика' также восполнит здоровье цели вашей 'Частицы Света'. За каждого союзника, которому 'Свет зари' восполнит здоровье, 'Свет мученика' будет восполнять на 10% больше здоровья.",
+      "droploc": "верховная надзирательница Бериллия"
     },
     "Shadowbreaker, Dawn of the Sun": {
-      "name": "Shadowbreaker, Dawn of the Sun",
-      "slot": "Shoulder or Hands",
-      "desc": "Light of Dawns range is increased to 40 yards, and all allies healed receive full effect from your Mastery for 6s.",
-      "droploc": "Sun King's Salvation, Castle Nathria"
+      "name": "Разрубатель Тьмы, Вестник Рассвета",
+      "slot": "Плечо, Кисти рук",
+      "desc": "Увеличивает радиус действия 'Света зари' до 40 м. Союзники под его действием на 6 sec. получают бонус от 'Искусности: Светоносный', словно они находятся в радиусе 10 м от вас. Увеличивает бонус к 'Торжеству' от искусности на 50%.",
+      "droploc": "спасение Солнечного короля"
     },
     "Shock Barrier": {
-      "name": "Shock Barrier",
-      "slot": "Legs or Feet",
-      "desc": "Holy Shock protects the target for 18 seconds, absorbing 20% of it's healing every 6s. Maximum of 5 targets protected at a time.",
-      "droploc": "Torghast, Coldheart Interstitia, Layer 3+"
+      "name": "Шоковая преграда",
+      "slot": "Ноги, Ступни",
+      "desc": "'Шок небес' на 18 sec. дает цели щит Света небес, который раз в 6 сек. поглощает урон в объеме 20% исцеления от 'Шока небес'. Действует максимум на 5 цели:целей.",
+      "droploc": "Междумирье Бессердечных, этаж 3+"
     },
     "The Mad Paragon": {
-      "name": "The Mad Paragon",
-      "slot": "Waist or Feet",
-      "desc": "Hammer of Wrath deals 30% additional damage and extends the duration of Wings by 1s.",
-      "droploc": "The Great Vault"
+      "name": "Безумный идеал",
+      "slot": "Пояс, Ступни",
+      "desc": "'Молот гнева' наносит на 30% больше урона и продлевает действие 'Гнева карателя' на 1 сек.",
+      "droploc": "Задание 'Великое хранилище'"
     },
     "Relentless Inquisitor": {
-      "name": "Relentless Inquisitor (Retribution)",
-      "slot": "Legs or Back",
-      "desc": "Spending Holy Power grants you 1% haste per finisher for 12 sec, stacking up to 5 times.",
-      "droploc": "Torghast, The Upper Reaches, Layer 3+"
+      "name": "Непреклонный инквизитор",
+      "slot": "Ноги, Спина",
+      "desc": "Когда вы расходуете энергию Света, ваша скорость повышается на 1% за каждый смертельный удар. Время действия – 12 sec. Эффект суммируется до 5 раз.",
+      "droploc": "Верхний ярус, этаж 3+"
     },
 
     "PriestLegendariesComment": "PriestLegendariesComment",
     "Clarity of Mind": {
-      "name": "Clarity of Mind",
-      "slot": "Chest or Finger",
-      "desc": "Spirit Shell increases the duration of active atonements by 3s and reduces mana costs by 30%. During Rapture, PW:S costs 20% less mana and applies 6s longer atonements.",
-      "droploc": "Sludgefist, Castle Nathria"
+      "name": "Ясность разума",
+      "slot": "Грудь, Палец",
+      "desc": "Пока действует 'Вознесение', стоимость 'Слова силы: Щит' снижается на 20%, а 'Искупление вины' от него длится на 6 сек. дольше.",
+      "droploc": "Грязешмяк"
     },
     "Crystalline Reflection": {
-      "name": "Crystalline Reflection",
-      "slot": "Shoulder or Hands",
-      "desc": "Power Word Shield instantly heals the target for 42% SP, and reflects 20% of damage absorbed.",
-      "droploc": "Margrave Stradama, Plaguefall"
+      "name": "Кристальное отражение",
+      "slot": "Плечо, Кисти рук",
+      "desc": "'Слово силы: Щит' мгновенно восполняет цели (42% of Spell power) здоровья и отражает 20% поглощенного урона в атакующего противника.",
+      "droploc": "маркграфиня Страдама"
     },
     "Kiss of Death": {
-      "name": "Kiss of Death",
-      "slot": "Legs or Feet",
-      "desc": "Reduces Shadow Word: Death's cooldown by 8s and causes it's damage to trigger atonement when used on targets below 20% health.",
-      "droploc": "Torghast, Mort'regar, Layer 3+"
+      "name": "Поцелуй смерти",
+      "slot": "Ноги, Ступни",
+      "desc": "Сокращает время восстановления 'Слова Тьмы: Смерть' на 8 сек. Урон от этой способности активирует эффект 'Искупление вины' при применении к цели с запасом здоровья менее 20%.",
+      "droploc": "Морт'регар, этаж 3+"
     },
     "The Penitent One": {
-      "name": "The Penitent One",
-      "slot": "Feet or Back",
-      "desc": "Power Word: Radiance has a 60% chance to cause your next Penance to be free and fire 3 extra bolts.",
-      "droploc": "Torghast, The Soulforges, Layer 3+"
+      "name": "Кающийся грешник",
+      "slot": "Ступни, Спина",
+      "desc": "'Слово силы: Сияние' с вероятностью 60% позволяет применить следующую 'Исповедь' без затрат ресурса и увеличивает количество снарядов на 3.",
+      "droploc": "Кузни душ, этаж 3+"
     },
     "Cauterizing Shadows": {
-      "name": "Cauterizing Shadows",
-      "slot": "Waist or Feet",
-      "desc": "When Shadow Word: Pain expires on a target, 3 allies within 30 yards of the target are healed.",
-      "droploc": "Mordretha, Theater of Pain"
+      "name": "Прижигающие тени",
+      "slot": "Пояс, Ступни",
+      "desc": "По истечении времени действия 'Слова Тьмы: Боль' 3 союзник в радиусе 30 м от цели восполняют (55% of Spell power) ед. здоровья.",
+      "droploc": "Мордрета, Вечная императрица"
     },
     "Measured Contemplation": {
-      "name": "Measured Contemplation",
-      "slot": "Neck or Chest",
-      "desc": "Every 15s that you do not cast Flash Heal / Shadow Mend, the healing of your next Flash Heal / Shadow Mend is increased by 50%. Stacks four times.",
-      "droploc": "The Great Vault"
+      "name": "Спокойное созерцание",
+      "slot": "Шея, Грудь",
+      "desc": "За каждые 15 сек., что вы не применяете 'Темное восстановление', объем исцеления от следующего 'Темного восстановления' увеличивается на 50%. Суммируется до 4 раз.",
+      "droploc": "Задание 'Великое хранилище'"
     },
     "Twins of the Sun Priestess": {
-      "name": "Twins of the Sun Priestess",
-      "slot": "Head or Shoulder",
-      "desc": "Power Infusion also grants you 100% of its effects when used on an ally.",
-      "droploc": "Stone Legion Generals, Castle Nathria"
+      "name": "Близнецы жрицы Солнца",
+      "slot": "Голова, Плечо",
+      "desc": "Когда вы применяете 'Придание сил' к союзнику, то тоже получаете 100% его эффекта.",
+      "droploc": "генералы Каменного легиона"
     },
     "Divine Image": {
-      "name": "Divine Image",
-      "slot": "Head or Waist",
-      "desc": "When you use a Holy Word spell, you have a chance to summon a Naaru to your side. For 15s, the Naaru will cast similar spells to you.",
-      "droploc": "Torghast, Coldheart Interstitia, Layer 3+"
+      "name": "Божественный обра",
+      "slot": "Голова, Пояс",
+      "desc": "Применяя 'Слово Света', вы можете призвать образ наару. В течение 15 sec. при каждом применении вами заклинания призванный наару будет применять аналогичное заклинание.",
+      "droploc": "Междумирье Бессердечных, этаж 3+"
     },
     "Flash Concentration": {
-      "name": "Flash Concentration",
-      "slot": "Neck or Wrist",
-      "desc": "Each time you cast Flash Heal, Heal has it's casting time reduced by 0.1s and healing increased by 3%, stacking 5 times.",
-      "droploc": "Grand Proctor Beryllia, Sanguine Depths"
+      "name": "Быстрая концентрация",
+      "slot": "Шея, Запястьяt",
+      "desc": "'Исцеление', примененное после 'Быстрого исцеления', требует на 0.2 сек. меньше времени на применение и восполняет на 3% больше здоровья. Суммируется до 5 раз.",
+      "droploc": "верховная надзирательница Бериллия"
     },
     "Harmonious Apparatus": {
-      "name": "Harmonious Apparatus",
-      "slot": "Shoulder or Finger",
-      "desc": "Circle of healing reduces the cooldown on HW: Sanctify, Prayer of Mending reduces the cooldown on HW: Serenity, and Holy Fire reduces the cooldown on HW: Chastise by 4s.",
-      "droploc": "Sire Denathrius, Castle Nathria"
+      "name": "Аппарат гармонии",
+      "slot": "Плечо, Палец",
+      "desc": "'Круг исцеления' сокращает время восстановления 'Слова Света: Освящение', 'Молитва восстановления' сокращает время восстановления 'Слова Света: Безмятежность', а 'Священный огонь' сокращает время восстановления 'Слова Света: Наказание' на 4 сек.",
+      "droploc": "сир Денатрий"
     },
     "X'anshi, Return of Archbishop Benedictus": {
-      "name": "X'anshi, Return of Archbishop Benedictus",
-      "slot": "Legs or Back",
-      "desc": "After Spirit of Redemption expires, you will revive at up to 100% health, based on your effectiveness during Spirit of Redemption. 10 minute cooldown after reviving.",
-      "droploc": "Valinor, World Boss"
+      "name": "Кс'анши, Возвращение архиепископа Бенедикта",
+      "slot": "Ноги, Спина",
+      "desc": "По истечении времени действия 'Духа воздаяния' вы возрождаетесь с запасом здоровья до 100% максимального в зависимости от эффективности действий в облике духа воздаяния. После возрождения этот эффект не срабатывает в течение 10 min.",
+      "droploc": "'Валинор', Светоч Эпох"
     },
     "Vault of Heavens": {
-      "name": "Vault of Heavens",
-      "slot": "Wrist or Finger",
-      "desc": "Leap of Faith instead causes you to leap to the target, and has two charges.",
-      "droploc": "PvP Honor Vendor"
+      "name": "Небесный прыжок",
+      "slot": "Запястья, Палец",
+      "desc": "'Духовное рвение' имеет 2 заряда и переносит вас к цели.",
+      "droploc": "Покупается за очки чести у поставщика Зо'куула."
     },
 
     "ShamanLegendariesComment": "ShamanLegendariesComment",
     "Earthen Harmony": {
-      "name": "Earthen Harmony",
-      "slot": "Chest or Back",
-      "desc": "Earth Shield healing is increased by 150% if your earth shield target is below 75% health, and healing wave adds a stack of Earth Shield to your target.",
-      "droploc": "General Kaal, Sanguine Depths"
+      "name": "Земная гармония",
+      "slot": "Грудь, Спина",
+      "desc": "Если запас здоровья цели, на которую наложен ваш 'Щит земли', составляет менее 75%, сила исцеления от 'Щита земли' увеличивается на 150%, а 'Волна исцеления' увеличивает количество эффектов 'Щита земли' на 1. Максимальное количество эффектов – 9.",
+      "droploc": "генерал Кааль"
     },
     "Jonat's Natural Focus": {
-      "name": "Jonat's Natural Focus",
-      "slot": "Waist or Legs",
-      "desc": "Healing Wave and Healing Surge increase the healing done by your next chain heal by 10%, stacking up to 5 times.",
-      "droploc": "Torghast, Skoldus Hall, Layer 3+"
+      "name": "Природное средоточие Джоната",
+      "slot": "Пояс, Ноги",
+      "desc": "'Волна исцеления' и 'Исцеляющий всплеск' усиливают исцеление от следующего 'Цепного исцеления' на 10%. Суммируется до 5 раз.",
+      "droploc": "Чертоги Скольда, этаж 3+"
     },
     "Primal Tide Core": {
-      "name": "Primal Tide Core",
-      "slot": "Head or Hands",
-      "desc": "Every 4 casts of Riptide also applies Riptide to another friendly target near your Riptide target.",
-      "droploc": "Torghast, The Soulforges, Layer 3+"
+      "name": "Изначальное сердце волн",
+      "slot": "Голова, Кисти рук",
+      "desc": "Каждое 4-е применение 'Быстрины' также применяет 'Быстрину' к другому союзнику рядом с целью.",
+      "droploc": "Кузни душ, этаж 3+"
     },
     "Ancestral Reminder": {
-      "name": "Ancestral Reminder",
-      "slot": "Wrist or Finger",
-      "desc": "Heroism / Bloodlust lasts an extra 20s on you, and you gain an extra 10% haste from it's effect.",
-      "droploc": "Stone Legion Generals, Castle Nathria"
+      "name": "Напоминание предков",
+      "slot": "Запястья, Палец",
+      "desc": "'Жажда крови' и другие аналогичные эффекты воздействуют на вас на 20.0 сек. дольше. Кроме того, эффекты типа 'Жажды крови' повышают вашу скорость еще на 10%.",
+      "droploc": "генералы Каменного легиона"
     },
     "Chains of Devastation": {
-      "name": "Chains of Devastation",
-      "slot": "Neck or Chest",
-      "desc": "Casting Chain Heal makes your next Chain Lightning instant cast. Casting Chain Lightning makes your next Chain Heal instant cast.",
-      "droploc": "PvP Honor Vendor"
+      "name": "Разрушительные цепи",
+      "slot": "Шея, Грудь",
+      "desc": "Применение 'Цепного исцеления' позволяет применить следующую 'Цепную молнию' мгновенно[. Эта 'Цепная молния' наносит на 50% больше урона]. Применение 'Цепной молнии' позволяет применить следующее 'Цепное исцеление' мгновенно[. Это 'Цепное исцеление' не требует маны].",
+      "droploc": "Покупается за очки чести у поставщика Зо'куула."
     },
     "Deeply Rooted Elements": {
-      "name": "Deeply Rooted Elements",
-      "slot": "Head or Shoulder",
-      "desc": "Casting Riptide has a 7% chance to activate Ascendance for 6 seconds.",
-      "droploc": "The Great Vault"
+      "name": "Укоренившиеся стихии",
+      "slot": "Голова, Плечо",
+      "desc": "Применение 'Удара бури' с вероятностью 8% на 6.0 сек. активирует 'Перерождение'.",
+      "droploc": "Задание 'Великое хранилище'"
     },
     "Spiritwalker's Tidal Totem": {
-      "name": "Spiritwalker's Tidal Totem",
-      "slot": "Legs or Back",
-      "desc": "After using Mana Tide Totem, the cast time of Healing Wave and Chain Heal is reduced by 50% and the mana cost by 25% for 10s.",
-      "droploc": "Huntsman Altimor, Castle Nathria"
+      "name": "Тотем волн духостранника",
+      "slot": "Ноги, Спина",
+      "desc": "Когда вы призываете тотем прилива маны, время применения 'Волны исцеления' и 'Цепного исцеления' сокращается на 50%, а затраты маны на применение 'Цепного исцеления' и 'Волны исцеления' снижаются на 25%. Время действия – 10 sec.",
+      "droploc": "ловчий Альтимор"
     },
 
     "MonkLegendariesComment": "MonkLegendariesComment",
     "Escape from Reality": {
-      "name": "Escape from Reality",
-      "slot": "Neck or Chest",
-      "desc": "After you use Transcendence: Transfer, you can use Transcendence: Transfer again within 10 sec, ignoring its cooldown. During this time, if you cast Vivify on yourself, its healing is increased by 70% and 50% of its cost is refunded.",
-      "droploc": "The Great Vault"
+      "name": "Бегство от реальности",
+      "slot": "Шея, Грудь",
+      "desc": "После применения 'Трансцендентности: перенос' вы можете снова применить 'Трансцендентность: перенос' в течение 10 sec., несмотря на время восстановления. Если в это время вы применяете 'Оживить' к себе, исцеление от него усиливается на 70%%, а вы восполняете 50% затраченного ресурса.",
+      "droploc": "Задание 'Великое хранилище'"
     },
     "Invoker's Delight": {
-      "name": "Invoker's Delight",
-      "slot": "Head or Shoulder",
-      "desc": "You gain 33% haste for 20 sec after summoning your Celestial.",
-      "droploc": "Stone Legion Generals, Castle Nathria"
-    },
-    "Roll Out": {
-      "name": "Roll Out",
-      "slot": "Waist or Feet",
-      "desc": "During (Chi Torpedo / Roll), you are immune to roots and snares.",
-      "droploc": "PvP Honor Vendor"
-    },
-    "Fatal Touch": {
-      "name": "Fatal Touch",
-      "slot": "Wrist or Finger",
-      "desc": "Touch of Death cooldown reduced by 120 sec.",
-      "droploc": "Mueh'zala, De Other Side"
+      "name": "Радость заклинателя",
+      "slot": "Голова, Плечо",
+      "desc": "Повышает скорость на 33% на 20 sec. после призыва небожителя.",
+      "droploc": "генералы Каменного легиона"
     },
     "Ancient Teachings of the Monastery": {
-      "name": "Ancient Teachings of the Monastery",
-      "slot": "Wrist or Hands",
-      "desc": "After casting Essence Font, your Tiger Palm, Blackout Kick, and Rising Sun Kick heal an injured ally within 20 yards for 250% of the damage done. Lasts 15 sec.",
-      "droploc": "Devos, Spires of Ascension"
+      "name": "Древние монастырские учения",
+      "slot": "Запястья, Кисти рук",
+      "desc": "После применения 'Купели сущности' следующие 'Лапа тигра', 'Нокаутирующий удар' и 'Удар восходящего солнца' исцеляют раненого союзника в радиусе 20 м, восполняя ему здоровье в объеме 250% нанесенного урона. Время действия – 15 sec.",
+      "droploc": "Девия, идеал Сомнения"
     },
     "Yu'lon's Whisper": {
-      "name": "Yu'lon's Whisper",
-      "slot": "Shoulder or Finger",
-      "desc": "Activating Thunder Focus Tea causes you to exhale the breath of Yu'lon, healing up to 6 allies within 15 yards over 2 sec.",
-      "droploc": "Torghast, Fracture Chambers, Layer 3+"
+      "name": "Шепот Юй-лун",
+      "slot": "Плечо, Палец",
+      "desc": "После активации 'Громового чая' от вас исходит дыхание Юй-лун, восполняющее максимум 6 союзникам в радиусе 15 м [(60% of Spell power) * (3)] ед. здоровья за 2 sec.",
+      "droploc": "Костоломни, этаж 3+"
     },
     "Clouded Focus": {
-      "name": "Clouded Focus",
-      "slot": "Neck or Wrist",
-      "desc": "Healing with Enveloping Mists or Vivify while channeling Soothing Mists increases their healing done by 15% and reduces their mana cost by 15%. Stacks up to 3 times. When your Soothing Mists channel ends, this effect is cancelled.",
-      "droploc": "Torghast, Fracture Chambers, Layer 3+"
+      "name": "Затуманенная концентрация",
+      "slot": "Шея, Запястья",
+      "desc": "Когда вы применяете 'Окутывающий туман' или 'Оживить' во время поддержания 'Успокаивающего тумана', исцеление от них усиливается на 15%, а их стоимость снижается на 15%. Суммируется до 3 раз. Действие заканчивается по окончании поддержания 'Успокаивающего тумана'.",
+      "droploc": "Чертоги Скольда, этаж 3+"
     },
     "Tear of Morning": {
-      "name": "Tear of Morning",
-      "slot": "Head or Waist",
-      "desc": "Casting Vivify or Enveloping Mist on a target with Renewing Mist has a 10% chance to spread the Renewing Mist to another target. Your Vivify healing through Renewing Mist is increased by 20% and your Enveloping Mist also heals allies with Renewing Mist for 20% of its healing.",
-      "droploc": "Sludgefist, Castle Nathria"
+      "name": "Утренняя слеза",
+      "slot": "Голова, Пояс",
+      "desc": "'Оживить' и 'Окутывающий туман', примененные к цели 'Заживляющего тумана', с вероятностью 10% распространяют 'Заживляющий туман' на другую цель. Исцеление от 'Оживить', примененное через 'Заживляющий туман', усиливается на 20%, а 'Окутывающий туман' также исцеляет союзников с 'Заживляющим туманом' с эффективностью 20%.",
+      "droploc": "Грязешмяк"
     },
     "Vitality Sacrifice": {
-      "name": "Vitality Sacrifice",
-      "slot": "Head, Shoulder, or Chest",
-      "desc": "Taking significant damage from a player or Elite enemy increases your damage and healing by 3% of the damage taken, up to a maximum of 9% for 20 sec. This effect can only occur every 30 sec.",
-      "droploc": "The Great Vault"
+      "name": "Жертвование здоровьем",
+      "slot": "Голова, Плечо, Грудь",
+      "desc": "При получении существенного урона от игрока или элитного противника ваш урон и объем исцеления на 20 sec. увеличиваются на 3% объема полученного урона (вплоть до 9%). Срабатывает не чаще раза в 30 сек.",
+      "droploc": "Покупается у торговца товарами за известность."
     },
     "Sephuz's Proclamation": {
-      "name": "Sephuz's Proclamation",
-      "slot": "Neck, Shoulder, or Chest",
-      "desc": "Reduce the effectiveness of crowd controlling effects by 10%. Successfully applying a loss of control effect to an enemy, interrupting an enemy, or dispelling any target will increase all your secondary stats by 80 for 15 sec. This effect cannot occur more than once every 30 seconds.",
-      "droploc": "PvP Honor Vendor"
+      "name": "Декларация Сефуза",
+      "slot": "Шея, Плечо, Грудь",
+      "desc": "Ослабляет эффекты контроля на 10%. Когда вы успешно применяете к противнику эффекты контроля, прерываете способности или рассеиваете эффекты, ваши второстепенные характеристики повышаются на 80 на 15 sec. Срабатывает не чаще раза в 30 сек.",
+      "droploc": "Покупается за очки чести у поставщика Зо'куула."
     },
     "Echo of Eonar": {
-      "name": "Echo of Eonar",
-      "slot": "Waist, Wrist, or Finger",
-      "desc": "Your spells and abilities have a low chance to summon a familiar to your side, increasing your healing by 10% for 10s. This effect is duplicated on up to 3 allies at 50% effectiveness, preferring allies with the same role.",
-      "droploc": "Wild Hunt Reputation, Revered"
+      "name": "Эхо Эонар",
+      "slot": "Пояс, Запястья, Палец",
+      "desc": "Ваши заклинания и способности могут с небольшой вероятностью призвать духовного фамилиара-помощника, увеличивающего на 10 sec. урон на 10%, объем исцеления на 10% или защиту от урона на 10% в зависимости от роли. Бонус копируется на максимум 0 союзников с 50% эффективностью. Предпочтение отдается союзникам с такой же ролью, как у вас.",
+      "droploc": "Добейтесь почтения Дикой Охоты и откройте вырезание рун, чтобы приобрести это воспоминание."
+    },
+    "Covenants": {
+      "Kyrian": "Кирии",
+      "Necrolords": "Некролорды",
+      "Venthyr": "Вентиры",
+      "NightFae": "Ночной народец",
+      "Soulbinds": {
+        "KyrianSoulbinds": "",
+        "Pelagos": "Пелагий",
+        "Kleia": "Клейя",
+        "Mikanikos": "Верховный автоматург Миканикос",
+        "NecrolordSoulbinds": "",
+        "Marileth": "Изобретатель чумы Марилет",
+        "Emeni": "Эмени",
+        "Heirmir": "Костоплав Гейрмир",
+        "NightFaeSoulbinds": "",
+        "Niya": "Ния",
+        "Dreamweaver": "Творец Снов",
+        "Korayn": "Корейн",
+        "VenthyrSoulbinds": "",
+        "Nadjia": "Наджия, Клинок Туманов",
+        "Theotar": "Безумный герцог Теотар",
+        "Draven": "Генерал Дрейвен"
+      }
     }
   }
 }

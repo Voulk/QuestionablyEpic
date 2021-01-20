@@ -104,7 +104,9 @@ export default function UpgradeFinderSimC(props) {
                         "ilvl=" +
                         key.level +
                         "&bonus=" +
-                        key.bonusIDS
+                        key.bonusIDS +
+                        "&domain=" +
+                        currentLanguage
                       }
                     >
                       <img

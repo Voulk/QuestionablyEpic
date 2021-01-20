@@ -19,8 +19,9 @@ export function expensive(time) {
   return count;
 }
 
-export function runTopGear(itemList, wepCombos, player, contentType) {
+export function runTopGear(itemList, wepCombos, player, contentType, currentLanguage) {
   //console.log("WEP COMBOS: " + JSON.stringify(wepCombos));
+  //console.log("CL::::" + currentLanguage);
   var t0 = performance.now();
   // console.log("Running Top Gear");
   let count = 0;

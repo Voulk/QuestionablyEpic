@@ -92,7 +92,7 @@ export default function ProfileSelector(props) {
       return (
         <div>
           <Tooltip title={t("QeHeader.Tooltip.Login")} arrow>
-            <Button onClick={handleDialogOpen}>{t("QeHeader.Login")}</Button>
+            <Button onClick={handleDialogOpen}>{t("Login")}</Button>
           </Tooltip>
           <Dialog
             onClose={handleCloseDialog}

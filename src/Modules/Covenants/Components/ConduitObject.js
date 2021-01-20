@@ -10,13 +10,15 @@ import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import Divider from "@material-ui/core/Divider";
 import { getItemIcon } from "../../Engine/ItemUtilities";
+import { conduitDB } from "../../CooldownPlanner/Data/Data";
 
 const useStyles = makeStyles({
   root: { padding: 0, height: 26 },
 });
 
 export default function ConduitObject(props) {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const currentLanguage = i18n.language;
   const conduit = props.conduit;
   // console.log(conduit);
   const classes = useStyles();
@@ -76,7 +78,7 @@ export default function ConduitObject(props) {
           >
             <Grid item xs="auto">
               <div className="container">
-                <a data-wowhead={"spell=" + conduit.id}>
+                <a data-wowhead={"spell=" + conduit.id + "&domain=" + currentLanguage}>
                   <img
                     alt=""
                     width={24}
@@ -119,7 +121,12 @@ export default function ConduitObject(props) {
                     paddingLeft: "4px",
                   }}
                 >
-                  {conduit.name}
+                  {conduitDB
+                    .filter((obj) => {
+                      return obj.guid === conduit.id;
+                    })
+                    .map((obj) => obj.name[currentLanguage])
+                    .toString()}
                 </Typography>
               </Grid>
               <Divider orientation="vertical" flexItem />

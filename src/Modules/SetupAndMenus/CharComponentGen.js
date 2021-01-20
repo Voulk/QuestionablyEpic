@@ -228,6 +228,25 @@ export default function CharCards(props) {
     handleClose();
   };
 
+  const classTranslator = (spec) => {
+    switch (spec) {
+      case "Restoration Druid":
+        return "Classes.RestorationDruid"
+      case "Mistweaver Monk":
+        return "Classes.MistweaverMonk"
+      case "Holy Paladin":
+        return "Classes.HolyPaladin"
+      case "Restoration Shaman":
+        return "Classes.RestorationShaman"
+      case "Holy Priest":
+        return "Classes.HolyPriest"
+      case "Discipline Priest":
+        return "Classes.DisciplinePriest"
+      default:
+        return "Error";
+  }
+}
+
   // TODO
   const handleUpdateData = () => {
     let newPlayer = props.char;
@@ -298,7 +317,7 @@ export default function CharCards(props) {
               </Typography>
               <Divider />
               <Typography style={{ color: classColoursJS(spec), marginTop: 2 }}>
-                {spec}
+                {t(classTranslator(spec))}
                 {classicons(spec, 18)}
               </Typography>
             </CardContent>

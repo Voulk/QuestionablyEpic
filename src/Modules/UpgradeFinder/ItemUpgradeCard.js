@@ -152,7 +152,15 @@ export default function ItemCard(props) {
               }}
             >
               <a
-                data-wowhead={"item=" + item.id + "&" + "ilvl=" + item.level}
+                data-wowhead={
+                  "item=" +
+                  item.id +
+                  "&" +
+                  "ilvl=" +
+                  item.level +
+                  "&domain=" +
+                  currentLanguage
+                }
                 //key={i}
               >
                 <div className="container-ItemCards">
