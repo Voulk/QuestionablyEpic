@@ -213,7 +213,7 @@ function TopGearReport(props) {
                       direction="row"
                       justify="space-between"
                     >
-                      <Grid item xs={3} style={{ paddingBottom: 8 }}>
+                      <Grid item xs={4} style={{ paddingBottom: 8 }}>
                         <Grid container justify="flex-start">
                           <TopSetStatsPanel
                             statList={statList}
