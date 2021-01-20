@@ -49,7 +49,7 @@ export const getPaladinConduit = (conduitID, pl, contentType, conduitLevel) => {
     else if (conduitID === 340218) {
         let trait_bonus =  0.36 + conduitLevel * 0.04;
         let oneHolyShock = pl.getSingleCast(IDHOLYSHOCK, contentType)
-        expectedOverhealing = 0.62;
+        expectedOverhealing = 0.63;
 
         bonus_stats.HPS = (trait_bonus * oneHolyShock * 3 * (1 - expectedOverhealing)) / 60;
 

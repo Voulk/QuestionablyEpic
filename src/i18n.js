@@ -16,14 +16,14 @@ i18n
   .init({
     resources: {
       en: languageEN,
-      cn: languageCH,
-      ru: languageRU,
-      fr: languageFR,
+      //cn: languageCH,
+      //ru: languageRU,
+      //fr: languageFR,
       de: languageDE
     },
     /* default language when load the website in browser */
     lng:   ls.get("lang") || "en",    
-    /* When react i18next not finding any language to as default in borwser */
+    /* When react i18next not finding any language to as default in browser */
     fallbackLng: "en",
     /* debugger For Development environment */
     debug: true,
