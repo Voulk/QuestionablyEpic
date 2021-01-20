@@ -106,6 +106,7 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel) {
         bonus_stats.hps =  getProcessedValue(heal_effect.coefficient, heal_effect.table, itemLevel, heal_effect.efficiency) / heal_effect.cooldown * player.getStatMultiplier('CRITVERS');
         bonus_stats.crit = getProcessedValue(crit_effect.coefficient, crit_effect.table, itemLevel) * crit_effect.duration * crit_effect.multiplier / crit_effect.cooldown;
 
+        if (player.getSpec() === SPEC.RESTODRUID) bonus_stats.crit *= 1.21; // Convoke
         //console.log("Effect Name: " + effectName + " at level: " + itemLevel + " {" + JSON.stringify(bonus_stats))
     }
     else if (effectName === "Wakener's Frond") {
