@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Paper, Grid, Typography, Divider } from "@material-ui/core";
-import { STATPERONEPERCENT } from "../Engine/STAT";
+import { STATPERONEPERCENT, translatedStat } from "../Engine/STAT";
 import { useTranslation } from "react-i18next";
 
 // The soulbind stat panel sums up all of the active soulbinds in the tree.
@@ -10,23 +10,26 @@ export default function TopSetStatsPanel(props) {
   const covAbilityEst = props.covAbility > 0 ? props.covAbility : "NA";
   const statList = props.statList;
   const { t, i18n } = useTranslation();
+  const currentLanguage = props.currentLanguage;
 
   const stats = [
-    ["Int", statList.intellect],
-    ["Haste", statList.haste / STATPERONEPERCENT.HASTE],
-    ["Crit", statList.crit / STATPERONEPERCENT.CRIT],
-    ["Mastery", statList.mastery / STATPERONEPERCENT.MASTERYA[props.spec]],
-    ["Versatility", statList.versatility / STATPERONEPERCENT.VERSATILITY],
-    ["Leech", statList.leech / STATPERONEPERCENT.LEECH],
-    ["Bonus HPS", statList.hps],
-    ["Bonus DPS", statList.dps],
+    ["intellect", statList.intellect],
+    ["haste", statList.haste / STATPERONEPERCENT.HASTE],
+    ["crit", statList.crit / STATPERONEPERCENT.CRIT],
+    ["mastery", statList.mastery / STATPERONEPERCENT.MASTERYA[props.spec]],
+    ["versatility", statList.versatility / STATPERONEPERCENT.VERSATILITY],
+    ["leech", statList.leech / STATPERONEPERCENT.LEECH],
+    ["bonus HPS", statList.hps],
+    ["bonus DPS", statList.dps],
   ];
 
   // Returns a formatted string for the stat panel.
   function printStat(stat, value) {
-    if (["Haste", "Crit", "Versatility", "Mastery", "Leech"].includes(stat)) {
-      return stat + ": " + Math.round(100 * value) / 100 + "%";
-    } else return stat + ": " + Math.round(value);
+    if (["haste", "crit", "versatility", "mastery", "leech"].includes(stat)) {
+      console.log(stat + ": " + translatedStat[stat]["de"]);
+      console.log("CL: " + currentLanguage);
+      return translatedStat[stat][currentLanguage] + ": " + Math.round(100 * value) / 100 + "%";
+    } else return translatedStat[stat][currentLanguage] + ": " + Math.round(value);
   }
 
   return (
@@ -39,7 +42,7 @@ export default function TopSetStatsPanel(props) {
         fontSize: "12px",
         textAlign: "left",
         minHeight: 90,
-        maxWidth: 300,
+        maxWidth: 340,
         backgroundColor: "rgba(44, 44, 44, 0.5)",
       }}
     >

@@ -111,6 +111,20 @@ export const translatedStat = {
       "cn": "CNCr",
       "ru": "RuCr",
     },
+    "bonus HPS": {
+      "en": "Bonus HPS",
+      "fr": "Bonus HPS",
+      "de": "Bonus HPS",
+      "cn": "Bonus HPS",
+      "ru": "Bonus HPS",
+    },
+    "bonus DPS": {
+      "en": "Bonus DPS",
+      "fr": "Bonus DPS",
+      "de": "Bonus DPS",
+      "cn": "Bonus DPS",
+      "ru": "Bonus DPS",
+    },
 
 
 

@@ -219,6 +219,7 @@ function TopGearReport(props) {
                           <TopSetStatsPanel
                             statList={statList}
                             spec={props.pl.spec}
+                            currentLanguage={currentLanguage}
                           />
                         </Grid>
                       </Grid>

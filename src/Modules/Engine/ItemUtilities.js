@@ -429,7 +429,7 @@ export function buildStatString(stats, effect, lang = "en") {
   for (var ind in statsList) {
     let statKey = statsList[ind]["key"];
     console.log("Stat: " + statKey);
-    console.log(translatedStat[statKey]["en"]);
+    
     statString +=
       statsList[ind]["val"] > 0
         ? statsList[ind]["val"] +
