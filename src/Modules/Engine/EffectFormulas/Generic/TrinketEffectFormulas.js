@@ -310,7 +310,7 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel) {
     let playerHaste = player.getStatPerc("Haste");
     let castsInDuration = effect.efficiency * (20 / (1.5 / playerHaste));
     let manaSaved = (manaPerStack*5*10) + ((castsInDuration-10) * manaPerStack * 10);
-    console.log("Casts in Dur: " + castsInDuration + ". Mana Saved: " + manaSaved + "Haste: " + playerHaste);
+    //console.log("Casts in Dur: " + castsInDuration + ". Mana Saved: " + manaSaved + "Haste: " + playerHaste);
     bonus_stats.mana =  manaSaved / effect.cooldown;
     //console.log("Spark: " + getProcessedValue(effect.coefficient, effect.table, itemLevel) * player.getSpecialQuery("CastsPerMinute", contentType) + " . mana: " + bonus_stats.mana);
     //console.log("Tuft: " + bonus_stats.hps);
@@ -331,7 +331,7 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel) {
         bonus_stats[effect.benefit] = Math.round(netValue);
     } */
 
-    console.log("Effect Name: " + effectName + " at level: " + itemLevel + " {" + JSON.stringify(bonus_stats))
+    //console.log("Effect Name: " + effectName + " at level: " + itemLevel + " {" + JSON.stringify(bonus_stats))
     return bonus_stats;
 }
 

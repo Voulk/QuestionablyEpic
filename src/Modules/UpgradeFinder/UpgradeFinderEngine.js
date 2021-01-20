@@ -1,4 +1,4 @@
-import { itemDB } from "../Player/ItemDB";
+import { itemDB, tokenDB } from "../Player/ItemDB";
 import Item from "../Player/Item";
 import { runTopGear } from "../TopGear/TopGearEngine";
 import {
@@ -9,6 +9,7 @@ import {
   getValidArmorTypes,
   getValidWeaponTypes,
   getItemEffect,
+  getFullItem,
   filterItemListByType,
 } from "../Engine/ItemUtilities";
 import UpgradeFinderResult from "./UpgradeFinderResult";
@@ -165,8 +166,8 @@ function getSetItemLevel(itemSource, playerSettings, raidIndex = 0, slot) {
   return itemLevel;
 }
 
-function buildItem(player, contentType, rawItem, itemLevel) {
-  const itemSource = rawItem.sources[0];
+function buildItem(player, contentType, rawItem, itemLevel, source) {
+  const itemSource = source; //rawItem.sources[0];
   const itemSlot = rawItem.slot;
   const itemID = rawItem.id;
 
@@ -184,6 +185,8 @@ function buildItem(player, contentType, rawItem, itemLevel) {
 function buildItemPossibilities(player, contentType, playerSettings) {
   let itemPoss = [];
 
+
+  // Grab items.
   for (var i = 0; i < itemDB.length; i++) {
     const rawItem = itemDB[i];
     if ("sources" in rawItem && checkItemViable(rawItem, player)) {
@@ -192,17 +195,52 @@ function buildItemPossibilities(player, contentType, playerSettings) {
       if (itemSource.instanceId === 1190) {
         for (var x = 0; x < playerSettings.raid.length; x++) {
           const itemLevel = getSetItemLevel(itemSource, playerSettings, x, rawItem.slot);
-          const item = buildItem(player, contentType, rawItem, itemLevel);
+          const item = buildItem(player, contentType, rawItem, itemLevel, rawItem.sources[0]);
           //console.log("Difficulty: " + playerSettings.raid[x] + ". Item level: " + itemLevel)
           itemPoss.push(item);
         }
       } else {
         const itemLevel = getSetItemLevel(itemSource, playerSettings, 0,  rawItem.slot);
-        const item = buildItem(player, contentType, rawItem, itemLevel);
+        const item = buildItem(player, contentType, rawItem, itemLevel, rawItem.sources[0]);
 
         itemPoss.push(item);
       }
     }
+  }
+
+  console.log("Tokens: " + Object.keys(tokenDB).length);
+
+  // --------------------------
+  // Take care of Tokens >:(
+  // --------------------------
+  for (const [key, value] of Object.entries(tokenDB)) {
+    const rawToken = value;
+    console.log(rawToken);
+
+    if ("encounterId" in rawToken && rawToken.specs.includes(player.getSpec())) {
+      console.log("Player Covenant: " + player.getCovenant())
+      const newItemIDs = rawToken[player.getCovenant()];
+      const itemSource = {instanceId: 1190, encounterId: rawToken.encounterId};
+      
+
+      for (var j = 0; j < newItemIDs.length; j++) {
+        for (var x = 0; x < playerSettings.raid.length; x++) {
+          const rawItem = getFullItem(newItemIDs[j]);
+          //console.log(rawItem);
+          
+          const itemLevel = getSetItemLevel(itemSource, playerSettings, x, rawItem.slot);
+          const item = buildItem(player, contentType, rawItem, itemLevel, itemSource);
+          console.log(item);
+          itemPoss.push(item);
+        }
+
+
+      }
+
+    }
+
+
+
   }
 
   //console.log(itemPoss.length);
