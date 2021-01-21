@@ -3,11 +3,13 @@ import SPECS from '../Engine/SPECS'
 import ActiveConduit from './ActiveConduit'
 import {conduitDB} from '../CooldownPlanner/Data/Data'
 import {getConduitFormula} from '../Engine/EffectFormulas/EffectEngine'
+import i18n from "i18next"
 
 // Returns a full list of all class conduits in the form of an ActiveSoulbind array.
 // Sets the item levels to the default. This is pulled on character creation so any SimC import can correct the item levels where necessary.
 // Should be stored on the Player character. 
 export function getAvailableClassConduits(spec) {
+    let currentLanguage = i18n.language;
     let conduits = []
     const defaultItemLevel = 184;
 
@@ -27,102 +29,111 @@ export function getAvailableClassConduits(spec) {
         //     )
         //   );
 
+    const localizedName = (id) => {
+      let returnedName = conduitDB
+        .filter((obj) => {
+          return obj.guid === id;
+        })
+        .map((obj) => obj.name[currentLanguage]);
+      return returnedName;
+    };
+
     if (spec === SPECS.RESTODRUID) {
 
-        conduits.push(new ActiveConduit(340616, defaultItemLevel, "Flash of Clarity", "Potency")); // done
-        conduits.push(new ActiveConduit(340621, defaultItemLevel, "Floral Recycling", "Potency")); // done
-        conduits.push(new ActiveConduit(340550, defaultItemLevel, "Ready for Anything", "Potency")); // done
-        conduits.push(new ActiveConduit(340549, defaultItemLevel, "Unstoppable Growth", "Potency")); // done
-        conduits.push(new ActiveConduit(341446, defaultItemLevel, "Conflux of Elements", "Potency", "Night Fae"));// done
-        conduits.push(new ActiveConduit(341378, defaultItemLevel, "Deep Allegiance", "Potency", "Kyrian")); // done
-        conduits.push(new ActiveConduit(341383, defaultItemLevel, "Endless Thirst", "Potency", "Venthyr")); // done
-        conduits.push(new ActiveConduit(341447, defaultItemLevel, "Evolved Swarm", "Potency", "Necrolord"));// done
+        conduits.push(new ActiveConduit(340616, defaultItemLevel, localizedName(340616), "Potency")); 
+        conduits.push(new ActiveConduit(340621, defaultItemLevel, localizedName(340621), "Potency")); 
+        conduits.push(new ActiveConduit(340550, defaultItemLevel, localizedName(340550), "Potency"));
+        conduits.push(new ActiveConduit(340549, defaultItemLevel, localizedName(340549), "Potency")); // done
+        conduits.push(new ActiveConduit(341446, defaultItemLevel, localizedName(341446), "Potency", "Night Fae"));// done
+        conduits.push(new ActiveConduit(341378, defaultItemLevel, localizedName(341378), "Potency", "Kyrian")); // done
+        conduits.push(new ActiveConduit(341383, defaultItemLevel, localizedName(341383), "Potency", "Venthyr")); // done
+        conduits.push(new ActiveConduit(341447, defaultItemLevel, localizedName(341447), "Potency", "Necrolord"));// done
 
         // TODO: Add the full set.
 
-        conduits.push(new ActiveConduit(340553, defaultItemLevel, "Well-Honed Instincts", "Endurance"));
-        conduits.push(new ActiveConduit(340529, defaultItemLevel, "Tough as Bark", "Endurance")); // done
-        conduits.push(new ActiveConduit(340540, defaultItemLevel, "Ursine Vigor", "Endurance"));
-        conduits.push(new ActiveConduit(340543, defaultItemLevel, "Innate Resolve", "Endurance"));
+        conduits.push(new ActiveConduit(340553, defaultItemLevel, localizedName(340553), "Endurance"));
+        conduits.push(new ActiveConduit(340529, defaultItemLevel, localizedName(340529), "Endurance")); // done
+        conduits.push(new ActiveConduit(340540, defaultItemLevel, localizedName(340540), "Endurance"));
+        conduits.push(new ActiveConduit(340543, defaultItemLevel, localizedName(340543), "Endurance"));
     }
     else if (spec === SPECS.HOLYPALADIN) {
-        conduits.push(new ActiveConduit(339570, defaultItemLevel, "Enkindled Spirit", "Potency"));
-        conduits.push(new ActiveConduit(339984, defaultItemLevel, "Focused Light", "Potency"));
-        conduits.push(new ActiveConduit(339712, defaultItemLevel, "Resplendent Light", "Potency"));
-        conduits.push(new ActiveConduit(339987, defaultItemLevel, "Untempered Dedication", "Potency"));
-        conduits.push(new ActiveConduit(340218, defaultItemLevel, "Ringing Clarity", "Potency", "Kyrian"));
-        conduits.push(new ActiveConduit(340212, defaultItemLevel, "Hallowed Discernment", "Potency", "Venthyr"));
-        conduits.push(new ActiveConduit(340192, defaultItemLevel, "Righteous Might", "Potency", "Necrolord"));
-        conduits.push(new ActiveConduit(340185, defaultItemLevel, "The Long Summer", "Potency", "Night Fae"));
+        conduits.push(new ActiveConduit(339570, defaultItemLevel, localizedName(339570), "Potency"));
+        conduits.push(new ActiveConduit(339984, defaultItemLevel, localizedName(339984), "Potency"));
+        conduits.push(new ActiveConduit(339712, defaultItemLevel, localizedName(339712), "Potency"));
+        conduits.push(new ActiveConduit(339987, defaultItemLevel, localizedName(339987), "Potency"));
+        conduits.push(new ActiveConduit(340218, defaultItemLevel, localizedName(340218), "Potency", "Kyrian"));
+        conduits.push(new ActiveConduit(340212, defaultItemLevel, localizedName(340212), "Potency", "Venthyr"));
+        conduits.push(new ActiveConduit(340192, defaultItemLevel, localizedName(340192), "Potency", "Necrolord"));
+        conduits.push(new ActiveConduit(340185, defaultItemLevel, localizedName(340185), "Potency", "Night Fae"));
 
         // Endurance
-        conduits.push(new ActiveConduit(338741, defaultItemLevel, "Divine Call", "Endurance"));
-        conduits.push(new ActiveConduit(339114, defaultItemLevel, "Golden Path", "Endurance"));
-        conduits.push(new ActiveConduit(338787, defaultItemLevel, "Shielding Words", "Endurance"));
+        conduits.push(new ActiveConduit(338741, defaultItemLevel, localizedName(338741), "Endurance"));
+        conduits.push(new ActiveConduit(339114, defaultItemLevel, localizedName(339114), "Endurance"));
+        conduits.push(new ActiveConduit(338787, defaultItemLevel, localizedName(338787), "Endurance"));
 
     }
     else if (spec === SPECS.MISTWEAVERMONK) {
-        conduits.push(new ActiveConduit(336773, defaultItemLevel, "Jade Bond", "Potency"));
-        conduits.push(new ActiveConduit(337241, defaultItemLevel, "Nourishing Chi", "Potency"));
-        conduits.push(new ActiveConduit(336812, defaultItemLevel, "Resplendent Mist", "Potency"));
-        conduits.push(new ActiveConduit(337099, defaultItemLevel, "Rising Sun Revival", "Potency"));
-        conduits.push(new ActiveConduit(337286, defaultItemLevel, "Strike with Clarity", "Potency", "Kyrian"));
-        conduits.push(new ActiveConduit(337301, defaultItemLevel, "Imbued Reflections", "Potency", "Venthyr"));
-        conduits.push(new ActiveConduit(337295, defaultItemLevel, "Bone Marrow Hops", "Potency", "Necrolord"));
-        conduits.push(new ActiveConduit(337303, defaultItemLevel, "Way of the Fae", "Potency", "Night Fae"));
+        conduits.push(new ActiveConduit(336773, defaultItemLevel, localizedName(336773), "Potency"));
+        conduits.push(new ActiveConduit(337241, defaultItemLevel, localizedName(337241), "Potency"));
+        conduits.push(new ActiveConduit(336812, defaultItemLevel, localizedName(336812), "Potency"));
+        conduits.push(new ActiveConduit(337099, defaultItemLevel, localizedName(337099), "Potency"));
+        conduits.push(new ActiveConduit(337286, defaultItemLevel, localizedName(337286), "Potency", "Kyrian"));
+        conduits.push(new ActiveConduit(337301, defaultItemLevel, localizedName(337301), "Potency", "Venthyr"));
+        conduits.push(new ActiveConduit(337295, defaultItemLevel, localizedName(337295), "Potency", "Necrolord"));
+        conduits.push(new ActiveConduit(337303, defaultItemLevel, localizedName(337303), "Potency", "Night Fae"));
 
         // Endurance
-        conduits.push(new ActiveConduit(336853, defaultItemLevel, "Fortified Ingredients", "Endurance"));
-        conduits.push(new ActiveConduit(336632, defaultItemLevel, "Grounding Breath", "Endurance"));
-        conduits.push(new ActiveConduit(336379, defaultItemLevel, "Harm Denial", "Endurance"));
+        conduits.push(new ActiveConduit(336853, defaultItemLevel, localizedName(336853), "Endurance"));
+        conduits.push(new ActiveConduit(336632, defaultItemLevel, localizedName(336632), "Endurance"));
+        conduits.push(new ActiveConduit(336379, defaultItemLevel, localizedName(336379), "Endurance"));
     }
     else if (spec === SPECS.DISCPRIEST) {
-        conduits.push(new ActiveConduit(337790, defaultItemLevel, "Exaltation", "Potency"));
-        conduits.push(new ActiveConduit(337786, defaultItemLevel, "Pain Transformation", "Potency"));
-        conduits.push(new ActiveConduit(337778, defaultItemLevel, "Shining Radiance", "Potency"));
-        conduits.push(new ActiveConduit(337891, defaultItemLevel, "Swift Penitence", "Potency"));
+        conduits.push(new ActiveConduit(337790, defaultItemLevel, localizedName(337790), "Potency"));
+        conduits.push(new ActiveConduit(337786, defaultItemLevel, localizedName(337786), "Potency"));
+        conduits.push(new ActiveConduit(337778, defaultItemLevel, localizedName(337778), "Potency"));
+        conduits.push(new ActiveConduit(337891, defaultItemLevel, localizedName(337891), "Potency"));
 
-        conduits.push(new ActiveConduit(337966, defaultItemLevel, "Courageous Ascension", "Potency", "Kyrian"));
-        conduits.push(new ActiveConduit(338315, defaultItemLevel, "Shattered Perceptions", "Potency", "Venthyr"));
-        conduits.push(new ActiveConduit(337979, defaultItemLevel, "Festering Transfusion", "Potency", "Necrolord"));
-        conduits.push(new ActiveConduit(338305, defaultItemLevel, "Fae Fermata", "Potency", "Night Fae"));
+        conduits.push(new ActiveConduit(337966, defaultItemLevel, localizedName(337966), "Potency", "Kyrian"));
+        conduits.push(new ActiveConduit(338315, defaultItemLevel, localizedName(338315), "Potency", "Venthyr"));
+        conduits.push(new ActiveConduit(337979, defaultItemLevel, localizedName(337979), "Potency", "Necrolord"));
+        conduits.push(new ActiveConduit(338305, defaultItemLevel, localizedName(338305), "Potency", "Night Fae"));
 
         // Endurance
-        conduits.push(new ActiveConduit(337715, defaultItemLevel, "Charitable Soul", "Endurance"));
-        conduits.push(new ActiveConduit(337748, defaultItemLevel, "Light's Inspiration", "Endurance"));
-        conduits.push(new ActiveConduit(337662, defaultItemLevel, "Translucent Image", "Endurance"));
+        conduits.push(new ActiveConduit(337715, defaultItemLevel, localizedName(337715), "Endurance"));
+        conduits.push(new ActiveConduit(337748, defaultItemLevel, localizedName(337748), "Endurance"));
+        conduits.push(new ActiveConduit(337662, defaultItemLevel, localizedName(337662), "Endurance"));
     }
     else if (spec === SPECS.RESTOSHAMAN) {
-        conduits.push(new ActiveConduit(338329, defaultItemLevel, "Embrace of Earth", "Potency"));
-        conduits.push(new ActiveConduit(338343, defaultItemLevel, "Heavy Rainfall", "Potency"));
-        conduits.push(new ActiveConduit(338346, defaultItemLevel, "Nature's Focus", "Potency"));
-        conduits.push(new ActiveConduit(338339, defaultItemLevel, "Swirling Currents", "Potency"));
+        conduits.push(new ActiveConduit(338329, defaultItemLevel, localizedName(338329), "Potency"));
+        conduits.push(new ActiveConduit(338343, defaultItemLevel, localizedName(338343), "Potency"));
+        conduits.push(new ActiveConduit(338346, defaultItemLevel, localizedName(338346), "Potency"));
+        conduits.push(new ActiveConduit(338339, defaultItemLevel, localizedName(338339), "Potency"));
 
-        conduits.push(new ActiveConduit(339182, defaultItemLevel, "Elysian Dirge", "Potency", "Kyrian"));
-        conduits.push(new ActiveConduit(339185, defaultItemLevel, "Lavish Harvest", "Potency", "Venthyr"));
-        conduits.push(new ActiveConduit(339186, defaultItemLevel, "Tumbling Waves", "Potency", "Necrolord"));
-        conduits.push(new ActiveConduit(339183, defaultItemLevel, "Essential Extraction", "Potency", "Night Fae"));
+        conduits.push(new ActiveConduit(339182, defaultItemLevel, localizedName(339182), "Potency", "Kyrian"));
+        conduits.push(new ActiveConduit(339185, defaultItemLevel, localizedName(339185), "Potency", "Venthyr"));
+        conduits.push(new ActiveConduit(339186, defaultItemLevel, localizedName(339186), "Potency", "Necrolord"));
+        conduits.push(new ActiveConduit(339183, defaultItemLevel, localizedName(339183), "Potency", "Night Fae"));
 
         // Endurance
-        conduits.push(new ActiveConduit(337964, defaultItemLevel, "Astral Protection", "Endurance"));
-        conduits.push(new ActiveConduit(337974, defaultItemLevel, "Refreshing Waters", "Endurance"));
-        conduits.push(new ActiveConduit(337981, defaultItemLevel, "Vital Accretion", "Endurance"));
+        conduits.push(new ActiveConduit(337964, defaultItemLevel, localizedName(337964), "Endurance"));
+        conduits.push(new ActiveConduit(337974, defaultItemLevel, localizedName(337974), "Endurance"));
+        conduits.push(new ActiveConduit(337981, defaultItemLevel, localizedName(337981), "Endurance"));
     }
     else if (spec === SPECS.HOLYPRIEST) {
-        conduits.push(new ActiveConduit(337914, defaultItemLevel, "Focused Mending", "Potency"));
-        conduits.push(new ActiveConduit(338345, defaultItemLevel, "Holy Oration", "Potency"));
-        conduits.push(new ActiveConduit(337811, defaultItemLevel, "Lasting Spirit", "Potency"));
-        conduits.push(new ActiveConduit(337947, defaultItemLevel, "Resonant Words", "Potency"));
+        conduits.push(new ActiveConduit(337914, defaultItemLevel, localizedName(337914), "Potency"));
+        conduits.push(new ActiveConduit(338345, defaultItemLevel, localizedName(338345), "Potency"));
+        conduits.push(new ActiveConduit(337811, defaultItemLevel, localizedName(337811), "Potency"));
+        conduits.push(new ActiveConduit(337947, defaultItemLevel, localizedName(337947), "Potency"));
 
-        conduits.push(new ActiveConduit(337966, defaultItemLevel, "Courageous Ascension", "Potency", "Kyrian"));
-        conduits.push(new ActiveConduit(338315, defaultItemLevel, "Shattered Perceptions", "Potency", "Venthyr"));
-        conduits.push(new ActiveConduit(337979, defaultItemLevel, "Festering Transfusion", "Potency", "Necrolord"));
-        conduits.push(new ActiveConduit(338305, defaultItemLevel, "Fae Fermata", "Potency", "Night Fae"));
+        conduits.push(new ActiveConduit(337966, defaultItemLevel, localizedName(337966), "Potency", "Kyrian"));
+        conduits.push(new ActiveConduit(338315, defaultItemLevel, localizedName(338315), "Potency", "Venthyr"));
+        conduits.push(new ActiveConduit(337979, defaultItemLevel, localizedName(337979), "Potency", "Necrolord"));
+        conduits.push(new ActiveConduit(338305, defaultItemLevel, localizedName(338305), "Potency", "Night Fae"));
 
         // Endurance
-        conduits.push(new ActiveConduit(337715, defaultItemLevel, "Charitable Soul", "Endurance"));
-        conduits.push(new ActiveConduit(337748, defaultItemLevel, "Light's Inspiration", "Endurance"));
-        conduits.push(new ActiveConduit(337662, defaultItemLevel, "Translucent Image", "Endurance"));
+        conduits.push(new ActiveConduit(337715, defaultItemLevel, localizedName(337715), "Endurance"));
+        conduits.push(new ActiveConduit(337748, defaultItemLevel, localizedName(337748), "Endurance"));
+        conduits.push(new ActiveConduit(337662, defaultItemLevel, localizedName(337662), "Endurance"));
     }
 
 

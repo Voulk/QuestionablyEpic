@@ -137,7 +137,7 @@ export default function AddNewChar(props) {
         aria-labelledby="char-dialog-title"
       >
         <DialogTitle id="char-dialog-title">
-          {t("CharacterCreator.CreateChar")}
+          {t("CharacterCreator.AddChar")}
         </DialogTitle>
         <DialogContent>
           <Grid container spacing={1} direction="column">
@@ -214,7 +214,7 @@ export default function AddNewChar(props) {
                   {Object.getOwnPropertyNames(classRaceList).map((key, i) => (
                     <MenuItem key={i} value={key}>
                       {classIcons(key, 20)}
-                      {key}
+                      {t("Classes." + key)}
                     </MenuItem>
                   ))}
                 </Select>

@@ -24,7 +24,7 @@ export default function FightSelectorButton(props) {
         disabled={props.disabled || false}
         onClick={handleClick}
         variant="outlined"
-        style={{ height: 40 }}
+        style={{ height: 40, ...props.customStyleButton }}
       >
         {t("CooldownPlanner.UserInputs.fightButtonLabel")}
       </Button>
