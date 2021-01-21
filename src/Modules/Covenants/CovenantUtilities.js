@@ -211,8 +211,8 @@ export function getEstimatedHPS(bonus_stats, player, contentType) {
 
 export function getConduitName(id, language = "en") {
     //console.log("Console here: " + id)
-    let filteredDict = conduits.filter(trait => trait.guid === id);
-    if (filteredDict.length > 0) return filteredDict[0].name;
+    let filteredDict = conduitDB.filter(trait => trait.guid === id);
+    if (filteredDict.length > 0) return filteredDict[0].name[language];
     else return 'Invalid Name';
 
 }
@@ -222,7 +222,7 @@ export function getConduitIcon(id) {
         return "EmptyConduit.jpg"
     }
     else {
-        let filteredDict = conduits.filter(trait => trait.guid === id);
+        let filteredDict = conduitDB.filter(trait => trait.guid === id);
         if (filteredDict.length > 0) return filteredDict[0].abilityIcon;
         else return "missing.jpg"
     }
