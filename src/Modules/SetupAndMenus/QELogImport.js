@@ -356,7 +356,7 @@ export default function QELogImport(props) {
           {t("InsertLog.InsertLogHeader")}
         </DialogTitle>
         <DialogContent>
-          <Grid container spacing={1}>
+          <Grid container direction="row" spacing={1} justify="space-between">
             <Grid item xs={12}>
               <LogLinkInput
                 changed={reportidHandler}
@@ -364,59 +364,79 @@ export default function QELogImport(props) {
                 styleProps={{ fullWidth: true }}
               />
             </Grid>
-            <Grid item xs={3}>
-              <FightSelectorButton
-                disabled={reportId === "" ? true : false}
-                reportid={reportId}
-                clicky={handler}
-                update={importLogDataQE}
-                customStyle={{ height: 400 }}
-              />
-            </Grid>
-            <Grid item xs={9} style={{ alignSelf: "center" }}>
-              <Typography
-                style={{
-                  fontWeight: 500,
-                  fontSize: "1.1rem",
-                  whiteSpace: "nowrap",
-                }}
-                align="center"
-                color="primary"
-              >
-                {bossIcons(currentBossID)}
-                {showSelectedFight
-                  ? bossName +
-                    " - " +
-                    currentDifficulty +
-                    " - " +
-                    currentFighttime +
-                    " - " +
-                    killWipe
-                  : t("InsertLog.PlsSelectFight")}
-              </Typography>
-            </Grid>
-            <Grid item xs={6}>
-              <FormControl
-                variant="outlined"
-                size="small"
-                fullWidth
-                disabled={currentBossID === "" ? true : false}
-              >
-                <InputLabel id="HealerSelector">{t("Name")}</InputLabel>
-                <Select
-                  value={selectValue}
-                  label={t("Name")}
-                  labelId="HealerSelector"
-                  onChange={(e) => playerSelectedHandler(e.target.value)}
-                  MenuProps={menuStyle}
+            <Grid item xs={6} container spacing={1} direction="column">
+              <Grid item xs={12}>
+                <FightSelectorButton
+                  disabled={reportId === "" ? true : false}
+                  reportid={reportId}
+                  clicky={handler}
+                  update={importLogDataQE}
+                  customStyleButton={{ width: "100%" }}
+                  customStyle={{ height: 400 }}
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <FormControl
+                  variant="outlined"
+                  size="small"
+                  fullWidth
+                  disabled={currentBossID === "" ? true : false}
                 >
-                  {healerData.map((key, i) => (
-                    <MenuItem key={i} value={key.name}>
-                      {key.name}
-                    </MenuItem>
-                  ))}
-                </Select>
-              </FormControl>
+                  <InputLabel id="HealerSelector">{t("Name")}</InputLabel>
+                  <Select
+                    value={selectValue}
+                    label={t("Name")}
+                    labelId="HealerSelector"
+                    onChange={(e) => playerSelectedHandler(e.target.value)}
+                    MenuProps={menuStyle}
+                  >
+                    {healerData.map((key, i) => (
+                      <MenuItem key={i} value={key.name}>
+                        {key.name}
+                      </MenuItem>
+                    ))}
+                  </Select>
+                </FormControl>
+              </Grid>
+            </Grid>
+            <Grid xs={6} container spacing={1} direction="column">
+              <Grid item xs={12} style={{ alignSelf: "center", marginTop: 6 }}>
+                <Typography
+                  style={{
+                    fontWeight: 500,
+                    fontSize: "1.1rem",
+                    // whiteSpace: "nowrap",
+                  }}
+                  align="center"
+                  color="primary"
+                >
+                  {bossIcons(currentBossID)}
+                  {showSelectedFight ? bossName : t("InsertLog.PlsSelectFight")}
+                </Typography>
+                <Typography
+                  style={{
+                    fontWeight: 500,
+                    fontSize: "1.1rem",
+                    // whiteSpace: "nowrap",
+                  }}
+                  align="center"
+                  color="primary"
+                >
+                  {showSelectedFight ? currentDifficulty : ""}
+                </Typography>
+                <Typography
+                  style={{
+                    fontWeight: 500,
+                    fontSize: "1.1rem",
+                    // whiteSpace: "nowrap",
+                  }}
+                  align="center"
+                  color="primary"
+                >
+
+                  {showSelectedFight ? currentFighttime + " - " + killWipe : ""}
+                </Typography>
+              </Grid>
             </Grid>
           </Grid>
         </DialogContent>
