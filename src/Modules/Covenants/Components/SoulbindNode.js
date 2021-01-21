@@ -75,7 +75,7 @@ function getBenefitString(bonus_stats) {
 
 function getLocalizedName(trait, type, lang) {
   if (type.includes("Conduit") && trait.slotted_id > 0) {
-    return getConduitName(trait.slotted_id);
+    return getConduitName(trait.slotted_id, lang);
   } else {
     return trait.names[lang]; // Replace with a database lookup based on language.
   }
@@ -109,7 +109,7 @@ export default function SoulbindNode(props) {
 
   const trait = props.soulbindTrait;
   const type = "type" in trait ? trait.type : "Soulbind"; // Soulbind, Potency Conduit, Endurance Conduit, Finesse Conduit
-  const name = getLocalizedName(trait, type, currentLanguage);
+  const name = getLocalizedName(trait, type, currentLanguage)
   const icon = process.env.PUBLIC_URL + "/Images/Icons/" + trait.icon;
   const containerIcon =
     "/Images/Interface/soulbindcontainer" +
