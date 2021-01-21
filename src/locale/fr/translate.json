@@ -324,6 +324,13 @@
       "12837": "Flèches de l’Ascension"
     },
 
+    "RaidDifficulty": {
+      "Raid Finder": "",
+      "Normal": "",
+      "Heroic": "",
+      "Mythic": ""
+    },
+
     "PvPCurrency": {
       "Honor": "Honneur",
       "Conquest": "Points de conquête"

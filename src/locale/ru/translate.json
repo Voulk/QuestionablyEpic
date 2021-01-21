@@ -324,6 +324,13 @@
       "12837": "Шпили Перерождения"
     },
 
+    "RaidDifficulty": {
+      "Raid Finder": "",
+      "Normal": "",
+      "Heroic": "",
+      "Mythic": ""
+    },
+
     "PvPCurrency": {
       "Honor": "Честь",
       "Conquest": "Очки завоевания"

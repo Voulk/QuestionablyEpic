@@ -335,6 +335,14 @@
       "1189": "Sanguine Depths"
     },
 
+    "RaidDifficulty": {
+      "Raid Finder": "Looking for Raid",
+      "Normal": "Normal",
+      "Heroic": "Heroic",
+      "Mythic": "Mythic"
+    },
+
+
     "PvPCurrency": {
       "Honor": "Honor",
       "Conquest": "Conquest",

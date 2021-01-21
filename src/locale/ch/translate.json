@@ -324,6 +324,14 @@
       "12837": "晋升高塔"
     },
 
+    "RaidDifficulty": {
+      "Raid Finder": "",
+      "Normal": "",
+      "Heroic": "",
+      "Mythic": ""
+    },
+
+
     "PvPCurrency": {
       "Honor": "荣誉点数",
       "Conquest": "征服点数"

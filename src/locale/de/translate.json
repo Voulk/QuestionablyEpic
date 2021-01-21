@@ -319,7 +319,23 @@
       "12842": "Die Blutigen Tiefen",
       "12841": "Theater der Schmerzen",
       "13309": "Die Andre Seite",
-      "12837": "Spitzen des Aufstiegs"
+      "12837": "Spitzen des Aufstiegs",
+
+      "1182": "Die Nekrotische Schneise",
+      "1183": "Seuchensturz",
+      "1184": "Die Nebel von Tirna Scithe",
+      "1185": "Hallen der Sühne",
+      "1186": "Spitzen des Aufstiegs",
+      "1187": "Theater der Schmerzen",
+      "1188": "Die Andre Seite",
+      "1189": "Die Blutigen Tiefen"
+    },
+
+    "RaidDifficulty": {
+      "Raid Finder": "Schlachtzugsbrowser",
+      "Normal": "Normal",
+      "Heroic": "Heroisch",
+      "Mythic": "Mythisch"
     },
 
     "PvPCurrency": {
