@@ -45,3 +45,26 @@ export const discPriestDefaultSpecialQueries = (contentType) => {
     return specialQueries;
 
 }
+
+export const discPriestDefaultStatWeights = (contentType) => {
+    let statWeights = {};
+
+    statWeights.Raid = {
+        intellect: 1,
+        haste: 0.36,
+        crit: 0.34,
+        mastery: 0.34,
+        versatility: 0.32,
+        leech: 0.4,
+      }
+      statWeights.Dungeon = {
+        intellect: 1,
+        haste: 0.38,
+        crit: 0.34,
+        mastery: 0.3,
+        versatility: 0.33,
+        leech: 0.21,
+      }
+
+    return statWeights[contentType];
+}

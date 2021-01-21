@@ -58,3 +58,26 @@ export const shamanDefaultSpecialQueries = (contentType) => {
     return specialQueries;
 
 }
+
+export const shamanDefaultStatWeights = (contentType) => {
+    let statWeights = {};
+
+    statWeights.Raid = {
+        intellect: 1,
+        haste: 0.31,
+        crit: 0.36,
+        mastery: 0.29,
+        versatility: 0.36,
+        leech: 0.44,
+    }
+    statWeights.Dungeon = {
+        intellect: 1,
+        haste: 0.34,
+        crit: 0.33,
+        mastery: 0.29,
+        versatility: 0.34,
+        leech: 0.19,
+    }
+
+    return statWeights[contentType];
+}

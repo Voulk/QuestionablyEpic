@@ -76,3 +76,26 @@ export const monkDefaultSpecialQueries = (contentType) => {
     return specialQueries;
 
 }
+
+export const monkDefaultStatWeights = (contentType) => {
+    let statWeights = {};
+
+    statWeights.Raid = {
+        intellect: 1,
+        haste: 0.29,
+        crit: 0.35,
+        mastery: 0.28,
+        versatility: 0.34,
+        leech: 0.54,
+    }
+    statWeights.Dungeon = {
+        intellect: 1,
+        haste: 0.34,
+        crit: 0.35,
+        mastery: 0.29,
+        versatility: 0.35,
+        leech: 0.25,
+    }
+
+    return statWeights[contentType];
+}
