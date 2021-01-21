@@ -28,6 +28,31 @@ export const druidDefaultSpellData = (contentType) => {
     return spellList;
 }
 
+export const druidDefaultStatWeights = (contentType) => {
+    let statWeights = {};
+
+    statWeights.Raid = {
+        intellect: 1,
+        haste: 0.38,
+        crit: 0.34,
+        mastery: 0.31,
+        versatility: 0.32,
+        leech: 0.55,
+        defaults: true,
+    }
+    statWeights.Dungeon = {
+        intellect: 1,
+        haste: 0.38,
+        crit: 0.33,
+        mastery: 0.37,
+        versatility: 0.34,
+        leech: 0.23,
+        defaults: true,
+    }
+
+    return statWeights[contentType];
+}
+
 export const druidDefaultSpecialQueries = (contentType) => {
     let specialQueries = {};
     if (contentType === "Raid") {

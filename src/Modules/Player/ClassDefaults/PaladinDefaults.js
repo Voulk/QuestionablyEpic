@@ -52,3 +52,28 @@ export const paladinDefaultSpecialQueries = (contentType) => {
     return specialQueries;
 
 }
+
+export const paladinDefaultStatWeights = (contentType) => {
+    let statWeights = {};
+
+    statWeights.Raid = {
+        intellect: 1,
+        haste: 0.39,
+        crit: 0.27,
+        mastery: 0.33,
+        versatility: 0.32,
+        leech: 0.51,
+        defaults: true
+      }
+      statWeights.Dungeon = {
+        intellect: 1,
+        haste: 0.4,
+        crit: 0.36,
+        mastery: 0.21,
+        versatility: 0.33,
+        leech: 0.2,
+        defaults: true
+      }
+
+    return statWeights[contentType];
+}
