@@ -40,15 +40,24 @@
     "Classes": {
       "undefined": "",
       "HolyPaladin": "Holy PaladinFR",
+      "Holy Paladin": "Holy PaladinFR",
       "DisciplinePriest": "Discipline PriestFR",
+      "Discipline Priest": "Discipline PriestFR",
       "RestorationDruid": "Restoration DruidFR",
+      "Restoration Druid": "Restoration DruidFR",
       "HavocDemonHunter": "Havoc Demon HunterFR",
+      "Havoc Demon Hunter": "Havoc Demon HunterFR",
       "Warrior": "WarriorFR",
       "HolyPriest": "Holy PriestFR",
+      "Holy Priest": "Holy PriestFR",
       "MistweaverMonk": "Mistweaver MonkFR",
+      "Mistweaver Monk": "Mistweaver MonkFR",
       "RestorationShaman": "Restoration ShamanFR",
+      "Restoration Shaman": "Restoration ShamanFR",
       "DeathKnight": "Death KnightFR",
-      "ShadowPriest": "Shadow PriestFR"
+      "Death Knight": "Death KnightFR",
+      "ShadowPriest": "Shadow PriestFR",
+      "Shadow Priest": "Shadow PriestFR"
     },
 
     "CooldownPlanner": {

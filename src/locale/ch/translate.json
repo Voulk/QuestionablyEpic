@@ -55,15 +55,24 @@
       "Classes": {
         "undefined": "",
         "HolyPaladin": "Holy PaladinCH",
+        "Holy Paladin": "Holy PaladinCH",
         "DisciplinePriest": "Discipline PriestCH",
+        "Discipline Priest": "Discipline PriestCH",
         "RestorationDruid": "Restoration DruidCH",
+        "Restoration Druid": "Restoration DruidCH",
         "HavocDemonHunter": "Havoc Demon HunterCH",
+        "Havoc Demon Hunter": "Havoc Demon HunterCH",
         "Warrior": "WarriorCH",
         "HolyPriest": "Holy PriestCH",
+        "Holy Priest": "Holy PriestCH",
         "MistweaverMonk": "Mistweaver MonkCH",
+        "Mistweaver Monk": "Mistweaver MonkCH",
         "RestorationShaman": "Restoration ShamanCH",
+        "Restoration Shaman": "Restoration ShamanCH",
         "DeathKnight": "Death KnightCH",
-        "ShadowPriest": "Shadow PriestCH"
+        "Death Knight": "Death KnightCH",
+        "ShadowPriest": "Shadow PriestCH",
+        "Shadow Priest": "Shadow PriestCH"
       },
       "ChartLabels": {
         "_Comments1": "Translations for HD Charts",
