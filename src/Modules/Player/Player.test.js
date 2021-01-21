@@ -1,8 +1,6 @@
 
 import Player from './Player';
 
-//jest.mock('./Player');
-
 
 describe("Test Constructor", () => {
     const player = new Player("Mock", "Restoration Druid", 99, "NA", "Stonemaul", "Night Elf");
@@ -12,6 +10,7 @@ describe("Test Constructor", () => {
     });
 
 });
+
 
 describe("Test Default Stat Weights", () => {
 
@@ -58,9 +57,6 @@ describe("Test Default Stat Weights", () => {
     });
     
     // Can add the other specs below if necessary.
-
-
-    
 
 });
 
