@@ -143,7 +143,7 @@ export function getSoulbindFormula(effectID, pl, contentType) {
   // Double check the shield_consumed is a fair approximation when the expansion goes live.
   else if (effectID === 319213) {
     let trait_bonus = 0.1;
-    let shield_consumed = contentType == "Raid" ? 0.71 : 0.32; // The percentage of our overhealing shield that gets consumed. Likely to be very high.
+    let shield_consumed = contentType == "Raid" ? 0.78 : 0.32; // The percentage of our overhealing shield that gets consumed. Likely to be very high.
     let overhealing = pl.getRawHPS(contentType) - pl.getHPS(contentType);
 
     bonus_stats.HPS = trait_bonus * shield_consumed * overhealing;
