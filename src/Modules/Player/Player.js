@@ -446,11 +446,31 @@ class Player {
     if (Object.keys(info).length > 0) this.castModel["Raid"].setFightInfo(info);
   };
 
-    // Consider replacing this with an external table for cleanliness and ease of editing.
+ 
     setDefaultWeights = (spec, contentType) => {
   
       if (spec === SPEC.RESTODRUID) {
         this.statWeights[contentType] = druidDefaultStatWeights(contentType);
+        this.statWeights.DefaultWeights = true;
+      }
+      else if (spec === SPEC.HOLYPALADIN) {
+        this.statWeights[contentType] = paladinDefaultStatWeights(contentType);
+        this.statWeights.DefaultWeights = true;
+      }
+      else if (spec === SPEC.DISCPRIEST) {
+        this.statWeights[contentType] = discPriestDefaultStatWeights(contentType);
+        this.statWeights.DefaultWeights = true;
+      }
+      else if (spec === SPEC.HOLYPRIEST) {
+        this.statWeights[contentType] = holyPriestDefaultStatWeights(contentType);
+        this.statWeights.DefaultWeights = true;
+      }
+      else if (spec === SPEC.MISTWEAVERMONK) {
+        this.statWeights[contentType] = monkDefaultStatWeights(contentType);
+        this.statWeights.DefaultWeights = true;
+      }
+      else if (spec === SPEC.RESTOSHAMAN) {
+        this.statWeights[contentType] = shamanDefaultStatWeights(contentType);
         this.statWeights.DefaultWeights = true;
       }
   }
