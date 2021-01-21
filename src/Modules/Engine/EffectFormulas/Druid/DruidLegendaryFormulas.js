@@ -81,8 +81,7 @@ export const getDruidLegendary = (effectName, player, contentType) => {
       (oneRegrowth * freeClearcasts * percentClearcastsUsed) / 60;
     // --
 
-     
-
+    
     // Lifebloom is a more efficient spell than Rejuv so we can factor in the increased healing we get from the cast.
     let oneRejuv = player.getSingleCast(IDREJUV, contentType);
     let oneLifebloom = player.getSingleCast(IDLIFEBLOOM, contentType);
