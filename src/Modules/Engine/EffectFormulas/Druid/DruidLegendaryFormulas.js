@@ -76,12 +76,12 @@ export const getDruidLegendary = (effectName, player, contentType) => {
     let secondLifebloomUptime = 0.8;
     let freeClearcasts =
       60 * secondLifebloomUptime * player.getStatPerc("Haste") * 0.04;
-    let oneRegrowth = player.getSingleCast(IDREGROWTH, contentType);
+    let oneRegrowth = player.getSingleCast(IDREGROWTH, contentType, "hits");
     let hps_clearcasting =
       (oneRegrowth * freeClearcasts * percentClearcastsUsed) / 60;
     // --
 
-    // console.log("saew" + hps_clearcasting + ". " + oneRegrowth + '. ' + freeClearcasts);
+     
 
     // Lifebloom is a more efficient spell than Rejuv so we can factor in the increased healing we get from the cast.
     let oneRejuv = player.getSingleCast(IDREJUV, contentType);
@@ -93,6 +93,8 @@ export const getDruidLegendary = (effectName, player, contentType) => {
     // 10% Lifebloom Penalty
     let lifebloomHPS = player.getSpellHPS(IDLIFEBLOOM, contentType);
     let deduction = lifebloomHPS * 0.1;
+
+    console.log("saew" + hps_clearcasting + ". " + oneRegrowth + '. ' + freeClearcasts + " " + hps_betterCast);
 
     bonus_stats.hps = Math.round(hps_betterCast + hps_clearcasting - deduction);
   }

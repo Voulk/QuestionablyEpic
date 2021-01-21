@@ -405,10 +405,10 @@ class Player {
     return this.castModel[contentType].getSpecialQuery(queryIdentifier);
   };
 
-  getSingleCast = (spellID, contentType) => {
+  getSingleCast = (spellID, contentType, castType = "casts") => {
     return (
       this.castModel[contentType].getSpellData(spellID, "healing") /
-      this.castModel[contentType].getSpellData(spellID, "casts")
+      this.castModel[contentType].getSpellData(spellID, castType)
     );
   };
 
