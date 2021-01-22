@@ -105,6 +105,11 @@ const useStyles = makeStyles((theme) => ({
     })`,
     borderRadius: "0px 4px 0px 0px",
   },
+  header: {
+    [theme.breakpoints.down("sm")]: {
+      marginTop: 120,
+    },
+  }
 }));
 
 // ==============================================
@@ -172,7 +177,7 @@ export default function CovenantExploration(props) {
   }
 
   return (
-    <div>
+    <div className={classes.header}>
       <Typography
         variant="h4"
         align="center"
