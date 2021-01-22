@@ -79,10 +79,10 @@ export default function QEHeader(props) {
               <Grid
                 container
                 direction="row"
-                justify="space-between"
+                // justify="space-between"
                 alignItems="center"
               >
-                <Grid item xs={12} sm={12} md={12} lg={6} xl={6}>
+                <Grid item xs={12} sm={12} md={12} lg={6} xl={5}>
                   <Link to={"/"}>
                     <Tooltip title={t("QeHeader.Tooltip.Home")} arrow>
                       <img
@@ -93,11 +93,11 @@ export default function QEHeader(props) {
                     </Tooltip>
                   </Link>
                 </Grid>
-                <Grid item xs={12} sm={12} md={12} lg={6} xl={6}>
+                <Grid item xs={12} sm={12} md={12} lg={6} xl="auto">
                   <Typography
-                    style={{ color: color[patronStatus] }}
+                    style={{ color: color[patronStatus], paddingLeft: 10, paddingRight: 10 }}
                     variant="body1"
-                    align="left"
+                    align="centre"
                   >
                     {patronStatus}
                   </Typography>
@@ -114,10 +114,12 @@ export default function QEHeader(props) {
               <Grid
                 container
                 direction="row"
-                justify="flex-end"
+                justify="center"
+                // justify="flex-end"
                 alignItems="center"
                 spacing={1}
                 wrap="nowrap"
+                style={{paddingLeft: 10, paddingRight: 10}}
               >
                 <Grid item>
                   <Tooltip
