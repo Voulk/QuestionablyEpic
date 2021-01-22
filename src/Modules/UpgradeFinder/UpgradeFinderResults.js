@@ -72,6 +72,27 @@ const useStyles = makeStyles((theme) => ({
     color: "#fff",
     fontSize: "1.1rem",
   },
+  header: {
+    [theme.breakpoints.down("sm")]: {
+      marginTop: 120,
+      justifyContent: "center",
+      display: "block",
+      marginLeft: "auto",
+      marginRight: "auto",
+      flexGrow: 1,
+      maxWidth: "70%",
+    },
+    [theme.breakpoints.up("md")]: {
+      marginTop: 32,
+      justifyContent: "center",
+      display: "block",
+      marginLeft: "auto",
+      marginRight: "auto",
+      flexGrow: 1,
+      maxWidth: "70%",
+    },
+    
+  }
 }));
 
 TabPanel.propTypes = {
@@ -129,7 +150,7 @@ export default function UpgradeFinderResults(props) {
   };
 
   return (
-    <div className={classes.root}>
+    <div className={classes.header}>
       <Typography
         variant="h4"
         color="primary"

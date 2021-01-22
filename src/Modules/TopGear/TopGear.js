@@ -58,7 +58,18 @@ const useStyles = makeStyles((theme) => ({
   typography: {
     padding: theme.spacing(2),
   },
+  header: {
+    [theme.breakpoints.down("sm")]: {
+      marginTop: 120,
+    },
+    [theme.breakpoints.up("md")]: {
+      marginTop: 32,
+    },
+    
+  }
 }));
+
+
 
 const menuStyle = {
   style: { marginTop: 5 },
@@ -231,10 +242,7 @@ export default function TopGear(props) {
 
   return (
     <div
-      style={{
-        // backgroundColor: "#313131",
-        marginTop: 32,
-      }}
+    className={classes.header}
     >
       <Grid
         container
