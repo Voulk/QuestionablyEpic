@@ -2,7 +2,6 @@ import React, { Component, useEffect } from "react";
 import "./App.css";
 import HolyDiver from "./Modules/CooldownPlanner/CooldownPlannerModule";
 import QEMainMenu from "./Modules/SetupAndMenus/QEMainMenu";
-import TrinketCompare from "./Modules/TrinketCompare";
 import LegendaryCompare from "./Modules/Legendaries/LegendaryCompare";
 import TrinketAnalysis from "./Modules/TrinketAnalysis/TrinketAnalysis";
 import QuickCompare from "./Modules/QuickCompare/QuickCompare";
@@ -11,7 +10,6 @@ import TopGearReport from "./Modules/TopGear/TopGearReport";
 import QEProfile from "./Modules/SetupAndMenus/QEProfile";
 import PlayerChars from "./Modules/Player/PlayerChars";
 import CovenantExploration from "./Modules/Covenants/Components/CovenantExploration";
-import UpgradeFinderFront from "./Modules/UpgradeFinder/UpgradeFinderFront";
 import { UpgradeFinder } from "./Modules/UpgradeFinder/UpgradeFinder";
 import { ConfirmLogin, QELogin } from "./Modules/SetupAndMenus/QELogin";
 import { withTranslation } from "react-i18next";
@@ -29,9 +27,7 @@ import { createBrowserHistory } from "history";
 import { dbCheckPatron } from "./Modules/SetupAndMenus/ConnectionUtilities";
 
 import ReactGA from "react-ga";
-import ItemSet from "./Modules/TopGear/ItemSet";
 
-import UpgradeFinderResults from "./Modules/UpgradeFinder/UpgradeFinderResults";
 
 const theme = createMuiTheme({
   palette: {

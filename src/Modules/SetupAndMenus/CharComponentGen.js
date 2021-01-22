@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Card from "@material-ui/core/Card";
 import {
   Paper,
@@ -149,6 +149,7 @@ export default function CharCards(props) {
 
   const { t } = useTranslation();
   const classes = useStyles();
+
   const [value, setValue] = React.useState(0);
   const [region, setRegion] = React.useState(player.region);
   const [open, setOpen] = React.useState(false);
@@ -193,6 +194,12 @@ export default function CharCards(props) {
   };
   const handleClickOpen = (e) => {
     e.preventDefault();
+    
+    setCritical(player.getStatWeight(props.contentType, STAT.CRITICAL_STRIKE));
+    setHaste(player.getStatWeight(props.contentType, STAT.HASTE));
+    setMastery(player.getStatWeight(props.contentType, STAT.MASTERY));
+    setVersatility(player.getStatWeight(props.contentType, STAT.VERSATILITY));
+    setLeech(player.getStatWeight(props.contentType, STAT.LEECH));
     setOpen(true);
   };
   const handleClose = () => {
@@ -213,6 +220,8 @@ export default function CharCards(props) {
   const handleHaste = (event) => {
     setHaste(event.target.value);
   };
+
+
   const handleMastery = (event) => {
     setMastery(event.target.value);
   };
@@ -247,6 +256,20 @@ export default function CharCards(props) {
   }
 }
 
+  const resetDefaults = (event) => {
+    let newPlayer = props.char;
+
+    newPlayer.setDefaultWeights(newPlayer.getSpec(), props.contentType);
+    props.singleUpdate(newPlayer);
+    props.charUpdatedSnack();
+
+    setCritical(player.getStatWeight(props.contentType, STAT.CRITICAL_STRIKE));
+    setHaste(player.getStatWeight(props.contentType, STAT.HASTE));
+    setMastery(player.getStatWeight(props.contentType, STAT.MASTERY));
+    setVersatility(player.getStatWeight(props.contentType, STAT.VERSATILITY));
+    setLeech(player.getStatWeight(props.contentType, STAT.LEECH));
+      
+  }
   // TODO
   const handleUpdateData = () => {
     let newPlayer = props.char;
@@ -611,6 +634,10 @@ export default function CharCards(props) {
               </Button>
             </ThemeProvider>
             <div>
+              {value === 1 ? 
+              <Button onClick={resetDefaults} color="primary">
+                {"Defaults"}
+              </Button> : ""}
               <Button onClick={handleClose} color="primary">
                 {t("Cancel")}
               </Button>

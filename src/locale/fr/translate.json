@@ -40,15 +40,24 @@
     "Classes": {
       "undefined": "",
       "HolyPaladin": "Holy PaladinFR",
+      "Holy Paladin": "Holy PaladinFR",
       "DisciplinePriest": "Discipline PriestFR",
+      "Discipline Priest": "Discipline PriestFR",
       "RestorationDruid": "Restoration DruidFR",
+      "Restoration Druid": "Restoration DruidFR",
       "HavocDemonHunter": "Havoc Demon HunterFR",
+      "Havoc Demon Hunter": "Havoc Demon HunterFR",
       "Warrior": "WarriorFR",
       "HolyPriest": "Holy PriestFR",
+      "Holy Priest": "Holy PriestFR",
       "MistweaverMonk": "Mistweaver MonkFR",
+      "Mistweaver Monk": "Mistweaver MonkFR",
       "RestorationShaman": "Restoration ShamanFR",
+      "Restoration Shaman": "Restoration ShamanFR",
       "DeathKnight": "Death KnightFR",
-      "ShadowPriest": "Shadow PriestFR"
+      "Death Knight": "Death KnightFR",
+      "ShadowPriest": "Shadow PriestFR",
+      "Shadow Priest": "Shadow PriestFR"
     },
 
     "CooldownPlanner": {
@@ -315,6 +324,13 @@
       "12837": "Flèches de l’Ascension"
     },
 
+    "RaidDifficulty": {
+      "Raid Finder": "",
+      "Normal": "",
+      "Heroic": "",
+      "Mythic": ""
+    },
+
     "PvPCurrency": {
       "Honor": "Honneur",
       "Conquest": "Points de conquête"
@@ -421,6 +437,7 @@
       "MythicPlusHeader": "Mythic Plus Key Level",
       "MythicPlusBody": "Use the Slider to Select the level of keys you usually complete",
       "PvPHeader": "PvP Rating",
+      "PvPBody": "Select  your Rating",
       "SimCHeader": "SimC Import",
       "SimCBody1": "Current SimC String Status:",
       "SimCBody2": "Current Equipped Gear:",

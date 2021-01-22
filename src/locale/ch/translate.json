@@ -55,15 +55,24 @@
       "Classes": {
         "undefined": "",
         "HolyPaladin": "Holy PaladinCH",
+        "Holy Paladin": "Holy PaladinCH",
         "DisciplinePriest": "Discipline PriestCH",
+        "Discipline Priest": "Discipline PriestCH",
         "RestorationDruid": "Restoration DruidCH",
+        "Restoration Druid": "Restoration DruidCH",
         "HavocDemonHunter": "Havoc Demon HunterCH",
+        "Havoc Demon Hunter": "Havoc Demon HunterCH",
         "Warrior": "WarriorCH",
         "HolyPriest": "Holy PriestCH",
+        "Holy Priest": "Holy PriestCH",
         "MistweaverMonk": "Mistweaver MonkCH",
+        "Mistweaver Monk": "Mistweaver MonkCH",
         "RestorationShaman": "Restoration ShamanCH",
+        "Restoration Shaman": "Restoration ShamanCH",
         "DeathKnight": "Death KnightCH",
-        "ShadowPriest": "Shadow PriestCH"
+        "Death Knight": "Death KnightCH",
+        "ShadowPriest": "Shadow PriestCH",
+        "Shadow Priest": "Shadow PriestCH"
       },
       "ChartLabels": {
         "_Comments1": "Translations for HD Charts",
@@ -315,6 +324,14 @@
       "12837": "晋升高塔"
     },
 
+    "RaidDifficulty": {
+      "Raid Finder": "",
+      "Normal": "",
+      "Heroic": "",
+      "Mythic": ""
+    },
+
+
     "PvPCurrency": {
       "Honor": "荣誉点数",
       "Conquest": "征服点数"
@@ -421,7 +438,7 @@
       "MythicPlusHeader": "Mythic Plus Key Level",
       "MythicPlusBody": "Use the Slider to Select the level of keys you usually complete",
       "PvPHeader": "PvP Rating",
-      "PvPBody": "Select  your currency and Rating",
+      "PvPBody": "Select  your Rating",
       "SimCHeader": "SimC Import",
       "SimCBody1": "Current SimC String Status:",
       "SimCBody2": "Current Equipped Gear:",

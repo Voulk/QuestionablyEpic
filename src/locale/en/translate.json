@@ -40,15 +40,24 @@
     "Classes": {
       "undefined": "",
       "HolyPaladin": "Holy Paladin",
+      "Holy Paladin": "Holy Paladin",
       "DisciplinePriest": "Discipline Priest",
+      "Discipline Priest": "Discipline Priest",
       "RestorationDruid": "Restoration Druid",
+      "Restoration Druid": "Restoration Druid",
       "HavocDemonHunter": "Havoc Demon Hunter",
+      "HavocDemon Hunter": "Havoc Demon Hunter",
       "Warrior": "Warrior",
       "HolyPriest": "Holy Priest",
+      "Holy Priest": "Holy Priest",
       "MistweaverMonk": "Mistweaver Monk",
+      "Mistweaver Monk": "Mistweaver Monk",
       "RestorationShaman": "Restoration Shaman",
+      "Restoration Shaman": "Restoration Shaman",
       "DeathKnight": "Death Knight",
-      "ShadowPriest": "Shadow Priest"
+      "Death Knight": "Death Knight",
+      "ShadowPriest": "Shadow Priest",
+      "Shadow Priest": "Shadow Priest"
     },
 
     "CooldownPlanner": {
@@ -326,6 +335,14 @@
       "1189": "Sanguine Depths"
     },
 
+    "RaidDifficulty": {
+      "Raid Finder": "Looking for Raid",
+      "Normal": "Normal",
+      "Heroic": "Heroic",
+      "Mythic": "Mythic"
+    },
+
+
     "PvPCurrency": {
       "Honor": "Honor",
       "Conquest": "Conquest",
@@ -434,7 +451,7 @@
       "MythicPlusHeader": "Mythic Plus Key Level",
       "MythicPlusBody": "Use the Slider to Select the level of keys you usually complete",
       "PvPHeader": "PvP Rating",
-      "PvPBody": "Select  your currency and Rating",
+      "PvPBody": "Select  your Rating",
       "SimCHeader": "SimC Import",
       "SimCBody1Good": "SimC Status - All Set!",
       "SimCBody1Invalid": "SimC Status - Empty Item Slot",
@@ -680,7 +697,7 @@
       "desc": "You gain 33% haste for 20 sec after summoning your Celestial.",
       "droploc": "Stone Legion Generals, Castle Nathria"
     },
-     "Ancient Teachings of the Monastery": {
+    "Ancient Teachings of the Monastery": {
       "name": "Ancient Teachings of the Monastery",
       "slot": "Wrist or Hands",
       "desc": "After casting Essence Font, your Tiger Palm, Blackout Kick, and Rising Sun Kick heal an injured ally within 20 yards for 250% of the damage done. Lasts 15 sec.",

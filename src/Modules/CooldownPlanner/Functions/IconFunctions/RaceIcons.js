@@ -102,7 +102,7 @@ export default function raceIcons(props) {
     sourceFemale = LightforgedFemale;
     alt = "Lightforged";
   }
-  if (props === "Races.Mag'har") {
+  if (props === "Races.Mag'har Orc") {
     sourceMale = MagharMale;
     sourceFemale = MagharFemale;
     alt = "Mag'har";
