@@ -60,3 +60,33 @@ describe("Test Default Stat Weights", () => {
 
 });
 
+
+describe("Covenant getters / setters", () => {
+    test("Set Correct Covenant", () => {
+        const druid = new Player("Broccoliz", "Restoration Druid", 99, "NA", "Stonemaul", "Night Elf");
+
+        druid.setCovenant("night_fae");
+        expect(druid.getCovenant()).toEqual("night_fae");
+    });
+
+    test("Set Invalid Covenant", () => {
+        const druid = new Player("Vrocas", "Restoration Druid", 99, "NA", "Stonemaul", "Night Elf");
+        expect(() => 
+            {druid.setCovenant("Maldraxxus");
+        }).toThrow("Invalid Covenant Supplied");   
+    });
+});
+
+describe("GetHighestStatWeight", () => {
+    test("Basic Test", () => {
+        const druid = new Player("Torty", "Restoration Druid", 99, "NA", "Stonemaul", "Night Elf");
+        druid.statWeights.Raid = {intellect: 9, crit: 0.45, haste: 0.44, mastery: 0.42, leech: 0.6};
+
+        
+    });
+
+    // More to come. Test equal stat weights, and the ignore function.
+
+});
+
+

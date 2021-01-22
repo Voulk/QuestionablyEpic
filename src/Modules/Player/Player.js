@@ -55,14 +55,6 @@ class Player {
   realm = "";
   race = "";
 
-  // A players spell casting patterns. These are averaged from entered logs and a default is provided too.
-  // CASTS, HEALING, HEALINGPERC, HPS,
-  // NO LONGER USED.
-  castPattern = {
-    Raid: {},
-    Dungeon: {},
-  };
-
   // Consider special queries a sister dictionary to CastPattern. CastPattern includes *raw* spell data pulled from logs but sometimes
   // we need something more particular. Healing done while channeling Convoke or healing done to a specific target for example.
   // We'll store these here instead for easy access.
@@ -143,8 +135,8 @@ class Player {
   }
 
   setCovenant = (cov) => {
-    if (["night_fae", "venthyr", "necrolord", "kyrian"].includes(cov)) this.covenant = cov;
-    // Else raise error.
+    if (["night_fae", "venthyr", "necrolord", "kyrian"].includes(cov.toLowerCase())) this.covenant = cov;
+    else throw new Error('Invalid Covenant Supplied');
     
   }
 
@@ -192,6 +184,7 @@ class Player {
 
     return max;
   };
+
 
   addActiveItem = (item) => {
     this.activeItems.push(item);
