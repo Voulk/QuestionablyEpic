@@ -32878,5 +32878,215 @@ export const bonus_IDs = {
       "curveId": 5452,
       "quality": 4,
       "tag": "Heroic"
+    },
+
+    "7203": {
+      "id": 7203,
+      "tag": "Mythic 4"
+    },
+    "7204": {
+      "id": 7204,
+      "tag": "Mythic 5"
+    },
+    "7205": {
+      "id": 7205,
+      "tag": "Mythic 6"
+    },
+    "7206": {
+      "id": 7206,
+      "tag": "Mythic 7"
+    },
+    "7207": {
+      "id": 7207,
+      "tag": "Mythic 8"
+    },
+    "7208": {
+      "id": 7208,
+      "tag": "Mythic 9"
+    },
+    "7209": {
+      "id": 7209,
+      "tag": "Mythic 10"
+    },
+    "7210": {
+      "id": 7210,
+      "tag": "Mythic 11"
+    },
+    "7211": {
+      "id": 7211,
+      "tag": "Mythic 12"
+    },
+    "7212": {
+      "id": 7212,
+      "tag": "Mythic 13"
+    },
+    "7213": {
+      "id": 7213,
+      "tag": "Mythic 14"
+    },
+    "7214": {
+      "id": 7214,
+      "tag": "Mythic 15"
+    },
+    "7215": {
+      "id": 7215,
+      "quality": 4,
+      "ilevel": "226 @plvl 50 - 226 @plvl 226",
+      "curveId": 23307
+    },
+    "7217": {
+      "id": 7217,
+      "ilevel": "83 @plvl 45 - 146 @plvl 146",
+      "curveId": 17262
+    },
+    "7218": {
+      "id": 7218,
+      "effect": {
+        "id": 136204,
+        "index": 0,
+        "spell": {
+          "id": 346264,
+          "name": "Darker Nature",
+          "icon": "ability_demonhunter_eyebeam"
+        }
+      },
+      "quality": 5,
+      "name_override": {
+        "base": "Vanquished Doomlord Spaulders",
+        "slots": {
+          "feet": "Doomlord Hooves"
+        }
+      }
+    },
+    "7219": {
+      "id": 7219,
+      "effect": {
+        "id": 136205,
+        "index": 0,
+        "spell": {
+          "id": 346279,
+          "name": "Burning Wound",
+          "icon": "spell_fire_felhellfire"
+        }
+      },
+      "quality": 5,
+      "name_override": {
+        "base": "Everburn",
+        "slots": {
+          "chest": "Everburning Chestguard"
+        }
+      }
+    },
+    "7220": {
+      "id": 7220,
+      "ilevel": "1 @plvl 1 - 58 @plvl 58",
+      "curveId": 5063
+    },
+    "7222": {
+      "id": 7222,
+      "ilevel": "15 @plvl 10 - 58 @plvl 58",
+      "curveId": 24070
+    },
+    "7223": {
+      "id": 7223,
+      "ilevel": "150 @plvl 1 - 150 @plvl 150",
+      "curveId": 24126
+    },
+    "7224": {
+      "id": 7224,
+      "ilevel": "87 @plvl 0 - 87 @plvl 87",
+      "curveId": 24160
+    },
+    "7225": {
+      "id": 7225,
+      "tag": "Unranked"
+    },
+    "7226": {
+      "id": 7226,
+      "tag": "Combatant"
+    },
+    "7227": {
+      "id": 7227,
+      "tag": "Challenger"
+    },
+    "7228": {
+      "id": 7228,
+      "tag": "Rival"
+    },
+    "7229": {
+      "id": 7229,
+      "tag": "Duelist"
+    },
+    "7230": {
+      "id": 7230,
+      "tag": "Elite"
+    },
+    "7231": {
+      "id": 7231,
+      "tag": "Rank 1"
+    },
+    "7232": {
+      "id": 7232,
+      "tag": "Rank 2"
+    },
+    "7233": {
+      "id": 7233,
+      "tag": "Rank 3"
+    },
+    "7234": {
+      "id": 7234,
+      "tag": "Rank 4"
+    },
+    "7235": {
+      "id": 7235,
+      "tag": "Rank 5"
+    },
+    "7236": {
+      "id": 7236,
+      "tag": "Rank 6"
+    },
+    "7237": {
+      "id": 7237,
+      "tag": "Rank 7"
+    },
+    "7238": {
+      "id": 7238,
+      "ilevel": "164 @plvl 0 - 164 @plvl 164",
+      "curveId": 24243
+    },
+    "7239": {
+      "id": 7239,
+      "ilevel": "181 @plvl 0 - 181 @plvl 181",
+      "curveId": 24244
+    },
+    "7240": {
+      "id": 7240,
+      "ilevel": "200 @plvl 0 - 200 @plvl 200",
+      "curveId": 24245
+    },
+    "7241": {
+      "id": 7241,
+      "ilevel": "180 @plvl 1 - 180 @plvl 180",
+      "curveId": 24323
+    },
+    "7242": {
+      "id": 7242,
+      "quality": 1
+    },
+    "7243": {
+      "id": 7243,
+      "quality": 2
+    },
+    "7244": {
+      "id": 7244,
+      "quality": 3
+    },
+    "7245": {
+      "id": 7245,
+      "quality": 4
+    },
+    "7246": {
+      "id": 7246,
+      "quality": 5
     }
   }

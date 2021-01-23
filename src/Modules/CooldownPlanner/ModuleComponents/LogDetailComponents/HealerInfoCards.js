@@ -46,7 +46,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function HealerInfoCards(props) {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const currentLanguage = i18n.language;
   const classes = useStyles();
 
   const roundTo = (value, places) => {
@@ -276,7 +277,7 @@ export default function HealerInfoCards(props) {
                           }}
                         >
                           {key.soulbindAbilities.map((ability, i) => (
-                            <a data-wowhead={"spell=" + ability.guid} key={i}>
+                            <a data-wowhead={"spell=" + ability.guid + "&domain=" + currentLanguage} key={i}>
                               <img
                                 style={{
                                   height: 30,
@@ -315,7 +316,7 @@ export default function HealerInfoCards(props) {
                           }}
                         >
                           {key.soulbindConduits.map((conduit, i) => (
-                            <a data-wowhead={"spell=" + conduit.guid} key={i}>
+                            <a data-wowhead={"spell=" + conduit.guid + "&domain=" + currentLanguage} key={i}>
                               <div className="container-healerCards">
                                 <img
                                   style={{

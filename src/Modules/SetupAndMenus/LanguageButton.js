@@ -12,6 +12,7 @@ import ClickAwayListener from "@material-ui/core/ClickAwayListener";
 import { makeStyles } from "@material-ui/core/styles";
 import { useTranslation } from "react-i18next";
 import ReactCountryFlag from "react-country-flag";
+import ls from "local-storage";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -38,6 +39,7 @@ export default function LanguageSelector(props) {
       return;
     }
     i18n.changeLanguage(lang);
+    ls.set("lang", lang)
     setOpen(false);
   };
 
@@ -67,13 +69,17 @@ export default function LanguageSelector(props) {
       return (
         <ReactCountryFlag countryCode="RU" svg style={{ marginRight: "5px" }} />
       );
-    } else if (currentLanguage === "ch") {
+    } else if (currentLanguage === "cn") {
       return (
         <ReactCountryFlag countryCode="CN" svg style={{ marginRight: "5px" }} />
       );
     } else if (currentLanguage === "fr") {
       return (
         <ReactCountryFlag countryCode="FR" svg style={{ marginRight: "5px" }} />
+      );
+    } else if (currentLanguage === "de") {
+      return (
+        <ReactCountryFlag countryCode="DE" svg style={{ marginRight: "5px" }} />
       );
     }
   };
@@ -120,7 +126,8 @@ export default function LanguageSelector(props) {
                       paddingBottom: 0,
                     }}
                   >
-                    {/* <MenuItem onClick={(e) => handleClose(e, "ch")}>
+                    {/*
+                    <MenuItem onClick={(e) => handleClose(e, "cn")}>
                       <ReactCountryFlag
                         countryCode="CN"
                         svg
@@ -136,22 +143,31 @@ export default function LanguageSelector(props) {
                       />
                       EN
                     </MenuItem>
-                    {/* <MenuItem onClick={(e) => handleClose(e, "fr")}>
+                    {/*
+                    <MenuItem onClick={(e) => handleClose(e, "fr")}>
                       <ReactCountryFlag
                         countryCode="FR"
                         svg
                         style={{ marginRight: "5px" }}
                       />
                       FR
-                    </MenuItem> */}
-                    {/* <MenuItem onClick={(e) => handleClose(e, "ru")}>
+                    </MenuItem>
+                    <MenuItem onClick={(e) => handleClose(e, "ru")}>
                       <ReactCountryFlag
                         countryCode="RU"
                         svg
                         style={{ marginRight: "5px" }}
                       />
                       RU
-                    </MenuItem> */}
+                    </MenuItem> */ }
+                    <MenuItem onClick={(e) => handleClose(e, "de")}>
+                      <ReactCountryFlag
+                        countryCode="DE"
+                        svg
+                        style={{ marginRight: "5px" }}
+                      />
+                      DE
+                    </MenuItem>
                   </MenuList>
                 </ClickAwayListener>
               </Paper>

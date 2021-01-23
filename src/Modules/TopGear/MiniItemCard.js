@@ -64,11 +64,12 @@ const useStyles = makeStyles({
 export default function ItemCard(props) {
   const classes = useStyles();
   const item = props.item;
-  const statString = buildStatString(item.stats, item.effect);
+  
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
+  const statString = buildStatString(item.stats, item.effect, currentLanguage);
   const itemLevel = item.level;
-  const isLegendary = 'effect' in item && item.effect.type === 'spec legendary';
+  const isLegendary = "effect" in item && item.effect.type === "spec legendary";
 
   const itemQuality = (itemLevel) => {
     if (isLegendary) return "#ff8000";
@@ -102,8 +103,9 @@ export default function ItemCard(props) {
       " & " +
       getTranslatedItemName(item.offhandID, currentLanguage);
   } else {
-      if (isLegendary) itemName = item.effect.name;  // Add translations to this.
-      else itemName = getTranslatedItemName(item.id, currentLanguage);
+    if (isLegendary) itemName = item.effect.name;
+    // Add translations to this.
+    else itemName = getTranslatedItemName(item.id, currentLanguage);
   }
 
   const socket = props.item.socket ? (
@@ -126,7 +128,15 @@ export default function ItemCard(props) {
   return (
     <Grid item xs={12} sm={6} md={6} lg={4} xl={4}>
       <Card
-        className={(item.active && isVault) ? classes.selectedVault : item.active ? classes.selected : isVault ? classes.vault : classes.root}
+        className={
+          item.active && isVault
+            ? classes.selectedVault
+            : item.active
+            ? classes.selected
+            : isVault
+            ? classes.vault
+            : classes.root
+        }
         elevation={0}
         variant="outlined"
         // style={{ width: "100%" }}
@@ -147,18 +157,32 @@ export default function ItemCard(props) {
                 }}
               >
                 <div className="container-ItemCards">
-                  <img
-                    alt="img"
-                    width={44}
-                    height={44}
-                    src={getItemIcon(item.id)}
-                    style={{
-                      borderRadius: 4,
-                      borderWidth: "1px",
-                      borderStyle: "solid",
-                      borderColor: itemQuality(itemLevel),
-                    }}
-                  />
+                  <a
+                    data-wowhead={
+                      item.slot === "Trinket"
+                        ? "item=" +
+                          item.id +
+                          "&" +
+                          "ilvl=" +
+                          item.level +
+                          "&bonus=" +
+                          item.bonusIDS + "&domain=" + currentLanguage
+                        : ""
+                    }
+                  >
+                    <img
+                      alt="img"
+                      width={44}
+                      height={44}
+                      src={getItemIcon(item.id)}
+                      style={{
+                        borderRadius: 4,
+                        borderWidth: "1px",
+                        borderStyle: "solid",
+                        borderColor: itemQuality(itemLevel),
+                      }}
+                    />
+                  </a>
                   <div className="bottom-right-ItemCards"> {item.level} </div>
                 </div>
               </CardContent>
@@ -183,7 +207,7 @@ export default function ItemCard(props) {
                 >
                   <Grid item xs={11} display="inline">
                     <Typography
-                      variant="subtitle2"
+                      variant={itemName.length > 30 ? "subtitle2" : "subtitle1"}
                       wrap="nowrap"
                       display="inline"
                       align="left"
@@ -210,7 +234,8 @@ export default function ItemCard(props) {
                       align="left"
                       style={{ fontSize: "12px" }}
                     >
-                      {socket} {statString} {tertiary} {isVault ? " / Great Vault Item" : ""}
+                      {socket} {statString} {tertiary}{" "}
+                      {isVault ? " / Great Vault Item" : ""}
                     </Typography>
                   </Grid>
                 </Grid>

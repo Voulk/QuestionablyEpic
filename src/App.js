@@ -2,7 +2,6 @@ import React, { Component, useEffect } from "react";
 import "./App.css";
 import HolyDiver from "./Modules/CooldownPlanner/CooldownPlannerModule";
 import QEMainMenu from "./Modules/SetupAndMenus/QEMainMenu";
-import TrinketCompare from "./Modules/TrinketCompare";
 import LegendaryCompare from "./Modules/Legendaries/LegendaryCompare";
 import TrinketAnalysis from "./Modules/TrinketAnalysis/TrinketAnalysis";
 import QuickCompare from "./Modules/QuickCompare/QuickCompare";
@@ -10,7 +9,8 @@ import QEHeader from "./Modules/SetupAndMenus/QEHeader";
 import TopGearReport from "./Modules/TopGear/TopGearReport";
 import QEProfile from "./Modules/SetupAndMenus/QEProfile";
 import PlayerChars from "./Modules/Player/PlayerChars";
-import SimpleTabs from "./Modules/Covenants/Components/CovenantExploration";
+import CovenantExploration from "./Modules/Covenants/Components/CovenantExploration";
+import { UpgradeFinder } from "./Modules/UpgradeFinder/UpgradeFinder";
 import { ConfirmLogin, QELogin } from "./Modules/SetupAndMenus/QELogin";
 import { withTranslation } from "react-i18next";
 import i18n from "./i18n";
@@ -27,7 +27,7 @@ import { createBrowserHistory } from "history";
 import { dbCheckPatron } from "./Modules/SetupAndMenus/ConnectionUtilities";
 
 import ReactGA from "react-ga";
-import ItemSet from "./Modules/TopGear/ItemSet";
+
 
 const theme = createMuiTheme({
   palette: {
@@ -314,6 +314,9 @@ class App extends Component {
       return <MuiAlert elevation={6} variant="filled" {...props} />;
     }
 
+    const vertical = "bottom";
+    const horizontal = "left";
+
     return (
       <ErrorBoundary>
         <Router basename={process.env.REACT_APP_HOMEPAGE}>
@@ -373,6 +376,7 @@ class App extends Component {
                 open={this.state.simcSnackState}
                 autoHideDuration={3000}
                 onClose={this.handleSimCSnackClose}
+                anchorOrigin={{ vertical, horizontal }}
               >
                 <Alert onClose={this.handleSimCSnackClose} severity="success">
                   SimC String Imported Successfully!
@@ -485,7 +489,7 @@ class App extends Component {
                 <Route
                   path="/soulbinds"
                   render={() => (
-                    <SimpleTabs
+                    <CovenantExploration
                       pl={activePlayer}
                       contentType={this.state.contentType}
                       updatePlayerChar={this.updatePlayerChar}
@@ -506,6 +510,17 @@ class App extends Component {
                     <ConfirmLogin
                       loginSnackOpen={this.handleLoginSnackOpen}
                       updatePlayerID={this.updatePlayerID}
+                    />
+                  )}
+                />
+                <Route
+                  path="/UpgradeFinder/"
+                  render={() => (
+                    <UpgradeFinder
+                      player={activePlayer}
+                      contentType={this.state.contentType}
+                      simcSnack={this.handleSimCSnackOpen}
+                      allChars={allChars}
                     />
                   )}
                 />

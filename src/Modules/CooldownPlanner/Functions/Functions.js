@@ -1,6 +1,10 @@
 import moment from "moment";
 import axios from "axios";
-import { damageExclusions, healerCooldownsDetailed } from "../Data/Data";
+import {
+  damageExclusions,
+  healerCooldownsDetailed,
+  externalsDetailed,
+} from "../Data/Data";
 import i18n from "i18next";
 
 // Returns Seconds from 0 to Loglength
@@ -92,6 +96,9 @@ export async function importHealerLogData(starttime, endtime, reportid) {
   const apiDruid = "&sourceclass=Druid";
   const apiPriest = "&sourceclass=Priest";
   const apiShaman = "&sourceclass=Shaman";
+  const apiWarrior = "&sourceclass=Warrior";
+  const apiDemonHunter = "&sourceclass=DemonHunter";
+  const apiDeathKnight = "&sourceclass=DeathKnight";
   const API2 = "&api_key=92fc5d4ae86447df22a8c0917c1404dc";
   const START = "?start=";
   const END = "&end=";
@@ -171,11 +178,11 @@ export async function importHealerLogData(starttime, endtime, reportid) {
     .then((result) => {
       healers = healers.concat(
         Object.keys(result.data.entries)
-          .filter(
-            (key) =>
-              result.data.entries[key].icon === "Priest-Holy" ||
-              result.data.entries[key].icon === "Priest-Discipline"
-          )
+          // .filter(
+          //   (key) =>
+          //     result.data.entries[key].icon === "Priest-Holy" ||
+          //     result.data.entries[key].icon === "Priest-Discipline"
+          // )
           .map((key) => result.data.entries[key])
       );
     })
@@ -207,7 +214,131 @@ export async function importHealerLogData(starttime, endtime, reportid) {
       console.log(error);
     });
 
+  await axios
+    .get(
+      APIHEALING +
+        reportid +
+        START +
+        starttime +
+        END +
+        endtime +
+        apiWarrior +
+        API2
+    )
+    .then((result) => {
+      healers = healers.concat(
+        Object.keys(result.data.entries).map((key) => result.data.entries[key])
+      );
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+
+  await axios
+    .get(
+      APIHEALING +
+        reportid +
+        START +
+        starttime +
+        END +
+        endtime +
+        apiDemonHunter +
+        API2
+    )
+    .then((result) => {
+      healers = healers.concat(
+        Object.keys(result.data.entries).map((key) => result.data.entries[key])
+      );
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+
+  await axios
+    .get(
+      APIHEALING +
+        reportid +
+        START +
+        starttime +
+        END +
+        endtime +
+        apiDeathKnight +
+        API2
+    )
+    .then((result) => {
+      healers = healers.concat(
+        Object.keys(result.data.entries).map((key) => result.data.entries[key])
+      );
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+
   return healers;
+}
+
+// Returns Array of Friendly Information
+export async function importCharacterIds(starttime, endtime, reportid) {
+  const WCLLink = "https://www.warcraftlogs.com:443/v1/report/fights/";
+
+  const API2 = "&api_key=92fc5d4ae86447df22a8c0917c1404dc";
+  const START = "?start=";
+  const END = "&end=";
+  let ids = [];
+  // Class Casts Import
+
+  await axios
+    .get(WCLLink + reportid + START + starttime + END + endtime + API2)
+    .then((result) => {
+      Object.entries(result.data.friendlies).map((key) =>
+        ids.push({
+          id: key[1].id,
+          name: key[1].name,
+          class: key[1].type,
+          spec: key[1].icon,
+        })
+      );
+
+      // Object.entries(result.data.enemies).map((key) =>
+      //   ids.push({
+      //     id: key[1].id,
+      //     name: key[1].name,
+      //     class: key[1].type,
+      //     spec: key[1].icon,
+      //   })
+      // );
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  console.log(ids);
+  return ids;
+}
+
+// Returns Array of Healer Information
+export async function importEnemyIds(starttime, endtime, reportid) {
+  const WCLLink = "https://www.warcraftlogs.com:443/v1/report/fights/";
+  const API2 = "&api_key=92fc5d4ae86447df22a8c0917c1404dc";
+  const START = "?start=";
+  const END = "&end=";
+  let ids = [];
+
+  await axios
+    .get(WCLLink + reportid + START + starttime + END + endtime + API2)
+    .then((result) => {
+      Object.entries(result.data.enemies).map((key) =>
+        ids.push({
+          id: key[1].id,
+          name: key[1].name,
+          class: key[1].type,
+          spec: key[1].icon,
+        })
+      );
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  return ids;
 }
 
 export async function importDamageLogData(starttime, endtime, reportid) {
@@ -363,6 +494,139 @@ export async function importCastsLogData(
     } while (nextpage !== undefined || null);
   }
   return cooldowns;
+}
+
+export async function importEnemyCasts(starttime, endtime, reportid, healerID) {
+  const APICast = "https://www.warcraftlogs.com:443/v1/report/events/casts/";
+  const START = "?start=";
+  const END = "&end=";
+  const HOSTILITY = "&hostility=1";
+  const API2 = "&api_key=92fc5d4ae86447df22a8c0917c1404dc";
+  let nextpage = 0;
+  let enemyCasts = [];
+
+  await axios
+    .get(
+      APICast + reportid + START + starttime + END + endtime + HOSTILITY + API2
+    )
+    .then((result) => {
+      enemyCasts = Object.keys(result.data.events)
+        .filter((key) => result.data.events[key].type === "cast")
+        .map((key) => result.data.events[key]);
+      nextpage = result.data.nextPageTimestamp;
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  // Loop of the import updating the next page until the next page is undefined (no next page from json return)
+  let i = 0;
+  if (nextpage !== undefined || null) {
+    do {
+      await axios
+        .get(
+          APICast +
+            reportid +
+            START +
+            nextpage +
+            END +
+            endtime +
+            HOSTILITY +
+            API2
+        )
+        .then((result) => {
+          enemyCasts = enemyCasts.concat(
+            Object.keys(result.data.events)
+              .filter((key) => result.data.events[key].type === "cast")
+              .map((key) => result.data.events[key])
+          );
+          nextpage = result.data.nextPageTimestamp;
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+      i = i + 1;
+    } while (nextpage !== undefined || null);
+  }
+  return enemyCasts;
+}
+
+export async function importExternalCastsLogData(
+  starttime,
+  endtime,
+  reportid,
+  healerID
+) {
+  const APICast = "https://www.warcraftlogs.com:443/v1/report/events/casts/";
+  const START = "?start=";
+  const END = "&end=";
+  const HOSTILITY = "&hostility=0";
+  const API2 = "&api_key=92fc5d4ae86447df22a8c0917c1404dc";
+  let nextpage = 0;
+  let externals = [];
+
+  await axios
+    .get(
+      APICast + reportid + START + starttime + END + endtime + HOSTILITY + API2
+    )
+    .then((result) => {
+      externals = Object.keys(result.data.events)
+        .filter(
+          (key) =>
+            externalsDetailed
+              .map((obj) => obj.guid)
+              .includes(result.data.events[key].ability.guid) &&
+            // Because Holy Word: Salvation comes up in logs as begincast we filter out the cast version so that it doesn't appear twice.
+            (result.data.events[key].ability.guid === 265202
+              ? result.data.events[key].type === "begincast"
+              : result.data.events[key].type === "cast") &&
+            healerID.includes(result.data.events[key].sourceID)
+        )
+        .map((key) => result.data.events[key]);
+      nextpage = result.data.nextPageTimestamp;
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  // Loop of the import updating the next page until the next page is undefined (no next page from json return)
+  let i = 0;
+  if (nextpage !== undefined || null) {
+    do {
+      await axios
+        .get(
+          APICast +
+            reportid +
+            START +
+            nextpage +
+            END +
+            endtime +
+            HOSTILITY +
+            API2
+        )
+        .then((result) => {
+          externals = externals.concat(
+            Object.keys(result.data.events)
+              .filter(
+                (key) =>
+                  externalsDetailed
+                    .map((obj) => obj.guid)
+                    .includes(result.data.events[key].ability.guid) &&
+                  // Because Holy Word: Salvation comes up in logs as begincast we filter out the cast version so that it doesn't appear twice.
+                  (result.data.events[key].ability.guid === 265202
+                    ? result.data.events[key].type === "begincast"
+                    : result.data.events[key].type === "cast") &&
+                  healerID.includes(result.data.events[key].sourceID)
+              )
+              .map((key) => result.data.events[key])
+          );
+          nextpage = result.data.nextPageTimestamp;
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+      i = i + 1;
+    } while (nextpage !== undefined || null);
+  }
+  return externals;
 }
 
 export function killOrWipe(check) {

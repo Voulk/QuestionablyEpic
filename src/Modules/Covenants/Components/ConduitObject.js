@@ -10,46 +10,45 @@ import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import Divider from "@material-ui/core/Divider";
 import { getItemIcon } from "../../Engine/ItemUtilities";
+import { conduitDB } from "../../CooldownPlanner/Data/Data";
 
 const useStyles = makeStyles({
   root: { padding: 0, height: 26 },
 });
 
 export default function ConduitObject(props) {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const currentLanguage = i18n.language;
   const conduit = props.conduit;
   // console.log(conduit);
   const classes = useStyles();
 
   const conduitClicked = () => {
     let oldLevel = props.conduit.itemLevel;
-    let newLevel = oldLevel === 226 ? 145 : oldLevel === 184 ? 200 : oldLevel + 13;
+    let newLevel =
+      oldLevel === 226 ? 145 : oldLevel === 184 ? 200 : oldLevel + 13;
     props.updateConduitLevel(props.conduit.id, newLevel);
-  }
+  };
   const conduitRightClicked = (e) => {
     e.preventDefault();
     let oldLevel = props.conduit.itemLevel;
-    let newLevel = oldLevel === 145 ? 226 : oldLevel === 200 ? 184 : oldLevel - 13;
+    let newLevel =
+      oldLevel === 145 ? 226 : oldLevel === 200 ? 184 : oldLevel - 13;
     props.updateConduitLevel(props.conduit.id, newLevel);
-  }
+  };
 
   const itemQuality = (itemLevel) => {
     if (itemLevel >= 226) {
       return "#ff8000"; // Legendary
-    }
-    else if (itemLevel >= 200) {
+    } else if (itemLevel >= 200) {
       return "#a335ee"; // Epic
-    }
-    else if (itemLevel >= 171) {
+    } else if (itemLevel >= 171) {
       return "#0070dd"; // Rare
-    }
-    else if (itemLevel >= 158) {
+    } else if (itemLevel >= 158) {
       return "#1eff00"; // Uncommon
-    }
-    else {
+    } else {
       return "#9d9d9d"; // Grey
     }
-        
   };
 
   const upgradeColor = (num) => {
@@ -65,7 +64,11 @@ export default function ConduitObject(props) {
   return (
     <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
       <Card className={classes.root} variant="outlined">
-        <CardActionArea disabled={false} onClick={conduitClicked} onContextMenu={(e) => conduitRightClicked(e)}>
+        <CardActionArea
+          disabled={false}
+          onClick={conduitClicked}
+          onContextMenu={(e) => conduitRightClicked(e)}
+        >
           <Grid
             container
             display="inline-flex"
@@ -75,7 +78,7 @@ export default function ConduitObject(props) {
           >
             <Grid item xs="auto">
               <div className="container">
-                <a data-wowhead={"spell=" + conduit.id}>
+                <a data-wowhead={"spell=" + conduit.id + "&domain=" + currentLanguage}>
                   <img
                     alt=""
                     width={24}
@@ -91,7 +94,7 @@ export default function ConduitObject(props) {
                     }}
                   />
                   <div
-                    className="bottom-right"
+                    className="bottom-right-covenants"
                     // style={{ color: itemQuality("Uncommon") }}
                   >
                     {conduit.itemLevel}
@@ -118,7 +121,12 @@ export default function ConduitObject(props) {
                     paddingLeft: "4px",
                   }}
                 >
-                  {conduit.name}
+                  {conduitDB
+                    .filter((obj) => {
+                      return obj.guid === conduit.id;
+                    })
+                    .map((obj) => obj.name[currentLanguage])
+                    .toString()}
                 </Typography>
               </Grid>
               <Divider orientation="vertical" flexItem />

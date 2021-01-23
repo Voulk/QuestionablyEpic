@@ -7,7 +7,7 @@ export const paladinDefaultSpellData = (contentType) => {
             225311: {casts: 20, healing: 238400, hps: 1316, overhealing: 0.2}, // LoD
             85673: {casts: 4, healing: 40800, hps: 225, overhealing: 0.2}, // WoG
             25914: {casts: 27, healing: 221400, hps: 1222, overhealing: 0.2}, // Holy Shock
-            82326: {casts: 29, healing: 311600, hps: 620, overhealing: 0.2}, // Holy Light
+            82326: {casts: 7, healing: 70302, hps: 210, overhealing: 0.2}, // Holy Light
             337824: {casts: 0, healing: 98300, hps: 542, overhealing: 0.2}, // Shock Barrier
 
         };
@@ -51,4 +51,29 @@ export const paladinDefaultSpecialQueries = (contentType) => {
 
     return specialQueries;
 
+}
+
+export const paladinDefaultStatWeights = (contentType) => {
+    let statWeights = {};
+
+    statWeights.Raid = {
+        intellect: 1,
+        haste: 0.39,
+        crit: 0.27,
+        mastery: 0.33,
+        versatility: 0.32,
+        leech: 0.51,
+        defaults: true
+      }
+      statWeights.Dungeon = {
+        intellect: 1,
+        haste: 0.4,
+        crit: 0.36,
+        mastery: 0.21,
+        versatility: 0.33,
+        leech: 0.2,
+        defaults: true
+      }
+
+    return statWeights[contentType];
 }

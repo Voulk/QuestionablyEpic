@@ -147,7 +147,7 @@ export default function CooldownTimeline(props) {
             ),
           },
         ]}
-        title="Cooldown Usage Timeline"
+        title={t("CooldownPlanner.Headers.CooldownTimeline")}
         header={true}
         data={props.data}
         style={{

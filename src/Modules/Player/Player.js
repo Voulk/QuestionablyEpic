@@ -4,6 +4,12 @@ import STAT from "../Engine/STAT";
 import { scoreItem } from "../Engine/ItemUtilities";
 import { getUnique } from "./PlayerUtilities";
 import CastModel from "./CastModel";
+import { druidDefaultStatWeights } from "./ClassDefaults/DruidDefaults";
+import { paladinDefaultStatWeights } from "./ClassDefaults/PaladinDefaults";
+import { shamanDefaultStatWeights } from "./ClassDefaults/ShamanDefaults";
+import { discPriestDefaultStatWeights } from "./ClassDefaults/DiscPriestDefaults";
+import { holyPriestDefaultStatWeights } from "./ClassDefaults/HolyPriestDefaults";
+import { monkDefaultStatWeights } from "./ClassDefaults/MonkDefaults";
 
 var averageHoTCount = 1.4; // TODO: Build this in correctly and pull it from logs where applicable.
 
@@ -43,6 +49,7 @@ class Player {
   activeConduits = [];
   renown = 0;
   castModel = {};
+  covenant = "";
 
   region = "";
   realm = "";
@@ -131,6 +138,16 @@ class Player {
     return 0;
   };
 
+  getCovenant = () => {
+    return this.covenant;
+  }
+
+  setCovenant = (cov) => {
+    if (["night_fae", "venthyr", "necrolord", "kyrian"].includes(cov)) this.covenant = cov;
+    // Else raise error.
+    
+  }
+
   calculateConduits = (contentType) => {
     //console.log("Calculating Conduits")
     this.activeConduits.forEach((conduit) => {
@@ -184,26 +201,48 @@ class Player {
     this.activeItems = [];
   };
 
-  getActiveItems = (slot, active = false) => {
+  getActiveItems = (slot, active = false, equipped = false) => {
     let temp = this.activeItems.filter(function (item) {
       if (slot === "AllMainhands") {
         return (
           (item.slot === "1H Weapon" || item.slot === "2H Weapon") &&
-          (!active || item.active)
+          (!active || item.active) &&
+          (!equipped || item.isEquipped)
         );
       } else if (slot === "Offhands") {
         return (
           (item.slot === "Holdable" ||
             item.slot === "Offhand" ||
             item.slot === "Shield") &&
-          (!active || item.active)
+          (!active || item.active) &&
+          (!equipped || item.isEquipped)
         );
       } else {
-        return item.slot === slot && (!active || item.active);
+        return item.slot === slot && (!active || item.active) && (!equipped || item.isEquipped);
       }
     });
     return this.sortItems(temp);
   };
+
+  
+  getEquippedItems = (weaponFlag = false) => {
+    let temp = this.activeItems.filter(function (item) {
+      return (item.isEquipped || (weaponFlag && ["Offhand", "Shield", "1H Weapon", "2H Weapon"].includes(item.slot)));
+    });
+
+    return temp;
+  }
+
+  // Returns the players weapons and offhands. 
+  getTopWeapons = () => {
+    let wepArray = [];
+
+    let temp = this.activeItems.filter(function (item) {
+      return ['Holdable', 'Shield', 'Offhand', '1H Weapon', '2H Weapon'].includes(item.slot);
+      //return item;
+    });
+    return this.sortItems(temp);
+  }
 
   scoreActiveItems = (contentType) => {
     for (var i = 0; i < this.activeItems.length; i++) {
@@ -361,7 +400,6 @@ class Player {
   };
 
   getFightLength = (contentType) => {
-    //console.log("Fight Length: " + contentType);
     return this.castModel[contentType].getFightInfo("fightLength");
   };
 
@@ -373,10 +411,10 @@ class Player {
     return this.castModel[contentType].getSpecialQuery(queryIdentifier);
   };
 
-  getSingleCast = (spellID, contentType) => {
+  getSingleCast = (spellID, contentType, castType = "casts") => {
     return (
       this.castModel[contentType].getSpellData(spellID, "healing") /
-      this.castModel[contentType].getSpellData(spellID, "casts")
+      this.castModel[contentType].getSpellData(spellID, castType)
     );
   };
 
@@ -408,6 +446,35 @@ class Player {
     if (Object.keys(info).length > 0) this.castModel["Raid"].setFightInfo(info);
   };
 
+ 
+    setDefaultWeights = (spec, contentType) => {
+  
+      if (spec === SPEC.RESTODRUID) {
+        this.statWeights[contentType] = druidDefaultStatWeights(contentType);
+        this.statWeights.DefaultWeights = true;
+      }
+      else if (spec === SPEC.HOLYPALADIN) {
+        this.statWeights[contentType] = paladinDefaultStatWeights(contentType);
+        this.statWeights.DefaultWeights = true;
+      }
+      else if (spec === SPEC.DISCPRIEST) {
+        this.statWeights[contentType] = discPriestDefaultStatWeights(contentType);
+        this.statWeights.DefaultWeights = true;
+      }
+      else if (spec === SPEC.HOLYPRIEST) {
+        this.statWeights[contentType] = holyPriestDefaultStatWeights(contentType);
+        this.statWeights.DefaultWeights = true;
+      }
+      else if (spec === SPEC.MISTWEAVERMONK) {
+        this.statWeights[contentType] = monkDefaultStatWeights(contentType);
+        this.statWeights.DefaultWeights = true;
+      }
+      else if (spec === SPEC.RESTOSHAMAN) {
+        this.statWeights[contentType] = shamanDefaultStatWeights(contentType);
+        this.statWeights.DefaultWeights = true;
+      }
+  }
+
   // Consider replacing this with an external table for cleanliness and ease of editing.
   setupDefaults = (spec) => {
     this.castModel = {
@@ -424,30 +491,16 @@ class Player {
         versatility: 220,
         stamina: 1400,
       };
-      this.statWeights = {
-        Raid: {
-          intellect: 1,
-          haste: 0.38,
-          crit: 0.34,
-          mastery: 0.31,
-          versatility: 0.32,
-          leech: 0.55,
-        },
-        Dungeon: {
-          intellect: 1,
-          haste: 0.38,
-          crit: 0.33,
-          mastery: 0.37,
-          versatility: 0.34,
-          leech: 0.23,
-        },
-        DefaultWeights: true,
-      };
+      this.statWeights.Raid = druidDefaultStatWeights("Raid");
+      this.statWeights.Dungeon = druidDefaultStatWeights("Dungeon");
+      this.statWeights.DefaultWeights = true;
+      
+
     } else if (spec === SPEC.HOLYPALADIN) {
       this.fightInfo = {
         hps: 5500,
         rawhps: 9420,
-        fightLength: 180,
+        fightLength: 465,
       };
 
       this.activeStats = {
@@ -459,25 +512,10 @@ class Player {
         stamina: 1490,
       };
 
-      this.statWeights = {
-        Raid: {
-          intellect: 1,
-          haste: 0.39,
-          crit: 0.27,
-          mastery: 0.33,
-          versatility: 0.32,
-          leech: 0.51,
-        },
-        Dungeon: {
-          intellect: 1,
-          haste: 0.4,
-          crit: 0.36,
-          mastery: 0.21,
-          versatility: 0.33,
-          leech: 0.2,
-        },
-        DefaultWeights: true,
-      };
+      this.statWeights.Raid = paladinDefaultStatWeights("Raid");
+      this.statWeights.Dungeon = paladinDefaultStatWeights("Dungeon");
+      this.statWeights.DefaultWeights = true;
+
     } else if (spec === SPEC.RESTOSHAMAN) {
       // all of this needs a proper input once
       this.fightInfo = {
@@ -493,25 +531,10 @@ class Player {
         versatility: 370,
         stamina: 1490,
       };
-      this.statWeights = {
-        Raid: {
-          intellect: 1,
-          haste: 0.31,
-          crit: 0.36,
-          mastery: 0.29,
-          versatility: 0.36,
-          leech: 0.45,
-        },
-        Dungeon: {
-          intellect: 1,
-          haste: 0.34,
-          crit: 0.33,
-          mastery: 0.29,
-          versatility: 0.34,
-          leech: 0.19,
-        },
-        DefaultWeights: true,
-      };
+      this.statWeights.Raid = shamanDefaultStatWeights("Raid");
+      this.statWeights.Dungeon = shamanDefaultStatWeights("Dungeon");
+      this.statWeights.DefaultWeights = true;
+
     } else if (spec === SPEC.DISCPRIEST) {
       this.fightInfo = {
         hps: 5500,
@@ -527,25 +550,10 @@ class Player {
         stamina: 1400,
       };
 
-      this.statWeights = {
-        Raid: {
-          intellect: 1,
-          haste: 0.36,
-          crit: 0.33,
-          mastery: 0.34,
-          versatility: 0.32,
-          leech: 0.49,
-        },
-        Dungeon: {
-          intellect: 1,
-          haste: 0.38,
-          crit: 0.34,
-          mastery: 0.3,
-          versatility: 0.33,
-          leech: 0.23,
-        },
-        DefaultWeights: true,
-      };
+      this.statWeights.Raid = discPriestDefaultStatWeights("Raid");
+      this.statWeights.Dungeon = discPriestDefaultStatWeights("Dungeon");
+      this.statWeights.DefaultWeights = true;
+
     } else if (spec === SPEC.HOLYPRIEST) {
       this.activeStats = {
         intellect: 1420,
@@ -556,25 +564,10 @@ class Player {
         stamina: 1400,
       };
 
-      this.statWeights = {
-        Raid: {
-          intellect: 1,
-          haste: 0.28,
-          crit: 0.35,
-          mastery: 0.35,
-          versatility: 0.34,
-          leech: 0.56,
-        },
-        Dungeon: {
-          intellect: 1,
-          haste: 0.32,
-          crit: 0.35,
-          mastery: 0.28,
-          versatility: 0.35,
-          leech: 0.25,
-        },
-        DefaultWeights: true,
-      };
+      this.statWeights.Raid = holyPriestDefaultStatWeights("Raid");
+      this.statWeights.Dungeon = holyPriestDefaultStatWeights("Dungeon");
+      this.statWeights.DefaultWeights = true;
+
     } else if (spec === SPEC.MISTWEAVERMONK) {
       this.fightInfo = {
         hps: 5500,
@@ -590,25 +583,9 @@ class Player {
         stamina: 1490,
       };
 
-      this.statWeights = {
-        Raid: {
-          intellect: 1,
-          haste: 0.29,
-          crit: 0.35,
-          mastery: 0.28,
-          versatility: 0.34,
-          leech: 0.54,
-        },
-        Dungeon: {
-          intellect: 1,
-          haste: 0.34,
-          crit: 0.35,
-          mastery: 0.29,
-          versatility: 0.35,
-          leech: 0.25,
-        },
-        DefaultWeights: true,
-      };
+      this.statWeights.Raid = monkDefaultStatWeights("Raid");
+      this.statWeights.Dungeon = monkDefaultStatWeights("Dungeon");
+      this.statWeights.DefaultWeights = true;
     }
   };
 }

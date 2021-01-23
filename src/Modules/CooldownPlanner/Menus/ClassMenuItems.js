@@ -8,7 +8,9 @@ import MistweaverIcon from "../../../Images/Classes/Monk/Specialisation/Mistweav
 import RestorationDruidIcon from "../../../Images/Classes/Druid/Specialisation/Restoration/Icons/RestorationDruid.jpg";
 import RestorationShamanIcon from "../../../Images/Classes/Shaman/Specialisation/Restoration/Icons/RestorationShaman.jpg";
 import WarriorIcon from "../../../Images/Classes/Warrior/WarriorIcon.jpg";
+import DeathKnightIcon from "../../../Images/Classes/DeathKnight/DeathKnightIcon.jpg";
 import DemonHunterIcon from "../../../Images/Classes/DemonHunter/DemonHunterIcon.jpg";
+import ShadowPriestIcon from "../../../Images/Classes/Priest/Specialisation/Shadow/ShadowPriest.jpg";
 import { Translation } from "react-i18next";
 import Divider from "@material-ui/core/Divider";
 
@@ -142,6 +144,38 @@ export const classMenus = [
     />
     <Translation>
       {(t, { i18n }) => t("CooldownPlanner.Classes.Warrior")}
+    </Translation>
+  </MenuItem>,
+  <Divider />,
+  <MenuItem style={{ color: "#C41E3A" }} value={"DeathKnight"}>
+    <img
+      style={{
+        height: 20,
+        width: 20,
+        padding: "0px 5px 0px 5px",
+        verticalAlign: "middle",
+      }}
+      src={DeathKnightIcon}
+      alt="Death Knight"
+    />
+    <Translation>
+      {(t, { i18n }) => t("CooldownPlanner.Classes.DeathKnight")}
+    </Translation>
+  </MenuItem>,
+  <Divider />,
+  <MenuItem style={{ color: "#FFFFFF" }} value={"ShadowPriest"}>
+    <img
+      style={{
+        height: 20,
+        width: 20,
+        padding: "0px 5px 0px 5px",
+        verticalAlign: "middle",
+      }}
+      src={ShadowPriestIcon}
+      alt="Shadow Priest"
+    />
+    <Translation>
+      {(t, { i18n }) => t("CooldownPlanner.Classes.ShadowPriest")}
     </Translation>
   </MenuItem>,
   <Divider />,

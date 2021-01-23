@@ -15,18 +15,19 @@ import HallOfFame from "../HallOfFame/HallOfFame";
 // [route, show button?, tooltip]
 const mainMenuOptions = {
   "MainMenu.TopGear": ["/topgear", true, "TopGear"],
+  "MainMenu.UpgradeFinder": ["/UpgradeFinder", true, "UpgradeFinder"],
   "MainMenu.QuickCompare": ["/quickcompare", true, "QuickCompare"],
   "MainMenu.ExploreCovenants": ["/soulbinds", true, "ExploreCovenants"],
   "MainMenu.LegendaryAnalysis": ["/legendaries", true, "LegendaryAnalysis"],
-  //"MainMenu.GreatVault": ["/greatvault", false, "GreatVault"],
+  //"MainMenu.TrinketAnalysis": ["/trinkets", false, "TrinketAnalysis"],
+
   "MainMenu.CooldownPlanner": ["/holydiver", false, "CooldownPlanner"],
   "MainMenu.Profile": ["/profile", true, "Profile"],
-  // "MainMenu.Trinket": ["/trinkets", false],
+
 };
 
 /* Buttons to be added back.
-  "MainMenu.UpgradeFinder": ["/upgradefinder", false],
-  "MainMenu.TrinketAnalysis": ["/trinkets", false],
+
 */
 
 const useStyles = makeStyles((theme) => ({
@@ -36,6 +37,7 @@ const useStyles = makeStyles((theme) => ({
       width: "80%",
       justifyContent: "center",
       display: "block",
+      marginTop: 120
     },
     [theme.breakpoints.up("md")]: {
       margin: "auto",
@@ -112,9 +114,10 @@ export default function QEMainMenu(props) {
                 variant="body1"
               >
                 <p>
-                  - Legendary effects coming soon for Mistweavers & Priests.{" "}
+                  - Legendary effects coming soon for Priests. Mistweaver now live!{" "}
                 </p>
                 <p>- Great Vault support in, including weapon tokens!</p>
+                <p>- Upgrade Finder now live!</p>
               </Typography>
             </Paper>
           </Grid>
@@ -195,7 +198,7 @@ export default function QEMainMenu(props) {
         </Grid>
 
         <p className="headers" style={{ fontSize: "12px" }}>
-          QE Live Update 16a. Last Updated 6 January.
+          QE Live 9.0 Update 20. Last Updated 21 January.
         </p>
       </div>
     </div>

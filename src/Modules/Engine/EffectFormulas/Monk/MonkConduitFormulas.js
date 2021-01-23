@@ -131,7 +131,7 @@ export const getMonkConduit = (conduitID,  player, contentType, conduitLevel) =>
       
       const conduitPower = conduitScaling(BONE_MARROW_HOPS, conduitLevel);
       const actualIncreaseForBDB = (1 + conduitPower) * .35;
-      const actualIncreaseFromBMH = actualIncreaseForBDB - conduitPower;
+      const actualIncreaseFromBMH = actualIncreaseForBDB - .35;
 
       const totalHPS = player.getHPS(contentType);
 

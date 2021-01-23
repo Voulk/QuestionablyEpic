@@ -58,7 +58,18 @@ const useStyles = makeStyles((theme) => ({
   typography: {
     padding: theme.spacing(2),
   },
+  header: {
+    [theme.breakpoints.down("sm")]: {
+      marginTop: 120,
+    },
+    [theme.breakpoints.up("md")]: {
+      marginTop: 32,
+    },
+    
+  }
 }));
+
+
 
 const menuStyle = {
   style: { marginTop: 5 },
@@ -173,6 +184,7 @@ export default function TopGear(props) {
     // Call to the Top Gear Engine. Lock the app down.
     if (checkTopGearValid) {
       setBtnActive(false);
+      const currentLanguage = i18n.language;
       let itemList = props.pl.getSelectedItems();
       let wepCombos = buildWepCombos(props.pl, true);
       const worker = require("workerize-loader!./TopGearEngine"); // eslint-disable-line import/no-webpack-loader-syntax
@@ -180,7 +192,7 @@ export default function TopGear(props) {
       let strippedPlayer = JSON.parse(JSON.stringify(props.pl));
       //console.log("Pl: " + JSON.stringify(props.pl));
       instance
-        .runTopGear(itemList, wepCombos, strippedPlayer, props.contentType)
+        .runTopGear(itemList, wepCombos, strippedPlayer, props.contentType, currentLanguage)
         .then((result) => {
           //console.log(`Loop returned`);
           apiSendTopGearSet(
@@ -230,10 +242,7 @@ export default function TopGear(props) {
 
   return (
     <div
-      style={{
-        // backgroundColor: "#313131",
-        marginTop: 32,
-      }}
+    className={classes.header}
     >
       <Grid
         container

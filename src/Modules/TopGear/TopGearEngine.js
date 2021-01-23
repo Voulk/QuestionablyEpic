@@ -19,18 +19,22 @@ export function expensive(time) {
   return count;
 }
 
-export function runTopGear(itemList, wepCombos, player, contentType) {
+export function runTopGear(itemList, wepCombos, player, contentType, currentLanguage) {
   //console.log("WEP COMBOS: " + JSON.stringify(wepCombos));
+  //console.log("CL::::" + currentLanguage);
   var t0 = performance.now();
   // console.log("Running Top Gear");
   let count = 0;
+
+  
 
   let itemSets = createSets(itemList, wepCombos);
   itemSets.sort((a, b) => (a.sumSoftScore < b.sumSoftScore ? 1 : -1));
   count = itemSets.length;
 
+  //console.log("Count: " + count);
   // TEST LOOP ONLY FOR CONSOLE PRINTS.
-  /*
+    /*
     for (var i = 0; i < itemSets.length; i++) {
         
         //console.log("ID: " + itemSets[i].id + ". Soft: " + itemSets[i].sumSoftScore + ". Hard: " + itemSets[i].hardScore);
@@ -39,8 +43,8 @@ export function runTopGear(itemList, wepCombos, player, contentType) {
         console.log("====================");
    
     }
-    
     */
+    
   for (var i = 0; i < itemSets.length; i++) {
     itemSets[i] = evalSet(itemSets[i], player, contentType);
   }
@@ -73,7 +77,9 @@ export function runTopGear(itemList, wepCombos, player, contentType) {
   }
 }
 
-function createSets(itemList, wepCombos) {
+function createSets(itemList, rawWepCombos) {
+
+  const wepCombos = deepCopyFunction(rawWepCombos);
   let setCount = 0;
   let itemSets = [];
   let slotLengths = {
@@ -117,7 +123,7 @@ function createSets(itemList, wepCombos) {
   }
   slotLengths.Weapon = Object.keys(wepCombos).length;
 
-  // console.log(JSON.stringify(slotLengths));
+  //console.log(JSON.stringify(slotLengths));
   // console.log(splitItems.Finger);
 
   for (var head = 0; head < slotLengths.Head; head++) {
@@ -432,4 +438,24 @@ function getHighestWeight(player, contentType) {
   }
 
   return max;
+}
+
+const deepCopyFunction = (inObject) => {
+  let outObject, value, key
+
+  if (typeof inObject !== "object" || inObject === null) {
+    return inObject // Return the value if inObject is not an object
+  }
+
+  // Create an array or object to hold the values
+  outObject = Array.isArray(inObject) ? [] : {}
+
+  for (key in inObject) {
+    value = inObject[key]
+
+    // Recursively (deep) copy for nested objects, including arrays
+    outObject[key] = deepCopyFunction(value)
+  }
+
+  return outObject
 }

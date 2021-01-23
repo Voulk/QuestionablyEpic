@@ -14,7 +14,7 @@ const useStyles = makeStyles({
   root: {
     minWidth: 275,
     minHeight: 200,
-    borderColor: 'goldenrod',
+    borderColor: "goldenrod",
   },
   content: {
     height: 150,
@@ -88,14 +88,16 @@ const legendaryImages = {
 export default function LegendaryObject(props) {
   const { t } = useTranslation();
   const item = props.item;
+  const player = props.player;
   const hpsString =
-    item.bonus_stats.hps > 5 ? Math.round(item.bonus_stats.hps) : "Coming Soon";
+    item.effectiveHPS > 5 ? Math.round(item.effectiveHPS) : "Coming Soon";
 
   const classes = useStyles();
   const bull = <span className={classes.bullet}>•</span>;
+  //console.log(item);
 
   return (
-    <Grid item xs={3}>
+    <Grid item xs={12} sm={6} md={6} lg={4} xl={3}>
       <Card className={classes.root} variant="outlined">
         <CardContent className={classes.content}>
           <div
@@ -156,16 +158,15 @@ export default function LegendaryObject(props) {
               </CardContent>
             </Grid>
             <Grid item xs={12}>
-              <CardContent style={{ padding: 0, height: 20}}>
+              <CardContent style={{ padding: 0, height: 20 }}>
                 <Typography
                   align="center"
                   variant="caption"
                   component="p"
-                  style={{ lineHeight: 1.1, fontSize: '16px'}}
+                  style={{ lineHeight: 1.1, fontSize: "16px" }}
                 >
                   HPS: {hpsString}
                   <br />
-                  
                   {/* {item.bonus_stats.DPS} */}
                 </Typography>
               </CardContent>
@@ -179,45 +180,10 @@ export default function LegendaryObject(props) {
             component="p"
             style={{ padding: "0px 8px" }}
           >
-            Drops: {t(item.name + ".droploc")}
+            {t("Source")}: {t(item.name + ".droploc")}
           </Typography>
         </CardActions>
       </Card>
     </Grid>
   );
-
-  // return (
-  //   <div className="lego">
-  //     <div className="titleBox">
-  //       <p
-  //         style={{
-  //           fontSize: "16px",
-  //           marginTop: "5px",
-  //           marginLeft: "5px",
-  //           fontWeight: "bold",
-  //           display: "inline-block",
-  //         }}
-  //       >
-  //         {t(item.name + ".name")}
-  //       </p>
-  //       <img src={legendaryImages[item.name]} alt="" />
-  //     </div>
-
-  //     <div style={{ height: "60%", position: "relative" }}>
-  //       <p className="legodesc">{t(item.name + ".desc")}</p>
-  //       <div className="legostats">
-  //         <p>
-  //           HPS: {hpsString}
-  //           {/*Expected DPS: {item.bonus_stats.DPS} */}
-  //         </p>
-  //       </div>
-  //     </div>
-
-  //     <div className="legodroploc">
-  //       <p style={{ marginTop: "4px" }}>
-  //         Drops from: {t(item.name + ".droploc")}
-  //       </p>
-  //     </div>
-  //   </div>
-  // );
 }

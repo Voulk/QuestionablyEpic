@@ -18,6 +18,7 @@ export default function SimCraftInput(props) {
   const [simC, setSimC] = React.useState("");
   const [errorMessage, setErrorMessage] = React.useState("");
   const characterCount = props.allChars.getAllChar().length || 0;
+  const buttonVariant = props.variant;
   const handleClickOpen = () => {
     setOpen(true);
   };
@@ -42,11 +43,14 @@ export default function SimCraftInput(props) {
     <div>
       <Tooltip title={t("QeHeader.Tooltip.SimC")} arrow>
         <Button
+          disableElevation={props.disableElevation}
           style={{ whiteSpace: "nowrap" }}
+          color={props.color}
           onClick={handleClickOpen}
           disabled={characterCount === 0}
+          variant={buttonVariant}
         >
-          {t("SimCInput.SimCHeaderButtonLabel")}
+          {props.buttonLabel}
         </Button>
       </Tooltip>
       <Dialog

@@ -1,11 +1,15 @@
 import { itemDB } from "../Player/ItemDB";
 import { randPropPoints } from "./RandPropPointsBylevel";
-import { combat_ratings_mult_by_ilvl, combat_ratings_mult_by_ilvl_jewl } from "./CombatMultByLevel";
+import {
+  combat_ratings_mult_by_ilvl,
+  combat_ratings_mult_by_ilvl_jewl,
+} from "./CombatMultByLevel";
 import { getEffectValue } from "./EffectFormulas/EffectEngine";
 import SPEC from "../Engine/SPECS";
+import {translatedStat} from "../Engine/STAT";
 import Item from "../Player/Item";
 import { useTranslation } from "react-i18next";
-import {i18n} from 'react-i18next';
+import { i18n } from "react-i18next";
 
 /*
 
@@ -90,6 +94,72 @@ export function getValidWeaponTypes(spec, slot) {
   }
 }
 
+export function filterItemListBySource(
+  itemList,
+  sourceInstance,
+  sourceBoss,
+  level,
+  pvpRank = 0
+) {
+  let temp = itemList.filter(function (item) {
+    console.log("Filtering: " + item.id);
+    console.log(item);
+    let itemEncounter = item.source.encounterId;
+    let expectedItemLevel = level;
+    if (itemEncounter == 2425 || itemEncounter == 2424) expectedItemLevel += 7;
+    else if (sourceInstance === -17 && pvpRank === 5 && ["1H Weapon", "2H Weapon", "Offhand", "Shield"].includes(item.slot)) expectedItemLevel += 7;
+
+    //console.log(expectedItemLevel);
+
+    return (
+      item.level == expectedItemLevel &&
+      ((item.source.instanceId == sourceInstance &&
+        item.source.encounterId == sourceBoss) ||
+        (item.source.instanceId == sourceInstance && sourceBoss == 0))
+    );
+  });
+
+  return temp;
+}
+
+export function filterItemListByType(itemList, slot) {
+  let temp = itemList.filter(function (item) {
+    if (slot === "AllMainhands") {
+      return (
+        (item.slot === "1H Weapon" || item.slot === "2H Weapon")
+      );
+    } else if (slot === "Offhands") {
+      return (
+        (item.slot === "Holdable" ||
+          item.slot === "Offhand" ||
+          item.slot === "Shield")
+      );
+    } else {
+      return item.slot === slot;
+    }
+  });
+  return sortItems(temp);
+};
+
+function sortItems(container) {
+  // Current default sorting is by HPS but we could get creative here in future.
+  container.sort((a, b) => (a.softScore < b.softScore ? 1 : -1));
+
+  return container;
+};
+
+export function getDifferentialByID(diffList, id, level) {
+  //console.log(diffList);
+  //console.log("ID: " + id);
+  let temp = diffList.filter(function (item) {
+    //console.log(item);
+    return item.item == id && item.level == level;
+  });
+
+  if (temp.length > 0) return temp[0].score;
+  else return -99;
+}
+
 // Returns true or false based on whether an ID exists in our item database.
 // Items that won't be found include stuff like shirts, low level items, quest items without stats and so on.
 // Importing these would be a waste of the user interface.
@@ -102,14 +172,13 @@ export function checkItemExists(id) {
 
 // Returns a translated item name based on an ID.
 export function getTranslatedItemName(id, lang, effect) {
-  if (effect && effect.type === 'spec legendary') {
+  if (effect && effect.type === "spec legendary") {
     return effect.name;
-  }
-  else {
+  } else {
     let temp = itemDB.filter(function (item) {
       return item.id === id;
     });
-  
+
     if (temp.length > 0) return temp[0].names[lang];
     else return "Unknown Item";
   }
@@ -132,6 +201,14 @@ export function getItemSubclass(id) {
   });
 
   if (temp.length > 0 && "itemSubClass" in temp[0]) return temp[0].itemSubClass;
+  else return "";
+}
+
+export function getFullItem(id) {
+  let temp = itemDB.filter(function (item) {
+    return item.id === id;
+  });
+  if (temp.length > 0) return temp[0];
   else return "";
 }
 
@@ -164,15 +241,13 @@ export function getItemAllocations(id, missiveStats = []) {
 
   let statArray = {};
   if (temp.length > 0) {
-    statArray = {...temp[0].stats};
-    if ('unallocated' in temp[0].stats) {
+    statArray = { ...temp[0].stats };
+    if ("unallocated" in temp[0].stats) {
       for (var i = 0; i < missiveStats.length; i++) {
         let mStat = missiveStats[i];
         statArray[mStat] += temp[0].stats.unallocated;
-        
       }
     }
-
   }
   //console.log(JSON.stringify(temp) + temp.length)
   //console.log(temp[0].icon)
@@ -211,9 +286,9 @@ function getItemCat(slot) {
       return 3;
     default:
       console.error("Item Cat going to Default" + slot);
-      
+
       return 3;
-      
+
     // Raise error.
   }
 }
@@ -231,22 +306,19 @@ export function getItemSlot(id) {
 function sumObjectsByKey(...objs) {
   return objs.reduce((a, b) => {
     for (let k in b) {
-      if (b.hasOwnProperty(k))
-        a[k] = (a[k] || 0) + b[k];
+      if (b.hasOwnProperty(k)) a[k] = (a[k] || 0) + b[k];
     }
     return a;
   }, {});
 }
 
-export function buildWepCombos(player, active=false) {
+export function buildWepCombos(player, active = false, equipped = false) {
   let wep_list = [];
-  let main_hands = player.getActiveItems("1H Weapon", active);
-  let off_hands = player.getActiveItems("Offhands", active);
-  let two_handers = player.getActiveItems("2H Weapon", active);
+  let main_hands = player.getActiveItems("1H Weapon", active, equipped);
+  let off_hands = player.getActiveItems("Offhands", active, equipped);
+  let two_handers = player.getActiveItems("2H Weapon", active, equipped);
 
-
-  //console.log("MH: " + main_hands.length + ". OH: " + off_hands.length);
-  
+  //console.log("MH: " + main_hands.length + ". OH: " + off_hands.length + ". 2H: " + two_handers.length);
 
   for (let i = 0; i < main_hands.length; i++) {
     // Some say j is the best variable for a nested loop, but are they right?
@@ -255,12 +327,11 @@ export function buildWepCombos(player, active=false) {
       let off_hand = off_hands[k];
 
       //console.log("Wep Loop" + i + "/" + k + ". " + main_hand.level + ". " + off_hand.level);
-
+      console.log(main_hand)
       if (main_hand.vaultItem && off_hand.vaultItem) {
         // If both main hand and off hand are vault items, then we can't make a combination out of them.
         continue;
-      }
-      else {
+      } else {
         let item = new Item(
           main_hand.id,
           "Combined Weapon", // TODO
@@ -268,19 +339,25 @@ export function buildWepCombos(player, active=false) {
           main_hand.socket + off_hand.socket, // Socket
           "", // Tertiary
           0,
-          Math.round((main_hand.level + off_hand.level) / 2)
+          Math.round((main_hand.level + off_hand.level) / 2),
+          "" // Bonus Ids
         );
         item.stats = sumObjectsByKey(main_hand.stats, off_hand.stats);
         item.stats.bonus_stats = {};
         item.vaultItem = main_hand.vaultItem || off_hand.vaultItem;
         item.uniqueEquip = item.vaultItem ? "vault" : "";
-        
         item.softScore = main_hand.softScore + off_hand.softScore;
         item.offhandID = off_hand.id;
+        item.mainHandLevel = main_hand.level
+        item.offHandLevel = off_hand.level
+        item.mainHandTertiary = main_hand.tertiary
+        item.offHandTertiary = off_hand.tertiary
+        // For future perhaps
+        // item.mainHandSocket = main_Hand.socket
+        // item.offHandSocket = off_Hand.socket
         //console.log("COMBO: " + main_hand.level + " - " + off_hand.level + ". Combined: " + item.level);
         wep_list.push(item);
       }
-
     }
   }
 
@@ -297,7 +374,7 @@ export function buildWepCombos(player, active=false) {
 // This uses the RandPropPointsByLevel and CombatMultByLevel tables and returns a dictionary object of stats.
 // Stat allocations are passed to the function from our Item Database.
 export function calcStatsAtLevel(itemLevel, slot, statAllocations, tertiary) {
-  let combat_mult = 0
+  let combat_mult = 0;
   let stats = {
     intellect: 0,
     stamina: 0,
@@ -310,10 +387,10 @@ export function calcStatsAtLevel(itemLevel, slot, statAllocations, tertiary) {
     dps: 0,
     bonus_stats: {},
   };
-
   
   let rand_prop = randPropPoints[itemLevel]["slotValues"][getItemCat(slot)];
-  if (slot == "Finger" || slot == "Neck") combat_mult = combat_ratings_mult_by_ilvl_jewl[itemLevel];
+  if (slot == "Finger" || slot == "Neck")
+    combat_mult = combat_ratings_mult_by_ilvl_jewl[itemLevel];
   else combat_mult = combat_ratings_mult_by_ilvl[itemLevel];
 
   // These stats should be precise, and never off by one.
@@ -336,24 +413,22 @@ export function calcStatsAtLevel(itemLevel, slot, statAllocations, tertiary) {
   // This, on the other hand, is a close estimate that should be replaced before launch.
   if (tertiary === "Leech") {
     if (slot === "Trinket") {
-      // This is an occasionally off-by-one formula for leech that should be rewritten. 
-      stats.leech = Math.ceil(28 + 0.2413 * (itemLevel - 155))
-      
-    }
-    else {
-      const terMult = (slot === "Finger" || slot === "Neck") ? 0.170027 : 0.449132;
+      // This is an occasionally off-by-one formula for leech that should be rewritten.
+      stats.leech = Math.ceil(28 + 0.2413 * (itemLevel - 155));
+    } else {
+      const terMult =
+        slot === "Finger" || slot === "Neck" ? 0.170027 : 0.449132;
       stats.leech = Math.floor(
         terMult * (stats.haste + stats.crit + stats.mastery + stats.versatility)
       );
     }
-
   }
   return stats;
 }
 
 // Builds a stat string out of an items given stats and effect.
 // Stats should be listed in order of quantity.
-export function buildStatString(stats, effect) {
+export function buildStatString(stats, effect, lang = "en") {
   //const { t, i18n } = useTranslation();
   let statString = "";
   let statsList = [
@@ -368,13 +443,18 @@ export function buildStatString(stats, effect) {
   });
 
   for (var ind in statsList) {
+    let statKey = statsList[ind]["key"];
+    
     statString +=
       statsList[ind]["val"] > 0
-        ? statsList[ind]["val"] + " " + correctCasing(statsList[ind]["key"]) + " / " // t("stats." + statsList[ind]["key"])
+        ? statsList[ind]["val"] +
+          " " + translatedStat[statKey][lang] + 
+          //correctCasing(statsList[ind]["key"]) +
+          " / " //t("stats." + statsList[ind]["key"])
         : "";
   }
 
-  if (effect !== "") statString += ("Effect") + " / "; // t("itemTags.effect")
+  if (effect !== "") statString += "Effect" + " / "; // t("itemTags.effect")
 
   return statString.slice(0, -3); // We slice here to remove excess slashes and white space from the end.
 }
@@ -426,8 +506,10 @@ export function scoreItem(item, player, contentType) {
   if ("bonus_stats" in item.stats && "mana" in item.stats.bonus_stats) {
     //console.log("Adding bonus_stats to score");
     score +=
-      (item.stats.bonus_stats.mana * player.getSpecialQuery("OneManaHealing", contentType) / player.getHPS(contentType)) *
-      player.activeStats.intellect
+      ((item.stats.bonus_stats.mana *
+        player.getSpecialQuery("OneManaHealing", contentType)) /
+        player.getHPS(contentType)) *
+      player.activeStats.intellect;
   }
 
   // Add Socket
@@ -439,5 +521,5 @@ export function scoreItem(item, player, contentType) {
         player.getHighestStatWeight(contentType)
       );
   }
-  return Math.round(100*score)/100;
+  return Math.round(100 * score) / 100;
 }

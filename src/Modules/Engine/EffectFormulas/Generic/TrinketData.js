@@ -21,7 +21,7 @@ export const trinket_data = [
                 table: -8, 
                 efficiency: 0.85, 
                 cooldown: 120, 
-                targets: 5,
+                targets: {Raid: 5, Dungeon: 4.1},
                 ticks: 3,
                 meteor: 0.15, 
             }
@@ -63,7 +63,7 @@ export const trinket_data = [
                 coefficient: 80.17241, 
                 table: -8, 
                 cooldown: 60, 
-                efficiency: 0.92,
+                efficiency: 0.85,
             }
         ]
     },
@@ -110,8 +110,8 @@ export const trinket_data = [
             { 
                 coefficient: 0.467903,
                 table: -7,  
-                duration: 23, // You get a 20 second duration every time you touch a new Spirit. They each live about 5 seconds.
-                stacks: 3.1, // You should be able to hit all four pretty reliably, but will spend some time with lower than four stacks as you meet each.
+                duration: 21, // You get a 20 second duration every time you touch a new Spirit. They each live about 5 seconds.
+                stacks: 2.9, // You should be able to hit all four pretty reliably, but will spend some time with lower than four stacks as you meet each.
                 cooldown: 90,
             }
         ]
@@ -255,6 +255,17 @@ export const trinket_data = [
         },
     ]
 },
+{
+    name: "Instructor's Divine Bell",
+    effects: [
+        { 
+            coefficient: 3.940237, 
+            table: -7,  
+            duration: 9, 
+            cooldown: 90,
+        },
+    ]
+},
     {
         name: "Flame of Battle",
         effects: [
@@ -310,11 +321,11 @@ export const trinket_data = [
             {   // HoT Portion
                 coefficient: 1.65,
                 table: -7,  
-                efficiency: {"Restoration Druid": 0.32, "Discipline Priest": 0.38, "Holy Paladin": 0.37, 
-                "Mistweaver Monk": 0.34, "Restoration Shaman": 0.3, "Holy Priest": 0.3},
+                efficiency: {"Restoration Druid": 0.28, "Discipline Priest": 0.32, "Holy Paladin": 0.34, 
+                "Mistweaver Monk": 0.31, "Restoration Shaman": 0.3, "Holy Priest": 0.3},
                 duration: 10, // Falls off when the target falls below 35% health. Efficiency in this case is the HoT uptime.
                 cooldown: 30, 
-                expectedTargetThroughput: 4300, // Could technically be pulled from logs
+                expectedTargetThroughput: 4250, // Could technically be pulled from logs
             },
         ]
     },
@@ -322,9 +333,9 @@ export const trinket_data = [
         name: 'Tuft of Smoldering Plumage', 
         effects: [
             { 
-                coefficient: 326.7931,  
+                coefficient: 326.7931,
                 table: -8, // TODO: Test for Crit / Vers scaling.
-                efficiency: 0.84, 
+                efficiency: {"Raid": 0.68, "Dungeon": 0.82}, // Includes the 25% multiplier as the target gets lower.
                 // This one is very awkward. You're using it as a Guardian Spirit effect more often than using it because the heal is useful. 
                 // A massive heal on an injured target has massive life-saving potential, but I'm not sure how well it can be modelled except
                 // to assume the heal will have quite a high efficiency in dangerous scenarios.
@@ -448,6 +459,40 @@ export const trinket_data = [
             { 
                 coefficient: 0.450353,
                 table: -7,  
+
+            }
+        ]
+    },
+    // === Firelands Timewalking Trinkets
+    {
+        name: 'Eye of Blazing Power', 
+        effects: [
+            { 
+                coefficient: 118.3393,  
+                table: -8, // TODO: Test the health transfer portion for vers / crit. It's going to be incredibly minor but worth it for accuracies sake.
+                ppm: 1.08, // 45s ICD, 10% proc chance on heal. This assumes we proc it very quickly but should be double checked.
+                efficiency: 0.9, // TODO: Check against logs. 
+            }
+        ]
+    }, 
+    {
+        name: 'Jaws of Defeat', 
+        effects: [
+            { 
+                coefficient: 17,  // This is the amount of mana reduction rather than a coefficient. The trinket is only available at 200 item level. 
+                duration: 20,
+                cooldown: 120,
+                efficiency: 0.9, // TODO: Check against logs. 
+            }
+        ]
+    }, 
+    {
+        name: "Necromantic Focus",
+        effects: [
+            { 
+                coefficient: 10, // Flat value
+                stacks: {"Restoration Druid": 7, "Discipline Priest": 10, "Holy Paladin": 0, 
+                "Mistweaver Monk": 0, "Restoration Shaman": 2.4, "Holy Priest": 0.4}
 
             }
         ]

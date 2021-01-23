@@ -25,7 +25,6 @@
     "Mastery": "Mastery",
     "Versatility": "Versatility",
     "Leech": "Leech",
-    "Avoidance": "Avoidance",
     "Region": "Region",
     "Race": "Race",
     "Select Class": "Select Class",
@@ -35,6 +34,31 @@
     "No": "No",
     "None": "None",
     "Add": "Add",
+    "Avoidance": "Avoidance",
+    "External": "External",
+
+    "Classes": {
+      "undefined": "",
+      "HolyPaladin": "Holy Paladin",
+      "Holy Paladin": "Holy Paladin",
+      "DisciplinePriest": "Discipline Priest",
+      "Discipline Priest": "Discipline Priest",
+      "RestorationDruid": "Restoration Druid",
+      "Restoration Druid": "Restoration Druid",
+      "HavocDemonHunter": "Havoc Demon Hunter",
+      "HavocDemon Hunter": "Havoc Demon Hunter",
+      "Warrior": "Warrior",
+      "HolyPriest": "Holy Priest",
+      "Holy Priest": "Holy Priest",
+      "MistweaverMonk": "Mistweaver Monk",
+      "Mistweaver Monk": "Mistweaver Monk",
+      "RestorationShaman": "Restoration Shaman",
+      "Restoration Shaman": "Restoration Shaman",
+      "DeathKnight": "Death Knight",
+      "Death Knight": "Death Knight",
+      "ShadowPriest": "Shadow Priest",
+      "Shadow Priest": "Shadow Priest"
+    },
 
     "CooldownPlanner": {
       "Classes": {
@@ -46,12 +70,19 @@
         "Warrior": "Warrior",
         "HolyPriest": "Holy Priest",
         "MistweaverMonk": "Mistweaver Monk",
-        "RestorationShaman": "Restoration Shaman"
+        "RestorationShaman": "Restoration Shaman",
+        "DeathKnight": "Death Knight",
+        "ShadowPriest": "Shadow Priest"
       },
       "ChartLabels": {
         "_Comments1": "Translations for HD Charts",
         "UnmitigatedDamageLabel": "Unmitigated",
         "MitigatedDamageLabel": "Mitigated"
+      },
+      "Headers": {
+        "CooldownTimeline": "Cooldown Timeline",
+        "ExternalTimeline": "External Timeline",
+        "EnemyCastTimeline": "Enemy Cast Timeline"
       },
       "TableLabels": {
         "_Comments1": "Translations for HD Tables",
@@ -105,7 +136,11 @@
         "HavocDemonHunterComment": "Havoc Demon Hunter Cooldowns",
         "196718": "Darkness",
         "WarriorComment": "Warrior Cooldowns",
-        "97462": "Rallying Cry"
+        "97462": "Rallying Cry",
+        "DeathKnightComment": "Death Knight Cooldowns",
+        "15286": "Vampiric Embrace",
+        "ShadowPriestComment": "Shadow Priest Cooldowns",
+        "51052": "Anti-Magic Zone"
       },
       "BossAbilities": {
         "undefined": "No Ability Selected",
@@ -181,7 +216,7 @@
       "PatronInvite": "Love the app? Support the site on Patreon!",
       "PatronThanks": "Thank you so much for your support!",
       "TopGear": "Top Gear (Beta)",
-      "UpgradeFinder": "Upgrade Finder (Coming Soon)",
+      "UpgradeFinder": "Upgrade Finder (Beta)",
       "QuickCompare": "Gear Quick Compare",
       "ExploreCovenants": "Explore Covenants",
       "LegendaryAnalysis": "Legendary Analysis",
@@ -197,7 +232,8 @@
         "ExploreCovenants": "Explore Soulbinds for each covenant.",
         "LegendaryAnalysis": "Find your best legendary power and where to get it",
         "CooldownPlanner": "Plan your cooldowns. Create your own or analyse logs",
-        "Profile": "Edit your details"
+        "Profile": "Edit your details",
+        "UpgradeFinder": "Find your next piece of gear!"
       }
     },
 
@@ -205,8 +241,8 @@
       "InsertLogLabel": "Insert Log",
       "Login": "Login",
       "Tooltip": {
-        "ContentTypeMsgStart": "Change to",
-        "ContentTypeMsgEnd": "Content",
+        "ChangeToRaid": "Change to Raid Content",
+        "ChangeToDungeon": "Change to Dungeon Content",
         "InsertLog": "Insert a log to increase accuracy.",
         "SimC": "Insert a SimC string to import your gear.",
         "Login": "Login to your Battle.net Account",
@@ -233,7 +269,7 @@
       "Tertiary": "Tertiary",
       "AddButton": "Add",
       "Title": "Quick Compare",
-      "HelpText": "Quick Compare allows you to compare items one by one. You can add items manually using the dropdowns above, or all at once using a string from the SimC addon. The score is automatically shown in the top right corner in yellow, and items are ordered by strength.",
+      "HelpText": "Quick Compare allows you to compare items one by one. The score is automatically shown in the top right corner in yellow, and items are ordered by strength. You can add items manually using the dropdowns above, or all at once using a string from the SimC addon.",
       "ItemErrorMsg": "Item Not Added. Ilvl Cap is 300",
       "ItemAdded": "Item Added!",
       "ItemDeleted": "Item Deleted!"
@@ -265,6 +301,62 @@
       "Zandalari Troll": "Zandalari Troll"
     },
 
+    "BossNames": {
+      "2393": "Shriekwing",
+      "2429": "Huntsman Altimor",
+      "2422": "Sun King's Salvation",
+      "2418": "Artificer Xy'mox",
+      "2428": "Hungering Destroyer",
+      "2420": "Lady Inerva Darkvein",
+      "2426": "The Council of Blood",
+      "2394": "Sludgefist",
+      "2425": "Stone Legion Generals",
+      "2424": "Sire Denathrius",
+      "999": "BoE Trash Drops"
+    },
+
+    "DungeonNames": {
+      "12831": "Halls of Atonement",
+      "13334": "Mists of Tirna Scithe",
+      "12916": "The Necrotic Wake",
+      "13228": "Plaguefall",
+      "12842": "Sanguine Depths",
+      "12841": "Theater of Pain",
+      "13309": "De Other Side",
+      "12837": "Spires of Ascension",
+
+      "1182": "Necrotic Wake",
+      "1183": "Plaguefall",
+      "1184": "Mists of Tirna Scithe",
+      "1185": "Halls of Atonement",
+      "1186": "Spires of Ascension",
+      "1187": "Theater of Pain",
+      "1188": "De Other Side",
+      "1189": "Sanguine Depths"
+    },
+
+    "RaidDifficulty": {
+      "Raid Finder": "Looking for Raid",
+      "Normal": "Normal",
+      "Heroic": "Heroic",
+      "Mythic": "Mythic"
+    },
+
+
+    "PvPCurrency": {
+      "Honor": "Honor",
+      "Conquest": "Conquest",
+      "-16": "Honor",
+      "-17": "Conquest"
+    },
+
+    "WorldBosses": {
+      "2430": "Valinor",
+      "2431": "Mortanis",
+      "2432": "Oranomonos",
+      "2433": "Nurgash"
+    },
+
     "SimCInput": {
       "SimCStringLabel": "SimC String",
       "SimCHeaderButtonLabel": "SimC",
@@ -291,9 +383,17 @@
     },
 
     "Soulbinds": {
+      "Header": "Covenant Exploration",
       "PotencyConduit": "Potency Conduit",
       "EnduranceConduit": "Endurance Conduit",
-      "FinesseConduit": "Finesse Conduit"
+      "FinesseConduit": "Finesse Conduit",
+      "ConduitInstructions": "Right/Left Click Conduits to change Ilvl",
+      "StatPanel": {
+        "Summary": "Summary",
+        "Score": "Score",
+        "CovenantEstimate": "Covenant Ability Est",
+        "SelectedNodes": "Selected Nodes"
+      }
     },
 
     "stats": {
@@ -368,9 +468,37 @@
       "Title": "Top Gear",
       "HelpText": "Top Gear allows you to generate an entire gear set at once. Start by entering your SimC string above, then click to highlight any items you want included in the comparison. When you're all set, hit 'Go' at the bottom of the page. To enter items manually, return to the main menu and include them in QE Quick Compare. Great Vault items are added automatically though for the first week consider your choice carefully outside of the app.",
       "ItemsHereMessage": "Your items will go here after you import.",
+      "ErrorMessage": "So sorry, seems you've run into an error. This is usually caused by not being able to create any valid sets. Check that you have a valid weapon selected, two or more rings and two or more trinkets. If multiple legendaries are selected then there must be a valid alternative for each.",
       "GoMsg": "Go!",
       "SelectedItems": "Selected Items",
+      "BackToGearSelection": "Back to Gear Selection",
+      "CompetitiveAlternative": "Competitive Alternatives",
       "StatPanel": { "AvgStats": "Average Stats (includes procs)" }
+    },
+
+    "UpgradeFinder": {
+      "Header": "Report"
+    },
+    "UpgradeFinderFront": {
+      "Header": "Upgrade Finder",
+      "RaidDifficultyHeader": "Raid Difficulty",
+      "RaidDifficultyBody": "Select up to two difficulties to find upgrades from",
+      "MythicPlusHeader": "Mythic Plus Key Level",
+      "MythicPlusBody": "Use the Slider to Select the level of keys you usually complete",
+      "PvPHeader": "PvP Rating",
+      "PvPBody": "Select  your Rating",
+      "SimCHeader": "SimC Import",
+      "SimCBody1Good": "SimC Status - All Set!",
+      "SimCBody1Invalid": "SimC Status - Empty Item Slot",
+      "SimCBody1Missing": "SimC Status - Missing",
+      "SimCBody2": "Current Equipped Gear:",
+      "SimCButton": "Import SimC",
+      "HelpText": "Insert a SimC String, select up to two raid difficulties, your standard mythic keystone level, and your PVP rating to see where you can find your next upgrade! All results are based on the gear you are actively wearing."
+    },
+
+    "TrinketAnalysis": {
+      "Header": "Trinket Analysis",
+      "HelpText": "Trinket Help Here"
     },
 
     "DruidLegendariesComment": "DruidLegendariesComment",
@@ -604,18 +732,6 @@
       "desc": "You gain 33% haste for 20 sec after summoning your Celestial.",
       "droploc": "Stone Legion Generals, Castle Nathria"
     },
-    "Roll Out": {
-      "name": "Roll Out",
-      "slot": "Waist or Feet",
-      "desc": "During (Chi Torpedo / Roll), you are immune to roots and snares.",
-      "droploc": "PvP Honor Vendor"
-    },
-    "Fatal Touch": {
-      "name": "Fatal Touch",
-      "slot": "Wrist or Finger",
-      "desc": "Touch of Death cooldown reduced by 120 sec.",
-      "droploc": "Mueh'zala, De Other Side"
-    },
     "Ancient Teachings of the Monastery": {
       "name": "Ancient Teachings of the Monastery",
       "slot": "Wrist or Hands",
@@ -657,6 +773,30 @@
       "slot": "Waist, Wrist, or Finger",
       "desc": "Your spells and abilities have a low chance to summon a familiar to your side, increasing your healing by 10% for 10s. This effect is duplicated on up to 3 allies at 50% effectiveness, preferring allies with the same role.",
       "droploc": "Wild Hunt Reputation, Revered"
+    },
+    "Covenants": {
+      "Kyrian": "Kyrian",
+      "Necrolords": "Necrolords",
+      "Venthyr": "Venthyr",
+      "NightFae": "Night Fae",
+      "Soulbinds": {
+        "KyrianSoulbinds": "",
+        "Pelagos": "Pelagos",
+        "Kleia": "Kleia",
+        "Mikanikos": "Mikanikos",
+        "NecrolordSoulbinds": "",
+        "Marileth": "Marileth",
+        "Emeni": "Emeni",
+        "Heirmir": "Heirmir",
+        "NightFaeSoulbinds": "",
+        "Niya": "Niya",
+        "Dreamweaver": "Dreamweaver",
+        "Korayn": "Korayn",
+        "VenthyrSoulbinds": "",
+        "Nadjia": "Nadjia",
+        "Theotar": "Theotar",
+        "Draven": "Draven"
+      }
     }
   }
 }

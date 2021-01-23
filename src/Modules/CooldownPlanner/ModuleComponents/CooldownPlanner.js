@@ -372,7 +372,7 @@ export default function CooldownPlanner(props) {
       },
       render: (rowData) => (
         <div>
-          <a data-wowhead={"spell=" + rowData.bossAbility}>
+          <a data-wowhead={"spell=" + rowData.bossAbility + "&domain=" + currentLanguage}>
             {bossAbilityIcons(rowData.bossAbility)}
           </a>
           {t("CooldownPlanner.BossAbilities." + rowData.bossAbility)}
@@ -407,7 +407,7 @@ export default function CooldownPlanner(props) {
                 })
                 .map((key, i) => (
                   <MenuItem key={i} value={key.guid}>
-                    <a data-wowhead={"spell=" + key.guid}>
+                    <a data-wowhead={"spell=" + key.guid + "&domain=" + currentLanguage}>
                       {bossAbilityIcons(key.guid)}
                     </a>
                     {t("CooldownPlanner.BossAbilities." + key.guid)}

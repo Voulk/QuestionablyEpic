@@ -1,16 +1,15 @@
 import React from "react";
 import { Paper, Grid, Typography, Divider } from "@material-ui/core";
+import { useTranslation } from "react-i18next";
 
 // The soulbind stat panel sums up all of the active soulbinds in the tree.
 export default function SoulbindStatPanel(props) {
+  const { t, i18n } = useTranslation();
   const covAbilityEst = props.covAbility > 0 ? props.covAbility : "NA";
 
   return (
-    // <div className="statPanel">
     <Grid item xs={12} style={{ paddingBottom: 8 }}>
       <Paper
-        // elevation={0}
-        // variant="outlined"
         style={{
           fontSize: "12px",
           textAlign: "left",
@@ -25,7 +24,7 @@ export default function SoulbindStatPanel(props) {
               align="center"
               color="primary"
             >
-              Summary
+              {t("Soulbinds.StatPanel.Summary")}
             </Typography>
             <Divider variant="middle" />
           </Grid>
@@ -36,7 +35,7 @@ export default function SoulbindStatPanel(props) {
                 variant="body1"
                 align="center"
               >
-                Score: {props.hps + props.covAbility}
+                {t("Soulbinds.StatPanel.Score")}: {props.hps + props.covAbility}
               </Typography>
             </Grid>
             <Grid item xs={12}>
@@ -45,7 +44,7 @@ export default function SoulbindStatPanel(props) {
                 variant="body1"
                 align="center"
               >
-                Covenant Ability Est: {covAbilityEst}
+                {t("Soulbinds.StatPanel.CovenantEstimate")}: {covAbilityEst}
               </Typography>
             </Grid>
             <Grid item xs={12}>
@@ -54,13 +53,12 @@ export default function SoulbindStatPanel(props) {
                 variant="body1"
                 align="center"
               >
-                Selected Nodes: {props.hps}
+                {t("Soulbinds.StatPanel.SelectedNodes")}: {props.hps}
               </Typography>
             </Grid>
           </Grid>
         </Grid>
       </Paper>
     </Grid>
-    // </div>
   );
 }

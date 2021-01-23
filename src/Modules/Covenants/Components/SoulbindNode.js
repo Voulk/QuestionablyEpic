@@ -73,9 +73,9 @@ function getBenefitString(bonus_stats) {
   return benefitString;
 }
 
-function getLocalizedName(trait, type, lang = "en") {
+function getLocalizedName(trait, type, lang) {
   if (type.includes("Conduit") && trait.slotted_id > 0) {
-    return getConduitName(trait.slotted_id);
+    return getConduitName(trait.slotted_id, lang);
   } else {
     return trait.names[lang]; // Replace with a database lookup based on language.
   }
@@ -88,6 +88,7 @@ function getRowPos(column, row) {
 export default function SoulbindNode(props) {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const { t, i18n } = useTranslation();
+  const currentLanguage = i18n.language;
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -108,11 +109,11 @@ export default function SoulbindNode(props) {
 
   const trait = props.soulbindTrait;
   const type = "type" in trait ? trait.type : "Soulbind"; // Soulbind, Potency Conduit, Endurance Conduit, Finesse Conduit
-  const name = getLocalizedName(trait, type);
+  const name = getLocalizedName(trait, type, currentLanguage)
   const icon = process.env.PUBLIC_URL + "/Images/Icons/" + trait.icon;
   const containerIcon =
     "/Images/Interface/soulbindcontainer" +
-    (name.includes("Conduit") ? "hex" : "circle") +
+    (type.includes("Conduit") ? "hex" : "circle") +
     (trait.active ? "active" : "") +
     ".png";
 
@@ -162,7 +163,7 @@ export default function SoulbindNode(props) {
     ) {
       return "";
     }
-    return "spell=" + trait.id;
+    return "spell=" + trait.id + "&domain=" + currentLanguage;
   };
 
   // The CSS here is a bit of a nightmare. TODO.
