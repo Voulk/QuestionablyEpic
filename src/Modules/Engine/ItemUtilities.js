@@ -327,7 +327,7 @@ export function buildWepCombos(player, active = false, equipped = false) {
       let off_hand = off_hands[k];
 
       //console.log("Wep Loop" + i + "/" + k + ". " + main_hand.level + ". " + off_hand.level);
-
+      console.log(main_hand)
       if (main_hand.vaultItem && off_hand.vaultItem) {
         // If both main hand and off hand are vault items, then we can't make a combination out of them.
         continue;
@@ -346,9 +346,15 @@ export function buildWepCombos(player, active = false, equipped = false) {
         item.stats.bonus_stats = {};
         item.vaultItem = main_hand.vaultItem || off_hand.vaultItem;
         item.uniqueEquip = item.vaultItem ? "vault" : "";
-
         item.softScore = main_hand.softScore + off_hand.softScore;
         item.offhandID = off_hand.id;
+        item.mainHandLevel = main_hand.level
+        item.offHandLevel = off_hand.level
+        item.mainHandTertiary = main_hand.tertiary
+        item.offHandTertiary = off_hand.tertiary
+        // For future perhaps
+        // item.mainHandSocket = main_Hand.socket
+        // item.offHandSocket = off_Hand.socket
         //console.log("COMBO: " + main_hand.level + " - " + off_hand.level + ". Combined: " + item.level);
         wep_list.push(item);
       }
