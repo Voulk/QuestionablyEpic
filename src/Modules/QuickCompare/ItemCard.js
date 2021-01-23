@@ -93,14 +93,14 @@ export default function ItemCard(props) {
   };
 
   let itemName = "";
+  let itemName2 = "";
   let isVault = item.vaultItem;
   const deleteActive = item.offhandID === 0;
 
+  
   if (item.offhandID > 0) {
-    itemName =
-      getTranslatedItemName(item.id, currentLanguage) +
-      " & " +
-      getTranslatedItemName(item.offhandID, currentLanguage);
+    itemName = getTranslatedItemName(item.id, currentLanguage);
+    itemName2 = getTranslatedItemName(item.offhandID, currentLanguage);
   } else {
     if (isLegendary) itemName = item.effect.name;
     // Add translations to this.
