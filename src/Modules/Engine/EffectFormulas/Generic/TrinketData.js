@@ -446,7 +446,7 @@ export const trinket_data = [
         name: "Show of Faith", // Mana Proc
         effects: [
             { 
-                coefficient: 8.996611,
+                coefficient: 1.59735,  // 8.996611 pre-nerf
                 table: -7,  
                 ppm: 2,
 
