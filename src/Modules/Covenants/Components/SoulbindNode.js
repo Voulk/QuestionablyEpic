@@ -113,7 +113,7 @@ export default function SoulbindNode(props) {
   const icon = process.env.PUBLIC_URL + "/Images/Icons/" + trait.icon;
   const containerIcon =
     "/Images/Interface/soulbindcontainer" +
-    (name.includes("Conduit") ? "hex" : "circle") +
+    (type.includes("Conduit") ? "hex" : "circle") +
     (trait.active ? "active" : "") +
     ".png";
 
