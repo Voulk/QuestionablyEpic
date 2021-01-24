@@ -14,7 +14,7 @@ class Item {
   ) {
     this.id = id;
     this.name = name;
-    this.level = level;
+    this.level = Math.max(1, Math.min(300, level));
     this.slot = slot;
     this.socket = socket;
     this.tertiary =

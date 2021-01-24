@@ -24,13 +24,6 @@ import UpgradeFinderResult from "./UpgradeFinderResult";
 // });
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    justifyContent: "center",
-    display: "block",
-    marginLeft: "auto",
-    marginRight: "auto",
-    maxWidth: "55%",
-  },
   slider: {
     width: "90%",
     margin: "0px 20px 50px 20px",
@@ -51,6 +44,37 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: "rgb(169, 133, 62)",
     },
   },
+  header: {
+    [theme.breakpoints.down("sm")]: {
+            justifyContent: "center",
+      display: "block",
+      marginLeft: "auto",
+      marginRight: "auto",
+      maxWidth: "55%",
+      marginTop: 120,
+    },
+    [theme.breakpoints.down("md")]: {
+      justifyContent: "center",
+      display: "block",
+      marginLeft: "auto",
+      marginRight: "auto",
+      maxWidth: "55%",
+    },
+    [theme.breakpoints.down("lg")]: {
+      justifyContent: "center",
+      display: "block",
+      marginLeft: "auto",
+      marginRight: "auto",
+      maxWidth: "55%",
+    },
+    [theme.breakpoints.up("xl")]: {
+      justifyContent: "center",
+      display: "block",
+      marginLeft: "auto",
+      marginRight: "auto",
+      maxWidth: "55%",
+    },
+  }
 }));
 
 const raidDifficulty = ["Raid Finder", "Normal", "Heroic", "Mythic"];
@@ -190,7 +214,7 @@ export default function UpgradeFinderFront(props) {
   const setsPvP = [setSelectedHonor, setSelectedConquest];
 
   return (
-    <div className={classes.root}>
+    <div className={classes.header}>
       <Typography
         variant="h4"
         color="primary"

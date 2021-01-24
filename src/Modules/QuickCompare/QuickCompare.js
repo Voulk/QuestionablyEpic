@@ -53,6 +53,15 @@ const useStyles = makeStyles((theme) => ({
   typography: {
     padding: theme.spacing(2),
   },
+  header: {
+    [theme.breakpoints.down("sm")]: {
+      marginTop: 120,
+    },
+    [theme.breakpoints.up("md")]: {
+      marginTop: 32,
+    },
+    
+  }
 }));
 
 const menuStyle = {
@@ -308,9 +317,7 @@ export default function QuickCompare(props) {
 
   return (
     <div
-      style={{
-        marginTop: 32,
-      }}
+    className={classes.header}
     >
       <Grid
         container

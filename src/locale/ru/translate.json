@@ -5,7 +5,15 @@
       "DeleteCharacter": "Delete CharacterRU",
       "CreateChar": "Create New CharacterRU",
       "AddChar": "Add CharacterRU",
-      "CharName": "Character NameRU"
+      "CharName": "Character NameRU",
+      "SavedLogs": {
+        "Header": "Detailed Breakdown Coming SoonRU",
+        "Report": "ReportRU",
+        "Boss": "BossRU",
+        "FightLength": "Fight LengthRU",
+        "HPS": "HPSRU",
+        "RawHPS": "Raw HPSRU"
+      }
     },
 
     "_Comments1": "Common Words",
@@ -36,6 +44,7 @@
     "Add": "AddRU",
     "Avoidance": "Avoidance",
     "Source": "Источник",
+    "Default": "DefaultRU",
 
     "Classes": {
       "undefined": "",
@@ -425,6 +434,40 @@
       "SelectedItems": "Selected ItemsRU",
       "CompetitiveAlternative": "Competitive AlternativesRU",
       "StatPanel": { "AvgStats": "Average Stats (includes procs)RU" }
+    },
+
+    "SpellNames": {
+      "MonkSpells": "",
+      "124682": "Окутывающий туман",
+      "116670": "Оживить",
+      "115310": "Восстановление сил",
+      "117907": "Искусность: туманный поток",
+      "343655": "Окутывающее дыхание",
+      "191837": "Купель сущности",
+      "115151": "Заживляющий туман",
+      "274909": "Сгущающийся туман",
+      "116849": "Исцеляющий кокон",
+      "115175": "Успокаивающий туман",
+      "310454": "Оружие ордена",
+      "DruidSpells": "",
+      "774": "Омоложение",
+      "48438": "Буйный рост",
+      "8936": "Восстановление",
+      "33763": "Жизнецвет",
+      "ShamanSpells": "",
+      "61295": "Быстрина",
+      "157153": "Тотем разразившегося ливня",
+      "73920": "Целительный ливень",
+      "108280": "Тотем целительного прилива",
+      "1064": "Цепное исцеление",
+      "16191": "Тотем прилива маны",
+      "8004": "Исцеляющий всплеск",
+      "PaladinSpells": "",
+      "225311": "Свет зари",
+      "85673": "Торжество",
+      "25914": "Шок небес",
+      "82326": "Свет небес",
+      "337824": "Шоковая преграда"
     },
 
     "UpgradeFinder": {

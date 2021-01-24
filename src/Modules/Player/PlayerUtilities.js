@@ -11,10 +11,16 @@ export function getUnique() {
 
 // This function converts raw log output to a form that's easier to use around the app.
 // If you need an extra field that you can easily add it here.
-export function convertLogSpellOutput(player, logOutput, fightLength) {
+export function convertLogSpellOutput(
+  player,
+  logOutput,
+  fightLength,
+  reportID,
+  bossName
+) {
   //console.log(player);
   //console.log(logOutput);
- // console.log(fightLength);
+  // console.log(fightLength);
 
   //console.log(logOutput);
   let data = {};
@@ -26,6 +32,8 @@ export function convertLogSpellOutput(player, logOutput, fightLength) {
     hps: 0,
     rawhps: 0,
     fightLength: duration,
+    reportID: "",
+    bossName: "",
   };
 
   for (let i = 0; i < logOutput.length; i++) {
@@ -51,12 +59,13 @@ export function convertLogSpellOutput(player, logOutput, fightLength) {
 
   fightInfo.hps = Math.round(totalHealing / duration);
   fightInfo.rawhps = Math.round((totalHealing + totalOverhealing) / duration);
-  
+  fightInfo.reportID = reportID;
+  fightInfo.bossName = bossName;
+
   //console.log(JSON.stringify(data));
   player.setSpellPattern(data);
   player.setFightInfo(fightInfo);
 
-  
   //console.log(JSON.stringify(player));
 }
 

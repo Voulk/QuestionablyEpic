@@ -5,7 +5,15 @@
       "DeleteCharacter": "Delete CharacterFR",
       "CreateChar": "Create New CharacterFR",
       "AddChar": "Ajouter un personnage",
-      "CharName": "Character NameFR"
+      "CharName": "Character NameFR",
+      "SavedLogs": {
+        "Header": "Detailed Breakdown Coming SoonFR",
+        "Report": "ReportFR",
+        "Boss": "BossFR",
+        "FightLength": "Fight LengthFR",
+        "HPS": "HPSFR",
+        "RawHPS": "Raw HPSFR"
+      }
     },
 
     "_Comments1": "Common Words - All these need translating stillFR",
@@ -36,6 +44,7 @@
     "Add": "AddFR",
     "Avoidance": "Avoidance",
     "Source": "Source",
+    "Default": "DefaultFR",
 
     "Classes": {
       "undefined": "",
@@ -414,6 +423,40 @@
       "Setting5Tooltip": "",
       "Setting5Title": "",
       "Setting5TextFieldLabel": ""
+    },
+
+    "SpellNames": {
+      "MonkSpells": "",
+      "124682": "Brume enveloppante",
+      "116670": "Vivifier",
+      "115310": "Regain",
+      "117907": "Maîtrise : Bourrasque de brume",
+      "343655": "Souffle enveloppant",
+      "191837": "Réceptacle d’essence",
+      "115151": "Brume de rénovation",
+      "274909": "Brume levante",
+      "116849": "Cocon de vie",
+      "115175": "Brume apaisante",
+      "310454": "Armes de l’Ordre",
+      "DruidSpells": "",
+      "774": "Récupération",
+      "48438": "Croissance sauvage",
+      "8936": "Rétablissement",
+      "33763": "Fleur de vie",
+      "ShamanSpells": "",
+      "61295": "Remous",
+      "157153": "Totem d’explosion nuageuse",
+      "73920": "Pluie guérisseuse",
+      "108280": "Totem de marée de soins",
+      "1064": "Salve de guérison",
+      "16191": "Totem de vague de mana",
+      "8004": "Afflux de soins",
+      "PaladinSpells": "",
+      "225311": "Lumière de l’aube",
+      "85673": "Mot de gloire",
+      "25914": "Horion sacré",
+      "82326": "Lumière sacrée",
+      "337824": "Barrière de choc"
     },
 
     "TopGear": {

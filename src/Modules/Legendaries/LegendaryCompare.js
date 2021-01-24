@@ -8,38 +8,57 @@ import { getEffectValue } from "../Engine/EffectFormulas/EffectEngine";
 import ReactGA from "react-ga";
 import { Grid, Typography } from "@material-ui/core";
 // This is all shitty boilerplate code that'll be replaced. Do not copy.
-// const useStyles = makeStyles((theme) => ({
-//   root: {
-//     flexGrow: 1,
-//   },
-//   menuButton: {
-//     marginRight: theme.spacing(2),
-//   },
-//   title: {
-//     flexGrow: 5,
-//   },
-// }));
+
+const useStyles = makeStyles((theme) => ({
+  header: {
+    [theme.breakpoints.down("sm")]: {
+      margin: "auto",
+      width: "70%",
+      justifyContent: "space-between",
+      display: "block",
+      marginTop: "120px",
+    },
+    [theme.breakpoints.down("md")]: {
+      margin: "auto",
+      width: "70%",
+      justifyContent: "space-between",
+      display: "block",
+      marginTop: "120px",
+    },
+    [theme.breakpoints.down("lg")]: {
+      margin: "auto",
+      width: "70%",
+      justifyContent: "space-between",
+      display: "block",
+      marginTop: "120px",
+    },
+    [theme.breakpoints.up("xl")]: {
+      margin: "auto",
+      width: "70%",
+      justifyContent: "space-between",
+      display: "block",
+    },
+  },
+}));
 
 const convertToHPS = (bonus_stats, player, contentType) => {
   // Multiply the item's stats by our stat weights.
   let score = 0;
 
   for (var stat in bonus_stats) {
-      let statSum = bonus_stats[stat]
-      score += statSum * player.getStatWeight(contentType, stat);
-      score = score / player.activeStats.intellect * player.getHPS(contentType);
-    
+    let statSum = bonus_stats[stat];
+    score += statSum * player.getStatWeight(contentType, stat);
+    score = (score / player.activeStats.intellect) * player.getHPS(contentType);
   }
 
-      // Add any bonus HPS
+  // Add any bonus HPS
   if ("hps" in bonus_stats) {
     //console.log("Adding bonus_stats to score");
-    score += bonus_stats.hps
-      
+    score += bonus_stats.hps;
   }
 
   return score;
-}
+};
 
 const createLegendary = (legendaryName, container, spec, pl, contentType) => {
   let lego = new Legendary(legendaryName);
@@ -226,28 +245,34 @@ export default function LegendaryCompare(props) {
 
   fillLegendaries(legendaryList, props.pl.spec, props.pl, props.contentType);
   sortLegendaries(legendaryList);
+  const classes = useStyles();
 
   return (
     <div
-      style={{
-        margin: "auto",
-        width: "70%",
-        justifyContent: "space-between",
-        display: "block",
-      }}
+      className={classes.header}
+
     >
-      <Typography
-        color="primary"
-        variant="h4"
-        align="center"
-        style={{ paddingBottom: 16 }}
-      >
-        {t("LegendaryCompare.Title")}
-      </Typography>
-      <Grid container spacing={1} direction="row">
-        {legendaryList.map((item, index) => (
-          <LegendaryObject key={index} item={item} player={props.pl} contentType={props.contentType}/>
-        ))}
+      <Grid item container spacing={1} direction="row">
+        <Grid item xs={12}>
+          <Typography
+            color="primary"
+            variant="h4"
+            align="center"
+            style={{ paddingBottom: 16 }}
+          >
+            {t("LegendaryCompare.Title")}
+          </Typography>
+        </Grid>
+        <Grid item container spacing={1} direction="row">
+          {legendaryList.map((item, index) => (
+            <LegendaryObject
+              key={index}
+              item={item}
+              player={props.pl}
+              contentType={props.contentType}
+            />
+          ))}
+        </Grid>
       </Grid>
     </div>
   );

@@ -37,6 +37,7 @@ const useStyles = makeStyles((theme) => ({
       width: "80%",
       justifyContent: "center",
       display: "block",
+      marginTop: 120
     },
     [theme.breakpoints.up("md")]: {
       margin: "auto",
@@ -197,7 +198,7 @@ export default function QEMainMenu(props) {
         </Grid>
 
         <p className="headers" style={{ fontSize: "12px" }}>
-          QE Live 9.0 Update 20. Last Updated 21 January.
+          QE Live 9.0 Update 21. Last Updated 24 January.
         </p>
       </div>
     </div>
