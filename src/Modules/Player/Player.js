@@ -40,6 +40,7 @@ class Player {
     if (statWeights !== "default" && statWeights.DefaultWeights === false)
       this.statWeights = statWeights;
     this.activeConduits = getAvailableClassConduits(specName);
+
     //this.getStatPerc = getStatPerc;
   }
 
@@ -138,7 +139,7 @@ class Player {
   setCovenant = (cov) => {
     if (["night_fae", "venthyr", "necrolord", "kyrian"].includes(cov.toLowerCase())) this.covenant = cov;
     else {
-      reportError("Player", "Invalid Covenant Supplied", cov);
+      reportError(this, "Player", "Invalid Covenant Supplied", cov);
       throw new Error('Invalid Covenant Supplied');
     }
     
@@ -250,7 +251,7 @@ class Player {
       // Error checking
       if (item.softScore < 0) {
         // Scores should never go below 0. 
-        reportError("Player", "Item scored at below 0", item.softScore);
+        reportError(this, "Player", "Item scored at below 0", item.softScore);
         throw new Error('Invalid score when scoring active items.');
       }
       
@@ -479,7 +480,7 @@ class Player {
     }
     else {
       // Invalid spec replied. Error.
-      reportError("Player", "Invalid Spec Supplied for Default Weights", spec);
+      reportError(this, "Player", "Invalid Spec Supplied for Default Weights", spec);
       throw new Error('Invalid Spec Supplied');
     }
 }
@@ -598,7 +599,7 @@ class Player {
     }
     else {
       // Invalid spec replied. Error.
-      reportError("Player", "Invalid Spec Supplied for setupDefaults", spec);
+      reportError(this, "Player", "Invalid Spec Supplied for setupDefaults", spec);
       throw new Error('Invalid Spec Supplied');
     }
   };
