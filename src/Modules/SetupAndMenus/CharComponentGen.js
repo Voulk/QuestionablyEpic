@@ -52,15 +52,10 @@ const specImages = {
 const charClicked = (char, cardType, allChars, updateChar) => {
   if (cardType === "Char") {
     // Character Clicked. Take player to character sheet.
-    //alert("Character Clicked " + char.charName);
     allChars.setActiveChar(char.charID);
     updateChar(allChars);
   } else {
     // New character clicked. Offer new character dialog.
-    //alert("New Character");
-    //charCreationDialog(char);
-    // allChars.addChar("VoulkPriest", "Discipline Priest");
-    // updateChar(allChars);
   }
 };
 
@@ -265,6 +260,7 @@ export default function CharCards(props) {
       versatility: Math.max(0, Math.min(1.4, versatility)),
       leech: Math.max(0, Math.min(2.1, leech)),
     };
+
     newPlayer.editChar(contentType, charName, server, region, selectedRace, weights);
     setOpen(false);
     props.singleUpdate(newPlayer);
@@ -317,14 +313,7 @@ export default function CharCards(props) {
       {/* -------------------------------------------------------------------------- */
       /*                                Dialog Popup                                */
       /* -------------------------------------------------------------------------- */}
-
-      <Dialog
-        open={open}
-        onClose={handleClose}
-        aria-labelledby="form-dialog-title"
-        maxWidth="md"
-        // fullWidth
-      >
+      <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title" maxWidth="md">
         <div className={classes.tabRoot}>
           <AppBar position="static" elevation={0}>
             {/* -------------------------------------------------------------------------- */
@@ -340,7 +329,6 @@ export default function CharCards(props) {
           {/* -------------------------------------------------------------------------- */
           /*                            Character Information Panel                     */
           /* -------------------------------------------------------------------------- */}
-
           <TabPanel className={classes.tabPanel} value={value} index={0}>
             <Grid container spacing={2}>
               {/* --------------- Character Image (Pulled from Blizzard API) --------------- */}
@@ -383,7 +371,6 @@ export default function CharCards(props) {
                 </Grid>
 
                 {/* ----------------------------- Server Selector ----------------------------  */}
-
                 <Grid item xs={12}>
                   <Autocomplete
                     size="small"
@@ -404,7 +391,6 @@ export default function CharCards(props) {
                 </Grid>
 
                 {/* ------------------------------ Class Selctor -----------------------------  */}
-
                 <Grid item xs={12}>
                   <FormControl variant="outlined" fullWidth size="small" label={t("Class")} disabled={true}>
                     <InputLabel id="ClassSelector">{t("Class")}</InputLabel>
@@ -420,7 +406,6 @@ export default function CharCards(props) {
                 </Grid>
 
                 {/* ------------------------------ Race Selector -----------------------------  */}
-
                 <Grid item xs={12}>
                   <FormControl disabled={healClass === "" ? true : false} fullWidth variant="outlined" size="small" label={t("Race")}>
                     <InputLabel id="RaceSelector">{t("Race")}</InputLabel>
@@ -445,7 +430,6 @@ export default function CharCards(props) {
           {/* -------------------------------------------------------------------------- */
           /*                            Character Stats Panel                           */
           /* -------------------------------------------------------------------------- */}
-
           <TabPanel className={classes.tabPanel} value={value} index={1}>
             <Grid container direction="row" justify="center" alignItems="center" spacing={1}>
               {/* ------------------------ Stat Message/Instructions -----------------------  */}
@@ -459,7 +443,6 @@ export default function CharCards(props) {
               </Grid>
 
               {/* -------------------------------- Intellect -------------------------------  */}
-
               <Grid item xs={4}>
                 <TextField
                   id="IntellectInput"
@@ -482,7 +465,6 @@ export default function CharCards(props) {
               </Grid>
 
               {/* ----------------------------- Critical Strike ----------------------------  */}
-
               <Grid item xs={4}>
                 <TextField
                   id="CriticalInput"
@@ -505,7 +487,6 @@ export default function CharCards(props) {
               </Grid>
 
               {/* ---------------------------------- Haste ---------------------------------  */}
-
               <Grid item xs={4}>
                 <TextField
                   id="HasteInput"
@@ -527,7 +508,6 @@ export default function CharCards(props) {
               </Grid>
 
               {/* --------------------------------- Mastery --------------------------------  */}
-
               <Grid item xs={4}>
                 <TextField
                   id="MasteryInput"
@@ -549,7 +529,6 @@ export default function CharCards(props) {
               </Grid>
 
               {/* ------------------------------- Versatility ------------------------------  */}
-
               <Grid item xs={4}>
                 <TextField
                   id="VersatilityInput"
@@ -571,7 +550,6 @@ export default function CharCards(props) {
               </Grid>
 
               {/* ---------------------------------- Leech ---------------------------------  */}
-
               <Grid item xs={4}>
                 <TextField
                   id="LeechInput"
