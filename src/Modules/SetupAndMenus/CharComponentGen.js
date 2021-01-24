@@ -627,12 +627,12 @@ export default function CharCards(props) {
                       </Grid>
                       {/* --------------------------------- Raw HPS --------------------------------  */}
                       <Grid item>
-                        <Typography style={{ display: "inline-flex" }}>
+                        {/*<Typography style={{ display: "inline-flex" }}>
                           {t("CharacterCreator.SavedLogs.RawHPS") + ":"}
                           <Typography color="primary" style={{ paddingLeft: 4 }}>
                             {props.char.getRawHPS(contentType)}
                           </Typography>
-                        </Typography>
+                        </Typography> */}
                       </Grid>
                     </Grid>
                     <Grid item xs={1} style={{ alignSelf: "center", textAlign: "center" }}>
@@ -642,7 +642,7 @@ export default function CharCards(props) {
                           aria-label="delete"
                           size="small"
                         >
-                          <DeleteIcon style={{ color: "#ad2c34", paddingTop: 2 }} fontSize="large" />
+                          {/*<DeleteIcon style={{ color: "#ad2c34", paddingTop: 2 }} fontSize="large" /> */}
                         </IconButton>
                       </Tooltip>
                     </Grid>
@@ -662,10 +662,10 @@ export default function CharCards(props) {
           >
             {/* ------------------------------ Delete Button -----------------------------  */}
             <ThemeProvider theme={deleteTheme}>
-              <Button onClick={handleDelete} color="primary">
+                {value === 0 ? <Button onClick={handleDelete} color="primary">
                 {t("CharacterCreator.DeleteCharacter")}
-              </Button>
-            </ThemeProvider>
+              </Button> : "⠀"} 
+            </ThemeProvider> 
             {/* ---------------------- Default Button (Reset Stats) ----------------------  */}
             <div>
               {value === 1 ? (
