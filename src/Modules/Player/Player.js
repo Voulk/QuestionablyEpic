@@ -168,7 +168,7 @@ class Player {
   // Returns the players stat that has the highest weight. We should consider how to handle tie breaks.
   getHighestStatWeight = (contentType, ignore = []) => {
     let max = "";
-    let maxValue = 0;
+    let maxValue = -1;
     let weights = this.statWeights[contentType];
 
     for (var stat in weights) {
