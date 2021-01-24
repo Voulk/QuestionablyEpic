@@ -36,6 +36,8 @@ class CastModel {
   specialQueries = {};
   fightInfo = {};
   contentType = "";
+  reportID = ""
+  bossName = ""
 
   setSpellList = (spellListing) => {
     this.spellList = spellListing;
@@ -71,6 +73,8 @@ class CastModel {
       hps: 5500,
       rawhps: 7900,
       fightLength: 340,
+      reportID: "Default",
+      bossName: "Default"
     };
 
     let spellList = {};

@@ -5,7 +5,15 @@
       "DeleteCharacter": "Delete Character",
       "CreateChar": "Create New Character",
       "AddChar": "Add Character",
-      "CharName": "Character Name"
+      "CharName": "Character Name",
+      "SavedLogs": {
+        "Header": "Detailed Breakdown Coming Soon",
+        "Report": "Report",
+        "Boss": "Boss",
+        "FightLength": "Fight Length",
+        "HPS": "HPS",
+        "RawHPS": "Raw HPS"
+      }
     },
 
     "_Comments1": "Common Words",
@@ -36,6 +44,7 @@
     "Add": "Add",
     "Avoidance": "Avoidance",
     "External": "External",
+    "Default": "Default",
 
     "Classes": {
       "undefined": "",
@@ -429,6 +438,41 @@
       "Setting5Title": "",
       "Setting5TextFieldLabel": ""
     },
+
+    "SpellNames": {
+      "MonkSpells": "",
+      "124682": "Enveloping Mist",
+      "116670": "Vivify",
+      "115310": "Revival",
+      "117907": "Mastery: Gust of Mists",
+      "343655": "Enveloping Breath",
+      "191837": "Essence Font",
+      "115151": "Renewing Mist",
+      "274909": "Rising Mist",
+      "116849": "Life Cocoon",
+      "115175": "Soothing Mist",
+      "310454": "Weapons of Order",
+      "DruidSpells": "",
+      "774": "Rejuvenation",
+      "48438": "Wild Growth",
+      "8936": "Regrowth",
+      "33763": "Lifebloom",
+      "ShamanSpells": "",
+      "61295": "Riptide",
+      "157153": "Cloudburst Totem",
+      "73920": "Healing Rain",
+      "108280": "Healing Tide Totem",
+      "1064": "Chain Heal",
+      "16191": "Mana Tide Totem",
+      "8004": "Healing Surge",
+      "PaladinSpells": "",
+      "225311": "Light of Dawn",
+      "85673": "Word of Glory",
+      "25914": "Holy Shock",
+      "82326": "Holy Light",
+      "337824": "Shock Barrier"
+    },
+
     "TopGear": {
       "Title": "Top Gear",
       "HelpText": "Top Gear allows you to generate an entire gear set at once. Start by entering your SimC string above, then click to highlight any items you want included in the comparison. When you're all set, hit 'Go' at the bottom of the page. To enter items manually, return to the main menu and include them in QE Quick Compare. Great Vault items are added automatically though for the first week consider your choice carefully outside of the app.",

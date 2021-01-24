@@ -434,6 +434,22 @@ class Player {
     return this.castModel[contentType].getSpellData(spellID, "hps");
   };
 
+
+  /* --------------- Return the Spell List for the content Type --------------- */ 
+  getSpellList = (contentType) => {
+    return this.castModel[contentType].spellList
+  };
+
+  /* ------------- Return the Saved ReportID from the imported log ------------ */
+  getReportID = (contentType) => {
+    return this.castModel[contentType].fightInfo.reportID
+  };
+
+  /* ------------ Return the Saved Boss Name from the imported log ------------ */
+  getBossName = (contentType) => {
+    return this.castModel[contentType].fightInfo.bossName
+  };
+
   setSpellPattern = (spellList) => {
     if (spellList !== {}) this.castModel["Raid"].setSpellList(spellList);
   };
