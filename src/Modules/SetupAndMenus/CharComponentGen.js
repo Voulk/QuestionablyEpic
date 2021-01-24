@@ -1,20 +1,19 @@
-import React, { useEffect } from "react";
-import Card from "@material-ui/core/Card";
-//prettier-ignore
-import { Paper, Button, Box, CardContent, CardActionArea, Divider, Typography, Avatar, Grid, TextField, Dialog, DialogActions, AppBar, Tabs, Tab, Select, MenuItem, FormControl, InputLabel, Accordion, AccordionSummary, AccordionDetails } from "@material-ui/core";
-import { classColoursJS } from "../CooldownPlanner/Functions/ClassColourFunctions.js";
-import classicons from "../CooldownPlanner/Functions/IconFunctions/ClassIcons.js";
-import { createMuiTheme, makeStyles, ThemeProvider } from "@material-ui/core/styles";
-import { red } from "@material-ui/core/colors";
+import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import Autocomplete from "@material-ui/lab/Autocomplete";
-import { serverList, classRaceList } from "../CooldownPlanner/Data/Data";
 import { useTranslation } from "react-i18next";
-import raceIcons from "../CooldownPlanner/Functions/IconFunctions/RaceIcons";
-import classIcons from "../CooldownPlanner/Functions/IconFunctions/ClassIcons";
-import { STAT } from "../Engine/STAT";
-import LogDetailsTable from "./CharacterLogDetailsTable";
+//prettier-ignore
+import { Paper, Button, Box, Card, CardContent, CardActionArea, Divider, Typography, Avatar, Grid, TextField, Dialog, DialogActions, AppBar, Tabs, Tab, Select, MenuItem, FormControl, InputLabel, Accordion, AccordionSummary, AccordionDetails } from "@material-ui/core";
+import { createMuiTheme, makeStyles, ThemeProvider } from "@material-ui/core/styles";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import Autocomplete from "@material-ui/lab/Autocomplete";
+import { red } from "@material-ui/core/colors";
+import { classColoursJS } from "../CooldownPlanner/Functions/ClassColourFunctions.js";
+import classIcons from "../CooldownPlanner/Functions/IconFunctions/ClassIcons";
+import raceIcons from "../CooldownPlanner/Functions/IconFunctions/RaceIcons";
+import { serverList, classRaceList } from "../CooldownPlanner/Data/Data";
+import LogDetailsTable from "./CharacterLogDetailsTable";
+import { STAT } from "../Engine/STAT";
+import { apiGetPlayerImage } from "./ConnectionUtilities";
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -38,7 +37,7 @@ function a11yProps(index) {
   };
 }
 
-// Spec Images.
+/* ------------------------------ Spec Images. ------------------------------ */
 const specImages = {
   "Restoration Druid": require("../../Images/DruidSmall.jpg"),
   "Restoration Shaman": require("../../Images/ShamanSmall.png"),
@@ -48,7 +47,7 @@ const specImages = {
   "Mistweaver Monk": require("../../Images/MistweaverSmall.jpg"),
 };
 
-// Called when a character is clicked.
+/* ------------------- Called when a character is clicked. ------------------ */
 // TODO: Add Logic
 const charClicked = (char, cardType, allChars, updateChar) => {
   if (cardType === "Char") {
@@ -68,7 +67,6 @@ const charClicked = (char, cardType, allChars, updateChar) => {
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "inline-flex",
-    // maxWidth: "260px",
     width: "100%",
     maxHeight: "80px",
     borderColor: "Grey",
@@ -115,11 +113,10 @@ const deleteTheme = createMuiTheme({
 });
 
 export default function CharCards(props) {
-  const player = props.char;
-  const contentType = props.contentType;
-
-  const { t } = useTranslation();
   const classes = useStyles();
+  const contentType = props.contentType;
+  const player = props.char;
+  const { t } = useTranslation();
 
   const [value, setValue] = React.useState(0);
   const [region, setRegion] = React.useState(player.region);
@@ -128,12 +125,26 @@ export default function CharCards(props) {
   const [healClass, setHealClass] = React.useState(player.getSpec());
   const [selectedRace, setSelectedRace] = React.useState(player.getRace());
   const [intellect, setIntellect] = React.useState("1");
-  const [critical, setCritical] = React.useState(player.getStatWeight(props.contentType, STAT.CRITICAL_STRIKE));
-  const [haste, setHaste] = React.useState(player.getStatWeight(props.contentType, STAT.HASTE));
-  const [mastery, setMastery] = React.useState(player.getStatWeight(props.contentType, STAT.MASTERY));
-  const [versatility, setVersatility] = React.useState(player.getStatWeight(props.contentType, STAT.VERSATILITY));
-  const [leech, setLeech] = React.useState(player.getStatWeight(props.contentType, STAT.LEECH));
+  const [critical, setCritical] = React.useState(player.getStatWeight(contentType, STAT.CRITICAL_STRIKE));
+  const [haste, setHaste] = React.useState(player.getStatWeight(contentType, STAT.HASTE));
+  const [mastery, setMastery] = React.useState(player.getStatWeight(contentType, STAT.MASTERY));
+  const [versatility, setVersatility] = React.useState(player.getStatWeight(contentType, STAT.VERSATILITY));
+  const [leech, setLeech] = React.useState(player.getStatWeight(contentType, STAT.LEECH));
   const [server, setServer] = React.useState(player.realm);
+  const [backgroundImage, setBackgroundImage] = useState("");
+
+  useEffect(() => {
+    async function setImg() {
+      const img = await apiGetPlayerImage(props.char);
+      setBackgroundImage(img);
+    }
+
+    setImg();
+  }, []);
+
+  /* -------------------------------------------------------------------------- */
+  /*    Character Information Handlers (Sets Relevant Information on Change)    */
+  /* -------------------------------------------------------------------------- */
 
   const handleChangeName = (event) => {
     setCharName(event.target.value);
@@ -153,25 +164,34 @@ export default function CharCards(props) {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+
+  /* -------------------------------------------------------------------------- */
+  /*                         Dialog open/closer handlers                        */
+  /* -------------------------------------------------------------------------- */
+
   const handleClickOpen = (e) => {
     e.preventDefault();
-
-    setCritical(player.getStatWeight(props.contentType, STAT.CRITICAL_STRIKE));
-    setHaste(player.getStatWeight(props.contentType, STAT.HASTE));
-    setMastery(player.getStatWeight(props.contentType, STAT.MASTERY));
-    setVersatility(player.getStatWeight(props.contentType, STAT.VERSATILITY));
-    setLeech(player.getStatWeight(props.contentType, STAT.LEECH));
+    setCritical(player.getStatWeight(contentType, STAT.CRITICAL_STRIKE));
+    setHaste(player.getStatWeight(contentType, STAT.HASTE));
+    setMastery(player.getStatWeight(contentType, STAT.MASTERY));
+    setVersatility(player.getStatWeight(contentType, STAT.VERSATILITY));
+    setLeech(player.getStatWeight(contentType, STAT.LEECH));
     setOpen(true);
   };
   const handleClose = () => {
     setOpen(false);
-    setCritical(player.getStatWeight(props.contentType, STAT.CRITICAL_STRIKE));
-    setHaste(player.getStatWeight(props.contentType, STAT.HASTE));
-    setMastery(player.getStatWeight(props.contentType, STAT.MASTERY));
-    setVersatility(player.getStatWeight(props.contentType, STAT.VERSATILITY));
-    setLeech(player.getStatWeight(props.contentType, STAT.LEECH));
+    setCritical(player.getStatWeight(contentType, STAT.CRITICAL_STRIKE));
+    setHaste(player.getStatWeight(contentType, STAT.HASTE));
+    setMastery(player.getStatWeight(contentType, STAT.MASTERY));
+    setVersatility(player.getStatWeight(contentType, STAT.VERSATILITY));
+    setLeech(player.getStatWeight(contentType, STAT.LEECH));
     setServer(player.realm);
   };
+
+  /* -------------------------------------------------------------------------- */
+  /*              Stat Handlers (Sets the relevant stat on change)              */
+  /* -------------------------------------------------------------------------- */
+
   const handleIntellect = (event) => {
     setIntellect(event.target.value);
   };
@@ -181,7 +201,6 @@ export default function CharCards(props) {
   const handleHaste = (event) => {
     setHaste(event.target.value);
   };
-
   const handleMastery = (event) => {
     setMastery(event.target.value);
   };
@@ -191,6 +210,8 @@ export default function CharCards(props) {
   const handleLeech = (event) => {
     setLeech(event.target.value);
   };
+
+  /* ------------------------ Delete Character Function ----------------------- */
 
   const handleDelete = () => {
     props.delChar(player.uniqueHash);
@@ -221,18 +242,18 @@ export default function CharCards(props) {
   const resetDefaults = (event) => {
     let newPlayer = props.char;
 
-    newPlayer.setDefaultWeights(newPlayer.getSpec(), props.contentType);
+    newPlayer.setDefaultWeights(newPlayer.getSpec(), contentType);
     props.singleUpdate(newPlayer);
     props.charUpdatedSnack();
 
-    setCritical(player.getStatWeight(props.contentType, STAT.CRITICAL_STRIKE));
-    setHaste(player.getStatWeight(props.contentType, STAT.HASTE));
-    setMastery(player.getStatWeight(props.contentType, STAT.MASTERY));
-    setVersatility(player.getStatWeight(props.contentType, STAT.VERSATILITY));
-    setLeech(player.getStatWeight(props.contentType, STAT.LEECH));
+    setCritical(player.getStatWeight(contentType, STAT.CRITICAL_STRIKE));
+    setHaste(player.getStatWeight(contentType, STAT.HASTE));
+    setMastery(player.getStatWeight(contentType, STAT.MASTERY));
+    setVersatility(player.getStatWeight(contentType, STAT.VERSATILITY));
+    setLeech(player.getStatWeight(contentType, STAT.LEECH));
   };
-  // TODO
 
+  // TODO
   /* -------------- Update Character Function for the Save Button ------------- */
   const handleUpdateData = () => {
     let newPlayer = props.char;
@@ -244,11 +265,8 @@ export default function CharCards(props) {
       versatility: Math.max(0, Math.min(1.4, versatility)),
       leech: Math.max(0, Math.min(2.1, leech)),
     };
-
-    newPlayer.editChar(props.contentType, charName, server, region, selectedRace, weights);
-
+    newPlayer.editChar(contentType, charName, server, region, selectedRace, weights);
     setOpen(false);
-    //Update data Function Here
     props.singleUpdate(newPlayer);
     props.charUpdatedSnack();
   };
@@ -289,7 +307,7 @@ export default function CharCards(props) {
               <Divider />
               <Typography style={{ color: classColoursJS(spec), marginTop: 2 }}>
                 {t(classTranslator(spec))}
-                {classicons(spec, 18)}
+                {classIcons(spec, 18)}
               </Typography>
             </CardContent>
           </div>
@@ -329,10 +347,10 @@ export default function CharCards(props) {
               <Grid item xs={3}>
                 <div
                   style={{
-                    backgroundImage: "url(https://render-us.worldofwarcraft.com/character/frostmourne/212/180358868-main.jpg)",
+                    backgroundImage: `url("${backgroundImage}")`,
                     backgroundRepeat: "no-repeat",
                     backgroundPosition: "center 60%",
-                    backgroundSize: "auto 160%",
+                    backgroundSize: "auto 130%",
                     textAlign: "center",
                     position: "relative",
                     flex: 1,
@@ -592,7 +610,7 @@ export default function CharCards(props) {
                         <Typography style={{ display: "inline-flex" }}>
                           Report:
                           <Typography color="primary" style={{ paddingLeft: 4 }}>
-                            {props.char.castModel[props.contentType].fightInfo.reportID}
+                            {props.char.castModel[contentType].fightInfo.reportID}
                           </Typography>
                         </Typography>
                       </Grid>
@@ -601,7 +619,7 @@ export default function CharCards(props) {
                         <Typography style={{ display: "inline-flex" }}>
                           Boss:
                           <Typography color="primary" style={{ paddingLeft: 4 }}>
-                            {props.char.castModel[props.contentType].fightInfo.bossName}
+                            {props.char.castModel[contentType].fightInfo.bossName}
                           </Typography>
                         </Typography>
                       </Grid>
@@ -610,7 +628,7 @@ export default function CharCards(props) {
                         <Typography style={{ display: "inline-flex" }}>
                           Fight Length:
                           <Typography color="primary" style={{ paddingLeft: 4 }}>
-                            {sec2hmmss(props.char.castModel[props.contentType].fightInfo.fightLength)}
+                            {sec2hmmss(props.char.castModel[contentType].fightInfo.fightLength)}
                           </Typography>
                         </Typography>
                       </Grid>
@@ -619,7 +637,7 @@ export default function CharCards(props) {
                         <Typography style={{ display: "inline-flex" }}>
                           HPS:
                           <Typography color="primary" style={{ paddingLeft: 4 }}>
-                            {props.char.castModel[props.contentType].fightInfo.hps}
+                            {props.char.castModel[contentType].fightInfo.hps}
                           </Typography>
                         </Typography>
                       </Grid>
@@ -628,7 +646,7 @@ export default function CharCards(props) {
                         <Typography style={{ display: "inline-flex" }}>
                           Raw HPS:
                           <Typography color="primary" style={{ paddingLeft: 4 }}>
-                            {props.char.castModel[props.contentType].fightInfo.rawhps}
+                            {props.char.castModel[contentType].fightInfo.rawhps}
                           </Typography>
                         </Typography>
                       </Grid>
@@ -636,7 +654,7 @@ export default function CharCards(props) {
                   </AccordionSummary>
                   <AccordionDetails>
                     {/* ----------------------- Cast Model Breakdown Table -----------------------  */}
-                    <LogDetailsTable data={props.char.castModel[props.contentType].spellList} />
+                    <LogDetailsTable data={props.char.castModel[contentType].spellList} />
                   </AccordionDetails>
                 </Accordion>
               </Grid>
