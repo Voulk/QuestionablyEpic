@@ -39,9 +39,7 @@ export function getSoulbindFormula(effectID, pl, contentType) {
     let healing_bonus = pl.activeStats.stamina * 20 * 0.35;
     let uses_per_combat = 1.5;
 
-    bonus_stats.HPS =
-      (healing_bonus * uses_per_combat * (1 - expected_overhealing)) /
-      pl.getFightLength(contentType); // Placeholder.
+    bonus_stats.HPS = (healing_bonus * uses_per_combat * (1 - expected_overhealing)) / pl.getFightLength(contentType); // Placeholder.
   }
   // Let go of the Past
   else if (effectID === 328257) {
@@ -77,11 +75,7 @@ export function getSoulbindFormula(effectID, pl, contentType) {
     let expected_overhealing = 0.5;
     let effect_power = 0.04;
 
-    bonus_stats.HPS =
-      pl.getHPS(contentType) *
-      percent_healing_above_70 *
-      (1 - expected_overhealing) *
-      effect_power;
+    bonus_stats.HPS = pl.getHPS(contentType) * percent_healing_above_70 * (1 - expected_overhealing) * effect_power;
   }
 
   // -- Mikanikos --
@@ -97,11 +91,7 @@ export function getSoulbindFormula(effectID, pl, contentType) {
     let smash_dps = 0.25 * bron_sp * 1;
     let vit_bolt_hps = 0.575 * bron_sp * 8;
 
-    bonus_stats.HPS =
-      (brons_per_minute *
-        vit_bolt_hps *
-        pl.getStatMultiplier(["Crit", "Versatility"])) /
-      60;
+    bonus_stats.HPS = (brons_per_minute * vit_bolt_hps * pl.getStatMultiplier(["Crit", "Versatility"])) / 60;
   }
   // Hammer of Genesis
   else if (effectID === 333935) {
@@ -111,8 +101,8 @@ export function getSoulbindFormula(effectID, pl, contentType) {
   // -- Niya --
   // Grove Invigoration
   else if (effectID === 322721) {
-    let expectedStacks = (2 * 30 / 60) + (8 * 30 / 120);
-    bonus_stats.Mastery = (expectedStacks * 25);
+    let expectedStacks = (2 * 30) / 60 + (8 * 30) / 120;
+    bonus_stats.Mastery = expectedStacks * 25;
   }
   // Run without Tiring
   else if (effectID === 342270) {
@@ -123,7 +113,7 @@ export function getSoulbindFormula(effectID, pl, contentType) {
   // Niya's Tools: Herbs
   // This is basically 100% uptime on one target at a time. Personal benefit calculated only.
   else if (effectID === 320662) {
-    bonus_stats.Haste = 5 * STATPERONEPERCENT.HASTE / 20;
+    bonus_stats.Haste = (5 * STATPERONEPERCENT.HASTE) / 20;
   }
 
   // -- Dreamwalker --
@@ -202,8 +192,7 @@ export function getSoulbindFormula(effectID, pl, contentType) {
   }
   // Wasteland Propriety
   else if (effectID === 319983) {
-    bonus_stats.Versatility = 6 * STATPERONEPERCENT.VERSATILITY * (10/60) // Arguably some classes won't be able to proc this on cooldown because of misaligned CDs but we'll see.
-
+    bonus_stats.Versatility = 6 * STATPERONEPERCENT.VERSATILITY * (10 / 60); // Arguably some classes won't be able to proc this on cooldown because of misaligned CDs but we'll see.
   }
 
   // -- General Draven --
@@ -216,7 +205,7 @@ export function getSoulbindFormula(effectID, pl, contentType) {
   // Hold Your Ground
   else if (effectID === 332754) {
     let expected_uptime = 0.85;
-    bonus_stats.HPS = expected_uptime * (pl.getHPS(contentType) * 0.04)
+    bonus_stats.HPS = expected_uptime * (pl.getHPS(contentType) * 0.04);
   }
   // Superior Tactics
   else if (effectID === 332753) {
@@ -246,8 +235,8 @@ export function getSoulbindFormula(effectID, pl, contentType) {
   // -- Emeni --
   // Lead by Example
   else if (effectID === 342156) {
-    let total_bonus = 0.05 + 0.02 * 4; 
-    total_bonus += (0.02 * 4); // The buff TO your party. Treated as your own.
+    let total_bonus = 0.05 + 0.02 * 4;
+    total_bonus += 0.02 * 4; // The buff TO your party. Treated as your own.
     let uptime = 1 / 6;
 
     bonus_stats.Intellect = pl.activeStats.intellect * total_bonus * uptime;

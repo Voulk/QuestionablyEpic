@@ -45,49 +45,15 @@ export const damageExclusions = [
   345211,
 ];
 
-export const paladinCooldownNames = [
-  "Avenging Wrath",
-  "Aura Mastery",
-  "Divine Toll",
-  "Ashen Hallow",
-  "Vanquisher's Hammer",
-  "Blessing of the Seasons",
-];
+export const paladinCooldownNames = ["Avenging Wrath", "Aura Mastery", "Divine Toll", "Ashen Hallow", "Vanquisher's Hammer", "Blessing of the Seasons"];
 
-export const shamanCooldownNames = [
-  "Healing Tide Totem",
-  "Vesper Totem",
-  "Chain Harvest",
-  "Primordial Wave",
-  "Fae Transfusion",
-];
+export const shamanCooldownNames = ["Healing Tide Totem", "Vesper Totem", "Chain Harvest", "Primordial Wave", "Fae Transfusion"];
 
-export const priestCooldownNames = [
-  "Power Word: Barrier",
-  "Evangelism",
-  "Divine Hymn",
-  "Boon of the Ascended",
-  "Mindgames",
-  "Unholy Nova",
-  "Fae Blessings",
-];
+export const priestCooldownNames = ["Power Word: Barrier", "Evangelism", "Divine Hymn", "Boon of the Ascended", "Mindgames", "Unholy Nova", "Fae Blessings"];
 
-export const druidCooldownNames = [
-  "Incarnation: Tree of Life",
-  "Tranquility",
-  "Kindred Spirits",
-  "Ravenous Frenzy",
-  "Adaptive Swarm",
-  "Convoke the Spirits",
-];
+export const druidCooldownNames = ["Incarnation: Tree of Life", "Tranquility", "Kindred Spirits", "Ravenous Frenzy", "Adaptive Swarm", "Convoke the Spirits"];
 
-export const monkCooldownNames = [
-  "Revival",
-  "Weapons of Order",
-  "Fallen Order",
-  "Bonedust Brew",
-  "Faeline Stomp",
-];
+export const monkCooldownNames = ["Revival", "Weapons of Order", "Fallen Order", "Bonedust Brew", "Faeline Stomp"];
 
 export const healerCooldownsDetailed = [
   // --------------------Paladin--------------------
@@ -531,24 +497,21 @@ export const bossAbilities = [
     ability: "Bloodlight",
     guid: 343384,
     cooldownPlannerActive: true,
-    icon: require("../../../Images/Bosses/CastleNathria/Shriekwing/Icons/BloodlightIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/Shriekwing/Icons/BloodlightIcon.jpg").default,
   },
   {
     bossID: 2398,
     ability: "Earsplitting Shriek",
     guid: 330711,
     cooldownPlannerActive: true,
-    icon: require("../../../Images/Bosses/CastleNathria/Shriekwing/Icons/EarsplittingShriekIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/Shriekwing/Icons/EarsplittingShriekIcon.jpg").default,
   },
   {
     bossID: 2398,
     ability: "Wave of Blood",
     guid: 345397,
     cooldownPlannerActive: true,
-    icon: require("../../../Images/Bosses/CastleNathria/Shriekwing/Icons/WaveOfBlood.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/Shriekwing/Icons/WaveOfBlood.jpg").default,
   },
 
   // Inactive Abilities
@@ -557,104 +520,91 @@ export const bossAbilities = [
     ability: "Reverberating Scream",
     guid: 344112,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/Shriekwing/Icons/ReverberatingScreamIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/Shriekwing/Icons/ReverberatingScreamIcon.jpg").default,
   },
   {
     bossID: 2398,
     ability: "Reverberating Scream",
     guid: 344114,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/Shriekwing/Icons/ReverberatingScreamIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/Shriekwing/Icons/ReverberatingScreamIcon.jpg").default,
   },
   {
     bossID: 2398,
     ability: "Deadly Descent",
     guid: 343021,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/Shriekwing/Icons/DeadlyDescentIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/Shriekwing/Icons/DeadlyDescentIcon.jpg").default,
   },
   {
     bossID: 2398,
     ability: "Echoing Sonar",
     guid: 343022,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/Shriekwing/Icons/EchoingSonarIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/Shriekwing/Icons/EchoingSonarIcon.jpg").default,
   },
   {
     bossID: 2398,
     ability: "Bloodcurdling Shriek",
     guid: 330712,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/Shriekwing/Icons/BloodcurdlingShriekIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/Shriekwing/Icons/BloodcurdlingShriekIcon.jpg").default,
   },
   {
     bossID: 2398,
     ability: "Bloodcurdling Shriek",
     guid: 336005,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/Shriekwing/Icons/BloodcurdlingShriekIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/Shriekwing/Icons/BloodcurdlingShriekIcon.jpg").default,
   },
   {
     bossID: 2398,
     ability: "Sonar Shriek",
     guid: 343023,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/Shriekwing/Icons/SonarShriekIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/Shriekwing/Icons/SonarShriekIcon.jpg").default,
   },
   {
     bossID: 2398,
     ability: "Blind Swipe",
     guid: 343005,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/Shriekwing/Icons/BlindSwipeIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/Shriekwing/Icons/BlindSwipeIcon.jpg").default,
   },
   {
     bossID: 2398,
     ability: "Sanguine Ichor",
     guid: 340324,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/Shriekwing/Icons/SanguineIchorIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/Shriekwing/Icons/SanguineIchorIcon.jpg").default,
   },
   {
     bossID: 2398,
     ability: "Descent",
     guid: 342923,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/Shriekwing/Icons/DescentIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/Shriekwing/Icons/DescentIcon.jpg").default,
   },
   {
     bossID: 2398,
     ability: "Exsanguinating Bite",
     guid: 328887,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/Shriekwing/Icons/ExsanguinatingBiteIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/Shriekwing/Icons/ExsanguinatingBiteIcon.jpg").default,
   },
   {
     bossID: 2398,
     ability: "Echoing Screech",
     guid: 342866,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/Shriekwing/Icons/EchoingScreechIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/Shriekwing/Icons/EchoingScreechIcon.jpg").default,
   },
   {
     bossID: 2398,
     ability: "Exsanguinated",
     guid: 328897,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/Shriekwing/Icons/ExsanguinatedIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/Shriekwing/Icons/ExsanguinatedIcon.jpg").default,
   },
 
   // Huntsman Altimor
@@ -664,24 +614,21 @@ export const bossAbilities = [
     ability: "Crushing Stone",
     guid: 334860,
     cooldownPlannerActive: true,
-    icon: require("../../../Images/Bosses/CastleNathria/HuntsmanAltimor/Icons/CrushingStoneIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/HuntsmanAltimor/Icons/CrushingStoneIcon.jpg").default,
   },
   {
     bossID: 2418,
     ability: "Rip Soul",
     guid: 334797,
     cooldownPlannerActive: true,
-    icon: require("../../../Images/Bosses/CastleNathria/HuntsmanAltimor/Icons/RipSoulIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/HuntsmanAltimor/Icons/RipSoulIcon.jpg").default,
   },
   {
     bossID: 2418,
     ability: "Sinseeker",
     guid: 335114,
     cooldownPlannerActive: true,
-    icon: require("../../../Images/Bosses/CastleNathria/HuntsmanAltimor/Icons/SinseekerIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/HuntsmanAltimor/Icons/SinseekerIcon.jpg").default,
   },
 
   // Inactive Abilities
@@ -690,96 +637,84 @@ export const bossAbilities = [
     ability: "Vicious Lunge",
     guid: 334939,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/HuntsmanAltimor/Icons/ViciousLungeIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/HuntsmanAltimor/Icons/ViciousLungeIcon.jpg").default,
   },
   {
     bossID: 2418,
     ability: "Vicious Bolt",
     guid: 338615,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/HuntsmanAltimor/Icons/ViciousBoltIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/HuntsmanAltimor/Icons/ViciousBoltIcon.jpg").default,
   },
   {
     bossID: 2418,
     ability: "Pierce Soul",
     guid: 338609,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/HuntsmanAltimor/Icons/PierceSoulIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/HuntsmanAltimor/Icons/PierceSoulIcon.jpg").default,
   },
   {
     bossID: 2418,
     ability: "Shatter Shot",
     guid: 338593,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/HuntsmanAltimor/Icons/ShatterShotIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/HuntsmanAltimor/Icons/ShatterShotIcon.jpg").default,
   },
   {
     bossID: 2418,
     ability: "Spreadshot",
     guid: 334404,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/HuntsmanAltimor/Icons/SpreadshotIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/HuntsmanAltimor/Icons/SpreadshotIcon.jpg").default,
   },
   {
     bossID: 2418,
     ability: "Vicious Wound",
     guid: 334960,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/HuntsmanAltimor/Icons/ViciousWoundIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/HuntsmanAltimor/Icons/ViciousWoundIcon.jpg").default,
   },
   {
     bossID: 2418,
     ability: "Jagged Claws",
     guid: 334971,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/HuntsmanAltimor/Icons/JaggedClawsIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/HuntsmanAltimor/Icons/JaggedClawsIcon.jpg").default,
   },
   {
     bossID: 2418,
     ability: "Deathly Roar",
     guid: 334708,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/HuntsmanAltimor/Icons/DeathlyRoarIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/HuntsmanAltimor/Icons/DeathlyRoarIcon.jpg").default,
   },
   {
     bossID: 2418,
     ability: "Unstable Soul",
     guid: 339639,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/HuntsmanAltimor/Icons/UnstableSoulIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/HuntsmanAltimor/Icons/UnstableSoulIcon.jpg").default,
   },
   {
     bossID: 2418,
     ability: "Petrifying Howl",
     guid: 334852,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/HuntsmanAltimor/Icons/PetrifyingHowlIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/HuntsmanAltimor/Icons/PetrifyingHowlIcon.jpg").default,
   },
   {
     bossID: 2418,
     ability: "Stone Shards",
     guid: 334893,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/HuntsmanAltimor/Icons/StoneShardsIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/HuntsmanAltimor/Icons/StoneShardsIcon.jpg").default,
   },
   {
     bossID: 2418,
     ability: "Shoot",
     guid: 335016,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/HuntsmanAltimor/Icons/ShootIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/HuntsmanAltimor/Icons/ShootIcon.jpg").default,
   },
 
   // Hungering Destroyer
@@ -789,32 +724,28 @@ export const bossAbilities = [
     ability: "Consume",
     guid: 334522,
     cooldownPlannerActive: true,
-    icon: require("../../../Images/Bosses/CastleNathria/HungeringDestroyer/Icons/ConsumeIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/HungeringDestroyer/Icons/ConsumeIcon.jpg").default,
   },
   {
     bossID: 2383,
     ability: "Expunge",
     guid: 329742,
     cooldownPlannerActive: true,
-    icon: require("../../../Images/Bosses/CastleNathria/HungeringDestroyer/Icons/ExpungeIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/HungeringDestroyer/Icons/ExpungeIcon.jpg").default,
   },
   {
     bossID: 2383,
     ability: "Desolate",
     guid: 329455,
     cooldownPlannerActive: true,
-    icon: require("../../../Images/Bosses/CastleNathria/HungeringDestroyer/Icons/DesolateIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/HungeringDestroyer/Icons/DesolateIcon.jpg").default,
   },
   {
     bossID: 2383,
     ability: "Gluttonous Miasma",
     guid: 329298,
     cooldownPlannerActive: true,
-    icon: require("../../../Images/Bosses/CastleNathria/HungeringDestroyer/Icons/GluttonousMiasmaIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/HungeringDestroyer/Icons/GluttonousMiasmaIcon.jpg").default,
   },
 
   // Inactive Abilities
@@ -823,32 +754,28 @@ export const bossAbilities = [
     ability: "Obliterating Rift",
     guid: 329835,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/HungeringDestroyer/Icons/ObliteratingRiftIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/HungeringDestroyer/Icons/ObliteratingRiftIcon.jpg").default,
   },
   {
     bossID: 2383,
     ability: "Volatile Ejection",
     guid: 334064,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/HungeringDestroyer/Icons/VolatileEjectionIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/HungeringDestroyer/Icons/VolatileEjectionIcon.jpg").default,
   },
   {
     bossID: 2383,
     ability: "Hungering Strikes",
     guid: 332294,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/HungeringDestroyer/Icons/HungeringStrikesIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/HungeringDestroyer/Icons/HungeringStrikesIcon.jpg").default,
   },
   {
     bossID: 2383,
     ability: "Overwhelm",
     guid: 329774,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/HungeringDestroyer/Icons/OverwhelmIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/HungeringDestroyer/Icons/OverwhelmIcon.jpg").default,
   },
 
   // Artificer Xymox
@@ -858,32 +785,28 @@ export const bossAbilities = [
     ability: "Glyph of Destruction",
     guid: 325361,
     cooldownPlannerActive: true,
-    icon: require("../../../Images/Bosses/CastleNathria/ArtificerXymox/Icons/GlyphOfDestructionIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/ArtificerXymox/Icons/GlyphOfDestructionIcon.jpg").default,
   },
   {
     bossID: 2405,
     ability: "Hyperlight Spark",
     guid: 325399,
     cooldownPlannerActive: true,
-    icon: require("../../../Images/Bosses/CastleNathria/ArtificerXymox/Icons/HyperlightSparkIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/ArtificerXymox/Icons/HyperlightSparkIcon.jpg").default,
   },
   {
     bossID: 2405,
     ability: "Aura of Dread",
     guid: 340870,
     cooldownPlannerActive: true,
-    icon: require("../../../Images/Bosses/CastleNathria/ArtificerXymox/Icons/AuraOfDreadIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/ArtificerXymox/Icons/AuraOfDreadIcon.jpg").default,
   },
   {
     bossID: 2405,
     ability: "Soul Singe",
     guid: 340842,
     cooldownPlannerActive: true,
-    icon: require("../../../Images/Bosses/CastleNathria/ArtificerXymox/Icons/SoulSingeIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/ArtificerXymox/Icons/SoulSingeIcon.jpg").default,
   },
 
   // Inactive Abilities
@@ -892,48 +815,42 @@ export const bossAbilities = [
     ability: "Dimensional Tear",
     guid: 328437,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/ArtificerXymox/Icons/DimensionalTearIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/ArtificerXymox/Icons/DimensionalTearIcon.jpg").default,
   },
   {
     bossID: 2405,
     ability: "Stasis Trap",
     guid: 326271,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/ArtificerXymox/Icons/StasisTrapIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/ArtificerXymox/Icons/StasisTrapIcon.jpg").default,
   },
   {
     bossID: 2405,
     ability: "Rift Blast",
     guid: 329458,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/ArtificerXymox/Icons/RiftBlastIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/ArtificerXymox/Icons/RiftBlastIcon.jpg").default,
   },
   {
     bossID: 2405,
     ability: "Root of Extinction",
     guid: 329770,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/ArtificerXymox/Icons/RootOfExtinctionIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/ArtificerXymox/Icons/RootOfExtinctionIcon.jpg").default,
   },
   {
     bossID: 2405,
     ability: "Withering Touch",
     guid: 340860,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/ArtificerXymox/Icons/WitheringTouchIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/ArtificerXymox/Icons/WitheringTouchIcon.jpg").default,
   },
   {
     bossID: 2405,
     ability: "Edge of Annihilation",
     guid: 328880,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/ArtificerXymox/Icons/EdgeOfAnnihilationIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/ArtificerXymox/Icons/EdgeOfAnnihilationIcon.jpg").default,
   },
 
   // Sun King's Salvation
@@ -945,136 +862,119 @@ export const bossAbilities = [
     ability: "Smoldering Remnants",
     guid: 328579,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/SunKingsSalvation/Icons/SmolderingRemnantsIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/SunKingsSalvation/Icons/SmolderingRemnantsIcon.jpg").default,
   },
   {
     bossID: 2402,
     ability: "Smoldering Plumage",
     guid: 328659,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/SunKingsSalvation/Icons/SmolderingPlumageIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/SunKingsSalvation/Icons/SmolderingPlumageIcon.jpg").default,
   },
   {
     bossID: 2402,
     ability: "Fiery Strike",
     guid: 326455,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/SunKingsSalvation/Icons/FieryStrikeIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/SunKingsSalvation/Icons/FieryStrikeIcon.jpg").default,
   },
   {
     bossID: 2402,
     ability: "Burning Remnants",
     guid: 326456,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/SunKingsSalvation/Icons/BurningRemnantsIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/SunKingsSalvation/Icons/BurningRemnantsIcon.jpg").default,
   },
   {
     bossID: 2402,
     ability: "Ember Blast",
     guid: 325877,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/SunKingsSalvation/Icons/EmberBlastIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/SunKingsSalvation/Icons/EmberBlastIcon.jpg").default,
   },
   {
     bossID: 2402,
     ability: "Lingering Embers",
     guid: 326430,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/SunKingsSalvation/Icons/LingeringEmbersIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/SunKingsSalvation/Icons/LingeringEmbersIcon.jpg").default,
   },
   {
     bossID: 2402,
     ability: "Blazing Surge",
     guid: 329518,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/SunKingsSalvation/Icons/BlazingSurgeIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/SunKingsSalvation/Icons/BlazingSurgeIcon.jpg").default,
   },
   {
     bossID: 2402,
     ability: "Vanquishing Strike",
     guid: 325440,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/SunKingsSalvation/Icons/VanquishingStrikeIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/SunKingsSalvation/Icons/VanquishingStrikeIcon.jpg").default,
   },
   {
     bossID: 2402,
     ability: "Vanquished",
     guid: 325442,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/SunKingsSalvation/Icons/VanquishedIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/SunKingsSalvation/Icons/VanquishedIcon.jpg").default,
   },
   {
     bossID: 2402,
     ability: "Concussive Smash",
     guid: 325506,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/SunKingsSalvation/Icons/ConcussiveSmashIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/SunKingsSalvation/Icons/ConcussiveSmashIcon.jpg").default,
   },
   {
     bossID: 2402,
     ability: "Crimson Flurry",
     guid: 341473,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/SunKingsSalvation/Icons/CrimsonFlurryIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/SunKingsSalvation/Icons/CrimsonFlurryIcon.jpg").default,
   },
   {
     bossID: 2402,
     ability: "Vulgar Brand",
     guid: 333002,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/SunKingsSalvation/Icons/VulgarBrandIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/SunKingsSalvation/Icons/VulgarBrandIcon.jpg").default,
   },
   {
     bossID: 2402,
     ability: "Scornful Blast",
     guid: 325590,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/SunKingsSalvation/Icons/ScornfulBlastIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/SunKingsSalvation/Icons/ScornfulBlastIcon.jpg").default,
   },
   {
     bossID: 2402,
     ability: "Shattering Ruby",
     guid: 335540,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/SunKingsSalvation/Icons/ShatteringRubyIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/SunKingsSalvation/Icons/ShatteringRubyIcon.jpg").default,
   },
   {
     bossID: 2402,
     ability: "Fragmentation",
     guid: 336398,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/SunKingsSalvation/Icons/FragmentationIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/SunKingsSalvation/Icons/FragmentationIcon.jpg").default,
   },
   {
     bossID: 2402,
     ability: "Greater Castigation",
     guid: 328890,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/SunKingsSalvation/Icons/GreaterCastigationIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/SunKingsSalvation/Icons/GreaterCastigationIcon.jpg").default,
   },
   {
     bossID: 2402,
     ability: "Soul Infusion",
     guid: 339232,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/SunKingsSalvation/Icons/SoulInfusionIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/SunKingsSalvation/Icons/SoulInfusionIcon.jpg").default,
   },
 
   // Lady Inerva Darkvein
@@ -1085,8 +985,7 @@ export const bossAbilities = [
     ability: "Change of Heart",
     guid: 325384,
     cooldownPlannerActive: true,
-    icon: require("../../../Images/Bosses/CastleNathria/LadyInervaDarkvein/Icons/ChangeOfHeartIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/LadyInervaDarkvein/Icons/ChangeOfHeartIcon.jpg").default,
   },
 
   //Inactive Abilities
@@ -1095,192 +994,168 @@ export const bossAbilities = [
     ability: "Condemn",
     guid: 331550,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/LadyInervaDarkvein/Icons/CondemnIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/LadyInervaDarkvein/Icons/CondemnIcon.jpg").default,
   },
   {
     bossID: 2406,
     ability: "Unconscionable Guilt",
     guid: 331573,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/LadyInervaDarkvein/Icons/UnconscionableGuiltIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/LadyInervaDarkvein/Icons/UnconscionableGuiltIcon.jpg").default,
   },
   {
     bossID: 2406,
     ability: "Sins and Suffering",
     guid: 342288,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/LadyInervaDarkvein/Icons/SinsAndSufferingIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/LadyInervaDarkvein/Icons/SinsAndSufferingIcon.jpg").default,
   },
   {
     bossID: 2406,
     ability: "Indemnification",
     guid: 331527,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/LadyInervaDarkvein/Icons/IndemnificationIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/LadyInervaDarkvein/Icons/IndemnificationIcon.jpg").default,
   },
   {
     bossID: 2406,
     ability: "Shared Cognition",
     guid: 325908,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/LadyInervaDarkvein/Icons/SharedCognitionIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/LadyInervaDarkvein/Icons/SharedCognitionIcon.jpg").default,
   },
   {
     bossID: 2406,
     ability: "Bottled Anima",
     guid: 325769,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/LadyInervaDarkvein/Icons/BottledAnimaIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/LadyInervaDarkvein/Icons/BottledAnimaIcon.jpg").default,
   },
   {
     bossID: 2406,
     ability: "Unleashed Volatility",
     guid: 329618,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/LadyInervaDarkvein/Icons/UnleashedVolatilityIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/LadyInervaDarkvein/Icons/UnleashedVolatilityIcon.jpg").default,
   },
   {
     bossID: 2406,
     ability: "Container Breach",
     guid: 325225,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/LadyInervaDarkvein/Icons/ContainerBreachIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/LadyInervaDarkvein/Icons/ContainerBreachIcon.jpg").default,
   },
   {
     bossID: 2406,
     ability: "Loose Anima",
     guid: 325184,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/LadyInervaDarkvein/Icons/LooseAnimaIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/LadyInervaDarkvein/Icons/LooseAnimaIcon.jpg").default,
   },
   {
     bossID: 2406,
     ability: "Expose Desires",
     guid: 341621,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/LadyInervaDarkvein/Icons/ExposeDesiresIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/LadyInervaDarkvein/Icons/ExposeDesiresIcon.jpg").default,
   },
   {
     bossID: 2406,
     ability: "Warped Desires",
     guid: 325382,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/LadyInervaDarkvein/Icons/WarpedDesiresIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/LadyInervaDarkvein/Icons/WarpedDesiresIcon.jpg").default,
   },
   {
     bossID: 2406,
     ability: "Hidden Desire",
     guid: 335322,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/LadyInervaDarkvein/Icons/HiddenDesireIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/LadyInervaDarkvein/Icons/HiddenDesireIcon.jpg").default,
   },
   {
     bossID: 2406,
     ability: "Expose Cognition",
     guid: 341623,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/LadyInervaDarkvein/Icons/ExposeCognitionIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/LadyInervaDarkvein/Icons/ExposeCognitionIcon.jpg").default,
   },
   {
     bossID: 2406,
     ability: "Expose Heart",
     guid: 341625,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/LadyInervaDarkvein/Icons/ExposeHeartIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/LadyInervaDarkvein/Icons/ExposeHeartIcon.jpg").default,
   },
   {
     bossID: 2406,
     ability: "Lingering Anima",
     guid: 342281,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/LadyInervaDarkvein/Icons/LingeringAnimaIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/LadyInervaDarkvein/Icons/LingeringAnimaIcon.jpg").default,
   },
   {
     bossID: 2406,
     ability: "Shared Suffering",
     guid: 324983,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/LadyInervaDarkvein/Icons/SharedSufferingIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/LadyInervaDarkvein/Icons/SharedSufferingIcon.jpg").default,
   },
   {
     bossID: 2406,
     ability: "Anima Web",
     guid: 326538,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/LadyInervaDarkvein/Icons/AnimaWebIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/LadyInervaDarkvein/Icons/AnimaWebIcon.jpg").default,
   },
   {
     bossID: 2406,
     ability: "Greater Sins and Suffering",
     guid: 342290,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/LadyInervaDarkvein/Icons/GreaterSinsAndSufferingIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/LadyInervaDarkvein/Icons/GreaterSinsAndSufferingIcon.jpg").default,
   },
   {
     bossID: 2406,
     ability: "Unleashed Shadow",
     guid: 341590,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/LadyInervaDarkvein/Icons/UnleashedShadowIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/LadyInervaDarkvein/Icons/UnleashedShadowIcon.jpg").default,
   },
   {
     bossID: 2406,
     ability: "Lightly Concentrated Anima",
     guid: 342320,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/LadyInervaDarkvein/Icons/LightlyConcentratedAnimaIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/LadyInervaDarkvein/Icons/LightlyConcentratedAnimaIcon.jpg").default,
   },
   {
     bossID: 2406,
     ability: "Concentrated Anima",
     guid: 342321,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/LadyInervaDarkvein/Icons/ConcentratedAnimaIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/LadyInervaDarkvein/Icons/ConcentratedAnimaIcon.jpg").default,
   },
   {
     bossID: 2406,
     ability: "Highly Concentrated Anima",
     guid: 342322,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/LadyInervaDarkvein/Icons/HighlyConcentratedAnimaIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/LadyInervaDarkvein/Icons/HighlyConcentratedAnimaIcon.jpg").default,
   },
   {
     bossID: 2406,
     ability: "Condemn",
     guid: 334017,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/LadyInervaDarkvein/Icons/CondemnIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/LadyInervaDarkvein/Icons/CondemnIcon.jpg").default,
   },
   {
     bossID: 2406,
     ability: "Fragments of Shadow",
     guid: 325596,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/LadyInervaDarkvein/Icons/FragmentsOfShadowIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/LadyInervaDarkvein/Icons/FragmentsOfShadowIcon.jpg").default,
   },
 
   // Council of Blood
@@ -1290,16 +1165,14 @@ export const bossAbilities = [
     ability: "Oppressive Atmosphere",
     guid: 334909,
     cooldownPlannerActive: true,
-    icon: require("../../../Images/Bosses/CastleNathria/TheCouncilOfBlood/Icons/OppressiveAtmosphereIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/TheCouncilOfBlood/Icons/OppressiveAtmosphereIcon.jpg").default,
   },
   {
     bossID: 2412,
     ability: "Prideful Eruption",
     guid: 346660,
     cooldownPlannerActive: true,
-    icon: require("../../../Images/Bosses/CastleNathria/TheCouncilOfBlood/Icons/PridefulEruption.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/TheCouncilOfBlood/Icons/PridefulEruption.jpg").default,
   },
 
   // Inactive Abilities
@@ -1308,64 +1181,56 @@ export const bossAbilities = [
     ability: "Tactical Advance",
     guid: 328334,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/TheCouncilOfBlood/Icons/TacticalAdvanceIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/TheCouncilOfBlood/Icons/TacticalAdvanceIcon.jpg").default,
   },
   {
     bossID: 2412,
     ability: "Unstoppable Charge",
     guid: 334948,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/TheCouncilOfBlood/Icons/UnstoppableChargeIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/TheCouncilOfBlood/Icons/UnstoppableChargeIcon.jpg").default,
   },
   {
     bossID: 2412,
     ability: "Bolt of Power",
     guid: 337110,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/TheCouncilOfBlood/Icons/BoltOfPowerIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/TheCouncilOfBlood/Icons/BoltOfPowerIcon.jpg").default,
   },
   {
     bossID: 2412,
     ability: "Anima Fountain",
     guid: 327475,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/TheCouncilOfBlood/Icons/AnimaFountainIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/TheCouncilOfBlood/Icons/AnimaFountainIcon.jpg").default,
   },
   {
     bossID: 2412,
     ability: "Scarlet Letter",
     guid: 331708,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/TheCouncilOfBlood/Icons/ScarletLetterIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/TheCouncilOfBlood/Icons/ScarletLetterIcon.jpg").default,
   },
   {
     bossID: 2412,
     ability: "Throw Food",
     guid: 330968,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/TheCouncilOfBlood/Icons/ThrowFoodIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/TheCouncilOfBlood/Icons/ThrowFoodIcon.jpg").default,
   },
   {
     bossID: 2412,
     ability: "Evasive Lunge",
     guid: 327503,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/TheCouncilOfBlood/Icons/EvasiveLungeIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/TheCouncilOfBlood/Icons/EvasiveLungeIcon.jpg").default,
   },
   {
     bossID: 2412,
     ability: "Waltz of Blood",
     guid: 327619,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/TheCouncilOfBlood/Icons/WaltzOfBloodIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/TheCouncilOfBlood/Icons/WaltzOfBloodIcon.jpg").default,
   },
   // From the adds
   {
@@ -1373,16 +1238,14 @@ export const bossAbilities = [
     ability: "Waltz of Blood",
     guid: 342852,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/TheCouncilOfBlood/Icons/WaltzOfBlood2Icon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/TheCouncilOfBlood/Icons/WaltzOfBlood2Icon.jpg").default,
   },
   {
     bossID: 2412,
     ability: "Dark Recital",
     guid: 331634,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/TheCouncilOfBlood/Icons/DarkRecitalIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/TheCouncilOfBlood/Icons/DarkRecitalIcon.jpg").default,
   },
 
   // Stone Legion Generals
@@ -1393,8 +1256,7 @@ export const bossAbilities = [
     ability: "Pulverizing Meteor",
     guid: 339728,
     cooldownPlannerActive: true,
-    icon: require("../../../Images/Bosses/CastleNathria/StoneLegionGenerals/Icons/PulverizingMeteorIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/StoneLegionGenerals/Icons/PulverizingMeteorIcon.jpg").default,
   },
 
   // Inactive Abilities
@@ -1403,16 +1265,14 @@ export const bossAbilities = [
     ability: "Wicked Laceration",
     guid: 333913,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/StoneLegionGenerals/Icons/WickedLacerationIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/StoneLegionGenerals/Icons/WickedLacerationIcon.jpg").default,
   },
   {
     bossID: 2417,
     ability: "Heart Hemorrhage",
     guid: 334771,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/StoneLegionGenerals/Icons/HeartHemorrhageIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/StoneLegionGenerals/Icons/HeartHemorrhageIcon.jpg").default,
   },
 
   {
@@ -1420,72 +1280,63 @@ export const bossAbilities = [
     ability: "Wicked Blast",
     guid: 333716,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/StoneLegionGenerals/Icons/WickedBlastIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/StoneLegionGenerals/Icons/WickedBlastIcon.jpg").default,
   },
   {
     bossID: 2417,
     ability: "Heart Rend",
     guid: 334765,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/StoneLegionGenerals/Icons/HeartRendIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/StoneLegionGenerals/Icons/HeartRendIcon.jpg").default,
   },
   {
     bossID: 2417,
     ability: "Stone Spike",
     guid: 343063,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/StoneLegionGenerals/Icons/StoneSpikeIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/StoneLegionGenerals/Icons/StoneSpikeIcon.jpg").default,
   },
   {
     bossID: 2417,
     ability: "Ravenous Feast",
     guid: 342733,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/StoneLegionGenerals/Icons/RavenousFeastIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/StoneLegionGenerals/Icons/RavenousFeastIcon.jpg").default,
   },
   {
     bossID: 2417,
     ability: "Wicked Slaughter",
     guid: 342253,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/StoneLegionGenerals/Icons/WickedSlaughterIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/StoneLegionGenerals/Icons/WickedSlaughterIcon.jpg").default,
   },
   {
     bossID: 2417,
     ability: "Serrated Swipe",
     guid: 334929,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/StoneLegionGenerals/Icons/SerratedSwipeIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/StoneLegionGenerals/Icons/SerratedSwipeIcon.jpg").default,
   },
   {
     bossID: 2417,
     ability: "Crystalline Burst",
     guid: 339693,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/StoneLegionGenerals/Icons/CrystallineBurstIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/StoneLegionGenerals/Icons/CrystallineBurstIcon.jpg").default,
   },
   {
     bossID: 2417,
     ability: "Crystalize",
     guid: 339690,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/StoneLegionGenerals/Icons/CrystalizeIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/StoneLegionGenerals/Icons/CrystalizeIcon.jpg").default,
   },
   {
     bossID: 2417,
     ability: "Ravenous Swipe",
     guid: 342740,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/StoneLegionGenerals/Icons/RavenousSwipeIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/StoneLegionGenerals/Icons/RavenousSwipeIcon.jpg").default,
   },
 
   // Sludgefist
@@ -1495,8 +1346,7 @@ export const bossAbilities = [
     ability: "Colossal Roar",
     guid: 332687,
     cooldownPlannerActive: true,
-    icon: require("../../../Images/Bosses/CastleNathria/Sludgefist/Icons/ColossalRoarIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/Sludgefist/Icons/ColossalRoarIcon.jpg").default,
   },
 
   // Inactive Abilities
@@ -1505,112 +1355,98 @@ export const bossAbilities = [
     ability: "Destructive Impact",
     guid: 332969,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/Sludgefist/Icons/DestructiveImpactIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/Sludgefist/Icons/DestructiveImpactIcon.jpg").default,
   },
   {
     bossID: 2399,
     ability: "Crumbling Foundation",
     guid: 332443,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/Sludgefist/Icons/CrumblingFoundationIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/Sludgefist/Icons/CrumblingFoundationIcon.jpg").default,
   },
   {
     bossID: 2399,
     ability: "Fractured Impact",
     guid: 341482,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/Sludgefist/Icons/FracturedImpactIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/Sludgefist/Icons/FracturedImpactIcon.jpg").default,
   },
   {
     bossID: 2399,
     ability: "Collapsing Foundation",
     guid: 332197,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/Sludgefist/Icons/CollapsingFoundationIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/Sludgefist/Icons/CollapsingFoundationIcon.jpg").default,
   },
   {
     bossID: 2399,
     ability: "Destructive Stomp",
     guid: 332318,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/Sludgefist/Icons/DestructiveStompIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/Sludgefist/Icons/DestructiveStompIcon.jpg").default,
   },
   {
     bossID: 2399,
     ability: "Heedless Charge",
     guid: 331212,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/Sludgefist/Icons/HeedlessChargeIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/Sludgefist/Icons/HeedlessChargeIcon.jpg").default,
   },
   {
     bossID: 2399,
     ability: "Fractured Boulder",
     guid: 341102,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/Sludgefist/Icons/FracturedBoulderIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/Sludgefist/Icons/FracturedBoulderIcon.jpg").default,
   },
   {
     bossID: 2399,
     ability: "Chain Link",
     guid: 335300,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/Sludgefist/Icons/ChainLinkIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/Sludgefist/Icons/ChainLinkIcon.jpg").default,
   },
   {
     bossID: 2399,
     ability: "Shattering Chain",
     guid: 335295,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/Sludgefist/Icons/ShatteringChainIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/Sludgefist/Icons/ShatteringChainIcon.jpg").default,
   },
   {
     bossID: 2399,
     ability: "Seismic Shift",
     guid: 340803,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/Sludgefist/Icons/SeismicShiftIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/Sludgefist/Icons/SeismicShiftIcon.jpg").default,
   },
   {
     bossID: 2399,
     ability: "Falling Rubble",
     guid: 332572,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/Sludgefist/Icons/FallingRubbleIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/Sludgefist/Icons/FallingRubbleIcon.jpg").default,
   },
   {
     bossID: 2399,
     ability: "Stonequake",
     guid: 335361,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/Sludgefist/Icons/StonequakeIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/Sludgefist/Icons/StonequakeIcon.jpg").default,
   },
   {
     bossID: 2399,
     ability: "Chain Slam",
     guid: 335354,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/Sludgefist/Icons/ChainSlamIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/Sludgefist/Icons/ChainSlamIcon.jpg").default,
   },
   {
     bossID: 2399,
     ability: "Chain Bleed",
     guid: 339189,
     cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/Sludgefist/Icons/ChainBleedIcon.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/Sludgefist/Icons/ChainBleedIcon.jpg").default,
   },
 
   // Denathrius
@@ -1619,24 +1455,21 @@ export const bossAbilities = [
     ability: "Hand of Destruction",
     guid: 330627,
     cooldownPlannerActive: true,
-    icon: require("../../../Images/Bosses/CastleNathria/SireDenathrius/Icons/spell_shadow_unholystrength.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/SireDenathrius/Icons/spell_shadow_unholystrength.jpg").default,
   },
   {
     bossID: 2407,
     ability: "Crescendo",
     guid: 336162,
     cooldownPlannerActive: true,
-    icon: require("../../../Images/Bosses/CastleNathria/SireDenathrius/Icons/spell_animarevendreth_missile.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/SireDenathrius/Icons/spell_animarevendreth_missile.jpg").default,
   },
   {
     bossID: 2407,
     ability: "Cleansing Pain",
     guid: 326707,
     cooldownPlannerActive: true,
-    icon: require("../../../Images/Bosses/CastleNathria/SireDenathrius/Icons/spell_animarevendreth_wave.jpg")
-      .default,
+    icon: require("../../../Images/Bosses/CastleNathria/SireDenathrius/Icons/spell_animarevendreth_wave.jpg").default,
   },
 ];
 
@@ -1990,8 +1823,8 @@ const spellData = [
     id: 337824,
     name: "Shock Barrier",
     icon: "ability_paladin_blessedmending",
-  }
-]
+  },
+];
 
 export const dungeonList = [
   {
@@ -4765,27 +4598,10 @@ export const soulbindAbilities = [
 
 export const classRaceList = {
   "Holy Paladin": {
-    races: [
-      "Races.Draenei",
-      "Races.Dwarf",
-      "Races.Human",
-      "Races.Lightforged Draenei",
-      "Races.Dark Iron Dwarf",
-      "Races.Blood Elf",
-      "Races.Tauren",
-      "Races.Zandalari Troll",
-    ],
+    races: ["Races.Draenei", "Races.Dwarf", "Races.Human", "Races.Lightforged Draenei", "Races.Dark Iron Dwarf", "Races.Blood Elf", "Races.Tauren", "Races.Zandalari Troll"],
   },
   "Restoration Druid": {
-    races: [
-      "Races.Night Elf",
-      "Races.Worgen",
-      "Races.Kul Tiran",
-      "Races.Tauren",
-      "Races.Troll",
-      "Races.Highmountain Tauren",
-      "Races.Zandalari Troll",
-    ],
+    races: ["Races.Night Elf", "Races.Worgen", "Races.Kul Tiran", "Races.Tauren", "Races.Troll", "Races.Highmountain Tauren", "Races.Zandalari Troll"],
   },
   "Holy Priest": {
     races: [

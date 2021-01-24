@@ -1,14 +1,12 @@
 import React, { Component } from "react";
 import moment from "moment";
-import MenuItem from "@material-ui/core/MenuItem";
+import { Divider, MenuItem } from "@material-ui/core";
 import bossIcons from "../../Functions/IconFunctions/BossIcons";
 import { fightDurationCalculator } from "../../Functions/Functions";
-import Divider from "@material-ui/core/Divider";
 import { bossList } from "../../Data/Data";
 
 const API = "https://www.warcraftlogs.com:443/v1/report/fights/";
 const API2 = "?api_key=92fc5d4ae86447df22a8c0917c1404dc";
-
 class LogImport extends Component {
   constructor(props) {
     super(props);
@@ -59,9 +57,7 @@ class LogImport extends Component {
               fight.start_time,
               fight.end_time,
               fight.name,
-              moment(
-                fightDurationCalculator(fight.end_time, fight.start_time)
-              ).format("mm:ss"),
+              moment(fightDurationCalculator(fight.end_time, fight.start_time)).format("mm:ss"),
               this.killwipe(fight.kill),
               fight.boss,
               fight.difficulty,
@@ -74,19 +70,13 @@ class LogImport extends Component {
                   .map((obj) => obj.zoneID),
             ]);
             this.props.close();
-            this.props.update(
-              fight.start_time,
-              fight.end_time,
-              this.state.reportid
-            );
+            this.props.update(fight.start_time, fight.end_time, this.state.reportid);
           }}
         >
           {bossIcons(fight.boss)}
           {fight.name +
             " - " +
-            moment(this.mather(fight.end_time, fight.start_time)).format(
-              "mm:ss"
-            ) +
+            moment(this.mather(fight.end_time, fight.start_time)).format("mm:ss") +
             " - " +
             this.killwipe(fight.kill) +
             " - " +

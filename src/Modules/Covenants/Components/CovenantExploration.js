@@ -1,27 +1,14 @@
 import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
-import {
-  Tabs,
-  Tab,
-  Box,
-  AppBar,
-  Grid,
-  Paper,
-  Typography,
-} from "@material-ui/core";
+import { Tabs, Tab, Box, AppBar, Grid, Paper, Typography } from "@material-ui/core";
 import { soulbindDB, soulbindConnectors } from "../SoulbindDB";
 import SoulbindNode from "./SoulbindNode";
 import ConduitObject from "./ConduitObject";
 import { getSoulbindFormula } from "../../Engine/EffectFormulas/Generic/GenericSoulbindFormulas";
 import SoulbindStatPanel from "./SoulbindStatPanel";
 import { getCovAbility } from "../../Engine/EffectFormulas/EffectEngine";
-import {
-  sumSelectedStats,
-  getEstimatedHPS,
-  getConduitIcon,
-  buildConduitStats,
-} from "../CovenantUtilities";
+import { sumSelectedStats, getEstimatedHPS, getConduitIcon, buildConduitStats } from "../CovenantUtilities";
 import "./CovenantExploration.css";
 import ReactGA from "react-ga";
 import { useTranslation } from "react-i18next";
@@ -30,13 +17,7 @@ function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
   return (
-    <div
-      role="tabpanel"
-      hidden={value !== index}
-      id={`simple-tabpanel-${index}`}
-      aria-labelledby={`simple-tab-${index}`}
-      {...other}
-    >
+    <div role="tabpanel" hidden={value !== index} id={`simple-tabpanel-${index}`} aria-labelledby={`simple-tab-${index}`} {...other}>
       {value === index && <Box p={0}>{children}</Box>}
     </div>
   );
@@ -84,32 +65,24 @@ const useStyles = makeStyles((theme) => ({
     borderRight: `1px solid ${theme.palette.divider}`,
   },
   kyrianHeaderStyle: {
-    backgroundImage: `url(${
-      require("../../../Images/BastionHeader.png").default
-    })`,
+    backgroundImage: `url(${require("../../../Images/BastionHeader.png").default})`,
     borderRadius: "4px 0px 0px 0px",
   },
   nightFaeHeaderStyle: {
-    backgroundImage: `url(${
-      require("../../../Images/NightFaeHeader.png").default
-    })`,
+    backgroundImage: `url(${require("../../../Images/NightFaeHeader.png").default})`,
   },
   venthyrHeaderStyle: {
-    backgroundImage: `url(${
-      require("../../../Images/VenthyrHeader.png").default
-    })`,
+    backgroundImage: `url(${require("../../../Images/VenthyrHeader.png").default})`,
   },
   necrolordHeaderStyle: {
-    backgroundImage: `url(${
-      require("../../../Images/NecroHeader.png").default
-    })`,
+    backgroundImage: `url(${require("../../../Images/NecroHeader.png").default})`,
     borderRadius: "0px 4px 0px 0px",
   },
   header: {
     [theme.breakpoints.down("sm")]: {
       marginTop: 120,
     },
-  }
+  },
 }));
 
 // ==============================================
@@ -121,9 +94,7 @@ export default function CovenantExploration(props) {
   const classes = useStyles();
   const [tabvalue, setTabValue] = React.useState(0);
   const [soulbindValue, setSoulbindValue] = React.useState(0);
-  const [soulbindState, setSoulbindState] = React.useState(
-    buildBonusStats(soulbindDB, props.pl, props.contentType)
-  );
+  const [soulbindState, setSoulbindState] = React.useState(buildBonusStats(soulbindDB, props.pl, props.contentType));
 
   function updateConduitLevel(id, newLevel) {
     props.pl.updateConduitLevel(id, newLevel);
@@ -178,40 +149,18 @@ export default function CovenantExploration(props) {
 
   return (
     <div className={classes.header}>
-      <Typography
-        variant="h4"
-        align="center"
-        style={{ padding: "10px 10px 5px 10px" }}
-        color="primary"
-      >
+      <Typography variant="h4" align="center" style={{ padding: "10px 10px 5px 10px" }} color="primary">
         {t("Soulbinds.Header")}
       </Typography>
 
       <div className={classes.root}>
-        <AppBar
-          position="static"
-          style={{ backgroundColor: "#000", borderRadius: "4px 4px 0px 0px" }}
-          elevation={0}
-        >
-          <Tabs
-            value={tabvalue}
-            onChange={handleTabChange}
-            aria-label="simple tabs example"
-            variant="fullWidth"
-            TabIndicatorProps={{ style: { backgroundColor: "#F2BF59" } }}
-          >
+        <AppBar position="static" style={{ backgroundColor: "#000", borderRadius: "4px 4px 0px 0px" }} elevation={0}>
+          <Tabs value={tabvalue} onChange={handleTabChange} aria-label="simple tabs example" variant="fullWidth" TabIndicatorProps={{ style: { backgroundColor: "#F2BF59" } }}>
             <Tab
               className={classes.kyrianHeaderStyle}
               icon={
                 <div className="container">
-                  <img
-                    height={45}
-                    src={
-                      process.env.PUBLIC_URL +
-                      "/Images/Interface/Kyrian_Sigil.png"
-                    }
-                    alt={t("Covenants.Kyrian")}
-                  />
+                  <img height={45} src={process.env.PUBLIC_URL + "/Images/Interface/Kyrian_Sigil.png"} alt={t("Covenants.Kyrian")} />
                   <div className="centered"> {t("Covenants.Kyrian")} </div>
                 </div>
               }
@@ -221,13 +170,7 @@ export default function CovenantExploration(props) {
               className={classes.nightFaeHeaderStyle}
               icon={
                 <div className="container">
-                  <img
-                    height={45}
-                    src={
-                      process.env.PUBLIC_URL + "/Images/Interface/Fae_Sigil.png"
-                    }
-                    alt={t("Covenants.NightFae")}
-                  />
+                  <img height={45} src={process.env.PUBLIC_URL + "/Images/Interface/Fae_Sigil.png"} alt={t("Covenants.NightFae")} />
                   <div className="centered"> {t("Covenants.NightFae")} </div>
                 </div>
               }
@@ -237,14 +180,7 @@ export default function CovenantExploration(props) {
               className={classes.venthyrHeaderStyle}
               icon={
                 <div className="container">
-                  <img
-                    height={45}
-                    src={
-                      process.env.PUBLIC_URL +
-                      "/Images/Interface/Venthyr_Sigil.png"
-                    }
-                    alt={t("Covenants.Venthyr")}
-                  />
+                  <img height={45} src={process.env.PUBLIC_URL + "/Images/Interface/Venthyr_Sigil.png"} alt={t("Covenants.Venthyr")} />
                   <div className="centered"> {t("Covenants.Venthyr")} </div>
                 </div>
               }
@@ -254,14 +190,7 @@ export default function CovenantExploration(props) {
               className={classes.necrolordHeaderStyle}
               icon={
                 <div className="container">
-                  <img
-                    height={45}
-                    src={
-                      process.env.PUBLIC_URL +
-                      "/Images/Interface/Death_Lords_Sigil.png"
-                    }
-                    alt={t("Covenants.Necrolords")}
-                  />
+                  <img height={45} src={process.env.PUBLIC_URL + "/Images/Interface/Death_Lords_Sigil.png"} alt={t("Covenants.Necrolords")} />
                   <div className="centered"> {t("Covenants.Necrolords")} </div>
                 </div>
               }
@@ -283,84 +212,31 @@ export default function CovenantExploration(props) {
             >
               <Tab
                 style={{ color: "white" }}
-                icon={
-                  <img
-                    height={100}
-                    alt={t("Covenants.Soulbinds.Pelagos")}
-                    src={
-                      process.env.PUBLIC_URL + "/Images/Interface/pelagos.webp"
-                    }
-                  />
-                }
+                icon={<img height={100} alt={t("Covenants.Soulbinds.Pelagos")} src={process.env.PUBLIC_URL + "/Images/Interface/pelagos.webp"} />}
                 label={t("Covenants.Soulbinds.Pelagos")}
                 {...a11yPropsVert(0)}
               />
               <Tab
                 style={{ color: "white" }}
-                icon={
-                  <img
-                    height={100}
-                    alt={t("Covenants.Soulbinds.Kleia")}
-                    src={
-                      process.env.PUBLIC_URL + "/Images/Interface/kleia.webp"
-                    }
-                  />
-                }
+                icon={<img height={100} alt={t("Covenants.Soulbinds.Kleia")} src={process.env.PUBLIC_URL + "/Images/Interface/kleia.webp"} />}
                 label={t("Covenants.Soulbinds.Kleia")}
                 {...a11yPropsVert(1)}
               />
               <Tab
                 style={{ color: "white" }}
-                icon={
-                  <img
-                    height={100}
-                    alt={t("Covenants.Soulbinds.Mikanikos")}
-                    src={
-                      process.env.PUBLIC_URL +
-                      "/Images/Interface/forgelite-prime-mikanikos.webp"
-                    }
-                  />
-                }
+                icon={<img height={100} alt={t("Covenants.Soulbinds.Mikanikos")} src={process.env.PUBLIC_URL + "/Images/Interface/forgelite-prime-mikanikos.webp"} />}
                 label={t("Covenants.Soulbinds.Mikanikos")}
                 {...a11yPropsVert(2)}
               />
             </Tabs>
 
-            <TabPanel
-              value={soulbindValue}
-              index={0}
-              style={{ display: "inline-flex" }}
-            >
-              {buildSoulbind(
-                "Pelagos",
-                props.pl,
-                props.contentType,
-                soulbindState,
-                activateSoulbind,
-                setConduitInSlot,
-                updateConduitLevel
-              )}
+            <TabPanel value={soulbindValue} index={0} style={{ display: "inline-flex" }}>
+              {buildSoulbind("Pelagos", props.pl, props.contentType, soulbindState, activateSoulbind, setConduitInSlot, updateConduitLevel)}
             </TabPanel>
-            <TabPanel
-              value={soulbindValue}
-              index={1}
-              style={{ display: "inline-flex" }}
-            >
-              {buildSoulbind(
-                "Kleia",
-                props.pl,
-                props.contentType,
-                soulbindState,
-                activateSoulbind,
-                setConduitInSlot,
-                updateConduitLevel
-              )}
+            <TabPanel value={soulbindValue} index={1} style={{ display: "inline-flex" }}>
+              {buildSoulbind("Kleia", props.pl, props.contentType, soulbindState, activateSoulbind, setConduitInSlot, updateConduitLevel)}
             </TabPanel>
-            <TabPanel
-              value={soulbindValue}
-              index={2}
-              style={{ display: "inline-flex" }}
-            >
+            <TabPanel value={soulbindValue} index={2} style={{ display: "inline-flex" }}>
               {buildSoulbind(
                 "Mikanikos",
                 props.pl,
@@ -369,7 +245,7 @@ export default function CovenantExploration(props) {
                 activateSoulbind,
 
                 setConduitInSlot,
-                updateConduitLevel
+                updateConduitLevel,
               )}
             </TabPanel>
           </div>
@@ -388,79 +264,32 @@ export default function CovenantExploration(props) {
             >
               <Tab
                 style={{ color: "white" }}
-                icon={
-                  <img
-                    height={100}
-                    alt={t("Covenants.Soulbinds.Niya")}
-                    src={process.env.PUBLIC_URL + "/Images/Interface/niya.webp"}
-                  />
-                }
+                icon={<img height={100} alt={t("Covenants.Soulbinds.Niya")} src={process.env.PUBLIC_URL + "/Images/Interface/niya.webp"} />}
                 label={t("Covenants.Soulbinds.Niya")}
                 {...a11yPropsVert(0)}
               />
               <Tab
                 style={{ color: "white" }}
-                icon={
-                  <img
-                    height={100}
-                    alt={t("Covenants.Soulbinds.Dreamweaver")}
-                    src={
-                      process.env.PUBLIC_URL +
-                      "/Images/Interface/dreamweaver.webp"
-                    }
-                  />
-                }
+                icon={<img height={100} alt={t("Covenants.Soulbinds.Dreamweaver")} src={process.env.PUBLIC_URL + "/Images/Interface/dreamweaver.webp"} />}
                 label={t("Covenants.Soulbinds.Dreamweaver")}
                 {...a11yPropsVert(1)}
               />
               <Tab
                 style={{ color: "white" }}
-                icon={
-                  <img
-                    height={100}
-                    alt={t("Covenants.Soulbinds.Korayn")}
-                    src={
-                      process.env.PUBLIC_URL + "/Images/Interface/korayn.webp"
-                    }
-                  />
-                }
+                icon={<img height={100} alt={t("Covenants.Soulbinds.Korayn")} src={process.env.PUBLIC_URL + "/Images/Interface/korayn.webp"} />}
                 label={t("Covenants.Soulbinds.Korayn")}
                 {...a11yPropsVert(2)}
               />
             </Tabs>
 
             <TabPanel value={soulbindValue} index={0}>
-              {buildSoulbind(
-                "Niya",
-                props.pl,
-                props.contentType,
-                soulbindState,
-                activateSoulbind,
-                setConduitInSlot,
-                updateConduitLevel
-              )}
+              {buildSoulbind("Niya", props.pl, props.contentType, soulbindState, activateSoulbind, setConduitInSlot, updateConduitLevel)}
             </TabPanel>
             <TabPanel value={soulbindValue} index={1}>
-              {buildSoulbind(
-                "Dreamweaver",
-                props.pl,
-                props.contentType,
-                soulbindState,
-                activateSoulbind,
-                setConduitInSlot,
-                updateConduitLevel
-              )}
+              {buildSoulbind("Dreamweaver", props.pl, props.contentType, soulbindState, activateSoulbind, setConduitInSlot, updateConduitLevel)}
             </TabPanel>
             <TabPanel value={soulbindValue} index={2}>
-              {buildSoulbind(
-                "Korayn",
-                props.pl,
-                props.contentType,
-                soulbindState,
-                activateSoulbind,
-                setConduitInSlot,
-                updateConduitLevel
-              )}
+              {buildSoulbind("Korayn", props.pl, props.contentType, soulbindState, activateSoulbind, setConduitInSlot, updateConduitLevel)}
             </TabPanel>
           </div>
         </TabPanel>
@@ -478,83 +307,32 @@ export default function CovenantExploration(props) {
             >
               <Tab
                 style={{ color: "white" }}
-                icon={
-                  <img
-                    height={100}
-                    alt={t("Covenants.Soulbinds.Nadjia")}
-                    src={
-                      process.env.PUBLIC_URL +
-                      "/Images/Interface/nadjia-the-mistblade.webp"
-                    }
-                  />
-                }
+                icon={<img height={100} alt={t("Covenants.Soulbinds.Nadjia")} src={process.env.PUBLIC_URL + "/Images/Interface/nadjia-the-mistblade.webp"} />}
                 label={t("Covenants.Soulbinds.Nadjia")}
                 {...a11yPropsVert(0)}
               />
               <Tab
                 style={{ color: "white" }}
-                icon={
-                  <img
-                    height={100}
-                    alt={t("Covenants.Soulbinds.Theotar")}
-                    src={
-                      process.env.PUBLIC_URL +
-                      "/Images/Interface/theotar-the-mad-duke.webp"
-                    }
-                  />
-                }
+                icon={<img height={100} alt={t("Covenants.Soulbinds.Theotar")} src={process.env.PUBLIC_URL + "/Images/Interface/theotar-the-mad-duke.webp"} />}
                 label={t("Covenants.Soulbinds.Theotar")}
                 {...a11yPropsVert(1)}
               />
               <Tab
                 style={{ color: "white" }}
-                icon={
-                  <img
-                    height={100}
-                    alt={t("Covenants.Soulbinds.Draven")}
-                    src={
-                      process.env.PUBLIC_URL +
-                      "/Images/Interface/general-draven.webp"
-                    }
-                  />
-                }
+                icon={<img height={100} alt={t("Covenants.Soulbinds.Draven")} src={process.env.PUBLIC_URL + "/Images/Interface/general-draven.webp"} />}
                 label={t("Covenants.Soulbinds.Draven")}
                 {...a11yPropsVert(2)}
               />
             </Tabs>
 
             <TabPanel value={soulbindValue} index={0}>
-              {buildSoulbind(
-                "Nadjia",
-                props.pl,
-                props.contentType,
-                soulbindState,
-                activateSoulbind,
-                setConduitInSlot,
-                updateConduitLevel
-              )}
+              {buildSoulbind("Nadjia", props.pl, props.contentType, soulbindState, activateSoulbind, setConduitInSlot, updateConduitLevel)}
             </TabPanel>
             <TabPanel value={soulbindValue} index={1}>
-              {buildSoulbind(
-                "Theotar",
-                props.pl,
-                props.contentType,
-                soulbindState,
-                activateSoulbind,
-                setConduitInSlot,
-                updateConduitLevel
-              )}
+              {buildSoulbind("Theotar", props.pl, props.contentType, soulbindState, activateSoulbind, setConduitInSlot, updateConduitLevel)}
             </TabPanel>
             <TabPanel value={soulbindValue} index={2}>
-              {buildSoulbind(
-                "Draven",
-                props.pl,
-                props.contentType,
-                soulbindState,
-                activateSoulbind,
-                setConduitInSlot,
-                updateConduitLevel
-              )}
+              {buildSoulbind("Draven", props.pl, props.contentType, soulbindState, activateSoulbind, setConduitInSlot, updateConduitLevel)}
             </TabPanel>
           </div>
         </TabPanel>
@@ -572,82 +350,32 @@ export default function CovenantExploration(props) {
             >
               <Tab
                 style={{ color: "white" }}
-                icon={
-                  <img
-                    height={100}
-                    alt={t("Covenants.Soulbinds.Marileth")}
-                    src={
-                      process.env.PUBLIC_URL +
-                      "/Images/Interface/plague-deviser-marileth.webp"
-                    }
-                  />
-                }
+                icon={<img height={100} alt={t("Covenants.Soulbinds.Marileth")} src={process.env.PUBLIC_URL + "/Images/Interface/plague-deviser-marileth.webp"} />}
                 label={t("Covenants.Soulbinds.Marileth")}
                 {...a11yPropsVert(0)}
               />
               <Tab
                 style={{ color: "white" }}
-                icon={
-                  <img
-                    height={100}
-                    alt={t("Covenants.Soulbinds.Emeni")}
-                    src={
-                      process.env.PUBLIC_URL + "/Images/Interface/emeni.webp"
-                    }
-                  />
-                }
+                icon={<img height={100} alt={t("Covenants.Soulbinds.Emeni")} src={process.env.PUBLIC_URL + "/Images/Interface/emeni.webp"} />}
                 label={t("Covenants.Soulbinds.Emeni")}
                 {...a11yPropsVert(1)}
               />
               <Tab
                 style={{ color: "white" }}
-                icon={
-                  <img
-                    height={100}
-                    alt={t("Covenants.Soulbinds.Heirmir")}
-                    src={
-                      process.env.PUBLIC_URL +
-                      "/Images/Interface/bonesmith-heirmir.webp"
-                    }
-                  />
-                }
+                icon={<img height={100} alt={t("Covenants.Soulbinds.Heirmir")} src={process.env.PUBLIC_URL + "/Images/Interface/bonesmith-heirmir.webp"} />}
                 label={t("Covenants.Soulbinds.Heirmir")}
                 {...a11yPropsVert(2)}
               />
             </Tabs>
 
             <TabPanel value={soulbindValue} index={0}>
-              {buildSoulbind(
-                "Marileth",
-                props.pl,
-                props.contentType,
-                soulbindState,
-                activateSoulbind,
-                setConduitInSlot,
-                updateConduitLevel
-              )}
+              {buildSoulbind("Marileth", props.pl, props.contentType, soulbindState, activateSoulbind, setConduitInSlot, updateConduitLevel)}
             </TabPanel>
             <TabPanel value={soulbindValue} index={1}>
-              {buildSoulbind(
-                "Emeni",
-                props.pl,
-                props.contentType,
-                soulbindState,
-                activateSoulbind,
-                setConduitInSlot,
-                updateConduitLevel
-              )}
+              {buildSoulbind("Emeni", props.pl, props.contentType, soulbindState, activateSoulbind, setConduitInSlot, updateConduitLevel)}
             </TabPanel>
             <TabPanel value={soulbindValue} index={2}>
-              {buildSoulbind(
-                "Heirmir",
-                props.pl,
-                props.contentType,
-                soulbindState,
-                activateSoulbind,
-                setConduitInSlot,
-                updateConduitLevel
-              )}
+              {buildSoulbind("Heirmir", props.pl, props.contentType, soulbindState, activateSoulbind, setConduitInSlot, updateConduitLevel)}
             </TabPanel>
           </div>
         </TabPanel>
@@ -656,22 +384,10 @@ export default function CovenantExploration(props) {
   );
 }
 
-function buildSoulbind(
-  soulbindName,
-  player,
-  contentType,
-  soulbindState,
-  activateSoulbind,
-  setConduitInSlot,
-  updateConduitLevel
-) {
+function buildSoulbind(soulbindName, player, contentType, soulbindState, activateSoulbind, setConduitInSlot, updateConduitLevel) {
   const { t, i18n } = useTranslation();
-  let activeSoulbind = soulbindState.filter(
-    (trait) => trait.soulbind === soulbindName
-  );
-  let activeConnectors = soulbindConnectors.filter(
-    (trait) => trait.soulbind === soulbindName
-  );
+  let activeSoulbind = soulbindState.filter((trait) => trait.soulbind === soulbindName);
+  let activeConnectors = soulbindConnectors.filter((trait) => trait.soulbind === soulbindName);
 
   player.calculateConduits(contentType);
 
@@ -682,34 +398,17 @@ function buildSoulbind(
 
   let statSums = sumSelectedStats(soulbindName, soulbindState);
   let estimatedHPS = getEstimatedHPS(statSums, player, contentType);
-  let covAbility = getEstimatedHPS(
-    getCovAbility(soulbindName, player, contentType)
-  );
+  let covAbility = getEstimatedHPS(getCovAbility(soulbindName, player, contentType));
   return (
-    <Grid
-      id="soulbind"
-      container
-      direction="row"
-      style={{ display: "flex", flexWrap: "nowrap" }}
-    >
+    <Grid id="soulbind" container direction="row" style={{ display: "flex", flexWrap: "nowrap" }}>
       <Grid item>
         <div id="soulbinds" style={{ position: "relative" }}>
-          <img
-            src={
-              process.env.PUBLIC_URL +
-              "/Images/Interface/SoulbindBackgroundFat.jpg"
-            }
-            alt=""
-          />
+          <img src={process.env.PUBLIC_URL + "/Images/Interface/SoulbindBackgroundFat.jpg"} alt="" />
           <div id="nodes" style={{}}>
             {activeConnectors.map((trait, index) => (
               <img
                 key={index}
-                src={
-                  process.env.PUBLIC_URL +
-                  "/Images/Interface/SoulbindsLine" +
-                  trait.src
-                }
+                src={process.env.PUBLIC_URL + "/Images/Interface/SoulbindsLine" + trait.src}
                 style={{
                   position: "absolute",
                   zIndex: 0,
@@ -750,13 +449,7 @@ function buildSoulbind(
             maxHeight: 700, // 609 Slim
           }}
         >
-          <Grid
-            container
-            direction="column"
-            justify="space-between"
-            alignItems="center"
-            style={{ height: "100%" }}
-          >
+          <Grid container direction="column" justify="space-between" alignItems="center" style={{ height: "100%" }}>
             <Grid
               container
               id="conduitChoices"
@@ -774,21 +467,14 @@ function buildSoulbind(
                     textAlign: "center",
                   }}
                 >
-                  <Typography
-                    variant="h6"
-                    align="center"
-                    style={{ fontSize: 12 }}
-                  >
+                  <Typography variant="h6" align="center" style={{ fontSize: 12 }}>
                     {t("Soulbinds.ConduitInstructions")}
                   </Typography>
                 </Paper>
               </Grid>
               <Grid item xs={12}>
                 <img
-                  src={
-                    process.env.PUBLIC_URL +
-                    "/Images/Interface/PotencyConduitTag.png"
-                  }
+                  src={process.env.PUBLIC_URL + "/Images/Interface/PotencyConduitTag.png"}
                   style={{
                     objectFit: "cover",
                     width: "214px",
@@ -798,20 +484,13 @@ function buildSoulbind(
                 />
                 <Grid container spacing={1}>
                   {potencyConduits.map((conduit, i) => (
-                    <ConduitObject
-                      conduit={conduit}
-                      key={i}
-                      updateConduitLevel={updateConduitLevel}
-                    />
+                    <ConduitObject conduit={conduit} key={i} updateConduitLevel={updateConduitLevel} />
                   ))}
                 </Grid>
               </Grid>
               <Grid item xs={12}>
                 <img
-                  src={
-                    process.env.PUBLIC_URL +
-                    "/Images/Interface/EnduranceConduitTag.png"
-                  }
+                  src={process.env.PUBLIC_URL + "/Images/Interface/EnduranceConduitTag.png"}
                   style={{
                     objectFit: "cover",
                     width: "214px",
@@ -821,11 +500,7 @@ function buildSoulbind(
                 />
                 <Grid container spacing={1}>
                   {enduranceConduits.map((conduit, i) => (
-                    <ConduitObject
-                      conduit={conduit}
-                      key={i}
-                      updateConduitLevel={updateConduitLevel}
-                    />
+                    <ConduitObject conduit={conduit} key={i} updateConduitLevel={updateConduitLevel} />
                   ))}
                 </Grid>
               </Grid>
@@ -838,11 +513,7 @@ function buildSoulbind(
                 maxWidth: 245,
               }}
             >
-              <SoulbindStatPanel
-                hps={estimatedHPS}
-                covAbility={covAbility}
-                stats={statSums}
-              />
+              <SoulbindStatPanel hps={estimatedHPS} covAbility={covAbility} stats={statSums} />
             </Grid>
           </Grid>
         </div>

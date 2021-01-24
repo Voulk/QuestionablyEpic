@@ -1,16 +1,7 @@
 import { itemDB, tokenDB } from "../../Player/ItemDB";
 import { bonus_IDs } from "../BonusIDs";
 import { getItemLevel } from "../ItemUtilities";
-import {
-  calcStatsAtLevel,
-  getItemAllocations,
-  scoreItem,
-  getItemEffect,
-  correctCasing,
-  getValidWeaponTypes,
-  getItemSlot,
-  getItemSubclass,
-} from "../ItemUtilities";
+import { calcStatsAtLevel, getItemAllocations, scoreItem, getItemEffect, correctCasing, getValidWeaponTypes, getItemSlot, getItemSubclass } from "../ItemUtilities";
 import Item from "../../Player/Item";
 
 const stat_ids = {
@@ -20,26 +11,11 @@ const stat_ids = {
   49: "mastery",
 };
 
-export function runSimC(
-  simCInput,
-  player,
-  contentType,
-  setErrorMessage,
-  snackHandler,
-  closeDialog,
-  clearSimCInput
-) {
+export function runSimC(simCInput, player, contentType, setErrorMessage, snackHandler, closeDialog, clearSimCInput) {
   var lines = simCInput.split("\n");
 
   // Check that the SimC string is valid.
-  if (
-    checkSimCValid(
-      lines.slice(1, 8),
-      lines.length,
-      player.getSpec(),
-      setErrorMessage
-    )
-  ) {
+  if (checkSimCValid(lines.slice(1, 8), lines.length, player.getSpec(), setErrorMessage)) {
     player.clearActiveItems();
 
     /*  Loop through our SimC string. 
@@ -52,22 +28,13 @@ export function runSimC(
             We should take care that we never use the Name tags in the string.
     */
 
-    let vaultItems =
-      lines.indexOf("### Weekly Reward Choices") !== -1
-        ? lines.indexOf("### Weekly Reward Choices")
-        : lines.length;
-    let linkedItems =
-      lines.indexOf("### Linked gear") !== -1
-        ? lines.indexOf("### Linked gear")
-        : 0;
+    let vaultItems = lines.indexOf("### Weekly Reward Choices") !== -1 ? lines.indexOf("### Weekly Reward Choices") : lines.length;
+    let linkedItems = lines.indexOf("### Linked gear") !== -1 ? lines.indexOf("### Linked gear") : 0;
 
     // We only use the covenant variable to expand weapon tokens. Setting a default is a better approach than showing none if it's missing,
     // given the weapons and offhands are near identical anyway.
     const covenantLine = lines.filter((x) => x.includes("covenant"));
-    const covenant =
-      covenantLine.length > 0
-        ? covenantLine[0].split("=")[1].toLowerCase()
-        : "venthyr";
+    const covenant = covenantLine.length > 0 ? covenantLine[0].split("=")[1].toLowerCase() : "venthyr";
 
     player.setCovenant(covenant);
 
@@ -76,8 +43,7 @@ export function runSimC(
       let type = i > vaultItems || i < linkedItems ? "Vault" : "Regular";
       // If our line doesn't include an item ID, skip it.
       if (line.includes("id=")) {
-        if (line.includes("unknown"))
-          processToken(line, player, contentType, type, covenant);
+        if (line.includes("unknown")) processToken(line, player, contentType, type, covenant);
         else processItem(line, player, contentType, type);
       }
     }
@@ -106,17 +72,12 @@ function checkSimCValid(simCHeader, length, playerClass, setErrorMessage) {
     let line = simCHeader[i];
 
     if (playerClass.includes(line.split("=")[0])) checks.class = true;
-    else if (line.split("=")[0] === "level" && line.split("=")[1] === "60")
-      checks.level = true;
+    else if (line.split("=")[0] === "level" && line.split("=")[1] === "60") checks.level = true;
   }
 
-  if (!checks.class)
-    errorMessage += "Spec on your SimC string doesn't match selected char. ";
-  if (!checks.level)
-    errorMessage += "QE Live is designed for level 60 characters. ";
-  if (!checks.length)
-    errorMessage +=
-      "Your SimC string is a bit long. Make sure you haven't pasted it in twice!";
+  if (!checks.class) errorMessage += "Spec on your SimC string doesn't match selected char. ";
+  if (!checks.level) errorMessage += "QE Live is designed for level 60 characters. ";
+  if (!checks.length) errorMessage += "Your SimC string is a bit long. Make sure you haven't pasted it in twice!";
 
   setErrorMessage(errorMessage);
   return checks.class && checks.version && checks.level && checks.length;
@@ -134,13 +95,10 @@ function processToken(line, player, contentType, type, covenant) {
 
     if (j === 0) {
       // Do nothing.
-    } else if (info.includes("bonus_id="))
-      itemBonusIDs = info.split("=")[1].split("/");
+    } else if (info.includes("bonus_id=")) itemBonusIDs = info.split("=")[1].split("/");
     else if (info.includes("id=")) tokenID = parseInt(info.split("=")[1]);
   }
-  console.log(
-    "Creating Token with level" + tokenLevel + ", and ID: " + tokenID
-  );
+  console.log("Creating Token with level" + tokenLevel + ", and ID: " + tokenID);
   let token = tokenDB[tokenID.toString()];
   tokenLevel = token.itemLevel;
   tokenSlot = token.slotType;
@@ -172,16 +130,12 @@ function processToken(line, player, contentType, type, covenant) {
       item.softScore = scoreItem(item, player, contentType);
       if (item.vaultItem) item.uniqueEquip = "vault";
 
-      console.log(
-        "Adding Item from Token: " + item.id + " in slot: " + itemSlot
-      );
+      console.log("Adding Item from Token: " + item.id + " in slot: " + itemSlot);
       player.addActiveItem(item);
     }
   }
 
-  console.log(
-    "Creating Token with level" + tokenLevel + ", and ID: " + tokenID
-  );
+  console.log("Creating Token with level" + tokenLevel + ", and ID: " + tokenID);
 }
 
 function processItem(line, player, contentType, type) {
@@ -218,13 +172,10 @@ function processItem(line, player, contentType, type) {
       itemBonusIDs = info.split("=")[1].split("/");
       bonusIDS = itemBonusIDs.join(":");
     } else if (info.includes("gem_id=")) gemID = parseInt(info.split("=")[1]);
-    else if (info.includes("enchant_id="))
-      enchantID = parseInt(info.split("=")[1]);
+    else if (info.includes("enchant_id=")) enchantID = parseInt(info.split("=")[1]);
     else if (info.includes("id=")) itemID = parseInt(info.split("=")[1]);
-    else if (info.includes("drop_level="))
-      dropLevel = parseInt(info.split("=")[1]);
-    else if (info.includes("crafted_stats="))
-      craftedStats = info.split("=")[1].split("/");
+    else if (info.includes("drop_level=")) dropLevel = parseInt(info.split("=")[1]);
+    else if (info.includes("crafted_stats=")) craftedStats = info.split("=")[1].split("/");
   }
 
   // Grab the items base level from our item database.
@@ -297,43 +248,22 @@ function processItem(line, player, contentType, type) {
     else if (bonus_id === "6649") missiveStats.push("haste");
     else if (bonus_id === "6650") missiveStats.push("versatility");
   }
-  if (craftedStats.length !== 0)
-    itemBonusStats = getSecondaryAllocationAtItemLevel(
-      itemLevel,
-      itemSlot,
-      craftedStats
-    );
+  if (craftedStats.length !== 0) itemBonusStats = getSecondaryAllocationAtItemLevel(itemLevel, itemSlot, craftedStats);
 
   // Add the new item to our characters item collection.
   if (itemLevel > 60 && itemID !== 0) {
     let itemAllocations = getItemAllocations(itemID, missiveStats);
 
-    let item = new Item(
-      itemID,
-      "",
-      itemSlot,
-      itemSocket || checkDefaultSocket(itemID),
-      itemTertiary,
-      0,
-      itemLevel,
-      bonusIDS
-    );
+    let item = new Item(itemID, "", itemSlot, itemSocket || checkDefaultSocket(itemID), itemTertiary, 0, itemLevel, bonusIDS);
     item.vaultItem = type === "Vault";
     item.active = itemEquipped || item.vaultItem;
     item.level = itemLevel;
     item.isEquipped = itemEquipped;
-    item.stats = calcStatsAtLevel(
-      itemLevel,
-      itemSlot,
-      itemAllocations,
-      itemTertiary
-    );
+    item.stats = calcStatsAtLevel(itemLevel, itemSlot, itemAllocations, itemTertiary);
     if (Object.keys(itemBonusStats).length > 0) item.addStats(itemBonusStats);
 
-    item.effect =
-      Object.keys(itemEffect).length !== 0 ? itemEffect : getItemEffect(itemID);
-    if (item.effect.type && item.effect.type === "spec legendary")
-      item.uniqueEquip = "legendary";
+    item.effect = Object.keys(itemEffect).length !== 0 ? itemEffect : getItemEffect(itemID);
+    if (item.effect.type && item.effect.type === "spec legendary") item.uniqueEquip = "legendary";
     else if (item.vaultItem) item.uniqueEquip = "vault";
     item.softScore = scoreItem(item, player, contentType);
 
@@ -344,11 +274,7 @@ function processItem(line, player, contentType, type) {
   }
 }
 
-function getSecondaryAllocationAtItemLevel(
-  itemLevel,
-  slot,
-  crafted_stats = []
-) {
+function getSecondaryAllocationAtItemLevel(itemLevel, slot, crafted_stats = []) {
   let allocation = 0;
   let bonus_stats = {};
 

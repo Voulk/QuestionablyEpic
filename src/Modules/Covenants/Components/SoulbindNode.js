@@ -1,13 +1,7 @@
 import React from "react";
 import { getSoulbindFormula } from "../../Engine/EffectFormulas/Generic/GenericSoulbindFormulas";
-import Menu from "@material-ui/core/Menu";
-import MenuItem from "@material-ui/core/MenuItem";
-import {
-  getConduitName,
-  filterConduits,
-  getCovenant,
-} from "../CovenantUtilities";
-import Paper from "@material-ui/core/Paper";
+import { Menu, MenuItem, Paper } from "@material-ui/core";
+import { getConduitName, filterConduits, getCovenant } from "../CovenantUtilities";
 import { useTranslation } from "react-i18next";
 
 const columnPos = [200, 290, 380];
@@ -61,12 +55,7 @@ const itemQuality = (quality) => {
 function getBenefitString(bonus_stats) {
   let benefitString = "";
   Object.entries(bonus_stats).forEach(([key, value]) => {
-    if (
-      value !== 0 &&
-      typeof value === "number" &&
-      value !== undefined &&
-      !isNaN(value)
-    ) {
+    if (value !== 0 && typeof value === "number" && value !== undefined && !isNaN(value)) {
       benefitString += key + ": " + Math.round(value);
     }
   });
@@ -109,13 +98,9 @@ export default function SoulbindNode(props) {
 
   const trait = props.soulbindTrait;
   const type = "type" in trait ? trait.type : "Soulbind"; // Soulbind, Potency Conduit, Endurance Conduit, Finesse Conduit
-  const name = getLocalizedName(trait, type, currentLanguage)
+  const name = getLocalizedName(trait, type, currentLanguage);
   const icon = process.env.PUBLIC_URL + "/Images/Icons/" + trait.icon;
-  const containerIcon =
-    "/Images/Interface/soulbindcontainer" +
-    (type.includes("Conduit") ? "hex" : "circle") +
-    (trait.active ? "active" : "") +
-    ".png";
+  const containerIcon = "/Images/Interface/soulbindcontainer" + (type.includes("Conduit") ? "hex" : "circle") + (trait.active ? "active" : "") + ".png";
 
   const conduitTag = type.includes("Potency")
     ? "/Images/Interface/PotencyConduitImg.png"
@@ -133,12 +118,7 @@ export default function SoulbindNode(props) {
     column: trait.position[1],
   };
 
-  const conduitCollection =
-    type === "Potency Conduit"
-      ? filterConduits(props.potencyConduits, covenantName)
-      : type === "Endurance Conduit"
-      ? props.enduranceConduits
-      : [];
+  const conduitCollection = type === "Potency Conduit" ? filterConduits(props.potencyConduits, covenantName) : type === "Endurance Conduit" ? props.enduranceConduits : [];
 
   const benefitString = getBenefitString(stat_bonus);
 
@@ -146,9 +126,7 @@ export default function SoulbindNode(props) {
     if (type.includes("Potency")) {
       return '<div class="no-wrap">' + t("Soulbinds.PotencyConduit") + "</div>";
     } else if (type.includes("Endurance")) {
-      return (
-        '<div class="no-wrap">' + t("Soulbinds.EnduranceConduit") + "</div>"
-      );
+      return '<div class="no-wrap">' + t("Soulbinds.EnduranceConduit") + "</div>";
     } else if (type.includes("Finesse")) {
       return '<div class="no-wrap">' + t("Soulbinds.FinesseConduit") + "</div>";
     }
@@ -156,11 +134,7 @@ export default function SoulbindNode(props) {
   };
 
   const conduitToolTipSpellID = (type) => {
-    if (
-      type.includes("Potency") ||
-      type.includes("Endurance") ||
-      type.includes("Finesse")
-    ) {
+    if (type.includes("Potency") || type.includes("Endurance") || type.includes("Finesse")) {
       return "";
     }
     return "spell=" + trait.id + "&domain=" + currentLanguage;
@@ -176,10 +150,7 @@ export default function SoulbindNode(props) {
         borderRadius: "50%",
       }}
     >
-      <a
-        data-simple-tooltip={conduitToolTipPEF(type)}
-        data-wowhead={conduitToolTipSpellID(type)}
-      >
+      <a data-simple-tooltip={conduitToolTipPEF(type)} data-wowhead={conduitToolTipSpellID(type)}>
         <img
           onClick={handleClick}
           width={48}
@@ -226,7 +197,6 @@ export default function SoulbindNode(props) {
         />
       </a>
       <Paper
-        // variant="outlined"
         style={{
           fontSize: 10,
           zIndex: 40,
@@ -236,7 +206,6 @@ export default function SoulbindNode(props) {
           position: "absolute",
           left: columnPos[position.column] - 26,
           top: getRowPos(position.column, position.row) + 46,
-          // padding: "2px 2px",
           backgroundColor: "rgb(25 28 35 / 65%)",
         }}
       >
@@ -271,24 +240,14 @@ export default function SoulbindNode(props) {
           onClose={handleClose}
         >
           {trait.slotted_id > 0 ? (
-            <MenuItem
-              key={-1}
-              dense={true}
-              style={{ padding: "5px 10px" }}
-              onClick={() => setConduit(-1)}
-            >
+            <MenuItem key={-1} dense={true} style={{ padding: "5px 10px" }} onClick={() => setConduit(-1)}>
               Remove
             </MenuItem>
           ) : (
             ""
           )}
           {conduitCollection.map((conduit, i) => (
-            <MenuItem
-              key={i}
-              style={{ padding: "5px 10px" }}
-              dense={true}
-              onClick={() => setConduit(conduit.id)}
-            >
+            <MenuItem key={i} style={{ padding: "5px 10px" }} dense={true} onClick={() => setConduit(conduit.id)}>
               <img
                 alt=""
                 width={24}

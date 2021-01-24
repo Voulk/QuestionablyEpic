@@ -1,8 +1,4 @@
-import {
-  fightDurationCalculator,
-  durationmaker,
-  reduceTimestamps,
-} from "../../CooldownPlanner/Functions/Functions";
+import { fightDurationCalculator, durationmaker, reduceTimestamps } from "../../CooldownPlanner/Functions/Functions";
 import moment from "moment";
 import { classColoursERT } from "../../CooldownPlanner/Functions/ClassColourFunctions";
 import i18n from "i18next";
@@ -21,26 +17,14 @@ export default function chartCooldownUpdater(tableData) {
   let mitigatedChartDataNoCooldowns = [];
 
   // Map the data from the Cooldown Planner into a unique list of Healer Names + Cooldowns for dataKeys for the Chart.
-  let uniqueCooldownListArray = Array.from(
-    new Set(
-      tableData.map(
-        (key) =>
-          key.name +
-          " - " +
-          i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown)
-      )
-    )
-  );
+  let uniqueCooldownListArray = Array.from(new Set(tableData.map((key) => key.name + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown))));
 
   // Map the Data from the Cooldown Planner and create a new array of objects. These are then mapped using the durationmaker function to create the data for the length of the cooldown and pushed into a new array customCooldownDurations.
   tableData
     .map((key) => ({
       ability: key.Cooldown,
       timestamp: moment.duration("00:" + key.time).asMilliseconds(),
-      abilityname:
-        key.name +
-        " - " +
-        i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown),
+      abilityname: key.name + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown),
     }))
     .map((key) =>
       customCooldownDurations.push(
@@ -48,56 +32,32 @@ export default function chartCooldownUpdater(tableData) {
           key.ability,
           key.timestamp,
           key.abilityname,
-          moment(
-            fightDurationCalculator(
-              this.state.currentEndTime,
-              this.state.currentStartTime
-            )
-          )
-            .startOf("second")
-            .valueOf()
-        )
-      )
+          moment(fightDurationCalculator(this.state.currentEndTime, this.state.currentStartTime)).startOf("second").valueOf(),
+        ),
+      ),
     );
 
   let customCooldownDurationFlatArray = customCooldownDurations.flat();
 
   // Join the Cooldown Durates with the Damage Taken Data (The original data before any data from the table was entered.
   // This is so the data doesn't double up with previously entered data.)
-  let joinedarray = this.state.unmitigatedChartDataNoCooldownsOriginal
-    .concat(customCooldownDurationFlatArray)
-    .sort((a, b) => (a.timestamp > b.timestamp ? 1 : -1));
+  let joinedarray = this.state.unmitigatedChartDataNoCooldownsOriginal.concat(customCooldownDurationFlatArray).sort((a, b) => (a.timestamp > b.timestamp ? 1 : -1));
 
-  let joinedarray2 = this.state.mitigatedChartDataNoCooldownsOriginal
-    .concat(customCooldownDurationFlatArray)
-    .sort((a, b) => (a.timestamp > b.timestamp ? 1 : -1));
+  let joinedarray2 = this.state.mitigatedChartDataNoCooldownsOriginal.concat(customCooldownDurationFlatArray).sort((a, b) => (a.timestamp > b.timestamp ? 1 : -1));
 
   let reducedData1 = reduceTimestamps(joinedarray);
 
   let reducedData2 = reduceTimestamps(joinedarray2);
 
-  Object.keys(reducedData1).forEach((element2) =>
-    unmitigatedChartDataNoCooldowns.push(reducedData1[element2])
-  );
+  Object.keys(reducedData1).forEach((element2) => unmitigatedChartDataNoCooldowns.push(reducedData1[element2]));
 
-  Object.keys(reducedData2).forEach((element2) =>
-    mitigatedChartDataNoCooldowns.push(reducedData2[element2])
-  );
+  Object.keys(reducedData2).forEach((element2) => mitigatedChartDataNoCooldowns.push(reducedData2[element2]));
 
   // Map the ERT note from the Table Data
 
   // Time + No Icons
   const ertNoteTimeNoIcons = tableData.map((key) => ({
-    ert:
-      "{time:" +
-      key.time +
-      "}" +
-      " - " +
-      classColoursERT(key.class) +
-      key.name +
-      "|r" +
-      " - " +
-      i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown),
+    ert: "{time:" + key.time + "}" + " - " + classColoursERT(key.class) + key.name + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown),
     // This is for Sorting by Time
     time: key.time,
   }));
@@ -158,31 +118,13 @@ export default function chartCooldownUpdater(tableData) {
 
   // Notes + Icons
   const ertNoteNoteIcons = tableData.map((key) => ({
-    ert:
-      key.notes +
-      " - " +
-      classColoursERT(key.class) +
-      key.name +
-      "|r" +
-      " - " +
-      i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown) +
-      " " +
-      "{spell:" +
-      key.Cooldown +
-      "}",
+    ert: key.notes + " - " + classColoursERT(key.class) + key.name + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown) + " " + "{spell:" + key.Cooldown + "}",
     time: key.time,
   }));
 
   // Notes + No Icons
   const ertNoteNoteNoIcons = tableData.map((key) => ({
-    ert:
-      key.notes +
-      " - " +
-      classColoursERT(key.class) +
-      key.name +
-      "|r" +
-      " - " +
-      i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown),
+    ert: key.notes + " - " + classColoursERT(key.class) + key.name + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown),
     time: key.time,
   }));
 

@@ -1,14 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {
-  Typography,
-  Paper,
-  Divider,
-  Grid,
-  Accordion,
-  AccordionSummary,
-  AccordionDetails,
-  makeStyles,
-} from "@material-ui/core";
+import { Typography, Paper, Divider, Grid, Accordion, AccordionSummary, AccordionDetails, makeStyles } from "@material-ui/core";
 import classicons from "../../Functions/IconFunctions/ClassIcons.js";
 import talentIcons from "../../Functions/IconFunctions/TalentIcons";
 import { classColoursJS } from "../../Functions/ClassColourFunctions";
@@ -50,11 +41,14 @@ export default function HealerInfoCards(props) {
   const currentLanguage = i18n.language;
   const classes = useStyles();
 
+  /* ---------------------------- Rounding Function --------------------------- */
+
   const roundTo = (value, places) => {
     let power = Math.pow(10, places);
     return Math.round(value * power) / power;
   };
 
+  /* --------------------------- Mastery Calculator --------------------------- */
   const masteryCalc = (healClass, mastery) => {
     let statPerc = 0;
 
@@ -74,6 +68,7 @@ export default function HealerInfoCards(props) {
     return statPerc;
   };
 
+  /* ---------------------- Accordian Expansion Handling ---------------------- */
   const [expanded, setExpanded] = useState("panel");
 
   useEffect(() => {
@@ -86,22 +81,12 @@ export default function HealerInfoCards(props) {
 
   return (
     <Grid container spacing={1} style={{ display: "block" }}>
+      {/* ----------- Here we map an Accordian for each healer in the log ----------  */}
       {props.heals.map((key, index) => (
         <Grid item key={index}>
-          <Accordion
-            style={{ width: "100%" }}
-            elevation={0}
-            expanded={expanded === `panel_${index}`}
-            onChange={handleChange(`panel_${index}`)}
-          >
-            <AccordionSummary
-              expandIcon={<ExpandMoreIcon />}
-              aria-controls="panel1a-content"
-              id="panel1a-header"
-              // style={{margin: "8px 0px"}}
-              className={classes.content}
-              style={{ minHeight: 0 }}
-            >
+          <Accordion style={{ width: "100%" }} elevation={0} expanded={expanded === `panel_${index}`} onChange={handleChange(`panel_${index}`)}>
+            <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content" id="panel1a-header" className={classes.content} style={{ minHeight: 0 }}>
+              {/* ------------------------ Healer Name + Ilvl + Spec -----------------------  */}
               <Typography
                 variant="h6"
                 style={{
@@ -110,18 +95,12 @@ export default function HealerInfoCards(props) {
                 }}
               >
                 {classicons(key.icon, 20)}
-                {key.name} - {t("CooldownPlanner.HealerCards.Item Level")}{" "}
-                {key.stats.map((stats) => stats.ilvl)} - {key.icon}
+                {key.name} - {t("CooldownPlanner.HealerCards.Item Level")} {key.stats.map((stats) => stats.ilvl)} - {key.icon}
               </Typography>
             </AccordionSummary>
             <Divider style={{ marginTop: 4 }} />
             <AccordionDetails style={{ padding: 0 }}>
-              <Grid
-                container
-                justify="center"
-                style={{ margin: 4 }}
-                spacing={1}
-              >
+              <Grid container justify="center" style={{ margin: 4 }} spacing={1}>
                 <Grid
                   item
                   xs={4}
@@ -133,11 +112,11 @@ export default function HealerInfoCards(props) {
                   <Paper
                     variant="outlined"
                     style={{
-                      // border: "1px solid rgba(255, 255, 255, 0.12)",
                       width: "100%",
                       height: "fit-content",
                     }}
                   >
+                    {/* ------------------------------ Stat Heading ------------------------------  */}
                     <Typography
                       className={classes.heading}
                       color="primary"
@@ -149,6 +128,8 @@ export default function HealerInfoCards(props) {
                       {t("CooldownPlanner.HealerCards.StatsHeading")}
                     </Typography>
                     <Divider />
+
+                    {/* ---------------- Here we map the stat string for each stat ---------------  */}
                     {key.stats.map((stats, i) => (
                       <div key={i}>
                         <Typography
@@ -160,6 +141,8 @@ export default function HealerInfoCards(props) {
                         >
                           {t("Intellect")}: {stats.intellect}
                         </Typography>
+
+                        {/* ----------------------------- Critical Strike ----------------------------  */}
                         <Typography
                           style={{
                             textAlign: "center",
@@ -167,11 +150,11 @@ export default function HealerInfoCards(props) {
                             fontSize: 14,
                           }}
                         >
-                          {t("CooldownPlanner.HealerCards.Crit")}:{" "}
-                          {roundTo(stats.crit / STATPERONEPERCENT.CRIT + 5, 2)}
+                          {t("CooldownPlanner.HealerCards.Crit")}: {roundTo(stats.crit / STATPERONEPERCENT.CRIT + 5, 2)}
                           {"%"}
-                          {/* {"(" + stats.crit + ")"} */}
                         </Typography>
+
+                        {/* ---------------------------------- Haste ---------------------------------  */}
                         <Typography
                           style={{
                             textAlign: "center",
@@ -179,11 +162,11 @@ export default function HealerInfoCards(props) {
                             fontSize: 14,
                           }}
                         >
-                          {t("CooldownPlanner.HealerCards.Haste")}:{" "}
-                          {roundTo(stats.haste / STATPERONEPERCENT.HASTE, 2)}
+                          {t("CooldownPlanner.HealerCards.Haste")}: {roundTo(stats.haste / STATPERONEPERCENT.HASTE, 2)}
                           {"%"}
-                          {/* {"(" + stats.haste + ")"} */}
                         </Typography>
+
+                        {/* --------------------------------- Mastery --------------------------------  */}
                         <Typography
                           style={{
                             textAlign: "center",
@@ -191,11 +174,11 @@ export default function HealerInfoCards(props) {
                             fontSize: 14,
                           }}
                         >
-                          {t("CooldownPlanner.HealerCards.Mastery")}:{" "}
-                          {roundTo(masteryCalc(key.icon, stats.mastery), 2)}
+                          {t("CooldownPlanner.HealerCards.Mastery")}: {roundTo(masteryCalc(key.icon, stats.mastery), 2)}
                           {"%"}
-                          {/* {"(" + stats.mastery + ")"} */}
                         </Typography>
+
+                        {/* ------------------------------- Versatility ------------------------------  */}
                         <Typography
                           style={{
                             textAlign: "center",
@@ -203,37 +186,24 @@ export default function HealerInfoCards(props) {
                             fontSize: 14,
                           }}
                         >
-                          {t("CooldownPlanner.HealerCards.Versatility")}:{" "}
-                          {roundTo(
-                            stats.versatility / STATPERONEPERCENT.VERSATILITY,
-                            2
-                          )}
+                          {t("CooldownPlanner.HealerCards.Versatility")}: {roundTo(stats.versatility / STATPERONEPERCENT.VERSATILITY, 2)}
                           {"%"}
-                          {/* {"(" + stats.versatility + ")"} */}
                         </Typography>
                       </div>
                     ))}
                   </Paper>
                 </Grid>
-                {/* <Divider orientation="vertical" flexItem /> */}
-                <Grid
-                  item
-                  xs={8}
-                  // justify="flex-start"
-                  // alignItems="flex-start"
-                  style={{ display: "inline" }}
-                >
+
+                {/* ---------- Container for the Talents / Conduits / Soulbind Info ----------  */}
+                <Grid item xs={8} style={{ display: "inline" }}>
                   <Paper
                     variant="outlined"
                     style={{
-                      // padding: "2px 8px 0px 8px",
                       textAlignLast: "center",
-                      // borderTop: "1px solid rgba(255, 255, 255, 0.12)",
-                      // borderLeft: "1px solid rgba(255, 255, 255, 0.12)",
-                      // borderRight: "1px solid rgba(255, 255, 255, 0.12)",
                     }}
                   >
                     <Grid container>
+                      {/* --------------------------- Talent Information ---------------------------  */}
                       <Grid item xs={12}>
                         <Typography
                           className={classes.heading}
@@ -257,6 +227,8 @@ export default function HealerInfoCards(props) {
                           ))}
                         </div>
                       </Grid>
+
+                      {/* --------------------------- Soulbind Abilities ---------------------------  */}
                       <Grid item xs={12}>
                         <Typography
                           className={classes.heading}
@@ -286,17 +258,15 @@ export default function HealerInfoCards(props) {
                                   verticalAlign: "middle",
                                   borderRadius: "4px",
                                 }}
-                                src={
-                                  process.env.PUBLIC_URL +
-                                  "/Images/Icons/" +
-                                  ability.abilityIcon
-                                }
+                                src={process.env.PUBLIC_URL + "/Images/Icons/" + ability.abilityIcon}
                                 alt={"ability" + i}
                               />
                             </a>
                           ))}
                         </div>
                       </Grid>
+
+                      {/* ---------------------------- Soulbind Conduits ---------------------------  */}
                       <Grid item xs={12}>
                         <Typography
                           className={classes.heading}
@@ -326,20 +296,9 @@ export default function HealerInfoCards(props) {
                                     verticalAlign: "middle",
                                     borderRadius: "4px",
                                   }}
-                                  src={
-                                    process.env.PUBLIC_URL +
-                                    "/Images/Icons/" +
-                                    conduit.abilityIcon
-                                  }
+                                  src={process.env.PUBLIC_URL + "/Images/Icons/" + conduit.abilityIcon}
                                   alt={"coinduit" + i}
-                                  // style={{
-                                  //   borderRadius: 4,
-                                  //   borderWidth: "1px",
-                                  //   borderStyle: "solid",
-                                  //   borderColor: itemQuality("Uncommon"),
-                                  // }}
                                 />
-
                                 <div
                                   className="bottom-right-healerCards"
                                   style={{

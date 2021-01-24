@@ -1,16 +1,6 @@
 import React, { PureComponent } from "react";
-import {
-  BarChart,
-  Bar,
-  XAxis,
-  YAxis,
-  ResponsiveContainer,
-  Tooltip,
-} from "recharts";
-import Paper from "@material-ui/core/Paper";
-import Typography from "@material-ui/core/Typography";
-import Divider from "@material-ui/core/Divider";
-
+import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, Tooltip } from "recharts";
+import { Divider, Paper, Typography } from "@material-ui/core";
 export default class Example extends PureComponent {
   constructor(props) {
     super();
@@ -20,28 +10,14 @@ export default class Example extends PureComponent {
     return (
       <Paper style={{ padding: 8 }}>
         <div style={{ marginBottom: 8 }}>
-          <Typography
-            variant="h6"
-            color="primary"
-            style={{ padding: "4px 8px 4px 24px" }}
-          >
+          <Typography variant="h6" color="primary" style={{ padding: "4px 8px 4px 24px" }}>
             Damage Taken / Fight Length by Ability
           </Typography>
           <Divider />
         </div>
-        <ResponsiveContainer
-          className="ResponsiveContainer"
-          height="100%"
-          aspect={1 / 1}
-        >
+        <ResponsiveContainer className="ResponsiveContainer" height="100%" aspect={1 / 1}>
           <BarChart
-            // width={500}
-            // height={300}
-            data={
-              this.props.dataToShow === true
-                ? this.props.unmitigated
-                : this.props.mitigated
-            }
+            data={this.props.dataToShow === true ? this.props.unmitigated : this.props.mitigated}
             margin={{
               top: 5,
               right: 30,
@@ -61,20 +37,10 @@ export default class Example extends PureComponent {
               }}
               cursor={{ stroke: "#F2BF59", fill: "#1f1f1f" }}
               wrapperStyle={{ color: "#1b1b1b" }}
-              // labelFormatter={(timeStr) => moment(timeStr).format("mm:ss")}
             />
             <XAxis type="number" stroke="#f5f5f5" />
-            <YAxis
-              type="category"
-              dataKey="ability"
-              stroke="#f5f5f5"
-              interval={0}
-            />
-            <Bar
-              label={{ fill: "#f5f5f5", fontSize: 12, position: "right" }}
-              dataKey="damage"
-              fill="#8884d8"
-            />
+            <YAxis type="category" dataKey="ability" stroke="#f5f5f5" interval={0} />
+            <Bar label={{ fill: "#f5f5f5", fontSize: 12, position: "right" }} dataKey="damage" fill="#8884d8" />
           </BarChart>
         </ResponsiveContainer>
       </Paper>

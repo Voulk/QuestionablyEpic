@@ -1,7 +1,5 @@
 import React from "react";
-import FormGroup from "@material-ui/core/FormGroup";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
-import Switch from "@material-ui/core/Switch";
+import { FormGroup, FormControlLabel, Switch } from "@material-ui/core";
 import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 
 const theme = createMuiTheme({
@@ -30,15 +28,7 @@ export default function SwitchLabels(props) {
     <ThemeProvider theme={theme}>
       <FormGroup row>
         <FormControlLabel
-          control={
-            <Switch
-              checked={checked}
-              onChange={handleChange}
-              name="checkedA"
-              size="small"
-              disabled={props.disabled}
-            />
-          }
+          control={<Switch checked={checked} onChange={handleChange} name="checkedA" size="small" disabled={props.disabled} />}
           label={props.label}
           labelPlacement="top"
         />
