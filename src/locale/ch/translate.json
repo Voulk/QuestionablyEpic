@@ -5,7 +5,15 @@
       "DeleteCharacter": "Delete CharacterCH",
       "CreateChar": "Create New Character",
       "AddChar": "Add Character",
-      "CharName": "Character Name"
+      "CharName": "Character Name",
+      "SavedLogs": {
+        "Header": "Detailed Breakdown Coming SoonCH",
+        "Report": "ReportCH",
+        "Boss": "BossCH",
+        "FightLength": "Fight LengthCH",
+        "HPS": "HPSCH",
+        "RawHPS": "Raw HPSCH"
+      }
     },
 
     "_Comments1": "Common Words",
@@ -36,6 +44,7 @@
     "Add": "Add",
     "Avoidance": "Avoidance",
     "Source": "来源",
+    "Default": "DefaultCH",
 
     "Classes": {
       "undefined": "",

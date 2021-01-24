@@ -5,7 +5,15 @@
       "DeleteCharacter": "Delete CharacterFR",
       "CreateChar": "Create New CharacterFR",
       "AddChar": "Ajouter un personnage",
-      "CharName": "Character NameFR"
+      "CharName": "Character NameFR",
+      "SavedLogs": {
+        "Header": "Detailed Breakdown Coming SoonFR",
+        "Report": "ReportFR",
+        "Boss": "BossFR",
+        "FightLength": "Fight LengthFR",
+        "HPS": "HPSFR",
+        "RawHPS": "Raw HPSFR"
+      }
     },
 
     "_Comments1": "Common Words - All these need translating stillFR",
@@ -36,6 +44,7 @@
     "Add": "AddFR",
     "Avoidance": "Avoidance",
     "Source": "Source",
+    "Default": "DefaultFR",
 
     "Classes": {
       "undefined": "",

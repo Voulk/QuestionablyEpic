@@ -5,7 +5,15 @@
       "DeleteCharacter": "Delete CharacterRU",
       "CreateChar": "Create New CharacterRU",
       "AddChar": "Add CharacterRU",
-      "CharName": "Character NameRU"
+      "CharName": "Character NameRU",
+      "SavedLogs": {
+        "Header": "Detailed Breakdown Coming SoonRU",
+        "Report": "ReportRU",
+        "Boss": "BossRU",
+        "FightLength": "Fight LengthRU",
+        "HPS": "HPSRU",
+        "RawHPS": "Raw HPSRU"
+      }
     },
 
     "_Comments1": "Common Words",
@@ -36,6 +44,7 @@
     "Add": "AddRU",
     "Avoidance": "Avoidance",
     "Source": "Источник",
+    "Default": "DefaultRU",
 
     "Classes": {
       "undefined": "",

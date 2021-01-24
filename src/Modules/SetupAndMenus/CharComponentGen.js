@@ -2,9 +2,10 @@ import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { useTranslation } from "react-i18next";
 //prettier-ignore
-import { Paper, Button, Box, Card, CardContent, CardActionArea, Divider, Typography, Avatar, Grid, TextField, Dialog, DialogActions, AppBar, Tabs, Tab, Select, MenuItem, FormControl, InputLabel, Accordion, AccordionSummary, AccordionDetails } from "@material-ui/core";
+import {Accordion, AccordionSummary, AccordionDetails, AppBar, Paper, Box, Button, Card, CardContent, CardActionArea, Divider, IconButton, Typography, Avatar, Grid, TextField, Dialog, DialogActions, Tabs, Tab, Tooltip, Select, MenuItem, FormControl, InputLabel } from "@material-ui/core";
 import { createMuiTheme, makeStyles, ThemeProvider } from "@material-ui/core/styles";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import DeleteIcon from "@material-ui/icons/Delete";
 import Autocomplete from "@material-ui/lab/Autocomplete";
 import { red } from "@material-ui/core/colors";
 import { classColoursJS } from "../CooldownPlanner/Functions/ClassColourFunctions.js";
@@ -580,61 +581,73 @@ export default function CharCards(props) {
             <Grid container spacing={1}>
               {/* map here */}
               <Grid item xs={12}>
-                <Accordion onClick={() => ""} style={{ backgroundColor: "#525252" }}>
-                  <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content" id="panel1a-header">
-                    <Grid container spacing={1}>
+                <Typography align="center" style={{ fontStyle: "italic" }}>
+                  {t("CharacterCreator.SavedLogs.Header")}
+                </Typography>
+              </Grid>
+              <Grid item xs={12}>
+                <Paper style={{ backgroundColor: "#525252", padding: 16 }}>
+                  <Grid container>
+                    <Grid item container xs={11} spacing={1}>
                       {/* -------------------------------- Report ID -------------------------------  */}
                       <Grid item xs={6}>
                         <Typography style={{ display: "inline-flex" }}>
-                          Report:
+                          {t("CharacterCreator.SavedLogs.Report") + ":"}
                           <Typography color="primary" style={{ paddingLeft: 4 }}>
-                            {props.char.castModel[contentType].fightInfo.reportID}
+                            {props.char.getReportID(contentType)}
                           </Typography>
                         </Typography>
                       </Grid>
                       {/* -------------------------------- Boss Name -------------------------------  */}
                       <Grid item xs={6}>
                         <Typography style={{ display: "inline-flex" }}>
-                          Boss:
+                          {t("CharacterCreator.SavedLogs.Boss") + ":"}
                           <Typography color="primary" style={{ paddingLeft: 4 }}>
-                            {props.char.castModel[contentType].fightInfo.bossName}
+                            {props.char.getBossName(contentType)}
                           </Typography>
                         </Typography>
                       </Grid>
                       {/* ------------------------------ Fight Length ------------------------------  */}
                       <Grid item>
                         <Typography style={{ display: "inline-flex" }}>
-                          Fight Length:
+                          {t("CharacterCreator.SavedLogs.FightLength") + ":"}
                           <Typography color="primary" style={{ paddingLeft: 4 }}>
-                            {sec2hmmss(props.char.castModel[contentType].fightInfo.fightLength)}
+                            {sec2hmmss(props.char.getFightLength(contentType))}
                           </Typography>
                         </Typography>
                       </Grid>
                       {/* ----------------------------------- HPS ----------------------------------  */}
                       <Grid item>
                         <Typography style={{ display: "inline-flex" }}>
-                          HPS:
+                          {t("CharacterCreator.SavedLogs.HPS") + ":"}
                           <Typography color="primary" style={{ paddingLeft: 4 }}>
-                            {props.char.castModel[contentType].fightInfo.hps}
+                            {props.char.getHPS(contentType)}
                           </Typography>
                         </Typography>
                       </Grid>
                       {/* --------------------------------- Raw HPS --------------------------------  */}
                       <Grid item>
                         <Typography style={{ display: "inline-flex" }}>
-                          Raw HPS:
+                          {t("CharacterCreator.SavedLogs.RawHPS") + ":"}
                           <Typography color="primary" style={{ paddingLeft: 4 }}>
-                            {props.char.castModel[contentType].fightInfo.rawhps}
+                            {props.char.getRawHPS(contentType)}
                           </Typography>
                         </Typography>
                       </Grid>
                     </Grid>
-                  </AccordionSummary>
-                  <AccordionDetails>
-                    {/* ----------------------- Cast Model Breakdown Table -----------------------  */}
-                    <LogDetailsTable data={props.char.castModel[contentType].spellList} />
-                  </AccordionDetails>
-                </Accordion>
+                    <Grid item xs={1} style={{ alignSelf: "center", textAlign: "center" }}>
+                      <Tooltip title={t("Delete")} arrow>
+                        <IconButton
+                          // onClick={deleteItemCard}
+                          aria-label="delete"
+                          size="small"
+                        >
+                          <DeleteIcon style={{ color: "#ad2c34", paddingTop: 2 }} fontSize="large" />
+                        </IconButton>
+                      </Tooltip>
+                    </Grid>
+                  </Grid>
+                </Paper>
               </Grid>
             </Grid>
           </TabPanel>
@@ -677,3 +690,61 @@ export default function CharCards(props) {
     </Grid>
   );
 }
+
+// Accordian for the logs
+
+// <Accordion disabled onClick={() => ""} style={{ backgroundColor: "#525252" }}>
+// <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content" id="panel1a-header">
+//   <Grid container spacing={1}>
+//     {/* -------------------------------- Report ID -------------------------------  */}
+//     <Grid item xs={6}>
+//       <Typography style={{ display: "inline-flex" }}>
+//         Report:
+//         <Typography color="primary" style={{ paddingLeft: 4 }}>
+//           {props.char.getReportID(contentType)}
+//         </Typography>
+//       </Typography>
+//     </Grid>
+//     {/* -------------------------------- Boss Name -------------------------------  */}
+//     <Grid item xs={6}>
+//       <Typography style={{ display: "inline-flex" }}>
+//         Boss:
+//         <Typography color="primary" style={{ paddingLeft: 4 }}>
+//           {props.char.getBossName(contentType)}
+//         </Typography>
+//       </Typography>
+//     </Grid>
+//     {/* ------------------------------ Fight Length ------------------------------  */}
+//     <Grid item>
+//       <Typography style={{ display: "inline-flex" }}>
+//         Fight Length:
+//         <Typography color="primary" style={{ paddingLeft: 4 }}>
+//           {sec2hmmss(props.char.getFightLength(contentType))}
+//         </Typography>
+//       </Typography>
+//     </Grid>
+//     {/* ----------------------------------- HPS ----------------------------------  */}
+//     <Grid item>
+//       <Typography style={{ display: "inline-flex" }}>
+//         HPS:
+//         <Typography color="primary" style={{ paddingLeft: 4 }}>
+//           {props.char.getHPS(contentType)}
+//         </Typography>
+//       </Typography>
+//     </Grid>
+//     {/* --------------------------------- Raw HPS --------------------------------  */}
+//     <Grid item>
+//       <Typography style={{ display: "inline-flex" }}>
+//         Raw HPS:
+//         <Typography color="primary" style={{ paddingLeft: 4 }}>
+//           {props.char.getRawHPS(contentType)}
+//         </Typography>
+//       </Typography>
+//     </Grid>
+//   </Grid>
+// </AccordionSummary>
+// <AccordionDetails>
+//   {/* ----------------------- Cast Model Breakdown Table -----------------------  */}
+//   <LogDetailsTable data={props.char.getSpellList(contentType)} />
+// </AccordionDetails>
+// </Accordion>
