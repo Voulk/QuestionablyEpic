@@ -83,3 +83,28 @@ export async function apiGetPlayerImage(player) {
   //console.log(urlReturned);
   return urlReturned;
 }
+
+export async function apiSendError(player, errorType, errorMessage, result) {
+  let name = player.charName;
+
+  let fetchUrl =
+    "https://questionablyepic.com/api/addError.php?btag=" +
+    encodeURIComponent(name) +
+    "&etype=" +
+    encodeURIComponent(errorType) +
+    "&emessage=" +
+    encodeURIComponent(errorMessage) +
+    "&eresult=" +
+    encodeURIComponent(result)
+
+  console.log(fetchUrl);  
+
+  fetch(fetchUrl)
+    .then((res) => res.text())
+    .then((response) => {
+      
+      // alert("Success |" + response + "|");
+      
+    })
+    .catch((err) => console.log(err));
+}

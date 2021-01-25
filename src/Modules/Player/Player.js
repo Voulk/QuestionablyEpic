@@ -10,6 +10,7 @@ import { shamanDefaultStatWeights } from "./ClassDefaults/ShamanDefaults";
 import { discPriestDefaultStatWeights } from "./ClassDefaults/DiscPriestDefaults";
 import { holyPriestDefaultStatWeights } from "./ClassDefaults/HolyPriestDefaults";
 import { monkDefaultStatWeights } from "./ClassDefaults/MonkDefaults";
+import { reportError } from "../ErrorLogging/ErrorReporting";
 
 var averageHoTCount = 1.4; // TODO: Build this in correctly and pull it from logs where applicable.
 
@@ -39,6 +40,7 @@ class Player {
     if (statWeights !== "default" && statWeights.DefaultWeights === false)
       this.statWeights = statWeights;
     this.activeConduits = getAvailableClassConduits(specName);
+
     //this.getStatPerc = getStatPerc;
   }
 
@@ -54,14 +56,6 @@ class Player {
   region = "";
   realm = "";
   race = "";
-
-  // A players spell casting patterns. These are averaged from entered logs and a default is provided too.
-  // CASTS, HEALING, HEALINGPERC, HPS,
-  // NO LONGER USED.
-  castPattern = {
-    Raid: {},
-    Dungeon: {},
-  };
 
   // Consider special queries a sister dictionary to CastPattern. CastPattern includes *raw* spell data pulled from logs but sometimes
   // we need something more particular. Healing done while channeling Convoke or healing done to a specific target for example.
@@ -143,8 +137,11 @@ class Player {
   }
 
   setCovenant = (cov) => {
-    if (["night_fae", "venthyr", "necrolord", "kyrian"].includes(cov)) this.covenant = cov;
-    // Else raise error.
+    if (["night_fae", "venthyr", "necrolord", "kyrian"].includes(cov.toLowerCase())) this.covenant = cov;
+    else {
+      reportError(this, "Player", "Invalid Covenant Supplied", cov);
+      throw new Error('Invalid Covenant Supplied');
+    }
     
   }
 
@@ -176,7 +173,7 @@ class Player {
   // Returns the players stat that has the highest weight. We should consider how to handle tie breaks.
   getHighestStatWeight = (contentType, ignore = []) => {
     let max = "";
-    let maxValue = 0;
+    let maxValue = -1;
     let weights = this.statWeights[contentType];
 
     for (var stat in weights) {
@@ -192,6 +189,7 @@ class Player {
 
     return max;
   };
+
 
   addActiveItem = (item) => {
     this.activeItems.push(item);
@@ -247,9 +245,16 @@ class Player {
   scoreActiveItems = (contentType) => {
     for (var i = 0; i < this.activeItems.length; i++) {
       let item = this.activeItems[i];
-      //console.log(item);
+      
       item.softScore = scoreItem(item, this, contentType);
-      //console.log("Updating Score");
+
+      // Error checking
+      if (item.softScore < 0) {
+        // Scores should never go below 0. 
+        reportError(this, "Player", "Item scored at below 0", item.softScore);
+        throw new Error('Invalid score when scoring active items.');
+      }
+      
     }
   };
 
@@ -463,33 +468,38 @@ class Player {
   };
 
  
-    setDefaultWeights = (spec, contentType) => {
-  
-      if (spec === SPEC.RESTODRUID) {
-        this.statWeights[contentType] = druidDefaultStatWeights(contentType);
-        this.statWeights.DefaultWeights = true;
-      }
-      else if (spec === SPEC.HOLYPALADIN) {
-        this.statWeights[contentType] = paladinDefaultStatWeights(contentType);
-        this.statWeights.DefaultWeights = true;
-      }
-      else if (spec === SPEC.DISCPRIEST) {
-        this.statWeights[contentType] = discPriestDefaultStatWeights(contentType);
-        this.statWeights.DefaultWeights = true;
-      }
-      else if (spec === SPEC.HOLYPRIEST) {
-        this.statWeights[contentType] = holyPriestDefaultStatWeights(contentType);
-        this.statWeights.DefaultWeights = true;
-      }
-      else if (spec === SPEC.MISTWEAVERMONK) {
-        this.statWeights[contentType] = monkDefaultStatWeights(contentType);
-        this.statWeights.DefaultWeights = true;
-      }
-      else if (spec === SPEC.RESTOSHAMAN) {
-        this.statWeights[contentType] = shamanDefaultStatWeights(contentType);
-        this.statWeights.DefaultWeights = true;
-      }
-  }
+  setDefaultWeights = (spec, contentType) => {
+
+    if (spec === SPEC.RESTODRUID) {
+      this.statWeights[contentType] = druidDefaultStatWeights(contentType);
+      this.statWeights.DefaultWeights = true;
+    }
+    else if (spec === SPEC.HOLYPALADIN) {
+      this.statWeights[contentType] = paladinDefaultStatWeights(contentType);
+      this.statWeights.DefaultWeights = true;
+    }
+    else if (spec === SPEC.DISCPRIEST) {
+      this.statWeights[contentType] = discPriestDefaultStatWeights(contentType);
+      this.statWeights.DefaultWeights = true;
+    }
+    else if (spec === SPEC.HOLYPRIEST) {
+      this.statWeights[contentType] = holyPriestDefaultStatWeights(contentType);
+      this.statWeights.DefaultWeights = true;
+    }
+    else if (spec === SPEC.MISTWEAVERMONK) {
+      this.statWeights[contentType] = monkDefaultStatWeights(contentType);
+      this.statWeights.DefaultWeights = true;
+    }
+    else if (spec === SPEC.RESTOSHAMAN) {
+      this.statWeights[contentType] = shamanDefaultStatWeights(contentType);
+      this.statWeights.DefaultWeights = true;
+    }
+    else {
+      // Invalid spec replied. Error.
+      reportError(this, "Player", "Invalid Spec Supplied for Default Weights", spec);
+      throw new Error('Invalid Spec Supplied');
+    }
+}
 
   // Consider replacing this with an external table for cleanliness and ease of editing.
   setupDefaults = (spec) => {
@@ -602,6 +612,11 @@ class Player {
       this.statWeights.Raid = monkDefaultStatWeights("Raid");
       this.statWeights.Dungeon = monkDefaultStatWeights("Dungeon");
       this.statWeights.DefaultWeights = true;
+    }
+    else {
+      // Invalid spec replied. Error.
+      reportError(this, "Player", "Invalid Spec Supplied for setupDefaults", spec);
+      throw new Error('Invalid Spec Supplied');
     }
   };
 }
