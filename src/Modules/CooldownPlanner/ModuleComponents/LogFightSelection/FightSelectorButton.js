@@ -1,8 +1,6 @@
 import React from "react";
 import LogImport from "./FightSelectorMenu";
-import Menu from "@material-ui/core/Menu";
-import Button from "@material-ui/core/Button";
-import Fade from "@material-ui/core/Fade";
+import { Button, Menu, Fade } from "@material-ui/core";
 import { useTranslation } from "react-i18next";
 
 export default function FightSelectorButton(props) {
@@ -35,7 +33,6 @@ export default function FightSelectorButton(props) {
         MenuListProps={{
           style: { paddingTop: 0, paddingBottom: 0, ...props.customStyle },
         }}
-        // keepMounted
         open={Boolean(anchorEl)}
         onClose={handleClose}
         TransitionComponent={Fade}
@@ -52,14 +49,7 @@ export default function FightSelectorButton(props) {
         }}
         getContentAnchorEl={null}
       >
-        {
-          <LogImport
-            reportid={props.reportid}
-            clicker={props.clicky}
-            update={props.update}
-            close={handleClose}
-          />
-        }
+        {<LogImport reportid={props.reportid} clicker={props.clicky} update={props.update} close={handleClose} />}
       </Menu>
     </div>
   );

@@ -14,7 +14,6 @@ export default function LogDetailsTable(props) {
 
   return (
     <TableContainer
-    // component={Paper}
     >
       <Table className={classes.table} aria-label="simple table" size="small">
         <TableHead>

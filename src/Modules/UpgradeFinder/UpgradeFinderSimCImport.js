@@ -1,10 +1,6 @@
 import React from "react";
-import {
-  makeStyles,
-  createMuiTheme,
-  ThemeProvider,
-} from "@material-ui/core/styles";
-import { Grid, Slider, Paper, Typography, Divider } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
+import { Grid, Paper, Typography, Divider } from "@material-ui/core";
 import { useTranslation } from "react-i18next";
 import { getItemIcon } from "../Engine/ItemUtilities";
 import SimCraftInput from "../SetupAndMenus/SimCraftDialog";
@@ -16,15 +12,13 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "center",
   },
   simcerror: {
-    borderColor: "red", 
-    borderWidth: "2px", 
-    borderStyle: "Solid"
+    borderColor: "red",
+    borderWidth: "2px",
+    borderStyle: "Solid",
   },
   simcok: {
-    borderStyle: "None"
-  }
-
-
+    borderStyle: "None",
+  },
 }));
 
 const itemQuality = (itemLevel, effectCheck) => {
@@ -40,13 +34,10 @@ const getSimCStatus = (player) => {
   if (player.activeItems.length === 0) return "Missing";
   else if (checkCharacterValid(player) === false) return "Invalid";
   else return "Good";
-
 }
-
 const checkCharacterValid = (player) => {
   const weaponSet = player.getActiveItems("AllMainhands", false, true);
   const weapon = weaponSet.length > 0 ? weaponSet[0] : "";
-
   return ((weapon.slot === "2H Weapon" && player.getEquippedItems().length === 15) ||
           (weapon.slot === "1H Weapon" && player.getEquippedItems().length === 16));
 }
@@ -60,12 +51,11 @@ export default function UpgradeFinderSimC(props) {
 
   return (
     <Grid item xs={12}>
-      <Paper elevation={0} className={(simcStatus === "Good" || simcStatus === "Missing") ? classes.simcok : classes.simcerror} style={{ padding: 10, }}>
+      <Paper elevation={0} className={simcStatus === "Good" || simcStatus === "Missing" ? classes.simcok : classes.simcerror} style={{ padding: 10 }}>
         <Grid container spacing={1}>
           <Grid item xs={6} container justify="center" spacing={1}>
             <Grid item xs={12}>
               <Typography color="primary" align="center" variant="h5">
-                {/*t("UpgradeFinderFront.SimCBody1") + "" + getSimCStatus(props.player) */}
                 {t(simcString)}
               </Typography>
             </Grid>
@@ -96,32 +86,18 @@ export default function UpgradeFinderSimC(props) {
                 {props.player.activeItems
                   .filter((key) => key.isEquipped === true)
                   .map((key) => (
-                    <a
-                      style={{ padding: 2 }}
-                      data-wowhead={
-                        "item=" +
-                        key.id +
-                        "&" +
-                        "ilvl=" +
-                        key.level +
-                        "&bonus=" +
-                        key.bonusIDS +
-                        "&domain=" +
-                        currentLanguage
-                      }
-                    >
+                    <a style={{ padding: 2 }} data-wowhead={"item=" + key.id + "&" + "ilvl=" + key.level + "&bonus=" + key.bonusIDS + "&domain=" + currentLanguage}>
                       <img
                         style={{
                           height: 22,
                           width: 22,
-
                           verticalAlign: "middle",
                           borderRadius: "8px",
                           border: "1px solid",
                           borderColor: itemQuality(key.level, key.effect),
                         }}
                         src={getItemIcon(key.id)}
-                        //   alt={alt}
+                        alt=""
                       />
                     </a>
                   ))}

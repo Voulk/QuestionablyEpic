@@ -1,12 +1,5 @@
 import React from "react";
-import {
-  AppBar,
-  Toolbar,
-  Button,
-  Typography,
-  Popover,
-  Tooltip,
-} from "@material-ui/core";
+import { AppBar, Toolbar, Button, Typography, Popover, Tooltip, Grid } from "@material-ui/core";
 import logo from "../../Images/QeAssets/QELogo.png";
 import "./QEMainMenu.css";
 import LanguageSelector from "./LanguageButton";
@@ -15,7 +8,6 @@ import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import SimCraftInput from "./SimCraftDialog";
 import QELogImport from "./QELogImport";
-import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
 // import ReactGA from "react-ga";n
 
@@ -53,10 +45,7 @@ export default function QEHeader(props) {
   // TODO: Implement profile.
   let playerName = props.playerTag || t("QeHeader.Login");
   let linkTarget = props.playerTag === "" ? "/login" : "/profile";
-  let patronStatus =
-    props.patronStatus !== "" && props.patronStatus !== "Basic"
-      ? props.patronStatus + " Edition"
-      : "Standard Edition";
+  let patronStatus = props.patronStatus !== "" && props.patronStatus !== "Basic" ? props.patronStatus + " Edition" : "Standard Edition";
   let color = {
     "Rolls Royce Edition": "#04E07C",
     "Diamond Edition": "#FFB6C1",
@@ -69,36 +58,18 @@ export default function QEHeader(props) {
     <div style={{ backgroundColor: "#353535" }}>
       <AppBar position="fixed" color="inherit">
         <Toolbar style={{ marginLeft: "16%", marginRight: "16%" }}>
-          <Grid
-            container
-            direction="row"
-            justify="space-between"
-            alignItems="center"
-          >
+          <Grid container direction="row" justify="space-between" alignItems="center">
             <Grid item xs={12} sm={12} md={3} lg={3} xl={3} align="center">
-              <Grid
-                container
-                direction="row"
-                // justify="space-between"
-                alignItems="center"
-              >
+              <Grid container direction="row" alignItems="center">
                 <Grid item xs={12} sm={12} md={12} lg={6} xl={5}>
                   <Link to={"/"}>
                     <Tooltip title={t("QeHeader.Tooltip.Home")} arrow>
-                      <img
-                        className={classes.qeLogo}
-                        src={logo}
-                        alt="QE Live"
-                      />
+                      <img className={classes.qeLogo} src={logo} alt="QE Live" />
                     </Tooltip>
                   </Link>
                 </Grid>
                 <Grid item xs={12} sm={12} md={12} lg={6} xl="auto">
-                  <Typography
-                    style={{ color: color[patronStatus], paddingLeft: 10, paddingRight: 10 }}
-                    variant="body1"
-                    align="centre"
-                  >
+                  <Typography style={{ color: color[patronStatus], paddingLeft: 10, paddingRight: 10 }} variant="body1" align="center">
                     {patronStatus}
                   </Typography>
                 </Grid>
@@ -111,25 +82,9 @@ export default function QEHeader(props) {
           </Grid> */}
 
             <Grid item xs={12} sm={12} md={4} lg={4} xl={4}>
-              <Grid
-                container
-                direction="row"
-                justify="center"
-                // justify="flex-end"
-                alignItems="center"
-                spacing={1}
-                wrap="nowrap"
-                style={{paddingLeft: 10, paddingRight: 10}}
-              >
+              <Grid container direction="row" justify="center" alignItems="center" spacing={1} wrap="nowrap" style={{ paddingLeft: 10, paddingRight: 10 }}>
                 <Grid item>
-                  <Tooltip
-                    title={
-                      (props.contentType === "Raid"
-                        ? t("QeHeader.Tooltip.ChangeToDungeon")
-                        : t("QeHeader.Tooltip.ChangeToRaid")) 
-                    }
-                    arrow
-                  >
+                  <Tooltip title={props.contentType === "Raid" ? t("QeHeader.Tooltip.ChangeToDungeon") : t("QeHeader.Tooltip.ChangeToRaid")} arrow>
                     <Button
                       style={{ color: "white" }}
                       onClick={props.toggleContentType}
@@ -143,11 +98,7 @@ export default function QEHeader(props) {
                   </Tooltip>
                 </Grid>
                 <Grid item>
-                  <QELogImport
-                    logImportSnack={props.logImportSnack}
-                    player={props.pl}
-                    allChars={props.allChars}
-                  />
+                  <QELogImport logImportSnack={props.logImportSnack} player={props.pl} allChars={props.allChars} />
                 </Grid>
                 <Grid item>
                   <SimCraftInput
@@ -159,13 +110,7 @@ export default function QEHeader(props) {
                   />
                 </Grid>
                 <Grid item>
-                  <ProfileSelector
-                    name={playerName}
-                    component={Link}
-                    to={linkTarget}
-                    logFunc={props.logFunc}
-                    setRegion={props.setRegion}
-                  />
+                  <ProfileSelector name={playerName} component={Link} to={linkTarget} logFunc={props.logFunc} setRegion={props.setRegion} />
                 </Grid>
                 <Grid item>
                   <LanguageSelector />

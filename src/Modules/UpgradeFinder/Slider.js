@@ -1,9 +1,5 @@
 import React from "react";
-import {
-  makeStyles,
-  createMuiTheme,
-  ThemeProvider,
-} from "@material-ui/core/styles";
+import { makeStyles, createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import { Grid, Slider } from "@material-ui/core";
 import { useTranslation } from "react-i18next";
 
@@ -33,7 +29,7 @@ const theme = createMuiTheme({
 
 export default function UpgradeFinderSlider(props) {
   const classes = useStyles();
-  const { t, i18n } = useTranslation();
+  // const { t, i18n } = useTranslation();
 
   function valuetext(value) {
     return `${value}`;

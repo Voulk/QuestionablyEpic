@@ -1,15 +1,6 @@
 import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import {
-  Accordion,
-  Grid,
-  AccordionDetails,
-  AccordionSummary,
-  Typography,
-  Divider,
-  TextField,
-  Tooltip,
-} from "@material-ui/core";
+import { Accordion, Grid, AccordionDetails, AccordionSummary, Typography, Divider, TextField, Tooltip } from "@material-ui/core";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import { useTranslation } from "react-i18next";
 
@@ -67,31 +58,20 @@ export default function TopGearSettingsAccordion() {
   return (
     <div className={classes.root}>
       <Accordion defaultExpanded={false} disabled={true} elevation={0}>
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel1c-content"
-          id="panel1c-header"
-        >
+        <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1c-content" id="panel1c-header">
           <div className={classes.column}>
-            <Typography className={classes.heading}>
-              {t("Settings.SettingsTitle")}
-            </Typography>
+            <Typography className={classes.heading}>{t("Settings.SettingsTitle")}</Typography>
           </div>
         </AccordionSummary>
         <Divider variant="middle" />
         <AccordionDetails className={classes.details}>
           <Grid container spacing={1} direction="row" wrap="nowrap">
-            {/* Cabalist's Hymnal Item */}
+            {/* ------------------------- Cabalist's Hymnal Item ------------------------- */}
             <Grid item xs={2}>
               <Grid container spacing={1} style={{ paddingLeft: 8 }}>
                 <Grid item xs={12}>
-                  <Tooltip
-                    title={t("Settings.Setting0Tooltip")}
-                    placement="top-start"
-                  >
-                    <Typography color="primary">
-                      {t("Settings.Setting0Title")}
-                    </Typography>
+                  <Tooltip title={t("Settings.Setting0Tooltip")} placement="top-start">
+                    <Typography color="primary">{t("Settings.Setting0Title")}</Typography>
                   </Tooltip>
                 </Grid>
                 <Grid item xs={12}>

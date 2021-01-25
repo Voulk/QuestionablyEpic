@@ -1,9 +1,7 @@
 import React from "react";
-import Button from "@material-ui/core/Button";
+import { Button, Grid } from "@material-ui/core";
 import { useHistory, useLocation } from "react-router-dom";
-// import ls from "local-storage";
 import BattleNetLogo from "../../Images/QeAssets/BattleNetLogo.png";
-import { Grid } from "@material-ui/core";
 
 export function QELogin(props) {
   let history = useHistory();
@@ -23,55 +21,25 @@ export function QELogin(props) {
 
   return (
     <div>
-      <img
-        src={BattleNetLogo}
-        style={{ borderRadius: "4px" }}
-        alt="BattleNet"
-      />
-      <Grid
-        container
-        direction="row"
-        justify="space-evenly"
-        alignItems="center"
-        wrap="nowrap"
-      >
+      <img src={BattleNetLogo} style={{ borderRadius: "4px" }} alt="BattleNet" />
+      <Grid container direction="row" justify="space-evenly" alignItems="center" wrap="nowrap">
         <Grid item xs={4}>
-          <Button
-            variant="contained"
-            color="primary"
-            style={btnStyle}
-            onClick={() => handleClick("us")}
-          >
+          <Button variant="contained" color="primary" style={btnStyle} onClick={() => handleClick("us")}>
             US
           </Button>
         </Grid>
         <Grid item xs={4}>
-          <Button
-            variant="contained"
-            color="primary"
-            style={btnStyle}
-            onClick={() => handleClick("eu")}
-          >
+          <Button variant="contained" color="primary" style={btnStyle} onClick={() => handleClick("eu")}>
             EU
           </Button>
         </Grid>
         <Grid item xs={4}>
-          <Button
-            variant="contained"
-            color="primary"
-            style={btnStyle}
-            onClick={() => handleClick("apac")}
-          >
+          <Button variant="contained" color="primary" style={btnStyle} onClick={() => handleClick("apac")}>
             APAC
           </Button>
         </Grid>
         <Grid item xs={4}>
-          <Button
-            variant="contained"
-            color="primary"
-            style={btnStyle}
-            onClick={() => handleClick("cn")}
-          >
+          <Button variant="contained" color="primary" style={btnStyle} onClick={() => handleClick("cn")}>
             CN
           </Button>
         </Grid>
@@ -131,17 +99,13 @@ function getPlayerTag(accessToken, updatePlayerID) {
       },
       (error) => {
         console.error("Error: " + error.message + ".");
-      }
+      },
     );
 }
 
 function dbCreatePlayer(bid, btag) {
   let adjTag = btag.replace("#", "%23");
-  let fetchUrl =
-    "https://questionablyepic.com/api/addUser.php?btag=" +
-    adjTag +
-    "&bid=" +
-    bid;
+  let fetchUrl = "https://questionablyepic.com/api/addUser.php?btag=" + adjTag + "&bid=" + bid;
 
   fetch(fetchUrl)
     .then((res) => res.text())

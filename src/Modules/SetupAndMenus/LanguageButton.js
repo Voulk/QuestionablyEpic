@@ -1,13 +1,5 @@
 import React from "react";
-import {
-  Button,
-  Grow,
-  MenuItem,
-  MenuList,
-  Paper,
-  Popper,
-  Tooltip,
-} from "@material-ui/core";
+import { Button, Grow, MenuItem, MenuList, Paper, Popper, Tooltip } from "@material-ui/core";
 import ClickAwayListener from "@material-ui/core/ClickAwayListener";
 import { makeStyles } from "@material-ui/core/styles";
 import { useTranslation } from "react-i18next";
@@ -39,7 +31,7 @@ export default function LanguageSelector(props) {
       return;
     }
     i18n.changeLanguage(lang);
-    ls.set("lang", lang)
+    ls.set("lang", lang);
     setOpen(false);
   };
 
@@ -50,7 +42,7 @@ export default function LanguageSelector(props) {
     }
   }
 
-  // return focus to the button when we transitioned from !open -> open
+  /* --- return focus to the button when we transitioned from !open -> open --- */
   const prevOpen = React.useRef(open);
   React.useEffect(() => {
     if (prevOpen.current === true && open === false) {
@@ -62,25 +54,15 @@ export default function LanguageSelector(props) {
 
   const langIcon = () => {
     if (currentLanguage === "en") {
-      return (
-        <ReactCountryFlag countryCode="GB" svg style={{ marginRight: "5px" }} />
-      );
+      return <ReactCountryFlag countryCode="GB" svg style={{ marginRight: "5px" }} />;
     } else if (currentLanguage === "ru") {
-      return (
-        <ReactCountryFlag countryCode="RU" svg style={{ marginRight: "5px" }} />
-      );
+      return <ReactCountryFlag countryCode="RU" svg style={{ marginRight: "5px" }} />;
     } else if (currentLanguage === "cn") {
-      return (
-        <ReactCountryFlag countryCode="CN" svg style={{ marginRight: "5px" }} />
-      );
+      return <ReactCountryFlag countryCode="CN" svg style={{ marginRight: "5px" }} />;
     } else if (currentLanguage === "fr") {
-      return (
-        <ReactCountryFlag countryCode="FR" svg style={{ marginRight: "5px" }} />
-      );
+      return <ReactCountryFlag countryCode="FR" svg style={{ marginRight: "5px" }} />;
     } else if (currentLanguage === "de") {
-      return (
-        <ReactCountryFlag countryCode="DE" svg style={{ marginRight: "5px" }} />
-      );
+      return <ReactCountryFlag countryCode="DE" svg style={{ marginRight: "5px" }} />;
     }
   };
 
@@ -88,29 +70,17 @@ export default function LanguageSelector(props) {
     <div className={classes.root}>
       <div>
         <Tooltip title={t("QeHeader.Tooltip.Language")} arrow>
-          <Button
-            ref={anchorRef}
-            aria-controls={open ? "menu-list-grow" : undefined}
-            aria-haspopup="true"
-            onClick={handleToggle}
-          >
+          <Button ref={anchorRef} aria-controls={open ? "menu-list-grow" : undefined} aria-haspopup="true" onClick={handleToggle}>
             {langIcon(currentLanguage)}
             {currentLanguage}
           </Button>
         </Tooltip>
-        <Popper
-          open={open}
-          anchorEl={anchorRef.current}
-          role={undefined}
-          transition
-          disablePortal
-        >
+        <Popper open={open} anchorEl={anchorRef.current} role={undefined} transition disablePortal>
           {({ TransitionProps, placement }) => (
             <Grow
               {...TransitionProps}
               style={{
-                transformOrigin:
-                  placement === "bottom" ? "center top" : "center bottom",
+                transformOrigin: placement === "bottom" ? "center top" : "center bottom",
               }}
             >
               <Paper>
@@ -136,11 +106,7 @@ export default function LanguageSelector(props) {
                       CN
                     </MenuItem> */}
                     <MenuItem onClick={(e) => handleClose(e, "en")}>
-                      <ReactCountryFlag
-                        countryCode="GB"
-                        svg
-                        style={{ marginRight: "5px" }}
-                      />
+                      <ReactCountryFlag countryCode="GB" svg style={{ marginRight: "5px" }} />
                       EN
                     </MenuItem>
                     {/*
@@ -159,13 +125,9 @@ export default function LanguageSelector(props) {
                         style={{ marginRight: "5px" }}
                       />
                       RU
-                    </MenuItem> */ }
+                    </MenuItem> */}
                     <MenuItem onClick={(e) => handleClose(e, "de")}>
-                      <ReactCountryFlag
-                        countryCode="DE"
-                        svg
-                        style={{ marginRight: "5px" }}
-                      />
+                      <ReactCountryFlag countryCode="DE" svg style={{ marginRight: "5px" }} />
                       DE
                     </MenuItem>
                   </MenuList>

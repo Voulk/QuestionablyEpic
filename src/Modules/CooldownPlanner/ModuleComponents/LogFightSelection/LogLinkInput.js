@@ -9,17 +9,12 @@ export default function LogLinkInput(props) {
     <TextField
       error={props.reportid !== "err" ? false : true}
       id="filled-basic"
-      label={
-        props.reportid !== "err"
-          ? t("CooldownPlanner.UserInputs.Loglink")
-          : "Incorrect Link / Report ID Provided :("
-      }
+      label={props.reportid !== "err" ? t("CooldownPlanner.UserInputs.Loglink") : "Incorrect Link / Report ID Provided :("}
       variant="outlined"
       onChange={props.changed}
       value={props.loglink}
       size="small"
       {...props.styleProps}
-      // style={{ width: "85%" }}
     />
   );
 }

@@ -1,30 +1,19 @@
 import React, { forwardRef, useState } from "react";
 import MaterialTable, { MTableToolbar } from "material-table";
-import ArrowDownward from "@material-ui/icons/ArrowDownward";
+import { ArrowDownward, SaveAlt } from "@material-ui/icons";
 import FileCopyIcon from "@material-ui/icons/FileCopy";
-import SaveAlt from "@material-ui/icons/SaveAlt";
 import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import { localizationFR } from "../../../locale/fr/TableLocale";
 import { localizationEN } from "../../../locale/en/TableLocale";
 import { localizationRU } from "../../../locale/ru/TableLocale";
 import { localizationCH } from "../../../locale/ch/TableLocale";
 import { useTranslation } from "react-i18next";
-import Divider from "@material-ui/core/Divider";
-import Paper from "@material-ui/core/Paper";
-import Grid from "@material-ui/core/Grid";
-import Select from "@material-ui/core/Select";
-import InputLabel from "@material-ui/core/InputLabel";
-import FormControl from "@material-ui/core/FormControl";
-import MenuItem from "@material-ui/core/MenuItem";
+import { Divider, Grid, InputLabel, FormControl, MenuItem, Select, Paper, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import { Typography } from "@material-ui/core";
 
 const theme = createMuiTheme({
   overrides: {
     MuiTableCell: {
-      // regular: {
-      //   padding: "0px 8px 0px 8px",
-      // },
       root: {
         padding: "4px 4px 4px 4px",
       },
@@ -104,15 +93,9 @@ const menuStyle = {
 };
 
 const tableIcons = {
-  Export: forwardRef((props, ref) => (
-    <SaveAlt {...props} style={{ color: "#ffee77" }} ref={ref} />
-  )),
-  Copy: forwardRef((props, ref) => (
-    <FileCopyIcon {...props} style={{ color: "#ffee77" }} ref={ref} />
-  )),
-  SortArrow: forwardRef((props, ref) => (
-    <ArrowDownward {...props} style={{ color: "#ffee77" }} ref={ref} />
-  )),
+  Export: forwardRef((props, ref) => <SaveAlt {...props} style={{ color: "#ffee77" }} ref={ref} />),
+  Copy: forwardRef((props, ref) => <FileCopyIcon {...props} style={{ color: "#ffee77" }} ref={ref} />),
+  SortArrow: forwardRef((props, ref) => <ArrowDownward {...props} style={{ color: "#ffee77" }} ref={ref} />),
 };
 
 export default function ERTTable(props) {
@@ -136,16 +119,10 @@ export default function ERTTable(props) {
   const copyToClipboard = (ertType) => {
     let data = ertFormat(ertType);
     const copyText = data.map((key) => key.ert);
-    // console.log(copyText);
     if (navigator.clipboard) {
-      navigator.clipboard.writeText(copyText).then(
-        // () => {
-        //   console.log("copy success");
-        // },
-        (error) => {
-          console.log(error);
-        }
-      );
+      navigator.clipboard.writeText(copyText).then((error) => {
+        console.log(error);
+      });
     } else {
       data.select();
       document.execCommand("copy");
@@ -180,9 +157,7 @@ export default function ERTTable(props) {
             title: "Time",
             field: "bossAbility",
             hidden: true,
-            customSort: (a, b) =>
-              moment(a, "mm:ss").milliseconds() -
-              moment(b, "mm:ss").milliseconds(),
+            customSort: (a, b) => moment(a, "mm:ss").milliseconds() - moment(b, "mm:ss").milliseconds(),
           },
           {
             title: "Sort by Time",
@@ -196,9 +171,7 @@ export default function ERTTable(props) {
             title: "Time",
             field: "time",
             hidden: true,
-            customSort: (a, b) =>
-              moment(a, "mm:ss").milliseconds() -
-              moment(b, "mm:ss").milliseconds(),
+            customSort: (a, b) => moment(a, "mm:ss").milliseconds() - moment(b, "mm:ss").milliseconds(),
           },
         ]}
         title="ERT Note"
@@ -215,25 +188,15 @@ export default function ERTTable(props) {
           Toolbar: (props) => (
             <Grid container spacing={1} direction="row" justify="space-between">
               <Grid item xs={2}>
-                <Typography
-                  variant="h6"
-                  color="primary"
-                  style={{ paddingLeft: 24 }}
-                >
+                <Typography variant="h6" color="primary" style={{ paddingLeft: 24 }}>
                   ERT Export
                 </Typography>
               </Grid>
               <Grid item xs={2}>
                 <Grid container spacing={1} alignItems="center">
                   <Grid item xs="auto">
-                    <FormControl
-                      style={{ minWidth: 200 }}
-                      variant="outlined"
-                      size="small"
-                    >
-                      <InputLabel id="BossSelector">
-                        {t("CooldownPlanner.TableLabels.TypeSelector")}
-                      </InputLabel>
+                    <FormControl style={{ minWidth: 200 }} variant="outlined" size="small">
+                      <InputLabel id="BossSelector">{t("CooldownPlanner.TableLabels.TypeSelector")}</InputLabel>
                       <Select
                         labelId="BossSelector"
                         value={ertType}
@@ -249,10 +212,7 @@ export default function ERTTable(props) {
                           Time - Icons
                         </MenuItem>
                         <Divider />
-                        <MenuItem
-                          key={"ert3"}
-                          value={"Boss Ability - No Icons"}
-                        >
+                        <MenuItem key={"ert3"} value={"Boss Ability - No Icons"}>
                           Boss Ability - No Icons
                         </MenuItem>
                         <Divider />
@@ -283,9 +243,7 @@ export default function ERTTable(props) {
         }}
         actions={[
           {
-            icon: () => (
-              <FileCopyIcon {...props} style={{ color: "#ffee77" }} />
-            ),
+            icon: () => <FileCopyIcon {...props} style={{ color: "#ffee77" }} />,
             tooltip: "Copy to Clipboard",
             isFreeAction: true,
             onClick: (event) => copyToClipboard(ertType),

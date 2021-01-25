@@ -20,15 +20,9 @@ const mainMenuOptions = {
   "MainMenu.ExploreCovenants": ["/soulbinds", true, "ExploreCovenants"],
   "MainMenu.LegendaryAnalysis": ["/legendaries", true, "LegendaryAnalysis"],
   //"MainMenu.TrinketAnalysis": ["/trinkets", false, "TrinketAnalysis"],
-
   "MainMenu.CooldownPlanner": ["/holydiver", false, "CooldownPlanner"],
   "MainMenu.Profile": ["/profile", true, "Profile"],
-
 };
-
-/* Buttons to be added back.
-
-*/
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -37,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
       width: "80%",
       justifyContent: "center",
       display: "block",
-      marginTop: 120
+      marginTop: 120,
     },
     [theme.breakpoints.up("md")]: {
       margin: "auto",
@@ -54,20 +48,15 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-// <p>{props.pl.getSpec()}</p>
-
 export default function QEMainMenu(props) {
   useEffect(() => {
     ReactGA.pageview(window.location.pathname + window.location.search);
   }, []);
 
   const { t, i18n } = useTranslation();
-  // const currentLanguage = i18n.language;
   const classes = useStyles();
   const characterCount = props.allChars.getAllChar().length;
-  const patron = ["Diamond", "Gold", "Rolls Royce", "Sapphire"].includes(
-    props.patronStatus
-  );
+  const patron = ["Diamond", "Gold", "Rolls Royce", "Sapphire"].includes(props.patronStatus);
 
   const oddEven = (number) => {
     if (number % 2 == 0) {
@@ -85,9 +74,7 @@ export default function QEMainMenu(props) {
             <Button
               key={321}
               variant="contained"
-              onClick={() =>
-                window.open("https://patreon.com/questionablyepic", "_blank")
-              }
+              onClick={() => window.open("https://patreon.com/questionablyepic", "_blank")}
               color="secondary"
               disabled={patron}
               style={{
@@ -104,32 +91,32 @@ export default function QEMainMenu(props) {
             </Button>
           </Grid>
           <Grid item xs={12}>
-            <Paper
-              elevation={0}
-              style={{ border: "1px", padding: 2, paddingLeft: 15 }}
-            >
-              <Typography
-                style={{ color: "limegreen", lineHeight: "10px" }}
-                align="left"
-                variant="body1"
-              >
-                <p>
-                  - Legendary effects coming soon for Priests. Mistweaver now live!{" "}
-                </p>
-                <p>- Great Vault support in, including weapon tokens!</p>
-                <p>- Upgrade Finder now live!</p>
-              </Typography>
+            <Paper elevation={0} style={{ border: "1px", padding: 16 }}>
+              {/* Potentially we make the message external and map the lines to save space here */}
+              <Grid container spacing={1}>
+                <Grid item xs={12}>
+                  <Typography style={{ color: "limegreen", lineHeight: "10px" }} align="left" variant="body1">
+                    - Legendary effects coming soon for Priests. Mistweaver now live!
+                  </Typography>
+                </Grid>
+                <Grid item xs={12}>
+                  <Typography style={{ color: "limegreen", lineHeight: "10px" }} align="left" variant="body1">
+                    - Great Vault support in, including weapon tokens!
+                  </Typography>
+                </Grid>
+                <Grid item xs={12}>
+                  <Typography style={{ color: "limegreen", lineHeight: "10px" }} align="left" variant="body1">
+                    - Upgrade Finder now live!
+                  </Typography>
+                </Grid>
+              </Grid>
             </Paper>
           </Grid>
 
           {Object.keys(mainMenuOptions).map((key, index) => (
             // Buttons are translated and printed from a dictionary.
             <Grid item xs={12} sm={12} md={6} lg={6} xl={6} key={index}>
-              <Tooltip
-                title={t("MainMenu.Tooltips." + mainMenuOptions[key][2])}
-                placement={oddEven(index)}
-                arrow
-              >
+              <Tooltip title={t("MainMenu.Tooltips." + mainMenuOptions[key][2])} placement={oddEven(index)} arrow>
                 <Button
                   key={index}
                   variant="contained"
@@ -141,10 +128,7 @@ export default function QEMainMenu(props) {
                     whiteSpace: "nowrap",
                     justifyContent: "left",
                     paddingLeft: "32px",
-                    color:
-                      mainMenuOptions[key][1] && characterCount > 0
-                        ? "#F2BF59"
-                        : "#9c9c9c",
+                    color: mainMenuOptions[key][1] && characterCount > 0 ? "#F2BF59" : "#9c9c9c",
                   }}
                   component={Link}
                   to={mainMenuOptions[key][0]}
@@ -158,11 +142,7 @@ export default function QEMainMenu(props) {
         </Grid>
 
         <p className="headers">{t("MainMenu.CharHeader")}</p>
-        <Typography
-          style={{ color: "white", marginBottom: "10px", fontStyle: "italic" }}
-          variant="body2"
-          align="center"
-        >
+        <Typography style={{ color: "white", marginBottom: "10px", fontStyle: "italic" }} variant="body2" align="center">
           {t("MainMenu.CharHelpText")}
         </Typography>
 
@@ -186,15 +166,7 @@ export default function QEMainMenu(props) {
                   />
                 ))
             : ""}
-          {props.allChars.getAllChar().length < 9 ? (
-            <AddNewChar
-              allChars={props.allChars}
-              charUpdate={props.charUpdate}
-              charAddedSnack={props.charAddedSnack}
-            />
-          ) : (
-            ""
-          )}
+          {props.allChars.getAllChar().length < 9 ? <AddNewChar allChars={props.allChars} charUpdate={props.charUpdate} charAddedSnack={props.charAddedSnack} /> : ""}
         </Grid>
 
         <p className="headers" style={{ fontSize: "12px" }}>

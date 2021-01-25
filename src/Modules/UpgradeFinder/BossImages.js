@@ -20,16 +20,6 @@ import NurgashHeader from "../../Images/Bosses/WorldBosses/NurgashUGF.png";
 
 export default function UpgradeFinderBossImages(props, style) {
   let source = "";
-  // "2393", //"Shriekwing",
-  // "2429", //"Huntsman Altimor",
-  // "2422", //"Sun Kings Salvation",
-  // "2418", //"Artificer Xy'mox",
-  // "2428", //"Hungering Destroyer",
-  // "2420", //"Inerva Darkvein",
-  // "2426", //"Council of Blood",
-  // "2394", //"Sludgefist",
-  // "2425", //"Stone Legion Generals",
-  // "2424", //"Sire Denathrius",
 
   // Castle Nathria
   // Broker Curator
@@ -89,8 +79,7 @@ export default function UpgradeFinderBossImages(props, style) {
   // Nurgash
   if (props === 2433) {
     source = NurgashHeader;
-  }
-  else if (props === 999) {
+  } else if (props === 999) {
     source = BoeHeader;
   }
 

@@ -1,18 +1,18 @@
 //potency
-const NOURISHING_CHI = .1875;
-const JADE_BOND = .0625;
-const RISING_SUN_REVIVAL = .125;
-const RESPLENDENT_MIST = .5;
+const NOURISHING_CHI = 0.1875;
+const JADE_BOND = 0.0625;
+const RISING_SUN_REVIVAL = 0.125;
+const RESPLENDENT_MIST = 0.5;
 
 //covenant specific
 const STIKE_WITH_CLARITY = 1;
 //const WAY_OF_THE_FAE = .105;
-const BONE_MARROW_HOPS = .4;
-const IMBUED_REFLECTIONS = .3625;
+const BONE_MARROW_HOPS = 0.4;
+const IMBUED_REFLECTIONS = 0.3625;
 
 //endurance
-const FORTIFYING_INGREDIENTS = .12;
-const HARM_DEINAL = .25;
+const FORTIFYING_INGREDIENTS = 0.12;
+const HARM_DEINAL = 0.25;
 //const GROUND_BREATH = .15;
 
 const IDVIVIFY = 116670;
@@ -21,173 +21,167 @@ const IDREVIVAL = 115310;
 const IDFORTIFYINGBREW = 115203;
 const IDGUSTOFMISTS = 117907;
 
-function conduitScaling(rankOne, requiredRank){
-  const scalingFactor = rankOne * .1;
+function conduitScaling(rankOne, requiredRank) {
+  const scalingFactor = rankOne * 0.1;
   const rankZero = rankOne - scalingFactor;
   const rankRequested = rankZero + scalingFactor * requiredRank;
   return rankRequested;
 }
 
-export const getMonkConduit = (conduitID,  player, contentType, conduitLevel) => {
-  
+export const getMonkConduit = (conduitID, player, contentType, conduitLevel) => {
   let bonus_stats = {};
 
-    // === Potency Conduits ===
-    // Jade Bond
-    if (conduitID === 336773) {
-      const conduitPower = conduitScaling(JADE_BOND, conduitLevel);
-      // You can only have one of the two so its gonna be 0 + real or real + 0 so we can cheat and be lazy
-      const chijiAndYulonHelaing = player.getSpecialQuery("HPSChijiGusts", contentType) + player.getSpellHPS(IDSOOTHINGBREATH, contentType);
-      const directHealingIncrease =  chijiAndYulonHelaing * conduitPower;
+  // === Potency Conduits ===
+  // Jade Bond
+  if (conduitID === 336773) {
+    const conduitPower = conduitScaling(JADE_BOND, conduitLevel);
+    // You can only have one of the two so its gonna be 0 + real or real + 0 so we can cheat and be lazy
+    const chijiAndYulonHelaing = player.getSpecialQuery("HPSChijiGusts", contentType) + player.getSpellHPS(IDSOOTHINGBREATH, contentType);
+    const directHealingIncrease = chijiAndYulonHelaing * conduitPower;
 
-      // TODO cdr stuffs ???
+    // TODO cdr stuffs ???
 
+    bonus_stats.HPS = directHealingIncrease;
+  }
+  // Nourishing Chi
+  else if (conduitID === 337241) {
+    //TODO Do we care about other healers hps or just ours?
+    const conduitPower = conduitScaling(NOURISHING_CHI, conduitLevel);
+    const hotsDuringLC = player.getSpecialQuery("HPSHotHealingDuringLC", contentType);
+    const hotHealingBeforeBoosts = hotsDuringLC / 1.5;
+    const healingIncreaseDuringLC = hotHealingBeforeBoosts * conduitPower;
 
-      bonus_stats.HPS = directHealingIncrease;
-    }
-    // Nourishing Chi
-    else if (conduitID === 337241) {
+    const hotsAfterLC = player.getSpecialQuery("HPSHotHealingAfterLC", contentType);
+    const healingIncreaseAfterLC = hotsAfterLC * conduitPower;
 
-      //TODO Do we care about other healers hps or just ours?
-      const conduitPower = conduitScaling(NOURISHING_CHI, conduitLevel);
-      const hotsDuringLC = player.getSpecialQuery("HPSHotHealingDuringLC", contentType);
-      const hotHealingBeforeBoosts = hotsDuringLC / 1.5;
-      const healingIncreaseDuringLC =  hotHealingBeforeBoosts * conduitPower;
+    bonus_stats.HPS = healingIncreaseDuringLC + healingIncreaseAfterLC;
+  }
+  // Resplendent Mist
+  else if (conduitID === 336812) {
+    const conduitPower = conduitScaling(RESPLENDENT_MIST, conduitLevel);
+    const conduitChance = 0.3;
+    const hrHPS = player.getSpellHPS(IDGUSTOFMISTS, contentType);
+    const directHealingIncrease = hrHPS * conduitPower * conduitChance;
 
-      const hotsAfterLC = player.getSpecialQuery("HPSHotHealingAfterLC", contentType);
-      const healingIncreaseAfterLC =  hotsAfterLC * conduitPower;
+    bonus_stats.HPS = directHealingIncrease;
+  }
+  // Rising Sun Revival
+  else if (conduitID === 337099) {
+    const conduitPower = conduitScaling(RISING_SUN_REVIVAL, conduitLevel);
+    const hrHPS = player.getSpellHPS(IDREVIVAL, contentType);
+    const directHealingIncrease = hrHPS * conduitPower;
 
-      bonus_stats.HPS = healingIncreaseDuringLC + healingIncreaseAfterLC;
-    }
-    // Resplendent Mist
-    else if (conduitID === 336812) {
-      const conduitPower = conduitScaling(RESPLENDENT_MIST, conduitLevel);
-      const conduitChance = .3;
-      const hrHPS = player.getSpellHPS(IDGUSTOFMISTS, contentType);
-      const directHealingIncrease =  hrHPS * conduitPower * conduitChance;
+    // TODO cdr stuff
 
-      bonus_stats.HPS = directHealingIncrease;
-    }
-    // Rising Sun Revival
-    else if (conduitID === 337099) {
-      const conduitPower = conduitScaling(RISING_SUN_REVIVAL, conduitLevel);
-      const hrHPS = player.getSpellHPS(IDREVIVAL, contentType);
-      const directHealingIncrease =  hrHPS * conduitPower;
+    bonus_stats.HPS = directHealingIncrease;
+  }
 
-      // TODO cdr stuff
+  // === Covenent specific ===
 
-      bonus_stats.HPS = directHealingIncrease;
-    }
+  // Strike with Clarity (Kyrian)
+  else if (conduitID === 337286) {
+    const conduitPower = conduitScaling(STIKE_WITH_CLARITY, conduitLevel);
 
-    // === Covenent specific ===
+    //uptime stuffs
+    const normalUptime = 30 / 120;
+    const uptimeWithConduit = 35 / 120;
+    const deltaUptime = uptimeWithConduit - normalUptime;
 
-    // Strike with Clarity (Kyrian)
-    else if (conduitID === 337286) {
-      const conduitPower = conduitScaling(STIKE_WITH_CLARITY, conduitLevel);
+    //how much healing does the extra mastery give us for normal useage
+    const masteryFromPower = conduitPower * 35;
+    const masteryStatWeight = player.getStatWeight(contentType, "mastery");
+    const healingFromExtraMasteryDuringNormalTime = masteryStatWeight * masteryFromPower * normalUptime;
 
-      //uptime stuffs
-      const normalUptime = 30/120;
-      const uptimeWithConduit = 35/120;
-      const deltaUptime = uptimeWithConduit - normalUptime;
+    const masteryFromCovenantItself = 42 * 35 + masteryFromPower;
+    const healingFromExtraTime = masteryStatWeight * masteryFromCovenantItself * deltaUptime;
 
-      //how much healing does the extra mastery give us for normal useage
-      const masteryFromPower = conduitPower * 35;
-      const masteryStatWeight = player.getStatWeight(contentType, "mastery");
-      const healingFromExtraMasteryDuringNormalTime =  masteryStatWeight * masteryFromPower * normalUptime;
+    bonus_stats.HPS = healingFromExtraMasteryDuringNormalTime + healingFromExtraTime;
+  }
+  // Imbued Reflections (Venthyr)
+  else if (conduitID === 337301) {
+    const conduitPower = conduitScaling(IMBUED_REFLECTIONS, conduitLevel);
 
-      const masteryFromCovenantItself = 42 * 35 + masteryFromPower;
-      const healingFromExtraTime = masteryStatWeight * masteryFromCovenantItself * deltaUptime;
+    const envSP = 3.6 * 1.4; //for some reason their env multiplier effects their env healing
+    const soomSP = 1.04;
+    const multiplier = player.getStatMultiplier("NOMAST") * player.getInt();
 
-      bonus_stats.HPS = healingFromExtraMasteryDuringNormalTime + healingFromExtraTime;
-    }
-    // Imbued Reflections (Venthyr)
-    else if (conduitID === 337301) {
-      const conduitPower = conduitScaling(IMBUED_REFLECTIONS, conduitLevel);
+    const cooldown = 180;
+    const numberOfCraneClones = 4;
+    const envCastsPerClone = 1;
+    const soomCastsPerClone = 1.5;
 
-      const envSP = 3.60 * 1.4;//for some reason their env multiplier effects their env healing
-      const soomSP = 1.04;
-      const multiplier = player.getStatMultiplier("NOMAST") * player.getInt();
-      
-      const cooldown = 180;
-      const numberOfCraneClones = 4;
-      const envCastsPerClone = 1;
-      const soomCastsPerClone = 1.5;
+    const envHealing = envSP * multiplier * numberOfCraneClones * envCastsPerClone;
+    const soomHealing = soomSP * multiplier * numberOfCraneClones * soomCastsPerClone;
 
-      const envHealing = envSP * multiplier * numberOfCraneClones * envCastsPerClone;
-      const soomHealing = soomSP * multiplier * numberOfCraneClones * soomCastsPerClone;
+    const boostedENV = envHealing * conduitPower;
+    const boostedSoom = soomHealing * conduitPower;
 
-      const boostedENV = envHealing * conduitPower;
-      const boostedSoom = soomHealing * conduitPower;
+    const directHealingIncrease = boostedENV + boostedSoom;
 
-      const directHealingIncrease =  boostedENV + boostedSoom;
+    bonus_stats.HPS = directHealingIncrease / cooldown;
+  }
+  // Bone Marrow Hops (Necrolord)
+  else if (conduitID === 337295) {
+    const uptimeWithBMH = 10 / 57.5;
+    const normalUptime = 10 / 60;
+    const netUptimeFromBMH = uptimeWithBMH - normalUptime;
 
-      bonus_stats.HPS = directHealingIncrease/cooldown;
-    }
-    // Bone Marrow Hops (Necrolord)
-    else if (conduitID === 337295) {
-      const uptimeWithBMH = 10/57.5;
-      const normalUptime = 10/60;
-      const netUptimeFromBMH = uptimeWithBMH - normalUptime;
-      
-      const conduitPower = conduitScaling(BONE_MARROW_HOPS, conduitLevel);
-      const actualIncreaseForBDB = (1 + conduitPower) * .35;
-      const actualIncreaseFromBMH = actualIncreaseForBDB - .35;
+    const conduitPower = conduitScaling(BONE_MARROW_HOPS, conduitLevel);
+    const actualIncreaseForBDB = (1 + conduitPower) * 0.35;
+    const actualIncreaseFromBMH = actualIncreaseForBDB - 0.35;
 
-      const totalHPS = player.getHPS(contentType);
+    const totalHPS = player.getHPS(contentType);
 
-      const directHealingIncrease =  totalHPS * actualIncreaseFromBMH * normalUptime;
-      const extraUptimeHPS = totalHPS * actualIncreaseForBDB * netUptimeFromBMH;
+    const directHealingIncrease = totalHPS * actualIncreaseFromBMH * normalUptime;
+    const extraUptimeHPS = totalHPS * actualIncreaseForBDB * netUptimeFromBMH;
 
+    bonus_stats.HPS = directHealingIncrease + extraUptimeHPS;
+  }
+  // Way of the Fae (Night Fae) NO HPS BOOST
+  else if (conduitID === 337303) {
+    bonus_stats.HPS = 0;
+  }
 
-      bonus_stats.HPS = directHealingIncrease + extraUptimeHPS;
-    }
-    // Way of the Fae (Night Fae) NO HPS BOOST
-    else if (conduitID === 337303) {
-      bonus_stats.HPS = 0;
-    }
+  // === Endurance Conduits ===
+  // Fortifying Ingredients
+  else if (conduitID === 336853) {
+    const conduitPower = conduitScaling(FORTIFYING_INGREDIENTS, conduitLevel);
+    const maxHP = player.activeStats.stamina * 20;
+    const versPercent = 1 + player.activeStats.versatility / 40 / 100;
 
-    // === Endurance Conduits ===
-    // Fortifying Ingredients
-    else if (conduitID === 336853) {
+    const shield = maxHP * versPercent * conduitPower;
 
-      const conduitPower = conduitScaling(FORTIFYING_INGREDIENTS, conduitLevel);
-      const maxHP = player.activeStats.stamina * 20;
-      const versPercent = 1 + (player.activeStats.versatility / 40)/100;
+    const cpm = player.getSpellCPM(IDFORTIFYINGBREW, contentType);
 
-      const shield = maxHP * versPercent * conduitPower;
+    const hps = (shield * cpm) / 60;
 
-      const cpm = player.getSpellCPM(IDFORTIFYINGBREW, contentType);
+    bonus_stats.HPS = hps;
+  }
+  // Grounding Breath
+  else if (conduitID === 336632) {
+    const healingPerVivify = player.getSingleCast(IDVIVIFY, contentType);
 
-      const hps = shield * cpm / 60;
+    const durationOfFight = player.getFightLength(contentType);
+    const numberOfExtraVivifies = Math.ceil(durationOfFight / 60);
 
-      bonus_stats.HPS = hps;
-    }
-    // Grounding Breath
-    else if (conduitID === 336632) {
-      const healingPerVivify = player.getSingleCast(IDVIVIFY, contentType);
+    const bonusHPS = (healingPerVivify * numberOfExtraVivifies) / durationOfFight;
 
-      const durationOfFight = player.getFightLength(contentType);
-      const numberOfExtraVivifies = Math.ceil(durationOfFight/60);
+    // TODO healing only on yourself?
 
-      const bonusHPS = healingPerVivify * numberOfExtraVivifies / durationOfFight;
+    bonus_stats.HPS = bonusHPS;
+  }
+  // Harm Denial
+  else if (conduitID === 336379) {
+    //TODO damage factor?
+    //Bugged right now so like it only boosts the one on yourself and not the other one`
 
-      // TODO healing only on yourself?
+    const conduitPower = conduitScaling(HARM_DEINAL, conduitLevel);
+    const yourExpelHarm = player.getSpecialQuery("HPSExpelHarmOnSelf", contentType);
+    //const otherExpelHarm = player.getSpellHPS("Expel Harm On other Person", contentType);
+    const directHealingIncrease = yourExpelHarm * conduitPower; //+ otherExpelHarm * conduitPower;
 
-      bonus_stats.HPS = bonusHPS;
-    }
-    // Harm Denial 
-    else if (conduitID === 336379) {
-      //TODO damage factor?
-      //Bugged right now so like it only boosts the one on yourself and not the other one`
+    bonus_stats.HPS = directHealingIncrease;
+  }
 
-      const conduitPower = conduitScaling(HARM_DEINAL, conduitLevel);
-      const yourExpelHarm = player.getSpecialQuery("HPSExpelHarmOnSelf", contentType);
-      //const otherExpelHarm = player.getSpellHPS("Expel Harm On other Person", contentType);
-      const directHealingIncrease =  yourExpelHarm * conduitPower; //+ otherExpelHarm * conduitPower;
-
-      bonus_stats.HPS = directHealingIncrease;
-    }
-
-
-    return bonus_stats;
-}
+  return bonus_stats;
+};

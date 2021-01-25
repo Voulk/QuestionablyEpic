@@ -76,7 +76,10 @@ export function classColoursJS(props) {
   ) {
     return "#AC44CE ";
   }
-  if (props === "DeathKnight" || props === "Death Knight") {
+  if (
+    props === "DeathKnight" ||
+    props === "Death Knight"
+  ) {
     return "#C41E3A	 ";
   }
 }

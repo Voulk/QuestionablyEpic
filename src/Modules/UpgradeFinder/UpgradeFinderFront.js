@@ -1,5 +1,5 @@
 import React from "react";
-import { makeStyles, createMuiTheme } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles";
 import { Paper, Grid, Typography, Button } from "@material-ui/core";
 import { useTranslation } from "react-i18next";
 import HelpText from "../SetupAndMenus/HelpText";
@@ -8,20 +8,7 @@ import ToggleButton from "@material-ui/lab/ToggleButton";
 import TopGearSettingsAccordion from "../TopGear/TopGearSettings";
 import UpgradeFinderSimC from "./UpgradeFinderSimCImport";
 import { runUpgradeFinder } from "./UpgradeFinderEngine";
-import { useHistory, useLocation } from "react-router-dom";
-import UpgradeFinderResult from "./UpgradeFinderResult";
-
-// const theme = createMuiTheme({
-//   overrides: {
-//     MuiToggleButton: {
-//       root: {
-//         "&$selected": {
-//           backgroundColor: "#F2BF59",
-//         },
-//       },
-//     },
-//   },
-// });
+import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   slider: {
@@ -46,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
   },
   header: {
     [theme.breakpoints.down("sm")]: {
-            justifyContent: "center",
+      justifyContent: "center",
       display: "block",
       marginLeft: "auto",
       marginRight: "auto",
@@ -74,7 +61,7 @@ const useStyles = makeStyles((theme) => ({
       marginRight: "auto",
       maxWidth: "55%",
     },
-  }
+  },
 }));
 
 const raidDifficulty = ["Raid Finder", "Normal", "Heroic", "Mythic"];
@@ -161,35 +148,19 @@ export default function UpgradeFinderFront(props) {
 
   let history = useHistory();
 
-  const selectsPvE = [
-    selectedRaidFinder,
-    selectedNormal,
-    selectedHeroic,
-    selectedMythic,
-  ];
-  const setsPvE = [
-    setSelectedRaidFinder,
-    setSelectedNormal,
-    setSelectedHeroic,
-    setSelectedMythic,
-  ];
+  const selectsPvE = [selectedRaidFinder, selectedNormal, selectedHeroic, selectedMythic];
+  const setsPvE = [setSelectedRaidFinder, setSelectedNormal, setSelectedHeroic, setSelectedMythic];
 
   const unleashUpgradeFinder = () => {
     const playerSettings = props.playerSettings;
-    const result = runUpgradeFinder(
-      props.player,
-      props.contentType,
-      playerSettings
-    );
+    const result = runUpgradeFinder(props.player, props.contentType, playerSettings);
     props.setItemSelection(result);
     props.setShowReport(true);
     //history.push("/UpgradeFinderReport/");
   };
 
   const getUpgradeFinderReady = (player) => {
-    return (
-      getSimCStatus(player) === "Good" && props.playerSettings.raid.length > 0
-    );
+    return getSimCStatus(player) === "Good" && props.playerSettings.raid.length > 0;
   };
 
   const getSimCStatus = (player) => {
@@ -202,11 +173,7 @@ export default function UpgradeFinderFront(props) {
     const weaponSet = player.getActiveItems("AllMainhands", false, true);
     const weapon = weaponSet.length > 0 ? weaponSet[0] : "";
 
-    return (
-      (weapon.slot === "2H Weapon" &&
-        player.getEquippedItems().length === 15) ||
-      (weapon.slot === "1H Weapon" && player.getEquippedItems().length === 16)
-    );
+    return (weapon.slot === "2H Weapon" && player.getEquippedItems().length === 15) || (weapon.slot === "1H Weapon" && player.getEquippedItems().length === 16);
   };
 
   const selectsPvP = [selectedHonor, selectedConquest];
@@ -215,22 +182,15 @@ export default function UpgradeFinderFront(props) {
 
   return (
     <div className={classes.header}>
-      <Typography
-        variant="h4"
-        color="primary"
-        align="center"
-        style={{ padding: "10px 10px 5px 10px" }}
-      >
+      <Typography variant="h4" color="primary" align="center" style={{ padding: "10px 10px 5px 10px" }}>
         {t("UpgradeFinderFront.Header")}
       </Typography>
 
       <Grid container spacing={1}>
-        {/* Help Text Section */}
-
+        {/* ---------------------------- Help Text Section --------------------------- */}
         <Grid item xs={12}>
           <HelpText text={helpText} />
         </Grid>
-
         <Grid item xs={12}>
           <UpgradeFinderSimC
             player={props.player}
@@ -242,8 +202,7 @@ export default function UpgradeFinderFront(props) {
           />
         </Grid>
 
-        {/* Raid Section */}
-
+        {/* ------------------------------ Raid Section ------------------------------ */}
         <Grid item xs={12} spacing={1}>
           <Paper elevation={0} style={{ padding: 10 }}>
             <Grid container justify="center" spacing={1}>
@@ -252,9 +211,7 @@ export default function UpgradeFinderFront(props) {
                   {t("UpgradeFinderFront.RaidDifficultyHeader")}
                 </Typography>
                 <Grid item xs={12}>
-                  <Typography align="center">
-                    {t("UpgradeFinderFront.RaidDifficultyBody")}
-                  </Typography>
+                  <Typography align="center">{t("UpgradeFinderFront.RaidDifficultyBody")}</Typography>
                 </Grid>
               </Grid>
             </Grid>
@@ -298,22 +255,16 @@ export default function UpgradeFinderFront(props) {
           </Paper>
         </Grid>
 
-        {/* Mythic Plus Section */}
-
+        {/* --------------------------- Mythic Plus Section -------------------------- */}
         <Grid item xs={12} spacing={1}>
-          <Paper
-            elevation={0}
-            style={{ padding: "10px 10px 0px 10px", textAlign: "center" }}
-          >
+          <Paper elevation={0} style={{ padding: "10px 10px 0px 10px", textAlign: "center" }}>
             <Grid container justify="center" spacing={1}>
               <Grid item xs={12}>
                 <Typography color="primary" align="center" variant="h5">
                   {t("UpgradeFinderFront.MythicPlusHeader")}
                 </Typography>
                 <Grid item xs={12}>
-                  <Typography align="center">
-                    {t("UpgradeFinderFront.MythicPlusBody")}
-                  </Typography>
+                  <Typography align="center">{t("UpgradeFinderFront.MythicPlusBody")}</Typography>
                 </Grid>
               </Grid>
             </Grid>
@@ -330,9 +281,7 @@ export default function UpgradeFinderFront(props) {
             />
           </Paper>
         </Grid>
-
-        {/* PvP Section */}
-
+        {/* ------------------------------- PvP Section ------------------------------ */}
         <Grid item xs={12} spacing={1}>
           <Paper elevation={0} style={{ padding: 10 }}>
             <Grid container justify="center" spacing={1}>
@@ -341,19 +290,12 @@ export default function UpgradeFinderFront(props) {
                   {t("UpgradeFinderFront.PvPHeader")}
                 </Typography>
                 <Grid item xs={12}>
-                  <Typography align="center">
-                    {t("UpgradeFinderFront.PvPBody")}
-                  </Typography>
+                  <Typography align="center">{t("UpgradeFinderFront.PvPBody")}</Typography>
                 </Grid>
               </Grid>
             </Grid>
 
-            <Grid
-              container
-              justify="center"
-              spacing={1}
-              style={{ marginTop: "10px 10px 0px 10px" }}
-            >
+            <Grid container justify="center" spacing={1} style={{ marginTop: "10px 10px 0px 10px" }}>
               <Grid item style={{ textAlign: "center" }} xs={12}>
                 <UpgradeFinderSlider
                   className={classes.slider}
@@ -399,12 +341,7 @@ export default function UpgradeFinderFront(props) {
           }}
         >
           <div>
-            <Typography
-              variant="Subtitle2"
-              align="center"
-              style={{ padding: "5px 10px 5px 10px" }}
-              color="primary"
-            >
+            <Typography variant="Subtitle2" align="center" style={{ padding: "5px 10px 5px 10px" }} color="primary">
               {/* {errorMessage} */}
             </Typography>
             <Button

@@ -1,15 +1,7 @@
 import { render } from "react-dom";
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import {
-  Accordion,
-  Grid,
-  AccordionDetails,
-  AccordionSummary,
-  Typography,
-  Divider,
-  TextField,
-} from "@material-ui/core";
+import { Accordion, Grid, AccordionDetails, AccordionSummary, Typography, Divider, TextField } from "@material-ui/core";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import { useTranslation } from "react-i18next";
 
@@ -57,31 +49,16 @@ export default function HelpText(props) {
   return (
     <div className={classes.root}>
       <Accordion defaultExpanded={true} elevation={0}>
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel1c-content"
-          id="panel1c-header"
-        >
+        <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1c-content" id="panel1c-header">
           <div className={classes.column}>
-            <Typography
-              className={classes.heading}
-              style={{ color: "limegreen" }}
-              align="left"
-              variant="h6"
-            >
+            <Typography className={classes.heading} style={{ color: "limegreen" }} align="left" variant="h6">
               {t("HowToUse")}
             </Typography>
           </div>
         </AccordionSummary>
         <Divider variant="middle" />
         <AccordionDetails className={classes.details}>
-          <Typography
-            style={{ color: "##fffff7", marginBottom: 0 }}
-            align="left"
-            variant="subtitle1"
-            display="inline"
-            paragraph
-          >
+          <Typography style={{ color: "##fffff7", marginBottom: 0 }} align="left" variant="subtitle1" display="inline" paragraph>
             {helpText}
           </Typography>
         </AccordionDetails>

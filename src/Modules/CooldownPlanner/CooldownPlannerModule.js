@@ -1,14 +1,5 @@
 import React, { Component } from "react";
-import {
-  Typography,
-  Collapse,
-  CircularProgress,
-  Grid,
-  Accordion,
-  AccordionSummary,
-  AccordionDetails,
-  Dialog,
-} from "@material-ui/core";
+import { Typography, Collapse, CircularProgress, Grid, Accordion, AccordionSummary, AccordionDetails, Dialog, Divider, Paper, Grow } from "@material-ui/core";
 import LogLinkInput from "../CooldownPlanner/ModuleComponents/LogFightSelection/LogLinkInput";
 import Chart from "./ModuleComponents/Chart/Chart";
 import Example from "../CooldownPlanner/ModuleComponents/LogDetailComponents/DTPSBarChart";
@@ -16,21 +7,14 @@ import FightSelectorButton from "../CooldownPlanner/ModuleComponents/LogFightSel
 import LoadingOverlay from "react-loading-overlay";
 import CooldownPlanner from "../CooldownPlanner/ModuleComponents/CooldownPlanner.js";
 import CooldownTimeline from "../CooldownPlanner/ModuleComponents/LogDetailComponents/CooldownTimelineTable";
-import {
-  fightDurationCalculator,
-  warcraftLogReportID,
-  logDifficulty,
-} from "../CooldownPlanner/Functions/Functions";
+import { fightDurationCalculator, warcraftLogReportID, logDifficulty } from "../CooldownPlanner/Functions/Functions";
 import bossHeaders from "../CooldownPlanner/Functions/IconFunctions/BossHeaderIcons";
-import Grow from "@material-ui/core/Grow";
-import Paper from "@material-ui/core/Paper";
 import ERTTable from "../CooldownPlanner/ModuleComponents/ERTTable";
 import SwitchLabels from "./BasicComponents/Switch";
 import HealerInfoTable from "../CooldownPlanner/ModuleComponents/LogDetailComponents/HealerInfoCards";
 import HealTeam from "../CooldownPlanner/ModuleComponents/HealTeamTable";
 import updatechartdata from "./Engine/LogImportEngine.js";
 import chartCooldownUpdater from "./Engine/UserCooldownChartEngine.js";
-import Divider from "@material-ui/core/Divider";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import ls from "local-storage";
 import ExternalTimeline from "./ModuleComponents/LogDetailComponents/ExternalTimelineTable";
@@ -49,18 +33,10 @@ class HolyDiver extends Component {
     this.chartCooldownUpdater = chartCooldownUpdater.bind(this);
     this.ertHandler = this.ertHandler.bind(this);
     this.timelineHandler = this.timelineHandler.bind(this);
-    this.handleChangeBossCooldownPlanner = this.handleChangeBossCooldownPlanner.bind(
-      this
-    );
-    this.handleChangeRaidCooldownPlanner = this.handleChangeRaidCooldownPlanner.bind(
-      this
-    );
-    this.handleChangeDataCooldownPlanner = this.handleChangeDataCooldownPlanner.bind(
-      this
-    );
-    this.handleChangePlanCooldownPlanner = this.handleChangePlanCooldownPlanner.bind(
-      this
-    );
+    this.handleChangeBossCooldownPlanner = this.handleChangeBossCooldownPlanner.bind(this);
+    this.handleChangeRaidCooldownPlanner = this.handleChangeRaidCooldownPlanner.bind(this);
+    this.handleChangeDataCooldownPlanner = this.handleChangeDataCooldownPlanner.bind(this);
+    this.handleChangePlanCooldownPlanner = this.handleChangePlanCooldownPlanner.bind(this);
     this.handleERTClickOpen = this.handleERTClickOpen.bind(this);
     this.handleHealTeamClickOpen = this.handleHealTeamClickOpen.bind(this);
     // We set our state for the cooldown Planner Module.
@@ -162,9 +138,7 @@ class HolyDiver extends Component {
       cooldownPlannerCurrentBoss: event,
       cooldownPlannerCurrentPlan: 1,
     });
-    let data = ls.get(
-      this.state.cooldownPlannerCurrentRaid + "." + event + ".1"
-    );
+    let data = ls.get(this.state.cooldownPlannerCurrentRaid + "." + event + ".1");
     this.setState({
       cooldownPlannerCurrentData: data,
     });
@@ -173,31 +147,10 @@ class HolyDiver extends Component {
   handleChangePlanCooldownPlanner = (event) => {
     console.log(event);
     this.setState({ cooldownPlannerCurrentPlan: event });
-    if (
-      ls.get(
-        this.state.cooldownPlannerCurrentRaid +
-          "." +
-          this.state.cooldownPlannerCurrentBoss +
-          "." +
-          event
-      ) === null
-    ) {
-      ls.set(
-        this.state.cooldownPlannerCurrentRaid +
-          "." +
-          this.state.cooldownPlannerCurrentBoss +
-          "." +
-          event,
-        []
-      );
+    if (ls.get(this.state.cooldownPlannerCurrentRaid + "." + this.state.cooldownPlannerCurrentBoss + "." + event) === null) {
+      ls.set(this.state.cooldownPlannerCurrentRaid + "." + this.state.cooldownPlannerCurrentBoss + "." + event, []);
     }
-    let data = ls.get(
-      this.state.cooldownPlannerCurrentRaid +
-        "." +
-        this.state.cooldownPlannerCurrentBoss +
-        "." +
-        event
-    );
+    let data = ls.get(this.state.cooldownPlannerCurrentRaid + "." + this.state.cooldownPlannerCurrentBoss + "." + event);
     this.setState({
       cooldownPlannerCurrentData: data,
     });
@@ -267,7 +220,6 @@ class HolyDiver extends Component {
     return (
       <div
         style={{
-          // backgroundColor: "#313131",
           marginTop: 32,
         }}
       >
@@ -276,110 +228,54 @@ class HolyDiver extends Component {
               any Grid Components within this with the item prop will have spacing  */}
           <Grid container spacing={1}>
             <Grid item xs={12}>
-              <Typography
-                variant="h4"
-                align="center"
-                style={{ padding: "10px 10px 5px 10px" }}
-                color="primary"
-              >
+              <Typography variant="h4" align="center" style={{ padding: "10px 10px 5px 10px" }} color="primary">
                 Cooldown Planner
               </Typography>
             </Grid>
             <Grid item xs={12}>
               <Accordion>
-                <AccordionSummary
-                  expandIcon={<ExpandMoreIcon />}
-                  aria-controls="panel1a-content"
-                  id="panel1a-header"
-                >
-                  <Typography
-                    style={{ color: "limegreen" }}
-                    align="centre"
-                    variant="subtitle1"
-                    // gutterBottom
-                  >
+                <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content" id="panel1a-header">
+                  <Typography style={{ color: "limegreen" }} align="centre" variant="subtitle1">
                     Welcome to the Cooldown Planner!
                   </Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                  <Typography
-                    style={{ color: "limegreen" }}
-                    align="left"
-                    variant="subtitle1"
-                    // gutterBottom
-                  >
-                    To Begin start by adding Healers to your Heal Team.
-                    Importing a log will bring up the damage pattern of the
-                    selected fight, with the cooldowns used on the log overlayed
-                    to give an indication of what they were used for, what they
-                    were used etc.
+                  <Typography style={{ color: "limegreen" }} align="left" variant="subtitle1">
+                    To Begin start by adding Healers to your Heal Team. Importing a log will bring up the damage pattern of the selected fight, with the cooldowns used on the log
+                    overlayed to give an indication of what they were used for, what they were used etc.
                   </Typography>
                 </AccordionDetails>
 
                 <AccordionDetails>
-                  <Typography
-                    style={{ color: "limegreen" }}
-                    align="left"
-                    variant="subtitle1"
-                    // gutterBottom
-                  >
-                    A timeline of the abilities will show in the Timeline
-                    Component.
+                  <Typography style={{ color: "limegreen" }} align="left" variant="subtitle1">
+                    A timeline of the abilities will show in the Timeline Component.
                   </Typography>
                 </AccordionDetails>
 
                 <AccordionDetails>
-                  <Typography
-                    style={{ color: "limegreen" }}
-                    align="left"
-                    variant="subtitle1"
-                    // gutterBottom
-                  >
-                    Healer information shows a card for each healer showing
-                    their stats, talents, conduit choices.
+                  <Typography style={{ color: "limegreen" }} align="left" variant="subtitle1">
+                    Healer information shows a card for each healer showing their stats, talents, conduit choices.
                   </Typography>
                 </AccordionDetails>
 
                 <AccordionDetails>
-                  <Typography
-                    style={{ color: "limegreen" }}
-                    align="left"
-                    variant="subtitle1"
-                    // gutterBottom
-                  >
-                    The DTPS chart shows the damaging abilities over the entire
-                    fight.
+                  <Typography style={{ color: "limegreen" }} align="left" variant="subtitle1">
+                    The DTPS chart shows the damaging abilities over the entire fight.
                   </Typography>
                 </AccordionDetails>
 
                 <AccordionDetails>
-                  <Typography
-                    style={{ color: "limegreen" }}
-                    align="left"
-                    variant="subtitle1"
-                    // gutterBottom
-                  >
-                    Below that another Chart is shown with the damage pattern
-                    from the log, this has no cooldowns from the log shown, but
-                    cooldowns you enter into the planner (with times) will be
-                    shown on this chart.
+                  <Typography style={{ color: "limegreen" }} align="left" variant="subtitle1">
+                    Below that another Chart is shown with the damage pattern from the log, this has no cooldowns from the log shown, but cooldowns you enter into the planner (with
+                    times) will be shown on this chart.
                   </Typography>
                 </AccordionDetails>
 
                 <AccordionDetails>
-                  <Typography
-                    style={{ color: "limegreen" }}
-                    align="left"
-                    variant="subtitle1"
-                    // gutterBottom
-                  >
-                    The Planner itself will unlock after you enter your healers
-                    into the Heal Team. Enter your Healers, Cooldowns you want
-                    used, time to cast (If Applicable, you CAN enter cooldowns
-                    without a time, they will just not show up on the Chart/ERT
-                    Note, to keep them in order you should currently use numbers
-                    to keep them in order, i.e 1, 2 3), the ability to use it
-                    for etc.
+                  <Typography style={{ color: "limegreen" }} align="left" variant="subtitle1">
+                    The Planner itself will unlock after you enter your healers into the Heal Team. Enter your Healers, Cooldowns you want used, time to cast (If Applicable, you
+                    CAN enter cooldowns without a time, they will just not show up on the Chart/ERT Note, to keep them in order you should currently use numbers to keep them in
+                    order, i.e 1, 2 3), the ability to use it for etc.
                   </Typography>
                 </AccordionDetails>
               </Accordion>
@@ -388,15 +284,7 @@ class HolyDiver extends Component {
             {/*
                 Grid Container for the Heal Team Table and Cooldown Planner
             */}
-            <Grid
-              item
-              container
-              direction="row"
-              justify="flex-start"
-              alignItems="flex-start"
-              spacing={1}
-              margin={4}
-            >
+            <Grid item container direction="row" justify="flex-start" alignItems="flex-start" spacing={1} margin={4}>
               <Grid item xs={12} sm={12} md={12} lg={12} xl={12} padding={1}>
                 <CooldownPlanner
                   update={this.chartCooldownUpdater}
@@ -427,32 +315,15 @@ class HolyDiver extends Component {
                 {/* Grid Container for the Log Input/Fight Selection Button */}
                 <Grid container spacing={1} justify="space-between">
                   <Grid item xs={10}>
-                    <LogLinkInput
-                      changed={this.reportidHandler}
-                      reportid={this.state.reportid}
-                      styleProps={{ fullWidth: true }}
-                    />
+                    <LogLinkInput changed={this.reportidHandler} reportid={this.state.reportid} styleProps={{ fullWidth: true }} />
                   </Grid>
                   <Grid item xs={2}>
-                    <FightSelectorButton
-                      reportid={this.state.reportid}
-                      clicky={this.handler}
-                      update={this.updatechartdataNew}
-                    />
+                    <FightSelectorButton reportid={this.state.reportid} clicky={this.handler} update={this.updatechartdataNew} />
                   </Grid>
                 </Grid>
               </Paper>
             </Grid>
-            <Grid
-              item
-              container
-              xs={12}
-              sm={12}
-              md={5}
-              lg={5}
-              xl={5}
-              justify="flex-end"
-            >
+            <Grid item container xs={12} sm={12} md={5} lg={5} xl={5} justify="flex-end">
               <Paper
                 style={{
                   display: "inline-flex",
@@ -461,29 +332,10 @@ class HolyDiver extends Component {
                 }}
                 elevation={0}
               >
-                {/* this.state.switchPanelShow */}
-                <SwitchLabels
-                  disabled={this.state.switchPanelShow}
-                  check={this.damageTableShow}
-                  label={"Log Chart"}
-                />
-                <SwitchLabels
-                  disabled={this.state.switchPanelShow}
-                  check={this.logDetailsShow}
-                  label={"Toggle Log Details"}
-                />
-                <SwitchLabels
-                  disabled={this.state.switchPanelShow}
-                  check={this.healTableShow}
-                  label={"Custom CD Chart"}
-                />
-                <SwitchLabels
-                  disabled={this.state.switchPanelShow}
-                  check={this.changeDataSet}
-                  label={
-                    this.state.chartData === true ? "Unmitigated" : "Mitigated"
-                  }
-                />
+                <SwitchLabels disabled={this.state.switchPanelShow} check={this.damageTableShow} label={"Log Chart"} />
+                <SwitchLabels disabled={this.state.switchPanelShow} check={this.logDetailsShow} label={"Toggle Log Details"} />
+                <SwitchLabels disabled={this.state.switchPanelShow} check={this.healTableShow} label={"Custom CD Chart"} />
+                <SwitchLabels disabled={this.state.switchPanelShow} check={this.changeDataSet} label={this.state.chartData === true ? "Unmitigated" : "Mitigated"} />
               </Paper>
             </Grid>
 
@@ -504,11 +356,7 @@ class HolyDiver extends Component {
             >
               <Grid item xs={12} padding={1}>
                 <Collapse in={this.state.damageTableShow}>
-                  <Grow
-                    in={this.state.damageTableShow}
-                    style={{ transformOrigin: "0 0 0" }}
-                    {...(this.state.damageTableShow ? { timeout: 1000 } : {})}
-                  >
+                  <Grow in={this.state.damageTableShow} style={{ transformOrigin: "0 0 0" }} {...(this.state.damageTableShow ? { timeout: 1000 } : {})}>
                     <Paper bgcolor="#333" elevation={0}>
                       <Grid item xs={12} padding={1} align="center">
                         <div
@@ -536,12 +384,8 @@ class HolyDiver extends Component {
                                 }}
                                 color="primary"
                               >
-                                {this.state.boss} -{" "}
-                                {this.state.currentDifficulty}
-                                {this.state.currentKeystone === null ||
-                                this.state.currentKeystone === undefined
-                                  ? null
-                                  : this.state.currentKeystone}
+                                {this.state.boss} - {this.state.currentDifficulty}
+                                {this.state.currentKeystone === null || this.state.currentKeystone === undefined ? null : this.state.currentKeystone}
                               </Typography>
                             ) : null}
                             {this.state.showname ? (
@@ -554,9 +398,7 @@ class HolyDiver extends Component {
                                   textAlign: "center",
                                 }}
                               >
-                                {this.state.currentFighttime +
-                                  " - " +
-                                  this.state.killWipe}
+                                {this.state.currentFighttime + " - " + this.state.killWipe}
                               </Typography>
                             ) : null}
                           </div>
@@ -579,10 +421,7 @@ class HolyDiver extends Component {
                 }}
               >
                 <Collapse in={this.state.damageTableShow}>
-                  <LoadingOverlay
-                    active={spinnershow}
-                    spinner={<CircularProgress color="secondary" />}
-                  >
+                  <LoadingOverlay active={spinnershow} spinner={<CircularProgress color="secondary" />}>
                     <Chart
                       dataToShow={this.state.chartData}
                       mitigated={this.state.mitigatedChartData}
@@ -590,10 +429,7 @@ class HolyDiver extends Component {
                       abilityList={this.state.abilityList}
                       legendata={this.state.legenddata}
                       cooldown={this.state.cooldownlist}
-                      endtime={fightDurationCalculator(
-                        this.state.timeend,
-                        this.state.time
-                      )}
+                      endtime={fightDurationCalculator(this.state.timeend, this.state.time)}
                       showcds={true}
                     />
                   </LoadingOverlay>
@@ -612,45 +448,22 @@ class HolyDiver extends Component {
                 display: this.state.logDetailsShow ? "block" : "none",
               }}
             >
-              <Collapse
-                in={this.state.logDetailsShow}
-                style={{ width: "100%" }}
-              >
-                <Grid
-                  item
-                  container
-                  direction="row"
-                  justify="flex-start"
-                  alignItems="flex-start"
-                  spacing={1}
-                >
+              <Collapse in={this.state.logDetailsShow} style={{ width: "100%" }}>
+                <Grid item container direction="row" justify="flex-start" alignItems="flex-start" spacing={1}>
                   <Grid item xs={12} sm={12} md={12} lg={6} xl={6} padding={1}>
                     <CooldownTimeline data={this.state.Updateddatacasts} />
                   </Grid>
                   <Grid item xs={12} sm={12} md={12} lg={6} xl={6} padding={1}>
-                    <ExternalTimeline
-                      data={this.state.externalUsageTimelineData}
-                    />
+                    <ExternalTimeline data={this.state.externalUsageTimelineData} />
                   </Grid>
 
                   <Grid item xs={12} sm={12} md={12} lg={4} xl={4} padding={1}>
-                    <Example
-                      dataToShow={this.state.chartData}
-                      mitigated={this.state.summedMitigationDamagePerSecond}
-                      unmitigated={this.state.summedUnmitigatedDamagePerSecond}
-                    />
+                    <Example dataToShow={this.state.chartData} mitigated={this.state.summedMitigationDamagePerSecond} unmitigated={this.state.summedUnmitigatedDamagePerSecond} />
                   </Grid>
 
                   <Grid item xs={12} sm={12} md={12} lg={4} xl={4} padding={1}>
-                    <Paper
-                      style={{ padding: 8, marginBottom: 8 }}
-                      elevation={0}
-                    >
-                      <Typography
-                        variant="h6"
-                        color="primary"
-                        style={{ padding: "4px 8px 4px 24px" }}
-                      >
+                    <Paper style={{ padding: 8, marginBottom: 8 }} elevation={0}>
+                      <Typography variant="h6" color="primary" style={{ padding: "4px 8px 4px 24px" }}>
                         Healer Information
                       </Typography>
                       <Divider />
@@ -658,9 +471,7 @@ class HolyDiver extends Component {
                     <HealerInfoTable heals={this.state.healernames} />
                   </Grid>
                   <Grid item xs={12} sm={12} md={12} lg={6} xl={6} padding={1}>
-                    <EnemyCastsTimeline
-                      data={this.state.enemyCastsTimelineData}
-                    />
+                    <EnemyCastsTimeline data={this.state.enemyCastsTimelineData} />
                   </Grid>
                 </Grid>
               </Collapse>
@@ -670,31 +481,17 @@ class HolyDiver extends Component {
                 Grid Container for the Log Chart (Damage + User Entered Cooldowns from the Cooldown Planner).
                 The function in the style removes padding from showing while Collapsed
             */}
-            <Grid
-              item
-              container
-              direction="row"
-              justify="flex-start"
-              alignItems="flex-start"
-              spacing={1}
-              style={{ display: this.state.healTableShow ? "block" : "none" }}
-            >
+            <Grid item container direction="row" justify="flex-start" alignItems="flex-start" spacing={1} style={{ display: this.state.healTableShow ? "block" : "none" }}>
               <Grid item xs={12} sm={12} md={12} lg={12} xl={12} padding={1}>
                 <Collapse in={this.state.healTableShow}>
-                  <LoadingOverlay
-                    active={spinnershow}
-                    spinner={<CircularProgress color="secondary" />}
-                  >
+                  <LoadingOverlay active={spinnershow} spinner={<CircularProgress color="secondary" />}>
                     <Chart
                       dataToShow={this.state.chartData}
                       mitigated={this.state.mitigatedChartDataNoCooldowns}
                       unmitigated={this.state.unmitigatedChartDataNoCooldowns}
                       abilityList={this.state.abilityList}
                       cooldown={this.state.cooldownlistcustom2}
-                      endtime={fightDurationCalculator(
-                        this.state.timeend,
-                        this.state.time
-                      )}
+                      endtime={fightDurationCalculator(this.state.timeend, this.state.time)}
                       showcds={true}
                     />
                   </LoadingOverlay>
@@ -706,20 +503,11 @@ class HolyDiver extends Component {
           </Grid>
         </div>
 
-        <Dialog
-          onClose={this.handleERTClose}
-          aria-labelledby="ERT-Dialog"
-          open={this.state.ertDialogState}
-          maxWidth="md"
-          fullWidth
-          PaperProps={{ style: { minWidth: 300 } }}
-        >
+        <Dialog onClose={this.handleERTClose} aria-labelledby="ERT-Dialog" open={this.state.ertDialogState} maxWidth="md" fullWidth PaperProps={{ style: { minWidth: 300 } }}>
           <ERTTable
             ertListTimeNoIcons={this.state.ertListTimeNoIcons}
             ertListBossAbility={this.state.ertListBossAbility}
-            ertListAbilityNoTimeIconsAll={
-              this.state.ertListAbilityNoTimeIconsAll
-            }
+            ertListAbilityNoTimeIconsAll={this.state.ertListAbilityNoTimeIconsAll}
             ertListTimeIcons={this.state.ertListTimeIcons}
             ertListNoteIcons={this.state.ertListNoteIcons}
             ertListNoteNoIcons={this.state.ertListNoteNoIcons}

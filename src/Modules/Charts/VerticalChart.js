@@ -1,13 +1,5 @@
 import React, { PureComponent } from "react";
-import {
-  BarChart,
-  Bar,
-  XAxis,
-  YAxis,
-  ResponsiveContainer,
-  Legend,
-  CartesianGrid,
-} from "recharts";
+import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, Legend, CartesianGrid } from "recharts";
 import chroma from "chroma-js";
 import "./VerticalChart.css";
 
@@ -34,15 +26,11 @@ export default class VerticalChart extends PureComponent {
           i200: map2.i200 - map2.i187,
           i213: map2.i213 - map2.i200,
           i226: map2.i226 - map2.i213,
-        })
+        }),
       );
 
     return (
-      <ResponsiveContainer
-        className="ResponsiveContainer2"
-        width="100%"
-        aspect={1 / 2}
-      >
+      <ResponsiveContainer className="ResponsiveContainer2" width="100%" aspect={1 / 2}>
         <BarChart
           barCategoryGap="15%"
           data={arr}
@@ -55,25 +43,11 @@ export default class VerticalChart extends PureComponent {
           }}
         >
           <XAxis type="number" stroke="#f5f5f5" axisLine={false} />
-          <XAxis
-            type="number"
-            stroke="#f5f5f5"
-            orientation="top"
-            xAxisId={1}
-            padding={0}
-            height={1}
-            axisLine={false}
-          />
+          <XAxis type="number" stroke="#f5f5f5" orientation="top" xAxisId={1} padding={0} height={1} axisLine={false} />
 
           <Legend verticalAlign="top" />
           <CartesianGrid vertical={true} horizontal={false} />
-          <YAxis
-            type="category"
-            dataKey="name"
-            stroke="#f5f5f5"
-            interval={0}
-            tick={{ width: 300 }}
-          />
+          <YAxis type="category" dataKey="name" stroke="#f5f5f5" interval={0} tick={{ width: 300 }} />
           <Bar dataKey={"i161"} fill={"#eee8aa"} stackId="a" />
           <Bar dataKey={"i174"} fill={"#d76a03"} stackId="a" />
           <Bar dataKey={"i187"} fill={"#bf3100"} stackId="a" />

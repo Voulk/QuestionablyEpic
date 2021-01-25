@@ -34,7 +34,9 @@ const IDCLOUDBURST = 157153;
 // Helper Functions
 function tumblingWaves(player) {
   const avgWavesPerCast = 4.4; // aka riptides / placeholder
-  return (RIPTIDE_INITIAL_SP + PRIMORDIAL_WAVE_SP + (HEALING_WAVE_COPY_SP * avgWavesPerCast)) * player.getStatMultiplier("NOHASTE") + RIPTIDE_HOT_SP * player.getStatMultiplier("ALL");
+  return (
+    (RIPTIDE_INITIAL_SP + PRIMORDIAL_WAVE_SP + HEALING_WAVE_COPY_SP * avgWavesPerCast) * player.getStatMultiplier("NOHASTE") + RIPTIDE_HOT_SP * player.getStatMultiplier("ALL")
+  );
 }
 
 export const getShamanConduit = (conduitID, player, contentType, conduitRank) => {
@@ -60,7 +62,7 @@ export const getShamanConduit = (conduitID, player, contentType, conduitRank) =>
     //if (hrHPS && hrCasts && httCasts) {
     const buffedCasts = httCasts * 1.8;
     const avgHRCast = hrHPS / hrCasts;
-    bonusStats.HPS = (buffedCasts * avgHRCast) * traitBonus;
+    bonusStats.HPS = buffedCasts * avgHRCast * traitBonus;
     //} else {
     //  const cooldown = 180;
     //  const targets = 6;
@@ -87,7 +89,7 @@ export const getShamanConduit = (conduitID, player, contentType, conduitRank) =>
     const avgRTCast = rtHPS / rtCasts;
     const buffedCasts = cbtCasts * 3;
     // add overhealing, efficiency
-    bonusStats.HPS = (buffedCasts * avgRTCast) * traitBonus;
+    bonusStats.HPS = buffedCasts * avgRTCast * traitBonus;
   } else if (conduitID === ELYSIAN_DIRGE) {
     /**
      * Vesper does some more healing to the closest target
@@ -104,7 +106,7 @@ export const getShamanConduit = (conduitID, player, contentType, conduitRank) =>
     const traitBonus = LAVISH_HARVEST_RANKS[conduitRank] / 100;
     const targets = 5;
     const cdr = 10;
-    const cooldown = 90 - ((player.getStatPerc("Crit") - 1 + traitBonus) * cdr * (targets * 2));
+    const cooldown = 90 - (player.getStatPerc("Crit") - 1 + traitBonus) * cdr * (targets * 2);
     const rchSpellpower = 3.15 * targets * UNLEASH_LIFE_MULT;
     bonusStats.HPS = (rchSpellpower * traitBonus * player.getStatMultiplier("NOHASTE")) / cooldown;
   } else if (conduitID === TUMBLING_WAVES) {
@@ -121,7 +123,7 @@ export const getShamanConduit = (conduitID, player, contentType, conduitRank) =>
      */
     const traitBonus = ESSENTIAL_EXTRACTION_RANKS[conduitRank] / 1000; // careful, extra 0
     const ticks = 7;
-    const healPart = .4;
+    const healPart = 0.4;
     const targets = 4;
     const cooldown = 120;
     const totalSP = FAE_TRANSFUSION_SP * ticks * healPart * targets * RESTO_SHAMAN_DPS_AURA;

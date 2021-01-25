@@ -9,7 +9,6 @@ import { Link } from "react-router-dom";
 import { getItemIcon, getTranslatedItemName } from "../Engine/ItemUtilities";
 import { classColoursJS } from "../CooldownPlanner/Functions/ClassColourFunctions";
 
-
 function TopGearReport(props) {
   const [backgroundImage, setBackgroundImage] = useState("");
   const { t, i18n } = useTranslation();
@@ -66,18 +65,10 @@ function TopGearReport(props) {
   };
 
   const checkResult = (result) => {
-    return (
-      result !== "undefined" &&
-      result &&
-      result.itemSet.hardScore &&
-      result.itemSet.hardScore > 1 &&
-      result.itemSet.setStats &&
-      result.itemSet.itemList
-    );
+    return result !== "undefined" && result && result.itemSet.hardScore && result.itemSet.hardScore > 1 && result.itemSet.setStats && result.itemSet.itemList;
   };
 
   let resultValid = true;
-
   let result = props.result;
   let topSet = "";
   let enchants = {};
@@ -136,8 +127,6 @@ function TopGearReport(props) {
             <Paper elevation={0} style={{ padding: 10 }}>
               <div
                 style={{
-                  //   display: "flex",
-                  //   flexDirection: "row",
                   justifyContent: "center",
                   backgroundImage: `url("${backgroundImage}")`,
                   backgroundSize: "cover",
@@ -155,7 +144,7 @@ function TopGearReport(props) {
                   <Grid item xs={12}>
                     <Grid container direction="row">
                       <Grid item xs={3} style={{ width: "100%" }}>
-                        {/* Left Side Items */}
+                        {/* --------------------------- { Left Side Items } -------------------------- */}
                         <Grid container spacing={1}>
                           {itemList
                             .filter(
@@ -166,15 +155,10 @@ function TopGearReport(props) {
                                 key.slot === "Shoulder" ||
                                 key.slot === "Chest" ||
                                 key.slot === "Wrist" ||
-                                key.slot === "CombinedWeapon"
+                                key.slot === "CombinedWeapon",
                             )
                             .map((item, index) => (
-                              <ItemCardReport
-                                key={index}
-                                item={item}
-                                activateItem={true}
-                                enchants={enchants}
-                              />
+                              <ItemCardReport key={index} item={item} activateItem={true} enchants={enchants} />
                             ))}
                         </Grid>
                       </Grid>
@@ -182,56 +166,31 @@ function TopGearReport(props) {
                         <div style={{ width: "40%" }} />
                       </Grid>
                       <Grid item xs={3} style={{ width: "100%" }}>
-                        {/* Right Side Items */}
+                        {/* ---------------------------- Right Side Items ---------------------------- */}
                         <Grid container spacing={1}>
                           {itemList
                             .filter(
                               (key) =>
-                                key.slot === "Hands" ||
-                                key.slot === "Waist" ||
-                                key.slot === "Legs" ||
-                                key.slot === "Feet" ||
-                                key.slot === "Finger" ||
-                                key.slot === "Trinket"
+                                key.slot === "Hands" || key.slot === "Waist" || key.slot === "Legs" || key.slot === "Feet" || key.slot === "Finger" || key.slot === "Trinket",
                             )
                             .map((item, index) => (
-                              <ItemCardReport
-                                key={index}
-                                item={item}
-                                activateItem={true}
-                                enchants={enchants}
-                              />
+                              <ItemCardReport key={index} item={item} activateItem={true} enchants={enchants} />
                             ))}
                         </Grid>
                       </Grid>
                     </Grid>
                   </Grid>
                   <Grid item xs={12}>
-                    {/* Stat Panel */}
-                    <Grid
-                      container
-                      spacing={1}
-                      direction="row"
-                      justify="space-between"
-                    >
+                    {/* ------------------------------- Stat Panel ------------------------------- */}
+                    <Grid container spacing={1} direction="row" justify="space-between">
                       <Grid item xs={4} style={{ paddingBottom: 8 }}>
                         <Grid container justify="flex-start">
-                          <TopSetStatsPanel
-                            statList={statList}
-                            spec={props.pl.spec}
-                            currentLanguage={currentLanguage}
-                          />
+                          <TopSetStatsPanel statList={statList} spec={props.pl.spec} currentLanguage={currentLanguage} />
                         </Grid>
                       </Grid>
-                      <Grid
-                        item
-                        xs={3}
-                        style={{ paddingBottom: 8, alignSelf: "flex-end" }}
-                      >
+                      <Grid item xs={3} style={{ paddingBottom: 8, alignSelf: "flex-end" }}>
                         <Grid container justify="flex-end">
                           <Paper
-                            // elevation={0}
-                            // variant="outlined"
                             style={{
                               fontSize: "12px",
                               textAlign: "left",
@@ -243,20 +202,11 @@ function TopGearReport(props) {
                             <Grid container direction="row">
                               <Grid item xs="auto">
                                 <Grid container direction="row">
-                                  <img
-                                    src={classIcon()}
-                                    height={80}
-                                    width={80}
-                                    style={{ padding: 4 }}
-                                  />
+                                  <img src={classIcon()} height={80} width={80} style={{ padding: 4 }} />
                                 </Grid>
                               </Grid>
                               <Grid item xs={8}>
-                                <Grid
-                                  container
-                                  direction="row"
-                                  style={{ paddingTop: 9, paddingBopttom: 9 }}
-                                >
+                                <Grid container direction="row" style={{ paddingTop: 9, paddingBopttom: 9 }}>
                                   <Grid item xs={12}>
                                     <Typography
                                       variant="h5"
@@ -285,12 +235,7 @@ function TopGearReport(props) {
                                     </Typography>
                                   </Grid>
                                   <Grid item xs={12}>
-                                    <Typography
-                                      variant="caption"
-                                      wrap="nowrap"
-                                      display="inline"
-                                      align="left"
-                                    >
+                                    <Typography variant="caption" wrap="nowrap" display="inline" align="left">
                                       {props.pl.region}-{props.pl.realm}
                                     </Typography>
                                   </Grid>
@@ -306,17 +251,13 @@ function TopGearReport(props) {
               </div>
             </Paper>
           </Grid>
-          {/* Alternate Sets here */}
+
+          {/* --------------------------- Alternate Sets here -------------------------- */}
           <Grid item xs={12}>
             <Paper style={{ padding: 16 }} elevation={0}>
               <Grid container spacing={1}>
                 <Grid item xs={12}>
-                  <Typography
-                    variant="h6"
-                    align="left"
-                    style={{ width: "100%" }}
-                    color="primary"
-                  >
+                  <Typography variant="h6" align="left" style={{ width: "100%" }} color="primary">
                     {t("TopGear.CompetitiveAlternative")}
                   </Typography>
                   <Divider />
@@ -337,18 +278,7 @@ function TopGearReport(props) {
                               <Grid container spacing={1}>
                                 {key.items.map((item) => (
                                   <Grid item xs={12}>
-                                    <img
-                                      src={getItemIcon(item.id)}
-                                      height={20}
-                                      width={20}
-                                    />{" "}
-                                    {getTranslatedItemName(
-                                      item.id,
-                                      currentLanguage,
-                                      item.effect
-                                    ) +
-                                      " " +
-                                      item.level}
+                                    <img src={getItemIcon(item.id)} height={20} width={20} /> {getTranslatedItemName(item.id, currentLanguage, item.effect) + " " + item.level}
                                   </Grid>
                                 ))}
                               </Grid>
@@ -382,9 +312,7 @@ function TopGearReport(props) {
           </Grid>
         </Grid>
       ) : (
-        <Typography style={{ textAlign: "center", color: "white" }}>
-          {t("TopGear.ErrorMessage")}
-        </Typography>
+        <Typography style={{ textAlign: "center", color: "white" }}>{t("TopGear.ErrorMessage")}</Typography>
       )}
     </div>
   );

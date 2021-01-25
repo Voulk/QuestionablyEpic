@@ -1,14 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-
 import { makeStyles } from "@material-ui/core/styles";
-import Card from "@material-ui/core/Card";
-import CardActions from "@material-ui/core/CardActions";
-import CardContent from "@material-ui/core/CardContent";
-import Button from "@material-ui/core/Button";
-import Typography from "@material-ui/core/Typography";
-import Grid from "@material-ui/core/Grid";
-import Divider from "@material-ui/core/Divider";
+import { Button, Card, CardActions, CardContent, Divider, Grid, Typography } from "@material-ui/core";
 
 const useStyles = makeStyles({
   root: {
@@ -89,12 +82,9 @@ export default function LegendaryObject(props) {
   const { t } = useTranslation();
   const item = props.item;
   const player = props.player;
-  const hpsString =
-    item.effectiveHPS > 5 ? Math.round(item.effectiveHPS) : "Coming Soon";
-
+  const hpsString = item.effectiveHPS > 5 ? Math.round(item.effectiveHPS) : "Coming Soon";
   const classes = useStyles();
   const bull = <span className={classes.bullet}>•</span>;
-  //console.log(item);
 
   return (
     <Grid item xs={12} sm={6} md={6} lg={4} xl={3}>
@@ -119,9 +109,7 @@ export default function LegendaryObject(props) {
               >
                 {t(item.name + ".name")}
               </Typography>
-              <Typography variant="caption">
-                {t(item.name + ".slot")}
-              </Typography>
+              <Typography variant="caption">{t(item.name + ".slot")}</Typography>
             </div>
             <img
               height={40}
@@ -137,37 +125,19 @@ export default function LegendaryObject(props) {
             />
           </div>
           <Divider style={{ marginTop: 4 }} />
-          <Grid
-            container
-            direction="row"
-            justify="space-between"
-            alignItems="center"
-            style={{ height: 110 }}
-          >
+          <Grid container direction="row" justify="space-between" alignItems="center" style={{ height: 110 }}>
             <Grid item xs={12}>
               <CardContent style={{ padding: 0 }}>
-                <Typography
-                  align="left"
-                  variant="caption"
-                  style={{ fontSize: "0.75rem", lineHeight: 1.1 }}
-                  component="p"
-                >
+                <Typography align="left" variant="caption" style={{ fontSize: "0.75rem", lineHeight: 1.1 }} component="p">
                   {t(item.name + ".desc")}
-                  {/* <br /> */}
                 </Typography>
               </CardContent>
             </Grid>
             <Grid item xs={12}>
               <CardContent style={{ padding: 0, height: 20 }}>
-                <Typography
-                  align="center"
-                  variant="caption"
-                  component="p"
-                  style={{ lineHeight: 1.1, fontSize: "16px" }}
-                >
+                <Typography align="center" variant="caption" component="p" style={{ lineHeight: 1.1, fontSize: "16px" }}>
                   HPS: {hpsString}
                   <br />
-                  {/* {item.bonus_stats.DPS} */}
                 </Typography>
               </CardContent>
             </Grid>
@@ -175,11 +145,7 @@ export default function LegendaryObject(props) {
         </CardContent>
         <Divider />
         <CardActions>
-          <Typography
-            variant="caption"
-            component="p"
-            style={{ padding: "0px 8px" }}
-          >
+          <Typography variant="caption" component="p" style={{ padding: "0px 8px" }}>
             {t("Source")}: {t(item.name + ".droploc")}
           </Typography>
         </CardActions>

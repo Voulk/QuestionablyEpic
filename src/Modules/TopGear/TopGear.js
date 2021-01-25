@@ -7,32 +7,10 @@ import "./../QuickCompare/QuickCompare.css";
 import { useTranslation } from "react-i18next";
 import { testTrinkets } from "../Engine/EffectFormulas/Generic/TrinketEffectFormulas";
 import { apiSendTopGearSet } from "../SetupAndMenus/ConnectionUtilities";
-import {
-  InputLabel,
-  MenuItem,
-  FormControl,
-  Select,
-  Button,
-  Grid,
-  Paper,
-  Typography,
-  Divider,
-  Snackbar,
-  TextField,
-  Popover,
-} from "@material-ui/core";
+import { InputLabel, MenuItem, FormControl, Select, Button, Grid, Paper, Typography, Divider, Snackbar, TextField, Popover } from "@material-ui/core";
 import { itemDB } from "../Player/ItemDB";
 import topGearEngine from "./TopGearEngine";
-import {
-  getValidArmorTypes,
-  getValidWeaponTypes,
-  calcStatsAtLevel,
-  getItemAllocations,
-  scoreItem,
-  getItemEffect,
-  buildWepCombos,
-  getItemSlot,
-} from "../Engine/ItemUtilities";
+import { getValidArmorTypes, getValidWeaponTypes, calcStatsAtLevel, getItemAllocations, scoreItem, getItemEffect, buildWepCombos, getItemSlot } from "../Engine/ItemUtilities";
 import ItemCard from "./../QuickCompare/ItemCard";
 import MiniItemCard from "./MiniItemCard";
 import MuiAlert from "@material-ui/lab/Alert";
@@ -65,11 +43,8 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up("md")]: {
       marginTop: 32,
     },
-    
-  }
+  },
 }));
-
-
 
 const menuStyle = {
   style: { marginTop: 5 },
@@ -167,12 +142,10 @@ export default function TopGear(props) {
     for (const key in slotLengths) {
       if ((key === "Finger" || key === "Trinket") && slotLengths[key] < 2) {
         topgearOk = false;
-        errorMessage =
-          "Error: Add a " + t("slotNames." + key.toLowerCase()) + " item";
+        errorMessage = "Error: Add a " + t("slotNames." + key.toLowerCase()) + " item";
       } else if (slotLengths[key] === 0) {
         topgearOk = false;
-        errorMessage =
-          "Error: Add a " + t("slotNames." + key.toLowerCase()) + " item";
+        errorMessage = "Error: Add a " + t("slotNames." + key.toLowerCase()) + " item";
       }
       //console.log("Sloot Length: " + key + " " + slotLengths[key])
     }
@@ -191,19 +164,12 @@ export default function TopGear(props) {
       let instance = new worker();
       let strippedPlayer = JSON.parse(JSON.stringify(props.pl));
       //console.log("Pl: " + JSON.stringify(props.pl));
-      instance
-        .runTopGear(itemList, wepCombos, strippedPlayer, props.contentType, currentLanguage)
-        .then((result) => {
-          //console.log(`Loop returned`);
-          apiSendTopGearSet(
-            props.pl,
-            props.contentType,
-            result.itemSet.hardScore,
-            result.itemsCompared
-          );
-          props.setTopResult(result);
-          history.push("/report/");
-        });
+      instance.runTopGear(itemList, wepCombos, strippedPlayer, props.contentType, currentLanguage).then((result) => {
+        //console.log(`Loop returned`);
+        apiSendTopGearSet(props.pl, props.contentType, result.itemSet.hardScore, result.itemsCompared);
+        props.setTopResult(result);
+        history.push("/report/");
+      });
     } else {
       // Return error.
     }
@@ -241,9 +207,7 @@ export default function TopGear(props) {
   //const slotList = [];
 
   return (
-    <div
-    className={classes.header}
-    >
+    <div className={classes.header}>
       <Grid
         container
         spacing={1}
@@ -256,12 +220,7 @@ export default function TopGear(props) {
       >
         {
           <Grid item xs={12}>
-            <Typography
-              variant="h4"
-              align="center"
-              style={{ padding: "10px 10px 5px 10px" }}
-              color="primary"
-            >
+            <Typography variant="h4" align="center" style={{ padding: "10px 10px 5px 10px" }} color="primary">
               {t("TopGear.Title")}
             </Typography>
           </Grid>
@@ -282,24 +241,15 @@ export default function TopGear(props) {
                 </Typography>
                 <Divider style={{ marginBottom: 10, width: "42%" }} />
                 <Grid container spacing={1}>
-                  {[...props.pl.getActiveItems(key.slotName)].map(
-                    (item, index) => (
-                      <MiniItemCard
-                        key={index}
-                        item={item}
-                        activateItem={activateItem}
-                      />
-                    )
-                  )}
+                  {[...props.pl.getActiveItems(key.slotName)].map((item, index) => (
+                    <MiniItemCard key={index} item={item} activateItem={activateItem} />
+                  ))}
                 </Grid>
               </Grid>
             );
           })
         ) : (
-          <Typography
-            style={{ color: "white", fontStyle: "italic", marginLeft: "10px" }}
-            variant="h6"
-          >
+          <Typography style={{ color: "white", fontStyle: "italic", marginLeft: "10px" }} variant="h6">
             {t("TopGear.ItemsHereMessage")}
           </Typography>
         )}
@@ -329,35 +279,14 @@ export default function TopGear(props) {
             alignItems: "center",
           }}
         >
-          <Typography
-            align="center"
-            style={{ padding: "10px 10px 5px 10px" }}
-            color="primary"
-          >
-            {t("TopGear.SelectedItems") +
-              ":" +
-              " " +
-              selectedItemCount +
-              "/" +
-              TOPGEARCAP}
+          <Typography align="center" style={{ padding: "10px 10px 5px 10px" }} color="primary">
+            {t("TopGear.SelectedItems") + ":" + " " + selectedItemCount + "/" + TOPGEARCAP}
           </Typography>
           <div>
-            <Typography
-              variant="Subtitle2"
-              align="center"
-              style={{ padding: "10px 10px 5px 10px", marginRight: "5px" }}
-              color="primary"
-            >
+            <Typography variant="Subtitle2" align="center" style={{ padding: "10px 10px 5px 10px", marginRight: "5px" }} color="primary">
               {errorMessage}
             </Typography>
-            <Button
-              variant="contained"
-              color="secondary"
-              align="center"
-              style={{ height: "68%", width: "180px" }}
-              disabled={!btnActive}
-              onClick={unleashTopGear}
-            >
+            <Button variant="contained" color="secondary" align="center" style={{ height: "68%", width: "180px" }} disabled={!btnActive} onClick={unleashTopGear}>
               {t("TopGear.GoMsg")}
             </Button>
           </div>
