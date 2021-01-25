@@ -120,22 +120,21 @@ function processToken(line, player, contentType, type, covenant) {
     const itemSubClass = getItemSubclass(itemID);
 
     if (validArmorTypes.includes(itemSubClass)) {
-      console.log("Subclass is valid, importing Item");
       let item = new Item(itemID, "", itemSlot, false, "", 0, tokenLevel, "");
       item.vaultItem = type === "Vault";
       item.active = item.vaultItem;
-      let itemAllocations = getItemAllocations(itemID);
-      item.stats = calcStatsAtLevel(tokenLevel, itemSlot, itemAllocations, "");
+      //let itemAllocations = getItemAllocations(itemID);
+      //item.stats = calcStatsAtLevel(tokenLevel, itemSlot, itemAllocations, "");
 
       item.softScore = scoreItem(item, player, contentType);
       if (item.vaultItem) item.uniqueEquip = "vault";
 
-      console.log("Adding Item from Token: " + item.id + " in slot: " + itemSlot);
+      //console.log("Adding Item from Token: " + item.id + " in slot: " + itemSlot);
       player.addActiveItem(item);
     }
   }
 
-  console.log("Creating Token with level" + tokenLevel + ", and ID: " + tokenID);
+  //console.log("Creating Token with level" + tokenLevel + ", and ID: " + tokenID);
 }
 
 function processItem(line, player, contentType, type) {
@@ -257,9 +256,7 @@ function processItem(line, player, contentType, type) {
     let item = new Item(itemID, "", itemSlot, itemSocket || checkDefaultSocket(itemID), itemTertiary, 0, itemLevel, bonusIDS);
     item.vaultItem = type === "Vault";
     item.active = itemEquipped || item.vaultItem;
-    item.level = itemLevel;
     item.isEquipped = itemEquipped;
-    item.stats = calcStatsAtLevel(itemLevel, itemSlot, itemAllocations, itemTertiary);
     if (Object.keys(itemBonusStats).length > 0) item.addStats(itemBonusStats);
 
     item.effect = Object.keys(itemEffect).length !== 0 ? itemEffect : getItemEffect(itemID);

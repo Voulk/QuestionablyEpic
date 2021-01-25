@@ -12,6 +12,7 @@ import { itemDB } from "../Player/ItemDB";
 import { getValidArmorTypes, getValidWeaponTypes, calcStatsAtLevel, getItemAllocations, scoreItem, getItemEffect, buildWepCombos, getItemSlot } from "../Engine/ItemUtilities";
 import ItemCard from "./ItemCard";
 import HelpText from "../SetupAndMenus/HelpText";
+import { CONSTRAINTS } from "../Engine/CONSTRAINTS";
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -168,18 +169,14 @@ export default function QuickCompare(props) {
 
   /* ---------------- Add an item to our "Active Items" array. ---------------- */
   const addItem = (event) => {
-    if (itemLevel > 300) {
+    if (itemLevel > CONSTRAINTS.maxItemLevel) {
       setAnchorEl(anchorEl ? null : event.currentTarget);
       return null;
     }
     let player = props.pl;
     let item = new Item(itemID, itemName, getItemSlot(itemID), itemSocket, itemTertiary, 0, itemLevel, "");
-
-    item.level = itemLevel;
-    item.stats = calcStatsAtLevel(itemLevel, getItemSlot(itemID), getItemAllocations(itemID), itemTertiary);
-
-    item.effect = getItemEffect(itemID);
     item.softScore = scoreItem(item, player, props.contentType);
+    
     player.addActiveItem(item);
     setItemList([...player.getActiveItems(activeSlot)]);
     setOpen(true);
@@ -314,7 +311,7 @@ export default function QuickCompare(props) {
               <Grid item>
                 <FormControl className={classes.formControl} variant="outlined" size="small" style={{ width: t("QuickCompare.ItemLevel").length > 10 ? 160 : 120 }}>
                   <TextField
-                    error={itemLevel > 300 ? true : false}
+                    error={(itemLevel > CONSTRAINTS.maxItemLevel) ? true : false}
                     id="Ilvl-select"
                     onChange={(e) => itemLevelChanged(e.target.value)}
                     value={itemLevel}
@@ -327,8 +324,8 @@ export default function QuickCompare(props) {
                     size="small"
                     type="number"
                     inputProps={{
-                      min: "50",
-                      max: "300",
+                      min: CONSTRAINTS.minItemLevel,
+                      max: CONSTRAINTS.maxItemLevel,
                     }}
                   />
                 </FormControl>

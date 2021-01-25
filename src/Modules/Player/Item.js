@@ -1,3 +1,5 @@
+import { calcStatsAtLevel, getItemSlot, getItemAllocations, getItemEffect } from "../Engine/ItemUtilities";
+
 // The Item class represents an active item in the app at a specific item level.
 // We'll create them when we import a SimC string, or when an item is added manually.
 // Items are stored in the players character. They are not currently stored in local storage but that is a likely addition soon after release.
@@ -12,6 +14,9 @@ class Item {
     this.softScore = softScore;
     this.uniqueHash = this.getUnique(id);
     this.bonusIDS = bonusIDS || "";
+    this.stats = calcStatsAtLevel(level, getItemSlot(id), getItemAllocations(id), tertiary);
+    this.effect = getItemEffect(id);
+    
     //console.log("Setting level to " + level);
   }
 
