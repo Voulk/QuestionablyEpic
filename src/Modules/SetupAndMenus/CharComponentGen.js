@@ -15,6 +15,8 @@ import { serverList, classRaceList } from "../CooldownPlanner/Data/Data";
 import LogDetailsTable from "./CharacterLogDetailsTable";
 import { STAT } from "../Engine/STAT";
 import { apiGetPlayerImage } from "./ConnectionUtilities";
+import { CONSTRAINTS, setBounds } from "../Engine/CONSTRAINTS";
+
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -255,11 +257,11 @@ export default function CharCards(props) {
     let newPlayer = props.char;
     let weights = {
       intellect: 1,
-      haste: Math.max(0, Math.min(1.4, haste)),
-      crit: Math.max(0, Math.min(1.4, critical)),
-      mastery: Math.max(0, Math.min(1.4, mastery)),
-      versatility: Math.max(0, Math.min(1.4, versatility)),
-      leech: Math.max(0, Math.min(2.1, leech)),
+      haste: setBounds(haste, CONSTRAINTS.minSecondaryWeight, CONSTRAINTS.maxSecondaryWeight),
+      crit: setBounds(critical, CONSTRAINTS.minSecondaryWeight, CONSTRAINTS.maxSecondaryWeight),
+      mastery: setBounds(mastery, CONSTRAINTS.minSecondaryWeight, CONSTRAINTS.maxSecondaryWeight),
+      versatility: setBounds(versatility, CONSTRAINTS.minSecondaryWeight, CONSTRAINTS.maxSecondaryWeight),
+      leech: setBounds(leech, CONSTRAINTS.minTertiaryWeight, CONSTRAINTS.maxTertiaryWeight),
     };
 
     newPlayer.editChar(contentType, charName, server, region, selectedRace, weights);

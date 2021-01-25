@@ -19,6 +19,7 @@ import Autocomplete from "@material-ui/lab/Autocomplete";
 import { useHistory, useLocation } from "react-router-dom";
 import HelpText from "../SetupAndMenus/HelpText";
 import TopGearSettingsAccordion from "./TopGearSettings";
+import { CONSTRAINTS } from "../Engine/CONSTRAINTS";
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -179,7 +180,7 @@ export default function TopGear(props) {
   const helpText = t("TopGear.HelpText");
 
   const activateItem = (unique) => {
-    if (selectedItemCount < TOPGEARCAP) {
+    if (selectedItemCount < CONSTRAINTS.topGearMaxItems) {
       let player = props.pl;
       player.activateItem(unique);
       setItemList([...player.getActiveItems(activeSlot)]);

@@ -4,13 +4,12 @@
 // but isn't giving them information they can actually use. 
 export const CONSTRAINTS = {
     maxItemLevel: 270,
-    minItemLevel: 120,
-    maxSecondaryWeight: 1.5,
+    minItemLevel: 90,
+    maxSecondaryWeight: 0.9,
     minSecondaryWeight: 0,
-    maxTertiaryWeight: 3,
+    maxTertiaryWeight: 1.5,
     minTertiaryWeight: 0,
     topGearMaxItems: 34,
-
 }
 
 export function setBounds(value, min, max) {
