@@ -101,11 +101,6 @@ export default function QEMainMenu(props) {
                 </Grid>
                 <Grid item xs={12}>
                   <Typography style={{ color: "limegreen", lineHeight: "10px" }} align="left" variant="body1">
-                    - Great Vault support in, including weapon tokens!
-                  </Typography>
-                </Grid>
-                <Grid item xs={12}>
-                  <Typography style={{ color: "limegreen", lineHeight: "10px" }} align="left" variant="body1">
                     - Upgrade Finder now live!
                   </Typography>
                 </Grid>

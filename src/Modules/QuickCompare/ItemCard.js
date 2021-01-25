@@ -68,7 +68,7 @@ export default function ItemCard(props) {
   if (item.offhandID > 0) {
     itemName = getTranslatedItemName(item.id, currentLanguage);
     itemName2 = getTranslatedItemName(item.offhandID, currentLanguage);
-    console.log(item);
+    //console.log(item);
   } else {
     if (isLegendary) itemName = item.effect.name;
     else itemName = getTranslatedItemName(item.id, currentLanguage);
