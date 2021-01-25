@@ -7,6 +7,7 @@ import { translatedStat } from "../Engine/STAT";
 import Item from "../Player/Item";
 import { useTranslation } from "react-i18next";
 import { i18n } from "react-i18next";
+import { reportError } from "../ErrorLogging/ErrorReporting";
 
 /*
 
@@ -34,7 +35,7 @@ export function getValidArmorTypes(spec) {
   }
 }
 
-// Weaspon SubClasses
+// Weapon SubClasses
 // 0 One-Handed Axes
 // 1 Two-Handed Axes
 // 2 Bows
@@ -125,15 +126,13 @@ export function filterItemListByType(itemList, slot) {
 }
 
 function sortItems(container) {
-  // Current default sorting is by HPS but we could get creative here in future.
+  // Current default sorting is by HPS (soft score) but we could get creative here in future.
   container.sort((a, b) => (a.softScore < b.softScore ? 1 : -1));
 
   return container;
 }
 
 export function getDifferentialByID(diffList, id, level) {
-  //console.log(diffList);
-  //console.log("ID: " + id);
   let temp = diffList.filter(function (item) {
     //console.log(item);
     return item.item == id && item.level == level;
@@ -167,7 +166,8 @@ export function getTranslatedItemName(id, lang, effect) {
   }
 }
 
-// Returns a translated item name based on an ID.
+// Returns the selected items effect.
+// No need for error checking here since returning no effect is an acceptable and common result.
 export function getItemEffect(id) {
   let temp = itemDB.filter(function (item) {
     return item.id === id;
@@ -201,7 +201,10 @@ export function getItemLevel(id) {
   });
 
   if (temp.length > 0) return temp[0].itemLevel;
-  else return -2;
+  else {
+    reportError(this, "ItemUtilities", "Item Level not found or item missing", id);
+    return -2;
+  }
 }
 
 // Returns a translated item name based on an ID.
@@ -212,7 +215,10 @@ export function getItemIcon(id) {
   });
 
   if (temp.length > 0 && "icon" in temp[0]) return process.env.PUBLIC_URL + "/Images/Icons/" + temp[0].icon + ".jpg";
-  else return process.env.PUBLIC_URL + "/Images/Icons/missing.jpg";
+  else {
+    reportError(this, "ItemUtilities", "Icon not found for ID", id);
+    return process.env.PUBLIC_URL + "/Images/Icons/missing.jpg";
+  }
 }
 
 // Returns item stat allocations. MUST be converted to stats before it's used in any scoring capacity.
@@ -268,7 +274,6 @@ function getItemCat(slot) {
       return 3;
     default:
       console.error("Item Cat going to Default" + slot);
-
       return 3;
 
     // Raise error.

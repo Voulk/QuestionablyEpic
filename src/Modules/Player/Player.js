@@ -111,6 +111,7 @@ class Player {
   getStatWeight = (contentType, stat) => {
     const lcStat = stat.toLowerCase();
     if (!this.statWeights[contentType]) {
+      reportError(this, "Player", "Invalid Stat Weight", stat);
       return 0;
     }
 
@@ -537,7 +538,7 @@ class Player {
       this.statWeights.DefaultWeights = true;
     } else {
       // Invalid spec replied. Error.
-      reportError(this, "Player", "Invalid Spec Supplied for setupDefaults", spec);
+      reportError(this, "Player", "Invalid Spec Supplied during setupDefaults", spec);
       throw new Error("Invalid Spec Supplied");
     }
   };
