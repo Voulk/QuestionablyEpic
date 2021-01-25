@@ -69,7 +69,7 @@ export default function QEHeader(props) {
                   </Link>
                 </Grid>
                 <Grid item xs={12} sm={12} md={12} lg={6} xl="auto">
-                  <Typography style={{ color: color[patronStatus], paddingLeft: 10, paddingRight: 10 }} variant="body1" align="centre">
+                  <Typography style={{ color: color[patronStatus], paddingLeft: 10, paddingRight: 10 }} variant="body1" align="center">
                     {patronStatus}
                   </Typography>
                 </Grid>

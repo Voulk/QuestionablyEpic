@@ -91,12 +91,25 @@ export default function QEMainMenu(props) {
             </Button>
           </Grid>
           <Grid item xs={12}>
-            <Paper elevation={0} style={{ border: "1px", padding: 2, paddingLeft: 15 }}>
-              <Typography style={{ color: "limegreen", lineHeight: "10px" }} align="left" variant="body1">
-                <p>- Legendary effects coming soon for Priests. Mistweaver now live! </p>
-                <p>- Great Vault support in, including weapon tokens!</p>
-                <p>- Upgrade Finder now live!</p>
-              </Typography>
+            <Paper elevation={0} style={{ border: "1px", padding: 16 }}>
+              {/* Potentially we make the message external and map the lines to save space here */}
+              <Grid container spacing={1}>
+                <Grid item xs={12}>
+                  <Typography style={{ color: "limegreen", lineHeight: "10px" }} align="left" variant="body1">
+                    - Legendary effects coming soon for Priests. Mistweaver now live!
+                  </Typography>
+                </Grid>
+                <Grid item xs={12}>
+                  <Typography style={{ color: "limegreen", lineHeight: "10px" }} align="left" variant="body1">
+                    - Great Vault support in, including weapon tokens!
+                  </Typography>
+                </Grid>
+                <Grid item xs={12}>
+                  <Typography style={{ color: "limegreen", lineHeight: "10px" }} align="left" variant="body1">
+                    - Upgrade Finder now live!
+                  </Typography>
+                </Grid>
+              </Grid>
             </Paper>
           </Grid>
 

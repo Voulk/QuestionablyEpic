@@ -289,7 +289,7 @@ export default function QELogImport(props) {
                 </FormControl>
               </Grid>
             </Grid>
-            <Grid xs={6} container spacing={1} direction="column">
+            <Grid item xs={6} container spacing={1} direction="column">
               <Grid item xs={12} style={{ alignSelf: "center", marginTop: 6 }}>
                 <Typography
                   style={{
