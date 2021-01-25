@@ -26,15 +26,13 @@ export function runTopGear(itemList, wepCombos, player, contentType, currentLang
   // console.log("Running Top Gear");
   let count = 0;
 
-  
-
   let itemSets = createSets(itemList, wepCombos);
   itemSets.sort((a, b) => (a.sumSoftScore < b.sumSoftScore ? 1 : -1));
   count = itemSets.length;
 
   //console.log("Count: " + count);
   // TEST LOOP ONLY FOR CONSOLE PRINTS.
-    /*
+  /*
     for (var i = 0; i < itemSets.length; i++) {
         
         //console.log("ID: " + itemSets[i].id + ". Soft: " + itemSets[i].sumSoftScore + ". Hard: " + itemSets[i].hardScore);
@@ -44,7 +42,7 @@ export function runTopGear(itemList, wepCombos, player, contentType, currentLang
    
     }
     */
-    
+
   for (var i = 0; i < itemSets.length; i++) {
     itemSets[i] = evalSet(itemSets[i], player, contentType);
   }
@@ -78,7 +76,6 @@ export function runTopGear(itemList, wepCombos, player, contentType, currentLang
 }
 
 function createSets(itemList, rawWepCombos) {
-
   const wepCombos = deepCopyFunction(rawWepCombos);
   let setCount = 0;
   let itemSets = [];
@@ -155,55 +152,25 @@ function createSets(itemList, rawWepCombos) {
                     for (var feet = 0; feet < slotLengths.Feet; feet++) {
                       softScore.feet = splitItems.Feet[feet].softScore;
 
-                      for (
-                        var weapon = 0;
-                        weapon < slotLengths.Weapon;
-                        weapon++
-                      ) {
+                      for (var weapon = 0; weapon < slotLengths.Weapon; weapon++) {
                         //softScore.weapon = splitItems.Feet[feet].softScore; //
                         softScore.weapon = wepCombos[weapon].softScore;
                         wepCombos[weapon].slot = "CombinedWeapon";
 
-                        for (
-                          var finger = 0;
-                          finger < slotLengths.Finger - 1;
-                          finger++
-                        ) {
-                          softScore.finger =
-                            splitItems.Finger[finger].softScore;
+                        for (var finger = 0; finger < slotLengths.Finger - 1; finger++) {
+                          softScore.finger = splitItems.Finger[finger].softScore;
 
-                          for (
-                            var finger2 = 1;
-                            finger2 < slotLengths.Finger;
-                            finger2++
-                          ) {
-                            softScore.finger2 =
-                              splitItems.Finger[finger2].softScore;
+                          for (var finger2 = 1; finger2 < slotLengths.Finger; finger2++) {
+                            softScore.finger2 = splitItems.Finger[finger2].softScore;
 
-                            if (
-                              splitItems.Finger[finger].id !==
-                              splitItems.Finger[finger2].id
-                            ) {
-                              for (
-                                var trinket = 0;
-                                trinket < slotLengths.Trinket - 1;
-                                trinket++
-                              ) {
-                                softScore.trinket =
-                                  splitItems.Trinket[trinket].softScore;
+                            if (splitItems.Finger[finger].id !== splitItems.Finger[finger2].id) {
+                              for (var trinket = 0; trinket < slotLengths.Trinket - 1; trinket++) {
+                                softScore.trinket = splitItems.Trinket[trinket].softScore;
 
-                                for (
-                                  var trinket2 = 1;
-                                  trinket2 < slotLengths.Trinket;
-                                  trinket2++
-                                ) {
-                                  softScore.trinket2 =
-                                    splitItems.Trinket[trinket2].softScore;
+                                for (var trinket2 = 1; trinket2 < slotLengths.Trinket; trinket2++) {
+                                  softScore.trinket2 = splitItems.Trinket[trinket2].softScore;
 
-                                  if (
-                                    splitItems.Trinket[trinket].id !==
-                                    splitItems.Trinket[trinket2].id
-                                  ) {
+                                  if (splitItems.Trinket[trinket].id !== splitItems.Trinket[trinket2].id) {
                                     let includedItems = [
                                       splitItems.Head[head],
                                       splitItems.Neck[neck],
@@ -222,13 +189,7 @@ function createSets(itemList, rawWepCombos) {
                                       wepCombos[weapon],
                                     ];
                                     let sumSoft = sumScore(softScore);
-                                    itemSets.push(
-                                      new ItemSet(
-                                        setCount,
-                                        includedItems,
-                                        sumSoft
-                                      )
-                                    );
+                                    itemSets.push(new ItemSet(setCount, includedItems, sumSoft));
                                     setCount++;
                                   }
                                 }
@@ -259,10 +220,7 @@ function buildDifferential(itemSet, primeSet) {
   let diffList = itemSet.itemList;
   let differentials = {
     items: [],
-    scoreDifference:
-      (Math.round(primeSet.hardScore - itemSet.hardScore) /
-        primeSet.hardScore) *
-      100,
+    scoreDifference: (Math.round(primeSet.hardScore - itemSet.hardScore) / primeSet.hardScore) * 100,
   };
   //console.log("Prime List: " + JSON.stringify(primeSet));
   //console.log("Diff List: " + JSON.stringify(diffList))
@@ -309,10 +267,7 @@ function evalSet(itemSet, player, contentType) {
     haste: 0,
     crit: 0,
     versatility: 0,
-    mastery:
-      STATPERONEPERCENT.MASTERYA[player.spec] *
-      BASESTAT.MASTERY[player.spec] *
-      100,
+    mastery: STATPERONEPERCENT.MASTERYA[player.spec] * BASESTAT.MASTERY[player.spec] * 100,
     leech: 0,
     hps: 0,
     dps: 0,
@@ -328,29 +283,10 @@ function evalSet(itemSet, player, contentType) {
   };
   //console.log("Weights Before: " + JSON.stringify(adjusted_weights));
 
-  adjusted_weights.haste =
-    (adjusted_weights.haste +
-      adjusted_weights.haste *
-        (1 - (DR_CONST * setStats.haste) / STATPERONEPERCENT.HASTE)) /
-    2;
-  adjusted_weights.crit =
-    (adjusted_weights.crit +
-      adjusted_weights.crit *
-        (1 - (DR_CONST * setStats.crit) / STATPERONEPERCENT.CRIT)) /
-    2;
-  adjusted_weights.versatility =
-    (adjusted_weights.versatility +
-      adjusted_weights.versatility *
-        (1 -
-          (DR_CONST * setStats.versatility) / STATPERONEPERCENT.VERSATILITY)) /
-    2;
-  adjusted_weights.mastery =
-    (adjusted_weights.mastery +
-      adjusted_weights.mastery *
-        (1 -
-          (DR_CONST * setStats.mastery) /
-            STATPERONEPERCENT.MASTERYA[player.spec])) /
-    2;
+  adjusted_weights.haste = (adjusted_weights.haste + adjusted_weights.haste * (1 - (DR_CONST * setStats.haste) / STATPERONEPERCENT.HASTE)) / 2;
+  adjusted_weights.crit = (adjusted_weights.crit + adjusted_weights.crit * (1 - (DR_CONST * setStats.crit) / STATPERONEPERCENT.CRIT)) / 2;
+  adjusted_weights.versatility = (adjusted_weights.versatility + adjusted_weights.versatility * (1 - (DR_CONST * setStats.versatility) / STATPERONEPERCENT.VERSATILITY)) / 2;
+  adjusted_weights.mastery = (adjusted_weights.mastery + adjusted_weights.mastery * (1 - (DR_CONST * setStats.mastery) / STATPERONEPERCENT.MASTERYA[player.spec])) / 2;
   // TODO: Leech, which has a DR larger than secondary stats.
   //console.log("Weights After: " + JSON.stringify(adjusted_weights));
 
@@ -381,14 +317,12 @@ function evalSet(itemSet, player, contentType) {
   // Weapon - Celestial Guidance
   // Eternal Grace is so poor right now that I don't even think it deserves inclusion.
   let expected_uptime = convertPPMToUptime(3, 10);
-  bonus_stats.intellect =
-    (setStats.intellect + bonus_stats.intellect) * 0.05 * expected_uptime;
+  bonus_stats.intellect = (setStats.intellect + bonus_stats.intellect) * 0.05 * expected_uptime;
   enchants["CombinedWeapon"] = "Celestial Guidance";
 
   // 5% int boost for wearing the same items.
   // The system doesn't actually allow you to add items of different armor types so this is always on.
-  bonus_stats.intellect +=
-    (builtSet.setStats.intellect + bonus_stats.intellect) * 0.05; //TODO: Renable.
+  bonus_stats.intellect += (builtSet.setStats.intellect + bonus_stats.intellect) * 0.05; //TODO: Renable.
 
   // Sockets
   bonus_stats[highestWeight] += 16 * builtSet.setSockets;
@@ -401,8 +335,7 @@ function evalSet(itemSet, player, contentType) {
       /*score +=
             (item.stats.bonus_stats.hps / player.getHPS(contentType)) *
             player.activeStats.intellect; */
-      hardScore +=
-        (setStats[stat] / player.fightInfo.hps) * player.activeStats.intellect;
+      hardScore += (setStats[stat] / player.fightInfo.hps) * player.activeStats.intellect;
     } else if (stat === "dps") {
       continue;
     } else {
@@ -428,10 +361,7 @@ function getHighestWeight(player, contentType) {
   let weights = player.statWeights[contentType];
 
   for (var stat in weights) {
-    if (
-      weights[stat] > maxValue &&
-      ["crit", "haste", "mastery", "versatility"].includes(stat)
-    ) {
+    if (weights[stat] > maxValue && ["crit", "haste", "mastery", "versatility"].includes(stat)) {
       max = stat;
       maxValue = weights[stat];
     }
@@ -441,21 +371,21 @@ function getHighestWeight(player, contentType) {
 }
 
 const deepCopyFunction = (inObject) => {
-  let outObject, value, key
+  let outObject, value, key;
 
   if (typeof inObject !== "object" || inObject === null) {
-    return inObject // Return the value if inObject is not an object
+    return inObject; // Return the value if inObject is not an object
   }
 
   // Create an array or object to hold the values
-  outObject = Array.isArray(inObject) ? [] : {}
+  outObject = Array.isArray(inObject) ? [] : {};
 
   for (key in inObject) {
-    value = inObject[key]
+    value = inObject[key];
 
     // Recursively (deep) copy for nested objects, including arrays
-    outObject[key] = deepCopyFunction(value)
+    outObject[key] = deepCopyFunction(value);
   }
 
-  return outObject
-}
+  return outObject;
+};

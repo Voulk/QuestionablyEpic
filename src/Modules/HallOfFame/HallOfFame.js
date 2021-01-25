@@ -1,17 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import {
-  AppBar,
-  Button,
-  Dialog,
-  DialogActions,
-  DialogContent,
-  DialogTitle,
-  Typography,
-  Grid,
-  Divider,
-  Paper,
-} from "@material-ui/core";
+import { AppBar, Button, Dialog, DialogActions, DialogContent, DialogTitle, Typography, Grid, Divider, Paper } from "@material-ui/core";
 import { runSimC } from "../Engine/SimCImport/SimCImportEngine";
 import { createEmitAndSemanticDiagnosticsBuilderProgram } from "typescript";
 
@@ -204,58 +193,22 @@ export default function HallOfFame(props) {
 
   return (
     <div>
-      <Button
-        color="primary"
-        style={{ whiteSpace: "nowrap" }}
-        onClick={handleClickOpen}
-      >
+      <Button color="primary" style={{ whiteSpace: "nowrap" }} onClick={handleClickOpen}>
         {t("HallOfFame.buttonLabel")}
       </Button>
-      <Dialog
-        open={open}
-        onClose={handleClose}
-        aria-labelledby="form-dialog-title"
-        maxWidth="md"
-        fullWidth={true}
-        scroll="body"
-      >
+      <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title" maxWidth="md" fullWidth={true} scroll="body">
         <AppBar position="static" elevation={1} style={{ padding: "8px 0px" }}>
-          {/* <DialogTitle
-          disableTypography
-          color="primary"
-          variant="h6"
-          align="center"
-          id="form-dialog-title"
-        > */}
           <Typography align="center" color="secondary" variant="h4">
             {t("HallOfFame.title")}
           </Typography>
         </AppBar>
-        <Typography
-          align="center"
-          style={{ color: "limegreen", marginTop: 8, marginBottom: 8 }}
-          variant="h6"
-        >
+        <Typography align="center" style={{ color: "limegreen", marginTop: 8, marginBottom: 8 }} variant="h6">
           {t("HallOfFame.introduction")}
         </Typography>
-        {/* </DialogTitle> */}
-
         <DialogContent style={{ minHeight: 400 }}>
-          <Grid
-            container
-            spacing={2}
-            direction="row"
-            justify="flex-start"
-            alignItems="center"
-          >
+          <Grid container spacing={2} direction="row" justify="flex-start" alignItems="center">
             <Grid item xs={12}>
-              <Grid
-                container
-                spacing={2}
-                direction="row"
-                justify="flex-start"
-                alignItems="center"
-              >
+              <Grid container spacing={2} direction="row" justify="flex-start" alignItems="center">
                 <Grid item xs={12}>
                   <Paper elevation={0} style={{ backgroundColor: "#525252" }}>
                     <AppBar
@@ -271,18 +224,8 @@ export default function HallOfFame(props) {
                       </Typography>
                     </AppBar>
 
-                    <Grid
-                      item
-                      xs={12}
-                      style={{ marginTop: 8, paddingBottom: 8 }}
-                    >
-                      <Grid
-                        container
-                        spacing={2}
-                        direction="row"
-                        justify="flex-start"
-                        alignItems="center"
-                      >
+                    <Grid item xs={12} style={{ marginTop: 8, paddingBottom: 8 }}>
+                      <Grid container spacing={2} direction="row" justify="flex-start" alignItems="center">
                         {names
                           .filter((key) => key.tier === "Rolls Royce")
                           .map((key) => (
@@ -306,13 +249,7 @@ export default function HallOfFame(props) {
               </Grid>
             </Grid>
             <Grid item xs={12}>
-              <Grid
-                container
-                spacing={1}
-                direction="row"
-                justify="flex-start"
-                alignItems="center"
-              >
+              <Grid container spacing={1} direction="row" justify="flex-start" alignItems="center">
                 <Grid item xs={12}>
                   <Paper elevation={0} style={{ backgroundColor: "#525252" }}>
                     <AppBar
@@ -328,18 +265,8 @@ export default function HallOfFame(props) {
                       </Typography>
                     </AppBar>
 
-                    <Grid
-                      item
-                      xs={12}
-                      style={{ marginTop: 8, paddingBottom: 8 }}
-                    >
-                      <Grid
-                        container
-                        spacing={2}
-                        direction="row"
-                        justify="flex-start"
-                        alignItems="center"
-                      >
+                    <Grid item xs={12} style={{ marginTop: 8, paddingBottom: 8 }}>
+                      <Grid container spacing={2} direction="row" justify="flex-start" alignItems="center">
                         {names
                           .filter((key) => key.tier === "Diamond")
                           .map((key) => (
@@ -363,13 +290,7 @@ export default function HallOfFame(props) {
               </Grid>
             </Grid>
             <Grid item xs={12}>
-              <Grid
-                container
-                spacing={1}
-                direction="row"
-                justify="flex-start"
-                alignItems="center"
-              >
+              <Grid container spacing={1} direction="row" justify="flex-start" alignItems="center">
                 <Grid item xs={12}>
                   <Paper elevation={0} style={{ backgroundColor: "#525252" }}>
                     <AppBar
@@ -385,18 +306,8 @@ export default function HallOfFame(props) {
                       </Typography>
                     </AppBar>
 
-                    <Grid
-                      item
-                      xs={12}
-                      style={{ marginTop: 8, paddingBottom: 8 }}
-                    >
-                      <Grid
-                        container
-                        spacing={2}
-                        direction="row"
-                        justify="flex-start"
-                        alignItems="center"
-                      >
+                    <Grid item xs={12} style={{ marginTop: 8, paddingBottom: 8 }}>
+                      <Grid container spacing={2} direction="row" justify="flex-start" alignItems="center">
                         {names
                           .filter((key) => key.tier === "Gold")
                           .map((key) => (

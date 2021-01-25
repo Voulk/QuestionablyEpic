@@ -662,10 +662,14 @@ export default function CharCards(props) {
           >
             {/* ------------------------------ Delete Button -----------------------------  */}
             <ThemeProvider theme={deleteTheme}>
-                {value === 0 ? <Button onClick={handleDelete} color="primary">
-                {t("CharacterCreator.DeleteCharacter")}
-              </Button> : "⠀"} 
-            </ThemeProvider> 
+              {value === 0 ? (
+                <Button onClick={handleDelete} color="primary">
+                  {t("CharacterCreator.DeleteCharacter")}
+                </Button>
+              ) : (
+                "⠀"
+              )}
+            </ThemeProvider>
             {/* ---------------------- Default Button (Reset Stats) ----------------------  */}
             <div>
               {value === 1 ? (

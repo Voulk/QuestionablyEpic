@@ -90,7 +90,7 @@ export function runUpgradeFinder(player, contentType, playerSettings) {
 
   const completedItemList = [];
 
-  console.log("Running Upgrade Finder. Strap in.");
+  // console.log("Running Upgrade Finder. Strap in.");
   const baseItemList = player.getEquippedItems(true);
   const wepList = buildWepCombosUF(player, baseItemList);
   //buildWepCombos(player, false, false); // TODO: DEL
@@ -108,7 +108,7 @@ export function runUpgradeFinder(player, contentType, playerSettings) {
 
   const result = new UpgradeFinderResult(itemPoss, completedItemList);
   //console.log(result);
-  console.log("=== Upgrade Finder Finished ===");
+  // console.log("=== Upgrade Finder Finished ===");
   apiSendUpgradeFinder(player, contentType);
 
   return result;
@@ -175,17 +175,17 @@ function buildItemPossibilities(player, contentType, playerSettings) {
     }
   }
 
-  console.log("Tokens: " + Object.keys(tokenDB).length);
+  // console.log("Tokens: " + Object.keys(tokenDB).length);
 
   // --------------------------
   // Take care of Tokens >:(
   // --------------------------
   for (const [key, value] of Object.entries(tokenDB)) {
     const rawToken = value;
-    console.log(rawToken);
+    //  console.log(rawToken);
 
     if ("encounterId" in rawToken && rawToken.specs.includes(player.getSpec())) {
-      console.log("Player Covenant: " + player.getCovenant());
+      // console.log("Player Covenant: " + player.getCovenant());
       const newItemIDs = rawToken[player.getCovenant()];
       const itemSource = { instanceId: 1190, encounterId: rawToken.encounterId };
 

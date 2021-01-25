@@ -1,13 +1,12 @@
-
 class UpgradeFinderResult {
-    constructor(itemSet, differentials) {
-      this.itemSet = itemSet;
-      this.differentials = differentials;
-    }
-  
-    itemSet = [];
-    differentials = [];
-    itemsCompared = 0;
+  constructor(itemSet, differentials) {
+    this.itemSet = itemSet;
+    this.differentials = differentials;
   }
-  
-  export default UpgradeFinderResult;
+
+  itemSet = [];
+  differentials = [];
+  itemsCompared = 0;
+}
+
+export default UpgradeFinderResult;

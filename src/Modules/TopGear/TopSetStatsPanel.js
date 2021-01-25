@@ -33,11 +33,7 @@ export default function TopSetStatsPanel(props) {
   }
 
   return (
-    // <div className="statPanel">
-
     <Paper
-      // elevation={0}
-      // variant="outlined"
       style={{
         fontSize: "12px",
         textAlign: "left",
@@ -48,12 +44,7 @@ export default function TopSetStatsPanel(props) {
     >
       <Grid container direction="column" spacing={1}>
         <Grid item xs={12}>
-          <Typography
-            style={{ fontSize: 18 }}
-            variant="h6"
-            align="center"
-            color="primary"
-          >
+          <Typography style={{ fontSize: 18 }} variant="h6" align="center" color="primary">
             {t("TopGear.StatPanel.AvgStats")}
           </Typography>
           <Divider variant="middle" />
@@ -62,11 +53,7 @@ export default function TopSetStatsPanel(props) {
           <Grid container direction="row" spacing={1}>
             {stats.map((stat, index) => (
               <Grid item xs={6} key={index}>
-                <Typography
-                  style={{ fontSize: 16, marginLeft: "4px" }}
-                  variant="body1"
-                  align="left"
-                >
+                <Typography style={{ fontSize: 16, marginLeft: "4px" }} variant="body1" align="left">
                   {printStat(stat[0], stat[1])}
                 </Typography>
               </Grid>
@@ -107,6 +94,5 @@ export default function TopSetStatsPanel(props) {
           */}
       </Grid>
     </Paper>
-    // </div>
   );
 }

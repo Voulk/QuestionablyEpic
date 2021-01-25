@@ -4,13 +4,9 @@ import { Typography, Grid, Divider } from "@material-ui/core";
 import ItemUpgradeCard from "./ItemUpgradeCard";
 import UpgradeFinderBossImages from "./BossImages";
 import "./Panels.css";
-import { worldBosses } from "../CooldownPlanner/Data/Data";
 import { useTranslation } from "react-i18next";
 import { encounterDB } from "../Player/InstanceDB";
-import {
-  filterItemListBySource,
-  getDifferentialByID,
-} from "../Engine/ItemUtilities";
+import { filterItemListBySource, getDifferentialByID } from "../Engine/ItemUtilities";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -32,49 +28,21 @@ export default function WorldBossGearContainer(props) {
         <Grid item xs={12}>
           <Grid container spacing={2}>
             <Grid item>
-              <div
-                style={{ paddingLeft: 10 }}
-                className="container-UpgradeCards"
-              >
+              <div style={{ paddingLeft: 10 }} className="container-UpgradeCards">
                 {UpgradeFinderBossImages(key, {
                   width: "100%",
                   height: "auto",
                 })}
-                <Typography
-                  variant="h6"
-                  noWrap
-                  className="centered-UpgradeCards-Dungeons"
-                >
+                <Typography variant="h6" noWrap className="centered-UpgradeCards-Dungeons">
                   {t("WorldBosses." + key)}
                 </Typography>
               </div>
             </Grid>
-            <Divider
-              orientation="vertical"
-              flexItem
-              style={{ marginRight: 4 }}
-            />
-            <Grid
-              item
-              xs={12}
-              sm
-              container
-              spacing={1}
-              style={{ marginRight: 6 }}
-            >
-              {[...filterItemListBySource(itemList, 1192, key, 207)].map(
-                (item, index) => (
-                  <ItemUpgradeCard
-                    key={index}
-                    item={item}
-                    itemDifferential={getDifferentialByID(
-                      itemDifferentials,
-                      item.id,
-                      item.level
-                    )}
-                  />
-                )
-              )}
+            <Divider orientation="vertical" flexItem style={{ marginRight: 4 }} />
+            <Grid item xs={12} sm container spacing={1} style={{ marginRight: 6 }}>
+              {[...filterItemListBySource(itemList, 1192, key, 207)].map((item, index) => (
+                <ItemUpgradeCard key={index} item={item} itemDifferential={getDifferentialByID(itemDifferentials, item.id, item.level)} />
+              ))}
             </Grid>
           </Grid>
         </Grid>
