@@ -63,7 +63,7 @@ const menuStyle = {
 };
 
 function Alert(props) {
-  return <MuiAlert elevation={6} vari ant="filled" {...props} />;
+  return <MuiAlert elevation={6} variant="filled" {...props} />;
 }
 
 // Consider moving to somewhere more globally accessible.

@@ -94,8 +94,8 @@ export function getValidWeaponTypes(spec, slot) {
 
 export function filterItemListBySource(itemList, sourceInstance, sourceBoss, level, pvpRank = 0) {
   let temp = itemList.filter(function (item) {
-    console.log("Filtering: " + item.id);
-    console.log(item);
+    // console.log("Filtering: " + item.id);
+    // console.log(item);
     let itemEncounter = item.source.encounterId;
     let expectedItemLevel = level;
     if (itemEncounter == 2425 || itemEncounter == 2424) expectedItemLevel += 7;
@@ -314,7 +314,7 @@ export function buildWepCombos(player, active = false, equipped = false) {
       let off_hand = off_hands[k];
 
       //console.log("Wep Loop" + i + "/" + k + ". " + main_hand.level + ". " + off_hand.level);
-      console.log(main_hand);
+      // console.log(main_hand);
       if (main_hand.vaultItem && off_hand.vaultItem) {
         // If both main hand and off hand are vault items, then we can't make a combination out of them.
         continue;

@@ -23,7 +23,7 @@ export function convertLogSpellOutput(player, logOutput, fightLength, reportID, 
 
   for (let i = 0; i < logOutput.length; i++) {
     let spell = logOutput[i];
-    console.log(logOutput[i]);
+    // console.log(logOutput[i]);
     let spellName = spell.name;
     let spellID = spell.guid;
     let casts = "uses" in spell ? spell.uses : 0;

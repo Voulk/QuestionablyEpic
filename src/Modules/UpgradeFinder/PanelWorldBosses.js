@@ -24,8 +24,8 @@ export default function WorldBossGearContainer(props) {
 
   const contentGenerator = (type) => {
     return encounterDB[1192]
-      .map((key) => (
-        <Grid item xs={12}>
+      .map((key, i) => (
+        <Grid item xs={12} key={"worldBossContainer-" + i}>
           <Grid container spacing={2}>
             <Grid item>
               <div style={{ paddingLeft: 10 }} className="container-UpgradeCards">
@@ -47,9 +47,9 @@ export default function WorldBossGearContainer(props) {
           </Grid>
         </Grid>
       ))
-      .map((key) => [
+      .map((key, i) => [
         key,
-        <Grid item xs={12}>
+        <Grid item xs={12} key={"worldBossDivider-" + i}>
           <Divider />
         </Grid>,
       ]);
