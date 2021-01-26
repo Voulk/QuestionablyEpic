@@ -27,6 +27,11 @@ export const discPriestDefaultSpecialQueries = (contentType) => {
     specialQueries = {
       OneManaHealing: 0,
       CastsPerMinute: 30,
+      cooldownMult: {
+        oneMinute: 1,
+        twoMinutes: 1,
+        threeMinutes: 1,
+      }
     };
   } else {
     console.error("Unknown Content Type");

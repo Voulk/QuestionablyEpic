@@ -29,11 +29,21 @@ export const paladinDefaultSpecialQueries = (contentType) => {
     specialQueries = {
       OneManaHealing: 0.4,
       CastsPerMinute: 27,
+      cooldownMult: {
+        oneMinute: 1.25,
+        twoMinutes: 1.15,
+        threeMinutes: 1,
+      }
     };
   } else if (contentType === "Dungeon") {
     specialQueries = {
       OneManaHealing: 0.2,
       CastsPerMinute: 30,
+      cooldownMult: {
+        oneMinute: 1.35,
+        twoMinutes: 1.15,
+        threeMinutes: 1,
+      }
     };
   } else {
     console.error("Unknown Content Type");

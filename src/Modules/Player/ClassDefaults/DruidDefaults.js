@@ -53,12 +53,22 @@ export const druidDefaultSpecialQueries = (contentType) => {
       ConvokeChannelHPS: 360,
       OneManaHealing: 4.1,
       CastsPerMinute: 32, // ONLY tracks spells with a mana cost.
+      cooldownMult: {
+        oneMinute: 1.1,
+        twoMinutes: 1.25,
+        threeMinutes: 1.2,
+      }
     };
   } else if (contentType === "Dungeon") {
     specialQueries = {
       ConvokeChannelHPS: 360,
       OneManaHealing: 1.2,
       CastsPerMinute: 30,
+      cooldownMult: {
+        oneMinute: 1,
+        twoMinutes: 1.25,
+        threeMinutes: 1,
+      }
     };
   } else {
     console.error("Unknown Content Type");

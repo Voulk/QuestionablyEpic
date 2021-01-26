@@ -46,6 +46,11 @@ export const monkDefaultSpecialQueries = (contentType) => {
       HPSHotHealingAfterLC: 0,
       HPSExpelHarmOnSelf: 0,
       OneManaHealing: 4.2,
+      cooldownMult: {
+        oneMinute: 1.4,
+        twoMinutes: 1,
+        threeMinutes: 1.2,
+      }
     };
   } else if (contentType === "Dungeon") {
     specialQueries = {
@@ -56,6 +61,11 @@ export const monkDefaultSpecialQueries = (contentType) => {
       HPSHotHealingAfterLC: 0,
       HPSExpelHarmOnSelf: 0,
       OneManaHealing: 1.4,
+      cooldownMult: {
+        oneMinute: 1.4,
+        twoMinutes: 1,
+        threeMinutes: 1.2,
+      }
     };
   } else {
     console.error("Unknown Content Type");
