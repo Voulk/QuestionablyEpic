@@ -361,6 +361,10 @@ class Player {
     return this.castModel[contentType].getSpecialQuery(queryIdentifier);
   };
 
+  getCooldownMult = (queryIdentifier, contentType) => {
+    return this.castModel[contentType].getSpecialQuery(queryIdentifier, "cooldownMult");
+  }
+
   getSingleCast = (spellID, contentType, castType = "casts") => {
     return this.castModel[contentType].getSpellData(spellID, "healing") / this.castModel[contentType].getSpellData(spellID, castType);
   };
