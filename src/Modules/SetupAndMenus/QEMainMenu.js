@@ -10,6 +10,7 @@ import { dbCheckPatron } from "./ConnectionUtilities";
 import ArrowForward from "@material-ui/icons/ArrowForward";
 import { Paper, Grid, Button, Typography, Tooltip } from "@material-ui/core";
 import HallOfFame from "../HallOfFame/HallOfFame";
+import MessageOfTheDay from "./MessageOftheDay";
 
 // Warning: If a button name has to change, do it in the translation files. Consider the titles here to be ID's rather than strings.
 // [route, show button?, tooltip]
@@ -91,21 +92,7 @@ export default function QEMainMenu(props) {
             </Button>
           </Grid>
           <Grid item xs={12}>
-            <Paper elevation={0} style={{ border: "1px", padding: 16 }}>
-              {/* Potentially we make the message external and map the lines to save space here */}
-              <Grid container spacing={1}>
-                <Grid item xs={12}>
-                  <Typography style={{ color: "limegreen", lineHeight: "10px" }} align="left" variant="body1">
-                    - Legendary effects coming soon for Priests. Mistweaver now live!
-                  </Typography>
-                </Grid>
-                <Grid item xs={12}>
-                  <Typography style={{ color: "limegreen", lineHeight: "10px" }} align="left" variant="body1">
-                    - Upgrade Finder now live!
-                  </Typography>
-                </Grid>
-              </Grid>
-            </Paper>
+            <MessageOfTheDay />
           </Grid>
 
           {Object.keys(mainMenuOptions).map((key, index) => (
