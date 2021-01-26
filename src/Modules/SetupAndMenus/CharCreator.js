@@ -8,7 +8,7 @@ import raceIcons from "../CooldownPlanner/Functions/IconFunctions/RaceIcons";
 import Autocomplete from "@material-ui/lab/Autocomplete";
 import { serverList, classRaceList } from "../CooldownPlanner/Data/Data";
 
-const addBtn = require("../../Images/AddBtn.jpg");
+const addBtn = require("../../Images/AddBtn.jpg").default;
 
 const useStyles = makeStyles((theme) => ({
   formControl: {

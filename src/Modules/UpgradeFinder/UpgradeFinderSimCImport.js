@@ -85,8 +85,8 @@ export default function UpgradeFinderSimC(props) {
               <Grid container justify="center">
                 {props.player.activeItems
                   .filter((key) => key.isEquipped === true)
-                  .map((key) => (
-                    <a style={{ padding: 2 }} data-wowhead={"item=" + key.id + "&" + "ilvl=" + key.level + "&bonus=" + key.bonusIDS + "&domain=" + currentLanguage}>
+                  .map((key, i) => (
+                    <a style={{ padding: 2 }} data-wowhead={"item=" + key.id + "&" + "ilvl=" + key.level + "&bonus=" + key.bonusIDS + "&domain=" + currentLanguage} key={i}>
                       <img
                         style={{
                           height: 22,

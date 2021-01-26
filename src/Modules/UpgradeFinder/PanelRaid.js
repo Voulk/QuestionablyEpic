@@ -67,8 +67,8 @@ export default function RaidGearContainer(props) {
     return (
       encounterDB[1190]
         //.filter((key) => key === raidID)
-        .map((key) => (
-          <Grid item xs={12}>
+        .map((key, i) => (
+          <Grid item xs={12} key={"bossContainer-" + i}>
             <Grid container spacing={2} justify="center" alignItems="flex-start">
               <Grid item style={{ alignSelf: "center" }}>
                 <div style={{ paddingLeft: 10 }} className="container-UpgradeCards">
@@ -130,9 +130,9 @@ export default function RaidGearContainer(props) {
             </Grid>
           </Grid>
         ))
-        .map((key) => [
+        .map((key, i) => [
           key,
-          <Grid item xs={12}>
+          <Grid item xs={12} key={"bossDivider-" + i}>
             <Divider />
           </Grid>,
         ])

@@ -63,7 +63,7 @@ export default function ItemCard(props) {
   };
 
   const activateItemCard = () => {
-    console.log("Activating item with Hash: " + item.uniqueHash);
+    // console.log("Activating item with Hash: " + item.uniqueHash);
     props.activateItem(item.uniqueHash);
   };
 

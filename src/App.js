@@ -251,7 +251,6 @@ class App extends Component {
   toggleContentType = () => {
     let newType = this.state.contentType === "Raid" ? "Dungeon" : "Raid";
     this.setState({ contentType: newType });
-    console.log(this.state.contentType);
     ls.set("contentType", newType);
   };
 

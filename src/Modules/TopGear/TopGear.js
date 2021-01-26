@@ -236,7 +236,7 @@ export default function TopGear(props) {
         {props.pl.activeItems.length > 0 ? (
           slotList.map((key, index) => {
             return (
-              <Grid item xs={12}>
+              <Grid item xs={12} key={index}>
                 <Typography style={{ color: "white" }} variant="h5">
                   {key.label}
                 </Typography>
@@ -284,7 +284,7 @@ export default function TopGear(props) {
             {t("TopGear.SelectedItems") + ":" + " " + selectedItemCount + "/" + TOPGEARCAP}
           </Typography>
           <div>
-            <Typography variant="Subtitle2" align="center" style={{ padding: "10px 10px 5px 10px", marginRight: "5px" }} color="primary">
+            <Typography variant="subtitle2" align="center" style={{ padding: "10px 10px 5px 10px", marginRight: "5px" }} color="primary">
               {errorMessage}
             </Typography>
             <Button variant="contained" color="secondary" align="center" style={{ height: "68%", width: "180px" }} disabled={!btnActive} onClick={unleashTopGear}>

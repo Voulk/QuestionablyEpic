@@ -203,7 +203,7 @@ export default function UpgradeFinderFront(props) {
         </Grid>
 
         {/* ------------------------------ Raid Section ------------------------------ */}
-        <Grid item xs={12} spacing={1}>
+        <Grid item xs={12}>
           <Paper elevation={0} style={{ padding: 10 }}>
             <Grid container justify="center" spacing={1}>
               <Grid item xs={12}>
@@ -232,7 +232,7 @@ export default function UpgradeFinderFront(props) {
             </Grid> */}
             <Grid container justify="center" spacing={1}>
               {raidDifficulty.map((key, i) => (
-                <Grid item xs="auto">
+                <Grid item xs="auto" key={i}>
                   <ToggleButton
                     classes={{
                       root: classes.red,
@@ -256,7 +256,7 @@ export default function UpgradeFinderFront(props) {
         </Grid>
 
         {/* --------------------------- Mythic Plus Section -------------------------- */}
-        <Grid item xs={12} spacing={1}>
+        <Grid item xs={12}>
           <Paper elevation={0} style={{ padding: "10px 10px 0px 10px", textAlign: "center" }}>
             <Grid container justify="center" spacing={1}>
               <Grid item xs={12}>
@@ -282,7 +282,7 @@ export default function UpgradeFinderFront(props) {
           </Paper>
         </Grid>
         {/* ------------------------------- PvP Section ------------------------------ */}
-        <Grid item xs={12} spacing={1}>
+        <Grid item xs={12}>
           <Paper elevation={0} style={{ padding: 10 }}>
             <Grid container justify="center" spacing={1}>
               <Grid item xs={12}>
@@ -341,7 +341,7 @@ export default function UpgradeFinderFront(props) {
           }}
         >
           <div>
-            <Typography variant="Subtitle2" align="center" style={{ padding: "5px 10px 5px 10px" }} color="primary">
+            <Typography variant="subtitle2" align="center" style={{ padding: "5px 10px 5px 10px" }} color="primary">
               {/* {errorMessage} */}
             </Typography>
             <Button

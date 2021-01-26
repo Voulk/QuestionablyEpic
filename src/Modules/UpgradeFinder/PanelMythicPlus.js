@@ -32,8 +32,8 @@ export default function MythicPlusGearContainer(props) {
 
   const contentGenerator = (type) => {
     return encounterDB[1]
-      .map((key) => (
-        <Grid item xs={12}>
+      .map((key, i) => (
+        <Grid item xs={12} key={"mythicContainer-" + i}>
           <Grid container spacing={2}>
             <Grid item>
               <div style={{ width: 181, paddingLeft: 10 }} className="container-UpgradeCards">
@@ -54,9 +54,9 @@ export default function MythicPlusGearContainer(props) {
           </Grid>
         </Grid>
       ))
-      .map((key) => [
+      .map((key, i) => [
         key,
-        <Grid item xs={12}>
+        <Grid item xs={12} key={"mythicDivider-" + i}>
           <Divider />
         </Grid>,
       ]);

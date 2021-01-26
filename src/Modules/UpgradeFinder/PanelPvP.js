@@ -42,8 +42,8 @@ export default function PvPGearContainer(props) {
 
   const contentGenerator = (type) => {
     return encounterDB[2]
-      .map((key) => (
-        <Grid item xs={12}>
+      .map((key, i) => (
+        <Grid item xs={12} key={"pvpContainer-" + i}>
           <Grid container spacing={2}>
             <Grid item>
               <div style={{ width: 181, paddingLeft: 10 }} className="container-UpgradeCards">
@@ -63,9 +63,9 @@ export default function PvPGearContainer(props) {
           </Grid>
         </Grid>
       ))
-      .map((key) => [
+      .map((key, i) => [
         key,
-        <Grid item xs={12}>
+        <Grid item xs={12} key={"pvpDivider-" + i}>
           <Divider />
         </Grid>,
       ]);

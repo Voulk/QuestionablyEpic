@@ -57,17 +57,30 @@ export default function QEProfile(props) {
             {t("QeProfile.ProfileHeader")}
           </Typography>
           <Paper elevation={0} style={{ padding: 10 }}>
-            <Typography variant="body1" gutterBottom color="primary" align="left" style={{ display: "flex" }}>
-              Battletag:
-              <div style={{ paddingLeft: 10, color: "#fff" }}>{props.playerTag || t("QeProfile.NoBattleTag")}</div>
-            </Typography>
-            <Typography variant="body1" gutterBottom color="primary" align="left" style={{ display: "flex" }}>
-              Email:
-              <div style={{ paddingLeft: 10, color: "#fff" }}>{email || t("QeProfile.NoEmail")}</div>
-            </Typography>
-            <Typography variant="body1" gutterBottom color="primary" align="left" wrap="nowrap" style={{ display: "inline-flex" }}>
-              {t("QeProfile.QeTier")}:<div style={{ paddingLeft: 10, color: color[patronStatus] }}>{patronStatus}</div>
-            </Typography>
+            <div style={{ display: "flex" }}>
+              <Typography variant="body1" gutterBottom color="primary" align="left" style={{ display: "flex" }}>
+                Battletag:
+              </Typography>
+              <Typography variant="body1" gutterBottom align="left" style={{ paddingLeft: 10, color: "#fff" }}>
+                {props.playerTag || t("QeProfile.NoBattleTag")}
+              </Typography>
+            </div>
+            <div style={{ display: "flex" }}>
+              <Typography variant="body1" gutterBottom color="primary" align="left" style={{ display: "flex" }}>
+                Email:
+              </Typography>
+              <Typography variant="body1" gutterBottom align="left" style={{ paddingLeft: 10, color: "#fff" }}>
+                {email || t("QeProfile.NoEmail")}
+              </Typography>
+            </div>
+            <div style={{ display: "flex" }}>
+              <Typography variant="body1" gutterBottom color="primary" align="left" style={{ display: "flex" }}>
+                {t("QeProfile.QeTier")}:
+              </Typography>
+              <Typography variant="body1" gutterBottom align="left" style={{ paddingLeft: 10, color: color[patronStatus] }}>
+                {patronStatus}
+              </Typography>
+            </div>
           </Paper>
         </Grid>
         <Grid item xs={12}>
