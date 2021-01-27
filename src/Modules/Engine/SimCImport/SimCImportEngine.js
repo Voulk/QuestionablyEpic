@@ -3,6 +3,7 @@ import { bonus_IDs } from "../BonusIDs";
 import { getItemLevel } from "../ItemUtilities";
 import { calcStatsAtLevel, getItemAllocations, scoreItem, getItemEffect, correctCasing, getValidWeaponTypes, getItemSlot, getItemSubclass } from "../ItemUtilities";
 import Item from "../../Player/Item";
+import ItemSet from "../../TopGear/ItemSet";
 
 const stat_ids = {
   36: "haste",
@@ -47,7 +48,7 @@ export function runSimC(simCInput, player, contentType, setErrorMessage, snackHa
         else processItem(line, player, contentType, type);
       }
     }
-
+    adjustStatWeights(player, contentType);
     snackHandler();
     closeDialog();
     clearSimCInput("");
@@ -269,6 +270,8 @@ function processItem(line, player, contentType, type) {
   } else {
     //console.log("Item Level out of range: " + itemLevel);
   }
+
+  
 }
 
 function getSecondaryAllocationAtItemLevel(itemLevel, slot, crafted_stats = []) {
@@ -307,3 +310,74 @@ function checkDefaultSocket(id) {
   if (temp.length > 0) return "socketInfo" in temp[0];
   else return 0;
 }
+
+// Currently being trialled as Discipline only.
+function adjustStatWeights(player, contentType) {
+  
+  let equippedSet = new ItemSet(0, player.getEquippedItems(true), 0);
+ 
+  equippedSet = equippedSet.compileStats();
+
+  let stats = equippedSet.setStats;
+  stats.intellect = 1650;
+
+  // These are stat weights with 0 of each stat on top of the default profile. 
+  let base_weights = {
+    haste: 0.4,
+    mastery: 0.39,
+    versatility: 0.4,
+    crit: 0.42,
+    leech: 0.23,
+  }
+
+  let scaling = {
+    haste: 1,
+    mastery: 0.72,
+    versatility: 0.99,
+    intellect: 0.991,
+    crit: 0.968,
+    leech: 0.31,
+  }
+  
+  let new_weights = {}
+
+
+  const baselineScore = ((stats.intellect * scaling.intellect) * (1 + (stats.crit / 35 / 100 * scaling.crit)) * 
+                            (1 + (stats.haste / 33 / 100 * scaling.haste)) * (1 + (stats.mastery / 27.9 / 100 * scaling.mastery)) * 
+                            (1 + stats.versatility / 40 / 100 * scaling.versatility))
+
+  const intScore = (((((10+stats.intellect) * scaling.intellect) * (1 + (stats.crit / 35 / 100 * scaling.crit)) * 
+                            (1 + (stats.haste / 33 / 100 * scaling.haste)) * (1 + (stats.mastery / 27.9 / 100 * scaling.mastery)) * 
+                            (1 + stats.versatility / 40 / 100 * scaling.versatility))) - baselineScore) / 10;  
+                                      
+
+  
+  
+  
+  /*(((((stats.intellect) * scaling.intellect) * (1 + ((5 + stats.crit) / 35 / 100 * scaling.crit)) * 
+                          (1 + (stats.haste / 33 / 100 * scaling.haste)) * (1 + (stats.mastery / 27.9 / 100 * scaling.mastery)) * 
+                          (1 + stats.versatility / 40 / 100 * scaling.versatility))) - baselineScore) / 5 / intScore;         */              
+
+  //new_weights.intellect = ((100 + stats.intellect * percent_scaling.intellect) * (1 + (stats.crit / 35) * (1 + (stats.haste / 33)))
+
+  for (const [stat, value] of Object.entries(base_weights)) {
+    new_weights[stat] = getSecWeight(stats, scaling, baselineScore, intScore, stat);
+  }
+
+  console.log(JSON.stringify(base_weights));
+  console.log(JSON.stringify(equippedSet.setStats));
+  
+  
+  console.log(JSON.stringify(new_weights));
+}
+
+function getSecWeight(baseStats, scaling, baselineScore, intScore, statName) {
+  let stats = {...baseStats};
+  stats[statName] += 5;
+
+  return (((((stats.intellect) * scaling.intellect) * (1 + ((stats.crit) / 35 / 100 * scaling.crit)) * 
+          (1 + (stats.haste / 33 / 100 * scaling.haste)) * (1 + (stats.mastery / 27.9 / 100 * scaling.mastery)) * 
+          (1 + stats.versatility / 40 / 100 * scaling.versatility))) - baselineScore) / 5 / intScore; 
+
+}
+
