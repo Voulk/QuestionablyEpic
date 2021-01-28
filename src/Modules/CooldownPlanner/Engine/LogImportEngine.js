@@ -1,19 +1,6 @@
-import {
-  addMissingTimestamps,
-  getUniqueObjectsFromArray,
-  reduceTimestamps,
-  fightDurationCalculator,
-  importHealerLogData,
-  importDamageLogData,
-  importCastsLogData,
-  durationmaker,
-  sumDamage,
-  importSummaryData,
-  importExternalCastsLogData,
-  importCharacterIds,
-  importEnemyCasts,
-  importEnemyIds,
-} from "../Functions/Functions";
+//prettier-ignore
+import { addMissingTimestamps, getUniqueObjectsFromArray, reduceTimestamps, fightDurationCalculator, importHealerLogData, importDamageLogData, importCastsLogData,
+  durationmaker, sumDamage, importSummaryData, importExternalCastsLogData, importCharacterIds, importEnemyCasts, importEnemyIds } from "../Functions/Functions";
 import moment from "moment";
 
 /* =============================================

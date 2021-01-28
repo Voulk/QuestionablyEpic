@@ -45,6 +45,28 @@
     "Avoidance": "Avoidance",
     "Source": "Quelle",
     "Default": "DefaultDE",
+    "Remove": "RemoveDE",
+    "HPS": "HPS",
+    "Casts": "CastsDE",
+    "Healing": "HealingDE",
+    "Overhealing":" OverhealingDE",
+    "Account": "AccountDE",
+    "Email": "Email",
+    "Battletag": "Battletag",
+
+    "Changelog": {
+      "Header": "ChangelogDE",
+      "Version": "VersionDE",
+      "Update": "UpdateDE",
+      "LastUpdated": "Last UpdatedDE",
+      "Date": "DateDE"
+    },
+
+    "PatreonTiers":{
+      "RollsRoyce": "Rolls RoyceDE",
+      "Diamond": "DiamondDE",
+      "Gold": "GoldDE"
+    },
 
     "Classes": {
       "undefined": "",

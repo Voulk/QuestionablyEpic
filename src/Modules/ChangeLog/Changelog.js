@@ -32,12 +32,12 @@ export default function Changelog() {
     <div style={{ color: "Whitesmoke", width: "350px", marginLeft: "auto", marginRight: "auto", marginBottom: 5, marginTop: 50 }}>
       <Button style={{ fontSize: 12 }} onClick={handleClickOpen("paper")}>
         {/* ----------------- This uses the first object in the array ----------------  */}
-        QE Live {changeLog[0].version} Update {changeLog[0].update}. Last Updated {changeLog[0].date}.
+        QE Live {changeLog[0].version} {t("Changelog.Update")} {changeLog[0].update}. {t("Changelog.LastUpdated")} {changeLog[0].date}.
       </Button>
       <Dialog open={open} onClose={handleClose} scroll={scroll} aria-labelledby="scroll-dialog-title" aria-describedby="scroll-dialog-description" maxWidth="md" fullWidth>
         <DialogTitle disableTypography align="center" id="scroll-dialog-title">
           <Typography color="primary" variant="h4">
-            Changelog
+            {t("Changelog.Header")}
           </Typography>
         </DialogTitle>
         <DialogContent dividers={scroll === "paper"}>
@@ -45,7 +45,7 @@ export default function Changelog() {
             <Accordion elevation={0} style={{ backgroundColor: "rgb(82, 82, 82)" }}>
               <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content" id="panel1a-header">
                 <Typography className={classes.heading}>
-                  Version: {key.version} - Update: {key.update} - Date: {key.date}
+                  {t("Changelog.Version")}: {key.version} - {t("Changelog.Update")}: {key.update} - {t("Changelog.Date")}: {key.date}
                 </Typography>
               </AccordionSummary>
               <Divider variant="middle" />

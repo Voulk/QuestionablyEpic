@@ -45,6 +45,28 @@
     "Avoidance": "Avoidance",
     "Source": "Источник",
     "Default": "DefaultRU",
+    "Remove": "RemoveRU",
+    "HPS": "HPS",
+    "Casts": "CastsRU",
+    "Healing": "HealingRU",
+    "Overhealing":" OverhealingRU",
+    "Account": "AccountRU",
+    "Email": "Email",
+    "Battletag": "Battletag",
+
+    "Changelog": {
+      "Header": "ChangelogRU",
+      "Version": "VersionRU",
+      "Update": "UpdateRU",
+      "LastUpdated": "Last UpdatedRU",
+      "Date": "DateRU"
+    },
+
+    "PatreonTiers":{
+      "RollsRoyce": "Rolls RoyceRU",
+      "Diamond": "DiamondRU",
+      "Gold": "GoldRU"
+    },
 
     "Classes": {
       "undefined": "",

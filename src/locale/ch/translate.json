@@ -45,6 +45,28 @@
     "Avoidance": "Avoidance",
     "Source": "来源",
     "Default": "DefaultCH",
+    "Remove": "RemoveCH",
+    "HPS": "HPS",
+    "Casts": "CastsCH",
+    "Healing": "HealingCH",
+    "Overhealing":" OverhealingCH",
+    "Account": "AccountCH",
+    "Email": "Email",
+    "Battletag": "Battletag",
+
+    "Changelog": {
+      "Header": "ChangelogCH",
+      "Version": "VersionCH",
+      "Update": "UpdateCH",
+      "LastUpdated": "Last UpdatedCH",
+      "Date": "DateCH"
+    },
+
+    "PatreonTiers":{
+      "RollsRoyce": "Rolls RoyceCH",
+      "Diamond": "DiamondCH",
+      "Gold": "GoldCH"
+    },
 
     "Classes": {
       "undefined": "",

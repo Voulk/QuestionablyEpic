@@ -136,7 +136,7 @@ export default function LegendaryObject(props) {
             <Grid item xs={12}>
               <CardContent style={{ padding: 0, height: 20 }}>
                 <Typography align="center" variant="caption" component="p" style={{ lineHeight: 1.1, fontSize: "16px" }}>
-                  HPS: {hpsString}
+                  {t("HPS")}: {hpsString}
                   <br />
                 </Typography>
               </CardContent>
