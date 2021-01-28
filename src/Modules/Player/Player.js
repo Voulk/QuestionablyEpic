@@ -122,6 +122,10 @@ class Player {
     return 0;
   };
 
+  setStatWeights = (newWeights, contentType) => {
+    this.statWeights[contentType] = newWeights;
+  }
+
   getCovenant = () => {
     return this.covenant;
   };

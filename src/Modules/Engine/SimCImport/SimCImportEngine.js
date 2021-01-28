@@ -48,7 +48,7 @@ export function runSimC(simCInput, player, contentType, setErrorMessage, snackHa
         else processItem(line, player, contentType, type);
       }
     }
-    adjustStatWeights(player, contentType);
+    //if (player.getSpec() === "Discipline Priest") adjustStatWeights(player, contentType); // Holding off for now.
     snackHandler();
     closeDialog();
     clearSimCInput("");
@@ -350,10 +350,6 @@ function adjustStatWeights(player, contentType) {
                             (1 + (stats.haste / 33 / 100 * scaling.haste)) * (1 + (stats.mastery / 27.9 / 100 * scaling.mastery)) * 
                             (1 + stats.versatility / 40 / 100 * scaling.versatility))) - baselineScore) / 10;  
                                       
-
-  
-  
-  
   /*(((((stats.intellect) * scaling.intellect) * (1 + ((5 + stats.crit) / 35 / 100 * scaling.crit)) * 
                           (1 + (stats.haste / 33 / 100 * scaling.haste)) * (1 + (stats.mastery / 27.9 / 100 * scaling.mastery)) * 
                           (1 + stats.versatility / 40 / 100 * scaling.versatility))) - baselineScore) / 5 / intScore;         */              
@@ -363,21 +359,26 @@ function adjustStatWeights(player, contentType) {
   for (const [stat, value] of Object.entries(base_weights)) {
     new_weights[stat] = getSecWeight(stats, scaling, baselineScore, intScore, stat);
   }
+  new_weights.leech = base_weights.leech;
 
-  console.log(JSON.stringify(base_weights));
+  //console.log(JSON.stringify(base_weights));
   console.log(JSON.stringify(equippedSet.setStats));
   
   
-  console.log(JSON.stringify(new_weights));
+  //console.log(JSON.stringify(new_weights));
+
+  player.setStatWeights(new_weights, contentType);
 }
 
 function getSecWeight(baseStats, scaling, baselineScore, intScore, statName) {
   let stats = {...baseStats};
   stats[statName] += 5;
 
-  return (((((stats.intellect) * scaling.intellect) * (1 + ((stats.crit) / 35 / 100 * scaling.crit)) * 
-          (1 + (stats.haste / 33 / 100 * scaling.haste)) * (1 + (stats.mastery / 27.9 / 100 * scaling.mastery)) * 
-          (1 + stats.versatility / 40 / 100 * scaling.versatility))) - baselineScore) / 5 / intScore; 
+  const newWeight = (((((stats.intellect) * scaling.intellect) * (1 + ((stats.crit) / 35 / 100 * scaling.crit)) * 
+                      (1 + (stats.haste / 33 / 100 * scaling.haste)) * (1 + (stats.mastery / 27.9 / 100 * scaling.mastery)) * 
+                      (1 + stats.versatility / 40 / 100 * scaling.versatility))) - baselineScore) / 5 / intScore;
+
+  return Math.round(1000 * newWeight)/1000
 
 }
 
