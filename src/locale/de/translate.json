@@ -7,12 +7,12 @@
       "AddChar": "Charakter hinzufügen",
       "CharName": "Charaktername",
       "SavedLogs": {
-        "Header": "Detailed Breakdown Coming SoonDE",
-        "Report": "ReportDE",
-        "Boss": "BossDE",
-        "FightLength": "Fight LengthDE",
-        "HPS": "HPSDE",
-        "RawHPS": "Raw HPSDE"
+        "Header": "Detailed Breakdown Coming Soon",
+        "Report": "Report",
+        "Boss": "Boss",
+        "FightLength": "Fight Length",
+        "HPS": "HPS",
+        "RawHPS": "Raw HPS"
       }
     },
 
