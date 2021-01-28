@@ -489,9 +489,11 @@ export const bossIds = [
 ];
 
 export const bossAbilities = [
-  // Shriekwing
-  // Active Abilities
+  /* -------------------------------------------------------------------------- */
+  /*                                 Shriekwing                                 */
+  /* -------------------------------------------------------------------------- */
 
+  /* ---------------------------- Active Abilities ---------------------------- */
   {
     bossID: 2398,
     ability: "Bloodlight",
@@ -514,7 +516,7 @@ export const bossAbilities = [
     icon: require("../../../Images/Bosses/CastleNathria/Shriekwing/Icons/WaveOfBlood.jpg").default,
   },
 
-  // Inactive Abilities
+  /* --------------------------- Inactive Abilities --------------------------- */
   {
     bossID: 2398,
     ability: "Reverberating Scream",
@@ -607,8 +609,11 @@ export const bossAbilities = [
     icon: require("../../../Images/Bosses/CastleNathria/Shriekwing/Icons/ExsanguinatedIcon.jpg").default,
   },
 
-  // Huntsman Altimor
-  // Active Abilities
+  /* -------------------------------------------------------------------------- */
+  /*                              Huntsman Altimor                              */
+  /* -------------------------------------------------------------------------- */
+
+  /* ---------------------------- Active Abilities ---------------------------- */
   {
     bossID: 2418,
     ability: "Crushing Stone",
@@ -631,7 +636,7 @@ export const bossAbilities = [
     icon: require("../../../Images/Bosses/CastleNathria/HuntsmanAltimor/Icons/SinseekerIcon.jpg").default,
   },
 
-  // Inactive Abilities
+  /* --------------------------- Inactive Abilities --------------------------- */
   {
     bossID: 2418,
     ability: "Vicious Lunge",
@@ -717,8 +722,11 @@ export const bossAbilities = [
     icon: require("../../../Images/Bosses/CastleNathria/HuntsmanAltimor/Icons/ShootIcon.jpg").default,
   },
 
-  // Hungering Destroyer
-  // Active Abilities
+  /* -------------------------------------------------------------------------- */
+  /*                             Hungering Destroyer                            */
+  /* -------------------------------------------------------------------------- */
+
+  /* ---------------------------- Active Abilities ---------------------------- */
   {
     bossID: 2383,
     ability: "Consume",
@@ -778,8 +786,11 @@ export const bossAbilities = [
     icon: require("../../../Images/Bosses/CastleNathria/HungeringDestroyer/Icons/OverwhelmIcon.jpg").default,
   },
 
-  // Artificer Xymox
-  // Active Abilities
+  /* -------------------------------------------------------------------------- */
+  /*                               Artificer Xymox                              */
+  /* -------------------------------------------------------------------------- */
+
+  /* ---------------------------- Active Abilities ---------------------------- */
   {
     bossID: 2405,
     ability: "Glyph of Destruction",
@@ -809,7 +820,7 @@ export const bossAbilities = [
     icon: require("../../../Images/Bosses/CastleNathria/ArtificerXymox/Icons/SoulSingeIcon.jpg").default,
   },
 
-  // Inactive Abilities
+  /* --------------------------- Inactive Abilities --------------------------- */
   {
     bossID: 2405,
     ability: "Dimensional Tear",
@@ -853,10 +864,12 @@ export const bossAbilities = [
     icon: require("../../../Images/Bosses/CastleNathria/ArtificerXymox/Icons/EdgeOfAnnihilationIcon.jpg").default,
   },
 
-  // Sun King's Salvation
-  // Active Abilities
+  /* -------------------------------------------------------------------------- */
+  /*                            Sun King's Salvation                            */
+  /* -------------------------------------------------------------------------- */
 
-  // Inactive Abilities
+  /* ---------------------------- Active Abilities ---------------------------- */
+  /* --------------------------- Inactive Abilities --------------------------- */
   {
     bossID: 2402,
     ability: "Smoldering Remnants",
@@ -977,9 +990,11 @@ export const bossAbilities = [
     icon: require("../../../Images/Bosses/CastleNathria/SunKingsSalvation/Icons/SoulInfusionIcon.jpg").default,
   },
 
-  // Lady Inerva Darkvein
-  // Active Abilities
+  /* -------------------------------------------------------------------------- */
+  /*                            Lady Inerva Darkvein                            */
+  /* -------------------------------------------------------------------------- */
 
+  /* ---------------------------- Active Abilities ---------------------------- */
   {
     bossID: 2406,
     ability: "Change of Heart",
@@ -988,7 +1003,7 @@ export const bossAbilities = [
     icon: require("../../../Images/Bosses/CastleNathria/LadyInervaDarkvein/Icons/ChangeOfHeartIcon.jpg").default,
   },
 
-  //Inactive Abilities
+  /* --------------------------- Inactive Abilities --------------------------- */
   {
     bossID: 2406,
     ability: "Condemn",
@@ -1158,24 +1173,34 @@ export const bossAbilities = [
     icon: require("../../../Images/Bosses/CastleNathria/LadyInervaDarkvein/Icons/FragmentsOfShadowIcon.jpg").default,
   },
 
-  // Council of Blood
-  // Active Abilities
+  /* -------------------------------------------------------------------------- */
+  /*                              Council of Blood                              */
+  /* -------------------------------------------------------------------------- */
+
+  /* ---------------------------- Active Abilities ---------------------------- */
+  {
+    bossID: 2412,
+    ability: "Dancing Fever",
+    guid: 347350,
+    cooldownPlannerActive: true,
+    icon: require("../../../Images/Bosses/CastleNathria/TheCouncilOfBlood/Icons/DancingFeverIcon.jpg").default,
+  },
+
+  /* --------------------------- Inactive Abilities --------------------------- */
   {
     bossID: 2412,
     ability: "Oppressive Atmosphere",
     guid: 334909,
-    cooldownPlannerActive: true,
+    cooldownPlannerActive: false,
     icon: require("../../../Images/Bosses/CastleNathria/TheCouncilOfBlood/Icons/OppressiveAtmosphereIcon.jpg").default,
   },
   {
     bossID: 2412,
     ability: "Prideful Eruption",
     guid: 346660,
-    cooldownPlannerActive: true,
+    cooldownPlannerActive: false,
     icon: require("../../../Images/Bosses/CastleNathria/TheCouncilOfBlood/Icons/PridefulEruption.jpg").default,
   },
-
-  // Inactive Abilities
   {
     bossID: 2412,
     ability: "Tactical Advance",
@@ -1232,7 +1257,6 @@ export const bossAbilities = [
     cooldownPlannerActive: false,
     icon: require("../../../Images/Bosses/CastleNathria/TheCouncilOfBlood/Icons/WaltzOfBloodIcon.jpg").default,
   },
-  // From the adds
   {
     bossID: 2412,
     ability: "Waltz of Blood",
@@ -1248,9 +1272,11 @@ export const bossAbilities = [
     icon: require("../../../Images/Bosses/CastleNathria/TheCouncilOfBlood/Icons/DarkRecitalIcon.jpg").default,
   },
 
-  // Stone Legion Generals
-  // Active Abilities
+  /* -------------------------------------------------------------------------- */
+  /*                            Stone Legion Generals                           */
+  /* -------------------------------------------------------------------------- */
 
+  /* ---------------------------- Active Abilities ---------------------------- */
   {
     bossID: 2417,
     ability: "Pulverizing Meteor",
@@ -1259,7 +1285,7 @@ export const bossAbilities = [
     icon: require("../../../Images/Bosses/CastleNathria/StoneLegionGenerals/Icons/PulverizingMeteorIcon.jpg").default,
   },
 
-  // Inactive Abilities
+  /* --------------------------- Inactive Abilities --------------------------- */
   {
     bossID: 2417,
     ability: "Wicked Laceration",
@@ -1339,8 +1365,11 @@ export const bossAbilities = [
     icon: require("../../../Images/Bosses/CastleNathria/StoneLegionGenerals/Icons/RavenousSwipeIcon.jpg").default,
   },
 
-  // Sludgefist
-  // Active Abilities
+  /* -------------------------------------------------------------------------- */
+  /*                                 Sludgefist                                 */
+  /* -------------------------------------------------------------------------- */
+
+  /* ---------------------------- Active Abilities ---------------------------- */
   {
     bossID: 2399,
     ability: "Colossal Roar",
@@ -1348,15 +1377,22 @@ export const bossAbilities = [
     cooldownPlannerActive: true,
     icon: require("../../../Images/Bosses/CastleNathria/Sludgefist/Icons/ColossalRoarIcon.jpg").default,
   },
-
-  // Inactive Abilities
   {
     bossID: 2399,
     ability: "Destructive Impact",
     guid: 332969,
-    cooldownPlannerActive: false,
+    cooldownPlannerActive: true,
     icon: require("../../../Images/Bosses/CastleNathria/Sludgefist/Icons/DestructiveImpactIcon.jpg").default,
   },
+  {
+    bossID: 2399,
+    ability: "Seismic Shift",
+    guid: 340803,
+    cooldownPlannerActive: true,
+    icon: require("../../../Images/Bosses/CastleNathria/Sludgefist/Icons/SeismicShiftIcon.jpg").default,
+  },
+
+  /* --------------------------- Inactive Abilities --------------------------- */
   {
     bossID: 2399,
     ability: "Crumbling Foundation",
@@ -1415,13 +1451,6 @@ export const bossAbilities = [
   },
   {
     bossID: 2399,
-    ability: "Seismic Shift",
-    guid: 340803,
-    cooldownPlannerActive: false,
-    icon: require("../../../Images/Bosses/CastleNathria/Sludgefist/Icons/SeismicShiftIcon.jpg").default,
-  },
-  {
-    bossID: 2399,
     ability: "Falling Rubble",
     guid: 332572,
     cooldownPlannerActive: false,
@@ -1449,7 +1478,10 @@ export const bossAbilities = [
     icon: require("../../../Images/Bosses/CastleNathria/Sludgefist/Icons/ChainBleedIcon.jpg").default,
   },
 
-  // Denathrius
+  /* -------------------------------------------------------------------------- */
+  /*                                 Denathrius                                 */
+  /* -------------------------------------------------------------------------- */
+
   {
     bossID: 2407,
     ability: "Hand of Destruction",
@@ -1474,7 +1506,9 @@ export const bossAbilities = [
 ];
 
 export const talents = [
-  // Paladin Talents
+  /* -------------------------------------------------------------------------- */
+  /*                               Paladin Talents                              */
+  /* -------------------------------------------------------------------------- */
 
   { name: "Crusader's Might", guid: 196926 },
   { name: "Bestow Faith", guid: 223306 },
@@ -1498,7 +1532,9 @@ export const talents = [
   { name: "Beacon of Faith", guid: 156910 },
   { name: "Beacon of Virtue", guid: 200025 },
 
-  //shaman talents
+  /* -------------------------------------------------------------------------- */
+  /*                               Shaman Talents                               */
+  /* -------------------------------------------------------------------------- */
 
   { name: "Torrent", guid: 200072 },
   { name: "Undulation", guid: 200071 },
@@ -1522,7 +1558,9 @@ export const talents = [
   { name: "Wellspring", guid: 197995 },
   { name: "Ascendance", guid: 114052 },
 
-  // Druid talents
+  /* -------------------------------------------------------------------------- */
+  /*                                Druid Talents                               */
+  /* -------------------------------------------------------------------------- */
 
   { name: "Abundance", guid: 207383 },
   { name: "Nourish", guid: 50464 },
@@ -1546,7 +1584,9 @@ export const talents = [
   { name: "Germination", guid: 155675 },
   { name: "Flourish", guid: 197721 },
 
-  // Monk talents
+  /* -------------------------------------------------------------------------- */
+  /*                                Monk Talents                                */
+  /* -------------------------------------------------------------------------- */
 
   { name: "Mist Wrap", guid: 197900 },
   { name: "Chi Wave", guid: 115098 },
@@ -1570,7 +1610,9 @@ export const talents = [
   { name: "Upwelling", guid: 274963 },
   { name: "Rising Mist", guid: 274909 },
 
-  // Priest - Discipline talents
+  /* -------------------------------------------------------------------------- */
+  /*                         Priest - Discipline talents                        */
+  /* -------------------------------------------------------------------------- */
 
   { name: "Castigation", guid: 197900 },
   { name: "Twist of Fate", guid: 265259 },
@@ -1594,7 +1636,9 @@ export const talents = [
   { name: "Spirit Shell", guid: 109964 },
   { name: "Evangelism", guid: 246287 },
 
-  // Priest - Holy talents
+  /* -------------------------------------------------------------------------- */
+  /*                            Priest - Holy talents                           */
+  /* -------------------------------------------------------------------------- */
 
   { name: "Enlightenment", guid: 193155 },
   { name: "Trail of Light", guid: 200128 },
