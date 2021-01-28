@@ -2,7 +2,7 @@ import ItemSet from "./ItemSet";
 import TopGearResult from "./TopGearResult";
 import Item from "../Player/Item";
 import React, { useState, useEffect } from "react";
-import { STATPERONEPERCENT, BASESTAT } from "../Engine/STAT";
+import { STATPERONEPERCENT, BASESTAT, STATDIMINISHINGRETURNS } from "../Engine/STAT";
 import { convertPPMToUptime } from "../Engine/EffectFormulas/EffectUtilities";
 // Most of our sets will fall into a bucket where totalling the individual stats is enough to tell us they aren't viable. By slicing these out in a preliminary phase,
 // we can run our full algorithm on far fewer items. The net benefit to the player is being able to include more items, with a quicker return.
@@ -283,10 +283,7 @@ function evalSet(itemSet, player, contentType) {
   };
   //console.log("Weights Before: " + JSON.stringify(adjusted_weights));
 
-  adjusted_weights.haste = (adjusted_weights.haste + adjusted_weights.haste * (1 - (DR_CONST * setStats.haste) / STATPERONEPERCENT.HASTE)) / 2;
-  adjusted_weights.crit = (adjusted_weights.crit + adjusted_weights.crit * (1 - (DR_CONST * setStats.crit) / STATPERONEPERCENT.CRIT)) / 2;
-  adjusted_weights.versatility = (adjusted_weights.versatility + adjusted_weights.versatility * (1 - (DR_CONST * setStats.versatility) / STATPERONEPERCENT.VERSATILITY)) / 2;
-  adjusted_weights.mastery = (adjusted_weights.mastery + adjusted_weights.mastery * (1 - (DR_CONST * setStats.mastery) / STATPERONEPERCENT.MASTERYA[player.spec])) / 2;
+
   // TODO: Leech, which has a DR larger than secondary stats.
   //console.log("Weights After: " + JSON.stringify(adjusted_weights));
 
@@ -329,13 +326,19 @@ function evalSet(itemSet, player, contentType) {
   enchants["Gems"] = highestWeight;
   //console.log("Sockets added : " + 16 * builtSet.setSockets + " to " + highestWeight);
 
+  applyDiminishingReturns(setStats);
+  adjusted_weights.haste = (adjusted_weights.haste + adjusted_weights.haste * (1 - (DR_CONST * setStats.haste) / STATPERONEPERCENT.HASTE)) / 2;
+  adjusted_weights.crit = (adjusted_weights.crit + adjusted_weights.crit * (1 - (DR_CONST * setStats.crit) / STATPERONEPERCENT.CRIT)) / 2;
+  adjusted_weights.versatility = (adjusted_weights.versatility + adjusted_weights.versatility * (1 - (DR_CONST * setStats.versatility) / STATPERONEPERCENT.VERSATILITY)) / 2;
+  adjusted_weights.mastery = (adjusted_weights.mastery + adjusted_weights.mastery * (1 - (DR_CONST * setStats.mastery) / STATPERONEPERCENT.MASTERYA[player.spec])) / 2;
+
   // Calculate a hard score using the rebalanced stat weights.
   for (var stat in setStats) {
     if (stat === "hps") {
       /*score +=
             (item.stats.bonus_stats.hps / player.getHPS(contentType)) *
             player.activeStats.intellect; */
-      hardScore += (setStats[stat] / player.fightInfo.hps) * player.activeStats.intellect;
+      hardScore += (setStats[stat] / player.getHPS()) * player.activeStats.intellect;
     } else if (stat === "dps") {
       continue;
     } else {
@@ -369,6 +372,29 @@ function getHighestWeight(player, contentType) {
 
   return max;
 }
+
+export function applyDiminishingReturns(stats) {
+  console.log("Stats Pre-DR" + JSON.stringify(stats));
+  const DRBreakpoints = STATDIMINISHINGRETURNS.CRIT;
+
+  const baseStat = stats.crit;
+  for (var j = 0; j < DRBreakpoints.length; j++) {
+    stats.crit -= Math.max((baseStat - DRBreakpoints[j]) * 0.1, 0);
+  }
+  
+  console.log("Stats Post-DR", + JSON.stringify(stats))
+
+  return stats;
+
+}
+
+/*
+function applySingleDiminishingReturn(statValue, statCap1, statCap2) {
+  
+  let reduction = ((statValue - statCap1) * 0.1) + ((statValue - statCap2) * 0.1);
+
+
+} */
 
 const deepCopyFunction = (inObject) => {
   let outObject, value, key;

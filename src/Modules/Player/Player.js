@@ -47,13 +47,7 @@ class Player {
   race = "";
   talents = [];
 
-  // Consider special queries a sister dictionary to CastPattern. CastPattern includes *raw* spell data pulled from logs but sometimes
-  // we need something more particular. Healing done while channeling Convoke or healing done to a specific target for example.
-  // We'll store these here instead for easy access.
-  specialQueries = {
-    Raid: {},
-    Dungeon: {},
-  };
+
   // The players active stats from their character page. These are raw rather than being percentages.
   // They can either be pulled automatically from the entered log, or calculated from an entered SimC string.
   // These are used for items like trinkets or conduits, where a flat healing portion might scale with various secondary stats.
@@ -66,11 +60,6 @@ class Player {
     stamina: 1490,
   };
 
-  fightInfo = {
-    hps: 6000,
-    rawhps: 9420,
-    fightLength: 139,
-  };
 
   // Stat weights are normalized around intellect.
   // Players who don't insert their own stat weights can use the QE defaults.
@@ -78,20 +67,8 @@ class Player {
   // - If they manually enter weights on the other hand, then this automatic-update won't occur.
   statWeights = {
     Raid: {
-      intellect: 1,
-      haste: 0.4,
-      crit: 0.4,
-      mastery: 0.45,
-      versatility: 0.4,
-      leech: 0.7,
     },
     Dungeon: {
-      intellect: 1,
-      haste: 0.4,
-      crit: 0.4,
-      mastery: 0.4,
-      versatility: 0.45,
-      leech: 0.7,
     },
     DefaultWeights: true,
   };
@@ -460,11 +437,6 @@ class Player {
       this.statWeights.Dungeon = druidDefaultStatWeights("Dungeon");
       this.statWeights.DefaultWeights = true;
     } else if (spec === SPEC.HOLYPALADIN) {
-      this.fightInfo = {
-        hps: 5500,
-        rawhps: 9420,
-        fightLength: 465,
-      };
 
       this.activeStats = {
         intellect: 1420,
@@ -480,11 +452,6 @@ class Player {
       this.statWeights.DefaultWeights = true;
     } else if (spec === SPEC.RESTOSHAMAN) {
       // all of this needs a proper input once
-      this.fightInfo = {
-        hps: 5500,
-        rawhps: 7000,
-        fightLength: 465,
-      };
       this.activeStats = {
         intellect: 1420,
         haste: 125,
@@ -497,11 +464,6 @@ class Player {
       this.statWeights.Dungeon = shamanDefaultStatWeights("Dungeon");
       this.statWeights.DefaultWeights = true;
     } else if (spec === SPEC.DISCPRIEST) {
-      this.fightInfo = {
-        hps: 5500,
-        rawhps: 9420,
-        fightLength: 193,
-      };
       this.activeStats = {
         intellect: 1420,
         haste: 500,
@@ -528,11 +490,6 @@ class Player {
       this.statWeights.Dungeon = holyPriestDefaultStatWeights("Dungeon");
       this.statWeights.DefaultWeights = true;
     } else if (spec === SPEC.MISTWEAVERMONK) {
-      this.fightInfo = {
-        hps: 5500,
-        rawhps: 9420,
-        fightLength: 193,
-      };
       this.activeStats = {
         intellect: 1420,
         haste: 125,
