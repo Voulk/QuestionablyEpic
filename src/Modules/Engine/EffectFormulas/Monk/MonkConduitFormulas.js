@@ -16,10 +16,13 @@ const HARM_DEINAL = 0.25;
 //const GROUND_BREATH = .15;
 
 const IDVIVIFY = 116670;
-const IDSOOTHINGBREATH = 343737;
+const IDSOOTHINGBREATH = 322118;
 const IDREVIVAL = 115310;
 const IDFORTIFYINGBREW = 115203;
-const IDGUSTOFMISTS = 117907;
+const IDGUSTOFMISTS = 191894;
+const CHIJI_GUST_OF_MIST = 343819;
+const EXPEL_HARM_SELF = 322101;
+const EXPEL_HARM_TARGET = 344939;
 
 function conduitScaling(rankOne, requiredRank) {
   const scalingFactor = rankOne * 0.1;
@@ -36,7 +39,10 @@ export const getMonkConduit = (conduitID, player, contentType, conduitLevel) => 
   if (conduitID === 336773) {
     const conduitPower = conduitScaling(JADE_BOND, conduitLevel);
     // You can only have one of the two so its gonna be 0 + real or real + 0 so we can cheat and be lazy
-    const chijiAndYulonHelaing = player.getSpecialQuery("HPSChijiGusts", contentType) + player.getSpellHPS(IDSOOTHINGBREATH, contentType);
+    //this is just easier to read and debug HAHAHAHAHA
+    const yulonHealing = player.getSpellHPS(IDSOOTHINGBREATH, contentType);
+    const chijiHealing = player.getSpellHPS(CHIJI_GUST_OF_MIST, contentType);
+    const chijiAndYulonHelaing = yulonHealing + chijiHealing;
     const directHealingIncrease = chijiAndYulonHelaing * conduitPower;
 
     // TODO cdr stuffs ???
@@ -176,8 +182,8 @@ export const getMonkConduit = (conduitID, player, contentType, conduitLevel) => 
     //Bugged right now so like it only boosts the one on yourself and not the other one`
 
     const conduitPower = conduitScaling(HARM_DEINAL, conduitLevel);
-    const yourExpelHarm = player.getSpecialQuery("HPSExpelHarmOnSelf", contentType);
-    //const otherExpelHarm = player.getSpellHPS("Expel Harm On other Person", contentType);
+    const yourExpelHarm = player.getSpellHPS(EXPEL_HARM_SELF, contentType);
+    //const otherExpelHarm = player.getSpellHPS(EXPEL_HARM_TARGET, contentType);
     const directHealingIncrease = yourExpelHarm * conduitPower; //+ otherExpelHarm * conduitPower;
 
     bonus_stats.HPS = directHealingIncrease;

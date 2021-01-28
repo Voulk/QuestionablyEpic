@@ -75,6 +75,8 @@ class LogImport extends Component {
         >
           {bossIcons(fight.boss)}
           {fight.name +
+            " " +
+            (fights.indexOf(fight) + 1) +
             " - " +
             moment(this.mather(fight.end_time, fight.start_time)).format("mm:ss") +
             " - " +
