@@ -259,6 +259,7 @@ function processItem(line, player, contentType, type) {
     item.active = itemEquipped || item.vaultItem;
     item.isEquipped = itemEquipped;
     if (Object.keys(itemBonusStats).length > 0) item.addStats(itemBonusStats);
+    item.stats = calcStatsAtLevel(itemLevel, itemSlot, itemAllocations, itemTertiary);
 
     item.effect = Object.keys(itemEffect).length !== 0 ? itemEffect : getItemEffect(itemID);
     if (item.effect.type && item.effect.type === "spec legendary") item.uniqueEquip = "legendary";

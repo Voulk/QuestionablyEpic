@@ -142,7 +142,10 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel) {
 
     bonus_stats.intellect = (getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.duration) / effect.cooldown;
 
-    bonus_stats.intellect *= player.getCooldownMult("oneMinute", contentType);
+    if (player.getSpec() === "Mistweaver Monk" && player.getCov() === "Venthyr") bonus_stats.intellect *= player.getCooldownMult("oneMinute", contentType);
+    else if (player.getSpec() !== "Mistweaver Monk") bonus_stats.intellect *= player.getCooldownMult("oneMinute", contentType);
+    
+
     //console.log("Mult: " + JSON.stringify(player.getCooldownMult("oneMinute", contentType)));
 
     //if (player.getSpec() === SPEC.HOLYPALADIN) bonus_stats.intellect *= 1.42; // This needs to be refined, but represents the power increase from combining with Divine Toll.

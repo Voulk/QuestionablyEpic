@@ -45,6 +45,7 @@ class Player {
   region = "";
   realm = "";
   race = "";
+  talents = [];
 
   // Consider special queries a sister dictionary to CastPattern. CastPattern includes *raw* spell data pulled from logs but sometimes
   // we need something more particular. Healing done while channeling Convoke or healing done to a specific target for example.
