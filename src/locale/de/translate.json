@@ -7,12 +7,12 @@
       "AddChar": "Charakter hinzufügen",
       "CharName": "Charaktername",
       "SavedLogs": {
-        "Header": "Detailed Breakdown Coming SoonDE",
-        "Report": "ReportDE",
-        "Boss": "BossDE",
-        "FightLength": "Fight LengthDE",
-        "HPS": "HPSDE",
-        "RawHPS": "Raw HPSDE"
+        "Header": "Detailed Breakdown Coming Soon",
+        "Report": "Report",
+        "Boss": "Boss",
+        "FightLength": "Fight Length",
+        "HPS": "HPS",
+        "RawHPS": "Raw HPS"
       }
     },
 
@@ -45,6 +45,28 @@
     "Avoidance": "Avoidance",
     "Source": "Quelle",
     "Default": "DefaultDE",
+    "Remove": "RemoveDE",
+    "HPS": "HPS",
+    "Casts": "CastsDE",
+    "Healing": "HealingDE",
+    "Overhealing":" OverhealingDE",
+    "Account": "AccountDE",
+    "Email": "Email",
+    "Battletag": "Battletag",
+
+    "Changelog": {
+      "Header": "ChangelogDE",
+      "Version": "VersionDE",
+      "Update": "UpdateDE",
+      "LastUpdated": "Last UpdatedDE",
+      "Date": "DateDE"
+    },
+
+    "PatreonTiers":{
+      "RollsRoyce": "Rolls RoyceDE",
+      "Diamond": "DiamondDE",
+      "Gold": "GoldDE"
+    },
 
     "Classes": {
       "undefined": "",

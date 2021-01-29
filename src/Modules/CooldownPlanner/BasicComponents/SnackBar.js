@@ -34,8 +34,7 @@ export default function CustomizedSnackbars(severity, message) {
     <div className={classes.root}>
       <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
         <Alert onClose={handleClose} severity={severity}>
-          {" "}
-          {message}{" "}
+          {message}
         </Alert>
       </Snackbar>
     </div>

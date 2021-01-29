@@ -243,7 +243,6 @@ export default function CovenantExploration(props) {
                 props.contentType,
                 soulbindState,
                 activateSoulbind,
-
                 setConduitInSlot,
                 updateConduitLevel,
               )}
@@ -463,7 +462,6 @@ function buildSoulbind(soulbindName, player, contentType, soulbindState, activat
                 <Paper
                   style={{
                     padding: 4,
-                    // whiteSpace: "nowrap",
                     textAlign: "center",
                   }}
                 >

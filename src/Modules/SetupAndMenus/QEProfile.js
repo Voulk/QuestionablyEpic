@@ -59,7 +59,7 @@ export default function QEProfile(props) {
           <Paper elevation={0} style={{ padding: 10 }}>
             <div style={{ display: "flex" }}>
               <Typography variant="body1" gutterBottom color="primary" align="left" style={{ display: "flex" }}>
-                Battletag:
+                {t("Battletag")}:
               </Typography>
               <Typography variant="body1" gutterBottom align="left" style={{ paddingLeft: 10, color: "#fff" }}>
                 {props.playerTag || t("QeProfile.NoBattleTag")}
@@ -67,7 +67,7 @@ export default function QEProfile(props) {
             </div>
             <div style={{ display: "flex" }}>
               <Typography variant="body1" gutterBottom color="primary" align="left" style={{ display: "flex" }}>
-                Email:
+                {t("Email")}:
               </Typography>
               <Typography variant="body1" gutterBottom align="left" style={{ paddingLeft: 10, color: "#fff" }}>
                 {email || t("QeProfile.NoEmail")}

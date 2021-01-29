@@ -45,6 +45,28 @@
     "Avoidance": "Avoidance",
     "External": "External",
     "Default": "Default",
+    "Remove": "Remove",
+    "HPS": "HPS",
+    "Casts": "Casts",
+    "Healing": "Healing",
+    "Overhealing":" Overhealing",
+    "Account": "Account",
+    "Email": "Email",
+    "Battletag": "Battletag",
+
+    "Changelog": {
+      "Header": "Changelog",
+      "Version": "Version",
+      "Update": "Update",
+      "LastUpdated": "Last Updated",
+      "Date": "Date"
+    },
+
+    "PatreonTiers":{
+      "RollsRoyce": "Rolls Royce",
+      "Diamond": "Diamond",
+      "Gold": "Gold"
+    },
 
     "Classes": {
       "undefined": "",
@@ -353,7 +375,6 @@
       "Heroic": "Heroic",
       "Mythic": "Mythic"
     },
-
 
     "PvPCurrency": {
       "Honor": "Honor",

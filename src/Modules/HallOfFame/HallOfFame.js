@@ -220,7 +220,7 @@ export default function HallOfFame(props) {
                       }}
                     >
                       <Typography variant="h6" align="center">
-                        Rolls Royce Patrons
+                        {t("PatreonTiers.RollsRoyce")}
                       </Typography>
                     </AppBar>
 
@@ -261,7 +261,7 @@ export default function HallOfFame(props) {
                       }}
                     >
                       <Typography variant="h6" align="center">
-                        Diamond Patrons
+                        {t("PatreonTiers.Diamond")}
                       </Typography>
                     </AppBar>
 
@@ -302,7 +302,7 @@ export default function HallOfFame(props) {
                       }}
                     >
                       <Typography variant="h6" align="center">
-                        Gold
+                        {t("PatreonTiers.Gold")}
                       </Typography>
                     </AppBar>
 
