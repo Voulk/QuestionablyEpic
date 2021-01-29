@@ -11,7 +11,8 @@ import { red } from "@material-ui/core/colors";
 import { classColoursJS } from "../CooldownPlanner/Functions/ClassColourFunctions.js";
 import classIcons from "../CooldownPlanner/Functions/IconFunctions/ClassIcons";
 import raceIcons from "../CooldownPlanner/Functions/IconFunctions/RaceIcons";
-import { serverList, classRaceList } from "../CooldownPlanner/Data/Data";
+import { classRaceList } from "../CooldownPlanner/Data/Data";
+import { serverDB } from "../../Databases/ServerDB"
 import LogDetailsTable from "./CharacterLogDetailsTable";
 import { STAT } from "../Engine/STAT";
 import { apiGetPlayerImage } from "./ConnectionUtilities";
@@ -383,7 +384,7 @@ export default function CharCards(props) {
                     onChange={(e, newValue) => {
                       handleChangeServer(newValue);
                     }}
-                    options={serverList[region]}
+                    options={serverDB[region]}
                     inputValue={server}
                     getOptionLabel={(option) => option}
                     onInputChange={(e, newInputValue) => {

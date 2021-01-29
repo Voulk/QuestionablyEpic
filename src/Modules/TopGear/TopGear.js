@@ -8,7 +8,7 @@ import { useTranslation } from "react-i18next";
 import { testTrinkets } from "../Engine/EffectFormulas/Generic/TrinketEffectFormulas";
 import { apiSendTopGearSet } from "../SetupAndMenus/ConnectionUtilities";
 import { InputLabel, MenuItem, FormControl, Select, Button, Grid, Paper, Typography, Divider, Snackbar, TextField, Popover } from "@material-ui/core";
-import { itemDB } from "../Player/ItemDB";
+import { itemDB } from "../../Databases/ItemDB";
 import topGearEngine from "./TopGearEngine";
 import { getValidArmorTypes, getValidWeaponTypes, calcStatsAtLevel, getItemAllocations, scoreItem, getItemEffect, buildWepCombos, getItemSlot } from "../Engine/ItemUtilities";
 import ItemCard from "./../QuickCompare/ItemCard";

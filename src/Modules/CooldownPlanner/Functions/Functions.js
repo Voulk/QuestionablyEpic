@@ -1,6 +1,7 @@
 import moment from "moment";
 import axios from "axios";
-import { damageExclusions, healerCooldownsDetailed, externalsDetailed } from "../Data/Data";
+import { damageExclusions, healerCooldownsDetailed } from "../Data/Data";
+import { externalsDB } from "../../../Databases/ExternalsDB";
 import i18n from "i18next";
 
 // Returns Seconds from 0 to Loglength
@@ -423,7 +424,7 @@ export async function importExternalCastsLogData(starttime, endtime, reportid, h
       externals = Object.keys(result.data.events)
         .filter(
           (key) =>
-            externalsDetailed.map((obj) => obj.guid).includes(result.data.events[key].ability.guid) &&
+            externalsDB.map((obj) => obj.guid).includes(result.data.events[key].ability.guid) &&
             // Because Holy Word: Salvation comes up in logs as begincast we filter out the cast version so that it doesn't appear twice.
             (result.data.events[key].ability.guid === 265202 ? result.data.events[key].type === "begincast" : result.data.events[key].type === "cast") &&
             healerID.includes(result.data.events[key].sourceID),
@@ -445,7 +446,7 @@ export async function importExternalCastsLogData(starttime, endtime, reportid, h
             Object.keys(result.data.events)
               .filter(
                 (key) =>
-                  externalsDetailed.map((obj) => obj.guid).includes(result.data.events[key].ability.guid) &&
+                  externalsDB.map((obj) => obj.guid).includes(result.data.events[key].ability.guid) &&
                   // Because Holy Word: Salvation comes up in logs as begincast we filter out the cast version so that it doesn't appear twice.
                   (result.data.events[key].ability.guid === 265202 ? result.data.events[key].type === "begincast" : result.data.events[key].type === "cast") &&
                   healerID.includes(result.data.events[key].sourceID),

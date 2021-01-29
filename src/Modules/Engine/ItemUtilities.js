@@ -1,4 +1,4 @@
-import { itemDB } from "../Player/ItemDB";
+import { itemDB } from "../../Databases/ItemDB";
 import { randPropPoints } from "./RandPropPointsBylevel";
 import { combat_ratings_mult_by_ilvl, combat_ratings_mult_by_ilvl_jewl } from "./CombatMultByLevel";
 import { getEffectValue } from "./EffectFormulas/EffectEngine";

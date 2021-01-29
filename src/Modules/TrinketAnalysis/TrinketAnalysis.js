@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { makeStyles, Paper, Typography, Grid, Divider } from "@material-ui/core";
 import { useTranslation } from "react-i18next";
-import { itemDB } from "../Player/ItemDB";
+import { itemDB } from "../../Databases/ItemDB";
 import Item from "../Player/Item";
 import { getItemAllocations, calcStatsAtLevel, getItemEffect, scoreItem, getTranslatedItemName } from "../Engine/ItemUtilities";
 import VerticalChart from "../Charts/VerticalChart";

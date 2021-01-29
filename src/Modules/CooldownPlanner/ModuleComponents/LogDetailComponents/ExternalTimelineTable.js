@@ -8,7 +8,7 @@ import { localizationEN } from "../../../../locale/en/TableLocale";
 import { localizationRU } from "../../../../locale/ru/TableLocale";
 import { localizationCH } from "../../../../locale/ch/TableLocale";
 import moment from "moment";
-import { externalsDetailed } from "../../Data/Data.js";
+import externalsDB from "../../../../Databases/ExternalsDB";
 import { Divider, Paper } from "@material-ui/core";
 import { useTranslation } from "react-i18next";
 import { classColoursJS } from "../../Functions/ClassColourFunctions";

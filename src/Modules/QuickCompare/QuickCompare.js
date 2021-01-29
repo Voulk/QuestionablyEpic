@@ -8,7 +8,7 @@ import MuiAlert from "@material-ui/lab/Alert";
 import "../SetupAndMenus/QEMainMenu.css";
 import Item from "../Player/Item";
 import "./QuickCompare.css";
-import { itemDB } from "../Player/ItemDB";
+import { itemDB } from "../../Databases/ItemDB";
 import { getValidArmorTypes, getValidWeaponTypes, calcStatsAtLevel, getItemAllocations, scoreItem, getItemEffect, buildWepCombos, getItemSlot } from "../Engine/ItemUtilities";
 import ItemCard from "./ItemCard";
 import HelpText from "../SetupAndMenus/HelpText";
