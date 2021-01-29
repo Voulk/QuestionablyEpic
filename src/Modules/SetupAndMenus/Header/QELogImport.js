@@ -2,11 +2,11 @@ import React, { useEffect } from "react";
 import axios from "axios";
 import { useTranslation } from "react-i18next";
 import { Button, Dialog, DialogActions, DialogContent, DialogTitle, Grid, InputLabel, FormControl, Select, MenuItem, Typography, Tooltip } from "@material-ui/core";
-import LogLinkInput from "../CooldownPlanner/ModuleComponents/LogFightSelection/LogLinkInput";
-import { warcraftLogReportID, logDifficulty, importSummaryData, importDamageLogData } from "../CooldownPlanner/Functions/Functions";
-import FightSelectorButton from "../CooldownPlanner/ModuleComponents/LogFightSelection/FightSelectorButton";
-import bossIcons from "../CooldownPlanner/Functions/IconFunctions/BossIcons";
-import { convertLogSpellOutput, convertLogStatOutput } from "../Player/PlayerUtilities";
+import LogLinkInput from "../../CooldownPlanner/ModuleComponents/LogFightSelection/LogLinkInput";
+import { warcraftLogReportID, logDifficulty, importSummaryData, importDamageLogData } from "../../CooldownPlanner/Functions/Functions";
+import FightSelectorButton from "../../CooldownPlanner/ModuleComponents/LogFightSelection/FightSelectorButton";
+import bossIcons from "../../CooldownPlanner/Functions/IconFunctions/BossIcons";
+import { convertLogSpellOutput, convertLogStatOutput } from "../../Player/PlayerUtilities";
 
 const menuStyle = {
   style: { marginTop: 5 },

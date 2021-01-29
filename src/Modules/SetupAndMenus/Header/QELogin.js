@@ -1,7 +1,7 @@
 import React from "react";
 import { Button, Grid } from "@material-ui/core";
 import { useHistory, useLocation } from "react-router-dom";
-import BattleNetLogo from "../../Images/QeAssets/BattleNetLogo.png";
+import BattleNetLogo from "../../../Images/QeAssets/BattleNetLogo.png";
 
 export function QELogin(props) {
   let history = useHistory();
