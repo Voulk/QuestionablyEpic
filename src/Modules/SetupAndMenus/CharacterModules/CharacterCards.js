@@ -8,15 +8,15 @@ import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import DeleteIcon from "@material-ui/icons/Delete";
 import Autocomplete from "@material-ui/lab/Autocomplete";
 import { red } from "@material-ui/core/colors";
-import { classColoursJS } from "../CooldownPlanner/Functions/ClassColourFunctions.js";
-import classIcons from "../CooldownPlanner/Functions/IconFunctions/ClassIcons";
-import raceIcons from "../CooldownPlanner/Functions/IconFunctions/RaceIcons";
-import { classRaceList } from "../CooldownPlanner/Data/Data";
-import { serverDB } from "../../Databases/ServerDB"
+import { classColoursJS } from "../../CooldownPlanner/Functions/ClassColourFunctions.js";
+import classIcons from "../../CooldownPlanner/Functions/IconFunctions/ClassIcons";
+import raceIcons from "../../CooldownPlanner/Functions/IconFunctions/RaceIcons";
+import { classRaceList } from "../../CooldownPlanner/Data/Data";
+import { serverDB } from "../../../Databases/ServerDB"
 import LogDetailsTable from "./CharacterLogDetailsTable";
-import { STAT } from "../Engine/STAT";
-import { apiGetPlayerImage } from "./ConnectionUtilities";
-import { CONSTRAINTS, setBounds } from "../Engine/CONSTRAINTS";
+import { STAT } from "../../Engine/STAT";
+import { apiGetPlayerImage } from "../ConnectionUtilities";
+import { CONSTRAINTS, setBounds } from "../../Engine/CONSTRAINTS";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -43,12 +43,12 @@ function a11yProps(index) {
 
 /* ------------------------------ Spec Images. ------------------------------ */
 const specImages = {
-  "Restoration Druid": require("../../Images/DruidSmall.jpg"),
-  "Restoration Shaman": require("../../Images/ShamanSmall.png"),
-  "Discipline Priest": require("../../Images/DiscSmall.jpg"),
-  "Holy Paladin": require("../../Images/PaladinSmall.png"),
-  "Holy Priest": require("../../Images/HPriestSmall.jpg"),
-  "Mistweaver Monk": require("../../Images/MistweaverSmall.jpg"),
+  "Restoration Druid": require("../../../Images/DruidSmall.jpg"),
+  "Restoration Shaman": require("../../../Images/ShamanSmall.png"),
+  "Discipline Priest": require("../../../Images/DiscSmall.jpg"),
+  "Holy Paladin": require("../../../Images/PaladinSmall.png"),
+  "Holy Priest": require("../../../Images/HPriestSmall.jpg"),
+  "Mistweaver Monk": require("../../../Images/MistweaverSmall.jpg"),
 };
 
 /* ------------------- Called when a character is clicked. ------------------ */
