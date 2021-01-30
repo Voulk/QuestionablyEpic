@@ -108,6 +108,7 @@ const tableIcons = {
   SortArrow: forwardRef((props, ref) => <ArrowDownward {...props} style={{ color: "#ffee77" }} ref={ref} />),
 };
 
+
 export default function CooldownPlanner(props) {
   const classes = useStyles();
   const { t, i18n } = useTranslation();
@@ -155,7 +156,12 @@ export default function CooldownPlanner(props) {
         paddingLeft: 8,
       },
       // This renders the healer name outside of Edit Mode.
-      render: (rowData) => <div style={{ color: classColoursJS(rowData.class) }}>{rowData.name}</div>,
+      render: (rowData) => (
+        <div style={{ color: classColoursJS(rowData.class) }}>
+          {rowData.class === undefined ? "" : classIcons(rowData.class, 20)}
+          {rowData.name}
+        </div>
+      ),
       // This is the Component for name selection when the table is in edit mode.
       editComponent: (props) => (
         <ThemeProvider theme={themeCooldownTable}>
@@ -183,7 +189,8 @@ export default function CooldownPlanner(props) {
               {ls
                 .get("healerInfo")
                 .map((key, i) => (
-                  <MenuItem key={i} value={key.name}>
+                  <MenuItem style={{ color: classColoursJS(key.class) }} key={i} value={key.name}>
+                    {classIcons(key.class, 20)}
                     {key.name}
                   </MenuItem>
                 ))
