@@ -53,6 +53,7 @@ export function fightDuration(time1, time2) {
   return time1 - time2;
 }
 
+/* -- Creates Timestamps for each second of duration of an active Cooldown -- */
 export function durationmaker(ability, originalTimestamp, abilityname, endtime) {
   let duration = healerCooldownsDetailed
     .filter((obj) => {

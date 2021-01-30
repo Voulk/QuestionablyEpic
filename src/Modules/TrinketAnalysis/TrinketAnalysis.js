@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import { itemDB } from "../../Databases/ItemDB";
 import Item from "../Player/Item";
 import { getItemAllocations, calcStatsAtLevel, getItemEffect, scoreItem, getTranslatedItemName } from "../Engine/ItemUtilities";
-import VerticalChart from "../Charts/VerticalChart";
+import VerticalChart from "./Charts/VerticalChart";
 import HelpText from "../SetupAndMenus/HelpText";
 
 // [{TrinketID: 90321, i173: 92, i187: 94, i200: 99, i213: 104, i226: 116}]
