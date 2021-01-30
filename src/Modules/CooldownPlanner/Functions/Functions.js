@@ -49,9 +49,8 @@ export function reduceTimestamps(array) {
 }
 
 // returns fight duration Time end - time start of log
-export function fightDurationCalculator(time1, time2) {
-  let time = time1 - time2;
-  return time;
+export function fightDuration(time1, time2) {
+  return time1 - time2;
 }
 
 export function durationmaker(ability, originalTimestamp, abilityname, endtime) {
@@ -520,13 +519,19 @@ export function sumDamage(array) {
 }
 
 export function logDifficulty(dif) {
-  switch(dif){
-    case 1: return "LFR";
-    case 3: return "Normal";
-    case 4: return "Heroic";
-    case 5: return "Mythic";
-    case 10: return "M+";
-    default: return "Error: Difficulty Missing :(";
+  switch (dif) {
+    case 1:
+      return "LFR";
+    case 3:
+      return "Normal";
+    case 4:
+      return "Heroic";
+    case 5:
+      return "Mythic";
+    case 10:
+      return "M+";
+    default:
+      return "Error: Difficulty Missing :(";
   }
 }
 
