@@ -24,10 +24,10 @@ class Chart extends Component {
     };
   }
 
-  drawAreas() {
+  drawAreas(cooldownsToUse) {
     // Provided prop array of abilities and guids are mapped for datakeys then made into a unique array of ability names.
     let abilities = Array.from(new Set(this.props.abilityList.map((key) => key.ability)));
-    let cooldowns = this.props.cooldown;
+    let cooldowns = cooldownsToUse;
     let dataSet = abilities;
     let dataset2 = cooldowns;
     let areaArr = [];
@@ -185,7 +185,7 @@ class Chart extends Component {
               }}
               labelFormatter={(timeStr) => moment(timeStr).format("mm:ss")}
             />
-            {this.drawAreas()}
+            {this.drawAreas(this.props.cooldownsToShow === true ? this.props.cooldown : this.props.customCooldowns)}
           </AreaChart>
         </ResponsiveContainer>
       </Paper>

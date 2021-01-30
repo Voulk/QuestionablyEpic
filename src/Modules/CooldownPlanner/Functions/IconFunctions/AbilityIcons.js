@@ -39,6 +39,7 @@ import PowerInfusionIcon from "../../../../Images/Classes/Priest/Specialisation/
 import IronbarkIcon from "../../../../Images/Classes/Druid/Specialisation/Restoration/Icons/Ironbark.jpg";
 import BlessingOfSacrificeIcon from "../../../../Images/Classes/Paladin/Specialisation/Holy/Icons/BlessingOfSacrifice.jpg";
 import LifeCocoonIcon from "../../../../Images/Classes/Monk/Specialisation/Mistweaver/Icons/LifeCocoon.jpg";
+import FlourishIcon from "../../../../Images/Classes/Druid/Specialisation/Restoration/Icons/Talents/FlourishIcon.jpg"
 
 // Should probably work this off GUID
 
@@ -90,6 +91,11 @@ export default function abilityIcons(props) {
     spell = "spell=33891";
     source = TreeofLifeIcon;
     alt = "Incarnation: Tree of Life";
+  }
+  if (props === 197721) {
+    spell = "spell=197721";
+    source = FlourishIcon;
+    alt = "Flourish";
   }
   // Druid Covenant Cooldowns
   if (props === 326434) {

@@ -171,6 +171,12 @@ export const healerCooldownsDetailed = [
     duration: 8,
     cooldown: 180,
   },
+  {
+    name: "Flourish",
+    guid: 197721,
+    duration: 8,
+    cooldown: 90,
+  },
   // --------------Covenant Abilities---------------
   // {
   //   name: "Kindred Spirits",
@@ -190,12 +196,12 @@ export const healerCooldownsDetailed = [
   //   duration: 12,
   //   cooldown: 25,
   // },
-  // {
-  //   name: "Convoke the Spirits",
-  //   guid: 323764,
-  //   duration: 4,
-  //   cooldown: 120,
-  // },
+  {
+    name: "Convoke the Spirits",
+    guid: 323764,
+    duration: 4,
+    cooldown: 120,
+  },
   // --------------------Monk-----------------------
   // ----------------Base Abilities-----------------
   {
