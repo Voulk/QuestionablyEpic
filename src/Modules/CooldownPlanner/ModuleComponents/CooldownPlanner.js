@@ -126,6 +126,7 @@ export default function CooldownPlanner(props) {
   const healTeamDialogOpen = props.healTeamDialogOpen;
 
   const timeCheck = (rowData, cooldown) => {
+    console.log(cooldown)
     let time = moment(rowData.time, "mm:ss")
       .add(
         healerCooldownsDetailed
@@ -153,6 +154,7 @@ export default function CooldownPlanner(props) {
       width: "6%",
       cellStyle: {
         whiteSpace: "nowrap",
+        borderRight: "1px solid"
       },
       // Times currently must be entered in the 00:00 format.
       // Currently due to sorting, the user must either use a time, or label the cooldowns, 1, 2, 3, 4 etc to keep them in order.
@@ -181,6 +183,7 @@ export default function CooldownPlanner(props) {
       width: "15%",
       cellStyle: {
         whiteSpace: "nowrap",
+        borderRight: "1px solid"
       },
       render: (rowData) => (
         <div>
@@ -228,12 +231,13 @@ export default function CooldownPlanner(props) {
       cellStyle: {
         whiteSpace: "nowrap",
         paddingLeft: 8,
+        borderRight: "1px solid"
       },
       // This renders the healer name outside of Edit Mode.
       render: (rowData) => (
         <div style={{ color: classColoursJS(rowData.class) }}>
-          {rowData.name}
           {rowData.class === undefined ? "" : classIcons(rowData.class, 20)}
+          {rowData.name}
         </div>
       ),
       // This is the Component for name selection when the table is in edit mode.
@@ -264,8 +268,8 @@ export default function CooldownPlanner(props) {
                 .get("healerInfo")
                 .map((key, i) => (
                   <MenuItem style={{ color: classColoursJS(key.class) }} key={i} value={key.name}>
-                    {key.name}
                     {classIcons(key.class, 20)}
+                    {key.name}
                   </MenuItem>
                 ))
                 .map((key) => [key, <Divider />])}
@@ -282,6 +286,7 @@ export default function CooldownPlanner(props) {
       hidden: true,
       cellStyle: {
         whiteSpace: "nowrap",
+        borderRight: "1px solid"
       },
       // Renders the Name for the healer in the relevant row in the data.
       render: (rowData) => (
@@ -308,6 +313,7 @@ export default function CooldownPlanner(props) {
       width: "12%",
       cellStyle: {
         whiteSpace: "nowrap",
+        borderRight: "1px solid"
       },
       // Renders the Ability name that was set for this row.
       render: (rowData) => (
@@ -343,8 +349,9 @@ export default function CooldownPlanner(props) {
       width: "4%",
       cellStyle: {
         whiteSpace: "nowrap",
+        borderRight: "1px solid"
       },
-      render: (rowData) => <div>{timeCheck(rowData, rowData.cooldown)}</div>,
+      render: (rowData) => <div>{timeCheck(rowData, rowData.Cooldown)}</div>,
     },
 
     /* -------------------------------------------------------------------------- */
@@ -356,13 +363,14 @@ export default function CooldownPlanner(props) {
       width: "7%",
       cellStyle: {
         whiteSpace: "nowrap",
+        borderRight: "1px solid",
         paddingLeft: 8,
       },
       // This renders the healer name outside of Edit Mode.
       render: (rowData) => (
         <div style={{ color: classColoursJS(rowData.class1) }}>
-          {rowData.name1}
           {rowData.class1 === undefined ? "" : classIcons(rowData.class1, 20)}
+          {rowData.name1}
         </div>
       ),
       // This is the Component for name selection when the table is in edit mode.
@@ -392,7 +400,8 @@ export default function CooldownPlanner(props) {
               {ls
                 .get("healerInfo")
                 .map((key, i) => (
-                  <MenuItem key={i} value={key.name}>
+                  <MenuItem style={{ color: classColoursJS(key.class) }} key={i} value={key.name}>
+                    {classIcons(key.class, 20)}
                     {key.name}
                   </MenuItem>
                 ))
@@ -410,6 +419,7 @@ export default function CooldownPlanner(props) {
       hidden: true,
       cellStyle: {
         whiteSpace: "nowrap",
+        borderRight: "1px solid"
       },
       // Renders the Name for the healer in the relevant row in the data.
       render: (rowData) => (
@@ -437,6 +447,7 @@ export default function CooldownPlanner(props) {
       width: "12%",
       cellStyle: {
         whiteSpace: "nowrap",
+        borderRight: "1px solid"
       },
       // Renders the Ability name that was set for this row.
       render: (rowData) => (
@@ -473,8 +484,9 @@ export default function CooldownPlanner(props) {
       width: "4%",
       cellStyle: {
         whiteSpace: "nowrap",
+        borderRight: "1px solid"
       },
-      render: (rowData) => <div>{timeCheck(rowData, rowData.cooldown1)}</div>,
+      render: (rowData) => <div>{timeCheck(rowData, rowData.Cooldown1)}</div>,
     },
 
     /* -------------------------------------------------------------------------- */
@@ -486,13 +498,14 @@ export default function CooldownPlanner(props) {
       width: "7%",
       cellStyle: {
         whiteSpace: "nowrap",
+        borderRight: "1px solid",
         paddingLeft: 8,
       },
       // This renders the healer name outside of Edit Mode.
       render: (rowData) => (
         <div style={{ color: classColoursJS(rowData.class2) }}>
-          {rowData.name2}
           {rowData.class2 === undefined ? "" : classIcons(rowData.class2, 20)}
+          {rowData.name2}
         </div>
       ),
       // This is the Component for name selection when the table is in edit mode.
@@ -506,8 +519,8 @@ export default function CooldownPlanner(props) {
               labelId="HealerSelector"
               onChange={(e) => {
                 let data = { ...props.rowData };
-                data.name1 = e.target.value;
-                data.class1 = ls
+                data.name2 = e.target.value;
+                data.class2 = ls
                   .get("healerInfo")
                   .filter((obj) => {
                     return obj.name === e.target.value;
@@ -522,7 +535,8 @@ export default function CooldownPlanner(props) {
               {ls
                 .get("healerInfo")
                 .map((key, i) => (
-                  <MenuItem key={i} value={key.name}>
+                  <MenuItem style={{ color: classColoursJS(key.class) }} key={i} value={key.name}>
+                    {classIcons(key.class, 20)}
                     {key.name}
                   </MenuItem>
                 ))
@@ -540,6 +554,7 @@ export default function CooldownPlanner(props) {
       hidden: true,
       cellStyle: {
         whiteSpace: "nowrap",
+        borderRight: "1px solid"
       },
       // Renders the Name for the healer in the relevant row in the data.
       render: (rowData) => (
@@ -567,6 +582,7 @@ export default function CooldownPlanner(props) {
       width: "12%",
       cellStyle: {
         whiteSpace: "nowrap",
+        borderRight: "1px solid"
       },
       // Renders the Ability name that was set for this row.
       render: (rowData) => (
@@ -603,8 +619,9 @@ export default function CooldownPlanner(props) {
       width: "4%",
       cellStyle: {
         whiteSpace: "nowrap",
+        borderRight: "1px solid"
       },
-      render: (rowData) => <div>{timeCheck(rowData, rowData.cooldown2)}</div>,
+      render: (rowData) => <div>{timeCheck(rowData, rowData.Cooldown2)}</div>,
     },
 
     {
@@ -614,6 +631,7 @@ export default function CooldownPlanner(props) {
       width: "20%",
       cellStyle: {
         whiteSpace: "nowrap",
+        borderRight: "1px solid"
       },
       editComponent: (props) => (
         <TextField
