@@ -8,6 +8,7 @@ import MythicPlusGearContainer from "./Panels/PanelMythicPlus";
 import PvPGearContainer from "./Panels/PanelPvP";
 import RaidGearContainer from "./Panels/PanelRaid";
 import WorldBossGearContainer from "./Panels/PanelWorldBosses";
+import SlotsContainer from "./Panels/PanelSlots"
 import ReactGA from "react-ga";
 import "./Panels/ItemUpgrade.css";
 
@@ -147,6 +148,8 @@ export default function UpgradeFinderResults(props) {
           <Tab className={classes.pvpHeaderStyle} label="PvP" {...a11yProps(2)} />
           {/* World Bosses */}
           <Tab className={classes.worldBossHeaderStyle} label="World Bosses" {...a11yProps(3)} />
+          {/* World Bosses */}
+          <Tab className={classes.worldBossHeaderStyle} label="Slots" {...a11yProps(4)} />
         </Tabs>
       </AppBar>
 
@@ -182,6 +185,15 @@ export default function UpgradeFinderResults(props) {
         <div className={classes.panel}>
           <Grid container>
             <WorldBossGearContainer pl={props.player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={props.playerSettings} />
+          </Grid>
+        </div>
+      </TabPanel>
+
+            {/* Slots */}
+            <TabPanel value={tabvalue} index={4}>
+        <div className={classes.panel}>
+          <Grid container>
+            <SlotsContainer pl={props.player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={props.playerSettings} />
           </Grid>
         </div>
       </TabPanel>
