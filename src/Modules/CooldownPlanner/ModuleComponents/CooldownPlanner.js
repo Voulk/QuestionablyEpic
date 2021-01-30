@@ -125,12 +125,12 @@ export default function CooldownPlanner(props) {
   const ertDialogOpen = props.ertDialogOpen;
   const healTeamDialogOpen = props.healTeamDialogOpen;
 
-  const timeCheck = (rowData) => {
+  const timeCheck = (rowData, cooldown) => {
     let time = moment(rowData.time, "mm:ss")
       .add(
         healerCooldownsDetailed
           .filter((obj) => {
-            return obj.guid === rowData.Cooldown;
+            return obj.guid === cooldown;
           })
           .map((obj) => obj.cooldown)
           .toString(),
@@ -147,6 +147,81 @@ export default function CooldownPlanner(props) {
   let columns = [
     // Healer Name Column. Contains the Drop Down of Healer names generated from the Heal Team.
     {
+      // The Cast Time Column. This is where the time the user expects the cooldown to be cast.
+      title: t("CooldownPlanner.TableLabels.CastTimeLabel"),
+      field: "time",
+      width: "6%",
+      cellStyle: {
+        whiteSpace: "nowrap",
+      },
+      // Times currently must be entered in the 00:00 format.
+      // Currently due to sorting, the user must either use a time, or label the cooldowns, 1, 2, 3, 4 etc to keep them in order.
+      // This can probably be handled a lot better than how it handled currently.
+      editComponent: (props) => (
+        <TextField
+          error={RegExp("^([01]?[0-9]|2[0-3]):[0-5][0-9]$").test(props.value) || props.value === undefined ? false : true}
+          inputProps={{
+            pattern: "^([01]?[0-9]|2[0-3]):[0-5][0-9]$",
+          }}
+          size="small"
+          variant="outlined"
+          id="standard-basic"
+          label={t("CooldownPlanner.TableLabels.CastTimeLabel")}
+          placeholder="00:00"
+          value={props.value}
+          style={{ whiteSpace: "nowrap", width: "100%", marginTop: 6 }}
+          onChange={(e) => props.onChange(e.target.value)}
+        />
+      ),
+    },
+    {
+      // Here the user can select which ability the cooldown should cover.
+      title: t("CooldownPlanner.TableLabels.BossAbilityLabel"),
+      field: "bossAbility",
+      width: "15%",
+      cellStyle: {
+        whiteSpace: "nowrap",
+      },
+      render: (rowData) => (
+        <div>
+          <a data-wowhead={"spell=" + rowData.bossAbility + "&domain=" + currentLanguage}>{bossAbilityIcons(rowData.bossAbility)}</a>
+          {t("CooldownPlanner.BossAbilities." + rowData.bossAbility)}
+        </div>
+      ),
+      editComponent: (props) => (
+        <ThemeProvider theme={themeCooldownTable}>
+          <FormControl className={classes.formControl} variant="outlined" size="small" style={{ marginTop: 6 }}>
+            <InputLabel id="BossAbilitySelector">{t("CooldownPlanner.TableLabels.BossAbilityLabel")}</InputLabel>
+            <Select
+              value={props.value}
+              labelId="BossAbilitySelector"
+              label={t("CooldownPlanner.TableLabels.BossAbilityLabel")}
+              onChange={(e) => {
+                props.onChange(e.target.value);
+              }}
+              MenuProps={menuStyle}
+            >
+              {bossAbilities
+                .filter((obj) => {
+                  return obj.bossID === currentBoss && obj.cooldownPlannerActive === true;
+                })
+                .map((key, i) => (
+                  <MenuItem key={i} value={key.guid}>
+                    <a data-wowhead={"spell=" + key.guid + "&domain=" + currentLanguage}>{bossAbilityIcons(key.guid)}</a>
+                    {t("CooldownPlanner.BossAbilities." + key.guid)}
+                  </MenuItem>
+                ))
+                .map((key) => [key, <Divider />])}
+            </Select>
+          </FormControl>
+        </ThemeProvider>
+      ),
+    },
+
+    /* -------------------------------------------------------------------------- */
+    /*                               Cooldown Set 0                               */
+    /* -------------------------------------------------------------------------- */
+    {
       title: t("Name"),
       field: "name",
       width: "7%",
@@ -155,7 +230,12 @@ export default function CooldownPlanner(props) {
         paddingLeft: 8,
       },
       // This renders the healer name outside of Edit Mode.
-      render: (rowData) => <div style={{ color: classColoursJS(rowData.class) }}>{rowData.name}</div>,
+      render: (rowData) => (
+        <div style={{ color: classColoursJS(rowData.class) }}>
+          {rowData.name}
+          {rowData.class === undefined ? "" : classIcons(rowData.class, 20)}
+        </div>
+      ),
       // This is the Component for name selection when the table is in edit mode.
       editComponent: (props) => (
         <ThemeProvider theme={themeCooldownTable}>
@@ -183,8 +263,9 @@ export default function CooldownPlanner(props) {
               {ls
                 .get("healerInfo")
                 .map((key, i) => (
-                  <MenuItem key={i} value={key.name}>
+                  <MenuItem style={{ color: classColoursJS(key.class) }} key={i} value={key.name}>
                     {key.name}
+                    {classIcons(key.class, 20)}
                   </MenuItem>
                 ))
                 .map((key) => [key, <Divider />])}
@@ -198,6 +279,7 @@ export default function CooldownPlanner(props) {
       title: t("Class"),
       field: "class",
       width: "10%",
+      hidden: true,
       cellStyle: {
         whiteSpace: "nowrap",
       },
@@ -256,77 +338,62 @@ export default function CooldownPlanner(props) {
       },
     },
     {
-      // The Cast Time Column. This is where the time the user expects the cooldown to be cast.
-      title: t("CooldownPlanner.TableLabels.CastTimeLabel"),
-      field: "time",
-      width: "6%",
-      cellStyle: {
-        whiteSpace: "nowrap",
-      },
-      // Times currently must be entered in the 00:00 format.
-      // Currently due to sorting, the user must either use a time, or label the cooldowns, 1, 2, 3, 4 etc to keep them in order.
-      // This can probably be handled a lot better than how it handled currently.
-      editComponent: (props) => (
-        <TextField
-          error={RegExp("^([01]?[0-9]|2[0-3]):[0-5][0-9]$").test(props.value) || props.value === undefined ? false : true}
-          inputProps={{
-            pattern: "^([01]?[0-9]|2[0-3]):[0-5][0-9]$",
-          }}
-          size="small"
-          variant="outlined"
-          id="standard-basic"
-          label={t("CooldownPlanner.TableLabels.CastTimeLabel")}
-          placeholder="00:00"
-          value={props.value}
-          style={{ whiteSpace: "nowrap", width: "100%", marginTop: 6 }}
-          onChange={(e) => props.onChange(e.target.value)}
-        />
-      ),
-    },
-    {
       // Render only, should the user when the cooldown will be available again to be used.
       title: t("CooldownPlanner.TableLabels.OffCooldownLabel"),
       width: "4%",
       cellStyle: {
         whiteSpace: "nowrap",
       },
-      render: (rowData) => <div>{timeCheck(rowData)}</div>,
+      render: (rowData) => <div>{timeCheck(rowData, rowData.cooldown)}</div>,
     },
+
+    /* -------------------------------------------------------------------------- */
+    /*                               Cooldown Set 1                               */
+    /* -------------------------------------------------------------------------- */
     {
-      // Here the user can select which ability the cooldown should cover.
-      title: t("CooldownPlanner.TableLabels.BossAbilityLabel"),
-      field: "bossAbility",
-      width: "15%",
+      title: t("Name"),
+      field: "name1",
+      width: "7%",
       cellStyle: {
         whiteSpace: "nowrap",
+        paddingLeft: 8,
       },
+      // This renders the healer name outside of Edit Mode.
       render: (rowData) => (
-        <div>
-          <a data-wowhead={"spell=" + rowData.bossAbility + "&domain=" + currentLanguage}>{bossAbilityIcons(rowData.bossAbility)}</a>
-          {t("CooldownPlanner.BossAbilities." + rowData.bossAbility)}
+        <div style={{ color: classColoursJS(rowData.class1) }}>
+          {rowData.name1}
+          {rowData.class1 === undefined ? "" : classIcons(rowData.class1, 20)}
         </div>
       ),
+      // This is the Component for name selection when the table is in edit mode.
       editComponent: (props) => (
         <ThemeProvider theme={themeCooldownTable}>
           <FormControl className={classes.formControl} variant="outlined" size="small" style={{ marginTop: 6 }}>
-            <InputLabel id="BossAbilitySelector">{t("CooldownPlanner.TableLabels.BossAbilityLabel")}</InputLabel>
+            <InputLabel id="HealerSelector">{t("Name")}</InputLabel>
             <Select
               value={props.value}
-              labelId="BossAbilitySelector"
-              label={t("CooldownPlanner.TableLabels.BossAbilityLabel")}
+              label={t("Name")}
+              labelId="HealerSelector"
               onChange={(e) => {
-                props.onChange(e.target.value);
+                let data = { ...props.rowData };
+                data.name1 = e.target.value;
+                data.class1 = ls
+                  .get("healerInfo")
+                  .filter((obj) => {
+                    return obj.name === e.target.value;
+                  })
+                  .map((obj) => obj.class)
+                  .toString();
+                data.Cooldown1 = "NoCD";
+                props.onRowDataChange(data);
               }}
               MenuProps={menuStyle}
             >
-              {bossAbilities
-                .filter((obj) => {
-                  return obj.bossID === currentBoss && obj.cooldownPlannerActive === true;
-                })
+              {ls
+                .get("healerInfo")
                 .map((key, i) => (
-                  <MenuItem key={i} value={key.guid}>
-                    <a data-wowhead={"spell=" + key.guid + "&domain=" + currentLanguage}>{bossAbilityIcons(key.guid)}</a>
-                    {t("CooldownPlanner.BossAbilities." + key.guid)}
+                  <MenuItem key={i} value={key.name}>
+                    {key.name}
                   </MenuItem>
                 ))
                 .map((key) => [key, <Divider />])}
@@ -335,6 +402,211 @@ export default function CooldownPlanner(props) {
         </ThemeProvider>
       ),
     },
+
+    {
+      title: t("Class"),
+      field: "class1",
+      width: "10%",
+      hidden: true,
+      cellStyle: {
+        whiteSpace: "nowrap",
+      },
+      // Renders the Name for the healer in the relevant row in the data.
+      render: (rowData) => (
+        <div style={{ color: classColoursJS(rowData.class1) }}>
+          {rowData.class1 === undefined ? "" : classIcons(rowData.class1, 20)}
+          {t("CooldownPlanner.Classes." + rowData.class1)}
+        </div>
+      ),
+      // Shows the selected healers class in edit mode.
+      editComponent: (props, rowData) => {
+        let data = { ...props.rowData };
+        return (
+          <div style={{ color: classColoursJS(data.class1) }}>
+            {data.class1 === undefined ? "" : classIcons(data.class1, 20)}
+            {t("CooldownPlanner.Classes." + data.class1)}
+          </div>
+        );
+      },
+    },
+
+    {
+      // The Column for Cooldown Selection
+      title: t("Cooldown"),
+      field: "Cooldown1",
+      width: "12%",
+      cellStyle: {
+        whiteSpace: "nowrap",
+      },
+      // Renders the Ability name that was set for this row.
+      render: (rowData) => (
+        <div>
+          {abilityIcons(rowData.Cooldown1)}
+          {t("CooldownPlanner.ClassAbilities." + rowData.Cooldown1)}
+        </div>
+      ),
+      // The Edit Mode Component. Generated based off the healers class.
+      editComponent: (props, rowData) => {
+        let data = { ...props.rowData };
+        return (
+          <FormControl className={classes.formControl} variant="outlined" size="small" style={{ marginTop: 6 }}>
+            <InputLabel id="HealerAbilitySelector">{t("Cooldown")}</InputLabel>
+            <Select
+              value={rowData.Cooldown1 || props.value}
+              labelId="HealerAbilitySelector"
+              label={t("Cooldown")}
+              onChange={(e) => {
+                props.onChange(e.target.value);
+              }}
+              MenuProps={menuStyle}
+            >
+              {ClassCooldownMenuItems(data.class1) || []}
+            </Select>
+          </FormControl>
+        );
+      },
+    },
+
+    {
+      // Render only, should the user when the cooldown will be available again to be used.
+      title: t("CooldownPlanner.TableLabels.OffCooldownLabel"),
+      width: "4%",
+      cellStyle: {
+        whiteSpace: "nowrap",
+      },
+      render: (rowData) => <div>{timeCheck(rowData, rowData.cooldown1)}</div>,
+    },
+
+    /* -------------------------------------------------------------------------- */
+    /*                               Cooldown Set 2                               */
+    /* -------------------------------------------------------------------------- */
+    {
+      title: t("Name"),
+      field: "name2",
+      width: "7%",
+      cellStyle: {
+        whiteSpace: "nowrap",
+        paddingLeft: 8,
+      },
+      // This renders the healer name outside of Edit Mode.
+      render: (rowData) => (
+        <div style={{ color: classColoursJS(rowData.class2) }}>
+          {rowData.name2}
+          {rowData.class2 === undefined ? "" : classIcons(rowData.class2, 20)}
+        </div>
+      ),
+      // This is the Component for name selection when the table is in edit mode.
+      editComponent: (props) => (
+        <ThemeProvider theme={themeCooldownTable}>
+          <FormControl className={classes.formControl} variant="outlined" size="small" style={{ marginTop: 6 }}>
+            <InputLabel id="HealerSelector">{t("Name")}</InputLabel>
+            <Select
+              value={props.value}
+              label={t("Name")}
+              labelId="HealerSelector"
+              onChange={(e) => {
+                let data = { ...props.rowData };
+                data.name1 = e.target.value;
+                data.class1 = ls
+                  .get("healerInfo")
+                  .filter((obj) => {
+                    return obj.name === e.target.value;
+                  })
+                  .map((obj) => obj.class)
+                  .toString();
+                data.Cooldown2 = "NoCD";
+                props.onRowDataChange(data);
+              }}
+              MenuProps={menuStyle}
+            >
+              {ls
+                .get("healerInfo")
+                .map((key, i) => (
+                  <MenuItem key={i} value={key.name}>
+                    {key.name}
+                  </MenuItem>
+                ))
+                .map((key) => [key, <Divider />])}
+            </Select>
+          </FormControl>
+        </ThemeProvider>
+      ),
+    },
+
+    {
+      title: t("Class"),
+      field: "class2",
+      width: "10%",
+      hidden: true,
+      cellStyle: {
+        whiteSpace: "nowrap",
+      },
+      // Renders the Name for the healer in the relevant row in the data.
+      render: (rowData) => (
+        <div style={{ color: classColoursJS(rowData.class2) }}>
+          {rowData.class2 === undefined ? "" : classIcons(rowData.class2, 20)}
+          {t("CooldownPlanner.Classes." + rowData.class2)}
+        </div>
+      ),
+      // Shows the selected healers class in edit mode.
+      editComponent: (props, rowData) => {
+        let data = { ...props.rowData };
+        return (
+          <div style={{ color: classColoursJS(data.class2) }}>
+            {data.class2 === undefined ? "" : classIcons(data.class2, 20)}
+            {t("CooldownPlanner.Classes." + data.class2)}
+          </div>
+        );
+      },
+    },
+
+    {
+      // The Column for Cooldown Selection
+      title: t("Cooldown"),
+      field: "Cooldown2",
+      width: "12%",
+      cellStyle: {
+        whiteSpace: "nowrap",
+      },
+      // Renders the Ability name that was set for this row.
+      render: (rowData) => (
+        <div>
+          {abilityIcons(rowData.Cooldown2)}
+          {t("CooldownPlanner.ClassAbilities." + rowData.Cooldown2)}
+        </div>
+      ),
+      // The Edit Mode Component. Generated based off the healers class.
+      editComponent: (props, rowData) => {
+        let data = { ...props.rowData };
+        return (
+          <FormControl className={classes.formControl} variant="outlined" size="small" style={{ marginTop: 6 }}>
+            <InputLabel id="HealerAbilitySelector">{t("Cooldown")}</InputLabel>
+            <Select
+              value={rowData.Cooldown2 || props.value}
+              labelId="HealerAbilitySelector"
+              label={t("Cooldown")}
+              onChange={(e) => {
+                props.onChange(e.target.value);
+              }}
+              MenuProps={menuStyle}
+            >
+              {ClassCooldownMenuItems(data.class2) || []}
+            </Select>
+          </FormControl>
+        );
+      },
+    },
+
+    {
+      // Render only, should the user when the cooldown will be available again to be used.
+      title: t("CooldownPlanner.TableLabels.OffCooldownLabel"),
+      width: "4%",
+      cellStyle: {
+        whiteSpace: "nowrap",
+      },
+      render: (rowData) => <div>{timeCheck(rowData, rowData.cooldown2)}</div>,
+    },
+
     {
       // Under Input Notes for the cooldown. I.e "Use just before this ability" or something else they wish to note.
       title: t("CooldownPlanner.TableLabels.NotesLabel"),
@@ -436,7 +708,7 @@ export default function CooldownPlanner(props) {
           actionCellStyle: {
             borderBottom: "1px solid #515151",
           },
-          actionsColumnIndex: 7,
+          actionsColumnIndex: 12,
           paging: false,
         }}
         localization={curLang()}

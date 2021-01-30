@@ -223,7 +223,7 @@ class HolyDiver extends Component {
           marginTop: 32,
         }}
       >
-        <div style={{ margin: "20px 12% 20px 12%" }}>
+        <div style={{ margin: "20px 10% 20px 10%" }}>
           {/* Main Grid for the Compoonent, this should control the base spacing of all the base components,
               any Grid Components within this with the item prop will have spacing  */}
           <Grid container spacing={1}>
