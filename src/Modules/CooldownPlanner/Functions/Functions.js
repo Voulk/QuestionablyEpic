@@ -520,18 +520,13 @@ export function sumDamage(array) {
 }
 
 export function logDifficulty(dif) {
-  if (dif === 1) {
-    return "LFR";
-  } else if (dif === 3) {
-    return "Normal";
-  } else if (dif === 4) {
-    return "Heroic";
-  } else if (dif === 5) {
-    return "Mythic";
-  } else if (dif === 10) {
-    return "M+";
-  } else {
-    return "Error: Difficulty Missing :(";
+  switch(dif){
+    case 1: return "LFR";
+    case 3: return "Normal";
+    case 4: return "Heroic";
+    case 5: return "Mythic";
+    case 10: return "M+";
+    default: return "Error: Difficulty Missing :(";
   }
 }
 
