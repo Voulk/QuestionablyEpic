@@ -1743,7 +1743,7 @@ const spellData = [
     icon: "spell_monk_revival",
   },
   {
-    id: 117907,
+    id: 191894,
     name: "Mastery: Gust of Mists",
     icon: "ability_monk_souldance",
   },

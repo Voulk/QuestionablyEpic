@@ -4,6 +4,7 @@ import { Divider, MenuItem } from "@material-ui/core";
 import bossIcons from "../../Functions/IconFunctions/BossIcons";
 import { fightDurationCalculator } from "../../Functions/Functions";
 import { bossList } from "../../Data/Data";
+import { logDifficulty } from "../../Functions/Functions";
 
 const API = "https://www.warcraftlogs.com:443/v1/report/fights/";
 const API2 = "?api_key=92fc5d4ae86447df22a8c0917c1404dc";
@@ -26,16 +27,40 @@ class LogImport extends Component {
       .then((data) => this.setState({ fights: data.fights }));
   };
 
-  mather = (time1, time2) => {
-    let time = time1 - time2;
-    return time;
+  duration = (time1, time2) => {
+    return time1 - time2;
   };
 
   killwipe = (check) => {
-    if (check === false) {
-      return "Wipe";
+    return check ? "Kill!" : "Wipe ";
+  };
+
+  whichWipe = (fight, list) => {
+    return fight.kill ? "" : list[fight.boss + fight.difficulty].indexOf(fight) + 1;
+  }
+
+  formatName = (fight, list) => {
+    const start = logDifficulty(fight.difficulty) + 
+    " " +
+    fight.name +
+    " - " +
+    moment(this.duration(fight.end_time, fight.start_time)).format("mm:ss") +
+    " - ";
+
+    let end = this.killwipe(fight.kill);
+    let styleColor = "#00ff1a";
+
+    //this is very hacky due ot the fact killwipe already checks that...
+    if(!fight.kill){
+      end += this.whichWipe(fight, list) +
+      (fight.kill ? "" :
+      " - " +
+      fight.bossPercentage / 100 +
+      "%");
+      styleColor = "";
     }
-    return "Kill!";
+
+    return <div style={{color: styleColor}}>{start + end}</div>;
   };
 
   render(props) {
@@ -47,8 +72,20 @@ class LogImport extends Component {
         </MenuItem>
       );
     }
-    let menuItems = fights
-      .filter((name) => name.boss !== 0)
+
+    // Split up fights for indexing 
+    // limit fights on what we want to prevent bad fights? idk options man
+    // const filteredFights = fights.filter(fight => bossList.find(boss => fight.boss === boss.id));
+    const filteredFights = fights.filter((name) => name.boss !== 0)
+
+    // now we map (i dislike this klunkyness but hey sucks don't it)
+    const fightsMapped = {};
+    filteredFights.forEach(fight => 
+      fightsMapped[fight.boss + fight.difficulty] ?
+      fightsMapped[fight.boss + fight.difficulty].push(fight) :
+      fightsMapped[fight.boss + fight.difficulty] = [fight]);
+
+    let menuItems = filteredFights
       .map((fight, i) => (
         <MenuItem
           key={i}
@@ -58,7 +95,7 @@ class LogImport extends Component {
               fight.end_time,
               fight.name,
               moment(fightDurationCalculator(fight.end_time, fight.start_time)).format("mm:ss"),
-              this.killwipe(fight.kill),
+              this.killwipe(fight.kill) + this.whichWipe(fight, fightsMapped),
               fight.boss,
               fight.difficulty,
               fight.keystoneLevel,
@@ -74,14 +111,7 @@ class LogImport extends Component {
           }}
         >
           {bossIcons(fight.boss)}
-          {fight.name +
-            " - " +
-            moment(this.mather(fight.end_time, fight.start_time)).format("mm:ss") +
-            " - " +
-            this.killwipe(fight.kill) +
-            " - " +
-            fight.bossPercentage / 100 +
-            "%"}
+          {this.formatName(fight, fightsMapped)}
         </MenuItem>
       ))
       .map((key, i) => [key, <Divider key={i + 200} />]);
