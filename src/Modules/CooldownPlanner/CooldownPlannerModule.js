@@ -426,6 +426,8 @@ class HolyDiver extends Component {
                       dataToShow={this.state.chartData}
                       mitigated={this.state.mitigatedChartData}
                       unmitigated={this.state.unmitigatedChartData}
+                      mitigatedCooldowns={this.state.mitigatedChartDataNoCooldowns}
+                      unmitigatedCooldowns={this.state.unmitigatedChartDataNoCooldowns}
                       abilityList={this.state.abilityList}
                       legendata={this.state.legenddata}
                       cooldownsToShow={this.state.customCooldownsOnChart}
