@@ -15,10 +15,13 @@ export default function chartCooldownUpdater(tableData) {
   let customCooldownDurations = [];
   let unmitigatedChartDataNoCooldowns = [];
   let mitigatedChartDataNoCooldowns = [];
+  let pushedArray = []
 
+   tableData.map((key) => pushedArray.push(key.name + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown)))
+   tableData.map((key) => pushedArray.push(key.name1 + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown1)))
+   tableData.map((key) => pushedArray.push(key.name2 + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown2)))
   // Map the data from the Cooldown Planner into a unique list of Healer Names + Cooldowns for dataKeys for the Chart.
-  let uniqueCooldownListArray = Array.from(new Set(tableData.map((key) => key.name + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown))));
-
+  let uniqueCooldownListArray = Array.from(new Set(pushedArray));
   // Map the Data from the Cooldown Planner and create a new array of objects. These are then mapped using the durationmaker function to create the data for the length of the cooldown and pushed into a new array customCooldownDurations.
   tableData
     .map((key) => ({
@@ -36,6 +39,40 @@ export default function chartCooldownUpdater(tableData) {
         ),
       ),
     );
+    tableData
+    .map((key) => ({
+      ability: key.Cooldown1,
+      timestamp: moment.duration("00:" + key.time).asMilliseconds(),
+      abilityname: key.name1 + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown1),
+    }))
+    .map((key) =>
+      customCooldownDurations.push(
+        durationmaker(
+          key.ability,
+          key.timestamp,
+          key.abilityname,
+          moment(fightDurationCalculator(this.state.currentEndTime, this.state.currentStartTime)).startOf("second").valueOf(),
+        ),
+      ),
+    );
+
+    tableData
+    .map((key) => ({
+      ability: key.Cooldown2,
+      timestamp: moment.duration("00:" + key.time).asMilliseconds(),
+      abilityname: key.name2 + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown2),
+    }))
+    .map((key) =>
+      customCooldownDurations.push(
+        durationmaker(
+          key.ability,
+          key.timestamp,
+          key.abilityname,
+          moment(fightDurationCalculator(this.state.currentEndTime, this.state.currentStartTime)).startOf("second").valueOf(),
+        ),
+      ),
+    );
+
 
   let customCooldownDurationFlatArray = customCooldownDurations.flat();
 
@@ -127,6 +164,10 @@ export default function chartCooldownUpdater(tableData) {
     ert: key.notes + " - " + classColoursERT(key.class) + key.name + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown),
     time: key.time,
   }));
+
+  console.log(mitigatedChartDataNoCooldowns)
+  console.log(unmitigatedChartDataNoCooldowns)
+  
 
   this.setState({
     mitigatedChartDataNoCooldowns: mitigatedChartDataNoCooldowns,

@@ -30,6 +30,7 @@ const themeCooldownTable = createMuiTheme({
     MuiTableCell: {
       root: {
         padding: "4px 4px 4px 4px",
+        borderBottom: "1px solid #c8b054",
       },
     },
     MuiIconButton: {
@@ -126,7 +127,7 @@ export default function CooldownPlanner(props) {
   const healTeamDialogOpen = props.healTeamDialogOpen;
 
   const timeCheck = (rowData, cooldown) => {
-    console.log(cooldown)
+    console.log(cooldown);
     let time = moment(rowData.time, "mm:ss")
       .add(
         healerCooldownsDetailed
@@ -151,10 +152,10 @@ export default function CooldownPlanner(props) {
       // The Cast Time Column. This is where the time the user expects the cooldown to be cast.
       title: t("CooldownPlanner.TableLabels.CastTimeLabel"),
       field: "time",
-      width: "6%",
+      width: "1%",
       cellStyle: {
         whiteSpace: "nowrap",
-        borderRight: "1px solid"
+        borderRight: "1px solid #c8b054",
       },
       // Times currently must be entered in the 00:00 format.
       // Currently due to sorting, the user must either use a time, or label the cooldowns, 1, 2, 3, 4 etc to keep them in order.
@@ -180,10 +181,10 @@ export default function CooldownPlanner(props) {
       // Here the user can select which ability the cooldown should cover.
       title: t("CooldownPlanner.TableLabels.BossAbilityLabel"),
       field: "bossAbility",
-      width: "15%",
+      // width: "15%",
       cellStyle: {
         whiteSpace: "nowrap",
-        borderRight: "1px solid"
+        borderRight: "2px solid #c8b054",
       },
       render: (rowData) => (
         <div>
@@ -225,13 +226,13 @@ export default function CooldownPlanner(props) {
     /*                               Cooldown Set 0                               */
     /* -------------------------------------------------------------------------- */
     {
-      title: t("Name"),
+      title: t("Name") + " 1",
       field: "name",
-      width: "7%",
+      // width: "7%",
       cellStyle: {
         whiteSpace: "nowrap",
         paddingLeft: 8,
-        borderRight: "1px solid"
+        borderRight: "1px dotted #c8b054",
       },
       // This renders the healer name outside of Edit Mode.
       render: (rowData) => (
@@ -282,11 +283,11 @@ export default function CooldownPlanner(props) {
     {
       title: t("Class"),
       field: "class",
-      width: "10%",
+      // width: "10%",
       hidden: true,
       cellStyle: {
         whiteSpace: "nowrap",
-        borderRight: "1px solid"
+        borderRight: "1px dotted #c8b054",
       },
       // Renders the Name for the healer in the relevant row in the data.
       render: (rowData) => (
@@ -308,12 +309,12 @@ export default function CooldownPlanner(props) {
     },
     {
       // The Column for Cooldown Selection
-      title: t("Cooldown"),
+      title: t("Cooldown") + " 1",
       field: "Cooldown",
-      width: "12%",
+      // width: "12%",
       cellStyle: {
         whiteSpace: "nowrap",
-        borderRight: "1px solid"
+        borderRight: "1px dotted #c8b054",
       },
       // Renders the Ability name that was set for this row.
       render: (rowData) => (
@@ -346,10 +347,10 @@ export default function CooldownPlanner(props) {
     {
       // Render only, should the user when the cooldown will be available again to be used.
       title: t("CooldownPlanner.TableLabels.OffCooldownLabel"),
-      width: "4%",
+      width: "1%",
       cellStyle: {
         whiteSpace: "nowrap",
-        borderRight: "1px solid"
+        borderRight: "2px solid #c8b054",
       },
       render: (rowData) => <div>{timeCheck(rowData, rowData.Cooldown)}</div>,
     },
@@ -358,12 +359,12 @@ export default function CooldownPlanner(props) {
     /*                               Cooldown Set 1                               */
     /* -------------------------------------------------------------------------- */
     {
-      title: t("Name"),
+      title: t("Name 2"),
       field: "name1",
-      width: "7%",
+      // width: "7%",
       cellStyle: {
         whiteSpace: "nowrap",
-        borderRight: "1px solid",
+        borderRight: "1px dotted #c8b054",
         paddingLeft: 8,
       },
       // This renders the healer name outside of Edit Mode.
@@ -415,11 +416,11 @@ export default function CooldownPlanner(props) {
     {
       title: t("Class"),
       field: "class1",
-      width: "10%",
+      // width: "10%",
       hidden: true,
       cellStyle: {
         whiteSpace: "nowrap",
-        borderRight: "1px solid"
+        borderRight: "1px dotted #c8b054",
       },
       // Renders the Name for the healer in the relevant row in the data.
       render: (rowData) => (
@@ -442,12 +443,12 @@ export default function CooldownPlanner(props) {
 
     {
       // The Column for Cooldown Selection
-      title: t("Cooldown"),
+      title: t("Cooldown") + " 2",
       field: "Cooldown1",
-      width: "12%",
+      // width: "12%",
       cellStyle: {
         whiteSpace: "nowrap",
-        borderRight: "1px solid"
+        borderRight: "1px dotted #c8b054",
       },
       // Renders the Ability name that was set for this row.
       render: (rowData) => (
@@ -481,10 +482,10 @@ export default function CooldownPlanner(props) {
     {
       // Render only, should the user when the cooldown will be available again to be used.
       title: t("CooldownPlanner.TableLabels.OffCooldownLabel"),
-      width: "4%",
+      width: "1%",
       cellStyle: {
         whiteSpace: "nowrap",
-        borderRight: "1px solid"
+        borderRight: "2px solid #c8b054",
       },
       render: (rowData) => <div>{timeCheck(rowData, rowData.Cooldown1)}</div>,
     },
@@ -493,12 +494,12 @@ export default function CooldownPlanner(props) {
     /*                               Cooldown Set 2                               */
     /* -------------------------------------------------------------------------- */
     {
-      title: t("Name"),
+      title: t("Name") + " 3",
       field: "name2",
-      width: "7%",
+      // width: "7%",
       cellStyle: {
         whiteSpace: "nowrap",
-        borderRight: "1px solid",
+        borderRight: "1px dotted #c8b054",
         paddingLeft: 8,
       },
       // This renders the healer name outside of Edit Mode.
@@ -550,11 +551,11 @@ export default function CooldownPlanner(props) {
     {
       title: t("Class"),
       field: "class2",
-      width: "10%",
+      // width: "10%",
       hidden: true,
       cellStyle: {
         whiteSpace: "nowrap",
-        borderRight: "1px solid"
+        borderRight: "1px dotted #c8b054",
       },
       // Renders the Name for the healer in the relevant row in the data.
       render: (rowData) => (
@@ -577,12 +578,12 @@ export default function CooldownPlanner(props) {
 
     {
       // The Column for Cooldown Selection
-      title: t("Cooldown"),
+      title: t("Cooldown") + " 3",
       field: "Cooldown2",
-      width: "12%",
+      // width: "12%",
       cellStyle: {
         whiteSpace: "nowrap",
-        borderRight: "1px solid"
+        borderRight: "1px dotted #c8b054",
       },
       // Renders the Ability name that was set for this row.
       render: (rowData) => (
@@ -616,10 +617,10 @@ export default function CooldownPlanner(props) {
     {
       // Render only, should the user when the cooldown will be available again to be used.
       title: t("CooldownPlanner.TableLabels.OffCooldownLabel"),
-      width: "4%",
+      width: "1%",
       cellStyle: {
         whiteSpace: "nowrap",
-        borderRight: "1px solid"
+        borderRight: "2px solid #c8b054",
       },
       render: (rowData) => <div>{timeCheck(rowData, rowData.Cooldown2)}</div>,
     },
@@ -631,7 +632,7 @@ export default function CooldownPlanner(props) {
       width: "20%",
       cellStyle: {
         whiteSpace: "nowrap",
-        borderRight: "1px solid"
+        borderRight: "1px solid #c8b054",
       },
       editComponent: (props) => (
         <TextField
@@ -711,20 +712,21 @@ export default function CooldownPlanner(props) {
             backgroundColor: "#c8b054",
             color: "#000",
             whiteSpace: "nowrap",
+            textAlign: "center",
           },
           rowStyle: (rowData, index) => {
             if (index % 2) {
               return {
                 backgroundColor: "#515151",
-                border: "1px solid #515151",
+                border: "1px solid #c8b054",
               };
             }
             return {
-              border: "1px solid #515151",
+              border: "1px solid #c8b054",
             };
           },
           actionCellStyle: {
-            borderBottom: "1px solid #515151",
+            borderBottom: "1px solid #c8b054",
           },
           actionsColumnIndex: 12,
           paging: false,
