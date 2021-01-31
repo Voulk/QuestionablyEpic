@@ -22,21 +22,25 @@ export function classColoursERT(props) {
   if (props === "MistweaverMonk") {
     return "|cff00fe95";
   }
+
+  if (props === "Warrior") {
+    return "|cffc59a6c";
+  }
+
+  if (props === "HavocDemonHunter") {
+    return "|cffa22fc8";
+  }
+
+  if (props === "DeathKnight") {
+    return "|cffc31d39";
+  }
 }
 
 export function classColoursJS(props) {
-  if (
-    props === "HolyPaladin" ||
-    props === "Holy Paladin" ||
-    props === "Paladin"
-  ) {
+  if (props === "HolyPaladin" || props === "Holy Paladin" || props === "Paladin") {
     return "#F58CBA";
   }
-  if (
-    props === "RestorationDruid" ||
-    props === "Restoration Druid" ||
-    props === "Druid"
-  ) {
+  if (props === "RestorationDruid" || props === "Restoration Druid" || props === "Druid") {
     return "#FF7D0A";
   }
   if (
@@ -50,36 +54,20 @@ export function classColoursJS(props) {
   ) {
     return "#FFFFFF";
   }
-  if (
-    props === "RestorationShaman" ||
-    props === "Restoration Shaman" ||
-    props === "Shaman"
-  ) {
+  if (props === "RestorationShaman" || props === "Restoration Shaman" || props === "Shaman") {
     return "#007af2";
   }
 
-  if (
-    props === "MistweaverMonk" ||
-    props === "Mistweaver Monk" ||
-    props === "Monk"
-  ) {
+  if (props === "MistweaverMonk" || props === "Mistweaver Monk" || props === "Monk") {
     return "#00FF96";
   }
   if (props === "Warrior") {
     return "#C79C6E";
   }
-  if (
-    props === "HavocDemonHunter" ||
-    props === "Havoc Demon Hunter" ||
-    props === "DemonHunter" ||
-    props === "Demon Hunter"
-  ) {
+  if (props === "HavocDemonHunter" || props === "Havoc Demon Hunter" || props === "DemonHunter" || props === "Demon Hunter") {
     return "#AC44CE ";
   }
-  if (
-    props === "DeathKnight" ||
-    props === "Death Knight"
-  ) {
+  if (props === "DeathKnight" || props === "Death Knight") {
     return "#C41E3A	 ";
   }
 }

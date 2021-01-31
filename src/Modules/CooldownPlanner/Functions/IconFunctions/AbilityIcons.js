@@ -39,7 +39,7 @@ import PowerInfusionIcon from "../../../../Images/Classes/Priest/Specialisation/
 import IronbarkIcon from "../../../../Images/Classes/Druid/Specialisation/Restoration/Icons/Ironbark.jpg";
 import BlessingOfSacrificeIcon from "../../../../Images/Classes/Paladin/Specialisation/Holy/Icons/BlessingOfSacrifice.jpg";
 import LifeCocoonIcon from "../../../../Images/Classes/Monk/Specialisation/Mistweaver/Icons/LifeCocoon.jpg";
-import FlourishIcon from "../../../../Images/Classes/Druid/Specialisation/Restoration/Icons/Talents/FlourishIcon.jpg"
+import FlourishIcon from "../../../../Images/Classes/Druid/Specialisation/Restoration/Icons/Talents/FlourishIcon.jpg";
 
 // Should probably work this off GUID
 
@@ -264,6 +264,9 @@ export default function abilityIcons(props) {
     spell = "spell=116849";
     source = LifeCocoonIcon;
     alt = "Blessing of Sacrifice";
+  }
+  if (props === "" || props === undefined) {
+    return ""
   }
 
   return (
