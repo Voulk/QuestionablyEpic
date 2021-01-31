@@ -134,16 +134,16 @@ export default function chartCooldownUpdater(tableData) {
   //prettier-ignore
   const ertNoteTimeNoIcons = tableData
     .filter((key) => key.Cooldown !== undefined)
-    .map((key) => {let time = "{time:" + key.time + "}" ({
+    .map((key) => ({
       ert:
-      time +
+        "{time:" + key.time + "}" +
         " - " + classColoursERT(key.class) + key.name + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown) + 
         ", " + classColoursERT(key.class1) + key.name1 + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown1) +
         ", " + classColoursERT(key.class2) + key.name2 + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown2) +
         ", " + classColoursERT(key.class3) + key.name2 + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown3),
       // This is for Sorting by Time
       time: key.time,
-    })});
+    }));
 
   // Ability + No Icons
   const ertNoteAbilityNoIcons = tableData
