@@ -1,10 +1,9 @@
 import React, { Component } from "react";
 import moment from "moment";
 import { Divider, MenuItem } from "@material-ui/core";
-import bossIcons from "../../Functions/IconFunctions/BossIcons";
-import { fightDurationCalculator } from "../../Functions/Functions";
-import { bossList } from "../../Data/Data";
-import { logDifficulty } from "../../Functions/Functions";
+import bossIcons from "../CooldownPlanner/Functions/IconFunctions/BossIcons";
+import { fightDuration, logDifficulty } from "../CooldownPlanner/Functions/Functions";
+import { bossList } from "../CooldownPlanner/Data/Data";
 
 const API = "https://www.warcraftlogs.com:443/v1/report/fights/";
 const API2 = "?api_key=92fc5d4ae86447df22a8c0917c1404dc";
@@ -27,10 +26,6 @@ class LogImport extends Component {
       .then((data) => this.setState({ fights: data.fights }));
   };
 
-  duration = (time1, time2) => {
-    return time1 - time2;
-  };
-
   killwipe = (check) => {
     return check ? "Kill!" : "Wipe ";
   };
@@ -44,7 +39,7 @@ class LogImport extends Component {
     " " +
     fight.name +
     " - " +
-    moment(this.duration(fight.end_time, fight.start_time)).format("mm:ss") +
+    moment(fightDuration(fight.end_time, fight.start_time)).format("mm:ss") +
     " - ";
 
     let end = this.killwipe(fight.kill);
@@ -94,7 +89,7 @@ class LogImport extends Component {
               fight.start_time,
               fight.end_time,
               fight.name,
-              moment(fightDurationCalculator(fight.end_time, fight.start_time)).format("mm:ss"),
+              moment(fightDuration(fight.end_time, fight.start_time)).format("mm:ss"),
               this.killwipe(fight.kill) + this.whichWipe(fight, fightsMapped),
               fight.boss,
               fight.difficulty,

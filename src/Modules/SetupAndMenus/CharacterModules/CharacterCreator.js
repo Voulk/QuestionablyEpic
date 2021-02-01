@@ -3,12 +3,13 @@ import React from "react";
 import { Avatar, Button, Card, CardActionArea, CardContent, Dialog, DialogActions, DialogContent, DialogTitle, FormControl, InputLabel, Typography, MenuItem, TextField, Select, Grid } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import { useTranslation } from "react-i18next";
-import classIcons from "../CooldownPlanner/Functions/IconFunctions/ClassIcons";
-import raceIcons from "../CooldownPlanner/Functions/IconFunctions/RaceIcons";
+import classIcons from "../../CooldownPlanner/Functions/IconFunctions/ClassIcons";
+import raceIcons from "../../CooldownPlanner/Functions/IconFunctions/RaceIcons";
 import Autocomplete from "@material-ui/lab/Autocomplete";
-import { serverList, classRaceList } from "../CooldownPlanner/Data/Data";
+import { classRaceList } from "../../CooldownPlanner/Data/Data";
+import { serverDB } from "../../../Databases/ServerDB"
 
-const addBtn = require("../../Images/AddBtn.jpg").default;
+const addBtn = require("../../../Images/AddBtn.jpg").default;
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -135,7 +136,7 @@ export default function AddNewChar(props) {
                   size="small"
                   disabled={regions === "" ? true : false}
                   id="server-select"
-                  options={serverList[regions] || []}
+                  options={serverDB[regions] || []}
                   getOptionLabel={(option) => option}
                   style={{ width: "100%" }}
                   onChange={(e, newValue) => {

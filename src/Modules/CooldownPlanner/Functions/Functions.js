@@ -1,6 +1,7 @@
 import moment from "moment";
 import axios from "axios";
-import { damageExclusions, healerCooldownsDetailed, externalsDetailed } from "../Data/Data";
+import { damageExclusions, healerCooldownsDetailed } from "../Data/Data";
+import { externalsDB } from "../../../Databases/ExternalsDB";
 import i18n from "i18next";
 
 // Returns Seconds from 0 to Loglength
@@ -48,11 +49,11 @@ export function reduceTimestamps(array) {
 }
 
 // returns fight duration Time end - time start of log
-export function fightDurationCalculator(time1, time2) {
-  let time = time1 - time2;
-  return time;
+export function fightDuration(time1, time2) {
+  return time1 - time2;
 }
 
+/* -- Creates Timestamps for each second of duration of an active Cooldown -- */
 export function durationmaker(ability, originalTimestamp, abilityname, endtime) {
   let duration = healerCooldownsDetailed
     .filter((obj) => {
@@ -423,7 +424,7 @@ export async function importExternalCastsLogData(starttime, endtime, reportid, h
       externals = Object.keys(result.data.events)
         .filter(
           (key) =>
-            externalsDetailed.map((obj) => obj.guid).includes(result.data.events[key].ability.guid) &&
+            externalsDB.map((obj) => obj.guid).includes(result.data.events[key].ability.guid) &&
             // Because Holy Word: Salvation comes up in logs as begincast we filter out the cast version so that it doesn't appear twice.
             (result.data.events[key].ability.guid === 265202 ? result.data.events[key].type === "begincast" : result.data.events[key].type === "cast") &&
             healerID.includes(result.data.events[key].sourceID),
@@ -445,7 +446,7 @@ export async function importExternalCastsLogData(starttime, endtime, reportid, h
             Object.keys(result.data.events)
               .filter(
                 (key) =>
-                  externalsDetailed.map((obj) => obj.guid).includes(result.data.events[key].ability.guid) &&
+                  externalsDB.map((obj) => obj.guid).includes(result.data.events[key].ability.guid) &&
                   // Because Holy Word: Salvation comes up in logs as begincast we filter out the cast version so that it doesn't appear twice.
                   (result.data.events[key].ability.guid === 265202 ? result.data.events[key].type === "begincast" : result.data.events[key].type === "cast") &&
                   healerID.includes(result.data.events[key].sourceID),
@@ -519,13 +520,19 @@ export function sumDamage(array) {
 }
 
 export function logDifficulty(dif) {
-  switch(dif){
-    case 1: return "LFR";
-    case 3: return "Normal";
-    case 4: return "Heroic";
-    case 5: return "Mythic";
-    case 10: return "M+";
-    default: return "Error: Difficulty Missing :(";
+  switch (dif) {
+    case 1:
+      return "LFR";
+    case 3:
+      return "Normal";
+    case 4:
+      return "Heroic";
+    case 5:
+      return "Mythic";
+    case 10:
+      return "M+";
+    default:
+      return "Error: Difficulty Missing :(";
   }
 }
 

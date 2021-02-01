@@ -1,12 +1,12 @@
 import React from "react";
 import { AppBar, Toolbar, Button, Typography, Popover, Tooltip, Grid } from "@material-ui/core";
-import logo from "../../Images/QeAssets/QELogo.png";
-import "./QEMainMenu.css";
+import logo from "../../../Images/QeAssets/QELogo.png";
+import "../QEMainMenu.css";
 import LanguageSelector from "./LanguageButton";
 import ProfileSelector from "./ProfileButton";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
-import SimCraftInput from "./SimCraftDialog";
+import SimCraftInput from "../SimCraftDialog";
 import QELogImport from "./QELogImport";
 import { makeStyles } from "@material-ui/core/styles";
 // import ReactGA from "react-ga";n

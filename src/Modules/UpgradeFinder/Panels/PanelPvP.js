@@ -4,8 +4,8 @@ import { Typography, Grid, Divider } from "@material-ui/core";
 import ItemUpgradeCard from "./ItemUpgradeCard";
 import "./Panels.css";
 import { useTranslation } from "react-i18next";
-import { filterItemListBySource, getDifferentialByID } from "../Engine/ItemUtilities";
-import { encounterDB } from "../Player/InstanceDB";
+import { filterItemListBySource, getDifferentialByID } from "../../Engine/ItemUtilities";
+import { encounterDB } from "../../Player/InstanceDB";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -23,8 +23,8 @@ const getPVPItemLevel = (sourceID, difficulty, slot) => {
 };
 
 const pvpIcons = {
-  "-16": require("../../Images/Bosses/HonorIcon.jpg").default,
-  "-17": require("../../Images/Bosses/HonorIcon.jpg").default,
+  "-16": require("../../../Images/Bosses/HonorIcon.jpg").default,
+  "-17": require("../../../Images/Bosses/HonorIcon.jpg").default,
 };
 
 const itemLevels = {

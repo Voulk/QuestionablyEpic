@@ -2,11 +2,11 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Typography, Grid, Divider } from "@material-ui/core";
 import ItemUpgradeCard from "./ItemUpgradeCard";
-import DungeonHeaderIcons from "../CooldownPlanner/Functions/IconFunctions/DungeonHeaderIcons";
+import DungeonHeaderIcons from "../../CooldownPlanner/Functions/IconFunctions/DungeonHeaderIcons";
 import "./Panels.css";
 import { useTranslation } from "react-i18next";
-import { filterItemListBySource, getDifferentialByID } from "../Engine/ItemUtilities";
-import { encounterDB } from "../Player/InstanceDB";
+import { filterItemListBySource, getDifferentialByID } from "../../Engine/ItemUtilities";
+import { encounterDB } from "../../Player/InstanceDB";
 
 // TODO: Move these to somewhere more accessible since they are used in multiple places.
 const itemLevels = {

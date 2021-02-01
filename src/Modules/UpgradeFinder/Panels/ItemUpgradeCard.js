@@ -1,10 +1,10 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Card, CardContent, Typography, Grid, Divider, IconButton } from "@material-ui/core";
-import { getTranslatedItemName, buildStatString, getItemIcon } from "../Engine/ItemUtilities";
+import { getTranslatedItemName, buildStatString, getItemIcon } from "../../Engine/ItemUtilities";
 import "./ItemUpgrade.css";
 import DeleteIcon from "@material-ui/icons/Delete";
-import socketImage from "../../Images/Resources/EmptySocket.png";
+import socketImage from "../../../Images/Resources/EmptySocket.png";
 import { useTranslation } from "react-i18next";
 
 const useStyles = makeStyles({
