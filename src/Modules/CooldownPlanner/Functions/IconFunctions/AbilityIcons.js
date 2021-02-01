@@ -43,7 +43,7 @@ import FlourishIcon from "../../../../Images/Classes/Druid/Specialisation/Restor
 
 // Should probably work this off GUID
 
-export default function abilityIcons(props) {
+export default function abilityIcons(props, style) {
   let spell = "";
   let source = "";
   let alt = "";
@@ -272,12 +272,7 @@ export default function abilityIcons(props) {
   return (
     <a data-wowhead={spell}>
       <img
-        style={{
-          height: 20,
-          width: 20,
-          padding: "0px 5px 0px 5px",
-          verticalAlign: "middle",
-        }}
+        style={{...style}}
         src={source}
         alt={alt}
       />

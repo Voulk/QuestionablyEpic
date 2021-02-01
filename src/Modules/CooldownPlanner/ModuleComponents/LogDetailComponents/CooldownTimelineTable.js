@@ -73,7 +73,7 @@ export default function CooldownTimeline(props) {
             },
             render: (rowData) => (
               <div style={{ color: classColoursJS(rowData.class) }}>
-                {classIcons(rowData.class, 20)}
+                {classIcons(rowData.class, { height: 20, width: 20, padding: "0px 5px 0px 5px", verticalAlign: "middle" })}
                 {rowData.name}
               </div>
             ),
@@ -95,7 +95,12 @@ export default function CooldownTimeline(props) {
             },
             render: (rowData) => (
               <div>
-                {abilityIcons(rowData.guid)}
+                {abilityIcons(rowData.guid, {
+                  height: 20,
+                  width: 20,
+                  padding: "0px 5px 0px 5px",
+                  verticalAlign: "middle",
+                })}
                 {rowData.ability}
               </div>
             ),

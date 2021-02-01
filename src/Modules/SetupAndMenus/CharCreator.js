@@ -151,7 +151,7 @@ export default function AddNewChar(props) {
                 <Select label={t("Select Class")} value={healClass} onChange={handleChangeSpec}>
                   {Object.getOwnPropertyNames(classRaceList).map((key, i) => (
                     <MenuItem key={i} value={key}>
-                      {classIcons(key, 20)}
+                      {classIcons(key, { height: 20, width: 20, padding: "0px 5px 0px 5px", verticalAlign: "middle" })}
                       {t("Classes." + key)}
                     </MenuItem>
                   ))}

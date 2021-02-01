@@ -133,7 +133,7 @@ export default function HealTeam(props) {
       },
       render: (rowData) => (
         <div style={{ color: classColoursJS(rowData.class) }}>
-          {classIcons(rowData.class, 20)}
+          {classIcons(rowData.class, { height: 20, width: 20, padding: "0px 5px 0px 5px", verticalAlign: "middle" })}
           {t("CooldownPlanner.Classes." + rowData.class)}
         </div>
       ),

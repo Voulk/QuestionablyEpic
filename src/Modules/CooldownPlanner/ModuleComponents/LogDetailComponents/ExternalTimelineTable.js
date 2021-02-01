@@ -74,7 +74,7 @@ export default function ExternalTimeline(props) {
             },
             render: (rowData) => (
               <div style={{ color: classColoursJS(rowData.casterClass) }}>
-                {classIcons(rowData.casterClass, 20)}
+                {classIcons(rowData.casterClass, { height: 20, width: 20, padding: "0px 5px 0px 5px", verticalAlign: "middle" })}
                 {rowData.caster}
               </div>
             ),
@@ -101,7 +101,7 @@ export default function ExternalTimeline(props) {
             },
             render: (rowData) => (
               <div style={{ color: classColoursJS(rowData.targetClass) }}>
-                {classIcons(rowData.targetClass, 20)}
+                {classIcons(rowData.targetClass, { height: 20, width: 20, padding: "0px 5px 0px 5px", verticalAlign: "middle" })}
                 {rowData.target}
               </div>
             ),
@@ -120,7 +120,12 @@ export default function ExternalTimeline(props) {
             },
             render: (rowData) => (
               <div>
-                {abilityIcons(rowData.guid)}
+                {abilityIcons(rowData.guid, {
+                  height: 20,
+                  width: 20,
+                  padding: "0px 5px 0px 5px",
+                  verticalAlign: "middle",
+                })}
                 {rowData.ability}
               </div>
             ),

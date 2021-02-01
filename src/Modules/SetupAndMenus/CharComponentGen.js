@@ -257,11 +257,11 @@ export default function CharCards(props) {
     let newPlayer = props.char;
     let weights = {
       intellect: 1,
-      haste: haste > CONSTRAINTS.maxSecondaryWeight? newPlayer.statWeights[contentType].haste : haste,
-      crit: critical > CONSTRAINTS.maxSecondaryWeight? newPlayer.statWeights[contentType].crit : critical,
-      mastery: mastery > CONSTRAINTS.maxSecondaryWeight? newPlayer.statWeights[contentType].mastery : mastery,
-      versatility: versatility > CONSTRAINTS.maxSecondaryWeight? newPlayer.statWeights[contentType].versatility : versatility,
-      leech: leech > CONSTRAINTS.maxTertiaryWeight? newPlayer.statWeights[contentType].leech: leech,
+      haste: haste > CONSTRAINTS.maxSecondaryWeight ? newPlayer.statWeights[contentType].haste : haste,
+      crit: critical > CONSTRAINTS.maxSecondaryWeight ? newPlayer.statWeights[contentType].crit : critical,
+      mastery: mastery > CONSTRAINTS.maxSecondaryWeight ? newPlayer.statWeights[contentType].mastery : mastery,
+      versatility: versatility > CONSTRAINTS.maxSecondaryWeight ? newPlayer.statWeights[contentType].versatility : versatility,
+      leech: leech > CONSTRAINTS.maxTertiaryWeight ? newPlayer.statWeights[contentType].leech : leech,
     };
 
     newPlayer.editChar(contentType, charName, server, region, selectedRace, weights);
@@ -306,7 +306,7 @@ export default function CharCards(props) {
               <Divider />
               <Typography style={{ color: classColoursJS(spec), marginTop: 2 }}>
                 {t(classTranslator(spec))}
-                {classIcons(spec, 18)}
+                {classIcons(spec, { height: 18, width: 18, padding: "0px 5px 0px 5px", verticalAlign: "middle" })}
               </Typography>
             </CardContent>
           </div>
@@ -400,7 +400,7 @@ export default function CharCards(props) {
                     <Select label={t("Class")} value={healClass} onChange={handleChangeSpec}>
                       {Object.getOwnPropertyNames(classRaceList).map((key, i) => (
                         <MenuItem key={i} value={key}>
-                          {classIcons(key, 20)}
+                          {classIcons(key, { height: 20, width: 20, padding: "0px 5px 0px 5px", verticalAlign: "middle" })}
                           {key}
                         </MenuItem>
                       ))}

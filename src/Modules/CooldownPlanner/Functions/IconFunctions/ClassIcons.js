@@ -14,7 +14,7 @@ import WarlockIcon from "../../../../Images/Classes/Warlock/Icons/WarlockIcon.jp
 import MageIcon from "../../../../Images/Classes/Mage/Icons/MageIcon.jpg";
 import HunterIcon from "../../../../Images/Classes/Hunter/Icons/HunterIcon.jpg";
 
-export default function classIcons(props, iconSize) {
+export default function classIcons(props, style) {
   let src = "";
   let alt = "";
 
@@ -149,12 +149,7 @@ export default function classIcons(props, iconSize) {
 
   return (
     <img
-      style={{
-        height: iconSize,
-        width: iconSize,
-        padding: "0px 5px 0px 5px",
-        verticalAlign: "middle",
-      }}
+      style={{...style }}
       src={src}
       alt={alt}
     />
