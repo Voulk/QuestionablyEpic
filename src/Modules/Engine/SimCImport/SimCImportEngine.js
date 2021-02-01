@@ -1,4 +1,4 @@
-import { itemDB, tokenDB } from "../../Player/ItemDB";
+import { itemDB, tokenDB } from "../../../Databases/ItemDB";
 import { bonus_IDs } from "../BonusIDs";
 import { getItemLevel } from "../ItemUtilities";
 import { calcStatsAtLevel, getItemAllocations, scoreItem, getItemEffect, correctCasing, getValidWeaponTypes, getItemSlot, getItemSubclass } from "../ItemUtilities";

@@ -1,4 +1,4 @@
-import { fightDurationCalculator, durationmaker, reduceTimestamps } from "../../CooldownPlanner/Functions/Functions";
+import { fightDuration, durationmaker, reduceTimestamps } from "../../CooldownPlanner/Functions/Functions";
 import moment from "moment";
 import { classColoursERT } from "../../CooldownPlanner/Functions/ClassColourFunctions";
 import i18n from "i18next";
@@ -32,7 +32,7 @@ export default function chartCooldownUpdater(tableData) {
           key.ability,
           key.timestamp,
           key.abilityname,
-          moment(fightDurationCalculator(this.state.currentEndTime, this.state.currentStartTime)).startOf("second").valueOf(),
+          moment(fightDuration(this.state.currentEndTime, this.state.currentStartTime)).startOf("second").valueOf(),
         ),
       ),
     );

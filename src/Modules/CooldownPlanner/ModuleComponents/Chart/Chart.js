@@ -24,10 +24,10 @@ class Chart extends Component {
     };
   }
 
-  drawAreas() {
+  drawAreas(cooldownsToUse) {
     // Provided prop array of abilities and guids are mapped for datakeys then made into a unique array of ability names.
     let abilities = Array.from(new Set(this.props.abilityList.map((key) => key.ability)));
-    let cooldowns = this.props.cooldown;
+    let cooldowns = cooldownsToUse;
     let dataSet = abilities;
     let dataset2 = cooldowns;
     let areaArr = [];
@@ -120,6 +120,21 @@ class Chart extends Component {
     );
   };
 
+  data2Show = (dataToShow, cooldownsToShow) => {
+    if (dataToShow === true && cooldownsToShow === true) {
+      return this.props.unmitigated;
+    }
+    if (dataToShow === true && cooldownsToShow === false) {
+      return this.props.unmitigatedCooldowns;
+    }
+    if (dataToShow === false && cooldownsToShow === true) {
+      return this.props.mitigated;
+    }
+    if (dataToShow === false && cooldownsToShow === false) {
+      return this.props.mitigatedCooldowns;
+    }
+  };
+
   render() {
     // Shortens long numbers i.e 1000000 will be 1M
     const DataFormater = (number) => {
@@ -138,7 +153,7 @@ class Chart extends Component {
     return (
       <Paper style={{ padding: 10 }} elevation={0}>
         <ResponsiveContainer className="ResponsiveContainer" aspect={4 / 0.8}>
-          <AreaChart data={this.props.dataToShow === true ? this.props.unmitigated : this.props.mitigated} margin={{ left: 22, right: -44 }} width="100%">
+          <AreaChart data={this.data2Show(this.props.dataToShow, this.props.cooldownsToShow )} margin={{ left: 22, right: -44 }} width="100%">
             <XAxis
               dataKey="timestamp"
               scale="time"
@@ -185,7 +200,7 @@ class Chart extends Component {
               }}
               labelFormatter={(timeStr) => moment(timeStr).format("mm:ss")}
             />
-            {this.drawAreas()}
+            {this.drawAreas(this.props.cooldownsToShow === true ? this.props.cooldown : this.props.customCooldowns)}
           </AreaChart>
         </ResponsiveContainer>
       </Paper>

@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
 import { Tabs, Tab, Box, AppBar, Grid, Paper, Typography } from "@material-ui/core";
-import { soulbindDB, soulbindConnectors } from "../SoulbindDB";
+import { soulbindDB, soulbindConnectors } from "../../../Databases/SoulbindDB";
 import SoulbindNode from "./SoulbindNode";
 import ConduitObject from "./ConduitObject";
 import { getSoulbindFormula } from "../../Engine/EffectFormulas/Generic/GenericSoulbindFormulas";
@@ -243,7 +243,6 @@ export default function CovenantExploration(props) {
                 props.contentType,
                 soulbindState,
                 activateSoulbind,
-
                 setConduitInSlot,
                 updateConduitLevel,
               )}
@@ -463,7 +462,6 @@ function buildSoulbind(soulbindName, player, contentType, soulbindState, activat
                 <Paper
                   style={{
                     padding: 4,
-                    // whiteSpace: "nowrap",
                     textAlign: "center",
                   }}
                 >

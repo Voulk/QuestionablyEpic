@@ -7,12 +7,12 @@
       "AddChar": "Charakter hinzufügen",
       "CharName": "Charaktername",
       "SavedLogs": {
-        "Header": "Detailed Breakdown Coming SoonDE",
-        "Report": "ReportDE",
-        "Boss": "BossDE",
-        "FightLength": "Fight LengthDE",
-        "HPS": "HPSDE",
-        "RawHPS": "Raw HPSDE"
+        "Header": "Detailed Breakdown Coming Soon",
+        "Report": "Report",
+        "Boss": "Boss",
+        "FightLength": "Fight Length",
+        "HPS": "HPS",
+        "RawHPS": "Raw HPS"
       }
     },
 
@@ -45,6 +45,28 @@
     "Avoidance": "Avoidance",
     "Source": "Quelle",
     "Default": "DefaultDE",
+    "Remove": "RemoveDE",
+    "HPS": "HPS",
+    "Casts": "CastsDE",
+    "Healing": "HealingDE",
+    "Overhealing":" OverhealingDE",
+    "Account": "AccountDE",
+    "Email": "Email",
+    "Battletag": "Battletag",
+
+    "Changelog": {
+      "Header": "ChangelogDE",
+      "Version": "VersionDE",
+      "Update": "UpdateDE",
+      "LastUpdated": "Last UpdatedDE",
+      "Date": "DateDE"
+    },
+
+    "PatreonTiers":{
+      "RollsRoyce": "Rolls RoyceDE",
+      "Diamond": "DiamondDE",
+      "Gold": "GoldDE"
+    },
 
     "Classes": {
       "undefined": "",
@@ -130,6 +152,8 @@
         "RestorationDruidComment": "Restoration Druid Class Cooldowns",
         "740": "TranquilityDE",
         "33891": "Incarnation: Tree of LifeDE",
+        "323764": "Konvokation der Geister",
+        "197721": "Gedeihen",
         "HolyPriestComment": "Holy Priest Class Cooldowns",
         "265202": "Holy Word: SalvationDE",
         "64843": "Divine HymnDE",
@@ -193,8 +217,11 @@
         "325384": "Change of HeartDE",
         "CouncilofBloodComment": "Council of Blood Abilities",
         "334909": "Oppressive AtmosphereDE",
+        "347350": "Tanzfieber",
         "SludgefistComment": "Sludgefist Abilities",
-        "332687": "Colossal RoarDE",
+        "332687": "Kolossales Brüllen",
+        "332969": "Zerstörerischer Einschlag",
+        "340803": "Seismische Verschiebung",
         "StoneLegionGeneralsComment": "Stone Legion Generals Ability",
         "339728": "Pulverizing MeteorDE",
         "DenathriusComment": "Denathrius Abilities",
@@ -437,7 +464,7 @@
       "124682": "Einhüllender Nebel",
       "116670": "Beleben",
       "115310": "Belebung",
-      "117907": "Meisterschaft: Nebelschwall",
+      "191894": "Meisterschaft: Nebelschwall",
       "343655": "Einhüllender Atem",
       "191837": "Essenzborn",
       "115151": "Erneuernder Nebel",

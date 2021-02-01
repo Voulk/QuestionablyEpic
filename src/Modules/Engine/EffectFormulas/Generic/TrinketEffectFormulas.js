@@ -13,7 +13,7 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel) {
 
   if (activeTrinket === undefined) {
     console.log("no trinket found");
-    return bonus_stats; // handle error shit on the calling side, or here i guess
+    return bonus_stats; // handle error stuff on the calling side, or here i guess
   } else if (effectName === "Lingering Sunmote") {
     // Trinket Effect: Creates a patch of light at target location for 12s. Allies within it split an absorb for X every 4 seconds.
     // Absorbtion is increased by 15% per ally in the light, up to 60%.

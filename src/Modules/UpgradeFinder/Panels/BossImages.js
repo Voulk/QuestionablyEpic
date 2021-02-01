@@ -1,22 +1,22 @@
 import React from "react";
 // Castle Nathria
-import ArtificerHeader from "../../Images/Bosses/CastleNathria/ArtificerXymox/Artificer.png";
-import CouncilHeader from "../../Images/Bosses/CastleNathria/TheCouncilOfBlood/Council.png";
-import HungeringDestroyerHeader from "../../Images/Bosses/CastleNathria/HungeringDestroyer/Hungering.png";
-import HuntsmanAltimorHeader from "../../Images/Bosses/CastleNathria/HuntsmanAltimor/HuntsmanAltimor.png";
-import SunKingsSalvation from "../../Images/Bosses/CastleNathria/SunKingsSalvation/SunKing.png";
-import LadyInervaDarkveinHeader from "../../Images/Bosses/CastleNathria/LadyInervaDarkvein/Darkvein.png";
-import ShriekwingHeader from "../../Images/Bosses/CastleNathria/Shriekwing/Shriekwing.png";
-import SireDenathriusHeader from "../../Images/Bosses/CastleNathria/SireDenathrius/Denathrius.png";
-import SludgefistHeader from "../../Images/Bosses/CastleNathria/Sludgefist/Sludgefist.png";
-import StonebornGeneralsHeader from "../../Images/Bosses/CastleNathria/StoneLegionGenerals/StoneLegion.png";
-import BoeHeader from "../../Images/Bosses/BOE.png";
+import ArtificerHeader from "../../../Images/Bosses/CastleNathria/ArtificerXymox/Artificer.png";
+import CouncilHeader from "../../../Images/Bosses/CastleNathria/TheCouncilOfBlood/Council.png";
+import HungeringDestroyerHeader from "../../../Images/Bosses/CastleNathria/HungeringDestroyer/Hungering.png";
+import HuntsmanAltimorHeader from "../../../Images/Bosses/CastleNathria/HuntsmanAltimor/HuntsmanAltimor.png";
+import SunKingsSalvation from "../../../Images/Bosses/CastleNathria/SunKingsSalvation/SunKing.png";
+import LadyInervaDarkveinHeader from "../../../Images/Bosses/CastleNathria/LadyInervaDarkvein/Darkvein.png";
+import ShriekwingHeader from "../../../Images/Bosses/CastleNathria/Shriekwing/Shriekwing.png";
+import SireDenathriusHeader from "../../../Images/Bosses/CastleNathria/SireDenathrius/Denathrius.png";
+import SludgefistHeader from "../../../Images/Bosses/CastleNathria/Sludgefist/Sludgefist.png";
+import StonebornGeneralsHeader from "../../../Images/Bosses/CastleNathria/StoneLegionGenerals/StoneLegion.png";
+import BoeHeader from "../../../Images/Bosses/BOE.png";
 
 // World Bosses
-import ValinorHeader from "../../Images/Bosses/WorldBosses/ValinorUGF.png";
-import MortanisHeader from "../../Images/Bosses/WorldBosses/MortanisUGF.png";
-import OranomonosHeader from "../../Images/Bosses/WorldBosses/OranomonosUGF.png";
-import NurgashHeader from "../../Images/Bosses/WorldBosses/NurgashUGF.png";
+import ValinorHeader from "../../../Images/Bosses/WorldBosses/ValinorUGF.png";
+import MortanisHeader from "../../../Images/Bosses/WorldBosses/MortanisUGF.png";
+import OranomonosHeader from "../../../Images/Bosses/WorldBosses/OranomonosUGF.png";
+import NurgashHeader from "../../../Images/Bosses/WorldBosses/NurgashUGF.png";
 
 export default function UpgradeFinderBossImages(props, style) {
   let source = "";

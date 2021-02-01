@@ -4,12 +4,12 @@ import { makeStyles } from "@material-ui/core/styles";
 import { Tabs, Tab, Box, AppBar, Typography, Grid } from "@material-ui/core";
 import { useTranslation } from "react-i18next";
 import { getDifferentialByID } from "../Engine/ItemUtilities";
-import MythicPlusGearContainer from "./PanelMythicPlus";
-import PvPGearContainer from "./PanelPvP";
-import RaidGearContainer from "./PanelRaid";
-import WorldBossGearContainer from "./PanelWorldBosses";
+import MythicPlusGearContainer from "./Panels/PanelMythicPlus";
+import PvPGearContainer from "./Panels/PanelPvP";
+import RaidGearContainer from "./Panels/PanelRaid";
+import WorldBossGearContainer from "./Panels/PanelWorldBosses";
 import ReactGA from "react-ga";
-import "./ItemUpgrade.css";
+import "./Panels/ItemUpgrade.css";
 
 const useStyles = makeStyles((theme) => ({
   root: {

@@ -2,7 +2,7 @@ const IDVIVIFY = 116670;
 const IDSOOTHINGBREATH = 343737;
 const IDREVIVAL = 115310;
 const IDFORTIFYINGBREW = 115203;
-const IDGUSTOFMISTS = 117907;
+const IDGUSTOFMISTS = 191894;
 const IDRENEWINGMIST = 119611;
 const IDENVELOPINGMIST = 124682;
 const IDESSENCEFONT = 191840;
@@ -21,9 +21,7 @@ export const getMonkLegendary = (effectName, player, contentType) => {
     const multiplier = 2.5;
     const buffUptime = (12 * essenceFontCPM) / 60; // While the buff lasts 15s, the Essence Font channel lasts 3.
     const expectedOverhealing = 0.3;
-
-    console.log("EF: " + essenceFontCPM);
-
+    
     bonus_stats.hps = buffUptime * multiplier * dpsDuringDuration * (1 - expectedOverhealing);
   } else if (name === "Clouded Focus") {
     // Do Math

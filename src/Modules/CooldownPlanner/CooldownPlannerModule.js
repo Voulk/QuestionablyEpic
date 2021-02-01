@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import { Typography, Collapse, CircularProgress, Grid, Accordion, AccordionSummary, AccordionDetails, Dialog, Divider, Paper, Grow } from "@material-ui/core";
-import LogLinkInput from "../CooldownPlanner/ModuleComponents/LogFightSelection/LogLinkInput";
+import LogLinkInput from "../LogImport/LogLinkInput";
 import Chart from "./ModuleComponents/Chart/Chart";
 import Example from "../CooldownPlanner/ModuleComponents/LogDetailComponents/DTPSBarChart";
-import FightSelectorButton from "../CooldownPlanner/ModuleComponents/LogFightSelection/FightSelectorButton";
+import FightSelectorButton from "../LogImport/FightSelectorButton";
 import LoadingOverlay from "react-loading-overlay";
 import CooldownPlanner from "../CooldownPlanner/ModuleComponents/CooldownPlanner.js";
 import CooldownTimeline from "../CooldownPlanner/ModuleComponents/LogDetailComponents/CooldownTimelineTable";
-import { fightDurationCalculator, warcraftLogReportID, logDifficulty } from "../CooldownPlanner/Functions/Functions";
+import { fightDuration, warcraftLogReportID, logDifficulty } from "../CooldownPlanner/Functions/Functions";
 import bossHeaders from "../CooldownPlanner/Functions/IconFunctions/BossHeaderIcons";
 import ERTTable from "../CooldownPlanner/ModuleComponents/ERTTable";
 import SwitchLabels from "./BasicComponents/Switch";
@@ -27,7 +27,7 @@ class HolyDiver extends Component {
     // This means these functions can be passed as props to other components and they will return here rather than in the component they are sent to.
     this.reportidHandler = this.reportidHandler.bind(this);
     this.damageTableShow = this.damageTableShow.bind(this);
-    this.healTableShow = this.healTableShow.bind(this);
+    this.customCooldownsOnChart = this.customCooldownsOnChart.bind(this);
     this.handler = this.handler.bind(this);
     this.updatechartdataNew = updatechartdata.bind(this);
     this.chartCooldownUpdater = chartCooldownUpdater.bind(this);
@@ -65,7 +65,7 @@ class HolyDiver extends Component {
       currentStartTime: 0,
       damageTableShow: false,
       logDetailsShow: false,
-      healTableShow: false,
+      customCooldownsOnChart: false,
       switchPanelShow: true,
       ertListTimeNoIcons: [],
       ertListBossAbility: [],
@@ -109,7 +109,7 @@ class HolyDiver extends Component {
       logDetailsShow: true,
       switchPanelShow: false,
       damageTableShow: true,
-      healTableShow: true,
+      customCooldownsOnChart: true,
       currentFighttime: info[3],
       killWipe: info[4],
       currentBossID: info[5],
@@ -170,8 +170,8 @@ class HolyDiver extends Component {
   };
 
   // This Function sets the state on whether the User Input Cooldown Chart is Shown.
-  healTableShow = (event) => {
-    this.setState({ healTableShow: event });
+  customCooldownsOnChart = (event) => {
+    this.setState({ customCooldownsOnChart: event });
   };
 
   // This funtion sets the state for Unmitigated/Mitigated Damage shown.
@@ -334,7 +334,7 @@ class HolyDiver extends Component {
               >
                 <SwitchLabels disabled={this.state.switchPanelShow} check={this.damageTableShow} label={"Log Chart"} />
                 <SwitchLabels disabled={this.state.switchPanelShow} check={this.logDetailsShow} label={"Toggle Log Details"} />
-                <SwitchLabels disabled={this.state.switchPanelShow} check={this.healTableShow} label={"Custom CD Chart"} />
+                <SwitchLabels disabled={this.state.switchPanelShow} check={this.customCooldownsOnChart} label={"Show Custom Coolowns"} />
                 <SwitchLabels disabled={this.state.switchPanelShow} check={this.changeDataSet} label={this.state.chartData === true ? "Unmitigated" : "Mitigated"} />
               </Paper>
             </Grid>
@@ -426,10 +426,14 @@ class HolyDiver extends Component {
                       dataToShow={this.state.chartData}
                       mitigated={this.state.mitigatedChartData}
                       unmitigated={this.state.unmitigatedChartData}
+                      mitigatedCooldowns={this.state.mitigatedChartDataNoCooldowns}
+                      unmitigatedCooldowns={this.state.unmitigatedChartDataNoCooldowns}
                       abilityList={this.state.abilityList}
                       legendata={this.state.legenddata}
+                      cooldownsToShow={this.state.customCooldownsOnChart}
                       cooldown={this.state.cooldownlist}
-                      endtime={fightDurationCalculator(this.state.timeend, this.state.time)}
+                      endtime={fightDuration(this.state.timeend, this.state.time)}
+                      customCooldowns={this.state.cooldownlistcustom2}
                       showcds={true}
                     />
                   </LoadingOverlay>
@@ -475,28 +479,6 @@ class HolyDiver extends Component {
                   </Grid>
                 </Grid>
               </Collapse>
-            </Grid>
-
-            {/*
-                Grid Container for the Log Chart (Damage + User Entered Cooldowns from the Cooldown Planner).
-                The function in the style removes padding from showing while Collapsed
-            */}
-            <Grid item container direction="row" justify="flex-start" alignItems="flex-start" spacing={1} style={{ display: this.state.healTableShow ? "block" : "none" }}>
-              <Grid item xs={12} sm={12} md={12} lg={12} xl={12} padding={1}>
-                <Collapse in={this.state.healTableShow}>
-                  <LoadingOverlay active={spinnershow} spinner={<CircularProgress color="secondary" />}>
-                    <Chart
-                      dataToShow={this.state.chartData}
-                      mitigated={this.state.mitigatedChartDataNoCooldowns}
-                      unmitigated={this.state.unmitigatedChartDataNoCooldowns}
-                      abilityList={this.state.abilityList}
-                      cooldown={this.state.cooldownlistcustom2}
-                      endtime={fightDurationCalculator(this.state.timeend, this.state.time)}
-                      showcds={true}
-                    />
-                  </LoadingOverlay>
-                </Collapse>
-              </Grid>
             </Grid>
 
             <Grid item xs={12} style={{ height: 350 }} />

@@ -45,6 +45,28 @@
     "Avoidance": "Avoidance",
     "Source": "来源",
     "Default": "DefaultCH",
+    "Remove": "RemoveCH",
+    "HPS": "HPS",
+    "Casts": "CastsCH",
+    "Healing": "HealingCH",
+    "Overhealing":" OverhealingCH",
+    "Account": "AccountCH",
+    "Email": "Email",
+    "Battletag": "Battletag",
+
+    "Changelog": {
+      "Header": "ChangelogCH",
+      "Version": "VersionCH",
+      "Update": "UpdateCH",
+      "LastUpdated": "Last UpdatedCH",
+      "Date": "DateCH"
+    },
+
+    "PatreonTiers":{
+      "RollsRoyce": "Rolls RoyceCH",
+      "Diamond": "DiamondCH",
+      "Gold": "GoldCH"
+    },
 
     "Classes": {
       "undefined": "",
@@ -131,6 +153,8 @@
         "RestorationDruidComment": "Restoration Druid Class Cooldowns",
         "740": "宁静",
         "33891": "化身：生命之树",
+        "323764": "万灵之召",
+        "197721": "繁盛",
         "HolyPriestComment": "Holy Priest Class Cooldowns",
         "265202": "圣言术：赎",
         "64843": "神圣赞美诗",
@@ -194,8 +218,11 @@
         "325384": "变心",
         "CouncilofBloodComment": "Council of Blood Abilities",
         "334909": "压制气场",
+        "347350": "舞力全开",
         "SludgefistComment": "Sludgefist Abilities",
         "332687": "震天怒吼",
+        "332969": "毁灭冲击",
+        "340803": "地壳位移",
         "StoneLegionGeneralsComment": "Stone Legion Generals Ability",
         "339728": "粉碎流星",
         "DenathriusComment": "Denathrius Abilities",
@@ -431,7 +458,7 @@
       "124682": "氤氲之雾",
       "116670": "活血术",
       "115310": "还魂术",
-      "117907": "精通：迷雾之风",
+      "191894": "精通：迷雾之风",
       "343655": "氤氲之息",
       "191837": "精华之泉",
       "115151": "复苏之雾",

@@ -4,7 +4,7 @@ import "../Covenants.css";
 import { makeStyles } from "@material-ui/core/styles";
 import { Card, CardActionArea, CardContent, Typography, Grid, Divider } from "@material-ui/core";
 import { getItemIcon } from "../../Engine/ItemUtilities";
-import { conduitDB } from "../../CooldownPlanner/Data/Data";
+import { conduitDB } from "../../../Databases/ConduitDB";
 
 const useStyles = makeStyles({
   root: { padding: 0, height: 26 },

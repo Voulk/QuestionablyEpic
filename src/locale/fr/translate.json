@@ -45,6 +45,28 @@
     "Avoidance": "Avoidance",
     "Source": "Source",
     "Default": "DefaultFR",
+    "Remove": "RemoveFR",
+    "HPS": "HPS",
+    "Casts": "CastsFR",
+    "Healing": "HealingFR",
+    "Overhealing":" OverhealingFR",
+    "Account": "AccountFR",
+    "Email": "Email",
+    "Battletag": "Battletag",
+
+    "Changelog": {
+      "Header": "ChangelogFR",
+      "Version": "VersionFR",
+      "Update": "UpdateFR",
+      "LastUpdated": "Last UpdatedFR",
+      "Date": "DateFR"
+    },
+
+    "PatreonTiers":{
+      "RollsRoyce": "Rolls RoyceFR",
+      "Diamond": "DiamondFR",
+      "Gold": "GoldFR"
+    },
 
     "Classes": {
       "undefined": "",
@@ -130,6 +152,8 @@
         "RestorationDruidComment": "Restoration Druid Class Cooldowns",
         "740": "Tranquillité",
         "33891": "Incarnation : Arbre de vie",
+        "337433": "Convoquer les esprits",
+        "197721": "Epanouissement",
         "HolyPriestComment": "Holy Priest Class Cooldowns",
         "265202": "Mot sacré : Salut",
         "64843": "Hymne divin",
@@ -193,8 +217,11 @@
         "325384": "Volte-face",
         "CouncilofBloodComment": "Council of Blood Abilities",
         "334909": "Atmosphère oppressante",
+        "347350": "Fièvre dansante",
         "SludgefistComment": "Sludgefist Abilities",
         "332687": "Rugissement colossal",
+        "332969": "Impact destructeur",
+        "340803": "Transfert sismique",
         "StoneLegionGeneralsComment": "Stone Legion Generals Ability",
         "339728": "Météore destructeur",
         "DenathriusComment": "Denathrius Abilities",
@@ -430,7 +457,7 @@
       "124682": "Brume enveloppante",
       "116670": "Vivifier",
       "115310": "Regain",
-      "117907": "Maîtrise : Bourrasque de brume",
+      "191894": "Maîtrise : Bourrasque de brume",
       "343655": "Souffle enveloppant",
       "191837": "Réceptacle d’essence",
       "115151": "Brume de rénovation",

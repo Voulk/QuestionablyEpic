@@ -241,7 +241,7 @@ export default function SoulbindNode(props) {
         >
           {trait.slotted_id > 0 ? (
             <MenuItem key={-1} dense={true} style={{ padding: "5px 10px" }} onClick={() => setConduit(-1)}>
-              Remove
+              {t("Remove")}
             </MenuItem>
           ) : (
             ""

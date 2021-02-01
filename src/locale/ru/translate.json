@@ -45,6 +45,28 @@
     "Avoidance": "Avoidance",
     "Source": "Источник",
     "Default": "DefaultRU",
+    "Remove": "RemoveRU",
+    "HPS": "HPS",
+    "Casts": "CastsRU",
+    "Healing": "HealingRU",
+    "Overhealing":" OverhealingRU",
+    "Account": "AccountRU",
+    "Email": "Email",
+    "Battletag": "Battletag",
+
+    "Changelog": {
+      "Header": "ChangelogRU",
+      "Version": "VersionRU",
+      "Update": "UpdateRU",
+      "LastUpdated": "Last UpdatedRU",
+      "Date": "DateRU"
+    },
+
+    "PatreonTiers":{
+      "RollsRoyce": "Rolls RoyceRU",
+      "Diamond": "DiamondRU",
+      "Gold": "GoldRU"
+    },
 
     "Classes": {
       "undefined": "",
@@ -130,6 +152,8 @@
         "RestorationDruidComment": "Restoration Druid Class Cooldowns",
         "740": "Спокойствие",
         "33891": "Воплощение: древо жизни",
+        "323764": "Созыв духов",
+        "197721": "Расцвет",
         "HolyPriestComment": "Holy Priest Class Cooldowns",
         "265202": "Слово Света: Спасение",
         "64843": "Божественный гимн",
@@ -193,8 +217,11 @@
         "325384": "Изменение намерений",
         "CouncilofBloodComment": "Council of Blood Abilities",
         "334909": "Гнетущая атмосфера",
+        "347350": "Танцевальная чума",
         "SludgefistComment": "Sludgefist Abilities",
         "332687": "Громогласный рев",
+        "332969": "Разрушительный удар",
+        "340803": "Сейсмический сдвиг",
         "StoneLegionGeneralsComment": "Stone Legion Generals Ability",
         "339728": "Измельчающий метеорит",
         "DenathriusComment": "Denathrius Abilities",
@@ -441,7 +468,7 @@
       "124682": "Окутывающий туман",
       "116670": "Оживить",
       "115310": "Восстановление сил",
-      "117907": "Искусность: туманный поток",
+      "191894": "Искусность: туманный поток",
       "343655": "Окутывающее дыхание",
       "191837": "Купель сущности",
       "115151": "Заживляющий туман",

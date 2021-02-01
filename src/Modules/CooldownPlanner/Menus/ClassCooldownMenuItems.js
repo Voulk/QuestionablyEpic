@@ -17,6 +17,10 @@ import RallyingCryIcon from "../../../Images/Classes/Warrior/RallyingCryIcon.jpg
 import SpiritShell from "../../../Images/Classes/Priest/Specialisation/Discipline/Icons/Talents/SpiritShellIcon.jpg";
 import AntiMagicZoneIcon from "../../../Images/Classes/DeathKnight/AntiMagicZone.jpg";
 import VampiricEmbraceIcon from "../../../Images/Classes/Priest/Specialisation/Shadow/VampiricEmbrace.jpg";
+import ConvokeTheSpiritsIcon from "../../../Images/Classes/Druid/CovenantAbilities/ConvokeTheSpirits.jpg";
+import FlourishIcon from "../../../Images/Classes/Druid/Specialisation/Restoration/Icons/Talents/FlourishIcon.jpg";
+
+// TODO this should be converted to a map at some point
 
 export default function ClassCooldownMenuItems(props) {
   // Paladin Cooldowns
@@ -88,6 +92,38 @@ export default function ClassCooldownMenuItems(props) {
           />
         </a>
         <Translation>{(t) => t("CooldownPlanner.ClassAbilities.33891")}</Translation>
+      </MenuItem>,
+      <Divider key={"divider2"} />,
+      <MenuItem value={323764} key={100}>
+        <a data-wowhead="spell=323764">
+          <img
+            style={{
+              height: 20,
+              width: 20,
+              padding: "0px 5px 0px 5px",
+              verticalAlign: "middle",
+            }}
+            src={ConvokeTheSpiritsIcon}
+            alt="Convoke The Spirits"
+          />
+        </a>
+        <Translation>{(t) => t("CooldownPlanner.ClassAbilities.323764")}</Translation>
+      </MenuItem>,
+      <Divider key={"divider2"} />,
+      <MenuItem value={197721} key={100}>
+        <a data-wowhead="spell=197721">
+          <img
+            style={{
+              height: 20,
+              width: 20,
+              padding: "0px 5px 0px 5px",
+              verticalAlign: "middle",
+            }}
+            src={FlourishIcon}
+            alt="Flourish"
+          />
+        </a>
+        <Translation>{(t) => t("CooldownPlanner.ClassAbilities.197721")}</Translation>
       </MenuItem>,
     ];
   }
