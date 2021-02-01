@@ -936,7 +936,7 @@ export default function CooldownPlanner(props) {
     {
       // Render only, should the user when the cooldown will be available again to be used.
       title: t("CooldownPlanner.TableLabels.OffCooldownLabel"),
-      // width: "1%",
+      width: "1%",
       cellStyle: {
         whiteSpace: "nowrap",
         borderRight: "2px solid #c8b054",
@@ -956,7 +956,7 @@ export default function CooldownPlanner(props) {
       // Under Input Notes for the cooldown. I.e "Use just before this ability" or something else they wish to note.
       title: t("CooldownPlanner.TableLabels.NotesLabel"),
       field: "notes",
-      width: "20%",
+      // width: "20%",
       cellStyle: {
         whiteSpace: "nowrap",
         borderRight: "1px solid #c8b054",
