@@ -375,14 +375,29 @@ function getHighestWeight(player, contentType) {
 
 export function applyDiminishingReturns(stats) {
   console.log("Stats Pre-DR" + JSON.stringify(stats));
-  const DRBreakpoints = STATDIMINISHINGRETURNS.CRIT;
-
-  const baseStat = stats.crit;
-  for (var j = 0; j < DRBreakpoints.length; j++) {
-    stats.crit -= Math.max((baseStat - DRBreakpoints[j]) * 0.1, 0);
-  }
   
-  console.log("Stats Post-DR", + JSON.stringify(stats))
+  
+
+  for (const [key, value] of Object.entries(stats)) {
+
+    const DRBreakpoints = STATDIMINISHINGRETURNS[key.toUpperCase()];
+
+    const baseStat = stats[key];
+    for (var j = 0; j < DRBreakpoints.length; j++) {
+      stats[key] -= Math.max((baseStat - DRBreakpoints[j]) * 0.1, 0);
+    }
+
+    //console.log(JSON.stringify(DRBreakpoints));
+    
+  }
+    
+    //console.log("Stat: " + stats[i])
+
+  /*
+
+  */
+  console.log("Stats Post-DR" + JSON.stringify(stats))
+  //console.log("Stats Post-DR", + JSON.stringify(stats))
 
   return stats;
 
