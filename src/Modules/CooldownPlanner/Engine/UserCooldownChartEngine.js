@@ -37,6 +37,11 @@ export default function chartCooldownUpdater(tableData) {
     .map((key) => {
       pushedArray.push(key.name3 + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown3));
     });
+  tableData
+    .filter((key) => key.Cooldown4 !== undefined)
+    .map((key) => {
+      pushedArray.push(key.name4 + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown4));
+    });
   // Map the data from the Cooldown Planner into a unique list of Healer Names + Cooldowns for dataKeys for the Chart.
   let uniqueCooldownListArray = Array.from(new Set(pushedArray));
   // Map the Data from the Cooldown Planner and create a new array of objects. These are then mapped using the durationmaker function to create the data for the length of the cooldown and pushed into a new array customCooldownDurations.
@@ -112,6 +117,24 @@ export default function chartCooldownUpdater(tableData) {
       ),
     );
 
+  tableData
+    .filter((key) => key.Cooldown4 !== undefined)
+    .map((key) => ({
+      ability: key.Cooldown4,
+      timestamp: moment.duration("00:" + key.time).asMilliseconds(),
+      abilityname: key.name4 + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown4),
+    }))
+    .map((key) =>
+      customCooldownDurations.push(
+        durationmaker(
+          key.ability,
+          key.timestamp,
+          key.abilityname,
+          moment(fightDurationCalculator(this.state.currentEndTime, this.state.currentStartTime)).startOf("second").valueOf(),
+        ),
+      ),
+    );
+
   let customCooldownDurationFlatArray = customCooldownDurations.flat();
 
   // Join the Cooldown Durates with the Damage Taken Data (The original data before any data from the table was entered.
@@ -140,7 +163,8 @@ export default function chartCooldownUpdater(tableData) {
         " - " + classColoursERT(key.class) + key.name + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown) + 
         ", " + classColoursERT(key.class1) + key.name1 + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown1) +
         ", " + classColoursERT(key.class2) + key.name2 + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown2) +
-        ", " + classColoursERT(key.class3) + key.name2 + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown3),
+        ", " + classColoursERT(key.class3) + key.name3 + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown3) +
+        ", " + classColoursERT(key.class4) + key.name4 + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown4),
       // This is for Sorting by Time
       time: key.time,
     }));
@@ -174,7 +198,12 @@ export default function chartCooldownUpdater(tableData) {
         key.name3 +
         "|r" +
         " - " +
-        i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown3),
+        i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown3) +
+        classColoursERT(key.class4) +
+        key.name4 +
+        "|r" +
+        " - " +
+        i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown4),
       // This is for Sorting by Time
       time: key.time,
     }));
@@ -189,45 +218,55 @@ export default function chartCooldownUpdater(tableData) {
         "{spell:" +
         key.bossAbility +
         "}" +
-        " - " +
+        " " +
         classColoursERT(key.class) +
         key.name +
         "|r" +
-        " - " +
+        " " +
         i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown) +
         " " +
         "{spell:" +
         key.Cooldown +
         "}" +
-        ", " +
+        " " +
         classColoursERT(key.class1) +
         key.name1 +
         "|r" +
-        " - " +
+        " " +
         i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown1) +
         " " +
         "{spell:" +
         key.Cooldown1 +
         "}" +
-        ", " +
+        " " +
         classColoursERT(key.class2) +
         key.name2 +
         "|r" +
-        " - " +
+        " " +
         i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown2) +
         " " +
         "{spell:" +
         key.Cooldown2 +
         "}" +
-        ", " +
+        " " +
         classColoursERT(key.class3) +
         key.name3 +
         "|r" +
-        " - " +
+        " " +
         i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown3) +
         " " +
         "{spell:" +
         key.Cooldown3 +
+        "}" +
+        " " +
+        classColoursERT(key.class4) +
+        key.name4 +
+        "|r" +
+        " " +
+        i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown4) +
+        " " +
+        "{spell:" +
+        key.Cooldown4 +
         "}",
       time: key.time,
     }));
@@ -240,45 +279,55 @@ export default function chartCooldownUpdater(tableData) {
         "{time:" +
         key.time +
         "}" +
-        " - " +
+        " " +
         classColoursERT(key.class) +
         key.name +
         "|r" +
-        " - " +
+        " " +
         i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown) +
         " " +
         "{spell:" +
         key.Cooldown +
         "}" +
-        ", " +
+        " " +
         classColoursERT(key.class1) +
         key.name1 +
         "|r" +
-        " - " +
+        " " +
         i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown1) +
         " " +
         "{spell:" +
         key.Cooldown1 +
         "}" +
-        ", " +
+        " " +
         classColoursERT(key.class2) +
         key.name2 +
         "|r" +
-        " - " +
+        " " +
         i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown2) +
         " " +
         "{spell:" +
         key.Cooldown2 +
         "}" +
-        ", " +
+        " " +
         classColoursERT(key.class3) +
-        key.name2 +
+        key.name3 +
         "|r" +
-        " - " +
+        " " +
         i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown3) +
         " " +
         "{spell:" +
         key.Cooldown3 +
+        "}" +
+        " " +
+        classColoursERT(key.class4) +
+        key.name4 +
+        "|r" +
+        " " +
+        i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown4) +
+        " " +
+        "{spell:" +
+        key.Cooldown4 +
         "}",
       time: key.time,
     }));

@@ -11,6 +11,10 @@ export function classColoursERT(props) {
     return "|cfffefefe";
   }
 
+  if (props === "ShadowPriest") {
+    return "|cfffefefe";
+  }
+
   if (props === "DisciplinePriest") {
     return "|cfffefefe";
   }

@@ -266,7 +266,7 @@ export default function abilityIcons(props, style) {
     alt = "Blessing of Sacrifice";
   }
   if (props === "" || props === undefined) {
-    return ""
+    return null
   }
 
   return (

@@ -264,7 +264,7 @@ export default function CooldownPlanner(props) {
                   })
                   .map((obj) => obj.class)
                   .toString();
-                data.Cooldown = "NoCD";
+                data.Cooldown = undefined;
                 props.onRowDataChange(data);
               }}
               MenuProps={menuStyle}
@@ -448,7 +448,7 @@ export default function CooldownPlanner(props) {
                   })
                   .map((obj) => obj.class)
                   .toString();
-                data.Cooldown1 = "NoCD";
+                data.Cooldown1 = undefined;
                 props.onRowDataChange(data);
               }}
               MenuProps={menuStyle}
@@ -462,6 +462,10 @@ export default function CooldownPlanner(props) {
                   </MenuItem>
                 ))
                 .map((key) => [key, <Divider />])}
+              ,
+              <MenuItem key={"remove"} value={""}>
+                Remove
+              </MenuItem>
             </Select>
           </FormControl>
         </ThemeProvider>
@@ -629,7 +633,7 @@ export default function CooldownPlanner(props) {
                   })
                   .map((obj) => obj.class)
                   .toString();
-                data.Cooldown2 = "NoCD";
+                data.Cooldown2 = undefined;
                 props.onRowDataChange(data);
               }}
               MenuProps={menuStyle}
@@ -643,6 +647,10 @@ export default function CooldownPlanner(props) {
                   </MenuItem>
                 ))
                 .map((key) => [key, <Divider />])}
+              ,
+              <MenuItem key={"remove"} value={""}>
+                Remove
+              </MenuItem>
             </Select>
           </FormControl>
         </ThemeProvider>
@@ -810,7 +818,7 @@ export default function CooldownPlanner(props) {
                   })
                   .map((obj) => obj.class)
                   .toString();
-                data.Cooldown2 = "NoCD";
+                data.Cooldown3 = undefined;
                 props.onRowDataChange(data);
               }}
               MenuProps={menuStyle}
@@ -824,6 +832,10 @@ export default function CooldownPlanner(props) {
                   </MenuItem>
                 ))
                 .map((key) => [key, <Divider />])}
+              ,
+              <MenuItem key={"remove"} value={""}>
+                Remove
+              </MenuItem>
             </Select>
           </FormControl>
         </ThemeProvider>
@@ -952,6 +964,191 @@ export default function CooldownPlanner(props) {
       ),
     },
 
+    /* -------------------------------------------------------------------------- */
+    /*                               Cooldown Set 5                               */
+    /* -------------------------------------------------------------------------- */
+    {
+      title: t("Name") + " 5",
+      field: "name4",
+      width: "6%",
+      cellStyle: {
+        whiteSpace: "nowrap",
+        borderRight: "1px solid rgb(200, 176, 84, 0.3)",
+        paddingLeft: 8,
+        fontSize: 14,
+      },
+      // This renders the healer name outside of Edit Mode.
+      render: (rowData) => (
+        <div style={{ color: classColoursJS(rowData.class4) }}>
+          {rowData.class4 === undefined ? "" : classIcons(rowData.class4, { height: 18, width: 18, padding: "0px 5px 0px 0px", verticalAlign: "middle" })}
+          {rowData.name4}
+        </div>
+      ),
+      // This is the Component for name selection when the table is in edit mode.
+      editComponent: (props) => (
+        <ThemeProvider theme={themeCooldownTable}>
+          <FormControl className={classes.formControl} variant="outlined" size="small" style={{ marginTop: 6 }}>
+            <InputLabel id="HealerSelector">{t("Name")}</InputLabel>
+            <Select
+              value={props.value}
+              label={t("Name")}
+              labelId="HealerSelector"
+              onChange={(e) => {
+                let data = { ...props.rowData };
+                data.name4 = e.target.value;
+                data.class4 = ls
+                  .get("healerInfo")
+                  .filter((obj) => {
+                    return obj.name === e.target.value;
+                  })
+                  .map((obj) => obj.class)
+                  .toString();
+                data.Cooldown4 = undefined;
+                props.onRowDataChange(data);
+              }}
+              MenuProps={menuStyle}
+            >
+              {ls
+                .get("healerInfo")
+                .map((key, i) => (
+                  <MenuItem style={{ color: classColoursJS(key.class) }} key={i} value={key.name}>
+                    {classIcons(key.class, { height: 20, width: 20, padding: "0px 5px 0px 5px", verticalAlign: "middle" })}
+                    {key.name}
+                  </MenuItem>
+                ))
+                .map((key) => [key, <Divider />])}
+              ,
+              <MenuItem key={"remove"} value={""}>
+                Remove
+              </MenuItem>
+            </Select>
+          </FormControl>
+        </ThemeProvider>
+      ),
+    },
+
+    {
+      title: t("Class"),
+      field: "class4",
+      // width: "10%",
+      hidden: true,
+      cellStyle: {
+        whiteSpace: "nowrap",
+        // borderRight: "1px dotted #c8b054",
+        fontSize: 14,
+      },
+      // Renders the Name for the healer in the relevant row in the data.
+      render: (rowData) => (
+        <div style={{ color: classColoursJS(rowData.class4) }}>
+          {rowData.class3 === undefined ? "" : classIcons(rowData.class4, { height: 20, width: 20, padding: "0px 5px 0px 5px", verticalAlign: "middle" })}
+          {t("CooldownPlanner.Classes." + rowData.class4)}
+        </div>
+      ),
+      // Shows the selected healers class in edit mode.
+      editComponent: (props, rowData) => {
+        let data = { ...props.rowData };
+        return (
+          <div style={{ color: classColoursJS(data.class4) }}>
+            {data.class4 === undefined ? "" : classIcons(data.class4, { height: 20, width: 20, padding: "0px 5px 0px 5px", verticalAlign: "middle" })}
+            {t("CooldownPlanner.Classes." + data.class4)}
+          </div>
+        );
+      },
+    },
+
+    {
+      // The Column for Cooldown Selection
+      title: t("Cooldown") + " 5",
+      field: "Cooldown4",
+      width: "8%",
+      cellStyle: {
+        whiteSpace: "nowrap",
+        borderRight: "1px solid rgb(200, 176, 84, 0.3)",
+        fontSize: 14,
+      },
+      // Renders the Ability name that was set for this row.
+      render: (rowData) => (
+        <div>
+          {abilityIcons(rowData.Cooldown4, {
+            height: 18,
+            width: 18,
+            padding: "0px 4px 0px 4px",
+            verticalAlign: "middle",
+          })}
+          {t("CooldownPlanner.ClassAbilities." + rowData.Cooldown4)}
+        </div>
+      ),
+      // The Edit Mode Component. Generated based off the healers class.
+      editComponent: (props, rowData) => {
+        let data = { ...props.rowData };
+        return (
+          <FormControl className={classes.formControl} variant="outlined" size="small" style={{ marginTop: 6 }}>
+            <InputLabel id="HealerAbilitySelector">{t("Cooldown")}</InputLabel>
+            <Select
+              value={rowData.Cooldown4 || props.value}
+              labelId="HealerAbilitySelector"
+              label={t("Cooldown")}
+              onChange={(e) => {
+                props.onChange(e.target.value);
+              }}
+              MenuProps={menuStyle}
+            >
+              {ClassCooldownMenuItems(data.class4) || []}
+            </Select>
+          </FormControl>
+        );
+      },
+    },
+    {
+      // The Cast Time Column. This is where the time the user expects the cooldown to be cast.
+      title: t("CooldownPlanner.TableLabels.CastTimeLabel"),
+      field: "cooldownTime4",
+      width: "1%",
+      cellStyle: {
+        whiteSpace: "nowrap",
+        borderRight: "1px solid rgb(200, 176, 84, 0.3)",
+        fontSize: 14,
+        textAlign: "center",
+      },
+      // Times currently must be entered in the 00:00 format.
+      // Currently due to sorting, the user must either use a time, or label the cooldowns, 1, 2, 3, 4 etc to keep them in order.
+      // This can probably be handled a lot better than how it handled currently.
+      editComponent: (props) => (
+        <TextField
+          error={RegExp("^([01]?[0-9]|2[0-3]):[0-5][0-9]$").test(props.value) || props.value === undefined ? false : true}
+          inputProps={{
+            pattern: "^([01]?[0-9]|2[0-3]):[0-5][0-9]$",
+          }}
+          size="small"
+          variant="outlined"
+          id="standard-basic"
+          label={t("CooldownPlanner.TableLabels.CastTimeLabel")}
+          placeholder="00:00"
+          value={props.value}
+          style={{ whiteSpace: "nowrap", width: "100%", marginTop: 6 }}
+          onChange={(e) => props.onChange(e.target.value)}
+        />
+      ),
+    },
+    {
+      // Render only, should the user when the cooldown will be available again to be used.
+      title: t("CooldownPlanner.TableLabels.OffCooldownLabel"),
+      width: "1%",
+      cellStyle: {
+        whiteSpace: "nowrap",
+        borderRight: "2px solid #c8b054",
+        textAlign: "center",
+        fontSize: 14,
+      },
+      render: (rowData) => (
+        <div>
+          {rowData.Cooldown4 === "" || rowData.Cooldown4 === undefined
+            ? ""
+            : timeCheck(rowData.cooldownTime4 === "" || rowData.cooldownTime4 === undefined ? rowData.time : rowData.cooldownTime4, rowData.Cooldown4)}
+        </div>
+      ),
+    },
+
     {
       // Under Input Notes for the cooldown. I.e "Use just before this ability" or something else they wish to note.
       title: t("CooldownPlanner.TableLabels.NotesLabel"),
@@ -1057,7 +1254,7 @@ export default function CooldownPlanner(props) {
           actionCellStyle: {
             borderBottom: "1px solid #c8b054",
           },
-          actionsColumnIndex: 19,
+          actionsColumnIndex: 24,
           paging: false,
         }}
         localization={curLang()}

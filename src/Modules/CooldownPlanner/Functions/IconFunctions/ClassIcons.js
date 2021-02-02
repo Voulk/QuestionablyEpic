@@ -19,23 +19,13 @@ export default function classIcons(props, style) {
   let alt = "";
 
   // Paladin Cooldowns
-  if (
-    props === "HolyPaladin" ||
-    props === "Holy Paladin" ||
-    props === "Paladin-Holy" ||
-    props === "Paladin"
-  ) {
+  if (props === "HolyPaladin" || props === "Holy Paladin" || props === "Paladin-Holy" || props === "Paladin") {
     src = HolyPaladinIcon;
     alt = "Holy Paladin";
   }
 
   // Restoration Druid
-  if (
-    props === "RestorationDruid" ||
-    props === "Restoration Druid" ||
-    props === "Druid-Restoration" ||
-    props === "Druid"
-  ) {
+  if (props === "RestorationDruid" || props === "Restoration Druid" || props === "Druid-Restoration" || props === "Druid") {
     src = RestorationDruidIcon;
     alt = "Restoration Druid";
   }
@@ -55,43 +45,25 @@ export default function classIcons(props, style) {
   }
 
   // ShadowPriest
-  if (
-    props === "ShadowPriest" ||
-    props === "Shadow Priest" ||
-    props === "Priest-Shadow"
-  ) {
+  if (props === "ShadowPriest" || props === "Shadow Priest" || props === "Priest-Shadow") {
     src = ShadowPriestIcon;
     alt = "Shadow Priest";
   }
 
   // Discipline Priest
-  if (
-    props === "DisciplinePriest" ||
-    props === "Discipline Priest" ||
-    props === "Priest-Discipline"
-  ) {
+  if (props === "DisciplinePriest" || props === "Discipline Priest" || props === "Priest-Discipline") {
     src = DiscPriestIcon;
     alt = "Discipline Priest";
   }
 
   // Restoration Shaman
-  if (
-    props === "RestorationShaman" ||
-    props === "Restoration Shaman" ||
-    props === "Shaman-Restoration" ||
-    props === "Shaman"
-  ) {
+  if (props === "RestorationShaman" || props === "Restoration Shaman" || props === "Shaman-Restoration" || props === "Shaman") {
     src = RestorationShamanIcon;
     alt = "Restoration Shaman";
   }
 
   // Mistweaver Monk
-  if (
-    props === "MistweaverMonk" ||
-    props === "Mistweaver Monk" ||
-    props === "Monk-Mistweaver" ||
-    props === "Monk"
-  ) {
+  if (props === "MistweaverMonk" || props === "Mistweaver Monk" || props === "Monk-Mistweaver" || props === "Monk") {
     src = MistweaverIcon;
     alt = "Mistweaver Monk";
   }
@@ -103,25 +75,13 @@ export default function classIcons(props, style) {
   }
 
   // Demon Hunter
-  if (
-    props === "HavocDemonHunter" ||
-    props === "Havoc Demon Hunter" ||
-    props === "DemonHunter-Havoc" ||
-    props === "Demon Hunter" ||
-    props === "DemonHunter"
-  ) {
+  if (props === "HavocDemonHunter" || props === "Havoc Demon Hunter" || props === "DemonHunter-Havoc" || props === "Demon Hunter" || props === "DemonHunter") {
     src = DemonHunterIcon;
     alt = "Havoc Demon Hunter";
   }
 
   // Death KNight
-  if (
-    props === "Death Knight" ||
-    props === "DeathKnight" ||
-    props === "DeathKnight-Frost" ||
-    props === "DeathKnight-Unholy" ||
-    props === "DeathKnight-Blood"
-  ) {
+  if (props === "Death Knight" || props === "DeathKnight" || props === "DeathKnight-Frost" || props === "DeathKnight-Unholy" || props === "DeathKnight-Blood") {
     src = DeathKnightIcon;
     alt = "Death Knight";
   }
@@ -147,11 +107,8 @@ export default function classIcons(props, style) {
     alt = "Mage";
   }
 
-  return (
-    <img
-      style={{...style }}
-      src={src}
-      alt={alt}
-    />
-  );
+  if (props === "" || props === undefined) {
+    return null;
+  }
+  return <img style={{ ...style }} src={src} alt={alt} />;
 }
