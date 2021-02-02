@@ -12,7 +12,7 @@ export const paladinDefaultSpellData = (contentType) => {
     spellList = {
       85222: { casts: 20, healing: 238400, hps: 120, overhealing: 0 },
       85673: { casts: 4, healing: 40800, hps: 900, overhealing: 0 },
-      20473: { casts: 27, healing: 221400, hps: 1280, overhealing: 0 },
+      25914: { casts: 27, healing: 221400, hps: 1280, overhealing: 0 },
       82326: { casts: 29, healing: 311600, hps: 10, overhealing: 0 },
       337824: { casts: 0, healing: 98300, hps: 542, overhealing: 0 },
     };
