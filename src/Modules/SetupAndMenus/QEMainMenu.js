@@ -11,6 +11,7 @@ import ArrowForward from "@material-ui/icons/ArrowForward";
 import { Paper, Grid, Button, Typography, Tooltip } from "@material-ui/core";
 import HallOfFame from "../HallOfFame/HallOfFame";
 import MessageOfTheDay from "./MessageOftheDay";
+import ArticleCard from "../ArticleCards/ArcticleCard"
 // import Changelog from "../ChangeLog/Changelog"
 
 // Warning: If a button name has to change, do it in the translation files. Consider the titles here to be ID's rather than strings.
@@ -59,6 +60,13 @@ export default function QEMainMenu(props) {
   const classes = useStyles();
   const characterCount = props.allChars.getAllChar().length;
   const patron = ["Diamond", "Gold", "Rolls Royce", "Sapphire"].includes(props.patronStatus);
+
+  const urls = [
+    {
+      url: "https://questionablyepic.com/castle-nathria-ramps/",
+      relevantClass: "test",
+      somethingElse: "test2",
+    }] 
 
   const oddEven = (number) => {
     if (number % 2 == 0) {
@@ -156,6 +164,10 @@ export default function QEMainMenu(props) {
         <p className="headers" style={{ fontSize: "12px" }}>
           QE Live 9.0 Update 22. Last Updated 2 February.
         </p>
+
+        <Grid container spacing={1}>
+                  {urls.map(key => <ArticleCard url={key.url} /> )}
+        </Grid>
       </div>
     </div>
   );
