@@ -95,15 +95,17 @@ export function runUpgradeFinder(player, contentType, playerSettings) {
   const wepList = buildWepCombosUF(player, baseItemList);
   //buildWepCombos(player, false, false); // TODO: DEL
 
-  const baseSet = runTopGear(baseItemList, wepList, player, contentType);
+  const baseHPS = player.getHPS(contentType);
+  const baseSet = runTopGear(baseItemList, wepList, player, contentType, baseHPS);
   const baseScore = baseSet.itemSet.hardScore;
+  
   //console.log(wepList);
   //console.log(baseItemList);
 
   const itemPoss = buildItemPossibilities(player, contentType, playerSettings);
 
   for (var x = 0; x < itemPoss.length; x++) {
-    completedItemList.push(processItem(itemPoss[x], baseItemList, baseScore, player, contentType));
+    completedItemList.push(processItem(itemPoss[x], baseItemList, baseScore, player, contentType, baseHPS));
   }
 
   const result = new UpgradeFinderResult(itemPoss, completedItemList);
@@ -209,17 +211,17 @@ function buildItemPossibilities(player, contentType, playerSettings) {
 }
 
 // Returns a small dict
-function processItem(item, baseItemList, baseScore, player, contentType) {
+function processItem(item, baseItemList, baseScore, player, contentType, baseHPS) {
   let newItemList = [...baseItemList];
   newItemList.push(item);
   //console.log(player);
   const wepList = buildWepCombosUF(player, newItemList);
-  const newTGSet = runTopGear(newItemList, wepList, player, contentType);
+  const newTGSet = runTopGear(newItemList, wepList, player, contentType, baseHPS);
 
   const newScore = newTGSet.itemSet.hardScore;
   //const differential = Math.round(100*(newScore - baseScore))/100 // This is a raw int difference.
   const differential = Math.round((10000 * (newScore - baseScore)) / baseScore) / 100;
-  //console.log(newTGSet);
+  console.log(newTGSet);
 
   return { item: item.id, level: item.level, score: differential };
 }

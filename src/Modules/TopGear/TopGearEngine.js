@@ -19,7 +19,7 @@ export function expensive(time) {
   return count;
 }
 
-export function runTopGear(itemList, wepCombos, player, contentType, currentLanguage) {
+export function runTopGear(itemList, wepCombos, player, contentType, baseHPS, currentLanguage) {
   //console.log("WEP COMBOS: " + JSON.stringify(wepCombos));
   //console.log("CL::::" + currentLanguage);
   var t0 = performance.now();
@@ -44,7 +44,7 @@ export function runTopGear(itemList, wepCombos, player, contentType, currentLang
     */
 
   for (var i = 0; i < itemSets.length; i++) {
-    itemSets[i] = evalSet(itemSets[i], player, contentType);
+    itemSets[i] = evalSet(itemSets[i], player, contentType, baseHPS);
   }
   itemSets = pruneItems(itemSets);
 
@@ -254,7 +254,7 @@ function sumScore(obj) {
 }
 
 // A true evaluation function on a set.
-function evalSet(itemSet, player, contentType) {
+function evalSet(itemSet, player, contentType, baseHPS) {
   // Get Base Stats
   let builtSet = itemSet.compileStats();
   let setStats = builtSet.setStats;
@@ -331,14 +331,14 @@ function evalSet(itemSet, player, contentType) {
   adjusted_weights.crit = (adjusted_weights.crit + adjusted_weights.crit * (1 - (DR_CONST * setStats.crit) / STATPERONEPERCENT.CRIT)) / 2;
   adjusted_weights.versatility = (adjusted_weights.versatility + adjusted_weights.versatility * (1 - (DR_CONST * setStats.versatility) / STATPERONEPERCENT.VERSATILITY)) / 2;
   adjusted_weights.mastery = (adjusted_weights.mastery + adjusted_weights.mastery * (1 - (DR_CONST * setStats.mastery) / STATPERONEPERCENT.MASTERYA[player.spec])) / 2;
-
+  
   // Calculate a hard score using the rebalanced stat weights.
   for (var stat in setStats) {
     if (stat === "hps") {
       /*score +=
             (item.stats.bonus_stats.hps / player.getHPS(contentType)) *
             player.activeStats.intellect; */
-      hardScore += (setStats[stat] / player.getHPS()) * player.activeStats.intellect;
+      hardScore += (setStats[stat] / baseHPS) * player.activeStats.intellect;
     } else if (stat === "dps") {
       continue;
     } else {
