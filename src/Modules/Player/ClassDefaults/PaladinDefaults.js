@@ -61,7 +61,7 @@ export const paladinDefaultStatWeights = (contentType) => {
     crit: 0.27,
     mastery: 0.33,
     versatility: 0.32,
-    leech: 0.51,
+    leech: 0.5,
     defaults: true,
   };
   statWeights.Dungeon = {
@@ -70,7 +70,7 @@ export const paladinDefaultStatWeights = (contentType) => {
     crit: 0.36,
     mastery: 0.21,
     versatility: 0.33,
-    leech: 0.2,
+    leech: 0.18,
     defaults: true,
   };
 

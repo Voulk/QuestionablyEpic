@@ -326,7 +326,7 @@ function evalSet(itemSet, player, contentType) {
   enchants["Gems"] = highestWeight;
   //console.log("Sockets added : " + 16 * builtSet.setSockets + " to " + highestWeight);
 
-  applyDiminishingReturns(setStats);
+  //applyDiminishingReturns(setStats);
   adjusted_weights.haste = (adjusted_weights.haste + adjusted_weights.haste * (1 - (DR_CONST * setStats.haste) / STATPERONEPERCENT.HASTE)) / 2;
   adjusted_weights.crit = (adjusted_weights.crit + adjusted_weights.crit * (1 - (DR_CONST * setStats.crit) / STATPERONEPERCENT.CRIT)) / 2;
   adjusted_weights.versatility = (adjusted_weights.versatility + adjusted_weights.versatility * (1 - (DR_CONST * setStats.versatility) / STATPERONEPERCENT.VERSATILITY)) / 2;
@@ -376,8 +376,6 @@ function getHighestWeight(player, contentType) {
 export function applyDiminishingReturns(stats) {
   console.log("Stats Pre-DR" + JSON.stringify(stats));
   
-  
-
   for (const [key, value] of Object.entries(stats)) {
 
     const DRBreakpoints = STATDIMINISHINGRETURNS[key.toUpperCase()];

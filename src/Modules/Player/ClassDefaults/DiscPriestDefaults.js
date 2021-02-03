@@ -19,7 +19,7 @@ export const discPriestDefaultSpecialQueries = (contentType) => {
       CastsPerMinute: 36,
       cooldownMult: {
         oneMinute: 2.25,
-        twoMinutes: 1.62,
+        twoMinutes: 1.6,
         threeMinutes: 1.35,
       }
     };
@@ -49,7 +49,7 @@ export const discPriestDefaultStatWeights = (contentType) => {
     crit: 0.38,
     mastery: 0.37,
     versatility: 0.37,
-    leech: 0.21,
+    leech: 0.22,
   };
   statWeights.Dungeon = {
     intellect: 1,
@@ -57,7 +57,7 @@ export const discPriestDefaultStatWeights = (contentType) => {
     crit: 0.34,
     mastery: 0.3,
     versatility: 0.33,
-    leech: 0.11,
+    leech: 0.18,
   };
 
   return statWeights[contentType];
