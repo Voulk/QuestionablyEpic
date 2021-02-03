@@ -96,8 +96,7 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel) {
     bonus_stats.hps =
       (getProcessedValue(heal_effect.coefficient, heal_effect.table, itemLevel, heal_effect.efficiency) / heal_effect.cooldown) * player.getStatMultiplier("CRITVERS");
     bonus_stats.crit = (getProcessedValue(crit_effect.coefficient, crit_effect.table, itemLevel) * crit_effect.duration * crit_effect.multiplier) / crit_effect.cooldown;
-
-    if (player.getSpec() === SPEC.RESTODRUID) bonus_stats.crit *= 1.21; // Convoke
+    bonus_stats.crit *= player.getCooldownMult("twoMinutes", contentType);
     //console.log("Effect Name: " + effectName + " at level: " + itemLevel + " {" + JSON.stringify(bonus_stats))
 
   } else if (effectName === "Wakener's Frond") {
@@ -143,8 +142,14 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel) {
 
     bonus_stats.intellect = (getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.duration) / effect.cooldown;
 
-    if (player.getSpec() === SPEC.HOLYPALADIN) bonus_stats.intellect *= 1.42; // This needs to be refined, but represents the power increase from combining with Divine Toll.
-    if (player.getSpec() === SPEC.DISCPRIEST) bonus_stats.intellect *= 1.68; // This needs to be refined, but represents the power increase from combining with Spirit Shell.
+    if (player.getSpec() === "Mistweaver Monk" && player.getCov() === "Venthyr") bonus_stats.intellect *= player.getCooldownMult("oneMinute", contentType);
+    else if (player.getSpec() !== "Mistweaver Monk") bonus_stats.intellect *= player.getCooldownMult("oneMinute", contentType);
+    
+
+    //console.log("Mult: " + JSON.stringify(player.getCooldownMult("oneMinute", contentType)));
+
+    //if (player.getSpec() === SPEC.HOLYPALADIN) bonus_stats.intellect *= 1.42; // This needs to be refined, but represents the power increase from combining with Divine Toll.
+    //if (player.getSpec() === SPEC.DISCPRIEST) bonus_stats.intellect *= 1.68; // This needs to be refined, but represents the power increase from combining with Spirit Shell.
     // We need a better way to model interaction with spec cooldowns.
 
     //console.log("BADGE Int:" + bonus_stats.intellect + ". Flat: " + getProcessedValue(effect.coefficient, effect.table, itemLevel) + ". Uptime: 25%")

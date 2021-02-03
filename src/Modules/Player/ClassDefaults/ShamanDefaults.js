@@ -34,12 +34,22 @@ export const shamanDefaultSpecialQueries = (contentType) => {
       HPSOnEarthShield: 456,
       OneManaHealing: 2.4,
       CastsPerMinute: 24,
+      cooldownMult: {
+        oneMinute: 1,
+        twoMinutes: 1,
+        threeMinutes: 1,
+      }
     };
   } else if (contentType === "Dungeon") {
     specialQueries = {
       HPSOnEarthShield: 456,
       OneManaHealing: 0.4,
       CastsPerMinute: 30,
+      cooldownMult: {
+        oneMinute: 1,
+        twoMinutes: 1,
+        threeMinutes: 1,
+      }
     };
   } else {
     console.error("Unknown Content Type");

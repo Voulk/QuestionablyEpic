@@ -54,7 +54,7 @@ export const getMonkLegendary = (effectName, player, contentType) => {
     const thunderFocusTeaCPM = 1.5;
     const yulonSP = 1.8;
     const yulonExpectedOverhealing = 0.22;
-    const yulonTargets = { Raid: 5.9, Dungeon: 4.2 };
+    const yulonTargets = { Raid: 5.9, Dungeon: 3.2 };
     const yulonOneHeal = yulonSP * player.getStatMultiplier("CRITVERS") * player.activeStats.intellect * (1 - yulonExpectedOverhealing);
 
     bonus_stats.hps = (yulonOneHeal * yulonTargets[contentType] * thunderFocusTeaCPM) / 60;
