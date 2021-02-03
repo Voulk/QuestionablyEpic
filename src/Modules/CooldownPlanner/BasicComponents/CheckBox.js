@@ -1,6 +1,5 @@
 import React from "react";
-import Checkbox from "@material-ui/core/Checkbox";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
+import { Checkbox, FormControlLabel } from "@material-ui/core/Checkbox";
 import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 
 const theme = createMuiTheme({
@@ -31,15 +30,7 @@ export default function Checkboxes(props) {
       <ThemeProvider theme={theme}>
         <FormControlLabel
           style={{ color: "white" }}
-          control={
-            <Checkbox
-              checked={checked}
-              onChange={handleChange}
-              size="small"
-              style={{ padding: "4px" }}
-              inputProps={{ "aria-label": "primary checkbox" }}
-            />
-          }
+          control={<Checkbox checked={checked} onChange={handleChange} size="small" style={{ padding: "4px" }} inputProps={{ "aria-label": "checkbox" }} />}
           label={props.label}
         />
       </ThemeProvider>

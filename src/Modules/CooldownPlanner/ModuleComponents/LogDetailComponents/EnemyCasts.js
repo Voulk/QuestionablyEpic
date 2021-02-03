@@ -6,9 +6,7 @@ import { localizationFR } from "../../../../locale/fr/TableLocale";
 import { localizationEN } from "../../../../locale/en/TableLocale";
 import { localizationRU } from "../../../../locale/ru/TableLocale";
 import { localizationCH } from "../../../../locale/ch/TableLocale";
-import moment from "moment";
-import Divider from "@material-ui/core/Divider";
-import Paper from "@material-ui/core/Paper";
+import { Divider, Paper } from "@material-ui/core";
 import { useTranslation } from "react-i18next";
 import { ArrowDownward, ChevronRight, FilterList } from "@material-ui/icons";
 
@@ -34,34 +32,9 @@ const theme = createMuiTheme({
   },
 });
 
-// const SearchFieldOverride = createMuiTheme({
-//   overrides: {
-//     MuiOutlinedInput: {
-//       input: { padding: 10 },
-//     },
-//     MuiToolbar: {
-//       regular: {
-//         minHeight: 0,
-//         "@media (min-width: 600px)": {
-//           minHeight: "0px",
-//         },
-//       },
-//     },
-//   },
-//   palette: {
-//     type: "dark",
-//     primary: { main: "#d3bc47" },
-//     secondary: { main: "#e0e0e0" },
-//   },
-// });
-
 const tableIcons = {
-  SortArrow: forwardRef((props, ref) => (
-    <ArrowDownward {...props} style={{ color: "#ffee77" }} ref={ref} />
-  )),
-  DetailPanel: forwardRef((props, ref) => (
-    <ChevronRight {...props} style={{ color: "#ffee77" }} ref={ref} />
-  )),
+  SortArrow: forwardRef((props, ref) => <ArrowDownward {...props} style={{ color: "#ffee77" }} ref={ref} />),
+  DetailPanel: forwardRef((props, ref) => <ChevronRight {...props} style={{ color: "#ffee77" }} ref={ref} />),
   Filter: forwardRef((props, ref) => <FilterList {...props} ref={ref} />),
 };
 
@@ -91,14 +64,12 @@ export default function EnemyCastsTimeline(props) {
             field: "name",
             cellStyle: {
               whiteSpace: "nowrap",
-              // borderRight: "1px solid rgb(81 81 81)",
               padding: "2px 0px",
               fontSize: 14,
             },
             headerStyle: {
               fontSize: 14,
             },
-            // render: (rowData) => <div>{rowData.name}</div>,
             defaultGroupOrder: 0,
           },
           {
@@ -106,7 +77,6 @@ export default function EnemyCastsTimeline(props) {
             field: "ability",
             cellStyle: {
               whiteSpace: "nowrap",
-              // borderRight: "1px solid rgb(81 81 81)",
               padding: "2px 8px",
               fontSize: 14,
             },
@@ -126,7 +96,6 @@ export default function EnemyCastsTimeline(props) {
             width: "2%",
             cellStyle: {
               whiteSpace: "nowrap",
-              // borderRight: "1px solid rgb(81 81 81)",
               padding: "2px 8px",
               fontSize: 14,
             },
@@ -145,7 +114,6 @@ export default function EnemyCastsTimeline(props) {
         header={true}
         data={props.data}
         style={{
-          // marginTop: "8px",
           color: "#ffffff",
           fontSize: "0.8 rem",
           whiteSpace: "nowrap",
@@ -156,9 +124,7 @@ export default function EnemyCastsTimeline(props) {
           Container: (props) => <Paper {...props} elevation={0} />,
           Toolbar: (props) => (
             <div style={{ marginBottom: 8 }}>
-              {/* <ThemeProvider theme={SearchFieldOverride}> */}
               <MTableToolbar {...props} />
-              {/* </ThemeProvider> */}
               <Divider />
             </div>
           ),
@@ -169,14 +135,12 @@ export default function EnemyCastsTimeline(props) {
           header: true,
           search: false,
           searchFieldVariant: "outlined",
-          // grouping: true,
           filtering: false,
           headerStyle: {
             border: "1px solid #c8b054",
             padding: "0px 8px 0px 8px",
             backgroundColor: "#c8b054",
             color: "#000",
-            // fontSize: "0.8 rem",
           },
           rowStyle: (rowData, index) => {
             if (index % 2) {
@@ -203,7 +167,6 @@ export default function EnemyCastsTimeline(props) {
           },
           actionsColumnIndex: 6,
           paging: false,
-          // tableLayout: "fixed",
         }}
       />
     </ThemeProvider>

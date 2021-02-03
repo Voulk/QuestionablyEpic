@@ -1,13 +1,6 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import {
-  Grid,
-  Button,
-  Typography,
-  TextField,
-  Paper,
-  Divider,
-} from "@material-ui/core";
+import { Grid, Button, Typography, TextField, Paper, Divider } from "@material-ui/core";
 import { useTranslation } from "react-i18next";
 import ls from "local-storage";
 
@@ -46,10 +39,7 @@ export default function QEProfile(props) {
     }
   };
 
-  let patronStatus =
-    props.patronStatus !== ""
-      ? props.patronStatus + " " + t("QeProfile.EditionAffix")
-      : t("QeProfile.StandardEdition");
+  let patronStatus = props.patronStatus !== "" ? props.patronStatus + " " + t("QeProfile.EditionAffix") : t("QeProfile.StandardEdition");
 
   let color = {
     "Rolls Royce Edition": "#04E07C",
@@ -63,53 +53,34 @@ export default function QEProfile(props) {
     <div className={classes.root}>
       <Grid container spacing={1}>
         <Grid item xs={12}>
-          <Typography
-            variant="h4"
-            color="primary"
-            align="center"
-            style={{ padding: "10px 10px 5px 10px" }}
-          >
+          <Typography variant="h4" color="primary" align="center" style={{ padding: "10px 10px 5px 10px" }}>
             {t("QeProfile.ProfileHeader")}
           </Typography>
-          {/* <Divider style={{ marginBottom: 10 }} /> */}
           <Paper elevation={0} style={{ padding: 10 }}>
-            <Typography
-              variant="body1"
-              gutterBottom
-              color="primary"
-              align="left"
-              style={{ display: "flex" }}
-            >
-              Battletag:
-              <div style={{ paddingLeft: 10, color: "#fff" }}>
+            <div style={{ display: "flex" }}>
+              <Typography variant="body1" gutterBottom color="primary" align="left" style={{ display: "flex" }}>
+                {t("Battletag")}:
+              </Typography>
+              <Typography variant="body1" gutterBottom align="left" style={{ paddingLeft: 10, color: "#fff" }}>
                 {props.playerTag || t("QeProfile.NoBattleTag")}
-              </div>
-            </Typography>
-            <Typography
-              variant="body1"
-              gutterBottom
-              color="primary"
-              align="left"
-              style={{ display: "flex" }}
-            >
-              Email:
-              <div style={{ paddingLeft: 10, color: "#fff" }}>
+              </Typography>
+            </div>
+            <div style={{ display: "flex" }}>
+              <Typography variant="body1" gutterBottom color="primary" align="left" style={{ display: "flex" }}>
+                {t("Email")}:
+              </Typography>
+              <Typography variant="body1" gutterBottom align="left" style={{ paddingLeft: 10, color: "#fff" }}>
                 {email || t("QeProfile.NoEmail")}
-              </div>
-            </Typography>
-            <Typography
-              variant="body1"
-              gutterBottom
-              color="primary"
-              align="left"
-              wrap="nowrap"
-              style={{ display: "inline-flex" }}
-            >
-              {t("QeProfile.QeTier")}:
-              <div style={{ paddingLeft: 10, color: color[patronStatus] }}>
+              </Typography>
+            </div>
+            <div style={{ display: "flex" }}>
+              <Typography variant="body1" gutterBottom color="primary" align="left" style={{ display: "flex" }}>
+                {t("QeProfile.QeTier")}:
+              </Typography>
+              <Typography variant="body1" gutterBottom align="left" style={{ paddingLeft: 10, color: color[patronStatus] }}>
                 {patronStatus}
-              </div>
-            </Typography>
+              </Typography>
+            </div>
           </Paper>
         </Grid>
         <Grid item xs={12}>
@@ -117,14 +88,7 @@ export default function QEProfile(props) {
             <Typography variant="h6" gutterBottom color="primary">
               {t("QeProfile.EmailMsg")}
             </Typography>
-            <Grid
-              container
-              direction="row"
-              justify="flex-start"
-              alignItems="center"
-              spacing={1}
-              wrap="nowrap"
-            >
+            <Grid container direction="row" justify="flex-start" alignItems="center" spacing={1} wrap="nowrap">
               <Grid item xs={11}>
                 <TextField
                   id="outlined-basic"
@@ -138,11 +102,7 @@ export default function QEProfile(props) {
                 />
               </Grid>
               <Grid item xs="auto">
-                <Button
-                  variant="contained"
-                  color="primary"
-                  onClick={(e) => emailHandler(emailTemp)}
-                >
+                <Button variant="contained" color="primary" onClick={(e) => emailHandler(emailTemp)}>
                   {t("Save")}
                 </Button>
               </Grid>

@@ -19,7 +19,7 @@ export const encounterDB = {
     2394, // "Sludgefist",
     2425, // "Stone Legion Generals",
     2424, // "Sire Denathrius",
-    999,  // BoEs,
+    999, // BoEs,
   ],
   1192: [
     2430, // "Valinor, the Light of Eons",
@@ -36,11 +36,7 @@ export const encounterDB = {
     1187, //"Theater of Pain",
     1188, //"De Other Side",
     1189, //"Sanguine Depths",
-
   ],
 
-  2: [
-    -17,
-    -16
-  ]
+  2: [-17, -16],
 };

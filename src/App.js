@@ -5,18 +5,17 @@ import QEMainMenu from "./Modules/SetupAndMenus/QEMainMenu";
 import LegendaryCompare from "./Modules/Legendaries/LegendaryCompare";
 import TrinketAnalysis from "./Modules/TrinketAnalysis/TrinketAnalysis";
 import QuickCompare from "./Modules/QuickCompare/QuickCompare";
-import QEHeader from "./Modules/SetupAndMenus/QEHeader";
+import QEHeader from "./Modules/SetupAndMenus/Header/QEHeader";
 import TopGearReport from "./Modules/TopGear/TopGearReport";
 import QEProfile from "./Modules/SetupAndMenus/QEProfile";
 import PlayerChars from "./Modules/Player/PlayerChars";
 import CovenantExploration from "./Modules/Covenants/Components/CovenantExploration";
 import { UpgradeFinder } from "./Modules/UpgradeFinder/UpgradeFinder";
-import { ConfirmLogin, QELogin } from "./Modules/SetupAndMenus/QELogin";
+import { ConfirmLogin, QELogin } from "./Modules/SetupAndMenus/Header/QELogin";
 import { withTranslation } from "react-i18next";
 import i18n from "./i18n";
 import TopGear from "./Modules/TopGear/TopGear";
 import ErrorBoundary from "./Modules/ErrorLogging/ErrorBoundary.js";
-
 import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { useLocation } from "react-router-dom";
@@ -27,7 +26,6 @@ import { createBrowserHistory } from "history";
 import { dbCheckPatron } from "./Modules/SetupAndMenus/ConnectionUtilities";
 
 import ReactGA from "react-ga";
-
 
 const theme = createMuiTheme({
   palette: {
@@ -68,15 +66,15 @@ const theme = createMuiTheme({
   // },
 });
 
-process.env.NODE_ENV !== "production"
-  ? ""
-  : ReactGA.initialize("UA-90234903-1");
+process.env.NODE_ENV !== "production" ? "" : ReactGA.initialize("UA-90234903-1");
 
 class App extends Component {
   constructor() {
     super();
 
-    // binds the snack open handlers to this component so we can send it down to where we can trigger them in the relevant component
+    /* ---------------- Here we bind functions to this component ---------------- */
+    /* ---------- This is so they can be used as props in other modules --------- */
+    /* -------------------- And they will change states here -------------------- */
     this.handleCharSnackOpen = this.handleCharSnackOpen.bind(this);
     this.handleCharUpdateSnackOpen = this.handleCharUpdateSnackOpen.bind(this);
     this.handleLoginSnackOpen = this.handleLoginSnackOpen.bind(this);
@@ -87,7 +85,6 @@ class App extends Component {
     this.setEmail = this.setEmail.bind(this);
     this.setPatron = this.setPatron.bind(this);
     this.checkPatron = this.checkPatron.bind(this);
-
     this.langSet = this.langSet.bind(this);
     this.userLogout = this.userLogout.bind(this);
     this.state = {
@@ -95,7 +92,6 @@ class App extends Component {
       playerRegion: "us",
       client_id: "1be64387daf6494da2de568527ad82cc",
       email: "",
-      // lang: "en",
       playerLoginID: "",
       playerBattleTag: "",
       accessToken: "",
@@ -116,8 +112,11 @@ class App extends Component {
     this.setState({ topSet: set });
   };
 
-  // --Snack Bar Handlers--
-  // Character Added
+  /* -------------------------------------------------------------------------- */
+  /*                             Snack Bar Handlers                             */
+  /* -------------------------------------------------------------------------- */
+
+  /* ----------------------------- Character Added ---------------------------- */
   handleCharSnackOpen = () => {
     this.setState({ charSnackState: true });
   };
@@ -127,7 +126,8 @@ class App extends Component {
     }
     this.setState({ charSnackState: false });
   };
-  // Character Updated
+
+  /* ---------------------------- Character Updated --------------------------- */
   handleCharUpdateSnackOpen = () => {
     this.setState({ charUpdateState: true });
   };
@@ -138,7 +138,7 @@ class App extends Component {
     this.setState({ charUpdateState: false });
   };
 
-  // Login
+  /* ---------------------------------- Login --------------------------------- */
   handleLoginSnackOpen = () => {
     this.setState({ loginSnackState: true });
   };
@@ -149,7 +149,7 @@ class App extends Component {
     this.setState({ loginSnackState: false });
   };
 
-  // SimC Added
+  /* ------------------------------- SimC Added ------------------------------- */
   handleSimCSnackOpen = () => {
     this.setState({ simcSnackState: true });
   };
@@ -160,7 +160,7 @@ class App extends Component {
     this.setState({ simcSnackState: false });
   };
 
-  // Log Import Snack
+  /* ---------------------------- Log Import Snack ---------------------------- */
   handleLogSnackOpen = () => {
     this.setState({ logImportSnackState: true });
   };
@@ -171,7 +171,7 @@ class App extends Component {
     this.setState({ logImportSnackState: false });
   };
 
-  // Log Import Snack
+  /* ---------------------------- Log Import Snack ---------------------------- */
   handleEmailSnackOpen = () => {
     this.setState({ emailSnackState: true });
   };
@@ -182,7 +182,7 @@ class App extends Component {
     this.setState({ emailSnackState: false });
   };
 
-  // Log Import Snack
+  /* ---------------------------- Log Import Snack ---------------------------- */
   handleEmailErrorSnackOpen = () => {
     this.setState({ emailSnackErrorState: true });
   };
@@ -193,8 +193,11 @@ class App extends Component {
     this.setState({ emailSnackErrorState: false });
   };
 
-  // ////////////////////////////////////////
+  /* -------------------------------------------------------------------------- */
+  /*                              Function Handlers                             */
+  /* -------------------------------------------------------------------------- */
 
+  /* ---------------------------- Language Handler ---------------------------- */
   langSet = (props) => {
     this.setState({ lang: props });
     ls.set("lang", props);
@@ -204,23 +207,26 @@ class App extends Component {
     this.setState({ characters: allChars });
   };
 
+  /* -------------------------- Patron Status Handler ------------------------- */
   setPatron = (status) => {
-    //console.log("ST: " + status);
     this.setState({ patronStatus: status });
   };
 
+  /* ------------------ Checks Patron Status from Users Email ----------------- */
   checkPatron = (email) => {
     if (email !== "") {
       dbCheckPatron(email, this.setPatron);
     }
   };
 
+  /* -------------- Sets the Users Email to state & Local Storage ------------- */
   setEmail = (emailAdd) => {
     this.setState({ email: emailAdd });
     ls.set("email", emailAdd);
     this.checkPatron(emailAdd);
   };
 
+  /* -------------------- Update Character Information Handler ------------------- */
   updatePlayerChar = (player) => {
     let allChars = this.state.characters;
     allChars.updatePlayerChar(player);
@@ -228,6 +234,7 @@ class App extends Component {
     allChars.saveAllChar();
   };
 
+  /* ---------------------------- Delete Character ---------------------------- */
   deletePlayerChar = (unique) => {
     let allChars = this.state.characters;
     allChars.delSpecificChar(unique);
@@ -235,17 +242,19 @@ class App extends Component {
     allChars.saveAllChar();
   };
 
+  /* ----------------------------- Region Handlers ---------------------------- */
   setRegion = (props) => {
     this.setState({ playerRegion: props });
   };
 
+  /* ------------------------- Content Toggle Handler ------------------------ */
   toggleContentType = () => {
     let newType = this.state.contentType === "Raid" ? "Dungeon" : "Raid";
     this.setState({ contentType: newType });
-    console.log(this.state.contentType);
     ls.set("contentType", newType);
   };
 
+  /* ---------------------------- Battletag Handler --------------------------- */
   updatePlayerID = (id, battletag) => {
     this.setState({ playerLoginID: id });
     this.setState({ playerBattleTag: battletag });
@@ -254,15 +263,16 @@ class App extends Component {
     ls.set("btag", battletag);
   };
 
+  /* ----------------------------- Logout Handler ----------------------------- */
   userLogout() {
     // Do other stuff later.
     this.setState({ playerLoginID: 0 });
     this.setState({ playerBattleTag: "" });
-
     ls.remove("id");
     ls.remove("btag");
   }
 
+  /* ---------------------------- Login URL Handler --------------------------- */
   buildLoginURL = () => {
     // China is a little different from the other regions and uses its own URL.
     if (this.state.playerRegion === "cn") {
@@ -281,10 +291,9 @@ class App extends Component {
     );
   };
 
-  // When component mounts, check local storage for battle tag or ID.
+  /* ---- When component mounts, check local storage for battle tag or ID. ---- */
   componentDidMount() {
     //console.log("COMPONENT MOUNTED" + window.location.pathname + window.location.search);
-
     this.setState({
       playerLoginID: ls.get("id") || "",
       playerBattleTag: ls.get("btag") || "",
@@ -297,6 +306,7 @@ class App extends Component {
     i18n.changeLanguage(ls.get("lang") || "en");
   }
 
+  /* ---------------------------- Pageview Handler ---------------------------- */
   usePageViews() {
     let location = useLocation();
 
@@ -334,91 +344,52 @@ class App extends Component {
                 logImportSnack={this.handleLogSnackOpen}
                 allChars={allChars}
               />
-
-              {/* // Char Added Snackbar */}
-              <Snackbar
-                open={this.state.charSnackState}
-                autoHideDuration={3000}
-                onClose={this.handleCharSnackClose}
-              >
+              {/* --------------------------- Char Added Snackbar -------------------------- */}
+              <Snackbar open={this.state.charSnackState} autoHideDuration={3000} onClose={this.handleCharSnackClose}>
                 <Alert onClose={this.handleCharSnackClose} severity="success">
                   Character Added!
                 </Alert>
               </Snackbar>
-
-              {/* // Char Updated Snackbar */}
-              <Snackbar
-                open={this.state.charUpdateState}
-                autoHideDuration={3000}
-                onClose={this.handleCharUpdateSnackClose}
-              >
-                <Alert
-                  onClose={this.handleCharUpdateSnackClose}
-                  severity="success"
-                >
+              {/* -------------------------- Char Updated Snackbar ------------------------- */}
+              <Snackbar open={this.state.charUpdateState} autoHideDuration={3000} onClose={this.handleCharUpdateSnackClose}>
+                <Alert onClose={this.handleCharUpdateSnackClose} severity="success">
                   Character Updated!
                 </Alert>
               </Snackbar>
-
-              {/* // Login Success Snackbar */}
-              <Snackbar
-                open={this.state.loginSnackState}
-                autoHideDuration={3000}
-                onClose={this.handleLoginClose}
-              >
+              {/* ------------------------- Login Success Snackbar ------------------------- */}
+              <Snackbar open={this.state.loginSnackState} autoHideDuration={3000} onClose={this.handleLoginClose}>
                 <Alert onClose={this.handleLoginClose} severity="success">
                   Logged in Successfully!
                 </Alert>
               </Snackbar>
-
-              {/* // SimC Success Snackbar */}
-              <Snackbar
-                open={this.state.simcSnackState}
-                autoHideDuration={3000}
-                onClose={this.handleSimCSnackClose}
-                anchorOrigin={{ vertical, horizontal }}
-              >
+              {/* -------------------------- SimC Success Snackbar ------------------------- */}
+              <Snackbar open={this.state.simcSnackState} autoHideDuration={3000} onClose={this.handleSimCSnackClose} anchorOrigin={{ vertical, horizontal }}>
                 <Alert onClose={this.handleSimCSnackClose} severity="success">
                   SimC String Imported Successfully!
                 </Alert>
               </Snackbar>
-
-              {/* Log Import Success Snackbar */}
-              <Snackbar
-                open={this.state.logImportSnackState}
-                autoHideDuration={3000}
-                onClose={this.handleLogSnackClose}
-              >
+              {/* ----------------------- Log Import Success Snackbar ---------------------- */}
+              <Snackbar open={this.state.logImportSnackState} autoHideDuration={3000} onClose={this.handleLogSnackClose}>
                 <Alert onClose={this.handleLogSnackClose} severity="success">
                   Log Imported Successfully!
                 </Alert>
               </Snackbar>
-
-              {/* Email Import Success Snackbar */}
-              <Snackbar
-                open={this.state.emailSnackState}
-                autoHideDuration={3000}
-                onClose={this.handleEmailSnackClose}
-              >
+              {/* ---------------------- Email Import Success Snackbar --------------------- */}
+              <Snackbar open={this.state.emailSnackState} autoHideDuration={3000} onClose={this.handleEmailSnackClose}>
                 <Alert onClose={this.handleEmailSnackClose} severity="success">
                   Email Updated!
                 </Alert>
               </Snackbar>
-
-              {/* Email Error Import Success Snackbar */}
-              <Snackbar
-                open={this.state.emailSnackErrorState}
-                autoHideDuration={3000}
-                onClose={this.handleEmailErrorSnackClose}
-              >
-                <Alert
-                  onClose={this.handleEmailErrorSnackClose}
-                  severity="error"
-                >
+              {/* ------------------- Email Error Import Success Snackbar ------------------ */}
+              <Snackbar open={this.state.emailSnackErrorState} autoHideDuration={3000} onClose={this.handleEmailErrorSnackClose}>
+                <Alert onClose={this.handleEmailErrorSnackClose} severity="error">
                   Please check the Email and try again
                 </Alert>
               </Snackbar>
 
+              {/* -------------------------------------------------------------------------- */
+              /*                               Module Routing                               */
+              /* -------------------------------------------------------------------------- */}
               <Switch>
                 <Route
                   exact
@@ -438,91 +409,18 @@ class App extends Component {
                   )}
                 />
                 <Route path="/holydiver" render={() => <HolyDiver />} />
-                <Route
-                  path="/report"
-                  render={() => (
-                    <TopGearReport
-                      pl={activePlayer}
-                      result={this.state.topSet}
-                      contentType={this.state.contentType}
-                    />
-                  )}
-                />
-                <Route
-                  path="/quickcompare"
-                  render={() => (
-                    <QuickCompare
-                      pl={activePlayer}
-                      contentType={this.state.contentType}
-                    />
-                  )}
-                />
-                <Route
-                  path="/topgear"
-                  render={() => (
-                    <TopGear
-                      pl={activePlayer}
-                      contentType={this.state.contentType}
-                      setTopResult={this.setTopResult}
-                    />
-                  )}
-                />
-                <Route
-                  path="/legendaries"
-                  render={() => (
-                    <LegendaryCompare
-                      pl={activePlayer}
-                      contentType={this.state.contentType}
-                    />
-                  )}
-                />
-                <Route
-                  path="/trinkets"
-                  render={() => (
-                    <TrinketAnalysis
-                      player={activePlayer}
-                      contentType={this.state.contentType}
-                    />
-                  )}
-                />
-
-                <Route
-                  path="/soulbinds"
-                  render={() => (
-                    <CovenantExploration
-                      pl={activePlayer}
-                      contentType={this.state.contentType}
-                      updatePlayerChar={this.updatePlayerChar}
-                    />
-                  )}
-                />
-                <Route
-                  path="/login"
-                  render={() => <QELogin setRegion={this.setRegion} />}
-                />
-                <Route
-                  path="/attemptlogin"
-                  component={() => (window.location = this.buildLoginURL())}
-                />
-                <Route
-                  path="/confirmlogin/"
-                  render={() => (
-                    <ConfirmLogin
-                      loginSnackOpen={this.handleLoginSnackOpen}
-                      updatePlayerID={this.updatePlayerID}
-                    />
-                  )}
-                />
+                <Route path="/report" render={() => <TopGearReport pl={activePlayer} result={this.state.topSet} contentType={this.state.contentType} />} />
+                <Route path="/quickcompare" render={() => <QuickCompare pl={activePlayer} contentType={this.state.contentType} allChars={allChars} simcSnack={this.handleSimCSnackOpen} />} />
+                <Route path="/topgear" render={() => <TopGear pl={activePlayer} contentType={this.state.contentType} setTopResult={this.setTopResult} allChars={allChars} simcSnack={this.handleSimCSnackOpen} />} />
+                <Route path="/legendaries" render={() => <LegendaryCompare pl={activePlayer} contentType={this.state.contentType} />} />
+                <Route path="/trinkets" render={() => <TrinketAnalysis player={activePlayer} contentType={this.state.contentType} />} />
+                <Route path="/soulbinds" render={() => <CovenantExploration pl={activePlayer} contentType={this.state.contentType} updatePlayerChar={this.updatePlayerChar} />} />
+                <Route path="/login" render={() => <QELogin setRegion={this.setRegion} />} />
+                <Route path="/attemptlogin" component={() => (window.location = this.buildLoginURL())} />
+                <Route path="/confirmlogin/" render={() => <ConfirmLogin loginSnackOpen={this.handleLoginSnackOpen} updatePlayerID={this.updatePlayerID} />} />
                 <Route
                   path="/UpgradeFinder/"
-                  render={() => (
-                    <UpgradeFinder
-                      player={activePlayer}
-                      contentType={this.state.contentType}
-                      simcSnack={this.handleSimCSnackOpen}
-                      allChars={allChars}
-                    />
-                  )}
+                  render={() => <UpgradeFinder player={activePlayer} contentType={this.state.contentType} simcSnack={this.handleSimCSnackOpen} allChars={allChars} />}
                 />
                 <Route
                   path="/profile/"

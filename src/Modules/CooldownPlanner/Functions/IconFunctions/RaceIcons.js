@@ -51,7 +51,6 @@ export default function raceIcons(props) {
   let sourceFemale = "";
   let alt = "";
 
-  // Ny'alotha, the Waking City
   if (props === "Races.Blood Elf") {
     sourceMale = BloodElfMale;
     sourceFemale = BloodElfFemale;

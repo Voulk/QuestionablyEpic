@@ -13,24 +13,22 @@ export default function LogDetailsTable(props) {
   const rows = props.data;
 
   return (
-    <TableContainer
-    // component={Paper}
-    >
+    <TableContainer>
       <Table className={classes.table} aria-label="simple table" size="small">
         <TableHead>
           <TableRow>
             <TableCell style={{ width: 30 }}>Spell</TableCell>
             <TableCell align="right" style={{ width: 20, paddingRight: 8 }}>
-              Casts
+              {t("Casts")}
             </TableCell>
             <TableCell align="right" style={{ width: 20, paddingRight: 8 }}>
-              Healing
+              {t("Healing")}
             </TableCell>
             <TableCell align="right" style={{ width: 30, paddingRight: 8 }}>
-              HPS
+              {t("HPS")}
             </TableCell>
             <TableCell align="right" style={{ width: 30, paddingRight: 8 }}>
-              Overhealing
+              {t("Overhealing")}
             </TableCell>
           </TableRow>
         </TableHead>

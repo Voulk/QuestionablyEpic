@@ -15,15 +15,7 @@ import { reportError } from "../ErrorLogging/ErrorReporting";
 var averageHoTCount = 1.4; // TODO: Build this in correctly and pull it from logs where applicable.
 
 class Player {
-  constructor(
-    playerName,
-    specName,
-    charID,
-    region,
-    realm,
-    race,
-    statWeights = "default"
-  ) {
+  constructor(playerName, specName, charID, region, realm, race, statWeights = "default") {
     this.spec = specName;
     this.charName = playerName;
     this.charID = charID;
@@ -31,14 +23,12 @@ class Player {
     this.activeItems = [];
     this.activeConduits = [];
     this.renown = 0;
-
     this.region = region;
     this.realm = realm;
     this.race = race;
     this.uniqueHash = getUnique();
 
-    if (statWeights !== "default" && statWeights.DefaultWeights === false)
-      this.statWeights = statWeights;
+    if (statWeights !== "default" && statWeights.DefaultWeights === false) this.statWeights = statWeights;
     this.activeConduits = getAvailableClassConduits(specName);
 
     //this.getStatPerc = getStatPerc;
@@ -52,18 +42,12 @@ class Player {
   renown = 0;
   castModel = {};
   covenant = "";
-
   region = "";
   realm = "";
   race = "";
+  talents = [];
 
-  // Consider special queries a sister dictionary to CastPattern. CastPattern includes *raw* spell data pulled from logs but sometimes
-  // we need something more particular. Healing done while channeling Convoke or healing done to a specific target for example.
-  // We'll store these here instead for easy access.
-  specialQueries = {
-    Raid: {},
-    Dungeon: {},
-  };
+
   // The players active stats from their character page. These are raw rather than being percentages.
   // They can either be pulled automatically from the entered log, or calculated from an entered SimC string.
   // These are used for items like trinkets or conduits, where a flat healing portion might scale with various secondary stats.
@@ -76,11 +60,6 @@ class Player {
     stamina: 1490,
   };
 
-  fightInfo = {
-    hps: 6000,
-    rawhps: 9420,
-    fightLength: 139,
-  };
 
   // Stat weights are normalized around intellect.
   // Players who don't insert their own stat weights can use the QE defaults.
@@ -88,20 +67,8 @@ class Player {
   // - If they manually enter weights on the other hand, then this automatic-update won't occur.
   statWeights = {
     Raid: {
-      intellect: 1,
-      haste: 0.4,
-      crit: 0.4,
-      mastery: 0.45,
-      versatility: 0.4,
-      leech: 0.7,
     },
     Dungeon: {
-      intellect: 1,
-      haste: 0.4,
-      crit: 0.4,
-      mastery: 0.4,
-      versatility: 0.45,
-      leech: 0.7,
     },
     DefaultWeights: true,
   };
@@ -122,6 +89,7 @@ class Player {
   getStatWeight = (contentType, stat) => {
     const lcStat = stat.toLowerCase();
     if (!this.statWeights[contentType]) {
+      reportError(this, "Player", "Invalid Stat Weight", stat);
       return 0;
     }
 
@@ -132,21 +100,23 @@ class Player {
     return 0;
   };
 
+  setStatWeights = (newWeights, contentType) => {
+    this.statWeights[contentType] = newWeights;
+  }
+
   getCovenant = () => {
     return this.covenant;
-  }
+  };
 
   setCovenant = (cov) => {
     if (["night_fae", "venthyr", "necrolord", "kyrian"].includes(cov.toLowerCase())) this.covenant = cov;
     else {
       reportError(this, "Player", "Invalid Covenant Supplied", cov);
-      throw new Error('Invalid Covenant Supplied');
+      throw new Error("Invalid Covenant Supplied");
     }
-    
-  }
+  };
 
   calculateConduits = (contentType) => {
-    //console.log("Calculating Conduits")
     this.activeConduits.forEach((conduit) => {
       conduit.setHPS(this, contentType);
 
@@ -177,11 +147,7 @@ class Player {
     let weights = this.statWeights[contentType];
 
     for (var stat in weights) {
-      if (
-        weights[stat] > maxValue &&
-        !ignore.includes(stat) &&
-        ["crit", "haste", "mastery", "versatility"].includes(stat)
-      ) {
+      if (weights[stat] > maxValue && !ignore.includes(stat) && ["crit", "haste", "mastery", "versatility"].includes(stat)) {
         max = stat;
         maxValue = weights[stat];
       }
@@ -189,7 +155,6 @@ class Player {
 
     return max;
   };
-
 
   addActiveItem = (item) => {
     this.activeItems.push(item);
@@ -202,19 +167,9 @@ class Player {
   getActiveItems = (slot, active = false, equipped = false) => {
     let temp = this.activeItems.filter(function (item) {
       if (slot === "AllMainhands") {
-        return (
-          (item.slot === "1H Weapon" || item.slot === "2H Weapon") &&
-          (!active || item.active) &&
-          (!equipped || item.isEquipped)
-        );
+        return (item.slot === "1H Weapon" || item.slot === "2H Weapon") && (!active || item.active) && (!equipped || item.isEquipped);
       } else if (slot === "Offhands") {
-        return (
-          (item.slot === "Holdable" ||
-            item.slot === "Offhand" ||
-            item.slot === "Shield") &&
-          (!active || item.active) &&
-          (!equipped || item.isEquipped)
-        );
+        return (item.slot === "Holdable" || item.slot === "Offhand" || item.slot === "Shield") && (!active || item.active) && (!equipped || item.isEquipped);
       } else {
         return item.slot === slot && (!active || item.active) && (!equipped || item.isEquipped);
       }
@@ -222,39 +177,34 @@ class Player {
     return this.sortItems(temp);
   };
 
-  
   getEquippedItems = (weaponFlag = false) => {
     let temp = this.activeItems.filter(function (item) {
-      return (item.isEquipped || (weaponFlag && ["Offhand", "Shield", "1H Weapon", "2H Weapon"].includes(item.slot)));
+      return item.isEquipped || (weaponFlag && ["Offhand", "Shield", "1H Weapon", "2H Weapon"].includes(item.slot));
     });
 
     return temp;
-  }
+  };
 
-  // Returns the players weapons and offhands. 
+  // Returns the players weapons and offhands.
   getTopWeapons = () => {
     let wepArray = [];
-
     let temp = this.activeItems.filter(function (item) {
-      return ['Holdable', 'Shield', 'Offhand', '1H Weapon', '2H Weapon'].includes(item.slot);
-      //return item;
+      return ["Holdable", "Shield", "Offhand", "1H Weapon", "2H Weapon"].includes(item.slot);
     });
     return this.sortItems(temp);
-  }
+  };
 
   scoreActiveItems = (contentType) => {
     for (var i = 0; i < this.activeItems.length; i++) {
       let item = this.activeItems[i];
-      
       item.softScore = scoreItem(item, this, contentType);
 
       // Error checking
       if (item.softScore < 0) {
-        // Scores should never go below 0. 
+        // Scores should never go below 0.
         reportError(this, "Player", "Item scored at below 0", item.softScore);
-        throw new Error('Invalid score when scoring active items.');
+        throw new Error("Invalid score when scoring active items.");
       }
-      
     }
   };
 
@@ -262,7 +212,6 @@ class Player {
   getSelectedItems = () => {
     let temp = this.activeItems.filter(function (item) {
       return item.active === true;
-      //return item;
     });
     return this.sortItems(temp);
   };
@@ -304,8 +253,7 @@ class Player {
         if (this.spec === SPEC.HOLYPALADIN) {
           statPerc = (0.12 + this.activeStats.mastery / 23.3 / 100) * 0.7 + 1;
         } else if (this.spec === SPEC.RESTOSHAMAN) {
-          statPerc =
-            1 + (0.25 * 8 * 35 + this.activeStats.mastery) / (35 / 3) / 100; // .25 is placeholder for mastery effectiveness
+          statPerc = 1 + (0.25 * 8 * 35 + this.activeStats.mastery) / (35 / 3) / 100; // .25 is placeholder for mastery effectiveness
         } else if (this.spec === SPEC.RESTODRUID) {
           statPerc = 1 + (0.04 + this.activeStats.mastery / 70 / 100) * 1.8; // 1.8 is the average HoT multiplier.
         } else if (this.spec === SPEC.HOLYPRIEST) {
@@ -324,7 +272,6 @@ class Player {
     }
 
     // Round to four decimal places. I'd heavily caution against ever rounding more heavily than this.
-    //console.log("Stat: " + stat + ". Perc: " + statPerc);
     return Math.round(statPerc * 10000) / 10000;
   };
 
@@ -333,33 +280,16 @@ class Player {
     let mult = 1;
     if (flag === "ALL") {
       // Returns a multiplier that includes raw intellect.
-      mult =
-        this.getStatPerc("Haste") *
-        this.getStatPerc("Crit") *
-        this.getStatPerc("Versatility") *
-        this.getStatPerc("Mastery") *
-        this.activeStats.intellect;
+      mult = this.getStatPerc("Haste") * this.getStatPerc("Crit") * this.getStatPerc("Versatility") * this.getStatPerc("Mastery") * this.activeStats.intellect;
     } else if (flag === "NOHASTE") {
       // Returns a multiplier that includes raw intellect.
-      mult =
-        this.getStatPerc("Haste") *
-        this.getStatPerc("Crit") *
-        this.getStatPerc("Versatility") *
-        this.getStatPerc("Mastery") *
-        this.activeStats.intellect;
+      mult = this.getStatPerc("Haste") * this.getStatPerc("Crit") * this.getStatPerc("Versatility") * this.getStatPerc("Mastery") * this.activeStats.intellect;
     } else if (flag === "ALLSEC") {
       // Returns a multiplier that includes all secondaries but NOT intellect.
-      mult =
-        this.getStatPerc("Haste") *
-        this.getStatPerc("Crit") *
-        this.getStatPerc("Versatility") *
-        this.getStatPerc("Mastery");
+      mult = this.getStatPerc("Haste") * this.getStatPerc("Crit") * this.getStatPerc("Versatility") * this.getStatPerc("Mastery");
     } else if (flag === "NOMAST") {
       // Returns a multiplier of Haste / Vers / Crit.
-      mult =
-        this.getStatPerc("Haste") *
-        this.getStatPerc("Crit") *
-        this.getStatPerc("Versatility");
+      mult = this.getStatPerc("Haste") * this.getStatPerc("Crit") * this.getStatPerc("Versatility");
     } else if (flag === "CRITVERS") {
       // Returns a multiplier that includes raw intellect.
       mult = this.getStatPerc("Crit") * this.getStatPerc("Versatility");
@@ -376,10 +306,7 @@ class Player {
   updateConduitLevel = (id, newLevel) => {
     for (let i = 0; i < this.activeConduits.length; i++) {
       if (this.activeConduits[i].id === id) {
-        this.activeConduits[i].itemLevel = Math.max(
-          145,
-          Math.min(newLevel, 226)
-        );
+        this.activeConduits[i].itemLevel = Math.max(145, Math.min(newLevel, 226));
       }
     }
   };
@@ -416,19 +343,16 @@ class Player {
     return this.castModel[contentType].getSpecialQuery(queryIdentifier);
   };
 
+  getCooldownMult = (queryIdentifier, contentType) => {
+    return this.castModel[contentType].getSpecialQuery(queryIdentifier, "cooldownMult");
+  }
+
   getSingleCast = (spellID, contentType, castType = "casts") => {
-    return (
-      this.castModel[contentType].getSpellData(spellID, "healing") /
-      this.castModel[contentType].getSpellData(spellID, castType)
-    );
+    return this.castModel[contentType].getSpellData(spellID, "healing") / this.castModel[contentType].getSpellData(spellID, castType);
   };
 
   getSpellCPM = (spellID, contentType) => {
-    return (
-      (this.getSpellCasts(spellID, contentType) /
-        this.getFightLength(contentType)) *
-      60
-    );
+    return (this.getSpellCasts(spellID, contentType) / this.getFightLength(contentType)) * 60;
   };
 
   getSpellCasts = (spellID, contentType) => {
@@ -439,20 +363,20 @@ class Player {
     return this.castModel[contentType].getSpellData(spellID, "hps");
   };
 
+  /* --------------- Return the Spell List for the content Type --------------- */
 
-  /* --------------- Return the Spell List for the content Type --------------- */ 
   getSpellList = (contentType) => {
-    return this.castModel[contentType].spellList
+    return this.castModel[contentType].spellList;
   };
 
   /* ------------- Return the Saved ReportID from the imported log ------------ */
   getReportID = (contentType) => {
-    return this.castModel[contentType].fightInfo.reportID
+    return this.castModel[contentType].fightInfo.reportID;
   };
 
   /* ------------ Return the Saved Boss Name from the imported log ------------ */
   getBossName = (contentType) => {
-    return this.castModel[contentType].fightInfo.bossName
+    return this.castModel[contentType].fightInfo.bossName;
   };
 
   setSpellPattern = (spellList) => {
@@ -467,39 +391,31 @@ class Player {
     if (Object.keys(info).length > 0) this.castModel["Raid"].setFightInfo(info);
   };
 
- 
   setDefaultWeights = (spec, contentType) => {
-
     if (spec === SPEC.RESTODRUID) {
       this.statWeights[contentType] = druidDefaultStatWeights(contentType);
       this.statWeights.DefaultWeights = true;
-    }
-    else if (spec === SPEC.HOLYPALADIN) {
+    } else if (spec === SPEC.HOLYPALADIN) {
       this.statWeights[contentType] = paladinDefaultStatWeights(contentType);
       this.statWeights.DefaultWeights = true;
-    }
-    else if (spec === SPEC.DISCPRIEST) {
+    } else if (spec === SPEC.DISCPRIEST) {
       this.statWeights[contentType] = discPriestDefaultStatWeights(contentType);
       this.statWeights.DefaultWeights = true;
-    }
-    else if (spec === SPEC.HOLYPRIEST) {
+    } else if (spec === SPEC.HOLYPRIEST) {
       this.statWeights[contentType] = holyPriestDefaultStatWeights(contentType);
       this.statWeights.DefaultWeights = true;
-    }
-    else if (spec === SPEC.MISTWEAVERMONK) {
+    } else if (spec === SPEC.MISTWEAVERMONK) {
       this.statWeights[contentType] = monkDefaultStatWeights(contentType);
       this.statWeights.DefaultWeights = true;
-    }
-    else if (spec === SPEC.RESTOSHAMAN) {
+    } else if (spec === SPEC.RESTOSHAMAN) {
       this.statWeights[contentType] = shamanDefaultStatWeights(contentType);
       this.statWeights.DefaultWeights = true;
-    }
-    else {
+    } else {
       // Invalid spec replied. Error.
       reportError(this, "Player", "Invalid Spec Supplied for Default Weights", spec);
-      throw new Error('Invalid Spec Supplied');
+      throw new Error("Invalid Spec Supplied");
     }
-}
+  };
 
   // Consider replacing this with an external table for cleanliness and ease of editing.
   setupDefaults = (spec) => {
@@ -520,14 +436,7 @@ class Player {
       this.statWeights.Raid = druidDefaultStatWeights("Raid");
       this.statWeights.Dungeon = druidDefaultStatWeights("Dungeon");
       this.statWeights.DefaultWeights = true;
-      
-
     } else if (spec === SPEC.HOLYPALADIN) {
-      this.fightInfo = {
-        hps: 5500,
-        rawhps: 9420,
-        fightLength: 465,
-      };
 
       this.activeStats = {
         intellect: 1420,
@@ -541,14 +450,8 @@ class Player {
       this.statWeights.Raid = paladinDefaultStatWeights("Raid");
       this.statWeights.Dungeon = paladinDefaultStatWeights("Dungeon");
       this.statWeights.DefaultWeights = true;
-
     } else if (spec === SPEC.RESTOSHAMAN) {
       // all of this needs a proper input once
-      this.fightInfo = {
-        hps: 5500,
-        rawhps: 7000,
-        fightLength: 465,
-      };
       this.activeStats = {
         intellect: 1420,
         haste: 125,
@@ -560,13 +463,7 @@ class Player {
       this.statWeights.Raid = shamanDefaultStatWeights("Raid");
       this.statWeights.Dungeon = shamanDefaultStatWeights("Dungeon");
       this.statWeights.DefaultWeights = true;
-
     } else if (spec === SPEC.DISCPRIEST) {
-      this.fightInfo = {
-        hps: 5500,
-        rawhps: 9420,
-        fightLength: 193,
-      };
       this.activeStats = {
         intellect: 1420,
         haste: 500,
@@ -579,7 +476,6 @@ class Player {
       this.statWeights.Raid = discPriestDefaultStatWeights("Raid");
       this.statWeights.Dungeon = discPriestDefaultStatWeights("Dungeon");
       this.statWeights.DefaultWeights = true;
-
     } else if (spec === SPEC.HOLYPRIEST) {
       this.activeStats = {
         intellect: 1420,
@@ -593,13 +489,7 @@ class Player {
       this.statWeights.Raid = holyPriestDefaultStatWeights("Raid");
       this.statWeights.Dungeon = holyPriestDefaultStatWeights("Dungeon");
       this.statWeights.DefaultWeights = true;
-
     } else if (spec === SPEC.MISTWEAVERMONK) {
-      this.fightInfo = {
-        hps: 5500,
-        rawhps: 9420,
-        fightLength: 193,
-      };
       this.activeStats = {
         intellect: 1420,
         haste: 125,
@@ -612,11 +502,10 @@ class Player {
       this.statWeights.Raid = monkDefaultStatWeights("Raid");
       this.statWeights.Dungeon = monkDefaultStatWeights("Dungeon");
       this.statWeights.DefaultWeights = true;
-    }
-    else {
+    } else {
       // Invalid spec replied. Error.
-      reportError(this, "Player", "Invalid Spec Supplied for setupDefaults", spec);
-      throw new Error('Invalid Spec Supplied');
+      reportError(this, "Player", "Invalid Spec Supplied during setupDefaults", spec);
+      throw new Error("Invalid Spec Supplied");
     }
   };
 }

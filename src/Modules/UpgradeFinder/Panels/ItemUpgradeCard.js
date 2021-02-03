@@ -1,28 +1,15 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import {
-  Card,
-  CardContent,
-  Typography,
-  Grid,
-  Divider,
-  IconButton,
-} from "@material-ui/core";
-import {
-  getTranslatedItemName,
-  buildStatString,
-  getItemIcon,
-} from "../Engine/ItemUtilities";
+import { Card, CardContent, Typography, Grid, Divider, IconButton } from "@material-ui/core";
+import { getTranslatedItemName, buildStatString, getItemIcon } from "../../Engine/ItemUtilities";
 import "./ItemUpgrade.css";
 import DeleteIcon from "@material-ui/icons/Delete";
-import socketImage from "../../Images/Resources/EmptySocket.png";
+import socketImage from "../../../Images/Resources/EmptySocket.png";
 import { useTranslation } from "react-i18next";
 
 const useStyles = makeStyles({
   root: {
     minWidth: 250,
-    //backgroundColor: "#464E5B",
-    //backgroundColor: "#464E5B",
   },
   downgrade: {
     minWidth: 250,
@@ -63,26 +50,6 @@ export default function ItemCard(props) {
     else if (itemLevel >= 183) return "#a73fee";
     else if (itemLevel >= 120) return "#328CE3";
     else return "#1eff00";
-
-    /*
-      case "Legendary":
-        return "#ff8000";
-        break;
-      case "Epic":
-        return "#a335ee";
-        break;
-      case "Rare":
-        return "#a335ee";
-        break;
-      case "Uncommon":
-        return "#328CE3"; // Previously #0070dd
-        break;
-      case "Common":
-        return "#1eff00";
-        break;
-      default:
-        return "#fff";
-        */
   };
 
   const deleteItemCard = () => {
@@ -102,48 +69,24 @@ export default function ItemCard(props) {
   const deleteActive = item.offhandID === 0;
 
   if (item.offhandID > 0) {
-    itemName =
-      getTranslatedItemName(item.id, currentLanguage) +
-      " & " +
-      getTranslatedItemName(item.offhandID, currentLanguage);
+    itemName = getTranslatedItemName(item.id, currentLanguage) + " & " + getTranslatedItemName(item.offhandID, currentLanguage);
   } else {
     if (isLegendary) itemName = item.effect.name;
-    // Add translations to this.
     else itemName = getTranslatedItemName(item.id, currentLanguage);
   }
 
   const socket = props.item.socket ? (
     <div style={{ display: "inline" }}>
-      <img
-        src={socketImage}
-        width={15}
-        height={15}
-        style={{ verticalAlign: "middle" }}
-        alt="Socket"
-      />{" "}
+      <img src={socketImage} width={15} height={15} style={{ verticalAlign: "middle" }} alt="Socket" />{" "}
     </div>
   ) : null;
 
-  const tertiary =
-    props.item.tertiary !== "" ? (
-      <div style={{ display: "inline" }}> / {props.item.tertiary} </div>
-    ) : null;
-
-  //console.log(props.item);
+  const tertiary = props.item.tertiary !== "" ? <div style={{ display: "inline" }}> / {props.item.tertiary} </div> : null;
 
   return (
     <Grid item xs={12} sm={12} md={12} lg={6} xl={4}>
-      <Card
-        className={itemDifferential == 0 ? classes.downgrade : classes.root}
-        variant="outlined"
-      >
-        {/* <CardActionArea disabled={true}> */}
-        <Grid
-          container
-          display="inline-flex"
-          wrap="nowrap"
-          justify="space-between"
-        >
+      <Card className={itemDifferential == 0 ? classes.downgrade : classes.root} variant="outlined">
+        <Grid container display="inline-flex" wrap="nowrap" justify="space-between">
           <Grid item xs="auto">
             <CardContent
               style={{
@@ -151,18 +94,7 @@ export default function ItemCard(props) {
                 display: "inline-flex",
               }}
             >
-              <a
-                data-wowhead={
-                  "item=" +
-                  item.id +
-                  "&" +
-                  "ilvl=" +
-                  item.level +
-                  "&domain=" +
-                  currentLanguage
-                }
-                //key={i}
-              >
+              <a data-wowhead={"item=" + item.id + "&" + "ilvl=" + item.level + "&domain=" + currentLanguage}>
                 <div className="container-ItemCards">
                   <img
                     alt="img"
@@ -183,30 +115,10 @@ export default function ItemCard(props) {
           </Grid>
           <Divider orientation="vertical" flexItem />
           <CardContent style={{ padding: 4, width: "100%" }}>
-            <Grid
-              item
-              container
-              display="inline"
-              direction="column"
-              justify="space-around"
-              xs="auto"
-            >
-              <Grid
-                container
-                item
-                wrap="nowrap"
-                justify="space-between"
-                alignItems="center"
-                style={{ width: "100%" }}
-              >
+            <Grid item container display="inline" direction="column" justify="space-around" xs="auto">
+              <Grid container item wrap="nowrap" justify="space-between" alignItems="center" style={{ width: "100%" }}>
                 <Grid item xs={10} display="inline">
-                  <Typography
-                    variant={itemName.length > 30 ? "subtitle2" : "subtitle1"}
-                    wrap="nowrap"
-                    display="inline"
-                    align="left"
-                    style={{ color: itemQuality(itemLevel) }}
-                  >
+                  <Typography variant={itemName.length > 30 ? "subtitle2" : "subtitle1"} wrap="nowrap" display="inline" align="left" style={{ color: itemQuality(itemLevel) }}>
                     {itemName}
                   </Typography>
                 </Grid>
@@ -238,7 +150,6 @@ export default function ItemCard(props) {
             </Grid>
           </CardContent>
         </Grid>
-        {/* </CardActionArea> */}
       </Card>
     </Grid>
   );

@@ -1,10 +1,7 @@
 import moment from "moment";
 import axios from "axios";
-import {
-  damageExclusions,
-  healerCooldownsDetailed,
-  externalsDetailed,
-} from "../Data/Data";
+import { damageExclusions, healerCooldownsDetailed } from "../Data/Data";
+import { externalsDB } from "../../../Databases/ExternalsDB";
 import i18n from "i18next";
 
 // Returns Seconds from 0 to Loglength
@@ -52,17 +49,12 @@ export function reduceTimestamps(array) {
 }
 
 // returns fight duration Time end - time start of log
-export function fightDurationCalculator(time1, time2) {
-  let time = time1 - time2;
-  return time;
+export function fightDuration(time1, time2) {
+  return time1 - time2;
 }
 
-export function durationmaker(
-  ability,
-  originalTimestamp,
-  abilityname,
-  endtime
-) {
+/* -- Creates Timestamps for each second of duration of an active Cooldown -- */
+export function durationmaker(ability, originalTimestamp, abilityname, endtime) {
   let duration = healerCooldownsDetailed
     .filter((obj) => {
       return obj.guid === ability;
@@ -89,8 +81,7 @@ export function durationmaker(
 
 // Returns Array of Healer Information
 export async function importHealerLogData(starttime, endtime, reportid) {
-  const APIHEALING =
-    "https://www.warcraftlogs.com:443/v1/report/tables/healing/";
+  const APIHEALING = "https://www.warcraftlogs.com:443/v1/report/tables/healing/";
   const apiMonk = "&sourceclass=Monk";
   const apiPaladin = "&sourceclass=Paladin";
   const apiDruid = "&sourceclass=Druid";
@@ -106,9 +97,7 @@ export async function importHealerLogData(starttime, endtime, reportid) {
   // Class Casts Import
 
   await axios
-    .get(
-      APIHEALING + reportid + START + starttime + END + endtime + apiMonk + API2
-    )
+    .get(APIHEALING + reportid + START + starttime + END + endtime + apiMonk + API2)
     .then((result) => {
       healers = Object.keys(result.data.entries)
         .filter((key) => result.data.entries[key].icon === "Monk-Mistweaver")
@@ -119,21 +108,12 @@ export async function importHealerLogData(starttime, endtime, reportid) {
     });
 
   await axios
-    .get(
-      APIHEALING +
-        reportid +
-        START +
-        starttime +
-        END +
-        endtime +
-        apiPaladin +
-        API2
-    )
+    .get(APIHEALING + reportid + START + starttime + END + endtime + apiPaladin + API2)
     .then((result) => {
       healers = healers.concat(
         Object.keys(result.data.entries)
           .filter((key) => result.data.entries[key].icon === "Paladin-Holy")
-          .map((key) => result.data.entries[key])
+          .map((key) => result.data.entries[key]),
       );
     })
     .catch(function (error) {
@@ -141,23 +121,12 @@ export async function importHealerLogData(starttime, endtime, reportid) {
     });
 
   await axios
-    .get(
-      APIHEALING +
-        reportid +
-        START +
-        starttime +
-        END +
-        endtime +
-        apiDruid +
-        API2
-    )
+    .get(APIHEALING + reportid + START + starttime + END + endtime + apiDruid + API2)
     .then((result) => {
       healers = healers.concat(
         Object.keys(result.data.entries)
-          .filter(
-            (key) => result.data.entries[key].icon === "Druid-Restoration"
-          )
-          .map((key) => result.data.entries[key])
+          .filter((key) => result.data.entries[key].icon === "Druid-Restoration")
+          .map((key) => result.data.entries[key]),
       );
     })
     .catch(function (error) {
@@ -165,16 +134,7 @@ export async function importHealerLogData(starttime, endtime, reportid) {
     });
 
   await axios
-    .get(
-      APIHEALING +
-        reportid +
-        START +
-        starttime +
-        END +
-        endtime +
-        apiPriest +
-        API2
-    )
+    .get(APIHEALING + reportid + START + starttime + END + endtime + apiPriest + API2)
     .then((result) => {
       healers = healers.concat(
         Object.keys(result.data.entries)
@@ -183,7 +143,7 @@ export async function importHealerLogData(starttime, endtime, reportid) {
           //     result.data.entries[key].icon === "Priest-Holy" ||
           //     result.data.entries[key].icon === "Priest-Discipline"
           // )
-          .map((key) => result.data.entries[key])
+          .map((key) => result.data.entries[key]),
       );
     })
     .catch(function (error) {
@@ -191,23 +151,12 @@ export async function importHealerLogData(starttime, endtime, reportid) {
     });
 
   await axios
-    .get(
-      APIHEALING +
-        reportid +
-        START +
-        starttime +
-        END +
-        endtime +
-        apiShaman +
-        API2
-    )
+    .get(APIHEALING + reportid + START + starttime + END + endtime + apiShaman + API2)
     .then((result) => {
       healers = healers.concat(
         Object.keys(result.data.entries)
-          .filter(
-            (key) => result.data.entries[key].icon === "Shaman-Restoration"
-          )
-          .map((key) => result.data.entries[key])
+          .filter((key) => result.data.entries[key].icon === "Shaman-Restoration")
+          .map((key) => result.data.entries[key]),
       );
     })
     .catch(function (error) {
@@ -215,60 +164,27 @@ export async function importHealerLogData(starttime, endtime, reportid) {
     });
 
   await axios
-    .get(
-      APIHEALING +
-        reportid +
-        START +
-        starttime +
-        END +
-        endtime +
-        apiWarrior +
-        API2
-    )
+    .get(APIHEALING + reportid + START + starttime + END + endtime + apiWarrior + API2)
     .then((result) => {
-      healers = healers.concat(
-        Object.keys(result.data.entries).map((key) => result.data.entries[key])
-      );
+      healers = healers.concat(Object.keys(result.data.entries).map((key) => result.data.entries[key]));
     })
     .catch(function (error) {
       console.log(error);
     });
 
   await axios
-    .get(
-      APIHEALING +
-        reportid +
-        START +
-        starttime +
-        END +
-        endtime +
-        apiDemonHunter +
-        API2
-    )
+    .get(APIHEALING + reportid + START + starttime + END + endtime + apiDemonHunter + API2)
     .then((result) => {
-      healers = healers.concat(
-        Object.keys(result.data.entries).map((key) => result.data.entries[key])
-      );
+      healers = healers.concat(Object.keys(result.data.entries).map((key) => result.data.entries[key]));
     })
     .catch(function (error) {
       console.log(error);
     });
 
   await axios
-    .get(
-      APIHEALING +
-        reportid +
-        START +
-        starttime +
-        END +
-        endtime +
-        apiDeathKnight +
-        API2
-    )
+    .get(APIHEALING + reportid + START + starttime + END + endtime + apiDeathKnight + API2)
     .then((result) => {
-      healers = healers.concat(
-        Object.keys(result.data.entries).map((key) => result.data.entries[key])
-      );
+      healers = healers.concat(Object.keys(result.data.entries).map((key) => result.data.entries[key]));
     })
     .catch(function (error) {
       console.log(error);
@@ -296,7 +212,7 @@ export async function importCharacterIds(starttime, endtime, reportid) {
           name: key[1].name,
           class: key[1].type,
           spec: key[1].icon,
-        })
+        }),
       );
 
       // Object.entries(result.data.enemies).map((key) =>
@@ -332,7 +248,7 @@ export async function importEnemyIds(starttime, endtime, reportid) {
           name: key[1].name,
           class: key[1].type,
           spec: key[1].icon,
-        })
+        }),
       );
     })
     .catch(function (error) {
@@ -342,8 +258,7 @@ export async function importEnemyIds(starttime, endtime, reportid) {
 }
 
 export async function importDamageLogData(starttime, endtime, reportid) {
-  const APIdamagetaken =
-    "https://www.warcraftlogs.com:443/v1/report/events/damage-taken/";
+  const APIdamagetaken = "https://www.warcraftlogs.com:443/v1/report/events/damage-taken/";
   const API2 = "&api_key=92fc5d4ae86447df22a8c0917c1404dc";
   const START = "?start=";
   const END = "&end=";
@@ -353,24 +268,14 @@ export async function importDamageLogData(starttime, endtime, reportid) {
   // Class Casts Import
 
   await axios
-    .get(
-      APIdamagetaken +
-        reportid +
-        START +
-        starttime +
-        END +
-        endtime +
-        HOSTILITY +
-        API2
-    )
+    .get(APIdamagetaken + reportid + START + starttime + END + endtime + HOSTILITY + API2)
     .then((result) => {
       damage = Object.keys(result.data.events)
         .filter(
           (key) =>
-            damageExclusions.includes(result.data.events[key].ability.guid) ===
-              false &&
+            damageExclusions.includes(result.data.events[key].ability.guid) === false &&
             // Has to Have unmitigatedAmount
-            result.data.events[key].unmitigatedAmount
+            result.data.events[key].unmitigatedAmount,
         )
         .map((key) => result.data.events[key]);
       nextpage = result.data.nextPageTimestamp;
@@ -383,28 +288,17 @@ export async function importDamageLogData(starttime, endtime, reportid) {
   if (nextpage !== undefined || null) {
     do {
       await axios
-        .get(
-          APIdamagetaken +
-            reportid +
-            START +
-            nextpage +
-            END +
-            endtime +
-            HOSTILITY +
-            API2
-        )
+        .get(APIdamagetaken + reportid + START + nextpage + END + endtime + HOSTILITY + API2)
         .then((result) => {
           damage = damage.concat(
             Object.keys(result.data.events)
               .filter(
                 (key) =>
-                  damageExclusions.includes(
-                    result.data.events[key].ability.guid
-                  ) === false &&
+                  damageExclusions.includes(result.data.events[key].ability.guid) === false &&
                   // Has to Have unmitigatedAmount
-                  result.data.events[key].unmitigatedAmount
+                  result.data.events[key].unmitigatedAmount,
               )
-              .map((key) => result.data.events[key])
+              .map((key) => result.data.events[key]),
           );
           nextpage = result.data.nextPageTimestamp;
         })
@@ -417,12 +311,7 @@ export async function importDamageLogData(starttime, endtime, reportid) {
   return damage;
 }
 
-export async function importCastsLogData(
-  starttime,
-  endtime,
-  reportid,
-  healerID
-) {
+export async function importCastsLogData(starttime, endtime, reportid, healerID) {
   const APICast = "https://www.warcraftlogs.com:443/v1/report/events/casts/";
   const START = "?start=";
   const END = "&end=";
@@ -432,21 +321,15 @@ export async function importCastsLogData(
   let cooldowns = [];
 
   await axios
-    .get(
-      APICast + reportid + START + starttime + END + endtime + HOSTILITY + API2
-    )
+    .get(APICast + reportid + START + starttime + END + endtime + HOSTILITY + API2)
     .then((result) => {
       cooldowns = Object.keys(result.data.events)
         .filter(
           (key) =>
-            healerCooldownsDetailed
-              .map((obj) => obj.guid)
-              .includes(result.data.events[key].ability.guid) &&
+            healerCooldownsDetailed.map((obj) => obj.guid).includes(result.data.events[key].ability.guid) &&
             // Because Holy Word: Salvation comes up in logs as begincast we filter out the cast version so that it doesn't appear twice.
-            (result.data.events[key].ability.guid === 265202
-              ? result.data.events[key].type === "begincast"
-              : result.data.events[key].type === "cast") &&
-            healerID.includes(result.data.events[key].sourceID)
+            (result.data.events[key].ability.guid === 265202 ? result.data.events[key].type === "begincast" : result.data.events[key].type === "cast") &&
+            healerID.includes(result.data.events[key].sourceID),
         )
         .map((key) => result.data.events[key]);
       nextpage = result.data.nextPageTimestamp;
@@ -459,31 +342,18 @@ export async function importCastsLogData(
   if (nextpage !== undefined || null) {
     do {
       await axios
-        .get(
-          APICast +
-            reportid +
-            START +
-            nextpage +
-            END +
-            endtime +
-            HOSTILITY +
-            API2
-        )
+        .get(APICast + reportid + START + nextpage + END + endtime + HOSTILITY + API2)
         .then((result) => {
           cooldowns = cooldowns.concat(
             Object.keys(result.data.events)
               .filter(
                 (key) =>
-                  healerCooldownsDetailed
-                    .map((obj) => obj.guid)
-                    .includes(result.data.events[key].ability.guid) &&
+                  healerCooldownsDetailed.map((obj) => obj.guid).includes(result.data.events[key].ability.guid) &&
                   // Because Holy Word: Salvation comes up in logs as begincast we filter out the cast version so that it doesn't appear twice.
-                  (result.data.events[key].ability.guid === 265202
-                    ? result.data.events[key].type === "begincast"
-                    : result.data.events[key].type === "cast") &&
-                  healerID.includes(result.data.events[key].sourceID)
+                  (result.data.events[key].ability.guid === 265202 ? result.data.events[key].type === "begincast" : result.data.events[key].type === "cast") &&
+                  healerID.includes(result.data.events[key].sourceID),
               )
-              .map((key) => result.data.events[key])
+              .map((key) => result.data.events[key]),
           );
           nextpage = result.data.nextPageTimestamp;
         })
@@ -506,9 +376,7 @@ export async function importEnemyCasts(starttime, endtime, reportid, healerID) {
   let enemyCasts = [];
 
   await axios
-    .get(
-      APICast + reportid + START + starttime + END + endtime + HOSTILITY + API2
-    )
+    .get(APICast + reportid + START + starttime + END + endtime + HOSTILITY + API2)
     .then((result) => {
       enemyCasts = Object.keys(result.data.events)
         .filter((key) => result.data.events[key].type === "cast")
@@ -523,21 +391,12 @@ export async function importEnemyCasts(starttime, endtime, reportid, healerID) {
   if (nextpage !== undefined || null) {
     do {
       await axios
-        .get(
-          APICast +
-            reportid +
-            START +
-            nextpage +
-            END +
-            endtime +
-            HOSTILITY +
-            API2
-        )
+        .get(APICast + reportid + START + nextpage + END + endtime + HOSTILITY + API2)
         .then((result) => {
           enemyCasts = enemyCasts.concat(
             Object.keys(result.data.events)
               .filter((key) => result.data.events[key].type === "cast")
-              .map((key) => result.data.events[key])
+              .map((key) => result.data.events[key]),
           );
           nextpage = result.data.nextPageTimestamp;
         })
@@ -550,12 +409,7 @@ export async function importEnemyCasts(starttime, endtime, reportid, healerID) {
   return enemyCasts;
 }
 
-export async function importExternalCastsLogData(
-  starttime,
-  endtime,
-  reportid,
-  healerID
-) {
+export async function importExternalCastsLogData(starttime, endtime, reportid, healerID) {
   const APICast = "https://www.warcraftlogs.com:443/v1/report/events/casts/";
   const START = "?start=";
   const END = "&end=";
@@ -565,21 +419,15 @@ export async function importExternalCastsLogData(
   let externals = [];
 
   await axios
-    .get(
-      APICast + reportid + START + starttime + END + endtime + HOSTILITY + API2
-    )
+    .get(APICast + reportid + START + starttime + END + endtime + HOSTILITY + API2)
     .then((result) => {
       externals = Object.keys(result.data.events)
         .filter(
           (key) =>
-            externalsDetailed
-              .map((obj) => obj.guid)
-              .includes(result.data.events[key].ability.guid) &&
+            externalsDB.map((obj) => obj.guid).includes(result.data.events[key].ability.guid) &&
             // Because Holy Word: Salvation comes up in logs as begincast we filter out the cast version so that it doesn't appear twice.
-            (result.data.events[key].ability.guid === 265202
-              ? result.data.events[key].type === "begincast"
-              : result.data.events[key].type === "cast") &&
-            healerID.includes(result.data.events[key].sourceID)
+            (result.data.events[key].ability.guid === 265202 ? result.data.events[key].type === "begincast" : result.data.events[key].type === "cast") &&
+            healerID.includes(result.data.events[key].sourceID),
         )
         .map((key) => result.data.events[key]);
       nextpage = result.data.nextPageTimestamp;
@@ -592,31 +440,18 @@ export async function importExternalCastsLogData(
   if (nextpage !== undefined || null) {
     do {
       await axios
-        .get(
-          APICast +
-            reportid +
-            START +
-            nextpage +
-            END +
-            endtime +
-            HOSTILITY +
-            API2
-        )
+        .get(APICast + reportid + START + nextpage + END + endtime + HOSTILITY + API2)
         .then((result) => {
           externals = externals.concat(
             Object.keys(result.data.events)
               .filter(
                 (key) =>
-                  externalsDetailed
-                    .map((obj) => obj.guid)
-                    .includes(result.data.events[key].ability.guid) &&
+                  externalsDB.map((obj) => obj.guid).includes(result.data.events[key].ability.guid) &&
                   // Because Holy Word: Salvation comes up in logs as begincast we filter out the cast version so that it doesn't appear twice.
-                  (result.data.events[key].ability.guid === 265202
-                    ? result.data.events[key].type === "begincast"
-                    : result.data.events[key].type === "cast") &&
-                  healerID.includes(result.data.events[key].sourceID)
+                  (result.data.events[key].ability.guid === 265202 ? result.data.events[key].type === "begincast" : result.data.events[key].type === "cast") &&
+                  healerID.includes(result.data.events[key].sourceID),
               )
-              .map((key) => result.data.events[key])
+              .map((key) => result.data.events[key]),
           );
           nextpage = result.data.nextPageTimestamp;
         })
@@ -685,25 +520,25 @@ export function sumDamage(array) {
 }
 
 export function logDifficulty(dif) {
-  if (dif === 1) {
-    return "LFR";
-  } else if (dif === 3) {
-    return "Normal";
-  } else if (dif === 4) {
-    return "Heroic";
-  } else if (dif === 5) {
-    return "Mythic";
-  } else if (dif === 10) {
-    return "M+";
-  } else {
-    return "Error: Difficulty Missing :(";
+  switch (dif) {
+    case 1:
+      return "LFR";
+    case 3:
+      return "Normal";
+    case 4:
+      return "Heroic";
+    case 5:
+      return "Mythic";
+    case 10:
+      return "M+";
+    default:
+      return "Error: Difficulty Missing :(";
   }
 }
 
 // Returns Array of Healer Information
 export async function importSummaryData(starttime, endtime, reportid) {
-  const APISummary =
-    "https://www.warcraftlogs.com:443/v1/report/tables/summary/";
+  const APISummary = "https://www.warcraftlogs.com:443/v1/report/tables/summary/";
   const API2 = "&api_key=92fc5d4ae86447df22a8c0917c1404dc";
   const START = "?start=";
   const END = "&end=";

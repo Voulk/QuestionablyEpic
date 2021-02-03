@@ -1,4 +1,4 @@
-import { itemDB, tokenDB } from "../Player/ItemDB";
+import { itemDB, tokenDB } from "../../Databases/ItemDB";
 import Item from "../Player/Item";
 import { runTopGear } from "../TopGear/TopGearEngine";
 import {
@@ -15,45 +15,23 @@ import {
 import UpgradeFinderResult from "./UpgradeFinderResult";
 import { apiSendUpgradeFinder } from "../SetupAndMenus/ConnectionUtilities";
 /*
-
 The core Upgrade Finder loop is as follows:
 - Run the players current gear set through our evaluation function to get a baseline score.
 - Loop through the ItemDB and find all items that drop from raid, Mythic+, or PVP.
 - For each item, build a set consisting of a players current item set + the item. 
 - Run each set through our evaluation function. Store the score differential against the item.
-
 - Print the items in the correct place along with their score differential. 
 - (Extra Feature) Include a summary page that lists the largest score upgrades and where they come from. 
-
-
-
 */
 
 const itemLevels = {
   raid: [187, 200, 213, 226],
-  dungeon: [
-    184,
-    184,
-    187,
-    190,
-    194,
-    194,
-    197,
-    200,
-    200,
-    200,
-    203,
-    203,
-    207,
-    207,
-    207,
-    210,
-  ],
+  dungeon: [184, 184, 187, 190, 194, 194, 197, 200, 200, 200, 203, 203, 207, 207, 207, 210],
   pvp: [200, 207, 213, 220, 226, 226],
 };
 
-// This is a copy paste from buildWepCombos. 
-// TODO: Make buildWepCombos accept a generic list of items instead of auto-using the players set. Then fold this function into it. 
+// This is a copy paste from buildWepCombos.
+// TODO: Make buildWepCombos accept a generic list of items instead of auto-using the players set. Then fold this function into it.
 export function buildWepCombosUF(player, itemList) {
   let wep_list = [];
   let main_hands = filterItemListByType(itemList, "1H Weapon");
@@ -82,7 +60,7 @@ export function buildWepCombosUF(player, itemList) {
           "", // Tertiary
           0,
           Math.round((main_hand.level + off_hand.level) / 2),
-          "" // Bonus Ids
+          "", // Bonus Ids
         );
         item.stats = sumObjectsByKey(main_hand.stats, off_hand.stats);
         item.stats.bonus_stats = {};
@@ -112,32 +90,27 @@ export function runUpgradeFinder(player, contentType, playerSettings) {
 
   const completedItemList = [];
 
-  console.log("Running Upgrade Finder. Strap in.");
+  // console.log("Running Upgrade Finder. Strap in.");
   const baseItemList = player.getEquippedItems(true);
   const wepList = buildWepCombosUF(player, baseItemList);
   //buildWepCombos(player, false, false); // TODO: DEL
 
-  const baseSet = runTopGear(
-    baseItemList,
-    wepList,
-    player,
-    contentType
-  );
+  const baseHPS = player.getHPS(contentType);
+  const baseSet = runTopGear(baseItemList, wepList, player, contentType, baseHPS);
   const baseScore = baseSet.itemSet.hardScore;
+  
   //console.log(wepList);
   //console.log(baseItemList);
 
   const itemPoss = buildItemPossibilities(player, contentType, playerSettings);
 
   for (var x = 0; x < itemPoss.length; x++) {
-    completedItemList.push(
-      processItem(itemPoss[x], baseItemList, baseScore, player, contentType)
-    );
+    completedItemList.push(processItem(itemPoss[x], baseItemList, baseScore, player, contentType, baseHPS));
   }
 
   const result = new UpgradeFinderResult(itemPoss, completedItemList);
   //console.log(result);
-  console.log("=== Upgrade Finder Finished ===");
+  // console.log("=== Upgrade Finder Finished ===");
   apiSendUpgradeFinder(player, contentType);
 
   return result;
@@ -148,18 +121,15 @@ function getSetItemLevel(itemSource, playerSettings, raidIndex = 0, slot) {
   const instanceID = itemSource.instanceId;
   const bossID = itemSource.encounterId;
 
-  if (instanceID === 1190)
-    itemLevel = itemLevels.raid[playerSettings.raid[raidIndex]];
+  if (instanceID === 1190) itemLevel = itemLevels.raid[playerSettings.raid[raidIndex]];
   if (instanceID === 1192) itemLevel = 207;
   // World Bosses
-  else if (instanceID === -1)
-    itemLevel = itemLevels.dungeon[playerSettings.dungeon];
+  else if (instanceID === -1) itemLevel = itemLevels.dungeon[playerSettings.dungeon];
   else if (instanceID === -16) itemLevel = 197;
   else if (instanceID === -17) {
     // Conquest
     itemLevel = itemLevels.pvp[playerSettings.pvp];
     if (playerSettings.pvp === 5 && ["1H Weapon", "2H Weapon", "Offhand", "Shield"].includes(slot)) itemLevel += 7;
-    
   }
   if (bossID === 2425 || bossID === 2424) itemLevel += 7; // Denathrius / Stone Legion Generals
 
@@ -172,10 +142,10 @@ function buildItem(player, contentType, rawItem, itemLevel, source) {
   const itemID = rawItem.id;
 
   let item = new Item(itemID, "", itemSlot, false, "", 0, itemLevel, "");
-  let itemAllocations = getItemAllocations(itemID, []);
-  item.stats = calcStatsAtLevel(itemLevel, itemSlot, itemAllocations, "");
-  item.effect = getItemEffect(itemID);
-  item.level = itemLevel;
+  //let itemAllocations = getItemAllocations(itemID, []);
+  //item.stats = calcStatsAtLevel(itemLevel, itemSlot, itemAllocations, "");
+  //item.effect = getItemEffect(itemID);
+  //item.level = itemLevel;
   item.softScore = scoreItem(item, player, contentType);
   item.source = itemSource;
 
@@ -184,7 +154,6 @@ function buildItem(player, contentType, rawItem, itemLevel, source) {
 
 function buildItemPossibilities(player, contentType, playerSettings) {
   let itemPoss = [];
-
 
   // Grab items.
   for (var i = 0; i < itemDB.length; i++) {
@@ -200,7 +169,7 @@ function buildItemPossibilities(player, contentType, playerSettings) {
           itemPoss.push(item);
         }
       } else {
-        const itemLevel = getSetItemLevel(itemSource, playerSettings, 0,  rawItem.slot);
+        const itemLevel = getSetItemLevel(itemSource, playerSettings, 0, rawItem.slot);
         const item = buildItem(player, contentType, rawItem, itemLevel, rawItem.sources[0]);
 
         itemPoss.push(item);
@@ -208,42 +177,33 @@ function buildItemPossibilities(player, contentType, playerSettings) {
     }
   }
 
-  console.log("Tokens: " + Object.keys(tokenDB).length);
+  // console.log("Tokens: " + Object.keys(tokenDB).length);
 
   // --------------------------
   // Take care of Tokens >:(
   // --------------------------
   for (const [key, value] of Object.entries(tokenDB)) {
     const rawToken = value;
-    console.log(rawToken);
+    //  console.log(rawToken);
 
     if ("encounterId" in rawToken && rawToken.specs.includes(player.getSpec())) {
-      console.log("Player Covenant: " + player.getCovenant())
+      // console.log("Player Covenant: " + player.getCovenant());
       const newItemIDs = rawToken[player.getCovenant()];
-      const itemSource = {instanceId: 1190, encounterId: rawToken.encounterId};
-      
+      const itemSource = { instanceId: 1190, encounterId: rawToken.encounterId };
 
       for (var j = 0; j < newItemIDs.length; j++) {
         for (var x = 0; x < playerSettings.raid.length; x++) {
           const rawItem = getFullItem(newItemIDs[j]);
 
           if (checkItemViable(rawItem, player)) {
-          const itemLevel = getSetItemLevel(itemSource, playerSettings, x, rawItem.slot);
-          const item = buildItem(player, contentType, rawItem, itemLevel, itemSource);
-          //console.log(item);
-          itemPoss.push(item);
+            const itemLevel = getSetItemLevel(itemSource, playerSettings, x, rawItem.slot);
+            const item = buildItem(player, contentType, rawItem, itemLevel, itemSource);
+            //console.log(item);
+            itemPoss.push(item);
           }
-          
-
         }
-
-
       }
-
     }
-
-
-
   }
 
   //console.log(itemPoss.length);
@@ -251,23 +211,16 @@ function buildItemPossibilities(player, contentType, playerSettings) {
 }
 
 // Returns a small dict
-function processItem(item, baseItemList, baseScore, player, contentType) {
+function processItem(item, baseItemList, baseScore, player, contentType, baseHPS) {
   let newItemList = [...baseItemList];
   newItemList.push(item);
   //console.log(player);
   const wepList = buildWepCombosUF(player, newItemList);
-  const newTGSet = runTopGear(
-    newItemList,
-    wepList,
-    player,
-    contentType
-  );
+  const newTGSet = runTopGear(newItemList, wepList, player, contentType, baseHPS);
 
   const newScore = newTGSet.itemSet.hardScore;
   //const differential = Math.round(100*(newScore - baseScore))/100 // This is a raw int difference.
-  const differential =
-    Math.round((10000 * (newScore - baseScore)) / baseScore) / 100;
-  //console.log(newTGSet);
+  const differential = Math.round((10000 * (newScore - baseScore)) / baseScore) / 100;
 
   return { item: item.id, level: item.level, score: differential };
 }
@@ -280,14 +233,9 @@ function checkItemViable(rawItem, player) {
 
   return (
     rawItem.slot === "Back" ||
-    (rawItem.itemClass === 4 &&
-      acceptableArmorTypes.includes(rawItem.itemSubClass)) ||
-    ((rawItem.slot === "Holdable" ||
-      rawItem.slot === "Offhand" ||
-      rawItem.slot === "Shield") &&
-      acceptableOffhands.includes(rawItem.itemSubClass)) ||
-    (rawItem.itemClass === 2 &&
-      acceptableWeaponTypes.includes(rawItem.itemSubClass))
+    (rawItem.itemClass === 4 && acceptableArmorTypes.includes(rawItem.itemSubClass)) ||
+    ((rawItem.slot === "Holdable" || rawItem.slot === "Offhand" || rawItem.slot === "Shield") && acceptableOffhands.includes(rawItem.itemSubClass)) ||
+    (rawItem.itemClass === 2 && acceptableWeaponTypes.includes(rawItem.itemSubClass))
   );
 }
 

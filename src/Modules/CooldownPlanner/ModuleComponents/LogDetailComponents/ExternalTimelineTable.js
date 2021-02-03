@@ -8,9 +8,8 @@ import { localizationEN } from "../../../../locale/en/TableLocale";
 import { localizationRU } from "../../../../locale/ru/TableLocale";
 import { localizationCH } from "../../../../locale/ch/TableLocale";
 import moment from "moment";
-import { externalsDetailed } from "../../Data/Data.js";
-import Divider from "@material-ui/core/Divider";
-import Paper from "@material-ui/core/Paper";
+import { externalsDB } from "../../../../Databases/ExternalsDB";
+import { Divider, Paper } from "@material-ui/core";
 import { useTranslation } from "react-i18next";
 import { classColoursJS } from "../../Functions/ClassColourFunctions";
 import classIcons from "../../Functions/IconFunctions/ClassIcons";
@@ -37,9 +36,7 @@ const theme = createMuiTheme({
   },
 });
 const tableIcons = {
-  SortArrow: forwardRef((props, ref) => (
-    <ArrowDownward {...props} style={{ color: "#ffee77" }} ref={ref} />
-  )),
+  SortArrow: forwardRef((props, ref) => <ArrowDownward {...props} style={{ color: "#ffee77" }} ref={ref} />),
 };
 
 export default function ExternalTimeline(props) {
@@ -157,13 +154,13 @@ export default function ExternalTimeline(props) {
               <div>
                 {moment(rowData.timestamp, "mm:ss")
                   .add(
-                    externalsDetailed
+                    externalsDB
                       .filter((obj) => {
                         return obj.guid === rowData.guid;
                       })
                       .map((obj) => obj.cooldown)
                       .toString(),
-                    "s"
+                    "s",
                   )
                   .format("mm:ss")}
               </div>

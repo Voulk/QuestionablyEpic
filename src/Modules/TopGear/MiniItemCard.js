@@ -1,18 +1,7 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import {
-  Card,
-  CardContent,
-  Typography,
-  Grid,
-  Divider,
-  IconButton,
-} from "@material-ui/core";
-import {
-  getTranslatedItemName,
-  buildStatString,
-  getItemIcon,
-} from "../Engine/ItemUtilities";
+import { Card, CardContent, Typography, Grid, Divider, IconButton } from "@material-ui/core";
+import { getTranslatedItemName, buildStatString, getItemIcon } from "../Engine/ItemUtilities";
 import "./MiniItemCard.css";
 import DeleteIcon from "@material-ui/icons/Delete";
 import socketImage from "../../Images/Resources/EmptySocket.png";
@@ -29,15 +18,12 @@ const useStyles = makeStyles({
   selected: {
     minWidth: 200,
     borderRadius: 3,
-    //borderRadius: "5px",
-    //backgroundColor: "#424E42",
     borderColor: "Goldenrod",
     backgroundColor: "#494a3d",
     borderWidth: "2px",
   },
   vault: {
     borderColor: "#0288d1",
-    //backgroundColor: "#131619",
     minWidth: 200,
     borderStyle: "dashed",
   },
@@ -47,7 +33,6 @@ const useStyles = makeStyles({
     minWidth: 200,
     borderStyle: "dashed",
   },
-
   bullet: {
     display: "inline-block",
     margin: "0 2px",
@@ -63,10 +48,9 @@ const useStyles = makeStyles({
 
 export default function ItemCard(props) {
   const classes = useStyles();
-  const item = props.item;
-  
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
+  const item = props.item;
   const statString = buildStatString(item.stats, item.effect, currentLanguage);
   const itemLevel = item.level;
   const isLegendary = "effect" in item && item.effect.type === "spec legendary";
@@ -79,7 +63,7 @@ export default function ItemCard(props) {
   };
 
   const activateItemCard = () => {
-    console.log("Activating item with Hash: " + item.uniqueHash);
+    // console.log("Activating item with Hash: " + item.uniqueHash);
     props.activateItem(item.uniqueHash);
   };
 
@@ -98,57 +82,25 @@ export default function ItemCard(props) {
   const deleteActive = item.offhandID === 0;
 
   if (item.offhandID > 0) {
-    itemName =
-      getTranslatedItemName(item.id, currentLanguage) +
-      " & " +
-      getTranslatedItemName(item.offhandID, currentLanguage);
+    itemName = getTranslatedItemName(item.id, currentLanguage) + " & " + getTranslatedItemName(item.offhandID, currentLanguage);
   } else {
     if (isLegendary) itemName = item.effect.name;
-    // Add translations to this.
     else itemName = getTranslatedItemName(item.id, currentLanguage);
   }
 
   const socket = props.item.socket ? (
     <div style={{ display: "inline" }}>
-      <img
-        src={socketImage}
-        width={15}
-        height={15}
-        style={{ verticalAlign: "middle" }}
-        alt="Socket"
-      />{" "}
+      <img src={socketImage} width={15} height={15} style={{ verticalAlign: "middle" }} alt="Socket" />{" "}
     </div>
   ) : null;
 
-  const tertiary =
-    props.item.tertiary !== "" ? (
-      <div style={{ display: "inline" }}> / {props.item.tertiary} </div>
-    ) : null;
+  const tertiary = props.item.tertiary !== "" ? <div style={{ display: "inline" }}> / {props.item.tertiary} </div> : null;
 
   return (
     <Grid item xs={12} sm={6} md={6} lg={4} xl={4}>
-      <Card
-        className={
-          item.active && isVault
-            ? classes.selectedVault
-            : item.active
-            ? classes.selected
-            : isVault
-            ? classes.vault
-            : classes.root
-        }
-        elevation={0}
-        variant="outlined"
-        // style={{ width: "100%" }}
-      >
+      <Card className={item.active && isVault ? classes.selectedVault : item.active ? classes.selected : isVault ? classes.vault : classes.root} elevation={0} variant="outlined">
         <CardActionArea onClick={activateItemCard}>
-          {/* <CardActionArea disabled={true}> */}
-          <Grid
-            container
-            display="inline-flex"
-            wrap="nowrap"
-            justify="space-between"
-          >
+          <Grid container display="inline-flex" wrap="nowrap" justify="space-between">
             <Grid item xs="auto">
               <CardContent
                 style={{
@@ -157,19 +109,7 @@ export default function ItemCard(props) {
                 }}
               >
                 <div className="container-ItemCards">
-                  <a
-                    data-wowhead={
-                      item.slot === "Trinket"
-                        ? "item=" +
-                          item.id +
-                          "&" +
-                          "ilvl=" +
-                          item.level +
-                          "&bonus=" +
-                          item.bonusIDS + "&domain=" + currentLanguage
-                        : ""
-                    }
-                  >
+                  <a data-wowhead={item.slot === "Trinket" ? "item=" + item.id + "&" + "ilvl=" + item.level + "&bonus=" + item.bonusIDS + "&domain=" + currentLanguage : ""}>
                     <img
                       alt="img"
                       width={44}
@@ -189,53 +129,19 @@ export default function ItemCard(props) {
             </Grid>
             <Divider orientation="vertical" flexItem />
             <CardContent style={{ padding: 2, width: "100%" }}>
-              <Grid
-                item
-                container
-                display="inline"
-                direction="column"
-                justify="space-around"
-                xs="auto"
-              >
-                <Grid
-                  container
-                  item
-                  wrap="nowrap"
-                  justify="space-between"
-                  alignItems="center"
-                  style={{ width: "100%" }}
-                >
+              <Grid item container display="inline" direction="column" justify="space-around" xs="auto">
+                <Grid container item wrap="nowrap" justify="space-between" alignItems="center" style={{ width: "100%" }}>
                   <Grid item xs={11} display="inline">
-                    <Typography
-                      variant={itemName.length > 30 ? "subtitle2" : "subtitle1"}
-                      wrap="nowrap"
-                      display="inline"
-                      align="left"
-                      style={{ color: itemQuality(itemLevel) }}
-                    >
+                    <Typography variant={itemName.length > 30 ? "subtitle2" : "subtitle1"} wrap="nowrap" display="inline" align="left" style={{ color: itemQuality(itemLevel) }}>
                       {itemName}
                     </Typography>
                   </Grid>
                 </Grid>
                 <Divider />
-                <Grid
-                  item
-                  container
-                  display="inline"
-                  direction="row"
-                  xs="auto"
-                  justify="space-between"
-                >
+                <Grid item container display="inline" direction="row" xs="auto" justify="space-between">
                   <Grid item xs={11}>
-                    <Typography
-                      variant="subtitle2"
-                      wrap="nowrap"
-                      display="block"
-                      align="left"
-                      style={{ fontSize: "12px" }}
-                    >
-                      {socket} {statString} {tertiary}{" "}
-                      {isVault ? " / Great Vault Item" : ""}
+                    <Typography variant="subtitle2" wrap="nowrap" display="block" align="left" style={{ fontSize: "12px" }}>
+                      {socket} {statString} {tertiary} {isVault ? " / Great Vault Item" : ""}
                     </Typography>
                   </Grid>
                 </Grid>

@@ -1,17 +1,16 @@
 import React, { forwardRef } from "react";
 import MaterialTable, { MTableToolbar } from "material-table";
 import ArrowDownward from "@material-ui/icons/ArrowDownward";
+import moment from "moment";
+import { Divider, Paper } from "@material-ui/core";
+import { useTranslation } from "react-i18next";
 import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import abilityIcons from "../../Functions/IconFunctions/AbilityIcons.js";
 import { localizationFR } from "../../../../locale/fr/TableLocale";
 import { localizationEN } from "../../../../locale/en/TableLocale";
 import { localizationRU } from "../../../../locale/ru/TableLocale";
 import { localizationCH } from "../../../../locale/ch/TableLocale";
-import moment from "moment";
 import { healerCooldownsDetailed } from "../../Data/Data.js";
-import Divider from "@material-ui/core/Divider";
-import Paper from "@material-ui/core/Paper";
-import { useTranslation } from "react-i18next";
 import { classColoursJS } from "../../Functions/ClassColourFunctions";
 import classIcons from "../../Functions/IconFunctions/ClassIcons";
 
@@ -37,9 +36,7 @@ const theme = createMuiTheme({
   },
 });
 const tableIcons = {
-  SortArrow: forwardRef((props, ref) => (
-    <ArrowDownward {...props} style={{ color: "#ffee77" }} ref={ref} />
-  )),
+  SortArrow: forwardRef((props, ref) => <ArrowDownward {...props} style={{ color: "#ffee77" }} ref={ref} />),
 };
 
 export default function CooldownTimeline(props) {
@@ -68,7 +65,6 @@ export default function CooldownTimeline(props) {
             field: "name",
             cellStyle: {
               whiteSpace: "nowrap",
-              // borderRight: "1px solid rgb(81 81 81)",
               padding: "2px 0px",
               fontSize: 14,
             },
@@ -91,7 +87,6 @@ export default function CooldownTimeline(props) {
             field: "ability",
             cellStyle: {
               whiteSpace: "nowrap",
-              // borderRight: "1px solid rgb(81 81 81)",
               padding: "2px 8px",
               fontSize: 14,
             },
@@ -111,7 +106,6 @@ export default function CooldownTimeline(props) {
             width: "2%",
             cellStyle: {
               whiteSpace: "nowrap",
-              // borderRight: "1px solid rgb(81 81 81)",
               padding: "2px 8px",
               fontSize: 14,
             },
@@ -140,7 +134,7 @@ export default function CooldownTimeline(props) {
                       })
                       .map((obj) => obj.cooldown)
                       .toString(),
-                    "s"
+                    "s",
                   )
                   .format("mm:ss")}
               </div>
@@ -151,7 +145,6 @@ export default function CooldownTimeline(props) {
         header={true}
         data={props.data}
         style={{
-          // marginTop: "8px",
           color: "#ffffff",
           fontSize: "0.8 rem",
           whiteSpace: "nowrap",
@@ -177,7 +170,6 @@ export default function CooldownTimeline(props) {
             padding: "0px 8px 0px 8px",
             backgroundColor: "#c8b054",
             color: "#000",
-            // fontSize: "0.8 rem",
           },
           rowStyle: (rowData, index) => {
             if (index % 2) {
@@ -204,7 +196,6 @@ export default function CooldownTimeline(props) {
           },
           actionsColumnIndex: 6,
           paging: false,
-          // tableLayout: "fixed",
         }}
       />
     </ThemeProvider>

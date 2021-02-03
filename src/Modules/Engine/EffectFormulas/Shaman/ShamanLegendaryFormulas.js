@@ -21,9 +21,9 @@ export const getShamanLegendary = (effectName, player, contentType) => {
      */
     // const rtHPS = player.getSpellHPS("Riptide", contentType);
     // bonusStats.hps = rtHPS * 0.25;
-    const oneRiptide = 1.7 * player.getStatMultiplier("NOHASTE") + (18 / 3) * .22 * player.getStatMultiplier("ALL"); // todo torrent
+    const oneRiptide = 1.7 * player.getStatMultiplier("NOHASTE") + (18 / 3) * 0.22 * player.getStatMultiplier("ALL"); // todo torrent
     const rtPerMinute = 60 / 7; // todo echo
-    bonusStats.hps = (oneRiptide * rtPerMinute * .25) / 60;
+    bonusStats.hps = (oneRiptide * rtPerMinute * 0.25) / 60;
   } else if (effectName === SPIRITWALKERS_TIDAL_TOTEM) {
     /**
      * every mtt use gain 10 seconds of quicker chhw casts
@@ -32,7 +32,7 @@ export const getShamanLegendary = (effectName, player, contentType) => {
     // const mttCasts = player.getSpellCasts("Mana Tide Totem", contentType);
     //const chHPS = player.getSingleCast("Chain Heal", contentType) / player.getFightLength();
     //console.log(SPIRITWALKERS_TIDAL_TOTEM, mttCasts, gain, possibleCasts);
-    const gain = (2.5 / 1.5) - 1; // tooltip says double but you hit the GCD wall
+    const gain = 2.5 / 1.5 - 1; // tooltip says double but you hit the GCD wall
     const buffDuration = 9;
     const castDuration = 2.5 / player.getStatPerc("Haste");
     const possibleCasts = Math.ceil(buffDuration / castDuration);
@@ -42,7 +42,7 @@ export const getShamanLegendary = (effectName, player, contentType) => {
     /**
      * if earth shield target is below 75%, earth shield heals 150% more
      */
-    const thisSpellpower = .438 * 1.5;
+    const thisSpellpower = 0.438 * 1.5;
     const assumedEfficiency = 0.4;
     bonusStats.hps = (thisSpellpower * player.getStatMultiplier("NOHASTE") * (player.getFightLength(contentType) / 3) * assumedEfficiency) / player.getFightLength(contentType);
   } else if (effectName === JONATS) {

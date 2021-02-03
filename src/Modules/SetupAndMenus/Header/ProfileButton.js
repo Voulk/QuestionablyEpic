@@ -1,19 +1,9 @@
 import React from "react";
-import {
-  Button,
-  ClickAwayListener,
-  Dialog,
-  Grow,
-  MenuItem,
-  MenuList,
-  Paper,
-  Popper,
-  Tooltip,
-} from "@material-ui/core";
+import { Button, ClickAwayListener, Dialog, Grow, MenuItem, MenuList, Paper, Popper, Tooltip } from "@material-ui/core";
+import MuiDialogContent from "@material-ui/core/DialogContent";
 import { makeStyles, withStyles } from "@material-ui/core/styles";
 import { useTranslation } from "react-i18next";
-import BnetIcon from "../../Images/QeAssets/BattleNetIcon.png";
-import MuiDialogContent from "@material-ui/core/DialogContent";
+import BnetIcon from "../../../Images/QeAssets/BattleNetIcon.png";
 import { QELogin } from "./QELogin";
 
 const DialogContent = withStyles((theme) => ({
@@ -77,13 +67,12 @@ export default function ProfileSelector(props) {
     }
   }
 
-  // return focus to the button when we transitioned from !open -> open
+  /* --- return focus to the button when we transitioned from !open -> open --- */
   const prevOpen = React.useRef(open);
   React.useEffect(() => {
     // if (prevOpen.current === true && open === false) {
     //   anchorRef.current.focus();
     // }
-
     prevOpen.current = open;
   }, [open]);
 
@@ -94,11 +83,7 @@ export default function ProfileSelector(props) {
           <Tooltip title={t("QeHeader.Tooltip.Login")} arrow>
             <Button onClick={handleDialogOpen}>{t("Login")}</Button>
           </Tooltip>
-          <Dialog
-            onClose={handleCloseDialog}
-            aria-labelledby="customized-dialog-title"
-            open={opendialog}
-          >
+          <Dialog onClose={handleCloseDialog} aria-labelledby="customized-dialog-title" open={opendialog}>
             <DialogContent>
               <QELogin setRegion={props.setRegion} />
             </DialogContent>
@@ -107,13 +92,7 @@ export default function ProfileSelector(props) {
       );
     } else {
       return (
-        <Button
-          ref={anchorRef}
-          aria-controls={open ? "menu-list-grow" : undefined}
-          aria-haspopup="true"
-          onClick={handleToggle}
-          onMouseOver={handleHoverOpen}
-        >
+        <Button ref={anchorRef} aria-controls={open ? "menu-list-grow" : undefined} aria-haspopup="true" onClick={handleToggle} onMouseOver={handleHoverOpen}>
           <img src={BnetIcon} width="24px" height="24px" alt="" />
           {props.name}
         </Button>
@@ -125,19 +104,12 @@ export default function ProfileSelector(props) {
     <div className={classes.root}>
       <div>
         {buttonTHing(props.name)}
-        <Popper
-          open={open}
-          anchorEl={anchorRef.current}
-          role={undefined}
-          transition
-          disablePortal
-        >
+        <Popper open={open} anchorEl={anchorRef.current} role={undefined} transition disablePortal>
           {({ TransitionProps, placement }) => (
             <Grow
               {...TransitionProps}
               style={{
-                transformOrigin:
-                  placement === "bottom" ? "center top" : "center bottom",
+                transformOrigin: placement === "bottom" ? "center top" : "center bottom",
               }}
             >
               <Paper>
@@ -153,11 +125,7 @@ export default function ProfileSelector(props) {
                       paddingBottom: 0,
                     }}
                   >
-                    <MenuItem
-                      onClick={(e) => handleClose(e)}
-                      component={props.component}
-                      to={props.to}
-                    >
+                    <MenuItem onClick={(e) => handleClose(e)} component={props.component} to={props.to}>
                       Account
                     </MenuItem>
                     <MenuItem onClick={(e) => handleLogout(e)}>Logout</MenuItem>

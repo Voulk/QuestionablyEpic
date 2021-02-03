@@ -1,29 +1,11 @@
 import { createModifiersFromModifierFlags } from "typescript";
 import SPEC from "../Engine/SPECS";
-import {
-  druidDefaultSpecialQueries,
-  druidDefaultSpellData,
-} from "./ClassDefaults/DruidDefaults";
-import {
-  paladinDefaultSpecialQueries,
-  paladinDefaultSpellData,
-} from "./ClassDefaults/PaladinDefaults";
-import {
-  shamanDefaultSpecialQueries,
-  shamanDefaultSpellData,
-} from "./ClassDefaults/ShamanDefaults";
-import {
-  monkDefaultSpecialQueries,
-  monkDefaultSpellData,
-} from "./ClassDefaults/MonkDefaults";
-import {
-  holyPriestDefaultSpecialQueries,
-  holyPriestDefaultSpellData,
-} from "./ClassDefaults/HolyPriestDefaults";
-import {
-  discPriestDefaultSpecialQueries,
-  discPriestDefaultSpellData,
-} from "./ClassDefaults/DiscPriestDefaults";
+import { druidDefaultSpecialQueries, druidDefaultSpellData } from "./ClassDefaults/DruidDefaults";
+import { paladinDefaultSpecialQueries, paladinDefaultSpellData } from "./ClassDefaults/PaladinDefaults";
+import { shamanDefaultSpecialQueries, shamanDefaultSpellData } from "./ClassDefaults/ShamanDefaults";
+import { monkDefaultSpecialQueries, monkDefaultSpellData } from "./ClassDefaults/MonkDefaults";
+import { holyPriestDefaultSpecialQueries, holyPriestDefaultSpellData } from "./ClassDefaults/HolyPriestDefaults";
+import { discPriestDefaultSpecialQueries, discPriestDefaultSpellData } from "./ClassDefaults/DiscPriestDefaults";
 
 // THIS IS NOT YET IN USE BUT WILL BE VERY SHORTLY.
 class CastModel {
@@ -36,8 +18,8 @@ class CastModel {
   specialQueries = {};
   fightInfo = {};
   contentType = "";
-  reportID = ""
-  bossName = ""
+  reportID = "";
+  bossName = "";
 
   setSpellList = (spellListing) => {
     this.spellList = spellListing;
@@ -63,8 +45,9 @@ class CastModel {
     }
   };
 
-  getSpecialQuery = (tag) => {
-    if (tag in this.specialQueries) return this.specialQueries[tag];
+  getSpecialQuery = (tag, CDFlag = "") => {
+    if (CDFlag === "cooldownMult" && "cooldownMult" in this.specialQueries) return this.specialQueries["cooldownMult"][tag];
+    else if (tag in this.specialQueries) return this.specialQueries[tag];
     else return 0;
   };
 
@@ -74,7 +57,7 @@ class CastModel {
       rawhps: 7900,
       fightLength: 340,
       reportID: "Default",
-      bossName: "Default"
+      bossName: "Default",
     };
 
     let spellList = {};

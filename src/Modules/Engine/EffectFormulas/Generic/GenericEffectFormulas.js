@@ -1,4 +1,4 @@
-import {convertPPMToUptime} from '../EffectUtilities'
+import { convertPPMToUptime } from "../EffectUtilities";
 
 /* 
 == Generic Effects ==
@@ -8,15 +8,12 @@ Shadowlands is light on them so far but we can expect to see more as the expansi
 
 */
 export function getGenericEffect(effectName, player, contentType) {
-    let bonus_stats = {}
+  let bonus_stats = {};
 
-    if (effectName === "Ashjrakamas") {
-        bonus_stats.intellect = 0
-        
-    }
-    else if (effectName === "Effect2") {
+  if (effectName === "Ashjrakamas") {
+    bonus_stats.intellect = 0;
+  } else if (effectName === "Effect2") {
+  }
 
-    }
-
-    return bonus_stats;
+  return bonus_stats;
 }

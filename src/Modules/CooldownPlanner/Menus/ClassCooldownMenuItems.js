@@ -1,5 +1,6 @@
 import React from "react";
-import { MenuItem } from "@material-ui/core";
+import { Translation } from "react-i18next";
+import { MenuItem, Divider } from "@material-ui/core";
 import AuraMasteryIcon from "../../../Images/Classes/Paladin/Specialisation/Holy/Icons/AuraMastery.jpg";
 import AvengingWrathIcon from "../../../Images/Classes/Paladin/Specialisation/Holy/Icons/AvengingWrath.jpg";
 import DivineHymnIcon from "../../../Images/Classes/Priest/Specialisation/Holy/Icons/DivineHymn.jpg";
@@ -16,9 +17,10 @@ import RallyingCryIcon from "../../../Images/Classes/Warrior/RallyingCryIcon.jpg
 import SpiritShell from "../../../Images/Classes/Priest/Specialisation/Discipline/Icons/Talents/SpiritShellIcon.jpg";
 import AntiMagicZoneIcon from "../../../Images/Classes/DeathKnight/AntiMagicZone.jpg";
 import VampiricEmbraceIcon from "../../../Images/Classes/Priest/Specialisation/Shadow/VampiricEmbrace.jpg";
+import ConvokeTheSpiritsIcon from "../../../Images/Classes/Druid/CovenantAbilities/ConvokeTheSpirits.jpg";
+import FlourishIcon from "../../../Images/Classes/Druid/Specialisation/Restoration/Icons/Talents/FlourishIcon.jpg";
 
-import { Translation } from "react-i18next";
-import Divider from "@material-ui/core/Divider";
+// TODO this should be converted to a map at some point
 
 export default function ClassCooldownMenuItems(props) {
   // Paladin Cooldowns
@@ -37,9 +39,7 @@ export default function ClassCooldownMenuItems(props) {
             alt="Aura Mastery"
           />
         </a>
-        <Translation>
-          {(t) => t("CooldownPlanner.ClassAbilities.31821")}
-        </Translation>
+        <Translation>{(t) => t("CooldownPlanner.ClassAbilities.31821")}</Translation>
       </MenuItem>,
       <Divider key={"divider1"} />,
       <MenuItem value={31884} key={2}>
@@ -55,9 +55,7 @@ export default function ClassCooldownMenuItems(props) {
             alt="Avenging Wrath"
           />
         </a>
-        <Translation>
-          {(t) => t("CooldownPlanner.ClassAbilities.31884")}
-        </Translation>
+        <Translation>{(t) => t("CooldownPlanner.ClassAbilities.31884")}</Translation>
       </MenuItem>,
     ];
   }
@@ -77,9 +75,7 @@ export default function ClassCooldownMenuItems(props) {
             alt="Tranquility"
           />
         </a>
-        <Translation>
-          {(t) => t("CooldownPlanner.ClassAbilities.740")}
-        </Translation>
+        <Translation>{(t) => t("CooldownPlanner.ClassAbilities.740")}</Translation>
       </MenuItem>,
       <Divider key={"divider2"} />,
       <MenuItem value={33891} key={4}>
@@ -95,9 +91,39 @@ export default function ClassCooldownMenuItems(props) {
             alt="Incarnation: Tree of Life"
           />
         </a>
-        <Translation>
-          {(t) => t("CooldownPlanner.ClassAbilities.33891")}
-        </Translation>
+        <Translation>{(t) => t("CooldownPlanner.ClassAbilities.33891")}</Translation>
+      </MenuItem>,
+      <Divider key={"divider2"} />,
+      <MenuItem value={323764} key={100}>
+        <a data-wowhead="spell=323764">
+          <img
+            style={{
+              height: 20,
+              width: 20,
+              padding: "0px 5px 0px 5px",
+              verticalAlign: "middle",
+            }}
+            src={ConvokeTheSpiritsIcon}
+            alt="Convoke The Spirits"
+          />
+        </a>
+        <Translation>{(t) => t("CooldownPlanner.ClassAbilities.323764")}</Translation>
+      </MenuItem>,
+      <Divider key={"divider2"} />,
+      <MenuItem value={197721} key={100}>
+        <a data-wowhead="spell=197721">
+          <img
+            style={{
+              height: 20,
+              width: 20,
+              padding: "0px 5px 0px 5px",
+              verticalAlign: "middle",
+            }}
+            src={FlourishIcon}
+            alt="Flourish"
+          />
+        </a>
+        <Translation>{(t) => t("CooldownPlanner.ClassAbilities.197721")}</Translation>
       </MenuItem>,
     ];
   }
@@ -117,9 +143,7 @@ export default function ClassCooldownMenuItems(props) {
             alt="Holy Word: Salvation"
           />
         </a>
-        <Translation>
-          {(t) => t("CooldownPlanner.ClassAbilities.265202")}
-        </Translation>
+        <Translation>{(t) => t("CooldownPlanner.ClassAbilities.265202")}</Translation>
       </MenuItem>,
       <Divider key={"divider3"} />,
       <MenuItem value={64843} key={6}>
@@ -135,9 +159,7 @@ export default function ClassCooldownMenuItems(props) {
             alt="Divine Hymn"
           />
         </a>
-        <Translation>
-          {(t) => t("CooldownPlanner.ClassAbilities.64843")}
-        </Translation>
+        <Translation>{(t) => t("CooldownPlanner.ClassAbilities.64843")}</Translation>
       </MenuItem>,
     ];
   }
@@ -157,9 +179,7 @@ export default function ClassCooldownMenuItems(props) {
             alt="Evangelism"
           />
         </a>
-        <Translation>
-          {(t) => t("CooldownPlanner.ClassAbilities.246287")}
-        </Translation>
+        <Translation>{(t) => t("CooldownPlanner.ClassAbilities.246287")}</Translation>
       </MenuItem>,
       <Divider key={"divider4"} />,
       <MenuItem value={62618} key={7}>
@@ -175,9 +195,7 @@ export default function ClassCooldownMenuItems(props) {
             alt="Power Word: Barrier"
           />
         </a>
-        <Translation>
-          {(t) => t("CooldownPlanner.ClassAbilities.62618")}
-        </Translation>
+        <Translation>{(t) => t("CooldownPlanner.ClassAbilities.62618")}</Translation>
       </MenuItem>,
       <Divider key={"divider5"} />,
       <MenuItem value={109964} key={7}>
@@ -193,9 +211,7 @@ export default function ClassCooldownMenuItems(props) {
             alt="109964"
           />
         </a>
-        <Translation>
-          {(t) => t("CooldownPlanner.ClassAbilities.109964")}
-        </Translation>
+        <Translation>{(t) => t("CooldownPlanner.ClassAbilities.109964")}</Translation>
       </MenuItem>,
     ];
   }
@@ -215,9 +231,7 @@ export default function ClassCooldownMenuItems(props) {
             alt="Healing Tide Totem"
           />
         </a>
-        <Translation>
-          {(t) => t("CooldownPlanner.ClassAbilities.108280")}
-        </Translation>
+        <Translation>{(t) => t("CooldownPlanner.ClassAbilities.108280")}</Translation>
       </MenuItem>,
       <Divider key={"divider6"} />,
       <MenuItem value={98008} key={10}>
@@ -233,9 +247,7 @@ export default function ClassCooldownMenuItems(props) {
             alt="Spirit Link Totem"
           />
         </a>
-        <Translation>
-          {(t) => t("CooldownPlanner.ClassAbilities.98008")}
-        </Translation>
+        <Translation>{(t) => t("CooldownPlanner.ClassAbilities.98008")}</Translation>
       </MenuItem>,
     ];
   }
@@ -255,9 +267,7 @@ export default function ClassCooldownMenuItems(props) {
             alt="Revival"
           />
         </a>
-        <Translation>
-          {(t) => t("CooldownPlanner.ClassAbilities.115310")}
-        </Translation>
+        <Translation>{(t) => t("CooldownPlanner.ClassAbilities.115310")}</Translation>
       </MenuItem>,
     ];
   }
@@ -277,9 +287,7 @@ export default function ClassCooldownMenuItems(props) {
             alt="Darkness"
           />
         </a>
-        <Translation>
-          {(t) => t("CooldownPlanner.ClassAbilities.196718")}
-        </Translation>
+        <Translation>{(t) => t("CooldownPlanner.ClassAbilities.196718")}</Translation>
       </MenuItem>,
     ];
   }
@@ -299,9 +307,7 @@ export default function ClassCooldownMenuItems(props) {
             alt="Rallying Cry"
           />
         </a>
-        <Translation>
-          {(t) => t("CooldownPlanner.ClassAbilities.97462")}
-        </Translation>
+        <Translation>{(t) => t("CooldownPlanner.ClassAbilities.97462")}</Translation>
       </MenuItem>,
     ];
   }
@@ -321,9 +327,7 @@ export default function ClassCooldownMenuItems(props) {
             alt="51052"
           />
         </a>
-        <Translation>
-          {(t) => t("CooldownPlanner.ClassAbilities.51052")}
-        </Translation>
+        <Translation>{(t) => t("CooldownPlanner.ClassAbilities.51052")}</Translation>
       </MenuItem>,
     ];
   }
@@ -343,9 +347,7 @@ export default function ClassCooldownMenuItems(props) {
             alt="15286"
           />
         </a>
-        <Translation>
-          {(t) => t("CooldownPlanner.ClassAbilities.15286")}
-        </Translation>
+        <Translation>{(t) => t("CooldownPlanner.ClassAbilities.15286")}</Translation>
       </MenuItem>,
     ];
   }

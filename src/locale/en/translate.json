@@ -45,6 +45,28 @@
     "Avoidance": "Avoidance",
     "External": "External",
     "Default": "Default",
+    "Remove": "Remove",
+    "HPS": "HPS",
+    "Casts": "Casts",
+    "Healing": "Healing",
+    "Overhealing":" Overhealing",
+    "Account": "Account",
+    "Email": "Email",
+    "Battletag": "Battletag",
+
+    "Changelog": {
+      "Header": "Changelog",
+      "Version": "Version",
+      "Update": "Update",
+      "LastUpdated": "Last Updated",
+      "Date": "Date"
+    },
+
+    "PatreonTiers":{
+      "RollsRoyce": "Rolls Royce",
+      "Diamond": "Diamond",
+      "Gold": "Gold"
+    },
 
     "Classes": {
       "undefined": "",
@@ -130,6 +152,8 @@
         "RestorationDruidComment": "Restoration Druid Class Cooldowns",
         "740": "Tranquility",
         "33891": "Incarnation: Tree of Life",
+        "323764": "Convoke the Spirits",
+        "197721": "Flourish",
         "HolyPriestComment": "Holy Priest Class Cooldowns",
         "265202": "Holy Word: Salvation",
         "64843": "Divine Hymn",
@@ -193,8 +217,11 @@
         "325384": "Change of Heart",
         "CouncilofBloodComment": "Council of Blood Abilities",
         "334909": "Oppressive Atmosphere",
+        "347350": "Dancing Fever",
         "SludgefistComment": "Sludgefist Abilities",
         "332687": "Colossal Roar",
+        "332969": "Destructive Impact",
+        "340803": "Seismic Shift",
         "StoneLegionGeneralsComment": "Stone Legion Generals Ability",
         "339728": "Pulverizing Meteor",
         "DenathriusComment": "Denathrius Abilities",
@@ -279,7 +306,7 @@
       "AddButton": "Add",
       "Title": "Quick Compare",
       "HelpText": "Quick Compare allows you to compare items one by one. The score is automatically shown in the top right corner in yellow, and items are ordered by strength. You can add items manually using the dropdowns above, or all at once using a string from the SimC addon.",
-      "ItemErrorMsg": "Item Not Added. Ilvl Cap is 300",
+      "ItemErrorMsg": "Item Not Added. Ilvl Cap exceeded.",
       "ItemAdded": "Item Added!",
       "ItemDeleted": "Item Deleted!"
     },
@@ -350,7 +377,6 @@
       "Heroic": "Heroic",
       "Mythic": "Mythic"
     },
-
 
     "PvPCurrency": {
       "Honor": "Honor",
@@ -444,7 +470,7 @@
       "124682": "Enveloping Mist",
       "116670": "Vivify",
       "115310": "Revival",
-      "117907": "Mastery: Gust of Mists",
+      "191894": "Mastery: Gust of Mists",
       "343655": "Enveloping Breath",
       "191837": "Essence Font",
       "115151": "Renewing Mist",

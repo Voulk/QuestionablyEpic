@@ -26,7 +26,16 @@ export const BASESTAT = {
     "Holy Priest": 0.1,
     "Discipline Priest": 0.108,
     "Restoration Shaman": 0.25,
-  }
+  },
+};
+
+export const STATDIMINISHINGRETURNS = {
+  CRIT: [1050, 1365, 1645, 1890, 2310],
+  MASTERY: [1050, 1365, 1645, 1890, 2310],
+  VERSATILITY: [1200, 1560, 1880, 2160, 2640],
+  HASTE: [990, 1287, 1551, 1782, 2178],
+  LEECH: [315, 315, 420, 420]
+
 }
 
 export const STATPERONEPERCENT = {
@@ -54,78 +63,74 @@ export const STATPERONEPERCENT = {
 };
 
 export const translatedStat = {
-    "haste": {
-      "en": "Haste",
-      "fr": "Hâte",
-      "de": "Tempo",
-      "cn": "CNHaste",
-      "ru": "RuHaste",
-      
-    },
-    "crit": {
-      "en": "Crit",
-      "fr": "Score de crit",
-      "de": "Kritische Trefferwertung",
-      "cn": "CNCr",
-      "ru": "RuCr",
-    },
-    "mastery": {
-      "en": "Mastery",
-      "fr": "Maîtrise",
-      "de": "Meisterschaft",
-      "cn": "CNCr",
-      "ru": "RuCr",
-    },
-    "versatility": {
-      "en": "Vers",
-      "fr": "Versatilité",
-      "de": "Vielseitigkeit",
-      "cn": "CNCr",
-      "ru": "RuCr",
-    },
-    "intellect": {
-      "en": "Int",
-      "fr": "Int",
-      "de": "Int", // Intelligenz shortened
-      "cn": "智力",
-      "ru": "к интеллекту",
-    },
-    "leech": {
-      "en": "Leech",
-      "fr": "Vol de Vie",
-      "de": "Lebensraub",
-      "cn": "吸血",
-      "ru": "Самоисцеление",
-    },
-    "avoidance": {
-      "en": "Avoidance",
-      "fr": "Evitement",
-      "de": "Vermeidung",
-      "cn": "回避",
-      "ru": "Уклонение",
-    },
-    "effect": {
-      "en": "Effect",
-      "fr": "Effect",
-      "de": "Effect",
-      "cn": "CNCr",
-      "ru": "RuCr",
-    },
-    "bonus HPS": {
-      "en": "Bonus HPS",
-      "fr": "Bonus HPS",
-      "de": "Bonus HPS",
-      "cn": "Bonus HPS",
-      "ru": "Bonus HPS",
-    },
-    "bonus DPS": {
-      "en": "Bonus DPS",
-      "fr": "Bonus DPS",
-      "de": "Bonus DPS",
-      "cn": "Bonus DPS",
-      "ru": "Bonus DPS",
-    },
-
-
-
-}
+  haste: {
+    en: "Haste",
+    fr: "Hâte",
+    de: "Tempo",
+    cn: "CNHaste",
+    ru: "RuHaste",
+  },
+  crit: {
+    en: "Crit",
+    fr: "Score de crit",
+    de: "Kritische Trefferwertung",
+    cn: "CNCr",
+    ru: "RuCr",
+  },
+  mastery: {
+    en: "Mastery",
+    fr: "Maîtrise",
+    de: "Meisterschaft",
+    cn: "CNCr",
+    ru: "RuCr",
+  },
+  versatility: {
+    en: "Vers",
+    fr: "Versatilité",
+    de: "Vielseitigkeit",
+    cn: "CNCr",
+    ru: "RuCr",
+  },
+  intellect: {
+    en: "Int",
+    fr: "Int",
+    de: "Int", // Intelligenz shortened
+    cn: "智力",
+    ru: "к интеллекту",
+  },
+  leech: {
+    en: "Leech",
+    fr: "Vol de Vie",
+    de: "Lebensraub",
+    cn: "吸血",
+    ru: "Самоисцеление",
+  },
+  avoidance: {
+    en: "Avoidance",
+    fr: "Evitement",
+    de: "Vermeidung",
+    cn: "回避",
+    ru: "Уклонение",
+  },
+  effect: {
+    en: "Effect",
+    fr: "Effect",
+    de: "Effect",
+    cn: "CNCr",
+    ru: "RuCr",
+  },
+  "bonus HPS": {
+    en: "Bonus HPS",
+    fr: "Bonus HPS",
+    de: "Bonus HPS",
+    cn: "Bonus HPS",
+    ru: "Bonus HPS",
+  },
+  "bonus DPS": {
+    en: "Bonus DPS",
+    fr: "Bonus DPS",
+    de: "Bonus DPS",
+    cn: "Bonus DPS",
+    ru: "Bonus DPS",
+  },
+};

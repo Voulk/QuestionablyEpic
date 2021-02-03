@@ -8,13 +8,16 @@ import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import DeleteIcon from "@material-ui/icons/Delete";
 import Autocomplete from "@material-ui/lab/Autocomplete";
 import { red } from "@material-ui/core/colors";
-import { classColoursJS } from "../CooldownPlanner/Functions/ClassColourFunctions.js";
-import classIcons from "../CooldownPlanner/Functions/IconFunctions/ClassIcons";
-import raceIcons from "../CooldownPlanner/Functions/IconFunctions/RaceIcons";
-import { serverList, classRaceList } from "../CooldownPlanner/Data/Data";
+import { classColoursJS } from "../../CooldownPlanner/Functions/ClassColourFunctions.js";
+import classIcons from "../../CooldownPlanner/Functions/IconFunctions/ClassIcons";
+import raceIcons from "../../CooldownPlanner/Functions/IconFunctions/RaceIcons";
+import { classRaceList } from "../../CooldownPlanner/Data/Data";
+import { serverDB } from "../../../Databases/ServerDB"
 import LogDetailsTable from "./CharacterLogDetailsTable";
-import { STAT } from "../Engine/STAT";
-import { apiGetPlayerImage } from "./ConnectionUtilities";
+import { STAT } from "../../Engine/STAT";
+import { apiGetPlayerImage } from "../ConnectionUtilities";
+import { CONSTRAINTS, setBounds } from "../../Engine/CONSTRAINTS";
+
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -40,12 +43,12 @@ function a11yProps(index) {
 
 /* ------------------------------ Spec Images. ------------------------------ */
 const specImages = {
-  "Restoration Druid": require("../../Images/DruidSmall.jpg"),
-  "Restoration Shaman": require("../../Images/ShamanSmall.png"),
-  "Discipline Priest": require("../../Images/DiscSmall.jpg"),
-  "Holy Paladin": require("../../Images/PaladinSmall.png"),
-  "Holy Priest": require("../../Images/HPriestSmall.jpg"),
-  "Mistweaver Monk": require("../../Images/MistweaverSmall.jpg"),
+  "Restoration Druid": require("../../../Images/DruidSmall.jpg"),
+  "Restoration Shaman": require("../../../Images/ShamanSmall.png"),
+  "Discipline Priest": require("../../../Images/DiscSmall.jpg"),
+  "Holy Paladin": require("../../../Images/PaladinSmall.png"),
+  "Holy Priest": require("../../../Images/HPriestSmall.jpg"),
+  "Mistweaver Monk": require("../../../Images/MistweaverSmall.jpg"),
 };
 
 /* ------------------- Called when a character is clicked. ------------------ */
@@ -255,11 +258,11 @@ export default function CharCards(props) {
     let newPlayer = props.char;
     let weights = {
       intellect: 1,
-      haste: Math.max(0, Math.min(1.4, haste)),
-      crit: Math.max(0, Math.min(1.4, critical)),
-      mastery: Math.max(0, Math.min(1.4, mastery)),
-      versatility: Math.max(0, Math.min(1.4, versatility)),
-      leech: Math.max(0, Math.min(2.1, leech)),
+      haste: haste > CONSTRAINTS.maxSecondaryWeight? newPlayer.statWeights[contentType].haste : haste,
+      crit: critical > CONSTRAINTS.maxSecondaryWeight? newPlayer.statWeights[contentType].crit : critical,
+      mastery: mastery > CONSTRAINTS.maxSecondaryWeight? newPlayer.statWeights[contentType].mastery : mastery,
+      versatility: versatility > CONSTRAINTS.maxSecondaryWeight? newPlayer.statWeights[contentType].versatility : versatility,
+      leech: leech > CONSTRAINTS.maxTertiaryWeight? newPlayer.statWeights[contentType].leech: leech,
     };
 
     newPlayer.editChar(contentType, charName, server, region, selectedRace, weights);
@@ -381,7 +384,7 @@ export default function CharCards(props) {
                     onChange={(e, newValue) => {
                       handleChangeServer(newValue);
                     }}
-                    options={serverList[region]}
+                    options={serverDB[region]}
                     inputValue={server}
                     getOptionLabel={(option) => option}
                     onInputChange={(e, newInputValue) => {
@@ -662,10 +665,14 @@ export default function CharCards(props) {
           >
             {/* ------------------------------ Delete Button -----------------------------  */}
             <ThemeProvider theme={deleteTheme}>
-                {value === 0 ? <Button onClick={handleDelete} color="primary">
-                {t("CharacterCreator.DeleteCharacter")}
-              </Button> : "⠀"} 
-            </ThemeProvider> 
+              {value === 0 ? (
+                <Button onClick={handleDelete} color="primary">
+                  {t("CharacterCreator.DeleteCharacter")}
+                </Button>
+              ) : (
+                "⠀"
+              )}
+            </ThemeProvider>
             {/* ---------------------- Default Button (Reset Stats) ----------------------  */}
             <div>
               {value === 1 ? (

@@ -1,27 +1,13 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import {
-  Card,
-  CardContent,
-  Typography,
-  Grid,
-  Divider,
-  IconButton,
-} from "@material-ui/core";
-import {
-  getTranslatedItemName,
-  buildStatString,
-  getItemIcon,
-} from "../Engine/ItemUtilities";
+import { Card, CardContent, CardActionArea, Typography, Grid, Divider, IconButton } from "@material-ui/core";
+import { getTranslatedItemName, buildStatString, getItemIcon } from "../Engine/ItemUtilities";
 import "./MiniItemCard.css";
-import DeleteIcon from "@material-ui/icons/Delete";
-//import socketImage from "../../Images/Resources/EmptySocket.png";
 import hasteSocket from "../../Images/Resources/hasteSocket.jpg";
 import critSocket from "../../Images/Resources/critSocket.jpg";
 import masterySocket from "../../Images/Resources/masterySocket.jpg";
 import versSocket from "../../Images/Resources/versSocket.jpg";
 import { useTranslation } from "react-i18next";
-import CardActionArea from "@material-ui/core/CardActionArea";
 
 const useStyles = makeStyles({
   root: {
@@ -59,10 +45,10 @@ const useStyles = makeStyles({
 export default function ItemCardReport(props) {
   const classes = useStyles();
   const item = props.item;
-  
+
   const enchants = props.enchants;
   const { t, i18n } = useTranslation();
-  
+
   const currentLanguage = i18n.language;
   const statString = buildStatString(item.stats, item.effect, currentLanguage);
   const itemLevel = item.level;
@@ -100,44 +86,22 @@ export default function ItemCardReport(props) {
   const deleteActive = item.offhandID === 0;
 
   if (item.offhandID > 0) {
-    itemName =
-      getTranslatedItemName(item.id, currentLanguage) +
-      " & " +
-      getTranslatedItemName(item.offhandID, currentLanguage);
+    itemName = getTranslatedItemName(item.id, currentLanguage) + " & " + getTranslatedItemName(item.offhandID, currentLanguage);
   } else {
     if (isLegendary) itemName = item.effect.name;
-    // Add translations to this.
     else itemName = getTranslatedItemName(item.id, currentLanguage);
   }
 
   const socket = props.item.socket ? (
     <div style={{ display: "inline" }}>
-      <img
-        src={socketImage}
-        width={15}
-        height={15}
-        style={{ verticalAlign: "middle" }}
-        alt="Socket"
-      />{" "}
+      <img src={socketImage} width={15} height={15} style={{ verticalAlign: "middle" }} alt="Socket" />{" "}
     </div>
   ) : null;
 
   const enchantCheck = (item) => {
-    if (
-      item.slot === "Chest" ||
-      item.slot === "Wrist" ||
-      item.slot === "Finger" ||
-      item.slot === "Back" ||
-      item.slot === "CombinedWeapon"
-    ) {
+    if (item.slot === "Chest" || item.slot === "Wrist" || item.slot === "Finger" || item.slot === "Back" || item.slot === "CombinedWeapon") {
       let typo = (
-        <Typography
-          variant="subtitle2"
-          wrap="nowrap"
-          display="block"
-          align="left"
-          style={{ fontSize: "12px", color: "#36ed21", paddingRight: 4 }}
-        >
+        <Typography variant="subtitle2" wrap="nowrap" display="block" align="left" style={{ fontSize: "12px", color: "#36ed21", paddingRight: 4 }}>
           {enchants[item.slot]}
         </Typography>
       );
@@ -147,34 +111,15 @@ export default function ItemCardReport(props) {
     return null;
   };
 
-  const tertiary =
-    props.item.tertiary !== "" ? (
-      <div style={{ display: "inline" }}> / {props.item.tertiary} </div>
-    ) : null;
+  const tertiary = props.item.tertiary !== "" ? <div style={{ display: "inline" }}> / {props.item.tertiary} </div> : null;
 
   console.log(props.item);
 
   return (
     <Grid item xs={12}>
-      <Card
-        className={
-          isVault
-            ? classes.vault
-            : item.active
-            ? classes.selected
-            : classes.root
-        }
-        elevation={0}
-        style={{ backgroundColor: "rgba(34, 34, 34, 0.52)" }}
-      >
-        <CardActionArea disbled={true}>
-          {/* <CardActionArea disabled={true}> */}
-          <Grid
-            container
-            display="inline-flex"
-            wrap="nowrap"
-            justify="space-between"
-          >
+      <Card className={isVault ? classes.vault : item.active ? classes.selected : classes.root} elevation={0} style={{ backgroundColor: "rgba(34, 34, 34, 0.52)" }}>
+        <CardActionArea disabled={false}>
+          <Grid container display="inline-flex" wrap="nowrap" justify="space-between">
             <Grid item xs="auto">
               <CardContent
                 style={{
@@ -183,19 +128,7 @@ export default function ItemCardReport(props) {
                 }}
               >
                 <div className="container-ItemCards">
-                  <a
-                    data-wowhead={
-                      item.slot === "Trinket"
-                        ? "item=" +
-                          item.id +
-                          "&" +
-                          "ilvl=" +
-                          item.level +
-                          "&bonus=" +
-                          item.bonusIDS + "&domain=" + currentLanguage
-                        : ""
-                    }
-                  >
+                  <a data-wowhead={item.slot === "Trinket" ? "item=" + item.id + "&" + "ilvl=" + item.level + "&bonus=" + item.bonusIDS + "&domain=" + currentLanguage : ""}>
                     <img
                       alt="img"
                       width={44}
@@ -215,53 +148,19 @@ export default function ItemCardReport(props) {
             </Grid>
             <Divider orientation="vertical" flexItem />
             <CardContent style={{ padding: 2, width: "100%" }}>
-              <Grid
-                item
-                container
-                display="inline"
-                direction="column"
-                justify="space-around"
-                xs="auto"
-              >
-                <Grid
-                  container
-                  item
-                  wrap="nowrap"
-                  justify="space-between"
-                  alignItems="center"
-                  style={{ width: "100%" }}
-                >
+              <Grid item container display="inline" direction="column" justify="space-around" xs="auto">
+                <Grid container item wrap="nowrap" justify="space-between" alignItems="center" style={{ width: "100%" }}>
                   <Grid item xs={12} display="inline">
-                    <Typography
-                      variant="subtitle2"
-                      wrap="nowrap"
-                      display="inline"
-                      align="left"
-                      style={{ color: itemQuality(itemLevel) }}
-                    >
+                    <Typography variant="subtitle2" wrap="nowrap" display="inline" align="left" style={{ color: itemQuality(itemLevel) }}>
                       {itemName}
                     </Typography>
                   </Grid>
                 </Grid>
                 <Divider />
-                <Grid
-                  item
-                  container
-                  display="inline"
-                  direction="row"
-                  xs="auto"
-                  justify="space-between"
-                >
+                <Grid item container display="inline" direction="row" xs="auto" justify="space-between">
                   <Grid item xs={12} style={{ display: "contents" }}>
-                    <Typography
-                      variant="subtitle2"
-                      wrap="nowrap"
-                      display="block"
-                      align="left"
-                      style={{ fontSize: "12px" }}
-                    >
-                      {socket} {statString} {tertiary}{" "}
-                      {isVault ? " / Vault" : ""}
+                    <Typography variant="subtitle2" wrap="nowrap" display="block" align="left" style={{ fontSize: "12px" }}>
+                      {socket} {statString} {tertiary} {isVault ? " / Vault" : ""}
                     </Typography>
                     {enchantCheck(item)}
                   </Grid>

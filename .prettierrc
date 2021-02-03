@@ -1,5 +1,5 @@
 {
-  "printWidth": 250,
+  "printWidth": 180,
   "trailingComma": "all",
   "semi": true,
   "singleQuote": false

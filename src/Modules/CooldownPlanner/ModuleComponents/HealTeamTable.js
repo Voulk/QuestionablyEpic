@@ -1,25 +1,9 @@
 import React, { forwardRef, useState } from "react";
 import MaterialTable, { MTableToolbar } from "material-table";
-import AddBox from "@material-ui/icons/AddBox";
-import ArrowDownward from "@material-ui/icons/ArrowDownward";
-import Check from "@material-ui/icons/Check";
-import ChevronLeft from "@material-ui/icons/ChevronLeft";
-import ChevronRight from "@material-ui/icons/ChevronRight";
-import Clear from "@material-ui/icons/Clear";
-import DeleteOutline from "@material-ui/icons/DeleteOutline";
-import Edit from "@material-ui/icons/Edit";
-import FilterList from "@material-ui/icons/FilterList";
-import FirstPage from "@material-ui/icons/FirstPage";
-import LastPage from "@material-ui/icons/LastPage";
-import Remove from "@material-ui/icons/Remove";
-import SaveAlt from "@material-ui/icons/SaveAlt";
-import Search from "@material-ui/icons/Search";
-import ViewColumn from "@material-ui/icons/ViewColumn";
-import { Select } from "@material-ui/core";
+//prettier-ignore
+import { AddBox, ArrowDownward, Check, ChevronLeft, ChevronRight, Clear, DeleteOutline, Edit, FilterList, FirstPage, LastPage, Remove, SaveAlt, Search, ViewColumn, KeyboardArrowDown } from "@material-ui/icons";
+import { Select, TextField, InputLabel, FormControl, Divider, Paper } from "@material-ui/core";
 import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
-import TextField from "@material-ui/core/TextField";
-import InputLabel from "@material-ui/core/InputLabel";
-import FormControl from "@material-ui/core/FormControl";
 import { makeStyles } from "@material-ui/core/styles";
 import classIcons from "../Functions/IconFunctions/ClassIcons";
 import { classColoursJS } from "../Functions/ClassColourFunctions";
@@ -30,9 +14,6 @@ import { localizationEN } from "../../../locale/en/TableLocale";
 import { localizationRU } from "../../../locale/ru/TableLocale";
 import { localizationCH } from "../../../locale/ch/TableLocale";
 import ls from "local-storage";
-import Divider from "@material-ui/core/Divider";
-import Paper from "@material-ui/core/Paper";
-import { KeyboardArrowDown } from "@material-ui/icons";
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -47,9 +28,6 @@ const useStyles = makeStyles((theme) => ({
 const themeCooldownTable = createMuiTheme({
   overrides: {
     MuiTableCell: {
-      // regular: {
-      //   padding: "0px 8px 0px 8px",
-      // },
       root: {
         padding: "4px 4px 4px 4px",
       },
@@ -80,57 +58,23 @@ const themeCooldownTable = createMuiTheme({
 });
 
 const tableIcons = {
-  Add: forwardRef((props, ref) => (
-    <AddBox {...props} style={{ color: "#ffee77" }} ref={ref} />
-  )),
-  Check: forwardRef((props, ref) => (
-    <Check {...props} style={{ color: "#ffee77" }} ref={ref} />
-  )),
-  Clear: forwardRef((props, ref) => (
-    <Clear {...props} style={{ color: "#ffee77" }} ref={ref} />
-  )),
-  Delete: forwardRef((props, ref) => (
-    <DeleteOutline {...props} style={{ color: "#ffee77" }} ref={ref} />
-  )),
-  DetailPanel: forwardRef((props, ref) => (
-    <ChevronRight {...props} style={{ color: "#ffee77" }} ref={ref} />
-  )),
-  Edit: forwardRef((props, ref) => (
-    <Edit {...props} style={{ color: "#ffee77" }} ref={ref} />
-  )),
-  Export: forwardRef((props, ref) => (
-    <SaveAlt {...props} style={{ color: "#ffee77" }} ref={ref} />
-  )),
-  Filter: forwardRef((props, ref) => (
-    <FilterList {...props} style={{ color: "#ffee77" }} ref={ref} />
-  )),
-  FirstPage: forwardRef((props, ref) => (
-    <FirstPage {...props} style={{ color: "#ffee77" }} ref={ref} />
-  )),
-  LastPage: forwardRef((props, ref) => (
-    <LastPage {...props} style={{ color: "#ffee77" }} ref={ref} />
-  )),
-  NextPage: forwardRef((props, ref) => (
-    <ChevronRight {...props} style={{ color: "#ffee77" }} ref={ref} />
-  )),
-  PreviousPage: forwardRef((props, ref) => (
-    <ChevronLeft {...props} style={{ color: "#ffee77" }} ref={ref} />
-  )),
-  ResetSearch: forwardRef((props, ref) => (
-    <Clear {...props} ref={ref} style={{ color: "#ffee77" }} />
-  )),
-  Search: forwardRef((props, ref) => (
-    <Search {...props} style={{ color: "#ffee77" }} ref={ref} />
-  )),
-  SortArrow: forwardRef((props, ref) => (
-    <ArrowDownward {...props} style={{ color: "#ffee77" }} ref={ref} />
-  )),
-  ThirdStateCheck: forwardRef((props, ref) => (
-    <Remove {...props} style={{ color: "#ffee77" }} ref={ref} />
-  )),
-  ViewColumn: forwardRef((props, ref) => (
-    <ViewColumn {...props} style={{ color: "#ffee77" }} ref={ref} />
-  )),
+  Add: forwardRef((props, ref) => <AddBox {...props} style={{ color: "#ffee77" }} ref={ref} />),
+  Check: forwardRef((props, ref) => <Check {...props} style={{ color: "#ffee77" }} ref={ref} />),
+  Clear: forwardRef((props, ref) => <Clear {...props} style={{ color: "#ffee77" }} ref={ref} />),
+  Delete: forwardRef((props, ref) => <DeleteOutline {...props} style={{ color: "#ffee77" }} ref={ref} />),
+  DetailPanel: forwardRef((props, ref) => <ChevronRight {...props} style={{ color: "#ffee77" }} ref={ref} />),
+  Edit: forwardRef((props, ref) => <Edit {...props} style={{ color: "#ffee77" }} ref={ref} />),
+  Export: forwardRef((props, ref) => <SaveAlt {...props} style={{ color: "#ffee77" }} ref={ref} />),
+  Filter: forwardRef((props, ref) => <FilterList {...props} style={{ color: "#ffee77" }} ref={ref} />),
+  FirstPage: forwardRef((props, ref) => <FirstPage {...props} style={{ color: "#ffee77" }} ref={ref} />),
+  LastPage: forwardRef((props, ref) => <LastPage {...props} style={{ color: "#ffee77" }} ref={ref} />),
+  NextPage: forwardRef((props, ref) => <ChevronRight {...props} style={{ color: "#ffee77" }} ref={ref} />),
+  PreviousPage: forwardRef((props, ref) => <ChevronLeft {...props} style={{ color: "#ffee77" }} ref={ref} />),
+  ResetSearch: forwardRef((props, ref) => <Clear {...props} ref={ref} style={{ color: "#ffee77" }} />),
+  Search: forwardRef((props, ref) => <Search {...props} style={{ color: "#ffee77" }} ref={ref} />),
+  SortArrow: forwardRef((props, ref) => <ArrowDownward {...props} style={{ color: "#ffee77" }} ref={ref} />),
+  ThirdStateCheck: forwardRef((props, ref) => <Remove {...props} style={{ color: "#ffee77" }} ref={ref} />),
+  ViewColumn: forwardRef((props, ref) => <ViewColumn {...props} style={{ color: "#ffee77" }} ref={ref} />),
 };
 
 export default function HealTeam(props) {
@@ -147,11 +91,7 @@ export default function HealTeam(props) {
         whiteSpace: "nowrap",
         paddingLeft: 8,
       },
-      render: (rowData) => (
-        <div style={{ color: classColoursJS(rowData.class) }}>
-          {rowData.name}
-        </div>
-      ),
+      render: (rowData) => <div style={{ color: classColoursJS(rowData.class) }}>{rowData.name}</div>,
       editComponent: (props) => (
         <TextField
           size="small"
@@ -183,12 +123,7 @@ export default function HealTeam(props) {
       ),
       editComponent: (props) => (
         <ThemeProvider theme={themeCooldownTable}>
-          <FormControl
-            className={classes.formControl}
-            size="small"
-            variant="outlined"
-            style={{ marginTop: 6 }}
-          >
+          <FormControl className={classes.formControl} size="small" variant="outlined" style={{ marginTop: 6 }}>
             <InputLabel id="HealerClassSelector">{t("Class")}</InputLabel>
             <Select
               label={t("Class")}
@@ -208,7 +143,6 @@ export default function HealTeam(props) {
       field: "notes",
       cellStyle: {
         whiteSpace: "nowrap",
-        // borderRight: "1px solid rgb(81 81 81)",
       },
       editComponent: (props) => (
         <TextField
@@ -284,7 +218,6 @@ export default function HealTeam(props) {
             borderBottom: "1px solid #515151",
           },
           actionsColumnIndex: 7,
-          // tableLayout: "fixed",
           paging: false,
         }}
         components={{
@@ -292,25 +225,10 @@ export default function HealTeam(props) {
           Toolbar: (props) => (
             <div style={{ marginBottom: 8 }}>
               <MTableToolbar {...props} />
-              {/* <Divider /> */}
             </div>
           ),
         }}
         localization={curLang()}
-        // components={{
-        //   Toolbar: (props) => (
-        //     <div style={{ display: "inline-flex", width: "100%", justifyContent: "flex-end" }}>
-        //       <Typography color="primary" variant="h6" style={{marginRight: "45%"}}>Healing Team</Typography>
-        //       <div
-        //         style={{
-        //           height: "0px",
-        //         }}
-        //       >
-        //         <MTableToolbar {...props} />
-        //       </div>
-        //     </div>
-        //   ),
-        // }}
         editable={{
           onRowAdd: (newData) =>
             new Promise((resolve, reject) => {
@@ -342,26 +260,6 @@ export default function HealTeam(props) {
                 resolve();
               }, 1000);
             }),
-          // onBulkUpdate: (changes) =>
-          //   new Promise((resolve, reject) => {
-          //     setTimeout(() => {
-          //       console.log(changes);
-          //       console.log(changes.oldData);
-          //       console.log(changes.newData);
-
-          //       const dataUpdate = [...data];
-          //       Object.entries(changes).map((key) => {
-          //         console.log(key);
-          //         // dataUpdate[key] = key.newData[key];
-          //       });
-          //       // const index = changes.oldData.tableData.id;
-          //       // dataUpdate[changes.oldData.tableData.id] = changes.newData;
-          //       setData([...dataUpdate]);
-          //       updateStorage([...dataUpdate]);
-
-          //       resolve();
-          //     }, 1000);
-          // }),
         }}
       />
     </ThemeProvider>

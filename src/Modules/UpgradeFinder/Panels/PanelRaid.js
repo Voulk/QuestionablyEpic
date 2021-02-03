@@ -4,13 +4,9 @@ import { Typography, Grid, Divider } from "@material-ui/core";
 import ItemUpgradeCard from "./ItemUpgradeCard";
 import UpgradeFinderBossImages from "./BossImages";
 import "./Panels.css";
-import { bossList } from "../CooldownPlanner/Data/Data";
-import { encounterDB } from "../Player/InstanceDB";
+import { encounterDB } from "../../Player/InstanceDB";
 import { useTranslation } from "react-i18next";
-import {
-  filterItemListBySource,
-  getDifferentialByID,
-} from "../Engine/ItemUtilities";
+import { filterItemListBySource, getDifferentialByID } from "../../Engine/ItemUtilities";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -71,38 +67,21 @@ export default function RaidGearContainer(props) {
     return (
       encounterDB[1190]
         //.filter((key) => key === raidID)
-        .map((key) => (
-          <Grid item xs={12}>
-            {/* {console.log(key)} */}
-            <Grid
-              container
-              spacing={2}
-              justify="center"
-              alignItems="flex-start"
-            >
+        .map((key, i) => (
+          <Grid item xs={12} key={"bossContainer-" + i}>
+            <Grid container spacing={2} justify="center" alignItems="flex-start">
               <Grid item style={{ alignSelf: "center" }}>
-                <div
-                  style={{ paddingLeft: 10 }}
-                  className="container-UpgradeCards"
-                >
+                <div style={{ paddingLeft: 10 }} className="container-UpgradeCards">
                   {UpgradeFinderBossImages(key, {
                     width: "100%",
                     height: "auto",
                   })}
-                  <Typography
-                    variant="h6"
-                    noWrap
-                    className="centered-UpgradeCards"
-                  >
+                  <Typography variant="h6" noWrap className="centered-UpgradeCards">
                     {t("BossNames." + key)}
                   </Typography>
                 </div>
               </Grid>
-              <Divider
-                orientation="vertical"
-                flexItem
-                style={{ marginRight: 4 }}
-              />
+              <Divider orientation="vertical" flexItem style={{ marginRight: 4 }} />
               <Grid item xs={12} sm container direction="column" spacing={1}>
                 <Grid item xs={12} container spacing={1}>
                   <Grid item xs={12}>
@@ -119,23 +98,8 @@ export default function RaidGearContainer(props) {
                     </Typography>
                   </Grid>
 
-                  {[
-                    ...filterItemListBySource(
-                      itemList,
-                      1190,
-                      key,
-                      getDifficultyBaseLevel(firstDifficulty)
-                    ),
-                  ].map((item, index) => (
-                    <ItemUpgradeCard
-                      key={index}
-                      item={item}
-                      itemDifferential={getDifferentialByID(
-                        itemDifferentials,
-                        item.id,
-                        item.level
-                      )}
-                    />
+                  {[...filterItemListBySource(itemList, 1190, key, getDifficultyBaseLevel(firstDifficulty))].map((item, index) => (
+                    <ItemUpgradeCard key={index} item={item} itemDifferential={getDifferentialByID(itemDifferentials, item.id, item.level)} />
                   ))}
                 </Grid>
 
@@ -155,23 +119,8 @@ export default function RaidGearContainer(props) {
                       </Typography>
                     </Grid>
 
-                    {[
-                      ...filterItemListBySource(
-                        itemList,
-                        1190,
-                        key,
-                        getDifficultyBaseLevel(secondDifficulty)
-                      ),
-                    ].map((item, index) => (
-                      <ItemUpgradeCard
-                        key={index}
-                        item={item}
-                        itemDifferential={getDifferentialByID(
-                          itemDifferentials,
-                          item.id,
-                          item.level
-                        )}
-                      />
+                    {[...filterItemListBySource(itemList, 1190, key, getDifficultyBaseLevel(secondDifficulty))].map((item, index) => (
+                      <ItemUpgradeCard key={index} item={item} itemDifferential={getDifferentialByID(itemDifferentials, item.id, item.level)} />
                     ))}
                   </Grid>
                 ) : (
@@ -181,9 +130,9 @@ export default function RaidGearContainer(props) {
             </Grid>
           </Grid>
         ))
-        .map((key) => [
+        .map((key, i) => [
           key,
-          <Grid item xs={12}>
+          <Grid item xs={12} key={"bossDivider-" + i}>
             <Divider />
           </Grid>,
         ])

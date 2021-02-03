@@ -1,14 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import {
-  Button,
-  TextField,
-  Dialog,
-  DialogActions,
-  DialogContent,
-  DialogTitle,
-  Tooltip,
-} from "@material-ui/core";
+import { Button, TextField, Dialog, DialogActions, DialogContent, DialogTitle, Tooltip } from "@material-ui/core";
 import { runSimC } from "../Engine/SimCImport/SimCImportEngine";
 import { createEmitAndSemanticDiagnosticsBuilderProgram } from "typescript";
 
@@ -28,15 +20,7 @@ export default function SimCraftInput(props) {
   };
 
   const handleSubmit = () => {
-    runSimC(
-      simC,
-      props.pl,
-      props.contentType,
-      setErrorMessage,
-      props.simcSnack,
-      handleClose,
-      setSimC
-    );
+    runSimC(simC, props.pl, props.contentType, setErrorMessage, props.simcSnack, handleClose, setSimC);
   };
 
   return (
@@ -53,16 +37,8 @@ export default function SimCraftInput(props) {
           {props.buttonLabel}
         </Button>
       </Tooltip>
-      <Dialog
-        open={open}
-        onClose={handleClose}
-        aria-labelledby="simc-dialog-title"
-        maxWidth="md"
-        fullWidth={true}
-      >
-        <DialogTitle id="simc-dialog-title">
-          {t("SimCInput.SimCDialogueTitle")}
-        </DialogTitle>
+      <Dialog open={open} onClose={handleClose} aria-labelledby="simc-dialog-title" maxWidth="md" fullWidth={true}>
+        <DialogTitle id="simc-dialog-title">{t("SimCInput.SimCDialogueTitle")}</DialogTitle>
         <DialogContent style={{ height: 400 }}>
           <TextField
             autoFocus
@@ -76,7 +52,6 @@ export default function SimCraftInput(props) {
             onChange={(e) => setSimC(e.target.value)}
             onKeyPress={(e) => {
               if (e.key === "Enter") {
-                // Do code here
                 e.preventDefault();
                 handleSubmit();
               }

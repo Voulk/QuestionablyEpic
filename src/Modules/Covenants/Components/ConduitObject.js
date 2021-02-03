@@ -1,16 +1,10 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import "../Covenants.css";
-
 import { makeStyles } from "@material-ui/core/styles";
-import Card from "@material-ui/core/Card";
-import CardActionArea from "@material-ui/core/CardActionArea";
-import CardContent from "@material-ui/core/CardContent";
-import Typography from "@material-ui/core/Typography";
-import Grid from "@material-ui/core/Grid";
-import Divider from "@material-ui/core/Divider";
+import { Card, CardActionArea, CardContent, Typography, Grid, Divider } from "@material-ui/core";
 import { getItemIcon } from "../../Engine/ItemUtilities";
-import { conduitDB } from "../../CooldownPlanner/Data/Data";
+import { conduitDB } from "../../../Databases/ConduitDB";
 
 const useStyles = makeStyles({
   root: { padding: 0, height: 26 },
@@ -20,20 +14,17 @@ export default function ConduitObject(props) {
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
   const conduit = props.conduit;
-  // console.log(conduit);
   const classes = useStyles();
 
   const conduitClicked = () => {
     let oldLevel = props.conduit.itemLevel;
-    let newLevel =
-      oldLevel === 226 ? 145 : oldLevel === 184 ? 200 : oldLevel + 13;
+    let newLevel = oldLevel === 226 ? 145 : oldLevel === 184 ? 200 : oldLevel + 13;
     props.updateConduitLevel(props.conduit.id, newLevel);
   };
   const conduitRightClicked = (e) => {
     e.preventDefault();
     let oldLevel = props.conduit.itemLevel;
-    let newLevel =
-      oldLevel === 145 ? 226 : oldLevel === 200 ? 184 : oldLevel - 13;
+    let newLevel = oldLevel === 145 ? 226 : oldLevel === 200 ? 184 : oldLevel - 13;
     props.updateConduitLevel(props.conduit.id, newLevel);
   };
 
@@ -64,18 +55,8 @@ export default function ConduitObject(props) {
   return (
     <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
       <Card className={classes.root} variant="outlined">
-        <CardActionArea
-          disabled={false}
-          onClick={conduitClicked}
-          onContextMenu={(e) => conduitRightClicked(e)}
-        >
-          <Grid
-            container
-            display="inline-flex"
-            wrap="nowrap"
-            justify="space-between"
-            style={{ maxHeight: 26 }}
-          >
+        <CardActionArea disabled={false} onClick={conduitClicked} onContextMenu={(e) => conduitRightClicked(e)}>
+          <Grid container display="inline-flex" wrap="nowrap" justify="space-between" style={{ maxHeight: 26 }}>
             <Grid item xs="auto">
               <div className="container">
                 <a data-wowhead={"spell=" + conduit.id + "&domain=" + currentLanguage}>
@@ -93,23 +74,12 @@ export default function ConduitObject(props) {
                       margin: 0,
                     }}
                   />
-                  <div
-                    className="bottom-right-covenants"
-                    // style={{ color: itemQuality("Uncommon") }}
-                  >
-                    {conduit.itemLevel}
-                  </div>
+                  <div className="bottom-right-covenants">{conduit.itemLevel}</div>
                 </a>
               </div>
             </Grid>
             <Divider orientation="vertical" flexItem />
-            <Grid
-              container
-              wrap="nowrap"
-              justify="space-between"
-              alignItems="center"
-              style={{ width: "100%" }}
-            >
+            <Grid container wrap="nowrap" justify="space-between" alignItems="center" style={{ width: "100%" }}>
               <Grid item xs={10} display="inline">
                 <Typography
                   wrap="nowrap"

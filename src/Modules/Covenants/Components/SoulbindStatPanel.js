@@ -18,41 +18,24 @@ export default function SoulbindStatPanel(props) {
       >
         <Grid container direction="column" spacing={1}>
           <Grid item xs={12}>
-            <Typography
-              style={{ fontSize: 18 }}
-              variant="h6"
-              align="center"
-              color="primary"
-            >
+            <Typography style={{ fontSize: 18 }} variant="h6" align="center" color="primary">
               {t("Soulbinds.StatPanel.Summary")}
             </Typography>
             <Divider variant="middle" />
           </Grid>
           <Grid container direction="column">
             <Grid item xs={12}>
-              <Typography
-                style={{ fontSize: 16 }}
-                variant="body1"
-                align="center"
-              >
+              <Typography style={{ fontSize: 16 }} variant="body1" align="center">
                 {t("Soulbinds.StatPanel.Score")}: {props.hps + props.covAbility}
               </Typography>
             </Grid>
             <Grid item xs={12}>
-              <Typography
-                style={{ fontSize: 16 }}
-                variant="body1"
-                align="center"
-              >
+              <Typography style={{ fontSize: 16 }} variant="body1" align="center">
                 {t("Soulbinds.StatPanel.CovenantEstimate")}: {covAbilityEst}
               </Typography>
             </Grid>
             <Grid item xs={12}>
-              <Typography
-                style={{ fontSize: 16 }}
-                variant="body1"
-                align="center"
-              >
+              <Typography style={{ fontSize: 16 }} variant="body1" align="center">
                 {t("Soulbinds.StatPanel.SelectedNodes")}: {props.hps}
               </Typography>
             </Grid>
