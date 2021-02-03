@@ -13,6 +13,7 @@ import { getValidArmorTypes, getValidWeaponTypes, calcStatsAtLevel, getItemAlloc
 import ItemCard from "./ItemCard";
 import HelpText from "../SetupAndMenus/HelpText";
 import { CONSTRAINTS } from "../Engine/CONSTRAINTS";
+import UpgradeFinderSimC from "../UpgradeFinder/UpgradeFinderSimCImport";
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -120,6 +121,21 @@ export default function QuickCompare(props) {
   const idPop = openPop ? "simple-popover" : undefined;
   const slots = getSlots();
   const helpText = t("QuickCompare.HelpText");
+
+  /* -------------------------- SimC Module Functions ------------------------- */
+  const checkCharacterValid = (player) => {
+    const weaponSet = player.getActiveItems("AllMainhands", false, true);
+    const weapon = weaponSet.length > 0 ? weaponSet[0] : "";
+
+    return (weapon.slot === "2H Weapon" && player.getEquippedItems().length === 15) || (weapon.slot === "1H Weapon" && player.getEquippedItems().length === 16);
+  };
+
+  const getSimCStatus = () => {
+    if (props.pl.activeItems.length === 0) return "Missing";
+    else if (checkCharacterValid(props.pl) === false) return "Invalid";
+    else return "Good";
+  };
+/* ------------------------ End Simc Module Functions ----------------------- */
 
   const handleClick = () => {
     setOpen(true);
@@ -251,6 +267,19 @@ export default function QuickCompare(props) {
           <Typography variant="h4" align="center" style={{ padding: "10px 10px 5px 10px" }} color="primary">
             {t("QuickCompare.Title")}
           </Typography>
+        </Grid>
+        <Grid item xs={12}>
+          <HelpText text={helpText} />
+        </Grid>
+        <Grid item xs={12}>
+          <UpgradeFinderSimC
+            player={props.pl}
+            contentType={props.contentType}
+            simcSnack={props.simcSnack}
+            allChars={props.allChars}
+            getSimCStatus={getSimCStatus}
+            // checkCharacterValid={checkCharacterValid}
+          />
         </Grid>
         <Grid item xs={12}>
           <Paper elevation={0}>
@@ -438,9 +467,7 @@ export default function QuickCompare(props) {
         </Grid>
 
         {/* this can be simplified into a map at some stage */}
-        <Grid item xs={12}>
-          <HelpText text={helpText} />
-        </Grid>
+
         <Grid item xs={12}>
           <Grid container spacing={1}>
             {/* Helm */}

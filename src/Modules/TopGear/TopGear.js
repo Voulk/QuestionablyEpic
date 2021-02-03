@@ -20,6 +20,7 @@ import { useHistory, useLocation } from "react-router-dom";
 import HelpText from "../SetupAndMenus/HelpText";
 import TopGearSettingsAccordion from "./TopGearSettings";
 import { CONSTRAINTS } from "../Engine/CONSTRAINTS";
+import UpgradeFinderSimC from "../UpgradeFinder/UpgradeFinderSimCImport";
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -95,6 +96,21 @@ export default function TopGear(props) {
   const openPop = Boolean(anchorEl);
   const idPop = openPop ? "simple-popover" : undefined;
   const [itemDropdown, setItemDropdown] = useState([]); // Filled later based on item slot and armor type.
+
+/* -------------------------- SimC Module Functions ------------------------- */
+  const checkCharacterValid = (player) => {
+    const weaponSet = player.getActiveItems("AllMainhands", false, true);
+    const weapon = weaponSet.length > 0 ? weaponSet[0] : "";
+
+    return (weapon.slot === "2H Weapon" && player.getEquippedItems().length === 15) || (weapon.slot === "1H Weapon" && player.getEquippedItems().length === 16);
+  };
+
+  const getSimCStatus = () => {
+    if (props.pl.activeItems.length === 0) return "Missing";
+    else if (checkCharacterValid(props.pl) === false) return "Invalid";
+    else return "Good";
+  };
+/* ------------------------ End Simc Module Functions ----------------------- */
 
   useEffect(() => {
     ReactGA.pageview(window.location.pathname + window.location.search);
@@ -228,6 +244,16 @@ export default function TopGear(props) {
         }
         <Grid item xs={12}>
           <HelpText text={helpText} />
+        </Grid>
+        <Grid item xs={12}>
+          <UpgradeFinderSimC
+            player={props.pl}
+            contentType={props.contentType}
+            simcSnack={props.simcSnack}
+            allChars={props.allChars}
+            getSimCStatus={getSimCStatus}
+            // checkCharacterValid={checkCharacterValid}
+          />
         </Grid>
         <Grid item xs={12}>
           <TopGearSettingsAccordion />
