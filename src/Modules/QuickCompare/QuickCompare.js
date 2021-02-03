@@ -3,7 +3,7 @@ import ReactGA from "react-ga";
 import { useTranslation } from "react-i18next";
 import { makeStyles } from "@material-ui/core/styles";
 import { InputLabel, MenuItem, FormControl, Select, Button, Grid, Paper, Typography, Divider, Snackbar, TextField, Popover } from "@material-ui/core";
-import { Autocomplete} from "@material-ui/lab";
+import { Autocomplete } from "@material-ui/lab";
 import MuiAlert from "@material-ui/lab/Alert";
 import "../SetupAndMenus/QEMainMenu.css";
 import Item from "../Player/Item";
@@ -13,6 +13,7 @@ import { getValidArmorTypes, getValidWeaponTypes, calcStatsAtLevel, getItemAlloc
 import ItemCard from "./ItemCard";
 import HelpText from "../SetupAndMenus/HelpText";
 import { CONSTRAINTS } from "../Engine/CONSTRAINTS";
+import UpgradeFinderSimC from "../UpgradeFinder/UpgradeFinderSimCImport";
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -121,6 +122,21 @@ export default function QuickCompare(props) {
   const slots = getSlots();
   const helpText = t("QuickCompare.HelpText");
 
+  /* -------------------------- SimC Module Functions ------------------------- */
+  const checkCharacterValid = (player) => {
+    const weaponSet = player.getActiveItems("AllMainhands", false, true);
+    const weapon = weaponSet.length > 0 ? weaponSet[0] : "";
+
+    return (weapon.slot === "2H Weapon" && player.getEquippedItems().length === 15) || (weapon.slot === "1H Weapon" && player.getEquippedItems().length === 16);
+  };
+
+  const getSimCStatus = () => {
+    if (props.pl.activeItems.length === 0) return "Missing";
+    else if (checkCharacterValid(props.pl) === false) return "Invalid";
+    else return "Good";
+  };
+  /* ------------------------ End Simc Module Functions ----------------------- */
+
   const handleClick = () => {
     setOpen(true);
   };
@@ -176,7 +192,7 @@ export default function QuickCompare(props) {
     let player = props.pl;
     let item = new Item(itemID, itemName, getItemSlot(itemID), itemSocket, itemTertiary, 0, itemLevel, "");
     item.softScore = scoreItem(item, player, props.contentType);
-    
+
     player.addActiveItem(item);
     setItemList([...player.getActiveItems(activeSlot)]);
     setOpen(true);
@@ -253,6 +269,12 @@ export default function QuickCompare(props) {
           </Typography>
         </Grid>
         <Grid item xs={12}>
+          <HelpText text={helpText} />
+        </Grid>
+        <Grid item xs={12}>
+          <UpgradeFinderSimC player={props.pl} contentType={props.contentType} simcSnack={props.simcSnack} allChars={props.allChars} />
+        </Grid>
+        <Grid item xs={12}>
           <Paper elevation={0}>
             <Grid
               container
@@ -311,7 +333,7 @@ export default function QuickCompare(props) {
               <Grid item>
                 <FormControl className={classes.formControl} variant="outlined" size="small" style={{ width: t("QuickCompare.ItemLevel").length > 10 ? 160 : 120 }}>
                   <TextField
-                    error={(itemLevel > CONSTRAINTS.maxItemLevel) ? true : false}
+                    error={itemLevel > CONSTRAINTS.maxItemLevel ? true : false}
                     id="Ilvl-select"
                     onChange={(e) => itemLevelChanged(e.target.value)}
                     value={itemLevel}
@@ -438,9 +460,7 @@ export default function QuickCompare(props) {
         </Grid>
 
         {/* this can be simplified into a map at some stage */}
-        <Grid item xs={12}>
-          <HelpText text={helpText} />
-        </Grid>
+
         <Grid item xs={12}>
           <Grid container spacing={1}>
             {/* Helm */}
