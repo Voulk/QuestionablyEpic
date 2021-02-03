@@ -221,7 +221,6 @@ function processItem(item, baseItemList, baseScore, player, contentType, baseHPS
   const newScore = newTGSet.itemSet.hardScore;
   //const differential = Math.round(100*(newScore - baseScore))/100 // This is a raw int difference.
   const differential = Math.round((10000 * (newScore - baseScore)) / baseScore) / 100;
-  console.log(newTGSet);
 
   return { item: item.id, level: item.level, score: differential };
 }
