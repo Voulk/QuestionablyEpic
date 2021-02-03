@@ -11,7 +11,7 @@ import ArrowForward from "@material-ui/icons/ArrowForward";
 import { Paper, Grid, Button, Typography, Tooltip } from "@material-ui/core";
 import HallOfFame from "../HallOfFame/HallOfFame";
 import MessageOfTheDay from "./MessageOftheDay";
-import ArticleCard from "../ArticleCards/ArcticleCard"
+import ArticleCard from "../ArticleCards/ArcticleCard";
 // import Changelog from "../ChangeLog/Changelog"
 
 // Warning: If a button name has to change, do it in the translation files. Consider the titles here to be ID's rather than strings.
@@ -66,7 +66,8 @@ export default function QEMainMenu(props) {
       url: "https://questionablyepic.com/castle-nathria-ramps/",
       relevantClass: "test",
       somethingElse: "test2",
-    }] 
+    },
+  ];
 
   const oddEven = (number) => {
     if (number % 2 == 0) {
@@ -159,15 +160,26 @@ export default function QEMainMenu(props) {
             : ""}
           {props.allChars.getAllChar().length < 9 ? <AddNewChar allChars={props.allChars} charUpdate={props.charUpdate} charAddedSnack={props.charAddedSnack} /> : ""}
         </Grid>
+
+        <Grid container spacing={1}>
+          <Grid item xs={12}>
+            <Typography variant="h5" align="center" style={{ padding: "10px 10px 5px 10px" }} color="primary">
+              {/* // TODO Translations and reword */}
+              Class Related Links
+            </Typography>
+            <Typography style={{ color: "white", marginBottom: "10px", fontStyle: "italic" }} variant="body2" align="center">
+              Some Links Relevant to the Class
+            </Typography>
+          </Grid>
+          {urls.map((key) => (
+            <ArticleCard url={key.url} />
+          ))}
+        </Grid>
         {/* //Disabled Changelog Button */}
         {/* <Changelog /> */}
         <p className="headers" style={{ fontSize: "12px" }}>
           QE Live 9.0 Update 22. Last Updated 2 February.
         </p>
-
-        <Grid container spacing={1}>
-                  {urls.map(key => <ArticleCard url={key.url} /> )}
-        </Grid>
       </div>
     </div>
   );
