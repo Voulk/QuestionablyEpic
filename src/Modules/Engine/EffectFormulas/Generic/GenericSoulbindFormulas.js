@@ -113,7 +113,7 @@ export function getSoulbindFormula(effectID, pl, contentType) {
   // Niya's Tools: Herbs
   // This is basically 100% uptime on one target at a time. Personal benefit calculated only.
   else if (effectID === 320662) {
-    bonus_stats.Haste = (5 * STATPERONEPERCENT.HASTE) / 20;
+    bonus_stats.Haste = (5 * STATPERONEPERCENT.HASTE);
   }
 
   // -- Dreamwalker --
