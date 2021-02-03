@@ -272,7 +272,7 @@ export default function QuickCompare(props) {
           <HelpText text={helpText} />
         </Grid>
         <Grid item xs={12}>
-          <UpgradeFinderSimC player={props.pl} contentType={props.contentType} simcSnack={props.simcSnack} allChars={props.allChars} />
+          {/*<UpgradeFinderSimC player={props.pl} contentType={props.contentType} simcSnack={props.simcSnack} allChars={props.allChars} /> */}
         </Grid>
         <Grid item xs={12}>
           <Paper elevation={0}>
