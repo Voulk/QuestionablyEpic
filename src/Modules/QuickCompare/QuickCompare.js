@@ -3,7 +3,7 @@ import ReactGA from "react-ga";
 import { useTranslation } from "react-i18next";
 import { makeStyles } from "@material-ui/core/styles";
 import { InputLabel, MenuItem, FormControl, Select, Button, Grid, Paper, Typography, Divider, Snackbar, TextField, Popover } from "@material-ui/core";
-import { Autocomplete} from "@material-ui/lab";
+import { Autocomplete } from "@material-ui/lab";
 import MuiAlert from "@material-ui/lab/Alert";
 import "../SetupAndMenus/QEMainMenu.css";
 import Item from "../Player/Item";
@@ -135,7 +135,7 @@ export default function QuickCompare(props) {
     else if (checkCharacterValid(props.pl) === false) return "Invalid";
     else return "Good";
   };
-/* ------------------------ End Simc Module Functions ----------------------- */
+  /* ------------------------ End Simc Module Functions ----------------------- */
 
   const handleClick = () => {
     setOpen(true);
@@ -192,7 +192,7 @@ export default function QuickCompare(props) {
     let player = props.pl;
     let item = new Item(itemID, itemName, getItemSlot(itemID), itemSocket, itemTertiary, 0, itemLevel, "");
     item.softScore = scoreItem(item, player, props.contentType);
-    
+
     player.addActiveItem(item);
     setItemList([...player.getActiveItems(activeSlot)]);
     setOpen(true);
@@ -272,14 +272,7 @@ export default function QuickCompare(props) {
           <HelpText text={helpText} />
         </Grid>
         <Grid item xs={12}>
-          <UpgradeFinderSimC
-            player={props.pl}
-            contentType={props.contentType}
-            simcSnack={props.simcSnack}
-            allChars={props.allChars}
-            getSimCStatus={getSimCStatus}
-            // checkCharacterValid={checkCharacterValid}
-          />
+          <UpgradeFinderSimC player={props.pl} contentType={props.contentType} simcSnack={props.simcSnack} allChars={props.allChars} />
         </Grid>
         <Grid item xs={12}>
           <Paper elevation={0}>
@@ -340,7 +333,7 @@ export default function QuickCompare(props) {
               <Grid item>
                 <FormControl className={classes.formControl} variant="outlined" size="small" style={{ width: t("QuickCompare.ItemLevel").length > 10 ? 160 : 120 }}>
                   <TextField
-                    error={(itemLevel > CONSTRAINTS.maxItemLevel) ? true : false}
+                    error={itemLevel > CONSTRAINTS.maxItemLevel ? true : false}
                     id="Ilvl-select"
                     onChange={(e) => itemLevelChanged(e.target.value)}
                     value={itemLevel}
