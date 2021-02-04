@@ -12,7 +12,7 @@ import { classColoursJS } from "../../CooldownPlanner/Functions/ClassColourFunct
 import classIcons from "../../CooldownPlanner/Functions/IconFunctions/ClassIcons";
 import raceIcons from "../../CooldownPlanner/Functions/IconFunctions/RaceIcons";
 import { classRaceList } from "../../CooldownPlanner/Data/Data";
-import { serverDB } from "../../../Databases/ServerDB"
+import { serverDB } from "../../../Databases/ServerDB";
 import LogDetailsTable from "./CharacterLogDetailsTable";
 import { STAT } from "../../Engine/STAT";
 import { apiGetPlayerImage } from "../ConnectionUtilities";
@@ -192,22 +192,22 @@ export default function CharCards(props) {
   /* -------------------------------------------------------------------------- */
 
   const handleIntellect = (event) => {
-    setIntellect(event.target.value);
+    setIntellect(parseFloat(event.target.value));
   };
   const handleCrit = (event) => {
-    setCritical(event.target.value);
+    setCritical(parseFloat(event.target.value));
   };
   const handleHaste = (event) => {
-    setHaste(event.target.value);
+    setHaste(parseFloat(event.target.value));
   };
   const handleMastery = (event) => {
-    setMastery(event.target.value);
+    setMastery(parseFloat(event.target.value));
   };
   const handleVers = (event) => {
-    setVersatility(event.target.value);
+    setVersatility(parseFloat(event.target.value));
   };
   const handleLeech = (event) => {
-    setLeech(event.target.value);
+    setLeech(parseFloat(event.target.value));
   };
 
   /* ------------------------ Delete Character Function ----------------------- */
@@ -258,11 +258,11 @@ export default function CharCards(props) {
     let newPlayer = props.char;
     let weights = {
       intellect: 1,
-      haste: haste > CONSTRAINTS.maxSecondaryWeight? newPlayer.statWeights[contentType].haste : haste,
-      crit: critical > CONSTRAINTS.maxSecondaryWeight? newPlayer.statWeights[contentType].crit : critical,
-      mastery: mastery > CONSTRAINTS.maxSecondaryWeight? newPlayer.statWeights[contentType].mastery : mastery,
-      versatility: versatility > CONSTRAINTS.maxSecondaryWeight? newPlayer.statWeights[contentType].versatility : versatility,
-      leech: leech > CONSTRAINTS.maxTertiaryWeight? newPlayer.statWeights[contentType].leech: leech,
+      haste: haste > CONSTRAINTS.maxSecondaryWeight ? newPlayer.statWeights[contentType].haste : haste,
+      crit: critical > CONSTRAINTS.maxSecondaryWeight ? newPlayer.statWeights[contentType].crit : critical,
+      mastery: mastery > CONSTRAINTS.maxSecondaryWeight ? newPlayer.statWeights[contentType].mastery : mastery,
+      versatility: versatility > CONSTRAINTS.maxSecondaryWeight ? newPlayer.statWeights[contentType].versatility : versatility,
+      leech: leech > CONSTRAINTS.maxTertiaryWeight ? newPlayer.statWeights[contentType].leech : leech,
     };
 
     newPlayer.editChar(contentType, charName, server, region, selectedRace, weights);
