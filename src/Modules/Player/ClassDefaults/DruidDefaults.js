@@ -30,7 +30,7 @@ export const druidDefaultStatWeights = (contentType) => {
     crit: 0.34,
     mastery: 0.31,
     versatility: 0.32,
-    leech: 0.55,
+    leech: 0.52,
     defaults: true,
   };
   statWeights.Dungeon = {
@@ -39,7 +39,7 @@ export const druidDefaultStatWeights = (contentType) => {
     crit: 0.33,
     mastery: 0.37,
     versatility: 0.34,
-    leech: 0.23,
+    leech: 0.21,
     defaults: true,
   };
 
@@ -53,12 +53,22 @@ export const druidDefaultSpecialQueries = (contentType) => {
       ConvokeChannelHPS: 360,
       OneManaHealing: 4.1,
       CastsPerMinute: 32, // ONLY tracks spells with a mana cost.
+      cooldownMult: {
+        oneMinute: 1.1,
+        twoMinutes: 1.25,
+        threeMinutes: 1.2,
+      }
     };
   } else if (contentType === "Dungeon") {
     specialQueries = {
       ConvokeChannelHPS: 360,
       OneManaHealing: 1.2,
       CastsPerMinute: 30,
+      cooldownMult: {
+        oneMinute: 1,
+        twoMinutes: 1.25,
+        threeMinutes: 1,
+      }
     };
   } else {
     console.error("Unknown Content Type");

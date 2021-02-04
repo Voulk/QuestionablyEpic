@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import { Typography, Collapse, CircularProgress, Grid, Accordion, AccordionSummary, AccordionDetails, Dialog, Divider, Paper, Grow } from "@material-ui/core";
-import LogLinkInput from "../CooldownPlanner/ModuleComponents/LogFightSelection/LogLinkInput";
+import LogLinkInput from "../LogImport/LogLinkInput";
 import Chart from "./ModuleComponents/Chart/Chart";
 import Example from "../CooldownPlanner/ModuleComponents/LogDetailComponents/DTPSBarChart";
-import FightSelectorButton from "../CooldownPlanner/ModuleComponents/LogFightSelection/FightSelectorButton";
+import FightSelectorButton from "../LogImport/FightSelectorButton";
 import LoadingOverlay from "react-loading-overlay";
 import CooldownPlanner from "../CooldownPlanner/ModuleComponents/CooldownPlanner.js";
 import CooldownTimeline from "../CooldownPlanner/ModuleComponents/LogDetailComponents/CooldownTimelineTable";
-import { fightDurationCalculator, warcraftLogReportID, logDifficulty } from "../CooldownPlanner/Functions/Functions";
+import { fightDuration, warcraftLogReportID, logDifficulty } from "../CooldownPlanner/Functions/Functions";
 import bossHeaders from "../CooldownPlanner/Functions/IconFunctions/BossHeaderIcons";
 import ERTTable from "../CooldownPlanner/ModuleComponents/ERTTable";
 import SwitchLabels from "./BasicComponents/Switch";
@@ -432,8 +432,8 @@ class HolyDiver extends Component {
                       legendata={this.state.legenddata}
                       cooldownsToShow={this.state.customCooldownsOnChart}
                       cooldown={this.state.cooldownlist}
+                      endtime={fightDuration(this.state.timeend, this.state.time)}
                       customCooldowns={this.state.cooldownlistcustom2}
-                      endtime={fightDurationCalculator(this.state.timeend, this.state.time)}
                       showcds={true}
                     />
                   </LoadingOverlay>
@@ -480,7 +480,6 @@ class HolyDiver extends Component {
                 </Grid>
               </Collapse>
             </Grid>
-
 
             <Grid item xs={12} style={{ height: 350 }} />
           </Grid>

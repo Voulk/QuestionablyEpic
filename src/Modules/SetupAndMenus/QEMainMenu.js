@@ -2,8 +2,8 @@ import React, { useEffect } from "react";
 import "./QEMainMenu.css";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import CharCards from "./CharComponentGen";
-import AddNewChar from "./CharCreator";
+import CharCards from "./CharacterModules/CharacterCards";
+import AddNewChar from "./CharacterModules/CharacterCreator";
 import { makeStyles } from "@material-ui/core/styles";
 import ReactGA from "react-ga";
 import { dbCheckPatron } from "./ConnectionUtilities";
@@ -154,7 +154,7 @@ export default function QEMainMenu(props) {
         {/* //Disabled Changelog Button */}
         {/* <Changelog /> */}
         <p className="headers" style={{ fontSize: "12px" }}>
-          QE Live 9.0 Update 21. Last Updated 24 January.
+          QE Live 9.0 Update 22. Last Updated 2 February.
         </p>
       </div>
     </div>

@@ -17,11 +17,21 @@ export const holyPriestDefaultSpecialQueries = (contentType) => {
     specialQueries = {
       OneManaHealing: 3.5,
       CastsPerMinute: 28,
+      cooldownMult: {
+        oneMinute: 1,
+        twoMinutes: 1,
+        threeMinutes: 1,
+      }
     };
   } else if (contentType === "Dungeon") {
     specialQueries = {
       OneManaHealing: 0.4,
       CastsPerMinute: 30,
+      cooldownMult: {
+        oneMinute: 1,
+        twoMinutes: 1,
+        threeMinutes: 1,
+      }
     };
   } else {
     console.error("Unknown Content Type");

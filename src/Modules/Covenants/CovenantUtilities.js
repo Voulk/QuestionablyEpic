@@ -1,6 +1,6 @@
 import SPECS from "../Engine/SPECS";
 import ActiveConduit from "./ActiveConduit";
-import { conduitDB } from "../CooldownPlanner/Data/Data";
+import { conduitDB } from "../../Databases/ConduitDB";
 import { getConduitFormula } from "../Engine/EffectFormulas/EffectEngine";
 import i18n from "i18next";
 

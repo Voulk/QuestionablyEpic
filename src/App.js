@@ -5,13 +5,13 @@ import QEMainMenu from "./Modules/SetupAndMenus/QEMainMenu";
 import LegendaryCompare from "./Modules/Legendaries/LegendaryCompare";
 import TrinketAnalysis from "./Modules/TrinketAnalysis/TrinketAnalysis";
 import QuickCompare from "./Modules/QuickCompare/QuickCompare";
-import QEHeader from "./Modules/SetupAndMenus/QEHeader";
+import QEHeader from "./Modules/SetupAndMenus/Header/QEHeader";
 import TopGearReport from "./Modules/TopGear/TopGearReport";
 import QEProfile from "./Modules/SetupAndMenus/QEProfile";
 import PlayerChars from "./Modules/Player/PlayerChars";
 import CovenantExploration from "./Modules/Covenants/Components/CovenantExploration";
 import { UpgradeFinder } from "./Modules/UpgradeFinder/UpgradeFinder";
-import { ConfirmLogin, QELogin } from "./Modules/SetupAndMenus/QELogin";
+import { ConfirmLogin, QELogin } from "./Modules/SetupAndMenus/Header/QELogin";
 import { withTranslation } from "react-i18next";
 import i18n from "./i18n";
 import TopGear from "./Modules/TopGear/TopGear";
@@ -410,8 +410,8 @@ class App extends Component {
                 />
                 <Route path="/holydiver" render={() => <HolyDiver />} />
                 <Route path="/report" render={() => <TopGearReport pl={activePlayer} result={this.state.topSet} contentType={this.state.contentType} />} />
-                <Route path="/quickcompare" render={() => <QuickCompare pl={activePlayer} contentType={this.state.contentType} />} />
-                <Route path="/topgear" render={() => <TopGear pl={activePlayer} contentType={this.state.contentType} setTopResult={this.setTopResult} />} />
+                <Route path="/quickcompare" render={() => <QuickCompare pl={activePlayer} contentType={this.state.contentType} allChars={allChars} simcSnack={this.handleSimCSnackOpen} />} />
+                <Route path="/topgear" render={() => <TopGear pl={activePlayer} contentType={this.state.contentType} setTopResult={this.setTopResult} allChars={allChars} simcSnack={this.handleSimCSnackOpen} />} />
                 <Route path="/legendaries" render={() => <LegendaryCompare pl={activePlayer} contentType={this.state.contentType} />} />
                 <Route path="/trinkets" render={() => <TrinketAnalysis player={activePlayer} contentType={this.state.contentType} />} />
                 <Route path="/soulbinds" render={() => <CovenantExploration pl={activePlayer} contentType={this.state.contentType} updatePlayerChar={this.updatePlayerChar} />} />

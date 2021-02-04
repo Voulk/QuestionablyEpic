@@ -1,4 +1,4 @@
-import { conduitDB } from "../CooldownPlanner/Data/Data";
+import { conduitDB } from "../../Databases/ConduitDB";
 import { getConduitFormula } from "../Engine/EffectFormulas/EffectEngine";
 import { getEstimatedHPS } from "../Covenants/CovenantUtilities";
 class ActiveConduit {

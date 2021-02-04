@@ -137,13 +137,6 @@ import ShiningForceIconHoly from "../../../../Images/Classes/Priest/Specialisati
 import SurgeOfLightIcon from "../../../../Images/Classes/Priest/Specialisation/Holy/Icons/Talents/SurgeOfLightIcon.jpg";
 import TrailOfLightIcon from "../../../../Images/Classes/Priest/Specialisation/Holy/Icons/Talents/TrailOfLightIcon.jpg";
 
-
-
-
-
-
-
-
 export default function talentIcons(props) {
   let source = "";
   let alt = "";
@@ -491,7 +484,7 @@ export default function talentIcons(props) {
   }
 
   // Priest - Discipline
-  
+
   if (props === 197900) {
     source = CastigationIcon;
     alt = "Castigation";
@@ -673,7 +666,7 @@ export default function talentIcons(props) {
           width: 30,
           padding: 4,
           verticalAlign: "middle",
-          borderRadius: "4px"
+          borderRadius: "4px",
         }}
         src={source}
         alt={alt}

@@ -3,7 +3,7 @@ import { Button, ClickAwayListener, Dialog, Grow, MenuItem, MenuList, Paper, Pop
 import MuiDialogContent from "@material-ui/core/DialogContent";
 import { makeStyles, withStyles } from "@material-ui/core/styles";
 import { useTranslation } from "react-i18next";
-import BnetIcon from "../../Images/QeAssets/BattleNetIcon.png";
+import BnetIcon from "../../../Images/QeAssets/BattleNetIcon.png";
 import { QELogin } from "./QELogin";
 
 const DialogContent = withStyles((theme) => ({

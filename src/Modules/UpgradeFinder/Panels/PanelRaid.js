@@ -4,9 +4,9 @@ import { Typography, Grid, Divider } from "@material-ui/core";
 import ItemUpgradeCard from "./ItemUpgradeCard";
 import UpgradeFinderBossImages from "./BossImages";
 import "./Panels.css";
-import { encounterDB } from "../Player/InstanceDB";
+import { encounterDB } from "../../Player/InstanceDB";
 import { useTranslation } from "react-i18next";
-import { filterItemListBySource, getDifferentialByID } from "../Engine/ItemUtilities";
+import { filterItemListBySource, getDifferentialByID } from "../../Engine/ItemUtilities";
 
 const useStyles = makeStyles((theme) => ({
   root: {

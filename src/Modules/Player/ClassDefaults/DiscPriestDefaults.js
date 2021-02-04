@@ -17,11 +17,21 @@ export const discPriestDefaultSpecialQueries = (contentType) => {
     specialQueries = {
       OneManaHealing: 3.4,
       CastsPerMinute: 36,
+      cooldownMult: {
+        oneMinute: 2.25,
+        twoMinutes: 1.6,
+        threeMinutes: 1.35,
+      }
     };
   } else if (contentType === "Dungeon") {
     specialQueries = {
       OneManaHealing: 0,
       CastsPerMinute: 30,
+      cooldownMult: {
+        oneMinute: 1,
+        twoMinutes: 1,
+        threeMinutes: 1,
+      }
     };
   } else {
     console.error("Unknown Content Type");
@@ -35,11 +45,11 @@ export const discPriestDefaultStatWeights = (contentType) => {
 
   statWeights.Raid = {
     intellect: 1,
-    haste: 0.36,
-    crit: 0.34,
-    mastery: 0.34,
-    versatility: 0.32,
-    leech: 0.4,
+    haste: 0.39,
+    crit: 0.38,
+    mastery: 0.37,
+    versatility: 0.37,
+    leech: 0.22,
   };
   statWeights.Dungeon = {
     intellect: 1,
@@ -47,7 +57,7 @@ export const discPriestDefaultStatWeights = (contentType) => {
     crit: 0.34,
     mastery: 0.3,
     versatility: 0.33,
-    leech: 0.21,
+    leech: 0.18,
   };
 
   return statWeights[contentType];

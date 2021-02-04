@@ -1,5 +1,5 @@
 //prettier-ignore
-import { addMissingTimestamps, getUniqueObjectsFromArray, reduceTimestamps, fightDurationCalculator, importHealerLogData, importDamageLogData, importCastsLogData,
+import { addMissingTimestamps, getUniqueObjectsFromArray, reduceTimestamps, fightDuration, importHealerLogData, importDamageLogData, importCastsLogData,
   durationmaker, sumDamage, importSummaryData, importExternalCastsLogData, importCharacterIds, importEnemyCasts, importEnemyIds } from "../Functions/Functions";
 import moment from "moment";
 
@@ -40,7 +40,7 @@ export default async function updatechartdata(starttime, endtime) {
   let damagingAbilities = [];
 
   // Fight Length of the selected report is calculated and coverted to seconds as a string
-  const fightLength = moment.duration(fightDurationCalculator(endtime, starttime)).asSeconds().toString();
+  const fightLength = moment.duration(fightDuration(endtime, starttime)).asSeconds().toString();
 
   // Import Healer Info from the Logs healing table for each healing class.
   // See: "importHealerLogData" in the functions file for more info.
@@ -122,7 +122,7 @@ export default async function updatechartdata(starttime, endtime) {
     .map((key) => ({
       ability: key.ability.name,
       guid: key.ability.guid,
-      timestamp: moment(fightDurationCalculator(key.timestamp, this.state.time)).startOf("second").valueOf(),
+      timestamp: moment(fightDuration(key.timestamp, this.state.time)).startOf("second").valueOf(),
       [healerIDName
         .filter((obj) => {
           return obj.id === key.sourceID;
@@ -133,7 +133,7 @@ export default async function updatechartdata(starttime, endtime) {
     }))
     .map((key) =>
       healerDurations.push(
-        durationmaker(key.guid, key.timestamp, Object.getOwnPropertyNames(key).slice(3), moment(fightDurationCalculator(endtime, starttime)).startOf("second").valueOf()),
+        durationmaker(key.guid, key.timestamp, Object.getOwnPropertyNames(key).slice(3), moment(fightDuration(endtime, starttime)).startOf("second").valueOf()),
       ),
     );
 
@@ -154,7 +154,7 @@ export default async function updatechartdata(starttime, endtime) {
   // Then converted to the started of the nearest second otherwise the chart will show each individual ms.
   // We Don't need to delve that deep into MS for the chart.
   const unmitigatedDamageMap = damage.map((key) => ({
-    timestamp: moment(fightDurationCalculator(key.timestamp, this.state.time)).startOf("second").valueOf(),
+    timestamp: moment(fightDuration(key.timestamp, this.state.time)).startOf("second").valueOf(),
     [key.ability.name]: key.unmitigatedAmount,
   }));
 
@@ -163,7 +163,7 @@ export default async function updatechartdata(starttime, endtime) {
   // Then converted to the started of the nearest second otherwise the chart will show each individual ms.
   // We Don't need to delve that deep into MS for the chart.
   const mitigatedDamageMap = damage.map((key) => ({
-    timestamp: moment(fightDurationCalculator(key.timestamp, this.state.time)).startOf("second").valueOf(),
+    timestamp: moment(fightDuration(key.timestamp, this.state.time)).startOf("second").valueOf(),
     [key.ability.name]: key.amount,
   }));
 
@@ -171,7 +171,7 @@ export default async function updatechartdata(starttime, endtime) {
   const updateddatacastsTimeline = cooldowns.map((key) => ({
     ability: key.ability.name,
     guid: key.ability.guid,
-    timestamp: moment(fightDurationCalculator(key.timestamp, this.state.time)).startOf("second").format("mm:ss"),
+    timestamp: moment(fightDuration(key.timestamp, this.state.time)).startOf("second").format("mm:ss"),
     name: healerIDName
       .filter((obj) => {
         return obj.id === key.sourceID;
@@ -190,7 +190,7 @@ export default async function updatechartdata(starttime, endtime) {
   const updateddatacastsExternalsTimeline = externals.map((key) => ({
     ability: key.ability.name,
     guid: key.ability.guid,
-    timestamp: moment(fightDurationCalculator(key.timestamp, this.state.time)).startOf("second").format("mm:ss"),
+    timestamp: moment(fightDuration(key.timestamp, this.state.time)).startOf("second").format("mm:ss"),
     caster: healerIDName
       .filter((obj) => {
         return obj.id === key.sourceID;
@@ -223,7 +223,7 @@ export default async function updatechartdata(starttime, endtime) {
   const enemyCastsTimeline = enemyCasts.map((key) => ({
     ability: key.ability.name,
     guid: key.ability.guid,
-    timestamp: moment(fightDurationCalculator(key.timestamp, this.state.time)).startOf("second").format("mm:ss"),
+    timestamp: moment(fightDuration(key.timestamp, this.state.time)).startOf("second").format("mm:ss"),
     name: enemyIDs
       .filter((obj) => {
         return obj.id === key.sourceID;
@@ -237,7 +237,7 @@ export default async function updatechartdata(starttime, endtime) {
   const updateddatacastsExternalTimeline = cooldowns.map((key) => ({
     ability: key.ability.name,
     guid: key.ability.guid,
-    timestamp: moment(fightDurationCalculator(key.timestamp, this.state.time)).startOf("second").format("mm:ss"),
+    timestamp: moment(fightDuration(key.timestamp, this.state.time)).startOf("second").format("mm:ss"),
     name: healerIDName
       .filter((obj) => {
         return obj.id === key.sourceID;
@@ -256,7 +256,7 @@ export default async function updatechartdata(starttime, endtime) {
   let cooldownwithdurations = healerDurations.flat();
 
   // Create any missing timestamps in the fight (i.e no damage, these are needed so the chart doesn't stretch the areas to the next point.)
-  let times = addMissingTimestamps(fightDurationCalculator(endtime, starttime));
+  let times = addMissingTimestamps(fightDuration(endtime, starttime));
 
   // Concat the damage arrays with the cooldown durations with the missing durations
   let unmitigatedDamageFromLogWithTimesAddedAndCooldowns = unmitigatedDamageMap.concat(cooldownwithdurations, times);
