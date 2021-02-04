@@ -58,7 +58,7 @@ export default function chartCooldownUpdater(tableData) {
           key.ability,
           key.timestamp,
           key.abilityname,
-          moment(fightDurationCalculator(this.state.currentEndTime, this.state.currentStartTime)).startOf("second").valueOf(),
+          moment(fightDuration(this.state.currentEndTime, this.state.currentStartTime)).startOf("second").valueOf(),
         ),
       );
     });
@@ -76,7 +76,7 @@ export default function chartCooldownUpdater(tableData) {
           key.ability,
           key.timestamp,
           key.abilityname,
-          moment(fightDurationCalculator(this.state.currentEndTime, this.state.currentStartTime)).startOf("second").valueOf(),
+          moment(fightDuration(this.state.currentEndTime, this.state.currentStartTime)).startOf("second").valueOf(),
         ),
       ),
     );
@@ -94,7 +94,7 @@ export default function chartCooldownUpdater(tableData) {
           key.ability,
           key.timestamp,
           key.abilityname,
-          moment(fightDurationCalculator(this.state.currentEndTime, this.state.currentStartTime)).startOf("second").valueOf(),
+          moment(fightDuration(this.state.currentEndTime, this.state.currentStartTime)).startOf("second").valueOf(),
         ),
       ),
     );
@@ -112,7 +112,7 @@ export default function chartCooldownUpdater(tableData) {
           key.ability,
           key.timestamp,
           key.abilityname,
-          moment(fightDurationCalculator(this.state.currentEndTime, this.state.currentStartTime)).startOf("second").valueOf(),
+          moment(fightDuration(this.state.currentEndTime, this.state.currentStartTime)).startOf("second").valueOf(),
         ),
       ),
     );

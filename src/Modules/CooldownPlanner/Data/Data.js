@@ -77,12 +77,12 @@ export const healerCooldownsDetailed = [
   //   duration: 1,
   //   cooldown: 60,
   // },
-  // {
-  //   name: "Ashen Hallow",
-  //   guid: 316958,
-  //   duration: 30,
-  //   cooldown: 240,
-  // },
+  {
+    name: "Ashen Hallow",
+    guid: 316958,
+    duration: 30,
+    cooldown: 240,
+  },
   // {
   //   name: "Vanquisher's Hammer",
   //   guid: 328204,
@@ -248,6 +248,14 @@ export const healerCooldownsDetailed = [
     guid: 98008,
     duration: 6,
     cooldown: 180,
+  },
+  {
+    guid: 207399,
+    name: "Ancestral Protection Totem",
+    wowhead: "https://www.wowhead.com/spell=207399/ancestral-protection-totem",
+    icon: "spell_nature_reincarnation",
+    duration: 30,
+    cooldown: 300,
   },
   // --------------Covenant Abilities---------------
   // {
@@ -1572,7 +1580,6 @@ export const worldBosses = [
 
 // Contains the list of races localization IDs for each class's available races.
 export const classRaceList = {
-
   "Holy Paladin": {
     races: ["Races.Draenei", "Races.Dwarf", "Races.Human", "Races.Lightforged Draenei", "Races.Dark Iron Dwarf", "Races.Blood Elf", "Races.Tauren", "Races.Zandalari Troll"],
   },

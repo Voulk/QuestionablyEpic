@@ -19,6 +19,7 @@ import AntiMagicZoneIcon from "../../../Images/Classes/DeathKnight/AntiMagicZone
 import VampiricEmbraceIcon from "../../../Images/Classes/Priest/Specialisation/Shadow/VampiricEmbrace.jpg";
 import ConvokeTheSpiritsIcon from "../../../Images/Classes/Druid/CovenantAbilities/ConvokeTheSpirits.jpg";
 import FlourishIcon from "../../../Images/Classes/Druid/Specialisation/Restoration/Icons/Talents/FlourishIcon.jpg";
+import AncestralProtectionIcon from "../../../Images/Classes/Shaman/Specialisation/Restoration/Icons/Talents/AncestralProtectionTotemIcon.jpg"
 
 // TODO this should be converted to a map at some point
 
@@ -247,7 +248,23 @@ export default function ClassCooldownMenuItems(props) {
             alt="Spirit Link Totem"
           />
         </a>
-        <Translation>{(t) => t("CooldownPlanner.ClassAbilities.98008")}</Translation>
+        <Translation>{(t) => t("CooldownPlanner.ClassAbilities.207399")}</Translation>
+      </MenuItem>,
+      <Divider key={"divider200"} />,
+      <MenuItem value={207399} key={10}>
+        <a data-wowhead="spell=207399">
+          <img
+            style={{
+              height: 20,
+              width: 20,
+              padding: "0px 5px 0px 5px",
+              verticalAlign: "middle",
+            }}
+            src={AncestralProtectionIcon}
+            alt="Ancestral Protection Totem"
+          />
+        </a>
+        <Translation>{(t) => t("CooldownPlanner.ClassAbilities.207399")}</Translation>
       </MenuItem>,
     ];
   }
