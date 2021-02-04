@@ -34,12 +34,22 @@ export const shamanDefaultSpecialQueries = (contentType) => {
       HPSOnEarthShield: 456,
       OneManaHealing: 2.4,
       CastsPerMinute: 24,
+      cooldownMult: {
+        oneMinute: 1,
+        twoMinutes: 1,
+        threeMinutes: 1,
+      }
     };
   } else if (contentType === "Dungeon") {
     specialQueries = {
       HPSOnEarthShield: 456,
       OneManaHealing: 0.4,
       CastsPerMinute: 30,
+      cooldownMult: {
+        oneMinute: 1,
+        twoMinutes: 1,
+        threeMinutes: 1,
+      }
     };
   } else {
     console.error("Unknown Content Type");
@@ -57,7 +67,7 @@ export const shamanDefaultStatWeights = (contentType) => {
     crit: 0.36,
     mastery: 0.29,
     versatility: 0.36,
-    leech: 0.44,
+    leech: 0.42,
   };
   statWeights.Dungeon = {
     intellect: 1,

@@ -45,8 +45,9 @@ class CastModel {
     }
   };
 
-  getSpecialQuery = (tag) => {
-    if (tag in this.specialQueries) return this.specialQueries[tag];
+  getSpecialQuery = (tag, CDFlag = "") => {
+    if (CDFlag === "cooldownMult" && "cooldownMult" in this.specialQueries) return this.specialQueries["cooldownMult"][tag];
+    else if (tag in this.specialQueries) return this.specialQueries[tag];
     else return 0;
   };
 
