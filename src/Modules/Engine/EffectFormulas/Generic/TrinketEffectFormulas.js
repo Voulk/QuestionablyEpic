@@ -142,7 +142,7 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel) {
 
     bonus_stats.intellect = (getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.duration) / effect.cooldown;
 
-    if (player.getSpec() === "Mistweaver Monk" && player.getCov() === "Venthyr") bonus_stats.intellect *= player.getCooldownMult("oneMinute", contentType);
+    if (player.getSpec() === "Mistweaver Monk" && player.getCovenant() === "Venthyr") bonus_stats.intellect *= player.getCooldownMult("oneMinute", contentType);
     else if (player.getSpec() !== "Mistweaver Monk") bonus_stats.intellect *= player.getCooldownMult("oneMinute", contentType);
     
 
