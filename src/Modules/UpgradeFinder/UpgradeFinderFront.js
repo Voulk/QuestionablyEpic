@@ -68,69 +68,24 @@ const raidDifficulty = ["Raid Finder", "Normal", "Heroic", "Mythic"];
 const pvpCurrency = ["Honor", "Conquest"];
 
 const marks = [
-  {
-    value: 0,
-    label: "M 0",
-  },
-  {
-    value: 2,
-    label: "M 2",
-  },
-  {
-    value: 3,
-    label: "M 3",
-  },
-  {
-    value: 5,
-    label: "M 4-5",
-  },
-  {
-    value: 6,
-    label: "M 6",
-  },
-  {
-    value: 7,
-    label: "M 7-9",
-  },
-  {
-    value: 10,
-    label: "M 10-11",
-  },
-  {
-    value: 12,
-    label: "M 12-14",
-  },
-  {
-    value: 15,
-    label: "M 15",
-  },
+  { value: 0, label: "M 0" },
+  { value: 2, label: "M 2" },
+  { value: 3, label: "M 3" },
+  { value: 5, label: "M 4-5" },
+  { value: 6, label: "M 6" },
+  { value: 7, label: "M 7-9" },
+  { value: 10, label: "M 10-11" },
+  { value: 12, label: "M 12-14" },
+  { value: 15, label: "M 15" },
 ];
 
 const PvPRating = [
-  {
-    value: 0,
-    label: "Unranked",
-  },
-  {
-    value: 600,
-    label: "Combatant 1400-1599",
-  },
-  {
-    value: 800,
-    label: "Challenger  1600-1799",
-  },
-  {
-    value: 1000,
-    label: "Rival 1800-2099",
-  },
-  {
-    value: 1300,
-    label: "Duelist 2100-2399",
-  },
-  {
-    value: 1600,
-    label: "Elite 2400+",
-  },
+  { value: 0, label: "Unranked" },
+  { value: 600, label: "Combatant 1400-1599" },
+  { value: 800, label: "Challenger  1600-1799" },
+  { value: 1000, label: "Rival 1800-2099" },
+  { value: 1300, label: "Duelist 2100-2399" },
+  { value: 1600, label: "Elite 2400+" },
 ];
 
 export default function UpgradeFinderFront(props) {
@@ -159,10 +114,6 @@ export default function UpgradeFinderFront(props) {
     //history.push("/UpgradeFinderReport/");
   };
 
-  const getUpgradeFinderReady = (player) => {
-    return getSimCStatus(player) === "Good" && props.playerSettings.raid.length > 0;
-  };
-
   const getSimCStatus = (player) => {
     if (player.activeItems.length === 0) return "Missing";
     else if (checkCharacterValid(player) === false) return "Invalid";
@@ -174,6 +125,10 @@ export default function UpgradeFinderFront(props) {
     const weapon = weaponSet.length > 0 ? weaponSet[0] : "";
 
     return (weapon.slot === "2H Weapon" && player.getEquippedItems().length === 15) || (weapon.slot === "1H Weapon" && player.getEquippedItems().length === 16);
+  };
+
+  const getUpgradeFinderReady = (player) => {
+    return getSimCStatus(player) === "Good" && props.playerSettings.raid.length > 0;
   };
 
   const selectsPvP = [selectedHonor, selectedConquest];
@@ -192,14 +147,7 @@ export default function UpgradeFinderFront(props) {
           <HelpText text={helpText} />
         </Grid>
         <Grid item xs={12}>
-          <UpgradeFinderSimC
-            player={props.player}
-            contentType={props.contentType}
-            simcSnack={props.simcSnack}
-            allChars={props.allChars}
-            getSimCStatus={getSimCStatus}
-            checkCharacterValid={checkCharacterValid}
-          />
+          <UpgradeFinderSimC player={props.player} contentType={props.contentType} simcSnack={props.simcSnack} allChars={props.allChars} />
         </Grid>
 
         {/* ------------------------------ Raid Section ------------------------------ */}

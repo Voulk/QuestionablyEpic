@@ -154,7 +154,7 @@ export default function QEMainMenu(props) {
         {/* //Disabled Changelog Button */}
         {/* <Changelog /> */}
         <p className="headers" style={{ fontSize: "12px" }}>
-          QE Live 9.0 Update 21. Last Updated 24 January.
+          QE Live 9.0 Update 22. Last Updated 2 February.
         </p>
       </div>
     </div>

@@ -29,24 +29,24 @@ const itemQuality = (itemLevel, effectCheck) => {
   else return "#1eff00";
 };
 
-/*
+const checkCharacterValid = (player) => {
+  const weaponSet = player.getActiveItems("AllMainhands", false, true);
+  const weapon = weaponSet.length > 0 ? weaponSet[0] : "";
+
+  return (weapon.slot === "2H Weapon" && player.getEquippedItems().length === 15) || (weapon.slot === "1H Weapon" && player.getEquippedItems().length === 16);
+};
+
 const getSimCStatus = (player) => {
   if (player.activeItems.length === 0) return "Missing";
   else if (checkCharacterValid(player) === false) return "Invalid";
   else return "Good";
-}
-const checkCharacterValid = (player) => {
-  const weaponSet = player.getActiveItems("AllMainhands", false, true);
-  const weapon = weaponSet.length > 0 ? weaponSet[0] : "";
-  return ((weapon.slot === "2H Weapon" && player.getEquippedItems().length === 15) ||
-          (weapon.slot === "1H Weapon" && player.getEquippedItems().length === 16));
-}
-*/
+};
+
 export default function UpgradeFinderSimC(props) {
   const classes = useStyles();
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.currentLanguage;
-  const simcStatus = props.getSimCStatus(props.player);
+  const simcStatus = getSimCStatus(props.player);
   const simcString = "UpgradeFinderFront.SimCBody1" + simcStatus;
 
   return (

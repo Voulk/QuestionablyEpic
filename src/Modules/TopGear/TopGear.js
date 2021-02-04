@@ -20,6 +20,7 @@ import { useHistory, useLocation } from "react-router-dom";
 import HelpText from "../SetupAndMenus/HelpText";
 import TopGearSettingsAccordion from "./TopGearSettings";
 import { CONSTRAINTS } from "../Engine/CONSTRAINTS";
+import UpgradeFinderSimC from "../UpgradeFinder/UpgradeFinderSimCImport";
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -163,9 +164,10 @@ export default function TopGear(props) {
       let wepCombos = buildWepCombos(props.pl, true);
       const worker = require("workerize-loader!./TopGearEngine"); // eslint-disable-line import/no-webpack-loader-syntax
       let instance = new worker();
+      let baseHPS = props.pl.getHPS(props.contentType);
       let strippedPlayer = JSON.parse(JSON.stringify(props.pl));
       //console.log("Pl: " + JSON.stringify(props.pl));
-      instance.runTopGear(itemList, wepCombos, strippedPlayer, props.contentType, currentLanguage).then((result) => {
+      instance.runTopGear(itemList, wepCombos, strippedPlayer, props.contentType, baseHPS, currentLanguage).then((result) => {
         //console.log(`Loop returned`);
         apiSendTopGearSet(props.pl, props.contentType, result.itemSet.hardScore, result.itemsCompared);
         props.setTopResult(result);
@@ -228,6 +230,14 @@ export default function TopGear(props) {
         }
         <Grid item xs={12}>
           <HelpText text={helpText} />
+        </Grid>
+        <Grid item xs={12}>
+          {/*<UpgradeFinderSimC
+            player={props.pl}
+            contentType={props.contentType}
+            simcSnack={props.simcSnack}
+            allChars={props.allChars}
+          /> */}
         </Grid>
         <Grid item xs={12}>
           <TopGearSettingsAccordion />

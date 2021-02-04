@@ -410,8 +410,8 @@ class App extends Component {
                 />
                 <Route path="/holydiver" render={() => <HolyDiver />} />
                 <Route path="/report" render={() => <TopGearReport pl={activePlayer} result={this.state.topSet} contentType={this.state.contentType} />} />
-                <Route path="/quickcompare" render={() => <QuickCompare pl={activePlayer} contentType={this.state.contentType} />} />
-                <Route path="/topgear" render={() => <TopGear pl={activePlayer} contentType={this.state.contentType} setTopResult={this.setTopResult} />} />
+                <Route path="/quickcompare" render={() => <QuickCompare pl={activePlayer} contentType={this.state.contentType} allChars={allChars} simcSnack={this.handleSimCSnackOpen} />} />
+                <Route path="/topgear" render={() => <TopGear pl={activePlayer} contentType={this.state.contentType} setTopResult={this.setTopResult} allChars={allChars} simcSnack={this.handleSimCSnackOpen} />} />
                 <Route path="/legendaries" render={() => <LegendaryCompare pl={activePlayer} contentType={this.state.contentType} />} />
                 <Route path="/trinkets" render={() => <TrinketAnalysis player={activePlayer} contentType={this.state.contentType} />} />
                 <Route path="/soulbinds" render={() => <CovenantExploration pl={activePlayer} contentType={this.state.contentType} updatePlayerChar={this.updatePlayerChar} />} />
