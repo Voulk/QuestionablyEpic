@@ -426,7 +426,7 @@
       "StatPanel": {
         "Summary": "Summary",
         "Score": "Score",
-        "CovenantEstimate": "Covenant Ability Est",
+        "CovenantEstimate": "Covenant Ability",
         "SelectedNodes": "Selected Nodes"
       }
     },
