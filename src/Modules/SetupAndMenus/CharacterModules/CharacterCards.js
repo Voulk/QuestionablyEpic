@@ -18,29 +18,6 @@ import { STAT } from "../../Engine/STAT";
 import { apiGetPlayerImage } from "../ConnectionUtilities";
 import { CONSTRAINTS, setBounds } from "../../Engine/CONSTRAINTS";
 
-function TabPanel(props) {
-  const { children, value, index, ...other } = props;
-
-  return (
-    <div role="tabpanel" hidden={value !== index} id={`simple-tabpanel-${index}`} aria-labelledby={`simple-tab-${index}`} {...other}>
-      {value === index && <Box p={3}>{children}</Box>}
-    </div>
-  );
-}
-
-TabPanel.propTypes = {
-  children: PropTypes.node,
-  index: PropTypes.any.isRequired,
-  value: PropTypes.any.isRequired,
-};
-
-function a11yProps(index) {
-  return {
-    id: `simple-tab-${index}`,
-    "aria-controls": `simple-tabpanel-${index}`,
-  };
-}
-
 /* ------------------------------ Spec Images. ------------------------------ */
 const specImages = {
   "Restoration Druid": require("../../../Images/DruidSmall.jpg"),
@@ -291,6 +268,9 @@ export default function CharCards(props) {
   };
 
   return (
+    /* -------------------------------------------------------------------------- */
+    /*                      Character Card for the main menu                      */
+    /* -------------------------------------------------------------------------- */
     <Grid item xs={12} sm={6} md={6} lg={4} xl={4}>
       <CardActionArea onClick={(e) => charClicked(props.char, props.cardType, props.allChars, props.charUpdate, e)} onContextMenu={(e) => handleClickOpen(e)}>
         <Card className={rootClassName} variant="outlined" raised={true}>
@@ -320,6 +300,7 @@ export default function CharCards(props) {
       <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title" maxWidth="md">
         {/* <div className={classes.tabRoot}> */}
         <DialogContent>
+          {/* ------------------------------ Dialog Header ----------------------------- */}
           <Grid container spacing={2} direction="row">
             <Grid item xs={12}>
               <Typography variant="h4" align="center" noWrap color="primary">
@@ -348,9 +329,11 @@ export default function CharCards(props) {
             {/* -------------- Character Information Grid Container (Name, Server etc) -------------  */}
             <Grid item xs={8} container spacing={1}>
               <Grid item xs={12} container spacing={1}>
+                {/* ----------------------------- Character Name ----------------------------- */}
                 <Grid item xs={9}>
                   <TextField fullWidth id="standard-basic" label="Character Name" value={charName} onChange={handleChangeName} variant="outlined" size="small" />
                 </Grid>
+                {/* ------------------------------ Region Select ----------------------------- */}
                 <Grid item xs={3}>
                   <FormControl variant="outlined" size="small" fullWidth label={t("Region")} disabled={true}>
                     <InputLabel id="ClassSelector">{t("Region")}</InputLabel>
