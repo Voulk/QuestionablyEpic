@@ -20,6 +20,7 @@ import VampiricEmbraceIcon from "../../../Images/Classes/Priest/Specialisation/S
 import ConvokeTheSpiritsIcon from "../../../Images/Classes/Druid/CovenantAbilities/ConvokeTheSpirits.jpg";
 import FlourishIcon from "../../../Images/Classes/Druid/Specialisation/Restoration/Icons/Talents/FlourishIcon.jpg";
 import AncestralProtectionIcon from "../../../Images/Classes/Shaman/Specialisation/Restoration/Icons/Talents/AncestralProtectionTotemIcon.jpg"
+import AshenHallowIcon from "../../../Images/Classes/Paladin/CovenantAbilities/AshenHallow.jpg"
 
 // TODO this should be converted to a map at some point
 
@@ -58,6 +59,22 @@ export default function ClassCooldownMenuItems(props) {
         </a>
         <Translation>{(t) => t("CooldownPlanner.ClassAbilities.31884")}</Translation>
       </MenuItem>,
+            <Divider key={"divider111"} />,
+            <MenuItem value={316958} key={21}>
+              <a data-wowhead="spell=316958">
+                <img
+                  style={{
+                    height: 20,
+                    width: 20,
+                    padding: "0px 5px 0px 5px",
+                    verticalAlign: "middle",
+                  }}
+                  src={AshenHallowIcon}
+                  alt="Ashen Hallow"
+                />
+              </a>
+              <Translation>{(t) => t("CooldownPlanner.ClassAbilities.316958")}</Translation>
+            </MenuItem>,
     ];
   }
   // Restoration Druid
@@ -248,7 +265,7 @@ export default function ClassCooldownMenuItems(props) {
             alt="Spirit Link Totem"
           />
         </a>
-        <Translation>{(t) => t("CooldownPlanner.ClassAbilities.207399")}</Translation>
+        <Translation>{(t) => t("CooldownPlanner.ClassAbilities.98008")}</Translation>
       </MenuItem>,
       <Divider key={"divider200"} />,
       <MenuItem value={207399} key={10}>
