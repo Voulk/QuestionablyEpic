@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 import {Accordion, AccordionSummary, AccordionDetails, AppBar, Paper, Box, Button, Card, CardContent, CardActionArea, Divider, IconButton, Typography, Avatar, Grid, TextField, Dialog, DialogContent, DialogActions, Tabs, Tab, Tooltip, Select, MenuItem, FormControl, InputLabel } from "@material-ui/core";
 import { createMuiTheme, makeStyles, ThemeProvider } from "@material-ui/core/styles";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import SettingsIcon from "@material-ui/icons/Settings";
 import DeleteIcon from "@material-ui/icons/Delete";
 import Autocomplete from "@material-ui/lab/Autocomplete";
 import { red } from "@material-ui/core/colors";
@@ -278,13 +279,25 @@ export default function CharCards(props) {
           <Divider orientation="vertical" flexItem />
           <div className={classes.details}>
             <CardContent className={classes.content}>
-              <Typography variant="h6" component="h4" style={{ lineHeight: 1, color: classColoursJS(spec) }}>
-                {props.name}
-              </Typography>
-              <Typography variant="caption" style={{ fontSize: 11 }}>
-                {player.getRealmString()}
-              </Typography>
+              <Grid container>
+                {/* ------------------------ Character name and Realm ------------------------ */}
+                <Grid item xs={10}>
+                  <Typography variant="h6" component="h4" style={{ lineHeight: 1, color: classColoursJS(spec) }}>
+                    {props.name}
+                  </Typography>
+                  <Typography variant="caption" style={{ fontSize: 11 }}>
+                    {player.getRealmString()}
+                  </Typography>
+                </Grid>
+                {/* ---- Settings Button - More apparent for users how to edit characters ---- */}
+                <Grid item xs={2}>
+                  <IconButton onClick={(e) => handleClickOpen(e)} aria-label="settings" size="small">
+                    <SettingsIcon fontSize="medium" />
+                  </IconButton>
+                </Grid>
+              </Grid>
               <Divider />
+              {/* ------------------------------ Class & Icon ------------------------------ */}
               <Typography style={{ color: classColoursJS(spec), marginTop: 2 }}>
                 {t(classTranslator(spec))}
                 {classIcons(spec, 18)}
@@ -364,6 +377,7 @@ export default function CharCards(props) {
                     renderInput={(params) => <TextField {...params} label="Server Name" variant="outlined" styLe={{ width: 100 }} />}
                   />
                 </Grid>
+                {/* ------------------------------ Class Select ------------------------------ */}
                 <Grid item xs={12}>
                   <FormControl variant="outlined" fullWidth size="small" label={t("Class")} disabled={true}>
                     <InputLabel id="ClassSelector">{t("Class")}</InputLabel>
@@ -377,6 +391,7 @@ export default function CharCards(props) {
                     </Select>
                   </FormControl>
                 </Grid>
+                {/* ------------------------------- Race Select ------------------------------ */}
                 <Grid item xs={12}>
                   <FormControl disabled={healClass === "" ? true : false} fullWidth variant="outlined" size="small" label={t("Race")}>
                     <InputLabel id="RaceSelector">{t("Race")}</InputLabel>
@@ -552,11 +567,13 @@ export default function CharCards(props) {
           <Grid container spacing={1}>
             {/* map here */}
             <Grid item xs={12} container>
+              {/* ------------------------------- Logs Header ------------------------------ */}
               <Grid item xs={12}>
                 <Typography variant="h6" align="center" noWrap color="primary">
                   Saved Logs
                 </Typography>
               </Grid>
+
               <Grid item xs={12}>
                 <Typography align="center" style={{ fontStyle: "italic" }}>
                   {t("CharacterCreator.SavedLogs.Header")}
