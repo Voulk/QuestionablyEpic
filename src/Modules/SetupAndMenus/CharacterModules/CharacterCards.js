@@ -291,9 +291,11 @@ export default function CharCards(props) {
                 </Grid>
                 {/* ---- Settings Button - More apparent for users how to edit characters ---- */}
                 <Grid item xs={2}>
-                  <IconButton onClick={(e) => handleClickOpen(e)} aria-label="settings" size="small">
-                    <SettingsIcon fontSize="medium" />
-                  </IconButton>
+                  <Tooltip title={t("Edit")}>
+                    <IconButton style={{float: "right"}} onClick={(e) => handleClickOpen(e)} aria-label="settings" size="small">
+                      <SettingsIcon fontSize="medium" />
+                    </IconButton>
+                  </Tooltip>
                 </Grid>
               </Grid>
               <Divider />
