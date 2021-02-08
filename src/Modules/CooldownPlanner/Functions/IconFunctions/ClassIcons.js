@@ -154,6 +154,7 @@ export default function classIcons(props, iconSize) {
         width: iconSize,
         padding: "0px 5px 0px 5px",
         verticalAlign: "middle",
+        borderRadius: 4
       }}
       src={src}
       alt={alt}

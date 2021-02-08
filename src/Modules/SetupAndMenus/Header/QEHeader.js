@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 import SimCraftInput from "../SimCraftDialog";
 import QELogImport from "./QELogImport";
 import { makeStyles } from "@material-ui/core/styles";
+import CharacterHeaderButton from "./CharacterHeader"
 // import ReactGA from "react-ga";n
 
 const useStyles = makeStyles((theme) => ({
@@ -99,6 +100,9 @@ export default function QEHeader(props) {
                 </Grid>
                 <Grid item>
                   <QELogImport logImportSnack={props.logImportSnack} player={props.pl} allChars={props.allChars} />
+                </Grid>
+                <Grid item>
+                  <CharacterHeaderButton player={props.pl} allChars={props.allChars} />
                 </Grid>
                 <Grid item>
                   <SimCraftInput
