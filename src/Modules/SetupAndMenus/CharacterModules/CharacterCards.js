@@ -292,7 +292,7 @@ export default function CharCards(props) {
                 {/* ---- Settings Button - More apparent for users how to edit characters ---- */}
                 <Grid item xs={2}>
                   <Tooltip title={t("Edit")}>
-                    <IconButton style={{float: "right"}} onClick={(e) => handleClickOpen(e)} aria-label="settings" size="small">
+                    <IconButton style={{ float: "right" }} onClick={(e) => handleClickOpen(e)} aria-label="settings" size="small">
                       <SettingsIcon fontSize="medium" />
                     </IconButton>
                   </Tooltip>
@@ -302,7 +302,7 @@ export default function CharCards(props) {
               {/* ------------------------------ Class & Icon ------------------------------ */}
               <Typography style={{ color: classColoursJS(spec), marginTop: 2 }}>
                 {t(classTranslator(spec))}
-                {classIcons(spec, 18)}
+                {classIcons(spec, { height: 18, width: 18, padding: "0px 5px 0px 5px", verticalAlign: "middle", borderRadius: 4 })}
               </Typography>
             </CardContent>
           </div>
@@ -386,7 +386,7 @@ export default function CharCards(props) {
                     <Select label={t("Class")} value={healClass} onChange={handleChangeSpec}>
                       {Object.getOwnPropertyNames(classRaceList).map((key, i) => (
                         <MenuItem key={i} value={key}>
-                          {classIcons(key, 20)}
+                          {classIcons(key, { height: 20, width: 20, padding: "0px 0px 0px 5px", verticalAlign: "middle", borderRadius: 4 })}
                           {key}
                         </MenuItem>
                       ))}
