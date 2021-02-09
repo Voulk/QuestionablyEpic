@@ -98,12 +98,12 @@ export default function QEHeader(props) {
                   </Tooltip>
                 </Grid>
                 <Grid item>
-                  <QELogImport logImportSnack={props.logImportSnack} player={props.pl} allChars={props.allChars} />
+                  <QELogImport logImportSnack={props.logImportSnack} player={props.player} allChars={props.allChars} />
                 </Grid>
                 <Grid item>
                   <SimCraftInput
                     buttonLabel={t("SimCInput.SimCHeaderButtonLabel")}
-                    pl={props.pl}
+                    player={props.player}
                     contentType={props.contentType}
                     simcSnack={props.simcSnack}
                     allChars={props.allChars}

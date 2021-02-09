@@ -60,19 +60,19 @@ const convertToHPS = (bonus_stats, player, contentType) => {
   return score;
 };
 
-const createLegendary = (legendaryName, container, spec, pl, contentType) => {
+const createLegendary = (legendaryName, container, spec, player, contentType) => {
   let lego = new Legendary(legendaryName);
   lego.bonus_stats = getEffectValue(
     { name: lego.name, type: "spec legendary" },
-    pl,
+    player,
     contentType
   );
-  lego.effectiveHPS = convertToHPS(lego.bonus_stats, pl, contentType);
+  lego.effectiveHPS = convertToHPS(lego.bonus_stats, player, contentType);
 
   container.push(lego);
 };
 
-const fillLegendaries = (container, spec, pl, contentType) => {
+const fillLegendaries = (container, spec, player, contentType) => {
   //container = [];
 
   // These are used in the legendary snapshot module.
@@ -212,7 +212,7 @@ const fillLegendaries = (container, spec, pl, contentType) => {
 
   // Create legendaries for the given spec.
   choices[spec].map((itemName, index) =>
-    createLegendary(itemName, container, spec, pl, contentType)
+    createLegendary(itemName, container, spec, player, contentType)
   );
 };
 
@@ -243,7 +243,7 @@ export default function LegendaryCompare(props) {
 
   let legendaryList = [];
 
-  fillLegendaries(legendaryList, props.pl.spec, props.pl, props.contentType);
+  fillLegendaries(legendaryList, props.player.spec, props.player, props.contentType);
   sortLegendaries(legendaryList);
   const classes = useStyles();
 
@@ -268,7 +268,7 @@ export default function LegendaryCompare(props) {
             <LegendaryObject
               key={index}
               item={item}
-              player={props.pl}
+              player={props.player}
               contentType={props.contentType}
             />
           ))}
