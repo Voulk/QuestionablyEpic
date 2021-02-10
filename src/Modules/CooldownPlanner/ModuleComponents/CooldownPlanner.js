@@ -109,7 +109,6 @@ const tableIcons = {
   SortArrow: forwardRef((props, ref) => <ArrowDownward {...props} style={{ color: "#ffee77" }} ref={ref} />),
 };
 
-
 export default function CooldownPlanner(props) {
   const classes = useStyles();
   const { t, i18n } = useTranslation();
@@ -157,7 +156,7 @@ export default function CooldownPlanner(props) {
       cellStyle: {
         whiteSpace: "nowrap",
         borderRight: "1px solid #c8b054",
-        fontSize: 14,
+        fontSize: 12,
         textAlign: "center",
       },
       // Times currently must be entered in the 00:00 format.
@@ -186,14 +185,25 @@ export default function CooldownPlanner(props) {
       field: "bossAbility",
       width: "8%",
       cellStyle: {
-        whiteSpace: "nowrap",
+        // whiteSpace: "nowrap",
         borderRight: "2px solid #c8b054",
-        fontSize: 14,
+        fontSize: 12,
+        lineHeight: "normal",
       },
       render: (rowData) => (
-        <div>
-          <a data-wowhead={"spell=" + rowData.bossAbility + "&domain=" + currentLanguage}>{bossAbilityIcons(rowData.bossAbility)}</a>
-          {t("CooldownPlanner.BossAbilities." + rowData.bossAbility)}
+        <div style={{ width: 105, display: "inline-flex" }}>
+          <div>
+            <a data-wowhead={"spell=" + rowData.bossAbility + "&domain=" + currentLanguage}>
+              {bossAbilityIcons(rowData.bossAbility, {
+                height: 30,
+                width: 30,
+                padding: "0px 4px 0px 0px",
+                verticalAlign: "middle",
+                borderRadius: "4px",
+              })}
+            </a>
+          </div>
+          <div>{t("CooldownPlanner.BossAbilities." + rowData.bossAbility)}</div>
         </div>
       ),
       editComponent: (props) => (
@@ -237,12 +247,12 @@ export default function CooldownPlanner(props) {
         whiteSpace: "nowrap",
         paddingLeft: 4,
         borderRight: "1px solid rgb(200, 176, 84, 0.3)",
-        fontSize: 14,
+        fontSize: 12,
       },
       // This renders the healer name outside of Edit Mode.
       render: (rowData) => (
         <div style={{ color: classColoursJS(rowData.class) }}>
-          {rowData.class === undefined ? "" : classIcons(rowData.class, { height: 18, width: 18, padding: "0px 5px 0px 0px", verticalAlign: "middle" })}
+          {rowData.class === undefined ? "" : classIcons(rowData.class, { height: 30, width: 30, padding: "0px 5px 0px 0px", verticalAlign: "middle" })}
           {rowData.name}
         </div>
       ),
@@ -297,7 +307,7 @@ export default function CooldownPlanner(props) {
       cellStyle: {
         whiteSpace: "nowrap",
         borderRight: "1px solid rgb(200, 176, 84, 0.3)",
-        fontSize: 14,
+        fontSize: 12,
       },
       // Renders the Name for the healer in the relevant row in the data.
       render: (rowData) => (
@@ -323,20 +333,23 @@ export default function CooldownPlanner(props) {
       field: "Cooldown",
       width: "8%",
       cellStyle: {
-        whiteSpace: "nowrap",
+        // whiteSpace: "nowrap",
         borderRight: "1px solid rgb(200, 176, 84, 0.3)",
-        fontSize: 14,
+        fontSize: 12,
+        lineHeight: "normal",
       },
       // Renders the Ability name that was set for this row.
       render: (rowData) => (
-        <div>
-          {abilityIcons(rowData.Cooldown, {
-            height: 18,
-            width: 18,
-            padding: "0px 4px 0px 0px",
-            verticalAlign: "middle",
-          })}
-          {t("CooldownPlanner.ClassAbilities." + rowData.Cooldown)}
+        <div style={{ minWidth: 105, display: "inline-flex" }}>
+          <div>
+            {abilityIcons(rowData.Cooldown, {
+              height: 30,
+              width: 30,
+              padding: "0px 4px 0px 0px",
+              verticalAlign: "middle",
+            })}
+          </div>
+          <div>{t("CooldownPlanner.ClassAbilities." + rowData.Cooldown)}</div>
         </div>
       ),
       // The Edit Mode Component. Generated based off the healers class.
@@ -368,7 +381,7 @@ export default function CooldownPlanner(props) {
       cellStyle: {
         whiteSpace: "nowrap",
         borderRight: "1px solid rgb(200, 176, 84, 0.3)",
-        fontSize: 14,
+        fontSize: 12,
         textAlign: "center",
       },
       // Times currently must be entered in the 00:00 format.
@@ -399,7 +412,7 @@ export default function CooldownPlanner(props) {
         whiteSpace: "nowrap",
         borderRight: "2px solid #c8b054",
         textAlign: "center",
-        fontSize: 14,
+        fontSize: 12,
       },
       render: (rowData) => (
         <div>
@@ -421,12 +434,12 @@ export default function CooldownPlanner(props) {
         whiteSpace: "nowrap",
         borderRight: "1px solid rgb(200, 176, 84, 0.3)",
         paddingLeft: 4,
-        fontSize: 14,
+        fontSize: 12,
       },
       // This renders the healer name outside of Edit Mode.
       render: (rowData) => (
         <div style={{ color: classColoursJS(rowData.class1) }}>
-          {rowData.class1 === undefined ? "" : classIcons(rowData.class1, { height: 18, width: 18, padding: "0px 5px 0px 0px", verticalAlign: "middle" })}
+          {rowData.class1 === undefined ? "" : classIcons(rowData.class1, { height: 30, width: 30, padding: "0px 5px 0px 0px", verticalAlign: "middle" })}
           {rowData.name1}
         </div>
       ),
@@ -481,7 +494,7 @@ export default function CooldownPlanner(props) {
       cellStyle: {
         whiteSpace: "nowrap",
         borderRight: "1px solid rgb(200, 176, 84, 0.3)",
-        fontSize: 14,
+        fontSize: 12,
       },
       // Renders the Name for the healer in the relevant row in the data.
       render: (rowData) => (
@@ -508,20 +521,23 @@ export default function CooldownPlanner(props) {
       field: "Cooldown1",
       width: "8%",
       cellStyle: {
-        whiteSpace: "nowrap",
+        // whiteSpace: "nowrap",
         borderRight: "1px solid rgb(200, 176, 84, 0.3)",
-        fontSize: 14,
+        fontSize: 12,
+        lineHeight: "normal",
       },
       // Renders the Ability name that was set for this row.
       render: (rowData) => (
-        <div>
-          {abilityIcons(rowData.Cooldown1, {
-            height: 18,
-            width: 18,
-            padding: "0px 4px 0px 0px",
-            verticalAlign: "middle",
-          })}
-          {t("CooldownPlanner.ClassAbilities." + rowData.Cooldown1)}
+        <div style={{ width: 105, display: "inline-flex" }}>
+          <div>
+            {abilityIcons(rowData.Cooldown1, {
+              height: 30,
+              width: 30,
+              padding: "0px 4px 0px 0px",
+              verticalAlign: "middle",
+            })}
+          </div>
+          <div>{t("CooldownPlanner.ClassAbilities." + rowData.Cooldown1)}</div>
         </div>
       ),
       // The Edit Mode Component. Generated based off the healers class.
@@ -553,7 +569,7 @@ export default function CooldownPlanner(props) {
       cellStyle: {
         whiteSpace: "nowrap",
         borderRight: "1px solid rgb(200, 176, 84, 0.3)",
-        fontSize: 14,
+        fontSize: 12,
         textAlign: "center",
       },
       // Times currently must be entered in the 00:00 format.
@@ -584,7 +600,7 @@ export default function CooldownPlanner(props) {
         whiteSpace: "nowrap",
         borderRight: "2px solid #c8b054",
         textAlign: "center",
-        fontSize: 14,
+        fontSize: 12,
       },
       render: (rowData) => (
         <div>
@@ -606,12 +622,12 @@ export default function CooldownPlanner(props) {
         whiteSpace: "nowrap",
         borderRight: "1px solid rgb(200, 176, 84, 0.3)",
         paddingLeft: 8,
-        fontSize: 14,
+        fontSize: 12,
       },
       // This renders the healer name outside of Edit Mode.
       render: (rowData) => (
         <div style={{ color: classColoursJS(rowData.class2) }}>
-          {rowData.class2 === undefined ? "" : classIcons(rowData.class2, { height: 18, width: 18, padding: "0px 5px 0px 0px", verticalAlign: "middle" })}
+          {rowData.class2 === undefined ? "" : classIcons(rowData.class2, { height: 30, width: 30, padding: "0px 5px 0px 0px", verticalAlign: "middle" })}
           {rowData.name2}
         </div>
       ),
@@ -666,7 +682,7 @@ export default function CooldownPlanner(props) {
       cellStyle: {
         whiteSpace: "nowrap",
         // borderRight: "1px dotted #c8b054",
-        fontSize: 14,
+        fontSize: 12,
       },
       // Renders the Name for the healer in the relevant row in the data.
       render: (rowData) => (
@@ -693,20 +709,23 @@ export default function CooldownPlanner(props) {
       field: "Cooldown2",
       width: "8%",
       cellStyle: {
-        whiteSpace: "nowrap",
+        // whiteSpace: "nowrap",
         borderRight: "1px solid rgb(200, 176, 84, 0.3)",
-        fontSize: 14,
+        fontSize: 12,
+        lineHeight: "normal",
       },
       // Renders the Ability name that was set for this row.
       render: (rowData) => (
-        <div>
-          {abilityIcons(rowData.Cooldown2, {
-            height: 18,
-            width: 18,
-            padding: "0px 4px 0px 0px",
-            verticalAlign: "middle",
-          })}
-          {t("CooldownPlanner.ClassAbilities." + rowData.Cooldown2)}
+        <div style={{ width: 105, display: "inline-flex" }}>
+          <div>
+            {abilityIcons(rowData.Cooldown2, {
+              height: 30,
+              width: 30,
+              padding: "0px 4px 0px 0px",
+              verticalAlign: "middle",
+            })}
+          </div>
+          <div>{t("CooldownPlanner.ClassAbilities." + rowData.Cooldown2)}</div>
         </div>
       ),
       // The Edit Mode Component. Generated based off the healers class.
@@ -738,7 +757,7 @@ export default function CooldownPlanner(props) {
       cellStyle: {
         whiteSpace: "nowrap",
         borderRight: "1px solid rgb(200, 176, 84, 0.3)",
-        fontSize: 14,
+        fontSize: 12,
         textAlign: "center",
       },
       // Times currently must be entered in the 00:00 format.
@@ -769,7 +788,7 @@ export default function CooldownPlanner(props) {
         whiteSpace: "nowrap",
         borderRight: "2px solid #c8b054",
         textAlign: "center",
-        fontSize: 14,
+        fontSize: 12,
       },
       render: (rowData) => (
         <div>
@@ -791,12 +810,12 @@ export default function CooldownPlanner(props) {
         whiteSpace: "nowrap",
         borderRight: "1px solid rgb(200, 176, 84, 0.3)",
         paddingLeft: 8,
-        fontSize: 14,
+        fontSize: 12,
       },
       // This renders the healer name outside of Edit Mode.
       render: (rowData) => (
         <div style={{ color: classColoursJS(rowData.class3) }}>
-          {rowData.class3 === undefined ? "" : classIcons(rowData.class3, { height: 18, width: 18, padding: "0px 5px 0px 0px", verticalAlign: "middle" })}
+          {rowData.class3 === undefined ? "" : classIcons(rowData.class3, { height: 30, width: 30, padding: "0px 5px 0px 0px", verticalAlign: "middle" })}
           {rowData.name3}
         </div>
       ),
@@ -851,7 +870,7 @@ export default function CooldownPlanner(props) {
       cellStyle: {
         whiteSpace: "nowrap",
         // borderRight: "1px dotted #c8b054",
-        fontSize: 14,
+        fontSize: 12,
       },
       // Renders the Name for the healer in the relevant row in the data.
       render: (rowData) => (
@@ -878,20 +897,23 @@ export default function CooldownPlanner(props) {
       field: "Cooldown3",
       width: "8%",
       cellStyle: {
-        whiteSpace: "nowrap",
+        // whiteSpace: "nowrap",
         borderRight: "1px solid rgb(200, 176, 84, 0.3)",
-        fontSize: 14,
+        fontSize: 12,
+        lineHeight: "normal",
       },
       // Renders the Ability name that was set for this row.
       render: (rowData) => (
-        <div>
-          {abilityIcons(rowData.Cooldown3, {
-            height: 18,
-            width: 18,
-            padding: "0px 4px 0px 4px",
-            verticalAlign: "middle",
-          })}
-          {t("CooldownPlanner.ClassAbilities." + rowData.Cooldown3)}
+        <div style={{ width: 105, display: "inline-flex" }}>
+          <div>
+            {abilityIcons(rowData.Cooldown3, {
+              height: 30,
+              width: 30,
+              padding: "0px 4px 0px 0px",
+              verticalAlign: "middle",
+            })}
+          </div>
+          <div>{t("CooldownPlanner.ClassAbilities." + rowData.Cooldown3)}</div>
         </div>
       ),
       // The Edit Mode Component. Generated based off the healers class.
@@ -923,7 +945,7 @@ export default function CooldownPlanner(props) {
       cellStyle: {
         whiteSpace: "nowrap",
         borderRight: "1px solid rgb(200, 176, 84, 0.3)",
-        fontSize: 14,
+        fontSize: 12,
         textAlign: "center",
       },
       // Times currently must be entered in the 00:00 format.
@@ -954,7 +976,7 @@ export default function CooldownPlanner(props) {
         whiteSpace: "nowrap",
         borderRight: "2px solid #c8b054",
         textAlign: "center",
-        fontSize: 14,
+        fontSize: 12,
       },
       render: (rowData) => (
         <div>
@@ -976,12 +998,12 @@ export default function CooldownPlanner(props) {
         whiteSpace: "nowrap",
         borderRight: "1px solid rgb(200, 176, 84, 0.3)",
         paddingLeft: 8,
-        fontSize: 14,
+        fontSize: 12,
       },
       // This renders the healer name outside of Edit Mode.
       render: (rowData) => (
         <div style={{ color: classColoursJS(rowData.class4) }}>
-          {rowData.class4 === undefined ? "" : classIcons(rowData.class4, { height: 18, width: 18, padding: "0px 5px 0px 0px", verticalAlign: "middle" })}
+          {rowData.class4 === undefined ? "" : classIcons(rowData.class4, { height: 30, width: 30, padding: "0px 5px 0px 0px", verticalAlign: "middle" })}
           {rowData.name4}
         </div>
       ),
@@ -1036,7 +1058,7 @@ export default function CooldownPlanner(props) {
       cellStyle: {
         whiteSpace: "nowrap",
         // borderRight: "1px dotted #c8b054",
-        fontSize: 14,
+        fontSize: 12,
       },
       // Renders the Name for the healer in the relevant row in the data.
       render: (rowData) => (
@@ -1063,20 +1085,23 @@ export default function CooldownPlanner(props) {
       field: "Cooldown4",
       width: "8%",
       cellStyle: {
-        whiteSpace: "nowrap",
+        // whiteSpace: "nowrap",
         borderRight: "1px solid rgb(200, 176, 84, 0.3)",
-        fontSize: 14,
+        fontSize: 12,
+        lineHeight: "normal",
       },
       // Renders the Ability name that was set for this row.
       render: (rowData) => (
-        <div>
-          {abilityIcons(rowData.Cooldown4, {
-            height: 18,
-            width: 18,
-            padding: "0px 4px 0px 4px",
-            verticalAlign: "middle",
-          })}
-          {t("CooldownPlanner.ClassAbilities." + rowData.Cooldown4)}
+        <div style={{ width: 105, display: "inline-flex" }}>
+          <div>
+            {abilityIcons(rowData.Cooldown4, {
+              height: 30,
+              width: 30,
+              padding: "0px 4px 0px 0px",
+              verticalAlign: "middle",
+            })}
+          </div>
+          <div>{t("CooldownPlanner.ClassAbilities." + rowData.Cooldown4)}</div>
         </div>
       ),
       // The Edit Mode Component. Generated based off the healers class.
@@ -1108,7 +1133,7 @@ export default function CooldownPlanner(props) {
       cellStyle: {
         whiteSpace: "nowrap",
         borderRight: "1px solid rgb(200, 176, 84, 0.3)",
-        fontSize: 14,
+        fontSize: 12,
         textAlign: "center",
       },
       // Times currently must be entered in the 00:00 format.
@@ -1139,7 +1164,7 @@ export default function CooldownPlanner(props) {
         whiteSpace: "nowrap",
         borderRight: "2px solid #c8b054",
         textAlign: "center",
-        fontSize: 14,
+        fontSize: 12,
       },
       render: (rowData) => (
         <div>
@@ -1158,7 +1183,7 @@ export default function CooldownPlanner(props) {
       cellStyle: {
         whiteSpace: "nowrap",
         borderRight: "1px solid #c8b054",
-        fontSize: 14,
+        fontSize: 12,
       },
       editComponent: (props) => (
         <TextField
@@ -1244,11 +1269,13 @@ export default function CooldownPlanner(props) {
           rowStyle: (rowData, index) => {
             if (index % 2) {
               return {
+                height: 30,
                 backgroundColor: "#515151",
                 border: "1px solid #c8b054",
               };
             }
             return {
+              height: 30,
               border: "1px solid #c8b054",
             };
           },
