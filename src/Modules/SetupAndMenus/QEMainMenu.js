@@ -11,7 +11,7 @@ import ArrowForward from "@material-ui/icons/ArrowForward";
 import { Paper, Grid, Button, Typography, Tooltip } from "@material-ui/core";
 import HallOfFame from "../HallOfFame/HallOfFame";
 import MessageOfTheDay from "./MessageOftheDay";
-// import Changelog from "../ChangeLog/Changelog"
+import Changelog from "../ChangeLog/Changelog"
 
 // Warning: If a button name has to change, do it in the translation files. Consider the titles here to be ID's rather than strings.
 // [route, show button?, tooltip]
@@ -152,10 +152,10 @@ export default function QEMainMenu(props) {
           {props.allChars.getAllChar().length < 9 ? <AddNewChar allChars={props.allChars} charUpdate={props.charUpdate} charAddedSnack={props.charAddedSnack} /> : ""}
         </Grid>
         {/* //Disabled Changelog Button */}
-        {/* <Changelog /> */}
-        <p className="headers" style={{ fontSize: "12px" }}>
+        <Changelog />
+        {/* <p className="headers" style={{ fontSize: "12px" }}>
           QE Live 9.0 Update 22. Last Updated 2 February.
-        </p>
+        </p> */}
       </div>
     </div>
   );

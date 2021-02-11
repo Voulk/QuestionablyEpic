@@ -8,8 +8,15 @@
 // {version: "", update: , date: "", changes: ["",""]}
 
 export const changeLog = [
-  // Dummy Entry
-  { version: "9.0", update: 21, date: "24-01-2021", changes: ["Added Changelog", "Test 2", "Test3"] },
-  // Dummy Entry
-  { version: "9.0", update: 20, date: "26-01-2021", changes: ["Added Changelog2", " testing 123"] },
+  { 
+  version: "9.0",
+  update: 23,
+  date: "11-02-2021",
+  changes: [
+  "Implemented Changelog for better transparency to Users",
+  "Fixed Venthyr Paladin Covenant Ability score that was showing 'NAN' instead of HPS",
+  "Fixed Necrolord Monk 'Bone Marrow Hops' conduit to correctly use the 50% hit chance of 'Bonedust Brew'",
+  "Updated Summary Panel on the Covenant Exploration page to be clearer on what it represents"
+  ]
+  },
 ];
