@@ -11,13 +11,14 @@ export const changeLog = [
   { 
   version: "9.0",
   update: 23,
-  date: "11-02-2021",
+  date: "11th February",
   changes: [
-  "Implemented Changelog for better transparency to Users",
+  "Implemented Changelog to improve transparency",
+  "Large codebase revamp to prepare for the rest of the expansion",
   "Updated Summary Panel on the Covenant Exploration page to be clearer on what it represents",
-  "Venthyr Paladin Covenant Ability score was showing 'NAN' now correctly shows HPS",
+  "Venthyr Paladin Covenant Ability score now correctly displays it's HPS",
   "Necrolord Monk 'Bone Marrow Hops' conduit now correctly uses the 50% hit chance of 'Bonedust Brew'",
-  "General Draven's 'Hold Your Ground' has been updated to better reflect real world uptimes (Paladin: X, Druid: X, Shaman: X, Monk: X, Holy Priest: X, Discipline Priest: X)"
+  "General Draven's 'Hold Your Ground' has been updated to better reflect real world uptimes. The Spirit Shell bug is also now accounted for."
   ]
   },
 ];
