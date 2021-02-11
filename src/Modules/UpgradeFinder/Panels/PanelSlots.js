@@ -5,8 +5,12 @@ import ItemUpgradeCard from "./ItemUpgradeCard";
 import DungeonHeaderIcons from "../../CooldownPlanner/Functions/IconFunctions/DungeonHeaderIcons";
 import "./Panels.css";
 import { useTranslation } from "react-i18next";
-import { filterItemListBySource, getDifferentialByID } from "../../Engine/ItemUtilities";
+import { filterItemListByType, getDifferentialByID } from "../../Engine/ItemUtilities";
 import { encounterDB } from "../../Player/InstanceDB";
+import Accordion from "@material-ui/core/Accordion";
+import AccordionSummary from "@material-ui/core/AccordionSummary";
+import AccordionDetails from "@material-ui/core/AccordionDetails";
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
 // TODO: Move these to somewhere more accessible since they are used in multiple places.
 const itemLevels = {
@@ -19,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     width: "100%",
     marginTop: 10,
-    padding: 4,
+    padding: 8,
   },
 }));
 
@@ -31,60 +35,73 @@ export default function SlotsContainer(props) {
   const difficulty = props.playerSettings.dungeon;
 
   const slotList = [
-    { label: "head"},
-    { label: "neck"},
-    { label: "shoulder"},
-    { label: "back"},
-    { label: "chest"},
-    { label: "wrists"},
-    { label: "hands"},
-    { label: "waist"},
-    { label: "legs"},
-    { label: "feet"},
-    { label: "finger"},
-    { label: "trinket"},
-    { label: "weapons"},
-    { label: "offhands"},
+    { slot: "Head", label: "head" },
+    { slot: "Neck", label: "neck" },
+    { slot: "Shoulder", label: "shoulder" },
+    { slot: "Back", label: "back" },
+    { slot: "Chest", label: "chest" },
+    { slot: "Wrist", label: "wrists" },
+    { slot: "Hands", label: "hands" },
+    { slot: "Waist", label: "waist" },
+    { slot: "Legs", label: "legs" },
+    { slot: "Feet", label: "feet" },
+    { slot: "Finger", label: "finger" },
+    { slot: "Trinket", label: "trinket" },
+    { slot: "AllMainhands", label: "weapons" },
+    { slot: "Offhands", label: "offhands" },
   ];
 
-  const contentGenerator = (type) => {
-    return slotList
-      .map((key, i) => (
-        
-        <Grid item xs={12} key={"mythicContainer-" + i}>
-          <Grid container spacing={2}>
-            <Grid item>
-              <div style={{ width: 181, paddingLeft: 10 }} className="container-UpgradeCards">
-                {/* {DungeonHeaderIcons(key, {
-                  verticalAlign: "middle",
-                })} */}
-                <Typography variant="h6" noWrap className="centered-UpgradeCards-Dungeons">
-                  {t("slotNames." + key.label)}
-                  {console.log(key)}
-                </Typography>
-              </div>
-            </Grid>
-            <Divider orientation="vertical" flexItem style={{ marginRight: 4 }} />
-            <Grid item xs={12} sm container spacing={1} style={{ marginRight: 6 }}>
-              {/* {[...filterItemListBySource(itemList, -1, key, itemLevels.dungeon[difficulty])].map((item, index) => (
-                <ItemUpgradeCard key={index} item={item} itemDifferential={getDifferentialByID(itemDifferentials, item.id, item.level)} />
-              ))} */}
-            </Grid>
+    const contentGenerator = (type) => {
+    return slotList.map((key, i) => (
+      // <Grid item xs={12} key={"slotContainer-" + key.label}>
+      //   <Grid container spacing={1} style={{ padding: 4 }}>
+      //     <Grid item xs={12}>
+      <Accordion elevation={0} style={{ backgroundColor: "rgba(255, 255, 255, 0.12)" }}>
+        <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content" id="panel1a-header">
+          <Typography align="center" variant="h6" noWrap color="primary">
+            {t("slotNames." + key.label)} -{" "}
+            {[...filterItemListByType(itemList, key.slot)].map((item, index) => getDifferentialByID(itemDifferentials, item.id, item.level)).filter((item) => item !== 0).length}{" "}
+            Upgrades
+          </Typography>
+        </AccordionSummary>
+        <AccordionDetails style={{ backgroundColor: "#191c23" }}>
+          <Grid xs={12} sm container spacing={1}>
+            {[...filterItemListByType(itemList, key.slot)].map((item, index) => (
+              <ItemUpgradeCard key={index} item={item} itemDifferential={getDifferentialByID(itemDifferentials, item.id, item.level)} />
+            ))}
           </Grid>
-        </Grid>
-      ))
-      .map((key, i) => [
-        key,
-        <Grid item xs={12} key={"slotDivider-" + i}>
-          <Divider />
-        </Grid>,
-      ]);
+        </AccordionDetails>
+      </Accordion>
+
+      //       <Typography
+      //         align="center"
+      //         variant="h6"
+      //         noWrap
+      //         color="primary"
+      //         style={{
+      //           backgroundColor: "rgba(255, 255, 255, 0.12)",
+      //           borderRadius: 4,
+      //         }}
+      //       >
+      //         {t("slotNames." + key.label)}
+      //       </Typography>
+      //     </Grid>
+      //     <Grid item xs={12} sm container spacing={1}>
+      //       {[...filterItemListByType(itemList, key.slot)].map((item, index) => (
+      //         <ItemUpgradeCard key={index} item={item} itemDifferential={getDifferentialByID(itemDifferentials, item.id, item.level)} />
+      //       ))}
+      //     </Grid>
+      //   </Grid>
+      // </Grid>
+    ));
   };
 
   return (
     <div className={classes.root}>
       <Grid container spacing={1}>
-        {contentGenerator(props.type)}
+        <Grid item xs={12}>
+          {contentGenerator(props.type)}
+        </Grid>
       </Grid>
     </div>
   );
