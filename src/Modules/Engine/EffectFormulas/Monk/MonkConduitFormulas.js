@@ -131,6 +131,7 @@ export const getMonkConduit = (conduitID, player, contentType, conduitLevel) => 
     const uptimeWithBMH = 10 / 57.5;
     const normalUptime = 10 / 60;
     const netUptimeFromBMH = uptimeWithBMH - normalUptime;
+    const boneDustBrewHitRate = .5;
 
     const conduitPower = conduitScaling(BONE_MARROW_HOPS, conduitLevel);
     const actualIncreaseForBDB = (1 + conduitPower) * 0.35;
@@ -138,8 +139,8 @@ export const getMonkConduit = (conduitID, player, contentType, conduitLevel) => 
 
     const totalHPS = player.getHPS(contentType);
 
-    const directHealingIncrease = totalHPS * actualIncreaseFromBMH * normalUptime;
-    const extraUptimeHPS = totalHPS * actualIncreaseForBDB * netUptimeFromBMH;
+    const directHealingIncrease = totalHPS * actualIncreaseFromBMH * normalUptime * boneDustBrewHitRate;
+    const extraUptimeHPS = totalHPS * actualIncreaseForBDB * netUptimeFromBMH * boneDustBrewHitRate;
 
     bonus_stats.HPS = directHealingIncrease + extraUptimeHPS;
   }
