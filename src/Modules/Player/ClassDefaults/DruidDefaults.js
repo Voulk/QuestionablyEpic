@@ -57,7 +57,8 @@ export const druidDefaultSpecialQueries = (contentType) => {
         oneMinute: 1.1,
         twoMinutes: 1.25,
         threeMinutes: 1.2,
-      }
+      },
+      HoldYourGroundUptime: 0.8
     };
   } else if (contentType === "Dungeon") {
     specialQueries = {
@@ -68,7 +69,8 @@ export const druidDefaultSpecialQueries = (contentType) => {
         oneMinute: 1,
         twoMinutes: 1.25,
         threeMinutes: 1,
-      }
+      },
+      HoldYourGroundUptime: 0.8
     };
   } else {
     console.error("Unknown Content Type");

@@ -1,4 +1,5 @@
 import Player from "../../../Player/Player";
+import SPEC from "../../SPECS";
 import { STAT, STATPERONEPERCENT } from "../../STAT";
 import { convertPPMToUptime, getBestWeaponEnchant } from "../EffectUtilities";
 
@@ -204,8 +205,11 @@ export function getSoulbindFormula(effectID, pl, contentType) {
   }
   // Hold Your Ground
   else if (effectID === 332754) {
-    let expected_uptime = 0.85;
-    bonus_stats.HPS = expected_uptime * (pl.getHPS(contentType) * 0.04);
+    const spec = pl.getSpec();
+    const expected_uptime = pl.getSpecialQuery("HoldYourGroundUptime", contentType);
+    const percentHealingAffected = spec === SPEC.DISCPRIEST ? 0.25 : 1;
+  
+    bonus_stats.HPS = expected_uptime * (pl.getHPS(contentType) * 0.04 * percentHealingAffected);
   }
   // Superior Tactics
   else if (effectID === 332753) {
