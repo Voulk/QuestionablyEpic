@@ -65,7 +65,7 @@ export function getSoulbindFormula(effectID, pl, contentType) {
   }
   // Pointed Courage
   else if (effectID === 329778) {
-    let expected_allies = 4.8;
+    let expected_allies = contentType === "Raid" ? 4.8 : 3.1;
 
     bonus_stats.Crit = expected_allies * STATPERONEPERCENT.CRIT;
   }
