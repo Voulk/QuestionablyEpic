@@ -33,7 +33,7 @@ export default function SlotsContainer(props) {
   const itemList = props.itemList;
   const itemDifferentials = props.itemDifferentials;
   const difficulty = props.playerSettings.dungeon;
-
+  console.log(props.player.spec);
   const slotList = [
     { slot: "Head", label: "head" },
     { slot: "Neck", label: "neck" },
@@ -51,13 +51,32 @@ export default function SlotsContainer(props) {
     { slot: "Offhands", label: "offhands" },
   ];
 
-    const contentGenerator = (type) => {
+  const iconReturn = (slot, spec) => {
+    switch (spec) {
+      case "Restoration Druid":
+        return require("../../../Images/UpgradeFinderIcons/Leather/" + slot + ".png").default;
+      case "Mistweaver Monk":
+        return require("../../../Images/UpgradeFinderIcons/Leather/" + slot + ".png").default;
+      case "Holy Paladin":
+        return require("../../../Images/UpgradeFinderIcons/Plate/" + slot + ".png").default;
+      case "Restoration Shaman":
+        return require("../../../Images/UpgradeFinderIcons/Mail/" + slot + ".png").default;
+      case "Holy Priest":
+      case "Discipline Priest":
+        return require("../../../Images/UpgradeFinderIcons/Cloth/" + slot + ".png").default;
+      default:
+        return [-1];
+    }
+  };
+
+  const contentGenerator = (type) => {
     return slotList.map((key, i) => (
       // <Grid item xs={12} key={"slotContainer-" + key.label}>
       //   <Grid container spacing={1} style={{ padding: 4 }}>
       //     <Grid item xs={12}>
       <Accordion elevation={0} style={{ backgroundColor: "rgba(255, 255, 255, 0.12)" }}>
-        <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content" id="panel1a-header">
+        <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content" id="panel1a-header" style={{ verticalAlign: "middle" }}>
+          <img src={iconReturn(key.slot, props.player.spec)} height={30} width={30} style={{paddingRight: 6, borderRadius: 4}} />
           <Typography align="center" variant="h6" noWrap color="primary">
             {t("slotNames." + key.label)} -{" "}
             {[...filterItemListByType(itemList, key.slot)].map((item, index) => getDifferentialByID(itemDifferentials, item.id, item.level)).filter((item) => item !== 0).length}{" "}

@@ -63,6 +63,14 @@ const useStyles = makeStyles((theme) => ({
     color: "#fff",
     fontSize: "1.1rem",
   },
+  slotsHeaderStyle: {
+    backgroundImage: `url(${require("../../Images/Bosses/AllSlots.png").default})`,
+    borderRadius: "0px 4px 0px 0px",
+    whiteSpace: "nowrap",
+    textShadow: "3px 3px 4px black",
+    color: "#fff",
+    fontSize: "1.1rem",
+  },
   header: {
     [theme.breakpoints.down("sm")]: {
       marginTop: 120,
@@ -149,7 +157,7 @@ export default function UpgradeFinderResults(props) {
           {/* World Bosses */}
           <Tab className={classes.worldBossHeaderStyle} label="World Bosses" {...a11yProps(3)} />
           {/* World Bosses */}
-          <Tab className={classes.worldBossHeaderStyle} label="Slots" {...a11yProps(4)} />
+          <Tab className={classes.slotsHeaderStyle} label="Slots" {...a11yProps(4)} />
         </Tabs>
       </AppBar>
 
@@ -193,7 +201,7 @@ export default function UpgradeFinderResults(props) {
             <TabPanel value={tabvalue} index={4}>
         <div className={classes.panel}>
           <Grid container>
-            <SlotsContainer pl={props.player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={props.playerSettings} />
+            <SlotsContainer player={props.player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={props.playerSettings} />
           </Grid>
         </div>
       </TabPanel>
