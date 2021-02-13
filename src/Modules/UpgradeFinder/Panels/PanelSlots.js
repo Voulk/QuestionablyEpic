@@ -54,16 +54,16 @@ export default function SlotsContainer(props) {
   const iconReturn = (slot, spec) => {
     switch (spec) {
       case "Restoration Druid":
-        return require("../../../Images/UpgradeFinderIcons/Leather/" + slot + ".png").default;
+        return require("../../../Images/UpgradeFinderIcons/Leather/" + slot + ".jpg").default;
       case "Mistweaver Monk":
-        return require("../../../Images/UpgradeFinderIcons/Leather/" + slot + ".png").default;
+        return require("../../../Images/UpgradeFinderIcons/Leather/" + slot + ".jpg").default;
       case "Holy Paladin":
-        return require("../../../Images/UpgradeFinderIcons/Plate/" + slot + ".png").default;
+        return require("../../../Images/UpgradeFinderIcons/Plate/" + slot + ".jpg").default;
       case "Restoration Shaman":
-        return require("../../../Images/UpgradeFinderIcons/Mail/" + slot + ".png").default;
+        return require("../../../Images/UpgradeFinderIcons/Mail/" + slot + ".jpg").default;
       case "Holy Priest":
       case "Discipline Priest":
-        return require("../../../Images/UpgradeFinderIcons/Cloth/" + slot + ".png").default;
+        return require("../../../Images/UpgradeFinderIcons/Cloth/" + slot + ".jpg").default;
       default:
         return [-1];
     }
