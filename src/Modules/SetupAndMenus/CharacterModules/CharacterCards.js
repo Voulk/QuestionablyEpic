@@ -291,11 +291,15 @@ export default function CharCards(props) {
                 </Grid>
                 {/* ---- Settings Button - More apparent for users how to edit characters ---- */}
                 <Grid item xs={2}>
-                  <Tooltip title={t("Edit")}>
-                    <IconButton style={{ float: "right" }} onClick={(e) => handleClickOpen(e)} aria-label="settings" size="small">
-                      <SettingsIcon fontSize="medium" />
-                    </IconButton>
-                  </Tooltip>
+                  {props.isActive ? (
+                    <Tooltip title={t("Edit")}>
+                      <IconButton style={{ float: "right" }} onClick={(e) => handleClickOpen(e)} aria-label="settings" size="small">
+                        <SettingsIcon fontSize="medium" />
+                      </IconButton>
+                    </Tooltip>
+                  ) : (
+                    ""
+                  )}
                 </Grid>
               </Grid>
               <Divider />
@@ -587,7 +591,7 @@ export default function CharCards(props) {
                 <Grid container>
                   <Grid item container xs={11} spacing={1}>
                     {/* -------------------------------- Report ID -------------------------------  */}
-                    <Grid item xs={6}>
+                    <Grid item xs={3}>
                       <Typography style={{ display: "inline-flex" }}>
                         {t("CharacterCreator.SavedLogs.Report") + ":"}
                         <Typography color="primary" style={{ paddingLeft: 4 }}>
@@ -596,7 +600,7 @@ export default function CharCards(props) {
                       </Typography>
                     </Grid>
                     {/* -------------------------------- Boss Name -------------------------------  */}
-                    <Grid item xs={6}>
+                    <Grid item xs={3}>
                       <Typography style={{ display: "inline-flex" }}>
                         {t("CharacterCreator.SavedLogs.Boss") + ":"}
                         <Typography color="primary" style={{ paddingLeft: 4 }}>
@@ -605,7 +609,7 @@ export default function CharCards(props) {
                       </Typography>
                     </Grid>
                     {/* ------------------------------ Fight Length ------------------------------  */}
-                    <Grid item>
+                    <Grid item xs={3}>
                       <Typography style={{ display: "inline-flex" }}>
                         {t("CharacterCreator.SavedLogs.FightLength") + ":"}
                         <Typography color="primary" style={{ paddingLeft: 4 }}>
@@ -614,7 +618,7 @@ export default function CharCards(props) {
                       </Typography>
                     </Grid>
                     {/* ----------------------------------- HPS ----------------------------------  */}
-                    <Grid item>
+                    <Grid item xs={3}>
                       <Typography style={{ display: "inline-flex" }}>
                         {t("CharacterCreator.SavedLogs.HPS") + ":"}
                         <Typography color="primary" style={{ paddingLeft: 4 }}>
@@ -623,14 +627,14 @@ export default function CharCards(props) {
                       </Typography>
                     </Grid>
                     {/* --------------------------------- Raw HPS --------------------------------  */}
-                    <Grid item>
+                    {/* <Grid item> */}
                       {/*<Typography style={{ display: "inline-flex" }}>
                           {t("CharacterCreator.SavedLogs.RawHPS") + ":"}
                           <Typography color="primary" style={{ paddingLeft: 4 }}>
                             {props.char.getRawHPS(contentType)}
                           </Typography>
                         </Typography> */}
-                    </Grid>
+                    {/* </Grid> */}
                   </Grid>
                   <Grid item xs={1} style={{ alignSelf: "center", textAlign: "center" }}>
                     <Tooltip title={t("Delete")} arrow>

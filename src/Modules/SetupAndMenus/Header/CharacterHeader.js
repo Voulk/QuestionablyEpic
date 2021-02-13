@@ -63,9 +63,9 @@ export default function CharacterHeaderButton(props) {
       <Button aria-describedby={id} style={{ color: classColoursJS(currentCharacter.spec) }} onClick={handleClick}>
         {props.allChars.getAllChar().length > 0 ? (
           // TODO: Change classIcons to accept a styles prop to remove the padding on the right for this component only
-          <div>
+          <div style={{display: "inline-flex"}}>
             {currentCharacter.charName}
-            {classIcons(currentCharacter.spec, { height: 18, width: 18, padding: "0px 5px 0px 5px", verticalAlign: "middle", borderRadius: 4 })}
+            {classIcons(currentCharacter.spec, { height: 18, width: 18, padding: "2px 0px 0px 5px", verticalAlign: "middle", borderRadius: 4 })}
           </div>
         ) : (
           ""
