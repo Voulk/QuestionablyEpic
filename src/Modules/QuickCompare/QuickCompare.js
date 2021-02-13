@@ -95,7 +95,7 @@ function getSlots() {
 export default function QuickCompare(props) {
   useEffect(() => {
     ReactGA.pageview(window.location.pathname + window.location.search);
-  }, props.pl.scoreActiveItems(props.contentType));
+  }, props.player.scoreActiveItems(props.contentType));
 
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
@@ -113,7 +113,7 @@ export default function QuickCompare(props) {
   const [activeSlot, setSlot] = useState("");
   const [itemSocket, setItemSocket] = useState("");
   const [itemTertiary, setItemTertiary] = useState("");
-  const [itemList, setItemList] = useState(props.pl.getActiveItems(activeSlot));
+  const [itemList, setItemList] = useState(props.player.getActiveItems(activeSlot));
   const [itemDropdown, setItemDropdown] = useState([]); // Filled later based on item slot and armor type.
   const [AutoValue, setAutoValue] = useState(itemDropdown[0]);
   const [inputValue, setInputValue] = useState("");
@@ -131,8 +131,8 @@ export default function QuickCompare(props) {
   };
 
   const getSimCStatus = () => {
-    if (props.pl.activeItems.length === 0) return "Missing";
-    else if (checkCharacterValid(props.pl) === false) return "Invalid";
+    if (props.player.activeItems.length === 0) return "Missing";
+    else if (checkCharacterValid(props.player) === false) return "Invalid";
     else return "Good";
   };
   /* ------------------------ End Simc Module Functions ----------------------- */
@@ -189,7 +189,7 @@ export default function QuickCompare(props) {
       setAnchorEl(anchorEl ? null : event.currentTarget);
       return null;
     }
-    let player = props.pl;
+    let player = props.player;
     let item = new Item(itemID, itemName, getItemSlot(itemID), itemSocket, itemTertiary, 0, itemLevel, "");
     item.softScore = scoreItem(item, player, props.contentType);
 
@@ -199,7 +199,7 @@ export default function QuickCompare(props) {
   };
 
   const deleteItem = (unique) => {
-    let player = props.pl;
+    let player = props.player;
     player.deleteActiveItem(unique);
     setItemList([...player.getActiveItems(activeSlot)]);
     handleClickDelete();
@@ -241,15 +241,15 @@ export default function QuickCompare(props) {
     }
 
     setSlot(e.target.value);
-    setItemList([...props.pl.getActiveItems(e.target.value)]);
-    fillItems(e.target.value, props.pl.spec);
+    setItemList([...props.player.getActiveItems(e.target.value)]);
+    fillItems(e.target.value, props.player.spec);
   };
 
   // TODO. Calculate the score for a given item.
   // Score is calculated by multiplying out stat weights and then adding any special effects.
   const calculateScore = (item) => {};
 
-  const wepCombos = buildWepCombos(props.pl);
+  const wepCombos = buildWepCombos(props.player);
 
   return (
     <div className={classes.header}>
@@ -272,7 +272,7 @@ export default function QuickCompare(props) {
           <HelpText text={helpText} />
         </Grid>
         <Grid item xs={12}>
-          {/*<UpgradeFinderSimC player={props.pl} contentType={props.contentType} simcSnack={props.simcSnack} allChars={props.allChars} /> */}
+          {/*<UpgradeFinderSimC player={props.player} contentType={props.contentType} simcSnack={props.simcSnack} allChars={props.allChars} /> */}
         </Grid>
         <Grid item xs={12}>
           <Paper elevation={0}>
@@ -470,7 +470,7 @@ export default function QuickCompare(props) {
               </Typography>
               <Divider style={{ marginBottom: 10 }} />
               <Grid container spacing={1}>
-                {[...props.pl.getActiveItems("Head")].map((item, index) => (
+                {[...props.player.getActiveItems("Head")].map((item, index) => (
                   <ItemCard key={index} item={item} delete={deleteItem} />
                 ))}
               </Grid>
@@ -483,7 +483,7 @@ export default function QuickCompare(props) {
               </Typography>
               <Divider style={{ marginBottom: 10 }} />
               <Grid container spacing={1}>
-                {[...props.pl.getActiveItems("Neck")].map((item, index) => (
+                {[...props.player.getActiveItems("Neck")].map((item, index) => (
                   <ItemCard key={index} item={item} delete={deleteItem} />
                 ))}
               </Grid>
@@ -496,7 +496,7 @@ export default function QuickCompare(props) {
               </Typography>
               <Divider style={{ marginBottom: 10 }} />
               <Grid container spacing={1}>
-                {[...props.pl.getActiveItems("Shoulder")].map((item, index) => (
+                {[...props.player.getActiveItems("Shoulder")].map((item, index) => (
                   <ItemCard key={index} item={item} delete={deleteItem} />
                 ))}
               </Grid>
@@ -508,7 +508,7 @@ export default function QuickCompare(props) {
               </Typography>
               <Divider style={{ marginBottom: 10 }} />
               <Grid container spacing={1}>
-                {[...props.pl.getActiveItems("Back")].map((item, index) => (
+                {[...props.player.getActiveItems("Back")].map((item, index) => (
                   <ItemCard key={index} item={item} delete={deleteItem} />
                 ))}
               </Grid>
@@ -521,7 +521,7 @@ export default function QuickCompare(props) {
               </Typography>
               <Divider style={{ marginBottom: 10 }} />
               <Grid container spacing={1}>
-                {[...props.pl.getActiveItems("Chest")].map((item, index) => (
+                {[...props.player.getActiveItems("Chest")].map((item, index) => (
                   <ItemCard key={index} item={item} delete={deleteItem} />
                 ))}
               </Grid>
@@ -534,7 +534,7 @@ export default function QuickCompare(props) {
               </Typography>
               <Divider style={{ marginBottom: 10 }} />
               <Grid container spacing={1}>
-                {[...props.pl.getActiveItems("Wrist")].map((item, index) => (
+                {[...props.player.getActiveItems("Wrist")].map((item, index) => (
                   <ItemCard key={index} item={item} delete={deleteItem} />
                 ))}
               </Grid>
@@ -547,7 +547,7 @@ export default function QuickCompare(props) {
               </Typography>
               <Divider style={{ marginBottom: 10 }} />
               <Grid container spacing={1}>
-                {[...props.pl.getActiveItems("Hands")].map((item, index) => (
+                {[...props.player.getActiveItems("Hands")].map((item, index) => (
                   <ItemCard key={index} item={item} delete={deleteItem} />
                 ))}
               </Grid>
@@ -560,7 +560,7 @@ export default function QuickCompare(props) {
               </Typography>
               <Divider style={{ marginBottom: 10 }} />
               <Grid container spacing={1}>
-                {[...props.pl.getActiveItems("Waist")].map((item, index) => (
+                {[...props.player.getActiveItems("Waist")].map((item, index) => (
                   <ItemCard key={index} item={item} delete={deleteItem} />
                 ))}
               </Grid>
@@ -573,7 +573,7 @@ export default function QuickCompare(props) {
               </Typography>
               <Divider style={{ marginBottom: 10 }} />
               <Grid container spacing={1}>
-                {[...props.pl.getActiveItems("Legs")].map((item, index) => (
+                {[...props.player.getActiveItems("Legs")].map((item, index) => (
                   <ItemCard key={index} item={item} delete={deleteItem} />
                 ))}
               </Grid>
@@ -586,7 +586,7 @@ export default function QuickCompare(props) {
               </Typography>
               <Divider style={{ marginBottom: 10 }} />
               <Grid container spacing={1}>
-                {[...props.pl.getActiveItems("Feet")].map((item, index) => (
+                {[...props.player.getActiveItems("Feet")].map((item, index) => (
                   <ItemCard key={index} item={item} delete={deleteItem} />
                 ))}
               </Grid>
@@ -599,7 +599,7 @@ export default function QuickCompare(props) {
               </Typography>
               <Divider style={{ marginBottom: 10 }} />
               <Grid container spacing={1}>
-                {[...props.pl.getActiveItems("Finger")].map((item, index) => (
+                {[...props.player.getActiveItems("Finger")].map((item, index) => (
                   <ItemCard key={index} item={item} delete={deleteItem} />
                 ))}
               </Grid>
@@ -612,7 +612,7 @@ export default function QuickCompare(props) {
               </Typography>
               <Divider style={{ marginBottom: 10 }} />
               <Grid container spacing={1}>
-                {[...props.pl.getActiveItems("Trinket")].map((item, index) => (
+                {[...props.player.getActiveItems("Trinket")].map((item, index) => (
                   <ItemCard key={index} item={item} delete={deleteItem} />
                 ))}
               </Grid>
@@ -625,7 +625,7 @@ export default function QuickCompare(props) {
               </Typography>
               <Divider style={{ marginBottom: 10 }} />
               <Grid container spacing={1}>
-                {[...props.pl.getActiveItems("1H Weapon")].map((item, index) => (
+                {[...props.player.getActiveItems("1H Weapon")].map((item, index) => (
                   <ItemCard key={index} item={item} delete={deleteItem} />
                 ))}
               </Grid>
@@ -638,7 +638,7 @@ export default function QuickCompare(props) {
               </Typography>
               <Divider style={{ marginBottom: 10 }} />
               <Grid container spacing={1}>
-                {[...props.pl.getActiveItems("Offhands")].map((item, index) => (
+                {[...props.player.getActiveItems("Offhands")].map((item, index) => (
                   <ItemCard key={index} item={item} delete={deleteItem} />
                 ))}
               </Grid>

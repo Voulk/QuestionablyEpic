@@ -339,7 +339,7 @@ class App extends Component {
                 setRegion={this.setRegion}
                 toggleContentType={this.toggleContentType}
                 contentType={this.state.contentType}
-                pl={activePlayer}
+                player={activePlayer}
                 simcSnack={this.handleSimCSnackOpen}
                 logImportSnack={this.handleLogSnackOpen}
                 allChars={allChars}
@@ -399,7 +399,7 @@ class App extends Component {
                       allChars={allChars}
                       charUpdate={this.updatePlayerChars}
                       singleUpdate={this.updatePlayerChar}
-                      pl={this.state.player}
+                      player={this.state.player}
                       charAddedSnack={this.handleCharSnackOpen}
                       charUpdatedSnack={this.handleCharUpdateSnackOpen}
                       contentType={this.state.contentType}
@@ -409,12 +409,12 @@ class App extends Component {
                   )}
                 />
                 <Route path="/holydiver" render={() => <HolyDiver />} />
-                <Route path="/report" render={() => <TopGearReport pl={activePlayer} result={this.state.topSet} contentType={this.state.contentType} />} />
-                <Route path="/quickcompare" render={() => <QuickCompare pl={activePlayer} contentType={this.state.contentType} allChars={allChars} simcSnack={this.handleSimCSnackOpen} />} />
-                <Route path="/topgear" render={() => <TopGear pl={activePlayer} contentType={this.state.contentType} setTopResult={this.setTopResult} allChars={allChars} simcSnack={this.handleSimCSnackOpen} />} />
-                <Route path="/legendaries" render={() => <LegendaryCompare pl={activePlayer} contentType={this.state.contentType} />} />
+                <Route path="/report" render={() => <TopGearReport player={activePlayer} result={this.state.topSet} contentType={this.state.contentType} />} />
+                <Route path="/quickcompare" render={() => <QuickCompare player={activePlayer} contentType={this.state.contentType} allChars={allChars} simcSnack={this.handleSimCSnackOpen} />} />
+                <Route path="/topgear" render={() => <TopGear player={activePlayer} contentType={this.state.contentType} setTopResult={this.setTopResult} allChars={allChars} simcSnack={this.handleSimCSnackOpen} />} />
+                <Route path="/legendaries" render={() => <LegendaryCompare player={activePlayer} contentType={this.state.contentType} />} />
                 <Route path="/trinkets" render={() => <TrinketAnalysis player={activePlayer} contentType={this.state.contentType} />} />
-                <Route path="/soulbinds" render={() => <CovenantExploration pl={activePlayer} contentType={this.state.contentType} updatePlayerChar={this.updatePlayerChar} />} />
+                <Route path="/soulbinds" render={() => <CovenantExploration player={activePlayer} contentType={this.state.contentType} updatePlayerChar={this.updatePlayerChar} />} />
                 <Route path="/login" render={() => <QELogin setRegion={this.setRegion} />} />
                 <Route path="/attemptlogin" component={() => (window.location = this.buildLoginURL())} />
                 <Route path="/confirmlogin/" render={() => <ConfirmLogin loginSnackOpen={this.handleLoginSnackOpen} updatePlayerID={this.updatePlayerID} />} />

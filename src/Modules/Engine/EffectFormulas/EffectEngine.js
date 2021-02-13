@@ -26,7 +26,7 @@ export function getEffectValue(effect, player, contentType, itemLevel = 0) {
   const effectName = effect.name;
   const effectType = effect.type;
 
-  //console.log("ITEM EFFECT" + effectName + effectType + "pl spec" + player.spec);
+  //console.log("ITEM EFFECT" + effectName + effectType + "player spec" + player.spec);
 
   if (effect.type === "special") {
     bonus_stats = getGenericEffect(effectName, player, contentType);

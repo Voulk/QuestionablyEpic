@@ -20,7 +20,7 @@ export default function SimCraftInput(props) {
   };
 
   const handleSubmit = () => {
-    runSimC(simC, props.pl, props.contentType, setErrorMessage, props.simcSnack, handleClose, setSimC);
+    runSimC(simC, props.player, props.contentType, setErrorMessage, props.simcSnack, handleClose, setSimC);
   };
 
   return (
