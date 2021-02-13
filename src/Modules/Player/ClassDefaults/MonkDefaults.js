@@ -50,7 +50,8 @@ export const monkDefaultSpecialQueries = (contentType) => {
         oneMinute: 1.4,
         twoMinutes: 1,
         threeMinutes: 1.2,
-      }
+      },
+      HoldYourGroundUptime: 0.6
     };
   } else if (contentType === "Dungeon") {
     specialQueries = {
@@ -65,7 +66,8 @@ export const monkDefaultSpecialQueries = (contentType) => {
         oneMinute: 1.4,
         twoMinutes: 1,
         threeMinutes: 1.2,
-      }
+      },
+      HoldYourGroundUptime: 0.6
     };
   } else {
     console.error("Unknown Content Type");

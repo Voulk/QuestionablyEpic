@@ -21,7 +21,8 @@ export const holyPriestDefaultSpecialQueries = (contentType) => {
         oneMinute: 1,
         twoMinutes: 1,
         threeMinutes: 1,
-      }
+      },
+      HoldYourGroundUptime: 0.8
     };
   } else if (contentType === "Dungeon") {
     specialQueries = {
@@ -31,7 +32,8 @@ export const holyPriestDefaultSpecialQueries = (contentType) => {
         oneMinute: 1,
         twoMinutes: 1,
         threeMinutes: 1,
-      }
+      },
+      HoldYourGroundUptime: 0.8
     };
   } else {
     console.error("Unknown Content Type");
