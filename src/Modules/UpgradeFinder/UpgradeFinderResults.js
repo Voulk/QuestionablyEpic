@@ -149,15 +149,15 @@ export default function UpgradeFinderResults(props) {
       >
         <Tabs value={tabvalue} onChange={handleTabChange} aria-label="simple tabs example" variant="fullWidth" TabIndicatorProps={{ style: { backgroundColor: "#F2BF59" } }}>
           {/* Raid */}
-          <Tab className={classes.raidHeaderStyle} label="Castle Nathria" {...a11yProps(0)} />
+          <Tab className={classes.raidHeaderStyle} label={t("UpgradeFinder.CurrentRaid")} {...a11yProps(0)} />
           {/* Mythic Plus */}
-          <Tab className={classes.mythicPlusHeaderStyle} label="Mythic Plus" {...a11yProps(1)} />
+          <Tab className={classes.mythicPlusHeaderStyle} label={t("UpgradeFinder.MythicPlus")} {...a11yProps(1)} />
           {/* PVP */}
-          <Tab className={classes.pvpHeaderStyle} label="PvP" {...a11yProps(2)} />
+          <Tab className={classes.pvpHeaderStyle} label={t("UpgradeFinder.PvP")} {...a11yProps(2)} />
           {/* World Bosses */}
-          <Tab className={classes.worldBossHeaderStyle} label="World Bosses" {...a11yProps(3)} />
+          <Tab className={classes.worldBossHeaderStyle} label={t("UpgradeFinder.WorldBosses")} {...a11yProps(3)} />
           {/* World Bosses */}
-          <Tab className={classes.slotsHeaderStyle} label="Slots" {...a11yProps(4)} />
+          <Tab className={classes.slotsHeaderStyle} label={t("UpgradeFinder.UpgradeBySlot")} {...a11yProps(4)} />
         </Tabs>
       </AppBar>
 
