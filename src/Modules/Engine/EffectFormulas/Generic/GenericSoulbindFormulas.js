@@ -53,7 +53,7 @@ export function getSoulbindFormula(effectID, player, contentType) {
   // Valiant Strikes
   else if (effectID === 329791) {
     let average_health_pool = player.activeStats.stamina * 20; // The players health is an acceptable average for an average target.
-    let ppm = 0.7; // POSTLIVE: Check against logs.
+    let ppm = 0.66; // POSTLIVE: Check against logs.
 
     bonus_stats.HPS = (average_health_pool * 0.2 * ppm) / 60;
   }
@@ -72,7 +72,7 @@ export function getSoulbindFormula(effectID, player, contentType) {
   // Resonant Accolades
   else if (effectID === 329781) {
     // This one needs a check against log. It can obviously never exceed 4% total healing but is likely to be much less.
-    let percent_healing_above_70 = 0.8;
+    let percent_healing_above_70 = 0.75;
     let expected_overhealing = 0.5;
     let effect_power = 0.04;
 
@@ -112,9 +112,9 @@ export function getSoulbindFormula(effectID, player, contentType) {
   else if (effectID === 320659) {
   }
   // Niya's Tools: Herbs
-  // This is basically 100% uptime on one target at a time. Personal benefit calculated only.
+  // This is basically 100% uptime on one target at a time. Team benefit is included.
   else if (effectID === 320662) {
-    bonus_stats.Haste = (5 * STATPERONEPERCENT.HASTE);
+    bonus_stats.Haste = (4.9 * STATPERONEPERCENT.HASTE);
   }
 
   // -- Dreamwalker --
@@ -127,7 +127,7 @@ export function getSoulbindFormula(effectID, player, contentType) {
   // Social Butterfly
   else if (effectID === 319210) {
     let expectedUptime = 1; // POSTLIVE: Check if this is falling off often in either content type.
-    bonus_stats.Versatility = 1.5 * 40 * expectedUptime; // Placeholder.
+    bonus_stats.Versatility = 1.5 * 40 * expectedUptime; 
   }
   // Empowered Chrysalis
   // TODO: Expand to include overhealing on yourself.
@@ -180,8 +180,8 @@ export function getSoulbindFormula(effectID, player, contentType) {
   // -- Theotar the Mad Duke
   // Soothing Shade
   else if (effectID === 336239) {
-    let chance_of_movement = 0.1;
-    let uptime = convertPPMToUptime(1, 12) * (1 - chance_of_movement);
+    let chanceOfMovement = 0.1;
+    let uptime = convertPPMToUptime(1, 12) * (1 - chanceOfMovement);
 
     bonus_stats.Mastery = uptime * 525;
   }
@@ -261,7 +261,7 @@ export function getSoulbindFormula(effectID, player, contentType) {
   else if (effectID === 326572) {
     // TODO, work out if you can collect stacks when it's on cooldown, or if the 10 crits have to take place after the cooldown.
     // The uptime won't change much regardless but it'll be of slight impact.
-    let uptime = 10 / 64;
+    let uptime = 10 / 68;
 
     bonus_stats.Crit = STATPERONEPERCENT.CRIT * 18 * uptime;
   }
