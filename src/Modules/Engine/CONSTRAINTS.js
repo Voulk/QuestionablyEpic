@@ -9,7 +9,8 @@ export const CONSTRAINTS = {
     minSecondaryWeight: 0,
     maxTertiaryWeight: 1.5,
     minTertiaryWeight: 0,
-    topGearMaxItems: 34,
+    topGearMaxItems: 34, // The maximum number of items selectable by the player. Combinatorial explosion requires we keep this reasonable. 
+    topGearDifferentials: 8, // Number of competitive alternatives to show.
 }
 
 // This will return the value itself if it is between min and max, and a boundary otherwise. 
