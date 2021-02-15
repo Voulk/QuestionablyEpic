@@ -267,7 +267,7 @@ function evalSet(itemSet, player, contentType, baseHPS) {
     haste: 0,
     crit: 0,
     versatility: 0,
-    mastery: STATPERONEPERCENT.MASTERYA[player.spec] * BASESTAT.MASTERY[player.spec] * 100,
+    mastery: 0,//STATPERONEPERCENT.MASTERYA[player.spec] * BASESTAT.MASTERY[player.spec] * 100,
     leech: 0,
     hps: 0,
     dps: 0,
@@ -319,20 +319,23 @@ function evalSet(itemSet, player, contentType, baseHPS) {
 
   // 5% int boost for wearing the same items.
   // The system doesn't actually allow you to add items of different armor types so this is always on.
-  bonus_stats.intellect += (builtSet.setStats.intellect + bonus_stats.intellect) * 0.05; //TODO: Renable.
+  bonus_stats.intellect += (builtSet.setStats.intellect + bonus_stats.intellect) * 0.05;
 
   // Sockets
   bonus_stats[highestWeight] += 16 * builtSet.setSockets;
   enchants["Gems"] = highestWeight;
-  //console.log("Sockets added : " + 16 * builtSet.setSockets + " to " + highestWeight);
+  console.log("Sockets added : " + 16 * builtSet.setSockets + " to " + highestWeight);
 
-  //applyDiminishingReturns(setStats);
+  compileStats(setStats, bonus_stats); // Add the base stats on our gear together with enchants & gems.
+  applyDiminishingReturns(setStats); // Apply Diminishing returns to our haul.
+  addBaseStats(setStats, player.spec); // Add our base stats, which are immune to DR. This includes our base 5% crit, and whatever base mastery our spec has.
   adjusted_weights.haste = (adjusted_weights.haste + adjusted_weights.haste * (1 - (DR_CONST * setStats.haste) / STATPERONEPERCENT.HASTE)) / 2;
   adjusted_weights.crit = (adjusted_weights.crit + adjusted_weights.crit * (1 - (DR_CONST * setStats.crit) / STATPERONEPERCENT.CRIT)) / 2;
   adjusted_weights.versatility = (adjusted_weights.versatility + adjusted_weights.versatility * (1 - (DR_CONST * setStats.versatility) / STATPERONEPERCENT.VERSATILITY)) / 2;
   adjusted_weights.mastery = (adjusted_weights.mastery + adjusted_weights.mastery * (1 - (DR_CONST * setStats.mastery) / STATPERONEPERCENT.MASTERYA[player.spec])) / 2;
   
   // Calculate a hard score using the rebalanced stat weights.
+
   for (var stat in setStats) {
     if (stat === "hps") {
       /*score +=
@@ -342,7 +345,6 @@ function evalSet(itemSet, player, contentType, baseHPS) {
     } else if (stat === "dps") {
       continue;
     } else {
-      setStats[stat] += stat in bonus_stats ? bonus_stats[stat] : 0;
       hardScore += setStats[stat] * adjusted_weights[stat];
       //console.log("Adding" + stat + " to set: " + (stat in bonus_stats ? bonus_stats[stat] : 0))
       //console.log(setStats[stat] + " stat: " + stat + " adds " + setStats[stat] * adjusted_weights[stat] + " to score.");
@@ -373,20 +375,39 @@ function getHighestWeight(player, contentType) {
   return max;
 }
 
+// Compiles stats & bonus stats into one array to which we can then apply DR etc. 
+function compileStats(stats, bonus_stats) {
+  console.log("Stats pre-compilation: " + JSON.stringify(stats));
+  console.log("Bonus Stats: " + JSON.stringify(bonus_stats));
+
+  for (var stat in stats) {
+    stats[stat] += stat in bonus_stats ? bonus_stats[stat] : 0;
+  }
+  console.log("Stats post-compilation: " + JSON.stringify(stats));
+  return stats
+  
+}
+
+function addBaseStats(stats, spec) {
+  stats.crit += 175;
+  stats.mastery += STATPERONEPERCENT.MASTERYA[spec] * BASESTAT.MASTERY[spec] * 100;
+
+}
+
 export function applyDiminishingReturns(stats) {
   console.log("Stats Pre-DR" + JSON.stringify(stats));
   
   for (const [key, value] of Object.entries(stats)) {
+    if (["crit", "haste", "mastery", "versatility", "leech"].includes(key)) {
 
-    const DRBreakpoints = STATDIMINISHINGRETURNS[key.toUpperCase()];
-
-    const baseStat = stats[key];
-    for (var j = 0; j < DRBreakpoints.length; j++) {
-      stats[key] -= Math.max((baseStat - DRBreakpoints[j]) * 0.1, 0);
-    }
-
-    //console.log(JSON.stringify(DRBreakpoints));
-    
+      console.log(key.toUpperCase())
+      const DRBreakpoints = STATDIMINISHINGRETURNS[key.toUpperCase()];
+  
+      const baseStat = stats[key];
+      for (var j = 0; j < DRBreakpoints.length; j++) {
+        stats[key] -= Math.max((baseStat - DRBreakpoints[j]) * 0.1, 0);
+      }
+    } 
   }
     
     //console.log("Stat: " + stats[i])
@@ -401,13 +422,6 @@ export function applyDiminishingReturns(stats) {
 
 }
 
-/*
-function applySingleDiminishingReturn(statValue, statCap1, statCap2) {
-  
-  let reduction = ((statValue - statCap1) * 0.1) + ((statValue - statCap2) * 0.1);
-
-
-} */
 
 const deepCopyFunction = (inObject) => {
   let outObject, value, key;
