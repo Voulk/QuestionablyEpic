@@ -9,7 +9,9 @@ import { convertPPMToUptime } from "../Engine/EffectFormulas/EffectUtilities";
 // This does run into some problems when it comes to set bonuses and could be re-evaluated at the time. The likely strat is to auto-include anything with a bonus, or to run
 // our set bonus algorithm before we sort and slice. There are no current set bonuses that are relevant to raid / dungeon so left as a thought experiment for now.
 const softSlice = 1000; // TODO. Adjust to 1000 for prod. Being tested at lower values.
-const DR_CONST = 0.00098569230769231;
+const DR_CONST = 0.00099569230769231;
+const DR_CONSTLEECH = 0.00998569230769231;
+
 
 // block for `time` ms, then return the number of loops we could run in that time:
 export function expensive(time) {
@@ -329,11 +331,14 @@ function evalSet(itemSet, player, contentType, baseHPS) {
   compileStats(setStats, bonus_stats); // Add the base stats on our gear together with enchants & gems.
   applyDiminishingReturns(setStats); // Apply Diminishing returns to our haul.
   addBaseStats(setStats, player.spec); // Add our base stats, which are immune to DR. This includes our base 5% crit, and whatever base mastery our spec has.
+
+  // Apply soft DR formula to stats, as the more we get of any stat the weaker it becomes relative to our other stats. 
   adjusted_weights.haste = (adjusted_weights.haste + adjusted_weights.haste * (1 - (DR_CONST * setStats.haste) / STATPERONEPERCENT.HASTE)) / 2;
   adjusted_weights.crit = (adjusted_weights.crit + adjusted_weights.crit * (1 - (DR_CONST * setStats.crit) / STATPERONEPERCENT.CRIT)) / 2;
   adjusted_weights.versatility = (adjusted_weights.versatility + adjusted_weights.versatility * (1 - (DR_CONST * setStats.versatility) / STATPERONEPERCENT.VERSATILITY)) / 2;
   adjusted_weights.mastery = (adjusted_weights.mastery + adjusted_weights.mastery * (1 - (DR_CONST * setStats.mastery) / STATPERONEPERCENT.MASTERYA[player.spec])) / 2;
-  
+  adjusted_weights.leech = (adjusted_weights.leech + adjusted_weights.leech * (1 - (DR_CONSTLEECH * setStats.leech) / STATPERONEPERCENT.LEECH)) / 2;
+
   // Calculate a hard score using the rebalanced stat weights.
 
   for (var stat in setStats) {
