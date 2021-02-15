@@ -291,15 +291,11 @@ export default function CharCards(props) {
                 </Grid>
                 {/* ---- Settings Button - More apparent for users how to edit characters ---- */}
                 <Grid item xs={2}>
-                  {props.isActive ? (
-                    <Tooltip title={t("Edit")}>
-                      <IconButton style={{ float: "right" }} onClick={(e) => handleClickOpen(e)} aria-label="settings" size="small">
-                        <SettingsIcon fontSize="medium" />
-                      </IconButton>
-                    </Tooltip>
-                  ) : (
-                    ""
-                  )}
+                  <Tooltip title={t("Edit")}>
+                    <IconButton style={{ float: "right" }} onClick={(e) => handleClickOpen(e)} aria-label="settings" size="small">
+                      <SettingsIcon fontSize="medium" />
+                    </IconButton>
+                  </Tooltip>
                 </Grid>
               </Grid>
               <Divider />
@@ -628,7 +624,7 @@ export default function CharCards(props) {
                     </Grid>
                     {/* --------------------------------- Raw HPS --------------------------------  */}
                     {/* <Grid item> */}
-                      {/*<Typography style={{ display: "inline-flex" }}>
+                    {/*<Typography style={{ display: "inline-flex" }}>
                           {t("CharacterCreator.SavedLogs.RawHPS") + ":"}
                           <Typography color="primary" style={{ paddingLeft: 4 }}>
                             {props.char.getRawHPS(contentType)}
