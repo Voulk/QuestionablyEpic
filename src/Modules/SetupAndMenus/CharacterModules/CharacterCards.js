@@ -293,7 +293,7 @@ export default function CharCards(props) {
                 <Grid item xs={2}>
                   <Tooltip title={t("Edit")}>
                     <IconButton style={{ float: "right" }} onClick={(e) => handleClickOpen(e)} aria-label="settings" size="small">
-                      <SettingsIcon fontSize="medium" />
+                      <SettingsIcon fontSize="small" />
                     </IconButton>
                   </Tooltip>
                 </Grid>
@@ -571,13 +571,13 @@ export default function CharCards(props) {
             <Grid item xs={12} container>
               {/* ------------------------------- Logs Header ------------------------------ */}
               <Grid item xs={12}>
-                <Typography variant="h6" align="center" noWrap color="primary">
+                <Typography variant="h6" align="center" noWrap color="primary" style={{marginTop: "12px"}}>
                   Saved Logs
                 </Typography>
               </Grid>
 
               <Grid item xs={12}>
-                <Typography align="center" style={{ fontStyle: "italic" }}>
+                <Typography align="center" style={{ fontStyle: "italic"}}>
                   {t("CharacterCreator.SavedLogs.Header")}
                 </Typography>
               </Grid>
@@ -662,11 +662,12 @@ export default function CharCards(props) {
                 {t("CharacterCreator.DeleteCharacter")}
               </Button>
             </ThemeProvider>
-            <Button onClick={resetDefaults} color="primary">
-              {"Defaults"}
-            </Button>
+
             {/* ---------------------- Default Button (Reset Stats) ----------------------  */}
             <div>
+            <Button onClick={resetDefaults} color="primary">
+              {"Reset to Defaults"}
+            </Button>
               {/* ------------------------------ Cancel Button -----------------------------  */}
               <Button onClick={handleClose} color="primary">
                 {t("Cancel")}
