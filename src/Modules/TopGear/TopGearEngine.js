@@ -3,6 +3,7 @@ import TopGearResult from "./TopGearResult";
 import Item from "../Player/Item";
 import React, { useState, useEffect } from "react";
 import { STATPERONEPERCENT, BASESTAT, STATDIMINISHINGRETURNS } from "../Engine/STAT";
+import { CONSTRAINTS } from "../Engine/CONSTRAINTS";
 import { convertPPMToUptime } from "../Engine/EffectFormulas/EffectUtilities";
 // Most of our sets will fall into a bucket where totalling the individual stats is enough to tell us they aren't viable. By slicing these out in a preliminary phase,
 // we can run our full algorithm on far fewer items. The net benefit to the player is being able to include more items, with a quicker return.
@@ -60,7 +61,7 @@ export function runTopGear(itemList, wepCombos, player, contentType, baseHPS, cu
   // Build Differentials
   let differentials = [];
   let primeSet = itemSets[0];
-  for (var i = 1; i < Math.min(5, itemSets.length); i++) {
+  for (var i = 1; i < Math.min(CONSTRAINTS.topGearDifferentials+1, itemSets.length); i++) {
     differentials.push(buildDifferential(itemSets[i], primeSet));
   }
 
