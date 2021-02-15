@@ -102,9 +102,6 @@ export default function QEHeader(props) {
                   <QELogImport logImportSnack={props.logImportSnack} player={props.player} allChars={props.allChars} />
                 </Grid>
                 <Grid item>
-                  <CharacterHeaderButton player={props.pl} allChars={props.allChars} />
-                </Grid>
-                <Grid item>
                   <SimCraftInput
                     buttonLabel={t("SimCInput.SimCHeaderButtonLabel")}
                     player={props.player}
@@ -112,6 +109,9 @@ export default function QEHeader(props) {
                     simcSnack={props.simcSnack}
                     allChars={props.allChars}
                   />
+                </Grid>
+                <Grid item>
+                  <CharacterHeaderButton player={props.pl} allChars={props.allChars} />
                 </Grid>
                 <Grid item>
                   <ProfileSelector name={playerName} component={Link} to={linkTarget} logFunc={props.logFunc} setRegion={props.setRegion} />
