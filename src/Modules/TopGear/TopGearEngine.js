@@ -338,16 +338,11 @@ function evalSet(itemSet, player, contentType, baseHPS) {
 
   for (var stat in setStats) {
     if (stat === "hps") {
-      /*score +=
-            (item.stats.bonus_stats.hps / player.getHPS(contentType)) *
-            player.activeStats.intellect; */
       hardScore += (setStats[stat] / baseHPS) * player.activeStats.intellect;
     } else if (stat === "dps") {
       continue;
     } else {
       hardScore += setStats[stat] * adjusted_weights[stat];
-      //console.log("Adding" + stat + " to set: " + (stat in bonus_stats ? bonus_stats[stat] : 0))
-      //console.log(setStats[stat] + " stat: " + stat + " adds " + setStats[stat] * adjusted_weights[stat] + " to score.");
     }
   }
 
