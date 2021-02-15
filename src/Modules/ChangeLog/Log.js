@@ -9,6 +9,16 @@
 
 export const changeLog = [
   { 
+    version: "9.0",
+    update: 24,
+    date: "15th February", // TBA
+    changes: [
+    "Revamped the character edit pane",
+    "Druid: Dark Titans Lesson now includes Photosynthesis in dungeons"
+    
+    ]
+  },
+  { 
   version: "9.0",
   update: 23,
   date: "11th February",
