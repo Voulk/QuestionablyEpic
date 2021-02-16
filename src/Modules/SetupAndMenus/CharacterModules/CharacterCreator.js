@@ -7,7 +7,7 @@ import classIcons from "../../CooldownPlanner/Functions/IconFunctions/ClassIcons
 import raceIcons from "../../CooldownPlanner/Functions/IconFunctions/RaceIcons";
 import Autocomplete from "@material-ui/lab/Autocomplete";
 import { classRaceList } from "../../CooldownPlanner/Data/Data";
-import { serverDB } from "../../../Databases/ServerDB"
+import { serverDB } from "../../../Databases/ServerDB";
 
 const addBtn = require("../../../Images/AddBtn.jpg").default;
 
@@ -152,7 +152,7 @@ export default function AddNewChar(props) {
                 <Select label={t("Select Class")} value={healClass} onChange={handleChangeSpec}>
                   {Object.getOwnPropertyNames(classRaceList).map((key, i) => (
                     <MenuItem key={i} value={key}>
-                      {classIcons(key, 20)}
+                      {classIcons(key, { height: 20, width: 20, padding: "0px 5px 0px 5px", verticalAlign: "middle", borderRadius: 4 })}
                       {t("Classes." + key)}
                     </MenuItem>
                   ))}

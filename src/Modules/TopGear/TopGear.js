@@ -89,7 +89,7 @@ export default function TopGear(props) {
   const [activeSlot, setSlot] = useState("");
   const [itemSocket, setItemSocket] = useState("");
   const [itemTertiary, setItemTertiary] = useState("");
-  const [itemList, setItemList] = useState(props.pl.getActiveItems(activeSlot));
+  const [itemList, setItemList] = useState(props.player.getActiveItems(activeSlot));
   const [btnActive, setBtnActive] = useState(true);
   const [errorMessage, setErrorMessage] = useState("");
 
@@ -105,7 +105,7 @@ export default function TopGear(props) {
   // a list of available ilvls and the player could select from a smaller list instead.
   // This is left as a TODO until key functionality is completed but is a moderate priority.
   // const itemTertiaries = [{"Avoidance", "Avoidance"},{"Leech", "Leech"}, {"None", ""}];
-  //testTrinkets(props.pl, "Raid", 184)
+  //testTrinkets(props.player, "Raid", 184)
 
   // Fill Items fills the ItemNames box with items appropriate to the given slot and spec.  };
 
@@ -114,7 +114,7 @@ export default function TopGear(props) {
   const checkTopGearValid = () => {
     // Check that the player has selected an item in every slot.
     let topgearOk = true;
-    let itemList = props.pl.getSelectedItems();
+    let itemList = props.player.getSelectedItems();
     let errorMessage = "";
     let slotLengths = {
       Head: 0,
@@ -160,16 +160,16 @@ export default function TopGear(props) {
     if (checkTopGearValid) {
       setBtnActive(false);
       const currentLanguage = i18n.language;
-      let itemList = props.pl.getSelectedItems();
-      let wepCombos = buildWepCombos(props.pl, true);
+      let itemList = props.player.getSelectedItems();
+      let wepCombos = buildWepCombos(props.player, true);
       const worker = require("workerize-loader!./TopGearEngine"); // eslint-disable-line import/no-webpack-loader-syntax
       let instance = new worker();
-      let baseHPS = props.pl.getHPS(props.contentType);
-      let strippedPlayer = JSON.parse(JSON.stringify(props.pl));
-      //console.log("Pl: " + JSON.stringify(props.pl));
+      let baseHPS = props.player.getHPS(props.contentType);
+      let strippedPlayer = JSON.parse(JSON.stringify(props.player));
+      //console.log("player: " + JSON.stringify(props.player));
       instance.runTopGear(itemList, wepCombos, strippedPlayer, props.contentType, baseHPS, currentLanguage).then((result) => {
         //console.log(`Loop returned`);
-        apiSendTopGearSet(props.pl, props.contentType, result.itemSet.hardScore, result.itemsCompared);
+        apiSendTopGearSet(props.player, props.contentType, result.itemSet.hardScore, result.itemsCompared);
         props.setTopResult(result);
         history.push("/report/");
       });
@@ -178,12 +178,12 @@ export default function TopGear(props) {
     }
   };
 
-  const selectedItemCount = props.pl.getSelectedItems().length;
+  const selectedItemCount = props.player.getSelectedItems().length;
   const helpText = t("TopGear.HelpText");
 
   const activateItem = (unique) => {
     if (selectedItemCount < CONSTRAINTS.topGearMaxItems) {
-      let player = props.pl;
+      let player = props.player;
       player.activateItem(unique);
       setItemList([...player.getActiveItems(activeSlot)]);
       setBtnActive(checkTopGearValid());
@@ -233,7 +233,7 @@ export default function TopGear(props) {
         </Grid>
         <Grid item xs={12}>
           {/*<UpgradeFinderSimC
-            player={props.pl}
+            player={props.player}
             contentType={props.contentType}
             simcSnack={props.simcSnack}
             allChars={props.allChars}
@@ -243,7 +243,7 @@ export default function TopGear(props) {
           <TopGearSettingsAccordion />
         </Grid>
 
-        {props.pl.activeItems.length > 0 ? (
+        {props.player.activeItems.length > 0 ? (
           slotList.map((key, index) => {
             return (
               <Grid item xs={12} key={index}>
@@ -252,7 +252,7 @@ export default function TopGear(props) {
                 </Typography>
                 <Divider style={{ marginBottom: 10, width: "42%" }} />
                 <Grid container spacing={1}>
-                  {[...props.pl.getActiveItems(key.slotName)].map((item, index) => (
+                  {[...props.player.getActiveItems(key.slotName)].map((item, index) => (
                     <MiniItemCard key={index} item={item} activateItem={activateItem} />
                   ))}
                 </Grid>

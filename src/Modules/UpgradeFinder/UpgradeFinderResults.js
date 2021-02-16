@@ -165,7 +165,7 @@ export default function UpgradeFinderResults(props) {
       <TabPanel value={tabvalue} index={0}>
         <div className={classes.panel}>
           <Grid container>
-            <RaidGearContainer pl={props.player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={props.playerSettings} />
+            <RaidGearContainer player={props.player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={props.playerSettings} />
           </Grid>
         </div>
       </TabPanel>
@@ -174,7 +174,7 @@ export default function UpgradeFinderResults(props) {
       <TabPanel value={tabvalue} index={1}>
         <div className={classes.panel}>
           <Grid container>
-            <MythicPlusGearContainer pl={props.player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={props.playerSettings} />
+            <MythicPlusGearContainer player={props.player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={props.playerSettings} />
           </Grid>
         </div>
       </TabPanel>
@@ -183,7 +183,7 @@ export default function UpgradeFinderResults(props) {
       <TabPanel value={tabvalue} index={2}>
         <div className={classes.panel}>
           <Grid container>
-            <PvPGearContainer pl={props.player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={props.playerSettings} />
+            <PvPGearContainer player={props.player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={props.playerSettings} />
           </Grid>
         </div>
       </TabPanel>
@@ -192,7 +192,7 @@ export default function UpgradeFinderResults(props) {
       <TabPanel value={tabvalue} index={3}>
         <div className={classes.panel}>
           <Grid container>
-            <WorldBossGearContainer pl={props.player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={props.playerSettings} />
+            <WorldBossGearContainer player={props.player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={props.playerSettings} />
           </Grid>
         </div>
       </TabPanel>
