@@ -57,7 +57,7 @@ export default function PvPGearContainer(props) {
 
             <Grid item xs={12} sm container spacing={1} style={{ marginRight: 6 }}>
               {[...filterItemListBySource(itemList, key, 0, getPVPItemLevel(key, difficulty), difficulty)].map((item, index) => (
-                <ItemUpgradeCard key={index} item={item} itemDifferential={getDifferentialByID(itemDifferentials, item.id, item.level)} />
+                <ItemUpgradeCard key={index} item={item} itemDifferential={getDifferentialByID(itemDifferentials, item.id, item.level)} slotPanel={false} />
               ))}
             </Grid>
           </Grid>

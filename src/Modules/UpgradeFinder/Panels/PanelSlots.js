@@ -85,7 +85,7 @@ export default function SlotsContainer(props) {
         <AccordionDetails style={{ backgroundColor: "#191c23" }}>
           <Grid xs={12} sm container spacing={1}>
             {[...filterItemListByType(itemList, key.slot)].map((item, index) => (
-              <ItemUpgradeCard key={index} item={item} itemDifferential={getDifferentialByID(itemDifferentials, item.id, item.level)} />
+              <ItemUpgradeCard key={index} item={item} itemDifferential={getDifferentialByID(itemDifferentials, item.id, item.level)} slotPanel={true} />
             ))}
           </Grid>
         </AccordionDetails>
