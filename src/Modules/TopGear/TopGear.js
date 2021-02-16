@@ -21,6 +21,7 @@ import HelpText from "../SetupAndMenus/HelpText";
 import TopGearSettingsAccordion from "./TopGearSettings";
 import { CONSTRAINTS } from "../Engine/CONSTRAINTS";
 import UpgradeFinderSimC from "../UpgradeFinder/UpgradeFinderSimCImport";
+import userSettings from "./SettingsObject";
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -167,7 +168,7 @@ export default function TopGear(props) {
       let baseHPS = props.player.getHPS(props.contentType);
       let strippedPlayer = JSON.parse(JSON.stringify(props.player));
       //console.log("player: " + JSON.stringify(props.player));
-      instance.runTopGear(itemList, wepCombos, strippedPlayer, props.contentType, baseHPS, currentLanguage).then((result) => {
+      instance.runTopGear(itemList, wepCombos, strippedPlayer, props.contentType, baseHPS, currentLanguage, userSettings).then((result) => {
         //console.log(`Loop returned`);
         apiSendTopGearSet(props.player, props.contentType, result.itemSet.hardScore, result.itemsCompared);
         props.setTopResult(result);
@@ -188,6 +189,12 @@ export default function TopGear(props) {
       setItemList([...player.getActiveItems(activeSlot)]);
       setBtnActive(checkTopGearValid());
     }
+  };
+
+  const editSettings = (setting, newValue) => {
+    //console.log("Updating Settings" + setting + ". " + newValue);
+    userSettings[setting] = newValue;
+    console.log("Settings: " + JSON.stringify(userSettings));
   };
 
   const slotList = [
@@ -240,7 +247,7 @@ export default function TopGear(props) {
           /> */}
         </Grid>
         <Grid item xs={12}>
-          <TopGearSettingsAccordion />
+          <TopGearSettingsAccordion userSettings={userSettings} editSettings={editSettings} />
         </Grid>
 
         {props.player.activeItems.length > 0 ? (

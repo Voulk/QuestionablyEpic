@@ -20,6 +20,7 @@ class ItemSet {
   hardScore = 0;
   setSockets = 0;
   uniques = {};
+  effectList = {};
 
   // Enchant Breakdown consists of key: value combos where key is the slot, and the value is the *name* of the enchant.
   // We only use it for display purposes on the report end.

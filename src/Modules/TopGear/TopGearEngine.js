@@ -22,7 +22,7 @@ export function expensive(time) {
   return count;
 }
 
-export function runTopGear(itemList, wepCombos, player, contentType, baseHPS, currentLanguage) {
+export function runTopGear(itemList, wepCombos, player, contentType, baseHPS, currentLanguage, userSettings) {
   //console.log("WEP COMBOS: " + JSON.stringify(wepCombos));
   //console.log("CL::::" + currentLanguage);
   var t0 = performance.now();
@@ -47,7 +47,7 @@ export function runTopGear(itemList, wepCombos, player, contentType, baseHPS, cu
     */
 
   for (var i = 0; i < itemSets.length; i++) {
-    itemSets[i] = evalSet(itemSets[i], player, contentType, baseHPS);
+    itemSets[i] = evalSet(itemSets[i], player, contentType, baseHPS, userSettings);
   }
   itemSets = pruneItems(itemSets);
 
@@ -257,7 +257,7 @@ function sumScore(obj) {
 }
 
 // A true evaluation function on a set.
-function evalSet(itemSet, player, contentType, baseHPS) {
+function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
   // Get Base Stats
   let builtSet = itemSet.compileStats();
   let setStats = builtSet.setStats;

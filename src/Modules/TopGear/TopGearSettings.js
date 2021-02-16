@@ -3,6 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import { Accordion, Grid, AccordionDetails, AccordionSummary, Typography, Divider, TextField, Tooltip } from "@material-ui/core";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import { useTranslation } from "react-i18next";
+import { setBounds } from "../Engine/CONSTRAINTS";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -39,11 +40,16 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function TopGearSettingsAccordion() {
+export default function TopGearSettingsAccordion(props) {
   const classes = useStyles();
   const { t, i18n } = useTranslation();
   // Hymnal State
-  const [value, setValue] = useState(5);
+  const [hymnalValue, setHymnalValue] = useState(0);
+
+  const updateHymnal = (value) => {
+    props.editSettings("hymnalAllies", setBounds(value, 0, 4));
+    setHymnalValue(setBounds(value, 0, 4));
+  }
   // Free State
   const [value1, setValue1] = useState(5);
   // Free State
@@ -57,7 +63,7 @@ export default function TopGearSettingsAccordion() {
 
   return (
     <div className={classes.root}>
-      <Accordion defaultExpanded={false} disabled={true} elevation={0}>
+      <Accordion defaultExpanded={false} disabled={false} elevation={0}>
         <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1c-content" id="panel1c-header">
           <div className={classes.column}>
             <Typography className={classes.heading}>{t("Settings.SettingsTitle")}</Typography>
@@ -78,9 +84,9 @@ export default function TopGearSettingsAccordion() {
                   <TextField
                     label={t("Settings.Setting0TextFieldLabel")}
                     id="AlliesNumber"
-                    value={value}
+                    value={hymnalValue}
                     style={{ maxWidth: 70 }}
-                    onChange={(e) => setValue(e.target.value)}
+                    onChange={(e) => updateHymnal(e.target.value)}
                     variant="outlined"
                     size="small"
                     type="number"
