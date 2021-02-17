@@ -5,6 +5,10 @@ import React, { useState, useEffect } from "react";
 import { STATPERONEPERCENT, BASESTAT, STATDIMINISHINGRETURNS } from "../Engine/STAT";
 import { CONSTRAINTS } from "../Engine/CONSTRAINTS";
 import { convertPPMToUptime } from "../Engine/EffectFormulas/EffectUtilities";
+import Player from "../Player/Player";
+import CastModel from "../Player/CastModel";
+import { getEffectValue } from "../Engine/EffectFormulas/EffectEngine"
+
 // Most of our sets will fall into a bucket where totalling the individual stats is enough to tell us they aren't viable. By slicing these out in a preliminary phase,
 // we can run our full algorithm on far fewer items. The net benefit to the player is being able to include more items, with a quicker return.
 // This does run into some problems when it comes to set bonuses and could be re-evaluated at the time. The likely strat is to auto-include anything with a bonus, or to run
@@ -22,12 +26,31 @@ export function expensive(time) {
   return count;
 }
 
-export function runTopGear(itemList, wepCombos, player, contentType, baseHPS, currentLanguage, userSettings) {
+// Unfortunately we aren't able to pass objects through to our worker. This recreates our player object since we'll need it for effect formulas. 
+function setupPlayer(player, contentType, castModel) {
+
+  console.log(player);
+  let newPlayer = new Player(player.charName, player.spec, player.charID, player.region, player.realm, player.race, player.statWeights);
+  //newPlayer = Object.assign(newPlayer, player);
+  console.log("NEW PLAYER");
+  newPlayer.castModel[contentType] = new CastModel(newPlayer.getSpec(), contentType);
+  newPlayer.castModel[contentType] = Object.assign(newPlayer.castModel[contentType], castModel);
+
+
+  return newPlayer;
+
+}
+
+export function runTopGear(itemList, wepCombos, player, contentType, baseHPS, currentLanguage, userSettings, castModel) {
   //console.log("WEP COMBOS: " + JSON.stringify(wepCombos));
   //console.log("CL::::" + currentLanguage);
   var t0 = performance.now();
   // console.log("Running Top Gear");
   let count = 0;
+
+  const newPlayer = setupPlayer(player, contentType, castModel);
+  console.log(newPlayer);
+  console.log(newPlayer.getHPS(contentType));
 
   let itemSets = createSets(itemList, wepCombos);
   itemSets.sort((a, b) => (a.sumSoftScore < b.sumSoftScore ? 1 : -1));
@@ -47,7 +70,7 @@ export function runTopGear(itemList, wepCombos, player, contentType, baseHPS, cu
     */
 
   for (var i = 0; i < itemSets.length; i++) {
-    itemSets[i] = evalSet(itemSets[i], player, contentType, baseHPS, userSettings);
+    itemSets[i] = evalSet(itemSets[i], newPlayer, contentType, baseHPS, userSettings);
   }
   itemSets = pruneItems(itemSets);
 
@@ -263,6 +286,8 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
   let setStats = builtSet.setStats;
   let hardScore = 0;
 
+  console.log(itemSet);
+
   let enchants = {};
 
   let bonus_stats = {
@@ -329,6 +354,15 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
   enchants["Gems"] = highestWeight;
   //console.log("Sockets added : " + 16 * builtSet.setSockets + " to " + highestWeight);
 
+  let effectStats = [];
+  for (var x = 0; x < itemSet.effectList.length; x++) {
+    
+    console.log("EFF: " + JSON.stringify(itemSet.effectList[x]));
+    effectStats.push(getEffectValue(itemSet.effectList[x], player, contentType, 226));
+
+  }
+  console.log(JSON.stringify(effectStats));
+
   compileStats(setStats, bonus_stats); // Add the base stats on our gear together with enchants & gems.
   applyDiminishingReturns(setStats); // Apply Diminishing returns to our haul.
   addBaseStats(setStats, player.spec); // Add our base stats, which are immune to DR. This includes our base 5% crit, and whatever base mastery our spec has.
@@ -378,13 +412,11 @@ function getHighestWeight(player, contentType) {
 
 // Compiles stats & bonus stats into one array to which we can then apply DR etc. 
 function compileStats(stats, bonus_stats) {
-  console.log("Stats pre-compilation: " + JSON.stringify(stats));
-  console.log("Bonus Stats: " + JSON.stringify(bonus_stats));
 
   for (var stat in stats) {
     stats[stat] += stat in bonus_stats ? bonus_stats[stat] : 0;
   }
-  console.log("Stats post-compilation: " + JSON.stringify(stats));
+
   return stats
   
 }
@@ -401,7 +433,6 @@ export function applyDiminishingReturns(stats) {
   for (const [key, value] of Object.entries(stats)) {
     if (["crit", "haste", "mastery", "versatility", "leech"].includes(key)) {
 
-      console.log(key.toUpperCase())
       const DRBreakpoints = STATDIMINISHINGRETURNS[key.toUpperCase()];
   
       const baseStat = stats[key];

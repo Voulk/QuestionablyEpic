@@ -57,7 +57,6 @@ export default function CharacterHeaderButton(props) {
       currentCharacter.statWeights["Dungeon"].leech,
     ),
   ];
-  console.log(currentCharacter);
   return (
     <div>
       <Button disabled={true} aria-describedby={id} style={{ color: classColoursJS(currentCharacter.spec) }} onClick={handleClick}>

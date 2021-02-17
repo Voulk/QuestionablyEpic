@@ -168,7 +168,7 @@ export default function TopGear(props) {
       let baseHPS = props.player.getHPS(props.contentType);
       let strippedPlayer = JSON.parse(JSON.stringify(props.player));
       //console.log("player: " + JSON.stringify(props.player));
-      instance.runTopGear(itemList, wepCombos, strippedPlayer, props.contentType, baseHPS, currentLanguage, userSettings).then((result) => {
+      instance.runTopGear(itemList, wepCombos, strippedPlayer, props.contentType, baseHPS, currentLanguage, userSettings, JSON.stringify(props.player.castModel[props.contentType])).then((result) => {
         //console.log(`Loop returned`);
         apiSendTopGearSet(props.player, props.contentType, result.itemSet.hardScore, result.itemsCompared);
         props.setTopResult(result);
