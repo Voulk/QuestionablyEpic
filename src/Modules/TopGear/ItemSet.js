@@ -46,7 +46,7 @@ class ItemSet {
     let setStats = {
       intellect: 450, // TODO: 450
       haste: 0,
-      crit: 175,
+      crit: 0,
       mastery: 0,
       versatility: 0,
       leech: 0,

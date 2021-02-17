@@ -26,7 +26,7 @@ function TopGearReport(props) {
 
   useEffect(() => {
     async function setImg() {
-      const img = await apiGetPlayerImage(props.pl);
+      const img = await apiGetPlayerImage(props.player);
       setBackgroundImage(img);
     }
 
@@ -40,7 +40,7 @@ function TopGearReport(props) {
   };
 
   const classIcon = () => {
-    switch (props.pl.spec) {
+    switch (props.player.spec) {
       case "Holy Paladin":
         return require("../../Images/Classes/Paladin/icon-paladin.png").default;
         break;
@@ -185,7 +185,7 @@ function TopGearReport(props) {
                     <Grid container spacing={1} direction="row" justify="space-between">
                       <Grid item xs={4} style={{ paddingBottom: 8 }}>
                         <Grid container justify="flex-start">
-                          <TopSetStatsPanel statList={statList} spec={props.pl.spec} currentLanguage={currentLanguage} />
+                          <TopSetStatsPanel statList={statList} spec={props.player.spec} currentLanguage={currentLanguage} />
                         </Grid>
                       </Grid>
                       <Grid item xs={3} style={{ paddingBottom: 8, alignSelf: "flex-end" }}>
@@ -214,10 +214,10 @@ function TopGearReport(props) {
                                       display="inline"
                                       align="left"
                                       style={{
-                                        color: classColoursJS(props.pl.spec),
+                                        color: classColoursJS(props.player.spec),
                                       }}
                                     >
-                                      {props.pl.charName}
+                                      {props.player.charName}
                                     </Typography>
                                     <Divider />
                                   </Grid>
@@ -228,15 +228,15 @@ function TopGearReport(props) {
                                       display="inline"
                                       align="left"
                                       style={{
-                                        color: classColoursJS(props.pl.spec),
+                                        color: classColoursJS(props.player.spec),
                                       }}
                                     >
-                                      {props.pl.spec}
+                                      {props.player.spec}
                                     </Typography>
                                   </Grid>
                                   <Grid item xs={12}>
                                     <Typography variant="caption" wrap="nowrap" display="inline" align="left">
-                                      {props.pl.region}-{props.pl.realm}
+                                      {props.player.region}-{props.player.realm}
                                     </Typography>
                                   </Grid>
                                 </Grid>

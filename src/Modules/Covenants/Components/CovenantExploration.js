@@ -94,11 +94,11 @@ export default function CovenantExploration(props) {
   const classes = useStyles();
   const [tabvalue, setTabValue] = React.useState(0);
   const [soulbindValue, setSoulbindValue] = React.useState(0);
-  const [soulbindState, setSoulbindState] = React.useState(buildBonusStats(soulbindDB, props.pl, props.contentType));
+  const [soulbindState, setSoulbindState] = React.useState(buildBonusStats(soulbindDB, props.player, props.contentType));
 
   function updateConduitLevel(id, newLevel) {
-    props.pl.updateConduitLevel(id, newLevel);
-    props.updatePlayerChar(props.pl);
+    props.player.updateConduitLevel(id, newLevel);
+    props.updatePlayerChar(props.player);
   }
 
   function buildBonusStats(soulbindTraits, player, contentType) {
@@ -231,15 +231,15 @@ export default function CovenantExploration(props) {
             </Tabs>
 
             <TabPanel value={soulbindValue} index={0} style={{ display: "inline-flex" }}>
-              {buildSoulbind("Pelagos", props.pl, props.contentType, soulbindState, activateSoulbind, setConduitInSlot, updateConduitLevel)}
+              {buildSoulbind("Pelagos", props.player, props.contentType, soulbindState, activateSoulbind, setConduitInSlot, updateConduitLevel)}
             </TabPanel>
             <TabPanel value={soulbindValue} index={1} style={{ display: "inline-flex" }}>
-              {buildSoulbind("Kleia", props.pl, props.contentType, soulbindState, activateSoulbind, setConduitInSlot, updateConduitLevel)}
+              {buildSoulbind("Kleia", props.player, props.contentType, soulbindState, activateSoulbind, setConduitInSlot, updateConduitLevel)}
             </TabPanel>
             <TabPanel value={soulbindValue} index={2} style={{ display: "inline-flex" }}>
               {buildSoulbind(
                 "Mikanikos",
-                props.pl,
+                props.player,
                 props.contentType,
                 soulbindState,
                 activateSoulbind,
@@ -282,13 +282,13 @@ export default function CovenantExploration(props) {
             </Tabs>
 
             <TabPanel value={soulbindValue} index={0}>
-              {buildSoulbind("Niya", props.pl, props.contentType, soulbindState, activateSoulbind, setConduitInSlot, updateConduitLevel)}
+              {buildSoulbind("Niya", props.player, props.contentType, soulbindState, activateSoulbind, setConduitInSlot, updateConduitLevel)}
             </TabPanel>
             <TabPanel value={soulbindValue} index={1}>
-              {buildSoulbind("Dreamweaver", props.pl, props.contentType, soulbindState, activateSoulbind, setConduitInSlot, updateConduitLevel)}
+              {buildSoulbind("Dreamweaver", props.player, props.contentType, soulbindState, activateSoulbind, setConduitInSlot, updateConduitLevel)}
             </TabPanel>
             <TabPanel value={soulbindValue} index={2}>
-              {buildSoulbind("Korayn", props.pl, props.contentType, soulbindState, activateSoulbind, setConduitInSlot, updateConduitLevel)}
+              {buildSoulbind("Korayn", props.player, props.contentType, soulbindState, activateSoulbind, setConduitInSlot, updateConduitLevel)}
             </TabPanel>
           </div>
         </TabPanel>
@@ -325,13 +325,13 @@ export default function CovenantExploration(props) {
             </Tabs>
 
             <TabPanel value={soulbindValue} index={0}>
-              {buildSoulbind("Nadjia", props.pl, props.contentType, soulbindState, activateSoulbind, setConduitInSlot, updateConduitLevel)}
+              {buildSoulbind("Nadjia", props.player, props.contentType, soulbindState, activateSoulbind, setConduitInSlot, updateConduitLevel)}
             </TabPanel>
             <TabPanel value={soulbindValue} index={1}>
-              {buildSoulbind("Theotar", props.pl, props.contentType, soulbindState, activateSoulbind, setConduitInSlot, updateConduitLevel)}
+              {buildSoulbind("Theotar", props.player, props.contentType, soulbindState, activateSoulbind, setConduitInSlot, updateConduitLevel)}
             </TabPanel>
             <TabPanel value={soulbindValue} index={2}>
-              {buildSoulbind("Draven", props.pl, props.contentType, soulbindState, activateSoulbind, setConduitInSlot, updateConduitLevel)}
+              {buildSoulbind("Draven", props.player, props.contentType, soulbindState, activateSoulbind, setConduitInSlot, updateConduitLevel)}
             </TabPanel>
           </div>
         </TabPanel>
@@ -368,13 +368,13 @@ export default function CovenantExploration(props) {
             </Tabs>
 
             <TabPanel value={soulbindValue} index={0}>
-              {buildSoulbind("Marileth", props.pl, props.contentType, soulbindState, activateSoulbind, setConduitInSlot, updateConduitLevel)}
+              {buildSoulbind("Marileth", props.player, props.contentType, soulbindState, activateSoulbind, setConduitInSlot, updateConduitLevel)}
             </TabPanel>
             <TabPanel value={soulbindValue} index={1}>
-              {buildSoulbind("Emeni", props.pl, props.contentType, soulbindState, activateSoulbind, setConduitInSlot, updateConduitLevel)}
+              {buildSoulbind("Emeni", props.player, props.contentType, soulbindState, activateSoulbind, setConduitInSlot, updateConduitLevel)}
             </TabPanel>
             <TabPanel value={soulbindValue} index={2}>
-              {buildSoulbind("Heirmir", props.pl, props.contentType, soulbindState, activateSoulbind, setConduitInSlot, updateConduitLevel)}
+              {buildSoulbind("Heirmir", props.player, props.contentType, soulbindState, activateSoulbind, setConduitInSlot, updateConduitLevel)}
             </TabPanel>
           </div>
         </TabPanel>

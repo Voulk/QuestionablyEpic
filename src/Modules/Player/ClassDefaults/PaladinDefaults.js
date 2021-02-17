@@ -33,7 +33,8 @@ export const paladinDefaultSpecialQueries = (contentType) => {
         oneMinute: 1.35,
         twoMinutes: 1.12,
         threeMinutes: 1,
-      }
+      },
+      HoldYourGroundUptime: 0.4
     };
   } else if (contentType === "Dungeon") {
     specialQueries = {
@@ -43,7 +44,8 @@ export const paladinDefaultSpecialQueries = (contentType) => {
         oneMinute: 1.65,
         twoMinutes: 1.15,
         threeMinutes: 1,
-      }
+      },
+      HoldYourGroundUptime: 0.35
     };
   } else {
     console.error("Unknown Content Type");

@@ -59,27 +59,32 @@ export const getDruidLegendary = (effectName, player, contentType) => {
   } else if (name === "The Dark Titans Lesson" || name === "The Dark Titan's Lesson") {
     // Do Math
 
-    let percentClearcastsUsed = 0.75;
-    let secondLifebloomUptime = 0.8;
-    let freeClearcasts = 60 * secondLifebloomUptime * player.getStatPerc("Haste") * 0.04;
-    let oneRegrowth = player.getSingleCast(IDREGROWTH, contentType, "hits");
-    let hps_clearcasting = (oneRegrowth * freeClearcasts * percentClearcastsUsed) / 60;
+    const percentClearcastsUsed = 0.75;
+    const secondLifebloomUptime = 0.8;
+    const freeClearcasts = 60 * secondLifebloomUptime * player.getStatPerc("Haste") * 0.04;
+    const oneRegrowth = player.getSingleCast(IDREGROWTH, contentType, "hits");
+    const hps_clearcasting = (oneRegrowth * freeClearcasts * percentClearcastsUsed) / 60;
     // --
 
     // Lifebloom is a more efficient spell than Rejuv so we can factor in the increased healing we get from the cast.
-    let oneRejuv = player.getSingleCast(IDREJUV, contentType);
-    let oneLifebloom = player.getSingleCast(IDLIFEBLOOM, contentType);
-    let hps_betterCast = (oneLifebloom - oneRejuv) / 15;
+    const oneRejuv = player.getSingleCast(IDREJUV, contentType);
+    const oneLifebloom = player.getSingleCast(IDLIFEBLOOM, contentType);
+    const hps_betterCast = (oneLifebloom - oneRejuv) / 15;
 
-    // Photosynthesis... (TODO)
+    // Photosynthesis. Dungeon only, when we can pull talents from SimC strings we'll make this conditional.
+    const oneBloom = 1.15 * 0.9 * player.getStatMultiplier("CRITVERS") * player.getStatPerc("Mastery") * player.getInt();
+    const freeBloomsPerSec = (1 + 0.5 + 0.33) * player.getStatPerc("Haste") * 0.04;
+    const expectedOverhealing = 0.3;
+    const hps_phosy = contentType === "Raid" ? 0 : (oneBloom * freeBloomsPerSec * (1 - expectedOverhealing));
+
 
     // 10% Lifebloom Penalty
-    let lifebloomHPS = player.getSpellHPS(IDLIFEBLOOM, contentType);
-    let deduction = lifebloomHPS * 0.1;
+    const lifebloomHPS = player.getSpellHPS(IDLIFEBLOOM, contentType);
+    const deduction = lifebloomHPS * 0.1;
 
-    console.log("saew" + hps_clearcasting + ". " + oneRegrowth + ". " + freeClearcasts + " " + hps_betterCast);
+    //console.log("saew" + hps_clearcasting + ". " + oneRegrowth + ". " + freeClearcasts + " " + hps_betterCast + ". Phosy " + hps_phosy);
 
-    bonus_stats.hps = Math.round(hps_betterCast + hps_clearcasting - deduction);
+    bonus_stats.hps = Math.round(hps_betterCast + hps_phosy + hps_clearcasting - deduction);
   }
 
   // Consider building in support for the conduit via SimC grab or something similar.
