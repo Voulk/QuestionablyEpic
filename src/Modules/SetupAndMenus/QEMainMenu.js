@@ -61,11 +61,30 @@ export default function QEMainMenu(props) {
   const characterCount = props.allChars.getAllChar().length;
   const patron = ["Diamond", "Gold", "Rolls Royce", "Sapphire"].includes(props.patronStatus);
 
-  const urls = [
+  const links = [
     {
+      image: "https://questionablyepic.com/wp-content/uploads/2020/11/Castle-Nathria-300x250.jpg",
+      title: "Castle Nathria Ramp Guide I – Discipline",
       url: "https://questionablyepic.com/castle-nathria-ramps/",
-      relevantClass: "test",
-      somethingElse: "test2",
+      date: "January 27, 2021",
+      specs: ["Priest"],
+      blurb: "Castle Nathria opens Shadowlands with a fantastic ten boss raid in which Disc Priest reigns...",
+    },
+    {
+      image: "https://questionablyepic.com/wp-content/uploads/2021/01/Rising-Mist-in-Mythic-300x250.jpg",
+      title: "The Fistweaving Compendium – Mythic+",
+      url: "https://questionablyepic.com/fistweaving-dungeon-compendium/",
+      date: "January 23, 2021",
+      specs: ["Monk"],
+      blurb: "The following guide was written by Sweggles from Vesper on Area 52...",
+    },
+    {
+      image: "https://questionablyepic.com/wp-content/uploads/2021/01/Rising-Mist-vs-Upwelling-300x250.jpg",
+      title: "The Fistweaving Compendium – Raid",
+      url: "https://questionablyepic.com/fistweaving-raid-compendium/",
+      date: "January 18, 2021",
+      specs: ["Monk"],
+      blurb: "The following guide was written by Sweggles from Vesper on Area 52...",
     },
   ];
 
@@ -167,19 +186,20 @@ export default function QEMainMenu(props) {
               {/* // TODO Translations and reword */}
               Class Related Links
             </Typography>
-            <Typography style={{ color: "white", marginBottom: "10px", fontStyle: "italic" }} variant="body2" align="center">
+            {/* <Typography style={{ color: "white", fontStyle: "italic" }} variant="body2" align="center">
               Some Links Relevant to the Class
-            </Typography>
+            </Typography> */}
           </Grid>
-          {urls.map((key) => (
-            <ArticleCard url={key.url} />
+          {/* add a filter here for the players class */}
+          {links.map((key) => (
+            <ArticleCard url={key.url} title={key.title} image={key.image} date={key.date} blurb={key.blurb} />
           ))}
         </Grid>
-        {/* //Disabled Changelog Button */}
-        {/* <Changelog /> */}
+
         <p className="headers" style={{ fontSize: "12px" }}>
           QE Live 9.0 Update 22. Last Updated 2 February.
         </p>
+
       </div>
     </div>
   );
