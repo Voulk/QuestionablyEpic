@@ -98,7 +98,7 @@ export const trinket_data = [
         table: -7,
         duration: 30,
         stacks: 2, // You get 10s of one stack, 10 of two, then 10 of three.
-        multiplier: 1, // Every ally that wears it in your party gives a 5% increase. Not implemented for now, but add to Settings.
+        multiplier: 0.05, // Every ally that wears it in your party gives a 5% increase. Not implemented for now, but add to Settings.
         ppm: 1,
       },
     ],

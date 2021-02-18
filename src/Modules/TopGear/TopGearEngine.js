@@ -355,13 +355,16 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
   //console.log("Sockets added : " + 16 * builtSet.setSockets + " to " + highestWeight);
 
   let effectStats = [];
+  effectStats.push(bonus_stats);
   for (var x = 0; x < itemSet.effectList.length; x++) {
     
     console.log("EFF: " + JSON.stringify(itemSet.effectList[x]));
-    effectStats.push(getEffectValue(itemSet.effectList[x], player, contentType, 226));
+    effectStats.push(getEffectValue(itemSet.effectList[x], player, contentType, itemSet.effectList[x].level, userSettings));
 
   }
-  console.log(JSON.stringify(effectStats));
+
+  bonus_stats = mergeBonusStats(effectStats);
+  console.log(JSON.stringify(bonus_stats));
 
   compileStats(setStats, bonus_stats); // Add the base stats on our gear together with enchants & gems.
   applyDiminishingReturns(setStats); // Apply Diminishing returns to our haul.
@@ -392,6 +395,30 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
   builtSet.setStats = setStats;
   builtSet.enchantBreakdown = enchants;
   return builtSet; // Temp
+}
+
+function mergeStat(stats, statName) {
+  return stats.reduce(function(a, b) {
+    if (!isNaN(b[statName])) return a + b[statName]
+    else return a
+  }, 0)
+}
+
+// Merges together an array of bonus_stats.
+function mergeBonusStats(stats) {
+  const val = {
+      intellect: mergeStat(stats, 'intellect'),
+      haste: mergeStat(stats, 'haste'),
+      crit: mergeStat(stats, 'crit'),
+      mastery: mergeStat(stats, 'mastery'),
+      versatility: mergeStat(stats, 'versatility'),
+      hps: (mergeStat(stats, 'hps') + mergeStat(stats, 'HPS')),
+      dps: mergeStat(stats, 'dps'),
+
+    }
+
+  return val;
+
 }
 
 //

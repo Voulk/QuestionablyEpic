@@ -4,9 +4,9 @@ import { STAT } from "../../STAT";
 import SPEC from "../../SPECS";
 
 // TODO: Write proper comments. See Lingering Sunmote for an example.
-export function getTrinketEffect(effectName, player, contentType, itemLevel) {
+export function getTrinketEffect(effectName, player, contentType, itemLevel, userSettings = {}) {
   let bonus_stats = {};
-  console.log("Getting trinket effect: " + effectName);
+  console.log("Getting trinket effect: " + effectName + " with user settings: " + JSON.stringify(userSettings));
 
   // Trinket Data holds a trinkets actual power values. Formulas here, data there.
   let activeTrinket = trinket_data.find((trinket) => trinket.name === effectName);
@@ -64,8 +64,8 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel) {
   } else if (effectName === "Cabalist's Hymnal") {
     // Test
     let effect = activeTrinket.effects[0];
-
-    bonus_stats.crit = (getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.duration * effect.stacks) / 60;
+    const multiplier = 1 + effect.multiplier * (userSettings.hymnalAllies || 0)
+    bonus_stats.crit = (getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.duration * effect.stacks * multiplier) / 60;
 
   } else if (effectName === "Macabre Sheet Music") {
     // Test
