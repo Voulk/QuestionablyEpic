@@ -64,7 +64,7 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel, use
   } else if (effectName === "Cabalist's Hymnal") {
     // Test
     let effect = activeTrinket.effects[0];
-    const multiplier = 1 + effect.multiplier * (userSettings.hymnalAllies || 0)
+    const multiplier = 1 + effect.multiplier * (userSettings.hymnalAllies || 0);
     bonus_stats.crit = (getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.duration * effect.stacks * multiplier) / 60;
 
   } else if (effectName === "Macabre Sheet Music") {
@@ -81,8 +81,9 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel, use
 
   } else if (effectName === "Overflowing Anima Cage") {
     let effect = activeTrinket.effects[0];
+    const groupMultiplier = userSettings.includeGroupBenefits ? effect.targets[contentType] : 1;
 
-    bonus_stats.crit = (getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.duration * effect.multiplier) / effect.cooldown;
+    bonus_stats.crit = (getProcessedValue(effect.coefficient, effect.table, itemLevel, effect.efficiency) * groupMultiplier * effect.duration) / effect.cooldown;
 
   } else if (effectName === "Vial of Spectral Essence") {
     let effect = activeTrinket.effects[0];

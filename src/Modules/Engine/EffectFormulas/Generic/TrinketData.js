@@ -133,7 +133,8 @@ export const trinket_data = [
         coefficient: 0.985059,
         table: -7,
         duration: 15,
-        multiplier: 1, // Up to four allies do benefit from standing with you. Not included in the score for now.
+        efficiency: 0.5,
+        targets: {Raid: 5, Dungeon: 3.1}, // Up to four allies do benefit from standing with you. Not included in the score for now.
         cooldown: 150,
       },
     ],
