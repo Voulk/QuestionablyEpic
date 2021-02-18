@@ -261,7 +261,7 @@ export function getSoulbindFormula(effectID, player, contentType) {
   else if (effectID === 326572) {
     // TODO, work out if you can collect stacks when it's on cooldown, or if the 10 crits have to take place after the cooldown.
     // The uptime won't change much regardless but it'll be of slight impact.
-    let uptime = 10 / 68;
+    let uptime = 10 / 81;
 
     bonus_stats.Crit = STATPERONEPERCENT.CRIT * 18 * uptime;
   }

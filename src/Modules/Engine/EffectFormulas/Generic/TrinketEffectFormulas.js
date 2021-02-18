@@ -6,7 +6,7 @@ import SPEC from "../../SPECS";
 // TODO: Write proper comments. See Lingering Sunmote for an example.
 export function getTrinketEffect(effectName, player, contentType, itemLevel, userSettings = {}) {
   let bonus_stats = {};
-  console.log("Getting trinket effect: " + effectName + " with user settings: " + JSON.stringify(userSettings));
+  //console.log("Getting trinket effect: " + effectName + " with user settings: " + JSON.stringify(userSettings));
 
   // Trinket Data holds a trinkets actual power values. Formulas here, data there.
   let activeTrinket = trinket_data.find((trinket) => trinket.name === effectName);
@@ -113,11 +113,13 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel, use
   } else if (effectName === "Boon of the Archon") {
     let heal_effect = activeTrinket.effects[1];
     let vers_effect = activeTrinket.effects[0];
+    const groupMultiplier = userSettings.includeGroupBenefits ? vers_effect.targets : 1;
+    console.log(convertPPMToUptime(vers_effect.ppm * player.getStatPerc("Haste"), vers_effect.duration));
 
     bonus_stats.hps =
       (getProcessedValue(heal_effect.coefficient, heal_effect.table, itemLevel, heal_effect.efficiency) * heal_effect.ppm * 4 * player.getStatMultiplier("CRITVERS")) / 60;
     bonus_stats.versatility =
-      getProcessedValue(vers_effect.coefficient, vers_effect.table, itemLevel) * convertPPMToUptime(vers_effect.ppm * player.getStatPerc("Haste"), vers_effect.duration);
+      Math.round(getProcessedValue(vers_effect.coefficient, vers_effect.table, itemLevel)) * vers_effect.efficiency * groupMultiplier * convertPPMToUptime(vers_effect.ppm * player.getStatPerc("Haste"), vers_effect.duration);
 
   } else if (effectName === "Spiritual Alchemy Stone") {
     let effect = activeTrinket.effects[0];
