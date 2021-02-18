@@ -1,6 +1,6 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { Card, CardActionArea, CardActions, CardContent, CardMedia, Button, Typography, Grid } from "@material-ui/core/";
+import { Card, CardActionArea, CardActions, CardContent, CardMedia, Button, Typography, Grid, Divider } from "@material-ui/core/";
 import test from "../../Images/Bosses/MythicPlus.png";
 
 const useStyles = makeStyles({
@@ -35,17 +35,19 @@ export default function ArticleCard(props) {
       <Card className={classes.root}>
         <CardActionArea onClick={() => openURL(props.url)}>
           <CardMedia className={classes.media} image={props.image} title={props.title}>
-            <Typography style={{ position: "absolute", right: 10, top: 2 }} variant="caption" component="h2">
-              {props.date}
-            </Typography>
-            <CardContent>
-              <Typography gutterBottom style={{ fontSize: 16 }} variant="h6" component="h2">
+            <CardContent style={{ paddingTop: 24 }}>
+              <Typography align="center" variant="caption" style={{ textShadow: "black -1px 1px 1px" }} component="h2">
+                {props.date}
+              </Typography>
+              <Divider style={{ height: 1, backgroundColor: "#fff", boxShadow: "-1px 1px 20px 1px black" }} />
+
+              <Typography align="center" style={{ textShadow: "black -1px 1px 1px", fontSize: 16 }} variant="h6" component="h2">
                 {props.title}
               </Typography>
 
-              <Typography style={{ fontSize: 12 }} variant="body2" component="p">
+              {/* <Typography style={{ fontSize: 12 }} variant="body2" component="p">
                 {truncate(props.blurb, 10)}
-              </Typography>
+              </Typography> */}
             </CardContent>
           </CardMedia>
         </CardActionArea>
