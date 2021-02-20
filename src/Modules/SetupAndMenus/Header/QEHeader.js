@@ -110,7 +110,7 @@ export default function QEHeader(props) {
                     allChars={props.allChars}
                   />
                 </Grid>
-                {(props.allChars && props.allChars.length) > 0 ? <Grid item>
+                {(props.allChars && props.allChars.allChar.length) > 0 ? <Grid item>
                   <CharacterHeaderButton player={props.pl} allChars={props.allChars} />
                 </Grid> : ""}
                 <Grid item>
