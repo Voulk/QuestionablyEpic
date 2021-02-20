@@ -25,7 +25,7 @@ function TopGearReport(props) {
   };
 
   const itemQuality = (itemLevel, effect) => {
-    const isLegendary = effect === "spec legendary";
+    const isLegendary = effect.type === "spec legendary";
 
     if (isLegendary) return "#ff8000";
     else if (itemLevel >= 183) return "#a73fee";
@@ -274,7 +274,8 @@ function TopGearReport(props) {
                 <Grid item xs={12}>
                   <Grid item container spacing={0}>
                     {differentials.map((key) => (
-                      <Grid item xs={2}>
+                      <Grid item xs={12} sm={6} md={4} lg={3} xl={3}>
+                        {console.log(key)}
                         <Paper
                           elevation={0}
                           variant="outlined"
@@ -283,12 +284,12 @@ function TopGearReport(props) {
                             backgroundColor: "rgba(34, 34, 34, 0.52)",
                           }}
                         >
-                          <Grid item container direction="row"  alignItems="center" xs={12} sm={12} md={12} lg={6} xl={12}>
+                          <Grid item container direction="row" alignItems="center" xs={12} sm={12} md={12} lg={12} xl={12}>
                             <Grid item container xs={10} spacing={1}>
                               {key.items.map((item) => (
                                 <Grid item>
                                   <a data-wowhead={"item=" + item.id + "&" + "ilvl=" + item.level + "&bonus=" + item.bonusIDS + "&domain=" + currentLanguage}>
-                                    <div className="container-ItemCards" style={{height: 42}}>
+                                    <div className="container-ItemCards" style={{ height: 42 }}>
                                       <img
                                         alt="img"
                                         width={40}
@@ -307,18 +308,37 @@ function TopGearReport(props) {
                                 </Grid>
                               ))}
                             </Grid>
-                            <Grid item xs={2}>
-                              <Typography
-                                variant="subtitle1" // h6 formerly
-                                wrap="nowrap"
-                                display="inline"
-                                align="center"
-                                style={{
-                                  color: "#f20d0d",
-                                }}
-                              >
-                                {roundTo(key.scoreDifference, 2) + "%"}
-                              </Typography>
+                            <Grid item container justify="flex-end" xs={2}>
+                              <Grid item xs={12}>
+                                <Typography
+                                  variant="caption" // h6 formerly
+                                  display="inline"
+                                  align="right"
+                                  style={{
+                                    color: "#f20d0d",
+                                    whiteSpace: "nowrap",
+                                    float: "right"
+                                  }}
+                                >
+                                  {roundTo(key.scoreDifference, 2) + "%"}
+                                </Typography>
+                              </Grid>
+                              <Grid item xs={12}>
+                                <Typography
+                                  variant="caption" // h6 formerly
+                                  wrap="nowrap"
+                                  display="inline"
+                                  align="right"
+                                  style={{
+                                    color: "#f20d0d",
+                                    whiteSpace: "nowrap",
+                                    float: "right",
+                                    fontSize: 12
+                                  }}
+                                >
+                                  -123 HPS
+                                </Typography>
+                              </Grid>
                             </Grid>
                           </Grid>
                         </Paper>
