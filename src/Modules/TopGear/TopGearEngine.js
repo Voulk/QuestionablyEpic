@@ -364,7 +364,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
   }
 
   bonus_stats = mergeBonusStats(effectStats);
-  console.log(JSON.stringify(bonus_stats));
+  
 
   compileStats(setStats, bonus_stats); // Add the base stats on our gear together with enchants & gems.
   applyDiminishingReturns(setStats); // Apply Diminishing returns to our haul.
@@ -389,6 +389,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
     }
   }
 
+  //console.log(JSON.stringify(setStats));
   //console.log("Soft Score: " + builtSet.sumSoftScore + ". Hard Score: " + hardScore);
   //console.log("Enchants: " + JSON.stringify(enchants));
   builtSet.hardScore = Math.round(1000 * hardScore) / 1000;
