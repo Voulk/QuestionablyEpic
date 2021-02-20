@@ -2,7 +2,7 @@ import React, { useEffect, forwardRef } from "react";
 import MaterialTable, { MTableToolbar, MTableBody, MTableHeader } from "material-table";
 import ClassCooldownMenuItems from "../Menus/ClassCooldownMenuItems";
 import { AddBox, ArrowDownward, Check, Clear, DeleteOutline, Edit, FilterList, Search } from "@material-ui/icons";
-import { Button, TextField, InputLabel, FormControl, Grow, MenuItem, Divider, Paper, Select, Grid } from "@material-ui/core";
+import { Button, TextField, InputLabel, FormControl, Grow, MenuItem, Divider, Paper, Select, Grid, Typography } from "@material-ui/core";
 import { ThemeProvider, createMuiTheme, makeStyles } from "@material-ui/core/styles";
 import moment from "moment";
 import { healerCooldownsDetailed, raidList, bossList, bossAbilities } from "../Data/Data";
@@ -191,7 +191,7 @@ export default function CooldownPlanner(props) {
         lineHeight: "normal",
       },
       render: (rowData) => (
-        <div style={{ width: 105, display: "inline-flex" }}>
+        <div style={{ width: 105, display: "inline-flex", alignItems: "center" }}>
           <div>
             <a data-wowhead={"spell=" + rowData.bossAbility + "&domain=" + currentLanguage}>
               {bossAbilityIcons(rowData.bossAbility, {
@@ -203,7 +203,9 @@ export default function CooldownPlanner(props) {
               })}
             </a>
           </div>
-          <div>{t("CooldownPlanner.BossAbilities." + rowData.bossAbility)}</div>
+          <Typography align="center" style={{ fontSize: 12, lineHeight: "normal", width: "100%" }}>
+            {t("CooldownPlanner.BossAbilities." + rowData.bossAbility)}
+          </Typography>
         </div>
       ),
       editComponent: (props) => (
@@ -239,6 +241,57 @@ export default function CooldownPlanner(props) {
     /* -------------------------------------------------------------------------- */
     /*                               Cooldown Set 0                               */
     /* -------------------------------------------------------------------------- */
+
+    {
+      // The Cast Time Column. This is where the time the user expects the cooldown to be cast.
+      title: t("CooldownPlanner.TableLabels.CastTimeLabel"),
+      field: "cooldownTime",
+      width: "1%",
+      cellStyle: {
+        whiteSpace: "nowrap",
+        borderRight: "1px solid rgb(200, 176, 84, 0.3)",
+        fontSize: 12,
+        textAlign: "center",
+      },
+      // Times currently must be entered in the 00:00 format.
+      // Currently due to sorting, the user must either use a time, or label the cooldowns, 1, 2, 3, 4 etc to keep them in order.
+      // This can probably be handled a lot better than how it handled currently.
+      editComponent: (props) => (
+        <TextField
+          error={RegExp("^([01]?[0-9]|2[0-3]):[0-5][0-9]$").test(props.value) || props.value === undefined ? false : true}
+          inputProps={{
+            pattern: "^([01]?[0-9]|2[0-3]):[0-5][0-9]$",
+          }}
+          size="small"
+          variant="outlined"
+          id="standard-basic"
+          label={t("CooldownPlanner.TableLabels.CastTimeLabel")}
+          placeholder="00:00"
+          value={props.value}
+          style={{ whiteSpace: "nowrap", width: "100%", marginTop: 6 }}
+          onChange={(e) => props.onChange(e.target.value)}
+        />
+      ),
+    },
+    {
+      // Render only, should the user when the cooldown will be available again to be used.
+      title: t("CooldownPlanner.TableLabels.OffCooldownLabel"),
+      width: "1%",
+      hidden: true,
+      cellStyle: {
+        whiteSpace: "nowrap",
+        borderRight: "2px solid #c8b054",
+        textAlign: "center",
+        fontSize: 12,
+      },
+      render: (rowData) => (
+        <div>
+          {rowData.Cooldown === "" || rowData.Cooldown === undefined
+            ? ""
+            : timeCheck(rowData.cooldownTime === "" || rowData.cooldownTime === undefined ? rowData.time : rowData.cooldownTime, rowData.Cooldown)}
+        </div>
+      ),
+    },
     {
       title: t("Name") + " 1",
       field: "name",
@@ -252,7 +305,7 @@ export default function CooldownPlanner(props) {
       // This renders the healer name outside of Edit Mode.
       render: (rowData) => (
         <div style={{ color: classColoursJS(rowData.class) }}>
-          {rowData.class === undefined ? "" : classIcons(rowData.class, { height: 30, width: 30, padding: "0px 5px 0px 0px", verticalAlign: "middle" })}
+          {/* {rowData.class === undefined ? "" : classIcons(rowData.class, { height: 30, width: 30, padding: "0px 5px 0px 0px", verticalAlign: "middle" })} */}
           {rowData.name}
         </div>
       ),
@@ -334,13 +387,13 @@ export default function CooldownPlanner(props) {
       width: "8%",
       cellStyle: {
         // whiteSpace: "nowrap",
-        borderRight: "1px solid rgb(200, 176, 84, 0.3)",
+        borderRight: "2px solid #c8b054",
         fontSize: 12,
         lineHeight: "normal",
       },
       // Renders the Ability name that was set for this row.
       render: (rowData) => (
-        <div style={{ minWidth: 105, display: "inline-flex" }}>
+        <div style={{ width: 105, display: "inline-flex", alignItems: "center" }}>
           <div>
             {abilityIcons(rowData.Cooldown, {
               height: 30,
@@ -349,7 +402,9 @@ export default function CooldownPlanner(props) {
               verticalAlign: "middle",
             })}
           </div>
-          <div>{t("CooldownPlanner.ClassAbilities." + rowData.Cooldown)}</div>
+          <Typography align="center" style={{ fontSize: 12, lineHeight: "normal", width: "100%" }}>
+            {t("CooldownPlanner.ClassAbilities." + rowData.Cooldown)}
+          </Typography>
         </div>
       ),
       // The Edit Mode Component. Generated based off the healers class.
@@ -373,10 +428,15 @@ export default function CooldownPlanner(props) {
         );
       },
     },
+
+    /* -------------------------------------------------------------------------- */
+    /*                               Cooldown Set 1                               */
+    /* -------------------------------------------------------------------------- */
+
     {
       // The Cast Time Column. This is where the time the user expects the cooldown to be cast.
       title: t("CooldownPlanner.TableLabels.CastTimeLabel"),
-      field: "cooldownTime",
+      field: "cooldownTime1",
       width: "1%",
       cellStyle: {
         whiteSpace: "nowrap",
@@ -408,6 +468,7 @@ export default function CooldownPlanner(props) {
       // Render only, should the user when the cooldown will be available again to be used.
       title: t("CooldownPlanner.TableLabels.OffCooldownLabel"),
       width: "1%",
+      hidden: true,
       cellStyle: {
         whiteSpace: "nowrap",
         borderRight: "2px solid #c8b054",
@@ -416,16 +477,12 @@ export default function CooldownPlanner(props) {
       },
       render: (rowData) => (
         <div>
-          {rowData.Cooldown === "" || rowData.Cooldown === undefined
+          {rowData.Cooldown1 === "" || rowData.Cooldown1 === undefined
             ? ""
-            : timeCheck(rowData.cooldownTime === "" || rowData.cooldownTime === undefined ? rowData.time : rowData.cooldownTime, rowData.Cooldown)}
+            : timeCheck(rowData.cooldownTime1 === "" || rowData.cooldownTime1 === undefined ? rowData.time : rowData.cooldownTime1, rowData.Cooldown1)}
         </div>
       ),
     },
-
-    /* -------------------------------------------------------------------------- */
-    /*                               Cooldown Set 1                               */
-    /* -------------------------------------------------------------------------- */
     {
       title: t("Name 2"),
       field: "name1",
@@ -439,7 +496,7 @@ export default function CooldownPlanner(props) {
       // This renders the healer name outside of Edit Mode.
       render: (rowData) => (
         <div style={{ color: classColoursJS(rowData.class1) }}>
-          {rowData.class1 === undefined ? "" : classIcons(rowData.class1, { height: 30, width: 30, padding: "0px 5px 0px 0px", verticalAlign: "middle" })}
+          {/* {rowData.class1 === undefined ? "" : classIcons(rowData.class1, { height: 30, width: 30, padding: "0px 5px 0px 0px", verticalAlign: "middle" })} */}
           {rowData.name1}
         </div>
       ),
@@ -522,13 +579,13 @@ export default function CooldownPlanner(props) {
       width: "8%",
       cellStyle: {
         // whiteSpace: "nowrap",
-        borderRight: "1px solid rgb(200, 176, 84, 0.3)",
+        borderRight: "2px solid #c8b054",
         fontSize: 12,
         lineHeight: "normal",
       },
       // Renders the Ability name that was set for this row.
       render: (rowData) => (
-        <div style={{ width: 105, display: "inline-flex" }}>
+        <div style={{ width: 105, display: "inline-flex", alignItems: "center" }}>
           <div>
             {abilityIcons(rowData.Cooldown1, {
               height: 30,
@@ -537,7 +594,9 @@ export default function CooldownPlanner(props) {
               verticalAlign: "middle",
             })}
           </div>
-          <div>{t("CooldownPlanner.ClassAbilities." + rowData.Cooldown1)}</div>
+          <Typography align="center" style={{ fontSize: 12, lineHeight: "normal" }}>
+            {t("CooldownPlanner.ClassAbilities." + rowData.Cooldown1)}
+          </Typography>
         </div>
       ),
       // The Edit Mode Component. Generated based off the healers class.
@@ -561,10 +620,15 @@ export default function CooldownPlanner(props) {
         );
       },
     },
+
+    /* -------------------------------------------------------------------------- */
+    /*                               Cooldown Set 2                               */
+    /* -------------------------------------------------------------------------- */
+
     {
       // The Cast Time Column. This is where the time the user expects the cooldown to be cast.
       title: t("CooldownPlanner.TableLabels.CastTimeLabel"),
-      field: "cooldownTime1",
+      field: "cooldownTime2",
       width: "1%",
       cellStyle: {
         whiteSpace: "nowrap",
@@ -596,6 +660,7 @@ export default function CooldownPlanner(props) {
       // Render only, should the user when the cooldown will be available again to be used.
       title: t("CooldownPlanner.TableLabels.OffCooldownLabel"),
       width: "1%",
+      hidden: true,
       cellStyle: {
         whiteSpace: "nowrap",
         borderRight: "2px solid #c8b054",
@@ -604,16 +669,12 @@ export default function CooldownPlanner(props) {
       },
       render: (rowData) => (
         <div>
-          {rowData.Cooldown1 === "" || rowData.Cooldown1 === undefined
+          {rowData.Cooldown2 === "" || rowData.Cooldown2 === undefined
             ? ""
-            : timeCheck(rowData.cooldownTime1 === "" || rowData.cooldownTime1 === undefined ? rowData.time : rowData.cooldownTime1, rowData.Cooldown1)}
+            : timeCheck(rowData.cooldownTime2 === "" || rowData.cooldownTime2 === undefined ? rowData.time : rowData.cooldownTime2, rowData.Cooldown2)}
         </div>
       ),
     },
-
-    /* -------------------------------------------------------------------------- */
-    /*                               Cooldown Set 2                               */
-    /* -------------------------------------------------------------------------- */
     {
       title: t("Name") + " 3",
       field: "name2",
@@ -627,7 +688,7 @@ export default function CooldownPlanner(props) {
       // This renders the healer name outside of Edit Mode.
       render: (rowData) => (
         <div style={{ color: classColoursJS(rowData.class2) }}>
-          {rowData.class2 === undefined ? "" : classIcons(rowData.class2, { height: 30, width: 30, padding: "0px 5px 0px 0px", verticalAlign: "middle" })}
+          {/* {rowData.class2 === undefined ? "" : classIcons(rowData.class2, { height: 30, width: 30, padding: "0px 5px 0px 0px", verticalAlign: "middle" })} */}
           {rowData.name2}
         </div>
       ),
@@ -710,13 +771,13 @@ export default function CooldownPlanner(props) {
       width: "8%",
       cellStyle: {
         // whiteSpace: "nowrap",
-        borderRight: "1px solid rgb(200, 176, 84, 0.3)",
+        borderRight: "2px solid #c8b054",
         fontSize: 12,
         lineHeight: "normal",
       },
       // Renders the Ability name that was set for this row.
       render: (rowData) => (
-        <div style={{ width: 105, display: "inline-flex" }}>
+        <div style={{ width: 105, display: "inline-flex", alignItems: "center" }}>
           <div>
             {abilityIcons(rowData.Cooldown2, {
               height: 30,
@@ -725,7 +786,9 @@ export default function CooldownPlanner(props) {
               verticalAlign: "middle",
             })}
           </div>
-          <div>{t("CooldownPlanner.ClassAbilities." + rowData.Cooldown2)}</div>
+          <Typography align="center" style={{ fontSize: 12, lineHeight: "normal" }}>
+            {t("CooldownPlanner.ClassAbilities." + rowData.Cooldown2)}
+          </Typography>
         </div>
       ),
       // The Edit Mode Component. Generated based off the healers class.
@@ -749,10 +812,15 @@ export default function CooldownPlanner(props) {
         );
       },
     },
+
+    /* -------------------------------------------------------------------------- */
+    /*                               Cooldown Set 4                               */
+    /* -------------------------------------------------------------------------- */
+
     {
       // The Cast Time Column. This is where the time the user expects the cooldown to be cast.
       title: t("CooldownPlanner.TableLabels.CastTimeLabel"),
-      field: "cooldownTime2",
+      field: "cooldownTime3",
       width: "1%",
       cellStyle: {
         whiteSpace: "nowrap",
@@ -784,6 +852,7 @@ export default function CooldownPlanner(props) {
       // Render only, should the user when the cooldown will be available again to be used.
       title: t("CooldownPlanner.TableLabels.OffCooldownLabel"),
       width: "1%",
+      hidden: true,
       cellStyle: {
         whiteSpace: "nowrap",
         borderRight: "2px solid #c8b054",
@@ -792,16 +861,12 @@ export default function CooldownPlanner(props) {
       },
       render: (rowData) => (
         <div>
-          {rowData.Cooldown2 === "" || rowData.Cooldown2 === undefined
+          {rowData.Cooldown3 === "" || rowData.Cooldown3 === undefined
             ? ""
-            : timeCheck(rowData.cooldownTime2 === "" || rowData.cooldownTime2 === undefined ? rowData.time : rowData.cooldownTime2, rowData.Cooldown2)}
+            : timeCheck(rowData.cooldownTime3 === "" || rowData.cooldownTime3 === undefined ? rowData.time : rowData.cooldownTime3, rowData.Cooldown3)}
         </div>
       ),
     },
-
-    /* -------------------------------------------------------------------------- */
-    /*                               Cooldown Set 4                               */
-    /* -------------------------------------------------------------------------- */
     {
       title: t("Name") + " 4",
       field: "name3",
@@ -815,7 +880,7 @@ export default function CooldownPlanner(props) {
       // This renders the healer name outside of Edit Mode.
       render: (rowData) => (
         <div style={{ color: classColoursJS(rowData.class3) }}>
-          {rowData.class3 === undefined ? "" : classIcons(rowData.class3, { height: 30, width: 30, padding: "0px 5px 0px 0px", verticalAlign: "middle" })}
+          {/* {rowData.class3 === undefined ? "" : classIcons(rowData.class3, { height: 30, width: 30, padding: "0px 5px 0px 0px", verticalAlign: "middle" })} */}
           {rowData.name3}
         </div>
       ),
@@ -898,13 +963,11 @@ export default function CooldownPlanner(props) {
       width: "8%",
       cellStyle: {
         // whiteSpace: "nowrap",
-        borderRight: "1px solid rgb(200, 176, 84, 0.3)",
-        fontSize: 12,
-        lineHeight: "normal",
+        borderRight: "2px solid #c8b054",
       },
       // Renders the Ability name that was set for this row.
       render: (rowData) => (
-        <div style={{ width: 105, display: "inline-flex" }}>
+        <div style={{ width: 105, display: "inline-flex", alignItems: "center" }}>
           <div>
             {abilityIcons(rowData.Cooldown3, {
               height: 30,
@@ -913,7 +976,9 @@ export default function CooldownPlanner(props) {
               verticalAlign: "middle",
             })}
           </div>
-          <div>{t("CooldownPlanner.ClassAbilities." + rowData.Cooldown3)}</div>
+          <Typography align="center" style={{ fontSize: 12, lineHeight: "normal" }}>
+            {t("CooldownPlanner.ClassAbilities." + rowData.Cooldown3)}
+          </Typography>
         </div>
       ),
       // The Edit Mode Component. Generated based off the healers class.
@@ -937,10 +1002,15 @@ export default function CooldownPlanner(props) {
         );
       },
     },
+
+    /* -------------------------------------------------------------------------- */
+    /*                               Cooldown Set 5                               */
+    /* -------------------------------------------------------------------------- */
+
     {
       // The Cast Time Column. This is where the time the user expects the cooldown to be cast.
       title: t("CooldownPlanner.TableLabels.CastTimeLabel"),
-      field: "cooldownTime3",
+      field: "cooldownTime4",
       width: "1%",
       cellStyle: {
         whiteSpace: "nowrap",
@@ -972,6 +1042,7 @@ export default function CooldownPlanner(props) {
       // Render only, should the user when the cooldown will be available again to be used.
       title: t("CooldownPlanner.TableLabels.OffCooldownLabel"),
       width: "1%",
+      hidden: true,
       cellStyle: {
         whiteSpace: "nowrap",
         borderRight: "2px solid #c8b054",
@@ -980,16 +1051,12 @@ export default function CooldownPlanner(props) {
       },
       render: (rowData) => (
         <div>
-          {rowData.Cooldown3 === "" || rowData.Cooldown3 === undefined
+          {rowData.Cooldown4 === "" || rowData.Cooldown4 === undefined
             ? ""
-            : timeCheck(rowData.cooldownTime3 === "" || rowData.cooldownTime3 === undefined ? rowData.time : rowData.cooldownTime3, rowData.Cooldown3)}
+            : timeCheck(rowData.cooldownTime4 === "" || rowData.cooldownTime4 === undefined ? rowData.time : rowData.cooldownTime4, rowData.Cooldown4)}
         </div>
       ),
     },
-
-    /* -------------------------------------------------------------------------- */
-    /*                               Cooldown Set 5                               */
-    /* -------------------------------------------------------------------------- */
     {
       title: t("Name") + " 5",
       field: "name4",
@@ -1003,7 +1070,7 @@ export default function CooldownPlanner(props) {
       // This renders the healer name outside of Edit Mode.
       render: (rowData) => (
         <div style={{ color: classColoursJS(rowData.class4) }}>
-          {rowData.class4 === undefined ? "" : classIcons(rowData.class4, { height: 30, width: 30, padding: "0px 5px 0px 0px", verticalAlign: "middle" })}
+          {/* {rowData.class4 === undefined ? "" : classIcons(rowData.class4, { height: 30, width: 30, padding: "0px 5px 0px 0px", verticalAlign: "middle" })} */}
           {rowData.name4}
         </div>
       ),
@@ -1086,13 +1153,13 @@ export default function CooldownPlanner(props) {
       width: "8%",
       cellStyle: {
         // whiteSpace: "nowrap",
-        borderRight: "1px solid rgb(200, 176, 84, 0.3)",
+        borderRight: "2px solid #c8b054",
         fontSize: 12,
         lineHeight: "normal",
       },
       // Renders the Ability name that was set for this row.
       render: (rowData) => (
-        <div style={{ width: 105, display: "inline-flex" }}>
+        <div style={{ width: 105, display: "inline-flex", alignItems: "center" }}>
           <div>
             {abilityIcons(rowData.Cooldown4, {
               height: 30,
@@ -1101,7 +1168,9 @@ export default function CooldownPlanner(props) {
               verticalAlign: "middle",
             })}
           </div>
-          <div>{t("CooldownPlanner.ClassAbilities." + rowData.Cooldown4)}</div>
+          <Typography align="center" style={{ fontSize: 12, lineHeight: "normal" }}>
+            {t("CooldownPlanner.ClassAbilities." + rowData.Cooldown4)}
+          </Typography>
         </div>
       ),
       // The Edit Mode Component. Generated based off the healers class.
@@ -1124,55 +1193,6 @@ export default function CooldownPlanner(props) {
           </FormControl>
         );
       },
-    },
-    {
-      // The Cast Time Column. This is where the time the user expects the cooldown to be cast.
-      title: t("CooldownPlanner.TableLabels.CastTimeLabel"),
-      field: "cooldownTime4",
-      width: "1%",
-      cellStyle: {
-        whiteSpace: "nowrap",
-        borderRight: "1px solid rgb(200, 176, 84, 0.3)",
-        fontSize: 12,
-        textAlign: "center",
-      },
-      // Times currently must be entered in the 00:00 format.
-      // Currently due to sorting, the user must either use a time, or label the cooldowns, 1, 2, 3, 4 etc to keep them in order.
-      // This can probably be handled a lot better than how it handled currently.
-      editComponent: (props) => (
-        <TextField
-          error={RegExp("^([01]?[0-9]|2[0-3]):[0-5][0-9]$").test(props.value) || props.value === undefined ? false : true}
-          inputProps={{
-            pattern: "^([01]?[0-9]|2[0-3]):[0-5][0-9]$",
-          }}
-          size="small"
-          variant="outlined"
-          id="standard-basic"
-          label={t("CooldownPlanner.TableLabels.CastTimeLabel")}
-          placeholder="00:00"
-          value={props.value}
-          style={{ whiteSpace: "nowrap", width: "100%", marginTop: 6 }}
-          onChange={(e) => props.onChange(e.target.value)}
-        />
-      ),
-    },
-    {
-      // Render only, should the user when the cooldown will be available again to be used.
-      title: t("CooldownPlanner.TableLabels.OffCooldownLabel"),
-      width: "1%",
-      cellStyle: {
-        whiteSpace: "nowrap",
-        borderRight: "2px solid #c8b054",
-        textAlign: "center",
-        fontSize: 12,
-      },
-      render: (rowData) => (
-        <div>
-          {rowData.Cooldown4 === "" || rowData.Cooldown4 === undefined
-            ? ""
-            : timeCheck(rowData.cooldownTime4 === "" || rowData.cooldownTime4 === undefined ? rowData.time : rowData.cooldownTime4, rowData.Cooldown4)}
-        </div>
-      ),
     },
 
     {
