@@ -405,7 +405,7 @@ function mergeStat(stats, statName) {
 }
 
 // Merges together an array of bonus_stats.
-function mergeBonusStats(stats) {
+export function mergeBonusStats(stats) {
   const val = {
       intellect: mergeStat(stats, 'intellect'),
       haste: mergeStat(stats, 'haste'),
@@ -414,7 +414,6 @@ function mergeBonusStats(stats) {
       versatility: mergeStat(stats, 'versatility'),
       hps: (mergeStat(stats, 'hps') + mergeStat(stats, 'HPS')),
       dps: mergeStat(stats, 'dps'),
-
     }
 
   return val;
@@ -452,10 +451,12 @@ function addBaseStats(stats, spec) {
   stats.crit += 175;
   stats.mastery += STATPERONEPERCENT.MASTERYA[spec] * BASESTAT.MASTERY[spec] * 100;
 
+  return stats;
+
 }
 
 export function applyDiminishingReturns(stats) {
-  console.log("Stats Pre-DR" + JSON.stringify(stats));
+  //console.log("Stats Pre-DR" + JSON.stringify(stats));
   
   for (const [key, value] of Object.entries(stats)) {
     if (["crit", "haste", "mastery", "versatility", "leech"].includes(key)) {
@@ -474,7 +475,7 @@ export function applyDiminishingReturns(stats) {
   /*
 
   */
-  console.log("Stats Post-DR" + JSON.stringify(stats))
+  //console.log("Stats Post-DR" + JSON.stringify(stats))
   //console.log("Stats Post-DR", + JSON.stringify(stats))
 
   return stats;
