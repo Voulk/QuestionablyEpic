@@ -336,7 +336,7 @@ function TopGearReport(props) {
                                     fontSize: 12
                                   }}
                                 >
-                                  -123 HPS
+                                  {key.rawDifference + " INT"}
                                 </Typography>
                               </Grid>
                             </Grid>

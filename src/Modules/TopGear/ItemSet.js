@@ -61,8 +61,8 @@ class ItemSet {
       for (const [stat, value] of Object.entries(item.stats)) {
         if (stat in setStats) {
           setStats[stat] += value;
-          //if (stat === "intellect") console.log("Adding Int: " + value) // Tester;
-          if (stat in item.stats["bonus_stats"]) setStats[stat] += item.stats["bonus_stats"][stat];
+          
+          //if (stat in item.stats["bonus_stats"]) setStats[stat] += item.stats["bonus_stats"][stat]; // Disabled for now since we handle effects separately. 
         }
       }
 

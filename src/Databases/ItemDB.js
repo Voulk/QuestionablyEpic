@@ -87183,7 +87183,7 @@ export const itemDB = [
         "itemSubClass": 0,
         "itemLevel": 207,
         "stats": {
-            "intellect": 6666,
+            "intellect": 6666, //6666
             "stamina": 0,
             "haste": 0,
             "crit": 0,

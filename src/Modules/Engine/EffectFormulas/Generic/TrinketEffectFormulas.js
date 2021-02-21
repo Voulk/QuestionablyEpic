@@ -66,6 +66,7 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel, use
     let effect = activeTrinket.effects[0];
     const multiplier = 1 + effect.multiplier * (userSettings.hymnalAllies || 0);
     bonus_stats.crit = (getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.duration * effect.stacks * multiplier) / 60;
+    console.log(bonus_stats.crit);
 
   } else if (effectName === "Macabre Sheet Music") {
     // Test

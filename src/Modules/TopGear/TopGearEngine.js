@@ -14,7 +14,7 @@ import { getEffectValue } from "../Engine/EffectFormulas/EffectEngine"
 // This does run into some problems when it comes to set bonuses and could be re-evaluated at the time. The likely strat is to auto-include anything with a bonus, or to run
 // our set bonus algorithm before we sort and slice. There are no current set bonuses that are relevant to raid / dungeon so left as a thought experiment for now.
 const softSlice = 3000;
-const DR_CONST = 0.00099669230769231;
+const DR_CONST = 0.00196669230769231;
 const DR_CONSTLEECH = 0.08998569230769231;
 
 
@@ -49,8 +49,6 @@ export function runTopGear(itemList, wepCombos, player, contentType, baseHPS, cu
   let count = 0;
 
   const newPlayer = setupPlayer(player, contentType, castModel);
-  console.log(newPlayer);
-  console.log(newPlayer.getHPS(contentType));
 
   let itemSets = createSets(itemList, wepCombos);
   itemSets.sort((a, b) => (a.sumSoftScore < b.sumSoftScore ? 1 : -1));
@@ -75,6 +73,8 @@ export function runTopGear(itemList, wepCombos, player, contentType, baseHPS, cu
   itemSets = pruneItems(itemSets);
 
   itemSets.sort((a, b) => (a.hardScore < b.hardScore ? 1 : -1));
+
+  console.log(itemSets);
 
   // ----
 
@@ -247,6 +247,7 @@ function buildDifferential(itemSet, primeSet) {
   let differentials = {
     items: [],
     scoreDifference: (Math.round(primeSet.hardScore - itemSet.hardScore) / primeSet.hardScore) * 100,
+    rawDifference: (Math.round(itemSet.hardScore - primeSet.hardScore)*100)/100
   };
   //console.log("Prime List: " + JSON.stringify(primeSet));
   //console.log("Diff List: " + JSON.stringify(diffList))
@@ -358,11 +359,11 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
   effectStats.push(bonus_stats);
   for (var x = 0; x < itemSet.effectList.length; x++) {
     
-    console.log("EFF: " + JSON.stringify(itemSet.effectList[x]));
+    //console.log("EFF: " + JSON.stringify(itemSet.effectList[x]));
     effectStats.push(getEffectValue(itemSet.effectList[x], player, contentType, itemSet.effectList[x].level, userSettings));
 
   }
-
+  console.log(effectStats);
   bonus_stats = mergeBonusStats(effectStats);
   
 
@@ -376,6 +377,8 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
   adjusted_weights.versatility = (adjusted_weights.versatility + adjusted_weights.versatility * (1 - (DR_CONST * setStats.versatility) / STATPERONEPERCENT.VERSATILITY)) / 2;
   adjusted_weights.mastery = (adjusted_weights.mastery + adjusted_weights.mastery * (1 - (DR_CONST * setStats.mastery) / STATPERONEPERCENT.MASTERYA[player.spec])) / 2;
   adjusted_weights.leech = (adjusted_weights.leech + adjusted_weights.leech * (1 - (DR_CONSTLEECH * setStats.leech) / STATPERONEPERCENT.LEECH)) / 2;
+
+  console.log(adjusted_weights);
   //console.log("New Leech: " + adjusted_weights.leech);
   // Calculate a hard score using the rebalanced stat weights.
 
