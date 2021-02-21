@@ -7,7 +7,7 @@ export const getDiscPriestLegendary = (effectName, player, contentType) => {
 
     */
   if (name === "Clarity of Mind") {
-    bonus_stats.HPS = 999; // This is meaningless, but will effect the display order while we wait to implement the effects.
+    bonus_stats.HPS = contentType === "Raid" ? 999 : 1; // This is meaningless, but will effect the display order while we wait to implement the effects.
   } else if (name === "Crystalline Reflection") {
     // Do Math
   } else if (name === "Kiss of Death") {
