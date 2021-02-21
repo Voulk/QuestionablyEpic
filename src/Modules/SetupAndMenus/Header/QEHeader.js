@@ -110,9 +110,9 @@ export default function QEHeader(props) {
                     allChars={props.allChars}
                   />
                 </Grid>
-                <Grid item>
+                {(props.allChars && props.allChars.allChar.length) > 0 ? <Grid item>
                   <CharacterHeaderButton player={props.pl} allChars={props.allChars} />
-                </Grid>
+                </Grid> : ""}
                 <Grid item>
                   <ProfileSelector name={playerName} component={Link} to={linkTarget} logFunc={props.logFunc} setRegion={props.setRegion} />
                 </Grid>

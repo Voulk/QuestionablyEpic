@@ -187,6 +187,13 @@ export function getSoulbindFormula(effectID, player, contentType) {
   }
   // Token of Appreciation
   else if (effectID === 336245) {
+    const expectedPPM = 9.59; // ~3.9 targets getting an absorb every ~25 seconds.
+    const healAmount = player.getInt() * 1.5 * player.getStatPerc("Versatility"); // TODO: Implement the Spell Power -> Attack Power conversion. 
+    const expectedWastage = 0.04; // Unused shields. Very low. 
+
+    bonus_stats.HPS = expectedPPM * healAmount * (1 - expectedWastage) / 60;
+
+
   }
   // Refined Palate
   else if (effectID === 336243) {
@@ -261,7 +268,7 @@ export function getSoulbindFormula(effectID, player, contentType) {
   else if (effectID === 326572) {
     // TODO, work out if you can collect stacks when it's on cooldown, or if the 10 crits have to take place after the cooldown.
     // The uptime won't change much regardless but it'll be of slight impact.
-    let uptime = 10 / 68;
+    let uptime = 10 / 81;
 
     bonus_stats.Crit = STATPERONEPERCENT.CRIT * 18 * uptime;
   }

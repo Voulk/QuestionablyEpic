@@ -26,8 +26,6 @@ export default function TopSetStatsPanel(props) {
   // Returns a formatted string for the stat panel.
   function printStat(stat, value) {
     if (["haste", "crit", "versatility", "mastery", "leech"].includes(stat)) {
-      console.log(stat + ": " + translatedStat[stat]["de"]);
-      console.log("CL: " + currentLanguage);
       return translatedStat[stat][currentLanguage] + ": " + Math.round(100 * value) / 100 + "%";
     } else return translatedStat[stat][currentLanguage] + ": " + Math.round(value);
   }

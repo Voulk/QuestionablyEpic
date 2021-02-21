@@ -121,7 +121,6 @@ export default function ItemCardReport(props) {
 
   const tertiary = props.item.tertiary !== "" ? <div style={{ display: "inline" }}> / {props.item.tertiary} </div> : null;
 
-  console.log(props.item);
 
   return (
     <Grid item xs={12}>
