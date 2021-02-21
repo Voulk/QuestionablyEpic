@@ -14,10 +14,11 @@ export const changeLog = [
     date: "15th February", // TBA
     changes: [
       "Top Gear: Items that differ from what you have equipped will highlight in yellow.",
-      "Top Gear: Expanded Competitive Alternatives to your closest 8 sets (was 4).",
+      "Top Gear: Revamped Competitive Alternatives & increased closest sets to 8 (was 4).",
       "Top Gear: Re-implemented diminishing returns formulas.",
       "Revamped the character edit pane.",
-      "Druid: Dark Titans Lesson now includes Photosynthesis in dungeons."
+      "Current Character now will show in the Header",
+      "Druid: Dark Titans Lesson now includes Photosynthesis in dungeons.",
     ]
   },
   { 

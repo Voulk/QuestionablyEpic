@@ -5,13 +5,17 @@ import React, { useState, useEffect } from "react";
 import { STATPERONEPERCENT, BASESTAT, STATDIMINISHINGRETURNS } from "../Engine/STAT";
 import { CONSTRAINTS } from "../Engine/CONSTRAINTS";
 import { convertPPMToUptime } from "../Engine/EffectFormulas/EffectUtilities";
+import Player from "../Player/Player";
+import CastModel from "../Player/CastModel";
+import { getEffectValue } from "../Engine/EffectFormulas/EffectEngine"
+
 // Most of our sets will fall into a bucket where totalling the individual stats is enough to tell us they aren't viable. By slicing these out in a preliminary phase,
 // we can run our full algorithm on far fewer items. The net benefit to the player is being able to include more items, with a quicker return.
 // This does run into some problems when it comes to set bonuses and could be re-evaluated at the time. The likely strat is to auto-include anything with a bonus, or to run
 // our set bonus algorithm before we sort and slice. There are no current set bonuses that are relevant to raid / dungeon so left as a thought experiment for now.
-const softSlice = 1000; // TODO. Adjust to 1000 for prod. Being tested at lower values.
-const DR_CONST = 0.00099569230769231;
-const DR_CONSTLEECH = 0.00998569230769231;
+const softSlice = 3000;
+const DR_CONST = 0.00196669230769231;
+const DR_CONSTLEECH = 0.08998569230769231;
 
 
 // block for `time` ms, then return the number of loops we could run in that time:
@@ -22,12 +26,29 @@ export function expensive(time) {
   return count;
 }
 
-export function runTopGear(itemList, wepCombos, player, contentType, baseHPS, currentLanguage) {
+// Unfortunately we aren't able to pass objects through to our worker. This recreates our player object since we'll need it for effect formulas. 
+function setupPlayer(player, contentType, castModel) {
+
+  //console.log(player);
+  let newPlayer = new Player(player.charName, player.spec, player.charID, player.region, player.realm, player.race, player.statWeights);
+  //newPlayer = Object.assign(newPlayer, player);
+  //console.log("NEW PLAYER");
+  newPlayer.castModel[contentType] = new CastModel(newPlayer.getSpec(), contentType);
+  newPlayer.castModel[contentType] = Object.assign(newPlayer.castModel[contentType], castModel);
+
+
+  return newPlayer;
+
+}
+
+export function runTopGear(itemList, wepCombos, player, contentType, baseHPS, currentLanguage, userSettings, castModel) {
   //console.log("WEP COMBOS: " + JSON.stringify(wepCombos));
   //console.log("CL::::" + currentLanguage);
   var t0 = performance.now();
   // console.log("Running Top Gear");
   let count = 0;
+
+  const newPlayer = setupPlayer(player, contentType, castModel);
 
   let itemSets = createSets(itemList, wepCombos);
   itemSets.sort((a, b) => (a.sumSoftScore < b.sumSoftScore ? 1 : -1));
@@ -47,11 +68,13 @@ export function runTopGear(itemList, wepCombos, player, contentType, baseHPS, cu
     */
 
   for (var i = 0; i < itemSets.length; i++) {
-    itemSets[i] = evalSet(itemSets[i], player, contentType, baseHPS);
+    itemSets[i] = evalSet(itemSets[i], newPlayer, contentType, baseHPS, userSettings);
   }
   itemSets = pruneItems(itemSets);
 
   itemSets.sort((a, b) => (a.hardScore < b.hardScore ? 1 : -1));
+
+  //console.log(itemSets);
 
   // ----
 
@@ -224,6 +247,7 @@ function buildDifferential(itemSet, primeSet) {
   let differentials = {
     items: [],
     scoreDifference: (Math.round(primeSet.hardScore - itemSet.hardScore) / primeSet.hardScore) * 100,
+    rawDifference: (Math.round(itemSet.hardScore - primeSet.hardScore)*100)/100
   };
   //console.log("Prime List: " + JSON.stringify(primeSet));
   //console.log("Diff List: " + JSON.stringify(diffList))
@@ -257,11 +281,13 @@ function sumScore(obj) {
 }
 
 // A true evaluation function on a set.
-function evalSet(itemSet, player, contentType, baseHPS) {
+function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
   // Get Base Stats
   let builtSet = itemSet.compileStats();
   let setStats = builtSet.setStats;
   let hardScore = 0;
+
+  console.log(itemSet);
 
   let enchants = {};
 
@@ -327,7 +353,19 @@ function evalSet(itemSet, player, contentType, baseHPS) {
   // Sockets
   bonus_stats[highestWeight] += 16 * builtSet.setSockets;
   enchants["Gems"] = highestWeight;
-  console.log("Sockets added : " + 16 * builtSet.setSockets + " to " + highestWeight);
+  //console.log("Sockets added : " + 16 * builtSet.setSockets + " to " + highestWeight);
+
+  let effectStats = [];
+  effectStats.push(bonus_stats);
+  for (var x = 0; x < itemSet.effectList.length; x++) {
+    
+    //console.log("EFF: " + JSON.stringify(itemSet.effectList[x]));
+    effectStats.push(getEffectValue(itemSet.effectList[x], player, contentType, itemSet.effectList[x].level, userSettings));
+
+  }
+  console.log(effectStats);
+  bonus_stats = mergeBonusStats(effectStats);
+  
 
   compileStats(setStats, bonus_stats); // Add the base stats on our gear together with enchants & gems.
   applyDiminishingReturns(setStats); // Apply Diminishing returns to our haul.
@@ -340,6 +378,8 @@ function evalSet(itemSet, player, contentType, baseHPS) {
   adjusted_weights.mastery = (adjusted_weights.mastery + adjusted_weights.mastery * (1 - (DR_CONST * setStats.mastery) / STATPERONEPERCENT.MASTERYA[player.spec])) / 2;
   adjusted_weights.leech = (adjusted_weights.leech + adjusted_weights.leech * (1 - (DR_CONSTLEECH * setStats.leech) / STATPERONEPERCENT.LEECH)) / 2;
 
+  console.log(adjusted_weights);
+  //console.log("New Leech: " + adjusted_weights.leech);
   // Calculate a hard score using the rebalanced stat weights.
 
   for (var stat in setStats) {
@@ -352,12 +392,36 @@ function evalSet(itemSet, player, contentType, baseHPS) {
     }
   }
 
+  //console.log(JSON.stringify(setStats));
   //console.log("Soft Score: " + builtSet.sumSoftScore + ". Hard Score: " + hardScore);
   //console.log("Enchants: " + JSON.stringify(enchants));
   builtSet.hardScore = Math.round(1000 * hardScore) / 1000;
   builtSet.setStats = setStats;
   builtSet.enchantBreakdown = enchants;
   return builtSet; // Temp
+}
+
+function mergeStat(stats, statName) {
+  return stats.reduce(function(a, b) {
+    if (!isNaN(b[statName])) return a + b[statName]
+    else return a
+  }, 0)
+}
+
+// Merges together an array of bonus_stats.
+export function mergeBonusStats(stats) {
+  const val = {
+      intellect: mergeStat(stats, 'intellect'),
+      haste: mergeStat(stats, 'haste'),
+      crit: mergeStat(stats, 'crit'),
+      mastery: mergeStat(stats, 'mastery'),
+      versatility: mergeStat(stats, 'versatility'),
+      hps: (mergeStat(stats, 'hps') + mergeStat(stats, 'HPS')),
+      dps: mergeStat(stats, 'dps'),
+    }
+
+  return val;
+
 }
 
 //
@@ -378,13 +442,11 @@ function getHighestWeight(player, contentType) {
 
 // Compiles stats & bonus stats into one array to which we can then apply DR etc. 
 function compileStats(stats, bonus_stats) {
-  console.log("Stats pre-compilation: " + JSON.stringify(stats));
-  console.log("Bonus Stats: " + JSON.stringify(bonus_stats));
 
   for (var stat in stats) {
     stats[stat] += stat in bonus_stats ? bonus_stats[stat] : 0;
   }
-  console.log("Stats post-compilation: " + JSON.stringify(stats));
+
   return stats
   
 }
@@ -393,15 +455,16 @@ function addBaseStats(stats, spec) {
   stats.crit += 175;
   stats.mastery += STATPERONEPERCENT.MASTERYA[spec] * BASESTAT.MASTERY[spec] * 100;
 
+  return stats;
+
 }
 
 export function applyDiminishingReturns(stats) {
-  console.log("Stats Pre-DR" + JSON.stringify(stats));
+  //console.log("Stats Pre-DR" + JSON.stringify(stats));
   
   for (const [key, value] of Object.entries(stats)) {
     if (["crit", "haste", "mastery", "versatility", "leech"].includes(key)) {
 
-      console.log(key.toUpperCase())
       const DRBreakpoints = STATDIMINISHINGRETURNS[key.toUpperCase()];
   
       const baseStat = stats[key];
@@ -416,7 +479,7 @@ export function applyDiminishingReturns(stats) {
   /*
 
   */
-  console.log("Stats Post-DR" + JSON.stringify(stats))
+  //console.log("Stats Post-DR" + JSON.stringify(stats))
   //console.log("Stats Post-DR", + JSON.stringify(stats))
 
   return stats;

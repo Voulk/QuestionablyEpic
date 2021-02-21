@@ -238,6 +238,7 @@ function processItem(line, player, contentType, type) {
         itemEffect = {
           type: "spec legendary",
           name: idPayload["name_override"]["base"],
+          level: 0, // Irrelevant to legendaries.
         };
         console.log("Legendary detected" + JSON.stringify(itemEffect));
       }

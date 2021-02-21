@@ -37,6 +37,7 @@ export default function CharacterHeaderButton(props) {
 
   const currentCharacter = props.allChars.allChar[props.allChars.activeChar];
 
+  /*
   const rows = [
     createData(
       "Raid",
@@ -56,8 +57,7 @@ export default function CharacterHeaderButton(props) {
       currentCharacter.statWeights["Dungeon"].versatility,
       currentCharacter.statWeights["Dungeon"].leech,
     ),
-  ];
-  console.log(currentCharacter);
+  ]; */
   return (
     <div>
       <Button disabled={true} aria-describedby={id} style={{ color: classColoursJS(currentCharacter.spec) }} onClick={handleClick}>
@@ -71,7 +71,7 @@ export default function CharacterHeaderButton(props) {
           ""
         )}
       </Button>
-      <Popover
+      {/* <Popover
         id={id}
         open={open}
         anchorEl={anchorEl}
@@ -116,7 +116,7 @@ export default function CharacterHeaderButton(props) {
                     </TableRow>
                   </TableHead>
                   <TableBody>
-                    {rows.map((row) => (
+                    rows.map((row) => (
                       <TableRow key={row.name}>
                         <TableCell component="th" scope="row" size="small" style={{ width: 10, padding: "6px 4px" }}>
                           {row.content}
@@ -140,31 +140,31 @@ export default function CharacterHeaderButton(props) {
                           {row.leech}
                         </TableCell>
                       </TableRow>
-                    ))}
+                    ))
                   </TableBody>
                 </Table>
               </TableContainer>
-            </Grid>
+            </Grid> */}
             {/* -------------------------------------------------------------------------- */
             /*                          Container for Characters                          */
             /* -------------------------------------------------------------------------- */}
-            <Grid item xs={6} container direction="column">
+            {/* <Grid item xs={6} container direction="column">
               <Grid item xs={12}>
                 Test
               </Grid>
-            </Grid>
+            </Grid> */}
 
             {/* -------------------------------------------------------------------------- */
             /*                             Container for Logs                             */
             /* -------------------------------------------------------------------------- */}
-            <Grid item xs={6} container direction="column">
+            {/* <Grid item xs={6} container direction="column">
               <Grid item xs={12}>
                 Test
               </Grid>
             </Grid>
           </Grid>
         </Typography>
-      </Popover>
+      </Popover> */}
     </div>
   );
 }

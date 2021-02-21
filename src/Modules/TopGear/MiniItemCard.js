@@ -67,16 +67,6 @@ export default function ItemCard(props) {
     props.activateItem(item.uniqueHash);
   };
 
-  const upgradeColor = (num) => {
-    if (num > 0) {
-      return "#FFDF14"; // #60e421
-    } else if (num < 0) {
-      return "#ad2c34";
-    } else {
-      return "#fff";
-    }
-  };
-
   let itemName = "";
   let isVault = item.vaultItem;
   const deleteActive = item.offhandID === 0;

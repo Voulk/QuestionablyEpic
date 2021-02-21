@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { Accordion, Grid, AccordionDetails, AccordionSummary, Typography, Divider, TextField, Tooltip } from "@material-ui/core";
+import { MenuItem, InputLabel, Accordion, Grid, AccordionDetails, AccordionSummary, FormControl, Select, Typography, Divider, TextField, Tooltip } from "@material-ui/core";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import { useTranslation } from "react-i18next";
+import { setBounds } from "../Engine/CONSTRAINTS";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -39,11 +40,27 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function TopGearSettingsAccordion() {
+export default function TopGearSettingsAccordion(props) {
   const classes = useStyles();
   const { t, i18n } = useTranslation();
   // Hymnal State
-  const [value, setValue] = useState(5);
+  const [hymnalValue, setHymnalValue] = useState(props.userSettings.hymnalAllies);
+  const [groupValue, setgroupValue] = useState(props.userSettings.includeGroupBenefits);
+
+  const updateHymnal = (value) => {
+    props.editSettings("hymnalAllies", setBounds(value, 0, 4));
+    setHymnalValue(setBounds(value, 0, 4));
+  }
+
+  const updateGroupValue = (value) => {
+    props.editSettings("includeGroupBenefits", value);
+    setgroupValue(value);
+  }
+
+  const options = [
+    {value: true, label: 'Yes'},
+    {value: false, label: 'No'},
+  ]
   // Free State
   const [value1, setValue1] = useState(5);
   // Free State
@@ -57,7 +74,7 @@ export default function TopGearSettingsAccordion() {
 
   return (
     <div className={classes.root}>
-      <Accordion defaultExpanded={false} disabled={true} elevation={0}>
+      <Accordion defaultExpanded={true} disabled={false} elevation={0}>
         <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1c-content" id="panel1c-header">
           <div className={classes.column}>
             <Typography className={classes.heading}>{t("Settings.SettingsTitle")}</Typography>
@@ -78,18 +95,19 @@ export default function TopGearSettingsAccordion() {
                   <TextField
                     label={t("Settings.Setting0TextFieldLabel")}
                     id="AlliesNumber"
-                    value={value}
+                    value={hymnalValue}
                     style={{ maxWidth: 70 }}
-                    onChange={(e) => setValue(e.target.value)}
+                    onChange={(e) => updateHymnal(e.target.value)}
                     variant="outlined"
                     size="small"
                     type="number"
                   />
                 </Grid>
+
               </Grid>
             </Grid>
             <Divider orientation="vertical" flexItem />
-            {/* <Grid item xs={2}>
+            <Grid item xs={4}>
               <Grid container spacing={1} style={{ paddingLeft: 8 }}>
                 <Grid item xs={12}>
                   <Tooltip
@@ -102,19 +120,16 @@ export default function TopGearSettingsAccordion() {
                   </Tooltip>
                 </Grid>
                 <Grid item xs={12}>
-                  <TextField
-                    label={t("Settings.Setting1TextFieldLabel")}
-                    id="AlliesNumber"
-                    value={value1}
-                    style={{ maxWidth: 75 }}
-                    onChange={(e) => setValue1(e.target.value)}
-                    variant="outlined"
-                    size="small"
-                    type="number"
-                  />
+                  <FormControl variant="outlined" size="small">
+                    <InputLabel id="slots">{}</InputLabel>
+                    <Select labelId="slots" value={groupValue} onChange={(e) => updateGroupValue(e.target.value)}>
+                      <MenuItem value={true}>Yes</MenuItem>
+                      <MenuItem value={false}>No</MenuItem>
+                    </Select>
+                  </FormControl>
                 </Grid>
               </Grid>
-            </Grid>
+            </Grid> {/*
             <Divider orientation="vertical" flexItem />
             <Grid item xs={2}>
               <Grid container spacing={1} style={{ paddingLeft: 8 }}>
