@@ -239,6 +239,14 @@ class HolyDiver extends Component {
                     Welcome to the Cooldown Planner!
                   </Typography>
                 </AccordionSummary>
+
+                <AccordionDetails>
+                  <Typography style={{ color: "orange" }} align="left" variant="subtitle1">
+                    Update: New Style. Plan up to 5 Cds per Boss Ability/Cast Time (Currently the Custom Cds on the Chart only show as per the 1st Cast Time (Individual Times not
+                    Working yet)
+                  </Typography>
+                </AccordionDetails>
+
                 <AccordionDetails>
                   <Typography style={{ color: "limegreen" }} align="left" variant="subtitle1">
                     To Begin start by adding Healers to your Heal Team. Importing a log will bring up the damage pattern of the selected fight, with the cooldowns used on the log

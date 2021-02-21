@@ -191,7 +191,7 @@ export default function CooldownPlanner(props) {
         lineHeight: "normal",
       },
       render: (rowData) => (
-        <div style={{ width: 105, display: "inline-flex", alignItems: "center" }}>
+<div style={{ width: 105, display: "inline-flex", alignItems: "center", width: "100%" }}>
           <div>
             <a data-wowhead={"spell=" + rowData.bossAbility + "&domain=" + currentLanguage}>
               {bossAbilityIcons(rowData.bossAbility, {
@@ -393,7 +393,7 @@ export default function CooldownPlanner(props) {
       },
       // Renders the Ability name that was set for this row.
       render: (rowData) => (
-        <div style={{ width: 105, display: "inline-flex", alignItems: "center" }}>
+        <div style={{ width: 105, display: "inline-flex", alignItems: "center", width: "100%" }}>
           <div>
             {abilityIcons(rowData.Cooldown, {
               height: 30,
@@ -585,7 +585,7 @@ export default function CooldownPlanner(props) {
       },
       // Renders the Ability name that was set for this row.
       render: (rowData) => (
-        <div style={{ width: 105, display: "inline-flex", alignItems: "center" }}>
+<div style={{ width: 105, display: "inline-flex", alignItems: "center", width: "100%" }}>
           <div>
             {abilityIcons(rowData.Cooldown1, {
               height: 30,
@@ -594,7 +594,7 @@ export default function CooldownPlanner(props) {
               verticalAlign: "middle",
             })}
           </div>
-          <Typography align="center" style={{ fontSize: 12, lineHeight: "normal" }}>
+          <Typography align="center" style={{ fontSize: 12, lineHeight: "normal", width: "100%" }}>
             {t("CooldownPlanner.ClassAbilities." + rowData.Cooldown1)}
           </Typography>
         </div>
@@ -777,7 +777,7 @@ export default function CooldownPlanner(props) {
       },
       // Renders the Ability name that was set for this row.
       render: (rowData) => (
-        <div style={{ width: 105, display: "inline-flex", alignItems: "center" }}>
+<div style={{ width: 105, display: "inline-flex", alignItems: "center", width: "100%" }}>
           <div>
             {abilityIcons(rowData.Cooldown2, {
               height: 30,
@@ -786,7 +786,7 @@ export default function CooldownPlanner(props) {
               verticalAlign: "middle",
             })}
           </div>
-          <Typography align="center" style={{ fontSize: 12, lineHeight: "normal" }}>
+          <Typography align="center" style={{ fontSize: 12, lineHeight: "normal", width: "100%" }}>
             {t("CooldownPlanner.ClassAbilities." + rowData.Cooldown2)}
           </Typography>
         </div>
@@ -967,7 +967,7 @@ export default function CooldownPlanner(props) {
       },
       // Renders the Ability name that was set for this row.
       render: (rowData) => (
-        <div style={{ width: 105, display: "inline-flex", alignItems: "center" }}>
+<div style={{ width: 105, display: "inline-flex", alignItems: "center", width: "100%" }}>
           <div>
             {abilityIcons(rowData.Cooldown3, {
               height: 30,
@@ -976,7 +976,7 @@ export default function CooldownPlanner(props) {
               verticalAlign: "middle",
             })}
           </div>
-          <Typography align="center" style={{ fontSize: 12, lineHeight: "normal" }}>
+          <Typography align="center" style={{ fontSize: 12, lineHeight: "normal", width: "100%" }}>
             {t("CooldownPlanner.ClassAbilities." + rowData.Cooldown3)}
           </Typography>
         </div>
@@ -1159,7 +1159,7 @@ export default function CooldownPlanner(props) {
       },
       // Renders the Ability name that was set for this row.
       render: (rowData) => (
-        <div style={{ width: 105, display: "inline-flex", alignItems: "center" }}>
+<div style={{ width: 105, display: "inline-flex", alignItems: "center", width: "100%" }}>
           <div>
             {abilityIcons(rowData.Cooldown4, {
               height: 30,
@@ -1168,7 +1168,7 @@ export default function CooldownPlanner(props) {
               verticalAlign: "middle",
             })}
           </div>
-          <Typography align="center" style={{ fontSize: 12, lineHeight: "normal" }}>
+          <Typography align="center" style={{ fontSize: 12, lineHeight: "normal", width: "100%" }}>
             {t("CooldownPlanner.ClassAbilities." + rowData.Cooldown4)}
           </Typography>
         </div>
@@ -1274,6 +1274,14 @@ export default function CooldownPlanner(props) {
         style={{
           padding: 10,
         }}
+        // cellEditable={{
+        //   onCellEditApproved: (newValue, oldValue, rowData, columnDef) => {
+        //     return new Promise((resolve, reject) => {
+        //       console.log('newValue: ' + newValue);
+        //       setTimeout(resolve, 1000);
+        //     });
+        //   }
+        // }}
         options={{
           showTitle: false,
           sorting: false,
@@ -1321,7 +1329,6 @@ export default function CooldownPlanner(props) {
               </Grow>
             ),
           Toolbar: (props) => (
-            <div>
               <Grid
                 container
                 spacing={1}
@@ -1331,14 +1338,14 @@ export default function CooldownPlanner(props) {
                   marginBottom: (currentBoss === "" ? false : true) ? 5 : 0,
                 }}
               >
-                <Grid item container spacing={1} xs={7} alignItems="center" wrap="nowrap">
-                  <Grid item xs="auto">
-                    <Button variant="outlined" style={{ height: 40, whiteSpace: "nowrap" }} color="primary" onClick={() => healTeamDialogOpen()}>
+                <Grid item container spacing={1} item xs={12} sm={12} md={12} lg={6} xl={9} alignItems="center">
+                  <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
+                    <Button variant="outlined" style={{ height: 40,width: "100%", whiteSpace: "nowrap" }} color="primary" onClick={() => healTeamDialogOpen()}>
                       Heal Team
                     </Button>
                   </Grid>
-                  <Grid item xs="auto">
-                    <FormControl style={{ minWidth: 200 }} variant="outlined" size="small">
+                  <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
+                    <FormControl style={{ minWidth: 200, width: "100%" }} variant="outlined" size="small">
                       <InputLabel id="RaidSelector">{t("CooldownPlanner.TableLabels.RaidSelectorLabel")}</InputLabel>
                       <Select
                         labelId="RaidSelector"
@@ -1357,8 +1364,8 @@ export default function CooldownPlanner(props) {
                       </Select>
                     </FormControl>
                   </Grid>
-                  <Grid item xs="auto">
-                    <FormControl style={{ minWidth: 200 }} variant="outlined" size="small" disabled={currentRaid === "" ? true : false}>
+                  <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
+                    <FormControl style={{ minWidth: 200,width: "100%" }} variant="outlined" size="small" disabled={currentRaid === "" ? true : false}>
                       <InputLabel id="BossSelector">{t("CooldownPlanner.TableLabels.BossSelectorLabel")}</InputLabel>
                       <Select
                         labelId="BossSelector"
@@ -1381,8 +1388,8 @@ export default function CooldownPlanner(props) {
                       </Select>
                     </FormControl>
                   </Grid>
-                  <Grid item xs="auto">
-                    <FormControl style={{ minWidth: 200 }} variant="outlined" size="small" disabled={currentBoss === "" ? true : false}>
+                  <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
+                    <FormControl style={{ minWidth: 200,width: "100%" }} variant="outlined" size="small" disabled={currentBoss === "" ? true : false}>
                       <InputLabel id="RaidSelector">{t("Select Plan")}</InputLabel>
                       <Select labelId="RaidSelector" label={t("Select Plan")} value={currentPlan} onChange={(e) => handleChangePlan(e.target.value)}>
                         <MenuItem value={1}>Plan 1</MenuItem>
@@ -1393,13 +1400,13 @@ export default function CooldownPlanner(props) {
                       </Select>
                     </FormControl>
                   </Grid>
-                  <Grid item xs="auto">
-                    <Button color="primary" variant="outlined" style={{ height: 40, whiteSpace: "nowrap" }} onClick={() => ertDialogOpen()}>
+                  <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
+                    <Button color="primary" variant="outlined" style={{ height: 40, whiteSpace: "nowrap",width: "100%" }} onClick={() => ertDialogOpen()}>
                       ERT Note
                     </Button>
                   </Grid>
                 </Grid>
-                <Grid item xs="auto">
+                <Grid item xs={12} sm={6} md={12} lg={6} xl={3}>
                   {currentBoss === "" ? null : (
                     <ThemeProvider theme={SearchFieldOverride}>
                       <MTableToolbar {...props} />
@@ -1407,7 +1414,6 @@ export default function CooldownPlanner(props) {
                   )}
                 </Grid>
               </Grid>
-            </div>
           ),
         }}
         editable={{
@@ -1441,6 +1447,7 @@ export default function CooldownPlanner(props) {
                 resolve();
               }, 1000);
             }),
+            
         }}
       />
     </ThemeProvider>

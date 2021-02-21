@@ -54,12 +54,7 @@ export default function chartCooldownUpdater(tableData) {
     }))
     .map((key) => {
       customCooldownDurations.push(
-        durationmaker(
-          key.ability,
-          key.timestamp,
-          key.abilityname,
-          moment(fightDuration(this.state.currentEndTime, this.state.currentStartTime)).startOf("second").valueOf(),
-        ),
+        durationmaker(key.ability, key.timestamp, key.abilityname, moment(fightDuration(this.state.currentEndTime, this.state.currentStartTime)).startOf("second").valueOf()),
       );
     });
 
@@ -72,12 +67,7 @@ export default function chartCooldownUpdater(tableData) {
     }))
     .map((key) =>
       customCooldownDurations.push(
-        durationmaker(
-          key.ability,
-          key.timestamp,
-          key.abilityname,
-          moment(fightDuration(this.state.currentEndTime, this.state.currentStartTime)).startOf("second").valueOf(),
-        ),
+        durationmaker(key.ability, key.timestamp, key.abilityname, moment(fightDuration(this.state.currentEndTime, this.state.currentStartTime)).startOf("second").valueOf()),
       ),
     );
 
@@ -90,12 +80,7 @@ export default function chartCooldownUpdater(tableData) {
     }))
     .map((key) =>
       customCooldownDurations.push(
-        durationmaker(
-          key.ability,
-          key.timestamp,
-          key.abilityname,
-          moment(fightDuration(this.state.currentEndTime, this.state.currentStartTime)).startOf("second").valueOf(),
-        ),
+        durationmaker(key.ability, key.timestamp, key.abilityname, moment(fightDuration(this.state.currentEndTime, this.state.currentStartTime)).startOf("second").valueOf()),
       ),
     );
 
@@ -108,12 +93,7 @@ export default function chartCooldownUpdater(tableData) {
     }))
     .map((key) =>
       customCooldownDurations.push(
-        durationmaker(
-          key.ability,
-          key.timestamp,
-          key.abilityname,
-          moment(fightDuration(this.state.currentEndTime, this.state.currentStartTime)).startOf("second").valueOf(),
-        ),
+        durationmaker(key.ability, key.timestamp, key.abilityname, moment(fightDuration(this.state.currentEndTime, this.state.currentStartTime)).startOf("second").valueOf()),
       ),
     );
 
@@ -126,12 +106,7 @@ export default function chartCooldownUpdater(tableData) {
     }))
     .map((key) =>
       customCooldownDurations.push(
-        durationmaker(
-          key.ability,
-          key.timestamp,
-          key.abilityname,
-          moment(fightDuration(this.state.currentEndTime, this.state.currentStartTime)).startOf("second").valueOf(),
-        ),
+        durationmaker(key.ability, key.timestamp, key.abilityname, moment(fightDuration(this.state.currentEndTime, this.state.currentStartTime)).startOf("second").valueOf()),
       ),
     );
 
@@ -157,192 +132,128 @@ export default function chartCooldownUpdater(tableData) {
   //prettier-ignore
   const ertNoteTimeNoIcons = tableData
     .filter((key) => key.Cooldown !== undefined)
-    .map((key) => ({
+    .map((key) => {
+      let time = "{time:" + key.time + "}"
+      let option0 = classColoursERT(key.class) + key.name + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown)
+      let option1 = (key.name1 === "" || key.name1 === undefined) ? "" : ", " + classColoursERT(key.class1) + key.name1 + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown1) 
+      let option2 = (key.name2 === "" || key.name2 === undefined) ? "" : ", " + classColoursERT(key.class2) + key.name2 + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown2) 
+      let option3 = (key.name3 === "" || key.name3 === undefined) ? "" : ", " + classColoursERT(key.class3) + key.name3 + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown3)
+      let option4 = (key.name4 === "" || key.name4 === undefined) ? "" : ", " + classColoursERT(key.class4) + key.name4 + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown4)
+     
+      return ({
       ert:
-        "{time:" + key.time + "}" +
-        " - " + classColoursERT(key.class) + key.name + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown) + 
-        ", " + classColoursERT(key.class1) + key.name1 + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown1) +
-        ", " + classColoursERT(key.class2) + key.name2 + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown2) +
-        ", " + classColoursERT(key.class3) + key.name3 + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown3) +
-        ", " + classColoursERT(key.class4) + key.name4 + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown4),
+        time + " - " + option0 + option1 + option2 + option3 + option4,
       // This is for Sorting by Time
       time: key.time,
-    }));
+    })});
 
   // Ability + No Icons
   const ertNoteAbilityNoIcons = tableData
-    .filter((key) => key.Cooldown !== undefined)
-    .map((key) => ({
-      ert:
-        i18n.t("CooldownPlanner.BossAbilities." + key.bossAbility) +
-        " - " +
-        classColoursERT(key.class) +
-        key.name +
-        "|r" +
-        " - " +
-        i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown) +
-        ", " +
-        classColoursERT(key.class1) +
-        key.name1 +
-        "|r" +
-        " - " +
-        i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown1) +
-        ", " +
-        classColoursERT(key.class2) +
-        key.name2 +
-        "|r" +
-        " - " +
-        i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown2) +
-        ", " +
-        classColoursERT(key.class3) +
-        key.name3 +
-        "|r" +
-        " - " +
-        i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown3) +
-        classColoursERT(key.class4) +
-        key.name4 +
-        "|r" +
-        " - " +
-        i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown4),
-      // This is for Sorting by Time
-      time: key.time,
-    }));
+    .filter((key) => key.bossAbility !== undefined)
+    .map((key) => {
+      let bossAbility =
+        key.bossAbility === undefined || key.bossAbility === ""
+          ? i18n.t("CooldownPlanner.BossAbilities." + key.bossAbility)
+          : i18n.t("CooldownPlanner.BossAbilities." + key.bossAbility) + " " + "{spell:" + key.bossAbility + "}";
+      let option0 = classColoursERT(key.class) + key.name + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown);
+      let option1 =
+        key.name1 === "" || key.name1 === undefined
+          ? ""
+          : ", " + classColoursERT(key.class1) + key.name1 + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown1);
+      let option2 =
+        key.name2 === "" || key.name2 === undefined
+          ? ""
+          : ", " + classColoursERT(key.class2) + key.name2 + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown2);
+      let option3 =
+        key.name3 === "" || key.name3 === undefined
+          ? ""
+          : ", " + classColoursERT(key.class3) + key.name3 + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown3);
+      let option4 =
+        key.name4 === "" || key.name4 === undefined
+          ? ""
+          : ", " + classColoursERT(key.class4) + key.name4 + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown4);
+
+      return {
+        ert: bossAbility + " - " + option0 + option1 + option2 + option3 + option4,
+        // This is for Sorting by Time
+        time: key.time,
+      };
+    });
 
   // Ability + Icons All
   const ertNoteAbilityNoTimeIconsAll = tableData
     .filter((key) => key.Cooldown !== undefined)
-    .map((key) => ({
-      ert:
-        i18n.t("CooldownPlanner.BossAbilities." + key.bossAbility) +
-        " " +
-        "{spell:" +
-        key.bossAbility +
-        "}" +
-        " " +
-        classColoursERT(key.class) +
-        key.name +
-        "|r" +
-        " " +
-        i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown) +
-        " " +
-        "{spell:" +
-        key.Cooldown +
-        "}" +
-        " " +
-        classColoursERT(key.class1) +
-        key.name1 +
-        "|r" +
-        " " +
-        i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown1) +
-        " " +
-        "{spell:" +
-        key.Cooldown1 +
-        "}" +
-        " " +
-        classColoursERT(key.class2) +
-        key.name2 +
-        "|r" +
-        " " +
-        i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown2) +
-        " " +
-        "{spell:" +
-        key.Cooldown2 +
-        "}" +
-        " " +
-        classColoursERT(key.class3) +
-        key.name3 +
-        "|r" +
-        " " +
-        i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown3) +
-        " " +
-        "{spell:" +
-        key.Cooldown3 +
-        "}" +
-        " " +
-        classColoursERT(key.class4) +
-        key.name4 +
-        "|r" +
-        " " +
-        i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown4) +
-        " " +
-        "{spell:" +
-        key.Cooldown4 +
-        "}",
-      time: key.time,
-    }));
+    .map((key) => {
+      let bossAbility =
+        key.bossAbility === undefined || key.bossAbility === ""
+          ? i18n.t("CooldownPlanner.BossAbilities." + key.bossAbility)
+          : i18n.t("CooldownPlanner.BossAbilities." + key.bossAbility) + " " + "{spell:" + key.bossAbility + "}";
+      let option0 = classColoursERT(key.class) + key.name + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown) + " " + "{spell:" + key.Cooldown + "}";
+      let option1 =
+        key.name1 === "" || key.name1 === undefined
+          ? ""
+          : ", " + classColoursERT(key.class1) + key.name1 + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown1) + " " + "{spell:" + key.Cooldown1 + "}";
+      let option2 =
+        key.name2 === "" || key.name2 === undefined
+          ? ""
+          : ", " + classColoursERT(key.class2) + key.name2 + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown2) + " " + "{spell:" + key.Cooldown2 + "}";
+      let option3 =
+        key.name3 === "" || key.name3 === undefined
+          ? ""
+          : ", " + classColoursERT(key.class3) + key.name3 + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown3) + " " + "{spell:" + key.Cooldown3 + "}";
+      let option4 =
+        key.name4 === "" || key.name4 === undefined
+          ? ""
+          : ", " + classColoursERT(key.class4) + key.name4 + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown4) + " " + "{spell:" + key.Cooldown4 + "}";
+
+      return {
+        ert: bossAbility + " - " + option0 + option1 + option2 + option3 + option4,
+        // This is for Sorting by Time
+        time: key.time,
+      };
+    });
 
   // Time + Icons
   const ertNoteTimeIcons = tableData
     .filter((key) => key.Cooldown !== undefined)
-    .map((key) => ({
-      ert:
-        "{time:" +
-        key.time +
-        "}" +
-        " " +
-        classColoursERT(key.class) +
-        key.name +
-        "|r" +
-        " " +
-        i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown) +
-        " " +
-        "{spell:" +
-        key.Cooldown +
-        "}" +
-        " " +
-        classColoursERT(key.class1) +
-        key.name1 +
-        "|r" +
-        " " +
-        i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown1) +
-        " " +
-        "{spell:" +
-        key.Cooldown1 +
-        "}" +
-        " " +
-        classColoursERT(key.class2) +
-        key.name2 +
-        "|r" +
-        " " +
-        i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown2) +
-        " " +
-        "{spell:" +
-        key.Cooldown2 +
-        "}" +
-        " " +
-        classColoursERT(key.class3) +
-        key.name3 +
-        "|r" +
-        " " +
-        i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown3) +
-        " " +
-        "{spell:" +
-        key.Cooldown3 +
-        "}" +
-        " " +
-        classColoursERT(key.class4) +
-        key.name4 +
-        "|r" +
-        " " +
-        i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown4) +
-        " " +
-        "{spell:" +
-        key.Cooldown4 +
-        "}",
-      time: key.time,
-    }));
+    .map((key) => (key) => {
+      let time = "{time:" + key.time + "}";
+      let option0 = classColoursERT(key.class) + key.name + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown);
+      let option1 =
+        key.name1 === "" || key.name1 === undefined
+          ? ""
+          : ", " + classColoursERT(key.class1) + key.name1 + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown1) + " " + "{spell:" + key.Cooldown + "}";
+      let option2 =
+        key.name2 === "" || key.name2 === undefined
+          ? ""
+          : ", " + classColoursERT(key.class2) + key.name2 + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown2) + " " + "{spell:" + key.Cooldown1 + "}";
+      let option3 =
+        key.name3 === "" || key.name3 === undefined
+          ? ""
+          : ", " + classColoursERT(key.class3) + key.name3 + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown3) + " " + "{spell:" + key.Cooldown3 + "}";
+      let option4 =
+        key.name4 === "" || key.name4 === undefined
+          ? ""
+          : ", " + classColoursERT(key.class4) + key.name4 + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown4) + " " + "{spell:" + key.Cooldown4 + "}";
 
-  // Notes + Icons
-  const ertNoteNoteIcons = tableData.map((key) => ({
-    ert: key.notes + " - " + classColoursERT(key.class) + key.name + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown) + " " + "{spell:" + key.Cooldown + "}",
-    time: key.time,
-  }));
+      return {
+        ert: time + " - " + option0 + option1 + option2 + option3 + option4,
+        // This is for Sorting by Time
+        time: key.time,
+      };
+    });
 
-  // Notes + No Icons
-  const ertNoteNoteNoIcons = tableData.map((key) => ({
-    ert: key.notes + " - " + classColoursERT(key.class) + key.name + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown),
-    time: key.time,
-  }));
+  // // Notes + Icons
+  // const ertNoteNoteIcons = tableData.map((key) => ({
+  //   ert: key.notes + " - " + classColoursERT(key.class) + key.name + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown) + " " + "{spell:" + key.Cooldown + "}",
+  //   time: key.time,
+  // }));
+
+  // // Notes + No Icons
+  // const ertNoteNoteNoIcons = tableData.map((key) => ({
+  //   ert: key.notes + " - " + classColoursERT(key.class) + key.name + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown),
+  //   time: key.time,
+  // }));
 
   console.log(mitigatedChartDataNoCooldowns);
   console.log(unmitigatedChartDataNoCooldowns);
@@ -355,7 +266,7 @@ export default function chartCooldownUpdater(tableData) {
     ertListBossAbility: ertNoteAbilityNoIcons,
     ertListAbilityNoTimeIconsAll: ertNoteAbilityNoTimeIconsAll,
     ertListTimeIcons: ertNoteTimeIcons,
-    ertListNoteIcons: ertNoteNoteIcons,
-    ertListNoteNoIcons: ertNoteNoteNoIcons,
+    // ertListNoteIcons: ertNoteNoteIcons,
+    // ertListNoteNoIcons: ertNoteNoteNoIcons,
   });
 }
