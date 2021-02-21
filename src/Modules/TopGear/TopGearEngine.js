@@ -29,10 +29,10 @@ export function expensive(time) {
 // Unfortunately we aren't able to pass objects through to our worker. This recreates our player object since we'll need it for effect formulas. 
 function setupPlayer(player, contentType, castModel) {
 
-  console.log(player);
+  //console.log(player);
   let newPlayer = new Player(player.charName, player.spec, player.charID, player.region, player.realm, player.race, player.statWeights);
   //newPlayer = Object.assign(newPlayer, player);
-  console.log("NEW PLAYER");
+  //console.log("NEW PLAYER");
   newPlayer.castModel[contentType] = new CastModel(newPlayer.getSpec(), contentType);
   newPlayer.castModel[contentType] = Object.assign(newPlayer.castModel[contentType], castModel);
 
@@ -74,7 +74,7 @@ export function runTopGear(itemList, wepCombos, player, contentType, baseHPS, cu
 
   itemSets.sort((a, b) => (a.hardScore < b.hardScore ? 1 : -1));
 
-  console.log(itemSets);
+  //console.log(itemSets);
 
   // ----
 
