@@ -8,7 +8,7 @@ const useStyles = makeStyles({
     maxWidth: 345,
   },
   media: {
-    height: 110,
+    height: 86,
   },
 });
 
@@ -35,7 +35,7 @@ export default function ArticleCard(props) {
       <Card className={classes.root}>
         <CardActionArea onClick={() => openURL(props.url)}>
           <CardMedia className={classes.media} image={props.image} title={props.title}>
-            <CardContent style={{ paddingTop: 24 }}>
+            <CardContent style={{ paddingTop: 12, paddingBottom: 12 }}>
               <Typography align="center" variant="caption" style={{ textShadow: "black -1px 1px 1px" }} component="h2">
                 {props.date}
               </Typography>
