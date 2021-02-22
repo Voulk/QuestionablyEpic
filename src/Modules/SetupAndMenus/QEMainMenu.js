@@ -152,7 +152,11 @@ export default function QEMainMenu(props) {
           ))}
         </Grid>
 
-        <p className="headers">{t("MainMenu.CharHeader")}</p>
+        {/* <p className="headers"> */}
+        <Typography variant="h5" align="center" style={{ padding: "10px 10px 5px 10px" }} color="primary">
+          {t("MainMenu.CharHeader")}
+        </Typography>
+        {/* </p> */}
         <Typography style={{ color: "white", marginBottom: "10px", fontStyle: "italic" }} variant="body2" align="center">
           {t("MainMenu.CharHelpText")}
         </Typography>
