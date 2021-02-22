@@ -68,11 +68,9 @@ export default function QEMainMenu(props) {
   if (props.allChars.allChar.length > 0) {
     articles = props.articleList.filter(article => (article.specs.includes(props.player.getSpec()) || article.specs === "All"));
     articles.sort((a, b) => (a.date < b.date ? 1 : -1));
-    articles.slice(0, 3);
+    articles = articles.slice(0, 3);
   }
   
-  
-
   /*
   const links = [
     {
