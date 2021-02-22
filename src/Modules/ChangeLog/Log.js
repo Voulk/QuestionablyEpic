@@ -11,14 +11,16 @@ export const changeLog = [
   { 
     version: "9.0",
     update: 24,
-    date: "15th February", // TBA
+    date: "23rd February", // TBA
     changes: [
+      "New: Added Recent articles and spec guides to the main menu.",
+      "New: Top Gear now has a settings panel for advanced configuration.",
       "Top Gear: Items that differ from what you have equipped will highlight in yellow.",
       "Top Gear: Revamped Competitive Alternatives & increased closest sets to 8 (was 4).",
       "Top Gear: Re-implemented diminishing returns formulas.",
-      "Revamped the character edit pane.",
-      "Current Character now will show in the Header",
-      "Druid: Dark Titans Lesson now includes Photosynthesis in dungeons.",
+      "Revamped character edit pane.",
+      "Druid: Dark Titans Lesson now includes Photosynthesis value in dungeons.",
+      "Heavy visual improvements through the app."
     ]
   },
   { 
@@ -26,12 +28,12 @@ export const changeLog = [
   update: 23,
   date: "11th February",
   changes: [
-    "Implemented Changelog to improve transparency",
-    "Large codebase revamp to prepare for the rest of the expansion",
-    "Updated Summary Panel on the Covenant Exploration page to be clearer on what it represents",
-    "Venthyr Paladin Covenant Ability score now correctly displays it's HPS",
-    "Necrolord Monk 'Bone Marrow Hops' conduit now correctly uses the 50% hit chance of 'Bonedust Brew'",
-    "General Draven's 'Hold Your Ground' has been updated to better reflect real world uptimes. The Spirit Shell bug is also now accounted for."
+    "New: Changelog to improve transparency",
+    "Large codebase revamp to prepare for the rest of the expansion.",
+    "Updated: The Summary Panel in #Covenants should now be clearer to read.",
+    "Venthyr Paladin Covenant Ability score now correctly displays HPS.",
+    "Monk: Necrolord conduit 'Bone Marrow Hops' now correctly uses the 50% hit chance of Bonedust Brew",
+    "General Draven's 'Hold Your Ground' has been updated to better reflect real world uptimes. The current Disc Priest bug is also included."
   ]
   },
 ];
