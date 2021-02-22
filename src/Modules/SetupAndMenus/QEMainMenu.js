@@ -6,13 +6,14 @@ import CharCards from "./CharacterModules/CharacterCards";
 import AddNewChar from "./CharacterModules/CharacterCreator";
 import { makeStyles } from "@material-ui/core/styles";
 import ReactGA from "react-ga";
-import { dbCheckPatron } from "./ConnectionUtilities";
+import { dbCheckPatron, dbGetArticleList } from "./ConnectionUtilities";
 import ArrowForward from "@material-ui/icons/ArrowForward";
 import { Paper, Grid, Button, Typography, Tooltip } from "@material-ui/core";
 // import HallOfFame from "../HallOfFame/HallOfFame";
 import MessageOfTheDay from "./MessageOftheDay";
 import ArticleCard from "../ArticleCards/ArcticleCard";
 import Changelog from "../ChangeLog/Changelog";
+
 
 // Warning: If a button name has to change, do it in the translation files. Consider the titles here to be ID's rather than strings.
 // [route, show button?, tooltip]
@@ -60,6 +61,11 @@ export default function QEMainMenu(props) {
   const classes = useStyles();
   const characterCount = props.allChars.getAllChar().length;
   const patron = ["Diamond", "Gold", "Rolls Royce", "Sapphire"].includes(props.patronStatus);
+
+  //const articles = dbGetArticleList();
+  //console.log(articles);
+
+  const articles = props.articleList;
 
   const links = [
     {
@@ -135,7 +141,7 @@ export default function QEMainMenu(props) {
                   color="secondary"
                   style={{
                     width: "100%",
-                    height: "60px",
+                    height: "55px",
                     whiteSpace: "nowrap",
                     justifyContent: "left",
                     paddingLeft: "32px",
@@ -151,7 +157,6 @@ export default function QEMainMenu(props) {
             </Grid>
           ))}
         </Grid>
-
         <p className="headers">{t("MainMenu.CharHeader")}</p>
         <Typography style={{ color: "white", marginBottom: "10px", fontStyle: "italic" }} variant="body2" align="center">
           {t("MainMenu.CharHelpText")}
@@ -191,7 +196,7 @@ export default function QEMainMenu(props) {
             </Typography> */}
           </Grid>
           {/* add a filter here for the players class */}
-          {links.map((key) => (
+          {articles.map((key) => (
             <ArticleCard url={key.url} title={key.title} image={key.image} date={key.date} blurb={key.blurb} />
           ))}
         </Grid>
