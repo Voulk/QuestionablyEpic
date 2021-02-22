@@ -64,9 +64,11 @@ export default function QEMainMenu(props) {
 
   //const articles = dbGetArticleList();
   //console.log(articles);
+  let articles = [];
+  if (props.allChars.allChar.length > 0) articles = props.articleList.filter(article => article.specs.includes(props.player.getSpec()));
+  
 
-  const articles = props.articleList;
-
+  /*
   const links = [
     {
       image: "https://questionablyepic.com/wp-content/uploads/2020/11/Castle-Nathria-300x250.jpg",
@@ -92,7 +94,7 @@ export default function QEMainMenu(props) {
       specs: ["Monk"],
       blurb: "The following guide was written by Sweggles from Vesper on Area 52...",
     },
-  ];
+  ]; */
 
   const oddEven = (number) => {
     if (number % 2 == 0) {
@@ -190,6 +192,7 @@ export default function QEMainMenu(props) {
           {props.allChars.getAllChar().length < 9 ? <AddNewChar allChars={props.allChars} charUpdate={props.charUpdate} charAddedSnack={props.charAddedSnack} /> : ""}
         </Grid>
 
+        {articles.length > 0 ? 
         <Grid container spacing={1}>
           <Grid item xs={12}>
             <Typography variant="h5" align="center" style={{ padding: "10px 10px 5px 10px" }} color="primary">
@@ -204,7 +207,7 @@ export default function QEMainMenu(props) {
           {articles.map((key) => (
             <ArticleCard url={key.url} title={key.title} image={key.image} date={key.date} blurb={key.blurb} />
           ))}
-        </Grid>
+        </Grid> : ""}
         <Changelog />
       </div>
     </div>
