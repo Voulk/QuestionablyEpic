@@ -39,7 +39,7 @@ export const tokenDB = {
         "itemLevel": 200,
         "slotType": "Offhands",
         "specs": ["Restoration Shaman", "Restoration Druid"],
-        "encounterId": 2418, // Inerva Darkvein
+        "encounterId": 2420, // Inerva Darkvein
         "venthyr": [182426, 182425],
         "necrolord": [184245, 184246], 
         "kyrian": [174310, 175254],
