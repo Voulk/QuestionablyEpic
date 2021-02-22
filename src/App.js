@@ -23,7 +23,7 @@ import ls from "local-storage";
 import Snackbar from "@material-ui/core/Snackbar";
 import MuiAlert from "@material-ui/lab/Alert";
 import { createBrowserHistory } from "history";
-import { dbCheckPatron } from "./Modules/SetupAndMenus/ConnectionUtilities";
+import { dbCheckPatron, dbGetArticleList } from "./Modules/SetupAndMenus/ConnectionUtilities";
 
 import ReactGA from "react-ga";
 
@@ -85,6 +85,7 @@ class App extends Component {
     this.setEmail = this.setEmail.bind(this);
     this.setPatron = this.setPatron.bind(this);
     this.checkPatron = this.checkPatron.bind(this);
+    this.setArticleList = this.setArticleList.bind(this);
     this.langSet = this.langSet.bind(this);
     this.userLogout = this.userLogout.bind(this);
     this.state = {
@@ -105,12 +106,15 @@ class App extends Component {
       emailSnackState: false,
       emailSnackErrorState: false,
       topSet: null,
+      articleList: [],
     };
   }
 
   setTopResult = (set) => {
     this.setState({ topSet: set });
   };
+
+  
 
   /* -------------------------------------------------------------------------- */
   /*                             Snack Bar Handlers                             */
@@ -212,12 +216,24 @@ class App extends Component {
     this.setState({ patronStatus: status });
   };
 
+
+  /* ----------------------- Article List Handler ----------------------------- */
+  setArticleList = (list) => {
+    this.setState({articleList: list})
+  }
+
   /* ------------------ Checks Patron Status from Users Email ----------------- */
   checkPatron = (email) => {
     if (email !== "") {
       dbCheckPatron(email, this.setPatron);
     }
   };
+
+  /* ------------------- Get Article List ------------------------------------- */
+  getArticleList = () => {
+    dbGetArticleList(this.setArticleList);
+    
+  }
 
   /* -------------- Sets the Users Email to state & Local Storage ------------- */
   setEmail = (emailAdd) => {
@@ -302,6 +318,7 @@ class App extends Component {
       email: ls.get("email") || "",
     });
     this.checkPatron(ls.get("email"));
+    this.getArticleList();
 
     i18n.changeLanguage(ls.get("lang") || "en");
   }
@@ -399,12 +416,13 @@ class App extends Component {
                       allChars={allChars}
                       charUpdate={this.updatePlayerChars}
                       singleUpdate={this.updatePlayerChar}
-                      player={this.state.player}
+                      player={activePlayer}
                       charAddedSnack={this.handleCharSnackOpen}
                       charUpdatedSnack={this.handleCharUpdateSnackOpen}
                       contentType={this.state.contentType}
                       patronStatus={this.state.patronStatus}
                       delChar={this.deletePlayerChar}
+                      articleList={this.state.articleList}
                     />
                   )}
                 />

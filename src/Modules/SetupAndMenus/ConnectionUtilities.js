@@ -12,6 +12,18 @@ export function dbCheckPatron(email, setPatron) {
     .catch((err) => console.log(err));
 }
 
+export async function dbGetArticleList(setArticleList) {
+  let fetchUrl = "https://questionablyepic.com/api/getArticleList.php";
+  fetch(fetchUrl)
+    .then((res) => res.json())
+    .then((data) => {
+      console.log(data);
+      setArticleList(data);
+      return data;
+    })
+    .catch((err) => console.log(err));
+}
+
 export async function apiSendTopGearSet(player, content, score, compared) {
   let name = player.charName;
   let contentType = content;
