@@ -45,9 +45,9 @@ export default function ArticleCard(props) {
                 {props.title}
               </Typography>
 
-              {/* <Typography style={{ fontSize: 12 }} variant="body2" component="p">
-                {truncate(props.blurb, 10)}
-              </Typography> */}
+              {<Typography align="center" style={{ fontSize: 14, textShadow: "black -1px 1px 1px" }} variant="body2" component="p">
+                {props.extrainfo.length > 0 ? " - " + props.extrainfo + " - " : ""}
+              </Typography> }
             </CardContent>
           </CardMedia>
         </CardActionArea>

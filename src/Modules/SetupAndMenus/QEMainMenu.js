@@ -65,7 +65,12 @@ export default function QEMainMenu(props) {
   //const articles = dbGetArticleList();
   //console.log(articles);
   let articles = [];
-  if (props.allChars.allChar.length > 0) articles = props.articleList.filter(article => article.specs.includes(props.player.getSpec()));
+  if (props.allChars.allChar.length > 0) {
+    articles = props.articleList.filter(article => (article.specs.includes(props.player.getSpec()) || article.specs === "All"));
+    articles.sort((a, b) => (a.date < b.date ? 1 : -1));
+    articles.slice(0, 3);
+  }
+  
   
 
   /*
@@ -161,7 +166,7 @@ export default function QEMainMenu(props) {
         </Grid>
 
         {/* <p className="headers"> */}
-        <Typography variant="h5" align="center" style={{ padding: "10px 10px 5px 10px" }} color="primary">
+        <Typography variant="h5" align="center" style={{ padding: "25px 10px 5px 10px" }} color="primary">
           {t("MainMenu.CharHeader")}
         </Typography>
         {/* </p> */}
@@ -195,9 +200,9 @@ export default function QEMainMenu(props) {
         {articles.length > 0 ? 
         <Grid container spacing={1}>
           <Grid item xs={12}>
-            <Typography variant="h5" align="center" style={{ padding: "10px 10px 5px 10px" }} color="primary">
+            <Typography variant="h5" align="center" style={{ padding: "25px 10px 5px 10px" }} color="primary">
               {/* // TODO Translations and reword */}
-              Class Related Links
+              Recent Spec Articles
             </Typography>
             {/* <Typography style={{ color: "white", fontStyle: "italic" }} variant="body2" align="center">
               Some Links Relevant to the Class
@@ -205,7 +210,7 @@ export default function QEMainMenu(props) {
           </Grid>
           {/* add a filter here for the players class */}
           {articles.map((key) => (
-            <ArticleCard url={key.url} title={key.title} image={key.image} date={key.date} blurb={key.blurb} />
+            <ArticleCard url={key.url} title={key.title} image={key.image} date={key.date} extrainfo={key.extrainfo} />
           ))}
         </Grid> : ""}
         <Changelog />
