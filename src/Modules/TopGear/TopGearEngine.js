@@ -15,7 +15,7 @@ import { getEffectValue } from "../Engine/EffectFormulas/EffectEngine"
 // our set bonus algorithm before we sort and slice. There are no current set bonuses that are relevant to raid / dungeon so left as a thought experiment for now.
 const softSlice = 3000;
 const DR_CONST = 0.00196669230769231;
-const DR_CONSTLEECH = 0.08998569230769231;
+const DR_CONSTLEECH = 0.08822569230769231;
 
 
 // block for `time` ms, then return the number of loops we could run in that time:
@@ -312,8 +312,6 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
   };
   //console.log("Weights Before: " + JSON.stringify(adjusted_weights));
 
-
-  // TODO: Leech, which has a DR larger than secondary stats.
   //console.log("Weights After: " + JSON.stringify(adjusted_weights));
 
   // Apply consumables if ticked.
@@ -379,7 +377,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
   adjusted_weights.leech = (adjusted_weights.leech + adjusted_weights.leech * (1 - (DR_CONSTLEECH * setStats.leech) / STATPERONEPERCENT.LEECH)) / 2;
 
   console.log(adjusted_weights);
-  //console.log("New Leech: " + adjusted_weights.leech);
+  console.log("New Leech: " + adjusted_weights.leech + " at " + setStats.leech);
   // Calculate a hard score using the rebalanced stat weights.
 
   for (var stat in setStats) {
@@ -416,6 +414,7 @@ export function mergeBonusStats(stats) {
       crit: mergeStat(stats, 'crit'),
       mastery: mergeStat(stats, 'mastery'),
       versatility: mergeStat(stats, 'versatility'),
+      leech: mergeStat(stats, 'leech'),
       hps: (mergeStat(stats, 'hps') + mergeStat(stats, 'HPS')),
       dps: mergeStat(stats, 'dps'),
     }
