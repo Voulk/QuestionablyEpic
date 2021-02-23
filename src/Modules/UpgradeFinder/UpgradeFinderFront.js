@@ -260,7 +260,7 @@ export default function UpgradeFinderFront(props) {
           </Paper>
         </Grid>
         <Grid item xs={12}>
-          <TopGearSettingsAccordion />
+          {/*<TopGearSettingsAccordion /> */}
         </Grid>
         <Grid item xs={12} style={{ marginBottom: 100 }} />
       </Grid>
