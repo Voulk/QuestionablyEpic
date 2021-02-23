@@ -487,4 +487,27 @@ export const trinket_data = [
       },
     ],
   },
+  // ---------- Burning Crusade Timewalking Trinkets ------------
+  {
+    name: "Memento of Tyrande", // Mana Proc
+    effects: [
+      {
+        coefficient: 2.03251, // 8.996611 pre-nerf
+        table: -7,
+        ppm: 2.5, // 2.5 + Haste.
+      },
+    ],
+  },
+  {
+    name: "The Skull of Gul'dan",
+    effects: [
+      {
+        coefficient: 1.815054,
+        table: -7,
+        duration: 20,
+        multiplier: 1,
+        cooldown: 120,
+      },
+    ],
+  },
 ];

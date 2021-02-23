@@ -205,7 +205,7 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel, use
 
     bonus_stats.mastery = (getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.duration) / effect.cooldown;
 
-    if (player.getSpec() === SPEC.RESODRUID) bonus_stats.mastery *= 1.2; // Bell is combined with Flourish.
+    if (player.getSpec() === SPEC.RESTODRUID) bonus_stats.mastery *= 1.2; // Bell is combined with Flourish.
     // We need a better way to model interaction with spec cooldowns.
   
   } else if (effectName === "Consumptive Infusion") {
@@ -302,9 +302,24 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel, use
     let effect = activeTrinket.effects[0];
     bonus_stats.mastery = effect.coefficient * effect.stacks[player.getSpec()];
   
+  } else if (effectName === "Memento of Tyrande") {
+    let effect = activeTrinket.effects[0];
+
+    bonus_stats.mana = (getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.ppm * player.getStatPerc("Haste")) / 60;
+
+    //console.log("Tuft: " + bonus_stats.hps);
+  
+  } else if (effectName === "The Skull of Gul'dan") {
+    const effect = activeTrinket.effects[0];
+    bonus_stats.haste = (getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.duration) / effect.cooldown;
+    if (player.getSpec() === "Holy Paladin") bonus_stats.haste *= player.getCooldownMult("twoMinutes", contentType);
+    console.log(bonus_stats);
+
   } else {
     console.log("No Trinket Found");
   }
+
+  
 
   //console.log("Effect Name: " + effectName + " at level: " + itemLevel + " {" + JSON.stringify(bonus_stats))
   return bonus_stats;
