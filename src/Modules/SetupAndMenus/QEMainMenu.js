@@ -6,12 +6,14 @@ import CharCards from "./CharacterModules/CharacterCards";
 import AddNewChar from "./CharacterModules/CharacterCreator";
 import { makeStyles } from "@material-ui/core/styles";
 import ReactGA from "react-ga";
-import { dbCheckPatron } from "./ConnectionUtilities";
+import { dbCheckPatron, dbGetArticleList } from "./ConnectionUtilities";
 import ArrowForward from "@material-ui/icons/ArrowForward";
 import { Paper, Grid, Button, Typography, Tooltip } from "@material-ui/core";
-import HallOfFame from "../HallOfFame/HallOfFame";
+// import HallOfFame from "../HallOfFame/HallOfFame";
 import MessageOfTheDay from "./MessageOftheDay";
-import Changelog from "../ChangeLog/Changelog"
+import ArticleCard from "../ArticleCards/ArcticleCard";
+import Changelog from "../ChangeLog/Changelog";
+
 
 // Warning: If a button name has to change, do it in the translation files. Consider the titles here to be ID's rather than strings.
 // [route, show button?, tooltip]
@@ -60,6 +62,43 @@ export default function QEMainMenu(props) {
   const characterCount = props.allChars.getAllChar().length;
   const patron = ["Diamond", "Gold", "Rolls Royce", "Sapphire"].includes(props.patronStatus);
 
+  //const articles = dbGetArticleList();
+  //console.log(articles);
+  let articles = [];
+  if (props.allChars.allChar.length > 0) {
+    articles = props.articleList.filter(article => (article.specs.includes(props.player.getSpec()) || article.specs === "All"));
+    articles.sort((a, b) => (a.date < b.date ? 1 : -1));
+    articles = articles.slice(0, 3);
+  }
+  
+  /*
+  const links = [
+    {
+      image: "https://questionablyepic.com/wp-content/uploads/2020/11/Castle-Nathria-300x250.jpg",
+      title: "Castle Nathria Ramp Guide I – Discipline",
+      url: "https://questionablyepic.com/castle-nathria-ramps/",
+      date: "January 27, 2021",
+      specs: ["Priest"],
+      blurb: "Castle Nathria opens Shadowlands with a fantastic ten boss raid in which Disc Priest reigns...",
+    },
+    {
+      image: "https://questionablyepic.com/wp-content/uploads/2021/01/Rising-Mist-in-Mythic-300x250.jpg",
+      title: "The Fistweaving Compendium – Mythic+",
+      url: "https://questionablyepic.com/fistweaving-dungeon-compendium/",
+      date: "January 23, 2021",
+      specs: ["Monk"],
+      blurb: "The following guide was written by Sweggles from Vesper on Area 52...",
+    },
+    {
+      image: "https://questionablyepic.com/wp-content/uploads/2021/01/Rising-Mist-vs-Upwelling-300x250.jpg",
+      title: "The Fistweaving Compendium – Raid",
+      url: "https://questionablyepic.com/fistweaving-raid-compendium/",
+      date: "January 18, 2021",
+      specs: ["Monk"],
+      blurb: "The following guide was written by Sweggles from Vesper on Area 52...",
+    },
+  ]; */
+
   const oddEven = (number) => {
     if (number % 2 == 0) {
       return "left";
@@ -107,7 +146,7 @@ export default function QEMainMenu(props) {
                   color="secondary"
                   style={{
                     width: "100%",
-                    height: "60px",
+                    height: "55px",
                     whiteSpace: "nowrap",
                     justifyContent: "left",
                     paddingLeft: "32px",
@@ -124,7 +163,11 @@ export default function QEMainMenu(props) {
           ))}
         </Grid>
 
-        <p className="headers">{t("MainMenu.CharHeader")}</p>
+        {/* <p className="headers"> */}
+        <Typography variant="h5" align="center" style={{ padding: "25px 10px 5px 10px" }} color="primary">
+          {t("MainMenu.CharHeader")}
+        </Typography>
+        {/* </p> */}
         <Typography style={{ color: "white", marginBottom: "10px", fontStyle: "italic" }} variant="body2" align="center">
           {t("MainMenu.CharHelpText")}
         </Typography>
@@ -151,11 +194,24 @@ export default function QEMainMenu(props) {
             : ""}
           {props.allChars.getAllChar().length < 9 ? <AddNewChar allChars={props.allChars} charUpdate={props.charUpdate} charAddedSnack={props.charAddedSnack} /> : ""}
         </Grid>
-        {/* //Disabled Changelog Button */}
+
+        {articles.length > 0 ? 
+        <Grid container spacing={1}>
+          <Grid item xs={12}>
+            <Typography variant="h5" align="center" style={{ padding: "25px 10px 5px 10px" }} color="primary">
+              {/* // TODO Translations and reword */}
+              Recent Spec Articles
+            </Typography>
+            {/* <Typography style={{ color: "white", fontStyle: "italic" }} variant="body2" align="center">
+              Some Links Relevant to the Class
+            </Typography> */}
+          </Grid>
+          {/* add a filter here for the players class */}
+          {articles.map((key) => (
+            <ArticleCard url={key.url} title={key.title} image={key.image} date={key.date} extrainfo={key.extrainfo} />
+          ))}
+        </Grid> : ""}
         <Changelog />
-        {/* <p className="headers" style={{ fontSize: "12px" }}>
-          QE Live 9.0 Update 22. Last Updated 2 February.
-        </p> */}
       </div>
     </div>
   );

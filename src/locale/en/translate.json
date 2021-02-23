@@ -53,6 +53,7 @@
     "Account": "Account",
     "Email": "Email",
     "Battletag": "Battletag",
+    "Edit": "Edit",
 
     "Changelog": {
       "Header": "Changelog",
@@ -426,7 +427,7 @@
       "StatPanel": {
         "Summary": "Summary",
         "Score": "Score",
-        "CovenantEstimate": "Covenant Ability Est",
+        "CovenantEstimate": "Covenant Ability",
         "SelectedNodes": "Selected Nodes"
       }
     },
@@ -438,14 +439,14 @@
       "versatility": "Versatility"
     },
     "Settings": {
-      "SettingsTitle": "Settings (Coming Soon)",
+      "SettingsTitle": "Settings",
       "Setting0Spacer": "--------------------------------------------------------------------",
       "Setting0Tooltip": "The equip effect of 'Cabalist's Hymnal' is increased by 5% per Ally",
-      "Setting0Title": "Allies With Hymnal",
+      "Setting0Title": "Hymnal Allies",
       "Setting0TextFieldLabel": "Allies",
       "Setting1Spacer": "--------------------------------------------------------------------",
-      "Setting1Tooltip": "",
-      "Setting1Title": "",
+      "Setting1Tooltip": "Treat items that buff allies as if it were personal throughput",
+      "Setting1Title": "Group Benefits",
       "Setting1TextFieldLabel": "",
       "Setting2Spacer": "--------------------------------------------------------------------",
       "Setting2Tooltip": "",
@@ -501,7 +502,7 @@
 
     "TopGear": {
       "Title": "Top Gear",
-      "HelpText": "Top Gear allows you to generate an entire gear set at once. Start by entering your SimC string above, then click to highlight any items you want included in the comparison. When you're all set, hit 'Go' at the bottom of the page. To enter items manually, return to the main menu and include them in QE Quick Compare. Great Vault items are added automatically though for the first week consider your choice carefully outside of the app.",
+      "HelpText": "Top Gear allows you to generate an entire gear set at once. Start by entering your SimC string above, then click to highlight any items you want included in the comparison. When you're all set, hit 'Go' at the bottom of the page. To enter items manually, return to the main menu and include them in QE Quick Compare.",
       "ItemsHereMessage": "Your items will go here after you import.",
       "ErrorMessage": "So sorry, seems you've run into an error. This is usually caused by not being able to create any valid sets. Check that you have a valid weapon selected, two or more rings and two or more trinkets. If multiple legendaries are selected then there must be a valid alternative for each.",
       "GoMsg": "Go!",

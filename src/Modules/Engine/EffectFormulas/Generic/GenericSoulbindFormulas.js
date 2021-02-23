@@ -14,7 +14,7 @@ import { convertPPMToUptime, getBestWeaponEnchant } from "../EffectUtilities";
     soulbind is procced by using your Covenant ability.
 
 */
-export function getSoulbindFormula(effectID, pl, contentType) {
+export function getSoulbindFormula(effectID, player, contentType) {
   let bonus_stats = {};
 
   // === KYRIAN ===
@@ -37,10 +37,10 @@ export function getSoulbindFormula(effectID, pl, contentType) {
   // Your Phial heals for 35% additional health, but over 10 seconds.
   else if (effectID === 329777) {
     let expected_overhealing = 0.55;
-    let healing_bonus = pl.activeStats.stamina * 20 * 0.35;
+    let healing_bonus = player.activeStats.stamina * 20 * 0.35;
     let uses_per_combat = 1.5;
 
-    bonus_stats.HPS = (healing_bonus * uses_per_combat * (1 - expected_overhealing)) / pl.getFightLength(contentType); // Placeholder.
+    bonus_stats.HPS = (healing_bonus * uses_per_combat * (1 - expected_overhealing)) / player.getFightLength(contentType); // Placeholder.
   }
   // Let go of the Past
   else if (effectID === 328257) {
@@ -52,31 +52,31 @@ export function getSoulbindFormula(effectID, pl, contentType) {
   // -- Kleia --
   // Valiant Strikes
   else if (effectID === 329791) {
-    let average_health_pool = pl.activeStats.stamina * 20; // The players health is an acceptable average for an average target.
-    let ppm = 0.7; // POSTLIVE: Check against logs.
+    let average_health_pool = player.activeStats.stamina * 20; // The players health is an acceptable average for an average target.
+    let ppm = 0.66; // POSTLIVE: Check against logs.
 
     bonus_stats.HPS = (average_health_pool * 0.2 * ppm) / 60;
   }
   // Cleansing Rites
   else if (effectID === 329784) {
-    let health_pool = pl.activeStats.stamina * 20;
+    let health_pool = player.activeStats.stamina * 20;
 
-    bonus_stats.HPS = (health_pool * 0.1) / pl.getFightLength(contentType);
+    bonus_stats.HPS = (health_pool * 0.1) / player.getFightLength(contentType);
   }
   // Pointed Courage
   else if (effectID === 329778) {
-    let expected_allies = 4.8;
+    let expected_allies = contentType === "Raid" ? 4.8 : 3.1;
 
     bonus_stats.Crit = expected_allies * STATPERONEPERCENT.CRIT;
   }
   // Resonant Accolades
   else if (effectID === 329781) {
     // This one needs a check against log. It can obviously never exceed 4% total healing but is likely to be much less.
-    let percent_healing_above_70 = 0.8;
+    let percent_healing_above_70 = 0.75;
     let expected_overhealing = 0.5;
     let effect_power = 0.04;
 
-    bonus_stats.HPS = pl.getHPS(contentType) * percent_healing_above_70 * (1 - expected_overhealing) * effect_power;
+    bonus_stats.HPS = player.getHPS(contentType) * percent_healing_above_70 * (1 - expected_overhealing) * effect_power;
   }
 
   // -- Mikanikos --
@@ -87,12 +87,12 @@ export function getSoulbindFormula(effectID, pl, contentType) {
     let casts_per_minute = 25; // Pull from logs.
     let brons_per_minute = casts_per_minute / 90;
 
-    let bron_sp = pl.activeStats.intellect * 2;
-    let anima_cannon_dps = 0.55 * bron_sp * 3; //* pl.getStatMultiplier("", ['Crit', 'Vers'])
+    let bron_sp = player.activeStats.intellect * 2;
+    let anima_cannon_dps = 0.55 * bron_sp * 3; //* player.getStatMultiplier("", ['Crit', 'Vers'])
     let smash_dps = 0.25 * bron_sp * 1;
     let vit_bolt_hps = 0.575 * bron_sp * 8;
 
-    bonus_stats.HPS = (brons_per_minute * vit_bolt_hps * pl.getStatMultiplier(["Crit", "Versatility"])) / 60;
+    bonus_stats.HPS = (brons_per_minute * vit_bolt_hps * player.getStatMultiplier(["Crit", "Versatility"])) / 60;
   }
   // Hammer of Genesis
   else if (effectID === 333935) {
@@ -112,9 +112,9 @@ export function getSoulbindFormula(effectID, pl, contentType) {
   else if (effectID === 320659) {
   }
   // Niya's Tools: Herbs
-  // This is basically 100% uptime on one target at a time. Personal benefit calculated only.
+  // This is basically 100% uptime on one target at a time. Team benefit is included.
   else if (effectID === 320662) {
-    bonus_stats.Haste = (5 * STATPERONEPERCENT.HASTE);
+    bonus_stats.Haste = (4.9 * STATPERONEPERCENT.HASTE);
   }
 
   // -- Dreamwalker --
@@ -127,7 +127,7 @@ export function getSoulbindFormula(effectID, pl, contentType) {
   // Social Butterfly
   else if (effectID === 319210) {
     let expectedUptime = 1; // POSTLIVE: Check if this is falling off often in either content type.
-    bonus_stats.Versatility = 1.5 * 40 * expectedUptime; // Placeholder.
+    bonus_stats.Versatility = 1.5 * 40 * expectedUptime; 
   }
   // Empowered Chrysalis
   // TODO: Expand to include overhealing on yourself.
@@ -135,7 +135,7 @@ export function getSoulbindFormula(effectID, pl, contentType) {
   else if (effectID === 319213) {
     let trait_bonus = 0.1;
     let shield_consumed = contentType == "Raid" ? 0.78 : 0.32; // The percentage of our overhealing shield that gets consumed. Likely to be very high.
-    let overhealing = pl.getRawHPS(contentType) - pl.getHPS(contentType);
+    let overhealing = player.getRawHPS(contentType) - player.getHPS(contentType);
 
     bonus_stats.HPS = trait_bonus * shield_consumed * overhealing;
   }
@@ -168,7 +168,7 @@ export function getSoulbindFormula(effectID, pl, contentType) {
   else if (effectID === 331580) {
     let flask_int = 70;
     let feast_int = 18; // Should add something to offer an option of non-int food, but they are very close.
-    let enchant_int = getBestWeaponEnchant(pl, contentType);
+    let enchant_int = getBestWeaponEnchant(player, contentType);
 
     bonus_stats.Intellect = (flask_int + feast_int + enchant_int) * 0.2;
   }
@@ -180,13 +180,20 @@ export function getSoulbindFormula(effectID, pl, contentType) {
   // -- Theotar the Mad Duke
   // Soothing Shade
   else if (effectID === 336239) {
-    let chance_of_movement = 0.1;
-    let uptime = convertPPMToUptime(1, 12) * (1 - chance_of_movement);
+    let chanceOfMovement = 0.1;
+    let uptime = convertPPMToUptime(1, 12) * (1 - chanceOfMovement);
 
     bonus_stats.Mastery = uptime * 525;
   }
   // Token of Appreciation
   else if (effectID === 336245) {
+    const expectedPPM = 9.59; // ~3.9 targets getting an absorb every ~25 seconds.
+    const healAmount = player.getInt() * 1.5 * player.getStatPerc("Versatility"); // TODO: Implement the Spell Power -> Attack Power conversion. 
+    const expectedWastage = 0.04; // Unused shields. Very low. 
+
+    bonus_stats.HPS = expectedPPM * healAmount * (1 - expectedWastage) / 60;
+
+
   }
   // Refined Palate
   else if (effectID === 336243) {
@@ -205,11 +212,11 @@ export function getSoulbindFormula(effectID, pl, contentType) {
   }
   // Hold Your Ground
   else if (effectID === 332754) {
-    const spec = pl.getSpec();
-    const expected_uptime = pl.getSpecialQuery("HoldYourGroundUptime", contentType);
+    const spec = player.getSpec();
+    const expected_uptime = player.getSpecialQuery("HoldYourGroundUptime", contentType);
     const percentHealingAffected = spec === SPEC.DISCPRIEST ? 0.25 : 1;
   
-    bonus_stats.HPS = expected_uptime * (pl.getHPS(contentType) * 0.04 * percentHealingAffected);
+    bonus_stats.HPS = expected_uptime * (player.getHPS(contentType) * 0.04 * percentHealingAffected);
   }
   // Superior Tactics
   else if (effectID === 332753) {
@@ -217,7 +224,7 @@ export function getSoulbindFormula(effectID, pl, contentType) {
   // Built for War
   else if (effectID === 319973) {
     let expected_stacks = 3.65;
-    bonus_stats.Intellect = expected_stacks * pl.activeStats.intellect * 0.01;
+    bonus_stats.Intellect = expected_stacks * player.activeStats.intellect * 0.01;
   }
 
   // === Necrolord ===
@@ -243,7 +250,7 @@ export function getSoulbindFormula(effectID, pl, contentType) {
     total_bonus += 0.02 * 4; // The buff TO your party. Treated as your own.
     let uptime = 1 / 6;
 
-    bonus_stats.Intellect = pl.activeStats.intellect * total_bonus * uptime;
+    bonus_stats.Intellect = player.activeStats.intellect * total_bonus * uptime;
   }
 
   // Gnashing Chompers
@@ -255,13 +262,13 @@ export function getSoulbindFormula(effectID, pl, contentType) {
   // -- Bonesmith Heirmir --
   // Forgeborne Reveries
   else if (effectID === 326514) {
-    bonus_stats.Intellect = pl.activeStats.intellect * 0.03;
+    bonus_stats.Intellect = player.activeStats.intellect * 0.03;
   }
   // Heirmir's Arsenal: Marrowed Gemstone
   else if (effectID === 326572) {
     // TODO, work out if you can collect stacks when it's on cooldown, or if the 10 crits have to take place after the cooldown.
     // The uptime won't change much regardless but it'll be of slight impact.
-    let uptime = 10 / 64;
+    let uptime = 10 / 81;
 
     bonus_stats.Crit = STATPERONEPERCENT.CRIT * 18 * uptime;
   }

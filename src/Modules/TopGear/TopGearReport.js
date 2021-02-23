@@ -4,7 +4,7 @@ import TopSetStatsPanel from "./TopSetStatsPanel";
 import { testList, differentialsTest } from "./TestData";
 import { apiGetPlayerImage } from "../SetupAndMenus/ConnectionUtilities";
 import { useTranslation } from "react-i18next";
-import { Button, Paper, Typography, Divider, Grid } from "@material-ui/core";
+import { Button, Paper, Typography, Divider, Grid, Card, CardContent } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import { getItemIcon, getTranslatedItemName } from "../Engine/ItemUtilities";
 import { classColoursJS } from "../CooldownPlanner/Functions/ClassColourFunctions";
@@ -17,16 +17,25 @@ function TopGearReport(props) {
   const upgradeColor = (num) => {
     if (num > 0) {
       return "#FFDF14"; // #60e421
-    } else if (num < 0) {
+    } else if (num < parseInt(0)) {
       return "#f20d0d";
     } else {
       return "#fff";
     }
   };
 
+  const itemQuality = (itemLevel, effect) => {
+    const isLegendary = effect.type === "spec legendary";
+
+    if (isLegendary) return "#ff8000";
+    else if (itemLevel >= 183) return "#a73fee";
+    else if (itemLevel >= 120) return "#328CE3";
+    else return "#1eff00";
+  };
+
   useEffect(() => {
     async function setImg() {
-      const img = await apiGetPlayerImage(props.pl);
+      const img = await apiGetPlayerImage(props.player);
       setBackgroundImage(img);
     }
 
@@ -40,7 +49,7 @@ function TopGearReport(props) {
   };
 
   const classIcon = () => {
-    switch (props.pl.spec) {
+    switch (props.player.spec) {
       case "Holy Paladin":
         return require("../../Images/Classes/Paladin/icon-paladin.png").default;
         break;
@@ -185,7 +194,7 @@ function TopGearReport(props) {
                     <Grid container spacing={1} direction="row" justify="space-between">
                       <Grid item xs={4} style={{ paddingBottom: 8 }}>
                         <Grid container justify="flex-start">
-                          <TopSetStatsPanel statList={statList} spec={props.pl.spec} currentLanguage={currentLanguage} />
+                          <TopSetStatsPanel statList={statList} spec={props.player.spec} currentLanguage={currentLanguage} />
                         </Grid>
                       </Grid>
                       <Grid item xs={3} style={{ paddingBottom: 8, alignSelf: "flex-end" }}>
@@ -214,10 +223,10 @@ function TopGearReport(props) {
                                       display="inline"
                                       align="left"
                                       style={{
-                                        color: classColoursJS(props.pl.spec),
+                                        color: classColoursJS(props.player.spec),
                                       }}
                                     >
-                                      {props.pl.charName}
+                                      {props.player.charName}
                                     </Typography>
                                     <Divider />
                                   </Grid>
@@ -228,15 +237,15 @@ function TopGearReport(props) {
                                       display="inline"
                                       align="left"
                                       style={{
-                                        color: classColoursJS(props.pl.spec),
+                                        color: classColoursJS(props.player.spec),
                                       }}
                                     >
-                                      {props.pl.spec}
+                                      {props.player.spec}
                                     </Typography>
                                   </Grid>
                                   <Grid item xs={12}>
                                     <Typography variant="caption" wrap="nowrap" display="inline" align="left">
-                                      {props.pl.region}-{props.pl.realm}
+                                      {props.player.region}-{props.player.realm}
                                     </Typography>
                                   </Grid>
                                 </Grid>
@@ -263,52 +272,84 @@ function TopGearReport(props) {
                   <Divider />
                 </Grid>
                 <Grid item xs={12}>
-                  <Grid container spacing={1}>
+                  <Grid item container spacing={0}>
                     {differentials.map((key) => (
-                      <Grid item xs={3}>
+                      <Grid item xs={12} sm={6} md={4} lg={3} xl={3}>
+                        
                         <Paper
                           elevation={0}
+                          variant="outlined"
                           style={{
-                            padding: 10,
+                            padding: 6,
                             backgroundColor: "rgba(34, 34, 34, 0.52)",
                           }}
                         >
-                          <Grid container direction="row">
-                            <Grid item xs={10}>
-                              <Grid container spacing={1}>
-                                {key.items.map((item) => (
-                                  <Grid item xs={12}>
-                                    <img src={getItemIcon(item.id)} height={20} width={20} /> {getTranslatedItemName(item.id, currentLanguage, item.effect) + " " + item.level}
-                                  </Grid>
-                                ))}
-                              </Grid>
-                            </Grid>
-
-                            <Grid item xs={2}>
-                              <Grid container spacing={1} alignContent="center">
-                                <Grid item xs={12}>
-                                  <div
-                                    style={{
-                                      paddingTop: 4,
-                                      width: "100%",
-                                      color: "#f20d0d",
-                                    }}
-                                  >
-                                    {roundTo(key.scoreDifference, 2) + "%"}
-                                  </div>
+                          <Grid item container direction="row" alignItems="center" xs={12} sm={12} md={12} lg={12} xl={12}>
+                            <Grid item container xs={10} spacing={1}>
+                              {key.items.map((item) => (
+                                <Grid item>
+                                  <a data-wowhead={"item=" + item.id + "&" + "ilvl=" + item.level + "&bonus=" + item.bonusIDS + "&domain=" + currentLanguage}>
+                                    <div className="container-ItemCards" style={{ height: 42 }}>
+                                      <img
+                                        alt="img"
+                                        width={40}
+                                        height={40}
+                                        src={getItemIcon(item.id)}
+                                        style={{
+                                          borderRadius: 4,
+                                          borderWidth: "1px",
+                                          borderStyle: "solid",
+                                          borderColor: itemQuality(item.level, item.effect),
+                                        }}
+                                      />
+                                      <div className="bottom-right-ItemCards"> {item.level} </div>
+                                    </div>
+                                  </a>
                                 </Grid>
+                              ))}
+                            </Grid>
+                            <Grid item container justify="flex-end" xs={2}>
+                              <Grid item xs={12}>
+                                <Typography
+                                  variant="caption" // h6 formerly
+                                  display="inline"
+                                  align="right"
+                                  style={{
+                                    color: "#f20d0d",
+                                    whiteSpace: "nowrap",
+                                    float: "right"
+                                  }}
+                                >
+                                  {roundTo(key.scoreDifference, 2) + "%"}
+                                </Typography>
+                              </Grid>
+                              <Grid item xs={12}>
+                                <Typography
+                                  variant="caption" // h6 formerly
+                                  wrap="nowrap"
+                                  display="inline"
+                                  align="right"
+                                  style={{
+                                    color: "#f20d0d",
+                                    whiteSpace: "nowrap",
+                                    float: "right",
+                                    fontSize: 12
+                                  }}
+                                >
+                                  {key.rawDifference + " INT"}
+                                </Typography>
                               </Grid>
                             </Grid>
                           </Grid>
                         </Paper>
+
+                        {/* <Grid item style={{ height: 40 }} xs={12} /> */}
                       </Grid>
                     ))}
                   </Grid>
                 </Grid>
               </Grid>
             </Paper>
-
-            <Grid item style={{ height: 40 }} xs={12} />
           </Grid>
         </Grid>
       ) : (

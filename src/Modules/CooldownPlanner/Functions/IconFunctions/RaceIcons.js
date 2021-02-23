@@ -173,9 +173,10 @@ export default function raceIcons(props) {
         style={{
           height: 20,
           width: 20,
-          padding: "0px 5px 0px 5px",
+          margin: "0px 5px 0px 5px",
           verticalAlign: "middle",
           borderRadius: "4px",
+          border: "1px solid rgba(255, 255, 255, 0.12)",
         }}
         src={sourceMale}
         alt={alt}
@@ -184,9 +185,10 @@ export default function raceIcons(props) {
         style={{
           height: 20,
           width: 20,
-          padding: "0px 5px 0px 5px",
+          margin: "0px 5px 0px 5px",
           verticalAlign: "middle",
           borderRadius: "4px",
+          border: "1px solid rgba(255, 255, 255, 0.12)",
         }}
         src={sourceFemale}
         alt={alt}

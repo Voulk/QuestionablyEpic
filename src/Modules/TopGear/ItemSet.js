@@ -20,6 +20,7 @@ class ItemSet {
   hardScore = 0;
   setSockets = 0;
   uniques = {};
+  effectList = [];
 
   // Enchant Breakdown consists of key: value combos where key is the slot, and the value is the *name* of the enchant.
   // We only use it for display purposes on the report end.
@@ -46,7 +47,7 @@ class ItemSet {
     let setStats = {
       intellect: 450, // TODO: 450
       haste: 0,
-      crit: 175,
+      crit: 0,
       mastery: 0,
       versatility: 0,
       leech: 0,
@@ -60,13 +61,19 @@ class ItemSet {
       for (const [stat, value] of Object.entries(item.stats)) {
         if (stat in setStats) {
           setStats[stat] += value;
-          //if (stat === "intellect") console.log("Adding Int: " + value) // Tester;
-          if (stat in item.stats["bonus_stats"]) setStats[stat] += item.stats["bonus_stats"][stat];
+          
+          //if (stat in item.stats["bonus_stats"]) setStats[stat] += item.stats["bonus_stats"][stat]; // Disabled for now since we handle effects separately. 
         }
       }
 
       if (item.socket) setSockets++;
       if (item.uniqueEquip) this.uniques[item.uniqueEquip] = (this.uniques[item.uniqueEquip] || 0) + 1;
+
+      if (item.effect !== "") {
+        let effect = item.effect;
+        effect.level = item.level;
+        this.effectList.push(effect);
+      }
     }
 
     this.setStats = setStats;

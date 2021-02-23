@@ -29,7 +29,7 @@ export default function Changelog() {
   };
 
   return (
-    <div style={{ color: "Whitesmoke", width: "520px", marginLeft: "auto", marginRight: "auto", marginBottom: 5, marginTop: 50 }}>
+    <div style={{ color: "Whitesmoke", width: "520px", marginLeft: "auto", marginRight: "auto", marginBottom: 5, marginTop: 20 }}>
       <Button style={{ fontSize: 12, textTransform: 'none' }} onClick={handleClickOpen("paper")}>
         {/* ----------------- This uses the first object in the array ----------------  */}
         QE Live {changeLog[0].version} {t("Changelog.Update")} {changeLog[0].update}. {t("Changelog.LastUpdated")} {changeLog[0].date}. 

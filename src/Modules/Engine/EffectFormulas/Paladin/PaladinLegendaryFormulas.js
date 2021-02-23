@@ -7,7 +7,7 @@ const IDHOLYSHOCK = 25914;
 const IDSHOCKBARRIER = 337824;
 const IDWORDOFGLORY = 85673;
 
-export const getPaladinLegendary = (effectName, pl, contentType) => {
+export const getPaladinLegendary = (effectName, player, contentType) => {
   let result = 0.0;
   let bonus_stats = {};
   let name = effectName;
@@ -18,11 +18,11 @@ export const getPaladinLegendary = (effectName, pl, contentType) => {
     */
   if (name === "Maraads Dying Breath") {
     /*
-        let rejuvHealingPerc = pl.getSpellHealingPerc("Rejuvenation", contentType);
-        let baseTicks = 1 + (5 * pl.getStatPerc("Haste"));
+        let rejuvHealingPerc = player.getSpellHealingPerc("Rejuvenation", contentType);
+        let baseTicks = 1 + (5 * player.getStatPerc("Haste"));
         let expectedTicksWithLegendary = (baseTicks / (1 - 0.02 * Math.ceil(baseTicks)));
         let rejuvHealingInc = (expectedTicksWithLegendary / baseTicks) - 1;
-        let expectedHPS = Math.round(rejuvHealingInc * rejuvHealingPerc * pl.getHPS());
+        let expectedHPS = Math.round(rejuvHealingInc * rejuvHealingPerc * player.getHPS());
 
         // Return result.
         */
@@ -41,12 +41,12 @@ export const getPaladinLegendary = (effectName, pl, contentType) => {
     let wastedShield = 0.12;
     //console.log("HSI: " + holyShockIncrease);
 
-    bonus_stats.hps = Math.round(holyShockIncrease * 3 * (1 - wastedShield) * pl.getSpellHPS(IDHOLYSHOCK, contentType));
+    bonus_stats.hps = Math.round(holyShockIncrease * 3 * (1 - wastedShield) * player.getSpellHPS(IDHOLYSHOCK, contentType));
   } else if (name === "Inflorescence of the Sunwell") {
     // Do Math
-    let infusionsPerMinute = pl.getSpellCPM(IDHOLYSHOCK, contentType) * pl.getStatPerc("Crit") + 0.3;
+    let infusionsPerMinute = player.getSpellCPM(IDHOLYSHOCK, contentType) * player.getStatPerc("Crit") + 0.3;
     let wastedInfusionPercentage = 0.2;
-    let oneHolyLight = pl.getSingleCast(IDHOLYLIGHT, contentType);
+    let oneHolyLight = player.getSingleCast(IDHOLYLIGHT, contentType);
 
     // Resplendent tests
     /*
@@ -60,16 +60,16 @@ export const getPaladinLegendary = (effectName, pl, contentType) => {
 
     bonus_stats.hps = Math.round((infusionsPerMinute * wastedInfusionPercentage * (oneHolyLight * (0.3 + 0.5))) / 60);
   } else if (name === "Shadowbreaker, Dawn of the Sun") {
-    let lightOfDawnCPM = pl.getSpellCPM(IDLIGHTOFDAWN, contentType);
+    let lightOfDawnCPM = player.getSpellCPM(IDLIGHTOFDAWN, contentType);
     let lightOfDawnUptime = Math.min(1, (lightOfDawnCPM * 6) / 60); // Technically doesn't account for the slight possible loss from casting LoD twice in a short period.
-    let averageMasteryEff = pl.getStatPerc("Mastery"); // TODO: Improve with logs data.
-    let maxMasteryEff = (pl.getStatPerc("Mastery") - 1) / 0.7 + 1;
+    let averageMasteryEff = player.getStatPerc("Mastery"); // TODO: Improve with logs data.
+    let maxMasteryEff = (player.getStatPerc("Mastery") - 1) / 0.7 + 1;
     let mastDiff = maxMasteryEff / averageMasteryEff - 1;
     let percentHealingToHitTargets = 0.95;
 
     //console.log("MastDiff: " + mastDiff + ". LoDUptime: " + lightOfDawnUptime + "Max: " + maxMasteryEff + ". Avg: " + averageMasteryEff);
 
-    bonus_stats.hps = Math.round(pl.getHPS(contentType) * mastDiff * lightOfDawnUptime * percentHealingToHitTargets);
+    bonus_stats.hps = Math.round(player.getHPS(contentType) * mastDiff * lightOfDawnUptime * percentHealingToHitTargets);
   } else if (name === "Of Dusk and Dawn") {
     bonus_stats.hps = -1;
   } else if (name === "Vanguards Momentum") {
@@ -90,19 +90,19 @@ export const getPaladinLegendary = (effectName, pl, contentType) => {
     //   a penalty when you are not.
     let isAwakening = false;
 
-    let wingsEffHealingIncrease = getWingsHealingInc(pl.getStatPerc("Crit"));
+    let wingsEffHealingIncrease = getWingsHealingInc(player.getStatPerc("Crit"));
     let wingsBaseUptime = (20 + isAwakening ? 25 : 0) / 120;
-    let hammerOfWrathCPM = (60 / (7.5 / pl.getStatPerc("Haste"))) * wingsBaseUptime;
+    let hammerOfWrathCPM = (60 / (7.5 / player.getStatPerc("Haste"))) * wingsBaseUptime;
     let healingIncUptime = hammerOfWrathCPM / 60;
 
     let healingMult = wingsEffHealingIncrease * healingIncUptime + 1 * (1 - healingIncUptime) - 1;
-    bonus_stats.hps = Math.round(pl.getHPS(contentType) * healingMult);
+    bonus_stats.hps = Math.round(player.getHPS(contentType) * healingMult);
 
     //console.log("FWS: " + wingsEffHealingIncrease);
     // This technically needs to be increased based on the wings duration increase, but that is of minimal benefit.
-    bonus_stats.DPS = (1.2 * 0.3 * pl.getStatMultiplier("ALL") * hammerOfWrathCPM) / 60;
+    bonus_stats.DPS = (1.2 * 0.3 * player.getStatMultiplier("ALL") * hammerOfWrathCPM) / 60;
 
-    //let akn = 2.5 / 60; //getAwakeningWingsUptime(pl, contentType);
+    //let akn = 2.5 / 60; //getAwakeningWingsUptime(player, contentType);
     //let awakening_hps = (akn * wingsEffHealingIncrease + 1 * (1 - akn) );
     //console.log("Wings Uptime: " + akn + ". Awakening healing increase:" + awakening_hps);
   }

@@ -1,13 +1,14 @@
 import React from "react";
 //prettier-ignore
-import { Avatar, Button, Card, CardActionArea, CardContent, Dialog, DialogActions, DialogContent, DialogTitle, FormControl, InputLabel, Typography, MenuItem, TextField, Select, Grid } from "@material-ui/core";
+import { Avatar, Button, Card, CardActionArea, CardContent, Dialog, DialogActions, DialogContent, DialogTitle, FormControl, InputLabel, Typography, MenuItem, TextField, Select, Grid, Divider } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import { useTranslation } from "react-i18next";
 import classIcons from "../../CooldownPlanner/Functions/IconFunctions/ClassIcons";
 import raceIcons from "../../CooldownPlanner/Functions/IconFunctions/RaceIcons";
 import Autocomplete from "@material-ui/lab/Autocomplete";
 import { classRaceList } from "../../CooldownPlanner/Data/Data";
-import { serverDB } from "../../../Databases/ServerDB"
+import { serverDB } from "../../../Databases/ServerDB";
+import { classColoursJS } from "../../CooldownPlanner/Functions/ClassColourFunctions";
 
 const addBtn = require("../../../Images/AddBtn.jpg").default;
 
@@ -46,8 +47,8 @@ const useStyles = makeStyles((theme) => ({
     padding: "5px",
   },
   large: {
-    width: "80px",
-    height: "80px",
+    width: "60px",
+    height: "60px",
   },
 }));
 
@@ -102,7 +103,7 @@ export default function AddNewChar(props) {
         <Card className={classes.root} variant="outlined" raised={true}>
           <Avatar variant="square" alt="" className={classes.large} src={addBtn} />
           <div className={classes.details}>
-            <CardContent className={classes.content}>
+            <CardContent className={classes.content} style={{ paddingBottom: 0 }}>
               <Typography variant="h6" component="h4">
                 {t("CharacterCreator.AddChar")}
               </Typography>
@@ -150,12 +151,21 @@ export default function AddNewChar(props) {
               <FormControl className={classes.formControl} variant="outlined" size="small" disabled={regions === "" ? true : false} label={t("Select Class")}>
                 <InputLabel id="NewClassSelector">{t("Select Class")}</InputLabel>
                 <Select label={t("Select Class")} value={healClass} onChange={handleChangeSpec}>
-                  {Object.getOwnPropertyNames(classRaceList).map((key, i) => (
-                    <MenuItem key={i} value={key}>
-                      {classIcons(key, 20)}
-                      {t("Classes." + key)}
-                    </MenuItem>
-                  ))}
+                  {Object.getOwnPropertyNames(classRaceList).map((key, i) =>
+                    (
+                      <MenuItem key={i} value={key} style={{ color: classColoursJS(key) }}>
+                        {classIcons(key, {
+                          height: 20,
+                          width: 20,
+                          margin: "0px 5px 0px 5px",
+                          verticalAlign: "middle",
+                          borderRadius: 4,
+                          border: "1px solid rgba(255, 255, 255, 0.12)",
+                        })}
+                        {t("Classes." + key)}
+                      </MenuItem>
+                    ),
+                  ).map((item) => item, <Divider />)}
                 </Select>
               </FormControl>
             </Grid>

@@ -1,4 +1,4 @@
-import { applyDiminishingReturns } from "./TopGearEngine";
+import { applyDiminishingReturns, mergeBonusStats } from "./TopGearEngine";
 
 describe("Test Stat DRs", () => {
     test("Basic Test - Crit above DR", () => {
@@ -28,4 +28,33 @@ describe("Test Stat DRs", () => {
 
         expect(stats.leech).toEqual(331);
     });
+});
+
+describe("MergeBonusStats function", () => {
+    test("Test 1, range of stats", () => {
+        const bonusStatArray = [{
+            intellect: 34,
+            crit: 14
+            },
+            {
+            intellect: 10,
+            haste: 20,
+            HPS: 99
+            }];
+
+        const expectedResult = {
+            intellect: 44,
+            crit: 14,
+            haste: 20,
+            hps: 99,
+            mastery: 0,
+            versatility: 0,
+            leech: 0,
+            dps: 0
+        }
+
+        expect(mergeBonusStats(bonusStatArray)).toEqual(expectedResult);
+    });
+
+
 });

@@ -45,7 +45,11 @@ class PlayerChars {
 
   // Return the players active character.
   getActiveChar = () => {
-    return this.allChar[this.activeChar];
+    if (this.allChar[this.activeChar] !== undefined) return this.allChar[this.activeChar];
+    else {
+      this.setActiveChar(0);
+      return this.allChar[0];
+    }
   };
 
   setActiveChar = (index) => {
@@ -100,6 +104,7 @@ class PlayerChars {
       this.allChar[i].charID -= 1;
     }
     this.allChar = tempArray;
+    this.activeChar = 0;
   };
 }
 
