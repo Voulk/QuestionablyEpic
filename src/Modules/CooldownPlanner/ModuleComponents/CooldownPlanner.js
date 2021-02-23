@@ -30,7 +30,7 @@ const themeCooldownTable = createMuiTheme({
     MuiTableCell: {
       root: {
         padding: "2px 2px 2px 2px",
-        borderBottom: "1px solid rgba(255, 255, 255, 0.12)",
+        borderBottom: "1px solid #595959",
       },
     },
     MuiIconButton: {
@@ -62,7 +62,7 @@ const menuStyle = {
   },
   PaperProps: {
     style: {
-      border: "1px solid rgba(255, 255, 255, 0.23)",
+      border: "1px solid #6c6c6c",
     },
   },
   anchorOrigin: {
@@ -155,11 +155,11 @@ export default function CooldownPlanner(props) {
       width: "1%",
       cellStyle: {
         whiteSpace: "nowrap",
-        borderRight: "1px solid rgba(255, 255, 255, 0.12)",
+        borderRight: "1px solid #595959",
         fontSize: 12,
         textAlign: "center",
       },
-      headerStyle:{borderRight: "1px solid rgba(255, 255, 255, 0.22)"},
+      headerStyle: { borderRight: "1px solid #6c6c6c" },
       // Times currently must be entered in the 00:00 format.
       // Currently due to sorting, the user must either use a time, or label the cooldowns, 1, 2, 3, 4 etc to keep them in order.
       // This can probably be handled a lot better than how it handled currently.
@@ -187,21 +187,22 @@ export default function CooldownPlanner(props) {
       width: "8%",
       cellStyle: {
         // whiteSpace: "nowrap",
-        borderRight: "2px solid rgba(255, 255, 255, 0.22)",
+        borderRight: "2px solid #6c6c6c",
         fontSize: 12,
         lineHeight: "normal",
       },
-      headerStyle:{borderRight: "1px solid rgba(255, 255, 255, 0.22)"},
+      headerStyle: { borderRight: "1px solid #6c6c6c" },
       render: (rowData) => (
-<div style={{ width: 105, display: "inline-flex", alignItems: "center", width: "100%" }}>
+        <div style={{ width: 105, display: "inline-flex", alignItems: "center", width: "100%" }}>
           <div>
             <a data-wowhead={"spell=" + rowData.bossAbility + "&domain=" + currentLanguage}>
               {bossAbilityIcons(rowData.bossAbility, {
                 height: 30,
                 width: 30,
-                padding: "0px 4px 0px 0px",
+                margin: "0px 4px 0px 0px",
                 verticalAlign: "middle",
-                borderRadius: "4px",
+                border: "1px solid #595959",
+                borderRadius: 4,
               })}
             </a>
           </div>
@@ -229,7 +230,16 @@ export default function CooldownPlanner(props) {
                 })
                 .map((key, i) => (
                   <MenuItem key={i} value={key.guid}>
-                    <a data-wowhead={"spell=" + key.guid + "&domain=" + currentLanguage}>{bossAbilityIcons(key.guid)}</a>
+                    <a data-wowhead={"spell=" + key.guid + "&domain=" + currentLanguage}>
+                      {bossAbilityIcons(key.guid, {
+                        height: 20,
+                        width: 20,
+                        margin: "0px 4px 0px 0px",
+                        verticalAlign: "middle",
+                        border: "1px solid #595959",
+                        borderRadius: 4,
+                      })}
+                    </a>
                     {t("CooldownPlanner.BossAbilities." + key.guid)}
                   </MenuItem>
                 ))
@@ -251,11 +261,11 @@ export default function CooldownPlanner(props) {
       width: "1%",
       cellStyle: {
         whiteSpace: "nowrap",
-        borderRight: "1px solid rgba(255, 255, 255, 0.12)",
+        borderRight: "1px solid #595959",
         fontSize: 12,
         textAlign: "center",
       },
-      headerStyle:{borderRight: "1px solid rgba(255, 255, 255, 0.22)"},
+      headerStyle: { borderRight: "1px solid #6c6c6c" },
       // Times currently must be entered in the 00:00 format.
       // Currently due to sorting, the user must either use a time, or label the cooldowns, 1, 2, 3, 4 etc to keep them in order.
       // This can probably be handled a lot better than how it handled currently.
@@ -283,11 +293,11 @@ export default function CooldownPlanner(props) {
       hidden: true,
       cellStyle: {
         whiteSpace: "nowrap",
-        borderRight: "2px solid rgba(255, 255, 255, 0.12)",
+        borderRight: "2px solid #595959",
         textAlign: "center",
         fontSize: 12,
       },
-      headerStyle:{borderRight: "1px solid rgba(255, 255, 255, 0.22)"},
+      headerStyle: { borderRight: "1px solid #6c6c6c" },
       render: (rowData) => (
         <div>
           {rowData.Cooldown === "" || rowData.Cooldown === undefined
@@ -303,10 +313,10 @@ export default function CooldownPlanner(props) {
       cellStyle: {
         whiteSpace: "nowrap",
         paddingLeft: 4,
-        borderRight: "1px solid rgba(255, 255, 255, 0.12)",
+        borderRight: "1px solid #595959",
         fontSize: 12,
       },
-      headerStyle:{borderRight: "1px solid rgba(255, 255, 255, 0.22)"},
+      headerStyle: { borderRight: "1px solid #6c6c6c" },
       // This renders the healer name outside of Edit Mode.
       render: (rowData) => (
         <div style={{ color: classColoursJS(rowData.class) }}>
@@ -364,10 +374,10 @@ export default function CooldownPlanner(props) {
       hidden: true,
       cellStyle: {
         whiteSpace: "nowrap",
-        borderRight: "1px solid rgba(255, 255, 255, 0.12)",
+        borderRight: "1px solid #595959",
         fontSize: 12,
       },
-      headerStyle:{borderRight: "1px solid rgba(255, 255, 255, 0.22)"},
+      headerStyle: { borderRight: "1px solid #6c6c6c" },
       // Renders the Name for the healer in the relevant row in the data.
       render: (rowData) => (
         <div style={{ color: classColoursJS(rowData.class) }}>
@@ -393,11 +403,11 @@ export default function CooldownPlanner(props) {
       width: "8%",
       cellStyle: {
         // whiteSpace: "nowrap",
-        borderRight: "2px solid rgba(255, 255, 255, 0.22)",
+        borderRight: "2px solid #6c6c6c",
         fontSize: 12,
         lineHeight: "normal",
       },
-      headerStyle:{borderRight: "1px solid rgba(255, 255, 255, 0.22)"},
+      headerStyle: { borderRight: "1px solid #6c6c6c" },
       // Renders the Ability name that was set for this row.
       render: (rowData) => (
         <div style={{ width: 105, display: "inline-flex", alignItems: "center", width: "100%" }}>
@@ -405,8 +415,10 @@ export default function CooldownPlanner(props) {
             {abilityIcons(rowData.Cooldown, {
               height: 30,
               width: 30,
-              padding: "0px 4px 0px 0px",
+              margin: "0px 4px 0px 0px",
               verticalAlign: "middle",
+              border: "1px solid #595959",
+              borderRadius: 4,
             })}
           </div>
           <Typography align="center" style={{ fontSize: 12, lineHeight: "normal", width: "100%" }}>
@@ -447,11 +459,11 @@ export default function CooldownPlanner(props) {
       width: "1%",
       cellStyle: {
         whiteSpace: "nowrap",
-        borderRight: "1px solid rgba(255, 255, 255, 0.12)",
+        borderRight: "1px solid #595959",
         fontSize: 12,
         textAlign: "center",
       },
-      headerStyle:{borderRight: "1px solid rgba(255, 255, 255, 0.22)"},
+      headerStyle: { borderRight: "1px solid #6c6c6c" },
       // Times currently must be entered in the 00:00 format.
       // Currently due to sorting, the user must either use a time, or label the cooldowns, 1, 2, 3, 4 etc to keep them in order.
       // This can probably be handled a lot better than how it handled currently.
@@ -479,11 +491,11 @@ export default function CooldownPlanner(props) {
       hidden: true,
       cellStyle: {
         whiteSpace: "nowrap",
-        borderRight: "2px solid rgba(255, 255, 255, 0.12)",
+        borderRight: "2px solid #595959",
         textAlign: "center",
         fontSize: 12,
       },
-      headerStyle:{borderRight: "1px solid rgba(255, 255, 255, 0.22)"},
+      headerStyle: { borderRight: "1px solid #6c6c6c" },
       render: (rowData) => (
         <div>
           {rowData.Cooldown1 === "" || rowData.Cooldown1 === undefined
@@ -498,11 +510,11 @@ export default function CooldownPlanner(props) {
       width: "6%",
       cellStyle: {
         whiteSpace: "nowrap",
-        borderRight: "1px solid rgba(255, 255, 255, 0.12)",
+        borderRight: "1px solid #595959",
         paddingLeft: 4,
         fontSize: 12,
       },
-      headerStyle:{borderRight: "1px solid rgba(255, 255, 255, 0.22)"},
+      headerStyle: { borderRight: "1px solid #6c6c6c" },
       // This renders the healer name outside of Edit Mode.
       render: (rowData) => (
         <div style={{ color: classColoursJS(rowData.class1) }}>
@@ -560,10 +572,10 @@ export default function CooldownPlanner(props) {
       hidden: true,
       cellStyle: {
         whiteSpace: "nowrap",
-        borderRight: "1px solid rgba(255, 255, 255, 0.12)",
+        borderRight: "1px solid #595959",
         fontSize: 12,
       },
-      headerStyle:{borderRight: "1px solid rgba(255, 255, 255, 0.22)"},
+      headerStyle: { borderRight: "1px solid #6c6c6c" },
       // Renders the Name for the healer in the relevant row in the data.
       render: (rowData) => (
         <div style={{ color: classColoursJS(rowData.class1) }}>
@@ -590,20 +602,22 @@ export default function CooldownPlanner(props) {
       width: "8%",
       cellStyle: {
         // whiteSpace: "nowrap",
-        borderRight: "2px solid rgba(255, 255, 255, 0.22)",
+        borderRight: "2px solid #6c6c6c",
         fontSize: 12,
         lineHeight: "normal",
       },
-      headerStyle:{borderRight: "1px solid rgba(255, 255, 255, 0.22)"},
+      headerStyle: { borderRight: "1px solid #6c6c6c" },
       // Renders the Ability name that was set for this row.
       render: (rowData) => (
-<div style={{ width: 105, display: "inline-flex", alignItems: "center", width: "100%" }}>
+        <div style={{ width: 105, display: "inline-flex", alignItems: "center", width: "100%" }}>
           <div>
             {abilityIcons(rowData.Cooldown1, {
               height: 30,
               width: 30,
-              padding: "0px 4px 0px 0px",
+              margin: "0px 4px 0px 0px",
               verticalAlign: "middle",
+              border: "1px solid #595959",
+              borderRadius: 4,
             })}
           </div>
           <Typography align="center" style={{ fontSize: 12, lineHeight: "normal", width: "100%" }}>
@@ -644,11 +658,11 @@ export default function CooldownPlanner(props) {
       width: "1%",
       cellStyle: {
         whiteSpace: "nowrap",
-        borderRight: "1px solid rgba(255, 255, 255, 0.12)",
+        borderRight: "1px solid #595959",
         fontSize: 12,
         textAlign: "center",
       },
-      headerStyle:{borderRight: "1px solid rgba(255, 255, 255, 0.22)"},
+      headerStyle: { borderRight: "1px solid #6c6c6c" },
       // Times currently must be entered in the 00:00 format.
       // Currently due to sorting, the user must either use a time, or label the cooldowns, 1, 2, 3, 4 etc to keep them in order.
       // This can probably be handled a lot better than how it handled currently.
@@ -676,11 +690,11 @@ export default function CooldownPlanner(props) {
       hidden: true,
       cellStyle: {
         whiteSpace: "nowrap",
-        borderRight: "2px solid rgba(255, 255, 255, 0.12)",
+        borderRight: "2px solid #595959",
         textAlign: "center",
         fontSize: 12,
       },
-      headerStyle:{borderRight: "1px solid rgba(255, 255, 255, 0.22)"},
+      headerStyle: { borderRight: "1px solid #6c6c6c" },
       render: (rowData) => (
         <div>
           {rowData.Cooldown2 === "" || rowData.Cooldown2 === undefined
@@ -695,11 +709,11 @@ export default function CooldownPlanner(props) {
       width: "6%",
       cellStyle: {
         whiteSpace: "nowrap",
-        borderRight: "1px solid rgba(255, 255, 255, 0.12)",
+        borderRight: "1px solid #595959",
         paddingLeft: 8,
         fontSize: 12,
       },
-      headerStyle:{borderRight: "1px solid rgba(255, 255, 255, 0.22)"},
+      headerStyle: { borderRight: "1px solid #6c6c6c" },
       // This renders the healer name outside of Edit Mode.
       render: (rowData) => (
         <div style={{ color: classColoursJS(rowData.class2) }}>
@@ -757,10 +771,10 @@ export default function CooldownPlanner(props) {
       hidden: true,
       cellStyle: {
         whiteSpace: "nowrap",
-        // borderRight: "1px dotted rgba(255, 255, 255, 0.12)",
+        // borderRight: "1px dotted #595959",
         fontSize: 12,
       },
-      headerStyle:{borderRight: "1px solid rgba(255, 255, 255, 0.22)"},
+      headerStyle: { borderRight: "1px solid #6c6c6c" },
       // Renders the Name for the healer in the relevant row in the data.
       render: (rowData) => (
         <div style={{ color: classColoursJS(rowData.class2) }}>
@@ -787,20 +801,22 @@ export default function CooldownPlanner(props) {
       width: "8%",
       cellStyle: {
         // whiteSpace: "nowrap",
-        borderRight: "2px solid rgba(255, 255, 255, 0.22)",
+        borderRight: "2px solid #6c6c6c",
         fontSize: 12,
         lineHeight: "normal",
       },
-      headerStyle:{borderRight: "1px solid rgba(255, 255, 255, 0.22)"},
+      headerStyle: { borderRight: "1px solid #6c6c6c" },
       // Renders the Ability name that was set for this row.
       render: (rowData) => (
-<div style={{ width: 105, display: "inline-flex", alignItems: "center", width: "100%" }}>
+        <div style={{ width: 105, display: "inline-flex", alignItems: "center", width: "100%" }}>
           <div>
             {abilityIcons(rowData.Cooldown2, {
               height: 30,
               width: 30,
-              padding: "0px 4px 0px 0px",
+              margin: "0px 4px 0px 0px",
               verticalAlign: "middle",
+              border: "1px solid #595959",
+              borderRadius: 4,
             })}
           </div>
           <Typography align="center" style={{ fontSize: 12, lineHeight: "normal", width: "100%" }}>
@@ -841,11 +857,11 @@ export default function CooldownPlanner(props) {
       width: "1%",
       cellStyle: {
         whiteSpace: "nowrap",
-        borderRight: "1px solid rgba(255, 255, 255, 0.12)",
+        borderRight: "1px solid #595959",
         fontSize: 12,
         textAlign: "center",
       },
-      headerStyle:{borderRight: "1px solid rgba(255, 255, 255, 0.22)"},
+      headerStyle: { borderRight: "1px solid #6c6c6c" },
       // Times currently must be entered in the 00:00 format.
       // Currently due to sorting, the user must either use a time, or label the cooldowns, 1, 2, 3, 4 etc to keep them in order.
       // This can probably be handled a lot better than how it handled currently.
@@ -873,11 +889,11 @@ export default function CooldownPlanner(props) {
       hidden: true,
       cellStyle: {
         whiteSpace: "nowrap",
-        borderRight: "2px solid rgba(255, 255, 255, 0.12)",
+        borderRight: "2px solid #595959",
         textAlign: "center",
         fontSize: 12,
       },
-      headerStyle:{borderRight: "1px solid rgba(255, 255, 255, 0.22)"},
+      headerStyle: { borderRight: "1px solid #6c6c6c" },
       render: (rowData) => (
         <div>
           {rowData.Cooldown3 === "" || rowData.Cooldown3 === undefined
@@ -892,11 +908,11 @@ export default function CooldownPlanner(props) {
       width: "6%",
       cellStyle: {
         whiteSpace: "nowrap",
-        borderRight: "1px solid rgba(255, 255, 255, 0.12)",
+        borderRight: "1px solid #595959",
         paddingLeft: 8,
         fontSize: 12,
       },
-      headerStyle:{borderRight: "1px solid rgba(255, 255, 255, 0.22)"},
+      headerStyle: { borderRight: "1px solid #6c6c6c" },
       // This renders the healer name outside of Edit Mode.
       render: (rowData) => (
         <div style={{ color: classColoursJS(rowData.class3) }}>
@@ -954,10 +970,10 @@ export default function CooldownPlanner(props) {
       hidden: true,
       cellStyle: {
         whiteSpace: "nowrap",
-        // borderRight: "1px dotted rgba(255, 255, 255, 0.12)",
+        // borderRight: "1px dotted #595959",
         fontSize: 12,
       },
-      headerStyle:{borderRight: "1px solid rgba(255, 255, 255, 0.22)"},
+      headerStyle: { borderRight: "1px solid #6c6c6c" },
       // Renders the Name for the healer in the relevant row in the data.
       render: (rowData) => (
         <div style={{ color: classColoursJS(rowData.class3) }}>
@@ -984,18 +1000,20 @@ export default function CooldownPlanner(props) {
       width: "8%",
       cellStyle: {
         // whiteSpace: "nowrap",
-        borderRight: "2px solid rgba(255, 255, 255, 0.22)",
+        borderRight: "2px solid #6c6c6c",
       },
-      headerStyle:{borderRight: "1px solid rgba(255, 255, 255, 0.22)"},
+      headerStyle: { borderRight: "1px solid #6c6c6c" },
       // Renders the Ability name that was set for this row.
       render: (rowData) => (
-<div style={{ width: 105, display: "inline-flex", alignItems: "center", width: "100%" }}>
+        <div style={{ width: 105, display: "inline-flex", alignItems: "center", width: "100%" }}>
           <div>
             {abilityIcons(rowData.Cooldown3, {
               height: 30,
               width: 30,
-              padding: "0px 4px 0px 0px",
+              margin: "0px 4px 0px 0px",
               verticalAlign: "middle",
+              border: "1px solid #595959",
+              borderRadius: 4,
             })}
           </div>
           <Typography align="center" style={{ fontSize: 12, lineHeight: "normal", width: "100%" }}>
@@ -1036,11 +1054,11 @@ export default function CooldownPlanner(props) {
       width: "1%",
       cellStyle: {
         whiteSpace: "nowrap",
-        borderRight: "1px solid rgba(255, 255, 255, 0.12)",
+        borderRight: "1px solid #595959",
         fontSize: 12,
         textAlign: "center",
       },
-      headerStyle:{borderRight: "1px solid rgba(255, 255, 255, 0.22)"},
+      headerStyle: { borderRight: "1px solid #6c6c6c" },
       // Times currently must be entered in the 00:00 format.
       // Currently due to sorting, the user must either use a time, or label the cooldowns, 1, 2, 3, 4 etc to keep them in order.
       // This can probably be handled a lot better than how it handled currently.
@@ -1068,11 +1086,11 @@ export default function CooldownPlanner(props) {
       hidden: true,
       cellStyle: {
         whiteSpace: "nowrap",
-        borderRight: "2px solid rgba(255, 255, 255, 0.12)",
+        borderRight: "2px solid #595959",
         textAlign: "center",
         fontSize: 12,
       },
-      headerStyle:{borderRight: "1px solid rgba(255, 255, 255, 0.22)"},
+      headerStyle: { borderRight: "1px solid #6c6c6c" },
       render: (rowData) => (
         <div>
           {rowData.Cooldown4 === "" || rowData.Cooldown4 === undefined
@@ -1087,11 +1105,11 @@ export default function CooldownPlanner(props) {
       width: "6%",
       cellStyle: {
         whiteSpace: "nowrap",
-        borderRight: "1px solid rgba(255, 255, 255, 0.12)",
+        borderRight: "1px solid #595959",
         paddingLeft: 8,
         fontSize: 12,
       },
-      headerStyle:{borderRight: "1px solid rgba(255, 255, 255, 0.22)"},
+      headerStyle: { borderRight: "1px solid #6c6c6c" },
       // This renders the healer name outside of Edit Mode.
       render: (rowData) => (
         <div style={{ color: classColoursJS(rowData.class4) }}>
@@ -1149,10 +1167,10 @@ export default function CooldownPlanner(props) {
       hidden: true,
       cellStyle: {
         whiteSpace: "nowrap",
-        // borderRight: "1px dotted rgba(255, 255, 255, 0.12)",
+        // borderRight: "1px dotted #595959",
         fontSize: 12,
       },
-      headerStyle:{borderRight: "1px solid rgba(255, 255, 255, 0.22)"},
+      headerStyle: { borderRight: "1px solid #6c6c6c" },
       // Renders the Name for the healer in the relevant row in the data.
       render: (rowData) => (
         <div style={{ color: classColoursJS(rowData.class4) }}>
@@ -1179,20 +1197,22 @@ export default function CooldownPlanner(props) {
       width: "8%",
       cellStyle: {
         // whiteSpace: "nowrap",
-        borderRight: "2px solid rgba(255, 255, 255, 0.22)",
+        borderRight: "2px solid #6c6c6c",
         fontSize: 12,
         lineHeight: "normal",
       },
-      headerStyle:{borderRight: "1px solid rgba(255, 255, 255, 0.22)"},
+      headerStyle: { borderRight: "1px solid #6c6c6c" },
       // Renders the Ability name that was set for this row.
       render: (rowData) => (
-<div style={{ width: 105, display: "inline-flex", alignItems: "center", width: "100%" }}>
+        <div style={{ width: 105, display: "inline-flex", alignItems: "center", width: "100%" }}>
           <div>
             {abilityIcons(rowData.Cooldown4, {
               height: 30,
               width: 30,
-              padding: "0px 4px 0px 0px",
+              margin: "0px 4px 0px 0px",
               verticalAlign: "middle",
+              border: "1px solid #595959",
+              borderRadius: 4,
             })}
           </div>
           <Typography align="center" style={{ fontSize: 12, lineHeight: "normal", width: "100%" }}>
@@ -1229,10 +1249,10 @@ export default function CooldownPlanner(props) {
       // width: "20%",
       cellStyle: {
         whiteSpace: "nowrap",
-        borderRight: "1px solid rgba(255, 255, 255, 0.12)",
+        borderRight: "1px solid #595959",
         fontSize: 12,
       },
-      headerStyle:{borderRight: "1px solid rgba(255, 255, 255, 0.22)"},
+      headerStyle: { borderRight: "1px solid #6c6c6c" },
       editComponent: (props) => (
         <TextField
           style={{ width: "100%", marginTop: 6 }}
@@ -1315,9 +1335,9 @@ export default function CooldownPlanner(props) {
           sorting: false,
           searchFieldVariant: "outlined",
           headerStyle: {
-            border: "1px solid rgba(255, 255, 255, 0.22)",
+            border: "1px solid #6c6c6c",
             padding: "0px 8px 0px 8px",
-            backgroundColor: "rgba(255, 255, 255, 0.22)",
+            backgroundColor: "#6c6c6c",
             color: "#fff",
             whiteSpace: "nowrap",
             textAlign: "center",
@@ -1327,16 +1347,16 @@ export default function CooldownPlanner(props) {
               return {
                 height: 30,
                 backgroundColor: "#515151",
-                border: "1px solid rgba(255, 255, 255, 0.12)",
+                border: "1px solid #595959",
               };
             }
             return {
               height: 30,
-              border: "1px solid rgba(255, 255, 255, 0.12)",
+              border: "1px solid #595959",
             };
           },
           actionCellStyle: {
-            borderBottom: "1px solid rgba(255, 255, 255, 0.12)",
+            borderBottom: "1px solid #595959",
           },
           actionsColumnIndex: 24,
           paging: false,
@@ -1357,91 +1377,91 @@ export default function CooldownPlanner(props) {
               </Grow>
             ),
           Toolbar: (props) => (
-              <Grid
-                container
-                spacing={1}
-                direction="row"
-                justify="space-between"
-                style={{
-                  marginBottom: (currentBoss === "" ? false : true) ? 5 : 0,
-                }}
-              >
-                <Grid item container spacing={1} item xs={12} sm={12} md={12} lg={6} xl={9} alignItems="center">
-                  <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
-                    <Button variant="outlined" style={{ height: 40,width: "100%", whiteSpace: "nowrap" }} color="primary" onClick={() => healTeamDialogOpen()}>
-                      Heal Team
-                    </Button>
-                  </Grid>
-                  <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
-                    <FormControl style={{ minWidth: 200, width: "100%" }} variant="outlined" size="small">
-                      <InputLabel id="RaidSelector">{t("CooldownPlanner.TableLabels.RaidSelectorLabel")}</InputLabel>
-                      <Select
-                        labelId="RaidSelector"
-                        value={currentRaid}
-                        onChange={(e) => handleChangeRaid(e.target.value)}
-                        label={t("CooldownPlanner.TableLabels.RaidSelectorLabel")}
-                        MenuProps={menuStyle}
-                      >
-                        {rl
-                          .map((key, i) => (
-                            <MenuItem key={"RS" + i} value={key.zoneID}>
-                              {key.raidName}
-                            </MenuItem>
-                          ))
-                          .map((key) => [key, <Divider />])}
-                      </Select>
-                    </FormControl>
-                  </Grid>
-                  <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
-                    <FormControl style={{ minWidth: 200,width: "100%" }} variant="outlined" size="small" disabled={currentRaid === "" ? true : false}>
-                      <InputLabel id="BossSelector">{t("CooldownPlanner.TableLabels.BossSelectorLabel")}</InputLabel>
-                      <Select
-                        labelId="BossSelector"
-                        value={currentBoss}
-                        onChange={(e) => handleChangeBoss(e.target.value)}
-                        label={t("CooldownPlanner.TableLabels.BossSelectorLabel")}
-                        MenuProps={menuStyle}
-                      >
-                        {bossList
-                          .filter((obj) => {
-                            return obj.zoneID === currentRaid;
-                          })
-                          .map((key, i) => (
-                            <MenuItem key={"BS" + i} value={key.id}>
-                              {bossIcons(key.id)}
-                              {key.name}
-                            </MenuItem>
-                          ))
-                          .map((key) => [key, <Divider />])}
-                      </Select>
-                    </FormControl>
-                  </Grid>
-                  <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
-                    <FormControl style={{ minWidth: 200,width: "100%" }} variant="outlined" size="small" disabled={currentBoss === "" ? true : false}>
-                      <InputLabel id="RaidSelector">{t("Select Plan")}</InputLabel>
-                      <Select labelId="RaidSelector" label={t("Select Plan")} value={currentPlan} onChange={(e) => handleChangePlan(e.target.value)}>
-                        <MenuItem value={1}>Plan 1</MenuItem>
-                        <Divider />
-                        <MenuItem value={2}>Plan 2</MenuItem>
-                        <Divider />
-                        <MenuItem value={3}>Plan 3</MenuItem>
-                      </Select>
-                    </FormControl>
-                  </Grid>
-                  <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
-                    <Button color="primary" variant="outlined" style={{ height: 40, whiteSpace: "nowrap",width: "100%" }} onClick={() => ertDialogOpen()}>
-                      ERT Note
-                    </Button>
-                  </Grid>
+            <Grid
+              container
+              spacing={1}
+              direction="row"
+              justify="space-between"
+              style={{
+                marginBottom: (currentBoss === "" ? false : true) ? 5 : 0,
+              }}
+            >
+              <Grid item container spacing={1} item xs={12} sm={12} md={12} lg={6} xl={9} alignItems="center">
+                <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
+                  <Button variant="outlined" style={{ height: 40, width: "100%", whiteSpace: "nowrap" }} color="primary" onClick={() => healTeamDialogOpen()}>
+                    Heal Team
+                  </Button>
                 </Grid>
-                <Grid item xs={12} sm={6} md={12} lg={6} xl={3}>
-                  {currentBoss === "" ? null : (
-                    <ThemeProvider theme={SearchFieldOverride}>
-                      <MTableToolbar {...props} />
-                    </ThemeProvider>
-                  )}
+                <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
+                  <FormControl style={{ minWidth: 200, width: "100%" }} variant="outlined" size="small">
+                    <InputLabel id="RaidSelector">{t("CooldownPlanner.TableLabels.RaidSelectorLabel")}</InputLabel>
+                    <Select
+                      labelId="RaidSelector"
+                      value={currentRaid}
+                      onChange={(e) => handleChangeRaid(e.target.value)}
+                      label={t("CooldownPlanner.TableLabels.RaidSelectorLabel")}
+                      MenuProps={menuStyle}
+                    >
+                      {rl
+                        .map((key, i) => (
+                          <MenuItem key={"RS" + i} value={key.zoneID}>
+                            {key.raidName}
+                          </MenuItem>
+                        ))
+                        .map((key) => [key, <Divider />])}
+                    </Select>
+                  </FormControl>
+                </Grid>
+                <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
+                  <FormControl style={{ minWidth: 200, width: "100%" }} variant="outlined" size="small" disabled={currentRaid === "" ? true : false}>
+                    <InputLabel id="BossSelector">{t("CooldownPlanner.TableLabels.BossSelectorLabel")}</InputLabel>
+                    <Select
+                      labelId="BossSelector"
+                      value={currentBoss}
+                      onChange={(e) => handleChangeBoss(e.target.value)}
+                      label={t("CooldownPlanner.TableLabels.BossSelectorLabel")}
+                      MenuProps={menuStyle}
+                    >
+                      {bossList
+                        .filter((obj) => {
+                          return obj.zoneID === currentRaid;
+                        })
+                        .map((key, i) => (
+                          <MenuItem key={"BS" + i} value={key.id}>
+                            {bossIcons(key.id)}
+                            {key.name}
+                          </MenuItem>
+                        ))
+                        .map((key) => [key, <Divider />])}
+                    </Select>
+                  </FormControl>
+                </Grid>
+                <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
+                  <FormControl style={{ minWidth: 200, width: "100%" }} variant="outlined" size="small" disabled={currentBoss === "" ? true : false}>
+                    <InputLabel id="RaidSelector">{t("Select Plan")}</InputLabel>
+                    <Select labelId="RaidSelector" label={t("Select Plan")} value={currentPlan} onChange={(e) => handleChangePlan(e.target.value)}>
+                      <MenuItem value={1}>Plan 1</MenuItem>
+                      <Divider />
+                      <MenuItem value={2}>Plan 2</MenuItem>
+                      <Divider />
+                      <MenuItem value={3}>Plan 3</MenuItem>
+                    </Select>
+                  </FormControl>
+                </Grid>
+                <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
+                  <Button color="primary" variant="outlined" style={{ height: 40, whiteSpace: "nowrap", width: "100%" }} onClick={() => ertDialogOpen()}>
+                    ERT Note
+                  </Button>
                 </Grid>
               </Grid>
+              <Grid item xs={12} sm={6} md={12} lg={6} xl={3}>
+                {currentBoss === "" ? null : (
+                  <ThemeProvider theme={SearchFieldOverride}>
+                    <MTableToolbar {...props} />
+                  </ThemeProvider>
+                )}
+              </Grid>
+            </Grid>
           ),
         }}
         editable={{
@@ -1475,7 +1495,6 @@ export default function CooldownPlanner(props) {
                 resolve();
               }, 1000);
             }),
-            
         }}
       />
     </ThemeProvider>
