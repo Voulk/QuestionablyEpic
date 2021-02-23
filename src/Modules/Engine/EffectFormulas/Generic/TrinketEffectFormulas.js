@@ -161,7 +161,7 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel, use
     let effect = activeTrinket.effects[0];
     let playerBestSecondary = player.getHighestStatWeight(contentType, ["versatility"]); // Exclude Vers since there isn't a Vers version.
 
-    bonus_stats[playerBestSecondary] = ((getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.duration) / effect.cooldown) * 0.9;
+    bonus_stats[playerBestSecondary] = ((getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.duration) / effect.cooldown) * 0.87;
     // power reduced by 5% because of the chance something interferes. This needs to be much much better and I'll fix it up this week.
   
   } else if (effectName === "Flame of Battle") {
@@ -205,7 +205,7 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel, use
 
     bonus_stats.mastery = (getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.duration) / effect.cooldown;
 
-    if (player.getSpec() === SPEC.RESODRUID) bonus_stats.mastery *= 1.2; // Bell is combined with Flourish.
+    if (player.getSpec() === SPEC.RESTODRUID) bonus_stats.mastery *= 1.2; // Bell is combined with Flourish.
     // We need a better way to model interaction with spec cooldowns.
   
   } else if (effectName === "Consumptive Infusion") {
@@ -302,9 +302,24 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel, use
     let effect = activeTrinket.effects[0];
     bonus_stats.mastery = effect.coefficient * effect.stacks[player.getSpec()];
   
+  } else if (effectName === "Memento of Tyrande") {
+    let effect = activeTrinket.effects[0];
+
+    bonus_stats.mana = (getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.ppm * player.getStatPerc("Haste")) / 60;
+
+    //console.log("Tuft: " + bonus_stats.hps);
+  
+  } else if (effectName === "The Skull of Gul'dan") {
+    const effect = activeTrinket.effects[0];
+    bonus_stats.haste = (getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.duration) / effect.cooldown;
+    if (player.getSpec() === "Holy Paladin") bonus_stats.haste *= player.getCooldownMult("twoMinutes", contentType);
+    console.log(bonus_stats);
+
   } else {
     console.log("No Trinket Found");
   }
+
+  
 
   //console.log("Effect Name: " + effectName + " at level: " + itemLevel + " {" + JSON.stringify(bonus_stats))
   return bonus_stats;

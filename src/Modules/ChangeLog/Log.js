@@ -15,6 +15,7 @@ export const changeLog = [
     changes: [
       "New: Added Recent articles and spec guides to the main menu.",
       "New: Top Gear now has a settings panel for advanced configuration.",
+      "New: Added Burning Crusade Timewalking gear.",
       "Top Gear: Items that differ from what you have equipped will highlight in yellow.",
       "Top Gear: Revamped Competitive Alternatives & increased closest sets to 8 (was 4).",
       "Top Gear: Re-implemented diminishing returns formulas.",
