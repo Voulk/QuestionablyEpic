@@ -55,7 +55,7 @@ export const tokenDB = {
         "encounterId": 2424, // Sire Denathrius
         "venthyr": [182391, 182392, 182396],
         "night_fae": [180002, 179561, 180022],
-        "kyrian": [184270, 177850, 178973],
+        "kyrian": [184270, 177855, 178973],
         "necrolord": [184266, 184259, 184261],
         
     },
