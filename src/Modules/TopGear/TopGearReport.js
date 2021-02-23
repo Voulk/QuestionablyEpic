@@ -275,7 +275,7 @@ function TopGearReport(props) {
                   <Grid item container spacing={0}>
                     {differentials.map((key) => (
                       <Grid item xs={12} sm={6} md={4} lg={3} xl={3}>
-                        {console.log(key)}
+                        
                         <Paper
                           elevation={0}
                           variant="outlined"
