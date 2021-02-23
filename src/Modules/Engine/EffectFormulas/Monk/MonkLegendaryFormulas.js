@@ -46,9 +46,6 @@ export const getMonkLegendary = (effectName, player, contentType) => {
 
     const HPSEnv = (envelopingMist.singleCast * renewingMist.avgStacks * envelopingMist.cpm * 0.2) / 60;
 
-    console.log(vivify);
-    console.log(envelopingMist);
-    console.log(renewingMist);
     bonus_stats.hps = HPSRem + HPSViv + HPSEnv;
   } else if (name === "Yu'lon's Whisper") {
     const thunderFocusTeaCPM = 1.5;

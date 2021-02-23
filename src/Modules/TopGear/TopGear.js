@@ -194,7 +194,7 @@ export default function TopGear(props) {
   const editSettings = (setting, newValue) => {
     //console.log("Updating Settings" + setting + ". " + newValue);
     userSettings[setting] = newValue;
-    console.log("Settings: " + JSON.stringify(userSettings));
+    //console.log("Settings: " + JSON.stringify(userSettings));
   };
 
   const slotList = [
