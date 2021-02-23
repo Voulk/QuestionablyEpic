@@ -287,7 +287,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
   let setStats = builtSet.setStats;
   let hardScore = 0;
 
-  console.log(itemSet);
+  //console.log(itemSet);
 
   let enchants = {};
 
@@ -361,7 +361,6 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
     effectStats.push(getEffectValue(itemSet.effectList[x], player, contentType, itemSet.effectList[x].level, userSettings));
 
   }
-  console.log(effectStats);
   bonus_stats = mergeBonusStats(effectStats);
   
 
@@ -376,8 +375,6 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
   adjusted_weights.mastery = (adjusted_weights.mastery + adjusted_weights.mastery * (1 - (DR_CONST * setStats.mastery) / STATPERONEPERCENT.MASTERYA[player.spec])) / 2;
   adjusted_weights.leech = (adjusted_weights.leech + adjusted_weights.leech * (1 - (DR_CONSTLEECH * setStats.leech) / STATPERONEPERCENT.LEECH)) / 2;
 
-  console.log(adjusted_weights);
-  console.log("New Leech: " + adjusted_weights.leech + " at " + setStats.leech);
   // Calculate a hard score using the rebalanced stat weights.
 
   for (var stat in setStats) {

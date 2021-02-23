@@ -114,7 +114,6 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel, use
     let heal_effect = activeTrinket.effects[1];
     let vers_effect = activeTrinket.effects[0];
     const groupMultiplier = userSettings.includeGroupBenefits ? vers_effect.targets : 1;
-    console.log(convertPPMToUptime(vers_effect.ppm * player.getStatPerc("Haste"), vers_effect.duration));
 
     bonus_stats.hps =
       (getProcessedValue(heal_effect.coefficient, heal_effect.table, itemLevel, heal_effect.efficiency) * heal_effect.ppm * 4 * player.getStatMultiplier("CRITVERS")) / 60;
@@ -269,7 +268,6 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel, use
     let effect = activeTrinket.effects[0];
 
     bonus_stats.crit = (getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.duration) / effect.cooldown;
-    console.log("Energy Siphon Crit: " + getProcessedValue(effect.coefficient, effect.table, itemLevel));
   
   } else if (effectName === "Living Flame") {
     let effect = activeTrinket.effects[0];
@@ -313,7 +311,6 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel, use
     const effect = activeTrinket.effects[0];
     bonus_stats.haste = (getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.duration) / effect.cooldown;
     if (player.getSpec() === "Holy Paladin") bonus_stats.haste *= player.getCooldownMult("twoMinutes", contentType);
-    console.log(bonus_stats);
 
   } else {
     console.log("No Trinket Found");
