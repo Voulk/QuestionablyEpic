@@ -29,10 +29,11 @@ export default function Changelog() {
   };
 
   return (
-    <div style={{ color: "Whitesmoke", width: "350px", marginLeft: "auto", marginRight: "auto", marginBottom: 5, marginTop: 50 }}>
-      <Button style={{ fontSize: 12 }} onClick={handleClickOpen("paper")}>
+    <div style={{ color: "Whitesmoke", width: "520px", marginLeft: "auto", marginRight: "auto", marginBottom: 5, marginTop: 20 }}>
+      <Button style={{ fontSize: 12, textTransform: 'none' }} onClick={handleClickOpen("paper")}>
         {/* ----------------- This uses the first object in the array ----------------  */}
-        QE Live {changeLog[0].version} {t("Changelog.Update")} {changeLog[0].update}. {t("Changelog.LastUpdated")} {changeLog[0].date}.
+        QE Live {changeLog[0].version} {t("Changelog.Update")} {changeLog[0].update}. {t("Changelog.LastUpdated")} {changeLog[0].date}. 
+        Click to see what's changed.
       </Button>
       <Dialog open={open} onClose={handleClose} scroll={scroll} aria-labelledby="scroll-dialog-title" aria-describedby="scroll-dialog-description" maxWidth="md" fullWidth>
         <DialogTitle disableTypography align="center" id="scroll-dialog-title">

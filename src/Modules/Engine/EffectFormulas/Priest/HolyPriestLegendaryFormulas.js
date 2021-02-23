@@ -1,4 +1,4 @@
-export const getHolyPriestLegendary = (effectName, pl, contentType) => {
+export const getHolyPriestLegendary = (effectName, player, contentType) => {
   let result = 0.0;
   let name = effectName;
   let bonus_stats = {};

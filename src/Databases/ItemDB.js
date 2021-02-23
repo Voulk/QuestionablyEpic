@@ -39,7 +39,7 @@ export const tokenDB = {
         "itemLevel": 200,
         "slotType": "Offhands",
         "specs": ["Restoration Shaman", "Restoration Druid"],
-        "encounterId": 2418, // Inerva Darkvein
+        "encounterId": 2420, // Inerva Darkvein
         "venthyr": [182426, 182425],
         "necrolord": [184245, 184246], 
         "kyrian": [174310, 175254],
@@ -66,7 +66,7 @@ export const tokenDB = {
         "encounterId": 2424, // Sire Denathrius
         "venthyr": [182391, 182392, 182396],
         "night_fae": [180002, 179561, 180022],
-        "kyrian": [184270, 177850, 178973],
+        "kyrian": [184270, 177850, 178975],
         "necrolord": [184266, 184259, 184261],
 
     },
@@ -77,7 +77,7 @@ export const tokenDB = {
         "encounterId": 2424, // Sire Denathrius
         "venthyr": [182391, 182392, 182396],
         "night_fae": [180002, 179561, 180022],
-        "kyrian": [184270, 177850, 178973],
+        "kyrian": [184270, 177850, 178975],
         "necrolord": [184266, 184259, 184261],
     },
 

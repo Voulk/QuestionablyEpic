@@ -365,7 +365,7 @@ export default function CooldownPlanner(props) {
       // Renders the Name for the healer in the relevant row in the data.
       render: (rowData) => (
         <div style={{ color: classColoursJS(rowData.class) }}>
-          {rowData.class === undefined ? "" : classIcons(rowData.class, { height: 20, width: 20, padding: "0px 5px 0px 5px", verticalAlign: "middle" })}
+          {rowData.class === undefined ? "" : classIcons(rowData.class, { height: 20, width: 20, padding: "0px 5px 0px 5px", verticalAlign: "middle", borderRadius: 4 })}
           {t("CooldownPlanner.Classes." + rowData.class)}
         </div>
       ),
@@ -374,7 +374,7 @@ export default function CooldownPlanner(props) {
         let data = { ...props.rowData };
         return (
           <div style={{ color: classColoursJS(data.class) }}>
-            {data.class === undefined ? "" : classIcons(data.class, { height: 20, width: 20, padding: "0px 5px 0px 5px", verticalAlign: "middle" })}
+            {data.class === undefined ? "" : classIcons(data.class, { height: 20, width: 20, padding: "0px 5px 0px 5px", verticalAlign: "middle", borderRadius: 4 })}
             {t("CooldownPlanner.Classes." + data.class)}
           </div>
         );

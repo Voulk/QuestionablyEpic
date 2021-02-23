@@ -21,12 +21,12 @@ import { getShamanCovAbility } from "./Shaman/ShamanCovenantFormulas";
 // Effect is a small "dictionary" with two key : value pairs.
 // The EffectEngine is basically a routing device. It will take your effect and effect type and grab the right formula from the right place.
 // This allows each spec to work on spec-specific calculations without a need to interact with the other specs.
-export function getEffectValue(effect, player, contentType, itemLevel = 0) {
+export function getEffectValue(effect, player, contentType, itemLevel = 0, userSettings) {
   let bonus_stats = {};
   const effectName = effect.name;
   const effectType = effect.type;
 
-  //console.log("ITEM EFFECT" + effectName + effectType + "pl spec" + player.spec);
+  //console.log("ITEM EFFECT" + effectName + effectType + "player spec" + player.spec);
 
   if (effect.type === "special") {
     bonus_stats = getGenericEffect(effectName, player, contentType);
@@ -55,9 +55,9 @@ export function getEffectValue(effect, player, contentType, itemLevel = 0) {
       // Call error
     }
   } else if (effectType === "generic legendary") {
-    bonus_stats = getGenericLegendary(effectName, player, contentType);
+    bonus_stats = getGenericLegendary(effectName, player, contentType, userSettings);
   } else if (effectType === "trinket") {
-    bonus_stats = getTrinketEffect(effectName, player, contentType, itemLevel);
+    bonus_stats = getTrinketEffect(effectName, player, contentType, itemLevel, userSettings);
     //testTrinkets(player, contentType); //TODO: Remove
   }
 

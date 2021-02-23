@@ -29,6 +29,13 @@ const useStyles = makeStyles({
     minWidth: 200,
     borderStyle: "dashed",
   },
+  notequipped: {
+    borderColor: "#CECE02",
+    backgroundColor: "#3E4651",
+    minWidth: 200,
+    borderStyle: "dashed",
+    borderWidth: "1px",
+  },
   bullet: {
     display: "inline-block",
     margin: "0 2px",
@@ -83,6 +90,7 @@ export default function ItemCardReport(props) {
 
   let itemName = "";
   let isVault = item.vaultItem;
+  const isEquipped = item.isEquipped;
   const deleteActive = item.offhandID === 0;
 
   if (item.offhandID > 0) {
@@ -113,11 +121,10 @@ export default function ItemCardReport(props) {
 
   const tertiary = props.item.tertiary !== "" ? <div style={{ display: "inline" }}> / {props.item.tertiary} </div> : null;
 
-  console.log(props.item);
 
   return (
     <Grid item xs={12}>
-      <Card className={isVault ? classes.vault : item.active ? classes.selected : classes.root} elevation={0} style={{ backgroundColor: "rgba(34, 34, 34, 0.52)" }}>
+      <Card className={isVault ? classes.vault : !item.isEquipped ? classes.notequipped : classes.root} elevation={0} style={{ backgroundColor: "rgba(34, 34, 34, 0.52)" }}>
         <CardActionArea disabled={false}>
           <Grid container display="inline-flex" wrap="nowrap" justify="space-between">
             <Grid item xs="auto">
