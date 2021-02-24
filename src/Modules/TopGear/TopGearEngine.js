@@ -54,6 +54,8 @@ export function runTopGear(itemList, wepCombos, player, contentType, baseHPS, cu
   itemSets.sort((a, b) => (a.sumSoftScore < b.sumSoftScore ? 1 : -1));
   count = itemSets.length;
 
+  console.log(itemSets);
+
   //console.log("Count: " + count);
   // TEST LOOP ONLY FOR CONSOLE PRINTS.
   /*
@@ -189,14 +191,17 @@ function createSets(itemList, rawWepCombos) {
                           for (var finger2 = 1; finger2 < slotLengths.Finger; finger2++) {
                             softScore.finger2 = splitItems.Finger[finger2].softScore;
 
-                            if (splitItems.Finger[finger].id !== splitItems.Finger[finger2].id) {
+                            if (splitItems.Finger[finger].id !== splitItems.Finger[finger2].id &&
+                                finger < finger2) {
                               for (var trinket = 0; trinket < slotLengths.Trinket - 1; trinket++) {
                                 softScore.trinket = splitItems.Trinket[trinket].softScore;
 
                                 for (var trinket2 = 1; trinket2 < slotLengths.Trinket; trinket2++) {
                                   softScore.trinket2 = splitItems.Trinket[trinket2].softScore;
 
-                                  if (splitItems.Trinket[trinket].id !== splitItems.Trinket[trinket2].id) {
+                                  if (splitItems.Trinket[trinket].id !== splitItems.Trinket[trinket2].id
+                                    && trinket < trinket2) {
+
                                     let includedItems = [
                                       splitItems.Head[head],
                                       splitItems.Neck[neck],
@@ -242,8 +247,9 @@ function createSets(itemList, rawWepCombos) {
 }
 
 function buildDifferential(itemSet, primeSet) {
-  let primeList = primeSet.itemList;
-  let diffList = itemSet.itemList;
+  let doubleSlot = {};
+  const primeList = primeSet.itemList;
+  const diffList = itemSet.itemList;
   let differentials = {
     items: [],
     scoreDifference: (Math.round(primeSet.hardScore - itemSet.hardScore) / primeSet.hardScore) * 100,
@@ -253,9 +259,17 @@ function buildDifferential(itemSet, primeSet) {
   //console.log("Diff List: " + JSON.stringify(diffList))
 
   for (var x = 0; x < primeList.length; x++) {
-    if (primeList[x].uniqueHash !== diffList[x].uniqueHash) {
-      //console.log("Something happeneing here: " + x);
+    //console.log("Prime slot: " + primeList[x].slot + ". Double: " + doubleSlot + " " + x);
+    if (primeList[x].uniqueHash !== diffList[x].uniqueHash) {    
       differentials.items.push(diffList[x]);
+      doubleSlot[diffList[x].slot] = (doubleSlot[diffList[x].slot] || 0) + 1;
+
+      
+      if (x === 13 && doubleSlot[diffList[x].slot] <= 1) {
+        //console.log("Adding double");
+        differentials.items.push(diffList[x-1]);
+      }
+      
     }
   }
   //console.log(JSON.stringify(differentials));

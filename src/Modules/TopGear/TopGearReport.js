@@ -95,7 +95,7 @@ function TopGearReport(props) {
     resultValid = false;
   }
 
-  //console.log(differentials);
+  console.log(differentials);
 
   //console.log("Top Set: " + JSON.stringify(itemList));
   /* TEST DATA
