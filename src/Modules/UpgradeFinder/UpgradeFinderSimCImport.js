@@ -52,8 +52,8 @@ export default function UpgradeFinderSimC(props) {
   return (
     <Grid item xs={12}>
       <Paper elevation={0} className={simcStatus === "Good" || simcStatus === "Missing" ? classes.simcok : classes.simcerror} style={{ padding: 10 }}>
-        <Grid container spacing={1}>
-          <Grid item xs={5} container justify="center" spacing={1}>
+        <Grid container justify="space-between" spacing={1}>
+          <Grid item xs={5} alignItems="center" container justify="center" spacing={1}>
             <Grid item xs={8}>
               <Typography color="primary" align="center" variant="h5">
                 {t(simcString)}
@@ -73,11 +73,13 @@ export default function UpgradeFinderSimC(props) {
               />
             </Grid>
           </Grid>
-          <Divider orientation="vertical" flexItem />
-          <Grid item xs={7} container justify="center" spacing={1}>
+          <Grid item>
+            <Divider orientation="vertical" flexItem style={{ height: "100%" }} />
+          </Grid>
+          <Grid item xs={7} alignItems="center" container justify="center" spacing={1}>
             <Grid item xs={2}>
               <Typography color="primary" align="center" variant="h5">
-                Gear: 
+                Equipped:
                 {/* {t("UpgradeFinderFront.SimCBody2")} */}
               </Typography>
             </Grid>
@@ -87,20 +89,26 @@ export default function UpgradeFinderSimC(props) {
                 {props.player.activeItems
                   .filter((key) => key.isEquipped === true)
                   .map((key, i) => (
-                    <a style={{ padding: 2 }} data-wowhead={"item=" + key.id + "&" + "ilvl=" + key.level + "&bonus=" + key.bonusIDS + "&domain=" + currentLanguage} key={i}>
-                      <img
-                        style={{
-                          height: 22,
-                          width: 22,
-                          verticalAlign: "middle",
-                          borderRadius: "8px",
-                          border: "1px solid",
-                          borderColor: itemQuality(key.level, key.effect),
-                        }}
-                        src={getItemIcon(key.id)}
-                        alt=""
-                      />
-                    </a>
+                    <Grid item>
+                      <a
+                        style={{ margin: "2px 2px" }}
+                        data-wowhead={"item=" + key.id + "&" + "ilvl=" + key.level + "&bonus=" + key.bonusIDS + "&domain=" + currentLanguage}
+                        key={i}
+                      >
+                        <img
+                          style={{
+                            height: 22,
+                            width: 22,
+                            verticalAlign: "middle",
+                            borderRadius: "8px",
+                            border: "1px solid",
+                            borderColor: itemQuality(key.level, key.effect),
+                          }}
+                          src={getItemIcon(key.id)}
+                          alt=""
+                        />
+                      </a>
+                    </Grid>
                   ))}
               </Grid>
             </Grid>
