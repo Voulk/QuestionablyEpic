@@ -90,7 +90,7 @@ export function runTopGear(itemList, wepCombos, player, contentType, baseHPS, cu
   let differentials = [];
   let primeSet = itemSets[0];
   for (var i = 1; i < Math.min(CONSTRAINTS.topGearDifferentials+1, itemSets.length); i++) {
-    //differentials.push(buildDifferential(itemSets[i], primeSet, newPlayer));
+    differentials.push(buildDifferential(itemSets[i], primeSet, newPlayer, contentType));
   }
 
   //itemSets[0].printSet()
@@ -249,14 +249,14 @@ function createSets(itemList, rawWepCombos) {
   return itemSets;
 }
 
-function buildDifferential(itemSet, primeSet, player) {
+function buildDifferential(itemSet, primeSet, player, contentType) {
   let doubleSlot = {};
   const primeList = primeSet.itemList;
   const diffList = itemSet.itemList;
   let differentials = {
     items: [],
     scoreDifference: (Math.round(primeSet.hardScore - itemSet.hardScore) / primeSet.hardScore) * 100,
-    rawDifference: Math.round((itemSet.hardScore - primeSet.hardScore) / player.getInt() * player.getHPS() * 100) / 100,
+    rawDifference: Math.round((itemSet.hardScore - primeSet.hardScore) / player.getInt(contentType) * player.getHPS(contentType)),
   };
   //console.log("Prime List: " + JSON.stringify(primeSet));
   //console.log("Diff List: " + JSON.stringify(diffList))
