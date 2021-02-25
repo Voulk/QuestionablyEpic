@@ -9,6 +9,7 @@ import TopGearSettingsAccordion from "../TopGear/TopGearSettings";
 import UpgradeFinderSimC from "./UpgradeFinderSimCImport";
 import { runUpgradeFinder } from "./UpgradeFinderEngine";
 import { useHistory } from "react-router-dom";
+import userSettings from "../TopGear/SettingsObject";
 
 const useStyles = makeStyles((theme) => ({
   slider: {
@@ -91,6 +92,7 @@ const PvPRating = [
 export default function UpgradeFinderFront(props) {
   const classes = useStyles();
   const { t, i18n } = useTranslation();
+  const currentLanguage = i18n.language;
   const helpText = t("UpgradeFinderFront.HelpText");
 
   const [selectedRaidFinder, setSelectedRaidFinder] = React.useState(false);
@@ -106,9 +108,15 @@ export default function UpgradeFinderFront(props) {
   const selectsPvE = [selectedRaidFinder, selectedNormal, selectedHeroic, selectedMythic];
   const setsPvE = [setSelectedRaidFinder, setSelectedNormal, setSelectedHeroic, setSelectedMythic];
 
+  const editSettings = (setting, newValue) => {
+    //console.log("Updating Settings" + setting + ". " + newValue);
+    userSettings[setting] = newValue;
+    //console.log("Settings: " + JSON.stringify(userSettings));
+  };
+
   const unleashUpgradeFinder = () => {
     const playerSettings = props.playerSettings;
-    const result = runUpgradeFinder(props.player, props.contentType, playerSettings);
+    const result = runUpgradeFinder(props.player, props.contentType, currentLanguage, playerSettings, userSettings);
     props.setItemSelection(result);
     props.setShowReport(true);
     //history.push("/UpgradeFinderReport/");
@@ -148,6 +156,9 @@ export default function UpgradeFinderFront(props) {
         </Grid>
         <Grid item xs={12}>
           <UpgradeFinderSimC player={props.player} contentType={props.contentType} simcSnack={props.simcSnack} allChars={props.allChars} />
+        </Grid>
+        <Grid item xs={12}>
+          <TopGearSettingsAccordion userSettings={userSettings} editSettings={editSettings} />
         </Grid>
 
         {/* ------------------------------ Raid Section ------------------------------ */}
@@ -189,7 +200,7 @@ export default function UpgradeFinderFront(props) {
                     value="check"
                     //selected={selectsPvE[i]}
                     selected={props.playerSettings.raid.includes(i)}
-                    style={{ width: 200, height: 50 }}
+                    style={{ width: 180, height: 45 }}
                     onChange={() => {
                       setsPvE[i](!selectsPvE[i]);
                       props.setRaidDifficulty(i);
@@ -258,9 +269,6 @@ export default function UpgradeFinderFront(props) {
               </Grid>
             </Grid>
           </Paper>
-        </Grid>
-        <Grid item xs={12}>
-          {/*<TopGearSettingsAccordion /> */}
         </Grid>
         <Grid item xs={12} style={{ marginBottom: 100 }} />
       </Grid>

@@ -33,12 +33,9 @@ function setupPlayer(player, contentType, castModel) {
   let newPlayer = new Player(player.charName, player.spec, player.charID, player.region, player.realm, player.race, player.statWeights);
   //newPlayer = Object.assign(newPlayer, player);
   //console.log("NEW PLAYER");
-  console.log(castModel);
   newPlayer.castModel[contentType] = new CastModel(newPlayer.getSpec(), contentType);
-  console.log(newPlayer.castModel[contentType]);
   newPlayer.castModel[contentType] = Object.assign(newPlayer.castModel[contentType], castModel);
 
-  console.log(newPlayer.castModel[contentType]);
   return newPlayer;
 
 }
@@ -56,7 +53,6 @@ export function runTopGear(itemList, wepCombos, player, contentType, baseHPS, cu
   itemSets.sort((a, b) => (a.sumSoftScore < b.sumSoftScore ? 1 : -1));
   count = itemSets.length;
 
-  console.log(itemSets);
 
   //console.log("Count: " + count);
   // TEST LOOP ONLY FOR CONSOLE PRINTS.
@@ -85,7 +81,6 @@ export function runTopGear(itemList, wepCombos, player, contentType, baseHPS, cu
   var t1 = performance.now();
   // console.log("Call to doSomething took " + (t1 - t0) + " milliseconds with count ")
 
-  console.log(newPlayer);
   // Build Differentials
   let differentials = [];
   let primeSet = itemSets[0];

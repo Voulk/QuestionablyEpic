@@ -9,6 +9,10 @@ import HelpIcon from '@material-ui/icons/Help';
 const useStyles = makeStyles((theme) => ({
   root: {
     width: "100%",
+    borderColor: "limegreen",
+    borderWidth: "1px",
+    borderStyle: "Solid",
+    borderRadius: "5px",
   },
   heading: {
     fontSize: theme.typography.pxToRem(15),
