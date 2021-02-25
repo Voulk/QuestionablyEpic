@@ -200,7 +200,7 @@ export default function UpgradeFinderFront(props) {
                     value="check"
                     //selected={selectsPvE[i]}
                     selected={props.playerSettings.raid.includes(i)}
-                    style={{ width: 200, height: 50 }}
+                    style={{ width: 180, height: 45 }}
                     onChange={() => {
                       setsPvE[i](!selectsPvE[i]);
                       props.setRaidDifficulty(i);
