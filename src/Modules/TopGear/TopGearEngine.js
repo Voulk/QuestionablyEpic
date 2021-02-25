@@ -33,10 +33,12 @@ function setupPlayer(player, contentType, castModel) {
   let newPlayer = new Player(player.charName, player.spec, player.charID, player.region, player.realm, player.race, player.statWeights);
   //newPlayer = Object.assign(newPlayer, player);
   //console.log("NEW PLAYER");
+  console.log(castModel);
   newPlayer.castModel[contentType] = new CastModel(newPlayer.getSpec(), contentType);
+  console.log(newPlayer.castModel[contentType]);
   newPlayer.castModel[contentType] = Object.assign(newPlayer.castModel[contentType], castModel);
 
-
+  console.log(newPlayer.castModel[contentType]);
   return newPlayer;
 
 }
@@ -53,6 +55,8 @@ export function runTopGear(itemList, wepCombos, player, contentType, baseHPS, cu
   let itemSets = createSets(itemList, wepCombos);
   itemSets.sort((a, b) => (a.sumSoftScore < b.sumSoftScore ? 1 : -1));
   count = itemSets.length;
+
+  console.log(itemSets);
 
   //console.log("Count: " + count);
   // TEST LOOP ONLY FOR CONSOLE PRINTS.
@@ -81,11 +85,12 @@ export function runTopGear(itemList, wepCombos, player, contentType, baseHPS, cu
   var t1 = performance.now();
   // console.log("Call to doSomething took " + (t1 - t0) + " milliseconds with count ")
 
+  console.log(newPlayer);
   // Build Differentials
   let differentials = [];
   let primeSet = itemSets[0];
   for (var i = 1; i < Math.min(CONSTRAINTS.topGearDifferentials+1, itemSets.length); i++) {
-    differentials.push(buildDifferential(itemSets[i], primeSet));
+    differentials.push(buildDifferential(itemSets[i], primeSet, newPlayer, contentType));
   }
 
   //itemSets[0].printSet()
@@ -189,14 +194,17 @@ function createSets(itemList, rawWepCombos) {
                           for (var finger2 = 1; finger2 < slotLengths.Finger; finger2++) {
                             softScore.finger2 = splitItems.Finger[finger2].softScore;
 
-                            if (splitItems.Finger[finger].id !== splitItems.Finger[finger2].id) {
+                            if (splitItems.Finger[finger].id !== splitItems.Finger[finger2].id &&
+                                finger < finger2) {
                               for (var trinket = 0; trinket < slotLengths.Trinket - 1; trinket++) {
                                 softScore.trinket = splitItems.Trinket[trinket].softScore;
 
                                 for (var trinket2 = 1; trinket2 < slotLengths.Trinket; trinket2++) {
                                   softScore.trinket2 = splitItems.Trinket[trinket2].softScore;
 
-                                  if (splitItems.Trinket[trinket].id !== splitItems.Trinket[trinket2].id) {
+                                  if (splitItems.Trinket[trinket].id !== splitItems.Trinket[trinket2].id
+                                    && trinket < trinket2) {
+
                                     let includedItems = [
                                       splitItems.Head[head],
                                       splitItems.Neck[neck],
@@ -241,24 +249,29 @@ function createSets(itemList, rawWepCombos) {
   return itemSets;
 }
 
-function buildDifferential(itemSet, primeSet) {
-  let primeList = primeSet.itemList;
-  let diffList = itemSet.itemList;
+function buildDifferential(itemSet, primeSet, player, contentType) {
+  let doubleSlot = {};
+  const primeList = primeSet.itemList;
+  const diffList = itemSet.itemList;
   let differentials = {
     items: [],
     scoreDifference: (Math.round(primeSet.hardScore - itemSet.hardScore) / primeSet.hardScore) * 100,
-    rawDifference: (Math.round(itemSet.hardScore - primeSet.hardScore)*100)/100
+    rawDifference: Math.round((itemSet.hardScore - primeSet.hardScore) / player.getInt(contentType) * player.getHPS(contentType)),
   };
   //console.log("Prime List: " + JSON.stringify(primeSet));
   //console.log("Diff List: " + JSON.stringify(diffList))
 
   for (var x = 0; x < primeList.length; x++) {
-    if (primeList[x].uniqueHash !== diffList[x].uniqueHash) {
-      //console.log("Something happeneing here: " + x);
+    if (primeList[x].uniqueHash !== diffList[x].uniqueHash) {    
       differentials.items.push(diffList[x]);
+      doubleSlot[diffList[x].slot] = (doubleSlot[diffList[x].slot] || 0) + 1;
+
+      if ((x === 13 || x === 11) && doubleSlot[diffList[x].slot] <= 1) {
+        differentials.items.push(diffList[x-1]);
+      }
+      
     }
   }
-  //console.log(JSON.stringify(differentials));
   return differentials;
 }
 

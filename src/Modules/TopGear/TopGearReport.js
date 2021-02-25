@@ -95,7 +95,7 @@ function TopGearReport(props) {
     resultValid = false;
   }
 
-  //console.log(differentials);
+  console.log(differentials);
 
   //console.log("Top Set: " + JSON.stringify(itemList));
   /* TEST DATA
@@ -336,7 +336,7 @@ function TopGearReport(props) {
                                     fontSize: 12
                                   }}
                                 >
-                                  {key.rawDifference + " INT"}
+                                  {key.rawDifference + " HPS"}
                                 </Typography>
                               </Grid>
                             </Grid>
