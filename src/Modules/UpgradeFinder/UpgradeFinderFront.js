@@ -9,6 +9,7 @@ import TopGearSettingsAccordion from "../TopGear/TopGearSettings";
 import UpgradeFinderSimC from "./UpgradeFinderSimCImport";
 import { runUpgradeFinder } from "./UpgradeFinderEngine";
 import { useHistory } from "react-router-dom";
+import userSettings from "../TopGear/SettingsObject";
 
 const useStyles = makeStyles((theme) => ({
   slider: {
@@ -106,6 +107,12 @@ export default function UpgradeFinderFront(props) {
   const selectsPvE = [selectedRaidFinder, selectedNormal, selectedHeroic, selectedMythic];
   const setsPvE = [setSelectedRaidFinder, setSelectedNormal, setSelectedHeroic, setSelectedMythic];
 
+  const editSettings = (setting, newValue) => {
+    //console.log("Updating Settings" + setting + ". " + newValue);
+    userSettings[setting] = newValue;
+    //console.log("Settings: " + JSON.stringify(userSettings));
+  };
+
   const unleashUpgradeFinder = () => {
     const playerSettings = props.playerSettings;
     const result = runUpgradeFinder(props.player, props.contentType, playerSettings);
@@ -148,6 +155,9 @@ export default function UpgradeFinderFront(props) {
         </Grid>
         <Grid item xs={12}>
           <UpgradeFinderSimC player={props.player} contentType={props.contentType} simcSnack={props.simcSnack} allChars={props.allChars} />
+        </Grid>
+        <Grid item xs={12}>
+          <TopGearSettingsAccordion userSettings={userSettings} editSettings={editSettings} />
         </Grid>
 
         {/* ------------------------------ Raid Section ------------------------------ */}
@@ -258,9 +268,6 @@ export default function UpgradeFinderFront(props) {
               </Grid>
             </Grid>
           </Paper>
-        </Grid>
-        <Grid item xs={12}>
-          {/*<TopGearSettingsAccordion /> */}
         </Grid>
         <Grid item xs={12} style={{ marginBottom: 100 }} />
       </Grid>

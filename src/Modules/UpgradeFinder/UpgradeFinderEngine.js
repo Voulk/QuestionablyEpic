@@ -105,7 +105,7 @@ export function runUpgradeFinder(player, contentType, playerSettings) {
   const itemPoss = buildItemPossibilities(player, contentType, playerSettings);
 
   for (var x = 0; x < itemPoss.length; x++) {
-    completedItemList.push(processItem(itemPoss[x], baseItemList, baseScore, player, contentType, baseHPS));
+    completedItemList.push(processItem(itemPoss[x], baseItemList, baseScore, player, contentType, baseHPS, playerSettings));
   }
 
   const result = new UpgradeFinderResult(itemPoss, completedItemList);
@@ -211,12 +211,12 @@ function buildItemPossibilities(player, contentType, playerSettings) {
 }
 
 // Returns a small dict
-function processItem(item, baseItemList, baseScore, player, contentType, baseHPS) {
+function processItem(item, baseItemList, baseScore, player, contentType, baseHPS, userSettings) {
   let newItemList = [...baseItemList];
   newItemList.push(item);
   //console.log(player);
   const wepList = buildWepCombosUF(player, newItemList);
-  const newTGSet = runTopGear(newItemList, wepList, player, contentType, baseHPS);
+  const newTGSet = runTopGear(newItemList, wepList, player, contentType, baseHPS, userSettings, player.castModel[contentType]);
 
   const newScore = newTGSet.itemSet.hardScore;
   //const differential = Math.round(100*(newScore - baseScore))/100 // This is a raw int difference.
