@@ -53,7 +53,6 @@ export function runTopGear(itemList, wepCombos, player, contentType, baseHPS, cu
   itemSets.sort((a, b) => (a.sumSoftScore < b.sumSoftScore ? 1 : -1));
   count = itemSets.length;
 
-  console.log(userSettings);
 
   //console.log("Count: " + count);
   // TEST LOOP ONLY FOR CONSOLE PRINTS.
