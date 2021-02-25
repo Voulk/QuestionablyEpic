@@ -92,6 +92,7 @@ const PvPRating = [
 export default function UpgradeFinderFront(props) {
   const classes = useStyles();
   const { t, i18n } = useTranslation();
+  const currentLanguage = i18n.language;
   const helpText = t("UpgradeFinderFront.HelpText");
 
   const [selectedRaidFinder, setSelectedRaidFinder] = React.useState(false);
@@ -115,7 +116,7 @@ export default function UpgradeFinderFront(props) {
 
   const unleashUpgradeFinder = () => {
     const playerSettings = props.playerSettings;
-    const result = runUpgradeFinder(props.player, props.contentType, playerSettings);
+    const result = runUpgradeFinder(props.player, props.contentType, currentLanguage, playerSettings, userSettings);
     props.setItemSelection(result);
     props.setShowReport(true);
     //history.push("/UpgradeFinderReport/");
