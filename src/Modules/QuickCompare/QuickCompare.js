@@ -40,6 +40,9 @@ const useStyles = makeStyles((theme) => ({
       marginTop: 32,
     },
   },
+  option: {
+    borderBottom: "1px solid rgba(255, 255, 255, 0.23)",
+  },
 }));
 
 const menuStyle = {
@@ -306,6 +309,9 @@ export default function QuickCompare(props) {
                 <FormControl className={classes.formControl} variant="outlined" size="small" style={{ minWidth: 350 }} disabled={activeSlot === "" ? true : false}>
                   <Autocomplete
                     size="small"
+                    classes={{
+                      option: classes.option,
+                    }}
                     disabled={activeSlot === "" ? true : false}
                     id="item-select"
                     value={AutoValue}
@@ -326,6 +332,7 @@ export default function QuickCompare(props) {
                     }}
                     style={{ width: "100%" }}
                     renderInput={(params) => <TextField {...params} label={t("QuickCompare.ItemName")} variant="outlined" />}
+                    ListboxProps={{ style: { border: "1px solid rgba(255, 255, 255, 0.23)", borderRadius: 4,paddingTop: 0, paddingBottom: 0 } }}
                   />
                 </FormControl>
               </Grid>
