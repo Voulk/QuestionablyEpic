@@ -98,7 +98,7 @@ export const trinket_data = [
         table: -7,
         duration: 30,
         stacks: 2, // You get 10s of one stack, 10 of two, then 10 of three.
-        multiplier: 1, // Every ally that wears it in your party gives a 5% increase. Not implemented for now, but add to Settings.
+        multiplier: 0.05, // Every ally that wears it in your party gives a 5% increase. Not implemented for now, but add to Settings.
         ppm: 1,
       },
     ],
@@ -121,7 +121,7 @@ export const trinket_data = [
       {
         coefficient: 89.08621, // This represents the upper quartile of the given cards.
         table: -8,
-        efficiency: 0.56, // You do have to heal a sub 35% health target every 30s for max efficiency which doesn't seem at all likely.
+        efficiency: 0.47, // You do have to heal a sub 35% health target every 30s for max efficiency which doesn't seem at all likely.
         cooldown: 30,
       },
     ],
@@ -133,7 +133,8 @@ export const trinket_data = [
         coefficient: 0.985059,
         table: -7,
         duration: 15,
-        multiplier: 1, // Up to four allies do benefit from standing with you. Not included in the score for now.
+        efficiency: 0.45,
+        targets: {Raid: 5, Dungeon: 3.1}, // Up to four allies do benefit from standing with you. Not included in the score for now.
         cooldown: 150,
       },
     ],
@@ -197,10 +198,11 @@ export const trinket_data = [
         coefficient: 0.354898,
         table: -7,
         duration: 14, // This one is tricky because the duration is refreshed if another player walks over one. Max duration is ~20 seconds per proc.
+        targets: 5,
         efficiency: 0.85,
         ppm: 1,
       },
-      {
+      { // Heal Effect
         coefficient: 11.89655,
         table: -8,
         efficiency: 0.72, // These are unlikely to overheal, but players have to run over them so some might naturally expire. Full health players can also waste them.
@@ -334,7 +336,7 @@ export const trinket_data = [
       {
         coefficient: 326.7931,
         table: -8, // TODO: Test for Crit / Vers scaling.
-        efficiency: { Raid: 0.54, Dungeon: 0.82 }, // Includes the 25% multiplier as the target gets lower.
+        efficiency: { Raid: 0.52, Dungeon: 0.82 }, // Includes the 25% multiplier as the target gets lower.
         // This one is very awkward. You're using it as a Guardian Spirit effect more often than using it because the heal is useful.
         // A massive heal on an injured target has massive life-saving potential, but I'm not sure how well it can be modelled except
         // to assume the heal will have quite a high efficiency in dangerous scenarios.
@@ -482,6 +484,29 @@ export const trinket_data = [
       {
         coefficient: 10, // Flat value
         stacks: { "Restoration Druid": 7, "Discipline Priest": 10, "Holy Paladin": 0, "Mistweaver Monk": 0, "Restoration Shaman": 2.4, "Holy Priest": 0.4 },
+      },
+    ],
+  },
+  // ---------- Burning Crusade Timewalking Trinkets ------------
+  {
+    name: "Memento of Tyrande", // Mana Proc
+    effects: [
+      {
+        coefficient: 2.03251, // 8.996611 pre-nerf
+        table: -7,
+        ppm: 2.5, // 2.5 + Haste.
+      },
+    ],
+  },
+  {
+    name: "The Skull of Gul'dan",
+    effects: [
+      {
+        coefficient: 1.815054,
+        table: -7,
+        duration: 20,
+        multiplier: 1,
+        cooldown: 120,
       },
     ],
   },

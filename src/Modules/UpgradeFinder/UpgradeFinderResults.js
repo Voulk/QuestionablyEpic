@@ -137,7 +137,7 @@ export default function UpgradeFinderResults(props) {
   return (
     <div className={classes.header}>
       <Typography variant="h4" color="primary" align="center" style={{ padding: "10px 10px 5px 10px" }}>
-        {t("UpgradeFinder.Header") + " - " + props.contentType}
+        {props.contentType + " " +  t("UpgradeFinder.Header")}
       </Typography>
       <AppBar
         position="static"

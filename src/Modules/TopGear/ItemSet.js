@@ -20,6 +20,7 @@ class ItemSet {
   hardScore = 0;
   setSockets = 0;
   uniques = {};
+  effectList = [];
 
   // Enchant Breakdown consists of key: value combos where key is the slot, and the value is the *name* of the enchant.
   // We only use it for display purposes on the report end.
@@ -60,13 +61,19 @@ class ItemSet {
       for (const [stat, value] of Object.entries(item.stats)) {
         if (stat in setStats) {
           setStats[stat] += value;
-          //if (stat === "intellect") console.log("Adding Int: " + value) // Tester;
-          if (stat in item.stats["bonus_stats"]) setStats[stat] += item.stats["bonus_stats"][stat];
+          
+          //if (stat in item.stats["bonus_stats"]) setStats[stat] += item.stats["bonus_stats"][stat]; // Disabled for now since we handle effects separately. 
         }
       }
 
       if (item.socket) setSockets++;
       if (item.uniqueEquip) this.uniques[item.uniqueEquip] = (this.uniques[item.uniqueEquip] || 0) + 1;
+
+      if (item.effect !== "") {
+        let effect = item.effect;
+        effect.level = item.level;
+        this.effectList.push(effect);
+      }
     }
 
     this.setStats = setStats;
@@ -79,10 +86,10 @@ class ItemSet {
     // Verifies that the set is possible.
     if (this.uniques["legendary"] && this.uniques["legendary"] > 1) {
       //this.softScore = -1
-      console.log("SET NOT VIABLE - Legendary");
+      //console.log("SET NOT VIABLE - Legendary");
       return false;
     } else if (this.uniques["vault"] && this.uniques["vault"] > 1) {
-      console.log("SET NOT VIABLE - Vault");
+      //console.log("SET NOT VIABLE - Vault");
       return false;
     } else {
       return true;

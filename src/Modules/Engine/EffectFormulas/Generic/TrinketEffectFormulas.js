@@ -4,9 +4,9 @@ import { STAT } from "../../STAT";
 import SPEC from "../../SPECS";
 
 // TODO: Write proper comments. See Lingering Sunmote for an example.
-export function getTrinketEffect(effectName, player, contentType, itemLevel) {
+export function getTrinketEffect(effectName, player, contentType, itemLevel, userSettings = {}) {
   let bonus_stats = {};
-  console.log("Getting trinket effect: " + effectName);
+  //console.log("Getting trinket effect: " + effectName + " with user settings: " + JSON.stringify(userSettings));
 
   // Trinket Data holds a trinkets actual power values. Formulas here, data there.
   let activeTrinket = trinket_data.find((trinket) => trinket.name === effectName);
@@ -64,8 +64,8 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel) {
   } else if (effectName === "Cabalist's Hymnal") {
     // Test
     let effect = activeTrinket.effects[0];
-
-    bonus_stats.crit = (getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.duration * effect.stacks) / 60;
+    const multiplier = 1 + effect.multiplier * (userSettings.hymnalAllies || 0);
+    bonus_stats.crit = (getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.duration * effect.stacks * multiplier) / 60;
 
   } else if (effectName === "Macabre Sheet Music") {
     // Test
@@ -81,8 +81,9 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel) {
 
   } else if (effectName === "Overflowing Anima Cage") {
     let effect = activeTrinket.effects[0];
+    const groupMultiplier = userSettings.includeGroupBenefits ? effect.targets[contentType] : 1;
 
-    bonus_stats.crit = (getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.duration * effect.multiplier) / effect.cooldown;
+    bonus_stats.crit = (getProcessedValue(effect.coefficient, effect.table, itemLevel, effect.efficiency) * groupMultiplier * effect.duration) / effect.cooldown;
 
   } else if (effectName === "Vial of Spectral Essence") {
     let effect = activeTrinket.effects[0];
@@ -112,11 +113,12 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel) {
   } else if (effectName === "Boon of the Archon") {
     let heal_effect = activeTrinket.effects[1];
     let vers_effect = activeTrinket.effects[0];
+    const groupMultiplier = userSettings.includeGroupBenefits ? vers_effect.targets : 1;
 
     bonus_stats.hps =
       (getProcessedValue(heal_effect.coefficient, heal_effect.table, itemLevel, heal_effect.efficiency) * heal_effect.ppm * 4 * player.getStatMultiplier("CRITVERS")) / 60;
     bonus_stats.versatility =
-      getProcessedValue(vers_effect.coefficient, vers_effect.table, itemLevel) * convertPPMToUptime(vers_effect.ppm * player.getStatPerc("Haste"), vers_effect.duration);
+      Math.round(getProcessedValue(vers_effect.coefficient, vers_effect.table, itemLevel)) * vers_effect.efficiency * groupMultiplier * convertPPMToUptime(vers_effect.ppm * player.getStatPerc("Haste"), vers_effect.duration);
 
   } else if (effectName === "Spiritual Alchemy Stone") {
     let effect = activeTrinket.effects[0];
@@ -158,7 +160,7 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel) {
     let effect = activeTrinket.effects[0];
     let playerBestSecondary = player.getHighestStatWeight(contentType, ["versatility"]); // Exclude Vers since there isn't a Vers version.
 
-    bonus_stats[playerBestSecondary] = ((getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.duration) / effect.cooldown) * 0.9;
+    bonus_stats[playerBestSecondary] = ((getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.duration) / effect.cooldown) * 0.87;
     // power reduced by 5% because of the chance something interferes. This needs to be much much better and I'll fix it up this week.
   
   } else if (effectName === "Flame of Battle") {
@@ -202,7 +204,7 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel) {
 
     bonus_stats.mastery = (getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.duration) / effect.cooldown;
 
-    if (player.getSpec() === SPEC.RESODRUID) bonus_stats.mastery *= 1.2; // Bell is combined with Flourish.
+    if (player.getSpec() === SPEC.RESTODRUID) bonus_stats.mastery *= 1.2; // Bell is combined with Flourish.
     // We need a better way to model interaction with spec cooldowns.
   
   } else if (effectName === "Consumptive Infusion") {
@@ -266,7 +268,6 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel) {
     let effect = activeTrinket.effects[0];
 
     bonus_stats.crit = (getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.duration) / effect.cooldown;
-    console.log("Energy Siphon Crit: " + getProcessedValue(effect.coefficient, effect.table, itemLevel));
   
   } else if (effectName === "Living Flame") {
     let effect = activeTrinket.effects[0];
@@ -299,9 +300,23 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel) {
     let effect = activeTrinket.effects[0];
     bonus_stats.mastery = effect.coefficient * effect.stacks[player.getSpec()];
   
+  } else if (effectName === "Memento of Tyrande") {
+    let effect = activeTrinket.effects[0];
+
+    bonus_stats.mana = (getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.ppm * player.getStatPerc("Haste")) / 60;
+
+    //console.log("Tuft: " + bonus_stats.hps);
+  
+  } else if (effectName === "The Skull of Gul'dan") {
+    const effect = activeTrinket.effects[0];
+    bonus_stats.haste = (getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.duration) / effect.cooldown;
+    if (player.getSpec() === "Holy Paladin") bonus_stats.haste *= player.getCooldownMult("twoMinutes", contentType);
+
   } else {
     console.log("No Trinket Found");
   }
+
+  
 
   //console.log("Effect Name: " + effectName + " at level: " + itemLevel + " {" + JSON.stringify(bonus_stats))
   return bonus_stats;

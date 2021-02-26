@@ -121,11 +121,10 @@ export default function ItemCardReport(props) {
 
   const tertiary = props.item.tertiary !== "" ? <div style={{ display: "inline" }}> / {props.item.tertiary} </div> : null;
 
-  console.log(props.item);
 
   return (
     <Grid item xs={12}>
-      <Card className={isVault ? classes.vault : !item.isEquipped ? classes.notequipped : classes.root} elevation={0} style={{ backgroundColor: "rgba(34, 34, 34, 0.52)" }}>
+      <Card className={isVault ? classes.vault : (!item.isEquipped && item.slot != "CombinedWeapon") ? classes.notequipped : classes.root} elevation={0} style={{ backgroundColor: "rgba(34, 34, 34, 0.52)" }}>
         <CardActionArea disabled={false}>
           <Grid container display="inline-flex" wrap="nowrap" justify="space-between">
             <Grid item xs="auto">

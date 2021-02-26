@@ -60,7 +60,7 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     flexDirection: "column",
     width: "100%",
-    marginTop: 10,
+    marginTop: 5,
     marginBottom: 5,
     marginLeft: 5,
     marginRight: 5,
@@ -70,8 +70,8 @@ const useStyles = makeStyles((theme) => ({
     padding: "0px",
   },
   large: {
-    width: "80px",
-    height: "80px",
+    width: "60px",
+    height: "60px",
   },
   tabRoot: {
     flexGrow: 1,
@@ -81,6 +81,9 @@ const useStyles = makeStyles((theme) => ({
     minHeight: 250,
     maxWidth: 700,
   },
+  option: {
+    borderBottom: "1px solid rgba(255, 255, 255, 0.23)",
+  },
 }));
 
 const deleteTheme = createMuiTheme({
@@ -88,6 +91,27 @@ const deleteTheme = createMuiTheme({
     primary: red,
   },
 });
+
+const menuStyle = {
+  style: { marginTop: 5 },
+  MenuListProps: {
+    style: { paddingTop: 0, paddingBottom: 0 },
+  },
+  PaperProps: {
+    style: {
+      border: "1px solid rgba(255, 255, 255, 0.23)",
+    },
+  },
+  anchorOrigin: {
+    vertical: "bottom",
+    horizontal: "left",
+  },
+  transformOrigin: {
+    vertical: "top",
+    horizontal: "left",
+  },
+  getContentAnchorEl: null,
+};
 
 export default function CharCards(props) {
   const classes = useStyles();
@@ -278,32 +302,47 @@ export default function CharCards(props) {
           <Avatar src={specImages[spec].default} variant="square" alt="" className={classes.large} />
           <Divider orientation="vertical" flexItem />
           <div className={classes.details}>
-            <CardContent className={classes.content}>
-              <Grid container>
+            <CardContent className={classes.content} style={{ paddingBottom: 0 }}>
+              <Grid container style={{ marginTop: 1 }} spacing={1}>
                 {/* ------------------------ Character name and Realm ------------------------ */}
                 <Grid item xs={10}>
                   <Typography variant="h6" component="h4" style={{ lineHeight: 1, color: classColoursJS(spec) }}>
                     {props.name}
-                  </Typography>
-                  <Typography variant="caption" style={{ fontSize: 11 }}>
-                    {player.getRealmString()}
+                    <Tooltip title={t(classTranslator(spec))} style={{ color: classColoursJS(spec) }} placement="top">
+                      {classIcons(spec, {
+                        height: 20,
+                        width: 20,
+                        margin: "0px 5px 0px 5px",
+                        verticalAlign: "middle",
+                        borderRadius: 4,
+                        border: "1px solid rgba(255, 255, 255, 0.12)",
+                      })}
+                    </Tooltip>
                   </Typography>
                 </Grid>
                 {/* ---- Settings Button - More apparent for users how to edit characters ---- */}
                 <Grid item xs={2}>
                   <Tooltip title={t("Edit")}>
-                    <IconButton style={{ float: "right" }} onClick={(e) => handleClickOpen(e)} aria-label="settings" size="small">
+                    <IconButton style={{ float: "right", top: -4 }} onClick={(e) => handleClickOpen(e)} aria-label="settings" size="small">
                       <SettingsIcon fontSize="small" />
                     </IconButton>
                   </Tooltip>
                 </Grid>
               </Grid>
-              <Divider />
+              <Grid item xs={12}>
+                <Divider />
+              </Grid>
+              <Grid item xs={12}>
+                <Typography variant="caption" style={{ fontSize: 11 }}>
+                  {player.getRealmString()}
+                </Typography>
+              </Grid>
+
               {/* ------------------------------ Class & Icon ------------------------------ */}
-              <Typography style={{ color: classColoursJS(spec), marginTop: 2 }}>
+              {/* <Typography style={{ color: classColoursJS(spec), marginTop: 2 }}>
                 {t(classTranslator(spec))}
-                {classIcons(spec, { height: 18, width: 18, padding: "0px 5px 0px 5px", verticalAlign: "middle", borderRadius: 4 })}
-              </Typography>
+                {classIcons(spec, { height: 16, width: 16, padding: "0px 5px 0px 5px", verticalAlign: "middle", borderRadius: 4 })}
+              </Typography>  */}
             </CardContent>
           </div>
         </Card>
@@ -352,7 +391,7 @@ export default function CharCards(props) {
                 <Grid item xs={3}>
                   <FormControl variant="outlined" size="small" fullWidth label={t("Region")} disabled={true}>
                     <InputLabel id="ClassSelector">{t("Region")}</InputLabel>
-                    <Select value={region} onChange={handleChangeRegion} label={t("Region")}>
+                    <Select value={region} onChange={handleChangeRegion} label={t("Region")} MenuProps={menuStyle}>
                       {Object.values(regions).map((key, i) => (
                         <MenuItem key={i} value={key}>
                           {key}
@@ -364,6 +403,9 @@ export default function CharCards(props) {
                 <Grid item xs={12}>
                   <Autocomplete
                     size="small"
+                    classes={{
+                      option: classes.option,
+                    }}
                     disabled={region === "" ? true : false}
                     id="server-select"
                     value={server}
@@ -377,19 +419,22 @@ export default function CharCards(props) {
                       handleChangeServer(newInputValue);
                     }}
                     renderInput={(params) => <TextField {...params} label="Server Name" variant="outlined" styLe={{ width: 100 }} />}
+                    ListboxProps={{ style: { border: "1px solid rgba(255, 255, 255, 0.23)", borderRadius: 4,paddingTop: 0, paddingBottom: 0 } }}
                   />
                 </Grid>
                 {/* ------------------------------ Class Select ------------------------------ */}
                 <Grid item xs={12}>
                   <FormControl variant="outlined" fullWidth size="small" label={t("Class")} disabled={true}>
                     <InputLabel id="ClassSelector">{t("Class")}</InputLabel>
-                    <Select label={t("Class")} value={healClass} onChange={handleChangeSpec}>
-                      {Object.getOwnPropertyNames(classRaceList).map((key, i) => (
-                        <MenuItem key={i} value={key}>
-                          {classIcons(key, { height: 20, width: 20, padding: "0px 0px 0px 5px", verticalAlign: "middle", borderRadius: 4 })}
-                          {key}
-                        </MenuItem>
-                      ))}
+                    <Select label={t("Class")} value={healClass} onChange={handleChangeSpec} MenuProps={menuStyle}>
+                      {Object.getOwnPropertyNames(classRaceList)
+                        .map((key, i) => (
+                          <MenuItem key={i} value={key}>
+                            {classIcons(key, { height: 20, width: 20, padding: "0px 0px 0px 5px", verticalAlign: "middle", borderRadius: 4 })}
+                            {key}
+                          </MenuItem>
+                        ))
+                        .map((menuItems) => [menuItems, <Divider />])}
                     </Select>
                   </FormControl>
                 </Grid>
@@ -397,17 +442,19 @@ export default function CharCards(props) {
                 <Grid item xs={12}>
                   <FormControl disabled={healClass === "" ? true : false} fullWidth variant="outlined" size="small" label={t("Race")}>
                     <InputLabel id="RaceSelector">{t("Race")}</InputLabel>
-                    <Select value={selectedRace} onChange={handleChangeRace} label={t("Race")}>
+                    <Select value={selectedRace} onChange={handleChangeRace} label={t("Race")} MenuProps={menuStyle}>
                       {healClass === ""
                         ? ""
-                        : classRaceList[healClass.toString()].races.map((key, i) => (
-                            <MenuItem key={i} value={key}>
-                              <div style={{ display: "inline-flex" }}>
-                                {raceIcons(key)}
-                                {t(key)}
-                              </div>
-                            </MenuItem>
-                          ))}
+                        : classRaceList[healClass.toString()].races
+                            .map((key, i) => (
+                              <MenuItem key={i} value={key}>
+                                <div style={{ display: "inline-flex" }}>
+                                  {raceIcons(key)}
+                                  {t(key)}
+                                </div>
+                              </MenuItem>
+                            ))
+                            .map((menuItems) => [menuItems, <Divider />])}
                     </Select>
                   </FormControl>
                 </Grid>
@@ -571,13 +618,13 @@ export default function CharCards(props) {
             <Grid item xs={12} container>
               {/* ------------------------------- Logs Header ------------------------------ */}
               <Grid item xs={12}>
-                <Typography variant="h6" align="center" noWrap color="primary" style={{marginTop: "12px"}}>
+                <Typography variant="h6" align="center" noWrap color="primary" style={{ marginTop: "12px" }}>
                   Saved Logs
                 </Typography>
               </Grid>
 
               <Grid item xs={12}>
-                <Typography align="center" style={{ fontStyle: "italic"}}>
+                <Typography align="center" style={{ fontStyle: "italic" }}>
                   {t("CharacterCreator.SavedLogs.Header")}
                 </Typography>
               </Grid>
@@ -665,9 +712,9 @@ export default function CharCards(props) {
 
             {/* ---------------------- Default Button (Reset Stats) ----------------------  */}
             <div>
-            <Button onClick={resetDefaults} color="primary">
-              {"Reset to Defaults"}
-            </Button>
+              <Button onClick={resetDefaults} color="primary">
+                {"Reset to Defaults"}
+              </Button>
               {/* ------------------------------ Cancel Button -----------------------------  */}
               <Button onClick={handleClose} color="primary">
                 {t("Cancel")}

@@ -23,7 +23,7 @@ import ls from "local-storage";
 import Snackbar from "@material-ui/core/Snackbar";
 import MuiAlert from "@material-ui/lab/Alert";
 import { createBrowserHistory } from "history";
-import { dbCheckPatron } from "./Modules/SetupAndMenus/ConnectionUtilities";
+import { dbCheckPatron, dbGetArticleList } from "./Modules/SetupAndMenus/ConnectionUtilities";
 
 import ReactGA from "react-ga";
 
@@ -32,6 +32,28 @@ const theme = createMuiTheme({
     type: "dark",
     primary: { main: "#F2BF59" },
     secondary: { main: "#525252" },
+  },
+  overrides: {
+    // MuiButtonBase: {
+    //   root: {
+    //     "&expanded": {
+    //       minHeight: 0,
+    //     },
+    //   },
+    // },
+    MuiAccordionSummary: {
+      root: {
+        "&$expanded": {
+          minHeight: 48,
+        },
+      },
+      content: {
+        margin: "0px 0px",
+        "&$expanded": {
+          margin: "0px 0px",
+        },
+      },
+    },
   },
 
   // just messing around with themes here. Yellow colour is different in the below.
@@ -85,6 +107,7 @@ class App extends Component {
     this.setEmail = this.setEmail.bind(this);
     this.setPatron = this.setPatron.bind(this);
     this.checkPatron = this.checkPatron.bind(this);
+    this.setArticleList = this.setArticleList.bind(this);
     this.langSet = this.langSet.bind(this);
     this.userLogout = this.userLogout.bind(this);
     this.state = {
@@ -105,6 +128,7 @@ class App extends Component {
       emailSnackState: false,
       emailSnackErrorState: false,
       topSet: null,
+      articleList: [],
     };
   }
 
@@ -212,11 +236,21 @@ class App extends Component {
     this.setState({ patronStatus: status });
   };
 
+  /* ----------------------- Article List Handler ----------------------------- */
+  setArticleList = (list) => {
+    this.setState({ articleList: list });
+  };
+
   /* ------------------ Checks Patron Status from Users Email ----------------- */
   checkPatron = (email) => {
     if (email !== "") {
       dbCheckPatron(email, this.setPatron);
     }
+  };
+
+  /* ------------------- Get Article List ------------------------------------- */
+  getArticleList = () => {
+    dbGetArticleList(this.setArticleList);
   };
 
   /* -------------- Sets the Users Email to state & Local Storage ------------- */
@@ -302,6 +336,7 @@ class App extends Component {
       email: ls.get("email") || "",
     });
     this.checkPatron(ls.get("email"));
+    this.getArticleList();
 
     i18n.changeLanguage(ls.get("lang") || "en");
   }
@@ -399,22 +434,34 @@ class App extends Component {
                       allChars={allChars}
                       charUpdate={this.updatePlayerChars}
                       singleUpdate={this.updatePlayerChar}
-                      player={this.state.player}
+                      player={activePlayer}
                       charAddedSnack={this.handleCharSnackOpen}
                       charUpdatedSnack={this.handleCharUpdateSnackOpen}
                       contentType={this.state.contentType}
                       patronStatus={this.state.patronStatus}
                       delChar={this.deletePlayerChar}
+                      articleList={this.state.articleList}
                     />
                   )}
                 />
                 <Route path="/holydiver" render={() => <HolyDiver />} />
                 <Route path="/report" render={() => <TopGearReport player={activePlayer} result={this.state.topSet} contentType={this.state.contentType} />} />
-                <Route path="/quickcompare" render={() => <QuickCompare player={activePlayer} contentType={this.state.contentType} allChars={allChars} simcSnack={this.handleSimCSnackOpen} />} />
-                <Route path="/topgear" render={() => <TopGear player={activePlayer} contentType={this.state.contentType} setTopResult={this.setTopResult} allChars={allChars} simcSnack={this.handleSimCSnackOpen} />} />
+                <Route
+                  path="/quickcompare"
+                  render={() => <QuickCompare player={activePlayer} contentType={this.state.contentType} allChars={allChars} simcSnack={this.handleSimCSnackOpen} />}
+                />
+                <Route
+                  path="/topgear"
+                  render={() => (
+                    <TopGear player={activePlayer} contentType={this.state.contentType} setTopResult={this.setTopResult} allChars={allChars} simcSnack={this.handleSimCSnackOpen} />
+                  )}
+                />
                 <Route path="/legendaries" render={() => <LegendaryCompare player={activePlayer} contentType={this.state.contentType} />} />
                 <Route path="/trinkets" render={() => <TrinketAnalysis player={activePlayer} contentType={this.state.contentType} />} />
-                <Route path="/soulbinds" render={() => <CovenantExploration player={activePlayer} contentType={this.state.contentType} updatePlayerChar={this.updatePlayerChar} />} />
+                <Route
+                  path="/soulbinds"
+                  render={() => <CovenantExploration player={activePlayer} contentType={this.state.contentType} updatePlayerChar={this.updatePlayerChar} />}
+                />
                 <Route path="/login" render={() => <QELogin setRegion={this.setRegion} />} />
                 <Route path="/attemptlogin" component={() => (window.location = this.buildLoginURL())} />
                 <Route path="/confirmlogin/" render={() => <ConfirmLogin loginSnackOpen={this.handleLoginSnackOpen} updatePlayerID={this.updatePlayerID} />} />
