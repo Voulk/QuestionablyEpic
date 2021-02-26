@@ -33,6 +33,28 @@ const theme = createMuiTheme({
     primary: { main: "#F2BF59" },
     secondary: { main: "#525252" },
   },
+  overrides: {
+    // MuiButtonBase: {
+    //   root: {
+    //     "&expanded": {
+    //       minHeight: 0,
+    //     },
+    //   },
+    // },
+    MuiAccordionSummary: {
+      root: {
+        "&$expanded": {
+          minHeight: 48,
+        },
+      },
+      content: {
+        margin: "0px 0px",
+        "&$expanded": {
+          margin: "0px 0px",
+        },
+      },
+    },
+  },
 
   // just messing around with themes here. Yellow colour is different in the below.
 
@@ -113,8 +135,6 @@ class App extends Component {
   setTopResult = (set) => {
     this.setState({ topSet: set });
   };
-
-  
 
   /* -------------------------------------------------------------------------- */
   /*                             Snack Bar Handlers                             */
@@ -216,11 +236,10 @@ class App extends Component {
     this.setState({ patronStatus: status });
   };
 
-
   /* ----------------------- Article List Handler ----------------------------- */
   setArticleList = (list) => {
-    this.setState({articleList: list})
-  }
+    this.setState({ articleList: list });
+  };
 
   /* ------------------ Checks Patron Status from Users Email ----------------- */
   checkPatron = (email) => {
@@ -232,8 +251,7 @@ class App extends Component {
   /* ------------------- Get Article List ------------------------------------- */
   getArticleList = () => {
     dbGetArticleList(this.setArticleList);
-    
-  }
+  };
 
   /* -------------- Sets the Users Email to state & Local Storage ------------- */
   setEmail = (emailAdd) => {
@@ -428,11 +446,22 @@ class App extends Component {
                 />
                 <Route path="/holydiver" render={() => <HolyDiver />} />
                 <Route path="/report" render={() => <TopGearReport player={activePlayer} result={this.state.topSet} contentType={this.state.contentType} />} />
-                <Route path="/quickcompare" render={() => <QuickCompare player={activePlayer} contentType={this.state.contentType} allChars={allChars} simcSnack={this.handleSimCSnackOpen} />} />
-                <Route path="/topgear" render={() => <TopGear player={activePlayer} contentType={this.state.contentType} setTopResult={this.setTopResult} allChars={allChars} simcSnack={this.handleSimCSnackOpen} />} />
+                <Route
+                  path="/quickcompare"
+                  render={() => <QuickCompare player={activePlayer} contentType={this.state.contentType} allChars={allChars} simcSnack={this.handleSimCSnackOpen} />}
+                />
+                <Route
+                  path="/topgear"
+                  render={() => (
+                    <TopGear player={activePlayer} contentType={this.state.contentType} setTopResult={this.setTopResult} allChars={allChars} simcSnack={this.handleSimCSnackOpen} />
+                  )}
+                />
                 <Route path="/legendaries" render={() => <LegendaryCompare player={activePlayer} contentType={this.state.contentType} />} />
                 <Route path="/trinkets" render={() => <TrinketAnalysis player={activePlayer} contentType={this.state.contentType} />} />
-                <Route path="/soulbinds" render={() => <CovenantExploration player={activePlayer} contentType={this.state.contentType} updatePlayerChar={this.updatePlayerChar} />} />
+                <Route
+                  path="/soulbinds"
+                  render={() => <CovenantExploration player={activePlayer} contentType={this.state.contentType} updatePlayerChar={this.updatePlayerChar} />}
+                />
                 <Route path="/login" render={() => <QELogin setRegion={this.setRegion} />} />
                 <Route path="/attemptlogin" component={() => (window.location = this.buildLoginURL())} />
                 <Route path="/confirmlogin/" render={() => <ConfirmLogin loginSnackOpen={this.handleLoginSnackOpen} updatePlayerID={this.updatePlayerID} />} />

@@ -81,6 +81,9 @@ const useStyles = makeStyles((theme) => ({
     minHeight: 250,
     maxWidth: 700,
   },
+  option: {
+    borderBottom: "1px solid rgba(255, 255, 255, 0.23)",
+  },
 }));
 
 const deleteTheme = createMuiTheme({
@@ -131,6 +134,26 @@ const CharTab = withStyles((theme) => ({
   },
   selected: {},
 }))((props) => <Tab {...props} />);
+const menuStyle = {
+  style: { marginTop: 5 },
+  MenuListProps: {
+    style: { paddingTop: 0, paddingBottom: 0 },
+  },
+  PaperProps: {
+    style: {
+      border: "1px solid rgba(255, 255, 255, 0.23)",
+    },
+  },
+  anchorOrigin: {
+    vertical: "bottom",
+    horizontal: "left",
+  },
+  transformOrigin: {
+    vertical: "top",
+    horizontal: "left",
+  },
+  getContentAnchorEl: null,
+};
 
 export default function CharCards(props) {
   const classes = useStyles();
@@ -385,108 +408,117 @@ export default function CharCards(props) {
         </Tabs>
         {/* <div className={classes.tabRoot}> */}
 
+
         {/* Raid */}
         <TabPanel value={tabvalue} index={0}>
           <div className={classes.panel}>
             <Grid container>
               <DialogContent>
-                {/* ------------------------------ Dialog Header ----------------------------- */}
-                <Grid container spacing={2} direction="row">
-                  {/* <Grid item xs={12}>
-                    <Typography variant="h4" align="center" noWrap color="primary">
-                      Character Information
-                    </Typography>
-                  </Grid> */}
-                  {/* --------------- Character Image (Pulled from Blizzard API) --------------- */}
-                  <Grid item xs={4}>
-                    <div
-                      style={{
-                        backgroundImage: `url("${backgroundImage}")`,
-                        backgroundRepeat: "no-repeat",
-                        backgroundPosition: "center 60%",
-                        backgroundSize: "auto 130%",
-                        textAlign: "center",
-                        position: "relative",
-                        border: "1px solid rgb(118, 118, 118)",
-                        flex: 1,
-                        height: "100%",
-                        borderRadius: 4,
-                        // width: 100,
-                      }}
-                    />
-                  </Grid>
+                         {/* ------------------------------ Dialog Header ----------------------------- */}
+          <Grid container spacing={2} direction="row">
+            <Grid item xs={12}>
+              <Typography variant="h4" align="center" noWrap color="primary">
+                Character Information
+              </Typography>
+            </Grid>
+            {/* --------------- Character Image (Pulled from Blizzard API) --------------- */}
+            <Grid item xs={4}>
+              <div
+                style={{
+                  backgroundImage: `url("${backgroundImage}")`,
+                  backgroundRepeat: "no-repeat",
+                  backgroundPosition: "center 60%",
+                  backgroundSize: "auto 130%",
+                  textAlign: "center",
+                  position: "relative",
+                  border: "1px solid rgb(118, 118, 118)",
+                  flex: 1,
+                  height: "100%",
+                  borderRadius: 4,
+                  // width: 100,
+                }}
+              />
+            </Grid>
 
-                  {/* -------------- Character Information Grid Container (Name, Server etc) -------------  */}
-                  <Grid item xs={8} container spacing={1}>
-                    <Grid item xs={12} container spacing={1}>
-                      {/* ----------------------------- Character Name ----------------------------- */}
-                      <Grid item xs={9}>
-                        <TextField fullWidth id="standard-basic" label="Character Name" value={charName} onChange={handleChangeName} variant="outlined" size="small" />
-                      </Grid>
-                      {/* ------------------------------ Region Select ----------------------------- */}
-                      <Grid item xs={3}>
-                        <FormControl variant="outlined" size="small" fullWidth label={t("Region")} disabled={true}>
-                          <InputLabel id="ClassSelector">{t("Region")}</InputLabel>
-                          <Select value={region} onChange={handleChangeRegion} label={t("Region")}>
-                            {Object.values(regions).map((key, i) => (
+            {/* -------------- Character Information Grid Container (Name, Server etc) -------------  */}
+            <Grid item xs={8} container spacing={1}>
+              <Grid item xs={12} container spacing={1}>
+                {/* ----------------------------- Character Name ----------------------------- */}
+                <Grid item xs={9}>
+                  <TextField fullWidth id="standard-basic" label="Character Name" value={charName} onChange={handleChangeName} variant="outlined" size="small" />
+                </Grid>
+                {/* ------------------------------ Region Select ----------------------------- */}
+                <Grid item xs={3}>
+                  <FormControl variant="outlined" size="small" fullWidth label={t("Region")} disabled={true}>
+                    <InputLabel id="ClassSelector">{t("Region")}</InputLabel>
+                    <Select value={region} onChange={handleChangeRegion} label={t("Region")} MenuProps={menuStyle}>
+                      {Object.values(regions).map((key, i) => (
+                        <MenuItem key={i} value={key}>
+                          {key}
+                        </MenuItem>
+                      ))}
+                    </Select>
+                  </FormControl>
+                </Grid>
+                <Grid item xs={12}>
+                  <Autocomplete
+                    size="small"
+                    classes={{
+                      option: classes.option,
+                    }}
+                    disabled={region === "" ? true : false}
+                    id="server-select"
+                    value={server}
+                    onChange={(e, newValue) => {
+                      handleChangeServer(newValue);
+                    }}
+                    options={serverDB[region]}
+                    inputValue={server}
+                    getOptionLabel={(option) => option}
+                    onInputChange={(e, newInputValue) => {
+                      handleChangeServer(newInputValue);
+                    }}
+                    renderInput={(params) => <TextField {...params} label="Server Name" variant="outlined" styLe={{ width: 100 }} />}
+                    ListboxProps={{ style: { border: "1px solid rgba(255, 255, 255, 0.23)", borderRadius: 4,paddingTop: 0, paddingBottom: 0 } }}
+                  />
+                </Grid>
+                {/* ------------------------------ Class Select ------------------------------ */}
+                <Grid item xs={12}>
+                  <FormControl variant="outlined" fullWidth size="small" label={t("Class")} disabled={true}>
+                    <InputLabel id="ClassSelector">{t("Class")}</InputLabel>
+                    <Select label={t("Class")} value={healClass} onChange={handleChangeSpec} MenuProps={menuStyle}>
+                      {Object.getOwnPropertyNames(classRaceList)
+                        .map((key, i) => (
+                          <MenuItem key={i} value={key}>
+                            {classIcons(key, { height: 20, width: 20, padding: "0px 0px 0px 5px", verticalAlign: "middle", borderRadius: 4 })}
+                            {key}
+                          </MenuItem>
+                        ))
+                        .map((menuItems) => [menuItems, <Divider />])}
+                    </Select>
+                  </FormControl>
+                </Grid>
+                {/* ------------------------------- Race Select ------------------------------ */}
+                <Grid item xs={12}>
+                  <FormControl disabled={healClass === "" ? true : false} fullWidth variant="outlined" size="small" label={t("Race")}>
+                    <InputLabel id="RaceSelector">{t("Race")}</InputLabel>
+                    <Select value={selectedRace} onChange={handleChangeRace} label={t("Race")} MenuProps={menuStyle}>
+                      {healClass === ""
+                        ? ""
+                        : classRaceList[healClass.toString()].races
+                            .map((key, i) => (
                               <MenuItem key={i} value={key}>
-                                {key}
+                                <div style={{ display: "inline-flex" }}>
+                                  {raceIcons(key)}
+                                  {t(key)}
+                                </div>
                               </MenuItem>
-                            ))}
-                          </Select>
-                        </FormControl>
-                      </Grid>
-                      <Grid item xs={12}>
-                        <Autocomplete
-                          size="small"
-                          disabled={region === "" ? true : false}
-                          id="server-select"
-                          value={server}
-                          onChange={(e, newValue) => {
-                            handleChangeServer(newValue);
-                          }}
-                          options={serverDB[region]}
-                          inputValue={server}
-                          getOptionLabel={(option) => option}
-                          onInputChange={(e, newInputValue) => {
-                            handleChangeServer(newInputValue);
-                          }}
-                          renderInput={(params) => <TextField {...params} label="Server Name" variant="outlined" styLe={{ width: 100 }} />}
-                        />
-                      </Grid>
-                      {/* ------------------------------ Class Select ------------------------------ */}
-                      <Grid item xs={12}>
-                        <FormControl variant="outlined" fullWidth size="small" label={t("Class")} disabled={true}>
-                          <InputLabel id="ClassSelector">{t("Class")}</InputLabel>
-                          <Select label={t("Class")} value={healClass} onChange={handleChangeSpec}>
-                            {Object.getOwnPropertyNames(classRaceList).map((key, i) => (
-                              <MenuItem key={i} value={key}>
-                                {classIcons(key, { height: 20, width: 20, padding: "0px 0px 0px 5px", verticalAlign: "middle", borderRadius: 4 })}
-                                {key}
-                              </MenuItem>
-                            ))}
-                          </Select>
-                        </FormControl>
-                      </Grid>
-                      {/* ------------------------------- Race Select ------------------------------ */}
-                      <Grid item xs={12}>
-                        <FormControl disabled={healClass === "" ? true : false} fullWidth variant="outlined" size="small" label={t("Race")}>
-                          <InputLabel id="RaceSelector">{t("Race")}</InputLabel>
-                          <Select value={selectedRace} onChange={handleChangeRace} label={t("Race")}>
-                            {healClass === ""
-                              ? ""
-                              : classRaceList[healClass.toString()].races.map((key, i) => (
-                                  <MenuItem key={i} value={key}>
-                                    <div style={{ display: "inline-flex" }}>
-                                      {raceIcons(key)}
-                                      {t(key)}
-                                    </div>
-                                  </MenuItem>
-                                ))}
-                          </Select>
-                        </FormControl>
-                      </Grid>
-                    </Grid>
+                            ))
+                            .map((menuItems) => [menuItems, <Divider />])}
+                    </Select>
+                  </FormControl>
+                </Grid>
+              </Grid>
 
                     {/* -------------------------------------------------------------------------- */
                     /*                            Character Stats Panel                           */

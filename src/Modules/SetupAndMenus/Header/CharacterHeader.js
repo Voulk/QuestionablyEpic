@@ -65,7 +65,7 @@ export default function CharacterHeaderButton(props) {
           // TODO: Change classIcons to accept a styles prop to remove the padding on the right for this component only
           <div style={{display: "inline-flex"}}>
             {currentCharacter.charName}
-            {classIcons(currentCharacter.spec, { height: 18, width: 18, padding: "2px 0px 0px 5px", verticalAlign: "middle", borderRadius: 4 })}
+            {classIcons(currentCharacter.spec, { height: 18, width: 18, margin: "2px 0px 0px 5px", verticalAlign: "middle", borderRadius: 4,border: "1px solid rgba(255, 255, 255, 0.12)" })}
           </div>
         ) : (
           ""

@@ -38,17 +38,17 @@ describe("Overflowing Anima Cage Test", () => {
 
         const trinketResult = getTrinketEffect("Overflowing Anima Cage", druid, "Dungeon", itemLevel, localSettings);
 
-        expect(Math.round(trinketResult.crit)).toEqual(20 * effect.efficiency * effect.targets["Dungeon"]);
+        expect(Math.round(trinketResult.crit)).toEqual(Math.round(20 * effect.efficiency * effect.targets["Dungeon"]));
 
     });
 
     // Perform ilvl tests.
     each`
     level     | expectedResult
-    ${226}   | ${10}
-    ${213}  | ${9}
-    ${200}  | ${9}
-    ${187}  | ${8}
+    ${226}   | ${9}
+    ${213}  | ${8}
+    ${200}  | ${8}
+    ${187}  | ${7}
     // add new test cases here
     `.test("Ilvl Test - $level - Raid - Expects: $expectedResult", ({ level, expectedResult }) => {
         const localSettings = {...userSettings};

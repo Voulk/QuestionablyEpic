@@ -240,7 +240,7 @@ function processItem(line, player, contentType, type) {
           name: idPayload["name_override"]["base"],
           level: 0, // Irrelevant to legendaries.
         };
-        console.log("Legendary detected" + JSON.stringify(itemEffect));
+        //console.log("Legendary detected" + JSON.stringify(itemEffect));
       }
     }
     // Missives
@@ -364,7 +364,6 @@ function adjustStatWeights(player, contentType) {
   new_weights.leech = base_weights.leech;
 
   //console.log(JSON.stringify(base_weights));
-  console.log(JSON.stringify(equippedSet.setStats));
   
   
   //console.log(JSON.stringify(new_weights));
