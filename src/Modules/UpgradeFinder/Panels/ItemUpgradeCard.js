@@ -38,6 +38,7 @@ const useStyles = makeStyles({
 export default function ItemCard(props) {
   const classes = useStyles();
   const item = props.item;
+  console.log(item);
   const statString = buildStatString(item.stats, item.effect);
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
@@ -83,6 +84,29 @@ export default function ItemCard(props) {
 
   const tertiary = props.item.tertiary !== "" ? <div style={{ display: "inline" }}> / {props.item.tertiary} </div> : null;
 
+  const sourceName = (item) => {
+    /* ------------------------------ Dungeon Name ------------------------------ */
+    if (item.source.instanceId === -1) {
+      return t("DungeonNames." + item.source.encounterId);
+    }
+    /* ----------------------------- Raid Boss Name ----------------------------- */
+    if (item.source.instanceId === 1190 && item.source.encounterId > 0) {
+      return t("BossNames." + item.source.encounterId);
+    }
+    /* ------------------------------ World Bosses ------------------------------ */
+    if (item.source.instanceId === 1192 && item.source.encounterId > 0) {
+      return t("WorldBosses." + item.source.encounterId);
+    }
+    /* ---------------------------------- Honor --------------------------------- */
+    if (item.source.instanceId === -16 || item.source.encounterId === -16) {
+      return t("PvPCurrency.-16");
+    }
+    /* -------------------------------- Conquest -------------------------------- */
+    if (item.source.instanceId === -17 || item.source.encounterId === -17) {
+      return t("PvPCurrency.-17");
+    }
+  };
+
   return (
     <Grid item xs={12} sm={12} md={12} lg={6} xl={4}>
       <Card className={itemDifferential == 0 ? classes.downgrade : classes.root} variant="outlined">
@@ -98,8 +122,8 @@ export default function ItemCard(props) {
                 <div className="container-ItemCards">
                   <img
                     alt="img"
-                    width={28}
-                    height={28}
+                    width={props.slotPanel ? 54 : 28}
+                    height={props.slotPanel ? 54 : 28}
                     src={getItemIcon(item.id)}
                     style={{
                       borderRadius: 4,
@@ -147,6 +171,15 @@ export default function ItemCard(props) {
                   </Typography>
                 </Grid>
               </Grid>
+              {/* Source Location for Slot Panel */}
+              {props.slotPanel ? (
+                <Grid item xs={12}>
+                  <Divider />
+                  <Typography style={{ paddingTop: 4 }}>Source: {sourceName(item)} </Typography>
+                </Grid>
+              ) : (
+                ""
+              )}
             </Grid>
           </CardContent>
         </Grid>

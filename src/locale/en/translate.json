@@ -513,8 +513,14 @@
     },
 
     "UpgradeFinder": {
-      "Header": "Report"
+      "Header": "Report",
+      "MythicPlus": "Mythic +",
+      "CurrentRaid": "Castle Nathria",
+      "PvP": "PvP",
+      "WorldBosses": "World Bosses",
+      "UpgradeBySlot": "Upgrade by Slot"
     },
+
     "UpgradeFinderFront": {
       "Header": "Upgrade Finder",
       "RaidDifficultyHeader": "Raid Difficulty",
