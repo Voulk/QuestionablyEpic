@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
   },
   column: {
-    flexBasis: "33.33%",
+    // flexBasis: "33.33%",
     display: "inline-flex",
   },
   helper: {
@@ -86,10 +86,10 @@ export default function TopGearSettingsAccordion(props) {
         </AccordionSummary>
         <Divider variant="middle" />
         <AccordionDetails className={classes.details}>
-          <Grid container spacing={1} direction="row" wrap="nowrap">
+          <Grid container spacing={1} direction="row">
             {/* ------------------------- Cabalist's Hymnal Item ------------------------- */}
-            <Grid item xs={2}>
-              <Grid container spacing={1} style={{ paddingLeft: 8 }}>
+            <Grid item xs={12} sm={4} md={4} lg={2} xl={2}>
+              <Grid container spacing={1} style={{ paddingLeft: 8 }} >
                 <Grid item xs={12}>
                   <div style={{ display: "inline-flex" }}>
                     <Typography color="primary" style={{ marginRight: 4 }}>
@@ -105,7 +105,7 @@ export default function TopGearSettingsAccordion(props) {
                     label={t("Settings.Setting0TextFieldLabel")}
                     id="AlliesNumber"
                     value={hymnalValue}
-                    style={{ maxWidth: 70 }}
+                    style={{ maxWidth: 115 }}
                     onChange={(e) => updateHymnal(e.target.value)}
                     variant="outlined"
                     size="small"
@@ -114,9 +114,11 @@ export default function TopGearSettingsAccordion(props) {
                 </Grid>
               </Grid>
             </Grid>
-            <Divider orientation="vertical" flexItem />
+            <Grid item>
+            <Divider orientation="vertical" flexItem style={{height: "100%"}} />
+            </Grid>
             {/* ------------------------- Group Buff (Treat Buff as Personal Throughput) ------------------------- */}
-            <Grid item xs={4}>
+            <Grid item xs={12} sm={4} md={4} lg={2} xl={2}>
               <Grid container spacing={1} style={{ paddingLeft: 8 }}>
                 <Grid item xs={12}>
                   <div style={{ display: "inline-flex" }}>

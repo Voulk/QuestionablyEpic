@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
     padding: "8px 16px 8px 16px",
   },
   column: {
-    flexBasis: "33.33%",
+    // flexBasis: "33.33%",
   },
   helper: {
     borderLeft: `2px solid ${theme.palette.divider}`,

@@ -53,14 +53,14 @@ export default function UpgradeFinderSimC(props) {
     <Grid item xs={12}>
       <Paper elevation={0} className={simcStatus === "Good" || simcStatus === "Missing" ? classes.simcok : classes.simcerror} style={{ padding: 10 }}>
         <Grid container justify="space-between" spacing={1}>
-          <Grid item xs={5} alignItems="center" container justify="center" spacing={1}>
-            <Grid item xs={8}>
+          <Grid item xs={12} sm={12} md={12} lg={5} xl={5} alignItems="center" container justify="center" spacing={1}>
+            <Grid item xs={12} sm={12} md={12} lg={12} xl={8}>
               <Typography color="primary" align="center" variant="h5">
                 {t(simcString)}
               </Typography>
             </Grid>
 
-            <Grid item xs={4} style={{ textAlign: "center" }}>
+            <Grid item xs={12} sm={12} md={12} lg={12} xl={4} style={{ textAlign: "center" }}>
               <SimCraftInput
                 buttonLabel={t("UpgradeFinderFront.SimCButton")}
                 disableElevation={true}
@@ -76,15 +76,15 @@ export default function UpgradeFinderSimC(props) {
           <Grid item>
             <Divider orientation="vertical" flexItem style={{ height: "100%" }} />
           </Grid>
-          <Grid item xs={7} alignItems="center" container justify="center" spacing={1}>
-            <Grid item xs={2}>
+          <Grid xs={12} sm={12} md={12} lg={7} xl={7} alignItems="center" container justify="center" spacing={1}>
+            <Grid item xs={12} sm={12} md={12} lg={12} xl={2}>
               <Typography color="primary" align="center" variant="h5">
                 Equipped:
                 {/* {t("UpgradeFinderFront.SimCBody2")} */}
               </Typography>
             </Grid>
 
-            <Grid item xs={10}>
+            <Grid item xs={12} sm={12} md={12} lg={12} xl={10}>
               <Grid container justify="center">
                 {props.player.activeItems
                   .filter((key) => key.isEquipped === true)
