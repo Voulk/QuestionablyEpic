@@ -430,7 +430,7 @@ export default function CharCards(props) {
                       {Object.getOwnPropertyNames(classRaceList)
                         .map((key, i) => (
                           <MenuItem key={i} value={key}>
-                            {classIcons(key, { height: 20, width: 20, padding: "0px 0px 0px 5px", verticalAlign: "middle", borderRadius: 4 })}
+                            {classIcons(key, { height: 20, width: 20, margin: "0px 5px 0px 5px", verticalAlign: "middle", borderRadius: 4,border: "1px solid rgba(255, 255, 255, 0.12)" })}
                             {key}
                           </MenuItem>
                         ))
