@@ -98,7 +98,8 @@ export default function QEHeader(props) {
                   <Tooltip title={props.contentType === "Raid" ? t("QeHeader.Tooltip.ChangeToDungeon") : t("QeHeader.Tooltip.ChangeToRaid")} arrow>
                     <Button
                       style={{ color: "white" }}
-                      onClick={props.toggleContentType}
+                      onClick={(props.toggleContentType)}
+                      // onClick={() => dispatch(toggleContent(contentType))}
                       aria-owns={open ? "mouse-over-popover" : undefined}
                       aria-haspopup="true"
                       onMouseEnter={handlePopoverOpen}
