@@ -10,6 +10,10 @@ import SimCraftInput from "../SimCraftDialog";
 import QELogImport from "./QELogImport";
 import { makeStyles } from "@material-ui/core/styles";
 import CharacterHeaderButton from "./CharacterHeader"
+import { useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
+import { toggleContent } from "../../../Redux/Actions"
+
 // import ReactGA from "react-ga";n
 
 const useStyles = makeStyles((theme) => ({
@@ -38,6 +42,12 @@ export default function QEHeader(props) {
   const handlePopoverClose = () => {
     setAnchorEl(null);
   };
+
+    const dispatch = useDispatch()
+    const contentType = useSelector(state => state.contentType)
+    console.log(contentType)
+
+
 
   const open = Boolean(anchorEl);
 

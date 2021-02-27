@@ -10,6 +10,7 @@ import i18n from "./i18n";
 
 const initialState = {
   gameType: "Retail",
+  contentType: "Raid",
 };
 
 function reducer(state = initialState, action) {
