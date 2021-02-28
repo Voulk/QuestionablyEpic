@@ -3,7 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import { MenuItem, InputLabel, Accordion, Grid, AccordionDetails, AccordionSummary, FormControl, Select, Typography, Divider, TextField, Tooltip } from "@material-ui/core";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import { useTranslation } from "react-i18next";
-import { setBounds } from "../Engine/Retail/CONSTRAINTS";
+import { setBounds } from "../Engine/CONSTRAINTS";
 import InfoOutlinedIcon from "@material-ui/icons/InfoOutlined";
 import SettingsIcon from "@material-ui/icons/Settings";
 

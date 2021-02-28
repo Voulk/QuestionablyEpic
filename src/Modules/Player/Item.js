@@ -1,5 +1,5 @@
 import { calcStatsAtLevel, getItemSlot, getItemAllocations, getItemEffect } from "../Engine/ItemUtilities";
-import { CONSTRAINTS, setBounds } from "../Engine/Retail/CONSTRAINTS";
+import { CONSTRAINTS, setBounds } from "../Engine/CONSTRAINTS";
 
 // The Item class represents an active item in the app at a specific item level.
 // We'll create them when we import a SimC string, or when an item is added manually.
@@ -8,7 +8,7 @@ class Item {
   constructor(id, name, slot, socket, tertiary, softScore = 0, level, bonusIDS) {
     this.id = id;
     this.name = name;
-    this.level = setBounds(level, CONSTRAINTS.minItemLevel, CONSTRAINTS.maxItemLevel)      //Math.max(1, Math.min(300, level));
+    this.level = setBounds(level, CONSTRAINTS.Retail.minItemLevel, CONSTRAINTS.Retail.maxItemLevel)      //Math.max(1, Math.min(300, level));
     this.slot = slot;
     this.socket = socket;
     this.tertiary = tertiary === "Leech" || tertiary === "Avoidance" ? tertiary : "";

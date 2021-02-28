@@ -19,7 +19,7 @@ import Autocomplete from "@material-ui/lab/Autocomplete";
 import { useHistory, useLocation } from "react-router-dom";
 import HelpText from "../SetupAndMenus/HelpText";
 import TopGearSettingsAccordion from "./TopGearSettings";
-import { CONSTRAINTS } from "../Engine/Retail/CONSTRAINTS";
+import { CONSTRAINTS } from "../Engine/CONSTRAINTS";
 import UpgradeFinderSimC from "../UpgradeFinder/UpgradeFinderSimCImport";
 import userSettings from "./SettingsObject";
 
@@ -184,7 +184,7 @@ export default function TopGear(props) {
   const helpText = t("TopGear.HelpText");
 
   const activateItem = (unique) => {
-    if (selectedItemCount < CONSTRAINTS.topGearMaxItems) {
+    if (selectedItemCount < CONSTRAINTS.Shared.topGearMaxItems) {
       let player = props.player;
       player.activateItem(unique);
       setItemList([...player.getActiveItems(activeSlot)]);

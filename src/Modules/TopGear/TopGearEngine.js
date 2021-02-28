@@ -3,7 +3,7 @@ import TopGearResult from "./TopGearResult";
 import Item from "../Player/Item";
 import React, { useState, useEffect } from "react";
 import { STATPERONEPERCENT, BASESTAT, STATDIMINISHINGRETURNS } from "../Engine/STAT";
-import { CONSTRAINTS } from "../Engine/Retail/CONSTRAINTS";
+import { CONSTRAINTS } from "../Engine/CONSTRAINTS";
 import { convertPPMToUptime } from "../Engine/EffectFormulas/EffectUtilities";
 import Player from "../Player/Player";
 import CastModel from "../Player/CastModel";
