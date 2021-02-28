@@ -1446,6 +1446,48 @@ export const bossAbilities = [
     cooldownPlannerActive: true,
     icon: require("../../../Images/Bosses/CastleNathria/SireDenathrius/Icons/spell_animarevendreth_wave.jpg").default,
   },
+  {
+    bossID: 2407,
+    ability: "Blood Price",
+    guid: 326858,
+    cooldownPlannerActive: true,
+    icon: require("../../../Images/Bosses/CastleNathria/SireDenathrius/Icons/ability_ironmaidens_whirlofblood.jpg").default,
+  },
+  {
+    bossID: 2407,
+    ability: "Night Hunter",
+    guid: 327810,
+    cooldownPlannerActive: true,
+    icon: require("../../../Images/Bosses/CastleNathria/SireDenathrius/Icons/sha_ability_rogue_bloodyeye_nightmare.jpg").default,
+  },
+  {
+    bossID: 2407,
+    ability: "Painful Memories",
+    guid: 326833,
+    cooldownPlannerActive: true,
+    icon: require("../../../Images/Bosses/CastleNathria/SireDenathrius/Icons/spell_misc_emotionsad.jpg").default,
+  },
+  {
+    bossID: 2407,
+    ability: "Shattering Pain",
+    guid: 332626,
+    cooldownPlannerActive: true,
+    icon: require("../../../Images/Bosses/CastleNathria/SireDenathrius/Icons/sha_spell_fire_blueflamestrike_nightmare.jpg").default,
+  },
+  {
+    bossID: 2407,
+    ability: "Nathrian Hymn",
+    guid: 338687,
+    cooldownPlannerActive: true,
+    icon: require("../../../Images/Bosses/CastleNathria/SireDenathrius/Icons/70_inscription_vantus_rune_odyn.jpg").default,
+  },
+  {
+    bossID: 2407,
+    ability: "Crimson Chorus",
+    guid: 329785,
+    cooldownPlannerActive: true,
+    icon: require("../../../Images/Bosses/CastleNathria/SireDenathrius/Icons/spell_animarevendreth_buff.jpg").default,
+  },
 ];
 
 export const raidList = [
