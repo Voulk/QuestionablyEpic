@@ -22,6 +22,7 @@ import TopGearSettingsAccordion from "./TopGearSettings";
 import { CONSTRAINTS } from "../Engine/CONSTRAINTS";
 import UpgradeFinderSimC from "../UpgradeFinder/UpgradeFinderSimCImport";
 import userSettings from "./SettingsObject";
+import { useSelector } from "react-redux";
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -78,6 +79,7 @@ const TOPGEARCAP = 34; // TODO
 
 export default function TopGear(props) {
   const { t, i18n } = useTranslation();
+  const contentType = useSelector((state) => state.contentType);
   const currentLanguage = i18n.language;
   const classes = useStyles();
   // Snackbar State
@@ -165,13 +167,13 @@ export default function TopGear(props) {
       let wepCombos = buildWepCombos(props.player, true);
       const worker = require("workerize-loader!./TopGearEngine"); // eslint-disable-line import/no-webpack-loader-syntax
       let instance = new worker();
-      let baseHPS = props.player.getHPS(props.contentType);
+      let baseHPS = props.player.getHPS(contentType);
       let strippedPlayer = JSON.parse(JSON.stringify(props.player));
-      let strippedCastModel = JSON.parse(JSON.stringify(props.player.castModel[props.contentType]));
+      let strippedCastModel = JSON.parse(JSON.stringify(props.player.castModel[contentType]));
       //console.log("player: " + JSON.stringify(props.player));
-      instance.runTopGear(itemList, wepCombos, strippedPlayer, props.contentType, baseHPS, currentLanguage, userSettings, strippedCastModel).then((result) => {
+      instance.runTopGear(itemList, wepCombos, strippedPlayer, contentType, baseHPS, currentLanguage, userSettings, strippedCastModel).then((result) => {
         //console.log(`Loop returned`);
-        apiSendTopGearSet(props.player, props.contentType, result.itemSet.hardScore, result.itemsCompared);
+        apiSendTopGearSet(props.player, contentType, result.itemSet.hardScore, result.itemsCompared);
         props.setTopResult(result);
         history.push("/report/");
       });
@@ -240,12 +242,7 @@ export default function TopGear(props) {
           <HelpText text={helpText} />
         </Grid>
         <Grid item xs={12}>
-          {<UpgradeFinderSimC
-            player={props.player}
-            contentType={props.contentType}
-            simcSnack={props.simcSnack}
-            allChars={props.allChars}
-          />}
+          {<UpgradeFinderSimC player={props.player} contentType={contentType} simcSnack={props.simcSnack} allChars={props.allChars} />}
         </Grid>
         <Grid item xs={12}>
           <TopGearSettingsAccordion userSettings={userSettings} editSettings={editSettings} />

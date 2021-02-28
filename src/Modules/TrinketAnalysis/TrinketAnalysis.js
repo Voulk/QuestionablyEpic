@@ -6,6 +6,7 @@ import Item from "../Player/Item";
 import { getItemAllocations, calcStatsAtLevel, getItemEffect, scoreItem, getTranslatedItemName } from "../Engine/ItemUtilities";
 import VerticalChart from "./Charts/VerticalChart";
 import HelpText from "../SetupAndMenus/HelpText";
+import { useSelector } from 'react-redux'
 
 // [{TrinketID: 90321, i173: 92, i187: 94, i200: 99, i213: 104, i226: 116}]
 
@@ -25,6 +26,7 @@ export default function TrinketAnalysis(props) {
     }, []); */
 
   const { t, i18n } = useTranslation();
+  const contentType = useSelector(state => state.contentType)
   const itemLevel = 213;
   const itemLevels = [161, 174, 187, 200, 213, 226];
   const trinketDB = itemDB.filter((key) => key.slot === "Trinket");
@@ -40,7 +42,7 @@ export default function TrinketAnalysis(props) {
     };
 
     for (var x = 0; x < itemLevels.length; x++) {
-      trinketAtLevels["i" + itemLevels[x]] = getTrinketAtItemLevel(trinket.id, itemLevels[x], props.player, props.contentType);
+      trinketAtLevels["i" + itemLevels[x]] = getTrinketAtItemLevel(trinket.id, itemLevels[x], props.player, contentType);
     }
     activeTrinkets.push(trinketAtLevels);
   }

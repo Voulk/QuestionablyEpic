@@ -18,6 +18,7 @@ import LogDetailsTable from "./CharacterLogDetailsTable";
 import { STAT } from "../../Engine/STAT";
 import { apiGetPlayerImage } from "../ConnectionUtilities";
 import { CONSTRAINTS, setBounds } from "../../Engine/CONSTRAINTS";
+import { useSelector } from 'react-redux'
 
 /* ------------------------------ Spec Images. ------------------------------ */
 const specImages = {
@@ -115,7 +116,7 @@ const menuStyle = {
 
 export default function CharCards(props) {
   const classes = useStyles();
-  const contentType = props.contentType;
+  const contentType = useSelector(state => state.contentType)
   const player = props.char;
   const { t } = useTranslation();
 

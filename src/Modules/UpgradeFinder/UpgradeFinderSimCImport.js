@@ -67,7 +67,6 @@ export default function UpgradeFinderSimC(props) {
                 color="primary"
                 variant="contained"
                 player={props.player}
-                contentType={props.contentType}
                 simcSnack={props.simcSnack}
                 allChars={props.allChars}
               />

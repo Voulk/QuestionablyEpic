@@ -118,7 +118,6 @@ class App extends Component {
       playerLoginID: "",
       playerBattleTag: "",
       accessToken: "",
-      contentType: "Raid",
       patronStatus: "",
       charSnackState: false,
       charUpdateState: false,
@@ -281,13 +280,6 @@ class App extends Component {
     this.setState({ playerRegion: props });
   };
 
-  /* ------------------------- Content Toggle Handler ------------------------ */
-  toggleContentType = () => {
-    let newType = this.state.contentType === "Raid" ? "Dungeon" : "Raid";
-    this.setState({ contentType: newType });
-    ls.set("contentType", newType);
-  };
-
   /* ---------------------------- Battletag Handler --------------------------- */
   updatePlayerID = (id, battletag) => {
     this.setState({ playerLoginID: id });
@@ -372,8 +364,6 @@ class App extends Component {
                 patronStatus={this.state.patronStatus}
                 playerTag={this.state.playerBattleTag}
                 setRegion={this.setRegion}
-                toggleContentType={this.toggleContentType}
-                contentType={this.state.contentType}
                 player={activePlayer}
                 simcSnack={this.handleSimCSnackOpen}
                 logImportSnack={this.handleLogSnackOpen}
@@ -437,7 +427,6 @@ class App extends Component {
                       player={activePlayer}
                       charAddedSnack={this.handleCharSnackOpen}
                       charUpdatedSnack={this.handleCharUpdateSnackOpen}
-                      contentType={this.state.contentType}
                       patronStatus={this.state.patronStatus}
                       delChar={this.deletePlayerChar}
                       articleList={this.state.articleList}
@@ -445,29 +434,29 @@ class App extends Component {
                   )}
                 />
                 <Route path="/holydiver" render={() => <HolyDiver />} />
-                <Route path="/report" render={() => <TopGearReport player={activePlayer} result={this.state.topSet} contentType={this.state.contentType} />} />
+                <Route path="/report" render={() => <TopGearReport player={activePlayer} result={this.state.topSet} />} />
                 <Route
                   path="/quickcompare"
-                  render={() => <QuickCompare player={activePlayer} contentType={this.state.contentType} allChars={allChars} simcSnack={this.handleSimCSnackOpen} />}
+                  render={() => <QuickCompare player={activePlayer} allChars={allChars} simcSnack={this.handleSimCSnackOpen} />}
                 />
                 <Route
                   path="/topgear"
                   render={() => (
-                    <TopGear player={activePlayer} contentType={this.state.contentType} setTopResult={this.setTopResult} allChars={allChars} simcSnack={this.handleSimCSnackOpen} />
+                    <TopGear player={activePlayer} setTopResult={this.setTopResult} allChars={allChars} simcSnack={this.handleSimCSnackOpen} />
                   )}
                 />
-                <Route path="/legendaries" render={() => <LegendaryCompare player={activePlayer} contentType={this.state.contentType} />} />
-                <Route path="/trinkets" render={() => <TrinketAnalysis player={activePlayer} contentType={this.state.contentType} />} />
+                <Route path="/legendaries" render={() => <LegendaryCompare player={activePlayer}  />} />
+                <Route path="/trinkets" render={() => <TrinketAnalysis player={activePlayer} />} />
                 <Route
                   path="/soulbinds"
-                  render={() => <CovenantExploration player={activePlayer} contentType={this.state.contentType} updatePlayerChar={this.updatePlayerChar} />}
+                  render={() => <CovenantExploration player={activePlayer} updatePlayerChar={this.updatePlayerChar} />}
                 />
                 <Route path="/login" render={() => <QELogin setRegion={this.setRegion} />} />
                 <Route path="/attemptlogin" component={() => (window.location = this.buildLoginURL())} />
                 <Route path="/confirmlogin/" render={() => <ConfirmLogin loginSnackOpen={this.handleLoginSnackOpen} updatePlayerID={this.updatePlayerID} />} />
                 <Route
                   path="/UpgradeFinder/"
-                  render={() => <UpgradeFinder player={activePlayer} contentType={this.state.contentType} simcSnack={this.handleSimCSnackOpen} allChars={allChars} />}
+                  render={() => <UpgradeFinder player={activePlayer} simcSnack={this.handleSimCSnackOpen} allChars={allChars} />}
                 />
                 <Route
                   path="/profile/"

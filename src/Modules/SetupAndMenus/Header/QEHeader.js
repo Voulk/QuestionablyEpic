@@ -95,17 +95,17 @@ export default function QEHeader(props) {
             <Grid item xs={12} sm={12} md={4} lg={4} xl={4}>
               <Grid container direction="row" justify="center" alignItems="center" spacing={1} wrap="nowrap" style={{ paddingLeft: 10, paddingRight: 10 }}>
                 <Grid item>
-                  <Tooltip title={props.contentType === "Raid" ? t("QeHeader.Tooltip.ChangeToDungeon") : t("QeHeader.Tooltip.ChangeToRaid")} arrow>
+                  <Tooltip title={contentType === "Raid" ? t("QeHeader.Tooltip.ChangeToDungeon") : t("QeHeader.Tooltip.ChangeToRaid")} arrow>
                     <Button
                       style={{ color: "white" }}
-                      onClick={(props.toggleContentType)}
-                      // onClick={() => dispatch(toggleContent(contentType))}
+                      // onClick={(props.toggleContentType)}
+                      onClick={() => dispatch(toggleContent(contentType))}
                       aria-owns={open ? "mouse-over-popover" : undefined}
                       aria-haspopup="true"
                       onMouseEnter={handlePopoverOpen}
                       onMouseLeave={handlePopoverClose}
                     >
-                      {t(props.contentType)}
+                      {t(contentType)}
                     </Button>
                   </Tooltip>
                 </Grid>
@@ -116,7 +116,6 @@ export default function QEHeader(props) {
                   <SimCraftInput
                     buttonLabel={t("SimCInput.SimCHeaderButtonLabel")}
                     player={props.player}
-                    contentType={props.contentType}
                     simcSnack={props.simcSnack}
                     allChars={props.allChars}
                   />

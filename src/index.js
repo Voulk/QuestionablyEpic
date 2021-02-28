@@ -8,30 +8,11 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import i18n from "./i18n";
 import { TOGGLE_CONTENT } from "./Redux/ActionTypes"
+import rootReducer from "./Redux/Reducers/RootReducer"
 
-const initialState = {
-  gameType: "Retail",
-  contentType: "Raid",
-};
 
-function reducer(state = initialState, action) {
-  console.log('reducer', state, action);
 
-  switch (action.type) {
-    case TOGGLE_CONTENT: {
-      const { content } = action.payload;
-      const toggleType = content === "Raid" ? "Dungeon" : "Raid";
-      return {
-        ...state,
-        contentType: toggleType,
-      };
-    }
-    default:
-  return state;
-}
-}
-
-const store = createStore(reducer);
+const store = createStore(rootReducer);
 
 ReactDOM.render(
   <Provider store={store}>

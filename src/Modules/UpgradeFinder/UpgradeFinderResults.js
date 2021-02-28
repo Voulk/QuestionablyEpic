@@ -8,9 +8,10 @@ import MythicPlusGearContainer from "./Panels/PanelMythicPlus";
 import PvPGearContainer from "./Panels/PanelPvP";
 import RaidGearContainer from "./Panels/PanelRaid";
 import WorldBossGearContainer from "./Panels/PanelWorldBosses";
-import SlotsContainer from "./Panels/PanelSlots"
+import SlotsContainer from "./Panels/PanelSlots";
 import ReactGA from "react-ga";
 import "./Panels/ItemUpgrade.css";
+import { useSelector } from "react-redux";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -122,6 +123,7 @@ export default function UpgradeFinderResults(props) {
   //   }, []);
 
   const classes = useStyles();
+  const contentType = useSelector((state) => state.contentType);
   const [tabvalue, setTabValue] = React.useState(0);
   const { t, i18n } = useTranslation();
   const result = props.itemSelection;
@@ -137,7 +139,8 @@ export default function UpgradeFinderResults(props) {
   return (
     <div className={classes.header}>
       <Typography variant="h4" color="primary" align="center" style={{ padding: "10px 10px 5px 10px" }}>
-        {props.contentType + " " +  t("UpgradeFinder.Header")}
+        {/* // TODO: Translate? */}
+        {contentType + " " + t("UpgradeFinder.Header")}
       </Typography>
       <AppBar
         position="static"
@@ -197,8 +200,8 @@ export default function UpgradeFinderResults(props) {
         </div>
       </TabPanel>
 
-            {/* Slots */}
-            <TabPanel value={tabvalue} index={4}>
+      {/* Slots */}
+      <TabPanel value={tabvalue} index={4}>
         <div className={classes.panel}>
           <Grid container>
             <SlotsContainer player={props.player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={props.playerSettings} />

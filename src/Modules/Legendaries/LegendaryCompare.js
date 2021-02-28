@@ -7,6 +7,7 @@ import { useTranslation } from "react-i18next";
 import { getEffectValue } from "../Engine/EffectFormulas/EffectEngine";
 import ReactGA from "react-ga";
 import { Grid, Typography } from "@material-ui/core";
+import { useSelector } from 'react-redux'
 // This is all shitty boilerplate code that'll be replaced. Do not copy.
 
 const useStyles = makeStyles((theme) => ({
@@ -236,6 +237,7 @@ class Legendary {
 }
 
 export default function LegendaryCompare(props) {
+  const contentType = useSelector(state => state.contentType)
   useEffect(() => {
     ReactGA.pageview(window.location.pathname + window.location.search);
   }, []);
@@ -243,7 +245,7 @@ export default function LegendaryCompare(props) {
 
   let legendaryList = [];
 
-  fillLegendaries(legendaryList, props.player.spec, props.player, props.contentType);
+  fillLegendaries(legendaryList, props.player.spec, props.player, contentType);
   sortLegendaries(legendaryList);
   const classes = useStyles();
 
@@ -269,7 +271,6 @@ export default function LegendaryCompare(props) {
               key={index}
               item={item}
               player={props.player}
-              contentType={props.contentType}
             />
           ))}
         </Grid>
