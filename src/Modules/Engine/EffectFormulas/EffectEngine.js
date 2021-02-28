@@ -13,7 +13,7 @@ import { getPaladinConduit } from "./Paladin/PaladinConduitFormulas";
 import { getShamanConduit } from "./Shaman/ShamanConduitFormulas";
 import { getMonkConduit } from "./Monk/MonkConduitFormulas";
 import { getDruidConduit } from "./Druid/DruidConduitFormulas";
-
+import { getDruidTierSet } from "./Druid/DruidBCTierSets";
 import { getPaladinCovAbility } from "./Paladin/PaladinMiscFormulas";
 import SPEC from "../SPECS";
 import { getShamanCovAbility } from "./Shaman/ShamanCovenantFormulas";
@@ -21,45 +21,82 @@ import { getShamanCovAbility } from "./Shaman/ShamanCovenantFormulas";
 // Effect is a small "dictionary" with two key : value pairs.
 // The EffectEngine is basically a routing device. It will take your effect and effect type and grab the right formula from the right place.
 // This allows each spec to work on spec-specific calculations without a need to interact with the other specs.
-export function getEffectValue(effect, player, contentType, itemLevel = 0, userSettings) {
+export function getEffectValue(effect, player, contentType, itemLevel = 0, userSettings, gameType = "Retail") {
   let bonus_stats = {};
   const effectName = effect.name;
   const effectType = effect.type;
 
   //console.log("ITEM EFFECT" + effectName + effectType + "player spec" + player.spec);
 
-  if (effect.type === "special") {
-    bonus_stats = getGenericEffect(effectName, player, contentType);
-  } else if (effectType === "spec legendary") {
-    switch (player.spec) {
-      case "Discipline Priest":
-        bonus_stats = getDiscPriestLegendary(effectName, player, contentType);
-        break;
-      case "Restoration Druid":
-        bonus_stats = getDruidLegendary(effectName, player, contentType);
-        break;
-      case "Holy Priest":
-        bonus_stats = getHolyPriestLegendary(effectName, player, contentType);
-        break;
-      case "Holy Paladin":
-        bonus_stats = getPaladinLegendary(effectName, player, contentType);
-        break;
-      case "Mistweaver Monk":
-        bonus_stats = getMonkLegendary(effectName, player, contentType);
-        break;
-      case "Restoration Shaman":
-        bonus_stats = getShamanLegendary(effectName, player, contentType);
-        break;
-      default:
-        break;
-      // Call error
+
+  // ----- Retail Effect -----
+  // Can either be a Spec Legendary, Trinket, or a special item effect like those found back in Crucible of Storms or the legendary BFA cloak.
+  if (gameType === "Retail") {
+    if (effect.type === "special") {
+      bonus_stats = getGenericEffect(effectName, player, contentType);
+    } 
+    else if (effectType === "spec legendary") {
+      switch (player.spec) {
+        case "Discipline Priest":
+          bonus_stats = getDiscPriestLegendary(effectName, player, contentType);
+          break;
+        case "Restoration Druid":
+          bonus_stats = getDruidLegendary(effectName, player, contentType);
+          break;
+        case "Holy Priest":
+          bonus_stats = getHolyPriestLegendary(effectName, player, contentType);
+          break;
+        case "Holy Paladin":
+          bonus_stats = getPaladinLegendary(effectName, player, contentType);
+          break;
+        case "Mistweaver Monk":
+          bonus_stats = getMonkLegendary(effectName, player, contentType);
+          break;
+        case "Restoration Shaman":
+          bonus_stats = getShamanLegendary(effectName, player, contentType);
+          break;
+        default:
+          break;
+        // Call error
+      }
+    } 
+    else if (effectType === "generic legendary") {
+      bonus_stats = getGenericLegendary(effectName, player, contentType, userSettings);
+    } 
+    else if (effectType === "trinket") {
+      bonus_stats = getTrinketEffect(effectName, player, contentType, itemLevel, userSettings);
+      //testTrinkets(player, contentType); //TODO: Remove
     }
-  } else if (effectType === "generic legendary") {
-    bonus_stats = getGenericLegendary(effectName, player, contentType, userSettings);
-  } else if (effectType === "trinket") {
-    bonus_stats = getTrinketEffect(effectName, player, contentType, itemLevel, userSettings);
-    //testTrinkets(player, contentType); //TODO: Remove
   }
+  // -------------------------------------------
+
+  // ----- Burning Crusade Effect Formulas -----
+  // Includes "Tier Set" bonuses, trinkets, and special effects on items that aren't just pure stats. 
+  else if (gameType === "BurningCrusade") {
+    if (effectType === "tier set") {
+      switch (player.spec) {
+        case "BC Holy Priest":
+          //bonus_stats = getDiscPriestLegendary(effectName, player, contentType);
+          break;
+        case "BC Restoration Druid":
+          bonus_stats = getDruidTierSet(effectName, player);
+          break;
+        case "BC Holy Paladin":
+          //bonus_stats = getPaladinLegendary(effectName, player, contentType);
+          break;
+        case "BC Restoration Shaman":
+          //bonus_stats = getShamanLegendary(effectName, player, contentType);
+          break;
+        default:
+          break;
+        // Call error
+      }
+    } 
+    else if (effectType === "trinket") {
+      //bonus_stats = getTrinketEffect(effectName, player);
+    }
+  }
+
 
   return bonus_stats;
 }

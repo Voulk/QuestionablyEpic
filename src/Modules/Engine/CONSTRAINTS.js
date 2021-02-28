@@ -3,14 +3,23 @@
 // "technically correct but not what they were looking for" type results. A 400 item level trinket might be calculated correctly,
 // but isn't giving them information they can actually use. 
 export const CONSTRAINTS = {
-    maxItemLevel: 270,
-    minItemLevel: 90,
-    maxSecondaryWeight: 0.9,
-    minSecondaryWeight: 0,
-    maxTertiaryWeight: 1.5,
-    minTertiaryWeight: 0,
-    topGearMaxItems: 34, // The maximum number of items selectable by the player. Combinatorial explosion requires we keep this reasonable. 
-    topGearDifferentials: 8, // Number of competitive alternatives to show.
+    Retail: {
+        maxItemLevel: 270,
+        minItemLevel: 90,
+        maxSecondaryWeight: 0.9,
+        minSecondaryWeight: 0,
+        maxTertiaryWeight: 1.5,
+        minTertiaryWeight: 0,
+    },
+    BurningCrusade: {
+
+
+    },
+    Shared: {
+        topGearMaxItems: 34, // The maximum number of items selectable by the player. Combinatorial explosion requires we keep this reasonable. 
+        topGearDifferentials: 8, // Number of competitive alternatives to show.
+    }
+
 }
 
 // This will return the value itself if it is between min and max, and a boundary otherwise. 

@@ -260,11 +260,11 @@ export default function CharCards(props) {
     let newPlayer = props.char;
     let weights = {
       intellect: 1,
-      haste: haste > CONSTRAINTS.maxSecondaryWeight ? newPlayer.statWeights[contentType].haste : haste,
-      crit: critical > CONSTRAINTS.maxSecondaryWeight ? newPlayer.statWeights[contentType].crit : critical,
-      mastery: mastery > CONSTRAINTS.maxSecondaryWeight ? newPlayer.statWeights[contentType].mastery : mastery,
-      versatility: versatility > CONSTRAINTS.maxSecondaryWeight ? newPlayer.statWeights[contentType].versatility : versatility,
-      leech: leech > CONSTRAINTS.maxTertiaryWeight ? newPlayer.statWeights[contentType].leech : leech,
+      haste: haste > CONSTRAINTS.Retail.maxSecondaryWeight ? newPlayer.statWeights[contentType].haste : haste,
+      crit: critical > CONSTRAINTS.Retail.maxSecondaryWeight ? newPlayer.statWeights[contentType].crit : critical,
+      mastery: mastery > CONSTRAINTS.Retail.maxSecondaryWeight ? newPlayer.statWeights[contentType].mastery : mastery,
+      versatility: versatility > CONSTRAINTS.Retail.maxSecondaryWeight ? newPlayer.statWeights[contentType].versatility : versatility,
+      leech: leech > CONSTRAINTS.Retail.maxTertiaryWeight ? newPlayer.statWeights[contentType].leech : leech,
     };
 
     newPlayer.editChar(contentType, charName, server, region, selectedRace, weights);
