@@ -1,6 +1,6 @@
 import { convertPPMToUptime, getScalarValue } from "../EffectUtilities";
 import { trinket_data, TAGS } from "./TrinketData";
-import { STAT } from "../../STAT";
+import { STAT } from "../../Retail/STAT";
 import SPEC from "../../SPECS";
 
 // TODO: Write proper comments. See Lingering Sunmote for an example.

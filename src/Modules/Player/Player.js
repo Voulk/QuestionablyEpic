@@ -1,6 +1,6 @@
 import { getAvailableClassConduits } from "../Covenants/CovenantUtilities";
 import SPEC from "../Engine/SPECS";
-import STAT from "../Engine/STAT";
+import STAT from "../Engine/Retail/STAT";
 import { scoreItem } from "../Engine/ItemUtilities";
 import { getUnique } from "./PlayerUtilities";
 import CastModel from "./CastModel";

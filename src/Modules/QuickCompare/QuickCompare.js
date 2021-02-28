@@ -12,7 +12,7 @@ import { itemDB } from "../../Databases/ItemDB";
 import { getValidArmorTypes, getValidWeaponTypes, calcStatsAtLevel, getItemAllocations, scoreItem, getItemEffect, buildWepCombos, getItemSlot } from "../Engine/ItemUtilities";
 import ItemCard from "./ItemCard";
 import HelpText from "../SetupAndMenus/HelpText";
-import { CONSTRAINTS } from "../Engine/CONSTRAINTS";
+import { CONSTRAINTS } from "../Engine/Retail/CONSTRAINTS";
 import UpgradeFinderSimC from "../UpgradeFinder/UpgradeFinderSimCImport";
 
 const useStyles = makeStyles((theme) => ({

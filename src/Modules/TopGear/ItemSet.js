@@ -1,7 +1,7 @@
 // Represents a full set of items.
 import { getTranslatedItemName } from "../Engine/ItemUtilities";
 import Item from "../Player/Item";
-import { STATPERONEPERCENT, BASESTAT } from "../Engine/STAT";
+import { STATPERONEPERCENT, BASESTAT } from "../Engine/Retail/STAT";
 
 class ItemSet {
   constructor(id, itemList, sumSoft) {

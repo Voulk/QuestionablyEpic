@@ -1,5 +1,5 @@
 import { calcStatsAtLevel, getItemSlot, getItemAllocations, getItemEffect } from "../Engine/ItemUtilities";
-import { CONSTRAINTS, setBounds } from "../Engine/CONSTRAINTS";
+import { CONSTRAINTS, setBounds } from "../Engine/Retail/CONSTRAINTS";
 
 // The Item class represents an active item in the app at a specific item level.
 // We'll create them when we import a SimC string, or when an item is added manually.

@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Paper, Grid, Typography, Divider } from "@material-ui/core";
-import { STATPERONEPERCENT, translatedStat } from "../Engine/STAT";
+import { STATPERONEPERCENT, translatedStat } from "../Engine/Retail/STAT";
 import { useTranslation } from "react-i18next";
 
 // The soulbind stat panel sums up all of the active soulbinds in the tree.

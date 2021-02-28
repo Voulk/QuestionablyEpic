@@ -1,6 +1,6 @@
 import Player from "../../../Player/Player";
 import SPEC from "../../SPECS";
-import { STAT, STATPERONEPERCENT } from "../../STAT";
+import { STAT, STATPERONEPERCENT } from "../../Retail/STAT";
 import { convertPPMToUptime, getBestWeaponEnchant } from "../EffectUtilities";
 
 /* 

@@ -7,7 +7,7 @@ import { useTranslation } from "react-i18next";
 // import { getItemIcon } from "../../../Engine/ItemUtilities";
 import "./HealerCardInfo.css";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import { STATPERONEPERCENT } from "../../../Engine/STAT";
+import { STATPERONEPERCENT } from "../../../Engine/Retail/STAT";
 
 const useStyles = makeStyles((theme) => ({
   heading: {

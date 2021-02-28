@@ -1,9 +1,9 @@
 import { itemDB } from "../../Databases/ItemDB";
-import { randPropPoints } from "./RandPropPointsBylevel";
-import { combat_ratings_mult_by_ilvl, combat_ratings_mult_by_ilvl_jewl } from "./CombatMultByLevel";
+import { randPropPoints } from "./Retail/RandPropPointsBylevel";
+import { combat_ratings_mult_by_ilvl, combat_ratings_mult_by_ilvl_jewl } from "./Retail/CombatMultByLevel";
 import { getEffectValue } from "./EffectFormulas/EffectEngine";
 import SPEC from "../Engine/SPECS";
-import { translatedStat } from "../Engine/STAT";
+import { translatedStat } from "../Engine/Retail/STAT";
 import Item from "../Player/Item";
 import { useTranslation } from "react-i18next";
 import { i18n } from "react-i18next";

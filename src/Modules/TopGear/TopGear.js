@@ -19,7 +19,7 @@ import Autocomplete from "@material-ui/lab/Autocomplete";
 import { useHistory, useLocation } from "react-router-dom";
 import HelpText from "../SetupAndMenus/HelpText";
 import TopGearSettingsAccordion from "./TopGearSettings";
-import { CONSTRAINTS } from "../Engine/CONSTRAINTS";
+import { CONSTRAINTS } from "../Engine/Retail/CONSTRAINTS";
 import UpgradeFinderSimC from "../UpgradeFinder/UpgradeFinderSimCImport";
 import userSettings from "./SettingsObject";
 

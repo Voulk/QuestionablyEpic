@@ -15,9 +15,9 @@ import raceIcons from "../../CooldownPlanner/Functions/IconFunctions/RaceIcons";
 import { classRaceList } from "../../CooldownPlanner/Data/Data";
 import { serverDB } from "../../../Databases/ServerDB";
 import LogDetailsTable from "./CharacterLogDetailsTable";
-import { STAT } from "../../Engine/STAT";
+import { STAT } from "../../Engine/Retail/STAT";
 import { apiGetPlayerImage } from "../ConnectionUtilities";
-import { CONSTRAINTS, setBounds } from "../../Engine/CONSTRAINTS";
+import { CONSTRAINTS, setBounds } from "../../Engine/Retail/CONSTRAINTS";
 
 /* ------------------------------ Spec Images. ------------------------------ */
 const specImages = {
