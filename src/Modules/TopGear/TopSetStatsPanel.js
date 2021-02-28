@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Paper, Grid, Typography, Divider } from "@material-ui/core";
-import { STATPERONEPERCENT, translatedStat } from "../Engine/Retail/STAT";
+import { STATPERONEPERCENT, translatedStat } from "../Engine/STAT";
 import { useTranslation } from "react-i18next";
 
 // The soulbind stat panel sums up all of the active soulbinds in the tree.
@@ -14,11 +14,11 @@ export default function TopSetStatsPanel(props) {
 
   const stats = [
     ["intellect", statList.intellect],
-    ["haste", statList.haste / STATPERONEPERCENT.HASTE],
-    ["crit", statList.crit / STATPERONEPERCENT.CRIT],
-    ["mastery", statList.mastery / STATPERONEPERCENT.MASTERYA[props.spec]],
-    ["versatility", statList.versatility / STATPERONEPERCENT.VERSATILITY],
-    ["leech", statList.leech / STATPERONEPERCENT.LEECH],
+    ["haste", statList.haste / STATPERONEPERCENT.Retail.HASTE],
+    ["crit", statList.crit / STATPERONEPERCENT.Retail.CRIT],
+    ["mastery", statList.mastery / STATPERONEPERCENT.Retail.MASTERYA[props.spec]],
+    ["versatility", statList.versatility / STATPERONEPERCENT.Retail.VERSATILITY],
+    ["leech", statList.leech / STATPERONEPERCENT.Retail.LEECH],
     ["bonus HPS", statList.hps],
     ["bonus DPS", statList.dps],
   ];
