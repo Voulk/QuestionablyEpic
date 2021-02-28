@@ -1,10 +1,11 @@
 import React from "react";
-import { Button, Grow, MenuItem, MenuList, Paper, Popper, Tooltip } from "@material-ui/core";
+import { Button, Grow, MenuItem, MenuList, Paper, Popper, Tooltip, Divider } from "@material-ui/core";
 import ClickAwayListener from "@material-ui/core/ClickAwayListener";
 import { makeStyles } from "@material-ui/core/styles";
 import { useTranslation } from "react-i18next";
-import ReactCountryFlag from "react-country-flag";
+// import ReactCountryFlag from "react-country-flag";
 import ls from "local-storage";
+import LanguageIcon from "@material-ui/icons/Language";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -52,26 +53,26 @@ export default function LanguageSelector(props) {
     prevOpen.current = open;
   }, [open]);
 
-  const langIcon = () => {
-    if (currentLanguage === "en") {
-      return <ReactCountryFlag countryCode="GB" svg style={{ marginRight: "5px" }} />;
-    } else if (currentLanguage === "ru") {
-      return <ReactCountryFlag countryCode="RU" svg style={{ marginRight: "5px" }} />;
-    } else if (currentLanguage === "cn") {
-      return <ReactCountryFlag countryCode="CN" svg style={{ marginRight: "5px" }} />;
-    } else if (currentLanguage === "fr") {
-      return <ReactCountryFlag countryCode="FR" svg style={{ marginRight: "5px" }} />;
-    } else if (currentLanguage === "de") {
-      return <ReactCountryFlag countryCode="DE" svg style={{ marginRight: "5px" }} />;
-    }
-  };
+  // const langIcon = () => {
+  //   if (currentLanguage === "en") {
+  //     return <ReactCountryFlag countryCode="GB" svg style={{ marginRight: "5px" }} />;
+  //   } else if (currentLanguage === "ru") {
+  //     return <ReactCountryFlag countryCode="RU" svg style={{ marginRight: "5px" }} />;
+  //   } else if (currentLanguage === "cn") {
+  //     return <ReactCountryFlag countryCode="CN" svg style={{ marginRight: "5px" }} />;
+  //   } else if (currentLanguage === "fr") {
+  //     return <ReactCountryFlag countryCode="FR" svg style={{ marginRight: "5px" }} />;
+  //   } else if (currentLanguage === "de") {
+  //     return <ReactCountryFlag countryCode="DE" svg style={{ marginRight: "5px" }} />;
+  //   }
+  // };
 
   return (
     <div className={classes.root}>
       <div>
         <Tooltip title={t("QeHeader.Tooltip.Language")} arrow>
           <Button ref={anchorRef} aria-controls={open ? "menu-list-grow" : undefined} aria-haspopup="true" onClick={handleToggle}>
-            {langIcon(currentLanguage)}
+            <LanguageIcon style={{ marginRight: 4 }} />
             {currentLanguage}
           </Button>
         </Tooltip>
@@ -96,40 +97,15 @@ export default function LanguageSelector(props) {
                       paddingBottom: 0,
                     }}
                   >
-                    {/*
-                    <MenuItem onClick={(e) => handleClose(e, "cn")}>
-                      <ReactCountryFlag
-                        countryCode="CN"
-                        svg
-                        style={{ marginRight: "5px" }}
-                      />
-                      CN
-                    </MenuItem> */}
-                    <MenuItem onClick={(e) => handleClose(e, "en")}>
-                      <ReactCountryFlag countryCode="GB" svg style={{ marginRight: "5px" }} />
-                      EN
-                    </MenuItem>
-                    {/*
-                    <MenuItem onClick={(e) => handleClose(e, "fr")}>
-                      <ReactCountryFlag
-                        countryCode="FR"
-                        svg
-                        style={{ marginRight: "5px" }}
-                      />
-                      FR
-                    </MenuItem>
-                    <MenuItem onClick={(e) => handleClose(e, "ru")}>
-                      <ReactCountryFlag
-                        countryCode="RU"
-                        svg
-                        style={{ marginRight: "5px" }}
-                      />
-                      RU
-                    </MenuItem> */}
-                    <MenuItem onClick={(e) => handleClose(e, "de")}>
-                      <ReactCountryFlag countryCode="DE" svg style={{ marginRight: "5px" }} />
-                      DE
-                    </MenuItem>
+                    {/* <MenuItem onClick={(e) => handleClose(e, "cn")}>简体中文</MenuItem>
+                    <Divider /> */}
+                    <MenuItem onClick={(e) => handleClose(e, "en")}>English</MenuItem>
+                    <Divider />
+                    {/* <MenuItem onClick={(e) => handleClose(e, "fr")}>Français</MenuItem>
+                    <Divider />
+                    <MenuItem onClick={(e) => handleClose(e, "ru")}>Русский</MenuItem>
+                    <Divider /> */}
+                    <MenuItem onClick={(e) => handleClose(e, "de")}>Deutsch</MenuItem>
                   </MenuList>
                 </ClickAwayListener>
               </Paper>

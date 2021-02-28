@@ -81,6 +81,9 @@ const useStyles = makeStyles((theme) => ({
     minHeight: 250,
     maxWidth: 700,
   },
+  option: {
+    borderBottom: "1px solid rgba(255, 255, 255, 0.23)",
+  },
 }));
 
 const deleteTheme = createMuiTheme({
@@ -88,6 +91,27 @@ const deleteTheme = createMuiTheme({
     primary: red,
   },
 });
+
+const menuStyle = {
+  style: { marginTop: 5 },
+  MenuListProps: {
+    style: { paddingTop: 0, paddingBottom: 0 },
+  },
+  PaperProps: {
+    style: {
+      border: "1px solid rgba(255, 255, 255, 0.23)",
+    },
+  },
+  anchorOrigin: {
+    vertical: "bottom",
+    horizontal: "left",
+  },
+  transformOrigin: {
+    vertical: "top",
+    horizontal: "left",
+  },
+  getContentAnchorEl: null,
+};
 
 export default function CharCards(props) {
   const classes = useStyles();
@@ -285,7 +309,14 @@ export default function CharCards(props) {
                   <Typography variant="h6" component="h4" style={{ lineHeight: 1, color: classColoursJS(spec) }}>
                     {props.name}
                     <Tooltip title={t(classTranslator(spec))} style={{ color: classColoursJS(spec) }} placement="top">
-                      {classIcons(spec, { height: 20, width: 20, margin: "0px 5px 0px 5px", verticalAlign: "middle", borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.12)" })}
+                      {classIcons(spec, {
+                        height: 20,
+                        width: 20,
+                        margin: "0px 5px 0px 5px",
+                        verticalAlign: "middle",
+                        borderRadius: 4,
+                        border: "1px solid rgba(255, 255, 255, 0.12)",
+                      })}
                     </Tooltip>
                   </Typography>
                 </Grid>
@@ -360,7 +391,7 @@ export default function CharCards(props) {
                 <Grid item xs={3}>
                   <FormControl variant="outlined" size="small" fullWidth label={t("Region")} disabled={true}>
                     <InputLabel id="ClassSelector">{t("Region")}</InputLabel>
-                    <Select value={region} onChange={handleChangeRegion} label={t("Region")}>
+                    <Select value={region} onChange={handleChangeRegion} label={t("Region")} MenuProps={menuStyle}>
                       {Object.values(regions).map((key, i) => (
                         <MenuItem key={i} value={key}>
                           {key}
@@ -372,6 +403,9 @@ export default function CharCards(props) {
                 <Grid item xs={12}>
                   <Autocomplete
                     size="small"
+                    classes={{
+                      option: classes.option,
+                    }}
                     disabled={region === "" ? true : false}
                     id="server-select"
                     value={server}
@@ -385,19 +419,22 @@ export default function CharCards(props) {
                       handleChangeServer(newInputValue);
                     }}
                     renderInput={(params) => <TextField {...params} label="Server Name" variant="outlined" styLe={{ width: 100 }} />}
+                    ListboxProps={{ style: { border: "1px solid rgba(255, 255, 255, 0.23)", borderRadius: 4,paddingTop: 0, paddingBottom: 0 } }}
                   />
                 </Grid>
                 {/* ------------------------------ Class Select ------------------------------ */}
                 <Grid item xs={12}>
                   <FormControl variant="outlined" fullWidth size="small" label={t("Class")} disabled={true}>
                     <InputLabel id="ClassSelector">{t("Class")}</InputLabel>
-                    <Select label={t("Class")} value={healClass} onChange={handleChangeSpec}>
-                      {Object.getOwnPropertyNames(classRaceList).map((key, i) => (
-                        <MenuItem key={i} value={key}>
-                          {classIcons(key, { height: 20, width: 20, padding: "0px 0px 0px 5px", verticalAlign: "middle", borderRadius: 4 })}
-                          {key}
-                        </MenuItem>
-                      ))}
+                    <Select label={t("Class")} value={healClass} onChange={handleChangeSpec} MenuProps={menuStyle}>
+                      {Object.getOwnPropertyNames(classRaceList)
+                        .map((key, i) => (
+                          <MenuItem key={i} value={key}>
+                            {classIcons(key, { height: 20, width: 20, margin: "0px 5px 0px 5px", verticalAlign: "middle", borderRadius: 4,border: "1px solid rgba(255, 255, 255, 0.12)" })}
+                            {key}
+                          </MenuItem>
+                        ))
+                        .map((menuItems) => [menuItems, <Divider />])}
                     </Select>
                   </FormControl>
                 </Grid>
@@ -405,17 +442,19 @@ export default function CharCards(props) {
                 <Grid item xs={12}>
                   <FormControl disabled={healClass === "" ? true : false} fullWidth variant="outlined" size="small" label={t("Race")}>
                     <InputLabel id="RaceSelector">{t("Race")}</InputLabel>
-                    <Select value={selectedRace} onChange={handleChangeRace} label={t("Race")}>
+                    <Select value={selectedRace} onChange={handleChangeRace} label={t("Race")} MenuProps={menuStyle}>
                       {healClass === ""
                         ? ""
-                        : classRaceList[healClass.toString()].races.map((key, i) => (
-                            <MenuItem key={i} value={key}>
-                              <div style={{ display: "inline-flex" }}>
-                                {raceIcons(key)}
-                                {t(key)}
-                              </div>
-                            </MenuItem>
-                          ))}
+                        : classRaceList[healClass.toString()].races
+                            .map((key, i) => (
+                              <MenuItem key={i} value={key}>
+                                <div style={{ display: "inline-flex" }}>
+                                  {raceIcons(key)}
+                                  {t(key)}
+                                </div>
+                              </MenuItem>
+                            ))
+                            .map((menuItems) => [menuItems, <Divider />])}
                     </Select>
                   </FormControl>
                 </Grid>

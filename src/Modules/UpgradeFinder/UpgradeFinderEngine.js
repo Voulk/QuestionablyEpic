@@ -83,7 +83,7 @@ export function buildWepCombosUF(player, itemList) {
   return wep_list.slice(0, 9);
 }
 
-export function runUpgradeFinder(player, contentType, playerSettings) {
+export function runUpgradeFinder(player, contentType, currentLanguage, playerSettings, userSettings) {
   // TEMP VARIABLES
   //const playerSettings = {raid: 3, dungeon: 15, pvp: 4};
   //
@@ -93,10 +93,11 @@ export function runUpgradeFinder(player, contentType, playerSettings) {
   // console.log("Running Upgrade Finder. Strap in.");
   const baseItemList = player.getEquippedItems(true);
   const wepList = buildWepCombosUF(player, baseItemList);
+  const castModel = player.castModel[contentType];
   //buildWepCombos(player, false, false); // TODO: DEL
 
   const baseHPS = player.getHPS(contentType);
-  const baseSet = runTopGear(baseItemList, wepList, player, contentType, baseHPS);
+  const baseSet = runTopGear(baseItemList, wepList, player, contentType, baseHPS, currentLanguage, userSettings, castModel);
   const baseScore = baseSet.itemSet.hardScore;
   
   //console.log(wepList);
@@ -105,7 +106,7 @@ export function runUpgradeFinder(player, contentType, playerSettings) {
   const itemPoss = buildItemPossibilities(player, contentType, playerSettings);
 
   for (var x = 0; x < itemPoss.length; x++) {
-    completedItemList.push(processItem(itemPoss[x], baseItemList, baseScore, player, contentType, baseHPS));
+    completedItemList.push(processItem(itemPoss[x], baseItemList, baseScore, player, contentType, baseHPS, currentLanguage, userSettings, castModel));
   }
 
   const result = new UpgradeFinderResult(itemPoss, completedItemList);
@@ -211,12 +212,12 @@ function buildItemPossibilities(player, contentType, playerSettings) {
 }
 
 // Returns a small dict
-function processItem(item, baseItemList, baseScore, player, contentType, baseHPS) {
+function processItem(item, baseItemList, baseScore, player, contentType, baseHPS, currentLanguage, userSettings, castModel) {
   let newItemList = [...baseItemList];
   newItemList.push(item);
   //console.log(player);
   const wepList = buildWepCombosUF(player, newItemList);
-  const newTGSet = runTopGear(newItemList, wepList, player, contentType, baseHPS);
+  const newTGSet = runTopGear(newItemList, wepList, player, contentType, baseHPS, currentLanguage, userSettings, castModel);
 
   const newScore = newTGSet.itemSet.hardScore;
   //const differential = Math.round(100*(newScore - baseScore))/100 // This is a raw int difference.

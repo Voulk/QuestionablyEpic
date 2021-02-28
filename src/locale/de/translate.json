@@ -514,7 +514,12 @@
     },
 
     "UpgradeFinder": {
-      "Header": "Resultate des Upgradefinders"
+      "Header": "Resultate des Upgradefinders",
+      "MythicPlus": "Mythisch+",
+      "CurrentRaid": "Schloss Nathria",
+      "PvP": "PvP",
+      "WorldBosses": "World Bosses",
+      "UpgradeBySlot": "Upgrade by Slot"
     },
     "UpgradeFinderFront": {
       "Header": "Upgradefinder",

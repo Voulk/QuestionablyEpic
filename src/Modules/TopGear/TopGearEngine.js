@@ -15,7 +15,7 @@ import { getEffectValue } from "../Engine/EffectFormulas/EffectEngine"
 // our set bonus algorithm before we sort and slice. There are no current set bonuses that are relevant to raid / dungeon so left as a thought experiment for now.
 const softSlice = 3000;
 const DR_CONST = 0.00196669230769231;
-const DR_CONSTLEECH = 0.08998569230769231;
+const DR_CONSTLEECH = 0.08822569230769231;
 
 
 // block for `time` ms, then return the number of loops we could run in that time:
@@ -36,7 +36,6 @@ function setupPlayer(player, contentType, castModel) {
   newPlayer.castModel[contentType] = new CastModel(newPlayer.getSpec(), contentType);
   newPlayer.castModel[contentType] = Object.assign(newPlayer.castModel[contentType], castModel);
 
-
   return newPlayer;
 
 }
@@ -53,6 +52,7 @@ export function runTopGear(itemList, wepCombos, player, contentType, baseHPS, cu
   let itemSets = createSets(itemList, wepCombos);
   itemSets.sort((a, b) => (a.sumSoftScore < b.sumSoftScore ? 1 : -1));
   count = itemSets.length;
+
 
   //console.log("Count: " + count);
   // TEST LOOP ONLY FOR CONSOLE PRINTS.
@@ -85,7 +85,7 @@ export function runTopGear(itemList, wepCombos, player, contentType, baseHPS, cu
   let differentials = [];
   let primeSet = itemSets[0];
   for (var i = 1; i < Math.min(CONSTRAINTS.topGearDifferentials+1, itemSets.length); i++) {
-    differentials.push(buildDifferential(itemSets[i], primeSet));
+    differentials.push(buildDifferential(itemSets[i], primeSet, newPlayer, contentType));
   }
 
   //itemSets[0].printSet()
@@ -189,14 +189,17 @@ function createSets(itemList, rawWepCombos) {
                           for (var finger2 = 1; finger2 < slotLengths.Finger; finger2++) {
                             softScore.finger2 = splitItems.Finger[finger2].softScore;
 
-                            if (splitItems.Finger[finger].id !== splitItems.Finger[finger2].id) {
+                            if (splitItems.Finger[finger].id !== splitItems.Finger[finger2].id &&
+                                finger < finger2) {
                               for (var trinket = 0; trinket < slotLengths.Trinket - 1; trinket++) {
                                 softScore.trinket = splitItems.Trinket[trinket].softScore;
 
                                 for (var trinket2 = 1; trinket2 < slotLengths.Trinket; trinket2++) {
                                   softScore.trinket2 = splitItems.Trinket[trinket2].softScore;
 
-                                  if (splitItems.Trinket[trinket].id !== splitItems.Trinket[trinket2].id) {
+                                  if (splitItems.Trinket[trinket].id !== splitItems.Trinket[trinket2].id
+                                    && trinket < trinket2) {
+
                                     let includedItems = [
                                       splitItems.Head[head],
                                       splitItems.Neck[neck],
@@ -241,24 +244,29 @@ function createSets(itemList, rawWepCombos) {
   return itemSets;
 }
 
-function buildDifferential(itemSet, primeSet) {
-  let primeList = primeSet.itemList;
-  let diffList = itemSet.itemList;
+function buildDifferential(itemSet, primeSet, player, contentType) {
+  let doubleSlot = {};
+  const primeList = primeSet.itemList;
+  const diffList = itemSet.itemList;
   let differentials = {
     items: [],
     scoreDifference: (Math.round(primeSet.hardScore - itemSet.hardScore) / primeSet.hardScore) * 100,
-    rawDifference: (Math.round(itemSet.hardScore - primeSet.hardScore)*100)/100
+    rawDifference: Math.round((itemSet.hardScore - primeSet.hardScore) / player.getInt(contentType) * player.getHPS(contentType)),
   };
   //console.log("Prime List: " + JSON.stringify(primeSet));
   //console.log("Diff List: " + JSON.stringify(diffList))
 
   for (var x = 0; x < primeList.length; x++) {
-    if (primeList[x].uniqueHash !== diffList[x].uniqueHash) {
-      //console.log("Something happeneing here: " + x);
+    if (primeList[x].uniqueHash !== diffList[x].uniqueHash) {    
       differentials.items.push(diffList[x]);
+      doubleSlot[diffList[x].slot] = (doubleSlot[diffList[x].slot] || 0) + 1;
+
+      if ((x === 13 || x === 11) && doubleSlot[diffList[x].slot] <= 1) {
+        differentials.items.push(diffList[x-1]);
+      }
+      
     }
   }
-  //console.log(JSON.stringify(differentials));
   return differentials;
 }
 
@@ -287,7 +295,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
   let setStats = builtSet.setStats;
   let hardScore = 0;
 
-  console.log(itemSet);
+  //console.log(itemSet);
 
   let enchants = {};
 
@@ -312,8 +320,6 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
   };
   //console.log("Weights Before: " + JSON.stringify(adjusted_weights));
 
-
-  // TODO: Leech, which has a DR larger than secondary stats.
   //console.log("Weights After: " + JSON.stringify(adjusted_weights));
 
   // Apply consumables if ticked.
@@ -363,7 +369,6 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
     effectStats.push(getEffectValue(itemSet.effectList[x], player, contentType, itemSet.effectList[x].level, userSettings));
 
   }
-  console.log(effectStats);
   bonus_stats = mergeBonusStats(effectStats);
   
 
@@ -378,8 +383,6 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
   adjusted_weights.mastery = (adjusted_weights.mastery + adjusted_weights.mastery * (1 - (DR_CONST * setStats.mastery) / STATPERONEPERCENT.MASTERYA[player.spec])) / 2;
   adjusted_weights.leech = (adjusted_weights.leech + adjusted_weights.leech * (1 - (DR_CONSTLEECH * setStats.leech) / STATPERONEPERCENT.LEECH)) / 2;
 
-  console.log(adjusted_weights);
-  //console.log("New Leech: " + adjusted_weights.leech);
   // Calculate a hard score using the rebalanced stat weights.
 
   for (var stat in setStats) {
@@ -416,6 +419,7 @@ export function mergeBonusStats(stats) {
       crit: mergeStat(stats, 'crit'),
       mastery: mergeStat(stats, 'mastery'),
       versatility: mergeStat(stats, 'versatility'),
+      leech: mergeStat(stats, 'leech'),
       hps: (mergeStat(stats, 'hps') + mergeStat(stats, 'HPS')),
       dps: mergeStat(stats, 'dps'),
     }

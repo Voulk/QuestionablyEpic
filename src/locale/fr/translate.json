@@ -506,7 +506,12 @@
     },
 
     "UpgradeFinder": {
-      "Header": "Upgrade Finder Results"
+      "Header": "Upgrade Finder Results",
+      "MythicPlus": "Mythique +",
+      "CurrentRaid": "Château Nathria",
+      "PvP": "PvP",
+      "WorldBosses": "World Bosses",
+      "UpgradeBySlot": "Upgrade by Slot"
     },
     "UpgradeFinderFront": {
       "Header": "Trouver de meilleur équipement",

@@ -4,10 +4,15 @@ import { makeStyles } from "@material-ui/core/styles";
 import { Accordion, Grid, AccordionDetails, AccordionSummary, Typography, Divider, TextField } from "@material-ui/core";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import { useTranslation } from "react-i18next";
+import HelpIcon from '@material-ui/icons/Help';
 
 const useStyles = makeStyles((theme) => ({
   root: {
     width: "100%",
+    borderColor: "limegreen",
+    borderWidth: "1px",
+    borderStyle: "Solid",
+    borderRadius: "5px",
   },
   heading: {
     fontSize: theme.typography.pxToRem(15),
@@ -26,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
     padding: "8px 16px 8px 16px",
   },
   column: {
-    flexBasis: "33.33%",
+    // flexBasis: "33.33%",
   },
   helper: {
     borderLeft: `2px solid ${theme.palette.divider}`,
@@ -50,8 +55,9 @@ export default function HelpText(props) {
     <div className={classes.root}>
       <Accordion defaultExpanded={true} elevation={0}>
         <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1c-content" id="panel1c-header">
-          <div className={classes.column}>
-            <Typography className={classes.heading} style={{ color: "limegreen" }} align="left" variant="h6">
+          <div className={classes.column} style={{display: "inline-flex"}}>
+            <HelpIcon />
+            <Typography className={classes.heading} style={{ color: "limegreen", marginLeft: 4 }} align="left" variant="h6">
               {t("HowToUse")}
             </Typography>
           </div>

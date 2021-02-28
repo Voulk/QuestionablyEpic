@@ -4,6 +4,8 @@ import { MenuItem, InputLabel, Accordion, Grid, AccordionDetails, AccordionSumma
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import { useTranslation } from "react-i18next";
 import { setBounds } from "../Engine/CONSTRAINTS";
+import InfoOutlinedIcon from "@material-ui/icons/InfoOutlined";
+import SettingsIcon from "@material-ui/icons/Settings";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -25,7 +27,8 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
   },
   column: {
-    flexBasis: "33.33%",
+    // flexBasis: "33.33%",
+    display: "inline-flex",
   },
   helper: {
     borderLeft: `2px solid ${theme.palette.divider}`,
@@ -50,17 +53,17 @@ export default function TopGearSettingsAccordion(props) {
   const updateHymnal = (value) => {
     props.editSettings("hymnalAllies", setBounds(value, 0, 4));
     setHymnalValue(setBounds(value, 0, 4));
-  }
+  };
 
   const updateGroupValue = (value) => {
     props.editSettings("includeGroupBenefits", value);
     setgroupValue(value);
-  }
+  };
 
   const options = [
-    {value: true, label: 'Yes'},
-    {value: false, label: 'No'},
-  ]
+    { value: true, label: "Yes" },
+    { value: false, label: "No" },
+  ];
   // Free State
   const [value1, setValue1] = useState(5);
   // Free State
@@ -74,50 +77,58 @@ export default function TopGearSettingsAccordion(props) {
 
   return (
     <div className={classes.root}>
-      <Accordion defaultExpanded={true} disabled={false} elevation={0}>
+      <Accordion defaultExpanded={false} disabled={false} elevation={0}>
         <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1c-content" id="panel1c-header">
           <div className={classes.column}>
+            <SettingsIcon style={{ marginRight: 4 }} />
             <Typography className={classes.heading}>{t("Settings.SettingsTitle")}</Typography>
           </div>
         </AccordionSummary>
         <Divider variant="middle" />
         <AccordionDetails className={classes.details}>
-          <Grid container spacing={1} direction="row" wrap="nowrap">
+          <Grid container spacing={1} direction="row">
             {/* ------------------------- Cabalist's Hymnal Item ------------------------- */}
-            <Grid item xs={2}>
-              <Grid container spacing={1} style={{ paddingLeft: 8 }}>
+            <Grid item xs={12} sm={4} md={4} lg={2} xl={2}>
+              <Grid container spacing={1} style={{ paddingLeft: 8 }} >
                 <Grid item xs={12}>
-                  <Tooltip title={t("Settings.Setting0Tooltip")} placement="top-start">
-                    <Typography color="primary">{t("Settings.Setting0Title")}</Typography>
-                  </Tooltip>
+                  <div style={{ display: "inline-flex" }}>
+                    <Typography color="primary" style={{ marginRight: 4 }}>
+                      {t("Settings.Setting0Title")}
+                    </Typography>
+                    <Tooltip title={t("Settings.Setting0Tooltip")} placement="top-start">
+                      <InfoOutlinedIcon style={{ height: 15, width: 15 }} fontSize="small" />
+                    </Tooltip>
+                  </div>
                 </Grid>
                 <Grid item xs={12}>
                   <TextField
                     label={t("Settings.Setting0TextFieldLabel")}
                     id="AlliesNumber"
                     value={hymnalValue}
-                    style={{ maxWidth: 70 }}
+                    style={{ maxWidth: 115 }}
                     onChange={(e) => updateHymnal(e.target.value)}
                     variant="outlined"
                     size="small"
                     type="number"
                   />
                 </Grid>
-
               </Grid>
             </Grid>
-            <Divider orientation="vertical" flexItem />
-            <Grid item xs={4}>
+            <Grid item>
+            <Divider orientation="vertical" flexItem style={{height: "100%"}} />
+            </Grid>
+            {/* ------------------------- Group Buff (Treat Buff as Personal Throughput) ------------------------- */}
+            <Grid item xs={12} sm={4} md={4} lg={2} xl={2}>
               <Grid container spacing={1} style={{ paddingLeft: 8 }}>
                 <Grid item xs={12}>
-                  <Tooltip
-                    title={t("Settings.Setting1Tooltip")}
-                    placement="top-start"
-                  >
-                    <Typography color="primary">
+                  <div style={{ display: "inline-flex" }}>
+                    <Typography color="primary" style={{ marginRight: 4 }}>
                       {t("Settings.Setting1Title")}
                     </Typography>
-                  </Tooltip>
+                    <Tooltip title={t("Settings.Setting1Tooltip")} placement="top-start">
+                      <InfoOutlinedIcon style={{ height: 15, width: 15 }} fontSize="small" />
+                    </Tooltip>
+                  </div>
                 </Grid>
                 <Grid item xs={12}>
                   <FormControl variant="outlined" size="small">
@@ -129,7 +140,8 @@ export default function TopGearSettingsAccordion(props) {
                   </FormControl>
                 </Grid>
               </Grid>
-            </Grid> {/*
+            </Grid>{" "}
+            {/*
             <Divider orientation="vertical" flexItem />
             <Grid item xs={2}>
               <Grid container spacing={1} style={{ paddingLeft: 8 }}>

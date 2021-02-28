@@ -13,7 +13,7 @@ import { Paper, Grid, Button, Typography, Tooltip } from "@material-ui/core";
 import MessageOfTheDay from "./MessageOftheDay";
 import ArticleCard from "../ArticleCards/ArcticleCard";
 import Changelog from "../ChangeLog/Changelog";
-
+import InfoOutlinedIcon from "@material-ui/icons/InfoOutlined";
 
 // Warning: If a button name has to change, do it in the translation files. Consider the titles here to be ID's rather than strings.
 // [route, show button?, tooltip]
@@ -66,11 +66,11 @@ export default function QEMainMenu(props) {
   //console.log(articles);
   let articles = [];
   if (props.allChars.allChar.length > 0) {
-    articles = props.articleList.filter(article => (article.specs.includes(props.player.getSpec()) || article.specs === "All"));
+    articles = props.articleList.filter((article) => article.specs.includes(props.player.getSpec()) || article.specs === "All");
     articles.sort((a, b) => (a.date < b.date ? 1 : -1));
     articles = articles.slice(0, 3);
   }
-  
+
   /*
   const links = [
     {
@@ -166,11 +166,12 @@ export default function QEMainMenu(props) {
         {/* <p className="headers"> */}
         <Typography variant="h5" align="center" style={{ padding: "25px 10px 5px 10px" }} color="primary">
           {t("MainMenu.CharHeader")}
+          <Tooltip title={t("MainMenu.CharHelpText")} placement="top-start">
+            <InfoOutlinedIcon style={{ color: "white", marginLeft: 4 }} fontSize="small" />
+          </Tooltip>
         </Typography>
+
         {/* </p> */}
-        <Typography style={{ color: "white", marginBottom: "10px", fontStyle: "italic" }} variant="body2" align="center">
-          {t("MainMenu.CharHelpText")}
-        </Typography>
 
         <Grid container spacing={2}>
           {props.allChars.getAllChar().length > 0
@@ -195,22 +196,25 @@ export default function QEMainMenu(props) {
           {props.allChars.getAllChar().length < 9 ? <AddNewChar allChars={props.allChars} charUpdate={props.charUpdate} charAddedSnack={props.charAddedSnack} /> : ""}
         </Grid>
 
-        {articles.length > 0 ? 
-        <Grid container spacing={1}>
-          <Grid item xs={12}>
-            <Typography variant="h5" align="center" style={{ padding: "25px 10px 5px 10px" }} color="primary">
-              {/* // TODO Translations and reword */}
-              Recent Spec Articles
-            </Typography>
-            {/* <Typography style={{ color: "white", fontStyle: "italic" }} variant="body2" align="center">
+        {articles.length > 0 ? (
+          <Grid container spacing={1}>
+            <Grid item xs={12}>
+              <Typography variant="h5" align="center" style={{ padding: "25px 10px 5px 10px" }} color="primary">
+                {/* // TODO Translations and reword */}
+                Recent Spec Articles
+              </Typography>
+              {/* <Typography style={{ color: "white", fontStyle: "italic" }} variant="body2" align="center">
               Some Links Relevant to the Class
             </Typography> */}
+            </Grid>
+            {/* add a filter here for the players class */}
+            {articles.map((key) => (
+              <ArticleCard url={key.url} title={key.title} image={key.image} date={key.date} extrainfo={key.extrainfo} />
+            ))}
           </Grid>
-          {/* add a filter here for the players class */}
-          {articles.map((key) => (
-            <ArticleCard url={key.url} title={key.title} image={key.image} date={key.date} extrainfo={key.extrainfo} />
-          ))}
-        </Grid> : ""}
+        ) : (
+          ""
+        )}
         <Changelog />
       </div>
     </div>

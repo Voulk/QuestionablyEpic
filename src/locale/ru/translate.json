@@ -506,7 +506,12 @@
     },
 
     "UpgradeFinder": {
-      "Header": "Upgrade Finder Results"
+      "Header": "Upgrade Finder Results",
+      "MythicPlus": "Эпохальный+",
+      "CurrentRaid": "Замок Нафрия",
+      "PvP": "PvP",
+      "WorldBosses": "World Bosses",
+      "UpgradeBySlot": "Upgrade by Slot"
     },
     "UpgradeFinderFront": {
       "Header": "Upgrade Finder",
