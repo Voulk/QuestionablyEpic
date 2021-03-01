@@ -150,6 +150,7 @@
         "HolyPaladinComment": "Holy Paladin Class Cooldowns",
         "31821": "Aura Mastery",
         "31884": "Avenging Wrath",
+        "316958": "Ashen Hallow",
         "RestorationDruidComment": "Restoration Druid Class Cooldowns",
         "740": "Tranquility",
         "33891": "Incarnation: Tree of Life",
@@ -165,6 +166,7 @@
         "RestorationShamanComment": "Restoration Shaman Class Cooldowns",
         "108280": "Healing Tide Totem",
         "98008": "Spirit Link Totem",
+        "207399": "Ancestral Protection Totem",
         "MistweaverMonkComment": "Mistweaver Monk Class Cooldowns",
         "115310": "Revival",
         "HavocDemonHunterComment": "Havoc Demon Hunter Cooldowns",
@@ -177,7 +179,7 @@
         "51052": "Anti-Magic Zone"
       },
       "BossAbilities": {
-        "undefined": "No Ability Selected",
+        "undefined": "No Ability",
         "ShriekingComment": "Shriekwing Abilities",
         "345397": "Wave of Blood",
         "343384": "Bloodlight",
@@ -228,7 +230,12 @@
         "DenathriusComment": "Denathrius Abilities",
         "330627": "Hand of Destruction",
         "336162": "Crescendo",
-        "326707": "Cleansing Pain"
+        "326707": "Cleansing Pain",
+        "329785": "Crimson Chorus",
+        "326858": "Blood Price",
+        "332626": "Shattering Pain",
+        "326833": "Painful Memories",
+        "338687": "Nathrian Hymn"
       }
     },
     "HallOfFame": {

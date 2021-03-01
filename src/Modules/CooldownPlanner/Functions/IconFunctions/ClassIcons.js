@@ -107,5 +107,8 @@ export default function classIcons(props, style) {
     alt = "Mage";
   }
 
+  if (props === "" || props === undefined) {
+    return null;
+  }
   return <img style={{ ...style }} src={src} alt={alt} />;
 }

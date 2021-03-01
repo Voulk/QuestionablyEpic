@@ -150,7 +150,7 @@ export default function HealerInfoCards(props) {
                             fontSize: 14,
                           }}
                         >
-                          {t("CooldownPlanner.HealerCards.Crit")}: {roundTo(stats.crit / STATPERONEPERCENT.CRIT + 5, 2)}
+                          {t("CooldownPlanner.HealerCards.Crit")}: {roundTo(stats.crit / STATPERONEPERCENT.Retail.CRIT + 5, 2)}
                           {"%"}
                         </Typography>
 
@@ -162,7 +162,7 @@ export default function HealerInfoCards(props) {
                             fontSize: 14,
                           }}
                         >
-                          {t("CooldownPlanner.HealerCards.Haste")}: {roundTo(stats.haste / STATPERONEPERCENT.HASTE, 2)}
+                          {t("CooldownPlanner.HealerCards.Haste")}: {roundTo(stats.haste / STATPERONEPERCENT.Retail.HASTE, 2)}
                           {"%"}
                         </Typography>
 
@@ -186,7 +186,7 @@ export default function HealerInfoCards(props) {
                             fontSize: 14,
                           }}
                         >
-                          {t("CooldownPlanner.HealerCards.Versatility")}: {roundTo(stats.versatility / STATPERONEPERCENT.VERSATILITY, 2)}
+                          {t("CooldownPlanner.HealerCards.Versatility")}: {roundTo(stats.versatility / STATPERONEPERCENT.Retail.VERSATILITY, 2)}
                           {"%"}
                         </Typography>
                       </div>

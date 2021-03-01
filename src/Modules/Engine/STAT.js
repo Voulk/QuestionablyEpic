@@ -39,27 +39,44 @@ export const STATDIMINISHINGRETURNS = {
 }
 
 export const STATPERONEPERCENT = {
-  LEECH: 21,
-  HASTE: 33,
-  CRIT: 35,
-  VERSATILITY: 40,
-  VERSATILITY_DR: 80,
-  MASTERYA: {
-    "Restoration Druid": 70,
-    "Mistweaver Monk": 8.33,
-    "Holy Paladin": 23.33,
-    "Holy Priest": 28,
-    "Discipline Priest": 25.93,
-    "Restoration Shaman": 11.66,
+  Retail: {
+    LEECH: 21,
+    HASTE: 33,
+    CRIT: 35,
+    VERSATILITY: 40,
+    VERSATILITY_DR: 80,
+    MASTERYA: {
+      "Restoration Druid": 70,
+      "Mistweaver Monk": 8.33,
+      "Holy Paladin": 23.33,
+      "Holy Priest": 28,
+      "Discipline Priest": 25.93,
+      "Restoration Shaman": 11.66,
+    },
+    MASTERY: {
+      "Druid-Restoration": 70,
+      "Monk-Mistweaver": 8.33,
+      "Paladin-Holy": 23.33,
+      "Priest-Holy": 28,
+      "Priest-Discipline": 25.93,
+      "Shaman-Restoration": 11.66,
+    },
   },
-  MASTERY: {
-    "Druid-Restoration": 70,
-    "Monk-Mistweaver": 8.33,
-    "Paladin-Holy": 23.33,
-    "Priest-Holy": 28,
-    "Priest-Discipline": 25.93,
-    "Shaman-Restoration": 11.66,
-  },
+  BurningCrusade: {
+    HASTE: 15.8,
+    CRIT: 22.1, // Keep in mind Spell and melee crit are separated, but both cost 22.1 per 1% gain.
+    MELEEHIT: 15.8, // Not used for healing specifically, but we'll store it just in case.
+    SPELLHIT: 12.6, // Not used for healing specifically, but we'll store it just in case.
+    INTCRIT: {
+      "Restoration Druid": 80,
+      "Restoration Shaman": 80,
+      "Holy Paladin": 80.5,
+      "Holy Priest": 80,
+    },
+    MANAINT: 15, // You get 15 mana per point of intellect.
+  }
+
+
 };
 
 export const translatedStat = {

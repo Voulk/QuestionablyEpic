@@ -308,11 +308,11 @@ export default function CharCards(props) {
     let newPlayer = props.char;
     let weights = {
       intellect: 1,
-      haste: haste > CONSTRAINTS.maxSecondaryWeight ? newPlayer.statWeights[contentType].haste : haste,
-      crit: critical > CONSTRAINTS.maxSecondaryWeight ? newPlayer.statWeights[contentType].crit : critical,
-      mastery: mastery > CONSTRAINTS.maxSecondaryWeight ? newPlayer.statWeights[contentType].mastery : mastery,
-      versatility: versatility > CONSTRAINTS.maxSecondaryWeight ? newPlayer.statWeights[contentType].versatility : versatility,
-      leech: leech > CONSTRAINTS.maxTertiaryWeight ? newPlayer.statWeights[contentType].leech : leech,
+      haste: haste > CONSTRAINTS.Retail.maxSecondaryWeight ? newPlayer.statWeights[contentType].haste : haste,
+      crit: critical > CONSTRAINTS.Retail.maxSecondaryWeight ? newPlayer.statWeights[contentType].crit : critical,
+      mastery: mastery > CONSTRAINTS.Retail.maxSecondaryWeight ? newPlayer.statWeights[contentType].mastery : mastery,
+      versatility: versatility > CONSTRAINTS.Retail.maxSecondaryWeight ? newPlayer.statWeights[contentType].versatility : versatility,
+      leech: leech > CONSTRAINTS.Retail.maxTertiaryWeight ? newPlayer.statWeights[contentType].leech : leech,
     };
 
     newPlayer.editChar(contentType, charName, server, region, selectedRace, weights);
@@ -401,14 +401,13 @@ export default function CharCards(props) {
       /* -------------------------------------------------------------------------- */}
       <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title" maxWidth="md">
         <Tabs value={tabvalue} onChange={handleTabChange} aria-label="simple tabs example" variant="fullWidth" TabIndicatorProps={{ style: { backgroundColor: "#F2BF59" } }}>
-          {/* Raid */}
+          {/* Character Information */}
           <CharTab className={classes.tabRoot} label="Character Information" {...a11yProps(0)} />
-          {/* Mythic Plus */}
+          {/* Saved Logs (Coming Soon) */}
           <CharTab className={classes.tabRoot} disabled label="Saved Logs (Coming Soon)" {...a11yProps(1)} />
         </Tabs>
         {/* <div className={classes.tabRoot}> */}
 
-        {/* Raid */}
         <TabPanel value={tabvalue} index={0}>
           <div className={classes.panel}>
             <Grid container>
