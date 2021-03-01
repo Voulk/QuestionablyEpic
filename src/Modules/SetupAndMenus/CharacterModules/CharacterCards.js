@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { useTranslation } from "react-i18next";
 //prettier-ignore
 import {Accordion, AccordionSummary, AccordionDetails, AppBar, Paper, Box, Button, Card, CardContent, CardActionArea, Divider, IconButton, Typography, Avatar, Grid, TextField, Dialog, DialogContent, DialogActions, Tabs, Tab, Tooltip, Select, MenuItem, FormControl, InputLabel } from "@material-ui/core";
-import { createMuiTheme, makeStyles, ThemeProvider } from "@material-ui/core/styles";
+import { createMuiTheme, makeStyles, ThemeProvider, withStyles } from "@material-ui/core/styles";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import SettingsIcon from "@material-ui/icons/Settings";
 import DeleteIcon from "@material-ui/icons/Delete";
@@ -92,6 +92,48 @@ const deleteTheme = createMuiTheme({
   },
 });
 
+TabPanel.propTypes = {
+  children: PropTypes.node,
+  index: PropTypes.any.isRequired,
+  value: PropTypes.any.isRequired,
+};
+
+function TabPanel(props) {
+  const { children, value, index, ...other } = props;
+
+  return (
+    <div role="tabpanel" hidden={value !== index} id={`simple-tabpanel-${index}`} aria-labelledby={`simple-tab-${index}`} {...other}>
+      {value === index && <Box p={0}>{children}</Box>}
+    </div>
+  );
+}
+
+function a11yProps(index) {
+  return {
+    id: `simple-tab-${index}`,
+    "aria-controls": `simple-tabpanel-${index}`,
+  };
+}
+
+const CharTab = withStyles((theme) => ({
+  root: {
+    backgroundColor: "#222222",
+
+    "&:hover": {
+      // color: '#40a9ff',
+      opacity: 1,
+    },
+    "&$selected": {
+      color: "#F2BF59",
+      backgroundColor: theme.palette.background.paper,
+      fontWeight: theme.typography.fontWeightMedium,
+    },
+    // '&:focus': {
+    //   color: '#40a9ff',
+    // },
+  },
+  selected: {},
+}))((props) => <Tab {...props} />);
 const menuStyle = {
   style: { marginTop: 5 },
   MenuListProps: {
@@ -119,6 +161,8 @@ export default function CharCards(props) {
   const player = props.char;
   const { t } = useTranslation();
 
+  const [tabvalue, setTabValue] = React.useState(0);
+
   const [value, setValue] = React.useState(0);
   const [region, setRegion] = React.useState(player.region);
   const [open, setOpen] = React.useState(false);
@@ -133,6 +177,10 @@ export default function CharCards(props) {
   const [leech, setLeech] = React.useState(player.getStatWeight(contentType, STAT.LEECH));
   const [server, setServer] = React.useState(player.realm);
   const [backgroundImage, setBackgroundImage] = useState("");
+
+  const handleTabChange = (event, newValue) => {
+    setTabValue(newValue);
+  };
 
   useEffect(() => {
     async function setImg() {
@@ -352,349 +400,440 @@ export default function CharCards(props) {
       /*                                Dialog Popup                                */
       /* -------------------------------------------------------------------------- */}
       <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title" maxWidth="md">
+        <Tabs value={tabvalue} onChange={handleTabChange} aria-label="simple tabs example" variant="fullWidth" TabIndicatorProps={{ style: { backgroundColor: "#F2BF59" } }}>
+          {/* Character Information */}
+          <CharTab className={classes.tabRoot} label="Character Information" {...a11yProps(0)} />
+          {/* Saved Logs (Coming Soon) */}
+          <CharTab className={classes.tabRoot} disabled label="Saved Logs (Coming Soon)" {...a11yProps(1)} />
+        </Tabs>
         {/* <div className={classes.tabRoot}> */}
-        <DialogContent>
-          {/* ------------------------------ Dialog Header ----------------------------- */}
-          <Grid container spacing={2} direction="row">
-            <Grid item xs={12}>
-              <Typography variant="h4" align="center" noWrap color="primary">
-                Character Information
-              </Typography>
-            </Grid>
-            {/* --------------- Character Image (Pulled from Blizzard API) --------------- */}
-            <Grid item xs={4}>
-              <div
-                style={{
-                  backgroundImage: `url("${backgroundImage}")`,
-                  backgroundRepeat: "no-repeat",
-                  backgroundPosition: "center 60%",
-                  backgroundSize: "auto 130%",
-                  textAlign: "center",
-                  position: "relative",
-                  border: "1px solid rgb(118, 118, 118)",
-                  flex: 1,
-                  height: "100%",
-                  borderRadius: 4,
-                  // width: 100,
-                }}
-              />
-            </Grid>
 
-            {/* -------------- Character Information Grid Container (Name, Server etc) -------------  */}
-            <Grid item xs={8} container spacing={1}>
-              <Grid item xs={12} container spacing={1}>
-                {/* ----------------------------- Character Name ----------------------------- */}
-                <Grid item xs={9}>
-                  <TextField fullWidth id="standard-basic" label="Character Name" value={charName} onChange={handleChangeName} variant="outlined" size="small" />
-                </Grid>
-                {/* ------------------------------ Region Select ----------------------------- */}
-                <Grid item xs={3}>
-                  <FormControl variant="outlined" size="small" fullWidth label={t("Region")} disabled={true}>
-                    <InputLabel id="ClassSelector">{t("Region")}</InputLabel>
-                    <Select value={region} onChange={handleChangeRegion} label={t("Region")} MenuProps={menuStyle}>
-                      {Object.values(regions).map((key, i) => (
-                        <MenuItem key={i} value={key}>
-                          {key}
-                        </MenuItem>
-                      ))}
-                    </Select>
-                  </FormControl>
-                </Grid>
-                <Grid item xs={12}>
-                  <Autocomplete
-                    size="small"
-                    classes={{
-                      option: classes.option,
-                    }}
-                    disabled={region === "" ? true : false}
-                    id="server-select"
-                    value={server}
-                    onChange={(e, newValue) => {
-                      handleChangeServer(newValue);
-                    }}
-                    options={serverDB[region]}
-                    inputValue={server}
-                    getOptionLabel={(option) => option}
-                    onInputChange={(e, newInputValue) => {
-                      handleChangeServer(newInputValue);
-                    }}
-                    renderInput={(params) => <TextField {...params} label="Server Name" variant="outlined" styLe={{ width: 100 }} />}
-                    ListboxProps={{ style: { border: "1px solid rgba(255, 255, 255, 0.23)", borderRadius: 4,paddingTop: 0, paddingBottom: 0 } }}
-                  />
-                </Grid>
-                {/* ------------------------------ Class Select ------------------------------ */}
-                <Grid item xs={12}>
-                  <FormControl variant="outlined" fullWidth size="small" label={t("Class")} disabled={true}>
-                    <InputLabel id="ClassSelector">{t("Class")}</InputLabel>
-                    <Select label={t("Class")} value={healClass} onChange={handleChangeSpec} MenuProps={menuStyle}>
-                      {Object.getOwnPropertyNames(classRaceList)
-                        .map((key, i) => (
-                          <MenuItem key={i} value={key}>
-                            {classIcons(key, { height: 20, width: 20, margin: "0px 5px 0px 5px", verticalAlign: "middle", borderRadius: 4,border: "1px solid rgba(255, 255, 255, 0.12)" })}
-                            {key}
-                          </MenuItem>
-                        ))
-                        .map((menuItems) => [menuItems, <Divider />])}
-                    </Select>
-                  </FormControl>
-                </Grid>
-                {/* ------------------------------- Race Select ------------------------------ */}
-                <Grid item xs={12}>
-                  <FormControl disabled={healClass === "" ? true : false} fullWidth variant="outlined" size="small" label={t("Race")}>
-                    <InputLabel id="RaceSelector">{t("Race")}</InputLabel>
-                    <Select value={selectedRace} onChange={handleChangeRace} label={t("Race")} MenuProps={menuStyle}>
-                      {healClass === ""
-                        ? ""
-                        : classRaceList[healClass.toString()].races
-                            .map((key, i) => (
+        <TabPanel value={tabvalue} index={0}>
+          <div className={classes.panel}>
+            <Grid container>
+              <DialogContent>
+                {/* ------------------------------ Dialog Header ----------------------------- */}
+                <Grid container spacing={2} direction="row">
+                  {/* --------------- Character Image (Pulled from Blizzard API) --------------- */}
+                  <Grid item xs={4}>
+                    <div
+                      style={{
+                        backgroundImage: `url("${backgroundImage}")`,
+                        backgroundRepeat: "no-repeat",
+                        backgroundPosition: "center 60%",
+                        backgroundSize: "auto 130%",
+                        textAlign: "center",
+                        position: "relative",
+                        border: "1px solid rgb(118, 118, 118)",
+                        flex: 1,
+                        height: "100%",
+                        borderRadius: 4,
+                        // width: 100,
+                      }}
+                    />
+                  </Grid>
+
+                  {/* -------------- Character Information Grid Container (Name, Server etc) -------------  */}
+                  <Grid item xs={8} container spacing={1}>
+                    <Grid item xs={12} container spacing={1}>
+                      {/* ----------------------------- Character Name ----------------------------- */}
+                      <Grid item xs={9}>
+                        <TextField fullWidth id="standard-basic" label="Character Name" value={charName} onChange={handleChangeName} variant="outlined" size="small" />
+                      </Grid>
+                      {/* ------------------------------ Region Select ----------------------------- */}
+                      <Grid item xs={3}>
+                        <FormControl variant="outlined" size="small" fullWidth label={t("Region")} disabled={true}>
+                          <InputLabel id="ClassSelector">{t("Region")}</InputLabel>
+                          <Select value={region} onChange={handleChangeRegion} label={t("Region")} MenuProps={menuStyle}>
+                            {Object.values(regions).map((key, i) => (
                               <MenuItem key={i} value={key}>
-                                <div style={{ display: "inline-flex" }}>
-                                  {raceIcons(key)}
-                                  {t(key)}
-                                </div>
+                                {key}
                               </MenuItem>
-                            ))
-                            .map((menuItems) => [menuItems, <Divider />])}
-                    </Select>
-                  </FormControl>
-                </Grid>
-              </Grid>
+                            ))}
+                          </Select>
+                        </FormControl>
+                      </Grid>
+                      <Grid item xs={12}>
+                        <Autocomplete
+                          size="small"
+                          classes={{
+                            option: classes.option,
+                          }}
+                          disabled={region === "" ? true : false}
+                          id="server-select"
+                          value={server}
+                          onChange={(e, newValue) => {
+                            handleChangeServer(newValue);
+                          }}
+                          options={serverDB[region]}
+                          inputValue={server}
+                          getOptionLabel={(option) => option}
+                          onInputChange={(e, newInputValue) => {
+                            handleChangeServer(newInputValue);
+                          }}
+                          renderInput={(params) => <TextField {...params} label="Server Name" variant="outlined" styLe={{ width: 100 }} />}
+                          ListboxProps={{ style: { border: "1px solid rgba(255, 255, 255, 0.23)", borderRadius: 4, paddingTop: 0, paddingBottom: 0 } }}
+                        />
+                      </Grid>
+                      {/* ------------------------------ Class Select ------------------------------ */}
+                      <Grid item xs={12}>
+                        <FormControl variant="outlined" fullWidth size="small" label={t("Class")} disabled={true}>
+                          <InputLabel id="ClassSelector">{t("Class")}</InputLabel>
+                          <Select label={t("Class")} value={healClass} onChange={handleChangeSpec} MenuProps={menuStyle}>
+                            {Object.getOwnPropertyNames(classRaceList)
+                              .map((key, i) => (
+                                <MenuItem key={i} value={key}>
+                                  {classIcons(key, { height: 20, width: 20, padding: "0px 0px 0px 5px", verticalAlign: "middle", borderRadius: 4 })}
+                                  {key}
+                                </MenuItem>
+                              ))
+                              .map((menuItems) => [menuItems, <Divider />])}
+                          </Select>
+                        </FormControl>
+                      </Grid>
+                      {/* ------------------------------- Race Select ------------------------------ */}
+                      <Grid item xs={12}>
+                        <FormControl disabled={healClass === "" ? true : false} fullWidth variant="outlined" size="small" label={t("Race")}>
+                          <InputLabel id="RaceSelector">{t("Race")}</InputLabel>
+                          <Select value={selectedRace} onChange={handleChangeRace} label={t("Race")} MenuProps={menuStyle}>
+                            {healClass === ""
+                              ? ""
+                              : classRaceList[healClass.toString()].races
+                                  .map((key, i) => (
+                                    <MenuItem key={i} value={key}>
+                                      <div style={{ display: "inline-flex" }}>
+                                        {raceIcons(key)}
+                                        {t(key)}
+                                      </div>
+                                    </MenuItem>
+                                  ))
+                                  .map((menuItems) => [menuItems, <Divider />])}
+                          </Select>
+                        </FormControl>
+                      </Grid>
+                    </Grid>
 
-              {/* -------------------------------------------------------------------------- */
-              /*                            Character Stats Panel                           */
-              /* -------------------------------------------------------------------------- */}
-              <Grid item xs={12} container direction="row" justify="center" alignItems="center" spacing={1}>
-                <Grid item xs={12} container direction="row" justify="center" alignItems="center">
-                  <Grid item xs={12}>
-                    <Typography variant="h6" align="center" noWrap color="primary">
-                      Stat Weights
-                    </Typography>
+                    {/* -------------------------------------------------------------------------- */
+                    /*                            Character Stats Panel                           */
+                    /* -------------------------------------------------------------------------- */}
+                    <Grid item xs={12} container direction="row" justify="center" alignItems="center" spacing={1}>
+                      <Grid item xs={12} container direction="row" justify="center" alignItems="center">
+                        <Grid item xs={12}>
+                          <Typography variant="h6" align="center" noWrap color="primary">
+                            Stat Weights
+                          </Typography>
+                        </Grid>
+                        {/* ------------------------ Stat Message/Instructions -----------------------  */}
+
+                        <Grid item xs={12}>
+                          <Typography style={{ color: "limegreen" }} align="center" variant="subtitle2">
+                            {t("CharacterCreator.StatMessage")}
+                          </Typography>
+                        </Grid>
+                      </Grid>
+
+                      {/* -------------------------------- Intellect -------------------------------  */}
+                      <Grid item xs={4}>
+                        <TextField
+                          id="IntellectInput"
+                          type="number"
+                          label={t("Intellect")}
+                          style={{ textAlignLast: "center" }}
+                          inputProps={{
+                            step: 0.01,
+                            style: { fontSize: "1.2rem", textAlignLast: "center" },
+                          }}
+                          InputProps={{
+                            style: { fontSize: "1.2rem", textAlignLast: "center" },
+                          }}
+                          value={intellect}
+                          onChange={handleIntellect}
+                          variant="outlined"
+                          size="medium"
+                          disabled={true}
+                        />
+                      </Grid>
+
+                      {/* ----------------------------- Critical Strike ----------------------------  */}
+                      <Grid item xs={4}>
+                        <TextField
+                          id="CriticalInput"
+                          label={t("Crit")}
+                          style={{ textAlignLast: "center" }}
+                          type="text"
+                          inputProps={{
+                            step: 0.01,
+                            style: { fontSize: "1.2rem", textAlignLast: "center" },
+                          }}
+                          InputProps={{
+                            style: { fontSize: "1.2rem", textAlignLast: "center" },
+                          }}
+                          type="number"
+                          value={critical}
+                          onChange={handleCrit}
+                          variant="outlined"
+                          size="medium"
+                        />
+                      </Grid>
+
+                      {/* ---------------------------------- Haste ---------------------------------  */}
+                      <Grid item xs={4}>
+                        <TextField
+                          id="HasteInput"
+                          label={t("Haste")}
+                          style={{ textAlignLast: "center" }}
+                          inputProps={{
+                            step: 0.01,
+                            style: { fontSize: "1.2rem", textAlignLast: "center" },
+                          }}
+                          InputProps={{
+                            style: { fontSize: "1.2rem", textAlignLast: "center" },
+                          }}
+                          type="number"
+                          value={haste}
+                          onChange={handleHaste}
+                          variant="outlined"
+                          size="medium"
+                        />
+                      </Grid>
+
+                      {/* --------------------------------- Mastery --------------------------------  */}
+                      <Grid item xs={4}>
+                        <TextField
+                          id="MasteryInput"
+                          label={t("Mastery")}
+                          style={{ textAlignLast: "center" }}
+                          inputProps={{
+                            step: 0.01,
+                            style: { fontSize: "1.2rem", textAlignLast: "center" },
+                          }}
+                          InputProps={{
+                            style: { fontSize: "1.2rem", textAlignLast: "center" },
+                          }}
+                          type="number"
+                          value={mastery}
+                          onChange={handleMastery}
+                          variant="outlined"
+                          size="medium"
+                        />
+                      </Grid>
+
+                      {/* ------------------------------- Versatility ------------------------------  */}
+                      <Grid item xs={4}>
+                        <TextField
+                          id="VersatilityInput"
+                          label={t("Versatility")}
+                          style={{ textAlignLast: "center" }}
+                          inputProps={{
+                            step: 0.01,
+                            style: { fontSize: "1.2rem", textAlignLast: "center" },
+                          }}
+                          InputProps={{
+                            style: { fontSize: "1.2rem", textAlignLast: "center" },
+                          }}
+                          type="number"
+                          value={versatility}
+                          onChange={handleVers}
+                          variant="outlined"
+                          size="medium"
+                        />
+                      </Grid>
+
+                      {/* ---------------------------------- Leech ---------------------------------  */}
+                      <Grid item xs={4}>
+                        <TextField
+                          id="LeechInput"
+                          label={t("Leech")}
+                          style={{ textAlignLast: "center" }}
+                          inputProps={{
+                            step: 0.01,
+                            style: { fontSize: "1.2rem", textAlignLast: "center" },
+                          }}
+                          InputProps={{
+                            style: { fontSize: "1.2rem", textAlignLast: "center" },
+                          }}
+                          type="number"
+                          value={leech}
+                          onChange={handleLeech}
+                          variant="outlined"
+                          size="medium"
+                        />
+                      </Grid>
+                    </Grid>
                   </Grid>
-                  {/* ------------------------ Stat Message/Instructions -----------------------  */}
+                </Grid>
+                {/* -------------------------------------------------------------------------- */
+                /*                          Imported WarcraftLog Data                         */
+                /* -------------------------------------------------------------------------- */}
 
-                  <Grid item xs={12}>
-                    <Typography style={{ color: "limegreen" }} align="center" variant="subtitle2">
-                      {t("CharacterCreator.StatMessage")}
-                    </Typography>
+                <Grid container spacing={1}>
+                  {/* map here */}
+                  <Grid item xs={12} container>
+                    {/* ------------------------------- Logs Header ------------------------------ */}
+                    <Grid item xs={12}>
+                      <Typography variant="h6" align="center" noWrap color="primary" style={{ marginTop: "12px" }}>
+                        {/* TODO: Translate */}
+                        Current Log
+                      </Typography>
+                    </Grid>
                   </Grid>
-                </Grid>
-
-                {/* -------------------------------- Intellect -------------------------------  */}
-                <Grid item xs={4}>
-                  <TextField
-                    id="IntellectInput"
-                    type="number"
-                    label={t("Intellect")}
-                    style={{ textAlignLast: "center" }}
-                    inputProps={{
-                      step: 0.01,
-                      style: { fontSize: "1.2rem", textAlignLast: "center" },
-                    }}
-                    InputProps={{
-                      style: { fontSize: "1.2rem", textAlignLast: "center" },
-                    }}
-                    value={intellect}
-                    onChange={handleIntellect}
-                    variant="outlined"
-                    size="medium"
-                    disabled={true}
-                  />
-                </Grid>
-
-                {/* ----------------------------- Critical Strike ----------------------------  */}
-                <Grid item xs={4}>
-                  <TextField
-                    id="CriticalInput"
-                    label={t("Crit")}
-                    style={{ textAlignLast: "center" }}
-                    type="text"
-                    inputProps={{
-                      step: 0.01,
-                      style: { fontSize: "1.2rem", textAlignLast: "center" },
-                    }}
-                    InputProps={{
-                      style: { fontSize: "1.2rem", textAlignLast: "center" },
-                    }}
-                    type="number"
-                    value={critical}
-                    onChange={handleCrit}
-                    variant="outlined"
-                    size="medium"
-                  />
-                </Grid>
-
-                {/* ---------------------------------- Haste ---------------------------------  */}
-                <Grid item xs={4}>
-                  <TextField
-                    id="HasteInput"
-                    label={t("Haste")}
-                    style={{ textAlignLast: "center" }}
-                    inputProps={{
-                      step: 0.01,
-                      style: { fontSize: "1.2rem", textAlignLast: "center" },
-                    }}
-                    InputProps={{
-                      style: { fontSize: "1.2rem", textAlignLast: "center" },
-                    }}
-                    type="number"
-                    value={haste}
-                    onChange={handleHaste}
-                    variant="outlined"
-                    size="medium"
-                  />
-                </Grid>
-
-                {/* --------------------------------- Mastery --------------------------------  */}
-                <Grid item xs={4}>
-                  <TextField
-                    id="MasteryInput"
-                    label={t("Mastery")}
-                    style={{ textAlignLast: "center" }}
-                    inputProps={{
-                      step: 0.01,
-                      style: { fontSize: "1.2rem", textAlignLast: "center" },
-                    }}
-                    InputProps={{
-                      style: { fontSize: "1.2rem", textAlignLast: "center" },
-                    }}
-                    type="number"
-                    value={mastery}
-                    onChange={handleMastery}
-                    variant="outlined"
-                    size="medium"
-                  />
-                </Grid>
-
-                {/* ------------------------------- Versatility ------------------------------  */}
-                <Grid item xs={4}>
-                  <TextField
-                    id="VersatilityInput"
-                    label={t("Versatility")}
-                    style={{ textAlignLast: "center" }}
-                    inputProps={{
-                      step: 0.01,
-                      style: { fontSize: "1.2rem", textAlignLast: "center" },
-                    }}
-                    InputProps={{
-                      style: { fontSize: "1.2rem", textAlignLast: "center" },
-                    }}
-                    type="number"
-                    value={versatility}
-                    onChange={handleVers}
-                    variant="outlined"
-                    size="medium"
-                  />
-                </Grid>
-
-                {/* ---------------------------------- Leech ---------------------------------  */}
-                <Grid item xs={4}>
-                  <TextField
-                    id="LeechInput"
-                    label={t("Leech")}
-                    style={{ textAlignLast: "center" }}
-                    inputProps={{
-                      step: 0.01,
-                      style: { fontSize: "1.2rem", textAlignLast: "center" },
-                    }}
-                    InputProps={{
-                      style: { fontSize: "1.2rem", textAlignLast: "center" },
-                    }}
-                    type="number"
-                    value={leech}
-                    onChange={handleLeech}
-                    variant="outlined"
-                    size="medium"
-                  />
-                </Grid>
-              </Grid>
-            </Grid>
-          </Grid>
-          {/* -------------------------------------------------------------------------- */
-          /*                          Imported WarcraftLog Data                         */
-          /* -------------------------------------------------------------------------- */}
-
-          <Grid container spacing={1}>
-            {/* map here */}
-            <Grid item xs={12} container>
-              {/* ------------------------------- Logs Header ------------------------------ */}
-              <Grid item xs={12}>
-                <Typography variant="h6" align="center" noWrap color="primary" style={{ marginTop: "12px" }}>
-                  Saved Logs
-                </Typography>
-              </Grid>
-
-              <Grid item xs={12}>
-                <Typography align="center" style={{ fontStyle: "italic" }}>
-                  {t("CharacterCreator.SavedLogs.Header")}
-                </Typography>
-              </Grid>
-            </Grid>
-            <Grid item xs={12}>
-              <Paper style={{ backgroundColor: "#525252", padding: 16 }}>
-                <Grid container>
-                  <Grid item container xs={11} spacing={1}>
-                    {/* -------------------------------- Report ID -------------------------------  */}
-                    <Grid item xs={3}>
-                      <Typography style={{ display: "inline-flex" }}>
-                        {t("CharacterCreator.SavedLogs.Report") + ":"}
-                        <Typography color="primary" style={{ paddingLeft: 4 }}>
-                          {props.char.getReportID(contentType)}
-                        </Typography>
-                      </Typography>
-                    </Grid>
-                    {/* -------------------------------- Boss Name -------------------------------  */}
-                    <Grid item xs={3}>
-                      <Typography style={{ display: "inline-flex" }}>
-                        {t("CharacterCreator.SavedLogs.Boss") + ":"}
-                        <Typography color="primary" style={{ paddingLeft: 4 }}>
-                          {props.char.getBossName(contentType)}
-                        </Typography>
-                      </Typography>
-                    </Grid>
-                    {/* ------------------------------ Fight Length ------------------------------  */}
-                    <Grid item xs={3}>
-                      <Typography style={{ display: "inline-flex" }}>
-                        {t("CharacterCreator.SavedLogs.FightLength") + ":"}
-                        <Typography color="primary" style={{ paddingLeft: 4 }}>
-                          {sec2hmmss(props.char.getFightLength(contentType))}
-                        </Typography>
-                      </Typography>
-                    </Grid>
-                    {/* ----------------------------------- HPS ----------------------------------  */}
-                    <Grid item xs={3}>
-                      <Typography style={{ display: "inline-flex" }}>
-                        {t("CharacterCreator.SavedLogs.HPS") + ":"}
-                        <Typography color="primary" style={{ paddingLeft: 4 }}>
-                          {props.char.getHPS(contentType)}
-                        </Typography>
-                      </Typography>
-                    </Grid>
-                    {/* --------------------------------- Raw HPS --------------------------------  */}
-                    {/* <Grid item> */}
-                    {/*<Typography style={{ display: "inline-flex" }}>
+                  <Grid item xs={12}>
+                    <Paper style={{ backgroundColor: "#525252", padding: 16 }} elevation={0}>
+                      <Grid container>
+                        <Grid item container xs={11} spacing={1}>
+                          {/* -------------------------------- Report ID -------------------------------  */}
+                          <Grid item xs={3}>
+                            <Typography style={{ display: "inline-flex" }}>
+                              {t("CharacterCreator.SavedLogs.Report") + ":"}
+                              <Typography color="primary" style={{ paddingLeft: 4 }}>
+                                {props.char.getReportID(contentType)}
+                              </Typography>
+                            </Typography>
+                          </Grid>
+                          {/* -------------------------------- Boss Name -------------------------------  */}
+                          <Grid item xs={3}>
+                            <Typography style={{ display: "inline-flex" }}>
+                              {t("CharacterCreator.SavedLogs.Boss") + ":"}
+                              <Typography color="primary" style={{ paddingLeft: 4 }}>
+                                {props.char.getBossName(contentType)}
+                              </Typography>
+                            </Typography>
+                          </Grid>
+                          {/* ------------------------------ Fight Length ------------------------------  */}
+                          <Grid item xs={3}>
+                            <Typography style={{ display: "inline-flex" }}>
+                              {t("CharacterCreator.SavedLogs.FightLength") + ":"}
+                              <Typography color="primary" style={{ paddingLeft: 4 }}>
+                                {sec2hmmss(props.char.getFightLength(contentType))}
+                              </Typography>
+                            </Typography>
+                          </Grid>
+                          {/* ----------------------------------- HPS ----------------------------------  */}
+                          <Grid item xs={3}>
+                            <Typography style={{ display: "inline-flex" }}>
+                              {t("CharacterCreator.SavedLogs.HPS") + ":"}
+                              <Typography color="primary" style={{ paddingLeft: 4 }}>
+                                {props.char.getHPS(contentType)}
+                              </Typography>
+                            </Typography>
+                          </Grid>
+                          {/* --------------------------------- Raw HPS --------------------------------  */}
+                          {/* <Grid item> */}
+                          {/*<Typography style={{ display: "inline-flex" }}>
                           {t("CharacterCreator.SavedLogs.RawHPS") + ":"}
                           <Typography color="primary" style={{ paddingLeft: 4 }}>
                             {props.char.getRawHPS(contentType)}
                           </Typography>
                         </Typography> */}
-                    {/* </Grid> */}
-                  </Grid>
-                  <Grid item xs={1} style={{ alignSelf: "center", textAlign: "center" }}>
-                    <Tooltip title={t("Delete")} arrow>
-                      <IconButton
-                        // onClick={deleteItemCard}
-                        aria-label="delete"
-                        size="small"
-                      >
-                        {/*<DeleteIcon style={{ color: "#ad2c34", paddingTop: 2 }} fontSize="large" /> */}
-                      </IconButton>
-                    </Tooltip>
+                          {/* </Grid> */}
+                        </Grid>
+                        <Grid item xs={1} style={{ alignSelf: "center", textAlign: "center" }}>
+                          <Tooltip title={t("Delete")} arrow>
+                            <IconButton
+                              // onClick={deleteItemCard}
+                              aria-label="delete"
+                              size="small"
+                            >
+                              {/*<DeleteIcon style={{ color: "#ad2c34", paddingTop: 2 }} fontSize="large" /> */}
+                            </IconButton>
+                          </Tooltip>
+                        </Grid>
+                      </Grid>
+                    </Paper>
                   </Grid>
                 </Grid>
-              </Paper>
+              </DialogContent>
             </Grid>
-          </Grid>
-        </DialogContent>
+          </div>
+        </TabPanel>
+
+        {/* Saved Logs */}
+        <TabPanel value={tabvalue} index={1}>
+          <div className={classes.panel} style={{ minWidth: 912, minHeight: 506.36, padding: "20px 24px" }}>
+            <Grid container spacing={1}>
+              <Grid item xs={12}>
+                <Typography variant="h6" align="center" noWrap color="primary" style={{ marginTop: "12px" }}>
+                  {/* TODO: Translate */}
+                  Current Log
+                </Typography>
+              </Grid>
+
+              <Grid item xs={12}>
+                <Accordion disabled onClick={() => ""} style={{ backgroundColor: "#525252" }}>
+                  <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content" id="panel1a-header">
+                    <Grid container spacing={1}>
+                      <Grid container>
+                        <Grid item container xs={11} spacing={1}>
+                          {/* -------------------------------- Report ID -------------------------------  */}
+                          <Grid item xs={3}>
+                            <Typography style={{ display: "inline-flex" }}>
+                              {t("CharacterCreator.SavedLogs.Report") + ":"}
+                              <Typography color="primary" style={{ paddingLeft: 4 }}>
+                                {props.char.getReportID(contentType)}
+                              </Typography>
+                            </Typography>
+                          </Grid>
+                          {/* -------------------------------- Boss Name -------------------------------  */}
+                          <Grid item xs={3}>
+                            <Typography style={{ display: "inline-flex" }}>
+                              {t("CharacterCreator.SavedLogs.Boss") + ":"}
+                              <Typography color="primary" style={{ paddingLeft: 4 }}>
+                                {props.char.getBossName(contentType)}
+                              </Typography>
+                            </Typography>
+                          </Grid>
+                          {/* ------------------------------ Fight Length ------------------------------  */}
+                          <Grid item xs={3}>
+                            <Typography style={{ display: "inline-flex" }}>
+                              {t("CharacterCreator.SavedLogs.FightLength") + ":"}
+                              <Typography color="primary" style={{ paddingLeft: 4 }}>
+                                {sec2hmmss(props.char.getFightLength(contentType))}
+                              </Typography>
+                            </Typography>
+                          </Grid>
+                          {/* ----------------------------------- HPS ----------------------------------  */}
+                          <Grid item xs={3}>
+                            <Typography style={{ display: "inline-flex" }}>
+                              {t("CharacterCreator.SavedLogs.HPS") + ":"}
+                              <Typography color="primary" style={{ paddingLeft: 4 }}>
+                                {props.char.getHPS(contentType)}
+                              </Typography>
+                            </Typography>
+                          </Grid>
+                          {/* --------------------------------- Raw HPS --------------------------------  */}
+                          {/* <Grid item> */}
+                          {/*<Typography style={{ display: "inline-flex" }}>
+                          {t("CharacterCreator.SavedLogs.RawHPS") + ":"}
+                          <Typography color="primary" style={{ paddingLeft: 4 }}>
+                            {props.char.getRawHPS(contentType)}
+                          </Typography>
+                        </Typography> */}
+                          {/* </Grid> */}
+                        </Grid>
+                        <Grid item xs={1} style={{ alignSelf: "center", textAlign: "center" }}>
+                          <Tooltip title={t("Delete")} arrow>
+                            <IconButton
+                              // onClick={deleteItemCard}
+                              aria-label="delete"
+                              size="small"
+                            >
+                              {/*<DeleteIcon style={{ color: "#ad2c34", paddingTop: 2 }} fontSize="large" /> */}
+                            </IconButton>
+                          </Tooltip>
+                        </Grid>
+                      </Grid>
+                    </Grid>
+                  </AccordionSummary>
+                  <AccordionDetails>
+                    {/* ----------------------- Cast Model Breakdown Table -----------------------  */}
+                    <LogDetailsTable data={props.char.getSpellList(contentType)} />
+                  </AccordionDetails>
+                </Accordion>
+              </Grid>
+            </Grid>
+          </div>
+        </TabPanel>
+
         <DialogActions>
           <div
             style={{
@@ -730,61 +869,3 @@ export default function CharCards(props) {
     </Grid>
   );
 }
-
-// Accordian for the logs
-
-// <Accordion disabled onClick={() => ""} style={{ backgroundColor: "#525252" }}>
-// <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content" id="panel1a-header">
-//   <Grid container spacing={1}>
-//     {/* -------------------------------- Report ID -------------------------------  */}
-//     <Grid item xs={6}>
-//       <Typography style={{ display: "inline-flex" }}>
-//         Report:
-//         <Typography color="primary" style={{ paddingLeft: 4 }}>
-//           {props.char.getReportID(contentType)}
-//         </Typography>
-//       </Typography>
-//     </Grid>
-//     {/* -------------------------------- Boss Name -------------------------------  */}
-//     <Grid item xs={6}>
-//       <Typography style={{ display: "inline-flex" }}>
-//         Boss:
-//         <Typography color="primary" style={{ paddingLeft: 4 }}>
-//           {props.char.getBossName(contentType)}
-//         </Typography>
-//       </Typography>
-//     </Grid>
-//     {/* ------------------------------ Fight Length ------------------------------  */}
-//     <Grid item>
-//       <Typography style={{ display: "inline-flex" }}>
-//         Fight Length:
-//         <Typography color="primary" style={{ paddingLeft: 4 }}>
-//           {sec2hmmss(props.char.getFightLength(contentType))}
-//         </Typography>
-//       </Typography>
-//     </Grid>
-//     {/* ----------------------------------- HPS ----------------------------------  */}
-//     <Grid item>
-//       <Typography style={{ display: "inline-flex" }}>
-//         HPS:
-//         <Typography color="primary" style={{ paddingLeft: 4 }}>
-//           {props.char.getHPS(contentType)}
-//         </Typography>
-//       </Typography>
-//     </Grid>
-//     {/* --------------------------------- Raw HPS --------------------------------  */}
-//     <Grid item>
-//       <Typography style={{ display: "inline-flex" }}>
-//         Raw HPS:
-//         <Typography color="primary" style={{ paddingLeft: 4 }}>
-//           {props.char.getRawHPS(contentType)}
-//         </Typography>
-//       </Typography>
-//     </Grid>
-//   </Grid>
-// </AccordionSummary>
-// <AccordionDetails>
-//   {/* ----------------------- Cast Model Breakdown Table -----------------------  */}
-//   <LogDetailsTable data={props.char.getSpellList(contentType)} />
-// </AccordionDetails>
-// </Accordion>
