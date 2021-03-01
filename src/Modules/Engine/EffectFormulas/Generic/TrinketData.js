@@ -199,13 +199,13 @@ export const trinket_data = [
         table: -7,
         duration: 14, // This one is tricky because the duration is refreshed if another player walks over one. Max duration is ~20 seconds per proc.
         targets: 5,
-        efficiency: 0.85,
+        efficiency: 0.65,
         ppm: 1,
       },
       { // Heal Effect
         coefficient: 11.89655,
         table: -8,
-        efficiency: 0.72, // These are unlikely to overheal, but players have to run over them so some might naturally expire. Full health players can also waste them.
+        efficiency: 0.64, // These are unlikely to overheal, but players have to run over them so some might naturally expire. Full health players can also waste them.
         ppm: 1,
       },
     ],

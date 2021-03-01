@@ -74,7 +74,7 @@ export function runTopGear(itemList, wepCombos, player, contentType, baseHPS, cu
 
   itemSets.sort((a, b) => (a.hardScore < b.hardScore ? 1 : -1));
 
-  //console.log(itemSets);
+  
 
   // ----
 
@@ -84,9 +84,12 @@ export function runTopGear(itemList, wepCombos, player, contentType, baseHPS, cu
   // Build Differentials
   let differentials = [];
   let primeSet = itemSets[0];
-  for (var i = 1; i < Math.min(CONSTRAINTS.topGearDifferentials+1, itemSets.length); i++) {
+  for (var i = 1; i < Math.min(CONSTRAINTS.Shared.topGearDifferentials+1, itemSets.length); i++) {
     differentials.push(buildDifferential(itemSets[i], primeSet, newPlayer, contentType));
   }
+
+  console.log(itemSets);
+  console.log(differentials);
 
   //itemSets[0].printSet()
 
@@ -267,6 +270,7 @@ function buildDifferential(itemSet, primeSet, player, contentType) {
       
     }
   }
+  console.log("D:" + JSON.stringify(differentials));
   return differentials;
 }
 
