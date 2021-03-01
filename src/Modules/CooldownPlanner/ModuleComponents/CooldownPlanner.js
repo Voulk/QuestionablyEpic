@@ -20,8 +20,20 @@ import ls from "local-storage";
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
-    whiteSpace: "nowrap",
+    // whiteSpace: "nowrap",
+    lineHeight: "normal",
     width: "100%",
+  },
+  textFieldFontSize: {
+    fontSize: 12,
+    textAlign: "center",
+  },
+  selectFontSize: {
+    MuiInputBase: {
+      root: {
+        fontSize: 12,
+      },
+    },
   },
 }));
 
@@ -45,6 +57,11 @@ const themeCooldownTable = createMuiTheme({
         "@media (min-width: 600px)": {
           minHeight: "0px",
         },
+      },
+    },
+    MuiInputBase: {
+      root: {
+        fontSize: 12,
       },
     },
   },
@@ -166,14 +183,20 @@ export default function CooldownPlanner(props) {
       editComponent: (props) => (
         <TextField
           error={RegExp("^([01]?[0-9]|2[0-3]):[0-5][0-9]$").test(props.value) || props.value === undefined ? false : true}
+          // hiddenLabel
           inputProps={{
             pattern: "^([01]?[0-9]|2[0-3]):[0-5][0-9]$",
           }}
           size="small"
-          variant="outlined"
-          id="standard-basic"
-          label={t("CooldownPlanner.TableLabels.CastTimeLabel")}
+          // variant="filled"
+          id="filled-hidden-label-small"
+          // label={t("CooldownPlanner.TableLabels.CastTimeLabel")}
           placeholder="00:00"
+          InputProps={{
+            classes: {
+              input: classes.textFieldFontSize,
+            },
+          }}
           value={props.value}
           style={{ whiteSpace: "nowrap", width: "100%", marginTop: 6 }}
           onChange={(e) => props.onChange(e.target.value)}
@@ -206,19 +229,24 @@ export default function CooldownPlanner(props) {
               })}
             </a>
           </div>
-          <Typography align="center" style={{ fontSize: 12, lineHeight: "normal", width: "100%" }}>
+          <Typography align="center" className={classes.textFieldFontSize} style={{ fontSize: 12, lineHeight: "normal", width: "100%" }}>
             {t("CooldownPlanner.BossAbilities." + rowData.bossAbility)}
           </Typography>
         </div>
       ),
       editComponent: (props) => (
         <ThemeProvider theme={themeCooldownTable}>
-          <FormControl className={classes.formControl} variant="outlined" size="small" style={{ marginTop: 6 }}>
-            <InputLabel id="BossAbilitySelector">{t("CooldownPlanner.TableLabels.BossAbilityLabel")}</InputLabel>
+          <FormControl
+            className={classes.formControl}
+            // variant="outlined"
+            size="small"
+            //
+          >
+            {/* <InputLabel id="BossAbilitySelector" shrink={false}>{t("CooldownPlanner.TableLabels.BossAbilityLabel")}</InputLabel> */}
             <Select
               value={props.value}
               labelId="BossAbilitySelector"
-              label={t("CooldownPlanner.TableLabels.BossAbilityLabel")}
+              // label={t("CooldownPlanner.TableLabels.BossAbilityLabel")}
               onChange={(e) => {
                 props.onChange(e.target.value);
               }}
@@ -234,7 +262,7 @@ export default function CooldownPlanner(props) {
                       {bossAbilityIcons(key.guid, {
                         height: 20,
                         width: 20,
-                        margin: "0px 4px 0px 0px",
+                        // margin: "0px 4px 0px 0px",
                         verticalAlign: "middle",
                         border: "1px solid #595959",
                         borderRadius: 4,
@@ -275,10 +303,15 @@ export default function CooldownPlanner(props) {
           inputProps={{
             pattern: "^([01]?[0-9]|2[0-3]):[0-5][0-9]$",
           }}
+          InputProps={{
+            classes: {
+              input: classes.textFieldFontSize,
+            },
+          }}
           size="small"
-          variant="outlined"
+          // variant="outlined"
           id="standard-basic"
-          label={t("CooldownPlanner.TableLabels.CastTimeLabel")}
+          // label={t("CooldownPlanner.TableLabels.CastTimeLabel")}
           placeholder="00:00"
           value={props.value}
           style={{ whiteSpace: "nowrap", width: "100%", marginTop: 6 }}
@@ -327,8 +360,12 @@ export default function CooldownPlanner(props) {
       // This is the Component for name selection when the table is in edit mode.
       editComponent: (props) => (
         <ThemeProvider theme={themeCooldownTable}>
-          <FormControl className={classes.formControl} variant="outlined" size="small" style={{ marginTop: 6 }}>
-            <InputLabel id="HealerSelector">{t("Name")}</InputLabel>
+          <FormControl
+            className={classes.formControl}
+            //  variant="outlined"
+            size="small"
+          >
+            {/* <InputLabel id="HealerSelector">{t("Name")}</InputLabel> */}
             <Select
               value={props.value}
               label={t("Name")}
@@ -430,8 +467,12 @@ export default function CooldownPlanner(props) {
       editComponent: (props, rowData) => {
         let data = { ...props.rowData };
         return (
-          <FormControl className={classes.formControl} variant="outlined" size="small" style={{ marginTop: 6 }}>
-            <InputLabel id="HealerAbilitySelector">{t("Cooldown")}</InputLabel>
+          <FormControl
+            className={classes.formControl}
+            // variant="outlined"
+            size="small"
+          >
+            {/* <InputLabel id="HealerAbilitySelector">{t("Cooldown")}</InputLabel> */}
             <Select
               value={rowData.Cooldown || props.value}
               labelId="HealerAbilitySelector"
@@ -473,10 +514,15 @@ export default function CooldownPlanner(props) {
           inputProps={{
             pattern: "^([01]?[0-9]|2[0-3]):[0-5][0-9]$",
           }}
+          InputProps={{
+            classes: {
+              input: classes.textFieldFontSize,
+            },
+          }}
           size="small"
-          variant="outlined"
+          // variant="outlined"
           id="standard-basic"
-          label={t("CooldownPlanner.TableLabels.CastTimeLabel")}
+          // label={t("CooldownPlanner.TableLabels.CastTimeLabel")}
           placeholder="00:00"
           value={props.value}
           style={{ whiteSpace: "nowrap", width: "100%", marginTop: 6 }}
@@ -525,8 +571,12 @@ export default function CooldownPlanner(props) {
       // This is the Component for name selection when the table is in edit mode.
       editComponent: (props) => (
         <ThemeProvider theme={themeCooldownTable}>
-          <FormControl className={classes.formControl} variant="outlined" size="small" style={{ marginTop: 6 }}>
-            <InputLabel id="HealerSelector">{t("Name")}</InputLabel>
+          <FormControl
+            className={classes.formControl}
+            //  variant="outlined"
+            size="small"
+          >
+            {/* <InputLabel id="HealerSelector">{t("Name")}</InputLabel> */}
             <Select
               value={props.value}
               label={t("Name")}
@@ -629,8 +679,12 @@ export default function CooldownPlanner(props) {
       editComponent: (props, rowData) => {
         let data = { ...props.rowData };
         return (
-          <FormControl className={classes.formControl} variant="outlined" size="small" style={{ marginTop: 6 }}>
-            <InputLabel id="HealerAbilitySelector">{t("Cooldown")}</InputLabel>
+          <FormControl
+            className={classes.formControl}
+            // variant="outlined"
+            size="small"
+          >
+            {/* <InputLabel id="HealerAbilitySelector">{t("Cooldown")}</InputLabel> */}
             <Select
               value={rowData.Cooldown1 || props.value}
               labelId="HealerAbilitySelector"
@@ -672,10 +726,15 @@ export default function CooldownPlanner(props) {
           inputProps={{
             pattern: "^([01]?[0-9]|2[0-3]):[0-5][0-9]$",
           }}
+          InputProps={{
+            classes: {
+              input: classes.textFieldFontSize,
+            },
+          }}
           size="small"
-          variant="outlined"
+          // variant="outlined"
           id="standard-basic"
-          label={t("CooldownPlanner.TableLabels.CastTimeLabel")}
+          // label={t("CooldownPlanner.TableLabels.CastTimeLabel")}
           placeholder="00:00"
           value={props.value}
           style={{ whiteSpace: "nowrap", width: "100%", marginTop: 6 }}
@@ -724,8 +783,12 @@ export default function CooldownPlanner(props) {
       // This is the Component for name selection when the table is in edit mode.
       editComponent: (props) => (
         <ThemeProvider theme={themeCooldownTable}>
-          <FormControl className={classes.formControl} variant="outlined" size="small" style={{ marginTop: 6 }}>
-            <InputLabel id="HealerSelector">{t("Name")}</InputLabel>
+          <FormControl
+            className={classes.formControl}
+            // variant="outlined"
+            size="small"
+          >
+            {/* <InputLabel id="HealerSelector">{t("Name")}</InputLabel> */}
             <Select
               value={props.value}
               label={t("Name")}
@@ -828,8 +891,12 @@ export default function CooldownPlanner(props) {
       editComponent: (props, rowData) => {
         let data = { ...props.rowData };
         return (
-          <FormControl className={classes.formControl} variant="outlined" size="small" style={{ marginTop: 6 }}>
-            <InputLabel id="HealerAbilitySelector">{t("Cooldown")}</InputLabel>
+          <FormControl
+            className={classes.formControl}
+            // variant="outlined"
+            size="small"
+          >
+            {/* <InputLabel id="HealerAbilitySelector">{t("Cooldown")}</InputLabel> */}
             <Select
               value={rowData.Cooldown2 || props.value}
               labelId="HealerAbilitySelector"
@@ -871,10 +938,15 @@ export default function CooldownPlanner(props) {
           inputProps={{
             pattern: "^([01]?[0-9]|2[0-3]):[0-5][0-9]$",
           }}
+          InputProps={{
+            classes: {
+              input: classes.textFieldFontSize,
+            },
+          }}
           size="small"
-          variant="outlined"
+          // variant="outlined"
           id="standard-basic"
-          label={t("CooldownPlanner.TableLabels.CastTimeLabel")}
+          // label={t("CooldownPlanner.TableLabels.CastTimeLabel")}
           placeholder="00:00"
           value={props.value}
           style={{ whiteSpace: "nowrap", width: "100%", marginTop: 6 }}
@@ -923,8 +995,12 @@ export default function CooldownPlanner(props) {
       // This is the Component for name selection when the table is in edit mode.
       editComponent: (props) => (
         <ThemeProvider theme={themeCooldownTable}>
-          <FormControl className={classes.formControl} variant="outlined" size="small" style={{ marginTop: 6 }}>
-            <InputLabel id="HealerSelector">{t("Name")}</InputLabel>
+          <FormControl
+            className={classes.formControl}
+            //  variant="outlined"
+            size="small"
+          >
+            {/* <InputLabel id="HealerSelector">{t("Name")}</InputLabel> */}
             <Select
               value={props.value}
               label={t("Name")}
@@ -1025,8 +1101,12 @@ export default function CooldownPlanner(props) {
       editComponent: (props, rowData) => {
         let data = { ...props.rowData };
         return (
-          <FormControl className={classes.formControl} variant="outlined" size="small" style={{ marginTop: 6 }}>
-            <InputLabel id="HealerAbilitySelector">{t("Cooldown")}</InputLabel>
+          <FormControl
+            className={classes.formControl}
+            // variant="outlined"
+            size="small"
+          >
+            {/* <InputLabel id="HealerAbilitySelector">{t("Cooldown")}</InputLabel> */}
             <Select
               value={rowData.Cooldown3 || props.value}
               labelId="HealerAbilitySelector"
@@ -1068,10 +1148,15 @@ export default function CooldownPlanner(props) {
           inputProps={{
             pattern: "^([01]?[0-9]|2[0-3]):[0-5][0-9]$",
           }}
+          InputProps={{
+            classes: {
+              input: classes.textFieldFontSize,
+            },
+          }}
           size="small"
-          variant="outlined"
+          // variant="outlined"
           id="standard-basic"
-          label={t("CooldownPlanner.TableLabels.CastTimeLabel")}
+          // label={t("CooldownPlanner.TableLabels.CastTimeLabel")}
           placeholder="00:00"
           value={props.value}
           style={{ whiteSpace: "nowrap", width: "100%", marginTop: 6 }}
@@ -1120,8 +1205,12 @@ export default function CooldownPlanner(props) {
       // This is the Component for name selection when the table is in edit mode.
       editComponent: (props) => (
         <ThemeProvider theme={themeCooldownTable}>
-          <FormControl className={classes.formControl} variant="outlined" size="small" style={{ marginTop: 6 }}>
-            <InputLabel id="HealerSelector">{t("Name")}</InputLabel>
+          <FormControl
+            className={classes.formControl}
+            // variant="outlined"
+            size="small"
+          >
+            {/* <InputLabel id="HealerSelector">{t("Name")}</InputLabel> */}
             <Select
               value={props.value}
               label={t("Name")}
@@ -1224,8 +1313,12 @@ export default function CooldownPlanner(props) {
       editComponent: (props, rowData) => {
         let data = { ...props.rowData };
         return (
-          <FormControl className={classes.formControl} variant="outlined" size="small" style={{ marginTop: 6 }}>
-            <InputLabel id="HealerAbilitySelector">{t("Cooldown")}</InputLabel>
+          <FormControl
+            className={classes.formControl}
+            // variant="outlined"
+            size="small"
+          >
+            {/* <InputLabel id="HealerAbilitySelector">{t("Cooldown")}</InputLabel> */}
             <Select
               value={rowData.Cooldown4 || props.value}
               labelId="HealerAbilitySelector"
@@ -1257,9 +1350,14 @@ export default function CooldownPlanner(props) {
         <TextField
           style={{ width: "100%", marginTop: 6 }}
           size="small"
-          variant="outlined"
+          InputProps={{
+            classes: {
+              input: classes.textFieldFontSize,
+            },
+          }}
+          // variant="outlined"
           id="standard-basic"
-          label={t("CooldownPlanner.TableLabels.NotesLabel")}
+          // label={t("CooldownPlanner.TableLabels.NotesLabel")}
           value={props.value}
           onChange={(e) => props.onChange(e.target.value)}
         />
