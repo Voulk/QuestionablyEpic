@@ -151,6 +151,7 @@
         "HolyPaladinComment": "Holy Paladin Class Cooldowns",
         "31821": "光环掌握",
         "31884": "复仇之怒",
+        "316958": "红烬圣土",
         "RestorationDruidComment": "Restoration Druid Class Cooldowns",
         "740": "宁静",
         "33891": "化身：生命之树",
@@ -166,6 +167,7 @@
         "RestorationShamanComment": "Restoration Shaman Class Cooldowns",
         "108280": "治疗之潮图腾",
         "98008": "灵魂链接图腾",
+        "207399": "先祖护佑图腾",
         "MistweaverMonkComment": "Mistweaver Monk Class Cooldowns",
         "115310": "还魂术",
         "HavocDemonHunterComment": "Havoc Demon Hunter Cooldowns",
@@ -178,7 +180,7 @@
         "51052": "反魔法领域"
       },
       "BossAbilities": {
-        "undefined": "No Ability Selected",
+        "undefined": "No Ability",
         "ShriekingComment": "Shriekwing Abilities",
         "345397": "赤红声浪",
         "343384": "血光",
@@ -229,7 +231,12 @@
         "DenathriusComment": "Denathrius Abilities",
         "330627": "毁灭之手",
         "336162": "奥能波动",
-        "326707": "净化痛苦"
+        "326707": "净化痛苦",
+        "329785": "猩红合唱",
+        "326858": "血债",
+        "332626": "粉碎痛苦",
+        "326833": "痛苦的回忆",
+        "338687": "纳斯利亚赞歌"
       }
     },
     "HallOfFame": {

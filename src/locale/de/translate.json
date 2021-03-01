@@ -150,6 +150,7 @@
         "HolyPaladinComment": "Holy Paladin Class Cooldowns",
         "31821": "Aura MasteryDE",
         "31884": "Avenging WrathDE",
+        "316958": "Ascheweihung",
         "RestorationDruidComment": "Restoration Druid Class Cooldowns",
         "740": "TranquilityDE",
         "33891": "Incarnation: Tree of LifeDE",
@@ -165,6 +166,7 @@
         "RestorationShamanComment": "Restoration Shaman Class CooldownsDE",
         "108280": "Healing Tide TotemDE",
         "98008": "Spirit Link TotemDE",
+        "207399": "Totem des Schutzes der Ahnen",
         "MistweaverMonkComment": "Mistweaver Monk Class Cooldowns",
         "115310": "RevivalDE",
         "HavocDemonHunterComment": "Havoc Demon Hunter Cooldowns",
@@ -177,7 +179,7 @@
         "51052": "Antimagisches Feld"
       },
       "BossAbilities": {
-        "undefined": "No Ability SelectedDE",
+        "undefined": "No Ability",
         "ShriekingComment": "Shriekwing Abilities",
         "345397": "Wave of BloodDE",
         "343384": "BloodlightDE",
@@ -226,9 +228,14 @@
         "StoneLegionGeneralsComment": "Stone Legion Generals Ability",
         "339728": "Pulverizing MeteorDE",
         "DenathriusComment": "Denathrius Abilities",
-        "330627": "Hand of DestructionDE",
-        "336162": "CrescendoDE",
-        "326707": "Cleansing PainDE"
+        "330627": "Hand der Zerstörung",
+        "336162": "Crescendo",
+        "326707": "Läuternder Schmerz",
+        "329785": "Blutroter Chor",
+        "326858": "Blutpreis",
+        "332626": "Zersplitternder Schmerz",
+        "326833": "Schmerzhafte Erinnerungen",
+        "338687": "Hymne von Nathria"
       }
     },
     "HallOfFame": {

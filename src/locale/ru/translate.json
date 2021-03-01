@@ -150,6 +150,7 @@
         "HolyPaladinComment": "Holy Paladin Class Cooldowns",
         "31821": "Владение аурами",
         "31884": "Гнев карателя",
+        "316958": "Пепельное освящение",
         "RestorationDruidComment": "Restoration Druid Class Cooldowns",
         "740": "Спокойствие",
         "33891": "Воплощение: древо жизни",
@@ -165,6 +166,7 @@
         "RestorationShamanComment": "Restoration Shaman Class Cooldowns",
         "108280": "Тотем целительного прилива",
         "98008": "Тотем духовной связи",
+        "207399": "Тотем защиты Предков",
         "MistweaverMonkComment": "Mistweaver Monk Class Cooldowns",
         "115310": "Восстановление сил",
         "HavocDemonHunterComment": "Havoc Demon Hunter Cooldowns",
@@ -177,7 +179,7 @@
         "51052": "Зона антимагии"
       },
       "BossAbilities": {
-        "undefined": "No Ability Selected",
+        "undefined": "No Ability",
         "ShriekingComment": "Shriekwing Abilities",
         "345397": "Волна крови",
         "343384": "Кровавый свет",
@@ -228,7 +230,12 @@
         "DenathriusComment": "Denathrius Abilities",
         "330627": "Длань разрушения",
         "336162": "Крещендо",
-        "326707": "Очищающая боль"
+        "326707": "Очищающая боль",
+        "329785": "Алый хор",
+        "326858": "Кровавая цена",
+        "332626": "Сокрушительная боль",
+        "326833": "Болезненные воспоминания",
+        "338687": "Гимн Нафрии"
       }
     },
 
