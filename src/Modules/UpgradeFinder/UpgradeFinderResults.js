@@ -8,6 +8,7 @@ import MythicPlusGearContainer from "./Panels/PanelMythicPlus";
 import PvPGearContainer from "./Panels/PanelPvP";
 import RaidGearContainer from "./Panels/PanelRaid";
 import WorldBossGearContainer from "./Panels/PanelWorldBosses";
+import SlotsContainer from "./Panels/PanelSlots"
 import ReactGA from "react-ga";
 import "./Panels/ItemUpgrade.css";
 
@@ -56,6 +57,14 @@ const useStyles = makeStyles((theme) => ({
   },
   worldBossHeaderStyle: {
     backgroundImage: `url(${require("../../Images/Bosses/WorldBosses.png").default})`,
+    borderRadius: "0px 4px 0px 0px",
+    whiteSpace: "nowrap",
+    textShadow: "3px 3px 4px black",
+    color: "#fff",
+    fontSize: "1.1rem",
+  },
+  slotsHeaderStyle: {
+    backgroundImage: `url(${require("../../Images/Bosses/AllSlots.png").default})`,
     borderRadius: "0px 4px 0px 0px",
     whiteSpace: "nowrap",
     textShadow: "3px 3px 4px black",
@@ -128,7 +137,7 @@ export default function UpgradeFinderResults(props) {
   return (
     <div className={classes.header}>
       <Typography variant="h4" color="primary" align="center" style={{ padding: "10px 10px 5px 10px" }}>
-        {t("UpgradeFinder.Header") + " - " + props.contentType}
+        {props.contentType + " " +  t("UpgradeFinder.Header")}
       </Typography>
       <AppBar
         position="static"
@@ -140,13 +149,15 @@ export default function UpgradeFinderResults(props) {
       >
         <Tabs value={tabvalue} onChange={handleTabChange} aria-label="simple tabs example" variant="fullWidth" TabIndicatorProps={{ style: { backgroundColor: "#F2BF59" } }}>
           {/* Raid */}
-          <Tab className={classes.raidHeaderStyle} label="Castle Nathria" {...a11yProps(0)} />
+          <Tab className={classes.raidHeaderStyle} label={t("UpgradeFinder.CurrentRaid")} {...a11yProps(0)} />
           {/* Mythic Plus */}
-          <Tab className={classes.mythicPlusHeaderStyle} label="Mythic Plus" {...a11yProps(1)} />
+          <Tab className={classes.mythicPlusHeaderStyle} label={t("UpgradeFinder.MythicPlus")} {...a11yProps(1)} />
           {/* PVP */}
-          <Tab className={classes.pvpHeaderStyle} label="PvP" {...a11yProps(2)} />
+          <Tab className={classes.pvpHeaderStyle} label={t("UpgradeFinder.PvP")} {...a11yProps(2)} />
           {/* World Bosses */}
-          <Tab className={classes.worldBossHeaderStyle} label="World Bosses" {...a11yProps(3)} />
+          <Tab className={classes.worldBossHeaderStyle} label={t("UpgradeFinder.WorldBosses")} {...a11yProps(3)} />
+          {/* Slots */}
+          {/*<Tab className={classes.slotsHeaderStyle} label={t("UpgradeFinder.UpgradeBySlot")} {...a11yProps(4)} /> */}
         </Tabs>
       </AppBar>
 
@@ -182,6 +193,15 @@ export default function UpgradeFinderResults(props) {
         <div className={classes.panel}>
           <Grid container>
             <WorldBossGearContainer player={props.player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={props.playerSettings} />
+          </Grid>
+        </div>
+      </TabPanel>
+
+            {/* Slots */}
+            <TabPanel value={tabvalue} index={4}>
+        <div className={classes.panel}>
+          <Grid container>
+            <SlotsContainer player={props.player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={props.playerSettings} />
           </Grid>
         </div>
       </TabPanel>

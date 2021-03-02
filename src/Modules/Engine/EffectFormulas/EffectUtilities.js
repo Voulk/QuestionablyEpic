@@ -1,5 +1,5 @@
-import { combat_ratings_mult_by_ilvl } from "../CombatMultByLevel";
-import { randPropPoints } from "../RandPropPointsBylevel";
+import { combat_ratings_mult_by_ilvl } from "../Retail/CombatMultByLevel";
+import { randPropPoints } from "../Retail/RandPropPointsBylevel";
 // This file contains utility formulas that might be useful for calculating Effect values.
 
 export function convertPPMToUptime(PPM, duration) {

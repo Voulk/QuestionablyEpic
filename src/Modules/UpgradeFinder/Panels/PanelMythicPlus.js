@@ -48,7 +48,7 @@ export default function MythicPlusGearContainer(props) {
             <Divider orientation="vertical" flexItem style={{ marginRight: 4 }} />
             <Grid item xs={12} sm container spacing={1} style={{ marginRight: 6 }}>
               {[...filterItemListBySource(itemList, -1, key, itemLevels.dungeon[difficulty])].map((item, index) => (
-                <ItemUpgradeCard key={index} item={item} itemDifferential={getDifferentialByID(itemDifferentials, item.id, item.level)} />
+                <ItemUpgradeCard key={index} item={item} itemDifferential={getDifferentialByID(itemDifferentials, item.id, item.level)} slotPanel={false} />
               ))}
             </Grid>
           </Grid>

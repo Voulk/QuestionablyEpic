@@ -40,6 +40,9 @@ const useStyles = makeStyles((theme) => ({
       marginTop: 32,
     },
   },
+  option: {
+    borderBottom: "1px solid rgba(255, 255, 255, 0.23)",
+  },
 }));
 
 const menuStyle = {
@@ -185,7 +188,7 @@ export default function QuickCompare(props) {
 
   /* ---------------- Add an item to our "Active Items" array. ---------------- */
   const addItem = (event) => {
-    if (itemLevel > CONSTRAINTS.maxItemLevel) {
+    if (itemLevel > CONSTRAINTS.Retail.maxItemLevel) {
       setAnchorEl(anchorEl ? null : event.currentTarget);
       return null;
     }
@@ -306,6 +309,9 @@ export default function QuickCompare(props) {
                 <FormControl className={classes.formControl} variant="outlined" size="small" style={{ minWidth: 350 }} disabled={activeSlot === "" ? true : false}>
                   <Autocomplete
                     size="small"
+                    classes={{
+                      option: classes.option,
+                    }}
                     disabled={activeSlot === "" ? true : false}
                     id="item-select"
                     value={AutoValue}
@@ -326,6 +332,7 @@ export default function QuickCompare(props) {
                     }}
                     style={{ width: "100%" }}
                     renderInput={(params) => <TextField {...params} label={t("QuickCompare.ItemName")} variant="outlined" />}
+                    ListboxProps={{ style: { border: "1px solid rgba(255, 255, 255, 0.23)", borderRadius: 4,paddingTop: 0, paddingBottom: 0 } }}
                   />
                 </FormControl>
               </Grid>
@@ -333,7 +340,7 @@ export default function QuickCompare(props) {
               <Grid item>
                 <FormControl className={classes.formControl} variant="outlined" size="small" style={{ width: t("QuickCompare.ItemLevel").length > 10 ? 160 : 120 }}>
                   <TextField
-                    error={itemLevel > CONSTRAINTS.maxItemLevel ? true : false}
+                    error={itemLevel > CONSTRAINTS.Retail.maxItemLevel ? true : false}
                     id="Ilvl-select"
                     onChange={(e) => itemLevelChanged(e.target.value)}
                     value={itemLevel}
@@ -346,8 +353,8 @@ export default function QuickCompare(props) {
                     size="small"
                     type="number"
                     inputProps={{
-                      min: CONSTRAINTS.minItemLevel,
-                      max: CONSTRAINTS.maxItemLevel,
+                      min: CONSTRAINTS.Retail.minItemLevel,
+                      max: CONSTRAINTS.Retail.maxItemLevel,
                     }}
                   />
                 </FormControl>

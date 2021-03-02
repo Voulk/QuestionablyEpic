@@ -39,11 +39,13 @@ import PowerInfusionIcon from "../../../../Images/Classes/Priest/Specialisation/
 import IronbarkIcon from "../../../../Images/Classes/Druid/Specialisation/Restoration/Icons/Ironbark.jpg";
 import BlessingOfSacrificeIcon from "../../../../Images/Classes/Paladin/Specialisation/Holy/Icons/BlessingOfSacrifice.jpg";
 import LifeCocoonIcon from "../../../../Images/Classes/Monk/Specialisation/Mistweaver/Icons/LifeCocoon.jpg";
-import FlourishIcon from "../../../../Images/Classes/Druid/Specialisation/Restoration/Icons/Talents/FlourishIcon.jpg"
+import FlourishIcon from "../../../../Images/Classes/Druid/Specialisation/Restoration/Icons/Talents/FlourishIcon.jpg";
+import AncestralProtectionIcon from "../../../../Images/Classes/Shaman/Specialisation/Restoration/Icons/Talents/AncestralProtectionTotemIcon.jpg";
+import GuardianSpiritIcon from "../../../../Images/Classes/Priest/Specialisation/Holy/Icons/GuardianSpiritIcon.jpg";
 
 // Should probably work this off GUID
 
-export default function abilityIcons(props) {
+export default function abilityIcons(props, style) {
   let spell = "";
   let source = "";
   let alt = "";
@@ -129,6 +131,13 @@ export default function abilityIcons(props) {
     source = DivineHymnIcon;
     alt = "Divine Hymn";
   }
+
+  if (props === 47788) {
+    spell = "spell=47788";
+    source = GuardianSpiritIcon;
+    alt = "Guardian Spirit";
+  }
+
   // Discipline Priest
   if (props === 62618) {
     spell = "spell=62618";
@@ -177,6 +186,13 @@ export default function abilityIcons(props) {
     source = SpiritLinkTotemIcon;
     alt = "Spirit Link Totem";
   }
+
+  if (props === 207399) {
+    spell = "spell=207399";
+    source = AncestralProtectionIcon;
+    alt = "Ancestral Protection Totem";
+  }
+
   // Shaman Covenant Abilities
   if (props === 324386) {
     spell = "spell=324386";
@@ -265,19 +281,13 @@ export default function abilityIcons(props) {
     source = LifeCocoonIcon;
     alt = "Blessing of Sacrifice";
   }
+  if (props === "" || props === undefined) {
+    return null;
+  }
 
   return (
     <a data-wowhead={spell}>
-      <img
-        style={{
-          height: 20,
-          width: 20,
-          padding: "0px 5px 0px 5px",
-          verticalAlign: "middle",
-        }}
-        src={source}
-        alt={alt}
-      />
+      <img style={{ ...style }} src={source} alt={alt} />
     </a>
   );
 }

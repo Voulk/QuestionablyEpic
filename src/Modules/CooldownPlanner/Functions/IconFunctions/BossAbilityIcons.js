@@ -1,7 +1,7 @@
 import React from "react";
 import { bossAbilities } from "../../Data/Data";
 
-export default function bossAbilityIcons(props) {
+export default function bossAbilityIcons(props, style) {
   let alt = "";
   let iconName = bossAbilities
     .filter((obj) => {
@@ -19,17 +19,5 @@ export default function bossAbilityIcons(props) {
   if (props === undefined) {
     return null;
   }
-  return (
-    <img
-      style={{
-        height: 20,
-        width: 20,
-        padding: "0px 5px 0px 5px",
-        verticalAlign: "middle",
-        borderRadius: "4px",
-      }}
-      src={iconName}
-      alt={alt}
-    />
-  );
+  return <img style={{ ...style }} src={iconName} alt={alt} />;
 }

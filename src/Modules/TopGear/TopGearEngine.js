@@ -36,7 +36,6 @@ function setupPlayer(player, contentType, castModel) {
   newPlayer.castModel[contentType] = new CastModel(newPlayer.getSpec(), contentType);
   newPlayer.castModel[contentType] = Object.assign(newPlayer.castModel[contentType], castModel);
 
-
   return newPlayer;
 
 }
@@ -53,6 +52,7 @@ export function runTopGear(itemList, wepCombos, player, contentType, baseHPS, cu
   let itemSets = createSets(itemList, wepCombos);
   itemSets.sort((a, b) => (a.sumSoftScore < b.sumSoftScore ? 1 : -1));
   count = itemSets.length;
+
 
   //console.log("Count: " + count);
   // TEST LOOP ONLY FOR CONSOLE PRINTS.
@@ -74,7 +74,7 @@ export function runTopGear(itemList, wepCombos, player, contentType, baseHPS, cu
 
   itemSets.sort((a, b) => (a.hardScore < b.hardScore ? 1 : -1));
 
-  //console.log(itemSets);
+  
 
   // ----
 
@@ -84,9 +84,12 @@ export function runTopGear(itemList, wepCombos, player, contentType, baseHPS, cu
   // Build Differentials
   let differentials = [];
   let primeSet = itemSets[0];
-  for (var i = 1; i < Math.min(CONSTRAINTS.topGearDifferentials+1, itemSets.length); i++) {
-    differentials.push(buildDifferential(itemSets[i], primeSet));
+  for (var i = 1; i < Math.min(CONSTRAINTS.Shared.topGearDifferentials+1, itemSets.length); i++) {
+    differentials.push(buildDifferential(itemSets[i], primeSet, newPlayer, contentType));
   }
+
+  console.log(itemSets);
+  console.log(differentials);
 
   //itemSets[0].printSet()
 
@@ -189,14 +192,17 @@ function createSets(itemList, rawWepCombos) {
                           for (var finger2 = 1; finger2 < slotLengths.Finger; finger2++) {
                             softScore.finger2 = splitItems.Finger[finger2].softScore;
 
-                            if (splitItems.Finger[finger].id !== splitItems.Finger[finger2].id) {
+                            if (splitItems.Finger[finger].id !== splitItems.Finger[finger2].id &&
+                                finger < finger2) {
                               for (var trinket = 0; trinket < slotLengths.Trinket - 1; trinket++) {
                                 softScore.trinket = splitItems.Trinket[trinket].softScore;
 
                                 for (var trinket2 = 1; trinket2 < slotLengths.Trinket; trinket2++) {
                                   softScore.trinket2 = splitItems.Trinket[trinket2].softScore;
 
-                                  if (splitItems.Trinket[trinket].id !== splitItems.Trinket[trinket2].id) {
+                                  if (splitItems.Trinket[trinket].id !== splitItems.Trinket[trinket2].id
+                                    && trinket < trinket2) {
+
                                     let includedItems = [
                                       splitItems.Head[head],
                                       splitItems.Neck[neck],
@@ -241,24 +247,30 @@ function createSets(itemList, rawWepCombos) {
   return itemSets;
 }
 
-function buildDifferential(itemSet, primeSet) {
-  let primeList = primeSet.itemList;
-  let diffList = itemSet.itemList;
+function buildDifferential(itemSet, primeSet, player, contentType) {
+  let doubleSlot = {};
+  const primeList = primeSet.itemList;
+  const diffList = itemSet.itemList;
   let differentials = {
     items: [],
     scoreDifference: (Math.round(primeSet.hardScore - itemSet.hardScore) / primeSet.hardScore) * 100,
-    rawDifference: (Math.round(itemSet.hardScore - primeSet.hardScore)*100)/100
+    rawDifference: Math.round((itemSet.hardScore - primeSet.hardScore) / player.getInt(contentType) * player.getHPS(contentType)),
   };
   //console.log("Prime List: " + JSON.stringify(primeSet));
   //console.log("Diff List: " + JSON.stringify(diffList))
 
   for (var x = 0; x < primeList.length; x++) {
-    if (primeList[x].uniqueHash !== diffList[x].uniqueHash) {
-      //console.log("Something happeneing here: " + x);
+    if (primeList[x].uniqueHash !== diffList[x].uniqueHash) {    
       differentials.items.push(diffList[x]);
+      doubleSlot[diffList[x].slot] = (doubleSlot[diffList[x].slot] || 0) + 1;
+
+      if ((x === 13 || x === 11) && doubleSlot[diffList[x].slot] <= 1) {
+        differentials.items.push(diffList[x-1]);
+      }
+      
     }
   }
-  //console.log(JSON.stringify(differentials));
+  console.log("D:" + JSON.stringify(differentials));
   return differentials;
 }
 
@@ -369,11 +381,11 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
   addBaseStats(setStats, player.spec); // Add our base stats, which are immune to DR. This includes our base 5% crit, and whatever base mastery our spec has.
 
   // Apply soft DR formula to stats, as the more we get of any stat the weaker it becomes relative to our other stats. 
-  adjusted_weights.haste = (adjusted_weights.haste + adjusted_weights.haste * (1 - (DR_CONST * setStats.haste) / STATPERONEPERCENT.HASTE)) / 2;
-  adjusted_weights.crit = (adjusted_weights.crit + adjusted_weights.crit * (1 - (DR_CONST * setStats.crit) / STATPERONEPERCENT.CRIT)) / 2;
-  adjusted_weights.versatility = (adjusted_weights.versatility + adjusted_weights.versatility * (1 - (DR_CONST * setStats.versatility) / STATPERONEPERCENT.VERSATILITY)) / 2;
-  adjusted_weights.mastery = (adjusted_weights.mastery + adjusted_weights.mastery * (1 - (DR_CONST * setStats.mastery) / STATPERONEPERCENT.MASTERYA[player.spec])) / 2;
-  adjusted_weights.leech = (adjusted_weights.leech + adjusted_weights.leech * (1 - (DR_CONSTLEECH * setStats.leech) / STATPERONEPERCENT.LEECH)) / 2;
+  adjusted_weights.haste = (adjusted_weights.haste + adjusted_weights.haste * (1 - (DR_CONST * setStats.haste) / STATPERONEPERCENT.Retail.HASTE)) / 2;
+  adjusted_weights.crit = (adjusted_weights.crit + adjusted_weights.crit * (1 - (DR_CONST * setStats.crit) / STATPERONEPERCENT.Retail.CRIT)) / 2;
+  adjusted_weights.versatility = (adjusted_weights.versatility + adjusted_weights.versatility * (1 - (DR_CONST * setStats.versatility) / STATPERONEPERCENT.Retail.VERSATILITY)) / 2;
+  adjusted_weights.mastery = (adjusted_weights.mastery + adjusted_weights.mastery * (1 - (DR_CONST * setStats.mastery) / STATPERONEPERCENT.Retail.MASTERYA[player.spec])) / 2;
+  adjusted_weights.leech = (adjusted_weights.leech + adjusted_weights.leech * (1 - (DR_CONSTLEECH * setStats.leech) / STATPERONEPERCENT.Retail.LEECH)) / 2;
 
   // Calculate a hard score using the rebalanced stat weights.
 
@@ -449,7 +461,7 @@ function compileStats(stats, bonus_stats) {
 
 function addBaseStats(stats, spec) {
   stats.crit += 175;
-  stats.mastery += STATPERONEPERCENT.MASTERYA[spec] * BASESTAT.MASTERY[spec] * 100;
+  stats.mastery += STATPERONEPERCENT.Retail.MASTERYA[spec] * BASESTAT.MASTERY[spec] * 100;
 
   return stats;
 
