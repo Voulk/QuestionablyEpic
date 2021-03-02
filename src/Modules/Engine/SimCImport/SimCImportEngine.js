@@ -80,7 +80,6 @@ function checkSimCValid(simCHeader, length, playerClass, setErrorMessage) {
     else if (line.split("=")[0] === "level" && line.split("=")[1] === "60") checks.level = true;
   }
 
-
   if (!checks.class) errorMessage += "You're currently a " + playerClass + " but this SimC string is for a different spec.";
   if (!checks.level) errorMessage += "QE Live is designed for level 60 characters. ";
   if (!checks.length) errorMessage += "Your SimC string is a bit long. Make sure you haven't pasted it in twice!";
