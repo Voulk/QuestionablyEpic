@@ -15,7 +15,7 @@ import { getEffectValue } from "../Engine/EffectFormulas/EffectEngine"
 // our set bonus algorithm before we sort and slice. There are no current set bonuses that are relevant to raid / dungeon so left as a thought experiment for now.
 const softSlice = 3000;
 const DR_CONST = 0.00196669230769231;
-const DR_CONSTLEECH = 0.08822569230769231;
+const DR_CONSTLEECH = 0.04822569230769231;
 
 
 // block for `time` ms, then return the number of loops we could run in that time:
@@ -89,7 +89,7 @@ export function runTopGear(itemList, wepCombos, player, contentType, baseHPS, cu
   }
 
   console.log(itemSets);
-  console.log(differentials);
+  //console.log(differentials);
 
   //itemSets[0].printSet()
 
@@ -270,7 +270,7 @@ function buildDifferential(itemSet, primeSet, player, contentType) {
       
     }
   }
-  console.log("D:" + JSON.stringify(differentials));
+  //console.log("D:" + JSON.stringify(differentials));
   return differentials;
 }
 
@@ -387,6 +387,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
   adjusted_weights.mastery = (adjusted_weights.mastery + adjusted_weights.mastery * (1 - (DR_CONST * setStats.mastery) / STATPERONEPERCENT.Retail.MASTERYA[player.spec])) / 2;
   adjusted_weights.leech = (adjusted_weights.leech + adjusted_weights.leech * (1 - (DR_CONSTLEECH * setStats.leech) / STATPERONEPERCENT.Retail.LEECH)) / 2;
 
+  console.log("LEECH: " + adjusted_weights.leech);
   // Calculate a hard score using the rebalanced stat weights.
 
   for (var stat in setStats) {
