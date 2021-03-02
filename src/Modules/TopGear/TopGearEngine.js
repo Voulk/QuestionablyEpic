@@ -15,7 +15,7 @@ import { getEffectValue } from "../Engine/EffectFormulas/EffectEngine"
 // our set bonus algorithm before we sort and slice. There are no current set bonuses that are relevant to raid / dungeon so left as a thought experiment for now.
 const softSlice = 3000;
 const DR_CONST = 0.00196669230769231;
-const DR_CONSTLEECH = 0.04822569230769231;
+const DR_CONSTLEECH = 0.04622569230769231;
 
 
 // block for `time` ms, then return the number of loops we could run in that time:
