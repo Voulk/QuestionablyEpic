@@ -72,6 +72,22 @@ const themeCooldownTable = createMuiTheme({
   },
 });
 
+const selectMenu = createMuiTheme({
+  overrides: {
+    MuiSelect: { selectMenu: { height: 20 } },
+    MuiInputBase: {
+      root: {
+        fontSize: 12,
+      },
+    },
+  },
+  palette: {
+    type: "dark",
+    primary: { main: "#d3bc47" },
+    secondary: { main: "#e0e0e0" },
+  },
+});
+
 const menuStyle = {
   style: { marginTop: 5 },
   MenuListProps: {
@@ -235,7 +251,7 @@ export default function CooldownPlanner(props) {
         </div>
       ),
       editComponent: (props) => (
-        <ThemeProvider theme={themeCooldownTable}>
+        <ThemeProvider theme={selectMenu}>
           <FormControl
             className={classes.formControl}
             // variant="outlined"
@@ -359,7 +375,7 @@ export default function CooldownPlanner(props) {
       ),
       // This is the Component for name selection when the table is in edit mode.
       editComponent: (props) => (
-        <ThemeProvider theme={themeCooldownTable}>
+        <ThemeProvider theme={selectMenu}>
           <FormControl
             className={classes.formControl}
             //  variant="outlined"
@@ -467,24 +483,26 @@ export default function CooldownPlanner(props) {
       editComponent: (props, rowData) => {
         let data = { ...props.rowData };
         return (
-          <FormControl
-            className={classes.formControl}
-            // variant="outlined"
-            size="small"
-          >
-            {/* <InputLabel id="HealerAbilitySelector">{t("Cooldown")}</InputLabel> */}
-            <Select
-              value={rowData.Cooldown || props.value}
-              labelId="HealerAbilitySelector"
-              label={t("Cooldown")}
-              onChange={(e) => {
-                props.onChange(e.target.value);
-              }}
-              MenuProps={menuStyle}
+          <ThemeProvider theme={selectMenu}>
+            <FormControl
+              className={classes.formControl}
+              // variant="outlined"
+              size="small"
             >
-              {ClassCooldownMenuItems(data.class) || []}
-            </Select>
-          </FormControl>
+              {/* <InputLabel id="HealerAbilitySelector">{t("Cooldown")}</InputLabel> */}
+              <Select
+                value={rowData.Cooldown || props.value}
+                labelId="HealerAbilitySelector"
+                label={t("Cooldown")}
+                onChange={(e) => {
+                  props.onChange(e.target.value);
+                }}
+                MenuProps={menuStyle}
+              >
+                {ClassCooldownMenuItems(data.class) || []}
+              </Select>
+            </FormControl>
+          </ThemeProvider>
         );
       },
     },
@@ -570,7 +588,7 @@ export default function CooldownPlanner(props) {
       ),
       // This is the Component for name selection when the table is in edit mode.
       editComponent: (props) => (
-        <ThemeProvider theme={themeCooldownTable}>
+        <ThemeProvider theme={selectMenu}>
           <FormControl
             className={classes.formControl}
             //  variant="outlined"
@@ -679,24 +697,26 @@ export default function CooldownPlanner(props) {
       editComponent: (props, rowData) => {
         let data = { ...props.rowData };
         return (
-          <FormControl
-            className={classes.formControl}
-            // variant="outlined"
-            size="small"
-          >
-            {/* <InputLabel id="HealerAbilitySelector">{t("Cooldown")}</InputLabel> */}
-            <Select
-              value={rowData.Cooldown1 || props.value}
-              labelId="HealerAbilitySelector"
-              label={t("Cooldown")}
-              onChange={(e) => {
-                props.onChange(e.target.value);
-              }}
-              MenuProps={menuStyle}
+          <ThemeProvider theme={selectMenu}>
+            <FormControl
+              className={classes.formControl}
+              // variant="outlined"
+              size="small"
             >
-              {ClassCooldownMenuItems(data.class1) || []}
-            </Select>
-          </FormControl>
+              {/* <InputLabel id="HealerAbilitySelector">{t("Cooldown")}</InputLabel> */}
+              <Select
+                value={rowData.Cooldown1 || props.value}
+                labelId="HealerAbilitySelector"
+                label={t("Cooldown")}
+                onChange={(e) => {
+                  props.onChange(e.target.value);
+                }}
+                MenuProps={menuStyle}
+              >
+                {ClassCooldownMenuItems(data.class1) || []}
+              </Select>
+            </FormControl>
+          </ThemeProvider>
         );
       },
     },
@@ -782,7 +802,7 @@ export default function CooldownPlanner(props) {
       ),
       // This is the Component for name selection when the table is in edit mode.
       editComponent: (props) => (
-        <ThemeProvider theme={themeCooldownTable}>
+        <ThemeProvider theme={selectMenu}>
           <FormControl
             className={classes.formControl}
             // variant="outlined"
@@ -891,24 +911,26 @@ export default function CooldownPlanner(props) {
       editComponent: (props, rowData) => {
         let data = { ...props.rowData };
         return (
-          <FormControl
-            className={classes.formControl}
-            // variant="outlined"
-            size="small"
-          >
-            {/* <InputLabel id="HealerAbilitySelector">{t("Cooldown")}</InputLabel> */}
-            <Select
-              value={rowData.Cooldown2 || props.value}
-              labelId="HealerAbilitySelector"
-              label={t("Cooldown")}
-              onChange={(e) => {
-                props.onChange(e.target.value);
-              }}
-              MenuProps={menuStyle}
+          <ThemeProvider theme={selectMenu}>
+            <FormControl
+              className={classes.formControl}
+              // variant="outlined"
+              size="small"
             >
-              {ClassCooldownMenuItems(data.class2) || []}
-            </Select>
-          </FormControl>
+              {/* <InputLabel id="HealerAbilitySelector">{t("Cooldown")}</InputLabel> */}
+              <Select
+                value={rowData.Cooldown2 || props.value}
+                labelId="HealerAbilitySelector"
+                label={t("Cooldown")}
+                onChange={(e) => {
+                  props.onChange(e.target.value);
+                }}
+                MenuProps={menuStyle}
+              >
+                {ClassCooldownMenuItems(data.class2) || []}
+              </Select>
+            </FormControl>
+          </ThemeProvider>
         );
       },
     },
@@ -994,7 +1016,7 @@ export default function CooldownPlanner(props) {
       ),
       // This is the Component for name selection when the table is in edit mode.
       editComponent: (props) => (
-        <ThemeProvider theme={themeCooldownTable}>
+        <ThemeProvider theme={selectMenu}>
           <FormControl
             className={classes.formControl}
             //  variant="outlined"
@@ -1101,24 +1123,26 @@ export default function CooldownPlanner(props) {
       editComponent: (props, rowData) => {
         let data = { ...props.rowData };
         return (
-          <FormControl
-            className={classes.formControl}
-            // variant="outlined"
-            size="small"
-          >
-            {/* <InputLabel id="HealerAbilitySelector">{t("Cooldown")}</InputLabel> */}
-            <Select
-              value={rowData.Cooldown3 || props.value}
-              labelId="HealerAbilitySelector"
-              label={t("Cooldown")}
-              onChange={(e) => {
-                props.onChange(e.target.value);
-              }}
-              MenuProps={menuStyle}
+          <ThemeProvider theme={selectMenu}>
+            <FormControl
+              className={classes.formControl}
+              // variant="outlined"
+              size="small"
             >
-              {ClassCooldownMenuItems(data.class3) || []}
-            </Select>
-          </FormControl>
+              {/* <InputLabel id="HealerAbilitySelector">{t("Cooldown")}</InputLabel> */}
+              <Select
+                value={rowData.Cooldown3 || props.value}
+                labelId="HealerAbilitySelector"
+                label={t("Cooldown")}
+                onChange={(e) => {
+                  props.onChange(e.target.value);
+                }}
+                MenuProps={menuStyle}
+              >
+                {ClassCooldownMenuItems(data.class3) || []}
+              </Select>
+            </FormControl>
+          </ThemeProvider>
         );
       },
     },
@@ -1204,7 +1228,7 @@ export default function CooldownPlanner(props) {
       ),
       // This is the Component for name selection when the table is in edit mode.
       editComponent: (props) => (
-        <ThemeProvider theme={themeCooldownTable}>
+        <ThemeProvider theme={selectMenu}>
           <FormControl
             className={classes.formControl}
             // variant="outlined"
@@ -1313,24 +1337,26 @@ export default function CooldownPlanner(props) {
       editComponent: (props, rowData) => {
         let data = { ...props.rowData };
         return (
-          <FormControl
-            className={classes.formControl}
-            // variant="outlined"
-            size="small"
-          >
-            {/* <InputLabel id="HealerAbilitySelector">{t("Cooldown")}</InputLabel> */}
-            <Select
-              value={rowData.Cooldown4 || props.value}
-              labelId="HealerAbilitySelector"
-              label={t("Cooldown")}
-              onChange={(e) => {
-                props.onChange(e.target.value);
-              }}
-              MenuProps={menuStyle}
+          <ThemeProvider theme={selectMenu}>
+            <FormControl
+              className={classes.formControl}
+              // variant="outlined"
+              size="small"
             >
-              {ClassCooldownMenuItems(data.class4) || []}
-            </Select>
-          </FormControl>
+              {/* <InputLabel id="HealerAbilitySelector">{t("Cooldown")}</InputLabel> */}
+              <Select
+                value={rowData.Cooldown4 || props.value}
+                labelId="HealerAbilitySelector"
+                label={t("Cooldown")}
+                onChange={(e) => {
+                  props.onChange(e.target.value);
+                }}
+                MenuProps={menuStyle}
+              >
+                {ClassCooldownMenuItems(data.class4) || []}
+              </Select>
+            </FormControl>
+          </ThemeProvider>
         );
       },
     },
