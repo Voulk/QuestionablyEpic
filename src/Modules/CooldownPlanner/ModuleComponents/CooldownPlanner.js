@@ -278,7 +278,7 @@ export default function CooldownPlanner(props) {
                       {bossAbilityIcons(key.guid, {
                         height: 20,
                         width: 20,
-                        // margin: "0px 4px 0px 0px",
+                        margin: "0px 4px 0px 0px",
                         verticalAlign: "middle",
                         border: "1px solid #595959",
                         borderRadius: 4,
