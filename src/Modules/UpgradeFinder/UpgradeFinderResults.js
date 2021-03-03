@@ -157,7 +157,7 @@ export default function UpgradeFinderResults(props) {
           {/* World Bosses */}
           <Tab className={classes.worldBossHeaderStyle} label={t("UpgradeFinder.WorldBosses")} {...a11yProps(3)} />
           {/* Slots */}
-          {/*<Tab className={classes.slotsHeaderStyle} label={t("UpgradeFinder.UpgradeBySlot")} {...a11yProps(4)} /> */}
+          <Tab className={classes.slotsHeaderStyle} label={t("UpgradeFinder.UpgradeBySlot")} {...a11yProps(4)} />
         </Tabs>
       </AppBar>
 

@@ -75,7 +75,7 @@ export default function SlotsContainer(props) {
       //     <Grid item xs={12}>
       <Accordion elevation={0} style={{ backgroundColor: "rgba(255, 255, 255, 0.12)" }}>
         <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content" id="panel1a-header" style={{ verticalAlign: "middle" }}>
-          <img src={iconReturn(key.slot, props.player.spec)} height={30} width={30} style={{ paddingRight: 6, borderRadius: 4 }} />
+          <img src={iconReturn(key.slot, props.player.spec)} height={30} width={30} style={{ marginRight: 6, borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.12)" }} />
           <Typography align="center" variant="h6" noWrap color="primary">
             {t("slotNames." + key.label)} -{" "}
             {[...filterItemListByType(itemList, key.slot)].map((item, index) => getDifferentialByID(itemDifferentials, item.id, item.level)).filter((item) => item !== 0).length}{" "}
