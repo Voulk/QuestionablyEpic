@@ -76,7 +76,7 @@ function checkSimCValid(simCHeader, length, playerClass, setErrorMessage) {
   for (var i = 0; i < simCHeader.length; i++) {
     let line = simCHeader[i];
 
-    if (line !== "" && playerClass.includes(line.split("=")[0])) checks.class = true;
+    if (line !== "" && playerClass.toLowerCase().includes(line.split("=")[0].toLowerCase())) checks.class = true;
     else if (line.split("=")[0] === "level" && line.split("=")[1] === "60") checks.level = true;
   }
 
