@@ -116,6 +116,8 @@ function a11yProps(index) {
   };
 }
 
+
+
 export default function UpgradeFinderResults(props) {
   //   useEffect(() => {
   //     ReactGA.pageview(window.location.pathname + window.location.search);
@@ -197,7 +199,7 @@ export default function UpgradeFinderResults(props) {
         </div>
       </TabPanel>
 
-            {/* Slots */}
+      {/* Slots */}
             <TabPanel value={tabvalue} index={4}>
         <div className={classes.panel}>
           <Grid container>
