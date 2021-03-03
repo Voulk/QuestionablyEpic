@@ -4,15 +4,13 @@ import "./index.css";
 import App from "./App";
 import registerServiceWorker, { unregister } from "./registerServiceWorker";
 import { I18nextProvider } from "react-i18next";
-import { Provider } from 'react-redux';
-import { createStore } from 'redux';
+import { Provider } from "react-redux";
+import { createStore } from "redux";
 import i18n from "./i18n";
-import { TOGGLE_CONTENT } from "./Redux/ActionTypes"
-import rootReducer from "./Redux/Reducers/RootReducer"
+import { TOGGLE_CONTENT } from "./Redux/ActionTypes";
+import rootReducer from "./Redux/Reducers/RootReducer";
 
-
-
-const store = createStore(rootReducer);
+const store = createStore(rootReducer, /* preloadedState, */ window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
 ReactDOM.render(
   <Provider store={store}>
