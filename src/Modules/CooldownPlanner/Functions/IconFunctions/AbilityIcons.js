@@ -42,6 +42,7 @@ import LifeCocoonIcon from "../../../../Images/Classes/Monk/Specialisation/Mistw
 import FlourishIcon from "../../../../Images/Classes/Druid/Specialisation/Restoration/Icons/Talents/FlourishIcon.jpg";
 import AncestralProtectionIcon from "../../../../Images/Classes/Shaman/Specialisation/Restoration/Icons/Talents/AncestralProtectionTotemIcon.jpg";
 import GuardianSpiritIcon from "../../../../Images/Classes/Priest/Specialisation/Holy/Icons/GuardianSpiritIcon.jpg";
+import RaptureIcon from "../../../../Images/Classes/Priest/Specialisation/Discipline/Icons/Rapture.jpg";
 
 // Should probably work this off GUID
 
@@ -153,6 +154,11 @@ export default function abilityIcons(props, style) {
     spell = "spell=109964";
     source = SpiritShellIcon;
     alt = "Spirit Shell";
+  }
+  if (props === 47536) {
+    spell = "spell=47536";
+    source = RaptureIcon;
+    alt = "Rapture";
   }
   // Priest Covenant Abilities
   if (props === 325013) {

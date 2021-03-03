@@ -38,7 +38,7 @@ const useStyles = makeStyles({
 export default function ItemCard(props) {
   const classes = useStyles();
   const item = props.item;
-  console.log(item);
+  //console.log(item);
   const statString = buildStatString(item.stats, item.effect);
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;

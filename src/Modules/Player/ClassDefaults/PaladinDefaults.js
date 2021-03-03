@@ -27,11 +27,11 @@ export const paladinDefaultSpecialQueries = (contentType) => {
   let specialQueries = {};
   if (contentType === "Raid") {
     specialQueries = {
-      OneManaHealing: 0.4,
+      OneManaHealing: 0.35,
       CastsPerMinute: 27,
       cooldownMult: {
-        oneMinute: 1.5,
-        twoMinutes: 1.3,
+        oneMinute: 1.64,
+        twoMinutes: 1.2,
         threeMinutes: 1,
       },
       HoldYourGroundUptime: 0.4
@@ -41,8 +41,8 @@ export const paladinDefaultSpecialQueries = (contentType) => {
       OneManaHealing: 0.2,
       CastsPerMinute: 30,
       cooldownMult: {
-        oneMinute: 1.7,
-        twoMinutes: 1.3,
+        oneMinute: 1.85,
+        twoMinutes: 1.02,
         threeMinutes: 1,
       },
       HoldYourGroundUptime: 0.35
@@ -60,7 +60,7 @@ export const paladinDefaultStatWeights = (contentType) => {
   statWeights.Raid = {
     intellect: 1,
     haste: 0.39,
-    crit: 0.27,
+    crit: 0.25,
     mastery: 0.33,
     versatility: 0.32,
     leech: 0.56,
@@ -68,10 +68,10 @@ export const paladinDefaultStatWeights = (contentType) => {
   };
   statWeights.Dungeon = {
     intellect: 1,
-    haste: 0.4,
-    crit: 0.36,
+    haste: 0.39,
+    crit: 0.33,
     mastery: 0.2,
-    versatility: 0.33,
+    versatility: 0.34,
     leech: 0.18,
     defaults: true,
   };

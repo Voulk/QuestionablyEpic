@@ -116,6 +116,8 @@ function a11yProps(index) {
   };
 }
 
+
+
 export default function UpgradeFinderResults(props) {
   //   useEffect(() => {
   //     ReactGA.pageview(window.location.pathname + window.location.search);
@@ -157,7 +159,7 @@ export default function UpgradeFinderResults(props) {
           {/* World Bosses */}
           <Tab className={classes.worldBossHeaderStyle} label={t("UpgradeFinder.WorldBosses")} {...a11yProps(3)} />
           {/* Slots */}
-          {/*<Tab className={classes.slotsHeaderStyle} label={t("UpgradeFinder.UpgradeBySlot")} {...a11yProps(4)} /> */}
+          <Tab className={classes.slotsHeaderStyle} label={t("UpgradeFinder.UpgradeBySlot")} {...a11yProps(4)} />
         </Tabs>
       </AppBar>
 
@@ -197,7 +199,7 @@ export default function UpgradeFinderResults(props) {
         </div>
       </TabPanel>
 
-            {/* Slots */}
+      {/* Slots */}
             <TabPanel value={tabvalue} index={4}>
         <div className={classes.panel}>
           <Grid container>

@@ -34,7 +34,7 @@ export default function ClassCooldownMenuItems(props) {
             style={{
               height: 20,
               width: 20,
-              padding: "0px 5px 0px 5px",
+              margin: "0px 5px 0px 5px",
               verticalAlign: "middle",
             }}
             src={AuraMasteryIcon}
@@ -50,7 +50,7 @@ export default function ClassCooldownMenuItems(props) {
             style={{
               height: 20,
               width: 20,
-              padding: "0px 5px 0px 5px",
+              margin: "0px 5px 0px 5px",
               verticalAlign: "middle",
             }}
             src={AvengingWrathIcon}
@@ -66,7 +66,7 @@ export default function ClassCooldownMenuItems(props) {
                   style={{
                     height: 20,
                     width: 20,
-                    padding: "0px 5px 0px 5px",
+                    margin: "0px 5px 0px 5px",
                     verticalAlign: "middle",
                   }}
                   src={AshenHallowIcon}
@@ -86,7 +86,7 @@ export default function ClassCooldownMenuItems(props) {
             style={{
               height: 20,
               width: 20,
-              padding: "0px 5px 0px 5px",
+              margin: "0px 5px 0px 5px",
               verticalAlign: "middle",
             }}
             src={TranquilityIcon}
@@ -102,7 +102,7 @@ export default function ClassCooldownMenuItems(props) {
             style={{
               height: 20,
               width: 20,
-              padding: "0px 5px 0px 5px",
+              margin: "0px 5px 0px 5px",
               verticalAlign: "middle",
             }}
             src={TreeofLifeIcon}
@@ -118,7 +118,7 @@ export default function ClassCooldownMenuItems(props) {
             style={{
               height: 20,
               width: 20,
-              padding: "0px 5px 0px 5px",
+              margin: "0px 5px 0px 5px",
               verticalAlign: "middle",
             }}
             src={ConvokeTheSpiritsIcon}
@@ -134,7 +134,7 @@ export default function ClassCooldownMenuItems(props) {
             style={{
               height: 20,
               width: 20,
-              padding: "0px 5px 0px 5px",
+              margin: "0px 5px 0px 5px",
               verticalAlign: "middle",
             }}
             src={FlourishIcon}
@@ -154,7 +154,7 @@ export default function ClassCooldownMenuItems(props) {
             style={{
               height: 20,
               width: 20,
-              padding: "0px 5px 0px 5px",
+              margin: "0px 5px 0px 5px",
               verticalAlign: "middle",
             }}
             src={SalvationIcon}
@@ -170,7 +170,7 @@ export default function ClassCooldownMenuItems(props) {
             style={{
               height: 20,
               width: 20,
-              padding: "0px 5px 0px 5px",
+              margin: "0px 5px 0px 5px",
               verticalAlign: "middle",
             }}
             src={DivineHymnIcon}
@@ -190,7 +190,7 @@ export default function ClassCooldownMenuItems(props) {
             style={{
               height: 20,
               width: 20,
-              padding: "0px 5px 0px 5px",
+              margin: "0px 5px 0px 5px",
               verticalAlign: "middle",
             }}
             src={EvangelismIcon}
@@ -206,7 +206,7 @@ export default function ClassCooldownMenuItems(props) {
             style={{
               height: 20,
               width: 20,
-              padding: "0px 5px 0px 5px",
+              margin: "0px 5px 0px 5px",
               verticalAlign: "middle",
             }}
             src={PowerWordBarrierIcon}
@@ -222,7 +222,7 @@ export default function ClassCooldownMenuItems(props) {
             style={{
               height: 20,
               width: 20,
-              padding: "0px 5px 0px 5px",
+              margin: "0px 5px 0px 5px",
               verticalAlign: "middle",
             }}
             src={SpiritShell}
@@ -242,7 +242,7 @@ export default function ClassCooldownMenuItems(props) {
             style={{
               height: 20,
               width: 20,
-              padding: "0px 5px 0px 5px",
+              margin: "0px 5px 0px 5px",
               verticalAlign: "middle",
             }}
             src={HealingTideTotemIcon}
@@ -258,7 +258,7 @@ export default function ClassCooldownMenuItems(props) {
             style={{
               height: 20,
               width: 20,
-              padding: "0px 5px 0px 5px",
+              margin: "0px 5px 0px 5px",
               verticalAlign: "middle",
             }}
             src={SpiritLinkTotemIcon}
@@ -274,7 +274,7 @@ export default function ClassCooldownMenuItems(props) {
             style={{
               height: 20,
               width: 20,
-              padding: "0px 5px 0px 5px",
+              margin: "0px 5px 0px 5px",
               verticalAlign: "middle",
             }}
             src={AncestralProtectionIcon}
@@ -294,7 +294,7 @@ export default function ClassCooldownMenuItems(props) {
             style={{
               height: 20,
               width: 20,
-              padding: "0px 5px 0px 5px",
+              margin: "0px 5px 0px 5px",
               verticalAlign: "middle",
             }}
             src={RevivalIcon}
@@ -314,7 +314,7 @@ export default function ClassCooldownMenuItems(props) {
             style={{
               height: 20,
               width: 20,
-              padding: "0px 5px 0px 5px",
+              margin: "0px 5px 0px 5px",
               verticalAlign: "middle",
             }}
             src={DarknessIcon}
@@ -334,7 +334,7 @@ export default function ClassCooldownMenuItems(props) {
             style={{
               height: 20,
               width: 20,
-              padding: "0px 5px 0px 5px",
+              margin: "0px 5px 0px 5px",
               verticalAlign: "middle",
             }}
             src={RallyingCryIcon}
@@ -354,7 +354,7 @@ export default function ClassCooldownMenuItems(props) {
             style={{
               height: 20,
               width: 20,
-              padding: "0px 5px 0px 5px",
+              margin: "0px 5px 0px 5px",
               verticalAlign: "middle",
             }}
             src={AntiMagicZoneIcon}
@@ -374,7 +374,7 @@ export default function ClassCooldownMenuItems(props) {
             style={{
               height: 20,
               width: 20,
-              padding: "0px 5px 0px 5px",
+              margin: "0px 5px 0px 5px",
               verticalAlign: "middle",
             }}
             src={VampiricEmbraceIcon}

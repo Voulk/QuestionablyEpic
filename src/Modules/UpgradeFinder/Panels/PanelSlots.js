@@ -19,6 +19,19 @@ const itemLevels = {
   pvp: [200, 207, 213, 220, 226],
 };
 
+function filterItemListBySlot(itemList, slot) {
+  let temp = itemList.filter(function (item) {
+    if (slot === "AllMainhands") {
+      return item.slot === "1H Weapon" || item.slot === "2H Weapon";
+    } else if (slot === "Offhands") {
+      return item.slot === "Holdable" || item.slot === "Offhand" || item.slot === "Shield";
+    } else {
+      return item.slot === slot;
+    }
+  });
+  return temp;
+}
+
 const useStyles = makeStyles((theme) => ({
   root: {
     width: "100%",
@@ -33,6 +46,10 @@ export default function SlotsContainer(props) {
   const itemDifferentials = props.itemDifferentials;
   const difficulty = props.playerSettings.dungeon;
   console.log(props.player.spec);
+  console.log(itemList);
+
+  itemList.sort((a, b) => (getDifferentialByID(itemDifferentials, a.id, a.level) < getDifferentialByID(itemDifferentials, b.id, b.level) ? 1 : -1));
+
   const slotList = [
     { slot: "Head", label: "head" },
     { slot: "Neck", label: "neck" },
@@ -75,16 +92,16 @@ export default function SlotsContainer(props) {
       //     <Grid item xs={12}>
       <Accordion elevation={0} style={{ backgroundColor: "rgba(255, 255, 255, 0.12)" }}>
         <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content" id="panel1a-header" style={{ verticalAlign: "middle" }}>
-          <img src={iconReturn(key.slot, props.player.spec)} height={30} width={30} style={{ paddingRight: 6, borderRadius: 4 }} />
+          <img src={iconReturn(key.slot, props.player.spec)} height={30} width={30} style={{ marginRight: 6, borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.12)" }} />
           <Typography align="center" variant="h6" noWrap color="primary">
             {t("slotNames." + key.label)} -{" "}
-            {[...filterItemListByType(itemList, key.slot)].map((item, index) => getDifferentialByID(itemDifferentials, item.id, item.level)).filter((item) => item !== 0).length}{" "}
+            {[...filterItemListBySlot(itemList, key.slot)].map((item, index) => getDifferentialByID(itemDifferentials, item.id, item.level)).filter((item) => item !== 0).length}{" "}
             Upgrades
           </Typography>
         </AccordionSummary>
         <AccordionDetails style={{ backgroundColor: "#191c23" }}>
           <Grid xs={12} sm container spacing={1}>
-            {[...filterItemListByType(itemList, key.slot)].map((item, index) => (
+            {[...filterItemListBySlot(itemList, key.slot)].map((item, index) => (
               <ItemUpgradeCard key={index} item={item} itemDifferential={getDifferentialByID(itemDifferentials, item.id, item.level)} slotPanel={true} />
             ))}
           </Grid>
