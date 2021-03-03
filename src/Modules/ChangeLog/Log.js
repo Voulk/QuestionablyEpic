@@ -11,12 +11,13 @@ export const changeLog = [
   {
     version: "9.0",
     update: 25,
-    date: "2nd March",
+    date: "3rd March",
     changes: [
-      "Upgrade Finder - A New Tab to show you upgrades by equipment slots has been added.",
-      "Character Panel - Minor Changes to prep for future work on saved log functionality.",
-      "The SimC import bar for Quick Compare, Top Gear, Upgrade Finder has been slimmed down.",
-      "Various visual improvements across the app. (Settings Bar, Language Selection, Menus, Icons etc)"
+      "Upgrade Finder 'Slots' - A New Tab to show you upgrades sorted by slot rather than drop location.",
+      "Upgrade Finder: The Settings tab has been copied across from Top Gear.",
+      "Various visual improvements across the app. (SimC import bar, Settings Bar, Language Selection, Menus, Icons & more).",
+      "SimC strings for classes that differ to the one you have selected will now be rejected to avoid confusion",
+      "Bugfix: Fixed a bug where sets with excess Leech would overly devalue the stat in Top Gear."
     ],
   },
   {

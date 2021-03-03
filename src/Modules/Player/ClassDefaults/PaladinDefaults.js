@@ -27,11 +27,11 @@ export const paladinDefaultSpecialQueries = (contentType) => {
   let specialQueries = {};
   if (contentType === "Raid") {
     specialQueries = {
-      OneManaHealing: 0.4,
+      OneManaHealing: 0.35,
       CastsPerMinute: 27,
       cooldownMult: {
-        oneMinute: 1.5,
-        twoMinutes: 1.3,
+        oneMinute: 1.65,
+        twoMinutes: 1.15,
         threeMinutes: 1,
       },
       HoldYourGroundUptime: 0.4
@@ -41,8 +41,8 @@ export const paladinDefaultSpecialQueries = (contentType) => {
       OneManaHealing: 0.2,
       CastsPerMinute: 30,
       cooldownMult: {
-        oneMinute: 1.7,
-        twoMinutes: 1.3,
+        oneMinute: 1.85,
+        twoMinutes: 1.15,
         threeMinutes: 1,
       },
       HoldYourGroundUptime: 0.35
