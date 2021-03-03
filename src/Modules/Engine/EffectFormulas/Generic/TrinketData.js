@@ -163,7 +163,7 @@ export const trinket_data = [
       {
         coefficient: 51.64138,
         table: -8,
-        efficiency: 0.3, // You are mostly popping this for the crit bonus and won't care if you're damaged or not.
+        efficiency: 0.2, // You are mostly popping this for the crit bonus and won't care if you're damaged or not.
         cooldown: 120,
       },
     ],
