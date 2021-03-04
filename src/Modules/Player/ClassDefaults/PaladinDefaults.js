@@ -31,7 +31,7 @@ export const paladinDefaultSpecialQueries = (contentType) => {
       CastsPerMinute: 27,
       cooldownMult: {
         oneMinute: 1.64,
-        twoMinutes: 1.2,
+        twoMinutes: 1.35,
         threeMinutes: 1,
       },
       HoldYourGroundUptime: 0.4
