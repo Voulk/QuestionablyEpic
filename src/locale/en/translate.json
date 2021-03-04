@@ -313,7 +313,7 @@
       "Tertiary": "Tertiary",
       "AddButton": "Add",
       "Title": "Quick Compare",
-      "HelpText": "Quick Compare allows you to compare items one by one. The score is automatically shown in the top right corner in yellow, and items are ordered by strength. You can add items manually using the dropdowns above, or all at once using a string from the SimC addon.",
+      "HelpText": "Quick Compare allows you to compare items one by one. The score is automatically shown in the top right corner in yellow, and items are ordered by strength. You can add items manually using the dropdowns below, or all at once using a string from the SimC addon.",
       "ItemErrorMsg": "Item Not Added. Ilvl Cap exceeded.",
       "ItemAdded": "Item Added!",
       "ItemDeleted": "Item Deleted!"
