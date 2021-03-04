@@ -30,7 +30,7 @@ export const paladinDefaultSpecialQueries = (contentType) => {
       OneManaHealing: 0.35,
       CastsPerMinute: 27,
       cooldownMult: {
-        oneMinute: 1.64,
+        oneMinute: 1.6,
         twoMinutes: 1.35,
         threeMinutes: 1,
       },
