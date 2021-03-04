@@ -248,7 +248,7 @@ export default function TopGear(props) {
           />}
         </Grid>
         <Grid item xs={12}>
-          <TopGearSettingsAccordion userSettings={userSettings} editSettings={editSettings} />
+          <TopGearSettingsAccordion player={props.player} userSettings={userSettings} editSettings={editSettings} />
         </Grid>
 
         {props.player.activeItems.length > 0 ? (
