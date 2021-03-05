@@ -59,6 +59,7 @@ export const getPaladinLegendary = (effectName, player, contentType) => {
     //
 
     bonus_stats.hps = Math.round((infusionsPerMinute * wastedInfusionPercentage * (oneHolyLight * (0.3 + 0.5))) / 60);
+    
   } else if (name === "Shadowbreaker, Dawn of the Sun") {
     let lightOfDawnCPM = player.getSpellCPM(IDLIGHTOFDAWN, contentType);
     let lightOfDawnUptime = Math.min(1, (lightOfDawnCPM * 6) / 60); // Technically doesn't account for the slight possible loss from casting LoD twice in a short period.
