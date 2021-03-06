@@ -427,10 +427,10 @@ class Player {
     if (spec === SPEC.RESTODRUID) {
       this.activeStats = {
         intellect: 1600,
-        haste: 690,
-        crit: 280,
-        mastery: 230,
-        versatility: 220,
+        haste: 790,
+        crit: 480,
+        mastery: 200,
+        versatility: 320,
         stamina: 1400,
       };
       this.statWeights.Raid = druidDefaultStatWeights("Raid");
@@ -440,10 +440,10 @@ class Player {
 
       this.activeStats = {
         intellect: 1600,
-        haste: 500,
+        haste: 800,
         crit: 200,
-        mastery: 210,
-        versatility: 240,
+        mastery: 410,
+        versatility: 340,
         stamina: 1490,
       };
 
@@ -466,10 +466,10 @@ class Player {
     } else if (spec === SPEC.DISCPRIEST) {
       this.activeStats = {
         intellect: 1600,
-        haste: 500,
-        crit: 280,
-        mastery: 270,
-        versatility: 220,
+        haste: 700,
+        crit: 480,
+        mastery: 370,
+        versatility: 320,
         stamina: 1400,
       };
 

@@ -60,8 +60,10 @@ export function getPaladinCovAbility(soulbindName, player, contentType) {
     bonus_stats.HPS = (ashen_hammer_portion + ashen_healing_portion) / 240;
   } else if (["Marileth", "Emeni", "Heirmir"].includes(soulbindName)) {
     // Vanquishers Hammer (Necrolord)
+    const HPSFreeWordOfGlory = player.getSingleCast(IDWORDOFGLORY, contentType);
+    const HPSFreeHolyPower = getOneHolyPower(player, contentType);
 
-    bonus_stats.HPS = player.getSingleCast(IDWORDOFGLORY, contentType) / 30;
+    bonus_stats.HPS = (HPSFreeWordOfGlory + HPSFreeHolyPower) / 30;
   }
 
   return bonus_stats;
