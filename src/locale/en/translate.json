@@ -6,13 +6,18 @@
       "CreateChar": "Create New Character",
       "AddChar": "Add Character",
       "CharName": "Character Name",
+      "ServerName": "Server Name",
+      "CharacterInfo": "Character Information",
+      "StatWeights": "Stat Weights",
       "SavedLogs": {
-        "Header": "Detailed Breakdown Coming Soon",
+        "TabHeader": "Saved Logs(Coming Soon)",
+        "Header": "Current Log",
         "Report": "Report",
         "Boss": "Boss",
         "FightLength": "Fight Length",
         "HPS": "HPS",
-        "RawHPS": "Raw HPS"
+        "RawHPS": "Raw HPS",
+        "ResetToDefaults": "Reset to Defaults"
       }
     },
 
@@ -54,6 +59,7 @@
     "Email": "Email",
     "Battletag": "Battletag",
     "Edit": "Edit",
+    "Equipped": "Equipped",
 
     "Changelog": {
       "Header": "Changelog",
@@ -270,6 +276,10 @@
       "Profile": "Profile",
       "CharHeader": "Characters",
       "CharHelpText": "Add your characters here. Right click to edit your stat weights, realm information and more.",
+      "Articles": {
+        "Header": "Recent Spec Articles",
+        "HelpText": ""
+      },
       "Tooltips": {
         "TopGear": "Find your best gear set",
         "QuickCompare": "Compare Items for each slot.",

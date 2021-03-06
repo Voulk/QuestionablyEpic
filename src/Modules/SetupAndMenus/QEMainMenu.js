@@ -200,14 +200,14 @@ export default function QEMainMenu(props) {
           <Grid container spacing={1}>
             <Grid item xs={12}>
               <Typography variant="h5" align="center" style={{ padding: "25px 10px 5px 10px" }} color="primary">
-                {/* // TODO Translations and reword */}
-                Recent Spec Articles
+                {t("MainMenu.Articles.Header")}
+                {/* TODO: Voulk to Add Help Text */}
+                {/* Help Text for Articles */}
+                {/* <Tooltip title={t("MainMenu.Articles.HelpText")} placement="top-start">
+                  <InfoOutlinedIcon style={{ color: "white", marginLeft: 4 }} fontSize="small" />
+                </Tooltip> */}
               </Typography>
-              {/* <Typography style={{ color: "white", fontStyle: "italic" }} variant="body2" align="center">
-              Some Links Relevant to the Class
-            </Typography> */}
             </Grid>
-            {/* add a filter here for the players class */}
             {articles.map((key) => (
               <ArticleCard url={key.url} title={key.title} image={key.image} date={key.date} extrainfo={key.extrainfo} />
             ))}
