@@ -33,10 +33,10 @@
     "Save": "Сохранить",
     "Delete": "Delete",
     "Intellect": "интеллекту",
-    "Crit": "к критическому удару",
-    "Haste": "к скорости",
-    "Mastery": "к искусности",
-    "Versatility": "к универсальности",
+    "Crit": "Критический удар",
+    "Haste": "Скорость",
+    "Mastery": "Искусность",
+    "Versatility": "универсальность",
     "Leech": "Самоисцеление",
     "Region": "Регион",
     "Race": "Раса",
@@ -142,10 +142,10 @@
         "_Comments1": "Translations for the Accordian for Healer Info",
         "StatsHeading": "Stats",
         "Item Level": "ilvl",
-        "Crit": "к критическому удару",
-        "Haste": "к скорости",
-        "Mastery": "к искусности",
-        "Versatility": "к универсальности",
+        "Crit": "Критический удар",
+        "Haste": "Скорость",
+        "Mastery": "Искусность",
+        "Versatility": "универсальность",
         "TalentHeader": "Talents",
         "SoulbindAbilities": "Soulbind Abilities",
         "SoulbindConduits": "Soulbind Conduits"
@@ -437,10 +437,10 @@
     },
 
     "stats": {
-      "crit": "к критическому удару",
-      "haste": "к скорости",
-      "mastery": "к искусности",
-      "versatility": "к универсальности"
+      "crit": "Критический удар",
+      "haste": "Скорость",
+      "mastery": "Искусность",
+      "versatility": "универсальность"
     },
     "Settings": {
       "SettingsTitle": "Settings",

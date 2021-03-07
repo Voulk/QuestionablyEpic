@@ -89,8 +89,8 @@ export default function LanguageSelector(props) {
                     <Divider />
                     {/* <MenuItem onClick={(e) => handleClose(e, "fr")}>Français</MenuItem>
                     <Divider /> */}
-                    <MenuItem onClick={(e) => handleClose(e, "ru")}>Русский</MenuItem>
-                    <Divider />
+                    {/* <MenuItem onClick={(e) => handleClose(e, "ru")}>Русский</MenuItem>
+                    <Divider /> */}
                     <MenuItem onClick={(e) => handleClose(e, "de")}>Deutsch</MenuItem>
                   </MenuList>
                 </ClickAwayListener>
