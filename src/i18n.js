@@ -17,7 +17,7 @@ i18n
     resources: {
       en: languageEN,
       //cn: languageCH,
-      //ru: languageRU,
+      ru: languageRU,
       //fr: languageFR,
       de: languageDE,
     },

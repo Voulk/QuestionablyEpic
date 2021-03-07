@@ -6,13 +6,18 @@
       "CreateChar": "Create New CharacterDE",
       "AddChar": "Charakter hinzufügen",
       "CharName": "Charaktername",
+      "ServerName": "Server Name",
+      "CharacterInfo": "Character Information",
+      "StatWeights": "Stat Weights",
       "SavedLogs": {
-        "Header": "Detailed Breakdown Coming Soon",
+        "TabHeader": "Saved Logs(Coming Soon)",
+        "Header": "Current Log",
         "Report": "Report",
         "Boss": "Boss",
         "FightLength": "Fight Length",
         "HPS": "HPS",
-        "RawHPS": "Raw HPS"
+        "RawHPS": "Raw HPS",
+        "ResetToDefaults": "Reset to Defaults"
       }
     },
 
@@ -54,6 +59,7 @@
     "Email": "Email",
     "Battletag": "Battletag",
     "Edit": "Edit",
+    "Equipped": "Equipped",
 
     "Changelog": {
       "Header": "ChangelogDE",
@@ -269,6 +275,10 @@
       "Profile": "Profil",
       "CharHeader": "Charaktere",
       "CharHelpText": "Füge deine Charaktere hier hinzu. Rechtsklick um deine Wertegewichtungen, Serverinformationen und mehr zu bearbeiten.",
+      "Articles": {
+        "Header": "Recent Spec Articles",
+        "HelpText": ""
+      },
       "Tooltips": {
         "TopGear": "Finde dein bestes Ausrüstungsset.",
         "QuickCompare": "Vergleiche Gegenstände für jeden Slot.",
@@ -533,6 +543,9 @@
       "SimCBody1": "Aktueller Status des SimC Strings:",
       "SimCBody2": "Aktuell ausgerüstete Ausrüstung:",
       "SimCButton": "Import vom SimC Addon",
+      "SimCBody1Good": "SimC Status - All Set!",
+      "SimCBody1Invalid": "SimC Status - Empty Item Slot",
+      "SimCBody1Missing": "SimC Status - Missing",
       "HelpText": "Kopiere deinen SimC String hier herein, wähle bis zu zwei Schlachtzugsschwierigkeiten, dein durchschnittliches Schlüsselsteinlevel und deine PvP Wertung aus, um herauszufinden, wo du dein nächstes Upgrade finden kannst!"
     },
 
