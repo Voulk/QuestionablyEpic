@@ -156,7 +156,7 @@ export default function TopGearSettingsAccordion(props) {
                 <Grid item xs={12}>
                   <FormControl variant="outlined" size="small">
                     <InputLabel id="groupValue">{}</InputLabel>
-                    <Select labelId="groupValue" value={groupValue} onChange={(e) => updateGroupValue(e.target.value)}>
+                    <Select labelId="groupValue" value={groupValue} onChange={(e) => updateGroupValue(e.target.value)} MenuProps={menuStyle}>
                       <MenuItem value={true}>{t("Yes")}</MenuItem>
                       <MenuItem value={false}>{t("No")}</MenuItem>
                     </Select>
