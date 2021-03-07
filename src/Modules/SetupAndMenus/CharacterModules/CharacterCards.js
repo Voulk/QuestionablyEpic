@@ -328,7 +328,7 @@ export default function CharCards(props) {
   const rootClassName = classes.root + " " + (props.isActive ? classes.activeChar : "");
 
   /* ------------------ Regions Array for the Region Selector ----------------- */
-  const regions = ["CN", "US", "TW", "EU"];
+  const regions = ["CN", "US", "TW", "EU", "KR"];
 
   /* ------------------ Converts Milliseconds to mm:ss format ----------------- */
   const sec2hmmss = (seconds) => {
