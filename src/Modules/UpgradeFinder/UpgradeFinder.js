@@ -64,7 +64,10 @@ export function UpgradeFinder(props) {
   //const playerSettings = { raid: [0,1], dungeon: 15, pvp: 4 };
 
   return showReport ? (
+    <div>
     <UpgradeFinderResults player={player} contentType={contentType} itemSelection={itemSelection} playerSettings={playerSettings} />
+    <div style={{marginBottom: 100}} />
+    </div>
   ) : (
     <UpgradeFinderFront
       player={player}

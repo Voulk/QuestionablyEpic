@@ -85,7 +85,7 @@ export default function AddNewChar(props) {
   const [regions, setRegions] = React.useState("");
   const [selectedRace, setSelectedRace] = React.useState("");
   const [server, setServer] = React.useState("");
-  const region = ["CN", "US", "TW", "EU"];
+  const region = ["CN", "US", "TW", "EU", "KR"];
   const handleClickOpen = () => {
     setOpen(true);
   };
