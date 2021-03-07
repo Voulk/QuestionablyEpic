@@ -24,8 +24,8 @@ export function getSoulbindFormula(effectID, player, contentType) {
   // Activating your Kyrian class ability increases your mastery by X for Y seconds.
   // You occasionally expel sorrowful memories which can be walked through to extend the effect by 3 seconds.
   if (effectID === 328266) {
-    let expectedUptime = (30 + 9 * 2) / 180; // TODO. Demonstration only.
-    bonus_stats.Mastery = 350 * expectedUptime; // Placeholder.
+    let expectedUptime = (30 + 9 * 2) / 180; // TODO: Investigate. Reports of a bugged uptime 
+    bonus_stats.Mastery = 350 * expectedUptime; // 
   }
   // Focusing Mantra
   else if (effectID === 328261) {

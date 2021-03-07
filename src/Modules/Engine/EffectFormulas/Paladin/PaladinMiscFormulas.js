@@ -6,7 +6,12 @@ const IDWORDOFGLORY = 85673;
 
 // Returns the expected HPS of the player getting one Holy Power.
 export function getOneHolyPower(player, contentType) {
-  return Math.round(player.getSingleCast(IDLIGHTOFDAWN, contentType) / 3);
+  const isDP = true;
+  const oneLoD = Math.round(player.getSingleCast(IDLIGHTOFDAWN, contentType));
+  const divinePurposeBonus = oneLoD * 0.15 * 1.2; 
+
+  //console.log("One LoD: " + oneLoD + ". DP Bonus: " + divinePurposeBonus);
+  return Math.round((oneLoD + (isDP ? divinePurposeBonus : 0)) / 3);
 }
 
 export function getWingsHealingInc(critPerc) {

@@ -442,7 +442,7 @@ class Player {
         intellect: 1600,
         haste: 800,
         crit: 200,
-        mastery: 410,
+        mastery: 550,
         versatility: 340,
         stamina: 1490,
       };

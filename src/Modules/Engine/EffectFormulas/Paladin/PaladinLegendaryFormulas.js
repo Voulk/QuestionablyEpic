@@ -42,11 +42,15 @@ export const getPaladinLegendary = (effectName, player, contentType) => {
     //console.log("HSI: " + holyShockIncrease);
 
     bonus_stats.hps = Math.round(holyShockIncrease * 3 * (1 - wastedShield) * player.getSpellHPS(IDHOLYSHOCK, contentType));
+
   } else if (name === "Inflorescence of the Sunwell") {
     // Do Math
-    let infusionsPerMinute = player.getSpellCPM(IDHOLYSHOCK, contentType) * player.getStatPerc("Crit") + 0.3;
-    let wastedInfusionPercentage = 0.2;
-    let oneHolyLight = player.getSingleCast(IDHOLYLIGHT, contentType);
+    const legendaryBonus = 0.3;
+    const infusionBaseIncrease = 0.3;
+    const infusionsPerMinute = player.getSpellCPM(IDHOLYSHOCK, contentType) * (player.getStatPerc("Crit") + 0.3);
+    const infusionProcsUsed = 0.22;
+    const oneHolyLight = player.getSingleCast(IDHOLYLIGHT, contentType);
+
 
     // Resplendent tests
     /*
@@ -58,19 +62,27 @@ export const getPaladinLegendary = (effectName, player, contentType) => {
         */
     //
 
-    bonus_stats.hps = Math.round((infusionsPerMinute * wastedInfusionPercentage * (oneHolyLight * (0.3 + 0.5))) / 60);
-    
+    bonus_stats.hps = Math.round((infusionsPerMinute * infusionProcsUsed * (oneHolyLight * (legendaryBonus + (infusionBaseIncrease + legendaryBonus)))) / 60);
+
   } else if (name === "Shadowbreaker, Dawn of the Sun") {
-    let lightOfDawnCPM = player.getSpellCPM(IDLIGHTOFDAWN, contentType);
-    let lightOfDawnUptime = Math.min(1, (lightOfDawnCPM * 6) / 60); // Technically doesn't account for the slight possible loss from casting LoD twice in a short period.
+    const lightOfDawnCPM = player.getSpellCPM(IDLIGHTOFDAWN, contentType);
+    let lightOfDawnUptime = Math.min(1, (lightOfDawnCPM * 8) / 60); // Technically doesn't account for the slight possible loss from casting LoD twice in a short period.
     let averageMasteryEff = player.getStatPerc("Mastery"); // TODO: Improve with logs data.
     let maxMasteryEff = (player.getStatPerc("Mastery") - 1) / 0.7 + 1;
     let mastDiff = maxMasteryEff / averageMasteryEff - 1;
     let percentHealingToHitTargets = 0.95;
+    const HPSMasteryBonus = player.getHPS(contentType) * mastDiff * lightOfDawnUptime * percentHealingToHitTargets;
+
+    // Calculate WoG bonus.
+    const buffedWordOfGlories = lightOfDawnCPM;
+    const wordOfGloryMasteryCoeff = (1+(player.getStatPerc("Mastery")-1) * 1.5) / (player.getStatPerc("Mastery"))
+    const oneWordOfGloryBonus = Math.max(0, (player.getSingleCast(IDWORDOFGLORY, contentType) * wordOfGloryMasteryCoeff) - player.getSingleCast(IDLIGHTOFDAWN, contentType));
+    const HPSWordOfGlory = buffedWordOfGlories * oneWordOfGloryBonus / 60;
 
     //console.log("MastDiff: " + mastDiff + ". LoDUptime: " + lightOfDawnUptime + "Max: " + maxMasteryEff + ". Avg: " + averageMasteryEff);
 
-    bonus_stats.hps = Math.round(player.getHPS(contentType) * mastDiff * lightOfDawnUptime * percentHealingToHitTargets);
+    bonus_stats.hps = Math.round(HPSMasteryBonus + HPSWordOfGlory);
+
   } else if (name === "Of Dusk and Dawn") {
     bonus_stats.hps = -1;
   } else if (name === "Vanguards Momentum") {
