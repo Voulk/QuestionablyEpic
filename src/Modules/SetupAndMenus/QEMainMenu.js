@@ -14,6 +14,7 @@ import MessageOfTheDay from "./MessageOftheDay";
 import ArticleCard from "../ArticleCards/ArcticleCard";
 import Changelog from "../ChangeLog/Changelog";
 import InfoOutlinedIcon from "@material-ui/icons/InfoOutlined";
+import { useSelector } from "react-redux";
 
 // Warning: If a button name has to change, do it in the translation files. Consider the titles here to be ID's rather than strings.
 // [route, show button?, tooltip]
@@ -56,17 +57,18 @@ export default function QEMainMenu(props) {
   useEffect(() => {
     ReactGA.pageview(window.location.pathname + window.location.search);
   }, []);
-
+  const allChars = useSelector((state) => state.characters);
+  const activePlayer = useSelector((state) => state.characters.getActiveChar());
   const { t, i18n } = useTranslation();
   const classes = useStyles();
-  const characterCount = props.allChars.getAllChar().length;
+  const characterCount = allChars.getAllChar().length;
   const patron = ["Diamond", "Gold", "Rolls Royce", "Sapphire"].includes(props.patronStatus);
 
   //const articles = dbGetArticleList();
   //console.log(articles);
   let articles = [];
-  if (props.allChars.allChar.length > 0) {
-    articles = props.articleList.filter((article) => article.specs.includes(props.player.getSpec()) || article.specs === "All");
+  if (allChars.allChar.length > 0) {
+    articles = props.articleList.filter((article) => article.specs.includes(activePlayer.getSpec()) || article.specs === "All");
     articles.sort((a, b) => (a.date < b.date ? 1 : -1));
     articles = articles.slice(0, 3);
   }
@@ -174,8 +176,8 @@ export default function QEMainMenu(props) {
         {/* </p> */}
 
         <Grid container spacing={2}>
-          {props.allChars.getAllChar().length > 0
-            ? props.allChars
+          {allChars.getAllChar().length > 0
+            ? allChars
                 .getAllChar()
                 .map((char, index) => (
                   <CharCards
@@ -183,16 +185,16 @@ export default function QEMainMenu(props) {
                     name={char.charName}
                     char={char}
                     cardType="Char"
-                    allChars={props.allChars}
+                    allChars={allChars}
                     charUpdate={props.charUpdate}
                     singleUpdate={props.singleUpdate}
-                    isActive={index === props.allChars.activeChar}
+                    isActive={index === allChars.activeChar}
                     charUpdatedSnack={props.charUpdatedSnack}
                     delChar={props.delChar}
                   />
                 ))
             : ""}
-          {props.allChars.getAllChar().length < 9 ? <AddNewChar allChars={props.allChars} charUpdate={props.charUpdate} charAddedSnack={props.charAddedSnack} /> : ""}
+          {allChars.getAllChar().length < 9 ? <AddNewChar allChars={allChars} charUpdate={props.charUpdate} charAddedSnack={props.charAddedSnack} /> : ""}
         </Grid>
 
         {articles.length > 0 ? (

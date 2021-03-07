@@ -1,4 +1,6 @@
 // Action Types
+import PlayerChars from "../../Modules/Player/PlayerChars";
+
 import { TOGGLE_CONTENT } from "../ActionTypes";
 import { TOGGLE_GAMETYPE } from "../ActionTypes";
 
@@ -10,11 +12,11 @@ import { gameType } from "./GameType";
 const initialState = {
   gameType: "Retail",
   contentType: "Raid",
+  characters: new PlayerChars(),
 };
 
 export default function rootReducer(state = initialState, action) {
-  console.log("reducer", state, action);
-
+  console.log(state);
   switch (action.type) {
     case TOGGLE_CONTENT:
       return contentType(state, action);

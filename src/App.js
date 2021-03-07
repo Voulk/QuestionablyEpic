@@ -421,10 +421,8 @@ class App extends Component {
                   path="/"
                   render={() => (
                     <QEMainMenu
-                      allChars={allChars}
                       charUpdate={this.updatePlayerChars}
                       singleUpdate={this.updatePlayerChar}
-                      player={activePlayer}
                       charAddedSnack={this.handleCharSnackOpen}
                       charUpdatedSnack={this.handleCharUpdateSnackOpen}
                       patronStatus={this.state.patronStatus}
@@ -434,30 +432,16 @@ class App extends Component {
                   )}
                 />
                 <Route path="/holydiver" render={() => <HolyDiver />} />
-                <Route path="/report" render={() => <TopGearReport player={activePlayer} result={this.state.topSet} />} />
-                <Route
-                  path="/quickcompare"
-                  render={() => <QuickCompare player={activePlayer} allChars={allChars} simcSnack={this.handleSimCSnackOpen} />}
-                />
-                <Route
-                  path="/topgear"
-                  render={() => (
-                    <TopGear player={activePlayer} setTopResult={this.setTopResult} allChars={allChars} simcSnack={this.handleSimCSnackOpen} />
-                  )}
-                />
-                <Route path="/legendaries" render={() => <LegendaryCompare player={activePlayer}  />} />
+                <Route path="/report" render={() => <TopGearReport result={this.state.topSet} />} />
+                <Route path="/quickcompare" render={() => <QuickCompare player={activePlayer} allChars={allChars} simcSnack={this.handleSimCSnackOpen} />} />
+                <Route path="/topgear" render={() => <TopGear player={activePlayer} setTopResult={this.setTopResult} allChars={allChars} simcSnack={this.handleSimCSnackOpen} />} />
+                <Route path="/legendaries" render={() => <LegendaryCompare player={activePlayer} />} />
                 <Route path="/trinkets" render={() => <TrinketAnalysis player={activePlayer} />} />
-                <Route
-                  path="/soulbinds"
-                  render={() => <CovenantExploration player={activePlayer} updatePlayerChar={this.updatePlayerChar} />}
-                />
+                <Route path="/soulbinds" render={() => <CovenantExploration player={activePlayer} updatePlayerChar={this.updatePlayerChar} />} />
                 <Route path="/login" render={() => <QELogin setRegion={this.setRegion} />} />
                 <Route path="/attemptlogin" component={() => (window.location = this.buildLoginURL())} />
                 <Route path="/confirmlogin/" render={() => <ConfirmLogin loginSnackOpen={this.handleLoginSnackOpen} updatePlayerID={this.updatePlayerID} />} />
-                <Route
-                  path="/UpgradeFinder/"
-                  render={() => <UpgradeFinder player={activePlayer} simcSnack={this.handleSimCSnackOpen} allChars={allChars} />}
-                />
+                <Route path="/UpgradeFinder/" render={() => <UpgradeFinder player={activePlayer} simcSnack={this.handleSimCSnackOpen} allChars={allChars} />} />
                 <Route
                   path="/profile/"
                   render={() => (

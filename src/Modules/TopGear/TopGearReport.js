@@ -8,11 +8,13 @@ import { Button, Paper, Typography, Divider, Grid, Card, CardContent } from "@ma
 import { Link } from "react-router-dom";
 import { getItemIcon, getTranslatedItemName } from "../Engine/ItemUtilities";
 import { classColoursJS } from "../CooldownPlanner/Functions/ClassColourFunctions";
+import { useSelector } from "react-redux";
 
 function TopGearReport(props) {
   const [backgroundImage, setBackgroundImage] = useState("");
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
+  const activePlayer = useSelector((state) => state.characters.getActiveChar());
 
   const upgradeColor = (num) => {
     if (num > 0) {
@@ -35,7 +37,7 @@ function TopGearReport(props) {
 
   useEffect(() => {
     async function setImg() {
-      const img = await apiGetPlayerImage(props.player);
+      const img = await apiGetPlayerImage(activePlayer);
       setBackgroundImage(img);
     }
 
@@ -49,7 +51,7 @@ function TopGearReport(props) {
   };
 
   const classIcon = () => {
-    switch (props.player.spec) {
+    switch (activePlayer.spec) {
       case "Holy Paladin":
         return require("../../Images/Classes/Paladin/icon-paladin.png").default;
         break;
@@ -194,7 +196,7 @@ function TopGearReport(props) {
                     <Grid container spacing={1} direction="row" justify="space-between">
                       <Grid item xs={4} style={{ paddingBottom: 8 }}>
                         <Grid container justify="flex-start">
-                          <TopSetStatsPanel statList={statList} spec={props.player.spec} currentLanguage={currentLanguage} />
+                          <TopSetStatsPanel statList={statList} spec={activePlayer.spec} currentLanguage={currentLanguage} />
                         </Grid>
                       </Grid>
                       <Grid item xs={3} style={{ paddingBottom: 8, alignSelf: "flex-end" }}>
@@ -223,10 +225,10 @@ function TopGearReport(props) {
                                       display="inline"
                                       align="left"
                                       style={{
-                                        color: classColoursJS(props.player.spec),
+                                        color: classColoursJS(activePlayer.spec),
                                       }}
                                     >
-                                      {props.player.charName}
+                                      {activePlayer.charName}
                                     </Typography>
                                     <Divider />
                                   </Grid>
@@ -237,15 +239,15 @@ function TopGearReport(props) {
                                       display="inline"
                                       align="left"
                                       style={{
-                                        color: classColoursJS(props.player.spec),
+                                        color: classColoursJS(activePlayer.spec),
                                       }}
                                     >
-                                      {props.player.spec}
+                                      {activePlayer.spec}
                                     </Typography>
                                   </Grid>
                                   <Grid item xs={12}>
                                     <Typography variant="caption" wrap="nowrap" display="inline" align="left">
-                                      {props.player.region}-{props.player.realm}
+                                      {activePlayer.region}-{activePlayer.realm}
                                     </Typography>
                                   </Grid>
                                 </Grid>
