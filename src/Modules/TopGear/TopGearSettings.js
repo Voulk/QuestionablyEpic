@@ -165,7 +165,7 @@ export default function TopGearSettingsAccordion(props) {
               </Grid>
             </Grid>
             <Divider orientation="vertical" flexItem />
-            {playerSpec === "Discipline Priest" ? (
+            {/* {playerSpec === "Discipline Priest" ? (
               <Grid item xs={2}>
                 <Grid container spacing={1} style={{ paddingLeft: 8 }}>
                   <Grid item xs={12}>
@@ -195,7 +195,7 @@ export default function TopGearSettingsAccordion(props) {
               </Grid>
             ) : (
               ""
-            )}
+            )} */}
             {/*
             <Divider orientation="vertical" flexItem />
             <Grid item xs={2}>
