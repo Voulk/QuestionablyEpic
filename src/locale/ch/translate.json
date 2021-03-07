@@ -6,13 +6,18 @@
       "CreateChar": "Create New Character",
       "AddChar": "Add Character",
       "CharName": "Character Name",
+      "ServerName": "Server Name",
+      "CharacterInfo": "Character Information",
+      "StatWeights": "Stat Weights",
       "SavedLogs": {
-        "Header": "Detailed Breakdown Coming SoonCH",
+        "TabHeader": "Saved Logs(Coming Soon)",
+        "Header": "Current Log",
         "Report": "ReportCH",
         "Boss": "BossCH",
         "FightLength": "Fight LengthCH",
         "HPS": "HPSCH",
-        "RawHPS": "Raw HPSCH"
+        "RawHPS": "Raw HPSCH",
+        "ResetToDefaults": "Reset to Defaults"
       }
     },
 
@@ -49,11 +54,12 @@
     "HPS": "HPS",
     "Casts": "CastsCH",
     "Healing": "HealingCH",
-    "Overhealing":" OverhealingCH",
+    "Overhealing": " OverhealingCH",
     "Account": "AccountCH",
     "Email": "Email",
     "Battletag": "Battletag",
     "Edit": "Edit",
+    "Equipped": "Equipped",
 
     "Changelog": {
       "Header": "ChangelogCH",
@@ -63,7 +69,7 @@
       "Date": "DateCH"
     },
 
-    "PatreonTiers":{
+    "PatreonTiers": {
       "RollsRoyce": "Rolls RoyceCH",
       "Diamond": "DiamondCH",
       "Gold": "GoldCH"
@@ -151,6 +157,7 @@
         "HolyPaladinComment": "Holy Paladin Class Cooldowns",
         "31821": "光环掌握",
         "31884": "复仇之怒",
+        "316958": "红烬圣土",
         "RestorationDruidComment": "Restoration Druid Class Cooldowns",
         "740": "宁静",
         "33891": "化身：生命之树",
@@ -166,6 +173,7 @@
         "RestorationShamanComment": "Restoration Shaman Class Cooldowns",
         "108280": "治疗之潮图腾",
         "98008": "灵魂链接图腾",
+        "207399": "先祖护佑图腾",
         "MistweaverMonkComment": "Mistweaver Monk Class Cooldowns",
         "115310": "还魂术",
         "HavocDemonHunterComment": "Havoc Demon Hunter Cooldowns",
@@ -178,7 +186,7 @@
         "51052": "反魔法领域"
       },
       "BossAbilities": {
-        "undefined": "No Ability Selected",
+        "undefined": "No Ability",
         "ShriekingComment": "Shriekwing Abilities",
         "345397": "赤红声浪",
         "343384": "血光",
@@ -229,7 +237,12 @@
         "DenathriusComment": "Denathrius Abilities",
         "330627": "毁灭之手",
         "336162": "奥能波动",
-        "326707": "净化痛苦"
+        "326707": "净化痛苦",
+        "329785": "猩红合唱",
+        "326858": "血债",
+        "332626": "粉碎痛苦",
+        "326833": "痛苦的回忆",
+        "338687": "纳斯利亚赞歌"
       }
     },
     "HallOfFame": {
@@ -263,6 +276,10 @@
       "Profile": "ProfileCH",
       "CharHeader": "CharactersCH",
       "CharHelpText": "Add your characters here. Right click to edit your stat weights, realm information and more.CH",
+      "Articles": {
+        "Header": "Recent Spec Articles",
+        "HelpText": ""
+      },
       "Tooltips": {
         "TopGear": "Find your best gear setCH",
         "QuickCompare": "Compare Items for each slotCH.",
@@ -367,7 +384,6 @@
       "Heroic": "",
       "Mythic": ""
     },
-
 
     "PvPCurrency": {
       "Honor": "荣誉点数",
@@ -519,6 +535,9 @@
       "SimCBody1": "Current SimC String Status:",
       "SimCBody2": "Current Equipped Gear:",
       "SimCButton": "Import SimC",
+      "SimCBody1Good": "SimC Status - All Set!",
+      "SimCBody1Invalid": "SimC Status - Empty Item Slot",
+      "SimCBody1Missing": "SimC Status - Missing",
       "HelpText": "Insert a SimC String, Select up to two raid difficulties, your standard mythic keystone level, and your PVP rating to see where you can find your next upgrade!"
     },
 

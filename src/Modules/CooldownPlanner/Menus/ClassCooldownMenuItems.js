@@ -19,6 +19,8 @@ import AntiMagicZoneIcon from "../../../Images/Classes/DeathKnight/AntiMagicZone
 import VampiricEmbraceIcon from "../../../Images/Classes/Priest/Specialisation/Shadow/VampiricEmbrace.jpg";
 import ConvokeTheSpiritsIcon from "../../../Images/Classes/Druid/CovenantAbilities/ConvokeTheSpirits.jpg";
 import FlourishIcon from "../../../Images/Classes/Druid/Specialisation/Restoration/Icons/Talents/FlourishIcon.jpg";
+import AncestralProtectionIcon from "../../../Images/Classes/Shaman/Specialisation/Restoration/Icons/Talents/AncestralProtectionTotemIcon.jpg"
+import AshenHallowIcon from "../../../Images/Classes/Paladin/CovenantAbilities/AshenHallow.jpg"
 
 // TODO this should be converted to a map at some point
 
@@ -32,7 +34,7 @@ export default function ClassCooldownMenuItems(props) {
             style={{
               height: 20,
               width: 20,
-              padding: "0px 5px 0px 5px",
+              margin: "0px 5px 0px 5px",
               verticalAlign: "middle",
             }}
             src={AuraMasteryIcon}
@@ -48,7 +50,7 @@ export default function ClassCooldownMenuItems(props) {
             style={{
               height: 20,
               width: 20,
-              padding: "0px 5px 0px 5px",
+              margin: "0px 5px 0px 5px",
               verticalAlign: "middle",
             }}
             src={AvengingWrathIcon}
@@ -57,6 +59,22 @@ export default function ClassCooldownMenuItems(props) {
         </a>
         <Translation>{(t) => t("CooldownPlanner.ClassAbilities.31884")}</Translation>
       </MenuItem>,
+            <Divider key={"divider111"} />,
+            <MenuItem value={316958} key={21}>
+              <a data-wowhead="spell=316958">
+                <img
+                  style={{
+                    height: 20,
+                    width: 20,
+                    margin: "0px 5px 0px 5px",
+                    verticalAlign: "middle",
+                  }}
+                  src={AshenHallowIcon}
+                  alt="Ashen Hallow"
+                />
+              </a>
+              <Translation>{(t) => t("CooldownPlanner.ClassAbilities.316958")}</Translation>
+            </MenuItem>,
     ];
   }
   // Restoration Druid
@@ -68,7 +86,7 @@ export default function ClassCooldownMenuItems(props) {
             style={{
               height: 20,
               width: 20,
-              padding: "0px 5px 0px 5px",
+              margin: "0px 5px 0px 5px",
               verticalAlign: "middle",
             }}
             src={TranquilityIcon}
@@ -84,7 +102,7 @@ export default function ClassCooldownMenuItems(props) {
             style={{
               height: 20,
               width: 20,
-              padding: "0px 5px 0px 5px",
+              margin: "0px 5px 0px 5px",
               verticalAlign: "middle",
             }}
             src={TreeofLifeIcon}
@@ -100,7 +118,7 @@ export default function ClassCooldownMenuItems(props) {
             style={{
               height: 20,
               width: 20,
-              padding: "0px 5px 0px 5px",
+              margin: "0px 5px 0px 5px",
               verticalAlign: "middle",
             }}
             src={ConvokeTheSpiritsIcon}
@@ -116,7 +134,7 @@ export default function ClassCooldownMenuItems(props) {
             style={{
               height: 20,
               width: 20,
-              padding: "0px 5px 0px 5px",
+              margin: "0px 5px 0px 5px",
               verticalAlign: "middle",
             }}
             src={FlourishIcon}
@@ -136,7 +154,7 @@ export default function ClassCooldownMenuItems(props) {
             style={{
               height: 20,
               width: 20,
-              padding: "0px 5px 0px 5px",
+              margin: "0px 5px 0px 5px",
               verticalAlign: "middle",
             }}
             src={SalvationIcon}
@@ -152,7 +170,7 @@ export default function ClassCooldownMenuItems(props) {
             style={{
               height: 20,
               width: 20,
-              padding: "0px 5px 0px 5px",
+              margin: "0px 5px 0px 5px",
               verticalAlign: "middle",
             }}
             src={DivineHymnIcon}
@@ -172,7 +190,7 @@ export default function ClassCooldownMenuItems(props) {
             style={{
               height: 20,
               width: 20,
-              padding: "0px 5px 0px 5px",
+              margin: "0px 5px 0px 5px",
               verticalAlign: "middle",
             }}
             src={EvangelismIcon}
@@ -188,7 +206,7 @@ export default function ClassCooldownMenuItems(props) {
             style={{
               height: 20,
               width: 20,
-              padding: "0px 5px 0px 5px",
+              margin: "0px 5px 0px 5px",
               verticalAlign: "middle",
             }}
             src={PowerWordBarrierIcon}
@@ -204,7 +222,7 @@ export default function ClassCooldownMenuItems(props) {
             style={{
               height: 20,
               width: 20,
-              padding: "0px 5px 0px 5px",
+              margin: "0px 5px 0px 5px",
               verticalAlign: "middle",
             }}
             src={SpiritShell}
@@ -224,7 +242,7 @@ export default function ClassCooldownMenuItems(props) {
             style={{
               height: 20,
               width: 20,
-              padding: "0px 5px 0px 5px",
+              margin: "0px 5px 0px 5px",
               verticalAlign: "middle",
             }}
             src={HealingTideTotemIcon}
@@ -240,7 +258,7 @@ export default function ClassCooldownMenuItems(props) {
             style={{
               height: 20,
               width: 20,
-              padding: "0px 5px 0px 5px",
+              margin: "0px 5px 0px 5px",
               verticalAlign: "middle",
             }}
             src={SpiritLinkTotemIcon}
@@ -248,6 +266,22 @@ export default function ClassCooldownMenuItems(props) {
           />
         </a>
         <Translation>{(t) => t("CooldownPlanner.ClassAbilities.98008")}</Translation>
+      </MenuItem>,
+      <Divider key={"divider200"} />,
+      <MenuItem value={207399} key={10}>
+        <a data-wowhead="spell=207399">
+          <img
+            style={{
+              height: 20,
+              width: 20,
+              margin: "0px 5px 0px 5px",
+              verticalAlign: "middle",
+            }}
+            src={AncestralProtectionIcon}
+            alt="Ancestral Protection Totem"
+          />
+        </a>
+        <Translation>{(t) => t("CooldownPlanner.ClassAbilities.207399")}</Translation>
       </MenuItem>,
     ];
   }
@@ -260,7 +294,7 @@ export default function ClassCooldownMenuItems(props) {
             style={{
               height: 20,
               width: 20,
-              padding: "0px 5px 0px 5px",
+              margin: "0px 5px 0px 5px",
               verticalAlign: "middle",
             }}
             src={RevivalIcon}
@@ -280,7 +314,7 @@ export default function ClassCooldownMenuItems(props) {
             style={{
               height: 20,
               width: 20,
-              padding: "0px 5px 0px 5px",
+              margin: "0px 5px 0px 5px",
               verticalAlign: "middle",
             }}
             src={DarknessIcon}
@@ -300,7 +334,7 @@ export default function ClassCooldownMenuItems(props) {
             style={{
               height: 20,
               width: 20,
-              padding: "0px 5px 0px 5px",
+              margin: "0px 5px 0px 5px",
               verticalAlign: "middle",
             }}
             src={RallyingCryIcon}
@@ -320,7 +354,7 @@ export default function ClassCooldownMenuItems(props) {
             style={{
               height: 20,
               width: 20,
-              padding: "0px 5px 0px 5px",
+              margin: "0px 5px 0px 5px",
               verticalAlign: "middle",
             }}
             src={AntiMagicZoneIcon}
@@ -340,7 +374,7 @@ export default function ClassCooldownMenuItems(props) {
             style={{
               height: 20,
               width: 20,
-              padding: "0px 5px 0px 5px",
+              margin: "0px 5px 0px 5px",
               verticalAlign: "middle",
             }}
             src={VampiricEmbraceIcon}

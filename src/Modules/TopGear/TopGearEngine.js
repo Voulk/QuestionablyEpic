@@ -15,7 +15,7 @@ import { getEffectValue } from "../Engine/EffectFormulas/EffectEngine"
 // our set bonus algorithm before we sort and slice. There are no current set bonuses that are relevant to raid / dungeon so left as a thought experiment for now.
 const softSlice = 3000;
 const DR_CONST = 0.00196669230769231;
-const DR_CONSTLEECH = 0.08822569230769231;
+const DR_CONSTLEECH = 0.04622569230769231;
 
 
 // block for `time` ms, then return the number of loops we could run in that time:
@@ -74,7 +74,7 @@ export function runTopGear(itemList, wepCombos, player, contentType, baseHPS, cu
 
   itemSets.sort((a, b) => (a.hardScore < b.hardScore ? 1 : -1));
 
-  //console.log(itemSets);
+  
 
   // ----
 
@@ -84,9 +84,12 @@ export function runTopGear(itemList, wepCombos, player, contentType, baseHPS, cu
   // Build Differentials
   let differentials = [];
   let primeSet = itemSets[0];
-  for (var i = 1; i < Math.min(CONSTRAINTS.topGearDifferentials+1, itemSets.length); i++) {
+  for (var i = 1; i < Math.min(CONSTRAINTS.Shared.topGearDifferentials+1, itemSets.length); i++) {
     differentials.push(buildDifferential(itemSets[i], primeSet, newPlayer, contentType));
   }
+
+  console.log(itemSets);
+  //console.log(differentials);
 
   //itemSets[0].printSet()
 
@@ -267,6 +270,7 @@ function buildDifferential(itemSet, primeSet, player, contentType) {
       
     }
   }
+  //console.log("D:" + JSON.stringify(differentials));
   return differentials;
 }
 
@@ -377,12 +381,13 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
   addBaseStats(setStats, player.spec); // Add our base stats, which are immune to DR. This includes our base 5% crit, and whatever base mastery our spec has.
 
   // Apply soft DR formula to stats, as the more we get of any stat the weaker it becomes relative to our other stats. 
-  adjusted_weights.haste = (adjusted_weights.haste + adjusted_weights.haste * (1 - (DR_CONST * setStats.haste) / STATPERONEPERCENT.HASTE)) / 2;
-  adjusted_weights.crit = (adjusted_weights.crit + adjusted_weights.crit * (1 - (DR_CONST * setStats.crit) / STATPERONEPERCENT.CRIT)) / 2;
-  adjusted_weights.versatility = (adjusted_weights.versatility + adjusted_weights.versatility * (1 - (DR_CONST * setStats.versatility) / STATPERONEPERCENT.VERSATILITY)) / 2;
-  adjusted_weights.mastery = (adjusted_weights.mastery + adjusted_weights.mastery * (1 - (DR_CONST * setStats.mastery) / STATPERONEPERCENT.MASTERYA[player.spec])) / 2;
-  adjusted_weights.leech = (adjusted_weights.leech + adjusted_weights.leech * (1 - (DR_CONSTLEECH * setStats.leech) / STATPERONEPERCENT.LEECH)) / 2;
+  adjusted_weights.haste = (adjusted_weights.haste + adjusted_weights.haste * (1 - (DR_CONST * setStats.haste) / STATPERONEPERCENT.Retail.HASTE)) / 2;
+  adjusted_weights.crit = (adjusted_weights.crit + adjusted_weights.crit * (1 - (DR_CONST * setStats.crit) / STATPERONEPERCENT.Retail.CRIT)) / 2;
+  adjusted_weights.versatility = (adjusted_weights.versatility + adjusted_weights.versatility * (1 - (DR_CONST * setStats.versatility) / STATPERONEPERCENT.Retail.VERSATILITY)) / 2;
+  adjusted_weights.mastery = (adjusted_weights.mastery + adjusted_weights.mastery * (1 - (DR_CONST * setStats.mastery) / STATPERONEPERCENT.Retail.MASTERYA[player.spec])) / 2;
+  adjusted_weights.leech = (adjusted_weights.leech + adjusted_weights.leech * (1 - (DR_CONSTLEECH * setStats.leech) / STATPERONEPERCENT.Retail.LEECH)) / 2;
 
+  console.log("LEECH: " + adjusted_weights.leech);
   // Calculate a hard score using the rebalanced stat weights.
 
   for (var stat in setStats) {
@@ -457,7 +462,7 @@ function compileStats(stats, bonus_stats) {
 
 function addBaseStats(stats, spec) {
   stats.crit += 175;
-  stats.mastery += STATPERONEPERCENT.MASTERYA[spec] * BASESTAT.MASTERY[spec] * 100;
+  stats.mastery += STATPERONEPERCENT.Retail.MASTERYA[spec] * BASESTAT.MASTERY[spec] * 100;
 
   return stats;
 

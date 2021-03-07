@@ -26,7 +26,7 @@ describe("Test Stat DRs", () => {
         }
         stats = applyDiminishingReturns(stats);
 
-        expect(stats.leech).toEqual(331);
+        expect(stats.leech).toEqual(310);
     });
 });
 

@@ -2,7 +2,7 @@
 
 const userSettings = {
     hymnalAllies: 0,
-    includeGroupBenefits: true,
+    includeGroupBenefits: false,
 
 }
 

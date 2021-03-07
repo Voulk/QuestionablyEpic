@@ -14,11 +14,11 @@ export default function TopSetStatsPanel(props) {
 
   const stats = [
     ["intellect", statList.intellect],
-    ["haste", statList.haste / STATPERONEPERCENT.HASTE],
-    ["crit", statList.crit / STATPERONEPERCENT.CRIT],
-    ["mastery", statList.mastery / STATPERONEPERCENT.MASTERYA[props.spec]],
-    ["versatility", statList.versatility / STATPERONEPERCENT.VERSATILITY],
-    ["leech", statList.leech / STATPERONEPERCENT.LEECH],
+    ["haste", statList.haste / STATPERONEPERCENT.Retail.HASTE],
+    ["crit", statList.crit / STATPERONEPERCENT.Retail.CRIT],
+    ["mastery", statList.mastery / STATPERONEPERCENT.Retail.MASTERYA[props.spec]],
+    ["versatility", statList.versatility / STATPERONEPERCENT.Retail.VERSATILITY],
+    ["leech", statList.leech / STATPERONEPERCENT.Retail.LEECH],
     ["bonus HPS", statList.hps],
     ["bonus DPS", statList.dps],
   ];

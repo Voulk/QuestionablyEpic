@@ -186,7 +186,7 @@ export default function TopGear(props) {
   const helpText = t("TopGear.HelpText");
 
   const activateItem = (unique) => {
-    if (selectedItemCount < CONSTRAINTS.topGearMaxItems) {
+    if (selectedItemCount < CONSTRAINTS.Shared.topGearMaxItems) {
       let player = props.player;
       player.activateItem(unique);
       setItemList([...player.getActiveItems(activeSlot)]);
@@ -245,7 +245,7 @@ export default function TopGear(props) {
           {<UpgradeFinderSimC player={props.player} contentType={contentType} simcSnack={props.simcSnack} allChars={props.allChars} />}
         </Grid>
         <Grid item xs={12}>
-          <TopGearSettingsAccordion userSettings={userSettings} editSettings={editSettings} />
+          <TopGearSettingsAccordion player={props.player} userSettings={userSettings} editSettings={editSettings} />
         </Grid>
 
         {props.player.activeItems.length > 0 ? (

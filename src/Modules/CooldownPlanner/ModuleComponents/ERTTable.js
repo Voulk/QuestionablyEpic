@@ -139,10 +139,10 @@ export default function ERTTable(props) {
         return props.ertListBossAbility;
       case "Boss Ability - Icons":
         return props.ertListAbilityNoTimeIconsAll;
-      case "Notes - Icons":
-        return props.ertListNoteIcons;
-      case "Notes - No Icons":
-        return props.ertListNoteNoIcons;
+      // case "Notes - Icons":
+      //   return props.ertListNoteIcons;
+      // case "Notes - No Icons":
+      //   return props.ertListNoteNoIcons;
       default:
         return props.ertListTimeNoIcons;
     }
@@ -219,7 +219,7 @@ export default function ERTTable(props) {
                         <MenuItem key={"ert4"} value={"Boss Ability - Icons"}>
                           Boss Ability - Icons
                         </MenuItem>
-                        <Divider />
+                        {/* <Divider />
                         <MenuItem key={"ert5"} value={"Notes - Icons"}>
                           Notes - Icons
                         </MenuItem>
@@ -227,7 +227,7 @@ export default function ERTTable(props) {
                         <MenuItem key={"ert6"} value={"Notes - No Icons"}>
                           Notes - No Icons
                         </MenuItem>
-                        <Divider />
+                        <Divider /> */}
                       </Select>
                     </FormControl>
                   </Grid>

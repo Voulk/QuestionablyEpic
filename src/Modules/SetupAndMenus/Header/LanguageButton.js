@@ -53,20 +53,6 @@ export default function LanguageSelector(props) {
     prevOpen.current = open;
   }, [open]);
 
-  // const langIcon = () => {
-  //   if (currentLanguage === "en") {
-  //     return <ReactCountryFlag countryCode="GB" svg style={{ marginRight: "5px" }} />;
-  //   } else if (currentLanguage === "ru") {
-  //     return <ReactCountryFlag countryCode="RU" svg style={{ marginRight: "5px" }} />;
-  //   } else if (currentLanguage === "cn") {
-  //     return <ReactCountryFlag countryCode="CN" svg style={{ marginRight: "5px" }} />;
-  //   } else if (currentLanguage === "fr") {
-  //     return <ReactCountryFlag countryCode="FR" svg style={{ marginRight: "5px" }} />;
-  //   } else if (currentLanguage === "de") {
-  //     return <ReactCountryFlag countryCode="DE" svg style={{ marginRight: "5px" }} />;
-  //   }
-  // };
-
   return (
     <div className={classes.root}>
       <div>
@@ -85,7 +71,7 @@ export default function LanguageSelector(props) {
               }}
             >
               <Paper>
-                <ClickAwayListener onClickAway={handleClose}>
+                <ClickAwayListener onClickAway={(e) => handleClose(e, currentLanguage)}>
                   <MenuList
                     autoFocusItem={open}
                     id="menu-list-grow"
@@ -102,8 +88,8 @@ export default function LanguageSelector(props) {
                     <MenuItem onClick={(e) => handleClose(e, "en")}>English</MenuItem>
                     <Divider />
                     {/* <MenuItem onClick={(e) => handleClose(e, "fr")}>Français</MenuItem>
-                    <Divider />
-                    <MenuItem onClick={(e) => handleClose(e, "ru")}>Русский</MenuItem>
+                    <Divider /> */}
+                    {/* <MenuItem onClick={(e) => handleClose(e, "ru")}>Русский</MenuItem>
                     <Divider /> */}
                     <MenuItem onClick={(e) => handleClose(e, "de")}>Deutsch</MenuItem>
                   </MenuList>

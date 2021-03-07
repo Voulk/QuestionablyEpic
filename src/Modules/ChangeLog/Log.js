@@ -6,12 +6,24 @@
 
 // Template for Changelog Entry
 // {version: "", update: , date: "", changes: ["",""]}
-
+;
 export const changeLog = [
-  { 
+  {
+    version: "9.0",
+    update: 25,
+    date: "3rd March",
+    changes: [
+      "Upgrade Finder 'Slots' - A New Tab to show you upgrades sorted by slot rather than drop location.",
+      "Upgrade Finder: The Settings tab has been copied across from Top Gear.",
+      "Various visual improvements across the app. (SimC import bar, Settings Bar, Language Selection, Menus, Icons & more).",
+      "SimC strings for classes that differ to the one you have selected will now be rejected to avoid confusion",
+      "Bugfix: Fixed a bug where sets with excess Leech would overly devalue the stat in Top Gear."
+    ],
+  },
+  {
     version: "9.0",
     update: 24,
-    date: "23rd February", // TBA
+    date: "23rd February",
     changes: [
       "New: Added Recent articles and spec guides to the main menu.",
       "New: Top Gear now has a settings panel for advanced configuration.",
@@ -21,20 +33,20 @@ export const changeLog = [
       "Top Gear: Re-implemented diminishing returns formulas.",
       "Revamped character edit pane.",
       "Druid: Dark Titans Lesson now includes Photosynthesis value in dungeons.",
-      "Heavy visual improvements through the app."
-    ]
+      "Heavy visual improvements through the app.",
+    ],
   },
-  { 
-  version: "9.0",
-  update: 23,
-  date: "11th February",
-  changes: [
-    "New: Changelog to improve transparency",
-    "Large codebase revamp to prepare for the rest of the expansion.",
-    "Updated: The Summary Panel in #Covenants should now be clearer to read.",
-    "Venthyr Paladin Covenant Ability score now correctly displays HPS.",
-    "Monk: Necrolord conduit 'Bone Marrow Hops' now correctly uses the 50% hit chance of Bonedust Brew",
-    "General Draven's 'Hold Your Ground' has been updated to better reflect real world uptimes. The current Disc Priest bug is also included."
-  ]
+  {
+    version: "9.0",
+    update: 23,
+    date: "11th February",
+    changes: [
+      "New: Changelog to improve transparency",
+      "Large codebase revamp to prepare for the rest of the expansion.",
+      "Updated: The Summary Panel in #Covenants should now be clearer to read.",
+      "Venthyr Paladin Covenant Ability score now correctly displays HPS.",
+      "Monk: Necrolord conduit 'Bone Marrow Hops' now correctly uses the 50% hit chance of Bonedust Brew",
+      "General Draven's 'Hold Your Ground' has been updated to better reflect real world uptimes. The current Disc Priest bug is also included.",
+    ],
   },
 ];

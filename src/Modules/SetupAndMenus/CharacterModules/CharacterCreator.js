@@ -85,7 +85,7 @@ export default function AddNewChar(props) {
   const [regions, setRegions] = React.useState("");
   const [selectedRace, setSelectedRace] = React.useState("");
   const [server, setServer] = React.useState("");
-  const region = ["CN", "US", "TW", "EU"];
+  const region = ["CN", "US", "TW", "EU", "KR"];
   const handleClickOpen = () => {
     setOpen(true);
   };
@@ -172,7 +172,7 @@ export default function AddNewChar(props) {
                   onChange={(e, newValue) => {
                     handleChangeServer(newValue);
                   }}
-                  renderInput={(params) => <TextField {...params} label="Server Name" variant="outlined" />}
+                  renderInput={(params) => <TextField {...params} label={t("CharacterCreator.ServerName")} variant="outlined" />}
                   ListboxProps={{ style: { border: "1px solid rgba(255, 255, 255, 0.23)", borderRadius: 4, paddingTop: 0, paddingBottom: 0 } }}
                 />
               </Grid>

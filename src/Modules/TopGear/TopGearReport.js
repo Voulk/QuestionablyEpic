@@ -347,10 +347,12 @@ function TopGearReport(props) {
                       </Grid>
                     ))}
                   </Grid>
+                  
                 </Grid>
               </Grid>
             </Paper>
           </Grid>
+          <Grid item style={{ height: 40 }} xs={12} />
         </Grid>
       ) : (
         <Typography style={{ textAlign: "center", color: "white" }}>{t("TopGear.ErrorMessage")}</Typography>

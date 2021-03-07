@@ -67,7 +67,7 @@ export function getSoulbindFormula(effectID, player, contentType) {
   else if (effectID === 329778) {
     let expected_allies = contentType === "Raid" ? 4.8 : 3.1;
 
-    bonus_stats.Crit = expected_allies * STATPERONEPERCENT.CRIT;
+    bonus_stats.Crit = expected_allies * STATPERONEPERCENT.Retail.CRIT;
   }
   // Resonant Accolades
   else if (effectID === 329781) {
@@ -114,7 +114,7 @@ export function getSoulbindFormula(effectID, player, contentType) {
   // Niya's Tools: Herbs
   // This is basically 100% uptime on one target at a time. Team benefit is included.
   else if (effectID === 320662) {
-    bonus_stats.Haste = (4.9 * STATPERONEPERCENT.HASTE);
+    bonus_stats.Haste = (4.9 * STATPERONEPERCENT.Retail.HASTE);
   }
 
   // -- Dreamwalker --
@@ -142,8 +142,8 @@ export function getSoulbindFormula(effectID, player, contentType) {
 
   // Field of Blossoms
   else if (effectID === 319191) {
-    let expectedUptime = 1 / 6;
-    bonus_stats.Haste = 12 * STATPERONEPERCENT.HASTE * expectedUptime;
+    let expectedUptime = 1 / 6 * 0.7;
+    bonus_stats.Haste = 12 * STATPERONEPERCENT.Retail.HASTE * expectedUptime;
   }
 
   // -- Korayn --
@@ -161,7 +161,7 @@ export function getSoulbindFormula(effectID, player, contentType) {
   else if (effectID === 331586) {
     let average_uptime = 10 / 80;
 
-    bonus_stats.Haste = average_uptime * 20 * STATPERONEPERCENT.HASTE;
+    bonus_stats.Haste = average_uptime * 20 * STATPERONEPERCENT.Retail.HASTE;
   }
 
   // Exacting Preparation
@@ -200,7 +200,7 @@ export function getSoulbindFormula(effectID, player, contentType) {
   }
   // Wasteland Propriety
   else if (effectID === 319983) {
-    bonus_stats.Versatility = 6 * STATPERONEPERCENT.VERSATILITY * (10 / 60); // Arguably some classes won't be able to proc this on cooldown because of misaligned CDs but we'll see.
+    bonus_stats.Versatility = 6 * STATPERONEPERCENT.Retail.VERSATILITY * (10 / 60); // Arguably some classes won't be able to proc this on cooldown because of misaligned CDs but we'll see.
   }
 
   // -- General Draven --
@@ -270,7 +270,7 @@ export function getSoulbindFormula(effectID, player, contentType) {
     // The uptime won't change much regardless but it'll be of slight impact.
     let uptime = 10 / 81;
 
-    bonus_stats.Crit = STATPERONEPERCENT.CRIT * 18 * uptime;
+    bonus_stats.Crit = STATPERONEPERCENT.Retail.CRIT * 18 * uptime;
   }
 
   return bonus_stats;

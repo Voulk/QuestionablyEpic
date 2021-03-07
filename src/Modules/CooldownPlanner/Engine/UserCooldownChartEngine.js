@@ -15,25 +15,98 @@ export default function chartCooldownUpdater(tableData) {
   let customCooldownDurations = [];
   let unmitigatedChartDataNoCooldowns = [];
   let mitigatedChartDataNoCooldowns = [];
+  let pushedArray = [];
 
+  tableData
+    .filter((key) => key.Cooldown !== undefined)
+    .map((key) => {
+      pushedArray.push(key.name + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown));
+    });
+  tableData
+    .filter((key) => key.Cooldown1 !== undefined)
+    .map((key) => {
+      pushedArray.push(key.name1 + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown1));
+    });
+  tableData
+    .filter((key) => key.Cooldown2 !== undefined)
+    .map((key) => {
+      pushedArray.push(key.name2 + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown2));
+    });
+  tableData
+    .filter((key) => key.Cooldown3 !== undefined)
+    .map((key) => {
+      pushedArray.push(key.name3 + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown3));
+    });
+  tableData
+    .filter((key) => key.Cooldown4 !== undefined)
+    .map((key) => {
+      pushedArray.push(key.name4 + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown4));
+    });
   // Map the data from the Cooldown Planner into a unique list of Healer Names + Cooldowns for dataKeys for the Chart.
-  let uniqueCooldownListArray = Array.from(new Set(tableData.map((key) => key.name + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown))));
-
+  let uniqueCooldownListArray = Array.from(new Set(pushedArray));
   // Map the Data from the Cooldown Planner and create a new array of objects. These are then mapped using the durationmaker function to create the data for the length of the cooldown and pushed into a new array customCooldownDurations.
   tableData
+    .filter((key) => key.Cooldown !== undefined)
     .map((key) => ({
       ability: key.Cooldown,
       timestamp: moment.duration("00:" + key.time).asMilliseconds(),
       abilityname: key.name + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown),
     }))
+    .map((key) => {
+      customCooldownDurations.push(
+        durationmaker(key.ability, key.timestamp, key.abilityname, moment(fightDuration(this.state.currentEndTime, this.state.currentStartTime)).startOf("second").valueOf()),
+      );
+    });
+
+  tableData
+    .filter((key) => key.Cooldown1 !== undefined)
+    .map((key) => ({
+      ability: key.Cooldown1,
+      timestamp: moment.duration("00:" + key.time).asMilliseconds(),
+      abilityname: key.name1 + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown1),
+    }))
     .map((key) =>
       customCooldownDurations.push(
-        durationmaker(
-          key.ability,
-          key.timestamp,
-          key.abilityname,
-          moment(fightDuration(this.state.currentEndTime, this.state.currentStartTime)).startOf("second").valueOf(),
-        ),
+        durationmaker(key.ability, key.timestamp, key.abilityname, moment(fightDuration(this.state.currentEndTime, this.state.currentStartTime)).startOf("second").valueOf()),
+      ),
+    );
+
+  tableData
+    .filter((key) => key.Cooldown2 !== undefined)
+    .map((key) => ({
+      ability: key.Cooldown2,
+      timestamp: moment.duration("00:" + key.time).asMilliseconds(),
+      abilityname: key.name2 + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown2),
+    }))
+    .map((key) =>
+      customCooldownDurations.push(
+        durationmaker(key.ability, key.timestamp, key.abilityname, moment(fightDuration(this.state.currentEndTime, this.state.currentStartTime)).startOf("second").valueOf()),
+      ),
+    );
+
+  tableData
+    .filter((key) => key.Cooldown3 !== undefined)
+    .map((key) => ({
+      ability: key.Cooldown3,
+      timestamp: moment.duration("00:" + key.time).asMilliseconds(),
+      abilityname: key.name3 + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown3),
+    }))
+    .map((key) =>
+      customCooldownDurations.push(
+        durationmaker(key.ability, key.timestamp, key.abilityname, moment(fightDuration(this.state.currentEndTime, this.state.currentStartTime)).startOf("second").valueOf()),
+      ),
+    );
+
+  tableData
+    .filter((key) => key.Cooldown4 !== undefined)
+    .map((key) => ({
+      ability: key.Cooldown4,
+      timestamp: moment.duration("00:" + key.time).asMilliseconds(),
+      abilityname: key.name4 + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown4),
+    }))
+    .map((key) =>
+      customCooldownDurations.push(
+        durationmaker(key.ability, key.timestamp, key.abilityname, moment(fightDuration(this.state.currentEndTime, this.state.currentStartTime)).startOf("second").valueOf()),
       ),
     );
 
@@ -56,77 +129,134 @@ export default function chartCooldownUpdater(tableData) {
   // Map the ERT note from the Table Data
 
   // Time + No Icons
-  const ertNoteTimeNoIcons = tableData.map((key) => ({
-    ert: "{time:" + key.time + "}" + " - " + classColoursERT(key.class) + key.name + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown),
-    // This is for Sorting by Time
-    time: key.time,
-  }));
+  //prettier-ignore
+  const ertNoteTimeNoIcons = tableData
+    .filter((key) => key.Cooldown !== undefined)
+    .map((key) => {
+      let time = "{time:" + key.time + "}"
+      let option0 = classColoursERT(key.class) + key.name + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown)
+      let option1 = (key.name1 === "" || key.name1 === undefined) ? "" : ", " + classColoursERT(key.class1) + key.name1 + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown1) 
+      let option2 = (key.name2 === "" || key.name2 === undefined) ? "" : ", " + classColoursERT(key.class2) + key.name2 + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown2) 
+      let option3 = (key.name3 === "" || key.name3 === undefined) ? "" : ", " + classColoursERT(key.class3) + key.name3 + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown3)
+      let option4 = (key.name4 === "" || key.name4 === undefined) ? "" : ", " + classColoursERT(key.class4) + key.name4 + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown4)
+     
+      return ({
+      ert:
+        time + " - " + option0 + option1 + option2 + option3 + option4,
+      // This is for Sorting by Time
+      time: key.time,
+    })});
 
   // Ability + No Icons
-  const ertNoteAbilityNoIcons = tableData.map((key) => ({
-    ert:
-      i18n.t("CooldownPlanner.BossAbilities." + key.bossAbility) +
-      " - " +
-      classColoursERT(key.class) +
-      key.name +
-      "|r" +
-      " - " +
-      i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown),
-    // This is for Sorting by Time
-    time: key.time,
-  }));
+  const ertNoteAbilityNoIcons = tableData
+    .filter((key) => key.bossAbility !== undefined)
+    .map((key) => {
+      let bossAbility =
+        key.bossAbility === undefined || key.bossAbility === ""
+          ? i18n.t("CooldownPlanner.BossAbilities." + key.bossAbility)
+          : i18n.t("CooldownPlanner.BossAbilities." + key.bossAbility) + " " + "{spell:" + key.bossAbility + "}";
+      let option0 = classColoursERT(key.class) + key.name + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown);
+      let option1 =
+        key.name1 === "" || key.name1 === undefined
+          ? ""
+          : ", " + classColoursERT(key.class1) + key.name1 + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown1);
+      let option2 =
+        key.name2 === "" || key.name2 === undefined
+          ? ""
+          : ", " + classColoursERT(key.class2) + key.name2 + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown2);
+      let option3 =
+        key.name3 === "" || key.name3 === undefined
+          ? ""
+          : ", " + classColoursERT(key.class3) + key.name3 + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown3);
+      let option4 =
+        key.name4 === "" || key.name4 === undefined
+          ? ""
+          : ", " + classColoursERT(key.class4) + key.name4 + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown4);
+
+      return {
+        ert: bossAbility + " - " + option0 + option1 + option2 + option3 + option4,
+        // This is for Sorting by Time
+        time: key.time,
+      };
+    });
 
   // Ability + Icons All
-  const ertNoteAbilityNoTimeIconsAll = tableData.map((key) => ({
-    ert:
-      i18n.t("CooldownPlanner.BossAbilities." + key.bossAbility) +
-      " " +
-      "{spell:" +
-      key.bossAbility +
-      "}" +
-      " - " +
-      classColoursERT(key.class) +
-      key.name +
-      "|r" +
-      " - " +
-      i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown) +
-      " " +
-      "{spell:" +
-      key.Cooldown +
-      "}",
-    time: key.time,
-  }));
+  const ertNoteAbilityNoTimeIconsAll = tableData
+    .filter((key) => key.Cooldown !== undefined)
+    .map((key) => {
+      let bossAbility =
+        key.bossAbility === undefined || key.bossAbility === ""
+          ? i18n.t("CooldownPlanner.BossAbilities." + key.bossAbility)
+          : i18n.t("CooldownPlanner.BossAbilities." + key.bossAbility) + " " + "{spell:" + key.bossAbility + "}";
+      let option0 = classColoursERT(key.class) + key.name + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown) + " " + "{spell:" + key.Cooldown + "}";
+      let option1 =
+        key.name1 === "" || key.name1 === undefined
+          ? ""
+          : ", " + classColoursERT(key.class1) + key.name1 + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown1) + " " + "{spell:" + key.Cooldown1 + "}";
+      let option2 =
+        key.name2 === "" || key.name2 === undefined
+          ? ""
+          : ", " + classColoursERT(key.class2) + key.name2 + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown2) + " " + "{spell:" + key.Cooldown2 + "}";
+      let option3 =
+        key.name3 === "" || key.name3 === undefined
+          ? ""
+          : ", " + classColoursERT(key.class3) + key.name3 + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown3) + " " + "{spell:" + key.Cooldown3 + "}";
+      let option4 =
+        key.name4 === "" || key.name4 === undefined
+          ? ""
+          : ", " + classColoursERT(key.class4) + key.name4 + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown4) + " " + "{spell:" + key.Cooldown4 + "}";
+
+      return {
+        ert: bossAbility + " - " + option0 + option1 + option2 + option3 + option4,
+        // This is for Sorting by Time
+        time: key.time,
+      };
+    });
 
   // Time + Icons
-  const ertNoteTimeIcons = tableData.map((key) => ({
-    ert:
-      "{time:" +
-      key.time +
-      "}" +
-      " - " +
-      classColoursERT(key.class) +
-      key.name +
-      "|r" +
-      " - " +
-      i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown) +
-      " " +
-      "{spell:" +
-      key.Cooldown +
-      "}",
-    time: key.time,
-  }));
+  const ertNoteTimeIcons = tableData
+    .filter((key) => key.Cooldown !== undefined)
+    .map((key) => (key) => {
+      let time = "{time:" + key.time + "}";
+      let option0 = classColoursERT(key.class) + key.name + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown);
+      let option1 =
+        key.name1 === "" || key.name1 === undefined
+          ? ""
+          : ", " + classColoursERT(key.class1) + key.name1 + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown1) + " " + "{spell:" + key.Cooldown + "}";
+      let option2 =
+        key.name2 === "" || key.name2 === undefined
+          ? ""
+          : ", " + classColoursERT(key.class2) + key.name2 + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown2) + " " + "{spell:" + key.Cooldown1 + "}";
+      let option3 =
+        key.name3 === "" || key.name3 === undefined
+          ? ""
+          : ", " + classColoursERT(key.class3) + key.name3 + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown3) + " " + "{spell:" + key.Cooldown3 + "}";
+      let option4 =
+        key.name4 === "" || key.name4 === undefined
+          ? ""
+          : ", " + classColoursERT(key.class4) + key.name4 + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown4) + " " + "{spell:" + key.Cooldown4 + "}";
 
-  // Notes + Icons
-  const ertNoteNoteIcons = tableData.map((key) => ({
-    ert: key.notes + " - " + classColoursERT(key.class) + key.name + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown) + " " + "{spell:" + key.Cooldown + "}",
-    time: key.time,
-  }));
+      return {
+        ert: time + " - " + option0 + option1 + option2 + option3 + option4,
+        // This is for Sorting by Time
+        time: key.time,
+      };
+    });
 
-  // Notes + No Icons
-  const ertNoteNoteNoIcons = tableData.map((key) => ({
-    ert: key.notes + " - " + classColoursERT(key.class) + key.name + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown),
-    time: key.time,
-  }));
+  // // Notes + Icons
+  // const ertNoteNoteIcons = tableData.map((key) => ({
+  //   ert: key.notes + " - " + classColoursERT(key.class) + key.name + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown) + " " + "{spell:" + key.Cooldown + "}",
+  //   time: key.time,
+  // }));
+
+  // // Notes + No Icons
+  // const ertNoteNoteNoIcons = tableData.map((key) => ({
+  //   ert: key.notes + " - " + classColoursERT(key.class) + key.name + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown),
+  //   time: key.time,
+  // }));
+
+  console.log(mitigatedChartDataNoCooldowns);
+  console.log(unmitigatedChartDataNoCooldowns);
 
   this.setState({
     mitigatedChartDataNoCooldowns: mitigatedChartDataNoCooldowns,
@@ -136,7 +266,7 @@ export default function chartCooldownUpdater(tableData) {
     ertListBossAbility: ertNoteAbilityNoIcons,
     ertListAbilityNoTimeIconsAll: ertNoteAbilityNoTimeIconsAll,
     ertListTimeIcons: ertNoteTimeIcons,
-    ertListNoteIcons: ertNoteNoteIcons,
-    ertListNoteNoIcons: ertNoteNoteNoIcons,
+    // ertListNoteIcons: ertNoteNoteIcons,
+    // ertListNoteNoIcons: ertNoteNoteNoIcons,
   });
 }

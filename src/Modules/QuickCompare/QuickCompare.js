@@ -190,7 +190,7 @@ export default function QuickCompare(props) {
 
   /* ---------------- Add an item to our "Active Items" array. ---------------- */
   const addItem = (event) => {
-    if (itemLevel > CONSTRAINTS.maxItemLevel) {
+    if (itemLevel > CONSTRAINTS.Retail.maxItemLevel) {
       setAnchorEl(anchorEl ? null : event.currentTarget);
       return null;
     }
@@ -342,7 +342,7 @@ export default function QuickCompare(props) {
               <Grid item>
                 <FormControl className={classes.formControl} variant="outlined" size="small" style={{ width: t("QuickCompare.ItemLevel").length > 10 ? 160 : 120 }}>
                   <TextField
-                    error={itemLevel > CONSTRAINTS.maxItemLevel ? true : false}
+                    error={itemLevel > CONSTRAINTS.Retail.maxItemLevel ? true : false}
                     id="Ilvl-select"
                     onChange={(e) => itemLevelChanged(e.target.value)}
                     value={itemLevel}
@@ -355,8 +355,8 @@ export default function QuickCompare(props) {
                     size="small"
                     type="number"
                     inputProps={{
-                      min: CONSTRAINTS.minItemLevel,
-                      max: CONSTRAINTS.maxItemLevel,
+                      min: CONSTRAINTS.Retail.minItemLevel,
+                      max: CONSTRAINTS.Retail.maxItemLevel,
                     }}
                   />
                 </FormControl>
