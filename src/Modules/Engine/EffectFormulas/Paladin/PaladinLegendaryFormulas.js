@@ -84,7 +84,12 @@ export const getPaladinLegendary = (effectName, player, contentType) => {
     bonus_stats.hps = Math.round(HPSMasteryBonus + HPSWordOfGlory);
 
   } else if (name === "Of Dusk and Dawn") {
-    bonus_stats.hps = -1;
+
+    const offensiveBuffUptime = 0.9;
+    const legendaryBonus = 0.06;
+
+    bonus_stats.hps = Math.round(offensiveBuffUptime * legendaryBonus * player.getHPS(contentType));
+
   } else if (name === "Vanguards Momentum") {
     bonus_stats.hps = -1;
   } else if (name === "The Magistrates Judgment") {
