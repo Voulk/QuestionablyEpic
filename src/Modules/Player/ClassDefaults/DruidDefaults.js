@@ -2,9 +2,9 @@ export const druidDefaultSpellData = (contentType) => {
   let spellList = {};
   if (contentType === "Raid") {
     spellList = {
-      774: { casts: 100, healing: 455000, hps: 1433, overhealing: 0 }, // Rejuv
-      48438: { casts: 19, healing: 449400, hps: 1339, overhealing: 0 }, // Wild Growth
-      8936: { casts: 29, healing: 194225, hps: 571, overhealing: 0, hits: 29 }, // Regrowth
+      774: { casts: 104, healing: 583000, hps: 1880, overhealing: 0 }, // Rejuv
+      48438: { casts: 19, healing: 580302, hps: 1602, overhealing: 0 }, // Wild Growth
+      8936: { casts: 15, healing: 604000, hps: 683, overhealing: 0, hits: 46 }, // Regrowth
       33763: { casts: 17, healing: 89150, hps: 262, overhealing: 0 }, // Lifebloom
     };
   } else if (contentType === "Dungeon") {
