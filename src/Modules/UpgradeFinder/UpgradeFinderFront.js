@@ -68,16 +68,132 @@ const useStyles = makeStyles((theme) => ({
 const raidDifficulty = ["Raid Finder", "Normal", "Heroic", "Mythic"];
 const pvpCurrency = ["Honor", "Conquest"];
 
+// const marks = [
+//   { value: 0, label: "M 0" },
+//   { value: 2, label: "M 2" },
+//   { value: 3, label: "M 3" },
+//   { value: 5, label: "M 4-5" },
+//   { value: 6, label: "M 6" },
+//   { value: 7, label: "M 7-9" },
+//   { value: 10, label: "M 10-11" },
+//   { value: 12, label: "M 12-14" },
+//   { value: 15, label: "M 15" },
+// ];
+
 const marks = [
-  { value: 0, label: "M 0" },
-  { value: 2, label: "M 2" },
-  { value: 3, label: "M 3" },
-  { value: 5, label: "M 4-5" },
-  { value: 6, label: "M 6" },
-  { value: 7, label: "M 7-9" },
-  { value: 10, label: "M 10-11" },
-  { value: 12, label: "M 12-14" },
-  { value: 15, label: "M 15" },
+  {
+    value: 0,
+    label: (
+      <div>
+        <div>Rank 1 (184)</div>
+        <div>M 0</div>
+      </div>
+    ),
+  },
+  {
+    value: 1,
+    label: (
+      <div>
+        <div>Rank 2 (187)</div>
+        <div>M 2</div>
+      </div>
+    ),
+  },
+  {
+    value: 2,
+    label: (
+      <div>
+        <div>Rank 3 (190)</div>
+        <div>M 3</div>
+      </div>
+    ),
+  },
+  {
+    value: 3,
+    label: (
+      <div>
+        <div>Rank 4 (194)</div>
+        <div>M 4-5</div>
+      </div>
+    ),
+  },
+  {
+    value: 4,
+    label: (
+      <div>
+        <div>Rank 5 (197)</div>
+        <div>M 6</div>
+      </div>
+    ),
+  },
+  {
+    value: 5,
+    label: (
+      <div>
+        <div>Rank 6 (200)</div>
+        <div>M 7-9</div>
+      </div>
+    ),
+  },
+  {
+    value: 6,
+    label: (
+      <div>
+        <div>Rank 7 (203)</div>
+        <div>M 10-11</div>
+      </div>
+    ),
+  },
+  {
+    value: 7,
+    label: (
+      <div>
+        <div>Rank 8 (207)</div>
+        <div>M 12-14</div>
+      </div>
+    ),
+  },
+  {
+    value: 8,
+    label: (
+      <div>
+        <div>Rank 9 (210)</div>
+        <div>M 15</div>
+      </div>
+    ),
+  },
+  {
+    value: 9,
+    label: (
+      <div>
+        <div>Rank 10 (213)</div>
+      </div>
+    ),
+  },
+  {
+    value: 10,
+    label: (
+      <div>
+        <div>Rank 11 (216)</div>
+      </div>
+    ),
+  },
+  {
+    value: 11,
+    label: (
+      <div>
+        <div>Rank 12 (220)</div>
+      </div>
+    ),
+  },
+  {
+    value: 12,
+    label: (
+      <div>
+        <div>Great Vault (226)</div>
+      </div>
+    ),
+  },
 ];
 
 const PvPRating = [
@@ -216,7 +332,7 @@ export default function UpgradeFinderFront(props) {
 
         {/* --------------------------- Mythic Plus Section -------------------------- */}
         <Grid item xs={12}>
-          <Paper elevation={0} style={{ padding: "10px 10px 0px 10px", textAlign: "center" }}>
+          <Paper elevation={0} style={{ padding: "10px 10px 10px 10px", textAlign: "center" }}>
             <Grid container justify="center" spacing={1}>
               <Grid item xs={12}>
                 <Typography color="primary" align="center" variant="h5">
@@ -230,12 +346,12 @@ export default function UpgradeFinderFront(props) {
 
             <UpgradeFinderSlider
               className={classes.slider}
-              style={{ color: "#52af77" }}
-              defaultValue={10}
+              style={{ color: "#52af77", }}
+              defaultValue={0}
               step={null}
               valueLabelDisplay="off"
               marks={marks}
-              max={15}
+              max={12}
               change={props.setDungeonDifficulty}
             />
           </Paper>

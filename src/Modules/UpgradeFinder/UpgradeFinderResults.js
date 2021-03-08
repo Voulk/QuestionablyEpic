@@ -176,7 +176,7 @@ export default function UpgradeFinderResults(props) {
       <TabPanel value={tabvalue} index={1}>
         <div className={classes.panel}>
           <Grid container>
-            <MythicPlusGearContainer player={props.player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={props.playerSettings} />
+            <MythicPlusGearContainer setDungeonDifficulty={props.setDungeonDifficulty} player={props.player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={props.playerSettings} />
           </Grid>
         </div>
       </TabPanel>
