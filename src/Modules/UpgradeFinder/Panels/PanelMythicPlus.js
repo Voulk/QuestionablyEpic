@@ -21,121 +21,7 @@ const itemLevels = {
   pvp: [200, 207, 213, 220, 226],
 };
 
-const marks = [
-  {
-    value: 0,
-    label: (
-      <div>
-        <div>Rank 1 (184)</div>
-        <div>M 0</div>
-      </div>
-    ),
-  },
-  {
-    value: 1,
-    label: (
-      <div>
-        <div>Rank 2 (187)</div>
-        <div>M 2</div>
-      </div>
-    ),
-  },
-  {
-    value: 2,
-    label: (
-      <div>
-        <div>Rank 3 (190)</div>
-        <div>M 3</div>
-      </div>
-    ),
-  },
-  {
-    value: 3,
-    label: (
-      <div>
-        <div>Rank 4 (194)</div>
-        <div>M 4-5</div>
-      </div>
-    ),
-  },
-  {
-    value: 4,
-    label: (
-      <div>
-        <div>Rank 5 (197)</div>
-        <div>M 6</div>
-      </div>
-    ),
-  },
-  {
-    value: 5,
-    label: (
-      <div>
-        <div>Rank 6 (200)</div>
-        <div>M 7-9</div>
-      </div>
-    ),
-  },
-  {
-    value: 6,
-    label: (
-      <div>
-        <div>Rank 7 (203)</div>
-        <div>M 10-11</div>
-      </div>
-    ),
-  },
-  {
-    value: 7,
-    label: (
-      <div>
-        <div>Rank 8 (207)</div>
-        <div>M 12-14</div>
-      </div>
-    ),
-  },
-  {
-    value: 8,
-    label: (
-      <div>
-        <div>Rank 9 (210)</div>
-        <div>M 15</div>
-      </div>
-    ),
-  },
-  {
-    value: 9,
-    label: (
-      <div>
-        <div>Rank 10 (213)</div>
-      </div>
-    ),
-  },
-  {
-    value: 10,
-    label: (
-      <div>
-        <div>Rank 11 (216)</div>
-      </div>
-    ),
-  },
-  {
-    value: 11,
-    label: (
-      <div>
-        <div>Rank 12 (220)</div>
-      </div>
-    ),
-  },
-  {
-    value: 12,
-    label: (
-      <div>
-        <div>Great Vault (226)</div>
-      </div>
-    ),
-  },
-];
+
 
 // const useStyles = makeStyles((theme) => ({
 //   root: {
@@ -181,6 +67,7 @@ const useStyles = makeStyles((theme) => ({
     margin: "0px 20px 50px 20px",
     textAlign: "center",
   },
+  labels: {fontSize: 12},
   1182: {
     backgroundImage: `url(${require("../../../Images/MythicPlus/TheNecroticWake/NecroticBannerLarge.png").default})`,
     backgroundSize: "100%",
@@ -203,12 +90,129 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+
+
 export default function MythicPlusGearContainer(props) {
   const classes = useStyles();
   const { t, i18n } = useTranslation();
   const itemList = props.itemList;
   const itemDifferentials = props.itemDifferentials;
   const difficulty = props.playerSettings.dungeon;
+  const marks = [
+    {
+      value: 0,
+      label: (
+        <div className={classes.labels}>
+          <div>Rank 1 (184)</div>
+          <div>M 0</div>
+        </div>
+      ),
+    },
+    {
+      value: 1,
+      label: (
+        <div className={classes.labels}>
+          <div>Rank 2 (187)</div>
+          <div>M 2</div>
+        </div>
+      ),
+    },
+    {
+      value: 2,
+      label: (
+        <div className={classes.labels}>
+          <div>Rank 3 (190)</div>
+          <div>M 3</div>
+        </div>
+      ),
+    },
+    {
+      value: 3,
+      label: (
+        <div className={classes.labels}>
+          <div>Rank 4 (194)</div>
+          <div>M 4-5</div>
+        </div>
+      ),
+    },
+    {
+      value: 4,
+      label: (
+        <div className={classes.labels}>
+          <div>Rank 5 (197)</div>
+          <div>M 6</div>
+        </div>
+      ),
+    },
+    {
+      value: 5,
+      label: (
+        <div className={classes.labels}>
+          <div>Rank 6 (200)</div>
+          <div>M 7-9</div>
+        </div>
+      ),
+    },
+    {
+      value: 6,
+      label: (
+        <div className={classes.labels}>
+          <div>Rank 7 (203)</div>
+          <div>M 10-11</div>
+        </div>
+      ),
+    },
+    {
+      value: 7,
+      label: (
+        <div className={classes.labels}>
+          <div>Rank 8 (207)</div>
+          <div>M 12-14</div>
+        </div>
+      ),
+    },
+    {
+      value: 8,
+      label: (
+        <div className={classes.labels}>
+          <div>Rank 9 (210)</div>
+          <div>M 15</div>
+        </div>
+      ),
+    },
+    {
+      value: 9,
+      label: (
+        <div className={classes.labels}>
+          <div>Rank 10 (213)</div>
+        </div>
+      ),
+    },
+    {
+      value: 10,
+      label: (
+        <div className={classes.labels}>
+          <div>Rank 11 (216)</div>
+        </div>
+      ),
+    },
+    {
+      value: 11,
+      label: (
+        <div className={classes.labels}>
+          <div>Rank 12 (220)</div>
+        </div>
+      ),
+    },
+    {
+      value: 12,
+      label: (
+        <div className={classes.labels}>
+          <div>Great Vault (226)</div>
+        </div>
+      ),
+    },
+  ];
 
   const contentGenerator = (type) => {
     return encounterDB[1]
