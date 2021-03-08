@@ -101,10 +101,10 @@ export const getPaladinLegendary = (effectName, player, contentType) => {
     //    - This can and will be added to the formula, but might take place after the expansion is live.
     // - Mad Paragon is incredibly GCD thirsty with added time to wings actually being less than the GCD you spend to get there. This is ok when you're cooldown capped, but is
     //   a penalty when you are not.
-    let isAwakening = false;
+    let isAwakening = true;
 
     let wingsEffHealingIncrease = getWingsHealingInc(player.getStatPerc("Crit"));
-    let wingsBaseUptime = (20 + isAwakening ? 25 : 0) / 120;
+    let wingsBaseUptime = (20 + (isAwakening ? 25 : 0)) / 120;
     let hammerOfWrathCPM = (60 / (7.5 / player.getStatPerc("Haste"))) * wingsBaseUptime;
     let healingIncUptime = hammerOfWrathCPM / 60;
 
