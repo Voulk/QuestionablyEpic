@@ -88,7 +88,7 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel, use
   } else if (effectName === "Vial of Spectral Essence") {
     let effect = activeTrinket.effects[0];
     bonus_stats.hps = (getProcessedValue(effect.coefficient, effect.table, itemLevel, effect.efficiency) / effect.cooldown) * player.getStatMultiplier("CRITVERS");
-    //console.log("Vial: " + bonus_stats.hps);
+    //console.log("Vial: " + getProcessedValue(effect.coefficient, effect.table, itemLevel, 1));
 
   } else if (effectName === "Soulletting Ruby") {
     let heal_effect = activeTrinket.effects[1];
