@@ -33,6 +33,7 @@ export default function MythicPlusGearContainer(props) {
               <div style={{ width: 207, paddingLeft: 8 }} className="container-UpgradeCards">
                 {DungeonHeaderIcons(key, {
                   verticalAlign: "middle",
+                  marginTop: 8,
                 })}
                 <Typography variant="h6" noWrap className="centered-UpgradeCards-Dungeons">
                   {t("DungeonNames." + key)}
