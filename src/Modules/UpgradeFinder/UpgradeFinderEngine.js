@@ -14,6 +14,7 @@ import {
 } from "../Engine/ItemUtilities";
 import UpgradeFinderResult from "./UpgradeFinderResult";
 import { apiSendUpgradeFinder } from "../SetupAndMenus/ConnectionUtilities";
+import { itemLevels } from "../../Databases/itemLevelsDB";
 /*
 The core Upgrade Finder loop is as follows:
 - Run the players current gear set through our evaluation function to get a baseline score.
@@ -23,12 +24,6 @@ The core Upgrade Finder loop is as follows:
 - Print the items in the correct place along with their score differential. 
 - (Extra Feature) Include a summary page that lists the largest score upgrades and where they come from. 
 */
-
-const itemLevels = {
-  raid: [187, 200, 213, 226],
-  dungeon: [184, 184, 187, 190, 194, 194, 197, 200, 200, 200, 203, 203, 207, 207, 207, 210],
-  pvp: [200, 207, 213, 220, 226, 226],
-};
 
 // This is a copy paste from buildWepCombos.
 // TODO: Make buildWepCombos accept a generic list of items instead of auto-using the players set. Then fold this function into it.
@@ -99,7 +94,7 @@ export function runUpgradeFinder(player, contentType, currentLanguage, playerSet
   const baseHPS = player.getHPS(contentType);
   const baseSet = runTopGear(baseItemList, wepList, player, contentType, baseHPS, currentLanguage, userSettings, castModel);
   const baseScore = baseSet.itemSet.hardScore;
-  
+
   //console.log(wepList);
   //console.log(baseItemList);
 

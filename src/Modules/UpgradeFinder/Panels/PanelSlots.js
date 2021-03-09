@@ -10,13 +10,7 @@ import MuiAccordionSummary from "@material-ui/core/AccordionSummary";
 import AccordionDetails from "@material-ui/core/AccordionDetails";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import { withStyles } from "@material-ui/core/styles";
-
-// TODO: Move these to somewhere more accessible since they are used in multiple places.
-const itemLevels = {
-  raid: [187, 200, 213, 226],
-  dungeon: [184, 184, 187, 190, 194, 194, 197, 200, 200, 200, 203, 203, 207, 207, 207, 210],
-  pvp: [200, 207, 213, 220, 226],
-};
+import { itemLevels } from "../../../Databases/itemLevelsDB";
 
 function filterItemListBySlot(itemList, slot) {
   let temp = itemList.filter(function (item) {
