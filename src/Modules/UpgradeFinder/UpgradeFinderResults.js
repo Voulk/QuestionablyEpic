@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
   },
   panel: {
     flexGrow: 1,
-    backgroundColor: "#191c23",
+    backgroundColor: "#323232",
     display: "flex",
     borderRadius: "0px 0px 4px 4px",
   },

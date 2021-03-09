@@ -37,5 +37,6 @@ export default function DungeonHeaderIcons(props, style) {
     source = DoS;
   }
 
-  return <img style={{ ...style }} src={source} alt={props} />;
+  // return <img style={{ ...style }} src={source} alt={props} />;
+  return require(source).default;
 }

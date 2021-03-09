@@ -44,6 +44,7 @@ const Accordion = withStyles({
 
 const AccordionSummary = withStyles({
   root: {
+    backgroundColor: "#35383e",
     "&$expanded": {
       backgroundColor: "rgb(255 255 255 / 10%)",
     },
