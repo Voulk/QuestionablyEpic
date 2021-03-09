@@ -5,7 +5,7 @@ export const paladinDefaultSpellData = (contentType) => {
       225311: { casts: 20, healing: 238400, hps: 1316, overhealing: 0.2 }, // LoD
       85673: { casts: 4, healing: 40800, hps: 225, overhealing: 0.2 }, // WoG
       25914: { casts: 27, healing: 221400, hps: 1222, overhealing: 0.2 }, // Holy Shock
-      82326: { casts: 7, healing: 70302, hps: 210, overhealing: 0.2 }, // Holy Light
+      82326: { casts: 7, healing: 70302, hps: 180, overhealing: 0.2 }, // Holy Light
       337824: { casts: 0, healing: 98300, hps: 542, overhealing: 0.2 }, // Shock Barrier
     };
   } else if (contentType === "Dungeon") {

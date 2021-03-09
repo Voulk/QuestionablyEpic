@@ -96,6 +96,7 @@ const fillLegendaries = (container, spec, player, contentType) => {
       "Shock Barrier",
       "The Mad Paragon",
       "Relentless Inquisitor",
+      "Of Dusk and Dawn",
     ],
     "Restoration Shaman": [
       "Earthen Harmony",
