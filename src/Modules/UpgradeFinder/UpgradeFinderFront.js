@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
     height: 50,
   },
   red: {},
-  labels: {fontSize: 12},
+  labels: { fontSize: 12 },
   selectedRed: {
     "&$red": {
       color: "#000",
@@ -69,20 +69,6 @@ const useStyles = makeStyles((theme) => ({
 const raidDifficulty = ["Raid Finder", "Normal", "Heroic", "Mythic"];
 const pvpCurrency = ["Honor", "Conquest"];
 
-// const marks = [
-//   { value: 0, label: "M 0" },
-//   { value: 2, label: "M 2" },
-//   { value: 3, label: "M 3" },
-//   { value: 5, label: "M 4-5" },
-//   { value: 6, label: "M 6" },
-//   { value: 7, label: "M 7-9" },
-//   { value: 10, label: "M 10-11" },
-//   { value: 12, label: "M 12-14" },
-//   { value: 15, label: "M 15" },
-// ];
-
-
-
 const PvPRating = [
   { value: 0, label: "Unranked" },
   { value: 600, label: "Combatant 1400-1599" },
@@ -103,7 +89,7 @@ export default function UpgradeFinderFront(props) {
       value: 0,
       label: (
         <div className={classes.labels}>
-          <div>Rank 1 (184)</div>
+          <div>ilvl 184</div>
           <div>M 0</div>
         </div>
       ),
@@ -112,7 +98,7 @@ export default function UpgradeFinderFront(props) {
       value: 1,
       label: (
         <div className={classes.labels}>
-          <div>Rank 2 (187)</div>
+          <div>ilvl 187</div>
           <div>M 2</div>
         </div>
       ),
@@ -121,7 +107,7 @@ export default function UpgradeFinderFront(props) {
       value: 2,
       label: (
         <div className={classes.labels}>
-          <div>Rank 3 (190)</div>
+          <div>ilvl 190</div>
           <div>M 3</div>
         </div>
       ),
@@ -130,7 +116,7 @@ export default function UpgradeFinderFront(props) {
       value: 3,
       label: (
         <div className={classes.labels}>
-          <div>Rank 4 (194)</div>
+          <div>ilvl 194</div>
           <div>M 4-5</div>
         </div>
       ),
@@ -139,7 +125,7 @@ export default function UpgradeFinderFront(props) {
       value: 4,
       label: (
         <div className={classes.labels}>
-          <div>Rank 5 (197)</div>
+          <div>ilvl 197</div>
           <div>M 6</div>
         </div>
       ),
@@ -148,7 +134,7 @@ export default function UpgradeFinderFront(props) {
       value: 5,
       label: (
         <div className={classes.labels}>
-          <div>Rank 6 (200)</div>
+          <div>ilvl 200</div>
           <div>M 7-9</div>
         </div>
       ),
@@ -157,7 +143,7 @@ export default function UpgradeFinderFront(props) {
       value: 6,
       label: (
         <div className={classes.labels}>
-          <div>Rank 7 (203)</div>
+          <div>ilvl 203</div>
           <div>M 10-11</div>
         </div>
       ),
@@ -166,7 +152,7 @@ export default function UpgradeFinderFront(props) {
       value: 7,
       label: (
         <div className={classes.labels}>
-          <div>Rank 8 (207)</div>
+          <div>ilvl 207</div>
           <div>M 12-14</div>
         </div>
       ),
@@ -175,7 +161,7 @@ export default function UpgradeFinderFront(props) {
       value: 8,
       label: (
         <div className={classes.labels}>
-          <div>Rank 9 (210)</div>
+          <div>ilvl 210</div>
           <div>M 15</div>
         </div>
       ),
@@ -184,7 +170,7 @@ export default function UpgradeFinderFront(props) {
       value: 9,
       label: (
         <div className={classes.labels}>
-          <div>Rank 10 (213)</div>
+          <div>ilvl 213</div>
         </div>
       ),
     },
@@ -192,7 +178,7 @@ export default function UpgradeFinderFront(props) {
       value: 10,
       label: (
         <div className={classes.labels}>
-          <div>Rank 11 (216)</div>
+          <div>ilvl 216</div>
         </div>
       ),
     },
@@ -200,7 +186,7 @@ export default function UpgradeFinderFront(props) {
       value: 11,
       label: (
         <div className={classes.labels}>
-          <div>Rank 12 (220)</div>
+          <div> ilvl 220 </div>
         </div>
       ),
     },
@@ -208,7 +194,8 @@ export default function UpgradeFinderFront(props) {
       value: 12,
       label: (
         <div className={classes.labels}>
-          <div>Great Vault (226)</div>
+          <div>ilvl 226</div>
+          <div>Great Vault</div>
         </div>
       ),
     },
@@ -349,8 +336,8 @@ export default function UpgradeFinderFront(props) {
 
             <UpgradeFinderSlider
               className={classes.slider}
-              style={{ color: "#52af77", }}
-              defaultValue={0}
+              style={{ color: "#52af77" }}
+              defaultValue={6}
               step={null}
               valueLabelDisplay="off"
               marks={marks}
