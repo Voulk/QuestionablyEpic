@@ -18,9 +18,9 @@ export const discPriestDefaultSpecialQueries = (contentType) => {
       OneManaHealing: 3.4,
       CastsPerMinute: 36,
       cooldownMult: {
-        oneMinute: 2.25,
-        twoMinutes: 1.6,
-        threeMinutes: 1.35,
+        oneMinute: 2.2,
+        twoMinutes: 1.4,
+        threeMinutes: 1.25,
       },
       HoldYourGroundUptime: 0.8
     };
@@ -29,9 +29,9 @@ export const discPriestDefaultSpecialQueries = (contentType) => {
       OneManaHealing: 0,
       CastsPerMinute: 30,
       cooldownMult: {
-        oneMinute: 1,
-        twoMinutes: 1,
-        threeMinutes: 1,
+        oneMinute: 1.1,
+        twoMinutes: 1.1,
+        threeMinutes: 1.1,
       },
       HoldYourGroundUptime: 0.8
     };

@@ -76,7 +76,7 @@ describe("Boon of the Archon Test", () => {
         localSettings.includeGroupBenefits = false;
 
         const trinketResult = getTrinketEffect("Boon of the Archon", druid, contentType, itemLevel, localSettings);
-        expect(Math.round(trinketResult.hps)).toEqual(Math.round(48 * effect_hps.efficiency));
+        expect(Math.round(trinketResult.hps)).toEqual(Math.round(54 * effect_hps.efficiency));
         expect(Math.round(trinketResult.versatility)).toEqual(Math.round(72 * effect_vers.duration / 60 * effect_vers.efficiency));
     });
 
@@ -85,7 +85,7 @@ describe("Boon of the Archon Test", () => {
         localSettings.includeGroupBenefits = true;
 
         const trinketResult = getTrinketEffect("Boon of the Archon", druid, contentType, itemLevel, localSettings);
-        expect(Math.round(trinketResult.hps)).toEqual(Math.round(48 * effect_hps.efficiency));
+        expect(Math.round(trinketResult.hps)).toEqual(Math.round(54 * effect_hps.efficiency));
         expect(Math.floor(trinketResult.versatility)).toEqual(Math.floor(73 * effect_vers.duration * effect_vers.targets / 60 * effect_vers.efficiency));
 
     });

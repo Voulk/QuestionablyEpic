@@ -328,7 +328,7 @@ export default function CharCards(props) {
   const rootClassName = classes.root + " " + (props.isActive ? classes.activeChar : "");
 
   /* ------------------ Regions Array for the Region Selector ----------------- */
-  const regions = ["CN", "US", "TW", "EU"];
+  const regions = ["CN", "US", "TW", "EU", "KR"];
 
   /* ------------------ Converts Milliseconds to mm:ss format ----------------- */
   const sec2hmmss = (seconds) => {
@@ -402,9 +402,9 @@ export default function CharCards(props) {
       <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title" maxWidth="md">
         <Tabs value={tabvalue} onChange={handleTabChange} aria-label="simple tabs example" variant="fullWidth" TabIndicatorProps={{ style: { backgroundColor: "#F2BF59" } }}>
           {/* Character Information */}
-          <CharTab className={classes.tabRoot} label="Character Information" {...a11yProps(0)} />
+          <CharTab className={classes.tabRoot} label={t("CharacterCreator.CharacterInfo")} {...a11yProps(0)} />
           {/* Saved Logs (Coming Soon) */}
-          <CharTab className={classes.tabRoot} disabled label="Saved Logs (Coming Soon)" {...a11yProps(1)} />
+          <CharTab className={classes.tabRoot} disabled label={t("CharacterCreator.SavedLogs.TabHeader")} {...a11yProps(1)} />
         </Tabs>
         {/* <div className={classes.tabRoot}> */}
 
@@ -438,7 +438,7 @@ export default function CharCards(props) {
                     <Grid item xs={12} container spacing={1}>
                       {/* ----------------------------- Character Name ----------------------------- */}
                       <Grid item xs={9}>
-                        <TextField fullWidth id="standard-basic" label="Character Name" value={charName} onChange={handleChangeName} variant="outlined" size="small" />
+                        <TextField fullWidth id="standard-basic" label={t("CharacterCreator.CharacterInfo")} value={charName} onChange={handleChangeName} variant="outlined" size="small" />
                       </Grid>
                       {/* ------------------------------ Region Select ----------------------------- */}
                       <Grid item xs={3}>
@@ -471,7 +471,7 @@ export default function CharCards(props) {
                           onInputChange={(e, newInputValue) => {
                             handleChangeServer(newInputValue);
                           }}
-                          renderInput={(params) => <TextField {...params} label="Server Name" variant="outlined" styLe={{ width: 100 }} />}
+                          renderInput={(params) => <TextField {...params} label={t("CharacterCreator.ServerName")} variant="outlined" styLe={{ width: 100 }} />}
                           ListboxProps={{ style: { border: "1px solid rgba(255, 255, 255, 0.23)", borderRadius: 4, paddingTop: 0, paddingBottom: 0 } }}
                         />
                       </Grid>
@@ -520,7 +520,7 @@ export default function CharCards(props) {
                       <Grid item xs={12} container direction="row" justify="center" alignItems="center">
                         <Grid item xs={12}>
                           <Typography variant="h6" align="center" noWrap color="primary">
-                            Stat Weights
+                            {t("CharacterCreator.StatWeights")}
                           </Typography>
                         </Grid>
                         {/* ------------------------ Stat Message/Instructions -----------------------  */}
@@ -673,7 +673,7 @@ export default function CharCards(props) {
                     <Grid item xs={12}>
                       <Typography variant="h6" align="center" noWrap color="primary" style={{ marginTop: "12px" }}>
                         {/* TODO: Translate */}
-                        Current Log
+                        {t("CharacterCreator.SavedLogs.Header")}
                       </Typography>
                     </Grid>
                   </Grid>
@@ -754,7 +754,7 @@ export default function CharCards(props) {
               <Grid item xs={12}>
                 <Typography variant="h6" align="center" noWrap color="primary" style={{ marginTop: "12px" }}>
                   {/* TODO: Translate */}
-                  Current Log
+                  {t("CharacterCreator.SavedLogs.Header")}
                 </Typography>
               </Grid>
 

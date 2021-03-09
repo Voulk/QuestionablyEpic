@@ -4,6 +4,8 @@ const IDHOLYSHOCK = 25914;
 const IDSHOCKBARRIER = 337824;
 const IDWORDOFGLORY = 85673;
 
+import { getOneHolyPower, getAwakeningWingsUptime, getWingsHealingInc } from "./PaladinMiscFormulas";
+
 export const getPaladinConduit = (conduitID, player, contentType, conduitLevel) => {
   let bonus_stats = {};
   let expectedOverhealing = 0;
@@ -18,10 +20,11 @@ export const getPaladinConduit = (conduitID, player, contentType, conduitLevel) 
   }
   // Focused Light
   else if (conduitID === 339984) {
-    // TODO: Wings crit uptime should be factored in here, reducing the power of the legendary slightly.
-    let trait_bonus = 0.04 + conduitLevel * 0.01;
-    let holyShockBaseCrit = player.getStatPerc("Crit") + 0.3;
-    let holyShockIncrease = (holyShockBaseCrit + trait_bonus) / holyShockBaseCrit - 1;
+    // TODO: Wings crit uptime should be factored in here, reducing the power of the conduit slightly.
+    const trait_bonus = 0.04 + conduitLevel * 0.01;
+    const wingsCritBonus = 20 / 120 * 0.3; // We could swap out 20 for wings uptime here to include Awakening.
+    const holyShockBaseCrit = player.getStatPerc("Crit") + 0.3 + wingsCritBonus; // This is Holy Shocks *effective* base crit chance. 
+    const holyShockIncrease = (holyShockBaseCrit + trait_bonus) / holyShockBaseCrit - 1;
     //console.log("HSI: " + holyShockIncrease);
 
     bonus_stats.HPS = holyShockIncrease * (player.getSpellHPS(IDHOLYSHOCK, contentType) + player.getSpellHPS(IDSHOCKBARRIER, contentType));
@@ -40,11 +43,19 @@ export const getPaladinConduit = (conduitID, player, contentType, conduitLevel) 
   }
   // Ringing Clarity (Kyrian)
   else if (conduitID === 340218) {
-    let trait_bonus = 0.36 + conduitLevel * 0.04;
-    let oneHolyShock = player.getSingleCast(IDHOLYSHOCK, contentType);
-    expectedOverhealing = 0.63;
+    const trait_bonus = 0.36 + conduitLevel * 0.04;
+    const oneHolyShock = player.getSingleCast(IDHOLYSHOCK, contentType);
+    const expectedHolyPower = Math.pow(trait_bonus, 2) + Math.pow(trait_bonus, 3);
+    const HPSOneHolyPower = getOneHolyPower(player, contentType);
+    expectedOverhealing = contentType === "Raid" ? 0.59 : 0.3;
 
-    bonus_stats.HPS = (trait_bonus * oneHolyShock * 3 * (1 - expectedOverhealing)) / 60;
+    
+    const HPSBonusHolyShocks = trait_bonus * oneHolyShock * 3 * (1 - expectedOverhealing) / 60;
+    //const HPSBonusHolyPower = HPSOneHolyPower * expectedHolyPower / 60;
+    const HPSBonusHolyPower = 0; // Disabled until live testing.
+    //console.log("EHPow: " + expectedHolyPower + ". HPS gain: " + HPSBonusHolyPower);
+
+    bonus_stats.HPS = (HPSBonusHolyShocks + HPSBonusHolyPower);
   }
   // Hallowed Discernment (Venthyr)
   else if (conduitID === 340212) {

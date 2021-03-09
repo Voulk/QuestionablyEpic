@@ -43,12 +43,35 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const menuStyle = {
+  style: { marginTop: 5 },
+  MenuListProps: {
+    style: { paddingTop: 0, paddingBottom: 0 },
+  },
+  PaperProps: {
+    style: {
+      border: "1px solid rgba(255, 255, 255, 0.23)",
+    },
+  },
+  anchorOrigin: {
+    vertical: "bottom",
+    horizontal: "left",
+  },
+  transformOrigin: {
+    vertical: "top",
+    horizontal: "left",
+  },
+  getContentAnchorEl: null,
+};
+
 export default function TopGearSettingsAccordion(props) {
   const classes = useStyles();
   const { t, i18n } = useTranslation();
+  const playerSpec = props.player.getSpec();
   // Hymnal State
   const [hymnalValue, setHymnalValue] = useState(props.userSettings.hymnalAllies);
   const [groupValue, setgroupValue] = useState(props.userSettings.includeGroupBenefits);
+  const [discTalent, setDiscTalent] = useState(109964);
 
   const updateHymnal = (value) => {
     props.editSettings("hymnalAllies", setBounds(value, 0, 4));
@@ -89,7 +112,7 @@ export default function TopGearSettingsAccordion(props) {
           <Grid container spacing={1} direction="row">
             {/* ------------------------- Cabalist's Hymnal Item ------------------------- */}
             <Grid item xs={12} sm={4} md={4} lg={2} xl={2}>
-              <Grid container spacing={1} style={{ paddingLeft: 8 }} >
+              <Grid container spacing={1} style={{ paddingLeft: 8 }}>
                 <Grid item xs={12}>
                   <div style={{ display: "inline-flex" }}>
                     <Typography color="primary" style={{ marginRight: 4 }}>
@@ -115,7 +138,7 @@ export default function TopGearSettingsAccordion(props) {
               </Grid>
             </Grid>
             <Grid item>
-            <Divider orientation="vertical" flexItem style={{height: "100%"}} />
+              <Divider orientation="vertical" flexItem style={{ height: "100%" }} />
             </Grid>
             {/* ------------------------- Group Buff (Treat Buff as Personal Throughput) ------------------------- */}
             <Grid item xs={12} sm={4} md={4} lg={2} xl={2}>
@@ -132,43 +155,48 @@ export default function TopGearSettingsAccordion(props) {
                 </Grid>
                 <Grid item xs={12}>
                   <FormControl variant="outlined" size="small">
-                    <InputLabel id="slots">{}</InputLabel>
-                    <Select labelId="slots" value={groupValue} onChange={(e) => updateGroupValue(e.target.value)}>
-                      <MenuItem value={true}>Yes</MenuItem>
-                      <MenuItem value={false}>No</MenuItem>
+                    <InputLabel id="groupValue">{}</InputLabel>
+                    <Select labelId="groupValue" value={groupValue} onChange={(e) => updateGroupValue(e.target.value)} MenuProps={menuStyle}>
+                      <MenuItem value={true}>{t("Yes")}</MenuItem>
+                      <MenuItem value={false}>{t("No")}</MenuItem>
                     </Select>
                   </FormControl>
                 </Grid>
               </Grid>
-            </Grid>{" "}
-            {/*
+            </Grid>
             <Divider orientation="vertical" flexItem />
-            <Grid item xs={2}>
-              <Grid container spacing={1} style={{ paddingLeft: 8 }}>
-                <Grid item xs={12}>
-                  <Tooltip
-                    title={t("Settings.Setting2Tooltip")}
-                    placement="top-start"
-                  >
-                    <Typography color="primary">
-                      {t("Settings.Setting2Title")}
-                    </Typography>
-                  </Tooltip>
-                </Grid>
-                <Grid item xs={12}>
-                  <TextField
-                    label={t("Settings.Setting2TextFieldLabel")}
-                    id="AlliesNumber"
-                    value={value2}
-                    style={{ maxWidth: 75 }}
-                    onChange={(e) => setValue2(e.target.value)}
-                    variant="outlined"
-                    size="small"
-                    type="number"
-                  />
+            {/* {playerSpec === "Discipline Priest" ? (
+              <Grid item xs={2}>
+                <Grid container spacing={1} style={{ paddingLeft: 8 }}>
+                  <Grid item xs={12}>
+                    <div style={{ display: "inline-flex" }}>
+                      <Typography color="primary" style={{ marginRight: 4 }}>
+                        {t("Settings.Setting2Title")}
+                      </Typography>
+                      <Tooltip title={t("Settings.Setting2Tooltip")} placement="top-start">
+                        <InfoOutlinedIcon style={{ height: 15, width: 15 }} fontSize="small" />
+                      </Tooltip>
+                    </div>
+                  </Grid>
+                  <Grid item xs={12}>
+                    <FormControl variant="outlined" size="small">
+                      <InputLabel id="slots">{}</InputLabel>
+                      <Select labelId="slots" value={discTalent} onChange={(e) => setDiscTalent(e.target.value)} MenuProps={menuStyle}>
+                        <MenuItem id="spiritShell" value={109964}>
+                          {t("CooldownPlanner.ClassAbilities.109964")}
+                        </MenuItem>
+                        <MenuItem id="evangelism" value={246287}>
+                          {t("CooldownPlanner.ClassAbilities.246287")}
+                        </MenuItem>
+                      </Select>
+                    </FormControl>
+                  </Grid>
                 </Grid>
               </Grid>
-            </Grid>
+            ) : (
+              ""
+            )} */}
+            {/*
             <Divider orientation="vertical" flexItem />
             <Grid item xs={2}>
               <Grid container spacing={1} style={{ paddingLeft: 8 }}>

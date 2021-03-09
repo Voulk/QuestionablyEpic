@@ -43,7 +43,7 @@ export function getShamanCovAbility(soulbindName, player, contentType) {
   } else if (["Niya", "Dreamweaver", "Korayn"].includes(soulbindName)) {
     // Whatever is left
     const ticks = 7;
-    const healPart = 0.4;
+    const healPart = 0.6;
     const targets = 4; // bold to assume full targets but its already doing so little
     const cooldown = 120;
     const totalSP = FAE_TRANSFUSION_SP * ticks * healPart * targets * RESTO_SHAMAN_DPS_AURA;

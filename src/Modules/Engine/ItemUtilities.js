@@ -384,9 +384,10 @@ export function calcStatsAtLevel(itemLevel, slot, statAllocations, tertiary) {
     let allocation = statAllocations[key];
 
     if (["haste", "crit", "mastery", "versatility", "leech"].includes(key)) {
-      stats[key] = Math.floor(Math.floor(rand_prop * allocation * 0.0001 + 0.5) * combat_mult);
+      //stats[key] = Math.floor(Math.floor(rand_prop * allocation * 0.0001 + 0.5) * combat_mult);
+      stats[key] = Math.round((rand_prop * allocation * 0.0001) * combat_mult);
     } else if (key === "intellect") {
-      stats[key] = Math.floor(Math.floor(rand_prop * allocation * 0.0001 + 0.5) * 1);
+      stats[key] = Math.floor((rand_prop * allocation * 0.0001) * 1);
     } else if (key === "stamina") {
       // todo
     }

@@ -7,13 +7,7 @@ import "./Panels.css";
 import { useTranslation } from "react-i18next";
 import { filterItemListBySource, getDifferentialByID } from "../../Engine/ItemUtilities";
 import { encounterDB } from "../../Player/InstanceDB";
-
-// TODO: Move these to somewhere more accessible since they are used in multiple places.
-const itemLevels = {
-  raid: [187, 200, 213, 226],
-  dungeon: [184, 184, 187, 190, 194, 194, 197, 200, 200, 200, 203, 203, 207, 207, 207, 210],
-  pvp: [200, 207, 213, 220, 226],
-};
+import { itemLevels } from "../../../Databases/itemLevelsDB";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -35,10 +29,11 @@ export default function MythicPlusGearContainer(props) {
       .map((key, i) => (
         <Grid item xs={12} key={"mythicContainer-" + i}>
           <Grid container spacing={2}>
-            <Grid item>
-              <div style={{ width: 181, paddingLeft: 10 }} className="container-UpgradeCards">
+            <Grid item style={{ padding: 0 }}>
+              <div style={{ width: 207, paddingLeft: 8 }} className="container-UpgradeCards">
                 {DungeonHeaderIcons(key, {
                   verticalAlign: "middle",
+                  marginTop: 8,
                 })}
                 <Typography variant="h6" noWrap className="centered-UpgradeCards-Dungeons">
                   {t("DungeonNames." + key)}
