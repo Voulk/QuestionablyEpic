@@ -53,7 +53,7 @@ export function getSoulbindFormula(effectID, player, contentType) {
   // Valiant Strikes
   else if (effectID === 329791) {
     let average_health_pool = player.activeStats.stamina * 20; // The players health is an acceptable average for an average target.
-    let ppm = 0.66; // POSTLIVE: Check against logs.
+    let ppm = 0.49; // POSTLIVE: Check against logs.
 
     bonus_stats.HPS = (average_health_pool * 0.2 * ppm) / 60;
   }
