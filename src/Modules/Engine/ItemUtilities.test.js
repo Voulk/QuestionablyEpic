@@ -36,11 +36,11 @@ describe("Calc Stats at Level", () => {
     const id = 178761;
     const statAllocations = getItemAllocations(id);
     const expectedResult = {
-      intellect: 66,
+      intellect: 65,
       stamina: 0,
-      haste: 48,
+      haste: 49,
       mastery: 0,
-      versatility: 75,
+      versatility: 76,
       crit: 0,
       leech: 0,
       hps: 0,
