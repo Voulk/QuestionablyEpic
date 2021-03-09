@@ -542,8 +542,8 @@
       "Header": "Upgrade Finder",
       "RaidDifficultyHeader": "Raid Difficulty",
       "RaidDifficultyBody": "Select up to two difficulties to find upgrades from",
-      "MythicPlusHeader": "Mythic Plus Key Level",
-      "MythicPlusBody": "Use the Slider to Select the level of keys you usually complete",
+      "MythicPlusHeader": "Mythic Plus Ilvl (Keys & Valor)",
+      "MythicPlusBody": "Use the slider to select dungeon item level",
       "PvPHeader": "PvP Rating",
       "PvPBody": "Select  your Rating",
       "SimCHeader": "SimC Import",
@@ -552,7 +552,7 @@
       "SimCBody1Missing": "SimC Status - Missing",
       "SimCBody2": "Current Equipped Gear:",
       "SimCButton": "Import SimC",
-      "HelpText": "Insert a SimC String, select up to two raid difficulties, your standard mythic keystone level, and your PVP rating to see where you can find your next upgrade! All results are based on the gear you are actively wearing."
+      "HelpText": "Insert a SimC String, select up to two raid difficulties, the Mythic+ ilvl you're interested in, and your PVP rating to see where you can find your next upgrade! All results are based on the gear you are actively wearing."
     },
 
     "TrinketAnalysis": {

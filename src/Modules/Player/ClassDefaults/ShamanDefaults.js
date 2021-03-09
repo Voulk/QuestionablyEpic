@@ -6,7 +6,7 @@ export const shamanDefaultSpellData = (contentType) => {
       157153: { casts: 14, healing: 0, hps: 0 }, // Cloudburst
       73921: { casts: 18, healing: 450000, hps: 967 }, // Healing Rain
       108280: { casts: 2, healing: 0, hps: 0 }, // Healing Tide Totem
-      85222: { casts: 20, healing: 368000, hps: 791 }, // Chain Heal
+      85222: { casts: 16, healing: 288000, hps: 621 }, // Chain Heal
       16191: { casts: 2, healing: 0, hps: 0 }, // Mana Tide Totem
       20473: { casts: 20, healing: 0, hps: 0 }, // Healing Surge
     };
@@ -16,7 +16,7 @@ export const shamanDefaultSpellData = (contentType) => {
       157153: { casts: 14, healing: 0, hps: 0 },
       73921: { casts: 18, healing: 450000, hps: 967 },
       108280: { casts: 2, healing: 0, hps: 0 },
-      85222: { casts: 20, healing: 368000, hps: 791 },
+      85222: { casts: 4, healing: 74000, hps: 141 },
       16191: { casts: 2, healing: 0, hps: 0 },
       20473: { casts: 40, healing: 0, hps: 0 }, // Healing Surge
     };
