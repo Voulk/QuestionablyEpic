@@ -83,5 +83,5 @@ export default function UpgradeFinderBossImages(props, style) {
     source = BoeHeader;
   }
 
-  return <img style={{ ...style }} src={source} alt={props} />;
+  return source
 }

@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
   },
   raidHeaderStyle: {
     backgroundImage: `url(${require("../../Images/Bosses/CastleNathria/loadingScreenArt.png").default})`,
-    borderRadius: "4px 0px 0px 0px",
+    borderRadius: "4px 0px 0px 4px",
     height: 75,
     whiteSpace: "nowrap",
     textShadow: "3px 3px 4px black",
@@ -48,7 +48,6 @@ const useStyles = makeStyles((theme) => ({
   },
   pvpHeaderStyle: {
     backgroundImage: `url(${require("../../Images/Bosses/PVPHeader.png").default})`,
-    borderRadius: "4px 0px 0px 0px",
     height: 75,
     whiteSpace: "nowrap",
     textShadow: "3px 3px 4px black",
@@ -57,7 +56,6 @@ const useStyles = makeStyles((theme) => ({
   },
   worldBossHeaderStyle: {
     backgroundImage: `url(${require("../../Images/Bosses/WorldBosses.png").default})`,
-    borderRadius: "0px 4px 0px 0px",
     whiteSpace: "nowrap",
     textShadow: "3px 3px 4px black",
     color: "#fff",
@@ -65,7 +63,7 @@ const useStyles = makeStyles((theme) => ({
   },
   slotsHeaderStyle: {
     backgroundImage: `url(${require("../../Images/Bosses/AllSlots.png").default})`,
-    borderRadius: "0px 4px 0px 0px",
+    borderRadius: "0px 4px 4px 0px",
     whiteSpace: "nowrap",
     textShadow: "3px 3px 4px black",
     color: "#fff",
@@ -145,11 +143,11 @@ export default function UpgradeFinderResults(props) {
         position="static"
         style={{
           backgroundColor: "#000",
-          borderRadius: "4px 4px 0px 0px",
+          borderRadius: "4px 4px 4px 4px",
         }}
         elevation={0}
       >
-        <Tabs value={tabvalue} onChange={handleTabChange} aria-label="simple tabs example" variant="fullWidth" TabIndicatorProps={{ style: { backgroundColor: "#F2BF59" } }}>
+        <Tabs value={tabvalue} onChange={handleTabChange} aria-label="simple tabs example" variant="fullWidth" style={{borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.22)"}} TabIndicatorProps={{ style: { backgroundColor: "#F2BF59" } }}>
           {/* Raid */}
           <Tab className={classes.raidHeaderStyle} label={t("UpgradeFinder.CurrentRaid")} {...a11yProps(0)} />
           {/* Mythic Plus */}

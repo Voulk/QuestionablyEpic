@@ -55,7 +55,7 @@ const AccordionSummary = withStyles({
 const useStyles = makeStyles((theme) => ({
   root: {
     width: "100%",
-    padding: 8,
+    padding: "8px 5px",
   },
 }));
 
@@ -126,7 +126,7 @@ export default function SlotsContainer(props) {
   return (
     <div className={classes.root}>
       <Grid container spacing={1}>
-        <Grid item xs={12}>
+        <Grid item xs={12} style={{ padding: "4px 0px" }}>
           {contentGenerator(props.type)}
         </Grid>
       </Grid>

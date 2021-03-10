@@ -1,6 +1,6 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { Typography, Grid, Divider } from "@material-ui/core";
+import { Typography, Grid, Divider, Paper } from "@material-ui/core";
 import ItemUpgradeCard from "./ItemUpgradeCard";
 import UpgradeFinderBossImages from "./BossImages";
 import "./Panels.css";
@@ -23,16 +23,27 @@ export default function WorldBossGearContainer(props) {
   const itemDifferentials = props.itemDifferentials;
 
   const contentGenerator = (type) => {
-    return encounterDB[1192]
-      .map((key, i) => (
-        <Grid item xs={12} key={"worldBossContainer-" + i}>
+    return encounterDB[1192].map((key, i) => (
+      <Grid item xs={12} key={"worldBossContainer-" + i} style={{ padding: "4px 0px" }}>
+        <Paper style={{ backgroundColor: "#191c23", padding: 8, border: "1px solid rgba(255, 255, 255, 0.22)" }}>
           <Grid container spacing={2}>
             <Grid item>
-              <div style={{ paddingLeft: 10 }} className="container-UpgradeCards">
-                {UpgradeFinderBossImages(key, {
+            <div
+                style={{
+                  width: 175,
+                  height: 181,
+                  paddingLeft: 8,
+                  backgroundImage: `url(${UpgradeFinderBossImages(key)})`,
+                  backgroundRepeat: "no-repeat",
+                  backgroundPosition: "center 60%",
+                  backgroundSize: "auto 100%",
+                }}
+                className="container-UpgradeCards"
+              >
+                {/* {UpgradeFinderBossImages(key, {
                   width: "100%",
                   height: "auto",
-                })}
+                })} */}
                 <Typography variant="h6" noWrap className="centered-UpgradeCards-Dungeons">
                   {t("WorldBosses." + key)}
                 </Typography>
@@ -45,14 +56,9 @@ export default function WorldBossGearContainer(props) {
               ))}
             </Grid>
           </Grid>
-        </Grid>
-      ))
-      .map((key, i) => [
-        key,
-        <Grid item xs={12} key={"worldBossDivider-" + i}>
-          <Divider />
-        </Grid>,
-      ]);
+        </Paper>
+      </Grid>
+    ));
   };
 
   return (
