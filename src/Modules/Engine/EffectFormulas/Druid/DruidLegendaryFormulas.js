@@ -41,16 +41,17 @@ export const getDruidLegendary = (effectName, player, contentType) => {
 
     */
     // Do Math
-    let durationIncrease = 8;
+    let durationIncrease = 10;
     let expectedOverhealing = 0.6;
     let swiftmendCPM = 3.8;
     let power = 0;
+    const isCW = contentType === "Raid" ? false : true;
 
     let spellExtensions = [
       { sp: 1.56, duration: 15, extensionsPerMin: swiftmendCPM * 0.95 }, // Rejuv
       { sp: 1.94, duration: 15, extensionsPerMin: swiftmendCPM * 0.95 }, // Lifebloom
       { sp: 0.43, duration: 12, extensionsPerMin: swiftmendCPM * 0.96 }, // Regrowth
-      { sp: 3.17, duration: 8, extensionsPerMin: swiftmendCPM * 0.48 }, // Cenarion Ward
+      { sp: 3.17, duration: 8, extensionsPerMin: (isCW ? swiftmendCPM * 0.96 : 0) }, // Cenarion Ward
     ];
 
     spellExtensions.forEach((spell) => (power += ((spell.sp * durationIncrease) / spell.duration) * (1 - expectedOverhealing) * spell.extensionsPerMin));
@@ -74,7 +75,7 @@ export const getDruidLegendary = (effectName, player, contentType) => {
     // Photosynthesis. Dungeon only, when we can pull talents from SimC strings we'll make this conditional.
     const oneBloom = 1.15 * 0.9 * player.getStatMultiplier("CRITVERS") * player.getStatPerc("Mastery") * player.getInt();
     const freeBloomsPerSec = (1 + 0.5 + 0.33) * player.getStatPerc("Haste") * 0.04;
-    const expectedOverhealing = 0.3;
+    const expectedOverhealing = 0.4;
     const hps_phosy = contentType === "Raid" ? 0 : (oneBloom * freeBloomsPerSec * (1 - expectedOverhealing));
 
 
@@ -89,7 +90,7 @@ export const getDruidLegendary = (effectName, player, contentType) => {
 
   // Consider building in support for the conduit via SimC grab or something similar.
   else if (name === "Lycaras Fleeting Glimpse") {
-    let expectedOverhealing = 0.2; // TODO: placeholder.
+    let expectedOverhealing = 0.35; // TODO: placeholder.
     let oneWildGrowth = 0.91 * 6 * player.getInt() * player.getStatMultiplier("ALLSEC") * (1 - expectedOverhealing);
 
     bonus_stats.hps = Math.round((oneWildGrowth * (60 / 45)) / 60);

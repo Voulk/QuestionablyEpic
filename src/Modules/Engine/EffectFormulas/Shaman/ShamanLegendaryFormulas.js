@@ -54,7 +54,7 @@ export const getShamanLegendary = (effectName, player, contentType) => {
     const chCasts = player.getSpellCasts(IDCHAINHEAL, contentType);
     const ratio = Math.min(Math.max(triggerCasts / chCasts, 0.01), 5);
     debug && console.log(JONATS, chHPS, triggerCasts, chCasts, ratio);
-    bonusStats.hps = chHPS * (ratio / 10);
+    bonusStats.hps = chHPS * (ratio / 5); // Was 10.
   }
   return bonusStats;
 };

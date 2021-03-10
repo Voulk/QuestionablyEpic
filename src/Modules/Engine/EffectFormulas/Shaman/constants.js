@@ -1,5 +1,5 @@
-export const VESPER_SP = .73;
-export const CHAIN_HARVEST_SP = 3.15;
+export const VESPER_SP = .9125; // Includes the 9.0.5 25% buff.
+export const CHAIN_HARVEST_SP = 3.6225; // Includes the 9.0.5 15% buff.
 export const PRIMORDIAL_WAVE_SP = .65;
 export const HEALING_WAVE_COPY_SP = 1.8;
 export const RIPTIDE_INITIAL_SP = 1.7; // Check for Torrent

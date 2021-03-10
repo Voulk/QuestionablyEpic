@@ -9,7 +9,20 @@
 ;
 export const changeLog = [
   {
-    version: "9.0",
+    version: "9.0.5",
+    update: 1,
+    date: "9th March",
+    changes: [
+      "9.05 fully implemented.",
+      "9.0.5: Legendary changes to Paladin, Druid, Shaman.",
+      "Upgrade Finder: Added all Valor ilvls for dungeon gear.",
+      "Updated the default spell data for all specs.",
+      "9.0.5: Trinkets with flat healing have been buffed by roughly 11%.",
+      "9.0.5: Almost every piece of gear has shifted by 1-2 secondary and primary stats.",
+    ],
+  },
+  {
+    version: "9.0.2",
     update: 25,
     date: "3rd March",
     changes: [
@@ -21,7 +34,7 @@ export const changeLog = [
     ],
   },
   {
-    version: "9.0",
+    version: "9.0.2",
     update: 24,
     date: "23rd February",
     changes: [
@@ -37,7 +50,7 @@ export const changeLog = [
     ],
   },
   {
-    version: "9.0",
+    version: "9.0.2",
     update: 23,
     date: "11th February",
     changes: [
