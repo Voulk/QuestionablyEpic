@@ -1,6 +1,6 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { Typography, Grid, Divider } from "@material-ui/core";
+import { Typography, Grid, Divider, Paper } from "@material-ui/core";
 import ItemUpgradeCard from "./ItemUpgradeCard";
 import "./Panels.css";
 import { useTranslation } from "react-i18next";
@@ -10,7 +10,7 @@ import { encounterDB } from "../../Player/InstanceDB";
 const useStyles = makeStyles((theme) => ({
   root: {
     width: "100%",
-    marginTop: 10,
+    marginTop: 4,
     padding: 4,
   },
 }));
@@ -41,9 +41,9 @@ export default function PvPGearContainer(props) {
   const difficulty = props.playerSettings.pvp;
 
   const contentGenerator = (type) => {
-    return encounterDB[2]
-      .map((key, i) => (
-        <Grid item xs={12} key={"pvpContainer-" + i}>
+    return encounterDB[2].map((key, i) => (
+      <Grid item xs={12} key={"pvpContainer-" + i} style={{ padding: "4px 0px" }}>
+        <Paper style={{ backgroundColor: "#191c23", padding: 8, border: "1px solid rgba(255, 255, 255, 0.22)" }}>
           <Grid container spacing={2}>
             <Grid item>
               <div style={{ width: 181, paddingLeft: 10 }} className="container-UpgradeCards">
@@ -61,14 +61,9 @@ export default function PvPGearContainer(props) {
               ))}
             </Grid>
           </Grid>
-        </Grid>
-      ))
-      .map((key, i) => [
-        key,
-        <Grid item xs={12} key={"pvpDivider-" + i}>
-          <Divider />
-        </Grid>,
-      ]);
+        </Paper>
+      </Grid>
+    ));
   };
 
   return (
