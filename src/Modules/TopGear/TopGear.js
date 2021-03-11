@@ -255,7 +255,7 @@ export default function TopGear(props) {
           slotList.map((key, index) => {
             return (
               <Grid item xs={12} key={index}>
-                <Typography style={{ color: "white" }} variant="h5">
+                <Typography color="primary" variant="h5">
                   {key.label}
                 </Typography>
                 <Divider style={{ marginBottom: 10, width: "42%" }} />
