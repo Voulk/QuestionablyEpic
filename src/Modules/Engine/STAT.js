@@ -79,34 +79,35 @@ export const STATPERONEPERCENT = {
 
 };
 
+
 export const translatedStat = {
   haste: {
     en: "Haste",
     fr: "Hâte",
     de: "Tempo",
     cn: "CNHaste",
-    ru: "RuHaste",
+    ru: "к скорости",
   },
   crit: {
     en: "Crit",
     fr: "Score de crit",
     de: "Kritische Trefferwertung",
     cn: "CNCr",
-    ru: "RuCr",
+    ru: "к критическому удару",
   },
   mastery: {
     en: "Mastery",
     fr: "Maîtrise",
     de: "Meisterschaft",
     cn: "CNCr",
-    ru: "RuCr",
+    ru: "к искусности",
   },
   versatility: {
     en: "Vers",
     fr: "Versatilité",
     de: "Vielseitigkeit",
     cn: "CNCr",
-    ru: "RuCr",
+    ru: "к универсальности",
   },
   intellect: {
     en: "Int",
@@ -133,8 +134,8 @@ export const translatedStat = {
     en: "Effect",
     fr: "Effect",
     de: "Effect",
-    cn: "CNCr",
-    ru: "RuCr",
+    cn: "Effect",
+    ru: "Effect",
   },
   "bonus HPS": {
     en: "Bonus HPS",

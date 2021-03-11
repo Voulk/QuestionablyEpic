@@ -13,21 +13,21 @@ export default function TopSetStatsPanel(props) {
   const currentLanguage = props.currentLanguage;
 
   const stats = [
-    ["intellect", statList.intellect],
-    ["haste", statList.haste / STATPERONEPERCENT.Retail.HASTE],
-    ["crit", statList.crit / STATPERONEPERCENT.Retail.CRIT],
-    ["mastery", statList.mastery / STATPERONEPERCENT.Retail.MASTERYA[props.spec]],
-    ["versatility", statList.versatility / STATPERONEPERCENT.Retail.VERSATILITY],
-    ["leech", statList.leech / STATPERONEPERCENT.Retail.LEECH],
-    ["bonus HPS", statList.hps],
-    ["bonus DPS", statList.dps],
+    ["Intellect", statList.intellect],
+    ["Haste", statList.haste / STATPERONEPERCENT.Retail.HASTE],
+    ["Crit", statList.crit / STATPERONEPERCENT.Retail.CRIT],
+    ["Mastery", statList.mastery / STATPERONEPERCENT.Retail.MASTERYA[props.spec]],
+    ["Versatility", statList.versatility / STATPERONEPERCENT.Retail.VERSATILITY],
+    ["Leech", statList.leech / STATPERONEPERCENT.Retail.LEECH],
+    ["Bonus HPS", statList.hps],
+    ["Bonus DPS", statList.dps],
   ];
 
   // Returns a formatted string for the stat panel.
   function printStat(stat, value) {
-    if (["haste", "crit", "versatility", "mastery", "leech"].includes(stat)) {
-      return translatedStat[stat][currentLanguage] + ": " + Math.round(100 * value) / 100 + "%";
-    } else return translatedStat[stat][currentLanguage] + ": " + Math.round(value);
+    if (["Haste", "Crit", "Versatility", "Mastery", "Leech"].includes(stat)) {
+      return t(stat) + ": " + Math.round(100 * value) / 100 + "%";
+    } else return  t(stat) + ": " + Math.round(value);
   }
 
   return (
