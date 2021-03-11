@@ -28,7 +28,7 @@ export default function SimCraftInput(props) {
       <Tooltip title={t("QeHeader.Tooltip.SimC")} arrow>
         <Button
           disableElevation={props.disableElevation}
-          style={{ whiteSpace: "nowrap" }}
+          // style={{ whiteSpace: "nowrap" }}
           color={props.color}
           onClick={handleClickOpen}
           disabled={characterCount === 0}
