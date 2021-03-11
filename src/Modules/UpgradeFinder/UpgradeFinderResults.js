@@ -145,7 +145,7 @@ export default function UpgradeFinderResults(props) {
           backgroundColor: "#000",
           borderRadius: "4px 4px 4px 4px",
         }}
-        elevation={0}
+        elevation={1}
       >
         <Tabs value={tabvalue} onChange={handleTabChange} aria-label="simple tabs example" variant="fullWidth" style={{borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.22)"}} TabIndicatorProps={{ style: { backgroundColor: "#F2BF59" } }}>
           {/* Raid */}

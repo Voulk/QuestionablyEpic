@@ -11,7 +11,7 @@ import { filterItemListBySource, getDifferentialByID } from "../../Engine/ItemUt
 const useStyles = makeStyles((theme) => ({
   root: {
     width: "100%",
-    marginTop: 10,
+    marginTop: 4,
     padding: 4,
   },
 }));
@@ -84,10 +84,6 @@ export default function RaidGearContainer(props) {
                     }}
                     className="container-UpgradeCards"
                   >
-                    {/* {UpgradeFinderBossImages(key, {
-                    width: "100%",
-                    height: "auto",
-                  })} */}
                     <Typography variant="h6" noWrap className="centered-UpgradeCards">
                       {t("BossNames." + key)}
                     </Typography>
@@ -102,7 +98,7 @@ export default function RaidGearContainer(props) {
                         color="primary"
                         align="center"
                         style={{
-                          backgroundColor: "rgba(255, 255, 255, 0.12)",
+                          backgroundColor: "#35383e",
                           borderRadius: 4,
                         }}
                       >
@@ -123,7 +119,7 @@ export default function RaidGearContainer(props) {
                           color="primary"
                           align="center"
                           style={{
-                            backgroundColor: "rgba(255, 255, 255, 0.12)",
+                            backgroundColor: "#35383e",
                             borderRadius: 4,
                           }}
                         >

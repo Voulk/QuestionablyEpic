@@ -11,7 +11,7 @@ import { filterItemListBySource, getDifferentialByID } from "../../Engine/ItemUt
 const useStyles = makeStyles((theme) => ({
   root: {
     width: "100%",
-    marginTop: 10,
+    marginTop: 4,
     padding: 4,
   },
 }));
@@ -28,7 +28,7 @@ export default function WorldBossGearContainer(props) {
         <Paper style={{ backgroundColor: "#191c23", padding: 8, border: "1px solid rgba(255, 255, 255, 0.22)" }}>
           <Grid container spacing={2}>
             <Grid item>
-            <div
+              <div
                 style={{
                   width: 175,
                   height: 181,
@@ -40,10 +40,6 @@ export default function WorldBossGearContainer(props) {
                 }}
                 className="container-UpgradeCards"
               >
-                {/* {UpgradeFinderBossImages(key, {
-                  width: "100%",
-                  height: "auto",
-                })} */}
                 <Typography variant="h6" noWrap className="centered-UpgradeCards-Dungeons">
                   {t("WorldBosses." + key)}
                 </Typography>

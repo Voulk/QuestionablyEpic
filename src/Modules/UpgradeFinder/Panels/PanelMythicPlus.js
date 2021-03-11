@@ -12,7 +12,7 @@ import { itemLevels } from "../../../Databases/itemLevelsDB";
 const useStyles = makeStyles((theme) => ({
   root: {
     width: "100%",
-    marginTop: 10,
+    marginTop: 4,
     padding: 4,
   },
 }));
@@ -42,9 +42,6 @@ export default function MythicPlusGearContainer(props) {
                 }}
                 className="container-UpgradeCards"
               >
-                {/* {DungeonHeaderIcons(key, {
-                  verticalAlign: "middle",
-                })} */}
                 <Typography variant="h6" noWrap className="centered-UpgradeCards-Dungeons">
                   {t("DungeonNames." + key)}
                 </Typography>
@@ -60,12 +57,6 @@ export default function MythicPlusGearContainer(props) {
         </Paper>
       </Grid>
     ));
-    // .map((key, i) => [
-    //   key,
-    //   <Grid item xs={12} key={"mythicDivider-" + i}>
-    //     <Divider />
-    //   </Grid>,
-    // ]);
   };
 
   return (

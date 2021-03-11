@@ -10,7 +10,7 @@ import { encounterDB } from "../../Player/InstanceDB";
 const useStyles = makeStyles((theme) => ({
   root: {
     width: "100%",
-    marginTop: 10,
+    marginTop: 4,
     padding: 4,
   },
 }));
