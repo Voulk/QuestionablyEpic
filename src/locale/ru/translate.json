@@ -379,10 +379,10 @@
     },
 
     "RaidDifficulty": {
-      "Raid Finder": "",
-      "Normal": "",
-      "Heroic": "",
-      "Mythic": ""
+      "Raid Finder": "Поиск рейда",
+      "Normal": "Обычный",
+      "Heroic": "Героический",
+      "Mythic": "Эпохальный"
     },
 
     "PvPCurrency": {
