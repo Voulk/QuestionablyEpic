@@ -88,7 +88,8 @@ function getSlots() {
     { value: "Feet", label: t("slotNames.feet") },
     { value: "Finger", label: t("slotNames.finger") },
     { value: "Trinket", label: t("slotNames.trinket") },
-    { value: "Weapons", label: t("slotNames.weapons") },
+    { value: "1H Weapon", label: t("slotNames.mainHands") },
+    // { value: "Weapons", label: t("slotNames.weapons") },
     { value: "Offhands", label: t("slotNames.offhands") },
   ];
 
@@ -332,7 +333,7 @@ export default function QuickCompare(props) {
                     }}
                     style={{ width: "100%" }}
                     renderInput={(params) => <TextField {...params} label={t("QuickCompare.ItemName")} variant="outlined" />}
-                    ListboxProps={{ style: { border: "1px solid rgba(255, 255, 255, 0.23)", borderRadius: 4,paddingTop: 0, paddingBottom: 0 } }}
+                    ListboxProps={{ style: { border: "1px solid rgba(255, 255, 255, 0.23)", borderRadius: 4, paddingTop: 0, paddingBottom: 0 } }}
                   />
                 </FormControl>
               </Grid>
@@ -468,204 +469,44 @@ export default function QuickCompare(props) {
 
         {/* this can be simplified into a map at some stage */}
 
-        <Grid item xs={12}>
-          <Grid container spacing={1}>
-            {/* Helm */}
+        {slots
+          .filter((filter) => [...props.player.getActiveItems(filter.value)].length > 0)
+          .map((key) => (
             <Grid item xs={12}>
-              <Typography color="primary" variant="h5">
-                {t("slotNames.head")}
-              </Typography>
-              <Divider style={{ marginBottom: 10 }} />
               <Grid container spacing={1}>
-                {[...props.player.getActiveItems("Head")].map((item, index) => (
-                  <ItemCard key={index} item={item} delete={deleteItem} />
-                ))}
+                {/* Helm */}
+                <Grid item xs={12}>
+                  <Typography color="primary" variant="h5">
+                    {t(key.label)}
+                  </Typography>
+                  <Divider style={{ marginBottom: 10 }} />
+                  <Grid container spacing={1}>
+                    {[...props.player.getActiveItems(key.value)].map((item, index) => (
+                      <ItemCard key={index} item={item} delete={deleteItem} />
+                    ))}
+                  </Grid>
+                </Grid>
               </Grid>
             </Grid>
+          ))}
 
-            {/* Neck */}
-            <Grid item xs={12}>
-              <Typography color="primary" variant="h5">
-                {t("slotNames.neck")}
-              </Typography>
-              <Divider style={{ marginBottom: 10 }} />
-              <Grid container spacing={1}>
-                {[...props.player.getActiveItems("Neck")].map((item, index) => (
-                  <ItemCard key={index} item={item} delete={deleteItem} />
-                ))}
-              </Grid>
+        {/* Combos */}
+        {wepCombos.length > 0 ? (
+          <Grid item xs={12}>
+            <Typography color="primary" variant="h5">
+              {t("slotNames.weaponCombos")}
+            </Typography>
+            <Divider style={{ marginBottom: 10 }} />
+            <Grid container spacing={1}>
+              {wepCombos.map((item, index) => (
+                <ItemCard key={index} item={item} delete={deleteItem} />
+              ))}
             </Grid>
-
-            {/* Shoulder */}
-            <Grid item xs={12}>
-              <Typography color="primary" variant="h5">
-                {t("slotNames.shoulder")}
-              </Typography>
-              <Divider style={{ marginBottom: 10 }} />
-              <Grid container spacing={1}>
-                {[...props.player.getActiveItems("Shoulder")].map((item, index) => (
-                  <ItemCard key={index} item={item} delete={deleteItem} />
-                ))}
-              </Grid>
-            </Grid>
-            {/* Back */}
-            <Grid item xs={12}>
-              <Typography color="primary" variant="h5">
-                {t("slotNames.back")}
-              </Typography>
-              <Divider style={{ marginBottom: 10 }} />
-              <Grid container spacing={1}>
-                {[...props.player.getActiveItems("Back")].map((item, index) => (
-                  <ItemCard key={index} item={item} delete={deleteItem} />
-                ))}
-              </Grid>
-            </Grid>
-
-            {/* Chest */}
-            <Grid item xs={12}>
-              <Typography color="primary" variant="h5">
-                {t("slotNames.chest")}
-              </Typography>
-              <Divider style={{ marginBottom: 10 }} />
-              <Grid container spacing={1}>
-                {[...props.player.getActiveItems("Chest")].map((item, index) => (
-                  <ItemCard key={index} item={item} delete={deleteItem} />
-                ))}
-              </Grid>
-            </Grid>
-
-            {/* Wrist */}
-            <Grid item xs={12}>
-              <Typography color="primary" variant="h5">
-                {t("slotNames.wrists")}
-              </Typography>
-              <Divider style={{ marginBottom: 10 }} />
-              <Grid container spacing={1}>
-                {[...props.player.getActiveItems("Wrist")].map((item, index) => (
-                  <ItemCard key={index} item={item} delete={deleteItem} />
-                ))}
-              </Grid>
-            </Grid>
-
-            {/* Hands */}
-            <Grid item xs={12}>
-              <Typography color="primary" variant="h5">
-                {t("slotNames.hands")}
-              </Typography>
-              <Divider style={{ marginBottom: 10 }} />
-              <Grid container spacing={1}>
-                {[...props.player.getActiveItems("Hands")].map((item, index) => (
-                  <ItemCard key={index} item={item} delete={deleteItem} />
-                ))}
-              </Grid>
-            </Grid>
-
-            {/* Waist */}
-            <Grid item xs={12}>
-              <Typography color="primary" variant="h5">
-                {t("slotNames.waist")}
-              </Typography>
-              <Divider style={{ marginBottom: 10 }} />
-              <Grid container spacing={1}>
-                {[...props.player.getActiveItems("Waist")].map((item, index) => (
-                  <ItemCard key={index} item={item} delete={deleteItem} />
-                ))}
-              </Grid>
-            </Grid>
-
-            {/* Legs */}
-            <Grid item xs={12}>
-              <Typography color="primary" variant="h5">
-                {t("slotNames.legs")}
-              </Typography>
-              <Divider style={{ marginBottom: 10 }} />
-              <Grid container spacing={1}>
-                {[...props.player.getActiveItems("Legs")].map((item, index) => (
-                  <ItemCard key={index} item={item} delete={deleteItem} />
-                ))}
-              </Grid>
-            </Grid>
-
-            {/* Feet */}
-            <Grid item xs={12}>
-              <Typography color="primary" variant="h5">
-                {t("slotNames.feet")}
-              </Typography>
-              <Divider style={{ marginBottom: 10 }} />
-              <Grid container spacing={1}>
-                {[...props.player.getActiveItems("Feet")].map((item, index) => (
-                  <ItemCard key={index} item={item} delete={deleteItem} />
-                ))}
-              </Grid>
-            </Grid>
-
-            {/* Finger */}
-            <Grid item xs={12}>
-              <Typography color="primary" variant="h5">
-                {t("slotNames.finger")}
-              </Typography>
-              <Divider style={{ marginBottom: 10 }} />
-              <Grid container spacing={1}>
-                {[...props.player.getActiveItems("Finger")].map((item, index) => (
-                  <ItemCard key={index} item={item} delete={deleteItem} />
-                ))}
-              </Grid>
-            </Grid>
-
-            {/* Trinket */}
-            <Grid item xs={12}>
-              <Typography color="primary" variant="h5">
-                {t("slotNames.trinket")}
-              </Typography>
-              <Divider style={{ marginBottom: 10 }} />
-              <Grid container spacing={1}>
-                {[...props.player.getActiveItems("Trinket")].map((item, index) => (
-                  <ItemCard key={index} item={item} delete={deleteItem} />
-                ))}
-              </Grid>
-            </Grid>
-
-            {/* Trinket */}
-            <Grid item xs={12}>
-              <Typography color="primary" variant="h5">
-                {t("slotNames.mainHands")}
-              </Typography>
-              <Divider style={{ marginBottom: 10 }} />
-              <Grid container spacing={1}>
-                {[...props.player.getActiveItems("1H Weapon")].map((item, index) => (
-                  <ItemCard key={index} item={item} delete={deleteItem} />
-                ))}
-              </Grid>
-            </Grid>
-
-            {/* Trinket */}
-            <Grid item xs={12}>
-              <Typography color="primary" variant="h5">
-                {t("slotNames.offhands")}
-              </Typography>
-              <Divider style={{ marginBottom: 10 }} />
-              <Grid container spacing={1}>
-                {[...props.player.getActiveItems("Offhands")].map((item, index) => (
-                  <ItemCard key={index} item={item} delete={deleteItem} />
-                ))}
-              </Grid>
-            </Grid>
-
-            {/* Combos */}
-            <Grid item xs={12}>
-              <Typography color="primary" variant="h5">
-                {t("slotNames.weaponCombos")}
-              </Typography>
-              <Divider style={{ marginBottom: 10 }} />
-              <Grid container spacing={1}>
-                {wepCombos.map((item, index) => (
-                  <ItemCard key={index} item={item} delete={deleteItem} />
-                ))}
-              </Grid>
-            </Grid>
-            <Grid item style={{ height: 100 }} xs={12} />
           </Grid>
-        </Grid>
+        ) : (
+          ""
+        )}
+        <Grid item style={{ height: 100 }} xs={12} />
       </Grid>
     </div>
   );
