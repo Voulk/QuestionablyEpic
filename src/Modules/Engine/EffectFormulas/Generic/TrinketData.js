@@ -244,6 +244,18 @@ export const trinket_data = [
     ],
   },
   {
+    name: "Empyreal Ordnance",
+    effects: [
+      {
+        coefficient: 0.529892,
+        table: -1,
+        stacks: 5,
+        duration: 15,
+        cooldown: 180,
+      },
+    ],
+  },
+  {
     name: "Inscrutable Quantum Device",
     effects: [
       {
