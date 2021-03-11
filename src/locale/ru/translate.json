@@ -536,9 +536,9 @@
       "SimCBody1": "Текущее состояние строки SimC:",
       "SimCBody2": "Экипировка на персонаже:",
       "SimCButton": "Импортируйте SimC",
-      "SimCBody1Good": "SimC Status - All Set!",
-      "SimCBody1Invalid": "SimC Status - Empty Item Slot",
-      "SimCBody1Missing": "SimC Status - Missing",
+      "SimCBody1Good": "SimC - All Set!",
+      "SimCBody1Invalid": "SimC - Empty Item Slot",
+      "SimCBody1Missing": "SimC - Missing",
       "HelpText": "Чтобы найти источники получения лучшей экипировки: вставьте строку SimC, выберите до двух режимов рейдовой сложности, ваш обычный уровень ключа, который вы закрываете, и укажите ваш рейтинг PvP."
     },
 

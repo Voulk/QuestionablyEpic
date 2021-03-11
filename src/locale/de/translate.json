@@ -543,9 +543,9 @@
       "SimCBody1": "Aktueller Status des SimC Strings:",
       "SimCBody2": "Aktuell ausgerüstete Ausrüstung:",
       "SimCButton": "Import vom SimC Addon",
-      "SimCBody1Good": "SimC Status - All Set!",
-      "SimCBody1Invalid": "SimC Status - Empty Item Slot",
-      "SimCBody1Missing": "SimC Status - Missing",
+      "SimCBody1Good": "SimC - All Set!",
+      "SimCBody1Invalid": "SimC - Empty Item Slot",
+      "SimCBody1Missing": "SimC - Missing",
       "HelpText": "Kopiere deinen SimC String hier herein, wähle bis zu zwei Schlachtzugsschwierigkeiten, dein durchschnittliches Schlüsselsteinlevel und deine PvP Wertung aus, um herauszufinden, wo du dein nächstes Upgrade finden kannst!"
     },
 

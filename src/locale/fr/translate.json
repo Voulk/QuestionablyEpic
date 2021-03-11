@@ -534,9 +534,9 @@
       "SimCHeader": "SimC Import",
       "SimCBody1": "Current SimC String Status:",
       "SimCBody2": "Current Equipped Gear:",
-      "SimCBody1Good": "SimC Status - All Set!",
-      "SimCBody1Invalid": "SimC Status - Empty Item Slot",
-      "SimCBody1Missing": "SimC Status - Missing",
+      "SimCBody1Good": "SimC - All Set!",
+      "SimCBody1Invalid": "SimC - Empty Item Slot",
+      "SimCBody1Missing": "SimC - Missing",
       "SimCButton": "Import SimC",
       "HelpText": "Insert a SimC String, Select up to two raid difficulties, your standard mythic keystone level, and your PVP rating to see where you can find your next upgrade!"
     },

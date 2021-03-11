@@ -55,7 +55,7 @@ export default function UpgradeFinderSimC(props) {
         <Grid container justify="space-between" spacing={1}>
           <Grid item xs={12} sm={12} md={12} lg={5} xl={5} alignItems="center" container justify="center" spacing={1}>
             <Grid item xs={12} sm={12} md={12} lg={12} xl={8}>
-              <Typography color="primary" align="center" variant="h5">
+              <Typography color="primary" align="left" variant="h5">
                 {t(simcString)}
               </Typography>
             </Grid>
