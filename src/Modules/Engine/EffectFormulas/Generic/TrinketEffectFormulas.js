@@ -157,6 +157,14 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel, use
 
     //console.log("BADGE Int:" + bonus_stats.intellect + ". Flat: " + getProcessedValue(effect.coefficient, effect.table, itemLevel) + ". Uptime: 25%")
   
+  } else if (effectName === "Empyreal Ordnance") {
+    // Test
+    let effect = activeTrinket.effects[0];
+
+    bonus_stats.intellect = (getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.stacks * effect.duration) / effect.cooldown;
+
+    bonus_stats.intellect *= player.getCooldownMult("threeMinutes", contentType);
+  
   } else if (effectName === "Inscrutable Quantum Device") {
     let effect = activeTrinket.effects[0];
     let playerBestSecondary = player.getHighestStatWeight(contentType, ["versatility"]); // Exclude Vers since there isn't a Vers version.

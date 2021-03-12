@@ -379,14 +379,14 @@
       "13309": "De Other Side",
       "12837": "Spires of Ascension",
 
+      "1185": "Halls of Atonement",
+      "1184": "Mists of Tirna Scithe",
       "1182": "Necrotic Wake",
       "1183": "Plaguefall",
-      "1184": "Mists of Tirna Scithe",
-      "1185": "Halls of Atonement",
-      "1186": "Spires of Ascension",
+      "1189": "Sanguine Depths",
       "1187": "Theater of Pain",
       "1188": "De Other Side",
-      "1189": "Sanguine Depths"
+      "1186": "Spires of Ascension"
     },
 
     "RaidDifficulty": {
@@ -547,9 +547,9 @@
       "PvPHeader": "PvP Rating",
       "PvPBody": "Select  your Rating",
       "SimCHeader": "SimC Import",
-      "SimCBody1Good": "SimC Status - All Set!",
-      "SimCBody1Invalid": "SimC Status - Empty Item Slot",
-      "SimCBody1Missing": "SimC Status - Missing",
+      "SimCBody1Good": "SimC - All Set!",
+      "SimCBody1Invalid": "SimC - Empty Item Slot",
+      "SimCBody1Missing": "SimC - Missing",
       "SimCBody2": "Current Equipped Gear:",
       "SimCButton": "Import SimC",
       "HelpText": "Insert a SimC String, select up to two raid difficulties, the Mythic+ ilvl you're interested in, and your PVP rating to see where you can find your next upgrade! All results are based on the gear you are actively wearing."

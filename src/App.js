@@ -327,6 +327,10 @@ class App extends Component {
 
   /* ---- When component mounts, check local storage for battle tag or ID. ---- */
   componentDidMount() {
+    if (ls.get("lang") === "undefined" || ls.get("lang") === undefined || ls.get("lang") === null) {
+      ls.set("lang", "en");
+    }
+
     //console.log("COMPONENT MOUNTED" + window.location.pathname + window.location.search);
     this.setState({
       playerLoginID: ls.get("id") || "",

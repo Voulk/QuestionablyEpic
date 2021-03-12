@@ -251,7 +251,7 @@ class Player {
       case "Mastery":
         statPerc = 1; // TODO
         if (this.spec === SPEC.HOLYPALADIN) {
-          statPerc = (0.12 + this.activeStats.mastery / 23.3 / 100) * 0.7 + 1;
+          statPerc = (0.12 + this.activeStats.mastery / 23.3 / 100) * 0.8 + 1; // 0.8 is our average mastery effectiveness.
         } else if (this.spec === SPEC.RESTOSHAMAN) {
           statPerc = 1 + (0.25 * 8 * 35 + this.activeStats.mastery) / (35 / 3) / 100; // .25 is placeholder for mastery effectiveness
         } else if (this.spec === SPEC.RESTODRUID) {

@@ -199,20 +199,20 @@ export default function TopGear(props) {
   };
 
   const slotList = [
-    { label: "Head", slotName: "Head" },
-    { label: "Neck", slotName: "Neck" },
-    { label: "Shoulder", slotName: "Shoulder" },
-    { label: "Back", slotName: "Back" },
-    { label: "Chest", slotName: "Chest" },
-    { label: "Wrist", slotName: "Wrist" },
-    { label: "Hands", slotName: "Hands" },
-    { label: "Waist", slotName: "Waist" },
-    { label: "Legs", slotName: "Legs" },
-    { label: "Feet", slotName: "Feet" },
-    { label: "Finger", slotName: "Finger" },
-    { label: "Trinket", slotName: "Trinket" },
-    { label: "Main Hands & 2 Handers", slotName: "AllMainhands" },
-    { label: "Offhands & Shields", slotName: "Offhands" },
+    { label: t("slotNames.head"), slotName: "Head" },
+    { label: t("slotNames.neck"), slotName: "Neck" },
+    { label: t("slotNames.shoulder"), slotName: "Shoulder" },
+    { label: t("slotNames.back"), slotName: "Back" },
+    { label: t("slotNames.chest"), slotName: "Chest" },
+    { label: t("slotNames.wrists"), slotName: "Wrist" },
+    { label: t("slotNames.hands"), slotName: "Hands" },
+    { label: t("slotNames.waist"), slotName: "Waist" },
+    { label: t("slotNames.legs"), slotName: "Legs" },
+    { label: t("slotNames.feet"), slotName: "Feet" },
+    { label: t("slotNames.finger"), slotName: "Finger" },
+    { label: t("slotNames.trinket"), slotName: "Trinket" },
+    { label: t("slotNames.weapons"), slotName: "AllMainhands" },
+    { label: t("slotNames.offhands"), slotName: "Offhands" },
   ];
 
   //const slotList = [];
@@ -255,7 +255,7 @@ export default function TopGear(props) {
           slotList.map((key, index) => {
             return (
               <Grid item xs={12} key={index}>
-                <Typography style={{ color: "white" }} variant="h5">
+                <Typography color="primary" variant="h5">
                   {key.label}
                 </Typography>
                 <Divider style={{ marginBottom: 10, width: "42%" }} />

@@ -1,6 +1,6 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { Typography, Grid, Divider } from "@material-ui/core";
+import { Typography, Grid, Divider, Paper } from "@material-ui/core";
 import ItemUpgradeCard from "./ItemUpgradeCard";
 import DungeonHeaderIcons from "../../CooldownPlanner/Functions/IconFunctions/DungeonHeaderIcons";
 import "./Panels.css";
@@ -12,7 +12,7 @@ import { itemLevels } from "../../../Databases/itemLevelsDB";
 const useStyles = makeStyles((theme) => ({
   root: {
     width: "100%",
-    marginTop: 10,
+    marginTop: 4,
     padding: 4,
   },
 }));
@@ -25,16 +25,23 @@ export default function MythicPlusGearContainer(props) {
   const difficulty = props.playerSettings.dungeon;
 
   const contentGenerator = (type) => {
-    return encounterDB[1]
-      .map((key, i) => (
-        <Grid item xs={12} key={"mythicContainer-" + i}>
+    return encounterDB[1].map((key, i) => (
+      <Grid item xs={12} key={"mythicContainer-" + i} style={{ padding: "4px 0px" }}>
+        <Paper style={{ backgroundColor: "#191c23", padding: 8, border: "1px solid rgba(255, 255, 255, 0.22)" }}>
           <Grid container spacing={2}>
             <Grid item style={{ padding: 0 }}>
-              <div style={{ width: 207, paddingLeft: 8 }} className="container-UpgradeCards">
-                {DungeonHeaderIcons(key, {
-                  verticalAlign: "middle",
-                  marginTop: 8,
-                })}
+              <div
+                style={{
+                  width: 207,
+                  height: "100%",
+                  paddingLeft: 8,
+                  backgroundImage: `url(${DungeonHeaderIcons(key)})`,
+                  backgroundRepeat: "no-repeat",
+                  backgroundPosition: "center 60%",
+                  backgroundSize: "auto 100%",
+                }}
+                className="container-UpgradeCards"
+              >
                 <Typography variant="h6" noWrap className="centered-UpgradeCards-Dungeons">
                   {t("DungeonNames." + key)}
                 </Typography>
@@ -47,14 +54,9 @@ export default function MythicPlusGearContainer(props) {
               ))}
             </Grid>
           </Grid>
-        </Grid>
-      ))
-      .map((key, i) => [
-        key,
-        <Grid item xs={12} key={"mythicDivider-" + i}>
-          <Divider />
-        </Grid>,
-      ]);
+        </Paper>
+      </Grid>
+    ));
   };
 
   return (

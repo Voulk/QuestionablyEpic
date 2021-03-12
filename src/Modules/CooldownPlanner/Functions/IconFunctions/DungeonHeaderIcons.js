@@ -1,13 +1,13 @@
 import React from "react";
 
-import HoA from "../../../../Images/MythicPlus/HallsOfAtonement/HallsOfAtonementAG.png";
-import MoTS from "../../../../Images/MythicPlus/MistsOfTirnaScithe/MistsOfTirnaScitheAG.png";
-import NW from "../../../../Images/MythicPlus/TheNecroticWake/TheNecroticWakeAG.png";
-import PF from "../../../../Images/MythicPlus/Plaguefall/PlaguefallAG.png";
-import SD from "../../../../Images/MythicPlus/SanguineDepths/SanguineDepthsAG.png";
-import ToP from "../../../../Images/MythicPlus/TheaterOfPain/TheaterOfPainAG.png";
-import SoA from "../../../../Images/MythicPlus/SpiresOfAscension/SpiresOfAscensionAG.png";
-import DoS from "../../../../Images/MythicPlus/DeOtherSide/DeOtherSideAG.png";
+import HoA from "../../../../Images/MythicPlus/HallsOfAtonement/HallsOfAtonementAG.jpg";
+import MoTS from "../../../../Images/MythicPlus/MistsOfTirnaScithe/MistsOfTirnaScitheAG.jpg";
+import NW from "../../../../Images/MythicPlus/TheNecroticWake/TheNecroticWakeAG.jpg";
+import PF from "../../../../Images/MythicPlus/Plaguefall/PlaguefallAG.jpg";
+import SD from "../../../../Images/MythicPlus/SanguineDepths/SanguineDepthsAG.jpg";
+import ToP from "../../../../Images/MythicPlus/TheaterOfPain/TheaterOfPainAG.jpg";
+import SoA from "../../../../Images/MythicPlus/SpiresOfAscension/SpiresOfAscensionAG.jpg";
+import DoS from "../../../../Images/MythicPlus/DeOtherSide/DeOtherSideAG.jpg";
 
 export default function DungeonHeaderIcons(props, style) {
   let source = "";
@@ -37,5 +37,6 @@ export default function DungeonHeaderIcons(props, style) {
     source = DoS;
   }
 
-  return <img style={{ ...style }} src={source} alt={props} />;
+  // return <img style={{ ...style }} src={source} alt={props} />;
+  return source;
 }
