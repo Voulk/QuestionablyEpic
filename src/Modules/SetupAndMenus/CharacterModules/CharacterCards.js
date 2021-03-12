@@ -860,7 +860,7 @@ export default function CharCards(props) {
             {/* ---------------------- Default Button (Reset Stats) ----------------------  */}
             <div>
               <Button onClick={resetDefaults} color="primary">
-                {"Reset to Defaults"}
+                {t("CharacterCreator.SavedLogs.ResetToDefaults")}
               </Button>
               {/* ------------------------------ Cancel Button -----------------------------  */}
               <Button onClick={handleClose} color="primary">
