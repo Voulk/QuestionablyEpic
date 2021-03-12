@@ -18,23 +18,14 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function CustomizedSnackbars(severity, message) {
+export default function QESnackbar(props) {
   const classes = useStyles();
-  const [open, setOpen] = React.useState(true);
-
-  const handleClose = (event, reason) => {
-    if (reason === "clickaway") {
-      return;
-    }
-
-    setOpen(false);
-  };
 
   return (
     <div className={classes.root}>
-      <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
-        <Alert onClose={handleClose} severity={severity}>
-          {message}
+      <Snackbar open={props.open} autoHideDuration={3000} onClose={props.handleClose} anchorOrigin={props.anchorOrigin}>
+        <Alert onClose={props.handleClose} severity={props.severity}>
+          {props.message}
         </Alert>
       </Snackbar>
     </div>
