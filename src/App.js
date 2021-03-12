@@ -20,8 +20,7 @@ import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import ls from "local-storage";
-import Snackbar from "@material-ui/core/Snackbar";
-import MuiAlert from "@material-ui/lab/Alert";
+import QESnackbar from "./Modules/CooldownPlanner/BasicComponents/SnackBar";
 import { createBrowserHistory } from "history";
 import { dbCheckPatron, dbGetArticleList } from "./Modules/SetupAndMenus/ConnectionUtilities";
 
@@ -383,48 +382,22 @@ class App extends Component {
                 logImportSnack={this.handleLogSnackOpen}
                 allChars={allChars}
               />
+              
               {/* --------------------------- Char Added Snackbar -------------------------- */}
-              <Snackbar open={this.state.charSnackState} autoHideDuration={3000} onClose={this.handleCharSnackClose}>
-                <Alert onClose={this.handleCharSnackClose} severity="success">
-                  Character Added!
-                </Alert>
-              </Snackbar>
+              <QESnackbar open={this.state.charSnackState} onClose={this.handleCharSnackClose} severity="success" message="Character Added!" />
               {/* -------------------------- Char Updated Snackbar ------------------------- */}
-              <Snackbar open={this.state.charUpdateState} autoHideDuration={3000} onClose={this.handleCharUpdateSnackClose}>
-                <Alert onClose={this.handleCharUpdateSnackClose} severity="success">
-                  Character Updated!
-                </Alert>
-              </Snackbar>
+              <QESnackbar open={this.state.charUpdateState} onClose={this.handleCharUpdateSnackClose} severity="success" message="Character Updated!" />
               {/* ------------------------- Login Success Snackbar ------------------------- */}
-              <Snackbar open={this.state.loginSnackState} autoHideDuration={3000} onClose={this.handleLoginClose}>
-                <Alert onClose={this.handleLoginClose} severity="success">
-                  Logged in Successfully!
-                </Alert>
-              </Snackbar>
+              <QESnackbar open={this.state.loginSnackState} onClose={this.handleLoginClose} severity="success" message="Logged in Successfully!" />
               {/* -------------------------- SimC Success Snackbar ------------------------- */}
-              <Snackbar open={this.state.simcSnackState} autoHideDuration={3000} onClose={this.handleSimCSnackClose} anchorOrigin={{ vertical, horizontal }}>
-                <Alert onClose={this.handleSimCSnackClose} severity="success">
-                  SimC String Imported Successfully!
-                </Alert>
-              </Snackbar>
+              <QESnackbar open={this.state.simcSnackState}  onClose={this.handleSimCSnackClose} severity="success" anchorOrigin={{ vertical, horizontal }} message="SimC String Imported Successfully!" />
               {/* ----------------------- Log Import Success Snackbar ---------------------- */}
-              <Snackbar open={this.state.logImportSnackState} autoHideDuration={3000} onClose={this.handleLogSnackClose}>
-                <Alert onClose={this.handleLogSnackClose} severity="success">
-                  Log Imported Successfully!
-                </Alert>
-              </Snackbar>
+              <QESnackbar open={this.state.logImportSnackState} onClose={this.handleLogSnackClose} severity="success" message="Log Imported Successfully!" />
               {/* ---------------------- Email Import Success Snackbar --------------------- */}
-              <Snackbar open={this.state.emailSnackState} autoHideDuration={3000} onClose={this.handleEmailSnackClose}>
-                <Alert onClose={this.handleEmailSnackClose} severity="success">
-                  Email Updated!
-                </Alert>
-              </Snackbar>
+              <QESnackbar open={this.state.emailSnackState} onClose={this.handleEmailSnackClose} severity="success" message="Email Updated!" />
               {/* ------------------- Email Error Import Success Snackbar ------------------ */}
-              <Snackbar open={this.state.emailSnackErrorState} autoHideDuration={3000} onClose={this.handleEmailErrorSnackClose}>
-                <Alert onClose={this.handleEmailErrorSnackClose} severity="error">
-                  Please check the Email and try again
-                </Alert>
-              </Snackbar>
+              <QESnackbar open={this.state.emailSnackErrorState} onClose={this.handleEmailErrorSnackClose} severity="error" message="Please check the Email and try again"
+              />
 
               {/* -------------------------------------------------------------------------- */
               /*                               Module Routing                               */
