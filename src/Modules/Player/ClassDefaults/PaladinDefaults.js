@@ -60,7 +60,7 @@ export const paladinDefaultStatWeights = (contentType) => {
   statWeights.Raid = {
     intellect: 1,
     haste: 0.38,
-    crit: 0.26,
+    crit: 0.25,
     mastery: 0.36,
     versatility: 0.34,
     leech: 0.56,
