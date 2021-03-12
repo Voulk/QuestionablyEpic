@@ -382,22 +382,21 @@ class App extends Component {
                 logImportSnack={this.handleLogSnackOpen}
                 allChars={allChars}
               />
-              
+
               {/* --------------------------- Char Added Snackbar -------------------------- */}
-              <QESnackbar open={this.state.charSnackState} onClose={this.handleCharSnackClose} severity="success" message="Character Added!" />
+              <QESnackbar open={this.state.charSnackState} onClose={this.handleCharSnackClose} severity="success" message="Snackbars.CharAddSuccess"/>
               {/* -------------------------- Char Updated Snackbar ------------------------- */}
-              <QESnackbar open={this.state.charUpdateState} onClose={this.handleCharUpdateSnackClose} severity="success" message="Character Updated!" />
+              <QESnackbar open={this.state.charUpdateState} onClose={this.handleCharUpdateSnackClose} severity="success" message="Snackbars.CharUpdateSuccess"/>
               {/* ------------------------- Login Success Snackbar ------------------------- */}
-              <QESnackbar open={this.state.loginSnackState} onClose={this.handleLoginClose} severity="success" message="Logged in Successfully!" />
+              <QESnackbar open={this.state.loginSnackState} onClose={this.handleLoginClose} severity="success" message="Snackbars.LoginSuccess" />
               {/* -------------------------- SimC Success Snackbar ------------------------- */}
-              <QESnackbar open={this.state.simcSnackState}  onClose={this.handleSimCSnackClose} severity="success" anchorOrigin={{ vertical, horizontal }} message="SimC String Imported Successfully!" />
+              <QESnackbar open={this.state.simcSnackState}  onClose={this.handleSimCSnackClose} severity="success" anchorOrigin={{ vertical, horizontal }} message="Snackbars.SimCImportSuccess"/>
               {/* ----------------------- Log Import Success Snackbar ---------------------- */}
-              <QESnackbar open={this.state.logImportSnackState} onClose={this.handleLogSnackClose} severity="success" message="Log Imported Successfully!" />
+              <QESnackbar open={this.state.logImportSnackState} onClose={this.handleLogSnackClose} severity="success" message="Snackbars.LogImportSuccess"/>
               {/* ---------------------- Email Import Success Snackbar --------------------- */}
-              <QESnackbar open={this.state.emailSnackState} onClose={this.handleEmailSnackClose} severity="success" message="Email Updated!" />
+              <QESnackbar open={this.state.emailSnackState} onClose={this.handleEmailSnackClose} severity="success" message="Snackbars.EmailUpdateSuccess"/>
               {/* ------------------- Email Error Import Success Snackbar ------------------ */}
-              <QESnackbar open={this.state.emailSnackErrorState} onClose={this.handleEmailErrorSnackClose} severity="error" message="Please check the Email and try again"
-              />
+              <QESnackbar open={this.state.emailSnackErrorState} onClose={this.handleEmailErrorSnackClose} severity="error" message="Snackbars.EmailError"/>
 
               {/* -------------------------------------------------------------------------- */
               /*                               Module Routing                               */

@@ -494,6 +494,16 @@
       "StatPanel": { "AvgStats": "Усреднённые характеристики (включая проки)" }
     },
 
+    "Snackbars": {
+      "CharAddSuccess": "Персонаж добавлен!",
+      "CharUpdateSuccess": "Персонаж обновлен!",
+      "LoginSuccess": "Вход успешно выполнен!",
+      "SimCImportSuccess": "Строка SimC успешно импортирована!",
+      "LogImportSuccess": "Лог успешно импортирован!",
+      "EmailUpdateSuccess": "Email обновлен!",
+      "EmailError": "Пожалуйста, проверьте адрес электронной почты и повторите попытку"
+    },
+
     "SpellNames": {
       "MonkSpells": "",
       "124682": "Окутывающий туман",
