@@ -10,6 +10,17 @@
 export const changeLog = [
   {
     version: "9.0.5",
+    update: 2,
+    date: "11th March",
+    changes: [
+      "Addded a beta version of the Russian language.",
+      "Upgrade Finder Visual Update",
+      "Quick Compare Visual Update",
+      "Slightly adjusted Paladin default weights in response to the mana cost change.",
+    ],
+  },
+  {
+    version: "9.0.5",
     update: 1,
     date: "9th March",
     changes: [

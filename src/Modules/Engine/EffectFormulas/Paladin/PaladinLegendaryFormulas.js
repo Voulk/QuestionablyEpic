@@ -68,7 +68,7 @@ export const getPaladinLegendary = (effectName, player, contentType) => {
     const lightOfDawnCPM = player.getSpellCPM(IDLIGHTOFDAWN, contentType);
     let lightOfDawnUptime = Math.min(1, (lightOfDawnCPM * 8) / 60); // Technically doesn't account for the slight possible loss from casting LoD twice in a short period.
     let averageMasteryEff = player.getStatPerc("Mastery"); // TODO: Improve with logs data.
-    let maxMasteryEff = (player.getStatPerc("Mastery") - 1) / 0.7 + 1;
+    let maxMasteryEff = (player.getStatPerc("Mastery") - 1) / 0.8 + 1;
     let mastDiff = maxMasteryEff / averageMasteryEff - 1;
     let percentHealingToHitTargets = 0.95;
     const HPSMasteryBonus = player.getHPS(contentType) * mastDiff * lightOfDawnUptime * percentHealingToHitTargets;
