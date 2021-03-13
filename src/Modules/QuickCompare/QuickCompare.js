@@ -76,21 +76,21 @@ function Alert(props) {
 function getSlots() {
   const { t, i18n } = useTranslation();
   let slots = [
-    { value: "Head", label: t("slotNames.head") },
-    { value: "Neck", label: t("slotNames.neck") },
-    { value: "Shoulder", label: t("slotNames.shoulder") },
-    { value: "Back", label: t("slotNames.back") },
-    { value: "Chest", label: t("slotNames.chest") },
-    { value: "Wrist", label: t("slotNames.wrists") },
-    { value: "Hands", label: t("slotNames.hands") },
-    { value: "Waist", label: t("slotNames.waist") },
-    { value: "Legs", label: t("slotNames.legs") },
-    { value: "Feet", label: t("slotNames.feet") },
-    { value: "Finger", label: t("slotNames.finger") },
-    { value: "Trinket", label: t("slotNames.trinket") },
-    { value: "1H Weapon", label: t("slotNames.mainHands") },
-    // { value: "Weapons", label: t("slotNames.weapons") },
-    { value: "Offhands", label: t("slotNames.offhands") },
+    { value: "Head", activeItem: "Head", label: t("slotNames.head") },
+    { value: "Neck", activeItem: "Neck", label: t("slotNames.neck") },
+    { value: "Shoulder", activeItem: "Shoulder", label: t("slotNames.shoulder") },
+    { value: "Back", activeItem: "Back", label: t("slotNames.back") },
+    { value: "Chest", activeItem: "Chest", label: t("slotNames.chest") },
+    { value: "Wrist", activeItem: "Wrist", label: t("slotNames.wrists") },
+    { value: "Hands", activeItem: "Hands", label: t("slotNames.hands") },
+    { value: "Waist", activeItem: "Waist", label: t("slotNames.waist") },
+    { value: "Legs", activeItem: "Legs", label: t("slotNames.legs") },
+    { value: "Feet", activeItem: "Feet", label: t("slotNames.feet") },
+    { value: "Finger", activeItem: "Finger", label: t("slotNames.finger") },
+    { value: "Trinket", activeItem: "Trinket", label: t("slotNames.trinket") },
+    // { value: "1H Weapon", label: t("slotNames.mainHands") },
+    { value: "Weapons", activeItem: "1H Weapon", label: t("slotNames.weapons") },
+    { value: "Offhands", activeItem: "Offhands", label: t("slotNames.offhands") },
   ];
 
   return slots;
@@ -267,6 +267,10 @@ export default function QuickCompare(props) {
           display: "block",
         }}
       >
+        {/* -------------------------------------------------------------------------- */
+        /*                         Quick Compare Title Header                         */
+        /* -------------------------------------------------------------------------- */}
+
         <Grid item xs={12}>
           <Typography variant="h4" align="center" style={{ padding: "10px 10px 5px 10px" }} color="primary">
             {t("QuickCompare.Title")}
@@ -291,6 +295,10 @@ export default function QuickCompare(props) {
                 display: "inline-flex",
               }}
             >
+              {/* -------------------------------------------------------------------------- */
+              /*                             Item Slot Selection                            */
+              /* -------------------------------------------------------------------------- */}
+
               <Grid item>
                 <FormControl className={classes.formControl} variant="outlined" size="small">
                   <InputLabel id="slots">{t("QuickCompare.Slot")}</InputLabel>
@@ -305,6 +313,10 @@ export default function QuickCompare(props) {
                   </Select>
                 </FormControl>
               </Grid>
+
+              {/* -------------------------------------------------------------------------- */
+              /*                               Item Selection                               */
+              /* -------------------------------------------------------------------------- */}
 
               <Grid item>
                 <FormControl className={classes.formControl} variant="outlined" size="small" style={{ minWidth: 350 }} disabled={activeSlot === "" ? true : false}>
@@ -337,6 +349,10 @@ export default function QuickCompare(props) {
                   />
                 </FormControl>
               </Grid>
+
+              {/* -------------------------------------------------------------------------- */
+              /*                                 Item Level                                 */
+              /* -------------------------------------------------------------------------- */}
 
               <Grid item>
                 <FormControl className={classes.formControl} variant="outlined" size="small" style={{ width: t("QuickCompare.ItemLevel").length > 10 ? 160 : 120 }}>
@@ -389,6 +405,10 @@ export default function QuickCompare(props) {
                 </FormControl>
               </Grid>
 
+              {/* -------------------------------------------------------------------------- */
+              /*                              Tertiary Dropdown                             */
+              /* -------------------------------------------------------------------------- */}
+
               <Grid item>
                 <FormControl
                   className={classes.formControl}
@@ -430,6 +450,10 @@ export default function QuickCompare(props) {
                 </FormControl>
               </Grid>
 
+              {/* -------------------------------------------------------------------------- */
+              /*                                 Add Button                                 */
+              /* -------------------------------------------------------------------------- */}
+
               <Grid item>
                 <Button key={8} variant="contained" color="primary" onClick={addItem} size="small" disabled={itemLevel === "" ? true : false}>
                   {t("QuickCompare.AddButton")}
@@ -467,10 +491,12 @@ export default function QuickCompare(props) {
           </Paper>
         </Grid>
 
-        {/* this can be simplified into a map at some stage */}
+        {/* -------------------------------------------------------------------------- */
+        /*                             Header/Item Mapping                            */
+        /* -------------------------------------------------------------------------- */}
 
         {slots
-          .filter((filter) => [...props.player.getActiveItems(filter.value)].length > 0)
+          .filter((filter) => [...props.player.getActiveItems(filter.activeItem)].length > 0)
           .map((key) => (
             <Grid item xs={12}>
               <Grid container spacing={1}>
@@ -481,7 +507,7 @@ export default function QuickCompare(props) {
                   </Typography>
                   <Divider style={{ marginBottom: 10 }} />
                   <Grid container spacing={1}>
-                    {[...props.player.getActiveItems(key.value)].map((item, index) => (
+                    {[...props.player.getActiveItems(key.activeItem)].map((item, index) => (
                       <ItemCard key={index} item={item} delete={deleteItem} />
                     ))}
                   </Grid>
