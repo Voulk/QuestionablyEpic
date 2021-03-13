@@ -33,13 +33,6 @@ const theme = createMuiTheme({
     secondary: { main: "#525252" },
   },
   overrides: {
-    // MuiButtonBase: {
-    //   root: {
-    //     "&expanded": {
-    //       minHeight: 0,
-    //     },
-    //   },
-    // },
     MuiAccordionSummary: {
       root: {
         "&$expanded": {
@@ -54,37 +47,6 @@ const theme = createMuiTheme({
       },
     },
   },
-
-  // just messing around with themes here. Yellow colour is different in the below.
-
-  // palette: {
-  //   common: { black: "#000", white: "#fff" },
-  //   background: { paper: "#424242", default: "#333" },
-  //   primary: {
-  //     light: "#6d6d6d",
-  //     main: "#424242",
-  //     dark: "#1b1b1b",
-  //     contrastText: "#fff",
-  //   },
-  //   secondary: {
-  //     light: "#ffee77",
-  //     main: "#d3bc47",
-  //     dark: "rgba(198, 167, 0, 1)",
-  //     contrastText: "rgba(0, 0, 0, 1)",
-  //   },
-  //   error: {
-  //     light: "#e57373",
-  //     main: "#f44336",
-  //     dark: "#d32f2f",
-  //     contrastText: "#fff",
-  //   },
-  //   text: {
-  //     primary: "rgba(0, 0, 0, 0.87)",
-  //     secondary: "rgba(0, 0, 0, 0.54)",
-  //     disabled: "rgba(0, 0, 0, 0.38)",
-  //     hint: "rgba(0, 0, 0, 0.38)",
-  //   },
-  // },
 });
 
 process.env.NODE_ENV !== "production" ? "" : ReactGA.initialize("UA-90234903-1");
@@ -309,11 +271,7 @@ class App extends Component {
   buildLoginURL = () => {
     // China is a little different from the other regions and uses its own URL.
     if (this.state.playerRegion === "cn") {
-      return (
-        "https://www.battlenet.com.cn/oauth/authorize?client_id=" +
-        this.state.client_id +
-        "&redirect_uri=http://questionablyepic.com/live/confirmlogin/&response_type=code&scope=openid"
-      );
+      return "https://www.battlenet.com.cn/oauth/authorize?client_id=" + this.state.client_id + "&redirect_uri=http://questionablyepic.com/live/confirmlogin/&response_type=code&scope=openid";
     }
     return (
       "https://" +
@@ -356,11 +314,6 @@ class App extends Component {
   render() {
     let activePlayer = this.state.characters.getActiveChar();
     let allChars = this.state.characters;
-    //
-
-    function Alert(props) {
-      return <MuiAlert elevation={6} variant="filled" {...props} />;
-    }
 
     const vertical = "bottom";
     const horizontal = "left";
@@ -384,19 +337,19 @@ class App extends Component {
               />
 
               {/* --------------------------- Char Added Snackbar -------------------------- */}
-              <QESnackbar open={this.state.charSnackState} onClose={this.handleCharSnackClose} severity="success" message="Snackbars.CharAddSuccess"/>
+              <QESnackbar open={this.state.charSnackState} onClose={this.handleCharSnackClose} severity="success" message="Snackbars.CharAddSuccess" />
               {/* -------------------------- Char Updated Snackbar ------------------------- */}
-              <QESnackbar open={this.state.charUpdateState} onClose={this.handleCharUpdateSnackClose} severity="success" message="Snackbars.CharUpdateSuccess"/>
+              <QESnackbar open={this.state.charUpdateState} onClose={this.handleCharUpdateSnackClose} severity="success" message="Snackbars.CharUpdateSuccess" />
               {/* ------------------------- Login Success Snackbar ------------------------- */}
               <QESnackbar open={this.state.loginSnackState} onClose={this.handleLoginClose} severity="success" message="Snackbars.LoginSuccess" />
               {/* -------------------------- SimC Success Snackbar ------------------------- */}
-              <QESnackbar open={this.state.simcSnackState}  onClose={this.handleSimCSnackClose} severity="success" anchorOrigin={{ vertical, horizontal }} message="Snackbars.SimCImportSuccess"/>
+              <QESnackbar open={this.state.simcSnackState} onClose={this.handleSimCSnackClose} severity="success" anchorOrigin={{ vertical, horizontal }} message="Snackbars.SimCImportSuccess" />
               {/* ----------------------- Log Import Success Snackbar ---------------------- */}
-              <QESnackbar open={this.state.logImportSnackState} onClose={this.handleLogSnackClose} severity="success" message="Snackbars.LogImportSuccess"/>
+              <QESnackbar open={this.state.logImportSnackState} onClose={this.handleLogSnackClose} severity="success" message="Snackbars.LogImportSuccess" />
               {/* ---------------------- Email Import Success Snackbar --------------------- */}
-              <QESnackbar open={this.state.emailSnackState} onClose={this.handleEmailSnackClose} severity="success" message="Snackbars.EmailUpdateSuccess"/>
+              <QESnackbar open={this.state.emailSnackState} onClose={this.handleEmailSnackClose} severity="success" message="Snackbars.EmailUpdateSuccess" />
               {/* ------------------- Email Error Import Success Snackbar ------------------ */}
-              <QESnackbar open={this.state.emailSnackErrorState} onClose={this.handleEmailErrorSnackClose} severity="error" message="Snackbars.EmailError"/>
+              <QESnackbar open={this.state.emailSnackErrorState} onClose={this.handleEmailErrorSnackClose} severity="error" message="Snackbars.EmailError" />
 
               {/* -------------------------------------------------------------------------- */
               /*                               Module Routing                               */
@@ -422,29 +375,18 @@ class App extends Component {
                 />
                 <Route path="/holydiver" render={() => <HolyDiver />} />
                 <Route path="/report" render={() => <TopGearReport player={activePlayer} result={this.state.topSet} contentType={this.state.contentType} />} />
-                <Route
-                  path="/quickcompare"
-                  render={() => <QuickCompare player={activePlayer} contentType={this.state.contentType} allChars={allChars} simcSnack={this.handleSimCSnackOpen} />}
-                />
+                <Route path="/quickcompare" render={() => <QuickCompare player={activePlayer} contentType={this.state.contentType} allChars={allChars} simcSnack={this.handleSimCSnackOpen} />} />
                 <Route
                   path="/topgear"
-                  render={() => (
-                    <TopGear player={activePlayer} contentType={this.state.contentType} setTopResult={this.setTopResult} allChars={allChars} simcSnack={this.handleSimCSnackOpen} />
-                  )}
+                  render={() => <TopGear player={activePlayer} contentType={this.state.contentType} setTopResult={this.setTopResult} allChars={allChars} simcSnack={this.handleSimCSnackOpen} />}
                 />
                 <Route path="/legendaries" render={() => <LegendaryCompare player={activePlayer} contentType={this.state.contentType} />} />
                 <Route path="/trinkets" render={() => <TrinketAnalysis player={activePlayer} contentType={this.state.contentType} />} />
-                <Route
-                  path="/soulbinds"
-                  render={() => <CovenantExploration player={activePlayer} contentType={this.state.contentType} updatePlayerChar={this.updatePlayerChar} />}
-                />
+                <Route path="/soulbinds" render={() => <CovenantExploration player={activePlayer} contentType={this.state.contentType} updatePlayerChar={this.updatePlayerChar} />} />
                 <Route path="/login" render={() => <QELogin setRegion={this.setRegion} />} />
                 <Route path="/attemptlogin" component={() => (window.location = this.buildLoginURL())} />
                 <Route path="/confirmlogin/" render={() => <ConfirmLogin loginSnackOpen={this.handleLoginSnackOpen} updatePlayerID={this.updatePlayerID} />} />
-                <Route
-                  path="/UpgradeFinder/"
-                  render={() => <UpgradeFinder player={activePlayer} contentType={this.state.contentType} simcSnack={this.handleSimCSnackOpen} allChars={allChars} />}
-                />
+                <Route path="/UpgradeFinder/" render={() => <UpgradeFinder player={activePlayer} contentType={this.state.contentType} simcSnack={this.handleSimCSnackOpen} allChars={allChars} />} />
                 <Route
                   path="/profile/"
                   render={() => (
