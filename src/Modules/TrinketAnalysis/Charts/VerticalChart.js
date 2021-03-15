@@ -20,7 +20,7 @@ export default class VerticalChart extends PureComponent {
       .map((map2) =>
         arr.push({
           name: map2.name,
-          //i161: map2.i161,
+          //i161: map2.i161, 
           i174: map2.i174,
           i187: map2.i187 - map2.i174,
           i200: map2.i200 - map2.i187,
@@ -33,7 +33,7 @@ export default class VerticalChart extends PureComponent {
       );
 
     return (
-      <ResponsiveContainer className="ResponsiveContainer2" width="100%" aspect={1 / 2}>
+      <ResponsiveContainer className="ResponsiveContainer2" width="100%" aspect={2}>
         <BarChart
           barCategoryGap="15%"
           data={arr}
@@ -58,7 +58,7 @@ export default class VerticalChart extends PureComponent {
           <Bar dataKey={"i207"} fill={"#A1EAA1"} stackId="a" />
           <Bar dataKey={"i213"} fill={"#C97474"} stackId="a" />
           <Bar dataKey={"i220"} fill={"#DD9090"} stackId="a" />
-          <Bar dataKey={"i226"} fill={"#DAA520"} stackId="a" />
+          <Bar dataKey={"i226"} fill={"#D8BE7B"} stackId="a" />
           {/*<Bar dataKey={"i233"} fill={"#e6bc53"} stackId="a" /> */}
         </BarChart>
       </ResponsiveContainer>

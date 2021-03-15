@@ -121,7 +121,7 @@ export const trinket_data = [
       {
         coefficient: 89.08621, // This represents the upper quartile of the given cards.
         table: -8,
-        efficiency: 0.47, // You do have to heal a sub 35% health target every 30s for max efficiency which doesn't seem at all likely.
+        efficiency: 0.4, // You do have to heal a sub 35% health target every 30s for max efficiency which doesn't seem at all likely.
         cooldown: 30,
       },
     ],
@@ -145,7 +145,7 @@ export const trinket_data = [
       {
         coefficient: 161.3793,
         table: -8, // TODO: Test for Crit / Vers scaling.
-        efficiency: 0.95, // This should have quite a high efficiency rating because it won't heal full health targets and is split between nearby allies should it run out.
+        efficiency: 0.9, // This should have quite a high efficiency rating because it won't heal full health targets and is split between nearby allies should it run out.
         cooldown: 90,
       },
     ],

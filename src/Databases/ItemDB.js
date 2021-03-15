@@ -58487,15 +58487,7 @@ export const itemDB = [
             "type": "trinket",
             "name": "Sinful Gladiator's Badge of Ferocity"
         },
-        "levelRange": [
-            158,
-            164,
-            171,
-            177,
-            184,
-            190,
-            197
-        ]
+        "levelRange": []
     },
     {
         "id": 175885,
@@ -66183,15 +66175,7 @@ export const itemDB = [
             "type": "trinket",
             "name": "Sinful Gladiator's Insignia of Alacrity"
         },
-        "levelRange": [
-            158,
-            164,
-            171,
-            177,
-            184,
-            190,
-            197
-        ]
+        "levelRange": []
     },
     {
         "id": 178299,
@@ -96964,7 +96948,12 @@ export const itemDB = [
             "type": "trinket",
             "name": "Cabalist's Hymnal"
         },
-        "levelRange": []
+        "levelRange": [
+            194,
+            207,
+            220,
+            233
+        ]
     },
     {
         "id": 184029,
@@ -97004,7 +96993,12 @@ export const itemDB = [
             "type": "trinket",
             "name": "Manabound Mirror"
         },
-        "levelRange": []
+        "levelRange": [
+            194,
+            207,
+            220,
+            233
+        ]
     },
     {
         "id": 184030,

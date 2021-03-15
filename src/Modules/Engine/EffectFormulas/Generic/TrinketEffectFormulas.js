@@ -34,7 +34,7 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel, use
     let mana_heal_effect = activeTrinket.effects[0];
     let base_heal_effect = activeTrinket.effects[1];
 
-    let expected_mana_spend = 9000; // Per minute.
+    let expected_mana_spend = 19500; // Per minute.
     let base_heal = getProcessedValue(base_heal_effect.coefficient, base_heal_effect.table, itemLevel);
     let mana_heal = getProcessedValue(mana_heal_effect.coefficient, mana_heal_effect.table, itemLevel) * (expected_mana_spend / 3240);
 
