@@ -3,6 +3,11 @@ import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, Legend, CartesianGrid
 import chroma from "chroma-js";
 import "./VerticalChart.css";
 
+const checkIfLevelAvailable = (trinketName, db, ilvl) => {
+    if (trinketName === "Manabound Mirror") return false;
+    else return true; 
+}
+
 export default class VerticalChart extends PureComponent {
   constructor(props) {
     super();
@@ -10,6 +15,8 @@ export default class VerticalChart extends PureComponent {
 
   render(props) {
     const data = this.props.data;
+    const db = this.props.db;
+    console.log(data);
 
     const Ilvls = ["i233", "i226", "i220", "i213", "i207", "i200", "i187", "i174"];
     let len = Ilvls.length;
@@ -24,7 +31,7 @@ export default class VerticalChart extends PureComponent {
           i174: map2.i174,
           i187: map2.i187 - map2.i174,
           i200: map2.i200 - map2.i187,
-          i207: map2.i207 - map2.i200,
+          i207: checkIfLevelAvailable(map2.name, db, 207) ? (map2.i207 - map2.i200) : 0,
           i213: map2.i213 - map2.i207,
           i220: map2.i220 - map2.i213,
           i226: map2.i226 - map2.i220,

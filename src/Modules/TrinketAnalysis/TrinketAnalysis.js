@@ -69,7 +69,7 @@ export default function TrinketAnalysis(props) {
             <Grid container spacing={1} justify="center">
               <Grid item xs={12}>
                 <Paper style={{ backgroundColor: "rgb(28, 28, 28, 0.5)" }} elevation={0}>
-                  <VerticalChart data={activeTrinkets} />
+                  <VerticalChart data={activeTrinkets} db={trinketDB}/>
                 </Paper>
               </Grid>
             </Grid>
