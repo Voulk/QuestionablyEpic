@@ -32,11 +32,11 @@
     "Submit": "Отправить",
     "Save": "Сохранить",
     "Delete": "Delete",
-    "Intellect": "интеллекту",
+    "Intellect": "Интеллект",
     "Crit": "Критический удар",
     "Haste": "Скорость",
     "Mastery": "Искусность",
-    "Versatility": "универсальность",
+    "Versatility": "Yниверсальность",
     "Leech": "Самоисцеление",
     "Region": "Регион",
     "Race": "Раса",
@@ -47,7 +47,7 @@
     "No": "No",
     "None": "Нет",
     "Add": "Добавить",
-    "Avoidance": "Avoidance",
+    "Avoidance": "Избегание",
     "Source": "Источник",
     "Default": "Default",
     "Remove": "Remove",
@@ -135,8 +135,8 @@
       },
       "UserInputs": {
         "_Comments1": "Translations for the User Input Components",
-        "Loglink": "Paste WarcraftLog Link Here",
-        "fightButtonLabel": "Select Fight"
+        "Loglink": "Вставьте сюда ссылку с WarcraftLogs",
+        "fightButtonLabel": "Выберите бой"
       },
       "HealerCards": {
         "_Comments1": "Translations for the Accordian for Healer Info",
@@ -442,7 +442,7 @@
       "ConduitInstructions": "Правый/Левый клик по проводнику для изменения уровня",
       "StatPanel": {
         "Summary": "Сводка",
-        "Score": "Общий ХПС",
+        "Score": "Общий HPS",
         "CovenantEstimate": "Способность ковенанта",
         "SelectedNodes": "Выбранные ячейки"
       }
@@ -491,7 +491,9 @@
       "SelectedItems": "Выбранные предметы:",
       "BackToGearSelection": "Вернуться к выбору экипировки",
       "CompetitiveAlternative": "Возможные альтернативы",
-      "StatPanel": { "AvgStats": "Усреднённые характеристики (включая проки)" }
+      "StatPanel": { "AvgStats": "Усреднённые характеристики (включая проки)" },
+      "itemMissingError": "Ошибка: добавьте предмет"
+      
     },
 
     "Snackbars": {
@@ -743,7 +745,7 @@
       "name": "Земная гармония",
       "slot": "Грудь, Спина",
       "desc": "Если запас здоровья цели, на которую наложен ваш 'Щит земли', составляет менее 75%, сила исцеления от 'Щита земли' увеличивается на 150%, а 'Волна исцеления' увеличивает количество эффектов 'Щита земли' на 1. Максимальное количество эффектов – 9.",
-      "droploc": "генерал Кааль"
+      "droploc": "Кровавые катакомбы"
     },
     "Jonat's Natural Focus": {
       "name": "Природное средоточие Джоната",

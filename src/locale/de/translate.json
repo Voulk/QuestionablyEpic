@@ -530,7 +530,8 @@
       "SelectedItems": "Ausgewählte Gegenstände",
       "CompetitiveAlternative": "Gleichwertige Alternativen",
       "BackToGearSelection": "Zurück zum Auswahlbildschirm",
-      "StatPanel": { "AvgStats": "Durchschnittliche Werte (inkl. aller zufälligen Effekte)" }
+      "StatPanel": { "AvgStats": "Durchschnittliche Werte (inkl. aller zufälligen Effekte)" },
+      "itemMissingError": "Error: Add item - "
     },
 
     "UpgradeFinder": {

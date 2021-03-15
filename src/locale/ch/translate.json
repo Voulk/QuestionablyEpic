@@ -522,7 +522,8 @@
       "GoMsg": "Go!CH",
       "SelectedItems": "Selected ItemsCH",
       "CompetitiveAlternative": "Competitive AlternativesCH",
-      "StatPanel": { "AvgStats": "Average Stats (includes procs)CH" }
+      "StatPanel": { "AvgStats": "Average Stats (includes procs)CH" },
+      "itemMissingError": "Error: Add item - "
     },
 
     "UpgradeFinder": {

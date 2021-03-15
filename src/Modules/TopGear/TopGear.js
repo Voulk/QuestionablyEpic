@@ -145,10 +145,10 @@ export default function TopGear(props) {
     for (const key in slotLengths) {
       if ((key === "Finger" || key === "Trinket") && slotLengths[key] < 2) {
         topgearOk = false;
-        errorMessage = "Error: Add a " + t("slotNames." + key.toLowerCase()) + " item";
+        errorMessage = t("TopGear.itemMissingError") + t("slotNames." + key.toLowerCase());
       } else if (slotLengths[key] === 0) {
         topgearOk = false;
-        errorMessage = "Error: Add a " + t("slotNames." + key.toLowerCase()) + " item";
+        errorMessage = t("TopGear.itemMissingError") + t("slotNames." + key.toLowerCase());
       }
     }
     setErrorMessage(errorMessage);

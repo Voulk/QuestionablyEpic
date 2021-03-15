@@ -522,7 +522,8 @@
       "GoMsg": "Go!",
       "SelectedItems": "Pièces choisies:",
       "CompetitiveAlternative": "Les alternatives intéressantes",
-      "StatPanel": { "AvgStats": "Moyenne de stats (Incluant les procs)" }
+      "StatPanel": { "AvgStats": "Moyenne de stats (Incluant les procs)" },
+      "itemMissingError": "Error: Add item - "
     },
 
     "UpgradeFinder": {
