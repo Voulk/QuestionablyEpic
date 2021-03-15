@@ -23,7 +23,7 @@ const mainMenuOptions = {
   "MainMenu.QuickCompare": ["/quickcompare", true, "QuickCompare"],
   "MainMenu.ExploreCovenants": ["/soulbinds", true, "ExploreCovenants"],
   "MainMenu.LegendaryAnalysis": ["/legendaries", true, "LegendaryAnalysis"],
-  //"MainMenu.TrinketAnalysis": ["/trinkets", false, "TrinketAnalysis"],
+  "MainMenu.TrinketAnalysis": ["/trinkets", true, "TrinketAnalysis"],
   "MainMenu.CooldownPlanner": ["/holydiver", false, "CooldownPlanner"],
   "MainMenu.Profile": ["/profile", true, "Profile"],
 };

@@ -381,7 +381,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Figurine of the Colossus"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 123993,
@@ -1429,7 +1430,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Shiffar's Nexus-Horn"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 127174,
@@ -1839,7 +1841,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Quagmirran's Eye"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 127202,
@@ -2510,7 +2513,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Warp-Scarab Brooch"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 127247,
@@ -3239,7 +3243,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Hourglass of the Unraveller"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 127443,
@@ -3388,7 +3393,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Scarab of the Infinite Cycle"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 127449,
@@ -4030,7 +4036,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Vestige of Haldor"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 127476,
@@ -4556,7 +4563,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Meteorite Whetstone"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 127494,
@@ -5024,7 +5032,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Winged Talisman"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 127513,
@@ -5956,7 +5965,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Offering of Sacrifice"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 127551,
@@ -6743,7 +6753,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Sphere of Red Dragon's Blood"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 127595,
@@ -8197,7 +8208,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Bloodlust Brooch"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 129850,
@@ -8230,7 +8242,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Icon of the Silver Crescent"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 129851,
@@ -8263,7 +8276,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Essence of the Martyr"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 129852,
@@ -8934,7 +8948,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Sundial of the Exiled"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 129896,
@@ -8967,7 +8982,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Mirror of Truth"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 129897,
@@ -9000,7 +9016,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "The Egg of Mortal Essence"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 129898,
@@ -9033,7 +9050,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Mark of Supremacy"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 129937,
@@ -9066,7 +9084,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Emblem of Fury"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 133430,
@@ -9795,7 +9814,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Timbal's Focusing Crystal"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 133462,
@@ -9828,7 +9848,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Vial of the Sunwell"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 133463,
@@ -9861,7 +9882,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Shard of Contempt"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 133465,
@@ -14152,7 +14174,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "The Skull of Gul'dan"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 150523,
@@ -14185,7 +14208,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Memento of Tyrande"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 150524,
@@ -16196,7 +16220,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Living Flame"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 155948,
@@ -17302,7 +17327,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Wrathstone"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 156001,
@@ -17654,7 +17680,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Pyrite Infuser"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 156017,
@@ -17803,7 +17830,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Energy Siphon"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 156022,
@@ -18155,7 +18183,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Eye of the Broodmother"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 156038,
@@ -18246,7 +18275,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Furnace Stone"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 156042,
@@ -20715,7 +20745,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Scale of Fates"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 156188,
@@ -21125,7 +21156,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Pandora's Plea"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 156208,
@@ -21419,7 +21451,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "The General's Heart"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 156222,
@@ -21597,7 +21630,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Flare of the Heavens"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 156231,
@@ -21688,7 +21722,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Blood of the Old God"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 156235,
@@ -21895,7 +21930,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Show of Faith"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 156246,
@@ -22392,7 +22428,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Spark of Hope"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 156278,
@@ -22715,7 +22752,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Elemental Focus Stone"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 156289,
@@ -23096,7 +23134,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Sif's Remembrance"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 156312,
@@ -25478,7 +25517,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Vanquished Clutches of Yogg-Saron"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 156459,
@@ -26214,7 +26254,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Ascended Alchemist Stone"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 168679,
@@ -27216,7 +27257,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Oxidized Refuse Remover"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 170383,
@@ -28526,7 +28568,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Peerless Alchemist Stone"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 171087,
@@ -28566,7 +28609,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Awakened Alchemist Stone"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 171088,
@@ -28606,7 +28650,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Unbound Alchemist Stone"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 171154,
@@ -28699,7 +28744,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Spiritual Alchemy Stone"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 171374,
@@ -29833,7 +29879,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Prism of Inner Calm"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 171484,
@@ -30915,7 +30962,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Reign of the Dead"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 171529,
@@ -31489,7 +31537,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Reign of the Unliving"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 171550,
@@ -33298,7 +33347,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Variable Pulse Lightning Capacitor"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 171641,
@@ -33331,7 +33381,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Jaws of Defeat"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 171643,
@@ -33364,7 +33415,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Spidersilk Spindle"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 171644,
@@ -33397,7 +33449,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Necromantic Focus"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 171645,
@@ -33430,7 +33483,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Eye of Blazing Power"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 171650,
@@ -38654,7 +38708,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Fall of Mortality"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 171853,
@@ -44243,7 +44298,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Darkmoon Deck: Putrescence"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 173078,
@@ -44276,7 +44332,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Darkmoon Deck: Repose"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 173131,
@@ -46776,7 +46833,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Misfiring Centurion Controller"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 173797,
@@ -46838,7 +46896,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Forbidden Obsidian Claw"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 174025,
@@ -47248,7 +47307,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Humming Black Dragonscale"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 174060,
@@ -47281,7 +47341,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Psyche Shredder"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 174103,
@@ -47314,7 +47375,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Manifesto of Madness"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 174108,
@@ -49232,7 +49294,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Oozing Coagulum"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 174234,
@@ -49919,7 +49982,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Vita-Charged Titanshard"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 174528,
@@ -49953,7 +50017,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Void-Twisted Titanshard"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 174530,
@@ -56526,7 +56591,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Ascended Defender's Crest"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 175719,
@@ -56559,7 +56625,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Agitha's Void-Tinged Speartip"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 175722,
@@ -56592,7 +56659,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Vial of Caustic Liquid"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 175723,
@@ -56625,7 +56693,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Rejuvenating Serum"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 175725,
@@ -56658,7 +56727,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Newcomer's Gladiatorial Badge"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 175726,
@@ -56691,7 +56761,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Primalist's Kelpling"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 175727,
@@ -56724,7 +56795,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Elder's Stormseed"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 175728,
@@ -56757,7 +56829,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Soulsifter Root"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 175729,
@@ -56790,7 +56863,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Rotbriar Sprout"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 175731,
@@ -56823,7 +56897,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Stolen Maw Badge"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 175732,
@@ -56856,7 +56931,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Tablet of Despair"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 175733,
@@ -56889,7 +56965,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Brimming Ember Shard"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 175736,
@@ -58409,7 +58486,16 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Sinful Gladiator's Badge of Ferocity"
-        }
+        },
+        "levelRange": [
+            158,
+            164,
+            171,
+            177,
+            184,
+            190,
+            197
+        ]
     },
     {
         "id": 175885,
@@ -59674,7 +59760,14 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Sinful Gladiator's Badge of Ferocity"
-        }
+        },
+        "levelRange": [
+            200,
+            207,
+            213,
+            220,
+            226
+        ]
     },
     {
         "id": 175922,
@@ -59742,7 +59835,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Spiritual Alchemy Stone"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 175942,
@@ -59775,7 +59869,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Spiritual Alchemy Stone"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 175943,
@@ -59808,7 +59903,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Spiritual Alchemy Stone"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 175988,
@@ -62402,7 +62498,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Shimmering Rune"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 177151,
@@ -62435,7 +62532,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Oceanographer's Weather Log"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 177155,
@@ -62468,7 +62566,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Shimmering Rune"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 177157,
@@ -62501,7 +62600,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Bijou of the Golden City"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 177164,
@@ -62853,7 +62953,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Overflowing Ember Mirror"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 177767,
@@ -63959,7 +64060,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Hopebreaker's Badge"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 177816,
@@ -66080,7 +66182,16 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Sinful Gladiator's Insignia of Alacrity"
-        }
+        },
+        "levelRange": [
+            158,
+            164,
+            171,
+            177,
+            184,
+            190,
+            197
+        ]
     },
     {
         "id": 178299,
@@ -66225,7 +66336,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Sinful Gladiator's Emblem"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 178335,
@@ -67490,7 +67602,14 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Sinful Gladiator's Insignia of Alacrity"
-        }
+        },
+        "levelRange": [
+            200,
+            207,
+            213,
+            220,
+            226
+        ]
     },
     {
         "id": 178387,
@@ -67635,7 +67754,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Sinful Gladiator's Emblem"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 178448,
@@ -68516,7 +68636,22 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Unbound Changeling"
-        }
+        },
+        "levelRange": [
+            187,
+            190,
+            194,
+            197,
+            200,
+            203,
+            207,
+            210,
+            213,
+            216,
+            220,
+            223,
+            226
+        ]
     },
     {
         "id": 178709,
@@ -69690,7 +69825,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Infinitely Divisible Ooze"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 178772,
@@ -69733,7 +69869,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Satchel of Misbegotten Minions"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 178773,
@@ -70088,7 +70225,22 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Siphoning Phylactery Shard"
-        }
+        },
+        "levelRange": [
+            187,
+            190,
+            194,
+            197,
+            200,
+            203,
+            207,
+            210,
+            213,
+            216,
+            220,
+            223,
+            226
+        ]
     },
     {
         "id": 178789,
@@ -70794,7 +70946,22 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Soulletting Ruby"
-        }
+        },
+        "levelRange": [
+            187,
+            190,
+            194,
+            197,
+            200,
+            203,
+            207,
+            210,
+            213,
+            216,
+            220,
+            223,
+            226
+        ]
     },
     {
         "id": 178810,
@@ -70837,7 +71004,22 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Vial of Spectral Essence"
-        }
+        },
+        "levelRange": [
+            187,
+            190,
+            194,
+            197,
+            200,
+            203,
+            207,
+            210,
+            213,
+            216,
+            220,
+            223,
+            226
+        ]
     },
     {
         "id": 178812,
@@ -71387,7 +71569,22 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Sunblood Amethyst"
-        }
+        },
+        "levelRange": [
+            187,
+            190,
+            194,
+            197,
+            200,
+            203,
+            207,
+            210,
+            213,
+            216,
+            220,
+            223,
+            226
+        ]
     },
     {
         "id": 178827,
@@ -72249,7 +72446,22 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Overflowing Anima Cage"
-        }
+        },
+        "levelRange": [
+            187,
+            190,
+            194,
+            197,
+            200,
+            203,
+            207,
+            210,
+            213,
+            216,
+            220,
+            223,
+            226
+        ]
     },
     {
         "id": 178850,
@@ -72292,7 +72504,22 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Lingering Sunmote"
-        }
+        },
+        "levelRange": [
+            187,
+            190,
+            194,
+            197,
+            200,
+            203,
+            207,
+            210,
+            213,
+            216,
+            220,
+            223,
+            226
+        ]
     },
     {
         "id": 178851,
@@ -73929,7 +74156,22 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Inscrutable Quantum Device"
-        }
+        },
+        "levelRange": [
+            187,
+            190,
+            194,
+            197,
+            200,
+            203,
+            207,
+            210,
+            213,
+            216,
+            220,
+            223,
+            226
+        ]
     },
     {
         "id": 179351,
@@ -77732,7 +77974,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Empyreal Ordnance"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 180119,
@@ -77775,7 +78018,22 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Boon of the Archon"
-        }
+        },
+        "levelRange": [
+            187,
+            190,
+            194,
+            197,
+            200,
+            203,
+            207,
+            210,
+            213,
+            216,
+            220,
+            223,
+            226
+        ]
     },
     {
         "id": 180123,
@@ -81812,7 +82070,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Sinful Gladiator's Medallion"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 181334,
@@ -81845,7 +82104,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Essence Extractor"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 181335,
@@ -81885,7 +82145,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Sinful Gladiator's Relentless Brooch"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 181357,
@@ -81918,7 +82179,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Tablet of Despair"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 181359,
@@ -81951,7 +82213,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Overflowing Ember Mirror"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 181360,
@@ -81984,7 +82247,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Brimming Ember Shard"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 181393,
@@ -83061,7 +83325,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Wakener's Frond"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 181459,
@@ -83094,7 +83359,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Withergrove Shardling"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 181501,
@@ -83127,7 +83393,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Flame of Battle"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 181502,
@@ -83160,7 +83427,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Rejuvenating Serum"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 181503,
@@ -83193,7 +83461,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Vial of Caustic Liquid"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 181529,
@@ -85698,7 +85967,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Sinful Gladiator's Sigil of Adaptation"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 181877,
@@ -88011,7 +88281,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Glimmerdust's Grand Design"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 182452,
@@ -88044,7 +88315,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Everchill Brambles"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 182453,
@@ -88077,7 +88349,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Twilight Bloom"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 182454,
@@ -88110,7 +88383,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Murmurs in the Dark"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 182455,
@@ -88143,7 +88417,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Dreamer's Mending"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 182556,
@@ -88408,7 +88683,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Book-Borrower Identification"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 182719,
@@ -94334,7 +94610,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Miniscule Abomination in a Jar"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 183651,
@@ -96247,7 +96524,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Soulsifter Root"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 183850,
@@ -96280,7 +96558,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Wakener's Frond"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 183851,
@@ -96313,7 +96592,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Withergrove Shardling"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 183970,
@@ -96468,7 +96748,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Soul Igniter"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 184020,
@@ -96507,7 +96788,13 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Tuft of Smoldering Plumage"
-        }
+        },
+        "levelRange": [
+            187,
+            200,
+            213,
+            226
+        ]
     },
     {
         "id": 184021,
@@ -96546,7 +96833,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Glyph of Assimilation"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 184022,
@@ -96585,7 +96873,13 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Consumptive Infusion"
-        }
+        },
+        "levelRange": [
+            187,
+            200,
+            213,
+            226
+        ]
     },
     {
         "id": 184024,
@@ -96624,7 +96918,13 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Macabre Sheet Music"
-        }
+        },
+        "levelRange": [
+            187,
+            200,
+            213,
+            226
+        ]
     },
     {
         "id": 184028,
@@ -96663,7 +96963,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Cabalist's Hymnal"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 184029,
@@ -96702,7 +97003,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Manabound Mirror"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 184030,
@@ -96741,7 +97043,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Dreadfire Vessel"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 184052,
@@ -96781,7 +97084,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Sinful Gladiator's Medallion"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 184053,
@@ -96821,7 +97125,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Sinful Gladiator's Relentless Brooch"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 184054,
@@ -96861,7 +97166,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Sinful Gladiator's Sigil of Adaptation"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 184105,
@@ -98550,7 +98856,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Siphoning Blood-Drinker"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 184280,
@@ -101565,7 +101872,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Relic of the First Ones"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 184808,
@@ -101656,7 +101964,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Misfiring Centurion Controller"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 184840,
@@ -101689,7 +101998,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Hymnal of the Path"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 184841,
@@ -101722,7 +102032,8 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Lyre of Sacred Purpose"
-        }
+        },
+        "levelRange": []
     },
     {
         "id": 184842,
@@ -101755,6 +102066,7 @@ export const itemDB = [
         "effect": {
             "type": "trinket",
             "name": "Instructor's Divine Bell"
-        }
+        },
+        "levelRange": []
     }
 ]

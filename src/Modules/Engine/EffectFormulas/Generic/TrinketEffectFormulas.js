@@ -111,6 +111,7 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel, use
     // Hastes impact on the trinket PPM is included in the secondary multiplier below.
     bonus_stats.hps = (getProcessedValue(effect.coefficient, effect.table, itemLevel, effect.efficiency) / 60) * effect.ppm * player.getStatMultiplier("NOMAST");
 
+
   } else if (effectName === "Boon of the Archon") {
     let heal_effect = activeTrinket.effects[1];
     let vers_effect = activeTrinket.effects[0];

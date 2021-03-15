@@ -187,7 +187,7 @@ export const trinket_data = [
         coefficient: 57.12069,
         table: -8, // TODO: Test the health transfer portion for vers / crit. It's going to be incredibly minor but worth it for accuracies sake.
         ppm: 2,
-        efficiency: 0.9, // TODO: Check against logs.
+        efficiency: 0.8, // TODO: Check against logs.
       },
     ],
   },
@@ -317,7 +317,7 @@ export const trinket_data = [
         // HoT Portion
         coefficient: 1.931035,
         table: -8,
-        efficiency: 0.6, // Falls off when the target falls below 35% health. Efficiency in this case is the HoT uptime.
+        efficiency: 0.3, // Falls off when the target falls below 35% health. Efficiency in this case is the HoT uptime x the HoT overhealing.
         totalTicks: 40, // 120 / 3. This scales with haste, which will be applied during the trinket formula.
       },
       {

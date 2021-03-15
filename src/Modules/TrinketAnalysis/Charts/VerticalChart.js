@@ -11,7 +11,7 @@ export default class VerticalChart extends PureComponent {
   render(props) {
     const data = this.props.data;
 
-    const Ilvls = ["i226", "i213", "i200", "i187", "i174", "i161"];
+    const Ilvls = ["i233", "i226", "i220", "i213", "i207", "i200", "i187", "i174"];
     let len = Ilvls.length;
     let colorCodes = chroma.random();
     let arr = [];
@@ -20,12 +20,15 @@ export default class VerticalChart extends PureComponent {
       .map((map2) =>
         arr.push({
           name: map2.name,
-          i161: map2.i161,
-          i174: map2.i174 - map2.i161,
+          //i161: map2.i161,
+          i174: map2.i174,
           i187: map2.i187 - map2.i174,
           i200: map2.i200 - map2.i187,
-          i213: map2.i213 - map2.i200,
-          i226: map2.i226 - map2.i213,
+          i207: map2.i207 - map2.i200,
+          i213: map2.i213 - map2.i207,
+          i220: map2.i220 - map2.i213,
+          i226: map2.i226 - map2.i220,
+          i233: map2.i233 - map2.i226,
         }),
       );
 
@@ -48,12 +51,15 @@ export default class VerticalChart extends PureComponent {
           <Legend verticalAlign="top" />
           <CartesianGrid vertical={true} horizontal={false} />
           <YAxis type="category" dataKey="name" stroke="#f5f5f5" interval={0} tick={{ width: 300 }} />
-          <Bar dataKey={"i161"} fill={"#eee8aa"} stackId="a" />
-          <Bar dataKey={"i174"} fill={"#d76a03"} stackId="a" />
-          <Bar dataKey={"i187"} fill={"#bf3100"} stackId="a" />
-          <Bar dataKey={"i200"} fill={"#1b998b"} stackId="a" />
-          <Bar dataKey={"i213"} fill={"#3a7d44"} stackId="a" />
-          <Bar dataKey={"i226"} fill={"#ffa3af"} stackId="a" />
+          {/*<Bar dataKey={"i161"} fill={"#eee8aa"} stackId="a" /> */}
+          <Bar dataKey={"i174"} fill={"#9BB5DD"} stackId="a" />
+          <Bar dataKey={"i187"} fill={"#BBCDEA"} stackId="a" />
+          <Bar dataKey={"i200"} fill={"#7ECC7E"} stackId="a" />
+          <Bar dataKey={"i207"} fill={"#A1EAA1"} stackId="a" />
+          <Bar dataKey={"i213"} fill={"#C97474"} stackId="a" />
+          <Bar dataKey={"i220"} fill={"#DD9090"} stackId="a" />
+          <Bar dataKey={"i226"} fill={"#DAA520"} stackId="a" />
+          {/*<Bar dataKey={"i233"} fill={"#e6bc53"} stackId="a" /> */}
         </BarChart>
       </ResponsiveContainer>
     );
