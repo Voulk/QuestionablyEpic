@@ -26,7 +26,7 @@ export default function TrinketAnalysis(props) {
 
   const { t, i18n } = useTranslation();
   const itemLevel = 213;
-  const itemLevels = [161, 174, 187, 200, 207, 213, 220, 226, 233];
+  const itemLevels = [174, 187, 194, 200, 207, 213, 220, 226, 233];
   const trinketDB = itemDB.filter((key) => key.slot === "Trinket" && key.levelRange.length > 0);
   const helpText = t("TrinketAnalysis.HelpText");
 
@@ -45,7 +45,7 @@ export default function TrinketAnalysis(props) {
     activeTrinkets.push(trinketAtLevels);
   }
 
-  activeTrinkets.sort((a, b) => (a.i226 < b.i226 ? 1 : -1));
+  activeTrinkets.sort((a, b) => (a.i233 < b.i233 ? 1 : -1));
   return (
     <div
       style={{

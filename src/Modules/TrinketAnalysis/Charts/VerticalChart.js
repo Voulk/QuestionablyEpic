@@ -3,9 +3,29 @@ import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, Legend, CartesianGrid
 import chroma from "chroma-js";
 import "./VerticalChart.css";
 
-const checkIfLevelAvailable = (trinketName, db, ilvl) => {
-    if (trinketName === "Manabound Mirror") return false;
-    else return true; 
+const getLevelDiff = (trinketName, db, ilvl, map2) => {
+
+  // Check if item exists at item level. If not, return 0.
+  let temp = db.filter(function (item) {
+    return item.name === trinketName;
+  });
+
+  const item = temp[0];
+  const pos = item.levelRange.indexOf(ilvl);
+  const previousLevel = item.levelRange[pos-1];
+  console.log(trinketName + " at " + ilvl + ". Prev: " + previousLevel);
+
+  // Return item score - the previous item levels score.
+  if (pos !== -1) {
+    console.log("1: " + map2["i" + ilvl] + ". 2: " + map2["i" + previousLevel]);
+    return map2["i" + ilvl] - map2["i" + previousLevel];
+  }
+  else {
+    console.log("EWQ" + trinketName);
+    return 0;
+  }
+  
+
 }
 
 export default class VerticalChart extends PureComponent {
@@ -18,7 +38,7 @@ export default class VerticalChart extends PureComponent {
     const db = this.props.db;
     console.log(data);
 
-    const Ilvls = ["i233", "i226", "i220", "i213", "i207", "i200", "i187", "i174"];
+    const Ilvls = ["i233", "i226", "i220", "i213", "i207", "i200", "i194", "i187", "i174"];
     let len = Ilvls.length;
     let colorCodes = chroma.random();
     let arr = [];
@@ -29,13 +49,14 @@ export default class VerticalChart extends PureComponent {
           name: map2.name,
           //i161: map2.i161, 
           i174: map2.i174,
-          i187: map2.i187 - map2.i174,
-          i200: map2.i200 - map2.i187,
-          i207: checkIfLevelAvailable(map2.name, db, 207) ? (map2.i207 - map2.i200) : 0,
-          i213: map2.i213 - map2.i207,
-          i220: map2.i220 - map2.i213,
-          i226: map2.i226 - map2.i220,
-          i233: map2.i233 - map2.i226,
+          i187: getLevelDiff(map2.name, db, 187, map2),
+          i194: getLevelDiff(map2.name, db, 194, map2),
+          i200: getLevelDiff(map2.name, db, 200, map2),
+          i207: getLevelDiff(map2.name, db, 207, map2),
+          i213: getLevelDiff(map2.name, db, 213, map2),
+          i220: getLevelDiff(map2.name, db, 220, map2),
+          i226: getLevelDiff(map2.name, db, 226, map2),
+          i233: getLevelDiff(map2.name, db, 233, map2),
         }),
       );
 
@@ -61,12 +82,13 @@ export default class VerticalChart extends PureComponent {
           {/*<Bar dataKey={"i161"} fill={"#eee8aa"} stackId="a" /> */}
           <Bar dataKey={"i174"} fill={"#9BB5DD"} stackId="a" />
           <Bar dataKey={"i187"} fill={"#BBCDEA"} stackId="a" />
+          <Bar dataKey={"i194"} fill={"#7ECC7E"} stackId="a" />
           <Bar dataKey={"i200"} fill={"#7ECC7E"} stackId="a" />
           <Bar dataKey={"i207"} fill={"#A1EAA1"} stackId="a" />
           <Bar dataKey={"i213"} fill={"#C97474"} stackId="a" />
           <Bar dataKey={"i220"} fill={"#DD9090"} stackId="a" />
           <Bar dataKey={"i226"} fill={"#D8BE7B"} stackId="a" />
-          {/*<Bar dataKey={"i233"} fill={"#e6bc53"} stackId="a" /> */}
+          <Bar dataKey={"i233"} fill={"#e6bc53"} stackId="a" />
         </BarChart>
       </ResponsiveContainer>
     );
