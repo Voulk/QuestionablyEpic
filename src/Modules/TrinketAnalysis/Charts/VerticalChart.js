@@ -96,14 +96,15 @@ export default class VerticalChart extends PureComponent {
               backgroundColor: "#1b1b1b",
               border: "1px solid #1b1b1b",
             }}
-            labelFormatter={(timeStr) => console.log(timeStr)}
+            labelFormatter={(timeStr) => timeStr}
             // The formatter function of value in tooltip. If you return an array, the first entry will be the formatted "value", and the second entry will be the formatted "name" from - https://recharts.org/en-US/api/Tooltip#formatter
             // props contains ALL The data sent to the tooltip
             formatter={(value, name, props) => {
               {
+                console.log(props)
                 if (value > 0) {
                   console.log(getILVLScore(props["payload"].name, db, props["name"].slice(1, 4)));
-                  return [Math.round(value), name];
+                  return [value, name];
                 } else {
                   return ["Unobtainable", name];
                 }
