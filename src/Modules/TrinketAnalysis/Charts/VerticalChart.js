@@ -1,10 +1,9 @@
 import React, { PureComponent } from "react";
-import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, Legend, CartesianGrid } from "recharts";
+import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, Legend, CartesianGrid, Tooltip } from "recharts";
 import chroma from "chroma-js";
 import "./VerticalChart.css";
 
 const getLevelDiff = (trinketName, db, ilvl, map2) => {
-
   // Check if item exists at item level. If not, return 0.
   let temp = db.filter(function (item) {
     return item.name === trinketName;
@@ -12,21 +11,37 @@ const getLevelDiff = (trinketName, db, ilvl, map2) => {
 
   const item = temp[0];
   const pos = item.levelRange.indexOf(ilvl);
-  const previousLevel = item.levelRange[pos-1];
+  const previousLevel = item.levelRange[pos - 1];
   console.log(trinketName + " at " + ilvl + ". Prev: " + previousLevel);
 
   // Return item score - the previous item levels score.
   if (pos !== -1) {
     console.log("1: " + map2["i" + ilvl] + ". 2: " + map2["i" + previousLevel]);
-    return map2["i" + ilvl] - map2["i" + previousLevel];
-  }
-  else {
+    // added a or 0 to handle NANs
+    return map2["i" + ilvl] - map2["i" + previousLevel] || 0;
+  } else {
     console.log("EWQ" + trinketName);
     return 0;
   }
-  
+};
 
-}
+// need this to return the Actual Score you want shown for the ilvl
+const getILVLScore = (trinketName, db, ilvl, map2) => {
+  let temp = db.filter(function (item) {
+    return item.name === trinketName;
+  });
+
+  const item = temp[0];
+  const pos = item.levelRange.indexOf(ilvl);
+  const previousLevel = item.levelRange[pos - 1];
+
+  // Return item score - the previous item levels score.
+  if (pos !== -1) {
+    return 1;
+  } else {
+    return 0;
+  }
+};
 
 export default class VerticalChart extends PureComponent {
   constructor(props) {
@@ -47,7 +62,7 @@ export default class VerticalChart extends PureComponent {
       .map((map2) =>
         arr.push({
           name: map2.name,
-          //i161: map2.i161, 
+          //i161: map2.i161,
           i174: map2.i174,
           i187: getLevelDiff(map2.name, db, 187, map2),
           i194: getLevelDiff(map2.name, db, 194, map2),
@@ -75,7 +90,26 @@ export default class VerticalChart extends PureComponent {
         >
           <XAxis type="number" stroke="#f5f5f5" axisLine={false} />
           <XAxis type="number" stroke="#f5f5f5" orientation="top" xAxisId={1} padding={0} height={1} axisLine={false} />
-
+          <Tooltip
+            labelStyle={{ color: "#ffffff" }}
+            contentStyle={{
+              backgroundColor: "#1b1b1b",
+              border: "1px solid #1b1b1b",
+            }}
+            labelFormatter={(timeStr) => console.log(timeStr)}
+            // The formatter function of value in tooltip. If you return an array, the first entry will be the formatted "value", and the second entry will be the formatted "name" from - https://recharts.org/en-US/api/Tooltip#formatter
+            // props contains ALL The data sent to the tooltip
+            formatter={(value, name, props) => {
+              {
+                if (value > 0) {
+                  console.log(getILVLScore(props["payload"].name, db, props["name"].slice(1, 4)));
+                  return [Math.round(value), name];
+                } else {
+                  return ["Unobtainable", name];
+                }
+              }
+            }}
+          />
           <Legend verticalAlign="top" />
           <CartesianGrid vertical={true} horizontal={false} />
           <YAxis type="category" dataKey="name" stroke="#f5f5f5" interval={0} tick={{ width: 300 }} />
