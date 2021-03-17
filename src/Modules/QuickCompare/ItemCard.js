@@ -43,33 +43,6 @@ const useStyles = makeStyles({
   },
 });
 
-// const useStyles = makeStyles({
-//   root: {
-//     minWidth: 200,
-//     borderRadius: 3,
-//     borderColor: "grey",
-//     borderWidth: "1px",
-//   },
-
-//   vault: {
-//     borderColor: "#0288d1",
-//     minWidth: 200,
-//     borderStyle: "dashed",
-//   },
-
-//   bullet: {
-//     display: "inline-block",
-//     margin: "0 2px",
-//     transform: "scale(0.8)",
-//   },
-//   title: {
-//     fontSize: 12,
-//   },
-//   pos: {
-//     marginBottom: 10,
-//   },
-// });
-
 export default function ItemCard(props) {
   const classes = useStyles();
   const { t, i18n } = useTranslation();
@@ -108,7 +81,6 @@ export default function ItemCard(props) {
   if (item.offhandID > 0) {
     itemName = getTranslatedItemName(item.id, currentLanguage);
     itemName2 = getTranslatedItemName(item.offhandID, currentLanguage);
-    //console.log(item);
   } else {
     if (isLegendary) itemName = item.effect.name;
     else itemName = getTranslatedItemName(item.id, currentLanguage);
@@ -122,7 +94,7 @@ export default function ItemCard(props) {
 
   const tertiary = props.item.tertiary !== "" ? <div style={{ display: "inline" }}> / {props.item.tertiary} </div> : null;
 
-  console.log(item)
+  console.log(item);
 
   // If item.offHandID > 0 then return this card which handles the double names + stats
   if (item.offhandID > 0) {
