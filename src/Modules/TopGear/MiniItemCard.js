@@ -131,7 +131,7 @@ export default function ItemCard(props) {
                 <Grid item container display="inline" direction="row" xs="auto" justify="space-between">
                   <Grid item xs={11}>
                     <Typography variant="subtitle2" wrap="nowrap" display="block" align="left" style={{ fontSize: "12px" }}>
-                      {socket} {statString} {tertiary} {isVault ? " / Great Vault Item" : ""}
+                      {socket} {statString} {tertiary} {isVault ? " / " + t("itemTags.greatvault") : ""}
                     </Typography>
                   </Grid>
                 </Grid>
