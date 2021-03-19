@@ -35,9 +35,9 @@ export const shamanDefaultSpecialQueries = (contentType) => {
       OneManaHealing: 1.9,
       CastsPerMinute: 24,
       cooldownMult: {
-        oneMinute: 1,
-        twoMinutes: 1,
-        threeMinutes: 1,
+        oneMinute: 1.1,
+        twoMinutes: 1.1,
+        threeMinutes: 1.1,
       },
       HoldYourGroundUptime: 0.8
     };

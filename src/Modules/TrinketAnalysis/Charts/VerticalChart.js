@@ -4,6 +4,7 @@ import chroma from "chroma-js";
 import "./VerticalChart.css";
 import i18n from "i18next";
 
+
 const getLevelDiff = (trinketName, db, ilvl, map2) => {
   // Check if item exists at item level. If not, return 0.
   let temp = db.filter(function (item) {
@@ -13,15 +14,18 @@ const getLevelDiff = (trinketName, db, ilvl, map2) => {
   const item = temp[0];
   const pos = item.levelRange.indexOf(ilvl);
   const previousLevel = item.levelRange[pos - 1];
-  console.log(trinketName + " at " + ilvl + ". Prev: " + previousLevel);
+  //console.log(trinketName + " at " + ilvl + ". Prev: " + previousLevel);
 
   // Return item score - the previous item levels score.
-  if (pos !== -1) {
-    console.log("1: " + map2["i" + ilvl] + ". 2: " + map2["i" + previousLevel]);
+  if (pos > 0) {
+    //console.log("1: " + map2["i" + ilvl] + ". 2: " + map2["i" + previousLevel]);
     // added a or 0 to handle NANs
     return map2["i" + ilvl] - map2["i" + previousLevel] || 0;
+  }
+  else if (pos == 0) {
+    return map2["i" + ilvl];
   } else {
-    console.log("EWQ" + trinketName);
+    //console.log("EWQ" + trinketName);
     return 0;
   }
 };
@@ -65,7 +69,7 @@ export default class VerticalChart extends PureComponent {
     const db = this.props.db;
     console.log(data);
 
-    const Ilvls = ["i233", "i226", "i220", "i213", "i207", "i200", "i194", "i187", "i174"];
+    const Ilvls = ["i233", "i226", "i220", "i213", "i207", "i200", "i194", "i187"];
     let len = Ilvls.length;
     let colorCodes = chroma.random();
     let arr = [];
@@ -75,7 +79,6 @@ export default class VerticalChart extends PureComponent {
         arr.push({
           name: map2.name,
           //i161: map2.i161,
-          i174: map2.i174,
           i187: getLevelDiff(map2.name, db, 187, map2),
           i194: getLevelDiff(map2.name, db, 194, map2),
           i200: getLevelDiff(map2.name, db, 200, map2),
@@ -133,7 +136,7 @@ export default class VerticalChart extends PureComponent {
               {
                 console.log(props);
                 if (value > 0) {
-                  console.log(getILVLScore(props["payload"].name, db, props["name"].slice(1, 4)));
+                  //console.log(getILVLScore(props["payload"].name, db, props["name"].slice(1, 4)));
                   return [value, name];
                 } else {
                   return ["Unobtainable", name];
@@ -152,9 +155,9 @@ export default class VerticalChart extends PureComponent {
             // tickFormatter={yAxisFormat}
           />
           {/*<Bar dataKey={"i161"} fill={"#eee8aa"} stackId="a" /> */}
-          <Bar dataKey={"i174"} fill={"#9BB5DD"} stackId="a" />
-          <Bar dataKey={"i187"} fill={"#BBCDEA"} stackId="a" />
-          <Bar dataKey={"i194"} fill={"#7ECC7E"} stackId="a" />
+          {/*<Bar dataKey={"i174"} fill={"#9BB5DD"} stackId="a" /> */}
+          <Bar dataKey={"i187"} fill={"#9BB5DD"} stackId="a" />
+          <Bar dataKey={"i194"} fill={"#BBCDEA"} stackId="a" />
           <Bar dataKey={"i200"} fill={"#7ECC7E"} stackId="a" />
           <Bar dataKey={"i207"} fill={"#A1EAA1"} stackId="a" />
           <Bar dataKey={"i213"} fill={"#C97474"} stackId="a" />

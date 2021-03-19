@@ -19,6 +19,23 @@ const getTrinketAtItemLevel = (id, itemLevel, player, contentType) => {
   return item.softScore;
 };
 
+const getHighestTrinketScore = (db, trinket) => {
+  const trinketID = trinket.id;
+
+  let temp = db.filter(function (item) {
+    return item.id === trinketID;
+  });
+
+  const item = temp[0];
+  const highestLevel = item.levelRange[item.levelRange.length - 1];
+
+  console.log(trinket.name + " " + trinket["i" + highestLevel]);
+  return trinket["i" + highestLevel];
+
+  
+
+}
+
 export default function TrinketAnalysis(props) {
   /*useEffect(() => {
       ReactGA.pageview(window.location.pathname + window.location.search);
@@ -26,7 +43,7 @@ export default function TrinketAnalysis(props) {
 
   const { t, i18n } = useTranslation();
   const itemLevel = 213;
-  const itemLevels = [174, 187, 194, 200, 207, 213, 220, 226, 233];
+  const itemLevels = [187, 194, 200, 207, 213, 220, 226, 233];
   const trinketDB = itemDB.filter((key) => key.slot === "Trinket" && key.levelRange.length > 0);
   const helpText = t("TrinketAnalysis.HelpText");
 
@@ -44,8 +61,8 @@ export default function TrinketAnalysis(props) {
     }
     activeTrinkets.push(trinketAtLevels);
   }
-
-  activeTrinkets.sort((a, b) => (a.i233 < b.i233 ? 1 : -1));
+  console.log(activeTrinkets);
+  activeTrinkets.sort((a, b) => (getHighestTrinketScore(trinketDB, a) < getHighestTrinketScore(trinketDB, b) ? 1 : -1));
   return (
     <div
       style={{
