@@ -4,7 +4,6 @@ import chroma from "chroma-js";
 import "./VerticalChart.css";
 import i18n from "i18next";
 
-
 const getLevelDiff = (trinketName, db, ilvl, map2) => {
   // Check if item exists at item level. If not, return 0.
   let temp = db.filter(function (item) {
@@ -21,8 +20,7 @@ const getLevelDiff = (trinketName, db, ilvl, map2) => {
     //console.log("1: " + map2["i" + ilvl] + ". 2: " + map2["i" + previousLevel]);
     // added a or 0 to handle NANs
     return map2["i" + ilvl] - map2["i" + previousLevel] || 0;
-  }
-  else if (pos == 0) {
+  } else if (pos == 0) {
     return map2["i" + ilvl];
   } else {
     //console.log("EWQ" + trinketName);
@@ -100,7 +98,7 @@ export default class VerticalChart extends PureComponent {
       return (
         <a data-wowhead={"item=" + getIdOfTrinket(payload.value, db)}>
           <g transform={`translate(${x},${y})`}>
-            <text x={-200} y={-2} style={{color: "#fff"}} className="customized-y-axis-tick-text">
+            <text x={-250} y={-1} style={{ color: "#fff" }} onMousemove={() => console.log("foo")}>
               {payload.value}
             </text>
           </g>
@@ -151,7 +149,8 @@ export default class VerticalChart extends PureComponent {
             dataKey="name"
             stroke="#f5f5f5"
             interval={0}
-            tick={CustomizedYAxisTick}
+            // tick={CustomizedYAxisTick}
+            tick={{width: 300}}
             // tickFormatter={yAxisFormat}
           />
           {/*<Bar dataKey={"i161"} fill={"#eee8aa"} stackId="a" /> */}
