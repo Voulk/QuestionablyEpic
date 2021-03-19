@@ -1,7 +1,8 @@
-import React, { PureComponent } from "react";
+import React, { PureComponent, Component } from "react";
 import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, Legend, CartesianGrid, Tooltip } from "recharts";
 import chroma from "chroma-js";
 import "./VerticalChart.css";
+import i18n from "i18next";
 
 const getLevelDiff = (trinketName, db, ilvl, map2) => {
   // Check if item exists at item level. If not, return 0.
@@ -23,6 +24,16 @@ const getLevelDiff = (trinketName, db, ilvl, map2) => {
     console.log("EWQ" + trinketName);
     return 0;
   }
+};
+
+const getIdOfTrinket = (trinketName, db) => {
+  let temp = db.filter(function (item) {
+    return item.name === trinketName;
+  });
+
+  const item = temp[0];
+
+  return item.id;
 };
 
 // need this to return the Actual Score you want shown for the ilvl
@@ -49,6 +60,7 @@ export default class VerticalChart extends PureComponent {
   }
 
   render(props) {
+    const currentLanguage = i18n.language;
     const data = this.props.data;
     const db = this.props.db;
     console.log(data);
@@ -74,6 +86,24 @@ export default class VerticalChart extends PureComponent {
           i233: getLevelDiff(map2.name, db, 233, map2),
         }),
       );
+
+    const yAxisFormat = (props) => {
+      return;
+    };
+
+    const CustomizedYAxisTick = (props) => {
+      const { x, y, payload } = props;
+
+      return (
+        <a data-wowhead={"item=" + getIdOfTrinket(payload.value, db)}>
+          <g transform={`translate(${x},${y})`}>
+            <text x={-200} y={-2} style={{color: "#fff"}} className="customized-y-axis-tick-text">
+              {payload.value}
+            </text>
+          </g>
+        </a>
+      );
+    };
 
     return (
       <ResponsiveContainer className="ResponsiveContainer2" width="100%" aspect={2}>
@@ -101,7 +131,7 @@ export default class VerticalChart extends PureComponent {
             // props contains ALL The data sent to the tooltip
             formatter={(value, name, props) => {
               {
-                console.log(props)
+                console.log(props);
                 if (value > 0) {
                   console.log(getILVLScore(props["payload"].name, db, props["name"].slice(1, 4)));
                   return [value, name];
@@ -113,7 +143,14 @@ export default class VerticalChart extends PureComponent {
           />
           <Legend verticalAlign="top" />
           <CartesianGrid vertical={true} horizontal={false} />
-          <YAxis type="category" dataKey="name" stroke="#f5f5f5" interval={0} tick={{ width: 300 }} />
+          <YAxis
+            type="category"
+            dataKey="name"
+            stroke="#f5f5f5"
+            interval={0}
+            tick={CustomizedYAxisTick}
+            // tickFormatter={yAxisFormat}
+          />
           {/*<Bar dataKey={"i161"} fill={"#eee8aa"} stackId="a" /> */}
           <Bar dataKey={"i174"} fill={"#9BB5DD"} stackId="a" />
           <Bar dataKey={"i187"} fill={"#BBCDEA"} stackId="a" />
