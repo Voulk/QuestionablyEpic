@@ -34,7 +34,7 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel, use
     let mana_heal_effect = activeTrinket.effects[0];
     let base_heal_effect = activeTrinket.effects[1];
 
-    let expected_mana_spend = 19500; // Per minute.
+    let expected_mana_spend = player.getSpec() === "Holy Paladin" ? 15500 : 18000; // Per minute.
     let base_heal = getProcessedValue(base_heal_effect.coefficient, base_heal_effect.table, itemLevel);
     let mana_heal = getProcessedValue(mana_heal_effect.coefficient, mana_heal_effect.table, itemLevel) * (expected_mana_spend / 3240);
 
@@ -87,7 +87,7 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel, use
 
   } else if (effectName === "Vial of Spectral Essence") {
     let effect = activeTrinket.effects[0];
-    bonus_stats.hps = (getProcessedValue(effect.coefficient, effect.table, itemLevel, effect.efficiency) / effect.cooldown) * player.getStatMultiplier("CRITVERS");
+    bonus_stats.hps = (getProcessedValue(effect.coefficient, effect.table, itemLevel, effect.efficiency) / effect.cooldown) * player.getStatPerc("Versatility");
     //console.log("Vial: " + getProcessedValue(effect.coefficient, effect.table, itemLevel, 1));
 
   } else if (effectName === "Soulletting Ruby") {

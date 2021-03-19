@@ -62,7 +62,7 @@ export const trinket_data = [
         coefficient: 80.17241,
         table: -8,
         cooldown: 60,
-        efficiency: 0.7,
+        efficiency: 0.56,
       },
     ],
   },
@@ -121,7 +121,7 @@ export const trinket_data = [
       {
         coefficient: 89.08621, // This represents the upper quartile of the given cards.
         table: -8,
-        efficiency: 0.4, // You do have to heal a sub 35% health target every 30s for max efficiency which doesn't seem at all likely.
+        efficiency: 0.37, // You do have to heal a sub 35% health target every 30s for max efficiency which doesn't seem at all likely.
         cooldown: 30,
       },
     ],
