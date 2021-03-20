@@ -102,7 +102,7 @@ export default class VerticalChart extends PureComponent {
             <text x={0} y={-10} style={{ color: "#fff", marginRight: 5, verticalAlign: "top" }}>
               {payload.value}
             </text>
-            <a data-wowhead={"item=" + getIdOfTrinket(payload.value, db)}>
+            <a data-wowhead={"item=" + getIdOfTrinket(payload.value, db) + "&ilvl=200"}>
               <img
                 width={20}
                 height={20}
@@ -143,10 +143,10 @@ export default class VerticalChart extends PureComponent {
             // props contains ALL The data sent to the tooltip
             formatter={(value, name, props) => {
               {
-                console.log(props);
+                //  console.log(props);
                 if (value > 0) {
                   //console.log(getILVLScore(props["payload"].name, db, props["name"].slice(1, 4)));
-                  return [value, name];
+                  return [value.toFixed(2), name];
                 } else {
                   return ["Unobtainable", name];
                 }
