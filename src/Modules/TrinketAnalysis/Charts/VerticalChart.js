@@ -57,6 +57,17 @@ const getILVLScore = (trinketName, db, ilvl, map2) => {
   }
 };
 
+// Cleans Zeros from Objects
+const cleanZerosFromArray = (obj) => {
+  return Object.keys(obj)
+    .filter((key) => {
+      return obj[key] !== 0;
+    })
+    .reduce((object, key) => {
+      object[key] = obj[key];
+      return object;
+    }, {});
+};
 export default class VerticalChart extends PureComponent {
   constructor(props) {
     super();
@@ -72,6 +83,7 @@ export default class VerticalChart extends PureComponent {
     let len = Ilvls.length;
     let colorCodes = chroma.random();
     let arr = [];
+    let arrayForTooltips = [];
     Object.entries(data)
       .map((key) => key[1])
       .map((map2) =>
@@ -88,6 +100,10 @@ export default class VerticalChart extends PureComponent {
           i233: getLevelDiff(map2.name, db, 233, map2),
         }),
       );
+
+    // Map new Array of Cleaned Objects (No Zero Values)
+    arr.map((key) => arrayForTooltips.push(cleanZerosFromArray(key)));
+    // console.log(arrayForTooltips);
 
     const yAxisFormat = (props) => {
       return;
@@ -133,6 +149,7 @@ export default class VerticalChart extends PureComponent {
           <XAxis type="number" stroke="#f5f5f5" axisLine={false} />
           <XAxis type="number" stroke="#f5f5f5" orientation="top" xAxisId={1} padding={0} height={1} axisLine={false} />
           <Tooltip
+            // payload={arrayForTooltips}
             labelStyle={{ color: "#ffffff" }}
             contentStyle={{
               backgroundColor: "#1b1b1b",
