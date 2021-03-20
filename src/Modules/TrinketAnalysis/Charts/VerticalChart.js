@@ -1,6 +1,7 @@
 import React, { PureComponent, Component } from "react";
 import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, Legend, CartesianGrid, Tooltip } from "recharts";
 import chroma from "chroma-js";
+import { getItemIcon } from "../../Engine/ItemUtilities";
 import "./VerticalChart.css";
 import i18n from "i18next";
 
@@ -96,13 +97,23 @@ export default class VerticalChart extends PureComponent {
       const { x, y, payload } = props;
 
       return (
-        <a data-wowhead={"item=" + getIdOfTrinket(payload.value, db)}>
-          <g transform={`translate(${x},${y})`}>
-            <text x={-250} y={-1} style={{ color: "#fff" }} onMousemove={() => console.log("foo")}>
+        <g transform={`translate(${x},${y})`}>
+          <foreignObject x={-300} y={-10} width="300" height="20" style={{ textAlign: "right" }}>
+            <text x={0} y={-10} style={{ color: "#fff", marginRight: 5, verticalAlign: "top" }}>
               {payload.value}
             </text>
-          </g>
-        </a>
+            <a data-wowhead={"item=" + getIdOfTrinket(payload.value, db)}>
+              <img
+                width={20}
+                height={20}
+                x={0}
+                y={0}
+                src={getItemIcon(getIdOfTrinket(payload.value, db))}
+                style={{ borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.12)" }}
+              />
+            </a>
+          </foreignObject>
+        </g>
       );
     };
 
@@ -144,15 +155,7 @@ export default class VerticalChart extends PureComponent {
           />
           <Legend verticalAlign="top" />
           <CartesianGrid vertical={true} horizontal={false} />
-          <YAxis
-            type="category"
-            dataKey="name"
-            stroke="#f5f5f5"
-            interval={0}
-            // tick={CustomizedYAxisTick}
-            tick={{width: 300}}
-            // tickFormatter={yAxisFormat}
-          />
+          <YAxis type="category" dataKey="name" stroke="#f5f5f5" interval={0} tick={CustomizedYAxisTick} />
           {/*<Bar dataKey={"i161"} fill={"#eee8aa"} stackId="a" /> */}
           {/*<Bar dataKey={"i174"} fill={"#9BB5DD"} stackId="a" /> */}
           <Bar dataKey={"i187"} fill={"#9BB5DD"} stackId="a" />
