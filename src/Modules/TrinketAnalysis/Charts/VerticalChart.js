@@ -114,7 +114,7 @@ export default class VerticalChart extends PureComponent {
             <text x={0} y={-10} style={{ color: "#fff", marginRight: 5, verticalAlign: "top", position: "relative", top: 2 }}>
               {payload.value}
             </text>
-            <a data-wowhead={"item=" + getIdOfTrinket(payload.value, db) + "&ilvl=200"}>
+            <a data-wowhead={"item=" + getIdOfTrinket(payload.value, db) + "&ilvl=200" + "&domain=" + currentLanguage}>
               <img
                 width={20}
                 height={20}
