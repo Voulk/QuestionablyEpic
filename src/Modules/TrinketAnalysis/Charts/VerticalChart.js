@@ -87,7 +87,6 @@ export default class VerticalChart extends PureComponent {
     /* ----------------------- Y-Axis Label Customization ----------------------- */
     const CustomizedYAxisTick = (props) => {
       const { x, y, payload } = props;
-      console.log(props);
       return (
         <g transform={`translate(${x},${y})`}>
           <foreignObject x={-300} y={-10} width="300" height="22" style={{ textAlign: "right" }}>
