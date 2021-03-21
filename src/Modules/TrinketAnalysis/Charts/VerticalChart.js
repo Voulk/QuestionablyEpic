@@ -114,8 +114,8 @@ export default class VerticalChart extends PureComponent {
 
       return (
         <g transform={`translate(${x},${y})`}>
-          <foreignObject x={-300} y={-10} width="300" height="20" style={{ textAlign: "right" }}>
-            <text x={0} y={-10} style={{ color: "#fff", marginRight: 5, verticalAlign: "top" }}>
+          <foreignObject x={-300} y={-10} width="300" height="22" style={{ textAlign: "right" }}>
+            <text x={0} y={-10} style={{ color: "#fff", marginRight: 5, verticalAlign: "top", position: "relative", top: 2 }}>
               {payload.value}
             </text>
             <a data-wowhead={"item=" + getIdOfTrinket(payload.value, db) + "&ilvl=200"}>
@@ -137,7 +137,7 @@ export default class VerticalChart extends PureComponent {
       <ResponsiveContainer className="ResponsiveContainer2" width="100%" aspect={2}>
         <BarChart
           barCategoryGap="15%"
-          data={arr}
+          data={arrayForTooltips}
           layout="vertical"
           margin={{
             top: 20,
@@ -153,7 +153,8 @@ export default class VerticalChart extends PureComponent {
             labelStyle={{ color: "#ffffff" }}
             contentStyle={{
               backgroundColor: "#1b1b1b",
-              border: "1px solid #1b1b1b",
+              border: "1px solid rgba(255, 255, 255, 0.12)"
+              
             }}
             labelFormatter={(timeStr) => timeStr}
             // The formatter function of value in tooltip. If you return an array, the first entry will be the formatted "value", and the second entry will be the formatted "name" from - https://recharts.org/en-US/api/Tooltip#formatter
