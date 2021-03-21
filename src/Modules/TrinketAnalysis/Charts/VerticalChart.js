@@ -77,8 +77,6 @@ export default class VerticalChart extends PureComponent {
     const currentLanguage = i18n.language;
     const data = this.props.data;
     const db = this.props.db;
-    console.log(data);
-
     const Ilvls = ["i233", "i226", "i220", "i213", "i207", "i200", "i194", "i187"];
     let len = Ilvls.length;
     let colorCodes = chroma.random();
@@ -110,7 +108,6 @@ export default class VerticalChart extends PureComponent {
 
     const CustomizedYAxisTick = (props) => {
       const { x, y, payload } = props;
-      data.map((props) => console.log(props));
       return (
         <g transform={`translate(${x},${y})`}>
           <foreignObject x={-300} y={-10} width="300" height="22" style={{ textAlign: "right" }}>
