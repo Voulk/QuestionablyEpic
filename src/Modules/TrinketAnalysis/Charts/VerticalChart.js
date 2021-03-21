@@ -83,27 +83,26 @@ export default class VerticalChart extends PureComponent {
     let len = Ilvls.length;
     let colorCodes = chroma.random();
     let arr = [];
-    let arrayForTooltips = [];
+    let cleanedArray = [];
     Object.entries(data)
       .map((key) => key[1])
       .map((map2) =>
         arr.push({
           name: map2.name,
           //i161: map2.i161,
-          i187: getLevelDiff(map2.name, db, 187, map2),
-          i194: getLevelDiff(map2.name, db, 194, map2),
-          i200: getLevelDiff(map2.name, db, 200, map2),
-          i207: getLevelDiff(map2.name, db, 207, map2),
-          i213: getLevelDiff(map2.name, db, 213, map2),
-          i220: getLevelDiff(map2.name, db, 220, map2),
-          i226: getLevelDiff(map2.name, db, 226, map2),
-          i233: getLevelDiff(map2.name, db, 233, map2),
+          187: getLevelDiff(map2.name, db, 187, map2),
+          194: getLevelDiff(map2.name, db, 194, map2),
+          200: getLevelDiff(map2.name, db, 200, map2),
+          207: getLevelDiff(map2.name, db, 207, map2),
+          213: getLevelDiff(map2.name, db, 213, map2),
+          220: getLevelDiff(map2.name, db, 220, map2),
+          226: getLevelDiff(map2.name, db, 226, map2),
+          233: getLevelDiff(map2.name, db, 233, map2),
         }),
       );
 
     // Map new Array of Cleaned Objects (No Zero Values)
-    arr.map((key) => arrayForTooltips.push(cleanZerosFromArray(key)));
-    // console.log(arrayForTooltips);
+    arr.map((key) => cleanedArray.push(cleanZerosFromArray(key)));
 
     const yAxisFormat = (props) => {
       return;
@@ -111,7 +110,7 @@ export default class VerticalChart extends PureComponent {
 
     const CustomizedYAxisTick = (props) => {
       const { x, y, payload } = props;
-
+      data.map((props) => console.log(props));
       return (
         <g transform={`translate(${x},${y})`}>
           <foreignObject x={-300} y={-10} width="300" height="22" style={{ textAlign: "right" }}>
@@ -137,7 +136,7 @@ export default class VerticalChart extends PureComponent {
       <ResponsiveContainer className="ResponsiveContainer2" width="100%" aspect={2}>
         <BarChart
           barCategoryGap="15%"
-          data={arrayForTooltips}
+          data={cleanedArray}
           layout="vertical"
           margin={{
             top: 20,
@@ -149,22 +148,23 @@ export default class VerticalChart extends PureComponent {
           <XAxis type="number" stroke="#f5f5f5" axisLine={false} />
           <XAxis type="number" stroke="#f5f5f5" orientation="top" xAxisId={1} padding={0} height={1} axisLine={false} />
           <Tooltip
-            // payload={arrayForTooltips}
             labelStyle={{ color: "#ffffff" }}
             contentStyle={{
               backgroundColor: "#1b1b1b",
-              border: "1px solid rgba(255, 255, 255, 0.12)"
-              
+              border: "1px solid rgba(255, 255, 255, 0.12)",
             }}
             labelFormatter={(timeStr) => timeStr}
-            // The formatter function of value in tooltip. If you return an array, the first entry will be the formatted "value", and the second entry will be the formatted "name" from - https://recharts.org/en-US/api/Tooltip#formatter
-            // props contains ALL The data sent to the tooltip
             formatter={(value, name, props) => {
               {
-                //  console.log(props);
                 if (value > 0) {
                   //console.log(getILVLScore(props["payload"].name, db, props["name"].slice(1, 4)));
-                  return [value.toFixed(2), name];
+                  return [
+                    data
+                      .filter((filter) => filter.name === props["payload"].name)
+                      .map((key) => key["i" + name])
+                      .toString(),
+                    name,
+                  ];
                 } else {
                   return ["Unobtainable", name];
                 }
@@ -176,14 +176,14 @@ export default class VerticalChart extends PureComponent {
           <YAxis type="category" dataKey="name" stroke="#f5f5f5" interval={0} tick={CustomizedYAxisTick} />
           {/*<Bar dataKey={"i161"} fill={"#eee8aa"} stackId="a" /> */}
           {/*<Bar dataKey={"i174"} fill={"#9BB5DD"} stackId="a" /> */}
-          <Bar dataKey={"i187"} fill={"#9BB5DD"} stackId="a" />
-          <Bar dataKey={"i194"} fill={"#BBCDEA"} stackId="a" />
-          <Bar dataKey={"i200"} fill={"#7ECC7E"} stackId="a" />
-          <Bar dataKey={"i207"} fill={"#A1EAA1"} stackId="a" />
-          <Bar dataKey={"i213"} fill={"#C97474"} stackId="a" />
-          <Bar dataKey={"i220"} fill={"#DD9090"} stackId="a" />
-          <Bar dataKey={"i226"} fill={"#D8BE7B"} stackId="a" />
-          <Bar dataKey={"i233"} fill={"#e6bc53"} stackId="a" />
+          <Bar dataKey={187} fill={"#9BB5DD"} stackId="a" />
+          <Bar dataKey={194} fill={"#BBCDEA"} stackId="a" />
+          <Bar dataKey={200} fill={"#7ECC7E"} stackId="a" />
+          <Bar dataKey={207} fill={"#A1EAA1"} stackId="a" />
+          <Bar dataKey={213} fill={"#C97474"} stackId="a" />
+          <Bar dataKey={220} fill={"#DD9090"} stackId="a" />
+          <Bar dataKey={226} fill={"#D8BE7B"} stackId="a" />
+          <Bar dataKey={233} fill={"#e6bc53"} stackId="a" />
         </BarChart>
       </ResponsiveContainer>
     );
