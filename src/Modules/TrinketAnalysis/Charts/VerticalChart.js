@@ -115,7 +115,7 @@ export default class VerticalChart extends PureComponent {
             top: 20,
             right: 40,
             bottom: 20,
-            left: 220,
+            left: 250,
           }}
         >
           <XAxis type="number" stroke="#f5f5f5" axisLine={false} />
