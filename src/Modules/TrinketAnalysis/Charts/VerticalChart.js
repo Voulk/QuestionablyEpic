@@ -1,7 +1,7 @@
 import React, { PureComponent, Component } from "react";
 import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, Legend, CartesianGrid, Tooltip } from "recharts";
 import chroma from "chroma-js";
-import { getItemIcon } from "../../Engine/ItemUtilities";
+import { getItemIcon, getTranslatedItemName } from "../../Engine/ItemUtilities";
 import "./VerticalChart.css";
 import i18n from "i18next";
 
@@ -29,33 +29,15 @@ const getLevelDiff = (trinketName, db, ilvl, map2) => {
   }
 };
 
-const getIdOfTrinket = (trinketName, db) => {
-  let temp = db.filter(function (item) {
-    return item.name === trinketName;
-  });
+// const getIdOfTrinket = (trinketName, db) => {
+//   let temp = db.filter(function (item) {
+//     return item.name === trinketName;
+//   });
 
-  const item = temp[0];
+//   const item = temp[0];
 
-  return item.id;
-};
-
-// need this to return the Actual Score you want shown for the ilvl
-const getILVLScore = (trinketName, db, ilvl, map2) => {
-  let temp = db.filter(function (item) {
-    return item.name === trinketName;
-  });
-
-  const item = temp[0];
-  const pos = item.levelRange.indexOf(ilvl);
-  const previousLevel = item.levelRange[pos - 1];
-
-  // Return item score - the previous item levels score.
-  if (pos !== -1) {
-    return 1;
-  } else {
-    return 0;
-  }
-};
+//   return item.id;
+// };
 
 // Cleans Zeros from Objects
 const cleanZerosFromArray = (obj) => {
@@ -84,9 +66,9 @@ export default class VerticalChart extends PureComponent {
     let cleanedArray = [];
     Object.entries(data)
       .map((key) => key[1])
-      .map((map2) =>
+      .map((map2) => {
         arr.push({
-          name: map2.name,
+          name: map2.id,
           //i161: map2.i161,
           187: getLevelDiff(map2.name, db, 187, map2),
           194: getLevelDiff(map2.name, db, 194, map2),
@@ -96,8 +78,8 @@ export default class VerticalChart extends PureComponent {
           220: getLevelDiff(map2.name, db, 220, map2),
           226: getLevelDiff(map2.name, db, 226, map2),
           233: getLevelDiff(map2.name, db, 233, map2),
-        }),
-      );
+        });
+      });
 
     // Map new Array of Cleaned Objects (No Zero Values)
     arr.map((key) => cleanedArray.push(cleanZerosFromArray(key)));
@@ -108,21 +90,15 @@ export default class VerticalChart extends PureComponent {
 
     const CustomizedYAxisTick = (props) => {
       const { x, y, payload } = props;
+      console.log(props);
       return (
         <g transform={`translate(${x},${y})`}>
           <foreignObject x={-300} y={-10} width="300" height="22" style={{ textAlign: "right" }}>
             <text x={0} y={-10} style={{ color: "#fff", marginRight: 5, verticalAlign: "top", position: "relative", top: 2 }}>
-              {payload.value}
+              {getTranslatedItemName(payload.value, currentLanguage)}
             </text>
-            <a data-wowhead={"item=" + getIdOfTrinket(payload.value, db) + "&ilvl=200" + "&domain=" + currentLanguage}>
-              <img
-                width={20}
-                height={20}
-                x={0}
-                y={0}
-                src={getItemIcon(getIdOfTrinket(payload.value, db))}
-                style={{ borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.12)" }}
-              />
+            <a data-wowhead={"item=" + payload.value + "&ilvl=200" + "&domain=" + currentLanguage}>
+              <img width={20} height={20} x={0} y={0} src={getItemIcon(payload.value)} style={{ borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.12)" }} />
             </a>
           </foreignObject>
         </g>
@@ -150,14 +126,13 @@ export default class VerticalChart extends PureComponent {
               backgroundColor: "#1b1b1b",
               border: "1px solid rgba(255, 255, 255, 0.12)",
             }}
-            labelFormatter={(timeStr) => timeStr}
+            labelFormatter={(timeStr) => getTranslatedItemName(timeStr, currentLanguage)}
             formatter={(value, name, props) => {
               {
                 if (value > 0) {
-                  //console.log(getILVLScore(props["payload"].name, db, props["name"].slice(1, 4)));
                   return [
                     data
-                      .filter((filter) => filter.name === props["payload"].name)
+                      .filter((filter) => filter.id === props["payload"].name)
                       .map((key) => key["i" + name])
                       .toString(),
                     name,
