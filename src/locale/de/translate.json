@@ -477,6 +477,16 @@
       "Setting5TextFieldLabel": ""
     },
 
+    "Snackbars": {
+      "CharAddSuccess": "Character Added!",
+      "CharUpdateSuccess": "Character Updated!",
+      "LoginSuccess": "Logged in Successfully!",
+      "SimCImportSuccess": "SimC String Imported Successfully!",
+      "LogImportSuccess": "Log Imported Successfully!",
+      "EmailUpdateSuccess": "Email Updated!",
+      "EmailError": "Please check the Email and try again"
+    },
+
     "SpellNames": {
       "MonkSpells": "",
       "124682": "Einhüllender Nebel",
@@ -520,7 +530,8 @@
       "SelectedItems": "Ausgewählte Gegenstände",
       "CompetitiveAlternative": "Gleichwertige Alternativen",
       "BackToGearSelection": "Zurück zum Auswahlbildschirm",
-      "StatPanel": { "AvgStats": "Durchschnittliche Werte (inkl. aller zufälligen Effekte)" }
+      "StatPanel": { "AvgStats": "Durchschnittliche Werte (inkl. aller zufälligen Effekte)" },
+      "itemMissingError": "Error: Add item - "
     },
 
     "UpgradeFinder": {

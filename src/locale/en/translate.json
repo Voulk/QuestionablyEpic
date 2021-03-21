@@ -54,7 +54,7 @@
     "HPS": "HPS",
     "Casts": "Casts",
     "Healing": "Healing",
-    "Overhealing":" Overhealing",
+    "Overhealing": " Overhealing",
     "Account": "Account",
     "Email": "Email",
     "Battletag": "Battletag",
@@ -69,7 +69,7 @@
       "Date": "Date"
     },
 
-    "PatreonTiers":{
+    "PatreonTiers": {
       "RollsRoyce": "Rolls Royce",
       "Diamond": "Diamond",
       "Gold": "Gold"
@@ -483,6 +483,16 @@
       "Setting5TextFieldLabel": ""
     },
 
+    "Snackbars": {
+      "CharAddSuccess": "Character Added!",
+      "CharUpdateSuccess": "Character Updated!",
+      "LoginSuccess": "Logged in Successfully!",
+      "SimCImportSuccess": "SimC String Imported Successfully!",
+      "LogImportSuccess": "Log Imported Successfully!",
+      "EmailUpdateSuccess": "Email Updated!",
+      "EmailError": "Please check the Email and try again"
+    },
+
     "SpellNames": {
       "MonkSpells": "",
       "124682": "Enveloping Mist",
@@ -526,7 +536,9 @@
       "SelectedItems": "Selected Items",
       "BackToGearSelection": "Back to Gear Selection",
       "CompetitiveAlternative": "Competitive Alternatives",
-      "StatPanel": { "AvgStats": "Average Stats (includes procs)" }
+      "StatPanel": { "AvgStats": "Average Stats (includes procs)" },
+      "itemMissingError": "Error: Add item - "
+      
     },
 
     "UpgradeFinder": {

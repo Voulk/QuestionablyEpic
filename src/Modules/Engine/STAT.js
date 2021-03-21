@@ -135,7 +135,7 @@ export const translatedStat = {
     fr: "Effect",
     de: "Effect",
     cn: "Effect",
-    ru: "Effect",
+    ru: "Эффект",
   },
   "bonus HPS": {
     en: "Bonus HPS",

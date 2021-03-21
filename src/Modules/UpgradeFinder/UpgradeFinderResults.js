@@ -8,7 +8,7 @@ import MythicPlusGearContainer from "./Panels/PanelMythicPlus";
 import PvPGearContainer from "./Panels/PanelPvP";
 import RaidGearContainer from "./Panels/PanelRaid";
 import WorldBossGearContainer from "./Panels/PanelWorldBosses";
-import SlotsContainer from "./Panels/PanelSlots"
+import SlotsContainer from "./Panels/PanelSlots";
 import ReactGA from "react-ga";
 import "./Panels/ItemUpgrade.css";
 
@@ -114,8 +114,6 @@ function a11yProps(index) {
   };
 }
 
-
-
 export default function UpgradeFinderResults(props) {
   //   useEffect(() => {
   //     ReactGA.pageview(window.location.pathname + window.location.search);
@@ -137,7 +135,7 @@ export default function UpgradeFinderResults(props) {
   return (
     <div className={classes.header}>
       <Typography variant="h4" color="primary" align="center" style={{ padding: "10px 10px 5px 10px" }}>
-        {props.contentType + " " +  t("UpgradeFinder.Header")}
+        {props.contentType + " " + t("UpgradeFinder.Header")}
       </Typography>
       <AppBar
         position="static"
@@ -147,7 +145,14 @@ export default function UpgradeFinderResults(props) {
         }}
         elevation={1}
       >
-        <Tabs value={tabvalue} onChange={handleTabChange} aria-label="simple tabs example" variant="fullWidth" style={{borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.22)"}} TabIndicatorProps={{ style: { backgroundColor: "#F2BF59" } }}>
+        <Tabs
+          value={tabvalue}
+          onChange={handleTabChange}
+          aria-label="simple tabs example"
+          variant="fullWidth"
+          style={{ borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.22)" }}
+          TabIndicatorProps={{ style: { backgroundColor: "#F2BF59" } }}
+        >
           {/* Raid */}
           <Tab className={classes.raidHeaderStyle} label={t("UpgradeFinder.CurrentRaid")} {...a11yProps(0)} />
           {/* Mythic Plus */}
@@ -174,7 +179,13 @@ export default function UpgradeFinderResults(props) {
       <TabPanel value={tabvalue} index={1}>
         <div className={classes.panel}>
           <Grid container>
-            <MythicPlusGearContainer setDungeonDifficulty={props.setDungeonDifficulty} player={props.player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={props.playerSettings} />
+            <MythicPlusGearContainer
+              setDungeonDifficulty={props.setDungeonDifficulty}
+              player={props.player}
+              itemList={itemList}
+              itemDifferentials={itemDifferentials}
+              playerSettings={props.playerSettings}
+            />
           </Grid>
         </div>
       </TabPanel>
@@ -198,7 +209,7 @@ export default function UpgradeFinderResults(props) {
       </TabPanel>
 
       {/* Slots */}
-            <TabPanel value={tabvalue} index={4}>
+      <TabPanel value={tabvalue} index={4}>
         <div className={classes.panel}>
           <Grid container>
             <SlotsContainer player={props.player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={props.playerSettings} />
