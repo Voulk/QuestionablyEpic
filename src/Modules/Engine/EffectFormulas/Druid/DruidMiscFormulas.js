@@ -2,8 +2,6 @@
 // Partially implemented. Complete if spells other than Rejuv are required.
 export function processDruidRawHealing(player, spellID) {
 
-    const isAwakening = true;
-
     // Tree of Life
     const treeUptime = 30 / 180;
     const treeHealingIncreases = {774: 1.15 * 1.5, 48438: 8/6 * 1.15}
@@ -14,9 +12,7 @@ export function processDruidRawHealing(player, spellID) {
     const flourishHealingIncreases = {774: 2};
     const flourishHealingInc = flourishHealingIncreases[spellID] * flourishUptime + (1 - flourishUptime);
 
-
-  
-    console.log("Tree: " + treeHealingInc + ". Flourish: " + flourishHealingInc);
+    //console.log("Tree: " + treeHealingInc + ". Flourish: " + flourishHealingInc);
     return (treeHealingInc * flourishHealingInc);
   
   }
