@@ -632,7 +632,7 @@
     "The Magistrates Judgment": {
       "name": "The Magistrate's Judgment",
       "slot": "Wrist or Finger",
-      "desc": "Judgment has a 60% chance to reduce the cost of your next Holy Power spender by 60%.",
+      "desc": "Judgment has a 60% chance to reduce the cost of your next Holy Power spender by 1.",
       "droploc": "Xav the Unfallen, Theater of Pain"
     },
     "Inflorescence of the Sunwell": {

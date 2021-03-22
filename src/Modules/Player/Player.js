@@ -275,7 +275,7 @@ class Player {
     return Math.round(statPerc * 10000) / 10000;
   };
 
-  // Returns a stat multiplier.
+  // Returns a stat multiplier. This function is really bad and needs to be rewritten. 
   getStatMultiplier = (flag, statList = []) => {
     let mult = 1;
     if (flag === "ALL") {
@@ -355,12 +355,17 @@ class Player {
     return (this.getSpellCasts(spellID, contentType) / this.getFightLength(contentType)) * 60;
   };
 
+
   getSpellCasts = (spellID, contentType) => {
     return this.castModel[contentType].getSpellData(spellID, "casts");
   };
 
   getSpellHPS = (spellID, contentType) => {
     return this.castModel[contentType].getSpellData(spellID, "hps");
+  };
+
+  getSpellRawHPS = (spellID, contentType) => {
+    return this.castModel[contentType].getSpellData(spellID, "hps") / (1 - this.castModel[contentType].getSpellData(spellID, "overhealing"));
   };
 
   /* --------------- Return the Spell List for the content Type --------------- */

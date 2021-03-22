@@ -1,5 +1,5 @@
 import Player from "../../../Player/Player";
-import { getOneHolyPower, getAwakeningWingsUptime, getWingsHealingInc } from "./PaladinMiscFormulas";
+import { getOneHolyPower, getAwakeningWingsUptime, getWingsHealingInc, processPaladinRawHealing } from "./PaladinMiscFormulas";
 
 const IDLIGHTOFDAWN = 225311;
 const IDHOLYLIGHT = 82326;
@@ -12,47 +12,37 @@ export const getPaladinLegendary = (effectName, player, contentType) => {
   let bonus_stats = {};
   let name = effectName;
 
-  /*
-    The rejuv spreading legendary can best be expressed as a percentage increase to our rejuv healing. 
-    TODO: When accepting log input we will eventually have to take into account those already wearing it since it changes our formula slightly.
-    */
   if (name === "Maraads Dying Breath") {
-    /*
-        let rejuvHealingPerc = player.getSpellHealingPerc("Rejuvenation", contentType);
-        let baseTicks = 1 + (5 * player.getStatPerc("Haste"));
-        let expectedTicksWithLegendary = (baseTicks / (1 - 0.02 * Math.ceil(baseTicks)));
-        let rejuvHealingInc = (expectedTicksWithLegendary / baseTicks) - 1;
-        let expectedHPS = Math.round(rejuvHealingInc * rejuvHealingPerc * player.getHPS());
+      /*
+        Maraads is yet to be implemented, but will be soon.
+      */
 
-        // Return result.
-        */
     bonus_stats.hps = 5;
   } else if (name === "Shock Barrier") {
 
   /* 
-
-    The swiftmend extension legendary can be valued by calculating how much extra healing we can expect out of the HoTs on the swiftmended target. 
-    The general goal most of the time is to Swiftmend whichever target has your Cenarion Ward but players aren't perfect. 
-
+    Shock Barrier is a straightfoward formula with the percentage of shield wasted the only real variable. 
+    The absorb is notably based on the raw healing the Holy Shock would have done, rather than the effective healing.
+    A very small portion can be lost to overcapping, but this is rare in practice with current haste levels.
     */
-    // Do Math
+    const holyShockIncrease = 0.2; // This is one application of the absorb, and will be placed 3 times.
+    const wastedShield = 0.22;
+    const holyShockRawHPS = player.getSpellRawHPS(IDHOLYSHOCK, contentType);
 
-    let holyShockIncrease = 0.2;
-    let wastedShield = 0.12;
-    //console.log("HSI: " + holyShockIncrease);
-
-    bonus_stats.hps = Math.round(holyShockIncrease * 3 * (1 - wastedShield) * player.getSpellHPS(IDHOLYSHOCK, contentType));
+    bonus_stats.hps = Math.round(holyShockIncrease * 3 * (1 - wastedShield) * holyShockRawHPS);
 
   } else if (name === "Inflorescence of the Sunwell") {
     // Do Math
     const legendaryBonus = 0.3;
     const infusionBaseIncrease = 0.3;
     const infusionsPerMinute = player.getSpellCPM(IDHOLYSHOCK, contentType) * (player.getStatPerc("Crit") + 0.3);
-    const infusionProcsUsed = 0.22;
-    const oneHolyLight = player.getSingleCast(IDHOLYLIGHT, contentType);
+    const infusionProcsUsed = 0.18;
+    const expectedOverhealing = 0.24;
+    //const oneHolyLightOld = player.getSingleCast(IDHOLYLIGHT, contentType);
+    const oneHolyLight = player.getStatMultiplier("ALL") * 2.6 * processPaladinRawHealing(player.getStatPerc("Crit")) * (1 - expectedOverhealing);
 
-
-    // Resplendent tests
+// 222
+    // Resplendent tests. Do not delete.
     /*
         let trait_bonus =  0.036 + 5 * 0.004;
         let targets = 4.8;
@@ -65,7 +55,9 @@ export const getPaladinLegendary = (effectName, player, contentType) => {
     bonus_stats.hps = Math.round((infusionsPerMinute * infusionProcsUsed * (oneHolyLight * (legendaryBonus + (infusionBaseIncrease + legendaryBonus)))) / 60);
 
   } else if (name === "Shadowbreaker, Dawn of the Sun") {
+    const baseHealingInc = processPaladinRawHealing(player.getStatPerc("Crit"))
     const lightOfDawnCPM = player.getSpellCPM(IDLIGHTOFDAWN, contentType);
+    const lightOfDawnTargets = contentType === "Raid" ? 4.9 : 3.1;
     let lightOfDawnUptime = Math.min(1, (lightOfDawnCPM * 8) / 60); // Technically doesn't account for the slight possible loss from casting LoD twice in a short period.
     let averageMasteryEff = player.getStatPerc("Mastery"); // TODO: Improve with logs data.
     let maxMasteryEff = (player.getStatPerc("Mastery") - 1) / 0.8 + 1;
@@ -75,31 +67,46 @@ export const getPaladinLegendary = (effectName, player, contentType) => {
 
     // Calculate WoG bonus.
     const buffedWordOfGlories = lightOfDawnCPM;
+    const oneWordOfGlory = player.getStatMultiplier("ALL") * 3.15 * processPaladinRawHealing(player.getStatPerc("Crit")) * 0.95;
+    const oneLightOfDawn = player.getStatMultiplier("ALL") * 1.05 * lightOfDawnTargets * processPaladinRawHealing(player.getStatPerc("Crit")) * 0.78;
+
     const wordOfGloryMasteryCoeff = (1+(player.getStatPerc("Mastery")-1) * 1.5) / (player.getStatPerc("Mastery"))
-    const oneWordOfGloryBonus = Math.max(0, (player.getSingleCast(IDWORDOFGLORY, contentType) * wordOfGloryMasteryCoeff) - player.getSingleCast(IDLIGHTOFDAWN, contentType));
+    const oneWordOfGloryBonus = Math.max(0, (oneWordOfGlory * wordOfGloryMasteryCoeff) - oneLightOfDawn);
     const HPSWordOfGlory = buffedWordOfGlories * oneWordOfGloryBonus / 60;
-
-    //console.log("MastDiff: " + mastDiff + ". LoDUptime: " + lightOfDawnUptime + "Max: " + maxMasteryEff + ". Avg: " + averageMasteryEff);
-
+    
+    /*
+    console.log("MastDiff: " + mastDiff + ". LoDUptime: " + lightOfDawnUptime + "Max: " + maxMasteryEff + ". Avg: " + averageMasteryEff);
+    console.log("Coeff: " + wordOfGloryMasteryCoeff + ". oneBonus: " + oneWordOfGloryBonus);
+    console.log("One Word of Glory: " + oneWordOfGlory + ". One LoD: " + oneLightOfDawn);
+    */
     bonus_stats.hps = Math.round(HPSMasteryBonus + HPSWordOfGlory);
 
   } else if (name === "Of Dusk and Dawn") {
 
-    const offensiveBuffUptime = 0.9;
+    const offensiveBuffUptime = 0.84;
     const legendaryBonus = 0.06;
 
+    bonus_stats.dps = 5;
     bonus_stats.hps = Math.round(offensiveBuffUptime * legendaryBonus * player.getHPS(contentType));
 
   } else if (name === "Vanguards Momentum") {
+
     bonus_stats.hps = -1;
+
   } else if (name === "The Magistrates Judgment") {
-    bonus_stats.hps = -1;
+    const procChance = 0.6;
+    const judgementCPM = 4.1;
+    const healingOneHolyPower = getOneHolyPower(player, contentType);
+
+    bonus_stats.hps = procChance * judgementCPM * healingOneHolyPower / 60;
+
   } else if (name === "Maraads Dying Breath") {
     bonus_stats.hps = -1;
   } else if (name === "Relentless Inquisitor") {
+    
     const averageStacks = 4.8;
-
     bonus_stats.haste = averageStacks * 33;
+
   } else if (name === "The Mad Paragon") {
     // Considerations
     // - Mad Paragon also itself expands the number of hammer CPM you can expect which isn't considered in the formula, which is based off our wings uptime without the legendary.
