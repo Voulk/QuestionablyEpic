@@ -68,6 +68,7 @@ const createLegendary = (legendaryName, container, spec, player, contentType) =>
     contentType
   );
   lego.effectiveHPS = convertToHPS(lego.bonus_stats, player, contentType);
+  lego.effectiveDPS = "dps" in lego.bonus_stats ? lego.bonus_stats.dps : 0;
 
   container.push(lego);
 };
@@ -230,6 +231,7 @@ class Legendary {
     this.image = 0;
     this.bonus_stats = {};
     this.effectiveHPS = 0;
+    this.effectiveDPS = 0;
     //this.expectedHps = 0;
     //this.expectedDps = 0;
     //this.singleTargetHPS = 0;

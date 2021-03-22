@@ -275,7 +275,7 @@ class Player {
     return Math.round(statPerc * 10000) / 10000;
   };
 
-  // Returns a stat multiplier.
+  // Returns a stat multiplier. This function is really bad and needs to be rewritten. 
   getStatMultiplier = (flag, statList = []) => {
     let mult = 1;
     if (flag === "ALL") {

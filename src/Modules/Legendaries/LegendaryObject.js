@@ -83,10 +83,15 @@ export default function LegendaryObject(props) {
   const item = props.item;
   const player = props.player;
   const hpsString = item.effectiveHPS > 5 ? Math.round(item.effectiveHPS) : "Coming Soon";
+  const paddedDPS = Math.round(item.effectiveDPS).toString().padStart(3);
+  const dpsString = item.effectiveDPS > 5 ? "DPS: " + paddedDPS : "";
+
   const classes = useStyles();
   const bull = <span className={classes.bullet}>•</span>;
 
+
   return (
+    
     <Grid item xs={12} sm={6} md={6} lg={4} xl={3}>
       <Card className={classes.root} variant="outlined">
         <CardContent className={classes.content}>
@@ -137,6 +142,8 @@ export default function LegendaryObject(props) {
               <CardContent style={{ padding: 0, height: 20 }}>
                 <Typography align="center" variant="caption" component="p" style={{ lineHeight: 1.1, fontSize: "16px" }}>
                   {t("HPS")}: {hpsString}
+                  <br />
+                  {dpsString !== "" ? dpsString : ""}
                   <br />
                 </Typography>
               </CardContent>

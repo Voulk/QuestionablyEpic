@@ -4,7 +4,7 @@ const IDHOLYSHOCK = 20473;
 const IDSHOCKBARRIER = 337824;
 const IDWORDOFGLORY = 85673;
 
-// Returns the expected HPS of the player getting one Holy Power.
+// Returns the expected healing of the player getting one Holy Power.
 export function getOneHolyPower(player, contentType) {
   const isDP = true;
   const oneLoD = Math.round(player.getSingleCast(IDLIGHTOFDAWN, contentType));
