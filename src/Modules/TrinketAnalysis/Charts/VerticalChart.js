@@ -50,6 +50,13 @@ const cleanZerosFromArray = (obj) => {
       return object;
     }, {});
 };
+
+const truncateString = (str, num) => {
+  if (str.length <= num) {
+    return str
+  }
+  return str.slice(0, num) + '...'
+}
 export default class VerticalChart extends PureComponent {
   constructor(props) {
     super();
@@ -91,7 +98,7 @@ export default class VerticalChart extends PureComponent {
         <g transform={`translate(${x},${y})`}>
           <foreignObject x={-300} y={-10} width="300" height="22" style={{ textAlign: "right" }}>
             <text x={0} y={-10} style={{ color: "#fff", marginRight: 5, verticalAlign: "top", position: "relative", top: 2 }}>
-              {getTranslatedItemName(payload.value, currentLanguage)}
+              {truncateString(getTranslatedItemName(payload.value, currentLanguage), 32)}
             </text>
             <a data-wowhead={"item=" + payload.value + "&ilvl=200" + "&domain=" + currentLanguage}>
               <img width={20} height={20} x={0} y={0} src={getItemIcon(payload.value)} style={{ borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.12)" }} />
