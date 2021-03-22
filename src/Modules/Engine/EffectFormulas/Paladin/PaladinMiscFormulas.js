@@ -18,6 +18,16 @@ export function getWingsHealingInc(critPerc) {
   return ((critPerc + 0.3) / critPerc) * 1.3;
 }
 
+export function processPaladinRawHealing(critPerc) {
+  const isAwakening = true;
+  const wingsBaseUptime = (20 + (isAwakening ? 25 : 0)) / 120;
+  const wingsHealingInc = getWingsHealingInc(critPerc);
+
+  //console.log((wingsBaseUptime * wingsHealingInc) + (1 - wingsBaseUptime) + ". Uptime: " + wingsBaseUptime + ". HealingInc: " + wingsHealingInc);
+  return (wingsBaseUptime * wingsHealingInc) + (1 - wingsBaseUptime);
+
+}
+
 // Credit: Betsujin
 export function getAwakeningWingsUptime(player, contentType) {
   let _cpm = 29; // Holy power generated / min

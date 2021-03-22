@@ -355,12 +355,17 @@ class Player {
     return (this.getSpellCasts(spellID, contentType) / this.getFightLength(contentType)) * 60;
   };
 
+
   getSpellCasts = (spellID, contentType) => {
     return this.castModel[contentType].getSpellData(spellID, "casts");
   };
 
   getSpellHPS = (spellID, contentType) => {
     return this.castModel[contentType].getSpellData(spellID, "hps");
+  };
+
+  getSpellRawHPS = (spellID, contentType) => {
+    return this.castModel[contentType].getSpellData(spellID, "hps") / (1 - this.castModel[contentType].getSpellData(spellID, "overhealing"));
   };
 
   /* --------------- Return the Spell List for the content Type --------------- */
