@@ -271,7 +271,7 @@
       "QuickCompare": "Быстрое сравнение экипировки",
       "ExploreCovenants": "Исследуйте ковенанты",
       "LegendaryAnalysis": "Анализ легендарных эффектов",
-      "TrinketAnalysis": "Trinket Analysis",
+      "TrinketAnalysis": "Анализ аксессуаров",
       "CooldownPlanner": "Планировщик кулдаунов",
       "Profile": "Профиль",
       "CharHeader": "Персонажи",
@@ -567,7 +567,7 @@
     },
 
     "TrinketAnalysis": {
-      "Header": "Trinket Analysis",
+      "Header": "Анализ аксессуаров",
       "HelpText": "Use the graph below as a rough guide of which trinkets are worth pursuing, and then use Quick Compare or Top Gear to compare specific choices. World quest trinkets and settings panel coming soon."
     },
 

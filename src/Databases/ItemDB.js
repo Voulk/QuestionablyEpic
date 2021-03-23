@@ -70883,12 +70883,12 @@ export const itemDB = [
         "names": {
             "cn": "",
             "en": "Soulletting Ruby",
-            "ru": "Soulletting Ruby",
+            "ru": "Рубин иссечения душ",
             "es": "Soulletting Ruby",
             "br": "Soulletting Ruby",
             "kr": "",
             "fr": "Soulletting Ruby",
-            "de": "Soulletting Ruby"
+            "de": "Seelenlassender Rubin"
         },
         "icon": "inv_jewelcrafting_livingruby_01",
         "itemClass": 4,
