@@ -217,7 +217,7 @@ class Player {
       // Error checking
       if (item.softScore < 0) {
         // Scores should never go below 0.
-        reportError(this, "Player", "Item scored at below 0", item.softScore);
+        reportError(this, "Player", "Item scored at below 0. ID: " + item.id, item.softScore);
         throw new Error("Invalid score when scoring active items.");
       }
     }
