@@ -180,8 +180,8 @@ export default function TopGear(props) {
   const selectedItemCount = props.player.getSelectedItems().length;
   const helpText = t("TopGear.HelpText");
 
-  const activateItem = (unique) => {
-    if (selectedItemCount < CONSTRAINTS.Shared.topGearMaxItems) {
+  const activateItem = (unique, active) => {
+    if (selectedItemCount < CONSTRAINTS.Shared.topGearMaxItems || active) {
       let player = props.player;
       player.activateItem(unique);
       setItemList([...player.getActiveItems(activeSlot)]);

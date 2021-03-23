@@ -25,8 +25,8 @@ const useStyles = makeStyles({
   selected: {
     minWidth: 250,
     borderRadius: 3,
-    borderColor: "Goldenrod",
-    backgroundColor: "#494a3d",
+    //borderColor: "Goldenrod",
+    //backgroundColor: "#494a3d",
     borderWidth: "2px",
   },
   selectedVault: {
