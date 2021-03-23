@@ -287,7 +287,8 @@
         "LegendaryAnalysis": "Find your best legendary power and where to get it",
         "CooldownPlanner": "Plan your cooldowns. Create your own or analyse logs",
         "Profile": "Edit your details",
-        "UpgradeFinder": "Find your next piece of gear!"
+        "UpgradeFinder": "Find your next piece of gear!",
+        "TrinketAnalysis": "See how this tiers trinkets line up in graph form"
       }
     },
 
