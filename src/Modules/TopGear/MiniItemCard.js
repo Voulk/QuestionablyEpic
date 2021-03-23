@@ -63,7 +63,7 @@ export default function ItemCard(props) {
   };
 
   const activateItemCard = () => {
-    props.activateItem(item.uniqueHash);
+    props.activateItem(item.uniqueHash, item.active);
   };
 
   let itemName = "";
