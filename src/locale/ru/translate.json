@@ -554,6 +554,11 @@
       "HelpText": "Чтобы найти источники получения лучшей экипировки: вставьте строку SimC, выберите до двух режимов рейдовой сложности, ваш обычный уровень ключа, который вы закрываете, и укажите ваш рейтинг PvP."
     },
 
+    "TrinketAnalysis": {
+      "Header": "Trinket Analysis",
+      "HelpText": "Use the graph below as a rough guide of which trinkets are worth pursuing, and then use Quick Compare or Top Gear to compare specific choices. World quest trinkets and settings panel coming soon."
+    },
+
     "DruidLegendariesComment": "DruidLegendariesComment",
     "Vision of Unending Growth": {
       "name": "Видение бесконечного роста",
