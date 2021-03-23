@@ -90,11 +90,22 @@ export default function CovenantExploration(props) {
   useEffect(() => {
     ReactGA.pageview(window.location.pathname + window.location.search);
   }, []);
+
   const { t, i18n } = useTranslation();
   const classes = useStyles();
   const [tabvalue, setTabValue] = React.useState(0);
   const [soulbindValue, setSoulbindValue] = React.useState(0);
   const [soulbindState, setSoulbindState] = React.useState(buildBonusStats(soulbindDB, props.player, props.contentType));
+
+  useEffect(() => {
+    let updatedArray = soulbindState.map((trait) => {
+      return {
+        ...trait,
+        bonus_stats: getSoulbindFormula(trait.id, props.player, props.contentType),
+      };
+    });
+    setSoulbindState(updatedArray);
+  }, [props.contentType]);
 
   function updateConduitLevel(id, newLevel) {
     props.player.updateConduitLevel(id, newLevel);
@@ -237,15 +248,7 @@ export default function CovenantExploration(props) {
               {buildSoulbind("Kleia", props.player, props.contentType, soulbindState, activateSoulbind, setConduitInSlot, updateConduitLevel)}
             </TabPanel>
             <TabPanel value={soulbindValue} index={2} style={{ display: "inline-flex" }}>
-              {buildSoulbind(
-                "Mikanikos",
-                props.player,
-                props.contentType,
-                soulbindState,
-                activateSoulbind,
-                setConduitInSlot,
-                updateConduitLevel,
-              )}
+              {buildSoulbind("Mikanikos", props.player, props.contentType, soulbindState, activateSoulbind, setConduitInSlot, updateConduitLevel)}
             </TabPanel>
           </div>
         </TabPanel>
