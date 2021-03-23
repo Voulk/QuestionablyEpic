@@ -22,6 +22,19 @@ const useStyles = makeStyles({
     margin: "0 2px",
     transform: "scale(0.8)",
   },
+  selected: {
+    minWidth: 250,
+    borderRadius: 3,
+    borderColor: "Goldenrod",
+    backgroundColor: "#494a3d",
+    borderWidth: "2px",
+  },
+  selectedVault: {
+    borderColor: "Goldenrod",
+    backgroundColor: "#494a3d",
+    minWidth: 250,
+    borderStyle: "dashed",
+  },
   title: {
     fontSize: 14,
   },
@@ -68,7 +81,6 @@ export default function ItemCard(props) {
   if (item.offhandID > 0) {
     itemName = getTranslatedItemName(item.id, currentLanguage);
     itemName2 = getTranslatedItemName(item.offhandID, currentLanguage);
-    //console.log(item);
   } else {
     if (isLegendary) itemName = item.effect.name;
     else itemName = getTranslatedItemName(item.id, currentLanguage);
@@ -82,11 +94,13 @@ export default function ItemCard(props) {
 
   const tertiary = props.item.tertiary !== "" ? <div style={{ display: "inline" }}> / {props.item.tertiary} </div> : null;
 
+  console.log(item);
+
   // If item.offHandID > 0 then return this card which handles the double names + stats
   if (item.offhandID > 0) {
     return (
       <Grid item xs={12} sm={6} md={6} lg={4} xl={4}>
-        <Card className={classes.root} variant="outlined">
+        <Card className={item.isEquipped && isVault ? classes.selectedVault : item.isEquipped ? classes.selected : isVault ? classes.vault : classes.root} variant="outlined">
           <Grid container display="inline-flex" wrap="nowrap" justify="space-between">
             <Grid item xs="auto">
               <CardContent
@@ -182,7 +196,7 @@ export default function ItemCard(props) {
 
   return (
     <Grid item xs={12} sm={6} md={6} lg={4} xl={4}>
-      <Card className={isVault ? classes.vault : classes.root} variant="outlined">
+      <Card className={item.isEquipped && isVault ? classes.selectedVault : item.isEquipped ? classes.selected : isVault ? classes.vault : classes.root} variant="outlined">
         <Grid container display="inline-flex" wrap="nowrap" justify="space-between">
           <Grid item xs="auto">
             <CardContent
