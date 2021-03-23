@@ -29,7 +29,6 @@ const getHighestTrinketScore = (db, trinket) => {
   const item = temp[0];
   const highestLevel = item.levelRange[item.levelRange.length - 1];
 
-  console.log(trinket.name + " " + trinket["i" + highestLevel]);
   return trinket["i" + highestLevel];
 
   
@@ -61,7 +60,6 @@ export default function TrinketAnalysis(props) {
     }
     activeTrinkets.push(trinketAtLevels);
   }
-  console.log(activeTrinkets);
   activeTrinkets.sort((a, b) => (getHighestTrinketScore(trinketDB, a) < getHighestTrinketScore(trinketDB, b) ? 1 : -1));
   return (
     <div
