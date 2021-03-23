@@ -54,18 +54,24 @@ export async function apiSendUpgradeFinder(player, content) {
 
 // export function dbUpdateChar() {}
 export async function apiGetPlayerImage(player) {
-  let region = player.region.toLowerCase();
-  let name = player.charName.toLowerCase();
-  let realm = player.realm.toLowerCase().replace(" ", "-");
-  let urlReturned = "";
-  let fetchUrl = "https://questionablyepic.com/api/getplayerimage.php?pregion=" + region + "&pname=" + encodeURIComponent(name) + "&prealm=" + realm;
-  await fetch(fetchUrl)
-    .then((res) => res.text())
-    .then((response) => {
-      urlReturned = response.toString();
-    })
-    .catch((err) => console.log(err));
-  return urlReturned;
+  if (player !== undefined) {
+    let region = player.region.toLowerCase();
+    let name = player.charName.toLowerCase();
+    let realm = player.realm.toLowerCase().replace(" ", "-");
+    let urlReturned = "";
+    let fetchUrl = "https://questionablyepic.com/api/getplayerimage.php?pregion=" + region + "&pname=" + encodeURIComponent(name) + "&prealm=" + realm;
+    await fetch(fetchUrl)
+      .then((res) => res.text())
+      .then((response) => {
+        urlReturned = response.toString();
+      })
+      .catch((err) => console.log(err));
+    return urlReturned;
+  }
+  else {
+    return "";
+  }
+
 }
 
 export async function apiSendError(player, errorType, errorMessage, result) {
