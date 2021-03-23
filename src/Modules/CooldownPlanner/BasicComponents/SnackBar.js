@@ -2,6 +2,7 @@ import React from "react";
 import Snackbar from "@material-ui/core/Snackbar";
 import MuiAlert from "@material-ui/lab/Alert";
 import { makeStyles } from "@material-ui/core/styles";
+import { useTranslation } from "react-i18next";
 
 function Alert(props) {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
@@ -18,23 +19,15 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function CustomizedSnackbars(severity, message) {
+export default function QESnackbar(props) {
   const classes = useStyles();
-  const [open, setOpen] = React.useState(true);
-
-  const handleClose = (event, reason) => {
-    if (reason === "clickaway") {
-      return;
-    }
-
-    setOpen(false);
-  };
+  const { t } = useTranslation();
 
   return (
     <div className={classes.root}>
-      <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
-        <Alert onClose={handleClose} severity={severity}>
-          {message}
+      <Snackbar open={props.open} autoHideDuration={2000} onClose={props.onClose} anchorOrigin={props.anchorOrigin}>
+        <Alert onClose={props.onClose} severity={props.severity}>
+          {t(props.message)}
         </Alert>
       </Snackbar>
     </div>

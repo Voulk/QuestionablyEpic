@@ -10,6 +10,16 @@
 export const changeLog = [
   {
     version: "9.0.5",
+    update: 3,
+    date: "23th March",
+    changes: [
+      "Added the Trinket Analysis module",
+      "Added another large set of Russian translations",
+      "Default class trinket models updated slightly. You should see only slight shifts.",
+    ],
+  },
+  {
+    version: "9.0.5",
     update: 2,
     date: "11th March",
     changes: [

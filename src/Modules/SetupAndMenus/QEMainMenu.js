@@ -23,7 +23,7 @@ const mainMenuOptions = {
   "MainMenu.QuickCompare": ["/quickcompare", true, "QuickCompare"],
   "MainMenu.ExploreCovenants": ["/soulbinds", true, "ExploreCovenants"],
   "MainMenu.LegendaryAnalysis": ["/legendaries", true, "LegendaryAnalysis"],
-  //"MainMenu.TrinketAnalysis": ["/trinkets", false, "TrinketAnalysis"],
+  "MainMenu.TrinketAnalysis": ["/trinkets", true, "TrinketAnalysis"],
   "MainMenu.CooldownPlanner": ["/holydiver", false, "CooldownPlanner"],
   "MainMenu.Profile": ["/profile", true, "Profile"],
 };
@@ -62,50 +62,18 @@ export default function QEMainMenu(props) {
   const characterCount = props.allChars.getAllChar().length;
   const patron = ["Diamond", "Gold", "Rolls Royce", "Sapphire"].includes(props.patronStatus);
 
-  //const articles = dbGetArticleList();
-  //console.log(articles);
   let articles = [];
   if (props.allChars.allChar.length > 0) {
     articles = props.articleList.filter((article) => article.specs.includes(props.player.getSpec()) || article.specs === "All");
     articles.sort((a, b) => (a.date < b.date ? 1 : -1));
     articles = articles.slice(0, 3);
   }
-
-  /*
-  const links = [
-    {
-      image: "https://questionablyepic.com/wp-content/uploads/2020/11/Castle-Nathria-300x250.jpg",
-      title: "Castle Nathria Ramp Guide I – Discipline",
-      url: "https://questionablyepic.com/castle-nathria-ramps/",
-      date: "January 27, 2021",
-      specs: ["Priest"],
-      blurb: "Castle Nathria opens Shadowlands with a fantastic ten boss raid in which Disc Priest reigns...",
-    },
-    {
-      image: "https://questionablyepic.com/wp-content/uploads/2021/01/Rising-Mist-in-Mythic-300x250.jpg",
-      title: "The Fistweaving Compendium – Mythic+",
-      url: "https://questionablyepic.com/fistweaving-dungeon-compendium/",
-      date: "January 23, 2021",
-      specs: ["Monk"],
-      blurb: "The following guide was written by Sweggles from Vesper on Area 52...",
-    },
-    {
-      image: "https://questionablyepic.com/wp-content/uploads/2021/01/Rising-Mist-vs-Upwelling-300x250.jpg",
-      title: "The Fistweaving Compendium – Raid",
-      url: "https://questionablyepic.com/fistweaving-raid-compendium/",
-      date: "January 18, 2021",
-      specs: ["Monk"],
-      blurb: "The following guide was written by Sweggles from Vesper on Area 52...",
-    },
-  ]; */
-
   const oddEven = (number) => {
     if (number % 2 == 0) {
       return "left";
     }
     return "right";
   };
-  //console.log(props.patronStatus);
 
   return (
     <div style={{ backgroundColor: "#313131" }}>
@@ -163,15 +131,12 @@ export default function QEMainMenu(props) {
           ))}
         </Grid>
 
-        {/* <p className="headers"> */}
         <Typography variant="h5" align="center" style={{ padding: "25px 10px 5px 10px" }} color="primary">
           {t("MainMenu.CharHeader")}
           <Tooltip title={t("MainMenu.CharHelpText")} placement="top-start">
             <InfoOutlinedIcon style={{ color: "white", marginLeft: 4 }} fontSize="small" />
           </Tooltip>
         </Typography>
-
-        {/* </p> */}
 
         <Grid container spacing={2}>
           {props.allChars.getAllChar().length > 0

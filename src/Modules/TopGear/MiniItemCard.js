@@ -3,7 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import { Card, CardContent, Typography, Grid, Divider, IconButton } from "@material-ui/core";
 import { getTranslatedItemName, buildStatString, getItemIcon } from "../Engine/ItemUtilities";
 import "./MiniItemCard.css";
-import DeleteIcon from "@material-ui/icons/Delete";
+// import DeleteIcon from "@material-ui/icons/Delete";
 import socketImage from "../../Images/Resources/EmptySocket.png";
 import { useTranslation } from "react-i18next";
 import CardActionArea from "@material-ui/core/CardActionArea";
@@ -63,13 +63,12 @@ export default function ItemCard(props) {
   };
 
   const activateItemCard = () => {
-    // console.log("Activating item with Hash: " + item.uniqueHash);
-    props.activateItem(item.uniqueHash);
+    props.activateItem(item.uniqueHash, item.active);
   };
 
   let itemName = "";
   let isVault = item.vaultItem;
-  const deleteActive = item.offhandID === 0;
+  // const deleteActive = item.offhandID === 0;
 
   if (item.offhandID > 0) {
     itemName = getTranslatedItemName(item.id, currentLanguage) + " & " + getTranslatedItemName(item.offhandID, currentLanguage);
@@ -131,7 +130,7 @@ export default function ItemCard(props) {
                 <Grid item container display="inline" direction="row" xs="auto" justify="space-between">
                   <Grid item xs={11}>
                     <Typography variant="subtitle2" wrap="nowrap" display="block" align="left" style={{ fontSize: "12px" }}>
-                      {socket} {statString} {tertiary} {isVault ? " / Great Vault Item" : ""}
+                      {socket} {statString} {tertiary} {isVault ? " / " + t("itemTags.greatvault") : ""}
                     </Typography>
                   </Grid>
                 </Grid>

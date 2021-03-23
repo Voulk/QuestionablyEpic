@@ -4,7 +4,7 @@ const IDHOLYSHOCK = 20473;
 const IDSHOCKBARRIER = 337824;
 const IDWORDOFGLORY = 85673;
 
-// Returns the expected HPS of the player getting one Holy Power.
+// Returns the expected healing of the player getting one Holy Power.
 export function getOneHolyPower(player, contentType) {
   const isDP = true;
   const oneLoD = Math.round(player.getSingleCast(IDLIGHTOFDAWN, contentType));
@@ -16,6 +16,16 @@ export function getOneHolyPower(player, contentType) {
 
 export function getWingsHealingInc(critPerc) {
   return ((critPerc + 0.3) / critPerc) * 1.3;
+}
+
+export function processPaladinRawHealing(critPerc) {
+  const isAwakening = true;
+  const wingsBaseUptime = (20 + (isAwakening ? 25 : 0)) / 120;
+  const wingsHealingInc = getWingsHealingInc(critPerc);
+
+  //console.log((wingsBaseUptime * wingsHealingInc) + (1 - wingsBaseUptime) + ". Uptime: " + wingsBaseUptime + ". HealingInc: " + wingsHealingInc);
+  return (wingsBaseUptime * wingsHealingInc) + (1 - wingsBaseUptime);
+
 }
 
 // Credit: Betsujin

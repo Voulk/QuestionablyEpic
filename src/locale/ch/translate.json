@@ -470,6 +470,16 @@
       "Setting5TextFieldLabel": ""
     },
 
+    "Snackbars": {
+      "CharAddSuccess": "Character Added!",
+      "CharUpdateSuccess": "Character Updated!",
+      "LoginSuccess": "Logged in Successfully!",
+      "SimCImportSuccess": "SimC String Imported Successfully!",
+      "LogImportSuccess": "Log Imported Successfully!",
+      "EmailUpdateSuccess": "Email Updated!",
+      "EmailError": "Please check the Email and try again"
+    },
+
     "SpellNames": {
       "MonkSpells": "",
       "124682": "氤氲之雾",
@@ -512,7 +522,8 @@
       "GoMsg": "Go!CH",
       "SelectedItems": "Selected ItemsCH",
       "CompetitiveAlternative": "Competitive AlternativesCH",
-      "StatPanel": { "AvgStats": "Average Stats (includes procs)CH" }
+      "StatPanel": { "AvgStats": "Average Stats (includes procs)CH" },
+      "itemMissingError": "Error: Add item - "
     },
 
     "UpgradeFinder": {

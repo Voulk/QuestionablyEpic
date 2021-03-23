@@ -6,18 +6,18 @@
       "CreateChar": "Create New Character",
       "AddChar": "Добавить персонажа",
       "CharName": "Имя персонажа",
-      "ServerName": "Server Name",
-      "CharacterInfo": "Character Information",
+      "ServerName": "Название сервера",
+      "CharacterInfo": "Иформация о персонаже",
       "StatWeights": "Stat Weights",
       "SavedLogs": {
-        "TabHeader": "Saved Logs(Coming Soon)",
-        "Header": "Current Log",
-        "Report": "Report",
-        "Boss": "Boss",
-        "FightLength": "Fight Length",
+        "TabHeader": "Сохраненные логи(Скоро)",
+        "Header": "Текущий лог",
+        "Report": "Отчет",
+        "Boss": "Босс",
+        "FightLength": "Длительность боя",
         "HPS": "HPS",
         "RawHPS": "Raw HPS",
-        "ResetToDefaults": "Reset to Defaults"
+        "ResetToDefaults": "Сбросить"
       }
     },
 
@@ -32,11 +32,11 @@
     "Submit": "Отправить",
     "Save": "Сохранить",
     "Delete": "Delete",
-    "Intellect": "интеллекту",
+    "Intellect": "Интеллект",
     "Crit": "Критический удар",
     "Haste": "Скорость",
     "Mastery": "Искусность",
-    "Versatility": "универсальность",
+    "Versatility": "Yниверсальность",
     "Leech": "Самоисцеление",
     "Region": "Регион",
     "Race": "Раса",
@@ -47,7 +47,7 @@
     "No": "No",
     "None": "Нет",
     "Add": "Добавить",
-    "Avoidance": "Avoidance",
+    "Avoidance": "Избегание",
     "Source": "Источник",
     "Default": "Default",
     "Remove": "Remove",
@@ -57,9 +57,9 @@
     "Overhealing": " Overhealing",
     "Account": "Account",
     "Email": "Email",
-    "Battletag": "Battletag",
+    "Battletag": "BattleTag",
     "Edit": "Edit",
-    "Equipped": "Equipped",
+    "Equipped": "Надето",
 
     "Changelog": {
       "Header": "Changelog",
@@ -135,8 +135,8 @@
       },
       "UserInputs": {
         "_Comments1": "Translations for the User Input Components",
-        "Loglink": "Paste WarcraftLog Link Here",
-        "fightButtonLabel": "Select Fight"
+        "Loglink": "Вставьте сюда ссылку с WarcraftLogs",
+        "fightButtonLabel": "Выберите бой"
       },
       "HealerCards": {
         "_Comments1": "Translations for the Accordian for Healer Info",
@@ -271,13 +271,13 @@
       "QuickCompare": "Быстрое сравнение экипировки",
       "ExploreCovenants": "Исследуйте ковенанты",
       "LegendaryAnalysis": "Анализ легендарных эффектов",
-      "TrinketAnalysis": "Trinket Analysis",
+      "TrinketAnalysis": "Анализ аксессуаров",
       "CooldownPlanner": "Планировщик кулдаунов",
       "Profile": "Профиль",
       "CharHeader": "Персонажи",
       "CharHelpText": "Добавьте сюда своих персонажей. Кликните по ним правой кнопкой, чтобы изменить вес характеристик, сервер и остальное.",
       "Articles": {
-        "Header": "Recent Spec Articles",
+        "Header": "Последние статьи",
         "HelpText": ""
       },
       "Tooltips": {
@@ -287,7 +287,7 @@
         "LegendaryAnalysis": "Найти лучший легендарный эффект и узнать как его добыть.",
         "CooldownPlanner": "Plan your cooldowns. Create your own or analyse logs",
         "Profile": "Отредактировать информацию о себе",
-        "UpgradeFinder": "Find your next piece of gear!"
+        "UpgradeFinder": "Найти улучшения Вашей экипировки из рейда, подземелий или PVP"
       }
     },
 
@@ -310,7 +310,7 @@
       "QeTier": "QE Live Tier",
       "ProfileHeader": "Профиль",
       "EditionAffix": "Edition",
-      "StandardEdition": "Standard Edition",
+      "StandardEdition": "Стандартное издание",
       "NoBattleTag": "Аккаунт Battle.net не привязан"
     },
 
@@ -357,13 +357,13 @@
     "BossNames": {
       "2393": "Визгунья",
       "2429": "Ловчий Альтимор",
-      "2422": "Sun King's Salvation",
+      "2422": "Спасение Солнечного короля",
       "2418": "Изобретатель Зи'Мокс",
       "2428": "Алчущий разрушитель",
       "2420": "Леди Инерва Дарквейн",
-      "2426": "The Council of Blood",
+      "2426": "Совет Крови",
       "2394": "Грязешмяк",
-      "2425": "Stone Legion Generals",
+      "2425": "Генералы Каменного легиона",
       "2424": "Сир Денатрий",
       "999": "BoE Trash Drops"
     },
@@ -442,7 +442,7 @@
       "ConduitInstructions": "Правый/Левый клик по проводнику для изменения уровня",
       "StatPanel": {
         "Summary": "Сводка",
-        "Score": "Общий ХПС",
+        "Score": "Общий HPS",
         "CovenantEstimate": "Способность ковенанта",
         "SelectedNodes": "Выбранные ячейки"
       }
@@ -455,14 +455,14 @@
       "versatility": "универсальность"
     },
     "Settings": {
-      "SettingsTitle": "Settings",
+      "SettingsTitle": "Настройки",
       "Setting0Spacer": "--------------------------------------------------------------------",
-      "Setting0Tooltip": "The equip effect of 'Cabalist's Hymnal' is increased by 5% per Ally",
-      "Setting0Title": "Allies With Hymnal",
+      "Setting0Tooltip": "Эффект Гимнария кабалиста увеличивается на 5% за каждого союзника",
+      "Setting0Title": "Союзники с Гимнарием кабалиста",
       "Setting0TextFieldLabel": "Allies",
       "Setting1Spacer": "--------------------------------------------------------------------",
-      "Setting1Tooltip": "Treat items that buff allies as if it were personal throughput",
-      "Setting1Title": "Group Benefits",
+      "Setting1Tooltip": "Считать усиления союзников с предметов как Вашу личную эффективность",
+      "Setting1Title": "Усиления союзников",
       "Setting1TextFieldLabel": "",
       "Setting2Spacer": "--------------------------------------------------------------------",
       "Setting2Tooltip": "",
@@ -489,9 +489,21 @@
       "ErrorMessage": "Очень жаль, похоже вы столкнулись с ошибкой. Попробуйте вернуться в главное меню и попробовать снова.",
       "GoMsg": "Вперёд!",
       "SelectedItems": "Выбранные предметы:",
-      "BackToGearSelection": "Back to Gear Selection",
+      "BackToGearSelection": "Вернуться к выбору экипировки",
       "CompetitiveAlternative": "Возможные альтернативы",
-      "StatPanel": { "AvgStats": "Усреднённые характеристики (включая проки)" }
+      "StatPanel": { "AvgStats": "Усреднённые характеристики (включая проки)" },
+      "itemMissingError": "Ошибка: добавьте предмет"
+      
+    },
+
+    "Snackbars": {
+      "CharAddSuccess": "Персонаж добавлен!",
+      "CharUpdateSuccess": "Персонаж обновлен!",
+      "LoginSuccess": "Вход успешно выполнен!",
+      "SimCImportSuccess": "Строка SimC успешно импортирована!",
+      "LogImportSuccess": "Лог успешно импортирован!",
+      "EmailUpdateSuccess": "Email обновлен!",
+      "EmailError": "Пожалуйста, проверьте адрес электронной почты и повторите попытку"
     },
 
     "SpellNames": {
@@ -533,8 +545,8 @@
       "MythicPlus": "Эпохальный+",
       "CurrentRaid": "Замок Нафрия",
       "PvP": "PvP",
-      "WorldBosses": "World Bosses",
-      "UpgradeBySlot": "Upgrade by Slot"
+      "WorldBosses": "Мировые боссы",
+      "UpgradeBySlot": "Улучшения по слотам"
     },
     "UpgradeFinderFront": {
       "Header": "Поиск улучшений",
@@ -548,10 +560,15 @@
       "SimCBody1": "Текущее состояние строки SimC:",
       "SimCBody2": "Экипировка на персонаже:",
       "SimCButton": "Импортируйте SimC",
-      "SimCBody1Good": "SimC - All Set!",
-      "SimCBody1Invalid": "SimC - Empty Item Slot",
-      "SimCBody1Missing": "SimC - Missing",
+      "SimCBody1Good": "SimC - Все в готово!",
+      "SimCBody1Invalid": "SimC - Не хватает предмета в слоте",
+      "SimCBody1Missing": "SimC - Отутствует",
       "HelpText": "Чтобы найти источники получения лучшей экипировки: вставьте строку SimC, выберите до двух режимов рейдовой сложности, ваш обычный уровень ключа, который вы закрываете, и укажите ваш рейтинг PvP."
+    },
+
+    "TrinketAnalysis": {
+      "Header": "Анализ аксессуаров",
+      "HelpText": "Use the graph below as a rough guide of which trinkets are worth pursuing, and then use Quick Compare or Top Gear to compare specific choices. World quest trinkets and settings panel coming soon."
     },
 
     "DruidLegendariesComment": "DruidLegendariesComment",
@@ -733,7 +750,7 @@
       "name": "Земная гармония",
       "slot": "Грудь, Спина",
       "desc": "Если запас здоровья цели, на которую наложен ваш 'Щит земли', составляет менее 75%, сила исцеления от 'Щита земли' увеличивается на 150%, а 'Волна исцеления' увеличивает количество эффектов 'Щита земли' на 1. Максимальное количество эффектов – 9.",
-      "droploc": "генерал Кааль"
+      "droploc": "Кровавые катакомбы"
     },
     "Jonat's Natural Focus": {
       "name": "Природное средоточие Джоната",

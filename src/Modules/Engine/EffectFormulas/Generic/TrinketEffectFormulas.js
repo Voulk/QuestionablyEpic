@@ -34,7 +34,7 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel, use
     let mana_heal_effect = activeTrinket.effects[0];
     let base_heal_effect = activeTrinket.effects[1];
 
-    let expected_mana_spend = 9000; // Per minute.
+    let expected_mana_spend = player.getSpec() === "Holy Paladin" ? 15500 : 18000; // Per minute.
     let base_heal = getProcessedValue(base_heal_effect.coefficient, base_heal_effect.table, itemLevel);
     let mana_heal = getProcessedValue(mana_heal_effect.coefficient, mana_heal_effect.table, itemLevel) * (expected_mana_spend / 3240);
 
@@ -87,7 +87,7 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel, use
 
   } else if (effectName === "Vial of Spectral Essence") {
     let effect = activeTrinket.effects[0];
-    bonus_stats.hps = (getProcessedValue(effect.coefficient, effect.table, itemLevel, effect.efficiency) / effect.cooldown) * player.getStatMultiplier("CRITVERS");
+    bonus_stats.hps = (getProcessedValue(effect.coefficient, effect.table, itemLevel, effect.efficiency) / effect.cooldown) * player.getStatPerc("Versatility");
     //console.log("Vial: " + getProcessedValue(effect.coefficient, effect.table, itemLevel, 1));
 
   } else if (effectName === "Soulletting Ruby") {
@@ -110,6 +110,7 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel, use
     let effect = activeTrinket.effects[0];
     // Hastes impact on the trinket PPM is included in the secondary multiplier below.
     bonus_stats.hps = (getProcessedValue(effect.coefficient, effect.table, itemLevel, effect.efficiency) / 60) * effect.ppm * player.getStatMultiplier("NOMAST");
+
 
   } else if (effectName === "Boon of the Archon") {
     let heal_effect = activeTrinket.effects[1];
@@ -145,7 +146,10 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel, use
 
     bonus_stats.intellect = (getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.duration) / effect.cooldown;
 
-    if (player.getSpec() === "Mistweaver Monk" && player.getCovenant() === "Venthyr") bonus_stats.intellect *= player.getCooldownMult("oneMinute", contentType);
+    // This is horribly messy and will be replaced very soon. 
+    if (player.getSpec() === "Mistweaver Monk" && player.getCovenant() === "necrolord") bonus_stats.intellect *= player.getCooldownMult("oneMinute", contentType);
+    else if (player.getSpec() === "Holy Paladin" && player.getCovenant() === "kyrian") bonus_stats.intellect *= player.getCooldownMult("oneMinute", contentType);
+    else if (player.getSpec() === "Holy Paladin" && player.getCovenant() !== "kyrian") bonus_stats.intellect *= ((player.getCooldownMult("oneMinute", contentType))-0.34);
     else if (player.getSpec() !== "Mistweaver Monk") bonus_stats.intellect *= player.getCooldownMult("oneMinute", contentType);
     
 

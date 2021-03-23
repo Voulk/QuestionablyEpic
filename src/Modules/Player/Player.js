@@ -27,6 +27,7 @@ class Player {
     this.realm = realm;
     this.race = race;
     this.uniqueHash = getUnique();
+    this.setDefaultCovenant(specName);
 
     if (statWeights !== "default" && statWeights.DefaultWeights === false) this.statWeights = statWeights;
     this.activeConduits = getAvailableClassConduits(specName);
@@ -115,6 +116,20 @@ class Player {
       throw new Error("Invalid Covenant Supplied");
     }
   };
+
+  setDefaultCovenant = (spec) => {
+    if (spec === "Holy Paladin") this.covenant = "kyrian";
+    else if (spec === "Restoration Druid") this.covenant = "night_fae";
+    else if (spec === "Restoration Shaman") this.covenant = "necrolord";
+    else if (spec === "Mistweaver Monk") this.covenant = "necrolord";
+    else if (spec === "Discipline Priest") this.covenant = "venthyr";
+    else if (spec === "Holy Priest") this.covenant = "night_fae"; // This one is very flexible, but is also not used in any current formulas. It will be replaced when the models are updated.
+    else {
+      reportError(this, "Player", "Invalid Covenant Supplied", spec);
+      throw new Error("Invalid Spec Supplied to Cov Default");
+    }
+
+  }
 
   calculateConduits = (contentType) => {
     this.activeConduits.forEach((conduit) => {
@@ -275,7 +290,7 @@ class Player {
     return Math.round(statPerc * 10000) / 10000;
   };
 
-  // Returns a stat multiplier.
+  // Returns a stat multiplier. This function is really bad and needs to be rewritten. 
   getStatMultiplier = (flag, statList = []) => {
     let mult = 1;
     if (flag === "ALL") {
@@ -355,12 +370,17 @@ class Player {
     return (this.getSpellCasts(spellID, contentType) / this.getFightLength(contentType)) * 60;
   };
 
+
   getSpellCasts = (spellID, contentType) => {
     return this.castModel[contentType].getSpellData(spellID, "casts");
   };
 
   getSpellHPS = (spellID, contentType) => {
     return this.castModel[contentType].getSpellData(spellID, "hps");
+  };
+
+  getSpellRawHPS = (spellID, contentType) => {
+    return this.castModel[contentType].getSpellData(spellID, "hps") / (1 - this.castModel[contentType].getSpellData(spellID, "overhealing"));
   };
 
   /* --------------- Return the Spell List for the content Type --------------- */

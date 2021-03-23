@@ -146,7 +146,7 @@ function TopGearReport(props) {
               >
                 <Grid container direction="row" spacing={1}>
                   <Grid item xs={12}>
-                    <Button color="primary" component={Link} to={"/topgear"}>
+                    <Button color="primary" variant="outlined" component={Link} to={"/topgear"}>
                       {t("TopGear.BackToGearSelection")}
                     </Button>
                   </Grid>

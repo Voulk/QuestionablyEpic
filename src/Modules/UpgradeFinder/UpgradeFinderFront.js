@@ -280,20 +280,6 @@ export default function UpgradeFinderFront(props) {
               </Grid>
             </Grid>
 
-            {/* <Grid container justify="center" spacing={1}>
-              {raidDifficulty.map((key) => (
-                <Grid item justify="center" xs="auto">
-                  <Button
-                    className={classes.button}
-                    variant="contained"
-                    color="primary"
-                    disableElevation
-                  >
-                    {key}
-                  </Button>
-                </Grid>
-              ))}
-            </Grid> */}
             <Grid container justify="center" spacing={1}>
               {raidDifficulty.map((key, i) => (
                 <Grid item xs="auto" key={i}>
@@ -303,7 +289,6 @@ export default function UpgradeFinderFront(props) {
                       selected: classes.selectedRed,
                     }}
                     value="check"
-                    //selected={selectsPvE[i]}
                     selected={props.playerSettings.raid.includes(i)}
                     style={{ width: 180, height: 45 }}
                     onChange={() => {
@@ -405,14 +390,7 @@ export default function UpgradeFinderFront(props) {
             <Typography variant="subtitle2" align="center" style={{ padding: "5px 10px 5px 10px" }} color="primary">
               {/* {errorMessage} */}
             </Typography>
-            <Button
-              variant="contained"
-              color="secondary"
-              align="center"
-              style={{ height: "68%", width: "180px" }}
-              disabled={!getUpgradeFinderReady(props.player)}
-              onClick={unleashUpgradeFinder}
-            >
+            <Button variant="contained" color="secondary" align="center" style={{ height: "68%", width: "180px" }} disabled={!getUpgradeFinderReady(props.player)} onClick={unleashUpgradeFinder}>
               {t("TopGear.GoMsg")}
             </Button>
           </div>

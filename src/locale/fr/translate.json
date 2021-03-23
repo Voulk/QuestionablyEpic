@@ -470,6 +470,16 @@
       "Setting5TextFieldLabel": ""
     },
 
+    "Snackbars": {
+      "CharAddSuccess": "Character Added!",
+      "CharUpdateSuccess": "Character Updated!",
+      "LoginSuccess": "Logged in Successfully!",
+      "SimCImportSuccess": "SimC String Imported Successfully!",
+      "LogImportSuccess": "Log Imported Successfully!",
+      "EmailUpdateSuccess": "Email Updated!",
+      "EmailError": "Please check the Email and try again"
+    },
+
     "SpellNames": {
       "MonkSpells": "",
       "124682": "Brume enveloppante",
@@ -512,7 +522,8 @@
       "GoMsg": "Go!",
       "SelectedItems": "Pièces choisies:",
       "CompetitiveAlternative": "Les alternatives intéressantes",
-      "StatPanel": { "AvgStats": "Moyenne de stats (Incluant les procs)" }
+      "StatPanel": { "AvgStats": "Moyenne de stats (Incluant les procs)" },
+      "itemMissingError": "Error: Add item - "
     },
 
     "UpgradeFinder": {

@@ -17,7 +17,6 @@ export async function dbGetArticleList(setArticleList) {
   fetch(fetchUrl)
     .then((res) => res.json())
     .then((data) => {
-      console.log(data);
       setArticleList(data);
       return data;
     })
@@ -82,7 +81,6 @@ export async function apiSendError(player, errorType, errorMessage, result) {
     "&eresult=" +
     encodeURIComponent(result);
 
-  console.log(fetchUrl);
 
   fetch(fetchUrl)
     .then((res) => res.text())

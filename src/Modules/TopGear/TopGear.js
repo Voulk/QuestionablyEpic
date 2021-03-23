@@ -145,12 +145,11 @@ export default function TopGear(props) {
     for (const key in slotLengths) {
       if ((key === "Finger" || key === "Trinket") && slotLengths[key] < 2) {
         topgearOk = false;
-        errorMessage = "Error: Add a " + t("slotNames." + key.toLowerCase()) + " item";
+        errorMessage = t("TopGear.itemMissingError") + t("slotNames." + key.toLowerCase());
       } else if (slotLengths[key] === 0) {
         topgearOk = false;
-        errorMessage = "Error: Add a " + t("slotNames." + key.toLowerCase()) + " item";
+        errorMessage = t("TopGear.itemMissingError") + t("slotNames." + key.toLowerCase());
       }
-      //console.log("Sloot Length: " + key + " " + slotLengths[key])
     }
     setErrorMessage(errorMessage);
     return topgearOk;
@@ -168,9 +167,7 @@ export default function TopGear(props) {
       let baseHPS = props.player.getHPS(props.contentType);
       let strippedPlayer = JSON.parse(JSON.stringify(props.player));
       let strippedCastModel = JSON.parse(JSON.stringify(props.player.castModel[props.contentType]));
-      //console.log("player: " + JSON.stringify(props.player));
       instance.runTopGear(itemList, wepCombos, strippedPlayer, props.contentType, baseHPS, currentLanguage, userSettings, strippedCastModel).then((result) => {
-        //console.log(`Loop returned`);
         apiSendTopGearSet(props.player, props.contentType, result.itemSet.hardScore, result.itemsCompared);
         props.setTopResult(result);
         history.push("/report/");
@@ -183,8 +180,8 @@ export default function TopGear(props) {
   const selectedItemCount = props.player.getSelectedItems().length;
   const helpText = t("TopGear.HelpText");
 
-  const activateItem = (unique) => {
-    if (selectedItemCount < CONSTRAINTS.Shared.topGearMaxItems) {
+  const activateItem = (unique, active) => {
+    if (selectedItemCount < CONSTRAINTS.Shared.topGearMaxItems || active) {
       let player = props.player;
       player.activateItem(unique);
       setItemList([...player.getActiveItems(activeSlot)]);
@@ -240,12 +237,7 @@ export default function TopGear(props) {
           <HelpText text={helpText} />
         </Grid>
         <Grid item xs={12}>
-          {<UpgradeFinderSimC
-            player={props.player}
-            contentType={props.contentType}
-            simcSnack={props.simcSnack}
-            allChars={props.allChars}
-          />}
+          {<UpgradeFinderSimC player={props.player} contentType={props.contentType} simcSnack={props.simcSnack} allChars={props.allChars} />}
         </Grid>
         <Grid item xs={12}>
           <TopGearSettingsAccordion player={props.player} userSettings={userSettings} editSettings={editSettings} />

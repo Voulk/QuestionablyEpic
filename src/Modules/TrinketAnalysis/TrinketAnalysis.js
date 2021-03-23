@@ -19,6 +19,22 @@ const getTrinketAtItemLevel = (id, itemLevel, player, contentType) => {
   return item.softScore;
 };
 
+const getHighestTrinketScore = (db, trinket) => {
+  const trinketID = trinket.id;
+
+  let temp = db.filter(function (item) {
+    return item.id === trinketID;
+  });
+
+  const item = temp[0];
+  const highestLevel = item.levelRange[item.levelRange.length - 1];
+
+  return trinket["i" + highestLevel];
+
+  
+
+}
+
 export default function TrinketAnalysis(props) {
   /*useEffect(() => {
       ReactGA.pageview(window.location.pathname + window.location.search);
@@ -26,8 +42,8 @@ export default function TrinketAnalysis(props) {
 
   const { t, i18n } = useTranslation();
   const itemLevel = 213;
-  const itemLevels = [161, 174, 187, 200, 213, 226];
-  const trinketDB = itemDB.filter((key) => key.slot === "Trinket");
+  const itemLevels = [187, 194, 200, 207, 213, 220, 226, 233];
+  const trinketDB = itemDB.filter((key) => key.slot === "Trinket" && key.levelRange.length > 0);
   const helpText = t("TrinketAnalysis.HelpText");
 
   let activeTrinkets = [];
@@ -44,8 +60,7 @@ export default function TrinketAnalysis(props) {
     }
     activeTrinkets.push(trinketAtLevels);
   }
-
-  activeTrinkets.sort((a, b) => (a.i226 < b.i226 ? 1 : -1));
+  activeTrinkets.sort((a, b) => (getHighestTrinketScore(trinketDB, a) < getHighestTrinketScore(trinketDB, b) ? 1 : -1));
   return (
     <div
       style={{
@@ -65,15 +80,15 @@ export default function TrinketAnalysis(props) {
           <HelpText text={helpText} />
         </Grid>
         <Grid item xs={12}>
-          <Paper style={{ padding: 20 }}>
+          {/* <Paper style={{ padding: 20 }}> */}
             <Grid container spacing={1} justify="center">
               <Grid item xs={12}>
-                <Paper style={{ backgroundColor: "rgb(28, 28, 28, 0.5)" }} elevation={0}>
-                  <VerticalChart data={activeTrinkets} />
+                <Paper style={{ backgroundColor: "rgb(28, 28, 28, 0.5)" }} elevation={1} variant="outlined">
+                  <VerticalChart data={activeTrinkets} db={trinketDB}/>
                 </Paper>
               </Grid>
             </Grid>
-          </Paper>
+          {/* </Paper> */}
         </Grid>
       </Grid>
     </div>

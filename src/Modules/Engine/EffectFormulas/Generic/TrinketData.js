@@ -62,7 +62,7 @@ export const trinket_data = [
         coefficient: 80.17241,
         table: -8,
         cooldown: 60,
-        efficiency: 0.7,
+        efficiency: 0.56,
       },
     ],
   },
@@ -121,7 +121,7 @@ export const trinket_data = [
       {
         coefficient: 89.08621, // This represents the upper quartile of the given cards.
         table: -8,
-        efficiency: 0.47, // You do have to heal a sub 35% health target every 30s for max efficiency which doesn't seem at all likely.
+        efficiency: 0.37, // You do have to heal a sub 35% health target every 30s for max efficiency which doesn't seem at all likely.
         cooldown: 30,
       },
     ],
@@ -145,7 +145,7 @@ export const trinket_data = [
       {
         coefficient: 161.3793,
         table: -8, // TODO: Test for Crit / Vers scaling.
-        efficiency: 0.95, // This should have quite a high efficiency rating because it won't heal full health targets and is split between nearby allies should it run out.
+        efficiency: 0.9, // This should have quite a high efficiency rating because it won't heal full health targets and is split between nearby allies should it run out.
         cooldown: 90,
       },
     ],
@@ -187,7 +187,7 @@ export const trinket_data = [
         coefficient: 57.12069,
         table: -8, // TODO: Test the health transfer portion for vers / crit. It's going to be incredibly minor but worth it for accuracies sake.
         ppm: 2,
-        efficiency: 0.9, // TODO: Check against logs.
+        efficiency: 0.8, // TODO: Check against logs.
       },
     ],
   },
@@ -317,7 +317,7 @@ export const trinket_data = [
         // HoT Portion
         coefficient: 1.931035,
         table: -8,
-        efficiency: 0.6, // Falls off when the target falls below 35% health. Efficiency in this case is the HoT uptime.
+        efficiency: 0.3, // Falls off when the target falls below 35% health. Efficiency in this case is the HoT uptime x the HoT overhealing.
         totalTicks: 40, // 120 / 3. This scales with haste, which will be applied during the trinket formula.
       },
       {
@@ -348,7 +348,7 @@ export const trinket_data = [
       {
         coefficient: 326.7931,
         table: -8, // TODO: Test for Crit / Vers scaling.
-        efficiency: { Raid: 0.52, Dungeon: 0.82 }, // Includes the 25% multiplier as the target gets lower.
+        efficiency: { Raid: 0.52, Dungeon: 0.79 }, // Includes the 25% multiplier as the target gets lower.
         // This one is very awkward. You're using it as a Guardian Spirit effect more often than using it because the heal is useful.
         // A massive heal on an injured target has massive life-saving potential, but I'm not sure how well it can be modelled except
         // to assume the heal will have quite a high efficiency in dangerous scenarios.

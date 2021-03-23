@@ -1,3 +1,5 @@
+import { processDruidRawHealing } from "./DruidMiscFormulas";
+
 export const getDruidLegendary = (effectName, player, contentType) => {
   // These are going to be moved to a proper file soon.
   const IDREJUV = 774;
@@ -25,14 +27,16 @@ export const getDruidLegendary = (effectName, player, contentType) => {
     //console.log("Expected Increase: " + rejuvHealingInc);
     // Return result.
     bonus_stats.hps = expectedHPS;
+
   } else if (name === "Memory of the Mother Tree") {
     let wildGrowthCPM = player.getSpellCPM(IDWILDGROWTH, contentType);
     let procChance = 0.4;
-    let oneRejuv = player.getSingleCast(IDREJUV, contentType);
+    let oneRejuv = 0.29 * 6 * player.getStatMultiplier("ALL") * 0.87 * processDruidRawHealing(player, 774);
 
     let freeRejuvsPerMinute = wildGrowthCPM * procChance * 3;
     //console.log("Free rejuvs a min: " + freeRejuvsPerMinute + ", one rejuv: " + oneRejuv);
     bonus_stats.hps = Math.round((freeRejuvsPerMinute * oneRejuv) / 60);
+
   } else if (name === "Verdant Infusion") {
     /* 
 
@@ -55,22 +59,24 @@ export const getDruidLegendary = (effectName, player, contentType) => {
     ];
 
     spellExtensions.forEach((spell) => (power += ((spell.sp * durationIncrease) / spell.duration) * (1 - expectedOverhealing) * spell.extensionsPerMin));
-
     bonus_stats.hps = Math.round((power / 60) * player.getStatMultiplier("ALL"));
+
   } else if (name === "The Dark Titans Lesson" || name === "The Dark Titan's Lesson") {
     // Do Math
-
-    const percentClearcastsUsed = 0.75;
-    const secondLifebloomUptime = 0.8;
+    const percentClearcastsUsed = 0.8;
+    const secondLifebloomUptime = 0.85;
     const freeClearcasts = 60 * secondLifebloomUptime * player.getStatPerc("Haste") * 0.04;
-    const oneRegrowth = player.getSingleCast(IDREGROWTH, contentType, "hits");
+    const oneRegrowth = (1.73 + 0.432) * player.getStatMultiplier("ALL") * 0.74;
     const hps_clearcasting = (oneRegrowth * freeClearcasts * percentClearcastsUsed) / 60;
     // --
 
     // Lifebloom is a more efficient spell than Rejuv so we can factor in the increased healing we get from the cast.
+    // This is actually a very problematic formula since they don't quite fill the same role in your kit. It has been removed for now. 
+    /*
     const oneRejuv = player.getSingleCast(IDREJUV, contentType);
     const oneLifebloom = player.getSingleCast(IDLIFEBLOOM, contentType);
     const hps_betterCast = (oneLifebloom - oneRejuv) / 15;
+    */
 
     // Photosynthesis. Dungeon only, when we can pull talents from SimC strings we'll make this conditional.
     const oneBloom = 1.15 * 0.9 * player.getStatMultiplier("CRITVERS") * player.getStatPerc("Mastery") * player.getInt();
@@ -83,9 +89,9 @@ export const getDruidLegendary = (effectName, player, contentType) => {
     const lifebloomHPS = player.getSpellHPS(IDLIFEBLOOM, contentType);
     const deduction = lifebloomHPS * 0.1;
 
-    //console.log("saew" + hps_clearcasting + ". " + oneRegrowth + ". " + freeClearcasts + " " + hps_betterCast + ". Phosy " + hps_phosy);
+    //console.log("saew" + hps_clearcasting + ". " + oneRegrowth + ". " + freeClearcasts + " " + ". Phosy " + hps_phosy);
 
-    bonus_stats.hps = Math.round(hps_betterCast + hps_phosy + hps_clearcasting - deduction);
+    bonus_stats.hps = Math.round( hps_phosy + hps_clearcasting - deduction);
   }
 
   // Consider building in support for the conduit via SimC grab or something similar.
@@ -94,12 +100,14 @@ export const getDruidLegendary = (effectName, player, contentType) => {
     let oneWildGrowth = 0.91 * 6 * player.getInt() * player.getStatMultiplier("ALLSEC") * (1 - expectedOverhealing);
 
     bonus_stats.hps = Math.round((oneWildGrowth * (60 / 45)) / 60);
+
   } else if (name === "Oath of the Elder Druid") {
     let legendaryIncrease = 0.75;
     let playerHealth = player.activeStats.stamina * 20;
     let yseras = playerHealth * 0.03 * legendaryIncrease;
 
     bonus_stats.hps = Math.round(yseras / 5);
+    
   } else if (name === "Circle of Life and Death") {
     bonus_stats.hps = -1;
   } else {

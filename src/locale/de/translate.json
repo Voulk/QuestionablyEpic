@@ -270,7 +270,7 @@
       "QuickCompare": "Schnellvergleich",
       "ExploreCovenants": "Erkunde die Pakte",
       "LegendaryAnalysis": "Analyse der legendären Effekte",
-      "TrinketAnalysis": "Trinket AnalysisDE",
+      "TrinketAnalysis": "Trinket Analysis (New)",
       "CooldownPlanner": "Cooldownplaner (Coming Soon)",
       "Profile": "Profil",
       "CharHeader": "Charaktere",
@@ -477,6 +477,16 @@
       "Setting5TextFieldLabel": ""
     },
 
+    "Snackbars": {
+      "CharAddSuccess": "Character Added!",
+      "CharUpdateSuccess": "Character Updated!",
+      "LoginSuccess": "Logged in Successfully!",
+      "SimCImportSuccess": "SimC String Imported Successfully!",
+      "LogImportSuccess": "Log Imported Successfully!",
+      "EmailUpdateSuccess": "Email Updated!",
+      "EmailError": "Please check the Email and try again"
+    },
+
     "SpellNames": {
       "MonkSpells": "",
       "124682": "Einhüllender Nebel",
@@ -520,7 +530,8 @@
       "SelectedItems": "Ausgewählte Gegenstände",
       "CompetitiveAlternative": "Gleichwertige Alternativen",
       "BackToGearSelection": "Zurück zum Auswahlbildschirm",
-      "StatPanel": { "AvgStats": "Durchschnittliche Werte (inkl. aller zufälligen Effekte)" }
+      "StatPanel": { "AvgStats": "Durchschnittliche Werte (inkl. aller zufälligen Effekte)" },
+      "itemMissingError": "Error: Add item - "
     },
 
     "UpgradeFinder": {
@@ -547,6 +558,10 @@
       "SimCBody1Invalid": "SimC - Empty Item Slot",
       "SimCBody1Missing": "SimC - Missing",
       "HelpText": "Kopiere deinen SimC String hier herein, wähle bis zu zwei Schlachtzugsschwierigkeiten, dein durchschnittliches Schlüsselsteinlevel und deine PvP Wertung aus, um herauszufinden, wo du dein nächstes Upgrade finden kannst!"
+    },
+    "TrinketAnalysis": {
+      "Header": "Trinket Analysis",
+      "HelpText": "Use the graph below as a rough guide of which trinkets are worth pursuing, and then use Quick Compare or Top Gear to compare specific choices. World quest trinkets and settings panel coming soon."
     },
 
     "DruidLegendariesComment": "DruidLegendariesComment",

@@ -438,7 +438,15 @@ export default function CharCards(props) {
                     <Grid item xs={12} container spacing={1}>
                       {/* ----------------------------- Character Name ----------------------------- */}
                       <Grid item xs={9}>
-                        <TextField fullWidth id="standard-basic" label={t("CharacterCreator.CharacterInfo")} value={charName} onChange={handleChangeName} variant="outlined" size="small" />
+                        <TextField
+                          fullWidth
+                          id="standard-basic"
+                          label={t("CharacterCreator.CharacterInfo")}
+                          value={charName}
+                          onChange={handleChangeName}
+                          variant="outlined"
+                          size="small"
+                        />
                       </Grid>
                       {/* ------------------------------ Region Select ----------------------------- */}
                       <Grid item xs={3}>
@@ -483,8 +491,8 @@ export default function CharCards(props) {
                             {Object.getOwnPropertyNames(classRaceList)
                               .map((key, i) => (
                                 <MenuItem key={i} value={key}>
-                                  {classIcons(key, { height: 20, width: 20, padding: "0px 0px 0px 5px", verticalAlign: "middle", borderRadius: 4 })}
-                                  {key}
+                                  {classIcons(key, { height: 20, width: 20, margin: "0px 5px 0px 5px", verticalAlign: "middle", borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.12)" })}
+                                  {t("Classes." + key)}
                                 </MenuItem>
                               ))
                               .map((menuItems) => [menuItems, <Divider />])}
@@ -852,7 +860,7 @@ export default function CharCards(props) {
             {/* ---------------------- Default Button (Reset Stats) ----------------------  */}
             <div>
               <Button onClick={resetDefaults} color="primary">
-                {"Reset to Defaults"}
+                {t("CharacterCreator.SavedLogs.ResetToDefaults")}
               </Button>
               {/* ------------------------------ Cancel Button -----------------------------  */}
               <Button onClick={handleClose} color="primary">

@@ -63,9 +63,9 @@ export default function CharacterHeaderButton(props) {
       <Button disabled={true} aria-describedby={id} style={{ color: classColoursJS(currentCharacter.spec) }} onClick={handleClick}>
         {props.allChars.getAllChar().length > 0 ? (
           // TODO: Change classIcons to accept a styles prop to remove the padding on the right for this component only
-          <div style={{display: "inline-flex"}}>
+          <div style={{ display: "inline-flex" }}>
+            {classIcons(currentCharacter.spec, { height: 18, width: 18, margin: "2px 5px 0px 0px", verticalAlign: "middle", borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.12)" })}
             {currentCharacter.charName}
-            {classIcons(currentCharacter.spec, { height: 18, width: 18, margin: "2px 0px 0px 5px", verticalAlign: "middle", borderRadius: 4,border: "1px solid rgba(255, 255, 255, 0.12)" })}
           </div>
         ) : (
           ""
@@ -145,19 +145,19 @@ export default function CharacterHeaderButton(props) {
                 </Table>
               </TableContainer>
             </Grid> */}
-            {/* -------------------------------------------------------------------------- */
-            /*                          Container for Characters                          */
-            /* -------------------------------------------------------------------------- */}
-            {/* <Grid item xs={6} container direction="column">
+      {/* -------------------------------------------------------------------------- */
+      /*                          Container for Characters                          */
+      /* -------------------------------------------------------------------------- */}
+      {/* <Grid item xs={6} container direction="column">
               <Grid item xs={12}>
                 Test
               </Grid>
             </Grid> */}
 
-            {/* -------------------------------------------------------------------------- */
-            /*                             Container for Logs                             */
-            /* -------------------------------------------------------------------------- */}
-            {/* <Grid item xs={6} container direction="column">
+      {/* -------------------------------------------------------------------------- */
+      /*                             Container for Logs                             */
+      /* -------------------------------------------------------------------------- */}
+      {/* <Grid item xs={6} container direction="column">
               <Grid item xs={12}>
                 Test
               </Grid>

@@ -54,8 +54,8 @@ export const druidDefaultSpecialQueries = (contentType) => {
       OneManaHealing: 4.1,
       CastsPerMinute: 32, // ONLY tracks spells with a mana cost.
       cooldownMult: {
-        oneMinute: 1.1,
-        twoMinutes: 1.25,
+        oneMinute: 1.3,
+        twoMinutes: 1.42,
         threeMinutes: 1.2,
       },
       HoldYourGroundUptime: 0.8
@@ -66,8 +66,8 @@ export const druidDefaultSpecialQueries = (contentType) => {
       OneManaHealing: 1.2,
       CastsPerMinute: 30,
       cooldownMult: {
-        oneMinute: 1,
-        twoMinutes: 1.25,
+        oneMinute: 1.2,
+        twoMinutes: 1.35,
         threeMinutes: 1,
       },
       HoldYourGroundUptime: 0.8
