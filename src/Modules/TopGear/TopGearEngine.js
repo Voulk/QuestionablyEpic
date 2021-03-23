@@ -88,7 +88,6 @@ export function runTopGear(itemList, wepCombos, player, contentType, baseHPS, cu
     differentials.push(buildDifferential(itemSets[i], primeSet, newPlayer, contentType));
   }
 
-  console.log(itemSets);
   //console.log(differentials);
 
   //itemSets[0].printSet()
@@ -387,7 +386,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
   adjusted_weights.mastery = (adjusted_weights.mastery + adjusted_weights.mastery * (1 - (DR_CONST * setStats.mastery) / STATPERONEPERCENT.Retail.MASTERYA[player.spec])) / 2;
   adjusted_weights.leech = (adjusted_weights.leech + adjusted_weights.leech * (1 - (DR_CONSTLEECH * setStats.leech) / STATPERONEPERCENT.Retail.LEECH)) / 2;
 
-  console.log("LEECH: " + adjusted_weights.leech);
+  //console.log("LEECH: " + adjusted_weights.leech);
   // Calculate a hard score using the rebalanced stat weights.
 
   for (var stat in setStats) {
