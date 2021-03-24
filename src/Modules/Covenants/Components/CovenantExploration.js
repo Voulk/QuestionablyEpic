@@ -15,7 +15,6 @@ import { useTranslation } from "react-i18next";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
-
   return (
     <div role="tabpanel" hidden={value !== index} id={`simple-tabpanel-${index}`} aria-labelledby={`simple-tab-${index}`} {...other}>
       {value === index && <Box p={0}>{children}</Box>}
@@ -85,7 +84,6 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-// ==============================================
 export default function CovenantExploration(props) {
   useEffect(() => {
     ReactGA.pageview(window.location.pathname + window.location.search);
@@ -101,6 +99,7 @@ export default function CovenantExploration(props) {
     props.updatePlayerChar(props.player);
   }
 
+  /* ------------------------------ Builds the stats the conduits use ----------------------------- */
   function buildBonusStats(soulbindTraits, player, contentType) {
     let updatedArray = soulbindTraits.map((trait) => {
       return {
@@ -111,11 +110,13 @@ export default function CovenantExploration(props) {
     return updatedArray;
   }
 
+  /* --------------------------------- Changes to the Selected Tab -------------------------------- */
   const handleTabChange = (event, newValue) => {
     setTabValue(newValue);
     setSoulbindValue(0);
   };
 
+  /* ------------------------------ Changes to the Selected Soulbind ------------------------------ */
   const handleChange2 = (event, newValue) => {
     setSoulbindValue(newValue);
   };
@@ -237,15 +238,7 @@ export default function CovenantExploration(props) {
               {buildSoulbind("Kleia", props.player, props.contentType, soulbindState, activateSoulbind, setConduitInSlot, updateConduitLevel)}
             </TabPanel>
             <TabPanel value={soulbindValue} index={2} style={{ display: "inline-flex" }}>
-              {buildSoulbind(
-                "Mikanikos",
-                props.player,
-                props.contentType,
-                soulbindState,
-                activateSoulbind,
-                setConduitInSlot,
-                updateConduitLevel,
-              )}
+              {buildSoulbind("Mikanikos", props.player, props.contentType, soulbindState, activateSoulbind, setConduitInSlot, updateConduitLevel)}
             </TabPanel>
           </div>
         </TabPanel>

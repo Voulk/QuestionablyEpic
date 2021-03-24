@@ -6,9 +6,7 @@ import { Card, CardActionArea, CardContent, Typography, Grid, Divider } from "@m
 import { getItemIcon } from "../../Engine/ItemUtilities";
 import { conduitDB } from "../../../Databases/ConduitDB";
 
-const useStyles = makeStyles({
-  root: { padding: 0, height: 26 },
-});
+const useStyles = makeStyles({ root: { padding: 0, height: 26 } });
 
 export default function ConduitObject(props) {
   const { t, i18n } = useTranslation();
@@ -16,11 +14,14 @@ export default function ConduitObject(props) {
   const conduit = props.conduit;
   const classes = useStyles();
 
+  /* --------- Arrow Function to Increase Conduits Ilvl on left click --------- */
   const conduitClicked = () => {
     let oldLevel = props.conduit.itemLevel;
     let newLevel = oldLevel === 226 ? 145 : oldLevel === 184 ? 200 : oldLevel + 13;
     props.updateConduitLevel(props.conduit.id, newLevel);
   };
+
+  /* --------- Arrow Function to Decrease Conduits Ilvl on Right Click -------- */
   const conduitRightClicked = (e) => {
     e.preventDefault();
     let oldLevel = props.conduit.itemLevel;
@@ -28,6 +29,8 @@ export default function ConduitObject(props) {
     props.updateConduitLevel(props.conduit.id, newLevel);
   };
 
+  /* ------------ Returns Appropriate Colour for the Ilvl Provided ------------ */
+  // Todo Make this an external Function to make this easier to update across modules
   const itemQuality = (itemLevel) => {
     if (itemLevel >= 226) {
       return "#ff8000"; // Legendary
@@ -42,6 +45,8 @@ export default function ConduitObject(props) {
     }
   };
 
+  /* ------------------------ Returns Appropriate Colour for Item Upgrades ------------------------ */
+  /* ------------------- (Currently Red Unused as we don't show Scores below 0) ------------------- */
   const upgradeColor = (num) => {
     if (num > 0) {
       return "#4CBB17";
@@ -58,6 +63,7 @@ export default function ConduitObject(props) {
         <CardActionArea disabled={false} onClick={conduitClicked} onContextMenu={(e) => conduitRightClicked(e)}>
           <Grid container display="inline-flex" wrap="nowrap" justify="space-between" style={{ maxHeight: 26 }}>
             <Grid item xs="auto">
+              {/* -------------------------------- Image for the Conduit + Ilvl + WHTooltip --------------------------------  */}
               <div className="container">
                 <a data-wowhead={"spell=" + conduit.id + "&domain=" + currentLanguage}>
                   <img
@@ -91,6 +97,7 @@ export default function ConduitObject(props) {
                     paddingLeft: "4px",
                   }}
                 >
+                  {/* -------------- Filter & Map the ConduitDB to return the localized name of the conduit --------------  */}
                   {conduitDB
                     .filter((obj) => {
                       return obj.guid === conduit.id;
@@ -108,6 +115,7 @@ export default function ConduitObject(props) {
                   justifyContent: "center",
                 }}
               >
+                {/* ---------------------------------- HPS score of the Conduit ----------------------------------  */}
                 <Typography
                   variant="subtitle1"
                   wrap="nowrap"

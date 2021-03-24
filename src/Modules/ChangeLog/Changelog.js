@@ -1,6 +1,5 @@
 import React from "react";
-//prettier-ignore
-import { Accordion, AccordionSummary, AccordionDetails, Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, Divider, Grid, Typography } from "@material-ui/core";
+import { Accordion, AccordionSummary, AccordionDetails, Button, Dialog, DialogActions, DialogContent, DialogTitle, Divider, Grid, Typography } from "@material-ui/core";
 import { changeLog } from "./Log";
 import { makeStyles } from "@material-ui/core/styles";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
@@ -30,10 +29,10 @@ export default function Changelog() {
 
   return (
     <div style={{ color: "Whitesmoke", width: "520px", marginLeft: "auto", marginRight: "auto", marginBottom: 5, marginTop: 20 }}>
-      <Button style={{ fontSize: 12, textTransform: 'none' }} onClick={handleClickOpen("paper")}>
-        {/* ----------------- This uses the first object in the array ----------------  */}
-        QE Live {changeLog[0].version} {t("Changelog.Update")} {changeLog[0].update}. {t("Changelog.LastUpdated")} {changeLog[0].date}. 
-        Click to see what's changed.
+      <Button style={{ fontSize: 12, textTransform: "none" }} onClick={handleClickOpen("paper")}>
+        {/* ----------------- The first entry in Log.js is used as the latest version for the below. The latest update must always be at the top of that array ----------------  */}
+        {/* //TODO translate the Click text */}
+        QE Live {changeLog[0].version} {t("Changelog.Update")} {changeLog[0].update}. {t("Changelog.LastUpdated")} {changeLog[0].date}. Click to see what's changed.
       </Button>
       <Dialog open={open} onClose={handleClose} scroll={scroll} aria-labelledby="scroll-dialog-title" aria-describedby="scroll-dialog-description" maxWidth="md" fullWidth>
         <DialogTitle disableTypography align="center" id="scroll-dialog-title">
