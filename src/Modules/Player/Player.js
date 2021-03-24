@@ -110,9 +110,10 @@ class Player {
   };
 
   setCovenant = (cov) => {
-    if (["night_fae", "venthyr", "necrolord", "kyrian"].includes(cov.toLowerCase())) this.covenant = cov;
+    const selectedCov = cov.toLowerCase().replace(/"/g, '');
+    if (["night_fae", "venthyr", "necrolord", "kyrian"].includes(selectedCov)) this.covenant = selectedCov;
     else {
-      reportError(this, "Player", "Invalid Covenant Supplied", cov);
+      reportError(this, "Player", "Invalid Covenant Supplied", selectedCov);
       throw new Error("Invalid Covenant Supplied");
     }
   };
