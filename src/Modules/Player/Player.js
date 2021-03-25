@@ -136,7 +136,6 @@ class Player {
     this.activeConduits.forEach((conduit) => {
       conduit.setHPS(this, contentType);
 
-      //return conduit;
     });
   };
 

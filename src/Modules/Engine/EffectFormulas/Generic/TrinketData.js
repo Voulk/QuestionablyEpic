@@ -51,8 +51,10 @@ export const trinket_data = [
   },
   {
     // Trinkets designed to save lives rather than purely pump HPS can be difficult to evaluate, but in Mirrors case
-    // it does enough healing wise, and is available at a high enough level that it can be a great trinket in both 
+    // it does enough healing wise, and is available at a high enough level that it can be a mid-tier trinket in both 
     // departments. 
+    // It's biggest weakness is that it shares a lock out with other on-use trinkets which are frequent lock-ins this
+    // tier and can make it annoying to use - particularly during dangerous periods.
     name: "Manabound Mirror",
     effects: [
       { // This is the coefficient for the portion that scales with mana expenditure.
@@ -60,12 +62,10 @@ export const trinket_data = [
         table: -8,
       },
       { // This is the portion for the direct heal, and also includes cooldown and efficiency information for the entire trinket.
-        tags: [TAGS.ON_USE],
-        benefit: "hps",
         coefficient: 80.17241,
         table: -8,
         cooldown: 60,
-        efficiency: 0.56,
+        efficiency: 0.54,
       },
     ],
   },
