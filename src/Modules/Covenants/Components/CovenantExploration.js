@@ -128,7 +128,6 @@ export default function CovenantExploration(props) {
       }
       return trait;
     });
-
     setSoulbindState(updatedArray);
   }
 
@@ -144,7 +143,6 @@ export default function CovenantExploration(props) {
       }
       return trait;
     });
-
     setSoulbindState(updatedArray);
   }
 
@@ -329,9 +327,13 @@ export default function CovenantExploration(props) {
           </div>
         </TabPanel>
 
-        {/* Necrolords */}
+        {/* ---------------------------------------------------------------------------------------------- */
+        /*                                           Necrolords                                           */
+        /* ----------------------------------------------------------------------------------------------  */}
+
         <TabPanel value={tabvalue} index={3}>
           <div className={classes.panel}>
+            {/* ------------------- These are the Tabs on the left hand side of the module ------------------- */}
             <Tabs
               orientation="vertical"
               value={soulbindValue}
@@ -340,18 +342,21 @@ export default function CovenantExploration(props) {
               className={classes.tabs}
               TabIndicatorProps={{ style: { backgroundColor: "#F2BF59" } }}
             >
+              {/* ---------------------------------------- Marileth Tab ----------------------------------------  */}
               <Tab
                 style={{ color: "white" }}
                 icon={<img height={100} alt={t("Covenants.Soulbinds.Marileth")} src={process.env.PUBLIC_URL + "/Images/Interface/plague-deviser-marileth.webp"} />}
                 label={t("Covenants.Soulbinds.Marileth")}
                 {...a11yPropsVert(0)}
               />
+              {/* ------------------------------------------ Emeni Tab -----------------------------------------  */}
               <Tab
                 style={{ color: "white" }}
                 icon={<img height={100} alt={t("Covenants.Soulbinds.Emeni")} src={process.env.PUBLIC_URL + "/Images/Interface/emeni.webp"} />}
                 label={t("Covenants.Soulbinds.Emeni")}
                 {...a11yPropsVert(1)}
               />
+              {/* ----------------------------------------- Heirmir Tab ----------------------------------------  */}
               <Tab
                 style={{ color: "white" }}
                 icon={<img height={100} alt={t("Covenants.Soulbinds.Heirmir")} src={process.env.PUBLIC_URL + "/Images/Interface/bonesmith-heirmir.webp"} />}
@@ -359,13 +364,16 @@ export default function CovenantExploration(props) {
                 {...a11yPropsVert(2)}
               />
             </Tabs>
-
+            {/* ----------- These are the Necrolord Panels that contain all the conduits and nodes ----------- */}
+            {/* ------------------------------------- Marileth Tab Panel -------------------------------------  */}
             <TabPanel value={soulbindValue} index={0}>
               {buildSoulbind("Marileth", props.player, props.contentType, soulbindState, activateSoulbind, setConduitInSlot, updateConduitLevel)}
             </TabPanel>
+            {/* --------------------------------------- Emeni Tab Panel -------------------------------------- */}
             <TabPanel value={soulbindValue} index={1}>
               {buildSoulbind("Emeni", props.player, props.contentType, soulbindState, activateSoulbind, setConduitInSlot, updateConduitLevel)}
             </TabPanel>
+            {/* -------------------------------------- Heimir Tab Panel -------------------------------------- */}
             <TabPanel value={soulbindValue} index={2}>
               {buildSoulbind("Heirmir", props.player, props.contentType, soulbindState, activateSoulbind, setConduitInSlot, updateConduitLevel)}
             </TabPanel>
