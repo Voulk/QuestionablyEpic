@@ -148,13 +148,15 @@ export default function CovenantExploration(props) {
 
   return (
     <div className={classes.header}>
+      {/* ---------------------------------------- Module Header ---------------------------------------  */}
       <Typography variant="h4" align="center" style={{ padding: "10px 10px 5px 10px" }} color="primary">
         {t("Soulbinds.Header")}
       </Typography>
-
       <div className={classes.root}>
         <AppBar position="static" style={{ backgroundColor: "#000", borderRadius: "4px 4px 0px 0px" }} elevation={0}>
+          {/* -------------------- Tabs at the top of the module for covenant selection --------------------  */}
           <Tabs value={tabvalue} onChange={handleTabChange} aria-label="simple tabs example" variant="fullWidth" TabIndicatorProps={{ style: { backgroundColor: "#F2BF59" } }}>
+            {/* -------------------------------------- Kyrian Header Tab -------------------------------------  */}
             <Tab
               className={classes.kyrianHeaderStyle}
               icon={
@@ -165,6 +167,7 @@ export default function CovenantExploration(props) {
               }
               {...a11yProps(0)}
             />
+            {/* ------------------------------------- Nightfae Header Tab ------------------------------------  */}
             <Tab
               className={classes.nightFaeHeaderStyle}
               icon={
@@ -175,6 +178,7 @@ export default function CovenantExploration(props) {
               }
               {...a11yProps(1)}
             />
+            {/* ------------------------------------- Venthyr Header Tab -------------------------------------  */}
             <Tab
               className={classes.venthyrHeaderStyle}
               icon={
@@ -185,6 +189,7 @@ export default function CovenantExploration(props) {
               }
               {...a11yProps(2)}
             />
+            {/* ------------------------------------ Necrolord Header Tab ------------------------------------  */}
             <Tab
               className={classes.necrolordHeaderStyle}
               icon={
@@ -198,9 +203,12 @@ export default function CovenantExploration(props) {
           </Tabs>
         </AppBar>
 
-        {/* Kyrian */}
+        {/* ---------------------------------------------------------------------------------------------- */
+        /*                                             Kyrian                                              */
+        /* ----------------------------------------------------------------------------------------------  */}
         <TabPanel value={tabvalue} index={0}>
           <div className={classes.panel}>
+            {/* ------------------- These are the Tabs on the left hand side of the module ------------------- */}
             <Tabs
               orientation="vertical"
               value={soulbindValue}
@@ -209,18 +217,21 @@ export default function CovenantExploration(props) {
               className={classes.tabs}
               TabIndicatorProps={{ style: { backgroundColor: "#F2BF59" } }}
             >
+              {/* ----------------------------------------- Pelagos Tab ----------------------------------------  */}
               <Tab
                 style={{ color: "white" }}
                 icon={<img height={100} alt={t("Covenants.Soulbinds.Pelagos")} src={process.env.PUBLIC_URL + "/Images/Interface/pelagos.webp"} />}
                 label={t("Covenants.Soulbinds.Pelagos")}
                 {...a11yPropsVert(0)}
               />
+              {/* ------------------------------------------ Kleia Tab -----------------------------------------  */}
               <Tab
                 style={{ color: "white" }}
                 icon={<img height={100} alt={t("Covenants.Soulbinds.Kleia")} src={process.env.PUBLIC_URL + "/Images/Interface/kleia.webp"} />}
                 label={t("Covenants.Soulbinds.Kleia")}
                 {...a11yPropsVert(1)}
               />
+              {/* ---------------------------------------- Mikanikos Tab ---------------------------------------  */}
               <Tab
                 style={{ color: "white" }}
                 icon={<img height={100} alt={t("Covenants.Soulbinds.Mikanikos")} src={process.env.PUBLIC_URL + "/Images/Interface/forgelite-prime-mikanikos.webp"} />}
@@ -228,22 +239,27 @@ export default function CovenantExploration(props) {
                 {...a11yPropsVert(2)}
               />
             </Tabs>
-
+            {/* -------------------------------------- Pelagos Tab Panel -------------------------------------  */}
             <TabPanel value={soulbindValue} index={0} style={{ display: "inline-flex" }}>
               {buildSoulbind("Pelagos", props.player, props.contentType, soulbindState, activateSoulbind, setConduitInSlot, updateConduitLevel)}
             </TabPanel>
+            {/* --------------------------------------- Kleia Tab Panel --------------------------------------  */}
             <TabPanel value={soulbindValue} index={1} style={{ display: "inline-flex" }}>
               {buildSoulbind("Kleia", props.player, props.contentType, soulbindState, activateSoulbind, setConduitInSlot, updateConduitLevel)}
             </TabPanel>
+            {/* ------------------------------------- Mikanikos Tab Panel ------------------------------------  */}
             <TabPanel value={soulbindValue} index={2} style={{ display: "inline-flex" }}>
               {buildSoulbind("Mikanikos", props.player, props.contentType, soulbindState, activateSoulbind, setConduitInSlot, updateConduitLevel)}
             </TabPanel>
           </div>
         </TabPanel>
 
-        {/* Night Fae */}
+        {/* ---------------------------------------------------------------------------------------------- */
+        /*                                            Night Fae                                           */
+        /* ----------------------------------------------------------------------------------------------  */}
         <TabPanel value={tabvalue} index={1}>
           <div className={classes.panel}>
+            {/* ------------------- These are the Tabs on the left hand side of the module ------------------- */}
             <Tabs
               orientation="vertical"
               value={soulbindValue}
@@ -252,18 +268,21 @@ export default function CovenantExploration(props) {
               className={classes.tabs}
               TabIndicatorProps={{ style: { backgroundColor: "#F2BF59" } }}
             >
+              {/* ------------------------------------------ Niya Tab ------------------------------------------ */}
               <Tab
                 style={{ color: "white" }}
                 icon={<img height={100} alt={t("Covenants.Soulbinds.Niya")} src={process.env.PUBLIC_URL + "/Images/Interface/niya.webp"} />}
                 label={t("Covenants.Soulbinds.Niya")}
                 {...a11yPropsVert(0)}
               />
+              {/* --------------------------------------- Dreamweaver Tab -------------------------------------- */}
               <Tab
                 style={{ color: "white" }}
                 icon={<img height={100} alt={t("Covenants.Soulbinds.Dreamweaver")} src={process.env.PUBLIC_URL + "/Images/Interface/dreamweaver.webp"} />}
                 label={t("Covenants.Soulbinds.Dreamweaver")}
                 {...a11yPropsVert(1)}
               />
+              {/* ----------------------------------------- Korayn Tab ----------------------------------------- */}
               <Tab
                 style={{ color: "white" }}
                 icon={<img height={100} alt={t("Covenants.Soulbinds.Korayn")} src={process.env.PUBLIC_URL + "/Images/Interface/korayn.webp"} />}
@@ -271,22 +290,27 @@ export default function CovenantExploration(props) {
                 {...a11yPropsVert(2)}
               />
             </Tabs>
-
+            {/* --------------------------------------- Niya Tab Panel --------------------------------------- */}
             <TabPanel value={soulbindValue} index={0}>
               {buildSoulbind("Niya", props.player, props.contentType, soulbindState, activateSoulbind, setConduitInSlot, updateConduitLevel)}
             </TabPanel>
+            {/* ------------------------------------ Dreamweaver Tab Panel ----------------------------------- */}
             <TabPanel value={soulbindValue} index={1}>
               {buildSoulbind("Dreamweaver", props.player, props.contentType, soulbindState, activateSoulbind, setConduitInSlot, updateConduitLevel)}
             </TabPanel>
+            {/* -------------------------------------- Korayn Tab Panel -------------------------------------- */}
             <TabPanel value={soulbindValue} index={2}>
               {buildSoulbind("Korayn", props.player, props.contentType, soulbindState, activateSoulbind, setConduitInSlot, updateConduitLevel)}
             </TabPanel>
           </div>
         </TabPanel>
 
-        {/* Venthyr */}
+        {/* ---------------------------------------------------------------------------------------------- */
+        /*                                             Venthyr                                            */
+        /* ----------------------------------------------------------------------------------------------  */}
         <TabPanel value={tabvalue} index={2}>
           <div className={classes.panel}>
+            {/* ------------------- These are the Tabs on the left hand side of the module ------------------- */}
             <Tabs
               orientation="vertical"
               value={soulbindValue}
@@ -295,18 +319,21 @@ export default function CovenantExploration(props) {
               className={classes.tabs}
               TabIndicatorProps={{ style: { backgroundColor: "#F2BF59" } }}
             >
+              {/* ----------------------------------------- Nadjia Tab ----------------------------------------- */}
               <Tab
                 style={{ color: "white" }}
                 icon={<img height={100} alt={t("Covenants.Soulbinds.Nadjia")} src={process.env.PUBLIC_URL + "/Images/Interface/nadjia-the-mistblade.webp"} />}
                 label={t("Covenants.Soulbinds.Nadjia")}
                 {...a11yPropsVert(0)}
               />
+              {/* ----------------------------------------- Theotar Tab ---------------------------------------- */}
               <Tab
                 style={{ color: "white" }}
                 icon={<img height={100} alt={t("Covenants.Soulbinds.Theotar")} src={process.env.PUBLIC_URL + "/Images/Interface/theotar-the-mad-duke.webp"} />}
                 label={t("Covenants.Soulbinds.Theotar")}
                 {...a11yPropsVert(1)}
               />
+              {/* ----------------------------------------- Draven Tab ----------------------------------------- */}
               <Tab
                 style={{ color: "white" }}
                 icon={<img height={100} alt={t("Covenants.Soulbinds.Draven")} src={process.env.PUBLIC_URL + "/Images/Interface/general-draven.webp"} />}
@@ -315,12 +342,15 @@ export default function CovenantExploration(props) {
               />
             </Tabs>
 
+            {/* ------------------------------------- Marileth Tab Panel ------------------------------------- */}
             <TabPanel value={soulbindValue} index={0}>
               {buildSoulbind("Nadjia", props.player, props.contentType, soulbindState, activateSoulbind, setConduitInSlot, updateConduitLevel)}
             </TabPanel>
+            {/* -------------------------------------- Theotar Tab Panel ------------------------------------- */}
             <TabPanel value={soulbindValue} index={1}>
               {buildSoulbind("Theotar", props.player, props.contentType, soulbindState, activateSoulbind, setConduitInSlot, updateConduitLevel)}
             </TabPanel>
+            {/* -------------------------------------- Draven Tab Panel -------------------------------------- */}
             <TabPanel value={soulbindValue} index={2}>
               {buildSoulbind("Draven", props.player, props.contentType, soulbindState, activateSoulbind, setConduitInSlot, updateConduitLevel)}
             </TabPanel>
