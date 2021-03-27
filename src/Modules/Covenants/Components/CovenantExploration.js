@@ -433,7 +433,10 @@ function buildSoulbind(soulbindName, player, contentType, soulbindState, activat
     <Grid id="soulbind" container direction="row" style={{ display: "flex", flexWrap: "nowrap" }}>
       <Grid item>
         <div id="soulbinds" style={{ position: "relative" }}>
+          {/* ---------------------------------- Soulbind Background Image --------------------------------- */}
           <img src={process.env.PUBLIC_URL + "/Images/Interface/SoulbindBackgroundFat.jpg"} alt="" />
+
+          {/* ---------------------------------- Conduit Connector Mapping --------------------------------- */}
           <div id="nodes" style={{}}>
             {activeConnectors.map((trait, index) => (
               <img
@@ -452,6 +455,7 @@ function buildSoulbind(soulbindName, player, contentType, soulbindState, activat
               />
             ))}
 
+            {/* ---------------------------------- Soulbind Ability Mapping ---------------------------------- */}
             {activeSoulbind.map((trait, index) => (
               <SoulbindNode
                 key={index}
@@ -468,6 +472,9 @@ function buildSoulbind(soulbindName, player, contentType, soulbindState, activat
         </div>
       </Grid>
 
+      {/* ---------------------------------------------------------------------------------------------- */
+      /*                                        Conduit Container                                       */
+      /* ----------------------------------------------------------------------------------------------  */}
       <Grid container>
         <div
           id="conduits"
@@ -489,6 +496,7 @@ function buildSoulbind(soulbindName, player, contentType, soulbindState, activat
                 maxWidth: 245,
               }}
             >
+              {/* --------------------------- Conduit Instructions (Left/Right Click) -------------------------- */}
               <Grid item xs={12}>
                 <Paper
                   style={{
@@ -501,7 +509,10 @@ function buildSoulbind(soulbindName, player, contentType, soulbindState, activat
                   </Typography>
                 </Paper>
               </Grid>
+
+              {/* ------------------------------------ Potency Conduit Grid ------------------------------------ */}
               <Grid item xs={12}>
+                {/* --------------------------------------- Potency Header --------------------------------------- */}
                 <img
                   src={process.env.PUBLIC_URL + "/Images/Interface/PotencyConduitTag.png"}
                   style={{
@@ -511,13 +522,17 @@ function buildSoulbind(soulbindName, player, contentType, soulbindState, activat
                   }}
                   alt=""
                 />
+                {/* -------------------------------- Potency Conduits Mapped Here -------------------------------- */}
                 <Grid container spacing={1}>
                   {potencyConduits.map((conduit, i) => (
                     <ConduitObject conduit={conduit} key={i} updateConduitLevel={updateConduitLevel} />
                   ))}
                 </Grid>
               </Grid>
+
+              {/* ----------------------------------- Endurance Conduit Grid ----------------------------------- */}
               <Grid item xs={12}>
+                {/* -------------------------------------- Endurance Header -------------------------------------- */}
                 <img
                   src={process.env.PUBLIC_URL + "/Images/Interface/EnduranceConduitTag.png"}
                   style={{
@@ -527,6 +542,7 @@ function buildSoulbind(soulbindName, player, contentType, soulbindState, activat
                   }}
                   alt=""
                 />
+                {/* ------------------------------- Endurance Conduits Mapped here ------------------------------- */}
                 <Grid container spacing={1}>
                   {enduranceConduits.map((conduit, i) => (
                     <ConduitObject conduit={conduit} key={i} updateConduitLevel={updateConduitLevel} />
@@ -534,6 +550,7 @@ function buildSoulbind(soulbindName, player, contentType, soulbindState, activat
                 </Grid>
               </Grid>
             </Grid>
+            {/* --------------------------------------- Stat Panel Grid -------------------------------------- */}
             <Grid
               container
               spacing={1}

@@ -11,7 +11,7 @@ export function getAvailableClassConduits(spec) {
   let currentLanguage = i18n.language;
   let conduits = [];
   const defaultItemLevel = 184;
-
+  // TODO Implement the below rework, need to include the covenant in the mapping
   // example of potential rework
   // conduits
   //   .filter(
@@ -53,9 +53,7 @@ export function getAvailableClassConduits(spec) {
     conduits.push(new ActiveConduit(340529, defaultItemLevel, localizedName(340529), "Endurance")); // done
     conduits.push(new ActiveConduit(340540, defaultItemLevel, localizedName(340540), "Endurance"));
     conduits.push(new ActiveConduit(340543, defaultItemLevel, localizedName(340543), "Endurance"));
-  } 
-  
-  else if (spec === SPECS.HOLYPALADIN) {
+  } else if (spec === SPECS.HOLYPALADIN) {
     conduits.push(new ActiveConduit(339570, defaultItemLevel, localizedName(339570), "Potency"));
     conduits.push(new ActiveConduit(339984, defaultItemLevel, localizedName(339984), "Potency"));
     conduits.push(new ActiveConduit(339712, defaultItemLevel, localizedName(339712), "Potency"));
@@ -69,9 +67,7 @@ export function getAvailableClassConduits(spec) {
     conduits.push(new ActiveConduit(338741, defaultItemLevel, localizedName(338741), "Endurance"));
     conduits.push(new ActiveConduit(339114, defaultItemLevel, localizedName(339114), "Endurance"));
     conduits.push(new ActiveConduit(338787, defaultItemLevel, localizedName(338787), "Endurance"));
-  } 
-  
-  else if (spec === SPECS.MISTWEAVERMONK) {
+  } else if (spec === SPECS.MISTWEAVERMONK) {
     conduits.push(new ActiveConduit(336773, defaultItemLevel, localizedName(336773), "Potency"));
     conduits.push(new ActiveConduit(337241, defaultItemLevel, localizedName(337241), "Potency"));
     conduits.push(new ActiveConduit(336812, defaultItemLevel, localizedName(336812), "Potency"));
@@ -85,9 +81,7 @@ export function getAvailableClassConduits(spec) {
     conduits.push(new ActiveConduit(336853, defaultItemLevel, localizedName(336853), "Endurance"));
     conduits.push(new ActiveConduit(336632, defaultItemLevel, localizedName(336632), "Endurance"));
     conduits.push(new ActiveConduit(336379, defaultItemLevel, localizedName(336379), "Endurance"));
-  } 
-  
-  else if (spec === SPECS.DISCPRIEST) {
+  } else if (spec === SPECS.DISCPRIEST) {
     conduits.push(new ActiveConduit(337790, defaultItemLevel, localizedName(337790), "Potency"));
     conduits.push(new ActiveConduit(337786, defaultItemLevel, localizedName(337786), "Potency"));
     conduits.push(new ActiveConduit(337778, defaultItemLevel, localizedName(337778), "Potency"));
@@ -102,9 +96,7 @@ export function getAvailableClassConduits(spec) {
     conduits.push(new ActiveConduit(337715, defaultItemLevel, localizedName(337715), "Endurance"));
     conduits.push(new ActiveConduit(337748, defaultItemLevel, localizedName(337748), "Endurance"));
     conduits.push(new ActiveConduit(337662, defaultItemLevel, localizedName(337662), "Endurance"));
-  } 
-  
-  else if (spec === SPECS.RESTOSHAMAN) {
+  } else if (spec === SPECS.RESTOSHAMAN) {
     conduits.push(new ActiveConduit(338329, defaultItemLevel, localizedName(338329), "Potency"));
     conduits.push(new ActiveConduit(338343, defaultItemLevel, localizedName(338343), "Potency"));
     conduits.push(new ActiveConduit(338346, defaultItemLevel, localizedName(338346), "Potency"));
@@ -119,9 +111,7 @@ export function getAvailableClassConduits(spec) {
     conduits.push(new ActiveConduit(337964, defaultItemLevel, localizedName(337964), "Endurance"));
     conduits.push(new ActiveConduit(337974, defaultItemLevel, localizedName(337974), "Endurance"));
     conduits.push(new ActiveConduit(337981, defaultItemLevel, localizedName(337981), "Endurance"));
-  } 
-  
-  else if (spec === SPECS.HOLYPRIEST) {
+  } else if (spec === SPECS.HOLYPRIEST) {
     conduits.push(new ActiveConduit(337914, defaultItemLevel, localizedName(337914), "Potency"));
     conduits.push(new ActiveConduit(338345, defaultItemLevel, localizedName(338345), "Potency"));
     conduits.push(new ActiveConduit(337811, defaultItemLevel, localizedName(337811), "Potency"));

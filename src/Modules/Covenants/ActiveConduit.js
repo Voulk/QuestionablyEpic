@@ -21,7 +21,6 @@ class ActiveConduit {
 
   setHPS = (player, contentType) => {
     this.hps = getEstimatedHPS(getConduitFormula(this.id, player, contentType, this.itemLevel));
-    //this.hps = 45;
   };
 
   getIcon = (id) => {
