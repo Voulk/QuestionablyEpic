@@ -367,21 +367,11 @@ export default function CooldownPlanner(props) {
       },
       headerStyle: { borderRight: "1px solid #6c6c6c" },
       /* ------------------------ Renders the healer name outside of Edit Mode. ----------------------- */
-      render: (rowData) => (
-        <div style={{ color: classColoursJS(rowData.class) }}>
-          {/* {rowData.class === undefined ? "" : classIcons(rowData.class, { height: 30, width: 30, padding: "0px 5px 0px 0px", verticalAlign: "middle" })} */}
-          {rowData.name}
-        </div>
-      ),
+      render: (rowData) => <div style={{ color: classColoursJS(rowData.class) }}>{rowData.name}</div>,
       /* ---------- Component for name selection when the table is in edit mode. ---------- */
       editComponent: (props) => (
         <ThemeProvider theme={selectMenu}>
-          <FormControl
-            className={classes.formControl}
-            //  variant="outlined"
-            size="small"
-          >
-            {/* <InputLabel id="HealerSelector">{t("Name")}</InputLabel> */}
+          <FormControl className={classes.formControl} size="small">
             <Select
               value={props.value}
               label={t("Name")}
@@ -412,6 +402,7 @@ export default function CooldownPlanner(props) {
                 .map((key) => [key, <Divider />])}
               ,
               <MenuItem key={"remove"} value={""}>
+                {/* // TODO Translate */}
                 Remove
               </MenuItem>
             </Select>
@@ -419,7 +410,7 @@ export default function CooldownPlanner(props) {
         </ThemeProvider>
       ),
     },
-    // Class column. This is generated from the selected healer from the Name column.
+    /* ------- Class column. This is generated from the selected healer from the Name column. ------- */
     {
       title: t("Class"),
       field: "class",
@@ -431,14 +422,14 @@ export default function CooldownPlanner(props) {
         fontSize: 12,
       },
       headerStyle: { borderRight: "1px solid #6c6c6c" },
-      // Renders the Name for the healer in the relevant row in the data.
+      /* -------------- Renders the Name for the healer in the relevant row in the data. -------------- */
       render: (rowData) => (
         <div style={{ color: classColoursJS(rowData.class) }}>
           {rowData.class === undefined ? "" : classIcons(rowData.class, { height: 20, width: 20, padding: "0px 5px 0px 5px", verticalAlign: "middle", borderRadius: 4 })}
           {t("CooldownPlanner.Classes." + rowData.class)}
         </div>
       ),
-      // Shows the selected healers class in edit mode.
+      /* ----------------------- Shows the selected healers class in edit mode. ----------------------- */
       editComponent: (props, rowData) => {
         let data = { ...props.rowData };
         return (
@@ -450,7 +441,7 @@ export default function CooldownPlanner(props) {
       },
     },
     {
-      // The Column for Cooldown Selection
+      /* ------------------------------ The Column for Cooldown Selection ----------------------------- */
       title: t("Cooldown") + " 1",
       field: "Cooldown",
       width: "8%",
@@ -461,7 +452,7 @@ export default function CooldownPlanner(props) {
         lineHeight: "normal",
       },
       headerStyle: { borderRight: "1px solid #6c6c6c" },
-      // Renders the Ability name that was set for this row.
+      /* --------------------- Renders the Ability name that was set for this row. -------------------- */
       render: (rowData) => (
         <div style={{ width: 105, display: "inline-flex", alignItems: "center", width: "100%" }}>
           <div>
@@ -479,17 +470,12 @@ export default function CooldownPlanner(props) {
           </Typography>
         </div>
       ),
-      // The Edit Mode Component. Generated based off the healers class.
+      /* --------------- The Edit Mode Component. Generated based off the healers class. -------------- */
       editComponent: (props, rowData) => {
         let data = { ...props.rowData };
         return (
           <ThemeProvider theme={selectMenu}>
-            <FormControl
-              className={classes.formControl}
-              // variant="outlined"
-              size="small"
-            >
-              {/* <InputLabel id="HealerAbilitySelector">{t("Cooldown")}</InputLabel> */}
+            <FormControl className={classes.formControl} size="small">
               <Select
                 value={rowData.Cooldown || props.value}
                 labelId="HealerAbilitySelector"
@@ -512,7 +498,7 @@ export default function CooldownPlanner(props) {
     /* -------------------------------------------------------------------------- */
 
     {
-      // The Cast Time Column. This is where the time the user expects the cooldown to be cast.
+      /* --- The Cast Time Column. This is where the time the user expects the cooldown to be cast. --- */
       title: t("CooldownPlanner.TableLabels.CastTimeLabel"),
       field: "cooldownTime1",
       width: "1%",
@@ -538,9 +524,7 @@ export default function CooldownPlanner(props) {
             },
           }}
           size="small"
-          // variant="outlined"
           id="standard-basic"
-          // label={t("CooldownPlanner.TableLabels.CastTimeLabel")}
           placeholder="00:00"
           value={props.value}
           style={{ whiteSpace: "nowrap", width: "100%", marginTop: 6 }}
@@ -549,7 +533,7 @@ export default function CooldownPlanner(props) {
       ),
     },
     {
-      // Render only, should the user when the cooldown will be available again to be used.
+      /* ----- Render only, should the user when the cooldown will be available again to be used. ----- */
       title: t("CooldownPlanner.TableLabels.OffCooldownLabel"),
       width: "1%",
       hidden: true,
@@ -579,22 +563,12 @@ export default function CooldownPlanner(props) {
         fontSize: 12,
       },
       headerStyle: { borderRight: "1px solid #6c6c6c" },
-      // This renders the healer name outside of Edit Mode.
-      render: (rowData) => (
-        <div style={{ color: classColoursJS(rowData.class1) }}>
-          {/* {rowData.class1 === undefined ? "" : classIcons(rowData.class1, { height: 30, width: 30, padding: "0px 5px 0px 0px", verticalAlign: "middle" })} */}
-          {rowData.name1}
-        </div>
-      ),
-      // This is the Component for name selection when the table is in edit mode.
+      /* --------------------- This renders the healer name outside of Edit Mode. --------------------- */
+      render: (rowData) => <div style={{ color: classColoursJS(rowData.class1) }}>{rowData.name1}</div>,
+      /* ---------- This is the Component for name selection when the table is in edit mode. ---------- */
       editComponent: (props) => (
         <ThemeProvider theme={selectMenu}>
-          <FormControl
-            className={classes.formControl}
-            //  variant="outlined"
-            size="small"
-          >
-            {/* <InputLabel id="HealerSelector">{t("Name")}</InputLabel> */}
+          <FormControl className={classes.formControl} size="small">
             <Select
               value={props.value}
               label={t("Name")}
@@ -625,6 +599,7 @@ export default function CooldownPlanner(props) {
                 .map((key) => [key, <Divider />])}
               ,
               <MenuItem key={"remove"} value={""}>
+                {/* // TODO: Translate */}
                 Remove
               </MenuItem>
             </Select>
@@ -644,14 +619,14 @@ export default function CooldownPlanner(props) {
         fontSize: 12,
       },
       headerStyle: { borderRight: "1px solid #6c6c6c" },
-      // Renders the Name for the healer in the relevant row in the data.
+      /* -------------- Renders the Name for the healer in the relevant row in the data. -------------- */
       render: (rowData) => (
         <div style={{ color: classColoursJS(rowData.class1) }}>
           {rowData.class1 === undefined ? "" : classIcons(rowData.class1, { height: 20, width: 20, padding: "0px 5px 0px 5px", verticalAlign: "middle" })}
           {t("CooldownPlanner.Classes." + rowData.class1)}
         </div>
       ),
-      // Shows the selected healers class in edit mode.
+      /* ----------------------- Shows the selected healers class in edit mode. ----------------------- */
       editComponent: (props, rowData) => {
         let data = { ...props.rowData };
         return (
@@ -664,18 +639,17 @@ export default function CooldownPlanner(props) {
     },
 
     {
-      // The Column for Cooldown Selection
+      /* ------------------------------ The Column for Cooldown Selection ----------------------------- */
       title: t("Cooldown") + " 2",
       field: "Cooldown1",
       width: "8%",
       cellStyle: {
-        // whiteSpace: "nowrap",
         borderRight: "2px solid #6c6c6c",
         fontSize: 12,
         lineHeight: "normal",
       },
       headerStyle: { borderRight: "1px solid #6c6c6c" },
-      // Renders the Ability name that was set for this row.
+      /* --------------------- Renders the Ability name that was set for this row. -------------------- */
       render: (rowData) => (
         <div style={{ width: 105, display: "inline-flex", alignItems: "center", width: "100%" }}>
           <div>
@@ -693,17 +667,12 @@ export default function CooldownPlanner(props) {
           </Typography>
         </div>
       ),
-      // The Edit Mode Component. Generated based off the healers class.
+      /* --------------- The Edit Mode Component. Generated based off the healers class. -------------- */
       editComponent: (props, rowData) => {
         let data = { ...props.rowData };
         return (
           <ThemeProvider theme={selectMenu}>
-            <FormControl
-              className={classes.formControl}
-              // variant="outlined"
-              size="small"
-            >
-              {/* <InputLabel id="HealerAbilitySelector">{t("Cooldown")}</InputLabel> */}
+            <FormControl className={classes.formControl} size="small">
               <Select
                 value={rowData.Cooldown1 || props.value}
                 labelId="HealerAbilitySelector"
@@ -726,7 +695,7 @@ export default function CooldownPlanner(props) {
     /* -------------------------------------------------------------------------- */
 
     {
-      // The Cast Time Column. This is where the time the user expects the cooldown to be cast.
+      /* --- The Cast Time Column. This is where the time the user expects the cooldown to be cast. --- */
       title: t("CooldownPlanner.TableLabels.CastTimeLabel"),
       field: "cooldownTime2",
       width: "1%",
@@ -752,9 +721,7 @@ export default function CooldownPlanner(props) {
             },
           }}
           size="small"
-          // variant="outlined"
           id="standard-basic"
-          // label={t("CooldownPlanner.TableLabels.CastTimeLabel")}
           placeholder="00:00"
           value={props.value}
           style={{ whiteSpace: "nowrap", width: "100%", marginTop: 6 }}
@@ -763,7 +730,7 @@ export default function CooldownPlanner(props) {
       ),
     },
     {
-      // Render only, should the user when the cooldown will be available again to be used.
+      /* ----- Render only, should the user when the cooldown will be available again to be used. ----- */
       title: t("CooldownPlanner.TableLabels.OffCooldownLabel"),
       width: "1%",
       hidden: true,
@@ -793,22 +760,12 @@ export default function CooldownPlanner(props) {
         fontSize: 12,
       },
       headerStyle: { borderRight: "1px solid #6c6c6c" },
-      // This renders the healer name outside of Edit Mode.
-      render: (rowData) => (
-        <div style={{ color: classColoursJS(rowData.class2) }}>
-          {/* {rowData.class2 === undefined ? "" : classIcons(rowData.class2, { height: 30, width: 30, padding: "0px 5px 0px 0px", verticalAlign: "middle" })} */}
-          {rowData.name2}
-        </div>
-      ),
-      // This is the Component for name selection when the table is in edit mode.
+      /* --------------------- This renders the healer name outside of Edit Mode. --------------------- */
+      render: (rowData) => <div style={{ color: classColoursJS(rowData.class2) }}>{rowData.name2}</div>,
+      /* ---------- This is the Component for name selection when the table is in edit mode. ---------- */
       editComponent: (props) => (
         <ThemeProvider theme={selectMenu}>
-          <FormControl
-            className={classes.formControl}
-            // variant="outlined"
-            size="small"
-          >
-            {/* <InputLabel id="HealerSelector">{t("Name")}</InputLabel> */}
+          <FormControl className={classes.formControl} size="small">
             <Select
               value={props.value}
               label={t("Name")}
@@ -846,26 +803,23 @@ export default function CooldownPlanner(props) {
         </ThemeProvider>
       ),
     },
-
     {
       title: t("Class"),
       field: "class2",
-      // width: "10%",
       hidden: true,
       cellStyle: {
         whiteSpace: "nowrap",
-        // borderRight: "1px dotted #595959",
         fontSize: 12,
       },
       headerStyle: { borderRight: "1px solid #6c6c6c" },
-      // Renders the Name for the healer in the relevant row in the data.
+      /* -------------- Renders the Name for the healer in the relevant row in the data. -------------- */
       render: (rowData) => (
         <div style={{ color: classColoursJS(rowData.class2) }}>
           {rowData.class2 === undefined ? "" : classIcons(rowData.class2, { height: 20, width: 20, padding: "0px 5px 0px 5px", verticalAlign: "middle" })}
           {t("CooldownPlanner.Classes." + rowData.class2)}
         </div>
       ),
-      // Shows the selected healers class in edit mode.
+      /* ----------------------- Shows the selected healers class in edit mode. ----------------------- */
       editComponent: (props, rowData) => {
         let data = { ...props.rowData };
         return (
@@ -878,18 +832,17 @@ export default function CooldownPlanner(props) {
     },
 
     {
-      // The Column for Cooldown Selection
+      /* ------------------------------ The Column for Cooldown Selection ----------------------------- */
       title: t("Cooldown") + " 3",
       field: "Cooldown2",
       width: "8%",
       cellStyle: {
-        // whiteSpace: "nowrap",
         borderRight: "2px solid #6c6c6c",
         fontSize: 12,
         lineHeight: "normal",
       },
       headerStyle: { borderRight: "1px solid #6c6c6c" },
-      // Renders the Ability name that was set for this row.
+      /* --------------------- Renders the Ability name that was set for this row. -------------------- */
       render: (rowData) => (
         <div style={{ width: 105, display: "inline-flex", alignItems: "center", width: "100%" }}>
           <div>
@@ -907,17 +860,12 @@ export default function CooldownPlanner(props) {
           </Typography>
         </div>
       ),
-      // The Edit Mode Component. Generated based off the healers class.
+      /* --------------- The Edit Mode Component. Generated based off the healers class. -------------- */
       editComponent: (props, rowData) => {
         let data = { ...props.rowData };
         return (
           <ThemeProvider theme={selectMenu}>
-            <FormControl
-              className={classes.formControl}
-              // variant="outlined"
-              size="small"
-            >
-              {/* <InputLabel id="HealerAbilitySelector">{t("Cooldown")}</InputLabel> */}
+            <FormControl className={classes.formControl} size="small">
               <Select
                 value={rowData.Cooldown2 || props.value}
                 labelId="HealerAbilitySelector"
@@ -940,7 +888,7 @@ export default function CooldownPlanner(props) {
     /* -------------------------------------------------------------------------- */
 
     {
-      // The Cast Time Column. This is where the time the user expects the cooldown to be cast.
+      /* --- The Cast Time Column. This is where the time the user expects the cooldown to be cast. --- */
       title: t("CooldownPlanner.TableLabels.CastTimeLabel"),
       field: "cooldownTime3",
       width: "1%",
@@ -966,9 +914,7 @@ export default function CooldownPlanner(props) {
             },
           }}
           size="small"
-          // variant="outlined"
           id="standard-basic"
-          // label={t("CooldownPlanner.TableLabels.CastTimeLabel")}
           placeholder="00:00"
           value={props.value}
           style={{ whiteSpace: "nowrap", width: "100%", marginTop: 6 }}
@@ -977,7 +923,7 @@ export default function CooldownPlanner(props) {
       ),
     },
     {
-      // Render only, should the user when the cooldown will be available again to be used.
+      /* ----- Render only, should the user when the cooldown will be available again to be used. ----- */
       title: t("CooldownPlanner.TableLabels.OffCooldownLabel"),
       width: "1%",
       hidden: true,
@@ -1007,22 +953,12 @@ export default function CooldownPlanner(props) {
         fontSize: 12,
       },
       headerStyle: { borderRight: "1px solid #6c6c6c" },
-      // This renders the healer name outside of Edit Mode.
-      render: (rowData) => (
-        <div style={{ color: classColoursJS(rowData.class3) }}>
-          {/* {rowData.class3 === undefined ? "" : classIcons(rowData.class3, { height: 30, width: 30, padding: "0px 5px 0px 0px", verticalAlign: "middle" })} */}
-          {rowData.name3}
-        </div>
-      ),
-      // This is the Component for name selection when the table is in edit mode.
+      /* --------------------- This renders the healer name outside of Edit Mode. --------------------- */
+      render: (rowData) => <div style={{ color: classColoursJS(rowData.class3) }}>{rowData.name3}</div>,
+      /* ---------- This is the Component for name selection when the table is in edit mode. ---------- */
       editComponent: (props) => (
         <ThemeProvider theme={selectMenu}>
-          <FormControl
-            className={classes.formControl}
-            //  variant="outlined"
-            size="small"
-          >
-            {/* <InputLabel id="HealerSelector">{t("Name")}</InputLabel> */}
+          <FormControl className={classes.formControl} size="small">
             <Select
               value={props.value}
               label={t("Name")}
@@ -1064,22 +1000,20 @@ export default function CooldownPlanner(props) {
     {
       title: t("Class"),
       field: "class3",
-      // width: "10%",
       hidden: true,
       cellStyle: {
         whiteSpace: "nowrap",
-        // borderRight: "1px dotted #595959",
         fontSize: 12,
       },
       headerStyle: { borderRight: "1px solid #6c6c6c" },
-      // Renders the Name for the healer in the relevant row in the data.
+      /* -------------- Renders the Name for the healer in the relevant row in the data. -------------- */
       render: (rowData) => (
         <div style={{ color: classColoursJS(rowData.class3) }}>
           {rowData.class3 === undefined ? "" : classIcons(rowData.class3, { height: 20, width: 20, padding: "0px 5px 0px 5px", verticalAlign: "middle" })}
           {t("CooldownPlanner.Classes." + rowData.class3)}
         </div>
       ),
-      // Shows the selected healers class in edit mode.
+      /* ----------------------- Shows the selected healers class in edit mode. ----------------------- */
       editComponent: (props, rowData) => {
         let data = { ...props.rowData };
         return (
@@ -1092,16 +1026,15 @@ export default function CooldownPlanner(props) {
     },
 
     {
-      // The Column for Cooldown Selection
+      /* ------------------------------ The Column for Cooldown Selection ----------------------------- */
       title: t("Cooldown") + " 4",
       field: "Cooldown3",
       width: "8%",
       cellStyle: {
-        // whiteSpace: "nowrap",
         borderRight: "2px solid #6c6c6c",
       },
       headerStyle: { borderRight: "1px solid #6c6c6c" },
-      // Renders the Ability name that was set for this row.
+      /* --------------------- Renders the Ability name that was set for this row. -------------------- */
       render: (rowData) => (
         <div style={{ width: 105, display: "inline-flex", alignItems: "center", width: "100%" }}>
           <div>
@@ -1119,17 +1052,12 @@ export default function CooldownPlanner(props) {
           </Typography>
         </div>
       ),
-      // The Edit Mode Component. Generated based off the healers class.
+      /* --------------- The Edit Mode Component. Generated based off the healers class. -------------- */
       editComponent: (props, rowData) => {
         let data = { ...props.rowData };
         return (
           <ThemeProvider theme={selectMenu}>
-            <FormControl
-              className={classes.formControl}
-              // variant="outlined"
-              size="small"
-            >
-              {/* <InputLabel id="HealerAbilitySelector">{t("Cooldown")}</InputLabel> */}
+            <FormControl className={classes.formControl} size="small">
               <Select
                 value={rowData.Cooldown3 || props.value}
                 labelId="HealerAbilitySelector"
@@ -1152,7 +1080,7 @@ export default function CooldownPlanner(props) {
     /* -------------------------------------------------------------------------- */
 
     {
-      // The Cast Time Column. This is where the time the user expects the cooldown to be cast.
+      /* --- The Cast Time Column. This is where the time the user expects the cooldown to be cast. --- */
       title: t("CooldownPlanner.TableLabels.CastTimeLabel"),
       field: "cooldownTime4",
       width: "1%",
@@ -1178,9 +1106,7 @@ export default function CooldownPlanner(props) {
             },
           }}
           size="small"
-          // variant="outlined"
           id="standard-basic"
-          // label={t("CooldownPlanner.TableLabels.CastTimeLabel")}
           placeholder="00:00"
           value={props.value}
           style={{ whiteSpace: "nowrap", width: "100%", marginTop: 6 }}
@@ -1189,7 +1115,7 @@ export default function CooldownPlanner(props) {
       ),
     },
     {
-      // Render only, should the user when the cooldown will be available again to be used.
+      /* ----- Render only, should the user when the cooldown will be available again to be used. ----- */
       title: t("CooldownPlanner.TableLabels.OffCooldownLabel"),
       width: "1%",
       hidden: true,
@@ -1219,22 +1145,12 @@ export default function CooldownPlanner(props) {
         fontSize: 12,
       },
       headerStyle: { borderRight: "1px solid #6c6c6c" },
-      // This renders the healer name outside of Edit Mode.
-      render: (rowData) => (
-        <div style={{ color: classColoursJS(rowData.class4) }}>
-          {/* {rowData.class4 === undefined ? "" : classIcons(rowData.class4, { height: 30, width: 30, padding: "0px 5px 0px 0px", verticalAlign: "middle" })} */}
-          {rowData.name4}
-        </div>
-      ),
-      // This is the Component for name selection when the table is in edit mode.
+      /* --------------------- This renders the healer name outside of Edit Mode. --------------------- */
+      render: (rowData) => <div style={{ color: classColoursJS(rowData.class4) }}>{rowData.name4}</div>,
+      /* ---------- This is the Component for name selection when the table is in edit mode. ---------- */
       editComponent: (props) => (
         <ThemeProvider theme={selectMenu}>
-          <FormControl
-            className={classes.formControl}
-            // variant="outlined"
-            size="small"
-          >
-            {/* <InputLabel id="HealerSelector">{t("Name")}</InputLabel> */}
+          <FormControl className={classes.formControl} size="small">
             <Select
               value={props.value}
               label={t("Name")}
@@ -1276,22 +1192,20 @@ export default function CooldownPlanner(props) {
     {
       title: t("Class"),
       field: "class4",
-      // width: "10%",
       hidden: true,
       cellStyle: {
         whiteSpace: "nowrap",
-        // borderRight: "1px dotted #595959",
         fontSize: 12,
       },
       headerStyle: { borderRight: "1px solid #6c6c6c" },
-      // Renders the Name for the healer in the relevant row in the data.
+      /* -------------- Renders the Name for the healer in the relevant row in the data. -------------- */
       render: (rowData) => (
         <div style={{ color: classColoursJS(rowData.class4) }}>
           {rowData.class3 === undefined ? "" : classIcons(rowData.class4, { height: 20, width: 20, padding: "0px 5px 0px 5px", verticalAlign: "middle" })}
           {t("CooldownPlanner.Classes." + rowData.class4)}
         </div>
       ),
-      // Shows the selected healers class in edit mode.
+      /* ----------------------- Shows the selected healers class in edit mode. ----------------------- */
       editComponent: (props, rowData) => {
         let data = { ...props.rowData };
         return (
@@ -1304,18 +1218,17 @@ export default function CooldownPlanner(props) {
     },
 
     {
-      // The Column for Cooldown Selection
+      /* ------------------------------ The Column for Cooldown Selection ----------------------------- */
       title: t("Cooldown") + " 5",
       field: "Cooldown4",
       width: "8%",
       cellStyle: {
-        // whiteSpace: "nowrap",
         borderRight: "2px solid #6c6c6c",
         fontSize: 12,
         lineHeight: "normal",
       },
       headerStyle: { borderRight: "1px solid #6c6c6c" },
-      // Renders the Ability name that was set for this row.
+      /* --------------------- Renders the Ability name that was set for this row. -------------------- */
       render: (rowData) => (
         <div style={{ width: 105, display: "inline-flex", alignItems: "center", width: "100%" }}>
           <div>
@@ -1333,17 +1246,12 @@ export default function CooldownPlanner(props) {
           </Typography>
         </div>
       ),
-      // The Edit Mode Component. Generated based off the healers class.
+      /* --------------- The Edit Mode Component. Generated based off the healers class. -------------- */
       editComponent: (props, rowData) => {
         let data = { ...props.rowData };
         return (
           <ThemeProvider theme={selectMenu}>
-            <FormControl
-              className={classes.formControl}
-              // variant="outlined"
-              size="small"
-            >
-              {/* <InputLabel id="HealerAbilitySelector">{t("Cooldown")}</InputLabel> */}
+            <FormControl className={classes.formControl} size="small">
               <Select
                 value={rowData.Cooldown4 || props.value}
                 labelId="HealerAbilitySelector"
@@ -1362,10 +1270,9 @@ export default function CooldownPlanner(props) {
     },
 
     {
-      // Under Input Notes for the cooldown. I.e "Use just before this ability" or something else they wish to note.
+      /* -------------- Input Notes for the cooldown. I.e "Use just before this ability" -------------- */
       title: t("CooldownPlanner.TableLabels.NotesLabel"),
       field: "notes",
-      // width: "20%",
       cellStyle: {
         whiteSpace: "nowrap",
         borderRight: "1px solid #595959",
@@ -1381,9 +1288,7 @@ export default function CooldownPlanner(props) {
               input: classes.textFieldFontSize,
             },
           }}
-          // variant="outlined"
           id="standard-basic"
-          // label={t("CooldownPlanner.TableLabels.NotesLabel")}
           value={props.value}
           onChange={(e) => props.onChange(e.target.value)}
         />
@@ -1391,7 +1296,7 @@ export default function CooldownPlanner(props) {
     },
   ];
 
-  // Generates the blank plan arrays in the local storage if they don't exist already.
+  /* ------ Generates the blank plan arrays in the local storage if they don't exist already. ----- */
   useEffect(() => {
     bossList.map((key) => {
       if (ls.get(key.zoneID + "." + key.id + ".1") === null) {
@@ -1409,12 +1314,13 @@ export default function CooldownPlanner(props) {
     }
   });
 
-  // When the currently loaded data is updated the props.update function passed from the cooldown planner module will update the state also.
+  /* ------------- When the currently loaded data is updated the props.update function ------------ */
+  /* ------------- passed from the cooldown planner module will update the state also. ------------ */
   useEffect(() => {
     props.update(currentData);
   }, [currentData]);
 
-  // Sets the localization of the table based on the users selected language in i18
+  /* ------- Sets the localization of the table based on the users selected language in i18 ------- */
   let curLang = () => {
     if (currentLanguage === "en") {
       return localizationEN;
@@ -1427,6 +1333,7 @@ export default function CooldownPlanner(props) {
     }
   };
 
+  /* --------------------------- Update Local Storage for selected plan --------------------------- */
   let updateStorage = (props) => {
     if (ls.get(currentRaid + "." + currentBoss + "." + currentPlan) === null) {
       ls.set(currentRaid + "." + currentBoss + "." + currentPlan, []);
@@ -1446,6 +1353,8 @@ export default function CooldownPlanner(props) {
         style={{
           padding: 10,
         }}
+        /* ---------------------- Option to make cell editable by clicking on cell ---------------------- */
+        /* ------------------- Not currently Implemented, Code here for future options ------------------ */
         // cellEditable={{
         //   onCellEditApproved: (newValue, oldValue, rowData, columnDef) => {
         //     return new Promise((resolve, reject) => {
@@ -1466,6 +1375,7 @@ export default function CooldownPlanner(props) {
             whiteSpace: "nowrap",
             textAlign: "center",
           },
+          /* --------------------------- Alternating Row Colour is defined here --------------------------- */
           rowStyle: (rowData, index) => {
             if (index % 2) {
               return {
@@ -1485,7 +1395,9 @@ export default function CooldownPlanner(props) {
           actionsColumnIndex: 24,
           paging: false,
         }}
+        /* ------- In built table text is localized via this function and the TableLocale.js files ------ */
         localization={curLang()}
+        /* --------------------------------- Customized Table Components -------------------------------- */
         components={{
           Container: (props) => <Paper {...props} elevation={0} />,
           Body: (props) =>
