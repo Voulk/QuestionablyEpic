@@ -2,6 +2,7 @@
 import { addMissingTimestamps, getUniqueObjectsFromArray, reduceTimestamps, fightDuration, importHealerLogData, importDamageLogData, importCastsLogData,
   durationmaker, sumDamage, importSummaryData, importExternalCastsLogData, importCharacterIds, importEnemyCasts, importEnemyIds } from "../Functions/Functions";
 import moment from "moment";
+import { Code } from "@material-ui/icons";
 
 /* =============================================
    This Function Imports all the Data for the Chart/Log Details
@@ -14,24 +15,31 @@ import moment from "moment";
    passed through to this function.
   =============================================*/
 
-// PLease Note that all the 'this.' statements in this file do not actually affect this file.
-// They are refering to the component the function is imported into.
-//
+/* - PLease Note that all the 'this.' statements in this file do not actually affect this file. - */
+/* -------------- They are refering to the component the function is imported into. ------------- */
+
 function getUnique(arr, comp) {
-  // store the comparison  values in array
+  /* ---------------------------- Store the comparison  values in array --------------------------- */
   const unique = arr
     .map((e) => e[comp])
-    // store the indexes of the unique objects
+    /* --------------------------- Store the indexes of the unique objects -------------------------- */
     .map((e, i, final) => final.indexOf(e) === i && i)
-    // eliminate the false indexes & return unique objects
+    /* --------------------- Eliminate the false indexes & return unique objects -------------------- */
     .filter((e) => arr[e])
     .map((e) => arr[e]);
   return unique;
 }
 
+/* ---------------------------------------------------------------------------------------------- */
+/*                                      Chart Update Function                                     */
+/* ---------------------------------------------------------------------------------------------- */
+
 export default async function updatechartdata(starttime, endtime) {
-  //  Set the Loading State of the loading spinner so that the user knows data is being loaded.
+  /* -------- Note we are using alot of imported functions Here to save bloat in the Code. -------- */
+
+  /* -- Set the Loading State of the loading spinner so that the user knows data is being loaded. - */
   this.setState({ loadingcheck: true });
+
   let healerDurations = [];
   let sortedDataUnmitigatedWithCooldowns = [];
   let sortedDataMitigatedDamageWithCooldowns = [];
@@ -39,35 +47,33 @@ export default async function updatechartdata(starttime, endtime) {
   let sortedDataMitigatedDamageNoCooldowns = [];
   let damagingAbilities = [];
 
-  // Fight Length of the selected report is calculated and coverted to seconds as a string
+  /* ---- Fight Length of the selected report is calculated and coverted to seconds as a string --- */
   const fightLength = moment.duration(fightDuration(endtime, starttime)).asSeconds().toString();
 
-  // Import Healer Info from the Logs healing table for each healing class.
-  // See: "importHealerLogData" in the functions file for more info.
+  /* ----------- Import Healer Info from the Logs healing table for each healing class. ----------- */
   const healers = await importHealerLogData(starttime, endtime, this.state.reportid);
 
+  /* ------------------------------ Import Character IDS from the log ----------------------------- */
   const playerIDs = await importCharacterIds(starttime, endtime, this.state.reportid);
 
+  /* -------------------------------- Import Enemy IDS from the log ------------------------------- */
   const enemyIDs = await importEnemyIds(starttime, endtime, this.state.reportid);
 
-  // Import summary Info from the Logs Summary table.
-  // This contains our data for Gear, Stats, Conduits, Soulbinds etc etc.
-  // See: "importSummaryData" in the functions file for more info.
+  /* ---------------------- Import summary Info from the Logs Summary table. ---------------------- */
+  /* ------------ This contains our data for Gear, Stats, Conduits, Soulbinds etc etc. ------------ */
   const summary = await importSummaryData(starttime, endtime, this.state.reportid);
 
-  // Import all the damage-taken from the log for friendly targets.
-  // See: "importDamageLogData" in the functions file for more info.
+  /* --------------- Import all the damage-taken from the log for friendly targets. --------------- */
   const damage = await importDamageLogData(starttime, endtime, this.state.reportid);
 
-  // Map Healer Data for ID, Name and Class.
+  /* --------------------------- Map Healer Data for ID, Name and Class. -------------------------- */
   const healerIDName = healers.map((key) => ({
     id: key.id,
     name: key.name,
     class: key.type,
   }));
 
-  // Import the log data for Casts for each healer in the log.
-  // See: "importCastsLogData" fpr mpre info.
+  /* ------------------ Import the log data for Casts for each healer in the log. ----------------- */
   const cooldowns = await importCastsLogData(
     starttime,
     endtime,
@@ -75,6 +81,7 @@ export default async function updatechartdata(starttime, endtime) {
     healers.map((key) => key.id),
   );
 
+  /* ------------------------- Import Log data for external cooldown casts ------------------------ */
   const externals = await importExternalCastsLogData(
     starttime,
     endtime,
@@ -82,10 +89,10 @@ export default async function updatechartdata(starttime, endtime) {
     healers.map((key) => key.id),
   );
 
+  /* ------------------------------- Import Log data for enemy casts ------------------------------ */
   const enemyCasts = await importEnemyCasts(starttime, endtime, this.state.reportid);
-  console.log(enemyCasts);
 
-  // Map the damaging abilities and guids to an array of objects.
+  /* ---------------- Map the damaging abilities and guids to an array of objects. ---------------- */
   damage.map((key) =>
     damagingAbilities.push({
       ability: key.ability.name,
@@ -93,13 +100,12 @@ export default async function updatechartdata(starttime, endtime) {
     }),
   );
 
-  // Filter the array to unique entries for Ability name and Guid.
+  /* ---------------- Filter the array to unique entries for Ability name and Guid. --------------- */
   const uniqueArray = damagingAbilities.filter((ele, ind) => ind === damagingAbilities.findIndex((elem) => elem.ability === ele.ability && elem.guid === ele.guid));
 
-  // Map the cooldown data imported into an array of cooldowns in this format (HealerName - CooldownName).
-  // Then We make a unique list of Cooldowns from the previously mapped array, then create an array from this.
-  // We do this for the chart data as these are needed for dataKeys for the chart.
-
+  /* -- Map the cd data imported into an array of cds in this format (HealerName - CooldownName) -- */
+  /* ------ Unique list of Cds from the previously mapped array is made, then create an array ----- */
+  /* -------- We do this for the chart data as these are needed for dataKeys for the chart. ------- */
   const uniqueArrayCD = Array.from(
     new Set(
       cooldowns.map(
@@ -115,9 +121,9 @@ export default async function updatechartdata(starttime, endtime) {
     ),
   );
 
-  // Map the cooldown casts into objects for the chart.
-  // Them we map Cooldown Casts and using the duration maker function to add extra data points for the times the cooldown should be active.
-  // These are pushed into the new array healerDurations during the map
+  /* --------------------- Map the cooldown casts into objects for the chart. --------------------- */
+  /* ---- Map CD Casts with duration function to add extra data for the times the CD is active ---- */
+  /* ------------- These are pushed into the new array healerDurations during the map ------------- */
   cooldowns
     .map((key) => ({
       ability: key.ability.name,
@@ -131,16 +137,11 @@ export default async function updatechartdata(starttime, endtime) {
       " - " +
       key.ability.name]: 1,
     }))
-    .map((key) =>
-      healerDurations.push(
-        durationmaker(key.guid, key.timestamp, Object.getOwnPropertyNames(key).slice(3), moment(fightDuration(endtime, starttime)).startOf("second").valueOf()),
-      ),
-    );
+    .map((key) => healerDurations.push(durationmaker(key.guid, key.timestamp, Object.getOwnPropertyNames(key).slice(3), moment(fightDuration(endtime, starttime)).startOf("second").valueOf())));
 
-  // Attempting to create a list for Custom legend to use with wowhead tooltip
-  // Create Ability List With Guids for legend (Testing)
-  // Get Unique Objects from Ability list for the custom legend
-  // Concat the Unique Ability List with the Cooldown List
+  /* -------------------------- Create Ability List With Guids for legend ------------------------- */
+  /* ----------------- Get Unique Objects from Ability list for the custom legend ----------------- */
+  /* -------------------- Concat the Unique Ability List with the Cooldown List ------------------- */
   const uniqueArrayNewForLegend = getUniqueObjectsFromArray(
     damage.map((key) => ({
       value: key.ability.name,
@@ -149,25 +150,25 @@ export default async function updatechartdata(starttime, endtime) {
     "id",
   ).concat(uniqueArrayCD);
 
-  // Map the Unmitigated damage taken & timestamps.
-  // Timestamps are caluated via function by minusing the start of the the fight in ms from the end in ms.
-  // Then converted to the started of the nearest second otherwise the chart will show each individual ms.
-  // We Don't need to delve that deep into MS for the chart.
+  /* ----------------------- Map the Unmitigated damage taken & timestamps. ----------------------- */
+  /* ---- Timestamps are made by minusing the start of the the fight in ms from the end in ms. ---- */
+  /* - Then converted to start of nearest second otherwise the chart will show each individual ms - */
+  /* ------------------- We Don't need to delve that deep into MS for the chart. ------------------ */
   const unmitigatedDamageMap = damage.map((key) => ({
     timestamp: moment(fightDuration(key.timestamp, this.state.time)).startOf("second").valueOf(),
     [key.ability.name]: key.unmitigatedAmount,
   }));
 
-  // Map the Mitigated damage taken & timestamps.
-  // Timestamps are caluated via function by minusing the start of the the fight in ms from the end in ms.
-  // Then converted to the started of the nearest second otherwise the chart will show each individual ms.
-  // We Don't need to delve that deep into MS for the chart.
+  /* ------------------------ Map the Mitigated damage taken & timestamps. ------------------------ */
+  /* ---- Timestamps are made by minusing the start of the the fight in ms from the end in ms. ---- */
+  /* - Then converted to start of nearest second otherwise the chart will show each individual ms - */
+  /* ------------------- We Don't need to delve that deep into MS for the chart. ------------------ */
   const mitigatedDamageMap = damage.map((key) => ({
     timestamp: moment(fightDuration(key.timestamp, this.state.time)).startOf("second").valueOf(),
     [key.ability.name]: key.amount,
   }));
 
-  // Map cooldown casts for the Timeline Table.
+  /* ------------------------- Map cooldown casts for the Timeline Table. ------------------------- */
   const updateddatacastsTimeline = cooldowns.map((key) => ({
     ability: key.ability.name,
     guid: key.ability.guid,
@@ -186,7 +187,7 @@ export default async function updatechartdata(starttime, endtime) {
       .toString(),
   }));
 
-  // Map cooldown casts for the Timeline Table.
+  /* ------------------------- Map cooldown casts for the Timeline Table. ------------------------- */
   const updateddatacastsExternalsTimeline = externals.map((key) => ({
     ability: key.ability.name,
     guid: key.ability.guid,
@@ -217,9 +218,7 @@ export default async function updatechartdata(starttime, endtime) {
       .toString(),
   }));
 
-  console.log(updateddatacastsExternalsTimeline);
-
-  // Map cooldown casts for the Timeline Table.
+  /* ------------------------- Map enemy casts for the Enemy Timeline Table. ------------------------- */
   const enemyCastsTimeline = enemyCasts.map((key) => ({
     ability: key.ability.name,
     guid: key.ability.guid,
@@ -234,6 +233,7 @@ export default async function updatechartdata(starttime, endtime) {
     parentId: key.sourceID,
   }));
 
+  /* ------------------------ Map External casts for the External Timeline ------------------------ */
   const updateddatacastsExternalTimeline = cooldowns.map((key) => ({
     ability: key.ability.name,
     guid: key.ability.guid,
@@ -252,38 +252,40 @@ export default async function updatechartdata(starttime, endtime) {
       .toString(),
   }));
 
-  // Flatten the map we just created into an array.
+  /* ----------------------- Flatten the map we just created into an array. ----------------------- */
   let cooldownwithdurations = healerDurations.flat();
 
-  // Create any missing timestamps in the fight (i.e no damage, these are needed so the chart doesn't stretch the areas to the next point.)
+  /* ----------------- Create any missing timestamps in the fight (i.e no damage) ----------------- */
+  /* --------- These are needed so the chart doesn't stretch the areas to the next point.) -------- */
   let times = addMissingTimestamps(fightDuration(endtime, starttime));
 
-  // Concat the damage arrays with the cooldown durations with the missing durations
+  /* ------- Concat the damage arrays with the cooldown durations with the missing durations ------ */
   let unmitigatedDamageFromLogWithTimesAddedAndCooldowns = unmitigatedDamageMap.concat(cooldownwithdurations, times);
   let mitigatedDamageFromLogWithTimesAddedAndCooldowns = mitigatedDamageMap.concat(cooldownwithdurations, times);
   let unmitigatedDamageFromLogWithTimesAddedNoCooldowns = unmitigatedDamageMap.concat(times);
   let mitigatedDamageFromLogWithTimesAddedNoCooldowns = mitigatedDamageMap.concat(times);
 
-  // Sort the Arrays by Timestamp
+  /* -------------------------------- Sort the Arrays by Timestamp -------------------------------- */
   unmitigatedDamageFromLogWithTimesAddedAndCooldowns.sort((a, b) => (a.timestamp > b.timestamp ? 1 : -1));
   mitigatedDamageFromLogWithTimesAddedAndCooldowns.sort((a, b) => (a.timestamp > b.timestamp ? 1 : -1));
   unmitigatedDamageFromLogWithTimesAddedNoCooldowns.sort((a, b) => (a.timestamp > b.timestamp ? 1 : -1));
   mitigatedDamageFromLogWithTimesAddedNoCooldowns.sort((a, b) => (a.timestamp > b.timestamp ? 1 : -1));
 
-  // Reduce the arrays removing any duplicate timestamps//
+  /* -------------------- Reduce the arrays removing any duplicate timestamps// ------------------- */
   let unmitigatedDamageTimestampsReducedWithCooldowns = reduceTimestamps(unmitigatedDamageFromLogWithTimesAddedAndCooldowns);
   let mitigatedDamageTimestampsReducedWithCooldowns = reduceTimestamps(mitigatedDamageFromLogWithTimesAddedAndCooldowns);
   let unmitigatedDamageTimestampsReducedNoCooldowns = reduceTimestamps(unmitigatedDamageFromLogWithTimesAddedNoCooldowns);
   let mitigatedDamageTimestampsReducedNoCooldowns = reduceTimestamps(mitigatedDamageFromLogWithTimesAddedNoCooldowns);
 
-  Object.keys(unmitigatedDamageTimestampsReducedWithCooldowns).forEach((element) =>
-    sortedDataUnmitigatedWithCooldowns.push(unmitigatedDamageTimestampsReducedWithCooldowns[element]),
-  );
-  Object.keys(mitigatedDamageTimestampsReducedWithCooldowns).forEach((element) =>
-    sortedDataMitigatedDamageWithCooldowns.push(mitigatedDamageTimestampsReducedWithCooldowns[element]),
-  );
+  /* ------------------------------------- Push To new arrays ------------------------------------- */
+  Object.keys(unmitigatedDamageTimestampsReducedWithCooldowns).forEach((element) => sortedDataUnmitigatedWithCooldowns.push(unmitigatedDamageTimestampsReducedWithCooldowns[element]));
+  Object.keys(mitigatedDamageTimestampsReducedWithCooldowns).forEach((element) => sortedDataMitigatedDamageWithCooldowns.push(mitigatedDamageTimestampsReducedWithCooldowns[element]));
   Object.keys(unmitigatedDamageTimestampsReducedNoCooldowns).forEach((element) => sortedDataUnmitigatedNoCooldowns.push(unmitigatedDamageTimestampsReducedNoCooldowns[element]));
   Object.keys(mitigatedDamageTimestampsReducedNoCooldowns).forEach((element) => sortedDataMitigatedDamageNoCooldowns.push(mitigatedDamageTimestampsReducedNoCooldowns[element]));
+
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                    DTPS Graph data creation                                    */
+  /* ---------------------------------------------------------------------------------------------- */
 
   let summedUnmitigationDamage = sumDamage(sortedDataUnmitigatedNoCooldowns, fightLength);
 

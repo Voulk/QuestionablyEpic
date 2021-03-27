@@ -201,7 +201,6 @@ export default function CooldownPlanner(props) {
       editComponent: (props) => (
         <TextField
           error={RegExp("^([01]?[0-9]|2[0-3]):[0-5][0-9]$").test(props.value) || props.value === undefined ? false : true}
-          // hiddenLabel
           inputProps={{
             pattern: "^([01]?[0-9]|2[0-3]):[0-5][0-9]$",
           }}
@@ -367,8 +366,11 @@ export default function CooldownPlanner(props) {
               label={t("Name")}
               labelId="HealerSelector"
               onChange={(e) => {
+                /* ------------------------------ Spread the rows data for updating ----------------------------- */
                 let data = { ...props.rowData };
+                /* -------------------- Set the name of the row to the selected from dropdown ------------------- */
                 data.name = e.target.value;
+                /* --------------------- Update the class from the healerinfo local storage --------------------- */
                 data.class = ls
                   .get("healerInfo")
                   .filter((obj) => {
@@ -376,11 +378,14 @@ export default function CooldownPlanner(props) {
                   })
                   .map((obj) => obj.class)
                   .toString();
+                /* ------------------------------- Reset the cooldown for the row ------------------------------- */
                 data.Cooldown = undefined;
+                /* --------------------------------------- Update the data -------------------------------------- */
                 props.onRowDataChange(data);
               }}
               MenuProps={menuStyle}
             >
+              {/* ----- Map Healer Names from the healerInfo local storage (created from Heal Team Module) ----- */}
               {ls
                 .get("healerInfo")
                 .map((key, i) => (
@@ -404,7 +409,6 @@ export default function CooldownPlanner(props) {
     {
       title: t("Class"),
       field: "class",
-      // width: "10%",
       hidden: true,
       cellStyle: {
         whiteSpace: "nowrap",
@@ -436,7 +440,6 @@ export default function CooldownPlanner(props) {
       field: "Cooldown",
       width: "8%",
       cellStyle: {
-        // whiteSpace: "nowrap",
         borderRight: "2px solid #6c6c6c",
         fontSize: 12,
         lineHeight: "normal",
@@ -564,8 +567,11 @@ export default function CooldownPlanner(props) {
               label={t("Name")}
               labelId="HealerSelector"
               onChange={(e) => {
+                /* ------------------------------ Spread the rows data for updating ----------------------------- */
                 let data = { ...props.rowData };
+                /* -------------------- Set the name of the row to the selected from dropdown ------------------- */
                 data.name1 = e.target.value;
+                /* --------------------- Update the class from the healerinfo local storage --------------------- */
                 data.class1 = ls
                   .get("healerInfo")
                   .filter((obj) => {
@@ -573,11 +579,14 @@ export default function CooldownPlanner(props) {
                   })
                   .map((obj) => obj.class)
                   .toString();
+                /* ------------------------------- Reset the cooldown for the row ------------------------------- */
                 data.Cooldown1 = undefined;
+                /* --------------------------------------- Update the data -------------------------------------- */
                 props.onRowDataChange(data);
               }}
               MenuProps={menuStyle}
             >
+              {/* ----- Map Healer Names from the healerInfo local storage (created from Heal Team Module) ----- */}
               {ls
                 .get("healerInfo")
                 .map((key, i) => (
@@ -761,8 +770,11 @@ export default function CooldownPlanner(props) {
               label={t("Name")}
               labelId="HealerSelector"
               onChange={(e) => {
+                /* ------------------------------ Spread the rows data for updating ----------------------------- */
                 let data = { ...props.rowData };
+                /* -------------------- Set the name of the row to the selected from dropdown ------------------- */
                 data.name2 = e.target.value;
+                /* --------------------- Update the class from the healerinfo local storage --------------------- */
                 data.class2 = ls
                   .get("healerInfo")
                   .filter((obj) => {
@@ -770,11 +782,14 @@ export default function CooldownPlanner(props) {
                   })
                   .map((obj) => obj.class)
                   .toString();
+                /* ------------------------------- Reset the cooldown for the row ------------------------------- */
                 data.Cooldown2 = undefined;
+                /* --------------------------------------- Update the data -------------------------------------- */
                 props.onRowDataChange(data);
               }}
               MenuProps={menuStyle}
             >
+              {/* ----- Map Healer Names from the healerInfo local storage (created from Heal Team Module) ----- */}
               {ls
                 .get("healerInfo")
                 .map((key, i) => (
@@ -954,8 +969,11 @@ export default function CooldownPlanner(props) {
               label={t("Name")}
               labelId="HealerSelector"
               onChange={(e) => {
+                /* ------------------------------ Spread the rows data for updating ----------------------------- */
                 let data = { ...props.rowData };
+                /* -------------------- Set the name of the row to the selected from dropdown ------------------- */
                 data.name3 = e.target.value;
+                /* --------------------- Update the class from the healerinfo local storage --------------------- */
                 data.class3 = ls
                   .get("healerInfo")
                   .filter((obj) => {
@@ -963,11 +981,14 @@ export default function CooldownPlanner(props) {
                   })
                   .map((obj) => obj.class)
                   .toString();
+                /* ------------------------------- Reset the cooldown for the row ------------------------------- */
                 data.Cooldown3 = undefined;
+                /* --------------------------------------- Update the data -------------------------------------- */
                 props.onRowDataChange(data);
               }}
               MenuProps={menuStyle}
             >
+              {/* ----- Map Healer Names from the healerInfo local storage (created from Heal Team Module) ----- */}
               {ls
                 .get("healerInfo")
                 .map((key, i) => (
@@ -1146,8 +1167,11 @@ export default function CooldownPlanner(props) {
               label={t("Name")}
               labelId="HealerSelector"
               onChange={(e) => {
+                /* ------------------------------ Spread the rows data for updating ----------------------------- */
                 let data = { ...props.rowData };
+                /* -------------------- Set the name of the row to the selected from dropdown ------------------- */
                 data.name4 = e.target.value;
+                /* --------------------- Update the class from the healerinfo local storage --------------------- */
                 data.class4 = ls
                   .get("healerInfo")
                   .filter((obj) => {
@@ -1155,11 +1179,14 @@ export default function CooldownPlanner(props) {
                   })
                   .map((obj) => obj.class)
                   .toString();
+                /* ------------------------------- Reset the cooldown for the row ------------------------------- */
                 data.Cooldown4 = undefined;
+                /* --------------------------------------- Update the data -------------------------------------- */
                 props.onRowDataChange(data);
               }}
               MenuProps={menuStyle}
             >
+              {/* ----- Map Healer Names from the healerInfo local storage (created from Heal Team Module) ----- */}
               {ls
                 .get("healerInfo")
                 .map((key, i) => (
@@ -1398,7 +1425,7 @@ export default function CooldownPlanner(props) {
               </Grow>
             ),
           Header: (props) =>
-          /* ----------------------- If no Boss Selected then hide the Table Header ----------------------- */
+            /* ----------------------- If no Boss Selected then hide the Table Header ----------------------- */
             currentBoss === "" ? null : (
               <Grow in={currentBoss === "" ? false : true} style={{ transformOrigin: "0 0 0" }} {...((currentBoss === "" ? false : true) ? { timeout: "auto" } : {})}>
                 <MTableHeader {...props} />
