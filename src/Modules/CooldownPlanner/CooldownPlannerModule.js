@@ -23,7 +23,7 @@ import EnemyCastsTimeline from "./ModuleComponents/LogDetailComponents/EnemyCast
 class HolyDiver extends Component {
   constructor(props) {
     super();
-    // We bind the below functions to this Component.
+    /* ----------------------- We bind the below functions to this Component. ----------------------- */
     // This means these functions can be passed as props to other components and they will return here rather than in the component they are sent to.
     this.reportidHandler = this.reportidHandler.bind(this);
     this.damageTableShow = this.damageTableShow.bind(this);
@@ -39,7 +39,8 @@ class HolyDiver extends Component {
     this.handleChangePlanCooldownPlanner = this.handleChangePlanCooldownPlanner.bind(this);
     this.handleERTClickOpen = this.handleERTClickOpen.bind(this);
     this.handleHealTeamClickOpen = this.handleHealTeamClickOpen.bind(this);
-    // We set our state for the cooldown Planner Module.
+
+    /* ---------------------- We set our state for the cooldown Planner Module. --------------------- */
     this.state = {
       currentBossID: null,
       unmitigatedChartData: [],
@@ -97,8 +98,8 @@ class HolyDiver extends Component {
     };
   }
 
-  // this function is bound to this component.
-  // It is passed as a prop for the fight Selector, and the states are set depending on the data returned.
+  /* -------------------------- this function is bound to this component. ------------------------- */
+  /* ------- It is passed as a prop for the fight Selector, the states are set from the data ------ */
   handler = (info) => {
     this.setState({
       showname: true,
@@ -119,6 +120,7 @@ class HolyDiver extends Component {
       cooldownPlannerCurrentBoss: info[5],
     });
 
+    /* ------------ Get the 1st plan for imported boss/log and set as data automatically ------------ */
     let data = ls.get(info[8] + "." + info[5] + ".1");
     if (data !== null) {
       this.setState({
@@ -127,29 +129,38 @@ class HolyDiver extends Component {
     }
   };
 
+  /* ------------------------------------ Change Raid Function ------------------------------------ */
+  /* -------------------------- This changes which raid the plan is using ------------------------- */
   handleChangeRaidCooldownPlanner = (event) => {
     this.setState({
       cooldownPlannerCurrentRaid: event,
     });
   };
 
+  /* ------------------------------------ Change Boss Function ------------------------------------ */
+  /* -------------------------- This changes which boss the plan is using ------------------------- */
   handleChangeBossCooldownPlanner = (event) => {
     this.setState({
       cooldownPlannerCurrentBoss: event,
       cooldownPlannerCurrentPlan: 1,
     });
+    /* ----------------- Get the 1st Plan for Selected Boss and set as current data ----------------- */
     let data = ls.get(this.state.cooldownPlannerCurrentRaid + "." + event + ".1");
     this.setState({
       cooldownPlannerCurrentData: data,
     });
   };
 
+  /* ------------------------------------ Change Plan Function ------------------------------------ */
+
   handleChangePlanCooldownPlanner = (event) => {
-    console.log(event);
     this.setState({ cooldownPlannerCurrentPlan: event });
+    /* ------------------------- If Plan does not exist then set empty array ------------------------ */
     if (ls.get(this.state.cooldownPlannerCurrentRaid + "." + this.state.cooldownPlannerCurrentBoss + "." + event) === null) {
       ls.set(this.state.cooldownPlannerCurrentRaid + "." + this.state.cooldownPlannerCurrentBoss + "." + event, []);
     }
+
+    /* -------------------------- Get the Relevant Plan from local storage -------------------------- */
     let data = ls.get(this.state.cooldownPlannerCurrentRaid + "." + this.state.cooldownPlannerCurrentBoss + "." + event);
     this.setState({
       cooldownPlannerCurrentData: data,
@@ -160,21 +171,22 @@ class HolyDiver extends Component {
     this.setState({ cooldownPlannerCurrentData: data });
   };
 
-  // This Function sets the state on whether the Log Cooldown Chart is Shown.
+  /* ------------------ Sets the state on whether the Log Cooldown Chart is Shown ----------------- */
   damageTableShow = (event) => {
     this.setState({ damageTableShow: event });
   };
 
+  /* ------------------------------ Shows / Hides the Details Panels ------------------------------ */
   logDetailsShow = (event) => {
     this.setState({ logDetailsShow: event });
   };
 
-  // This Function sets the state on whether the User Input Cooldown Chart is Shown.
+  /* -------------- Sets the state on whether the User Input Cooldowns are Shown. ------------- */
   customCooldownsOnChart = (event) => {
     this.setState({ customCooldownsOnChart: event });
   };
 
-  // This funtion sets the state for Unmitigated/Mitigated Damage shown.
+  /* ------------------- Sets the state for Unmitigated/Mitigated Damage shown. ------------------- */
   changeDataSet = (event) => {
     this.setState({ chartData: event });
   };
@@ -204,8 +216,7 @@ class HolyDiver extends Component {
     this.setState({ ertDialogState: false });
   };
 
-  // Heal Team Dialog Handlers
-
+  /* ---------------------------------- Heal Team Dialog Handlers --------------------------------- */
   handleHealTeamClickOpen = () => {
     this.setState({ healTeamDialogState: true });
   };
@@ -215,6 +226,7 @@ class HolyDiver extends Component {
   };
 
   render() {
+    /* ------------------------------------ Data Loading Spinner ------------------------------------ */
     let spinnershow = this.state.loadingcheck;
 
     return (
@@ -224,14 +236,18 @@ class HolyDiver extends Component {
         }}
       >
         <div style={{ margin: "20px 5% 20px 5%" }}>
-          {/* Main Grid for the Compoonent, this should control the base spacing of all the base components,
-              any Grid Components within this with the item prop will have spacing  */}
+          {/* ---------------------------------------------------------------------------------------------- */
+          /*                                  Main Grid for the Component                                   */
+          /* ---------------------------------------------------------------------------------------------- */}
           <Grid container spacing={1}>
             <Grid item xs={12}>
               <Typography variant="h4" align="center" style={{ padding: "10px 10px 5px 10px" }} color="primary">
+                {/* // TODO Translate */}
                 Cooldown Planner
               </Typography>
             </Grid>
+            {/* --------------------------------------- Help Accordian --------------------------------------- */}
+            {/* // TODO Delete/Reword closer to release */}
             <Grid item xs={12}>
               <Accordion>
                 <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content" id="panel1a-header">
@@ -239,59 +255,48 @@ class HolyDiver extends Component {
                     Welcome to the Cooldown Planner!
                   </Typography>
                 </AccordionSummary>
-
                 <AccordionDetails>
                   <Typography style={{ color: "orange" }} align="left" variant="subtitle1">
-                    Update: New Style. Plan up to 5 Cds per Boss Ability/Cast Time (Currently the Custom Cds on the Chart only show as per the 1st Cast Time (Individual Times not
-                    Working yet)
+                    Update: New Style. Plan up to 5 Cds per Boss Ability/Cast Time (Currently the Custom Cds on the Chart only show as per the 1st Cast Time (Individual Times not Working yet)
                   </Typography>
                 </AccordionDetails>
-
                 <AccordionDetails>
                   <Typography style={{ color: "limegreen" }} align="left" variant="subtitle1">
-                    To Begin start by adding Healers to your Heal Team. Importing a log will bring up the damage pattern of the selected fight, with the cooldowns used on the log
-                    overlayed to give an indication of what they were used for, what they were used etc.
+                    To Begin start by adding Healers to your Heal Team. Importing a log will bring up the damage pattern of the selected fight, with the cooldowns used on the log overlayed to give an
+                    indication of what they were used for, what they were used etc.
                   </Typography>
                 </AccordionDetails>
-
                 <AccordionDetails>
                   <Typography style={{ color: "limegreen" }} align="left" variant="subtitle1">
                     A timeline of the abilities will show in the Timeline Component.
                   </Typography>
                 </AccordionDetails>
-
                 <AccordionDetails>
                   <Typography style={{ color: "limegreen" }} align="left" variant="subtitle1">
                     Healer information shows a card for each healer showing their stats, talents, conduit choices.
                   </Typography>
                 </AccordionDetails>
-
                 <AccordionDetails>
                   <Typography style={{ color: "limegreen" }} align="left" variant="subtitle1">
                     The DTPS chart shows the damaging abilities over the entire fight.
                   </Typography>
                 </AccordionDetails>
-
                 <AccordionDetails>
                   <Typography style={{ color: "limegreen" }} align="left" variant="subtitle1">
-                    Below that another Chart is shown with the damage pattern from the log, this has no cooldowns from the log shown, but cooldowns you enter into the planner (with
-                    times) will be shown on this chart.
+                    Below that another Chart is shown with the damage pattern from the log, this has no cooldowns from the log shown, but cooldowns you enter into the planner (with times) will be
+                    shown on this chart.
                   </Typography>
                 </AccordionDetails>
-
                 <AccordionDetails>
                   <Typography style={{ color: "limegreen" }} align="left" variant="subtitle1">
-                    The Planner itself will unlock after you enter your healers into the Heal Team. Enter your Healers, Cooldowns you want used, time to cast (If Applicable, you
-                    CAN enter cooldowns without a time, they will just not show up on the Chart/ERT Note, to keep them in order you should currently use numbers to keep them in
-                    order, i.e 1, 2 3), the ability to use it for etc.
+                    The Planner itself will unlock after you enter your healers into the Heal Team. Enter your Healers, Cooldowns you want used, time to cast (If Applicable, you CAN enter cooldowns
+                    without a time, they will just not show up on the Chart/ERT Note, to keep them in order you should currently use numbers to keep them in order, i.e 1, 2 3), the ability to use it
+                    for etc.
                   </Typography>
                 </AccordionDetails>
               </Accordion>
             </Grid>
-
-            {/*
-                Grid Container for the Heal Team Table and Cooldown Planner
-            */}
+            {/* ----------------- Grid Container for the Heal Team Table and Cooldown Planner ---------------- */}
             <Grid item container direction="row" justify="flex-start" alignItems="flex-start" spacing={1} margin={4}>
               <Grid item xs={12} sm={12} md={12} lg={12} xl={12} padding={1}>
                 <CooldownPlanner
@@ -309,8 +314,7 @@ class HolyDiver extends Component {
                 />
               </Grid>
             </Grid>
-
-            {/* Grid Container for the User Input Components, With Paper as the Surface */}
+            {/* ----------- Grid Container for the User Input Components, With Paper as the Surface ---------- */}
             <Grid item xs={12} sm={12} md={7} lg={7} xl={7}>
               <Paper
                 style={{
@@ -320,17 +324,20 @@ class HolyDiver extends Component {
                 }}
                 elevation={0}
               >
-                {/* Grid Container for the Log Input/Fight Selection Button */}
+                {/* ------------------- Grid Container for the Log Input/Fight Selection Button ------------------ */}
                 <Grid container spacing={1} justify="space-between">
+                  {/* ------------------------------------------ Log Input ----------------------------------------- */}
                   <Grid item xs={10}>
                     <LogLinkInput changed={this.reportidHandler} reportid={this.state.reportid} styleProps={{ fullWidth: true }} />
                   </Grid>
+                  {/* ----------------------------------- Fight Selection Button ----------------------------------- */}
                   <Grid item xs={2}>
                     <FightSelectorButton reportid={this.state.reportid} clicky={this.handler} update={this.updatechartdataNew} />
                   </Grid>
                 </Grid>
               </Paper>
             </Grid>
+            {/* ------------------------------ Container for the Toggle Buttons ------------------------------ */}
             <Grid item container xs={12} sm={12} md={5} lg={5} xl={5} justify="flex-end">
               <Paper
                 style={{
@@ -346,11 +353,8 @@ class HolyDiver extends Component {
                 <SwitchLabels disabled={this.state.switchPanelShow} check={this.changeDataSet} label={this.state.chartData === true ? "Unmitigated" : "Mitigated"} />
               </Paper>
             </Grid>
-
-            {/*
-                Grid Container for the Log Chart (Damage + Cooldowns used).
-                The function in the style removes padding from showing while Collapsed
-            */}
+            {/* ----------------- Grid Container for the Log Chart (Damage + Cooldowns used). ---------------- */}
+            {/* ----------- The function in the style removes padding from showing while Collapsed ----------- */}
             <Grid
               item
               container
@@ -362,6 +366,7 @@ class HolyDiver extends Component {
                 display: this.state.damageTableShow ? "block" : "none",
               }}
             >
+              {/* ---------------------------- Imported Log Info (Name, Length etc) ---------------------------- */}
               <Grid item xs={12} padding={1}>
                 <Collapse in={this.state.damageTableShow}>
                   <Grow in={this.state.damageTableShow} style={{ transformOrigin: "0 0 0" }} {...(this.state.damageTableShow ? { timeout: 1000 } : {})}>
@@ -416,6 +421,7 @@ class HolyDiver extends Component {
                   </Grow>
                 </Collapse>
               </Grid>
+              {/* ---------------------------- Imported Log Damage / Cooldown Chart ---------------------------- */}
               <Grid
                 item
                 xs={12}
@@ -448,11 +454,8 @@ class HolyDiver extends Component {
                 </Collapse>
               </Grid>
             </Grid>
-
-            {/*
-                Grid Container for the Cooldown Timeline used in the log table. the healer cards showing healer stats from log, and the 
-                The function in the style removes padding from showing while Collapsed
-            */}
+            {/* ----------------------------- Grid Container for the log details ----------------------------- */}
+            {/* ---------------- Cooldown / External Timeline / Healer Info Cards / DTPS by ability --------------- */}
             <Grid
               item
               container
@@ -462,37 +465,44 @@ class HolyDiver extends Component {
             >
               <Collapse in={this.state.logDetailsShow} style={{ width: "100%" }}>
                 <Grid item container direction="row" justify="flex-start" alignItems="flex-start" spacing={1}>
+                  {/* ----------------------------------- Cooldown Usage Timeline ---------------------------------- */}
                   <Grid item xs={12} sm={12} md={12} lg={6} xl={6} padding={1}>
                     <CooldownTimeline data={this.state.Updateddatacasts} />
                   </Grid>
+                  {/* ----------------------------------- External Usage Timeline ---------------------------------- */}
                   <Grid item xs={12} sm={12} md={12} lg={6} xl={6} padding={1}>
                     <ExternalTimeline data={this.state.externalUsageTimelineData} />
                   </Grid>
-
+                  {/* ----------------------------------------- DTPS Graph ----------------------------------------- */}
                   <Grid item xs={12} sm={12} md={12} lg={4} xl={4} padding={1}>
                     <Example dataToShow={this.state.chartData} mitigated={this.state.summedMitigationDamagePerSecond} unmitigated={this.state.summedUnmitigatedDamagePerSecond} />
                   </Grid>
-
+                  {/* ---------------------------------- Healer Information Cards ---------------------------------- */}
+                  {/* ------------------------------- Stats / Talents / Soulbinds Etc ------------------------------ */}
                   <Grid item xs={12} sm={12} md={12} lg={4} xl={4} padding={1}>
                     <Paper style={{ padding: 8, marginBottom: 8 }} elevation={0}>
                       <Typography variant="h6" color="primary" style={{ padding: "4px 8px 4px 24px" }}>
+                        {/* // TODO Translate */}
                         Healer Information
                       </Typography>
                       <Divider />
                     </Paper>
                     <HealerInfoTable heals={this.state.healernames} />
                   </Grid>
+
+                  {/* ------------------------------------ Enemy Casts Timeline ------------------------------------ */}
+                  {/* ----------- Not sure if this will be used, but it shows the enemies casts and when ----------- */}
                   <Grid item xs={12} sm={12} md={12} lg={6} xl={6} padding={1}>
                     <EnemyCastsTimeline data={this.state.enemyCastsTimelineData} />
                   </Grid>
                 </Grid>
               </Collapse>
             </Grid>
-
             <Grid item xs={12} style={{ height: 350 }} />
           </Grid>
         </div>
 
+        {/* ------------------------------------ ERT Note Export Table ----------------------------------- */}
         <Dialog onClose={this.handleERTClose} aria-labelledby="ERT-Dialog" open={this.state.ertDialogState} maxWidth="md" fullWidth PaperProps={{ style: { minWidth: 300 } }}>
           <ERTTable
             ertListTimeNoIcons={this.state.ertListTimeNoIcons}
@@ -504,14 +514,9 @@ class HolyDiver extends Component {
           />
         </Dialog>
 
-        <Dialog
-          onClose={this.handleHealTeamClose}
-          aria-labelledby="ERT-Dialog"
-          open={this.state.healTeamDialogState}
-          maxWidth="lg"
-          fullWidth
-          PaperProps={{ style: { minWidth: 300 } }}
-        >
+        {/* ------------------------------------- Healer Team Dialog ------------------------------------- */}
+        {/* ------------------- This is where you enter your healing team into the app. ------------------ */}
+        <Dialog onClose={this.handleHealTeamClose} aria-labelledby="ERT-Dialog" open={this.state.healTeamDialogState} maxWidth="lg" fullWidth PaperProps={{ style: { minWidth: 300 } }}>
           <HealTeam />
         </Dialog>
       </div>
