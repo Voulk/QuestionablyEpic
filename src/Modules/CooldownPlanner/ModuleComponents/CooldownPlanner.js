@@ -366,14 +366,14 @@ export default function CooldownPlanner(props) {
         fontSize: 12,
       },
       headerStyle: { borderRight: "1px solid #6c6c6c" },
-      // This renders the healer name outside of Edit Mode.
+      /* ------------------------ Renders the healer name outside of Edit Mode. ----------------------- */
       render: (rowData) => (
         <div style={{ color: classColoursJS(rowData.class) }}>
           {/* {rowData.class === undefined ? "" : classIcons(rowData.class, { height: 30, width: 30, padding: "0px 5px 0px 0px", verticalAlign: "middle" })} */}
           {rowData.name}
         </div>
       ),
-      // This is the Component for name selection when the table is in edit mode.
+      /* ---------- Component for name selection when the table is in edit mode. ---------- */
       editComponent: (props) => (
         <ThemeProvider theme={selectMenu}>
           <FormControl

@@ -83,6 +83,7 @@ export default function HealTeam(props) {
   const currentLanguage = i18n.language;
 
   let columns = [
+    /* ------------------------------------- Healer Name Column ------------------------------------- */
     {
       title: t("Name"),
       field: "name",
@@ -108,6 +109,8 @@ export default function HealTeam(props) {
         />
       ),
     },
+
+    /* ---------------------------------------- Class Column ---------------------------------------- */
     {
       title: t("Class"),
       field: "class",
@@ -138,6 +141,8 @@ export default function HealTeam(props) {
         </ThemeProvider>
       ),
     },
+
+    /* ---------------------------------------- Notes Column ---------------------------------------- */
     {
       title: t("CooldownPlanner.TableLabels.NotesLabel"),
       field: "notes",
@@ -145,25 +150,19 @@ export default function HealTeam(props) {
         whiteSpace: "nowrap",
       },
       editComponent: (props) => (
-        <TextField
-          variant="outlined"
-          size="small"
-          id="standard-basic"
-          label="Notes"
-          value={props.value}
-          style={{ width: "100%", marginTop: 6 }}
-          onChange={(e) => props.onChange(e.target.value)}
-        />
+        <TextField variant="outlined" size="small" id="standard-basic" label="Notes" value={props.value} style={{ width: "100%", marginTop: 6 }} onChange={(e) => props.onChange(e.target.value)} />
       ),
     },
   ];
 
   const [data, setData] = useState(ls.get("healerInfo") || []);
 
+  /* ---------------------------------- Update the Local Storage ---------------------------------- */
   let updateStorage = (props) => {
     ls.set("healerInfo", props);
   };
 
+  /* --------------------------- Current Language for Table localization -------------------------- */
   let curLang = () => {
     if (currentLanguage === "en") {
       return localizationEN;
