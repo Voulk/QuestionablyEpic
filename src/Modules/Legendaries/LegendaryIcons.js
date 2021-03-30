@@ -1,5 +1,5 @@
 export const legendaryImages = {
-    // Druid Legendary Images
+    {/* ------------------------------ Druid Legendary Images ------------------------------ */}
     "The Dark Titans Lesson": require("../../Images/Legendaries/TheDarkTitansLesson.jpg"),
     "Circle of Life and Death": require("../../Images/Legendaries/CircleOfLifeAndDeath.jpg"),
     "Lycaras Fleeting Glimpse": require("../../Images/Legendaries/LycarasFleetingGlimpse.jpg"),
@@ -8,7 +8,7 @@ export const legendaryImages = {
     "Verdant Infusion": require("../../Images/Legendaries/VerdantInfusion.jpg"),
     "Vision of Unending Growth": require("../../Images/Legendaries/VisionOfUnendingGrowth.jpg"),
   
-    // Paladin Legendary Images
+    {/* ----------------------------- Paladin Legendary Images ----------------------------- */}
     "Of Dusk and Dawn": require("../../Images/Legendaries/FromDuskTillDawn.jpg"),
     "Vanguards Momentum": require("../../Images/Legendaries/VanguardsMomentum.jpg"),
     "The Magistrates Judgment": require("../../Images/Legendaries/TheMagistratesJudgment.jpg"),
@@ -19,7 +19,7 @@ export const legendaryImages = {
     "The Mad Paragon": require("../../Images/Legendaries/ability_paladin_conviction.jpg"),
     "Relentless Inquisitor": require("../../Images/Legendaries/spell_holy_divinepurpose.jpg"),
   
-    // Monk Legendary Images
+    {/* ------------------------------ Monk Legendary Images ------------------------------ */}
     "Escape from Reality": require("../../Images/Legendaries/EscapeFromReality.jpg"),
     "Invoker's Delight": require("../../Images/Legendaries/InvokersDelight.jpg"),
     "Roll Out": require("../../Images/Legendaries/RollOut.jpg"),
@@ -32,7 +32,7 @@ export const legendaryImages = {
     "Sephuz's Proclamation": require("../../Images/Legendaries/SephuzsProclamation.jpg"),
     "Echo of Eonar": require("../../Images/Legendaries/EchoofEonar.jpg"),
   
-    // Priest Legendary Images
+    {/* ------------------------------ Priest Legendary Images ------------------------------ */}
     "Clarity of Mind": require("../../Images/Legendaries/ClarityofMind.jpg"),
     "Crystalline Reflection": require("../../Images/Legendaries/CrystallineReflection.jpg"),
     "Kiss of Death": require("../../Images/Legendaries/KissofDeath.jpg"),
@@ -46,7 +46,7 @@ export const legendaryImages = {
     "X'anshi, Return of Archbishop Benedictus": require("../../Images/Legendaries/XanshiReturnofArchbishopBenedictus.jpg"),
     "Vault of Heavens": require("../../Images/Legendaries/VaultofHeavens.jpg"),
   
-    // Shaman Legendary Images
+    {/* ----------------------------- Shaman Legendary Images ----------------------------- */}
     "Earthen Harmony": require("../../Images/Legendaries/EarthenHarmony.jpg"),
     "Jonat's Natural Focus": require("../../Images/Legendaries/JonatsNaturalFocus.jpg"),
     "Primal Tide Core": require("../../Images/Legendaries/PrimalTideCore.jpg"),
