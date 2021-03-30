@@ -131,7 +131,7 @@ export default function TopGearSettingsAccordion(props) {
                 </Grid>
                 <Grid item xs={12}>
                   <TextField
-                    // label={t("Settings.Setting0TextFieldLabel")}
+                    label={t("Settings.Setting0TextFieldLabel")}
                     id="AlliesNumber"
                     value={hymnalValue}
                     style={{ maxWidth: 115 }}
