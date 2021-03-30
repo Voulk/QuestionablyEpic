@@ -1,28 +1,18 @@
 import React, { useEffect, useState } from "react";
 import ItemCardReport from "./MiniItemCardReport";
 import TopSetStatsPanel from "./TopSetStatsPanel";
-import { testList, differentialsTest } from "./TestData";
+// import { testList, differentialsTest } from "./TestData";
 import { apiGetPlayerImage } from "../SetupAndMenus/ConnectionUtilities";
 import { useTranslation } from "react-i18next";
 import { Button, Paper, Typography, Divider, Grid, Card, CardContent } from "@material-ui/core";
 import { Link } from "react-router-dom";
-import { getItemIcon, getTranslatedItemName } from "../Engine/ItemUtilities";
+import { getItemIcon } from "../Engine/ItemUtilities";
 import { classColoursJS } from "../CooldownPlanner/Functions/ClassColourFunctions";
 
 function TopGearReport(props) {
   const [backgroundImage, setBackgroundImage] = useState("");
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
-
-  const upgradeColor = (num) => {
-    if (num > 0) {
-      return "#FFDF14"; // #60e421
-    } else if (num < parseInt(0)) {
-      return "#f20d0d";
-    } else {
-      return "#fff";
-    }
-  };
 
   const itemQuality = (itemLevel, effect) => {
     const isLegendary = effect.type === "spec legendary";
@@ -33,6 +23,7 @@ function TopGearReport(props) {
     else return "#1eff00";
   };
 
+  /* ----------------------------- On Component load get player image ----------------------------- */
   useEffect(() => {
     async function setImg() {
       const img = await apiGetPlayerImage(props.player);
@@ -41,6 +32,8 @@ function TopGearReport(props) {
 
     setImg();
   }, []);
+
+  /* -------------------------------------- Rounding Function ------------------------------------- */
   const roundTo = (value, places) => {
     let power = Math.pow(10, places);
     let diff = (Math.round(value * power) / power) * -1;
@@ -178,10 +171,7 @@ function TopGearReport(props) {
                         {/* ---------------------------- Right Side Items ---------------------------- */}
                         <Grid container spacing={1}>
                           {itemList
-                            .filter(
-                              (key) =>
-                                key.slot === "Hands" || key.slot === "Waist" || key.slot === "Legs" || key.slot === "Feet" || key.slot === "Finger" || key.slot === "Trinket",
-                            )
+                            .filter((key) => key.slot === "Hands" || key.slot === "Waist" || key.slot === "Legs" || key.slot === "Feet" || key.slot === "Finger" || key.slot === "Trinket")
                             .map((item, index) => (
                               <ItemCardReport key={index} item={item} activateItem={true} enchants={enchants} />
                             ))}
@@ -260,7 +250,7 @@ function TopGearReport(props) {
               </div>
             </Paper>
           </Grid>
-
+          {/* ----------------------- // TODO: move to external component and import ----------------------- */}
           {/* --------------------------- Alternate Sets here -------------------------- */}
           <Grid item xs={12}>
             <Paper style={{ padding: 16 }} elevation={0}>
@@ -275,7 +265,6 @@ function TopGearReport(props) {
                   <Grid item container spacing={0}>
                     {differentials.map((key) => (
                       <Grid item xs={12} sm={6} md={4} lg={3} xl={3}>
-                        
                         <Paper
                           elevation={0}
                           variant="outlined"
@@ -317,7 +306,7 @@ function TopGearReport(props) {
                                   style={{
                                     color: "#f20d0d",
                                     whiteSpace: "nowrap",
-                                    float: "right"
+                                    float: "right",
                                   }}
                                 >
                                   {roundTo(key.scoreDifference, 2) + "%"}
@@ -333,7 +322,7 @@ function TopGearReport(props) {
                                     color: "#f20d0d",
                                     whiteSpace: "nowrap",
                                     float: "right",
-                                    fontSize: 12
+                                    fontSize: 12,
                                   }}
                                 >
                                   {key.rawDifference + " HPS"}
@@ -347,7 +336,6 @@ function TopGearReport(props) {
                       </Grid>
                     ))}
                   </Grid>
-                  
                 </Grid>
               </Grid>
             </Paper>
