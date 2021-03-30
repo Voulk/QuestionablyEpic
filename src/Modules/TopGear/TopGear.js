@@ -2,16 +2,12 @@ import React, { useState, useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import "../SetupAndMenus/QEMainMenu.css";
 import ReactGA from "react-ga";
-import Item from "../Player/Item";
 import "./../QuickCompare/QuickCompare.css";
 import { useTranslation } from "react-i18next";
-import { testTrinkets } from "../Engine/EffectFormulas/Generic/TrinketEffectFormulas";
+// import { testTrinkets } from "../Engine/EffectFormulas/Generic/TrinketEffectFormulas";
 import { apiSendTopGearSet } from "../SetupAndMenus/ConnectionUtilities";
-import { InputLabel, MenuItem, FormControl, Select, Button, Grid, Paper, Typography, Divider, Snackbar, TextField, Popover } from "@material-ui/core";
-import { itemDB } from "../../Databases/ItemDB";
-import topGearEngine from "./TopGearEngine";
-import { getValidArmorTypes, getValidWeaponTypes, calcStatsAtLevel, getItemAllocations, scoreItem, getItemEffect, buildWepCombos, getItemSlot } from "../Engine/ItemUtilities";
-import ItemCard from "./../QuickCompare/ItemCard";
+import { Button, Grid, Typography, Divider } from "@material-ui/core";
+import { buildWepCombos } from "../Engine/ItemUtilities";
 import MiniItemCard from "./MiniItemCard";
 import MuiAlert from "@material-ui/lab/Alert";
 import Autocomplete from "@material-ui/lab/Autocomplete";
@@ -80,12 +76,13 @@ export default function TopGear(props) {
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
   const classes = useStyles();
-  // Snackbar State
+
+  /* --------------------------------------- Snackbar State --------------------------------------- */
   const [open, setOpen] = useState(false);
   const [openDelete, setOpenDelete] = useState(false);
-  // Popover Props
+
+  /* ---------------------------------------- Popover Props --------------------------------------- */
   const [anchorEl, setAnchorEl] = useState(null);
-  // Define State.
 
   const [activeSlot, setSlot] = useState("");
   const [itemSocket, setItemSocket] = useState("");
@@ -113,7 +110,7 @@ export default function TopGear(props) {
   let history = useHistory();
 
   const checkTopGearValid = () => {
-    // Check that the player has selected an item in every slot.
+    /* ------------------ Check that the player has selected an item in every slot. ----------------- */
     let topgearOk = true;
     let itemList = props.player.getSelectedItems();
     let errorMessage = "";
@@ -156,7 +153,7 @@ export default function TopGear(props) {
   };
 
   const unleashTopGear = () => {
-    // Call to the Top Gear Engine. Lock the app down.
+    /* ----------------------- Call to the Top Gear Engine. Lock the app down. ---------------------- */
     if (checkTopGearValid) {
       setBtnActive(false);
       const currentLanguage = i18n.language;
@@ -173,7 +170,7 @@ export default function TopGear(props) {
         history.push("/report/");
       });
     } else {
-      // Return error.
+      /* ---------------------------------------- Return error. --------------------------------------- */
     }
   };
 
@@ -190,9 +187,7 @@ export default function TopGear(props) {
   };
 
   const editSettings = (setting, newValue) => {
-    //console.log("Updating Settings" + setting + ". " + newValue);
     userSettings[setting] = newValue;
-    //console.log("Settings: " + JSON.stringify(userSettings));
   };
 
   const slotList = [
@@ -211,8 +206,6 @@ export default function TopGear(props) {
     { label: t("slotNames.weapons"), slotName: "AllMainhands" },
     { label: t("slotNames.offhands"), slotName: "Offhands" },
   ];
-
-  //const slotList = [];
 
   return (
     <div className={classes.header}>

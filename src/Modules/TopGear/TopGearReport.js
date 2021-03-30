@@ -88,32 +88,11 @@ function TopGearReport(props) {
     resultValid = false;
   }
 
-  console.log(differentials);
-
-  //console.log("Top Set: " + JSON.stringify(itemList));
   /* TEST DATA
-  enchants = {
-    chest: "+30 Stats",
-    Wrist: "+15 Int",
-    Finger: "+16 Haste",
-    Back: "+20 Stam +30 Leech",
-    Weapon: "Celestial Guidance",
-  };
-  
+  enchants = { chest: "+30 Stats", Wrist: "+15 Int", Finger: "+16 Haste", Back: "+20 Stam +30 Leech", Weapon: "Celestial Guidance" };
   let itemList = testList;
   let differentials = differentialsTest;
-
-
-  let statList = {
-    intellect: 321,
-    haste: 931,
-    crit: 831,
-    mastery: 31,
-    versatility: 91,
-    leech: 49,
-    hps: 911,
-    dps: 893,
-  }; */
+  let statList = { intellect: 321, haste: 931, crit: 831, mastery: 31, versatility: 91, leech: 49, hps: 911, dps: 893 }; */
 
   return (
     <div
@@ -146,7 +125,9 @@ function TopGearReport(props) {
                   <Grid item xs={12}>
                     <Grid container direction="row">
                       <Grid item xs={3} style={{ width: "100%" }}>
-                        {/* --------------------------- { Left Side Items } -------------------------- */}
+                        {/* ---------------------------------------------------------------------------------------------- */
+                        /*                                         Left Side Items                                        */
+                        /* ---------------------------------------------------------------------------------------------- */}
                         <Grid container spacing={1}>
                           {itemList
                             .filter(
@@ -168,7 +149,9 @@ function TopGearReport(props) {
                         <div style={{ width: "40%" }} />
                       </Grid>
                       <Grid item xs={3} style={{ width: "100%" }}>
-                        {/* ---------------------------- Right Side Items ---------------------------- */}
+                        {/* ---------------------------------------------------------------------------------------------- */
+                        /*                                        Right Side Items                                        */
+                        /* ---------------------------------------------------------------------------------------------- */}
                         <Grid container spacing={1}>
                           {itemList
                             .filter((key) => key.slot === "Hands" || key.slot === "Waist" || key.slot === "Legs" || key.slot === "Feet" || key.slot === "Finger" || key.slot === "Trinket")
@@ -180,7 +163,9 @@ function TopGearReport(props) {
                     </Grid>
                   </Grid>
                   <Grid item xs={12}>
-                    {/* ------------------------------- Stat Panel ------------------------------- */}
+                    {/* ---------------------------------------------------------------------------------------------- */
+                    /*                                           Stat Panel                                           */
+                    /* ---------------------------------------------------------------------------------------------- */}
                     <Grid container spacing={1} direction="row" justify="space-between">
                       <Grid item xs={4} style={{ paddingBottom: 8 }}>
                         <Grid container justify="flex-start">
