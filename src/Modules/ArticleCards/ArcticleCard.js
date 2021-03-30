@@ -17,6 +17,7 @@ export default function ArticleCard(props) {
       win.focus();
     } else {
       /* ------------------------- Browser has blocked it ------------------------- */
+      // TODO: Translation Required here
       alert("Please allow popups for this website");
     }
   };
