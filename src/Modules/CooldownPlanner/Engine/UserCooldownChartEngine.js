@@ -17,34 +17,50 @@ export default function chartCooldownUpdater(tableData) {
   let mitigatedChartDataNoCooldowns = [];
   let pushedArray = [];
 
+  /* --------- Push Each Cooldown in the table to a new array in "Name - Cooldown" format --------- */
+
+  /* ----------------------------------------- Cooldown 0 ----------------------------------------- */
   tableData
     .filter((key) => key.Cooldown !== undefined)
     .map((key) => {
       pushedArray.push(key.name + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown));
     });
+
+  /* ----------------------------------------- Cooldown 1 ----------------------------------------- */
   tableData
     .filter((key) => key.Cooldown1 !== undefined)
     .map((key) => {
       pushedArray.push(key.name1 + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown1));
     });
+
+  /* ----------------------------------------- Cooldown 2 ----------------------------------------- */
   tableData
     .filter((key) => key.Cooldown2 !== undefined)
     .map((key) => {
       pushedArray.push(key.name2 + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown2));
     });
+
+  /* ----------------------------------------- Cooldown 3 ----------------------------------------- */
   tableData
     .filter((key) => key.Cooldown3 !== undefined)
     .map((key) => {
       pushedArray.push(key.name3 + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown3));
     });
+
+  /* ----------------------------------------- Cooldown 4 ----------------------------------------- */
   tableData
     .filter((key) => key.Cooldown4 !== undefined)
     .map((key) => {
       pushedArray.push(key.name4 + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown4));
     });
-  // Map the data from the Cooldown Planner into a unique list of Healer Names + Cooldowns for dataKeys for the Chart.
+
+  /* -- Create array from a unique list of Healer "Names + Cooldowns" for dataKeys for the Chart. - */
   let uniqueCooldownListArray = Array.from(new Set(pushedArray));
-  // Map the Data from the Cooldown Planner and create a new array of objects. These are then mapped using the durationmaker function to create the data for the length of the cooldown and pushed into a new array customCooldownDurations.
+
+  /* ---------- Map the Data from the Cooldown Planner and create a new array of objects. --------- */
+  /* -- Map using durationmaker create the length of cd and pushed into customCooldownDurations. -- */
+
+  /* ----------------------------------------- Cooldown 0 ----------------------------------------- */
   tableData
     .filter((key) => key.Cooldown !== undefined)
     .map((key) => ({
@@ -58,6 +74,7 @@ export default function chartCooldownUpdater(tableData) {
       );
     });
 
+  /* ----------------------------------------- Cooldown 1 ----------------------------------------- */
   tableData
     .filter((key) => key.Cooldown1 !== undefined)
     .map((key) => ({
@@ -71,6 +88,7 @@ export default function chartCooldownUpdater(tableData) {
       ),
     );
 
+  /* ----------------------------------------- Cooldown 2 ----------------------------------------- */
   tableData
     .filter((key) => key.Cooldown2 !== undefined)
     .map((key) => ({
@@ -84,6 +102,7 @@ export default function chartCooldownUpdater(tableData) {
       ),
     );
 
+  /* ----------------------------------------- Cooldown 3 ----------------------------------------- */
   tableData
     .filter((key) => key.Cooldown3 !== undefined)
     .map((key) => ({
@@ -97,6 +116,7 @@ export default function chartCooldownUpdater(tableData) {
       ),
     );
 
+  /* ----------------------------------------- Cooldown 4 ----------------------------------------- */
   tableData
     .filter((key) => key.Cooldown4 !== undefined)
     .map((key) => ({
@@ -112,42 +132,38 @@ export default function chartCooldownUpdater(tableData) {
 
   let customCooldownDurationFlatArray = customCooldownDurations.flat();
 
-  // Join the Cooldown Durates with the Damage Taken Data (The original data before any data from the table was entered.
-  // This is so the data doesn't double up with previously entered data.)
-  let joinedarray = this.state.unmitigatedChartDataNoCooldownsOriginal.concat(customCooldownDurationFlatArray).sort((a, b) => (a.timestamp > b.timestamp ? 1 : -1));
+  /* --- Join CD Durations with the DMG Taken Data (Original data before any data from the table -- */
+  /* ------------- This is so the data doesn't double up with previously entered data ------------- */
 
+  let joinedarray = this.state.unmitigatedChartDataNoCooldownsOriginal.concat(customCooldownDurationFlatArray).sort((a, b) => (a.timestamp > b.timestamp ? 1 : -1));
   let joinedarray2 = this.state.mitigatedChartDataNoCooldownsOriginal.concat(customCooldownDurationFlatArray).sort((a, b) => (a.timestamp > b.timestamp ? 1 : -1));
 
   let reducedData1 = reduceTimestamps(joinedarray);
-
   let reducedData2 = reduceTimestamps(joinedarray2);
 
   Object.keys(reducedData1).forEach((element2) => unmitigatedChartDataNoCooldowns.push(reducedData1[element2]));
-
   Object.keys(reducedData2).forEach((element2) => mitigatedChartDataNoCooldowns.push(reducedData2[element2]));
 
-  // Map the ERT note from the Table Data
+  /* ---------------------------- Map the ERT note from the Table Data ---------------------------- */
 
-  // Time + No Icons
-  //prettier-ignore
+  /* --------------------------------------- Time + No Icons -------------------------------------- */
   const ertNoteTimeNoIcons = tableData
     .filter((key) => key.Cooldown !== undefined)
     .map((key) => {
-      let time = "{time:" + key.time + "}"
-      let option0 = classColoursERT(key.class) + key.name + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown)
-      let option1 = (key.name1 === "" || key.name1 === undefined) ? "" : ", " + classColoursERT(key.class1) + key.name1 + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown1) 
-      let option2 = (key.name2 === "" || key.name2 === undefined) ? "" : ", " + classColoursERT(key.class2) + key.name2 + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown2) 
-      let option3 = (key.name3 === "" || key.name3 === undefined) ? "" : ", " + classColoursERT(key.class3) + key.name3 + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown3)
-      let option4 = (key.name4 === "" || key.name4 === undefined) ? "" : ", " + classColoursERT(key.class4) + key.name4 + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown4)
-     
-      return ({
-      ert:
-        time + " - " + option0 + option1 + option2 + option3 + option4,
-      // This is for Sorting by Time
-      time: key.time,
-    })});
+      let time = "{time:" + key.time + "}";
+      let option0 = classColoursERT(key.class) + key.name + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown);
+      let option1 = key.name1 === "" || key.name1 === undefined ? "" : ", " + classColoursERT(key.class1) + key.name1 + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown1);
+      let option2 = key.name2 === "" || key.name2 === undefined ? "" : ", " + classColoursERT(key.class2) + key.name2 + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown2);
+      let option3 = key.name3 === "" || key.name3 === undefined ? "" : ", " + classColoursERT(key.class3) + key.name3 + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown3);
+      let option4 = key.name4 === "" || key.name4 === undefined ? "" : ", " + classColoursERT(key.class4) + key.name4 + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown4);
+      return {
+        ert: time + " - " + option0 + option1 + option2 + option3 + option4,
+        /* --------------------------------- This is for Sorting by Time -------------------------------- */
+        time: key.time,
+      };
+    });
 
-  // Ability + No Icons
+  /* ------------------------------------- Ability + No Icons ------------------------------------- */
   const ertNoteAbilityNoIcons = tableData
     .filter((key) => key.bossAbility !== undefined)
     .map((key) => {
@@ -156,31 +172,19 @@ export default function chartCooldownUpdater(tableData) {
           ? i18n.t("CooldownPlanner.BossAbilities." + key.bossAbility)
           : i18n.t("CooldownPlanner.BossAbilities." + key.bossAbility) + " " + "{spell:" + key.bossAbility + "}";
       let option0 = classColoursERT(key.class) + key.name + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown);
-      let option1 =
-        key.name1 === "" || key.name1 === undefined
-          ? ""
-          : ", " + classColoursERT(key.class1) + key.name1 + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown1);
-      let option2 =
-        key.name2 === "" || key.name2 === undefined
-          ? ""
-          : ", " + classColoursERT(key.class2) + key.name2 + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown2);
-      let option3 =
-        key.name3 === "" || key.name3 === undefined
-          ? ""
-          : ", " + classColoursERT(key.class3) + key.name3 + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown3);
-      let option4 =
-        key.name4 === "" || key.name4 === undefined
-          ? ""
-          : ", " + classColoursERT(key.class4) + key.name4 + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown4);
+      let option1 = key.name1 === "" || key.name1 === undefined ? "" : ", " + classColoursERT(key.class1) + key.name1 + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown1);
+      let option2 = key.name2 === "" || key.name2 === undefined ? "" : ", " + classColoursERT(key.class2) + key.name2 + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown2);
+      let option3 = key.name3 === "" || key.name3 === undefined ? "" : ", " + classColoursERT(key.class3) + key.name3 + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown3);
+      let option4 = key.name4 === "" || key.name4 === undefined ? "" : ", " + classColoursERT(key.class4) + key.name4 + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown4);
 
       return {
         ert: bossAbility + " - " + option0 + option1 + option2 + option3 + option4,
-        // This is for Sorting by Time
+        /* --------------------------------- This is for Sorting by Time -------------------------------- */
         time: key.time,
       };
     });
 
-  // Ability + Icons All
+  /* ------------------------------------- Ability + Icons All ------------------------------------ */
   const ertNoteAbilityNoTimeIconsAll = tableData
     .filter((key) => key.Cooldown !== undefined)
     .map((key) => {
@@ -208,12 +212,12 @@ export default function chartCooldownUpdater(tableData) {
 
       return {
         ert: bossAbility + " - " + option0 + option1 + option2 + option3 + option4,
-        // This is for Sorting by Time
+        /* --------------------------------- This is for Sorting by Time -------------------------------- */
         time: key.time,
       };
     });
 
-  // Time + Icons
+  /* ---------------------------------------- Time + Icons ---------------------------------------- */
   const ertNoteTimeIcons = tableData
     .filter((key) => key.Cooldown !== undefined)
     .map((key) => (key) => {
@@ -238,25 +242,10 @@ export default function chartCooldownUpdater(tableData) {
 
       return {
         ert: time + " - " + option0 + option1 + option2 + option3 + option4,
-        // This is for Sorting by Time
+        /* --------------------------------- This is for Sorting by Time -------------------------------- */
         time: key.time,
       };
     });
-
-  // // Notes + Icons
-  // const ertNoteNoteIcons = tableData.map((key) => ({
-  //   ert: key.notes + " - " + classColoursERT(key.class) + key.name + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown) + " " + "{spell:" + key.Cooldown + "}",
-  //   time: key.time,
-  // }));
-
-  // // Notes + No Icons
-  // const ertNoteNoteNoIcons = tableData.map((key) => ({
-  //   ert: key.notes + " - " + classColoursERT(key.class) + key.name + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown),
-  //   time: key.time,
-  // }));
-
-  console.log(mitigatedChartDataNoCooldowns);
-  console.log(unmitigatedChartDataNoCooldowns);
 
   this.setState({
     mitigatedChartDataNoCooldowns: mitigatedChartDataNoCooldowns,
@@ -266,7 +255,5 @@ export default function chartCooldownUpdater(tableData) {
     ertListBossAbility: ertNoteAbilityNoIcons,
     ertListAbilityNoTimeIconsAll: ertNoteAbilityNoTimeIconsAll,
     ertListTimeIcons: ertNoteTimeIcons,
-    // ertListNoteIcons: ertNoteNoteIcons,
-    // ertListNoteNoIcons: ertNoteNoteNoIcons,
   });
 }
