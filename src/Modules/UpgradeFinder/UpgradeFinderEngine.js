@@ -104,7 +104,7 @@ export function runUpgradeFinder(player, contentType, currentLanguage, playerSet
     completedItemList.push(processItem(itemPoss[x], baseItemList, baseScore, player, contentType, baseHPS, currentLanguage, userSettings, castModel));
   }
 
-  const result = new UpgradeFinderResult(itemPoss, completedItemList);
+  const result = new UpgradeFinderResult(itemPoss, completedItemList, contentType);
   //console.log(result);
   // console.log("=== Upgrade Finder Finished ===");
   apiSendUpgradeFinder(player, contentType);
