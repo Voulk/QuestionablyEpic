@@ -4,6 +4,7 @@ import { Menu, MenuItem, Paper } from "@material-ui/core";
 import { getConduitName, filterConduits, getCovenant } from "../CovenantUtilities";
 import { useTranslation } from "react-i18next";
 
+/* --------------------------------------- Node Positions --------------------------------------- */
 const columnPos = [200, 290, 380];
 const rowPos = [
   [20, 100, 180, 260, 340, 445, 500, 580],
@@ -32,6 +33,7 @@ const menuStyle = {
   getContentAnchorEl: null,
 };
 
+/* ---------------------------- Returns Item Quality colour from prop --------------------------- */
 const itemQuality = (quality) => {
   switch (quality) {
     case "Legendary":
@@ -51,7 +53,7 @@ const itemQuality = (quality) => {
   }
 };
 
-// Creates a text based string from a given array of bonus_stats.
+/* --------------- Creates a text based string from a given array of bonus_stats. --------------- */
 function getBenefitString(bonus_stats) {
   let benefitString = "";
   Object.entries(bonus_stats).forEach(([key, value]) => {
@@ -62,6 +64,7 @@ function getBenefitString(bonus_stats) {
   return benefitString;
 }
 
+/* ---------------------- Returns the Localized Name of the Soulbind Trait ---------------------- */
 function getLocalizedName(trait, type, lang) {
   if (type.includes("Conduit") && trait.slotted_id > 0) {
     return getConduitName(trait.slotted_id, lang);
@@ -81,7 +84,6 @@ export default function SoulbindNode(props) {
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
-
     if (type === "Soulbind" || trait.slotted_id > 0) {
       props.activateSoulbind(trait.id);
     }
@@ -140,7 +142,6 @@ export default function SoulbindNode(props) {
     return "spell=" + trait.id + "&domain=" + currentLanguage;
   };
 
-  // The CSS here is a bit of a nightmare. TODO.
   return (
     <div
       id={9}
@@ -151,6 +152,7 @@ export default function SoulbindNode(props) {
       }}
     >
       <a data-simple-tooltip={conduitToolTipPEF(type)} data-wowhead={conduitToolTipSpellID(type)}>
+        {/* --------------------------------------- Container Image -------------------------------------- */}
         <img
           onClick={handleClick}
           width={48}
@@ -164,6 +166,7 @@ export default function SoulbindNode(props) {
           }}
           alt=""
         />
+        {/* ----------------------------- Conduit Type Icon - If Conduit Node ---------------------------- */}
         {conduitTag !== "" ? (
           <img
             width={18}
@@ -180,7 +183,7 @@ export default function SoulbindNode(props) {
         ) : (
           ""
         )}
-
+        {/* ----------------------------------------- Trait Icon ----------------------------------------- */}
         <img
           width={38}
           height={38}
@@ -196,6 +199,7 @@ export default function SoulbindNode(props) {
           alt=""
         />
       </a>
+      {/* ------------------------------------ Trait Name / Benefits ----------------------------------- */}
       <Paper
         style={{
           fontSize: 10,
@@ -214,6 +218,7 @@ export default function SoulbindNode(props) {
           <div>{benefitString}</div>
         </div>
       </Paper>
+      {/* --------------------- Dropdown Menu for conduit selection into containers -------------------- */}
       {type.includes("Conduit") ? (
         <Menu
           MenuListProps={{
@@ -239,6 +244,7 @@ export default function SoulbindNode(props) {
           open={Boolean(anchorEl)}
           onClose={handleClose}
         >
+          {/* ------- If conduit in container show "Remove" else Show the list of available conduits ------- */}
           {trait.slotted_id > 0 ? (
             <MenuItem key={-1} dense={true} style={{ padding: "5px 10px" }} onClick={() => setConduit(-1)}>
               {t("Remove")}
