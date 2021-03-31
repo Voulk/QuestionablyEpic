@@ -40,7 +40,21 @@ function setupPlayer(player, contentType, castModel) {
 
 }
 
-export function runTopGear(itemList, wepCombos, player, contentType, baseHPS, currentLanguage, userSettings, castModel) {
+function autoSocketItems(itemList) {
+  console.log("Auto socketing items");
+
+  for (var i = 0; i < itemList.length; i++) {
+    let item = itemList[i];
+    if (['Finger', 'Head', 'Neck', 'Wrist', 'Waist'].includes(item.slot)) {
+      item.socket = true;
+    }
+  }
+
+  return itemList;
+
+}
+
+export function runTopGear(rawItemList, wepCombos, player, contentType, baseHPS, currentLanguage, userSettings, castModel) {
   //console.log("WEP COMBOS: " + JSON.stringify(wepCombos));
   //console.log("CL::::" + currentLanguage);
   var t0 = performance.now();
@@ -48,8 +62,11 @@ export function runTopGear(itemList, wepCombos, player, contentType, baseHPS, cu
   let count = 0;
 
   const newPlayer = setupPlayer(player, contentType, castModel);
+  let itemList = deepCopyFunction(rawItemList); // Here we duplicate the users items so that nothing is changed during the process. 
+  itemList = userSettings.autoSocket ? autoSocketItems(itemList) : itemList;
 
   let itemSets = createSets(itemList, wepCombos);
+
   itemSets.sort((a, b) => (a.sumSoftScore < b.sumSoftScore ? 1 : -1));
   count = itemSets.length;
 

@@ -78,6 +78,9 @@ export default function TopGearSettingsAccordion(props) {
   /* -------------------------------------- Disc Talent State ------------------------------------- */
   const [discTalent, setDiscTalent] = useState(109964);
 
+    /* -------------------------------------- Auto-Socket State ------------------------------------- */
+    const [autoSocketValue, setAutoSocketValue] = useState(props.userSettings.autoSocket);
+
   const updateHymnal = (value) => {
     props.editSettings("hymnalAllies", setBounds(value, 0, 4));
     setHymnalValue(setBounds(value, 0, 4));
@@ -88,15 +91,17 @@ export default function TopGearSettingsAccordion(props) {
     setgroupValue(value);
   };
 
+  const updateAutoSocketValue = (value) => {
+    props.editSettings("autoSocket", value);
+    setAutoSocketValue(value);
+  };
+
   const options = [
     { value: true, label: "Yes" },
     { value: false, label: "No" },
   ];
 
-  /* ----------------------------------------- Free State ----------------------------------------- */
-  const [value1, setValue1] = useState(5);
-  /* ----------------------------------------- Free State ----------------------------------------- */
-  const [value2, setValue2] = useState(5);
+
   /* ----------------------------------------- Free State ----------------------------------------- */
   const [value3, setValue3] = useState(5);
   /* ----------------------------------------- Free State ----------------------------------------- */
@@ -206,37 +211,33 @@ export default function TopGearSettingsAccordion(props) {
               ""
             )} */}
 
-            {/* ----------------------------------------- Free Option ---------------------------------------- */}
+            {/* ----------------------------------------- Auto Socket Items ---------------------------------------- */}
 
-            {/*
             <Divider orientation="vertical" flexItem />
             <Grid item xs={2}>
               <Grid container spacing={1} style={{ paddingLeft: 8 }}>
                 <Grid item xs={12}>
-                  <Tooltip
-                    title={t("Settings.Setting3Tooltip")}
-                    placement="top-start"
-                  >
-                    <Typography color="primary">
-                      {t("Settings.Setting3Title")}
-                    </Typography>
-                  </Tooltip>
+                  <div style={{ display: "inline-flex" }}>
+                      <Typography color="primary" style={{ marginRight: 4 }}>
+                        {t("Settings.Setting3Title")}
+                      </Typography>
+                      <Tooltip title={t("Settings.Setting3Tooltip")} placement="top-start">
+                        <InfoOutlinedIcon style={{ height: 15, width: 15 }} fontSize="small" />
+                      </Tooltip>
+                    </div>
                 </Grid>
                 <Grid item xs={12}>
-                  <TextField
-                    label={t("Settings.Setting3TextFieldLabel")}
-                    id="AlliesNumber"
-                    value={value3}
-                    style={{ maxWidth: 75 }}
-                    onChange={(e) => setValue3(e.target.value)}
-                    variant="outlined"
-                    size="small"
-                    type="number"
-                  />
+                <FormControl variant="outlined" size="small">
+                    <InputLabel id="groupValue">{}</InputLabel>
+                    <Select labelId="groupValue" value={autoSocketValue} onChange={(e) => updateAutoSocketValue(e.target.value)} MenuProps={menuStyle}>
+                      <MenuItem value={true}>{t("Yes")}</MenuItem>
+                      <MenuItem value={false}>{t("No")}</MenuItem>
+                    </Select>
+                  </FormControl>
                 </Grid>
               </Grid>
             </Grid>
-            */}
+            
 
             {/* ----------------------------------------- Free Option ---------------------------------------- */}
 
