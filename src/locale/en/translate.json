@@ -1,7 +1,7 @@
 {
   "translations": {
     "CharacterCreator": {
-      "StatMessage": "To get updated stat weights use WowAnalyzer.com with a recent log and enter the values here from the 'Statistics' tab.",
+      "StatMessage": "While Stat Weights are editable, the QE Live defaults are recommended for most situations.",
       "DeleteCharacter": "Delete Character",
       "CreateChar": "Create New Character",
       "AddChar": "Add Character",

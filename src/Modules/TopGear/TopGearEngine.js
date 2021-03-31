@@ -41,8 +41,6 @@ function setupPlayer(player, contentType, castModel) {
 }
 
 function autoSocketItems(itemList) {
-  console.log("Auto socketing items");
-
   for (var i = 0; i < itemList.length; i++) {
     let item = itemList[i];
     if (['Finger', 'Head', 'Neck', 'Wrist', 'Waist'].includes(item.slot)) {
