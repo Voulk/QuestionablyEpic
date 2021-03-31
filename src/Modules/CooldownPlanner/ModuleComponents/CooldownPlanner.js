@@ -159,7 +159,7 @@ export default function CooldownPlanner(props) {
   const ertDialogOpen = props.ertDialogOpen;
   const healTeamDialogOpen = props.healTeamDialogOpen;
 
-  /* --- Function to Show the time Coodldowns will be available again (Currently Column Hidden) --- */
+  /* --- Function to Show the time Cooldowns will be available again (Currently Column Hidden) --- */
   const timeCheck = (castTime, cooldown) => {
     /* --------------------------- Get get the cast time as "mm:ss" format -------------------------- */
     let time = moment(castTime, "mm:ss")

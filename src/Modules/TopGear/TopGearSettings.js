@@ -68,9 +68,14 @@ export default function TopGearSettingsAccordion(props) {
   const classes = useStyles();
   const { t, i18n } = useTranslation();
   const playerSpec = props.player.getSpec();
-  // Hymnal State
+
+  /* ---------------------------------------- Hymnal State ---------------------------------------- */
   const [hymnalValue, setHymnalValue] = useState(props.userSettings.hymnalAllies);
+
+  /* -------------------------------------- Group Value State ------------------------------------- */
   const [groupValue, setgroupValue] = useState(props.userSettings.includeGroupBenefits);
+
+  /* -------------------------------------- Disc Talent State ------------------------------------- */
   const [discTalent, setDiscTalent] = useState(109964);
 
   const updateHymnal = (value) => {
@@ -87,15 +92,16 @@ export default function TopGearSettingsAccordion(props) {
     { value: true, label: "Yes" },
     { value: false, label: "No" },
   ];
-  // Free State
+
+  /* ----------------------------------------- Free State ----------------------------------------- */
   const [value1, setValue1] = useState(5);
-  // Free State
+  /* ----------------------------------------- Free State ----------------------------------------- */
   const [value2, setValue2] = useState(5);
-  // Free State
+  /* ----------------------------------------- Free State ----------------------------------------- */
   const [value3, setValue3] = useState(5);
-  // Free State
+  /* ----------------------------------------- Free State ----------------------------------------- */
   const [value4, setValue4] = useState(5);
-  // Free State
+  /* ----------------------------------------- Free State ----------------------------------------- */
   const [value5, setValue5] = useState(5);
 
   return (
@@ -165,6 +171,9 @@ export default function TopGearSettingsAccordion(props) {
               </Grid>
             </Grid>
             <Divider orientation="vertical" flexItem />
+
+            {/* ---------------- Discipline Priest Talent selector (Spirit Shell / Evangelism) --------------- */}
+
             {/* {playerSpec === "Discipline Priest" ? (
               <Grid item xs={2}>
                 <Grid container spacing={1} style={{ paddingLeft: 8 }}>
@@ -196,6 +205,9 @@ export default function TopGearSettingsAccordion(props) {
             ) : (
               ""
             )} */}
+
+            {/* ----------------------------------------- Free Option ---------------------------------------- */}
+
             {/*
             <Divider orientation="vertical" flexItem />
             <Grid item xs={2}>
@@ -224,6 +236,11 @@ export default function TopGearSettingsAccordion(props) {
                 </Grid>
               </Grid>
             </Grid>
+            */}
+
+            {/* ----------------------------------------- Free Option ---------------------------------------- */}
+
+            {/*
             <Divider orientation="vertical" flexItem />
             <Grid item xs={2}>
               <Grid container spacing={1} style={{ paddingLeft: 8 }}>
@@ -251,6 +268,11 @@ export default function TopGearSettingsAccordion(props) {
                 </Grid>
               </Grid>
             </Grid>
+            */}
+
+            {/* ----------------------------------------- Free Option ---------------------------------------- */}
+
+            {/*
             <Divider orientation="vertical" flexItem />
             <Grid item xs={2}>
               <Grid container spacing={1} style={{ paddingLeft: 8 }}>
