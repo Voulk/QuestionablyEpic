@@ -155,10 +155,7 @@ export function getDifferentialByID(diffList, id, level) {
 // Items that won't be found include stuff like shirts, low level items, quest items without stats and so on.
 // Importing these would be a waste of the user interface.
 export function checkItemExists(id) {
-  let temp = itemDB.filter(function (item) {
-    return item.id === id;
-  });
-  return temp.length > 0;
+  return getItem(id) !== "";
 }
 
 // Returns a translated item name based on an ID.
@@ -366,7 +363,7 @@ export function calcStatsAtLevel(itemLevel, slot, statAllocations, tertiary) {
       // todo
     }
   }
-  //console.log("Calc Stats at Level: " + itemLevel + "/" + slot + "/" + JSON.stringify(stats) + "/" + tertiary);
+
   // This, on the other hand, is a close estimate that should be replaced before launch.
   if (tertiary === "Leech") {
     if (slot === "Trinket") {
@@ -467,8 +464,10 @@ function sumObjectsByKey(...objs) {
   }, {});
 }
 
-
-// ----- Deprecated Functions
+// --------------------------------
+// ----- Deprecated Functions -----
+// --------------------------------
+// Will be removed by the end of April.
 /**
  * 
  * @param {*} id 
