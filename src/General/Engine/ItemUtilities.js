@@ -8,6 +8,7 @@ import Item from "../Modules/Player/Item";
 import { useTranslation } from "react-i18next";
 import { i18n } from "react-i18next";
 import { reportError } from "../SystemTools/ErrorLogging/ErrorReporting";
+import { BCitemDB } from "Databases/BCItemDB";
 
 /*
 
@@ -132,6 +133,14 @@ function sortItems(container) {
   return container;
 }
 
+function getItemDB() {
+  // Replace with Redux pull.
+  const flag = "Retail";
+
+  return flag === "Retail" ? itemDB : BCitemDB;
+
+}
+
 export function getDifferentialByID(diffList, id, level) {
   let temp = diffList.filter(function (item) {
     //console.log(item);
@@ -166,80 +175,63 @@ export function getTranslatedItemName(id, lang, effect) {
   }
 }
 
-// Returns the selected items effect.
-// No need for error checking here since returning no effect is an acceptable and common result.
-export function getItemEffect(id) {
-  let temp = itemDB.filter(function (item) {
-    return item.id === id;
-  });
 
-  if (temp.length > 0 && "effect" in temp[0]) return temp[0].effect;
-  else return "";
-}
-
-// Returns a translated item name based on an ID.
-export function getItemSubclass(id) {
-  let temp = itemDB.filter(function (item) {
-    return item.id === id;
-  });
-
-  if (temp.length > 0 && "itemSubClass" in temp[0]) return temp[0].itemSubClass;
-  else return "";
-}
-
-export function getFullItem(id) {
-  let temp = itemDB.filter(function (item) {
+// Grabs a specific item from whichever item database is currently selected.
+export function getItem(id) {
+  let temp = getItemDB().filter(function (item) {
     return item.id === id;
   });
   if (temp.length > 0) return temp[0];
   else return "";
 }
 
-export function getItemLevel(id) {
-  let temp = itemDB.filter(function (item) {
-    return item.id === id;
-  });
+// This function grabs a selected prop from the currently selected item database. 
+// It should replace most other functions that get only one specific prop. 
+export function getItemProp(id, prop) {
+  const item = getItem(id);
 
-  if (temp.length > 0) return temp[0].itemLevel;
-  else {
-    reportError(this, "ItemUtilities", "Item Level not found or item missing", id);
+  if (item !== "" && prop in item) return item[prop];
+  else if (prop === "itemLevel" || prop === "icon") {
+    // This is for props that we should expect to have. 
+    reportError(this, "ItemUtilities", "Item prop: " + prop + " not found or item missing", id);
     return -2;
+  }
+  else {
+    // This is for props that may or may not exist on an item like effects.
+    return "";
   }
 }
 
 // Returns a translated item name based on an ID.
 // Add some support for missing icons.
 export function getItemIcon(id) {
-  let temp = itemDB.filter(function (item) {
-    return item.id === id;
-  });
+  const item = getItem(id);
 
-  if (temp.length > 0 && "icon" in temp[0]) return process.env.PUBLIC_URL + "/Images/Icons/" + temp[0].icon + ".jpg";
+  if (item !== "" && "icon" in temp[0]) return process.env.PUBLIC_URL + "/Images/Icons/" + temp[0].icon + ".jpg";
   else {
     reportError(this, "ItemUtilities", "Icon not found for ID", id);
     return process.env.PUBLIC_URL + "/Images/Icons/missing.jpg";
   }
 }
 
+
 // Returns item stat allocations. MUST be converted to stats before it's used in any scoring capacity.
 export function getItemAllocations(id, missiveStats = []) {
-  let temp = itemDB.filter(function (item) {
-    return item.id === id;
-  });
+  const item = getItem(id);
 
   let statArray = {};
-  if (temp.length > 0) {
-    statArray = { ...temp[0].stats };
-    if ("unallocated" in temp[0].stats) {
+  if (item !== "") {
+    statArray = { ...item.stats };
+    if ("unallocated" in item.stats) {
       for (var i = 0; i < missiveStats.length; i++) {
         let mStat = missiveStats[i];
-        statArray[mStat] += temp[0].stats.unallocated;
+        statArray[mStat] += item.stats.unallocated;
       }
     }
   }
   //console.log(JSON.stringify(temp) + temp.length)
   //console.log(temp[0].icon)
-  if (temp.length > 0) return statArray;
+  if (item !== "") return statArray;
   else return 0;
 }
 
@@ -280,24 +272,6 @@ function getItemCat(slot) {
   }
 }
 
-// Returns item stat allocations. MUST be converted to stats before it's used in any scoring capacity.
-export function getItemSlot(id) {
-  let temp = itemDB.filter(function (item) {
-    return item.id === id;
-  });
-
-  if (temp.length > 0) return temp[0].slot;
-  else return 0;
-}
-
-function sumObjectsByKey(...objs) {
-  return objs.reduce((a, b) => {
-    for (let k in b) {
-      if (b.hasOwnProperty(k)) a[k] = (a[k] || 0) + b[k];
-    }
-    return a;
-  }, {});
-}
 
 export function buildWepCombos(player, active = false, equipped = false) {
   let wep_list = [];
@@ -484,3 +458,82 @@ export function scoreItem(item, player, contentType) {
   }
   return Math.round(100 * score) / 100;
 }
+function sumObjectsByKey(...objs) {
+  return objs.reduce((a, b) => {
+    for (let k in b) {
+      if (b.hasOwnProperty(k)) a[k] = (a[k] || 0) + b[k];
+    }
+    return a;
+  }, {});
+}
+
+
+// ----- Deprecated Functions
+/**
+ * 
+ * @param {*} id 
+ * @returns A specific items base item level.
+ * 
+ * @deprecated and will be removed at a later date. Functions should use getItemProp instead. 
+ */
+ export function getItemLevel(id) {
+  console.warn("GetItemLevel is now deprecated");
+  const item = getItem(id);
+
+  if (item !== "") return item.itemLevel;
+  else {
+    reportError(this, "ItemUtilities", "Item Level not found or item missing", id);
+    return -2;
+  }
+}
+
+// Returns the selected items effect.
+// No need for error checking here since returning no effect is an acceptable and common result.
+/**
+ * 
+ * @param {*} id 
+ * @returns 
+ * 
+ * @deprecated
+ */
+ export function getItemEffect(id) {
+  let temp = itemDB.filter(function (item) {
+    return item.id === id;
+  });
+
+  if (temp.length > 0 && "effect" in temp[0]) return temp[0].effect;
+  else return "";
+}
+
+/**
+ * 
+ * @deprecated
+ */
+ export function getItemSlot(id) {
+  console.warn("GetItemSlot is now deprecated");
+  let temp = itemDB.filter(function (item) {
+    return item.id === id;
+  });
+
+  if (temp.length > 0) return temp[0].slot;
+  else return 0;
+}
+
+// Returns a translated item name based on an ID.
+/**
+ * 
+ * @param {*} id 
+ * @returns 
+ * @deprecated
+ */
+export function getItemSubclass(id) {
+  let temp = itemDB.filter(function (item) {
+    return item.id === id;
+  });
+
+  if (temp.length > 0 && "itemSubClass" in temp[0]) return temp[0].itemSubClass;
+  else return "";
+}
+
+
+

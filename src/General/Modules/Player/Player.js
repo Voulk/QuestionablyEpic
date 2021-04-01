@@ -12,7 +12,6 @@ import { holyPriestDefaultStatWeights } from "./ClassDefaults/HolyPriestDefaults
 import { monkDefaultStatWeights } from "./ClassDefaults/MonkDefaults";
 import { reportError } from "../../SystemTools/ErrorLogging/ErrorReporting";
 
-var averageHoTCount = 1.4; // TODO: Build this in correctly and pull it from logs where applicable.
 
 class Player {
   constructor(playerName, specName, charID, region, realm, race, statWeights = "default") {

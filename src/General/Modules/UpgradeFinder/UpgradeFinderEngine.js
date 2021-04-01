@@ -9,7 +9,7 @@ import {
   getValidArmorTypes,
   getValidWeaponTypes,
   getItemEffect,
-  getFullItem,
+  getItem,
   filterItemListByType,
 } from "../../Engine/ItemUtilities";
 import UpgradeFinderResult from "./UpgradeFinderResult";
@@ -189,7 +189,7 @@ function buildItemPossibilities(player, contentType, playerSettings) {
 
       for (var j = 0; j < newItemIDs.length; j++) {
         for (var x = 0; x < playerSettings.raid.length; x++) {
-          const rawItem = getFullItem(newItemIDs[j]);
+          const rawItem = getItem(newItemIDs[j]);
 
           if (checkItemViable(rawItem, player)) {
             const itemLevel = getSetItemLevel(itemSource, playerSettings, x, rawItem.slot);
