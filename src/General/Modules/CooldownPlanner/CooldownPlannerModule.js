@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { Typography, Collapse, CircularProgress, Grid, Accordion, AccordionSummary, AccordionDetails, Dialog, Divider, Paper, Grow } from "@material-ui/core";
-import LogLinkInput from "../LogImport/LogLinkInput";
+import LogLinkInput from "../../SystemTools/LogImport/LogLinkInput";
 import Chart from "./ModuleComponents/Chart/Chart";
 import Example from "../CooldownPlanner/ModuleComponents/LogDetailComponents/DTPSBarChart";
-import FightSelectorButton from "../LogImport/FightSelectorButton";
+import FightSelectorButton from "../../SystemTools/LogImport/FightSelectorButton";
 import LoadingOverlay from "react-loading-overlay";
 import CooldownPlanner from "../CooldownPlanner/ModuleComponents/CooldownPlanner.js";
 import CooldownTimeline from "../CooldownPlanner/ModuleComponents/LogDetailComponents/CooldownTimelineTable";
