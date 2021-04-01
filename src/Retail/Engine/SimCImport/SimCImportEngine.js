@@ -1,9 +1,9 @@
 import { itemDB, tokenDB } from "../../../Databases/ItemDB";
 import { bonus_IDs } from "../BonusIDs";
-import { getItemLevel } from "../ItemUtilities";
-import { calcStatsAtLevel, getItemAllocations, scoreItem, getItemEffect, correctCasing, getValidWeaponTypes, getItemSlot, getItemSubclass } from "../ItemUtilities";
-import Item from "../../Modules/Player/Item";
-import ItemSet from "../../Modules/TopGear/ItemSet";
+import { getItemLevel } from "../../../General/Engine/ItemUtilities";
+import { calcStatsAtLevel, getItemAllocations, scoreItem, getItemEffect, correctCasing, getValidWeaponTypes, getItemSlot, getItemSubclass } from "../../../General/Engine/ItemUtilities";
+import Item from "../../../General/Modules/Player/Item";
+import ItemSet from "../../../General/Modules/TopGear/ItemSet";
 
 const stat_ids = {
   36: "haste",

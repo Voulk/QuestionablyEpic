@@ -1,7 +1,7 @@
 import SPECS from "../../../General/Engine/SPECS";
 import ActiveConduit from "./ActiveConduit";
 import { conduitDB } from "../../../Databases/ConduitDB";
-import { getConduitFormula } from "../../../General/Engine/EffectFormulas/EffectEngine";
+import { getConduitFormula } from "../../Engine/EffectFormulas/EffectEngine";
 import i18n from "i18next";
 
 // Returns a full list of all class conduits in the form of an ActiveSoulbind array.

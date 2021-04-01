@@ -4,7 +4,7 @@ import "../../../General/Modules/SetupAndMenus/QEMainMenu";
 import LegendaryObject from "./LegendaryObject";
 import "./Legendaries.css";
 import { useTranslation } from "react-i18next";
-import { getEffectValue } from "../../../General/Engine/EffectFormulas/EffectEngine";
+import { getEffectValue } from "../../Engine/EffectFormulas/EffectEngine";
 import ReactGA from "react-ga";
 import { Grid, Typography } from "@material-ui/core";
 

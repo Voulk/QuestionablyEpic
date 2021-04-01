@@ -1,5 +1,5 @@
 import { conduitDB } from "../../../Databases/ConduitDB";
-import { getConduitFormula } from "../../../General/Engine/EffectFormulas/EffectEngine";
+import { getConduitFormula } from "../../Engine/EffectFormulas/EffectEngine";
 import { getEstimatedHPS } from "./CovenantUtilities";
 class ActiveConduit {
   constructor(id, itemLevel, itemName, type, covenant = "ALL") {

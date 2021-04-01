@@ -15,7 +15,7 @@ import { getMonkConduit } from "./Monk/MonkConduitFormulas";
 import { getDruidConduit } from "./Druid/DruidConduitFormulas";
 import { getDruidTierSet } from "./Druid/DruidBCTierSets";
 import { getPaladinCovAbility } from "./Paladin/PaladinMiscFormulas";
-import SPEC from "../SPECS";
+import SPEC from "../../../General/Engine/SPECS";
 import { getShamanCovAbility } from "./Shaman/ShamanCovenantFormulas";
 
 // Effect is a small "dictionary" with two key : value pairs.

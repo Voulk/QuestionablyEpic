@@ -1,4 +1,4 @@
-import Player from "../../../Modules/Player/Player";
+import Player from "../../../../General/Modules/Player/Player";
 import { getOneHolyPower, getAwakeningWingsUptime, getWingsHealingInc, processPaladinRawHealing } from "./PaladinMiscFormulas";
 
 const IDLIGHTOFDAWN = 225311;

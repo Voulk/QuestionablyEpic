@@ -1,7 +1,7 @@
 import { itemDB } from "../../Databases/ItemDB";
-import { randPropPoints } from "./Retail/RandPropPointsBylevel";
-import { combat_ratings_mult_by_ilvl, combat_ratings_mult_by_ilvl_jewl } from "./Retail/CombatMultByLevel";
-import { getEffectValue } from "./EffectFormulas/EffectEngine";
+import { randPropPoints } from "../../Retail/Engine/RandPropPointsBylevel";
+import { combat_ratings_mult_by_ilvl, combat_ratings_mult_by_ilvl_jewl } from "../../Retail/Engine/CombatMultByLevel";
+import { getEffectValue } from "../../Retail/Engine/EffectFormulas/EffectEngine";
 import SPEC from "../Engine/SPECS";
 import { translatedStat } from "./STAT";
 import Item from "../Modules/Player/Item";

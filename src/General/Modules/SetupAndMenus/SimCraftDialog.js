@@ -1,7 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { Button, TextField, Dialog, DialogActions, DialogContent, DialogTitle, Tooltip } from "@material-ui/core";
-import { runSimC } from "../../Engine/SimCImport/SimCImportEngine";
+import { runSimC } from "../../../Retail/Engine/SimCImport/SimCImportEngine";
 import { createEmitAndSemanticDiagnosticsBuilderProgram } from "typescript";
 
 export default function SimCraftInput(props) {

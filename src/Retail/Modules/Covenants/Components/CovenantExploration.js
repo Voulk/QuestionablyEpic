@@ -5,9 +5,9 @@ import { Tabs, Tab, Box, AppBar, Grid, Paper, Typography } from "@material-ui/co
 import { soulbindDB, soulbindConnectors } from "Databases/SoulbindDB";
 import SoulbindNode from "./SoulbindNode";
 import ConduitObject from "./ConduitObject";
-import { getSoulbindFormula } from "General/Engine/EffectFormulas/Generic/GenericSoulbindFormulas";
+import { getSoulbindFormula } from "../../../Engine/EffectFormulas/Generic/GenericSoulbindFormulas";
 import SoulbindStatPanel from "./SoulbindStatPanel";
-import { getCovAbility } from "General/Engine/EffectFormulas/EffectEngine";
+import { getCovAbility } from "../../../Engine/EffectFormulas/EffectEngine";
 import { sumSelectedStats, getEstimatedHPS, getConduitIcon, buildConduitStats } from "../CovenantUtilities";
 import "./CovenantExploration.css";
 import ReactGA from "react-ga";

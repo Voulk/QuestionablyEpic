@@ -4,10 +4,10 @@ import Item from "../Player/Item";
 import React, { useState, useEffect } from "react";
 import { STATPERONEPERCENT, BASESTAT, STATDIMINISHINGRETURNS } from "../../Engine/STAT";
 import { CONSTRAINTS } from "../../Engine/CONSTRAINTS";
-import { convertPPMToUptime } from "../../Engine/EffectFormulas/EffectUtilities";
+import { convertPPMToUptime } from "../../../Retail/Engine/EffectFormulas/EffectUtilities";
 import Player from "../Player/Player";
 import CastModel from "../Player/CastModel";
-import { getEffectValue } from "../../Engine/EffectFormulas/EffectEngine"
+import { getEffectValue } from "../../../Retail/Engine/EffectFormulas/EffectEngine"
 
 // Most of our sets will fall into a bucket where totalling the individual stats is enough to tell us they aren't viable. By slicing these out in a preliminary phase,
 // we can run our full algorithm on far fewer items. The net benefit to the player is being able to include more items, with a quicker return.

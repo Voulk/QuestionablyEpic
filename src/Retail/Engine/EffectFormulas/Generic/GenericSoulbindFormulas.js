@@ -1,6 +1,6 @@
-import Player from "../../../Modules/Player/Player";
-import SPEC from "../../SPECS";
-import { STAT, STATPERONEPERCENT } from "../../STAT";
+import Player from "../../../../General/Modules/Player/Player";
+import SPEC from "../../../../General/Engine/SPECS";
+import { STAT, STATPERONEPERCENT } from "../../../../General/Engine/STAT";
 import { convertPPMToUptime, getBestWeaponEnchant } from "../EffectUtilities";
 
 /* 
