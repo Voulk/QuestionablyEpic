@@ -191,7 +191,7 @@ export function getItemProp(id, prop) {
   const item = getItem(id);
 
   if (item !== "" && prop in item) return item[prop];
-  else if (prop === "itemLevel" || prop === "icon") {
+  else if (prop === "itemLevel") {
     // This is for props that we should expect to have. 
     reportError(this, "ItemUtilities", "Item prop: " + prop + " not found or item missing", id);
     return -2;
@@ -207,7 +207,7 @@ export function getItemProp(id, prop) {
 export function getItemIcon(id) {
   const item = getItem(id);
 
-  if (item !== "" && "icon" in temp[0]) return process.env.PUBLIC_URL + "/Images/Icons/" + temp[0].icon + ".jpg";
+  if (item !== "" && "icon" in item) return process.env.PUBLIC_URL + "/Images/Icons/" + item.icon + ".jpg";
   else {
     reportError(this, "ItemUtilities", "Icon not found for ID", id);
     return process.env.PUBLIC_URL + "/Images/Icons/missing.jpg";

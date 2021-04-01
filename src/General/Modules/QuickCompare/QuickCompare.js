@@ -10,7 +10,7 @@ import Item from "../Player/Item";
 import "./QuickCompare.css";
 //import { itemDB } from "../../Databases/ItemDB";
 import { itemDB } from "../../../Databases/ItemDB";
-import { getValidArmorTypes, getValidWeaponTypes, calcStatsAtLevel, getItemAllocations, scoreItem, getItemEffect, buildWepCombos, getItemSlot } from "../../Engine/ItemUtilities";
+import { getValidArmorTypes, getValidWeaponTypes, getItemProp, calcStatsAtLevel, getItemAllocations, scoreItem, buildWepCombos} from "../../Engine/ItemUtilities";
 import ItemCard from "./ItemCard";
 import HelpText from "../SetupAndMenus/HelpText";
 import { CONSTRAINTS } from "../../Engine/CONSTRAINTS";
@@ -195,7 +195,7 @@ export default function QuickCompare(props) {
       return null;
     }
     let player = props.player;
-    let item = new Item(itemID, itemName, getItemSlot(itemID), itemSocket, itemTertiary, 0, itemLevel, "");
+    let item = new Item(itemID, itemName, getItemProp(itemID, "slot"), itemSocket, itemTertiary, 0, itemLevel, "");
     item.softScore = scoreItem(item, player, props.contentType);
 
     player.addActiveItem(item);

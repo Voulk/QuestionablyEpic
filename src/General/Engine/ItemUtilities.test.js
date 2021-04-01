@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import {
   getItemLevel,
   getItemAllocations,
+  getItemProp,
   calcStatsAtLevel,
   getValidArmorTypes,
   getItemSubclass,
@@ -204,7 +205,7 @@ describe("getItemSlot func", () => {
   test("Slot Check Scythewood Scepter (1H Weapon)", () => {
     const id = 178709;
     const expectedResult = "1H Weapon";
-    expect(getItemSlot(id)).toEqual(expectedResult);
+    expect(getItemProp(id, "slot")).toEqual(expectedResult);
   });
 
   test("Slot Check: Invalid Item ID", () => {

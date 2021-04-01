@@ -1,4 +1,4 @@
-import { calcStatsAtLevel, getItemSlot, getItemAllocations, getItemEffect } from "../../Engine/ItemUtilities";
+import { calcStatsAtLevel, getItemAllocations} from "../../Engine/ItemUtilities";
 import { CONSTRAINTS, setBounds } from "../../Engine/CONSTRAINTS";
 
 // The Item class represents an active item in the app at a specific item level.
@@ -15,8 +15,8 @@ class Item {
     this.softScore = softScore;
     this.uniqueHash = this.getUnique(id);
     this.bonusIDS = bonusIDS || "";
-    this.stats = calcStatsAtLevel(this.level, getItemSlot(id), getItemAllocations(id), tertiary);
-    this.effect = getItemEffect(id);
+    this.stats = calcStatsAtLevel(this.level, getItemProp(id, "slot"), getItemAllocations(id), tertiary);
+    this.effect = getItemProp(id, "effect");
     
     //console.log("Setting level to " + level);
   }

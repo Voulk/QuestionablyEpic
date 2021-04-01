@@ -8,7 +8,6 @@ import {
   scoreItem,
   getValidArmorTypes,
   getValidWeaponTypes,
-  getItemEffect,
   getItem,
   filterItemListByType,
 } from "../../Engine/ItemUtilities";
@@ -140,7 +139,6 @@ function buildItem(player, contentType, rawItem, itemLevel, source) {
   let item = new Item(itemID, "", itemSlot, false, "", 0, itemLevel, "");
   //let itemAllocations = getItemAllocations(itemID, []);
   //item.stats = calcStatsAtLevel(itemLevel, itemSlot, itemAllocations, "");
-  //item.effect = getItemEffect(itemID);
   //item.level = itemLevel;
   item.softScore = scoreItem(item, player, contentType);
   item.source = itemSource;

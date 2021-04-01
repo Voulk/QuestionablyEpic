@@ -1,7 +1,6 @@
 import { itemDB, tokenDB } from "../../../Databases/ItemDB";
 import { bonus_IDs } from "../BonusIDs";
-import { getItemLevel } from "../../../General/Engine/ItemUtilities";
-import { calcStatsAtLevel, getItemAllocations, scoreItem, getItemEffect, correctCasing, getValidWeaponTypes, getItemSlot, getItemSubclass } from "../../../General/Engine/ItemUtilities";
+import { calcStatsAtLevel, getItemProp, getItemAllocations, scoreItem, correctCasing, getValidWeaponTypes } from "../../../General/Engine/ItemUtilities";
 import Item from "../../../General/Modules/Player/Item";
 import ItemSet from "../../../General/Modules/TopGear/ItemSet";
 
@@ -121,8 +120,8 @@ function processToken(line, player, contentType, type, covenant) {
     //console.log("ItemID: " + itemList[x]);
     let itemID = itemList[x];
     const validArmorTypes = getValidWeaponTypes(player.spec, tokenSlot);
-    const itemSlot = getItemSlot(itemID);
-    const itemSubClass = getItemSubclass(itemID);
+    const itemSlot = getItemProp(itemID, "slot");
+    const itemSubClass = getItemProp(itemID, "itemSubClass");
 
     if (validArmorTypes.includes(itemSubClass)) {
       let item = new Item(itemID, "", itemSlot, false, "", 0, tokenLevel, "");
@@ -183,8 +182,8 @@ function processItem(line, player, contentType, type) {
   }
 
   // Grab the items base level from our item database.
-  itemLevel = getItemLevel(itemID);
-  itemSlot = getItemSlot(itemID);
+  itemLevel = getItemProp(itemID, "itemLevel");
+  itemSlot = getItemProp(itemID, "slot");
 
   //console.log("Base level: " + itemLevel + " id " + itemID)
 
@@ -266,7 +265,7 @@ function processItem(line, player, contentType, type) {
     if (Object.keys(itemBonusStats).length > 0) item.addStats(itemBonusStats);
     item.stats = calcStatsAtLevel(itemLevel, itemSlot, itemAllocations, itemTertiary);
 
-    item.effect = Object.keys(itemEffect).length !== 0 ? itemEffect : getItemEffect(itemID);
+    item.effect = Object.keys(itemEffect).length !== 0 ? itemEffect : getItemProp(itemID, "effect");
     if (item.effect.type && item.effect.type === "spec legendary") item.uniqueEquip = "legendary";
     else if (item.vaultItem) item.uniqueEquip = "vault";
     item.softScore = scoreItem(item, player, contentType);

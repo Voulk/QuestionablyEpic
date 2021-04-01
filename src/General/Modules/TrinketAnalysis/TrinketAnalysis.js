@@ -3,7 +3,7 @@ import { makeStyles, Paper, Typography, Grid, Divider } from "@material-ui/core"
 import { useTranslation } from "react-i18next";
 import { itemDB } from "../../../Databases/ItemDB";
 import Item from "../Player/Item";
-import { getItemAllocations, calcStatsAtLevel, getItemEffect, scoreItem, getTranslatedItemName } from "../../Engine/ItemUtilities";
+import { getItemAllocations, calcStatsAtLevel, getItemProp, scoreItem, getTranslatedItemName } from "../../Engine/ItemUtilities";
 import VerticalChart from "./Charts/VerticalChart";
 import HelpText from "../SetupAndMenus/HelpText";
 
@@ -13,7 +13,7 @@ const getTrinketAtItemLevel = (id, itemLevel, player, contentType) => {
   let item = new Item(id, "", "Trinket", false, "", 0, itemLevel, "");
   let itemAllocations = getItemAllocations(id);
   item.stats = calcStatsAtLevel(itemLevel, "Trinket", itemAllocations, "");
-  item.effect = getItemEffect(id);
+  item.effect = getItemProp(id, "effect");
   item.softScore = scoreItem(item, player, contentType);
 
   return item.softScore;
