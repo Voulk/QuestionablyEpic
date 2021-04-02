@@ -367,5 +367,5 @@ function getEstimatedHPS(bonus_stats, player, contentType) {
 }
 
 export function getProcessedValue(coefficient, table, itemLevel, efficiency = 1) {
-  return coefficient * getScalarValue(table, itemLevel) * efficiency;
+  return Math.round(coefficient * getScalarValue(table, itemLevel) * efficiency);
 }

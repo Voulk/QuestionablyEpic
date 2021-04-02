@@ -14,7 +14,7 @@ describe("Insignia of Alacrity Data Check", () => {
     level     | expectedResult
     ${226}   | ${173}
     ${213}  | ${8}
-    ${184}  | ${8}
+    ${197}  | ${132}
     // add new test cases here
     `.test("Insignia Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
   
@@ -108,8 +108,8 @@ describe("Soulletting Ruby", () => {
     const effect = activeTrinket.effects[0];
     each`
     level    | expectedResult
-    ${226}  | ${173}
-    ${213}  | ${8}
+    ${226}  | ${1046}
+    ${194}  | ${114}
     ${184}  | ${628}
     // add new test cases here
     `.test("Soulletting Ruby Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
