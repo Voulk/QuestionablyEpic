@@ -20,8 +20,6 @@ import { apiGetPlayerImage } from "../ConnectionUtilities";
 import { CONSTRAINTS, setBounds } from "../../../Engine/CONSTRAINTS";
 import { useSelector } from "react-redux";
 
-
-
 /* ------------------------------ Spec Images. ------------------------------ */
 const specImages = {
   "Restoration Druid": require("Images/DruidSmall.jpg"),
@@ -441,15 +439,7 @@ export default function CharCards(props) {
                     <Grid item xs={12} container spacing={1}>
                       {/* ----------------------------- Character Name ----------------------------- */}
                       <Grid item xs={9}>
-                        <TextField
-                          fullWidth
-                          id="standard-basic"
-                          label={t("CharacterCreator.CharacterInfo")}
-                          value={charName}
-                          onChange={handleChangeName}
-                          variant="outlined"
-                          size="small"
-                        />
+                        <TextField fullWidth id="standard-basic" label={t("CharacterCreator.CharacterInfo")} value={charName} onChange={handleChangeName} variant="outlined" size="small" />
                       </Grid>
                       {/* ------------------------------ Region Select ----------------------------- */}
                       <Grid item xs={3}>

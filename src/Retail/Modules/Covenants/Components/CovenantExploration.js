@@ -96,6 +96,16 @@ export default function CovenantExploration(props) {
   const [soulbindValue, setSoulbindValue] = React.useState(0);
   const [soulbindState, setSoulbindState] = React.useState(buildBonusStats(soulbindDB, props.player, contentType));
 
+  useEffect(() => {
+    let updatedArray = soulbindState.map((trait) => {
+      return {
+        ...trait,
+        bonus_stats: getSoulbindFormula(trait.id, props.player, contentType),
+      };
+    });
+    setSoulbindState(updatedArray);
+  }, [contentType]);
+
   function updateConduitLevel(id, newLevel) {
     props.player.updateConduitLevel(id, newLevel);
     props.updatePlayerChar(props.player);
