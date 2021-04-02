@@ -184,7 +184,7 @@ export default function LegendaryCompare(props) {
         {/* ------------------------------ Map the Legendary list into Cards ----------------------------- */}
         <Grid item container spacing={1} direction="row">
           {legendaryList.map((item, index) => (
-            <LegendaryObject key={index} item={item} player={props.player} contentType={contentType} />
+            <LegendaryObject key={index} item={item} player={props.player} />
           ))}
         </Grid>
       </Grid>
