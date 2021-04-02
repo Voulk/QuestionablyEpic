@@ -1,12 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import {
-  getItemLevel,
   getItemAllocations,
   getItemProp,
   calcStatsAtLevel,
   getValidArmorTypes,
-  getItemSubclass,
   getValidWeaponTypes,
   getTranslatedItemName,
   getItemEffect,
@@ -21,12 +19,12 @@ describe("Test Item Level", () => {
   test("Sylvan Whiteshield ilvl", () => {
     const id = 181393;
     const expectedResult = 190;
-    expect(getItemLevel(id)).toEqual(expectedResult);
+    expect(getItemProp(id, "itemLevel")).toEqual(expectedResult);
   });
   test("Sapsteel Breastplate ilvl", () => {
     const id = 181400;
     const expectedResult = 148;
-    expect(getItemLevel(id)).toEqual(expectedResult);
+    expect(getItemProp(id, "itemLevel")).toEqual(expectedResult);
   });
 });
 
@@ -80,7 +78,7 @@ describe("getValidArmorTypes func", () => {
     expect(getValidArmorTypes(spec)).toEqual(expectedResult);
   });
 
-  const itemSubclass = getItemSubclass(179322);
+  const itemSubclass = getItemProp(179322, "itemSubClass");
   each`
     spec     | expectedResult
     ${SPEC.RESTODRUID}   | ${false}
@@ -95,7 +93,7 @@ describe("getValidArmorTypes func", () => {
   });
 
   // TRINKET
-  const itemSubclass2 = getItemSubclass(178826);
+  const itemSubclass2 = getItemProp(178826, "itemSubClass");
   each`
     spec     | expectedResult
     ${SPEC.RESTODRUID}   | ${true}
@@ -119,7 +117,7 @@ describe("getValidWeaponTypes func", () => {
   });
 
   // Check can use Staff
-  const itemSubclass = getItemSubclass(178714);
+  const itemSubclass = getItemProp(178714, "itemSubClass");
   each`
     spec     | expectedResult
     ${SPEC.RESTODRUID}   | ${true}
@@ -134,7 +132,7 @@ describe("getValidWeaponTypes func", () => {
   });
 
   // Check can use Shield
-  const itemSubclass2 = getItemSubclass(178750);
+  const itemSubclass2 = getItemProp(178750, "itemSubClass");
   each`
     spec     | expectedResult
     ${SPEC.RESTODRUID}   | ${false}
@@ -169,7 +167,7 @@ describe("GetItemEffect func", () => {
   test("Sinful Gladiator's Badge of Ferocity", () => {
     const id = 175921;
     const expectedResult = { type: "trinket", name: "Sinful Gladiator's Badge of Ferocity" };
-    expect(getItemEffect(id)).toEqual(expectedResult);
+    expect(getItemProp(id, "effect")).toEqual(expectedResult);
   });
 
   // Add new tests
@@ -210,8 +208,8 @@ describe("getItemSlot func", () => {
 
   test("Slot Check: Invalid Item ID", () => {
     const id = 9999999;
-    const expectedResult = 0;
-    expect(getItemSlot(id)).toEqual(expectedResult);
+    const expectedResult = "";
+    expect(getItemProp(id, "slot")).toEqual(expectedResult);
   });
 
   // Add new tests

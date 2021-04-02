@@ -44,8 +44,8 @@ describe("Overflowing Anima Cage Test", () => {
 
     // Perform ilvl tests.
     each`
-    level     | expectedResult
-    ${226}   | ${9}
+    level   | expectedResult
+    ${226}  | ${9}
     ${213}  | ${8}
     ${200}  | ${8}
     ${187}  | ${7}
@@ -108,3 +108,4 @@ describe("Boon of the Archon Test", () => {
   */
 
 });
+
