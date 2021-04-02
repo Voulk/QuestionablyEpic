@@ -1,0 +1,2 @@
+export const TOGGLE_CONTENT = "TOGGLE_CONTENT";
+export const TOGGLE_GAMETYPE = "TOGGLE_GAMETYPE";
