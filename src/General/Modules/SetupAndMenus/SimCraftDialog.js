@@ -3,12 +3,14 @@ import { useTranslation } from "react-i18next";
 import { Button, TextField, Dialog, DialogActions, DialogContent, DialogTitle, Tooltip } from "@material-ui/core";
 import { runSimC } from "../../../Retail/Engine/SimCImport/SimCImportEngine";
 import { createEmitAndSemanticDiagnosticsBuilderProgram } from "typescript";
+import { useSelector } from 'react-redux'
 
 export default function SimCraftInput(props) {
   const { t, i18n } = useTranslation();
   const [open, setOpen] = React.useState(false);
   const [simC, setSimC] = React.useState("");
   const [errorMessage, setErrorMessage] = React.useState("");
+  const contentType = useSelector(state => state.contentType)
   const characterCount = props.allChars.getAllChar().length || 0;
   const buttonVariant = props.variant;
   const handleClickOpen = () => {
@@ -20,7 +22,7 @@ export default function SimCraftInput(props) {
   };
 
   const handleSubmit = () => {
-    runSimC(simC, props.player, props.contentType, setErrorMessage, props.simcSnack, handleClose, setSimC);
+    runSimC(simC, props.player, contentType, setErrorMessage, props.simcSnack, handleClose, setSimC);
   };
 
   return (

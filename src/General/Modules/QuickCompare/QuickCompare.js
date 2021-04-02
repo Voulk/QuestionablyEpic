@@ -15,6 +15,7 @@ import ItemCard from "./ItemCard";
 import HelpText from "../SetupAndMenus/HelpText";
 import { CONSTRAINTS } from "../../Engine/CONSTRAINTS";
 import UpgradeFinderSimC from "../UpgradeFinder/UpgradeFinderSimCImport";
+import { useSelector } from 'react-redux'
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -98,9 +99,12 @@ function getSlots() {
 }
 
 export default function QuickCompare(props) {
+
+  const contentType = useSelector(state => state.contentType)
+
   useEffect(() => {
     ReactGA.pageview(window.location.pathname + window.location.search);
-  }, props.player.scoreActiveItems(props.contentType));
+  }, props.player.scoreActiveItems(contentType));
 
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
@@ -196,7 +200,7 @@ export default function QuickCompare(props) {
     }
     let player = props.player;
     let item = new Item(itemID, itemName, getItemProp(itemID, "slot"), itemSocket, itemTertiary, 0, itemLevel, "");
-    item.softScore = scoreItem(item, player, props.contentType);
+    item.softScore = scoreItem(item, player, contentType);
 
     player.addActiveItem(item);
     setItemList([...player.getActiveItems(activeSlot)]);
@@ -281,7 +285,7 @@ export default function QuickCompare(props) {
           <HelpText text={helpText} />
         </Grid>
         <Grid item xs={12}>
-          <UpgradeFinderSimC player={props.player} contentType={props.contentType} simcSnack={props.simcSnack} allChars={props.allChars} />
+          <UpgradeFinderSimC player={props.player} simcSnack={props.simcSnack} allChars={props.allChars} />
         </Grid>
         <Grid item xs={12}>
           <Paper elevation={0}>

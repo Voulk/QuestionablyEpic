@@ -10,6 +10,7 @@ import UpgradeFinderSimC from "./UpgradeFinderSimCImport";
 import { runUpgradeFinder } from "./UpgradeFinderEngine";
 import { useHistory } from "react-router-dom";
 import userSettings from "../TopGear/SettingsObject";
+import { useSelector } from "react-redux";
 
 const useStyles = makeStyles((theme) => ({
   slider: {
@@ -82,6 +83,7 @@ export default function UpgradeFinderFront(props) {
   const classes = useStyles();
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
+  const contentType = useSelector((state) => state.contentType);
   const helpText = t("UpgradeFinderFront.HelpText");
 
   const marks = [
@@ -221,7 +223,7 @@ export default function UpgradeFinderFront(props) {
 
   const unleashUpgradeFinder = () => {
     const playerSettings = props.playerSettings;
-    const result = runUpgradeFinder(props.player, props.contentType, currentLanguage, playerSettings, userSettings);
+    const result = runUpgradeFinder(props.player, contentType, currentLanguage, playerSettings, userSettings);
     props.setItemSelection(result);
     props.setShowReport(true);
     //history.push("/UpgradeFinderReport/");
@@ -260,7 +262,7 @@ export default function UpgradeFinderFront(props) {
           <HelpText text={helpText} />
         </Grid>
         <Grid item xs={12}>
-          <UpgradeFinderSimC player={props.player} contentType={props.contentType} simcSnack={props.simcSnack} allChars={props.allChars} />
+          <UpgradeFinderSimC player={props.player} simcSnack={props.simcSnack} allChars={props.allChars} />
         </Grid>
         <Grid item xs={12}>
           <TopGearSettingsAccordion player={props.player} userSettings={userSettings} editSettings={editSettings} />

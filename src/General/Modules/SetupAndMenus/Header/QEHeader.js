@@ -9,10 +9,10 @@ import { Link } from "react-router-dom";
 import SimCraftInput from "../SimCraftDialog";
 import QELogImport from "./QELogImport";
 import { makeStyles } from "@material-ui/core/styles";
-import CharacterHeaderButton from "./CharacterHeader"
-import { useSelector } from 'react-redux'
-import { useDispatch } from 'react-redux'
-import { toggleContent } from "../../../Redux/Actions"
+import CharacterHeaderButton from "./CharacterHeader";
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { toggleContent } from "../../../../Redux/Actions";
 // import ReactGA from "react-ga";n
 
 const useStyles = makeStyles((theme) => ({
@@ -41,6 +41,9 @@ export default function QEHeader(props) {
   const handlePopoverClose = () => {
     setAnchorEl(null);
   };
+
+  const dispatch = useDispatch();
+  const contentType = useSelector((state) => state.contentType);
 
   const open = Boolean(anchorEl);
 
@@ -88,16 +91,16 @@ export default function QEHeader(props) {
             <Grid item xs={12} sm={12} md={4} lg={4} xl={4}>
               <Grid container direction="row" justify="center" alignItems="center" spacing={1} wrap="nowrap" style={{ paddingLeft: 10, paddingRight: 10 }}>
                 <Grid item>
-                  <Tooltip title={props.contentType === "Raid" ? t("QeHeader.Tooltip.ChangeToDungeon") : t("QeHeader.Tooltip.ChangeToRaid")} arrow>
+                  <Tooltip title={contentType === "Raid" ? t("QeHeader.Tooltip.ChangeToDungeon") : t("QeHeader.Tooltip.ChangeToRaid")} arrow>
                     <Button
                       style={{ color: "white" }}
-                      onClick={props.toggleContentType}
+                      onClick={() => dispatch(toggleContent(contentType))}
                       aria-owns={open ? "mouse-over-popover" : undefined}
                       aria-haspopup="true"
                       onMouseEnter={handlePopoverOpen}
                       onMouseLeave={handlePopoverClose}
                     >
-                      {t(props.contentType)}
+                      {t(contentType)}
                     </Button>
                   </Tooltip>
                 </Grid>
@@ -105,17 +108,15 @@ export default function QEHeader(props) {
                   <QELogImport logImportSnack={props.logImportSnack} player={props.player} allChars={props.allChars} />
                 </Grid>
                 <Grid item>
-                  <SimCraftInput
-                    buttonLabel={t("SimCInput.SimCHeaderButtonLabel")}
-                    player={props.player}
-                    contentType={props.contentType}
-                    simcSnack={props.simcSnack}
-                    allChars={props.allChars}
-                  />
+                  <SimCraftInput buttonLabel={t("SimCInput.SimCHeaderButtonLabel")} player={props.player} simcSnack={props.simcSnack} allChars={props.allChars} />
                 </Grid>
-                {(props.allChars && props.allChars.allChar.length) > 0 ? <Grid item>
-                  <CharacterHeaderButton player={props.pl} allChars={props.allChars} />
-                </Grid> : ""}
+                {(props.allChars && props.allChars.allChar.length) > 0 ? (
+                  <Grid item>
+                    <CharacterHeaderButton player={props.pl} allChars={props.allChars} />
+                  </Grid>
+                ) : (
+                  ""
+                )}
                 <Grid item>
                   <ProfileSelector name={playerName} component={Link} to={linkTarget} logFunc={props.logFunc} setRegion={props.setRegion} />
                 </Grid>

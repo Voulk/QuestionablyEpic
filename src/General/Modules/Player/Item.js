@@ -1,4 +1,4 @@
-import { calcStatsAtLevel, getItemAllocations} from "../../Engine/ItemUtilities";
+import { calcStatsAtLevel, getItemAllocations,getItemProp} from "../../Engine/ItemUtilities";
 import { CONSTRAINTS, setBounds } from "../../Engine/CONSTRAINTS";
 
 // The Item class represents an active item in the app at a specific item level.

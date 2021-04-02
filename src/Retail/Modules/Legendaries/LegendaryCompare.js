@@ -7,6 +7,7 @@ import { useTranslation } from "react-i18next";
 import { getEffectValue } from "../../Engine/EffectFormulas/EffectEngine";
 import ReactGA from "react-ga";
 import { Grid, Typography } from "@material-ui/core";
+import { useSelector } from "react-redux";
 
 const useStyles = makeStyles((theme) => ({
   header: {
@@ -160,6 +161,7 @@ class Legendary {
 
 export default function LegendaryCompare(props) {
   const classes = useStyles();
+  const contentType = useSelector((state) => state.contentType);
   useEffect(() => {
     ReactGA.pageview(window.location.pathname + window.location.search);
   }, []);
@@ -167,7 +169,7 @@ export default function LegendaryCompare(props) {
 
   let legendaryList = [];
 
-  fillLegendaries(legendaryList, props.player.spec, props.player, props.contentType);
+  fillLegendaries(legendaryList, props.player.spec, props.player, contentType);
   sortLegendaries(legendaryList);
 
   return (
@@ -182,7 +184,7 @@ export default function LegendaryCompare(props) {
         {/* ------------------------------ Map the Legendary list into Cards ----------------------------- */}
         <Grid item container spacing={1} direction="row">
           {legendaryList.map((item, index) => (
-            <LegendaryObject key={index} item={item} player={props.player} contentType={props.contentType} />
+            <LegendaryObject key={index} item={item} player={props.player} contentType={contentType} />
           ))}
         </Grid>
       </Grid>

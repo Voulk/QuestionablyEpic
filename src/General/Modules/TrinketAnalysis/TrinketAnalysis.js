@@ -6,6 +6,7 @@ import Item from "../Player/Item";
 import { getItemAllocations, calcStatsAtLevel, getItemProp, scoreItem, getTranslatedItemName } from "../../Engine/ItemUtilities";
 import VerticalChart from "./Charts/VerticalChart";
 import HelpText from "../SetupAndMenus/HelpText";
+import { useSelector } from "react-redux";
 
 // [{TrinketID: 90321, i173: 92, i187: 94, i200: 99, i213: 104, i226: 116}]
 
@@ -30,10 +31,7 @@ const getHighestTrinketScore = (db, trinket) => {
   const highestLevel = item.levelRange[item.levelRange.length - 1];
 
   return trinket["i" + highestLevel];
-
-  
-
-}
+};
 
 export default function TrinketAnalysis(props) {
   /*useEffect(() => {
@@ -41,6 +39,7 @@ export default function TrinketAnalysis(props) {
     }, []); */
 
   const { t, i18n } = useTranslation();
+  const contentType = useSelector((state) => state.contentType);
   const itemLevel = 213;
   const itemLevels = [187, 194, 200, 207, 213, 220, 226, 233];
   const trinketDB = itemDB.filter((key) => key.slot === "Trinket" && key.levelRange.length > 0);
@@ -56,7 +55,7 @@ export default function TrinketAnalysis(props) {
     };
 
     for (var x = 0; x < itemLevels.length; x++) {
-      trinketAtLevels["i" + itemLevels[x]] = getTrinketAtItemLevel(trinket.id, itemLevels[x], props.player, props.contentType);
+      trinketAtLevels["i" + itemLevels[x]] = getTrinketAtItemLevel(trinket.id, itemLevels[x], props.player, contentType);
     }
     activeTrinkets.push(trinketAtLevels);
   }
@@ -81,13 +80,13 @@ export default function TrinketAnalysis(props) {
         </Grid>
         <Grid item xs={12}>
           {/* <Paper style={{ padding: 20 }}> */}
-            <Grid container spacing={1} justify="center">
-              <Grid item xs={12}>
-                <Paper style={{ backgroundColor: "rgb(28, 28, 28, 0.5)" }} elevation={1} variant="outlined">
-                  <VerticalChart data={activeTrinkets} db={trinketDB}/>
-                </Paper>
-              </Grid>
+          <Grid container spacing={1} justify="center">
+            <Grid item xs={12}>
+              <Paper style={{ backgroundColor: "rgb(28, 28, 28, 0.5)" }} elevation={1} variant="outlined">
+                <VerticalChart data={activeTrinkets} db={trinketDB} />
+              </Paper>
             </Grid>
+          </Grid>
           {/* </Paper> */}
         </Grid>
       </Grid>
