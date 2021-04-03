@@ -1,67 +1,73 @@
-
-// It should be noted that these are no longer used anywhere, and were part of a different trinket draft.
-export const TAGS = {
-  ON_USE: "on-use",
-  MULTIPLIER: "multiplier",
-  DURATION: "duration",
-  PPM: "ppm",
-  HASTED_PPM: "hasted-ppm",
-  DURATION_BASED: "duration-based",
-  METEOR: "meteor", // The meteor effect increases a trinkets value by X based on targets hit up to Y. X should be represented as 'multiplier' and Y as the 'cap'.
-  TICKS: "ticks",
-};
-
 export const trinket_data = [
   {
-    // Lingering Sunmote -splits- it's healing between targets hit. That means that it doesn't lose a lot of 
-    // it's healing if you're not able to hit the full number of targets.
-    // It's "meteor effect" instead increases the amount of healing it does by 15% per target hit (up to 5).
-    name: "Lingering Sunmote", 
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                        Lingering Sunmote                                       */
+    /* ---------------------------------------------------------------------------------------------- */
+    /* 
+    -splits- it's healing between targets hit. That means that it doesn't lose a lot of it's healing if you're not able to hit the full number of targets.
+    It's "meteor effect" instead increases the amount of healing it does by 15% per target hit (up to 5). 
+    */
+    name: "Lingering Sunmote",
     effects: [
       {
         coefficient: 45.58441,
         table: -8,
         efficiency: 0.82,
         cooldown: 120,
-        targets: { Raid: 5, Dungeon: 3.1 }, // Remember that this is only used for the meteor effect. 
+        targets: { Raid: 5, Dungeon: 3.1 }, // Remember that this is only used for the meteor effect.
         ticks: 3,
         meteor: 0.15,
       },
     ],
   },
   {
-    // Sunblood Amethyst has two portions. 
-    // - A direct damage effect, which isn't included currently but will be when we formally add DPS.
-    // - An int buff pool that you can stand in. This pool is incredibly underbudget compared to other on-use trinkets, even when you can stand in it the entire time.
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                        Sunblood Amethyst                                       */
+    /* ---------------------------------------------------------------------------------------------- */
+    /* 
+    This trinket has two portions.
+    A direct damage effect, which isn't included currently but will be when we formally add DPS.
+    An int buff pool that you can stand in. This pool is incredibly under budget compared to other on-use trinkets,
+    even when you can stand in it the entire time. 
+    */
     name: "Sunblood Amethyst",
     effects: [
-      { // DPS portion
+      {
+        /* ----------------------------------------- DPS portion ---------------------------------------- */
         coefficient: 71.74138,
         table: -8,
         cooldown: 90,
       },
-      { // Intellect portion
+      {
+        /* -------------------------------------- Intellect portion ------------------------------------- */
         coefficient: 0.993548,
         table: -1,
-        expectedEfficiency: 0.75, // This is the percentage of the time you're able to stand in the puddle. 
+        expectedEfficiency: 0.75, // This is the percentage of the time you're able to stand in the puddle.
         duration: 15,
         cooldown: 90,
       },
     ],
   },
   {
-    // Trinkets designed to save lives rather than purely pump HPS can be difficult to evaluate, but in Mirrors case
-    // it does enough healing wise, and is available at a high enough level that it can be a mid-tier trinket in both 
-    // departments. 
-    // It's biggest weakness is that it shares a lock out with other on-use trinkets which are frequent lock-ins this
-    // tier and can make it annoying to use - particularly during dangerous periods.
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                        Manabound Mirror                                        */
+    /* ---------------------------------------------------------------------------------------------- */
+    /*
+    Trinkets designed to save lives rather than purely pump HPS can be difficult to evaluate, but in Mirrors case
+    it does enough healing wise, and is available at a high enough level that it can be a mid-tier trinket in both
+    departments.
+    It's biggest weakness is that it shares a lock out with other on-use trinkets which are frequent lock-ins this
+    tier and can make it annoying to use - particularly during dangerous periods. 
+    */
     name: "Manabound Mirror",
     effects: [
-      { // This is the coefficient for the portion that scales with mana expenditure.
+      {
+        /* --------- This is the coefficient for the portion that scales with mana expenditure. --------- */
         coefficient: 12.82759,
         table: -8,
       },
-      { // This is the portion for the direct heal, and also includes cooldown and efficiency information for the entire trinket.
+      {
+        /*  This is the portion for the direct heal, and also includes cooldown and efficiency information for the entire trinket.  */
         coefficient: 80.17241,
         table: -8,
         cooldown: 60,
@@ -70,9 +76,14 @@ export const trinket_data = [
     ],
   },
   {
-    // Repose is a fantastic trinket for it's item level, with the direct heal portion given a high budget even if you're not always 
-    // able to use the full heal.
-    name: "Darkmoon Deck: Repose", 
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                      Darkmoon Deck: Repose                                     */
+    /* ---------------------------------------------------------------------------------------------- */
+    /*
+    Repose is a fantastic trinket for it's item level, with the direct heal portion given a high budget even if you're not always
+    able to use the full heal. 
+    */
+    name: "Darkmoon Deck: Repose",
     effects: [
       {
         coefficient: 467.66378, // This represents the upper quartile of the given cards.
@@ -83,12 +94,18 @@ export const trinket_data = [
     ],
   },
   {
-    // A flexible stat stick. QE Live will automatically pick whichever of the three secondary stats is strongest for you while ignoring the tri-proc. 
-    // This could be revisited in the future through the settings menu.
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                       Unbound Changeling                                       */
+    /* ---------------------------------------------------------------------------------------------- */
+    /*
+    A flexible stat stick. 
+    QE Live will automatically pick whichever of the three secondary stats is strongest for you while ignoring the tri-proc.
+    This could be revisited in the future through the settings menu. 
+    */
     name: "Unbound Changeling",
     effects: [
       {
-        coefficient: 2.2, 
+        coefficient: 2.2,
         table: -1,
         duration: 12,
         ppm: 1.5,
@@ -96,6 +113,9 @@ export const trinket_data = [
     ],
   },
   {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                        Cabalist's Hymnal                                       */
+    /* ---------------------------------------------------------------------------------------------- */
     name: "Cabalist's Hymnal",
     effects: [
       {
@@ -109,6 +129,9 @@ export const trinket_data = [
     ],
   },
   {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                       Macabre Sheet Music                                      */
+    /* ---------------------------------------------------------------------------------------------- */
     name: "Macabre Sheet Music",
     effects: [
       {
@@ -121,12 +144,17 @@ export const trinket_data = [
     ],
   },
   {
-    // An awkward on-use trinket that has you sacrifice health every 30 seconds in the hope that you heal somebody below 30% in that time. 
-    // Unfortunately 30% is not that common, so you end up giving up a moderate amount of throughput for some low impact "life saving".
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                   Siphoning Phylactery Shard                                   */
+    /* ---------------------------------------------------------------------------------------------- */
+    /* 
+    An awkward on-use trinket that has you sacrifice health every 30 seconds in the hope that you heal somebody below 30% in that time.
+    Unfortunately 30% is not that common, so you end up giving up a moderate amount of throughput for some low impact "life saving". 
+    */
     name: "Siphoning Phylactery Shard",
     effects: [
       {
-        coefficient: 89.08621, 
+        coefficient: 89.08621,
         table: -8,
         efficiency: 0.37, // This represents proccing a little over a third of the uses.
         cooldown: 30,
@@ -134,6 +162,9 @@ export const trinket_data = [
     ],
   },
   {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                     Overflowing Anima Cage                                     */
+    /* ---------------------------------------------------------------------------------------------- */
     name: "Overflowing Anima Cage",
     effects: [
       {
@@ -141,40 +172,52 @@ export const trinket_data = [
         table: -7,
         duration: 15,
         efficiency: 0.45,
-        targets: {Raid: 5, Dungeon: 3.1}, // Up to four allies do benefit from standing with you. Not included in the score for now.
+        targets: { Raid: 5, Dungeon: 3.1 }, // Up to four allies do benefit from standing with you. Not included in the score for now.
         cooldown: 150,
       },
     ],
   },
   {
-    // Vial of Spectral Essence is an easy to use trinket that you can basically hit on cooldown to add a little bit of healing. 
-    // It's tuned pretty well and while it falls behind stat sticks in Mythic it keeps up fine in other difficulties or when
-    // it has an item level advantage. QE Live assumes high efficiency because it's very difficult to waste much of the healing.
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                    Vial of Spectral Essence                                    */
+    /* ---------------------------------------------------------------------------------------------- */
+    /* 
+    Vial of Spectral Essence is an easy to use trinket that you can basically hit on cooldown to add a little bit of healing.
+    It's tuned pretty well and while it falls behind stat sticks in Mythic it keeps up fine in other difficulties or when
+    it has an item level advantage. QE Live assumes high efficiency because it's very difficult to waste much of the healing. 
+    */
     name: "Vial of Spectral Essence",
     effects: [
       {
         coefficient: 161.3793,
-        table: -8, 
+        table: -8,
         efficiency: 0.88,
         cooldown: 90,
       },
     ],
   },
   {
-    // Soulleting Ruby is an overbudget on-use stat stick that's only weakness is how tricky it is to maximise. 
-    // It travels at 5.6 yards per second which requires that ranged healers use it several seconds prior to 
-    // key healing cooldowns. The formula currently assumes that you do pull this off, and no penalty is given 
-    // for misplays. 
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                        Soulletting Ruby                                        */
+    /* ---------------------------------------------------------------------------------------------- */
+    /* 
+    Soulleting Ruby is an over budget on-use stat stick that's only weakness is how tricky it is to maximize.
+    It travels at 5.6 yards per second which requires that ranged healers use it several seconds prior to
+    key healing cooldowns. The formula currently assumes that you do pull this off, and no penalty is given
+    for misplays. 
+    */
     name: "Soulletting Ruby",
     effects: [
-      { // Crit buff portion of the trinket.
+      {
+        /* ------------------------------ Crit buff portion of the trinket. ----------------------------- */
         coefficient: 2.269577,
         table: -7,
         duration: 16,
         multiplier: 1.62, // This assumes your average boss health is just under 50% which feels like a fair average.
         cooldown: 120,
       },
-      { // Healing portion when the spirit reaches you.
+      {
+        /* ------------------------ Healing portion when the spirit reaches you. ------------------------ */
         coefficient: 51.64138,
         table: -8,
         efficiency: 0.26, // This has a very low efficiency on average since you are mostly interested in the crit buff and will pop it before damage goes out.
@@ -183,7 +226,12 @@ export const trinket_data = [
     ],
   },
   {
-    // Wakeners Frond is a world quest trinket so is not available at high item levels.
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                         Wakener's Frond                                        */
+    /* ---------------------------------------------------------------------------------------------- */
+    /* 
+    Wakeners Frond is a world quest trinket so is not available at high item levels 
+    */
     name: "Wakener's Frond",
     effects: [
       {
@@ -196,25 +244,36 @@ export const trinket_data = [
     ],
   },
   {
-    // Soulsifter Root is a world quest trinket that procs a couple of times per minute.
-    // If the target is missing more health than you it throws in another 20%, however
-    // this is not included in the formula since it is of no net value and the raid
-    // survivability increase is minimal. 
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                         Soulsifter Root                                        */
+    /* ---------------------------------------------------------------------------------------------- */
+    /*
+    Soulsifter Root is a world quest trinket that procs a couple of times per minute.
+    If the target is missing more health than you it throws in another 20%, however
+    this is not included in the formula since it is of no net value and the raid
+    survivability increase is minimal. 
+    */
     name: "Soulsifter Root",
     effects: [
       {
         coefficient: 57.12069,
-        table: -8, 
+        table: -8,
         ppm: 2,
-        efficiency: 0.8, 
+        efficiency: 0.8,
       },
     ],
   },
   {
-    // Boon of the Archon is a group buff trinket, and the benefit to allies can be included in Top Gear / Upgrade Finder via the settings panel.
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                       Boon of the Archon                                       */
+    /* ---------------------------------------------------------------------------------------------- */
+    /*
+    Boon of the Archon is a group buff trinket, and the benefit to allies can be included in Top Gear / Upgrade Finder via the settings panel. 
+    */
     name: "Boon of the Archon",
     effects: [
-      { // Versatility portion.
+      {
+        /* ------------------------------------ Versatility portion. ------------------------------------ */
         coefficient: 0.354898,
         table: -7,
         duration: 14, // Duration is refreshed if another player walks over one. Max duration is ~20 seconds per proc.
@@ -222,7 +281,8 @@ export const trinket_data = [
         efficiency: 0.65,
         ppm: 1,
       },
-      { // Heal portion
+      {
+        /* ---------------------------------------- Heal portion ---------------------------------------- */
         coefficient: 11.89655,
         table: -8,
         efficiency: 0.64, // These are unlikely to overheal, but players have to run over them so some might naturally expire. Full health players can also waste them.
@@ -231,7 +291,12 @@ export const trinket_data = [
     ],
   },
   {
-    // Spiritual Alchemy Stone is only available at a very low ilvl which makes it solid for alts and newer players but it falls behind quickly.
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                     Spiritual Alchemy Stone                                    */
+    /* ---------------------------------------------------------------------------------------------- */
+    /* 
+    Spiritual Alchemy Stone is only available at a very low ilvl which makes it solid for alts and newer players but it falls behind quickly. 
+    */
     name: "Spiritual Alchemy Stone",
     effects: [
       {
@@ -243,7 +308,12 @@ export const trinket_data = [
     ],
   },
   {
-    // Flat haste + Int Proc.
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                             Sinful Gladiator's Insignia of Alacrity                            */
+    /* ---------------------------------------------------------------------------------------------- */
+    /* 
+    Flat haste + Int Proc. 
+    */
     name: "Sinful Gladiator's Insignia of Alacrity",
     effects: [
       {
@@ -255,9 +325,14 @@ export const trinket_data = [
     ],
   },
   {
-    // Flat Haste or Crit + Int on-use. 
-    // Badge doesn't provide a lot of stats alone, and it's strength is it's low cooldown and the ability to combine it with large cooldowns.
-    // Divine Toll & Spirit Shell are both great examples. If you just pop it off cooldown without a big ability then it's rather weak.
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                              Sinful Gladiator's Badge of Ferocity                              */
+    /* ---------------------------------------------------------------------------------------------- */
+    /* 
+    Flat Haste or Crit + Int on-use.
+    Badge doesn't provide a lot of stats alone, and it's strength is it's low cooldown and the ability to combine it with large cooldowns.
+    Divine Toll & Spirit Shell are both great examples. If you just pop it off cooldown without a big ability then it's rather weak. 
+    */
     name: "Sinful Gladiator's Badge of Ferocity",
     effects: [
       {
@@ -269,8 +344,14 @@ export const trinket_data = [
     ],
   },
   {
-    // Damage portion not currently included. Ordnance tends to see niche use as you can combine it with another on-use trinket to align the buffs.
-    // This is high level play, must be used carefully, and is not currently modelled in QE Live.
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                        Empyreal Ordnance                                       */
+    /* ---------------------------------------------------------------------------------------------- */
+    /* 
+    Damage portion not currently included.
+    Ordnance tends to see niche use as you can combine it with another on-use trinket to align the buffs.
+    This is high level play, must be used carefully, and is not currently modelled in QE Live. 
+    */
     name: "Empyreal Ordnance",
     effects: [
       {
@@ -283,7 +364,9 @@ export const trinket_data = [
     ],
   },
   {
-    // 
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                   Inscrutable Quantum Device                                   */
+    /* ---------------------------------------------------------------------------------------------- */
     name: "Inscrutable Quantum Device",
     effects: [
       {
@@ -295,7 +378,13 @@ export const trinket_data = [
     ],
   },
   {
-    // A strong on-use with a slightly awkward cooldown for a lot of specs. Value depends heavily on how well your specs mastery interacts with your specs big cooldowns.
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                    Instructor's Divine Bell                                    */
+    /* ---------------------------------------------------------------------------------------------- */
+    /* 
+    A strong on-use with a slightly awkward cooldown for a lot of specs.
+    Value depends heavily on how well your specs mastery interacts with your specs big cooldowns.
+    */
     name: "Instructor's Divine Bell",
     effects: [
       {
@@ -307,7 +396,12 @@ export const trinket_data = [
     ],
   },
   {
-    // Versatility on-use world quest trinket.
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                         Flame of Battle                                        */
+    /* ---------------------------------------------------------------------------------------------- */
+    /*
+    Versatility on-use world quest trinket.
+    */
     name: "Flame of Battle",
     effects: [
       {
@@ -319,7 +413,12 @@ export const trinket_data = [
     ],
   },
   {
-    // Flat crit + Int Proc world quest trinket.
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                 Misfiring Centurion Controller                                 */
+    /* ---------------------------------------------------------------------------------------------- */
+    /*
+    Flat crit + Int Proc world quest trinket.
+    */
     name: "Misfiring Centurion Controller",
     effects: [
       {
@@ -331,7 +430,12 @@ export const trinket_data = [
     ],
   },
   {
-    // Flat int + mastery proc world quest trinket.
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                  Book-Borrower Identification                                  */
+    /* ---------------------------------------------------------------------------------------------- */
+    /*
+    Flat int + mastery proc world quest trinket.
+    */
     name: "Book-Borrower Identification",
     effects: [
       {
@@ -343,19 +447,25 @@ export const trinket_data = [
     ],
   },
   {
-    // This is a remake of Kil'jaedens Grand Design from Legion but with one stack instead of two. You'll have it up at 100% uptime until the player procs it
-    // by falling low. Quite a good tank healing option, but only available at sub-maximum item levels due to being a world quest trinket. 
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                   Glimmerdust's Grand Design                                   */
+    /* ---------------------------------------------------------------------------------------------- */
+    /*
+    This is a remake of Kil'jaedens Grand Design from Legion but with one stack instead of two.
+    You'll have it up at 100% uptime until the player procs it by falling low.
+    Quite a good tank healing option, but only available at sub-maximum item levels due to being a world quest trinket.
+    */
     name: "Glimmerdust's Grand Design",
     effects: [
       {
-        // HoT Portion
+        /* ----------------------------------------- HoT Portion ---------------------------------------- */
         coefficient: 1.931035,
         table: -8,
         efficiency: 0.35, // Falls off when the target falls below 35% health. Efficiency in this case is the HoT uptime x the HoT overhealing.
-        totalTicks: 40, // 120 / 3. It also scales with Haste. 
+        totalTicks: 40, // 120 / 3. It also scales with Haste.
       },
       {
-        // Absorb Portion
+        /* --------------------------------------- Absorb Portion --------------------------------------- */
         coefficient: 249.431,
         table: -8,
         efficiency: 0.85, // It's incredibly likely that your priority target will drop below 35% over a two minute period.
@@ -363,43 +473,62 @@ export const trinket_data = [
     ],
   },
   {
-    // Consumptive Infusion is an awkward trinket that requires you hit the boss, and then single target heal an ally to give them a leech buff.
-    // It is difficult to see what it did for you after a pull since the leech is attributed to the target rather than yourself.
-    // The formula below calculates the expected DPS a randomly chosen member of your raid does, the expected overhealing the leech will do, and how 
-    // often you're likely to be able to proc it. 
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                      Consumptive Infusion                                      */
+    /* ---------------------------------------------------------------------------------------------- */
+    /*
+    Consumptive Infusion is an awkward trinket that requires you hit the boss, and then single target heal an ally to give them a leech buff.
+    It is difficult to see what it did for you after a pull since the leech is attributed to the target rather than yourself.
+    The formula below calculates the expected DPS a randomly chosen member of your raid does, the expected overhealing the leech will do, and how
+    often you're likely to be able to proc it.
+    */
     name: "Consumptive Infusion",
     effects: [
       {
-        // HoT Portion
+        /* ----------------------------------------- HoT Portion ---------------------------------------- */
         coefficient: 1.65,
         table: -7,
         efficiency: { "Restoration Druid": 0.28, "Discipline Priest": 0.32, "Holy Paladin": 0.34, "Mistweaver Monk": 0.31, "Restoration Shaman": 0.3, "Holy Priest": 0.3 },
-        duration: 10, 
+        duration: 10,
         cooldown: 30,
         expectedTargetThroughput: 4050, // In a future version this could be dynamically averaged from an inserted log.
       },
     ],
   },
   {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                   Tuft of Smoldering Plumage                                   */
+    /* ---------------------------------------------------------------------------------------------- */
+    /* 
+    This one is awkward to model. You're using it as a Guardian Spirit effect more often than using it because the heal is useful.
+    A massive heal on an injured target has massive life-saving potential, but it's long cooldown makes it easy to waste.
+    Tuft is of higher efficiency in dungeons where single target healing is a bigger priority, and being the only healer gives you more control on
+    the incoming healing each target receives.
+    */
     name: "Tuft of Smoldering Plumage",
     effects: [
       {
-        // This one is awkward to model. You're using it as a Guardian Spirit effect more often than using it because the heal is useful.
-        // A massive heal on an injured target has massive life-saving potential, but it's long cooldown makes it easy to waste. 
-        // Tuft is of higher efficiency in dungeons where single target healing is a bigger priority, and being the only healer gives you more control on
-        // the incoming healing each target receives. 
         coefficient: 326.7931,
-        table: -8, 
+        table: -8,
         efficiency: { Raid: 0.48, Dungeon: 0.79 }, // Includes the 25% multiplier as the target gets lower.
         cooldown: 120,
       },
     ],
   },
 
-  // ULDUAR TIMEWALKING TRINKETS
-  // Two interesting mana options + nine generic stat procs / on-use options.
+  /* --------------------------------- ULDUAR TIMEWALKING TRINKETS -------------------------------- */
+  /*
+  Two interesting mana options + nine generic stat procs / on-use options.
+  */
+
   {
-    name: "Elemental Focus Stone", // Haste proc on damaging spells.
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                      Elemental Focus Stone                                     */
+    /* ---------------------------------------------------------------------------------------------- */
+    /*
+    Haste proc on damaging spells.
+    */
+    name: "Elemental Focus Stone",
     effects: [
       {
         coefficient: 1.99949,
@@ -410,7 +539,13 @@ export const trinket_data = [
     ],
   },
   {
-    name: "Energy Siphon", // Crit on-use trinket
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                          Energy Siphon                                         */
+    /* ---------------------------------------------------------------------------------------------- */
+    /*
+    Crit on-use trinket
+    */
+    name: "Energy Siphon",
     effects: [
       {
         coefficient: 2.399108,
@@ -421,7 +556,12 @@ export const trinket_data = [
     ],
   },
   {
-    // Int on spell cast, effectively has a 100% uptime since the ramp up is near immediate.
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                     Eye of the Broodmother                                     */
+    /* ---------------------------------------------------------------------------------------------- */
+    /*
+    Int on spell cast, effectively has a 100% uptime since the ramp up is near immediate.
+    */
     name: "Eye of the Broodmother",
     effects: [
       {
@@ -433,7 +573,13 @@ export const trinket_data = [
     ],
   },
   {
-    name: "Flare of the Heavens", // Int proc on damaging spells.
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                      Flare of the Heavens                                      */
+    /* ---------------------------------------------------------------------------------------------- */
+    /*
+    Int proc on damaging spells.
+    */
+    name: "Flare of the Heavens",
     effects: [
       {
         coefficient: 2.353487,
@@ -444,7 +590,13 @@ export const trinket_data = [
     ],
   },
   {
-    name: "Living Flame", // Int on-use trinket
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                          Living Flame                                          */
+    /* ---------------------------------------------------------------------------------------------- */
+    /*
+    Int on-use trinket
+    */
+    name: "Living Flame",
     effects: [
       {
         coefficient: 2.000788,
@@ -455,7 +607,13 @@ export const trinket_data = [
     ],
   },
   {
-    name: "Pandora's Plea", // Int proc
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                         Pandora's Plea                                         */
+    /* ---------------------------------------------------------------------------------------------- */
+    /*
+    Int proc
+    */
+    name: "Pandora's Plea",
     effects: [
       {
         coefficient: 1.561615,
@@ -466,7 +624,13 @@ export const trinket_data = [
     ],
   },
   {
-    name: "Scale of Fates", // Haste proc
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                         Scale of Fates                                         */
+    /* ---------------------------------------------------------------------------------------------- */
+    /*
+    Haste proc
+    */
+    name: "Scale of Fates",
     effects: [
       {
         coefficient: 2.39909,
@@ -477,7 +641,13 @@ export const trinket_data = [
     ],
   },
   {
-    name: "Sif's Remembrance", // Int proc on healing spells
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                        Sif's Remembrance                                       */
+    /* ---------------------------------------------------------------------------------------------- */
+    /*
+    Int proc on healing spells
+    */
+    name: "Sif's Remembrance",
     effects: [
       {
         coefficient: 1.125146,
@@ -488,8 +658,15 @@ export const trinket_data = [
     ],
   },
   {
-    // This was previously an incredibly powerful trinket owing to it's huge mana returns. It was later nerfed by over 80% and is no longer a contender.
-    name: "Show of Faith", // Mana Proc
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                          Show of Faith                                         */
+    /* ---------------------------------------------------------------------------------------------- */
+    /*
+    This was previously an incredibly powerful trinket owing to it's huge mana returns.
+    It was later nerfed by over 80% and is no longer a contender.
+    Mana Proc
+    */
+    name: "Show of Faith",
     effects: [
       {
         coefficient: 1.59735, // 8.996611 pre-nerf
@@ -499,8 +676,14 @@ export const trinket_data = [
     ],
   },
   {
-    // Mana cost reduction on spells. Casts per minute are modelled in the cast model rather than in this file.
-    name: "Spark of Hope", 
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                          Spark of Hope                                         */
+    /* ---------------------------------------------------------------------------------------------- */
+    /*
+    Mana cost reduction on spells. 
+    Casts per minute are modelled in the cast model rather than in this file.
+    */
+    name: "Spark of Hope",
     effects: [
       {
         coefficient: 0.450353,
@@ -508,8 +691,13 @@ export const trinket_data = [
       },
     ],
   },
-  // === Firelands Timewalking Trinkets
+
+  /* ------------------------------- Firelands Timewalking Trinkets ------------------------------- */
+
   {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                      Eye of Blazing Power                                      */
+    /* ---------------------------------------------------------------------------------------------- */
     name: "Eye of Blazing Power",
     effects: [
       {
@@ -521,6 +709,9 @@ export const trinket_data = [
     ],
   },
   {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                         Jaws of Defeat                                         */
+    /* ---------------------------------------------------------------------------------------------- */
     name: "Jaws of Defeat",
     effects: [
       {
@@ -532,27 +723,44 @@ export const trinket_data = [
     ],
   },
   {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                        Necromantic Focus                                       */
+    /* ---------------------------------------------------------------------------------------------- */
+    /*
+    Grants 10 mastery for 10 seconds each time you deal DoT damage.
+    This naturally makes it difficult for specs without DoTs.
+    */
     name: "Necromantic Focus",
     effects: [
       {
-        // Grants 10 mastery for 10 seconds each time you deal DoT damage. This naturally makes it difficult for specs without DoTs.
         coefficient: 10, // Flat value
         stacks: { "Restoration Druid": 7, "Discipline Priest": 10, "Holy Paladin": 0, "Mistweaver Monk": 0, "Restoration Shaman": 2.4, "Holy Priest": 2.4 },
       },
     ],
   },
-  // ---------- Burning Crusade Timewalking Trinkets ------------
+
+  /* ---------------- ---------- Burning Crusade Timewalking Trinkets ------------ ---------------- */
+
   {
-    name: "Memento of Tyrande", // Mana Proc
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                       Memento of Tyrande                                       */
+    /* ---------------------------------------------------------------------------------------------- */
+    /*
+    Mana Proc
+    */
+    name: "Memento of Tyrande",
     effects: [
       {
-        coefficient: 2.03251, 
+        coefficient: 2.03251,
         table: -7,
         ppm: 2.5, // Scales with Haste.
       },
     ],
   },
   {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                      The Skull of Gul'dan                                      */
+    /* ---------------------------------------------------------------------------------------------- */
     name: "The Skull of Gul'dan",
     effects: [
       {
@@ -565,3 +773,16 @@ export const trinket_data = [
     ],
   },
 ];
+
+/* ------------------------------------------- Unused ------------------------------------------- */
+// export const TAGS = {
+//   It should be noted that this is longer used anywhere, and were part of a different trinket draft.
+//   ON_USE: "on-use",
+//   MULTIPLIER: "multiplier",
+//   DURATION: "duration",
+//   PPM: "ppm",
+//   HASTED_PPM: "hasted-ppm",
+//   DURATION_BASED: "duration-based",
+//   METEOR: "meteor", // The meteor effect increases a trinkets value by X based on targets hit up to Y. X should be represented as 'multiplier' and Y as the 'cap'.
+//   TICKS: "ticks",
+// };
