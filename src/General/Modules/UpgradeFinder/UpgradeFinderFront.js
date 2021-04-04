@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 import HelpText from "../SetupAndMenus/HelpText";
 import UpgradeFinderSlider from "./Slider";
 import ToggleButton from "@material-ui/lab/ToggleButton";
-import TopGearSettingsAccordion from "../TopGear/TopGearSettings";
+import Settings from "../Settings/Settings";
 import UpgradeFinderSimC from "./UpgradeFinderSimCImport";
 import { runUpgradeFinder } from "./UpgradeFinderEngine";
 import { useHistory } from "react-router-dom";
@@ -265,7 +265,7 @@ export default function UpgradeFinderFront(props) {
           <UpgradeFinderSimC player={props.player} simcSnack={props.simcSnack} allChars={props.allChars} />
         </Grid>
         <Grid item xs={12}>
-          <TopGearSettingsAccordion player={props.player} userSettings={userSettings} editSettings={editSettings} />
+          <Settings player={props.player} userSettings={userSettings} editSettings={editSettings} hymnalShow={true} groupBuffShow={true} autoSocket={true} />
         </Grid>
 
         {/* ------------------------------ Raid Section ------------------------------ */}

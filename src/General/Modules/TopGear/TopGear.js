@@ -14,7 +14,7 @@ import Autocomplete from "@material-ui/lab/Autocomplete";
 //import worker from "workerize-loader!./TopGearEngine"; // eslint-disable-line import/no-webpack-loader-syntax
 import { useHistory, useLocation } from "react-router-dom";
 import HelpText from "../SetupAndMenus/HelpText";
-import TopGearSettingsAccordion from "./TopGearSettings";
+import Settings from "../Settings/Settings";
 import { CONSTRAINTS } from "../../Engine/CONSTRAINTS";
 import UpgradeFinderSimC from "../UpgradeFinder/UpgradeFinderSimCImport";
 import userSettings from "./SettingsObject";
@@ -235,7 +235,8 @@ export default function TopGear(props) {
           {<UpgradeFinderSimC player={props.player} simcSnack={props.simcSnack} allChars={props.allChars} />}
         </Grid>
         <Grid item xs={12}>
-          <TopGearSettingsAccordion player={props.player} userSettings={userSettings} editSettings={editSettings} />
+          {/* -------------------------------- Trinket / Buff / Etc Settings ------------------------------- */}
+          <Settings player={props.player} userSettings={userSettings} editSettings={editSettings} hymnalShow={true} groupBuffShow={true} autoSocket={true} />
         </Grid>
 
         {props.player.activeItems.length > 0 ? (

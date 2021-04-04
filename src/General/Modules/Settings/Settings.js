@@ -64,7 +64,7 @@ const menuStyle = {
   getContentAnchorEl: null,
 };
 
-export default function TopGearSettingsAccordion(props) {
+export default function Settings(props) {
   const classes = useStyles();
   const { t, i18n } = useTranslation();
   const playerSpec = props.player.getSpec();
@@ -78,8 +78,8 @@ export default function TopGearSettingsAccordion(props) {
   /* -------------------------------------- Disc Talent State ------------------------------------- */
   const [discTalent, setDiscTalent] = useState(109964);
 
-    /* -------------------------------------- Auto-Socket State ------------------------------------- */
-    const [autoSocketValue, setAutoSocketValue] = useState(props.userSettings.autoSocket);
+  /* -------------------------------------- Auto-Socket State ------------------------------------- */
+  const [autoSocketValue, setAutoSocketValue] = useState(props.userSettings.autoSocket);
 
   const updateHymnal = (value) => {
     props.editSettings("hymnalAllies", setBounds(value, 0, 4));
@@ -101,7 +101,6 @@ export default function TopGearSettingsAccordion(props) {
     { value: false, label: "No" },
   ];
 
-
   /* ----------------------------------------- Free State ----------------------------------------- */
   const [value3, setValue3] = useState(5);
   /* ----------------------------------------- Free State ----------------------------------------- */
@@ -122,63 +121,69 @@ export default function TopGearSettingsAccordion(props) {
         <AccordionDetails className={classes.details}>
           <Grid container spacing={1} direction="row">
             {/* ------------------------- Cabalist's Hymnal Item ------------------------- */}
-            <Grid item xs={12} sm={4} md={4} lg={2} xl={2}>
-              <Grid container spacing={1} style={{ paddingLeft: 8 }}>
-                <Grid item xs={12}>
-                  <div style={{ display: "inline-flex" }}>
-                    <Typography color="primary" style={{ marginRight: 4 }}>
-                      {t("Settings.Setting0Title")}
-                    </Typography>
-                    <Tooltip title={t("Settings.Setting0Tooltip")} placement="top-start">
-                      <InfoOutlinedIcon style={{ height: 15, width: 15 }} fontSize="small" />
-                    </Tooltip>
-                  </div>
-                </Grid>
-                <Grid item xs={12}>
-                  <TextField
-                    label={t("Settings.Setting0TextFieldLabel")}
-                    id="AlliesNumber"
-                    value={hymnalValue}
-                    style={{ maxWidth: 115 }}
-                    onChange={(e) => updateHymnal(e.target.value)}
-                    variant="outlined"
-                    size="small"
-                    type="number"
-                  />
+            {props.hymnalShow === true ? (
+              <Grid item xs={12} sm={4} md={4} lg={2} xl={2}>
+                <Grid container spacing={1} style={{ paddingLeft: 8 }}>
+                  <Grid item xs={12}>
+                    <div style={{ display: "inline-flex" }}>
+                      <Typography color="primary" style={{ marginRight: 4 }}>
+                        {t("Settings.Setting0Title")}
+                      </Typography>
+                      <Tooltip title={t("Settings.Setting0Tooltip")} placement="top-start">
+                        <InfoOutlinedIcon style={{ height: 15, width: 15 }} fontSize="small" />
+                      </Tooltip>
+                    </div>
+                  </Grid>
+                  <Grid item xs={12}>
+                    <TextField
+                      label={t("Settings.Setting0TextFieldLabel")}
+                      id="AlliesNumber"
+                      value={hymnalValue}
+                      style={{ maxWidth: 115 }}
+                      onChange={(e) => updateHymnal(e.target.value)}
+                      variant="outlined"
+                      size="small"
+                      type="number"
+                    />
+                  </Grid>
                 </Grid>
               </Grid>
-            </Grid>
-            <Grid item>
-              <Divider orientation="vertical" flexItem style={{ height: "100%" }} />
-            </Grid>
+            ) : (
+              ""
+            )}
+            {/* --------------------------------------- Hymnal Divider --------------------------------------- */}
+            {props.hymnalShow === true ? <Divider orientation="vertical" flexItem /> : ""}
             {/* ------------------------- Group Buff (Treat Buff as Personal Throughput) ------------------------- */}
-            <Grid item xs={12} sm={4} md={4} lg={2} xl={2}>
-              <Grid container spacing={1} style={{ paddingLeft: 8 }}>
-                <Grid item xs={12}>
-                  <div style={{ display: "inline-flex" }}>
-                    <Typography color="primary" style={{ marginRight: 4 }}>
-                      {t("Settings.Setting1Title")}
-                    </Typography>
-                    <Tooltip title={t("Settings.Setting1Tooltip")} placement="top-start">
-                      <InfoOutlinedIcon style={{ height: 15, width: 15 }} fontSize="small" />
-                    </Tooltip>
-                  </div>
-                </Grid>
-                <Grid item xs={12}>
-                  <FormControl variant="outlined" size="small">
-                    <InputLabel id="groupValue">{}</InputLabel>
-                    <Select labelId="groupValue" value={groupValue} onChange={(e) => updateGroupValue(e.target.value)} MenuProps={menuStyle}>
-                      <MenuItem value={true}>{t("Yes")}</MenuItem>
-                      <MenuItem value={false}>{t("No")}</MenuItem>
-                    </Select>
-                  </FormControl>
+            {props.groupBuffShow === true ? (
+              <Grid item xs={12} sm={4} md={4} lg={2} xl={2}>
+                <Grid container spacing={1} style={{ paddingLeft: 8 }}>
+                  <Grid item xs={12}>
+                    <div style={{ display: "inline-flex" }}>
+                      <Typography color="primary" style={{ marginRight: 4 }}>
+                        {t("Settings.Setting1Title")}
+                      </Typography>
+                      <Tooltip title={t("Settings.Setting1Tooltip")} placement="top-start">
+                        <InfoOutlinedIcon style={{ height: 15, width: 15 }} fontSize="small" />
+                      </Tooltip>
+                    </div>
+                  </Grid>
+                  <Grid item xs={12}>
+                    <FormControl variant="outlined" size="small">
+                      <InputLabel id="groupValue">{}</InputLabel>
+                      <Select labelId="groupValue" value={groupValue} onChange={(e) => updateGroupValue(e.target.value)} MenuProps={menuStyle}>
+                        <MenuItem value={true}>{t("Yes")}</MenuItem>
+                        <MenuItem value={false}>{t("No")}</MenuItem>
+                      </Select>
+                    </FormControl>
+                  </Grid>
                 </Grid>
               </Grid>
-            </Grid>
-            <Divider orientation="vertical" flexItem />
-
+            ) : (
+              ""
+            )}
+            {/* ------------------------------------- Group Buff Divider ------------------------------------- */}
+            {props.groupBuffShow === true ? <Divider orientation="vertical" flexItem /> : ""}
             {/* ---------------- Discipline Priest Talent selector (Spirit Shell / Evangelism) --------------- */}
-
             {/* {playerSpec === "Discipline Priest" ? (
               <Grid item xs={2}>
                 <Grid container spacing={1} style={{ paddingLeft: 8 }}>
@@ -210,14 +215,14 @@ export default function TopGearSettingsAccordion(props) {
             ) : (
               ""
             )} */}
-
+            {/* ----------------------------- Discipline Priest Setting Divinder ----------------------------- */}
+            {/* {playerSpec === "Discipline Priest" ? <Divider orientation="vertical" flexItem /> : ""} */}
             {/* ----------------------------------------- Auto Socket Items ---------------------------------------- */}
-
-            <Divider orientation="vertical" flexItem />
-            <Grid item xs={2}>
-              <Grid container spacing={1} style={{ paddingLeft: 8 }}>
-                <Grid item xs={12}>
-                  <div style={{ display: "inline-flex" }}>
+            {props.autoSocket === true ? (
+              <Grid item xs={2}>
+                <Grid container spacing={1} style={{ paddingLeft: 8 }}>
+                  <Grid item xs={12}>
+                    <div style={{ display: "inline-flex" }}>
                       <Typography color="primary" style={{ marginRight: 4 }}>
                         {t("Settings.Setting3Title")}
                       </Typography>
@@ -225,22 +230,24 @@ export default function TopGearSettingsAccordion(props) {
                         <InfoOutlinedIcon style={{ height: 15, width: 15 }} fontSize="small" />
                       </Tooltip>
                     </div>
-                </Grid>
-                <Grid item xs={12}>
-                <FormControl variant="outlined" size="small">
-                    <InputLabel id="groupValue">{}</InputLabel>
-                    <Select labelId="groupValue" value={autoSocketValue} onChange={(e) => updateAutoSocketValue(e.target.value)} MenuProps={menuStyle}>
-                      <MenuItem value={true}>{t("Yes")}</MenuItem>
-                      <MenuItem value={false}>{t("No")}</MenuItem>
-                    </Select>
-                  </FormControl>
+                  </Grid>
+                  <Grid item xs={12}>
+                    <FormControl variant="outlined" size="small">
+                      <InputLabel id="groupValue">{}</InputLabel>
+                      <Select labelId="groupValue" value={autoSocketValue} onChange={(e) => updateAutoSocketValue(e.target.value)} MenuProps={menuStyle}>
+                        <MenuItem value={true}>{t("Yes")}</MenuItem>
+                        <MenuItem value={false}>{t("No")}</MenuItem>
+                      </Select>
+                    </FormControl>
+                  </Grid>
                 </Grid>
               </Grid>
-            </Grid>
-            
-
+            ) : (
+              ""
+            )}
+            {/* ------------------------------------- Auto Socket Divider ------------------------------------ */}
+            {props.autoSocket === true ? <Divider orientation="vertical" flexItem /> : ""}
             {/* ----------------------------------------- Free Option ---------------------------------------- */}
-
             {/*
             <Divider orientation="vertical" flexItem />
             <Grid item xs={2}>
@@ -270,9 +277,7 @@ export default function TopGearSettingsAccordion(props) {
               </Grid>
             </Grid>
             */}
-
             {/* ----------------------------------------- Free Option ---------------------------------------- */}
-
             {/*
             <Divider orientation="vertical" flexItem />
             <Grid item xs={2}>
