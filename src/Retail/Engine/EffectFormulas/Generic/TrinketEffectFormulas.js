@@ -40,10 +40,8 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel, use
     /*
     We can make this more accurate by writing a function to calculate expected_mana_spend based on the players log.
     */
-
     let mana_heal_effect = activeTrinket.effects[0];
     let base_heal_effect = activeTrinket.effects[1];
-
     let expected_mana_spend = player.getSpec() === "Holy Paladin" ? 15500 : 18000; // Per minute.
     let base_heal = getProcessedValue(base_heal_effect.coefficient, base_heal_effect.table, itemLevel);
     let mana_heal = getProcessedValue(mana_heal_effect.coefficient, mana_heal_effect.table, itemLevel) * (expected_mana_spend / 3240);
@@ -53,8 +51,8 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel, use
     /* ---------------------------------------------------------------------------------------------- */
     /*                                      Darkmoon Deck: Repose                                     */
     /* ---------------------------------------------------------------------------------------------- */
-
     let effect = activeTrinket.effects[0];
+
     bonus_stats.hps = (getProcessedValue(effect.coefficient, effect.table, itemLevel, effect.efficiency[contentType]) / effect.cooldown) * player.getStatMultiplier("CRITVERS");
   } else if (effectName === "Sunblood Amethyst") {
     /* ---------------------------------------------------------------------------------------------- */
@@ -83,16 +81,15 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel, use
     /*                                        Cabalist's Hymnal                                       */
     /* ---------------------------------------------------------------------------------------------- */
     // Test
-
     let effect = activeTrinket.effects[0];
     const multiplier = 1 + effect.multiplier * (userSettings.hymnalAllies || 0);
+
     bonus_stats.crit = (getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.duration * effect.stacks * multiplier) / 60;
   } else if (effectName === "Macabre Sheet Music") {
     /* ---------------------------------------------------------------------------------------------- */
     /*                                       Macabre Sheet Music                                      */
     /* ---------------------------------------------------------------------------------------------- */
     // Test
-
     let effect = activeTrinket.effects[0];
 
     bonus_stats.haste = (getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.duration * effect.stacks) / effect.cooldown;
@@ -101,7 +98,6 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel, use
     /*                                   Siphoning Phylactery Shard                                   */
     /* ---------------------------------------------------------------------------------------------- */
     // Test
-
     let effect = activeTrinket.effects[0];
 
     bonus_stats.hps = (getProcessedValue(effect.coefficient, effect.table, itemLevel, effect.efficiency) / effect.cooldown) * player.getStatMultiplier("CRITVERS");
@@ -109,7 +105,6 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel, use
     /* ---------------------------------------------------------------------------------------------- */
     /*                                     Overflowing Anima Cage                                     */
     /* ---------------------------------------------------------------------------------------------- */
-
     let effect = activeTrinket.effects[0];
     const groupMultiplier = userSettings.includeGroupBenefits ? effect.targets[contentType] : 1;
 
@@ -118,14 +113,13 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel, use
     /* ---------------------------------------------------------------------------------------------- */
     /*                                    Vial of Spectral Essence                                    */
     /* ---------------------------------------------------------------------------------------------- */
-
     let effect = activeTrinket.effects[0];
+
     bonus_stats.hps = (getProcessedValue(effect.coefficient, effect.table, itemLevel, effect.efficiency) / effect.cooldown) * player.getStatPerc("Versatility");
   } else if (effectName === "Soulletting Ruby") {
     /* ---------------------------------------------------------------------------------------------- */
     /*                                        Soulletting Ruby                                        */
     /* ---------------------------------------------------------------------------------------------- */
-
     let heal_effect = activeTrinket.effects[1];
     let crit_effect = activeTrinket.effects[0];
 
@@ -136,7 +130,6 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel, use
     /* ---------------------------------------------------------------------------------------------- */
     /*                                         Wakener's Frond                                        */
     /* ---------------------------------------------------------------------------------------------- */
-
     let effect = activeTrinket.effects[0];
 
     bonus_stats.haste = (getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.duration) / effect.cooldown;
@@ -144,7 +137,6 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel, use
     /* ---------------------------------------------------------------------------------------------- */
     /*                                         Soulsifter Root                                        */
     /* ---------------------------------------------------------------------------------------------- */
-
     let effect = activeTrinket.effects[0];
 
     /* ------- Hastes impact on the trinket PPM is included in the secondary multiplier below. ------ */
@@ -170,7 +162,6 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel, use
     let effect = activeTrinket.effects[0];
 
     bonus_stats.intellect = getProcessedValue(effect.coefficient, effect.table, itemLevel) * convertPPMToUptime(effect.ppm, effect.duration);
-
     /* -------------------------------------- Mana Potion Bonus ------------------------------------- */
     /*
     Eventually we'll include mana in bonus_stats and calculate it at the end. Until then, we'll auto-convert to HPS.
@@ -195,63 +186,70 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel, use
     bonus_stats.intellect = (getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.duration) / effect.cooldown;
 
     /* ------------------- This is horribly messy and will be replaced very soon. ------------------- */
-    /*
-    TODO: replace
-    */
+    // TODO: replace
     if (player.getSpec() === "Mistweaver Monk" && player.getCovenant() === "necrolord") bonus_stats.intellect *= player.getCooldownMult("oneMinute", contentType);
     else if (player.getSpec() === "Holy Paladin" && player.getCovenant() === "kyrian") bonus_stats.intellect *= player.getCooldownMult("oneMinute", contentType);
     else if (player.getSpec() === "Holy Paladin" && player.getCovenant() !== "kyrian") bonus_stats.intellect *= player.getCooldownMult("oneMinute", contentType) - 0.34;
     else if (player.getSpec() !== "Mistweaver Monk") bonus_stats.intellect *= player.getCooldownMult("oneMinute", contentType);
 
-    //console.log("Mult: " + JSON.stringify(player.getCooldownMult("oneMinute", contentType)));
-
     //if (player.getSpec() === SPEC.HOLYPALADIN) bonus_stats.intellect *= 1.42; // This needs to be refined, but represents the power increase from combining with Divine Toll.
     //if (player.getSpec() === SPEC.DISCPRIEST) bonus_stats.intellect *= 1.68; // This needs to be refined, but represents the power increase from combining with Spirit Shell.
     // We need a better way to model interaction with spec cooldowns.
-
-    //console.log("BADGE Int:" + bonus_stats.intellect + ". Flat: " + getProcessedValue(effect.coefficient, effect.table, itemLevel) + ". Uptime: 25%")
   } else if (effectName === "Empyreal Ordnance") {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                        Empyreal Ordnance                                       */
+    /* ---------------------------------------------------------------------------------------------- */
     // Test
     let effect = activeTrinket.effects[0];
 
     bonus_stats.intellect = (getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.stacks * effect.duration) / effect.cooldown;
-
     bonus_stats.intellect *= player.getCooldownMult("threeMinutes", contentType);
   } else if (effectName === "Inscrutable Quantum Device") {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                   Inscrutable Quantum Device                                   */
+    /* ---------------------------------------------------------------------------------------------- */
     let effect = activeTrinket.effects[0];
     let playerBestSecondary = player.getHighestStatWeight(contentType, ["versatility"]); // Exclude Vers since there isn't a Vers version.
 
     bonus_stats[playerBestSecondary] = ((getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.duration) / effect.cooldown) * 0.87;
-    // power reduced by 5% because of the chance something interferes. This needs to be much much better and I'll fix it up this week.
+    // TODO: power reduced by 5% because of the chance something interferes. This needs to be much much better and I'll fix it up this week.
   } else if (effectName === "Flame of Battle") {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                         Flame of Battle                                        */
+    /* ---------------------------------------------------------------------------------------------- */
     let effect = activeTrinket.effects[0];
 
     bonus_stats.versatility = (getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.duration) / effect.cooldown;
   } else if (effectName === "Misfiring Centurion Controller") {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                 Misfiring Centurion Controller                                 */
+    /* ---------------------------------------------------------------------------------------------- */
     let effect = activeTrinket.effects[0];
 
     bonus_stats.intellect = getProcessedValue(effect.coefficient, effect.table, itemLevel) * convertPPMToUptime(effect.ppm, effect.duration);
-    //console.log("INSIGNIA Int:" + bonus_stats.intellect + ". Proc: " + getProcessedValue(effect.coefficient, effect.table, itemLevel) + ". Uptime: " + convertPPMToUptime(effect.ppm, effect.duration))
   } else if (effectName === "Book-Borrower Identification") {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                  Book-Borrower Identification                                  */
+    /* ---------------------------------------------------------------------------------------------- */
     let effect = activeTrinket.effects[0];
 
     bonus_stats.mastery = getProcessedValue(effect.coefficient, effect.table, itemLevel) * convertPPMToUptime(effect.ppm, effect.duration);
-    //console.log("INSIGNIA Int:" + bonus_stats.intellect + ". Proc: " + getProcessedValue(effect.coefficient, effect.table, itemLevel) + ". Uptime: " + convertPPMToUptime(effect.ppm, effect.duration))
   } else if (effectName === "Glimmerdust's Grand Design") {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                   Glimmerdust's Grand Design                                   */
+    /* ---------------------------------------------------------------------------------------------- */
     // Test
     let hotEffect = activeTrinket.effects[0];
     let absorbEffect = activeTrinket.effects[1];
-
     let hotHPS =
       (getProcessedValue(hotEffect.coefficient, hotEffect.table, itemLevel, hotEffect.efficiency) * (hotEffect.totalTicks * player.getStatPerc("Haste")) * player.getStatMultiplier("CRITVERS")) / 120;
     let absorbHPS = (getProcessedValue(absorbEffect.coefficient, absorbEffect.table, itemLevel, absorbEffect.efficiency) * player.getStatPerc("Versatility")) / 120;
 
-    //console.log("Hot: " + hotHPS + " AbsorbHPS: " + absorbHPS);
-    //console.log("Raw HoT: " + getProcessedValue(hotEffect.coefficient, hotEffect.table, itemLevel, hotEffect.efficiency) + ". RawAbsorb: " +
-    //getProcessedValue(absorbEffect.coefficient, absorbEffect.table, itemLevel, absorbEffect.efficiency));
-
     bonus_stats.hps = hotHPS + absorbHPS;
   } else if (effectName === "Instructor's Divine Bell") {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                    Instructor's Divine Bell                                    */
+    /* ---------------------------------------------------------------------------------------------- */
     // Test
     let effect = activeTrinket.effects[0];
 
@@ -260,42 +258,55 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel, use
     if (player.getSpec() === SPEC.RESTODRUID) bonus_stats.mastery *= 1.2; // Bell is combined with Flourish.
     // We need a better way to model interaction with spec cooldowns.
   } else if (effectName === "Consumptive Infusion") {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                      Consumptive Infusion                                      */
+    /* ---------------------------------------------------------------------------------------------- */
     let effect = activeTrinket.effects[0];
-
     let expectedThroughput = effect.expectedTargetThroughput;
     let leechPerOnePercent = 21;
     let uptime = effect.duration / effect.cooldown;
     let leechPercentage = getProcessedValue(effect.coefficient, effect.table, itemLevel) / leechPerOnePercent / 100;
-    //console.log("Uptime: " + uptime + ". Leech Percent: " + leechPercentage + ". HPS: " + (leechPercentage * expectedThroughput * effect.efficiency * uptime));
 
     bonus_stats.hps = leechPercentage * expectedThroughput * effect.efficiency[player.getSpec()] * uptime;
   } else if (effectName === "Tuft of Smoldering Plumage") {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                   Tuft of Smoldering Plumage                                   */
+    /* ---------------------------------------------------------------------------------------------- */
     let effect = activeTrinket.effects[0];
-    bonus_stats.hps = (getProcessedValue(effect.coefficient, effect.table, itemLevel, effect.efficiency[contentType]) / effect.cooldown) * player.getStatMultiplier("CRITVERS");
 
-    //console.log("Tuft Effect: " + getProcessedValue(effect.coefficient, effect.table, itemLevel, effect.efficiency[contentType]) + ". Eff: " + effect.efficiency[contentType]);
+    bonus_stats.hps = (getProcessedValue(effect.coefficient, effect.table, itemLevel, effect.efficiency[contentType]) / effect.cooldown) * player.getStatMultiplier("CRITVERS");
   } else if (effectName === "Show of Faith") {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                          Show of Faith                                         */
+    /* ---------------------------------------------------------------------------------------------- */
     let effect = activeTrinket.effects[0];
 
     bonus_stats.mana = (getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.ppm) / 60;
-
-    //console.log("Tuft: " + bonus_stats.hps);
   } else if (effectName === "Spark of Hope") {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                          Spark of Hope                                         */
+    /* ---------------------------------------------------------------------------------------------- */
     let effect = activeTrinket.effects[0];
 
     bonus_stats.mana = (getProcessedValue(effect.coefficient, effect.table, itemLevel) * player.getSpecialQuery("CastsPerMinute", contentType)) / 60;
-    //console.log("Spark: " + getProcessedValue(effect.coefficient, effect.table, itemLevel) * player.getSpecialQuery("CastsPerMinute", contentType) + " . mana: " + bonus_stats.mana);
-    //console.log("Tuft: " + bonus_stats.hps);
   } else if (effectName === "Elemental Focus Stone") {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                      Elemental Focus Stone                                     */
+    /* ---------------------------------------------------------------------------------------------- */
     let effect = activeTrinket.effects[0];
 
     bonus_stats.haste = getProcessedValue(effect.coefficient, effect.table, itemLevel) * convertPPMToUptime(effect.ppm[player.getSpec()], effect.duration);
-    //console.log("Elemental Focus Stone Haste: " + getProcessedValue(effect.coefficient, effect.table, itemLevel));
   } else if (effectName === "Flare of the Heavens") {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                      Flare of the Heavens                                      */
+    /* ---------------------------------------------------------------------------------------------- */
     let effect = activeTrinket.effects[0];
 
     bonus_stats.intellect = getProcessedValue(effect.coefficient, effect.table, itemLevel) * convertPPMToUptime(effect.ppm[player.getSpec()], effect.duration);
   } else if (effectName === "Pandora's Plea") {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                         Pandora's Plea                                         */
+    /* ---------------------------------------------------------------------------------------------- */
     let effect = activeTrinket.effects[0];
 
     bonus_stats.intellect = getProcessedValue(effect.coefficient, effect.table, itemLevel) * convertPPMToUptime(effect.ppm, effect.duration);
@@ -304,58 +315,94 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel, use
 
     bonus_stats.intellect = getProcessedValue(effect.coefficient, effect.table, itemLevel) * convertPPMToUptime(effect.ppm, effect.duration);
   } else if (effectName === "Eye of the Broodmother") {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                     Eye of the Broodmother                                     */
+    /* ---------------------------------------------------------------------------------------------- */
     let effect = activeTrinket.effects[0];
 
     bonus_stats.intellect = getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.stacks;
   } else if (effectName === "Energy Siphon") {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                          Energy Siphon                                         */
+    /* ---------------------------------------------------------------------------------------------- */
     let effect = activeTrinket.effects[0];
 
     bonus_stats.crit = (getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.duration) / effect.cooldown;
   } else if (effectName === "Living Flame") {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                          Living Flame                                          */
+    /* ---------------------------------------------------------------------------------------------- */
     let effect = activeTrinket.effects[0];
 
     bonus_stats.intellect = (getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.duration) / effect.cooldown;
-  } else if (effectName === "Scale of Fates") {
+  } else if (
+    effectName === "Scale of Fates"
+  ) {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                         Scale of Fates                                         */
+    /* ---------------------------------------------------------------------------------------------- */
     let effect = activeTrinket.effects[0];
 
     bonus_stats.haste = (getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.duration) / effect.cooldown;
   }
 
-  // Firelands Trinkets
+  /* ------------------------------------- Firelands Trinkets ------------------------------------- */
+  //prettier-ignore
   else if (effectName === "Eye of Blazing Power") {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                      Eye of Blazing Power                                      */
+    /* ---------------------------------------------------------------------------------------------- */
     let effect = activeTrinket.effects[0];
-    bonus_stats.hps = (getProcessedValue(effect.coefficient, effect.table, itemLevel, effect.efficiency) / 60) * effect.ppm * player.getStatMultiplier("CRITVERS");
-  }
 
-  // Jaws of Defeat
-  else if (effectName === "Jaws of Defeat") {
+    bonus_stats.hps = (getProcessedValue(effect.coefficient, effect.table, itemLevel, effect.efficiency) / 60) * effect.ppm * player.getStatMultiplier("CRITVERS");
+  } else if (effectName === "Jaws of Defeat") {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                         Jaws of Defeat                                         */
+    /* ---------------------------------------------------------------------------------------------- */
     let effect = activeTrinket.effects[0];
     let manaPerStack = effect.coefficient;
     let playerHaste = player.getStatPerc("Haste");
     let castsInDuration = effect.efficiency * (20 / (1.5 / playerHaste));
     let manaSaved = manaPerStack * 5 * 10 + (castsInDuration - 10) * manaPerStack * 10;
-    //console.log("Casts in Dur: " + castsInDuration + ". Mana Saved: " + manaSaved + "Haste: " + playerHaste);
+
     bonus_stats.mana = manaSaved / effect.cooldown;
   } else if (effectName === "Necromantic Focus") {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                        Necromantic Focus                                       */
+    /* ---------------------------------------------------------------------------------------------- */
     let effect = activeTrinket.effects[0];
+
     bonus_stats.mastery = effect.coefficient * effect.stacks[player.getSpec()];
   } else if (effectName === "Memento of Tyrande") {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                       Memento of Tyrande                                       */
+    /* ---------------------------------------------------------------------------------------------- */
     let effect = activeTrinket.effects[0];
 
     bonus_stats.mana = (getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.ppm * player.getStatPerc("Haste")) / 60;
-
-    //console.log("Tuft: " + bonus_stats.hps);
   } else if (effectName === "The Skull of Gul'dan") {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                      The Skull of Gul'dan                                      */
+    /* ---------------------------------------------------------------------------------------------- */
     const effect = activeTrinket.effects[0];
+
     bonus_stats.haste = (getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.duration) / effect.cooldown;
-    if (player.getSpec() === "Holy Paladin") bonus_stats.haste *= player.getCooldownMult("twoMinutes", contentType);
+    if (player.getSpec() === "Holy Paladin") {
+      bonus_stats.haste *= player.getCooldownMult("twoMinutes", contentType);
+    }
   } else {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                        No Trinkets Found                                       */
+    /* ---------------------------------------------------------------------------------------------- */
     console.log("No Trinket Found");
   }
 
-  //console.log("Effect Name: " + effectName + " at level: " + itemLevel + " {" + JSON.stringify(bonus_stats))
   return bonus_stats;
 }
+
+/* ---------------------------------------------------------------------------------------------- */
+/*                                        Testing Functions                                       */
+/* ---------------------------------------------------------------------------------------------- */
 
 export function testTrinkets(player, contentType, itemLevel = 226) {
   let trinketList = trinket_data;
@@ -371,7 +418,7 @@ export function testTrinkets(player, contentType, itemLevel = 226) {
   });
 }
 
-// Converts a bonus_stats dictionary to a singular estimated HPS number.
+/* ------------ Converts a bonus_stats dictionary to a singular estimated HPS number. ----------- */
 // TODO: Remove this. It's just for testing.
 function getEstimatedHPS(bonus_stats, player, contentType) {
   let estHPS = 0;
