@@ -7,6 +7,8 @@ import { getItemAllocations, calcStatsAtLevel, getItemProp, scoreItem, getTransl
 import VerticalChart from "./Charts/VerticalChart";
 import HelpText from "../SetupAndMenus/HelpText";
 import { useSelector } from "react-redux";
+// import Settings from "../Settings/Settings";
+// import userSettings from "../Settings/SettingsObject";
 
 // [{TrinketID: 90321, i173: 92, i187: 94, i200: 99, i213: 104, i226: 116}]
 
@@ -32,6 +34,10 @@ const getHighestTrinketScore = (db, trinket) => {
 
   return trinket["i" + highestLevel];
 };
+
+// const editSettings = (setting, newValue) => {
+//   userSettings[setting] = newValue;
+// };
 
 export default function TrinketAnalysis(props) {
   /*useEffect(() => {
@@ -78,8 +84,10 @@ export default function TrinketAnalysis(props) {
         <Grid item xs={12}>
           <HelpText text={helpText} />
         </Grid>
+        {/* <Grid item xs={12}>
+          <Settings player={props.player} userSettings={userSettings} editSettings={editSettings} hymnalShow={true} groupBuffShow={true} />
+        </Grid> */}
         <Grid item xs={12}>
-          {/* <Paper style={{ padding: 20 }}> */}
           <Grid container spacing={1} justify="center">
             <Grid item xs={12}>
               <Paper style={{ backgroundColor: "rgb(28, 28, 28, 0.5)" }} elevation={1} variant="outlined">
@@ -87,7 +95,6 @@ export default function TrinketAnalysis(props) {
               </Paper>
             </Grid>
           </Grid>
-          {/* </Paper> */}
         </Grid>
       </Grid>
     </div>
