@@ -9,7 +9,7 @@ import Settings from "../Settings/Settings";
 import UpgradeFinderSimC from "./UpgradeFinderSimCImport";
 import { runUpgradeFinder } from "./UpgradeFinderEngine";
 import { useHistory } from "react-router-dom";
-import userSettings from "../TopGear/SettingsObject";
+import userSettings from "../Settings/SettingsObject";
 import { useSelector } from "react-redux";
 
 const useStyles = makeStyles((theme) => ({

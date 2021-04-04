@@ -1,7 +1,7 @@
 
 
 import { getTrinketEffect } from "./TrinketEffectFormulas";
-import { userSettings } from "General/Modules/TopGear/SettingsObject";
+import { userSettings } from "General/Modules/Settings/SettingsObject";
 import Player from "General/Modules/Player/Player";
 import { trinket_data} from "./TrinketData";
 import each from "jest-each";

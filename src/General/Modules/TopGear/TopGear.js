@@ -17,7 +17,7 @@ import HelpText from "../SetupAndMenus/HelpText";
 import Settings from "../Settings/Settings";
 import { CONSTRAINTS } from "../../Engine/CONSTRAINTS";
 import UpgradeFinderSimC from "../UpgradeFinder/UpgradeFinderSimCImport";
-import userSettings from "./SettingsObject";
+import userSettings from "../Settings/SettingsObject";
 import { useSelector } from "react-redux";
 
 const useStyles = makeStyles((theme) => ({
