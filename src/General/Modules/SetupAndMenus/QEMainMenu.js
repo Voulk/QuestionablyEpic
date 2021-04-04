@@ -26,6 +26,7 @@ const mainMenuOptions = {
   "MainMenu.TrinketAnalysis": ["/trinkets", true, "TrinketAnalysis"],
   "MainMenu.CooldownPlanner": ["/holydiver", false, "CooldownPlanner"],
   "MainMenu.Profile": ["/profile", true, "Profile"],
+  // "MainMenu.TierSets": ["/TierSets", true, "TierSets"],
 };
 
 const useStyles = makeStyles((theme) => ({
