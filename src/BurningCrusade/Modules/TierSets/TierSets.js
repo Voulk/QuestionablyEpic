@@ -52,7 +52,7 @@ export default function LegendaryCompare(props) {
 
   let tierSets = [
     {
-      name: { en: "Justicar Raiment", dr: "Gewandung des Rechtsprechers", fr: "Grande tenue de justicier", ru: "Одеяния вершителя правосудия", ch: "公正圣装" },
+      name: { en: "Justicar Raiment", de: "Gewandung des Rechtsprechers", fr: "Grande tenue de justicier", ru: "Одеяния вершителя правосудия", ch: "公正圣装" },
       spec: "Holy Paladin",
       slots: {
         head: { id: 29061, icon: require("Images/BurningCrusade/TierSetIcons/inv_helmet_77.jpg").default },

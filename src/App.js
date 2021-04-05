@@ -10,7 +10,7 @@ import TopGearReport from "General/Modules/TopGear/TopGearReport";
 import QEProfile from "General/Modules/SetupAndMenus/QEProfile";
 import PlayerChars from "General/Modules/Player/PlayerChars";
 import CovenantExploration from "Retail/Modules/Covenants/Components/CovenantExploration.js";
-import TierSets from "./BurningCrusade/Modules/TierSets/TierSets"
+// import TierSets from "./BurningCrusade/Modules/TierSets/TierSets"
 import { UpgradeFinder } from "General/Modules/UpgradeFinder/UpgradeFinder";
 import { ConfirmLogin, QELogin } from "General/Modules/SetupAndMenus/Header/QELogin";
 import { withTranslation } from "react-i18next";
@@ -373,7 +373,7 @@ class App extends Component {
                 <Route path="/attemptlogin" component={() => (window.location = this.buildLoginURL())} />
                 <Route path="/confirmlogin/" render={() => <ConfirmLogin loginSnackOpen={this.handleLoginSnackOpen} updatePlayerID={this.updatePlayerID} />} />
                 <Route path="/UpgradeFinder/" render={() => <UpgradeFinder player={activePlayer} simcSnack={this.handleSimCSnackOpen} allChars={allChars} />} />
-                <Route path="/TierSets/" render={() => <TierSets player={activePlayer} />} />
+                {/* <Route path="/TierSets/" render={() => <TierSets player={activePlayer} />} /> */}
                 <Route
                   path="/profile/"
                   render={() => (
