@@ -7,7 +7,7 @@ import { Button, Card, CardActions, CardContent, Divider, Grid, Typography } fro
 const useStyles = makeStyles({
   root: {
     minWidth: 275,
-    minHeight: 200,
+    minHeight: 225,
     borderColor: "goldenrod",
   },
   content: { height: 150 },
@@ -16,8 +16,9 @@ const useStyles = makeStyles({
 });
 
 export default function TierObject(props) {
-  const { t } = useTranslation();
   const classes = useStyles();
+  const { t, i18n } = useTranslation();
+  const currentLanguage = i18n.language;
   // Item Provided to Component
   const set = props.set;
   // Player Data
@@ -35,7 +36,7 @@ export default function TierObject(props) {
     // lg = 4/12 = Three cards per row,
     // xl = 3/12 = Four cards per row
 
-    <Grid item xs={12} sm={6} md={6} lg={4} xl={3}>
+    <Grid item xs={12} sm={6} md={6} lg={4} xl={4}>
       <Card className={classes.root} variant="outlined">
         <CardContent className={classes.content}>
           <div
@@ -44,74 +45,80 @@ export default function TierObject(props) {
               justifyContent: "space-between",
             }}
           >
-            <div style={{ alignSelf: "center" }}>
+            <div style={{ alignSelf: "center", width: "100%" }}>
               {/* --------------------------------------- Set Name --------------------------------------- */}
               <Typography
                 color="primary"
                 variant="h6"
+                align="center"
                 component="h2"
+                gutterBottom
                 style={{
-                  fontSize: "0.9rem",
+                  // fontSize: "0.9rem",
                   alignSelf: "center",
                   lineHeight: 1,
                 }}
               >
-                {t(set.name + ".name")}
+                {t(set.name[currentLanguage])}
               </Typography>
-              {/* -------------------------------------- Tier Set Location ------------------------------------- */}
-              <Typography variant="caption">{t(set.dropLoc + ".slot")}</Typography>
             </div>
           </div>
           {/* ---------------------------- Divider to seperate header from body ---------------------------- */}
-          <Divider style={{ marginTop: 4 }} />
-          <Grid container direction="row" justify="space-between" alignItems="center" style={{ height: 110 }}>
+          <Divider style={{ marginBottom: 6 }} />
+          <Grid container spacing={1} direction="row" justify="space-between" alignItems="center" style={{ height: 110 }}>
+            <Grid item xs={12} style={{ marginTop: 4 }}>
+              {/* --------------------------------------- Set Icons --------------------------------------- */}
+              <Grid container spacing={1} direction="row" justify="center" alignItems="center">
+                {Object.keys(set.slots)
+                  .filter((filter) => set.slots[filter].id > 0)
+                  .map((key) => (
+                    <Grid item>
+                      <a data-wowhead={"item=" + set.slots[key].id + "&domain=" + currentLanguage}>
+                        <img
+                          height={40}
+                          width={40}
+                          src={set.slots[key].icon}
+                          alt={set.slots[key].id}
+                          style={{
+                            borderRadius: 4,
+                            borderWidth: "1px",
+                            borderStyle: "solid",
+                            borderColor: "#a73fee",
+                          }}
+                        />
+                      </a>
+                    </Grid>
+                  ))}
+              </Grid>
+            </Grid>
             <Grid item xs={12}>
-              <CardContent style={{ padding: 0 }}>
-                {/* --------------------------------------- Legendary Icon --------------------------------------- */}
-                {Object.getOwnPropertyNames(slots).map((key) => (
-                  <img
-                    height={40}
-                    width={40}
-                    // src={legendaryImages[set.name].default}
-                    alt={key}
-                    style={{
-                      borderRadius: 4,
-                      borderWidth: "1px",
-                      borderStyle: "solid",
-                      borderColor: "#ff8000",
-                    }}
-                  />
-                ))}
-
-                <Typography align="left" variant="caption" style={{ fontSize: "0.75rem", lineHeight: 1.1 }} component="p">
-                  {t(set.twoSet["effect"] + ".desc")}
-                </Typography>
-                <Divider style={{ marginTop: 4 }} />
-                <Typography align="left" variant="caption" style={{ fontSize: "0.75rem", lineHeight: 1.1 }} component="p">
-                  {t(set.fourSet["effect"] + ".desc")}
-                </Typography>
-                <Divider style={{ marginTop: 4 }} />
-                <Typography align="left" variant="caption" style={{ fontSize: "0.75rem", lineHeight: 1.1 }} component="p">
+              <Divider />
+            </Grid>
+            <Grid item xs={12}>
+              <Typography align="left" variant="caption" style={{ fontSize: "0.75rem", lineHeight: 1.1 }} component="p">
+                {t(set.twoSet["effect"][currentLanguage])}
+              </Typography>
+            </Grid>
+            <Grid item xs={12}>
+              <Divider />
+            </Grid>
+            <Grid item xs={12}>
+              <Typography align="left" variant="caption" style={{ fontSize: "0.75rem", lineHeight: 1.1 }} component="p">
+                {t(set.fourSet["effect"][currentLanguage])}
+              </Typography>
+            </Grid>
+            <Grid item xs={12}>
+              <Divider />
+            </Grid>
+            {/* <Typography align="left" variant="caption" style={{ fontSize: "0.75rem", lineHeight: 1.1 }} component="p">
                   {t(set.sixSet["effect"] + ".desc")}
-                </Typography>
-                <Divider style={{ marginTop: 4 }} />
-              </CardContent>
-            </Grid>
-            <Grid item xs={12}>
-              <CardContent style={{ padding: 0, height: 20 }}>
-                {/* -------------------------------------- HPS / DPS Scores -------------------------------------- */}
-                <Typography align="center" variant="caption" component="p" style={{ lineHeight: 1.1, fontSize: "16px" }}>
-                  {/* {t("HPS")}: {hpsString} */}
-                  <br />
-                  {/* {dpsString !== "" ? dpsStr?ing : ""} */}
-                  <br />
-                </Typography>
-              </CardContent>
-            </Grid>
+                </Typography> */}
+            {/* <Grid item xs={12}>
+              <Divider />
+            </Grid> */}
           </Grid>
         </CardContent>
         {/* ------------------------ Divider to seperate body from Drop location. ------------------------ */}
-        <Divider />
         {/* <CardActions> */}
         {/* ----------------------------------- Legendary drop location ---------------------------------- */}
         {/* <Typography variant="caption" component="p" style={{ padding: "0px 8px" }}>
