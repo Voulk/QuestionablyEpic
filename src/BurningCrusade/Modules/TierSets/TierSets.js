@@ -170,9 +170,11 @@ export default function LegendaryCompare(props) {
         </Grid>
         {/* ------------------------------ Map the Legendary list into Cards ----------------------------- */}
         <Grid item container spacing={1} direction="row">
-          {tierSets.map((set, index) => (
-            <TierObject key={index} set={set} player={props.player} />
-          ))}
+          {tierSets
+            .filter((filter) => filter.spec === props.player["spec"])
+            .map((set, index) => (
+              <TierObject key={index} set={set} player={props.player} />
+            ))}
         </Grid>
       </Grid>
     </div>
