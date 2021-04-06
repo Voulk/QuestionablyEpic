@@ -7,10 +7,10 @@ import { Button, Card, CardActions, CardContent, Divider, Grid, Typography } fro
 const useStyles = makeStyles({
   root: {
     minWidth: 275,
-    minHeight: 225,
+    minHeight: 275,
     borderColor: "goldenrod",
   },
-  content: { height: 150 },
+  content: { height: 200 },
   title: { fontSize: 14 },
   pos: { marginBottom: 12 },
 });
@@ -119,12 +119,33 @@ export default function TierObject(props) {
           </Grid>
         </CardContent>
         {/* ------------------------ Divider to seperate body from Drop location. ------------------------ */}
-        {/* <CardActions> */}
-        {/* ----------------------------------- Legendary drop location ---------------------------------- */}
-        {/* <Typography variant="caption" component="p" style={{ padding: "0px 8px" }}>
-            {t("Source")}: {t(set.name + ".droploc")}
-          </Typography>
-        </CardActions> */}
+        <Divider />
+        <CardActions>
+          {/* ----------------------------------- Legendary drop location ---------------------------------- */}
+          <Grid container direction="row" wrap="nowrap">
+            <Grid item xs={6} style={{ textAlign: "center" }}>
+              <div style={{ display: "inline-flex" }}>
+                <Typography variant="h6" align="center" component="p" noWrap>
+                  {/* TODO: Translations */}2 Set HPS:
+                </Typography>
+                <Typography variant="h6" align="center" component="p" style={{ marginLeft: 6 }}>
+                  {/* TODO: Translations */}500
+                </Typography>
+              </div>
+            </Grid>
+            <Divider orientation="vertical" flexItem />
+            <Grid item xs={6} style={{ textAlign: "center" }}>
+              <div style={{ display: "inline-flex" }}>
+                <Typography variant="h6" align="center" component="p" noWrap>
+                  {/* TODO: Translations */}4 Set HPS:
+                </Typography>
+                <Typography variant="h6" align="center" component="p" style={{ marginLeft: 6 }}>
+                  {/* TODO: Translations */}500
+                </Typography>
+              </div>
+            </Grid>
+          </Grid>
+        </CardActions>
       </Card>
     </Grid>
   );
