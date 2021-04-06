@@ -427,7 +427,8 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel, use
   } else if (
     /* ---------------------------------------------------------------------------------------------- */
     /*                                          Energy Siphon                                         */
-    /* ---------------------------------------------------------------------------------------------- */ effectName === "Energy Siphon"
+    /* ---------------------------------------------------------------------------------------------- */
+    effectName === "Energy Siphon"
   ) {
     let effect = activeTrinket.effects[0];
 
