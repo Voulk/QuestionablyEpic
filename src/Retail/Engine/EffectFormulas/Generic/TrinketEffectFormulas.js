@@ -157,7 +157,7 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel, use
     let crit_effect = activeTrinket.effects[0];
 
     bonus_stats.hps = (getProcessedValue(heal_effect.coefficient, heal_effect.table, itemLevel, heal_effect.efficiency) / heal_effect.cooldown) * player.getStatMultiplier("CRITVERS");
-    bonus_stats.crit = (getProcessedValue(crit_effect.coefficient, crit_effect.table, itemLevel) * crit_effect.duration * crit_effect.multiplier) / crit_effect.cooldown;
+    bonus_stats.crit = (getProcessedValue(crit_effect.coefficient, crit_effect.table, itemLevel, crit_effect.efficiency) * crit_effect.duration * crit_effect.multiplier) / crit_effect.cooldown;
     bonus_stats.crit *= player.getCooldownMult("twoMinutes", contentType);
     //
   } else if (

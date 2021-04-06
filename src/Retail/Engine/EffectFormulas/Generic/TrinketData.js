@@ -214,6 +214,7 @@ export const trinket_data = [
         table: -7,
         duration: 16,
         multiplier: 1.62, // This assumes your average boss health is just under 50% which feels like a fair average.
+        efficiency: 0.9, // Ruby is a tough trinket to maximise and it's average use case is far below it's maximum.
         cooldown: 120,
       },
       {
@@ -510,7 +511,7 @@ export const trinket_data = [
       {
         coefficient: 326.7931,
         table: -8,
-        efficiency: { Raid: 0.48, Dungeon: 0.79 }, // Includes the 25% multiplier as the target gets lower.
+        efficiency: { Raid: 0.46, Dungeon: 0.77 }, // Includes the 25% multiplier as the target gets lower.
         cooldown: 120,
       },
     ],
