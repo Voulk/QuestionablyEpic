@@ -100,7 +100,14 @@ export default function QEHeader(props) {
                       onMouseEnter={handlePopoverOpen}
                       onMouseLeave={handlePopoverClose}
                     >
-                      {t(contentType)}
+                      <div style={{ display: "inline-flex" }}>
+                        <img
+                          style={{ height: 18, width: 18, margin: "2px 5px 0px 0px", verticalAlign: "middle", borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.12)" }}
+                          src={contentType === "Raid" ? require("Images/achievement_raid_revendrethraid_castlenathria.jpg").default : require("Images/inv_relics_hourglass.jpg").default}
+                          alt={t(contentType)}
+                        />
+                        {t(contentType)}
+                      </div>
                     </Button>
                   </Tooltip>
                 </Grid>
