@@ -96,14 +96,14 @@ export const getPaladinLegendary = (effectName, player, contentType) => {
     const offensiveBuffUptime = 0.84;
     const legendaryBonus = 0.06;
 
-    bonus_stats.dps = 5;
+    bonus_stats.dps = 0;
     bonus_stats.hps = Math.round(offensiveBuffUptime * legendaryBonus * player.getHPS(contentType));
   } else if (name === "Vanguards Momentum") {
     /* ---------------------------------------------------------------------------------------------- */
     /*                                       Vanguards Momentum                                       */
     /* ---------------------------------------------------------------------------------------------- */
-
     bonus_stats.hps = -1;
+
   } else if (name === "The Magistrates Judgment") {
     /* ---------------------------------------------------------------------------------------------- */
     /*                                    The Magistrates Judgment                                    */

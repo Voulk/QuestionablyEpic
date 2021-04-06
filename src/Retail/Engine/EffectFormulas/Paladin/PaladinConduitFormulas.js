@@ -4,7 +4,7 @@ const IDHOLYSHOCK = 25914;
 const IDSHOCKBARRIER = 337824;
 const IDWORDOFGLORY = 85673;
 
-import { getOneHolyPower, getAwakeningWingsUptime, getWingsHealingInc } from "./PaladinMiscFormulas";
+import { getOneHolyPower, getAwakeningWingsUptime, getWingsHealingInc, processPaladinRawHealing } from "./PaladinMiscFormulas";
 
 export const getPaladinConduit = (conduitID, player, contentType, conduitLevel) => {
   let bonus_stats = {};
@@ -60,11 +60,13 @@ export const getPaladinConduit = (conduitID, player, contentType, conduitLevel) 
   // Hallowed Discernment (Venthyr)
   else if (conduitID === 340212) {
     // You can expect little to no overhealing on this since it specifically targets the lowest health ally during a period where you've popped a large cooldown.
-    let trait_bonus = 0.36 + conduitLevel * 0.04;
-    let ashen_tick_sp = 0.42;
-    let ashen_ticks = 15 * player.getStatPerc("Haste");
+    // The formula notably includes Vers scaling twice. This matches it's behavior in-game. 
+    const trait_bonus = 0.36 + conduitLevel * 0.04;
+    const ashen_tick_sp = 0.42;
+    const wingsMult = getWingsHealingInc(player.getStatPerc("Crit")); // Ashen Hallow is always played with Wings, so the conduit gets the full benefit. 
+    const ashen_ticks = 15 * player.getStatPerc("Haste");
 
-    bonus_stats.HPS = (trait_bonus * ashen_tick_sp * ashen_ticks * player.getStatMultiplier("NOHASTE")) / 240;
+    bonus_stats.HPS = (trait_bonus * ashen_tick_sp * ashen_ticks * player.getStatMultiplier("NOHASTE") * player.getStatMultiplier("Vers") * wingsMult) / 240;
   }
   // Righteous Might (Necrolord)
   else if (conduitID === 340192) {
