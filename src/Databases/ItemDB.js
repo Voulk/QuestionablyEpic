@@ -44333,7 +44333,9 @@ export const itemDB = [
             "type": "trinket",
             "name": "Darkmoon Deck: Repose"
         },
-        "levelRange": []
+        "levelRange": [
+            200,
+        ]
     },
     {
         "id": 173131,

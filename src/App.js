@@ -1,28 +1,29 @@
 import React, { Component, useEffect } from "react";
 import "./App.css";
-import HolyDiver from "./Modules/CooldownPlanner/CooldownPlannerModule";
-import QEMainMenu from "./Modules/SetupAndMenus/QEMainMenu";
-import LegendaryCompare from "./Modules/Legendaries/LegendaryCompare";
-import TrinketAnalysis from "./Modules/TrinketAnalysis/TrinketAnalysis";
-import QuickCompare from "./Modules/QuickCompare/QuickCompare";
-import QEHeader from "./Modules/SetupAndMenus/Header/QEHeader";
-import TopGearReport from "./Modules/TopGear/TopGearReport";
-import QEProfile from "./Modules/SetupAndMenus/QEProfile";
-import PlayerChars from "./Modules/Player/PlayerChars";
-import CovenantExploration from "./Modules/Covenants/Components/CovenantExploration";
-import { UpgradeFinder } from "./Modules/UpgradeFinder/UpgradeFinder";
-import { ConfirmLogin, QELogin } from "./Modules/SetupAndMenus/Header/QELogin";
+import HolyDiver from "General/Modules/CooldownPlanner/CooldownPlannerModule.js";
+import QEMainMenu from "General/Modules/SetupAndMenus/QEMainMenu";
+import LegendaryCompare from "Retail/Modules/Legendaries/LegendaryCompare.js";
+import TrinketAnalysis from "General/Modules/TrinketAnalysis/TrinketAnalysis";
+import QuickCompare from "General/Modules/QuickCompare/QuickCompare";
+import QEHeader from "General/Modules/SetupAndMenus/Header/QEHeader";
+import TopGearReport from "General/Modules/TopGear/TopGearReport";
+import QEProfile from "General/Modules/SetupAndMenus/QEProfile";
+import PlayerChars from "General/Modules/Player/PlayerChars";
+import CovenantExploration from "Retail/Modules/Covenants/Components/CovenantExploration.js";
+// import TierSets from "./BurningCrusade/Modules/TierSets/TierSets"
+import { UpgradeFinder } from "General/Modules/UpgradeFinder/UpgradeFinder";
+import { ConfirmLogin, QELogin } from "General/Modules/SetupAndMenus/Header/QELogin";
 import { withTranslation } from "react-i18next";
 import i18n from "./i18n";
-import TopGear from "./Modules/TopGear/TopGear";
-import ErrorBoundary from "./Modules/ErrorLogging/ErrorBoundary.js";
+import TopGear from "General/Modules/TopGear/TopGear";
+import ErrorBoundary from "General/SystemTools/ErrorLogging/ErrorBoundary";
 import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import ls from "local-storage";
-import QESnackbar from "./Modules/CooldownPlanner/BasicComponents/SnackBar";
+import QESnackbar from "General/Modules/CooldownPlanner/BasicComponents/SnackBar";
 import { createBrowserHistory } from "history";
-import { dbCheckPatron, dbGetArticleList } from "./Modules/SetupAndMenus/ConnectionUtilities";
+import { dbCheckPatron, dbGetArticleList } from "General/Modules/SetupAndMenus/ConnectionUtilities.js";
 
 import ReactGA from "react-ga";
 
@@ -79,7 +80,6 @@ class App extends Component {
       playerLoginID: "",
       playerBattleTag: "",
       accessToken: "",
-      contentType: "Raid",
       patronStatus: "",
       charSnackState: false,
       charUpdateState: false,
@@ -242,13 +242,6 @@ class App extends Component {
     this.setState({ playerRegion: props });
   };
 
-  /* ------------------------- Content Toggle Handler ------------------------ */
-  toggleContentType = () => {
-    let newType = this.state.contentType === "Raid" ? "Dungeon" : "Raid";
-    this.setState({ contentType: newType });
-    ls.set("contentType", newType);
-  };
-
   /* ---------------------------- Battletag Handler --------------------------- */
   updatePlayerID = (id, battletag) => {
     this.setState({ playerLoginID: id });
@@ -293,7 +286,6 @@ class App extends Component {
       playerLoginID: ls.get("id") || "",
       playerBattleTag: ls.get("btag") || "",
       lang: ls.get("lang") || "en",
-      contentType: ls.get("contentType") || "Raid",
       email: ls.get("email") || "",
     });
     this.checkPatron(ls.get("email"));
@@ -328,8 +320,6 @@ class App extends Component {
                 patronStatus={this.state.patronStatus}
                 playerTag={this.state.playerBattleTag}
                 setRegion={this.setRegion}
-                toggleContentType={this.toggleContentType}
-                contentType={this.state.contentType}
                 player={activePlayer}
                 simcSnack={this.handleSimCSnackOpen}
                 logImportSnack={this.handleLogSnackOpen}
@@ -366,7 +356,6 @@ class App extends Component {
                       player={activePlayer}
                       charAddedSnack={this.handleCharSnackOpen}
                       charUpdatedSnack={this.handleCharUpdateSnackOpen}
-                      contentType={this.state.contentType}
                       patronStatus={this.state.patronStatus}
                       delChar={this.deletePlayerChar}
                       articleList={this.state.articleList}
@@ -374,19 +363,17 @@ class App extends Component {
                   )}
                 />
                 <Route path="/holydiver" render={() => <HolyDiver />} />
-                <Route path="/report" render={() => <TopGearReport player={activePlayer} result={this.state.topSet} contentType={this.state.contentType} />} />
-                <Route path="/quickcompare" render={() => <QuickCompare player={activePlayer} contentType={this.state.contentType} allChars={allChars} simcSnack={this.handleSimCSnackOpen} />} />
-                <Route
-                  path="/topgear"
-                  render={() => <TopGear player={activePlayer} contentType={this.state.contentType} setTopResult={this.setTopResult} allChars={allChars} simcSnack={this.handleSimCSnackOpen} />}
-                />
-                <Route path="/legendaries" render={() => <LegendaryCompare player={activePlayer} contentType={this.state.contentType} />} />
-                <Route path="/trinkets" render={() => <TrinketAnalysis player={activePlayer} contentType={this.state.contentType} />} />
-                <Route path="/soulbinds" render={() => <CovenantExploration player={activePlayer} contentType={this.state.contentType} updatePlayerChar={this.updatePlayerChar} />} />
+                <Route path="/report" render={() => <TopGearReport player={activePlayer} result={this.state.topSet} />} />
+                <Route path="/quickcompare" render={() => <QuickCompare player={activePlayer} allChars={allChars} simcSnack={this.handleSimCSnackOpen} />} />
+                <Route path="/topgear" render={() => <TopGear player={activePlayer} setTopResult={this.setTopResult} allChars={allChars} simcSnack={this.handleSimCSnackOpen} />} />
+                <Route path="/legendaries" render={() => <LegendaryCompare player={activePlayer} />} />
+                <Route path="/trinkets" render={() => <TrinketAnalysis player={activePlayer} />} />
+                <Route path="/soulbinds" render={() => <CovenantExploration player={activePlayer} updatePlayerChar={this.updatePlayerChar} />} />
                 <Route path="/login" render={() => <QELogin setRegion={this.setRegion} />} />
                 <Route path="/attemptlogin" component={() => (window.location = this.buildLoginURL())} />
                 <Route path="/confirmlogin/" render={() => <ConfirmLogin loginSnackOpen={this.handleLoginSnackOpen} updatePlayerID={this.updatePlayerID} />} />
-                <Route path="/UpgradeFinder/" render={() => <UpgradeFinder player={activePlayer} contentType={this.state.contentType} simcSnack={this.handleSimCSnackOpen} allChars={allChars} />} />
+                <Route path="/UpgradeFinder/" render={() => <UpgradeFinder player={activePlayer} simcSnack={this.handleSimCSnackOpen} allChars={allChars} />} />
+                {/* <Route path="/TierSets/" render={() => <TierSets player={activePlayer} />} /> */}
                 <Route
                   path="/profile/"
                   render={() => (
