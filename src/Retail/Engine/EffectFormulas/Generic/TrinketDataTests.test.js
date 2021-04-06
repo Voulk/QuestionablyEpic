@@ -11,9 +11,9 @@ describe("Insignia of Alacrity Data Check", () => {
     const activeTrinket = trinket_data.find((trinket) => trinket.name === "Sinful Gladiator's Insignia of Alacrity");
     const effect = activeTrinket.effects[0];
     each`
-    level     | expectedResult
-    ${226}   | ${173}
-    ${213}  | ${8}
+    level   | expectedResult
+    ${226}  | ${173}
+    ${207}  | ${145}
     ${197}  | ${132}
     // add new test cases here
     `.test("Insignia Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
@@ -28,9 +28,9 @@ describe("Badge of Ferocity Data Check", () => {
     const effect = activeTrinket.effects[0];
     each`
     level    | expectedResult
-    ${226}  | ${173}
-    ${213}  | ${8}
-    ${184}  | ${8}
+    ${226}  | ${204}
+    ${200}  | ${160}
+    ${164}  | ${115}
     // add new test cases here
     `.test("Badge of Ferocity Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
   
@@ -44,9 +44,9 @@ describe("Unbound Changeling Data Check", () => {
     const effect = activeTrinket.effects[0];
     each`
     level    | expectedResult
-    ${226}  | ${173}
-    ${213}  | ${8}
-    ${184}  | ${8}
+    ${184}  | ${230}
+    ${171}  | ${204}
+    ${158}  | ${180}
     // add new test cases here
     `.test("Unbound Changeling Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
   
@@ -60,32 +60,17 @@ describe("Cabalists Hymnal Data Check", () => {
     const effect = activeTrinket.effects[0];
     each`
     level    | expectedResult
-    ${226}  | ${173}
-    ${213}  | ${8}
-    ${184}  | ${8}
+    ${233}  | ${294}
+    ${207}  | ${258}
+    ${194}  | ${237}
     // add new test cases here
     `.test("Cabalists Hymnal Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
   
-        expect(getProcessedValue(effect.coefficient, effect.table, level)).toBe(expectedResult);
+        expect(getProcessedValue(effect.coefficient, effect.table, level)*3).toBe(expectedResult);
     });
 });
 
-describe("Inscrutable Quantum Device", () => {
-    // Raw trinket values are compared to our spell data. Efficiency excluded.
-    const activeTrinket = trinket_data.find((trinket) => trinket.name === "Inscrutable Quantum Device");
-    const effect = activeTrinket.effects[0];
-    each`
-    level    | expectedResult
-    ${226}  | ${173}
-    ${213}  | ${8}
-    ${184}  | ${8}
-    // add new test cases here
-    `.test("IQD Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
-  
-        expect(getProcessedValue(effect.coefficient, effect.table, level)).toBe(expectedResult);
-    });
-});
-
+/*
 describe("Instructor's Divine Bell", () => {
     // Raw trinket values are compared to our spell data. Efficiency excluded.
     const activeTrinket = trinket_data.find((trinket) => trinket.name === "Instructor's Divine Bell");
@@ -101,7 +86,9 @@ describe("Instructor's Divine Bell", () => {
         expect(getProcessedValue(effect.coefficient, effect.table, level)).toBe(expectedResult);
     });
 });
+*/
 
+/*
 describe("Soulletting Ruby", () => {
     // Raw trinket values are compared to our spell data. Efficiency excluded.
     const activeTrinket = trinket_data.find((trinket) => trinket.name === "Soulletting Ruby");
@@ -109,24 +96,26 @@ describe("Soulletting Ruby", () => {
     each`
     level    | expectedResult
     ${226}  | ${1046}
-    ${194}  | ${114}
-    ${184}  | ${628}
+    ${210}  | ${961}
+    ${184}  | ${823}
     // add new test cases here
     `.test("Soulletting Ruby Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
   
-        expect(getProcessedValue(effect.coefficient, effect.table, level)).toBe(expectedResult);
+        expect(Math.round(getProcessedValue(effect.coefficient, effect.table, level)*2.2785)).toBe(expectedResult);
     });
 });
+
+*/
 
 describe("Boon of the Archon", () => {
     // Raw trinket values are compared to our spell data. Efficiency excluded.
     const activeTrinket = trinket_data.find((trinket) => trinket.name === "Boon of the Archon");
-    const effect = activeTrinket.effects[0];
+    const effect = activeTrinket.effects[1];
     each`
     level    | expectedResult
-    ${226}  | ${173}
-    ${213}  | ${8}
-    ${184}  | ${628}
+    ${184}  | ${394}
+    ${171}  | ${318}
+    ${158}  | ${307}
     // add new test cases here
     `.test("Boon of the Archon Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
   
@@ -137,12 +126,12 @@ describe("Boon of the Archon", () => {
 describe("Sunblood Amethyst", () => {
     // Raw trinket values are compared to our spell data. Efficiency excluded.
     const activeTrinket = trinket_data.find((trinket) => trinket.name === "Sunblood Amethyst");
-    const effect = activeTrinket.effects[0];
+    const effect = activeTrinket.effects[1];
     each`
     level    | expectedResult
-    ${226}  | ${173}
-    ${213}  | ${8}
-    ${184}  | ${628}
+    ${200}  | ${121}
+    ${184}  | ${104}
+    ${171}  | ${92}
     // add new test cases here
     `.test("Sunblood Amethyst Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
   
