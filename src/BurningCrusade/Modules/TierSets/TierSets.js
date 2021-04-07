@@ -10,6 +10,7 @@ import ReactGA from "react-ga";
 import { Grid, Typography } from "@material-ui/core";
 import { useSelector } from "react-redux";
 import { tierSets } from "../../Databases/TierSetsDB";
+import HelpText from "../../../General/Modules/SetupAndMenus/HelpText";
 import PropTypes from "prop-types";
 
 LegendaryCompare.propTypes = {
@@ -56,14 +57,20 @@ export default function LegendaryCompare(props) {
   }, []);
   const { t, i18n } = useTranslation();
 
+  const helpText = "Help Text Here";
+
   return (
     <div className={classes.header}>
-      <Grid item container spacing={1} direction="row">
+      <Grid item container spacing={2} direction="row">
         {/* ---------------------------------------- Module Title ---------------------------------------- */}
         <Grid item xs={12}>
           <Typography color="primary" variant="h4" align="center" style={{ paddingBottom: 16 }}>
             {t("TierSets.Title")}
           </Typography>
+        </Grid>
+        {/* ------------------------------------------ Help Text ----------------------------------------- */}
+        <Grid item xs={12}>
+          <HelpText text={helpText} />
         </Grid>
         {/* ------------------------------ Map the Legendary list into Cards ----------------------------- */}
         <Grid item container spacing={1} direction="row">
