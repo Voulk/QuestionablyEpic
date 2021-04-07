@@ -9,7 +9,12 @@ import { useTranslation } from "react-i18next";
 import ReactGA from "react-ga";
 import { Grid, Typography } from "@material-ui/core";
 import { useSelector } from "react-redux";
-import {tierSets} from "../../Databases/TierSetsDB"
+import { tierSets } from "../../Databases/TierSetsDB";
+import PropTypes from "prop-types";
+
+LegendaryCompare.propTypes = {
+  player: PropTypes.object,
+};
 
 const useStyles = makeStyles((theme) => ({
   header: {
