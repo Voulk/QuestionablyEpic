@@ -9,7 +9,7 @@ import ReactGA from "react-ga";
 import { dbCheckPatron, dbGetArticleList } from "./ConnectionUtilities";
 import ArrowForward from "@material-ui/icons/ArrowForward";
 import { Paper, Grid, Button, Typography, Tooltip } from "@material-ui/core";
-// import HallOfFame from "../HallOfFame/HallOfFame";
+import HallOfFame from "../HallOfFame/HallOfFame";
 import MessageOfTheDay from "./MessageOftheDay";
 import ArticleCard from "../ArticleCards/ArcticleCard";
 import Changelog from "../ChangeLog/Changelog";

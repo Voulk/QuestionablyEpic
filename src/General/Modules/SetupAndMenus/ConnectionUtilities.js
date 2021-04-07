@@ -23,6 +23,17 @@ export async function dbGetArticleList(setArticleList) {
     .catch((err) => console.log(err));
 }
 
+export async function dbGetHallOfFame() {
+  let fetchUrl = "https://questionablyepic.com/api/getHall.php";
+  fetch(fetchUrl)
+    .then((res) => res.json())
+    .then((data) => {
+      //setArticleList(data);
+      return data;
+    })
+    .catch((err) => console.log(err));
+}
+
 export async function apiSendTopGearSet(player, content, score, compared) {
   let name = player.charName;
   let contentType = content;
