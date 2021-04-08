@@ -1,26 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { AppBar, Button, Dialog, DialogActions, DialogContent, DialogTitle, Typography, Grid, Divider, Paper } from "@material-ui/core";
 import { dbGetHallOfFame } from "General/Modules/SetupAndMenus/ConnectionUtilities";
 
 export default function HallOfFame(props) {
-
-  /*
-  const names = [
-    { tier: "Rolls Royce", name: "Bill Murray" },
-    { tier: "Rolls Royce", name: "Jennifer Phillips" },
-    { tier: "Rolls Royce", name: "Ptolemy" },
-    { tier: "Diamond", name: "SmokinJoe" },
-    { tier: "Diamond", name: "Diamond Steve" },
-  ];
-
-  */
-
-  const names = dbGetHallOfFame();
-
-
   const { t, i18n } = useTranslation();
   const [open, setOpen] = React.useState(false);
+  const [names, setNames] = React.useState([]);
+  useEffect(() => {
+    dbGetHallOfFame(setNames);
+  }, []);
   const handleClickOpen = () => {
     setOpen(true);
   };
@@ -39,8 +28,8 @@ export default function HallOfFame(props) {
   let patronStatus = "Rolls Royce Edition";
 
   return (
-    <div>
-      <Button color="primary" style={{ whiteSpace: "nowrap" }} onClick={handleClickOpen}>
+    <div style={{ marginLeft: "auto", marginRight: "auto", marginBottom: 5, marginTop: 20, textAlign: "center" }}>
+      <Button color="primary" variant="outlined" style={{ whiteSpace: "nowrap" }} onClick={handleClickOpen}>
         {t("HallOfFame.buttonLabel")}
       </Button>
       <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title" maxWidth="md" fullWidth={true} scroll="body">

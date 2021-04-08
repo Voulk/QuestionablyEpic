@@ -181,6 +181,7 @@ export default function QEMainMenu(props) {
           ""
         )}
         <Changelog />
+        <HallOfFame />
       </div>
     </div>
   );

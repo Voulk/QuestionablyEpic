@@ -23,12 +23,12 @@ export async function dbGetArticleList(setArticleList) {
     .catch((err) => console.log(err));
 }
 
-export async function dbGetHallOfFame() {
+export async function dbGetHallOfFame(setNames) {
   let fetchUrl = "https://questionablyepic.com/api/getHall.php";
   fetch(fetchUrl)
     .then((res) => res.json())
     .then((data) => {
-      //setArticleList(data);
+      setNames(data)
       return data;
     })
     .catch((err) => console.log(err));
