@@ -1,3 +1,6 @@
+/* ---------------------------------------------------------------------------------------------- */
+/*               Check if email provided is a Patron and sets the response via Prop               */
+/* ---------------------------------------------------------------------------------------------- */
 export function dbCheckPatron(email, setPatron) {
   let name = "";
   let realm = "NA";
@@ -12,6 +15,9 @@ export function dbCheckPatron(email, setPatron) {
     .catch((err) => console.log(err));
 }
 
+/* ---------------------------------------------------------------------------------------------- */
+/*                    Fetch Article List from QE API and set as state via Prop                    */
+/* ---------------------------------------------------------------------------------------------- */
 export async function dbGetArticleList(setArticleList) {
   let fetchUrl = "https://questionablyepic.com/api/getArticleList.php";
   fetch(fetchUrl)
@@ -23,24 +29,27 @@ export async function dbGetArticleList(setArticleList) {
     .catch((err) => console.log(err));
 }
 
+/* ---------------------------------------------------------------------------------------------- */
+/*                    Fetch Patron Names from QE API and set as state via Prop                    */
+/* ---------------------------------------------------------------------------------------------- */
 export async function dbGetHallOfFame(setNames) {
   let fetchUrl = "https://questionablyepic.com/api/getHall.php";
   fetch(fetchUrl)
     .then((res) => res.json())
     .then((data) => {
-      setNames(data)
+      setNames(data);
       return data;
     })
     .catch((err) => console.log(err));
 }
 
+//TODO: Note this
 export async function apiSendTopGearSet(player, content, score, compared) {
   let name = player.charName;
   let contentType = content;
   let itemsCompared = compared;
   let hardScore = Math.round(score);
-  let fetchUrl =
-    "https://questionablyepic.com/api/addTopGear.php?btag=" + encodeURIComponent(name) + "&content=" + contentType + "&itemscompared=" + itemsCompared + "&hardscore=" + hardScore;
+  let fetchUrl = "https://questionablyepic.com/api/addTopGear.php?btag=" + encodeURIComponent(name) + "&content=" + contentType + "&itemscompared=" + itemsCompared + "&hardscore=" + hardScore;
   //console.log(fetchUrl)
   fetch(fetchUrl)
     .then((res) => res.text())
@@ -50,6 +59,7 @@ export async function apiSendTopGearSet(player, content, score, compared) {
     .catch((err) => console.log(err));
 }
 
+//TODO: Note this
 export async function apiSendUpgradeFinder(player, content) {
   let name = player.charName;
   let contentType = content;
@@ -63,7 +73,9 @@ export async function apiSendUpgradeFinder(player, content) {
     .catch((err) => console.log(err));
 }
 
-// export function dbUpdateChar() {}
+/* ---------------------------------------------------------------------------------------------- */
+/*                      Get player armory image from Blizzard API via QE API                      */
+/* ---------------------------------------------------------------------------------------------- */
 export async function apiGetPlayerImage(player) {
   if (player !== undefined) {
     let region = player.region.toLowerCase();
@@ -78,13 +90,14 @@ export async function apiGetPlayerImage(player) {
       })
       .catch((err) => console.log(err));
     return urlReturned;
-  }
-  else {
+  } else {
     return "";
   }
-
 }
 
+/* ---------------------------------------------------------------------------------------------- */
+/*                          Sends Errors to QE API for Dev error checking                         */
+/* ---------------------------------------------------------------------------------------------- */
 export async function apiSendError(player, errorType, errorMessage, result) {
   let name = player.charName;
 
@@ -97,7 +110,6 @@ export async function apiSendError(player, errorType, errorMessage, result) {
     encodeURIComponent(errorMessage) +
     "&eresult=" +
     encodeURIComponent(result);
-
 
   fetch(fetchUrl)
     .then((res) => res.text())
