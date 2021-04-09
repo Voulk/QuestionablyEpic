@@ -1,7 +1,7 @@
 import React from "react";
 import { Grid, Paper, Typography } from "@material-ui/core";
 
-export default function MessageOfTheDay(props) {
+export default function MessageOfTheDay() {
   //prettier-ignore
   const messageOfTheDay = [
     "Updated for patch 9.0.5!",
