@@ -33,31 +33,35 @@ export default function HallOfFame(props) {
         {t("HallOfFame.buttonLabel")}
       </Button>
       <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title" maxWidth="md" fullWidth={true} scroll="body">
-        <AppBar position="static" elevation={1} style={{ padding: "8px 0px" }}>
-          <Typography align="center" color="secondary" variant="h4">
-            {t("HallOfFame.title")}
-          </Typography>
-        </AppBar>
-        <Typography align="center" style={{ color: "limegreen", marginTop: 8, marginBottom: 8 }} variant="h6">
+        {/* <AppBar position="static" elevation={1} style={{ padding: "8px 0px" }}> */}
+        <Typography align="center" color="primary" variant="h3" style={{ marginTop: 10 }}>
+          {t("HallOfFame.title")}
+        </Typography>
+        
+        {/* </AppBar> */}
+        <Typography align="center" style={{ color: "limegreen" }} variant="h6">
           {t("HallOfFame.introduction")}
         </Typography>
+        <Divider />
         <DialogContent style={{ minHeight: 400 }}>
           <Grid container spacing={2} direction="row" justify="flex-start" alignItems="center">
             <Grid item xs={12}>
               <Grid container spacing={2} direction="row" justify="flex-start" alignItems="center">
                 <Grid item xs={12}>
-                  <Paper elevation={0} style={{ backgroundColor: "#525252" }}>
+                  <Paper elevation={0} style={{ backgroundColor: "#2a2c30", border: "1px solid rgba(255, 255, 255, 0.22)" }}>
                     <AppBar
                       elevation={0}
                       position="static"
                       style={{
-                        backgroundColor: "#04E07C",
+                        backgroundColor: "#191c2391",
                         borderRadius: "4px 4px 0px 0px",
+                        borderBottom: "1px solid rgba(255, 255, 255, 0.22)",
                       }}
                     >
-                      <Typography variant="h6" align="center">
+                      <Typography style={{ color: "#04E07C" }} variant="h5" align="center">
                         {t("PatreonTiers.RollsRoyce")}
                       </Typography>
+                      <Divider variant="middle" />
                     </AppBar>
 
                     <Grid item xs={12} style={{ marginTop: 8, paddingBottom: 8 }}>
@@ -67,6 +71,7 @@ export default function HallOfFame(props) {
                           .map((key) => (
                             <Grid item xs={4}>
                               <Typography
+                                color="primary"
                                 style={{
                                   borderRadius: 4,
                                   color: "#04E07C",
@@ -75,7 +80,7 @@ export default function HallOfFame(props) {
                               >
                                 {key.name}
                               </Typography>
-                              <Divider variant="middle" />
+                              {/* <Divider variant="middle" /> */}
                             </Grid>
                           ))}
                       </Grid>
@@ -87,18 +92,20 @@ export default function HallOfFame(props) {
             <Grid item xs={12}>
               <Grid container spacing={1} direction="row" justify="flex-start" alignItems="center">
                 <Grid item xs={12}>
-                  <Paper elevation={0} style={{ backgroundColor: "#525252" }}>
+                  <Paper elevation={0} style={{ backgroundColor: "#2a2c30", border: "1px solid rgba(255, 255, 255, 0.22)" }}>
                     <AppBar
                       elevation={0}
                       position="static"
                       style={{
-                        backgroundColor: "#FFB6C1",
+                        backgroundColor: "#191c2391",
                         borderRadius: "4px 4px 0px 0px",
+                        borderBottom: "1px solid rgba(255, 255, 255, 0.22)",
                       }}
                     >
-                      <Typography variant="h6" align="center">
+                      <Typography style={{ color: "#FFB6C1" }} variant="h5" align="center">
                         {t("PatreonTiers.Diamond")}
                       </Typography>
+                      {/* <Divider variant="middle" /> */}
                     </AppBar>
 
                     <Grid item xs={12} style={{ marginTop: 8, paddingBottom: 8 }}>
@@ -108,6 +115,7 @@ export default function HallOfFame(props) {
                           .map((key) => (
                             <Grid item xs={4}>
                               <Typography
+                                color="primary"
                                 style={{
                                   borderRadius: 4,
                                   color: "#FFB6C1",
@@ -116,7 +124,7 @@ export default function HallOfFame(props) {
                               >
                                 {key.name}
                               </Typography>
-                              <Divider variant="middle" />
+                              {/* <Divider variant="middle" /> */}
                             </Grid>
                           ))}
                       </Grid>
@@ -128,16 +136,17 @@ export default function HallOfFame(props) {
             <Grid item xs={12}>
               <Grid container spacing={1} direction="row" justify="flex-start" alignItems="center">
                 <Grid item xs={12}>
-                  <Paper elevation={0} style={{ backgroundColor: "#525252" }}>
+                  <Paper elevation={0} style={{ backgroundColor: "#2a2c30", border: "1px solid rgba(255, 255, 255, 0.22)" }}>
                     <AppBar
                       elevation={0}
                       position="static"
                       style={{
-                        backgroundColor: "#DAA520",
+                        backgroundColor: "#191c2391",
                         borderRadius: "4px 4px 0px 0px",
+                        borderBottom: "1px solid rgba(255, 255, 255, 0.22)",
                       }}
                     >
-                      <Typography variant="h6" align="center">
+                      <Typography style={{ color: "#DAA520" }} variant="h5" align="center">
                         {t("PatreonTiers.Gold")}
                       </Typography>
                     </AppBar>
@@ -157,7 +166,7 @@ export default function HallOfFame(props) {
                               >
                                 {key.name}
                               </Typography>
-                              <Divider variant="middle" />
+                              {/* <Divider variant="middle" /> */}
                             </Grid>
                           ))}
                       </Grid>
