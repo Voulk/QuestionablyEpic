@@ -1,10 +1,14 @@
-import { render } from "react-dom";
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { Accordion, Grid, AccordionDetails, AccordionSummary, Typography, Divider, TextField } from "@material-ui/core";
+import { Accordion, AccordionDetails, AccordionSummary, Typography, Divider } from "@material-ui/core";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import { useTranslation } from "react-i18next";
 import HelpIcon from '@material-ui/icons/Help';
+import PropTypes from "prop-types";
+
+HelpText.propTypes = {
+  text: PropTypes.string,
+};
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -48,7 +52,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function HelpText(props) {
   const classes = useStyles();
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   let helpText = props.text;
 
   return (
