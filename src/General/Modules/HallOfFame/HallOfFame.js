@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { AppBar, Button, Dialog, DialogActions, DialogContent, DialogTitle, Typography, Grid, Divider, Paper } from "@material-ui/core";
+import { AppBar, Button, Dialog, DialogContent, Typography, Grid, Divider, Paper } from "@material-ui/core";
 import { dbGetHallOfFame } from "General/Modules/SetupAndMenus/ConnectionUtilities";
 
 export default function HallOfFame() {
@@ -162,7 +162,6 @@ export default function HallOfFame() {
             </Grid>
           </Grid>
         </DialogContent>
-        <DialogActions />
       </Dialog>
     </div>
   );
