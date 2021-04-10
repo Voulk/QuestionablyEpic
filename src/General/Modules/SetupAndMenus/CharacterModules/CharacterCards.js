@@ -2,11 +2,10 @@ import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { useTranslation } from "react-i18next";
 //prettier-ignore
-import {Accordion, AccordionSummary, AccordionDetails, AppBar, Paper, Box, Button, Card, CardContent, CardActionArea, Divider, IconButton, Typography, Avatar, Grid, TextField, Dialog, DialogContent, DialogActions, Tabs, Tab, Tooltip, Select, MenuItem, FormControl, InputLabel } from "@material-ui/core";
+import {Accordion, AccordionSummary, AccordionDetails, Paper, Box, Button, Card, CardContent, CardActionArea, Divider, IconButton, Typography, Avatar, Grid, TextField, Dialog, DialogContent, DialogActions, Tabs, Tab, Tooltip, Select, MenuItem, FormControl, InputLabel } from "@material-ui/core";
 import { createMuiTheme, makeStyles, ThemeProvider, withStyles } from "@material-ui/core/styles";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import SettingsIcon from "@material-ui/icons/Settings";
-import DeleteIcon from "@material-ui/icons/Delete";
 import Autocomplete from "@material-ui/lab/Autocomplete";
 import { red } from "@material-ui/core/colors";
 import { classColoursJS } from "../../CooldownPlanner/Functions/ClassColourFunctions.js";
@@ -17,7 +16,7 @@ import { serverDB } from "../../../../Databases/ServerDB";
 import LogDetailsTable from "./CharacterLogDetailsTable";
 import { STAT } from "../../../Engine/STAT";
 import { apiGetPlayerImage } from "../ConnectionUtilities";
-import { CONSTRAINTS, setBounds } from "../../../Engine/CONSTRAINTS";
+import { CONSTRAINTS } from "../../../Engine/CONSTRAINTS";
 import { useSelector } from "react-redux";
 
 /* ------------------------------ Spec Images. ------------------------------ */
@@ -289,7 +288,7 @@ export default function CharCards(props) {
   };
 
   /* ------------------------- Default Button Function ------------------------ */
-  const resetDefaults = (event) => {
+  const resetDefaults = () => {
     let newPlayer = props.char;
 
     newPlayer.setDefaultWeights(newPlayer.getSpec(), contentType);
@@ -488,7 +487,7 @@ export default function CharCards(props) {
                                   {t("Classes." + key)}
                                 </MenuItem>
                               ))
-                              .map((menuItems) => [menuItems, <Divider />])}
+                              .map((menuItems, i) => [menuItems, <Divider key={i} />])}
                           </Select>
                         </FormControl>
                       </Grid>
@@ -508,7 +507,7 @@ export default function CharCards(props) {
                                       </div>
                                     </MenuItem>
                                   ))
-                                  .map((menuItems) => [menuItems, <Divider />])}
+                                  .map((menuItems, i) => [menuItems, <Divider key={i} />])}
                           </Select>
                         </FormControl>
                       </Grid>
@@ -561,7 +560,6 @@ export default function CharCards(props) {
                           id="CriticalInput"
                           label={t("Crit")}
                           style={{ textAlignLast: "center" }}
-                          type="text"
                           inputProps={{
                             step: 0.01,
                             style: { fontSize: "1.2rem", textAlignLast: "center" },

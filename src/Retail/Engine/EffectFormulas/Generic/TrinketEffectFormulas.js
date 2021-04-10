@@ -1,6 +1,6 @@
 import { convertPPMToUptime, getScalarValue } from "../EffectUtilities";
-import { trinket_data, TAGS } from "./TrinketData";
-import { STAT } from "../../../../General/Engine/STAT";
+import { trinket_data } from "./TrinketData";
+// import { STAT } from "../../../../General/Engine/STAT";
 import SPEC from "../../../../General/Engine/SPECS";
 
 // TODO: Write proper comments. See Lingering Sunmote for an example.
@@ -519,7 +519,7 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel, use
     /* ---------------------------------------------------------------------------------------------- */
     /*                                        No Trinkets Found                                       */
     /* ---------------------------------------------------------------------------------------------- */
-    debug && console.log("No Trinket Found");
+    console.log("No Trinket Found");
   }
 
   return bonus_stats;
