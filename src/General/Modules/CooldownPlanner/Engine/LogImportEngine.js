@@ -2,7 +2,6 @@
 import { addMissingTimestamps, getUniqueObjectsFromArray, reduceTimestamps, fightDuration, importHealerLogData, importDamageLogData, importCastsLogData,
   durationmaker, sumDamage, importSummaryData, importExternalCastsLogData, importCharacterIds, importEnemyCasts, importEnemyIds } from "../Functions/Functions";
 import moment from "moment";
-import { Code } from "@material-ui/icons";
 
 /* =============================================
    This Function Imports all the Data for the Chart/Log Details

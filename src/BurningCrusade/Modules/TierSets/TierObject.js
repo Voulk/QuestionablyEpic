@@ -22,8 +22,8 @@ export default function TierObject(props) {
   // Item Provided to Component
   const set = props.set;
   // Player Data
-  const player = props.player;
-  const slots = set.slots;
+  // const player = props.player;
+  // const slots = set.slots;
 
   return (
     // Breakpoints (12 units / row)
@@ -71,8 +71,8 @@ export default function TierObject(props) {
               <Grid container spacing={1} direction="row" justify="center" alignItems="center">
                 {Object.keys(set.slots)
                   .filter((filter) => set.slots[filter].id > 0)
-                  .map((key) => (
-                    <Grid item>
+                  .map((key, i) => (
+                    <Grid item key={i}>
                       <a data-wowhead={"item=" + set.slots[key].id + "&domain=" + currentLanguage}>
                         <img
                           height={40}
@@ -94,6 +94,9 @@ export default function TierObject(props) {
             <Grid item xs={12}>
               <Divider />
             </Grid>
+            {/* ---------------------------------------------------------------------------------------------- */
+            /*                                              2 Set                                              */
+            /* ----------------------------------------------------------------------------------------------  */}
             <Grid item xs={12}>
               <Typography align="left" variant="caption" style={{ fontSize: "0.75rem", lineHeight: 1.1 }} component="p">
                 {t(set.twoSet["effect"][currentLanguage])}
@@ -102,6 +105,9 @@ export default function TierObject(props) {
             <Grid item xs={12}>
               <Divider />
             </Grid>
+            {/* ---------------------------------------------------------------------------------------------- */
+            /*                                              4 Set                                              */
+            /* ---------------------------------------------------------------------------------------------- */}
             <Grid item xs={12}>
               <Typography align="left" variant="caption" style={{ fontSize: "0.75rem", lineHeight: 1.1 }} component="p">
                 {t(set.fourSet["effect"][currentLanguage])}
@@ -110,6 +116,10 @@ export default function TierObject(props) {
             <Grid item xs={12}>
               <Divider />
             </Grid>
+            {/* ---------------------------------------------------------------------------------------------- */
+            /*                                              6 Set                                             */
+            /* ----------------------------------------------------------------------------------------------  */}
+            {/* ------------------- Unused - Here for Any 6 set requirements in the future -------------------  */}
             {/* <Typography align="left" variant="caption" style={{ fontSize: "0.75rem", lineHeight: 1.1 }} component="p">
                   {t(set.sixSet["effect"] + ".desc")}
                 </Typography> */}
@@ -118,10 +128,11 @@ export default function TierObject(props) {
             </Grid> */}
           </Grid>
         </CardContent>
-        {/* ------------------------ Divider to seperate body from Drop location. ------------------------ */}
         <Divider />
         <CardActions>
-          {/* ----------------------------------- Legendary drop location ---------------------------------- */}
+          {/* ---------------------------------------------------------------------------------------------- */
+          /*                                            HPS / Set                                           */
+          /* ----------------------------------------------------------------------------------------------  */}
           <Grid container direction="row" wrap="nowrap">
             <Grid item xs={6} style={{ textAlign: "center" }}>
               <div style={{ display: "inline-flex" }}>

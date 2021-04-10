@@ -13,22 +13,6 @@ import MessageOfTheDay from "./MessageOftheDay";
 import ArticleCard from "../ArticleCards/ArcticleCard";
 import Changelog from "../ChangeLog/Changelog";
 import InfoOutlinedIcon from "@material-ui/icons/InfoOutlined";
-import PropTypes from "prop-types";
-
-/* ---------------------------------------------------------------------------------------------- */
-/*                                       Main Menu PropTypes                                      */
-/* ---------------------------------------------------------------------------------------------- */
-QEMainMenu.propTypes = {
-  allChars: PropTypes.object,
-  patronStatus: PropTypes.string,
-  articleList: PropTypes.object,
-  player: PropTypes.object,
-  charUpdate: PropTypes.function,
-  singleUpdate: PropTypes.function,
-  charAddedSnack: PropTypes.function,
-  charUpdatedSnack: PropTypes.function,
-  delChar: PropTypes.function,
-};
 
 /* ---------------------------------------------------------------------------------------------- */
 /*                                             Warning                                            */

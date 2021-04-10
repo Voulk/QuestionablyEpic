@@ -4,11 +4,6 @@ import { Accordion, AccordionDetails, AccordionSummary, Typography, Divider } fr
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import { useTranslation } from "react-i18next";
 import HelpIcon from '@material-ui/icons/Help';
-import PropTypes from "prop-types";
-
-HelpText.propTypes = {
-  text: PropTypes.string,
-};
 
 const useStyles = makeStyles((theme) => ({
   root: {
