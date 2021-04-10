@@ -9,10 +9,8 @@ import { apiSendTopGearSet } from "../SetupAndMenus/ConnectionUtilities";
 import { Button, Grid, Typography, Divider } from "@material-ui/core";
 import { buildWepCombos } from "../../Engine/ItemUtilities";
 import MiniItemCard from "./MiniItemCard";
-import MuiAlert from "@material-ui/lab/Alert";
-import Autocomplete from "@material-ui/lab/Autocomplete";
 //import worker from "workerize-loader!./TopGearEngine"; // eslint-disable-line import/no-webpack-loader-syntax
-import { useHistory, useLocation } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import HelpText from "../SetupAndMenus/HelpText";
 import Settings from "../Settings/Settings";
 import { CONSTRAINTS } from "../../Engine/CONSTRAINTS";
@@ -46,56 +44,21 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const menuStyle = {
-  style: { marginTop: 5 },
-  MenuListProps: {
-    style: { paddingTop: 0, paddingBottom: 0 },
-  },
-  PaperProps: {
-    style: {
-      border: "1px solid rgba(255, 255, 255, 0.23)",
-    },
-  },
-  anchorOrigin: {
-    vertical: "bottom",
-    horizontal: "left",
-  },
-  transformOrigin: {
-    vertical: "top",
-    horizontal: "left",
-  },
-  getContentAnchorEl: null,
-};
-
-function Alert(props) {
-  return <MuiAlert elevation={6} variant="filled" {...props} />;
-}
-
 const TOPGEARCAP = 34; // TODO
 
 export default function TopGear(props) {
   const { t, i18n } = useTranslation();
-  const currentLanguage = i18n.language;
+  // const currentLanguage = i18n.language;
   const contentType = useSelector((state) => state.contentType);
   const classes = useStyles();
-
-  /* --------------------------------------- Snackbar State --------------------------------------- */
-  const [open, setOpen] = useState(false);
-  const [openDelete, setOpenDelete] = useState(false);
 
   /* ---------------------------------------- Popover Props --------------------------------------- */
   const [anchorEl, setAnchorEl] = useState(null);
 
   const [activeSlot, setSlot] = useState("");
-  const [itemSocket, setItemSocket] = useState("");
-  const [itemTertiary, setItemTertiary] = useState("");
   const [itemList, setItemList] = useState(props.player.getActiveItems(activeSlot));
   const [btnActive, setBtnActive] = useState(true);
   const [errorMessage, setErrorMessage] = useState("");
-
-  const openPop = Boolean(anchorEl);
-  const idPop = openPop ? "simple-popover" : undefined;
-  const [itemDropdown, setItemDropdown] = useState([]); // Filled later based on item slot and armor type.
 
   useEffect(() => {
     ReactGA.pageview(window.location.pathname + window.location.search);

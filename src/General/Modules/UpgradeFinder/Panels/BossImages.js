@@ -1,4 +1,3 @@
-import React from "react";
 // Castle Nathria
 import ArtificerHeader from "../../../../Images/Bosses/CastleNathria/ArtificerXymox/Artificer.png";
 import CouncilHeader from "../../../../Images/Bosses/CastleNathria/TheCouncilOfBlood/Council.png";
@@ -18,7 +17,7 @@ import MortanisHeader from "../../../../Images/Bosses/WorldBosses/MortanisUGF.pn
 import OranomonosHeader from "../../../../Images/Bosses/WorldBosses/OranomonosUGF.png";
 import NurgashHeader from "../../../../Images/Bosses/WorldBosses/NurgashUGF.png";
 
-export default function UpgradeFinderBossImages(props, style) {
+export default function UpgradeFinderBossImages(props) {
   let source = "";
 
   // Castle Nathria
@@ -83,5 +82,5 @@ export default function UpgradeFinderBossImages(props, style) {
     source = BoeHeader;
   }
 
-  return source
+  return source;
 }
