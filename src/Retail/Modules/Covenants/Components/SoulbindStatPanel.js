@@ -1,5 +1,5 @@
 import React from "react";
-import { Paper, Grid, Typography, Divider, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from "@material-ui/core";
+import { Paper, Grid, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from "@material-ui/core";
 import { useTranslation } from "react-i18next";
 
 function createData(name, hps) {
@@ -8,7 +8,7 @@ function createData(name, hps) {
 
 // The soulbind stat panel sums up all of the active soulbinds in the tree.
 export default function SoulbindStatPanel(props) {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const covAbilityEst = props.covAbility > 0 ? props.covAbility : "NA";
 
   //prettier-ignore

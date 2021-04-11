@@ -2,14 +2,13 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import "../Covenants.css";
 import { makeStyles } from "@material-ui/core/styles";
-import { Card, CardActionArea, CardContent, Typography, Grid, Divider } from "@material-ui/core";
-import { getItemIcon } from "General/Engine/ItemUtilities";
+import { Card, CardActionArea, Typography, Grid, Divider } from "@material-ui/core";
 import { conduitDB } from "Databases/ConduitDB";
 
 const useStyles = makeStyles({ root: { padding: 0, height: 26 } });
 
 export default function ConduitObject(props) {
-  const { t, i18n } = useTranslation();
+  const { i18n } = useTranslation();
   const currentLanguage = i18n.language;
   const conduit = props.conduit;
   const classes = useStyles();

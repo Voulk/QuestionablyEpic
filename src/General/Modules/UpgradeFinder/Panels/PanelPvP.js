@@ -7,7 +7,7 @@ import { useTranslation } from "react-i18next";
 import { filterItemListBySource, getDifferentialByID } from "../../../Engine/ItemUtilities";
 import { encounterDB } from "../../Player/InstanceDB";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   root: {
     width: "100%",
     marginTop: 4,
@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const getPVPItemLevel = (sourceID, difficulty, slot) => {
+const getPVPItemLevel = (sourceID, difficulty) => {
   if (sourceID === -17) {
     return itemLevels.pvp[difficulty];
   } else if (sourceID === -16) return 197;
@@ -35,12 +35,12 @@ const itemLevels = {
 
 export default function PvPGearContainer(props) {
   const classes = useStyles();
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const itemList = props.itemList;
   const itemDifferentials = props.itemDifferentials;
   const difficulty = props.playerSettings.pvp;
 
-  const contentGenerator = (type) => {
+  const contentGenerator = () => {
     return encounterDB[2].map((key, i) => (
       <Grid item xs={12} key={"pvpContainer-" + i} style={{ padding: "4px 0px" }}>
         <Paper style={{ backgroundColor: "#191c23", padding: 8, border: "1px solid rgba(255, 255, 255, 0.22)" }}>
