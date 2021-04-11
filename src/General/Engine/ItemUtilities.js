@@ -5,8 +5,8 @@ import { getEffectValue } from "../../Retail/Engine/EffectFormulas/EffectEngine"
 import SPEC from "../Engine/SPECS";
 import { translatedStat } from "./STAT";
 import Item from "../Modules/Player/Item";
-import { useTranslation } from "react-i18next";
-import { i18n } from "react-i18next";
+// import { useTranslation } from "react-i18next"; 
+// import { i18n } from "react-i18next";
 import { reportError } from "../SystemTools/ErrorLogging/ErrorReporting";
 import { BCitemDB } from "Databases/BCItemDB";
 

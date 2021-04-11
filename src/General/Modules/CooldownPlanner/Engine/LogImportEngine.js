@@ -17,17 +17,18 @@ import moment from "moment";
 /* - PLease Note that all the 'this.' statements in this file do not actually affect this file. - */
 /* -------------- They are refering to the component the function is imported into. ------------- */
 
-function getUnique(arr, comp) {
-  /* ---------------------------- Store the comparison  values in array --------------------------- */
-  const unique = arr
-    .map((e) => e[comp])
-    /* --------------------------- Store the indexes of the unique objects -------------------------- */
-    .map((e, i, final) => final.indexOf(e) === i && i)
-    /* --------------------- Eliminate the false indexes & return unique objects -------------------- */
-    .filter((e) => arr[e])
-    .map((e) => arr[e]);
-  return unique;
-}
+/* ------------------------- Not used Currently : Candidate for deletion ------------------------ */
+// function getUnique(arr, comp) {
+//   /* ---------------------------- Store the comparison  values in array --------------------------- */
+//   const unique = arr
+//     .map((e) => e[comp])
+//     /* --------------------------- Store the indexes of the unique objects -------------------------- */
+//     .map((e, i, final) => final.indexOf(e) === i && i)
+//     /* --------------------- Eliminate the false indexes & return unique objects -------------------- */
+//     .filter((e) => arr[e])
+//     .map((e) => arr[e]);
+//   return unique;
+// }
 
 /* ---------------------------------------------------------------------------------------------- */
 /*                                      Chart Update Function                                     */

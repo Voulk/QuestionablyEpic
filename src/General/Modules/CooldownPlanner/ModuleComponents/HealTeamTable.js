@@ -1,8 +1,8 @@
 import React, { forwardRef, useState } from "react";
 import MaterialTable, { MTableToolbar } from "material-table";
 //prettier-ignore
-import { AddBox, ArrowDownward, Check, ChevronLeft, ChevronRight, Clear, DeleteOutline, Edit, FilterList, FirstPage, LastPage, Remove, SaveAlt, Search, ViewColumn, KeyboardArrowDown } from "@material-ui/icons";
-import { Select, TextField, InputLabel, FormControl, Divider, Paper } from "@material-ui/core";
+import { AddBox, ArrowDownward, Check, ChevronLeft, ChevronRight, Clear, DeleteOutline, Edit, FilterList, FirstPage, LastPage, Remove, SaveAlt, Search, ViewColumn } from "@material-ui/icons";
+import { Select, TextField, InputLabel, FormControl, Paper } from "@material-ui/core";
 import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import { makeStyles } from "@material-ui/core/styles";
 import classIcons from "../Functions/IconFunctions/ClassIcons";
@@ -77,7 +77,7 @@ const tableIcons = {
   ViewColumn: forwardRef((props, ref) => <ViewColumn {...props} style={{ color: "#ffee77" }} ref={ref} />),
 };
 
-export default function HealTeam(props) {
+export default function HealTeam() {
   const classes = useStyles();
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
