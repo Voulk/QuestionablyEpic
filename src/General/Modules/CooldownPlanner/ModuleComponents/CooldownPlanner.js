@@ -230,7 +230,7 @@ export default function CooldownPlanner(props) {
       },
       headerStyle: { borderRight: "1px solid #6c6c6c" },
       render: (rowData) => (
-        <div style={{ width: 105, display: "inline-flex", alignItems: "center", width: "100%" }}>
+        <div style={{ minWidth: 105, display: "inline-flex", alignItems: "center", width: "100%" }}>
           <div>
             <a data-wowhead={"spell=" + rowData.bossAbility + "&domain=" + currentLanguage}>
               {bossAbilityIcons(rowData.bossAbility, {
@@ -447,7 +447,7 @@ export default function CooldownPlanner(props) {
       headerStyle: { borderRight: "1px solid #6c6c6c" },
       /* --------------------- Renders the Ability name that was set for this row. -------------------- */
       render: (rowData) => (
-        <div style={{ width: 105, display: "inline-flex", alignItems: "center", width: "100%" }}>
+        <div style={{ minminWidth: 105, display: "inline-flex", alignItems: "center", width: "100%" }}>
           <div>
             {abilityIcons(rowData.Cooldown, {
               height: 30,
@@ -650,7 +650,7 @@ export default function CooldownPlanner(props) {
       headerStyle: { borderRight: "1px solid #6c6c6c" },
       /* --------------------- Renders the Ability name that was set for this row. -------------------- */
       render: (rowData) => (
-        <div style={{ width: 105, display: "inline-flex", alignItems: "center", width: "100%" }}>
+        <div style={{ minminWidth: 105, display: "inline-flex", alignItems: "center", width: "100%" }}>
           <div>
             {abilityIcons(rowData.Cooldown1, {
               height: 30,
@@ -849,7 +849,7 @@ export default function CooldownPlanner(props) {
       headerStyle: { borderRight: "1px solid #6c6c6c" },
       /* --------------------- Renders the Ability name that was set for this row. -------------------- */
       render: (rowData) => (
-        <div style={{ width: 105, display: "inline-flex", alignItems: "center", width: "100%" }}>
+        <div style={{ minminWidth: 105, display: "inline-flex", alignItems: "center", width: "100%" }}>
           <div>
             {abilityIcons(rowData.Cooldown2, {
               height: 30,
@@ -1047,7 +1047,7 @@ export default function CooldownPlanner(props) {
       headerStyle: { borderRight: "1px solid #6c6c6c" },
       /* --------------------- Renders the Ability name that was set for this row. -------------------- */
       render: (rowData) => (
-        <div style={{ width: 105, display: "inline-flex", alignItems: "center", width: "100%" }}>
+        <div style={{ minminWidth: 105, display: "inline-flex", alignItems: "center", width: "100%" }}>
           <div>
             {abilityIcons(rowData.Cooldown3, {
               height: 30,
@@ -1247,7 +1247,7 @@ export default function CooldownPlanner(props) {
       headerStyle: { borderRight: "1px solid #6c6c6c" },
       /* --------------------- Renders the Ability name that was set for this row. -------------------- */
       render: (rowData) => (
-        <div style={{ width: 105, display: "inline-flex", alignItems: "center", width: "100%" }}>
+        <div style={{ minminWidth: 105, display: "inline-flex", alignItems: "center", width: "100%" }}>
           <div>
             {abilityIcons(rowData.Cooldown4, {
               height: 30,
