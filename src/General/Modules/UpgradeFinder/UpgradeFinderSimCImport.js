@@ -60,7 +60,6 @@ export default function UpgradeFinderSimC(props) {
     } else {
       style = simcStatus === "Good" || simcStatus === "Missing" ? classes.simcok : classes.simcerror;
     }
-    console.log(style);
     return style;
   };
 
