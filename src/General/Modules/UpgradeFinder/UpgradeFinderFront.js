@@ -8,7 +8,7 @@ import ToggleButton from "@material-ui/lab/ToggleButton";
 import Settings from "../Settings/Settings";
 import UpgradeFinderSimC from "./UpgradeFinderSimCImport";
 import { runUpgradeFinder } from "./UpgradeFinderEngine";
-import { useHistory } from "react-router-dom";
+// import { useHistory } from "react-router-dom";
 import userSettings from "../Settings/SettingsObject";
 import { useSelector } from "react-redux";
 
@@ -68,7 +68,6 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const raidDifficulty = ["Raid Finder", "Normal", "Heroic", "Mythic"];
-const pvpCurrency = ["Honor", "Conquest"];
 
 const PvPRating = [
   { value: 0, label: "Unranked" },
@@ -207,10 +206,7 @@ export default function UpgradeFinderFront(props) {
   const [selectedHeroic, setSelectedHeroic] = React.useState(false);
   const [selectedMythic, setSelectedMythic] = React.useState(false);
 
-  const [selectedHonor, setSelectedHonor] = React.useState(false);
-  const [selectedConquest, setSelectedConquest] = React.useState(false);
-
-  let history = useHistory();
+  // let history = useHistory();
 
   const selectsPvE = [selectedRaidFinder, selectedNormal, selectedHeroic, selectedMythic];
   const setsPvE = [setSelectedRaidFinder, setSelectedNormal, setSelectedHeroic, setSelectedMythic];
@@ -245,10 +241,6 @@ export default function UpgradeFinderFront(props) {
   const getUpgradeFinderReady = (player) => {
     return getSimCStatus(player) === "Good" && props.playerSettings.raid.length > 0;
   };
-
-  const selectsPvP = [selectedHonor, selectedConquest];
-
-  const setsPvP = [setSelectedHonor, setSelectedConquest];
 
   return (
     <div className={classes.header}>

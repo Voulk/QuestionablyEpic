@@ -1,10 +1,8 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { Card, CardContent, Typography, Grid, Divider, IconButton } from "@material-ui/core";
-import { getTranslatedItemName, buildStatString, getItemIcon } from "../../../Engine/ItemUtilities";
+import { Card, CardContent, Typography, Grid, Divider } from "@material-ui/core";
+import { getTranslatedItemName, getItemIcon } from "../../../Engine/ItemUtilities";
 import "./ItemUpgrade.css";
-import DeleteIcon from "@material-ui/icons/Delete";
-import socketImage from "../../../../Images/Resources/EmptySocket.png";
 import { useTranslation } from "react-i18next";
 
 const useStyles = makeStyles({
@@ -38,8 +36,6 @@ const useStyles = makeStyles({
 export default function ItemCard(props) {
   const classes = useStyles();
   const item = props.item;
-  //console.log(item);
-  const statString = buildStatString(item.stats, item.effect);
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
   const itemLevel = item.level;
@@ -53,10 +49,6 @@ export default function ItemCard(props) {
     else return "#1eff00";
   };
 
-  const deleteItemCard = () => {
-    props.delete(item.uniqueHash);
-  };
-
   const upgradeColor = (num) => {
     if (num > 0) {
       return "#FFDF14"; // #60e421
@@ -66,8 +58,6 @@ export default function ItemCard(props) {
   };
 
   let itemName = "";
-  let isVault = item.vaultItem;
-  const deleteActive = item.offhandID === 0;
 
   if (item.offhandID > 0) {
     itemName = getTranslatedItemName(item.id, currentLanguage) + " & " + getTranslatedItemName(item.offhandID, currentLanguage);
@@ -75,14 +65,6 @@ export default function ItemCard(props) {
     if (isLegendary) itemName = item.effect.name;
     else itemName = getTranslatedItemName(item.id, currentLanguage);
   }
-
-  const socket = props.item.socket ? (
-    <div style={{ display: "inline" }}>
-      <img src={socketImage} width={15} height={15} style={{ verticalAlign: "middle" }} alt="Socket" />{" "}
-    </div>
-  ) : null;
-
-  const tertiary = props.item.tertiary !== "" ? <div style={{ display: "inline" }}> / {props.item.tertiary} </div> : null;
 
   const sourceName = (item) => {
     /* ------------------------------ Dungeon Name ------------------------------ */

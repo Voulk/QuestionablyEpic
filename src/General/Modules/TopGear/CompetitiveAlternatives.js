@@ -7,7 +7,7 @@ function CompetitiveAlternatives(props) {
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
 
-  const item = props.item
+  // const item = props.item
   const differentials = props.differentials
 
   const itemQuality = (itemLevel, effect) => {
@@ -38,8 +38,8 @@ function CompetitiveAlternatives(props) {
           </Grid>
           <Grid item xs={12}>
             <Grid item container spacing={0}>
-              {differentials.map((key) => (
-                <Grid item xs={12} sm={6} md={4} lg={3} xl={3}>
+              {differentials.map((key, i) => (
+                <Grid item xs={12} sm={6} md={4} lg={3} xl={3} key={i}>
                   <Paper
                     elevation={0}
                     variant="outlined"
@@ -50,8 +50,8 @@ function CompetitiveAlternatives(props) {
                   >
                     <Grid item container direction="row" alignItems="center" xs={12} sm={12} md={12} lg={12} xl={12}>
                       <Grid item container xs={10} spacing={1}>
-                        {key.items.map((item) => (
-                          <Grid item>
+                        {key.items.map((item, i) => (
+                          <Grid item key={i}>
                             <a data-wowhead={"item=" + item.id + "&" + "ilvl=" + item.level + "&bonus=" + item.bonusIDS + "&domain=" + currentLanguage}>
                               <div className="container-ItemCards" style={{ height: 42 }}>
                                 <img

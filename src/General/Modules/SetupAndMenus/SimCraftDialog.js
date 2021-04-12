@@ -2,11 +2,11 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import { Button, TextField, Dialog, DialogActions, DialogContent, DialogTitle, Tooltip } from "@material-ui/core";
 import { runSimC } from "../../../Retail/Engine/SimCImport/SimCImportEngine";
-import { createEmitAndSemanticDiagnosticsBuilderProgram } from "typescript";
+// import { createEmitAndSemanticDiagnosticsBuilderProgram } from "typescript";
 import { useSelector } from 'react-redux'
 
 export default function SimCraftInput(props) {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const [open, setOpen] = React.useState(false);
   const [simC, setSimC] = React.useState("");
   const [errorMessage, setErrorMessage] = React.useState("");

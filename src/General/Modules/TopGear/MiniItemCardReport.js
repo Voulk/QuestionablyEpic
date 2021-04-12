@@ -1,6 +1,6 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { Card, CardContent, CardActionArea, Typography, Grid, Divider, IconButton } from "@material-ui/core";
+import { Card, CardContent, CardActionArea, Typography, Grid, Divider } from "@material-ui/core";
 import { getTranslatedItemName, buildStatString, getItemIcon } from "../../Engine/ItemUtilities";
 import "./MiniItemCard.css";
 import hasteSocket from "../../../Images/Resources/hasteSocket.jpg";
@@ -12,16 +12,8 @@ import { useTranslation } from "react-i18next";
 const useStyles = makeStyles({
   root: {
     minWidth: 200,
-    borderRadius: 1,
     borderColor: "grey",
     borderRadius: "5px",
-  },
-  selected: {
-    minWidth: 200,
-    borderRadius: 3,
-    borderColor: "Green",
-    borderRadius: "5px",
-    backgroundColor: "#424E42",
   },
   vault: {
     borderColor: "#0288d1",
@@ -36,17 +28,6 @@ const useStyles = makeStyles({
     borderStyle: "dashed",
     borderWidth: "1px",
   },
-  bullet: {
-    display: "inline-block",
-    margin: "0 2px",
-    transform: "scale(0.8)",
-  },
-  title: {
-    fontSize: 12,
-  },
-  pos: {
-    marginBottom: 10,
-  },
 });
 
 export default function ItemCardReport(props) {
@@ -54,7 +35,7 @@ export default function ItemCardReport(props) {
   const item = props.item;
 
   const enchants = props.enchants;
-  const { t, i18n } = useTranslation();
+  const { i18n } = useTranslation();
 
   const currentLanguage = i18n.language;
   const statString = buildStatString(item.stats, item.effect, currentLanguage);
@@ -74,24 +55,8 @@ export default function ItemCardReport(props) {
     else return "#1eff00";
   };
 
-  const activateItemCard = () => {
-    props.activateItem(item.uniqueHash);
-  };
-
-  const upgradeColor = (num) => {
-    if (num > 0) {
-      return "#FFDF14"; // #60e421
-    } else if (num < 0) {
-      return "#ad2c34";
-    } else {
-      return "#fff";
-    }
-  };
-
   let itemName = "";
   let isVault = item.vaultItem;
-  const isEquipped = item.isEquipped;
-  const deleteActive = item.offhandID === 0;
 
   if (item.offhandID > 0) {
     itemName = getTranslatedItemName(item.id, currentLanguage) + " & " + getTranslatedItemName(item.offhandID, currentLanguage);
@@ -121,10 +86,13 @@ export default function ItemCardReport(props) {
 
   const tertiary = props.item.tertiary !== "" ? <div style={{ display: "inline" }}> / {props.item.tertiary} </div> : null;
 
-
   return (
     <Grid item xs={12}>
-      <Card className={isVault ? classes.vault : (!item.isEquipped && item.slot != "CombinedWeapon") ? classes.notequipped : classes.root} elevation={0} style={{ backgroundColor: "rgba(34, 34, 34, 0.52)" }}>
+      <Card
+        className={isVault ? classes.vault : !item.isEquipped && item.slot != "CombinedWeapon" ? classes.notequipped : classes.root}
+        elevation={0}
+        style={{ backgroundColor: "rgba(34, 34, 34, 0.52)" }}
+      >
         <CardActionArea disabled={false}>
           <Grid container display="inline-flex" wrap="nowrap" justify="space-between">
             <Grid item xs="auto">

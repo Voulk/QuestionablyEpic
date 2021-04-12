@@ -38,16 +38,12 @@ const itemQuality = (quality) => {
   switch (quality) {
     case "Legendary":
       return "#ff8000";
-      break;
     case "Epic":
       return "#a335ee";
-      break;
     case "Uncommon":
       return "#328CE3";
-      break;
     case "Common":
       return "#1eff00";
-      break;
     default:
       return "#fff";
   }

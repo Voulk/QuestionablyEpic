@@ -4,18 +4,12 @@ import React, { useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import "../../../General/Modules/SetupAndMenus/QEMainMenu";
 import TierObject from "./TierObject";
-// import "./Legendaries.css";
 import { useTranslation } from "react-i18next";
 import ReactGA from "react-ga";
 import { Grid, Typography } from "@material-ui/core";
-import { useSelector } from "react-redux";
+// import { useSelector } from "react-redux";
 import { tierSets } from "../../Databases/TierSetsDB";
 import HelpText from "../../../General/Modules/SetupAndMenus/HelpText";
-import PropTypes from "prop-types";
-
-LegendaryCompare.propTypes = {
-  player: PropTypes.object,
-};
 
 const useStyles = makeStyles((theme) => ({
   header: {
@@ -51,11 +45,11 @@ const useStyles = makeStyles((theme) => ({
 
 export default function LegendaryCompare(props) {
   const classes = useStyles();
-  const contentType = useSelector((state) => state.contentType);
+  // const contentType = useSelector((state) => state.contentType);
   useEffect(() => {
     ReactGA.pageview(window.location.pathname + window.location.search);
   }, []);
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   const helpText = "Help Text Here";
 

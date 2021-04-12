@@ -9,7 +9,7 @@ import { filterItemListBySource, getDifferentialByID } from "../../../Engine/Ite
 import { encounterDB } from "../../Player/InstanceDB";
 import { itemLevels } from "../../../../Databases/itemLevelsDB";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   root: {
     width: "100%",
     marginTop: 4,
@@ -19,12 +19,11 @@ const useStyles = makeStyles((theme) => ({
 
 export default function MythicPlusGearContainer(props) {
   const classes = useStyles();
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const itemList = props.itemList;
   const itemDifferentials = props.itemDifferentials;
   const difficulty = props.playerSettings.dungeon;
-
-  const contentGenerator = (type) => {
+  const contentGenerator = () => {
     return encounterDB[1].map((key, i) => (
       <Grid item xs={12} key={"mythicContainer-" + i} style={{ padding: "4px 0px" }}>
         <Paper style={{ backgroundColor: "#191c23", padding: 8, border: "1px solid rgba(255, 255, 255, 0.22)" }}>
@@ -62,7 +61,7 @@ export default function MythicPlusGearContainer(props) {
   return (
     <div className={classes.root}>
       <Grid container spacing={1}>
-        {contentGenerator(props.type)}
+        {contentGenerator()}
       </Grid>
     </div>
   );

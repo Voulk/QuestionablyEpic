@@ -1,5 +1,5 @@
-import React, { useEffect } from "react";
-import { makeStyles, Paper, Typography, Grid, Divider } from "@material-ui/core";
+import React from "react";
+import { Paper, Typography, Grid } from "@material-ui/core";
 import { useTranslation } from "react-i18next";
 import { itemDB } from "../../../Databases/ItemDB";
 import Item from "../Player/Item";
@@ -44,9 +44,8 @@ export default function TrinketAnalysis(props) {
       ReactGA.pageview(window.location.pathname + window.location.search);
     }, []); */
 
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const contentType = useSelector((state) => state.contentType);
-  const itemLevel = 213;
   const itemLevels = [187, 194, 200, 207, 213, 220, 226, 233];
   const trinketDB = itemDB.filter((key) => key.slot === "Trinket" && key.levelRange.length > 0);
   const helpText = t("TrinketAnalysis.HelpText");

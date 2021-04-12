@@ -3,7 +3,7 @@ import axios from "axios";
 import { damageExclusions, healerCooldownsDetailed } from "../Data/Data";
 import { externalsDB } from "../../../../Databases/ExternalsDB";
 
-import i18n from "i18next";
+// import i18n from "i18next";
 
 // Returns Seconds from 0 to Loglength
 export function addMissingTimestamps(loglength) {
@@ -367,7 +367,7 @@ export async function importCastsLogData(starttime, endtime, reportid, healerID)
   return cooldowns;
 }
 
-export async function importEnemyCasts(starttime, endtime, reportid, healerID) {
+export async function importEnemyCasts(starttime, endtime, reportid) {
   const APICast = "https://www.warcraftlogs.com:443/v1/report/events/casts/";
   const START = "?start=";
   const END = "&end=";

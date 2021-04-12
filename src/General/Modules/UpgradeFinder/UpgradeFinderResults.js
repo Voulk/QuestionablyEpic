@@ -9,7 +9,6 @@ import PvPGearContainer from "./Panels/PanelPvP";
 import RaidGearContainer from "./Panels/PanelRaid";
 import WorldBossGearContainer from "./Panels/PanelWorldBosses";
 import SlotsContainer from "./Panels/PanelSlots";
-import ReactGA from "react-ga";
 import "./Panels/ItemUpgrade.css";
 
 const useStyles = makeStyles((theme) => ({
@@ -121,7 +120,7 @@ export default function UpgradeFinderResults(props) {
 
   const classes = useStyles();
   const [tabvalue, setTabValue] = React.useState(0);
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const result = props.itemSelection;
   const itemList = result.itemSet;
   const itemDifferentials = result.differentials;

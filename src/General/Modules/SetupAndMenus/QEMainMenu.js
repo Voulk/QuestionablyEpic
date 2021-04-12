@@ -6,16 +6,19 @@ import CharCards from "./CharacterModules/CharacterCards";
 import AddNewChar from "./CharacterModules/CharacterCreator";
 import { makeStyles } from "@material-ui/core/styles";
 import ReactGA from "react-ga";
-import { dbCheckPatron, dbGetArticleList } from "./ConnectionUtilities";
 import ArrowForward from "@material-ui/icons/ArrowForward";
-import { Paper, Grid, Button, Typography, Tooltip } from "@material-ui/core";
+import { Grid, Button, Typography, Tooltip } from "@material-ui/core";
 // import HallOfFame from "../HallOfFame/HallOfFame";
 import MessageOfTheDay from "./MessageOftheDay";
 import ArticleCard from "../ArticleCards/ArcticleCard";
 import Changelog from "../ChangeLog/Changelog";
 import InfoOutlinedIcon from "@material-ui/icons/InfoOutlined";
 
-// Warning: If a button name has to change, do it in the translation files. Consider the titles here to be ID's rather than strings.
+/* ---------------------------------------------------------------------------------------------- */
+/*                                             Warning                                            */
+/*                 If a button name has to change, do it in the translation files.                */
+/*                    Consider the titles here to be ID's rather than strings                     */
+/* ---------------------------------------------------------------------------------------------- */
 // [route, show button?, tooltip]
 const mainMenuOptions = {
   "MainMenu.TopGear": ["/topgear", true, "TopGear"],
@@ -58,7 +61,7 @@ export default function QEMainMenu(props) {
     ReactGA.pageview(window.location.pathname + window.location.search);
   }, []);
 
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const classes = useStyles();
   const characterCount = props.allChars.getAllChar().length;
   const patron = ["Diamond", "Gold", "Rolls Royce", "Sapphire"].includes(props.patronStatus);
@@ -173,8 +176,8 @@ export default function QEMainMenu(props) {
                 </Tooltip> */}
               </Typography>
             </Grid>
-            {articles.map((key) => (
-              <ArticleCard url={key.url} title={key.title} image={key.image} date={key.date} extrainfo={key.extrainfo} />
+            {articles.map((key, i) => (
+              <ArticleCard key={i} url={key.url} title={key.title} image={key.image} date={key.date} extrainfo={key.extrainfo} />
             ))}
           </Grid>
         ) : (

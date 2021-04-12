@@ -136,7 +136,7 @@ const fillLegendaries = (container, spec, player, contentType) => {
   };
 
   /* --------------------------- Create legendaries for the given spec. --------------------------- */
-  choices[spec].map((itemName, index) => createLegendary(itemName, container, spec, player, contentType));
+  choices[spec].map((itemName) => createLegendary(itemName, container, spec, player, contentType));
 };
 
 const sortLegendaries = (container) => {
@@ -165,7 +165,7 @@ export default function LegendaryCompare(props) {
   useEffect(() => {
     ReactGA.pageview(window.location.pathname + window.location.search);
   }, []);
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   let legendaryList = [];
 

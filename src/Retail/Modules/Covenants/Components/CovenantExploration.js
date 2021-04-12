@@ -90,7 +90,7 @@ export default function CovenantExploration(props) {
     ReactGA.pageview(window.location.pathname + window.location.search);
   }, []);
   const contentType = useSelector((state) => state.contentType);
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const classes = useStyles();
   const [tabvalue, setTabValue] = React.useState(0);
   const [soulbindValue, setSoulbindValue] = React.useState(0);
@@ -427,7 +427,7 @@ export default function CovenantExploration(props) {
 }
 
 function buildSoulbind(soulbindName, player, contentType, soulbindState, activateSoulbind, setConduitInSlot, updateConduitLevel) {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   let activeSoulbind = soulbindState.filter((trait) => trait.soulbind === soulbindName);
   let activeConnectors = soulbindConnectors.filter((trait) => trait.soulbind === soulbindName);
 
