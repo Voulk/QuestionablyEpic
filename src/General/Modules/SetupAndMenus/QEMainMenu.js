@@ -7,8 +7,8 @@ import AddNewChar from "./CharacterModules/CharacterCreator";
 import { makeStyles } from "@material-ui/core/styles";
 import ReactGA from "react-ga";
 import ArrowForward from "@material-ui/icons/ArrowForward";
+import HallOfFame from "../HallOfFame/HallOfFame";
 import { Grid, Button, Typography, Tooltip } from "@material-ui/core";
-// import HallOfFame from "../HallOfFame/HallOfFame";
 import MessageOfTheDay from "./MessageOftheDay";
 import ArticleCard from "../ArticleCards/ArcticleCard";
 import Changelog from "../ChangeLog/Changelog";
@@ -184,6 +184,7 @@ export default function QEMainMenu(props) {
           ""
         )}
         <Changelog />
+        <HallOfFame />
       </div>
     </div>
   );
