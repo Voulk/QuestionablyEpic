@@ -245,9 +245,9 @@
       }
     },
     "HallOfFame": {
-      "title": "Welcome to the Hall of FameFR",
-      "buttonLabel": "Hall of FameFR",
-      "introduction": "Insert Blurb Here about thanking patrons.FR"
+      "title": "Hall of Fame",
+      "buttonLabel": "Hall of Fame",
+      "introduction": "Thank you so much for your support."
     },
 
     "InsertLog": {
