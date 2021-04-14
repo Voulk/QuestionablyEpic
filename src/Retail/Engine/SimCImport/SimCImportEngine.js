@@ -60,7 +60,7 @@ export function runSimC(simCInput, player, contentType, setErrorMessage, snackHa
 // - The version of the SimC addon is reasonably up to date. This is currently not active so automatically passes.
 // - The string length is less than our specified maximum. This is a loose requirement that's mostly designed around preventing user error like copy pasting their string twice.
 function checkSimCValid(simCHeader, length, playerClass, setErrorMessage) {
-  console.log("Checking SimC Valid");
+  // console.log("Checking SimC Valid");
   let checks = {
     class: false,
     version: true,
@@ -69,8 +69,8 @@ function checkSimCValid(simCHeader, length, playerClass, setErrorMessage) {
   };
   let errorMessage = "";
 
-  console.log(simCHeader);
-  console.log(playerClass);
+  // console.log(simCHeader);
+  // console.log(playerClass);
 
   for (var i = 0; i < simCHeader.length; i++) {
     let line = simCHeader[i];
@@ -102,7 +102,7 @@ function processToken(line, player, contentType, type, covenant) {
     } else if (info.includes("bonus_id=")) itemBonusIDs = info.split("=")[1].split("/");
     else if (info.includes("id=")) tokenID = parseInt(info.split("=")[1]);
   }
-  console.log("Creating Token with level" + tokenLevel + ", and ID: " + tokenID);
+  // console.log("Creating Token with level" + tokenLevel + ", and ID: " + tokenID);
   let token = tokenDB[tokenID.toString()];
   tokenLevel = token.itemLevel;
   tokenSlot = token.slotType;

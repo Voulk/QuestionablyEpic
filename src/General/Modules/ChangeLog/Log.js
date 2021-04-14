@@ -6,7 +6,7 @@
 
 // Template for Changelog Entry
 // {version: "", update: , date: "", changes: ["",""]}
-;
+
 export const changeLog = [
   {
     version: "9.0.5",

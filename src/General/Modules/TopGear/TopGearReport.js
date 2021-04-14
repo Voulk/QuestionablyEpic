@@ -4,9 +4,8 @@ import TopSetStatsPanel from "./TopSetStatsPanel";
 // import { testList, differentialsTest } from "./TestData";
 import { apiGetPlayerImage } from "../SetupAndMenus/ConnectionUtilities";
 import { useTranslation } from "react-i18next";
-import { Button, Paper, Typography, Divider, Grid, Card, CardContent } from "@material-ui/core";
+import { Button, Paper, Typography, Divider, Grid } from "@material-ui/core";
 import { Link } from "react-router-dom";
-import { getItemIcon } from "../../Engine/ItemUtilities";
 import { classColoursJS } from "../CooldownPlanner/Functions/ClassColourFunctions";
 import CompetitiveAlternatives from "./CompetitiveAlternatives";
 
@@ -29,22 +28,16 @@ function TopGearReport(props) {
     switch (props.player.spec) {
       case "Holy Paladin":
         return require("Images/Classes/Paladin/icon-paladin.png").default;
-        break;
       case "Restoration Shaman":
         return require("Images/Classes/Shaman/icon-shaman.png").default;
-        break;
       case "Holy Priest":
         return require("Images/Classes/Priest/icon-priest.png").default;
-        break;
       case "Discipline Priest":
         return require("Images/Classes/Priest/icon-priest.png").default;
-        break;
       case "Restoration Druid":
         return require("Images/Classes/Druid/icon-druid.png").default;
-        break;
       case "Mistweaver Monk":
         return require("Images/Classes/Monk/icon-monk.png").default;
-        break;
       default:
         break;
     }

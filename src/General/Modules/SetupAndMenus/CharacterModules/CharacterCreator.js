@@ -154,7 +154,7 @@ export default function AddNewChar(props) {
                           {key}
                         </MenuItem>
                       ))
-                      .map((item) => [item, <Divider />])}
+                      .map((item, i) => [item, <Divider key={i} />])}
                   </Select>
                 </FormControl>
               </Grid>
@@ -195,7 +195,7 @@ export default function AddNewChar(props) {
                         {t("Classes." + key)}
                       </MenuItem>
                     ))
-                    .map((item) => [item, <Divider />])}
+                    .map((item, i) => [item, <Divider key={i} />])}
                 </Select>
               </FormControl>
             </Grid>
@@ -214,7 +214,7 @@ export default function AddNewChar(props) {
                             </div>
                           </MenuItem>
                         ))
-                        .map((item) => [item, <Divider />])}
+                        .map((item, i) => [item, <Divider key={i} />])}
                 </Select>
               </FormControl>
             </Grid>
@@ -224,11 +224,7 @@ export default function AddNewChar(props) {
           <Button onClick={handleClose} color="primary">
             {t("Cancel")}
           </Button>
-          <Button
-            onClick={() => handleAdd(charName, healClass, props.allChars, props.charUpdate, regions, server, selectedRace)}
-            color="primary"
-            disabled={selectedRace === "" ? true : false}
-          >
+          <Button onClick={() => handleAdd(charName, healClass, props.allChars, props.charUpdate, regions, server, selectedRace)} color="primary" disabled={selectedRace === "" ? true : false}>
             {t("Add")}
           </Button>
         </DialogActions>

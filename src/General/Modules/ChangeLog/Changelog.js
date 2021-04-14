@@ -16,7 +16,7 @@ export default function Changelog() {
   const [open, setOpen] = React.useState(false);
   const [scroll, setScroll] = React.useState("paper");
   const classes = useStyles();
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   const handleClickOpen = (scrollType) => () => {
     setOpen(true);
@@ -41,8 +41,8 @@ export default function Changelog() {
           </Typography>
         </DialogTitle>
         <DialogContent dividers={scroll === "paper"}>
-          {changeLog.map((key) => (
-            <Accordion elevation={0} style={{ backgroundColor: "rgb(82, 82, 82)" }}>
+          {changeLog.map((key, i) => (
+            <Accordion elevation={0} style={{ backgroundColor: "rgb(82, 82, 82)" }} key={i}>
               <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content" id="panel1a-header">
                 <Typography className={classes.heading}>
                   {t("Changelog.Version")}: {key.version} - {t("Changelog.Update")}: {key.update} - {t("Changelog.Date")}: {key.date}
@@ -51,8 +51,8 @@ export default function Changelog() {
               <Divider variant="middle" />
               <AccordionDetails>
                 <Grid container spacing={1}>
-                  {key.changes.map((changes) => (
-                    <Grid item xs={12}>
+                  {key.changes.map((changes, i) => (
+                    <Grid item xs={12} key={i}>
                       <Typography> • {changes}</Typography>
                     </Grid>
                   ))}

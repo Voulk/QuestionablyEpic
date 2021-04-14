@@ -33,13 +33,13 @@ class ItemSet {
   setStats = {};
 
   // This is for testing purposes only. It will print every item in the collection to the console.
-  printSet() {
-    console.log("Printing Set with ID: " + this.id + ". Soft score: " + this.sumSoftScore + ". Hard Score: " + this.hardScore + " with stats: " + JSON.stringify(this.setStats));
-    console.log("Sockets: " + this.setSockets);
-    for (var i = 0; i < this.itemList.length; i++) {
-      console.log(getTranslatedItemName(this.itemList[i].id, "en") + ". Soft: " + this.itemList[i].softScore + ". Crit: " + this.itemList[i].stats.crit);
-    }
-  }
+  // printSet() {
+  //   console.log("Printing Set with ID: " + this.id + ". Soft score: " + this.sumSoftScore + ". Hard Score: " + this.hardScore + " with stats: " + JSON.stringify(this.setStats));
+  //   console.log("Sockets: " + this.setSockets);
+  //   for (var i = 0; i < this.itemList.length; i++) {
+  //     console.log(getTranslatedItemName(this.itemList[i].id, "en") + ". Soft: " + this.itemList[i].softScore + ". Crit: " + this.itemList[i].stats.crit);
+  //   }
+  // }
 
   // Compiles the stats from the individual item list.
   compileStats() {

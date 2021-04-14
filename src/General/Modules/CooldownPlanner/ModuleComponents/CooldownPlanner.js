@@ -18,7 +18,7 @@ import bossAbilityIcons from "../Functions/IconFunctions/BossAbilityIcons";
 import classIcons from "../Functions/IconFunctions/ClassIcons";
 import ls from "local-storage";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   formControl: {
     // whiteSpace: "nowrap",
     lineHeight: "normal",
@@ -145,7 +145,7 @@ const tableIcons = {
 export default function CooldownPlanner(props) {
   const classes = useStyles();
   const { t, i18n } = useTranslation();
-  const { useState } = React;
+  // const { useState } = React;
   const currentLanguage = i18n.language;
   const rl = raidList;
   const setData = props.dataUpdateHandler;
@@ -230,7 +230,7 @@ export default function CooldownPlanner(props) {
       },
       headerStyle: { borderRight: "1px solid #6c6c6c" },
       render: (rowData) => (
-        <div style={{ width: 105, display: "inline-flex", alignItems: "center", width: "100%" }}>
+        <div style={{ minWidth: 105, display: "inline-flex", alignItems: "center", width: "100%" }}>
           <div>
             <a data-wowhead={"spell=" + rowData.bossAbility + "&domain=" + currentLanguage}>
               {bossAbilityIcons(rowData.bossAbility, {
@@ -278,7 +278,7 @@ export default function CooldownPlanner(props) {
                     {t("CooldownPlanner.BossAbilities." + key.guid)}
                   </MenuItem>
                 ))
-                .map((key) => [key, <Divider />])}
+                .map((key, i) => [key, <Divider key={i} />])}
             </Select>
           </FormControl>
         </ThemeProvider>
@@ -394,7 +394,7 @@ export default function CooldownPlanner(props) {
                     {key.name}
                   </MenuItem>
                 ))
-                .map((key) => [key, <Divider />])}
+                .map((key, i) => [key, <Divider key={i} />])}
               ,
               <MenuItem key={"remove"} value={""}>
                 {/* // TODO Translate */}
@@ -424,7 +424,7 @@ export default function CooldownPlanner(props) {
         </div>
       ),
       /* ----------------------- Shows the selected healers class in edit mode. ----------------------- */
-      editComponent: (props, rowData) => {
+      editComponent: (props) => {
         let data = { ...props.rowData };
         return (
           <div style={{ color: classColoursJS(data.class) }}>
@@ -447,7 +447,7 @@ export default function CooldownPlanner(props) {
       headerStyle: { borderRight: "1px solid #6c6c6c" },
       /* --------------------- Renders the Ability name that was set for this row. -------------------- */
       render: (rowData) => (
-        <div style={{ width: 105, display: "inline-flex", alignItems: "center", width: "100%" }}>
+        <div style={{ minminWidth: 105, display: "inline-flex", alignItems: "center", width: "100%" }}>
           <div>
             {abilityIcons(rowData.Cooldown, {
               height: 30,
@@ -595,7 +595,7 @@ export default function CooldownPlanner(props) {
                     {key.name}
                   </MenuItem>
                 ))
-                .map((key) => [key, <Divider />])}
+                .map((key, i) => [key, <Divider key={i} />])}
               ,
               <MenuItem key={"remove"} value={""}>
                 {/* // TODO: Translate */}
@@ -626,7 +626,7 @@ export default function CooldownPlanner(props) {
         </div>
       ),
       /* ----------------------- Shows the selected healers class in edit mode. ----------------------- */
-      editComponent: (props, rowData) => {
+      editComponent: (props) => {
         let data = { ...props.rowData };
         return (
           <div style={{ color: classColoursJS(data.class1) }}>
@@ -650,7 +650,7 @@ export default function CooldownPlanner(props) {
       headerStyle: { borderRight: "1px solid #6c6c6c" },
       /* --------------------- Renders the Ability name that was set for this row. -------------------- */
       render: (rowData) => (
-        <div style={{ width: 105, display: "inline-flex", alignItems: "center", width: "100%" }}>
+        <div style={{ minminWidth: 105, display: "inline-flex", alignItems: "center", width: "100%" }}>
           <div>
             {abilityIcons(rowData.Cooldown1, {
               height: 30,
@@ -798,7 +798,7 @@ export default function CooldownPlanner(props) {
                     {key.name}
                   </MenuItem>
                 ))
-                .map((key) => [key, <Divider />])}
+                .map((key, i) => [key, <Divider key={i} />])}
               ,
               <MenuItem key={"remove"} value={""}>
                 Remove
@@ -825,7 +825,7 @@ export default function CooldownPlanner(props) {
         </div>
       ),
       /* ----------------------- Shows the selected healers class in edit mode. ----------------------- */
-      editComponent: (props, rowData) => {
+      editComponent: (props) => {
         let data = { ...props.rowData };
         return (
           <div style={{ color: classColoursJS(data.class2) }}>
@@ -849,7 +849,7 @@ export default function CooldownPlanner(props) {
       headerStyle: { borderRight: "1px solid #6c6c6c" },
       /* --------------------- Renders the Ability name that was set for this row. -------------------- */
       render: (rowData) => (
-        <div style={{ width: 105, display: "inline-flex", alignItems: "center", width: "100%" }}>
+        <div style={{ minminWidth: 105, display: "inline-flex", alignItems: "center", width: "100%" }}>
           <div>
             {abilityIcons(rowData.Cooldown2, {
               height: 30,
@@ -997,7 +997,7 @@ export default function CooldownPlanner(props) {
                     {key.name}
                   </MenuItem>
                 ))
-                .map((key) => [key, <Divider />])}
+                .map((key, i) => [key, <Divider key={i} />])}
               ,
               <MenuItem key={"remove"} value={""}>
                 Remove
@@ -1025,7 +1025,7 @@ export default function CooldownPlanner(props) {
         </div>
       ),
       /* ----------------------- Shows the selected healers class in edit mode. ----------------------- */
-      editComponent: (props, rowData) => {
+      editComponent: (props) => {
         let data = { ...props.rowData };
         return (
           <div style={{ color: classColoursJS(data.class3) }}>
@@ -1047,7 +1047,7 @@ export default function CooldownPlanner(props) {
       headerStyle: { borderRight: "1px solid #6c6c6c" },
       /* --------------------- Renders the Ability name that was set for this row. -------------------- */
       render: (rowData) => (
-        <div style={{ width: 105, display: "inline-flex", alignItems: "center", width: "100%" }}>
+        <div style={{ minminWidth: 105, display: "inline-flex", alignItems: "center", width: "100%" }}>
           <div>
             {abilityIcons(rowData.Cooldown3, {
               height: 30,
@@ -1195,7 +1195,7 @@ export default function CooldownPlanner(props) {
                     {key.name}
                   </MenuItem>
                 ))
-                .map((key) => [key, <Divider />])}
+                .map((key, i) => [key, <Divider key={i} />])}
               ,
               <MenuItem key={"remove"} value={""}>
                 Remove
@@ -1223,7 +1223,7 @@ export default function CooldownPlanner(props) {
         </div>
       ),
       /* ----------------------- Shows the selected healers class in edit mode. ----------------------- */
-      editComponent: (props, rowData) => {
+      editComponent: (props) => {
         let data = { ...props.rowData };
         return (
           <div style={{ color: classColoursJS(data.class4) }}>
@@ -1247,7 +1247,7 @@ export default function CooldownPlanner(props) {
       headerStyle: { borderRight: "1px solid #6c6c6c" },
       /* --------------------- Renders the Ability name that was set for this row. -------------------- */
       render: (rowData) => (
-        <div style={{ width: 105, display: "inline-flex", alignItems: "center", width: "100%" }}>
+        <div style={{ minminWidth: 105, display: "inline-flex", alignItems: "center", width: "100%" }}>
           <div>
             {abilityIcons(rowData.Cooldown4, {
               height: 30,
@@ -1443,7 +1443,7 @@ export default function CooldownPlanner(props) {
               }}
             >
               {/* ------------------- Container for the Heal Team / ERT & Raid/Boss/Plan Selection ------------------- */}
-              <Grid item container spacing={1} item xs={12} sm={12} md={12} lg={6} xl={9} alignItems="center">
+              <Grid item container spacing={1} xs={12} sm={12} md={12} lg={6} xl={9} alignItems="center">
                 {/* ------------------------ Heal Team Button (Activates the Dialog Popup) ----------------------- */}
                 <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
                   <Button variant="outlined" style={{ height: 40, width: "100%", whiteSpace: "nowrap" }} color="primary" onClick={() => healTeamDialogOpen()}>
@@ -1468,7 +1468,7 @@ export default function CooldownPlanner(props) {
                             {key.raidName}
                           </MenuItem>
                         ))
-                        .map((key) => [key, <Divider />])}
+                        .map((key, i) => [key, <Divider key={i} />])}
                     </Select>
                   </FormControl>
                 </Grid>
@@ -1493,7 +1493,7 @@ export default function CooldownPlanner(props) {
                             {key.name}
                           </MenuItem>
                         ))
-                        .map((key) => [key, <Divider />])}
+                        .map((key, i) => [key, <Divider key={i} />])}
                     </Select>
                   </FormControl>
                 </Grid>

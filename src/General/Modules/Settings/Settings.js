@@ -66,8 +66,8 @@ const menuStyle = {
 
 export default function Settings(props) {
   const classes = useStyles();
-  const { t, i18n } = useTranslation();
-  const playerSpec = props.player.getSpec();
+  const { t } = useTranslation();
+  // const playerSpec = props.player.getSpec();
 
   /* ---------------------------------------- Hymnal State ---------------------------------------- */
   const [hymnalValue, setHymnalValue] = useState(props.userSettings.hymnalAllies);
@@ -76,7 +76,7 @@ export default function Settings(props) {
   const [groupValue, setgroupValue] = useState(props.userSettings.includeGroupBenefits);
 
   /* -------------------------------------- Disc Talent State ------------------------------------- */
-  const [discTalent, setDiscTalent] = useState(109964);
+  // const [discTalent, setDiscTalent] = useState(109964);
 
   /* -------------------------------------- Auto-Socket State ------------------------------------- */
   const [autoSocketValue, setAutoSocketValue] = useState(props.userSettings.autoSocket);
@@ -96,17 +96,17 @@ export default function Settings(props) {
     setAutoSocketValue(value);
   };
 
-  const options = [
-    { value: true, label: "Yes" },
-    { value: false, label: "No" },
-  ];
+  // const options = [
+  //   { value: true, label: "Yes" },
+  //   { value: false, label: "No" },
+  // ];
 
   /* ----------------------------------------- Free State ----------------------------------------- */
-  const [value3, setValue3] = useState(5);
+  // const [value3, setValue3] = useState(5);
   /* ----------------------------------------- Free State ----------------------------------------- */
-  const [value4, setValue4] = useState(5);
+  // const [value4, setValue4] = useState(5);
   /* ----------------------------------------- Free State ----------------------------------------- */
-  const [value5, setValue5] = useState(5);
+  // const [value5, setValue5] = useState(5);
 
   return (
     <div className={classes.root}>

@@ -3,7 +3,6 @@ import { Button, Grow, MenuItem, MenuList, Paper, Popper, Tooltip, Divider } fro
 import ClickAwayListener from "@material-ui/core/ClickAwayListener";
 import { makeStyles } from "@material-ui/core/styles";
 import { useTranslation } from "react-i18next";
-// import ReactCountryFlag from "react-country-flag";
 import ls from "local-storage";
 import LanguageIcon from "@material-ui/icons/Language";
 
@@ -16,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function LanguageSelector(props) {
+export default function LanguageSelector() {
   const classes = useStyles();
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;

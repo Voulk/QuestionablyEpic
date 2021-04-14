@@ -1,5 +1,5 @@
 import React from "react";
-import { AppBar, Toolbar, Button, Typography, Popover, Tooltip, Grid } from "@material-ui/core";
+import { AppBar, Toolbar, Button, Typography, Tooltip, Grid } from "@material-ui/core";
 import logo from "Images/QeAssets/QELogo.png";
 import "../QEMainMenu.css";
 import LanguageSelector from "./LanguageButton";
@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function QEHeader(props) {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
 

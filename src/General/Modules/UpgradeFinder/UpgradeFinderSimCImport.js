@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 import { getItemIcon } from "../../Engine/ItemUtilities";
 import SimCraftInput from "../SetupAndMenus/SimCraftDialog";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   slider: {
     width: "90%",
     margin: "0px 20px 35px 20px",
@@ -49,13 +49,27 @@ export default function UpgradeFinderSimC(props) {
   const simcStatus = getSimCStatus(props.player);
   const simcString = "UpgradeFinderFront.SimCBody1" + simcStatus;
 
+  const check = (simcStatus) => {
+    let style = "";
+
+    /* ----------------------- If quickcompare prop is true then only show ok. ---------------------- */
+    /* ---------------- Quickcompare doesn't need to be checked for missing items etc --------------- */
+
+    if (props.quickCompare === true) {
+      style = classes.simcok;
+    } else {
+      style = simcStatus === "Good" || simcStatus === "Missing" ? classes.simcok : classes.simcerror;
+    }
+    return style;
+  };
+
   return (
     <Grid item xs={12}>
-      <Paper elevation={0} className={simcStatus === "Good" || simcStatus === "Missing" ? classes.simcok : classes.simcerror} style={{ padding: 10 }}>
+      <Paper elevation={0} className={check(simcStatus)} style={{ padding: 10 }}>
         <Grid container justify="space-between" spacing={1}>
           <Grid item xs={12} sm={12} md={12} lg={5} xl={5} alignItems="center" container justify="center" spacing={1}>
             <Grid item xs={12} sm={12} md={12} lg={12} xl={8}>
-              <Typography color="primary" align="left" variant="h5">
+              <Typography color="primary" align="center" variant="h5">
                 {t(simcString)}
               </Typography>
             </Grid>
@@ -87,12 +101,8 @@ export default function UpgradeFinderSimC(props) {
                 {props.player.activeItems
                   .filter((key) => key.isEquipped === true)
                   .map((key, i) => (
-                    <Grid item>
-                      <a
-                        style={{ margin: "2px 2px" }}
-                        data-wowhead={"item=" + key.id + "&" + "ilvl=" + key.level + "&bonus=" + key.bonusIDS + "&domain=" + currentLanguage}
-                        key={i}
-                      >
+                    <Grid item key={i}>
+                      <a style={{ margin: "2px 2px" }} data-wowhead={"item=" + key.id + "&" + "ilvl=" + key.level + "&bonus=" + key.bonusIDS + "&domain=" + currentLanguage} key={i}>
                         <img
                           style={{
                             height: 22,

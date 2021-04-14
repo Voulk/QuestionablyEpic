@@ -10,12 +10,12 @@ import Item from "../Player/Item";
 import "./QuickCompare.css";
 //import { itemDB } from "../../Databases/ItemDB";
 import { itemDB } from "../../../Databases/ItemDB";
-import { getValidArmorTypes, getValidWeaponTypes, getItemProp, calcStatsAtLevel, getItemAllocations, scoreItem, buildWepCombos} from "../../Engine/ItemUtilities";
+import { getValidArmorTypes, getValidWeaponTypes, getItemProp, scoreItem, buildWepCombos } from "../../Engine/ItemUtilities";
 import ItemCard from "./ItemCard";
 import HelpText from "../SetupAndMenus/HelpText";
 import { CONSTRAINTS } from "../../Engine/CONSTRAINTS";
 import UpgradeFinderSimC from "../UpgradeFinder/UpgradeFinderSimCImport";
-import { useSelector } from 'react-redux'
+import { useSelector } from "react-redux";
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -76,7 +76,7 @@ function Alert(props) {
 // These are value : label pairs that automatically pull the translated version of the slot name.
 // TODO: Add the remaining slots.
 function getSlots() {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   let slots = [
     { value: "Head", activeItem: "Head", label: t("slotNames.head") },
     { value: "Neck", activeItem: "Neck", label: t("slotNames.neck") },
@@ -99,8 +99,7 @@ function getSlots() {
 }
 
 export default function QuickCompare(props) {
-
-  const contentType = useSelector(state => state.contentType)
+  const contentType = useSelector((state) => state.contentType);
 
   useEffect(() => {
     ReactGA.pageview(window.location.pathname + window.location.search);
@@ -131,24 +130,7 @@ export default function QuickCompare(props) {
   const slots = getSlots();
   const helpText = t("QuickCompare.HelpText");
 
-  /* -------------------------- SimC Module Functions ------------------------- */
-  const checkCharacterValid = (player) => {
-    const weaponSet = player.getActiveItems("AllMainhands", false, true);
-    const weapon = weaponSet.length > 0 ? weaponSet[0] : "";
-
-    return (weapon.slot === "2H Weapon" && player.getEquippedItems().length === 15) || (weapon.slot === "1H Weapon" && player.getEquippedItems().length === 16);
-  };
-
-  const getSimCStatus = () => {
-    if (props.player.activeItems.length === 0) return "Missing";
-    else if (checkCharacterValid(props.player) === false) return "Invalid";
-    else return "Good";
-  };
   /* ------------------------ End Simc Module Functions ----------------------- */
-
-  const handleClick = () => {
-    setOpen(true);
-  };
 
   const handleClickDelete = () => {
     setOpenDelete(true);
@@ -240,6 +222,7 @@ export default function QuickCompare(props) {
 
   const changeSlot = (e, v) => {
     if (v === null) {
+      return;
     } else {
       setItemDropdown([]);
       setAutoValue(v.value);
@@ -256,7 +239,7 @@ export default function QuickCompare(props) {
 
   // TODO. Calculate the score for a given item.
   // Score is calculated by multiplying out stat weights and then adding any special effects.
-  const calculateScore = (item) => {};
+  // const calculateScore = (item) => {};
 
   const wepCombos = buildWepCombos(props.player);
 
@@ -285,7 +268,7 @@ export default function QuickCompare(props) {
           <HelpText text={helpText} />
         </Grid>
         <Grid item xs={12}>
-          <UpgradeFinderSimC player={props.player} simcSnack={props.simcSnack} allChars={props.allChars} />
+          <UpgradeFinderSimC quickCompare={true} player={props.player} simcSnack={props.simcSnack} allChars={props.allChars} />
         </Grid>
         <Grid item xs={12}>
           <Paper elevation={0}>
@@ -314,7 +297,7 @@ export default function QuickCompare(props) {
                           {x.label}
                         </MenuItem>
                       ))
-                      .map((key) => [key, <Divider />])}
+                      .map((key, i) => [key, <Divider key={i} />])}
                   </Select>
                 </FormControl>
               </Grid>
@@ -342,12 +325,12 @@ export default function QuickCompare(props) {
                     onInputChange={(event, newInputValue) => {
                       setInputValue(newInputValue);
                     }}
-                    ListboxProps={{
-                      style: {
-                        border: "1px solid rgba(255, 255, 255, 0.23)",
-                        padding: 0,
-                      },
-                    }}
+                    // ListboxProps={{
+                    //   style: {
+                    //     border: "1px solid rgba(255, 255, 255, 0.23)",
+                    //     padding: 0,
+                    //   },
+                    // }}
                     style={{ width: "100%" }}
                     renderInput={(params) => <TextField {...params} label={t("QuickCompare.ItemName")} variant="outlined" />}
                     ListboxProps={{ style: { border: "1px solid rgba(255, 255, 255, 0.23)", borderRadius: 4, paddingTop: 0, paddingBottom: 0 } }}
@@ -423,14 +406,7 @@ export default function QuickCompare(props) {
                   disabled={itemLevel === "" ? true : false}
                 >
                   <InputLabel id="itemtertiary">{t("QuickCompare.Tertiary")}</InputLabel>
-                  <Select
-                    key={"TertiarySelect"}
-                    labelId="itemtertiary"
-                    value={itemTertiary}
-                    onChange={itemTertiaryChanged}
-                    MenuProps={menuStyle}
-                    label={t("QuickCompare.Tertiary")}
-                  >
+                  <Select key={"TertiarySelect"} labelId="itemtertiary" value={itemTertiary} onChange={itemTertiaryChanged} MenuProps={menuStyle} label={t("QuickCompare.Tertiary")}>
                     {[
                       <MenuItem key={"LeechItem"} label={t("Leech")} value={"Leech"}>
                         {t("Leech")}
@@ -496,15 +472,14 @@ export default function QuickCompare(props) {
           </Paper>
         </Grid>
 
-
         {/* -------------------------------------------------------------------------- */
         /*                             Header/Item Mapping                            */
         /* -------------------------------------------------------------------------- */}
 
         {slots
           .filter((filter) => [...props.player.getActiveItems(filter.activeItem)].length > 0)
-          .map((key) => (
-            <Grid item xs={12}>
+          .map((key, i) => (
+            <Grid item xs={12} key={i}>
               <Grid container spacing={1}>
                 {/* Helm */}
                 <Grid item xs={12}>

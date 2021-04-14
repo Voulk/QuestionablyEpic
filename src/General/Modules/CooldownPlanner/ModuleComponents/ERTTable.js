@@ -9,7 +9,7 @@ import { localizationRU } from "locale/ru/TableLocale";
 import { localizationCH } from "locale/ch/TableLocale";
 import { useTranslation } from "react-i18next";
 import { Divider, Grid, InputLabel, FormControl, MenuItem, Select, Paper, Typography } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
+import moment from 'moment';
 
 const theme = createMuiTheme({
   overrides: {
@@ -42,13 +42,6 @@ const theme = createMuiTheme({
     secondary: { main: "#e0e0e0" },
   },
 });
-
-const useStyles = makeStyles((theme) => ({
-  formControl: {
-    whiteSpace: "nowrap",
-    width: "100%",
-  },
-}));
 
 const SearchFieldOverride = createMuiTheme({
   overrides: {
@@ -246,7 +239,7 @@ export default function ERTTable(props) {
             icon: () => <FileCopyIcon {...props} style={{ color: "#ffee77" }} />,
             tooltip: "Copy to Clipboard",
             isFreeAction: true,
-            onClick: (event) => copyToClipboard(ertType),
+            onClick: () => copyToClipboard(ertType),
           },
         ]}
         options={{

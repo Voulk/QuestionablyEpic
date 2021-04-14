@@ -13,9 +13,9 @@ import ShadowPriestIcon from "Images/Classes/Priest/Specialisation/Shadow/Shadow
 import { Translation } from "react-i18next";
 
 export const classMenus = [
-  <ListSubheader>Healers</ListSubheader>,
-  <Divider />,
-  <MenuItem style={{ color: "#F58CBA" }} value={"HolyPaladin"}>
+  <ListSubheader key={"Header1"} >Healers</ListSubheader>,
+  <Divider key={"Divider1"}/>,
+  <MenuItem style={{ color: "#F58CBA" }} value={"HolyPaladin"} key="HolyPaladin">
     <img
       style={{
         height: 20,
@@ -28,8 +28,8 @@ export const classMenus = [
     />
     <Translation>{(t, { i18n }) => t("CooldownPlanner.Classes.HolyPaladin")}</Translation>
   </MenuItem>,
-  <Divider />,
-  <MenuItem style={{ color: "#FF7D0A" }} value={"RestorationDruid"}>
+  <Divider key={"Divider1"} />,
+  <MenuItem style={{ color: "#FF7D0A" }} value={"RestorationDruid"} key="RestorationDruid">
     <img
       style={{
         height: 20,
@@ -42,8 +42,8 @@ export const classMenus = [
     />
     <Translation>{(t, { i18n }) => t("CooldownPlanner.Classes.RestorationDruid")}</Translation>
   </MenuItem>,
-  <Divider />,
-  <MenuItem style={{ color: "#FFFFFF" }} value={"HolyPriest"}>
+  <Divider key={"Divider2"} />,
+  <MenuItem style={{ color: "#FFFFFF" }} value={"HolyPriest"} key="HolyPriest">
     <img
       style={{
         height: 20,
@@ -56,8 +56,8 @@ export const classMenus = [
     />
     <Translation>{(t, { i18n }) => t("CooldownPlanner.Classes.HolyPriest")}</Translation>
   </MenuItem>,
-  <Divider />,
-  <MenuItem style={{ color: "#FFFFFF" }} value={"DisciplinePriest"}>
+  <Divider key={"Divider3"} />,
+  <MenuItem style={{ color: "#FFFFFF" }} value={"DisciplinePriest"} key="DisciplinePriest">
     <img
       style={{
         height: 20,
@@ -70,8 +70,8 @@ export const classMenus = [
     />
     <Translation>{(t, { i18n }) => t("CooldownPlanner.Classes.DisciplinePriest")}</Translation>
   </MenuItem>,
-  <Divider />,
-  <MenuItem style={{ color: "#0070DE" }} value={"RestorationShaman"}>
+  <Divider key={"Divider4"} />,
+  <MenuItem style={{ color: "#0070DE" }} value={"RestorationShaman"} key="RestorationShaman">
     <img
       style={{
         height: 20,
@@ -84,8 +84,8 @@ export const classMenus = [
     />
     <Translation>{(t, { i18n }) => t("CooldownPlanner.Classes.RestorationShaman")}</Translation>
   </MenuItem>,
-  <Divider />,
-  <MenuItem style={{ color: "#00FF96" }} value={"MistweaverMonk"}>
+  <Divider key={"Divider5"} />,
+  <MenuItem style={{ color: "#00FF96" }} value={"MistweaverMonk"} key="MistweaverMonk">
     <img
       style={{
         height: 20,
@@ -98,10 +98,10 @@ export const classMenus = [
     />
     <Translation>{(t, { i18n }) => t("CooldownPlanner.Classes.MistweaverMonk")}</Translation>
   </MenuItem>,
-  <Divider />,
-  <ListSubheader>Utility</ListSubheader>,
-  <Divider />,
-  <MenuItem style={{ color: "#A330C9" }} value={"HavocDemonHunter"}>
+  <Divider key={6} />,
+  <ListSubheader key={"Header2"} >Utility</ListSubheader>,
+  <Divider key={"Divider6"} />,
+  <MenuItem style={{ color: "#A330C9" }} value={"HavocDemonHunter"} key="HavocDemonHunter">
     <img
       style={{
         height: 20,
@@ -114,8 +114,8 @@ export const classMenus = [
     />
     <Translation>{(t, { i18n }) => t("CooldownPlanner.Classes.HavocDemonHunter")}</Translation>
   </MenuItem>,
-  <Divider />,
-  <MenuItem style={{ color: "#C79C6E" }} value={"Warrior"}>
+  <Divider key={"Divider7"} />,
+  <MenuItem style={{ color: "#C79C6E" }} value={"Warrior"} key="Warrior">
     <img
       style={{
         height: 20,
@@ -128,8 +128,8 @@ export const classMenus = [
     />
     <Translation>{(t, { i18n }) => t("CooldownPlanner.Classes.Warrior")}</Translation>
   </MenuItem>,
-  <Divider />,
-  <MenuItem style={{ color: "#C41E3A" }} value={"DeathKnight"}>
+  <Divider key={"Divider8"} />,
+  <MenuItem style={{ color: "#C41E3A" }} value={"DeathKnight"} key="DeathKnight">
     <img
       style={{
         height: 20,
@@ -142,8 +142,8 @@ export const classMenus = [
     />
     <Translation>{(t, { i18n }) => t("CooldownPlanner.Classes.DeathKnight")}</Translation>
   </MenuItem>,
-  <Divider />,
-  <MenuItem style={{ color: "#FFFFFF" }} value={"ShadowPriest"}>
+  <Divider key={"Divider9"} />,
+  <MenuItem style={{ color: "#FFFFFF" }} value={"ShadowPriest"} key="ShadowPriest">
     <img
       style={{
         height: 20,
@@ -156,5 +156,5 @@ export const classMenus = [
     />
     <Translation>{(t, { i18n }) => t("CooldownPlanner.Classes.ShadowPriest")}</Translation>
   </MenuItem>,
-  <Divider />,
+  <Divider key={"Divider10"} />,
 ];

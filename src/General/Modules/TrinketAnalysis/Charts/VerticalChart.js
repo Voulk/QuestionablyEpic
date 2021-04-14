@@ -1,4 +1,4 @@
-import React, { PureComponent, Component } from "react";
+import React, { PureComponent } from "react";
 import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, Legend, CartesianGrid, Tooltip } from "recharts";
 // import chroma from "chroma-js";
 import { getItemIcon, getTranslatedItemName } from "../../../Engine/ItemUtilities";
@@ -7,7 +7,6 @@ import i18n from "i18next";
 
 const getLevelDiff = (trinketName, db, ilvl, map2) => {
   /* ---------- Check if item exists at item level. If not, return 0. --------- */
-
   let temp = db.filter(function (item) {
     return item.name === trinketName;
   });
@@ -15,29 +14,17 @@ const getLevelDiff = (trinketName, db, ilvl, map2) => {
   const item = temp[0];
   const pos = item.levelRange.indexOf(ilvl);
   const previousLevel = item.levelRange[pos - 1];
-  //console.log(trinketName + " at " + ilvl + ". Prev: " + previousLevel);
 
   /* ----------- Return item score - the previous item levels score. ---------- */
   if (pos > 0) {
-    //console.log("1: " + map2["i" + ilvl] + ". 2: " + map2["i" + previousLevel]);
     // added a or 0 to handle NANs
     return map2["i" + ilvl] - map2["i" + previousLevel] || 0;
   } else if (pos == 0) {
     return map2["i" + ilvl];
   } else {
-    //console.log("EWQ" + trinketName);
     return 0;
   }
 };
-
-/* -------------------- Old Way of retreiving Trinket ID -------------------- */
-// const getIdOfTrinket = (trinketName, db) => {
-//   let temp = db.filter(function (item) {
-//     return item.name === trinketName;
-//   });
-//   const item = temp[0];
-//   return item.id;
-// };
 
 /* ------------------------ Cleans Zeros from Objects ----------------------- */
 const cleanZerosFromArray = (obj) => {
@@ -53,22 +40,19 @@ const cleanZerosFromArray = (obj) => {
 
 const truncateString = (str, num) => {
   if (str.length <= num) {
-    return str
+    return str;
   }
-  return str.slice(0, num) + '...'
-}
+  return str.slice(0, num) + "...";
+};
 export default class VerticalChart extends PureComponent {
-  constructor(props) {
+  constructor() {
     super();
   }
 
-  render(props) {
+  render() {
     const currentLanguage = i18n.language;
     const data = this.props.data;
     const db = this.props.db;
-    // const Ilvls = ["i233", "i226", "i220", "i213", "i207", "i200", "i194", "i187"];
-    // let len = Ilvls.length;
-    // let colorCodes = chroma.random();
     let arr = [];
     let cleanedArray = [];
     Object.entries(data)

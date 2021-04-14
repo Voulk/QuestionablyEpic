@@ -1,5 +1,3 @@
-import React from "react";
-
 import HoA from "../../../../../Images/MythicPlus/HallsOfAtonement/HallsOfAtonementAG.jpg";
 import MoTS from "../../../../../Images/MythicPlus/MistsOfTirnaScithe/MistsOfTirnaScitheAG.jpg";
 import NW from "../../../../../Images/MythicPlus/TheNecroticWake/TheNecroticWakeAG.jpg";
@@ -9,7 +7,7 @@ import ToP from "../../../../../Images/MythicPlus/TheaterOfPain/TheaterOfPainAG.
 import SoA from "../../../../../Images/MythicPlus/SpiresOfAscension/SpiresOfAscensionAG.jpg";
 import DoS from "../../../../../Images/MythicPlus/DeOtherSide/DeOtherSideAG.jpg";
 
-export default function DungeonHeaderIcons(props, style) {
+export default function DungeonHeaderIcons(props) {
   let source = "";
 
   if (props === 12831 || props === 1185) {

@@ -21,7 +21,7 @@ import ExternalTimeline from "./ModuleComponents/LogDetailComponents/ExternalTim
 import EnemyCastsTimeline from "./ModuleComponents/LogDetailComponents/EnemyCasts";
 
 class HolyDiver extends Component {
-  constructor(props) {
+  constructor() {
     super();
     /* ----------------------- We bind the below functions to this Component. ----------------------- */
     // This means these functions can be passed as props to other components and they will return here rather than in the component they are sent to.
@@ -212,7 +212,7 @@ class HolyDiver extends Component {
     this.setState({ ertDialogState: true });
   };
 
-  handleERTClose = (value) => {
+  handleERTClose = () => {
     this.setState({ ertDialogState: false });
   };
 
@@ -221,7 +221,7 @@ class HolyDiver extends Component {
     this.setState({ healTeamDialogState: true });
   };
 
-  handleHealTeamClose = (value) => {
+  handleHealTeamClose = () => {
     this.setState({ healTeamDialogState: false });
   };
 

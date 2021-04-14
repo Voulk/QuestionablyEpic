@@ -220,7 +220,7 @@ export default function chartCooldownUpdater(tableData) {
   /* ---------------------------------------- Time + Icons ---------------------------------------- */
   const ertNoteTimeIcons = tableData
     .filter((key) => key.Cooldown !== undefined)
-    .map((key) => (key) => {
+    .map((key) => {
       let time = "{time:" + key.time + "}";
       let option0 = classColoursERT(key.class) + key.name + "|r" + " - " + i18n.t("CooldownPlanner.ClassAbilities." + key.Cooldown);
       let option1 =
