@@ -69,7 +69,7 @@ export default function RaidGearContainer(props) {
         //.filter((key) => key === raidID)
         .map((key, i) => (
           <Grid item xs={12} key={"bossContainer-" + i} style={{ padding: "4px 0px" }}>
-            <Paper style={{  padding: 8, border: "1px solid rgba(255, 255, 255, 0.22)" }}>
+            <Paper style={{ backgroundColor: "#191c23", padding: 8, border: "1px solid rgba(255, 255, 255, 0.22)" }}>
               <Grid container spacing={2} justify="center" alignItems="flex-start">
                 <Grid item style={{ alignSelf: "center" }}>
                   <div
