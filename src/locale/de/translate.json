@@ -353,16 +353,18 @@
     },
 
     "BossNames": {
-      "2398": "Schrillschwinge",
-      "2418": "Jäger Altimor",
-      "2402": "Sun King's Salvation",
-      "2405": "Konstrukteur Xy'mox",
-      "2383": "Hungernder Zerstörer",
-      "2406": "Lady Inerva Dunkelader",
-      "2412": "The Council of Blood",
-      "2399": "Schlickfaust",
-      "2417": "Stone Legion Generals",
-      "2407": "Graf Denathrius"
+      "CastleNathria": "CastleNathria",
+      "2393": "Schrillschwinge",
+      "2429": "Jäger Altimor",
+      "2422": "Rettung des Sonnenkönigs",
+      "2418": "Konstrukteur Xy'mox",
+      "2428": "Hungernder Zerstörer",
+      "2420": "Lady Inerva Dunkelader",
+      "2426": "Der Rat des Blutes",
+      "2394": "Schlickfaust",
+      "2425": "Generäle der Steinlegion",
+      "2424": "Graf Denathrius",
+      "999": "BoE Trash Drops"
     },
 
     "DungeonNames": {
