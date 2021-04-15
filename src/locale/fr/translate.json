@@ -355,16 +355,18 @@
     },
 
     "BossNames": {
-      "2398": "Hurlaile",
-      "2418": "Altimor le Veneur",
-      "2402": "Sun King's Salvation",
-      "2405": "Artificier Xy'mox",
-      "2383": "Destructeur affamé",
-      "2406": "Dame Inerva Sombreveine",
-      "2412": "The Council of Blood",
-      "2399": "Fangepoing",
-      "2417": "Stone Legion Generals",
-      "2407": "Sire Denathrius"
+      "CastleNathria": "CastleNathria",
+      "2393": "Hurlaile",
+      "2429": "Altimor le Veneur",
+      "2422": "Salut du roi-soleil",
+      "2418": "Artificier Xy’mox",
+      "2428": "Destructeur affamé",
+      "2420": "Dame Inerva Sombreveine",
+      "2426": "Le conseil du Sang",
+      "2394": "Fangepoing",
+      "2425": "Généraux de la Légion de pierre",
+      "2424": "Sire Denathrius",
+      "999": "BoE Trash Drops"
     },
 
     "DungeonNames": {
