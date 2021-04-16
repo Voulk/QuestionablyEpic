@@ -1316,14 +1316,14 @@ export default function CooldownPlanner(props) {
   /* ------ Generates the blank plan arrays in the local storage if they don't exist already. ----- */
   useEffect(() => {
     bossList.map((key) => {
-      if (ls.get(key.zoneID + "." + key.id + ".1") === null) {
-        ls.set(key.zoneID + "." + key.id + ".1", []);
+      if (ls.get(key.zoneID + "." + key.DungeonEncounterID + ".1") === null) {
+        ls.set(key.zoneID + "." + key.DungeonEncounterID + ".1", []);
       }
-      if (ls.get(key.zoneID + "." + key.id + ".2") === null) {
-        ls.set(key.zoneID + "." + key.id + ".2", []);
+      if (ls.get(key.zoneID + "." + key.DungeonEncounterID + ".2") === null) {
+        ls.set(key.zoneID + "." + key.DungeonEncounterID + ".2", []);
       }
-      if (ls.get(key.zoneID + "." + key.id + ".3") === null) {
-        ls.set(key.zoneID + "." + key.id + ".3", []);
+      if (ls.get(key.zoneID + "." + key.DungeonEncounterID + ".3") === null) {
+        ls.set(key.zoneID + "." + key.DungeonEncounterID + ".3", []);
       }
     });
     if (ls.get("healerInfo") === null || ls.get("healerInfo") === undefined) {
@@ -1488,9 +1488,9 @@ export default function CooldownPlanner(props) {
                           return obj.zoneID === currentRaid;
                         })
                         .map((key, i) => (
-                          <MenuItem key={"BS" + i} value={key.id}>
-                            {bossIcons(key.id)}
-                            {key.name}
+                          <MenuItem key={"BS" + i} value={key.DungeonEncounterID}>
+                            {bossIcons(key.DungeonEncounterID)}
+                            {t("BossNames." + key.ID)}
                           </MenuItem>
                         ))
                         .map((key, i) => [key, <Divider key={i} />])}

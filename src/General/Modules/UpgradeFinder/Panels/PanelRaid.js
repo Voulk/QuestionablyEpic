@@ -65,7 +65,7 @@ export default function RaidGearContainer(props) {
     // Raid Panel
 
     return (
-      encounterDB[1190]
+      encounterDB[1193]
         //.filter((key) => key === raidID)
         .map((key, i) => (
           <Grid item xs={12} key={"bossContainer-" + i} style={{ padding: "4px 0px" }}>
