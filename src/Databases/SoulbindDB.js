@@ -4283,7 +4283,6 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
   },
-
 ];
 
 export const soulbindConnectors = [
@@ -4293,6 +4292,12 @@ export const soulbindConnectors = [
     - Standard Diagonal: 45 -> left, 315 -> right
     - Tight Diagonal: 55 -> left, 305 -> right
   */
+
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                             Pelagos                                            */
+  /* ---------------------------------------------------------------------------------------------- */
+
+  /* -------------------------------------------- Row 0 ------------------------------------------- */
   {
     soulbind: "Pelagos",
     src: "Vertical.PNG",
@@ -4311,6 +4316,8 @@ export const soulbindConnectors = [
     position: [305, 35],
     angle: 315,
   },
+
+  /* -------------------------------------------- Row 1 ------------------------------------------- */
   {
     soulbind: "Pelagos",
     src: "Vertical.PNG",
@@ -4329,6 +4336,8 @@ export const soulbindConnectors = [
     position: [388, 100],
     angle: 0,
   },
+
+  /* -------------------------------------------- Row 2 ------------------------------------------- */
   {
     soulbind: "Pelagos",
     src: "DiagonalShort.png",
@@ -4347,6 +4356,8 @@ export const soulbindConnectors = [
     position: [400, 198],
     angle: 55,
   },
+
+  /* -------------------------------------------- Row 3 ------------------------------------------- */
   {
     soulbind: "Pelagos",
     src: "DiagonalShort.png",
@@ -4359,30 +4370,36 @@ export const soulbindConnectors = [
     position: [304, 275],
     angle: 315,
   },
+
+  /* -------------------------------------------- Row 4 ------------------------------------------- */
   {
     soulbind: "Pelagos",
     src: "DiagonalShort.png",
     position: [215, 377],
-    angle: 315,
+    angle: 305,
   },
   {
     soulbind: "Pelagos",
     src: "DiagonalShort.png",
     position: [380, 377],
+    angle: 55,
+  },
+
+  /* -------------------------------------------- Row 5 ------------------------------------------- */
+  {
+    soulbind: "Pelagos",
+    src: "DiagonalShort.png",
+    position: [298, 435],
     angle: 45,
   },
   {
     soulbind: "Pelagos",
     src: "DiagonalShort.png",
-    position: [298, 460],
-    angle: 55,
+    position: [298, 435],
+    angle: 315,
   },
-  {
-    soulbind: "Pelagos",
-    src: "DiagonalShort.png",
-    position: [298, 460],
-    angle: 305,
-  },
+
+  /* -------------------------------------------- Row 6 ------------------------------------------- */
   {
     soulbind: "Pelagos",
     src: "DiagonalShort.png",
@@ -4396,7 +4413,61 @@ export const soulbindConnectors = [
     angle: 45,
   },
 
-  // Kleia
+  /* -------------------------------------------- Row 7 ------------------------------------------- */
+  {
+    soulbind: "Pelagos",
+    src: "Vertical.PNG",
+    position: [298, 600],
+    angle: 0,
+  },
+
+  /* -------------------------------------------- Row 8 ------------------------------------------- */
+  {
+    soulbind: "Pelagos",
+    src: "DiagonalShort.png",
+    position: [287, 710],
+    angle: 55,
+  },
+  {
+    soulbind: "Pelagos",
+    src: "DiagonalShort.png",
+    position: [305, 710],
+    angle: 305,
+  },
+
+  /* -------------------------------------------- Row 9 ------------------------------------------- */
+  {
+    soulbind: "Pelagos",
+    src: "Vertical.PNG",
+    position: [208, 740],
+    angle: 0,
+  },
+  {
+    soulbind: "Pelagos",
+    src: "Vertical.PNG",
+    position: [388, 740],
+    angle: 0,
+  },
+
+  /* ------------------------------------------- Row 10 ------------------------------------------- */
+  {
+    soulbind: "Pelagos",
+    src: "DiagonalShort.png",
+    position: [216, 860],
+    angle: 315,
+  },
+  {
+    soulbind: "Pelagos",
+    src: "DiagonalShort.png",
+    position: [380, 860],
+    angle: 45,
+  },
+
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                              Kleia                                             */
+  /* ---------------------------------------------------------------------------------------------- */
+
+  /* -------------------------------------------- Row 0 ------------------------------------------- */
   {
     soulbind: "Kleia",
     src: "DiagonalShort.png",
@@ -4409,6 +4480,8 @@ export const soulbindConnectors = [
     position: [305, 35],
     angle: 315,
   },
+
+  /* -------------------------------------------- Row 1 ------------------------------------------- */
   {
     soulbind: "Kleia",
     src: "Vertical.PNG",
@@ -4421,6 +4494,8 @@ export const soulbindConnectors = [
     position: [388, 100],
     angle: 0,
   },
+
+  /* -------------------------------------------- Row 2 ------------------------------------------- */
   {
     soulbind: "Kleia",
     src: "DiagonalShort.png",
@@ -4433,6 +4508,8 @@ export const soulbindConnectors = [
     position: [400, 198],
     angle: 55,
   },
+
+  /* -------------------------------------------- Row 3 ------------------------------------------- */
   {
     soulbind: "Kleia",
     src: "DiagonalShort.png",
@@ -4445,29 +4522,34 @@ export const soulbindConnectors = [
     position: [304, 275],
     angle: 315,
   },
+
+  /* -------------------------------------------- Row 4 ------------------------------------------- */
   {
     soulbind: "Kleia",
     src: "DiagonalShort.png",
     position: [215, 377],
-    angle: 315,
+    angle: 305,
   },
   {
     soulbind: "Kleia",
     src: "DiagonalShort.png",
     position: [380, 377],
+    angle: 55,
+  },
+
+  /* -------------------------------------------- Row 5 ------------------------------------------- */
+
+  {
+    soulbind: "Kleia",
+    src: "DiagonalShort.png",
+    position: [298, 435],
     angle: 45,
   },
   {
     soulbind: "Kleia",
     src: "DiagonalShort.png",
-    position: [298, 460],
-    angle: 55,
-  },
-  {
-    soulbind: "Kleia",
-    src: "DiagonalShort.png",
-    position: [298, 460],
-    angle: 305,
+    position: [298, 435],
+    angle: 315,
   },
   {
     soulbind: "Kleia",
@@ -4475,6 +4557,8 @@ export const soulbindConnectors = [
     position: [298, 435],
     angle: 0,
   },
+
+  /* -------------------------------------------- Row 6 ------------------------------------------- */
   {
     soulbind: "Kleia",
     src: "Vertical.PNG",
@@ -4494,7 +4578,73 @@ export const soulbindConnectors = [
     angle: 0,
   },
 
-  // Mikanikos
+  /* -------------------------------------------- Row 7 ------------------------------------------- */
+  {
+    soulbind: "Kleia",
+    src: "Vertical.PNG",
+    position: [298, 600],
+    angle: 0,
+  },
+  {
+    soulbind: "Kleia",
+    src: "DiagonalShort.png",
+    position: [216, 615],
+    angle: 315,
+  },
+  {
+    soulbind: "Kleia",
+    src: "DiagonalShort.png",
+    position: [380, 615],
+    angle: 45,
+  },
+
+  /* -------------------------------------------- Row 8 ------------------------------------------- */
+  {
+    soulbind: "Kleia",
+    src: "DiagonalShort.png",
+    position: [287, 710],
+    angle: 55,
+  },
+  {
+    soulbind: "Kleia",
+    src: "DiagonalShort.png",
+    position: [305, 710],
+    angle: 305,
+  },
+
+  /* -------------------------------------------- Row 9 ------------------------------------------- */
+  {
+    soulbind: "Kleia",
+    src: "Vertical.PNG",
+    position: [208, 740],
+    angle: 0,
+  },
+  {
+    soulbind: "Kleia",
+    src: "Vertical.PNG",
+    position: [388, 740],
+    angle: 0,
+  },
+
+  /* ------------------------------------------- Row 10 ------------------------------------------- */
+  {
+    soulbind: "Kleia",
+    src: "DiagonalShort.png",
+    position: [216, 860],
+    angle: 315,
+  },
+  {
+    soulbind: "Kleia",
+    src: "DiagonalShort.png",
+    position: [380, 860],
+    angle: 45,
+  },
+
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                            Mikanikos                                           */
+  /* ---------------------------------------------------------------------------------------------- */
+
+  /* -------------------------------------------- Row 0 ------------------------------------------- */
   {
     soulbind: "Mikanikos",
     src: "DiagonalShort.png",
@@ -4507,6 +4657,8 @@ export const soulbindConnectors = [
     position: [305, 35],
     angle: 315,
   },
+
+  /* -------------------------------------------- Row 1 ------------------------------------------- */
   {
     soulbind: "Mikanikos",
     src: "Vertical.PNG",
@@ -4519,6 +4671,8 @@ export const soulbindConnectors = [
     position: [388, 100],
     angle: 0,
   },
+
+  /* -------------------------------------------- Row 2 ------------------------------------------- */
   {
     soulbind: "Mikanikos",
     src: "DiagonalShort.png",
@@ -4532,6 +4686,8 @@ export const soulbindConnectors = [
     position: [400, 198],
     angle: 55,
   },
+
+  /* -------------------------------------------- Row 3 ------------------------------------------- */
   {
     soulbind: "Mikanikos",
     src: "DiagonalShort.png",
@@ -4544,29 +4700,34 @@ export const soulbindConnectors = [
     position: [304, 275],
     angle: 315,
   },
+
+  /* -------------------------------------------- Row 4 ------------------------------------------- */
   {
     soulbind: "Mikanikos",
     src: "DiagonalShort.png",
     position: [215, 377],
-    angle: 315,
+    angle: 305,
   },
   {
     soulbind: "Mikanikos",
     src: "DiagonalShort.png",
     position: [380, 377],
+    angle: 55,
+  },
+
+  /* -------------------------------------------- Row 5 ------------------------------------------- */
+
+  {
+    soulbind: "Mikanikos",
+    src: "DiagonalShort.png",
+    position: [298, 435],
     angle: 45,
   },
   {
     soulbind: "Mikanikos",
     src: "DiagonalShort.png",
-    position: [298, 460],
-    angle: 55,
-  },
-  {
-    soulbind: "Mikanikos",
-    src: "DiagonalShort.png",
-    position: [298, 460],
-    angle: 305,
+    position: [298, 435],
+    angle: 315,
   },
   {
     soulbind: "Mikanikos",
@@ -4574,6 +4735,8 @@ export const soulbindConnectors = [
     position: [298, 435],
     angle: 0,
   },
+
+  /* -------------------------------------------- Row 6 ------------------------------------------- */
   {
     soulbind: "Mikanikos",
     src: "Vertical.PNG",
@@ -4593,7 +4756,74 @@ export const soulbindConnectors = [
     angle: 0,
   },
 
-  // Niya
+  /* -------------------------------------------- Row 7 ------------------------------------------- */
+  {
+    soulbind: "Mikanikos",
+    src: "Vertical.PNG",
+    position: [298, 600],
+    angle: 0,
+  },
+  {
+    soulbind: "Mikanikos",
+    src: "DiagonalShort.png",
+    position: [216, 615],
+    angle: 315,
+  },
+  {
+    soulbind: "Mikanikos",
+    src: "DiagonalShort.png",
+    position: [380, 615],
+    angle: 45,
+  },
+
+  /* -------------------------------------------- Row 8 ------------------------------------------- */
+  {
+    soulbind: "Mikanikos",
+    src: "DiagonalShort.png",
+    position: [287, 710],
+    angle: 55,
+  },
+  {
+    soulbind: "Mikanikos",
+    src: "DiagonalShort.png",
+    position: [305, 710],
+    angle: 305,
+  },
+
+  /* -------------------------------------------- Row 9 ------------------------------------------- */
+  {
+    soulbind: "Mikanikos",
+    src: "Vertical.PNG",
+    position: [208, 740],
+    angle: 0,
+  },
+  {
+    soulbind: "Mikanikos",
+    src: "Vertical.PNG",
+    position: [388, 740],
+    angle: 0,
+  },
+
+  /* ------------------------------------------- Row 10 ------------------------------------------- */
+  {
+    soulbind: "Mikanikos",
+    src: "DiagonalShort.png",
+    position: [216, 860],
+    angle: 315,
+  },
+  {
+    soulbind: "Mikanikos",
+    src: "DiagonalShort.png",
+    position: [380, 860],
+    angle: 45,
+  },
+
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                              Niya                                              */
+  /* ---------------------------------------------------------------------------------------------- */
+
+  /* -------------------------------------------- Row 0 ------------------------------------------- */
+
   {
     soulbind: "Niya",
     src: "DiagonalShort.png",
@@ -4606,6 +4836,9 @@ export const soulbindConnectors = [
     position: [305, 35],
     angle: 315,
   },
+
+  /* -------------------------------------------- Row 1 ------------------------------------------- */
+
   {
     soulbind: "Niya",
     src: "Vertical.PNG",
@@ -4618,6 +4851,9 @@ export const soulbindConnectors = [
     position: [388, 100],
     angle: 0,
   },
+
+  /* -------------------------------------------- Row 2 ------------------------------------------- */
+
   {
     soulbind: "Niya",
     src: "DiagonalShort.png",
@@ -4631,6 +4867,9 @@ export const soulbindConnectors = [
     position: [400, 198],
     angle: 55,
   },
+
+  /* -------------------------------------------- Row 3 ------------------------------------------- */
+
   {
     soulbind: "Niya",
     src: "DiagonalShort.png",
@@ -4643,29 +4882,35 @@ export const soulbindConnectors = [
     position: [304, 275],
     angle: 315,
   },
+
+  /* -------------------------------------------- Row 4 ------------------------------------------- */
+
   {
     soulbind: "Niya",
     src: "DiagonalShort.png",
     position: [215, 377],
-    angle: 315,
+    angle: 305,
   },
   {
     soulbind: "Niya",
     src: "DiagonalShort.png",
     position: [380, 377],
+    angle: 55,
+  },
+
+  /* -------------------------------------------- Row 5 ------------------------------------------- */
+
+  {
+    soulbind: "Niya",
+    src: "DiagonalShort.png",
+    position: [298, 435],
     angle: 45,
   },
   {
     soulbind: "Niya",
     src: "DiagonalShort.png",
-    position: [298, 460],
-    angle: 55,
-  },
-  {
-    soulbind: "Niya",
-    src: "DiagonalShort.png",
-    position: [298, 460],
-    angle: 305,
+    position: [298, 435],
+    angle: 315,
   },
   {
     soulbind: "Niya",
@@ -4673,6 +4918,9 @@ export const soulbindConnectors = [
     position: [298, 435],
     angle: 0,
   },
+
+  /* -------------------------------------------- Row 6 ------------------------------------------- */
+
   {
     soulbind: "Niya",
     src: "Vertical.PNG",
@@ -4692,695 +4940,73 @@ export const soulbindConnectors = [
     angle: 0,
   },
 
-  // Korayn
+  /* -------------------------------------------- Row 7 ------------------------------------------- */
   {
-    soulbind: "Korayn",
-    src: "DiagonalShort.png",
-    position: [287, 35],
-    angle: 45,
+    soulbind: "Niya",
+    src: "Vertical.PNG",
+    position: [298, 600],
+    angle: 0,
   },
   {
-    soulbind: "Korayn",
+    soulbind: "Niya",
     src: "DiagonalShort.png",
-    position: [305, 35],
+    position: [216, 615],
     angle: 315,
   },
   {
-    soulbind: "Korayn",
-    src: "Vertical.PNG",
-    position: [208, 100],
-    angle: 0,
-  },
-  {
-    soulbind: "Korayn",
-    src: "Vertical.PNG",
-    position: [388, 100],
-    angle: 0,
-  },
-  {
-    soulbind: "Korayn",
+    soulbind: "Niya",
     src: "DiagonalShort.png",
-    position: [202, 198],
-    angle: 305,
+    position: [380, 615],
+    angle: 45,
   },
 
+  /* -------------------------------------------- Row 8 ------------------------------------------- */
   {
-    soulbind: "Korayn",
+    soulbind: "Niya",
     src: "DiagonalShort.png",
-    position: [400, 198],
+    position: [287, 710],
     angle: 55,
   },
   {
-    soulbind: "Korayn",
+    soulbind: "Niya",
     src: "DiagonalShort.png",
-    position: [294, 275],
-    angle: 45,
-  },
-  {
-    soulbind: "Korayn",
-    src: "DiagonalShort.png",
-    position: [304, 275],
-    angle: 315,
-  },
-  {
-    soulbind: "Korayn",
-    src: "DiagonalShort.png",
-    position: [215, 377],
-    angle: 315,
-  },
-  {
-    soulbind: "Korayn",
-    src: "DiagonalShort.png",
-    position: [380, 377],
-    angle: 45,
-  },
-  {
-    soulbind: "Korayn",
-    src: "DiagonalShort.png",
-    position: [298, 460],
-    angle: 55,
-  },
-  {
-    soulbind: "Korayn",
-    src: "DiagonalShort.png",
-    position: [298, 460],
-    angle: 305,
-  },
-  {
-    soulbind: "Korayn",
-    src: "Vertical.PNG",
-    position: [298, 435],
-    angle: 0,
-  },
-  {
-    soulbind: "Korayn",
-    src: "Vertical.PNG",
-    position: [298, 510],
-    angle: 0,
-  },
-  {
-    soulbind: "Korayn",
-    src: "Vertical.PNG",
-    position: [208, 494],
-    angle: 0,
-  },
-  {
-    soulbind: "Korayn",
-    src: "Vertical.PNG",
-    position: [388, 494],
-    angle: 0,
-  },
-
-  // Theotar
-  {
-    soulbind: "Nadjia",
-    src: "DiagonalShort.png",
-    position: [287, 35],
-    angle: 45,
-  },
-  {
-    soulbind: "Nadjia",
-    src: "DiagonalShort.png",
-    position: [305, 35],
-    angle: 315,
-  },
-  {
-    soulbind: "Nadjia",
-    src: "Vertical.PNG",
-    position: [208, 100],
-    angle: 0,
-  },
-  {
-    soulbind: "Nadjia",
-    src: "Vertical.PNG",
-    position: [388, 100],
-    angle: 0,
-  },
-  {
-    soulbind: "Nadjia",
-    src: "DiagonalShort.png",
-    position: [202, 198],
+    position: [305, 710],
     angle: 305,
   },
 
+  /* -------------------------------------------- Row 9 ------------------------------------------- */
   {
-    soulbind: "Nadjia",
-    src: "DiagonalShort.png",
-    position: [400, 198],
-    angle: 55,
+    soulbind: "Niya",
+    src: "Vertical.PNG",
+    position: [208, 740],
+    angle: 0,
   },
   {
-    soulbind: "Nadjia",
+    soulbind: "Niya",
     src: "Vertical.PNG",
-    position: [298, 250],
+    position: [388, 740],
     angle: 0,
   },
 
+  /* ------------------------------------------- Row 10 ------------------------------------------- */
   {
-    soulbind: "Nadjia",
-    src: "Vertical.PNG",
-    position: [298, 350],
-    angle: 0,
-  },
-
-  {
-    soulbind: "Nadjia",
+    soulbind: "Niya",
     src: "DiagonalShort.png",
-    position: [298, 460],
-    angle: 55,
-  },
-  {
-    soulbind: "Nadjia",
-    src: "DiagonalShort.png",
-    position: [298, 460],
-    angle: 305,
-  },
-  {
-    soulbind: "Nadjia",
-    src: "Vertical.PNG",
-    position: [298, 435],
-    angle: 0,
-  },
-  {
-    soulbind: "Nadjia",
-    src: "Vertical.PNG",
-    position: [298, 510],
-    angle: 0,
-  },
-  {
-    soulbind: "Nadjia",
-    src: "Vertical.PNG",
-    position: [208, 494],
-    angle: 0,
-  },
-  {
-    soulbind: "Nadjia",
-    src: "Vertical.PNG",
-    position: [388, 494],
-    angle: 0,
-  },
-
-  // Theotar
-  {
-    soulbind: "Theotar",
-    src: "DiagonalShort.png",
-    position: [287, 35],
-    angle: 45,
-  },
-  {
-    soulbind: "Theotar",
-    src: "DiagonalShort.png",
-    position: [305, 35],
+    position: [216, 860],
     angle: 315,
   },
   {
-    soulbind: "Theotar",
-    src: "Vertical.PNG",
-    position: [208, 100],
-    angle: 0,
-  },
-  {
-    soulbind: "Theotar",
-    src: "Vertical.PNG",
-    position: [388, 100],
-    angle: 0,
-  },
-  {
-    soulbind: "Theotar",
+    soulbind: "Niya",
     src: "DiagonalShort.png",
-    position: [202, 198],
-    angle: 305,
-  },
-
-  {
-    soulbind: "Theotar",
-    src: "DiagonalShort.png",
-    position: [400, 198],
-    angle: 55,
-  },
-  {
-    soulbind: "Theotar",
-    src: "DiagonalShort.png",
-    position: [294, 275],
-    angle: 45,
-  },
-  {
-    soulbind: "Theotar",
-    src: "DiagonalShort.png",
-    position: [304, 275],
-    angle: 315,
-  },
-  {
-    soulbind: "Theotar",
-    src: "DiagonalShort.png",
-    position: [215, 377],
-    angle: 315,
-  },
-  {
-    soulbind: "Theotar",
-    src: "DiagonalShort.png",
-    position: [380, 377],
-    angle: 45,
-  },
-  {
-    soulbind: "Theotar",
-    src: "DiagonalShort.png",
-    position: [298, 460],
-    angle: 55,
-  },
-  {
-    soulbind: "Theotar",
-    src: "DiagonalShort.png",
-    position: [298, 460],
-    angle: 305,
-  },
-  {
-    soulbind: "Theotar",
-    src: "Vertical.PNG",
-    position: [298, 435],
-    angle: 0,
-  },
-  {
-    soulbind: "Theotar",
-    src: "Vertical.PNG",
-    position: [298, 510],
-    angle: 0,
-  },
-  {
-    soulbind: "Theotar",
-    src: "Vertical.PNG",
-    position: [208, 494],
-    angle: 0,
-  },
-  {
-    soulbind: "Theotar",
-    src: "Vertical.PNG",
-    position: [388, 494],
-    angle: 0,
-  },
-
-  // Draven
-  {
-    soulbind: "Draven",
-    src: "DiagonalShort.png",
-    position: [287, 35],
-    angle: 45,
-  },
-  {
-    soulbind: "Draven",
-    src: "DiagonalShort.png",
-    position: [305, 35],
-    angle: 315,
-  },
-  {
-    soulbind: "Draven",
-    src: "Vertical.PNG",
-    position: [208, 100],
-    angle: 0,
-  },
-  {
-    soulbind: "Draven",
-    src: "Vertical.PNG",
-    position: [388, 100],
-    angle: 0,
-  },
-  {
-    soulbind: "Draven",
-    src: "DiagonalShort.png",
-    position: [202, 198],
-    angle: 305,
-  },
-
-  {
-    soulbind: "Draven",
-    src: "DiagonalShort.png",
-    position: [400, 198],
-    angle: 55,
-  },
-  {
-    soulbind: "Draven",
-    src: "DiagonalShort.png",
-    position: [294, 275],
-    angle: 45,
-  },
-  {
-    soulbind: "Draven",
-    src: "DiagonalShort.png",
-    position: [304, 275],
-    angle: 315,
-  },
-  {
-    soulbind: "Draven",
-    src: "DiagonalShort.png",
-    position: [215, 377],
-    angle: 315,
-  },
-  {
-    soulbind: "Draven",
-    src: "DiagonalShort.png",
-    position: [380, 377],
-    angle: 45,
-  },
-  {
-    soulbind: "Draven",
-    src: "DiagonalShort.png",
-    position: [298, 460],
-    angle: 55,
-  },
-  {
-    soulbind: "Draven",
-    src: "DiagonalShort.png",
-    position: [298, 460],
-    angle: 305,
-  },
-  {
-    soulbind: "Draven",
-    src: "Vertical.PNG",
-    position: [298, 435],
-    angle: 0,
-  },
-  {
-    soulbind: "Draven",
-    src: "Vertical.PNG",
-    position: [298, 510],
-    angle: 0,
-  },
-  {
-    soulbind: "Draven",
-    src: "Vertical.PNG",
-    position: [208, 494],
-    angle: 0,
-  },
-  {
-    soulbind: "Draven",
-    src: "Vertical.PNG",
-    position: [388, 494],
-    angle: 0,
-  },
-
-  // Emeni
-  {
-    soulbind: "Emeni",
-    src: "DiagonalShort.png",
-    position: [287, 35],
-    angle: 45,
-  },
-  {
-    soulbind: "Emeni",
-    src: "DiagonalShort.png",
-    position: [305, 35],
-    angle: 315,
-  },
-  {
-    soulbind: "Emeni",
-    src: "Vertical.PNG",
-    position: [208, 100],
-    angle: 0,
-  },
-  {
-    soulbind: "Emeni",
-    src: "Vertical.PNG",
-    position: [388, 100],
-    angle: 0,
-  },
-  {
-    soulbind: "Emeni",
-    src: "DiagonalShort.png",
-    position: [202, 198],
-    angle: 305,
-  },
-
-  {
-    soulbind: "Emeni",
-    src: "DiagonalShort.png",
-    position: [400, 198],
-    angle: 55,
-  },
-  {
-    soulbind: "Emeni",
-    src: "DiagonalShort.png",
-    position: [294, 275],
-    angle: 45,
-  },
-  {
-    soulbind: "Emeni",
-    src: "DiagonalShort.png",
-    position: [304, 275],
-    angle: 315,
-  },
-  {
-    soulbind: "Emeni",
-    src: "DiagonalShort.png",
-    position: [215, 377],
-    angle: 315,
-  },
-  {
-    soulbind: "Emeni",
-    src: "DiagonalShort.png",
-    position: [380, 377],
-    angle: 45,
-  },
-  {
-    soulbind: "Emeni",
-    src: "DiagonalShort.png",
-    position: [298, 460],
-    angle: 55,
-  },
-  {
-    soulbind: "Emeni",
-    src: "DiagonalShort.png",
-    position: [298, 460],
-    angle: 305,
-  },
-  {
-    soulbind: "Emeni",
-    src: "Vertical.PNG",
-    position: [298, 435],
-    angle: 0,
-  },
-  {
-    soulbind: "Emeni",
-    src: "Vertical.PNG",
-    position: [298, 510],
-    angle: 0,
-  },
-  {
-    soulbind: "Emeni",
-    src: "Vertical.PNG",
-    position: [208, 494],
-    angle: 0,
-  },
-  {
-    soulbind: "Emeni",
-    src: "Vertical.PNG",
-    position: [388, 494],
-    angle: 0,
-  },
-
-  // Emeni
-  {
-    soulbind: "Heirmir",
-    src: "DiagonalShort.png",
-    position: [287, 35],
-    angle: 45,
-  },
-  {
-    soulbind: "Heirmir",
-    src: "DiagonalShort.png",
-    position: [305, 35],
-    angle: 315,
-  },
-  {
-    soulbind: "Heirmir",
-    src: "Vertical.PNG",
-    position: [208, 100],
-    angle: 0,
-  },
-  {
-    soulbind: "Heirmir",
-    src: "Vertical.PNG",
-    position: [388, 100],
-    angle: 0,
-  },
-  {
-    soulbind: "Heirmir",
-    src: "DiagonalShort.png",
-    position: [202, 198],
-    angle: 305,
-  },
-
-  {
-    soulbind: "Heirmir",
-    src: "DiagonalShort.png",
-    position: [400, 198],
-    angle: 55,
-  },
-  {
-    soulbind: "Heirmir",
-    src: "DiagonalShort.png",
-    position: [294, 275],
-    angle: 45,
-  },
-  {
-    soulbind: "Heirmir",
-    src: "DiagonalShort.png",
-    position: [304, 275],
-    angle: 315,
-  },
-  {
-    soulbind: "Heirmir",
-    src: "DiagonalShort.png",
-    position: [215, 377],
-    angle: 315,
-  },
-  {
-    soulbind: "Heirmir",
-    src: "DiagonalShort.png",
-    position: [380, 377],
-    angle: 45,
-  },
-  {
-    soulbind: "Heirmir",
-    src: "DiagonalShort.png",
-    position: [298, 460],
-    angle: 55,
-  },
-  {
-    soulbind: "Heirmir",
-    src: "DiagonalShort.png",
-    position: [298, 460],
-    angle: 305,
-  },
-  {
-    soulbind: "Heirmir",
-    src: "Vertical.PNG",
-    position: [298, 435],
-    angle: 0,
-  },
-  {
-    soulbind: "Heirmir",
-    src: "Vertical.PNG",
-    position: [298, 510],
-    angle: 0,
-  },
-  {
-    soulbind: "Heirmir",
-    src: "Vertical.PNG",
-    position: [208, 494],
-    angle: 0,
-  },
-  {
-    soulbind: "Heirmir",
-    src: "Vertical.PNG",
-    position: [388, 494],
-    angle: 0,
-  },
-
-  // Marileth
-  {
-    soulbind: "Marileth",
-    src: "Vertical.PNG",
-    position: [298, 10],
-    angle: 0,
-  },
-  {
-    soulbind: "Marileth",
-    src: "DiagonalShort.png",
-    position: [287, 35],
-    angle: 45,
-  },
-  {
-    soulbind: "Marileth",
-    src: "DiagonalShort.png",
-    position: [305, 35],
-    angle: 315,
-  },
-  {
-    soulbind: "Marileth",
-    src: "Vertical.PNG",
-    position: [208, 100],
-    angle: 0,
-  },
-  {
-    soulbind: "Marileth",
-    src: "Vertical.PNG",
-    position: [298, 85],
-    angle: 0,
-  },
-  {
-    soulbind: "Marileth",
-    src: "Vertical.PNG",
-    position: [388, 100],
-    angle: 0,
-  },
-  {
-    soulbind: "Marileth",
-    src: "DiagonalShort.png",
-    position: [202, 198],
-    angle: 305,
-  },
-  {
-    soulbind: "Marileth",
-    src: "Vertical.PNG",
-    position: [298, 165],
-    angle: 0,
-  },
-  {
-    soulbind: "Marileth",
-    src: "DiagonalShort.png",
-    position: [400, 198],
-    angle: 55,
-  },
-  {
-    soulbind: "Marileth",
-    src: "DiagonalShort.png",
-    position: [294, 275],
-    angle: 45,
-  },
-  {
-    soulbind: "Marileth",
-    src: "DiagonalShort.png",
-    position: [304, 275],
-    angle: 315,
-  },
-  {
-    soulbind: "Marileth",
-    src: "DiagonalShort.png",
-    position: [215, 377],
-    angle: 315,
-  },
-  {
-    soulbind: "Marileth",
-    src: "DiagonalShort.png",
-    position: [380, 377],
-    angle: 45,
-  },
-  {
-    soulbind: "Marileth",
-    src: "DiagonalShort.png",
-    position: [298, 460],
-    angle: 55,
-  },
-  {
-    soulbind: "Marileth",
-    src: "DiagonalShort.png",
-    position: [298, 460],
-    angle: 305,
-  },
-  {
-    soulbind: "Marileth",
-    src: "DiagonalShort.png",
-    position: [216, 533],
-    angle: 315,
-  },
-  {
-    soulbind: "Marileth",
-    src: "DiagonalShort.png",
-    position: [380, 533],
+    position: [380, 860],
     angle: 45,
   },
 
-  // Dreamweaver
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                           Dreamweaver                                          */
+  /* ---------------------------------------------------------------------------------------------- */
+
+  /* -------------------------------------------- Row 0 ------------------------------------------- */
   {
     soulbind: "Dreamweaver",
     src: "DiagonalShort.png",
@@ -5393,6 +5019,8 @@ export const soulbindConnectors = [
     position: [305, 35],
     angle: 315,
   },
+
+  /* -------------------------------------------- Row 1 ------------------------------------------- */
   {
     soulbind: "Dreamweaver",
     src: "DiagonalShort.png",
@@ -5405,6 +5033,8 @@ export const soulbindConnectors = [
     position: [395, 118],
     angle: 55,
   },
+
+  /* -------------------------------------------- Row 2 ------------------------------------------- */
   {
     soulbind: "Dreamweaver",
     src: "DiagonalShort.png",
@@ -5423,6 +5053,8 @@ export const soulbindConnectors = [
     position: [298, 160],
     angle: 0,
   },
+
+  /* -------------------------------------------- Row 3 ------------------------------------------- */
   {
     soulbind: "Dreamweaver",
     src: "Vertical.PNG",
@@ -5432,7 +5064,7 @@ export const soulbindConnectors = [
   {
     soulbind: "Dreamweaver",
     src: "Vertical.PNG",
-    position: [298, 255],
+    position: [298, 235],
     angle: 0,
   },
   {
@@ -5441,36 +5073,42 @@ export const soulbindConnectors = [
     position: [388, 255],
     angle: 0,
   },
+
+  /* -------------------------------------------- Row 4 ------------------------------------------- */
   {
     soulbind: "Dreamweaver",
     src: "Vertical.PNG",
-    position: [298, 350],
+    position: [298, 315],
     angle: 0,
   },
   {
     soulbind: "Dreamweaver",
     src: "DiagonalShort.png",
-    position: [215, 377],
-    angle: 315,
+    position: [206, 365],
+    angle: 305,
   },
   {
     soulbind: "Dreamweaver",
     src: "DiagonalShort.png",
-    position: [380, 377],
+    position: [395, 365],
+    angle: 55,
+  },
+
+  /* -------------------------------------------- Row 5 ------------------------------------------- */
+  {
+    soulbind: "Dreamweaver",
+    src: "DiagonalShort.png",
+    position: [298, 435],
     angle: 45,
   },
   {
     soulbind: "Dreamweaver",
     src: "DiagonalShort.png",
-    position: [298, 460],
-    angle: 55,
+    position: [298, 435],
+    angle: 315,
   },
-  {
-    soulbind: "Dreamweaver",
-    src: "DiagonalShort.png",
-    position: [298, 460],
-    angle: 305,
-  },
+
+  /* -------------------------------------------- Row 6 ------------------------------------------- */
   {
     soulbind: "Dreamweaver",
     src: "DiagonalShort.png",
@@ -5481,6 +5119,1283 @@ export const soulbindConnectors = [
     soulbind: "Dreamweaver",
     src: "DiagonalShort.png",
     position: [380, 533],
+    angle: 45,
+  },
+
+  /* -------------------------------------------- Row 7 ------------------------------------------- */
+  {
+    soulbind: "Dreamweaver",
+    src: "Vertical.PNG",
+    position: [298, 600],
+    angle: 0,
+  },
+
+  /* -------------------------------------------- Row 8 ------------------------------------------- */
+  {
+    soulbind: "Dreamweaver",
+    src: "DiagonalShort.png",
+    position: [287, 710],
+    angle: 55,
+  },
+  {
+    soulbind: "Dreamweaver",
+    src: "DiagonalShort.png",
+    position: [305, 710],
+    angle: 305,
+  },
+
+  /* -------------------------------------------- Row 9 ------------------------------------------- */
+  {
+    soulbind: "Dreamweaver",
+    src: "Vertical.PNG",
+    position: [208, 740],
+    angle: 0,
+  },
+  {
+    soulbind: "Dreamweaver",
+    src: "Vertical.PNG",
+    position: [388, 740],
+    angle: 0,
+  },
+
+  /* ------------------------------------------- Row 10 ------------------------------------------- */
+  {
+    soulbind: "Dreamweaver",
+    src: "DiagonalShort.png",
+    position: [216, 860],
+    angle: 315,
+  },
+  {
+    soulbind: "Dreamweaver",
+    src: "DiagonalShort.png",
+    position: [380, 860],
+    angle: 45,
+  },
+
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                             Korayn                                             */
+  /* ---------------------------------------------------------------------------------------------- */
+
+  /* -------------------------------------------- Row 0 ------------------------------------------- */
+  {
+    soulbind: "Korayn",
+    src: "DiagonalShort.png",
+    position: [287, 35],
+    angle: 45,
+  },
+  {
+    soulbind: "Korayn",
+    src: "DiagonalShort.png",
+    position: [305, 35],
+    angle: 315,
+  },
+
+  /* -------------------------------------------- Row 1 ------------------------------------------- */
+  {
+    soulbind: "Korayn",
+    src: "Vertical.PNG",
+    position: [208, 100],
+    angle: 0,
+  },
+  {
+    soulbind: "Korayn",
+    src: "Vertical.PNG",
+    position: [388, 100],
+    angle: 0,
+  },
+
+  /* -------------------------------------------- Row 2 ------------------------------------------- */
+  {
+    soulbind: "Korayn",
+    src: "DiagonalShort.png",
+    position: [202, 198],
+    angle: 305,
+  },
+
+  {
+    soulbind: "Korayn",
+    src: "DiagonalShort.png",
+    position: [400, 198],
+    angle: 55,
+  },
+
+  /* -------------------------------------------- Row 3 ------------------------------------------- */
+  {
+    soulbind: "Korayn",
+    src: "DiagonalShort.png",
+    position: [294, 275],
+    angle: 45,
+  },
+  {
+    soulbind: "Korayn",
+    src: "DiagonalShort.png",
+    position: [304, 275],
+    angle: 315,
+  },
+
+  /* -------------------------------------------- Row 4 ------------------------------------------- */
+  {
+    soulbind: "Korayn",
+    src: "DiagonalShort.png",
+    position: [215, 377],
+    angle: 305,
+  },
+  {
+    soulbind: "Korayn",
+    src: "DiagonalShort.png",
+    position: [380, 377],
+    angle: 55,
+  },
+
+  /* -------------------------------------------- Row 5 ------------------------------------------- */
+  {
+    soulbind: "Korayn",
+    src: "DiagonalShort.png",
+    position: [298, 435],
+    angle: 45,
+  },
+  {
+    soulbind: "Korayn",
+    src: "DiagonalShort.png",
+    position: [298, 435],
+    angle: 315,
+  },
+  {
+    soulbind: "Korayn",
+    src: "Vertical.PNG",
+    position: [298, 435],
+    angle: 0,
+  },
+
+  /* -------------------------------------------- Row 6 ------------------------------------------- */
+  {
+    soulbind: "Korayn",
+    src: "Vertical.PNG",
+    position: [298, 510],
+    angle: 0,
+  },
+  {
+    soulbind: "Korayn",
+    src: "Vertical.PNG",
+    position: [208, 494],
+    angle: 0,
+  },
+  {
+    soulbind: "Korayn",
+    src: "Vertical.PNG",
+    position: [388, 494],
+    angle: 0,
+  },
+
+  /* -------------------------------------------- Row 7 ------------------------------------------- */
+  {
+    soulbind: "Korayn",
+    src: "Vertical.PNG",
+    position: [298, 600],
+    angle: 0,
+  },
+  {
+    soulbind: "Korayn",
+    src: "DiagonalShort.png",
+    position: [216, 615],
+    angle: 315,
+  },
+  {
+    soulbind: "Korayn",
+    src: "DiagonalShort.png",
+    position: [380, 615],
+    angle: 45,
+  },
+
+  /* -------------------------------------------- Row 8 ------------------------------------------- */
+  {
+    soulbind: "Korayn",
+    src: "DiagonalShort.png",
+    position: [287, 710],
+    angle: 55,
+  },
+  {
+    soulbind: "Korayn",
+    src: "DiagonalShort.png",
+    position: [305, 710],
+    angle: 305,
+  },
+
+  /* -------------------------------------------- Row 9 ------------------------------------------- */
+  {
+    soulbind: "Korayn",
+    src: "Vertical.PNG",
+    position: [208, 740],
+    angle: 0,
+  },
+  {
+    soulbind: "Korayn",
+    src: "Vertical.PNG",
+    position: [388, 740],
+    angle: 0,
+  },
+
+  /* ------------------------------------------- Row 10 ------------------------------------------- */
+  {
+    soulbind: "Korayn",
+    src: "DiagonalShort.png",
+    position: [216, 860],
+    angle: 315,
+  },
+  {
+    soulbind: "Korayn",
+    src: "DiagonalShort.png",
+    position: [380, 860],
+    angle: 45,
+  },
+
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                             Theotar                                            */
+  /* ---------------------------------------------------------------------------------------------- */
+
+  /* -------------------------------------------- Row 0 ------------------------------------------- */
+  {
+    soulbind: "Nadjia",
+    src: "DiagonalShort.png",
+    position: [287, 35],
+    angle: 45,
+  },
+  {
+    soulbind: "Nadjia",
+    src: "DiagonalShort.png",
+    position: [305, 35],
+    angle: 315,
+  },
+
+  /* -------------------------------------------- Row 1 ------------------------------------------- */
+  {
+    soulbind: "Nadjia",
+    src: "Vertical.PNG",
+    position: [208, 100],
+    angle: 0,
+  },
+  {
+    soulbind: "Nadjia",
+    src: "Vertical.PNG",
+    position: [388, 100],
+    angle: 0,
+  },
+
+  /* -------------------------------------------- Row 2 ------------------------------------------- */
+  {
+    soulbind: "Nadjia",
+    src: "DiagonalShort.png",
+    position: [202, 198],
+    angle: 305,
+  },
+
+  {
+    soulbind: "Nadjia",
+    src: "DiagonalShort.png",
+    position: [400, 198],
+    angle: 55,
+  },
+
+  /* -------------------------------------------- Row 3 ------------------------------------------- */
+  {
+    soulbind: "Nadjia",
+    src: "Vertical.PNG",
+    position: [298, 250],
+    angle: 0,
+  },
+
+  /* -------------------------------------------- Row 4 ------------------------------------------- */
+  {
+    soulbind: "Nadjia",
+    src: "Vertical.PNG",
+    position: [298, 350],
+    angle: 0,
+  },
+
+  /* -------------------------------------------- Row 5 ------------------------------------------- */
+  {
+    soulbind: "Nadjia",
+    src: "DiagonalShort.png",
+    position: [298, 435],
+    angle: 45,
+  },
+  {
+    soulbind: "Nadjia",
+    src: "DiagonalShort.png",
+    position: [298, 435],
+    angle: 315,
+  },
+  {
+    soulbind: "Nadjia",
+    src: "Vertical.PNG",
+    position: [298, 435],
+    angle: 0,
+  },
+
+  /* -------------------------------------------- Row 6 ------------------------------------------- */
+  {
+    soulbind: "Nadjia",
+    src: "Vertical.PNG",
+    position: [298, 510],
+    angle: 0,
+  },
+  {
+    soulbind: "Nadjia",
+    src: "Vertical.PNG",
+    position: [208, 494],
+    angle: 0,
+  },
+  {
+    soulbind: "Nadjia",
+    src: "Vertical.PNG",
+    position: [388, 494],
+    angle: 0,
+  },
+
+  /* -------------------------------------------- Row 7 ------------------------------------------- */
+  {
+    soulbind: "Nadjia",
+    src: "Vertical.PNG",
+    position: [298, 600],
+    angle: 0,
+  },
+  {
+    soulbind: "Nadjia",
+    src: "DiagonalShort.png",
+    position: [216, 615],
+    angle: 315,
+  },
+  {
+    soulbind: "Nadjia",
+    src: "DiagonalShort.png",
+    position: [380, 615],
+    angle: 45,
+  },
+
+  /* -------------------------------------------- Row 8 ------------------------------------------- */
+  {
+    soulbind: "Nadjia",
+    src: "DiagonalShort.png",
+    position: [287, 710],
+    angle: 55,
+  },
+  {
+    soulbind: "Nadjia",
+    src: "DiagonalShort.png",
+    position: [305, 710],
+    angle: 305,
+  },
+
+  /* -------------------------------------------- Row 9 ------------------------------------------- */
+  {
+    soulbind: "Nadjia",
+    src: "Vertical.PNG",
+    position: [208, 740],
+    angle: 0,
+  },
+  {
+    soulbind: "Nadjia",
+    src: "Vertical.PNG",
+    position: [388, 740],
+    angle: 0,
+  },
+
+  /* ------------------------------------------- Row 10 ------------------------------------------- */
+  {
+    soulbind: "Nadjia",
+    src: "DiagonalShort.png",
+    position: [216, 860],
+    angle: 315,
+  },
+  {
+    soulbind: "Nadjia",
+    src: "DiagonalShort.png",
+    position: [380, 860],
+    angle: 45,
+  },
+
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                             Theotar                                            */
+  /* ---------------------------------------------------------------------------------------------- */
+
+  /* -------------------------------------------- Row 0 ------------------------------------------- */
+  {
+    soulbind: "Theotar",
+    src: "DiagonalShort.png",
+    position: [287, 35],
+    angle: 45,
+  },
+  {
+    soulbind: "Theotar",
+    src: "DiagonalShort.png",
+    position: [305, 35],
+    angle: 315,
+  },
+
+  /* -------------------------------------------- Row 1 ------------------------------------------- */
+  {
+    soulbind: "Theotar",
+    src: "Vertical.PNG",
+    position: [208, 100],
+    angle: 0,
+  },
+  {
+    soulbind: "Theotar",
+    src: "Vertical.PNG",
+    position: [388, 100],
+    angle: 0,
+  },
+
+  /* -------------------------------------------- Row 2 ------------------------------------------- */
+  {
+    soulbind: "Theotar",
+    src: "DiagonalShort.png",
+    position: [202, 198],
+    angle: 305,
+  },
+
+  {
+    soulbind: "Theotar",
+    src: "DiagonalShort.png",
+    position: [400, 198],
+    angle: 55,
+  },
+
+  /* -------------------------------------------- Row 3 ------------------------------------------- */
+  {
+    soulbind: "Theotar",
+    src: "DiagonalShort.png",
+    position: [294, 275],
+    angle: 45,
+  },
+  {
+    soulbind: "Theotar",
+    src: "DiagonalShort.png",
+    position: [304, 275],
+    angle: 315,
+  },
+
+  /* -------------------------------------------- Row 4 ------------------------------------------- */
+  {
+    soulbind: "Theotar",
+    src: "DiagonalShort.png",
+    position: [215, 377],
+    angle: 305,
+  },
+  {
+    soulbind: "Theotar",
+    src: "DiagonalShort.png",
+    position: [380, 377],
+    angle: 55,
+  },
+
+  /* -------------------------------------------- Row 5 ------------------------------------------- */
+  {
+    soulbind: "Theotar",
+    src: "DiagonalShort.png",
+    position: [298, 435],
+    angle: 45,
+  },
+  {
+    soulbind: "Theotar",
+    src: "DiagonalShort.png",
+    position: [298, 435],
+    angle: 315,
+  },
+  {
+    soulbind: "Theotar",
+    src: "Vertical.PNG",
+    position: [298, 435],
+    angle: 0,
+  },
+
+  /* -------------------------------------------- Row 6 ------------------------------------------- */
+  {
+    soulbind: "Theotar",
+    src: "Vertical.PNG",
+    position: [298, 510],
+    angle: 0,
+  },
+  {
+    soulbind: "Theotar",
+    src: "Vertical.PNG",
+    position: [208, 494],
+    angle: 0,
+  },
+  {
+    soulbind: "Theotar",
+    src: "Vertical.PNG",
+    position: [388, 494],
+    angle: 0,
+  },
+
+  /* -------------------------------------------- Row 7 ------------------------------------------- */
+  {
+    soulbind: "Theotar",
+    src: "Vertical.PNG",
+    position: [298, 600],
+    angle: 0,
+  },
+  {
+    soulbind: "Theotar",
+    src: "DiagonalShort.png",
+    position: [216, 615],
+    angle: 315,
+  },
+  {
+    soulbind: "Theotar",
+    src: "DiagonalShort.png",
+    position: [380, 615],
+    angle: 45,
+  },
+
+  /* -------------------------------------------- Row 8 ------------------------------------------- */
+  {
+    soulbind: "Theotar",
+    src: "DiagonalShort.png",
+    position: [287, 710],
+    angle: 55,
+  },
+  {
+    soulbind: "Theotar",
+    src: "DiagonalShort.png",
+    position: [305, 710],
+    angle: 305,
+  },
+
+  /* -------------------------------------------- Row 9 ------------------------------------------- */
+  {
+    soulbind: "Theotar",
+    src: "Vertical.PNG",
+    position: [208, 740],
+    angle: 0,
+  },
+  {
+    soulbind: "Theotar",
+    src: "Vertical.PNG",
+    position: [388, 740],
+    angle: 0,
+  },
+
+  /* ------------------------------------------- Row 10 ------------------------------------------- */
+  {
+    soulbind: "Theotar",
+    src: "DiagonalShort.png",
+    position: [216, 860],
+    angle: 315,
+  },
+  {
+    soulbind: "Theotar",
+    src: "DiagonalShort.png",
+    position: [380, 860],
+    angle: 45,
+  },
+
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                             Draven                                             */
+  /* ---------------------------------------------------------------------------------------------- */
+
+  /* -------------------------------------------- Row 0 ------------------------------------------- */
+
+  {
+    soulbind: "Draven",
+    src: "DiagonalShort.png",
+    position: [287, 35],
+    angle: 45,
+  },
+  {
+    soulbind: "Draven",
+    src: "DiagonalShort.png",
+    position: [305, 35],
+    angle: 315,
+  },
+
+  /* -------------------------------------------- Row 1 ------------------------------------------- */
+
+  {
+    soulbind: "Draven",
+    src: "Vertical.PNG",
+    position: [208, 100],
+    angle: 0,
+  },
+  {
+    soulbind: "Draven",
+    src: "Vertical.PNG",
+    position: [388, 100],
+    angle: 0,
+  },
+
+  /* -------------------------------------------- Row 2 ------------------------------------------- */
+
+  {
+    soulbind: "Draven",
+    src: "DiagonalShort.png",
+    position: [202, 198],
+    angle: 305,
+  },
+
+  {
+    soulbind: "Draven",
+    src: "DiagonalShort.png",
+    position: [400, 198],
+    angle: 55,
+  },
+
+  /* -------------------------------------------- Row 3 ------------------------------------------- */
+
+  {
+    soulbind: "Draven",
+    src: "DiagonalShort.png",
+    position: [294, 275],
+    angle: 45,
+  },
+  {
+    soulbind: "Draven",
+    src: "DiagonalShort.png",
+    position: [304, 275],
+    angle: 315,
+  },
+
+  /* -------------------------------------------- Row 4 ------------------------------------------- */
+  {
+    soulbind: "Draven",
+    src: "DiagonalShort.png",
+    position: [215, 377],
+    angle: 305,
+  },
+  {
+    soulbind: "Draven",
+    src: "DiagonalShort.png",
+    position: [380, 377],
+    angle: 55,
+  },
+
+  /* -------------------------------------------- Row 5 ------------------------------------------- */
+  {
+    soulbind: "Draven",
+    src: "DiagonalShort.png",
+    position: [298, 435],
+    angle: 45,
+  },
+  {
+    soulbind: "Draven",
+    src: "DiagonalShort.png",
+    position: [298, 435],
+    angle: 315,
+  },
+  {
+    soulbind: "Draven",
+    src: "Vertical.PNG",
+    position: [298, 435],
+    angle: 0,
+  },
+
+  /* -------------------------------------------- Row 6 ------------------------------------------- */
+  {
+    soulbind: "Draven",
+    src: "Vertical.PNG",
+    position: [298, 510],
+    angle: 0,
+  },
+  {
+    soulbind: "Draven",
+    src: "Vertical.PNG",
+    position: [208, 494],
+    angle: 0,
+  },
+  {
+    soulbind: "Draven",
+    src: "Vertical.PNG",
+    position: [388, 494],
+    angle: 0,
+  },
+
+  /* -------------------------------------------- Row 7 ------------------------------------------- */
+  {
+    soulbind: "Draven",
+    src: "Vertical.PNG",
+    position: [298, 600],
+    angle: 0,
+  },
+  {
+    soulbind: "Draven",
+    src: "DiagonalShort.png",
+    position: [216, 615],
+    angle: 315,
+  },
+  {
+    soulbind: "Draven",
+    src: "DiagonalShort.png",
+    position: [380, 615],
+    angle: 45,
+  },
+
+  /* -------------------------------------------- Row 8 ------------------------------------------- */
+  {
+    soulbind: "Draven",
+    src: "DiagonalShort.png",
+    position: [287, 710],
+    angle: 55,
+  },
+  {
+    soulbind: "Draven",
+    src: "DiagonalShort.png",
+    position: [305, 710],
+    angle: 305,
+  },
+
+  /* -------------------------------------------- Row 9 ------------------------------------------- */
+  {
+    soulbind: "Draven",
+    src: "Vertical.PNG",
+    position: [208, 740],
+    angle: 0,
+  },
+  {
+    soulbind: "Draven",
+    src: "Vertical.PNG",
+    position: [388, 740],
+    angle: 0,
+  },
+
+  /* ------------------------------------------- Row 10 ------------------------------------------- */
+  {
+    soulbind: "Draven",
+    src: "DiagonalShort.png",
+    position: [216, 860],
+    angle: 315,
+  },
+  {
+    soulbind: "Draven",
+    src: "DiagonalShort.png",
+    position: [380, 860],
+    angle: 45,
+  },
+
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                            Marileth                                            */
+  /* ---------------------------------------------------------------------------------------------- */
+
+  /* -------------------------------------------- Row 0 ------------------------------------------- */
+
+  {
+    soulbind: "Marileth",
+    src: "Vertical.PNG",
+    position: [298, 10],
+    angle: 0,
+  },
+  {
+    soulbind: "Marileth",
+    src: "DiagonalShort.png",
+    position: [287, 35],
+    angle: 45,
+  },
+  {
+    soulbind: "Marileth",
+    src: "DiagonalShort.png",
+    position: [305, 35],
+    angle: 315,
+  },
+
+  /* -------------------------------------------- Row 1 ------------------------------------------- */
+
+  {
+    soulbind: "Marileth",
+    src: "Vertical.PNG",
+    position: [208, 100],
+    angle: 0,
+  },
+  {
+    soulbind: "Marileth",
+    src: "Vertical.PNG",
+    position: [298, 85],
+    angle: 0,
+  },
+  {
+    soulbind: "Marileth",
+    src: "Vertical.PNG",
+    position: [388, 100],
+    angle: 0,
+  },
+
+  /* -------------------------------------------- Row 2 ------------------------------------------- */
+  {
+    soulbind: "Marileth",
+    src: "DiagonalShort.png",
+    position: [202, 198],
+    angle: 305,
+  },
+  {
+    soulbind: "Marileth",
+    src: "Vertical.PNG",
+    position: [298, 165],
+    angle: 0,
+  },
+  {
+    soulbind: "Marileth",
+    src: "DiagonalShort.png",
+    position: [400, 198],
+    angle: 55,
+  },
+
+  /* -------------------------------------------- Row 3 ------------------------------------------- */
+  {
+    soulbind: "Marileth",
+    src: "DiagonalShort.png",
+    position: [294, 275],
+    angle: 45,
+  },
+  {
+    soulbind: "Marileth",
+    src: "DiagonalShort.png",
+    position: [304, 275],
+    angle: 315,
+  },
+
+  /* -------------------------------------------- Row 4 ------------------------------------------- */
+  {
+    soulbind: "Marileth",
+    src: "DiagonalShort.png",
+    position: [215, 377],
+    angle: 305,
+  },
+  {
+    soulbind: "Marileth",
+    src: "DiagonalShort.png",
+    position: [380, 377],
+    angle: 55,
+  },
+
+  /* -------------------------------------------- Row 5 ------------------------------------------- */
+  {
+    soulbind: "Marileth",
+    src: "DiagonalShort.png",
+    position: [298, 435],
+    angle: 45,
+  },
+  {
+    soulbind: "Marileth",
+    src: "DiagonalShort.png",
+    position: [298, 435],
+    angle: 315,
+  },
+
+  /* -------------------------------------------- Row 6 ------------------------------------------- */
+  {
+    soulbind: "Marileth",
+    src: "DiagonalShort.png",
+    position: [216, 533],
+    angle: 315,
+  },
+  {
+    soulbind: "Marileth",
+    src: "DiagonalShort.png",
+    position: [380, 533],
+    angle: 45,
+  },
+
+  /* -------------------------------------------- Row 7 ------------------------------------------- */
+  {
+    soulbind: "Marileth",
+    src: "Vertical.PNG",
+    position: [298, 600],
+    angle: 0,
+  },
+
+  /* -------------------------------------------- Row 8 ------------------------------------------- */
+  {
+    soulbind: "Marileth",
+    src: "DiagonalShort.png",
+    position: [287, 710],
+    angle: 55,
+  },
+  {
+    soulbind: "Marileth",
+    src: "DiagonalShort.png",
+    position: [305, 710],
+    angle: 305,
+  },
+
+  /* -------------------------------------------- Row 9 ------------------------------------------- */
+  {
+    soulbind: "Marileth",
+    src: "Vertical.PNG",
+    position: [208, 740],
+    angle: 0,
+  },
+  {
+    soulbind: "Marileth",
+    src: "Vertical.PNG",
+    position: [388, 740],
+    angle: 0,
+  },
+
+  /* ------------------------------------------- Row 10 ------------------------------------------- */
+  {
+    soulbind: "Marileth",
+    src: "DiagonalShort.png",
+    position: [216, 860],
+    angle: 315,
+  },
+  {
+    soulbind: "Marileth",
+    src: "DiagonalShort.png",
+    position: [380, 860],
+    angle: 45,
+  },
+
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                              Emeni                                             */
+  /* ---------------------------------------------------------------------------------------------- */
+
+  /* -------------------------------------------- Row 0 ------------------------------------------- */
+
+  {
+    soulbind: "Emeni",
+    src: "DiagonalShort.png",
+    position: [287, 35],
+    angle: 45,
+  },
+  {
+    soulbind: "Emeni",
+    src: "DiagonalShort.png",
+    position: [305, 35],
+    angle: 315,
+  },
+
+  /* -------------------------------------------- Row 1 ------------------------------------------- */
+  {
+    soulbind: "Emeni",
+    src: "Vertical.PNG",
+    position: [208, 100],
+    angle: 0,
+  },
+  {
+    soulbind: "Emeni",
+    src: "Vertical.PNG",
+    position: [388, 100],
+    angle: 0,
+  },
+
+  /* -------------------------------------------- Row 2 ------------------------------------------- */
+  {
+    soulbind: "Emeni",
+    src: "DiagonalShort.png",
+    position: [202, 198],
+    angle: 305,
+  },
+
+  {
+    soulbind: "Emeni",
+    src: "DiagonalShort.png",
+    position: [400, 198],
+    angle: 55,
+  },
+
+  /* -------------------------------------------- Row 3 ------------------------------------------- */
+  {
+    soulbind: "Emeni",
+    src: "DiagonalShort.png",
+    position: [294, 275],
+    angle: 45,
+  },
+  {
+    soulbind: "Emeni",
+    src: "DiagonalShort.png",
+    position: [304, 275],
+    angle: 315,
+  },
+
+  /* -------------------------------------------- Row 4 ------------------------------------------- */
+  {
+    soulbind: "Emeni",
+    src: "DiagonalShort.png",
+    position: [215, 377],
+    angle: 305,
+  },
+  {
+    soulbind: "Emeni",
+    src: "DiagonalShort.png",
+    position: [380, 377],
+    angle: 55,
+  },
+
+  /* -------------------------------------------- Row 5 ------------------------------------------- */
+  {
+    soulbind: "Emeni",
+    src: "DiagonalShort.png",
+    position: [298, 435],
+    angle: 45,
+  },
+  {
+    soulbind: "Emeni",
+    src: "DiagonalShort.png",
+    position: [298, 435],
+    angle: 315,
+  },
+  {
+    soulbind: "Emeni",
+    src: "Vertical.PNG",
+    position: [298, 435],
+    angle: 0,
+  },
+
+  /* -------------------------------------------- Row 6 ------------------------------------------- */
+  {
+    soulbind: "Emeni",
+    src: "Vertical.PNG",
+    position: [298, 510],
+    angle: 0,
+  },
+  {
+    soulbind: "Emeni",
+    src: "Vertical.PNG",
+    position: [208, 494],
+    angle: 0,
+  },
+  {
+    soulbind: "Emeni",
+    src: "Vertical.PNG",
+    position: [388, 494],
+    angle: 0,
+  },
+
+  /* -------------------------------------------- Row 7 ------------------------------------------- */
+  {
+    soulbind: "Emeni",
+    src: "Vertical.PNG",
+    position: [298, 600],
+    angle: 0,
+  },
+  {
+    soulbind: "Emeni",
+    src: "DiagonalShort.png",
+    position: [216, 615],
+    angle: 315,
+  },
+  {
+    soulbind: "Emeni",
+    src: "DiagonalShort.png",
+    position: [380, 615],
+    angle: 45,
+  },
+
+  /* -------------------------------------------- Row 8 ------------------------------------------- */
+  {
+    soulbind: "Emeni",
+    src: "DiagonalShort.png",
+    position: [287, 710],
+    angle: 55,
+  },
+  {
+    soulbind: "Emeni",
+    src: "DiagonalShort.png",
+    position: [305, 710],
+    angle: 305,
+  },
+
+  /* -------------------------------------------- Row 9 ------------------------------------------- */
+  {
+    soulbind: "Emeni",
+    src: "Vertical.PNG",
+    position: [208, 740],
+    angle: 0,
+  },
+  {
+    soulbind: "Emeni",
+    src: "Vertical.PNG",
+    position: [388, 740],
+    angle: 0,
+  },
+
+  /* ------------------------------------------- Row 10 ------------------------------------------- */
+  {
+    soulbind: "Emeni",
+    src: "DiagonalShort.png",
+    position: [216, 860],
+    angle: 315,
+  },
+  {
+    soulbind: "Emeni",
+    src: "DiagonalShort.png",
+    position: [380, 860],
+    angle: 45,
+  },
+
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                             Heirmir                                            */
+  /* ---------------------------------------------------------------------------------------------- */
+
+  /* -------------------------------------------- Row 0 ------------------------------------------- */
+  {
+    soulbind: "Heirmir",
+    src: "DiagonalShort.png",
+    position: [287, 35],
+    angle: 45,
+  },
+  {
+    soulbind: "Heirmir",
+    src: "DiagonalShort.png",
+    position: [305, 35],
+    angle: 315,
+  },
+
+  /* -------------------------------------------- Row 1 ------------------------------------------- */
+  {
+    soulbind: "Heirmir",
+    src: "Vertical.PNG",
+    position: [208, 100],
+    angle: 0,
+  },
+  {
+    soulbind: "Heirmir",
+    src: "Vertical.PNG",
+    position: [388, 100],
+    angle: 0,
+  },
+
+  /* -------------------------------------------- Row 2 ------------------------------------------- */
+  {
+    soulbind: "Heirmir",
+    src: "DiagonalShort.png",
+    position: [202, 198],
+    angle: 305,
+  },
+
+  {
+    soulbind: "Heirmir",
+    src: "DiagonalShort.png",
+    position: [400, 198],
+    angle: 55,
+  },
+
+  /* -------------------------------------------- Row 3 ------------------------------------------- */
+  {
+    soulbind: "Heirmir",
+    src: "DiagonalShort.png",
+    position: [294, 275],
+    angle: 45,
+  },
+  {
+    soulbind: "Heirmir",
+    src: "DiagonalShort.png",
+    position: [304, 275],
+    angle: 315,
+  },
+
+  /* -------------------------------------------- Row 4 ------------------------------------------- */
+  {
+    soulbind: "Heirmir",
+    src: "DiagonalShort.png",
+    position: [215, 377],
+    angle: 305,
+  },
+  {
+    soulbind: "Heirmir",
+    src: "DiagonalShort.png",
+    position: [380, 377],
+    angle: 55,
+  },
+
+  /* -------------------------------------------- Row 5 ------------------------------------------- */
+  {
+    soulbind: "Heirmir",
+    src: "DiagonalShort.png",
+    position: [298, 435],
+    angle: 45,
+  },
+  {
+    soulbind: "Heirmir",
+    src: "DiagonalShort.png",
+    position: [298, 435],
+    angle: 315,
+  },
+  {
+    soulbind: "Heirmir",
+    src: "Vertical.PNG",
+    position: [298, 435],
+    angle: 0,
+  },
+
+  /* -------------------------------------------- Row 6 ------------------------------------------- */
+  {
+    soulbind: "Heirmir",
+    src: "Vertical.PNG",
+    position: [298, 510],
+    angle: 0,
+  },
+  {
+    soulbind: "Heirmir",
+    src: "Vertical.PNG",
+    position: [208, 494],
+    angle: 0,
+  },
+  {
+    soulbind: "Heirmir",
+    src: "Vertical.PNG",
+    position: [388, 494],
+    angle: 0,
+  },
+
+  /* -------------------------------------------- Row 7 ------------------------------------------- */
+  {
+    soulbind: "Heirmir",
+    src: "Vertical.PNG",
+    position: [298, 600],
+    angle: 0,
+  },
+  {
+    soulbind: "Heirmir",
+    src: "DiagonalShort.png",
+    position: [216, 615],
+    angle: 315,
+  },
+  {
+    soulbind: "Heirmir",
+    src: "DiagonalShort.png",
+    position: [380, 615],
+    angle: 45,
+  },
+
+  /* -------------------------------------------- Row 8 ------------------------------------------- */
+  {
+    soulbind: "Heirmir",
+    src: "DiagonalShort.png",
+    position: [287, 710],
+    angle: 55,
+  },
+  {
+    soulbind: "Heirmir",
+    src: "DiagonalShort.png",
+    position: [305, 710],
+    angle: 305,
+  },
+
+  /* -------------------------------------------- Row 9 ------------------------------------------- */
+  {
+    soulbind: "Heirmir",
+    src: "Vertical.PNG",
+    position: [208, 740],
+    angle: 0,
+  },
+  {
+    soulbind: "Heirmir",
+    src: "Vertical.PNG",
+    position: [388, 740],
+    angle: 0,
+  },
+
+  /* ------------------------------------------- Row 10 ------------------------------------------- */
+  {
+    soulbind: "Heirmir",
+    src: "DiagonalShort.png",
+    position: [216, 860],
+    angle: 315,
+  },
+  {
+    soulbind: "Heirmir",
+    src: "DiagonalShort.png",
+    position: [380, 860],
     angle: 45,
   },
 ];
