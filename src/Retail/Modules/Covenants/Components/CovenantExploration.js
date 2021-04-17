@@ -53,13 +53,21 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.background.paper,
     maxWidth: 1014,
     borderRadius: "4px 4px 4px 4px",
+    marginBottom: 60,
   },
   panel: {
     flexGrow: 1,
     backgroundColor: "#191c23",
     display: "flex",
-    height: 700,
+    height: 980,
     borderRadius: "0px 0px 4px 4px",
+  },
+  conduits: {
+    position: "relative",
+    width: 245,
+    backgroundColor: "#191c23",
+    borderLeft: "1px solid rgba(255, 255, 255, 0.12)",
+    height: 980, // 609 Slim
   },
   tabs: {
     borderRight: `1px solid ${theme.palette.divider}`,
@@ -428,6 +436,7 @@ export default function CovenantExploration(props) {
 
 function buildSoulbind(soulbindName, player, contentType, soulbindState, activateSoulbind, setConduitInSlot, updateConduitLevel) {
   const { t } = useTranslation();
+  const classes = useStyles();
   let activeSoulbind = soulbindState.filter((trait) => trait.soulbind === soulbindName);
   let activeConnectors = soulbindConnectors.filter((trait) => trait.soulbind === soulbindName);
 
@@ -446,7 +455,7 @@ function buildSoulbind(soulbindName, player, contentType, soulbindState, activat
       <Grid item>
         <div id="soulbinds" style={{ position: "relative" }}>
           {/* ---------------------------------- Soulbind Background Image --------------------------------- */}
-          <img src={process.env.PUBLIC_URL + "/Images/Interface/SoulbindBackgroundFat.jpg"} alt="" />
+          <img src={process.env.PUBLIC_URL + "/Images/Interface/SoulbindBackgroundFat.jpg"} height={980} width={605} alt="" />
 
           {/* ---------------------------------- Conduit Connector Mapping --------------------------------- */}
           <div id="nodes" style={{}}>
@@ -487,16 +496,7 @@ function buildSoulbind(soulbindName, player, contentType, soulbindState, activat
       /*                                        Conduit Container                                       */
       /* ----------------------------------------------------------------------------------------------  */}
       <Grid container>
-        <div
-          id="conduits"
-          style={{
-            position: "relative",
-            width: 245,
-            backgroundColor: "#191c23",
-            borderLeft: "1px solid rgba(255, 255, 255, 0.12)",
-            maxHeight: 700, // 609 Slim
-          }}
-        >
+        <div id="conduits" className={classes.conduits}>
           <Grid container direction="column" justify="space-between" alignItems="center" style={{ height: "100%" }}>
             <Grid
               container
