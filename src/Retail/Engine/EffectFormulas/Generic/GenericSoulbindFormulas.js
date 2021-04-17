@@ -26,23 +26,29 @@ export function getSoulbindFormula(effectID, player, contentType) {
   /*                                          -- Pelagos --                                         */
   /* ---------------------------------------------------------------------------------------------- */
 
-  if (effectID === 328266) {
+  if (
     /* -------------------------------------- Combat Meditation ------------------------------------- */
+    effectID === 328266
+  ) {
     /*
     Activating your Kyrian class ability increases your mastery by X for Y seconds.
     You occasionally expel sorrowful memories which can be walked through to extend the effect by 3 seconds.
     */
     let expectedUptime = (30 + 9 * 2) / 180; // TODO: Investigate. Reports of a bugged uptime
     bonus_stats.Mastery = 350 * expectedUptime; //
-  } else if (effectID === 328261) {
+  } else if (
     /* --------------------------------------- Focusing Mantra -------------------------------------- */
+    effectID === 328261
+  ) {
     /*
     Left as 0 for now. While you might occasionally get some value from being able to vial slightly earlier, this is honestly
     just going to be 0 throughput in most cases.
     */
     bonus_stats.HPS = 0;
-  } else if (effectID === 329777) {
+  } else if (
     /* -------------------------------------- Phial of Patience ------------------------------------- */
+    effectID === 329777
+  ) {
     /*
     Your Phial heals for 35% additional health, but over 10 seconds.
     */
@@ -52,40 +58,58 @@ export function getSoulbindFormula(effectID, player, contentType) {
 
     bonus_stats.HPS = (healing_bonus * uses_per_combat * (1 - expected_overhealing)) / player.getFightLength(contentType); // Placeholder.
   } else if (
+    /* ------------------------------------- Let go of the Past ------------------------------------- */
     effectID === 328257
   ) {
-    /* ------------------------------------- Let go of the Past ------------------------------------- */
     /*
     This was changed to a small magic damage DR and is given no value currently.
     Will likely be included when the stats panel expands to offer more specific detail.
     */
     bonus_stats.HPS = 0;
+  } else if (
+    /* --------------------------------------- Better Together -------------------------------------- */
+    effectID === 351146
+  ) {
+  } else if (
+    /* ------------------------------------- Path of the Devoted ------------------------------------ */
+    effectID === 351147
+  ) {
+  } else if (
+    /* -------------------------------------- Newfound Resolve -------------------------------------- */
+    effectID === 351149
+  ) {
   }
 
   /* ---------------------------------------------------------------------------------------------- */
   /*                                           -- Kleia --                                          */
   /* ---------------------------------------------------------------------------------------------- */
   //prettier-ignore
-  else if (effectID === 329791) {
+  else if (
     /* --------------------------------------- Valiant Strikes -------------------------------------- */
+    effectID === 329791
+  ) {
     let average_health_pool = player.activeStats.stamina * 20; // The players health is an acceptable average for an average target.
     let ppm = 0.49; // POSTLIVE: Check against logs.
 
     bonus_stats.HPS = (average_health_pool * 0.2 * ppm) / 60;
-  } else if (effectID === 329784) {
+  } else if (
     /* --------------------------------------- Cleansing Rites -------------------------------------- */
+    effectID === 329784
+  ) {
     let health_pool = player.activeStats.stamina * 20;
 
     bonus_stats.HPS = (health_pool * 0.1) / player.getFightLength(contentType);
-  } else if (effectID === 329778) {
+  } else if (
     /* --------------------------------------- Pointed Courage -------------------------------------- */
+    effectID === 329778
+  ) {
     let expected_allies = contentType === "Raid" ? 4.8 : 3.1;
 
     bonus_stats.Crit = expected_allies * STATPERONEPERCENT.Retail.CRIT;
   } else if (
+    /* ------------------------------------- Resonant Accolades ------------------------------------- */
     effectID === 329781
   ) {
-    /* ------------------------------------- Resonant Accolades ------------------------------------- */
     /*
     This one needs a check against log. It can obviously never exceed 4% total healing but is likely to be much less.
     */
@@ -94,6 +118,18 @@ export function getSoulbindFormula(effectID, player, contentType) {
     let effect_power = 0.04;
 
     bonus_stats.HPS = player.getHPS(contentType) * percent_healing_above_70 * (1 - expected_overhealing) * effect_power;
+  } else if (
+    /* ------------------------------------- Spear of the Archon ------------------------------------ */
+    effectID === 351488
+  ) {
+  } else if (
+    /* ------------------------------------ Hope Springs Eternal ------------------------------------ */
+    effectID === 351489
+  ) {
+  } else if (
+    /* --------------------------------------- Light the Path --------------------------------------- */
+    effectID === 351491
+  ) {
   }
 
   /* ---------------------------------------------------------------------------------------------- */
@@ -104,8 +140,10 @@ export function getSoulbindFormula(effectID, player, contentType) {
   */
 
   //prettier-ignore
-  else if (effectID === 333950) {
+  else if (
     /* ------------------------------------ Bron's Call to Action ----------------------------------- */
+    effectID === 333950
+  ) {
     /*
     DOES reset stacks on raid boss pull. Doesn't in Mythic+.
     */
@@ -117,8 +155,22 @@ export function getSoulbindFormula(effectID, player, contentType) {
     let vit_bolt_hps = 0.575 * bron_sp * 8;
 
     bonus_stats.HPS = (brons_per_minute * vit_bolt_hps * player.getStatMultiplier(["Crit", "Versatility"])) / 60;
-  } else if (effectID === 333935) {
+  } else if (
     /* -------------------------------------- Hammer of Genesis ------------------------------------- */
+    effectID === 333935
+  ) {
+  } else if (
+    /* ------------------------------------ Soulglow Spectrometer ----------------------------------- */
+    effectID === 352186
+  ) {
+  } else if (
+    /* ------------------------------------ Reactive Retrofitting ----------------------------------- */
+    effectID === 352187
+  ) {
+  } else if (
+    /* --------------------------------- Effusive Anima Accelerator --------------------------------- */
+    effectID === 352188
+  ) {
   }
 
   /* ---------------------------------------------------------------------------------------------- */
@@ -129,43 +181,67 @@ export function getSoulbindFormula(effectID, player, contentType) {
   /*                                           -- Niya --                                           */
   /* ---------------------------------------------------------------------------------------------- */
   //prettier-ignore
-  else if (effectID === 322721) {
+  else if (
     /* ------------------------------------- Grove Invigoration ------------------------------------- */
+    effectID === 322721
+  ) {
     let expectedStacks = (2 * 30) / 60 + (8 * 30) / 120;
 
     bonus_stats.Mastery = expectedStacks * 25;
-  } else if (effectID === 342270) {
-    /* ------------------------------------- Run without Tiring ------------------------------------- */
-  } else if (effectID === 320659) {
-    /* ------------------------------------- Niya's Tools: Burrs ------------------------------------ */
   } else if (
+    /* ------------------------------------- Run without Tiring ------------------------------------- */
+    effectID === 342270
+  ) {
+  } else if (
+    /* ------------------------------------- Niya's Tools: Burrs ------------------------------------ */
+    effectID === 320659
+  ) {
+  } else if (
+    /* ------------------------------------- Niya's Tools: Herbs ------------------------------------ */
     effectID === 320662
   ) {
-    /* ------------------------------------- Niya's Tools: Herbs ------------------------------------ */
     /*
     This is basically 100% uptime on one target at a time. Team benefit is included.
     */
     bonus_stats.Haste = 4.9 * STATPERONEPERCENT.Retail.HASTE;
+  } else if (
+    /* ----------------------------------------- Called Shot ---------------------------------------- */
+    effectID === 352501
+  ) {
+  } else if (
+    /* -------------------------------------- Survivor's Rally -------------------------------------- */
+    effectID === 352502
+  ) {
+  } else if (
+    /* ---------------------------------------- Bonded Hearts --------------------------------------- */
+    effectID === 352503
+  ) {
   }
 
   /* ---------------------------------------------------------------------------------------------- */
   /*                                        -- Dreamweaver --                                       */
   /* ---------------------------------------------------------------------------------------------- */
   //prettier-ignore
-  else if (effectID === 333950) {
+  else if (
     /* ------------------------------------------ Podtender ----------------------------------------- */
+    effectID === 333950
+  ) {
     /*
     TODO: We'll see. The approaches to this one is maybe you have a "chance of death" and then include the healing portion but I'm not convinced
     that you get a great picture from that.
     It's a good trait, but not for HPS reasons.
      */
-  } else if (effectID === 319210) {
+  } else if (
     /* -------------------------------------- Social Butterfly -------------------------------------- */
+    effectID === 319210
+  ) {
     let expectedUptime = 1; // POSTLIVE: Check if this is falling off often in either content type.
 
     bonus_stats.Versatility = 1.5 * 40 * expectedUptime;
-  } else if (effectID === 319213) {
+  } else if (
     /* ------------------------------------- Empowered Chrysalis ------------------------------------ */
+    effectID === 319213
+  ) {
     /*
     TODO: Expand to include overhealing on yourself.
     Double check the shield_consumed is a fair approximation when the expansion goes live.
@@ -176,11 +252,24 @@ export function getSoulbindFormula(effectID, player, contentType) {
 
     bonus_stats.HPS = trait_bonus * shield_consumed * overhealing;
   } else if (
+    /* -------------------------------------- Field of Blossoms ------------------------------------- */
     effectID === 319191
   ) {
-    /* -------------------------------------- Field of Blossoms ------------------------------------- */
     let expectedUptime = (1 / 6) * 0.7;
+
     bonus_stats.Haste = 12 * STATPERONEPERCENT.Retail.HASTE * expectedUptime;
+  } else if (
+    /* --------------------------------------- Cunning Dreams --------------------------------------- */
+    effectID === 352782
+  ) {
+  } else if (
+    /* ---------------------------------------- Waking Dreams --------------------------------------- */
+    effectID === 352779
+  ) {
+  } else if (
+    /* ---------------------------------------- Dream Delver ---------------------------------------- */
+    effectID === 352786
+  ) {
   }
 
   /* ---------------------------------------------------------------------------------------------- */
@@ -190,10 +279,26 @@ export function getSoulbindFormula(effectID, player, contentType) {
   (Mikanikos V2)
   */
   //prettier-ignore
-  else if (effectID === 325066) {
+  else if (
     /* -------------------------------------- Wild Hunt Tactics ------------------------------------- */
-  } else if (effectID === 325069) {
+    effectID === 325066
+  ) {
+  } else if (
     /* ---------------------------------------- First Strike ---------------------------------------- */
+    effectID === 325069
+  ) {
+  } else if (
+    /* ---------------------------------------- Vorkai Ambush --------------------------------------- */
+    effectID === 352800
+  ) {
+  } else if (
+    /* ------------------------------------- Hunt's Exhilaration ------------------------------------ */
+    effectID === 352806
+  ) {
+  } else if (
+    /* ------------------------------------- Wild Hunt Strategem ------------------------------------ */
+    effectID === 352805
+  ) {
   }
 
   /* ---------------------------------------------------------------------------------------------- */
@@ -205,51 +310,85 @@ export function getSoulbindFormula(effectID, player, contentType) {
   /* ---------------------------------------------------------------------------------------------- */
 
   //prettier-ignore
-  else if (effectID === 331586) {
+  else if (
     /* ---------------------------------------- Thrill Seeker --------------------------------------- */
+    effectID === 331586
+  ) {
     let average_uptime = 10 / 80;
 
     bonus_stats.Haste = average_uptime * 20 * STATPERONEPERCENT.Retail.HASTE;
-  } else if (effectID === 331580) {
+  } else if (
     /* ------------------------------------ Exacting Preparation ------------------------------------ */
+    effectID === 331580
+  ) {
     let flask_int = 70;
     let feast_int = 18; // Should add something to offer an option of non-int food, but they are very close.
     let enchant_int = getBestWeaponEnchant(player, contentType);
 
     bonus_stats.Intellect = (flask_int + feast_int + enchant_int) * 0.2;
   } else if (
+    /* -------------------------------------- Dauntless Duelist ------------------------------------- */
     effectID === 331584
   ) {
-    /* -------------------------------------- Dauntless Duelist ------------------------------------- */
     /*
     3% damage to one target + 1.5% DR. No value currently assigned to DR and it's unlikely you would take this as a healer.
     */
+  } else if (
+    /* ------------------------------------- Sinful Preservation ------------------------------------ */
+    effectID === 352405
+  ) {
+  } else if (
+    /* ---------------------------------------- Nimble Steps ---------------------------------------- */
+    effectID === 352366
+  ) {
+  } else if (
+    /* ----------------------------------------- Fatal Flaw ----------------------------------------- */
+    effectID === 352373
+  ) {
   }
   /* ---------------------------------------------------------------------------------------------- */
   /*                                   -- Theotar the Mad Duke --                                   */
   /* ---------------------------------------------------------------------------------------------- */
 
   //prettier-ignore
-  else if (effectID === 336239) {
+  else if (
     /* --------------------------------------- Soothing Shade --------------------------------------- */
+    effectID === 336239
+  ) {
     let chanceOfMovement = 0.1;
     let uptime = convertPPMToUptime(1, 12) * (1 - chanceOfMovement);
 
     bonus_stats.Mastery = uptime * 525;
-  } else if (effectID === 336245) {
+  } else if (
     /* ------------------------------------ Token of Appreciation ----------------------------------- */
+    effectID === 336245
+  ) {
     const expectedPPM = 9.59; // ~3.9 targets getting an absorb every ~25 seconds.
     const healAmount = player.getInt() * 1.5 * player.getStatPerc("Versatility"); // TODO: Implement the Spell Power -> Attack Power conversion.
     const expectedWastage = 0.04; // Unused shields. Very low.
 
     bonus_stats.HPS = (expectedPPM * healAmount * (1 - expectedWastage)) / 60;
-  } else if (effectID === 336243) {
-    /* --------------------------------------- Refined Palate --------------------------------------- */
   } else if (
+    /* --------------------------------------- Refined Palate --------------------------------------- */
+    effectID === 336243
+  ) {
+  } else if (
+    /* ------------------------------------- Wasteland Propriety ------------------------------------ */
     effectID === 319983
   ) {
-    /* ------------------------------------- Wasteland Propriety ------------------------------------ */
     bonus_stats.Versatility = 6 * STATPERONEPERCENT.Retail.VERSATILITY * (10 / 60); // Arguably some classes won't be able to proc this on cooldown because of misaligned CDs but we'll see.
+  } else if (
+    /* ------------------------------------ It's Always Tea Time ------------------------------------ */
+    effectID === 351747
+  ) {
+  } else if (
+    /* ---------------------------------- Life is but an Appetizer ---------------------------------- */
+    effectID === 351748
+  ) {
+  } else if (
+    /* ---------------------------------------- Party Favors ---------------------------------------- */
+    effectID === 351750
+  ) {
   }
 
   /* ---------------------------------------------------------------------------------------------- */
@@ -257,25 +396,45 @@ export function getSoulbindFormula(effectID, player, contentType) {
   /* ---------------------------------------------------------------------------------------------- */
 
   //prettier-ignore
-  else if (effectID === 340159) {
+  else if (
     /* -------------------------------------- Service in Stone -------------------------------------- */
-  } else if (effectID === 319978) {
+    effectID === 340159
+  ) {
+  } else if (
     /* --------------------------------------- Enduring Gloom --------------------------------------- */
-  } else if (effectID === 332754) {
+    effectID === 319978
+  ) {
+  } else if (
     /* -------------------------------------- Hold Your Ground -------------------------------------- */
+    effectID === 332754
+  ) {
     const spec = player.getSpec();
     const expected_uptime = player.getSpecialQuery("HoldYourGroundUptime", contentType);
     const percentHealingAffected = spec === SPEC.DISCPRIEST ? 0.25 : 1;
 
     bonus_stats.HPS = expected_uptime * (player.getHPS(contentType) * 0.04 * percentHealingAffected);
-  } else if (effectID === 332753) {
-    /* -------------------------------------- Superior Tactics -------------------------------------- */
   } else if (
+    /* -------------------------------------- Superior Tactics -------------------------------------- */
+    effectID === 332753
+  ) {
+  } else if (
+    /* ---------------------------------------- Built for War --------------------------------------- */
     effectID === 319973
   ) {
-    /* ---------------------------------------- Built for War --------------------------------------- */
     let expected_stacks = 3.65;
     bonus_stats.Intellect = expected_stacks * player.activeStats.intellect * 0.01;
+  } else if (
+    /* ----------------------------------- Regenerative Stone Skin ---------------------------------- */
+    effectID === 352365
+  ) {
+  } else if (
+    /* ------------------------------------ Intimidation Tactics ------------------------------------ */
+    effectID === 352415
+  ) {
+  } else if (
+    /* ------------------------------------ Battlefield Presence ------------------------------------ */
+    effectID === 352417
+  ) {
   }
 
   /* ---------------------------------------------------------------------------------------------- */
@@ -287,14 +446,34 @@ export function getSoulbindFormula(effectID, player, contentType) {
   /* ---------------------------------------------------------------------------------------------- */
 
   //prettier-ignore
-  else if (effectID === 323074) {
+  else if (
     /* -------------------------------------- Volatile Solvent -------------------------------------- */
-  } else if (effectID === 323091) {
+    effectID === 323074
+  ) {
+  } else if (
     /* --------------------------------- Ooz's Frictionless Coating --------------------------------- */
-  } else if (effectID === 323090) {
+    effectID === 323091
+  ) {
+  } else if (
     /* --------------------------------- Plague'ys Preemptive Strike -------------------------------- */
-  } else if (effectID === 323095) {
+    effectID === 323090
+  ) {
+  } else if (
     /* ---------------------------------------- Ultimate Form --------------------------------------- */
+    effectID === 323095
+  ) {
+  } else if (
+    /* ---------------------------------------- Viscous Trail --------------------------------------- */
+    effectID === 352108
+  ) {
+  } else if (
+    /* ------------------------------------ Undulating Maneuvers ------------------------------------ */
+    effectID === 352109
+  ) {
+  } else if (
+    /* -------------------------------------- Kevin's Oozeling -------------------------------------- */
+    effectID === 352110
+  ) {
   }
 
   /* ---------------------------------------------------------------------------------------------- */
@@ -302,33 +481,51 @@ export function getSoulbindFormula(effectID, player, contentType) {
   /* ---------------------------------------------------------------------------------------------- */
 
   //prettier-ignore
-  else if (effectID === 342156) {
+  else if (
     /* --------------------------------------- Lead by Example -------------------------------------- */
+    effectID === 342156
+  ) {
     let total_bonus = 0.05 + 0.02 * 4;
     total_bonus += 0.02 * 4; // The buff TO your party. Treated as your own.
     let uptime = 1 / 6;
 
     bonus_stats.Intellect = player.activeStats.intellect * total_bonus * uptime;
   } else if (
+    /* -------------------------------------- Gnashing Chompers ------------------------------------- */
     effectID === 323919
   ) {
-    /* -------------------------------------- Gnashing Chompers ------------------------------------- */
     /*
     TODO: Implement
     This will need to be implemented for Mythic+ primarily. It's raid value will really only play up on 1-2 fights.
     Probably needs to be a fight specific formula.
     */
+  } else if (
+    /* ----------------------------------------- Sole Slough ---------------------------------------- */
+    effectID === 351089
+  ) {
+  } else if (
+    /* ------------------------------------- Resilient Stitching ------------------------------------ */
+    effectID === 351093
+  ) {
+  } else if (
+    /* -------------------------------------- Pustule Eruption -------------------------------------- */
+    effectID === 351094
+  ) {
   }
 
   /* ---------------------------------------------------------------------------------------------- */
   /*                                     -- Bonesmith Heirmir --                                    */
   /* ---------------------------------------------------------------------------------------------- */
   //prettier-ignore
-  else if (effectID === 326514) {
+  else if (
     /* ------------------------------------- Forgeborne Reveries ------------------------------------ */
+    effectID === 326514
+  ) {
     bonus_stats.Intellect = player.activeStats.intellect * 0.03;
-  } else if (effectID === 326572) {
+  } else if (
     /* ---------------------------- Heirmir's Arsenal: Marrowed Gemstone ---------------------------- */
+    effectID === 326572
+  ) {
     /*
     TODO, work out if you can collect stacks when it's on cooldown, or if the 10 crits have to take place after the cooldown.
     The uptime won't change much regardless but it'll be of slight impact.
@@ -336,6 +533,18 @@ export function getSoulbindFormula(effectID, player, contentType) {
     let uptime = 10 / 81;
 
     bonus_stats.Crit = STATPERONEPERCENT.Retail.CRIT * 18 * uptime;
+  } else if (
+    /* ---------------------------------------- Carver's Eye ---------------------------------------- */
+    effectID === 350899
+  ) {
+  } else if (
+    /* ----------------------------------- Waking Bone Breastplate ---------------------------------- */
+    effectID === 350935
+  ) {
+  } else if (
+    /* ------------------------------------- Mnemonic Equipment ------------------------------------- */
+    effectID === 350936
+  ) {
   }
 
   return bonus_stats;
