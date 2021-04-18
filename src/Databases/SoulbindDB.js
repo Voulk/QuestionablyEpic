@@ -5,6 +5,7 @@ export const soulbindDB = [
   /*                                   Pelagos                                  */
   /* -------------------------------------------------------------------------- */
 
+  /* -------------------------------------------- Row 0 ------------------------------------------- */
   {
     id: 328266,
     names: {
@@ -21,6 +22,8 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
   },
+
+  /* -------------------------------------------- Row 1 ------------------------------------------- */
   {
     id: 983921,
     names: {
@@ -37,6 +40,7 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
     type: "Finesse Conduit",
+    enhanced: 63,
   },
   {
     id: 903132,
@@ -55,6 +59,7 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Endurance Conduit",
     slotted_id: -1,
+    enhanced: 63,
   },
   {
     id: 8903278612,
@@ -73,7 +78,10 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Potency Conduit",
     slotted_id: -1,
+    enhanced: 63,
   },
+
+  /* -------------------------------------------- Row 2 ------------------------------------------- */
   {
     id: 328261,
     names: {
@@ -122,6 +130,8 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
   },
+
+  /* -------------------------------------------- Row 3 ------------------------------------------- */
   {
     id: 8901231,
     names: {
@@ -139,7 +149,10 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Endurance Conduit",
     slotted_id: -1,
+    enhanced: 66,
   },
+
+  /* -------------------------------------------- Row 4 ------------------------------------------- */
   {
     id: 328265,
     names: {
@@ -172,6 +185,8 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
   },
+
+  /* -------------------------------------------- Row 5 ------------------------------------------- */
   {
     id: 7178321,
     names: {
@@ -189,7 +204,10 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Potency Conduit",
     slotted_id: -1,
+    enhanced: 68,
   },
+
+  /* -------------------------------------------- Row 6 ------------------------------------------- */
   {
     id: 980109,
     names: {
@@ -207,6 +225,7 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Endurance Conduit",
     slotted_id: -1,
+    enhanced: 72,
   },
   {
     id: 8903212,
@@ -224,7 +243,10 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
     type: "Finesse Conduit",
+    enhanced: 72,
   },
+
+  /* -------------------------------------------- Row 7 ------------------------------------------- */
   {
     id: 328257,
     names: {
@@ -241,6 +263,8 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
   },
+
+  /* -------------------------------------------- Row 8 ------------------------------------------- */
   {
     id: 7178321,
     names: {
@@ -253,12 +277,15 @@ export const soulbindDB = [
     icon: "EmptyConduit.jpg",
     soulbind: "Pelagos",
     position: [8, 1],
-    renown: 30,
+    renown: 43,
     active: false,
     stat_bonus: {},
     type: "Potency Conduit",
     slotted_id: -1,
+    enhanced: 73,
   },
+
+  /* -------------------------------------------- Row 9 ------------------------------------------- */
   {
     id: 351146,
     names: {
@@ -293,6 +320,8 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
   },
+
+  /* ------------------------------------------- Row 10 ------------------------------------------- */
   {
     id: 980109,
     names: {
@@ -310,6 +339,7 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Endurance Conduit",
     slotted_id: -1,
+    enhanced: 78,
   },
   {
     id: 8903212,
@@ -327,7 +357,10 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
     type: "Finesse Conduit",
+    enhanced: 78,
   },
+
+  /* ------------------------------------------- Row 11 ------------------------------------------- */
   {
     id: 351149,
     names: {
@@ -350,6 +383,7 @@ export const soulbindDB = [
   /*                                    Kleia                                   */
   /* -------------------------------------------------------------------------- */
 
+  /* -------------------------------------------- Row 0 ------------------------------------------- */
   {
     id: 329791,
     names: {
@@ -366,6 +400,8 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
   },
+
+  /* -------------------------------------------- Row 1 ------------------------------------------- */
   {
     id: 1000839210,
     names: {
@@ -383,6 +419,7 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Potency Conduit",
     slotted_id: -1,
+    enhanced: 61,
   },
   {
     id: 1000839211,
@@ -401,7 +438,10 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Endurance Conduit",
     slotted_id: -1,
+    enhanced: 61,
   },
+
+  /* -------------------------------------------- Row 2 ------------------------------------------- */
   {
     id: 334066,
     names: {
@@ -434,6 +474,8 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
   },
+
+  /* -------------------------------------------- Row 3 ------------------------------------------- */
   {
     id: 2000839211,
     names: {
@@ -450,7 +492,10 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
     type: "Finesse Conduit",
+    enhanced: 64,
   },
+
+  /* -------------------------------------------- Row 4 ------------------------------------------- */
   {
     id: 329784,
     names: {
@@ -483,6 +528,8 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
   },
+
+  /* -------------------------------------------- Row 5 ------------------------------------------- */
   {
     id: 1000839212,
     names: {
@@ -500,7 +547,10 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Endurance Conduit",
     slotted_id: -1,
+    enhanced: 67,
   },
+
+  /* -------------------------------------------- Row 6 ------------------------------------------- */
   {
     id: 1000839213,
     names: {
@@ -518,6 +568,7 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Potency Conduit",
     slotted_id: -1,
+    enhanced: 70,
   },
   {
     id: 1000839214,
@@ -536,6 +587,7 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Endurance Conduit",
     slotted_id: -1,
+    enhanced: 70,
   },
   {
     id: 2000839212,
@@ -553,7 +605,10 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
     type: "Finesse Conduit",
+    enhanced: 70,
   },
+
+  /* -------------------------------------------- Row 7 ------------------------------------------- */
   {
     id: 329779,
     names: {
@@ -602,6 +657,8 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
   },
+
+  /* -------------------------------------------- Row 8 ------------------------------------------- */
   {
     id: 7178321,
     names: {
@@ -619,7 +676,10 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Potency Conduit",
     slotted_id: -1,
+    enhanced: 75,
   },
+
+  /* -------------------------------------------- Row 9 ------------------------------------------- */
   {
     id: 351488,
     names: {
@@ -654,6 +714,8 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
   },
+
+  /* ------------------------------------------- Row 10 ------------------------------------------- */
   {
     id: 980109,
     names: {
@@ -671,6 +733,7 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Endurance Conduit",
     slotted_id: -1,
+    enhanced: 79,
   },
   {
     id: 8903212,
@@ -688,6 +751,7 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
     type: "Finesse Conduit",
+    enhanced: 79,
   },
   {
     id: 351491,
@@ -711,6 +775,7 @@ export const soulbindDB = [
   /*                                  Mikanikos                                 */
   /* -------------------------------------------------------------------------- */
 
+  /* -------------------------------------------- Row 0 ------------------------------------------- */
   {
     id: 333950,
     names: {
@@ -727,6 +792,8 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
   },
+
+  /* -------------------------------------------- Row 1 ------------------------------------------- */
   {
     id: 3000839211,
     names: {
@@ -744,6 +811,7 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Potency Conduit",
     slotted_id: -1,
+    enhanced: 62,
   },
   {
     id: 3000839213,
@@ -762,7 +830,10 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Endurance Conduit",
     slotted_id: -1,
+    enhanced: 62,
   },
+
+  /* -------------------------------------------- Row 2 ------------------------------------------- */
   {
     id: 331609,
     names: {
@@ -795,6 +866,8 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
   },
+
+  /* -------------------------------------------- Row 3 ------------------------------------------- */
   {
     id: 3000839214,
     names: {
@@ -811,7 +884,10 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
     type: "Finesse Conduit",
+    enhanced: 65,
   },
+
+  /* -------------------------------------------- Row 4 ------------------------------------------- */
   {
     id: 331726,
     names: {
@@ -844,6 +920,8 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
   },
+
+  /* -------------------------------------------- Row 5 ------------------------------------------- */
   {
     id: 3000839215,
     names: {
@@ -861,7 +939,10 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Endurance Conduit",
     slotted_id: -1,
+    enhanced: 69,
   },
+
+  /* -------------------------------------------- Row 6 ------------------------------------------- */
   {
     id: 3000839216,
     names: {
@@ -879,6 +960,7 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Potency Conduit",
     slotted_id: -1,
+    enhanced: 71,
   },
   {
     id: 3000839217,
@@ -897,6 +979,7 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Endurance Conduit",
     slotted_id: -1,
+    enhanced: 71,
   },
   {
     id: 3000839218,
@@ -914,7 +997,10 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
     type: "Finesse Conduit",
+    enhanced: 71,
   },
+
+  /* -------------------------------------------- Row 7 ------------------------------------------- */
   {
     id: 331611,
     names: {
@@ -963,6 +1049,8 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
   },
+
+  /* -------------------------------------------- Row 8 ------------------------------------------- */
   {
     id: 7178321,
     names: {
@@ -980,7 +1068,10 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Potency Conduit",
     slotted_id: -1,
+    enhanced: 74,
   },
+
+  /* -------------------------------------------- Row 9 ------------------------------------------- */
   {
     id: 352186,
     names: {
@@ -1015,6 +1106,8 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
   },
+
+  /* ------------------------------------------- Row 10 ------------------------------------------- */
   {
     id: 980109,
     names: {
@@ -1032,6 +1125,7 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Endurance Conduit",
     slotted_id: -1,
+    enhanced: 77,
   },
   {
     id: 8903212,
@@ -1049,7 +1143,10 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
     type: "Finesse Conduit",
+    enhanced: 77,
   },
+
+  /* ------------------------------------------- Row 11 ------------------------------------------- */
   {
     id: 352188,
     names: {
@@ -1074,6 +1171,7 @@ export const soulbindDB = [
   /*                                  Marileth                                  */
   /* -------------------------------------------------------------------------- */
 
+  /* -------------------------------------------- Row 0 ------------------------------------------- */
   {
     id: 323074,
     names: {
@@ -1090,6 +1188,8 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
   },
+
+  /* -------------------------------------------- Row 1 ------------------------------------------- */
   {
     id: 4000839211,
     names: {
@@ -1107,6 +1207,7 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Potency Conduit",
     slotted_id: -1,
+    enhanced: 63,
   },
   {
     id: 3000839212,
@@ -1125,6 +1226,7 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Endurance Conduit",
     slotted_id: -1,
+    enhanced: 63,
   },
   {
     id: 3000839213,
@@ -1142,7 +1244,10 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
     type: "Finesse Conduit",
+    enhanced: 63,
   },
+
+  /* -------------------------------------------- Row 2 ------------------------------------------- */
   {
     id: 323091,
     names: {
@@ -1191,6 +1296,8 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
   },
+
+  /* -------------------------------------------- Row 3 ------------------------------------------- */
   {
     id: 3000839214,
     names: {
@@ -1208,7 +1315,10 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Endurance Conduit",
     slotted_id: -1,
+    enhanced: 66,
   },
+
+  /* -------------------------------------------- Row 4 ------------------------------------------- */
   {
     id: 323079,
     names: {
@@ -1241,6 +1351,8 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
   },
+
+  /* -------------------------------------------- Row 5 ------------------------------------------- */
   {
     id: 3000839215,
     names: {
@@ -1258,7 +1370,10 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Potency Conduit",
     slotted_id: -1,
+    enhanced: 68,
   },
+
+  /* -------------------------------------------- Row 6 ------------------------------------------- */
   {
     id: 3000839216,
     names: {
@@ -1276,6 +1391,7 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Endurance Conduit",
     slotted_id: -1,
+    enhanced: 72,
   },
   {
     id: 3000839217,
@@ -1293,7 +1409,10 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
     type: "Finesse Conduit",
+    enhanced: 72,
   },
+
+  /* -------------------------------------------- Row 7 ------------------------------------------- */
   {
     id: 323095,
     names: {
@@ -1310,6 +1429,8 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
   },
+
+  /* -------------------------------------------- Row 8 ------------------------------------------- */
   {
     id: 7178321,
     names: {
@@ -1322,12 +1443,15 @@ export const soulbindDB = [
     icon: "EmptyConduit.jpg",
     soulbind: "Marileth",
     position: [8, 1],
-    renown: 30,
+    renown: 43,
     active: false,
     stat_bonus: {},
     type: "Potency Conduit",
     slotted_id: -1,
+    enhanced: 73,
   },
+
+  /* -------------------------------------------- Row 9 ------------------------------------------- */
   {
     id: 352108,
     names: {
@@ -1341,7 +1465,7 @@ export const soulbindDB = [
     icon: "sha_inv_misc_slime_01_nightborne.jpg",
     soulbind: "Marileth",
     position: [9, 0],
-    renown: 30,
+    renown: 46,
     active: false,
     stat_bonus: {},
   },
@@ -1358,10 +1482,12 @@ export const soulbindDB = [
     icon: "achievement_dungeon_plaguefall_globgrog.jpg",
     soulbind: "Marileth",
     position: [9, 2],
-    renown: 30,
+    renown: 46,
     active: false,
     stat_bonus: {},
   },
+
+  /* ------------------------------------------- Row 10 ------------------------------------------- */
   {
     id: 980109,
     names: {
@@ -1374,11 +1500,12 @@ export const soulbindDB = [
     icon: "EmptyConduit.jpg",
     soulbind: "Marileth",
     position: [10, 0],
-    renown: 30,
+    renown: 51,
     active: false,
     stat_bonus: {},
     type: "Endurance Conduit",
     slotted_id: -1,
+    enhanced: 78,
   },
   {
     id: 8903212,
@@ -1392,11 +1519,14 @@ export const soulbindDB = [
     icon: "EmptyConduit.jpg",
     soulbind: "Marileth",
     position: [10, 2],
-    renown: 30,
+    renown: 51,
     active: false,
     stat_bonus: {},
     type: "Finesse Conduit",
+    enhanced: 78,
   },
+
+  /* ------------------------------------------- Row 11 ------------------------------------------- */
   {
     id: 352110,
     names: {
@@ -1410,7 +1540,7 @@ export const soulbindDB = [
     icon: "inv_misc_food_legion_gooslime_multi.jpg",
     soulbind: "Marileth",
     position: [11, 1],
-    renown: 30,
+    renown: 55,
     active: false,
     stat_bonus: {},
   },
@@ -1419,6 +1549,7 @@ export const soulbindDB = [
   /*                                    Emeni                                   */
   /* -------------------------------------------------------------------------- */
 
+  /* -------------------------------------------- Row 0 ------------------------------------------- */
   {
     id: 342156,
     names: {
@@ -1435,6 +1566,8 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
   },
+
+  /* -------------------------------------------- Row 1 ------------------------------------------- */
   {
     id: 6000839211,
     names: {
@@ -1452,6 +1585,7 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Potency Conduit",
     slotted_id: -1,
+    enhanced: 61,
   },
   {
     id: 6000839212,
@@ -1470,7 +1604,10 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Endurance Conduit",
     slotted_id: -1,
+    enhanced: 61,
   },
+
+  /* -------------------------------------------- Row 2 ------------------------------------------- */
   {
     id: 323921,
     names: {
@@ -1503,6 +1640,8 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
   },
+
+  /* -------------------------------------------- Row 3 ------------------------------------------- */
   {
     id: 6000839217,
     names: {
@@ -1519,7 +1658,10 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
     type: "Finesse Conduit",
+    enhanced: 64,
   },
+
+  /* -------------------------------------------- Row 4 ------------------------------------------- */
   {
     id: 324440,
     names: {
@@ -1552,6 +1694,8 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
   },
+
+  /* -------------------------------------------- Row 5 ------------------------------------------- */
   {
     id: 6000839218,
     names: {
@@ -1569,7 +1713,10 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Endurance Conduit",
     slotted_id: -1,
+    enhanced: 67,
   },
+
+  /* -------------------------------------------- Row 6 ------------------------------------------- */
   {
     id: 6000839219,
     names: {
@@ -1587,6 +1734,7 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Potency Conduit",
     slotted_id: -1,
+    enhanced: 70,
   },
   {
     id: 6000839220,
@@ -1605,6 +1753,7 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Endurance Conduit",
     slotted_id: -1,
+    enhanced: 70,
   },
   {
     id: 6000839221,
@@ -1622,7 +1771,10 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
     type: "Finesse Conduit",
+    enhanced: 70,
   },
+
+  /* -------------------------------------------- Row 7 ------------------------------------------- */
   {
     id: 323918,
     names: {
@@ -1671,6 +1823,8 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
   },
+
+  /* -------------------------------------------- Row 8 ------------------------------------------- */
   {
     id: 7178321,
     names: {
@@ -1683,12 +1837,15 @@ export const soulbindDB = [
     icon: "EmptyConduit.jpg",
     soulbind: "Emeni",
     position: [8, 1],
-    renown: 34,
+    renown: 42,
     active: false,
     stat_bonus: {},
     type: "Potency Conduit",
     slotted_id: -1,
+    enhanced: 75,
   },
+
+  /* -------------------------------------------- Row 9 ------------------------------------------- */
   {
     id: 351089,
     names: {
@@ -1702,7 +1859,7 @@ export const soulbindDB = [
     icon: "ability_rogue_deviouspoisons.jpg",
     soulbind: "Emeni",
     position: [9, 0],
-    renown: 34,
+    renown: 45,
     active: false,
     stat_bonus: {},
   },
@@ -1719,10 +1876,12 @@ export const soulbindDB = [
     icon: "tradeskill_abominationstitching_bodyparts.jpg",
     soulbind: "Emeni",
     position: [9, 2],
-    renown: 34,
+    renown: 45,
     active: false,
     stat_bonus: {},
   },
+
+  /* ------------------------------------------- Row 10 ------------------------------------------- */
   {
     id: 980109,
     names: {
@@ -1735,11 +1894,12 @@ export const soulbindDB = [
     icon: "EmptyConduit.jpg",
     soulbind: "Emeni",
     position: [10, 0],
-    renown: 34,
+    renown: 49,
     active: false,
     stat_bonus: {},
     type: "Endurance Conduit",
     slotted_id: -1,
+    enhanced: 79,
   },
   {
     id: 8903212,
@@ -1753,11 +1913,14 @@ export const soulbindDB = [
     icon: "EmptyConduit.jpg",
     soulbind: "Emeni",
     position: [10, 2],
-    renown: 34,
+    renown: 49,
     active: false,
     stat_bonus: {},
     type: "Finesse Conduit",
+    enhanced: 79,
   },
+
+  /* ------------------------------------------- Row 11 ------------------------------------------- */
   {
     id: 351094,
     names: {
@@ -1772,7 +1935,7 @@ export const soulbindDB = [
     icon: "ability_creature_disease_03.jpg",
     soulbind: "Emeni",
     position: [11, 1],
-    renown: 34,
+    renown: 54,
     active: false,
     stat_bonus: {},
   },
@@ -1781,6 +1944,7 @@ export const soulbindDB = [
   /*                                   Heirmir                                  */
   /* -------------------------------------------------------------------------- */
 
+  /* -------------------------------------------- Row 0 ------------------------------------------- */
   {
     id: 326514,
     names: {
@@ -1797,6 +1961,8 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
   },
+
+  /* -------------------------------------------- Row 1 ------------------------------------------- */
   {
     id: 6000839231,
     names: {
@@ -1814,6 +1980,7 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Potency Conduit",
     slotted_id: -1,
+    enhanced: 62,
   },
   {
     id: 6000839234,
@@ -1832,7 +1999,10 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Endurance Conduit",
     slotted_id: -1,
+    enhanced: 62,
   },
+
+  /* -------------------------------------------- Row 2 ------------------------------------------- */
   {
     id: 326507,
     names: {
@@ -1865,6 +2035,8 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
   },
+
+  /* -------------------------------------------- Row 3 ------------------------------------------- */
   {
     id: 6000839236,
     names: {
@@ -1881,7 +2053,10 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
     type: "Finesse Conduit",
+    enhanced: 65,
   },
+
+  /* -------------------------------------------- Row 4 ------------------------------------------- */
   {
     id: 326512,
     names: {
@@ -1914,6 +2089,8 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
   },
+
+  /* -------------------------------------------- Row 5 ------------------------------------------- */
   {
     id: 6000839237,
     names: {
@@ -1931,6 +2108,7 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Endurance Conduit",
     slotted_id: -1,
+    enhanced: 69,
   },
   {
     id: 6000839238,
@@ -1949,6 +2127,7 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Potency Conduit",
     slotted_id: -1,
+    enhanced: 69,
   },
   {
     id: 6000839239,
@@ -1967,7 +2146,10 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Endurance Conduit",
     slotted_id: -1,
+    enhanced: 69,
   },
+
+  /* -------------------------------------------- Row 6 ------------------------------------------- */
   {
     id: 6000839241,
     names: {
@@ -1984,7 +2166,10 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
     type: "Finesse Conduit",
+    enhanced: 71,
   },
+
+  /* -------------------------------------------- Row 7 ------------------------------------------- */
   {
     id: 326511,
     names: {
@@ -2033,6 +2218,8 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
   },
+
+  /* -------------------------------------------- Row 8 ------------------------------------------- */
   {
     id: 7178321,
     names: {
@@ -2050,7 +2237,10 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Potency Conduit",
     slotted_id: -1,
+    enhanced: 74,
   },
+
+  /* -------------------------------------------- Row 9 ------------------------------------------- */
   {
     id: 350899,
     names: {
@@ -2085,6 +2275,8 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
   },
+
+  /* ------------------------------------------- Row 10 ------------------------------------------- */
   {
     id: 980109,
     names: {
@@ -2102,6 +2294,7 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Endurance Conduit",
     slotted_id: -1,
+    enhanced: 77,
   },
   {
     id: 8903212,
@@ -2119,7 +2312,10 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
     type: "Finesse Conduit",
+    enhanced: 77,
   },
+
+  /* ------------------------------------------- Row 11 ------------------------------------------- */
   {
     id: 350936,
     names: {
@@ -2144,6 +2340,7 @@ export const soulbindDB = [
   /*                                    Niya                                    */
   /* -------------------------------------------------------------------------- */
 
+  /* -------------------------------------------- Row 0 ------------------------------------------- */
   {
     id: 322721,
     names: {
@@ -2160,6 +2357,8 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
   },
+
+  /* -------------------------------------------- Row 1 ------------------------------------------- */
   {
     id: 6000839242,
     names: {
@@ -2177,6 +2376,7 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Potency Conduit",
     slotted_id: -1,
+    enhanced: 63,
   },
   {
     id: 7000839211,
@@ -2195,7 +2395,10 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Endurance Conduit",
     slotted_id: -1,
+    enhanced: 63,
   },
+
+  /* -------------------------------------------- Row 2 ------------------------------------------- */
   {
     id: 342270,
     names: {
@@ -2228,6 +2431,8 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
   },
+
+  /* -------------------------------------------- Row 3 ------------------------------------------- */
   {
     id: 7000839212,
     names: {
@@ -2244,7 +2449,10 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
     type: "Finesse Conduit",
+    enhanced: 66,
   },
+
+  /* -------------------------------------------- Row 4 ------------------------------------------- */
   {
     id: 320668,
     names: {
@@ -2277,6 +2485,8 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
   },
+
+  /* -------------------------------------------- Row 5 ------------------------------------------- */
   {
     id: 7000839213,
     names: {
@@ -2294,7 +2504,10 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Endurance Conduit",
     slotted_id: -1,
+    enhanced: 68,
   },
+
+  /* -------------------------------------------- Row 6 ------------------------------------------- */
   {
     id: 7000839214,
     names: {
@@ -2312,6 +2525,7 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Endurance Conduit",
     slotted_id: -1,
+    enhanced: 72,
   },
   {
     id: 7000839215,
@@ -2330,6 +2544,7 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Potency Conduit",
     slotted_id: -1,
+    enhanced: 72,
   },
   {
     id: 7000839216,
@@ -2347,7 +2562,10 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
     type: "Finesse Conduit",
+    enhanced: 72,
   },
+
+  /* -------------------------------------------- Row 7 ------------------------------------------- */
   {
     id: 320659,
     names: {
@@ -2396,6 +2614,8 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
   },
+
+  /* -------------------------------------------- Row 8 ------------------------------------------- */
   {
     id: 7178321,
     names: {
@@ -2408,12 +2628,15 @@ export const soulbindDB = [
     icon: "EmptyConduit.jpg",
     soulbind: "Niya",
     position: [8, 1],
-    renown: 30,
+    renown: 43,
     active: false,
     stat_bonus: {},
     type: "Potency Conduit",
     slotted_id: -1,
+    enhanced: 73,
   },
+
+  /* -------------------------------------------- Row 9 ------------------------------------------- */
   {
     id: 352501,
     names: {
@@ -2427,7 +2650,7 @@ export const soulbindDB = [
     icon: "ability_hunter_runningshot.jpg",
     soulbind: "Niya",
     position: [9, 0],
-    renown: 30,
+    renown: 46,
     active: false,
     stat_bonus: {},
   },
@@ -2444,10 +2667,12 @@ export const soulbindDB = [
     icon: "achievement_pvp_legion02.jpg",
     soulbind: "Niya",
     position: [9, 2],
-    renown: 30,
+    renown: 46,
     active: false,
     stat_bonus: {},
   },
+
+  /* ------------------------------------------- Row 10 ------------------------------------------- */
   {
     id: 980109,
     names: {
@@ -2460,11 +2685,12 @@ export const soulbindDB = [
     icon: "EmptyConduit.jpg",
     soulbind: "Niya",
     position: [10, 0],
-    renown: 30,
+    renown: 51,
     active: false,
     stat_bonus: {},
     type: "Endurance Conduit",
     slotted_id: -1,
+    enhanced: 78,
   },
   {
     id: 8903212,
@@ -2478,11 +2704,14 @@ export const soulbindDB = [
     icon: "EmptyConduit.jpg",
     soulbind: "Niya",
     position: [10, 2],
-    renown: 30,
+    renown: 51,
     active: false,
     stat_bonus: {},
     type: "Finesse Conduit",
+    enhanced: 78,
   },
+
+  /* ------------------------------------------- Row 11 ------------------------------------------- */
   {
     id: 352503,
     names: {
@@ -2496,7 +2725,7 @@ export const soulbindDB = [
     icon: "spell_animaardenweald_buff.jpg",
     soulbind: "Niya",
     position: [11, 1],
-    renown: 30,
+    renown: 55,
     active: false,
     stat_bonus: {},
   },
@@ -2505,6 +2734,7 @@ export const soulbindDB = [
   /*                                 Dreamweaver                                */
   /* -------------------------------------------------------------------------- */
 
+  /* -------------------------------------------- Row 0 ------------------------------------------- */
   {
     id: 319217,
     names: {
@@ -2521,6 +2751,8 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
   },
+
+  /* -------------------------------------------- Row 1 ------------------------------------------- */
   {
     id: 908123,
     names: {
@@ -2538,6 +2770,7 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Endurance Conduit",
     slotted_id: -1,
+    enhanced: 61,
   },
   {
     id: 7189321,
@@ -2555,7 +2788,10 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
     type: "Finesse Conduit",
+    enhanced: 61,
   },
+
+  /* -------------------------------------------- Row 2 ------------------------------------------- */
   {
     id: 89123123,
     names: {
@@ -2573,7 +2809,10 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Potency Conduit",
     slotted_id: -1,
+    enhanced: 64,
   },
+
+  /* -------------------------------------------- Row 3 ------------------------------------------- */
   {
     id: 319211,
     names: {
@@ -2622,6 +2861,8 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
   },
+
+  /* -------------------------------------------- Row 4 ------------------------------------------- */
   {
     id: 98321789,
     names: {
@@ -2639,6 +2880,7 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Potency Conduit",
     slotted_id: -1,
+    enhanced: 67,
   },
   {
     id: 890213,
@@ -2657,6 +2899,7 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Endurance Conduit",
     slotted_id: -1,
+    enhanced: 67,
   },
   {
     id: 9321678,
@@ -2674,7 +2917,10 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
     type: "Finesse Conduit",
+    enhanced: 67,
   },
+
+  /* -------------------------------------------- Row 5 ------------------------------------------- */
   {
     id: 732891,
     names: {
@@ -2692,7 +2938,11 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Endurance Conduit",
     slotted_id: -1,
+    enhanced: 70,
   },
+
+  /* -------------------------------------------- Row 6 ------------------------------------------- */
+
   {
     id: 319214,
     names: {
@@ -2725,6 +2975,8 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
   },
+
+  /* -------------------------------------------- Row 7 ------------------------------------------- */
   {
     id: 319191,
     names: {
@@ -2741,6 +2993,8 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
   },
+
+  /* -------------------------------------------- Row 8 ------------------------------------------- */
   {
     id: 7178321,
     names: {
@@ -2753,12 +3007,15 @@ export const soulbindDB = [
     icon: "EmptyConduit.jpg",
     soulbind: "Dreamweaver",
     position: [8, 1],
-    renown: 34,
+    renown: 42,
     active: false,
     stat_bonus: {},
     type: "Potency Conduit",
     slotted_id: -1,
+    enhanced: 75,
   },
+
+  /* -------------------------------------------- Row 9 ------------------------------------------- */
   {
     id: 352782,
     names: {
@@ -2772,7 +3029,7 @@ export const soulbindDB = [
     icon: "9xp_sigil_ardenweald01.jpg",
     soulbind: "Dreamweaver",
     position: [9, 0],
-    renown: 34,
+    renown: 45,
     active: false,
     stat_bonus: {},
   },
@@ -2791,10 +3048,12 @@ export const soulbindDB = [
     icon: "inv_legion_faction_dreamweavers.jpg",
     soulbind: "Dreamweaver",
     position: [9, 2],
-    renown: 34,
+    renown: 45,
     active: false,
     stat_bonus: {},
   },
+
+  /* ------------------------------------------- Row 10 ------------------------------------------- */
   {
     id: 980109,
     names: {
@@ -2807,11 +3066,12 @@ export const soulbindDB = [
     icon: "EmptyConduit.jpg",
     soulbind: "Dreamweaver",
     position: [10, 0],
-    renown: 34,
+    renown: 49,
     active: false,
     stat_bonus: {},
     type: "Endurance Conduit",
     slotted_id: -1,
+    enhanced: 79,
   },
   {
     id: 8903212,
@@ -2825,11 +3085,14 @@ export const soulbindDB = [
     icon: "EmptyConduit.jpg",
     soulbind: "Dreamweaver",
     position: [10, 2],
-    renown: 34,
+    renown: 49,
     active: false,
     stat_bonus: {},
     type: "Finesse Conduit",
+    enhanced: 79,
   },
+
+  /* ------------------------------------------- Row 11 ------------------------------------------- */
   {
     id: 352786,
     names: {
@@ -2843,7 +3106,7 @@ export const soulbindDB = [
     icon: "sanctum_features_animadiversion_ardenweald.jpg",
     soulbind: "Dreamweaver",
     position: [11, 1],
-    renown: 34,
+    renown: 54,
     active: false,
     stat_bonus: {},
   },
@@ -2852,6 +3115,7 @@ export const soulbindDB = [
   /*                                   Korayn                                   */
   /* -------------------------------------------------------------------------- */
 
+  /* -------------------------------------------- Row 0 ------------------------------------------- */
   {
     id: 325066,
     names: {
@@ -2868,6 +3132,8 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
   },
+
+  /* -------------------------------------------- Row 1 ------------------------------------------- */
   {
     id: 8000839211,
     names: {
@@ -2885,6 +3151,7 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Potency Conduit",
     slotted_id: -1,
+    enhanced: 62,
   },
   {
     id: 58971321,
@@ -2903,7 +3170,10 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Endurance Conduit",
     slotted_id: -1,
+    enhanced: 62,
   },
+
+  /* -------------------------------------------- Row 2 ------------------------------------------- */
   {
     id: 325067,
     names: {
@@ -2936,6 +3206,8 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
   },
+
+  /* -------------------------------------------- Row 3 ------------------------------------------- */
   {
     id: 8000839212,
     names: {
@@ -2952,7 +3224,10 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
     type: "Finesse Conduit",
+    enhanced: 65,
   },
+
+  /* -------------------------------------------- Row 4 ------------------------------------------- */
   {
     id: 325072,
     names: {
@@ -2985,6 +3260,8 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
   },
+
+  /* -------------------------------------------- Row 5 ------------------------------------------- */
   {
     id: 8979321,
     names: {
@@ -3002,7 +3279,10 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Endurance Conduit",
     slotted_id: -1,
+    enhanced: 69,
   },
+
+  /* -------------------------------------------- Row 6 ------------------------------------------- */
   {
     id: 71893216,
     names: {
@@ -3020,6 +3300,7 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Potency Conduit",
     slotted_id: -1,
+    enhanced: 71,
   },
   {
     id: 6783212,
@@ -3038,6 +3319,7 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Endurance Conduit",
     slotted_id: -1,
+    enhanced: 71,
   },
   {
     id: 8000839213,
@@ -3055,7 +3337,10 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
     type: "Finesse Conduit",
+    enhanced: 71,
   },
+
+  /* -------------------------------------------- Row 7 ------------------------------------------- */
   {
     id: 325068,
     names: {
@@ -3104,6 +3389,8 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
   },
+
+  /* -------------------------------------------- Row 8 ------------------------------------------- */
   {
     id: 7178321,
     names: {
@@ -3116,12 +3403,15 @@ export const soulbindDB = [
     icon: "EmptyConduit.jpg",
     soulbind: "Korayn",
     position: [8, 1],
-    renown: 31,
+    renown: 41,
     active: false,
     stat_bonus: {},
     type: "Potency Conduit",
     slotted_id: -1,
+    enhanced: 74,
   },
+
+  /* -------------------------------------------- Row 9 ------------------------------------------- */
   {
     id: 352800,
     names: {
@@ -3135,7 +3425,7 @@ export const soulbindDB = [
     icon: "9xp_sigil_ardenweald01.jpg",
     soulbind: "Korayn",
     position: [9, 0],
-    renown: 31,
+    renown: 48,
     active: false,
     stat_bonus: {},
   },
@@ -3152,10 +3442,12 @@ export const soulbindDB = [
     icon: "spell_animaardenweald_debuff.jpg",
     soulbind: "Korayn",
     position: [9, 2],
-    renown: 31,
+    renown: 48,
     active: false,
     stat_bonus: {},
   },
+
+  /* ------------------------------------------- Row 10 ------------------------------------------- */
   {
     id: 980109,
     names: {
@@ -3168,11 +3460,12 @@ export const soulbindDB = [
     icon: "EmptyConduit.jpg",
     soulbind: "Korayn",
     position: [10, 0],
-    renown: 31,
+    renown: 53,
     active: false,
     stat_bonus: {},
     type: "Endurance Conduit",
     slotted_id: -1,
+    enhanced: 77,
   },
   {
     id: 8903212,
@@ -3186,11 +3479,14 @@ export const soulbindDB = [
     icon: "EmptyConduit.jpg",
     soulbind: "Korayn",
     position: [10, 2],
-    renown: 31,
+    renown: 53,
     active: false,
     stat_bonus: {},
     type: "Finesse Conduit",
+    enhanced: 77,
   },
+
+  /* ------------------------------------------- Row 11 ------------------------------------------- */
   {
     id: 352805,
     names: {
@@ -3204,7 +3500,7 @@ export const soulbindDB = [
     icon: "spell_animaardenweald_beam.jpg",
     soulbind: "Korayn",
     position: [11, 1],
-    renown: 31,
+    renown: 57,
     active: false,
     stat_bonus: {},
   },
@@ -3215,6 +3511,7 @@ export const soulbindDB = [
   /*                                   Nadjia                                   */
   /* -------------------------------------------------------------------------- */
 
+  /* -------------------------------------------- Row 0 ------------------------------------------- */
   {
     id: 331586,
     names: {
@@ -3231,6 +3528,8 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
   },
+
+  /* -------------------------------------------- Row 1 ------------------------------------------- */
   {
     id: 8000839214,
     names: {
@@ -3248,6 +3547,7 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Potency Conduit",
     slotted_id: -1,
+    enhanced: 63,
   },
   {
     id: 8000839215,
@@ -3266,7 +3566,10 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Endurance Conduit",
     slotted_id: -1,
+    enhanced: 63,
   },
+
+  /* -------------------------------------------- Row 2 ------------------------------------------- */
   {
     id: 331576,
     names: {
@@ -3299,6 +3602,8 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
   },
+
+  /* -------------------------------------------- Row 3 ------------------------------------------- */
   {
     id: 8000839216,
     names: {
@@ -3315,7 +3620,10 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
     type: "Finesse Conduit",
+    enhanced: 66,
   },
+
+  /* -------------------------------------------- Row 4 ------------------------------------------- */
   {
     id: 331579,
     names: {
@@ -3332,6 +3640,8 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
   },
+
+  /* -------------------------------------------- Row 5 ------------------------------------------- */
   {
     id: 8000839217,
     names: {
@@ -3349,7 +3659,10 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Endurance Conduit",
     slotted_id: -1,
+    enhanced: 68,
   },
+
+  /* -------------------------------------------- Row 6 ------------------------------------------- */
   {
     id: 8000839218,
     names: {
@@ -3367,6 +3680,7 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Potency Conduit",
     slotted_id: -1,
+    enhanced: 72,
   },
   {
     id: 8000839219,
@@ -3385,6 +3699,7 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Endurance Conduit",
     slotted_id: -1,
+    enhanced: 72,
   },
   {
     id: 8000839221,
@@ -3402,7 +3717,10 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
     type: "Finesse Conduit",
+    enhanced: 72,
   },
+
+  /* -------------------------------------------- Row 7 ------------------------------------------- */
   {
     id: 331582,
     names: {
@@ -3451,6 +3769,8 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
   },
+
+  /* -------------------------------------------- Row 8 ------------------------------------------- */
   {
     id: 7178321,
     names: {
@@ -3463,12 +3783,15 @@ export const soulbindDB = [
     icon: "EmptyConduit.jpg",
     soulbind: "Nadjia",
     position: [8, 1],
-    renown: 30,
+    renown: 43,
     active: false,
     stat_bonus: {},
     type: "Potency Conduit",
     slotted_id: -1,
+    enhanced: 73,
   },
+
+  /* -------------------------------------------- Row 9 ------------------------------------------- */
   {
     id: 352405,
     names: {
@@ -3482,7 +3805,7 @@ export const soulbindDB = [
     icon: "spell_animarevendreth_buff.jpg",
     soulbind: "Nadjia",
     position: [9, 0],
-    renown: 30,
+    renown: 46,
     active: false,
     stat_bonus: {},
   },
@@ -3499,10 +3822,12 @@ export const soulbindDB = [
     icon: "ability_rogue_sprint_blue.jpg",
     soulbind: "Nadjia",
     position: [9, 2],
-    renown: 30,
+    renown: 46,
     active: false,
     stat_bonus: {},
   },
+
+  /* ------------------------------------------- Row 10 ------------------------------------------- */
   {
     id: 980109,
     names: {
@@ -3515,11 +3840,12 @@ export const soulbindDB = [
     icon: "EmptyConduit.jpg",
     soulbind: "Nadjia",
     position: [10, 0],
-    renown: 30,
+    renown: 51,
     active: false,
     stat_bonus: {},
     type: "Endurance Conduit",
     slotted_id: -1,
+    enhanced: 78,
   },
   {
     id: 8903212,
@@ -3533,11 +3859,14 @@ export const soulbindDB = [
     icon: "EmptyConduit.jpg",
     soulbind: "Nadjia",
     position: [10, 2],
-    renown: 30,
+    renown: 51,
     active: false,
     stat_bonus: {},
     type: "Finesse Conduit",
+    enhanced: 78,
   },
+
+  /* ------------------------------------------- Row 11 ------------------------------------------- */
   {
     id: 352373,
     names: {
@@ -3554,7 +3883,7 @@ export const soulbindDB = [
     icon: "ability_rogue_shadowstrike.jpg",
     soulbind: "Nadjia",
     position: [11, 1],
-    renown: 30,
+    renown: 55,
     active: false,
     stat_bonus: {},
   },
@@ -3563,6 +3892,7 @@ export const soulbindDB = [
   /*                                   Theotar                                  */
   /* -------------------------------------------------------------------------- */
 
+  /* -------------------------------------------- Row 0 ------------------------------------------- */
   {
     id: 336239,
     names: {
@@ -3579,6 +3909,8 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
   },
+
+  /* -------------------------------------------- Row 1 ------------------------------------------- */
   {
     id: 8000839222,
     names: {
@@ -3596,6 +3928,7 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Endurance Conduit",
     slotted_id: -1,
+    enhanced: 61,
   },
   {
     id: 8000839223,
@@ -3613,7 +3946,10 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
     type: "Finesse Conduit",
+    enhanced: 61,
   },
+
+  /* -------------------------------------------- Row 2 ------------------------------------------- */
   {
     id: 336140,
     names: {
@@ -3646,6 +3982,8 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
   },
+
+  /* -------------------------------------------- Row 3 ------------------------------------------- */
   {
     id: 8000839224,
     names: {
@@ -3663,7 +4001,10 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Potency Conduit",
     slotted_id: -1,
+    enhanced: 64,
   },
+
+  /* -------------------------------------------- Row 4 ------------------------------------------- */
   {
     id: 336247,
     names: {
@@ -3696,6 +4037,8 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
   },
+
+  /* -------------------------------------------- Row 5 ------------------------------------------- */
   {
     id: 8000839225,
     names: {
@@ -3713,7 +4056,10 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Endurance Conduit",
     slotted_id: -1,
+    enhanced: 67,
   },
+
+  /* -------------------------------------------- Row 6 ------------------------------------------- */
   {
     id: 8000839226,
     names: {
@@ -3731,6 +4077,7 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Potency Conduit",
     slotted_id: -1,
+    enhanced: 70,
   },
   {
     id: 8000839227,
@@ -3749,6 +4096,7 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Endurance Conduit",
     slotted_id: -1,
+    enhanced: 70,
   },
   {
     id: 8000839228,
@@ -3766,7 +4114,10 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
     type: "Finesse Conduit",
+    enhanced: 70,
   },
+
+  /* -------------------------------------------- Row 7 ------------------------------------------- */
   {
     id: 336245,
     names: {
@@ -3815,6 +4166,8 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
   },
+
+  /* -------------------------------------------- Row 8 ------------------------------------------- */
   {
     id: 7178321,
     names: {
@@ -3827,12 +4180,15 @@ export const soulbindDB = [
     icon: "EmptyConduit.jpg",
     soulbind: "Theotar",
     position: [8, 1],
-    renown: 34,
+    renown: 42,
     active: false,
     stat_bonus: {},
     type: "Potency Conduit",
     slotted_id: -1,
+    enhanced: 75,
   },
+
+  /* -------------------------------------------- Row 9 ------------------------------------------- */
   {
     id: 351747,
     names: {
@@ -3847,7 +4203,7 @@ export const soulbindDB = [
     icon: "trade_engineering.jpg",
     soulbind: "Theotar",
     position: [9, 0],
-    renown: 34,
+    renown: 45,
     active: false,
     stat_bonus: {},
   },
@@ -3864,10 +4220,12 @@ export const soulbindDB = [
     icon: "inv_misc_food_strawberry_ice.jpg",
     soulbind: "Theotar",
     position: [9, 2],
-    renown: 34,
+    renown: 45,
     active: false,
     stat_bonus: {},
   },
+
+  /* ------------------------------------------- Row 10 ------------------------------------------- */
   {
     id: 980109,
     names: {
@@ -3880,11 +4238,12 @@ export const soulbindDB = [
     icon: "EmptyConduit.jpg",
     soulbind: "Theotar",
     position: [10, 0],
-    renown: 34,
+    renown: 49,
     active: false,
     stat_bonus: {},
     type: "Endurance Conduit",
     slotted_id: -1,
+    enhanced: 79,
   },
   {
     id: 8903212,
@@ -3898,11 +4257,14 @@ export const soulbindDB = [
     icon: "EmptyConduit.jpg",
     soulbind: "Theotar",
     position: [10, 2],
-    renown: 34,
+    renown: 49,
     active: false,
     stat_bonus: {},
     type: "Finesse Conduit",
+    enhanced: 79,
   },
+
+  /* ------------------------------------------- Row 11 ------------------------------------------- */
   {
     id: 351750,
     names: {
@@ -3917,7 +4279,7 @@ export const soulbindDB = [
     icon: "trade_engineering.jpg",
     soulbind: "Theotar",
     position: [11, 1],
-    renown: 34,
+    renown: 54,
     active: false,
     stat_bonus: {},
   },
@@ -3926,6 +4288,7 @@ export const soulbindDB = [
   /*                                   Draven                                   */
   /* -------------------------------------------------------------------------- */
 
+  /* -------------------------------------------- Row 0 ------------------------------------------- */
   {
     id: 340159,
     names: {
@@ -3942,6 +4305,8 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
   },
+
+  /* -------------------------------------------- Row 1 ------------------------------------------- */
   {
     id: 9000839211,
     names: {
@@ -3959,6 +4324,7 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Endurance Conduit",
     slotted_id: -1,
+    enhanced: 62,
   },
   {
     id: 9000839212,
@@ -3976,7 +4342,10 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
     type: "Finesse Conduit",
+    enhanced: 62,
   },
+
+  /* -------------------------------------------- Row 2 ------------------------------------------- */
   {
     id: 319982,
     names: {
@@ -4009,6 +4378,8 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
   },
+
+  /* -------------------------------------------- Row 3 ------------------------------------------- */
   {
     id: 9000839213,
     names: {
@@ -4026,7 +4397,10 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Potency Conduit",
     slotted_id: -1,
+    enhanced: 65,
   },
+
+  /* -------------------------------------------- Row 4 ------------------------------------------- */
   {
     id: 332755,
     names: {
@@ -4059,6 +4433,8 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
   },
+
+  /* -------------------------------------------- Row 5 ------------------------------------------- */
   {
     id: 9000839214,
     names: {
@@ -4076,7 +4452,10 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Endurance Conduit",
     slotted_id: -1,
+    enhanced: 69,
   },
+
+  /* -------------------------------------------- Row 6 ------------------------------------------- */
   {
     id: 9000839215,
     names: {
@@ -4094,6 +4473,7 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Potency Conduit",
     slotted_id: -1,
+    enhanced: 71,
   },
   {
     id: 9000839216,
@@ -4112,6 +4492,7 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Endurance Conduit",
     slotted_id: -1,
+    enhanced: 71,
   },
   {
     id: 9000839217,
@@ -4129,7 +4510,10 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
     type: "Finesse Conduit",
+    enhanced: 71,
   },
+
+  /* -------------------------------------------- Row 7 ------------------------------------------- */
   {
     id: 332754,
     names: {
@@ -4178,6 +4562,8 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
   },
+
+  /* -------------------------------------------- Row 8 ------------------------------------------- */
   {
     id: 7178321,
     names: {
@@ -4190,12 +4576,15 @@ export const soulbindDB = [
     icon: "EmptyConduit.jpg",
     soulbind: "Draven",
     position: [8, 1],
-    renown: 31,
+    renown: 41,
     active: false,
     stat_bonus: {},
     type: "Potency Conduit",
     slotted_id: -1,
+    enhanced: 74,
   },
+
+  /* -------------------------------------------- Row 9 ------------------------------------------- */
   {
     id: 352365,
     names: {
@@ -4209,7 +4598,7 @@ export const soulbindDB = [
     icon: "archaeology_5_0_crackedmogurunestone.jpg",
     soulbind: "Draven",
     position: [9, 0],
-    renown: 31,
+    renown: 48,
     active: false,
     stat_bonus: {},
   },
@@ -4226,10 +4615,12 @@ export const soulbindDB = [
     icon: "ability_warrior_strengthofarms.jpg",
     soulbind: "Draven",
     position: [9, 2],
-    renown: 31,
+    renown: 48,
     active: false,
     stat_bonus: {},
   },
+
+  /* ------------------------------------------- Row 10 ------------------------------------------- */
   {
     id: 980109,
     names: {
@@ -4242,11 +4633,12 @@ export const soulbindDB = [
     icon: "EmptyConduit.jpg",
     soulbind: "Draven",
     position: [10, 0],
-    renown: 31,
+    renown: 53,
     active: false,
     stat_bonus: {},
     type: "Endurance Conduit",
     slotted_id: -1,
+    enhanced: 77,
   },
   {
     id: 8903212,
@@ -4260,11 +4652,14 @@ export const soulbindDB = [
     icon: "EmptyConduit.jpg",
     soulbind: "Draven",
     position: [10, 2],
-    renown: 31,
+    renown: 53,
     active: false,
     stat_bonus: {},
     type: "Finesse Conduit",
+    enhanced: 77,
   },
+
+  /* ------------------------------------------- Row 11 ------------------------------------------- */
   {
     id: 352417,
     names: {
@@ -4279,7 +4674,7 @@ export const soulbindDB = [
     icon: "trade_engineering.jpg",
     soulbind: "Draven",
     position: [11, 1],
-    renown: 31,
+    renown: 57,
     active: false,
     stat_bonus: {},
   },
