@@ -1,7 +1,7 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
-import { Tabs, Tab, Box, AppBar, Grid, Paper, Typography } from "@material-ui/core";
+import { Tabs, Tab, Box, AppBar, Grid, Paper, Typography, TextField, Tooltip } from "@material-ui/core";
 import { soulbindDB, soulbindConnectors } from "Databases/SoulbindDB";
 import SoulbindNode from "./SoulbindNode";
 import ConduitObject from "./ConduitObject";
@@ -100,9 +100,9 @@ export default function CovenantExploration(props) {
   const contentType = useSelector((state) => state.contentType);
   const { t } = useTranslation();
   const classes = useStyles();
-  const [tabvalue, setTabValue] = React.useState(0);
-  const [soulbindValue, setSoulbindValue] = React.useState(0);
-  const [soulbindState, setSoulbindState] = React.useState(buildBonusStats(soulbindDB, props.player, contentType));
+  const [tabvalue, setTabValue] = useState(0);
+  const [soulbindValue, setSoulbindValue] = useState(0);
+  const [soulbindState, setSoulbindState] = useState(buildBonusStats(soulbindDB, props.player, contentType));
 
   useEffect(() => {
     let updatedArray = soulbindState.map((trait) => {
@@ -437,6 +437,7 @@ export default function CovenantExploration(props) {
 function buildSoulbind(soulbindName, player, contentType, soulbindState, activateSoulbind, setConduitInSlot, updateConduitLevel) {
   const { t } = useTranslation();
   const classes = useStyles();
+  const [renownValue, setRenownValue] = useState("");
   let activeSoulbind = soulbindState.filter((trait) => trait.soulbind === soulbindName);
   let activeConnectors = soulbindConnectors.filter((trait) => trait.soulbind === soulbindName);
 
@@ -450,6 +451,11 @@ function buildSoulbind(soulbindName, player, contentType, soulbindState, activat
   let statSums = sumSelectedStats(soulbindName, soulbindState);
   let estimatedHPS = getEstimatedHPS(statSums, player, contentType);
   let covAbility = getEstimatedHPS(getCovAbility(soulbindName, player, contentType));
+
+  const updateRenown = (value) => {
+    setRenownValue(value);
+  };
+
   return (
     <Grid id="soulbind" container direction="row" style={{ display: "flex", flexWrap: "nowrap" }}>
       <Grid item>
@@ -507,6 +513,21 @@ function buildSoulbind(soulbindName, player, contentType, soulbindState, activat
                 maxWidth: 245,
               }}
             >
+              <Grid item xs={12}>
+              <Tooltip title={t("Test")} placement="right">
+                <TextField
+                  label={t("Renown Level")}
+                  id="renownLevel"
+                  value={renownValue}
+                  inputProps={{ min: 0, style: { textAlign: "center" } }}
+                  style={{ width: "100%", marginTop: 4 }}
+                  onChange={(e) => updateRenown(e.target.value)}
+                  variant="outlined"
+                  size="small"
+                  type="number"
+                />
+                </Tooltip>
+              </Grid>
               {/* --------------------------- Conduit Instructions (Left/Right Click) -------------------------- */}
               <Grid item xs={12}>
                 <Paper
