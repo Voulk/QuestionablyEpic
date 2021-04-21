@@ -49,30 +49,49 @@ export function getPaladinCovAbility(soulbindName, player, contentType) {
   if (["Kleia", "Pelagos", "Mikanikos"].includes(soulbindName)) {
     // Kyrian
 
-    // Add Beacon. Consider what to do with Shock Barrier.
-    let holy_shock_sp = 1.55;
-    let glimmer_sp = 0.38;
-    let expected_glimmer_active = 7;
-    let shock_barrier = 0;
+    // The Divine Toll formula includes beacon healing, 
+    const holy_shock_sp = 1.55;
+    const glimmer_sp = 0.38;
+    const expected_glimmer_active = contentType == "Raid" ? 7.1 : 4.4;
+    const divineTollCasts = 5;
+    const shockBarrierMult = 1 + (0.2 * 3) * (1 - 0.15);
+    const expectedHSOverhealing = 0.06;
+    const beaconMult = 1 + (0.5 * (1 - 0.88));
 
-    bonus_stats.HPS = ((holy_shock_sp + glimmer_sp * expected_glimmer_active) * 5 * player.getStatMultiplier("NOHASTE")) / 60;
+    const oneCombinedShock = holy_shock_sp * (1 - expectedHSOverhealing) * shockBarrierMult * beaconMult;
+    const oneGlimmerProc = glimmer_sp * expected_glimmer_active * beaconMult * 0.8;
+    const holyPowerHPS = getOneHolyPower(player, contentType) * 5;
+
+    // It is a reasonable assumption that you include half of your Divine Tolls within a wings window.
+    const wingsMultiplier = (getWingsHealingInc(player.getStatPerc("Crit")) - 1) / 2 + 1; 
+    
+    bonus_stats.HPS = (holyPowerHPS + ((oneCombinedShock * divineTollCasts + oneGlimmerProc) * player.getStatMultiplier("NOHASTE") * wingsMultiplier)) / 60;
+
   } else if (["Nadjia", "Theotar", "Draven"].includes(soulbindName)) {
     // Ashen Hallow (Venthyr)
 
     // The healing portion
-    let expected_uptime = 0.95;
-    let average_allies = 18;
-    let sqrt_mult = Math.min(Math.sqrt(5 / average_allies), 1); // Check how it scales first.
-    let ashen_tick_sp = 0.42;
-    let ashen_ticks = 15 * player.getStatPerc("Haste");
-    let ashen_healing_portion = ashen_ticks * ashen_tick_sp * sqrt_mult * average_allies * expected_uptime * player.getStatMultiplier("NOHASTE");
+    const expected_uptime = 0.98;
+    const average_allies = 18;
+    const sqrt_mult = Math.min(Math.sqrt(5 / average_allies), 1); 
+    const ashen_tick_sp = 0.42;
+    const ashen_ticks = 15 * player.getStatPerc("Haste");
+    const wingsMultiplier = (getWingsHealingInc(player.getStatPerc("Crit")) - 1) * 0.66 + 1; // Two thirds of your Ashen will be in the wings window. 
+    const expectedOverhealing = 0.49;
+    const rawAshenHealing = ashen_ticks * ashen_tick_sp * sqrt_mult * average_allies * wingsMultiplier * expected_uptime * player.getStatMultiplier("NOHASTE")
+    const ashen_healing_portion =  rawAshenHealing * (1 - expectedOverhealing);
 
     // The extra Holy Power
-    let one_holy_power = getOneHolyPower(player, contentType);
-    let expected_holy_power = (30 / 7.5) * expected_uptime;
-    let ashen_hammer_portion = expected_holy_power * one_holy_power;
+    const one_holy_power = getOneHolyPower(player, contentType);
+    const expected_holy_power = (30 / 7.5) * expected_uptime;
+    const ashen_hammer_portion = expected_holy_power * one_holy_power;
 
-    bonus_stats.HPS = (ashen_hammer_portion + ashen_healing_portion) / 240;
+    // The Beacon transfer
+    const beaconMult = (0.25 * (1 - 0.62));
+    const beaconHPS = beaconMult * rawAshenHealing;
+
+    bonus_stats.HPS = (ashen_hammer_portion + ashen_healing_portion + beaconHPS) / 240;
+
   } else if (["Marileth", "Emeni", "Heirmir"].includes(soulbindName)) {
     // Vanquishers Hammer (Necrolord)
     const HPSFreeWordOfGlory = player.getSingleCast(IDWORDOFGLORY, contentType);
