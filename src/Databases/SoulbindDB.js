@@ -266,7 +266,7 @@ export const soulbindDB = [
 
   /* -------------------------------------------- Row 8 ------------------------------------------- */
   {
-    id: 7178321,
+    id: 81967787,
     names: {
       en: "Potency Conduit",
       cn: "效能导灵器",
@@ -323,7 +323,7 @@ export const soulbindDB = [
 
   /* ------------------------------------------- Row 10 ------------------------------------------- */
   {
-    id: 980109,
+    id: 81967791,
     names: {
       en: "Endurance Conduit",
       cn: "韧如树皮",
@@ -342,7 +342,7 @@ export const soulbindDB = [
     enhanced: 78,
   },
   {
-    id: 8903212,
+    id: 81967795,
     names: {
       en: "Finesse Conduit",
       cn: "灵巧导灵器",
@@ -660,7 +660,7 @@ export const soulbindDB = [
 
   /* -------------------------------------------- Row 8 ------------------------------------------- */
   {
-    id: 7178321,
+    id: 81967788,
     names: {
       en: "Potency Conduit",
       cn: "效能导灵器",
@@ -717,7 +717,7 @@ export const soulbindDB = [
 
   /* ------------------------------------------- Row 10 ------------------------------------------- */
   {
-    id: 980109,
+    id: 81967792,
     names: {
       en: "Endurance Conduit",
       cn: "韧如树皮",
@@ -736,7 +736,7 @@ export const soulbindDB = [
     enhanced: 79,
   },
   {
-    id: 8903212,
+    id: 81967796,
     names: {
       en: "Finesse Conduit",
       cn: "灵巧导灵器",
@@ -1052,7 +1052,7 @@ export const soulbindDB = [
 
   /* -------------------------------------------- Row 8 ------------------------------------------- */
   {
-    id: 7178321,
+    id: 81967789,
     names: {
       en: "Potency Conduit",
       cn: "效能导灵器",
@@ -1109,7 +1109,7 @@ export const soulbindDB = [
 
   /* ------------------------------------------- Row 10 ------------------------------------------- */
   {
-    id: 980109,
+    id: 81967793,
     names: {
       en: "Endurance Conduit",
       cn: "韧如树皮",
@@ -1128,7 +1128,7 @@ export const soulbindDB = [
     enhanced: 77,
   },
   {
-    id: 8903212,
+    id: 81967797,
     names: {
       en: "Finesse Conduit",
       cn: "灵巧导灵器",
@@ -1432,7 +1432,7 @@ export const soulbindDB = [
 
   /* -------------------------------------------- Row 8 ------------------------------------------- */
   {
-    id: 7178321,
+    id: 81967790,
     names: {
       en: "Potency Conduit",
       cn: "效能导灵器",
@@ -1489,7 +1489,7 @@ export const soulbindDB = [
 
   /* ------------------------------------------- Row 10 ------------------------------------------- */
   {
-    id: 980109,
+    id: 81967794,
     names: {
       en: "Endurance Conduit",
       cn: "韧如树皮",
@@ -1508,7 +1508,7 @@ export const soulbindDB = [
     enhanced: 78,
   },
   {
-    id: 8903212,
+    id: 81967798,
     names: {
       en: "Finesse Conduit",
       cn: "灵巧导灵器",
@@ -1826,7 +1826,7 @@ export const soulbindDB = [
 
   /* -------------------------------------------- Row 8 ------------------------------------------- */
   {
-    id: 7178321,
+    id: 8196748,
     names: {
       en: "Potency Conduit",
       cn: "效能导灵器",
@@ -1883,7 +1883,7 @@ export const soulbindDB = [
 
   /* ------------------------------------------- Row 10 ------------------------------------------- */
   {
-    id: 980109,
+    id: 8196749,
     names: {
       en: "Endurance Conduit",
       cn: "韧如树皮",
@@ -1902,7 +1902,7 @@ export const soulbindDB = [
     enhanced: 79,
   },
   {
-    id: 8903212,
+    id: 8196750,
     names: {
       en: "Finesse Conduit",
       cn: "灵巧导灵器",
@@ -2221,7 +2221,7 @@ export const soulbindDB = [
 
   /* -------------------------------------------- Row 8 ------------------------------------------- */
   {
-    id: 7178321,
+    id: 8196751,
     names: {
       en: "Potency Conduit",
       cn: "效能导灵器",
@@ -2278,7 +2278,7 @@ export const soulbindDB = [
 
   /* ------------------------------------------- Row 10 ------------------------------------------- */
   {
-    id: 980109,
+    id: 8196752,
     names: {
       en: "Endurance Conduit",
       cn: "韧如树皮",
@@ -2297,7 +2297,7 @@ export const soulbindDB = [
     enhanced: 77,
   },
   {
-    id: 8903212,
+    id: 8196753,
     names: {
       en: "Finesse Conduit",
       cn: "灵巧导灵器",
@@ -2617,7 +2617,7 @@ export const soulbindDB = [
 
   /* -------------------------------------------- Row 8 ------------------------------------------- */
   {
-    id: 7178321,
+    id: 8196754,
     names: {
       en: "Potency Conduit",
       cn: "效能导灵器",
@@ -2674,7 +2674,7 @@ export const soulbindDB = [
 
   /* ------------------------------------------- Row 10 ------------------------------------------- */
   {
-    id: 980109,
+    id: 8196755,
     names: {
       en: "Endurance Conduit",
       cn: "韧如树皮",
@@ -2693,7 +2693,7 @@ export const soulbindDB = [
     enhanced: 78,
   },
   {
-    id: 8903212,
+    id: 8196756,
     names: {
       en: "Finesse Conduit",
       cn: "灵巧导灵器",
@@ -2996,7 +2996,7 @@ export const soulbindDB = [
 
   /* -------------------------------------------- Row 8 ------------------------------------------- */
   {
-    id: 7178321,
+    id: 8196757,
     names: {
       en: "Potency Conduit",
       cn: "效能导灵器",
@@ -3055,7 +3055,7 @@ export const soulbindDB = [
 
   /* ------------------------------------------- Row 10 ------------------------------------------- */
   {
-    id: 980109,
+    id: 8196758,
     names: {
       en: "Endurance Conduit",
       cn: "韧如树皮",
@@ -3074,7 +3074,7 @@ export const soulbindDB = [
     enhanced: 79,
   },
   {
-    id: 8903212,
+    id: 8196759,
     names: {
       en: "Finesse Conduit",
       cn: "灵巧导灵器",
@@ -3392,7 +3392,7 @@ export const soulbindDB = [
 
   /* -------------------------------------------- Row 8 ------------------------------------------- */
   {
-    id: 7178321,
+    id: 8196760,
     names: {
       en: "Potency Conduit",
       cn: "效能导灵器",
@@ -3449,7 +3449,7 @@ export const soulbindDB = [
 
   /* ------------------------------------------- Row 10 ------------------------------------------- */
   {
-    id: 980109,
+    id: 8196761,
     names: {
       en: "Endurance Conduit",
       cn: "韧如树皮",
@@ -3468,7 +3468,7 @@ export const soulbindDB = [
     enhanced: 77,
   },
   {
-    id: 8903212,
+    id: 8196762,
     names: {
       en: "Finesse Conduit",
       cn: "灵巧导灵器",
@@ -3772,7 +3772,7 @@ export const soulbindDB = [
 
   /* -------------------------------------------- Row 8 ------------------------------------------- */
   {
-    id: 7178321,
+    id: 8196763,
     names: {
       en: "Potency Conduit",
       cn: "效能导灵器",
@@ -3829,7 +3829,7 @@ export const soulbindDB = [
 
   /* ------------------------------------------- Row 10 ------------------------------------------- */
   {
-    id: 980109,
+    id: 8196764,
     names: {
       en: "Endurance Conduit",
       cn: "韧如树皮",
@@ -3848,7 +3848,7 @@ export const soulbindDB = [
     enhanced: 78,
   },
   {
-    id: 8903212,
+    id: 8196765,
     names: {
       en: "Finesse Conduit",
       cn: "灵巧导灵器",
@@ -4169,7 +4169,7 @@ export const soulbindDB = [
 
   /* -------------------------------------------- Row 8 ------------------------------------------- */
   {
-    id: 7178321,
+    id: 8196766,
     names: {
       en: "Potency Conduit",
       cn: "效能导灵器",
@@ -4227,7 +4227,7 @@ export const soulbindDB = [
 
   /* ------------------------------------------- Row 10 ------------------------------------------- */
   {
-    id: 980109,
+    id: 8196767,
     names: {
       en: "Endurance Conduit",
       cn: "韧如树皮",
@@ -4246,7 +4246,7 @@ export const soulbindDB = [
     enhanced: 79,
   },
   {
-    id: 8903212,
+    id: 8196768,
     names: {
       en: "Finesse Conduit",
       cn: "灵巧导灵器",
@@ -4565,7 +4565,7 @@ export const soulbindDB = [
 
   /* -------------------------------------------- Row 8 ------------------------------------------- */
   {
-    id: 7178321,
+    id: 8196769,
     names: {
       en: "Potency Conduit",
       cn: "效能导灵器",
@@ -4622,7 +4622,7 @@ export const soulbindDB = [
 
   /* ------------------------------------------- Row 10 ------------------------------------------- */
   {
-    id: 980109,
+    id: 8196770,
     names: {
       en: "Endurance Conduit",
       cn: "韧如树皮",
@@ -4641,7 +4641,7 @@ export const soulbindDB = [
     enhanced: 77,
   },
   {
-    id: 8903212,
+    id: 8196771,
     names: {
       en: "Finesse Conduit",
       cn: "灵巧导灵器",
