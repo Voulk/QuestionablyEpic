@@ -70,8 +70,11 @@ export function getPaladinCovAbility(soulbindName, player, contentType, specialS
       // This is the legendary effect. 
       //bonus_stats.HPS = (holyPowerHPS + ((oneCombinedShock * divineTollCasts + oneGlimmerProc) * player.getStatMultiplier("NOHASTE") * wingsMultiplier)) / 60;
       bonus_stats.hps = ((holyPowerHPS * specialSettings.numCopies) + 
-                          (oneCombinedShock * divineTollCasts + oneGlimmerProc) * player.getStatMultiplier("NOHASTE") * specialSettings.copyStrength * specialSettings.numCopies) / 40;
-      //console.log("Num: " + specialSettings.numCopies + ". Str: " + specialSettings.copyStrength + ". HPS: " + bonus_stats.hps);
+                          (oneCombinedShock * divineTollCasts + oneGlimmerProc) * player.getStatMultiplier("NOHASTE") * specialSettings.copyStrength * specialSettings.numCopies) / 60;
+      
+      //console.log("Extra Shocks: " + (oneCombinedShock * divineTollCasts + oneGlimmerProc) * player.getStatMultiplier("NOHASTE") * specialSettings.copyStrength * specialSettings.numCopies / 60)
+      //console.log("Holy Power: " + (holyPowerHPS * specialSettings.numCopies / 60))
+                          //console.log("Num: " + specialSettings.numCopies + ". Str: " + specialSettings.copyStrength + ". HPS: " + bonus_stats.hps);
       }
     else {
       // This is a regular Divine Toll use.
