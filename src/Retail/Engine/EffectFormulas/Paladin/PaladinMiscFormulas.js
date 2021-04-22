@@ -58,7 +58,8 @@ export function getPaladinCovAbility(soulbindName, player, contentType, specialS
     const expectedHSOverhealing = 0.06;
     const beaconMult = 1 + (0.5 * (1 - 0.88));
 
-    const oneCombinedShock = holy_shock_sp * (1 - expectedHSOverhealing) * shockBarrierMult * beaconMult;
+    const oneCombinedShock = holy_shock_sp * (1 - expectedHSOverhealing) * beaconMult;
+    const oneCombinedShockSB = holy_shock_sp * (1 - expectedHSOverhealing) * shockBarrierMult * beaconMult;
     const oneGlimmerProc = glimmer_sp * expected_glimmer_active * beaconMult * 0.8;
     const holyPowerHPS = getOneHolyPower(player, contentType) * 5;
 
@@ -69,12 +70,12 @@ export function getPaladinCovAbility(soulbindName, player, contentType, specialS
       // This is the legendary effect. 
       //bonus_stats.HPS = (holyPowerHPS + ((oneCombinedShock * divineTollCasts + oneGlimmerProc) * player.getStatMultiplier("NOHASTE") * wingsMultiplier)) / 60;
       bonus_stats.hps = ((holyPowerHPS * specialSettings.numCopies) + 
-                          (oneCombinedShock * divineTollCasts + oneGlimmerProc) * player.getStatMultiplier("NOHASTE") * specialSettings.copyStrength * specialSettings.numCopies) / 60;
-      console.log("Num: " + specialSettings.numCopies + ". Str: " + specialSettings.copyStrength + ". HPS: " + bonus_stats.hps);
+                          (oneCombinedShock * divineTollCasts + oneGlimmerProc) * player.getStatMultiplier("NOHASTE") * specialSettings.copyStrength * specialSettings.numCopies) / 40;
+      //console.log("Num: " + specialSettings.numCopies + ". Str: " + specialSettings.copyStrength + ". HPS: " + bonus_stats.hps);
       }
     else {
       // This is a regular Divine Toll use.
-      bonus_stats.HPS = (holyPowerHPS + ((oneCombinedShock * divineTollCasts + oneGlimmerProc) * player.getStatMultiplier("NOHASTE") * wingsMultiplier)) / 60;
+      bonus_stats.HPS = (holyPowerHPS + ((oneCombinedShockSB * divineTollCasts + oneGlimmerProc) * player.getStatMultiplier("NOHASTE") * wingsMultiplier)) / 60;
     }
     
 
