@@ -90,6 +90,8 @@ const fillLegendaries = (container, spec, player, contentType) => {
       "The Mad Paragon",
       "Relentless Inquisitor",
       "Of Dusk and Dawn",
+      "Divine Resonance",
+      "Duty-Bound Gavel",
     ],
     "Restoration Shaman": [
       "Earthen Harmony",

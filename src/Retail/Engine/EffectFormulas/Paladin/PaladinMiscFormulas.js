@@ -43,7 +43,7 @@ export function getAwakeningWingsUptime(player, contentType) {
   return basewings / 60.0;
 }
 
-export function getPaladinCovAbility(soulbindName, player, contentType) {
+export function getPaladinCovAbility(soulbindName, player, contentType, specialSettings = {}) {
   let bonus_stats = {};
 
   if (["Kleia", "Pelagos", "Mikanikos"].includes(soulbindName)) {
@@ -65,7 +65,18 @@ export function getPaladinCovAbility(soulbindName, player, contentType) {
     // It is a reasonable assumption that you include half of your Divine Tolls within a wings window.
     const wingsMultiplier = (getWingsHealingInc(player.getStatPerc("Crit")) - 1) / 2 + 1; 
     
-    bonus_stats.HPS = (holyPowerHPS + ((oneCombinedShock * divineTollCasts + oneGlimmerProc) * player.getStatMultiplier("NOHASTE") * wingsMultiplier)) / 60;
+    if ('numCopies' in specialSettings) {
+      // This is the legendary effect. 
+      //bonus_stats.HPS = (holyPowerHPS + ((oneCombinedShock * divineTollCasts + oneGlimmerProc) * player.getStatMultiplier("NOHASTE") * wingsMultiplier)) / 60;
+      bonus_stats.hps = ((holyPowerHPS * specialSettings.numCopies) + 
+                          (oneCombinedShock * divineTollCasts + oneGlimmerProc) * player.getStatMultiplier("NOHASTE") * specialSettings.copyStrength * specialSettings.numCopies) / 60;
+      console.log("Num: " + specialSettings.numCopies + ". Str: " + specialSettings.copyStrength + ". HPS: " + bonus_stats.hps);
+      }
+    else {
+      // This is a regular Divine Toll use.
+      bonus_stats.HPS = (holyPowerHPS + ((oneCombinedShock * divineTollCasts + oneGlimmerProc) * player.getStatMultiplier("NOHASTE") * wingsMultiplier)) / 60;
+    }
+    
 
   } else if (["Nadjia", "Theotar", "Draven"].includes(soulbindName)) {
     // Ashen Hallow (Venthyr)
@@ -97,7 +108,13 @@ export function getPaladinCovAbility(soulbindName, player, contentType) {
     const HPSFreeWordOfGlory = player.getSingleCast(IDWORDOFGLORY, contentType);
     const HPSFreeHolyPower = getOneHolyPower(player, contentType);
 
-    bonus_stats.HPS = (HPSFreeWordOfGlory + HPSFreeHolyPower) / 30;
+    if ("extraSpells" in specialSettings) {
+      bonus_stats.hps = (HPSFreeWordOfGlory) / 30 + (HPSFreeHolyPower + HPSFreeWordOfGlory) / player.getFightLength(contentType);
+    }
+    else {
+      bonus_stats.HPS = (HPSFreeWordOfGlory + HPSFreeHolyPower) / 30;
+    }
+    
   }
 
   return bonus_stats;

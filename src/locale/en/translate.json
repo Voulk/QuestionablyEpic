@@ -635,6 +635,12 @@
       "desc": "When you reach 5 Holy Power, gain 6% damage and healing for 12 seconds. When you reach 0 Holy Power, gain 4% DR for 12 seconds.",
       "droploc": "Stone Legion Generals, Castle Nathria"
     },
+    "Divine Resonance": {
+      "name": "Divine Resonance",
+      "slot": "Unknown",
+      "desc": "Every 10s for 30s after casting Divine Toll you cast it again at 60% effectiveness.",
+      "droploc": "Unknown"
+    },
     "Vanguards Momentum": {
       "name": "Vanguard's Momentum",
       "slot": "Head or Hands",
