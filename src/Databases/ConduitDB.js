@@ -1348,7 +1348,7 @@ export const conduitDB = [
   },
 ];
 
-const conduitRanks = [
+export const conduitRanks = [
   {
     rank: 1,
     itemLevel: 145,
