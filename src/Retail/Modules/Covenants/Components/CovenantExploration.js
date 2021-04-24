@@ -13,6 +13,7 @@ import "./CovenantExploration.css";
 import ReactGA from "react-ga";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
+import { CONSTRAINTS } from "../../../../General/Engine/CONSTRAINTS";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -114,8 +115,15 @@ export default function CovenantExploration(props) {
     setSoulbindState(updatedArray);
   }, [contentType]);
 
+  /* -------------------------- Updates Conduit level and updates player -------------------------- */
   function updateConduitLevel(id, newLevel) {
     props.player.updateConduitLevel(id, newLevel);
+    props.updatePlayerChar(props.player);
+  }
+
+  /* ----------------------- Update character renown level and update player ---------------------- */
+  function updateRenownLevel(newLevel) {
+    props.player.updateRenownLevel(newLevel);
     props.updatePlayerChar(props.player);
   }
 
@@ -261,15 +269,15 @@ export default function CovenantExploration(props) {
             </Tabs>
             {/* -------------------------------------- Pelagos Tab Panel -------------------------------------  */}
             <TabPanel value={soulbindValue} index={0} style={{ display: "inline-flex" }}>
-              {buildSoulbind("Pelagos", props.player, contentType, soulbindState, activateSoulbind, setConduitInSlot, updateConduitLevel)}
+              {buildSoulbind("Pelagos", props.player, contentType, soulbindState, activateSoulbind, setConduitInSlot, updateConduitLevel, updateRenownLevel)}
             </TabPanel>
             {/* --------------------------------------- Kleia Tab Panel --------------------------------------  */}
             <TabPanel value={soulbindValue} index={1} style={{ display: "inline-flex" }}>
-              {buildSoulbind("Kleia", props.player, contentType, soulbindState, activateSoulbind, setConduitInSlot, updateConduitLevel)}
+              {buildSoulbind("Kleia", props.player, contentType, soulbindState, activateSoulbind, setConduitInSlot, updateConduitLevel, updateRenownLevel)}
             </TabPanel>
             {/* ------------------------------------- Mikanikos Tab Panel ------------------------------------  */}
             <TabPanel value={soulbindValue} index={2} style={{ display: "inline-flex" }}>
-              {buildSoulbind("Mikanikos", props.player, contentType, soulbindState, activateSoulbind, setConduitInSlot, updateConduitLevel)}
+              {buildSoulbind("Mikanikos", props.player, contentType, soulbindState, activateSoulbind, setConduitInSlot, updateConduitLevel, updateRenownLevel)}
             </TabPanel>
           </div>
         </TabPanel>
@@ -312,15 +320,15 @@ export default function CovenantExploration(props) {
             </Tabs>
             {/* --------------------------------------- Niya Tab Panel --------------------------------------- */}
             <TabPanel value={soulbindValue} index={0}>
-              {buildSoulbind("Niya", props.player, contentType, soulbindState, activateSoulbind, setConduitInSlot, updateConduitLevel)}
+              {buildSoulbind("Niya", props.player, contentType, soulbindState, activateSoulbind, setConduitInSlot, updateConduitLevel, updateRenownLevel)}
             </TabPanel>
             {/* ------------------------------------ Dreamweaver Tab Panel ----------------------------------- */}
             <TabPanel value={soulbindValue} index={1}>
-              {buildSoulbind("Dreamweaver", props.player, contentType, soulbindState, activateSoulbind, setConduitInSlot, updateConduitLevel)}
+              {buildSoulbind("Dreamweaver", props.player, contentType, soulbindState, activateSoulbind, setConduitInSlot, updateConduitLevel, updateRenownLevel)}
             </TabPanel>
             {/* -------------------------------------- Korayn Tab Panel -------------------------------------- */}
             <TabPanel value={soulbindValue} index={2}>
-              {buildSoulbind("Korayn", props.player, contentType, soulbindState, activateSoulbind, setConduitInSlot, updateConduitLevel)}
+              {buildSoulbind("Korayn", props.player, contentType, soulbindState, activateSoulbind, setConduitInSlot, updateConduitLevel, updateRenownLevel)}
             </TabPanel>
           </div>
         </TabPanel>
@@ -364,15 +372,15 @@ export default function CovenantExploration(props) {
 
             {/* ------------------------------------- Marileth Tab Panel ------------------------------------- */}
             <TabPanel value={soulbindValue} index={0}>
-              {buildSoulbind("Nadjia", props.player, contentType, soulbindState, activateSoulbind, setConduitInSlot, updateConduitLevel)}
+              {buildSoulbind("Nadjia", props.player, contentType, soulbindState, activateSoulbind, setConduitInSlot, updateConduitLevel, updateRenownLevel)}
             </TabPanel>
             {/* -------------------------------------- Theotar Tab Panel ------------------------------------- */}
             <TabPanel value={soulbindValue} index={1}>
-              {buildSoulbind("Theotar", props.player, contentType, soulbindState, activateSoulbind, setConduitInSlot, updateConduitLevel)}
+              {buildSoulbind("Theotar", props.player, contentType, soulbindState, activateSoulbind, setConduitInSlot, updateConduitLevel, updateRenownLevel)}
             </TabPanel>
             {/* -------------------------------------- Draven Tab Panel -------------------------------------- */}
             <TabPanel value={soulbindValue} index={2}>
-              {buildSoulbind("Draven", props.player, contentType, soulbindState, activateSoulbind, setConduitInSlot, updateConduitLevel)}
+              {buildSoulbind("Draven", props.player, contentType, soulbindState, activateSoulbind, setConduitInSlot, updateConduitLevel, updateRenownLevel)}
             </TabPanel>
           </div>
         </TabPanel>
@@ -417,15 +425,15 @@ export default function CovenantExploration(props) {
             {/* ----------- These are the Necrolord Panels that contain all the conduits and nodes ----------- */}
             {/* ------------------------------------- Marileth Tab Panel -------------------------------------  */}
             <TabPanel value={soulbindValue} index={0}>
-              {buildSoulbind("Marileth", props.player, contentType, soulbindState, activateSoulbind, setConduitInSlot, updateConduitLevel)}
+              {buildSoulbind("Marileth", props.player, contentType, soulbindState, activateSoulbind, setConduitInSlot, updateConduitLevel, updateRenownLevel)}
             </TabPanel>
             {/* --------------------------------------- Emeni Tab Panel -------------------------------------- */}
             <TabPanel value={soulbindValue} index={1}>
-              {buildSoulbind("Emeni", props.player, contentType, soulbindState, activateSoulbind, setConduitInSlot, updateConduitLevel)}
+              {buildSoulbind("Emeni", props.player, contentType, soulbindState, activateSoulbind, setConduitInSlot, updateConduitLevel, updateRenownLevel)}
             </TabPanel>
             {/* -------------------------------------- Heimir Tab Panel -------------------------------------- */}
             <TabPanel value={soulbindValue} index={2}>
-              {buildSoulbind("Heirmir", props.player, contentType, soulbindState, activateSoulbind, setConduitInSlot, updateConduitLevel)}
+              {buildSoulbind("Heirmir", props.player, contentType, soulbindState, activateSoulbind, setConduitInSlot, updateConduitLevel, updateRenownLevel)}
             </TabPanel>
           </div>
         </TabPanel>
@@ -434,10 +442,10 @@ export default function CovenantExploration(props) {
   );
 }
 
-function buildSoulbind(soulbindName, player, contentType, soulbindState, activateSoulbind, setConduitInSlot, updateConduitLevel) {
+function buildSoulbind(soulbindName, player, contentType, soulbindState, activateSoulbind, setConduitInSlot, updateConduitLevel, updateRenownLevel) {
   const { t } = useTranslation();
   const classes = useStyles();
-  const [renownValue, setRenownValue] = useState("");
+
   let activeSoulbind = soulbindState.filter((trait) => trait.soulbind === soulbindName);
   let activeConnectors = soulbindConnectors.filter((trait) => trait.soulbind === soulbindName);
 
@@ -514,19 +522,34 @@ function buildSoulbind(soulbindName, player, contentType, soulbindState, activat
               }}
             >
               <Grid item xs={12}>
-              <Tooltip title={t("Test")} placement="right">
-                <TextField
-                  label={t("Renown Level")}
-                  id="renownLevel"
-                  value={renownValue}
-                  inputProps={{ min: 0, style: { textAlign: "center" } }}
-                  style={{ width: "100%", marginTop: 4 }}
-                  onChange={(e) => updateRenown(e.target.value)}
-                  variant="outlined"
-                  size="small"
-                  type="number"
-                />
-                </Tooltip>
+                <div style={{ display: "flex" }}>
+                  <img
+                    src={process.env.PUBLIC_URL + "/Images/Interface/inv_misc_covenant_renown.jpg"}
+                    width={36}
+                    height={36}
+                    style={{ margin: 4, borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.12)" }}
+                  />
+                  <Tooltip title={t("Test")} placement="right">
+                    <TextField
+                      label={t("Renown Level")}
+                      id="renownLevel"
+                      value={player.getRenownLevel()}
+                      onInput={(e) => {
+                        e.target.value = Math.max(0, parseInt(e.target.value));
+                      }}
+                      style={{ width: "100%", marginTop: 4 }}
+                      onChange={(e) => updateRenownLevel(Math.max(0, parseInt(e.target.value)))}
+                      variant="outlined"
+                      size="small"
+                      type="number"
+                      inputProps={{
+                        min: CONSTRAINTS.Retail.minRenown,
+                        max: CONSTRAINTS.Retail.maxRenown,
+                        style: { textAlign: "center" },
+                      }}
+                    />
+                  </Tooltip>
+                </div>
               </Grid>
               {/* --------------------------- Conduit Instructions (Left/Right Click) -------------------------- */}
               <Grid item xs={12}>

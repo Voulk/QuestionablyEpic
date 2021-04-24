@@ -12,7 +12,6 @@ import { holyPriestDefaultStatWeights } from "./ClassDefaults/HolyPriestDefaults
 import { monkDefaultStatWeights } from "./ClassDefaults/MonkDefaults";
 import { reportError } from "../../SystemTools/ErrorLogging/ErrorReporting";
 
-
 class Player {
   constructor(playerName, specName, charID, region, realm, race, statWeights = "default") {
     this.spec = specName;
@@ -21,7 +20,7 @@ class Player {
     this.setupDefaults(specName);
     this.activeItems = [];
     this.activeConduits = [];
-    this.renown = 0;
+    this.renown = 1;
     this.region = region;
     this.realm = realm;
     this.race = race;
@@ -39,14 +38,13 @@ class Player {
   charID = 0;
   activeItems = [];
   activeConduits = [];
-  renown = 0;
+  renown = 1;
   castModel = {};
   covenant = "";
   region = "";
   realm = "";
   race = "";
   talents = [];
-
 
   // The players active stats from their character page. These are raw rather than being percentages.
   // They can either be pulled automatically from the entered log, or calculated from an entered SimC string.
@@ -60,16 +58,13 @@ class Player {
     stamina: 1490,
   };
 
-
   // Stat weights are normalized around intellect.
   // Players who don't insert their own stat weights can use the QE defaults.
   // - Since these change quite often we use a tag. If default = true then their weights will automatically update whenever they open the app.
   // - If they manually enter weights on the other hand, then this automatic-update won't occur.
   statWeights = {
-    Raid: {
-    },
-    Dungeon: {
-    },
+    Raid: {},
+    Dungeon: {},
     DefaultWeights: true,
   };
 
@@ -102,14 +97,14 @@ class Player {
 
   setStatWeights = (newWeights, contentType) => {
     this.statWeights[contentType] = newWeights;
-  }
+  };
 
   getCovenant = () => {
     return this.covenant;
   };
 
   setCovenant = (cov) => {
-    const selectedCov = cov.toLowerCase().replace(/"/g, '');
+    const selectedCov = cov.toLowerCase().replace(/"/g, "");
     if (["night_fae", "venthyr", "necrolord", "kyrian"].includes(selectedCov)) this.covenant = selectedCov;
     else {
       reportError(this, "Player", "Invalid Covenant Supplied", selectedCov);
@@ -123,18 +118,17 @@ class Player {
     else if (spec === "Restoration Shaman") this.covenant = "necrolord";
     else if (spec === "Mistweaver Monk") this.covenant = "necrolord";
     else if (spec === "Discipline Priest") this.covenant = "venthyr";
-    else if (spec === "Holy Priest") this.covenant = "night_fae"; // This one is very flexible, but is also not used in any current formulas. It will be replaced when the models are updated.
+    else if (spec === "Holy Priest") this.covenant = "night_fae";
+    // This one is very flexible, but is also not used in any current formulas. It will be replaced when the models are updated.
     else {
       reportError(this, "Player", "Invalid Covenant Supplied", spec);
       throw new Error("Invalid Spec Supplied to Cov Default");
     }
-
-  }
+  };
 
   calculateConduits = (contentType) => {
     this.activeConduits.forEach((conduit) => {
       conduit.setHPS(this, contentType);
-
     });
   };
 
@@ -289,7 +283,7 @@ class Player {
     return Math.round(statPerc * 10000) / 10000;
   };
 
-  // Returns a stat multiplier. This function is really bad and needs to be rewritten. 
+  // Returns a stat multiplier. This function is really bad and needs to be rewritten.
   getStatMultiplier = (flag, statList = []) => {
     let mult = 1;
     if (flag === "ALL") {
@@ -323,6 +317,16 @@ class Player {
         this.activeConduits[i].itemLevel = Math.max(145, Math.min(newLevel, 226));
       }
     }
+  };
+
+  /* ------------------------------------- Update renown level ------------------------------------ */
+  updateRenownLevel = (renownLevel) => {
+    this.renown = renownLevel;
+  };
+
+  /* --------------------------------- Return current renown level -------------------------------- */
+  getRenownLevel = () => {
+    return this.renown;
   };
 
   getRealmString = () => {
@@ -359,7 +363,7 @@ class Player {
 
   getCooldownMult = (queryIdentifier, contentType) => {
     return this.castModel[contentType].getSpecialQuery(queryIdentifier, "cooldownMult");
-  }
+  };
 
   getSingleCast = (spellID, contentType, castType = "casts") => {
     return this.castModel[contentType].getSpellData(spellID, "healing") / this.castModel[contentType].getSpellData(spellID, castType);
@@ -368,7 +372,6 @@ class Player {
   getSpellCPM = (spellID, contentType) => {
     return (this.getSpellCasts(spellID, contentType) / this.getFightLength(contentType)) * 60;
   };
-
 
   getSpellCasts = (spellID, contentType) => {
     return this.castModel[contentType].getSpellData(spellID, "casts");
@@ -456,7 +459,6 @@ class Player {
       this.statWeights.Dungeon = druidDefaultStatWeights("Dungeon");
       this.statWeights.DefaultWeights = true;
     } else if (spec === SPEC.HOLYPALADIN) {
-
       this.activeStats = {
         intellect: 1600,
         haste: 800,
