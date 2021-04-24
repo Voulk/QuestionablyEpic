@@ -248,21 +248,21 @@ export default function CovenantExploration(props) {
               {/* ----------------------------------------- Pelagos Tab ----------------------------------------  */}
               <Tab
                 style={{ color: "white" }}
-                icon={<img height={100} alt={t("Covenants.Soulbinds.Pelagos")} src={process.env.PUBLIC_URL + "/Images/Interface/pelagos.webp"} />}
+                icon={<img height={139} alt={t("Covenants.Soulbinds.Pelagos")} src={process.env.PUBLIC_URL + "/Images/Interface/pelagos.png"} />}
                 label={t("Covenants.Soulbinds.Pelagos")}
                 {...a11yPropsVert(0)}
               />
               {/* ------------------------------------------ Kleia Tab -----------------------------------------  */}
               <Tab
                 style={{ color: "white" }}
-                icon={<img height={100} alt={t("Covenants.Soulbinds.Kleia")} src={process.env.PUBLIC_URL + "/Images/Interface/kleia.webp"} />}
+                icon={<img height={139} alt={t("Covenants.Soulbinds.Kleia")} src={process.env.PUBLIC_URL + "/Images/Interface/kleia.png"} />}
                 label={t("Covenants.Soulbinds.Kleia")}
                 {...a11yPropsVert(1)}
               />
               {/* ---------------------------------------- Mikanikos Tab ---------------------------------------  */}
               <Tab
                 style={{ color: "white" }}
-                icon={<img height={100} alt={t("Covenants.Soulbinds.Mikanikos")} src={process.env.PUBLIC_URL + "/Images/Interface/forgelite-prime-mikanikos.webp"} />}
+                icon={<img height={139} alt={t("Covenants.Soulbinds.Mikanikos")} src={process.env.PUBLIC_URL + "/Images/Interface/forgelite-prime-mikanikos.png"} />}
                 label={t("Covenants.Soulbinds.Mikanikos")}
                 {...a11yPropsVert(2)}
               />
@@ -299,21 +299,21 @@ export default function CovenantExploration(props) {
               {/* ------------------------------------------ Niya Tab ------------------------------------------ */}
               <Tab
                 style={{ color: "white" }}
-                icon={<img height={100} alt={t("Covenants.Soulbinds.Niya")} src={process.env.PUBLIC_URL + "/Images/Interface/niya.webp"} />}
+                icon={<img height={139} alt={t("Covenants.Soulbinds.Niya")} src={process.env.PUBLIC_URL + "/Images/Interface/Niya.png"} />}
                 label={t("Covenants.Soulbinds.Niya")}
                 {...a11yPropsVert(0)}
               />
               {/* --------------------------------------- Dreamweaver Tab -------------------------------------- */}
               <Tab
                 style={{ color: "white" }}
-                icon={<img height={100} alt={t("Covenants.Soulbinds.Dreamweaver")} src={process.env.PUBLIC_URL + "/Images/Interface/dreamweaver.webp"} />}
+                icon={<img height={139} alt={t("Covenants.Soulbinds.Dreamweaver")} src={process.env.PUBLIC_URL + "/Images/Interface/Dreamweaver.png"} />}
                 label={t("Covenants.Soulbinds.Dreamweaver")}
                 {...a11yPropsVert(1)}
               />
               {/* ----------------------------------------- Korayn Tab ----------------------------------------- */}
               <Tab
                 style={{ color: "white" }}
-                icon={<img height={100} alt={t("Covenants.Soulbinds.Korayn")} src={process.env.PUBLIC_URL + "/Images/Interface/korayn.webp"} />}
+                icon={<img height={139} alt={t("Covenants.Soulbinds.Korayn")} src={process.env.PUBLIC_URL + "/Images/Interface/Korayn.png"} />}
                 label={t("Covenants.Soulbinds.Korayn")}
                 {...a11yPropsVert(2)}
               />
