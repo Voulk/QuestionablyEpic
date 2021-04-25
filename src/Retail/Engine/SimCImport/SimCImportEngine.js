@@ -1,5 +1,6 @@
 import { itemDB, tokenDB } from "../../../Databases/ItemDB";
 import { bonus_IDs } from "../BonusIDs";
+import { conduitDB, conduitRanks } from "../../../Databases/ConduitDB";
 import { calcStatsAtLevel, getItemProp, getItemAllocations, scoreItem, correctCasing, getValidWeaponTypes } from "../../../General/Engine/ItemUtilities";
 import Item from "../../../General/Modules/Player/Item";
 import ItemSet from "../../../General/Modules/TopGear/ItemSet";
@@ -43,10 +44,19 @@ export function runSimC(simCInput, player, contentType, setErrorMessage, snackHa
       let type = i > vaultItems || i < linkedItems ? "Vault" : "Regular";
       // If our line doesn't include an item ID, skip it.
       if (line.includes("id=")) {
-        if (line.includes("unknown")) processToken(line, player, contentType, type, covenant);
-        else processItem(line, player, contentType, type);
+        if (line.includes("unknown")) {
+          processToken(line, player, contentType, type, covenant);
+        } else {
+          processItem(line, player, contentType, type);
+        }
+      }
+
+      /* ------------------- If line includes "conduits_available" then process line ------------------ */
+      if (line.includes("conduits_available")) {
+        processConduits(line, player);
       }
     }
+
     //if (player.getSpec() === "Discipline Priest") adjustStatWeights(player, contentType); // Holding off for now.
     snackHandler();
     closeDialog();
@@ -85,6 +95,37 @@ function checkSimCValid(simCHeader, length, playerClass, setErrorMessage) {
 
   setErrorMessage(errorMessage);
   return checks.class && checks.version && checks.level && checks.length;
+}
+
+/* --------- Process "conduits_available=" line in simc string and update conduit ilvls --------- */
+function processConduits(line, player) {
+  /* --- Remove "conduits_available=" from string and split by / to seperate conduit ID and Rank -- */
+  let infoArray = line.split("=")[1].split("/");
+  /* -------------------- Go through each item in array and update the conduit -------------------- */
+  for (var j = 0; j < infoArray.length; j++) {
+    let info = infoArray[j];
+
+    /* ---------------------- split the object into conduit ID and conduit Rank --------------------- */
+    let conduitSimcID = parseInt(info.split(":")[0]);
+    let conduitRank = parseInt(info.split(":")[1]);
+
+    /* ---------------------------- Return relevant conduit guid from DB ---------------------------- */
+    let conduitGuid = conduitDB
+      .filter((obj) => {
+        return obj.simcID === conduitSimcID;
+      })
+      .map((obj) => obj.guid)[0];
+
+    /* ------------------------------- Return Relevant Ilvl from Ranks ------------------------------ */
+    let conduitIlvl = conduitRanks
+      .filter((obj) => {
+        return obj.rank === conduitRank;
+      })
+      .map((obj) => obj.itemLevel)[0];
+
+    /* --------------------------------------- Update Conduit --------------------------------------- */
+    player.updateConduitLevel(conduitGuid, conduitIlvl);
+  }
 }
 
 function processToken(line, player, contentType, type, covenant) {
@@ -275,8 +316,6 @@ function processItem(line, player, contentType, type) {
   } else {
     //console.log("Item Level out of range: " + itemLevel);
   }
-
-  
 }
 
 function getSecondaryAllocationAtItemLevel(itemLevel, slot, crafted_stats = []) {
@@ -318,22 +357,21 @@ function checkDefaultSocket(id) {
 
 // Currently being trialled as Discipline only.
 function adjustStatWeights(player, contentType) {
-  
   let equippedSet = new ItemSet(0, player.getEquippedItems(true), 0);
- 
+
   equippedSet = equippedSet.compileStats();
 
   let stats = equippedSet.setStats;
   stats.intellect = 1650;
 
-  // These are stat weights with 0 of each stat on top of the default profile. 
+  // These are stat weights with 0 of each stat on top of the default profile.
   let base_weights = {
     haste: 0.4,
     mastery: 0.39,
     versatility: 0.4,
     crit: 0.42,
     leech: 0.23,
-  }
+  };
 
   let scaling = {
     haste: 1,
@@ -342,22 +380,31 @@ function adjustStatWeights(player, contentType) {
     intellect: 0.991,
     crit: 0.968,
     leech: 0.31,
-  }
-  
-  let new_weights = {}
+  };
 
+  let new_weights = {};
 
-  const baselineScore = ((stats.intellect * scaling.intellect) * (1 + (stats.crit / 35 / 100 * scaling.crit)) * 
-                            (1 + (stats.haste / 33 / 100 * scaling.haste)) * (1 + (stats.mastery / 27.9 / 100 * scaling.mastery)) * 
-                            (1 + stats.versatility / 40 / 100 * scaling.versatility))
+  const baselineScore =
+    stats.intellect *
+    scaling.intellect *
+    (1 + (stats.crit / 35 / 100) * scaling.crit) *
+    (1 + (stats.haste / 33 / 100) * scaling.haste) *
+    (1 + (stats.mastery / 27.9 / 100) * scaling.mastery) *
+    (1 + (stats.versatility / 40 / 100) * scaling.versatility);
 
-  const intScore = (((((10+stats.intellect) * scaling.intellect) * (1 + (stats.crit / 35 / 100 * scaling.crit)) * 
-                            (1 + (stats.haste / 33 / 100 * scaling.haste)) * (1 + (stats.mastery / 27.9 / 100 * scaling.mastery)) * 
-                            (1 + stats.versatility / 40 / 100 * scaling.versatility))) - baselineScore) / 10;  
-                                      
+  const intScore =
+    ((10 + stats.intellect) *
+      scaling.intellect *
+      (1 + (stats.crit / 35 / 100) * scaling.crit) *
+      (1 + (stats.haste / 33 / 100) * scaling.haste) *
+      (1 + (stats.mastery / 27.9 / 100) * scaling.mastery) *
+      (1 + (stats.versatility / 40 / 100) * scaling.versatility) -
+      baselineScore) /
+    10;
+
   /*(((((stats.intellect) * scaling.intellect) * (1 + ((5 + stats.crit) / 35 / 100 * scaling.crit)) * 
                           (1 + (stats.haste / 33 / 100 * scaling.haste)) * (1 + (stats.mastery / 27.9 / 100 * scaling.mastery)) * 
-                          (1 + stats.versatility / 40 / 100 * scaling.versatility))) - baselineScore) / 5 / intScore;         */              
+                          (1 + stats.versatility / 40 / 100 * scaling.versatility))) - baselineScore) / 5 / intScore;         */
 
   //new_weights.intellect = ((100 + stats.intellect * percent_scaling.intellect) * (1 + (stats.crit / 35) * (1 + (stats.haste / 33)))
 
@@ -367,22 +414,26 @@ function adjustStatWeights(player, contentType) {
   new_weights.leech = base_weights.leech;
 
   //console.log(JSON.stringify(base_weights));
-  
-  
+
   //console.log(JSON.stringify(new_weights));
 
   player.setStatWeights(new_weights, contentType);
 }
 
 function getSecWeight(baseStats, scaling, baselineScore, intScore, statName) {
-  let stats = {...baseStats};
+  let stats = { ...baseStats };
   stats[statName] += 5;
 
-  const newWeight = (((((stats.intellect) * scaling.intellect) * (1 + ((stats.crit) / 35 / 100 * scaling.crit)) * 
-                      (1 + (stats.haste / 33 / 100 * scaling.haste)) * (1 + (stats.mastery / 27.9 / 100 * scaling.mastery)) * 
-                      (1 + stats.versatility / 40 / 100 * scaling.versatility))) - baselineScore) / 5 / intScore;
+  const newWeight =
+    (stats.intellect *
+      scaling.intellect *
+      (1 + (stats.crit / 35 / 100) * scaling.crit) *
+      (1 + (stats.haste / 33 / 100) * scaling.haste) *
+      (1 + (stats.mastery / 27.9 / 100) * scaling.mastery) *
+      (1 + (stats.versatility / 40 / 100) * scaling.versatility) -
+      baselineScore) /
+    5 /
+    intScore;
 
-  return Math.round(1000 * newWeight)/1000
-
+  return Math.round(1000 * newWeight) / 1000;
 }
-
