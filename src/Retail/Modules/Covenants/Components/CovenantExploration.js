@@ -350,21 +350,21 @@ export default function CovenantExploration(props) {
               {/* ----------------------------------------- Nadjia Tab ----------------------------------------- */}
               <Tab
                 style={{ color: "white" }}
-                icon={<img height={100} alt={t("Covenants.Soulbinds.Nadjia")} src={process.env.PUBLIC_URL + "/Images/Interface/nadjia-the-mistblade.webp"} />}
+                icon={<img height={139} alt={t("Covenants.Soulbinds.Nadjia")} src={process.env.PUBLIC_URL + "/Images/Interface/Nadjia.png"} />}
                 label={t("Covenants.Soulbinds.Nadjia")}
                 {...a11yPropsVert(0)}
               />
               {/* ----------------------------------------- Theotar Tab ---------------------------------------- */}
               <Tab
                 style={{ color: "white" }}
-                icon={<img height={100} alt={t("Covenants.Soulbinds.Theotar")} src={process.env.PUBLIC_URL + "/Images/Interface/theotar-the-mad-duke.webp"} />}
+                icon={<img height={139} alt={t("Covenants.Soulbinds.Theotar")} src={process.env.PUBLIC_URL + "/Images/Interface/Theotar.png"} />}
                 label={t("Covenants.Soulbinds.Theotar")}
                 {...a11yPropsVert(1)}
               />
               {/* ----------------------------------------- Draven Tab ----------------------------------------- */}
               <Tab
                 style={{ color: "white" }}
-                icon={<img height={100} alt={t("Covenants.Soulbinds.Draven")} src={process.env.PUBLIC_URL + "/Images/Interface/general-draven.webp"} />}
+                icon={<img height={139} alt={t("Covenants.Soulbinds.Draven")} src={process.env.PUBLIC_URL + "/Images/Interface/Draven.png"} />}
                 label={t("Covenants.Soulbinds.Draven")}
                 {...a11yPropsVert(2)}
               />
@@ -403,21 +403,21 @@ export default function CovenantExploration(props) {
               {/* ---------------------------------------- Marileth Tab ----------------------------------------  */}
               <Tab
                 style={{ color: "white" }}
-                icon={<img height={100} alt={t("Covenants.Soulbinds.Marileth")} src={process.env.PUBLIC_URL + "/Images/Interface/plague-deviser-marileth.webp"} />}
+                icon={<img height={139} alt={t("Covenants.Soulbinds.Marileth")} src={process.env.PUBLIC_URL + "/Images/Interface/Marileth.png"} />}
                 label={t("Covenants.Soulbinds.Marileth")}
                 {...a11yPropsVert(0)}
               />
               {/* ------------------------------------------ Emeni Tab -----------------------------------------  */}
               <Tab
                 style={{ color: "white" }}
-                icon={<img height={100} alt={t("Covenants.Soulbinds.Emeni")} src={process.env.PUBLIC_URL + "/Images/Interface/emeni.webp"} />}
+                icon={<img height={139} alt={t("Covenants.Soulbinds.Emeni")} src={process.env.PUBLIC_URL + "/Images/Interface/Emeni.png"} />}
                 label={t("Covenants.Soulbinds.Emeni")}
                 {...a11yPropsVert(1)}
               />
               {/* ----------------------------------------- Heirmir Tab ----------------------------------------  */}
               <Tab
                 style={{ color: "white" }}
-                icon={<img height={100} alt={t("Covenants.Soulbinds.Heirmir")} src={process.env.PUBLIC_URL + "/Images/Interface/bonesmith-heirmir.webp"} />}
+                icon={<img height={139} alt={t("Covenants.Soulbinds.Heirmir")} src={process.env.PUBLIC_URL + "/Images/Interface/Heirmir.png"} />}
                 label={t("Covenants.Soulbinds.Heirmir")}
                 {...a11yPropsVert(2)}
               />
