@@ -365,16 +365,17 @@ class Player {
     return this.castModel[contentType].getSpecialQuery(queryIdentifier, "cooldownMult");
   };
 
-  getSingleCast = (spellID, contentType, castType = "casts") => {
-    return this.castModel[contentType].getSpellData(spellID, "healing") / this.castModel[contentType].getSpellData(spellID, castType);
+  getSingleCast = (spellID, contentType, castType = "avgcast") => {
+    return this.castModel[contentType].getSpellData(spellID, castType);
   };
 
   getSpellCPM = (spellID, contentType) => {
-    return (this.getSpellCasts(spellID, contentType) / this.getFightLength(contentType)) * 60;
+    return this.castModel[contentType].getSpellData(spellID, "cpm");
   };
 
+  // Use getSpellCPM where possible. 
   getSpellCasts = (spellID, contentType) => {
-    return this.castModel[contentType].getSpellData(spellID, "casts");
+    return this.castModel[contentType].getSpellData(spellID, "cpm") * this.getFightLength() / 60;
   };
 
   getSpellHPS = (spellID, contentType) => {

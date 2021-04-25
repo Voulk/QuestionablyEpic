@@ -2,19 +2,20 @@ export const paladinDefaultSpellData = (contentType) => {
   let spellList = {};
   if (contentType === "Raid") {
     spellList = {
-      225311: { casts: 20, healing: 238400, hps: 1316, overhealing: 0.2 }, // LoD
-      85673: { casts: 4, healing: 40800, hps: 225, overhealing: 0.2 }, // WoG
-      25914: { casts: 27, healing: 221400, hps: 1222, overhealing: 0.2 }, // Holy Shock
-      82326: { casts: 7, healing: 70302, hps: 180, overhealing: 0.2 }, // Holy Light
-      337824: { casts: 0, healing: 98300, hps: 542, overhealing: 0.2 }, // Shock Barrier
+      225311: { cpm: 8.21, avgcast: 14452, hps: 2498, overhealing: 0.23 }, // Light of Dawn
+      85673: { cpm: 1.03, avgcast: 8679, hps: 188, overhealing: 0.28 }, // Word of Glory
+      25914: { cpm: 8.94, avgcast: 8242, hps: 1606, overhealing: 0.18 }, // Holy Shock
+      82326: { cpm: 0.67, avgcast: 5886, hps: 93, overhealing: 0.5 }, // Holy Light
+      337824: { cpm: 0, avgcast: 0, hps: 863, overhealing: 0.21 }, // Shock Barrier
+      53652: { cpm: 0.04, avgcast: 127103, hps: 1279, overhealing: 0.44 }, // Beacon of Light
     };
   } else if (contentType === "Dungeon") {
     spellList = {
-      225311: { casts: 4, healing: 42931, hps: 120, overhealing: 0.2 },
-      85673: { casts: 9, healing: 40800, hps: 900, overhealing: 0.2 },
-      25914: { casts: 27, healing: 221400, hps: 1280, overhealing: 0.2 },
-      82326: { casts: 29, healing: 311600, hps: 10, overhealing: 0.2 },
-      337824: { casts: 0, healing: 98300, hps: 542, overhealing: 0.2 },
+      225311: { cpm: 1.1, avgcast: 12501, hps: 229, overhealing: 0.29 }, // Light of Dawn
+      85673: { cpm: 5.4, avgcast: 9420, hps: 961, overhealing: 0.18 }, // Word of Glory
+      25914: { cpm: 7.94, avgcast: 8242, hps: 1406, overhealing: 0.19 }, // Holy Shock
+      337824: { cpm: 0, avgcast: 0, hps: 793, overhealing: 0.21 }, // Shock Barrier
+      53652: { cpm: 0.04, avgcast: 107423, hps: 1083, overhealing: 0.39 }, // Beacon of Light
     };
   } else {
     console.error("Unknown Content Type");
