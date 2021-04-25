@@ -10,6 +10,8 @@ export const CONSTRAINTS = {
         minSecondaryWeight: 0,
         maxTertiaryWeight: 1.5,
         minTertiaryWeight: 0,
+        minRenown: 1,
+        maxRenown: 80
     },
     BurningCrusade: {
 

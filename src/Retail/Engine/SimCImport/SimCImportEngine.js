@@ -55,6 +55,11 @@ export function runSimC(simCInput, player, contentType, setErrorMessage, snackHa
       if (line.includes("conduits_available")) {
         processConduits(line, player);
       }
+
+      /* ------------------------ If line includes "renown=" then process line ------------------------ */
+      if (line.includes("renown=")) {
+        processRenown(line, player);
+      }
     }
 
     //if (player.getSpec() === "Discipline Priest") adjustStatWeights(player, contentType); // Holding off for now.
@@ -95,6 +100,13 @@ function checkSimCValid(simCHeader, length, playerClass, setErrorMessage) {
 
   setErrorMessage(errorMessage);
   return checks.class && checks.version && checks.level && checks.length;
+}
+
+function processRenown(line, player) {
+  /* -------------------------- Set renownLevel to imported renown level -------------------------- */
+  let renownLevel = parseInt(line.split("=")[1]);
+  /* ---------------------------------- update Renown in "player" --------------------------------- */
+  player.updateRenownLevel(renownLevel);
 }
 
 /* --------- Process "conduits_available=" line in simc string and update conduit ilvls --------- */
