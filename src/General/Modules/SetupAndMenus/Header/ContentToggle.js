@@ -12,8 +12,10 @@ export default function ContentSwitch() {
   const { t } = useTranslation();
   const contentType = useSelector((state) => state.contentType);
   const handleContent = (event, content) => {
-    // console.log(content)
-    dispatch(toggleContent(content));
+    if (content === null) {
+    } else {
+      dispatch(toggleContent(content));
+    }
   };
 
   return (

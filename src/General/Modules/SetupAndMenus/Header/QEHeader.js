@@ -80,15 +80,6 @@ export default function QEHeader(props) {
 
             <Grid item xs={12} sm={12} md={4} lg={4} xl={4}>
               <Grid container direction="row" justify="center" alignItems="center" spacing={1} wrap="nowrap" style={{ paddingLeft: 10, paddingRight: 10 }}>
-                <Grid item>
-                  <ContentSwitch />
-                </Grid>
-                <Grid item>
-                  <QELogImport logImportSnack={props.logImportSnack} player={props.player} allChars={props.allChars} />
-                </Grid>
-                <Grid item>
-                  <SimCraftInput buttonLabel={t("SimCInput.SimCHeaderButtonLabel")} player={props.player} simcSnack={props.simcSnack} allChars={props.allChars} />
-                </Grid>
                 {(props.allChars && props.allChars.allChar.length) > 0 ? (
                   <Grid item>
                     <CharacterHeaderButton player={props.pl} allChars={props.allChars} />
@@ -96,6 +87,15 @@ export default function QEHeader(props) {
                 ) : (
                   ""
                 )}
+                <Grid item>
+                  <ContentSwitch />
+                </Grid>
+                <Grid item>
+                  <QELogImport logImportSnack={props.logImportSnack} player={props.player} allChars={props.allChars} />
+                </Grid>
+                <Grid item>
+                  <SimCraftInput variant="outlined" buttonLabel={t("SimCInput.SimCHeaderButtonLabel")} player={props.player} simcSnack={props.simcSnack} allChars={props.allChars} />
+                </Grid>
                 <Grid item>
                   <ProfileSelector name={playerName} component={Link} to={linkTarget} logFunc={props.logFunc} setRegion={props.setRegion} />
                 </Grid>
