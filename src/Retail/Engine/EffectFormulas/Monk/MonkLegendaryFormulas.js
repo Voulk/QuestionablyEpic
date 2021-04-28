@@ -40,13 +40,13 @@ export const getMonkLegendary = (effectName, player, contentType) => {
     }; // ReMs spread at their current duration, which means we only get half of a ReM per spread on average.
 
     const HPSRem = (vivify.percentOnRemTargets * renewingMist.oneSpread * vivify.cpm) / 60;
-
     const vivifyCleaveRatio = (0.738 * renewingMist.avgStacks) / (0.738 * renewingMist.avgStacks + 1);
     const HPSViv = vivifyCleaveRatio * vivify.hps * 0.2;
 
     const HPSEnv = (envelopingMist.singleCast * renewingMist.avgStacks * envelopingMist.cpm * 0.2) / 60;
 
     bonus_stats.hps = HPSRem + HPSViv + HPSEnv;
+    
   } else if (name === "Yu'lon's Whisper") {
     const thunderFocusTeaCPM = 1.5;
     const yulonSP = 1.8;

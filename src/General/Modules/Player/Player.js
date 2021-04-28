@@ -371,7 +371,7 @@ class Player {
 
   // Use getSpellCPM where possible. 
   getSpellCasts = (spellID, contentType) => {
-    return this.castModel[contentType].getSpellData(spellID, "cpm") * this.getFightLength() / 60;
+    return this.castModel[contentType].getSpellData(spellID, "cpm") * this.getFightLength(contentType) / 60;
   };
 
   getSpellHPS = (spellID, contentType) => {
