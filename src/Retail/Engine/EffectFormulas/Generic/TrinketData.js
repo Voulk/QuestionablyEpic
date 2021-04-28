@@ -12,7 +12,7 @@ export const trinket_data = [
       {
         coefficient: 45.58441,
         table: -8,
-        efficiency: 0.82,
+        efficiency: 0.81,
         cooldown: 120,
         targets: { Raid: 5, Dungeon: 3.1 }, // Remember that this is only used for the meteor effect.
         ticks: 3,
@@ -71,7 +71,7 @@ export const trinket_data = [
         coefficient: 80.17241,
         table: -8,
         cooldown: 60,
-        efficiency: 0.54,
+        efficiency: {Raid: 0.54, Dungeon: 0.7}
       },
     ],
   },
@@ -511,7 +511,7 @@ export const trinket_data = [
       {
         coefficient: 326.7931,
         table: -8,
-        efficiency: { Raid: 0.46, Dungeon: 0.77 }, // Includes the 25% multiplier as the target gets lower.
+        efficiency: { Raid: 0.47, Dungeon: 0.87 }, // Includes the 25% multiplier as the target gets lower.
         cooldown: 120,
       },
     ],

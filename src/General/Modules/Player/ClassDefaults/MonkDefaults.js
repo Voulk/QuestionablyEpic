@@ -92,18 +92,18 @@ export const monkDefaultStatWeights = (contentType) => {
 
   statWeights.Raid = {
     intellect: 1,
-    haste: 0.34,
-    crit: 0.35,
+    haste: 0.36,
+    crit: 0.37,
     mastery: 0.28,
-    versatility: 0.34,
+    versatility: 0.36,
     leech: 0.56,
   };
   statWeights.Dungeon = {
     intellect: 1,
-    haste: 0.34,
-    crit: 0.35,
+    haste: 0.36,
+    crit: 0.37,
     mastery: 0.29,
-    versatility: 0.35,
+    versatility: 0.36,
     leech: 0.25,
   };
 
