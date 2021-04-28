@@ -10,9 +10,7 @@ import SimCraftInput from "../SimCraftDialog";
 import QELogImport from "./QELogImport";
 import { makeStyles } from "@material-ui/core/styles";
 import CharacterHeaderButton from "./CharacterHeader";
-import { useSelector } from "react-redux";
-import { useDispatch } from "react-redux";
-import { toggleContent } from "../../../../Redux/Actions";
+import ContentSwitch from "./ContentToggle";
 // import ReactGA from "react-ga";n
 
 const useStyles = makeStyles((theme) => ({
@@ -41,9 +39,6 @@ export default function QEHeader(props) {
   const handlePopoverClose = () => {
     setAnchorEl(null);
   };
-
-  const dispatch = useDispatch();
-  const contentType = useSelector((state) => state.contentType);
 
   const open = Boolean(anchorEl);
 
@@ -83,33 +78,10 @@ export default function QEHeader(props) {
               </Grid>
             </Grid>
 
-            {/*}
-                    <Grid item alignItems="left" justify="flex-start">
-                      <p className={classes.qeLogo} style={{color: 'white', textAlign: 'left'}}>Gearing Made Easy</p>
-          </Grid> */}
-
             <Grid item xs={12} sm={12} md={4} lg={4} xl={4}>
               <Grid container direction="row" justify="center" alignItems="center" spacing={1} wrap="nowrap" style={{ paddingLeft: 10, paddingRight: 10 }}>
                 <Grid item>
-                  <Tooltip title={contentType === "Raid" ? t("QeHeader.Tooltip.ChangeToDungeon") : t("QeHeader.Tooltip.ChangeToRaid")} arrow>
-                    <Button
-                      style={{ color: "white" }}
-                      onClick={() => dispatch(toggleContent(contentType))}
-                      aria-owns={open ? "mouse-over-popover" : undefined}
-                      aria-haspopup="true"
-                      onMouseEnter={handlePopoverOpen}
-                      onMouseLeave={handlePopoverClose}
-                    >
-                      <div style={{ display: "inline-flex" }}>
-                        <img
-                          style={{ height: 18, width: 18, margin: "2px 5px 0px 0px", verticalAlign: "middle", borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.12)" }}
-                          src={contentType === "Raid" ? require("Images/achievement_raid_revendrethraid_castlenathria.jpg").default : require("Images/inv_relics_hourglass.jpg").default}
-                          alt={t(contentType)}
-                        />
-                        {t(contentType)}
-                      </div>
-                    </Button>
-                  </Tooltip>
+                  <ContentSwitch />
                 </Grid>
                 <Grid item>
                   <QELogImport logImportSnack={props.logImportSnack} player={props.player} allChars={props.allChars} />
