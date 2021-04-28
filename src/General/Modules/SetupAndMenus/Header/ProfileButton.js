@@ -81,7 +81,9 @@ export default function ProfileSelector(props) {
       return (
         <div>
           <Tooltip title={t("QeHeader.Tooltip.Login")} arrow>
-            <Button onClick={handleDialogOpen}>{t("Login")}</Button>
+            <Button variant="outlined" onClick={handleDialogOpen}>
+              {t("Login")}
+            </Button>
           </Tooltip>
           <Dialog onClose={handleCloseDialog} aria-labelledby="customized-dialog-title" open={opendialog}>
             <DialogContent>
@@ -92,7 +94,7 @@ export default function ProfileSelector(props) {
       );
     } else {
       return (
-        <Button ref={anchorRef} aria-controls={open ? "menu-list-grow" : undefined} aria-haspopup="true" onClick={handleToggle} onMouseOver={handleHoverOpen}>
+        <Button variant="outlined" ref={anchorRef} aria-controls={open ? "menu-list-grow" : undefined} aria-haspopup="true" onClick={handleToggle} onMouseOver={handleHoverOpen}>
           <img src={BnetIcon} width="24px" height="24px" alt="" />
           {props.name}
         </Button>
