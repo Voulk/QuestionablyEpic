@@ -103,13 +103,13 @@ export default function QEMainMenu(props) {
               {patron ? t("MainMenu.PatronThanks") : t("MainMenu.PatronInvite")}
             </Button>
           </Grid>
-          <Grid item xs={12}>
-            <MessageOfTheDay />
-          </Grid>
+          {/*<Grid item xs={12}>
+            <MessageOfTheDay /> 
+          </Grid>*/}
 
           {Object.keys(mainMenuOptions).map((key, index) => (
             // Buttons are translated and printed from a dictionary.
-            <Grid item xs={12} sm={12} md={6} lg={6} xl={6} key={index}>
+            <Grid item xs={10} sm={12} md={6} lg={6} xl={6} key={index}>
               <Tooltip title={t("MainMenu.Tooltips." + mainMenuOptions[key][2])} placement={oddEven(index)} arrow>
                 <Button
                   key={index}
