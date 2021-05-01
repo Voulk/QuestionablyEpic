@@ -11,6 +11,7 @@ import QELogImport from "./QELogImport";
 import { makeStyles } from "@material-ui/core/styles";
 import CharacterHeaderButton from "./CharacterHeader";
 import ContentSwitch from "./ContentToggle";
+import GameTypeSwitch from "./GameTypeToggle";
 // import ReactGA from "react-ga";n
 
 const useStyles = makeStyles((theme) => ({
@@ -59,21 +60,29 @@ export default function QEHeader(props) {
   return (
     <div style={{ backgroundColor: "#353535" }}>
       <AppBar position="fixed" color="inherit">
-        <Toolbar style={{ marginLeft: "16%", marginRight: "16%" }}>
-          <Grid container direction="row" justify="space-between" alignItems="center">
-            <Grid item xs={12} sm={12} md={3} lg={3} xl={3} align="center">
+        <Toolbar style={{ marginLeft: "8%", marginRight: "8%" }}>
+          <Grid container direction="row" spacing={1} justify="space-between" alignItems="center">
+            <Grid item xs={12} sm={12} md={3} lg={3} xl={6} align="center">
               <Grid container direction="row" alignItems="center">
-                <Grid item xs={12} sm={12} md={12} lg={6} xl={5}>
-                  <Link to={"/"}>
-                    <Tooltip title={t("QeHeader.Tooltip.Home")} arrow>
-                      <img className={classes.qeLogo} src={logo} alt="QE Live" />
-                    </Tooltip>
-                  </Link>
+                <Grid item xs={12} sm={12} md="auto" lg="auto" xl="auto" align="center">
+                  <Grid container direction="row" alignItems="center">
+                    <Grid item xs={12} sm={12} md={12} lg={6} xl="auto">
+                      <Link to={"/"}>
+                        <Tooltip title={t("QeHeader.Tooltip.Home")} arrow>
+                          <img className={classes.qeLogo} src={logo} alt="QE Live" />
+                        </Tooltip>
+                      </Link>
+                    </Grid>
+                    <Grid item xs={12} sm={12} md={12} lg={6} xl="auto">
+                      <Typography style={{ color: color[patronStatus], paddingLeft: 10, paddingRight: 10 }} variant="body1" align="center" noWrap>
+                        {patronStatus}
+                      </Typography>
+                    </Grid>
+                  </Grid>
                 </Grid>
-                <Grid item xs={12} sm={12} md={12} lg={6} xl="auto">
-                  <Typography style={{ color: color[patronStatus], paddingLeft: 10, paddingRight: 10 }} variant="body1" align="center">
-                    {patronStatus}
-                  </Typography>
+
+                <Grid item xs={12} sm={12} md="auto" lg="auto" xl="auto">
+                  <GameTypeSwitch />
                 </Grid>
               </Grid>
             </Grid>
