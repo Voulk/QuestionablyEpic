@@ -13,7 +13,7 @@ import ls from "local-storage";
 const initialState = {
   gameType: "Retail",
   //contentType: "Raid",
-  contentType: ls.get("contentType"),
+  contentType: ls.get("contentType") || "Raid",
 };
 
 export default function rootReducer(state = initialState, action) {
