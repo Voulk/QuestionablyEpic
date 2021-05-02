@@ -104,7 +104,7 @@ export const monkDefaultStatWeights = (contentType) => {
     crit: 0.37,
     mastery: 0.29,
     versatility: 0.36,
-    leech: 0.25,
+    leech: 0.36,
   };
 
   return statWeights[contentType];

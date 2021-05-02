@@ -71,7 +71,7 @@ export const trinket_data = [
         coefficient: 80.17241,
         table: -8,
         cooldown: 60,
-        efficiency: {Raid: 0.57, Dungeon: 0.7}
+        efficiency: {Raid: 0.58, Dungeon: 0.7}
       },
     ],
   },
@@ -511,7 +511,7 @@ export const trinket_data = [
       {
         coefficient: 326.7931,
         table: -8,
-        efficiency: { Raid: 0.47, Dungeon: 0.87 }, // Includes the 25% multiplier as the target gets lower.
+        efficiency: { Raid: 0.47, Dungeon: 0.86 }, // Includes the 25% multiplier as the target gets lower.
         cooldown: 120,
       },
     ],
