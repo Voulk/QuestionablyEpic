@@ -13,24 +13,7 @@ import MessageOfTheDay from "./MessageOftheDay";
 import ArticleCard from "../ArticleCards/ArcticleCard";
 import Changelog from "../ChangeLog/Changelog";
 import InfoOutlinedIcon from "@material-ui/icons/InfoOutlined";
-
-/* ---------------------------------------------------------------------------------------------- */
-/*                                             Warning                                            */
-/*                 If a button name has to change, do it in the translation files.                */
-/*                    Consider the titles here to be ID's rather than strings                     */
-/* ---------------------------------------------------------------------------------------------- */
-// [route, show button?, tooltip]
-const mainMenuOptions = {
-  "MainMenu.TopGear": ["/topgear", true, "TopGear"],
-  "MainMenu.UpgradeFinder": ["/UpgradeFinder", true, "UpgradeFinder"],
-  "MainMenu.QuickCompare": ["/quickcompare", true, "QuickCompare"],
-  "MainMenu.ExploreCovenants": ["/soulbinds", true, "ExploreCovenants"],
-  "MainMenu.LegendaryAnalysis": ["/legendaries", true, "LegendaryAnalysis"],
-  "MainMenu.TrinketAnalysis": ["/trinkets", true, "TrinketAnalysis"],
-  "MainMenu.CooldownPlanner": ["/holydiver", false, "CooldownPlanner"],
-  "MainMenu.Profile": ["/profile", true, "Profile"],
-  // "MainMenu.TierSets": ["/TierSets", true, "TierSets"],
-};
+import { useSelector } from "react-redux";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -60,6 +43,35 @@ export default function QEMainMenu(props) {
   useEffect(() => {
     ReactGA.pageview(window.location.pathname + window.location.search);
   }, []);
+
+  const gameType = useSelector((state) => state.gameType);
+
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                             Warning                                            */
+  /*                 If a button name has to change, do it in the translation files.                */
+  /*                    Consider the titles here to be ID's rather than strings                     */
+  /* ---------------------------------------------------------------------------------------------- */
+  // [route, show button?, tooltip]
+  const mainMenuOptions =
+    gameType === "Retail"
+      ? {
+          "MainMenu.TopGear": ["/topgear", true, "TopGear"],
+          "MainMenu.UpgradeFinder": ["/UpgradeFinder", true, "UpgradeFinder"],
+          "MainMenu.QuickCompare": ["/quickcompare", true, "QuickCompare"],
+          "MainMenu.ExploreCovenants": ["/soulbinds", true, "ExploreCovenants"],
+          "MainMenu.LegendaryAnalysis": ["/legendaries", true, "LegendaryAnalysis"],
+          "MainMenu.TrinketAnalysis": ["/trinkets", true, "TrinketAnalysis"],
+          "MainMenu.CooldownPlanner": ["/holydiver", false, "CooldownPlanner"],
+          "MainMenu.Profile": ["/profile", true, "Profile"],
+        }
+      : {
+          "MainMenu.TopGear": ["/topgear", true, "TopGear"],
+          "MainMenu.UpgradeFinder": ["/UpgradeFinder", true, "UpgradeFinder"],
+          "MainMenu.QuickCompare": ["/quickcompare", true, "QuickCompare"],
+          "MainMenu.TierSets": ["/TierSets", true, "TierSets"],
+          "MainMenu.TrinketAnalysis": ["/trinkets", true, "TrinketAnalysis"],
+          "MainMenu.Profile": ["/profile", true, "Profile"],
+        };
 
   const { t } = useTranslation();
   const classes = useStyles();

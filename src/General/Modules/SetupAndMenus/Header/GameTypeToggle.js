@@ -10,7 +10,7 @@ import { Tooltip, Typography } from "@material-ui/core";
 export default function GameTypeSwitch() {
   const dispatch = useDispatch();
   const { t } = useTranslation();
-  const contentType = useSelector((state) => state.gameType);
+  const gameType = useSelector((state) => state.gameType);
   const handleContent = (event, gameType) => {
     if (gameType === null) {
     } else {
@@ -19,8 +19,8 @@ export default function GameTypeSwitch() {
   };
 
   return (
-    <ToggleButtonGroup value={contentType} exclusive onChange={handleContent} aria-label="contentToggle" size="small">
-      <ToggleButton style={{ padding: 5 }} value="Classic" aria-label="dungeonLabel">
+    <ToggleButtonGroup value={gameType} exclusive onChange={handleContent} aria-label="gameToggle" size="small">
+      <ToggleButton style={{ padding: 5 }} value="Classic" aria-label="classicLabel">
         <Tooltip title={t("QeHeader.Tooltip.ChangeToDungeon")} arrow>
           <div style={{ display: "inline-flex" }}>
             {/* <img
@@ -33,7 +33,7 @@ export default function GameTypeSwitch() {
         </Tooltip>
       </ToggleButton>
 
-      <ToggleButton style={{ padding: "5px 7px" }} value="Retail" aria-label="raidLabel">
+      <ToggleButton style={{ padding: "5px 7px" }} value="Retail" aria-label="retailLabel">
         <Tooltip title={t("QeHeader.Tooltip.ChangeToRaid")} arrow>
           <div style={{ display: "inline-flex" }}>
             {/* <img
