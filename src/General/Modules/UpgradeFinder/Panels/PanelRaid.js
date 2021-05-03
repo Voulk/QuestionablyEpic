@@ -16,6 +16,132 @@ const useStyles = makeStyles((theme) => ({
     marginTop: 4,
     padding: 4,
   },
+  karazhanHeaderStyle: {
+    backgroundImage: `url(${require("../../../../Images/BurningCrusade/Raid/Karazhan.jpg").default})`,
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "center 60%",
+    backgroundSize: "101%",
+    borderRadius: "4px 0px 0px 4px",
+    height: 45,
+    whiteSpace: "nowrap",
+    textShadow: "3px 3px 4px black",
+    color: "#fff",
+    fontSize: "0.9rem",
+  },
+  gruulsHeaderStyle: {
+    backgroundImage: `url(${require("../../../../Images/BurningCrusade/Raid/GruulsLair.jpg").default})`,
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "center 60%",
+    backgroundSize: "101%",
+    borderRadius: "4px 0px 0px 4px",
+    height: 45,
+    whiteSpace: "nowrap",
+    textShadow: "3px 3px 4px black",
+    color: "#fff",
+    fontSize: "0.9rem",
+  },
+  zulamanHeaderStyle: {
+    backgroundImage: `url(${require("../../../../Images/BurningCrusade/Raid/ZulAman.jpg").default})`,
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "center 60%",
+    backgroundSize: "101%",
+    borderRadius: "4px 0px 0px 4px",
+    height: 45,
+    whiteSpace: "nowrap",
+    textShadow: "3px 3px 4px black",
+    color: "#fff",
+    fontSize: "0.9rem",
+  },
+  magtheridonHeaderStyle: {
+    backgroundImage: `url(${require("../../../../Images/BurningCrusade/Raid/MagtheridonsLair.jpg").default})`,
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "center 60%",
+    backgroundSize: "101%",
+    borderRadius: "4px 0px 0px 4px",
+    height: 45,
+    whiteSpace: "nowrap",
+    textShadow: "3px 3px 4px black",
+    color: "#fff",
+    fontSize: "0.9rem",
+  },
+  serpentshringHeaderStyle: {
+    backgroundImage: `url(${require("../../../../Images/BurningCrusade/Raid/SerpentshrineCavern.jpg").default})`,
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "center 60%",
+    backgroundSize: "101%",
+    borderRadius: "4px 0px 0px 4px",
+    height: 45,
+    whiteSpace: "nowrap",
+    textShadow: "3px 3px 4px black",
+    color: "#fff",
+    fontSize: "0.9rem",
+  },
+  tempestKeepHeaderStyle: {
+    backgroundImage: `url(${require("../../../../Images/BurningCrusade/Raid/TempestKeep.jpg").default})`,
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "center 60%",
+    backgroundSize: "101%",
+    borderRadius: "4px 0px 0px 4px",
+    height: 45,
+    whiteSpace: "nowrap",
+    textShadow: "3px 3px 4px black",
+    color: "#fff",
+    fontSize: "0.9rem",
+  },
+  mountHyjalHeaderStyle: {
+    backgroundImage: `url(${require("../../../../Images/BurningCrusade/Raid/MountHyjal.jpg").default})`,
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "center 60%",
+    backgroundSize: "101%",
+    borderRadius: "4px 0px 0px 4px",
+    height: 45,
+    whiteSpace: "nowrap",
+    textShadow: "3px 3px 4px black",
+    color: "#fff",
+    fontSize: "0.9rem",
+  },
+  blackTempleHeaderStyle: {
+    backgroundImage: `url(${require("../../../../Images/BurningCrusade/Raid/BlackTemple.jpg").default})`,
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "center 60%",
+    backgroundSize: "101%",
+    borderRadius: "4px 0px 0px 4px",
+    height: 45,
+    whiteSpace: "nowrap",
+    textShadow: "3px 3px 4px black",
+    color: "#fff",
+    fontSize: "0.9rem",
+  },
+  sunwellHeaderStyle: {
+    backgroundImage: `url(${require("../../../../Images/BurningCrusade/Raid/SunwellPlateau.jpg").default})`,
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "center 60%",
+    backgroundSize: "101%",
+    borderRadius: "4px 0px 0px 4px",
+    height: 45,
+    whiteSpace: "nowrap",
+    textShadow: "3px 3px 4px black",
+    color: "#fff",
+    fontSize: "0.9rem",
+  },
+  header: {
+    [theme.breakpoints.down("sm")]: {
+      justifyContent: "center",
+      display: "block",
+      marginLeft: "auto",
+      marginRight: "auto",
+      flexGrow: 1,
+      maxWidth: "100%",
+    },
+    [theme.breakpoints.up("md")]: {
+      justifyContent: "center",
+      display: "block",
+      marginLeft: "auto",
+      marginRight: "auto",
+      flexGrow: 1,
+      maxWidth: "100%",
+    },
+  },
 }));
 
 const getDifficultyName = (difficulty) => {
@@ -58,6 +184,10 @@ export default function RaidGearContainer(props) {
   const itemList = props.itemList;
   const itemDifferentials = props.itemDifferentials;
   const gameType = useSelector((state) => state.gameType);
+
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                           Shadowlands                                          */
+  /* ---------------------------------------------------------------------------------------------- */
 
   const contentGenerator = (items) => {
     // Raid Panel
@@ -144,9 +274,14 @@ export default function RaidGearContainer(props) {
     );
   };
 
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                         Burning Crusade                                        */
+  /* ---------------------------------------------------------------------------------------------- */
+
   const contentGeneratorBC = (items) => {
     // Raid Panel
 
+    const burningCrusadeList = [745, 321, 746, 747, 748, 749, 750, 751, 752];
     TabPanel.propTypes = {
       children: PropTypes.node,
       index: PropTypes.any.isRequired,
@@ -176,7 +311,7 @@ export default function RaidGearContainer(props) {
     };
 
     return (
-      <div>
+      <div className={classes.header}>
         <AppBar
           position="static"
           style={{
@@ -193,75 +328,86 @@ export default function RaidGearContainer(props) {
             style={{ borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.22)" }}
             TabIndicatorProps={{ style: { backgroundColor: "#F2BF59" } }}
           >
-            {/* Karazhan */}
-            <Tab className={classes.raidHeaderStyle} label={t("UpgradeFinder.CurrentRaid")} {...a11yProps(0)} />
-            {/* Gruul's Lair */}
-            <Tab className={classes.mythicPlusHeaderStyle} label={t("UpgradeFinder.MythicPlus")} {...a11yProps(1)} />
-            {/* PVP */}
-            <Tab className={classes.pvpHeaderStyle} label={t("UpgradeFinder.PvP")} {...a11yProps(2)} />
-            {/* World Bosses */}
-            <Tab className={classes.worldBossHeaderStyle} label={t("UpgradeFinder.WorldBosses")} {...a11yProps(3)} />
-            {/* Slots */}
-            <Tab className={classes.slotsHeaderStyle} label={t("UpgradeFinder.UpgradeBySlot")} {...a11yProps(4)} />
+            {/* ------------------------------------------ Karazhan ------------------------------------------ */}
+            <Tab className={classes.karazhanHeaderStyle} label={t("BurningCrusade.Raids.745")} {...a11yProps(0)} />
+            {/* ------------------------------------------ Zul'Aman ------------------------------------------ */}
+            <Tab className={classes.zulamanHeaderStyle} label={t("BurningCrusade.Raids.321")} {...a11yProps(1)} />
+            {/* ---------------------------------------- Gruul's Lair ---------------------------------------- */}
+            <Tab className={classes.gruulsHeaderStyle} label={t("BurningCrusade.Raids.746")} {...a11yProps(2)} />
+            {/* ------------------------------------- Magtheridon's Lair ------------------------------------- */}
+            <Tab className={classes.magtheridonHeaderStyle} label={t("BurningCrusade.Raids.747")} {...a11yProps(3)} />
+            {/* ------------------------------------ Serpentshrine Cavern ------------------------------------ */}
+            <Tab className={classes.serpentshringHeaderStyle} label={t("BurningCrusade.Raids.748")} {...a11yProps(4)} />
+            {/* ---------------------------------------- Tempest Keep ---------------------------------------- */}
+            <Tab className={classes.tempestKeepHeaderStyle} label={t("BurningCrusade.Raids.749")} {...a11yProps(5)} />
+            {/* --------------------------------- The Battle for Mount Hyjal --------------------------------- */}
+            <Tab className={classes.mountHyjalHeaderStyle} label={t("BurningCrusade.Raids.750")} {...a11yProps(6)} />
+            {/* ---------------------------------------- Black Temple ---------------------------------------- */}
+            <Tab className={classes.blackTempleHeaderStyle} label={t("BurningCrusade.Raids.751")} {...a11yProps(6)} />
+            {/* --------------------------------------- Sunwell Plateau -------------------------------------- */}
+            <Tab className={classes.sunwellHeaderStyle} label={t("BurningCrusade.Raids.752")} {...a11yProps(7)} />
           </Tabs>
         </AppBar>
-        <TabPanel value={tabvalue} index={0}>
-          <div className={classes.panel}>
-            <Grid container>
-              {/* <RaidGearContainer player={props.player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={props.playerSettings} /> */}
-              {encounterDB[745]
-                //filter((key) => key === raidID)
-                .map((key, i) => (
-                  <Grid item xs={12} key={"bossContainer-" + i} style={{ padding: "4px 0px" }}>
-                    <Paper style={{ backgroundColor: "#191c23", padding: 8, border: "1px solid rgba(255, 255, 255, 0.22)" }}>
-                      <Grid container spacing={2} justify="center" alignItems="flex-start">
-                        <Grid item style={{ alignSelf: "center" }}>
-                          <div
-                            style={{
-                              width: 175,
-                              height: 181,
-                              paddingLeft: 8,
-                              backgroundImage: `url(${UpgradeFinderBossImages(key)})`,
-                              backgroundRepeat: "no-repeat",
-                              backgroundPosition: "center 60%",
-                              backgroundSize: "auto 100%",
-                            }}
-                            className="container-UpgradeCards"
-                          >
-                            <Typography variant="h6" noWrap className="centered-UpgradeCards">
-                              {t("BossNames." + key)}
-                            </Typography>
-                          </div>
-                        </Grid>
-                        <Divider orientation="vertical" flexItem style={{ marginRight: 4 }} />
-                        <Grid item xs={12} sm container direction="column" spacing={1}>
-                          <Grid item xs={12} container spacing={1}>
-                            <Grid item xs={12}>
-                              <Typography
-                                variant="h6"
-                                color="primary"
-                                align="center"
-                                style={{
-                                  backgroundColor: "#35383e",
-                                  borderRadius: 4,
-                                }}
-                              >
-                                {/* {getDifficultyName(firstDifficulty)} */}
-                              </Typography>
-                            </Grid>
 
-                            {/* {[...filterItemListBySource(itemList, 1190, key, getDifficultyBaseLevel(firstDifficulty))].map((item, index) => (
+        {burningCrusadeList.map((raidID, index) => (
+          <TabPanel value={tabvalue} index={index}>
+            <div className={classes.panel}>
+              <Grid container>
+                {/* <RaidGearContainer player={props.player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={props.playerSettings} /> */}
+                {encounterDB[raidID]
+                  //filter((key) => key === raidID)
+                  .map((key, i) => (
+                    <Grid item xs={12} key={"bossContainer-" + i} style={{ padding: "4px 0px" }}>
+                      <Paper style={{ backgroundColor: "#191c23", padding: 8, border: "1px solid rgba(255, 255, 255, 0.22)" }}>
+                        <Grid container spacing={2} justify="center" alignItems="flex-start">
+                          <Grid item style={{ alignSelf: "center" }}>
+                            <div
+                              style={{
+                                width: 175,
+                                height: 181,
+                                paddingLeft: 8,
+                                backgroundImage: `url(${UpgradeFinderBossImages(key)})`,
+                                backgroundRepeat: "no-repeat",
+                                backgroundPosition: "center 60%",
+                                backgroundSize: "auto 100%",
+                              }}
+                              className="container-UpgradeCards"
+                            >
+                              <Typography variant="h6" noWrap className="centered-UpgradeCards">
+                                {t("BossNames." + key)}
+                              </Typography>
+                            </div>
+                          </Grid>
+                          <Divider orientation="vertical" flexItem style={{ marginRight: 4 }} />
+                          <Grid item xs={12} sm container direction="column" spacing={1}>
+                            <Grid item xs={12} container spacing={1}>
+                              <Grid item xs={12}>
+                                <Typography
+                                  variant="h6"
+                                  color="primary"
+                                  align="center"
+                                  style={{
+                                    backgroundColor: "#35383e",
+                                    borderRadius: 4,
+                                  }}
+                                >
+                                  {/* {getDifficultyName(firstDifficulty)} */}
+                                </Typography>
+                              </Grid>
+
+                              {/* {[...filterItemListBySource(itemList, 1190, key, getDifficultyBaseLevel(firstDifficulty))].map((item, index) => (
                         <ItemUpgradeCard key={index} item={item} itemDifferential={getDifferentialByID(itemDifferentials, item.id, item.level)} slotPanel={false} />
                       ))} */}
+                            </Grid>
                           </Grid>
                         </Grid>
-                      </Grid>
-                    </Paper>
-                  </Grid>
-                ))}
-            </Grid>
-          </div>
-        </TabPanel>
+                      </Paper>
+                    </Grid>
+                  ))}
+              </Grid>
+            </div>
+          </TabPanel>
+        ))}
       </div>
     );
   };

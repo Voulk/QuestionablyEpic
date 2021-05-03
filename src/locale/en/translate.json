@@ -869,6 +869,19 @@
         "Theotar": "Theotar",
         "Draven": "Draven"
       }
+    },
+    "BurningCrusade": {
+      "Raids": {
+        "745": "Karazhan",
+        "321": "Zul'Aman",
+        "746": "Gruul's Lair",
+        "747": "Magtheridon's Lair",
+        "748": "Serpentshrine Cavern",
+        "749": "Tempest Keep",
+        "750": "The Battle for Mount Hyjal",
+        "751": "Black Temple",
+        "752": "Sunwell Plateau"
+      }
     }
   }
 }
