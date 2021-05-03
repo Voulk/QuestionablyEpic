@@ -63,10 +63,10 @@ export default function SimCraftInput(props) {
         </DialogContent>
         <DialogActions>
           <p id="SimCError">{errorMessage}</p>
-          <Button onClick={handleClose} color="primary">
+          <Button onClick={handleClose} color="primary" variant="outlined">
             {t("Cancel")}
           </Button>
-          <Button onClick={handleSubmit} color="primary">
+          <Button onClick={handleSubmit} color="primary" variant="outlined">
             {t("Submit")}
           </Button>
         </DialogActions>

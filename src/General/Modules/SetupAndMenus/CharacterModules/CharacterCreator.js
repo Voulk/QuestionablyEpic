@@ -221,10 +221,15 @@ export default function AddNewChar(props) {
           </Grid>
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose} color="primary">
+          <Button onClick={handleClose} color="primary" variant="outlined">
             {t("Cancel")}
           </Button>
-          <Button onClick={() => handleAdd(charName, healClass, props.allChars, props.charUpdate, regions, server, selectedRace)} color="primary" disabled={selectedRace === "" ? true : false}>
+          <Button
+            onClick={() => handleAdd(charName, healClass, props.allChars, props.charUpdate, regions, server, selectedRace)}
+            color="primary"
+            disabled={selectedRace === "" ? true : false}
+            variant="outlined"
+          >
             {t("Add")}
           </Button>
         </DialogActions>

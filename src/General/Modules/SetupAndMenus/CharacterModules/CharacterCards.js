@@ -843,24 +843,32 @@ export default function CharCards(props) {
           >
             {/* ------------------------------ Delete Button -----------------------------  */}
             <ThemeProvider theme={deleteTheme}>
-              <Button onClick={handleDelete} color="primary">
+              <Button onClick={handleDelete} color="primary" variant="outlined">
                 {t("CharacterCreator.DeleteCharacter")}
               </Button>
             </ThemeProvider>
 
             {/* ---------------------- Default Button (Reset Stats) ----------------------  */}
             <div>
-              <Button onClick={resetDefaults} color="primary">
-                {t("CharacterCreator.SavedLogs.ResetToDefaults")}
-              </Button>
-              {/* ------------------------------ Cancel Button -----------------------------  */}
-              <Button onClick={handleClose} color="primary">
-                {t("Cancel")}
-              </Button>
-              {/* ------------------------------- Save Button ------------------------------  */}
-              <Button onClick={() => handleUpdateData()} color="primary">
-                {t("Save")}
-              </Button>
+              <Grid container spacing={1}>
+                <Grid item>
+                  <Button onClick={resetDefaults} color="primary" variant="outlined">
+                    {t("CharacterCreator.SavedLogs.ResetToDefaults")}
+                  </Button>
+                </Grid>
+                {/* ------------------------------ Cancel Button -----------------------------  */}
+                <Grid item>
+                  <Button onClick={handleClose} color="primary" variant="outlined">
+                    {t("Cancel")}
+                  </Button>
+                </Grid>
+                {/* ------------------------------- Save Button ------------------------------  */}
+                <Grid item>
+                  <Button onClick={() => handleUpdateData()} color="primary" variant="outlined">
+                    {t("Save")}
+                  </Button>
+                </Grid>
+              </Grid>
             </div>
           </div>
         </DialogActions>
