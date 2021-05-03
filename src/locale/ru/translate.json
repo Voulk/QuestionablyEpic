@@ -246,9 +246,9 @@
     },
 
     "HallOfFame": {
-      "title": "Welcome to the Hall of Fame",
+      "title": "Зал славы",
       "buttonLabel": "Зал славы",
-      "introduction": "Insert Blurb Here about thanking patrons."
+      "introduction": "Thank you so much for your support."
     },
 
     "InsertLog": {
@@ -355,6 +355,7 @@
     },
 
     "BossNames": {
+      "CastleNathria": "CastleNathria",
       "2393": "Визгунья",
       "2429": "Ловчий Альтимор",
       "2422": "Спасение Солнечного короля",
@@ -465,12 +466,12 @@
       "Setting1Title": "Усиления союзников",
       "Setting1TextFieldLabel": "",
       "Setting2Spacer": "--------------------------------------------------------------------",
-      "Setting2Tooltip": "",
-      "Setting2Title": "",
-      "Setting2TextFieldLabel": "",
+      "Setting2Tooltip": "Select Discipline Talent",
+      "Setting2Title": "Talent",
+      "Setting2TextFieldLabel": "Talent",
       "Setting3Spacer": "--------------------------------------------------------------------",
-      "Setting3Tooltip": "",
-      "Setting3Title": "",
+      "Setting3Tooltip": "This will automatically add sockets to items that don't have them in compatible slots.",
+      "Setting3Title": "Auto Socket Items",
       "Setting3TextFieldLabel": "",
       "Setting4Spacer": "--------------------------------------------------------------------",
       "Setting4Tooltip": "",

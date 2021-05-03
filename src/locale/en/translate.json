@@ -1,7 +1,7 @@
 {
   "translations": {
     "CharacterCreator": {
-      "StatMessage": "To get updated stat weights use WowAnalyzer.com with a recent log and enter the values here from the 'Statistics' tab.",
+      "StatMessage": "While Stat Weights are editable, the QE Live defaults are recommended for most situations.",
       "DeleteCharacter": "Delete Character",
       "CreateChar": "Create New Character",
       "AddChar": "Add Character",
@@ -245,9 +245,9 @@
       }
     },
     "HallOfFame": {
-      "title": "Welcome to the Hall of Fame",
-      "buttonLabel": "Hall of Fame",
-      "introduction": "Insert Blurb Here about thanking patrons."
+      "title": "Hall of Fame",
+      "buttonLabel": "QE Hall of Fame",
+      "introduction": "QE would not have been possible without you. Thank you so much!"
     },
 
     "InsertLog": {
@@ -471,8 +471,8 @@
       "Setting2Title": "Talent",
       "Setting2TextFieldLabel": "Talent",
       "Setting3Spacer": "--------------------------------------------------------------------",
-      "Setting3Tooltip": "",
-      "Setting3Title": "",
+      "Setting3Tooltip": "This will automatically add sockets to items that don't have them in compatible slots.",
+      "Setting3Title": "Auto Socket Items",
       "Setting3TextFieldLabel": "",
       "Setting4Spacer": "--------------------------------------------------------------------",
       "Setting4Tooltip": "",
