@@ -53,7 +53,7 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel, use
     let base_heal = getProcessedValue(base_heal_effect.coefficient, base_heal_effect.table, itemLevel);
     let mana_heal = getProcessedValue(mana_heal_effect.coefficient, mana_heal_effect.table, itemLevel) * (expected_mana_spend / 3240);
 
-    bonus_stats.hps = (((base_heal + mana_heal) * base_heal_effect.efficiency) / base_heal_effect.cooldown) * player.getStatMultiplier("CRITVERS");
+    bonus_stats.hps = (((base_heal + mana_heal) * base_heal_effect.efficiency[contentType]) / base_heal_effect.cooldown) * player.getStatMultiplier("CRITVERS");
     //
   } else if (
     /* ---------------------------------------------------------------------------------------------- */

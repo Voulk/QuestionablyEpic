@@ -6,10 +6,14 @@ import { TOGGLE_GAMETYPE } from "../ActionTypes";
 import { contentType } from "./ContentType";
 import { gameType } from "./GameType";
 
+// Local Storage
+import ls from "local-storage";
+
 // Initial Store/State settings
 const initialState = {
   gameType: "Retail",
-  contentType: "Raid",
+  //contentType: "Raid",
+  contentType: ls.get("contentType") || "Raid",
 };
 
 export default function rootReducer(state = initialState, action) {
