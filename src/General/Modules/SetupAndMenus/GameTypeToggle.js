@@ -3,7 +3,7 @@ import ToggleButton from "@material-ui/lab/ToggleButton";
 import ToggleButtonGroup from "@material-ui/lab/ToggleButtonGroup";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-import { toggleGameType } from "../../../../Redux/Actions";
+import { toggleGameType } from "../../../Redux/Actions";
 import { useTranslation } from "react-i18next";
 import { Tooltip, Typography } from "@material-ui/core";
 
@@ -19,8 +19,8 @@ export default function GameTypeSwitch() {
   };
 
   return (
-    <ToggleButtonGroup value={gameType} exclusive onChange={handleContent} aria-label="gameToggle" size="small">
-      <ToggleButton style={{ padding: 5 }} value="Classic" aria-label="classicLabel">
+    <ToggleButtonGroup value={gameType} exclusive onChange={handleContent} aria-label="gameToggle" size="large" >
+      <ToggleButton style={{ minWidth: 300 }} value="Classic" aria-label="classicLabel" >
         <Tooltip title={t("QeHeader.Tooltip.ChangeToDungeon")} arrow>
           <div style={{ display: "inline-flex" }}>
             {/* <img
@@ -33,7 +33,7 @@ export default function GameTypeSwitch() {
         </Tooltip>
       </ToggleButton>
 
-      <ToggleButton style={{ padding: "5px 7px" }} value="Retail" aria-label="retailLabel">
+      <ToggleButton style={{ minWidth: 300 }} value="Retail" aria-label="retailLabel">
         <Tooltip title={t("QeHeader.Tooltip.ChangeToRaid")} arrow>
           <div style={{ display: "inline-flex" }}>
             {/* <img

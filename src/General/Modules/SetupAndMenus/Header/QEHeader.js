@@ -11,7 +11,7 @@ import QELogImport from "./QELogImport";
 import { makeStyles } from "@material-ui/core/styles";
 import CharacterHeaderButton from "./CharacterHeader";
 import ContentSwitch from "./ContentToggle";
-import GameTypeSwitch from "./GameTypeToggle";
+
 // import ReactGA from "react-ga";n
 
 const useStyles = makeStyles((theme) => ({
@@ -81,9 +81,6 @@ export default function QEHeader(props) {
                   </Grid>
                 </Grid>
 
-                <Grid item xs={12} sm={12} md="auto" lg="auto" xl="auto">
-                  <GameTypeSwitch />
-                </Grid>
               </Grid>
             </Grid>
 
