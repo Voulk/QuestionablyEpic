@@ -79,7 +79,7 @@ export default function MythicPlusGearContainer(props) {
                 className="container-UpgradeCards"
               >
                 <Typography variant="h6" noWrap className="centered-UpgradeCards-Dungeons">
-                  {t("DungeonNames." + key)}
+                  {t("BurningCrusade.Dungeons." + key)}
                 </Typography>
               </div>
             </Grid>
