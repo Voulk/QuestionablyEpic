@@ -161,11 +161,13 @@ export const getPaladinLegendary = (effectName, player, contentType) => {
     /*                                        Divine Resonance                                        */
     /* ---------------------------------------------------------------------------------------------- */
     const specialSettings = {
-      numCopies: 3,
-      copyStrength: 0.2,
+      numCopies: 5,
+      copyStrength: 0.8,
     };
   
     bonus_stats = getPaladinCovAbility("Pelagos", player, contentType, specialSettings);
+
+
     console.log(bonus_stats);
   }
   else if (name === "Duty-Bound Gavel") {

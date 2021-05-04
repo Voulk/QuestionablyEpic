@@ -69,8 +69,8 @@ export function getPaladinCovAbility(soulbindName, player, contentType, specialS
     if ('numCopies' in specialSettings) {
       // This is the legendary effect. 
       //bonus_stats.HPS = (holyPowerHPS + ((oneCombinedShock * divineTollCasts + oneGlimmerProc) * player.getStatMultiplier("NOHASTE") * wingsMultiplier)) / 60;
-      bonus_stats.hps = ((holyPowerHPS * specialSettings.numCopies) + 
-                          (oneCombinedShock * divineTollCasts + oneGlimmerProc) * player.getStatMultiplier("NOHASTE") * specialSettings.copyStrength * specialSettings.numCopies) / 60;
+      bonus_stats.hps = ((holyPowerHPS * specialSettings.numCopies / 5) + 
+                          (oneCombinedShock + oneGlimmerProc) * player.getStatMultiplier("NOHASTE") * specialSettings.copyStrength * specialSettings.numCopies) / 60;
       
       //console.log("Extra Shocks: " + (oneCombinedShock * divineTollCasts + oneGlimmerProc) * player.getStatMultiplier("NOHASTE") * specialSettings.copyStrength * specialSettings.numCopies / 60)
       //console.log("Holy Power: " + (holyPowerHPS * specialSettings.numCopies / 60))
