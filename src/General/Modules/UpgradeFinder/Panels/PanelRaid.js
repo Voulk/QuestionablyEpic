@@ -373,8 +373,8 @@ export default function RaidGearContainer(props) {
                               }}
                               className="container-UpgradeCards"
                             >
-                              <Typography variant="h6" noWrap className="centered-UpgradeCards">
-                                {t("BossNames." + key)}
+                              <Typography variant="button" noWrap className="centered-UpgradeCards">
+                                {t("BurningCrusade.BossNames." + key)}
                               </Typography>
                             </div>
                           </Grid>
