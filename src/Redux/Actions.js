@@ -6,7 +6,7 @@ export const toggleContent = (content) => ({
   payload: { content },
 });
 
-export const toggleGame = (gameType) => ({
+export const toggleGameType = (gameType) => ({
   type: TOGGLE_GAMETYPE,
   payload: { gameType },
 });

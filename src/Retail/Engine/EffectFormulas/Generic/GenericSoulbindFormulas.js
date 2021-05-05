@@ -255,8 +255,7 @@ export function getSoulbindFormula(effectID, player, contentType) {
     /* -------------------------------------- Field of Blossoms ------------------------------------- */
     effectID === 319191
   ) {
-    let expectedUptime = (1 / 6) * 0.7;
-
+    let expectedUptime = (1 / 6) * 0.67;
     bonus_stats.Haste = 12 * STATPERONEPERCENT.Retail.HASTE * expectedUptime;
   } else if (
     /* --------------------------------------- Cunning Dreams --------------------------------------- */

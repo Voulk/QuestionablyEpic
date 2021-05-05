@@ -56,7 +56,7 @@ export default function LanguageSelector() {
     <div className={classes.root}>
       <div>
         <Tooltip title={t("QeHeader.Tooltip.Language")} arrow>
-          <Button ref={anchorRef} aria-controls={open ? "menu-list-grow" : undefined} aria-haspopup="true" onClick={handleToggle}>
+          <Button variant="outlined" ref={anchorRef} aria-controls={open ? "menu-list-grow" : undefined} aria-haspopup="true" onClick={handleToggle}>
             <LanguageIcon style={{ marginRight: 4 }} />
             {currentLanguage}
           </Button>
@@ -89,7 +89,7 @@ export default function LanguageSelector() {
                     {/* <MenuItem onClick={(e) => handleClose(e, "fr")}>Français</MenuItem>
                     <Divider /> */}
                     {/**/} <MenuItem onClick={(e) => handleClose(e, "ru")}>Русский</MenuItem>
-                    <Divider /> 
+                    <Divider />
                     <MenuItem onClick={(e) => handleClose(e, "de")}>Deutsch</MenuItem>
                   </MenuList>
                 </ClickAwayListener>

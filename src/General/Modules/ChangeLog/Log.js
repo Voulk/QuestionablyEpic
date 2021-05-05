@@ -10,6 +10,18 @@
 export const changeLog = [
   {
     version: "9.0.5",
+    update: 4,
+    date: "29th April",
+    changes: [
+      "New 'auto-socket' setting in Top Gear / Upgrade Finder to automatically add sockets to compatible slots.",
+      "Added the Hall of Fame. Thank you so much to all patrons.",
+      "Added Darkmoon Deck: Repose to the trinket graph as requested.",
+      "Significant visual revamps through the app!",
+      "Sweeping code cleanup and revamps behind the scenes to prepare for both Burning Crusade and 9.1.",
+    ],
+  },
+  {
+    version: "9.0.5",
     update: 3,
     date: "23th March",
     changes: [

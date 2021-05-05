@@ -254,6 +254,7 @@ export default function QELogImport(props) {
           style={{ whiteSpace: "nowrap" }}
           onClick={handleClickOpen}
           disabled={characterCount === 0}
+          variant="outlined"
           //disabled={true}
         >
           {t("QeHeader.InsertLogLabel")}
@@ -331,10 +332,10 @@ export default function QELogImport(props) {
           </Grid>
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose} color="primary">
+          <Button onClick={handleClose} color="primary" variant="outlined">
             {t("Cancel")}
           </Button>
-          <Button disabled={selectValue === "" ? true : false} onClick={handleSubmit} color="primary">
+          <Button disabled={selectValue === "" ? true : false} onClick={handleSubmit} color="primary" variant="outlined">
             {t("Submit")}
           </Button>
         </DialogActions>
