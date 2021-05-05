@@ -22,7 +22,7 @@ export function convertLogSpellOutput(player, logOutput, fightLength, reportID, 
   };
 
   for (let i = 0; i < logOutput.length; i++) {
-    constspell = logOutput[i];
+    const spell = logOutput[i];
     // console.log(logOutput[i]);
     const spellName = spell.name;
     const spellID = spell.guid;
@@ -66,5 +66,5 @@ export function convertLogStatOutput(player, logOutput, id) {
     data.leech = info.Leech.min;
   }
 
-  player.setActiveStats(data);
+  //player.setActiveStats(data);
 }

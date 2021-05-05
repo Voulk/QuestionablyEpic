@@ -11,8 +11,7 @@ import ls from "local-storage";
 
 // Initial Store/State settings
 const initialState = {
-  gameType: "Retail",
-  //contentType: "Raid",
+  gameType: ls.get("gameType") || "Retail",
   contentType: ls.get("contentType") || "Raid",
 };
 
