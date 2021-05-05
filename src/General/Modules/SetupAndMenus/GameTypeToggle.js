@@ -19,8 +19,8 @@ export default function GameTypeSwitch() {
   };
 
   return (
-    <ToggleButtonGroup value={gameType} exclusive onChange={handleContent} aria-label="gameToggle" size="large" >
-      <ToggleButton style={{ minWidth: 300 }} value="Classic" aria-label="classicLabel" >
+    <ToggleButtonGroup value={gameType} exclusive onChange={handleContent} aria-label="gameToggle" size="large">
+      <ToggleButton style={{ minWidth: 300 }} value="Classic" aria-label="classicLabel">
         <Tooltip title={t("QeHeader.Tooltip.ChangeToDungeon")} arrow>
           <div style={{ display: "inline-flex" }}>
             {/* <img
@@ -28,7 +28,9 @@ export default function GameTypeSwitch() {
               src={require("Images/inv_relics_hourglass.jpg").default}
               alt={t("Dungeon")}
             /> */}
-            <Typography variant="button" noWrap>{t("Burning Crusade")}</Typography>
+            <Typography variant="button" noWrap>
+              {t("Burning Crusade")}
+            </Typography>
           </div>
         </Tooltip>
       </ToggleButton>
@@ -41,7 +43,9 @@ export default function GameTypeSwitch() {
               src={require("Images/achievement_raid_revendrethraid_castlenathria.jpg").default}
               alt={t("Raid")}
             /> */}
-            <Typography variant="button" noWrap>{t("Shadowlands")}</Typography>
+            <Typography variant="button" noWrap>
+              {t("Shadowlands")}
+            </Typography>
           </div>
         </Tooltip>
       </ToggleButton>
