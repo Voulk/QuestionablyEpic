@@ -20,32 +20,24 @@ export default function GameTypeSwitch() {
 
   return (
     <ToggleButtonGroup value={gameType} exclusive onChange={handleContent} aria-label="gameToggle" size="large">
-      <ToggleButton style={{ minWidth: 300 }} value="Classic" aria-label="classicLabel">
+      <ToggleButton style={{ minWidth: 300, padding: 4 }} value="Classic" aria-label="classicLabel">
         <Tooltip title={t("QeHeader.Tooltip.ChangeToDungeon")} arrow>
           <div style={{ display: "inline-flex" }}>
-            {/* <img
-              style={{ height: 18, width: 18, margin: "2px 5px 0px 0px", verticalAlign: "middle", borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.12)" }}
-              src={require("Images/inv_relics_hourglass.jpg").default}
-              alt={t("Dungeon")}
-            /> */}
-            <Typography variant="button" noWrap>
+            <img src={require("../../../Images/Logos/Logo_BurningCrusade.png").default} alt={t("Burning Crusade")} />
+            {/* <Typography variant="button" noWrap>
               {t("Burning Crusade")}
-            </Typography>
+            </Typography> */}
           </div>
         </Tooltip>
       </ToggleButton>
 
-      <ToggleButton style={{ minWidth: 300 }} value="Retail" aria-label="retailLabel">
+      <ToggleButton style={{ minWidth: 300, padding: 4 }} value="Retail" aria-label="retailLabel">
         <Tooltip title={t("QeHeader.Tooltip.ChangeToRaid")} arrow>
           <div style={{ display: "inline-flex" }}>
-            {/* <img
-              style={{ height: 18, width: 18, margin: "2px 5px 0px 0px", verticalAlign: "middle", borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.12)" }}
-              src={require("Images/achievement_raid_revendrethraid_castlenathria.jpg").default}
-              alt={t("Raid")}
-            /> */}
-            <Typography variant="button" noWrap>
+            <img src={require("../../../Images/Logos/Logo_Shadowlands.png").default} alt={t("Shadowlands")} />
+            {/* <Typography variant="button" noWrap>
               {t("Shadowlands")}
-            </Typography>
+            </Typography> */}
           </div>
         </Tooltip>
       </ToggleButton>

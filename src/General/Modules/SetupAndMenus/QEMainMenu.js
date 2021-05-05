@@ -14,7 +14,7 @@ import ArticleCard from "../ArticleCards/ArcticleCard";
 import Changelog from "../ChangeLog/Changelog";
 import InfoOutlinedIcon from "@material-ui/icons/InfoOutlined";
 import { useSelector } from "react-redux";
-// import GameTypeSwitch from "./GameTypeToggle";
+import GameTypeSwitch from "./GameTypeToggle";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -96,9 +96,9 @@ export default function QEMainMenu(props) {
     <div style={{ backgroundColor: "#313131" }}>
       <div className={classes.root}>
         <Grid container spacing={2}>
-          {/* <Grid item xs={12} style={{textAlign: "center"}} >
+          <Grid item xs={12} style={{textAlign: "center"}} >
             <GameTypeSwitch />
-          </Grid> */}
+          </Grid>
           <Grid item xs={12}>
             <Button
               key={321}
