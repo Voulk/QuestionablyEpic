@@ -26,6 +26,8 @@ export const encounterDB = {
     1562, // Chess Event
     1563, // Prince Malchezaar
   ],
+// TODO: This is temporary Zul'Aman
+  321: [],
 
   /* ---------------------------------------- Gruul's Lair ---------------------------------------- */
   746: [
