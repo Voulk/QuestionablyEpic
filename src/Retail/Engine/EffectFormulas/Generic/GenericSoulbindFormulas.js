@@ -164,6 +164,7 @@ export function getSoulbindFormula(effectID, player, contentType) {
     let expectedUptime = 1; // POSTLIVE: Check if this is falling off often in either content type.
 
     bonus_stats.Versatility = 1.5 * 40 * expectedUptime;
+
   } else if (effectID === 319213) {
     /* ------------------------------------- Empowered Chrysalis ------------------------------------ */
     /*
@@ -179,7 +180,7 @@ export function getSoulbindFormula(effectID, player, contentType) {
     effectID === 319191
   ) {
     /* -------------------------------------- Field of Blossoms ------------------------------------- */
-    let expectedUptime = (1 / 6) * 0.7;
+    let expectedUptime = (1 / 6) * 0.67;
     bonus_stats.Haste = 12 * STATPERONEPERCENT.Retail.HASTE * expectedUptime;
   }
 

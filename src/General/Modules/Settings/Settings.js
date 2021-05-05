@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { MenuItem, InputLabel, Accordion, Grid, AccordionDetails, AccordionSummary, FormControl, Select, Typography, Divider, TextField, Tooltip } from "@material-ui/core";
+import { MenuItem, Accordion, Grid, AccordionDetails, AccordionSummary, FormControl, Select, Typography, Divider, TextField, Tooltip } from "@material-ui/core";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import { useTranslation } from "react-i18next";
 import { setBounds } from "../../Engine/CONSTRAINTS";
@@ -25,6 +25,7 @@ const useStyles = makeStyles((theme) => ({
   },
   details: {
     alignItems: "center",
+    padding: 8,
   },
   column: {
     // flexBasis: "33.33%",
@@ -110,7 +111,7 @@ export default function Settings(props) {
 
   return (
     <div className={classes.root}>
-      <Accordion defaultExpanded={false} disabled={false} elevation={0}>
+      <Accordion defaultExpanded={true} disabled={false} elevation={0}>
         <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1c-content" id="panel1c-header">
           <div className={classes.column}>
             <SettingsIcon style={{ marginRight: 4 }} />
@@ -122,11 +123,11 @@ export default function Settings(props) {
           <Grid container spacing={1} direction="row">
             {/* ------------------------- Cabalist's Hymnal Item ------------------------- */}
             {props.hymnalShow === true ? (
-              <Grid item xs={12} sm={4} md={4} lg={2} xl={2}>
-                <Grid container spacing={1} style={{ paddingLeft: 8 }}>
+              <Grid item xs={12} sm={4} md={4} lg={3} xl={2}>
+                <Grid container spacing={0} style={{ padding: "0px 8px" }}>
                   <Grid item xs={12}>
                     <div style={{ display: "inline-flex" }}>
-                      <Typography color="primary" style={{ marginRight: 4 }}>
+                      <Typography color="primary" style={{ marginRight: 4 }} noWrap>
                         {t("Settings.Setting0Title")}
                       </Typography>
                       <Tooltip title={t("Settings.Setting0Tooltip")} placement="top-start">
@@ -136,14 +137,16 @@ export default function Settings(props) {
                   </Grid>
                   <Grid item xs={12}>
                     <TextField
-                      label={t("Settings.Setting0TextFieldLabel")}
                       id="AlliesNumber"
                       value={hymnalValue}
-                      style={{ maxWidth: 115 }}
                       onChange={(e) => updateHymnal(e.target.value)}
                       variant="outlined"
                       size="small"
                       type="number"
+                      fullWidth
+                      inputProps={{
+                        style: { textAlign: "center" },
+                      }}
                     />
                   </Grid>
                 </Grid>
@@ -155,11 +158,11 @@ export default function Settings(props) {
             {props.hymnalShow === true ? <Divider orientation="vertical" flexItem /> : ""}
             {/* ------------------------- Group Buff (Treat Buff as Personal Throughput) ------------------------- */}
             {props.groupBuffShow === true ? (
-              <Grid item xs={12} sm={4} md={4} lg={2} xl={2}>
-                <Grid container spacing={1} style={{ paddingLeft: 8 }}>
+              <Grid item xs={12} sm={4} md={4} lg={3} xl={2}>
+                <Grid container spacing={0} style={{ padding: "0px 8px" }}>
                   <Grid item xs={12}>
                     <div style={{ display: "inline-flex" }}>
-                      <Typography color="primary" style={{ marginRight: 4 }}>
+                      <Typography color="primary" style={{ marginRight: 4 }} noWrap>
                         {t("Settings.Setting1Title")}
                       </Typography>
                       <Tooltip title={t("Settings.Setting1Tooltip")} placement="top-start">
@@ -168,11 +171,14 @@ export default function Settings(props) {
                     </div>
                   </Grid>
                   <Grid item xs={12}>
-                    <FormControl variant="outlined" size="small">
-                      <InputLabel id="groupValue">{}</InputLabel>
+                    <FormControl variant="outlined" size="small" fullWidth style={{ textAlign: "center" }}>
                       <Select labelId="groupValue" value={groupValue} onChange={(e) => updateGroupValue(e.target.value)} MenuProps={menuStyle}>
-                        <MenuItem value={true}>{t("Yes")}</MenuItem>
-                        <MenuItem value={false}>{t("No")}</MenuItem>
+                        <MenuItem value={true} style={{ justifyContent: "center" }}>
+                          {t("Yes")}
+                        </MenuItem>
+                        <MenuItem value={false} style={{ justifyContent: "center" }}>
+                          {t("No")}
+                        </MenuItem>
                       </Select>
                     </FormControl>
                   </Grid>
@@ -185,11 +191,11 @@ export default function Settings(props) {
             {props.groupBuffShow === true ? <Divider orientation="vertical" flexItem /> : ""}
             {/* ---------------- Discipline Priest Talent selector (Spirit Shell / Evangelism) --------------- */}
             {/* {playerSpec === "Discipline Priest" ? (
-              <Grid item xs={2}>
-                <Grid container spacing={1} style={{ paddingLeft: 8 }}>
+              <Grid item xs={12} sm={4} md={4} lg={3} xl={2}>
+                <Grid container spacing={1} style={{ padding: "0px 8px" }} >
                   <Grid item xs={12}>
                     <div style={{ display: "inline-flex" }}>
-                      <Typography color="primary" style={{ marginRight: 4 }}>
+                      <Typography color="primary" style={{ marginRight: 4 }} noWrap>
                         {t("Settings.Setting2Title")}
                       </Typography>
                       <Tooltip title={t("Settings.Setting2Tooltip")} placement="top-start">
@@ -199,12 +205,11 @@ export default function Settings(props) {
                   </Grid>
                   <Grid item xs={12}>
                     <FormControl variant="outlined" size="small">
-                      <InputLabel id="slots">{}</InputLabel>
                       <Select labelId="slots" value={discTalent} onChange={(e) => setDiscTalent(e.target.value)} MenuProps={menuStyle}>
-                        <MenuItem id="spiritShell" value={109964}>
+                        <MenuItem id="spiritShell" value={109964} style={{ justifyContent: "center" }} >
                           {t("CooldownPlanner.ClassAbilities.109964")}
                         </MenuItem>
-                        <MenuItem id="evangelism" value={246287}>
+                        <MenuItem id="evangelism" value={246287} style={{ justifyContent: "center" }} >
                           {t("CooldownPlanner.ClassAbilities.246287")}
                         </MenuItem>
                       </Select>
@@ -219,11 +224,11 @@ export default function Settings(props) {
             {/* {playerSpec === "Discipline Priest" ? <Divider orientation="vertical" flexItem /> : ""} */}
             {/* ----------------------------------------- Auto Socket Items ---------------------------------------- */}
             {props.autoSocket === true ? (
-              <Grid item xs={2}>
-                <Grid container spacing={1} style={{ paddingLeft: 8 }}>
+              <Grid item xs={12} sm={4} md={4} lg={3} xl={2}>
+                <Grid container spacing={0} style={{ padding: "0px 8px" }}>
                   <Grid item xs={12}>
                     <div style={{ display: "inline-flex" }}>
-                      <Typography color="primary" style={{ marginRight: 4 }}>
+                      <Typography color="primary" style={{ marginRight: 4 }} noWrap>
                         {t("Settings.Setting3Title")}
                       </Typography>
                       <Tooltip title={t("Settings.Setting3Tooltip")} placement="top-start">
@@ -232,11 +237,10 @@ export default function Settings(props) {
                     </div>
                   </Grid>
                   <Grid item xs={12}>
-                    <FormControl variant="outlined" size="small">
-                      <InputLabel id="groupValue">{}</InputLabel>
+                    <FormControl variant="outlined" size="small" fullWidth style={{ textAlign: "center" }}>
                       <Select labelId="groupValue" value={autoSocketValue} onChange={(e) => updateAutoSocketValue(e.target.value)} MenuProps={menuStyle}>
-                        <MenuItem value={true}>{t("Yes")}</MenuItem>
-                        <MenuItem value={false}>{t("No")}</MenuItem>
+                        <MenuItem value={true} style={{ justifyContent: "center" }} >{t("Yes")}</MenuItem>
+                        <MenuItem value={false} style={{ justifyContent: "center" }} >{t("No")}</MenuItem>
                       </Select>
                     </FormControl>
                   </Grid>
@@ -250,8 +254,8 @@ export default function Settings(props) {
             {/* ----------------------------------------- Free Option ---------------------------------------- */}
             {/*
             <Divider orientation="vertical" flexItem />
-            <Grid item xs={2}>
-              <Grid container spacing={1} style={{ paddingLeft: 8 }}>
+            <Grid item xs={12} sm={4} md={4} lg={3} xl={2}>
+              <Grid container spacing={1} style={{ padding: "0px 8px" }}>
                 <Grid item xs={12}>
                   <Tooltip
                     title={t("Settings.Setting4Tooltip")}
@@ -280,7 +284,7 @@ export default function Settings(props) {
             {/* ----------------------------------------- Free Option ---------------------------------------- */}
             {/*
             <Divider orientation="vertical" flexItem />
-            <Grid item xs={2}>
+            <Grid item xs={12} sm={4} md={4} lg={3} xl={2}>
               <Grid container spacing={1} style={{ paddingLeft: 8 }}>
                 <Grid item xs={12}>
                   <Tooltip

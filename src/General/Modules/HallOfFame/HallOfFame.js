@@ -52,7 +52,7 @@ export default function HallOfFame() {
         {/* ---------------------------------------------------------------------------------------------- */
         /*                                     Dialog Intro / Message                                     */
         /* ----------------------------------------------------------------------------------------------  */}
-        <Typography align="center" style={{ color: "limegreen" }} variant="h6">
+        <Typography align="center" style={{ color: "goldenrod" }} variant="h6">
           {t("HallOfFame.introduction")}
         </Typography>
 
