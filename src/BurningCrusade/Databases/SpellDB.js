@@ -470,6 +470,139 @@ export function getSpell(effectID, player, contentType) {
       // Math here
       break;
 
+    case 40042:
+      /* ----------------------------------- Increased Resilience 35 ---------------------------------- */
+      // https://tbc.wowhead.com/spell=40042/increased-resilience-35
+      // +35 Resilience Rating.
+      // Math here
+      break;
+
+    case 40051:
+      /* ----------------------------------- Increased Resilience 35 ---------------------------------- */
+      // https://tbc.wowhead.com/spell=40051/increased-resilience-35
+      // +35 Resilience Rating.
+      // Math here
+      break;
+
+    case 40047:
+      /* ----------------------------------- Increased Resilience 35 ---------------------------------- */
+      // https://tbc.wowhead.com/spell=40047/increased-resilience-35
+      // +35 Resilience Rating.
+      // Math here
+      break;
+
+    case 39543:
+      /* ------------------------------------ Increase Spell Dam 23 ----------------------------------- */
+      // https://tbc.wowhead.com/spell=39543/increase-spell-dam-23
+      // Increases damage and healing done by magical spells and effects by up to 23.
+      // Math here
+      break;
+
+    case 41829:
+      /* ---------------------------------- Increased Critical Spell ---------------------------------- */
+      // https://tbc.wowhead.com/spell=41829/increased-critical-spell
+      // Increases your spell critical strike rating by 14.
+      // Math here
+      break;
+
+    case 39881:
+      /* ---------------------------------- Increased Critical Spell ---------------------------------- */
+      // https://tbc.wowhead.com/spell=39881/increased-critical-spell
+      // Increases your spell critical strike rating by 28.
+      // Math here
+      break;
+
+    case 46455:
+      /* ----------------------------------- Increased Resilience 35 ---------------------------------- */
+      // https://tbc.wowhead.com/spell=46455/increased-resilience-35
+      // +35 Resilience Rating.
+      // Math here
+      break;
+
+    case 38466:
+      /* ---------------------------- Nature's Swiftness Cooldown Reduction --------------------------- */
+      // https://tbc.wowhead.com/spell=38466/natures-swiftness-cooldown-reduction
+      // Reduces the cooldown of your Nature's Swiftness ability by 24 sec.
+      // Math here
+      break;
+
+    case 46413:
+      /* ----------------------------------- Increased Resilience 35 ---------------------------------- */
+      // https://tbc.wowhead.com/spell=46413/increased-resilience-35
+      // +35 Resilience Rating.
+      // Math here
+      break;
+
+    case 41561:
+      /* ------------------------------------ Increased Critical 14 ----------------------------------- */
+      // https://tbc.wowhead.com/spell=41561/increased-critical-14
+      // Increases your critical strike rating by 14.
+      // Math here
+      break;
+
+    case 41562:
+      /* ------------------------------------ Increased Mana Regen ------------------------------------ */
+      // https://tbc.wowhead.com/spell=41562/increased-mana-regen
+      // Restores 8 mana per 5 sec.
+      // Math here
+      break;
+
+    case 41771:
+      /* ----------------------------------- Increased Intellect 20 ----------------------------------- */
+      // https://tbc.wowhead.com/spell=41771/increased-intellect-20
+      // +20 Intellect.
+      // Math here
+      break;
+
+    case 41660:
+      /* ---------------------------------- Resist Interrupt/Pushback --------------------------------- */
+      // https://tbc.wowhead.com/spell=41660/resist-interrupt-pushback
+      // Increases the chance spell pushback and spell interrupt will be resisted by 5%.
+      // Math here
+      break;
+
+    case 41783:
+      /* ------------------------------------- Increase Healing 55 ------------------------------------ */
+      // https://tbc.wowhead.com/spell=41783/increase-healing-55
+      // Increases healing done by up to 55 and damage done by up to 19 for all magical spells and effects.
+      // Math here
+      break;
+
+    case 41875:
+      /* ------------------------------------ Increase Spell Dam 15 ----------------------------------- */
+      // https://tbc.wowhead.com/spell=41875/increase-spell-dam-15
+      // Increases damage and healing done by magical spells and effects by up to 15.
+      // Math here
+      break;
+
+    case 41890:
+      /* ------------------------------------- Increase Healing 33 ------------------------------------ */
+      // https://tbc.wowhead.com/spell=41890/increase-healing-33
+      // Increases healing done by up to 33 and damage done by up to 11 for all magical spells and effects.
+      // Math here
+      break;
+
+    case 41889:
+      /* ------------------------------------ Increased Stamina 20 ------------------------------------ */
+      // https://tbc.wowhead.com/spell=41889/increased-stamina-20
+      // +20 Stamina.
+      // Math here
+      break;
+
+    case 41833:
+      /* ---------------------------------- Increased Critical Spell ---------------------------------- */
+      // https://tbc.wowhead.com/spell=41833/increased-critical-spell
+      // Increases your spell critical strike rating by 15.
+      // Math here
+      break;
+
+    case 41834:
+      /* ------------------------------------ Increase Spell Dam 18 ----------------------------------- */
+      // https://tbc.wowhead.com/spell=41834/increase-spell-dam-18
+      // Increases damage and healing done by magical spells and effects by up to 18.
+      // Math here
+      break;
+
     default:
       return bonus_stats;
   }

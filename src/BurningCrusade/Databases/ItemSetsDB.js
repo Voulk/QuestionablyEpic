@@ -409,4 +409,215 @@ export const itemSets = [
       4: 38499, // Reduces the cooldown on your Nature's Swiftness ability by 24 sec.
     },
   },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                       Gladiator's Raiment                                      */
+    /* ---------------------------------------------------------------------------------------------- */
+    // https://tbc.wowhead.com/item-set=581/gladiators-raiment
+    id: 581,
+    class: "Priest",
+    setBonuses: {
+      2: 40042, // +35 Resilience Rating.
+      4: 33333, // Reduces the duration of the Weakened Soul effect caused by your Power Word: Shield by 2 sec.
+    },
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                   Grand Marshal's Investiture                                  */
+    /* ---------------------------------------------------------------------------------------------- */
+    // https://tbc.wowhead.com/item-set=691/grand-marshals-investiture
+    id: 691,
+    class: "Priest",
+    setBonuses: {
+      2: 40045, // +35 Resilience Rating.
+      4: 33333, // Reduces the duration of the Weakened Soul effect caused by your Power Word: Shield by 2 sec.
+    },
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                     High Warlord's Raiment                                     */
+    /* ---------------------------------------------------------------------------------------------- */
+    // https://tbc.wowhead.com/item-set=598/high-warlords-raiment
+    id: 598,
+    class: "Priest",
+    setBonuses: {
+      2: 40051, // +35 Resilience Rating.
+      4: 33333, // Reduces the duration of the Weakened Soul effect caused by your Power Word: Shield by 2 sec.
+    },
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                     Grand Marshal's Raiment                                    */
+    /* ---------------------------------------------------------------------------------------------- */
+    // https://tbc.wowhead.com/item-set=597/grand-marshals-raiment
+    id: 597,
+    class: "Priest",
+    setBonuses: {
+      2: 40047, // +35 Resilience Rating.
+      4: 33333, // Reduces the duration of the Weakened Soul effect caused by your Power Word: Shield by 2 sec.
+    },
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                      Netherweave Vestments                                     */
+    /* ---------------------------------------------------------------------------------------------- */
+    // https://tbc.wowhead.com/item-set=555/netherweave-vestments
+    id: 555,
+    class: -1,
+    setBonuses: {
+      2: 39543, // Increases damage and healing done by magical spells and effects by up to 23.
+      4: 41829, // Increases your spell critical strike rating by 14.
+    },
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                       Imbued Netherweave                                       */
+    /* ---------------------------------------------------------------------------------------------- */
+    // https://tbc.wowhead.com/spell=39881/increased-critical-spell
+    id: 556,
+    class: -1,
+    setBonuses: {
+      3: 39881, // Increases your spell critical strike rating by 28.
+    },
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                   Seer's Ringmail Battlegear                                   */
+    /* ---------------------------------------------------------------------------------------------- */
+    // https://tbc.wowhead.com/item-set=747/seers-ringmail-battlegear
+    id: 747,
+    class: "Shaman",
+    setBonuses: {
+      2: 46455, // +35 Resilience Rating.
+      4: 38466, // Reduces the cooldown of your Nature's Swiftness ability by 24 sec.
+    },
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                     Grand Marshal's Wartide                                    */
+    /* ---------------------------------------------------------------------------------------------- */
+    // https://tbc.wowhead.com/item-set=695/grand-marshals-wartide
+    id: 695,
+    class: "Shaman",
+    setBonuses: {
+      2: 40045, // +35 Resilience Rating.
+      4: 38499, // Reduces the cooldown of your Nature's Swiftness ability by 24 sec.
+    },
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                    High Warlord's Redemption                                   */
+    /* ---------------------------------------------------------------------------------------------- */
+    // https://tbc.wowhead.com/item-set=694/high-warlords-redemption
+    id: 694,
+    class: "Paladin",
+    setBonuses: {
+      2: 40049, // +35 Resilience Rating.
+      4: 46851, // Increases the healing from your Holy Shock spell by 30%.
+    },
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                   Grand Marshal's Redemption                                   */
+    /* ---------------------------------------------------------------------------------------------- */
+    // https://tbc.wowhead.com/item-set=693/grand-marshals-redemption
+    id: 693,
+    class: "Paladin",
+    setBonuses: {
+      2: 40045, // +35 Resilience Rating.
+      4: 46851, // Increases the healing from your Holy Shock spell by 30%.
+    },
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                      Mooncloth Battlegear                                      */
+    /* ---------------------------------------------------------------------------------------------- */
+    // https://tbc.wowhead.com/item-set=739/mooncloth-battlegear
+    id: 739,
+    class: "Priest",
+    setBonuses: {
+      2: 46413, // +35 Resilience Rating.
+      4: 33333, // Reduces the duration of the Weakened Soul effect caused by your Power Word: Shield by 2 sec.
+    },
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                         Fel Iron Chain                                         */
+    /* ---------------------------------------------------------------------------------------------- */
+    // https://tbc.wowhead.com/item-set=561/fel-iron-chain
+    id: 561,
+    class: -1,
+    setBonuses: {
+      2: 41561, // Increases your critical strike rating by 14.
+      4: 41562, // Restores 8 mana per 5 sec.
+    },
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                       Fury of the Nether                                       */
+    /* ---------------------------------------------------------------------------------------------- */
+    // https://tbc.wowhead.com/item-set=576/fury-of-the-nether
+    id: 576,
+    class: -1,
+    setBonuses: {
+      3: 41771, // +20 Intellect.
+    },
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                         Battlecast Garb                                        */
+    /* ---------------------------------------------------------------------------------------------- */
+    // https://tbc.wowhead.com/item-set=572/battlecast-garb
+    id: 572,
+    class: -1,
+    setBonuses: {
+      2: 41660, // Increases the chance spell pushback and spell interrupt will be resisted by 5%.
+    },
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                          Khorium Ward                                          */
+    /* ---------------------------------------------------------------------------------------------- */
+    // https://tbc.wowhead.com/item-set=565/khorium-ward
+    id: 565,
+    class: -1,
+    setBonuses: {
+      3: 41783, // Increases healing done by up to 55 and damage done by up to 19 for all magical spells and effects.
+    },
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                         The Twin Stars                                         */
+    /* ---------------------------------------------------------------------------------------------- */
+    // https://tbc.wowhead.com/item-set=667/the-twin-stars
+    id: 667,
+    class: -1,
+    setBonuses: {
+      2: 41875, // Increases damage and healing done by magical spells and effects by up to 15.
+    },
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                       Wild Draenish Armo                                       */
+    /* ---------------------------------------------------------------------------------------------- */
+    // https://tbc.wowhead.com/item-set=614/wild-draenish-armor
+    id: 614,
+    class: -1,
+    setBonuses: {
+      2: 41890, // Increases healing done by up to 33 and damage done by up to 11 for all magical spells and effects.
+      4: 41889, // +20 Stamina.
+    },
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                      Scaled Draenic Armor                                      */
+    /* ---------------------------------------------------------------------------------------------- */
+    // https://tbc.wowhead.com/item-set=612/scaled-draenic-armor
+    id: 612,
+    class: -1,
+    setBonuses: {
+      2: 41833, // Increases your spell critical strike rating by 15.
+      4: 41834, // Increases damage and healing done by magical spells and effects by up to 18.
+    },
+  },
 ];
