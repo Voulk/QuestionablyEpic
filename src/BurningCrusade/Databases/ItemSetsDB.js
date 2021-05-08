@@ -1,90 +1,109 @@
 export const itemSets = [
-  /* ---------------------------------------------------------------------------------------------- */
-  /*                                         Battlecast Garb                                        */
-  /* ---------------------------------------------------------------------------------------------- */
-
   {
-    name: "Battlecast Garb",
-    wowheadLink: "https://tbc.wowhead.com/item-set=572/battlecast-garb",
-    type: "Cloth",
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                        Primal Mooncloth                                        */
+    /* ---------------------------------------------------------------------------------------------- */
+    // https://tbc.wowhead.com/item-set=554/primal-mooncloth
+    id: 554,
     class: -1,
-    slots: {
-      head: { id: 24267, name: "Battlecast Hood", icon: "inv_helmet_70" },
-      shoulder: { id: -1, icon: -1 },
-      chest: { id: -1, icon: -1 },
-      wrist: { id: -1, icon: -1 },
-      hands: { id: -1, icon: -1 },
-      waist: { id: -1, icon: -1 },
-      legs: { id: 24263, name: "Battlecast Pants", icon: "inv_pants_cloth_12" },
-      boots: { id: -1, icon: -1 },
+    setBonuses: {
+      3: 32102, // Allow 5% of your Mana regeneration to continue while casting.
     },
-    twoSet: "Increases the chance spell pushback and spell interrupt will be resisted by 5%.",
-    fourSet: -1,
   },
-
-  /* ---------------------------------------------------------------------------------------------- */
-  /*                                      Mooncloth Battlegear                                      */
-  /* ---------------------------------------------------------------------------------------------- */
   {
-    name: "Mooncloth Battlegear",
-    wowheadLink: "https://tbc.wowhead.com/item-set=739/mooncloth-battlegear",
-    type: "Cloth",
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                       Wrath of Spellfire                                       */
+    /* ---------------------------------------------------------------------------------------------- */
+    // https://tbc.wowhead.com/item-set=552/wrath-of-spellfire
+    // TODO: Requires Mage on tooltip? https://tbc.wowhead.com/spell=32196/increased-dam-intellect
+    id: 552,
+    class: -1,
+    setBonuses: {
+      3: 32196, // Increases spell damage by up to 7% of your total Intellect.
+    },
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                        Shadow's Embrace                                        */
+    /* ---------------------------------------------------------------------------------------------- */
+    // https://tbc.wowhead.com/item-set=553/shadows-embrace
+    // TODO: Requires Priest & 2% of base mana in tooltip? https://tbc.wowhead.com/spell=39372/frozen-shadoweave
+    id: 553,
+    class: -1,
+    setBonuses: {
+      3: 39372, // Your Frost and Shadow damage spells heal you for 2% of the damage they deal.
+    },
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                         Windhawk Armor                                         */
+    /* ---------------------------------------------------------------------------------------------- */
+    // https://tbc.wowhead.com/item-set=618/windhawk-armor
+    id: 618,
+    class: -1,
+    setBonuses: {
+      3: 41591, // Restores 8 mana per 5 sec.
+    },
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                        Incarnate Raiment                                       */
+    /* ---------------------------------------------------------------------------------------------- */
+    // https://tbc.wowhead.com/item-set=663/incarnate-raiment
+    id: 663,
     class: "Priest",
-    slots: {
-      head: { id: 35333, name: "Mooncloth Cowl", icon: "inv_helmet_30" },
-      shoulder: { id: 35336, name: "Mooncloth Shoulderpads", icon: "inv_shoulder_02" },
-      chest: { id: 35337, name: "Mooncloth Vestments", icon: "inv_chest_cloth_43" },
-      wrist: { id: -1, icon: -1 },
-      hands: { id: 35335, name: "Mooncloth Mitts", icon: "inv_gauntlets_15" },
-      waist: { id: -1, icon: -1 },
-      legs: { id: 35334, name: "Mooncloth Legguards", icon: "inv_pants_cloth_05" },
-      boots: { id: -1, icon: -1 },
+    setBonuses: {
+      2: 37564, // Your Prayer of Healing spell now also causes an additional 150 healing over 9 sec.
+      4: 37568, // Each time you cast Flash Heal, your next Greater Heal cast within 15 sec has its casting time reduced by 0.1, stacking up to 5 times.
     },
-    twoSet: "+35 Resilience Rating.",
-    fourSet: "Reduces the duration of the Weakened Soul effect caused by your Power Word: Shield by 2 sec.",
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                        Redemption Armor                                        */
+    /* ---------------------------------------------------------------------------------------------- */
+    // https://tbc.wowhead.com/item-set=528/redemption-armor
+    id: 528,
+    class: "Paladin",
+    setBonuses: {
+      2: 28775, // Increases the amount healed by your Judgement of Light by 20.
+      4: 28774, // Reduces cooldown on your Lay on Hands by 12 min.,
+      6: 28789, // Your Flash of Light and Holy Light spells have a chance to imbue your target with Holy Power. (Proc chance: 10%)
+      8: 28787, // Your Cleanse spell also heals the target for 200.
+    },
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                      Spellstrike Infusion                                      */
+    /* ---------------------------------------------------------------------------------------------- */
+    // https://tbc.wowhead.com/item-set=559/spellstrike-infusion
+    id: 559,
+    class: -1,
+    setBonuses: {
+      2: 32106, // Gives a chance when your harmful spells land to increase the damage of your spells and effects by 92 for 10 sec. (Proc chance: 5%)
+    },
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                         Malorne Raiment                                        */
+    /* ---------------------------------------------------------------------------------------------- */
+    // https://tbc.wowhead.com/item-set=638/malorne-raiment
+    id: 638,
+    class: "Druid",
+    setBonuses: {
+      2: 37288, // Your helpful spells have a chance to restore up to 120 mana. (Proc chance: 5%)
+      4: 37292, // Reduces the cooldown on your Nature's Swiftness ability by 24 sec.
+    },
   },
 
-  /* ---------------------------------------------------------------------------------------------- */
-  /*                                   High Warlord's Investiture                                   */
-  /* ---------------------------------------------------------------------------------------------- */
   {
-    name: "High Warlord's Investiture",
-    wowheadLink: "https://tbc.wowhead.com/item-set=692/high-warlords-investiture",
-    type: "Cloth",
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                        Hallowed Raiment                                        */
+    /* ---------------------------------------------------------------------------------------------- */
+    id: 662,
     class: "Priest",
-    slots: {
-      head: { id: 31626, name: "High Warlord's Mooncloth Cowl", icon: "inv_helmet_30" },
-      shoulder: { id: 31628, name: "High Warlord's Mooncloth Shoulderpads", icon: "inv_shoulder_02" },
-      chest: { id: 31629, name: "High Warlord's Mooncloth Vestments", icon: "inv_chest_cloth_43" },
-      wrist: { id: -1, icon: -1 },
-      hands: { id: 31621, name: "High Warlord's Mooncloth Mitts", icon: "inv_gauntlets_15" },
-      waist: { id: -1, icon: -1 },
-      legs: { id: 31627, name: "High Warlord's Mooncloth Legguards", icon: "inv_pants_cloth_05" },
-      boots: { id: -1, icon: -1 },
+    setBonuses: {
+      2: 37556, // Gives you a 30% chance to avoid interruption caused by damage while casting binding heal.
+      4: 37558, // Your prayer of mending heals for an extra 100 health.
     },
-    twoSet: "+35 Resilience Rating.",
-    fourSet: "Reduces the duration of the Weakened Soul effect caused by your Power Word: Shield by 2 sec.",
-  },
-
-  /* ---------------------------------------------------------------------------------------------- */
-  /*                                        Hallowed Raiment                                        */
-  /* ---------------------------------------------------------------------------------------------- */
-  {
-    name: "Hallowed Raiment",
-    wowheadLink: "https://tbc.wowhead.com/item-set=662/hallowed-raiment",
-    type: "Cloth",
-    class: "Priest", // ???
-    slots: {
-      head: { id: 28413, name: "Hallowed Crown", icon: "inv_jewelry_ring_62" },
-      shoulder: { id: 27775, name: "Hallowed Pauldrons", icon: "inv_shoulder_22" },
-      chest: { id: 28230, name: "Hallowed Garments", icon: "inv_chest_cloth_39" },
-      wrist: { id: -1, icon: -1 },
-      hands: { id: 27536, name: "Hallowed Handwraps", icon: "inv_gauntlets_27" },
-      waist: { id: -1, icon: -1 },
-      legs: { id: 27875, name: "Hallowed Trousers", icon: "inv_pants_cloth_18" },
-      boots: { id: -1, icon: -1 },
-    },
-    twoSet: "Gives you a 30% chance to avoid interruption caused by damage while casting Binding Heal.",
-    fourSet: "Your Prayer of Mending heals an additional 100 health.",
   },
 ];
