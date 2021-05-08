@@ -15,11 +15,10 @@ export const itemSets = [
     /*                                       Wrath of Spellfire                                       */
     /* ---------------------------------------------------------------------------------------------- */
     // https://tbc.wowhead.com/item-set=552/wrath-of-spellfire
-    // TODO: Requires Mage on tooltip? https://tbc.wowhead.com/spell=32196/increased-dam-intellect
     id: 552,
     class: -1,
     setBonuses: {
-      3: 32196, // Increases spell damage by up to 7% of your total Intellect.
+      3: 32196, // Increases spell damage by up to 7% of your total Intellect. // TODO: Requires Mage on tooltip? https://tbc.wowhead.com/spell=32196/increased-dam-intellect
     },
   },
   {
@@ -27,11 +26,10 @@ export const itemSets = [
     /*                                        Shadow's Embrace                                        */
     /* ---------------------------------------------------------------------------------------------- */
     // https://tbc.wowhead.com/item-set=553/shadows-embrace
-    // TODO: Requires Priest & 2% of base mana in tooltip? https://tbc.wowhead.com/spell=39372/frozen-shadoweave
     id: 553,
     class: -1,
     setBonuses: {
-      3: 39372, // Your Frost and Shadow damage spells heal you for 2% of the damage they deal.
+      3: 39372, // Your Frost and Shadow damage spells heal you for 2% of the damage they deal. // TODO: Requires Priest & 2% of base mana in tooltip? https://tbc.wowhead.com/spell=39372/frozen-shadoweave
     },
   },
   {
@@ -92,6 +90,115 @@ export const itemSets = [
     setBonuses: {
       2: 37288, // Your helpful spells have a chance to restore up to 120 mana. (Proc chance: 5%)
       4: 37292, // Reduces the cooldown on your Nature's Swiftness ability by 24 sec.
+    },
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                         Cyclone Raiment                                        */
+    /* ---------------------------------------------------------------------------------------------- */
+    // https://tbc.wowhead.com/item-set=631/cyclone-raiment
+    id: 631,
+    class: "Shaman",
+    setBonuses: {
+      2: 37210, // Your Mana Spring Totem ability grants an additional 3 mana every 2 sec.
+      4: 37211, // Reduces the cooldown on your Nature's Swiftness ability by 24 sec.
+    },
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                       Netherstrike Armor                                       */
+    /* ---------------------------------------------------------------------------------------------- */
+
+    // https://tbc.wowhead.com/item-set=617/netherstrike-armor
+    id: 617,
+    class: -1,
+    setBonuses: {
+      3: 41828, // Increases damage and healing done by magical spells and effects by up to 23.
+    },
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                        Whitemend Wisdom                                        */
+    /* ---------------------------------------------------------------------------------------------- */
+    // https://tbc.wowhead.com/item-set=571/whitemend-wisdom
+    id: 571,
+    class: -1,
+    setBonuses: {
+      2: 32200, // Increases healing by up to 10% of your total Intellect. // TODO: Requires Mage on tooltip?
+    },
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                        Justicar Raiment                                        */
+    /* ---------------------------------------------------------------------------------------------- */
+    // https://tbc.wowhead.com/item-set=624/justicar-raiment
+    id: 624,
+    class: "Paladin",
+    setBonuses: {
+      2: 37182, // Increases the amount healed by your Judgement of Light by 20.
+      4: 37183, // Reduces the cooldown on your Divine Favor ability by 15 sec.
+    },
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                       The Earthshatterer                                       */
+    /* ---------------------------------------------------------------------------------------------- */
+    // https://tbc.wowhead.com/item-set=527/the-earthshatterer
+    id: 527,
+    class: "Shaman",
+    setBonuses: {
+      2: 28818, // Reduces the mana cost of your totem spells by 12%.
+      4: 29171, // Increases the mana gained from your Mana Spring totems by 25%.
+      6: 28823, // Your Healing Wave and Lesser Healing Wave spells have a chance to imbue your target with Totemic Power. (Proc chance: 10%)
+      8: 28821, // Your Lightning Shield spell also grants you 15 mana per 5 sec. while active.
+    },
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                         Avatar Raiment                                         */
+    /* ---------------------------------------------------------------------------------------------- */
+    // https://tbc.wowhead.com/item-set=665/avatar-raiment
+    id: 665,
+    class: "Priest",
+    setBonuses: {
+      2: 37594, // If your Greater Heal brings the target to full health, you gain 100 mana.
+      4: 26171, // Increases the duration of your Renew spell by 3 sec.
+    },
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                       Kodohide Battlegear                                      */
+    /* ---------------------------------------------------------------------------------------------- */
+    // https://tbc.wowhead.com/item-set=665/avatar-raiment
+    id: 744,
+    class: "Druid",
+    setBonuses: {
+      2: 46437, // +35 Resilience Rating.
+      4: 46834, // The casting time on your Regrowth spell is reduced by 0.20 sec. (Proc chance: 15%, 15s cooldown)
+    },
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                        Cataclysm Raiment                                       */
+    /* ---------------------------------------------------------------------------------------------- */
+    // https://tbc.wowhead.com/item-set=634/cataclysm-raiment
+    id: 634,
+    class: "Shaman",
+    setBonuses: {
+      2: 37225, // Reduces the cost of your Lesser Healing Wave spell by 5%.
+      4: 37227, // Your critical heals from Healing Wave, Lesser Healing Wave, and Chain Heal reduce the cast time of your next Healing Wave spell by 0.50 sec for 10 sec.  This effect cannot occur more than once per minute. (1m cooldown)
+    },
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                     Vestments of Absolution                                    */
+    /* ---------------------------------------------------------------------------------------------- */
+    // https://tbc.wowhead.com/item-set=675/vestments-of-absolution
+    id: 675,
+    class: "Priest",
+    setBonuses: {
+      2: 38410, // Reduces the mana cost of your Prayer of Healing ability by 10%.
+      4: 38411, // Increases the healing from your Greater Heal ability by 5%.
     },
   },
 
