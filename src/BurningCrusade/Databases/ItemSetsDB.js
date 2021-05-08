@@ -201,16 +201,42 @@ export const itemSets = [
       4: 38411, // Increases the healing from your Greater Heal ability by 5%.
     },
   },
-
   {
     /* ---------------------------------------------------------------------------------------------- */
     /*                                        Hallowed Raiment                                        */
     /* ---------------------------------------------------------------------------------------------- */
+    // https://tbc.wowhead.com/item-set=662/hallowed-raiment
     id: 662,
     class: "Priest",
     setBonuses: {
       2: 37556, // Gives you a 30% chance to avoid interruption caused by damage while casting binding heal.
       4: 37558, // Your prayer of mending heals for an extra 100 health.
+    },
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                       Mana-Etched Regalia                                      */
+    /* ---------------------------------------------------------------------------------------------- */
+    // https://tbc.wowhead.com/item-set=658/mana-etched-regalia
+    id: 658,
+    class: -1,
+    setBonuses: {
+      2: 37607, // Increases your spell hit rating by 35.
+      4: 37619, // Your harmful spells have a chance to grant you up to 110 spell damage and healing for 15 sec. (Proc chance: 2%) // TODO: Requires Priest in tooltip
+    },
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                       Vestments of Faith                                       */
+    /* ---------------------------------------------------------------------------------------------- */
+    // https://tbc.wowhead.com/item-set=525/vestments-of-faith
+    id: 525,
+    class: "Priest",
+    setBonuses: {
+      2: 28807, // Reduces the mana cost of your Renew spell by 12%.
+      4: 28809, // On Greater Heal critical hits, your target will gain Armor of Faith, absorbing up to 500 damage.
+      6: 28808, // Reduces the threat from your healing spells. Modifies Threat -10%
+      8: 28802, // Each spell you cast can trigger an Epiphany, increasing your mana regeneration by 24 for 30 sec. (Proc chance: 5%)
     },
   },
 ];
