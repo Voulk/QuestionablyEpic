@@ -212,7 +212,6 @@ export function getSpell(effectID, player, contentType) {
 
     case 46834:
       /* --------------------------------- Restoration Regrowth Bonus --------------------------------- */
-      /* ---------------------------------- Kodohide Battlegear 4 Set --------------------------------- */
       // https://tbc.wowhead.com/spell=46834/restoration-regrowth-bonus
       // The casting time on your Regrowth spell is reduced by 0.20 sec. (Proc chance: 15%, 15s cooldown)
       // Math here
@@ -311,6 +310,163 @@ export function getSpell(effectID, player, contentType) {
       /* ---------------------------------- Vestments of Faith 8 Set ---------------------------------- */
       // https://tbc.wowhead.com/spell=28802/epiphany
       // Each spell you cast can trigger an Epiphany, increasing your mana regeneration by 24 for 30 sec. (Proc chance: 5%)
+      // Math here
+      break;
+
+    case 40043:
+      /* ----------------------------------- Increased Resilience 35 ---------------------------------- */
+      // https://tbc.wowhead.com/spell=40043/increased-resilience-35
+      // +35 Resilience Rating.
+      // Math here
+      break;
+
+    case 38426:
+      /* --------------------------------------- Holy Light Crit -------------------------------------- */
+      /* --------------------------------- Lightbringer Raiment 2 Set --------------------------------- */
+      // https://tbc.wowhead.com/spell=38426/holy-light-crit
+      // Increases the critical strike chance of your Holy Light ability by 5%.
+      // Math here
+      break;
+
+    case 38425:
+      /* ----------------------------------- Improved Flash of Light ---------------------------------- */
+      /* --------------------------------- Lightbringer Raiment 4 Set --------------------------------- */
+      // https://tbc.wowhead.com/spell=38425/improved-flash-of-light
+      // Increases the healing from your Flash of Light ability by 5%.
+      // Math here
+      break;
+
+    case 37313:
+      /* --------------------------------------- Regrowth Bonus --------------------------------------- */
+      /* ---------------------------------- Nordrassil Raiment 2 Set ---------------------------------- */
+      // https://tbc.wowhead.com/spell=37313/regrowth-bonus
+      // Increases the duration of your Regrowth spell by 6 sec.
+      // Math here
+      break;
+
+    case 37314:
+      /* --------------------------------------- Lifebloom Bonus -------------------------------------- */
+      /* ---------------------------------- Nordrassil Raiment 4 Set ---------------------------------- */
+      // https://tbc.wowhead.com/spell=37314/lifebloom-bonus
+      // Increases the final amount healed by your Lifebloom spell by 150.
+      // Math here
+      break;
+
+    case 46851:
+      /* -------------------------------------- Holy Shock Bonus -------------------------------------- */
+      /* -------------------------------- Gladiator's Redemption 4 Set -------------------------------- */
+      // https://tbc.wowhead.com/spell=46851/holy-shock-bonus
+      // Increases the healing from your Holy Shock spell by 30%.
+      // Math here
+      break;
+
+    case 37188:
+      /* ------------------------------------- Improved Judgement ------------------------------------- */
+      /* --------------------------------- Crystalforge Raiment 2 Set --------------------------------- */
+      // https://tbc.wowhead.com/spell=37188/improved-judgement
+      // Each time you cast a Judgement, your party members gain 50 mana.
+      // Math here
+      break;
+
+    case 37189:
+      /* -------------------------------- Recuced Holy Light Cast Time -------------------------------- */
+      /* --------------------------------- Crystalforge Raiment 4 Set --------------------------------- */
+      // https://tbc.wowhead.com/spell=37189/recuced-holy-light-cast-time
+      // Your critical heals from Flash of Light and Holy Light reduce the cast time of your next Holy Light spell by 0.50 sec for 10 sec.  This effect cannot occur more than once per minute. (1m cooldown)
+      // Math here
+      break;
+
+    case 46414:
+      /* ----------------------------------- Increased Resilience 35 ---------------------------------- */
+      /* ----------------------------------- Satin Battlegear 2 Set ----------------------------------- */
+      // https://tbc.wowhead.com/spell=46414/increased-resilience-35
+      // +35 Resilience Rating.
+      // Math here
+      break;
+
+    case 33333:
+      /* ----------------------------------- Weakened Soul Reduction ---------------------------------- */
+      /* ----------------------------------- Satin Battlegear 4 Set ----------------------------------- */
+      /* ------------------------------ High Warlord's Investiture 4 Set ------------------------------ */
+      // https://tbc.wowhead.com/spell=33333/weakened-soul-reduction
+      // Reduces the duration of the Weakened Soul effect caused by your Power Word: Shield by 2 sec.
+      // Math here
+      break;
+
+    case 40049:
+      /* ----------------------------------- Increased Resilience 35 ---------------------------------- */
+      // https://tbc.wowhead.com/spell=46414/increased-resilience-35
+      // +35 Resilience Rating.
+      // Math here
+      break;
+
+    case 38417:
+      /* --------------------------------- Reduced Swiftmend Cooldown --------------------------------- */
+      // https://tbc.wowhead.com/spell=38417/reduced-swiftmend-cooldown
+      // Reduces the cooldown of your Swiftmend ability by 2 sec.
+      // Math here
+      break;
+
+    case 38420:
+      /* ----------------------------------- Improved Healing Touch ----------------------------------- */
+      // https://tbc.wowhead.com/spell=38420/improved-healing-touch
+      // Increases the healing from your Healing Touch ability by 5%.
+      // Math here
+      break;
+
+    case 40045:
+      /* ----------------------------------- Increased Resilience 35 ---------------------------------- */
+      // https://tbc.wowhead.com/spell=40045/increased-resilience-35
+      // +35 Resilience Rating.
+      // Math here
+      break;
+
+    case 28716:
+      /* ---------------------------------------- Rejuvenation ---------------------------------------- */
+      // https://tbc.wowhead.com/spell=28716/rejuvenation
+      // Your Rejuvenation ticks have a chance to restore 60 mana, 8 energy, or 2 rage to your target.
+      // Math here
+      break;
+
+    case 28743:
+      /* ----------------------------------------- Dreamwalker ---------------------------------------- */
+      // https://tbc.wowhead.com/spell=28743/dreamwalker
+      // Reduces the mana cost of your Healing Touch, Regrowth, Rejuvenation,  and Tranquility spells by 3%.
+      // Math here
+      break;
+
+    case 28744:
+      /* ------------------------------------------ Regrowth ------------------------------------------ */
+      // https://tbc.wowhead.com/spell=28744/regrowth
+      // Your initial cast and Regrowth ticks will increase the maximum health of your target by up to 50, stacking up to 7 times.
+      // Math here
+      break;
+
+    case 28719:
+      /* ---------------------------------------- Healing Touch --------------------------------------- */
+      // https://tbc.wowhead.com/spell=28719/healing-touch
+      // On Healing Touch critical hits, you regain 30% of the mana cost of the spell.
+      // Math here
+      break;
+
+    case 38434:
+      /* ------------------------------------- Chain Heal Discount ------------------------------------ */
+      // https://tbc.wowhead.com/spell=38434/chain-heal-discount
+      // Your Chain Heal ability costs 10% less mana.
+      // Math here
+      break;
+
+    case 38435:
+      /* ------------------------------------- Improved Chain Heal ------------------------------------ */
+      // https://tbc.wowhead.com/spell=38435/improved-chain-heal
+      // Increases the amount healed by your Chain Heal ability by 5%.
+      // Math here
+      break;
+
+    case 38499:
+      /* ---------------------------- Nature's Swiftness Cooldown Reduction --------------------------- */
+      // https://tbc.wowhead.com/spell=38499/natures-swiftness-cooldown-reduction
+      // Reduces the cooldown on your Nature's Swiftness ability by 24 sec.
       // Math here
       break;
 

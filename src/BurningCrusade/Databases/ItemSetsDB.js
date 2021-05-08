@@ -239,4 +239,174 @@ export const itemSets = [
       8: 28802, // Each spell you cast can trigger an Epiphany, increasing your mana regeneration by 24 for 30 sec. (Proc chance: 5%)
     },
   },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                       Gladiator's Refuge                                       */
+    /* ---------------------------------------------------------------------------------------------- */
+    // https://tbc.wowhead.com/item-set=685/gladiators-refuge
+    id: 685,
+    class: "Druid",
+    setBonuses: {
+      2: 40043, // +35 Resilience Rating.
+      4: 46834, // The casting time on your Regrowth spell is reduced by 0.20 sec. (Proc chance: 15%, 15s cooldown)
+    },
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                      Lightbringer Raiment                                      */
+    /* ---------------------------------------------------------------------------------------------- */
+    // https://tbc.wowhead.com/item-set=681/lightbringer-raiment
+    id: 681,
+    class: "Paladin",
+    setBonuses: {
+      2: 38426, // Increases the critical strike chance of your Holy Light ability by 5%.
+      4: 38425, // Increases the healing from your Flash of Light ability by 5%.
+    },
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                       Nordrassil Raiment                                       */
+    /* ---------------------------------------------------------------------------------------------- */
+    // https://tbc.wowhead.com/item-set=642/nordrassil-raiment
+    id: 642,
+    class: "Druid",
+    setBonuses: {
+      2: 37313, // Increases the duration of your Regrowth spell by 6 sec.
+      4: 37314, // Increases the final amount healed by your Lifebloom spell by 150.
+    },
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                     Gladiator's Redemption                                     */
+    /* ---------------------------------------------------------------------------------------------- */
+    // https://tbc.wowhead.com/spell=46851/holy-shock-bonus
+    id: 690,
+    class: "Paladin",
+    setBonuses: {
+      2: 40043, // +35 Resilience Rating.
+      4: 46851, // Increases the healing from your Holy Shock spell by 30%.
+    },
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                      Crystalforge Raiment                                      */
+    /* ---------------------------------------------------------------------------------------------- */
+    // https://tbc.wowhead.com/item-set=627/crystalforge-raiment
+    id: 627,
+    class: "Paladin",
+    setBonuses: {
+      2: 37188, // Each time you cast a Judgement, your party members gain 50 mana.
+      4: 37189, // Your critical heals from Flash of Light and Holy Light reduce the cast time of your next Holy Light spell by 0.50 sec for 10 sec.  This effect cannot occur more than once per minute. (1m cooldown)
+    },
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                        Satin Battlegear                                        */
+    /* ---------------------------------------------------------------------------------------------- */
+    // https://tbc.wowhead.com/item-set=740/satin-battlegear
+    id: 740,
+    class: "Priest",
+    setBonuses: {
+      2: 46414, // +35 Resilience Rating.
+      4: 33333, // Reduces the duration of the Weakened Soul effect caused by your Power Word: Shield by 2 sec.
+    },
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                   High Warlord's Investiture                                   */
+    /* ---------------------------------------------------------------------------------------------- */
+    // https://tbc.wowhead.com/item-set=692/high-warlords-investiture
+    id: 692,
+    class: "Priest",
+    setBonuses: {
+      2: 40049, // +35 Resilience Rating.
+      4: 33333, // Reduces the duration of the Weakened Soul effect caused by your Power Word: Shield by 2 sec.
+    },
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                     Gladiator's Investiture                                    */
+    /* ---------------------------------------------------------------------------------------------- */
+    // https://tbc.wowhead.com/item-set=687/gladiators-investiture
+    id: 687,
+    class: "Priest",
+    setBonuses: {
+      2: 40043, // +35 Resilience Rating.
+      4: 33333, // Reduces the duration of the Weakened Soul effect caused by your Power Word: Shield by 2 sec.
+    },
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                      High Warlord's Refuge                                     */
+    /* ---------------------------------------------------------------------------------------------- */
+    // https://tbc.wowhead.com/item-set=689/high-warlords-refuge
+    id: 689,
+    class: "Druid",
+    setBonuses: {
+      2: 40049, // +35 Resilience Rating.
+      4: 46834, // The casting time on your Regrowth spell is reduced by 0.20 sec. (Proc chance: 15%, 15s cooldown)
+    },
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                      Thunderheart Raiment                                      */
+    /* ---------------------------------------------------------------------------------------------- */
+    // https://tbc.wowhead.com/item-set=678/thunderheart-raiment
+    id: 678,
+    class: "Druid",
+    setBonuses: {
+      2: 38417, // Reduces the cooldown of your Swiftmend ability by 2 sec.
+      4: 38420, // Increases the healing from your Healing Touch ability by 5%.
+    },
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                     Grand Marshal's Refuge                                     */
+    /* ---------------------------------------------------------------------------------------------- */
+    // https://tbc.wowhead.com/item-set=688/grand-marshals-refuge
+    id: 688,
+    class: "Druid",
+    setBonuses: {
+      2: 40045, // +35 Resilience Rating.
+      4: 46834, // The casting time on your Regrowth spell is reduced by 0.20 sec. (Proc chance: 15%, 15s cooldown)
+    },
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                       Dreamwalker Raiment                                      */
+    /* ---------------------------------------------------------------------------------------------- */
+    // https://tbc.wowhead.com/item-set=521/dreamwalker-raiment
+    id: 521,
+    class: "Druid",
+    setBonuses: {
+      2: 28716, // Your Rejuvenation ticks have a chance to restore 60 mana, 8 energy, or 2 rage to your target.
+      4: 28743, // Reduces the mana cost of your Healing Touch, Regrowth, Rejuvenation,  and Tranquility spells by 3%.
+      6: 28744, // Your initial cast and Regrowth ticks will increase the maximum health of your target by up to 50, stacking up to 7 times.
+      8: 28719, // On Healing Touch critical hits, you regain 30% of the mana cost of the spell.
+    },
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                       Skyshatter Raiment                                       */
+    /* ---------------------------------------------------------------------------------------------- */
+    // https://tbc.wowhead.com/item-set=683/skyshatter-raiment
+    id: 683,
+    class: "Shaman",
+    setBonuses: {
+      2: 38434, // Your Chain Heal ability costs 10% less mana.
+      4: 38435, // Increases the amount healed by your Chain Heal ability by 5%.
+    },
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                     High Warlord's Wartide                                     */
+    /* ---------------------------------------------------------------------------------------------- */
+    // https://tbc.wowhead.com/item-set=696/high-warlords-wartide
+    id: 696,
+    class: "Shaman",
+    setBonuses: {
+      2: 40049, // +35 Resilience Rating.
+      4: 38499, // Reduces the cooldown on your Nature's Swiftness ability by 24 sec.
+    },
+  },
 ];
