@@ -603,6 +603,811 @@ export function getSpell(effectID, player, contentType) {
       // Math here
       break;
 
+    case 41754:
+      /* ------------------------------------ Increased Stamina 20 ------------------------------------ */
+      // https://tbc.wowhead.com/spell=41754/increased-stamina-20
+      // +20 Stamina.
+      // Math here
+      break;
+
+    case 23302:
+      /* ---------------------------- Hammer of Justice Cooldown Reduction ---------------------------- */
+      // https://tbc.wowhead.com/spell=23302/hammer-of-justice-cooldown-reduction
+      // Reduces the cooldown of your Hammer of Justice by 10 sec.
+      // Math here
+      break;
+
+    case 41753:
+      /* ------------------------------------ Increase Spell Dam 23 ----------------------------------- */
+      // https://tbc.wowhead.com/spell=41753/increase-spell-dam-23
+      // Increases damage and healing done by magical spells and effects by up to 23.
+      // Math here
+      break;
+
+    case 21894:
+      /* ----------------------------------------- Meditation ----------------------------------------- */
+      // https://tbc.wowhead.com/spell=21894/meditation
+      // Restores 20 mana per 5 sec.
+      // Math here
+      break;
+
+    case 21853:
+      /* ---------------------------------------- Reactive Fade --------------------------------------- */
+      // https://tbc.wowhead.com/spell=21853/reactive-fade
+      // When struck in melee there is a 50% chance you will Fade for 4 sec. (Proc chance: 50%, 5s cooldown)
+      // Math here
+      break;
+
+    case 22010:
+      /* ------------------------------------- Greater Heal Renew ------------------------------------- */
+      // https://tbc.wowhead.com/spell=22010/greater-heal-renew
+      // Your Greater Heals now have a heal over time component equivalent to a rank 5 Renew.
+      // Math here
+      break;
+
+    case 41886:
+      /* ------------------------------------ Increased Stamina 20 ------------------------------------ */
+      // https://tbc.wowhead.com/spell=41886/increased-stamina-20
+      // +20 Stamina.
+      // Math here
+      break;
+
+    case 30778:
+      /* ------------------------------ Increase Spell Dam 23 - Dreadmist ----------------------------- */
+      // https://tbc.wowhead.com/spell=30778/increase-spell-dam-23-dreadmist
+      // Increases damage and healing done by magical spells and effects by up to 23.
+      // Math here
+      break;
+
+    case 23565:
+      /* ------------------------------------ Increased Aura Radii ------------------------------------ */
+      // https://tbc.wowhead.com/spell=23565/increased-aura-radii
+      // Increases the radius of a Paladin's auras to 40 yd.
+      // Math here
+      break;
+
+    case 41782:
+      /* ------------------------------------ Increase Spell Dam 47 ----------------------------------- */
+      // https://tbc.wowhead.com/spell=41782/increase-spell-dam-47
+      // Increases damage and healing done by magical spells and effects by up to 47.
+      // Math here
+      break;
+
+    case 23591:
+      /* ------------------------------------------ Judgement ----------------------------------------- */
+      // https://tbc.wowhead.com/spell=23591/judgement
+      // Inflicts 60 to 66 additional Holy damage on the target of a Paladin's Judgement.
+      // Math here
+      break;
+
+    case 26130:
+      /* ----------------------------------- Avenger Judgment Bonus ----------------------------------- */
+      // https://tbc.wowhead.com/spell=26130/avenger-judgment-bonus
+      // Increases the duration of your Judgements by 20%.
+      // Math here
+      break;
+
+    case 41648:
+      /* ------------------------------------ Increase Spell Dam 71 ----------------------------------- */
+      // https://tbc.wowhead.com/spell=41648/increase-spell-dam-71
+      // Increases damage and healing done by magical spells and effects by up to 71.
+      // Math here
+      break;
+
+    case 21899:
+      /* ------------------------------------- Improved Chain Heal ------------------------------------ */
+      // https://tbc.wowhead.com/spell=21899/improved-chain-heal
+      // Increases the amount healed by Chain Heal to targets beyond the first by 5%.
+      // Math here
+      break;
+
+    case 23570:
+      /* ---------------------------------- Increased Critical Spell ---------------------------------- */
+      // https://tbc.wowhead.com/spell=23570/increased-critical-spell
+      // Increases your spell critical strike rating by 42.
+      // Math here
+      break;
+
+    case 23551:
+      /* -------------------------------------- Lightning Shield -------------------------------------- */
+      // https://tbc.wowhead.com/spell=23551/lightning-shield
+      // When you cast a Healing Wave or Lesser Healing Wave, there is a 25% chance the target also receives a free Lightning Shield that causes 50 Nature damage to attacker on hit. (Proc chance: 25%)
+      // Math here
+      break;
+
+    case 21872:
+      /* ------------------------------------ Faster Regrowth Cast ------------------------------------ */
+      // https://tbc.wowhead.com/spell=21872/faster-regrowth-cast
+      // Reduces the casting time of your Regrowth spell by 0.2 sec.
+      // Math here
+      break;
+
+    case 21871:
+      /* ------------------------------- Increased Rejuvenation Duration ------------------------------ */
+      // https://tbc.wowhead.com/spell=21871/increased-rejuvenation-duration
+      // Increases the duration of your Rejuvenation spell by 3 sec.
+      // Math here
+      break;
+
+    case 41899:
+      /* ------------------------------------ Increased Stamina 20 ------------------------------------ */
+      // https://tbc.wowhead.com/spell=41899/increased-stamina-20
+      // +20 Stamina.
+      // Math here
+      break;
+
+    case 23044:
+      /* ------------------------------ Psychic Scream Duration Increase ------------------------------ */
+      // https://tbc.wowhead.com/spell=23044/psychic-scream-duration-increase
+      // Increases the duration of your Psychic Scream spell by 1 sec.
+      // Math here
+      break;
+
+    case 41900:
+      /* ------------------------------------ Increase Spell Dam 23 ----------------------------------- */
+      // https://tbc.wowhead.com/spell=41900/increase-spell-dam-23
+      // Increases damage and healing done by magical spells and effects by up to 23.
+      // Math here
+      break;
+
+    case 41705:
+      /* ------------------------------ Increase Spell Dam 23 - Magister ------------------------------ */
+      // https://tbc.wowhead.com/spell=41705/increase-spell-dam-23-magister
+      // Increases damage and healing done by magical spells and effects by up to 23.
+      // Math here
+      break;
+
+    case 41704:
+      /* ------------------------------------ Increased Stamina 20 ------------------------------------ */
+      // https://tbc.wowhead.com/spell=41704/increased-stamina-20
+      // +20 Stamina.
+      // Math here
+      break;
+
+    case 23564:
+      /* --------------------------------- Improved Judgement of Light -------------------------------- */
+      // https://tbc.wowhead.com/spell=23564/improved-judgement-of-light
+      // Increases the chance of triggering a Judgement of Light heal by 10%.
+      // Math here
+      break;
+
+    case 41785:
+      /* ---------------------------------- Increased Critical Spell ---------------------------------- */
+      // https://tbc.wowhead.com/spell=41785/increased-critical-spell
+      // Increases your spell critical strike rating by 14.
+      // Math here
+      break;
+
+    case 41784:
+      /* ------------------------------------ Increased Critical 14 ----------------------------------- */
+      // https://tbc.wowhead.com/spell=41784/increased-critical-14
+      // Increases your critical strike rating by 14.
+      // Math here
+      break;
+
+    case 21747:
+      /* ----------------------------------------- Lawbringer ----------------------------------------- */
+      // https://tbc.wowhead.com/spell=21747/lawbringer
+      // Gives the Paladin a chance on every melee hit to heal your party for 189 to 211.
+      // Math here
+      break;
+
+    case 26119:
+      /* -------------------------------- Stormcaller Spelldamage Bonus ------------------------------- */
+      // https://tbc.wowhead.com/spell=26119/stormcaller-spelldamage-bonus
+      // Your Lightning Bolt, Chain Lightning, and Shock spells have a 20% chance to grant up to 50 Nature damage to spells for 8 sec. (Proc chance: 20%)
+      // Math here
+      break;
+
+    case 26122:
+      /* -------------------------------- Stormcaller Spelldamage Bonus ------------------------------- */
+      // https://tbc.wowhead.com/spell=26122/stormcaller-chain-heal-bonus
+      // -0.4 seconds on the casting time of your Chain Heal spell.
+      // Math here
+      break;
+
+    case 41843:
+      /* ----------------------------------- Increased All Resist 08 ---------------------------------- */
+      // https://tbc.wowhead.com/spell=41843/increased-all-resist-08
+      // +8 All Resistances.
+      // Math here
+      break;
+
+    case 27498:
+      /* -------------------------------------- Crusader's Wrath -------------------------------------- */
+      // https://tbc.wowhead.com/spell=27498/crusaders-wrath
+      // Chance on melee attack to increase your damage and healing done by magical spells and effects by up to 95 for 10 sec.
+      // Math here
+      break;
+
+    case 41844:
+      /* --------------------------------------- Attack Power 40 -------------------------------------- */
+      // https://tbc.wowhead.com/spell=41844/attack-power-40
+      // Increases attack power by 40.
+      // Math here
+      break;
+
+    case 41842:
+      /* ------------------------------------- Increased Armor 200 ------------------------------------ */
+      // https://tbc.wowhead.com/spell=41842/increased-armor-200
+      // +200 Armor.
+      // Math here
+      break;
+
+    case 41807:
+      /* ------------------------------------ Increase Spell Dam 23 ----------------------------------- */
+      // https://tbc.wowhead.com/spell=41807/increase-spell-dam-23
+      // Increases damage and healing done by magical spells and effects by up to 23.
+      // Math here
+      break;
+
+    case 41806:
+      /* ------------------------------------ Increased Stamina 20 ------------------------------------ */
+      // https://tbc.wowhead.com/spell=41806/increased-stamina-20
+      // +20 Stamina.
+      // Math here
+      break;
+
+    case 23557:
+      /* ----------------------------------- Improved Thorns Damage ----------------------------------- */
+      // https://tbc.wowhead.com/spell=23557/improved-thorns-damage
+      // Damage dealt by Thorns increased by 4 and duration increased by 50%.
+      // Math here
+      break;
+
+    case 39507:
+      /* ---------------------------------- Increased Critical Spell ---------------------------------- */
+      // https://tbc.wowhead.com/spell=39507/increased-critical-spell
+      // Increases your spell critical strike rating by 28.
+      // Math here
+      break;
+
+    case 23556:
+      /* ------------------------ Decreased Tranquility and Hurricane Cooldown ------------------------ */
+      // https://tbc.wowhead.com/spell=23556/decreased-tranquility-and-hurricane-cooldown
+      // Reduces the cooldown of your Tranquility and Hurricane spells by 50%.
+      // Math here
+      break;
+
+    case 41759:
+      /* ------------------------------------ Increased Stamina 20 ------------------------------------ */
+      // https://tbc.wowhead.com/spell=41759/increased-stamina-20
+      // +20 Stamina.
+      // Math here
+      break;
+
+    case 41760:
+      /* ------------------------------------ Increase Spell Dam 23 ----------------------------------- */
+      // https://tbc.wowhead.com/spell=41760/increase-spell-dam-23
+      // Increases damage and healing done by magical spells and effects by up to 23.
+      // Math here
+      break;
+
+    case 29093:
+      /* ------------------------------- Increased Armor 200 Lightforge ------------------------------- */
+      // https://tbc.wowhead.com/spell=29093/increased-armor-200-lightforge
+      // +200 Armor.
+      // Math here
+      break;
+
+    case 41818:
+      /* -------------------------------- Attack Power 40 - Lightforge -------------------------------- */
+      // https://tbc.wowhead.com/spell=41818/attack-power-40-lightforge
+      // Increases attack power by 40.
+      // Math here
+      break;
+
+    case 41819:
+      /* ----------------------------------- Increased All Resist 08 ---------------------------------- */
+      // https://tbc.wowhead.com/spell=41819/increased-all-resist-08
+      // +8 All Resistances.
+      // Math here
+      break;
+
+    case 21895:
+      /* ----------------------------------- Increased Totem Radius ----------------------------------- */
+      // https://tbc.wowhead.com/spell=21895/increased-totem-radius
+      // The radius of your totems that affect friendly targets is increased to 30 yd.
+      // Math here
+      break;
+
+    case 23572:
+      /* ----------------------------------------- Mana Surge ----------------------------------------- */
+      // https://tbc.wowhead.com/spell=23572/mana-surge
+      // After casting your Healing Wave or Lesser Healing Wave spell, gives you a 25% chance to gain Mana equal to 35% of the base cost of the spell. (Proc chance: 25%, 1s cooldown)
+      // Math here
+      break;
+
+    case 23573:
+      /* ------------------------------------- Chain Healing Wave ------------------------------------- */
+      // https://tbc.wowhead.com/spell=23573/chain-healing-wave
+      // Your Healing Wave will now jump to additional nearby targets. Each jump reduces the effectiveness of the heal by 80%, and the spell will jump to up to two additional targets.
+      // Math here
+      break;
+
+    case 41859:
+      /* ----------------------------------- Increased All Resist 08 ---------------------------------- */
+      // https://tbc.wowhead.com/spell=41859/increased-all-resist-08
+      // +8 All Resistances.
+      // Math here
+      break;
+
+    case 27774:
+      /* -------------------------------------- The Furious Storm ------------------------------------- */
+      // https://tbc.wowhead.com/spell=27774/the-furious-storm
+      // Chance on spell cast to increase your damage and healing by up to 95 for 10 sec. (Proc chance: 4%)
+      // Math here
+      break;
+
+    case 41860:
+      /* ------------------------------------ Increase Spell Dam 23 ----------------------------------- */
+      // https://tbc.wowhead.com/spell=41860/increase-spell-dam-23
+      // Increases damage and healing done by magical spells and effects by up to 23.
+      // Math here
+      break;
+
+    case 41858:
+      /* ------------------------------------- Increased Armor 200 ------------------------------------ */
+      // https://tbc.wowhead.com/spell=41858/increased-armor-200
+      // +200 Armor.
+      // Math here
+      break;
+
+    case 26169:
+      /* ------------------------------------ Oracle Healing Bonus ------------------------------------ */
+      // https://tbc.wowhead.com/spell=26169/oracle-healing-bonus
+      // 20% chance that your heals on others will also heal you 10% of the amount healed. (Proc chance: 20%)
+      // Math here
+      break;
+
+    case 41770:
+      /* ------------------------------------ Increased Mana Regen ------------------------------------ */
+      // https://tbc.wowhead.com/spell=41770/increased-mana-regen
+      // Restores 4 mana per 5 sec.
+      // Math here
+      break;
+
+    case 24457:
+      /* ------------------------------------ Increased Mana Regen ------------------------------------ */
+      // https://tbc.wowhead.com/spell=24457/improved-holy-light
+      // Reduces the casting time of your Holy Light spell by 0.1 sec.
+      // Math here
+      break;
+
+    case 24460:
+      /* ------------------------------------- Improved Blessings ------------------------------------- */
+      // https://tbc.wowhead.com/spell=24460/improved-blessings
+      // Increases the duration of all Blessings by 10%.
+      // Math here
+      break;
+
+    case 41677:
+      /* ----------------------------------- Increased All Resist 04 ---------------------------------- */
+      // https://tbc.wowhead.com/spell=41677/increased-all-resist-04
+      // +4 All Resistances.
+      // Math here
+      break;
+
+    case 41651:
+      /* ------------------------------------ Increase Spell Dam 28 ----------------------------------- */
+      // https://tbc.wowhead.com/spell=41651/increase-spell-dam-28
+      // Increases damage and healing done by magical spells and effects by up to 28.
+      // Math here
+      break;
+
+    case 41799:
+      /* ------------------------------------ Increase Spell Dam 23 ----------------------------------- */
+      // https://tbc.wowhead.com/spell=41799/increase-spell-dam-23
+      // Increases damage and healing done by magical spells and effects by up to 23.
+      // Math here
+      break;
+
+    case 41798:
+      /* ------------------------------------ Increased Stamina 20 ------------------------------------ */
+      // https://tbc.wowhead.com/spell=41798/increased-stamina-20
+      // +20 Stamina.
+      // Math here
+      break;
+
+    case 41639:
+      /* ------------------------------------ Increased Stamina 05 ------------------------------------ */
+      // https://tbc.wowhead.com/spell=41639/increased-stamina-05
+      // +5 Stamina.
+      // Math here
+      break;
+
+    case 39420:
+      /* ---------------------------------- Increased Critical Spell ---------------------------------- */
+      // https://tbc.wowhead.com/spell=39420/increased-critical-spell
+      // Increases your spell critical strike rating by 14.
+      // Math here
+      break;
+
+    case 29097:
+      /* -------------------------------- Increased Armor 200 Wildheart ------------------------------- */
+      // https://tbc.wowhead.com/spell=29097/increased-armor-200-wildheart
+      // +200 Armor.
+      // Math here
+      break;
+
+    case 41892:
+      /* --------------------------------------- Attack Power 26 -------------------------------------- */
+      // https://tbc.wowhead.com/spell=41892/attack-power-26
+      // Increases attack power by 26.
+      // Math here
+      break;
+
+    case 41891:
+      /* ------------------------------------ Increase Spell Dam 15 ----------------------------------- */
+      // https://tbc.wowhead.com/spell=41891/increase-spell-dam-15
+      // Increases damage and healing done by magical spells and effects by up to 15.
+      // Math here
+      break;
+
+    case 27781:
+      /* --------------------------------------- Nature's Bounty -------------------------------------- */
+      // https://tbc.wowhead.com/spell=27781/natures-bounty
+      // When struck in combat has a chance of returning 300 mana, 10 rage, or 40 energy to the wearer. (Proc chance: 2%)
+      // Math here
+      break;
+
+    case 41893:
+      /* ----------------------------------- Increased All Resist 08 ---------------------------------- */
+      // https://tbc.wowhead.com/spell=41893/increased-all-resist-08
+      // +8 All Resistances.
+      // Math here
+      break;
+
+    case 21973:
+      /* ---------------------------------- Prophecy Flash Heal Bonus --------------------------------- */
+      // https://tbc.wowhead.com/spell=21973/prophecy-flash-heal-bonus
+      // -0.1 sec to the casting time of your Flash Heal spell.
+      // Math here
+      break;
+
+    case 21092:
+      /* ----------------------------------- Increased Critical Holy ---------------------------------- */
+      // https://tbc.wowhead.com/spell=21092/increased-critical-holy
+      // Improves your spell critical strike rating by 28.
+      // Math here
+      break;
+
+    case 23550:
+      /* ---------------------------- Increased Prayer of Healing Criticals --------------------------- */
+      // https://tbc.wowhead.com/spell=23550/increased-prayer-of-healing-criticals
+      // Increases your chance of a critical hit with Prayer of Healing by 25%.
+      // Math here
+      break;
+
+    case 39510:
+      /* ----------------------------------- Increased Hit Rating 10 ---------------------------------- */
+      // https://tbc.wowhead.com/spell=39510/increased-hit-rating-10
+      // Increases your hit rating by 10.
+      // Math here
+      break;
+
+    case 39509:
+      /* ------------------------------------ Increased Critical 28 ----------------------------------- */
+      // https://tbc.wowhead.com/spell=39509/increased-critical-28
+      // Increases your critical strike rating by 28.
+      // Math here
+      break;
+
+    case 41669:
+      /* ---------------------------------- Increased Fire Resist 10 ---------------------------------- */
+      // https://tbc.wowhead.com/spell=41669/increased-fire-resist-10
+      // +10 Fire Resistance.
+      // Math here
+      break;
+
+    case 41805:
+      /* ------------------------------------ Increase Spell Dam 23 ----------------------------------- */
+      // https://tbc.wowhead.com/spell=41805/increase-spell-dam-23
+      // Increases damage and healing done by magical spells and effects by up to 23.
+      // Math here
+      break;
+
+    case 41804:
+      /* ------------------------------------ Increased Stamina 15 ------------------------------------ */
+      // https://tbc.wowhead.com/spell=41804/increased-stamina-15
+      // +15 Stamina.
+      // Math here
+      break;
+
+    case 29091:
+      /* -------------------------------- Increased Armor 200 Magister -------------------------------- */
+      // https://tbc.wowhead.com/spell=29091/increased-armor-200-magister
+      // +200 Armor.
+      // Math here
+      break;
+
+    case 30777:
+      /* ------------------------------ Increase Spell Dam 23 - Magister ------------------------------ */
+      // https://tbc.wowhead.com/spell=30777/increase-spell-dam-23-magister
+      // Increases damage and healing done by magical spells and effects by up to 23.
+      // Math here
+      break;
+
+    case 27867:
+      /* ------------------------------------------- Freeze ------------------------------------------- */
+      // https://tbc.wowhead.com/spell=27867/freeze
+      // When struck in combat has a chance of freezing the attacker in place for 3 sec. (Proc chance: 5%)
+      // Math here
+      break;
+
+    case 41822:
+      /* ----------------------------------- Increased All Resist 08 ---------------------------------- */
+      // https://tbc.wowhead.com/spell=41822/increased-all-resist-08
+      // +8 All Resistances.
+      // Math here
+      break;
+
+    case 41728:
+      /* ----------------------------------- Increased All Resist 08 ---------------------------------- */
+      // https://tbc.wowhead.com/spell=41728/increased-all-resist-08
+      // +8 All Resistances.
+      // Math here
+      break;
+
+    case 27780:
+      /* --------------------------------------- Corrupted Fear --------------------------------------- */
+      // https://tbc.wowhead.com/spell=27780/corrupted-fear
+      // When struck in combat has a chance of causing the attacker to flee in terror for 2 seconds. (Proc chance: 2%)
+      // Math here
+      break;
+
+    case 41729:
+      /* ------------------------------------ Increase Spell Dam 23 ----------------------------------- */
+      // https://tbc.wowhead.com/spell=41729/increase-spell-dam-23
+      // Increases damage and healing done by magical spells and effects by up to 23.
+      // Math here
+      break;
+
+    case 41727:
+      /* ------------------------------------- Increased Armor 200 ------------------------------------ */
+      // https://tbc.wowhead.com/spell=41727/increased-armor-200
+      // +200 Armor.
+      // Math here
+      break;
+
+    case 41670:
+      /* ------------------------------------ Increased Critical 14 ----------------------------------- */
+      // https://tbc.wowhead.com/spell=41670/increased-critical-14
+      // Increases your critical strike rating by 14.
+      // Math here
+      break;
+
+    case 41650:
+      /* ---------------------------------- Increased Critical Spell ---------------------------------- */
+      // https://tbc.wowhead.com/spell=41650/increased-critical-spell
+      // Increases your spell critical strike rating by 14.
+      // Math here
+      break;
+
+    case 41780:
+      /* ------------------------------------ Increase Spell Dam 20 ----------------------------------- */
+      // https://tbc.wowhead.com/spell=41780/increase-spell-dam-20
+      // Increases damage and healing done by magical spells and effects by up to 20.
+      // Math here
+      break;
+
+    case 41855:
+      /* ------------------------------------ Increased Stamina 05 ------------------------------------ */
+      // https://tbc.wowhead.com/spell=41855/increased-stamina-05
+      // +5 Stamina.
+      // Math here
+      break;
+
+    case 41854:
+      /* ---------------------------------- Increased Critical Spell ---------------------------------- */
+      // https://tbc.wowhead.com/spell=41854/increased-critical-spell
+      // Increases your spell critical strike rating by 14.
+      // Math here
+      break;
+
+    case 41642:
+      /* -------------------------------------- Increased Defense ------------------------------------- */
+      // https://tbc.wowhead.com/spell=41642/increased-defense
+      // Increases defense rating by 5.
+      // Math here
+      break;
+
+    case 41827:
+      /* ----------------------------------- Increased Intellect 05 ----------------------------------- */
+      // https://tbc.wowhead.com/spell=41827/increased-intellect-05
+      // +5 Intellect.
+      // Math here
+      break;
+
+    case 41826:
+      /* ----------------------------------- Increased All Resist 15 ---------------------------------- */
+      // https://tbc.wowhead.com/spell=41826/increased-all-resist-15
+      // +15 All Resistances.
+      // Math here
+      break;
+
+    case 41825:
+      /* ------------------------------------ Increase Spell Dam 23 ----------------------------------- */
+      // https://tbc.wowhead.com/spell=41825/increase-spell-dam-23
+      // Increases damage and healing done by magical spells and effects by up to 23.
+      // Math here
+      break;
+
+    case 41830:
+      /* ------------------------------------- Increase Healing 33 ------------------------------------ */
+      // https://tbc.wowhead.com/spell=41830/increase-healing-33
+      // Increases healing done by up to 33 and damage done by up to 11 for all magical spells and effects.
+      // Math here
+      break;
+
+    case 41775:
+      /* ------------------------------------ Increased Mana Regen ------------------------------------ */
+      // https://tbc.wowhead.com/spell=41775/increased-mana-regen
+      // Restores 3 mana per 5 sec.
+      // Math here
+      break;
+
+    case 41675:
+      /* ------------------------------------ Increased Mana Regen ------------------------------------ */
+      // https://tbc.wowhead.com/spell=41675/increased-mana-regen
+      // Restores 12 mana per 5 sec.
+      // Math here
+      break;
+
+    case 41883:
+      /* ----------------------------------- Increased All Resist 08 ---------------------------------- */
+      // https://tbc.wowhead.com/spell=41883/increased-all-resist-08
+      // +8 All Resistances.
+      // Math here
+      break;
+
+    case 27778:
+      /* -------------------------------------- Divine Protection ------------------------------------- */
+      // https://tbc.wowhead.com/spell=27778/divine-protection
+      // When struck in combat has a chance of shielding the wearer in a protective shield which will absorb 350 damage. (Proc chance: 2%)
+      // Math here
+      break;
+
+    case 41884:
+      /* ------------------------------------ Increase Spell Dam 23 ----------------------------------- */
+      // https://tbc.wowhead.com/spell=41884/increase-spell-dam-23
+      // Increases damage and healing done by magical spells and effects by up to 23.
+      // Math here
+      break;
+
+    case 41882:
+      /* ------------------------------------- Increased Armor 200 ------------------------------------ */
+      // https://tbc.wowhead.com/spell=41882/increased-armor-200
+      // +200 Armor.
+      // Math here
+      break;
+
+    case 41873:
+      /* ------------------------------------- Increased Armor 50 ------------------------------------- */
+      // https://tbc.wowhead.com/spell=41873/increased-armor-50
+      // +50 Armor.
+      // Math here
+      break;
+
+    case 41871:
+      /* ---------------------------------- Increased Fire Resist 10 ---------------------------------- */
+      // https://tbc.wowhead.com/spell=41871/increased-fire-resist-10
+      // +10 Fire Resistance.
+      // Math here
+      break;
+
+    case 41870:
+      /* --------------------------------- Increased Arcane Resist 10 --------------------------------- */
+      // https://tbc.wowhead.com/spell=41870/increased-arcane-resist-10
+      // +10 Arcane Resistance.
+      // Math here
+      break;
+
+    case 41872:
+      /* ------------------------------------ Increase Spell Dam 12 ----------------------------------- */
+      // https://tbc.wowhead.com/spell=41872/increase-spell-dam-12
+      // Increases damage and healing done by magical spells and effects by up to 12.
+      // Math here
+      break;
+
+    case 17498:
+      /* -------------------------------------------- Speed ------------------------------------------- */
+      // https://tbc.wowhead.com/spell=17498/speed
+      // Increases run speed by 5%.
+      // Math here
+      break;
+
+    case 41869:
+      /* ----------------------------------- Increased Intellect 10 ----------------------------------- */
+      // https://tbc.wowhead.com/spell=41869/increased-intellect-10
+      // +10 Intellect.
+      // Math here
+      break;
+
+    case 39702:
+      /* -------------------------------- Increased Spell Hit Chance 8 -------------------------------- */
+      // https://tbc.wowhead.com/spell=39702/increased-spell-hit-chance-8
+      // Increases your spell hit rating by 8.
+      // Math here
+      break;
+
+    case 41894:
+      /* ------------------------------------ Increase Spell Dam 6 ------------------------------------ */
+      // https://tbc.wowhead.com/spell=41894/increase-spell-dam-6
+      // Increases damage and healing done by magical spells and effects by up to 6.
+      // Math here
+      break;
+
+    case 41676:
+      /* ---------------------------------- Increased Critical Spell ---------------------------------- */
+      // https://tbc.wowhead.com/spell=41676/increased-critical-spell
+      // Increases your spell critical strike rating by 28.
+      // Math here
+      break;
+
+    case 41839:
+      /* ----------------------------------- Increased All Resist 08 ---------------------------------- */
+      // https://tbc.wowhead.com/spell=41839/increased-all-resist-08
+      // +8 All Resistances.
+      // Math here
+      break;
+
+    case 32451:
+      /* ------------------------------------ Increase Spell Dam 23 ----------------------------------- */
+      // https://tbc.wowhead.com/spell=32451/increase-spell-dam-23
+      // Increases damage and healing done by magical spells and effects by up to 23.
+      // Math here
+      break;
+
+    case 41840:
+      /* ------------------------------------- Increased Armor 200 ------------------------------------ */
+      // https://tbc.wowhead.com/spell=41840/increased-armor-200
+      // +200 Armor.
+      // Math here
+      break;
+
+    case 29095:
+      /* -------------------------------- Increased Armor 200 Elements -------------------------------- */
+      // https://tbc.wowhead.com/spell=29095/increased-armor-200-elements
+      // +200 Armor.
+      // Math here
+      break;
+
+    case 41856:
+      /* ------------------------------ Increase Spell Dam 23 - Elements ------------------------------ */
+      // https://tbc.wowhead.com/spell=41856/increase-spell-dam-23-elements
+      // Increases damage and healing done by magical spells and effects by up to 23.
+      // Math here
+      break;
+
+    case 27774:
+      /* -------------------------------------- The Furious Storm ------------------------------------- */
+      // https://tbc.wowhead.com/spell=27774/the-furious-storm
+      // Chance on spell cast to increase your damage and healing by up to 95 for 10 sec. (Proc chance: 4%)
+      // Math here
+      break;
+
+    case 41857:
+      /* ----------------------------------- Increased All Resist 08 ---------------------------------- */
+      // https://tbc.wowhead.com/spell=41857/increased-all-resist-08
+      // +8 All Resistances.
+      // Math here
+      break;
+
+    case 41638:
+      /* ------------------------------------ Increased Stamina 05 ------------------------------------ */
+      // https://tbc.wowhead.com/spell=41638/increased-stamina-05
+      // +5 Stamina.
+      // Math here
+      break;
+
+    case 39447:
+      /* ---------------------------------- Increased Critical Spell ---------------------------------- */
+      // https://tbc.wowhead.com/spell=39447/increased-critical-spell
+      // Increases your spell critical strike rating by 14.
+      // Math here
+      break;
+
     default:
       return bonus_stats;
   }

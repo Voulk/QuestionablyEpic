@@ -598,7 +598,7 @@ export const itemSets = [
   },
   {
     /* ---------------------------------------------------------------------------------------------- */
-    /*                                       Wild Draenish Armo                                       */
+    /*                                       Wild Draenish Armor                                      */
     /* ---------------------------------------------------------------------------------------------- */
     // https://tbc.wowhead.com/item-set=614/wild-draenish-armor
     id: 614,
@@ -618,6 +618,556 @@ export const itemSets = [
     setBonuses: {
       2: 41833, // Increases your spell critical strike rating by 15.
       4: 41834, // Increases damage and healing done by magical spells and effects by up to 18.
+    },
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                      Field Marshal's Aegis                                     */
+    /* ---------------------------------------------------------------------------------------------- */
+    // https://tbc.wowhead.com/item-set=402/field-marshals-aegis
+    id: 402,
+    class: "Paladin",
+    setBonuses: {
+      2: 41754, // +20 Stamina.
+      4: 23302, // Reduces the cooldown of your Hammer of Justice by 10 sec.
+      6: 41753, // Increases damage and healing done by magical spells and effects by up to 23.
+    },
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                   Vestments of Transcendence                                   */
+    /* ---------------------------------------------------------------------------------------------- */
+    // https://tbc.wowhead.com/item-set=211/vestments-of-transcendence
+    id: 211,
+    class: "Priest",
+    setBonuses: {
+      3: 21894, // Restores 20 mana per 5 sec.
+      5: 21853, // When struck in melee there is a 50% chance you will Fade for 4 sec. (Proc chance: 50%, 5s cooldown)
+      8: 22010, // Your Greater Heals now have a heal over time component equivalent to a rank 5 Renew.
+    },
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                         Warlord's Aegis                                        */
+    /* ---------------------------------------------------------------------------------------------- */
+    // https://tbc.wowhead.com/item-set=698/warlords-aegis
+    id: 698,
+    class: "Paladin",
+    setBonuses: {
+      2: 41886, // +20 Stamina.
+      3: 23302, // Reduces the cooldown of your Hammer of Justice by 10 sec.
+      6: 30778, // Increases damage and healing done by magical spells and effects by up to 23.
+    },
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                         Judgement Armor                                        */
+    /* ---------------------------------------------------------------------------------------------- */
+    // https://tbc.wowhead.com/item-set=217/judgement-armor
+    id: 217,
+    class: "Paladin",
+    setBonuses: {
+      3: 23565, // Increases the radius of a Paladin's auras to 40 yd.
+      5: 41782, // Increases damage and healing done by magical spells and effects by up to 47.
+      8: 23591, // Inflicts 60 to 66 additional Holy damage on the target of a Paladin's Judgement.
+    },
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                      Avenger's Battlegear                                      */
+    /* ---------------------------------------------------------------------------------------------- */
+    // https://tbc.wowhead.com/item-set=505/avengers-battlegear
+    id: 505,
+    class: "Paladin",
+    setBonuses: {
+      2: 26130, // Increases the duration of your Judgements by 20%.
+      5: 41648, // Increases damage and healing done by magical spells and effects by up to 71.
+    },
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                         The Ten Storms                                         */
+    /* ---------------------------------------------------------------------------------------------- */
+    // https://tbc.wowhead.com/item-set=216/the-ten-storms
+    id: 216,
+    class: "Shaman",
+    setBonuses: {
+      3: 21899, // Increases the amount healed by Chain Heal to targets beyond the first by 5%.
+      5: 23570, // Increases your spell critical strike rating by 42.
+      8: 23551, // When you cast a Healing Wave or Lesser Healing Wave, there is a 25% chance the target also receives a free Lightning Shield that causes 50 Nature damage to attacker on hit. (Proc chance: 25%)
+    },
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                        Stormrage Raiment                                       */
+    /* ---------------------------------------------------------------------------------------------- */
+    // https://tbc.wowhead.com/item-set=214/stormrage-raiment
+    id: 214,
+    class: "Druid",
+    setBonuses: {
+      3: 21894, // Restores 20 mana per 5 sec.
+      5: 21872, // Reduces the casting time of your Regrowth spell by 0.2 sec.
+      8: 21871, // Increases the duration of your Rejuvenation spell by 3 sec.
+    },
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                        Warlord's Raiment                                       */
+    /* ---------------------------------------------------------------------------------------------- */
+    // https://tbc.wowhead.com/item-set=390/warlords-raiment
+    id: 390,
+    class: "Priest",
+    setBonuses: {
+      2: 41899, // +20 Stamina.
+      3: 23044, // Increases the duration of your Psychic Scream spell by 1 sec.
+      6: 41900, // Increases damage and healing done by magical spells and effects by up to 23.
+    },
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                       Champion's Redoubt                                       */
+    /* ---------------------------------------------------------------------------------------------- */
+    // https://tbc.wowhead.com/item-set=697/champions-redoubt
+    id: 697,
+    class: "Paladin",
+    setBonuses: {
+      2: 41705, // Increases damage and healing done by magical spells and effects by up to 23.
+      3: 23302, // Reduces the cooldown of your Hammer of Justice by 10 sec.
+      6: 41704, // +20 Stamina.
+    },
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                        Lawbringer Armor                                        */
+    /* ---------------------------------------------------------------------------------------------- */
+    // https://tbc.wowhead.com/item-set=208/lawbringer-armor
+    id: 208,
+    class: "Paladin",
+    setBonuses: {
+      3: 23564, // Increases the chance of triggering a Judgement of Light heal by 10%.
+      5: [41785, 41784], // Increases your spell critical strike rating by 14. / Increases your critical strike rating by 14.
+      6: 21747, // Gives the Paladin a chance on every melee hit to heal your party for 189 to 211.
+    },
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                       Stormcaller's Garb                                       */
+    /* ---------------------------------------------------------------------------------------------- */
+    // https://tbc.wowhead.com/item-set=501/stormcallers-garb
+    id: 501,
+    class: "Shaman",
+    setBonuses: {
+      3: 26119, // Your Lightning Bolt, Chain Lightning, and Shock spells have a 20% chance to grant up to 50 Nature damage to spells for 8 sec. (Proc chance: 20%)
+      5: 26122, // -0.4 seconds on the casting time of your Chain Heal spell.
+    },
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                         Soulforge Armor                                        */
+    /* ---------------------------------------------------------------------------------------------- */
+    // https://tbc.wowhead.com/item-set=516/soulforge-armor
+    id: 516,
+    class: -1,
+    setBonuses: {
+      2: 41843, // +8 All Resistances.
+      4: 27498, // Chance on melee attack to increase your damage and healing done by magical spells and effects by up to 95 for 10 sec.
+      6: 41844, // Increases attack power by 40.
+      8: 41842, // +200 Armor.
+    },
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                 Lieutenant Commander's Redoubt                                 */
+    /* ---------------------------------------------------------------------------------------------- */
+    // https://tbc.wowhead.com/item-set=544/lieutenant-commanders-redoubt
+    id: 544,
+    class: "Paladin",
+    setBonuses: {
+      2: 41807, // Increases damage and healing done by magical spells and effects by up to 23.
+      4: 23302, // Reduces the cooldown of your Hammer of Justice by 10 sec.
+      6: 41806, // +20 Stamina.
+    },
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                        Cenarion Raiment                                        */
+    /* ---------------------------------------------------------------------------------------------- */
+    // https://tbc.wowhead.com/item-set=205/cenarion-raiment
+    id: 205,
+    class: "Druid",
+    setBonuses: {
+      3: 23557, // Damage dealt by Thorns increased by 4 and duration increased by 50%.
+      5: 39507, // Increases your spell critical strike rating by 28.
+      8: 23556, // Reduces the cooldown of your Tranquility and Hurricane spells by 50%.
+    },
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                     Field Marshal's Raiment                                    */
+    /* ---------------------------------------------------------------------------------------------- */
+    // https://tbc.wowhead.com/item-set=389/field-marshals-raiment
+    id: 389,
+    class: "Priest",
+    setBonuses: {
+      2: 41759, // +20 Stamina.
+      3: 23044, // Increases the duration of your Psychic Scream spell by 1 sec.
+      6: 41760, // Increases damage and healing done by magical spells and effects by up to 23.
+    },
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                        Lightforge Armor                                        */
+    /* ---------------------------------------------------------------------------------------------- */
+    // https://tbc.wowhead.com/item-set=188/lightforge-armor
+    id: 188,
+    class: -1,
+    setBonuses: {
+      2: 29093, // +20 Stamina.
+      4: 41818, // Increases attack power by 40.
+      6: 27498, // Chance on melee attack to increase your damage and healing done by magical spells and effects by up to 95 for 10 sec.
+      8: 41819, // +8 All Resistances.
+    },
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                          The Earthfury                                         */
+    /* ---------------------------------------------------------------------------------------------- */
+    // https://tbc.wowhead.com/item-set=207/the-earthfury
+    id: 207,
+    class: "Shaman",
+    setBonuses: {
+      3: 21895, // The radius of your totems that affect friendly targets is increased to 30 yd.
+      5: 23572, // After casting your Healing Wave or Lesser Healing Wave spell, gives you a 25% chance to gain Mana equal to 35% of the base cost of the spell. (Proc chance: 25%, 1s cooldown)
+      8: 23573, // Your Healing Wave will now jump to additional nearby targets. Each jump reduces the effectiveness of the heal by 80%, and the spell will jump to up to two additional targets.
+    },
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                        The Five Thunders                                       */
+    /* ---------------------------------------------------------------------------------------------- */
+    // https://tbc.wowhead.com/item-set=519/the-five-thunders
+    id: 519,
+    class: -1,
+    setBonuses: {
+      2: 41859, // +8 All Resistances.
+      4: 27774, // Chance on spell cast to increase your damage and healing by up to 95 for 10 sec. (Proc chance: 4%)
+      6: 41860, // Increases damage and healing done by magical spells and effects by up to 23.
+      8: 41858, // +200 Armor.
+    },
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                     Garments of the Oracle                                     */
+    /* ---------------------------------------------------------------------------------------------- */
+    // https://tbc.wowhead.com/item-set=507/garments-of-the-oracle
+    id: 507,
+    class: "Priest",
+    setBonuses: {
+      3: 26169, // 20% chance that your heals on others will also heal you 10% of the amount healed. (Proc chance: 20%)
+      5: 26171, // Increases the duration of your Renew spell by 3 sec.
+    },
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                       Freethinker's Armor                                      */
+    /* ---------------------------------------------------------------------------------------------- */
+    // https://tbc.wowhead.com/item-set=475/freethinkers-armor
+    id: 475,
+    class: "Paladin",
+    setBonuses: {
+      2: 41770, // 20% chance that your heals on others will also heal you 10% of the amount healed. (Proc chance: 20%)
+      3: 24457, // Increases the duration of your Renew spell by 3 sec.
+      5: 24460, // Increases the duration of your Renew spell by 3 sec.
+    },
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                        Blue Dragon Mail                                        */
+    /* ---------------------------------------------------------------------------------------------- */
+    // https://tbc.wowhead.com/item-set=491/blue-dragon-mail
+    id: 491,
+    class: -1,
+    setBonuses: {
+      2: 41677, // +4 All Resistances.
+      3: 41651, // Increases damage and healing done by magical spells and effects by up to 28.
+    },
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                               Lieutenant Commander's Investiture                               */
+    /* ---------------------------------------------------------------------------------------------- */
+    // https://tbc.wowhead.com/item-set=549/lieutenant-commanders-investiture
+    id: 549,
+    class: "Priest",
+    setBonuses: {
+      2: 41799, // Increases damage and healing done by magical spells and effects by up to 23.
+      4: 23044, // Increases the duration of your Psychic Scream spell by 1 sec.
+      6: 41798, // +20 Stamina.
+    },
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                      The Highlander's Will                                     */
+    /* ---------------------------------------------------------------------------------------------- */
+    // https://tbc.wowhead.com/item-set=472/the-highlanders-will
+    id: 472,
+    class: "Druid",
+    setBonuses: {
+      2: 41639, // Increased Stamina 05
+      3: 39420, // Increases your spell critical strike rating by 14.
+    },
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                        Wildheart Raiment                                       */
+    /* ---------------------------------------------------------------------------------------------- */
+    // https://tbc.wowhead.com/item-set=472/the-highlanders-will
+    id: 185,
+    class: -1,
+    setBonuses: {
+      2: 29097, // +200 Armor.
+      4: [41892, 41891], // Increases attack power by 26. / Increases damage and healing done by magical spells and effects by up to 15.
+      6: 27781, // When struck in combat has a chance of returning 300 mana, 10 rage, or 40 energy to the wearer. (Proc chance: 2%)
+      8: 41893, // +8 All Resistances.
+    },
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                      Vestments of Prophecy                                     */
+    /* ---------------------------------------------------------------------------------------------- */
+    // https://tbc.wowhead.com/item-set=202/vestments-of-prophecy
+    id: 202,
+    class: "Priest",
+    setBonuses: {
+      3: 21973, // -0.1 sec to the casting time of your Flash Heal spell.
+      5: 21092, // Improves your spell critical strike rating by 28.
+      8: 23550, // Increases your chance of a critical hit with Prayer of Healing by 25%.
+    },
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                        Black Dragon Mail                                       */
+    /* ---------------------------------------------------------------------------------------------- */
+    // https://tbc.wowhead.com/item-set=489/black-dragon-mail
+    id: 489,
+    class: -1,
+    setBonuses: {
+      2: 39510, // Increases your hit rating by 10.
+      3: 39509, // Improves your spell critical strike rating by 28.
+      4: 41669, // +10 Fire Resistance.
+    },
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                 Lieutenant Commander's Raiment                                 */
+    /* ---------------------------------------------------------------------------------------------- */
+    // https://tbc.wowhead.com/item-set=344/lieutenant-commanders-raiment
+    id: 344,
+    class: "Priest",
+    setBonuses: {
+      2: 41805, // Increases damage and healing done by magical spells and effects by up to 23.
+      4: 23044, // Increases the duration of your Psychic Scream spell by 1 sec.
+      6: 41804, // +15 Stamina.
+    },
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                       Magister's Regalia                                       */
+    /* ---------------------------------------------------------------------------------------------- */
+    // https://tbc.wowhead.com/item-set=181/magisters-regalia#comments
+    id: 181,
+    class: -1,
+    setBonuses: {
+      2: 29091, // +200 Armor.
+      4: 30777, // Increases damage and healing done by magical spells and effects by up to 23.
+      6: 27867, // When struck in combat has a chance of freezing the attacker in place for 3 sec. (Proc chance: 5%)
+      8: 41822, // +8 All Resistances.
+    },
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                        Deathmist Raiment                                       */
+    /* ---------------------------------------------------------------------------------------------- */
+    // https://tbc.wowhead.com/item-set=518/deathmist-raiment
+    id: 518,
+    class: -1,
+    setBonuses: {
+      2: 41728, // +8 All Resistances.
+      4: 27780, // When struck in combat has a chance of causing the attacker to flee in terror for 2 seconds. (Proc chance: 2%)
+      6: 41729, // Increases damage and healing done by magical spells and effects by up to 23.
+      8: 41727, // +200 Armor.
+    },
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                       Blood Tiger Harness                                      */
+    /* ---------------------------------------------------------------------------------------------- */
+    // https://tbc.wowhead.com/item-set=442/blood-tiger-harness
+    id: 442,
+    class: -1,
+    setBonuses: {
+      2: [41670, 41650], // Increases your critical strike rating by 14. / Increases your spell critical strike rating by 14.
+    },
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                        Ironfeather Armor                                       */
+    /* ---------------------------------------------------------------------------------------------- */
+    // https://tbc.wowhead.com/item-set=144/ironfeather-armor
+    id: 144,
+    class: -1,
+    setBonuses: {
+      2: 41780, // Increases damage and healing done by magical spells and effects by up to 20.
+    },
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                       The Defiler's Will                                       */
+    /* ---------------------------------------------------------------------------------------------- */
+    // https://tbc.wowhead.com/item-set=488/the-defilers-will
+    id: 488,
+    class: "Druid",
+    setBonuses: {
+      2: 41855, // +5 Stamina.
+      3: 41854, // Increases your spell critical strike rating by 14.
+    },
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                        Necropile Raiment                                       */
+    /* ---------------------------------------------------------------------------------------------- */
+    // https://tbc.wowhead.com/item-set=122/necropile-raiment
+    id: 122,
+    class: -1,
+    setBonuses: {
+      2: 41642, // Increases defense rating by 5.
+      3: 41827, // +5 Intellect.
+      4: 41826, // +15 All Resistances.
+      5: 41825, // Increases damage and healing done by magical spells and effects by up to 23.
+    },
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                      Prayer of the Primal                                      */
+    /* ---------------------------------------------------------------------------------------------- */
+    // https://tbc.wowhead.com/item-set=465/prayer-of-the-primal
+    id: 465,
+    class: -1,
+    setBonuses: {
+      2: 41830, // Increases healing done by up to 33 and damage done by up to 11 for all magical spells and effects.
+    },
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                        Green Dragon Mail                                       */
+    /* ---------------------------------------------------------------------------------------------- */
+    // https://tbc.wowhead.com/item-set=490/green-dragon-mail
+    id: 490,
+    class: -1,
+    setBonuses: {
+      2: 41775, // Restores 3 mana per 5 sec.
+      3: 21894, // Restores 20 mana per 5 sec.
+    },
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                        Bloodsoul Embrace                                       */
+    /* ---------------------------------------------------------------------------------------------- */
+    // https://tbc.wowhead.com/item-set=443/bloodsoul-embrace
+    id: 443,
+    class: -1,
+    setBonuses: {
+      3: 41675, // Restores 12 mana per 5 sec.
+    },
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                    Vestments of the Virtuous                                   */
+    /* ---------------------------------------------------------------------------------------------- */
+    // https://tbc.wowhead.com/item-set=514/vestments-of-the-virtuous
+    id: 514,
+    class: -1,
+    setBonuses: {
+      2: 41883, // +8 All Resistances.
+      4: 27778, // When struck in combat has a chance of shielding the wearer in a protective shield which will absorb 350 damage. (Proc chance: 2%)
+      6: 41884, // Increases damage and healing done by magical spells and effects by up to 23.
+      8: 41882, // +200 Armor.
+    },
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                         The Postmaster                                         */
+    /* ---------------------------------------------------------------------------------------------- */
+    // https://tbc.wowhead.com/item-set=81/the-postmaster
+    id: 81,
+    class: -1,
+    setBonuses: {
+      2: 41873, // +50 Armor.
+      3: [41871, 41870], // +10 Fire Resistance. / +10 Arcane Resistance.
+      4: 41872, // Increases damage and healing done by magical spells and effects by up to 12.
+      5: [17498, 41869], // Increases run speed by 5%. / +10 Intellect.
+    },
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                     Zanzil's Concentration                                     */
+    /* ---------------------------------------------------------------------------------------------- */
+    // https://tbc.wowhead.com/item-set=462/zanzils-concentration
+    id: 462,
+    class: -1,
+    setBonuses: {
+      2: [39702, 41894], // Increases your spell hit rating by 8. / Increases damage and healing done by magical spells and effects by up to 6.
+    },
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                         Bloodvine Garb                                         */
+    /* ---------------------------------------------------------------------------------------------- */
+    // https://tbc.wowhead.com/item-set=421/bloodvine-garb
+    id: 421,
+    class: -1,
+    setBonuses: {
+      3: 41676, // Increases your spell critical strike rating by 28.
+    },
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                       Sorcerer's Regalia                                       */
+    /* ---------------------------------------------------------------------------------------------- */
+    // https://tbc.wowhead.com/item-set=517/sorcerers-regalia
+    id: 517,
+    class: -1,
+    setBonuses: {
+      2: 41839, // +8 All Resistances.
+      4: 27867, // When struck in combat has a chance of freezing the attacker in place for 3 sec. (Proc chance: 5%)
+      6: 32451, // Increases damage and healing done by magical spells and effects by up to 23.
+      8: 41840, // +200 Armor.
+    },
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                          The Elements                                          */
+    /* ---------------------------------------------------------------------------------------------- */
+    // https://tbc.wowhead.com/item-set=187/the-elements
+    id: 187,
+    class: -1,
+    setBonuses: {
+      2: 29095, // +200 Armor.
+      4: 41856, // Increases damage and healing done by magical spells and effects by up to 23.
+      6: 27774, // Chance on spell cast to increase your damage and healing by up to 95 for 10 sec. (Proc chance: 4%)
+      8: 41857, // +8 All Resistances.
+    },
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                   The Highlander's Fortitude                                   */
+    /* ---------------------------------------------------------------------------------------------- */
+    // https://tbc.wowhead.com/item-set=470/the-highlanders-fortitude
+    id: 470,
+    class: "Shaman",
+    setBonuses: {
+      2: 41638, // +5 Stamina.
+      3: 39447, // Increases your spell critical strike rating by 14.
     },
   },
 ];
