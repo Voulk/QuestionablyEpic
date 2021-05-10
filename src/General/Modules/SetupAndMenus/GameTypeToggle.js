@@ -23,11 +23,11 @@ export default function GameTypeSwitch() {
       <ToggleButton style={{ minWidth: 300 }} value="Classic" aria-label="classicLabel">
         <Tooltip title={t("QeHeader.Tooltip.ChangeToDungeon")} arrow>
           <div style={{ display: "inline-flex" }}>
-            {/* <img
+            { <img
               style={{ height: 18, width: 18, margin: "2px 5px 0px 0px", verticalAlign: "middle", borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.12)" }}
               src={require("Images/inv_relics_hourglass.jpg").default}
               alt={t("Dungeon")}
-            /> */}
+            />}
             <Typography variant="button" noWrap>
               {t("Burning Crusade")}
             </Typography>
