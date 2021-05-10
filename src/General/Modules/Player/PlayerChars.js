@@ -65,8 +65,9 @@ class PlayerChars {
   };
 
   // Return an array of all of the players characters.
-  getAllChar = () => {
-    return this.allChar;
+  getAllChar = (gameType = "All") => {
+    if (gameType === "All") return this.allChar;
+    else return this.allChar.filter((filter) => filter.gameType === gameType)
   };
 
   updatePlayerChar = (player) => {
@@ -89,7 +90,7 @@ class PlayerChars {
   // Add a new character to the array then save it.
   addChar = (name, spec, region, realm, race, gameType) => {
     //alert("Adding new Character")
-    if (gameType === "Classic") {
+    if (gameType === "BurningCrusade") {
       this.allChar.push(new BCPlayer(name, spec, this.allChar.length, region, realm, race))
     }
     else {

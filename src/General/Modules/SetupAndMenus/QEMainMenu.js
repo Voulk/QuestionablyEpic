@@ -76,7 +76,7 @@ export default function QEMainMenu(props) {
 
   const { t } = useTranslation();
   const classes = useStyles();
-  const characterCount = props.allChars.getAllChar().length;
+  const characterCount = props.allChars.getAllChar(gameType).length;
   const patron = ["Diamond", "Gold", "Rolls Royce", "Sapphire"].includes(props.patronStatus);
 
   let articles = [];
@@ -159,9 +159,9 @@ export default function QEMainMenu(props) {
         </Typography>
 
         <Grid container spacing={2}>
-          {props.allChars.getAllChar().length > 0
+          {props.allChars.getAllChar(gameType).length > 0
             ? props.allChars
-                .getAllChar()
+                .getAllChar(gameType)
                 .map((char, index) => (
                   <CharCards
                     key={index}
@@ -177,7 +177,7 @@ export default function QEMainMenu(props) {
                   />
                 ))
             : ""}
-          {props.allChars.getAllChar().length < 9 ? <AddNewChar allChars={props.allChars} charUpdate={props.charUpdate} charAddedSnack={props.charAddedSnack} /> : ""}
+          {props.allChars.getAllChar(gameType).length < 9 ? <AddNewChar allChars={props.allChars} charUpdate={props.charUpdate} charAddedSnack={props.charAddedSnack} /> : ""}
         </Grid>
 
         {articles.length > 0 ? (

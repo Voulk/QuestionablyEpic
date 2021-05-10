@@ -44,7 +44,7 @@ export default function GameTypeSwitch() {
       {/* ---------------------------------------------------------------------------------------------- */
       /*                            Burning Crusade: Classic Game Type Toggle                           */
       /* ---------------------------------------------------------------------------------------------- */}
-      <ToggleButton className={classes.root} value="Classic" aria-label="classicLabel">
+      <ToggleButton className={classes.root} value="BurningCrusade" aria-label="classicLabel">
         <Tooltip title={t("QeHeader.Tooltip.ChangeToDungeon")} arrow>
           <div style={{ display: "inline-flex" }}>
             <img src={require("../../../Images/Logos/Logo_BurningCrusade.png").default} alt={t("Burning Crusade")} />

@@ -1620,24 +1620,21 @@ export const worldBosses = [
 // Boss Notes?
 // Shriekwing - Reverberating Scream consists of large damage on hit, follwoed by a dot.
 
-export const bcClassRaceList = {
-  "Holy Paladin BC": {
-    races: ["Races.Draenei", "Races.Dwarf", "Races.Human", "Races.Blood Elf"],
-  },
-
-}
 
 // Contains the list of races localization IDs for each class's available races.
 export const classRaceList = {
   "Holy Paladin BC": {
     races: ["Races.Draenei", "Races.Dwarf", "Races.Human", "Races.Blood Elf"],
+    gameType: "BurningCrusade",
   },
-  
+
   "Holy Paladin": {
     races: ["Races.Draenei", "Races.Dwarf", "Races.Human", "Races.Lightforged Draenei", "Races.Dark Iron Dwarf", "Races.Blood Elf", "Races.Tauren", "Races.Zandalari Troll"],
+    gameType: "Retail",
   },
   "Restoration Druid": {
     races: ["Races.Night Elf", "Races.Worgen", "Races.Kul Tiran", "Races.Tauren", "Races.Troll", "Races.Highmountain Tauren", "Races.Zandalari Troll"],
+    gameType: "Retail",
   },
   "Holy Priest": {
     races: [
@@ -1663,6 +1660,7 @@ export const classRaceList = {
       "Races.Zandalari Troll",
       "Races.Vulpera",
     ],
+    gameType: "Retail",
   },
   "Discipline Priest": {
     races: [
@@ -1688,6 +1686,7 @@ export const classRaceList = {
       "Races.Zandalari Troll",
       "Races.Vulpera",
     ],
+    gameType: "Retail",
   },
   "Restoration Shaman": {
     races: [
@@ -1705,6 +1704,7 @@ export const classRaceList = {
       "Races.Zandalari Troll",
       "Races.Vulpera",
     ],
+    gameType: "Retail",
   },
   "Mistweaver Monk": {
     races: [
@@ -1729,5 +1729,6 @@ export const classRaceList = {
       "Races.Zandalari Troll",
       "Races.Vulpera",
     ],
+    gameType: "Retail",
   },
 };
