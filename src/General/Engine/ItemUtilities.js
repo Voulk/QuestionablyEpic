@@ -1,4 +1,5 @@
 import { itemDB } from "../../Databases/ItemDB";
+import { BCItemDB } from "Databases/BCItemDB";
 import { randPropPoints } from "../../Retail/Engine/RandPropPointsBylevel";
 import { combat_ratings_mult_by_ilvl, combat_ratings_mult_by_ilvl_jewl } from "../../Retail/Engine/CombatMultByLevel";
 import { getEffectValue } from "../../Retail/Engine/EffectFormulas/EffectEngine";
@@ -8,7 +9,7 @@ import Item from "../Modules/Player/Item";
 // import { useTranslation } from "react-i18next"; 
 // import { i18n } from "react-i18next";
 import { reportError } from "../SystemTools/ErrorLogging/ErrorReporting";
-import { BCitemDB } from "Databases/BCItemDB";
+import { useSelector } from "react-redux";
 
 /*
 
@@ -31,6 +32,8 @@ export function getValidArmorTypes(spec) {
     case SPEC.HOLYPRIEST:
     case SPEC.DISCPRIEST:
       return [0, 1]; // Misc + Cloth
+    case "Holy Paladin BC":
+      return [0, 4, 6]; // Misc + Plate + Shields
     default:
       return [-1];
   }
@@ -79,12 +82,15 @@ export function getValidWeaponTypes(spec, slot) {
           return [0, 4, 6, 7, 10, 13];
         case SPEC.HOLYPALADIN:
           return [0, 1, 4, 5, 6, 7, 8];
+          
         case SPEC.RESTOSHAMAN:
           return [0, 1, 4, 5, 10, 13, 15];
         case SPEC.HOLYPRIEST:
           return [4, 10, 15, 19];
         case SPEC.DISCPRIEST:
           return [4, 10, 15, 19];
+        case "Holy Paladin BC":
+          return [0, 1, 4, 5, 6, 7, 8];
         default:
           return [-1];
       }
@@ -133,11 +139,12 @@ function sortItems(container) {
   return container;
 }
 
-function getItemDB() {
+export function getItemDB(gameType = "Retail") {
   // Replace with Redux pull.
-  const flag = "Retail";
+  
+  //const flag = "Retail";
 
-  return flag === "Retail" ? itemDB : BCitemDB;
+  return gameType === "Retail" ? itemDB : BCItemDB;
 
 }
 

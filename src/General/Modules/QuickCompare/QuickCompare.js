@@ -10,7 +10,7 @@ import Item from "../Player/Item";
 import "./QuickCompare.css";
 //import { itemDB } from "../../Databases/ItemDB";
 import { itemDB } from "../../../Databases/ItemDB";
-import { getValidArmorTypes, getValidWeaponTypes, getItemProp, scoreItem, buildWepCombos } from "../../Engine/ItemUtilities";
+import { getItemDB, getValidArmorTypes, getValidWeaponTypes, getItemProp, scoreItem, buildWepCombos } from "../../Engine/ItemUtilities";
 import ItemCard from "./ItemCard";
 import HelpText from "../SetupAndMenus/HelpText";
 import { CONSTRAINTS } from "../../Engine/CONSTRAINTS";
@@ -129,6 +129,7 @@ export default function QuickCompare(props) {
   const idPop = openPop ? "simple-popover" : undefined;
   const slots = getSlots();
   const helpText = t("QuickCompare.HelpText");
+  const gameType = useSelector((state) => state.gameType);
 
   /* ------------------------ End Simc Module Functions ----------------------- */
 
@@ -159,9 +160,10 @@ export default function QuickCompare(props) {
     const acceptableArmorTypes = getValidArmorTypes(spec);
     const acceptableWeaponTypes = getValidWeaponTypes(spec, slotName);
     let newItemList = [];
+    const db = getItemDB(gameType);
+    console.log(db);
 
-    itemDB
-      .filter(
+    db.filter(
         (key) =>
           (slotName === key.slot && key.slot === "Back") ||
           (slotName === key.slot && key.itemClass === 4 && acceptableArmorTypes.includes(key.itemSubClass)) ||
