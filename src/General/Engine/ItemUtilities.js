@@ -181,8 +181,8 @@ export function getTranslatedItemName(id, lang, effect) {
 
 
 // Grabs a specific item from whichever item database is currently selected.
-export function getItem(id) {
-  let temp = getItemDB().filter(function (item) {
+export function getItem(id, gameType = "Retail") {
+  let temp = getItemDB(gameType).filter(function (item) {
     return item.id === id;
   });
   if (temp.length > 0) return temp[0];
@@ -191,8 +191,8 @@ export function getItem(id) {
 
 // This function grabs a selected prop from the currently selected item database. 
 // It should replace most other functions that get only one specific prop. 
-export function getItemProp(id, prop) {
-  const item = getItem(id);
+export function getItemProp(id, prop, gameType = "Retail") {
+  const item = getItem(id, gameType);
 
   if (item !== "" && prop in item) return item[prop];
   else if (prop === "itemLevel") {

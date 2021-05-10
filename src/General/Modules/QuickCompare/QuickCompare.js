@@ -202,9 +202,11 @@ export default function QuickCompare(props) {
     if (val === null) {
       setItemID("");
       setItemName("");
+
     } else {
       setItemID(val.value);
       setItemName(val.name);
+      if (gameType === "BurningCrusade") setItemLevel(getItemProp(val.value, "itemLevel", gameType))
     }
   };
 
@@ -352,7 +354,7 @@ export default function QuickCompare(props) {
                     onChange={(e) => itemLevelChanged(e.target.value)}
                     value={itemLevel}
                     label={t("QuickCompare.ItemLevel")}
-                    disabled={itemID === "" ? true : false}
+                    disabled={itemID === "" || gameType !== "Retail" ? true : false}
                     onInput={(e) => {
                       e.target.value = Math.max(0, parseInt(e.target.value)).toString().slice(0, 3);
                     }}
@@ -366,7 +368,8 @@ export default function QuickCompare(props) {
                   />
                 </FormControl>
               </Grid>
-
+              
+              {gameType === "Retail" ? 
               <Grid item>
                 <FormControl className={classes.formControl} variant="outlined" size="small" disabled={itemLevel === "" ? true : false}>
                   <InputLabel id="itemsocket">{t("QuickCompare.Socket")}</InputLabel>
@@ -393,12 +396,13 @@ export default function QuickCompare(props) {
                     ]}
                   </Select>
                 </FormControl>
-              </Grid>
+              </Grid> : ""}
 
               {/* -------------------------------------------------------------------------- */
               /*                              Tertiary Dropdown                             */
               /* -------------------------------------------------------------------------- */}
 
+              {gameType === "Retail" ? 
               <Grid item>
                 <FormControl
                   className={classes.formControl}
@@ -431,7 +435,7 @@ export default function QuickCompare(props) {
                     ]}
                   </Select>
                 </FormControl>
-              </Grid>
+              </Grid> : "" }
 
               {/* -------------------------------------------------------------------------- */
               /*                                 Add Button                                 */
