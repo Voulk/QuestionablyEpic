@@ -1620,8 +1620,19 @@ export const worldBosses = [
 // Boss Notes?
 // Shriekwing - Reverberating Scream consists of large damage on hit, follwoed by a dot.
 
+export const bcClassRaceList = {
+  "Holy Paladin BC": {
+    races: ["Races.Draenei", "Races.Dwarf", "Races.Human", "Races.Blood Elf"],
+  },
+
+}
+
 // Contains the list of races localization IDs for each class's available races.
 export const classRaceList = {
+  "Holy Paladin BC": {
+    races: ["Races.Draenei", "Races.Dwarf", "Races.Human", "Races.Blood Elf"],
+  },
+  
   "Holy Paladin": {
     races: ["Races.Draenei", "Races.Dwarf", "Races.Human", "Races.Lightforged Draenei", "Races.Dark Iron Dwarf", "Races.Blood Elf", "Races.Tauren", "Races.Zandalari Troll"],
   },
