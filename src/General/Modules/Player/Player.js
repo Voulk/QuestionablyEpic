@@ -46,6 +46,7 @@ class Player {
   realm = "";
   race = "";
   talents = [];
+  gameType = ""; // Currently the options are Retail or Burning Crusade.
 
 
   // The players active stats from their character page. These are raw rather than being percentages.
