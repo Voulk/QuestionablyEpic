@@ -183,7 +183,7 @@ export default function QuickCompare(props) {
       return null;
     }
     let player = props.player;
-    let item = new Item(itemID, itemName, getItemProp(itemID, "slot"), itemSocket, itemTertiary, 0, itemLevel, "");
+    let item = new Item(itemID, itemName, getItemProp(itemID, "slot", gameType), itemSocket, itemTertiary, 0, itemLevel, "");
     item.softScore = scoreItem(item, player, contentType);
 
     player.addActiveItem(item);

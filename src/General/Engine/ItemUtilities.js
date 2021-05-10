@@ -166,11 +166,11 @@ export function checkItemExists(id) {
 }
 
 // Returns a translated item name based on an ID.
-export function getTranslatedItemName(id, lang, effect) {
+export function getTranslatedItemName(id, lang, effect, gameType = "Retail") {
   if (effect && effect.type === "spec legendary") {
     return effect.name;
   } else {
-    let temp = itemDB.filter(function (item) {
+    let temp = getItemDB(gameType).filter(function (item) {
       return item.id === id;
     });
 
@@ -193,6 +193,7 @@ export function getItem(id, gameType = "Retail") {
 // It should replace most other functions that get only one specific prop. 
 export function getItemProp(id, prop, gameType = "Retail") {
   const item = getItem(id, gameType);
+  console.log(gameType);
 
   if (item !== "" && prop in item) return item[prop];
   else if (prop === "itemLevel") {
