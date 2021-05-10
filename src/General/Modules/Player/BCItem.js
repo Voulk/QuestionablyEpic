@@ -1,19 +1,19 @@
 import { calcStatsAtLevel, getItemAllocations, getItemProp } from "../../Engine/ItemUtilities";
 import { CONSTRAINTS, setBounds } from "../../Engine/CONSTRAINTS";
+import Item from "./Item";
 
-// The Item class represents an active item in the app at a specific item level.
-// We'll create them when we import a SimC string, or when an item is added manually.
-// Items are stored in the players character. They are not currently stored in local storage but that is a likely addition soon after release.
-class BCItem extends Item {
+// Based on, but not inheriting from Item. Ideally both should use an Interface, or both RetailItem and BCItem should inherit from a higher Item parent.
+class BCItem {
   constructor(id, name, slot, bonusIDS) {
     this.id = id;
     this.name = name;
-    this.level = setBounds(level, CONSTRAINTS.Retail.minItemLevel, CONSTRAINTS.Retail.maxItemLevel); //Math.max(1, Math.min(300, level));
+    this.level = getItemProp(id, "itemLevel", "BurningCrusade"); //Math.max(1, Math.min(300, level));
     this.slot = slot;
     this.uniqueHash = this.getUnique(id);
     this.bonusIDS = bonusIDS || "";
-    this.stats = calcStatsAtLevel(this.level, getItemProp(id, "slot"), getItemAllocations(id), tertiary);
-    this.effect = getItemProp(id, "effect");
+    this.effect = getItemProp(id, "effect", "BurningCrusade");
+    this.stats = getItemProp(id, "stats", "BurningCrusade");
+    this.stats['bonus_stats'] = {};
 
     //console.log("Setting level to " + level);
   }
@@ -72,4 +72,4 @@ class BCItem extends Item {
   }
 }
 
-export default Item;
+export default BCItem;

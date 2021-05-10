@@ -54,6 +54,7 @@ export default function ItemCard(props) {
   const isLegendary = "effect" in item && item.effect.type === "spec legendary";
   const gameType = useSelector((state) => state.gameType);
 
+  // TODO: Items should track their own quality, and this function shouldn't be in ItemCard.
   const itemQuality = (itemLevel, itemID) => {
     if (gameType !== "Retail") {
       const quality = getItemProp(itemID, "quality", gameType)

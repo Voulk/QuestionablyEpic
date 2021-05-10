@@ -17,7 +17,6 @@ class Item {
     this.bonusIDS = bonusIDS || "";
     this.stats = calcStatsAtLevel(this.level, getItemProp(id, "slot"), getItemAllocations(id), tertiary);
     this.effect = getItemProp(id, "effect");
-
     //console.log("Setting level to " + level);
   }
 

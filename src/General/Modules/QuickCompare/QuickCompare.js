@@ -7,6 +7,7 @@ import { Autocomplete } from "@material-ui/lab";
 import MuiAlert from "@material-ui/lab/Alert";
 import "../SetupAndMenus/QEMainMenu.css";
 import Item from "../Player/Item";
+import BCItem from "../Player/BCItem";
 import "./QuickCompare.css";
 //import { itemDB } from "../../Databases/ItemDB";
 import { itemDB } from "../../../Databases/ItemDB";
@@ -183,7 +184,15 @@ export default function QuickCompare(props) {
       return null;
     }
     let player = props.player;
-    let item = new Item(itemID, itemName, getItemProp(itemID, "slot", gameType), itemSocket, itemTertiary, 0, itemLevel, "");
+    let item = "";
+    
+    if (gameType === "Retail") {
+      item = new Item(itemID, itemName, getItemProp(itemID, "slot", gameType), itemSocket, itemTertiary, 0, itemLevel, "");
+    }
+    else {
+      item = new BCItem(itemID, itemName, getItemProp(itemID, "slot", gameType), "");
+    }
+    
     item.softScore = scoreItem(item, player, contentType);
 
     player.addActiveItem(item);
