@@ -25,9 +25,11 @@ const specImages = {
   "Restoration Shaman": require("Images/ShamanSmall.png"),
   "Discipline Priest": require("Images/DiscSmall.jpg"),
   "Holy Paladin": require("Images/PaladinSmall.png"),
-  "Holy Paladin BC": require("Images/PaladinSmall.png"),
   "Holy Priest": require("Images/HPriestSmall.jpg"),
   "Mistweaver Monk": require("Images/MistweaverSmall.jpg"),
+
+  "Holy Paladin BC": require("Images/PaladinSmall.png"),
+  "Restoration Druid BC": require("Images/DruidSmall.jpg"),
 };
 
 /* ------------------- Called when a character is clicked. ------------------ */

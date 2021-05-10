@@ -171,7 +171,7 @@ export default function QEMainMenu(props) {
                     allChars={props.allChars}
                     charUpdate={props.charUpdate}
                     singleUpdate={props.singleUpdate}
-                    isActive={index === props.allChars.activeChar}
+                    isActive={char.charID === props.allChars.activeChar}
                     charUpdatedSnack={props.charUpdatedSnack}
                     delChar={props.delChar}
                   />
