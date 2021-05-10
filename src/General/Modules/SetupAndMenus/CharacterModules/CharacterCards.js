@@ -11,7 +11,7 @@ import { red } from "@material-ui/core/colors";
 import { classColoursJS } from "../../CooldownPlanner/Functions/ClassColourFunctions.js";
 import classIcons from "../../CooldownPlanner/Functions/IconFunctions/ClassIcons";
 import raceIcons from "../../CooldownPlanner/Functions/IconFunctions/RaceIcons";
-import { classRaceList } from "../../CooldownPlanner/Data/Data";
+import { classRaceList, bcClassRaceList } from "../../CooldownPlanner/Data/Data";
 import { serverDB } from "../../../../Databases/ServerDB";
 import LogDetailsTable from "./CharacterLogDetailsTable";
 import { STAT } from "../../../Engine/STAT";
@@ -27,6 +27,9 @@ const specImages = {
   "Holy Paladin": require("Images/PaladinSmall.png"),
   "Holy Priest": require("Images/HPriestSmall.jpg"),
   "Mistweaver Monk": require("Images/MistweaverSmall.jpg"),
+
+  "Holy Paladin BC": require("Images/PaladinSmall.png"),
+  "Restoration Druid BC": require("Images/DruidSmall.jpg"),
 };
 
 /* ------------------- Called when a character is clicked. ------------------ */
@@ -323,6 +326,8 @@ export default function CharCards(props) {
 
   /* ---------------------------- Spec for the card --------------------------- */
   const spec = props.cardType === "Char" ? props.char.spec : "";
+  const gameType = useSelector((state) => state.gameType);
+  const availableClasses = classRaceList;
 
   /* ------------------------ Active Character Styling ------------------------ */
   const rootClassName = classes.root + " " + (props.isActive ? classes.activeChar : "");
@@ -480,7 +485,7 @@ export default function CharCards(props) {
                         <FormControl variant="outlined" fullWidth size="small" label={t("Class")} disabled={true}>
                           <InputLabel id="ClassSelector">{t("Class")}</InputLabel>
                           <Select label={t("Class")} value={healClass} onChange={handleChangeSpec} MenuProps={menuStyle}>
-                            {Object.getOwnPropertyNames(classRaceList)
+                            {Object.getOwnPropertyNames(availableClasses)
                               .map((key, i) => (
                                 <MenuItem key={i} value={key}>
                                   {classIcons(key, { height: 20, width: 20, margin: "0px 5px 0px 5px", verticalAlign: "middle", borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.12)" })}
@@ -498,7 +503,7 @@ export default function CharCards(props) {
                           <Select value={selectedRace} onChange={handleChangeRace} label={t("Race")} MenuProps={menuStyle}>
                             {healClass === ""
                               ? ""
-                              : classRaceList[healClass.toString()].races
+                              : availableClasses[healClass.toString()].races
                                   .map((key, i) => (
                                     <MenuItem key={i} value={key}>
                                       <div style={{ display: "inline-flex" }}>

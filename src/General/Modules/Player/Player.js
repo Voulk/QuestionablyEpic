@@ -14,11 +14,17 @@ import { reportError } from "../../SystemTools/ErrorLogging/ErrorReporting";
 
 
 class Player {
-  constructor(playerName, specName, charID, region, realm, race, statWeights = "default") {
+  constructor(playerName, specName, charID, region, realm, race, statWeights = "default", gameType = "Retail") {
     this.spec = specName;
     this.charName = playerName;
     this.charID = charID;
-    this.setupDefaults(specName);
+    if (gameType === "Retail") {
+      this.setupDefaults(specName);
+      this.setDefaultCovenant(specName);
+      this.activeConduits = getAvailableClassConduits(specName);
+      this.gameType = "Retail";
+    }
+
     this.activeItems = [];
     this.activeConduits = [];
     this.renown = 0;
@@ -26,10 +32,9 @@ class Player {
     this.realm = realm;
     this.race = race;
     this.uniqueHash = getUnique();
-    this.setDefaultCovenant(specName);
-
+    
     if (statWeights !== "default" && statWeights.DefaultWeights === false) this.statWeights = statWeights;
-    this.activeConduits = getAvailableClassConduits(specName);
+    
 
     //this.getStatPerc = getStatPerc;
   }
