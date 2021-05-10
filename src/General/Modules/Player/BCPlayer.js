@@ -16,6 +16,15 @@ class BCPlayer extends Player {
             Raid: new CastModel(spec, "Raid"),
             Dungeon: new CastModel(spec, "Dungeon"),
         };
+        statWeights = {
+            Raid: {
+                intellect: 2.04,
+                bonushealing: 1.03,
+            },
+            Dungeon: {
+            },
+            DefaultWeights: true,
+          };
     }
 
 }

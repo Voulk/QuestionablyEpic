@@ -1627,6 +1627,10 @@ export const classRaceList = {
     races: ["Races.Draenei", "Races.Dwarf", "Races.Human", "Races.Blood Elf"],
     gameType: "BurningCrusade",
   },
+  "Restoration Druid BC": {
+    races: ["Races.Night Elf", "Races.Tauren"],
+    gameType: "BurningCrusade",
+  },
 
   "Holy Paladin": {
     races: ["Races.Draenei", "Races.Dwarf", "Races.Human", "Races.Lightforged Draenei", "Races.Dark Iron Dwarf", "Races.Blood Elf", "Races.Tauren", "Races.Zandalari Troll"],

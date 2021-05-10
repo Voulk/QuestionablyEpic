@@ -19,13 +19,13 @@ export default function classIcons(props, style) {
   let alt = "";
 
   // Paladin Cooldowns
-  if (props === "HolyPaladin" || props === "Holy Paladin" || props === "Paladin-Holy" || props === "Paladin") {
+  if (props === "HolyPaladin" || props === "Holy Paladin" || props === "Paladin-Holy" || props === "Paladin" || props === "Holy Paladin BC") {
     src = HolyPaladinIcon;
     alt = "Holy Paladin";
   }
 
   // Restoration Druid
-  if (props === "RestorationDruid" || props === "Restoration Druid" || props === "Druid-Restoration" || props === "Druid") {
+  if (props === "RestorationDruid" || props === "Restoration Druid" || props === "Druid-Restoration" || props === "Druid" || props === "Restoration Druid BC") {
     src = RestorationDruidIcon;
     alt = "Restoration Druid";
   }
