@@ -12,7 +12,7 @@ import { classColoursJS } from "../../CooldownPlanner/Functions/ClassColourFunct
 import classIcons from "../../CooldownPlanner/Functions/IconFunctions/ClassIcons";
 import raceIcons from "../../CooldownPlanner/Functions/IconFunctions/RaceIcons";
 import { classRaceList, bcClassRaceList } from "../../CooldownPlanner/Data/Data";
-import { serverDB } from "../../../../Databases/ServerDB";
+import { serverDB, serverDBBurningCrusade } from "../../../../Databases/ServerDB";
 import LogDetailsTable from "./CharacterLogDetailsTable";
 import { STAT } from "../../../Engine/STAT";
 import { apiGetPlayerImage } from "../ConnectionUtilities";
@@ -327,6 +327,7 @@ export default function CharCards(props) {
   /* ---------------------------- Spec for the card --------------------------- */
   const spec = props.cardType === "Char" ? props.char.spec : "";
   const gameType = useSelector((state) => state.gameType);
+  const serverList = gameType === "Retail" ? serverDB : serverDBBurningCrusade 
   const availableClasses = classRaceList;
 
   /* ------------------------ Active Character Styling ------------------------ */
@@ -470,7 +471,7 @@ export default function CharCards(props) {
                           onChange={(e, newValue) => {
                             handleChangeServer(newValue);
                           }}
-                          options={serverDB[region]}
+                          options={serverList[region]}
                           inputValue={server}
                           getOptionLabel={(option) => option}
                           onInputChange={(e, newInputValue) => {
