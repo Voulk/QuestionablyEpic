@@ -209,9 +209,10 @@ export function getItemProp(id, prop, gameType = "Retail") {
 
 // Returns a translated item name based on an ID.
 // Add some support for missing icons.
-export function getItemIcon(id) {
-  const item = getItem(id);
-
+export function getItemIcon(id, gameType = "Retail") {
+  const item = getItem(id, gameType);
+  console.log("https://wow.zamimg.com/images/wow/icons/large/" + item.icon + " .jpg");
+  if (gameType === "BurningCrusade" && item !== "") return "https://wow.zamimg.com/images/wow/icons/large/" + item.icon + ".jpg";
   if (item !== "" && "icon" in item) return process.env.PUBLIC_URL + "/Images/Icons/" + item.icon + ".jpg";
   else {
     reportError(this, "ItemUtilities", "Icon not found for ID", id);
@@ -385,9 +386,44 @@ export function calcStatsAtLevel(itemLevel, slot, statAllocations, tertiary) {
   return stats;
 }
 
+export function buildStatString(stats, effect, lang = "en") {
+  let statString = "";
+  let statsList = []
+  const ignoreList = ["stamina", "bonus_stats", "strength", "agility"]
+  for (const [statkey, statvalue] of Object.entries(stats)) {
+    if (!ignoreList.includes(statkey)) statsList.push({key: statkey, val: statvalue})
+  }
+
+  statsList = statsList.sort(function (a, b) {
+    return b.val - a.val;
+  });
+  
+  for (var ind in statsList) {
+    let statKey = statsList[ind]["key"];
+    
+    statString +=
+      statsList[ind]["val"] > 0
+        ? statsList[ind]["val"] +
+          " " +
+          translatedStat[statKey][lang] +
+          //correctCasing(statsList[ind]["key"]) +
+          " / " //t("stats." + statsList[ind]["key"])
+        : "";
+  }
+
+  if (effect !== "") statString += "Effect" + " / "; // t("itemTags.effect")
+
+  return statString.slice(0, -3); // We slice here to remove excess slashes and white space from the end.
+
+}
+
 // Builds a stat string out of an items given stats and effect.
 // Stats should be listed in order of quantity.
-export function buildStatString(stats, effect, lang = "en") {
+/**
+ * 
+ * @deprecated
+ */
+export function buildStatStringOld(stats, effect, lang = "en") {
   //const { t, i18n } = useTranslation();
   let statString = "";
   let statsList = [
@@ -427,7 +463,7 @@ export function correctCasing(string) {
 // Return an item score.
 // Score is calculated by multiplying out an items stats against the players stat weights.
 // Special effects, sockets and leech are then added afterwards.
-export function scoreItem(item, player, contentType) {
+export function scoreItem(item, player, contentType, gameType = "Retail") {
   let score = 0;
 
   // Calculate Effect.
@@ -471,6 +507,7 @@ function sumObjectsByKey(...objs) {
     return a;
   }, {});
 }
+
 
 // --------------------------------
 // ----- Deprecated Functions -----

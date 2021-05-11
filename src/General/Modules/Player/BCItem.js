@@ -27,7 +27,6 @@ class BCItem {
 
   sockets = {}; // Quantity of each color.
   setID = -1;
-  tertiary = "";
   effect = "";
   uniqueHash = ""; // Technically not a hash.
   uniqueEquip = ""; // Unique Equip type if relevant.
@@ -54,6 +53,9 @@ class BCItem {
       }
     }
   }
+
 }
+
+
 
 export default BCItem;

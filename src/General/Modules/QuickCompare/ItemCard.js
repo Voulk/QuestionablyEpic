@@ -49,6 +49,7 @@ export default function ItemCard(props) {
   const { t, i18n } = useTranslation();
   const item = props.item;
   const currentLanguage = i18n.language;
+  //const statString = buildStatString(item.stats, item.effect, currentLanguage);
   const statString = buildStatString(item.stats, item.effect, currentLanguage);
   const itemLevel = item.level;
   const isLegendary = "effect" in item && item.effect.type === "spec legendary";
@@ -128,7 +129,7 @@ export default function ItemCard(props) {
                     alt="img"
                     width={56}
                     height={56}
-                    src={getItemIcon(item.offhandID)}
+                    src={getItemIcon(item.offhandID, gameType)}
                     style={{
                       borderRadius: 4,
                       borderWidth: "1px",
@@ -142,7 +143,7 @@ export default function ItemCard(props) {
                     alt="img"
                     width={56}
                     height={56}
-                    src={getItemIcon(item.id)}
+                    src={getItemIcon(item.id, gameType)}
                     style={{
                       borderRadius: 4,
                       borderWidth: "1px",
@@ -225,7 +226,7 @@ export default function ItemCard(props) {
                     alt="img"
                     width={56}
                     height={56}
-                    src={getItemIcon(item.id)}
+                    src={getItemIcon(item.id, gameType)}
                     style={{
                       borderRadius: 4,
                       borderWidth: "1px",
