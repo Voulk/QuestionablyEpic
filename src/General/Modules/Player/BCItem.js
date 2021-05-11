@@ -14,6 +14,7 @@ class BCItem {
     this.effect = getItemProp(id, "effect", "BurningCrusade");
     this.stats = getItemProp(id, "stats", "BurningCrusade");
     this.stats['bonus_stats'] = {};
+    this.sockets = getItemProp(id, "sockets", "BurningCrusade");
 
     //console.log("Setting level to " + level);
   }
@@ -23,38 +24,21 @@ class BCItem {
   name = ""; // Consider how to store this in a localised form.
   slot = "";
   softScore = 0;
-  socket = false;
+
+  sockets = {}; // Quantity of each color.
+  setID = -1;
   tertiary = "";
   effect = "";
   uniqueHash = ""; // Technically not a hash.
   uniqueEquip = ""; // Unique Equip type if relevant.
   offhandID = 0; // Only used for correctly translating weapon combos.
   active = false;
-  overriddenName = false; // If true, the effect will be used as the items name instead of its ID. So far this is just used for legendaries.
-  vaultItem = false;
   isEquipped = false;
   source = {};
 
   // The stats on the item. These should already be adjusted for item level.
   // HPS is a calculated field. It includes any item effects that provide healing or absorbs.
   stats = {
-    intellect: 0,
-    stamina: 0,
-    haste: 0,
-    mastery: 0,
-    versatility: 0,
-    crit: 0,
-    leech: 0,
-    hps: 0,
-    dps: 0,
-    bonus_stats: {
-      intellect: 0,
-      haste: 0,
-      mastery: 0,
-      versatility: 0,
-      leech: 0,
-      hps: 0,
-    },
   };
 
   // To be replaced with a proper method of assigning ID's but this will do for now since duplicates will be very rare and
