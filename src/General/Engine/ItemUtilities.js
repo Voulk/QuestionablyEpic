@@ -10,6 +10,7 @@ import Item from "../Modules/Player/Item";
 // import { i18n } from "react-i18next";
 import { reportError } from "../SystemTools/ErrorLogging/ErrorReporting";
 import { useSelector } from "react-redux";
+import { GEMS } from "./GEMS.js";
 
 /*
 
@@ -193,7 +194,6 @@ export function getItem(id, gameType = "Retail") {
 // It should replace most other functions that get only one specific prop. 
 export function getItemProp(id, prop, gameType = "Retail") {
   const item = getItem(id, gameType);
-  console.log(gameType);
 
   if (item !== "" && prop in item) return item[prop];
   else if (prop === "itemLevel") {
@@ -458,6 +458,52 @@ export function buildStatStringOld(stats, effect, lang = "en") {
 // Returns the string with its first letter capitalized.
 export function correctCasing(string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+function scoreGemColor(gemList, player) {
+
+  for (var ind in gemList) {
+    const gem = gemList[ind];
+    let gemScore = 0;
+    for (const [stat, value] of Object.entries(gem.stats)) {
+      //console.log("Stat: " + stat + ". Value: " + value);
+      gemScore += value * player.getStatWeight("Raid", stat);
+    }
+    gem['score'] = gemScore;
+    
+  }
+
+  gemList = gemList.sort(function (a, b) {
+    return b.score - a.score;
+  });
+
+  return gemList;
+}
+
+// Get highest value of each gem color. 
+// Compare value of socketing highest matching colors + socket bonus, to just socketing highest colors.
+export function socketItem(item, player) {
+  const socketList = item.sockets;
+  let gemList = [...GEMS];
+
+  console.log("SOCKETING GEMS");
+
+  // Red sockets
+  let redGemList = gemList.filter((filter) => (filter.color === "red" || filter.color === "orange" || filter.color === "purple"))
+  redGemList = scoreGemColor(redGemList, player);
+
+  let yellowGemList = gemList.filter((filter) => (filter.color === "yellow" || filter.color === "orange" || filter.color === "green"))
+  yellowGemList = scoreGemColor(yellowGemList, player);
+
+  let blueGemList = gemList.filter((filter) => (filter.color === "blue" || filter.color === "purple" || filter.color === "green"))
+  blueGemList = scoreGemColor(blueGemList, player);
+
+
+  console.log(redGemList);
+  console.log(yellowGemList);
+
+
+  
 }
 
 // Return an item score.
