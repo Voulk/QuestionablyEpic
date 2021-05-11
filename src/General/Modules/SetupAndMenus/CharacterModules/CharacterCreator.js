@@ -7,7 +7,7 @@ import classIcons from "../../CooldownPlanner/Functions/IconFunctions/ClassIcons
 import raceIcons from "../../CooldownPlanner/Functions/IconFunctions/RaceIcons";
 import Autocomplete from "@material-ui/lab/Autocomplete";
 import { bcClassRaceList, classRaceList } from "../../CooldownPlanner/Data/Data";
-import { serverDB } from "../../../../Databases/ServerDB";
+import { serverDB, serverDBBurningCrusade } from "../../../../Databases/ServerDB";
 import { classColoursJS } from "../../CooldownPlanner/Functions/ClassColourFunctions";
 import { useSelector } from "react-redux";
 
@@ -80,6 +80,8 @@ const menuStyle = {
 export default function AddNewChar(props) {
   const { t } = useTranslation();
   const classes = useStyles();
+  const gameType = useSelector((state) => state.gameType);
+  const availableClasses = classRaceList;
   const [open, setOpen] = React.useState(false);
   const [healClass, setHealClass] = React.useState("");
   const [charName, setCharName] = React.useState("");
@@ -87,6 +89,8 @@ export default function AddNewChar(props) {
   const [selectedRace, setSelectedRace] = React.useState("");
   const [server, setServer] = React.useState("");
   const region = ["CN", "US", "TW", "EU", "KR"];
+
+  const serverList = gameType === "Retail" ? serverDB : serverDBBurningCrusade 
   const handleClickOpen = () => {
     setOpen(true);
   };
@@ -122,8 +126,7 @@ export default function AddNewChar(props) {
     setServer(serverName);
   };
 
-  const gameType = useSelector((state) => state.gameType);
-  const availableClasses = classRaceList;
+
 
   return (
     <Grid item xs={12} sm={6} md={6} lg={4} xl={4}>
@@ -170,7 +173,7 @@ export default function AddNewChar(props) {
                   }}
                   disabled={regions === "" ? true : false}
                   id="server-select"
-                  options={serverDB[regions] || []}
+                  options={serverList[regions] || []}
                   getOptionLabel={(option) => option}
                   style={{ width: "100%" }}
                   onChange={(e, newValue) => {
