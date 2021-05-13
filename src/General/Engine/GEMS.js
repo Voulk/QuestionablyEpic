@@ -141,4 +141,17 @@ export const GEMS = [
   /* ------------------------------------ Attack Power & Mana/5 ----------------------------------- */
   { name: "Infused Nightseye", color: "purple", rarity: "rare", jewelcrafting: false, stats: { attackPower: 8, mp5: 2 } }, // +6 attack power & +2 mp5
   { name: "Infused Shadowsong Amethyst", color: "purple", rarity: "epic", jewelcrafting: false, stats: { attackPower: 10, mp5: 2 } }, // +6 attack power & +2 mp5
+
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                            Meta Gems                                           */
+  /* ---------------------------------------------------------------------------------------------- */
+
+  { name: "Insightful Earthstorm Diamond", color: "meta", rarity: "rare", jewelcrafting: false, stats: { intellect: 12 }, requirements: "Atleast 2 red, 2 blue, 2 red gems" }, // +12 Intellect & Chance to restore mana on spellcast
+  { name: "Mystical Skyfire Diamond", color: "meta", rarity: "rare", jewelcrafting: false, stats: {}, requirements: "Requires more blue gems than yellow" }, // Chance to Increase Spell Cast Speed
+  { name: "Swift Starfire Diamond", color: "meta", rarity: "rare", jewelcrafting: false, stats: { bonushealing: 24 }, requirements: "Atleast 2 yellow and 1 red gem" }, // +12 Spell Power and Minor Run Speed Increase.
+  { name: "Ember Skyfire Diamond", color: "meta", rarity: "rare", jewelcrafting: false, stats: {}, requirements: "Atleast 3 red gems" }, // +14 Spell Damage & +2% Intellect
+  { name: "Imbued Unstable Diamond", color: "meta", rarity: "rare", jewelcrafting: false, stats: { bonushealing: 28 }, requirements: "Atleast 3 yellow gems" }, // +14 Spell Power and 5% Stun Resistance
+  { name: "Bracing Earthstorm Diamond", color: "meta", rarity: "rare", jewelcrafting: false, stats: { bonushealing: 28 }, requirements: "requires more red gems than blue gems" }, // +14 Spell Power and 2% Reduced Threat
+  { name: "Destructive Skyfire Diamond", color: "meta", rarity: "rare", jewelcrafting: false, stats: { crit: 14 }, requirements: "Atleast 2 red, 2 blue, 2 red gems" }, // +14 Spell Crit Rating and 1% Spell Reflect
+  { name: "Chaotic Skyfire Diamond", color: "meta", rarity: "rare", jewelcrafting: false, stats: { crit: 12 }, requirements: "Atleast 2 blue gems" }, // +12 Spell Critical & 3% Increased Critical Damage
 ];
