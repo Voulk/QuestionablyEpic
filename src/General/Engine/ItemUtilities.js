@@ -498,9 +498,20 @@ export function socketItem(item, player) {
   let blueGemList = gemList.filter((filter) => (filter.color === "blue" || filter.color === "purple" || filter.color === "green"))
   blueGemList = scoreGemColor(blueGemList, player);
 
+  let bestGem = blueGemList.concat(redGemList).concat(yellowGemList);
+  bestGem = bestGem.sort(function (a, b) {
+    return b.score - a.score;
+  });
 
-  console.log(redGemList);
-  console.log(yellowGemList);
+  console.log("#1 Gem" + bestGem[0]);
+
+  for (const socket in socketList) {
+    console.log(socket);
+    
+  }
+
+  //console.log(redGemList);
+  //console.log(yellowGemList);
 
 
   
