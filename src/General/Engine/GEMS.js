@@ -2,8 +2,6 @@ export const GEMS = [
   /* ---------------------------------------------------------------------------------------------- */
   /*                                            Red Gems                                            */
   /* ---------------------------------------------------------------------------------------------- */
-  { name: "Teardrop Tourmaline", color: "red", rarity: "common", jewelcrafting: false, stats: { bonushealing: 10 } }, // +5 spellpower
-  { name: "Teardrop Blood Garnet", color: "red", rarity: "uncommon", jewelcrafting: false, stats: { bonushealing: 14 } }, // +7 spellpower
   { name: "Teardrop Living Ruby", color: "red", rarity: "rare", jewelcrafting: false, stats: { bonushealing: 18 } }, // +9 spellpower
   { name: "Teardrop Crimson Spinel", color: "red", rarity: "epic", jewelcrafting: false, stats: { bonushealing: 22 } }, // +12 spellpower
   { name: "Kailee's Rose", color: "red", rarity: "epic", jewelcrafting: true, stats: { bonushealing: 24 } }, // +14 spellpower JC Only (BOP)
@@ -13,15 +11,11 @@ export const GEMS = [
   /* ---------------------------------------------------------------------------------------------- */
 
   /* --------------------------------------- Spell Crit Gems -------------------------------------- */
-  { name: "Gleaming Amber", color: "yellow", rarity: "common", jewelcrafting: false, stats: { crit: 4 } }, // +4 spell crit
-  { name: "Gleaming Golden Draenite", color: "yellow", rarity: "uncommon", jewelcrafting: false, stats: { crit: 6 } }, // +6 spell crit
   { name: "Gleaming Dawnstone", color: "yellow", rarity: "rare", jewelcrafting: false, stats: { crit: 8 } }, // +8 spell crit
   { name: "Gleaming Ornate Dawnstone", color: "yellow", rarity: "epic", jewelcrafting: false, stats: { crit: 10 } }, // +10 spell crit
   { name: "Blood of Amber", color: "yellow", rarity: "epic", jewelcrafting: false, stats: { crit: 12 } }, // +12 spell crit
 
   /* --------------------------------------- Intellect Gems --------------------------------------- */
-  { name: "Brilliant Amber", color: "yellow", rarity: "common", jewelcrafting: false, stats: { intellect: 4 } }, // +4 intellect
-  { name: "Brilliant Golden Draenite", color: "yellow", rarity: "uncommon", jewelcrafting: false, stats: { intellect: 6 } }, // +6 intellect
   { name: "Brilliant Dawnstone", color: "yellow", rarity: "rare", jewelcrafting: false, stats: { intellect: 8 } }, // +8 intellect
   { name: "Brilliant Lionseye", color: "yellow", rarity: "epic", jewelcrafting: false, stats: { intellect: 10 } }, // +10 intellect
 
@@ -34,14 +28,10 @@ export const GEMS = [
   /* ---------------------------------------------------------------------------------------------- */
 
   /* ----------------------------------------- Spirit Gems ---------------------------------------- */
-  { name: "Sparkling Zircon", color: "blue", rarity: "common", jewelcrafting: false, stats: { spirit: 4 } }, // +4 spirit
-  { name: "Sparkling Azure Moonstone", color: "blue", rarity: "uncommon", jewelcrafting: false, stats: { spirit: 6 } }, // +6 spirit
   { name: "Sparkling Star of Elune", color: "blue", rarity: "rare", jewelcrafting: false, stats: { spirit: 8 } }, // +8 spirit
   { name: "Sparkling Empyrean Sapphire", color: "blue", rarity: "epic", jewelcrafting: false, stats: { spirit: 10 } }, // +10 spirit
 
   /* -------------------------------------- Mana / 5 Seconds -------------------------------------- */
-  { name: "Lustrous Zircon", color: "blue", rarity: "common", jewelcrafting: false, stats: { mp5: 1 } }, // +1 Mana every 5 seconds
-  { name: "Lustrous Azure Moonstone", color: "blue", rarity: "uncommon", jewelcrafting: false, stats: { mp5: 2 } }, // +2 Mana every 5 seconds
   { name: "Lustrous Star of Elune", color: "blue", rarity: "rare", jewelcrafting: false, stats: { mp5: 4 } }, // +4 Mana every 5 seconds
   { name: "Lustrous Empyrean Sapphire", color: "blue", rarity: "epic", jewelcrafting: false, stats: { mp5: 5 } }, // +5 Mana every 5 seconds
 
@@ -50,13 +40,11 @@ export const GEMS = [
   /* ---------------------------------------------------------------------------------------------- */
 
   /* -------------------------------------- Hit & Spell Power ------------------------------------- */
-  { name: "Veiled Flame Spessarite", color: "orange", rarity: "uncommon", jewelcrafting: false, stats: { hit: 3, bonushealing: 8 } }, // +3 hit rating & +4 spell power
   { name: "Veiled Noble Topaz", color: "orange", rarity: "rare", jewelcrafting: false, stats: { hit: 4, bonushealing: 10 } }, // +4 hit rating & +5 spell power
   { name: "Shining Fire Opal", color: "orange", rarity: "epic", jewelcrafting: false, stats: { hit: 5, bonushealing: 12 } }, // +5 hit rating & +6 spell power
   { name: "Veiled Pyrestone", color: "orange", rarity: "epic", jewelcrafting: false, stats: { hit: 5, bonushealing: 12 } }, // +5 hit rating & +6 spell power
 
   /* ----------------------------------- Intellect & Spell Power ---------------------------------- */
-  { name: "Luminous Flame Spessarite", color: "orange", rarity: "uncommon", jewelcrafting: false, stats: { intellect: 3, bonushealing: 8 } }, // +3 intellect & +4 spell power
   { name: "Luminous Noble Topaz", color: "orange", rarity: "rare", jewelcrafting: false, stats: { intellect: 4, bonushealing: 10 } }, // +4 intellect & +5 spell power
   { name: "Luminous Fire Opal", color: "orange", rarity: "epic", jewelcrafting: false, stats: { intellect: 4, bonushealing: 12 } }, // +4 intellect & +6 spell power
   { name: "Luminous Pyrestone", color: "orange", rarity: "epic", jewelcrafting: false, stats: { intellect: 5, bonushealing: 12 } }, // +5 intellect & +6 spell power
@@ -68,21 +56,89 @@ export const GEMS = [
   /* ------------------------------- Spell Power & Spell Penetration ------------------------------ */
   { name: "Mysterious Fire Opal", color: "orange", rarity: "epic", jewelcrafting: false, stats: { spellpenetration: 5, bonushealing: 12 } }, // +5 spell penetration & +6 spell power
 
-  { name: "Potent Fire Opal", color: "orange", rarity: "epic", jewelcrafting: false, stats: { intellect: 5, crit: 4 } },
-  { name: "Reckless Fire Opal", color: "orange", rarity: "epic", jewelcrafting: false, stats: { intellect: 5, haste: 4 } },
+  /* -------------------------------------- Intellect & Crit -------------------------------------- */
+  { name: "Potent Fire Opal", color: "orange", rarity: "epic", jewelcrafting: false, stats: { intellect: 5, crit: 4 } }, // +5 intellect & +4 crit
 
-//   TODO: 
-//   Unstable Topaz
-//   Infused Fire Opal
-//   Durable Fire Opal
-//   Iridescent Fire Opal
-//   Potent Flame Spessarite
-//   Potent Noble Topaz
-//   Potent Ornate Topaz
-//   Potent Pyrestone
+  /* -------------------------------------- Intellect & Haste ------------------------------------- */
+  { name: "Reckless Fire Opal", color: "orange", rarity: "epic", jewelcrafting: false, stats: { intellect: 5, haste: 4 } }, // +5 intellect & +4 haste
 
-//   Green Gems
-//   Purple Gems
+  /* ----------------------------------- Intellect & Spell Power ---------------------------------- */
+  { name: "Unstable Topaz", color: "orange", rarity: "rare", jewelcrafting: false, stats: { intellect: 4, bonushealing: 10 } }, // 5 spell power & +4 intellect
+  { name: "Infused Fire Opal", color: "orange", rarity: "epic", jewelcrafting: false, stats: { intellect: 4, bonushealing: 12 } }, // 6 spell power & +4 intellect
 
+  /* ---------------------------------- Spell Power & Resilience ---------------------------------- */
+  { name: "Durable Fire Opal", color: "orange", rarity: "epic", jewelcrafting: false, stats: { resilience: 4, bonushealing: 12 } }, // 6 spell power & +4 resilience
 
+  /* ------------------------------------- Spell Power & Crit ------------------------------------- */
+  { name: "Potent Noble Topaz", color: "orange", rarity: "rare", jewelcrafting: false, stats: { crit: 4, bonushealing: 10 } }, // 5 spell power & +4 crit
+  { name: "Iridescent Fire Opal", color: "orange", rarity: "epic", jewelcrafting: false, stats: { crit: 4, bonushealing: 12 } }, // 6 spell power & +4 crit
+  { name: "Potent Fire Opal", color: "orange", rarity: "epic", jewelcrafting: false, stats: { crit: 4, bonushealing: 12 } }, // 6 spell power & +4 crit
+  { name: "Potent Ornate Topaz", color: "orange", rarity: "epic", jewelcrafting: false, stats: { crit: 5, bonushealing: 12 } }, // 6 spell power & +5 crit
+  { name: "Potent Pyrestone", color: "orange", rarity: "epic", jewelcrafting: false, stats: { crit: 5, bonushealing: 12 } }, // 6 spell power & +5 crit
+
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                           Green Gems                                           */
+  /* ---------------------------------------------------------------------------------------------- */
+
+  /* -------------------------------------- Defense & Mana/5 -------------------------------------- */
+  { name: "Effulgent Chrysoprase", color: "green", rarity: "epic", jewelcrafting: false, stats: { defense: 5, mp5: 2 } }, // 5 defense & +5 mana per 5
+
+  /* ------------------------------------- Melee Crit & Mana/5 ------------------------------------ */
+  { name: "Sundered Chrysoprase", color: "green", rarity: "epic", jewelcrafting: false, stats: { meleeCrit: 5, mp5: 2 } }, // 5 melee crit & +2 mp5
+
+  /* --------------------------------------- Haste & Stamina -------------------------------------- */
+  { name: "Forceful Talasite", color: "green", rarity: "rare", jewelcrafting: false, stats: { haste: 4, stamina: 6 } }, // 4 haste & +6 stamina
+  { name: "Forceful Seaspray Emerald", color: "green", rarity: "epic", jewelcrafting: false, stats: { haste: 5, stamina: 7 } }, // 5 haste & +7 stamina
+
+  /* ------------------------------------- Intellect & Mana/5 ------------------------------------- */
+  { name: "Dazzling Talasite", color: "green", rarity: "rare", jewelcrafting: false, stats: { intellect: 4, mp5: 2 } }, // +4 intellect & +2 mana per 5
+  { name: "Dazzling Chrysoprase", color: "green", rarity: "epic", jewelcrafting: false, stats: { intellect: 5, mp5: 2 } }, // +5 intellect & +2 mana per 5
+  { name: "Dazzling Seaspray Emerald", color: "green", rarity: "epic", jewelcrafting: false, stats: { intellect: 5, mp5: 3 } }, // +5 intellect & +3 mana per 5
+
+  /* ---------------------------------- Crit & Spell Penetration ---------------------------------- */
+  { name: "Radiant Talasite", color: "green", rarity: "rare", jewelcrafting: false, stats: { crit: 4, spellpenetration: 5 } }, // +4 crit & +5 spell penetration
+  { name: "Radiant Chrysoprase", color: "green", rarity: "epic", jewelcrafting: false, stats: { crit: 5, spellpenetration: 5 } }, // +5 crit & +5 spell penetration
+  { name: "Radiant Seaspray Emerald", color: "green", rarity: "epic", jewelcrafting: false, stats: { crit: 5, spellpenetration: 6 } }, // +5 crit & +6 spell penetration
+
+  /* --------------------------------------- Stamina & Crit --------------------------------------- */
+  { name: "Notched Deep Peridot", color: "green", rarity: "rare", jewelcrafting: false, stats: { stamina: 3, crit: 4 } }, // +3 stamina & +4 crit
+  { name: "Polished Chrysoprase", color: "green", rarity: "epic", jewelcrafting: false, stats: { stamina: 6, crit: 5 } }, // +6 stamina & +5 crit
+
+  /* ------------------------------------- Intellect & Stamina ------------------------------------ */
+  { name: "Unstable Peridot", color: "green", rarity: "rare", jewelcrafting: false, stats: { intellect: 4, stamina: 6 } }, // +4 intellect & +6 stamina
+  { name: "Timeless Chrysoprase", color: "green", rarity: "epic", jewelcrafting: false, stats: { intellect: 5, stamina: 6 } }, // +5 intellect & +6 stamina
+
+  /* ------------------------------------- Intellect & Spirit ------------------------------------- */
+  { name: "Seer's Chrysoprase", color: "green", rarity: "epic", jewelcrafting: false, stats: { intellect: 4, spirit: 5 } }, // +4 intellect & +5 spirit
+
+  /* ---------------------------------------- Hit & Mana/5 ---------------------------------------- */
+  { name: "Lambent Chrysoprase", color: "green", rarity: "epic", jewelcrafting: false, stats: { hit: 4, mp5: 2 } }, // +4 hit & +2 mp5
+  { name: "Rune Covered Chrysoprase", color: "green", rarity: "epic", jewelcrafting: false, stats: { crit: 5, mp5: 2 } }, // +5 crit & +2 mp5
+
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                           Purple Gems                                          */
+  /* ---------------------------------------------------------------------------------------------- */
+
+  /* ------------------------------------ Spell Power & Stamina ----------------------------------- */
+  { name: "Glowing Tanzanite", color: "purple", rarity: "epic", jewelcrafting: false, stats: { bonushealing: 12, stamina: 6 } }, // +6 spell power & +6 stamina
+  { name: "Infused Amethyst", color: "purple", rarity: "epic", jewelcrafting: false, stats: { bonushealing: 12, stamina: 6 } }, // +6 spell power & +6 stamina
+  { name: "Glowing Shadowsong Amethyst", color: "purple", rarity: "epic", jewelcrafting: false, stats: { bonushealing: 12, stamina: 7 } }, // +6 spell power & +7 stamina
+  { name: "Blessed Tanzanite", color: "purple", rarity: "epic", jewelcrafting: false, stats: { bonushealing: 12, stamina: 6 } }, // +6 spell power & +5 stamina
+  { name: "Soothing Amethyst", color: "purple", rarity: "epic", jewelcrafting: false, stats: { bonushealing: 12, stamina: 6 } }, // +6 spell power & +5 stamina
+
+  /* ------------------------------------ Spell Power & Mana/5 ------------------------------------ */
+  { name: "Royal Nightseye", color: "purple", rarity: "rare", jewelcrafting: false, stats: { bonushealing: 10, mp5: 2 } }, // +5 spell power & +2 mana per 5
+  { name: "Royal Tanzanite", color: "purple", rarity: "epic", jewelcrafting: false, stats: { bonushealing: 12, mp5: 2 } }, // +6 spell power & +2 mana per 5
+  { name: "Royal Shadowsong Amethyst", color: "purple", rarity: "epic", jewelcrafting: false, stats: { bonushealing: 12, mp5: 2 } }, // +6 spell power & +2 mana per 5
+
+  /* ------------------------------------ Spell Power & Spirit ------------------------------------ */
+  { name: "Unstable Sapphire", color: "purple", rarity: "rare", jewelcrafting: false, stats: { bonushealing: 10, spirit: 4 } }, // +5 spell power & +4 spirit
+  { name: "Purified Shadow Pearl", color: "purple", rarity: "rare", jewelcrafting: false, stats: { bonushealing: 10, spirit: 4 } }, // +5 spell power & +4 spirit
+  { name: "Fluorescent Tanzanite", color: "purple", rarity: "epic", jewelcrafting: false, stats: { bonushealing: 12, spirit: 4 } }, // +6 spell power & +4 spirit
+  { name: "Imperial Tanzanite", color: "purple", rarity: "epic", jewelcrafting: false, stats: { bonushealing: 10, spirit: 5 } }, // +5 spell power & +5 spirit
+  { name: "Purified Shadowsong Amethyst", color: "purple", rarity: "epic", jewelcrafting: false, stats: { bonushealing: 12, spirit: 5 } }, // +6 spell power & +5 spirit
+
+  /* ------------------------------------ Attack Power & Mana/5 ----------------------------------- */
+  { name: "Infused Nightseye", color: "purple", rarity: "rare", jewelcrafting: false, stats: { attackPower: 8, mp5: 2 } }, // +6 attack power & +2 mp5
+  { name: "Infused Shadowsong Amethyst", color: "purple", rarity: "epic", jewelcrafting: false, stats: { attackPower: 10, mp5: 2 } }, // +6 attack power & +2 mp5
 ];
