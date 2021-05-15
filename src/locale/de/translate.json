@@ -54,7 +54,7 @@
     "HPS": "HPS",
     "Casts": "CastsDE",
     "Healing": "HealingDE",
-    "Overhealing":" OverhealingDE",
+    "Overhealing": " OverhealingDE",
     "Account": "AccountDE",
     "Email": "Email",
     "Battletag": "Battletag",
@@ -69,7 +69,7 @@
       "Date": "Date"
     },
 
-    "PatreonTiers":{
+    "PatreonTiers": {
       "RollsRoyce": "Rolls RoyceDE",
       "Diamond": "DiamondDE",
       "Gold": "GoldDE"
@@ -95,7 +95,12 @@
       "DeathKnight": "Todesritter",
       "Death Knight": "Todesritter",
       "ShadowPriest": "Schattenpriester",
-      "Shadow Priest": "Schattenpriester"
+      "Shadow Priest": "Schattenpriester",
+      "Burning Crusade Class Names": "-----------------",
+      "Holy Paladin BC": "Heilig Paladin",
+      "Restoration Druid BC": "Wiederherstellung Druide",
+      "Holy Priest BC": "Heilig Priester",
+      "Restoration Shaman BC": "Wiederherstellung Schamane"
     },
 
     "CooldownPlanner": {
@@ -948,6 +953,5 @@
         "1596": "Kil'jaeden"
       }
     }
-
   }
 }

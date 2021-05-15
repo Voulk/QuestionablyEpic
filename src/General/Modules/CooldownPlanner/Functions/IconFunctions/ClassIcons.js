@@ -36,9 +36,10 @@ export default function classIcons(props, style) {
     props === "Holy Priest" ||
     props === "Priest-Holy" ||
     props === "Priest" ||
-    props === "ShadowPriest" ||
-    props === "Shadow Priest" ||
-    props === "Priest-Shadow"
+    // props === "ShadowPriest" ||
+    // props === "Shadow Priest" ||
+    // props === "Priest-Shadow"
+    props === "Holy Priest BC"
   ) {
     src = HolyPriestIcon;
     alt = "Holy Priest";
@@ -57,7 +58,7 @@ export default function classIcons(props, style) {
   }
 
   // Restoration Shaman
-  if (props === "RestorationShaman" || props === "Restoration Shaman" || props === "Shaman-Restoration" || props === "Shaman") {
+  if (props === "RestorationShaman" || props === "Restoration Shaman" || props === "Shaman-Restoration" || props === "Shaman" || props === "Restoration Shaman BC") {
     src = RestorationShamanIcon;
     alt = "Restoration Shaman";
   }

@@ -77,6 +77,7 @@
 
     "Classes": {
       "undefined": "",
+      "Retail Class Names": "-----------------",
       "HolyPaladin": "Holy Paladin",
       "Holy Paladin": "Holy Paladin",
       "DisciplinePriest": "Discipline Priest",
@@ -95,7 +96,12 @@
       "DeathKnight": "Death Knight",
       "Death Knight": "Death Knight",
       "ShadowPriest": "Shadow Priest",
-      "Shadow Priest": "Shadow Priest"
+      "Shadow Priest": "Shadow Priest",
+      "Burning Crusade Class Names": "-----------------",
+      "Holy Paladin BC": "Holy Paladin",
+      "Restoration Druid BC": "Restoration Druid",
+      "Holy Priest BC": "Holy Priest",
+      "Restoration Shaman BC": "Restoration Shaman"
     },
 
     "CooldownPlanner": {
