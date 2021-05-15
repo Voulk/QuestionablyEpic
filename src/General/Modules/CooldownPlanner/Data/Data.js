@@ -1488,6 +1488,169 @@ export const bossAbilities = [
     cooldownPlannerActive: true,
     icon: require("Images/Bosses/CastleNathria/SireDenathrius/Icons/spell_animarevendreth_buff.jpg").default,
   },
+
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                          The Tarragrue                                         */
+  /* ---------------------------------------------------------------------------------------------- */
+
+  {
+    bossID: 2423,
+    ability: "Grasp of Death",
+    guid: 347668,
+    cooldownPlannerActive: true,
+    icon: require("Images/Bosses/SanctumOfDomination/TheTarragrue/Icons/spell_animamaw_buff.jpg").default,
+  },
+  {
+    bossID: 2423,
+    ability: "Remnant: Soulforge Heat",
+    guid: 352392,
+    cooldownPlannerActive: true,
+    icon: require("Images/Bosses/SanctumOfDomination/TheTarragrue/Icons/ability_mage_fierypayback.jpg").default,
+  },
+  {
+    bossID: 2423,
+    ability: "Chains of Eternity",
+    guid: 354173,
+    cooldownPlannerActive: true,
+    icon: require("Images/Bosses/SanctumOfDomination/TheTarragrue/Icons/spell_frost_stun.jpg").default,
+  },
+  {
+    bossID: 2423,
+    ability: "Hungering Mist",
+    guid: 347737,
+    cooldownPlannerActive: true,
+    icon: require("Images/Bosses/SanctumOfDomination/TheTarragrue/Icons/ability_argus_soulburst.jpg").default,
+  },
+  {
+    bossID: 2423,
+    ability: "Overpower",
+    guid: 346985,
+    cooldownPlannerActive: true,
+    icon: require("Images/Bosses/SanctumOfDomination/TheTarragrue/Icons/ability_titankeeper_titanicsmash.jpg").default,
+  },
+  {
+    bossID: 2423,
+    ability: "Annihilating Smash",
+    guid: 347274,
+    cooldownPlannerActive: true,
+    icon: require("Images/Bosses/SanctumOfDomination/TheTarragrue/Icons/inv_misc_powder_tin.jpg").default,
+  },
+
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                      The Eye of the Jailer                                     */
+  /* ---------------------------------------------------------------------------------------------- */
+  {
+    bossID: 2433,
+    ability: "Ire",
+    guid: 355245,
+    cooldownPlannerActive: true,
+    icon: require("Images/Bosses/SanctumOfDomination/TheEyeOfTheJailer/Icons/spell_shadow_gathershadows.jpg").default,
+  },
+  {
+    bossID: 2433,
+    ability: "Scorn",
+    guid: 355240,
+    cooldownPlannerActive: true,
+    icon: require("Images/Bosses/SanctumOfDomination/TheEyeOfTheJailer/Icons/ability_xavius_darkruination.jpg").default,
+  },
+  {
+    bossID: 2433,
+    ability: "Titanic Death Gaze",
+    guid: 349028,
+    cooldownPlannerActive: true,
+    icon: require("Images/Bosses/SanctumOfDomination/TheEyeOfTheJailer/Icons/ability_argus_deathfog.jpg").default,
+  },
+  {
+    bossID: 2433,
+    ability: "Deathlink",
+    guid: 351155,
+    cooldownPlannerActive: true,
+    icon: require("Images/Bosses/SanctumOfDomination/TheEyeOfTheJailer/Icons/ability_felarakkoa_eyeofterrok.jpg").default,
+  },
+  {
+    bossID: 2433,
+    ability: "Spreading Misery",
+    guid: 351827,
+    cooldownPlannerActive: true,
+    icon: require("Images/Bosses/SanctumOfDomination/TheEyeOfTheJailer/Icons/spell_animamaw_missile.jpg").default,
+  },
+  {
+    bossID: 2433,
+    ability: "Eye Bolt",
+    guid: 348054,
+    cooldownPlannerActive: true,
+    icon: require("Images/Bosses/SanctumOfDomination/TheEyeOfTheJailer/Icons/spell_animamaw_missile.jpg").default,
+  },
+  {
+    bossID: 2433,
+    ability: "Hopeless Lethargy",
+    guid: 350606,
+    cooldownPlannerActive: true,
+    icon: require("Images/Bosses/SanctumOfDomination/TheEyeOfTheJailer/Icons/spell_nature_slow.jpg").default,
+  },
+  {
+    bossID: 2433,
+    ability: "Assailing Lance",
+    guid: 348074,
+    cooldownPlannerActive: true,
+    icon: require("Images/Bosses/SanctumOfDomination/TheEyeOfTheJailer/Icons/inv_sword_2h_maw_c_01.jpg").default,
+  },
+  {
+    bossID: 2433,
+    ability: "Soul Shatter",
+    guid: 350028,
+    cooldownPlannerActive: true,
+    icon: require("Images/Bosses/SanctumOfDomination/TheEyeOfTheJailer/Icons/sha_spell_shadow_shadesofdarkness.jpg").default,
+  },
+  {
+    bossID: 2433,
+    ability: "Piercing Lens",
+    guid: 350453,
+    cooldownPlannerActive: true,
+    icon: require("Images/Bosses/SanctumOfDomination/TheEyeOfTheJailer/Icons/ability_hunter_aspectoftheviper.jpg").default,
+  },
+  {
+    bossID: 2433,
+    ability: "Shattered Soul",
+    guid: 350034,
+    cooldownPlannerActive: true,
+    icon: require("Images/Bosses/SanctumOfDomination/TheEyeOfTheJailer/Icons/sha_spell_shadow_shadesofdarkness.jpg").default,
+  },
+  {
+    bossID: 2433,
+    ability: "Immediate Extermination",
+    guid: 353591,
+    cooldownPlannerActive: true,
+    icon: require("Images/Bosses/SanctumOfDomination/TheEyeOfTheJailer/Icons/ability_blackhand_marked4death.jpg").default,
+  },
+  {
+    bossID: 2433,
+    ability: "Dragging Chains",
+    guid: 349979,
+    cooldownPlannerActive: true,
+    icon: require("Images/Bosses/SanctumOfDomination/TheEyeOfTheJailer/Icons/inv_misc_steelweaponchain.jpg").default,
+  },
+  {
+    bossID: 2433,
+    ability: "Jailer's Misery",
+    guid: 350809,
+    cooldownPlannerActive: true,
+    icon: require("Images/Bosses/SanctumOfDomination/TheEyeOfTheJailer/Icons/spell_animamaw_groundstate.jpg").default,
+  },
+  {
+    bossID: 2433,
+    ability: "Desolation Beam",
+    guid: 350847,
+    cooldownPlannerActive: true,
+    icon: require("Images/Bosses/SanctumOfDomination/TheEyeOfTheJailer/Icons/achievement_boss_cthun.jpg").default,
+  },
+  {
+    bossID: 2433,
+    ability: "Slothful Corruption",
+    guid: 350713,
+    cooldownPlannerActive: true,
+    icon: require("Images/Bosses/SanctumOfDomination/TheEyeOfTheJailer/Icons/warlock_spelldrain.jpg").default,
+  },
 ];
 
 export const raidList = [
