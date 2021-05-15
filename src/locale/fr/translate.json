@@ -95,7 +95,12 @@
       "DeathKnight": "Death KnightFR",
       "Death Knight": "Death KnightFR",
       "ShadowPriest": "Shadow PriestFR",
-      "Shadow Priest": "Shadow PriestFR"
+      "Shadow Priest": "Shadow PriestFR",
+      "Burning Crusade Class Names": "-----------------",
+      "Holy Paladin BC": "Holy PaladinFR",
+      "Restoration Druid BC": "Restoration DruidFR",
+      "Holy Priest BC": "Holy PriestFR",
+      "Restoration Shaman BC": "Restoration ShamanFR"
     },
 
     "CooldownPlanner": {

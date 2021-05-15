@@ -95,7 +95,12 @@
       "DeathKnight": "Рыцарь смерти",
       "Death Knight": "Рыцарь смерти",
       "ShadowPriest": "Жрец Тьмы",
-      "Shadow Priest": "Жрец Тьмы"
+      "Shadow Priest": "Жрец Тьмы",
+      "Burning Crusade Class Names": "-----------------",
+      "Holy Paladin BC": "Паладин Света",
+      "Restoration Druid BC": "Друид Исцеления",
+      "Holy Priest BC": "Жрец Света",
+      "Restoration Shaman BC": "Шаман Исцеления"
     },
 
     "CooldownPlanner": {
@@ -494,7 +499,6 @@
       "CompetitiveAlternative": "Возможные альтернативы",
       "StatPanel": { "AvgStats": "Усреднённые характеристики (включая проки)" },
       "itemMissingError": "Ошибка: добавьте предмет"
-      
     },
 
     "Snackbars": {

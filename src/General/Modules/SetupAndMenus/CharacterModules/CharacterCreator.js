@@ -189,6 +189,7 @@ export default function AddNewChar(props) {
                 <InputLabel id="NewClassSelector">{t("Select Class")}</InputLabel>
                 <Select label={t("Select Class")} value={healClass} onChange={handleChangeSpec} MenuProps={menuStyle}>
                   {Object.getOwnPropertyNames(availableClasses)
+                    .filter((filter) => gameType === availableClasses[filter].gameType)
                     .map((key, i) => (
                       <MenuItem key={i} value={key} style={{ color: classColoursJS(key) }}>
                         {classIcons(key, {
