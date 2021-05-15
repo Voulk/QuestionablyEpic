@@ -1651,6 +1651,88 @@ export const bossAbilities = [
     cooldownPlannerActive: true,
     icon: require("Images/Bosses/SanctumOfDomination/TheEyeOfTheJailer/Icons/warlock_spelldrain.jpg").default,
   },
+
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                            The Nine                                            */
+  /* ---------------------------------------------------------------------------------------------- */
+
+  {
+    bossID: 2429,
+    ability: "Resentment",
+    guid: 351399,
+    cooldownPlannerActive: true,
+    icon: require("Images/Bosses/SanctumOfDomination/TheNine/Icons/spell_animamaw_buff.jpg").default,
+  },
+  {
+    bossID: 2429,
+    ability: "Repeating Slash",
+    guid: 350206,
+    cooldownPlannerActive: true,
+    icon: require("Images/Bosses/SanctumOfDomination/TheNine/Icons/ability_rogue_bladetwisting.jpg").default,
+  },
+  {
+    bossID: 2429,
+    ability: "Song of Dissolution",
+    guid: 350287,
+    cooldownPlannerActive: true,
+    icon: require("Images/Bosses/SanctumOfDomination/TheNine/Icons/spell_animamaw_debuff.jpg").default,
+  },
+  {
+    bossID: 2429,
+    ability: "Arthura's Crushing Gaze",
+    guid: 350040,
+    cooldownPlannerActive: true,
+    icon: require("Images/Bosses/SanctumOfDomination/TheNine/Icons/spell_ice_lament.jpg").default,
+  },
+  {
+    bossID: 2429,
+    ability: "Fragments of Destiny",
+    guid: 350542,
+    cooldownPlannerActive: true,
+    icon: require("Images/Bosses/SanctumOfDomination/TheNine/Icons/spell_frost_ice-shards.jpg").default,
+  },
+  {
+    bossID: 2429,
+    ability: "Unending Strike",
+    guid: 350202,
+    cooldownPlannerActive: true,
+    icon: require("Images/Bosses/SanctumOfDomination/TheNine/Icons/inv_weapon_shortblade_84.jpg").default,
+  },
+  {
+    bossID: 2429,
+    ability: "Link Essence",
+    guid: 350486,
+    cooldownPlannerActive: true,
+    icon: require("Images/Bosses/SanctumOfDomination/TheNine/Icons/ability_warlock_soullink.jpg").default,
+  },
+  {
+    bossID: 2429,
+    ability: "Soulful Blast",
+    guid: 350283,
+    cooldownPlannerActive: true,
+    icon: require("Images/Bosses/SanctumOfDomination/TheNine/Icons/spell_animamaw_missile.jpg").default,
+  },
+  {
+    bossID: 2429,
+    ability: "Pierce Soul",
+    guid: 350475,
+    cooldownPlannerActive: true,
+    icon: require("Images/Bosses/SanctumOfDomination/TheNine/Icons/ability_demonhunter_soulcleave2.jpg").default,
+  },
+  {
+    bossID: 2429,
+    ability: "Aradne's Falling Strike",
+    guid: 350098,
+    cooldownPlannerActive: true,
+    icon: require("Images/Bosses/SanctumOfDomination/TheNine/Icons/inv_icon_wingbroken05c.jpg").default,
+  },
+  {
+    bossID: 2429,
+    ability: "Daschla's Mighty Anvil",
+    guid: 350185,
+    cooldownPlannerActive: true,
+    icon: require("Images/Bosses/SanctumOfDomination/TheNine/Icons/ability_smash.jpg").default,
+  },
 ];
 
 export const raidList = [
