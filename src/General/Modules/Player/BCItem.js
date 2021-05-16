@@ -15,6 +15,7 @@ class BCItem {
     this.stats = getItemProp(id, "stats", "BurningCrusade");
     this.stats['bonus_stats'] = {};
     this.sockets = getItemProp(id, "sockets", "BurningCrusade");
+    this.socketedGems = {};
 
     //console.log("Setting level to " + level);
   }

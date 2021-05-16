@@ -480,41 +480,60 @@ function scoreGemColor(gemList, player) {
   return gemList;
 }
 
+function getBestGem(player, color) {
+  let colors = []
+  let gems = [...GEMS];
+
+  if (color === "red") colors = ["red", "orange", "purple"] 
+  else if (color === "blue") colors = ["blue", "purple", "green"] 
+  else if (color === "yellow") colors = ["yellow", "orange", "green"] 
+  else if (color === "all") colors = ["yellow", "blue", "red", "purple", "orange", "green"] 
+
+  let gemList = gems.filter((filter) => (colors.includes(filter.color) && filter.jewelcrafting === false))
+  gemList = scoreGemColor(gemList, player);
+  return gemList[0];
+
+}
+
 // Get highest value of each gem color. 
 // Compare value of socketing highest matching colors + socket bonus, to just socketing highest colors.
 export function socketItem(item, player) {
   const socketList = item.sockets;
-  let gemList = [...GEMS];
-
-  console.log("SOCKETING GEMS");
-
-  // Red sockets
-  let redGemList = gemList.filter((filter) => (filter.color === "red" || filter.color === "orange" || filter.color === "purple"))
-  redGemList = scoreGemColor(redGemList, player);
-
-  let yellowGemList = gemList.filter((filter) => (filter.color === "yellow" || filter.color === "orange" || filter.color === "green"))
-  yellowGemList = scoreGemColor(yellowGemList, player);
-
-  let blueGemList = gemList.filter((filter) => (filter.color === "blue" || filter.color === "purple" || filter.color === "green"))
-  blueGemList = scoreGemColor(blueGemList, player);
-
-  let bestGem = blueGemList.concat(redGemList).concat(yellowGemList);
-  bestGem = bestGem.sort(function (a, b) {
-    return b.score - a.score;
-  });
-
-  console.log("#1 Gem" + bestGem[0]);
-
-  for (const socket in socketList) {
-    console.log(socket);
-    
+  const bestGems = {
+    overall: getBestGem(player, "all"),
+    red: getBestGem(player, "red"),
+    blue: getBestGem(player, "blue"),
+    yellow: getBestGem(player, "yellow"),
   }
 
-  //console.log(redGemList);
-  //console.log(yellowGemList);
+  let socketBonus = 0
+  if (socketList.bonus) {
+    for (const [stat, value] of Object.entries(socketList.bonus)) {
+      //console.log("Stat: " + stat + ". Value: " + value);
+      socketBonus += value * player.getStatWeight("Raid", stat);
+    }
+  }
+
+  let colorMatch = {gems: [], score: socketBonus};
+  let socketBest = {gems: [], score: 0};
+  for (const socket in socketList) {
+    // Match colors
+    if (['red', 'blue', 'yellow'].includes(socket)) {
+      colorMatch['score'] += bestGems[socket].score;
+      colorMatch['gems'].push(bestGems[socket].name);
+
+      socketBest['score'] += bestGems['overall'].score;
+      socketBest['gems'].push(bestGems['overall'].name);
+    }
+
+  }
 
 
-  
+  if (colorMatch.score >= socketBest.score) item.socketedGems = colorMatch;
+  else item.socketedGems =  item.socketedGems = socketBest;
+
+  console.log(item.socketedGems);
+
 }
 
 // Return an item score.
@@ -554,6 +573,14 @@ export function scoreItem(item, player, contentType, gameType = "Retail") {
   if (item.socket) {
     score += 16 * player.getStatWeight(contentType, player.getHighestStatWeight(contentType));
   }
+
+  // BC specifics
+  if (item.sockets) {
+    socketItem(item, player);
+    score += item.socketedGems['score'];
+    console.log("Adding score: " + item.socketedGems['score'])
+  }
+
   return Math.round(100 * score) / 100;
 }
 function sumObjectsByKey(...objs) {

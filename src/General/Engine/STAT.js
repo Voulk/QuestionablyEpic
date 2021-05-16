@@ -175,4 +175,13 @@ export const translatedStat = {
   hit: { // Classic
     en: "Hit"
   },
+  defenserating: { // Classic
+    en: "Defense"
+  },
+  blockrating: { // Classic
+    en: "Block"
+  },
+  spelldamage: { // Classic
+    en: "Spell Damage"
+  },
 };
