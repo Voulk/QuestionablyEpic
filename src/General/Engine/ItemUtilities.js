@@ -211,9 +211,9 @@ export function getItemProp(id, prop, gameType = "Retail") {
 // Add some support for missing icons.
 export function getItemIcon(id, gameType = "Retail") {
   const item = getItem(id, gameType);
-  console.log("https://wow.zamimg.com/images/wow/icons/large/" + item.icon + " .jpg");
+  //console.log("https://wow.zamimg.com/images/wow/icons/large/" + item.icon + " .jpg");
   if (gameType === "BurningCrusade" && item !== "") return "https://wow.zamimg.com/images/wow/icons/large/" + item.icon + ".jpg";
-  if (item !== "" && "icon" in item) return process.env.PUBLIC_URL + "/Images/Icons/" + item.icon + ".jpg";
+  else if (item !== "" && "icon" in item) return process.env.PUBLIC_URL + "/Images/Icons/" + item.icon + ".jpg";
   else {
     reportError(this, "ItemUtilities", "Icon not found for ID", id);
     return process.env.PUBLIC_URL + "/Images/Icons/missing.jpg";
@@ -555,7 +555,7 @@ export function scoreItem(item, player, contentType, gameType = "Retail") {
     if (stat !== "bonus_stats") {
       let statSum = item.stats[stat] + (stat in item.stats["bonus_stats"] ? item.stats["bonus_stats"][stat] : 0);
       score += statSum * player.getStatWeight(contentType, stat);
-      console.log("Stat: " + stat + " adds " + statSum * player.getStatWeight(contentType, stat) + " to score.");
+      //console.log("Stat: " + stat + " adds " + statSum * player.getStatWeight(contentType, stat) + " to score.");
     }
   }
 

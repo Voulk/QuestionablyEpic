@@ -6,6 +6,8 @@ class BCPlayer extends Player {
         super(playerName, specName, charID, region, realm, race, statWeights, "BurningCrusade")
         this.gameType = "BurningCrusade"
         this.setupDefaults(specName);
+
+        if (statWeights !== "default" && statWeights.DefaultWeights === false) this.statWeights = statWeights;
     }
 
     setupDefaults = (spec) => {

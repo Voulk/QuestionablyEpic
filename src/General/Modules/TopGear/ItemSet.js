@@ -41,19 +41,36 @@ class ItemSet {
   //   }
   // }
 
+  getStartingStats(gameType) {
+    if (gameType === "Retail") {
+      return {
+        intellect: 450, // TODO: 450
+        haste: 0,
+        crit: 0,
+        mastery: 0,
+        versatility: 0,
+        leech: 0,
+        hps: 0,
+        dps: 0,
+      }
+    }
+    else {
+      return {
+        intellect: 0,
+        bonushealing: 0,
+        spirit: 0,
+        crit: 0,
+        stamina: 0,
+        mp5: 0,
+        haste: 0,
+      }
+    }
+  }
+
   // Compiles the stats from the individual item list.
-  compileStats() {
+  compileStats(gameType = "Retail") {
     //console.log("Compiling Stats for Item List of legnth: " + this.itemList.length);
-    let setStats = {
-      intellect: 450, // TODO: 450
-      haste: 0,
-      crit: 0,
-      mastery: 0,
-      versatility: 0,
-      leech: 0,
-      hps: 0,
-      dps: 0,
-    };
+    let setStats = this.getStartingStats(gameType)
     let setSockets = 0;
     for (var i = 0; i < this.itemList.length; i++) {
       let item = this.itemList[i];

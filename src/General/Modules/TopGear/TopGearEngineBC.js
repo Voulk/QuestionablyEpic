@@ -5,7 +5,7 @@ import React, { useState, useEffect } from "react";
 import { STATPERONEPERCENT, BASESTAT, STATDIMINISHINGRETURNS } from "../../Engine/STAT";
 import { CONSTRAINTS } from "../../Engine/CONSTRAINTS";
 import { convertPPMToUptime } from "../../../Retail/Engine/EffectFormulas/EffectUtilities";
-import BCPlayer from "../Player/Player";
+import BCPlayer from "../Player/BCPlayer";
 import CastModel from "../Player/CastModel";
 import { getEffectValue } from "../../../Retail/Engine/EffectFormulas/EffectEngine"
 
@@ -31,12 +31,15 @@ function setupPlayer(player, contentType, castModel) {
 
   //console.log(player);
   console.log(player);
-  let newPlayer = new BCPlayer(player.charName, player.spec, player.charID, player.region, player.realm, player.race, player.statWeights, "BurningCrusade");
+  let newPlayer = new BCPlayer(player.charName, player.spec, player.charID, player.region, player.realm, player.race, player.statWeights);
   //newPlayer = Object.assign(newPlayer, player);
-  //console.log("NEW PLAYER");
 
-  newPlayer.castModel[contentType] = new CastModel(newPlayer.getSpec(), contentType);
-  newPlayer.castModel[contentType] = Object.assign(newPlayer.castModel[contentType], castModel);
+
+  //newPlayer.castModel[contentType] = new CastModel(newPlayer.getSpec(), contentType);
+  //newPlayer.castModel[contentType] = Object.assign(newPlayer.castModel[contentType], castModel);
+
+  console.log("NEW PLAYER");
+  console.log(newPlayer);
 
   return newPlayer;
 
@@ -85,7 +88,7 @@ export function runTopGearBC(rawItemList, wepCombos, player, contentType, baseHP
   // ----
 
   var t1 = performance.now();
-  // console.log("Call to doSomething took " + (t1 - t0) + " milliseconds with count ")
+  console.log("Call to doSomething took " + (t1 - t0) + " milliseconds with count ")
 
   // Build Differentials
   let differentials = [];
@@ -105,6 +108,7 @@ export function runTopGearBC(rawItemList, wepCombos, player, contentType, baseHP
   } else {
     let result = new TopGearResult(itemSets[0], differentials);
     result.itemsCompared = count;
+    console.log(result);
     return result;
   }
 }
@@ -113,23 +117,22 @@ export function runTopGearBC(rawItemList, wepCombos, player, contentType, baseHP
 // THIS IS BURNING CRUSADE CODE AND IS NOT COMPATIBLE WITH RETAIL.
 function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
     // Get Base Stats
-    let builtSet = itemSet.compileStats();
+    let builtSet = itemSet.compileStats("BurningCrusade");
     let setStats = builtSet.setStats;
     let hardScore = 0;
   
-    //console.log(itemSet);
+    console.log(setStats);
   
     let enchants = {};
   
     let bonus_stats = {
-      intellect: 0,
-      haste: 0,
-      crit: 0,
-      versatility: 0,
-      mastery: 0,//STATPERONEPERCENT.MASTERYA[player.spec] * BASESTAT.MASTERY[player.spec] * 100,
-      leech: 0,
-      hps: 0,
-      dps: 0,
+        intellect: 0,
+        bonushealing: 0,
+        spirit: 0,
+        crit: 0,
+        stamina: 0,
+        mp5: 0,
+        haste: 0,
     };
   
     /*
@@ -180,14 +183,17 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
 
     //console.log("LEECH: " + adjusted_weights.leech);
     // Calculate a hard score using the rebalanced stat weights.
-  
+    console.log("Set Stats");
+    console.log(setStats);
+    console.log(player.statWeights);
     for (var stat in setStats) {
       if (stat === "hps") {
-        hardScore += (setStats[stat] / baseHPS) * player.activeStats.intellect;
+        //hardScore += (setStats[stat] / baseHPS) * player.activeStats.intellect;
       } else if (stat === "dps") {
         continue;
       } else {
         hardScore += setStats[stat] * player.statWeights["Raid"][stat];
+        console.log("Adding " + (setStats[stat] * player.statWeights["Raid"][stat]) + " to hardscore for stat " + stat + " with stat weight: " + player.statWeights["Raid"][stat]);
       }
     }
   
@@ -358,7 +364,7 @@ function createSets(itemList, rawWepCombos) {
                                       wepCombos[weapon],
                                     ];
                                     let sumSoft = sumScore(softScore);
-                                    itemSets.push(new ItemSet(setCount, includedItems, sumSoft));
+                                    itemSets.push(new ItemSet(setCount, includedItems, sumSoft, "BurningCrusade"));
                                     setCount++;
                                   }
                                 }

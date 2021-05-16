@@ -4,6 +4,7 @@ import { Grid, Paper, Typography, Divider } from "@material-ui/core";
 import { useTranslation } from "react-i18next";
 import { getItemIcon } from "../../Engine/ItemUtilities";
 import SimCraftInput from "../SetupAndMenus/SimCraftDialog";
+import { useSelector } from "react-redux";
 
 const useStyles = makeStyles(() => ({
   slider: {
@@ -48,6 +49,7 @@ export default function UpgradeFinderSimC(props) {
   const currentLanguage = i18n.currentLanguage;
   const simcStatus = getSimCStatus(props.player);
   const simcString = "UpgradeFinderFront.SimCBody1" + simcStatus;
+  const gameType = useSelector((state) => state.gameType);
 
   const check = (simcStatus) => {
     let style = "";
@@ -112,7 +114,7 @@ export default function UpgradeFinderSimC(props) {
                             border: "1px solid",
                             borderColor: itemQuality(key.level, key.effect),
                           }}
-                          src={getItemIcon(key.id)}
+                          src={getItemIcon(key.id, gameType)}
                           alt=""
                         />
                       </a>
