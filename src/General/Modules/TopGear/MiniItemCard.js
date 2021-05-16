@@ -1,11 +1,12 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Card, CardContent, Typography, Grid, Divider } from "@material-ui/core";
-import { getTranslatedItemName, buildStatString, getItemIcon } from "../../Engine/ItemUtilities";
+import { getTranslatedItemName, buildStatString, getItemIcon, getItemProp } from "../../Engine/ItemUtilities";
 import "./MiniItemCard.css";
 // import DeleteIcon from "@material-ui/icons/Delete";
 import socketImage from "../../../Images/Resources/EmptySocket.png";
 import { useTranslation } from "react-i18next";
+import { useSelector } from "react-redux";
 import CardActionArea from "@material-ui/core/CardActionArea";
 
 const useStyles = makeStyles({
@@ -54,12 +55,25 @@ export default function ItemCard(props) {
   const statString = buildStatString(item.stats, item.effect, currentLanguage);
   const itemLevel = item.level;
   const isLegendary = "effect" in item && item.effect.type === "spec legendary";
+  const gameType = useSelector((state) => state.gameType);
 
-  const itemQuality = (itemLevel) => {
-    if (isLegendary) return "#ff8000";
-    else if (itemLevel >= 183) return "#a73fee";
-    else if (itemLevel >= 120) return "#328CE3";
-    else return "#1eff00";
+  // TODO: Items should track their own quality, and this function shouldn't be in ItemCard.
+  const itemQuality = (itemLevel, itemID) => {
+    if (gameType !== "Retail") {
+      const quality = getItemProp(itemID, "quality", gameType)
+      console.log("Quality: " + quality + ". Item ID: " + itemID);
+      if (quality === 5) return "#ff8000";
+      else if (quality === 4) return "#a73fee";
+      else if (quality === 3) return "#328CE3";
+      else if (quality === 2) return "#1eff00";
+      else return "#ffffff";
+    }
+    else {
+      if (isLegendary) return "#ff8000";
+      else if (itemLevel >= 183) return "#a73fee";
+      else if (itemLevel >= 120) return "#328CE3";
+      else return "#1eff00";
+    }
   };
 
   const activateItemCard = () => {
@@ -71,10 +85,10 @@ export default function ItemCard(props) {
   // const deleteActive = item.offhandID === 0;
 
   if (item.offhandID > 0) {
-    itemName = getTranslatedItemName(item.id, currentLanguage) + " & " + getTranslatedItemName(item.offhandID, currentLanguage);
+    itemName = getTranslatedItemName(item.id, currentLanguage, "", gameType) + " & " + getTranslatedItemName(item.offhandID, currentLanguage, "", gameType);
   } else {
     if (isLegendary) itemName = item.effect.name;
-    else itemName = getTranslatedItemName(item.id, currentLanguage);
+    else itemName = getTranslatedItemName(item.id, currentLanguage, "", gameType);
   }
 
   const socket = props.item.socket ? (
@@ -103,12 +117,12 @@ export default function ItemCard(props) {
                       alt="img"
                       width={44}
                       height={44}
-                      src={getItemIcon(item.id)}
+                      src={getItemIcon(item.id, gameType)}
                       style={{
                         borderRadius: 4,
                         borderWidth: "1px",
                         borderStyle: "solid",
-                        borderColor: itemQuality(itemLevel),
+                        borderColor: itemQuality(itemLevel, item.id),
                       }}
                     />
                   </a>
@@ -121,7 +135,7 @@ export default function ItemCard(props) {
               <Grid item container display="inline" direction="column" justify="space-around" xs="auto">
                 <Grid container item wrap="nowrap" justify="space-between" alignItems="center" style={{ width: "100%" }}>
                   <Grid item xs={11} display="inline">
-                    <Typography variant={itemName.length > 30 ? "subtitle2" : "subtitle1"} wrap="nowrap" display="inline" align="left" style={{ color: itemQuality(itemLevel) }}>
+                    <Typography variant={itemName.length > 30 ? "subtitle2" : "subtitle1"} wrap="nowrap" display="inline" align="left" style={{ color: itemQuality(itemLevel, item.id) }}>
                       {itemName}
                     </Typography>
                   </Grid>
