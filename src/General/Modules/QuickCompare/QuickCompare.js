@@ -7,10 +7,11 @@ import { Autocomplete } from "@material-ui/lab";
 import MuiAlert from "@material-ui/lab/Alert";
 import "../SetupAndMenus/QEMainMenu.css";
 import Item from "../Player/Item";
+import BCItem from "../Player/BCItem";
 import "./QuickCompare.css";
 //import { itemDB } from "../../Databases/ItemDB";
 import { itemDB } from "../../../Databases/ItemDB";
-import { getValidArmorTypes, getValidWeaponTypes, getItemProp, scoreItem, buildWepCombos } from "../../Engine/ItemUtilities";
+import { getItemDB, getValidArmorTypes, getValidWeaponTypes, getItemProp, scoreItem, buildWepCombos } from "../../Engine/ItemUtilities";
 import ItemCard from "./ItemCard";
 import HelpText from "../SetupAndMenus/HelpText";
 import { CONSTRAINTS } from "../../Engine/CONSTRAINTS";
@@ -129,6 +130,7 @@ export default function QuickCompare(props) {
   const idPop = openPop ? "simple-popover" : undefined;
   const slots = getSlots();
   const helpText = t("QuickCompare.HelpText");
+  const gameType = useSelector((state) => state.gameType);
 
   /* ------------------------ End Simc Module Functions ----------------------- */
 
@@ -159,9 +161,10 @@ export default function QuickCompare(props) {
     const acceptableArmorTypes = getValidArmorTypes(spec);
     const acceptableWeaponTypes = getValidWeaponTypes(spec, slotName);
     let newItemList = [];
+    const db = getItemDB(gameType);
+    console.log(db);
 
-    itemDB
-      .filter(
+    db.filter(
         (key) =>
           (slotName === key.slot && key.slot === "Back") ||
           (slotName === key.slot && key.itemClass === 4 && acceptableArmorTypes.includes(key.itemSubClass)) ||
@@ -181,7 +184,15 @@ export default function QuickCompare(props) {
       return null;
     }
     let player = props.player;
-    let item = new Item(itemID, itemName, getItemProp(itemID, "slot"), itemSocket, itemTertiary, 0, itemLevel, "");
+    let item = "";
+    
+    if (gameType === "Retail") {
+      item = new Item(itemID, itemName, getItemProp(itemID, "slot", gameType), itemSocket, itemTertiary, 0, itemLevel, "");
+    }
+    else {
+      item = new BCItem(itemID, itemName, getItemProp(itemID, "slot", gameType), "");
+    }
+    
     item.softScore = scoreItem(item, player, contentType);
 
     player.addActiveItem(item);
@@ -200,9 +211,11 @@ export default function QuickCompare(props) {
     if (val === null) {
       setItemID("");
       setItemName("");
+
     } else {
       setItemID(val.value);
       setItemName(val.name);
+      if (gameType === "BurningCrusade") setItemLevel(getItemProp(val.value, "itemLevel", gameType))
     }
   };
 
@@ -350,7 +363,7 @@ export default function QuickCompare(props) {
                     onChange={(e) => itemLevelChanged(e.target.value)}
                     value={itemLevel}
                     label={t("QuickCompare.ItemLevel")}
-                    disabled={itemID === "" ? true : false}
+                    disabled={itemID === "" || gameType !== "Retail" ? true : false}
                     onInput={(e) => {
                       e.target.value = Math.max(0, parseInt(e.target.value)).toString().slice(0, 3);
                     }}
@@ -364,7 +377,8 @@ export default function QuickCompare(props) {
                   />
                 </FormControl>
               </Grid>
-
+              
+              {gameType === "Retail" ? 
               <Grid item>
                 <FormControl className={classes.formControl} variant="outlined" size="small" disabled={itemLevel === "" ? true : false}>
                   <InputLabel id="itemsocket">{t("QuickCompare.Socket")}</InputLabel>
@@ -391,12 +405,13 @@ export default function QuickCompare(props) {
                     ]}
                   </Select>
                 </FormControl>
-              </Grid>
+              </Grid> : ""}
 
               {/* -------------------------------------------------------------------------- */
               /*                              Tertiary Dropdown                             */
               /* -------------------------------------------------------------------------- */}
 
+              {gameType === "Retail" ? 
               <Grid item>
                 <FormControl
                   className={classes.formControl}
@@ -429,7 +444,7 @@ export default function QuickCompare(props) {
                     ]}
                   </Select>
                 </FormControl>
-              </Grid>
+              </Grid> : "" }
 
               {/* -------------------------------------------------------------------------- */
               /*                                 Add Button                                 */

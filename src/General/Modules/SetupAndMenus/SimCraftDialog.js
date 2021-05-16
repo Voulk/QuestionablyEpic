@@ -2,6 +2,7 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import { Button, TextField, Dialog, DialogActions, DialogContent, DialogTitle, Tooltip } from "@material-ui/core";
 import { runSimC } from "../../../Retail/Engine/SimCImport/SimCImportEngine";
+import { runBCSimC } from "../../../BurningCrusade/Engine/SimCImport/SimCImportEngineBC";
 // import { createEmitAndSemanticDiagnosticsBuilderProgram } from "typescript";
 import { useSelector } from "react-redux";
 
@@ -13,6 +14,7 @@ export default function SimCraftInput(props) {
   const contentType = useSelector((state) => state.contentType);
   const characterCount = props.allChars.getAllChar().length || 0;
   const buttonVariant = props.variant;
+  const gameType = useSelector((state) => state.gameType);
   const handleClickOpen = () => {
     setOpen(true);
   };
@@ -22,7 +24,9 @@ export default function SimCraftInput(props) {
   };
 
   const handleSubmit = () => {
-    runSimC(simC, props.player, contentType, setErrorMessage, props.simcSnack, handleClose, setSimC);
+    if (gameType === "Retail") runSimC(simC, props.player, contentType, setErrorMessage, props.simcSnack, handleClose, setSimC);
+    else runBCSimC(simC, props.player, contentType, setErrorMessage, props.simcSnack, handleClose, setSimC);
+    
   };
 
   return (
