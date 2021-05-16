@@ -400,12 +400,13 @@ export function buildStatString(stats, effect, lang = "en") {
   
   for (var ind in statsList) {
     let statKey = statsList[ind]["key"];
+    const statName = (statKey in translatedStat) ? translatedStat[statKey][lang] : ""
     
     statString +=
       statsList[ind]["val"] > 0
         ? statsList[ind]["val"] +
           " " +
-          translatedStat[statKey][lang] +
+          statName +
           //correctCasing(statsList[ind]["key"]) +
           " / " //t("stats." + statsList[ind]["key"])
         : "";
@@ -414,6 +415,7 @@ export function buildStatString(stats, effect, lang = "en") {
   if (effect !== "") statString += "Effect" + " / "; // t("itemTags.effect")
 
   return statString.slice(0, -3); // We slice here to remove excess slashes and white space from the end.
+
 
 }
 
@@ -578,7 +580,7 @@ export function scoreItem(item, player, contentType, gameType = "Retail") {
   if (item.sockets) {
     socketItem(item, player);
     score += item.socketedGems['score'];
-    console.log("Adding score: " + item.socketedGems['score'])
+    //console.log("Adding score: " + item.socketedGems['score'])
   }
 
   return Math.round(100 * score) / 100;
