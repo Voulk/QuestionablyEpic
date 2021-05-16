@@ -51,6 +51,7 @@ export default function TopGear(props) {
   // const currentLanguage = i18n.language;
   const contentType = useSelector((state) => state.contentType);
   const classes = useStyles();
+  const gameType = useSelector((state) => state.gameType);
 
   /* ---------------------------------------- Popover Props --------------------------------------- */
   const [anchorEl, setAnchorEl] = useState(null);
@@ -124,16 +125,30 @@ export default function TopGear(props) {
       const currentLanguage = i18n.language;
       let itemList = props.player.getSelectedItems();
       let wepCombos = buildWepCombos(props.player, true);
-      const worker = require("workerize-loader!./TopGearEngine"); // eslint-disable-line import/no-webpack-loader-syntax
-      let instance = new worker();
       let baseHPS = props.player.getHPS(contentType);
       let strippedPlayer = JSON.parse(JSON.stringify(props.player));
       let strippedCastModel = JSON.parse(JSON.stringify(props.player.castModel[contentType]));
-      instance.runTopGear(itemList, wepCombos, strippedPlayer, contentType, baseHPS, currentLanguage, userSettings, strippedCastModel).then((result) => {
-        apiSendTopGearSet(props.player, contentType, result.itemSet.hardScore, result.itemsCompared);
-        props.setTopResult(result);
-        history.push("/report/");
+
+      if (gameType === "Retail") {
+        const worker = require("workerize-loader!./TopGearEngine"); // eslint-disable-line import/no-webpack-loader-syntax
+        let instance = new worker();
+        instance.runTopGear(itemList, wepCombos, strippedPlayer, contentType, baseHPS, currentLanguage, userSettings, strippedCastModel).then((result) => {
+          apiSendTopGearSet(props.player, contentType, result.itemSet.hardScore, result.itemsCompared);
+          props.setTopResult(result);
+          history.push("/report/");
+        });
+      }
+      else {
+        const worker = require("workerize-loader!./TopGearEngineBC"); // eslint-disable-line import/no-webpack-loader-syntax
+        let instance = new worker();
+        instance.runTopGearBC(itemList, wepCombos, strippedPlayer, contentType, baseHPS, currentLanguage, userSettings, strippedCastModel).then((result) => {
+          //apiSendTopGearSet(props.player, contentType, result.itemSet.hardScore, result.itemsCompared);
+          //props.setTopResult(result);
+          //history.push("/report/");
       });
+    }
+
+
     } else {
       /* ---------------------------------------- Return error. --------------------------------------- */
     }
