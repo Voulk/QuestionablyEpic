@@ -401,6 +401,7 @@ export function buildStatString(stats, effect, lang = "en") {
   for (var ind in statsList) {
     let statKey = statsList[ind]["key"];
     const statName = (statKey in translatedStat) ? translatedStat[statKey][lang] : ""
+    console.log("Adding stat: " + statName);
     
     statString +=
       statsList[ind]["val"] > 0
@@ -414,7 +415,9 @@ export function buildStatString(stats, effect, lang = "en") {
 
   if (effect !== "") statString += "Effect" + " / "; // t("itemTags.effect")
 
+
   return statString.slice(0, -3); // We slice here to remove excess slashes and white space from the end.
+
 
 
 }

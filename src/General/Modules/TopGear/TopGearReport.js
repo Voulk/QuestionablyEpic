@@ -8,11 +8,13 @@ import { Button, Paper, Typography, Divider, Grid } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import { classColoursJS } from "../CooldownPlanner/Functions/ClassColourFunctions";
 import CompetitiveAlternatives from "./CompetitiveAlternatives";
+import { useSelector } from "react-redux";
 
 function TopGearReport(props) {
   const [backgroundImage, setBackgroundImage] = useState("");
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
+  const gameType = useSelector((state) => state.gameType);
 
   /* ----------------------------- On Component load get player image ----------------------------- */
   useEffect(() => {
@@ -27,6 +29,8 @@ function TopGearReport(props) {
   const classIcon = () => {
     switch (props.player.spec) {
       case "Holy Paladin":
+        return require("Images/Classes/Paladin/icon-paladin.png").default;
+      case "Holy Paladin BC":
         return require("Images/Classes/Paladin/icon-paladin.png").default;
       case "Restoration Shaman":
         return require("Images/Classes/Shaman/icon-shaman.png").default;
@@ -146,7 +150,7 @@ function TopGearReport(props) {
                     <Grid container spacing={1} direction="row" justify="space-between">
                       <Grid item xs={4} style={{ paddingBottom: 8 }}>
                         <Grid container justify="flex-start">
-                          <TopSetStatsPanel statList={statList} spec={props.player.spec} currentLanguage={currentLanguage} />
+                          <TopSetStatsPanel statList={statList} spec={props.player.spec} currentLanguage={currentLanguage} gameType={gameType} />
                         </Grid>
                       </Grid>
                       <Grid item xs={3} style={{ paddingBottom: 8, alignSelf: "flex-end" }}>

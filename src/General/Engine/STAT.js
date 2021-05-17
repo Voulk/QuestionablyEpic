@@ -184,4 +184,7 @@ export const translatedStat = {
   spelldamage: { // Classic
     en: "Spell Damage"
   },
+  spellcrit: { // Classic
+    en: "Crit"
+  },
 };

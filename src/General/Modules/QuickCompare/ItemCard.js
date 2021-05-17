@@ -107,7 +107,7 @@ export default function ItemCard(props) {
     </div>
   ) : null;
 
-  const tertiary = props.item.tertiary !== "" ? <div style={{ display: "inline" }}> / {props.item.tertiary} </div> : null;
+  const tertiary = ('tertiary' in props.item && props.item.tertiary !== "") ? <div style={{ display: "inline" }}> / {props.item.tertiary} </div> : null;
 
   console.log(item);
 

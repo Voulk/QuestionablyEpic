@@ -8,6 +8,7 @@ import { convertPPMToUptime } from "../../../Retail/Engine/EffectFormulas/Effect
 import BCPlayer from "../Player/BCPlayer";
 import CastModel from "../Player/CastModel";
 import { getEffectValue } from "../../../Retail/Engine/EffectFormulas/EffectEngine"
+import { compileStats, buildDifferential, pruneItems, sumScore, deepCopyFunction } from "./TopGearEngineShared"
 
 // Most of our sets will fall into a bucket where totalling the individual stats is enough to tell us they aren't viable. By slicing these out in a preliminary phase,
 // we can run our full algorithm on far fewer items. The net benefit to the player is being able to include more items, with a quicker return.
@@ -32,13 +33,9 @@ function setupPlayer(player, contentType, castModel) {
   let newPlayer = new BCPlayer(player.charName, player.spec, player.charID, player.region, player.realm, player.race, player.statWeights);
   //newPlayer = Object.assign(newPlayer, player);
 
-
   //newPlayer.castModel[contentType] = new CastModel(newPlayer.getSpec(), contentType);
   //newPlayer.castModel[contentType] = Object.assign(newPlayer.castModel[contentType], castModel);
-
-
   return newPlayer;
-
 }
 
 export function runTopGearBC(rawItemList, wepCombos, player, contentType, baseHPS, currentLanguage, userSettings, castModel) {
@@ -179,9 +176,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
 
     //console.log("LEECH: " + adjusted_weights.leech);
     // Calculate a hard score using the rebalanced stat weights.
-    console.log("Set Stats");
-    console.log(setStats);
-    console.log(player.statWeights);
+
     for (var stat in setStats) {
       if (stat === "hps") {
         //hardScore += (setStats[stat] / baseHPS) * player.activeStats.intellect;
@@ -189,7 +184,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
         continue;
       } else {
         hardScore += setStats[stat] * player.statWeights["Raid"][stat];
-        console.log("Adding " + (setStats[stat] * player.statWeights["Raid"][stat]) + " to hardscore for stat " + stat + " with stat weight: " + player.statWeights["Raid"][stat]);
+        //console.log("Adding " + (setStats[stat] * player.statWeights["Raid"][stat]) + " to hardscore for stat " + stat + " with stat weight: " + player.statWeights["Raid"][stat]);
       }
     }
   
@@ -232,16 +227,6 @@ function addBaseStats(stats, spec) {
   
 }
 
-// Compiles stats & bonus stats into one array to which we can then apply DR etc. 
-function compileStats(stats, bonus_stats) {
-
-    for (var stat in stats) {
-      stats[stat] += stat in bonus_stats ? bonus_stats[stat] : 0;
-    }
-  
-    return stats
-    
-  }
 
 function createSets(itemList, rawWepCombos) {
   const wepCombos = deepCopyFunction(rawWepCombos);
@@ -386,69 +371,3 @@ function createSets(itemList, rawWepCombos) {
   return itemSets;
 }
 
-function buildDifferential(itemSet, primeSet, player, contentType) {
-  let doubleSlot = {};
-  const primeList = primeSet.itemList;
-  const diffList = itemSet.itemList;
-  let differentials = {
-    items: [],
-    scoreDifference: (Math.round(primeSet.hardScore - itemSet.hardScore) / primeSet.hardScore) * 100,
-    rawDifference: Math.round((itemSet.hardScore - primeSet.hardScore) / player.getInt(contentType) * player.getHPS(contentType)),
-  };
-  //console.log("Prime List: " + JSON.stringify(primeSet));
-  //console.log("Diff List: " + JSON.stringify(diffList))
-
-  for (var x = 0; x < primeList.length; x++) {
-    if (primeList[x].uniqueHash !== diffList[x].uniqueHash) {    
-      differentials.items.push(diffList[x]);
-      doubleSlot[diffList[x].slot] = (doubleSlot[diffList[x].slot] || 0) + 1;
-
-      if ((x === 13 || x === 11) && doubleSlot[diffList[x].slot] <= 1) {
-        differentials.items.push(diffList[x-1]);
-      }
-      
-    }
-  }
-  //console.log("D:" + JSON.stringify(differentials));
-  return differentials;
-}
-
-function pruneItems(itemSets) {
-  let temp = itemSets.filter(function (set) {
-    return set.verifySet();
-  });
-
-  return temp.slice(0, softSlice);
-}
-
-function sumScore(obj) {
-  var sum = 0;
-  for (var el in obj) {
-    if (obj.hasOwnProperty(el)) {
-      sum += parseFloat(obj[el]);
-    }
-  }
-  return sum;
-}
-
-
-
-const deepCopyFunction = (inObject) => {
-    let outObject, value, key;
-  
-    if (typeof inObject !== "object" || inObject === null) {
-      return inObject; // Return the value if inObject is not an object
-    }
-  
-    // Create an array or object to hold the values
-    outObject = Array.isArray(inObject) ? [] : {};
-  
-    for (key in inObject) {
-      value = inObject[key];
-  
-      // Recursively (deep) copy for nested objects, including arrays
-      outObject[key] = deepCopyFunction(value);
-    }
-  
-    return outObject;
-  };

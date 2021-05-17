@@ -22,6 +22,7 @@ class BCPlayer extends Player {
                 bonushealing: 1,
                 spirit: 0.1,
                 crit: 1.21,
+                spellcrit: 1.21,
                 stamina: 0.01,
                 mp5: 2.3,
                 haste: 0.7,

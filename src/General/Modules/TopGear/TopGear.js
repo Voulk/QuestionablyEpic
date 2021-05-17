@@ -143,8 +143,8 @@ export default function TopGear(props) {
         let instance = new worker();
         instance.runTopGearBC(itemList, wepCombos, strippedPlayer, contentType, baseHPS, currentLanguage, userSettings, strippedCastModel).then((result) => {
           //apiSendTopGearSet(props.player, contentType, result.itemSet.hardScore, result.itemsCompared);
-          //props.setTopResult(result);
-          //history.push("/report/");
+          props.setTopResult(result);
+          history.push("/report/");
       });
     }
 
