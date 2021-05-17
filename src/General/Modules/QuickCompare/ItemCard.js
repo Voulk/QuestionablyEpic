@@ -59,7 +59,6 @@ export default function ItemCard(props) {
   const itemQuality = (itemLevel, itemID) => {
     if (gameType !== "Retail") {
       const quality = getItemProp(itemID, "quality", gameType)
-      console.log("Quality: " + quality + ". Item ID: " + itemID);
       if (quality === 5) return "#ff8000";
       else if (quality === 4) return "#a73fee";
       else if (quality === 3) return "#328CE3";
@@ -109,7 +108,6 @@ export default function ItemCard(props) {
 
   const tertiary = ('tertiary' in props.item && props.item.tertiary !== "") ? <div style={{ display: "inline" }}> / {props.item.tertiary} </div> : null;
 
-  console.log(item);
 
   // If item.offHandID > 0 then return this card which handles the double names + stats
   if (item.offhandID > 0) {

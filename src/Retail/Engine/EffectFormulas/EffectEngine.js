@@ -6,7 +6,8 @@ import { getMonkLegendary } from "./Monk/MonkLegendaryFormulas";
 import { getShamanLegendary } from "./Shaman/ShamanLegendaryFormulas";
 import { getPaladinLegendary } from "./Paladin/PaladinLegendaryFormulas";
 import { getGenericLegendary } from "./Generic/GenericLegendaryFormulas";
-import { getTrinketEffect, testTrinkets } from "./Generic/TrinketEffectFormulas";
+import { getTrinketEffect} from "./Generic/TrinketEffectFormulas";
+import { getTrinketEffectBC} from "BurningCrusade/Engine/EffectFormulas/Generic/TrinketEffectFormulasBC"
 
 import { getPriestConduit } from "./Priest/PriestConduitFormulas";
 import { getPaladinConduit } from "./Paladin/PaladinConduitFormulas";
@@ -26,7 +27,7 @@ export function getEffectValue(effect, player, contentType, itemLevel = 0, userS
   const effectName = effect.name;
   const effectType = effect.type;
 
-  //console.log("ITEM EFFECT" + effectName + effectType + "player spec" + player.spec);
+  console.log("ITEM EFFECT" + effectName + effectType + "player spec" + player.spec + " game type: " + gameType);
 
 
   // ----- Retail Effect -----
@@ -93,11 +94,12 @@ export function getEffectValue(effect, player, contentType, itemLevel = 0, userS
       }
     } 
     else if (effectType === "trinket") {
-      //bonus_stats = getTrinketEffect(effectName, player);
+      bonus_stats = getTrinketEffectBC(effectName, player, userSettings);
+      
     }
   }
 
-
+  console.log(bonus_stats);
   return bonus_stats;
 }
 

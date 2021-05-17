@@ -152,7 +152,7 @@ export const translatedStat = {
     ru: "Bonus DPS",
   },
   bonushealing: { // Classic
-    en: "Bonus Healing"
+    en: "Healing"
   },
   mp5: { // Classic
     en: "MP5"
