@@ -20,8 +20,12 @@ export function getTrinketEffectBC(effectName, player, contentType, itemLevel, u
       /* ---------------------------------------------------------------------------------------------- */
       effectName === "Essence of the Martyr"
     ) {
-        console.log("Essence of the Martyr");
-        bonus_stats.intellect = 3213;
+        const effect = {
+            duration: 20,
+            cooldown: 120,
+            value: 297,
+        }
+        bonus_stats.bonushealing = Math.round(effect.duration * effect.value / effect.cooldown);
     }
 
 
