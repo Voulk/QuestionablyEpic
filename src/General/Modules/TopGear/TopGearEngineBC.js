@@ -29,8 +29,6 @@ export function expensive(time) {
 // Unfortunately we aren't able to pass objects through to our worker. This recreates our player object since we'll need it for effect formulas. 
 function setupPlayer(player, contentType, castModel) {
 
-  //console.log(player);
-  console.log(player);
   let newPlayer = new BCPlayer(player.charName, player.spec, player.charID, player.region, player.realm, player.race, player.statWeights);
   //newPlayer = Object.assign(newPlayer, player);
 
@@ -38,8 +36,6 @@ function setupPlayer(player, contentType, castModel) {
   //newPlayer.castModel[contentType] = new CastModel(newPlayer.getSpec(), contentType);
   //newPlayer.castModel[contentType] = Object.assign(newPlayer.castModel[contentType], castModel);
 
-  console.log("NEW PLAYER");
-  console.log(newPlayer);
 
   return newPlayer;
 
