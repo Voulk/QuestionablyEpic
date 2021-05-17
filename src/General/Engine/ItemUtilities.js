@@ -556,7 +556,7 @@ function compileStats(stats, bonus_stats) {
       stats[bonusStat] = bonus_stats[bonusStat];
     }
   }
-  console.log(stats);
+
   return stats;
   
 }
@@ -572,7 +572,6 @@ export function scoreItem(item, player, contentType, gameType = "Retail") {
   // Calculate Effect.
   if (item.effect !== "") {
     bonus_stats = getEffectValue(item.effect, player, contentType, item.level, {}, gameType);
-    console.log("Getting Effect" + JSON.stringify(item.stats.bonus_stats));
   }
 
   // Multiply the item's stats by our stat weights.

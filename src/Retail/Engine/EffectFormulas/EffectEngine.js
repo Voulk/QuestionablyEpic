@@ -22,6 +22,7 @@ import { getDruidTierSet } from "BurningCrusade/Engine/EffectFormulas/Druid/Drui
 import { getShamanTierSet } from "BurningCrusade/Engine/EffectFormulas/Shaman/ShamanTierSets";
 import { getPaladinTierSet } from "BurningCrusade/Engine/EffectFormulas/Paladin/PaladinTierSets";
 import { getPriestTierSet } from "BurningCrusade/Engine/EffectFormulas/Priest/PriestTierSets";
+import { getGenericSet } from "BurningCrusade/Engine/EffectFormulas/Generic/GenericSets";
 
 // Effect is a small "dictionary" with two key : value pairs.
 // The EffectEngine is basically a routing device. It will take your effect and effect type and grab the right formula from the right place.
@@ -31,7 +32,7 @@ export function getEffectValue(effect, player, contentType, itemLevel = 0, userS
   const effectName = effect.name;
   const effectType = effect.type;
 
-  console.log("ITEM EFFECT" + effectName + effectType + "player spec" + player.spec + " game type: " + gameType);
+  //console.log("ITEM EFFECT" + effectName + " " + effectType + ". player spec" + player.spec + " game type: " + gameType + ". Full: " + JSON.stringify(effect));
 
 
   // ----- Retail Effect -----
@@ -78,7 +79,7 @@ export function getEffectValue(effect, player, contentType, itemLevel = 0, userS
   // ----- Burning Crusade Effect Formulas -----
   // Includes "Tier Set" bonuses, trinkets, and special effects on items that aren't just pure stats. 
   else if (gameType === "BurningCrusade") {
-    if (effectType === "tier set") {
+    if (effectType === "set bonus" && ('class' in effect && effect.class !== -1)) {
       switch (player.spec) {
         case "Holy Priest BC":
           bonus_stats = getPriestTierSet(effectName, player);
@@ -97,13 +98,16 @@ export function getEffectValue(effect, player, contentType, itemLevel = 0, userS
         // Call error
       }
     } 
+    else if (effectType === "set bonus") {
+      // Generic bonuses like Tailoring etc.
+      bonus_stats = getGenericSet(effectName, player);
+
+    }
     else if (effectType === "trinket") {
       bonus_stats = getTrinketEffectBC(effectName, player, userSettings);
       
     }
   }
-
-  console.log(bonus_stats);
   return bonus_stats;
 }
 

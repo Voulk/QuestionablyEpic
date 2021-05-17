@@ -13,6 +13,7 @@ class BCItem {
     this.bonusIDS = bonusIDS || "";
     this.effect = getItemProp(id, "effect", "BurningCrusade");
     this.stats = getItemProp(id, "stats", "BurningCrusade");
+    this.setID = getItemProp(id, "itemset", "BurningCrusade");
     this.stats['bonus_stats'] = {};
     this.sockets = getItemProp(id, "sockets", "BurningCrusade");
     this.socketedGems = {};

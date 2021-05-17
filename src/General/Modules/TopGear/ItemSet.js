@@ -32,6 +32,9 @@ class ItemSet {
   // The sum stat breakdown of the items in the set.
   setStats = {};
 
+  // Set bonuses
+  sets = {};
+
   // This is for testing purposes only. It will print every item in the collection to the console.
   // printSet() {
   //   console.log("Printing Set with ID: " + this.id + ". Soft score: " + this.sumSoftScore + ". Hard Score: " + this.hardScore + " with stats: " + JSON.stringify(this.setStats));
@@ -85,6 +88,9 @@ class ItemSet {
 
       if (item.socket) setSockets++;
       if (item.uniqueEquip) this.uniques[item.uniqueEquip] = (this.uniques[item.uniqueEquip] || 0) + 1;
+      if (item.setID) {
+        this.sets[item.setID] = (item.setID in this.sets) ? this.sets[item.setID] + 1 : 1;
+      }
 
       if (item.effect !== "") {
         let effect = item.effect;

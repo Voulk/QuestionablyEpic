@@ -9,6 +9,7 @@ import BCPlayer from "../Player/BCPlayer";
 import CastModel from "../Player/CastModel";
 import { getEffectValue } from "../../../Retail/Engine/EffectFormulas/EffectEngine"
 import { compileStats, buildDifferential, pruneItems, sumScore, deepCopyFunction } from "./TopGearEngineShared"
+import { getItemSet } from "BurningCrusade/Databases/ItemSetsDB"
 
 // Most of our sets will fall into a bucket where totalling the individual stats is enough to tell us they aren't viable. By slicing these out in a preliminary phase,
 // we can run our full algorithm on far fewer items. The net benefit to the player is being able to include more items, with a quicker return.
@@ -113,9 +114,15 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
     let builtSet = itemSet.compileStats("BurningCrusade");
     let setStats = builtSet.setStats;
     let hardScore = 0;
+    const setBonuses = builtSet.sets;
+    let effectList = [...itemSet.effectList]
   
-    console.log(setStats);
-  
+    for (const set in setBonuses) {
+      if (setBonuses[set] > 1) {
+        effectList = effectList.concat(getItemSet(set, setBonuses[set]));
+      }
+    }
+
     let enchants = {};
   
     let bonus_stats = {
@@ -154,9 +161,9 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
     // -- Effects --
     let effectStats = [];
     effectStats.push(bonus_stats);
-    for (var x = 0; x < itemSet.effectList.length; x++) {
+    for (var x = 0; x < effectList.length; x++) {
       
-      effectStats.push(getEffectValue(itemSet.effectList[x], player, contentType, itemSet.effectList[x].level, userSettings));
+      effectStats.push(getEffectValue(effectList[x], player, contentType, effectList[x].level, userSettings, "BurningCrusade"));
   
     }
     bonus_stats = mergeBonusStats(effectStats);

@@ -1,3 +1,19 @@
+
+export function getItemSet(id, pieces) {
+  let effects = [];
+  let temp = itemSets.filter(function (set) {
+    return set.id === parseInt(id);
+  });
+  if (temp.length > 0) {
+    for (const [bonus, effectid] of Object.entries(temp[0].setBonuses)) {
+      //console.log("Getting bonuss" + bonus + ". ID: " + effectid);
+      if (pieces > bonus) effects.push({type: 'set bonus', name: effectid, class: temp[0].class});
+    }
+    return effects;
+  }
+  else return "";
+}
+
 export const itemSets = [
   {
     /* ---------------------------------------------------------------------------------------------- */
