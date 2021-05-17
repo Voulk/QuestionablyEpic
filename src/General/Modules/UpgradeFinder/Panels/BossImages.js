@@ -17,6 +17,18 @@ import MortanisHeader from "../../../../Images/Bosses/WorldBosses/MortanisUGF.pn
 import OranomonosHeader from "../../../../Images/Bosses/WorldBosses/OranomonosUGF.png";
 import NurgashHeader from "../../../../Images/Bosses/WorldBosses/NurgashUGF.png";
 
+import ServantQuarters from "../../../../Images/BurningCrusade/Raid/Karazhan/ServantQuarters.png";
+import Attumen from "../../../../Images/BurningCrusade/Raid/Karazhan/AttumenTheHuntsman.png";
+import Moroes from "../../../../Images/BurningCrusade/Raid/Karazhan/Moroes.png";
+import Maiden from "../../../../Images/BurningCrusade/Raid/Karazhan/Maiden.png";
+import Opera from "../../../../Images/BurningCrusade/Raid/Karazhan/Opera.png";
+import Netherspite from "../../../../Images/BurningCrusade/Raid/Karazhan/Netherspite.png";
+import ChessEvent from "../../../../Images/BurningCrusade/Raid/Karazhan/ChessEvent.png";
+import PrinceMalchezaar from "../../../../Images/BurningCrusade/Raid/Karazhan/PrinceMalchezaar.png";
+import Curator from "../../../../Images/BurningCrusade/Raid/Karazhan/Curator.png";
+import ShadeofAran from "../../../../Images/BurningCrusade/Raid/Karazhan/ShadeofAran.png";
+import Illhoof from "../../../../Images/BurningCrusade/Raid/Karazhan/Illhoof.png";
+
 export default function UpgradeFinderBossImages(props) {
   let source = "";
 
@@ -78,6 +90,50 @@ export default function UpgradeFinderBossImages(props) {
   // Nurgash
   if (props === 2433) {
     source = NurgashHeader;
+  }
+
+  if (props === 1552) {
+    source = ServantQuarters;
+  }
+
+  if (props === 1553) {
+    source = Attumen;
+  }
+
+  if (props === 1554) {
+    source = Moroes;
+  }
+
+  if (props === 1555) {
+    source = Maiden;
+  }
+
+  if (props === 1556) {
+    source = Opera;
+  }
+
+  if (props === 1557) {
+    source = Curator;
+  }
+
+  if (props === 1561) {
+    source = Netherspite;
+  }
+
+  if (props === 1563) {
+    source = PrinceMalchezaar;
+  }
+
+  if (props === 1562) {
+    source = ChessEvent;
+  }
+
+  if (props === 1560) {
+    source = Illhoof;
+  }
+
+  if (props === 1559) {
+    source = ShadeofAran;
   } else if (props === 999) {
     source = BoeHeader;
   }
