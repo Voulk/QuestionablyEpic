@@ -14,10 +14,14 @@ import { getPaladinConduit } from "./Paladin/PaladinConduitFormulas";
 import { getShamanConduit } from "./Shaman/ShamanConduitFormulas";
 import { getMonkConduit } from "./Monk/MonkConduitFormulas";
 import { getDruidConduit } from "./Druid/DruidConduitFormulas";
-import { getDruidTierSet } from "./Druid/DruidBCTierSets";
 import { getPaladinCovAbility } from "./Paladin/PaladinMiscFormulas";
 import SPEC from "../../../General/Engine/SPECS";
 import { getShamanCovAbility } from "./Shaman/ShamanCovenantFormulas";
+
+import { getDruidTierSet } from "BurningCrusade/Engine/EffectFormulas/Druid/DruidTierSets";
+import { getShamanTierSet } from "BurningCrusade/Engine/EffectFormulas/Shaman/ShamanTierSets";
+import { getPaladinTierSet } from "BurningCrusade/Engine/EffectFormulas/Paladin/PaladinTierSets";
+import { getPriestTierSet } from "BurningCrusade/Engine/EffectFormulas/Priest/PriestTierSets";
 
 // Effect is a small "dictionary" with two key : value pairs.
 // The EffectEngine is basically a routing device. It will take your effect and effect type and grab the right formula from the right place.
@@ -76,17 +80,17 @@ export function getEffectValue(effect, player, contentType, itemLevel = 0, userS
   else if (gameType === "BurningCrusade") {
     if (effectType === "tier set") {
       switch (player.spec) {
-        case "BC Holy Priest":
-          //bonus_stats = getDiscPriestLegendary(effectName, player, contentType);
+        case "Holy Priest BC":
+          bonus_stats = getPriestTierSet(effectName, player);
           break;
-        case "BC Restoration Druid":
+        case "Restoration Druid BC":
           bonus_stats = getDruidTierSet(effectName, player);
           break;
-        case "BC Holy Paladin":
-          //bonus_stats = getPaladinLegendary(effectName, player, contentType);
+        case "Holy Paladin BC":
+          bonus_stats = getPaladinTierSet(effectName, player);
           break;
-        case "BC Restoration Shaman":
-          //bonus_stats = getShamanLegendary(effectName, player, contentType);
+        case "Restoration Shaman BC":
+          bonus_stats = getShamanTierSet(effectName, player);
           break;
         default:
           break;
