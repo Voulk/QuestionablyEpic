@@ -28,6 +28,9 @@ import PrinceMalchezaar from "../../../../Images/BurningCrusade/Raid/Karazhan/Pr
 import Curator from "../../../../Images/BurningCrusade/Raid/Karazhan/Curator.png";
 import ShadeofAran from "../../../../Images/BurningCrusade/Raid/Karazhan/ShadeofAran.png";
 import Illhoof from "../../../../Images/BurningCrusade/Raid/Karazhan/Illhoof.png";
+import Nightbane from "../../../../Images/BurningCrusade/Raid/Karazhan/Nightbane.png";
+
+import HighKing from "../../../../Images/BurningCrusade/Raid/GruulsLair/HighKingMaulgar.png";
 
 export default function UpgradeFinderBossImages(props) {
   let source = "";
@@ -110,7 +113,7 @@ export default function UpgradeFinderBossImages(props) {
     source = Maiden;
   }
 
-  if (props === 1556 || props === 655 ) {
+  if (props === 1556 || props === 655) {
     source = Opera;
   }
 
@@ -136,6 +139,14 @@ export default function UpgradeFinderBossImages(props) {
 
   if (props === 1559 || props === 657) {
     source = ShadeofAran;
+  }
+
+  if (props === 662) {
+    source = Nightbane;
+  }
+
+  if (props === 649) {
+    source = HighKing;
   } else if (props === 999) {
     source = BoeHeader;
   }
