@@ -96,43 +96,45 @@ export default function UpgradeFinderBossImages(props) {
     source = ServantQuarters;
   }
 
-  if (props === 1553) {
+  // 662, // Nightbane
+
+  if (props === 1553 || props === 652) {
     source = Attumen;
   }
 
-  if (props === 1554) {
+  if (props === 1554 || props === 653) {
     source = Moroes;
   }
 
-  if (props === 1555) {
+  if (props === 1555 || props === 654) {
     source = Maiden;
   }
 
-  if (props === 1556) {
+  if (props === 1556 || props === 655 ) {
     source = Opera;
   }
 
-  if (props === 1557) {
+  if (props === 1557 || props === 656) {
     source = Curator;
   }
 
-  if (props === 1561) {
+  if (props === 1561 || props === 659) {
     source = Netherspite;
   }
 
-  if (props === 1563) {
+  if (props === 1563 || props === 661) {
     source = PrinceMalchezaar;
   }
 
-  if (props === 1562) {
+  if (props === 1562 || props === 660) {
     source = ChessEvent;
   }
 
-  if (props === 1560) {
+  if (props === 1560 || props === 658) {
     source = Illhoof;
   }
 
-  if (props === 1559) {
+  if (props === 1559 || props === 657) {
     source = ShadeofAran;
   } else if (props === 999) {
     source = BoeHeader;
