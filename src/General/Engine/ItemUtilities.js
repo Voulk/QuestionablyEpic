@@ -484,7 +484,7 @@ function scoreGemColor(gemList, player) {
   return gemList;
 }
 
-function getBestGem(player, color) {
+export function getBestGem(player, color) {
   let colors = []
   let gems = [...GEMS];
 
@@ -532,11 +532,8 @@ export function socketItem(item, player) {
 
   }
 
-
   if (colorMatch.score >= socketBest.score) item.socketedGems = colorMatch;
   else item.socketedGems =  item.socketedGems = socketBest;
-
-  console.log(item.socketedGems);
 
 }
 

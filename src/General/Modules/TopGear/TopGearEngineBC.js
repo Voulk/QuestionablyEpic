@@ -4,12 +4,14 @@ import Item from "../Player/Item";
 import React, { useState, useEffect } from "react";
 import { STATPERONEPERCENT, BASESTAT, STATDIMINISHINGRETURNS } from "../../Engine/STAT";
 import { CONSTRAINTS } from "../../Engine/CONSTRAINTS";
+import { getBestGem } from "../../Engine/ItemUtilities";
 import { convertPPMToUptime } from "../../../Retail/Engine/EffectFormulas/EffectUtilities";
 import BCPlayer from "../Player/BCPlayer";
 import CastModel from "../Player/CastModel";
 import { getEffectValue } from "../../../Retail/Engine/EffectFormulas/EffectEngine"
 import { compileStats, buildDifferential, pruneItems, sumScore, deepCopyFunction } from "./TopGearEngineShared"
 import { getItemSet } from "BurningCrusade/Databases/ItemSetsDB"
+
 
 // Most of our sets will fall into a bucket where totalling the individual stats is enough to tell us they aren't viable. By slicing these out in a preliminary phase,
 // we can run our full algorithm on far fewer items. The net benefit to the player is being able to include more items, with a quicker return.
@@ -107,6 +109,181 @@ export function runTopGearBC(rawItemList, wepCombos, player, contentType, baseHP
   }
 }
 
+// This holds all of our gemCollection objects, so that we can sort them later and pick the best.
+const gemSets = []
+
+// This represents an individual collection of socketed items. 
+
+// Get highest value of each gem color. 
+// Compare value of socketing highest matching colors + socket bonus, to just socketing highest colors.
+export function socketItem(socketsAvailable, player, socketList) {
+  if (!socketsAvailable) {
+    socketList.socketedPieces.push([]);
+    socketList.socketedColors.push([]);
+    return socketList;
+  }
+
+  console.log("Call to Socket Item");
+  const bestGems = {
+    overall: getBestGem(player, "all"),
+    red: getBestGem(player, "red"),
+    blue: getBestGem(player, "blue"),
+    yellow: getBestGem(player, "yellow"),
+  }
+
+  let socketBonus = 0
+  if (socketsAvailable.bonus) {
+    for (const [stat, value] of Object.entries(socketsAvailable.bonus)) {
+      //console.log("Stat: " + stat + ". Value: " + value);
+      socketBonus += value * player.getStatWeight("Raid", stat);
+    }
+  }
+
+  let colorMatch = {gems: [], colors: [], score: socketBonus};
+  let socketBest = {gems: [], colors: [], score: 0};
+  for (const socket in socketsAvailable) {
+    // Match colors
+    if (['red', 'blue', 'yellow'].includes(socket)) {
+      colorMatch['score'] += bestGems[socket].score;
+      colorMatch['gems'].push(bestGems[socket].name);
+      colorMatch['colors'].push(bestGems[socket].color);
+
+      socketBest['score'] += bestGems['overall'].score;
+      socketBest['gems'].push(bestGems['overall'].name);
+      socketBest['colors'].push(bestGems['overall'].color);
+    }
+  }
+
+  if (colorMatch.score >= socketBest.score) {
+    // Matching the colors is ideal.
+    //console.log("Matching colors is ideal" + JSON.stringify(colorMatch.gems))
+    socketList.score = socketList.score + colorMatch.score;
+    socketList.socketedPieces.push(colorMatch.gems);
+    socketList.socketedColors.push(colorMatch.colors);
+
+    return socketList;
+  }
+  else  {
+    //console.log("Full Red" + JSON.stringify(socketBest.gems))
+    socketList.score = socketList.score + socketBest.score;
+    socketList.socketedPieces.push(socketBest.gems);
+    socketList.socketedColors.push(socketBest.colors);
+
+    return socketList;
+  }
+
+}
+
+function checkMeta(colorCount) {
+  if (colorCount.red >= 2 && colorCount.yellow >= 2 && colorCount.blue >= 2) {
+    return true;
+  }
+  else {
+    return false;
+  }
+
+}
+
+let bigCount = 0;
+
+function callManyTimes(maxIndices, func, gc) {
+  doCallManyTimes(maxIndices, func, gc, [], 0);
+}
+
+function doCallManyTimes(maxIndices, func, gc, args, index) {
+  if (maxIndices.length == 0) {
+      func(args, gc);
+  } else {
+      var rest = maxIndices.slice(1);
+      for (args[index] = 0; args[index] < maxIndices[0]; ++args[index]) {
+          doCallManyTimes(rest, func, gc, args, index + 1);
+      }
+  }
+}
+
+function counter(args, gc) {
+  //console.log(gc);
+  if (new Set(args).size === args.length) {
+    //console.log(args[0] + " " + args[1] + " " + args[2]);
+    let localgc = {...gc}
+    bigCount += 1;
+  }
+ 
+}
+
+export function gemGear(itemSet, player) {
+  console.log("Gemming Gear");
+  //const locallyOptimal = 0;
+  const metaSocketed = 0;
+  const metaGems = ["Insightful Earthstorm Diamond"];
+
+  // Create a GemCollection.
+  const gemCollection = {
+    score: 0,
+    socketedPieces: [],
+    socketedColors: [],
+    socketsAvailable: [],
+    colorCount: {},
+    metaGem: false,
+  }
+
+  itemSet.forEach(item => {
+    gemCollection.socketsAvailable.push(item.sockets);
+    if (item.sockets !== undefined && Object.keys(item.sockets).length !== 0 && "meta" in item.sockets) gemCollection.metaGem = true;
+  });
+
+
+  // Gem locally optimal
+  let locallyOptimal = {...gemCollection};
+  for (const i in locallyOptimal.socketsAvailable) {
+    locallyOptimal = socketItem(locallyOptimal.socketsAvailable[i], player, locallyOptimal);
+  }
+
+
+  // Check if meta gem fulfilled.
+  const flatColors = locallyOptimal.socketedColors.flat();
+  locallyOptimal.colorCount = {
+    blue: flatColors.filter(function(x){ return x === "blue" || x === "purple" || x === "green"; }).length,
+    red: flatColors.filter(function(x){ return x === "red" || x === "orange" || x === "purple"; }).length,
+    yellow: flatColors.filter(function(x){ return x === "yellow" || x === "orange" || x === "green"; }).length,
+  }
+
+  // Check if player even has enough sockets for the meta gem.
+
+  console.log(locallyOptimal);
+  if (checkMeta(locallyOptimal.colorCount)) {
+    console.log("Search Complete. Gems done.");
+  }
+  else {
+      // If not meta gem fulfilled, try the missing gems in each socket trying to find the slots that minimize the score loss.
+      // Pick the highest set out of locally optimal and meta gem.
+
+      callManyTimes([locallyOptimal.socketsAvailable.length, locallyOptimal.socketsAvailable.length, locallyOptimal.socketsAvailable.length], counter, locallyOptimal)
+      console.log(bigCount);
+
+
+
+      // First gem replacement
+
+      /*
+      let count = 2730;
+      for (var i = 0; i < locallyOptimal.socketsAvailable.length; i++) {
+        // Second gem replacement.
+        for (var j = 0; j < locallyOptimal.socketsAvailable.length; j++) {
+
+          for (var k = 0; k < locallyOptimal.socketsAvailable.length; k++) {
+            if (i !== j && i !== k && j !== k) {
+              count += 1;
+            }
+          }
+        }
+      }
+      console.log("Count: " + count);
+      */
+
+  }
+}
+
 // A true evaluation function on a set.
 // THIS IS BURNING CRUSADE CODE AND IS NOT COMPATIBLE WITH RETAIL.
 function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
@@ -117,6 +294,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
     const setBonuses = builtSet.sets;
     let effectList = [...itemSet.effectList]
   
+    // --- Item Set Bonuses ---
     for (const set in setBonuses) {
       if (setBonuses[set] > 1) {
         effectList = effectList.concat(getItemSet(set, setBonuses[set]));
@@ -157,6 +335,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
     */
 
     // -- SOCKETS --
+    const optimalGems = gemGear(builtSet.itemList, player)
   
     // -- Effects --
     let effectStats = [];
@@ -173,16 +352,6 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
     //applyDiminishingReturns(setStats); // Apply Diminishing returns to our haul.
     addBaseStats(setStats, player.spec); // Add our base stats, which are immune to DR. This includes our base 5% crit, and whatever base mastery our spec has.
   
-    /*
-    adjusted_weights.haste = (adjusted_weights.haste + adjusted_weights.haste * (1 - (DR_CONST * setStats.haste) / STATPERONEPERCENT.Retail.HASTE)) / 2;
-    adjusted_weights.crit = (adjusted_weights.crit + adjusted_weights.crit * (1 - (DR_CONST * setStats.crit) / STATPERONEPERCENT.Retail.CRIT)) / 2;
-    adjusted_weights.versatility = (adjusted_weights.versatility + adjusted_weights.versatility * (1 - (DR_CONST * setStats.versatility) / STATPERONEPERCENT.Retail.VERSATILITY)) / 2;
-    adjusted_weights.mastery = (adjusted_weights.mastery + adjusted_weights.mastery * (1 - (DR_CONST * setStats.mastery) / STATPERONEPERCENT.Retail.MASTERYA[player.spec])) / 2;
-    adjusted_weights.leech = (adjusted_weights.leech + adjusted_weights.leech * (1 - (DR_CONSTLEECH * setStats.leech) / STATPERONEPERCENT.Retail.LEECH)) / 2;
-    */
-
-    //console.log("LEECH: " + adjusted_weights.leech);
-    // Calculate a hard score using the rebalanced stat weights.
 
     for (var stat in setStats) {
       if (stat === "hps") {
