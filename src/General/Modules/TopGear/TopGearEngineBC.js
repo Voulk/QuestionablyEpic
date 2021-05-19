@@ -268,10 +268,12 @@ function counter(args, gc, player, bestGems) {
     forcedGems[args[2]] = 'yellow';
     forcedGems[args[3]] = 'yellow';
     //console.log(JSON.stringify(forcedGems));
-    let localgc = {...gc}
+    let localgc = deepCopyFunction(gc);
     for (const i in localgc.socketsAvailable) {
       localgc = socketItem(localgc.socketsAvailable[i], player, localgc, bestGems, forcedGems);
+      
     }
+    gemSets.push(localgc);
     bigCount += 1;
   
 }
@@ -332,12 +334,22 @@ export function gemGear(itemSet, player) {
   else {
       // If not meta gem fulfilled, try the missing gems in each socket trying to find the slots that minimize the score loss.
       // Pick the highest set out of locally optimal and meta gem.
-
-      callManyTimes([locallyOptimal.socketsAvailable.length, locallyOptimal.socketsAvailable.length, locallyOptimal.socketsAvailable.length, locallyOptimal.socketsAvailable.length], counter, locallyOptimal, player, bestGems)
+      let gc = deepCopyFunction(locallyOptimal);
+      gc.socketedPieces = [];
+      gc.socketedColors = [];
+      gc.colorCount = {};
+      gc.numSocketed = 0;
+      const socketCount = locallyOptimal.numSocketed;
+      callManyTimes([socketCount, socketCount, socketCount, socketCount], counter, gc, player, bestGems)
+      
+      gemSets.sort((a, b) => (a.score < b.score ? 1 : -1));
+      
       console.log("BIG COUNT: " + bigCount);
       console.log("BIG COUNT2: " + bigCount2);
       console.log("Average loop cost: " + Math.round(performanceTrack / bigCount*10000)/10000 + "ms");
-
+      console.log(gemSets[0]);
+      console.log(gemSets[1]);
+      console.log(gemSets[421]);
 
       // First gem replacement
 
