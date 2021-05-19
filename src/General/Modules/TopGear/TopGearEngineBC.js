@@ -114,9 +114,16 @@ const gemSets = []
 
 // This represents an individual collection of socketed items. 
 
+export function checkSocketBonus(socketsAvailable, socketedGems) {
+
+
+}
+
 // Get highest value of each gem color. 
 // Compare value of socketing highest matching colors + socket bonus, to just socketing highest colors.
-export function socketItem(socketsAvailable, player, socketList) {
+export function socketItem(socketsAvailable, player, socketList, forcedGems = {4: 'blue', 6: 'blue', 8: 'yellow', 9: 'yellow'}) {
+  let numSocketed = socketList.numSocketed;
+
   if (!socketsAvailable) {
     socketList.socketedPieces.push([]);
     socketList.socketedColors.push([]);
@@ -131,6 +138,8 @@ export function socketItem(socketsAvailable, player, socketList) {
     yellow: getBestGem(player, "yellow"),
   }
 
+
+
   let socketBonus = 0
   if (socketsAvailable.bonus) {
     for (const [stat, value] of Object.entries(socketsAvailable.bonus)) {
@@ -139,20 +148,48 @@ export function socketItem(socketsAvailable, player, socketList) {
     }
   }
 
-  let colorMatch = {gems: [], colors: [], score: socketBonus};
+  let colorMatch = {gems: [], colors: [], score: 0};
   let socketBest = {gems: [], colors: [], score: 0};
   for (const socket in socketsAvailable) {
     // Match colors
     if (['red', 'blue', 'yellow'].includes(socket)) {
-      colorMatch['score'] += bestGems[socket].score;
-      colorMatch['gems'].push(bestGems[socket].name);
-      colorMatch['colors'].push(bestGems[socket].color);
+      if (Object.keys(forcedGems).includes(numSocketed.toString())) {
+        const color = forcedGems[numSocketed];
+        console.log("Forcing color on key: " + numSocketed + ". " + forcedGems[numSocketed])
+        /*
+        forcedSockets['score'] += bestGems['blue'].score;
+        forcedSockets['gems'].push(bestGems['blue'].name);
+        forcedSockets['colors'].push(bestGems['blue'].color);
+        */
+        colorMatch['score'] += bestGems[color].score;
+        colorMatch['gems'].push(bestGems[color].name);
+        colorMatch['colors'].push(bestGems[color].color);
+  
+        socketBest['score'] += bestGems[color].score;
+        socketBest['gems'].push(bestGems[color].name);
+        socketBest['colors'].push(bestGems[color].color);
 
-      socketBest['score'] += bestGems['overall'].score;
-      socketBest['gems'].push(bestGems['overall'].name);
-      socketBest['colors'].push(bestGems['overall'].color);
+      }
+      else {
+        colorMatch['score'] += bestGems[socket].score;
+        colorMatch['gems'].push(bestGems[socket].name);
+        colorMatch['colors'].push(bestGems[socket].color);
+
+        socketBest['score'] += bestGems['overall'].score;
+        socketBest['gems'].push(bestGems['overall'].name);
+        socketBest['colors'].push(bestGems['overall'].color);
+      }
+
+
+      numSocketed += 1;
     }
   }
+
+  // Check socket bonus
+  console.log(colorMatch.colors);
+  console.log(socketsAvailable);
+
+  socketList.numSocketed = numSocketed;
 
   if (colorMatch.score >= socketBest.score) {
     // Matching the colors is ideal.
@@ -161,6 +198,7 @@ export function socketItem(socketsAvailable, player, socketList) {
     socketList.socketedPieces.push(colorMatch.gems);
     socketList.socketedColors.push(colorMatch.colors);
 
+
     return socketList;
   }
   else  {
@@ -168,6 +206,7 @@ export function socketItem(socketsAvailable, player, socketList) {
     socketList.score = socketList.score + socketBest.score;
     socketList.socketedPieces.push(socketBest.gems);
     socketList.socketedColors.push(socketBest.colors);
+
 
     return socketList;
   }
@@ -225,6 +264,7 @@ export function gemGear(itemSet, player) {
     socketsAvailable: [],
     colorCount: {},
     metaGem: false,
+    numSocketed: 0,
   }
 
   itemSet.forEach(item => {
