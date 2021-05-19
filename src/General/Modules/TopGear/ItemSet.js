@@ -35,6 +35,9 @@ class ItemSet {
   // Set bonuses
   sets = {};
 
+  // BC Socket List
+  bcSockets = {};
+
   // This is for testing purposes only. It will print every item in the collection to the console.
   // printSet() {
   //   console.log("Printing Set with ID: " + this.id + ". Soft score: " + this.sumSoftScore + ". Hard Score: " + this.hardScore + " with stats: " + JSON.stringify(this.setStats));

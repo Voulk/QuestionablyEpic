@@ -224,11 +224,17 @@ export function socketItem(sockets, player, socketList, bestGems, forcedGems = {
     return socketList;
   }
 
-  
-
 }
 
-function checkMeta(colorCount) {
+function checkMeta(socketedColors) {
+    // Check if meta gem fulfilled.
+    const flatColors = socketedColors.flat();
+    const colorCount = {
+      blue: flatColors.filter(function(x){ return x === "blue" || x === "purple" || x === "green"; }).length,
+      red: flatColors.filter(function(x){ return x === "red" || x === "orange" || x === "purple"; }).length,
+      yellow: flatColors.filter(function(x){ return x === "yellow" || x === "orange" || x === "green"; }).length,
+    }
+
   if (colorCount.red >= 2 && colorCount.yellow >= 2 && colorCount.blue >= 2) {
     return true;
   }
@@ -261,6 +267,7 @@ function doCallManyTimes(maxIndices, func, gc, player, bestGems, args, index) {
 }
 
 function counter(args, gc, player, bestGems) {
+  const metaBonus = 1000;
     //console.log(args[0] + " " + args[1] + " " + args[2]);
     let forcedGems = {}
     forcedGems[args[0]] = 'blue';
@@ -271,8 +278,10 @@ function counter(args, gc, player, bestGems) {
     let localgc = deepCopyFunction(gc);
     for (const i in localgc.socketsAvailable) {
       localgc = socketItem(localgc.socketsAvailable[i], player, localgc, bestGems, forcedGems);
-      
     }
+    // Check socket bonus
+    localgc.score += checkMeta(localgc.socketedColors) ? metaBonus : 0;
+
     gemSets.push(localgc);
     bigCount += 1;
   
@@ -328,7 +337,7 @@ export function gemGear(itemSet, player) {
   // Check if player even has enough sockets for the meta gem.
 
   console.log(locallyOptimal);
-  if (checkMeta(locallyOptimal.colorCount)) {
+  if (checkMeta(locallyOptimal.socketedColors)) {
     console.log("Search Complete. Gems done.");
   }
   else {
@@ -344,12 +353,11 @@ export function gemGear(itemSet, player) {
       
       gemSets.sort((a, b) => (a.score < b.score ? 1 : -1));
       
-      console.log("BIG COUNT: " + bigCount);
-      console.log("BIG COUNT2: " + bigCount2);
       console.log("Average loop cost: " + Math.round(performanceTrack / bigCount*10000)/10000 + "ms");
       console.log(gemSets[0]);
-      console.log(gemSets[1]);
-      console.log(gemSets[421]);
+
+
+      return console.log(gemSets[0]);
 
       // First gem replacement
 
@@ -426,6 +434,9 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
     
     var s0 = performance.now();
     const optimalGems = gemGear(builtSet.itemList, player)
+    hardScore += optimalGems.score;
+    builtSet.bcSockets = optimalGems;
+
     var s1 = performance.now();
     console.log("Gems took " + (s1 - s0) + " milliseconds with count ")
   

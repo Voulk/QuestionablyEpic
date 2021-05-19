@@ -79,6 +79,7 @@ export default function TopGear(props) {
     /* ------------------ Check that the player has selected an item in every slot. ----------------- */
     let topgearOk = true;
     let itemList = props.player.getSelectedItems();
+    console.log(props.player.getSelectedItems());
     let errorMessage = "";
     let slotLengths = {
       Head: 0,
@@ -102,7 +103,7 @@ export default function TopGear(props) {
     for (var i = 0; i < itemList.length; i++) {
       let slot = itemList[i].slot;
       if (slot in slotLengths) {
-        if (itemList[i].vaultItem === false) slotLengths[slot] += 1;
+        if (!itemList[i].vaultItem) slotLengths[slot] += 1;
       }
     }
     for (const key in slotLengths) {
@@ -115,6 +116,7 @@ export default function TopGear(props) {
       }
     }
     setErrorMessage(errorMessage);
+    console.log(slotLengths);
     return topgearOk;
   };
 
