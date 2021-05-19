@@ -135,8 +135,8 @@ export function checkSocketBonus(socketsAvailable, socketedGems) {
 
 // Get highest value of each gem color. 
 // Compare value of socketing highest matching colors + socket bonus, to just socketing highest colors.
-export function socketItem(sockets, player, socketList, forcedGems = {} /*{4: 'blue', 6: 'blue', 8: 'yellow', 9: 'yellow'} */) {
-  
+export function socketItem(sockets, player, socketList, bestGems, forcedGems = {} /*{4: 'blue', 6: 'blue', 8: 'yellow', 9: 'yellow'} */) {
+  var r0 = performance.now();
   let numSocketed = socketList.numSocketed;
   const socketsAvailable = sockets.gems;
 
@@ -145,13 +145,13 @@ export function socketItem(sockets, player, socketList, forcedGems = {} /*{4: 'b
     socketList.socketedColors.push([]);
     return socketList;
   }
-
+  /*
   const bestGems = {
     overall: getBestGem(player, "all"),
     red: getBestGem(player, "red"),
     blue: getBestGem(player, "blue"),
     yellow: getBestGem(player, "yellow"),
-  }
+  } */
 
   let socketBonus = 0
   if (sockets.bonus) {
@@ -161,9 +161,10 @@ export function socketItem(sockets, player, socketList, forcedGems = {} /*{4: 'b
     }
   }
 
+
   let colorMatch = {gems: [], colors: [], score: 0};
   let socketBest = {gems: [], colors: [], score: 0};
-  var r0 = performance.now();
+  
   for (var i = 0; i < socketsAvailable.length; i++) {
     const socket = socketsAvailable[i];
     // Match colors
@@ -193,16 +194,16 @@ export function socketItem(sockets, player, socketList, forcedGems = {} /*{4: 'b
       numSocketed += 1;
     }
   }
-  var r1 = performance.now();
-  performanceTrack += (r1 - r0)
+  
 
   // Check socket bonus
   colorMatch.score += checkSocketBonus(socketsAvailable, colorMatch.colors) ? socketBonus : 0;
   socketBest.score += checkSocketBonus(socketsAvailable, socketBest.colors) ? socketBonus : 0;
 
   socketList.numSocketed = numSocketed;
-
-  
+  var r1 = performance.now();
+  performanceTrack += (r1 - r0)
+ 
 
   if (colorMatch.score >= socketBest.score) {
     // Matching the colors is ideal.
@@ -240,24 +241,26 @@ function checkMeta(colorCount) {
 let bigCount = 0;
 let bigCount2 = 0;
 
-function callManyTimes(maxIndices, func, gc, player) {
-  doCallManyTimes(maxIndices, func, gc,player,  [], 0);
+function callManyTimes(maxIndices, func, gc, player, bestGems) {
+  doCallManyTimes(maxIndices, func, gc,player, bestGems, [], 0);
 }
 
-function doCallManyTimes(maxIndices, func, gc, player, args, index) {
+function doCallManyTimes(maxIndices, func, gc, player, bestGems, args, index) {
   if (maxIndices.length == 0) {
-      func(args, gc, player);
+    if (new Set(args).size === args.length && args[1] > args[0] && args[3] > args[2]) {
+      func(args, gc, player, bestGems);
+    }
+    bigCount2 += 1;
+      
   } else {
       var rest = maxIndices.slice(1);
       for (args[index] = 0; args[index] < maxIndices[0]; ++args[index]) {
-          doCallManyTimes(rest, func, gc, player, args, index + 1);
+          doCallManyTimes(rest, func, gc, player, bestGems, args, index + 1);
       }
   }
 }
 
-function counter(args, gc, player) {
-  //console.log("Counting");
-  if (new Set(args).size === args.length && args[1] > args[0] && args[3] > args[2]) {
+function counter(args, gc, player, bestGems) {
     //console.log(args[0] + " " + args[1] + " " + args[2]);
     let forcedGems = {}
     forcedGems[args[0]] = 'blue';
@@ -267,13 +270,10 @@ function counter(args, gc, player) {
     //console.log(JSON.stringify(forcedGems));
     let localgc = {...gc}
     for (const i in localgc.socketsAvailable) {
-      localgc = socketItem(localgc.socketsAvailable[i], player, localgc, forcedGems);
+      localgc = socketItem(localgc.socketsAvailable[i], player, localgc, bestGems, forcedGems);
     }
-
     bigCount += 1;
-  }
-  bigCount2 += 1;
- 
+  
 }
 
 export function gemGear(itemSet, player) {
@@ -298,11 +298,18 @@ export function gemGear(itemSet, player) {
     if ("sockets" in item && item.sockets.gems !== undefined && item.sockets.gems.includes("meta")) gemCollection.metaGem = true;
   });
 
+  const bestGems = {
+    overall: getBestGem(player, "all"),
+    red: getBestGem(player, "red"),
+    blue: getBestGem(player, "blue"),
+    yellow: getBestGem(player, "yellow"),
+  }
+
 
   // Gem locally optimal
   let locallyOptimal = {...gemCollection};
   for (const i in locallyOptimal.socketsAvailable) {
-    locallyOptimal = socketItem(locallyOptimal.socketsAvailable[i], player, locallyOptimal);
+    locallyOptimal = socketItem(locallyOptimal.socketsAvailable[i], player, locallyOptimal, bestGems);
   }
 
 
@@ -314,6 +321,8 @@ export function gemGear(itemSet, player) {
     yellow: flatColors.filter(function(x){ return x === "yellow" || x === "orange" || x === "green"; }).length,
   }
 
+
+
   // Check if player even has enough sockets for the meta gem.
 
   console.log(locallyOptimal);
@@ -324,10 +333,10 @@ export function gemGear(itemSet, player) {
       // If not meta gem fulfilled, try the missing gems in each socket trying to find the slots that minimize the score loss.
       // Pick the highest set out of locally optimal and meta gem.
 
-      callManyTimes([locallyOptimal.socketsAvailable.length, locallyOptimal.socketsAvailable.length, locallyOptimal.socketsAvailable.length, locallyOptimal.socketsAvailable.length], counter, locallyOptimal, player)
+      callManyTimes([locallyOptimal.socketsAvailable.length, locallyOptimal.socketsAvailable.length, locallyOptimal.socketsAvailable.length, locallyOptimal.socketsAvailable.length], counter, locallyOptimal, player, bestGems)
       console.log("BIG COUNT: " + bigCount);
       console.log("BIG COUNT2: " + bigCount2);
-      console.log("Average loop cost: " + Math.round(performanceTrack / bigCount*1000)/1000);
+      console.log("Average loop cost: " + Math.round(performanceTrack / bigCount*10000)/10000 + "ms");
 
 
       // First gem replacement
