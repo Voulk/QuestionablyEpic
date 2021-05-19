@@ -111,18 +111,34 @@ export function runTopGearBC(rawItemList, wepCombos, player, contentType, baseHP
 
 // This holds all of our gemCollection objects, so that we can sort them later and pick the best.
 const gemSets = []
+let performanceTrack = 0
 
 // This represents an individual collection of socketed items. 
 
 export function checkSocketBonus(socketsAvailable, socketedGems) {
+  let match = true;
+  for (var i = 0; i < socketsAvailable.length; i++) {
+    if (socketsAvailable[i] === "blue" && (socketedGems[i] !== "blue" && socketedGems[i] !== "purple" && socketedGems[i] !== "green")) match = false;
+    else if (socketsAvailable[i] === "red" && (socketedGems[i] !== "red" && socketedGems[i] !== "purple" && socketedGems[i] !== "orange")) match = false;
+    else if (socketsAvailable[i] === "yellow" && (socketedGems[i] !== "yellow" && socketedGems[i] !== "green" && socketedGems[i] !== "orange")) match = false;
+  }
+  /*
+  console.log("Checking for Socket Bonus")
+  console.log(socketedGems);
+  console.log(socketsAvailable);
+  console.log("Match: " + match);
 
+  */
+  return match;
 
 }
 
 // Get highest value of each gem color. 
 // Compare value of socketing highest matching colors + socket bonus, to just socketing highest colors.
-export function socketItem(socketsAvailable, player, socketList, forcedGems = {4: 'blue', 6: 'blue', 8: 'yellow', 9: 'yellow'}) {
+export function socketItem(sockets, player, socketList, forcedGems = {} /*{4: 'blue', 6: 'blue', 8: 'yellow', 9: 'yellow'} */) {
+  
   let numSocketed = socketList.numSocketed;
+  const socketsAvailable = sockets.gems;
 
   if (!socketsAvailable) {
     socketList.socketedPieces.push([]);
@@ -130,7 +146,6 @@ export function socketItem(socketsAvailable, player, socketList, forcedGems = {4
     return socketList;
   }
 
-  console.log("Call to Socket Item");
   const bestGems = {
     overall: getBestGem(player, "all"),
     red: getBestGem(player, "red"),
@@ -138,11 +153,9 @@ export function socketItem(socketsAvailable, player, socketList, forcedGems = {4
     yellow: getBestGem(player, "yellow"),
   }
 
-
-
   let socketBonus = 0
-  if (socketsAvailable.bonus) {
-    for (const [stat, value] of Object.entries(socketsAvailable.bonus)) {
+  if (sockets.bonus) {
+    for (const [stat, value] of Object.entries(sockets.bonus)) {
       //console.log("Stat: " + stat + ". Value: " + value);
       socketBonus += value * player.getStatWeight("Raid", stat);
     }
@@ -150,17 +163,15 @@ export function socketItem(socketsAvailable, player, socketList, forcedGems = {4
 
   let colorMatch = {gems: [], colors: [], score: 0};
   let socketBest = {gems: [], colors: [], score: 0};
-  for (const socket in socketsAvailable) {
+  var r0 = performance.now();
+  for (var i = 0; i < socketsAvailable.length; i++) {
+    const socket = socketsAvailable[i];
     // Match colors
     if (['red', 'blue', 'yellow'].includes(socket)) {
       if (Object.keys(forcedGems).includes(numSocketed.toString())) {
         const color = forcedGems[numSocketed];
-        console.log("Forcing color on key: " + numSocketed + ". " + forcedGems[numSocketed])
-        /*
-        forcedSockets['score'] += bestGems['blue'].score;
-        forcedSockets['gems'].push(bestGems['blue'].name);
-        forcedSockets['colors'].push(bestGems['blue'].color);
-        */
+        //console.log("Forcing color on key: " + numSocketed + ". " + forcedGems[numSocketed])
+
         colorMatch['score'] += bestGems[color].score;
         colorMatch['gems'].push(bestGems[color].name);
         colorMatch['colors'].push(bestGems[color].color);
@@ -179,17 +190,19 @@ export function socketItem(socketsAvailable, player, socketList, forcedGems = {4
         socketBest['gems'].push(bestGems['overall'].name);
         socketBest['colors'].push(bestGems['overall'].color);
       }
-
-
       numSocketed += 1;
     }
   }
+  var r1 = performance.now();
+  performanceTrack += (r1 - r0)
 
   // Check socket bonus
-  console.log(colorMatch.colors);
-  console.log(socketsAvailable);
+  colorMatch.score += checkSocketBonus(socketsAvailable, colorMatch.colors) ? socketBonus : 0;
+  socketBest.score += checkSocketBonus(socketsAvailable, socketBest.colors) ? socketBonus : 0;
 
   socketList.numSocketed = numSocketed;
+
+  
 
   if (colorMatch.score >= socketBest.score) {
     // Matching the colors is ideal.
@@ -197,7 +210,6 @@ export function socketItem(socketsAvailable, player, socketList, forcedGems = {4
     socketList.score = socketList.score + colorMatch.score;
     socketList.socketedPieces.push(colorMatch.gems);
     socketList.socketedColors.push(colorMatch.colors);
-
 
     return socketList;
   }
@@ -210,6 +222,8 @@ export function socketItem(socketsAvailable, player, socketList, forcedGems = {4
 
     return socketList;
   }
+
+  
 
 }
 
@@ -224,29 +238,41 @@ function checkMeta(colorCount) {
 }
 
 let bigCount = 0;
+let bigCount2 = 0;
 
-function callManyTimes(maxIndices, func, gc) {
-  doCallManyTimes(maxIndices, func, gc, [], 0);
+function callManyTimes(maxIndices, func, gc, player) {
+  doCallManyTimes(maxIndices, func, gc,player,  [], 0);
 }
 
-function doCallManyTimes(maxIndices, func, gc, args, index) {
+function doCallManyTimes(maxIndices, func, gc, player, args, index) {
   if (maxIndices.length == 0) {
-      func(args, gc);
+      func(args, gc, player);
   } else {
       var rest = maxIndices.slice(1);
       for (args[index] = 0; args[index] < maxIndices[0]; ++args[index]) {
-          doCallManyTimes(rest, func, gc, args, index + 1);
+          doCallManyTimes(rest, func, gc, player, args, index + 1);
       }
   }
 }
 
-function counter(args, gc) {
-  //console.log(gc);
-  if (new Set(args).size === args.length) {
+function counter(args, gc, player) {
+  //console.log("Counting");
+  if (new Set(args).size === args.length && args[1] > args[0] && args[3] > args[2]) {
     //console.log(args[0] + " " + args[1] + " " + args[2]);
+    let forcedGems = {}
+    forcedGems[args[0]] = 'blue';
+    forcedGems[args[1]] = 'blue';
+    forcedGems[args[2]] = 'yellow';
+    forcedGems[args[3]] = 'yellow';
+    //console.log(JSON.stringify(forcedGems));
     let localgc = {...gc}
+    for (const i in localgc.socketsAvailable) {
+      localgc = socketItem(localgc.socketsAvailable[i], player, localgc, forcedGems);
+    }
+
     bigCount += 1;
   }
+  bigCount2 += 1;
  
 }
 
@@ -268,8 +294,8 @@ export function gemGear(itemSet, player) {
   }
 
   itemSet.forEach(item => {
-    gemCollection.socketsAvailable.push(item.sockets);
-    if (item.sockets !== undefined && Object.keys(item.sockets).length !== 0 && "meta" in item.sockets) gemCollection.metaGem = true;
+    gemCollection.socketsAvailable.push('sockets' in item ? item.sockets : []);
+    if ("sockets" in item && item.sockets.gems !== undefined && item.sockets.gems.includes("meta")) gemCollection.metaGem = true;
   });
 
 
@@ -298,9 +324,10 @@ export function gemGear(itemSet, player) {
       // If not meta gem fulfilled, try the missing gems in each socket trying to find the slots that minimize the score loss.
       // Pick the highest set out of locally optimal and meta gem.
 
-      callManyTimes([locallyOptimal.socketsAvailable.length, locallyOptimal.socketsAvailable.length, locallyOptimal.socketsAvailable.length], counter, locallyOptimal)
-      console.log(bigCount);
-
+      callManyTimes([locallyOptimal.socketsAvailable.length, locallyOptimal.socketsAvailable.length, locallyOptimal.socketsAvailable.length, locallyOptimal.socketsAvailable.length], counter, locallyOptimal, player)
+      console.log("BIG COUNT: " + bigCount);
+      console.log("BIG COUNT2: " + bigCount2);
+      console.log("Average loop cost: " + Math.round(performanceTrack / bigCount*1000)/1000);
 
 
       // First gem replacement
@@ -375,7 +402,11 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
     */
 
     // -- SOCKETS --
+    
+    var s0 = performance.now();
     const optimalGems = gemGear(builtSet.itemList, player)
+    var s1 = performance.now();
+    console.log("Gems took " + (s1 - s0) + " milliseconds with count ")
   
     // -- Effects --
     let effectStats = [];
