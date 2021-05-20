@@ -339,6 +339,7 @@ export function gemGear(itemSet, player) {
   console.log(locallyOptimal);
   if (checkMeta(locallyOptimal.socketedColors)) {
     console.log("Search Complete. Gems done.");
+    return locallyOptimal;
   }
   else {
       // If not meta gem fulfilled, try the missing gems in each socket trying to find the slots that minimize the score loss.
@@ -357,7 +358,7 @@ export function gemGear(itemSet, player) {
       console.log(gemSets[0]);
 
 
-      return console.log(gemSets[0]);
+      return gemSets[0];
 
       // First gem replacement
 
