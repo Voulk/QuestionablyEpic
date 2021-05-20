@@ -112,7 +112,7 @@ export default function UpgradeFinderSimC(props) {
                             verticalAlign: "middle",
                             borderRadius: "8px",
                             border: "1px solid",
-                            borderColor: key.getQualityColor(), /*itemQuality(key.level, key.effect), */
+                            borderColor: key.getQualityColor(),
                           }}
                           src={getItemIcon(key.id, gameType)}
                           alt=""

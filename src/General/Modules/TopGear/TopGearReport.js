@@ -34,11 +34,17 @@ function TopGearReport(props) {
         return require("Images/Classes/Paladin/icon-paladin.png").default;
       case "Restoration Shaman":
         return require("Images/Classes/Shaman/icon-shaman.png").default;
+      case "Restoration Shaman BC":
+        return require("Images/Classes/Shaman/icon-shaman.png").default;
       case "Holy Priest":
+        return require("Images/Classes/Priest/icon-priest.png").default;
+      case "Holy Priest BC":
         return require("Images/Classes/Priest/icon-priest.png").default;
       case "Discipline Priest":
         return require("Images/Classes/Priest/icon-priest.png").default;
       case "Restoration Druid":
+        return require("Images/Classes/Druid/icon-druid.png").default;
+      case "Restoration Druid BC":
         return require("Images/Classes/Druid/icon-druid.png").default;
       case "Mistweaver Monk":
         return require("Images/Classes/Monk/icon-monk.png").default;

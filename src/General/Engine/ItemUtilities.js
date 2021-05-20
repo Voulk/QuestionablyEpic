@@ -34,7 +34,7 @@ export function getValidArmorTypes(spec) {
     case SPEC.DISCPRIEST:
       return [0, 1]; // Misc + Cloth
     case "Holy Paladin BC":
-      return [0, 4, 6]; // Misc + Plate + Shields
+      return [0, 1, 2, 3, 4, 6]; // Misc + Plate + Shields
     default:
       return [-1];
   }
