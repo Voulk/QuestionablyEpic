@@ -22,34 +22,34 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-const itemQuality = (itemLevel, effectCheck) => {
-  const isLegendary = effectCheck.type === "spec legendary";
-  if (isLegendary) return "#ff8000";
-  if (itemLevel >= 183) return "#a73fee";
-  else if (itemLevel >= 120) return "#328CE3";
-  else return "#1eff00";
-};
 
-const checkCharacterValid = (player) => {
+
+const checkCharacterValid = (player, gameType) => {
   const weaponSet = player.getActiveItems("AllMainhands", false, true);
   const weapon = weaponSet.length > 0 ? weaponSet[0] : "";
-
-  return (weapon.slot === "2H Weapon" && player.getEquippedItems().length === 15) || (weapon.slot === "1H Weapon" && player.getEquippedItems().length === 16);
+  if (gameType === "Retail") {
+    return (weapon.slot === "2H Weapon" && player.getEquippedItems().length === 15) || (weapon.slot === "1H Weapon" && player.getEquippedItems().length === 16);
+  }
+  else if (gameType === "BurningCrusade") {
+    return (weapon.slot === "2H Weapon" && player.getEquippedItems().length === 16) || (weapon.slot === "1H Weapon" && player.getEquippedItems().length === 17);
+  }
+  
 };
 
-const getSimCStatus = (player) => {
+const getSimCStatus = (player, gameType) => {
   if (player.activeItems.length === 0) return "Missing";
-  else if (checkCharacterValid(player) === false) return "Invalid";
+  else if (checkCharacterValid(player, gameType) === false) return "Invalid";
   else return "Good";
 };
 
 export default function UpgradeFinderSimC(props) {
   const classes = useStyles();
   const { t, i18n } = useTranslation();
-  const currentLanguage = i18n.currentLanguage;
-  const simcStatus = getSimCStatus(props.player);
-  const simcString = "UpgradeFinderFront.SimCBody1" + simcStatus;
   const gameType = useSelector((state) => state.gameType);
+  const currentLanguage = i18n.currentLanguage;
+  const simcStatus = getSimCStatus(props.player, gameType);
+  const simcString = "UpgradeFinderFront.SimCBody1" + simcStatus;
+  const wowheadDom = (gameType === "BurningCrusade" ? "tbc-" : "") + currentLanguage;
 
   const check = (simcStatus) => {
     let style = "";
@@ -104,7 +104,7 @@ export default function UpgradeFinderSimC(props) {
                   .filter((key) => key.isEquipped === true)
                   .map((key, i) => (
                     <Grid item key={i}>
-                      <a style={{ margin: "2px 2px" }} data-wowhead={"item=" + key.id + "&" + "ilvl=" + key.level + "&bonus=" + key.bonusIDS + "&domain=" + currentLanguage} key={i}>
+                      <a style={{ margin: "2px 2px" }} data-wowhead={"item=" + key.id + "&" + "ilvl=" + key.level + "&bonus=" + key.bonusIDS + "&domain=" + wowheadDom} key={i}>
                         <img
                           style={{
                             height: 22,
@@ -112,7 +112,7 @@ export default function UpgradeFinderSimC(props) {
                             verticalAlign: "middle",
                             borderRadius: "8px",
                             border: "1px solid",
-                            borderColor: itemQuality(key.level, key.effect),
+                            borderColor: key.getQualityColor(), /*itemQuality(key.level, key.effect), */
                           }}
                           src={getItemIcon(key.id, gameType)}
                           alt=""
