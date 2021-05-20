@@ -221,8 +221,12 @@ export function gemGear(itemSet, player) {
   }
 
   itemSet.forEach(item => {
-    gemCollection.socketsAvailable.push('sockets' in item ? item.sockets : []);
+    const socketsOnItem = item.sockets !== "" && item.sockets ? item.sockets : {};
+    console.log(socketsOnItem);
+    socketsOnItem['slot'] = item.slot;
+    gemCollection.socketsAvailable.push(socketsOnItem);
     if ("sockets" in item && item.sockets.gems !== undefined && item.sockets.gems.includes("meta")) gemCollection.metaGem = true;
+    
   });
 
   const bestGems = {

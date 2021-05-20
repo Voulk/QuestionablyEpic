@@ -12,6 +12,7 @@ import CastModel from "../Player/CastModel";
 import { getEffectValue } from "../../../Retail/Engine/EffectFormulas/EffectEngine"
 import { compileStats, buildDifferential, pruneItems, sumScore, deepCopyFunction } from "./TopGearEngineShared"
 import { getItemSet } from "BurningCrusade/Databases/ItemSetsDB"
+import { createBuilderStatusReporter } from "typescript";
 
 
 // Most of our sets will fall into a bucket where totalling the individual stats is enough to tell us they aren't viable. By slicing these out in a preliminary phase,
@@ -213,8 +214,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
     console.log("Enchants");
     console.log(enchant_stats);
 
-    // -- SOCKETS --
-    
+    // ----- SOCKETS -----
     var s0 = performance.now();
     const optimalGems = gemGear(builtSet.itemList, player)
     hardScore += optimalGems.score;
@@ -224,7 +224,11 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
 
     var s1 = performance.now();
     console.log("Gems took " + (s1 - s0) + " milliseconds with count ")
-  
+
+
+    // ----------------------
+
+
     // -- Effects --
     let effectStats = [];
     effectStats.push(bonus_stats);
@@ -284,6 +288,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
     builtSet.hardScore = Math.round(1000 * hardScore) / 1000;
     builtSet.setStats = setStats;
     builtSet.enchantBreakdown = enchants;
+    builtSet.socketInformation = optimalGems;
     return builtSet; // Temp
   }
 

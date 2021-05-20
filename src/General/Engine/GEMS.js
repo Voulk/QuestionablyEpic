@@ -2,8 +2,8 @@ export const GEMS = [
   /* ---------------------------------------------------------------------------------------------- */
   /*                                            Red Gems                                            */
   /* ---------------------------------------------------------------------------------------------- */
-  { name: "Teardrop Living Ruby", color: "red", rarity: "rare", jewelcrafting: false, stats: { bonushealing: 18 } }, // +9 spellpower
-  { name: "Teardrop Crimson Spinel", color: "red", rarity: "epic", jewelcrafting: false, stats: { bonushealing: 22 } }, // +12 spellpower
+  { name: "Teardrop Living Ruby", id: 24029, color: "red", rarity: "rare", jewelcrafting: false, stats: { bonushealing: 18 } }, // +9 spellpower
+  { name: "Teardrop Crimson Spinel", id: 32195, color: "red", rarity: "epic", jewelcrafting: false, stats: { bonushealing: 22 } }, // +12 spellpower
   { name: "Kailee's Rose", color: "red", rarity: "epic", jewelcrafting: true, stats: { bonushealing: 24 } }, // +14 spellpower JC Only (BOP)
 
   /* ---------------------------------------------------------------------------------------------- */
@@ -47,7 +47,7 @@ export const GEMS = [
   /* ----------------------------------- Intellect & Spell Power ---------------------------------- */
   { name: "Luminous Noble Topaz", color: "orange", rarity: "rare", jewelcrafting: false, stats: { intellect: 4, bonushealing: 10 } }, // +4 intellect & +5 spell power
   { name: "Luminous Fire Opal", color: "orange", rarity: "epic", jewelcrafting: false, stats: { intellect: 4, bonushealing: 12 } }, // +4 intellect & +6 spell power
-  { name: "Luminous Pyrestone", color: "orange", rarity: "epic", jewelcrafting: false, stats: { intellect: 5, bonushealing: 12 } }, // +5 intellect & +6 spell power
+  { name: "Luminous Pyrestone", id: 32219, color: "orange", rarity: "epic", jewelcrafting: false, stats: { intellect: 5, bonushealing: 12 } }, // +5 intellect & +6 spell power
 
   /* ------------------------------------- Haste & Spell Power ------------------------------------ */
   { name: "Reckless Noble Topaz", color: "orange", rarity: "rare", jewelcrafting: false, stats: { haste: 4, bonushealing: 10 } }, // +4 haste & +5 spell power
@@ -128,7 +128,7 @@ export const GEMS = [
 
   /* ------------------------------------ Spell Power & Mana/5 ------------------------------------ */
   { name: "Royal Nightseye", color: "purple", rarity: "rare", jewelcrafting: false, stats: { bonushealing: 10, mp5: 2 } }, // +5 spell power & +2 mana per 5
-  { name: "Royal Tanzanite", color: "purple", rarity: "epic", jewelcrafting: false, stats: { bonushealing: 12, mp5: 2 } }, // +6 spell power & +2 mana per 5
+  { name: "Royal Tanzanite", id: 30603, color: "purple", rarity: "epic", jewelcrafting: false, stats: { bonushealing: 12, mp5: 2 } }, // +6 spell power & +2 mana per 5
   { name: "Royal Shadowsong Amethyst", color: "purple", rarity: "epic", jewelcrafting: false, stats: { bonushealing: 12, mp5: 2 } }, // +6 spell power & +2 mana per 5
 
   /* ------------------------------------ Spell Power & Spirit ------------------------------------ */

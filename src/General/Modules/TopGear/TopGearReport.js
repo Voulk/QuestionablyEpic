@@ -55,6 +55,7 @@ function TopGearReport(props) {
   let result = props.result;
   let topSet = "";
   let enchants = {};
+  let gemStats = [];
   let differentials = {};
   let itemList = {};
   let statList = {};
@@ -64,6 +65,7 @@ function TopGearReport(props) {
     enchants = topSet.enchantBreakdown;
     differentials = result.differentials;
     itemList = topSet.itemList;
+    gemStats = gameType === "BurningCrusade" ? topSet.socketInformation : "";
     statList = topSet.setStats;
   } else {
     resultValid = false;
@@ -74,7 +76,7 @@ function TopGearReport(props) {
   let itemList = testList;
   let differentials = differentialsTest;
   let statList = { intellect: 321, haste: 931, crit: 831, mastery: 31, versatility: 91, leech: 49, hps: 911, dps: 893 }; */
-
+  console.log(gemStats);
   return (
     <div
       style={{
