@@ -17,7 +17,7 @@ export function getGemStatLoadout(socketsAvailable, socketedPieces, socketedColo
             for (const [stat, value] of Object.entries(socketedPieces[i][j].stats)) {
                 bonus_stats[stat] = stat in bonus_stats ? bonus_stats[stat] + value : value;    
             }
-            if (checkSocketBonus(socketsAvailable[i].gems, socketedColors[i])) {
+            if ('bonus' in socketsAvailable[i] && checkSocketBonus(socketsAvailable[i].gems, socketedColors[i])) {
                 for (const [stat, value] of Object.entries(socketsAvailable[i].bonus)) {
                     bonus_stats[stat] = stat in bonus_stats ? bonus_stats[stat] + value : value;
                 }
