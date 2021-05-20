@@ -85,7 +85,7 @@ export default function ItemCardReport(props) {
   ) : null;
 
   const enchantCheck = (item) => {
-    if (item.slot === "Chest" || item.slot === "Wrist" || item.slot === "Finger" || item.slot === "Back" || item.slot === "CombinedWeapon") {
+    if (item.slot in enchants) {
       let typo = (
         <Typography variant="subtitle2" wrap="nowrap" display="block" align="left" style={{ fontSize: "12px", color: "#36ed21", paddingRight: 4 }}>
           {enchants[item.slot]}

@@ -8,6 +8,26 @@ let performanceTrack = 0
 
 // This represents an individual collection of socketed items. 
 
+export function getGemStatLoadout(socketsAvailable, socketedPieces, socketedColors) {
+    let bonus_stats = {}
+    console.log(socketsAvailable)
+
+    for (var i = 0; i < socketedPieces.length; i++) {
+        for (var j = 0; j < socketedPieces[i].length; j++) {
+            for (const [stat, value] of Object.entries(socketedPieces[i][j].stats)) {
+                bonus_stats[stat] = stat in bonus_stats ? bonus_stats[stat] + value : value;    
+            }
+            if (checkSocketBonus(socketsAvailable[i].gems, socketedColors[i])) {
+                for (const [stat, value] of Object.entries(socketsAvailable[i].bonus)) {
+                    bonus_stats[stat] = stat in bonus_stats ? bonus_stats[stat] + value : value;
+                }
+            }
+        }   
+    }
+    //console.log(bonus_stats);
+    return bonus_stats;
+}
+
 export function checkSocketBonus(socketsAvailable, socketedGems) {
   let match = true;
   for (var i = 0; i < socketsAvailable.length; i++) {
@@ -67,21 +87,21 @@ export function socketItem(sockets, player, socketList, bestGems, forcedGems = {
         //console.log("Forcing color on key: " + numSocketed + ". " + forcedGems[numSocketed])
 
         colorMatch['score'] += bestGems[color].score;
-        colorMatch['gems'].push(bestGems[color].name);
+        colorMatch['gems'].push(bestGems[color]);
         colorMatch['colors'].push(bestGems[color].color);
   
         socketBest['score'] += bestGems[color].score;
-        socketBest['gems'].push(bestGems[color].name);
+        socketBest['gems'].push(bestGems[color]);
         socketBest['colors'].push(bestGems[color].color);
 
       }
       else {
         colorMatch['score'] += bestGems[socket].score;
-        colorMatch['gems'].push(bestGems[socket].name);
+        colorMatch['gems'].push(bestGems[socket]);
         colorMatch['colors'].push(bestGems[socket].color);
 
         socketBest['score'] += bestGems['overall'].score;
-        socketBest['gems'].push(bestGems['overall'].name);
+        socketBest['gems'].push(bestGems['overall']);
         socketBest['colors'].push(bestGems['overall'].color);
       }
       numSocketed += 1;
@@ -119,6 +139,9 @@ export function socketItem(sockets, player, socketList, bestGems, forcedGems = {
 
 }
 
+/***
+ * Check if the meta socket is fulfillfed by the socketed colors. 
+ */
 function checkMeta(socketedColors) {
     // Check if meta gem fulfilled.
     const flatColors = socketedColors.flat();

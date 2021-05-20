@@ -5,7 +5,7 @@ import React, { useState, useEffect } from "react";
 import { STATPERONEPERCENT, BASESTAT, STATDIMINISHINGRETURNS } from "../../Engine/STAT";
 import { CONSTRAINTS } from "../../Engine/CONSTRAINTS";
 
-import { gemGear } from "./GemUtilities";
+import { gemGear, getGemStatLoadout } from "./GemUtilities";
 import { convertPPMToUptime } from "../../../Retail/Engine/EffectFormulas/EffectUtilities";
 import BCPlayer from "../Player/BCPlayer";
 import CastModel from "../Player/CastModel";
@@ -138,6 +138,27 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
         mp5: 0,
         haste: 0,
     };
+
+    let enchant_stats = {
+      intellect: 0,
+      bonushealing: 0,
+      spirit: 0,
+      crit: 0,
+      stamina: 0,
+      mp5: 0,
+      haste: 0,
+    };
+
+    // Talents
+    let talent_stats = {
+      intellect: 0,
+      bonushealing: 0,
+      spirit: 0,
+      crit: 0,
+      stamina: 0,
+      mp5: 0,
+      haste: 0,
+    }
   
     /*
     let adjusted_weights = {
@@ -159,6 +180,38 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
     bonus_stats[highestWeight] += 32; // 16 x 2.
     enchants["Finger"] = "+16 " + highestWeight;
     */
+    enchant_stats.bonushealing += 35;
+    enchant_stats.mp5 += 7;
+    enchants['Head'] = "Glyph of Renewal"
+
+    enchant_stats.bonushealing += 33;
+    enchant_stats.mp5 += 4;
+    enchants['Shoulder'] = "Greater Inscription of Faith"
+
+    enchant_stats.mp5 += 6;
+    enchants['Chest'] = "Restore Mana - Prime"
+
+    enchant_stats.bonushealing += 30;
+    enchants['Wrist'] = "Superior Healing"
+
+    enchant_stats.bonushealing += 35;
+    enchants['Hands'] = "Major Healing"
+
+    enchant_stats.bonushealing += 66;
+    enchants['Legs'] = "Golden Spellthread"
+
+    enchant_stats.stamina += 9;
+    enchants['Feet'] = "Boar's Speed"
+
+    enchant_stats.bonushealing += (20 * 2); // Two finger slots.
+    enchants['Finger'] = "Healing Power"
+
+    enchant_stats.bonushealing += 81;
+    enchant_stats.intellect += 12;
+    enchants['CombinedWeapon'] = "Major Healing & Intellect"
+
+    console.log("Enchants");
+    console.log(enchant_stats);
 
     // -- SOCKETS --
     
@@ -166,6 +219,8 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
     const optimalGems = gemGear(builtSet.itemList, player)
     hardScore += optimalGems.score;
     builtSet.bcSockets = optimalGems;
+    const gemStats = getGemStatLoadout(optimalGems.socketsAvailable, optimalGems.socketedPieces, optimalGems.socketedColors);
+    console.log(gemStats);
 
     var s1 = performance.now();
     console.log("Gems took " + (s1 - s0) + " milliseconds with count ")
@@ -180,11 +235,20 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
     }
     bonus_stats = mergeBonusStats(effectStats);
     
+
+
   
     compileStats(setStats, bonus_stats); // Add the base stats on our gear together with enchants & gems.
+    compileStats(setStats, gemStats);
+    compileStats(setStats, enchant_stats);
     //applyDiminishingReturns(setStats); // Apply Diminishing returns to our haul.
     addBaseStats(setStats, player.spec); // Add our base stats, which are immune to DR. This includes our base 5% crit, and whatever base mastery our spec has.
-  
+    
+    // Talents
+    talent_stats.intellect = setStats.intellect * 0.1;
+    talent_stats.bonushealing = (setStats.intellect + talent_stats.intellect) * 0.35;
+
+    compileStats(setStats, talent_stats);
 
     for (var stat in setStats) {
       if (stat === "hps") {

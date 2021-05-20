@@ -7,7 +7,7 @@ export const getPaladinTierSet = (effectName, player) => {
 
     if (effectName === 37182) {
         // Justicar Raiment
-        bonus_stats.intellect = 340; // PH TODO
+        bonus_stats.intellect = 0; // PH TODO
     }
 
     return bonus_stats;

@@ -25,7 +25,8 @@ export function getTrinketEffectBC(effectName, player, contentType, itemLevel, u
             cooldown: 120,
             value: 297,
         }
-        bonus_stats.bonushealing = Math.round(effect.duration * effect.value / effect.cooldown);
+        //bonus_stats.bonushealing = Math.round(effect.duration * effect.value / effect.cooldown);
+
     }
 
     return bonus_stats;
