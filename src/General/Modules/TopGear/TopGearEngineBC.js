@@ -45,7 +45,7 @@ function setupPlayer(player, contentType, castModel) {
 
 export function runTopGearBC(rawItemList, wepCombos, player, contentType, baseHPS, currentLanguage, userSettings, castModel) {
     console.log("TOP GEAR BC");
-    console.log("WEP COMBOS: " + JSON.stringify(wepCombos));
+    //console.log("WEP COMBOS: " + JSON.stringify(wepCombos));
     //console.log("CL::::" + currentLanguage);
     var t0 = performance.now();
     // console.log("Running Top Gear");
@@ -104,7 +104,7 @@ export function runTopGearBC(rawItemList, wepCombos, player, contentType, baseHP
   } else {
     let result = new TopGearResult(itemSets[0], differentials);
     result.itemsCompared = count;
-    console.log(result);
+    //console.log(result);
     return result;
   }
 }
@@ -211,8 +211,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
     enchant_stats.intellect += 12;
     enchants['CombinedWeapon'] = "Major Healing & Intellect"
 
-    console.log("Enchants");
-    console.log(enchant_stats);
+
 
     // ----- SOCKETS -----
     var s0 = performance.now();
@@ -220,7 +219,6 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
     hardScore += optimalGems.score;
     builtSet.bcSockets = optimalGems;
     const gemStats = getGemStatLoadout(optimalGems.socketsAvailable, optimalGems.socketedPieces, optimalGems.socketedColors);
-    console.log(gemStats);
 
     var s1 = performance.now();
     console.log("Gems took " + (s1 - s0) + " milliseconds with count ")

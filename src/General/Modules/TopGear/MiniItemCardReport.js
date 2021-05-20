@@ -50,7 +50,7 @@ export default function ItemCardReport(props) {
     vers: versSocket,
   };
   const wowheadDom = (gameType === "BurningCrusade" ? "tbc-" : "") + currentLanguage;
-  const gemString = "";
+  const gemString = props.gems;
 
   const socketImage = socketImg[enchants["Gems"]];
   // TODO: Items should track their own quality, and this function shouldn't be in ItemCard.
@@ -119,7 +119,7 @@ export default function ItemCardReport(props) {
                 }}
               >
                 <div className="container-ItemCards">
-                  <a data-wowhead={"item=" + item.id + "&" + "ilvl=" + item.level + "&bonus=" + item.bonusIDS + "&domain=" + wowheadDom + "&gems=24029:25897"}>
+                  <a data-wowhead={"item=" + item.id + "&" + "ilvl=" + item.level + "&bonus=" + item.bonusIDS + "&domain=" + wowheadDom + gemString}>
                     <img
                       alt="img"
                       width={44}

@@ -204,7 +204,6 @@ function mathGemSet(args, gc, player, bestGems) {
 }
 
 export function gemGear(itemSet, player) {
-  console.log("Gemming Gear");
   //const locallyOptimal = 0;
   const metaSocketed = 0;
   const metaGems = ["Insightful Earthstorm Diamond"];
@@ -222,7 +221,6 @@ export function gemGear(itemSet, player) {
 
   itemSet.forEach(item => {
     const socketsOnItem = item.sockets !== "" && item.sockets ? item.sockets : {};
-    console.log(socketsOnItem);
     socketsOnItem['slot'] = item.slot;
     gemCollection.socketsAvailable.push(socketsOnItem);
     if ("sockets" in item && item.sockets.gems !== undefined && item.sockets.gems.includes("meta")) gemCollection.metaGem = true;
@@ -258,7 +256,6 @@ export function gemGear(itemSet, player) {
 
   console.log(locallyOptimal);
   if (checkMeta(locallyOptimal.socketedColors)) {
-    console.log("Search Complete. Gems done.");
     return locallyOptimal;
   }
   else {

@@ -71,12 +71,21 @@ function TopGearReport(props) {
     resultValid = false;
   }
 
-  /* TEST DATA
-  enchants = { chest: "+30 Stats", Wrist: "+15 Int", Finger: "+16 Haste", Back: "+20 Stam +30 Leech", Weapon: "Celestial Guidance" };
-  let itemList = testList;
-  let differentials = differentialsTest;
-  let statList = { intellect: 321, haste: 931, crit: 831, mastery: 31, versatility: 91, leech: 49, hps: 911, dps: 893 }; */
-  console.log(gemStats);
+  const getGemIDs = (slot) => {
+    if (gameType === "Retail") return "";
+    else {
+      let gemString = "&gems=";
+      for (var i = 0; i < gemStats.socketsAvailable.length; i++) {       
+        if (gemStats.socketsAvailable[i].slot === slot) {
+          for (var j = 0; j < gemStats.socketedPieces[i].length; j++) {
+            gemString += gemStats.socketedPieces[i][j]['id'].toString() + ":";
+          }
+        }
+      }
+      return gemString.slice(0, -1);
+    }
+  }
+
   return (
     <div
       style={{
@@ -125,7 +134,7 @@ function TopGearReport(props) {
                                 key.slot === "CombinedWeapon",
                             )
                             .map((item, index) => (
-                              <ItemCardReport key={index} item={item} activateItem={true} enchants={enchants} />
+                              <ItemCardReport key={index} item={item} activateItem={true} enchants={enchants} gems={getGemIDs(item.slot)} />
                             ))}
                         </Grid>
                       </Grid>
@@ -140,7 +149,7 @@ function TopGearReport(props) {
                           {itemList
                             .filter((key) => key.slot === "Hands" || key.slot === "Waist" || key.slot === "Legs" || key.slot === "Feet" || key.slot === "Finger" || key.slot === "Trinket")
                             .map((item, index) => (
-                              <ItemCardReport key={index} item={item} activateItem={true} enchants={enchants} />
+                              <ItemCardReport key={index} item={item} activateItem={true} enchants={enchants} gems={getGemIDs(item.slot)}/>
                             ))}
                         </Grid>
                       </Grid>
