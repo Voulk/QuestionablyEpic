@@ -140,6 +140,25 @@ export default function UpgradeFinderBossImages(props, gameType) {
     case 628:
       return require("Images/BurningCrusade/Raid/SerpentshrineCavern/LadyVashj.png").default;
 
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                     Battle for Mount Hyjal                                     */
+    /* ---------------------------------------------------------------------------------------------- */
+    /* -------------------------------------- Rage Winterchill -------------------------------------- */
+    case 618:
+      return require("Images/BurningCrusade/Raid/TheBattleforMountHyjal/RageWinterchill.png").default;
+    /* ------------------------------------------ Anetheron ----------------------------------------- */
+    case 619:
+      return require("Images/BurningCrusade/Raid/TheBattleforMountHyjal/Anetheron.png").default;
+    /* ------------------------------------------ Kaz'rogal ----------------------------------------- */
+    case 620:
+      return require("Images/BurningCrusade/Raid/TheBattleforMountHyjal/Kazrogal.png").default;
+    /* ------------------------------------------- Azgalor ------------------------------------------ */
+    case 621:
+      return require("Images/BurningCrusade/Raid/TheBattleforMountHyjal/Azgalor.png").default;
+    /* ----------------------------------------- Archimonde ----------------------------------------- */
+    case 622:
+      return require("Images/BurningCrusade/Raid/TheBattleforMountHyjal/Archimonde.png").default;
+
     default:
       return "Error: Boss Missing :(";
   }
