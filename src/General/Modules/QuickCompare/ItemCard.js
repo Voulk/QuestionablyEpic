@@ -92,6 +92,7 @@ export default function ItemCard(props) {
   let itemName2 = "";
   let isVault = item.vaultItem;
   const deleteActive = item.offhandID === 0;
+  const wowheadDom = (gameType === "BurningCrusade" ? "tbc-" : "") + currentLanguage;
 
   if (item.offhandID > 0) {
     itemName = getTranslatedItemName(item.id, currentLanguage, "", gameType);
@@ -220,7 +221,7 @@ export default function ItemCard(props) {
               }}
             >
               <div className="container-ItemCards">
-                <a data-wowhead={item.slot === "Trinket" ? "item=" + item.id + "&" + "ilvl=" + item.level + "&bonus=" + item.bonusIDS + "&domain=" + currentLanguage : ""}>
+                <a data-wowhead={"item=" + item.id + "&" + "ilvl=" + item.level + "&bonus=" + item.bonusIDS + "&domain=" + wowheadDom}>
                   <img
                     alt="img"
                     width={56}
