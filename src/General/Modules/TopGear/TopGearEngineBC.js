@@ -245,9 +245,26 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
     addBaseStats(setStats, player.spec); // Add our base stats, which are immune to DR. This includes our base 5% crit, and whatever base mastery our spec has.
     
     // Talents
-    talent_stats.intellect = setStats.intellect * 0.1;
-    talent_stats.bonushealing = (setStats.intellect + talent_stats.intellect) * 0.35;
-
+    // This can be properly formalized.
+    if (player.getSpec() === "Holy Paladin BC") {
+      talent_stats.intellect = setStats.intellect * 0.1;
+      talent_stats.bonushealing = (setStats.intellect + talent_stats.intellect) * 0.35;
+    }
+    else if (player.getSpec() === "Restoration Shaman BC") {
+      talent_stats.bonushealing = (setStats.intellect) * 0.3;
+      talent_stats.bonusdamage = (setStats.intellect) * 0.3;
+    }
+    else if (player.getSpec() === "Restoration Druid BC") {
+      // Also gets 30% of spirit MP5 as MP5
+      talent_stats.spirit = (setStats.spirit) * 0.15;
+    }
+    else if (player.getSpec() === "Priest BC") {
+      // Also gets 30% of spirit MP5 as MP5
+      talent_stats.spirit = (setStats.spirit) * 0.05;
+      talent_stats.bonushealing = (setStats.spirit + talent_stats.spirit) * 0.25;
+      talent_stats.bonusdamage = (setStats.spirit + talent_stats.spirit) * 0.25;
+    }
+    
     compileStats(setStats, talent_stats);
 
     for (var stat in setStats) {
