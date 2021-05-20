@@ -2,6 +2,7 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import { Paper, Typography, Divider, Grid } from "@material-ui/core";
 import { getItemIcon } from "../../Engine/ItemUtilities";
+import { useSelector } from "react-redux";
 
 function CompetitiveAlternatives(props) {
   const { t, i18n } = useTranslation();
@@ -9,14 +10,8 @@ function CompetitiveAlternatives(props) {
 
   // const item = props.item
   const differentials = props.differentials
-
-  const itemQuality = (itemLevel, effect) => {
-    const isLegendary = effect.type === "spec legendary";
-    if (isLegendary) return "#ff8000";
-    else if (itemLevel >= 183) return "#a73fee";
-    else if (itemLevel >= 120) return "#328CE3";
-    else return "#1eff00";
-  };
+  const gameType = useSelector((state) => state.gameType);
+  const itemQuality = item.getQualityColor();
 
   /* -------------------------------------- Rounding Function ------------------------------------- */
   const roundTo = (value, places) => {
@@ -58,7 +53,7 @@ function CompetitiveAlternatives(props) {
                                   alt="img"
                                   width={40}
                                   height={40}
-                                  src={getItemIcon(item.id)}
+                                  src={getItemIcon(item.id, gameType)}
                                   style={{
                                     borderRadius: 4,
                                     borderWidth: "1px",

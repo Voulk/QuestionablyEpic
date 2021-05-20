@@ -56,8 +56,10 @@ export default function ItemCard(props) {
   const itemLevel = item.level;
   const isLegendary = "effect" in item && item.effect.type === "spec legendary";
   const gameType = useSelector((state) => state.gameType);
+  const itemQuality = item.getQualityColor();
 
   // TODO: Items should track their own quality, and this function shouldn't be in ItemCard.
+  /*
   const itemQuality = (itemLevel, itemID) => {
     if (gameType !== "Retail") {
       const quality = getItemProp(itemID, "quality", gameType)
@@ -74,6 +76,7 @@ export default function ItemCard(props) {
       else return "#1eff00";
     }
   };
+  */
 
   const activateItemCard = () => {
     props.activateItem(item.uniqueHash, item.active);
@@ -121,7 +124,7 @@ export default function ItemCard(props) {
                         borderRadius: 4,
                         borderWidth: "1px",
                         borderStyle: "solid",
-                        borderColor: itemQuality(itemLevel, item.id),
+                        borderColor: itemQuality,
                       }}
                     />
                   </a>
@@ -134,7 +137,7 @@ export default function ItemCard(props) {
               <Grid item container display="inline" direction="column" justify="space-around" xs="auto">
                 <Grid container item wrap="nowrap" justify="space-between" alignItems="center" style={{ width: "100%" }}>
                   <Grid item xs={11} display="inline">
-                    <Typography variant={itemName.length > 30 ? "subtitle2" : "subtitle1"} wrap="nowrap" display="inline" align="left" style={{ color: itemQuality(itemLevel, item.id) }}>
+                    <Typography variant={itemName.length > 30 ? "subtitle2" : "subtitle1"} wrap="nowrap" display="inline" align="left" style={{ color: itemQuality}}>
                       {itemName}
                     </Typography>
                   </Grid>

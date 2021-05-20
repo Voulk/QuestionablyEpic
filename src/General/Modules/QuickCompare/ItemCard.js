@@ -54,8 +54,9 @@ export default function ItemCard(props) {
   const itemLevel = item.level;
   const isLegendary = "effect" in item && item.effect.type === "spec legendary";
   const gameType = useSelector((state) => state.gameType);
-
-  // TODO: Items should track their own quality, and this function shouldn't be in ItemCard.
+  const itemQuality = item.getQualityColor();
+  
+  /*
   const itemQuality = (itemLevel, itemID) => {
     if (gameType !== "Retail") {
       const quality = getItemProp(itemID, "quality", gameType)
@@ -71,7 +72,7 @@ export default function ItemCard(props) {
       else if (itemLevel >= 120) return "#328CE3";
       else return "#1eff00";
     }
-  };
+  }; */
 
   const deleteItemCard = () => {
     props.delete(item.uniqueHash);
@@ -132,7 +133,7 @@ export default function ItemCard(props) {
                       borderRadius: 4,
                       borderWidth: "1px",
                       borderStyle: "solid",
-                      borderColor: itemQuality(itemLevel, item.id),
+                      borderColor: itemQuality,
                       position: "absolute",
                     }}
                   />
@@ -146,7 +147,7 @@ export default function ItemCard(props) {
                       borderRadius: 4,
                       borderWidth: "1px",
                       borderStyle: "solid",
-                      borderColor: itemQuality(itemLevel),
+                      borderColor: itemQuality,
                       WebkitClipPath: "polygon(0 0, 0% 100%, 100% 0)",
                       clipPath: "polygon(0 0, 0% 100%, 100% 0)",
                     }}
@@ -161,7 +162,7 @@ export default function ItemCard(props) {
                 <Grid container item wrap="nowrap" justify="space-between" alignItems="center" style={{ width: "100%" }}>
                   <Grid item xs={10} display="inline">
                     <Typography variant={itemName.length > 30 ? "subtitle2" : "subtitle1"} wrap="nowrap" style={{ display: "inline-flex" }} align="left">
-                      <div style={{ color: itemQuality(item.mainHandLevel) }}>{itemName}</div>
+                      <div style={{ color: itemQuality }}>{itemName}</div>
                       <div style={{ paddingLeft: 6 }}>{" - " + item.mainHandLevel}</div>
                       {item.mainHandTertiary !== "" ? <div style={{ paddingLeft: 6 }}>{item.mainHandTertiary}</div> : ""}
                     </Typography>
@@ -194,7 +195,7 @@ export default function ItemCard(props) {
                 <Divider />
                 <Grid item xs={10}>
                   <Typography variant={itemName2.length > 30 ? "subtitle2" : "subtitle1"} wrap="nowrap" style={{ display: "inline-flex" }} align="left">
-                    <div style={{ color: itemQuality(item.offHandLevel) }}>{itemName2}</div>
+                    <div style={{ color: itemQuality }}>{itemName2}</div>
                     <div style={{ paddingLeft: 6 }}>{" - " + item.offHandLevel}</div>
                     {item.offHandTertiary !== "" ? <div style={{ paddingLeft: 6 }}>{item.offHandTertiary}</div> : ""}
                   </Typography>
@@ -229,7 +230,7 @@ export default function ItemCard(props) {
                       borderRadius: 4,
                       borderWidth: "1px",
                       borderStyle: "solid",
-                      borderColor: itemQuality(itemLevel, item.id),
+                      borderColor: itemQuality,
                     }}
                   />
                 </a>
@@ -242,7 +243,7 @@ export default function ItemCard(props) {
             <Grid item container display="inline" direction="column" justify="space-around" xs="auto">
               <Grid container item wrap="nowrap" justify="space-between" alignItems="center" style={{ width: "100%" }}>
                 <Grid item xs={10} display="inline">
-                  <Typography variant={itemName.length > 30 ? "subtitle2" : "subtitle1"} wrap="nowrap" display="inline" align="left" style={{ color: itemQuality(itemLevel, item.id) }}>
+                  <Typography variant={itemName.length > 30 ? "subtitle2" : "subtitle1"} wrap="nowrap" display="inline" align="left" style={{ color: itemQuality }}>
                     {itemName}
                   </Typography>
                 </Grid>
