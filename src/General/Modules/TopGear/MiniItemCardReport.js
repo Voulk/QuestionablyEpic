@@ -40,7 +40,7 @@ export default function ItemCardReport(props) {
   const gameType = useSelector((state) => state.gameType);
 
   const currentLanguage = i18n.language;
-  const statString = buildStatString(item.stats, item.effect, currentLanguage);
+  const statString = (gameType === "BurningCrusade") ? "" : buildStatString(item.stats, item.effect, currentLanguage);
   const itemLevel = item.level;
   const isLegendary = "effect" in item && item.effect.type === "spec legendary";
   const socketImg = {
@@ -49,6 +49,7 @@ export default function ItemCardReport(props) {
     mastery: masterySocket,
     vers: versSocket,
   };
+  const wowheadDom = (gameType === "BurningCrusade" ? "tbc-" : "") + currentLanguage;
   const socketImage = socketImg[enchants["Gems"]];
   // TODO: Items should track their own quality, and this function shouldn't be in ItemCard.
   const itemQuality = (itemLevel, itemID) => {
@@ -116,7 +117,7 @@ export default function ItemCardReport(props) {
                 }}
               >
                 <div className="container-ItemCards">
-                  <a data-wowhead={item.slot === "Trinket" ? "item=" + item.id + "&" + "ilvl=" + item.level + "&bonus=" + item.bonusIDS + "&domain=" + currentLanguage : ""}>
+                  <a data-wowhead={"item=" + item.id + "&" + "ilvl=" + item.level + "&bonus=" + item.bonusIDS + "&domain=" + wowheadDom + "&gems=24029:25897"}>
                     <img
                       alt="img"
                       width={44}

@@ -91,6 +91,7 @@ function TopGearReport(props) {
                 style={{
                   justifyContent: "center",
                   backgroundImage: `url("${backgroundImage}")`,
+                  backgroundColor: "#0F0E04",
                   backgroundSize: "cover",
                   backgroundPositionY: "-160px",
                   padding: 16,
