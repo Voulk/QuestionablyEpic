@@ -172,7 +172,7 @@ export default function UpgradeFinderBossImages(props, gameType) {
       return require("Images/BurningCrusade/Raid/BlackTemple/ShadeofAkama.png").default;
     /* --------------------------------------- Teron Gorefiend -------------------------------------- */
     case 604:
-      return require("Images/BurningCrusade/Raid/BlackTemple/ShadeofAkama.png").default;
+      return require("Images/BurningCrusade/Raid/BlackTemple/TeronGorefiend.png").default;
 
     // 605, // 1586, // Gurtogg Bloodboil
     // 606, // 1587, // Reliquary of Souls
