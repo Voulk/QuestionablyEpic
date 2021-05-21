@@ -28,7 +28,7 @@ const useStyles = makeStyles({
     borderRadius: 3,
     //borderColor: "Goldenrod",
     //backgroundColor: "#494a3d",
-    borderWidth: "2px",
+    borderWidth: "1px",
   },
   selectedVault: {
     borderColor: "Goldenrod",
@@ -58,15 +58,14 @@ export default function ItemCard(props) {
   // TODO: Items should track their own quality, and this function shouldn't be in ItemCard.
   const itemQuality = (itemLevel, itemID) => {
     if (gameType !== "Retail") {
-      const quality = getItemProp(itemID, "quality", gameType)
+      const quality = getItemProp(itemID, "quality", gameType);
       console.log("Quality: " + quality + ". Item ID: " + itemID);
       if (quality === 5) return "#ff8000";
       else if (quality === 4) return "#a73fee";
       else if (quality === 3) return "#328CE3";
       else if (quality === 2) return "#1eff00";
       else return "#ffffff";
-    }
-    else {
+    } else {
       if (isLegendary) return "#ff8000";
       else if (itemLevel >= 183) return "#a73fee";
       else if (itemLevel >= 120) return "#328CE3";
@@ -103,7 +102,7 @@ export default function ItemCard(props) {
 
   const socket = props.item.socket ? (
     <div style={{ display: "inline" }}>
-      <img src={socketImage} width={15} height={15} style={{ verticalAlign: "middle" }} alt="Socket" />{" "}
+      <img src={socketImage} width={14} height={14} style={{ verticalAlign: "middle" }} alt="Socket" />{" "}
     </div>
   ) : null;
 
@@ -120,15 +119,15 @@ export default function ItemCard(props) {
             <Grid item xs="auto">
               <CardContent
                 style={{
-                  padding: "4.5px 4.5px 0.5px 4.5px",
+                  padding: "3.5px 3.5px 0.5px 3.5px",
                   display: "inline-flex",
                 }}
               >
                 <div className="container-ItemCards">
                   <img
                     alt="img"
-                    width={56}
-                    height={56}
+                    width={42}
+                    height={42}
                     src={getItemIcon(item.offhandID, gameType)}
                     style={{
                       borderRadius: 4,
@@ -141,8 +140,8 @@ export default function ItemCard(props) {
                   <img
                     className="et_pb_image.diagonal-overlay"
                     alt="img"
-                    width={56}
-                    height={56}
+                    width={42}
+                    height={42}
                     src={getItemIcon(item.id, gameType)}
                     style={{
                       borderRadius: 4,
@@ -158,11 +157,11 @@ export default function ItemCard(props) {
               </CardContent>
             </Grid>
             <Divider orientation="vertical" flexItem />
-            <CardContent style={{ padding: 4, width: "100%" }}>
+            <CardContent style={{ padding: 0, width: "100%" }}>
               <Grid item container display="inline" direction="column" justify="space-around" xs="auto">
                 <Grid container item wrap="nowrap" justify="space-between" alignItems="center" style={{ width: "100%" }}>
                   <Grid item xs={10} display="inline">
-                    <Typography variant={itemName.length > 30 ? "subtitle2" : "subtitle1"} wrap="nowrap" style={{ display: "inline-flex" }} align="left">
+                    <Typography variant="subtitle2" wrap="nowrap" style={{ display: "inline-flex", marginLeft: 4 }} align="left">
                       <div style={{ color: itemQuality(item.mainHandLevel) }}>{itemName}</div>
                       <div style={{ paddingLeft: 6 }}>{" - " + item.mainHandLevel}</div>
                       {item.mainHandTertiary !== "" ? <div style={{ paddingLeft: 6 }}>{item.mainHandTertiary}</div> : ""}
@@ -175,11 +174,10 @@ export default function ItemCard(props) {
                     style={{
                       display: "inline-flex",
                       justifyContent: "center",
-                      paddingLeft: 3,
                     }}
                   >
                     <Typography
-                      variant="h6"
+                      variant="subtitle1"
                       wrap="nowrap"
                       display="inline"
                       align="center"
@@ -195,7 +193,7 @@ export default function ItemCard(props) {
                 </Grid>
                 <Divider />
                 <Grid item xs={10}>
-                  <Typography variant={itemName2.length > 30 ? "subtitle2" : "subtitle1"} wrap="nowrap" style={{ display: "inline-flex" }} align="left">
+                  <Typography variant="subtitle2" wrap="nowrap" style={{ display: "inline-flex", marginLeft: 4 }} align="left">
                     <div style={{ color: itemQuality(item.offHandLevel) }}>{itemName2}</div>
                     <div style={{ paddingLeft: 6 }}>{" - " + item.offHandLevel}</div>
                     {item.offHandTertiary !== "" ? <div style={{ paddingLeft: 6 }}>{item.offHandTertiary}</div> : ""}
@@ -216,7 +214,7 @@ export default function ItemCard(props) {
           <Grid item xs="auto">
             <CardContent
               style={{
-                padding: "4.5px 4.5px 0.5px 4.5px",
+                padding: "3.5px 3.5px 0.5px 3.5px",
                 display: "inline-flex",
               }}
             >
@@ -224,8 +222,8 @@ export default function ItemCard(props) {
                 <a data-wowhead={item.slot === "Trinket" ? "item=" + item.id + "&" + "ilvl=" + item.level + "&bonus=" + item.bonusIDS + "&domain=" + currentLanguage : ""}>
                   <img
                     alt="img"
-                    width={56}
-                    height={56}
+                    width={42}
+                    height={42}
                     src={getItemIcon(item.id, gameType)}
                     style={{
                       borderRadius: 4,
@@ -240,11 +238,11 @@ export default function ItemCard(props) {
             </CardContent>
           </Grid>
           <Divider orientation="vertical" flexItem />
-          <CardContent style={{ padding: 4, width: "100%" }}>
+          <CardContent style={{ padding: 0, width: "100%" }}>
             <Grid item container display="inline" direction="column" justify="space-around" xs="auto">
               <Grid container item wrap="nowrap" justify="space-between" alignItems="center" style={{ width: "100%" }}>
                 <Grid item xs={10} display="inline">
-                  <Typography variant={itemName.length > 30 ? "subtitle2" : "subtitle1"} wrap="nowrap" display="inline" align="left" style={{ color: itemQuality(itemLevel, item.id) }}>
+                  <Typography variant="subtitle2" wrap="nowrap" display="inline" align="left" style={{ color: itemQuality(itemLevel, item.id), marginLeft: 4 }}>
                     {itemName}
                   </Typography>
                 </Grid>
@@ -255,11 +253,10 @@ export default function ItemCard(props) {
                   style={{
                     display: "inline-flex",
                     justifyContent: "center",
-                    paddingLeft: 3,
                   }}
                 >
                   <Typography
-                    variant="h6"
+                    variant="subtitle1"
                     wrap="nowrap"
                     display="inline"
                     align="center"
@@ -276,12 +273,12 @@ export default function ItemCard(props) {
               <Divider />
               <Grid item container display="inline" direction="row" xs="auto" justify="space-between">
                 <Grid item xs={11}>
-                  <Typography variant="subtitle2" wrap="nowrap" display="block" style={{ paddingTop: "4px" }} align="left">
+                  <Typography variant="subtitle2" wrap="nowrap" display="block" style={{ paddingTop: 0, paddingLeft: 4 }} align="left">
                     {socket} {statString} {tertiary} {isVault ? " / " + t("itemTags.greatvault") : ""}
                   </Typography>
                 </Grid>
 
-                <Grid item xs={1} display="inline-flex" align="center">
+                {/* <Grid item xs={1} display="inline-flex" align="center">
                   {deleteActive ? (
                     <IconButton onClick={deleteItemCard} aria-label="delete" size="small">
                       <DeleteIcon style={{ color: "#ad2c34", paddingTop: 2 }} fontSize="small" />
@@ -289,7 +286,7 @@ export default function ItemCard(props) {
                   ) : (
                     ""
                   )}
-                </Grid>
+                </Grid> */}
               </Grid>
             </Grid>
           </CardContent>
