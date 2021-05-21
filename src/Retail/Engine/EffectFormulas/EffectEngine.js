@@ -8,6 +8,7 @@ import { getPaladinLegendary } from "./Paladin/PaladinLegendaryFormulas";
 import { getGenericLegendary } from "./Generic/GenericLegendaryFormulas";
 import { getTrinketEffect} from "./Generic/TrinketEffectFormulas";
 import { getTrinketEffectBC} from "BurningCrusade/Engine/EffectFormulas/Generic/TrinketEffectFormulasBC"
+import { getGenericEffectBC} from "BurningCrusade/Engine/EffectFormulas/Generic/GenericEffectBC"
 
 import { getPriestConduit } from "./Priest/PriestConduitFormulas";
 import { getPaladinConduit } from "./Paladin/PaladinConduitFormulas";
@@ -105,8 +106,10 @@ export function getEffectValue(effect, player, contentType, itemLevel = 0, userS
     }
     else if (effectType === "trinket") {
       bonus_stats = getTrinketEffectBC(effectName, player, userSettings);
-      
     }
+    if (effect.type === "special") {
+      bonus_stats = getGenericEffectBC(effectName, player, contentType);
+    } 
   }
   return bonus_stats;
 }

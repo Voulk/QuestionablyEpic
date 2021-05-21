@@ -4,10 +4,10 @@ import { deepCopyFunction } from "./TopGearEngineShared";
 
 // This holds all of our gemCollection objects, so that we can sort them later and pick the best.
 const gemSets = []
-let performanceTrack = 0
+let performanceTrack = 0 // Temporary variable to time loops for performance optimization.
 
-// This represents an individual collection of socketed items. 
-
+// Converts an array of gems & colors to a set of bonus_stats. 
+// It represents one item.
 export function getGemStatLoadout(socketsAvailable, socketedPieces, socketedColors) {
     let bonus_stats = {}
     console.log(socketsAvailable)
@@ -28,6 +28,7 @@ export function getGemStatLoadout(socketsAvailable, socketedPieces, socketedColo
     return bonus_stats;
 }
 
+// Check if a set of gems color matches a set of sockets.
 export function checkSocketBonus(socketsAvailable, socketedGems) {
   let match = true;
   for (var i = 0; i < socketsAvailable.length; i++) {
@@ -40,7 +41,6 @@ export function checkSocketBonus(socketsAvailable, socketedGems) {
   console.log(socketedGems);
   console.log(socketsAvailable);
   console.log("Match: " + match);
-
   */
   return match;
 
@@ -48,39 +48,33 @@ export function checkSocketBonus(socketsAvailable, socketedGems) {
 
 // Get highest value of each gem color. 
 // Compare value of socketing highest matching colors + socket bonus, to just socketing highest colors.
-export function socketItem(sockets, player, socketList, bestGems, forcedGems = {} /*{4: 'blue', 6: 'blue', 8: 'yellow', 9: 'yellow'} */) {
-  var r0 = performance.now();
+export function socketItem(sockets, player, socketList, bestGems, forcedGems = {}) {
+  var r0 = performance.now(); // Temp performance variable.
   let numSocketed = socketList.numSocketed;
   const socketsAvailable = sockets.gems;
 
   if (!socketsAvailable) {
+    // If the piece has no socket, move on. 
     socketList.socketedPieces.push([]);
     socketList.socketedColors.push([]);
     return socketList;
   }
-  /*
-  const bestGems = {
-    overall: getBestGem(player, "all"),
-    red: getBestGem(player, "red"),
-    blue: getBestGem(player, "blue"),
-    yellow: getBestGem(player, "yellow"),
-  } */
 
-  let socketBonus = 0
+  let socketBonus = 0 // The value of the socket bonus in score.
   if (sockets.bonus) {
     for (const [stat, value] of Object.entries(sockets.bonus)) {
-      //console.log("Stat: " + stat + ". Value: " + value);
+      // Iterate the bonus stats object and add together any stat bonuses.
       socketBonus += value * player.getStatWeight("Raid", stat);
     }
   }
 
-
+  // colorMatch attempts to match the correct colors to each gem slot.
+  // socketBest will just raw slot the best gem (usually red).
   let colorMatch = {gems: [], colors: [], score: 0};
   let socketBest = {gems: [], colors: [], score: 0};
   
   for (var i = 0; i < socketsAvailable.length; i++) {
     const socket = socketsAvailable[i];
-    // Match colors
     if (['red', 'blue', 'yellow'].includes(socket)) {
       if (Object.keys(forcedGems).includes(numSocketed.toString())) {
         const color = forcedGems[numSocketed];
@@ -108,8 +102,7 @@ export function socketItem(sockets, player, socketList, bestGems, forcedGems = {
     }
   }
   
-
-  // Check socket bonus
+  // Add socket bonus if the set matches.
   colorMatch.score += checkSocketBonus(socketsAvailable, colorMatch.colors) ? socketBonus : 0;
   socketBest.score += checkSocketBonus(socketsAvailable, socketBest.colors) ? socketBonus : 0;
 
@@ -120,7 +113,6 @@ export function socketItem(sockets, player, socketList, bestGems, forcedGems = {
 
   if (colorMatch.score >= socketBest.score) {
     // Matching the colors is ideal.
-    //console.log("Matching colors is ideal" + JSON.stringify(colorMatch.gems))
     socketList.score = socketList.score + colorMatch.score;
     socketList.socketedPieces.push(colorMatch.gems);
     socketList.socketedColors.push(colorMatch.colors);
@@ -128,18 +120,16 @@ export function socketItem(sockets, player, socketList, bestGems, forcedGems = {
     return socketList;
   }
   else  {
-    //console.log("Full Red" + JSON.stringify(socketBest.gems))
     socketList.score = socketList.score + socketBest.score;
     socketList.socketedPieces.push(socketBest.gems);
     socketList.socketedColors.push(socketBest.colors);
-
 
     return socketList;
   }
 
 }
 
-/***
+/**
  * Check if the meta socket is fulfillfed by the socketed colors. 
  */
 function checkMeta(socketedColors) {
@@ -161,7 +151,6 @@ function checkMeta(socketedColors) {
 }
 
 let bigCount = 0;
-let bigCount2 = 0;
 
 function recursivelyGenerateGemSet(maxIndices, func, gc, player, bestGems) {
   doRecursivelyGenerateGemSet(maxIndices, func, gc,player, bestGems, [], 0);
@@ -249,13 +238,12 @@ export function gemGear(itemSet, player) {
     red: flatColors.filter(function(x){ return x === "red" || x === "orange" || x === "purple"; }).length,
     yellow: flatColors.filter(function(x){ return x === "yellow" || x === "orange" || x === "green"; }).length,
   }
-
-
-
+  gemSets.push(locallyOptimal);
   // Check if player even has enough sockets for the meta gem.
-
   console.log(locallyOptimal);
-  if (checkMeta(locallyOptimal.socketedColors)) {
+  if (checkMeta(locallyOptimal.socketedColors) || locallyOptimal.numSocketed < 6) {
+    // The optimal set of gems also activates the meta gem which means we don't have to worry about running anything complex.
+    // Alternatively, we don't have 6 gems, so can't activate it in any case.
     return locallyOptimal;
   }
   else {
@@ -272,28 +260,8 @@ export function gemGear(itemSet, player) {
       gemSets.sort((a, b) => (a.score < b.score ? 1 : -1));
       
       console.log("Average loop cost: " + Math.round(performanceTrack / bigCount*10000)/10000 + "ms");
-      console.log(gemSets[0]);
-
 
       return gemSets[0];
-
-      // First gem replacement
-
-      /*
-      let count = 2730;
-      for (var i = 0; i < locallyOptimal.socketsAvailable.length; i++) {
-        // Second gem replacement.
-        for (var j = 0; j < locallyOptimal.socketsAvailable.length; j++) {
-
-          for (var k = 0; k < locallyOptimal.socketsAvailable.length; k++) {
-            if (i !== j && i !== k && j !== k) {
-              count += 1;
-            }
-          }
-        }
-      }
-      console.log("Count: " + count);
-      */
 
   }
 }
