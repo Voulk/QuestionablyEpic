@@ -58,15 +58,14 @@ export default function ItemCard(props) {
   // TODO: Items should track their own quality, and this function shouldn't be in ItemCard.
   const itemQuality = (itemLevel, itemID) => {
     if (gameType !== "Retail") {
-      const quality = getItemProp(itemID, "quality", gameType)
+      const quality = getItemProp(itemID, "quality", gameType);
       console.log("Quality: " + quality + ". Item ID: " + itemID);
       if (quality === 5) return "#ff8000";
       else if (quality === 4) return "#a73fee";
       else if (quality === 3) return "#328CE3";
       else if (quality === 2) return "#1eff00";
       else return "#ffffff";
-    }
-    else {
+    } else {
       if (isLegendary) return "#ff8000";
       else if (itemLevel >= 183) return "#a73fee";
       else if (itemLevel >= 120) return "#328CE3";
@@ -103,7 +102,7 @@ export default function ItemCard(props) {
 
   const socket = props.item.socket ? (
     <div style={{ display: "inline" }}>
-      <img src={socketImage} width={15} height={15} style={{ verticalAlign: "middle" }} alt="Socket" />{" "}
+      <img src={socketImage} width={14} height={14} style={{ verticalAlign: "middle" }} alt="Socket" />{" "}
     </div>
   ) : null;
 
@@ -120,7 +119,7 @@ export default function ItemCard(props) {
             <Grid item xs="auto">
               <CardContent
                 style={{
-                  padding: "4.5px 4.5px 0.5px 4.5px",
+                  padding: "3.5px 3.5px 0.5px 3.5px",
                   display: "inline-flex",
                 }}
               >
@@ -158,12 +157,12 @@ export default function ItemCard(props) {
               </CardContent>
             </Grid>
             <Divider orientation="vertical" flexItem />
-            <CardContent style={{ padding: 2, width: "100%" }}>
+            <CardContent style={{ padding: 0, width: "100%" }}>
               <Grid item container display="inline" direction="column" justify="space-around" xs="auto">
                 <Grid container item wrap="nowrap" justify="space-between" alignItems="center" style={{ width: "100%" }}>
                   <Grid item xs={10} display="inline">
-                    <Typography variant={itemName.length > 30 ? "subtitle2" : "subtitle1"} wrap="nowrap" style={{ display: "inline-flex", lineHeight: 1.45 }} align="left">
-                      <div style={{ color: itemQuality(item.mainHandLevel)}}>{itemName}</div>
+                    <Typography variant="subtitle2" wrap="nowrap" style={{ display: "inline-flex", marginLeft: 4 }} align="left">
+                      <div style={{ color: itemQuality(item.mainHandLevel) }}>{itemName}</div>
                       <div style={{ paddingLeft: 6 }}>{" - " + item.mainHandLevel}</div>
                       {item.mainHandTertiary !== "" ? <div style={{ paddingLeft: 6 }}>{item.mainHandTertiary}</div> : ""}
                     </Typography>
@@ -175,7 +174,6 @@ export default function ItemCard(props) {
                     style={{
                       display: "inline-flex",
                       justifyContent: "center",
-                      paddingLeft: 3,
                     }}
                   >
                     <Typography
@@ -195,7 +193,7 @@ export default function ItemCard(props) {
                 </Grid>
                 <Divider />
                 <Grid item xs={10}>
-                  <Typography variant={itemName2.length > 30 ? "subtitle2" : "subtitle1"} wrap="nowrap" style={{ display: "inline-flex" }} align="left">
+                  <Typography variant="subtitle2" wrap="nowrap" style={{ display: "inline-flex", marginLeft: 4 }} align="left">
                     <div style={{ color: itemQuality(item.offHandLevel) }}>{itemName2}</div>
                     <div style={{ paddingLeft: 6 }}>{" - " + item.offHandLevel}</div>
                     {item.offHandTertiary !== "" ? <div style={{ paddingLeft: 6 }}>{item.offHandTertiary}</div> : ""}
@@ -216,7 +214,7 @@ export default function ItemCard(props) {
           <Grid item xs="auto">
             <CardContent
               style={{
-                padding: "4.5px 4.5px 0.5px 4.5px",
+                padding: "3.5px 3.5px 0.5px 3.5px",
                 display: "inline-flex",
               }}
             >
@@ -240,11 +238,11 @@ export default function ItemCard(props) {
             </CardContent>
           </Grid>
           <Divider orientation="vertical" flexItem />
-          <CardContent style={{ padding: 2, width: "100%" }}>
+          <CardContent style={{ padding: 0, width: "100%" }}>
             <Grid item container display="inline" direction="column" justify="space-around" xs="auto">
               <Grid container item wrap="nowrap" justify="space-between" alignItems="center" style={{ width: "100%" }}>
-                <Grid item xs={10} display="inline" >
-                  <Typography variant={itemName.length > 30 ? "subtitle2" : "subtitle1"} wrap="nowrap" display="inline" align="left" style={{ color: itemQuality(itemLevel, item.id), lineHeight: 1.45 }}>
+                <Grid item xs={10} display="inline">
+                  <Typography variant="subtitle2" wrap="nowrap" display="inline" align="left" style={{ color: itemQuality(itemLevel, item.id), marginLeft: 4 }}>
                     {itemName}
                   </Typography>
                 </Grid>
@@ -255,7 +253,6 @@ export default function ItemCard(props) {
                   style={{
                     display: "inline-flex",
                     justifyContent: "center",
-                    paddingLeft: 3,
                   }}
                 >
                   <Typography
@@ -276,7 +273,7 @@ export default function ItemCard(props) {
               <Divider />
               <Grid item container display="inline" direction="row" xs="auto" justify="space-between">
                 <Grid item xs={11}>
-                  <Typography variant="subtitle2" wrap="nowrap" display="block" style={{ paddingTop: "2px" }} align="left">
+                  <Typography variant="subtitle2" wrap="nowrap" display="block" style={{ paddingTop: 0, paddingLeft: 4 }} align="left">
                     {socket} {statString} {tertiary} {isVault ? " / " + t("itemTags.greatvault") : ""}
                   </Typography>
                 </Grid>
