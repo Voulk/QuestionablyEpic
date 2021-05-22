@@ -103,6 +103,13 @@ export default function UpgradeFinderBossImages(props, gameType) {
       return require("Images/BurningCrusade/Raid/GruulsLair/Gruul.png").default;
 
     /* ---------------------------------------------------------------------------------------------- */
+    /*                                       Magtheridon's Lair                                       */
+    /* ---------------------------------------------------------------------------------------------- */
+    case 651:
+      return require("Images/BurningCrusade/Raid/MagtheridonsLair/MagtheridonsLair.png").default;
+    /* ----------------------------------------- Magtheridon ---------------------------------------- */
+
+    /* ---------------------------------------------------------------------------------------------- */
     /*                                          Tempest Keep                                          */
     /* ---------------------------------------------------------------------------------------------- */
     /* -------------------------------------------- Al'ar ------------------------------------------- */
@@ -166,17 +173,24 @@ export default function UpgradeFinderBossImages(props, gameType) {
     /* ----------------------------------- High Warlord Naj'entus ----------------------------------- */
     case 601:
       return require("Images/BurningCrusade/Raid/BlackTemple/HighWarlordNajentus.png").default;
-    // 602, // 1583, // Supremus
+    /* ------------------------------------------ Supremus ------------------------------------------ */
+    case 602:
+      return require("Images/BurningCrusade/Raid/BlackTemple/Supremus.png").default;
     /* --------------------------------------- Shade of Akama --------------------------------------- */
     case 603:
       return require("Images/BurningCrusade/Raid/BlackTemple/ShadeofAkama.png").default;
     /* --------------------------------------- Teron Gorefiend -------------------------------------- */
     case 604:
       return require("Images/BurningCrusade/Raid/BlackTemple/TeronGorefiend.png").default;
-
-    // 605, // 1586, // Gurtogg Bloodboil
-    // 606, // 1587, // Reliquary of Souls
-    // 607, // 1588, // Mother Shahraz
+    /* -------------------------------------- Gurtogg Bloodboil ------------------------------------- */
+    case 605:
+      return require("Images/BurningCrusade/Raid/BlackTemple/GurtoggBloodboil.png").default;
+    /* ------------------------------------- Reliquary of Souls ------------------------------------- */
+    case 606:
+      return require("Images/BurningCrusade/Raid/BlackTemple/ReliquaryoftheLost.png").default;
+    /* --------------------------------------- Mother Shahraz --------------------------------------- */
+    case 607:
+      return require("Images/BurningCrusade/Raid/BlackTemple/MotherShahraz.png").default;
     /* ------------------------------------ The Illidari Council ------------------------------------ */
     case 608:
       return require("Images/BurningCrusade/Raid/BlackTemple/IllidariCouncil.png").default;
@@ -196,22 +210,38 @@ export default function UpgradeFinderBossImages(props, gameType) {
     /* ------------------------------------------ Jan'alai ------------------------------------------ */
     case 1191:
       return require("Images/BurningCrusade/Raid/Zulaman/Janalai.png").default;
-    // 1192, // Halazzi
-    // 1193, // Hex Lord Malacrass
-    // 1194, //Daakara
+    /* ------------------------------------------- Halazzi ------------------------------------------ */
+    case 1192:
+      return require("Images/BurningCrusade/Raid/Zulaman/Halazzi.png").default;
+    /* ------------------------------------- Hex Lord Malacrass ------------------------------------- */
+    case 1193:
+      return require("Images/BurningCrusade/Raid/Zulaman/HexLordMalacrass.png").default;
+    // , //
+    /* ------------------------------------------- Zul'jin ------------------------------------------ */
+    case 1194:
+      return require("Images/BurningCrusade/Raid/Zulaman/Zuljin.png").default;
 
     /* ---------------------------------------------------------------------------------------------- */
     /*                                         Sunwell Plateau                                        */
     /* ---------------------------------------------------------------------------------------------- */
-
-    // 724, // 1591, // Kalecgos
-    // 725, // 1592, // Brutallus
-    // 726, // 1593, // Felmyst
+    /* ------------------------------------------ Kalecgos ------------------------------------------ */
+    case 724:
+      return require("Images/BurningCrusade/Raid/SunwellPlateau/Kalecgos.png").default;
+    /* ------------------------------------------ Brutallus ----------------------------------------- */
+    case 725:
+      return require("Images/BurningCrusade/Raid/SunwellPlateau/Brutallus.png").default;
+    /* ------------------------------------------- Felmyst ------------------------------------------ */
+    case 726:
+      return require("Images/BurningCrusade/Raid/SunwellPlateau/Felmyst.png").default;
     /* -------------------------------------- The Eredar Twins -------------------------------------- */
     case 727:
       return require("Images/BurningCrusade/Raid/SunwellPlateau/EredarTwins.png").default;
-    // 728, // 1595, // M'uru
-    // 729, // 1596, // Kil'jaeden
+    /* -------------------------------------------- M'uru ------------------------------------------- */
+    case 728:
+      return require("Images/BurningCrusade/Raid/SunwellPlateau/Muru.png").default;
+    /* ----------------------------------------- Kil'jaeden ----------------------------------------- */
+    case 729:
+      return require("Images/BurningCrusade/Raid/SunwellPlateau/KilJaeden.png").default;
 
     default:
       return "Error: Boss Missing :(";
