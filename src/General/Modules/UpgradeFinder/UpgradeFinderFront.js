@@ -67,7 +67,14 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+/* ---------------------------------------------------------------------------------------------- */
+/*                                        Retail Constants                                        */
+/* ---------------------------------------------------------------------------------------------- */
+
+/* ---------------------------------- Retail Raid Difficulties ---------------------------------- */
 const raidDifficulty = ["Raid Finder", "Normal", "Heroic", "Mythic"];
+
+/* -------------------------------------- Retail PVP Ranks -------------------------------------- */
 
 const PvPRating = [
   { value: 0, label: "Unranked" },
@@ -78,12 +85,20 @@ const PvPRating = [
   { value: 1600, label: "Elite 2400+" },
 ];
 
+/* ---------------------------------------------------------------------------------------------- */
+/*                                    Burning Crusade Constants                                   */
+/* ---------------------------------------------------------------------------------------------- */
+
+/* ---------------------------- Burning Crusade Dungeon Difficulties ---------------------------- */
+const burningCrusadeDungeonDifficulty = ["Normal", "Heroic"];
+
 export default function UpgradeFinderFront(props) {
   const classes = useStyles();
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
   const contentType = useSelector((state) => state.contentType);
-  const helpText = t("UpgradeFinderFront.HelpText");
+  const gameType = useSelector((state) => state.gameType);
+  const helpText = gameType === "Retail" ? t("UpgradeFinderFront.HelpText") : t("UpgradeFinderFront.HelpTextBC"); // TODO: Implement BC Help Text
 
   const marks = [
     {
@@ -259,71 +274,123 @@ export default function UpgradeFinderFront(props) {
         <Grid item xs={12}>
           <Settings player={props.player} userSettings={userSettings} editSettings={editSettings} hymnalShow={true} groupBuffShow={true} autoSocket={true} />
         </Grid>
-
         {/* ------------------------------ Raid Section ------------------------------ */}
-        <Grid item xs={12}>
-          <Paper elevation={0} style={{ padding: 10 }}>
-            <Grid container justify="center" spacing={1}>
-              <Grid item xs={12}>
-                <Typography color="primary" align="center" variant="h5">
-                  {t("UpgradeFinderFront.RaidDifficultyHeader")}
-                </Typography>
+
+        {gameType === "Retail" ? (
+          <Grid item xs={12}>
+            <Paper elevation={0} style={{ padding: 10 }}>
+              <Grid container justify="center" spacing={1}>
                 <Grid item xs={12}>
-                  <Typography align="center">{t("UpgradeFinderFront.RaidDifficultyBody")}</Typography>
+                  <Typography color="primary" align="center" variant="h5">
+                    {t("UpgradeFinderFront.RaidDifficultyHeader")}
+                  </Typography>
+                  <Grid item xs={12}>
+                    <Typography align="center">{t("UpgradeFinderFront.RaidDifficultyBody")}</Typography>
+                  </Grid>
                 </Grid>
               </Grid>
-            </Grid>
 
-            <Grid container justify="center" spacing={1}>
-              {raidDifficulty.map((key, i) => (
-                <Grid item xs="auto" key={i}>
-                  <ToggleButton
-                    classes={{
-                      root: classes.red,
-                      selected: classes.selectedRed,
-                    }}
-                    value="check"
-                    selected={props.playerSettings.raid.includes(i)}
-                    style={{ width: 180, height: 45 }}
-                    onChange={() => {
-                      setsPvE[i](!selectsPvE[i]);
-                      props.setRaidDifficulty(i);
-                    }}
-                  >
-                    {t("RaidDifficulty." + key)}
-                  </ToggleButton>
-                </Grid>
-              ))}
-            </Grid>
-          </Paper>
-        </Grid>
+              <Grid container justify="center" spacing={1}>
+                {raidDifficulty.map((key, i) => (
+                  <Grid item xs="auto" key={i}>
+                    <ToggleButton
+                      classes={{
+                        root: classes.red,
+                        selected: classes.selectedRed,
+                      }}
+                      value="check"
+                      selected={props.playerSettings.raid.includes(i)}
+                      style={{ width: 180, height: 45 }}
+                      onChange={() => {
+                        setsPvE[i](!selectsPvE[i]);
+                        props.setRaidDifficulty(i);
+                      }}
+                    >
+                      {t("RaidDifficulty." + key)}
+                    </ToggleButton>
+                  </Grid>
+                ))}
+              </Grid>
+            </Paper>
+          </Grid>
+        ) : (
+          ""
+        )}
 
-        {/* --------------------------- Mythic Plus Section -------------------------- */}
-        <Grid item xs={12}>
-          <Paper elevation={0} style={{ padding: "10px 10px 10px 10px", textAlign: "center" }}>
-            <Grid container justify="center" spacing={1}>
-              <Grid item xs={12}>
-                <Typography color="primary" align="center" variant="h5">
-                  {t("UpgradeFinderFront.MythicPlusHeader")}
-                </Typography>
+        {/* -------------------------------------- Dungeon Settings -------------------------------------- */}
+
+        {gameType === "Retail" ? (
+          /* ---------------------------------------------------------------------------------------------- */
+          /*                                  Retail Mythic Dungeon Section                                 */
+          /* ---------------------------------------------------------------------------------------------- */
+
+          <Grid item xs={12}>
+            <Paper elevation={0} style={{ padding: "10px 10px 10px 10px", textAlign: "center" }}>
+              <Grid container justify="center" spacing={1}>
                 <Grid item xs={12}>
-                  <Typography align="center">{t("UpgradeFinderFront.MythicPlusBody")}</Typography>
+                  <Typography color="primary" align="center" variant="h5">
+                    {t("UpgradeFinderFront.MythicPlusHeader")}
+                  </Typography>
+                  <Grid item xs={12}>
+                    <Typography align="center">{t("UpgradeFinderFront.MythicPlusBody")}</Typography>
+                  </Grid>
                 </Grid>
               </Grid>
-            </Grid>
 
-            <UpgradeFinderSlider
-              className={classes.slider}
-              style={{ color: "#52af77" }}
-              defaultValue={6}
-              step={null}
-              valueLabelDisplay="off"
-              marks={marks}
-              max={12}
-              change={props.setDungeonDifficulty}
-            />
-          </Paper>
-        </Grid>
+              <UpgradeFinderSlider
+                className={classes.slider}
+                style={{ color: "#52af77" }}
+                defaultValue={6}
+                step={null}
+                valueLabelDisplay="off"
+                marks={marks}
+                max={12}
+                change={props.setDungeonDifficulty}
+              />
+            </Paper>
+          </Grid>
+        ) : (
+          /* ---------------------------------------------------------------------------------------------- */
+          /*                                 Burning Crusade Dungeon Section                                */
+          /* ---------------------------------------------------------------------------------------------- */
+
+          <Grid item xs={12}>
+            <Paper elevation={0} style={{ padding: "10px 10px 10px 10px", textAlign: "center" }}>
+              <Grid container justify="center" spacing={1}>
+                <Grid item xs={12}>
+                  <Typography color="primary" align="center" variant="h5">
+                    {t("Dungeons")}
+                  </Typography>
+                  <Grid item xs={12}>
+                    <Typography align="center">{t("UpgradeFinderFront.DungeonBodyBC")}</Typography>
+                  </Grid>
+                </Grid>
+              </Grid>
+
+              <Grid container justify="center" spacing={1}>
+                {burningCrusadeDungeonDifficulty.map((key, i) => (
+                  <Grid item xs="auto" key={i}>
+                    <ToggleButton
+                      classes={{
+                        root: classes.red,
+                        selected: classes.selectedRed,
+                      }}
+                      value="check"
+                      selected={props.playerSettings.raid.includes(i)}
+                      style={{ width: 180, height: 45 }}
+                      // onChange={() => {
+                      //   // setsPvE[i](!selectsPvE[i]);
+                      //   props.setRaidDifficulty(i);
+                      // }}
+                    >
+                      {t("RaidDifficulty." + key)}
+                    </ToggleButton>
+                  </Grid>
+                ))}
+              </Grid>
+            </Paper>
+          </Grid>
+        )}
         {/* ------------------------------- PvP Section ------------------------------ */}
         <Grid item xs={12}>
           <Paper elevation={0} style={{ padding: 10 }}>
