@@ -93,16 +93,16 @@ export default function ItemCard(props) {
             <Grid item xs="auto">
               <CardContent
                 style={{
-                  padding: "2px 2px 0.4px 2px",
+                  padding: "2px 2px 0px 2px",
                   display: "inline-flex",
                 }}
               >
-                <div className="container-ItemCards">
+                <div className="container-MiniItemCards">
                   <a data-wowhead={item.slot === "Trinket" ? "item=" + item.id + "&" + "ilvl=" + item.level + "&bonus=" + item.bonusIDS + "&domain=" + currentLanguage : ""}>
                     <img
                       alt="img"
-                      width={44}
-                      height={44}
+                      width={42}
+                      height={42}
                       src={getItemIcon(item.id)}
                       style={{
                         borderRadius: 4,
@@ -117,11 +117,11 @@ export default function ItemCard(props) {
               </CardContent>
             </Grid>
             <Divider orientation="vertical" flexItem />
-            <CardContent style={{ padding: 2, width: "100%" }}>
+            <CardContent style={{ padding: 4, width: "100%" }}>
               <Grid item container display="inline" direction="column" justify="space-around" xs="auto">
                 <Grid container item wrap="nowrap" justify="space-between" alignItems="center" style={{ width: "100%" }}>
                   <Grid item xs={11} display="inline">
-                    <Typography variant={itemName.length > 30 ? "subtitle2" : "subtitle1"} wrap="nowrap" display="inline" align="left" style={{ color: itemQuality(itemLevel) }}>
+                    <Typography variant="subtitle2" wrap="nowrap" display="inline" align="left" style={{ color: itemQuality(itemLevel) }}>
                       {itemName}
                     </Typography>
                   </Grid>
