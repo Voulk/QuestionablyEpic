@@ -217,7 +217,7 @@ class Player {
   scoreActiveItems = (contentType) => {
     for (var i = 0; i < this.activeItems.length; i++) {
       let item = this.activeItems[i];
-      item.softScore = scoreItem(item, this, contentType);
+      item.softScore = scoreItem(item, this, contentType, this.gameType);
 
       // Error checking
       if (item.softScore < 0) {
@@ -527,7 +527,9 @@ class Player {
       this.statWeights.Raid = monkDefaultStatWeights("Raid");
       this.statWeights.Dungeon = monkDefaultStatWeights("Dungeon");
       this.statWeights.DefaultWeights = true;
-    } else {
+    } else if (spec.includes("BC")) {
+    }
+    else {
       // Invalid spec replied. Error.
       reportError(this, "Player", "Invalid Spec Supplied during setupDefaults", spec);
       throw new Error("Invalid Spec Supplied");

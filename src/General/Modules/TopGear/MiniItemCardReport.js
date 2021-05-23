@@ -1,13 +1,14 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Card, CardContent, CardActionArea, Typography, Grid, Divider } from "@material-ui/core";
-import { getTranslatedItemName, buildStatString, getItemIcon } from "../../Engine/ItemUtilities";
+import { getTranslatedItemName, buildStatString, getItemIcon, getItemProp } from "../../Engine/ItemUtilities";
 import "./MiniItemCard.css";
 import hasteSocket from "../../../Images/Resources/hasteSocket.jpg";
 import critSocket from "../../../Images/Resources/critSocket.jpg";
 import masterySocket from "../../../Images/Resources/masterySocket.jpg";
 import versSocket from "../../../Images/Resources/versSocket.jpg";
 import { useTranslation } from "react-i18next";
+import { useSelector } from "react-redux";
 
 const useStyles = makeStyles({
   root: {
@@ -36,9 +37,10 @@ export default function ItemCardReport(props) {
 
   const enchants = props.enchants;
   const { i18n } = useTranslation();
+  const gameType = useSelector((state) => state.gameType);
 
   const currentLanguage = i18n.language;
-  const statString = buildStatString(item.stats, item.effect, currentLanguage);
+  const statString = (gameType === "BurningCrusade") ? "" : buildStatString(item.stats, item.effect, currentLanguage);
   const itemLevel = item.level;
   const isLegendary = "effect" in item && item.effect.type === "spec legendary";
   const socketImg = {
@@ -47,22 +49,36 @@ export default function ItemCardReport(props) {
     mastery: masterySocket,
     vers: versSocket,
   };
+  const wowheadDom = (gameType === "BurningCrusade" ? "tbc-" : "") + currentLanguage;
+  const gemString = props.gems;
+
   const socketImage = socketImg[enchants["Gems"]];
-  const itemQuality = (itemLevel) => {
-    if (isLegendary) return "#ff8000";
-    if (itemLevel >= 183) return "#a73fee";
-    else if (itemLevel >= 120) return "#328CE3";
-    else return "#1eff00";
+  // TODO: Items should track their own quality, and this function shouldn't be in ItemCard.
+  const itemQuality = (itemLevel, itemID) => {
+    if (gameType !== "Retail") {
+      const quality = getItemProp(itemID, "quality", gameType)
+      if (quality === 5) return "#ff8000";
+      else if (quality === 4) return "#a73fee";
+      else if (quality === 3) return "#328CE3";
+      else if (quality === 2) return "#1eff00";
+      else return "#ffffff";
+    }
+    else {
+      if (isLegendary) return "#ff8000";
+      else if (itemLevel >= 183) return "#a73fee";
+      else if (itemLevel >= 120) return "#328CE3";
+      else return "#1eff00";
+    }
   };
 
   let itemName = "";
   let isVault = item.vaultItem;
 
   if (item.offhandID > 0) {
-    itemName = getTranslatedItemName(item.id, currentLanguage) + " & " + getTranslatedItemName(item.offhandID, currentLanguage);
+    itemName = getTranslatedItemName(item.id, currentLanguage, "", gameType) + " & " + getTranslatedItemName(item.offhandID, currentLanguage, "", gameType);
   } else {
     if (isLegendary) itemName = item.effect.name;
-    else itemName = getTranslatedItemName(item.id, currentLanguage);
+    else itemName = getTranslatedItemName(item.id, currentLanguage, "", gameType);
   }
 
   const socket = props.item.socket ? (
@@ -72,7 +88,7 @@ export default function ItemCardReport(props) {
   ) : null;
 
   const enchantCheck = (item) => {
-    if (item.slot === "Chest" || item.slot === "Wrist" || item.slot === "Finger" || item.slot === "Back" || item.slot === "CombinedWeapon") {
+    if (item.slot in enchants) {
       let typo = (
         <Typography variant="subtitle2" wrap="nowrap" display="block" align="left" style={{ fontSize: "12px", color: "#36ed21", paddingRight: 4 }}>
           {enchants[item.slot]}
@@ -84,7 +100,7 @@ export default function ItemCardReport(props) {
     return null;
   };
 
-  const tertiary = props.item.tertiary !== "" ? <div style={{ display: "inline" }}> / {props.item.tertiary} </div> : null;
+  const tertiary = ('tertiary' in props.item && props.item.tertiary !== "") ? <div style={{ display: "inline" }}> / {props.item.tertiary} </div> : null;
 
   return (
     <Grid item xs={12}>
@@ -103,17 +119,17 @@ export default function ItemCardReport(props) {
                 }}
               >
                 <div className="container-ItemCards">
-                  <a data-wowhead={item.slot === "Trinket" ? "item=" + item.id + "&" + "ilvl=" + item.level + "&bonus=" + item.bonusIDS + "&domain=" + currentLanguage : ""}>
+                  <a data-wowhead={"item=" + item.id + "&" + "ilvl=" + item.level + "&bonus=" + item.bonusIDS + "&domain=" + wowheadDom + gemString}>
                     <img
                       alt="img"
                       width={44}
                       height={44}
-                      src={getItemIcon(item.id)}
+                      src={getItemIcon(item.id, gameType)}
                       style={{
                         borderRadius: 4,
                         borderWidth: "1px",
                         borderStyle: "solid",
-                        borderColor: itemQuality(itemLevel),
+                        borderColor: itemQuality(itemLevel, item.id),
                       }}
                     />
                   </a>
@@ -126,7 +142,7 @@ export default function ItemCardReport(props) {
               <Grid item container display="inline" direction="column" justify="space-around" xs="auto">
                 <Grid container item wrap="nowrap" justify="space-between" alignItems="center" style={{ width: "100%" }}>
                   <Grid item xs={12} display="inline">
-                    <Typography variant="subtitle2" wrap="nowrap" display="inline" align="left" style={{ color: itemQuality(itemLevel) }}>
+                    <Typography variant="subtitle2" wrap="nowrap" display="inline" align="left" style={{ color: itemQuality(itemLevel, item.id) }}>
                       {itemName}
                     </Typography>
                   </Grid>

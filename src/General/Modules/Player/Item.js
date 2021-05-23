@@ -65,6 +65,14 @@ class Item {
     return id + "" + (Math.floor(Math.random() * 100000) + 1).toString();
   }
 
+  getQualityColor() {
+    const isLegendary = this.effect.type === "spec legendary";
+    if (isLegendary) return "#ff8000";
+    else if (this.itemLevel >= 183) return "#a73fee";
+    else if (this.itemLevel >= 120) return "#328CE3";
+    else return "#1eff00";
+  }
+
   addStats(bonus_stats) {
     for (var stat in this.stats) {
       if (stat in bonus_stats) {

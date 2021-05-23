@@ -41,28 +41,22 @@ export function classColoursERT(props) {
 }
 
 export function classColoursJS(props) {
-  if (props === "HolyPaladin" || props === "Holy Paladin" || props === "Paladin") {
+  if (props.includes("Paladin")) {
     return "#F58CBA";
   }
-  if (props === "RestorationDruid" || props === "Restoration Druid" || props === "Druid") {
+  if (props.includes("Druid")) {
     return "#FF7D0A";
   }
   if (
-    props === "HolyPriest" ||
-    props === "Priest" ||
-    props === "DisciplinePriest" ||
-    props === "Holy Priest" ||
-    props === "Discipline Priest" ||
-    props === "Shadow Priest" ||
-    props === "ShadowPriest"
+    props.includes("Priest")
   ) {
     return "#FFFFFF";
   }
-  if (props === "RestorationShaman" || props === "Restoration Shaman" || props === "Shaman") {
+  if (props.includes("Paladin")) {
     return "#007af2";
   }
 
-  if (props === "MistweaverMonk" || props === "Mistweaver Monk" || props === "Monk") {
+  if (props.includes("Monk")) {
     return "#00FF96";
   }
   if (props === "Warrior") {

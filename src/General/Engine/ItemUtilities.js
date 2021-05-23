@@ -34,7 +34,7 @@ export function getValidArmorTypes(spec) {
     case SPEC.DISCPRIEST:
       return [0, 1]; // Misc + Cloth
     case "Holy Paladin BC":
-      return [0, 4, 6]; // Misc + Plate + Shields
+      return [0, 1, 2, 3, 4, 6]; // Misc + Plate + Shields
     default:
       return [-1];
   }
@@ -211,9 +211,9 @@ export function getItemProp(id, prop, gameType = "Retail") {
 // Add some support for missing icons.
 export function getItemIcon(id, gameType = "Retail") {
   const item = getItem(id, gameType);
-  console.log("https://wow.zamimg.com/images/wow/icons/large/" + item.icon + " .jpg");
+  //console.log("https://wow.zamimg.com/images/wow/icons/large/" + item.icon + " .jpg");
   if (gameType === "BurningCrusade" && item !== "") return "https://wow.zamimg.com/images/wow/icons/large/" + item.icon + ".jpg";
-  if (item !== "" && "icon" in item) return process.env.PUBLIC_URL + "/Images/Icons/" + item.icon + ".jpg";
+  else if (item !== "" && "icon" in item) return process.env.PUBLIC_URL + "/Images/Icons/" + item.icon + ".jpg";
   else {
     reportError(this, "ItemUtilities", "Icon not found for ID", id);
     return process.env.PUBLIC_URL + "/Images/Icons/missing.jpg";
@@ -414,7 +414,9 @@ export function buildStatString(stats, effect, lang = "en") {
 
   if (effect !== "") statString += "Effect" + " / "; // t("itemTags.effect")
 
+
   return statString.slice(0, -3); // We slice here to remove excess slashes and white space from the end.
+
 
 
 }
@@ -482,7 +484,7 @@ function scoreGemColor(gemList, player) {
   return gemList;
 }
 
-function getBestGem(player, color) {
+export function getBestGem(player, color) {
   let colors = []
   let gems = [...GEMS];
 
@@ -491,7 +493,7 @@ function getBestGem(player, color) {
   else if (color === "yellow") colors = ["yellow", "orange", "green"] 
   else if (color === "all") colors = ["yellow", "blue", "red", "purple", "orange", "green"] 
 
-  let gemList = gems.filter((filter) => (colors.includes(filter.color) && filter.jewelcrafting === false))
+  let gemList = gems.filter((filter) => (colors.includes(filter.color) && filter.jewelcrafting === false && filter.rarity !== "Epic"));
   gemList = scoreGemColor(gemList, player);
   return gemList[0];
 
@@ -530,12 +532,30 @@ export function socketItem(item, player) {
 
   }
 
-
   if (colorMatch.score >= socketBest.score) item.socketedGems = colorMatch;
   else item.socketedGems =  item.socketedGems = socketBest;
 
-  console.log(item.socketedGems);
+}
 
+// Compiles stats & bonus stats into one array to which we can then apply DR etc. 
+// TODO, this is identical to TopGearShared, so put it somewhere accessible to both.
+function compileStats(stats, bonus_stats) {
+  
+  for (const stat in stats) {
+    if (stat !== "bonus_stats") {
+      stats[stat] += (bonus_stats !== undefined && stat in bonus_stats) ? bonus_stats[stat] : 0;
+    }
+  }
+
+  for (const bonusStat in bonus_stats) {
+    if (!(bonusStat in stats)) {
+      console.log("Adding bonus stat: " + bonusStat);
+      stats[bonusStat] = bonus_stats[bonusStat];
+    }
+  }
+
+  return stats;
+  
 }
 
 // Return an item score.
@@ -543,32 +563,36 @@ export function socketItem(item, player) {
 // Special effects, sockets and leech are then added afterwards.
 export function scoreItem(item, player, contentType, gameType = "Retail") {
   let score = 0;
+  let bonus_stats = {}
+  let item_stats = {...item.stats};
 
   // Calculate Effect.
   if (item.effect !== "") {
-    item.stats.bonus_stats = getEffectValue(item.effect, player, contentType, item.level);
-    //console.log("Getting Effect" + JSON.stringify(item.stats.bonus_stats));
+    bonus_stats = getEffectValue(item.effect, player, contentType, item.level, {}, gameType);
   }
 
   // Multiply the item's stats by our stat weights.
-  for (var stat in item.stats) {
-    if (stat !== "bonus_stats") {
-      let statSum = item.stats[stat] + (stat in item.stats["bonus_stats"] ? item.stats["bonus_stats"][stat] : 0);
-      score += statSum * player.getStatWeight(contentType, stat);
-      console.log("Stat: " + stat + " adds " + statSum * player.getStatWeight(contentType, stat) + " to score.");
-    }
+  const sumStats = compileStats(item_stats, bonus_stats);
+
+  for (var stat in sumStats) {
+      if (stat !== "bonus_stats") {
+        let statSum = sumStats[stat]
+        score += statSum * player.getStatWeight(contentType, stat);
+        //console.log("Stat: " + stat + " adds " + statSum * player.getStatWeight(contentType, stat) + " to score.");
+      }
+
   }
 
   // Add any bonus HPS
-  if ("bonus_stats" in item.stats && "hps" in item.stats.bonus_stats) {
+  if ("bonus_stats" in item_stats && "hps" in bonus_stats) {
     //console.log("Adding bonus_stats to score");
-    score += (item.stats.bonus_stats.hps / player.getHPS(contentType)) * player.activeStats.intellect;
+    score += (bonus_stats.hps / player.getHPS(contentType)) * player.activeStats.intellect;
   }
 
   // Add any bonus Mana
-  if ("bonus_stats" in item.stats && "mana" in item.stats.bonus_stats) {
+  if ("bonus_stats" in item_stats && "mana" in bonus_stats) {
     //console.log("Adding bonus_stats to score");
-    score += ((item.stats.bonus_stats.mana * player.getSpecialQuery("OneManaHealing", contentType)) / player.getHPS(contentType)) * player.activeStats.intellect;
+    score += ((bonus_stats.mana * player.getSpecialQuery("OneManaHealing", contentType)) / player.getHPS(contentType)) * player.activeStats.intellect;
   }
 
   // Add Socket

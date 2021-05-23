@@ -2,8 +2,8 @@ export const GEMS = [
   /* ---------------------------------------------------------------------------------------------- */
   /*                                            Red Gems                                            */
   /* ---------------------------------------------------------------------------------------------- */
-  { name: "Teardrop Living Ruby", color: "red", rarity: "rare", jewelcrafting: false, stats: { bonushealing: 18 } }, // +9 spellpower
-  { name: "Teardrop Crimson Spinel", color: "red", rarity: "epic", jewelcrafting: false, stats: { bonushealing: 22 } }, // +12 spellpower
+  { name: "Teardrop Living Ruby", id: 24029, color: "red", rarity: "rare", jewelcrafting: false, stats: { bonushealing: 18 } }, // +9 spellpower
+  { name: "Teardrop Crimson Spinel", id: 32195, color: "red", rarity: "epic", jewelcrafting: false, stats: { bonushealing: 22 } }, // +12 spellpower
   { name: "Kailee's Rose", color: "red", rarity: "epic", jewelcrafting: true, stats: { bonushealing: 24 } }, // +14 spellpower JC Only (BOP)
 
   /* ---------------------------------------------------------------------------------------------- */
@@ -47,7 +47,7 @@ export const GEMS = [
   /* ----------------------------------- Intellect & Spell Power ---------------------------------- */
   { name: "Luminous Noble Topaz", color: "orange", rarity: "rare", jewelcrafting: false, stats: { intellect: 4, bonushealing: 10 } }, // +4 intellect & +5 spell power
   { name: "Luminous Fire Opal", color: "orange", rarity: "epic", jewelcrafting: false, stats: { intellect: 4, bonushealing: 12 } }, // +4 intellect & +6 spell power
-  { name: "Luminous Pyrestone", color: "orange", rarity: "epic", jewelcrafting: false, stats: { intellect: 5, bonushealing: 12 } }, // +5 intellect & +6 spell power
+  { name: "Luminous Pyrestone", id: 32219, color: "orange", rarity: "epic", jewelcrafting: false, stats: { intellect: 5, bonushealing: 12 } }, // +5 intellect & +6 spell power
 
   /* ------------------------------------- Haste & Spell Power ------------------------------------ */
   { name: "Reckless Noble Topaz", color: "orange", rarity: "rare", jewelcrafting: false, stats: { haste: 4, bonushealing: 10 } }, // +4 haste & +5 spell power
@@ -128,7 +128,7 @@ export const GEMS = [
 
   /* ------------------------------------ Spell Power & Mana/5 ------------------------------------ */
   { name: "Royal Nightseye", color: "purple", rarity: "rare", jewelcrafting: false, stats: { bonushealing: 10, mp5: 2 } }, // +5 spell power & +2 mana per 5
-  { name: "Royal Tanzanite", color: "purple", rarity: "epic", jewelcrafting: false, stats: { bonushealing: 12, mp5: 2 } }, // +6 spell power & +2 mana per 5
+  { name: "Royal Tanzanite", id: 30603, color: "purple", rarity: "epic", jewelcrafting: false, stats: { bonushealing: 12, mp5: 2 } }, // +6 spell power & +2 mana per 5
   { name: "Royal Shadowsong Amethyst", color: "purple", rarity: "epic", jewelcrafting: false, stats: { bonushealing: 12, mp5: 2 } }, // +6 spell power & +2 mana per 5
 
   /* ------------------------------------ Spell Power & Spirit ------------------------------------ */
@@ -146,12 +146,12 @@ export const GEMS = [
   /*                                            Meta Gems                                           */
   /* ---------------------------------------------------------------------------------------------- */
 
-  { name: "Insightful Earthstorm Diamond", color: "meta", rarity: "rare", jewelcrafting: false, stats: { intellect: 12 }, requirements: "Atleast 2 red, 2 blue, 2 red gems" }, // +12 Intellect & Chance to restore mana on spellcast
+  { name: "Insightful Earthstorm Diamond", color: "meta", rarity: "rare", jewelcrafting: false, stats: { intellect: 12 }, requirements: "At least 2 red, 2 blue, 2 red gems" }, // +12 Intellect & Chance to restore mana on spellcast
   { name: "Mystical Skyfire Diamond", color: "meta", rarity: "rare", jewelcrafting: false, stats: {}, requirements: "Requires more blue gems than yellow" }, // Chance to Increase Spell Cast Speed
   { name: "Swift Starfire Diamond", color: "meta", rarity: "rare", jewelcrafting: false, stats: { bonushealing: 24 }, requirements: "Atleast 2 yellow and 1 red gem" }, // +12 Spell Power and Minor Run Speed Increase.
   { name: "Ember Skyfire Diamond", color: "meta", rarity: "rare", jewelcrafting: false, stats: {}, requirements: "Atleast 3 red gems" }, // +14 Spell Damage & +2% Intellect
   { name: "Imbued Unstable Diamond", color: "meta", rarity: "rare", jewelcrafting: false, stats: { bonushealing: 28 }, requirements: "Atleast 3 yellow gems" }, // +14 Spell Power and 5% Stun Resistance
   { name: "Bracing Earthstorm Diamond", color: "meta", rarity: "rare", jewelcrafting: false, stats: { bonushealing: 28 }, requirements: "requires more red gems than blue gems" }, // +14 Spell Power and 2% Reduced Threat
-  { name: "Destructive Skyfire Diamond", color: "meta", rarity: "rare", jewelcrafting: false, stats: { crit: 14 }, requirements: "Atleast 2 red, 2 blue, 2 red gems" }, // +14 Spell Crit Rating and 1% Spell Reflect
-  { name: "Chaotic Skyfire Diamond", color: "meta", rarity: "rare", jewelcrafting: false, stats: { crit: 12 }, requirements: "Atleast 2 blue gems" }, // +12 Spell Critical & 3% Increased Critical Damage
+  { name: "Destructive Skyfire Diamond", color: "meta", rarity: "rare", jewelcrafting: false, stats: { crit: 14 }, requirements: "At least 2 red, 2 blue, 2 red gems" }, // +14 Spell Crit Rating and 1% Spell Reflect
+  { name: "Chaotic Skyfire Diamond", color: "meta", rarity: "rare", jewelcrafting: false, stats: { crit: 12 }, requirements: "At least 2 blue gems" }, // +12 Spell Critical & 3% Increased Critical Damage
 ];

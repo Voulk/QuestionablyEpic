@@ -193,7 +193,7 @@ export default function QuickCompare(props) {
       item = new BCItem(itemID, itemName, getItemProp(itemID, "slot", gameType), "");
     }
     
-    item.softScore = scoreItem(item, player, contentType);
+    item.softScore = scoreItem(item, player, contentType, gameType);
 
     player.addActiveItem(item);
     setItemList([...player.getActiveItems(activeSlot)]);
