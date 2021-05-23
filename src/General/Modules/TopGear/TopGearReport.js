@@ -8,11 +8,13 @@ import { Button, Paper, Typography, Divider, Grid } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import { classColoursJS } from "../CooldownPlanner/Functions/ClassColourFunctions";
 import CompetitiveAlternatives from "./CompetitiveAlternatives";
+import { useSelector } from "react-redux";
 
 function TopGearReport(props) {
   const [backgroundImage, setBackgroundImage] = useState("");
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
+  const gameType = useSelector((state) => state.gameType);
 
   /* ----------------------------- On Component load get player image ----------------------------- */
   useEffect(() => {
@@ -28,13 +30,21 @@ function TopGearReport(props) {
     switch (props.player.spec) {
       case "Holy Paladin":
         return require("Images/Classes/Paladin/icon-paladin.png").default;
+      case "Holy Paladin BC":
+        return require("Images/Classes/Paladin/icon-paladin.png").default;
       case "Restoration Shaman":
         return require("Images/Classes/Shaman/icon-shaman.png").default;
+      case "Restoration Shaman BC":
+        return require("Images/Classes/Shaman/icon-shaman.png").default;
       case "Holy Priest":
+        return require("Images/Classes/Priest/icon-priest.png").default;
+      case "Holy Priest BC":
         return require("Images/Classes/Priest/icon-priest.png").default;
       case "Discipline Priest":
         return require("Images/Classes/Priest/icon-priest.png").default;
       case "Restoration Druid":
+        return require("Images/Classes/Druid/icon-druid.png").default;
+      case "Restoration Druid BC":
         return require("Images/Classes/Druid/icon-druid.png").default;
       case "Mistweaver Monk":
         return require("Images/Classes/Monk/icon-monk.png").default;
@@ -51,6 +61,7 @@ function TopGearReport(props) {
   let result = props.result;
   let topSet = "";
   let enchants = {};
+  let gemStats = [];
   let differentials = {};
   let itemList = {};
   let statList = {};
@@ -60,16 +71,26 @@ function TopGearReport(props) {
     enchants = topSet.enchantBreakdown;
     differentials = result.differentials;
     itemList = topSet.itemList;
+    gemStats = gameType === "BurningCrusade" ? topSet.socketInformation : "";
     statList = topSet.setStats;
   } else {
     resultValid = false;
   }
 
-  /* TEST DATA
-  enchants = { chest: "+30 Stats", Wrist: "+15 Int", Finger: "+16 Haste", Back: "+20 Stam +30 Leech", Weapon: "Celestial Guidance" };
-  let itemList = testList;
-  let differentials = differentialsTest;
-  let statList = { intellect: 321, haste: 931, crit: 831, mastery: 31, versatility: 91, leech: 49, hps: 911, dps: 893 }; */
+  const getGemIDs = (slot) => {
+    if (gameType === "Retail") return "";
+    else {
+      let gemString = "&gems=";
+      for (var i = 0; i < gemStats.socketsAvailable.length; i++) {       
+        if (gemStats.socketsAvailable[i].slot === slot) {
+          for (var j = 0; j < gemStats.socketedPieces[i].length; j++) {
+            gemString += gemStats.socketedPieces[i][j]['id'].toString() + ":";
+          }
+        }
+      }
+      return gemString.slice(0, -1);
+    }
+  }
 
   return (
     <div
@@ -87,6 +108,7 @@ function TopGearReport(props) {
                 style={{
                   justifyContent: "center",
                   backgroundImage: `url("${backgroundImage}")`,
+                  backgroundColor: "#0F0E04",
                   backgroundSize: "cover",
                   backgroundPositionY: "-160px",
                   padding: 16,
@@ -118,7 +140,7 @@ function TopGearReport(props) {
                                 key.slot === "CombinedWeapon",
                             )
                             .map((item, index) => (
-                              <ItemCardReport key={index} item={item} activateItem={true} enchants={enchants} />
+                              <ItemCardReport key={index} item={item} activateItem={true} enchants={enchants} gems={getGemIDs(item.slot)} />
                             ))}
                         </Grid>
                       </Grid>
@@ -133,7 +155,7 @@ function TopGearReport(props) {
                           {itemList
                             .filter((key) => key.slot === "Hands" || key.slot === "Waist" || key.slot === "Legs" || key.slot === "Feet" || key.slot === "Finger" || key.slot === "Trinket")
                             .map((item, index) => (
-                              <ItemCardReport key={index} item={item} activateItem={true} enchants={enchants} />
+                              <ItemCardReport key={index} item={item} activateItem={true} enchants={enchants} gems={getGemIDs(item.slot)}/>
                             ))}
                         </Grid>
                       </Grid>
@@ -146,7 +168,7 @@ function TopGearReport(props) {
                     <Grid container spacing={1} direction="row" justify="space-between">
                       <Grid item xs={4} style={{ paddingBottom: 8 }}>
                         <Grid container justify="flex-start">
-                          <TopSetStatsPanel statList={statList} spec={props.player.spec} currentLanguage={currentLanguage} />
+                          <TopSetStatsPanel statList={statList} spec={props.player.spec} currentLanguage={currentLanguage} gameType={gameType} />
                         </Grid>
                       </Grid>
                       <Grid item xs={3} style={{ paddingBottom: 8, alignSelf: "flex-end" }}>

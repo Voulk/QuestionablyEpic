@@ -152,7 +152,7 @@ export const translatedStat = {
     ru: "Bonus DPS",
   },
   bonushealing: { // Classic
-    en: "Bonus Healing"
+    en: "Healing"
   },
   mp5: { // Classic
     en: "MP5"
@@ -183,5 +183,11 @@ export const translatedStat = {
   },
   spelldamage: { // Classic
     en: "Spell Damage"
+  },
+  spellcrit: { // Classic
+    en: "Crit"
+  },
+  attackpower: { // Classic
+    en: "Attack Power"
   },
 };

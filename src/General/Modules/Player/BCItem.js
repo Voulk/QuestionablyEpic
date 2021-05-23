@@ -13,6 +13,7 @@ class BCItem {
     this.bonusIDS = bonusIDS || "";
     this.effect = getItemProp(id, "effect", "BurningCrusade");
     this.stats = getItemProp(id, "stats", "BurningCrusade");
+    this.setID = getItemProp(id, "itemset", "BurningCrusade");
     this.stats['bonus_stats'] = {};
     this.sockets = getItemProp(id, "sockets", "BurningCrusade");
     this.socketedGems = {};
@@ -45,6 +46,15 @@ class BCItem {
   // it isn't life crushing if they do ever dup.
   getUnique(id) {
     return id + "" + (Math.floor(Math.random() * 100000) + 1).toString();
+  }
+
+  getQualityColor() {
+    const quality = getItemProp(this.id, "quality", "BurningCrusade")
+    if (quality === 5) return "#ff8000";
+    else if (quality === 4) return "#a73fee";
+    else if (quality === 3) return "#328CE3";
+    else if (quality === 2) return "#1eff00";
+    else return "#ffffff";
   }
 
   addStats(bonus_stats) {

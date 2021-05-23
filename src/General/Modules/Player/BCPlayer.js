@@ -1,5 +1,3 @@
-
-
 import Player from './Player';
 import CastModel from "./CastModel";
 
@@ -8,6 +6,8 @@ class BCPlayer extends Player {
         super(playerName, specName, charID, region, realm, race, statWeights, "BurningCrusade")
         this.gameType = "BurningCrusade"
         this.setupDefaults(specName);
+
+        if (statWeights !== "default" && statWeights.DefaultWeights === false) this.statWeights = statWeights;
     }
 
     setupDefaults = (spec) => {
@@ -22,6 +22,7 @@ class BCPlayer extends Player {
                 bonushealing: 1,
                 spirit: 0.1,
                 crit: 1.21,
+                spellcrit: 1.21,
                 stamina: 0.01,
                 mp5: 2.3,
                 haste: 0.7,

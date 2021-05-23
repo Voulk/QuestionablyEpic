@@ -32,6 +32,12 @@ class ItemSet {
   // The sum stat breakdown of the items in the set.
   setStats = {};
 
+  // Set bonuses
+  sets = {};
+
+  // BC Socket List
+  bcSockets = {};
+
   // This is for testing purposes only. It will print every item in the collection to the console.
   // printSet() {
   //   console.log("Printing Set with ID: " + this.id + ". Soft score: " + this.sumSoftScore + ". Hard Score: " + this.hardScore + " with stats: " + JSON.stringify(this.setStats));
@@ -41,19 +47,36 @@ class ItemSet {
   //   }
   // }
 
+  getStartingStats(gameType) {
+    if (gameType === "Retail") {
+      return {
+        intellect: 450, // TODO: 450
+        haste: 0,
+        crit: 0,
+        mastery: 0,
+        versatility: 0,
+        leech: 0,
+        hps: 0,
+        dps: 0,
+      }
+    }
+    else {
+      return {
+        intellect: 87,
+        bonushealing: 0,
+        spirit: 88,
+        crit: 0,
+        stamina: 0,
+        mp5: 0,
+        haste: 0,
+      }
+    }
+  }
+
   // Compiles the stats from the individual item list.
-  compileStats() {
+  compileStats(gameType = "Retail") {
     //console.log("Compiling Stats for Item List of legnth: " + this.itemList.length);
-    let setStats = {
-      intellect: 450, // TODO: 450
-      haste: 0,
-      crit: 0,
-      mastery: 0,
-      versatility: 0,
-      leech: 0,
-      hps: 0,
-      dps: 0,
-    };
+    let setStats = this.getStartingStats(gameType)
     let setSockets = 0;
     for (var i = 0; i < this.itemList.length; i++) {
       let item = this.itemList[i];
@@ -68,6 +91,9 @@ class ItemSet {
 
       if (item.socket) setSockets++;
       if (item.uniqueEquip) this.uniques[item.uniqueEquip] = (this.uniques[item.uniqueEquip] || 0) + 1;
+      if (item.setID) {
+        this.sets[item.setID] = (item.setID in this.sets) ? this.sets[item.setID] + 1 : 1;
+      }
 
       if (item.effect !== "") {
         let effect = item.effect;
