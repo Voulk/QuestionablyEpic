@@ -14,9 +14,9 @@ export function getTrinketEffectBC(effectName, player, contentType, itemLevel, u
     /* ---------------------------------------------------------------------------------------------- */
     console.log("no trinket found");
     return bonus_stats;
-  } else if (
+  } else if ( 
     /* ---------------------------------------------------------------------------------------------- */
-    /*                                        Essence of the Martyr                                       */
+    /*                                      Essence of the Martyr                                     */
     /* ---------------------------------------------------------------------------------------------- */
     effectName === "Essence of the Martyr"
   ) {
