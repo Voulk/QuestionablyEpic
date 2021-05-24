@@ -96,7 +96,7 @@ function TopGearReport(props) {
     <div
       style={{
         margin: "auto",
-        width: "70%",
+        width: "60%",
         display: "block",
       }}
     >
@@ -177,7 +177,7 @@ function TopGearReport(props) {
                             style={{
                               fontSize: "12px",
                               textAlign: "left",
-                              maxWidth: 300,
+                              maxWidth: 350,
                               backgroundColor: "rgba(44, 44, 44, 0.5)",
                               display: "block",
                             }}
