@@ -224,6 +224,8 @@ export default function BurningCrusadeSettings(props) {
       {/* ---------------------------------------------------------------------------------------------- */
       /*                                            Setting 5                                            */
       /* ---------------------------------------------------------------------------------------------- */}
+
+      {/*}
       <Grid item xs={12} sm={4} md={4} lg={3} xl={2}>
         <Grid container spacing={1} style={{ paddingLeft: 8 }}>
           <Grid item xs={12}>
@@ -245,7 +247,7 @@ export default function BurningCrusadeSettings(props) {
             />
           </Grid>
         </Grid>
-      </Grid>
-    </Grid>
+      </Grid>*/}
+      </Grid> 
   );
 }

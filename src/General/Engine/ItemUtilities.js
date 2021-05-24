@@ -35,6 +35,12 @@ export function getValidArmorTypes(spec) {
       return [0, 1]; // Misc + Cloth
     case "Holy Paladin BC":
       return [0, 1, 2, 3, 4, 6]; // Misc + Plate + Shields
+    case "Restoration Druid BC":
+      return [0, 1, 2]; // Misc + Plate + Shields
+    case "Restoration Shaman BC":
+      return [0, 1, 2, 3, 6]; // Misc + Plate + Shields
+    case "Priest BC":
+      return [0, 1]; // Misc + Plate + Shields
     default:
       return [-1];
   }
@@ -71,6 +77,8 @@ export function getValidWeaponTypes(spec, slot) {
       switch (spec) {
         case SPEC.RESTOSHAMAN:
         case SPEC.HOLYPALADIN:
+        case "Holy Paladin BC":
+        case "Restoration Shaman BC":
           return [0, 6];
         default:
           return [0];
@@ -92,6 +100,12 @@ export function getValidWeaponTypes(spec, slot) {
           return [4, 10, 15, 19];
         case "Holy Paladin BC":
           return [0, 1, 4, 5, 6, 7, 8];
+        case "Restoration Druid BC":
+          return [4, 5, 6, 10, 13, 15];
+        case "Restoration Shaman BC":
+          return [0, 1, 4, 5, 10, 13, 15];
+        case "Priest BC":
+          return [4, 10, 15, 19];
         default:
           return [-1];
       }
