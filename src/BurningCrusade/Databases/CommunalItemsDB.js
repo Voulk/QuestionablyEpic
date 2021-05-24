@@ -595,5 +595,436 @@
         "stats": {
         }
     },
+    {
+        "id": 185998,
+        "name": "Communal Chestguard",
+        "names": {
+            "cn": "",
+            "en": "Communal Chestguard",
+            "ru": "",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_chest_chain_05",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 52,
+        "quality": 2,
+        "slot": "Chest",
+        "sockets": {
+        },
+        "dropLoc": "",
+        "stats": {
+            "strength": 22,
+        }
+    },
+    {
+        "id": 186016,
+        "name": "Communal Plate Greaves",
+        "names": {
+            "cn": "",
+            "en": "Communal Plate Greaves",
+            "ru": "",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_boots_plate_06",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 52,
+        "quality": 2,
+        "slot": "Feet",
+        "sockets": {
+        },
+        "dropLoc": "",
+        "stats": {
+            "stamina": 17,
+        }
+    },
+    {
+        "id": 186016,
+        "name": "Communal Plate Gauntlets",
+        "names": {
+            "cn": "",
+            "en": "Communal Plate Gauntlets",
+            "ru": "",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_gauntlets_26",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 52,
+        "quality": 2,
+        "slot": "Hands",
+        "sockets": {
+        },
+        "dropLoc": "",
+        "stats": {
+            "stamina": 11,
+            "crit": 11,
+        }
+    },
+    {
+        "id": 186086,
+        "name": "Communal Faceguard",
+        "names": {
+            "cn": "",
+            "en": "Communal Faceguard",
+            "ru": "",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_gauntlets_26",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 52,
+        "quality": 2,
+        "slot": "Head",
+        "sockets": {
+        },
+        "dropLoc": "",
+        "stats": {
+            "stamina": 14,
+            "intellect": 14,
+        }
+    },
+    {
+        "id": 186087,
+        "name": "Communal Plate Leggings",
+        "names": {
+            "cn": "",
+            "en": "Communal Plate Leggings",
+            "ru": "",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_gauntlets_26",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 52,
+        "quality": 2,
+        "slot": "Legs",
+        "sockets": {
+        },
+        "dropLoc": "",
+        "stats": {
+            "stamina": 7,
+            "intellect": 19,
+            "spirit": 3
+        }
+    },
+    {
+        "id": 186088,
+        "name": "Communal Pauldrons",
+        "names": {
+            "cn": "",
+            "en": "Communal Pauldrons",
+            "ru": "",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_gauntlets_26",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 52,
+        "quality": 2,
+        "slot": "Shoulder",
+        "sockets": {
+        },
+        "dropLoc": "",
+        "stats": {
+            "stamina": 11,
+            "intellect": 11,
+        }
+    },
+    {
+        "id": 186002,
+        "name": "Communal Plate Girdle",
+        "names": {
+            "cn": "",
+            "en": "Communal Plate Girdle",
+            "ru": "",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_belt_18",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 52,
+        "quality": 2,
+        "slot": "Waist",
+        "sockets": {
+        },
+        "dropLoc": "",
+        "stats": {
+            "stamina": 6,
+            "strength": 16,
+        }
+    },
+    {
+        "id": 186085,
+        "name": "Communal Plate Vambraces",
+        "names": {
+            "cn": "",
+            "en": "Communal Plate Vambraces",
+            "ru": "",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_bracer_16",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 52,
+        "quality": 2,
+        "slot": "Wrist",
+        "sockets": {
+        },
+        "dropLoc": "",
+        "stats": {
+            "stamina": 11,
+            "intellect": 3,
+        }
+    },
+    {
+        "id": 186036,
+        "name": "Communal Armor",
+        "names": {
+            "cn": "",
+            "en": "Communal Armor",
+            "ru": "",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_chest_chain_13",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 52,
+        "quality": 2,
+        "slot": "Chest",
+        "sockets": {
+        },
+        "dropLoc": "",
+        "stats": {
+            "stamina": 22,
+        }
+    },
+    {
+        "id": 186039,
+        "name": "Communal Boots",
+        "names": {
+            "cn": "",
+            "en": "Communal Boots",
+            "ru": "",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_boots_07",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 52,
+        "quality": 2,
+        "slot": "Feet",
+        "sockets": {
+        },
+        "dropLoc": "",
+        "stats": {
+            "stamina": 17,
+        }
+    },
+    {
+        "id": 186041,
+        "name": "Communal Gauntlets",
+        "names": {
+            "cn": "",
+            "en": "Communal Gauntlets",
+            "ru": "",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_bracer_16",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 52,
+        "quality": 2,
+        "slot": "Wrist",
+        "sockets": {
+        },
+        "dropLoc": "",
+        "stats": {
+            "stamina": 11,
+            "agtility": 11,
+        }
+    },
+    {
+        "id": 186081,
+        "name": "Communal Headguard",
+        "names": {
+            "cn": "",
+            "en": "Communal Headguard",
+            "ru": "",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_crown_02",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 52,
+        "quality": 2,
+        "slot": "Head",
+        "sockets": {
+        },
+        "dropLoc": "",
+        "stats": {
+            "spirit": 14,
+            "agtility": 14,
+        }
+    },
+    {
+        "id": 186082,
+        "name": "Communal Leggings",
+        "names": {
+            "cn": "",
+            "en": "Communal Leggings",
+            "ru": "",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_pants_09",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 52,
+        "quality": 2,
+        "slot": "Legs",
+        "sockets": {
+        },
+        "dropLoc": "",
+        "stats": {
+            "spirit": 3,
+            "agility": 19,
+            "stamina": 7,
+        }
+    },
+    {
+        "id": 186083,
+        "name": "Communal Spaulders",
+        "names": {
+            "cn": "",
+            "en": "Communal Spaulders",
+            "ru": "",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_shoulder_07",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 52,
+        "quality": 2,
+        "slot": "Shoulder",
+        "sockets": {
+        },
+        "dropLoc": "",
+        "stats": {
+            "intellect": 11,
+            "stamina": 11,
+        }
+    },
+    {
+        "id": 186037,
+        "name": "Communal Belt",
+        "names": {
+            "cn": "",
+            "en": "Communal Belt",
+            "ru": "",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_belt_09",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 52,
+        "quality": 2,
+        "slot": "Waist",
+        "sockets": {
+        },
+        "dropLoc": "",
+        "stats": {
+            "agility": 16,
+            "stamina": 6,
+        }
+    },
+    {
+        "id": 186084,
+        "name": "Communal Armguards",
+        "names": {
+            "cn": "",
+            "en": "Communal Armguards",
+            "ru": "",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_bracer_04",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 52,
+        "quality": 2,
+        "slot": "Wrist",
+        "sockets": {
+        },
+        "dropLoc": "",
+        "stats": {
+            "intellect": 3,
+            "spirit": 11,
+        }
+    },
+    
     
 ]
