@@ -155,12 +155,7 @@ function sortItems(container) {
 }
 
 export function getItemDB(gameType = "Retail") {
-  // Replace with Redux pull.
-  
-  //const flag = "Retail";
-
   return gameType === "Retail" ? itemDB : BCItemDB;
-
 }
 
 export function getDifferentialByID(diffList, id, level) {
@@ -435,43 +430,6 @@ export function buildStatString(stats, effect, lang = "en") {
 
 }
 
-// Builds a stat string out of an items given stats and effect.
-// Stats should be listed in order of quantity.
-/**
- * 
- * @deprecated
- */
-export function buildStatStringOld(stats, effect, lang = "en") {
-  //const { t, i18n } = useTranslation();
-  let statString = "";
-  let statsList = [
-    { key: "haste", val: stats["haste"] },
-    { key: "crit", val: stats["crit"] },
-    { key: "mastery", val: stats["mastery"] },
-    { key: "versatility", val: stats["versatility"] },
-  ];
-
-  statsList = statsList.sort(function (a, b) {
-    return b.val - a.val;
-  });
-
-  for (var ind in statsList) {
-    let statKey = statsList[ind]["key"];
-
-    statString +=
-      statsList[ind]["val"] > 0
-        ? statsList[ind]["val"] +
-          " " +
-          translatedStat[statKey][lang] +
-          //correctCasing(statsList[ind]["key"]) +
-          " / " //t("stats." + statsList[ind]["key"])
-        : "";
-  }
-
-  if (effect !== "") statString += "Effect" + " / "; // t("itemTags.effect")
-
-  return statString.slice(0, -3); // We slice here to remove excess slashes and white space from the end.
-}
 
 // Returns the string with its first letter capitalized.
 export function correctCasing(string) {
@@ -609,12 +567,12 @@ export function scoreItem(item, player, contentType, gameType = "Retail") {
     score += ((bonus_stats.mana * player.getSpecialQuery("OneManaHealing", contentType)) / player.getHPS(contentType)) * player.activeStats.intellect;
   }
 
-  // Add Socket
+  // Add Retail Socket
   if (item.socket) {
     score += 16 * player.getStatWeight(contentType, player.getHighestStatWeight(contentType));
   }
 
-  // BC specifics
+  // BC specific sockets
   if (item.sockets) {
     socketItem(item, player);
     score += item.socketedGems['score'];
@@ -637,6 +595,45 @@ function sumObjectsByKey(...objs) {
 // ----- Deprecated Functions -----
 // --------------------------------
 // Will be removed by the end of April.
+
+// Builds a stat string out of an items given stats and effect.
+// Stats should be listed in order of quantity.
+/**
+ * 
+ * @deprecated
+ */
+ export function buildStatStringOld(stats, effect, lang = "en") {
+  //const { t, i18n } = useTranslation();
+  let statString = "";
+  let statsList = [
+    { key: "haste", val: stats["haste"] },
+    { key: "crit", val: stats["crit"] },
+    { key: "mastery", val: stats["mastery"] },
+    { key: "versatility", val: stats["versatility"] },
+  ];
+
+  statsList = statsList.sort(function (a, b) {
+    return b.val - a.val;
+  });
+
+  for (var ind in statsList) {
+    let statKey = statsList[ind]["key"];
+
+    statString +=
+      statsList[ind]["val"] > 0
+        ? statsList[ind]["val"] +
+          " " +
+          translatedStat[statKey][lang] +
+          //correctCasing(statsList[ind]["key"]) +
+          " / " //t("stats." + statsList[ind]["key"])
+        : "";
+  }
+
+  if (effect !== "") statString += "Effect" + " / "; // t("itemTags.effect")
+
+  return statString.slice(0, -3); // We slice here to remove excess slashes and white space from the end.
+}
+
 /**
  * 
  * @param {*} id 
