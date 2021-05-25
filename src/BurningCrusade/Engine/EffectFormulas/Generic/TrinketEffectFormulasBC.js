@@ -63,7 +63,6 @@ else if (
       duration: 20,
       castsInWindow: 20/1.75,
       stackingMp5: 21,
-
     }
     bonus_stats.mp5 = Math.round(100*((effect.castsInWindow+1)/2 * effect.stackingMp5) * effect.duration / effect.cooldown)/100
 }
@@ -84,9 +83,12 @@ else if (
   /* ---------------------------------------------------------------------------------------------- */
   effectName === "Ribbon of Sacrifice"
 ) {
-    const effect = {
-
-    }
+  const effect = {
+    cooldown: 120,
+    duration: 20,
+    castsInWindow: 20/1.75*0.7, // This only includes the number of heals on the specified target.
+    stackingHealing: 30,
+  }
     bonus_stats.bonushealing = 0
 }
 else if (
