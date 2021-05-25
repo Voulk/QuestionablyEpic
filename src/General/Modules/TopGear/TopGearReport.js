@@ -66,6 +66,8 @@ function TopGearReport(props) {
   let itemList = {};
   let statList = {};
 
+  console.log(result);
+
   if (checkResult(result)) {
     topSet = result.itemSet;
     enchants = topSet.enchantBreakdown;

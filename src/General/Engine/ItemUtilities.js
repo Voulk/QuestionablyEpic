@@ -223,7 +223,7 @@ export function getItemIcon(id, gameType = "Retail") {
   //console.log("https://wow.zamimg.com/images/wow/icons/large/" + item.icon + " .jpg");
   if (gameType === "BurningCrusade" && item !== "") return "https://wow.zamimg.com/images/wow/icons/large/" + item.icon + ".jpg";
   else if (item !== "" && "icon" in item) return process.env.PUBLIC_URL + "/Images/Icons/" + item.icon + ".jpg";
-  else {
+  else if (item !== "") {
     reportError(this, "ItemUtilities", "Icon not found for ID", id);
     return process.env.PUBLIC_URL + "/Images/Icons/missing.jpg";
   }

@@ -339,6 +339,7 @@ function createSets(itemList, rawWepCombos) {
     Finger: 0,
     Trinket: 0,
     Weapon: 0,
+    'Relics & Wands': 0,
   };
 
   let splitItems = {
@@ -355,6 +356,7 @@ function createSets(itemList, rawWepCombos) {
     Finger: [],
     Trinket: [],
     WeaponSet: [],
+    'Relics & Wands': [],
   };
 
   for (var i = 0; i < itemList.length; i++) {
@@ -366,7 +368,7 @@ function createSets(itemList, rawWepCombos) {
   }
   slotLengths.Weapon = Object.keys(wepCombos).length;
 
-  //console.log(JSON.stringify(slotLengths));
+  console.log(JSON.stringify(slotLengths));
   // console.log(splitItems.Finger);
 
   for (var head = 0; head < slotLengths.Head; head++) {
@@ -420,26 +422,31 @@ function createSets(itemList, rawWepCombos) {
                                   if (splitItems.Trinket[trinket].id !== splitItems.Trinket[trinket2].id
                                     && trinket < trinket2) {
 
-                                    let includedItems = [
-                                      splitItems.Head[head],
-                                      splitItems.Neck[neck],
-                                      splitItems.Shoulder[shoulder],
-                                      splitItems.Back[back],
-                                      splitItems.Chest[chest],
-                                      splitItems.Wrist[wrist],
-                                      splitItems.Hands[hands],
-                                      splitItems.Waist[waist],
-                                      splitItems.Legs[legs],
-                                      splitItems.Feet[feet],
-                                      splitItems.Finger[finger],
-                                      splitItems.Finger[finger2],
-                                      splitItems.Trinket[trinket],
-                                      splitItems.Trinket[trinket2],
-                                      wepCombos[weapon],
-                                    ];
-                                    let sumSoft = sumScore(softScore);
-                                    itemSets.push(new ItemSet(setCount, includedItems, sumSoft, "BurningCrusade"));
-                                    setCount++;
+                                      for (var relics = 0; relics < slotLengths['Relics & Wands']; relics++) {
+                                        softScore.relics = splitItems['Relics & Wands'][relics].softScore;  
+
+                                        let includedItems = [
+                                          splitItems.Head[head],
+                                          splitItems.Neck[neck],
+                                          splitItems.Shoulder[shoulder],
+                                          splitItems.Back[back],
+                                          splitItems.Chest[chest],
+                                          splitItems.Wrist[wrist],
+                                          splitItems.Hands[hands],
+                                          splitItems.Waist[waist],
+                                          splitItems.Legs[legs],
+                                          splitItems.Feet[feet],
+                                          splitItems.Finger[finger],
+                                          splitItems.Finger[finger2],
+                                          splitItems.Trinket[trinket],
+                                          splitItems.Trinket[trinket2],
+                                          wepCombos[weapon],
+                                          splitItems['Relics & Wands'][relics],
+                                        ];
+                                        let sumSoft = sumScore(softScore);
+                                        itemSets.push(new ItemSet(setCount, includedItems, sumSoft, "BurningCrusade"));
+                                        setCount++;
+                                    }
                                   }
                                 }
                               }
