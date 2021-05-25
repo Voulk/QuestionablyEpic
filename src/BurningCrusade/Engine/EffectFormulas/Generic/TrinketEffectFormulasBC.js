@@ -73,9 +73,11 @@ else if (
   effectName === "Figurine - Living Ruby Serpent"
 ) {
     const effect = {
-
+      duration: 20,
+      cooldown: 300,
+      value: 150,
     }
-    bonus_stats.bonushealing = 0
+    bonus_stats.bonushealing = Math.round(effect.duration * effect.value / effect.cooldown);
 }
 else if (
   /* ---------------------------------------------------------------------------------------------- */
@@ -109,9 +111,12 @@ else if (
   effectName === "Lower City Prayerbook"
 ) {
     const effect = {
-
+      reduction: 22,
+      duration: 15,
+      casts: 15/1.75,
+      cooldown: 60,
     }
-    bonus_stats.bonushealing = 0
+    bonus_stats.mp5 = (effect.reduction * effect.casts / effect.cooldown * 5);
 }
 else if (
   /* ---------------------------------------------------------------------------------------------- */
@@ -131,9 +136,11 @@ else if (
   effectName === "Figurine - Talasite Owl"
 ) {
     const effect = {
+      mana: 900,
+      cooldown: 300,
 
     }
-    bonus_stats.bonushealing = 0
+    bonus_stats.mp5 = (effect.mana / effect.cooldown) * 5;
 }
 else if (
   /* ---------------------------------------------------------------------------------------------- */
@@ -142,9 +149,11 @@ else if (
   effectName === "Xi'ri's Gift"
 ) {
     const effect = {
-
+      duration: 15,
+      cooldown: 90,
+      value: 280,
     }
-    bonus_stats.bonushealing = 0
+    bonus_stats.bonushealing = Math.round(effect.duration * effect.value / effect.cooldown);
 }
 else if (
   /* ---------------------------------------------------------------------------------------------- */
@@ -153,9 +162,11 @@ else if (
   effectName === "Warp-Scarab Brooch"
 ) {
     const effect = {
-
+      duration: 20,
+      cooldown: 120,
+      value: 282,
     }
-    bonus_stats.bonushealing = 0
+    bonus_stats.bonushealing = Math.round(effect.duration * effect.value / effect.cooldown);
 }
 else if (
   /* ---------------------------------------------------------------------------------------------- */
@@ -318,9 +329,12 @@ else if (
   effectName === "Memento of Tyrande"
 ) {
     const effect = {
+      mp5: 76,
+      duration: 15,
+      ppm: 0.92,
 
     }
-    bonus_stats.bonushealing = 0
+    bonus_stats.mp5 = (effect.mp5 * effect.duration * effect.ppm) / 60
 }
 else if (
   /* ---------------------------------------------------------------------------------------------- */
@@ -373,9 +387,11 @@ else if (
   effectName === "Tome of Diabolic Remedy"
 ) {
     const effect = {
-
+      duration: 20,
+      cooldown: 120,
+      value: 396,
     }
-    bonus_stats.bonushealing = 0
+    bonus_stats.bonushealing = Math.round(effect.duration * effect.value / effect.cooldown);
 }
 else if (
   /* ---------------------------------------------------------------------------------------------- */
@@ -383,10 +399,13 @@ else if (
   /* ---------------------------------------------------------------------------------------------- */
   effectName === "Glimmering Naaru Sliver"
 ) {
-    const effect = {
-
-    }
-    bonus_stats.bonushealing = 0
+  const effect = {
+    mana: 250,
+    cooldown: 300,
+    ticks: 8,
+    efficiency: 0.4,
+  }
+  bonus_stats.mp5 = (effect.mana * effect.ticks * effect.efficiency / effect.cooldown * 5);
 }
 else if (
   /* ---------------------------------------------------------------------------------------------- */
@@ -395,9 +414,12 @@ else if (
   effectName === "Redeemer's Alchemist Stone"
 ) {
     const effect = {
+      manaPotion: (1800+3000)/2,
+      manaPotionsPerMinute: 0.27, // Maximum is 0.5
+      trinketBonus: 0.4,
 
     }
-    bonus_stats.bonushealing = 0
+    bonus_stats.mp5 = effect.manaPotion * effect.manaPotionsPerMinute * effect.trinketBonus / 12
 }
 else if (
   /* ---------------------------------------------------------------------------------------------- */
