@@ -588,7 +588,7 @@
         "itemSubClass": 0,
         "itemLevel": 52,
         "quality": 2,
-        "slot": "Relic",
+        "slot": "Relics & Wands",
         "sockets": {
         },
         "dropLoc": "",
