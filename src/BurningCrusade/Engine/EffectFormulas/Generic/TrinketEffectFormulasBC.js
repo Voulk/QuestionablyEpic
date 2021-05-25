@@ -8,6 +8,8 @@ export function getTrinketEffectBC(effectName, player, contentType, itemLevel, u
   //let activeTrinket = trinket_data.find((trinket) => trinket.name === effectName);
   const activeTrinket = effectName;
 
+  const cpm = 24;
+
   if (activeTrinket === undefined) {
     /* ---------------------------------------------------------------------------------------------- */
     /*                                         Error Handling                                         */
@@ -34,9 +36,10 @@ else if (
   effectName === "Eye of Gruul"
 ) {
     const effect = {
-
+      mana: 450,
+      chance: 0.02,
     }
-    bonus_stats.bonushealing = 0
+    bonus_stats.mp5 = Math.round(100*cpm * effect.chance * effect.mana / 12)/100
 }
 else if (
   /* ---------------------------------------------------------------------------------------------- */
@@ -56,9 +59,13 @@ else if (
   effectName === "Pendant of the Violet Eye"
 ) {
     const effect = {
+      cooldown: 120,
+      duration: 20,
+      castsInWindow: 20/1.75,
+      stackingMp5: 21,
 
     }
-    bonus_stats.bonushealing = 0
+    bonus_stats.mp5 = Math.round(100*((effect.castsInWindow+1)/2 * effect.stackingMp5) * effect.duration / effect.cooldown)/100
 }
 else if (
   /* ---------------------------------------------------------------------------------------------- */

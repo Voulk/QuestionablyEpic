@@ -35,7 +35,7 @@ export default function BurningCrusadeSettings(props) {
   /* ------------------------------------------ Setting 1 ----------------------------------------- */
   const [settingValue1, setSettingValue1] = useState("");
   /* ------------------------------------------ Setting 2 ----------------------------------------- */
-  const [settingValue2, setSettingValue2] = useState("");
+  const [metaGem, setMetaGem] = useState("Insightful Earthstorm Diamond");
   /* ------------------------------------------ Setting 3 ----------------------------------------- */
   const [settingValue3, setSettingValue3] = useState("");
   /* ------------------------------------------ Setting 4 ----------------------------------------- */
@@ -52,8 +52,8 @@ export default function BurningCrusadeSettings(props) {
   const updateSetting1 = (value) => {
     setSettingValue1();
   };
-  const updateSetting2 = (value) => {
-    setSettingValue2();
+  const updateMetaGem = (value) => {
+    setMetaGem(value);
   };
   const updateSetting3 = (value) => {
     setSettingValue3();
@@ -158,12 +158,12 @@ export default function BurningCrusadeSettings(props) {
           </Grid>
           <Grid item xs={12}>
             <FormControl variant="outlined" size="small" fullWidth>
-              <Select labelId="slots" value={settingValue2} onChange={(e) => setSettingValue2(e.target.value)} MenuProps={menuStyle}>
-                <MenuItem id="spiritShell" value={109964} style={{ justifyContent: "center" }}>
-                  {t("CooldownPlanner.ClassAbilities.109964")}
+              <Select labelId="slots" value={metaGem} onChange={(e) => setMetaGem(e.target.value)} MenuProps={menuStyle}>
+                <MenuItem id="spiritShell" value={"Insightful Earthstorm Diamond"} style={{ justifyContent: "center" }}>
+                  {"Insightful Earthstorm Diamond"}
                 </MenuItem>
-                <MenuItem id="evangelism" value={246287} style={{ justifyContent: "center" }}>
-                  {t("CooldownPlanner.ClassAbilities.246287")}
+                <MenuItem id="evangelism" value={"Bracing Earthstorm Diamond"} style={{ justifyContent: "center" }}>
+                  {"Bracing Earthstorm Diamond"}
                 </MenuItem>
               </Select>
             </FormControl>
