@@ -129,7 +129,7 @@ export default class BCChart extends PureComponent {
           <YAxis type="category" dataKey="name" stroke="#f5f5f5" interval={0} tick={CustomizedYAxisTick} />
           {/*<Bar dataKey={"i161"} fill={"#eee8aa"} stackId="a" /> */}
           {/*<Bar dataKey={"i174"} fill={"#9BB5DD"} stackId="a" /> */}
-          <Bar dataKey={100} fill={"#7ECC7E"} stackId="a" />
+          <Bar dataKey={100} fill={"#e6bc53"} stackId="a" />
 
         </BarChart>
       </ResponsiveContainer>
