@@ -7,7 +7,7 @@ import { createMuiTheme, makeStyles, ThemeProvider, withStyles } from "@material
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import SettingsIcon from "@material-ui/icons/Settings";
 import Autocomplete from "@material-ui/lab/Autocomplete";
-import ClearIcon from '@material-ui/icons/Clear';
+import ClearIcon from "@material-ui/icons/Clear";
 import { red } from "@material-ui/core/colors";
 import { classColoursJS } from "../../CooldownPlanner/Functions/ClassColourFunctions.js";
 import classIcons from "../../CooldownPlanner/Functions/IconFunctions/ClassIcons";
@@ -29,10 +29,10 @@ const specImages = {
   "Holy Priest": require("Images/HPriestSmall.jpg"),
   "Mistweaver Monk": require("Images/MistweaverSmall.jpg"),
 
-  "Holy Paladin BC": require("Images/PaladinSmall.png"),
-  "Restoration Druid BC": require("Images/DruidSmall.jpg"),
-  "Restoration Shaman BC": require("Images/ShamanSmall.png"),
-  "Holy Priest BC": require("Images/HPriestSmall.jpg"),
+  "Holy Paladin BC": require("Images/classicon_paladin.jpg"),
+  "Restoration Druid BC": require("Images/classicon_druid.jpg"),
+  "Restoration Shaman BC": require("Images/classicon_shaman.jpg"),
+  "Holy Priest BC": require("Images/classicon_priest.jpg"),
 };
 
 /* ------------------- Called when a character is clicked. ------------------ */
@@ -388,12 +388,12 @@ export default function CharCards(props) {
                   </Grid>
                 ) : (
                   <Grid item xs={2}>
-                  <Tooltip title={t("Delete")}>
-                    <IconButton style={{ float: "right", top: -4, color:  "red" }} onClick={(e) => handleDelete(e)} aria-label="settings" size="small">
-                      <ClearIcon fontSize="small" />
-                    </IconButton>
-                  </Tooltip>
-                </Grid>
+                    <Tooltip title={t("Delete")}>
+                      <IconButton style={{ float: "right", top: -4, color: "red" }} onClick={(e) => handleDelete(e)} aria-label="settings" size="small">
+                        <ClearIcon fontSize="small" />
+                      </IconButton>
+                    </Tooltip>
+                  </Grid>
                 )}
               </Grid>
               <Grid item xs={12}>

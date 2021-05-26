@@ -52,7 +52,7 @@ export function classColoursJS(props) {
   ) {
     return "#FFFFFF";
   }
-  if (props.includes("Paladin")) {
+  if (props.includes("Shaman")) {
     return "#007af2";
   }
 
