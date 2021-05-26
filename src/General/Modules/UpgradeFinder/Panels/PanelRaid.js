@@ -6,7 +6,7 @@ import UpgradeFinderBossImages from "./BossImages";
 import "./Panels.css";
 import { encounterDB } from "../../Player/InstanceDB";
 import { useTranslation } from "react-i18next";
-import { filterItemListBySource, getDifferentialByID } from "../../../Engine/ItemUtilities";
+import { filterItemListBySource, filterBCItemListBySource, getDifferentialByID } from "../../../Engine/ItemUtilities";
 import { useSelector } from "react-redux";
 import PropTypes from "prop-types";
 
@@ -281,7 +281,7 @@ export default function RaidGearContainer(props) {
   const contentGeneratorBC = (items) => {
     // Raid Panel
 
-    const burningCrusadeList = [745, 321, 746, 747, 748, 749, 750, 751, 752];
+    const burningCrusadeList = [745, 746, 747, 748, 749, 750, 751, 321, 752];
     TabPanel.propTypes = {
       children: PropTypes.node,
       index: PropTypes.any.isRequired,
@@ -395,9 +395,9 @@ export default function RaidGearContainer(props) {
                                 </Typography>
                               </Grid>
 
-                              {/* {[...filterItemListBySource(itemList, 1190, key, getDifficultyBaseLevel(firstDifficulty))].map((item, index) => (
-                        <ItemUpgradeCard key={index} item={item} itemDifferential={getDifferentialByID(itemDifferentials, item.id, item.level)} slotPanel={false} />
-                      ))} */}
+                              {[...filterBCItemListBySource(itemList, raidID, key)].map((item, index) => (
+                                  <ItemUpgradeCard key={index} item={item} itemDifferential={getDifferentialByID(itemDifferentials, item.id, item.level)} slotPanel={false} />
+                            ))} 
                             </Grid>
                           </Grid>
                         </Grid>

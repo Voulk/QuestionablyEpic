@@ -28,15 +28,6 @@ export const encounterDB = {
     662, // Nightbane
   ],
 
-  // TODO: This is temporary Zul'Aman
-  321: [
-    1189, // Akil'zon
-    1190, // Nalorakk
-    1191, // Jan'alai
-    1192, // Halazzi
-    1193, // Hex Lord Malacrass
-    1194, // Daakara / Zul'jin
-  ],
 
   /* ---------------------------------------- Gruul's Lair ---------------------------------------- */
   746: [
@@ -89,6 +80,16 @@ export const encounterDB = {
     609, // 1590, // Illidan Stormrage
   ],
 
+  // TODO: This is temporary Zul'Aman
+  321: [
+    1189, // Akil'zon
+    1190, // Nalorakk
+    1191, // Jan'alai
+    1192, // Halazzi
+    1193, // Hex Lord Malacrass
+    1194, // Daakara / Zul'jin
+  ],
+
   /* --------------------------------------- Sunwell Plateau -------------------------------------- */
   752: [
     724, // 1591, // Kalecgos
@@ -101,22 +102,26 @@ export const encounterDB = {
 
   /* ------------------------------------------ Dungeons ------------------------------------------ */
   123: [
-    247, // Auchenai Crypts
     248, // Hellfire Ramparts
-    249, // Magister's Terrace
-    250, // Mana-Tombs
-    251, // Old Hillsbrad Foothills
-    252, // Sethekk Halls
-    253, // Shadow Labyrinth
-    254, // The Arcatraz
-    255, // The Black Morass
     256, // The Blood Furnace
-    257, // The Botanica
-    258, // The Mechanar
     259, // The Shattered Halls
+
     260, // The Slave Pens
     261, // The Steamvault
     262, // The Underbog
+    
+    250, // Mana-Tombs
+    247, // Auchenai Crypts
+    252, // Sethekk Halls
+    253, // Shadow Labyrinth
+    
+    258, // The Mechanar
+    257, // The Botanica
+    254, // The Arcatraz
+    
+    251, // Old Hillsbrad Foothills
+    255, // The Black Morass
+    249, // Magister's Terrace
   ],
 
   /* ---------------------------------------------------------------------------------------------- */

@@ -114,6 +114,17 @@ export function getValidWeaponTypes(spec, slot) {
   }
 }
 
+export function filterBCItemListBySource(itemList, sourceInstance, sourceBoss) {
+  let temp = itemList.filter(function (item) {
+
+    return (
+      ((item.source.instanceId == sourceInstance && item.source.encounterId == sourceBoss) || (item.source.instanceId == sourceInstance && sourceBoss == 0))
+    );
+  });
+
+  return temp;
+}
+
 export function filterItemListBySource(itemList, sourceInstance, sourceBoss, level, pvpRank = 0) {
   let temp = itemList.filter(function (item) {
     // console.log("Filtering: " + item.id);

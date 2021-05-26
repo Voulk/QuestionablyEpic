@@ -132,15 +132,16 @@ function buildItemPossibilities(player, contentType, playerSettings) {
   // Grab items.
   for (var i = 0; i < BCItemDB.length; i++) {
     const rawItem = BCItemDB[i];
-    if ("sources" in rawItem && checkItemViable(rawItem, player)) {
-        const itemSource = rawItem.sources[0];
+    if ("source" in rawItem && checkItemViable(rawItem, player)) {
+        const itemSource = rawItem.source[0];
         //const itemLevel = getSetItemLevel(itemSource, playerSettings, 0, rawItem.slot);
-        const item = buildItem(player, rawItem, rawItem.sources[0]);
+        const item = buildItem(player, rawItem, rawItem.source[0]);
 
         itemPoss.push(item);
       }
     }
-    return itemPoss
+    console.log(itemPoss);
+    return itemPoss;
   }
  
 
@@ -198,12 +199,14 @@ function checkItemViable(rawItem, player) {
   const acceptableArmorTypes = getValidArmorTypes(spec);
   const acceptableWeaponTypes = getValidWeaponTypes(spec, "Weapons");
   const acceptableOffhands = getValidWeaponTypes(spec, "Offhands");
+  const stats = rawItem.stats;
 
   return (
-    rawItem.slot === "Back" ||
+    ("intellect" in stats || "bonushealing" in stats || "bonusdamage" in stats || "mp5" in stats || "spirit" in stats || "spellcrit" in stats || rawItem.slot === "trinket") &&
+    (rawItem.slot === "Back" ||
     (rawItem.itemClass === 4 && acceptableArmorTypes.includes(rawItem.itemSubClass)) ||
     ((rawItem.slot === "Holdable" || rawItem.slot === "Offhand" || rawItem.slot === "Shield") && acceptableOffhands.includes(rawItem.itemSubClass)) ||
-    (rawItem.itemClass === 2 && acceptableWeaponTypes.includes(rawItem.itemSubClass))
+    (rawItem.itemClass === 2 && acceptableWeaponTypes.includes(rawItem.itemSubClass)))
   );
 }
 
