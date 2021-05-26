@@ -133,6 +133,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
     let bonus_stats = {
         intellect: 0,
         bonushealing: 0,
+        spelldamage: 0,
         spirit: 0,
         crit: 0,
         stamina: 0,
@@ -143,6 +144,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
     let enchant_stats = {
       intellect: 0,
       bonushealing: 0,
+      spelldamage: 0,
       spirit: 0,
       crit: 0,
       stamina: 0,
@@ -154,6 +156,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
     let talent_stats = {
       intellect: 0,
       bonushealing: 0,
+      spelldamage: 0,
       spirit: 0,
       crit: 0,
       stamina: 0,
@@ -239,7 +242,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
     bonus_stats = mergeBonusStats(effectStats);
     
 
-
+    
   
     compileStats(setStats, bonus_stats); // Add the base stats on our gear together with enchants & gems.
     //compileStats(setStats, gemStats);
@@ -251,11 +254,11 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
     // This can be properly formalized.
     if (player.getSpec() === "Holy Paladin BC") {
       talent_stats.intellect = setStats.intellect * 0.1;
-      talent_stats.bonushealing = (setStats.intellect + talent_stats.intellect) * 0.35;
+      talent_stats.spelldamage = (setStats.intellect + talent_stats.intellect) * 0.35;
     }
     else if (player.getSpec() === "Restoration Shaman BC") {
       talent_stats.bonushealing = (setStats.intellect) * 0.3;
-      talent_stats.bonusdamage = (setStats.intellect) * 0.3;
+      talent_stats.spelldamage = (setStats.intellect) * 0.3;
     }
     else if (player.getSpec() === "Restoration Druid BC") {
       // Also gets 30% of spirit MP5 as MP5
@@ -264,11 +267,18 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
     else if (player.getSpec() === "Priest BC") {
       // Also gets 30% of spirit MP5 as MP5
       talent_stats.spirit = (setStats.spirit) * 0.05;
-      talent_stats.bonushealing = (setStats.spirit + talent_stats.spirit) * 0.25;
-      talent_stats.bonusdamage = (setStats.spirit + talent_stats.spirit) * 0.25;
+      //talent_stats.bonushealing = (setStats.spirit + talent_stats.spirit) * 0.25;
+      talent_stats.spelldamage = (setStats.spirit + talent_stats.spirit) * 0.25;
     }
     
     compileStats(setStats, talent_stats);
+    console.log("BONUS HEALING" + setStats.bonushealing)
+    console.log("BONUS DAM" + setStats.spelldamage)
+    // Convert spelldamage to bonushealing
+    setStats.bonushealing = (setStats.bonushealing + setStats.spelldamage);
+    console.log("BONUS HEALING" + setStats.bonushealing)
+    setStats.spelldamage = 0;
+    
 
     for (var stat in setStats) {
       if (stat === "hps") {
@@ -303,6 +313,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
     const val = {
         intellect: mergeStat(stats, 'intellect'),
         bonushealing: mergeStat(stats, 'bonushealing'),
+        spelldamage: mergeStat(stats, 'spelldamage'),
         spirit: mergeStat(stats, 'spirit'),
         crit: mergeStat(stats, 'crit'),
         stamina: mergeStat(stats, 'stamina'),

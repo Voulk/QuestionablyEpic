@@ -80,7 +80,7 @@ function TopGearReport(props) {
   }
 
   const getGemIDs = (slot) => {
-    if (gameType === "Retail") return "";
+    if (gameType === "Retail" || (gemStats == undefined)) return "";
     else {
       let gemString = "&gems=";
       for (var i = 0; i < gemStats.socketsAvailable.length; i++) {       

@@ -20,7 +20,7 @@ class BCPlayer extends Player {
             Raid: {
                 intellect: 1.3,
                 bonushealing: 1,
-                spelldamage: 0.3,
+                spelldamage: 0,
                 spirit: 0.1,
                 crit: 0,
                 spellcrit: 1.21,

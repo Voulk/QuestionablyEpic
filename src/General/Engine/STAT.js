@@ -163,8 +163,8 @@ export const translatedStat = {
   stamina: { // Classic
     en: "Stamina"
   },
-  bonusdamage: { // Classic
-    en: "Bonus Damage"
+  spelldamage: { // Classic
+    en: "Healing"
   },
   spirit: { // Classic
     en: "Spirit"

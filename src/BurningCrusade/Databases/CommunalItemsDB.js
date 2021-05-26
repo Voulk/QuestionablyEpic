@@ -484,7 +484,7 @@
         "dropLoc": "",
         "stats": {
             "stamina": 6,
-            "bonusdamage": 20,
+            "spelldamage": 20,
         }
     },
     {

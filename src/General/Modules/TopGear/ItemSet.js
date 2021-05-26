@@ -64,6 +64,7 @@ class ItemSet {
       return {
         intellect: 87,
         bonushealing: 0,
+        spelldamage: 0,
         spirit: 88,
         crit: 0,
         stamina: 0,
