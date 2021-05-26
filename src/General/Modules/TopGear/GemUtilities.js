@@ -161,7 +161,6 @@ function doRecursivelyGenerateGemSet(maxIndices, func, gc, player, bestGems, arg
     if (new Set(args).size === args.length && args[1] > args[0] && args[3] > args[2]) {
       func(args, gc, player, bestGems);
     }
-    bigCount2 += 1;
       
   } else {
       var rest = maxIndices.slice(1);

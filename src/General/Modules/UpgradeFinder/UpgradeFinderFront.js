@@ -8,6 +8,7 @@ import ToggleButton from "@material-ui/lab/ToggleButton";
 import Settings from "../Settings/Settings";
 import UpgradeFinderSimC from "./UpgradeFinderSimCImport";
 import { runUpgradeFinder } from "./UpgradeFinderEngine";
+import { runUpgradeFinderBC } from "./UpgradeFinderEngineBC";
 // import { useHistory } from "react-router-dom";
 import userSettings from "../Settings/SettingsObject";
 import { useSelector } from "react-redux";
@@ -233,10 +234,20 @@ export default function UpgradeFinderFront(props) {
   };
 
   const unleashUpgradeFinder = () => {
-    const playerSettings = props.playerSettings;
-    const result = runUpgradeFinder(props.player, contentType, currentLanguage, playerSettings, userSettings);
-    props.setItemSelection(result);
-    props.setShowReport(true);
+
+    if (gameType === "Retail") {
+      const playerSettings = props.playerSettings;
+      const result = runUpgradeFinder(props.player, contentType, currentLanguage, playerSettings, userSettings);
+      props.setItemSelection(result);
+      props.setShowReport(true);
+    }
+    else if (gameType === "BurningCrusade") {
+      const playerSettings = props.playerSettings;
+      const result = runUpgradeFinderBC(props.player, contentType, currentLanguage, playerSettings, userSettings);
+      props.setItemSelection(result);
+      props.setShowReport(true);
+    }
+
     //history.push("/UpgradeFinderReport/");
   };
 
@@ -267,8 +278,6 @@ export default function UpgradeFinderFront(props) {
   };
 
   const getUpgradeFinderReady = (player) => {
-    console.log(gameType);
-    console.log(getSimCStatus(player, gameType))
     return getSimCStatus(player) === "Good" && (props.playerSettings.raid.length > 0 || gameType == "BurningCrusade");
   };
 
