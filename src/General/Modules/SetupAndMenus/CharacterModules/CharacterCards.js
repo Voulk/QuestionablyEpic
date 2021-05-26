@@ -7,6 +7,7 @@ import { createMuiTheme, makeStyles, ThemeProvider, withStyles } from "@material
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import SettingsIcon from "@material-ui/icons/Settings";
 import Autocomplete from "@material-ui/lab/Autocomplete";
+import ClearIcon from '@material-ui/icons/Clear';
 import { red } from "@material-ui/core/colors";
 import { classColoursJS } from "../../CooldownPlanner/Functions/ClassColourFunctions.js";
 import classIcons from "../../CooldownPlanner/Functions/IconFunctions/ClassIcons";
@@ -386,7 +387,13 @@ export default function CharCards(props) {
                     </Tooltip>
                   </Grid>
                 ) : (
-                  ""
+                  <Grid item xs={2}>
+                  <Tooltip title={t("Delete")}>
+                    <IconButton style={{ float: "right", top: -4, color:  "red" }} onClick={(e) => handleDelete(e)} aria-label="settings" size="small">
+                      <ClearIcon fontSize="small" />
+                    </IconButton>
+                  </Tooltip>
+                </Grid>
                 )}
               </Grid>
               <Grid item xs={12}>
