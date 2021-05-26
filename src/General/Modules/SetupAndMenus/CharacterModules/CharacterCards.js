@@ -329,7 +329,7 @@ export default function CharCards(props) {
   /* ---------------------------- Spec for the card --------------------------- */
   const spec = props.cardType === "Char" ? props.char.spec : "";
   const gameType = useSelector((state) => state.gameType);
-  const serverList = gameType === "Retail" ? serverDB : serverDBBurningCrusade 
+  const serverList = gameType === "Retail" ? serverDB : serverDBBurningCrusade;
   const availableClasses = classRaceList;
 
   /* ------------------------ Active Character Styling ------------------------ */
@@ -353,7 +353,7 @@ export default function CharCards(props) {
     /*                      Character Card for the main menu                      */
     /* -------------------------------------------------------------------------- */
     <Grid item xs={12} sm={6} md={6} lg={4} xl={4}>
-      <CardActionArea onClick={(e) => charClicked(props.char, props.cardType, props.allChars, props.charUpdate, e)} onContextMenu={(e) => handleClickOpen(e)}>
+      <CardActionArea onClick={(e) => charClicked(props.char, props.cardType, props.allChars, props.charUpdate, e)} onContextMenu={gameType === "Retail" ? (e) => handleClickOpen(e) : ""}>
         <Card className={rootClassName} variant="outlined" raised={true}>
           <Avatar src={specImages[spec].default} variant="square" alt="" className={classes.large} />
           <Divider orientation="vertical" flexItem />
@@ -377,13 +377,17 @@ export default function CharCards(props) {
                   </Typography>
                 </Grid>
                 {/* ---- Settings Button - More apparent for users how to edit characters ---- */}
-                <Grid item xs={2}>
-                  <Tooltip title={t("Edit")}>
-                    <IconButton style={{ float: "right", top: -4 }} onClick={(e) => handleClickOpen(e)} aria-label="settings" size="small">
-                      <SettingsIcon fontSize="small" />
-                    </IconButton>
-                  </Tooltip>
-                </Grid>
+                {gameType === "Retail" ? (
+                  <Grid item xs={2}>
+                    <Tooltip title={t("Edit")}>
+                      <IconButton style={{ float: "right", top: -4 }} onClick={(e) => handleClickOpen(e)} aria-label="settings" size="small">
+                        <SettingsIcon fontSize="small" />
+                      </IconButton>
+                    </Tooltip>
+                  </Grid>
+                ) : (
+                  ""
+                )}
               </Grid>
               <Grid item xs={12}>
                 <Divider />
