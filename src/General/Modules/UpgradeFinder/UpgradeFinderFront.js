@@ -246,15 +246,30 @@ export default function UpgradeFinderFront(props) {
     else return "Good";
   };
 
+  /*
   const checkCharacterValid = (player) => {
     const weaponSet = player.getActiveItems("AllMainhands", false, true);
     const weapon = weaponSet.length > 0 ? weaponSet[0] : "";
 
     return (weapon.slot === "2H Weapon" && player.getEquippedItems().length === 15) || (weapon.slot === "1H Weapon" && player.getEquippedItems().length === 16);
+  }; */
+
+  const checkCharacterValid = (player, gameType) => {
+    const weaponSet = player.getActiveItems("AllMainhands", false, true);
+    const weapon = weaponSet.length > 0 ? weaponSet[0] : "";
+    if (gameType === "Retail") {
+      return (weapon.slot === "2H Weapon" && player.getEquippedItems().length === 15) || (weapon.slot === "1H Weapon" && player.getEquippedItems().length === 16);
+    }
+    else if (gameType === "BurningCrusade") {
+      return (weapon.slot === "2H Weapon" && player.getEquippedItems().length === 16) || (weapon.slot === "1H Weapon" && player.getEquippedItems().length === 17);
+    }
+    
   };
 
   const getUpgradeFinderReady = (player) => {
-    return getSimCStatus(player) === "Good" && props.playerSettings.raid.length > 0;
+    console.log(gameType);
+    console.log(getSimCStatus(player, gameType))
+    return getSimCStatus(player) === "Good" && (props.playerSettings.raid.length > 0 || gameType == "BurningCrusade");
   };
 
   return (
