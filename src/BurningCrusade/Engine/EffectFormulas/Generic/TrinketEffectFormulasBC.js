@@ -445,25 +445,28 @@ else if (
 }
 else if (
   /* ---------------------------------------------------------------------------------------------- */
-  /*                                        TrinketName                                             */
+  /*                                      Oshu'gun Relic                                            */
   /* ---------------------------------------------------------------------------------------------- */
-  effectName === "TrinketName"
+  effectName === "Oshu'gun Relic"
 ) {
     const effect = {
-
+      duration: 20,
+      cooldown: 120,
+      value: 213,
     }
-    bonus_stats.bonushealing = 0
+    bonus_stats.bonushealing = Math.round(effect.duration * effect.value / effect.cooldown);
 }
 else if (
   /* ---------------------------------------------------------------------------------------------- */
-  /*                                        TrinketName                                             */
+  /*                                  Auslese's Light Channeler                                     */
   /* ---------------------------------------------------------------------------------------------- */
-  effectName === "TrinketName"
+  effectName === "Auslese's Light Channeler"
 ) {
     const effect = {
-
+      manaRestore: 215,
+      cooldown: 180
     }
-    bonus_stats.bonushealing = 0
+    bonus_stats.mp5 = (effect.manaRestore/effect.cooldown*5)
 }
 else if (
   /* ---------------------------------------------------------------------------------------------- */

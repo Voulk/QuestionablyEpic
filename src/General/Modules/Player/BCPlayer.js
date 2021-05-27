@@ -11,27 +11,71 @@ class BCPlayer extends Player {
     }
 
     setupDefaults = (spec) => {
-        console.log("Printing BC Defaults");
+        console.log("Printing BC Defaults for spec: " + spec);
         this.castModel = {
             Raid: new CastModel(spec, "Raid"),
             Dungeon: new CastModel(spec, "Dungeon"),
         };
-        this.statWeights = {
-            Raid: {
-                intellect: 1.3,
-                bonushealing: 1,
-                spelldamage: 0,
-                spirit: 0.1,
-                crit: 0,
-                spellcrit: 1.21,
-                stamina: 0.01,
-                mp5: 2.3,
-                haste: 0.7,
-            },
-            Dungeon: {
-            },
-            DefaultWeights: true,
-          };
+
+        if (spec === "Restoration Druid BC") {
+            console.log("Printing Druid Weights");
+            this.statWeights = {
+                Raid: {
+                    intellect: 0.83,
+                    hps: 1,
+                    bonushealing: 0.88,
+                    mp5: 1.9,
+                    spelldamage: 0,
+                    spirit: 0.85,
+                    crit: 0,
+                    spellcrit: 0.03,
+                    stamina: 0.01,
+                    
+                    haste: 0.1,
+                },
+                Dungeon: {
+                },
+                DefaultWeights: true,
+              };
+        }
+        else if (spec === "Holy Paladin BC") {
+            this.statWeights = {
+                Raid: {
+                    intellect: 0.36,
+                    hps: 1,
+                    bonushealing: 0.352,
+                    mp5: 1.4,
+                    spelldamage: 0,
+                    spirit: 0.04,
+                    crit: 0,
+                    spellcrit: 0.436,
+                    stamina: 0.01,
+                    haste: 0.61,
+                },
+                Dungeon: {
+                },
+                DefaultWeights: true,
+              };
+        }
+        else {
+            this.statWeights = {
+                Raid: {
+                    intellect: 1.3,
+                    bonushealing: 1,
+                    spelldamage: 0,
+                    spirit: 0.1,
+                    crit: 0,
+                    spellcrit: 1.21,
+                    stamina: 0.01,
+                    mp5: 1.9,
+                    haste: 0.7,
+                },
+                Dungeon: {
+                },
+                DefaultWeights: true,
+              };
+        }
+
     }
 
 }
