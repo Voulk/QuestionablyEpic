@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "0.9rem",
   },
   gruulsHeaderStyle: {
-    backgroundImage: `url(${require("../../../../Images/BurningCrusade/Raid/GruulsLair.jpg").default})`,
+    backgroundImage: `url(${require("../../../../Images/BurningCrusade/Raid/Gruul&Mag.jpg").default})`,
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center 60%",
     backgroundSize: "101%",
@@ -281,7 +281,7 @@ export default function RaidGearContainer(props) {
   const contentGeneratorBC = (items) => {
     // Raid Panel
 
-    const burningCrusadeList = [745, 746, 747, 748, 749, 750, 751, 321, 752];
+    const burningCrusadeList = [745, 746, 748, 749, 750, 751, 321, 752];
     TabPanel.propTypes = {
       children: PropTypes.node,
       index: PropTypes.any.isRequired,
@@ -330,20 +330,18 @@ export default function RaidGearContainer(props) {
           >
             {/* ------------------------------------------ Karazhan ------------------------------------------ */}
             <Tab className={classes.karazhanHeaderStyle} label={t("BurningCrusade.Raids.745")} {...a11yProps(0)} />
-            {/* ------------------------------------------ Zul'Aman ------------------------------------------ */}
-            <Tab className={classes.zulamanHeaderStyle} label={t("BurningCrusade.Raids.321")} {...a11yProps(1)} />
             {/* ---------------------------------------- Gruul's Lair ---------------------------------------- */}
-            <Tab className={classes.gruulsHeaderStyle} label={t("BurningCrusade.Raids.746")} {...a11yProps(2)} />
-            {/* ------------------------------------- Magtheridon's Lair ------------------------------------- */}
-            <Tab className={classes.magtheridonHeaderStyle} label={t("BurningCrusade.Raids.747")} {...a11yProps(3)} />
+            <Tab className={classes.gruulsHeaderStyle} label={t("BurningCrusade.Raids.746")} {...a11yProps(1)} />
             {/* ------------------------------------ Serpentshrine Cavern ------------------------------------ */}
-            <Tab className={classes.serpentshringHeaderStyle} label={t("BurningCrusade.Raids.748")} {...a11yProps(4)} />
+            <Tab className={classes.serpentshringHeaderStyle} label={t("BurningCrusade.Raids.748")} {...a11yProps(2)} />
             {/* ---------------------------------------- Tempest Keep ---------------------------------------- */}
-            <Tab className={classes.tempestKeepHeaderStyle} label={t("BurningCrusade.Raids.749")} {...a11yProps(5)} />
+            <Tab className={classes.tempestKeepHeaderStyle} label={t("BurningCrusade.Raids.749")} {...a11yProps(3)} />
             {/* --------------------------------- The Battle for Mount Hyjal --------------------------------- */}
-            <Tab className={classes.mountHyjalHeaderStyle} label={t("BurningCrusade.Raids.750")} {...a11yProps(6)} />
+            <Tab className={classes.mountHyjalHeaderStyle} label={t("BurningCrusade.Raids.750")} {...a11yProps(4)} />
             {/* ---------------------------------------- Black Temple ---------------------------------------- */}
-            <Tab className={classes.blackTempleHeaderStyle} label={t("BurningCrusade.Raids.751")} {...a11yProps(6)} />
+            <Tab className={classes.blackTempleHeaderStyle} label={t("BurningCrusade.Raids.751")} {...a11yProps(5)} />
+            {/* ------------------------------------------ Zul'Aman ------------------------------------------ */}
+            <Tab className={classes.zulamanHeaderStyle} label={t("BurningCrusade.Raids.321")} {...a11yProps(6)} />
             {/* --------------------------------------- Sunwell Plateau -------------------------------------- */}
             <Tab className={classes.sunwellHeaderStyle} label={t("BurningCrusade.Raids.752")} {...a11yProps(7)} />
           </Tabs>
@@ -396,8 +394,8 @@ export default function RaidGearContainer(props) {
                               </Grid>
 
                               {[...filterBCItemListBySource(itemList, raidID, key)].map((item, index) => (
-                                  <ItemUpgradeCard key={index} item={item} itemDifferential={getDifferentialByID(itemDifferentials, item.id, item.level)} slotPanel={false} />
-                            ))} 
+                                <ItemUpgradeCard key={index} item={item} itemDifferential={getDifferentialByID(itemDifferentials, item.id, item.level)} slotPanel={false} />
+                              ))}
                             </Grid>
                           </Grid>
                         </Grid>

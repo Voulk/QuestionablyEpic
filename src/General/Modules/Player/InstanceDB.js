@@ -28,15 +28,10 @@ export const encounterDB = {
     662, // Nightbane
   ],
 
-
   /* ---------------------------------------- Gruul's Lair ---------------------------------------- */
   746: [
     649, // 1564, // High King Maulgar
     650, // 1565, // Gruul the Dragonkiller
-  ],
-
-  /* ------------------------------------- Magtheridon's Lair ------------------------------------- */
-  747: [
     651, // 1566, // Magtheridon
   ],
 
@@ -109,16 +104,16 @@ export const encounterDB = {
     260, // The Slave Pens
     261, // The Steamvault
     262, // The Underbog
-    
+
     250, // Mana-Tombs
     247, // Auchenai Crypts
     252, // Sethekk Halls
     253, // Shadow Labyrinth
-    
+
     258, // The Mechanar
     257, // The Botanica
     254, // The Arcatraz
-    
+
     251, // Old Hillsbrad Foothills
     255, // The Black Morass
     249, // Magister's Terrace
