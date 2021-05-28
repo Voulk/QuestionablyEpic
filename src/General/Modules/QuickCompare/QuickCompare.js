@@ -322,7 +322,7 @@ export default function QuickCompare(props) {
                           {x.label}
                         </MenuItem>
                       ))
-                      .map((key, i) => [key, <Divider key={i} />])}
+                      .map((key, i) => [key, <Divider key={"menuItem" + i} />])}
                   </Select>
                 </FormControl>
               </Grid>

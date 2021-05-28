@@ -60,6 +60,7 @@
     "Battletag": "Battletag",
     "Edit": "Edit",
     "Equipped": "Equipped",
+    "Error": "Error",
 
     "Changelog": {
       "Header": "Changelog",
@@ -599,7 +600,9 @@
       "SimCBody1Missing": "SimC - Missing",
       "SimCBody2": "Current Equipped Gear:",
       "SimCButton": "Import SimC",
-      "HelpText": "Insert a SimC String, select up to two raid difficulties, the Mythic+ ilvl you're interested in, and your PVP rating to see where you can find your next upgrade! All results are based on the gear you are actively wearing."
+      "HelpText": "Insert a SimC String, select up to two raid difficulties, the Mythic+ ilvl you're interested in, and your PVP rating to see where you can find your next upgrade! All results are based on the gear you are actively wearing.",
+      "HelpTextBC": "",
+      "DungeonBodyBC": ""
     },
 
     "TrinketAnalysis": {

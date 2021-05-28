@@ -390,7 +390,7 @@ export default function UpgradeFinderFront(props) {
               <Grid container justify="center" spacing={1}>
                 <Grid item xs={12}>
                   <Typography color="primary" align="center" variant="h5">
-                    {t("Dungeons")}
+                    {t("Dungeon")}
                   </Typography>
                   <Grid item xs={12}>
                     <Typography align="center">{t("UpgradeFinderFront.DungeonBodyBC")}</Typography>
@@ -403,7 +403,7 @@ export default function UpgradeFinderFront(props) {
                   <ToggleButton style={{ padding: "15px 30px" }} value="Normal" aria-label="dungeonLabel">
                     {/* <Tooltip title={t("QeHeader.Tooltip.ChangeToDungeon")} arrow> */}
                     <div style={{ display: "inline-flex" }}>
-                      <Typography variant="button">{t("Normal")}</Typography>
+                      <Typography variant="button">{t("RaidDifficulty.Normal")}</Typography>
                     </div>
                     {/* </Tooltip> */}
                   </ToggleButton>
@@ -411,7 +411,7 @@ export default function UpgradeFinderFront(props) {
                   <ToggleButton style={{ padding: "15px 30px" }} value="Heroic" aria-label="raidLabel">
                     {/* <Tooltip title={t("QeHeader.Tooltip.ChangeToRaid")} arrow> */}
                     <div style={{ display: "inline-flex" }}>
-                      <Typography variant="button">{t("Heroic")}</Typography>
+                      <Typography variant="button">{t("RaidDifficulty.Heroic")}</Typography>
                     </div>
                     {/* </Tooltip> */}
                   </ToggleButton>
