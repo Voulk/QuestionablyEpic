@@ -437,7 +437,8 @@
       "offhands": "Левая рука",
       "finger": "Палец",
       "weapons": "Оружие",
-      "weaponCombos": "Наборы оружия"
+      "weaponCombos": "Наборы оружия",
+      "relics": "Реликвия"
     },
 
     "Soulbinds": {
