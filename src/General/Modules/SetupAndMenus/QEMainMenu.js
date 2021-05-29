@@ -79,6 +79,7 @@ export default function QEMainMenu(props) {
   const { t } = useTranslation();
   const classes = useStyles();
   const characterCount = props.allChars.getAllChar(gameType).length;
+  const characterCountAll = props.allChars.getAllChar("All").length;
   const patron = ["Diamond", "Gold", "Rolls Royce", "Sapphire"].includes(props.patronStatus);
 
   let articles = [];
@@ -95,7 +96,7 @@ export default function QEMainMenu(props) {
   };
 
   /* -------------------- Character Creation Dialog States -------------------- */
-  const welcomeOpen = (ls.get("welcomeMessage") === true && characterCount === 0) ? true : false
+  const welcomeOpen = (ls.get("welcomeMessage") === true && characterCountAll === 0) ? true : false
   // const handleClickOpen = () => {
   //   setOpen(true);
   // };
