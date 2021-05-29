@@ -16,6 +16,7 @@ import InfoOutlinedIcon from "@material-ui/icons/InfoOutlined";
 import { useSelector } from "react-redux";
 import GameTypeSwitch from "./GameTypeToggle";
 import WelcomeDialog from "../Welcome/Welcome";
+import ls from "local-storage";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -94,13 +95,13 @@ export default function QEMainMenu(props) {
   };
 
   /* -------------------- Character Creation Dialog States -------------------- */
-  const [open, setOpen] = React.useState(characterCount === 0 ? true : false);
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
-  const handleClose = () => {
-    setOpen(false);
-  };
+  const welcomeOpen = (ls.get("welcomeMessage") === true && characterCount === 0) ? true : false
+  // const handleClickOpen = () => {
+  //   setOpen(true);
+  // };
+  // const handleClose = () => {
+  //   setOpen(false);
+  // };
 
   return (
     <div style={{ backgroundColor: "#313131" }}>
@@ -214,7 +215,7 @@ export default function QEMainMenu(props) {
         <Changelog />
         <HallOfFame />
 
-        <WelcomeDialog handleClickOpen={handleClickOpen}  allChars={props.allChars} charUpdate={props.charUpdate} charAddedSnack={props.charAddedSnack} />
+        <WelcomeDialog welcomeOpen={welcomeOpen}  allChars={props.allChars} charUpdate={props.charUpdate} charAddedSnack={props.charAddedSnack} />
       </div>
     </div>
   );

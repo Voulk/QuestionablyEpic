@@ -86,7 +86,7 @@ export default function WelcomeDialog(props) {
   const classes = useStyles();
   const gameType = useSelector((state) => state.gameType);
   const availableClasses = classRaceList;
-  const [open, setOpen] = React.useState(ls.get("welcomeMessage") === true ? false : true);
+  const [open, setOpen] = React.useState(props.welcomeOpen);
   const { t } = useTranslation();
   const [page, setPage] = React.useState(1);
   const [healClass, setHealClass] = React.useState("");
@@ -96,9 +96,9 @@ export default function WelcomeDialog(props) {
   const [server, setServer] = React.useState("");
   const serverList = gameType === "Retail" ? serverDB : serverDBBurningCrusade;
   const region = ["CN", "US", "TW", "EU", "KR"];
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
+  // const handleClickOpen = () => {
+  //   setOpen(true);
+  // };
 
   const handleClose = () => {
     setOpen(false);
@@ -117,6 +117,8 @@ export default function WelcomeDialog(props) {
     setServer("");
     // setRegions(null);
     setCharName("");
+    /* ----- Set welcomeMessage local storage to true, so that the message does not show anymore ---- */
+    ls.set("welcomeMessage", true);
   };
   const handleChangeSpec = (event) => {
     setHealClass(event.target.value);
@@ -137,9 +139,9 @@ export default function WelcomeDialog(props) {
 
   return (
     <div>
-      <Button variant="outlined" color="primary" onClick={handleClickOpen}>
+      {/* <Button variant="outlined" color="primary" onClick={handleClickOpen}>
         Test Welcome Message
-      </Button>
+      </Button> */}
       <Dialog maxWidth={page === 1 ? "md" : "xs"} fullWidth={true} open={open}>
         {page === 1 ? (
           <DialogContent>
