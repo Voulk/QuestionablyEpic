@@ -15,6 +15,8 @@ import Changelog from "../ChangeLog/Changelog";
 import InfoOutlinedIcon from "@material-ui/icons/InfoOutlined";
 import { useSelector } from "react-redux";
 import GameTypeSwitch from "./GameTypeToggle";
+import AddNewCharDialog from "./CharacterModules/AddNewCharDialog"
+import WelcomeDialog from "../Welcome/Welcome"
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -96,9 +98,11 @@ export default function QEMainMenu(props) {
     <div style={{ backgroundColor: "#313131" }}>
       <div className={classes.root}>
         <Grid container spacing={2}>
-          { <Grid item xs={12} style={{textAlign: "center"}} >
-            <GameTypeSwitch />
-          </Grid> }
+          {
+            <Grid item xs={12} style={{ textAlign: "center" }}>
+              <GameTypeSwitch />
+            </Grid>
+          }
           <Grid item xs={12}>
             <Button
               key={321}
@@ -201,6 +205,19 @@ export default function QEMainMenu(props) {
         )}
         <Changelog />
         <HallOfFame />
+
+        <WelcomeDialog handleClickOpen={handleClickOpen} />
+
+        <AddNewCharDialog
+          allChars={props.allChars}
+          charUpdate={props.charUpdate}
+          charAddedSnack={props.charAddedSnack}
+          open={open}
+          setOpen={setOpen}
+          handleClickOpen={handleClickOpen}
+          handleClose={handleClose}
+        />
+
       </div>
     </div>
   );
