@@ -48,7 +48,7 @@ class BCPlayer extends Player {
                     crit: 0,
                     spellcrit: 0.436,
                     stamina: 0.01,
-                    haste: 0.61,
+                    haste: 0.31,
                 },
                 Dungeon: {
                 },

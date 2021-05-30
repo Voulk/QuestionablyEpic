@@ -307,7 +307,6 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
 
     // Convert spelldamage to bonushealing
     setStats.bonushealing = (setStats.bonushealing + setStats.spelldamage);
-    console.log("BONUS HEALING" + setStats.bonushealing)
     setStats.spelldamage = 0;
     
 
@@ -323,7 +322,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
     }
   
     //console.log(JSON.stringify(setStats));
-    console.log("Soft Score: " + builtSet.sumSoftScore + ". Hard Score: " + hardScore);
+    //console.log("Soft Score: " + builtSet.sumSoftScore + ". Hard Score: " + hardScore);
     //console.log("Enchants: " + JSON.stringify(enchants));
     builtSet.hardScore = Math.round(1000 * hardScore) / 1000;
     builtSet.setStats = setStats;
