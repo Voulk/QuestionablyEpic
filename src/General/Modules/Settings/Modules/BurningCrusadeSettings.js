@@ -31,13 +31,13 @@ export default function BurningCrusadeSettings(props) {
   // const playerSpec = props.player.getSpec();
 
   /* ------------------------------------------ Setting 0 ----------------------------------------- */
-  const [settingValue0, setSettingValue0] = useState("");
+  const [manaProfile, setManaProfile] = useState("Standard");
   /* ------------------------------------------ Setting 1 ----------------------------------------- */
   const [settingValue1, setSettingValue1] = useState("");
   /* ------------------------------------------ Setting 2 ----------------------------------------- */
-  const [metaGem, setMetaGem] = useState("Insightful Earthstorm Diamond");
+  const [metaGem, setMetaGem] = useState("Bracing Earthstorm Diamond");
   /* ------------------------------------------ Setting 3 ----------------------------------------- */
-  const [settingValue3, setSettingValue3] = useState("");
+  const [autoEnchantItems, setAutoEnchantItems] = useState(true);
   /* ------------------------------------------ Setting 4 ----------------------------------------- */
   const [settingValue4, setSettingValue4] = useState("");
   /* ------------------------------------------ Setting 5 ----------------------------------------- */
@@ -46,17 +46,20 @@ export default function BurningCrusadeSettings(props) {
   /* -------------------------------------- Auto-Socket State ------------------------------------- */
   const [autoSocketValue, setAutoSocketValue] = useState(props.userSettings.autoSocket);
 
-  const updateSetting0 = (value) => {
-    setSettingValue0();
+  const updateManaProfile = (value) => {
+    props.editSettings("manaProfile", value);
+    setManaProfile(value);
   };
   const updateSetting1 = (value) => {
     setSettingValue1();
   };
   const updateMetaGem = (value) => {
+    props.editSettings("metaGem", value);
     setMetaGem(value);
   };
-  const updateSetting3 = (value) => {
-    setSettingValue3();
+  const updateAutoEnchant = (value) => {
+    props.editSettings("autoEnchant", value);
+    setAutoEnchantItems();
   };
   const updateSetting4 = (value) => {
     setSettingValue4();
@@ -95,18 +98,19 @@ export default function BurningCrusadeSettings(props) {
             </div>
           </Grid>
           <Grid item xs={12}>
-            <TextField
-              id="setting0"
-              value={settingValue0}
-              onChange={(e) => setSettingValue0(e.target.value)}
-              variant="outlined"
-              size="small"
-              type="number"
-              fullWidth
-              inputProps={{
-                style: { textAlign: "center" },
-              }}
-            />
+          <FormControl variant="outlined" size="small" fullWidth>
+              <Select labelId="slots" value={manaProfile} onChange={(e) => updateManaProfile(e.target.value)} MenuProps={menuStyle}>
+                <MenuItem id="spiritShell" value={"Max Healing"} style={{ justifyContent: "center" }}>
+                  {"Max Healing"}
+                </MenuItem>
+                <MenuItem id="evangelism" value={"Standard"} style={{ justifyContent: "center" }}>
+                  {"Standard"}
+                </MenuItem>
+                <MenuItem id="evangelism" value={"Conservative"} style={{ justifyContent: "center" }}>
+                  {"Conservative"}
+                </MenuItem>
+              </Select>
+            </FormControl>
           </Grid>
         </Grid>
       </Grid>
@@ -128,7 +132,7 @@ export default function BurningCrusadeSettings(props) {
           </Grid>
           <Grid item xs={12}>
             <FormControl variant="outlined" size="small" fullWidth style={{ textAlign: "center" }}>
-              <Select labelId="groupValue" value={settingValue1} onChange={(e) => setSettingValue1(e.target.value)} MenuProps={menuStyle}>
+              <Select labelId="groupValue" value={settingValue1} onChange={(e) => updateSettingValue1(e.target.value)} MenuProps={menuStyle}>
                 <MenuItem value={true} style={{ justifyContent: "center" }}>
                   {t("Yes")}
                 </MenuItem>
@@ -158,12 +162,12 @@ export default function BurningCrusadeSettings(props) {
           </Grid>
           <Grid item xs={12}>
             <FormControl variant="outlined" size="small" fullWidth>
-              <Select labelId="slots" value={metaGem} onChange={(e) => setMetaGem(e.target.value)} MenuProps={menuStyle}>
-                <MenuItem id="spiritShell" value={"Insightful Earthstorm Diamond"} style={{ justifyContent: "center" }}>
-                  {"Insightful Earthstorm Diamond"}
-                </MenuItem>
-                <MenuItem id="evangelism" value={"Bracing Earthstorm Diamond"} style={{ justifyContent: "center" }}>
+              <Select labelId="slots" value={metaGem} onChange={(e) => updateMetaGem(e.target.value)} MenuProps={menuStyle}>
+                <MenuItem id="spiritShell" value={"Bracing Earthstorm Diamond"} style={{ justifyContent: "center" }}>
                   {"Bracing Earthstorm Diamond"}
+                </MenuItem>
+                <MenuItem id="evangelism" value={"Insightful Earthstorm Diamond"} style={{ justifyContent: "center" }}>
+                  {"Insightful Earthstorm Diamond"}
                 </MenuItem>
               </Select>
             </FormControl>
@@ -188,7 +192,7 @@ export default function BurningCrusadeSettings(props) {
           </Grid>
           <Grid item xs={12}>
             <FormControl variant="outlined" size="small" fullWidth style={{ textAlign: "center" }}>
-              <Select labelId="groupValue" value={settingValue3} onChange={(e) => setSettingValue3(e.target.value)} MenuProps={menuStyle}>
+              <Select labelId="groupValue" value={autoEnchantItems} onChange={(e) => setAutoEnchantItems(e.target.value)} MenuProps={menuStyle}>
                 <MenuItem value={true} style={{ justifyContent: "center" }}>
                   {t("Yes")}
                 </MenuItem>
