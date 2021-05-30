@@ -66,7 +66,7 @@ function TopGearReport(props) {
   let itemList = {};
   let statList = {};
 
-  console.log(result);
+
 
   if (checkResult(result)) {
     topSet = result.itemSet;
@@ -75,6 +75,7 @@ function TopGearReport(props) {
     itemList = topSet.itemList;
     gemStats = gameType === "BurningCrusade" ? topSet.socketInformation : "";
     statList = topSet.setStats;
+    console.log(gemStats);
   } else {
     resultValid = false;
   }

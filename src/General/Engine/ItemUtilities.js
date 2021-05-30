@@ -476,7 +476,7 @@ export function getBestGem(player, color) {
   else if (color === "yellow") colors = ["yellow", "orange", "green"] 
   else if (color === "all") colors = ["yellow", "blue", "red", "purple", "orange", "green"] 
 
-  let gemList = gems.filter((filter) => (colors.includes(filter.color) && filter.jewelcrafting === false && filter.rarity !== "Epic"));
+  let gemList = gems.filter((filter) => (colors.includes(filter.color) && filter.jewelcrafting === false && filter.rarity !== "epic"));
   gemList = scoreGemColor(gemList, player);
   return gemList[0];
 
