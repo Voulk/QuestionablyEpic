@@ -138,7 +138,7 @@ export default function TierObject(props) {
             <Grid item xs={6} style={{ textAlign: "center" }}>
               <div style={{ display: "inline-flex" }}>
                 <Typography variant="h6" align="center" component="p" noWrap>
-                  {/* TODO: Translations */}2 Set HPS:
+                  {t("TierSets.2Set")}:
                 </Typography>
                 <Typography variant="h6" align="center" component="p" style={{ marginLeft: 6 }}>
                   {/* TODO: Translations */}500
@@ -149,7 +149,7 @@ export default function TierObject(props) {
             <Grid item xs={6} style={{ textAlign: "center" }}>
               <div style={{ display: "inline-flex" }}>
                 <Typography variant="h6" align="center" component="p" noWrap>
-                  {/* TODO: Translations */}4 Set HPS:
+                  {t("TierSets.4Set")}:
                 </Typography>
                 <Typography variant="h6" align="center" component="p" style={{ marginLeft: 6 }}>
                   {/* TODO: Translations */}500

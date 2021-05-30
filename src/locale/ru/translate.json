@@ -520,9 +520,12 @@
         "Setting5TextFieldLabel": ""
       }
     },
-    
+
     "TierSets": {
-      "Title": "Tier Sets"
+      "Title": "Tier Sets",
+      "2Set": "2 Set HPS",
+      "4Set": "4 Set HPS",
+      "6Set": "6 Set HPS"
     },
 
     "TopGear": {
