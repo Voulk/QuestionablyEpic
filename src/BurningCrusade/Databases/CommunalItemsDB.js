@@ -461,7 +461,7 @@
         }
     },
     {
-        "id": 186048,
+        "id": 185987,
         "name": "Communal Stone of Wisdom",
         "names": {
             "cn": "",

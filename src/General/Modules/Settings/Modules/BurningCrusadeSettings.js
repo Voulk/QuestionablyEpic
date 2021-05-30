@@ -57,9 +57,10 @@ export default function BurningCrusadeSettings(props) {
     props.editSettings("metaGem", value);
     setMetaGem(value);
   };
-  const updateAutoEnchant = (value) => {
+  const updateAutoEnchantItems = (value) => {
     props.editSettings("autoEnchant", value);
-    setAutoEnchantItems();
+    setAutoEnchantItems(value);
+
   };
   const updateSetting4 = (value) => {
     setSettingValue4();
@@ -192,12 +193,12 @@ export default function BurningCrusadeSettings(props) {
           </Grid>
           <Grid item xs={12}>
             <FormControl variant="outlined" size="small" fullWidth style={{ textAlign: "center" }}>
-              <Select labelId="groupValue" value={autoEnchantItems} onChange={(e) => setAutoEnchantItems(e.target.value)} MenuProps={menuStyle}>
+              <Select labelId="groupValue" value={autoEnchantItems} onChange={(e) => updateAutoEnchantItems(e.target.value)} MenuProps={menuStyle}>
                 <MenuItem value={true} style={{ justifyContent: "center" }}>
-                  {t("Yes")}
+                  {"Yes"}
                 </MenuItem>
                 <MenuItem value={false} style={{ justifyContent: "center" }}>
-                  {t("No")}
+                  {"No"}
                 </MenuItem>
               </Select>
             </FormControl>
