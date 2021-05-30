@@ -60,7 +60,7 @@ export default function TierObject(props) {
                   lineHeight: 1,
                 }}
               >
-                {t(set.name[currentLanguage])}
+                {set.name[currentLanguage]}
               </Typography>
             </div>
           </div>
@@ -100,7 +100,7 @@ export default function TierObject(props) {
             /* ----------------------------------------------------------------------------------------------  */}
             <Grid item xs={12}>
               <Typography align="left" variant="caption" style={{ fontSize: "0.75rem", lineHeight: 1.1 }} component="p">
-                {t(set.twoSet["effect"][currentLanguage])}
+                {set.twoSet["effect"][currentLanguage]}
               </Typography>
             </Grid>
             <Grid item xs={12}>
@@ -111,7 +111,7 @@ export default function TierObject(props) {
             /* ---------------------------------------------------------------------------------------------- */}
             <Grid item xs={12}>
               <Typography align="left" variant="caption" style={{ fontSize: "0.75rem", lineHeight: 1.1 }} component="p">
-                {t(set.fourSet["effect"][currentLanguage])}
+                {set.fourSet["effect"][currentLanguage]}
               </Typography>
             </Grid>
             <Grid item xs={12}>

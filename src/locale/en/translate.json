@@ -61,6 +61,8 @@
     "Edit": "Edit",
     "Equipped": "Equipped",
     "Error": "Error",
+    "Burning Crusade": "Burning Crusade",
+    "Shadowlands": "Shadowlands",
 
     "Changelog": {
       "Header": "Changelog",
@@ -283,6 +285,7 @@
       "Profile": "Profile",
       "CharHeader": "Characters",
       "CharHelpText": "Add your characters here. Right click to edit your stat weights, realm information and more.",
+      "TierSets": "Tier Sets",
       "Articles": {
         "Header": "Recent Spec Articles",
         "HelpText": ""
@@ -295,7 +298,8 @@
         "CooldownPlanner": "Plan your cooldowns. Create your own or analyse logs",
         "Profile": "Edit your details",
         "UpgradeFinder": "Find your next piece of gear!",
-        "TrinketAnalysis": "See how this tiers trinkets line up in graph form"
+        "TrinketAnalysis": "See how this tiers trinkets line up in graph form",
+        "TierSets": ""
       }
     },
 
@@ -562,6 +566,10 @@
       "25914": "Holy Shock",
       "82326": "Holy Light",
       "337824": "Shock Barrier"
+    },
+
+    "TierSets": {
+      "Title": "Tier Sets"
     },
 
     "TopGear": {
