@@ -14,11 +14,10 @@ class BCPlayer extends Player {
         console.log("Printing BC Defaults for spec: " + spec);
         this.castModel = {
             Raid: new CastModel(spec, "Raid"),
-            Dungeon: new CastModel(spec, "Dungeon"),
+            Dungeon: new CastModel(spec, "Dungeon"), // Unused in BC.
         };
-
+        // These are starter weights, and can and will change during the engine calculation process.
         if (spec === "Restoration Druid BC") {
-            console.log("Printing Druid Weights");
             this.statWeights = {
                 Raid: {
                     intellect: 0.83,
@@ -30,7 +29,6 @@ class BCPlayer extends Player {
                     crit: 0,
                     spellcrit: 0.03,
                     stamina: 0.01,
-                    
                     haste: 0.1,
                 },
                 Dungeon: {
