@@ -23,6 +23,33 @@ const softSlice = 3000;
 const DR_CONST = 0.00196669230769231;
 const DR_CONSTLEECH = 0.04322569230769231;
 
+const classRaceStats = {
+  "Restoration Druid BC": {
+    "Night Elf": {intellect: 120, spirit: 133},
+    "Tauren": {intellect: 115, spirit: 135},
+  },
+  "Priest BC": {
+    "Human": {intellect: 145, spirit: 151},
+    "Night Elf": {intellect: 145, spirit: 151},
+    "Dwarf": {intellect: 144, spirit: 150},
+    "Draenei": {intellect: 146, spirit: 153},
+    "Undead": {intellect: 143, spirit: 156},
+    "Blood Elf": {intellect: 149, spirit: 150},
+  },
+  "Holy Paladin BC": {
+    "Human": {intellect: 83, spirit: 89},
+    "Dwarf": {intellect: 82, spirit: 88},
+    "Draenei": {intellect: 84, spirit: 91},
+    "Blood Elf": {intellect: 87, spirit: 88},
+  },
+  "Restoration Shaman BC": {
+    "Draenei": {intellect: 109, spirit: 122},
+    "Orc": {intellect: 105, spirit: 123},
+    "Troll": {intellect: 104, spirit: 121},
+    "Tauren": {intellect: 103, spirit: 122},
+  }
+
+}
 
 // block for `time` ms, then return the number of loops we could run in that time:
 export function expensive(time) {
@@ -120,7 +147,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
     let hardScore = 0;
     const setBonuses = builtSet.sets;
     let effectList = [...itemSet.effectList]
-    console.log(userSettings);
+    console.log(player.race);
   
     // --- Item Set Bonuses ---
     for (const set in setBonuses) {
@@ -240,16 +267,19 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
     }
     bonus_stats = mergeBonusStats(effectStats);
     
-
-    
-  
     compileStats(setStats, bonus_stats); // Add the base stats on our gear together with enchants & gems.
-    compileStats(setStats, gemStats);
+    compileStats(setStats, gemStats); //TODO
     compileStats(setStats, enchant_stats);
     //applyDiminishingReturns(setStats); // Apply Diminishing returns to our haul.
-    addBaseStats(setStats, player.spec); // Add our base stats, which are immune to DR. This includes our base 5% crit, and whatever base mastery our spec has.
+    addBaseStats(setStats, player.race, player.spec); // Add our base stats, which are immune to DR. This includes our base 5% crit, and whatever base mastery our spec has.
     
-    // Talents
+    // Talents & Racials
+
+    // Human
+    if (player.race.includes("Human")) {
+      talent_stats.spirit = (setStats.spirit) * 0.1;
+    }
+
     // This can be properly formalized.
     if (player.getSpec() === "Holy Paladin BC") {
       talent_stats.intellect = setStats.intellect * 0.1;
@@ -265,14 +295,16 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
     }
     else if (player.getSpec() === "Priest BC") {
       // Also gets 30% of spirit MP5 as MP5
-      talent_stats.spirit = (setStats.spirit) * 0.05;
+      talent_stats.spirit += (setStats.spirit + talent_stats.spirit) * 0.05;
       //talent_stats.bonushealing = (setStats.spirit + talent_stats.spirit) * 0.25;
       talent_stats.spelldamage = (setStats.spirit + talent_stats.spirit) * 0.25;
     }
+
+
     
     compileStats(setStats, talent_stats);
-    console.log("BONUS HEALING" + setStats.bonushealing)
-    console.log("BONUS DAM" + setStats.spelldamage)
+    console.log(setStats);
+
     // Convert spelldamage to bonushealing
     setStats.bonushealing = (setStats.bonushealing + setStats.spelldamage);
     console.log("BONUS HEALING" + setStats.bonushealing)
@@ -291,7 +323,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
     }
   
     //console.log(JSON.stringify(setStats));
-    //console.log("Soft Score: " + builtSet.sumSoftScore + ". Hard Score: " + hardScore);
+    console.log("Soft Score: " + builtSet.sumSoftScore + ". Hard Score: " + hardScore);
     //console.log("Enchants: " + JSON.stringify(enchants));
     builtSet.hardScore = Math.round(1000 * hardScore) / 1000;
     builtSet.setStats = setStats;
@@ -324,10 +356,18 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
   
   }
 
-function addBaseStats(stats, spec) {
-    stats.crit += 175;
-  
-    return stats;
+function addBaseStats(stats, race, spec) {
+
+  const bonus_stats = {}
+
+  const base_stats = classRaceStats[spec][race.replace("Races.", "")];
+
+  for (const [key, value] of Object.entries(base_stats)) {
+    console.log(key);
+    stats[key] = stats[key] + value;
+  }
+
+  console.log(classRaceStats[spec][race.replace("Races.", "")]);
   
 }
 
