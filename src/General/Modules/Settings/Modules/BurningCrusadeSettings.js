@@ -39,7 +39,7 @@ export default function BurningCrusadeSettings(props) {
   /* ------------------------------------------ Setting 3 ----------------------------------------- */
   const [autoEnchantItems, setAutoEnchantItems] = useState(true);
   /* ------------------------------------------ Setting 4 ----------------------------------------- */
-  const [gemRarity, setGemRarity] = useState("Rare");
+  const [gemRarity, setGemRarity] = useState("rare");
   /* ------------------------------------------ Setting 5 ----------------------------------------- */
   const [settingValue5, setSettingValue5] = useState("");
 
@@ -226,10 +226,10 @@ export default function BurningCrusadeSettings(props) {
           <Grid item xs={12}>
             <FormControl variant="outlined" size="small" fullWidth style={{ textAlign: "center" }}>
                 <Select labelId="groupValue" value={gemRarity} onChange={(e) => updateGemRarity(e.target.value)} MenuProps={menuStyle}>
-                  <MenuItem value={"Rare"} style={{ justifyContent: "center" }}>
+                  <MenuItem value={"rare"} style={{ justifyContent: "center" }}>
                     {"Rare (Blue)"}
                   </MenuItem>
-                  <MenuItem value={"Epic"} style={{ justifyContent: "center" }}>
+                  <MenuItem value={"epic"} style={{ justifyContent: "center" }}>
                     {"Epic (Purple)"}
                   </MenuItem>
                 </Select>
@@ -237,7 +237,6 @@ export default function BurningCrusadeSettings(props) {
           </Grid>
         </Grid>
       </Grid>
-      <Divider orientation="vertical" flexItem />
       {/* ---------------------------------------------------------------------------------------------- */
       /*                                            Setting 5                                            */
       /* ---------------------------------------------------------------------------------------------- */}

@@ -9,7 +9,7 @@ const userSettings = {
     raidBuffs: false,
     metaGem: "Bracing Earthstorm Diamond",
     autoEnchant: true,
-    gemRarity: "Rare (Blue)"
+    gemRarity: "rare"
 
 }
 

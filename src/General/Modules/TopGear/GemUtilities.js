@@ -224,10 +224,10 @@ export function gemGear(itemSet, player, userSettings) {
   });
 
   const bestGems = {
-    overall: getBestGem(player, "all"),
-    red: getBestGem(player, "red"),
-    blue: getBestGem(player, "blue"),
-    yellow: getBestGem(player, "yellow"),
+    overall: getBestGem(player, "all", userSettings.gemRarity),
+    red: getBestGem(player, "red", userSettings.gemRarity),
+    blue: getBestGem(player, "blue", userSettings.gemRarity),
+    yellow: getBestGem(player, "yellow", userSettings.gemRarity),
     meta: getMetaGem(metaGem),
   }
 
