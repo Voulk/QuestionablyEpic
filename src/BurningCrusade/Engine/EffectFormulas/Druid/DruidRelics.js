@@ -20,10 +20,7 @@ export const getDruidRelic = (effectName, player) => {
     
         // NOTE: This is intentionally not implemented in QE Live, since it does not work at all in-game. 
         effectName === "Communal Idol of Life" // Periodic Rejuv healing increased by 15.
-
         ) {
-        const effect = {};
-
         bonus_stats.bonushealing = 0; // Do not chance unless Idol is fixed.
     }
     else if ( 
@@ -32,9 +29,9 @@ export const getDruidRelic = (effectName, player) => {
         /* ---------------------------------------------------------------------------------------------- */
         effectName === "Idol of Budding Life" // Rejuv Mana Cost -36
       ) {
-          const effect = {}
+          const manaReduction = 36;
 
-          bonus_stats.bonushealing = 0;
+          bonus_stats.mp5 = player.getSpellCPM(773, "Raid") * manaReduction;
       }
     else if ( 
         /* ---------------------------------------------------------------------------------------------- */
