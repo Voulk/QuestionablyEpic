@@ -156,7 +156,7 @@ function TopGearReport(props) {
                         /* ---------------------------------------------------------------------------------------------- */}
                         <Grid container spacing={1}>
                           {itemList
-                            .filter((key) => key.slot === "Hands" || key.slot === "Waist" || key.slot === "Legs" || key.slot === "Feet" || key.slot === "Finger" || key.slot === "Trinket")
+                            .filter((key) => key.slot === "Hands" || key.slot === "Waist" || key.slot === "Legs" || key.slot === "Feet" || key.slot === "Finger" || key.slot === "Trinket" || key.slot === "Relics & Wands")
                             .map((item, index) => (
                               <ItemCardReport key={index} item={item} activateItem={true} enchants={enchants} gems={getGemIDs(item.slot)}/>
                             ))}
