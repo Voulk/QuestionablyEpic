@@ -140,7 +140,7 @@ export const itemSets = [
     id: 571,
     class: -1,
     setBonuses: {
-      2: 32200, // Increases healing by up to 10% of your total Intellect. // TODO: Requires Mage on tooltip?
+      2: 32200, // Increases healing by up to 10% of your total Intellect.
     },
   },
   {
