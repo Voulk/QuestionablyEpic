@@ -575,7 +575,7 @@
         "name": "Communal Idol of Life",
         "names": {
             "cn": "",
-            "en": "Communal Staff",
+            "en": "Communal Idol of Life",
             "ru": "",
             "es": "",
             "br": "",
@@ -589,6 +589,10 @@
         "itemLevel": 52,
         "quality": 2,
         "slot": "Relics & Wands",
+        "effect": {
+            "type": "relic",
+            "name": "Communal Idol of Life"
+        },
         "sockets": {
         },
         "dropLoc": "",

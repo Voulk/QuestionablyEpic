@@ -147,6 +147,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
     let hardScore = 0;
     const setBonuses = builtSet.sets;
     let effectList = [...itemSet.effectList]
+    console.log(effectList);
     console.log(player.race);
   
     // --- Item Set Bonuses ---

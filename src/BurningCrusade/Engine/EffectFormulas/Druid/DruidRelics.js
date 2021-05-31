@@ -3,6 +3,8 @@ export const getDruidRelic = (effectName, player) => {
     // These are going to be moved to a proper file soon.
     let bonus_stats = {};
 
+    console.log(player);
+
 
     if (effectName === undefined) {
         /* ---------------------------------------------------------------------------------------------- */
@@ -15,11 +17,14 @@ export const getDruidRelic = (effectName, player) => {
     /* ---------------------------------------------------------------------------------------------- */
     /*                                      Communal Idol of Life                                     */
     /* ---------------------------------------------------------------------------------------------- */
+    
+        // NOTE: This is intentionally not implemented in QE Live, since it does not work at all in-game. 
         effectName === "Communal Idol of Life" // Periodic Rejuv healing increased by 15.
+
         ) {
         const effect = {};
 
-        bonus_stats.bonushealing = 0;
+        bonus_stats.bonushealing = 0; // Do not chance unless Idol is fixed.
     }
     else if ( 
         /* ---------------------------------------------------------------------------------------------- */
