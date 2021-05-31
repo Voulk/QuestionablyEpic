@@ -15,8 +15,8 @@ function CompetitiveAlternatives(props) {
     if (gameType === "Retail") {
       const isLegendary = item.effect.type === "spec legendary";
       if (isLegendary) return "#ff8000";
-      else if (this.itemLevel >= 183) return "#a73fee";
-      else if (this.itemLevel >= 120) return "#328CE3";
+      else if (item.level >= 183) return "#a73fee";
+      else if (item.level >= 120) return "#328CE3";
       else return "#1eff00";
     }
     else {
