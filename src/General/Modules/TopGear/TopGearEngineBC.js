@@ -271,23 +271,14 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
  
     // ----------------------
 
-
-    // -- Effects --
-    let effectStats = [];
-    effectStats.push(bonus_stats);
-    for (var x = 0; x < effectList.length; x++) {
-      
-      effectStats.push(getEffectValue(effectList[x], player, contentType, effectList[x].level, userSettings, "BurningCrusade"));
-  
-    }
-    bonus_stats = mergeBonusStats(effectStats);
-    
     compileStats(setStats, bonus_stats); // Add the base stats on our gear together with enchants & gems.
     compileStats(setStats, gemStats); //TODO
     compileStats(setStats, enchant_stats);
     //applyDiminishingReturns(setStats); // Apply Diminishing returns to our haul.
     addBaseStats(setStats, player.race, player.spec); // Add our base stats, which are immune to DR. This includes our base 5% crit, and whatever base mastery our spec has.
     
+
+
     // Talents & Racials
 
     // Human
@@ -315,9 +306,17 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
       talent_stats.spelldamage = (setStats.spirit + talent_stats.spirit) * 0.25;
     }
 
-
-    
     compileStats(setStats, talent_stats);
+
+    // -- Effects --
+    let effectStats = [];
+    effectStats.push(bonus_stats);
+    for (var x = 0; x < effectList.length; x++) {
+      console.log(effectList[x]);
+      effectStats.push(getEffectValue(effectList[x], player, contentType, effectList[x].level, userSettings, "BurningCrusade", setStats));
+  
+    }
+    bonus_stats = mergeBonusStats(effectStats);
 
     // Convert spelldamage to bonushealing
     setStats.bonushealing = (setStats.bonushealing + setStats.spelldamage);
