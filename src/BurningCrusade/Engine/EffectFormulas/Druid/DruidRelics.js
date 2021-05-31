@@ -6,6 +6,7 @@ export const getDruidRelic = (effectName, player) => {
     console.log(player);
 
 
+
     if (effectName === undefined) {
         /* ---------------------------------------------------------------------------------------------- */
         /*                                         Error Handling                                         */
@@ -30,8 +31,7 @@ export const getDruidRelic = (effectName, player) => {
         effectName === "Idol of Budding Life" // Rejuv Mana Cost -36
       ) {
           const manaReduction = 36;
-
-          bonus_stats.mp5 = player.getSpellCPM(773, "Raid") * manaReduction;
+          bonus_stats.mp5 = (player.getSpellCPM(774, "Raid") * manaReduction / 12);
       }
     else if ( 
         /* ---------------------------------------------------------------------------------------------- */
@@ -39,9 +39,8 @@ export const getDruidRelic = (effectName, player) => {
         /* ---------------------------------------------------------------------------------------------- */
         effectName === "Idol of the Crescent Goddess" // Regrowth mana cost -65
         ) {
-            const effect = {}
-
-            bonus_stats.bonushealing = 0;
+            const manaReduction = 65;
+            bonus_stats.mp5 = (player.getSpellCPM(26980, "Raid") + player.getSpellCPM(8936, "Raid")) * manaReduction / 12;
         }
     else if ( 
         /* ---------------------------------------------------------------------------------------------- */
@@ -69,9 +68,10 @@ export const getDruidRelic = (effectName, player) => {
         /* ---------------------------------------------------------------------------------------------- */
         effectName === "Idol of the Emerald Queen" // Lifebloom Periodic healing +88
         ) {
-            const effect = {}
+            const expectedOverhealing = 0.2
+            const ticksPerMin = player.getSpellCPM(33763, "Raid") * 7;
 
-            bonus_stats.bonushealing = 0;
+            bonus_stats.hps = 88 * 0.2943 * ticksPerMin * (1 - expectedOverhealing) / 60;
         }
     else if ( 
         /* ---------------------------------------------------------------------------------------------- */
@@ -79,9 +79,9 @@ export const getDruidRelic = (effectName, player) => {
         /* ---------------------------------------------------------------------------------------------- */
         effectName === "Harold's Rejuvenating Broach" // Rejuv Healing +86
         ) {
-            const effect = {}
+            const castsPerMin = player.getSpellCPM(774, "Raid");
 
-            bonus_stats.bonushealing = 0;
+            bonus_stats.hps = castsPerMin * 86 / 60;
         }
 
     else if ( 
