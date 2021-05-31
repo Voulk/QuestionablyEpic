@@ -10,7 +10,7 @@ import Item from "../Modules/Player/Item";
 // import { i18n } from "react-i18next";
 import { reportError } from "../SystemTools/ErrorLogging/ErrorReporting";
 import { useSelector } from "react-redux";
-import { GEMS } from "./GEMS.js";
+import { GEMS } from "General/Engine/GEMS";
 
 /*
 
@@ -466,6 +466,8 @@ function scoreGemColor(gemList, player) {
 
   return gemList;
 }
+
+
 
 export function getBestGem(player, color) {
   let colors = []

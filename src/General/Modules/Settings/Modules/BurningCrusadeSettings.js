@@ -33,13 +33,13 @@ export default function BurningCrusadeSettings(props) {
   /* ------------------------------------------ Setting 0 ----------------------------------------- */
   const [manaProfile, setManaProfile] = useState("Standard");
   /* ------------------------------------------ Setting 1 ----------------------------------------- */
-  const [settingValue1, setSettingValue1] = useState("");
+  const [raidBuffs, setRaidBuffs] = useState(false);
   /* ------------------------------------------ Setting 2 ----------------------------------------- */
   const [metaGem, setMetaGem] = useState("Bracing Earthstorm Diamond");
   /* ------------------------------------------ Setting 3 ----------------------------------------- */
   const [autoEnchantItems, setAutoEnchantItems] = useState(true);
   /* ------------------------------------------ Setting 4 ----------------------------------------- */
-  const [settingValue4, setSettingValue4] = useState("");
+  const [gemRarity, setGemRarity] = useState("Rare");
   /* ------------------------------------------ Setting 5 ----------------------------------------- */
   const [settingValue5, setSettingValue5] = useState("");
 
@@ -50,8 +50,9 @@ export default function BurningCrusadeSettings(props) {
     props.editSettings("manaProfile", value);
     setManaProfile(value);
   };
-  const updateSetting1 = (value) => {
-    setSettingValue1();
+  const updateRaidBuffs = (value) => {
+    props.editSettings("raidBuffs", value);
+    setRaidBuffs(value);
   };
   const updateMetaGem = (value) => {
     props.editSettings("metaGem", value);
@@ -62,8 +63,9 @@ export default function BurningCrusadeSettings(props) {
     setAutoEnchantItems(value);
 
   };
-  const updateSetting4 = (value) => {
-    setSettingValue4();
+  const updateGemRarity = (value) => {
+    props.editSettings("gemRarity", value);
+    setGemRarity(value);
   };
   const updateSetting5 = (value) => {
     setSettingValue5();
@@ -115,7 +117,7 @@ export default function BurningCrusadeSettings(props) {
           </Grid>
         </Grid>
       </Grid>
-      <Divider orientation="vertical" flexItem />
+      {/*<Divider orientation="vertical" flexItem /> */ }
       {/* ---------------------------------------------------------------------------------------------- */
       /*                                            Setting 1                                            */
       /* ---------------------------------------------------------------------------------------------- */}
@@ -133,7 +135,7 @@ export default function BurningCrusadeSettings(props) {
           </Grid>
           <Grid item xs={12}>
             <FormControl variant="outlined" size="small" fullWidth style={{ textAlign: "center" }}>
-              <Select labelId="groupValue" value={settingValue1} onChange={(e) => updateSettingValue1(e.target.value)} MenuProps={menuStyle}>
+              <Select labelId="groupValue" value={raidBuffs} onChange={(e) => updateRaidBuffs(e.target.value)} MenuProps={menuStyle}>
                 <MenuItem value={true} style={{ justifyContent: "center" }}>
                   {t("Yes")}
                 </MenuItem>
@@ -145,7 +147,7 @@ export default function BurningCrusadeSettings(props) {
           </Grid>
         </Grid>
       </Grid>
-      <Divider orientation="vertical" flexItem />
+      {/*<Divider orientation="vertical" flexItem /> */ }
       {/* ---------------------------------------------------------------------------------------------- */
       /*                                            Setting 2                                            */
       /* ---------------------------------------------------------------------------------------------- */}
@@ -175,7 +177,7 @@ export default function BurningCrusadeSettings(props) {
           </Grid>
         </Grid>
       </Grid>
-      <Divider orientation="vertical" flexItem />
+      {/*<Divider orientation="vertical" flexItem /> */ }
       {/* ---------------------------------------------------------------------------------------------- */
       /*                                            Setting 3                                            */
       /* ---------------------------------------------------------------------------------------------- */}
@@ -205,23 +207,33 @@ export default function BurningCrusadeSettings(props) {
           </Grid>
         </Grid>
       </Grid>
-      <Divider orientation="vertical" flexItem />
+      {/*<Divider orientation="vertical" flexItem /> */ }
       {/* ---------------------------------------------------------------------------------------------- */
       /*                                            Setting 4                                           */
       /* ---------------------------------------------------------------------------------------------- */}
-      <Divider orientation="vertical" flexItem />
       <Grid item xs={12} sm={4} md={4} lg={3} xl={2}>
         <Grid container spacing={0} style={{ padding: "0px 8px" }}>
           <Grid item xs={12}>
+          <div style={{ display: "inline-flex" }}>
             <Tooltip title={t("Settings.BurningCrusade.Setting4Tooltip")} placement="top-start">
               <Typography color="primary">{t("Settings.BurningCrusade.Setting4Title")}</Typography>
             </Tooltip>
             <Tooltip title={t("Settings.BurningCrusade.Setting4Tooltip")} placement="top-start">
                 <InfoOutlinedIcon style={{ height: 15, width: 15 }} fontSize="small" />
               </Tooltip>
+          </div>
           </Grid>
           <Grid item xs={12}>
-            <TextField id="AlliesNumber" value={settingValue4} onChange={(e) => setSettingValue4(e.target.value)} variant="outlined" size="small" type="number" fullWidth />
+            <FormControl variant="outlined" size="small" fullWidth style={{ textAlign: "center" }}>
+                <Select labelId="groupValue" value={gemRarity} onChange={(e) => updateGemRarity(e.target.value)} MenuProps={menuStyle}>
+                  <MenuItem value={"Rare"} style={{ justifyContent: "center" }}>
+                    {"Rare (Blue)"}
+                  </MenuItem>
+                  <MenuItem value={"Epic"} style={{ justifyContent: "center" }}>
+                    {"Epic (Purple)"}
+                  </MenuItem>
+                </Select>
+              </FormControl>
           </Grid>
         </Grid>
       </Grid>

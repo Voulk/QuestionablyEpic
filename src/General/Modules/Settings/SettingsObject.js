@@ -6,8 +6,10 @@ const userSettings = {
     autoSocket: false, // Automatically sockets viable items.
 
     manaProfile: "Standard",
+    raidBuffs: false,
     metaGem: "Bracing Earthstorm Diamond",
     autoEnchant: true,
+    gemRarity: "Rare (Blue)"
 
 }
 

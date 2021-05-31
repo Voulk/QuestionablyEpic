@@ -246,7 +246,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
 
     // ----- SOCKETS -----
     var s0 = performance.now();
-    const optimalGems = gemGear(builtSet.itemList, player)
+    const optimalGems = gemGear(builtSet.itemList, player, userSettings)
     hardScore += optimalGems.score;
     builtSet.bcSockets = optimalGems;
     const gemStats = getGemStatLoadout(optimalGems.socketsAvailable, optimalGems.socketedPieces, optimalGems.socketedColors);
