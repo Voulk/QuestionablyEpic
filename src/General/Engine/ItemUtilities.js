@@ -448,13 +448,11 @@ export function correctCasing(string) {
 }
 
 function scoreGemColor(gemList, player) {
-
   for (var ind in gemList) {
     const gem = gemList[ind];
     let gemScore = 0;
     for (const [stat, value] of Object.entries(gem.stats)) {
-      //console.log("Stat: " + stat + ". Value: " + value);
-      gemScore += value * player.getStatWeight("Raid", stat);
+      if (player[stat] && stat in player) gemScore += value * player[stat];
     }
     gem['score'] = gemScore;
     
@@ -499,7 +497,7 @@ export function socketItem(item, player) {
   if (socketList.bonus) {
     for (const [stat, value] of Object.entries(socketList.bonus)) {
       //console.log("Stat: " + stat + ". Value: " + value);
-      socketBonus += value * player.getStatWeight("Raid", stat);
+      socketBonus += value * player[stat];
     }
   }
 
@@ -589,7 +587,7 @@ export function scoreItem(item, player, contentType, gameType = "Retail") {
 
   // BC specific sockets
   if (item.sockets) {
-    socketItem(item, player);
+    socketItem(item, player.statWeights["Raid"]);
     score += item.socketedGems['score'];
     //console.log("Adding score: " + item.socketedGems['score'])
   }

@@ -147,8 +147,6 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
     let hardScore = 0;
     const setBonuses = builtSet.sets;
     let effectList = [...itemSet.effectList]
-    console.log(effectList);
-    console.log(player.race);
   
     // --- Item Set Bonuses ---
     for (const set in setBonuses) {
@@ -194,6 +192,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
     }
   
     /*
+    
     let adjusted_weights = {
       intellect: 1,
       haste: player.statWeights[contentType]["haste"],
@@ -203,6 +202,21 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
       leech: player.statWeights[contentType]["leech"],
     };
     */
+   let adjusted_weights = {...player.statWeights["Raid"]}
+    // Mana Profiles
+    if (userSettings.manaProfile === "Conservative") {
+      adjusted_weights['mp5'] = adjusted_weights['mp5'] * 1.2;
+      adjusted_weights['intellect'] = adjusted_weights['intellect'] * 1.16;
+      adjusted_weights['spirit'] = adjusted_weights['spirit'] * 1.2;
+    }
+    else if (userSettings.manaProfile === "Max Healing") {
+      adjusted_weights['mp5'] = adjusted_weights['mp5'] * 0.75;
+      adjusted_weights['intellect'] = adjusted_weights['intellect'] * 0.85;
+      adjusted_weights['spirit'] = adjusted_weights['spirit'] * 0.75;
+    }
+    
+
+   console.log(adjusted_weights);
 
   
     // Apply consumables if ticked.
@@ -246,7 +260,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
 
     // ----- SOCKETS -----
     var s0 = performance.now();
-    const optimalGems = gemGear(builtSet.itemList, player, userSettings)
+    const optimalGems = gemGear(builtSet.itemList, adjusted_weights, userSettings)
     hardScore += optimalGems.score;
     builtSet.bcSockets = optimalGems;
     const gemStats = getGemStatLoadout(optimalGems.socketsAvailable, optimalGems.socketedPieces, optimalGems.socketedColors);
@@ -304,11 +318,13 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
 
     
     compileStats(setStats, talent_stats);
-    console.log(setStats);
 
     // Convert spelldamage to bonushealing
     setStats.bonushealing = (setStats.bonushealing + setStats.spelldamage);
     setStats.spelldamage = 0;
+
+    
+
     
 
     for (var stat in setStats) {
@@ -317,7 +333,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
       } else if (stat === "dps") {
         continue;
       } else {
-        hardScore += setStats[stat] * player.statWeights["Raid"][stat];
+        hardScore += setStats[stat] * adjusted_weights[stat];
         //console.log("Adding " + (setStats[stat] * player.statWeights["Raid"][stat]) + " to hardscore for stat " + stat + " with stat weight: " + player.statWeights["Raid"][stat]);
       }
     }
@@ -358,17 +374,12 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
 
 function addBaseStats(stats, race, spec) {
 
-  const bonus_stats = {}
-
   const base_stats = classRaceStats[spec][race.replace("Races.", "")];
 
   for (const [key, value] of Object.entries(base_stats)) {
-    console.log(key);
     stats[key] = stats[key] + value;
   }
 
-  console.log(classRaceStats[spec][race.replace("Races.", "")]);
-  
 }
 
 

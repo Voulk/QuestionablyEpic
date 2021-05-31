@@ -65,7 +65,7 @@ export function socketItem(sockets, player, socketList, bestGems, forcedGems = {
   if (sockets.bonus) {
     for (const [stat, value] of Object.entries(sockets.bonus)) {
       // Iterate the bonus stats object and add together any stat bonuses.
-      socketBonus += value * player.getStatWeight("Raid", stat);
+      socketBonus += value * player[stat];
     }
   }
 
