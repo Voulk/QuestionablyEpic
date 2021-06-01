@@ -5,7 +5,7 @@ import ItemUpgradeCard from "./ItemUpgradeCard";
 import DungeonHeaderIcons from "../../CooldownPlanner/Functions/IconFunctions/DungeonHeaderIcons";
 import "./Panels.css";
 import { useTranslation } from "react-i18next";
-import { filterItemListBySource, getDifferentialByID } from "../../../Engine/ItemUtilities";
+import { filterItemListBySource, filterBCItemListBySource, getDifferentialByID } from "../../../Engine/ItemUtilities";
 import { encounterDB } from "../../Player/InstanceDB";
 import { itemLevels } from "../../../../Databases/itemLevelsDB";
 import { useSelector } from "react-redux";
@@ -85,9 +85,9 @@ export default function MythicPlusGearContainer(props) {
             </Grid>
             <Divider orientation="vertical" flexItem style={{ marginRight: 4 }} />
             <Grid item xs={12} sm container spacing={1} style={{ marginRight: 6 }}>
-              {/* {[...filterItemListBySource(itemList, -1, key, itemLevels.dungeon[difficulty])].map((item, index) => (
+              {[...filterBCItemListBySource(itemList, -1, key)].map((item, index) => (
                 <ItemUpgradeCard key={index} item={item} itemDifferential={getDifferentialByID(itemDifferentials, item.id, item.level)} slotPanel={false} />
-              ))} */}
+              ))} 
             </Grid>
           </Grid>
         </Paper>

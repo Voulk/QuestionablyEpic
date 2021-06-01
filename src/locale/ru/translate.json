@@ -60,6 +60,9 @@
     "Battletag": "BattleTag",
     "Edit": "Edit",
     "Equipped": "Надето",
+    "Error": "Error",
+    "Burning Crusade": "Burning Crusade",
+    "Shadowlands": "Shadowlands",
 
     "Changelog": {
       "Header": "Changelog",
@@ -95,7 +98,12 @@
       "DeathKnight": "Рыцарь смерти",
       "Death Knight": "Рыцарь смерти",
       "ShadowPriest": "Жрец Тьмы",
-      "Shadow Priest": "Жрец Тьмы"
+      "Shadow Priest": "Жрец Тьмы",
+      "Burning Crusade Class Names": "-----------------",
+      "Holy Paladin BC": "Паладин Света",
+      "Restoration Druid BC": "Друид Исцеления",
+      "Holy Priest BC": "Жрец Света",
+      "Restoration Shaman BC": "Шаман Исцеления"
     },
 
     "CooldownPlanner": {
@@ -276,6 +284,7 @@
       "Profile": "Профиль",
       "CharHeader": "Персонажи",
       "CharHelpText": "Добавьте сюда своих персонажей. Кликните по ним правой кнопкой, чтобы изменить вес характеристик, сервер и остальное.",
+      "TierSets": "Tier Sets",
       "Articles": {
         "Header": "Последние статьи",
         "HelpText": ""
@@ -432,7 +441,8 @@
       "offhands": "Левая рука",
       "finger": "Палец",
       "weapons": "Оружие",
-      "weaponCombos": "Наборы оружия"
+      "weaponCombos": "Наборы оружия",
+      "relics": "Реликвия"
     },
 
     "Soulbinds": {
@@ -457,30 +467,65 @@
     },
     "Settings": {
       "SettingsTitle": "Настройки",
-      "Setting0Spacer": "--------------------------------------------------------------------",
-      "Setting0Tooltip": "Эффект Гимнария кабалиста увеличивается на 5% за каждого союзника",
-      "Setting0Title": "Союзники с Гимнарием кабалиста",
-      "Setting0TextFieldLabel": "Allies",
-      "Setting1Spacer": "--------------------------------------------------------------------",
-      "Setting1Tooltip": "Считать усиления союзников с предметов как Вашу личную эффективность",
-      "Setting1Title": "Усиления союзников",
-      "Setting1TextFieldLabel": "",
-      "Setting2Spacer": "--------------------------------------------------------------------",
-      "Setting2Tooltip": "Select Discipline Talent",
-      "Setting2Title": "Talent",
-      "Setting2TextFieldLabel": "Talent",
-      "Setting3Spacer": "--------------------------------------------------------------------",
-      "Setting3Tooltip": "This will automatically add sockets to items that don't have them in compatible slots.",
-      "Setting3Title": "Auto Socket Items",
-      "Setting3TextFieldLabel": "",
-      "Setting4Spacer": "--------------------------------------------------------------------",
-      "Setting4Tooltip": "",
-      "Setting4Title": "",
-      "Setting4TextFieldLabel": "",
-      "Setting5Spacer": "--------------------------------------------------------------------",
-      "Setting5Tooltip": "",
-      "Setting5Title": "",
-      "Setting5TextFieldLabel": ""
+      "Retail": {
+        "Setting0Spacer": "--------------------------------------------------------------------",
+        "Setting0Tooltip": "Эффект Гимнария кабалиста увеличивается на 5% за каждого союзника",
+        "Setting0Title": "Союзники с Гимнарием кабалиста",
+        "Setting0TextFieldLabel": "Allies",
+        "Setting1Spacer": "--------------------------------------------------------------------",
+        "Setting1Tooltip": "Считать усиления союзников с предметов как Вашу личную эффективность",
+        "Setting1Title": "Усиления союзников",
+        "Setting1TextFieldLabel": "",
+        "Setting2Spacer": "--------------------------------------------------------------------",
+        "Setting2Tooltip": "Select Discipline Talent",
+        "Setting2Title": "Talent",
+        "Setting2TextFieldLabel": "Talent",
+        "Setting3Spacer": "--------------------------------------------------------------------",
+        "Setting3Tooltip": "This will automatically add sockets to items that don't have them in compatible slots.",
+        "Setting3Title": "Auto Socket Items",
+        "Setting3TextFieldLabel": "",
+        "Setting4Spacer": "--------------------------------------------------------------------",
+        "Setting4Tooltip": "",
+        "Setting4Title": "",
+        "Setting4TextFieldLabel": "",
+        "Setting5Spacer": "--------------------------------------------------------------------",
+        "Setting5Tooltip": "",
+        "Setting5Title": "",
+        "Setting5TextFieldLabel": ""
+      },
+      "BurningCrusade": {
+        "Setting0Spacer": "--------------------------------------------------------------------",
+        "Setting0Tooltip": "",
+        "Setting0Title": "",
+        "Setting0TextFieldLabel": "",
+        "Setting1Spacer": "--------------------------------------------------------------------",
+        "Setting1Tooltip": "",
+        "Setting1Title": "",
+        "Setting1TextFieldLabel": "",
+        "Setting2Spacer": "--------------------------------------------------------------------",
+        "Setting2Tooltip": "",
+        "Setting2Title": "",
+        "Setting2TextFieldLabel": "",
+        "Setting3Spacer": "--------------------------------------------------------------------",
+        "Setting3Tooltip": "",
+        "Setting3Title": "",
+        "Setting3TextFieldLabel": "",
+        "Setting4Spacer": "--------------------------------------------------------------------",
+        "Setting4Tooltip": "",
+        "Setting4Title": "",
+        "Setting4TextFieldLabel": "",
+        "Setting5Spacer": "--------------------------------------------------------------------",
+        "Setting5Tooltip": "",
+        "Setting5Title": "",
+        "Setting5TextFieldLabel": ""
+      }
+    },
+
+    "TierSets": {
+      "Title": "Tier Sets",
+      "2Set": "2 Set HPS",
+      "4Set": "4 Set HPS",
+      "6Set": "6 Set HPS"
     },
 
     "TopGear": {
@@ -494,7 +539,6 @@
       "CompetitiveAlternative": "Возможные альтернативы",
       "StatPanel": { "AvgStats": "Усреднённые характеристики (включая проки)" },
       "itemMissingError": "Ошибка: добавьте предмет"
-      
     },
 
     "Snackbars": {
@@ -951,7 +995,14 @@
         "1593": "Пророк Скверны",
         "1594": "Эредарские близнецы",
         "1595": "М'ууру",
-        "1596": "Кил'джеден"
+        "1596": "Кил'джеден",
+        "Zul'Aman": "",
+        "1189": "Акил'зон",
+        "1190": "Налоракк",
+        "1191": "Джан'алай",
+        "1192": "Халаззи",
+        "1193": "Повелитель проклятий Малакрасс",
+        "1194": "Зул'джин"
       }
     }
   }
