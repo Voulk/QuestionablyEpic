@@ -54,6 +54,44 @@ class BCPlayer extends Player {
                 DefaultWeights: true,
               };
         }
+        else if (spec === "Restoration Shaman BC") {
+            this.statWeights = {
+                Raid: {
+                    intellect: 0.46,
+                    hps: 1.9,
+                    bonushealing: 1,
+                    mp5: 2,
+                    spelldamage: 1,
+                    spirit: 0.02,
+                    crit: 0,
+                    spellcrit: 0.59,
+                    stamina: 0.01,
+                    haste: 1.73,
+                },
+                Dungeon: {
+                },
+                DefaultWeights: true,
+              };
+        }
+        else if (spec === "Holy Priest BC") {
+            this.statWeights = {
+                Raid: {
+                    intellect: 0.55,
+                    hps: 1,
+                    bonushealing: 0.78,
+                    mp5: 1.85,
+                    spelldamage: 0.78,
+                    spirit: 0.77,
+                    crit: 0,
+                    spellcrit: 1.6,
+                    stamina: 0.01,
+                    haste: 0.6,
+                },
+                Dungeon: {
+                },
+                DefaultWeights: true,
+              };
+        }
         else {
             this.statWeights = {
                 Raid: {
