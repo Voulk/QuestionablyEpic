@@ -21,6 +21,7 @@ export default function TierObject(props) {
   const currentLanguage = i18n.language;
   // Item Provided to Component
   const set = props.set;
+  console.log(set);
   // Player Data
   // const player = props.player;
   // const slots = set.slots;
@@ -59,7 +60,7 @@ export default function TierObject(props) {
                   lineHeight: 1,
                 }}
               >
-                {t(set.name[currentLanguage])}
+                {set.name[currentLanguage]}
               </Typography>
             </div>
           </div>
@@ -73,7 +74,7 @@ export default function TierObject(props) {
                   .filter((filter) => set.slots[filter].id > 0)
                   .map((key, i) => (
                     <Grid item key={i}>
-                      <a data-wowhead={"item=" + set.slots[key].id + "&domain=" + currentLanguage}>
+                      <a data-wowhead={"item=" + set.slots[key].id + "&domain=tbc-" + currentLanguage}>
                         <img
                           height={40}
                           width={40}
@@ -99,7 +100,7 @@ export default function TierObject(props) {
             /* ----------------------------------------------------------------------------------------------  */}
             <Grid item xs={12}>
               <Typography align="left" variant="caption" style={{ fontSize: "0.75rem", lineHeight: 1.1 }} component="p">
-                {t(set.twoSet["effect"][currentLanguage])}
+                {set.twoSet["effect"][currentLanguage]}
               </Typography>
             </Grid>
             <Grid item xs={12}>
@@ -110,7 +111,7 @@ export default function TierObject(props) {
             /* ---------------------------------------------------------------------------------------------- */}
             <Grid item xs={12}>
               <Typography align="left" variant="caption" style={{ fontSize: "0.75rem", lineHeight: 1.1 }} component="p">
-                {t(set.fourSet["effect"][currentLanguage])}
+                {set.fourSet["effect"][currentLanguage]}
               </Typography>
             </Grid>
             <Grid item xs={12}>
@@ -137,10 +138,10 @@ export default function TierObject(props) {
             <Grid item xs={6} style={{ textAlign: "center" }}>
               <div style={{ display: "inline-flex" }}>
                 <Typography variant="h6" align="center" component="p" noWrap>
-                  {/* TODO: Translations */}2 Set HPS:
+                  {t("TierSets.2Set")}:
                 </Typography>
                 <Typography variant="h6" align="center" component="p" style={{ marginLeft: 6 }}>
-                  {/* TODO: Translations */}500
+                  {/* TODO: Translations */}-
                 </Typography>
               </div>
             </Grid>
@@ -148,10 +149,10 @@ export default function TierObject(props) {
             <Grid item xs={6} style={{ textAlign: "center" }}>
               <div style={{ display: "inline-flex" }}>
                 <Typography variant="h6" align="center" component="p" noWrap>
-                  {/* TODO: Translations */}4 Set HPS:
+                  {t("TierSets.4Set")}:
                 </Typography>
                 <Typography variant="h6" align="center" component="p" style={{ marginLeft: 6 }}>
-                  {/* TODO: Translations */}500
+                  {/* TODO: Translations */}-
                 </Typography>
               </div>
             </Grid>

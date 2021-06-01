@@ -4,6 +4,7 @@ import { Grid, Paper, Typography, Divider } from "@material-ui/core";
 import { useTranslation } from "react-i18next";
 import { getItemIcon } from "../../Engine/ItemUtilities";
 import SimCraftInput from "../SetupAndMenus/SimCraftDialog";
+import { useSelector } from "react-redux";
 
 const useStyles = makeStyles(() => ({
   slider: {
@@ -21,33 +22,34 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-const itemQuality = (itemLevel, effectCheck) => {
-  const isLegendary = effectCheck.type === "spec legendary";
-  if (isLegendary) return "#ff8000";
-  if (itemLevel >= 183) return "#a73fee";
-  else if (itemLevel >= 120) return "#328CE3";
-  else return "#1eff00";
-};
 
-const checkCharacterValid = (player) => {
+
+const checkCharacterValid = (player, gameType) => {
   const weaponSet = player.getActiveItems("AllMainhands", false, true);
   const weapon = weaponSet.length > 0 ? weaponSet[0] : "";
-
-  return (weapon.slot === "2H Weapon" && player.getEquippedItems().length === 15) || (weapon.slot === "1H Weapon" && player.getEquippedItems().length === 16);
+  if (gameType === "Retail") {
+    return (weapon.slot === "2H Weapon" && player.getEquippedItems().length === 15) || (weapon.slot === "1H Weapon" && player.getEquippedItems().length === 16);
+  }
+  else if (gameType === "BurningCrusade") {
+    return (weapon.slot === "2H Weapon" && player.getEquippedItems().length === 16) || (weapon.slot === "1H Weapon" && player.getEquippedItems().length === 17);
+  }
+  
 };
 
-const getSimCStatus = (player) => {
+const getSimCStatus = (player, gameType) => {
   if (player.activeItems.length === 0) return "Missing";
-  else if (checkCharacterValid(player) === false) return "Invalid";
+  else if (checkCharacterValid(player, gameType) === false) return "Invalid";
   else return "Good";
 };
 
 export default function UpgradeFinderSimC(props) {
   const classes = useStyles();
   const { t, i18n } = useTranslation();
+  const gameType = useSelector((state) => state.gameType);
   const currentLanguage = i18n.currentLanguage;
-  const simcStatus = getSimCStatus(props.player);
+  const simcStatus = getSimCStatus(props.player, gameType);
   const simcString = "UpgradeFinderFront.SimCBody1" + simcStatus;
+  const wowheadDom = (gameType === "BurningCrusade" ? "tbc-" : "") + currentLanguage;
 
   const check = (simcStatus) => {
     let style = "";
@@ -89,7 +91,7 @@ export default function UpgradeFinderSimC(props) {
           <Grid item>
             <Divider orientation="vertical" flexItem style={{ height: "100%" }} />
           </Grid>
-          <Grid xs={12} sm={12} md={12} lg={7} xl={7} alignItems="center" container justify="center" spacing={1}>
+          <Grid item container xs={12} sm={12} md={12} lg={7} xl={7} alignItems="center"  justify="center" spacing={1}>
             <Grid item xs={12} sm={12} md={12} lg={12} xl={2}>
               <Typography color="primary" align="center" variant="h5">
                 {t("Equipped")}:
@@ -102,7 +104,7 @@ export default function UpgradeFinderSimC(props) {
                   .filter((key) => key.isEquipped === true)
                   .map((key, i) => (
                     <Grid item key={i}>
-                      <a style={{ margin: "2px 2px" }} data-wowhead={"item=" + key.id + "&" + "ilvl=" + key.level + "&bonus=" + key.bonusIDS + "&domain=" + currentLanguage} key={i}>
+                      <a style={{ margin: "2px 2px" }} data-wowhead={"item=" + key.id + "&" + "ilvl=" + key.level + "&bonus=" + key.bonusIDS + "&domain=" + wowheadDom} key={i}>
                         <img
                           style={{
                             height: 22,
@@ -110,9 +112,9 @@ export default function UpgradeFinderSimC(props) {
                             verticalAlign: "middle",
                             borderRadius: "8px",
                             border: "1px solid",
-                            borderColor: itemQuality(key.level, key.effect),
+                            borderColor: key.getQualityColor(),
                           }}
-                          src={getItemIcon(key.id)}
+                          src={getItemIcon(key.id, gameType)}
                           alt=""
                         />
                       </a>

@@ -1622,12 +1622,43 @@ export const worldBosses = [
 
 // Contains the list of races localization IDs for each class's available races.
 export const classRaceList = {
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                            Paladins                                            */
+  /* ---------------------------------------------------------------------------------------------- */
+
+  /* ------------------------------------------- Retail ------------------------------------------- */
   "Holy Paladin": {
     races: ["Races.Draenei", "Races.Dwarf", "Races.Human", "Races.Lightforged Draenei", "Races.Dark Iron Dwarf", "Races.Blood Elf", "Races.Tauren", "Races.Zandalari Troll"],
+    gameType: "Retail",
   },
+
+  /* --------------------------------------- Burning Crusade -------------------------------------- */
+  "Holy Paladin BC": {
+    races: ["Races.Draenei", "Races.Dwarf", "Races.Human", "Races.Blood Elf"],
+    gameType: "BurningCrusade",
+  },
+
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                             Druids                                             */
+  /* ---------------------------------------------------------------------------------------------- */
+
+  /* ------------------------------------------- Retail ------------------------------------------- */
   "Restoration Druid": {
     races: ["Races.Night Elf", "Races.Worgen", "Races.Kul Tiran", "Races.Tauren", "Races.Troll", "Races.Highmountain Tauren", "Races.Zandalari Troll"],
+    gameType: "Retail",
   },
+
+  /* --------------------------------------- Burning Crusade -------------------------------------- */
+  "Restoration Druid BC": {
+    races: ["Races.Night Elf", "Races.Tauren"],
+    gameType: "BurningCrusade",
+  },
+
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                             Priest                                             */
+  /* ---------------------------------------------------------------------------------------------- */
+
+  /* ------------------------------------------- Retail ------------------------------------------- */
   "Holy Priest": {
     races: [
       "Races.Draenei",
@@ -1652,6 +1683,7 @@ export const classRaceList = {
       "Races.Zandalari Troll",
       "Races.Vulpera",
     ],
+    gameType: "Retail",
   },
   "Discipline Priest": {
     races: [
@@ -1677,7 +1709,20 @@ export const classRaceList = {
       "Races.Zandalari Troll",
       "Races.Vulpera",
     ],
+    gameType: "Retail",
   },
+
+  /* --------------------------------------- Burning Crusade -------------------------------------- */
+  "Holy Priest BC": {
+    races: ["Races.Draenei", "Races.Dwarf", "Races.Human", "Races.Night Elf", "Races.Blood Elf", "Races.Troll", "Races.Undead"],
+    gameType: "BurningCrusade",
+  },
+
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                             Shamans                                            */
+  /* ---------------------------------------------------------------------------------------------- */
+
+  /* ------------------------------------------- Retail ------------------------------------------- */
   "Restoration Shaman": {
     races: [
       "Races.Draenei",
@@ -1694,7 +1739,26 @@ export const classRaceList = {
       "Races.Zandalari Troll",
       "Races.Vulpera",
     ],
+    gameType: "Retail",
   },
+
+  /* --------------------------------------- Burning Crusade -------------------------------------- */
+  "Restoration Shaman BC": {
+    races: [
+      "Races.Draenei",
+      "Races.Orc",
+      "Races.Tauren",
+      "Races.Troll",
+    ],
+    gameType: "BurningCrusade",
+  },
+
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                              Monks                                             */
+  /* ---------------------------------------------------------------------------------------------- */
+
+  /* ------------------------------------------- Retail ------------------------------------------- */
+
   "Mistweaver Monk": {
     races: [
       "Races.Draenei",
@@ -1718,5 +1782,6 @@ export const classRaceList = {
       "Races.Zandalari Troll",
       "Races.Vulpera",
     ],
+    gameType: "Retail",
   },
 };

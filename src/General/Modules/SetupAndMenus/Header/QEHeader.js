@@ -11,6 +11,7 @@ import QELogImport from "./QELogImport";
 import { makeStyles } from "@material-ui/core/styles";
 import CharacterHeaderButton from "./CharacterHeader";
 import ContentSwitch from "./ContentToggle";
+import { useSelector } from "react-redux";
 
 // import ReactGA from "react-ga";n
 
@@ -32,6 +33,7 @@ export default function QEHeader(props) {
   const { t } = useTranslation();
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
+  const gameType = useSelector((state) => state.gameType);
 
   const handlePopoverOpen = (event) => {
     setAnchorEl(event.currentTarget);
@@ -93,12 +95,14 @@ export default function QEHeader(props) {
                 ) : (
                   ""
                 )}
+                {gameType === "Retail" ? 
                 <Grid item>
                   <ContentSwitch />
-                </Grid>
+                </Grid> : ""}
+                {gameType === "Retail" ? 
                 <Grid item>
                   <QELogImport logImportSnack={props.logImportSnack} player={props.player} allChars={props.allChars} />
-                </Grid>
+                </Grid> : ""}
                 <Grid item>
                   <SimCraftInput variant="outlined" buttonLabel={t("SimCInput.SimCHeaderButtonLabel")} player={props.player} simcSnack={props.simcSnack} allChars={props.allChars} />
                 </Grid>

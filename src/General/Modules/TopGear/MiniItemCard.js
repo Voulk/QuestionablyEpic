@@ -1,11 +1,12 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Card, CardContent, Typography, Grid, Divider } from "@material-ui/core";
-import { getTranslatedItemName, buildStatString, getItemIcon } from "../../Engine/ItemUtilities";
+import { getTranslatedItemName, buildStatString, getItemIcon, getItemProp } from "../../Engine/ItemUtilities";
 import "./MiniItemCard.css";
 // import DeleteIcon from "@material-ui/icons/Delete";
 import socketImage from "../../../Images/Resources/EmptySocket.png";
 import { useTranslation } from "react-i18next";
+import { useSelector } from "react-redux";
 import CardActionArea from "@material-ui/core/CardActionArea";
 
 const useStyles = makeStyles({
@@ -54,13 +55,28 @@ export default function ItemCard(props) {
   const statString = buildStatString(item.stats, item.effect, currentLanguage);
   const itemLevel = item.level;
   const isLegendary = "effect" in item && item.effect.type === "spec legendary";
+  const gameType = useSelector((state) => state.gameType);
+  const itemQuality = item.getQualityColor();
 
-  const itemQuality = (itemLevel) => {
-    if (isLegendary) return "#ff8000";
-    else if (itemLevel >= 183) return "#a73fee";
-    else if (itemLevel >= 120) return "#328CE3";
-    else return "#1eff00";
+  // TODO: Items should track their own quality, and this function shouldn't be in ItemCard.
+  /*
+  const itemQuality = (itemLevel, itemID) => {
+    if (gameType !== "Retail") {
+      const quality = getItemProp(itemID, "quality", gameType)
+      if (quality === 5) return "#ff8000";
+      else if (quality === 4) return "#a73fee";
+      else if (quality === 3) return "#328CE3";
+      else if (quality === 2) return "#1eff00";
+      else return "#ffffff";
+    }
+    else {
+      if (isLegendary) return "#ff8000";
+      else if (itemLevel >= 183) return "#a73fee";
+      else if (itemLevel >= 120) return "#328CE3";
+      else return "#1eff00";
+    }
   };
+  */
 
   const activateItemCard = () => {
     props.activateItem(item.uniqueHash, item.active);
@@ -71,10 +87,10 @@ export default function ItemCard(props) {
   // const deleteActive = item.offhandID === 0;
 
   if (item.offhandID > 0) {
-    itemName = getTranslatedItemName(item.id, currentLanguage) + " & " + getTranslatedItemName(item.offhandID, currentLanguage);
+    itemName = getTranslatedItemName(item.id, currentLanguage, "", gameType) + " & " + getTranslatedItemName(item.offhandID, currentLanguage, "", gameType);
   } else {
     if (isLegendary) itemName = item.effect.name;
-    else itemName = getTranslatedItemName(item.id, currentLanguage);
+    else itemName = getTranslatedItemName(item.id, currentLanguage, "", gameType);
   }
 
   const socket = props.item.socket ? (
@@ -83,7 +99,7 @@ export default function ItemCard(props) {
     </div>
   ) : null;
 
-  const tertiary = props.item.tertiary !== "" ? <div style={{ display: "inline" }}> / {props.item.tertiary} </div> : null;
+  const tertiary = ('tertiary' in props.item && props.item.tertiary !== "") ? <div style={{ display: "inline" }}> / {props.item.tertiary} </div> : null;
 
   return (
     <Grid item xs={12} sm={6} md={6} lg={4} xl={4}>
@@ -93,22 +109,22 @@ export default function ItemCard(props) {
             <Grid item xs="auto">
               <CardContent
                 style={{
-                  padding: "2px 2px 0.4px 2px",
+                  padding: "2px 2px 0px 2px",
                   display: "inline-flex",
                 }}
               >
-                <div className="container-ItemCards">
+                <div className="container-MiniItemCards">
                   <a data-wowhead={item.slot === "Trinket" ? "item=" + item.id + "&" + "ilvl=" + item.level + "&bonus=" + item.bonusIDS + "&domain=" + currentLanguage : ""}>
                     <img
                       alt="img"
-                      width={44}
-                      height={44}
-                      src={getItemIcon(item.id)}
+                      width={42}
+                      height={42}
+                      src={getItemIcon(item.id, gameType)}
                       style={{
                         borderRadius: 4,
                         borderWidth: "1px",
                         borderStyle: "solid",
-                        borderColor: itemQuality(itemLevel),
+                        borderColor: itemQuality,
                       }}
                     />
                   </a>
@@ -117,11 +133,11 @@ export default function ItemCard(props) {
               </CardContent>
             </Grid>
             <Divider orientation="vertical" flexItem />
-            <CardContent style={{ padding: 2, width: "100%" }}>
+            <CardContent style={{ padding: 4, width: "100%" }}>
               <Grid item container display="inline" direction="column" justify="space-around" xs="auto">
                 <Grid container item wrap="nowrap" justify="space-between" alignItems="center" style={{ width: "100%" }}>
                   <Grid item xs={11} display="inline">
-                    <Typography variant={itemName.length > 30 ? "subtitle2" : "subtitle1"} wrap="nowrap" display="inline" align="left" style={{ color: itemQuality(itemLevel) }}>
+                    <Typography variant="subtitle2" wrap="nowrap" display="inline" align="left" style={{ color: itemQuality }}>
                       {itemName}
                     </Typography>
                   </Grid>

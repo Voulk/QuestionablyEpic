@@ -17,7 +17,6 @@ class Item {
     this.bonusIDS = bonusIDS || "";
     this.stats = calcStatsAtLevel(this.level, getItemProp(id, "slot"), getItemAllocations(id), tertiary);
     this.effect = getItemProp(id, "effect");
-
     //console.log("Setting level to " + level);
   }
 
@@ -64,6 +63,14 @@ class Item {
   // it isn't life crushing if they do ever dup.
   getUnique(id) {
     return id + "" + (Math.floor(Math.random() * 100000) + 1).toString();
+  }
+
+  getQualityColor() {
+    const isLegendary = this.effect.type === "spec legendary";
+    if (isLegendary) return "#ff8000";
+    else if (this.level >= 183) return "#a73fee";
+    else if (this.level >= 120) return "#328CE3";
+    else return "#1eff00";
   }
 
   addStats(bonus_stats) {

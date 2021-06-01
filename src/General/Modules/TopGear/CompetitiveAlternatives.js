@@ -1,7 +1,8 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { Paper, Typography, Divider, Grid } from "@material-ui/core";
-import { getItemIcon } from "../../Engine/ItemUtilities";
+import { getItemIcon, getItemProp } from "../../Engine/ItemUtilities";
+import { useSelector } from "react-redux";
 
 function CompetitiveAlternatives(props) {
   const { t, i18n } = useTranslation();
@@ -9,14 +10,24 @@ function CompetitiveAlternatives(props) {
 
   // const item = props.item
   const differentials = props.differentials
-
-  const itemQuality = (itemLevel, effect) => {
-    const isLegendary = effect.type === "spec legendary";
-    if (isLegendary) return "#ff8000";
-    else if (itemLevel >= 183) return "#a73fee";
-    else if (itemLevel >= 120) return "#328CE3";
-    else return "#1eff00";
-  };
+  const gameType = useSelector((state) => state.gameType);
+  const itemQuality = (item, gameType) => {
+    if (gameType === "Retail") {
+      const isLegendary = item.effect.type === "spec legendary";
+      if (isLegendary) return "#ff8000";
+      else if (item.level >= 183) return "#a73fee";
+      else if (item.level >= 120) return "#328CE3";
+      else return "#1eff00";
+    }
+    else {
+      const quality = getItemProp(item.id, "quality", "BurningCrusade")
+      if (quality === 5) return "#ff8000";
+      else if (quality === 4) return "#a73fee";
+      else if (quality === 3) return "#328CE3";
+      else if (quality === 2) return "#1eff00";
+      else return "#ffffff";
+    }
+  }
 
   /* -------------------------------------- Rounding Function ------------------------------------- */
   const roundTo = (value, places) => {
@@ -58,12 +69,12 @@ function CompetitiveAlternatives(props) {
                                   alt="img"
                                   width={40}
                                   height={40}
-                                  src={getItemIcon(item.id)}
+                                  src={getItemIcon(item.id, gameType)}
                                   style={{
                                     borderRadius: 4,
                                     borderWidth: "1px",
                                     borderStyle: "solid",
-                                    borderColor: itemQuality(item.level, item.effect),
+                                    borderColor: itemQuality(item, gameType),
                                   }}
                                 />
                                 <div className="bottom-right-ItemCards"> {item.level} </div>
