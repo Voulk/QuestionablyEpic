@@ -121,10 +121,7 @@ class CastModel {
   //TODO
   getClassicShaman = () => {
     return {
-      774: { cpm: 21.2, avgcast: 4197, overhealing: 0.29 }, // Rejuv - Rankless
-      33763: { cpm: 5.6, avgcast: 3245, overhealing: 0.18 }, // Lifebloom R1
-      26980: { cpm: 3.7, avgcast: 5452, overhealing: 0.13 }, // Regrowth R10
-      8936: { cpm: 0.6, avgcast: 4321, overhealing: 0.11 }, // Regrowth R8
+      25423: { cpm: 16, avgcast: 5210, overhealing: 0.21 }, // Chain heal generic
 
     };
   }

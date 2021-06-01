@@ -184,6 +184,19 @@ else if (
 }
 else if (
   /* ---------------------------------------------------------------------------------------------- */
+  /*                                    Draconic Infused Emblem                                     */
+  /* ---------------------------------------------------------------------------------------------- */
+  effectName === "Draconic Infused Emblem"
+) {
+    const effect = {
+      duration: 15,
+      cooldown: 75,
+      value: 190,
+    }
+    bonus_stats.bonushealing = Math.round(effect.duration * effect.value / effect.cooldown);
+}
+else if (
+  /* ---------------------------------------------------------------------------------------------- */
   /*                                 Oculus of the Hidden Eye                                       */
   /* ---------------------------------------------------------------------------------------------- */
   effectName === "Oculus of the Hidden Eye "
@@ -193,6 +206,7 @@ else if (
     }
     bonus_stats.bonushealing = 0
 }
+
 else if (
   /* ---------------------------------------------------------------------------------------------- */
   /*                           The Restrained Essence of Sapphiron                                  */

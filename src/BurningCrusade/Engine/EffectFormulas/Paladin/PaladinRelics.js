@@ -62,9 +62,9 @@ export const getPaladinRelic = (effectName, player) => {
         effectName === "Blessed Book of Nagrand" // Flash healing +79.
         ) {
             const effect = {
-        
+              
             }
-            bonus_stats.bonushealing = 0
+            bonus_stats.hps = (player.getSpellCPM(27137, "Raid") + player.getSpellCPM(19943, "Raid")) * 79 * 0.429 / 60
         }
     else if (
         /* ---------------------------------------------------------------------------------------------- */
@@ -75,7 +75,7 @@ export const getPaladinRelic = (effectName, player) => {
             const effect = {
         
             }
-            bonus_stats.bonushealing = 0
+            bonus_stats.hps = (player.getSpellCPM(27137, "Raid") + player.getSpellCPM(19943, "Raid")) * 83 * 0.429 / 60
         }
     
 
