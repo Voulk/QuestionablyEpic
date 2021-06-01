@@ -162,10 +162,10 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
         bonushealing: 0,
         spelldamage: 0,
         spirit: 0,
-        crit: 0,
+        spellcrit: 0,
         stamina: 0,
         mp5: 0,
-        haste: 0,
+        spellhaste: 0,
     };
 
     let enchant_stats = {
@@ -173,10 +173,10 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
       bonushealing: 0,
       spelldamage: 0,
       spirit: 0,
-      crit: 0,
+      spellcrit: 0,
       stamina: 0,
       mp5: 0,
-      haste: 0,
+      spellhaste: 0,
     };
 
     // Talents
@@ -185,10 +185,10 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
       bonushealing: 0,
       spelldamage: 0,
       spirit: 0,
-      crit: 0,
+      spellcrit: 0,
       stamina: 0,
       mp5: 0,
-      haste: 0,
+      spellhaste: 0,
     }
   
     /*
@@ -322,17 +322,17 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
 
     for (var stat in setStats) {
       if (stat === "hps") {
-        //hardScore += (setStats[stat] / baseHPS) * player.activeStats.intellect;
+        hardScore += setStats[stat];
       } else if (stat === "dps") {
         continue;
       } else {
         hardScore += setStats[stat] * adjusted_weights[stat];
-        //console.log("Adding " + (setStats[stat] * player.statWeights["Raid"][stat]) + " to hardscore for stat " + stat + " with stat weight: " + player.statWeights["Raid"][stat]);
+        console.log("Adding " + (setStats[stat] * player.statWeights["Raid"][stat]) + " to hardscore for stat " + stat + " with stat weight: " + player.statWeights["Raid"][stat]);
       }
     }
   
     //console.log(JSON.stringify(setStats));
-    //console.log("Soft Score: " + builtSet.sumSoftScore + ". Hard Score: " + hardScore);
+    console.log("Soft Score: " + builtSet.sumSoftScore + ". Hard Score: " + hardScore);
     //console.log("Enchants: " + JSON.stringify(enchants));
     builtSet.hardScore = Math.round(1000 * hardScore) / 1000;
     builtSet.setStats = setStats;
@@ -355,10 +355,10 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
         bonushealing: mergeStat(stats, 'bonushealing'),
         spelldamage: mergeStat(stats, 'spelldamage'),
         spirit: mergeStat(stats, 'spirit'),
-        crit: mergeStat(stats, 'crit'),
+        spellcrit: mergeStat(stats, 'spellcrit'),
         stamina: mergeStat(stats, 'stamina'),
         mp5: mergeStat(stats, 'mp5'),
-        haste: mergeStat(stats, 'haste'),
+        spellhaste: mergeStat(stats, 'spellhaste'),
       }
   
     return val;

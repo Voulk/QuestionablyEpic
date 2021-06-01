@@ -66,10 +66,11 @@ class ItemSet {
         bonushealing: 0,
         spelldamage: 0,
         spirit: 0,
-        crit: 0,
+        spellcrit: 0,
         stamina: 0,
         mp5: 0,
-        haste: 0,
+        spellhaste: 0,
+        hps: 0,
       }
     }
   }
