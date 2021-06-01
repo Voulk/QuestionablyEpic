@@ -9,6 +9,17 @@
 
 export const changeLog = [
   {
+    version: "9.0.5 / 2.5.1",
+    update: 5,
+    date: "1st June",
+    changes: [
+      "Added full support for all four Burning Crusade Classic specs.",
+      "BC: Added Tier Sets module.",
+      "Added Welcome screen for players new to the app.",
+      "Retail / BC: All items now have attached tooltips."
+    ],
+  },
+  {
     version: "9.0.5",
     update: 4,
     date: "29th April",
