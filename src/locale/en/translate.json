@@ -1056,9 +1056,9 @@
     },
     "Welcome": {
       "WelcomeTo": "Welcome To",
-      "ContinueMessage": "To begin using the app, you need to make a character. ",
+      "ContinueMessage": "To begin using the app, add one of your characters below. ",
       "CreateCharacter": "Create Character",
-      "GameTypeMessage": "Select the Version you play! (You can change this later)"
+      "GameTypeMessage": "Select which version you'd like to start with."
     }
   }
 }
