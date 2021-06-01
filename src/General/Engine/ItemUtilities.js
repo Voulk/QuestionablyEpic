@@ -506,7 +506,6 @@ export function socketItem(item, player) {
   for (const socNum in socketList.gems) {
     const socket = socketList.gems[socNum]
     // Match colors
-    console.log(socket);
     if (['red', 'blue', 'yellow'].includes(socket)) {
       colorMatch['score'] += bestGems[socket].score;
       colorMatch['gems'].push(bestGems[socket].name);
@@ -516,7 +515,6 @@ export function socketItem(item, player) {
     }
 
   }
-  console.log("Socketing item" + JSON.stringify(socketBest));
   if (colorMatch.score >= socketBest.score) item.socketedGems = colorMatch;
   else item.socketedGems =  item.socketedGems = socketBest;
 

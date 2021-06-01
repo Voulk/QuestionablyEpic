@@ -11,7 +11,6 @@ class BCPlayer extends Player {
     }
 
     setupDefaults = (spec) => {
-        console.log("Printing BC Defaults for spec: " + spec);
         this.castModel = {
             Raid: new CastModel(spec, "Raid"),
             Dungeon: new CastModel(spec, "Dungeon"), // Unused in BC.
