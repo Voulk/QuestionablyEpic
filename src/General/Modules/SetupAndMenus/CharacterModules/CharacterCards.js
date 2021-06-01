@@ -7,6 +7,7 @@ import { createMuiTheme, makeStyles, ThemeProvider, withStyles } from "@material
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import SettingsIcon from "@material-ui/icons/Settings";
 import Autocomplete from "@material-ui/lab/Autocomplete";
+import ClearIcon from "@material-ui/icons/Clear";
 import { red } from "@material-ui/core/colors";
 import { classColoursJS } from "../../CooldownPlanner/Functions/ClassColourFunctions.js";
 import classIcons from "../../CooldownPlanner/Functions/IconFunctions/ClassIcons";
@@ -28,10 +29,10 @@ const specImages = {
   "Holy Priest": require("Images/HPriestSmall.jpg"),
   "Mistweaver Monk": require("Images/MistweaverSmall.jpg"),
 
-  "Holy Paladin BC": require("Images/PaladinSmall.png"),
-  "Restoration Druid BC": require("Images/DruidSmall.jpg"),
-  "Restoration Shaman BC": require("Images/ShamanSmall.png"),
-  "Holy Priest BC": require("Images/HPriestSmall.jpg"),
+  "Holy Paladin BC": require("Images/classicon_paladin.jpg"),
+  "Restoration Druid BC": require("Images/classicon_druid.jpg"),
+  "Restoration Shaman BC": require("Images/classicon_shaman.jpg"),
+  "Holy Priest BC": require("Images/classicon_priest.jpg"),
 };
 
 /* ------------------- Called when a character is clicked. ------------------ */
@@ -329,7 +330,7 @@ export default function CharCards(props) {
   /* ---------------------------- Spec for the card --------------------------- */
   const spec = props.cardType === "Char" ? props.char.spec : "";
   const gameType = useSelector((state) => state.gameType);
-  const serverList = gameType === "Retail" ? serverDB : serverDBBurningCrusade 
+  const serverList = gameType === "Retail" ? serverDB : serverDBBurningCrusade;
   const availableClasses = classRaceList;
 
   /* ------------------------ Active Character Styling ------------------------ */
@@ -353,7 +354,7 @@ export default function CharCards(props) {
     /*                      Character Card for the main menu                      */
     /* -------------------------------------------------------------------------- */
     <Grid item xs={12} sm={6} md={6} lg={4} xl={4}>
-      <CardActionArea onClick={(e) => charClicked(props.char, props.cardType, props.allChars, props.charUpdate, e)} onContextMenu={(e) => handleClickOpen(e)}>
+      <CardActionArea onClick={(e) => charClicked(props.char, props.cardType, props.allChars, props.charUpdate, e)} onContextMenu={gameType === "Retail" ? (e) => handleClickOpen(e) : ""}>
         <Card className={rootClassName} variant="outlined" raised={true}>
           <Avatar src={specImages[spec].default} variant="square" alt="" className={classes.large} />
           <Divider orientation="vertical" flexItem />
@@ -377,13 +378,23 @@ export default function CharCards(props) {
                   </Typography>
                 </Grid>
                 {/* ---- Settings Button - More apparent for users how to edit characters ---- */}
-                <Grid item xs={2}>
-                  <Tooltip title={t("Edit")}>
-                    <IconButton style={{ float: "right", top: -4 }} onClick={(e) => handleClickOpen(e)} aria-label="settings" size="small">
-                      <SettingsIcon fontSize="small" />
-                    </IconButton>
-                  </Tooltip>
-                </Grid>
+                {gameType === "Retail" ? (
+                  <Grid item xs={2}>
+                    <Tooltip title={t("Edit")}>
+                      <IconButton style={{ float: "right", top: -4 }} onClick={(e) => handleClickOpen(e)} aria-label="settings" size="small">
+                        <SettingsIcon fontSize="small" />
+                      </IconButton>
+                    </Tooltip>
+                  </Grid>
+                ) : (
+                  <Grid item xs={2}>
+                    <Tooltip title={t("Delete")}>
+                      <IconButton style={{ float: "right", top: -4, color: "red" }} onClick={(e) => handleDelete(e)} aria-label="settings" size="small">
+                        <ClearIcon fontSize="small" />
+                      </IconButton>
+                    </Tooltip>
+                  </Grid>
+                )}
               </Grid>
               <Grid item xs={12}>
                 <Divider />
