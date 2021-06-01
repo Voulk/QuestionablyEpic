@@ -28,7 +28,7 @@ export default function TopSetStatsPanel(props) {
     ["Intellect", statList.intellect],
     ["Spirit", statList.spirit],
     ["MP5", statList.mp5],
-    ["Crit", statList.spellcrit / STATPERONEPERCENT.BurningCrusade.CRIT],
+    ["Crit", statList.spellcrit / STATPERONEPERCENT.BurningCrusade.CRIT + statList.intellect / 79.4],
     ["Haste", statList.spellhaste / STATPERONEPERCENT.BurningCrusade.HASTE],
     
   ]

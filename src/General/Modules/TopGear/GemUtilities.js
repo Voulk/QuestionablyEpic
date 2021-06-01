@@ -179,7 +179,7 @@ function doRecursivelyGenerateGemSet(maxIndices, func, gc, player, bestGems, arg
 }
 
 function mathGemSet(args, gc, player, bestGems) {
-  const metaBonus = 1000;
+  const metaBonus = 26;
     //console.log(args[0] + " " + args[1] + " " + args[2]);
     let forcedGems = {}
     forcedGems[args[0]] = 'blue';
