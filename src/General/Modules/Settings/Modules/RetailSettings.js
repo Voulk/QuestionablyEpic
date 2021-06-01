@@ -104,8 +104,6 @@ export default function RetailSettings(props) {
       ) : (
         ""
       )}
-      {/* --------------------------------------- Hymnal Divider --------------------------------------- */}
-      {props.hymnalShow === true ? <Divider orientation="vertical" flexItem /> : ""}
       {/* ------------------------- Group Buff (Treat Buff as Personal Throughput) ------------------------- */}
       {props.groupBuffShow === true ? (
         <Grid item xs={12} sm={4} md={4} lg={3} xl={2}>
@@ -137,8 +135,6 @@ export default function RetailSettings(props) {
       ) : (
         ""
       )}
-      {/* ------------------------------------- Group Buff Divider ------------------------------------- */}
-      {props.groupBuffShow === true ? <Divider orientation="vertical" flexItem /> : ""}
       {/* ---------------- Discipline Priest Talent selector (Spirit Shell / Evangelism) --------------- */}
       {/* {playerSpec === "Discipline Priest" ? (
               <Grid item xs={12} sm={4} md={4} lg={3} xl={2}>
@@ -203,11 +199,8 @@ export default function RetailSettings(props) {
       ) : (
         ""
       )}
-      {/* ------------------------------------- Auto Socket Divider ------------------------------------ */}
-      {props.autoSocket === true ? <Divider orientation="vertical" flexItem /> : ""}
       {/* ----------------------------------------- Free Option ---------------------------------------- */}
       {/*
-            <Divider orientation="vertical" flexItem />
             <Grid item xs={12} sm={4} md={4} lg={3} xl={2}>
               <Grid container spacing={1} style={{ padding: "0px 8px" }}>
                 <Grid item xs={12}>
@@ -236,7 +229,6 @@ export default function RetailSettings(props) {
             */}
       {/* ----------------------------------------- Free Option ---------------------------------------- */}
       {/*
-            <Divider orientation="vertical" flexItem />
             <Grid item xs={12} sm={4} md={4} lg={3} xl={2}>
               <Grid container spacing={1} style={{ paddingLeft: 8 }}>
                 <Grid item xs={12}>

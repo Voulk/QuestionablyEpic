@@ -84,7 +84,7 @@ export default function BurningCrusadeSettings(props) {
   // const [value5, setValue5] = useState(5);
 
   return (
-    <Grid container spacing={1} direction="row">
+    <Grid container spacing={1} direction="row" justify="space-evenly">
       {/* ---------------------------------------------------------------------------------------------- */
       /*                                            Setting 0                                            */
       /* ---------------------------------------------------------------------------------------------- */}
@@ -151,7 +151,7 @@ export default function BurningCrusadeSettings(props) {
       {/* ---------------------------------------------------------------------------------------------- */
       /*                                            Setting 2                                            */
       /* ---------------------------------------------------------------------------------------------- */}
-      <Grid item xs={12} sm={4} md={4} lg={3} xl={2}>
+      <Grid item xs={12} sm={4} md={4} lg={3} xl={3}>
         <Grid container spacing={0} style={{ padding: "0px 8px" }}>
           <Grid item xs={12}>
             <div style={{ display: "inline-flex" }}>
