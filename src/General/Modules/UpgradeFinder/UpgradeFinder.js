@@ -26,6 +26,15 @@ export function UpgradeFinder(props) {
     if (difficulty <= 15 && difficulty >= 0) setPlayerSettings({ ...playerSettings, dungeon: difficulty });
   };
 
+  const setBCDungeonDifficulty = (event, difficulty) => {
+    if (difficulty === "Heroic") {
+      setPlayerSettings({ ...playerSettings, dungeon: 1 });
+    }
+    else {
+      setPlayerSettings({ ...playerSettings, dungeon: 0 });
+    }
+  };
+
   const setPVPDifficulty = (event, rating) => {
     let newRank = -1;
     switch (rating) {
@@ -78,6 +87,7 @@ export function UpgradeFinder(props) {
       setRaidDifficulty={setRaidDifficulty}
       setDungeonDifficulty={setDungeonDifficulty}
       setPVPDifficulty={setPVPDifficulty}
+      setBCDungeonDifficulty={setBCDungeonDifficulty}
     />
   );
 }

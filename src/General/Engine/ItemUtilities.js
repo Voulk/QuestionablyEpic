@@ -39,7 +39,7 @@ export function getValidArmorTypes(spec) {
       return [0, 1, 2, 8]; // Misc + Plate + Shields
     case "Restoration Shaman BC":
       return [0, 1, 2, 3, 6, 9]; // Misc + Plate + Shields
-    case "Priest BC":
+    case "Holy Priest BC":
       return [0, 1]; // Misc + Plate + Shields
     default:
       return [-1];
@@ -104,7 +104,7 @@ export function getValidWeaponTypes(spec, slot) {
           return [4, 5, 6, 10, 13, 15];
         case "Restoration Shaman BC":
           return [0, 1, 4, 5, 10, 13, 15];
-        case "Priest BC":
+        case "Holy Priest BC":
           return [4, 10, 15, 19];
         default:
           return [-1];
@@ -506,7 +506,6 @@ export function socketItem(item, player) {
   for (const socNum in socketList.gems) {
     const socket = socketList.gems[socNum]
     // Match colors
-    console.log(socket);
     if (['red', 'blue', 'yellow'].includes(socket)) {
       colorMatch['score'] += bestGems[socket].score;
       colorMatch['gems'].push(bestGems[socket].name);
@@ -516,7 +515,6 @@ export function socketItem(item, player) {
     }
 
   }
-  console.log("Socketing item" + JSON.stringify(socketBest));
   if (colorMatch.score >= socketBest.score) item.socketedGems = colorMatch;
   else item.socketedGems =  item.socketedGems = socketBest;
 
@@ -543,6 +541,32 @@ function compileStats(stats, bonus_stats) {
   
 }
 
+// 141 Hallowed Garments
+function applyBCStatMods(spec, setStats) {
+      // This can be properly formalized.
+  if (spec === "Holy Paladin BC") {
+    setStats.intellect = (setStats.intellect || 0) * 0.1;
+    setStats.spelldamage = (setStats.intellect || 0) * 0.35;
+  }
+  else if (spec === "Restoration Shaman BC") {
+    setStats.bonushealing = (setStats.intellect || 0) * 0.3;
+    setStats.spelldamage = (setStats.intellect || 0) * 0.3;
+  }
+  else if (spec === "Restoration Druid BC") {
+    // Also gets 30% of spirit MP5 as MP5
+    setStats.spirit = (setStats.spirit || 0) * 0.15;
+  }
+  else if (spec === "Holy Priest BC") {
+    // Also gets 30% of spirit MP5 as MP5
+    setStats.spirit = (setStats.spirit * 1.05) || 0;
+    //talent_stats.bonushealing = (setStats.spirit + talent_stats.spirit) * 0.25;
+    setStats.spelldamage = (setStats.spelldamage || 0) + (setStats.spirit || 0) * 0.25;
+  }
+
+  return setStats;
+
+}
+
 // Return an item score.
 // Score is calculated by multiplying out an items stats against the players stat weights.
 // Special effects, sockets and leech are then added afterwards.
@@ -557,7 +581,8 @@ export function scoreItem(item, player, contentType, gameType = "Retail") {
   }
 
   // Multiply the item's stats by our stat weights.
-  const sumStats = compileStats(item_stats, bonus_stats);
+  let sumStats = compileStats(item_stats, bonus_stats);
+  if (gameType === "BurningCrusade") sumStats = applyBCStatMods(player.getSpec(), sumStats);
 
   for (var stat in sumStats) {
       if (stat !== "bonus_stats") {

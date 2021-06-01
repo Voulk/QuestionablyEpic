@@ -612,13 +612,13 @@
       "SimCBody2": "Current Equipped Gear:",
       "SimCButton": "Import SimC",
       "HelpText": "Insert a SimC String, select up to two raid difficulties, the Mythic+ ilvl you're interested in, and your PVP rating to see where you can find your next upgrade! All results are based on the gear you are actively wearing.",
-      "HelpTextBC": "",
+      "HelpTextBC": "Insert a QE String, select your dungeon difficulty, and (optionally) your PVP rating to see where you can find your next upgrade! All results are based on the gear you are actively wearing.",
       "DungeonBodyBC": ""
     },
 
     "TrinketAnalysis": {
       "Header": "Trinket Analysis",
-      "HelpText": "Use the graph below as a rough guide of which trinkets are worth pursuing, and then use Quick Compare or Top Gear to compare specific choices. World quest trinkets and settings panel coming soon."
+      "HelpText": "Use the graph below as a rough guide of which trinkets are worth pursuing, and then use Quick Compare or Top Gear to compare specific choices. Settings panel coming soon!"
     },
 
     "DruidLegendariesComment": "DruidLegendariesComment",
@@ -922,9 +922,9 @@
       "Raids": {
         "745": "Karazhan",
         "321": "Zul'Aman",
-        "746": "Gruul & Magtheridon",
+        "746": "Gruul & Mag",
         "747": "Magtheridon's Lair",
-        "748": "Serpentshrine Cavern",
+        "748": "Serpentshrine",
         "749": "Tempest Keep",
         "750": "Mount Hyjal",
         "751": "Black Temple",

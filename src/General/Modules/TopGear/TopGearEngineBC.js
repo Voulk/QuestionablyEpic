@@ -28,7 +28,7 @@ const classRaceStats = {
     "Night Elf": {intellect: 120, spirit: 133},
     "Tauren": {intellect: 115, spirit: 135},
   },
-  "Priest BC": {
+  "Holy Priest BC": {
     "Human": {intellect: 145, spirit: 151},
     "Night Elf": {intellect: 145, spirit: 151},
     "Dwarf": {intellect: 144, spirit: 150},
@@ -71,7 +71,7 @@ function setupPlayer(player, contentType, castModel) {
 }
 
 export function runTopGearBC(rawItemList, wepCombos, player, contentType, baseHPS, currentLanguage, userSettings, castModel) {
-    console.log("TOP GEAR BC");
+    //console.log("TOP GEAR BC");
     //console.log("WEP COMBOS: " + JSON.stringify(wepCombos));
     //console.log("CL::::" + currentLanguage);
     var t0 = performance.now();
@@ -111,7 +111,7 @@ export function runTopGearBC(rawItemList, wepCombos, player, contentType, baseHP
   // ----
 
   var t1 = performance.now();
-  console.log("Call to doSomething took " + (t1 - t0) + " milliseconds with count ")
+  //console.log("Call to doSomething took " + (t1 - t0) + " milliseconds with count ")
 
   // Build Differentials
   let differentials = [];
@@ -214,10 +214,6 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
       adjusted_weights['intellect'] = adjusted_weights['intellect'] * 0.85;
       adjusted_weights['spirit'] = adjusted_weights['spirit'] * 0.75;
     }
-    
-
-   console.log(adjusted_weights);
-
   
     // Apply consumables if ticked.
   
@@ -266,18 +262,16 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
     const gemStats = getGemStatLoadout(optimalGems.socketsAvailable, optimalGems.socketedPieces, optimalGems.socketedColors);
 
     var s1 = performance.now();
-    console.log("Gems took " + (s1 - s0) + " milliseconds with count ")
-
+    //console.log("Gems took " + (s1 - s0) + " milliseconds with count ")
  
     // ----------------------
-
     compileStats(setStats, bonus_stats); // Add the base stats on our gear together with enchants & gems.
     compileStats(setStats, gemStats); //TODO
     compileStats(setStats, enchant_stats);
     //applyDiminishingReturns(setStats); // Apply Diminishing returns to our haul.
     addBaseStats(setStats, player.race, player.spec); // Add our base stats, which are immune to DR. This includes our base 5% crit, and whatever base mastery our spec has.
     
-
+    
 
     // Talents & Racials
 
@@ -299,7 +293,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
       // Also gets 30% of spirit MP5 as MP5
       talent_stats.spirit = (setStats.spirit) * 0.15;
     }
-    else if (player.getSpec() === "Priest BC") {
+    else if (player.getSpec() === "Holy Priest BC") {
       // Also gets 30% of spirit MP5 as MP5
       talent_stats.spirit += (setStats.spirit + talent_stats.spirit) * 0.05;
       //talent_stats.bonushealing = (setStats.spirit + talent_stats.spirit) * 0.25;
@@ -312,7 +306,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
     let effectStats = [];
     effectStats.push(bonus_stats);
     for (var x = 0; x < effectList.length; x++) {
-      console.log(effectList[x]);
+      //console.log(effectList[x]);
       effectStats.push(getEffectValue(effectList[x], player, contentType, effectList[x].level, userSettings, "BurningCrusade", setStats));
   
     }
@@ -429,7 +423,7 @@ function createSets(itemList, rawWepCombos) {
   }
   slotLengths.Weapon = Object.keys(wepCombos).length;
 
-  console.log(JSON.stringify(slotLengths));
+  //console.log(JSON.stringify(slotLengths));
   // console.log(splitItems.Finger);
 
   for (var head = 0; head < slotLengths.Head; head++) {

@@ -170,7 +170,8 @@ export default function QuickCompare(props) {
         (slotName === key.slot && key.slot === "Back") ||
         (slotName === key.slot && key.itemClass === 4 && acceptableArmorTypes.includes(key.itemSubClass)) ||
         (slotName === "Offhands" && (key.slot === "Holdable" || key.slot === "Offhand" || key.slot === "Shield")) ||
-        (slotName === "Weapons" && key.itemClass === 2 && acceptableWeaponTypes.includes(key.itemSubClass)),
+        (slotName === "Weapons" && key.itemClass === 2 && acceptableWeaponTypes.includes(key.itemSubClass)) ||
+        (slotName == "Relics & Wands" && key.itemClass === 2 && spec === "Holy Priest BC") // Wands
     ).map((key) => newItemList.push({ value: key.id, label: key.names[currentLanguage] }));
 
     newItemList.sort((a, b) => (a.label > b.label ? 1 : -1));

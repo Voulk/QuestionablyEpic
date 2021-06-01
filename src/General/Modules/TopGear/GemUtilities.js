@@ -11,7 +11,6 @@ let performanceTrack = 0 // Temporary variable to time loops for performance opt
 // It represents one item.
 export function getGemStatLoadout(socketsAvailable, socketedPieces, socketedColors) {
     let bonus_stats = {}
-    console.log(socketsAvailable)
 
     for (var i = 0; i < socketedPieces.length; i++) {
         for (var j = 0; j < socketedPieces[i].length; j++) {
@@ -248,7 +247,7 @@ export function gemGear(itemSet, player, userSettings) {
   }
   gemSets.push(locallyOptimal);
   // Check if player even has enough sockets for the meta gem.
-  console.log(locallyOptimal);
+  //console.log(locallyOptimal);
   if (gemCollection.metaGem === false || metaGem === "Bracing Earthstorm Diamond" 
       || checkMeta(locallyOptimal.socketedColors, metaGem) || (metaGem === "Insightful Earthstorm Diamond" && locallyOptimal.numSocketed < 6)) {
     // The optimal set of gems also activates the meta gem which means we don't have to worry about running anything complex.
@@ -269,7 +268,7 @@ export function gemGear(itemSet, player, userSettings) {
       
       gemSets.sort((a, b) => (a.score < b.score ? 1 : -1));
       
-      console.log("Average loop cost: " + Math.round(performanceTrack / bigCount*10000)/10000 + "ms");
+      //console.log("Average loop cost: " + Math.round(performanceTrack / bigCount*10000)/10000 + "ms");
 
       return gemSets[0];
 

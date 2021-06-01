@@ -571,6 +571,82 @@
         }
     },
     {
+        "id": 186055,
+        "name": "Communal Stave",
+        "names": {
+            "cn": "",
+            "en": "Communal Stave",
+            "ru": "",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_spear_07",
+        "itemClass": 2,
+        "itemSubClass": 10,
+        "itemLevel": 52,
+        "quality": 2,
+        "slot": "2H Weapon",
+        "sockets": {
+        },
+        "dropLoc": "",
+        "stats": {
+            "agility": 22
+        }
+    },
+    {
+        "id": 186057,
+        "name": "Communal Warmaul",
+        "names": {
+            "cn": "",
+            "en": "Communal Warmaul",
+            "ru": "",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_hammer_04",
+        "itemClass": 2,
+        "itemSubClass": 5,
+        "itemLevel": 52,
+        "quality": 2,
+        "slot": "2H Weapon",
+        "stats": {
+            "strength": 14,
+            "stamina": 14
+        }
+    },
+    {
+        "id": 186163,
+        "name": "Communal Guardian",
+        "names": {
+            "cn": "",
+            "en": "Communal Guardian",
+            "ru": "",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_sword_40",
+        "itemClass": 2,
+        "itemSubClass": 7,
+        "itemLevel": 52,
+        "quality": 2,
+        "slot": "1H Weapon",
+        "sockets": {
+        },
+        "dropLoc": "",
+        "stats": {
+            "stamina": 5
+        }
+    },
+    {
         "id": 186054,
         "name": "Communal Idol of Life",
         "names": {
@@ -593,9 +669,6 @@
             "type": "relic",
             "name": "Communal Idol of Life"
         },
-        "sockets": {
-        },
-        "dropLoc": "",
         "stats": {
         }
     },
@@ -622,7 +695,7 @@
         },
         "dropLoc": "",
         "stats": {
-            "strength": 22,
+            "strength": 22
         }
     },
     {
@@ -648,7 +721,7 @@
         },
         "dropLoc": "",
         "stats": {
-            "stamina": 17,
+            "stamina": 17
         }
     },
     {
@@ -675,7 +748,7 @@
         "dropLoc": "",
         "stats": {
             "stamina": 11,
-            "crit": 11,
+            "crit": 11
         }
     },
     {
@@ -702,7 +775,7 @@
         "dropLoc": "",
         "stats": {
             "stamina": 14,
-            "intellect": 14,
+            "intellect": 14
         }
     },
     {
@@ -757,7 +830,7 @@
         "dropLoc": "",
         "stats": {
             "stamina": 11,
-            "intellect": 11,
+            "intellect": 11
         }
     },
     {
@@ -784,7 +857,7 @@
         "dropLoc": "",
         "stats": {
             "stamina": 6,
-            "strength": 16,
+            "strength": 16
         }
     },
     {
@@ -811,7 +884,7 @@
         "dropLoc": "",
         "stats": {
             "stamina": 11,
-            "intellect": 3,
+            "intellect": 3
         }
     },
     {
@@ -837,7 +910,7 @@
         },
         "dropLoc": "",
         "stats": {
-            "stamina": 22,
+            "stamina": 22
         }
     },
     {
@@ -863,7 +936,7 @@
         },
         "dropLoc": "",
         "stats": {
-            "stamina": 17,
+            "stamina": 17
         }
     },
     {
@@ -890,7 +963,7 @@
         "dropLoc": "",
         "stats": {
             "stamina": 11,
-            "agtility": 11,
+            "agtility": 11
         }
     },
     {
@@ -917,7 +990,7 @@
         "dropLoc": "",
         "stats": {
             "spirit": 14,
-            "agtility": 14,
+            "agtility": 14
         }
     },
     {
@@ -945,7 +1018,7 @@
         "stats": {
             "spirit": 3,
             "agility": 19,
-            "stamina": 7,
+            "stamina": 7
         }
     },
     {
@@ -972,7 +1045,7 @@
         "dropLoc": "",
         "stats": {
             "intellect": 11,
-            "stamina": 11,
+            "stamina": 11
         }
     },
     {
@@ -999,7 +1072,7 @@
         "dropLoc": "",
         "stats": {
             "agility": 16,
-            "stamina": 6,
+            "stamina": 6
         }
     },
     {
@@ -1026,7 +1099,227 @@
         "dropLoc": "",
         "stats": {
             "intellect": 3,
-            "spirit": 11,
+            "spirit": 11
+        }
+    },
+    {
+        "id": 186018,
+        "name": "Communal Cowl",
+        "names": {
+            "cn": "",
+            "en": "Communal Cowl",
+            "ru": "",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_helmet_29",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 52,
+        "quality": 2,
+        "slot": "Head",
+        "stats": {
+            "intellect": 14,
+            "stamina": 14
+        }
+    },
+    {
+        "id": 186019,
+        "name": "Communal Mantle",
+        "names": {
+            "cn": "",
+            "en": "Communal Mantle",
+            "ru": "",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_shoulder_02",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 52,
+        "quality": 2,
+        "slot": "Shoulder",
+        "stats": {
+            "intellect": 14,
+            "stamina": 6
+        }
+    },
+    {
+        "id": 186020,
+        "name": "Communal Armor",
+        "names": {
+            "cn": "",
+            "en": "Communal Armor",
+            "ru": "",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_chest_cloth_29",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 52,
+        "quality": 2,
+        "slot": "Chest",
+        "stats": {
+            "intellect": 22
+        }
+    },
+    {
+        "id": 186024,
+        "name": "Communal Bracers",
+        "names": {
+            "cn": "",
+            "en": "Communal Bracers",
+            "ru": "",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_bracer_07",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 52,
+        "quality": 2,
+        "slot": "Wrist",
+        "stats": {
+            "intellect": 3,
+            "stamina": 11
+        }
+    },
+    {
+        "id": 186025,
+        "name": "Communal Gloves",
+        "names": {
+            "cn": "",
+            "en": "Communal Gloves",
+            "ru": "",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_gauntlets_17",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 52,
+        "quality": 2,
+        "slot": "Hands",
+        "stats": {
+            "intellect": 16
+        }
+    },
+    {
+        "id": 186021,
+        "name": "Communal Sash",
+        "names": {
+            "cn": "",
+            "en": "Communal Sash",
+            "ru": "",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_belt_07",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 52,
+        "quality": 2,
+        "slot": "Waist",
+        "sockets": {
+        },
+        "stats": {
+            "intellect": 16,
+            "stamina": 6
+        }
+    },
+    {
+        "id": 186022,
+        "name": "Communal Pants",
+        "names": {
+            "cn": "",
+            "en": "Communal Pants",
+            "ru": "",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_pants_08",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 52,
+        "quality": 2,
+        "slot": "Legs",
+        "sockets": {
+        },
+        "stats": {
+            "intellect": 19,
+            "spirit": 3,
+            "stamina": 7
+        }
+    },
+    {
+        "id": 186023,
+        "name": "Communal Boots",
+        "names": {
+            "cn": "",
+            "en": "Communal Boots",
+            "ru": "",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_boots_05",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 52,
+        "quality": 2,
+        "slot": "Feet",
+        "stats": {
+            "intellect": 11,
+            "spelldamage": 13
+        }
+    },
+    {
+        "id": 186050,
+        "name": "Communal Wand",
+        "names": {
+            "cn": "",
+            "en": "Communal Wand",
+            "ru": "",
+            "es": "",
+            "br": "",
+            "kr": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_wand_02",
+        "itemClass": 2,
+        "itemSubClass": 19,
+        "itemLevel": 52,
+        "quality": 2,
+        "slot": "Relics & Wands",
+        "sockets": {
+        },
+        "stats": {
+            "intellect": 9
         }
     },
      

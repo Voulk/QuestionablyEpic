@@ -127,7 +127,7 @@ export default function WelcomeDialog(props) {
   };
 
   return (
-    <Dialog maxWidth={page === 1 ? "md" : "xs"} fullWidth={true} open={open}>
+    <Dialog maxWidth={page === 1 ? "md" : "xs"} fullWidth={true} open={open} BackdropProps={{style: {backgroundColor: 'rgba(82,82,82,0.9)'}}}>
       {page === 1 ? (
         /* ---------------------------------------------------------------------------------------------- */
         /*                              Page 1 - Welcome & GameType Selection                             */
@@ -157,7 +157,7 @@ export default function WelcomeDialog(props) {
             </Grid>
             {/* ---------------------------------- Game Type Switch Buttons ---------------------------------- */}
             <Grid item xs={12} style={{ textAlign: "center" }}>
-              <GameTypeSwitch />
+              <GameTypeSwitch charUpdate={props.charUpdate} allChars={props.allChars} />
             </Grid>
 
             <Grid item xs={12} style={{ textAlign: "center" }}>

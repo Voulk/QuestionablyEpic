@@ -229,6 +229,7 @@ export default function UpgradeFinderFront(props) {
     if (content === null) {
     } else {
       setDungeonBC(content);
+      props.setBCDungeonDifficulty(event, content);
     }
   };
 

@@ -128,16 +128,30 @@ function buildItem(player, rawItem, source) {
 
 function buildItemPossibilities(player, contentType, playerSettings) {
   let itemPoss = [];
-
+  const dungeonDifficulty = playerSettings.dungeon = 6 ? 1 : playerSettings.dungeon;
   // Grab items.
   for (var i = 0; i < BCItemDB.length; i++) {
     const rawItem = BCItemDB[i];
     if ("sources" in rawItem && checkItemViable(rawItem, player)) {
-        const itemSource = rawItem.sources[0];
-        //const itemLevel = getSetItemLevel(itemSource, playerSettings, 0, rawItem.slot);
-        const item = buildItem(player, rawItem, rawItem.sources[0]);
+        if (rawItem.sources[0].instanceId === -1) {
+          console.log("Dungeon Item with d:" + rawItem.sources[0].difficultyId);
+          if (rawItem.sources[0].difficultyId === dungeonDifficulty) {
+            
+            const itemSource = rawItem.sources[0];
+            //const itemLevel = getSetItemLevel(itemSource, playerSettings, 0, rawItem.slot);
+            const item = buildItem(player, rawItem, rawItem.sources[0]);
+    
+            itemPoss.push(item);
+          }
+        }
+        else {
+          const itemSource = rawItem.sources[0];
+          //const itemLevel = getSetItemLevel(itemSource, playerSettings, 0, rawItem.slot);
+          const item = buildItem(player, rawItem, rawItem.sources[0]);
+  
+          itemPoss.push(item);
+        }
 
-        itemPoss.push(item);
       }
     }
     console.log(itemPoss);

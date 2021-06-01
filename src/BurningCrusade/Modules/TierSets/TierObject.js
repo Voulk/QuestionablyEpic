@@ -141,7 +141,7 @@ export default function TierObject(props) {
                   {t("TierSets.2Set")}:
                 </Typography>
                 <Typography variant="h6" align="center" component="p" style={{ marginLeft: 6 }}>
-                  {/* TODO: Translations */}500
+                  {/* TODO: Translations */}-
                 </Typography>
               </div>
             </Grid>
@@ -152,7 +152,7 @@ export default function TierObject(props) {
                   {t("TierSets.4Set")}:
                 </Typography>
                 <Typography variant="h6" align="center" component="p" style={{ marginLeft: 6 }}>
-                  {/* TODO: Translations */}500
+                  {/* TODO: Translations */}-
                 </Typography>
               </div>
             </Grid>

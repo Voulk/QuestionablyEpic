@@ -87,7 +87,7 @@ class CastModel {
       spellList = this.getClassicDruid();
     } else if (spec === "Restoration Shaman BC") {
       spellList = this.getClassicShaman();
-    } else if (spec === "Priest BC") {
+    } else if (spec === "Holy Priest BC") {
       spellList = this.getClassicPriest();
     } else if (spec === "Holy Paladin BC") {
       spellList = this.getClassicPaladin();
