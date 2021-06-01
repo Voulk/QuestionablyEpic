@@ -111,7 +111,7 @@ function CompetitiveAlternatives(props) {
                               fontSize: 12,
                             }}
                           >
-                            {key.rawDifference + " HPS"}
+                            {gameType === "Retail" ? key.rawDifference + " HPS" : ""}
                           </Typography>
                         </Grid>
                       </Grid>

@@ -100,9 +100,12 @@ else if (
   effectName === "Scarab of the Infinite Cycle"
 ) {
     const effect = {
+      haste: 320,
+      duration: 6,
+      uptime: 0.088,
 
     }
-    bonus_stats.bonushealing = 0
+    bonus_stats.spellhaste = effect.haste * effect.uptime;
 }
 else if (
   /* ---------------------------------------------------------------------------------------------- */
@@ -113,10 +116,10 @@ else if (
     const effect = {
       reduction: 22,
       duration: 15,
-      casts: 15/1.75,
+      casts: {"Holy Priest BC": 15/1.7, "Restoration Shaman BC": 15/2.6, "Restoration Druid BC": 15/1.7, "Holy Paladin BC": 15/1.7},
       cooldown: 60,
     }
-    bonus_stats.mp5 = (effect.reduction * effect.casts / effect.cooldown * 5);
+    bonus_stats.mp5 = (effect.reduction * effect.casts[player.getSpec()] / effect.cooldown * 5);
 }
 else if (
   /* ---------------------------------------------------------------------------------------------- */
@@ -181,6 +184,19 @@ else if (
 }
 else if (
   /* ---------------------------------------------------------------------------------------------- */
+  /*                                    Draconic Infused Emblem                                     */
+  /* ---------------------------------------------------------------------------------------------- */
+  effectName === "Draconic Infused Emblem"
+) {
+    const effect = {
+      duration: 15,
+      cooldown: 75,
+      value: 190,
+    }
+    bonus_stats.bonushealing = Math.round(effect.duration * effect.value / effect.cooldown);
+}
+else if (
+  /* ---------------------------------------------------------------------------------------------- */
   /*                                 Oculus of the Hidden Eye                                       */
   /* ---------------------------------------------------------------------------------------------- */
   effectName === "Oculus of the Hidden Eye "
@@ -190,6 +206,7 @@ else if (
     }
     bonus_stats.bonushealing = 0
 }
+
 else if (
   /* ---------------------------------------------------------------------------------------------- */
   /*                           The Restrained Essence of Sapphiron                                  */

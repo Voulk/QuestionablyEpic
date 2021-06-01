@@ -146,18 +146,18 @@ export default function WelcomeDialog(props) {
 
             <Grid item xs={12} style={{ textAlign: "center" }}>
               <Typography align="center" variant="h6" style={{ textAlign: "center" }}>
-                {t("Welcome.ContinueMessage")}
-              </Typography>
-            </Grid>
-
-            <Grid item xs={12} style={{ textAlign: "center" }}>
-              <Typography align="center" variant="h6" style={{ textAlign: "center" }}>
                 {t("Welcome.GameTypeMessage")}
               </Typography>
             </Grid>
             {/* ---------------------------------- Game Type Switch Buttons ---------------------------------- */}
             <Grid item xs={12} style={{ textAlign: "center" }}>
               <GameTypeSwitch charUpdate={props.charUpdate} allChars={props.allChars} />
+            </Grid>
+
+            <Grid item xs={12} style={{ textAlign: "center" }}>
+              <Typography align="center" variant="h6" style={{ textAlign: "center" }}>
+                {t("Welcome.ContinueMessage")}
+              </Typography>
             </Grid>
 
             <Grid item xs={12} style={{ textAlign: "center" }}>

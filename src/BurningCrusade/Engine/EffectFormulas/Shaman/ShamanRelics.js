@@ -40,7 +40,7 @@ export const getShamanRelic = (effectName, player) => {
         const effect = {
     
         }
-        bonus_stats.bonushealing = 0
+        bonus_stats.hps = player.getSpellCPM(25423, "Raid") * 87 * 3 / 60
     }
     else if (
       /* ---------------------------------------------------------------------------------------------- */

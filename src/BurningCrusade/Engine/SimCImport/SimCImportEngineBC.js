@@ -12,7 +12,7 @@ const stat_ids = {
 
 export function runBCSimC(simCInput, player, contentType, setErrorMessage, snackHandler, closeDialog, clearSimCInput) {
   var lines = simCInput.split("\n");
-  console.log("Running BC SimC");
+  //console.log("Running BC SimC");
 
   // Check that the SimC string is valid.
   if (checkSimCValid(lines.slice(1, 8), lines.length, player.getSpec(), setErrorMessage)) {
