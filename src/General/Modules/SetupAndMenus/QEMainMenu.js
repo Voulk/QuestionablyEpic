@@ -96,7 +96,7 @@ export default function QEMainMenu(props) {
   };
 
   /* -------------------- Character Creation Dialog States -------------------- */
-  const welcomeOpen = (ls.get("welcomeMessage") === true && characterCountAll === 0) ? true : false
+  const welcomeOpen = (ls.get("welcomeMessage") === null && characterCountAll === 0) ? true : false
   // const handleClickOpen = () => {
   //   setOpen(true);
   // };
