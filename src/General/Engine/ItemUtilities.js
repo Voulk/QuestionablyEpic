@@ -545,12 +545,12 @@ function compileStats(stats, bonus_stats) {
 function applyBCStatMods(spec, setStats) {
       // This can be properly formalized.
   if (spec === "Holy Paladin BC") {
-    setStats.intellect = (setStats.intellect || 0) * 0.1;
-    setStats.spelldamage = (setStats.intellect || 0) * 0.35;
+    setStats.intellect = (setStats.intellect || 0) + (setStats.intellect || 0) * 0.1;
+    setStats.spelldamage = (setStats.spelldamage || 0) + (setStats.intellect || 0) * 0.35;
   }
   else if (spec === "Restoration Shaman BC") {
-    setStats.bonushealing = (setStats.intellect || 0) * 0.3;
-    setStats.spelldamage = (setStats.intellect || 0) * 0.3;
+    setStats.bonushealing = (setStats.bonushealing || 0) + (setStats.intellect || 0) * 0.3;
+    setStats.spelldamage = (setStats.spelldamage || 0) + (setStats.intellect || 0) * 0.3;
   }
   else if (spec === "Restoration Druid BC") {
     // Also gets 30% of spirit MP5 as MP5
