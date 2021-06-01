@@ -59,7 +59,8 @@ export default function TrinketAnalysis(props) {
   const itemLevels = [187, 194, 200, 207, 213, 220, 226, 233];
   const gameType = useSelector((state) => state.gameType);
   const trinketDB = getItemDB(gameType).filter((key) => key.slot === "Trinket" && 
-        ((gameType === "BurningCrusade" && 'phase' in key && (!('class' in key) || props.player.getSpec().includes(key.class))) || (gameType === "Retail" && key.levelRange.length > 0)));
+        ((gameType === "BurningCrusade" && 'phase' in key && key.phase < 2 && (!('class' in key) || props.player.getSpec().includes(key.class))) || 
+        (gameType === "Retail" && key.levelRange.length > 0)));
   const helpText = t("TrinketAnalysis.HelpText");
 
   let activeTrinkets = [];

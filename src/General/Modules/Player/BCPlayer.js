@@ -14,23 +14,21 @@ class BCPlayer extends Player {
         console.log("Printing BC Defaults for spec: " + spec);
         this.castModel = {
             Raid: new CastModel(spec, "Raid"),
-            Dungeon: new CastModel(spec, "Dungeon"),
+            Dungeon: new CastModel(spec, "Dungeon"), // Unused in BC.
         };
-
+        // These are starter weights, and can and will change during the engine calculation process.
         if (spec === "Restoration Druid BC") {
-            console.log("Printing Druid Weights");
             this.statWeights = {
                 Raid: {
                     intellect: 0.83,
                     hps: 1,
                     bonushealing: 0.88,
                     mp5: 1.9,
-                    spelldamage: 0,
+                    spelldamage: 0.88,
                     spirit: 0.85,
                     crit: 0,
                     spellcrit: 0.03,
                     stamina: 0.01,
-                    
                     haste: 0.1,
                 },
                 Dungeon: {
@@ -45,12 +43,12 @@ class BCPlayer extends Player {
                     hps: 1,
                     bonushealing: 0.352,
                     mp5: 1.4,
-                    spelldamage: 0,
+                    spelldamage: 0.352,
                     spirit: 0.04,
                     crit: 0,
                     spellcrit: 0.436,
                     stamina: 0.01,
-                    haste: 0.61,
+                    haste: 0.31,
                 },
                 Dungeon: {
                 },
@@ -62,7 +60,7 @@ class BCPlayer extends Player {
                 Raid: {
                     intellect: 1.3,
                     bonushealing: 1,
-                    spelldamage: 0,
+                    spelldamage: 1,
                     spirit: 0.1,
                     crit: 0,
                     spellcrit: 1.21,

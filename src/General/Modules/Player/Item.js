@@ -68,8 +68,8 @@ class Item {
   getQualityColor() {
     const isLegendary = this.effect.type === "spec legendary";
     if (isLegendary) return "#ff8000";
-    else if (this.itemLevel >= 183) return "#a73fee";
-    else if (this.itemLevel >= 120) return "#328CE3";
+    else if (this.level >= 183) return "#a73fee";
+    else if (this.level >= 120) return "#328CE3";
     else return "#1eff00";
   }
 

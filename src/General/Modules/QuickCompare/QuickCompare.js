@@ -95,7 +95,7 @@ function getSlots() {
     { value: "Trinket", activeItem: "Trinket", label: t("slotNames.trinket") },
     { value: "Weapons", activeItem: "1H Weapon", label: t("slotNames.weapons") },
     { value: "Offhands", activeItem: "Offhands", label: t("slotNames.offhands") },
-    { value: "Relics", activeItem: "Relics", label: t("slotNames.relics") },
+    { value: "Relics & Wands", activeItem: "Relics & Wands", label: t("slotNames.relics") },
   ];
 
   return slots;
@@ -164,7 +164,6 @@ export default function QuickCompare(props) {
     const acceptableWeaponTypes = getValidWeaponTypes(spec, slotName);
     let newItemList = [];
     const db = getItemDB(gameType);
-    console.log(db);
 
     db.filter(
       (key) =>
@@ -292,9 +291,9 @@ export default function QuickCompare(props) {
         <Grid item xs={12}>
           <UpgradeFinderSimC quickCompare={true} player={props.player} simcSnack={props.simcSnack} allChars={props.allChars} />
         </Grid>
-        <Grid item xs={12}>
+        {/*<Grid item xs={12}>
           <Settings player={props.player} userSettings={userSettings} editSettings={editSettings} />
-        </Grid>
+        </Grid> */}
         <Grid item xs={12}>
           <Paper elevation={0}>
             <Grid

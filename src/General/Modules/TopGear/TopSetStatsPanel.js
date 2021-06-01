@@ -25,11 +25,12 @@ export default function TopSetStatsPanel(props) {
   ] :
   [
     ["Bonus Healing", statList.bonushealing],
-    ["Crit", statList.crit / STATPERONEPERCENT.BurningCrusade.CRIT],
     ["Intellect", statList.intellect],
-    ["Haste", statList.haste / STATPERONEPERCENT.BurningCrusade.HASTE],
-    ["MP5", statList.mp5],
     ["Spirit", statList.spirit],
+    ["MP5", statList.mp5],
+    ["Crit", statList.crit / STATPERONEPERCENT.BurningCrusade.CRIT],
+    ["Haste", statList.haste / STATPERONEPERCENT.BurningCrusade.HASTE],
+    
   ]
   
   ;
@@ -38,7 +39,7 @@ export default function TopSetStatsPanel(props) {
   function printStat(stat, value) {
     if (["Haste", "Crit", "Versatility", "Mastery", "Leech"].includes(stat)) {
       return t(stat) + ": " + Math.round(100 * value) / 100 + "%";
-    } else return t(stat) + ": " + Math.round(value);
+    } else return t(stat) + ": " + Math.floor(value);
   }
 
   return (

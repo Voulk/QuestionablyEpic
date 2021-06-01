@@ -10,7 +10,7 @@ import Item from "../Modules/Player/Item";
 // import { i18n } from "react-i18next";
 import { reportError } from "../SystemTools/ErrorLogging/ErrorReporting";
 import { useSelector } from "react-redux";
-import { GEMS } from "./GEMS.js";
+import { GEMS } from "General/Engine/GEMS";
 
 /*
 
@@ -34,11 +34,11 @@ export function getValidArmorTypes(spec) {
     case SPEC.DISCPRIEST:
       return [0, 1]; // Misc + Cloth
     case "Holy Paladin BC":
-      return [0, 1, 2, 3, 4, 6]; // Misc + Plate + Shields
+      return [0, 1, 2, 3, 4, 6, 7]; // Misc + Plate + Shields
     case "Restoration Druid BC":
-      return [0, 1, 2]; // Misc + Plate + Shields
+      return [0, 1, 2, 8]; // Misc + Plate + Shields
     case "Restoration Shaman BC":
-      return [0, 1, 2, 3, 6]; // Misc + Plate + Shields
+      return [0, 1, 2, 3, 6, 9]; // Misc + Plate + Shields
     case "Priest BC":
       return [0, 1]; // Misc + Plate + Shields
     default:
@@ -448,13 +448,11 @@ export function correctCasing(string) {
 }
 
 function scoreGemColor(gemList, player) {
-
   for (var ind in gemList) {
     const gem = gemList[ind];
     let gemScore = 0;
     for (const [stat, value] of Object.entries(gem.stats)) {
-      //console.log("Stat: " + stat + ". Value: " + value);
-      gemScore += value * player.getStatWeight("Raid", stat);
+      if (player[stat] && stat in player) gemScore += value * player[stat];
     }
     gem['score'] = gemScore;
     
@@ -467,7 +465,9 @@ function scoreGemColor(gemList, player) {
   return gemList;
 }
 
-export function getBestGem(player, color) {
+
+
+export function getBestGem(player, color, rarity = "rare") {
   let colors = []
   let gems = [...GEMS];
 
@@ -476,7 +476,7 @@ export function getBestGem(player, color) {
   else if (color === "yellow") colors = ["yellow", "orange", "green"] 
   else if (color === "all") colors = ["yellow", "blue", "red", "purple", "orange", "green"] 
 
-  let gemList = gems.filter((filter) => (colors.includes(filter.color) && filter.jewelcrafting === false && filter.rarity !== "Epic"));
+  let gemList = gems.filter((filter) => (colors.includes(filter.color) && filter.jewelcrafting === false && filter.rarity === rarity));
   gemList = scoreGemColor(gemList, player);
   return gemList[0];
 
@@ -497,7 +497,7 @@ export function socketItem(item, player) {
   if (socketList.bonus) {
     for (const [stat, value] of Object.entries(socketList.bonus)) {
       //console.log("Stat: " + stat + ". Value: " + value);
-      socketBonus += value * player.getStatWeight("Raid", stat);
+      socketBonus += value * player[stat];
     }
   }
 
@@ -587,7 +587,7 @@ export function scoreItem(item, player, contentType, gameType = "Retail") {
 
   // BC specific sockets
   if (item.sockets) {
-    socketItem(item, player);
+    socketItem(item, player.statWeights["Raid"]);
     score += item.socketedGems['score'];
     //console.log("Adding score: " + item.socketedGems['score'])
   }

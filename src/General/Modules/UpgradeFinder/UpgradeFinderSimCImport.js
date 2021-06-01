@@ -91,7 +91,7 @@ export default function UpgradeFinderSimC(props) {
           <Grid item>
             <Divider orientation="vertical" flexItem style={{ height: "100%" }} />
           </Grid>
-          <Grid xs={12} sm={12} md={12} lg={7} xl={7} alignItems="center" container justify="center" spacing={1}>
+          <Grid item container xs={12} sm={12} md={12} lg={7} xl={7} alignItems="center"  justify="center" spacing={1}>
             <Grid item xs={12} sm={12} md={12} lg={12} xl={2}>
               <Typography color="primary" align="center" variant="h5">
                 {t("Equipped")}:

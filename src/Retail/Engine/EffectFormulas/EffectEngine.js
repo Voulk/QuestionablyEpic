@@ -33,12 +33,12 @@ import { getGenericSet } from "BurningCrusade/Engine/EffectFormulas/Generic/Gene
 // Effect is a small "dictionary" with two key : value pairs.
 // The EffectEngine is basically a routing device. It will take your effect and effect type and grab the right formula from the right place.
 // This allows each spec to work on spec-specific calculations without a need to interact with the other specs.
-export function getEffectValue(effect, player, contentType, itemLevel = 0, userSettings, gameType = "Retail") {
+export function getEffectValue(effect, player, contentType, itemLevel = 0, userSettings, gameType = "Retail", setStats = {}) {
   let bonus_stats = {};
   const effectName = effect.name;
   const effectType = effect.type;
 
-  //console.log("ITEM EFFECT" + effectName + " " + effectType + ". player spec" + player.spec + " game type: " + gameType + ". Full: " + JSON.stringify(effect));
+  
 
 
   // ----- Retail Effect -----
@@ -106,7 +106,7 @@ export function getEffectValue(effect, player, contentType, itemLevel = 0, userS
     } 
     else if (effectType === "set bonus") {
       // Generic bonuses like Tailoring etc.
-      bonus_stats = getGenericSet(effectName, player);
+      bonus_stats = getGenericSet(effectName, player, setStats);
     }
     else if (effectType === "trinket") {
       bonus_stats = getTrinketEffectBC(effectName, player, userSettings);
@@ -129,6 +129,7 @@ export function getEffectValue(effect, player, contentType, itemLevel = 0, userS
       bonus_stats = getGenericEffectBC(effectName, player, contentType);
     } 
   }
+  console.log("ITEM EFFECT" + effectName + " " + effectType + ". " + ". Result: " + JSON.stringify(bonus_stats));
   return bonus_stats;
 }
 

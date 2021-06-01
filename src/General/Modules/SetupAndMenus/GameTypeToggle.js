@@ -23,10 +23,12 @@ const useStyles = makeStyles({
   },
 });
 
-export default function GameTypeSwitch() {
+export default function GameTypeSwitch(props) {
   const dispatch = useDispatch();
   const { t } = useTranslation();
   const classes = useStyles();
+  const charUpdate = props.charUpdate;
+  const allChars = props.allChars;
 
   /* ------------------------------- Current gameType in redux state ------------------------------ */
   const gameType = useSelector((state) => state.gameType);
@@ -35,7 +37,10 @@ export default function GameTypeSwitch() {
   const handleContent = (event, gameType) => {
     if (gameType === null) {
     } else {
+      allChars.setLowestChar(gameType)
+      charUpdate(allChars);
       dispatch(toggleGameType(gameType));
+
     }
   };
 

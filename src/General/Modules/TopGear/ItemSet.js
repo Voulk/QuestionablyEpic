@@ -62,10 +62,10 @@ class ItemSet {
     }
     else {
       return {
-        intellect: 87,
+        intellect: 0,
         bonushealing: 0,
         spelldamage: 0,
-        spirit: 88,
+        spirit: 0,
         crit: 0,
         stamina: 0,
         mp5: 0,

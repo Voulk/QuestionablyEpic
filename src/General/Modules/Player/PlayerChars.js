@@ -78,6 +78,17 @@ class PlayerChars {
     }
   };
 
+  setLowestChar = (gameType) => {
+    let index = 0;
+    for (let i = 0; i < this.allChar.length; i++) {
+      if (this.allChar[i].gameType === gameType) {
+        index = i;
+        break;
+      }
+    }
+    this.setActiveChar(index);
+  }
+
   // Save our character array, both to database (when logged in) and to LocalStorage.
   saveAllChar = () => {
     // Database TODO

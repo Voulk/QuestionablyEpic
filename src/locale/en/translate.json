@@ -61,6 +61,8 @@
     "Edit": "Edit",
     "Equipped": "Equipped",
     "Error": "Error",
+    "Burning Crusade": "Burning Crusade",
+    "Shadowlands": "Shadowlands",
 
     "Changelog": {
       "Header": "Changelog",
@@ -283,6 +285,7 @@
       "Profile": "Profile",
       "CharHeader": "Characters",
       "CharHelpText": "Add your characters here. Right click to edit your stat weights, realm information and more.",
+      "TierSets": "Tier Sets",
       "Articles": {
         "Header": "Recent Spec Articles",
         "HelpText": ""
@@ -295,7 +298,8 @@
         "CooldownPlanner": "Plan your cooldowns. Create your own or analyse logs",
         "Profile": "Edit your details",
         "UpgradeFinder": "Find your next piece of gear!",
-        "TrinketAnalysis": "See how this tiers trinkets line up in graph form"
+        "TrinketAnalysis": "See how this tiers trinkets line up in graph form",
+        "TierSets": ""
       }
     },
 
@@ -494,12 +498,12 @@
       },
       "BurningCrusade": {
         "Setting0Spacer": "--------------------------------------------------------------------",
-        "Setting0Tooltip": "",
-        "Setting0Title": "Auto-Enchant Items?",
+        "Setting0Tooltip": "Mana varies a little in value based on fight length and how frequently you cast.",
+        "Setting0Title": "Mana Profile",
         "Setting0TextFieldLabel": "",
         "Setting1Spacer": "--------------------------------------------------------------------",
-        "Setting1Tooltip": "",
-        "Setting1Title": "",
+        "Setting1Tooltip": "Enable this to include common raid buffs in the gear comparison.",
+        "Setting1Title": "Include Raid Buffs?",
         "Setting1TextFieldLabel": "",
         "Setting2Spacer": "--------------------------------------------------------------------",
         "Setting2Tooltip": "Pick which Meta gem you'd like the app to try and socket.",
@@ -507,11 +511,11 @@
         "Setting2TextFieldLabel": "",
         "Setting3Spacer": "--------------------------------------------------------------------",
         "Setting3Tooltip": "",
-        "Setting3Title": "",
+        "Setting3Title": "Auto-Enchant Items?",
         "Setting3TextFieldLabel": "",
         "Setting4Spacer": "--------------------------------------------------------------------",
-        "Setting4Tooltip": "",
-        "Setting4Title": "",
+        "Setting4Tooltip": "Pick which gems you'd like the app to socket. Jewelcrafting-specifics ignored for now.",
+        "Setting4Title": "Gem Rarity",
         "Setting4TextFieldLabel": "",
         "Setting5Spacer": "--------------------------------------------------------------------",
         "Setting5Tooltip": "",
@@ -562,6 +566,13 @@
       "25914": "Holy Shock",
       "82326": "Holy Light",
       "337824": "Shock Barrier"
+    },
+
+    "TierSets": {
+      "Title": "Tier Sets",
+      "2Set": "2 Set HPS",
+      "4Set": "4 Set HPS",
+      "6Set": "6 Set HPS"
     },
 
     "TopGear": {
