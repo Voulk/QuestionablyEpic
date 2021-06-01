@@ -47,6 +47,17 @@ export default function GameTypeSwitch(props) {
   return (
     <ToggleButtonGroup value={gameType} exclusive onChange={handleContent} aria-label="gameToggle" size="large">
       {/* ---------------------------------------------------------------------------------------------- */
+      /*                                  Shadowlands Game Type Toggle                                  */
+      /* ----------------------------------------------------------------------------------------------  */}
+      <ToggleButton className={classes.root} value="Retail" aria-label="retailLabel">
+        <Tooltip title={t("QeHeader.Tooltip.ChangeToRaid")} arrow>
+          <div style={{ display: "inline-flex" }}>
+            <img src={require("../../../Images/Logos/Logo_Shadowlands.png").default} alt={t("Shadowlands")} />
+          </div>
+        </Tooltip>
+      </ToggleButton>
+
+      {/* ---------------------------------------------------------------------------------------------- */
       /*                            Burning Crusade: Classic Game Type Toggle                           */
       /* ---------------------------------------------------------------------------------------------- */}
       <ToggleButton className={classes.root} value="BurningCrusade" aria-label="classicLabel">
@@ -57,16 +68,6 @@ export default function GameTypeSwitch(props) {
         </Tooltip>
       </ToggleButton>
 
-      {/* ---------------------------------------------------------------------------------------------- */
-      /*                                  Shadowlands Game Type Toggle                                  */
-      /* ----------------------------------------------------------------------------------------------  */}
-      <ToggleButton className={classes.root} value="Retail" aria-label="retailLabel">
-        <Tooltip title={t("QeHeader.Tooltip.ChangeToRaid")} arrow>
-          <div style={{ display: "inline-flex" }}>
-            <img src={require("../../../Images/Logos/Logo_Shadowlands.png").default} alt={t("Shadowlands")} />
-          </div>
-        </Tooltip>
-      </ToggleButton>
     </ToggleButtonGroup>
   );
 }
