@@ -39,7 +39,7 @@ export function getValidArmorTypes(spec) {
       return [0, 1, 2, 8]; // Misc + Plate + Shields
     case "Restoration Shaman BC":
       return [0, 1, 2, 3, 6, 9]; // Misc + Plate + Shields
-    case "Priest BC":
+    case "Holy Priest BC":
       return [0, 1]; // Misc + Plate + Shields
     default:
       return [-1];
@@ -104,7 +104,7 @@ export function getValidWeaponTypes(spec, slot) {
           return [4, 5, 6, 10, 13, 15];
         case "Restoration Shaman BC":
           return [0, 1, 4, 5, 10, 13, 15];
-        case "Priest BC":
+        case "Holy Priest BC":
           return [4, 10, 15, 19];
         default:
           return [-1];

@@ -28,7 +28,7 @@ const classRaceStats = {
     "Night Elf": {intellect: 120, spirit: 133},
     "Tauren": {intellect: 115, spirit: 135},
   },
-  "Priest BC": {
+  "Holy Priest BC": {
     "Human": {intellect: 145, spirit: 151},
     "Night Elf": {intellect: 145, spirit: 151},
     "Dwarf": {intellect: 144, spirit: 150},
@@ -270,14 +270,14 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
 
  
     // ----------------------
-
+    console.log(player.race);
     compileStats(setStats, bonus_stats); // Add the base stats on our gear together with enchants & gems.
     compileStats(setStats, gemStats); //TODO
     compileStats(setStats, enchant_stats);
     //applyDiminishingReturns(setStats); // Apply Diminishing returns to our haul.
     addBaseStats(setStats, player.race, player.spec); // Add our base stats, which are immune to DR. This includes our base 5% crit, and whatever base mastery our spec has.
     
-
+    
 
     // Talents & Racials
 
@@ -299,7 +299,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
       // Also gets 30% of spirit MP5 as MP5
       talent_stats.spirit = (setStats.spirit) * 0.15;
     }
-    else if (player.getSpec() === "Priest BC") {
+    else if (player.getSpec() === "Holy Priest BC") {
       // Also gets 30% of spirit MP5 as MP5
       talent_stats.spirit += (setStats.spirit + talent_stats.spirit) * 0.05;
       //talent_stats.bonushealing = (setStats.spirit + talent_stats.spirit) * 0.25;
