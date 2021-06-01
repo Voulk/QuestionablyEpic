@@ -1053,6 +1053,12 @@
         "1193": "Hex Lord Malacrass",
         "1194": "Zul'jin"
       }
+    },
+    "Welcome": {
+      "WelcomeTo": "Welcome To",
+      "ContinueMessage": "To begin using the app, you need to make a character. ",
+      "CreateCharacter": "Create Character",
+      "GameTypeMessage": "Select the Version you play! (You can change this later)"
     }
   }
 }
