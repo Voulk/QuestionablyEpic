@@ -5,9 +5,11 @@ import { useTranslation } from "react-i18next";
 import HelpText from "../SetupAndMenus/HelpText";
 import UpgradeFinderSlider from "./Slider";
 import ToggleButton from "@material-ui/lab/ToggleButton";
+import ToggleButtonGroup from "@material-ui/lab/ToggleButtonGroup";
 import Settings from "../Settings/Settings";
 import UpgradeFinderSimC from "./UpgradeFinderSimCImport";
 import { runUpgradeFinder } from "./UpgradeFinderEngine";
+import { runUpgradeFinderBC } from "./UpgradeFinderEngineBC";
 // import { useHistory } from "react-router-dom";
 import userSettings from "../Settings/SettingsObject";
 import { useSelector } from "react-redux";
@@ -221,6 +223,15 @@ export default function UpgradeFinderFront(props) {
   const [selectedHeroic, setSelectedHeroic] = React.useState(false);
   const [selectedMythic, setSelectedMythic] = React.useState(false);
 
+  const [dungeonBC, setDungeonBC] = React.useState("Heroic");
+
+  const handleContent = (event, content) => {
+    if (content === null) {
+    } else {
+      setDungeonBC(content);
+    }
+  };
+
   // let history = useHistory();
 
   const selectsPvE = [selectedRaidFinder, selectedNormal, selectedHeroic, selectedMythic];
@@ -233,10 +244,19 @@ export default function UpgradeFinderFront(props) {
   };
 
   const unleashUpgradeFinder = () => {
-    const playerSettings = props.playerSettings;
-    const result = runUpgradeFinder(props.player, contentType, currentLanguage, playerSettings, userSettings);
-    props.setItemSelection(result);
-    props.setShowReport(true);
+    if (gameType === "Retail") {
+      const playerSettings = props.playerSettings;
+      const result = runUpgradeFinder(props.player, contentType, currentLanguage, playerSettings, userSettings);
+      props.setItemSelection(result);
+      props.setShowReport(true);
+    } else if (gameType === "BurningCrusade") {
+      const playerSettings = props.playerSettings;
+      const result = runUpgradeFinderBC(props.player, contentType, currentLanguage, playerSettings, userSettings);
+      console.log(result);
+      props.setItemSelection(result);
+      props.setShowReport(true);
+    }
+
     //history.push("/UpgradeFinderReport/");
   };
 
@@ -246,15 +266,26 @@ export default function UpgradeFinderFront(props) {
     else return "Good";
   };
 
+  /*
   const checkCharacterValid = (player) => {
     const weaponSet = player.getActiveItems("AllMainhands", false, true);
     const weapon = weaponSet.length > 0 ? weaponSet[0] : "";
 
     return (weapon.slot === "2H Weapon" && player.getEquippedItems().length === 15) || (weapon.slot === "1H Weapon" && player.getEquippedItems().length === 16);
+  }; */
+
+  const checkCharacterValid = (player, gameType) => {
+    const weaponSet = player.getActiveItems("AllMainhands", false, true);
+    const weapon = weaponSet.length > 0 ? weaponSet[0] : "";
+    if (gameType === "Retail") {
+      return (weapon.slot === "2H Weapon" && player.getEquippedItems().length === 15) || (weapon.slot === "1H Weapon" && player.getEquippedItems().length === 16);
+    } else if (gameType === "BurningCrusade") {
+      return (weapon.slot === "2H Weapon" && player.getEquippedItems().length === 16) || (weapon.slot === "1H Weapon" && player.getEquippedItems().length === 17);
+    }
   };
 
   const getUpgradeFinderReady = (player) => {
-    return getSimCStatus(player) === "Good" && props.playerSettings.raid.length > 0;
+    return getSimCStatus(player) === "Good" && (props.playerSettings.raid.length > 0 || gameType == "BurningCrusade");
   };
 
   return (
@@ -359,7 +390,7 @@ export default function UpgradeFinderFront(props) {
               <Grid container justify="center" spacing={1}>
                 <Grid item xs={12}>
                   <Typography color="primary" align="center" variant="h5">
-                    {t("Dungeons")}
+                    {t("Dungeon")}
                   </Typography>
                   <Grid item xs={12}>
                     <Typography align="center">{t("UpgradeFinderFront.DungeonBodyBC")}</Typography>
@@ -368,7 +399,24 @@ export default function UpgradeFinderFront(props) {
               </Grid>
 
               <Grid container justify="center" spacing={1}>
-                {burningCrusadeDungeonDifficulty.map((key, i) => (
+                <ToggleButtonGroup value={dungeonBC} exclusive onChange={handleContent} aria-label="contentToggle" size="large">
+                  <ToggleButton style={{ padding: "15px 30px" }} value="Normal" aria-label="dungeonLabel">
+                    {/* <Tooltip title={t("QeHeader.Tooltip.ChangeToDungeon")} arrow> */}
+                    <div style={{ display: "inline-flex" }}>
+                      <Typography variant="button">{t("RaidDifficulty.Normal")}</Typography>
+                    </div>
+                    {/* </Tooltip> */}
+                  </ToggleButton>
+
+                  <ToggleButton style={{ padding: "15px 30px" }} value="Heroic" aria-label="raidLabel">
+                    {/* <Tooltip title={t("QeHeader.Tooltip.ChangeToRaid")} arrow> */}
+                    <div style={{ display: "inline-flex" }}>
+                      <Typography variant="button">{t("RaidDifficulty.Heroic")}</Typography>
+                    </div>
+                    {/* </Tooltip> */}
+                  </ToggleButton>
+                </ToggleButtonGroup>
+                {/* {burningCrusadeDungeonDifficulty.map((key, i) => (
                   <Grid item xs="auto" key={i}>
                     <ToggleButton
                       classes={{
@@ -386,7 +434,7 @@ export default function UpgradeFinderFront(props) {
                       {t("RaidDifficulty." + key)}
                     </ToggleButton>
                   </Grid>
-                ))}
+                ))} */}
               </Grid>
             </Paper>
           </Grid>

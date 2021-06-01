@@ -66,6 +66,8 @@ function TopGearReport(props) {
   let itemList = {};
   let statList = {};
 
+
+
   if (checkResult(result)) {
     topSet = result.itemSet;
     enchants = topSet.enchantBreakdown;
@@ -73,12 +75,13 @@ function TopGearReport(props) {
     itemList = topSet.itemList;
     gemStats = gameType === "BurningCrusade" ? topSet.socketInformation : "";
     statList = topSet.setStats;
+    console.log(gemStats);
   } else {
     resultValid = false;
   }
 
   const getGemIDs = (slot) => {
-    if (gameType === "Retail") return "";
+    if (gameType === "Retail" || (gemStats == undefined)) return "";
     else {
       let gemString = "&gems=";
       for (var i = 0; i < gemStats.socketsAvailable.length; i++) {       
@@ -96,7 +99,7 @@ function TopGearReport(props) {
     <div
       style={{
         margin: "auto",
-        width: "70%",
+        width: "60%",
         display: "block",
       }}
     >
@@ -153,7 +156,7 @@ function TopGearReport(props) {
                         /* ---------------------------------------------------------------------------------------------- */}
                         <Grid container spacing={1}>
                           {itemList
-                            .filter((key) => key.slot === "Hands" || key.slot === "Waist" || key.slot === "Legs" || key.slot === "Feet" || key.slot === "Finger" || key.slot === "Trinket")
+                            .filter((key) => key.slot === "Hands" || key.slot === "Waist" || key.slot === "Legs" || key.slot === "Feet" || key.slot === "Finger" || key.slot === "Trinket" || key.slot === "Relics & Wands")
                             .map((item, index) => (
                               <ItemCardReport key={index} item={item} activateItem={true} enchants={enchants} gems={getGemIDs(item.slot)}/>
                             ))}
@@ -177,7 +180,7 @@ function TopGearReport(props) {
                             style={{
                               fontSize: "12px",
                               textAlign: "left",
-                              maxWidth: 300,
+                              maxWidth: 350,
                               backgroundColor: "rgba(44, 44, 44, 0.5)",
                               display: "block",
                             }}

@@ -79,7 +79,7 @@ export default function TopGear(props) {
     /* ------------------ Check that the player has selected an item in every slot. ----------------- */
     let topgearOk = true;
     let itemList = props.player.getSelectedItems();
-    console.log(props.player.getSelectedItems());
+    //console.log(props.player.getSelectedItems());
     let errorMessage = "";
     let slotLengths = {
       Head: 0,
@@ -188,6 +188,7 @@ export default function TopGear(props) {
     { label: t("slotNames.weapons"), slotName: "AllMainhands" },
     { label: t("slotNames.offhands"), slotName: "Offhands" },
   ];
+  if (gameType === "BurningCrusade") slotList.push({ label: t("slotNames.relics"), slotName: "Relics & Wands" })
 
   return (
     <div className={classes.header}>

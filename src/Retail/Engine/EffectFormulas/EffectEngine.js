@@ -23,17 +23,22 @@ import { getDruidTierSet } from "BurningCrusade/Engine/EffectFormulas/Druid/Drui
 import { getShamanTierSet } from "BurningCrusade/Engine/EffectFormulas/Shaman/ShamanTierSets";
 import { getPaladinTierSet } from "BurningCrusade/Engine/EffectFormulas/Paladin/PaladinTierSets";
 import { getPriestTierSet } from "BurningCrusade/Engine/EffectFormulas/Priest/PriestTierSets";
+
+import { getDruidRelic } from "BurningCrusade/Engine/EffectFormulas/Druid/DruidRelics";
+import { getShamanRelic } from "BurningCrusade/Engine/EffectFormulas/Shaman/ShamanRelics";
+import { getPaladinRelic } from "BurningCrusade/Engine/EffectFormulas/Paladin/PaladinRelics";
+
 import { getGenericSet } from "BurningCrusade/Engine/EffectFormulas/Generic/GenericSets";
 
 // Effect is a small "dictionary" with two key : value pairs.
 // The EffectEngine is basically a routing device. It will take your effect and effect type and grab the right formula from the right place.
 // This allows each spec to work on spec-specific calculations without a need to interact with the other specs.
-export function getEffectValue(effect, player, contentType, itemLevel = 0, userSettings, gameType = "Retail") {
+export function getEffectValue(effect, player, contentType, itemLevel = 0, userSettings, gameType = "Retail", setStats = {}) {
   let bonus_stats = {};
   const effectName = effect.name;
   const effectType = effect.type;
 
-  //console.log("ITEM EFFECT" + effectName + " " + effectType + ". player spec" + player.spec + " game type: " + gameType + ". Full: " + JSON.stringify(effect));
+  
 
 
   // ----- Retail Effect -----
@@ -101,16 +106,30 @@ export function getEffectValue(effect, player, contentType, itemLevel = 0, userS
     } 
     else if (effectType === "set bonus") {
       // Generic bonuses like Tailoring etc.
-      bonus_stats = getGenericSet(effectName, player);
-
+      bonus_stats = getGenericSet(effectName, player, setStats);
     }
     else if (effectType === "trinket") {
       bonus_stats = getTrinketEffectBC(effectName, player, userSettings);
+    }
+    else if (effectType === "relic") {
+      switch (player.spec) {
+        case "Restoration Shaman BC":
+          bonus_stats = getShamanRelic(effectName, player, userSettings);
+          break;
+        case "Restoration Druid BC":
+          bonus_stats = getDruidRelic(effectName, player, userSettings);
+          break;
+        case "Holy Paladin BC":
+          bonus_stats = getPaladinRelic(effectName, player, userSettings);
+          break;
+      }
+
     }
     if (effect.type === "special") {
       bonus_stats = getGenericEffectBC(effectName, player, contentType);
     } 
   }
+  console.log("ITEM EFFECT" + effectName + " " + effectType + ". " + ". Result: " + JSON.stringify(bonus_stats));
   return bonus_stats;
 }
 

@@ -60,6 +60,9 @@
     "Battletag": "Battletag",
     "Edit": "Edit",
     "Equipped": "Equipped",
+    "Error": "Error",
+    "Burning Crusade": "Burning Crusade",
+    "Shadowlands": "Shadowlands",
 
     "Changelog": {
       "Header": "ChangelogCH",
@@ -291,6 +294,7 @@
       "Profile": "ProfileCH",
       "CharHeader": "CharactersCH",
       "CharHelpText": "Add your characters here. Right click to edit your stat weights, realm information and more.CH",
+      "TierSets": "Tier Sets",
       "Articles": {
         "Header": "Recent Spec Articles",
         "HelpText": ""
@@ -436,7 +440,8 @@
       "offhands": "Off-HandsCH",
       "finger": "RingCH",
       "weapons": "WeaponsCH",
-      "weaponCombos": "Weapon CombosCH"
+      "weaponCombos": "Weapon CombosCH",
+      "relics": "圣物"
     },
 
     "Soulbinds": {
@@ -557,6 +562,13 @@
       "25914": "神圣震击",
       "82326": "圣光术",
       "337824": "震击屏障"
+    },
+
+    "TierSets": {
+      "Title": "Tier Sets",
+      "2Set": "2 Set HPS",
+      "4Set": "4 Set HPS",
+      "6Set": "6 Set HPS"
     },
 
     "TopGear": {

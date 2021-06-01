@@ -23,6 +23,33 @@ const softSlice = 3000;
 const DR_CONST = 0.00196669230769231;
 const DR_CONSTLEECH = 0.04322569230769231;
 
+const classRaceStats = {
+  "Restoration Druid BC": {
+    "Night Elf": {intellect: 120, spirit: 133},
+    "Tauren": {intellect: 115, spirit: 135},
+  },
+  "Priest BC": {
+    "Human": {intellect: 145, spirit: 151},
+    "Night Elf": {intellect: 145, spirit: 151},
+    "Dwarf": {intellect: 144, spirit: 150},
+    "Draenei": {intellect: 146, spirit: 153},
+    "Undead": {intellect: 143, spirit: 156},
+    "Blood Elf": {intellect: 149, spirit: 150},
+  },
+  "Holy Paladin BC": {
+    "Human": {intellect: 83, spirit: 89},
+    "Dwarf": {intellect: 82, spirit: 88},
+    "Draenei": {intellect: 84, spirit: 91},
+    "Blood Elf": {intellect: 87, spirit: 88},
+  },
+  "Restoration Shaman BC": {
+    "Draenei": {intellect: 109, spirit: 122},
+    "Orc": {intellect: 105, spirit: 123},
+    "Troll": {intellect: 104, spirit: 121},
+    "Tauren": {intellect: 103, spirit: 122},
+  }
+
+}
 
 // block for `time` ms, then return the number of loops we could run in that time:
 export function expensive(time) {
@@ -133,6 +160,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
     let bonus_stats = {
         intellect: 0,
         bonushealing: 0,
+        spelldamage: 0,
         spirit: 0,
         crit: 0,
         stamina: 0,
@@ -143,6 +171,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
     let enchant_stats = {
       intellect: 0,
       bonushealing: 0,
+      spelldamage: 0,
       spirit: 0,
       crit: 0,
       stamina: 0,
@@ -154,6 +183,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
     let talent_stats = {
       intellect: 0,
       bonushealing: 0,
+      spelldamage: 0,
       spirit: 0,
       crit: 0,
       stamina: 0,
@@ -162,6 +192,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
     }
   
     /*
+    
     let adjusted_weights = {
       intellect: 1,
       haste: player.statWeights[contentType]["haste"],
@@ -171,51 +202,65 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
       leech: player.statWeights[contentType]["leech"],
     };
     */
+   let adjusted_weights = {...player.statWeights["Raid"]}
+    // Mana Profiles
+    if (userSettings.manaProfile === "Conservative") {
+      adjusted_weights['mp5'] = adjusted_weights['mp5'] * 1.2;
+      adjusted_weights['intellect'] = adjusted_weights['intellect'] * 1.16;
+      adjusted_weights['spirit'] = adjusted_weights['spirit'] * 1.2;
+    }
+    else if (userSettings.manaProfile === "Max Healing") {
+      adjusted_weights['mp5'] = adjusted_weights['mp5'] * 0.75;
+      adjusted_weights['intellect'] = adjusted_weights['intellect'] * 0.85;
+      adjusted_weights['spirit'] = adjusted_weights['spirit'] * 0.75;
+    }
+    
+
+   console.log(adjusted_weights);
 
   
     // Apply consumables if ticked.
   
     // -- ENCHANTS --
-    /*
-    let highestWeight = getHighestWeight(player, contentType);
-    bonus_stats[highestWeight] += 32; // 16 x 2.
-    enchants["Finger"] = "+16 " + highestWeight;
-    */
-    enchant_stats.bonushealing += 35;
-    enchant_stats.mp5 += 7;
-    enchants['Head'] = "Glyph of Renewal"
 
-    enchant_stats.bonushealing += 33;
-    enchant_stats.mp5 += 4;
-    enchants['Shoulder'] = "Greater Inscription of Faith"
-
-    enchant_stats.mp5 += 6;
-    enchants['Chest'] = "Restore Mana - Prime"
-
-    enchant_stats.bonushealing += 30;
-    enchants['Wrist'] = "Superior Healing"
-
-    enchant_stats.bonushealing += 35;
-    enchants['Hands'] = "Major Healing"
-
-    enchant_stats.bonushealing += 66;
-    enchants['Legs'] = "Golden Spellthread"
-
-    enchant_stats.stamina += 9;
-    enchants['Feet'] = "Boar's Speed"
-
-    enchant_stats.bonushealing += (20 * 2); // Two finger slots.
-    enchants['Finger'] = "Healing Power"
-
-    enchant_stats.bonushealing += 81;
-    enchant_stats.intellect += 12;
-    enchants['CombinedWeapon'] = "Major Healing & Intellect"
-
-
+    if (userSettings.autoEnchant) {
+      enchant_stats.bonushealing += 35;
+      enchant_stats.mp5 += 7;
+      enchants['Head'] = "Glyph of Renewal"
+  
+      enchant_stats.bonushealing += 33;
+      enchant_stats.mp5 += 4;
+      enchants['Shoulder'] = "Greater Inscription of Faith"
+  
+      enchant_stats.mp5 += 6;
+      enchants['Chest'] = "Restore Mana - Prime"
+  
+      enchant_stats.bonushealing += 30;
+      enchants['Wrist'] = "Superior Healing"
+  
+      enchant_stats.bonushealing += 35;
+      enchants['Hands'] = "Major Healing"
+  
+      enchant_stats.bonushealing += 66;
+      enchants['Legs'] = "Golden Spellthread"
+  
+      enchant_stats.stamina += 9;
+      enchants['Feet'] = "Boar's Speed"
+  
+      if ("profession" === "Enchanting") // todo 
+      {
+        enchant_stats.bonushealing += (20 * 2); // Two finger slots.
+        enchants['Finger'] = "Healing Power"
+      }
+  
+      enchant_stats.bonushealing += 81;
+      enchant_stats.intellect += 12;
+      enchants['CombinedWeapon'] = "Major Healing & Intellect"
+    }
 
     // ----- SOCKETS -----
     var s0 = performance.now();
-    const optimalGems = gemGear(builtSet.itemList, player)
+    const optimalGems = gemGear(builtSet.itemList, adjusted_weights, userSettings)
     hardScore += optimalGems.score;
     builtSet.bcSockets = optimalGems;
     const gemStats = getGemStatLoadout(optimalGems.socketsAvailable, optimalGems.socketedPieces, optimalGems.socketedColors);
@@ -223,38 +268,32 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
     var s1 = performance.now();
     console.log("Gems took " + (s1 - s0) + " milliseconds with count ")
 
-
+ 
     // ----------------------
 
-
-    // -- Effects --
-    let effectStats = [];
-    effectStats.push(bonus_stats);
-    for (var x = 0; x < effectList.length; x++) {
-      
-      effectStats.push(getEffectValue(effectList[x], player, contentType, effectList[x].level, userSettings, "BurningCrusade"));
-  
-    }
-    bonus_stats = mergeBonusStats(effectStats);
-    
-
-
-  
     compileStats(setStats, bonus_stats); // Add the base stats on our gear together with enchants & gems.
-    compileStats(setStats, gemStats);
+    compileStats(setStats, gemStats); //TODO
     compileStats(setStats, enchant_stats);
     //applyDiminishingReturns(setStats); // Apply Diminishing returns to our haul.
-    addBaseStats(setStats, player.spec); // Add our base stats, which are immune to DR. This includes our base 5% crit, and whatever base mastery our spec has.
+    addBaseStats(setStats, player.race, player.spec); // Add our base stats, which are immune to DR. This includes our base 5% crit, and whatever base mastery our spec has.
     
-    // Talents
+
+
+    // Talents & Racials
+
+    // Human
+    if (player.race.includes("Human")) {
+      talent_stats.spirit = (setStats.spirit) * 0.1;
+    }
+
     // This can be properly formalized.
     if (player.getSpec() === "Holy Paladin BC") {
       talent_stats.intellect = setStats.intellect * 0.1;
-      talent_stats.bonushealing = (setStats.intellect + talent_stats.intellect) * 0.35;
+      talent_stats.spelldamage = (setStats.intellect + talent_stats.intellect) * 0.35;
     }
     else if (player.getSpec() === "Restoration Shaman BC") {
       talent_stats.bonushealing = (setStats.intellect) * 0.3;
-      talent_stats.bonusdamage = (setStats.intellect) * 0.3;
+      talent_stats.spelldamage = (setStats.intellect) * 0.3;
     }
     else if (player.getSpec() === "Restoration Druid BC") {
       // Also gets 30% of spirit MP5 as MP5
@@ -262,12 +301,30 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
     }
     else if (player.getSpec() === "Priest BC") {
       // Also gets 30% of spirit MP5 as MP5
-      talent_stats.spirit = (setStats.spirit) * 0.05;
-      talent_stats.bonushealing = (setStats.spirit + talent_stats.spirit) * 0.25;
-      talent_stats.bonusdamage = (setStats.spirit + talent_stats.spirit) * 0.25;
+      talent_stats.spirit += (setStats.spirit + talent_stats.spirit) * 0.05;
+      //talent_stats.bonushealing = (setStats.spirit + talent_stats.spirit) * 0.25;
+      talent_stats.spelldamage = (setStats.spirit + talent_stats.spirit) * 0.25;
     }
-    
+
     compileStats(setStats, talent_stats);
+
+    // -- Effects --
+    let effectStats = [];
+    effectStats.push(bonus_stats);
+    for (var x = 0; x < effectList.length; x++) {
+      console.log(effectList[x]);
+      effectStats.push(getEffectValue(effectList[x], player, contentType, effectList[x].level, userSettings, "BurningCrusade", setStats));
+  
+    }
+    bonus_stats = mergeBonusStats(effectStats);
+
+    // Convert spelldamage to bonushealing
+    setStats.bonushealing = (setStats.bonushealing + setStats.spelldamage);
+    setStats.spelldamage = 0;
+
+    
+
+    
 
     for (var stat in setStats) {
       if (stat === "hps") {
@@ -275,7 +332,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
       } else if (stat === "dps") {
         continue;
       } else {
-        hardScore += setStats[stat] * player.statWeights["Raid"][stat];
+        hardScore += setStats[stat] * adjusted_weights[stat];
         //console.log("Adding " + (setStats[stat] * player.statWeights["Raid"][stat]) + " to hardscore for stat " + stat + " with stat weight: " + player.statWeights["Raid"][stat]);
       }
     }
@@ -302,6 +359,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
     const val = {
         intellect: mergeStat(stats, 'intellect'),
         bonushealing: mergeStat(stats, 'bonushealing'),
+        spelldamage: mergeStat(stats, 'spelldamage'),
         spirit: mergeStat(stats, 'spirit'),
         crit: mergeStat(stats, 'crit'),
         stamina: mergeStat(stats, 'stamina'),
@@ -313,11 +371,14 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
   
   }
 
-function addBaseStats(stats, spec) {
-    stats.crit += 175;
-  
-    return stats;
-  
+function addBaseStats(stats, race, spec) {
+
+  const base_stats = classRaceStats[spec][race.replace("Races.", "")];
+
+  for (const [key, value] of Object.entries(base_stats)) {
+    stats[key] = stats[key] + value;
+  }
+
 }
 
 
@@ -339,6 +400,7 @@ function createSets(itemList, rawWepCombos) {
     Finger: 0,
     Trinket: 0,
     Weapon: 0,
+    'Relics & Wands': 0,
   };
 
   let splitItems = {
@@ -355,6 +417,7 @@ function createSets(itemList, rawWepCombos) {
     Finger: [],
     Trinket: [],
     WeaponSet: [],
+    'Relics & Wands': [],
   };
 
   for (var i = 0; i < itemList.length; i++) {
@@ -366,7 +429,7 @@ function createSets(itemList, rawWepCombos) {
   }
   slotLengths.Weapon = Object.keys(wepCombos).length;
 
-  //console.log(JSON.stringify(slotLengths));
+  console.log(JSON.stringify(slotLengths));
   // console.log(splitItems.Finger);
 
   for (var head = 0; head < slotLengths.Head; head++) {
@@ -420,26 +483,31 @@ function createSets(itemList, rawWepCombos) {
                                   if (splitItems.Trinket[trinket].id !== splitItems.Trinket[trinket2].id
                                     && trinket < trinket2) {
 
-                                    let includedItems = [
-                                      splitItems.Head[head],
-                                      splitItems.Neck[neck],
-                                      splitItems.Shoulder[shoulder],
-                                      splitItems.Back[back],
-                                      splitItems.Chest[chest],
-                                      splitItems.Wrist[wrist],
-                                      splitItems.Hands[hands],
-                                      splitItems.Waist[waist],
-                                      splitItems.Legs[legs],
-                                      splitItems.Feet[feet],
-                                      splitItems.Finger[finger],
-                                      splitItems.Finger[finger2],
-                                      splitItems.Trinket[trinket],
-                                      splitItems.Trinket[trinket2],
-                                      wepCombos[weapon],
-                                    ];
-                                    let sumSoft = sumScore(softScore);
-                                    itemSets.push(new ItemSet(setCount, includedItems, sumSoft, "BurningCrusade"));
-                                    setCount++;
+                                      for (var relics = 0; relics < slotLengths['Relics & Wands']; relics++) {
+                                        softScore.relics = splitItems['Relics & Wands'][relics].softScore;  
+
+                                        let includedItems = [
+                                          splitItems.Head[head],
+                                          splitItems.Neck[neck],
+                                          splitItems.Shoulder[shoulder],
+                                          splitItems.Back[back],
+                                          splitItems.Chest[chest],
+                                          splitItems.Wrist[wrist],
+                                          splitItems.Hands[hands],
+                                          splitItems.Waist[waist],
+                                          splitItems.Legs[legs],
+                                          splitItems.Feet[feet],
+                                          splitItems.Finger[finger],
+                                          splitItems.Finger[finger2],
+                                          splitItems.Trinket[trinket],
+                                          splitItems.Trinket[trinket2],
+                                          wepCombos[weapon],
+                                          splitItems['Relics & Wands'][relics],
+                                        ];
+                                        let sumSoft = sumScore(softScore);
+                                        itemSets.push(new ItemSet(setCount, includedItems, sumSoft, "BurningCrusade"));
+                                        setCount++;
+                                    }
                                   }
                                 }
                               }

@@ -143,7 +143,7 @@ function processItem(line, player, contentType, type) {
 
 
   // Add the new item to our characters item collection.
-  if (itemID !== 0) {
+  if (itemID !== 0 && itemSlot !== "") {
 
     let item = new BCItem(itemID, "", itemSlot, bonusIDS);
     item.active = itemEquipped;

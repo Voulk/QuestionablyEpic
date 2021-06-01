@@ -4,6 +4,7 @@ import { Card, CardContent, Typography, Grid, Divider } from "@material-ui/core"
 import { getTranslatedItemName, getItemIcon } from "../../../Engine/ItemUtilities";
 import "./ItemUpgrade.css";
 import { useTranslation } from "react-i18next";
+import { useSelector } from "react-redux";
 
 const useStyles = makeStyles({
   root: {
@@ -41,13 +42,17 @@ export default function ItemCard(props) {
   const itemLevel = item.level;
   const isLegendary = "effect" in item && item.effect.type === "spec legendary";
   const itemDifferential = props.itemDifferential;
+  const gameType = useSelector((state) => state.gameType);
+  const wowheadDomain = (gameType === "BurningCrusade" ? "tbc-" : "") + currentLanguage;
 
+  /*
   const itemQuality = (itemLevel) => {
     if (isLegendary) return "#ff8000";
     else if (itemLevel >= 183) return "#a73fee";
     else if (itemLevel >= 120) return "#328CE3";
     else return "#1eff00";
-  };
+  }; */
+  const itemQuality = item.getQualityColor();
 
   const upgradeColor = (num) => {
     if (num > 0) {
@@ -60,10 +65,10 @@ export default function ItemCard(props) {
   let itemName = "";
 
   if (item.offhandID > 0) {
-    itemName = getTranslatedItemName(item.id, currentLanguage) + " & " + getTranslatedItemName(item.offhandID, currentLanguage);
+    itemName = getTranslatedItemName(item.id, currentLanguage, "", gameType) + " & " + getTranslatedItemName(item.offhandID, currentLanguage, "", gameType);
   } else {
     if (isLegendary) itemName = item.effect.name;
-    else itemName = getTranslatedItemName(item.id, currentLanguage);
+    else itemName = getTranslatedItemName(item.id, currentLanguage, "", gameType);
   }
 
   const sourceName = (item) => {
@@ -100,18 +105,18 @@ export default function ItemCard(props) {
                 display: "inline-flex",
               }}
             >
-              <a data-wowhead={"item=" + item.id + "&" + "ilvl=" + item.level + "&domain=" + currentLanguage}>
+              <a data-wowhead={"item=" + item.id + "&" + "ilvl=" + item.level + "&domain=" + wowheadDomain}>
                 <div className="container-ItemCards">
                   <img
                     alt="img"
                     width={props.slotPanel ? 54 : 28}
                     height={props.slotPanel ? 54 : 28}
-                    src={getItemIcon(item.id)}
+                    src={getItemIcon(item.id, gameType)}
                     style={{
                       borderRadius: 4,
                       borderWidth: "1px",
                       borderStyle: "solid",
-                      borderColor: itemQuality(itemLevel),
+                      borderColor: itemQuality,
                     }}
                   />
                   <div className="bottom-right-ItemCards"> {item.level} </div>
@@ -124,7 +129,7 @@ export default function ItemCard(props) {
             <Grid item container display="inline" direction="column" justify="space-around" xs="auto">
               <Grid container item wrap="nowrap" justify="space-between" alignItems="center" style={{ width: "100%" }}>
                 <Grid item xs={10} display="inline">
-                  <Typography variant={itemName.length > 30 ? "subtitle2" : "subtitle1"} wrap="nowrap" display="inline" align="left" style={{ color: itemQuality(itemLevel) }}>
+                  <Typography variant={itemName.length > 30 ? "subtitle2" : "subtitle1"} wrap="nowrap" display="inline" align="left" style={{ color: itemQuality }}>
                     {itemName}
                   </Typography>
                 </Grid>

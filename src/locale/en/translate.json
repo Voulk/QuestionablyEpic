@@ -60,6 +60,9 @@
     "Battletag": "Battletag",
     "Edit": "Edit",
     "Equipped": "Equipped",
+    "Error": "Error",
+    "Burning Crusade": "Burning Crusade",
+    "Shadowlands": "Shadowlands",
 
     "Changelog": {
       "Header": "Changelog",
@@ -282,6 +285,7 @@
       "Profile": "Profile",
       "CharHeader": "Characters",
       "CharHelpText": "Add your characters here. Right click to edit your stat weights, realm information and more.",
+      "TierSets": "Tier Sets",
       "Articles": {
         "Header": "Recent Spec Articles",
         "HelpText": ""
@@ -294,7 +298,8 @@
         "CooldownPlanner": "Plan your cooldowns. Create your own or analyse logs",
         "Profile": "Edit your details",
         "UpgradeFinder": "Find your next piece of gear!",
-        "TrinketAnalysis": "See how this tiers trinkets line up in graph form"
+        "TrinketAnalysis": "See how this tiers trinkets line up in graph form",
+        "TierSets": ""
       }
     },
 
@@ -439,7 +444,8 @@
       "offhands": "Off-Hands",
       "finger": "Ring",
       "weapons": "Weapons",
-      "weaponCombos": "Weapon Combos"
+      "weaponCombos": "Weapon Combos",
+      "relics": "Relics & Wands"
     },
 
     "Soulbinds": {
@@ -492,24 +498,24 @@
       },
       "BurningCrusade": {
         "Setting0Spacer": "--------------------------------------------------------------------",
-        "Setting0Tooltip": "",
-        "Setting0Title": "",
+        "Setting0Tooltip": "Mana varies a little in value based on fight length and how frequently you cast.",
+        "Setting0Title": "Mana Profile",
         "Setting0TextFieldLabel": "",
         "Setting1Spacer": "--------------------------------------------------------------------",
-        "Setting1Tooltip": "",
-        "Setting1Title": "",
+        "Setting1Tooltip": "Enable this to include common raid buffs in the gear comparison.",
+        "Setting1Title": "Include Raid Buffs?",
         "Setting1TextFieldLabel": "",
         "Setting2Spacer": "--------------------------------------------------------------------",
-        "Setting2Tooltip": "",
-        "Setting2Title": "",
+        "Setting2Tooltip": "Pick which Meta gem you'd like the app to try and socket.",
+        "Setting2Title": "Meta Gem",
         "Setting2TextFieldLabel": "",
         "Setting3Spacer": "--------------------------------------------------------------------",
         "Setting3Tooltip": "",
-        "Setting3Title": "",
+        "Setting3Title": "Auto-Enchant Items?",
         "Setting3TextFieldLabel": "",
         "Setting4Spacer": "--------------------------------------------------------------------",
-        "Setting4Tooltip": "",
-        "Setting4Title": "",
+        "Setting4Tooltip": "Pick which gems you'd like the app to socket. Jewelcrafting-specifics ignored for now.",
+        "Setting4Title": "Gem Rarity",
         "Setting4TextFieldLabel": "",
         "Setting5Spacer": "--------------------------------------------------------------------",
         "Setting5Tooltip": "",
@@ -562,6 +568,13 @@
       "337824": "Shock Barrier"
     },
 
+    "TierSets": {
+      "Title": "Tier Sets",
+      "2Set": "2 Set HPS",
+      "4Set": "4 Set HPS",
+      "6Set": "6 Set HPS"
+    },
+
     "TopGear": {
       "Title": "Top Gear",
       "HelpText": "Top Gear lets you compare all of your gear at once! Enter your SimC string below and click any items you want included. When you're all set, hit 'Go' at the bottom of the page. To enter items manually, return to the main menu and include them in QE Quick Compare.",
@@ -598,7 +611,9 @@
       "SimCBody1Missing": "SimC - Missing",
       "SimCBody2": "Current Equipped Gear:",
       "SimCButton": "Import SimC",
-      "HelpText": "Insert a SimC String, select up to two raid difficulties, the Mythic+ ilvl you're interested in, and your PVP rating to see where you can find your next upgrade! All results are based on the gear you are actively wearing."
+      "HelpText": "Insert a SimC String, select up to two raid difficulties, the Mythic+ ilvl you're interested in, and your PVP rating to see where you can find your next upgrade! All results are based on the gear you are actively wearing.",
+      "HelpTextBC": "",
+      "DungeonBodyBC": ""
     },
 
     "TrinketAnalysis": {
@@ -907,11 +922,11 @@
       "Raids": {
         "745": "Karazhan",
         "321": "Zul'Aman",
-        "746": "Gruul's Lair",
+        "746": "Gruul & Magtheridon",
         "747": "Magtheridon's Lair",
         "748": "Serpentshrine Cavern",
         "749": "Tempest Keep",
-        "750": "The Battle for Mount Hyjal",
+        "750": "Mount Hyjal",
         "751": "Black Temple",
         "752": "Sunwell Plateau"
       },

@@ -6,8 +6,8 @@ export function getItemSet(id, pieces) {
   });
   if (temp.length > 0) {
     for (const [bonus, effectid] of Object.entries(temp[0].setBonuses)) {
-      //console.log("Getting bonuss" + bonus + ". ID: " + effectid);
-      if (pieces > bonus) effects.push({type: 'set bonus', name: effectid, class: temp[0].class});
+      //console.log("Getting bonuss" + bonus + ". ID: " + effectid + ". Pieces: " + pieces);
+      if (pieces >= bonus) effects.push({type: 'set bonus', name: effectid, class: temp[0].class});
     }
     return effects;
   }
@@ -140,7 +140,7 @@ export const itemSets = [
     id: 571,
     class: -1,
     setBonuses: {
-      2: 32200, // Increases healing by up to 10% of your total Intellect. // TODO: Requires Mage on tooltip?
+      2: 32200, // Increases healing by up to 10% of your total Intellect.
     },
   },
   {

@@ -33,7 +33,7 @@ export default function WorldBossGearContainer(props) {
                   width: 175,
                   height: 181,
                   paddingLeft: 8,
-                  backgroundImage: `url(${require(UpgradeFinderBossImages(key)).default})`,
+                  backgroundImage: `url(${UpgradeFinderBossImages(key)})`,
                   backgroundRepeat: "no-repeat",
                   backgroundPosition: "center 60%",
                   backgroundSize: "auto 100%",

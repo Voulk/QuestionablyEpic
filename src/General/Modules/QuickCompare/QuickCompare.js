@@ -17,6 +17,8 @@ import HelpText from "../SetupAndMenus/HelpText";
 import { CONSTRAINTS } from "../../Engine/CONSTRAINTS";
 import UpgradeFinderSimC from "../UpgradeFinder/UpgradeFinderSimCImport";
 import { useSelector } from "react-redux";
+import Settings from "../Settings/Settings";
+import userSettings from "../Settings/SettingsObject";
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -91,9 +93,9 @@ function getSlots() {
     { value: "Feet", activeItem: "Feet", label: t("slotNames.feet") },
     { value: "Finger", activeItem: "Finger", label: t("slotNames.finger") },
     { value: "Trinket", activeItem: "Trinket", label: t("slotNames.trinket") },
-    // { value: "1H Weapon", label: t("slotNames.mainHands") },
     { value: "Weapons", activeItem: "1H Weapon", label: t("slotNames.weapons") },
     { value: "Offhands", activeItem: "Offhands", label: t("slotNames.offhands") },
+    { value: "Relics & Wands", activeItem: "Relics & Wands", label: t("slotNames.relics") },
   ];
 
   return slots;
@@ -162,16 +164,14 @@ export default function QuickCompare(props) {
     const acceptableWeaponTypes = getValidWeaponTypes(spec, slotName);
     let newItemList = [];
     const db = getItemDB(gameType);
-    console.log(db);
 
     db.filter(
-        (key) =>
-          (slotName === key.slot && key.slot === "Back") ||
-          (slotName === key.slot && key.itemClass === 4 && acceptableArmorTypes.includes(key.itemSubClass)) ||
-          (slotName === "Offhands" && (key.slot === "Holdable" || key.slot === "Offhand" || key.slot === "Shield")) ||
-          (slotName === "Weapons" && key.itemClass === 2 && acceptableWeaponTypes.includes(key.itemSubClass)),
-      )
-      .map((key) => newItemList.push({ value: key.id, label: key.names[currentLanguage] }));
+      (key) =>
+        (slotName === key.slot && key.slot === "Back") ||
+        (slotName === key.slot && key.itemClass === 4 && acceptableArmorTypes.includes(key.itemSubClass)) ||
+        (slotName === "Offhands" && (key.slot === "Holdable" || key.slot === "Offhand" || key.slot === "Shield")) ||
+        (slotName === "Weapons" && key.itemClass === 2 && acceptableWeaponTypes.includes(key.itemSubClass)),
+    ).map((key) => newItemList.push({ value: key.id, label: key.names[currentLanguage] }));
 
     newItemList.sort((a, b) => (a.label > b.label ? 1 : -1));
     setItemDropdown(newItemList);
@@ -185,14 +185,13 @@ export default function QuickCompare(props) {
     }
     let player = props.player;
     let item = "";
-    
+
     if (gameType === "Retail") {
       item = new Item(itemID, itemName, getItemProp(itemID, "slot", gameType), itemSocket, itemTertiary, 0, itemLevel, "");
-    }
-    else {
+    } else {
       item = new BCItem(itemID, itemName, getItemProp(itemID, "slot", gameType), "");
     }
-    
+
     item.softScore = scoreItem(item, player, contentType, gameType);
 
     player.addActiveItem(item);
@@ -211,11 +210,10 @@ export default function QuickCompare(props) {
     if (val === null) {
       setItemID("");
       setItemName("");
-
     } else {
       setItemID(val.value);
       setItemName(val.name);
-      if (gameType === "BurningCrusade") setItemLevel(getItemProp(val.value, "itemLevel", gameType))
+      if (gameType === "BurningCrusade") setItemLevel(getItemProp(val.value, "itemLevel", gameType));
     }
   };
 
@@ -248,6 +246,16 @@ export default function QuickCompare(props) {
     setSlot(e.target.value);
     setItemList([...props.player.getActiveItems(e.target.value)]);
     fillItems(e.target.value, props.player.spec);
+  };
+
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                       Settings Functions                                       */
+  /* ---------------------------------------------------------------------------------------------- */
+
+  const editSettings = (setting, newValue) => {
+    //console.log("Updating Settings" + setting + ". " + newValue);
+    userSettings[setting] = newValue;
+    //console.log("Settings: " + JSON.stringify(userSettings));
   };
 
   // TODO. Calculate the score for a given item.
@@ -283,6 +291,9 @@ export default function QuickCompare(props) {
         <Grid item xs={12}>
           <UpgradeFinderSimC quickCompare={true} player={props.player} simcSnack={props.simcSnack} allChars={props.allChars} />
         </Grid>
+        {/*<Grid item xs={12}>
+          <Settings player={props.player} userSettings={userSettings} editSettings={editSettings} />
+        </Grid> */}
         <Grid item xs={12}>
           <Paper elevation={0}>
             <Grid
@@ -310,7 +321,7 @@ export default function QuickCompare(props) {
                           {x.label}
                         </MenuItem>
                       ))
-                      .map((key, i) => [key, <Divider key={i} />])}
+                      .map((key, i) => [key, <Divider key={"menuItem" + i} />])}
                   </Select>
                 </FormControl>
               </Grid>
@@ -377,74 +388,80 @@ export default function QuickCompare(props) {
                   />
                 </FormControl>
               </Grid>
-              
-              {gameType === "Retail" ? 
-              <Grid item>
-                <FormControl className={classes.formControl} variant="outlined" size="small" disabled={itemLevel === "" ? true : false}>
-                  <InputLabel id="itemsocket">{t("QuickCompare.Socket")}</InputLabel>
-                  <Select
-                    // key={1}
-                    labelId="itemsocket"
-                    value={itemSocket}
-                    onChange={itemSocketChanged}
-                    MenuProps={menuStyle}
-                    label={t("QuickCompare.Socket")}
-                  >
-                    {[
-                      <MenuItem key={1} label={t("Yes")} value={true}>
-                        {t("Yes")}
-                      </MenuItem>,
-                      <Divider key={2} />,
-                    ]}
-                    ,
-                    {[
-                      <MenuItem key={3} label={t("No")} value={false}>
-                        {t("No")}
-                      </MenuItem>,
-                      <Divider key={4} />,
-                    ]}
-                  </Select>
-                </FormControl>
-              </Grid> : ""}
+
+              {gameType === "Retail" ? (
+                <Grid item>
+                  <FormControl className={classes.formControl} variant="outlined" size="small" disabled={itemLevel === "" ? true : false}>
+                    <InputLabel id="itemsocket">{t("QuickCompare.Socket")}</InputLabel>
+                    <Select
+                      // key={1}
+                      labelId="itemsocket"
+                      value={itemSocket}
+                      onChange={itemSocketChanged}
+                      MenuProps={menuStyle}
+                      label={t("QuickCompare.Socket")}
+                    >
+                      {[
+                        <MenuItem key={1} label={t("Yes")} value={true}>
+                          {t("Yes")}
+                        </MenuItem>,
+                        <Divider key={2} />,
+                      ]}
+                      ,
+                      {[
+                        <MenuItem key={3} label={t("No")} value={false}>
+                          {t("No")}
+                        </MenuItem>,
+                        <Divider key={4} />,
+                      ]}
+                    </Select>
+                  </FormControl>
+                </Grid>
+              ) : (
+                ""
+              )}
 
               {/* -------------------------------------------------------------------------- */
               /*                              Tertiary Dropdown                             */
               /* -------------------------------------------------------------------------- */}
 
-              {gameType === "Retail" ? 
-              <Grid item>
-                <FormControl
-                  className={classes.formControl}
-                  variant="outlined"
-                  size="small"
-                  style={{ width: t("QuickCompare.ItemLevel").length > 10 ? 160 : 120 }}
-                  disabled={itemLevel === "" ? true : false}
-                >
-                  <InputLabel id="itemtertiary">{t("QuickCompare.Tertiary")}</InputLabel>
-                  <Select key={"TertiarySelect"} labelId="itemtertiary" value={itemTertiary} onChange={itemTertiaryChanged} MenuProps={menuStyle} label={t("QuickCompare.Tertiary")}>
-                    {[
-                      <MenuItem key={"LeechItem"} label={t("Leech")} value={"Leech"}>
-                        {t("Leech")}
-                      </MenuItem>,
-                      <Divider key={1} />,
-                    ]}
-                    ,
-                    {[
-                      <MenuItem key={"AvoidanceItem"} label={t("Avoidance")} value={"Avoidance"}>
-                        {t("Avoidance")}
-                      </MenuItem>,
-                      <Divider key={2} />,
-                    ]}
-                    ,
-                    {[
-                      <MenuItem key={"NoneItem"} label={t("None")} value={"None"} onClick={""}>
-                        {t("None")}
-                      </MenuItem>,
-                      <Divider key={3} />,
-                    ]}
-                  </Select>
-                </FormControl>
-              </Grid> : "" }
+              {gameType === "Retail" ? (
+                <Grid item>
+                  <FormControl
+                    className={classes.formControl}
+                    variant="outlined"
+                    size="small"
+                    style={{ width: t("QuickCompare.ItemLevel").length > 10 ? 160 : 120 }}
+                    disabled={itemLevel === "" ? true : false}
+                  >
+                    <InputLabel id="itemtertiary">{t("QuickCompare.Tertiary")}</InputLabel>
+                    <Select key={"TertiarySelect"} labelId="itemtertiary" value={itemTertiary} onChange={itemTertiaryChanged} MenuProps={menuStyle} label={t("QuickCompare.Tertiary")}>
+                      {[
+                        <MenuItem key={"LeechItem"} label={t("Leech")} value={"Leech"}>
+                          {t("Leech")}
+                        </MenuItem>,
+                        <Divider key={1} />,
+                      ]}
+                      ,
+                      {[
+                        <MenuItem key={"AvoidanceItem"} label={t("Avoidance")} value={"Avoidance"}>
+                          {t("Avoidance")}
+                        </MenuItem>,
+                        <Divider key={2} />,
+                      ]}
+                      ,
+                      {[
+                        <MenuItem key={"NoneItem"} label={t("None")} value={"None"} onClick={""}>
+                          {t("None")}
+                        </MenuItem>,
+                        <Divider key={3} />,
+                      ]}
+                    </Select>
+                  </FormControl>
+                </Grid>
+              ) : (
+                ""
+              )}
 
               {/* -------------------------------------------------------------------------- */
               /*                                 Add Button                                 */

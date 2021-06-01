@@ -18,12 +18,7 @@ class Player {
     this.spec = specName;
     this.charName = playerName;
     this.charID = charID;
-    if (gameType === "Retail") {
-      this.setupDefaults(specName);
-      this.setDefaultCovenant(specName);
-      this.activeConduits = getAvailableClassConduits(specName);
-      this.gameType = "Retail";
-    }
+
 
     this.activeItems = [];
     this.activeConduits = [];
@@ -32,6 +27,13 @@ class Player {
     this.realm = realm;
     this.race = race;
     this.uniqueHash = getUnique();
+
+    if (gameType === "Retail") {
+      this.setupDefaults(specName);
+      this.setDefaultCovenant(specName);
+      this.activeConduits = getAvailableClassConduits(specName);
+      this.gameType = "Retail";
+    }
     
     if (statWeights !== "default" && statWeights.DefaultWeights === false) this.statWeights = statWeights;
     

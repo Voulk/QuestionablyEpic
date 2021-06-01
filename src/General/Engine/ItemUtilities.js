@@ -10,7 +10,7 @@ import Item from "../Modules/Player/Item";
 // import { i18n } from "react-i18next";
 import { reportError } from "../SystemTools/ErrorLogging/ErrorReporting";
 import { useSelector } from "react-redux";
-import { GEMS } from "./GEMS.js";
+import { GEMS } from "General/Engine/GEMS";
 
 /*
 
@@ -34,7 +34,13 @@ export function getValidArmorTypes(spec) {
     case SPEC.DISCPRIEST:
       return [0, 1]; // Misc + Cloth
     case "Holy Paladin BC":
-      return [0, 1, 2, 3, 4, 6]; // Misc + Plate + Shields
+      return [0, 1, 2, 3, 4, 6, 7]; // Misc + Plate + Shields
+    case "Restoration Druid BC":
+      return [0, 1, 2, 8]; // Misc + Plate + Shields
+    case "Restoration Shaman BC":
+      return [0, 1, 2, 3, 6, 9]; // Misc + Plate + Shields
+    case "Priest BC":
+      return [0, 1]; // Misc + Plate + Shields
     default:
       return [-1];
   }
@@ -71,6 +77,8 @@ export function getValidWeaponTypes(spec, slot) {
       switch (spec) {
         case SPEC.RESTOSHAMAN:
         case SPEC.HOLYPALADIN:
+        case "Holy Paladin BC":
+        case "Restoration Shaman BC":
           return [0, 6];
         default:
           return [0];
@@ -92,12 +100,29 @@ export function getValidWeaponTypes(spec, slot) {
           return [4, 10, 15, 19];
         case "Holy Paladin BC":
           return [0, 1, 4, 5, 6, 7, 8];
+        case "Restoration Druid BC":
+          return [4, 5, 6, 10, 13, 15];
+        case "Restoration Shaman BC":
+          return [0, 1, 4, 5, 10, 13, 15];
+        case "Priest BC":
+          return [4, 10, 15, 19];
         default:
           return [-1];
       }
     default:
       return [-1];
   }
+}
+
+export function filterBCItemListBySource(itemList, sourceInstance, sourceBoss) {
+  let temp = itemList.filter(function (item) {
+
+    return (
+      ((item.source.instanceId == sourceInstance && item.source.encounterId == sourceBoss) || (item.source.instanceId == sourceInstance && sourceBoss == 0))
+    );
+  });
+
+  return temp;
 }
 
 export function filterItemListBySource(itemList, sourceInstance, sourceBoss, level, pvpRank = 0) {
@@ -141,12 +166,7 @@ function sortItems(container) {
 }
 
 export function getItemDB(gameType = "Retail") {
-  // Replace with Redux pull.
-  
-  //const flag = "Retail";
-
   return gameType === "Retail" ? itemDB : BCItemDB;
-
 }
 
 export function getDifferentialByID(diffList, id, level) {
@@ -214,7 +234,7 @@ export function getItemIcon(id, gameType = "Retail") {
   //console.log("https://wow.zamimg.com/images/wow/icons/large/" + item.icon + " .jpg");
   if (gameType === "BurningCrusade" && item !== "") return "https://wow.zamimg.com/images/wow/icons/large/" + item.icon + ".jpg";
   else if (item !== "" && "icon" in item) return process.env.PUBLIC_URL + "/Images/Icons/" + item.icon + ".jpg";
-  else {
+  else if (item !== "") {
     reportError(this, "ItemUtilities", "Icon not found for ID", id);
     return process.env.PUBLIC_URL + "/Images/Icons/missing.jpg";
   }
@@ -421,43 +441,6 @@ export function buildStatString(stats, effect, lang = "en") {
 
 }
 
-// Builds a stat string out of an items given stats and effect.
-// Stats should be listed in order of quantity.
-/**
- * 
- * @deprecated
- */
-export function buildStatStringOld(stats, effect, lang = "en") {
-  //const { t, i18n } = useTranslation();
-  let statString = "";
-  let statsList = [
-    { key: "haste", val: stats["haste"] },
-    { key: "crit", val: stats["crit"] },
-    { key: "mastery", val: stats["mastery"] },
-    { key: "versatility", val: stats["versatility"] },
-  ];
-
-  statsList = statsList.sort(function (a, b) {
-    return b.val - a.val;
-  });
-
-  for (var ind in statsList) {
-    let statKey = statsList[ind]["key"];
-
-    statString +=
-      statsList[ind]["val"] > 0
-        ? statsList[ind]["val"] +
-          " " +
-          translatedStat[statKey][lang] +
-          //correctCasing(statsList[ind]["key"]) +
-          " / " //t("stats." + statsList[ind]["key"])
-        : "";
-  }
-
-  if (effect !== "") statString += "Effect" + " / "; // t("itemTags.effect")
-
-  return statString.slice(0, -3); // We slice here to remove excess slashes and white space from the end.
-}
 
 // Returns the string with its first letter capitalized.
 export function correctCasing(string) {
@@ -465,13 +448,11 @@ export function correctCasing(string) {
 }
 
 function scoreGemColor(gemList, player) {
-
   for (var ind in gemList) {
     const gem = gemList[ind];
     let gemScore = 0;
     for (const [stat, value] of Object.entries(gem.stats)) {
-      //console.log("Stat: " + stat + ". Value: " + value);
-      gemScore += value * player.getStatWeight("Raid", stat);
+      if (player[stat] && stat in player) gemScore += value * player[stat];
     }
     gem['score'] = gemScore;
     
@@ -484,7 +465,9 @@ function scoreGemColor(gemList, player) {
   return gemList;
 }
 
-export function getBestGem(player, color) {
+
+
+export function getBestGem(player, color, rarity = "rare") {
   let colors = []
   let gems = [...GEMS];
 
@@ -493,7 +476,7 @@ export function getBestGem(player, color) {
   else if (color === "yellow") colors = ["yellow", "orange", "green"] 
   else if (color === "all") colors = ["yellow", "blue", "red", "purple", "orange", "green"] 
 
-  let gemList = gems.filter((filter) => (colors.includes(filter.color) && filter.jewelcrafting === false && filter.rarity !== "Epic"));
+  let gemList = gems.filter((filter) => (colors.includes(filter.color) && filter.jewelcrafting === false && filter.rarity === rarity));
   gemList = scoreGemColor(gemList, player);
   return gemList[0];
 
@@ -514,14 +497,16 @@ export function socketItem(item, player) {
   if (socketList.bonus) {
     for (const [stat, value] of Object.entries(socketList.bonus)) {
       //console.log("Stat: " + stat + ". Value: " + value);
-      socketBonus += value * player.getStatWeight("Raid", stat);
+      socketBonus += value * player[stat];
     }
   }
 
   let colorMatch = {gems: [], score: socketBonus};
   let socketBest = {gems: [], score: 0};
-  for (const socket in socketList) {
+  for (const socNum in socketList.gems) {
+    const socket = socketList.gems[socNum]
     // Match colors
+    console.log(socket);
     if (['red', 'blue', 'yellow'].includes(socket)) {
       colorMatch['score'] += bestGems[socket].score;
       colorMatch['gems'].push(bestGems[socket].name);
@@ -531,7 +516,7 @@ export function socketItem(item, player) {
     }
 
   }
-
+  console.log("Socketing item" + JSON.stringify(socketBest));
   if (colorMatch.score >= socketBest.score) item.socketedGems = colorMatch;
   else item.socketedGems =  item.socketedGems = socketBest;
 
@@ -595,14 +580,14 @@ export function scoreItem(item, player, contentType, gameType = "Retail") {
     score += ((bonus_stats.mana * player.getSpecialQuery("OneManaHealing", contentType)) / player.getHPS(contentType)) * player.activeStats.intellect;
   }
 
-  // Add Socket
+  // Add Retail Socket
   if (item.socket) {
     score += 16 * player.getStatWeight(contentType, player.getHighestStatWeight(contentType));
   }
 
-  // BC specifics
+  // BC specific sockets
   if (item.sockets) {
-    socketItem(item, player);
+    socketItem(item, player.statWeights["Raid"]);
     score += item.socketedGems['score'];
     //console.log("Adding score: " + item.socketedGems['score'])
   }
@@ -623,6 +608,45 @@ function sumObjectsByKey(...objs) {
 // ----- Deprecated Functions -----
 // --------------------------------
 // Will be removed by the end of April.
+
+// Builds a stat string out of an items given stats and effect.
+// Stats should be listed in order of quantity.
+/**
+ * 
+ * @deprecated
+ */
+ export function buildStatStringOld(stats, effect, lang = "en") {
+  //const { t, i18n } = useTranslation();
+  let statString = "";
+  let statsList = [
+    { key: "haste", val: stats["haste"] },
+    { key: "crit", val: stats["crit"] },
+    { key: "mastery", val: stats["mastery"] },
+    { key: "versatility", val: stats["versatility"] },
+  ];
+
+  statsList = statsList.sort(function (a, b) {
+    return b.val - a.val;
+  });
+
+  for (var ind in statsList) {
+    let statKey = statsList[ind]["key"];
+
+    statString +=
+      statsList[ind]["val"] > 0
+        ? statsList[ind]["val"] +
+          " " +
+          translatedStat[statKey][lang] +
+          //correctCasing(statsList[ind]["key"]) +
+          " / " //t("stats." + statsList[ind]["key"])
+        : "";
+  }
+
+  if (effect !== "") statString += "Effect" + " / "; // t("itemTags.effect")
+
+  return statString.slice(0, -3); // We slice here to remove excess slashes and white space from the end.
+}
+
 /**
  * 
  * @param {*} id 

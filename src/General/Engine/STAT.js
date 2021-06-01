@@ -163,8 +163,8 @@ export const translatedStat = {
   stamina: { // Classic
     en: "Stamina"
   },
-  bonusdamage: { // Classic
-    en: "Bonus Damage"
+  spelldamage: { // Classic
+    en: "Healing"
   },
   spirit: { // Classic
     en: "Spirit"
@@ -187,7 +187,13 @@ export const translatedStat = {
   spellcrit: { // Classic
     en: "Crit"
   },
+  dodge: { // Classic
+    en: "Dodge"
+  },
   attackpower: { // Classic
     en: "Attack Power"
+  },
+  expertise: { // Classic
+    en: "Expertise"
   },
 };
