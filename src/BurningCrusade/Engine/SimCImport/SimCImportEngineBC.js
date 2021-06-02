@@ -2,7 +2,7 @@ import { BCItemDB} from "../../../Databases/BCItemDB";
 import { calcStatsAtLevel, getItemProp, getItemAllocations, scoreItem, correctCasing, getValidWeaponTypes } from "../../../General/Engine/ItemUtilities";
 import BCItem from "../../../General/Modules/Player/BCItem";
 import ItemSet from "../../../General/Modules/TopGear/ItemSet";
-import SuffixDB from "BurningCrusade/Databases/SuffixDB";
+import { suffixDB } from "BurningCrusade/Databases/SuffixDB";
 
 
 export function runBCSimC(simCInput, player, contentType, setErrorMessage, snackHandler, closeDialog, clearSimCInput) {
@@ -90,6 +90,7 @@ function processItem(line, player, contentType, type) {
   let itemEquipped = !line.includes("#");
   let bonusIDS = "";
   let suffix = 0;
+  let suffixAllocation = 0;
 
   // Build out our item information.
   // This is not the finest code in the land but it is effective at pulling the information we need.
@@ -110,6 +111,7 @@ function processItem(line, player, contentType, type) {
     else if (info.includes("id=")) itemID = parseInt(info.split("=")[1]);
     else if (info.includes("crafted_stats=")) craftedStats = info.split("=")[1].split("/");
     else if (info.includes("suffix=")) suffix = parseInt(info.split("=")[1]);
+    else if (info.includes("unique=")) suffixAllocation = parseInt(info.split("=")[1]);
   }
 
   // Grab the items base level from our item database.
@@ -117,9 +119,10 @@ function processItem(line, player, contentType, type) {
   itemSlot = getItemProp(itemID, "slot", "BurningCrusade");
 
   // Process Item Suffix
-  if (itemSuffix) {
-    console.log("Suffix: " + suffix)
+  if (suffix && suffixAllocation) {
+    console.log("Suffix: " + suffix + ". Allo: " + suffixAllocation)
     itemBonusStats = {bonushealing: 1000}
+    itemBonusStats = getSuffixAllocation(suffix, suffixAllocation);
   }
 
   // Process our bonus ID's so that we can establish the items level and sockets / tertiaries.
@@ -143,9 +146,11 @@ function processItem(line, player, contentType, type) {
     let item = new BCItem(itemID, "", itemSlot, bonusIDS);
     item.active = itemEquipped;
     item.isEquipped = itemEquipped;
-    item.bonusStats = itemBonusStats;
+    item.stats = compileStats(item.stats, itemBonusStats);
+    
+    item.suffix = suffix;
     //item.effect = Object.keys(itemEffect).length !== 0 ? itemEffect : getItemProp(itemID, "effect");
-    item.softScore = scoreItem(item, player, contentType);
+    item.softScore = scoreItem(item, player, contentType, "BurningCrusade");
 
     //console.log("Adding Item: " + item.id + " in slot: " + itemSlot);
     player.addActiveItem(item);
@@ -154,10 +159,42 @@ function processItem(line, player, contentType, type) {
   }
 }
 
-function getSuffixAllocation(slot, level) {
-  
+function getSuffixAllocation(suffix, suffixAllocation) {
+  let bonus_stats = {}
 
+  if (!(suffix in suffixDB) || !suffixAllocation) {
+    return {};
+  }
+
+  const suffixList = suffixDB[suffix]
+
+
+  for (const [stat, value] of Object.entries(suffixList)) {
+    bonus_stats[stat] = Math.floor(value * suffixAllocation);
+  }
+
+  return bonus_stats;
 
 }
 
+// Compiles stats & bonus stats into one array to which we can then apply DR etc. 
+// TODO, this is identical to TopGearShared, so put it somewhere accessible to both.
+function compileStats(stats, bonus_stats) {
+  
+  for (const stat in stats) {
+    if (stat !== "bonus_stats") {
+      stats[stat] += (bonus_stats !== undefined && stat in bonus_stats) ? bonus_stats[stat] : 0;
+    }
+  }
+
+  for (const bonusStat in bonus_stats) {
+    if (!(bonusStat in stats)) {
+      //console.log("Adding bonus stat: " + bonusStat);
+      stats[bonusStat] = bonus_stats[bonusStat];
+    }
+  }
+
+  return stats;
+  
+}
 
