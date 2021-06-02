@@ -10,6 +10,15 @@
 export const changeLog = [
   {
     version: "9.0.5 / 2.5.1",
+    update: 6,
+    date: "2nd June",
+    changes: [
+      "Added support for gear with Suffixes (like of the Owl, of the Whale and so on).",
+      "Added formulas for all levelling trinkets.",
+    ],
+  },
+  {
+    version: "9.0.5 / 2.5.1",
     update: 5,
     date: "1st June",
     changes: [
