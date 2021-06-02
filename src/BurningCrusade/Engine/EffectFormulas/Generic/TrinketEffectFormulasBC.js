@@ -236,9 +236,11 @@ else if (
   effectName === "Vengeance of the Illidari"
 ) {
     const effect = {
-
+      duration: 15,
+      cooldown: 90,
+      value: 220
     }
-    bonus_stats.bonushealing = 0
+    bonus_stats.bonushealing = effect.duration * effect.value / effect.cooldown;
 }
 else if (
   /* ---------------------------------------------------------------------------------------------- */

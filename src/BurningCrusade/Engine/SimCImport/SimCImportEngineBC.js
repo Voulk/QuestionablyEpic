@@ -120,8 +120,6 @@ function processItem(line, player, contentType, type) {
 
   // Process Item Suffix
   if (suffix && suffixAllocation) {
-    console.log("Suffix: " + suffix + ". Allo: " + suffixAllocation)
-    itemBonusStats = {bonushealing: 1000}
     itemBonusStats = getSuffixAllocation(suffix, suffixAllocation);
   }
 
