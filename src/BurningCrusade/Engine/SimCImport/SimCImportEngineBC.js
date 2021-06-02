@@ -2,13 +2,8 @@ import { BCItemDB} from "../../../Databases/BCItemDB";
 import { calcStatsAtLevel, getItemProp, getItemAllocations, scoreItem, correctCasing, getValidWeaponTypes } from "../../../General/Engine/ItemUtilities";
 import BCItem from "../../../General/Modules/Player/BCItem";
 import ItemSet from "../../../General/Modules/TopGear/ItemSet";
+import SuffixDB from "BurningCrusade/Databases/SuffixDB";
 
-const stat_ids = {
-  36: "haste",
-  32: "crit",
-  40: "versatility",
-  49: "mastery",
-};
 
 export function runBCSimC(simCInput, player, contentType, setErrorMessage, snackHandler, closeDialog, clearSimCInput) {
   var lines = simCInput.split("\n");
@@ -94,6 +89,7 @@ function processItem(line, player, contentType, type) {
   let itemEffect = {}; // This is called automatically for everything except Legendaries.
   let itemEquipped = !line.includes("#");
   let bonusIDS = "";
+  let suffix = 0;
 
   // Build out our item information.
   // This is not the finest code in the land but it is effective at pulling the information we need.
@@ -113,34 +109,33 @@ function processItem(line, player, contentType, type) {
     else if (info.includes("enchant_id=")) enchantID = parseInt(info.split("=")[1]);
     else if (info.includes("id=")) itemID = parseInt(info.split("=")[1]);
     else if (info.includes("crafted_stats=")) craftedStats = info.split("=")[1].split("/");
+    else if (info.includes("suffix=")) suffix = parseInt(info.split("=")[1]);
   }
 
   // Grab the items base level from our item database.
   itemLevel = getItemProp(itemID, "itemLevel", "BurningCrusade");
   itemSlot = getItemProp(itemID, "slot", "BurningCrusade");
 
-  //console.log("Base level: " + itemLevel + " id " + itemID)
+  // Process Item Suffix
+  if (itemSuffix) {
+    console.log("Suffix: " + suffix)
+    itemBonusStats = {bonushealing: 1000}
+  }
 
-  //console.log(itemID + ": " + itemSlot + ". Item Level:" + itemLevel + ". Bonus: " + itemBonusIDs);
   // Process our bonus ID's so that we can establish the items level and sockets / tertiaries.
   for (var k = 0; k < itemBonusIDs.length; k++) {
     let bonus_id = itemBonusIDs[k].toString();
     let idPayload = bonus_IDs[bonus_id];
-    //console.log(JSON.stringify(idPayload));
-    //console.log(bonus_id);
     if (idPayload !== undefined) {
       if ("level" in idPayload) {
         itemLevel += idPayload["level"];
-        //console.log("Adding " + idPayload["level"]);
       } else if (bonus_id === "41") {
         itemTertiary = "Leech";
       } else if ("curveId" in idPayload) {
         let curve = idPayload["curveId"];
-        //console.log("CURVE: " + bonus_id);
       }
     }
   }
-
 
   // Add the new item to our characters item collection.
   if (itemID !== 0 && itemSlot !== "") {
@@ -148,7 +143,7 @@ function processItem(line, player, contentType, type) {
     let item = new BCItem(itemID, "", itemSlot, bonusIDS);
     item.active = itemEquipped;
     item.isEquipped = itemEquipped;
-
+    item.bonusStats = itemBonusStats;
     //item.effect = Object.keys(itemEffect).length !== 0 ? itemEffect : getItemProp(itemID, "effect");
     item.softScore = scoreItem(item, player, contentType);
 
@@ -157,8 +152,12 @@ function processItem(line, player, contentType, type) {
   } else {
     //console.log("Item Level out of range: " + itemLevel);
   }
+}
 
+function getSuffixAllocation(slot, level) {
   
+
+
 }
 
 
