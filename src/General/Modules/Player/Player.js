@@ -13,11 +13,12 @@ import { monkDefaultStatWeights } from "./ClassDefaults/MonkDefaults";
 import { reportError } from "../../SystemTools/ErrorLogging/ErrorReporting";
 
 class Player {
-  constructor(playerName, specName, charID, region, realm, race, statWeights = "default") {
+  constructor(playerName, specName, charID, region, realm, race, statWeights = "default", gameType = "Retail") {
     this.spec = specName;
     this.charName = playerName;
     this.charID = charID;
-    this.setupDefaults(specName);
+
+
     this.activeItems = [];
     this.activeConduits = [];
     this.renown = 1;
@@ -25,10 +26,16 @@ class Player {
     this.realm = realm;
     this.race = race;
     this.uniqueHash = getUnique();
-    this.setDefaultCovenant(specName);
 
+    if (gameType === "Retail") {
+      this.setupDefaults(specName);
+      this.setDefaultCovenant(specName);
+      this.activeConduits = getAvailableClassConduits(specName);
+      this.gameType = "Retail";
+    }
+    
     if (statWeights !== "default" && statWeights.DefaultWeights === false) this.statWeights = statWeights;
-    this.activeConduits = getAvailableClassConduits(specName);
+    
 
     //this.getStatPerc = getStatPerc;
   }
@@ -45,6 +52,7 @@ class Player {
   realm = "";
   race = "";
   talents = [];
+  gameType = ""; // Currently the options are Retail or Burning Crusade.
 
   // The players active stats from their character page. These are raw rather than being percentages.
   // They can either be pulled automatically from the entered log, or calculated from an entered SimC string.
@@ -205,7 +213,7 @@ class Player {
   scoreActiveItems = (contentType) => {
     for (var i = 0; i < this.activeItems.length; i++) {
       let item = this.activeItems[i];
-      item.softScore = scoreItem(item, this, contentType);
+      item.softScore = scoreItem(item, this, contentType, this.gameType);
 
       // Error checking
       if (item.softScore < 0) {
@@ -524,7 +532,9 @@ class Player {
       this.statWeights.Raid = monkDefaultStatWeights("Raid");
       this.statWeights.Dungeon = monkDefaultStatWeights("Dungeon");
       this.statWeights.DefaultWeights = true;
-    } else {
+    } else if (spec.includes("BC")) {
+    }
+    else {
       // Invalid spec replied. Error.
       reportError(this, "Player", "Invalid Spec Supplied during setupDefaults", spec);
       throw new Error("Invalid Spec Supplied");

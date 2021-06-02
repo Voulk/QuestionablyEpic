@@ -60,6 +60,9 @@
     "Battletag": "Battletag",
     "Edit": "Edit",
     "Equipped": "Equipped",
+    "Error": "Error",
+    "Burning Crusade": "Burning Crusade",
+    "Shadowlands": "Shadowlands",
 
     "Changelog": {
       "Header": "ChangelogFR",
@@ -95,7 +98,12 @@
       "DeathKnight": "Death KnightFR",
       "Death Knight": "Death KnightFR",
       "ShadowPriest": "Shadow PriestFR",
-      "Shadow Priest": "Shadow PriestFR"
+      "Shadow Priest": "Shadow PriestFR",
+      "Burning Crusade Class Names": "-----------------",
+      "Holy Paladin BC": "Holy PaladinFR",
+      "Restoration Druid BC": "Restoration DruidFR",
+      "Holy Priest BC": "Holy PriestFR",
+      "Restoration Shaman BC": "Restoration ShamanFR"
     },
 
     "CooldownPlanner": {
@@ -275,6 +283,7 @@
       "Profile": "Profil",
       "CharHeader": "Personnages",
       "CharHelpText": "Ajouter vos personnages ici. Clique-droit pour modifier vos informations liés aux Stats Weights, nom de votre serveur et autre.",
+      "TierSets": "Tier Sets",
       "Articles": {
         "Header": "Recent Spec Articles",
         "HelpText": ""
@@ -432,7 +441,8 @@
       "offhands": "Main Gauche",
       "finger": "Doigt",
       "weapons": "Main Gauche",
-      "weaponCombos": "Combos d'armes"
+      "weaponCombos": "Combos d'armes",
+      "relics": "Relique"
     },
 
     "Soulbinds": {
@@ -457,30 +467,58 @@
     },
     "Settings": {
       "SettingsTitle": "Paramètres",
-      "Setting0Spacer": "--------------------------------------------------------------------",
-      "Setting0Tooltip": "The equip effect of 'Cabalist's Hymnal' is increased by 5% per Ally",
-      "Setting0Title": "Hymnal Allies",
-      "Setting0TextFieldLabel": "Allies",
-      "Setting1Spacer": "--------------------------------------------------------------------",
-      "Setting1Tooltip": "Treat items that buff allies as if it were personal throughput",
-      "Setting1Title": "Group Benefits",
-      "Setting1TextFieldLabel": "",
-      "Setting2Spacer": "--------------------------------------------------------------------",
-      "Setting2Tooltip": "Select Discipline Talent",
-      "Setting2Title": "Talent",
-      "Setting2TextFieldLabel": "Talent",
-      "Setting3Spacer": "--------------------------------------------------------------------",
-      "Setting3Tooltip": "This will automatically add sockets to items that don't have them in compatible slots.",
-      "Setting3Title": "Auto Socket Items",
-      "Setting3TextFieldLabel": "",
-      "Setting4Spacer": "--------------------------------------------------------------------",
-      "Setting4Tooltip": "",
-      "Setting4Title": "",
-      "Setting4TextFieldLabel": "",
-      "Setting5Spacer": "--------------------------------------------------------------------",
-      "Setting5Tooltip": "",
-      "Setting5Title": "",
-      "Setting5TextFieldLabel": ""
+      "Retail": {
+        "Setting0Spacer": "--------------------------------------------------------------------",
+        "Setting0Tooltip": "The equip effect of 'Cabalist's Hymnal' is increased by 5% per Ally",
+        "Setting0Title": "Hymnal Allies",
+        "Setting0TextFieldLabel": "Allies",
+        "Setting1Spacer": "--------------------------------------------------------------------",
+        "Setting1Tooltip": "Treat items that buff allies as if it were personal throughput",
+        "Setting1Title": "Group Benefits",
+        "Setting1TextFieldLabel": "",
+        "Setting2Spacer": "--------------------------------------------------------------------",
+        "Setting2Tooltip": "Select Discipline Talent",
+        "Setting2Title": "Talent",
+        "Setting2TextFieldLabel": "Talent",
+        "Setting3Spacer": "--------------------------------------------------------------------",
+        "Setting3Tooltip": "This will automatically add sockets to items that don't have them in compatible slots.",
+        "Setting3Title": "Auto Socket Items",
+        "Setting3TextFieldLabel": "",
+        "Setting4Spacer": "--------------------------------------------------------------------",
+        "Setting4Tooltip": "",
+        "Setting4Title": "",
+        "Setting4TextFieldLabel": "",
+        "Setting5Spacer": "--------------------------------------------------------------------",
+        "Setting5Tooltip": "",
+        "Setting5Title": "",
+        "Setting5TextFieldLabel": ""
+      },
+      "BurningCrusade": {
+        "Setting0Spacer": "--------------------------------------------------------------------",
+        "Setting0Tooltip": "",
+        "Setting0Title": "",
+        "Setting0TextFieldLabel": "",
+        "Setting1Spacer": "--------------------------------------------------------------------",
+        "Setting1Tooltip": "",
+        "Setting1Title": "",
+        "Setting1TextFieldLabel": "",
+        "Setting2Spacer": "--------------------------------------------------------------------",
+        "Setting2Tooltip": "",
+        "Setting2Title": "",
+        "Setting2TextFieldLabel": "",
+        "Setting3Spacer": "--------------------------------------------------------------------",
+        "Setting3Tooltip": "",
+        "Setting3Title": "",
+        "Setting3TextFieldLabel": "",
+        "Setting4Spacer": "--------------------------------------------------------------------",
+        "Setting4Tooltip": "",
+        "Setting4Title": "",
+        "Setting4TextFieldLabel": "",
+        "Setting5Spacer": "--------------------------------------------------------------------",
+        "Setting5Tooltip": "",
+        "Setting5Title": "",
+        "Setting5TextFieldLabel": ""
+      }
     },
 
     "Snackbars": {
@@ -525,6 +563,13 @@
       "25914": "Horion sacré",
       "82326": "Lumière sacrée",
       "337824": "Barrière de choc"
+    },
+
+    "TierSets": {
+      "Title": "Tier Sets",
+      "2Set": "2 Set HPS",
+      "4Set": "4 Set HPS",
+      "6Set": "6 Set HPS"
     },
 
     "TopGear": {
@@ -944,7 +989,14 @@
         "1593": "Gangrebrume",
         "1594": "Les jumelles érédars",
         "1595": "M'uru",
-        "1596": "Kil'jaeden"
+        "1596": "Kil'jaeden",
+        "Zul'Aman": "",
+        "1189": "Akil'zon",
+        "1190": "Nalorakk",
+        "1191": "Jan'alai",
+        "1192": "Halazzi",
+        "1193": "Seigneur des maléfices Malacrass",
+        "1194": "Zul'jin"
       }
     }
   }

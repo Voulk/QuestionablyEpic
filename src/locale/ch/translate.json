@@ -60,6 +60,9 @@
     "Battletag": "Battletag",
     "Edit": "Edit",
     "Equipped": "Equipped",
+    "Error": "Error",
+    "Burning Crusade": "Burning Crusade",
+    "Shadowlands": "Shadowlands",
 
     "Changelog": {
       "Header": "ChangelogCH",
@@ -77,16 +80,31 @@
 
     "Classes": {
       "undefined": "",
-      "HolyPaladin": "Holy PaladinCH",
-      "DisciplinePriest": "Discipline PriestCH",
-      "RestorationDruid": "Restoration DruidCH",
-      "HavocDemonHunter": "Havoc Demon HunterCH",
-      "Warrior": "WarriorCH",
-      "HolyPriest": "Holy PriestCH",
-      "MistweaverMonk": "Mistweaver MonkCH",
-      "RestorationShaman": "Restoration ShamanCH",
-      "DeathKnight": "Death KnightCH",
-      "ShadowPriest": "Shadow PriestCH"
+      "Retail Class Names": "-----------------",
+      "HolyPaladin": "Holy Paladin",
+      "Holy Paladin": "Holy Paladin",
+      "DisciplinePriest": "Discipline Priest",
+      "Discipline Priest": "Discipline Priest",
+      "RestorationDruid": "Restoration Druid",
+      "Restoration Druid": "Restoration Druid",
+      "HavocDemonHunter": "Havoc Demon Hunter",
+      "HavocDemon Hunter": "Havoc Demon Hunter",
+      "Warrior": "Warrior",
+      "HolyPriest": "Holy Priest",
+      "Holy Priest": "Holy Priest",
+      "MistweaverMonk": "Mistweaver Monk",
+      "Mistweaver Monk": "Mistweaver Monk",
+      "RestorationShaman": "Restoration Shaman",
+      "Restoration Shaman": "Restoration Shaman",
+      "DeathKnight": "Death Knight",
+      "Death Knight": "Death Knight",
+      "ShadowPriest": "Shadow Priest",
+      "Shadow Priest": "Shadow Priest",
+      "Burning Crusade Class Names": "-----------------",
+      "Holy Paladin BC": "Holy Paladin",
+      "Restoration Druid BC": "Restoration Druid",
+      "Holy Priest BC": "Holy Priest",
+      "Restoration Shaman BC": "Restoration Shaman"
     },
 
     "CooldownPlanner": {
@@ -276,6 +294,7 @@
       "Profile": "ProfileCH",
       "CharHeader": "CharactersCH",
       "CharHelpText": "Add your characters here. Right click to edit your stat weights, realm information and more.CH",
+      "TierSets": "Tier Sets",
       "Articles": {
         "Header": "Recent Spec Articles",
         "HelpText": ""
@@ -433,7 +452,8 @@
       "offhands": "Off-HandsCH",
       "finger": "RingCH",
       "weapons": "WeaponsCH",
-      "weaponCombos": "Weapon CombosCH"
+      "weaponCombos": "Weapon CombosCH",
+      "relics": "圣物"
     },
 
     "Soulbinds": {
@@ -458,30 +478,58 @@
     },
     "Settings": {
       "SettingsTitle": "SettingsCH",
-      "Setting0Spacer": "--------------------------------------------------------------------",
-      "Setting0Tooltip": "The equip effect of 'Cabalist's Hymnal' is increased by 5% per AllyCH",
-      "Setting0Title": "Hymnal Allies",
-      "Setting0TextFieldLabel": "AlliesCH",
-      "Setting1Spacer": "--------------------------------------------------------------------",
-      "Setting1Tooltip": "Treat items that buff allies as if it were personal throughput",
-      "Setting1Title": "Group Benefits",
-      "Setting1TextFieldLabel": "",
-      "Setting2Spacer": "--------------------------------------------------------------------",
-      "Setting2Tooltip": "Select Discipline Talent",
-      "Setting2Title": "Talent",
-      "Setting2TextFieldLabel": "Talent",
-      "Setting3Spacer": "--------------------------------------------------------------------",
-      "Setting3Tooltip": "This will automatically add sockets to items that don't have them in compatible slots.",
-      "Setting3Title": "Auto Socket Items",
-      "Setting3TextFieldLabel": "",
-      "Setting4Spacer": "--------------------------------------------------------------------",
-      "Setting4Tooltip": "",
-      "Setting4Title": "",
-      "Setting4TextFieldLabel": "",
-      "Setting5Spacer": "--------------------------------------------------------------------",
-      "Setting5Tooltip": "",
-      "Setting5Title": "",
-      "Setting5TextFieldLabel": ""
+      "Retail": {
+        "Setting0Spacer": "--------------------------------------------------------------------",
+        "Setting0Tooltip": "The equip effect of 'Cabalist's Hymnal' is increased by 5% per AllyCH",
+        "Setting0Title": "Hymnal Allies",
+        "Setting0TextFieldLabel": "AlliesCH",
+        "Setting1Spacer": "--------------------------------------------------------------------",
+        "Setting1Tooltip": "Treat items that buff allies as if it were personal throughput",
+        "Setting1Title": "Group Benefits",
+        "Setting1TextFieldLabel": "",
+        "Setting2Spacer": "--------------------------------------------------------------------",
+        "Setting2Tooltip": "Select Discipline Talent",
+        "Setting2Title": "Talent",
+        "Setting2TextFieldLabel": "Talent",
+        "Setting3Spacer": "--------------------------------------------------------------------",
+        "Setting3Tooltip": "This will automatically add sockets to items that don't have them in compatible slots.",
+        "Setting3Title": "Auto Socket Items",
+        "Setting3TextFieldLabel": "",
+        "Setting4Spacer": "--------------------------------------------------------------------",
+        "Setting4Tooltip": "",
+        "Setting4Title": "",
+        "Setting4TextFieldLabel": "",
+        "Setting5Spacer": "--------------------------------------------------------------------",
+        "Setting5Tooltip": "",
+        "Setting5Title": "",
+        "Setting5TextFieldLabel": ""
+      },
+      "BurningCrusade": {
+        "Setting0Spacer": "--------------------------------------------------------------------",
+        "Setting0Tooltip": "",
+        "Setting0Title": "",
+        "Setting0TextFieldLabel": "",
+        "Setting1Spacer": "--------------------------------------------------------------------",
+        "Setting1Tooltip": "",
+        "Setting1Title": "",
+        "Setting1TextFieldLabel": "",
+        "Setting2Spacer": "--------------------------------------------------------------------",
+        "Setting2Tooltip": "",
+        "Setting2Title": "",
+        "Setting2TextFieldLabel": "",
+        "Setting3Spacer": "--------------------------------------------------------------------",
+        "Setting3Tooltip": "",
+        "Setting3Title": "",
+        "Setting3TextFieldLabel": "",
+        "Setting4Spacer": "--------------------------------------------------------------------",
+        "Setting4Tooltip": "",
+        "Setting4Title": "",
+        "Setting4TextFieldLabel": "",
+        "Setting5Spacer": "--------------------------------------------------------------------",
+        "Setting5Tooltip": "",
+        "Setting5Title": "",
+        "Setting5TextFieldLabel": ""
+      }
     },
 
     "Snackbars": {
@@ -526,6 +574,13 @@
       "25914": "神圣震击",
       "82326": "圣光术",
       "337824": "震击屏障"
+    },
+
+    "TierSets": {
+      "Title": "Tier Sets",
+      "2Set": "2 Set HPS",
+      "4Set": "4 Set HPS",
+      "6Set": "6 Set HPS"
     },
 
     "TopGear": {
@@ -945,7 +1000,14 @@
         "1593": "菲米丝",
         "1594": "艾瑞达双子",
         "1595": "穆鲁",
-        "1596": "基尔加丹"
+        "1596": "基尔加丹",
+        "Zul'Aman": "",
+        "1189": "埃基尔松",
+        "1190": "纳洛拉克",
+        "1191": "加亚莱",
+        "1192": "哈尔拉兹",
+        "1193": "妖术领主玛拉卡斯",
+        "1194": "祖尔金"
       }
     }
   }

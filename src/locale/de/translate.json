@@ -54,12 +54,15 @@
     "HPS": "HPS",
     "Casts": "CastsDE",
     "Healing": "HealingDE",
-    "Overhealing":" OverhealingDE",
+    "Overhealing": " OverhealingDE",
     "Account": "AccountDE",
     "Email": "Email",
     "Battletag": "Battletag",
     "Edit": "Edit",
     "Equipped": "Equipped",
+    "Error": "Error",
+    "Burning Crusade": "Burning Crusade",
+    "Shadowlands": "Shadowlands",
 
     "Changelog": {
       "Header": "Changelog",
@@ -69,7 +72,7 @@
       "Date": "Date"
     },
 
-    "PatreonTiers":{
+    "PatreonTiers": {
       "RollsRoyce": "Rolls RoyceDE",
       "Diamond": "DiamondDE",
       "Gold": "GoldDE"
@@ -95,7 +98,12 @@
       "DeathKnight": "Todesritter",
       "Death Knight": "Todesritter",
       "ShadowPriest": "Schattenpriester",
-      "Shadow Priest": "Schattenpriester"
+      "Shadow Priest": "Schattenpriester",
+      "Burning Crusade Class Names": "-----------------",
+      "Holy Paladin BC": "Heilig Paladin",
+      "Restoration Druid BC": "Wiederherstellung Druide",
+      "Holy Priest BC": "Heilig Priester",
+      "Restoration Shaman BC": "Wiederherstellung Schamane"
     },
 
     "CooldownPlanner": {
@@ -275,6 +283,7 @@
       "Profile": "Profil",
       "CharHeader": "Charaktere",
       "CharHelpText": "Füge deine Charaktere hier hinzu. Rechtsklick um deine Wertegewichtungen, Serverinformationen und mehr zu bearbeiten.",
+      "TierSets": "Tier Sets",
       "Articles": {
         "Header": "Recent Spec Articles",
         "HelpText": ""
@@ -439,7 +448,8 @@
       "offhands": "Schildhand",
       "finger": "Finger",
       "weapons": "Waffen",
-      "weaponCombos": "Waffenkombinationen"
+      "weaponCombos": "Waffenkombinationen",
+      "relics": "Relikt"
     },
 
     "Soulbinds": {
@@ -464,30 +474,58 @@
     },
     "Settings": {
       "SettingsTitle": "Einstellungen",
-      "Setting0Spacer": "--------------------------------------------------------------------",
-      "Setting0Tooltip": "The equip effect of 'Cabalist's Hymnal' is increased by 5% per Ally",
-      "Setting0Title": "Hymnal Allies",
-      "Setting0TextFieldLabel": "Allies",
-      "Setting1Spacer": "--------------------------------------------------------------------",
-      "Setting1Tooltip": "Treat items that buff allies as if it were personal throughput",
-      "Setting1Title": "Group Benefits",
-      "Setting1TextFieldLabel": "",
-      "Setting2Spacer": "--------------------------------------------------------------------",
-      "Setting2Tooltip": "Select Discipline Talent",
-      "Setting2Title": "Talent",
-      "Setting2TextFieldLabel": "Talent",
-      "Setting3Spacer": "--------------------------------------------------------------------",
-      "Setting3Tooltip": "This will automatically add sockets to items that don't have them in compatible slots.",
-      "Setting3Title": "Auto Socket Items",
-      "Setting3TextFieldLabel": "",
-      "Setting4Spacer": "--------------------------------------------------------------------",
-      "Setting4Tooltip": "",
-      "Setting4Title": "",
-      "Setting4TextFieldLabel": "",
-      "Setting5Spacer": "--------------------------------------------------------------------",
-      "Setting5Tooltip": "",
-      "Setting5Title": "",
-      "Setting5TextFieldLabel": ""
+      "Retail": {
+        "Setting0Spacer": "--------------------------------------------------------------------",
+        "Setting0Tooltip": "The equip effect of 'Cabalist's Hymnal' is increased by 5% per Ally",
+        "Setting0Title": "Hymnal Allies",
+        "Setting0TextFieldLabel": "Allies",
+        "Setting1Spacer": "--------------------------------------------------------------------",
+        "Setting1Tooltip": "Treat items that buff allies as if it were personal throughput",
+        "Setting1Title": "Group Benefits",
+        "Setting1TextFieldLabel": "",
+        "Setting2Spacer": "--------------------------------------------------------------------",
+        "Setting2Tooltip": "Select Discipline Talent",
+        "Setting2Title": "Talent",
+        "Setting2TextFieldLabel": "Talent",
+        "Setting3Spacer": "--------------------------------------------------------------------",
+        "Setting3Tooltip": "This will automatically add sockets to items that don't have them in compatible slots.",
+        "Setting3Title": "Auto Socket Items",
+        "Setting3TextFieldLabel": "",
+        "Setting4Spacer": "--------------------------------------------------------------------",
+        "Setting4Tooltip": "",
+        "Setting4Title": "",
+        "Setting4TextFieldLabel": "",
+        "Setting5Spacer": "--------------------------------------------------------------------",
+        "Setting5Tooltip": "",
+        "Setting5Title": "",
+        "Setting5TextFieldLabel": ""
+      },
+      "BurningCrusade": {
+        "Setting0Spacer": "--------------------------------------------------------------------",
+        "Setting0Tooltip": "",
+        "Setting0Title": "",
+        "Setting0TextFieldLabel": "",
+        "Setting1Spacer": "--------------------------------------------------------------------",
+        "Setting1Tooltip": "",
+        "Setting1Title": "",
+        "Setting1TextFieldLabel": "",
+        "Setting2Spacer": "--------------------------------------------------------------------",
+        "Setting2Tooltip": "",
+        "Setting2Title": "",
+        "Setting2TextFieldLabel": "",
+        "Setting3Spacer": "--------------------------------------------------------------------",
+        "Setting3Tooltip": "",
+        "Setting3Title": "",
+        "Setting3TextFieldLabel": "",
+        "Setting4Spacer": "--------------------------------------------------------------------",
+        "Setting4Tooltip": "",
+        "Setting4Title": "",
+        "Setting4TextFieldLabel": "",
+        "Setting5Spacer": "--------------------------------------------------------------------",
+        "Setting5Tooltip": "",
+        "Setting5Title": "",
+        "Setting5TextFieldLabel": ""
+      }
     },
 
     "Snackbars": {
@@ -532,6 +570,13 @@
       "25914": "Heiliger Schock",
       "82326": "Heiliges Licht",
       "337824": "Schockbarriere"
+    },
+
+    "TierSets": {
+      "Title": "Tier Sets",
+      "2Set": "2 Set HPS",
+      "4Set": "4 Set HPS",
+      "6Set": "6 Set HPS"
     },
 
     "TopGear": {
@@ -956,9 +1001,15 @@
         "1593": "Teufelsruch",
         "1594": "Die Eredarzwillinge",
         "1595": "M'uru",
-        "1596": "Kil'jaeden"
+        "1596": "Kil'jaeden",
+        "Zul'Aman": "",
+        "1189": "Akil'zon",
+        "1190": "Nalorakk",
+        "1191": "Jan'alai",
+        "1192": "Halazzi",
+        "1193": "Hex Lord Malacrass",
+        "1194": "Zul'jin"
       }
     }
-
   }
 }

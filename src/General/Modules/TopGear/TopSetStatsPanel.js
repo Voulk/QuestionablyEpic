@@ -10,8 +10,10 @@ import { useTranslation } from "react-i18next";
 export default function TopSetStatsPanel(props) {
   const statList = props.statList;
   const { t } = useTranslation();
+  const gameType = props.gameType
 
-  const stats = [
+  const stats = gameType === "Retail" ? 
+  [
     ["Intellect", statList.intellect],
     ["Haste", statList.haste / STATPERONEPERCENT.Retail.HASTE],
     ["Crit", statList.crit / STATPERONEPERCENT.Retail.CRIT],
@@ -20,13 +22,24 @@ export default function TopSetStatsPanel(props) {
     ["Leech", statList.leech / STATPERONEPERCENT.Retail.LEECH],
     ["Bonus HPS", statList.hps],
     ["Bonus DPS", statList.dps],
-  ];
+  ] :
+  [
+    ["Bonus Healing", statList.bonushealing],
+    ["Intellect", statList.intellect],
+    ["Spirit", statList.spirit],
+    ["MP5", statList.mp5],
+    ["Crit", statList.spellcrit / STATPERONEPERCENT.BurningCrusade.CRIT + statList.intellect / 79.4],
+    ["Haste", statList.spellhaste / STATPERONEPERCENT.BurningCrusade.HASTE],
+    
+  ]
+  
+  ;
 
   /* ----------------------- Returns a formatted string for the stat panel. ----------------------- */
   function printStat(stat, value) {
     if (["Haste", "Crit", "Versatility", "Mastery", "Leech"].includes(stat)) {
       return t(stat) + ": " + Math.round(100 * value) / 100 + "%";
-    } else return t(stat) + ": " + Math.round(value);
+    } else return t(stat) + ": " + Math.floor(value);
   }
 
   return (

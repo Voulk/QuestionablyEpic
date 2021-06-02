@@ -80,6 +80,17 @@ class CastModel {
     } else if (spec === SPEC.HOLYPRIEST) {
       spellList = holyPriestDefaultSpellData(contentType);
       specialQueries = holyPriestDefaultSpecialQueries(contentType);
+    } 
+    
+    // Burning Crusade Profiles
+    else if (spec === "Restoration Druid BC") {
+      spellList = this.getClassicDruid();
+    } else if (spec === "Restoration Shaman BC") {
+      spellList = this.getClassicShaman();
+    } else if (spec === "Holy Priest BC") {
+      spellList = this.getClassicPriest();
+    } else if (spec === "Holy Paladin BC") {
+      spellList = this.getClassicPaladin();
     } else {
       spellList = {};
       specialQueries = {};
@@ -88,6 +99,44 @@ class CastModel {
     this.setSpellList(spellList);
     this.specialQueries = specialQueries;
   };
+
+  getClassicDruid = () => {
+    return {
+      33763: { cpm: 21.2, avgcast: 4197, overhealing: 0.29 }, // Lifebloom
+      774: { cpm: 5.6, avgcast: 3245, overhealing: 0.18 }, // Rejuv
+      26980: { cpm: 3.7, avgcast: 5452, overhealing: 0.13 }, // Regrowth R10
+      8936: { cpm: 0.6, avgcast: 4321, overhealing: 0.11 }, // Regrowth R8
+
+    };
+  }
+  // TODO
+  getClassicPaladin = () => {
+    return {
+      27137: { cpm: 19.5, avgcast: 1443, overhealing: 0.14 }, // Flash of Light R7
+      19943: { cpm: 4.3, avgcast: 1054, overhealing: 0.18 }, // Flash of Light R6
+      27136: { cpm: 4.2, avgcast: 3339, overhealing: 0.19 }, // Holy Light R11
+
+    };
+  }
+  //TODO
+  getClassicShaman = () => {
+    return {
+      25423: { cpm: 16, avgcast: 5210, overhealing: 0.21 }, // Chain heal generic
+
+    };
+  }
+
+  // TODO
+  getClassicPriest = () => {
+    return {
+      774: { cpm: 21.2, avgcast: 4197, overhealing: 0.29 }, // Rejuv - Rankless
+      33763: { cpm: 5.6, avgcast: 3245, overhealing: 0.18 }, // Lifebloom R1
+      26980: { cpm: 3.7, avgcast: 5452, overhealing: 0.13 }, // Regrowth R10
+      8936: { cpm: 0.6, avgcast: 4321, overhealing: 0.11 }, // Regrowth R8
+
+    };
+  }
+
 }
 
 export default CastModel;

@@ -316,7 +316,7 @@ export default function UpgradeFinderResults(props) {
         <TabPanel value={tabvalue} index={2}>
           <div className={classes.panel}>
             <Grid container>
-              <PvPGearContainer player={props.player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={props.playerSettings} />
+              {/*<PvPGearContainer player={props.player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={props.playerSettings} /> */}
             </Grid>
           </div>
         </TabPanel>

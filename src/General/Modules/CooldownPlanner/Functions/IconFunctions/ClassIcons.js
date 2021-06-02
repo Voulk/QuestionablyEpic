@@ -19,13 +19,13 @@ export default function classIcons(props, style) {
   let alt = "";
 
   // Paladin Cooldowns
-  if (props === "HolyPaladin" || props === "Holy Paladin" || props === "Paladin-Holy" || props === "Paladin") {
+  if (props === "HolyPaladin" || props === "Holy Paladin" || props === "Paladin-Holy" || props === "Paladin" || props === "Holy Paladin BC") {
     src = HolyPaladinIcon;
     alt = "Holy Paladin";
   }
 
   // Restoration Druid
-  if (props === "RestorationDruid" || props === "Restoration Druid" || props === "Druid-Restoration" || props === "Druid") {
+  if (props === "RestorationDruid" || props === "Restoration Druid" || props === "Druid-Restoration" || props === "Druid" || props === "Restoration Druid BC") {
     src = RestorationDruidIcon;
     alt = "Restoration Druid";
   }
@@ -36,9 +36,10 @@ export default function classIcons(props, style) {
     props === "Holy Priest" ||
     props === "Priest-Holy" ||
     props === "Priest" ||
-    props === "ShadowPriest" ||
-    props === "Shadow Priest" ||
-    props === "Priest-Shadow"
+    // props === "ShadowPriest" ||
+    // props === "Shadow Priest" ||
+    // props === "Priest-Shadow"
+    props === "Holy Priest BC"
   ) {
     src = HolyPriestIcon;
     alt = "Holy Priest";
@@ -57,7 +58,7 @@ export default function classIcons(props, style) {
   }
 
   // Restoration Shaman
-  if (props === "RestorationShaman" || props === "Restoration Shaman" || props === "Shaman-Restoration" || props === "Shaman") {
+  if (props === "RestorationShaman" || props === "Restoration Shaman" || props === "Shaman-Restoration" || props === "Shaman" || props === "Restoration Shaman BC") {
     src = RestorationShamanIcon;
     alt = "Restoration Shaman";
   }
