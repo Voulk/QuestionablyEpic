@@ -196,4 +196,7 @@ export const translatedStat = {
   expertise: { // Classic
     en: "Expertise"
   },
+  hp5: { // Classic
+    en: "HP5"
+  },
 };

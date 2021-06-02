@@ -253,6 +253,11 @@
         "338687": "Nathrian Hymn"
       }
     },
+
+    "GameTypeToggle": {
+      "Retail": "Change to Retail (Shadowlands)",
+      "Classic": "Change to Classic (Burning Crusade)"
+    },
     "HallOfFame": {
       "title": "Hall of Fame",
       "buttonLabel": "QE Hall of Fame",
