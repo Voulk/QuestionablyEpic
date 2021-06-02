@@ -514,7 +514,7 @@
             "name": "Communal Stone of Stoicism"
         },
         "stats": {
-            "hp6": 8,
+            "hp5": 7,
         }
     },
     {

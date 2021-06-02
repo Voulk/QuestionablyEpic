@@ -236,20 +236,63 @@ else if (
   effectName === "Vengeance of the Illidari"
 ) {
     const effect = {
-
+      duration: 15,
+      cooldown: 90,
+      value: 220
     }
-    bonus_stats.bonushealing = 0
+    bonus_stats.bonushealing = effect.duration * effect.value / effect.cooldown;
 }
 else if (
   /* ---------------------------------------------------------------------------------------------- */
-  /*                       Auslese's Light Channeler  (Blood Furnace)                               */
+  /*                    Ancient Crystal Insignia (Zangarmarsh Quest Drop)                           */
   /* ---------------------------------------------------------------------------------------------- */
-  effectName === "Auslese's Light Channeler"
+  effectName === "Ancient Crystal Insignia" || effectName === "Ancient Crystal Talisman"
 ) {
     const effect = {
-
+      duration: 20,
+      cooldown: 120,
+      value: 104
     }
-    bonus_stats.bonushealing = 0
+    bonus_stats.spelldamage = effect.duration * effect.value / effect.cooldown;
+}
+else if (
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                   Terrokar Tablet of Vim                                       */
+  /* ---------------------------------------------------------------------------------------------- */
+  effectName === "Terrokar Tablet of Vim"
+) {
+    const effect = {
+      duration: 15,
+      cooldown: 90,
+      value: 156
+    }
+    bonus_stats.bonushealing = effect.duration * effect.value / effect.cooldown;
+}
+else if (
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                             Ancient Draenei Arcane Relic (QR)                                  */
+  /* ---------------------------------------------------------------------------------------------- */
+  effectName === "Ancient Draenei Arcane Relic"
+) {
+    const effect = {
+      duration: 15,
+      cooldown: 90,
+      value: 220
+    }
+    bonus_stats.bonushealing = effect.duration * effect.value / effect.cooldown;
+}
+else if (
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                    Heavenly Inspiration                                        */
+  /* ---------------------------------------------------------------------------------------------- */
+  effectName === "Heavenly Inspiration"
+) {
+    const effect = {
+      duration: 15,
+      cooldown: 90,
+      value: 238
+    }
+    bonus_stats.bonushealing = effect.duration * effect.value / effect.cooldown;
 }
 else if (
   /* ---------------------------------------------------------------------------------------------- */

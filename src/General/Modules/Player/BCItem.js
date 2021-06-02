@@ -27,6 +27,7 @@ class BCItem {
   name = ""; // Consider how to store this in a localised form.
   slot = "";
   softScore = 0;
+  suffix = 0;
 
   sockets = {}; // Quantity of each color.
   setID = -1;
