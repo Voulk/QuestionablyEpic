@@ -5,19 +5,22 @@ export const GEMS = [
   { name: "Teardrop Living Ruby", id: 24029, color: "red", rarity: "rare", jewelcrafting: false, stats: { bonushealing: 18 } }, // +9 spellpower
   { name: "Teardrop Crimson Spinel", id: 32195, color: "red", rarity: "epic", jewelcrafting: false, stats: { bonushealing: 22 } }, // +12 spellpower
   { name: "Kailee's Rose", id: 33134, color: "red", rarity: "epic", jewelcrafting: true, stats: { bonushealing: 24 } }, // +14 spellpower JC Only (BOP)
+  { name: "Teardrop Tourmaline", id: 28460, color: "red", rarity: "basic", jewelcrafting: false, stats: { bonushealing: 9 } }, 
 
   /* ---------------------------------------------------------------------------------------------- */
   /*                                           Yellow Gems                                          */
   /* ---------------------------------------------------------------------------------------------- */
 
   /* --------------------------------------- Spell Crit Gems -------------------------------------- */
-  { name: "Gleaming Dawnstone", id: 24050, color: "yellow", rarity: "rare", jewelcrafting: false, stats: { crit: 8 } }, // +8 spell crit
-  { name: "Gleaming Ornate Dawnstone", id: 28120, color: "yellow", rarity: "epic", jewelcrafting: false, stats: { crit: 10 } }, // +10 spell crit
-  { name: "Blood of Amber", id: 33140, color: "yellow", rarity: "epic", jewelcrafting: true, stats: { crit: 12 } }, // +12 spell crit
+  { name: "Gleaming Dawnstone", id: 24050, color: "yellow", rarity: "rare", jewelcrafting: false, stats: { spellcrit: 8 } }, // +8 spell crit
+  { name: "Gleaming Ornate Dawnstone", id: 28120, color: "yellow", rarity: "epic", jewelcrafting: false, stats: { spellcrit: 10 } }, // +10 spell crit
+  { name: "Blood of Amber", id: 33140, color: "yellow", rarity: "epic", jewelcrafting: true, stats: { spellcrit: 12 } }, // +12 spell crit
+  { name: "Gleaming Amber", id: 28469, color: "yellow", rarity: "basic", jewelcrafting: false, stats: { spellcrit: 4 } }, // +4 spell crit
 
   /* --------------------------------------- Intellect Gems --------------------------------------- */
   { name: "Brilliant Dawnstone", id: 24047, color: "yellow", rarity: "rare", jewelcrafting: false, stats: { intellect: 8 } }, // +8 intellect
   { name: "Brilliant Lionseye", id: 32204, color: "yellow", rarity: "epic", jewelcrafting: false, stats: { intellect: 10 } }, // +10 intellect
+  { name: "Brilliant Amber", id: 28466, color: "basic", rarity: "basic", jewelcrafting: false, stats: { intellect: 4 } }, // +4 intellect
 
   /* ----------------------------------------- Haste Gems ----------------------------------------- */
   { name: "Quick Dawnstone", color: "yellow", rarity: "rare", jewelcrafting: false, stats: { haste: 8 } }, // +8 haste
@@ -30,10 +33,12 @@ export const GEMS = [
   /* ----------------------------------------- Spirit Gems ---------------------------------------- */
   { name: "Sparkling Star of Elune", id: 24035, color: "blue", rarity: "rare", jewelcrafting: false, stats: { spirit: 8 } }, // +8 spirit
   { name: "Sparkling Empyrean Sapphire", id: 32201, color: "blue", rarity: "epic", jewelcrafting: false, stats: { spirit: 10 } }, // +10 spirit
+  { name: "Sparkling Zircon", id: 28464, color: "blue", rarity: "basic", jewelcrafting: false, stats: { spirit: 4 } }, // +4 spirit
 
   /* -------------------------------------- Mana / 5 Seconds -------------------------------------- */
   { name: "Lustrous Star of Elune", id: 24037, color: "blue", rarity: "rare", jewelcrafting: false, stats: { mp5: 4 } }, // +4 Mana every 5 seconds
   { name: "Lustrous Empyrean Sapphire", id: 32202, color: "blue", rarity: "epic", jewelcrafting: false, stats: { mp5: 5 } }, // +5 Mana every 5 seconds
+  { name: "Lustrous Zircon", id: 28465, color: "blue", rarity: "basic", jewelcrafting: false, stats: { mp5: 1 } }, // +1 Mana every 5 seconds
 
   /* ---------------------------------------------------------------------------------------------- */
   /*                                           Orange Gems                                          */
