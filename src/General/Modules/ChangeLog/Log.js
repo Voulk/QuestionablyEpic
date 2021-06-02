@@ -15,6 +15,7 @@ export const changeLog = [
     changes: [
       "Added support for gear with Suffixes (like of the Owl, of the Whale and so on).",
       "Added formulas for all levelling trinkets.",
+      "Added a Top Gear setting to use the Honor Hold starter gems since blues / epics aren't really appropriate for levelling gear."
     ],
   },
   {
