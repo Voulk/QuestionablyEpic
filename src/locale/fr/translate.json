@@ -252,6 +252,12 @@
         "338687": "Hymne nathrian"
       }
     },
+
+    "GameTypeToggle": {
+      "Retail": "Change to Retail (Shadowlands)",
+      "Classic": "Change to Classic (Burning Crusade)"
+    },
+    
     "HallOfFame": {
       "title": "Hall of Fame",
       "buttonLabel": "Hall of Fame",

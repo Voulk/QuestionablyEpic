@@ -253,6 +253,11 @@
       }
     },
 
+    "GameTypeToggle": {
+      "Retail": "Change to Retail (Shadowlands)",
+      "Classic": "Change to Classic (Burning Crusade)"
+    },
+
     "HallOfFame": {
       "title": "Зал славы",
       "buttonLabel": "Зал славы",

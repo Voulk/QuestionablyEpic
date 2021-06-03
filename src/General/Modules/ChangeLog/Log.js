@@ -10,6 +10,16 @@
 export const changeLog = [
   {
     version: "9.0.5 / 2.5.1",
+    update: 6,
+    date: "2nd June",
+    changes: [
+      "Added support for gear with Suffixes (like of the Owl, of the Whale and so on).",
+      "Added formulas for all levelling trinkets.",
+      "Added a Top Gear setting to use the Honor Hold starter gems since blues / epics aren't really appropriate for levelling gear."
+    ],
+  },
+  {
+    version: "9.0.5 / 2.5.1",
     update: 5,
     date: "1st June",
     changes: [

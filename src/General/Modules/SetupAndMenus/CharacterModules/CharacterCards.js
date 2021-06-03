@@ -288,6 +288,14 @@ export default function CharCards(props) {
         return "Classes.HolyPriest";
       case "Discipline Priest":
         return "Classes.DisciplinePriest";
+      case "Holy Paladin BC":
+        return "Classes.Holy Paladin BC";
+      case "Restoration Druid BC":
+        return "Classes.Restoration Druid";
+      case "Holy Priest BC":
+        return "Classes.Holy Priest";
+      case "Restoration Shaman BC":
+        return "Classes.Restoration Shaman";
       default:
         return "Error";
     }

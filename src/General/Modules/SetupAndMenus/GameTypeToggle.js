@@ -50,7 +50,7 @@ export default function GameTypeSwitch(props) {
       /*                                  Shadowlands Game Type Toggle                                  */
       /* ----------------------------------------------------------------------------------------------  */}
       <ToggleButton className={classes.root} value="Retail" aria-label="retailLabel">
-        <Tooltip title={t("QeHeader.Tooltip.ChangeToRaid")} arrow>
+        <Tooltip title={t("GameTypeToggle.Retail")} arrow>
           <div style={{ display: "inline-flex" }}>
             <img src={require("../../../Images/Logos/Logo_Shadowlands.png").default} alt={t("Shadowlands")} />
           </div>
@@ -61,7 +61,7 @@ export default function GameTypeSwitch(props) {
       /*                            Burning Crusade: Classic Game Type Toggle                           */
       /* ---------------------------------------------------------------------------------------------- */}
       <ToggleButton className={classes.root} value="BurningCrusade" aria-label="classicLabel">
-        <Tooltip title={t("QeHeader.Tooltip.ChangeToDungeon")} arrow>
+        <Tooltip title={t("GameTypeToggle.Classic")} arrow>
           <div style={{ display: "inline-flex" }}>
             <img src={require("../../../Images/Logos/Logo_BurningCrusade.png").default} alt={t("Burning Crusade")} />
           </div>
