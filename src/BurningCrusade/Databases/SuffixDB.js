@@ -14,10 +14,10 @@ export const suffixDB = {
     26: {bonushealing: 2.2}, // Healing
     30: {mp5: 0.4}, // Concentration (MP5)
     36: {stamina: 0.7889, intellect: 0.5259, spelldamage: 0.6153}, // Sorceror
-    37: {stamina: 0.7889, intellect: 0.5259, bonushealing: 0}, // Physician (This could be bugged in game right now). bonushealing: 1.157
-    38: {spirit: 0.5259, intellect: 0.5259, bonushealing: 0}, // Prophet bonushealing: 1.157
+    37: {stamina: 0.7889, intellect: 0.5259, bonushealing: 1.157}, // Physician (This could be bugged in game right now). bonushealing: 1.157
+    38: {spirit: 0.5259, intellect: 0.5259, bonushealing: 1.157}, // Prophet bonushealing: 1.157
     39: {intellect: 0.5259, spellcrit: 0.5259, spelldamage: 0.6153}, // Invoker
-    42: {stamina: 0.7889, spirit: 0.5259, bonushealing: 0}, // Hierophant bonushealing: 1.157
+    42: {stamina: 0.7889, spirit: 0.5259, bonushealing: 1.157}, // Hierophant bonushealing: 1.157
     44: {stamina: 0.7889, intellect: 0.5259, mp5: 0.2104}, // Elder
     51: {intellect: 0.3193, spelldamage: 0.8501, spellcrit: 0.4106}, // Mind
     53: {stamina: 0.3193, intellect: 0.4106, spelldamage: 0.8501}, // Vision
