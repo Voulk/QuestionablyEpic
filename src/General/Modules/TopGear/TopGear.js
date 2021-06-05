@@ -51,6 +51,7 @@ export default function TopGear(props) {
   // const currentLanguage = i18n.language;
   const contentType = useSelector((state) => state.contentType);
   const classes = useStyles();
+  const gameType = useSelector((state) => state.gameType);
 
   /* ---------------------------------------- Popover Props --------------------------------------- */
   const [anchorEl, setAnchorEl] = useState(null);
@@ -78,6 +79,7 @@ export default function TopGear(props) {
     /* ------------------ Check that the player has selected an item in every slot. ----------------- */
     let topgearOk = true;
     let itemList = props.player.getSelectedItems();
+    //console.log(props.player.getSelectedItems());
     let errorMessage = "";
     let slotLengths = {
       Head: 0,
@@ -101,7 +103,7 @@ export default function TopGear(props) {
     for (var i = 0; i < itemList.length; i++) {
       let slot = itemList[i].slot;
       if (slot in slotLengths) {
-        if (itemList[i].vaultItem === false) slotLengths[slot] += 1;
+        if (!itemList[i].vaultItem) slotLengths[slot] += 1;
       }
     }
     for (const key in slotLengths) {
@@ -114,6 +116,7 @@ export default function TopGear(props) {
       }
     }
     setErrorMessage(errorMessage);
+    console.log(slotLengths);
     return topgearOk;
   };
 
@@ -124,16 +127,30 @@ export default function TopGear(props) {
       const currentLanguage = i18n.language;
       let itemList = props.player.getSelectedItems();
       let wepCombos = buildWepCombos(props.player, true);
-      const worker = require("workerize-loader!./TopGearEngine"); // eslint-disable-line import/no-webpack-loader-syntax
-      let instance = new worker();
       let baseHPS = props.player.getHPS(contentType);
       let strippedPlayer = JSON.parse(JSON.stringify(props.player));
       let strippedCastModel = JSON.parse(JSON.stringify(props.player.castModel[contentType]));
-      instance.runTopGear(itemList, wepCombos, strippedPlayer, contentType, baseHPS, currentLanguage, userSettings, strippedCastModel).then((result) => {
-        apiSendTopGearSet(props.player, contentType, result.itemSet.hardScore, result.itemsCompared);
-        props.setTopResult(result);
-        history.push("/report/");
+
+      if (gameType === "Retail") {
+        const worker = require("workerize-loader!./TopGearEngine"); // eslint-disable-line import/no-webpack-loader-syntax
+        let instance = new worker();
+        instance.runTopGear(itemList, wepCombos, strippedPlayer, contentType, baseHPS, currentLanguage, userSettings, strippedCastModel).then((result) => {
+          apiSendTopGearSet(props.player, contentType, result.itemSet.hardScore, result.itemsCompared);
+          props.setTopResult(result);
+          history.push("/report/");
+        });
+      }
+      else {
+        const worker = require("workerize-loader!./TopGearEngineBC"); // eslint-disable-line import/no-webpack-loader-syntax
+        let instance = new worker();
+        instance.runTopGearBC(itemList, wepCombos, strippedPlayer, contentType, baseHPS, currentLanguage, userSettings, strippedCastModel).then((result) => {
+          //apiSendTopGearSet(props.player, contentType, result.itemSet.hardScore, result.itemsCompared);
+          props.setTopResult(result);
+          history.push("/report/");
       });
+    }
+
+
     } else {
       /* ---------------------------------------- Return error. --------------------------------------- */
     }
@@ -171,6 +188,7 @@ export default function TopGear(props) {
     { label: t("slotNames.weapons"), slotName: "AllMainhands" },
     { label: t("slotNames.offhands"), slotName: "Offhands" },
   ];
+  if (gameType === "BurningCrusade") slotList.push({ label: t("slotNames.relics"), slotName: "Relics & Wands" })
 
   return (
     <div className={classes.header}>

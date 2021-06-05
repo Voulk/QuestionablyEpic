@@ -7,12 +7,13 @@ import { createMuiTheme, makeStyles, ThemeProvider, withStyles } from "@material
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import SettingsIcon from "@material-ui/icons/Settings";
 import Autocomplete from "@material-ui/lab/Autocomplete";
+import ClearIcon from "@material-ui/icons/Clear";
 import { red } from "@material-ui/core/colors";
 import { classColoursJS } from "../../CooldownPlanner/Functions/ClassColourFunctions.js";
 import classIcons from "../../CooldownPlanner/Functions/IconFunctions/ClassIcons";
 import raceIcons from "../../CooldownPlanner/Functions/IconFunctions/RaceIcons";
-import { classRaceList } from "../../CooldownPlanner/Data/Data";
-import { serverDB } from "../../../../Databases/ServerDB";
+import { classRaceList, bcClassRaceList } from "../../CooldownPlanner/Data/Data";
+import { serverDB, serverDBBurningCrusade } from "../../../../Databases/ServerDB";
 import LogDetailsTable from "./CharacterLogDetailsTable";
 import { STAT } from "../../../Engine/STAT";
 import { apiGetPlayerImage } from "../ConnectionUtilities";
@@ -27,6 +28,11 @@ const specImages = {
   "Holy Paladin": require("Images/PaladinSmall.png"),
   "Holy Priest": require("Images/HPriestSmall.jpg"),
   "Mistweaver Monk": require("Images/MistweaverSmall.jpg"),
+
+  "Holy Paladin BC": require("Images/classicon_paladin.jpg"),
+  "Restoration Druid BC": require("Images/classicon_druid.jpg"),
+  "Restoration Shaman BC": require("Images/classicon_shaman.jpg"),
+  "Holy Priest BC": require("Images/classicon_priest.jpg"),
 };
 
 /* ------------------- Called when a character is clicked. ------------------ */
@@ -282,6 +288,14 @@ export default function CharCards(props) {
         return "Classes.HolyPriest";
       case "Discipline Priest":
         return "Classes.DisciplinePriest";
+      case "Holy Paladin BC":
+        return "Classes.Holy Paladin BC";
+      case "Restoration Druid BC":
+        return "Classes.Restoration Druid";
+      case "Holy Priest BC":
+        return "Classes.Holy Priest";
+      case "Restoration Shaman BC":
+        return "Classes.Restoration Shaman";
       default:
         return "Error";
     }
@@ -323,6 +337,9 @@ export default function CharCards(props) {
 
   /* ---------------------------- Spec for the card --------------------------- */
   const spec = props.cardType === "Char" ? props.char.spec : "";
+  const gameType = useSelector((state) => state.gameType);
+  const serverList = gameType === "Retail" ? serverDB : serverDBBurningCrusade;
+  const availableClasses = classRaceList;
 
   /* ------------------------ Active Character Styling ------------------------ */
   const rootClassName = classes.root + " " + (props.isActive ? classes.activeChar : "");
@@ -345,7 +362,7 @@ export default function CharCards(props) {
     /*                      Character Card for the main menu                      */
     /* -------------------------------------------------------------------------- */
     <Grid item xs={12} sm={6} md={6} lg={4} xl={4}>
-      <CardActionArea onClick={(e) => charClicked(props.char, props.cardType, props.allChars, props.charUpdate, e)} onContextMenu={(e) => handleClickOpen(e)}>
+      <CardActionArea onClick={(e) => charClicked(props.char, props.cardType, props.allChars, props.charUpdate, e)} onContextMenu={gameType === "Retail" ? (e) => handleClickOpen(e) : ""}>
         <Card className={rootClassName} variant="outlined" raised={true}>
           <Avatar src={specImages[spec].default} variant="square" alt="" className={classes.large} />
           <Divider orientation="vertical" flexItem />
@@ -369,13 +386,23 @@ export default function CharCards(props) {
                   </Typography>
                 </Grid>
                 {/* ---- Settings Button - More apparent for users how to edit characters ---- */}
-                <Grid item xs={2}>
-                  <Tooltip title={t("Edit")}>
-                    <IconButton style={{ float: "right", top: -4 }} onClick={(e) => handleClickOpen(e)} aria-label="settings" size="small">
-                      <SettingsIcon fontSize="small" />
-                    </IconButton>
-                  </Tooltip>
-                </Grid>
+                {gameType === "Retail" ? (
+                  <Grid item xs={2}>
+                    <Tooltip title={t("Edit")}>
+                      <IconButton style={{ float: "right", top: -4 }} onClick={(e) => handleClickOpen(e)} aria-label="settings" size="small">
+                        <SettingsIcon fontSize="small" />
+                      </IconButton>
+                    </Tooltip>
+                  </Grid>
+                ) : (
+                  <Grid item xs={2}>
+                    <Tooltip title={t("Delete")}>
+                      <IconButton style={{ float: "right", top: -4, color: "red" }} onClick={(e) => handleDelete(e)} aria-label="settings" size="small">
+                        <ClearIcon fontSize="small" />
+                      </IconButton>
+                    </Tooltip>
+                  </Grid>
+                )}
               </Grid>
               <Grid item xs={12}>
                 <Divider />
@@ -465,7 +492,7 @@ export default function CharCards(props) {
                           onChange={(e, newValue) => {
                             handleChangeServer(newValue);
                           }}
-                          options={serverDB[region]}
+                          options={serverList[region]}
                           inputValue={server}
                           getOptionLabel={(option) => option}
                           onInputChange={(e, newInputValue) => {
@@ -480,7 +507,7 @@ export default function CharCards(props) {
                         <FormControl variant="outlined" fullWidth size="small" label={t("Class")} disabled={true}>
                           <InputLabel id="ClassSelector">{t("Class")}</InputLabel>
                           <Select label={t("Class")} value={healClass} onChange={handleChangeSpec} MenuProps={menuStyle}>
-                            {Object.getOwnPropertyNames(classRaceList)
+                            {Object.getOwnPropertyNames(availableClasses)
                               .map((key, i) => (
                                 <MenuItem key={i} value={key}>
                                   {classIcons(key, { height: 20, width: 20, margin: "0px 5px 0px 5px", verticalAlign: "middle", borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.12)" })}
@@ -498,7 +525,7 @@ export default function CharCards(props) {
                           <Select value={selectedRace} onChange={handleChangeRace} label={t("Race")} MenuProps={menuStyle}>
                             {healClass === ""
                               ? ""
-                              : classRaceList[healClass.toString()].races
+                              : availableClasses[healClass.toString()].races
                                   .map((key, i) => (
                                     <MenuItem key={i} value={key}>
                                       <div style={{ display: "inline-flex" }}>

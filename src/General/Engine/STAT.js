@@ -151,4 +151,52 @@ export const translatedStat = {
     cn: "Bonus DPS",
     ru: "Bonus DPS",
   },
+  bonushealing: { // Classic
+    en: "Healing"
+  },
+  mp5: { // Classic
+    en: "MP5"
+  },
+  agility: { // Classic
+    en: "Agility"
+  },
+  stamina: { // Classic
+    en: "Stamina"
+  },
+  spelldamage: { // Classic
+    en: "Healing"
+  },
+  spirit: { // Classic
+    en: "Spirit"
+  },
+  strength: { // Classic
+    en: "Strength"
+  },
+  hit: { // Classic
+    en: "Hit"
+  },
+  defenserating: { // Classic
+    en: "Defense"
+  },
+  blockrating: { // Classic
+    en: "Block"
+  },
+  spelldamage: { // Classic
+    en: "Spell Damage"
+  },
+  spellcrit: { // Classic
+    en: "Crit"
+  },
+  dodge: { // Classic
+    en: "Dodge"
+  },
+  attackpower: { // Classic
+    en: "Attack Power"
+  },
+  expertise: { // Classic
+    en: "Expertise"
+  },
+  hp5: { // Classic
+    en: "HP5"
+  },
 };

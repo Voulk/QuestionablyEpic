@@ -60,6 +60,9 @@
     "Battletag": "Battletag",
     "Edit": "Edit",
     "Equipped": "Equipped",
+    "Error": "Error",
+    "Burning Crusade": "Burning Crusade",
+    "Shadowlands": "Shadowlands",
 
     "Changelog": {
       "Header": "Changelog",
@@ -77,6 +80,7 @@
 
     "Classes": {
       "undefined": "",
+      "Retail Class Names": "-----------------",
       "HolyPaladin": "Holy Paladin",
       "Holy Paladin": "Holy Paladin",
       "DisciplinePriest": "Discipline Priest",
@@ -95,7 +99,12 @@
       "DeathKnight": "Death Knight",
       "Death Knight": "Death Knight",
       "ShadowPriest": "Shadow Priest",
-      "Shadow Priest": "Shadow Priest"
+      "Shadow Priest": "Shadow Priest",
+      "Burning Crusade Class Names": "-----------------",
+      "Holy Paladin BC": "Holy Paladin",
+      "Restoration Druid BC": "Restoration Druid",
+      "Holy Priest BC": "Holy Priest",
+      "Restoration Shaman BC": "Restoration Shaman"
     },
 
     "CooldownPlanner": {
@@ -320,6 +329,11 @@
         "353398": "Anomalous Blast"
       }
     },
+
+    "GameTypeToggle": {
+      "Retail": "Change to Retail (Shadowlands)",
+      "Classic": "Change to Classic (Burning Crusade)"
+    },
     "HallOfFame": {
       "title": "Hall of Fame",
       "buttonLabel": "QE Hall of Fame",
@@ -352,6 +366,7 @@
       "Profile": "Profile",
       "CharHeader": "Characters",
       "CharHelpText": "Add your characters here. Right click to edit your stat weights, realm information and more.",
+      "TierSets": "Tier Sets",
       "Articles": {
         "Header": "Recent Spec Articles",
         "HelpText": ""
@@ -364,7 +379,8 @@
         "CooldownPlanner": "Plan your cooldowns. Create your own or analyse logs",
         "Profile": "Edit your details",
         "UpgradeFinder": "Find your next piece of gear!",
-        "TrinketAnalysis": "See how this tiers trinkets line up in graph form"
+        "TrinketAnalysis": "See how this tiers trinkets line up in graph form",
+        "TierSets": ""
       }
     },
 
@@ -521,7 +537,8 @@
       "offhands": "Off-Hands",
       "finger": "Ring",
       "weapons": "Weapons",
-      "weaponCombos": "Weapon Combos"
+      "weaponCombos": "Weapon Combos",
+      "relics": "Relics & Wands"
     },
 
     "Soulbinds": {
@@ -546,37 +563,65 @@
     },
     "Settings": {
       "SettingsTitle": "Settings (Trinkets, Buffs, etc)",
-      "Setting0Spacer": "--------------------------------------------------------------------",
-      "Setting0Tooltip": "The equip effect of 'Cabalist's Hymnal' is increased by 5% per Ally",
-      "Setting0Title": "Hymnal Allies",
-      "Setting0TextFieldLabel": "Allies",
-      "Setting1Spacer": "--------------------------------------------------------------------",
-      "Setting1Tooltip": "Treat items that buff allies as if it were personal throughput",
-      "Setting1Title": "Group Benefits",
-      "Setting1TextFieldLabel": "",
-      "Setting2Spacer": "--------------------------------------------------------------------",
-      "Setting2Tooltip": "Select Discipline Talent",
-      "Setting2Title": "Talent",
-      "Setting2TextFieldLabel": "Talent",
-      "Setting3Spacer": "--------------------------------------------------------------------",
-      "Setting3Tooltip": "This will automatically add sockets to items that don't have them in compatible slots.",
-      "Setting3Title": "Auto Socket Items",
-      "Setting3TextFieldLabel": "",
-      "Setting4Spacer": "--------------------------------------------------------------------",
-      "Setting4Tooltip": "",
-      "Setting4Title": "",
-      "Setting4TextFieldLabel": "",
-      "Setting5Spacer": "--------------------------------------------------------------------",
-      "Setting5Tooltip": "",
-      "Setting5Title": "",
-      "Setting5TextFieldLabel": ""
+      "Retail": {
+        "Setting0Spacer": "--------------------------------------------------------------------",
+        "Setting0Tooltip": "The equip effect of 'Cabalist's Hymnal' is increased by 5% per Ally",
+        "Setting0Title": "Hymnal Allies",
+        "Setting0TextFieldLabel": "Allies",
+        "Setting1Spacer": "--------------------------------------------------------------------",
+        "Setting1Tooltip": "Treat items that buff allies as if it were personal throughput",
+        "Setting1Title": "Group Benefits",
+        "Setting1TextFieldLabel": "",
+        "Setting2Spacer": "--------------------------------------------------------------------",
+        "Setting2Tooltip": "Select Discipline Talent",
+        "Setting2Title": "Talent",
+        "Setting2TextFieldLabel": "Talent",
+        "Setting3Spacer": "--------------------------------------------------------------------",
+        "Setting3Tooltip": "This will automatically add sockets to items that don't have them in compatible slots.",
+        "Setting3Title": "Auto Socket Items",
+        "Setting3TextFieldLabel": "",
+        "Setting4Spacer": "--------------------------------------------------------------------",
+        "Setting4Tooltip": "",
+        "Setting4Title": "",
+        "Setting4TextFieldLabel": "",
+        "Setting5Spacer": "--------------------------------------------------------------------",
+        "Setting5Tooltip": "",
+        "Setting5Title": "",
+        "Setting5TextFieldLabel": ""
+      },
+      "BurningCrusade": {
+        "Setting0Spacer": "--------------------------------------------------------------------",
+        "Setting0Tooltip": "Mana varies a little in value based on fight length and how frequently you cast.",
+        "Setting0Title": "Mana Profile",
+        "Setting0TextFieldLabel": "",
+        "Setting1Spacer": "--------------------------------------------------------------------",
+        "Setting1Tooltip": "Enable this to include common raid buffs in the gear comparison.",
+        "Setting1Title": "Include Raid Buffs?",
+        "Setting1TextFieldLabel": "",
+        "Setting2Spacer": "--------------------------------------------------------------------",
+        "Setting2Tooltip": "Pick which Meta gem you'd like the app to try and socket.",
+        "Setting2Title": "Meta Gem",
+        "Setting2TextFieldLabel": "",
+        "Setting3Spacer": "--------------------------------------------------------------------",
+        "Setting3Tooltip": "",
+        "Setting3Title": "Auto-Enchant Items?",
+        "Setting3TextFieldLabel": "",
+        "Setting4Spacer": "--------------------------------------------------------------------",
+        "Setting4Tooltip": "Pick which gems you'd like the app to socket. Jewelcrafting-specifics ignored for now.",
+        "Setting4Title": "Gem Rarity",
+        "Setting4TextFieldLabel": "",
+        "Setting5Spacer": "--------------------------------------------------------------------",
+        "Setting5Tooltip": "",
+        "Setting5Title": "",
+        "Setting5TextFieldLabel": ""
+      }
     },
 
     "Snackbars": {
       "CharAddSuccess": "Character Added!",
       "CharUpdateSuccess": "Character Updated!",
       "LoginSuccess": "Logged in Successfully!",
-      "SimCImportSuccess": "SimC String Imported Successfully!",
+      "SimCImportSuccess": "Gear Imported Successfully!",
       "LogImportSuccess": "Log Imported Successfully!",
       "EmailUpdateSuccess": "Email Updated!",
       "EmailError": "Please check the Email and try again"
@@ -616,6 +661,13 @@
       "337824": "Shock Barrier"
     },
 
+    "TierSets": {
+      "Title": "Tier Sets",
+      "2Set": "2 Set HPS",
+      "4Set": "4 Set HPS",
+      "6Set": "6 Set HPS"
+    },
+
     "TopGear": {
       "Title": "Top Gear",
       "HelpText": "Top Gear lets you compare all of your gear at once! Enter your SimC string below and click any items you want included. When you're all set, hit 'Go' at the bottom of the page. To enter items manually, return to the main menu and include them in QE Quick Compare.",
@@ -646,18 +698,20 @@
       "MythicPlusBody": "Use the slider to select dungeon item level",
       "PvPHeader": "PvP Rating",
       "PvPBody": "Select  your Rating",
-      "SimCHeader": "SimC Import",
-      "SimCBody1Good": "SimC - All Set!",
-      "SimCBody1Invalid": "SimC - Empty Item Slot",
-      "SimCBody1Missing": "SimC - Missing",
+      "SimCHeader": "SimC/QE Import",
+      "SimCBody1Good": "Import - All Set!",
+      "SimCBody1Invalid": "Import - Empty Item Slot",
+      "SimCBody1Missing": "Import - Missing",
       "SimCBody2": "Current Equipped Gear:",
-      "SimCButton": "Import SimC",
-      "HelpText": "Insert a SimC String, select up to two raid difficulties, the Mythic+ ilvl you're interested in, and your PVP rating to see where you can find your next upgrade! All results are based on the gear you are actively wearing."
+      "SimCButton": "Import Gear",
+      "HelpText": "Insert a SimC String, select up to two raid difficulties, the Mythic+ ilvl you're interested in, and your PVP rating to see where you can find your next upgrade! All results are based on the gear you are actively wearing.",
+      "HelpTextBC": "Insert a QE String, select your dungeon difficulty, and (optionally) your PVP rating to see where you can find your next upgrade! All results are based on the gear you are actively wearing.",
+      "DungeonBodyBC": ""
     },
 
     "TrinketAnalysis": {
       "Header": "Trinket Analysis",
-      "HelpText": "Use the graph below as a rough guide of which trinkets are worth pursuing, and then use Quick Compare or Top Gear to compare specific choices. World quest trinkets and settings panel coming soon."
+      "HelpText": "Use the graph below as a rough guide of which trinkets are worth pursuing, and then use Quick Compare or Top Gear to compare specific choices. Settings panel coming soon!"
     },
 
     "DruidLegendariesComment": "DruidLegendariesComment",
@@ -961,11 +1015,11 @@
       "Raids": {
         "745": "Karazhan",
         "321": "Zul'Aman",
-        "746": "Gruul's Lair",
+        "746": "Gruul & Mag",
         "747": "Magtheridon's Lair",
-        "748": "Serpentshrine Cavern",
+        "748": "Serpentshrine",
         "749": "Tempest Keep",
-        "750": "The Battle for Mount Hyjal",
+        "750": "Mount Hyjal",
         "751": "Black Temple",
         "752": "Sunwell Plateau"
       },
@@ -990,57 +1044,114 @@
       "BossNames": {
         "Karazahn Bosses": "",
         "1552": "Servant's Quarters",
+        "652": "Attumen the Huntsman",
         "1553": "Attumen the Huntsman",
+        "653": "Moroes",
         "1554": "Moroes",
+        "654": "Maiden of Virtue",
         "1555": "Maiden of Virtue",
+        "655": "Opera Hall",
         "1556": "Opera Hall",
+        "656": "The Curator",
         "1557": "The Curator",
+        "657": "Shade of Aran",
         "1559": "Shade of Aran",
+        "658": "Terestian Illhoof",
         "1560": "Terestian Illhoof",
+        "659": "Netherspite",
         "1561": "Netherspite",
+        "660": "Chess Event",
         "1562": "Chess Event",
+        "661": "Prince Malchezaar",
         "1563": "Prince Malchezaar",
+        "662": "Nightbane",
         "Gruul's Lair Bosses": "",
+        "649": "High King Maulgar",
         "1564": "High King Maulgar",
+        "650": "Gruul the Dragonkiller",
         "1565": "Gruul the Dragonkiller",
         "Magtheridon's Lair Bosses": "",
+        "651": "Magtheridon",
         "1566": "Magtheridon",
         "Serpentshrine Cavern Bosses": "",
+        "623": "Hydross the Unstable",
         "1567": "Hydross the Unstable",
+        "624": "The Lurker Below",
         "1568": "The Lurker Below",
+        "625": "Leotheras the Blind",
         "1569": "Leotheras the Blind",
+        "626": "Fathom-Lord Karathress",
         "1570": "Fathom-Lord Karathress",
+        "627": "Morogrim Tidewalker",
         "1571": "Morogrim Tidewalker",
+        "628": "Lady Vashj",
         "1572": "Lady Vashj",
         "Tempest Keep Bosses": "",
+        "730": "Al'ar",
         "1573": "Al'ar",
+        "731": "Void Reaver",
         "1574": "Void Reaver",
+        "732": "High Astromancer Solarian",
         "1575": "High Astromancer Solarian",
+        "733": "Kael'thas Sunstrider",
         "1576": "Kael'thas Sunstrider",
         "The Battle for Mount Hyjal Bosses": "",
+        "618": "Rage Winterchill",
         "1577": "Rage Winterchill",
+        "619": "Anetheron",
         "1578": "Anetheron",
+        "620": "Kaz'rogal",
         "1579": "Kaz'rogal",
         "1580": "Azgalor",
+        "621": "Azgalor",
+        "622": "Archimonde",
         "1581": "Archimonde",
         "Black Temple Bosses": "",
+        "601": "High Warlord Naj'entus",
         "1582": "High Warlord Naj'entus",
+        "602": "Supremus",
         "1583": "Supremus",
+        "603": "Shade of Akama",
         "1584": "Shade of Akama",
+        "604": "Teron Gorefiend",
         "1585": "Teron Gorefiend",
+        "605": "Gurtogg Bloodboil",
         "1586": "Gurtogg Bloodboil",
+        "606": "Reliquary of Souls",
         "1587": "Reliquary of Souls",
+        "607": "Mother Shahraz",
         "1588": "Mother Shahraz",
+        "608": "The Illidari Council",
         "1589": "The Illidari Council",
+        "609": "Illidan Stormrage",
         "1590": "Illidan Stormrage",
         "Sunwell Plateau Bosses": "",
+        "724": "Kalecgos",
         "1591": "Kalecgos",
+        "725": "Brutallus",
         "1592": "Brutallus",
+        "726": "Felmyst",
         "1593": "Felmyst",
+        "727": "The Eredar Twins",
         "1594": "The Eredar Twins",
+        "728": "M'uru",
         "1595": "M'uru",
-        "1596": "Kil'jaeden"
+        "729": "Kil'jaeden",
+        "1596": "Kil'jaeden",
+        "Zul'Aman": "",
+        "1189": "Akil'zon",
+        "1190": "Nalorakk",
+        "1191": "Jan'alai",
+        "1192": "Halazzi",
+        "1193": "Hex Lord Malacrass",
+        "1194": "Zul'jin"
       }
+    },
+    "Welcome": {
+      "WelcomeTo": "Welcome To",
+      "ContinueMessage": "To begin using the app, add one of your characters below. ",
+      "CreateCharacter": "Create Character",
+      "GameTypeMessage": "Select which version you'd like to start with."
     }
   }
 }
