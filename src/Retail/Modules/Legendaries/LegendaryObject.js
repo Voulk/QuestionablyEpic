@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import { makeStyles } from "@material-ui/core/styles";
 import { Card, CardActions, CardContent, Divider, Grid, Typography } from "@material-ui/core";
 import { legendaryImages } from "./LegendaryIcons";
+import { legendaryNameTranslator } from "./LegendaryTranslations";
 
 const useStyles = makeStyles({
   root: {
@@ -16,7 +17,8 @@ const useStyles = makeStyles({
 });
 
 export default function LegendaryObject(props) {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const currentLanguage = i18n.language;
   const classes = useStyles();
   // Item Provided to Component
   const item = props.item;
@@ -28,6 +30,8 @@ export default function LegendaryObject(props) {
   const paddedDPS = Math.round(item.effectiveDPS).toString().padStart(3);
   // If the dps string is greater than 5, return DPS: paddedDPS else nothing
   const dpsString = item.effectiveDPS > 5 ? "DPS: " + paddedDPS : "";
+
+  const textname = legendaryNameTranslator(item.name)[currentLanguage];
 
   return (
     // Breakpoints (12 units / row)
@@ -61,10 +65,10 @@ export default function LegendaryObject(props) {
                   lineHeight: 1,
                 }}
               >
-                {t(item.name + ".name")}
+                {textname.name}
               </Typography>
               {/* -------------------------------- Slots available to Legendary -------------------------------- */}
-              <Typography variant="caption">{t(item.name + ".slot")}</Typography>
+              <Typography variant="caption">{textname.slot}</Typography>
             </div>
             {/* --------------------------------------- Legendary Icon --------------------------------------- */}
             <img
@@ -87,7 +91,7 @@ export default function LegendaryObject(props) {
               <CardContent style={{ padding: 0 }}>
                 {/* -------------------------------- Legendary Effect Description -------------------------------- */}
                 <Typography align="left" variant="caption" style={{ fontSize: "0.75rem", lineHeight: 1.1 }} component="p">
-                  {t(item.name + ".desc")}
+                  {textname.desc}
                 </Typography>
               </CardContent>
             </Grid>
@@ -109,7 +113,7 @@ export default function LegendaryObject(props) {
         <CardActions>
           {/* ----------------------------------- Legendary drop location ---------------------------------- */}
           <Typography variant="caption" component="p" style={{ padding: "0px 8px" }}>
-            {t("Source")}: {t(item.name + ".droploc")}
+            {t("Source")}: {textname.droploc}
           </Typography>
         </CardActions>
       </Card>
