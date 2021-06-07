@@ -31,7 +31,7 @@ export default function LegendaryObject(props) {
   // If the dps string is greater than 5, return DPS: paddedDPS else nothing
   const dpsString = item.effectiveDPS > 5 ? "DPS: " + paddedDPS : "";
 
-  const textname = legendaryNameTranslator(item.name)[currentLanguage];
+  const legendaryDataObject = legendaryNameTranslator(item.name)[currentLanguage];
 
   return (
     // Breakpoints (12 units / row)
@@ -65,10 +65,10 @@ export default function LegendaryObject(props) {
                   lineHeight: 1,
                 }}
               >
-                {textname.name}
+                {legendaryDataObject.name}
               </Typography>
               {/* -------------------------------- Slots available to Legendary -------------------------------- */}
-              <Typography variant="caption">{textname.slot}</Typography>
+              <Typography variant="caption">{legendaryDataObject.slot}</Typography>
             </div>
             {/* --------------------------------------- Legendary Icon --------------------------------------- */}
             <img
@@ -91,7 +91,7 @@ export default function LegendaryObject(props) {
               <CardContent style={{ padding: 0 }}>
                 {/* -------------------------------- Legendary Effect Description -------------------------------- */}
                 <Typography align="left" variant="caption" style={{ fontSize: "0.75rem", lineHeight: 1.1 }} component="p">
-                  {textname.desc}
+                  {legendaryDataObject.desc}
                 </Typography>
               </CardContent>
             </Grid>
@@ -113,7 +113,7 @@ export default function LegendaryObject(props) {
         <CardActions>
           {/* ----------------------------------- Legendary drop location ---------------------------------- */}
           <Typography variant="caption" component="p" style={{ padding: "0px 8px" }}>
-            {t("Source")}: {textname.droploc}
+            {t("Source")}: {legendaryDataObject.droploc}
           </Typography>
         </CardActions>
       </Card>
