@@ -27,3 +27,4 @@ ca.crt
 cert.crt
 cert.key
 .eslintrc
+.VSCodeCounter

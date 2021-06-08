@@ -457,7 +457,7 @@ class Player {
 
     if (spec === SPEC.RESTODRUID) {
       this.activeStats = {
-        intellect: 1600,
+        intellect: 1800,
         haste: 790,
         crit: 480,
         mastery: 200,
@@ -469,7 +469,7 @@ class Player {
       this.statWeights.DefaultWeights = true;
     } else if (spec === SPEC.HOLYPALADIN) {
       this.activeStats = {
-        intellect: 1600,
+        intellect: 1800,
         haste: 800,
         crit: 200,
         mastery: 550,
@@ -483,7 +483,7 @@ class Player {
     } else if (spec === SPEC.RESTOSHAMAN) {
       // all of this needs a proper input once
       this.activeStats = {
-        intellect: 1600,
+        intellect: 1800,
         haste: 125,
         crit: 590,
         mastery: 200,
@@ -495,7 +495,7 @@ class Player {
       this.statWeights.DefaultWeights = true;
     } else if (spec === SPEC.DISCPRIEST) {
       this.activeStats = {
-        intellect: 1600,
+        intellect: 1800,
         haste: 700,
         crit: 480,
         mastery: 370,
@@ -508,7 +508,7 @@ class Player {
       this.statWeights.DefaultWeights = true;
     } else if (spec === SPEC.HOLYPRIEST) {
       this.activeStats = {
-        intellect: 1600,
+        intellect: 1800,
         haste: 125,
         crit: 475,
         mastery: 470,
@@ -521,7 +521,7 @@ class Player {
       this.statWeights.DefaultWeights = true;
     } else if (spec === SPEC.MISTWEAVERMONK) {
       this.activeStats = {
-        intellect: 1600,
+        intellect: 1800,
         haste: 125,
         crit: 590,
         mastery: 200,
