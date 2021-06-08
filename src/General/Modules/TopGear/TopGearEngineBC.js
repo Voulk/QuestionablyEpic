@@ -319,17 +319,17 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
     for (var stat in setStats) {
       if (stat === "hps") {
         hardScore += setStats[stat];
-        console.log("Adding HPS score of " + setStats[stat]);
+        //console.log("Adding HPS score of " + setStats[stat]);
       } else if (stat === "dps") {
         continue;
       } else {
         hardScore += setStats[stat] * adjusted_weights[stat];
-        console.log("Adding " + (setStats[stat] * player.statWeights["Raid"][stat]) + " to hardscore for stat " + stat + " with stat weight: " + player.statWeights["Raid"][stat]);
+        //console.log("Adding " + (setStats[stat] * player.statWeights["Raid"][stat]) + " to hardscore for stat " + stat + " with stat weight: " + player.statWeights["Raid"][stat]);
       }
     }
   
     //console.log(JSON.stringify(setStats));
-    console.log("Soft Score: " + builtSet.sumSoftScore + ". Hard Score: " + hardScore);
+    //console.log("Soft Score: " + builtSet.sumSoftScore + ". Hard Score: " + hardScore);
     //console.log("Enchants: " + JSON.stringify(enchants));
     builtSet.hardScore = Math.round(1000 * hardScore) / 1000;
     builtSet.setStats = setStats;

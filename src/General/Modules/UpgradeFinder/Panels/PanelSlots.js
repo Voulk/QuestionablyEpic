@@ -11,16 +11,24 @@ import AccordionDetails from "@material-ui/core/AccordionDetails";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import { withStyles } from "@material-ui/core/styles";
 
-function filterItemListBySlot(itemList, Slot) {
+function filterItemListBySlot(itemList, slot) {
+  const excludedInstance = [748, 749, 750, 751, 321, 752];
+  
   let temp = itemList.filter(function (item) {
-    if (slot === "AllMainhands") {
-      return item.slot === "1H Weapon" || item.slot === "2H Weapon";
-    } else if (slot === "Offhands") {
-      return item.slot === "Holdable" || item.slot === "Offhand" || item.slot === "Shield";
-    } else {
-      return item.slot === slot;
+    if ("source" in item && !(excludedInstance.includes(item.source.instanceId))) {
+      if (slot === "AllMainhands") {
+        return item.slot === "1H Weapon" || item.slot === "2H Weapon";
+      } else if (slot === "Offhands") {
+        return item.slot === "Holdable" || item.slot === "Offhand" || item.slot === "Shield";
+      } else {
+        return item.slot === slot;
+      }
     }
-  });
+    else {
+      return false;
+    };
+    });
+
   return temp;
 }
 
@@ -63,6 +71,7 @@ export default function SlotsContainer(props) {
   const { t } = useTranslation();
   const itemList = props.itemList;
   const itemDifferentials = props.itemDifferentials;
+  
   itemList.sort((a, b) => (getDifferentialByID(itemDifferentials, a.id, a.level) < getDifferentialByID(itemDifferentials, b.id, b.level) ? 1 : -1));
 
   const slotList = [

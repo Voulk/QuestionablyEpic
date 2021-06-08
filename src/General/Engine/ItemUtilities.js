@@ -532,7 +532,6 @@ function compileStats(stats, bonus_stats) {
 
   for (const bonusStat in bonus_stats) {
     if (!(bonusStat in stats)) {
-      console.log("Adding bonus stat: " + bonusStat);
       stats[bonusStat] = bonus_stats[bonusStat];
     }
   }
