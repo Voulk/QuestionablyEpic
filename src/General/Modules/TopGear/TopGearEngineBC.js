@@ -257,7 +257,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
     // ----- SOCKETS -----
     var s0 = performance.now();
     const optimalGems = gemGear(builtSet.itemList, adjusted_weights, userSettings)
-    hardScore += optimalGems.score;
+    //hardScore += optimalGems.score;
     builtSet.bcSockets = optimalGems;
     const gemStats = getGemStatLoadout(optimalGems.socketsAvailable, optimalGems.socketedPieces, optimalGems.socketedColors);
 
@@ -316,13 +316,10 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
     setStats.bonushealing = (setStats.bonushealing + setStats.spelldamage);
     setStats.spelldamage = 0;
 
-    
-
-    
-
     for (var stat in setStats) {
       if (stat === "hps") {
         hardScore += setStats[stat];
+        console.log("Adding HPS score of " + setStats[stat]);
       } else if (stat === "dps") {
         continue;
       } else {

@@ -554,7 +554,7 @@ function applyBCStatMods(spec, setStats) {
   }
   else if (spec === "Restoration Druid BC") {
     // Also gets 30% of spirit MP5 as MP5
-    setStats.spirit = (setStats.spirit || 0) * 0.15;
+    setStats.spirit = (setStats.spirit || 0) * 1.15;
   }
   else if (spec === "Holy Priest BC") {
     // Also gets 30% of spirit MP5 as MP5
@@ -588,7 +588,7 @@ export function scoreItem(item, player, contentType, gameType = "Retail") {
       if (stat !== "bonus_stats") {
         let statSum = sumStats[stat]
         score += statSum * player.getStatWeight(contentType, stat);
-        //console.log("Stat: " + stat + " adds " + statSum * player.getStatWeight(contentType, stat) + " to score.");
+        //console.log("Stat: " + stat + " adds " + statSum * player.getStatWeight(contentType, stat) + " to score with amount " + sumStats[stat]);
       }
 
   }
