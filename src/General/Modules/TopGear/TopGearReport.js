@@ -74,15 +74,15 @@ function TopGearReport(props) {
     enchants = topSet.enchantBreakdown;
     differentials = result.differentials;
     itemList = topSet.itemList;
-    gemStats = gameType === "BurningCrusade" ? topSet.socketInformation : "";
+    console.log(topSet);
+    gemStats = (gameType === "BurningCrusade" && "socketInformation" in topSet) ? topSet.socketInformation : "";
     statList = topSet.setStats;
-    console.log(gemStats);
   } else {
     resultValid = false;
   }
 
   const getGemIDs = (slot) => {
-    if (gameType === "Retail" || (gemStats == undefined)) return "";
+    if (gameType === "Retail" || (!gemStats)) return "";
     else {
       let gemString = "&gems=";
       for (var i = 0; i < gemStats.socketsAvailable.length; i++) {       

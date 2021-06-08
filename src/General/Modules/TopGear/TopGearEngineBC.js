@@ -255,18 +255,25 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
     }
 
     // ----- SOCKETS -----
-    var s0 = performance.now();
-    const optimalGems = gemGear(builtSet.itemList, adjusted_weights, userSettings)
-    //hardScore += optimalGems.score;
-    builtSet.bcSockets = optimalGems;
-    const gemStats = getGemStatLoadout(optimalGems.socketsAvailable, optimalGems.socketedPieces, optimalGems.socketedColors);
+    if (userSettings.gemRarity !== "none") {
+      console.log("GEMMING SET");
+      var s0 = performance.now();
+      const optimalGems = gemGear(builtSet.itemList, adjusted_weights, userSettings)
+      //hardScore += optimalGems.score;
+      builtSet.bcSockets = optimalGems;
+      const gemStats = getGemStatLoadout(optimalGems.socketsAvailable, optimalGems.socketedPieces, optimalGems.socketedColors);
 
-    var s1 = performance.now();
+      compileStats(setStats, gemStats); //TODO
+      builtSet.socketInformation = optimalGems;
+      var s1 = performance.now();
+    }
+
+
+    
     //console.log("Gems took " + (s1 - s0) + " milliseconds with count ")
- 
     // ----------------------
     compileStats(setStats, bonus_stats); // Add the base stats on our gear together with enchants & gems.
-    compileStats(setStats, gemStats); //TODO
+    
     compileStats(setStats, enchant_stats);
     //applyDiminishingReturns(setStats); // Apply Diminishing returns to our haul.
     addBaseStats(setStats, player.race, player.spec); // Add our base stats, which are immune to DR. This includes our base 5% crit, and whatever base mastery our spec has.
@@ -334,7 +341,6 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
     builtSet.hardScore = Math.round(1000 * hardScore) / 1000;
     builtSet.setStats = setStats;
     builtSet.enchantBreakdown = enchants;
-    builtSet.socketInformation = optimalGems;
     return builtSet; // Temp
   }
 

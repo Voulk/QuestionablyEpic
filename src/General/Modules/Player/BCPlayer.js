@@ -27,7 +27,7 @@ class BCPlayer extends Player {
                     spirit: 0.85,
                     crit: 0,
                     spellcrit: 0.03,
-                    stamina: 0.01,
+                    stamina: 0.2,
                     spellhaste: 0.1,
                 },
                 Dungeon: {
@@ -46,7 +46,7 @@ class BCPlayer extends Player {
                     spirit: 0.04,
                     crit: 0,
                     spellcrit: 0.436,
-                    stamina: 0.01,
+                    stamina: 0.2,
                     spellhaste: 0.31,
                 },
                 Dungeon: {
@@ -65,7 +65,7 @@ class BCPlayer extends Player {
                     spirit: 0.02,
                     crit: 0,
                     spellcrit: 0.59,
-                    stamina: 0.01,
+                    stamina: 0.2,
                     spellhaste: 1.4,
                 },
                 Dungeon: {
@@ -84,7 +84,7 @@ class BCPlayer extends Player {
                     spirit: 0.77,
                     crit: 0,
                     spellcrit: 1.46,
-                    stamina: 0.01,
+                    stamina: 0.2,
                     spellhaste: 0.6,
                 },
                 Dungeon: {
@@ -101,7 +101,7 @@ class BCPlayer extends Player {
                     spirit: 0.1,
                     crit: 0,
                     spellcrit: 1.21,
-                    stamina: 0.01,
+                    stamina: 0.2,
                     mp5: 1.9,
                     spellhaste: 0.7,
                 },
