@@ -102010,5 +102010,388 @@ export const itemDB = [
             "name": "Instructor's Divine Bell"
         },
         "levelRange": []
-    }
+    },
+    {
+        "id": 185845,
+        "name": "First Class Healing Distributor",
+        "names": {
+            "cn": "",
+            "en": "First Class Healing Distributor",
+            "ru": "Освобожденный подменыш",
+            "es": "Cambiante desatado",
+            "br": "Metamorfo Liberto",
+            "kr": "",
+            "fr": "Changelin délié",
+            "de": "Unbändiger Wechselbalg"
+        },
+        "icon": "inv_pet_spectralporcupinegreen",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 155,
+        "stats": {
+            "intellect": 6666,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "sources": [
+            {
+                "instanceId": -1,
+                "encounterId": 1184
+            },
+            {
+                "instanceId": 1184,
+                "encounterId": 2400
+            }
+        ],
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Trinket",
+        "effect": {
+            "type": "trinket",
+            "name": "First Class Healing Distributor"
+        },
+        "levelRange": [
+            226
+        ]
+    },
+    {
+        "id": 185818,
+        "name": "So'leah's Secret Technique",
+        "names": {
+            "cn": "",
+            "en": "So'leah's Secret Technique",
+            "ru": "Освобожденный подменыш",
+            "es": "Cambiante desatado",
+            "br": "Metamorfo Liberto",
+            "kr": "",
+            "fr": "Changelin délié",
+            "de": "Unbändiger Wechselbalg"
+        },
+        "icon": "inv_pet_spectralporcupinegreen",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 155,
+        "stats": {
+            "intellect": 6666,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "sources": [
+            {
+                "instanceId": -1,
+                "encounterId": 1184
+            },
+            {
+                "instanceId": 1184,
+                "encounterId": 2400
+            }
+        ],
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Trinket",
+        "effect": {
+            "type": "trinket",
+            "name": "So'leah's Secret Technique"
+        },
+        "levelRange": [
+            226
+        ]
+    },
+    {
+        "id": 186423,
+        "name": "Titanic Ocular Gland",
+        "names": {
+            "cn": "",
+            "en": "Titanic Ocular Gland",
+            "ru": "Освобожденный подменыш",
+            "es": "Cambiante desatado",
+            "br": "Metamorfo Liberto",
+            "kr": "",
+            "fr": "Changelin délié",
+            "de": "Unbändiger Wechselbalg"
+        },
+        "icon": "inv_pet_spectralporcupinegreen",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 226,
+        "stats": {
+            "intellect": 6666,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "sources": [
+            {
+                "instanceId": -1,
+                "encounterId": 1184
+            },
+            {
+                "instanceId": 1184,
+                "encounterId": 2400
+            }
+        ],
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Trinket",
+        "effect": {
+            "type": "trinket",
+            "name": "Titanic Ocular Gland"
+        },
+        "levelRange": [
+            213,
+            226,
+            239,
+            252,
+        ]
+    },
+    {
+        "id": 186423,
+        "name": "Shadowed Orb of Torment",
+        "names": {
+            "cn": "",
+            "en": "Shadowed Orb of Torment",
+            "ru": "Освобожденный подменыш",
+            "es": "Cambiante desatado",
+            "br": "Metamorfo Liberto",
+            "kr": "",
+            "fr": "Changelin délié",
+            "de": "Unbändiger Wechselbalg"
+        },
+        "icon": "inv_pet_spectralporcupinegreen",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 226,
+        "stats": {
+            "intellect": 6666,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "sources": [
+            {
+                "instanceId": -1,
+                "encounterId": 1184
+            },
+            {
+                "instanceId": 1184,
+                "encounterId": 2400
+            }
+        ],
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Trinket",
+        "effect": {
+            "type": "trinket",
+            "name": "Shadowed Orb of Torment"
+        },
+        "levelRange": [
+            213,
+            226,
+            239,
+            252,
+        ]
+    },
+    {
+        "id": 186436,
+        "name": "Resonant Silver Bell",
+        "names": {
+            "cn": "",
+            "en": "Resonant Silver Bell",
+            "ru": "Освобожденный подменыш",
+            "es": "Cambiante desatado",
+            "br": "Metamorfo Liberto",
+            "kr": "",
+            "fr": "Changelin délié",
+            "de": "Unbändiger Wechselbalg"
+        },
+        "icon": "inv_pet_spectralporcupinegreen",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 233,
+        "stats": {
+            "intellect": 6666,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "sources": [
+            {
+                "instanceId": -1,
+                "encounterId": 1184
+            },
+            {
+                "instanceId": 1184,
+                "encounterId": 2400
+            }
+        ],
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Trinket",
+        "effect": {
+            "type": "trinket",
+            "name": "Resonant Silver Bell"
+        },
+        "levelRange": [
+            219,
+            233,
+            246,
+            259,
+        ]
+    },
+    {
+        "id": 186435,
+        "name": "Carved Ivory Keepsake",
+        "names": {
+            "cn": "",
+            "en": "Carved Ivory Keepsake",
+            "ru": "Освобожденный подменыш",
+            "es": "Cambiante desatado",
+            "br": "Metamorfo Liberto",
+            "kr": "",
+            "fr": "Changelin délié",
+            "de": "Unbändiger Wechselbalg"
+        },
+        "icon": "inv_pet_spectralporcupinegreen",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 226,
+        "stats": {
+            "intellect": 6666,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "sources": [
+            {
+                "instanceId": -1,
+                "encounterId": 1184
+            },
+            {
+                "instanceId": 1184,
+                "encounterId": 2400
+            }
+        ],
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Trinket",
+        "effect": {
+            "type": "trinket",
+            "name": "Carved Ivory Keepsake"
+        },
+        "levelRange": [
+            213,
+            226,
+            239,
+            252,
+        ]
+    },
+    {
+        "id": 187447,
+        "name": "Soul Cage Fragment",
+        "names": {
+            "cn": "",
+            "en": "Soul Cage Fragment",
+            "ru": "Освобожденный подменыш",
+            "es": "Cambiante desatado",
+            "br": "Metamorfo Liberto",
+            "kr": "",
+            "fr": "Changelin délié",
+            "de": "Unbändiger Wechselbalg"
+        },
+        "icon": "inv_pet_spectralporcupinegreen",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 233,
+        "stats": {
+            "intellect": 0,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 6666,
+            "versatility": 0
+        },
+        "sources": [
+            {
+                "instanceId": -1,
+                "encounterId": 1184
+            },
+            {
+                "instanceId": 1184,
+                "encounterId": 2400
+            }
+        ],
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Trinket",
+        "effect": {
+            "type": "trinket",
+            "name": "Soul Cage Fragment"
+        },
+        "levelRange": [
+            233,
+        ]
+    },
+    {
+        "id": 187447,
+        "name": "Scrawled Word of Recall",
+        "names": {
+            "cn": "",
+            "en": "Scrawled Word of Recall",
+            "ru": "Освобожденный подменыш",
+            "es": "Cambiante desatado",
+            "br": "Metamorfo Liberto",
+            "kr": "",
+            "fr": "Changelin délié",
+            "de": "Unbändiger Wechselbalg"
+        },
+        "icon": "inv_pet_spectralporcupinegreen",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 226,
+        "stats": {
+            "intellect": 6666,
+            "stamina": 0,
+            "haste": 0,
+            "crit": 0,
+            "mastery": 0,
+            "versatility": 0
+        },
+        "sources": [
+            {
+                "instanceId": -1,
+                "encounterId": 1184
+            },
+            {
+                "instanceId": 1184,
+                "encounterId": 2400
+            }
+        ],
+        "dropLoc": "",
+        "selectable": "true",
+        "slot": "Trinket",
+        "effect": {
+            "type": "trinket",
+            "name": "Scrawled Word of Recall"
+        },
+        "levelRange": [
+            213,
+            226,
+            239,
+            252
+        ]
+    },
 ]
