@@ -15,6 +15,7 @@ function TopGearReport(props) {
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
   const gameType = useSelector((state) => state.gameType);
+  const boxWidth = (gameType === "BurningCrusade") ? "60%" : "70%";
 
   /* ----------------------------- On Component load get player image ----------------------------- */
   useEffect(() => {
@@ -99,7 +100,7 @@ function TopGearReport(props) {
     <div
       style={{
         margin: "auto",
-        width: "60%",
+        width: boxWidth,
         display: "block",
       }}
     >
