@@ -11,7 +11,7 @@ import AccordionDetails from "@material-ui/core/AccordionDetails";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import { withStyles } from "@material-ui/core/styles";
 
-function filterItemListBySlot(itemList, slot) {
+function filterItemListBySlot(itemList, Slot) {
   let temp = itemList.filter(function (item) {
     if (slot === "AllMainhands") {
       return item.slot === "1H Weapon" || item.slot === "2H Weapon";
