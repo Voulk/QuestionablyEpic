@@ -16,7 +16,7 @@ export const getDruidTierSet = (effectName, player) => {
     // Your helpful spells have a chance to restore up to 120 mana. (Proc chance: 5%)
     effectName === 37288
   ) {
-    bonus_stats.intellect = 0; // PH TODO
+    bonus_stats.mp5 = 29 * 0.05 * 120 / 12; // PH TODO
   }
 
   if (
@@ -26,7 +26,7 @@ export const getDruidTierSet = (effectName, player) => {
     // Reduces the cooldown on your Nature's Swiftness ability by 24 sec.
     effectName === 37292
   ) {
-    bonus_stats.intellect = 0; // PH TODO
+    bonus_stats.intellect = 0; // This is an ok bonus, but doesn't offer any actual healing.
   }
 
   /* ---------------------------------------------------------------------------------------------- */
