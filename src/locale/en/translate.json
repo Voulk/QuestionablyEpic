@@ -623,7 +623,7 @@
       "Title": "Top Gear",
       "HelpTextRetail": "Top Gear lets you compare all of your gear at once! Enter your SimC string below and click any items you want included. When you're all set, hit 'Go' at the bottom of the page. To enter items manually, return to the main menu and add them in QE Quick Compare.",
       "HelpTextBurningCrusade": "Top Gear lets you compare all of your gear at once! Enter your QE Import string below and click any items you want included. When you're all set, hit 'Go' at the bottom of the page. To enter items manually, return to the main menu and add them in Quick Compare.",
-      "ItemsHereMessage": "Your items will go here after you import.",
+      "ItemsHereMessage": "Your items will go here after you import, then hit 'Go' once happy with your selection.",
       "ErrorMessage": "So sorry, seems you've run into an error. This is usually caused by not being able to create any valid sets. Check that you have a valid weapon selected, two or more rings and two or more trinkets. If multiple legendaries are selected then there must be a valid alternative for each.",
       "GoMsg": "Go!",
       "SelectedItems": "Selected Items",
