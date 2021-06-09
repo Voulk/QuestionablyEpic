@@ -96,6 +96,10 @@ export default function ItemCard(props) {
     if (item.source.instanceId === -17 || item.source.encounterId === -17) {
       return t("PvPCurrency.-17");
     }
+        /* -------------------------------- TBC Badge Gear -------------------------------- */
+        if (item.source.instanceId === -4) {
+          return t("BadgeGear");
+        }
   };
 
   return (
