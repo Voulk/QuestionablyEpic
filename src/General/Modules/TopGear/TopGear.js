@@ -157,7 +157,7 @@ export default function TopGear(props) {
   };
 
   const selectedItemCount = props.player.getSelectedItems().length;
-  const helpText = t("TopGear.HelpText");
+  const helpText = t("TopGear.HelpText" + gameType);
 
   const activateItem = (unique, active) => {
     if (selectedItemCount < CONSTRAINTS.Shared.topGearMaxItems || active) {
@@ -250,8 +250,11 @@ export default function TopGear(props) {
           bottom: 0,
           left: 0,
           right: 0,
-          height: "50px",
+          height: "60px",
           backgroundColor: "#424242",
+          borderTopColor: "Goldenrod",
+          borderTopWidth: "1px",
+          borderTopStyle: "solid",
           width: "100%",
           display: "flex",
           alignItems: "center",
@@ -267,14 +270,14 @@ export default function TopGear(props) {
             alignItems: "center",
           }}
         >
-          <Typography align="center" style={{ padding: "10px 10px 5px 10px" }} color="primary">
+          <Typography align="center" style={{ padding: "2px 2px 2px 2px" }} color="primary">
             {t("TopGear.SelectedItems") + ":" + " " + selectedItemCount + "/" + TOPGEARCAP}
           </Typography>
           <div>
-            <Typography variant="subtitle2" align="center" style={{ padding: "10px 10px 5px 10px", marginRight: "5px" }} color="primary">
+            <Typography variant="subtitle2" align="center" style={{ padding: "2px 2px 2px 2px", marginRight: "5px" }} color="primary">
               {errorMessage}
             </Typography>
-            <Button variant="contained" color="secondary" align="center" style={{ height: "68%", width: "180px" }} disabled={!btnActive} onClick={unleashTopGear}>
+            <Button variant="contained" color="primary" align="center" style={{ height: "64%", width: "180px" }} disabled={!btnActive} onClick={unleashTopGear}>
               {t("TopGear.GoMsg")}
             </Button>
           </div>

@@ -95,7 +95,7 @@ export default function BurningCrusadeSettings(props) {
               <Typography color="primary" style={{ marginRight: 4 }} noWrap>
                 {t("Settings.BurningCrusade.Setting0Title")}
               </Typography>
-              <Tooltip title={t("Settings.BurningCrusade.Setting0Tooltip")} placement="top-start">
+              <Tooltip title={<Typography align="center" variant="body2">{t("Settings.BurningCrusade.Setting0Tooltip")}</Typography>} placement="top-start">
                 <InfoOutlinedIcon style={{ height: 15, width: 15 }} fontSize="small" />
               </Tooltip>
             </div>
@@ -128,7 +128,7 @@ export default function BurningCrusadeSettings(props) {
               <Typography color="primary" style={{ marginRight: 4 }} noWrap>
                 {t("Settings.BurningCrusade.Setting1Title")}
               </Typography>
-              <Tooltip title={t("Settings.BurningCrusade.Setting1Tooltip")} placement="top-start">
+              <Tooltip title={<Typography align="center" variant="body2">{t("Settings.BurningCrusade.Setting1Tooltip")}</Typography>} placement="top-start">
                 <InfoOutlinedIcon style={{ height: 15, width: 15 }} fontSize="small" />
               </Tooltip>
             </div>
@@ -158,7 +158,7 @@ export default function BurningCrusadeSettings(props) {
               <Typography color="primary" style={{ marginRight: 4 }} noWrap>
                 {t("Settings.BurningCrusade.Setting2Title")}
               </Typography>
-              <Tooltip title={t("Settings.BurningCrusade.Setting2Tooltip")} placement="top-start">
+              <Tooltip title={<Typography align="center" variant="body2">{t("Settings.BurningCrusade.Setting2Tooltip")}</Typography>} placement="top-start">
                 <InfoOutlinedIcon style={{ height: 15, width: 15 }} fontSize="small" />
               </Tooltip>
             </div>
@@ -188,7 +188,7 @@ export default function BurningCrusadeSettings(props) {
               <Typography color="primary" style={{ marginRight: 4 }} noWrap>
                 {t("Settings.BurningCrusade.Setting3Title")}
               </Typography>
-              <Tooltip title={t("Settings.BurningCrusade.Setting3Tooltip")} placement="top-start">
+              <Tooltip title={<Typography align="center" variant="body2">{t("Settings.BurningCrusade.Setting3Tooltip")}</Typography>} placement="top-start">
                 <InfoOutlinedIcon style={{ height: 15, width: 15 }} fontSize="small" />
               </Tooltip>
             </div>
@@ -215,10 +215,10 @@ export default function BurningCrusadeSettings(props) {
         <Grid container spacing={0} style={{ padding: "0px 8px" }}>
           <Grid item xs={12}>
           <div style={{ display: "inline-flex" }}>
-            <Tooltip title={t("Settings.BurningCrusade.Setting4Tooltip")} placement="top-start">
+            <Tooltip title={<Typography align="center" variant="body2">{t("Settings.BurningCrusade.Setting4Tooltip")}</Typography>} placement="top-start">
               <Typography color="primary">{t("Settings.BurningCrusade.Setting4Title")}</Typography>
             </Tooltip>
-            <Tooltip title={t("Settings.BurningCrusade.Setting4Tooltip")} placement="top-start">
+            <Tooltip title={<Typography align="center" variant="body2">{t("Settings.BurningCrusade.Setting4Tooltip")}</Typography>} placement="top-start">
                 <InfoOutlinedIcon style={{ height: 15, width: 15 }} fontSize="small" />
               </Tooltip>
           </div>
@@ -251,10 +251,10 @@ export default function BurningCrusadeSettings(props) {
       <Grid item xs={12} sm={4} md={4} lg={3} xl={2}>
         <Grid container spacing={1} style={{ paddingLeft: 8 }}>
           <Grid item xs={12}>
-            <Tooltip title={t("Settings.BurningCrusade.Setting5Tooltip")} placement="top-start">
+            <Tooltip title={<Typography align="center" variant="body2">{t("Settings.BurningCrusade.Setting5Tooltip")}</Typography>} placement="top-start">
               <Typography color="primary">{t("Settings.BurningCrusade.Setting5Title")}</Typography>
             </Tooltip>
-            <Tooltip title={t("Settings.BurningCrusade.Setting5Tooltip")} placement="top-start">
+            <Tooltip title={<Typography align="center" variant="body2">{t("Settings.BurningCrusade.Setting5Tooltip")}</Typography>} placement="top-start">
                 <InfoOutlinedIcon style={{ height: 15, width: 15 }} fontSize="small" />
               </Tooltip>
           </Grid>

@@ -1,7 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
-import { Tabs, Tab, Box, AppBar, Typography, Grid } from "@material-ui/core";
+import { Button, Tabs, Tab, Box, AppBar, Typography, Grid } from "@material-ui/core";
+import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { getDifferentialByID } from "../../Engine/ItemUtilities";
 import MythicPlusGearContainer from "./Panels/PanelMythicPlus";
@@ -170,7 +171,7 @@ export default function UpgradeFinderResults(props) {
     return (
       <div className={classes.header}>
         <Typography variant="h4" color="primary" align="center" style={{ padding: "10px 10px 5px 10px" }}>
-          {result.contentType + " " + t("UpgradeFinder.Header")}
+          {t("UpgradeFinder.Header") + " - " + result.contentType}
         </Typography>
         <AppBar
           position="static"
@@ -258,8 +259,11 @@ export default function UpgradeFinderResults(props) {
   const upgradeFinderResultsBC = () => {
     return (
       <div className={classes.header}>
-        <Typography variant="h4" color="primary" align="center" style={{ padding: "10px 10px 5px 10px" }}>
-          {result.contentType + " " + t("UpgradeFinder.Header")}
+        {/*<Button color="primary" variant="outlined" component={Link} to={"/topgear"} style={{ float: "left", position: "fixed" }}>
+          {t("TopGear.BackToGearSelection")}
+    </Button> */}
+        <Typography variant="h4" color="primary" align="center" style={{ padding: "1px 1px 1px 1px" }}>
+          {t("UpgradeFinder.Header")}
         </Typography>
         <AppBar
           position="static"
@@ -315,9 +319,7 @@ export default function UpgradeFinderResults(props) {
         {/* PVP */}
         <TabPanel value={tabvalue} index={2}>
           <div className={classes.panel}>
-            <Grid container>
-              {/*<PvPGearContainer player={props.player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={props.playerSettings} /> */}
-            </Grid>
+            <Grid container>{/*<PvPGearContainer player={props.player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={props.playerSettings} /> */}</Grid>
           </div>
         </TabPanel>
 

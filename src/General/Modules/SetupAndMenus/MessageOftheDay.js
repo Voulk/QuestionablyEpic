@@ -4,8 +4,7 @@ import { Grid, Paper, Typography } from "@material-ui/core";
 export default function MessageOfTheDay() {
   //prettier-ignore
   const messageOfTheDay = [
-    "QE Live Burning Crusade now in Beta!",
-    "Thank you all so much for your support."
+    "QE Live Burning Crusade now in Beta!"
 ];
 
   return (
