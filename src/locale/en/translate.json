@@ -279,12 +279,12 @@
     "MainMenu": {
       "PatronInvite": "Love the app? Support the site on Patreon!",
       "PatronThanks": "Thank you so much for your support!",
-      "TopGear": "Top Gear (Beta)",
+      "TopGear": "Top Gear",
       "UpgradeFinder": "Upgrade Finder (Beta)",
       "QuickCompare": "Gear Quick Compare",
       "ExploreCovenants": "Explore Covenants",
       "LegendaryAnalysis": "Legendary Analysis",
-      "TrinketAnalysis": "Trinket Analysis (New)",
+      "TrinketAnalysis": "Trinket Analysis",
       "GreatVault": "The Great Vault (Coming Soon)",
       "CooldownPlanner": "Cooldown Planner (Coming Soon)",
       "Profile": "Profile",
@@ -296,15 +296,15 @@
         "HelpText": ""
       },
       "Tooltips": {
-        "TopGear": "Find your best gear set",
-        "QuickCompare": "Compare Items for each slot.",
+        "TopGear": "Find your best gear set.",
+        "QuickCompare": "Quick compare multiple items in a specific slot.",
         "ExploreCovenants": "Explore Soulbinds for each covenant.",
-        "LegendaryAnalysis": "Find your best legendary power and where to get it",
+        "LegendaryAnalysis": "Check out your specs legendary powers and where to get them",
         "CooldownPlanner": "Plan your cooldowns. Create your own or analyse logs",
-        "Profile": "Edit your details",
+        "Profile": "Edit your details and connect to Patreon",
         "UpgradeFinder": "Find your next piece of gear!",
-        "TrinketAnalysis": "See how this tiers trinkets line up in graph form",
-        "TierSets": ""
+        "TrinketAnalysis": "Check out how different trinkets compare, but in graph form",
+        "TierSets": "Find out how strong your classes tier sets are."
       }
     },
 
@@ -315,7 +315,8 @@
         "ChangeToRaid": "Change to Raid Content",
         "ChangeToDungeon": "Change to Dungeon Content",
         "InsertLog": "Insert a log to increase accuracy.",
-        "SimC": "Insert a SimC string to import your gear.",
+        "BurningCrusadeSimC": "Insert a QE Import string to import your gear.",
+        "RetailSimC": "Insert a SimC string to import your gear.",
         "Login": "Login to your Battle.net Account",
         "Language": "Change Language",
         "Home": "Main Menu"
@@ -464,9 +465,11 @@
     },
 
     "SimCInput": {
-      "SimCStringLabel": "SimC String",
-      "SimCHeaderButtonLabel": "SimC",
-      "SimCDialogueTitle": "Paste Your SimC String"
+      "SimCStringLabel": "Import String",
+      "SimCHeaderButtonLabelBurningCrusade": "QE Import",
+      "SimCHeaderButtonLabelRetail": "SimC",
+      "SimCDialogueTitleRetail": "Paste Your SimC String",
+      "SimCDialogueTitleBurningCrusade": "Paste Your QE Import String"
     },
 
     "slotNames": {
@@ -510,7 +513,7 @@
       "versatility": "Versatility"
     },
     "Settings": {
-      "SettingsTitle": "Settings (Trinkets, Buffs, etc)",
+      "SettingsTitle": "Optional Settings",
       "Retail": {
         "Setting0Spacer": "--------------------------------------------------------------------",
         "Setting0Tooltip": "The equip effect of 'Cabalist's Hymnal' is increased by 5% per Ally",
@@ -618,7 +621,8 @@
 
     "TopGear": {
       "Title": "Top Gear",
-      "HelpText": "Top Gear lets you compare all of your gear at once! Enter your SimC string below and click any items you want included. When you're all set, hit 'Go' at the bottom of the page. To enter items manually, return to the main menu and include them in QE Quick Compare.",
+      "HelpTextRetail": "Top Gear lets you compare all of your gear at once! Enter your SimC string below and click any items you want included. When you're all set, hit 'Go' at the bottom of the page. To enter items manually, return to the main menu and add them in QE Quick Compare.",
+      "HelpTextBurningCrusade": "Top Gear lets you compare all of your gear at once! Enter your QE Import string below and click any items you want included. When you're all set, hit 'Go' at the bottom of the page. To enter items manually, return to the main menu and add them in Quick Compare.",
       "ItemsHereMessage": "Your items will go here after you import.",
       "ErrorMessage": "So sorry, seems you've run into an error. This is usually caused by not being able to create any valid sets. Check that you have a valid weapon selected, two or more rings and two or more trinkets. If multiple legendaries are selected then there must be a valid alternative for each.",
       "GoMsg": "Go!",
@@ -630,7 +634,7 @@
     },
 
     "UpgradeFinder": {
-      "Header": "Report",
+      "Header": "Find your next upgrade!",
       "MythicPlus": "Mythic +",
       "CurrentRaid": "Castle Nathria",
       "PvP": "PvP",

@@ -10,6 +10,15 @@
 export const changeLog = [
   {
     version: "9.0.5 / 2.5.1",
+    update: 8,
+    date: "9th June",
+    changes: [
+      "Improved clarity around the QE Import addon, and where to get it.",
+      "Visual improvements.",
+    ],
+  },
+  {
+    version: "9.0.5 / 2.5.1",
     update: 7,
     date: "8th June",
     changes: [
