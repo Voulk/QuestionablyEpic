@@ -296,15 +296,15 @@
         "HelpText": ""
       },
       "Tooltips": {
-        "TopGear": "Find your best gear set",
-        "QuickCompare": "Compare Items for each slot.",
+        "TopGear": "Find your best gear set.",
+        "QuickCompare": "Quick compare multiple items in a specific slot.",
         "ExploreCovenants": "Explore Soulbinds for each covenant.",
-        "LegendaryAnalysis": "Find your best legendary power and where to get it",
+        "LegendaryAnalysis": "Check out your specs legendary powers and where to get them",
         "CooldownPlanner": "Plan your cooldowns. Create your own or analyse logs",
-        "Profile": "Edit your details",
+        "Profile": "Edit your details and connect to Patreon",
         "UpgradeFinder": "Find your next piece of gear!",
-        "TrinketAnalysis": "See how this tiers trinkets line up in graph form",
-        "TierSets": ""
+        "TrinketAnalysis": "Check out how different trinkets compare, but in graph form",
+        "TierSets": "Find out how strong your classes tier sets are."
       }
     },
 
