@@ -259,7 +259,7 @@ export default function UpgradeFinderResults(props) {
   const upgradeFinderResultsBC = () => {
     return (
       <div className={classes.header}>
-        <Button color="primary" variant="outlined" component={Link} to={"/topgear"}>
+        <Button color="primary" variant="outlined" component={Link} to={"/topgear"} style={{ float: "left", position: "fixed" }}>
           {t("TopGear.BackToGearSelection")}
         </Button>
         <Typography variant="h4" color="primary" align="center" style={{ padding: "1px 1px 1px 1px" }}>
@@ -319,9 +319,7 @@ export default function UpgradeFinderResults(props) {
         {/* PVP */}
         <TabPanel value={tabvalue} index={2}>
           <div className={classes.panel}>
-            <Grid container>
-              {/*<PvPGearContainer player={props.player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={props.playerSettings} /> */}
-            </Grid>
+            <Grid container>{/*<PvPGearContainer player={props.player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={props.playerSettings} /> */}</Grid>
           </div>
         </TabPanel>
 
