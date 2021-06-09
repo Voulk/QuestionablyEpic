@@ -226,6 +226,9 @@ export default function BurningCrusadeSettings(props) {
           <Grid item xs={12}>
             <FormControl variant="outlined" size="small" fullWidth style={{ textAlign: "center" }}>
                 <Select labelId="groupValue" value={gemRarity} onChange={(e) => updateGemRarity(e.target.value)} MenuProps={menuStyle}>
+                <MenuItem value={"none"} style={{ justifyContent: "center" }}>
+                    {"No Gems"}
+                  </MenuItem>
                   <MenuItem value={"basic"} style={{ justifyContent: "center" }}>
                     {"Honor Hold"}
                   </MenuItem>
