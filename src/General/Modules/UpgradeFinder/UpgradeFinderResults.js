@@ -167,6 +167,10 @@ export default function UpgradeFinderResults(props) {
     setTabValue(newValue);
   };
 
+  const returnToSetup = () => {
+    props.setShowReport(false);
+  }
+
   const upgradeFinderResultsRetail = () => {
     return (
       <div className={classes.header}>
@@ -259,9 +263,9 @@ export default function UpgradeFinderResults(props) {
   const upgradeFinderResultsBC = () => {
     return (
       <div className={classes.header}>
-        {/*<Button color="primary" variant="outlined" component={Link} to={"/topgear"} style={{ float: "left", position: "fixed" }}>
-          {t("TopGear.BackToGearSelection")}
-    </Button> */}
+        <Button color="primary" variant="outlined" onClick={() => returnToSetup()} style={{ float: "left", position: "fixed" }}>
+          {t("UpgradeFinder.BackButton")}
+        </Button> 
         <Typography variant="h4" color="primary" align="center" style={{ padding: "1px 1px 1px 1px" }}>
           {t("UpgradeFinder.Header")}
         </Typography>

@@ -640,7 +640,8 @@
       "CurrentRaid": "Castle Nathria",
       "PvP": "PvP",
       "WorldBosses": "World Bosses",
-      "UpgradeBySlot": "Upgrades by Slot"
+      "UpgradeBySlot": "Upgrades by Slot",
+      "BackButton": "Back to Setup"
     },
 
     "UpgradeFinderFront": {
