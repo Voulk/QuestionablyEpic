@@ -1,9 +1,9 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { Accordion, AccordionDetails, AccordionSummary, Typography, Divider } from "@material-ui/core";
+import { Accordion, AccordionDetails, AccordionSummary, Typography, Divider, Grid } from "@material-ui/core";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import { useTranslation } from "react-i18next";
-import HelpIcon from '@material-ui/icons/Help';
+import HelpIcon from "@material-ui/icons/Help";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -48,13 +48,15 @@ const useStyles = makeStyles((theme) => ({
 export default function HelpText(props) {
   const classes = useStyles();
   const { t } = useTranslation();
-  let helpText = props.text;
+  const helpText = props.text;
+  const helpBlurb = props.blurb;
+  const bull = <span className={classes.bullet}>•</span>;
 
   return (
     <div className={classes.root}>
       <Accordion defaultExpanded={true} elevation={0}>
         <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1c-content" id="panel1c-header">
-          <div className={classes.column} style={{display: "inline-flex"}}>
+          <div className={classes.column} style={{ display: "inline-flex" }}>
             <HelpIcon />
             <Typography className={classes.heading} style={{ color: "limegreen", marginLeft: 4 }} align="left" variant="h6">
               {t("HowToUse")}
@@ -62,10 +64,22 @@ export default function HelpText(props) {
           </div>
         </AccordionSummary>
         <Divider variant="middle" />
-        <AccordionDetails className={classes.details}>
-          <Typography style={{ color: "##fffff7", marginBottom: 0 }} align="left" variant="subtitle1" display="inline" paragraph>
-            {helpText}
-          </Typography>
+        <AccordionDetails className={classes.details} noWrap>
+          <Grid container>
+            <Grid item xs={12}>
+              <Typography style={{ color: "##fffff7", marginBottom: 0, width: "100%" }} align="left" variant="subtitle1" display="inline" paragraph>
+                {helpBlurb}
+              </Typography>
+            </Grid>
+
+            {helpText.map((key) => (
+              <Grid item xs={12}>
+                <Typography style={{ color: "##fffff7", marginBottom: 0, width: "100%" }} align="left" variant="subtitle1" display="inline">
+                  {bull} {key}
+                </Typography>
+              </Grid>
+            ))}
+          </Grid>
         </AccordionDetails>
       </Accordion>
     </div>

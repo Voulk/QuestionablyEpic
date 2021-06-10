@@ -157,7 +157,11 @@ export default function TopGear(props) {
   };
 
   const selectedItemCount = props.player.getSelectedItems().length;
-  const helpText = t("TopGear.HelpText" + gameType);
+  const helpBlurb = t("TopGear.HelpText" + gameType);
+  const helpText = gameType === "Retail" ? ["Add your SimC string to automatically import your entire set of items into the app.", "Select any items you want included in the comparison. We'll automatically add anything you're currently wearing.", 
+                    "When you're all set, hit the big Go button at the bottom of the page to run the module."] :
+                    ["Add your QE Import String to automatically import your entire set of items into the app.", "Select any items you want included in the comparison. We'll automatically add anything you're currently wearing.", 
+                    "When you're all set, hit the big Go button at the bottom of the page to run the module."]
 
   const activateItem = (unique, active) => {
     if (selectedItemCount < CONSTRAINTS.Shared.topGearMaxItems || active) {
@@ -210,7 +214,7 @@ export default function TopGear(props) {
           </Grid>
         }
         <Grid item xs={12}>
-          <HelpText text={helpText} />
+          <HelpText blurb={helpBlurb} text={helpText} />
         </Grid>
         <Grid item xs={12}>
           {<UpgradeFinderSimC player={props.player} simcSnack={props.simcSnack} allChars={props.allChars} />}
