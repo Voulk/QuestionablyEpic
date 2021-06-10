@@ -131,8 +131,8 @@ export default function QuickCompare(props) {
   const openPop = Boolean(anchorEl);
   const idPop = openPop ? "simple-popover" : undefined;
   const slots = getSlots();
-  const helpBlurb = "Test Blurb"
-  const helpText = [t("QuickCompare.HelpText")];
+  const helpBlurb = [t("QuickCompare.HelpText")];
+  const helpText = ["(Optional) Add your SimC or QE Import String to auto-import your entire set of items.", "(Optional) Manually add items using the slot drop down below.", "Item scores are shown in the top right corner in yellow."]
   const gameType = useSelector((state) => state.gameType);
 
   /* ------------------------ End Simc Module Functions ----------------------- */
