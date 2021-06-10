@@ -100,7 +100,13 @@ export default function UpgradeFinderFront(props) {
   const currentLanguage = i18n.language;
   const contentType = useSelector((state) => state.contentType);
   const gameType = useSelector((state) => state.gameType);
-  const helpText = gameType === "Retail" ? t("UpgradeFinderFront.HelpText") : t("UpgradeFinderFront.HelpTextBC"); // TODO: Implement BC Help Text
+  const helpBlurb = t("UpgradeFinderFront.HelpText")
+  const helpText = gameType === "Retail" ? ["Insert a SimC string to automatically import your gear.", "(Optional) Use the settings panel to make further customizations.", "Select a raid difficulty, Mythic+ level and PVP rating. If you don't play any particular content type, feel free to set it to 0.",
+                                            "Hit Go at the bottom of the page."] : 
+                                            ["Insert a QE Import string to automatically import your gear.",
+                                            "(Optional) Use the settings panel to set specific gem types, enchants and how much value to put on extra mana.",
+                                            "Select a dungeon difficulty, and (optionally) a PVP rating.",
+                                            "Hit Go at the bottom of the page."];
 
   const marks = [
     {
@@ -298,7 +304,7 @@ export default function UpgradeFinderFront(props) {
       <Grid container spacing={1}>
         {/* ---------------------------- Help Text Section --------------------------- */}
         <Grid item xs={12}>
-          <HelpText text={helpText} />
+          <HelpText blurb={helpBlurb} text={helpText} />
         </Grid>
         <Grid item xs={12}>
           <UpgradeFinderSimC player={props.player} simcSnack={props.simcSnack} allChars={props.allChars} />
