@@ -131,7 +131,7 @@ export default function QuickCompare(props) {
   const openPop = Boolean(anchorEl);
   const idPop = openPop ? "simple-popover" : undefined;
   const slots = getSlots();
-  const helpText = t("QuickCompare.HelpText");
+  const helpText = [t("QuickCompare.HelpText")];
   const gameType = useSelector((state) => state.gameType);
 
   /* ------------------------ End Simc Module Functions ----------------------- */

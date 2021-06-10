@@ -3,7 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import { Accordion, AccordionDetails, AccordionSummary, Typography, Divider } from "@material-ui/core";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import { useTranslation } from "react-i18next";
-import HelpIcon from '@material-ui/icons/Help';
+import HelpIcon from "@material-ui/icons/Help";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -49,12 +49,13 @@ export default function HelpText(props) {
   const classes = useStyles();
   const { t } = useTranslation();
   let helpText = props.text;
+  const bull = <span className={classes.bullet}>•</span>;
 
   return (
     <div className={classes.root}>
       <Accordion defaultExpanded={true} elevation={0}>
         <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1c-content" id="panel1c-header">
-          <div className={classes.column} style={{display: "inline-flex"}}>
+          <div className={classes.column} style={{ display: "inline-flex" }}>
             <HelpIcon />
             <Typography className={classes.heading} style={{ color: "limegreen", marginLeft: 4 }} align="left" variant="h6">
               {t("HowToUse")}
@@ -63,9 +64,11 @@ export default function HelpText(props) {
         </AccordionSummary>
         <Divider variant="middle" />
         <AccordionDetails className={classes.details}>
-          <Typography style={{ color: "##fffff7", marginBottom: 0 }} align="left" variant="subtitle1" display="inline" paragraph>
-            {helpText}
-          </Typography>
+          {helpText.map((key) => (
+            <Typography style={{ color: "##fffff7", marginBottom: 0 }} align="left" variant="subtitle1" display="inline" paragraph>
+             {bull}{" "}{key}
+            </Typography>
+          ))}
         </AccordionDetails>
       </Accordion>
     </div>

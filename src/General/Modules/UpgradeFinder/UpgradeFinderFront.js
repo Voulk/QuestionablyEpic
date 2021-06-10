@@ -100,7 +100,7 @@ export default function UpgradeFinderFront(props) {
   const currentLanguage = i18n.language;
   const contentType = useSelector((state) => state.contentType);
   const gameType = useSelector((state) => state.gameType);
-  const helpText = gameType === "Retail" ? t("UpgradeFinderFront.HelpText") : t("UpgradeFinderFront.HelpTextBC"); // TODO: Implement BC Help Text
+  const helpText = gameType === "Retail" ? [t("UpgradeFinderFront.HelpText")] : [t("UpgradeFinderFront.HelpTextBC")]; // TODO: Implement BC Help Text
 
   const marks = [
     {
