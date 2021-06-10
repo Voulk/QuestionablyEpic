@@ -13,7 +13,7 @@ export default function MessageOfTheDay() {
         {messageOfTheDay.map((key, i) => (
           <Grid item xs={12} key={i}>
             <Typography style={{ lineHeight: "10px" }} align="left" variant="body1" key={i}>
-              • {key}
+              {key}
             </Typography>
           </Grid>
         ))}
