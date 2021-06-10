@@ -158,7 +158,9 @@ export default function TopGear(props) {
 
   const selectedItemCount = props.player.getSelectedItems().length;
   const helpBlurb = t("TopGear.HelpText" + gameType);
-  const helpText = ["Add your SimC or QE Import String to automatically import your entire set of items into the app.", "Select any items you want included in the comparison. We'll automatically add anything you're currently wearing.", 
+  const helpText = gameType === "Retail" ? ["Add your SimC string to automatically import your entire set of items into the app.", "Select any items you want included in the comparison. We'll automatically add anything you're currently wearing.", 
+                    "When you're all set, hit the big Go button at the bottom of the page to run the module."] :
+                    ["Add your QE Import String to automatically import your entire set of items into the app.", "Select any items you want included in the comparison. We'll automatically add anything you're currently wearing.", 
                     "When you're all set, hit the big Go button at the bottom of the page to run the module."]
 
   const activateItem = (unique, active) => {
