@@ -131,6 +131,7 @@ export default function QuickCompare(props) {
   const openPop = Boolean(anchorEl);
   const idPop = openPop ? "simple-popover" : undefined;
   const slots = getSlots();
+  const helpBlurb = "Test Blurb"
   const helpText = [t("QuickCompare.HelpText")];
   const gameType = useSelector((state) => state.gameType);
 
@@ -287,7 +288,7 @@ export default function QuickCompare(props) {
           </Typography>
         </Grid>
         <Grid item xs={12}>
-          <HelpText text={helpText} />
+          <HelpText text={helpText} blurb={helpBlurb} />
         </Grid>
         <Grid item xs={12}>
           <UpgradeFinderSimC quickCompare={true} player={props.player} simcSnack={props.simcSnack} allChars={props.allChars} />

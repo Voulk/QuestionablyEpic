@@ -157,7 +157,7 @@ export default function TopGear(props) {
   };
 
   const selectedItemCount = props.player.getSelectedItems().length;
-  const helpText = [t("TopGear.HelpText" + gameType)];
+  const helpText = [t("TopGear.HelpText" + gameType),"test", "test2"];
 
   const activateItem = (unique, active) => {
     if (selectedItemCount < CONSTRAINTS.Shared.topGearMaxItems || active) {
