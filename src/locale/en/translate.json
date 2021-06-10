@@ -467,7 +467,7 @@
 
     "SimCInput": {
       "SimCStringLabel": "Import String",
-      "SimCHeaderButtonLabelBurningCrusade": "QE Import",
+      "SimCHeaderButtonLabelBurningCrusade": "Gear Import",
       "SimCHeaderButtonLabelRetail": "SimC",
       "SimCDialogueTitleRetail": "Paste Your SimC String",
       "SimCDialogueTitleBurningCrusade": "Paste Your QE Import String"
