@@ -73,7 +73,7 @@ export function UpgradeFinder(props) {
 
   return showReport ? (
     <div>
-      <UpgradeFinderResults player={player} itemSelection={itemSelection} playerSettings={playerSettings} />
+      <UpgradeFinderResults player={player} itemSelection={itemSelection} playerSettings={playerSettings} setShowReport={setShowReport} />
       <div style={{ marginBottom: 100 }} />
     </div>
   ) : (

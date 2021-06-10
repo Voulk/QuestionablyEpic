@@ -47,10 +47,18 @@ else if (
   /* ---------------------------------------------------------------------------------------------- */
   effectName === "Bangle of Endless Blessings"
 ) {
-    const effect = {
-
+    const spiritEffect = {
+      value: 130,
+      duration: 20,
+      cooldown: 120
     }
-    bonus_stats.bonushealing = 0
+    const manaEffect = {
+      ppm: 0.98,
+      duration: 15
+    }
+    const fullMP5 = Math.sqrt(500) * 540 * 5 * 0.00932715221261;
+    bonus_stats.mp5 = fullMP5 * manaEffect.ppm * manaEffect.duration * 0.15 / 60;
+    bonus_stats.spirit = spiritEffect.value * spiritEffect.duration / spiritEffect.cooldown;
 }
 else if (
   /* ---------------------------------------------------------------------------------------------- */
