@@ -61,7 +61,7 @@ export default function TrinketAnalysis(props) {
   const trinketDB = getItemDB(gameType).filter((key) => key.slot === "Trinket" && 
         ((gameType === "BurningCrusade" && 'phase' in key && key.phase < 2 && (!('class' in key) || props.player.getSpec().includes(key.class))) || 
         (gameType === "Retail" && key.levelRange.length > 0)));
-  const helpText = t("TrinketAnalysis.HelpText");
+  const helpText = [t("TrinketAnalysis.HelpText")];
 
   let activeTrinkets = [];
 

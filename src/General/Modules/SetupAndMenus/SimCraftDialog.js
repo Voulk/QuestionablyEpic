@@ -1,6 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { Button, TextField, Dialog, DialogActions, DialogContent, DialogTitle, Tooltip } from "@material-ui/core";
+import { Button, TextField, Dialog, DialogActions, DialogContent, DialogTitle, Tooltip, Typography, Link } from "@material-ui/core";
 import { runSimC } from "../../../Retail/Engine/SimCImport/SimCImportEngine";
 import { runBCSimC } from "../../../BurningCrusade/Engine/SimCImport/SimCImportEngineBC";
 // import { createEmitAndSemanticDiagnosticsBuilderProgram } from "typescript";
@@ -31,7 +31,7 @@ export default function SimCraftInput(props) {
 
   return (
     <div>
-      <Tooltip title={t("QeHeader.Tooltip.SimC")} arrow>
+      <Tooltip title={t("QeHeader.Tooltip." + gameType + "SimC")} arrow>
         <Button
           disableElevation={props.disableElevation}
           // style={{ whiteSpace: "nowrap" }}
@@ -45,8 +45,9 @@ export default function SimCraftInput(props) {
         </Button>
       </Tooltip>
       <Dialog open={open} onClose={handleClose} aria-labelledby="simc-dialog-title" maxWidth="md" fullWidth={true}>
-        <DialogTitle id="simc-dialog-title">{t("SimCInput.SimCDialogueTitle")}</DialogTitle>
+        <DialogTitle id="simc-dialog-title">{t("SimCInput.SimCDialogueTitle" + gameType)}</DialogTitle>
         <DialogContent style={{ height: 400 }}>
+          {gameType === "BurningCrusade" ? <Link target="_blank" href="https://www.curseforge.com/wow/addons/qe-live-gear-importer-bc">Click here to download the addon from Curse.</Link> : ""}
           <TextField
             autoFocus
             multiline={true}

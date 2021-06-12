@@ -15,7 +15,7 @@ function filterItemListBySlot(itemList, slot) {
   const excludedInstance = [748, 749, 750, 751, 321, 752];
   
   let temp = itemList.filter(function (item) {
-    if ("source" in item && !(excludedInstance.includes(item.source.instanceId))) {
+    if ("source" in item && !(excludedInstance.includes(item.source.instanceId)) && item.source.encounterId !== 249) {
       if (slot === "AllMainhands") {
         return item.slot === "1H Weapon" || item.slot === "2H Weapon";
       } else if (slot === "Offhands") {
