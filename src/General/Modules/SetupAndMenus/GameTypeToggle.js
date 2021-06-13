@@ -8,20 +8,45 @@ import { useTranslation } from "react-i18next";
 import { Tooltip, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   root: {
-    /* ----------------------------------- Unselected button style ---------------------------------- */
-    minWidth: 300,
-    padding: 4,
-    opacity: 0.3,
-    /* ------------------------------------ Selected button style ----------------------------------- */
-    "&.MuiToggleButton-root.Mui-selected": {
+    [theme.breakpoints.down("xs")]: {
+      minWidth: 175,
+      padding: 4,
+      opacity: 0.3,
+    },
+    [theme.breakpoints.up("sm")]: {
+      minWidth: 250,
+      padding: 4,
+      opacity: 0.3,
+    },
+    [theme.breakpoints.up("md")]: {
       minWidth: 300,
       padding: 4,
-      opacity: 1,
+      opacity: 0.3,
+    },
+
+    /* ----------------------------------- Unselected button style ---------------------------------- */
+    /* ------------------------------------ Selected button style ----------------------------------- */
+    "&.MuiToggleButton-root.Mui-selected": {
+      [theme.breakpoints.down("xs")]: {
+        minWidth: 175,
+        padding: 4,
+        opacity: 1,
+      },
+      [theme.breakpoints.up("sm")]: {
+        minWidth: 250,
+        padding: 4,
+        opacity: 0.3,
+      },
+      [theme.breakpoints.up("md")]: {
+        minWidth: 300,
+        padding: 4,
+        opacity: 1,
+      },
     },
   },
-});
+}));
 
 export default function GameTypeSwitch(props) {
   const dispatch = useDispatch();
