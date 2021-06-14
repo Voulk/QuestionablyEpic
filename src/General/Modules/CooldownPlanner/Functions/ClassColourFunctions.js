@@ -41,9 +41,7 @@ export function classColoursERT(props) {
 }
 
 export function classColoursJS(props) {
-  if (
-    props === undefined
-  ) {
+  if (props === undefined) {
     return "#FFFFFF";
   }
   if (props.includes("Paladin")) {
@@ -52,9 +50,7 @@ export function classColoursJS(props) {
   if (props.includes("Druid")) {
     return "#FF7D0A";
   }
-  if (
-    props.includes("Priest")
-  ) {
+  if (props.includes("Priest")) {
     return "#FFFFFF";
   }
   if (props.includes("Shaman")) {
@@ -72,10 +68,5 @@ export function classColoursJS(props) {
   }
   if (props === "DeathKnight" || props === "Death Knight") {
     return "#C41E3A	 ";
-  }
-  if (
-    props.includes("Priest")
-  ) {
-    return "#FFFFFF";
   }
 }
