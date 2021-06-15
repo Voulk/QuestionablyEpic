@@ -41,15 +41,16 @@ export function classColoursERT(props) {
 }
 
 export function classColoursJS(props) {
+  if (props === undefined) {
+    return "#FFFFFF";
+  }
   if (props.includes("Paladin")) {
     return "#F58CBA";
   }
   if (props.includes("Druid")) {
     return "#FF7D0A";
   }
-  if (
-    props.includes("Priest")
-  ) {
+  if (props.includes("Priest")) {
     return "#FFFFFF";
   }
   if (props.includes("Shaman")) {
