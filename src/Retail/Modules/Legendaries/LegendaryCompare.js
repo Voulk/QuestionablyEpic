@@ -79,6 +79,10 @@ const fillLegendaries = (container, spec, player, contentType) => {
       "Circle of Life and Death",
       "Oath of the Elder Druid",
       "Memory of the Mother Tree",
+      "Kindred Affinity",
+      "Sinful Hysteria",
+      "Unbridled Swarm",
+      "Celestial Spirits",
     ],
     "Holy Paladin": [
       //"Vanguards Momentum",
@@ -90,6 +94,10 @@ const fillLegendaries = (container, spec, player, contentType) => {
       "The Mad Paragon",
       "Relentless Inquisitor",
       "Of Dusk and Dawn",
+      "Divine Resonance",
+      "Duty-Bound Gavel",
+      "Seasons of Plenty",
+      "Radiant Embers",
     ],
     "Restoration Shaman": [
       "Earthen Harmony",
@@ -99,6 +107,10 @@ const fillLegendaries = (container, spec, player, contentType) => {
       "Ancestral Reminder",
       //"Chains of Devastation",
       "Deeply Rooted Elements",
+      "Raging Vesper Vortex",
+      "Seeds of Rampant Growth",
+      "Splintered Elements",
+      "Elemental Conduit",
     ],
     "Discipline Priest": [
       "Clarity of Mind",
@@ -108,6 +120,10 @@ const fillLegendaries = (container, spec, player, contentType) => {
       "Cauterizing Shadows",
       "Measured Contemplation",
       "Twins of the Sun Priestess",
+      "Spheres' Harmony",
+      "Pallid Command",
+      "Bwonsamdi's Pact",
+      "Shadow Word: Manipulation",
       //"Vault of Heavens",
     ],
     "Holy Priest": [
@@ -118,6 +134,10 @@ const fillLegendaries = (container, spec, player, contentType) => {
       "Cauterizing Shadows",
       "Measured Contemplation",
       "Twins of the Sun Priestess",
+      "Spheres' Harmony",
+      "Pallid Command",
+      "Bwonsamdi's Pact",
+      "Shadow Word: Manipulation",
       //"Vault of Heavens",
     ],
     "Mistweaver Monk": [
@@ -132,6 +152,10 @@ const fillLegendaries = (container, spec, player, contentType) => {
       // "Vitality Sacrifice",
       // "Sephuz's Proclamation",
       "Echo of Eonar",
+      "Call to Arms",
+      "Bountiful Brew",
+      "Faeline Harmony",
+      "Sinister Teachings",
     ],
   };
 

@@ -33,6 +33,13 @@ export default function LegendaryObject(props) {
 
   const legendaryDataObject = legendaryNameTranslator(item.name)[currentLanguage];
 
+  const covenantSigils = {
+    Kyrian: process.env.PUBLIC_URL + "/Images/Interface/Kyrian_Sigil.png",
+    "Night Fae": process.env.PUBLIC_URL + "/Images/Interface/Fae_Sigil.png",
+    Venthyr: process.env.PUBLIC_URL + "/Images/Interface/Venthyr_Sigil.png",
+    Necrolord: process.env.PUBLIC_URL + "/Images/Interface/Death_Lords_Sigil.png",
+  };
+
   return (
     // Breakpoints (12 units / row)
     // value         |0px     600px    960px    1280px   1920px
@@ -66,10 +73,16 @@ export default function LegendaryObject(props) {
                 }}
               >
                 {legendaryDataObject.name}
+                {covenantSigils[legendaryDataObject.covenant] !== undefined ? (
+                  <img height={40} style={{ float: "right", position: "absolute", marginTop: -7, marginLeft: 10 }} src={covenantSigils[legendaryDataObject.covenant]} alt={t("Covenants.Kyrian")} />
+                ) : (
+                  ""
+                )}
               </Typography>
               {/* -------------------------------- Slots available to Legendary -------------------------------- */}
               <Typography variant="caption">{legendaryDataObject.slot}</Typography>
             </div>
+
             {/* --------------------------------------- Legendary Icon --------------------------------------- */}
             <img
               height={40}
