@@ -36,13 +36,44 @@ const useStyles = makeStyles((theme) => ({
   },
   header: {
     [theme.breakpoints.down("sm")]: {
-      marginTop: 120,
+
     },
     [theme.breakpoints.up("md")]: {
+
+    },
+  },
+  root: {
+    [theme.breakpoints.down("xs")]: {
+      margin: "auto",
+      width: "85%",
+      justifyContent: "center",
+      display: "block",
+      marginTop: 120,
+    },
+    [theme.breakpoints.up("sm")]: {
+      margin: "auto",
+      width: "80%",
+      justifyContent: "center",
+      display: "block",
+      marginTop: 140,
+    },
+    [theme.breakpoints.up("md")]: {
+      margin: "auto",
+      width: "65%",
+      justifyContent: "center",
+      display: "block",
+      marginTop: 120,
+    },
+    [theme.breakpoints.up("lg")]: {
       marginTop: 32,
+      margin: "auto",
+      width: "55%",
+      display: "block",
     },
   },
 }));
+
+
 
 const TOPGEARCAP = 34; // TODO
 
@@ -195,16 +226,11 @@ export default function TopGear(props) {
   if (gameType === "BurningCrusade") slotList.push({ label: t("slotNames.relics"), slotName: "Relics & Wands" })
 
   return (
-    <div className={classes.header}>
+    <div className={classes.root}>
       <Grid
         container
         spacing={1}
         justify="center"
-        style={{
-          margin: "auto",
-          width: "55%",
-          display: "block",
-        }}
       >
         {
           <Grid item xs={12}>

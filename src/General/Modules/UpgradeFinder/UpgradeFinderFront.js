@@ -37,34 +37,35 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   header: {
-    [theme.breakpoints.down("sm")]: {
+    [theme.breakpoints.down("xs")]: {
       justifyContent: "center",
       display: "block",
       marginLeft: "auto",
       marginRight: "auto",
-      maxWidth: "55%",
+      width: "85%",
       marginTop: 120,
     },
-    [theme.breakpoints.down("md")]: {
+    [theme.breakpoints.up("sm")]: {
       justifyContent: "center",
       display: "block",
       marginLeft: "auto",
       marginRight: "auto",
-      maxWidth: "55%",
+      width: "80%",
+      marginTop: 140,
     },
-    [theme.breakpoints.down("lg")]: {
+    [theme.breakpoints.up("md")]: {
       justifyContent: "center",
       display: "block",
       marginLeft: "auto",
       marginRight: "auto",
-      maxWidth: "55%",
+      width: "65%",
     },
-    [theme.breakpoints.up("xl")]: {
+    [theme.breakpoints.up("lg")]: {
       justifyContent: "center",
       display: "block",
       marginLeft: "auto",
       marginRight: "auto",
-      maxWidth: "55%",
+      width: "55%",
     },
   },
 }));
