@@ -424,6 +424,7 @@
       "12841": "Theater of Pain",
       "13309": "De Other Side",
       "12837": "Spires of Ascension",
+      "13577": "Tazavesh, the Veiled Market",
 
       "1185": "Halls of Atonement",
       "1184": "Mists of Tirna Scithe",
@@ -433,6 +434,7 @@
       "1187": "Theater of Pain",
       "1188": "De Other Side",
       "1186": "Spires of Ascension",
+      "1194": "Tazavesh, the Veiled Market",
 
       "248": "Hellfire Ramparts",
       "256": "The Blood Furnace",
@@ -650,7 +652,7 @@
     "UpgradeFinder": {
       "Header": "Find your next upgrade!",
       "MythicPlus": "Mythic +",
-      "CurrentRaid": "Castle Nathria",
+      "CurrentRaid": "Sanctum of Domination",
       "PvP": "PvP",
       "WorldBosses": "World Bosses",
       "UpgradeBySlot": "Upgrades by Slot",

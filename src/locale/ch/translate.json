@@ -414,7 +414,8 @@
       "12842": "赤红深渊",
       "12841": "伤逝剧场",
       "13309": "彼界",
-      "12837": "晋升高塔"
+      "12837": "晋升高塔",
+      "13577": "塔扎维什，帷纱集市"
     },
 
     "RaidDifficulty": {
@@ -604,7 +605,7 @@
     "UpgradeFinder": {
       "Header": "Upgrade Finder Results",
       "MythicPlus": "大秘境",
-      "CurrentRaid": "纳斯利亚堡",
+      "CurrentRaid": "统御圣所",
       "PvP": "PvP",
       "WorldBosses": "World Bosses",
       "UpgradeBySlot": "Upgrade by Slot"
