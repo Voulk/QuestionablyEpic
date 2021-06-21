@@ -11,32 +11,34 @@ import { useSelector } from "react-redux";
 
 const useStyles = makeStyles((theme) => ({
   header: {
-    [theme.breakpoints.down("sm")]: {
+    [theme.breakpoints.down("xs")]: {
+      margin: "auto",
+      width: "85%",
+      justifyContent: "space-between",
+      display: "block",
+      marginTop: 140,
+    },
+    [theme.breakpoints.up("sm")]: {
+      margin: "auto",
+      width: "80%",
+      justifyContent: "space-between",
+      display: "block",
+      marginTop: 140,
+    },
+    [theme.breakpoints.up("md")]: {
       margin: "auto",
       width: "70%",
       justifyContent: "space-between",
       display: "block",
       marginTop: "120px",
+      marginTop: 120,
     },
-    [theme.breakpoints.down("md")]: {
+    [theme.breakpoints.up("lg")]: {
       margin: "auto",
       width: "70%",
       justifyContent: "space-between",
       display: "block",
-      marginTop: "120px",
-    },
-    [theme.breakpoints.down("lg")]: {
-      margin: "auto",
-      width: "70%",
-      justifyContent: "space-between",
-      display: "block",
-      marginTop: "120px",
-    },
-    [theme.breakpoints.up("xl")]: {
-      margin: "auto",
-      width: "70%",
-      justifyContent: "space-between",
-      display: "block",
+      marginTop: 32,
     },
   },
 }));
