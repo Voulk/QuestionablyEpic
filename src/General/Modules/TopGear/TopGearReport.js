@@ -74,7 +74,6 @@ function TopGearReport(props) {
     enchants = topSet.enchantBreakdown;
     differentials = result.differentials;
     itemList = topSet.itemList;
-    console.log(topSet);
     gemStats = (gameType === "BurningCrusade" && "socketInformation" in topSet) ? topSet.socketInformation : "";
     statList = topSet.setStats;
   } else {
