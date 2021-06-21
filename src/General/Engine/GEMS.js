@@ -45,17 +45,17 @@ export const GEMS = [
   /* ---------------------------------------------------------------------------------------------- */
 
   /* -------------------------------------- Hit & Spell Power ------------------------------------- */
-  { name: "Veiled Noble Topaz", color: "orange", rarity: "rare", jewelcrafting: false, stats: { hit: 4, bonushealing: 10 } }, // +4 hit rating & +5 spell power
+  { name: "Veiled Noble Topaz", color: "orange", rarity: "rare", jewelcrafting: false, stats: { hit: 4, bonushealing: 9 } }, // +4 hit rating & +5 spell power
   { name: "Shining Fire Opal", color: "orange", rarity: "epic", jewelcrafting: false, stats: { hit: 5, bonushealing: 12 } }, // +5 hit rating & +6 spell power
   { name: "Veiled Pyrestone", color: "orange", rarity: "epic", jewelcrafting: false, stats: { hit: 5, bonushealing: 12 } }, // +5 hit rating & +6 spell power
 
   /* ----------------------------------- Intellect & Spell Power ---------------------------------- */
-  { name: "Luminous Noble Topaz", id: 24060, color: "orange", rarity: "rare", jewelcrafting: false, stats: { intellect: 4, bonushealing: 10 } }, // +4 intellect & +5 spell power
+  { name: "Luminous Noble Topaz", id: 24060, color: "orange", rarity: "rare", jewelcrafting: false, stats: { intellect: 4, bonushealing: 9 } }, // +4 intellect & +5 spell power
   { name: "Luminous Fire Opal", id: 30547, color: "orange", rarity: "epic", jewelcrafting: false, stats: { intellect: 4, bonushealing: 12 } }, // +4 intellect & +6 spell power
   { name: "Luminous Pyrestone", id: 32219, color: "orange", rarity: "epic", jewelcrafting: false, stats: { intellect: 5, bonushealing: 12 } }, // +5 intellect & +6 spell power
 
   /* ------------------------------------- Haste & Spell Power ------------------------------------ */
-  { name: "Reckless Noble Topaz", id: 35316, color: "orange", rarity: "rare", jewelcrafting: false, stats: { haste: 4, bonushealing: 10 } }, // +4 haste & +5 spell power
+  { name: "Reckless Noble Topaz", id: 35316, color: "orange", rarity: "rare", jewelcrafting: false, stats: { haste: 4, bonushealing: 9 } }, // +4 haste & +5 spell power
   { name: "Reckless Pyrestone", id: 35760, color: "orange", rarity: "epic", jewelcrafting: false, stats: { haste: 5, bonushealing: 12 } }, // +5 haste & +6 spell power
 
   /* ------------------------------- Spell Power & Spell Penetration ------------------------------ */
@@ -68,14 +68,14 @@ export const GEMS = [
   /*{ name: "Reckless Fire Opal", color: "orange", rarity: "epic", jewelcrafting: false, stats: { intellect: 5, haste: 4 } }, // +5 intellect & +4 haste */
 
   /* ----------------------------------- Intellect & Spell Power ---------------------------------- */
-  { name: "Unstable Topaz", id: 32638, color: "orange", rarity: "rare", jewelcrafting: false, stats: { intellect: 4, bonushealing: 10 } }, // 5 spell power & +4 intellect
-  { name: "Infused Fire Opal", id: 30551, color: "orange", rarity: "epic", jewelcrafting: false, stats: { intellect: 4, bonushealing: 12 } }, // 6 spell power & +4 intellect
+  { name: "Unstable Topaz", id: 32638, color: "orange", rarity: "rare", jewelcrafting: false, stats: { intellect: 4, bonushealing: 5 } }, // 5 spell power & +4 intellect
+  { name: "Infused Fire Opal", id: 30551, color: "orange", rarity: "epic", jewelcrafting: false, stats: { intellect: 4, bonushealing: 6 } }, // 6 spell power & +4 intellect
 
   /* ---------------------------------- Spell Power & Resilience ---------------------------------- */
   /*{ name: "Durable Fire Opal", color: "orange", rarity: "epic", jewelcrafting: false, stats: { resilience: 4, bonushealing: 12 } }, // 6 spell power & +4 resilience */
 
   /* ------------------------------------- Spell Power & Crit ------------------------------------- */
-  { name: "Potent Noble Topaz", id: 24059, color: "orange", rarity: "rare", jewelcrafting: false, stats: { crit: 4, bonushealing: 10 } }, // 5 spell power & +4 crit
+  { name: "Potent Noble Topaz", id: 24059, color: "orange", rarity: "rare", jewelcrafting: false, stats: { crit: 4, bonushealing: 9 } }, // 5 spell power & +4 crit
   { name: "Iridescent Fire Opal", id: 30593, color: "orange", rarity: "epic", jewelcrafting: false, stats: { crit: 4, bonushealing: 12 } }, // 6 spell power & +4 crit
   { name: "Potent Fire Opal", id: 30588, color: "orange", rarity: "epic", jewelcrafting: false, stats: { crit: 4, bonushealing: 12 } }, // 6 spell power & +4 crit
   { name: "Potent Ornate Topaz", id: 28123, color: "orange", rarity: "epic", jewelcrafting: false, stats: { crit: 5, bonushealing: 12 } }, // 6 spell power & +5 crit
@@ -132,15 +132,15 @@ export const GEMS = [
   { name: "Soothing Amethyst", color: "purple", rarity: "epic", jewelcrafting: false, stats: { bonushealing: 12, stamina: 6 } }, // +6 spell power & +5 stamina */
 
   /* ------------------------------------ Spell Power & Mana/5 ------------------------------------ */
-  { name: "Royal Nightseye", id: 24057, color: "purple", rarity: "rare", jewelcrafting: false, stats: { bonushealing: 10, mp5: 2 } }, // +5 spell power & +2 mana per 5
+  { name: "Royal Nightseye", id: 24057, color: "purple", rarity: "rare", jewelcrafting: false, stats: { bonushealing: 9, mp5: 2 } }, // +5 spell power & +2 mana per 5
   { name: "Royal Tanzanite", id: 30603, color: "purple", rarity: "epic", jewelcrafting: false, stats: { bonushealing: 12, mp5: 2 } }, // +6 spell power & +2 mana per 5
   { name: "Royal Shadowsong Amethyst", id: 32216, color: "purple", rarity: "epic", jewelcrafting: false, stats: { bonushealing: 12, mp5: 2 } }, // +6 spell power & +2 mana per 5 
 
   /* ------------------------------------ Spell Power & Spirit ------------------------------------ */
   /*{ name: "Unstable Sapphire", color: "purple", rarity: "rare", jewelcrafting: false, stats: { bonushealing: 10, spirit: 4 } }, // +5 spell power & +4 spirit */
-  { name: "Purified Shadow Pearl", id: 32836, color: "purple", rarity: "rare", jewelcrafting: false, stats: { bonushealing: 10, spirit: 4 } }, // +5 spell power & +4 spirit
+  { name: "Purified Shadow Pearl", id: 32836, color: "purple", rarity: "rare", jewelcrafting: false, stats: { bonushealing: 9, spirit: 4 } }, // +5 spell power & +4 spirit
   { name: "Fluorescent Tanzanite", id: 30600, color: "purple", rarity: "epic", jewelcrafting: false, stats: { bonushealing: 12, spirit: 4 } }, // +6 spell power & +4 spirit
-  { name: "Imperial Tanzanite", id: 30572, color: "purple", rarity: "epic", jewelcrafting: false, stats: { bonushealing: 10, spirit: 5 } }, // +5 spell power & +5 spirit
+  { name: "Imperial Tanzanite", id: 30572, color: "purple", rarity: "epic", jewelcrafting: false, stats: { bonushealing: 9, spirit: 5 } }, // +5 spell power & +5 spirit
   { name: "Purified Shadowsong Amethyst", id: 37503, color: "purple", rarity: "epic", jewelcrafting: false, stats: { bonushealing: 12, spirit: 5 } }, // +6 spell power & +5 spirit
 
   /* ------------------------------------ Attack Power & Mana/5 ----------------------------------- */
@@ -153,7 +153,7 @@ export const GEMS = [
 
   { name: "Insightful Earthstorm Diamond", id: 25901, color: "meta", rarity: "rare", jewelcrafting: false, stats: { intellect: 12 }, requirements: "At least 2 red, 2 blue, 2 red gems" }, // +12 Intellect & Chance to restore mana on spellcast
   { name: "Mystical Skyfire Diamond", color: "meta", rarity: "rare", jewelcrafting: false, stats: {}, requirements: "Requires more blue gems than yellow" }, // Chance to Increase Spell Cast Speed
-  { name: "Swift Starfire Diamond", color: "meta", rarity: "rare", jewelcrafting: false, stats: { bonushealing: 24 }, requirements: "Atleast 2 yellow and 1 red gem" }, // +12 Spell Power and Minor Run Speed Increase.
+  { name: "Swift Starfire Diamond", color: "meta", rarity: "rare", jewelcrafting: false, stats: { bonushealing: 24 }, requirements: "At least 2 yellow and 1 red gem" }, // +12 Spell Power and Minor Run Speed Increase.
   { name: "Ember Skyfire Diamond", color: "meta", rarity: "rare", jewelcrafting: false, stats: {}, requirements: "Atleast 3 red gems" }, // +14 Spell Damage & +2% Intellect
   { name: "Imbued Unstable Diamond", color: "meta", rarity: "rare", jewelcrafting: false, stats: { bonushealing: 28 }, requirements: "Atleast 3 yellow gems" }, // +14 Spell Power and 5% Stun Resistance
   { name: "Bracing Earthstorm Diamond", id: 25897, color: "meta", rarity: "rare", jewelcrafting: false, stats: { bonushealing: 28 }, requirements: "requires more red gems than blue gems" }, // +14 Spell Power and 2% Reduced Threat
