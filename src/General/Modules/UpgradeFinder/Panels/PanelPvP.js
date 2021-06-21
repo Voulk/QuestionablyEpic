@@ -5,7 +5,7 @@ import ItemUpgradeCard from "./ItemUpgradeCard";
 import "./Panels.css";
 import { useTranslation } from "react-i18next";
 import { filterItemListBySource, getDifferentialByID } from "../../../Engine/ItemUtilities";
-import { encounterDB } from "../../Player/InstanceDB";
+import { encounterDB } from "../../../../Databases/InstanceDB";
 
 const useStyles = makeStyles(() => ({
   root: {
