@@ -119,6 +119,7 @@ function processItem(line, player, contentType, type) {
   itemSlot = getItemProp(itemID, "slot", "BurningCrusade");
 
   // Process Item Suffix
+  
   if (suffix && suffixAllocation) {
     itemBonusStats = getSuffixAllocation(suffix, suffixAllocation);
   }
@@ -170,15 +171,15 @@ function getSuffixAllocation(suffix, suffixAllocation) {
   for (const [stat, value] of Object.entries(suffixList)) {
     bonus_stats[stat] = Math.floor(value * suffixAllocation);
   }
-
   return bonus_stats;
 
 }
 
 // Compiles stats & bonus stats into one array to which we can then apply DR etc. 
 // TODO, this is identical to TopGearShared, so put it somewhere accessible to both.
-function compileStats(stats, bonus_stats) {
-  
+function compileStats(base_stats, bonus_stats) {
+  let stats = {...base_stats};
+
   for (const stat in stats) {
     if (stat !== "bonus_stats") {
       stats[stat] += (bonus_stats !== undefined && stat in bonus_stats) ? bonus_stats[stat] : 0;
