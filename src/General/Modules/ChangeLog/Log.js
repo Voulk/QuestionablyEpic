@@ -10,6 +10,16 @@
 export const changeLog = [
   {
     version: "9.0.5 / 2.5.1",
+    update: 9,
+    date: "22nd June",
+    changes: [
+      "Bugfix: BC Troll Priests should no longer get an error when running Top Gear or Upgrade Finder.",
+      "Bugfix: Importing Suffixed items multiple times should no longer double their stat allocations.",
+      "Bugfix: Fixed a rare bug where some BC gems weren't using the correct stat line."
+    ],
+  },
+  {
+    version: "9.0.5 / 2.5.1",
     update: 8,
     date: "10th June",
     changes: [
