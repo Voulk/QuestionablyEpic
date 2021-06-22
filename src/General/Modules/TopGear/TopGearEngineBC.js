@@ -34,6 +34,7 @@ const classRaceStats = {
     "Dwarf": {intellect: 144, spirit: 150},
     "Draenei": {intellect: 146, spirit: 153},
     "Undead": {intellect: 143, spirit: 156},
+    "Troll": {intellect: 141, spirit: 152},
     "Blood Elf": {intellect: 149, spirit: 150},
   },
   "Holy Paladin BC": {
@@ -121,7 +122,6 @@ export function runTopGearBC(rawItemList, wepCombos, player, contentType, baseHP
   }
 
   //console.log(differentials);
-  console.log(itemSets);
 
   //itemSets[0].printSet()
 

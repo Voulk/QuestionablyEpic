@@ -99,7 +99,7 @@ export async function apiGetPlayerImage(player) {
 /*                          Sends Errors to QE API for Dev error checking                         */
 /* ---------------------------------------------------------------------------------------------- */
 export async function apiSendError(player, errorType, errorMessage, result) {
-  let name = player.charName;
+  const name = "";
 
   let fetchUrl =
     "https://questionablyepic.com/api/addError.php?btag=" +

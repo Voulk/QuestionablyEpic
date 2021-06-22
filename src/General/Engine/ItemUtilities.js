@@ -216,9 +216,9 @@ export function getItemProp(id, prop, gameType = "Retail") {
   const item = getItem(id, gameType);
 
   if (item !== "" && prop in item) return item[prop];
-  else if (prop === "itemLevel") {
+  else if (item !== "" && prop === "itemLevel") {
     // This is for props that we should expect to have. 
-    reportError(this, "ItemUtilities", "Item prop: " + prop + " not found or item missing", id);
+    reportError(null, "ItemUtilities", "Item prop: " + prop + " not found or item missing", id);
     return -2;
   }
   else {
