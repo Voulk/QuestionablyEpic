@@ -122,7 +122,6 @@ export function runTopGearBC(rawItemList, wepCombos, player, contentType, baseHP
   }
 
   //console.log(differentials);
-  console.log(itemSets);
 
   //itemSets[0].printSet()
 
