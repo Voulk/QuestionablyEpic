@@ -393,13 +393,13 @@ export function calcStatsAtLevel(itemLevel, slot, statAllocations, tertiary) {
     }
   }
 
-  // This, on the other hand, is a close estimate that should be replaced before launch.
+  // This, on the other hand, is a close estimate that should be replaced ASAP.
   if (tertiary === "Leech") {
     if (slot === "Trinket") {
       // This is an occasionally off-by-one formula for leech that should be rewritten.
       stats.leech = Math.ceil(28 + 0.2413 * (itemLevel - 155));
     } else {
-      const terMult = slot === "Finger" || slot === "Neck" ? 0.170027 : 0.449132;
+      const terMult = (slot === "Finger" || slot === "Neck") ? 0.174027 : 0.433932;
       stats.leech = Math.floor(terMult * (stats.haste + stats.crit + stats.mastery + stats.versatility));
     }
   }
