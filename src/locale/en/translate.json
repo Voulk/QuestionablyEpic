@@ -42,7 +42,7 @@
     "Race": "Race",
     "Select Class": "Select Class",
     "Select Race": "Select Race",
-    "HowToUse": "How to Use",
+    "HowToUse": "How it works",
     "Yes": "Yes",
     "No": "No",
     "None": "None",
@@ -355,12 +355,12 @@
     "MainMenu": {
       "PatronInvite": "Love the app? Support the site on Patreon!",
       "PatronThanks": "Thank you so much for your support!",
-      "TopGear": "Top Gear (Beta)",
+      "TopGear": "Top Gear",
       "UpgradeFinder": "Upgrade Finder (Beta)",
       "QuickCompare": "Gear Quick Compare",
       "ExploreCovenants": "Explore Covenants",
       "LegendaryAnalysis": "Legendary Analysis",
-      "TrinketAnalysis": "Trinket Analysis (New)",
+      "TrinketAnalysis": "Trinket Analysis",
       "GreatVault": "The Great Vault (Coming Soon)",
       "CooldownPlanner": "Cooldown Planner (Coming Soon)",
       "Profile": "Profile",
@@ -372,15 +372,15 @@
         "HelpText": ""
       },
       "Tooltips": {
-        "TopGear": "Find your best gear set",
-        "QuickCompare": "Compare Items for each slot.",
+        "TopGear": "Find your best gear set.",
+        "QuickCompare": "Quick compare multiple items in a specific slot.",
         "ExploreCovenants": "Explore Soulbinds for each covenant.",
-        "LegendaryAnalysis": "Find your best legendary power and where to get it",
+        "LegendaryAnalysis": "Check out your specs legendary powers and where to get them",
         "CooldownPlanner": "Plan your cooldowns. Create your own or analyse logs",
-        "Profile": "Edit your details",
+        "Profile": "Edit your details and connect to Patreon",
         "UpgradeFinder": "Find your next piece of gear!",
-        "TrinketAnalysis": "See how this tiers trinkets line up in graph form",
-        "TierSets": ""
+        "TrinketAnalysis": "Check out how different trinkets compare, but in graph form",
+        "TierSets": "Find out how strong your classes tier sets are."
       }
     },
 
@@ -391,7 +391,8 @@
         "ChangeToRaid": "Change to Raid Content",
         "ChangeToDungeon": "Change to Dungeon Content",
         "InsertLog": "Insert a log to increase accuracy.",
-        "SimC": "Insert a SimC string to import your gear.",
+        "BurningCrusadeSimC": "Insert a QE Import string to import your gear.",
+        "RetailSimC": "Insert a SimC string to import your gear.",
         "Login": "Login to your Battle.net Account",
         "Language": "Change Language",
         "Home": "Main Menu"
@@ -416,7 +417,7 @@
       "Tertiary": "Tertiary",
       "AddButton": "Add",
       "Title": "Quick Compare",
-      "HelpText": "Quick Compare allows you to compare items one by one. The score is automatically shown in the top right corner in yellow, and items are ordered by strength. You can add items manually using the dropdowns below, or all at once using a string from the SimC addon.",
+      "HelpText": "Quick Compare allows you to compare items one by one. Scores include stats, gems and effects, but not set bonuses. Use Top Gear to include those.",
       "ItemErrorMsg": "Item Not Added. Ilvl Cap exceeded.",
       "ItemAdded": "Item Added!",
       "ItemDeleted": "Item Deleted!"
@@ -471,7 +472,23 @@
       "2446": "Guardian of the First Ones",
       "2447": "Fatescribe Roh-Kalo",
       "2440": "Kel'Thuzad",
-      "2441": "Sylvanas Windrunner"
+      "2441": "Sylvanas Windrunner",
+      "Karazahn Bosses": " ",
+      "652": "Attumen the Huntsman",
+      "653": "Moroes",
+      "654": "Maiden of Virtue",
+      "655": "Opera Hall",
+      "656": "The Curator",
+      "657": "Shade of Aran",
+      "658": "Terestian Illhoof",
+      "659": "Netherspite",
+      "660": "Chess Event",
+      "661": "Prince Malchezaar",
+      "662": "Nightbane",
+
+      "649": "High King Maulgar",
+      "650": "Gruul the Dragonkiller",
+      "651": "Magtheridon"
     },
 
     "DungeonNames": {
@@ -491,7 +508,28 @@
       "1189": "Sanguine Depths",
       "1187": "Theater of Pain",
       "1188": "De Other Side",
-      "1186": "Spires of Ascension"
+      "1186": "Spires of Ascension",
+
+      "248": "Hellfire Ramparts",
+      "256": "The Blood Furnace",
+      "259": "The Shattered Halls",
+  
+      "260": "The Slave Pens",
+      "261": "The Steamvault",
+      "262": "The Underbog",
+
+      "250": "Mana-Tombs",
+      "247": "Auchenai Crypts",
+      "252": "Sethekk Halls",
+      "253": "Shadow Labyrinth",
+  
+      "258": "The Mechanar",
+      "257": "The Botanica",
+      "254": "The Arcatraz",
+  
+      "251": "Old Hillsbrad Foothills",
+      "255": "The Black Morass",
+      "249": "Magister's Terrace"
     },
 
     "RaidDifficulty": {
@@ -507,6 +545,7 @@
       "-16": "Honor",
       "-17": "Conquest"
     },
+    "BadgeGear": "Badges of Justice",
 
     "WorldBosses": {
       "2430": "Valinor",
@@ -516,9 +555,11 @@
     },
 
     "SimCInput": {
-      "SimCStringLabel": "SimC String",
-      "SimCHeaderButtonLabel": "SimC",
-      "SimCDialogueTitle": "Paste Your SimC String"
+      "SimCStringLabel": "Import String",
+      "SimCHeaderButtonLabelBurningCrusade": "Gear Import",
+      "SimCHeaderButtonLabelRetail": "SimC",
+      "SimCDialogueTitleRetail": "Paste Your SimC String",
+      "SimCDialogueTitleBurningCrusade": "Paste Your QE Import String"
     },
 
     "slotNames": {
@@ -562,7 +603,7 @@
       "versatility": "Versatility"
     },
     "Settings": {
-      "SettingsTitle": "Settings (Trinkets, Buffs, etc)",
+      "SettingsTitle": "Optional Settings",
       "Retail": {
         "Setting0Spacer": "--------------------------------------------------------------------",
         "Setting0Tooltip": "The equip effect of 'Cabalist's Hymnal' is increased by 5% per Ally",
@@ -670,8 +711,9 @@
 
     "TopGear": {
       "Title": "Top Gear",
-      "HelpText": "Top Gear lets you compare all of your gear at once! Enter your SimC string below and click any items you want included. When you're all set, hit 'Go' at the bottom of the page. To enter items manually, return to the main menu and include them in QE Quick Compare.",
-      "ItemsHereMessage": "Your items will go here after you import.",
+      "HelpTextRetail": "Top Gear lets you compare every possible combination of your selected gear at once!",
+      "HelpTextBurningCrusade": "Top Gear lets you compare every possible combination of your selected gear at once!",
+      "ItemsHereMessage": "Your items will go here after you import, then hit 'Go' once happy with your selection.",
       "ErrorMessage": "So sorry, seems you've run into an error. This is usually caused by not being able to create any valid sets. Check that you have a valid weapon selected, two or more rings and two or more trinkets. If multiple legendaries are selected then there must be a valid alternative for each.",
       "GoMsg": "Go!",
       "SelectedItems": "Selected Items",
@@ -682,12 +724,13 @@
     },
 
     "UpgradeFinder": {
-      "Header": "Report",
+      "Header": "Find your next upgrade!",
       "MythicPlus": "Mythic +",
       "CurrentRaid": "Castle Nathria",
       "PvP": "PvP",
       "WorldBosses": "World Bosses",
-      "UpgradeBySlot": "Upgrades by Slot"
+      "UpgradeBySlot": "Upgrades by Slot",
+      "BackButton": "Back to Setup"
     },
 
     "UpgradeFinderFront": {
@@ -704,8 +747,7 @@
       "SimCBody1Missing": "Import - Missing",
       "SimCBody2": "Current Equipped Gear:",
       "SimCButton": "Import Gear",
-      "HelpText": "Insert a SimC String, select up to two raid difficulties, the Mythic+ ilvl you're interested in, and your PVP rating to see where you can find your next upgrade! All results are based on the gear you are actively wearing.",
-      "HelpTextBC": "Insert a QE String, select your dungeon difficulty, and (optionally) your PVP rating to see where you can find your next upgrade! All results are based on the gear you are actively wearing.",
+      "HelpText": "Find your next item with instance-by-instance and slot-by-slot item lists, all based on your specific character.",
       "DungeonBodyBC": ""
     },
 

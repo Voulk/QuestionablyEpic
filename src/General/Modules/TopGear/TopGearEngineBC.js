@@ -34,6 +34,7 @@ const classRaceStats = {
     "Dwarf": {intellect: 144, spirit: 150},
     "Draenei": {intellect: 146, spirit: 153},
     "Undead": {intellect: 143, spirit: 156},
+    "Troll": {intellect: 141, spirit: 152},
     "Blood Elf": {intellect: 149, spirit: 150},
   },
   "Holy Paladin BC": {
@@ -250,23 +251,27 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
       }
   
       enchant_stats.bonushealing += 81;
-      enchant_stats.intellect += 12;
-      enchants['CombinedWeapon'] = "Major Healing & Intellect"
+      enchants['CombinedWeapon'] = "Major Healing"
     }
 
     // ----- SOCKETS -----
-    var s0 = performance.now();
-    const optimalGems = gemGear(builtSet.itemList, adjusted_weights, userSettings)
-    hardScore += optimalGems.score;
-    builtSet.bcSockets = optimalGems;
-    const gemStats = getGemStatLoadout(optimalGems.socketsAvailable, optimalGems.socketedPieces, optimalGems.socketedColors);
+    if (userSettings.gemRarity !== "none") {
+      var s0 = performance.now();
+      const optimalGems = gemGear(builtSet.itemList, adjusted_weights, userSettings)
+      //hardScore += optimalGems.score;
+      builtSet.bcSockets = optimalGems;
+      const gemStats = getGemStatLoadout(optimalGems.socketsAvailable, optimalGems.socketedPieces, optimalGems.socketedColors);
+      compileStats(setStats, gemStats); //TODO
+      builtSet.socketInformation = optimalGems;
+      var s1 = performance.now();
+    }
 
-    var s1 = performance.now();
+
+    
     //console.log("Gems took " + (s1 - s0) + " milliseconds with count ")
- 
     // ----------------------
     compileStats(setStats, bonus_stats); // Add the base stats on our gear together with enchants & gems.
-    compileStats(setStats, gemStats); //TODO
+    
     compileStats(setStats, enchant_stats);
     //applyDiminishingReturns(setStats); // Apply Diminishing returns to our haul.
     addBaseStats(setStats, player.race, player.spec); // Add our base stats, which are immune to DR. This includes our base 5% crit, and whatever base mastery our spec has.
@@ -316,28 +321,24 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
     setStats.bonushealing = (setStats.bonushealing + setStats.spelldamage);
     setStats.spelldamage = 0;
 
-    
-
-    
-
     for (var stat in setStats) {
       if (stat === "hps") {
         hardScore += setStats[stat];
+        //console.log("Adding HPS score of " + setStats[stat]);
       } else if (stat === "dps") {
         continue;
       } else {
         hardScore += setStats[stat] * adjusted_weights[stat];
-        console.log("Adding " + (setStats[stat] * player.statWeights["Raid"][stat]) + " to hardscore for stat " + stat + " with stat weight: " + player.statWeights["Raid"][stat]);
+        //console.log("Adding " + (setStats[stat] * player.statWeights["Raid"][stat]) + " to hardscore for stat " + stat + " with stat weight: " + player.statWeights["Raid"][stat]);
       }
     }
   
     //console.log(JSON.stringify(setStats));
-    console.log("Soft Score: " + builtSet.sumSoftScore + ". Hard Score: " + hardScore);
+    //console.log("Soft Score: " + builtSet.sumSoftScore + ". Hard Score: " + hardScore);
     //console.log("Enchants: " + JSON.stringify(enchants));
     builtSet.hardScore = Math.round(1000 * hardScore) / 1000;
     builtSet.setStats = setStats;
     builtSet.enchantBreakdown = enchants;
-    builtSet.socketInformation = optimalGems;
     return builtSet; // Temp
   }
 

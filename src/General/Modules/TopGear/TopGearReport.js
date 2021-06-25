@@ -15,6 +15,7 @@ function TopGearReport(props) {
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
   const gameType = useSelector((state) => state.gameType);
+  const boxWidth = (gameType === "BurningCrusade") ? "60%" : "70%";
 
   /* ----------------------------- On Component load get player image ----------------------------- */
   useEffect(() => {
@@ -73,15 +74,14 @@ function TopGearReport(props) {
     enchants = topSet.enchantBreakdown;
     differentials = result.differentials;
     itemList = topSet.itemList;
-    gemStats = gameType === "BurningCrusade" ? topSet.socketInformation : "";
+    gemStats = (gameType === "BurningCrusade" && "socketInformation" in topSet) ? topSet.socketInformation : "";
     statList = topSet.setStats;
-    console.log(gemStats);
   } else {
     resultValid = false;
   }
 
   const getGemIDs = (slot) => {
-    if (gameType === "Retail" || (gemStats == undefined)) return "";
+    if (gameType === "Retail" || (!gemStats)) return "";
     else {
       let gemString = "&gems=";
       for (var i = 0; i < gemStats.socketsAvailable.length; i++) {       
@@ -99,7 +99,7 @@ function TopGearReport(props) {
     <div
       style={{
         margin: "auto",
-        width: "60%",
+        width: boxWidth,
         display: "block",
       }}
     >

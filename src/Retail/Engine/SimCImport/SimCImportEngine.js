@@ -1,9 +1,10 @@
 import { itemDB, tokenDB } from "../../../Databases/ItemDB";
 import { bonus_IDs } from "../BonusIDs";
 import { conduitDB, conduitRanks } from "../../../Databases/ConduitDB";
-import { calcStatsAtLevel, getItemProp, getItemAllocations, scoreItem, correctCasing, getValidWeaponTypes } from "../../../General/Engine/ItemUtilities";
+import { calcStatsAtLevel, getItemProp, getItem, getItemAllocations, scoreItem, correctCasing, getValidWeaponTypes } from "../../../General/Engine/ItemUtilities";
 import Item from "../../../General/Modules/Player/Item";
 import ItemSet from "../../../General/Modules/TopGear/ItemSet";
+import { isConstructSignatureDeclaration } from "typescript";
 
 const stat_ids = {
   36: "haste",
@@ -238,8 +239,6 @@ function processItem(line, player, contentType, type) {
   itemLevel = getItemProp(itemID, "itemLevel");
   itemSlot = getItemProp(itemID, "slot");
 
-  //console.log("Base level: " + itemLevel + " id " + itemID)
-
   //console.log(itemID + ": " + itemSlot + ". Item Level:" + itemLevel + ". Bonus: " + itemBonusIDs);
   // Process our bonus ID's so that we can establish the items level and sockets / tertiaries.
   for (var k = 0; k < itemBonusIDs.length; k++) {
@@ -308,7 +307,7 @@ function processItem(line, player, contentType, type) {
   if (craftedStats.length !== 0) itemBonusStats = getSecondaryAllocationAtItemLevel(itemLevel, itemSlot, craftedStats);
 
   // Add the new item to our characters item collection.
-  if (itemLevel > 60 && itemID !== 0) {
+  if (itemLevel > 60 && itemID !== 0 && getItem(itemID) !== "") {
     let itemAllocations = getItemAllocations(itemID, missiveStats);
 
     let item = new Item(itemID, "", itemSlot, itemSocket || checkDefaultSocket(itemID), itemTertiary, 0, itemLevel, bonusIDS);

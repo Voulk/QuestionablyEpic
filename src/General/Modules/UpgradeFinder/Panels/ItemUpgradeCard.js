@@ -80,6 +80,10 @@ export default function ItemCard(props) {
     if (item.source.instanceId === 1190 && item.source.encounterId > 0) {
       return t("BossNames." + item.source.encounterId);
     }
+    /* -------------------------- BC Bosses ---------------------- */
+    if ([745, 746].includes(item.source.instanceId)) {
+      return t("BossNames." + item.source.encounterId);
+    }
     /* ------------------------------ World Bosses ------------------------------ */
     if (item.source.instanceId === 1192 && item.source.encounterId > 0) {
       return t("WorldBosses." + item.source.encounterId);
@@ -92,6 +96,10 @@ export default function ItemCard(props) {
     if (item.source.instanceId === -17 || item.source.encounterId === -17) {
       return t("PvPCurrency.-17");
     }
+        /* -------------------------------- TBC Badge Gear -------------------------------- */
+        if (item.source.instanceId === -4) {
+          return t("BadgeGear");
+        }
   };
 
   return (

@@ -80,8 +80,8 @@ export default function RetailSettings(props) {
                 <Typography color="primary" style={{ marginRight: 4 }} noWrap>
                   {t("Settings.Retail.Setting0Title")}
                 </Typography>
-                <Tooltip title={t("Settings.Retail.Setting0Tooltip")} placement="top-start">
-                  <InfoOutlinedIcon style={{ height: 15, width: 15 }} fontSize="small" />
+                <Tooltip title={<Typography align="center" variant="body2">{t("Settings.Retail.Setting0Tooltip")}</Typography>} placement="top-start">
+                  <InfoOutlinedIcon style={{ height: 15, width: 15 }} fontSize="medium" />
                 </Tooltip>
               </div>
             </Grid>
@@ -113,8 +113,8 @@ export default function RetailSettings(props) {
                 <Typography color="primary" style={{ marginRight: 4 }} noWrap>
                   {t("Settings.Retail.Setting1Title")}
                 </Typography>
-                <Tooltip title={t("Settings.Retail.Setting1Tooltip")} placement="top-start">
-                  <InfoOutlinedIcon style={{ height: 15, width: 15 }} fontSize="small" />
+                <Tooltip title={<Typography align="center" variant="body2">{t("Settings.Retail.Setting1Tooltip")}</Typography>} placement="top-start">
+                  <InfoOutlinedIcon style={{ height: 15, width: 15 }} fontSize="medium" />
                 </Tooltip>
               </div>
             </Grid>
@@ -144,7 +144,7 @@ export default function RetailSettings(props) {
                       <Typography color="primary" style={{ marginRight: 4 }} noWrap>
                         {t("Settings.Retail.Setting2Title")}
                       </Typography>
-                      <Tooltip title={t("Settings.Retail.Setting2Tooltip")} placement="top-start">
+                      <Tooltip title={<Typography align="center"  variant="body2">{t("Settings.Retail.Setting2Tooltip")}</Typography>} placement="top-start">
                         <InfoOutlinedIcon style={{ height: 15, width: 15 }} fontSize="small" />
                       </Tooltip>
                     </div>
@@ -177,8 +177,8 @@ export default function RetailSettings(props) {
                 <Typography color="primary" style={{ marginRight: 4 }} noWrap>
                   {t("Settings.Retail.Setting3Title")}
                 </Typography>
-                <Tooltip title={t("Settings.Retail.Setting3Tooltip")} placement="top-start">
-                  <InfoOutlinedIcon style={{ height: 15, width: 15 }} fontSize="small" />
+                <Tooltip title={<Typography align="center" variant="body2">{t("Settings.Retail.Setting3Tooltip")}</Typography>} placement="top-start">
+                  <InfoOutlinedIcon style={{ height: 15, width: 15 }} fontSize="medium" />
                 </Tooltip>
               </div>
             </Grid>
@@ -205,7 +205,7 @@ export default function RetailSettings(props) {
               <Grid container spacing={1} style={{ padding: "0px 8px" }}>
                 <Grid item xs={12}>
                   <Tooltip
-                    title={t("Settings.Retail.Setting4Tooltip")}
+                    title={<Typography align="center" variant="body2">{t("Settings.Retail.Setting4Tooltip")}</Typography>}
                     placement="top-start"
                   >
                     <Typography color="primary">
@@ -233,7 +233,7 @@ export default function RetailSettings(props) {
               <Grid container spacing={1} style={{ paddingLeft: 8 }}>
                 <Grid item xs={12}>
                   <Tooltip
-                    title={t("Settings.Retail.Setting5Tooltip")}
+                    title={<Typography align="center" variant="body2">{t("Settings.Retail.Setting5Tooltip")}</Typography>}
                     placement="top-start"
                   >
                     <Typography color="primary">
