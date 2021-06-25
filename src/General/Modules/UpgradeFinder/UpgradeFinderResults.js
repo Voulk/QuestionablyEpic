@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
     borderRight: `1px solid ${theme.palette.divider}`,
   },
   raidHeaderStyle: {
-    backgroundImage: `url(${require("../../../Images/Bosses/CastleNathria/loadingScreenArt.png").default})`,
+    backgroundImage: `url(${require("../../../Images/Bosses/SanctumOfDomination/SanctumArt.png").default})`,
     borderRadius: "4px 0px 0px 4px",
     height: 75,
     whiteSpace: "nowrap",

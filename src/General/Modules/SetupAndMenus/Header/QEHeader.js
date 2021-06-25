@@ -12,14 +12,31 @@ import { makeStyles } from "@material-ui/core/styles";
 import CharacterHeaderButton from "./CharacterHeader";
 import ContentSwitch from "./ContentToggle";
 import { useSelector } from "react-redux";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
+import { useTheme } from '@material-ui/core/styles';
 
 // import ReactGA from "react-ga";n
 
 const useStyles = makeStyles((theme) => ({
   qeLogo: {
-    [theme.breakpoints.down("sm")]: {
-      marginTop: "10px",
+    [theme.breakpoints.down("md")]: {
+      marginTop: "5px",
+      marginBottom: "-5px",
     },
+  },
+  headerButtons: {
+    [theme.breakpoints.down("sm")]: {
+      marginBottom: "5px",
+    },
+  },
+  headerMargins:{
+    [theme.breakpoints.down("sm")]: {
+      marginLeft: "4%", marginRight: "4%"
+    },
+    [theme.breakpoints.up("sm")]: {
+      marginLeft: "8%", marginRight: "8%"
+    },
+
   },
   popover: {
     pointerEvents: "none",
@@ -31,6 +48,8 @@ const useStyles = makeStyles((theme) => ({
 
 export default function QEHeader(props) {
   const { t } = useTranslation();
+  const theme = useTheme();
+  const matches = useMediaQuery(theme.breakpoints.down("sm"));
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const gameType = useSelector((state) => state.gameType);
@@ -62,47 +81,58 @@ export default function QEHeader(props) {
   return (
     <div style={{ backgroundColor: "#353535" }}>
       <AppBar position="fixed" color="inherit">
-        <Toolbar style={{ marginLeft: "8%", marginRight: "8%" }}>
-          <Grid container direction="row" spacing={1} justify="space-between" alignItems="center">
+        <Toolbar className={classes.headerMargins}>
+          <Grid container direction="row" spacing={0} justify="space-between" alignItems="center">
             <Grid item xs={12} sm={12} md={3} lg={3} xl={6} align="center">
+              {/* ---------------------------------------------------------------------------------------------- */
+              /*                                         Logo Container                                          */
+              /* ----------------------------------------------------------------------------------------------  */}
               <Grid container direction="row" alignItems="center">
-                <Grid item xs={12} sm={12} md="auto" lg="auto" xl="auto" align="center">
+                <Grid item xs={12} sm={12} md="auto" lg={"auto"} xl="auto" align="center">
                   <Grid container direction="row" alignItems="center">
-                    <Grid item xs={12} sm={12} md={12} lg={6} xl="auto">
+                    <Grid item xs={6} sm={12} md={12} lg={6} xl="auto">
                       <Link to={"/"}>
                         <Tooltip title={t("QeHeader.Tooltip.Home")} arrow>
                           <img className={classes.qeLogo} src={logo} alt="QE Live" />
                         </Tooltip>
                       </Link>
                     </Grid>
-                    <Grid item xs={12} sm={12} md={12} lg={6} xl="auto">
+                    <Grid item xs={6} sm={12} md={12} lg={6} xl="auto">
                       <Typography style={{ color: color[patronStatus], paddingLeft: 10, paddingRight: 10 }} variant="body1" align="center" noWrap>
                         {patronStatus}
                       </Typography>
                     </Grid>
                   </Grid>
                 </Grid>
-
               </Grid>
             </Grid>
 
-            <Grid item xs={12} sm={12} md={4} lg={4} xl={4}>
-              <Grid container direction="row" justify="center" alignItems="center" spacing={1} wrap="nowrap" style={{ paddingLeft: 10, paddingRight: 10 }}>
+            <Grid item xs={12} sm={12} md={8} lg={6} xl={4} className={classes.headerButtons}>
+              {/* ---------------------------------------------------------------------------------------------- */
+              /*                                     Menu Buttons Container                                      */
+              /* ----------------------------------------------------------------------------------------------  */}
+              <Grid container direction="row" justify="center" alignItems="center" spacing={1} wrap={(matches && gameType === "Retail")  ? "" : "nowrap"} style={{ paddingLeft: 10, paddingRight: 10 }}>
                 {(props.allChars && props.allChars.allChar.length) > 0 ? (
-                  <Grid item>
+                  <Grid item item xs={gameType === "Retail" ? 6 : "auto"} sm="auto">
                     <CharacterHeaderButton player={props.pl} allChars={props.allChars} />
                   </Grid>
                 ) : (
                   ""
                 )}
-                {gameType === "Retail" ? 
-                <Grid item>
-                  <ContentSwitch />
-                </Grid> : ""}
-                {gameType === "Retail" ? 
-                <Grid item>
-                  <QELogImport logImportSnack={props.logImportSnack} player={props.player} allChars={props.allChars} />
-                </Grid> : ""}
+                {gameType === "Retail" ? (
+                  <Grid item xs={6} sm="auto">
+                    <ContentSwitch />
+                  </Grid>
+                ) : (
+                  ""
+                )}
+                {gameType === "Retail" ? (
+                  <Grid item>
+                    <QELogImport logImportSnack={props.logImportSnack} player={props.player} allChars={props.allChars} />
+                  </Grid>
+                ) : (
+                  ""
+                )}
                 <Grid item>
                   <SimCraftInput variant="outlined" buttonLabel={t("SimCInput.SimCHeaderButtonLabel" + gameType)} player={props.player} simcSnack={props.simcSnack} allChars={props.allChars} />
                 </Grid>
