@@ -1,6 +1,49 @@
 export default function UpgradeFinderBossImages(props, gameType) {
   switch (props) {
     /* ---------------------------------------------------------------------------------------------- */
+    /*                                      Sanctum of Domination                                     */
+    /* ---------------------------------------------------------------------------------------------- */
+    /* ---------------------------------------- The Tarragrue --------------------------------------- */
+    case 2435:
+      return require("Images/Bosses/SanctumOfDomination/TheTarragrue/TarragrueUF.png").default;
+
+    /* ------------------------------------ The Eye of the Jailer ----------------------------------- */
+    case 2442:
+      return require("Images/Bosses/SanctumOfDomination/EyeoftheJailer/EyeoftheJailer.png").default;
+
+    /* ------------------------------------------ The Nine ------------------------------------------ */
+    case 2439:
+    return require("Images/Bosses/SanctumOfDomination/TheNine/TheNine.png").default;
+
+    /* ------------------------------------- Remnant of Ner'zhul ------------------------------------ */
+    case 2444:
+      return require("Images/Bosses/SanctumOfDomination/RemnantOfNerzhul/RemnantOfNerzhulUF.png").default;
+
+    /* ------------------------------------ Soulrender Dormazain ------------------------------------ */
+    case 2445:
+      return require("Images/Bosses/SanctumOfDomination/Soulrender/SoulrenderDormazain.png").default;
+
+    /* -------------------------------------- Painsmith Raznal -------------------------------------- */
+    case 2443:
+      return require("Images/Bosses/SanctumOfDomination/PainsmithRaznal/PainsmithRaznalUF.png").default;
+
+    /* --------------------------------- Guardian of the First Ones --------------------------------- */
+    case 2446:
+      return require("Images/Bosses/SanctumOfDomination/GuardianOfTheFirstOnes/GuardianOfTheFirstOnesUF.png").default;
+
+    /* ------------------------------------- Fatescribe Roh-Kalo ------------------------------------ */
+    case 2447:
+      return require("Images/Bosses/SanctumOfDomination/FatescribeRohKalo/FatescribeRohKaloUF.png").default;
+
+    /* ----------------------------------------- Kel'Thuzad ----------------------------------------- */
+    case 2440:
+      return require("Images/Bosses/SanctumOfDomination/Kelthuzad/KelthuzadUF.png").default;
+
+    /* ------------------------------------- Sylvanas Windrunner ------------------------------------ */
+    case 2441:
+      return require("Images/Bosses/SanctumOfDomination/SylvanusWindrunner/SylvanusWindrunnerUF.png").default;
+
+    /* ---------------------------------------------------------------------------------------------- */
     /*                                         Castle Nathria                                         */
     /* ---------------------------------------------------------------------------------------------- */
     /* --------------------------------------- Broker Curator --------------------------------------- */
