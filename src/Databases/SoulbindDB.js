@@ -296,7 +296,7 @@ export const soulbindDB = [
       ru: "Вместе лучше",
       de: "Gemeinsam besser",
     },
-    icon: "achievement_bg_tophealer_av.jpg",
+    icon: "achievement_reputation_01.jpg",
     soulbind: "Pelagos",
     position: [9, 0],
     renown: 30,
