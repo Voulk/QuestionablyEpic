@@ -10,6 +10,36 @@
 export const changeLog = [
   {
     version: "9.0.5 / 2.5.1",
+    update: 9,
+    date: "22nd June",
+    changes: [
+      "Bugfix: BC Troll Priests should no longer get an error when running Top Gear or Upgrade Finder.",
+      "Bugfix: Importing Suffixed items multiple times should no longer double their stat allocations.",
+      "Bugfix: Fixed a rare bug where some BC gems weren't using the correct stat line."
+    ],
+  },
+  {
+    version: "9.0.5 / 2.5.1",
+    update: 8,
+    date: "10th June",
+    changes: [
+      "Improved clarity around the QE Import addon, and where to get it.",
+      "Revamped the help text at the top of every module.",
+      "BC: Added Badge gear to Upgrade Finder."
+    ],
+  },
+  {
+    version: "9.0.5 / 2.5.1",
+    update: 7,
+    date: "8th June",
+    changes: [
+      "Fixed a bug where gems were being counted twice in set scores.",
+      "Fixed a bug where Spirit was being undervalued for BC Druid.",
+      "Fixed some minor UI bugs."
+    ],
+  },
+  {
+    version: "9.0.5 / 2.5.1",
     update: 6,
     date: "2nd June",
     changes: [

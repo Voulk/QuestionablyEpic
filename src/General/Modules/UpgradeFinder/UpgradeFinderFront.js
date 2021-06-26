@@ -37,34 +37,35 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   header: {
-    [theme.breakpoints.down("sm")]: {
+    [theme.breakpoints.down("xs")]: {
       justifyContent: "center",
       display: "block",
       marginLeft: "auto",
       marginRight: "auto",
-      maxWidth: "55%",
+      width: "85%",
       marginTop: 120,
     },
-    [theme.breakpoints.down("md")]: {
+    [theme.breakpoints.up("sm")]: {
       justifyContent: "center",
       display: "block",
       marginLeft: "auto",
       marginRight: "auto",
-      maxWidth: "55%",
+      width: "80%",
+      marginTop: 140,
     },
-    [theme.breakpoints.down("lg")]: {
+    [theme.breakpoints.up("md")]: {
       justifyContent: "center",
       display: "block",
       marginLeft: "auto",
       marginRight: "auto",
-      maxWidth: "55%",
+      width: "65%",
     },
-    [theme.breakpoints.up("xl")]: {
+    [theme.breakpoints.up("lg")]: {
       justifyContent: "center",
       display: "block",
       marginLeft: "auto",
       marginRight: "auto",
-      maxWidth: "55%",
+      width: "55%",
     },
   },
 }));
@@ -100,7 +101,13 @@ export default function UpgradeFinderFront(props) {
   const currentLanguage = i18n.language;
   const contentType = useSelector((state) => state.contentType);
   const gameType = useSelector((state) => state.gameType);
-  const helpText = gameType === "Retail" ? t("UpgradeFinderFront.HelpText") : t("UpgradeFinderFront.HelpTextBC"); // TODO: Implement BC Help Text
+  const helpBlurb = t("UpgradeFinderFront.HelpText")
+  const helpText = gameType === "Retail" ? ["Insert a SimC string to automatically import your gear.", "(Optional) Use the settings panel to make further customizations.", "Select a raid difficulty, Mythic+ level and PVP rating. If you don't play any particular content type, feel free to set it to 0.",
+                                            "Hit Go at the bottom of the page."] : 
+                                            ["Insert a QE Import string to automatically import your gear.",
+                                            "(Optional) Use the settings panel to set specific gem types, enchants and how much value to put on extra mana.",
+                                            "Select a dungeon difficulty, and (optionally) a PVP rating.",
+                                            "Hit Go at the bottom of the page."];
 
   const marks = [
     {
@@ -298,7 +305,7 @@ export default function UpgradeFinderFront(props) {
       <Grid container spacing={1}>
         {/* ---------------------------- Help Text Section --------------------------- */}
         <Grid item xs={12}>
-          <HelpText text={helpText} />
+          <HelpText blurb={helpBlurb} text={helpText} />
         </Grid>
         <Grid item xs={12}>
           <UpgradeFinderSimC player={props.player} simcSnack={props.simcSnack} allChars={props.allChars} />

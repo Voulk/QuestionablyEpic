@@ -7,10 +7,11 @@ import { useSelector } from "react-redux";
 function CompetitiveAlternatives(props) {
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
-
+  
   // const item = props.item
   const differentials = props.differentials
   const gameType = useSelector((state) => state.gameType);
+  const wowheadDom = (gameType === "BurningCrusade" ? "tbc-" : "") + currentLanguage;
   const itemQuality = (item, gameType) => {
     if (gameType === "Retail") {
       const isLegendary = item.effect.type === "spec legendary";
@@ -63,7 +64,7 @@ function CompetitiveAlternatives(props) {
                       <Grid item container xs={10} spacing={1}>
                         {key.items.map((item, i) => (
                           <Grid item key={i}>
-                            <a data-wowhead={"item=" + item.id + "&" + "ilvl=" + item.level + "&bonus=" + item.bonusIDS + "&domain=" + currentLanguage}>
+                            <a data-wowhead={"item=" + item.id + "&" + "ilvl=" + item.level + "&bonus=" + item.bonusIDS + "&domain=" + wowheadDom}>
                               <div className="container-ItemCards" style={{ height: 42 }}>
                                 <img
                                   alt="img"

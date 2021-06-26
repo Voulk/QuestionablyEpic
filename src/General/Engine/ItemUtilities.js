@@ -216,9 +216,9 @@ export function getItemProp(id, prop, gameType = "Retail") {
   const item = getItem(id, gameType);
 
   if (item !== "" && prop in item) return item[prop];
-  else if (prop === "itemLevel") {
+  else if (item !== "" && prop === "itemLevel") {
     // This is for props that we should expect to have. 
-    reportError(this, "ItemUtilities", "Item prop: " + prop + " not found or item missing", id);
+    reportError(null, "ItemUtilities", "Item prop: " + prop + " not found or item missing", id);
     return -2;
   }
   else {
@@ -393,13 +393,13 @@ export function calcStatsAtLevel(itemLevel, slot, statAllocations, tertiary) {
     }
   }
 
-  // This, on the other hand, is a close estimate that should be replaced before launch.
+  // This, on the other hand, is a close estimate that should be replaced ASAP.
   if (tertiary === "Leech") {
     if (slot === "Trinket") {
       // This is an occasionally off-by-one formula for leech that should be rewritten.
       stats.leech = Math.ceil(28 + 0.2413 * (itemLevel - 155));
     } else {
-      const terMult = slot === "Finger" || slot === "Neck" ? 0.170027 : 0.449132;
+      const terMult = (slot === "Finger" || slot === "Neck") ? 0.174027 : 0.433932;
       stats.leech = Math.floor(terMult * (stats.haste + stats.crit + stats.mastery + stats.versatility));
     }
   }
@@ -532,7 +532,6 @@ function compileStats(stats, bonus_stats) {
 
   for (const bonusStat in bonus_stats) {
     if (!(bonusStat in stats)) {
-      console.log("Adding bonus stat: " + bonusStat);
       stats[bonusStat] = bonus_stats[bonusStat];
     }
   }
@@ -554,7 +553,7 @@ function applyBCStatMods(spec, setStats) {
   }
   else if (spec === "Restoration Druid BC") {
     // Also gets 30% of spirit MP5 as MP5
-    setStats.spirit = (setStats.spirit || 0) * 0.15;
+    setStats.spirit = (setStats.spirit || 0) * 1.15;
   }
   else if (spec === "Holy Priest BC") {
     // Also gets 30% of spirit MP5 as MP5
@@ -588,7 +587,7 @@ export function scoreItem(item, player, contentType, gameType = "Retail") {
       if (stat !== "bonus_stats") {
         let statSum = sumStats[stat]
         score += statSum * player.getStatWeight(contentType, stat);
-        //console.log("Stat: " + stat + " adds " + statSum * player.getStatWeight(contentType, stat) + " to score.");
+        //console.log("Stat: " + stat + " adds " + statSum * player.getStatWeight(contentType, stat) + " to score with amount " + sumStats[stat]);
       }
 
   }

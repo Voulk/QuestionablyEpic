@@ -4,9 +4,7 @@ import { Grid, Paper, Typography } from "@material-ui/core";
 export default function MessageOfTheDay() {
   //prettier-ignore
   const messageOfTheDay = [
-    "QE Live Burning Crusade now in Beta!",
-    "Please report any suspected bugs or errors and expect light turbulence for a few days.",
-    "Thank you all so much for your support."
+    "QE Live Burning Crusade now in Beta!"
 ];
 
   return (
@@ -15,7 +13,7 @@ export default function MessageOfTheDay() {
         {messageOfTheDay.map((key, i) => (
           <Grid item xs={12} key={i}>
             <Typography style={{ lineHeight: "10px" }} align="left" variant="body1" key={i}>
-              • {key}
+              {key}
             </Typography>
           </Grid>
         ))}

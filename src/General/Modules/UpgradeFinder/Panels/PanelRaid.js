@@ -4,7 +4,7 @@ import { Typography, Grid, Divider, Paper, AppBar, Tabs, Tab, Box } from "@mater
 import ItemUpgradeCard from "./ItemUpgradeCard";
 import UpgradeFinderBossImages from "./BossImages";
 import "./Panels.css";
-import { encounterDB } from "../../Player/InstanceDB";
+import { encounterDB } from "../../../../Databases/InstanceDB";
 import { useTranslation } from "react-i18next";
 import { filterItemListBySource, filterBCItemListBySource, getDifferentialByID } from "../../../Engine/ItemUtilities";
 import { useSelector } from "react-redux";

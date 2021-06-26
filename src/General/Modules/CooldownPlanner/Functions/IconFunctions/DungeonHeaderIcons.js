@@ -7,6 +7,7 @@ import SD from "../../../../../Images/MythicPlus/SanguineDepths/SanguineDepthsAG
 import ToP from "../../../../../Images/MythicPlus/TheaterOfPain/TheaterOfPainAG.jpg";
 import SoA from "../../../../../Images/MythicPlus/SpiresOfAscension/SpiresOfAscensionAG.jpg";
 import DoS from "../../../../../Images/MythicPlus/DeOtherSide/DeOtherSideAG.jpg";
+import TtVM from "../../../../../Images/MythicPlus/TazaveshTheVeiledMarket/TazaveshTheVeiledMarket.jpg";
 
 import AuchindounDungeons from "../../../../../Images/BurningCrusade/Dungeons/AuchindounDungeons.jpg";
 import CavernsOfTimeDungeons from "../../../../../Images/BurningCrusade/Dungeons/CavernsOfTimeDungeons.jpg";
@@ -53,6 +54,10 @@ export default function DungeonHeaderIcons(props) {
   /* ---------------------------------------- De Other Side --------------------------------------- */
   if (props === 13309 || props === 1188) {
     source = DoS;
+  }
+  /* --------------------------------- Tazavesh the Veiled Market --------------------------------- */
+  if (props === 13577 || props === 1194) {
+    source = TtVM;
   }
 
   /* ---------------------------------------------------------------------------------------------- */
