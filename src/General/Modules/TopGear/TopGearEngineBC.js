@@ -34,6 +34,7 @@ const classRaceStats = {
     "Dwarf": {intellect: 144, spirit: 150},
     "Draenei": {intellect: 146, spirit: 153},
     "Undead": {intellect: 143, spirit: 156},
+    "Troll": {intellect: 141, spirit: 152},
     "Blood Elf": {intellect: 149, spirit: 150},
   },
   "Holy Paladin BC": {
@@ -250,19 +251,16 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
       }
   
       enchant_stats.bonushealing += 81;
-      enchant_stats.intellect += 12;
-      enchants['CombinedWeapon'] = "Major Healing & Intellect"
+      enchants['CombinedWeapon'] = "Major Healing"
     }
 
     // ----- SOCKETS -----
     if (userSettings.gemRarity !== "none") {
-      console.log("GEMMING SET");
       var s0 = performance.now();
       const optimalGems = gemGear(builtSet.itemList, adjusted_weights, userSettings)
       //hardScore += optimalGems.score;
       builtSet.bcSockets = optimalGems;
       const gemStats = getGemStatLoadout(optimalGems.socketsAvailable, optimalGems.socketedPieces, optimalGems.socketedColors);
-
       compileStats(setStats, gemStats); //TODO
       builtSet.socketInformation = optimalGems;
       var s1 = performance.now();
