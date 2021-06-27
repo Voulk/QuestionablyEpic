@@ -49,6 +49,30 @@ export function reduceTimestamps(array) {
   return timestampSum;
 }
 
+// reduces array provided by timestamp. returns multiple abilities to one timestamp
+export function reduceTimestampshealth(array) {
+  let timestampSum = array.reduce((acc, cur) => {
+    acc[cur.timestamp] = array.reduce((x, n) => {
+      // console.log(x)
+      let count = 1;
+      for (let prop in n) {
+        if (cur.timestamp === n.timestamp)
+          if (x.hasOwnProperty("health")) {
+            count = count + 1;
+            // console.log(count)
+            // console.log(x["health"])
+            x[prop] += n[prop];
+          } else x[prop] = n[prop];
+      }
+      x.timestamp = cur.timestamp;
+      x.health = x.health / count;
+      return x;
+    }, {});
+    return acc;
+  }, {});
+  return timestampSum;
+}
+
 // returns fight duration Time end - time start of log
 export function fightDuration(time1, time2) {
   return time1 - time2;
@@ -560,4 +584,52 @@ export async function importSummaryData(starttime, endtime, reportid) {
     });
 
   return summary;
+}
+
+export async function importRaidHealth(starttime, endtime, reportid) {
+  const APIdamagetaken = "https://www.warcraftlogs.com:443/v1/report/tables/resources/";
+  const API2 = "&api_key=92fc5d4ae86447df22a8c0917c1404dc";
+  const START = "?start=";
+  const END = "&end=";
+  const HOSTILITY = "&hostility=0";
+  const ABILITYID = "&abilityid=1000";
+  let health = [];
+  let health2 = [];
+  let reducedHealth = [];
+  let nextpage = 0;
+
+  await axios
+    .get(APIdamagetaken + reportid + START + starttime + END + endtime + HOSTILITY + ABILITYID + API2)
+    .then((result) => {
+      health = result.data.series.filter((key) => key.type !== "Pet").map((key) => key.data.map((key2) =>({ timestamp: moment(fightDuration(key2[0], starttime)).valueOf(), health: key2[1] })));
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+
+  // // Loop of the import updating the next page until the next page is undefined (no next page from json return)
+  // if (nextpage !== undefined || null) {
+  //   do {
+  //     await axios
+  //       .get(APIdamagetaken + reportid + START + nextpage + END + endtime + HOSTILITY + ABILITYID + API2)
+  //       .then((result) => {
+  //         health = health.concat(
+  //           Object.keys(result.data.series)
+  //             // .filter((key) => key.type !== "Pet")
+  //             .map((key) => console.log(key)),
+  //         );
+  //         nextpage = result.data.nextPageTimestamp;
+  //       })
+  //       .catch(function (error) {
+  //         console.log(error);
+  //       });
+  //   } while (nextpage !== undefined || null);
+  // }
+
+  health.sort((a, b) => (a.timestamp > b.timestamp ? 1 : -1));
+  health.flat()
+  console.log(health);
+  // reducedHealth = reduceTimestamps(health);
+  // console.log(reducedHealth);
+  return reducedHealth;
 }

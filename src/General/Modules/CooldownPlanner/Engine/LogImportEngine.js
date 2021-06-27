@@ -1,6 +1,6 @@
 //prettier-ignore
 import { addMissingTimestamps, getUniqueObjectsFromArray, reduceTimestamps, fightDuration, importHealerLogData, importDamageLogData, importCastsLogData,
-  durationmaker, sumDamage, importSummaryData, importExternalCastsLogData, importCharacterIds, importEnemyCasts, importEnemyIds } from "../Functions/Functions";
+  durationmaker, sumDamage, importSummaryData, importExternalCastsLogData, importCharacterIds, importEnemyCasts, importEnemyIds, importRaidHealth } from "../Functions/Functions";
 import moment from "moment";
 
 /* =============================================
@@ -66,6 +66,8 @@ export default async function updatechartdata(starttime, endtime) {
   /* --------------- Import all the damage-taken from the log for friendly targets. --------------- */
   const damage = await importDamageLogData(starttime, endtime, this.state.reportid);
 
+  const health = await importRaidHealth(starttime, endtime, this.state.reportid);
+  console.log(health);
   /* --------------------------- Map Healer Data for ID, Name and Class. -------------------------- */
   const healerIDName = healers.map((key) => ({
     id: key.id,
@@ -252,6 +254,12 @@ export default async function updatechartdata(starttime, endtime) {
       .toString(),
   }));
 
+
+  const healthUpdated = health.map( key=> ({
+    timestamp: moment(fightDuration(key.timestamp, this.state.time)).valueOf(),
+    health: key.health
+  }))
+
   /* ----------------------- Flatten the map we just created into an array. ----------------------- */
   let cooldownwithdurations = healerDurations.flat();
 
@@ -261,9 +269,16 @@ export default async function updatechartdata(starttime, endtime) {
 
   /* ------- Concat the damage arrays with the cooldown durations with the missing durations ------ */
   let unmitigatedDamageFromLogWithTimesAddedAndCooldowns = unmitigatedDamageMap.concat(cooldownwithdurations, times);
+  unmitigatedDamageFromLogWithTimesAddedAndCooldowns = unmitigatedDamageFromLogWithTimesAddedAndCooldowns.concat(healthUpdated);
+
   let mitigatedDamageFromLogWithTimesAddedAndCooldowns = mitigatedDamageMap.concat(cooldownwithdurations, times);
+  mitigatedDamageFromLogWithTimesAddedAndCooldowns = mitigatedDamageFromLogWithTimesAddedAndCooldowns.concat(healthUpdated);
+
   let unmitigatedDamageFromLogWithTimesAddedNoCooldowns = unmitigatedDamageMap.concat(times);
+  unmitigatedDamageFromLogWithTimesAddedNoCooldowns = unmitigatedDamageFromLogWithTimesAddedNoCooldowns.concat(healthUpdated);
+
   let mitigatedDamageFromLogWithTimesAddedNoCooldowns = mitigatedDamageMap.concat(times);
+  mitigatedDamageFromLogWithTimesAddedNoCooldowns = mitigatedDamageFromLogWithTimesAddedNoCooldowns.concat(healthUpdated);
 
   /* -------------------------------- Sort the Arrays by Timestamp -------------------------------- */
   unmitigatedDamageFromLogWithTimesAddedAndCooldowns.sort((a, b) => (a.timestamp > b.timestamp ? 1 : -1));
