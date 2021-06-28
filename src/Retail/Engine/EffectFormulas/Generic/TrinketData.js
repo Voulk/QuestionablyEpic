@@ -376,8 +376,8 @@ export const trinket_data = [
     effects: [
       {
         coefficient: 3.55,
-        table: -1,
-        duration: 30,
+        table: -7,
+        duration: 20,
         cooldown: 180,
       },
     ],
@@ -904,6 +904,21 @@ export const trinket_data = [
         table: -8,
         ppm: 3,
         duration: 9,
+      },
+    ],
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                    Scrawled Word of Recall                                     */
+    /* ---------------------------------------------------------------------------------------------- */
+    /* 
+    */
+    name: "Scrawled Word of Recall", // Tormented Insight
+    effects: [
+      {
+        coefficient: 0.045455,
+        table: -1,
+        cooldown: 60,
       },
     ],
   },

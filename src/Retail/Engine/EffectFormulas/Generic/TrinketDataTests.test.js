@@ -12,9 +12,9 @@ describe("Insignia of Alacrity Data Check", () => {
     const effect = activeTrinket.effects[0];
     each`
     level   | expectedResult
-    ${226}  | ${173}
-    ${207}  | ${145}
-    ${197}  | ${132}
+    ${239}  | ${194}
+    ${226}  | ${172}
+    ${200}  | ${135}
     // add new test cases here
     `.test("Insignia Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
   
@@ -28,9 +28,9 @@ describe("Badge of Ferocity Data Check", () => {
     const effect = activeTrinket.effects[0];
     each`
     level    | expectedResult
+    ${239}  | ${230}
     ${226}  | ${204}
     ${200}  | ${160}
-    ${164}  | ${115}
     // add new test cases here
     `.test("Badge of Ferocity Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
   
@@ -76,10 +76,10 @@ describe("Consumptive Infusion Data Tests", () => {
 // 9.1 Trinkets
 describe("Carved Ivory Keepsake Data Tests", () => {
     // Raw trinket values are compared to our spell data. Efficiency excluded.
-    const activeTrinket = trinket_data.find((trinket) => trinket.name === "Consumptive Infusion");
+    const activeTrinket = trinket_data.find((trinket) => trinket.name === "Carved Ivory Keepsake");
     const effect = activeTrinket.effects[0];
     each`
-    level    | expectedResult
+    level   | expectedResult
     ${252}  | ${1866}
     ${239}  | ${1544}
     ${226}  | ${1271}
@@ -93,7 +93,7 @@ describe("Carved Ivory Keepsake Data Tests", () => {
 
 describe("Resonant Silver Bell Data Tests", () => {
     // Raw trinket values are compared to our spell data. Efficiency excluded.
-    const activeTrinket = trinket_data.find((trinket) => trinket.name === "Consumptive Infusion");
+    const activeTrinket = trinket_data.find((trinket) => trinket.name === "Resonant Silver Bell");
     const effect = activeTrinket.effects[0];
     each`
     level    | expectedResult
@@ -110,7 +110,7 @@ describe("Resonant Silver Bell Data Tests", () => {
 
 describe("Scrawled Word of Recall", () => {
     // Raw trinket values are compared to our spell data. Efficiency excluded.
-    const activeTrinket = trinket_data.find((trinket) => trinket.name === "Consumptive Infusion");
+    const activeTrinket = trinket_data.find((trinket) => trinket.name === "Scrawled Word of Recall");
     const effect = activeTrinket.effects[0];
     each`
     level    | expectedResult
@@ -121,13 +121,13 @@ describe("Scrawled Word of Recall", () => {
     // add new test cases here
     `.test("Scrawled Word of Recall Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
   
-        expect(getProcessedValue(effect.coefficient, effect.table, level)).toBe(expectedResult);
+        expect(Math.round(10*getProcessedValue(effect.coefficient, effect.table, level, 1, false))/10).toBe(expectedResult);
     });
 });
 
 describe("Shadowed Orb of Torment", () => {
     // Raw trinket values are compared to our spell data. Efficiency excluded.
-    const activeTrinket = trinket_data.find((trinket) => trinket.name === "Consumptive Infusion");
+    const activeTrinket = trinket_data.find((trinket) => trinket.name === "Shadowed Orb of Torment");
     const effect = activeTrinket.effects[0];
     each`
     level    | expectedResult
@@ -144,7 +144,7 @@ describe("Shadowed Orb of Torment", () => {
 
 describe("Titanic Ocular Gland", () => {
     // Raw trinket values are compared to our spell data. Efficiency excluded.
-    const activeTrinket = trinket_data.find((trinket) => trinket.name === "Consumptive Infusion");
+    const activeTrinket = trinket_data.find((trinket) => trinket.name === "Titanic Ocular Gland");
     const effect = activeTrinket.effects[0];
     each`
     level    | expectedResult
@@ -161,11 +161,11 @@ describe("Titanic Ocular Gland", () => {
 
 describe("First Class Healing Distributor", () => {
     // Raw trinket values are compared to our spell data. Efficiency excluded.
-    const activeTrinket = trinket_data.find((trinket) => trinket.name === "Consumptive Infusion");
+    const activeTrinket = trinket_data.find((trinket) => trinket.name === "First Class Healing Distributor");
     const effect = activeTrinket.effects[0];
     each`
     level    | expectedResult
-    ${233}  | ${0}
+    ${233}  | ${2365}
     ${226}  | ${2129}
     // add new test cases here
     `.test("First Class Healing Distributor Heal Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
@@ -177,7 +177,7 @@ describe("First Class Healing Distributor", () => {
     const effect2 = activeTrinket.effects[1];
     each`
     level    | expectedResult
-    ${233}  | ${0}
+    ${233}  | ${275}
     ${226}  | ${247}
     // add new test cases here
     `.test("First Class Healing Distributor Haste Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
@@ -206,23 +206,21 @@ describe("Cabalists Hymnal Data Check", () => {
 
 */
 
-/*
 describe("Instructor's Divine Bell", () => {
     // Raw trinket values are compared to our spell data. Efficiency excluded.
     const activeTrinket = trinket_data.find((trinket) => trinket.name === "Instructor's Divine Bell");
     const effect = activeTrinket.effects[0];
     each`
     level    | expectedResult
-    ${226}  | ${173}
-    ${213}  | ${8}
-    ${184}  | ${628}
+    ${200}  | ${692}
+    ${184}  | ${627}
     // add new test cases here
     `.test("Instructor's Divine Bell Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
   
         expect(getProcessedValue(effect.coefficient, effect.table, level)).toBe(expectedResult);
     });
 });
-*/
+
 
 /*
 describe("Soulletting Ruby", () => {
