@@ -34,8 +34,8 @@ export function getSoulbindFormula(effectID, player, contentType) {
     Activating your Kyrian class ability increases your mastery by X for Y seconds.
     You occasionally expel sorrowful memories which can be walked through to extend the effect by 3 seconds.
     */
-    let expectedUptime = (30 + 9 * 2) / 180; // TODO: Investigate. Reports of a bugged uptime
-    bonus_stats.Mastery = 350 * expectedUptime; //
+    let expectedUptime = (30 + 9 * 2) / 180;
+    bonus_stats.Mastery = 524 * expectedUptime; // Despite the tooltip showing 350, Combat Med actually gives 524 Mastery. TODO: Check this on live servers.
   } else if (
     /* --------------------------------------- Focusing Mantra -------------------------------------- */
     effectID === 328261
@@ -49,14 +49,14 @@ export function getSoulbindFormula(effectID, player, contentType) {
     /* -------------------------------------- Phial of Patience ------------------------------------- */
     effectID === 329777
   ) {
-    /*
-    Your Phial heals for 35% additional health, but over 10 seconds.
-    */
-    let expected_overhealing = 0.55;
-    let healing_bonus = player.activeStats.stamina * 20 * 0.35;
-    let uses_per_combat = 1.5;
+      /*
+      Your Phial heals for 35% additional health, but over 10 seconds.
+      */
+      let expected_overhealing = 0.55;
+      let healing_bonus = player.activeStats.stamina * 20 * 0.35;
+      let uses_per_combat = 1.5;
 
-    bonus_stats.HPS = (healing_bonus * uses_per_combat * (1 - expected_overhealing)) / player.getFightLength(contentType); // Placeholder.
+      bonus_stats.HPS = (healing_bonus * uses_per_combat * (1 - expected_overhealing)) / player.getFightLength(contentType); // Placeholder.
   } else if (
     /* ------------------------------------- Let go of the Past ------------------------------------- */
     effectID === 328257
@@ -69,7 +69,9 @@ export function getSoulbindFormula(effectID, player, contentType) {
   } else if (
     /* --------------------------------------- Better Together -------------------------------------- */
     effectID === 351146
+      
   ) {
+      bonus_stats.Mastery = 40;
   } else if (
     /* ------------------------------------- Path of the Devoted ------------------------------------ */
     effectID === 351147
@@ -78,6 +80,12 @@ export function getSoulbindFormula(effectID, player, contentType) {
     /* -------------------------------------- Newfound Resolve -------------------------------------- */
     effectID === 351149
   ) {
+      const duration = 10;
+      const expectedUptime = duration / (3 * 30); // 30 card deck with 1 success. Card drawn every 3 seconds.
+      const buffPercentage = 0.12;
+
+      bonus_stats.Intellect = buffPercentage * player.getInt() * expectedUptime;
+
   }
 
   /* ---------------------------------------------------------------------------------------------- */
@@ -103,9 +111,10 @@ export function getSoulbindFormula(effectID, player, contentType) {
     /* --------------------------------------- Pointed Courage -------------------------------------- */
     effectID === 329778
   ) {
-    let expected_allies = contentType === "Raid" ? 4.8 : 3.1;
+    const expected_allies = contentType === "Raid" ? 4.8 : 3.1;
+    const critPerAlly = STATPERONEPERCENT.Retail.CRIT; // This was advertised as being buffed to 2% crit, stacking up to 3 allies but doesn't behave this way on the PTR yet.
 
-    bonus_stats.Crit = expected_allies * STATPERONEPERCENT.Retail.CRIT;
+    bonus_stats.Crit = expected_allies * critPerAlly;
   } else if (
     /* ------------------------------------- Resonant Accolades ------------------------------------- */
     effectID === 329781
@@ -122,14 +131,22 @@ export function getSoulbindFormula(effectID, player, contentType) {
     /* ------------------------------------- Spear of the Archon ------------------------------------ */
     effectID === 351488
   ) {
+      const critValue = 3 * STATPERONEPERCENT.Retail.CRIT
+      const uptime = (player.getFightLength(contentType) * 0.1) / player.getFightLength(contentType); // The buff is effectively just up for the first 10% of the fight. Not great.
+      bonus_stats.Crit = critValue * uptime;
+
   } else if (
     /* ------------------------------------ Hope Springs Eternal ------------------------------------ */
     effectID === 351489
   ) {
+      const onePhial = player.activeStats.stamina * 20 * 0.2; // DR portion not accounted for.
+
+      bonus_stats.HPS = onePhial * 3 / player.getFightLength(contentType);
   } else if (
     /* --------------------------------------- Light the Path --------------------------------------- */
     effectID === 351491
   ) {
+    
   }
 
   /* ---------------------------------------------------------------------------------------------- */
