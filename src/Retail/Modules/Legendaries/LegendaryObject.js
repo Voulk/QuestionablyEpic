@@ -74,7 +74,7 @@ export default function LegendaryObject(props) {
               >
                 {legendaryDataObject.name}
                 {covenantSigils[legendaryDataObject.covenant] !== undefined ? (
-                  <img height={40} style={{ float: "right", position: "absolute", marginTop: -7, marginLeft: 10 }} src={covenantSigils[legendaryDataObject.covenant]} alt={t("Covenants.Kyrian")} />
+                  <img height={40} style={{ float: "right", position: "absolute", marginTop: -7, marginLeft: 10 }} src={covenantSigils[legendaryDataObject.covenant]} alt={t("Covenants." + legendaryDataObject.covenant)} />
                 ) : (
                   ""
                 )}
