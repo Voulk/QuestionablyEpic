@@ -109,7 +109,7 @@ export const trinket_data = [
     name: "Unbound Changeling",
     effects: [
       {
-        coefficient: 2.2,
+        coefficient: 2.2, // The spell data also has a 1.679526 (-7) coefficient that is unused.
         table: -1,
         duration: 12,
         ppm: 1.5,
@@ -821,12 +821,12 @@ export const trinket_data = [
     name: "So'leah's Secret Technique",
     effects: [
       {
-        coefficient: 0.649351,
-        table: -1,
+        coefficient: 1.540096,
+        table: -7,
       },
       {
-        coefficient: 0.12987,
-        table: -1,
+        coefficient: 0.308019,
+        table: -7,
       }
     ],
   },
@@ -877,6 +877,33 @@ export const trinket_data = [
         table: -7,
         duration: 40,
         cooldown: 120,
+      },
+    ],
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                 First Class Healing Distributor                                */
+    /* ---------------------------------------------------------------------------------------------- */
+    /*
+    
+    */
+    name: "First Class Healing Distributor",
+    effects: [
+      {
+        /* ----------------------------------------- Healing Portion ---------------------------------------- */
+        coefficient: 32.7898,
+        table: -8,
+        efficiency: 0.7, 
+        ppm: 3,
+        targets: { Raid: 4.2, Dungeon: 2.9 }, // 8 yard range
+        meteor: 0.15, // TODO: Confirm
+      },
+      {
+        /* --------------------------------------- Haste Portion --------------------------------------- */
+        coefficient: 3.8125,
+        table: -8,
+        ppm: 3,
+        duration: 9,
       },
     ],
   },

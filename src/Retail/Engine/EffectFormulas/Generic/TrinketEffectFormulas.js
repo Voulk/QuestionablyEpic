@@ -549,7 +549,7 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel, use
     let effect = activeTrinket.effects[0];
     const allyEffect = activeTrinket.effects[1];
     const playerBestSecondary = player.getHighestStatWeight(contentType);
-    console.log("Self Effect: " + itemLevel + ": "  + getProcessedValue(effect.coefficient, effect.table, itemLevel))
+
     bonus_stats[playerBestSecondary] = getProcessedValue(effect.coefficient, effect.table, itemLevel) + getProcessedValue(allyEffect.coefficient, allyEffect.table, itemLevel);
     //
   } else if (
@@ -586,6 +586,25 @@ else if (
 
   bonus_stats.mastery = (getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.duration) / effect.cooldown;
 
+}
+else if (
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                            First Class Healing Distributor                                     */
+  /* ---------------------------------------------------------------------------------------------- */
+  effectName === "First Class Healing Distributor"
+) {
+  const healEffect = activeTrinket.effects[0];
+  const hasteEffect = activeTrinket.effects[1];
+  const meteor = 1 + healEffect.targets[contentType] * healEffect.meteor;
+
+  /* ------- Hastes impact on the trinket PPM is included in the secondary multiplier below. ------ */
+  bonus_stats.hps = (getProcessedValue(healEffect.coefficient, healEffect.table, itemLevel, healEffect.efficiency) / 60) * meteor * healEffect.ppm * player.getStatMultiplier("NOMAST");
+  bonus_stats.haste = getProcessedValue(hasteEffect.coefficient, hasteEffect.table, itemLevel) * convertPPMToUptime(hasteEffect.ppm, hasteEffect.duration);
+  //
+  console.log("Haste" + getProcessedValue(hasteEffect.coefficient, hasteEffect.table, itemLevel) + ". Itemlevel: " + itemLevel);
+  console.log("Healing" + getProcessedValue(healEffect.coefficient, healEffect.table, itemLevel, 1) + ". Itemlevel: " + itemLevel);
+  console.log("HPS: " + bonus_stats.hps + ". Haste: " + bonus_stats.haste + ". lv: " + itemLevel);
+  console.log("Uptime: " + convertPPMToUptime(hasteEffect.ppm * player.getStatPerc("Haste"), hasteEffect.duration));
 }
   else {
     /* ---------------------------------------------------------------------------------------------- */
@@ -633,5 +652,5 @@ function getEstimatedHPS(bonus_stats, player, contentType) {
 }
 
 export function getProcessedValue(coefficient, table, itemLevel, efficiency = 1) {
-  return Math.round(coefficient * getScalarValue(table, itemLevel) * efficiency);
+  return Math.floor(coefficient * getScalarValue(table, itemLevel) * efficiency);
 }

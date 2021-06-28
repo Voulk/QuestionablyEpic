@@ -102093,7 +102093,8 @@ export const itemDB = [
             "name": "First Class Healing Distributor"
         },
         "levelRange": [
-            226
+            226,
+            233
         ]
     },
     {
@@ -102139,7 +102140,8 @@ export const itemDB = [
             "name": "So'leah's Secret Technique"
         },
         "levelRange": [
-            226
+            226,
+            233
         ]
     },
     {
