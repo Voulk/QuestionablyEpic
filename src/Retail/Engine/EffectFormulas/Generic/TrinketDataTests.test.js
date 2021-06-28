@@ -221,6 +221,20 @@ describe("Instructor's Divine Bell", () => {
     });
 });
 
+describe("Inscrutable Quantum Device", () => {
+    // Raw trinket values are compared to our spell data. Efficiency excluded.
+    const activeTrinket = trinket_data.find((trinket) => trinket.name === "Inscrutable Quantum Device");
+    const effect = activeTrinket.effects[0];
+    each`
+    level    | expectedResult
+    ${226}  | ${718}
+    // add new test cases here
+    `.test("Inscrutable Quantum Device Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
+  
+        expect(getProcessedValue(effect.coefficient, effect.table, level)).toBe(expectedResult);
+    });
+});
+
 
 /*
 describe("Soulletting Ruby", () => {

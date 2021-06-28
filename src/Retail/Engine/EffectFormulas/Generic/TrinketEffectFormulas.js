@@ -551,6 +551,7 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel, use
     const playerBestSecondary = player.getHighestStatWeight(contentType);
 
     bonus_stats[playerBestSecondary] = getProcessedValue(effect.coefficient, effect.table, itemLevel) + getProcessedValue(allyEffect.coefficient, allyEffect.table, itemLevel);
+    console.log("Soleah" + bonus_stats[playerBestSecondary]);
     //
   } else if (
     /* ---------------------------------------------------------------------------------------------- */

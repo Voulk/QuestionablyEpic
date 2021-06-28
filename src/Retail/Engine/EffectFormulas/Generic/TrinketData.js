@@ -822,11 +822,11 @@ export const trinket_data = [
     effects: [
       {
         coefficient: 1.540096,
-        table: -7,
+        table: -8,
       },
       {
         coefficient: 0.308019,
-        table: -7,
+        table: -8,
       }
     ],
   },
