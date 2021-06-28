@@ -9,7 +9,7 @@ export default function UpgradeFinderBossImages(props, gameType) {
 
     /* ------------------------------------ The Eye of the Jailer ----------------------------------- */
     case 2442:
-      return require("Images/Bosses/SanctumOfDomination/EyeoftheJailer/EyeoftheJailer.png").default;
+      return require("Images/Bosses/SanctumOfDomination/TheEyeOfTheJailer/EyeoftheJailer.png").default;
 
     /* ------------------------------------------ The Nine ------------------------------------------ */
     case 2439:
@@ -21,7 +21,7 @@ export default function UpgradeFinderBossImages(props, gameType) {
 
     /* ------------------------------------ Soulrender Dormazain ------------------------------------ */
     case 2445:
-      return require("Images/Bosses/SanctumOfDomination/Soulrender/SoulrenderDormazain.png").default;
+      return require("Images/Bosses/SanctumOfDomination/SoulrenderDormazain/SoulrenderDormazain.png").default;
 
     /* -------------------------------------- Painsmith Raznal -------------------------------------- */
     case 2443:
