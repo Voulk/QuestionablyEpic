@@ -2,6 +2,7 @@ import Player from "../../../../General/Modules/Player/Player";
 import SPEC from "../../../../General/Engine/SPECS";
 import { STAT, STATPERONEPERCENT } from "../../../../General/Engine/STAT";
 import { convertPPMToUptime, getBestWeaponEnchant } from "../EffectUtilities";
+import { getPaladinCovAbility } from "Retail/Engine/EffectFormulas/Paladin/PaladinMiscFormulas";
 
 /* ---------------------------------------------------------------------------------------------- */
 /*                                    Generic Soulbind Effects                                    */
@@ -146,7 +147,7 @@ export function getSoulbindFormula(effectID, player, contentType) {
     /* --------------------------------------- Light the Path --------------------------------------- */
     effectID === 351491
   ) {
-    
+
   }
 
   /* ---------------------------------------------------------------------------------------------- */
@@ -188,6 +189,16 @@ export function getSoulbindFormula(effectID, player, contentType) {
     /* --------------------------------- Effusive Anima Accelerator --------------------------------- */
     effectID === 352188
   ) {
+      const reductionPerTarget = 0.06667;
+      const expectedTargets = {Raid: 1, Dungeon: 3.9};
+      
+      if (player.getSpec() === "Holy Paladin") {
+        const oneDivineToll = getPaladinCovAbility("Mikanikos", player, contentType);
+        console.log("DT: " + JSON.stringify(oneDivineToll));
+
+        bonus_stats.HPS = oneDivineToll['HPS'] * (reductionPerTarget * expectedTargets[contentType]);
+    }
+
   }
 
   /* ---------------------------------------------------------------------------------------------- */

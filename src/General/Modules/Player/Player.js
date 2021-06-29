@@ -322,7 +322,7 @@ class Player {
   updateConduitLevel = (id, newLevel) => {
     for (let i = 0; i < this.activeConduits.length; i++) {
       if (this.activeConduits[i].id === id) {
-        this.activeConduits[i].itemLevel = Math.max(145, Math.min(newLevel, 226));
+        this.activeConduits[i].itemLevel = Math.max(145, Math.min(newLevel, 252));
       }
     }
   };
