@@ -94,7 +94,7 @@ export default function HealerInfoCards(props) {
                   textAlign: "center",
                 }}
               >
-                {classicons(key.icon, 20)}
+                {classicons(key.icon, {width: 22, height: 22, verticalAlign: "middle", marginRight: 4, borderRadius: 4})}
                 {key.name} - {t("CooldownPlanner.HealerCards.Item Level")} {key.stats.map((stats) => stats.ilvl)} - {key.icon}
               </Typography>
             </AccordionSummary>

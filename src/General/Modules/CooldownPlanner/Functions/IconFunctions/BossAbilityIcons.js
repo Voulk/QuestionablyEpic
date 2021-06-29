@@ -1,5 +1,5 @@
 import React from "react";
-import { bossAbilities } from "../../Data/Data";
+import { bossAbilities } from "../../Data/CooldownPlannerBossAbilityList";
 
 export default function bossAbilityIcons(props, style) {
   let alt = "";

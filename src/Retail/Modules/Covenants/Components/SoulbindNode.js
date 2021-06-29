@@ -4,12 +4,66 @@ import { Menu, MenuItem, Paper } from "@material-ui/core";
 import { getConduitName, filterConduits, getCovenant } from "../CovenantUtilities";
 import { useTranslation } from "react-i18next";
 
-/* --------------------------------------- Node Positions --------------------------------------- */
-const columnPos = [200, 290, 380];
+/* ---------------------------------------------------------------------------------------------- */
+/*                                         Node Positions                                         */
+/* ---------------------------------------------------------------------------------------------- */
+
+const columnPos = [
+  /* ----------------------------------------- Left Column ---------------------------------------- */
+  200,
+  /* ---------------------------------------- Middle Column --------------------------------------- */
+  290,
+  /* ---------------------------------------- Right Column ---------------------------------------- */
+  380,
+];
 const rowPos = [
-  [20, 100, 180, 260, 340, 445, 500, 580],
-  [5, 85, 165, 245, 355, 435, 515, 595],
-  [20, 100, 180, 260, 340, 445, 500, 580],
+  /* ----------------------------------------- Left Column ---------------------------------------- */
+  [
+    20, // Row 0
+    100, // Row 1
+    180, // Row 2
+    260, // Row 3
+    340, // Row 4
+    420, // Row 5
+    500, // Row 6
+    580, // Row 7
+    660, // Row 8
+    740, // Row 9
+    820, // Row 10
+    900, // Row 11
+  ],
+
+  /* ---------------------------------------- Middle Column --------------------------------------- */
+  [
+    5, // Row 0
+    85, // Row 1
+    165, // Row 2
+    245, // Row 3
+    325, // Row 4
+    405, // Row 5
+    515, // Row 6
+    595, // Row 7
+    675, // Row 8
+    750, // Row 9
+    830, // Row 10
+    915, // Row 11
+  ],
+
+  /* ---------------------------------------- Right Column ---------------------------------------- */
+  [
+    20, // Row 0
+    100, // Row 1
+    180, // Row 2
+    260, // Row 3
+    340, // Row 4
+    420, // Row 5
+    500, // Row 6
+    580, // Row 7
+    660, // Row 8
+    740, // Row 9
+    820, // Row 10
+    900, // Row 11
+  ],
 ];
 
 const menuStyle = {
@@ -77,6 +131,7 @@ export default function SoulbindNode(props) {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
+  const currentRenown = props.player.getRenownLevel();
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -98,7 +153,12 @@ export default function SoulbindNode(props) {
   const type = "type" in trait ? trait.type : "Soulbind"; // Soulbind, Potency Conduit, Endurance Conduit, Finesse Conduit
   const name = getLocalizedName(trait, type, currentLanguage);
   const icon = process.env.PUBLIC_URL + "/Images/Icons/" + trait.icon;
-  const containerIcon = "/Images/Interface/soulbindcontainer" + (type.includes("Conduit") ? "hex" : "circle") + (trait.active ? "active" : "") + ".png";
+
+  /* ----- if trait.enhanced > than current renown, normal container, else enhanced container ----- */
+  const containerIcon =
+    trait.enhanced > currentRenown
+      ? "/Images/Interface/soulbindcontainer" + (type.includes("Conduit") ? "hex" : "circle") + (trait.active ? "active" : "") + ".png"
+      : "/Images/Interface/soulbindcontainer" + (type.includes("Conduit") ? "hexenhanced" : "circle") + (trait.active ? "active" : "") + ".png";
 
   const conduitTag = type.includes("Potency")
     ? "/Images/Interface/PotencyConduitImg.png"

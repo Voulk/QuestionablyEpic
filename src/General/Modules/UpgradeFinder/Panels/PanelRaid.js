@@ -4,7 +4,7 @@ import { Typography, Grid, Divider, Paper, AppBar, Tabs, Tab, Box } from "@mater
 import ItemUpgradeCard from "./ItemUpgradeCard";
 import UpgradeFinderBossImages from "./BossImages";
 import "./Panels.css";
-import { encounterDB } from "../../Player/InstanceDB";
+import { encounterDB } from "../../../../Databases/InstanceDB";
 import { useTranslation } from "react-i18next";
 import { filterItemListBySource, filterBCItemListBySource, getDifferentialByID } from "../../../Engine/ItemUtilities";
 import { useSelector } from "react-redux";
@@ -197,7 +197,7 @@ export default function RaidGearContainer(props) {
     const secondDifficulty = difficulties.length === 2 ? difficulties[1] : -1;
 
     return (
-      encounterDB[1190]
+      encounterDB[1193]
         //.filter((key) => key === raidID)
         .map((key, i) => (
           <Grid item xs={12} key={"bossContainer-" + i} style={{ padding: "4px 0px" }}>

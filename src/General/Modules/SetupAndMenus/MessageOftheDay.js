@@ -4,7 +4,10 @@ import { Grid, Paper, Typography } from "@material-ui/core";
 export default function MessageOfTheDay() {
   //prettier-ignore
   const messageOfTheDay = [
-    "QE Live Burning Crusade now in Beta!"
+    "- 9.1 content is VERY buggy on live realms.",
+    "- Expect ALL information to change as they make rapid hotfixes.",
+    "- The Upgrade Finder will return later this week.",
+    "- NOTHING IS FINAL YET!"
 ];
 
   return (

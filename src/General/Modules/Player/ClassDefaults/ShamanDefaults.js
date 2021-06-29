@@ -66,7 +66,9 @@ export const shamanDefaultSpecialQueries = (contentType) => {
       CastsPerMinute: 24,
       cooldownMult: {
         oneMinute: 1.1,
+        ninetySeconds: 1,
         twoMinutes: 1.1,
+        twoMinutesOrb: 1.1,
         threeMinutes: 1.3,
       },
       HoldYourGroundUptime: 0.8
@@ -78,7 +80,9 @@ export const shamanDefaultSpecialQueries = (contentType) => {
       CastsPerMinute: 30,
       cooldownMult: {
         oneMinute: 1.1,
+        ninetySeconds: 1,
         twoMinutes: 1.1,
+        twoMinutesOrb: 1.1,
         threeMinutes: 1.1,
       },
       HoldYourGroundUptime: 0.8

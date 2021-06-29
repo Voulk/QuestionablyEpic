@@ -5,7 +5,7 @@ import ItemUpgradeCard from "./ItemUpgradeCard";
 import UpgradeFinderBossImages from "./BossImages";
 import "./Panels.css";
 import { useTranslation } from "react-i18next";
-import { encounterDB } from "../../Player/InstanceDB";
+import { encounterDB } from "../../../../Databases/InstanceDB";
 import { filterItemListBySource, getDifferentialByID } from "../../../Engine/ItemUtilities";
 
 const useStyles = makeStyles((theme) => ({

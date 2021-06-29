@@ -12,7 +12,6 @@ import { holyPriestDefaultStatWeights } from "./ClassDefaults/HolyPriestDefaults
 import { monkDefaultStatWeights } from "./ClassDefaults/MonkDefaults";
 import { reportError } from "../../SystemTools/ErrorLogging/ErrorReporting";
 
-
 class Player {
   constructor(playerName, specName, charID, region, realm, race, statWeights = "default", gameType = "Retail") {
     this.spec = specName;
@@ -22,7 +21,7 @@ class Player {
 
     this.activeItems = [];
     this.activeConduits = [];
-    this.renown = 0;
+    this.renown = 1;
     this.region = region;
     this.realm = realm;
     this.race = race;
@@ -46,7 +45,7 @@ class Player {
   charID = 0;
   activeItems = [];
   activeConduits = [];
-  renown = 0;
+  renown = 1;
   castModel = {};
   covenant = "";
   region = "";
@@ -54,7 +53,6 @@ class Player {
   race = "";
   talents = [];
   gameType = ""; // Currently the options are Retail or Burning Crusade.
-
 
   // The players active stats from their character page. These are raw rather than being percentages.
   // They can either be pulled automatically from the entered log, or calculated from an entered SimC string.
@@ -68,16 +66,13 @@ class Player {
     stamina: 1490,
   };
 
-
   // Stat weights are normalized around intellect.
   // Players who don't insert their own stat weights can use the QE defaults.
   // - Since these change quite often we use a tag. If default = true then their weights will automatically update whenever they open the app.
   // - If they manually enter weights on the other hand, then this automatic-update won't occur.
   statWeights = {
-    Raid: {
-    },
-    Dungeon: {
-    },
+    Raid: {},
+    Dungeon: {},
     DefaultWeights: true,
   };
 
@@ -110,14 +105,14 @@ class Player {
 
   setStatWeights = (newWeights, contentType) => {
     this.statWeights[contentType] = newWeights;
-  }
+  };
 
   getCovenant = () => {
     return this.covenant;
   };
 
   setCovenant = (cov) => {
-    const selectedCov = cov.toLowerCase().replace(/"/g, '');
+    const selectedCov = cov.toLowerCase().replace(/"/g, "");
     if (["night_fae", "venthyr", "necrolord", "kyrian"].includes(selectedCov)) this.covenant = selectedCov;
     else {
       reportError(this, "Player", "Invalid Covenant Supplied", selectedCov);
@@ -131,18 +126,17 @@ class Player {
     else if (spec === "Restoration Shaman") this.covenant = "necrolord";
     else if (spec === "Mistweaver Monk") this.covenant = "necrolord";
     else if (spec === "Discipline Priest") this.covenant = "venthyr";
-    else if (spec === "Holy Priest") this.covenant = "night_fae"; // This one is very flexible, but is also not used in any current formulas. It will be replaced when the models are updated.
+    else if (spec === "Holy Priest") this.covenant = "night_fae";
+    // This one is very flexible, but is also not used in any current formulas. It will be replaced when the models are updated.
     else {
       reportError(this, "Player", "Invalid Covenant Supplied", spec);
       throw new Error("Invalid Spec Supplied to Cov Default");
     }
-
-  }
+  };
 
   calculateConduits = (contentType) => {
     this.activeConduits.forEach((conduit) => {
       conduit.setHPS(this, contentType);
-
     });
   };
 
@@ -297,7 +291,7 @@ class Player {
     return Math.round(statPerc * 10000) / 10000;
   };
 
-  // Returns a stat multiplier. This function is really bad and needs to be rewritten. 
+  // Returns a stat multiplier. This function is really bad and needs to be rewritten.
   getStatMultiplier = (flag, statList = []) => {
     let mult = 1;
     if (flag === "ALL") {
@@ -328,9 +322,19 @@ class Player {
   updateConduitLevel = (id, newLevel) => {
     for (let i = 0; i < this.activeConduits.length; i++) {
       if (this.activeConduits[i].id === id) {
-        this.activeConduits[i].itemLevel = Math.max(145, Math.min(newLevel, 226));
+        this.activeConduits[i].itemLevel = Math.max(145, Math.min(newLevel, 252));
       }
     }
+  };
+
+  /* ------------------------------------- Update renown level ------------------------------------ */
+  updateRenownLevel = (renownLevel) => {
+    this.renown = renownLevel;
+  };
+
+  /* --------------------------------- Return current renown level -------------------------------- */
+  getRenownLevel = () => {
+    return this.renown;
   };
 
   getRealmString = () => {
@@ -367,7 +371,7 @@ class Player {
 
   getCooldownMult = (queryIdentifier, contentType) => {
     return this.castModel[contentType].getSpecialQuery(queryIdentifier, "cooldownMult");
-  }
+  };
 
   getSingleCast = (spellID, contentType, castType = "avgcast") => {
     return this.castModel[contentType].getSpellData(spellID, castType);
@@ -453,7 +457,7 @@ class Player {
 
     if (spec === SPEC.RESTODRUID) {
       this.activeStats = {
-        intellect: 1600,
+        intellect: 1800,
         haste: 790,
         crit: 480,
         mastery: 200,
@@ -464,9 +468,8 @@ class Player {
       this.statWeights.Dungeon = druidDefaultStatWeights("Dungeon");
       this.statWeights.DefaultWeights = true;
     } else if (spec === SPEC.HOLYPALADIN) {
-
       this.activeStats = {
-        intellect: 1600,
+        intellect: 1800,
         haste: 800,
         crit: 200,
         mastery: 550,
@@ -480,7 +483,7 @@ class Player {
     } else if (spec === SPEC.RESTOSHAMAN) {
       // all of this needs a proper input once
       this.activeStats = {
-        intellect: 1600,
+        intellect: 1800,
         haste: 125,
         crit: 590,
         mastery: 200,
@@ -492,7 +495,7 @@ class Player {
       this.statWeights.DefaultWeights = true;
     } else if (spec === SPEC.DISCPRIEST) {
       this.activeStats = {
-        intellect: 1600,
+        intellect: 1800,
         haste: 700,
         crit: 480,
         mastery: 370,
@@ -505,7 +508,7 @@ class Player {
       this.statWeights.DefaultWeights = true;
     } else if (spec === SPEC.HOLYPRIEST) {
       this.activeStats = {
-        intellect: 1600,
+        intellect: 1800,
         haste: 125,
         crit: 475,
         mastery: 470,
@@ -518,7 +521,7 @@ class Player {
       this.statWeights.DefaultWeights = true;
     } else if (spec === SPEC.MISTWEAVERMONK) {
       this.activeStats = {
-        intellect: 1600,
+        intellect: 1800,
         haste: 125,
         crit: 590,
         mastery: 200,

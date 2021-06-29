@@ -3,7 +3,7 @@ import moment from "moment";
 import { Divider, MenuItem } from "@material-ui/core";
 import bossIcons from "../../Modules/CooldownPlanner/Functions/IconFunctions/BossIcons";
 import { fightDuration, logDifficulty } from "../../Modules/CooldownPlanner/Functions/Functions";
-import { bossList } from "../../Modules/CooldownPlanner/Data/Data";
+import { bossList } from "../../Modules/CooldownPlanner/Data/CooldownPlannerBossList";
 
 const API = "https://www.warcraftlogs.com:443/v1/report/fights/";
 const API2 = "?api_key=92fc5d4ae86447df22a8c0917c1404dc";

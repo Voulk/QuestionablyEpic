@@ -169,7 +169,7 @@ describe("getTranslatedItemName func", () => {
 describe("GetItemEffect func", () => {
   test("Sinful Gladiator's Badge of Ferocity", () => {
     const id = 175921;
-    const expectedResult = { type: "trinket", name: "Sinful Gladiator's Badge of Ferocity" };
+    const expectedResult = { type: "trinket", name: "Gladiator's Badge of Ferocity" };
     expect(getItemProp(id, "effect")).toEqual(expectedResult);
   });
 

@@ -142,6 +142,8 @@ function getConduitRank(itemLevel) {
     200: 5,
     213: 6,
     226: 7,
+    239: 8,
+    252: 9
   };
 
   return ranks[itemLevel];

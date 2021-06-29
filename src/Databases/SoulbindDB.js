@@ -5,6 +5,7 @@ export const soulbindDB = [
   /*                                   Pelagos                                  */
   /* -------------------------------------------------------------------------- */
 
+  /* -------------------------------------------- Row 0 ------------------------------------------- */
   {
     id: 328266,
     names: {
@@ -21,6 +22,8 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
   },
+
+  /* -------------------------------------------- Row 1 ------------------------------------------- */
   {
     id: 983921,
     names: {
@@ -37,6 +40,7 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
     type: "Finesse Conduit",
+    enhanced: 63,
   },
   {
     id: 903132,
@@ -55,6 +59,7 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Endurance Conduit",
     slotted_id: -1,
+    enhanced: 63,
   },
   {
     id: 8903278612,
@@ -73,7 +78,10 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Potency Conduit",
     slotted_id: -1,
+    enhanced: 63,
   },
+
+  /* -------------------------------------------- Row 2 ------------------------------------------- */
   {
     id: 328261,
     names: {
@@ -122,6 +130,8 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
   },
+
+  /* -------------------------------------------- Row 3 ------------------------------------------- */
   {
     id: 8901231,
     names: {
@@ -139,7 +149,10 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Endurance Conduit",
     slotted_id: -1,
+    enhanced: 66,
   },
+
+  /* -------------------------------------------- Row 4 ------------------------------------------- */
   {
     id: 328265,
     names: {
@@ -172,6 +185,8 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
   },
+
+  /* -------------------------------------------- Row 5 ------------------------------------------- */
   {
     id: 7178321,
     names: {
@@ -189,7 +204,10 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Potency Conduit",
     slotted_id: -1,
+    enhanced: 68,
   },
+
+  /* -------------------------------------------- Row 6 ------------------------------------------- */
   {
     id: 980109,
     names: {
@@ -207,6 +225,7 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Endurance Conduit",
     slotted_id: -1,
+    enhanced: 72,
   },
   {
     id: 8903212,
@@ -224,7 +243,10 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
     type: "Finesse Conduit",
+    enhanced: 72,
   },
+
+  /* -------------------------------------------- Row 7 ------------------------------------------- */
   {
     id: 328257,
     names: {
@@ -242,10 +264,126 @@ export const soulbindDB = [
     stat_bonus: {},
   },
 
+  /* -------------------------------------------- Row 8 ------------------------------------------- */
+  {
+    id: 81967787,
+    names: {
+      en: "Potency Conduit",
+      cn: "效能导灵器",
+      fr: "Intermédiaire de puissance",
+      ru: "Проводник силы",
+      de: "Potenzmedium",
+    },
+    icon: "EmptyConduit.jpg",
+    soulbind: "Pelagos",
+    position: [8, 1],
+    renown: 43,
+    active: false,
+    stat_bonus: {},
+    type: "Potency Conduit",
+    slotted_id: -1,
+    enhanced: 73,
+  },
+
+  /* -------------------------------------------- Row 9 ------------------------------------------- */
+  {
+    id: 351146,
+    names: {
+      en: "Better Together",
+      // TODO: Missing CN Translation
+      cn: "Better Together",
+      fr: "L’union fait la force",
+      ru: "Вместе лучше",
+      de: "Gemeinsam besser",
+    },
+    icon: "achievement_reputation_01.jpg",
+    soulbind: "Pelagos",
+    position: [9, 0],
+    renown: 30,
+    active: false,
+    stat_bonus: {},
+  },
+  {
+    id: 351147,
+    names: {
+      en: "Path of the Devoted",
+      // TODO: Missing CN Translation
+      cn: "Path of the Devoted",
+      fr: "Voie des fidèles",
+      ru: "Путь преданных",
+      de: "Pfad der Ergebenen",
+    },
+    icon: "inv_boots_cloth_35.jpg",
+    soulbind: "Pelagos",
+    position: [9, 2],
+    renown: 30,
+    active: false,
+    stat_bonus: {},
+  },
+
+  /* ------------------------------------------- Row 10 ------------------------------------------- */
+  {
+    id: 81967791,
+    names: {
+      en: "Endurance Conduit",
+      cn: "韧如树皮",
+      fr: "Intermédiaire d’endurance",
+      ru: "Проводник выносливости",
+      de: "Widerstandsmedium",
+    },
+    icon: "EmptyConduit.jpg",
+    soulbind: "Pelagos",
+    position: [10, 0],
+    renown: 30,
+    active: false,
+    stat_bonus: {},
+    type: "Endurance Conduit",
+    slotted_id: -1,
+    enhanced: 78,
+  },
+  {
+    id: 81967795,
+    names: {
+      en: "Finesse Conduit",
+      cn: "灵巧导灵器",
+      fr: "Intermédiaire de finesse",
+      ru: "Проводник точности",
+      de: "Finessemedium",
+    },
+    icon: "EmptyConduit.jpg",
+    soulbind: "Pelagos",
+    position: [10, 2],
+    renown: 30,
+    active: false,
+    stat_bonus: {},
+    type: "Finesse Conduit",
+    enhanced: 78,
+  },
+
+  /* ------------------------------------------- Row 11 ------------------------------------------- */
+  {
+    id: 351149,
+    names: {
+      en: "Newfound Resolve",
+      // TODO: Missing CN Translation
+      cn: "Newfound Resolve",
+      fr: "Nouvelle résolution",
+      ru: "Новообретенная стойкость",
+      de: "Neu gefundene Entschlossenheit",
+    },
+    icon: "inv_enchant_essencemagiclarge.jpg",
+    soulbind: "Pelagos",
+    position: [11, 1],
+    renown: 30,
+    active: false,
+    stat_bonus: {},
+  },
+
   /* -------------------------------------------------------------------------- */
   /*                                    Kleia                                   */
   /* -------------------------------------------------------------------------- */
 
+  /* -------------------------------------------- Row 0 ------------------------------------------- */
   {
     id: 329791,
     names: {
@@ -262,6 +400,8 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
   },
+
+  /* -------------------------------------------- Row 1 ------------------------------------------- */
   {
     id: 1000839210,
     names: {
@@ -279,6 +419,7 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Potency Conduit",
     slotted_id: -1,
+    enhanced: 61,
   },
   {
     id: 1000839211,
@@ -297,7 +438,10 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Endurance Conduit",
     slotted_id: -1,
+    enhanced: 61,
   },
+
+  /* -------------------------------------------- Row 2 ------------------------------------------- */
   {
     id: 334066,
     names: {
@@ -330,6 +474,8 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
   },
+
+  /* -------------------------------------------- Row 3 ------------------------------------------- */
   {
     id: 2000839211,
     names: {
@@ -346,7 +492,10 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
     type: "Finesse Conduit",
+    enhanced: 64,
   },
+
+  /* -------------------------------------------- Row 4 ------------------------------------------- */
   {
     id: 329784,
     names: {
@@ -379,6 +528,8 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
   },
+
+  /* -------------------------------------------- Row 5 ------------------------------------------- */
   {
     id: 1000839212,
     names: {
@@ -396,7 +547,10 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Endurance Conduit",
     slotted_id: -1,
+    enhanced: 67,
   },
+
+  /* -------------------------------------------- Row 6 ------------------------------------------- */
   {
     id: 1000839213,
     names: {
@@ -414,6 +568,7 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Potency Conduit",
     slotted_id: -1,
+    enhanced: 70,
   },
   {
     id: 1000839214,
@@ -432,6 +587,7 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Endurance Conduit",
     slotted_id: -1,
+    enhanced: 70,
   },
   {
     id: 2000839212,
@@ -449,7 +605,10 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
     type: "Finesse Conduit",
+    enhanced: 70,
   },
+
+  /* -------------------------------------------- Row 7 ------------------------------------------- */
   {
     id: 329779,
     names: {
@@ -499,10 +658,124 @@ export const soulbindDB = [
     stat_bonus: {},
   },
 
+  /* -------------------------------------------- Row 8 ------------------------------------------- */
+  {
+    id: 81967788,
+    names: {
+      en: "Potency Conduit",
+      cn: "效能导灵器",
+      fr: "Intermédiaire de puissance",
+      ru: "Проводник силы",
+      de: "Potenzmedium",
+    },
+    icon: "EmptyConduit.jpg",
+    soulbind: "Kleia",
+    position: [8, 1],
+    renown: 34,
+    active: false,
+    stat_bonus: {},
+    type: "Potency Conduit",
+    slotted_id: -1,
+    enhanced: 75,
+  },
+
+  /* -------------------------------------------- Row 9 ------------------------------------------- */
+  {
+    id: 351488,
+    names: {
+      en: "Spear of the Archon",
+      // TODO: Missing CN Translation
+      cn: "Spear of the Archon",
+      fr: "Lance de l’Archonte",
+      ru: "Копье Архонта",
+      de: "Speer der Archon",
+    },
+    icon: "inv_spear_04.jpg",
+    soulbind: "Kleia",
+    position: [9, 0],
+    renown: 34,
+    active: false,
+    stat_bonus: {},
+  },
+  {
+    id: 351489,
+    names: {
+      en: "Hope Springs Eternal",
+      // TODO: Missing CN Translation
+      cn: "Hope Springs Eternal",
+      fr: "Espoir d’éternité",
+      ru: "КНадежда умирает последней",
+      de: "Die Hoffnung stirbt zuletzt",
+    },
+    icon: "inv_offhand_pvealliance_d_01.jpg",
+    soulbind: "Kleia",
+    position: [9, 2],
+    renown: 34,
+    active: false,
+    stat_bonus: {},
+  },
+
+  /* ------------------------------------------- Row 10 ------------------------------------------- */
+  {
+    id: 81967792,
+    names: {
+      en: "Endurance Conduit",
+      cn: "韧如树皮",
+      fr: "Intermédiaire d’endurance",
+      ru: "Проводник выносливости",
+      de: "Widerstandsmedium",
+    },
+    icon: "EmptyConduit.jpg",
+    soulbind: "Kleia",
+    position: [10, 0],
+    renown: 34,
+    active: false,
+    stat_bonus: {},
+    type: "Endurance Conduit",
+    slotted_id: -1,
+    enhanced: 79,
+  },
+  {
+    id: 81967796,
+    names: {
+      en: "Finesse Conduit",
+      cn: "灵巧导灵器",
+      fr: "Intermédiaire de finesse",
+      ru: "Проводник точности",
+      de: "Finessemedium",
+    },
+    icon: "EmptyConduit.jpg",
+    soulbind: "Kleia",
+    position: [10, 2],
+    renown: 34,
+    active: false,
+    stat_bonus: {},
+    type: "Finesse Conduit",
+    enhanced: 79,
+  },
+  {
+    id: 351491,
+    names: {
+      en: "Light the Path",
+      // TODO: Missing CN Translation
+      cn: "Light the Path",
+      fr: "Éclairer le chemin",
+      ru: "Освещение пути",
+      de: "Den Pfad erleuchten",
+    },
+    icon: "inv_jewelry_ring_88.jpg",
+    soulbind: "Kleia",
+    position: [11, 1],
+    renown: 34,
+    active: false,
+    stat_bonus: {},
+  },
+
   /* -------------------------------------------------------------------------- */
   /*                                  Mikanikos                                 */
   /* -------------------------------------------------------------------------- */
 
+  /* -------------------------------------------- Row 0 ------------------------------------------- */
   {
     id: 333950,
     names: {
@@ -519,6 +792,8 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
   },
+
+  /* -------------------------------------------- Row 1 ------------------------------------------- */
   {
     id: 3000839211,
     names: {
@@ -536,6 +811,7 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Potency Conduit",
     slotted_id: -1,
+    enhanced: 62,
   },
   {
     id: 3000839213,
@@ -554,7 +830,10 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Endurance Conduit",
     slotted_id: -1,
+    enhanced: 62,
   },
+
+  /* -------------------------------------------- Row 2 ------------------------------------------- */
   {
     id: 331609,
     names: {
@@ -587,6 +866,8 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
   },
+
+  /* -------------------------------------------- Row 3 ------------------------------------------- */
   {
     id: 3000839214,
     names: {
@@ -603,7 +884,10 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
     type: "Finesse Conduit",
+    enhanced: 65,
   },
+
+  /* -------------------------------------------- Row 4 ------------------------------------------- */
   {
     id: 331726,
     names: {
@@ -636,6 +920,8 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
   },
+
+  /* -------------------------------------------- Row 5 ------------------------------------------- */
   {
     id: 3000839215,
     names: {
@@ -653,7 +939,10 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Endurance Conduit",
     slotted_id: -1,
+    enhanced: 69,
   },
+
+  /* -------------------------------------------- Row 6 ------------------------------------------- */
   {
     id: 3000839216,
     names: {
@@ -671,6 +960,7 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Potency Conduit",
     slotted_id: -1,
+    enhanced: 71,
   },
   {
     id: 3000839217,
@@ -689,6 +979,7 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Endurance Conduit",
     slotted_id: -1,
+    enhanced: 71,
   },
   {
     id: 3000839218,
@@ -706,7 +997,10 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
     type: "Finesse Conduit",
+    enhanced: 71,
   },
+
+  /* -------------------------------------------- Row 7 ------------------------------------------- */
   {
     id: 331611,
     names: {
@@ -756,12 +1050,128 @@ export const soulbindDB = [
     stat_bonus: {},
   },
 
+  /* -------------------------------------------- Row 8 ------------------------------------------- */
+  {
+    id: 81967789,
+    names: {
+      en: "Potency Conduit",
+      cn: "效能导灵器",
+      fr: "Intermédiaire de puissance",
+      ru: "Проводник силы",
+      de: "Potenzmedium",
+    },
+    icon: "EmptyConduit.jpg",
+    soulbind: "Mikanikos",
+    position: [8, 1],
+    renown: 31,
+    active: false,
+    stat_bonus: {},
+    type: "Potency Conduit",
+    slotted_id: -1,
+    enhanced: 74,
+  },
+
+  /* -------------------------------------------- Row 9 ------------------------------------------- */
+  {
+    id: 352186,
+    names: {
+      en: "Soulglow Spectrometer",
+      // TODO: Missing CN Translation
+      cn: "Soulglow Spectrometer",
+      fr: "Spectromètre brillâme",
+      ru: "Спектрометр сияния души",
+      de: "Spektrometer des Seelenglanzes",
+    },
+    icon: "inv_helm_goggles_draenortradeskill_d_01.jpg",
+    soulbind: "Mikanikos",
+    position: [9, 0],
+    renown: 31,
+    active: false,
+    stat_bonus: {},
+  },
+  {
+    id: 352187,
+    names: {
+      en: "Reactive Retrofitting",
+      // TODO: Missing CN Translation
+      cn: "Reactive Retrofitting",
+      fr: "Modernisation réactive",
+      ru: "Реактивная модификация",
+      de: "Reaktives Umrüsten",
+    },
+    icon: "ability_vehicle_shellshieldgenerator.jpg",
+    soulbind: "Mikanikos",
+    position: [9, 2],
+    renown: 31,
+    active: false,
+    stat_bonus: {},
+  },
+
+  /* ------------------------------------------- Row 10 ------------------------------------------- */
+  {
+    id: 81967793,
+    names: {
+      en: "Endurance Conduit",
+      cn: "韧如树皮",
+      fr: "Intermédiaire d’endurance",
+      ru: "Проводник выносливости",
+      de: "Widerstandsmedium",
+    },
+    icon: "EmptyConduit.jpg",
+    soulbind: "Mikanikos",
+    position: [10, 0],
+    renown: 31,
+    active: false,
+    stat_bonus: {},
+    type: "Endurance Conduit",
+    slotted_id: -1,
+    enhanced: 77,
+  },
+  {
+    id: 81967797,
+    names: {
+      en: "Finesse Conduit",
+      cn: "灵巧导灵器",
+      fr: "Intermédiaire de finesse",
+      ru: "Проводник точности",
+      de: "Finessemedium",
+    },
+    icon: "EmptyConduit.jpg",
+    soulbind: "Mikanikos",
+    position: [10, 2],
+    renown: 31,
+    active: false,
+    stat_bonus: {},
+    type: "Finesse Conduit",
+    enhanced: 77,
+  },
+
+  /* ------------------------------------------- Row 11 ------------------------------------------- */
+  {
+    id: 352188,
+    names: {
+      en: "Effusive Anima Accelerator",
+      // TODO: Missing CN Translation
+      cn: "Effusive Anima Accelerator",
+      fr: "Accélérateur d’anima jaillissant",
+      ru: "Бурный акселератор анимы",
+      de: "Auslaufender Animabeschleuniger",
+    },
+    icon: "inv_offhand_1h_bastion_d_01.jpg",
+    soulbind: "Mikanikos",
+    position: [11, 1],
+    renown: 31,
+    active: false,
+    stat_bonus: {},
+  },
+
   /* --------------------------- Necrolord Soulbinds -------------------------- */
 
   /* -------------------------------------------------------------------------- */
   /*                                  Marileth                                  */
   /* -------------------------------------------------------------------------- */
 
+  /* -------------------------------------------- Row 0 ------------------------------------------- */
   {
     id: 323074,
     names: {
@@ -778,6 +1188,8 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
   },
+
+  /* -------------------------------------------- Row 1 ------------------------------------------- */
   {
     id: 4000839211,
     names: {
@@ -795,6 +1207,7 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Potency Conduit",
     slotted_id: -1,
+    enhanced: 63,
   },
   {
     id: 3000839212,
@@ -813,6 +1226,7 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Endurance Conduit",
     slotted_id: -1,
+    enhanced: 63,
   },
   {
     id: 3000839213,
@@ -830,7 +1244,10 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
     type: "Finesse Conduit",
+    enhanced: 63,
   },
+
+  /* -------------------------------------------- Row 2 ------------------------------------------- */
   {
     id: 323091,
     names: {
@@ -879,6 +1296,8 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
   },
+
+  /* -------------------------------------------- Row 3 ------------------------------------------- */
   {
     id: 3000839214,
     names: {
@@ -896,7 +1315,10 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Endurance Conduit",
     slotted_id: -1,
+    enhanced: 66,
   },
+
+  /* -------------------------------------------- Row 4 ------------------------------------------- */
   {
     id: 323079,
     names: {
@@ -929,6 +1351,8 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
   },
+
+  /* -------------------------------------------- Row 5 ------------------------------------------- */
   {
     id: 3000839215,
     names: {
@@ -946,7 +1370,10 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Potency Conduit",
     slotted_id: -1,
+    enhanced: 68,
   },
+
+  /* -------------------------------------------- Row 6 ------------------------------------------- */
   {
     id: 3000839216,
     names: {
@@ -964,6 +1391,7 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Endurance Conduit",
     slotted_id: -1,
+    enhanced: 72,
   },
   {
     id: 3000839217,
@@ -981,7 +1409,10 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
     type: "Finesse Conduit",
+    enhanced: 72,
   },
+
+  /* -------------------------------------------- Row 7 ------------------------------------------- */
   {
     id: 323095,
     names: {
@@ -999,10 +1430,126 @@ export const soulbindDB = [
     stat_bonus: {},
   },
 
+  /* -------------------------------------------- Row 8 ------------------------------------------- */
+  {
+    id: 81967790,
+    names: {
+      en: "Potency Conduit",
+      cn: "效能导灵器",
+      fr: "Intermédiaire de puissance",
+      ru: "Проводник силы",
+      de: "Potenzmedium",
+    },
+    icon: "EmptyConduit.jpg",
+    soulbind: "Marileth",
+    position: [8, 1],
+    renown: 43,
+    active: false,
+    stat_bonus: {},
+    type: "Potency Conduit",
+    slotted_id: -1,
+    enhanced: 73,
+  },
+
+  /* -------------------------------------------- Row 9 ------------------------------------------- */
+  {
+    id: 352108,
+    names: {
+      en: "Viscous Trail",
+      // TODO: Missing CN Translation
+      cn: "Viscous Trail",
+      fr: "Traînée visqueuse",
+      ru: "Вязкий след",
+      de: "Zähflüssige Spur",
+    },
+    icon: "sha_inv_misc_slime_01_nightborne.jpg",
+    soulbind: "Marileth",
+    position: [9, 0],
+    renown: 46,
+    active: false,
+    stat_bonus: {},
+  },
+  {
+    id: 352109,
+    names: {
+      en: "Undulating Maneuvers",
+      // TODO: Missing CN Translation
+      cn: "Undulating Maneuvers",
+      fr: "Manœuvres ondulantes",
+      ru: "Обманчивые колыхания",
+      de: "Wogende Manöver",
+    },
+    icon: "achievement_dungeon_plaguefall_globgrog.jpg",
+    soulbind: "Marileth",
+    position: [9, 2],
+    renown: 46,
+    active: false,
+    stat_bonus: {},
+  },
+
+  /* ------------------------------------------- Row 10 ------------------------------------------- */
+  {
+    id: 81967794,
+    names: {
+      en: "Endurance Conduit",
+      cn: "韧如树皮",
+      fr: "Intermédiaire d’endurance",
+      ru: "Проводник выносливости",
+      de: "Widerstandsmedium",
+    },
+    icon: "EmptyConduit.jpg",
+    soulbind: "Marileth",
+    position: [10, 0],
+    renown: 51,
+    active: false,
+    stat_bonus: {},
+    type: "Endurance Conduit",
+    slotted_id: -1,
+    enhanced: 78,
+  },
+  {
+    id: 81967798,
+    names: {
+      en: "Finesse Conduit",
+      cn: "灵巧导灵器",
+      fr: "Intermédiaire de finesse",
+      ru: "Проводник точности",
+      de: "Finessemedium",
+    },
+    icon: "EmptyConduit.jpg",
+    soulbind: "Marileth",
+    position: [10, 2],
+    renown: 51,
+    active: false,
+    stat_bonus: {},
+    type: "Finesse Conduit",
+    enhanced: 78,
+  },
+
+  /* ------------------------------------------- Row 11 ------------------------------------------- */
+  {
+    id: 352110,
+    names: {
+      en: "Kevin's Oozeling",
+      // TODO: Missing CN Translation
+      cn: "Kevin's Oozeling",
+      fr: "Suinteux de Kevin",
+      ru: "Слизнюченыш Кевина",
+      de: "Kevins Schlammling",
+    },
+    icon: "inv_misc_food_legion_gooslime_multi.jpg",
+    soulbind: "Marileth",
+    position: [11, 1],
+    renown: 55,
+    active: false,
+    stat_bonus: {},
+  },
+
   /* -------------------------------------------------------------------------- */
   /*                                    Emeni                                   */
   /* -------------------------------------------------------------------------- */
 
+  /* -------------------------------------------- Row 0 ------------------------------------------- */
   {
     id: 342156,
     names: {
@@ -1019,6 +1566,8 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
   },
+
+  /* -------------------------------------------- Row 1 ------------------------------------------- */
   {
     id: 6000839211,
     names: {
@@ -1036,6 +1585,7 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Potency Conduit",
     slotted_id: -1,
+    enhanced: 61,
   },
   {
     id: 6000839212,
@@ -1054,7 +1604,10 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Endurance Conduit",
     slotted_id: -1,
+    enhanced: 61,
   },
+
+  /* -------------------------------------------- Row 2 ------------------------------------------- */
   {
     id: 323921,
     names: {
@@ -1087,6 +1640,8 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
   },
+
+  /* -------------------------------------------- Row 3 ------------------------------------------- */
   {
     id: 6000839217,
     names: {
@@ -1103,7 +1658,10 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
     type: "Finesse Conduit",
+    enhanced: 64,
   },
+
+  /* -------------------------------------------- Row 4 ------------------------------------------- */
   {
     id: 324440,
     names: {
@@ -1136,6 +1694,8 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
   },
+
+  /* -------------------------------------------- Row 5 ------------------------------------------- */
   {
     id: 6000839218,
     names: {
@@ -1153,7 +1713,10 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Endurance Conduit",
     slotted_id: -1,
+    enhanced: 67,
   },
+
+  /* -------------------------------------------- Row 6 ------------------------------------------- */
   {
     id: 6000839219,
     names: {
@@ -1171,6 +1734,7 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Potency Conduit",
     slotted_id: -1,
+    enhanced: 70,
   },
   {
     id: 6000839220,
@@ -1189,6 +1753,7 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Endurance Conduit",
     slotted_id: -1,
+    enhanced: 70,
   },
   {
     id: 6000839221,
@@ -1206,7 +1771,10 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
     type: "Finesse Conduit",
+    enhanced: 70,
   },
+
+  /* -------------------------------------------- Row 7 ------------------------------------------- */
   {
     id: 323918,
     names: {
@@ -1256,10 +1824,127 @@ export const soulbindDB = [
     stat_bonus: {},
   },
 
+  /* -------------------------------------------- Row 8 ------------------------------------------- */
+  {
+    id: 8196748,
+    names: {
+      en: "Potency Conduit",
+      cn: "效能导灵器",
+      fr: "Intermédiaire de puissance",
+      ru: "Проводник силы",
+      de: "Potenzmedium",
+    },
+    icon: "EmptyConduit.jpg",
+    soulbind: "Emeni",
+    position: [8, 1],
+    renown: 42,
+    active: false,
+    stat_bonus: {},
+    type: "Potency Conduit",
+    slotted_id: -1,
+    enhanced: 75,
+  },
+
+  /* -------------------------------------------- Row 9 ------------------------------------------- */
+  {
+    id: 351089,
+    names: {
+      en: "Sole Slough",
+      // TODO: Missing CN Translation
+      cn: "Sole Slough",
+      fr: "Semelles boueuses",
+      ru: "Разгоняющие подошвы",
+      de: "Sohlenschorf",
+    },
+    icon: "ability_rogue_deviouspoisons.jpg",
+    soulbind: "Emeni",
+    position: [9, 0],
+    renown: 45,
+    active: false,
+    stat_bonus: {},
+  },
+  {
+    id: 351093,
+    names: {
+      en: "Resilient Stitching",
+      // TODO: Missing CN Translation
+      cn: "Resilient Stitching",
+      fr: "Sutures résistantes",
+      ru: "Стойкие швы",
+      de: "Widerstandsfähige Näherei",
+    },
+    icon: "tradeskill_abominationstitching_bodyparts.jpg",
+    soulbind: "Emeni",
+    position: [9, 2],
+    renown: 45,
+    active: false,
+    stat_bonus: {},
+  },
+
+  /* ------------------------------------------- Row 10 ------------------------------------------- */
+  {
+    id: 8196749,
+    names: {
+      en: "Endurance Conduit",
+      cn: "韧如树皮",
+      fr: "Intermédiaire d’endurance",
+      ru: "Проводник выносливости",
+      de: "Widerstandsmedium",
+    },
+    icon: "EmptyConduit.jpg",
+    soulbind: "Emeni",
+    position: [10, 0],
+    renown: 49,
+    active: false,
+    stat_bonus: {},
+    type: "Endurance Conduit",
+    slotted_id: -1,
+    enhanced: 79,
+  },
+  {
+    id: 8196750,
+    names: {
+      en: "Finesse Conduit",
+      cn: "灵巧导灵器",
+      fr: "Intermédiaire de finesse",
+      ru: "Проводник точности",
+      de: "Finessemedium",
+    },
+    icon: "EmptyConduit.jpg",
+    soulbind: "Emeni",
+    position: [10, 2],
+    renown: 49,
+    active: false,
+    stat_bonus: {},
+    type: "Finesse Conduit",
+    enhanced: 79,
+  },
+
+  /* ------------------------------------------- Row 11 ------------------------------------------- */
+  {
+    id: 351094,
+    names: {
+      en: "Pustule Eruption",
+      // TODO: Missing CN Translation
+      cn: "Pustule Eruption",
+      fr: "Éruption de pustules",
+      // TODO: Missing RU Translation
+      ru: "Pustule Eruption",
+      de: "Pusteleruption",
+    },
+    icon: "ability_creature_disease_03.jpg",
+    soulbind: "Emeni",
+    position: [11, 1],
+    renown: 54,
+    active: false,
+    stat_bonus: {},
+  },
+
   /* -------------------------------------------------------------------------- */
   /*                                   Heirmir                                  */
   /* -------------------------------------------------------------------------- */
 
+  /* -------------------------------------------- Row 0 ------------------------------------------- */
   {
     id: 326514,
     names: {
@@ -1276,6 +1961,8 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
   },
+
+  /* -------------------------------------------- Row 1 ------------------------------------------- */
   {
     id: 6000839231,
     names: {
@@ -1293,6 +1980,7 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Potency Conduit",
     slotted_id: -1,
+    enhanced: 62,
   },
   {
     id: 6000839234,
@@ -1311,7 +1999,10 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Endurance Conduit",
     slotted_id: -1,
+    enhanced: 62,
   },
+
+  /* -------------------------------------------- Row 2 ------------------------------------------- */
   {
     id: 326507,
     names: {
@@ -1344,6 +2035,8 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
   },
+
+  /* -------------------------------------------- Row 3 ------------------------------------------- */
   {
     id: 6000839236,
     names: {
@@ -1360,7 +2053,10 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
     type: "Finesse Conduit",
+    enhanced: 65,
   },
+
+  /* -------------------------------------------- Row 4 ------------------------------------------- */
   {
     id: 326512,
     names: {
@@ -1393,6 +2089,8 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
   },
+
+  /* -------------------------------------------- Row 5 ------------------------------------------- */
   {
     id: 6000839237,
     names: {
@@ -1410,6 +2108,7 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Endurance Conduit",
     slotted_id: -1,
+    enhanced: 69,
   },
   {
     id: 6000839238,
@@ -1428,6 +2127,7 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Potency Conduit",
     slotted_id: -1,
+    enhanced: 69,
   },
   {
     id: 6000839239,
@@ -1446,7 +2146,10 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Endurance Conduit",
     slotted_id: -1,
+    enhanced: 69,
   },
+
+  /* -------------------------------------------- Row 6 ------------------------------------------- */
   {
     id: 6000839241,
     names: {
@@ -1463,7 +2166,10 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
     type: "Finesse Conduit",
+    enhanced: 71,
   },
+
+  /* -------------------------------------------- Row 7 ------------------------------------------- */
   {
     id: 326511,
     names: {
@@ -1513,12 +2219,128 @@ export const soulbindDB = [
     stat_bonus: {},
   },
 
+  /* -------------------------------------------- Row 8 ------------------------------------------- */
+  {
+    id: 8196751,
+    names: {
+      en: "Potency Conduit",
+      cn: "效能导灵器",
+      fr: "Intermédiaire de puissance",
+      ru: "Проводник силы",
+      de: "Potenzmedium",
+    },
+    icon: "EmptyConduit.jpg",
+    soulbind: "Heirmir",
+    position: [8, 1],
+    renown: 31,
+    active: false,
+    stat_bonus: {},
+    type: "Potency Conduit",
+    slotted_id: -1,
+    enhanced: 74,
+  },
+
+  /* -------------------------------------------- Row 9 ------------------------------------------- */
+  {
+    id: 350899,
+    names: {
+      en: "Carver's Eye",
+      // TODO: Missing CN Translation
+      cn: "Carver's Eye",
+      fr: "Œil du sculpteur",
+      ru: "Око резчика",
+      de: "Auge des Metzen",
+    },
+    icon: "ability_rogue_deviouspoisons.jpg",
+    soulbind: "Heirmir",
+    position: [9, 0],
+    renown: 31,
+    active: false,
+    stat_bonus: {},
+  },
+  {
+    id: 350935,
+    names: {
+      en: "Waking Bone Breastplate",
+      // TODO: Missing CN Translation
+      cn: "Waking Bone Breastplate",
+      fr: "Cuirasse d’os éveillé",
+      ru: "Пробуждение костяной кирасы",
+      de: "Brustplatte der erweckten Knochen",
+    },
+    icon: "inv_shield_1h_maldraxxus_d_01.jpg",
+    soulbind: "Heirmir",
+    position: [9, 2],
+    renown: 31,
+    active: false,
+    stat_bonus: {},
+  },
+
+  /* ------------------------------------------- Row 10 ------------------------------------------- */
+  {
+    id: 8196752,
+    names: {
+      en: "Endurance Conduit",
+      cn: "韧如树皮",
+      fr: "Intermédiaire d’endurance",
+      ru: "Проводник выносливости",
+      de: "Widerstandsmedium",
+    },
+    icon: "EmptyConduit.jpg",
+    soulbind: "Heirmir",
+    position: [10, 0],
+    renown: 31,
+    active: false,
+    stat_bonus: {},
+    type: "Endurance Conduit",
+    slotted_id: -1,
+    enhanced: 77,
+  },
+  {
+    id: 8196753,
+    names: {
+      en: "Finesse Conduit",
+      cn: "灵巧导灵器",
+      fr: "Intermédiaire de finesse",
+      ru: "Проводник точности",
+      de: "Finessemedium",
+    },
+    icon: "EmptyConduit.jpg",
+    soulbind: "Heirmir",
+    position: [10, 2],
+    renown: 31,
+    active: false,
+    stat_bonus: {},
+    type: "Finesse Conduit",
+    enhanced: 77,
+  },
+
+  /* ------------------------------------------- Row 11 ------------------------------------------- */
+  {
+    id: 350936,
+    names: {
+      en: "Mnemonic Equipment",
+      // TODO: Missing CN Translation
+      cn: "Mnemonic Equipment",
+      fr: "Équipement mnémonique",
+      ru: "Мнемоническое снаряжение",
+      de: "Gedächtnisausrüstung",
+    },
+    icon: "inv_offhand_1h_maldraxxus_d_01.jpg",
+    soulbind: "Heirmir",
+    position: [11, 1],
+    renown: 31,
+    active: false,
+    stat_bonus: {},
+  },
+
   /* -------------------------------- Night Fae ------------------------------- */
 
   /* -------------------------------------------------------------------------- */
   /*                                    Niya                                    */
   /* -------------------------------------------------------------------------- */
 
+  /* -------------------------------------------- Row 0 ------------------------------------------- */
   {
     id: 322721,
     names: {
@@ -1535,6 +2357,8 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
   },
+
+  /* -------------------------------------------- Row 1 ------------------------------------------- */
   {
     id: 6000839242,
     names: {
@@ -1552,6 +2376,7 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Potency Conduit",
     slotted_id: -1,
+    enhanced: 63,
   },
   {
     id: 7000839211,
@@ -1570,7 +2395,10 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Endurance Conduit",
     slotted_id: -1,
+    enhanced: 63,
   },
+
+  /* -------------------------------------------- Row 2 ------------------------------------------- */
   {
     id: 342270,
     names: {
@@ -1603,6 +2431,8 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
   },
+
+  /* -------------------------------------------- Row 3 ------------------------------------------- */
   {
     id: 7000839212,
     names: {
@@ -1619,7 +2449,10 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
     type: "Finesse Conduit",
+    enhanced: 66,
   },
+
+  /* -------------------------------------------- Row 4 ------------------------------------------- */
   {
     id: 320668,
     names: {
@@ -1652,6 +2485,8 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
   },
+
+  /* -------------------------------------------- Row 5 ------------------------------------------- */
   {
     id: 7000839213,
     names: {
@@ -1669,7 +2504,10 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Endurance Conduit",
     slotted_id: -1,
+    enhanced: 68,
   },
+
+  /* -------------------------------------------- Row 6 ------------------------------------------- */
   {
     id: 7000839214,
     names: {
@@ -1687,6 +2525,7 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Endurance Conduit",
     slotted_id: -1,
+    enhanced: 72,
   },
   {
     id: 7000839215,
@@ -1705,6 +2544,7 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Potency Conduit",
     slotted_id: -1,
+    enhanced: 72,
   },
   {
     id: 7000839216,
@@ -1722,7 +2562,10 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
     type: "Finesse Conduit",
+    enhanced: 72,
   },
+
+  /* -------------------------------------------- Row 7 ------------------------------------------- */
   {
     id: 320659,
     names: {
@@ -1772,10 +2615,126 @@ export const soulbindDB = [
     stat_bonus: {},
   },
 
+  /* -------------------------------------------- Row 8 ------------------------------------------- */
+  {
+    id: 8196754,
+    names: {
+      en: "Potency Conduit",
+      cn: "效能导灵器",
+      fr: "Intermédiaire de puissance",
+      ru: "Проводник силы",
+      de: "Potenzmedium",
+    },
+    icon: "EmptyConduit.jpg",
+    soulbind: "Niya",
+    position: [8, 1],
+    renown: 43,
+    active: false,
+    stat_bonus: {},
+    type: "Potency Conduit",
+    slotted_id: -1,
+    enhanced: 73,
+  },
+
+  /* -------------------------------------------- Row 9 ------------------------------------------- */
+  {
+    id: 352501,
+    names: {
+      en: "Called Shot",
+      // TODO: Missing CN Translation
+      cn: "	Tir ciblé",
+      fr: "Œil du sculpteur",
+      ru: "Нацеленный выстрел",
+      de: "Angekündigter Schuss",
+    },
+    icon: "ability_hunter_runningshot.jpg",
+    soulbind: "Niya",
+    position: [9, 0],
+    renown: 46,
+    active: false,
+    stat_bonus: {},
+  },
+  {
+    id: 352502,
+    names: {
+      en: "Survivor's Rally",
+      // TODO: Missing CN Translation
+      cn: "Survivor's Rally",
+      fr: "Ralliement du survivant",
+      ru: "Клич выжившего",
+      de: "Ermutigung der Überlebenden",
+    },
+    icon: "achievement_pvp_legion02.jpg",
+    soulbind: "Niya",
+    position: [9, 2],
+    renown: 46,
+    active: false,
+    stat_bonus: {},
+  },
+
+  /* ------------------------------------------- Row 10 ------------------------------------------- */
+  {
+    id: 8196755,
+    names: {
+      en: "Endurance Conduit",
+      cn: "韧如树皮",
+      fr: "Intermédiaire d’endurance",
+      ru: "Проводник выносливости",
+      de: "Widerstandsmedium",
+    },
+    icon: "EmptyConduit.jpg",
+    soulbind: "Niya",
+    position: [10, 0],
+    renown: 51,
+    active: false,
+    stat_bonus: {},
+    type: "Endurance Conduit",
+    slotted_id: -1,
+    enhanced: 78,
+  },
+  {
+    id: 8196756,
+    names: {
+      en: "Finesse Conduit",
+      cn: "灵巧导灵器",
+      fr: "Intermédiaire de finesse",
+      ru: "Проводник точности",
+      de: "Finessemedium",
+    },
+    icon: "EmptyConduit.jpg",
+    soulbind: "Niya",
+    position: [10, 2],
+    renown: 51,
+    active: false,
+    stat_bonus: {},
+    type: "Finesse Conduit",
+    enhanced: 78,
+  },
+
+  /* ------------------------------------------- Row 11 ------------------------------------------- */
+  {
+    id: 352503,
+    names: {
+      en: "Bonded Hearts",
+      // TODO: Missing CN Translation
+      cn: "Bonded Hearts",
+      fr: "Cœurs liés",
+      ru: "Связанные сердца",
+      de: "Verbundene Herzen",
+    },
+    icon: "spell_animaardenweald_buff.jpg",
+    soulbind: "Niya",
+    position: [11, 1],
+    renown: 55,
+    active: false,
+    stat_bonus: {},
+  },
+
   /* -------------------------------------------------------------------------- */
   /*                                 Dreamweaver                                */
   /* -------------------------------------------------------------------------- */
 
+  /* -------------------------------------------- Row 0 ------------------------------------------- */
   {
     id: 319217,
     names: {
@@ -1792,6 +2751,8 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
   },
+
+  /* -------------------------------------------- Row 1 ------------------------------------------- */
   {
     id: 908123,
     names: {
@@ -1809,6 +2770,7 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Endurance Conduit",
     slotted_id: -1,
+    enhanced: 61,
   },
   {
     id: 7189321,
@@ -1826,7 +2788,10 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
     type: "Finesse Conduit",
+    enhanced: 61,
   },
+
+  /* -------------------------------------------- Row 2 ------------------------------------------- */
   {
     id: 89123123,
     names: {
@@ -1844,7 +2809,10 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Potency Conduit",
     slotted_id: -1,
+    enhanced: 64,
   },
+
+  /* -------------------------------------------- Row 3 ------------------------------------------- */
   {
     id: 319211,
     names: {
@@ -1893,6 +2861,8 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
   },
+
+  /* -------------------------------------------- Row 4 ------------------------------------------- */
   {
     id: 98321789,
     names: {
@@ -1910,6 +2880,7 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Potency Conduit",
     slotted_id: -1,
+    enhanced: 67,
   },
   {
     id: 890213,
@@ -1928,6 +2899,7 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Endurance Conduit",
     slotted_id: -1,
+    enhanced: 67,
   },
   {
     id: 9321678,
@@ -1945,7 +2917,10 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
     type: "Finesse Conduit",
+    enhanced: 67,
   },
+
+  /* -------------------------------------------- Row 5 ------------------------------------------- */
   {
     id: 732891,
     names: {
@@ -1963,7 +2938,11 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Endurance Conduit",
     slotted_id: -1,
+    enhanced: 70,
   },
+
+  /* -------------------------------------------- Row 6 ------------------------------------------- */
+
   {
     id: 319214,
     names: {
@@ -1996,6 +2975,8 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
   },
+
+  /* -------------------------------------------- Row 7 ------------------------------------------- */
   {
     id: 319191,
     names: {
@@ -2013,10 +2994,128 @@ export const soulbindDB = [
     stat_bonus: {},
   },
 
+  /* -------------------------------------------- Row 8 ------------------------------------------- */
+  {
+    id: 8196757,
+    names: {
+      en: "Potency Conduit",
+      cn: "效能导灵器",
+      fr: "Intermédiaire de puissance",
+      ru: "Проводник силы",
+      de: "Potenzmedium",
+    },
+    icon: "EmptyConduit.jpg",
+    soulbind: "Dreamweaver",
+    position: [8, 1],
+    renown: 42,
+    active: false,
+    stat_bonus: {},
+    type: "Potency Conduit",
+    slotted_id: -1,
+    enhanced: 75,
+  },
+
+  /* -------------------------------------------- Row 9 ------------------------------------------- */
+  {
+    id: 352782,
+    names: {
+      en: "Cunning Dreams",
+      // TODO: Missing CN Translation
+      cn: "Cunning Dreams",
+      fr: "Rêves rusés",
+      ru: "Хитрые сны",
+      de: "	Verwegene Träume",
+    },
+    icon: "9xp_sigil_ardenweald01.jpg",
+    soulbind: "Dreamweaver",
+    position: [9, 0],
+    renown: 45,
+    active: false,
+    stat_bonus: {},
+  },
+  {
+    id: 352779,
+    names: {
+      en: "Waking Dreams",
+      // TODO: Missing CN Translation
+      cn: "Waking Dreams",
+      fr: "Rêve éveillé",
+      // TODO: Missing RU Translation
+      ru: "Waking Dreams",
+      // TODO: Missing DE Translation
+      de: "Waking Dreams",
+    },
+    icon: "inv_legion_faction_dreamweavers.jpg",
+    soulbind: "Dreamweaver",
+    position: [9, 2],
+    renown: 45,
+    active: false,
+    stat_bonus: {},
+  },
+
+  /* ------------------------------------------- Row 10 ------------------------------------------- */
+  {
+    id: 8196758,
+    names: {
+      en: "Endurance Conduit",
+      cn: "韧如树皮",
+      fr: "Intermédiaire d’endurance",
+      ru: "Проводник выносливости",
+      de: "Widerstandsmedium",
+    },
+    icon: "EmptyConduit.jpg",
+    soulbind: "Dreamweaver",
+    position: [10, 0],
+    renown: 49,
+    active: false,
+    stat_bonus: {},
+    type: "Endurance Conduit",
+    slotted_id: -1,
+    enhanced: 79,
+  },
+  {
+    id: 8196759,
+    names: {
+      en: "Finesse Conduit",
+      cn: "灵巧导灵器",
+      fr: "Intermédiaire de finesse",
+      ru: "Проводник точности",
+      de: "Finessemedium",
+    },
+    icon: "EmptyConduit.jpg",
+    soulbind: "Dreamweaver",
+    position: [10, 2],
+    renown: 49,
+    active: false,
+    stat_bonus: {},
+    type: "Finesse Conduit",
+    enhanced: 79,
+  },
+
+  /* ------------------------------------------- Row 11 ------------------------------------------- */
+  {
+    id: 352786,
+    names: {
+      en: "Dream Delver",
+      // TODO: Missing CN Translation
+      cn: "Dream Delver",
+      fr: "Arpenteur de rêve",
+      ru: "Погружение в сны",
+      de: "Traumerforscher",
+    },
+    icon: "sanctum_features_animadiversion_ardenweald.jpg",
+    soulbind: "Dreamweaver",
+    position: [11, 1],
+    renown: 54,
+    active: false,
+    stat_bonus: {},
+  },
+
   /* -------------------------------------------------------------------------- */
   /*                                   Korayn                                   */
   /* -------------------------------------------------------------------------- */
 
+  /* -------------------------------------------- Row 0 ------------------------------------------- */
   {
     id: 325066,
     names: {
@@ -2033,6 +3132,8 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
   },
+
+  /* -------------------------------------------- Row 1 ------------------------------------------- */
   {
     id: 8000839211,
     names: {
@@ -2050,6 +3151,7 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Potency Conduit",
     slotted_id: -1,
+    enhanced: 62,
   },
   {
     id: 58971321,
@@ -2068,7 +3170,10 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Endurance Conduit",
     slotted_id: -1,
+    enhanced: 62,
   },
+
+  /* -------------------------------------------- Row 2 ------------------------------------------- */
   {
     id: 325067,
     names: {
@@ -2101,6 +3206,8 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
   },
+
+  /* -------------------------------------------- Row 3 ------------------------------------------- */
   {
     id: 8000839212,
     names: {
@@ -2117,7 +3224,10 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
     type: "Finesse Conduit",
+    enhanced: 65,
   },
+
+  /* -------------------------------------------- Row 4 ------------------------------------------- */
   {
     id: 325072,
     names: {
@@ -2150,6 +3260,8 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
   },
+
+  /* -------------------------------------------- Row 5 ------------------------------------------- */
   {
     id: 8979321,
     names: {
@@ -2167,7 +3279,10 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Endurance Conduit",
     slotted_id: -1,
+    enhanced: 69,
   },
+
+  /* -------------------------------------------- Row 6 ------------------------------------------- */
   {
     id: 71893216,
     names: {
@@ -2185,6 +3300,7 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Potency Conduit",
     slotted_id: -1,
+    enhanced: 71,
   },
   {
     id: 6783212,
@@ -2203,6 +3319,7 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Endurance Conduit",
     slotted_id: -1,
+    enhanced: 71,
   },
   {
     id: 8000839213,
@@ -2220,7 +3337,10 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
     type: "Finesse Conduit",
+    enhanced: 71,
   },
+
+  /* -------------------------------------------- Row 7 ------------------------------------------- */
   {
     id: 325068,
     names: {
@@ -2270,12 +3390,128 @@ export const soulbindDB = [
     stat_bonus: {},
   },
 
+  /* -------------------------------------------- Row 8 ------------------------------------------- */
+  {
+    id: 8196760,
+    names: {
+      en: "Potency Conduit",
+      cn: "效能导灵器",
+      fr: "Intermédiaire de puissance",
+      ru: "Проводник силы",
+      de: "Potenzmedium",
+    },
+    icon: "EmptyConduit.jpg",
+    soulbind: "Korayn",
+    position: [8, 1],
+    renown: 41,
+    active: false,
+    stat_bonus: {},
+    type: "Potency Conduit",
+    slotted_id: -1,
+    enhanced: 74,
+  },
+
+  /* -------------------------------------------- Row 9 ------------------------------------------- */
+  {
+    id: 352800,
+    names: {
+      en: "Vorkai Ambush",
+      // TODO: Missing CN Translation
+      cn: "Vorkai Ambush",
+      fr: "Embuscade vorkaï",
+      ru: "Засада воркаев",
+      de: "Hinterhalt der Vorkai",
+    },
+    icon: "9xp_sigil_ardenweald01.jpg",
+    soulbind: "Korayn",
+    position: [9, 0],
+    renown: 48,
+    active: false,
+    stat_bonus: {},
+  },
+  {
+    id: 352806,
+    names: {
+      en: "Hunt's Exhilaration",
+      // TODO: Missing CN Translation
+      cn: "Hunt's Exhilaration",
+      fr: "Exaltation de l’Hallali",
+      ru: "Азарт охоты",
+      de: "Jagdeuphorie",
+    },
+    icon: "spell_animaardenweald_debuff.jpg",
+    soulbind: "Korayn",
+    position: [9, 2],
+    renown: 48,
+    active: false,
+    stat_bonus: {},
+  },
+
+  /* ------------------------------------------- Row 10 ------------------------------------------- */
+  {
+    id: 8196761,
+    names: {
+      en: "Endurance Conduit",
+      cn: "韧如树皮",
+      fr: "Intermédiaire d’endurance",
+      ru: "Проводник выносливости",
+      de: "Widerstandsmedium",
+    },
+    icon: "EmptyConduit.jpg",
+    soulbind: "Korayn",
+    position: [10, 0],
+    renown: 53,
+    active: false,
+    stat_bonus: {},
+    type: "Endurance Conduit",
+    slotted_id: -1,
+    enhanced: 77,
+  },
+  {
+    id: 8196762,
+    names: {
+      en: "Finesse Conduit",
+      cn: "灵巧导灵器",
+      fr: "Intermédiaire de finesse",
+      ru: "Проводник точности",
+      de: "Finessemedium",
+    },
+    icon: "EmptyConduit.jpg",
+    soulbind: "Korayn",
+    position: [10, 2],
+    renown: 53,
+    active: false,
+    stat_bonus: {},
+    type: "Finesse Conduit",
+    enhanced: 77,
+  },
+
+  /* ------------------------------------------- Row 11 ------------------------------------------- */
+  {
+    id: 352805,
+    names: {
+      en: "Wild Hunt Strategem",
+      // TODO: Missing CN Translation
+      cn: "Wild Hunt Strategem",
+      fr: "Stratagème de l’Hallali",
+      ru: "Стратагема Дикой Охоты",
+      de: "Strategem der Wilden Jagd",
+    },
+    icon: "spell_animaardenweald_beam.jpg",
+    soulbind: "Korayn",
+    position: [11, 1],
+    renown: 57,
+    active: false,
+    stat_bonus: {},
+  },
+
   /* --------------------------------- Venthyr -------------------------------- */
 
   /* -------------------------------------------------------------------------- */
   /*                                   Nadjia                                   */
   /* -------------------------------------------------------------------------- */
 
+  /* -------------------------------------------- Row 0 ------------------------------------------- */
   {
     id: 331586,
     names: {
@@ -2292,6 +3528,8 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
   },
+
+  /* -------------------------------------------- Row 1 ------------------------------------------- */
   {
     id: 8000839214,
     names: {
@@ -2309,6 +3547,7 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Potency Conduit",
     slotted_id: -1,
+    enhanced: 63,
   },
   {
     id: 8000839215,
@@ -2327,7 +3566,10 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Endurance Conduit",
     slotted_id: -1,
+    enhanced: 63,
   },
+
+  /* -------------------------------------------- Row 2 ------------------------------------------- */
   {
     id: 331576,
     names: {
@@ -2360,6 +3602,8 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
   },
+
+  /* -------------------------------------------- Row 3 ------------------------------------------- */
   {
     id: 8000839216,
     names: {
@@ -2376,7 +3620,10 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
     type: "Finesse Conduit",
+    enhanced: 66,
   },
+
+  /* -------------------------------------------- Row 4 ------------------------------------------- */
   {
     id: 331579,
     names: {
@@ -2393,6 +3640,8 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
   },
+
+  /* -------------------------------------------- Row 5 ------------------------------------------- */
   {
     id: 8000839217,
     names: {
@@ -2410,7 +3659,10 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Endurance Conduit",
     slotted_id: -1,
+    enhanced: 68,
   },
+
+  /* -------------------------------------------- Row 6 ------------------------------------------- */
   {
     id: 8000839218,
     names: {
@@ -2428,6 +3680,7 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Potency Conduit",
     slotted_id: -1,
+    enhanced: 72,
   },
   {
     id: 8000839219,
@@ -2446,6 +3699,7 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Endurance Conduit",
     slotted_id: -1,
+    enhanced: 72,
   },
   {
     id: 8000839221,
@@ -2463,7 +3717,10 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
     type: "Finesse Conduit",
+    enhanced: 72,
   },
+
+  /* -------------------------------------------- Row 7 ------------------------------------------- */
   {
     id: 331582,
     names: {
@@ -2513,10 +3770,129 @@ export const soulbindDB = [
     stat_bonus: {},
   },
 
+  /* -------------------------------------------- Row 8 ------------------------------------------- */
+  {
+    id: 8196763,
+    names: {
+      en: "Potency Conduit",
+      cn: "效能导灵器",
+      fr: "Intermédiaire de puissance",
+      ru: "Проводник силы",
+      de: "Potenzmedium",
+    },
+    icon: "EmptyConduit.jpg",
+    soulbind: "Nadjia",
+    position: [8, 1],
+    renown: 43,
+    active: false,
+    stat_bonus: {},
+    type: "Potency Conduit",
+    slotted_id: -1,
+    enhanced: 73,
+  },
+
+  /* -------------------------------------------- Row 9 ------------------------------------------- */
+  {
+    id: 352405,
+    names: {
+      en: "Sinful Preservation",
+      // TODO: Missing CN Translation
+      cn: "Sinful Preservation",
+      fr: "Préservation vicieuse",
+      ru: "Греховное сохранение",
+      de: "Sündige Bewahrung",
+    },
+    icon: "spell_animarevendreth_buff.jpg",
+    soulbind: "Nadjia",
+    position: [9, 0],
+    renown: 46,
+    active: false,
+    stat_bonus: {},
+  },
+  {
+    id: 352366,
+    names: {
+      en: "Nimble Steps",
+      // TODO: Missing CN Translation
+      cn: "Nimble Steps",
+      fr: "Pas lestes",
+      ru: "Легкие шаги",
+      de: "Geschickte Schritte",
+    },
+    icon: "ability_rogue_sprint_blue.jpg",
+    soulbind: "Nadjia",
+    position: [9, 2],
+    renown: 46,
+    active: false,
+    stat_bonus: {},
+  },
+
+  /* ------------------------------------------- Row 10 ------------------------------------------- */
+  {
+    id: 8196764,
+    names: {
+      en: "Endurance Conduit",
+      cn: "韧如树皮",
+      fr: "Intermédiaire d’endurance",
+      ru: "Проводник выносливости",
+      de: "Widerstandsmedium",
+    },
+    icon: "EmptyConduit.jpg",
+    soulbind: "Nadjia",
+    position: [10, 0],
+    renown: 51,
+    active: false,
+    stat_bonus: {},
+    type: "Endurance Conduit",
+    slotted_id: -1,
+    enhanced: 78,
+  },
+  {
+    id: 8196765,
+    names: {
+      en: "Finesse Conduit",
+      cn: "灵巧导灵器",
+      fr: "Intermédiaire de finesse",
+      ru: "Проводник точности",
+      de: "Finessemedium",
+    },
+    icon: "EmptyConduit.jpg",
+    soulbind: "Nadjia",
+    position: [10, 2],
+    renown: 51,
+    active: false,
+    stat_bonus: {},
+    type: "Finesse Conduit",
+    enhanced: 78,
+  },
+
+  /* ------------------------------------------- Row 11 ------------------------------------------- */
+  {
+    id: 352373,
+    names: {
+      en: "Fatal Flaw",
+      // TODO: Missing CN Translation
+      cn: "Fatal Flaw",
+      // TODO: Missing FR Translation
+      fr: "Fatal Flaw",
+      // TODO: Missing RU Translation
+      ru: "Fatal Flaw",
+      // TODO: Missing DE Translation
+      de: "Fatal Flaw",
+    },
+    icon: "ability_rogue_shadowstrike.jpg",
+    soulbind: "Nadjia",
+    position: [11, 1],
+    renown: 55,
+    active: false,
+    stat_bonus: {},
+  },
+
   /* -------------------------------------------------------------------------- */
   /*                                   Theotar                                  */
   /* -------------------------------------------------------------------------- */
 
+  /* -------------------------------------------- Row 0 ------------------------------------------- */
   {
     id: 336239,
     names: {
@@ -2533,6 +3909,8 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
   },
+
+  /* -------------------------------------------- Row 1 ------------------------------------------- */
   {
     id: 8000839222,
     names: {
@@ -2550,6 +3928,7 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Endurance Conduit",
     slotted_id: -1,
+    enhanced: 61,
   },
   {
     id: 8000839223,
@@ -2567,7 +3946,10 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
     type: "Finesse Conduit",
+    enhanced: 61,
   },
+
+  /* -------------------------------------------- Row 2 ------------------------------------------- */
   {
     id: 336140,
     names: {
@@ -2600,6 +3982,8 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
   },
+
+  /* -------------------------------------------- Row 3 ------------------------------------------- */
   {
     id: 8000839224,
     names: {
@@ -2617,7 +4001,10 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Potency Conduit",
     slotted_id: -1,
+    enhanced: 64,
   },
+
+  /* -------------------------------------------- Row 4 ------------------------------------------- */
   {
     id: 336247,
     names: {
@@ -2650,6 +4037,8 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
   },
+
+  /* -------------------------------------------- Row 5 ------------------------------------------- */
   {
     id: 8000839225,
     names: {
@@ -2667,7 +4056,10 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Endurance Conduit",
     slotted_id: -1,
+    enhanced: 67,
   },
+
+  /* -------------------------------------------- Row 6 ------------------------------------------- */
   {
     id: 8000839226,
     names: {
@@ -2685,6 +4077,7 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Potency Conduit",
     slotted_id: -1,
+    enhanced: 70,
   },
   {
     id: 8000839227,
@@ -2703,6 +4096,7 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Endurance Conduit",
     slotted_id: -1,
+    enhanced: 70,
   },
   {
     id: 8000839228,
@@ -2720,7 +4114,10 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
     type: "Finesse Conduit",
+    enhanced: 70,
   },
+
+  /* -------------------------------------------- Row 7 ------------------------------------------- */
   {
     id: 336245,
     names: {
@@ -2770,10 +4167,128 @@ export const soulbindDB = [
     stat_bonus: {},
   },
 
+  /* -------------------------------------------- Row 8 ------------------------------------------- */
+  {
+    id: 8196766,
+    names: {
+      en: "Potency Conduit",
+      cn: "效能导灵器",
+      fr: "Intermédiaire de puissance",
+      ru: "Проводник силы",
+      de: "Potenzmedium",
+    },
+    icon: "EmptyConduit.jpg",
+    soulbind: "Theotar",
+    position: [8, 1],
+    renown: 42,
+    active: false,
+    stat_bonus: {},
+    type: "Potency Conduit",
+    slotted_id: -1,
+    enhanced: 75,
+  },
+
+  /* -------------------------------------------- Row 9 ------------------------------------------- */
+  {
+    id: 351747,
+    names: {
+      en: "It's Always Tea Time",
+      // TODO: Missing CN Translation
+      cn: "It's Always Tea Time",
+      fr: "Thé à toute heure",
+      ru: "Всегда есть время пить чай",
+      de: "Immer Zeit für ein Teekränzchen",
+    },
+    // TODO: Missing Actual Icon
+    icon: "trade_engineering.jpg",
+    soulbind: "Theotar",
+    position: [9, 0],
+    renown: 45,
+    active: false,
+    stat_bonus: {},
+  },
+  {
+    id: 351748,
+    names: {
+      en: "Life is but an Appetizer",
+      // TODO: Missing CN Translation
+      cn: "Life is but an Appetizer",
+      fr: "L’appétit de vivre",
+      ru: "Жизнь – всего лишь закуска",
+      de: "Das Leben ist ein Appetithäppchen",
+    },
+    icon: "inv_misc_food_strawberry_ice.jpg",
+    soulbind: "Theotar",
+    position: [9, 2],
+    renown: 45,
+    active: false,
+    stat_bonus: {},
+  },
+
+  /* ------------------------------------------- Row 10 ------------------------------------------- */
+  {
+    id: 8196767,
+    names: {
+      en: "Endurance Conduit",
+      cn: "韧如树皮",
+      fr: "Intermédiaire d’endurance",
+      ru: "Проводник выносливости",
+      de: "Widerstandsmedium",
+    },
+    icon: "EmptyConduit.jpg",
+    soulbind: "Theotar",
+    position: [10, 0],
+    renown: 49,
+    active: false,
+    stat_bonus: {},
+    type: "Endurance Conduit",
+    slotted_id: -1,
+    enhanced: 79,
+  },
+  {
+    id: 8196768,
+    names: {
+      en: "Finesse Conduit",
+      cn: "灵巧导灵器",
+      fr: "Intermédiaire de finesse",
+      ru: "Проводник точности",
+      de: "Finessemedium",
+    },
+    icon: "EmptyConduit.jpg",
+    soulbind: "Theotar",
+    position: [10, 2],
+    renown: 49,
+    active: false,
+    stat_bonus: {},
+    type: "Finesse Conduit",
+    enhanced: 79,
+  },
+
+  /* ------------------------------------------- Row 11 ------------------------------------------- */
+  {
+    id: 351750,
+    names: {
+      en: "Party Favors",
+      // TODO: Missing CN Translation
+      cn: "Party Favors",
+      fr: "Cadeaux festifs",
+      ru: "Дух праздника",
+      de: "Partyaufmerksamkeiten",
+    },
+    // TODO: Missing Actual Icon
+    icon: "trade_engineering.jpg",
+    soulbind: "Theotar",
+    position: [11, 1],
+    renown: 54,
+    active: false,
+    stat_bonus: {},
+  },
+
   /* -------------------------------------------------------------------------- */
   /*                                   Draven                                   */
   /* -------------------------------------------------------------------------- */
 
+  /* -------------------------------------------- Row 0 ------------------------------------------- */
   {
     id: 340159,
     names: {
@@ -2790,6 +4305,8 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
   },
+
+  /* -------------------------------------------- Row 1 ------------------------------------------- */
   {
     id: 9000839211,
     names: {
@@ -2807,6 +4324,7 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Endurance Conduit",
     slotted_id: -1,
+    enhanced: 62,
   },
   {
     id: 9000839212,
@@ -2824,7 +4342,10 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
     type: "Finesse Conduit",
+    enhanced: 62,
   },
+
+  /* -------------------------------------------- Row 2 ------------------------------------------- */
   {
     id: 319982,
     names: {
@@ -2857,6 +4378,8 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
   },
+
+  /* -------------------------------------------- Row 3 ------------------------------------------- */
   {
     id: 9000839213,
     names: {
@@ -2874,7 +4397,10 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Potency Conduit",
     slotted_id: -1,
+    enhanced: 65,
   },
+
+  /* -------------------------------------------- Row 4 ------------------------------------------- */
   {
     id: 332755,
     names: {
@@ -2907,6 +4433,8 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
   },
+
+  /* -------------------------------------------- Row 5 ------------------------------------------- */
   {
     id: 9000839214,
     names: {
@@ -2924,7 +4452,10 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Endurance Conduit",
     slotted_id: -1,
+    enhanced: 69,
   },
+
+  /* -------------------------------------------- Row 6 ------------------------------------------- */
   {
     id: 9000839215,
     names: {
@@ -2942,6 +4473,7 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Potency Conduit",
     slotted_id: -1,
+    enhanced: 71,
   },
   {
     id: 9000839216,
@@ -2960,6 +4492,7 @@ export const soulbindDB = [
     stat_bonus: {},
     type: "Endurance Conduit",
     slotted_id: -1,
+    enhanced: 71,
   },
   {
     id: 9000839217,
@@ -2977,7 +4510,10 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
     type: "Finesse Conduit",
+    enhanced: 71,
   },
+
+  /* -------------------------------------------- Row 7 ------------------------------------------- */
   {
     id: 332754,
     names: {
@@ -3026,6 +4562,122 @@ export const soulbindDB = [
     active: false,
     stat_bonus: {},
   },
+
+  /* -------------------------------------------- Row 8 ------------------------------------------- */
+  {
+    id: 8196769,
+    names: {
+      en: "Potency Conduit",
+      cn: "效能导灵器",
+      fr: "Intermédiaire de puissance",
+      ru: "Проводник силы",
+      de: "Potenzmedium",
+    },
+    icon: "EmptyConduit.jpg",
+    soulbind: "Draven",
+    position: [8, 1],
+    renown: 41,
+    active: false,
+    stat_bonus: {},
+    type: "Potency Conduit",
+    slotted_id: -1,
+    enhanced: 74,
+  },
+
+  /* -------------------------------------------- Row 9 ------------------------------------------- */
+  {
+    id: 352365,
+    names: {
+      en: "Regenerative Stone Skin",
+      // TODO: Missing CN Translation
+      cn: "Regenerative Stone Skin",
+      fr: "Peau de pierre régénératrice",
+      ru: "Регенерирующая каменная кожа",
+      de: "Regenerative Steinhaut",
+    },
+    icon: "archaeology_5_0_crackedmogurunestone.jpg",
+    soulbind: "Draven",
+    position: [9, 0],
+    renown: 48,
+    active: false,
+    stat_bonus: {},
+  },
+  {
+    id: 352415,
+    names: {
+      en: "Intimidation Tactics",
+      // TODO: Missing CN Translation
+      cn: "Intimidation Tactics",
+      fr: "Tactique d’intimidation",
+      ru: "Тактика устрашения",
+      de: "Einschüchterungstaktiken",
+    },
+    icon: "ability_warrior_strengthofarms.jpg",
+    soulbind: "Draven",
+    position: [9, 2],
+    renown: 48,
+    active: false,
+    stat_bonus: {},
+  },
+
+  /* ------------------------------------------- Row 10 ------------------------------------------- */
+  {
+    id: 8196770,
+    names: {
+      en: "Endurance Conduit",
+      cn: "韧如树皮",
+      fr: "Intermédiaire d’endurance",
+      ru: "Проводник выносливости",
+      de: "Widerstandsmedium",
+    },
+    icon: "EmptyConduit.jpg",
+    soulbind: "Draven",
+    position: [10, 0],
+    renown: 53,
+    active: false,
+    stat_bonus: {},
+    type: "Endurance Conduit",
+    slotted_id: -1,
+    enhanced: 77,
+  },
+  {
+    id: 8196771,
+    names: {
+      en: "Finesse Conduit",
+      cn: "灵巧导灵器",
+      fr: "Intermédiaire de finesse",
+      ru: "Проводник точности",
+      de: "Finessemedium",
+    },
+    icon: "EmptyConduit.jpg",
+    soulbind: "Draven",
+    position: [10, 2],
+    renown: 53,
+    active: false,
+    stat_bonus: {},
+    type: "Finesse Conduit",
+    enhanced: 77,
+  },
+
+  /* ------------------------------------------- Row 11 ------------------------------------------- */
+  {
+    id: 352417,
+    names: {
+      en: "Battlefield Presence",
+      // TODO: Missing CN Translation
+      cn: "Battlefield Presence",
+      fr: "Présence sur le champ de bataille",
+      ru: "Боевая стать",
+      de: "Schlachtfeldpräsenz",
+    },
+    // TODO: Missing Actual Icon
+    icon: "trade_engineering.jpg",
+    soulbind: "Draven",
+    position: [11, 1],
+    renown: 57,
+    active: false,
+    stat_bonus: {},
+  },
 ];
 
 export const soulbindConnectors = [
@@ -3035,6 +4687,12 @@ export const soulbindConnectors = [
     - Standard Diagonal: 45 -> left, 315 -> right
     - Tight Diagonal: 55 -> left, 305 -> right
   */
+
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                             Pelagos                                            */
+  /* ---------------------------------------------------------------------------------------------- */
+
+  /* -------------------------------------------- Row 0 ------------------------------------------- */
   {
     soulbind: "Pelagos",
     src: "Vertical.PNG",
@@ -3053,6 +4711,8 @@ export const soulbindConnectors = [
     position: [305, 35],
     angle: 315,
   },
+
+  /* -------------------------------------------- Row 1 ------------------------------------------- */
   {
     soulbind: "Pelagos",
     src: "Vertical.PNG",
@@ -3071,6 +4731,8 @@ export const soulbindConnectors = [
     position: [388, 100],
     angle: 0,
   },
+
+  /* -------------------------------------------- Row 2 ------------------------------------------- */
   {
     soulbind: "Pelagos",
     src: "DiagonalShort.png",
@@ -3089,6 +4751,8 @@ export const soulbindConnectors = [
     position: [400, 198],
     angle: 55,
   },
+
+  /* -------------------------------------------- Row 3 ------------------------------------------- */
   {
     soulbind: "Pelagos",
     src: "DiagonalShort.png",
@@ -3101,30 +4765,36 @@ export const soulbindConnectors = [
     position: [304, 275],
     angle: 315,
   },
+
+  /* -------------------------------------------- Row 4 ------------------------------------------- */
   {
     soulbind: "Pelagos",
     src: "DiagonalShort.png",
     position: [215, 377],
-    angle: 315,
+    angle: 305,
   },
   {
     soulbind: "Pelagos",
     src: "DiagonalShort.png",
     position: [380, 377],
+    angle: 55,
+  },
+
+  /* -------------------------------------------- Row 5 ------------------------------------------- */
+  {
+    soulbind: "Pelagos",
+    src: "DiagonalShort.png",
+    position: [298, 435],
     angle: 45,
   },
   {
     soulbind: "Pelagos",
     src: "DiagonalShort.png",
-    position: [298, 460],
-    angle: 55,
+    position: [298, 435],
+    angle: 315,
   },
-  {
-    soulbind: "Pelagos",
-    src: "DiagonalShort.png",
-    position: [298, 460],
-    angle: 305,
-  },
+
+  /* -------------------------------------------- Row 6 ------------------------------------------- */
   {
     soulbind: "Pelagos",
     src: "DiagonalShort.png",
@@ -3138,7 +4808,61 @@ export const soulbindConnectors = [
     angle: 45,
   },
 
-  // Kleia
+  /* -------------------------------------------- Row 7 ------------------------------------------- */
+  {
+    soulbind: "Pelagos",
+    src: "Vertical.PNG",
+    position: [298, 600],
+    angle: 0,
+  },
+
+  /* -------------------------------------------- Row 8 ------------------------------------------- */
+  {
+    soulbind: "Pelagos",
+    src: "DiagonalShort.png",
+    position: [287, 710],
+    angle: 55,
+  },
+  {
+    soulbind: "Pelagos",
+    src: "DiagonalShort.png",
+    position: [305, 710],
+    angle: 305,
+  },
+
+  /* -------------------------------------------- Row 9 ------------------------------------------- */
+  {
+    soulbind: "Pelagos",
+    src: "Vertical.PNG",
+    position: [208, 740],
+    angle: 0,
+  },
+  {
+    soulbind: "Pelagos",
+    src: "Vertical.PNG",
+    position: [388, 740],
+    angle: 0,
+  },
+
+  /* ------------------------------------------- Row 10 ------------------------------------------- */
+  {
+    soulbind: "Pelagos",
+    src: "DiagonalShort.png",
+    position: [216, 860],
+    angle: 315,
+  },
+  {
+    soulbind: "Pelagos",
+    src: "DiagonalShort.png",
+    position: [380, 860],
+    angle: 45,
+  },
+
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                              Kleia                                             */
+  /* ---------------------------------------------------------------------------------------------- */
+
+  /* -------------------------------------------- Row 0 ------------------------------------------- */
   {
     soulbind: "Kleia",
     src: "DiagonalShort.png",
@@ -3151,6 +4875,8 @@ export const soulbindConnectors = [
     position: [305, 35],
     angle: 315,
   },
+
+  /* -------------------------------------------- Row 1 ------------------------------------------- */
   {
     soulbind: "Kleia",
     src: "Vertical.PNG",
@@ -3163,6 +4889,8 @@ export const soulbindConnectors = [
     position: [388, 100],
     angle: 0,
   },
+
+  /* -------------------------------------------- Row 2 ------------------------------------------- */
   {
     soulbind: "Kleia",
     src: "DiagonalShort.png",
@@ -3175,6 +4903,8 @@ export const soulbindConnectors = [
     position: [400, 198],
     angle: 55,
   },
+
+  /* -------------------------------------------- Row 3 ------------------------------------------- */
   {
     soulbind: "Kleia",
     src: "DiagonalShort.png",
@@ -3187,29 +4917,34 @@ export const soulbindConnectors = [
     position: [304, 275],
     angle: 315,
   },
+
+  /* -------------------------------------------- Row 4 ------------------------------------------- */
   {
     soulbind: "Kleia",
     src: "DiagonalShort.png",
     position: [215, 377],
-    angle: 315,
+    angle: 305,
   },
   {
     soulbind: "Kleia",
     src: "DiagonalShort.png",
     position: [380, 377],
+    angle: 55,
+  },
+
+  /* -------------------------------------------- Row 5 ------------------------------------------- */
+
+  {
+    soulbind: "Kleia",
+    src: "DiagonalShort.png",
+    position: [298, 435],
     angle: 45,
   },
   {
     soulbind: "Kleia",
     src: "DiagonalShort.png",
-    position: [298, 460],
-    angle: 55,
-  },
-  {
-    soulbind: "Kleia",
-    src: "DiagonalShort.png",
-    position: [298, 460],
-    angle: 305,
+    position: [298, 435],
+    angle: 315,
   },
   {
     soulbind: "Kleia",
@@ -3217,6 +4952,8 @@ export const soulbindConnectors = [
     position: [298, 435],
     angle: 0,
   },
+
+  /* -------------------------------------------- Row 6 ------------------------------------------- */
   {
     soulbind: "Kleia",
     src: "Vertical.PNG",
@@ -3236,7 +4973,73 @@ export const soulbindConnectors = [
     angle: 0,
   },
 
-  // Mikanikos
+  /* -------------------------------------------- Row 7 ------------------------------------------- */
+  {
+    soulbind: "Kleia",
+    src: "Vertical.PNG",
+    position: [298, 600],
+    angle: 0,
+  },
+  {
+    soulbind: "Kleia",
+    src: "DiagonalShort.png",
+    position: [216, 615],
+    angle: 315,
+  },
+  {
+    soulbind: "Kleia",
+    src: "DiagonalShort.png",
+    position: [380, 615],
+    angle: 45,
+  },
+
+  /* -------------------------------------------- Row 8 ------------------------------------------- */
+  {
+    soulbind: "Kleia",
+    src: "DiagonalShort.png",
+    position: [287, 710],
+    angle: 55,
+  },
+  {
+    soulbind: "Kleia",
+    src: "DiagonalShort.png",
+    position: [305, 710],
+    angle: 305,
+  },
+
+  /* -------------------------------------------- Row 9 ------------------------------------------- */
+  {
+    soulbind: "Kleia",
+    src: "Vertical.PNG",
+    position: [208, 740],
+    angle: 0,
+  },
+  {
+    soulbind: "Kleia",
+    src: "Vertical.PNG",
+    position: [388, 740],
+    angle: 0,
+  },
+
+  /* ------------------------------------------- Row 10 ------------------------------------------- */
+  {
+    soulbind: "Kleia",
+    src: "DiagonalShort.png",
+    position: [216, 860],
+    angle: 315,
+  },
+  {
+    soulbind: "Kleia",
+    src: "DiagonalShort.png",
+    position: [380, 860],
+    angle: 45,
+  },
+
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                            Mikanikos                                           */
+  /* ---------------------------------------------------------------------------------------------- */
+
+  /* -------------------------------------------- Row 0 ------------------------------------------- */
   {
     soulbind: "Mikanikos",
     src: "DiagonalShort.png",
@@ -3249,6 +5052,8 @@ export const soulbindConnectors = [
     position: [305, 35],
     angle: 315,
   },
+
+  /* -------------------------------------------- Row 1 ------------------------------------------- */
   {
     soulbind: "Mikanikos",
     src: "Vertical.PNG",
@@ -3261,6 +5066,8 @@ export const soulbindConnectors = [
     position: [388, 100],
     angle: 0,
   },
+
+  /* -------------------------------------------- Row 2 ------------------------------------------- */
   {
     soulbind: "Mikanikos",
     src: "DiagonalShort.png",
@@ -3274,6 +5081,8 @@ export const soulbindConnectors = [
     position: [400, 198],
     angle: 55,
   },
+
+  /* -------------------------------------------- Row 3 ------------------------------------------- */
   {
     soulbind: "Mikanikos",
     src: "DiagonalShort.png",
@@ -3286,29 +5095,34 @@ export const soulbindConnectors = [
     position: [304, 275],
     angle: 315,
   },
+
+  /* -------------------------------------------- Row 4 ------------------------------------------- */
   {
     soulbind: "Mikanikos",
     src: "DiagonalShort.png",
     position: [215, 377],
-    angle: 315,
+    angle: 305,
   },
   {
     soulbind: "Mikanikos",
     src: "DiagonalShort.png",
     position: [380, 377],
+    angle: 55,
+  },
+
+  /* -------------------------------------------- Row 5 ------------------------------------------- */
+
+  {
+    soulbind: "Mikanikos",
+    src: "DiagonalShort.png",
+    position: [298, 435],
     angle: 45,
   },
   {
     soulbind: "Mikanikos",
     src: "DiagonalShort.png",
-    position: [298, 460],
-    angle: 55,
-  },
-  {
-    soulbind: "Mikanikos",
-    src: "DiagonalShort.png",
-    position: [298, 460],
-    angle: 305,
+    position: [298, 435],
+    angle: 315,
   },
   {
     soulbind: "Mikanikos",
@@ -3316,6 +5130,8 @@ export const soulbindConnectors = [
     position: [298, 435],
     angle: 0,
   },
+
+  /* -------------------------------------------- Row 6 ------------------------------------------- */
   {
     soulbind: "Mikanikos",
     src: "Vertical.PNG",
@@ -3335,7 +5151,74 @@ export const soulbindConnectors = [
     angle: 0,
   },
 
-  // Niya
+  /* -------------------------------------------- Row 7 ------------------------------------------- */
+  {
+    soulbind: "Mikanikos",
+    src: "Vertical.PNG",
+    position: [298, 600],
+    angle: 0,
+  },
+  {
+    soulbind: "Mikanikos",
+    src: "DiagonalShort.png",
+    position: [216, 615],
+    angle: 315,
+  },
+  {
+    soulbind: "Mikanikos",
+    src: "DiagonalShort.png",
+    position: [380, 615],
+    angle: 45,
+  },
+
+  /* -------------------------------------------- Row 8 ------------------------------------------- */
+  {
+    soulbind: "Mikanikos",
+    src: "DiagonalShort.png",
+    position: [287, 710],
+    angle: 55,
+  },
+  {
+    soulbind: "Mikanikos",
+    src: "DiagonalShort.png",
+    position: [305, 710],
+    angle: 305,
+  },
+
+  /* -------------------------------------------- Row 9 ------------------------------------------- */
+  {
+    soulbind: "Mikanikos",
+    src: "Vertical.PNG",
+    position: [208, 740],
+    angle: 0,
+  },
+  {
+    soulbind: "Mikanikos",
+    src: "Vertical.PNG",
+    position: [388, 740],
+    angle: 0,
+  },
+
+  /* ------------------------------------------- Row 10 ------------------------------------------- */
+  {
+    soulbind: "Mikanikos",
+    src: "DiagonalShort.png",
+    position: [216, 860],
+    angle: 315,
+  },
+  {
+    soulbind: "Mikanikos",
+    src: "DiagonalShort.png",
+    position: [380, 860],
+    angle: 45,
+  },
+
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                              Niya                                              */
+  /* ---------------------------------------------------------------------------------------------- */
+
+  /* -------------------------------------------- Row 0 ------------------------------------------- */
+
   {
     soulbind: "Niya",
     src: "DiagonalShort.png",
@@ -3348,6 +5231,9 @@ export const soulbindConnectors = [
     position: [305, 35],
     angle: 315,
   },
+
+  /* -------------------------------------------- Row 1 ------------------------------------------- */
+
   {
     soulbind: "Niya",
     src: "Vertical.PNG",
@@ -3360,6 +5246,9 @@ export const soulbindConnectors = [
     position: [388, 100],
     angle: 0,
   },
+
+  /* -------------------------------------------- Row 2 ------------------------------------------- */
+
   {
     soulbind: "Niya",
     src: "DiagonalShort.png",
@@ -3373,6 +5262,9 @@ export const soulbindConnectors = [
     position: [400, 198],
     angle: 55,
   },
+
+  /* -------------------------------------------- Row 3 ------------------------------------------- */
+
   {
     soulbind: "Niya",
     src: "DiagonalShort.png",
@@ -3385,29 +5277,35 @@ export const soulbindConnectors = [
     position: [304, 275],
     angle: 315,
   },
+
+  /* -------------------------------------------- Row 4 ------------------------------------------- */
+
   {
     soulbind: "Niya",
     src: "DiagonalShort.png",
     position: [215, 377],
-    angle: 315,
+    angle: 305,
   },
   {
     soulbind: "Niya",
     src: "DiagonalShort.png",
     position: [380, 377],
+    angle: 55,
+  },
+
+  /* -------------------------------------------- Row 5 ------------------------------------------- */
+
+  {
+    soulbind: "Niya",
+    src: "DiagonalShort.png",
+    position: [298, 435],
     angle: 45,
   },
   {
     soulbind: "Niya",
     src: "DiagonalShort.png",
-    position: [298, 460],
-    angle: 55,
-  },
-  {
-    soulbind: "Niya",
-    src: "DiagonalShort.png",
-    position: [298, 460],
-    angle: 305,
+    position: [298, 435],
+    angle: 315,
   },
   {
     soulbind: "Niya",
@@ -3415,6 +5313,9 @@ export const soulbindConnectors = [
     position: [298, 435],
     angle: 0,
   },
+
+  /* -------------------------------------------- Row 6 ------------------------------------------- */
+
   {
     soulbind: "Niya",
     src: "Vertical.PNG",
@@ -3434,695 +5335,73 @@ export const soulbindConnectors = [
     angle: 0,
   },
 
-  // Korayn
+  /* -------------------------------------------- Row 7 ------------------------------------------- */
   {
-    soulbind: "Korayn",
-    src: "DiagonalShort.png",
-    position: [287, 35],
-    angle: 45,
+    soulbind: "Niya",
+    src: "Vertical.PNG",
+    position: [298, 600],
+    angle: 0,
   },
   {
-    soulbind: "Korayn",
+    soulbind: "Niya",
     src: "DiagonalShort.png",
-    position: [305, 35],
+    position: [216, 615],
     angle: 315,
   },
   {
-    soulbind: "Korayn",
-    src: "Vertical.PNG",
-    position: [208, 100],
-    angle: 0,
-  },
-  {
-    soulbind: "Korayn",
-    src: "Vertical.PNG",
-    position: [388, 100],
-    angle: 0,
-  },
-  {
-    soulbind: "Korayn",
+    soulbind: "Niya",
     src: "DiagonalShort.png",
-    position: [202, 198],
-    angle: 305,
+    position: [380, 615],
+    angle: 45,
   },
 
+  /* -------------------------------------------- Row 8 ------------------------------------------- */
   {
-    soulbind: "Korayn",
+    soulbind: "Niya",
     src: "DiagonalShort.png",
-    position: [400, 198],
+    position: [287, 710],
     angle: 55,
   },
   {
-    soulbind: "Korayn",
+    soulbind: "Niya",
     src: "DiagonalShort.png",
-    position: [294, 275],
-    angle: 45,
-  },
-  {
-    soulbind: "Korayn",
-    src: "DiagonalShort.png",
-    position: [304, 275],
-    angle: 315,
-  },
-  {
-    soulbind: "Korayn",
-    src: "DiagonalShort.png",
-    position: [215, 377],
-    angle: 315,
-  },
-  {
-    soulbind: "Korayn",
-    src: "DiagonalShort.png",
-    position: [380, 377],
-    angle: 45,
-  },
-  {
-    soulbind: "Korayn",
-    src: "DiagonalShort.png",
-    position: [298, 460],
-    angle: 55,
-  },
-  {
-    soulbind: "Korayn",
-    src: "DiagonalShort.png",
-    position: [298, 460],
-    angle: 305,
-  },
-  {
-    soulbind: "Korayn",
-    src: "Vertical.PNG",
-    position: [298, 435],
-    angle: 0,
-  },
-  {
-    soulbind: "Korayn",
-    src: "Vertical.PNG",
-    position: [298, 510],
-    angle: 0,
-  },
-  {
-    soulbind: "Korayn",
-    src: "Vertical.PNG",
-    position: [208, 494],
-    angle: 0,
-  },
-  {
-    soulbind: "Korayn",
-    src: "Vertical.PNG",
-    position: [388, 494],
-    angle: 0,
-  },
-
-  // Theotar
-  {
-    soulbind: "Nadjia",
-    src: "DiagonalShort.png",
-    position: [287, 35],
-    angle: 45,
-  },
-  {
-    soulbind: "Nadjia",
-    src: "DiagonalShort.png",
-    position: [305, 35],
-    angle: 315,
-  },
-  {
-    soulbind: "Nadjia",
-    src: "Vertical.PNG",
-    position: [208, 100],
-    angle: 0,
-  },
-  {
-    soulbind: "Nadjia",
-    src: "Vertical.PNG",
-    position: [388, 100],
-    angle: 0,
-  },
-  {
-    soulbind: "Nadjia",
-    src: "DiagonalShort.png",
-    position: [202, 198],
+    position: [305, 710],
     angle: 305,
   },
 
+  /* -------------------------------------------- Row 9 ------------------------------------------- */
   {
-    soulbind: "Nadjia",
-    src: "DiagonalShort.png",
-    position: [400, 198],
-    angle: 55,
+    soulbind: "Niya",
+    src: "Vertical.PNG",
+    position: [208, 740],
+    angle: 0,
   },
   {
-    soulbind: "Nadjia",
+    soulbind: "Niya",
     src: "Vertical.PNG",
-    position: [298, 250],
+    position: [388, 740],
     angle: 0,
   },
 
+  /* ------------------------------------------- Row 10 ------------------------------------------- */
   {
-    soulbind: "Nadjia",
-    src: "Vertical.PNG",
-    position: [298, 350],
-    angle: 0,
-  },
-
-  {
-    soulbind: "Nadjia",
+    soulbind: "Niya",
     src: "DiagonalShort.png",
-    position: [298, 460],
-    angle: 55,
-  },
-  {
-    soulbind: "Nadjia",
-    src: "DiagonalShort.png",
-    position: [298, 460],
-    angle: 305,
-  },
-  {
-    soulbind: "Nadjia",
-    src: "Vertical.PNG",
-    position: [298, 435],
-    angle: 0,
-  },
-  {
-    soulbind: "Nadjia",
-    src: "Vertical.PNG",
-    position: [298, 510],
-    angle: 0,
-  },
-  {
-    soulbind: "Nadjia",
-    src: "Vertical.PNG",
-    position: [208, 494],
-    angle: 0,
-  },
-  {
-    soulbind: "Nadjia",
-    src: "Vertical.PNG",
-    position: [388, 494],
-    angle: 0,
-  },
-
-  // Theotar
-  {
-    soulbind: "Theotar",
-    src: "DiagonalShort.png",
-    position: [287, 35],
-    angle: 45,
-  },
-  {
-    soulbind: "Theotar",
-    src: "DiagonalShort.png",
-    position: [305, 35],
+    position: [216, 860],
     angle: 315,
   },
   {
-    soulbind: "Theotar",
-    src: "Vertical.PNG",
-    position: [208, 100],
-    angle: 0,
-  },
-  {
-    soulbind: "Theotar",
-    src: "Vertical.PNG",
-    position: [388, 100],
-    angle: 0,
-  },
-  {
-    soulbind: "Theotar",
+    soulbind: "Niya",
     src: "DiagonalShort.png",
-    position: [202, 198],
-    angle: 305,
-  },
-
-  {
-    soulbind: "Theotar",
-    src: "DiagonalShort.png",
-    position: [400, 198],
-    angle: 55,
-  },
-  {
-    soulbind: "Theotar",
-    src: "DiagonalShort.png",
-    position: [294, 275],
-    angle: 45,
-  },
-  {
-    soulbind: "Theotar",
-    src: "DiagonalShort.png",
-    position: [304, 275],
-    angle: 315,
-  },
-  {
-    soulbind: "Theotar",
-    src: "DiagonalShort.png",
-    position: [215, 377],
-    angle: 315,
-  },
-  {
-    soulbind: "Theotar",
-    src: "DiagonalShort.png",
-    position: [380, 377],
-    angle: 45,
-  },
-  {
-    soulbind: "Theotar",
-    src: "DiagonalShort.png",
-    position: [298, 460],
-    angle: 55,
-  },
-  {
-    soulbind: "Theotar",
-    src: "DiagonalShort.png",
-    position: [298, 460],
-    angle: 305,
-  },
-  {
-    soulbind: "Theotar",
-    src: "Vertical.PNG",
-    position: [298, 435],
-    angle: 0,
-  },
-  {
-    soulbind: "Theotar",
-    src: "Vertical.PNG",
-    position: [298, 510],
-    angle: 0,
-  },
-  {
-    soulbind: "Theotar",
-    src: "Vertical.PNG",
-    position: [208, 494],
-    angle: 0,
-  },
-  {
-    soulbind: "Theotar",
-    src: "Vertical.PNG",
-    position: [388, 494],
-    angle: 0,
-  },
-
-  // Draven
-  {
-    soulbind: "Draven",
-    src: "DiagonalShort.png",
-    position: [287, 35],
-    angle: 45,
-  },
-  {
-    soulbind: "Draven",
-    src: "DiagonalShort.png",
-    position: [305, 35],
-    angle: 315,
-  },
-  {
-    soulbind: "Draven",
-    src: "Vertical.PNG",
-    position: [208, 100],
-    angle: 0,
-  },
-  {
-    soulbind: "Draven",
-    src: "Vertical.PNG",
-    position: [388, 100],
-    angle: 0,
-  },
-  {
-    soulbind: "Draven",
-    src: "DiagonalShort.png",
-    position: [202, 198],
-    angle: 305,
-  },
-
-  {
-    soulbind: "Draven",
-    src: "DiagonalShort.png",
-    position: [400, 198],
-    angle: 55,
-  },
-  {
-    soulbind: "Draven",
-    src: "DiagonalShort.png",
-    position: [294, 275],
-    angle: 45,
-  },
-  {
-    soulbind: "Draven",
-    src: "DiagonalShort.png",
-    position: [304, 275],
-    angle: 315,
-  },
-  {
-    soulbind: "Draven",
-    src: "DiagonalShort.png",
-    position: [215, 377],
-    angle: 315,
-  },
-  {
-    soulbind: "Draven",
-    src: "DiagonalShort.png",
-    position: [380, 377],
-    angle: 45,
-  },
-  {
-    soulbind: "Draven",
-    src: "DiagonalShort.png",
-    position: [298, 460],
-    angle: 55,
-  },
-  {
-    soulbind: "Draven",
-    src: "DiagonalShort.png",
-    position: [298, 460],
-    angle: 305,
-  },
-  {
-    soulbind: "Draven",
-    src: "Vertical.PNG",
-    position: [298, 435],
-    angle: 0,
-  },
-  {
-    soulbind: "Draven",
-    src: "Vertical.PNG",
-    position: [298, 510],
-    angle: 0,
-  },
-  {
-    soulbind: "Draven",
-    src: "Vertical.PNG",
-    position: [208, 494],
-    angle: 0,
-  },
-  {
-    soulbind: "Draven",
-    src: "Vertical.PNG",
-    position: [388, 494],
-    angle: 0,
-  },
-
-  // Emeni
-  {
-    soulbind: "Emeni",
-    src: "DiagonalShort.png",
-    position: [287, 35],
-    angle: 45,
-  },
-  {
-    soulbind: "Emeni",
-    src: "DiagonalShort.png",
-    position: [305, 35],
-    angle: 315,
-  },
-  {
-    soulbind: "Emeni",
-    src: "Vertical.PNG",
-    position: [208, 100],
-    angle: 0,
-  },
-  {
-    soulbind: "Emeni",
-    src: "Vertical.PNG",
-    position: [388, 100],
-    angle: 0,
-  },
-  {
-    soulbind: "Emeni",
-    src: "DiagonalShort.png",
-    position: [202, 198],
-    angle: 305,
-  },
-
-  {
-    soulbind: "Emeni",
-    src: "DiagonalShort.png",
-    position: [400, 198],
-    angle: 55,
-  },
-  {
-    soulbind: "Emeni",
-    src: "DiagonalShort.png",
-    position: [294, 275],
-    angle: 45,
-  },
-  {
-    soulbind: "Emeni",
-    src: "DiagonalShort.png",
-    position: [304, 275],
-    angle: 315,
-  },
-  {
-    soulbind: "Emeni",
-    src: "DiagonalShort.png",
-    position: [215, 377],
-    angle: 315,
-  },
-  {
-    soulbind: "Emeni",
-    src: "DiagonalShort.png",
-    position: [380, 377],
-    angle: 45,
-  },
-  {
-    soulbind: "Emeni",
-    src: "DiagonalShort.png",
-    position: [298, 460],
-    angle: 55,
-  },
-  {
-    soulbind: "Emeni",
-    src: "DiagonalShort.png",
-    position: [298, 460],
-    angle: 305,
-  },
-  {
-    soulbind: "Emeni",
-    src: "Vertical.PNG",
-    position: [298, 435],
-    angle: 0,
-  },
-  {
-    soulbind: "Emeni",
-    src: "Vertical.PNG",
-    position: [298, 510],
-    angle: 0,
-  },
-  {
-    soulbind: "Emeni",
-    src: "Vertical.PNG",
-    position: [208, 494],
-    angle: 0,
-  },
-  {
-    soulbind: "Emeni",
-    src: "Vertical.PNG",
-    position: [388, 494],
-    angle: 0,
-  },
-
-  // Emeni
-  {
-    soulbind: "Heirmir",
-    src: "DiagonalShort.png",
-    position: [287, 35],
-    angle: 45,
-  },
-  {
-    soulbind: "Heirmir",
-    src: "DiagonalShort.png",
-    position: [305, 35],
-    angle: 315,
-  },
-  {
-    soulbind: "Heirmir",
-    src: "Vertical.PNG",
-    position: [208, 100],
-    angle: 0,
-  },
-  {
-    soulbind: "Heirmir",
-    src: "Vertical.PNG",
-    position: [388, 100],
-    angle: 0,
-  },
-  {
-    soulbind: "Heirmir",
-    src: "DiagonalShort.png",
-    position: [202, 198],
-    angle: 305,
-  },
-
-  {
-    soulbind: "Heirmir",
-    src: "DiagonalShort.png",
-    position: [400, 198],
-    angle: 55,
-  },
-  {
-    soulbind: "Heirmir",
-    src: "DiagonalShort.png",
-    position: [294, 275],
-    angle: 45,
-  },
-  {
-    soulbind: "Heirmir",
-    src: "DiagonalShort.png",
-    position: [304, 275],
-    angle: 315,
-  },
-  {
-    soulbind: "Heirmir",
-    src: "DiagonalShort.png",
-    position: [215, 377],
-    angle: 315,
-  },
-  {
-    soulbind: "Heirmir",
-    src: "DiagonalShort.png",
-    position: [380, 377],
-    angle: 45,
-  },
-  {
-    soulbind: "Heirmir",
-    src: "DiagonalShort.png",
-    position: [298, 460],
-    angle: 55,
-  },
-  {
-    soulbind: "Heirmir",
-    src: "DiagonalShort.png",
-    position: [298, 460],
-    angle: 305,
-  },
-  {
-    soulbind: "Heirmir",
-    src: "Vertical.PNG",
-    position: [298, 435],
-    angle: 0,
-  },
-  {
-    soulbind: "Heirmir",
-    src: "Vertical.PNG",
-    position: [298, 510],
-    angle: 0,
-  },
-  {
-    soulbind: "Heirmir",
-    src: "Vertical.PNG",
-    position: [208, 494],
-    angle: 0,
-  },
-  {
-    soulbind: "Heirmir",
-    src: "Vertical.PNG",
-    position: [388, 494],
-    angle: 0,
-  },
-
-  // Marileth
-  {
-    soulbind: "Marileth",
-    src: "Vertical.PNG",
-    position: [298, 10],
-    angle: 0,
-  },
-  {
-    soulbind: "Marileth",
-    src: "DiagonalShort.png",
-    position: [287, 35],
-    angle: 45,
-  },
-  {
-    soulbind: "Marileth",
-    src: "DiagonalShort.png",
-    position: [305, 35],
-    angle: 315,
-  },
-  {
-    soulbind: "Marileth",
-    src: "Vertical.PNG",
-    position: [208, 100],
-    angle: 0,
-  },
-  {
-    soulbind: "Marileth",
-    src: "Vertical.PNG",
-    position: [298, 85],
-    angle: 0,
-  },
-  {
-    soulbind: "Marileth",
-    src: "Vertical.PNG",
-    position: [388, 100],
-    angle: 0,
-  },
-  {
-    soulbind: "Marileth",
-    src: "DiagonalShort.png",
-    position: [202, 198],
-    angle: 305,
-  },
-  {
-    soulbind: "Marileth",
-    src: "Vertical.PNG",
-    position: [298, 165],
-    angle: 0,
-  },
-  {
-    soulbind: "Marileth",
-    src: "DiagonalShort.png",
-    position: [400, 198],
-    angle: 55,
-  },
-  {
-    soulbind: "Marileth",
-    src: "DiagonalShort.png",
-    position: [294, 275],
-    angle: 45,
-  },
-  {
-    soulbind: "Marileth",
-    src: "DiagonalShort.png",
-    position: [304, 275],
-    angle: 315,
-  },
-  {
-    soulbind: "Marileth",
-    src: "DiagonalShort.png",
-    position: [215, 377],
-    angle: 315,
-  },
-  {
-    soulbind: "Marileth",
-    src: "DiagonalShort.png",
-    position: [380, 377],
-    angle: 45,
-  },
-  {
-    soulbind: "Marileth",
-    src: "DiagonalShort.png",
-    position: [298, 460],
-    angle: 55,
-  },
-  {
-    soulbind: "Marileth",
-    src: "DiagonalShort.png",
-    position: [298, 460],
-    angle: 305,
-  },
-  {
-    soulbind: "Marileth",
-    src: "DiagonalShort.png",
-    position: [216, 533],
-    angle: 315,
-  },
-  {
-    soulbind: "Marileth",
-    src: "DiagonalShort.png",
-    position: [380, 533],
+    position: [380, 860],
     angle: 45,
   },
 
-  // Dreamweaver
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                           Dreamweaver                                          */
+  /* ---------------------------------------------------------------------------------------------- */
+
+  /* -------------------------------------------- Row 0 ------------------------------------------- */
   {
     soulbind: "Dreamweaver",
     src: "DiagonalShort.png",
@@ -4135,6 +5414,8 @@ export const soulbindConnectors = [
     position: [305, 35],
     angle: 315,
   },
+
+  /* -------------------------------------------- Row 1 ------------------------------------------- */
   {
     soulbind: "Dreamweaver",
     src: "DiagonalShort.png",
@@ -4147,6 +5428,8 @@ export const soulbindConnectors = [
     position: [395, 118],
     angle: 55,
   },
+
+  /* -------------------------------------------- Row 2 ------------------------------------------- */
   {
     soulbind: "Dreamweaver",
     src: "DiagonalShort.png",
@@ -4165,6 +5448,8 @@ export const soulbindConnectors = [
     position: [298, 160],
     angle: 0,
   },
+
+  /* -------------------------------------------- Row 3 ------------------------------------------- */
   {
     soulbind: "Dreamweaver",
     src: "Vertical.PNG",
@@ -4174,7 +5459,7 @@ export const soulbindConnectors = [
   {
     soulbind: "Dreamweaver",
     src: "Vertical.PNG",
-    position: [298, 255],
+    position: [298, 235],
     angle: 0,
   },
   {
@@ -4183,36 +5468,42 @@ export const soulbindConnectors = [
     position: [388, 255],
     angle: 0,
   },
+
+  /* -------------------------------------------- Row 4 ------------------------------------------- */
   {
     soulbind: "Dreamweaver",
     src: "Vertical.PNG",
-    position: [298, 350],
+    position: [298, 315],
     angle: 0,
   },
   {
     soulbind: "Dreamweaver",
     src: "DiagonalShort.png",
-    position: [215, 377],
-    angle: 315,
+    position: [206, 365],
+    angle: 305,
   },
   {
     soulbind: "Dreamweaver",
     src: "DiagonalShort.png",
-    position: [380, 377],
+    position: [395, 365],
+    angle: 55,
+  },
+
+  /* -------------------------------------------- Row 5 ------------------------------------------- */
+  {
+    soulbind: "Dreamweaver",
+    src: "DiagonalShort.png",
+    position: [298, 435],
     angle: 45,
   },
   {
     soulbind: "Dreamweaver",
     src: "DiagonalShort.png",
-    position: [298, 460],
-    angle: 55,
+    position: [298, 435],
+    angle: 315,
   },
-  {
-    soulbind: "Dreamweaver",
-    src: "DiagonalShort.png",
-    position: [298, 460],
-    angle: 305,
-  },
+
+  /* -------------------------------------------- Row 6 ------------------------------------------- */
   {
     soulbind: "Dreamweaver",
     src: "DiagonalShort.png",
@@ -4223,6 +5514,1283 @@ export const soulbindConnectors = [
     soulbind: "Dreamweaver",
     src: "DiagonalShort.png",
     position: [380, 533],
+    angle: 45,
+  },
+
+  /* -------------------------------------------- Row 7 ------------------------------------------- */
+  {
+    soulbind: "Dreamweaver",
+    src: "Vertical.PNG",
+    position: [298, 600],
+    angle: 0,
+  },
+
+  /* -------------------------------------------- Row 8 ------------------------------------------- */
+  {
+    soulbind: "Dreamweaver",
+    src: "DiagonalShort.png",
+    position: [287, 710],
+    angle: 55,
+  },
+  {
+    soulbind: "Dreamweaver",
+    src: "DiagonalShort.png",
+    position: [305, 710],
+    angle: 305,
+  },
+
+  /* -------------------------------------------- Row 9 ------------------------------------------- */
+  {
+    soulbind: "Dreamweaver",
+    src: "Vertical.PNG",
+    position: [208, 740],
+    angle: 0,
+  },
+  {
+    soulbind: "Dreamweaver",
+    src: "Vertical.PNG",
+    position: [388, 740],
+    angle: 0,
+  },
+
+  /* ------------------------------------------- Row 10 ------------------------------------------- */
+  {
+    soulbind: "Dreamweaver",
+    src: "DiagonalShort.png",
+    position: [216, 860],
+    angle: 315,
+  },
+  {
+    soulbind: "Dreamweaver",
+    src: "DiagonalShort.png",
+    position: [380, 860],
+    angle: 45,
+  },
+
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                             Korayn                                             */
+  /* ---------------------------------------------------------------------------------------------- */
+
+  /* -------------------------------------------- Row 0 ------------------------------------------- */
+  {
+    soulbind: "Korayn",
+    src: "DiagonalShort.png",
+    position: [287, 35],
+    angle: 45,
+  },
+  {
+    soulbind: "Korayn",
+    src: "DiagonalShort.png",
+    position: [305, 35],
+    angle: 315,
+  },
+
+  /* -------------------------------------------- Row 1 ------------------------------------------- */
+  {
+    soulbind: "Korayn",
+    src: "Vertical.PNG",
+    position: [208, 100],
+    angle: 0,
+  },
+  {
+    soulbind: "Korayn",
+    src: "Vertical.PNG",
+    position: [388, 100],
+    angle: 0,
+  },
+
+  /* -------------------------------------------- Row 2 ------------------------------------------- */
+  {
+    soulbind: "Korayn",
+    src: "DiagonalShort.png",
+    position: [202, 198],
+    angle: 305,
+  },
+
+  {
+    soulbind: "Korayn",
+    src: "DiagonalShort.png",
+    position: [400, 198],
+    angle: 55,
+  },
+
+  /* -------------------------------------------- Row 3 ------------------------------------------- */
+  {
+    soulbind: "Korayn",
+    src: "DiagonalShort.png",
+    position: [294, 275],
+    angle: 45,
+  },
+  {
+    soulbind: "Korayn",
+    src: "DiagonalShort.png",
+    position: [304, 275],
+    angle: 315,
+  },
+
+  /* -------------------------------------------- Row 4 ------------------------------------------- */
+  {
+    soulbind: "Korayn",
+    src: "DiagonalShort.png",
+    position: [215, 377],
+    angle: 305,
+  },
+  {
+    soulbind: "Korayn",
+    src: "DiagonalShort.png",
+    position: [380, 377],
+    angle: 55,
+  },
+
+  /* -------------------------------------------- Row 5 ------------------------------------------- */
+  {
+    soulbind: "Korayn",
+    src: "DiagonalShort.png",
+    position: [298, 435],
+    angle: 45,
+  },
+  {
+    soulbind: "Korayn",
+    src: "DiagonalShort.png",
+    position: [298, 435],
+    angle: 315,
+  },
+  {
+    soulbind: "Korayn",
+    src: "Vertical.PNG",
+    position: [298, 435],
+    angle: 0,
+  },
+
+  /* -------------------------------------------- Row 6 ------------------------------------------- */
+  {
+    soulbind: "Korayn",
+    src: "Vertical.PNG",
+    position: [298, 510],
+    angle: 0,
+  },
+  {
+    soulbind: "Korayn",
+    src: "Vertical.PNG",
+    position: [208, 494],
+    angle: 0,
+  },
+  {
+    soulbind: "Korayn",
+    src: "Vertical.PNG",
+    position: [388, 494],
+    angle: 0,
+  },
+
+  /* -------------------------------------------- Row 7 ------------------------------------------- */
+  {
+    soulbind: "Korayn",
+    src: "Vertical.PNG",
+    position: [298, 600],
+    angle: 0,
+  },
+  {
+    soulbind: "Korayn",
+    src: "DiagonalShort.png",
+    position: [216, 615],
+    angle: 315,
+  },
+  {
+    soulbind: "Korayn",
+    src: "DiagonalShort.png",
+    position: [380, 615],
+    angle: 45,
+  },
+
+  /* -------------------------------------------- Row 8 ------------------------------------------- */
+  {
+    soulbind: "Korayn",
+    src: "DiagonalShort.png",
+    position: [287, 710],
+    angle: 55,
+  },
+  {
+    soulbind: "Korayn",
+    src: "DiagonalShort.png",
+    position: [305, 710],
+    angle: 305,
+  },
+
+  /* -------------------------------------------- Row 9 ------------------------------------------- */
+  {
+    soulbind: "Korayn",
+    src: "Vertical.PNG",
+    position: [208, 740],
+    angle: 0,
+  },
+  {
+    soulbind: "Korayn",
+    src: "Vertical.PNG",
+    position: [388, 740],
+    angle: 0,
+  },
+
+  /* ------------------------------------------- Row 10 ------------------------------------------- */
+  {
+    soulbind: "Korayn",
+    src: "DiagonalShort.png",
+    position: [216, 860],
+    angle: 315,
+  },
+  {
+    soulbind: "Korayn",
+    src: "DiagonalShort.png",
+    position: [380, 860],
+    angle: 45,
+  },
+
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                             Theotar                                            */
+  /* ---------------------------------------------------------------------------------------------- */
+
+  /* -------------------------------------------- Row 0 ------------------------------------------- */
+  {
+    soulbind: "Nadjia",
+    src: "DiagonalShort.png",
+    position: [287, 35],
+    angle: 45,
+  },
+  {
+    soulbind: "Nadjia",
+    src: "DiagonalShort.png",
+    position: [305, 35],
+    angle: 315,
+  },
+
+  /* -------------------------------------------- Row 1 ------------------------------------------- */
+  {
+    soulbind: "Nadjia",
+    src: "Vertical.PNG",
+    position: [208, 100],
+    angle: 0,
+  },
+  {
+    soulbind: "Nadjia",
+    src: "Vertical.PNG",
+    position: [388, 100],
+    angle: 0,
+  },
+
+  /* -------------------------------------------- Row 2 ------------------------------------------- */
+  {
+    soulbind: "Nadjia",
+    src: "DiagonalShort.png",
+    position: [202, 198],
+    angle: 305,
+  },
+
+  {
+    soulbind: "Nadjia",
+    src: "DiagonalShort.png",
+    position: [400, 198],
+    angle: 55,
+  },
+
+  /* -------------------------------------------- Row 3 ------------------------------------------- */
+  {
+    soulbind: "Nadjia",
+    src: "Vertical.PNG",
+    position: [298, 250],
+    angle: 0,
+  },
+
+  /* -------------------------------------------- Row 4 ------------------------------------------- */
+  {
+    soulbind: "Nadjia",
+    src: "Vertical.PNG",
+    position: [298, 350],
+    angle: 0,
+  },
+
+  /* -------------------------------------------- Row 5 ------------------------------------------- */
+  {
+    soulbind: "Nadjia",
+    src: "DiagonalShort.png",
+    position: [298, 435],
+    angle: 45,
+  },
+  {
+    soulbind: "Nadjia",
+    src: "DiagonalShort.png",
+    position: [298, 435],
+    angle: 315,
+  },
+  {
+    soulbind: "Nadjia",
+    src: "Vertical.PNG",
+    position: [298, 435],
+    angle: 0,
+  },
+
+  /* -------------------------------------------- Row 6 ------------------------------------------- */
+  {
+    soulbind: "Nadjia",
+    src: "Vertical.PNG",
+    position: [298, 510],
+    angle: 0,
+  },
+  {
+    soulbind: "Nadjia",
+    src: "Vertical.PNG",
+    position: [208, 494],
+    angle: 0,
+  },
+  {
+    soulbind: "Nadjia",
+    src: "Vertical.PNG",
+    position: [388, 494],
+    angle: 0,
+  },
+
+  /* -------------------------------------------- Row 7 ------------------------------------------- */
+  {
+    soulbind: "Nadjia",
+    src: "Vertical.PNG",
+    position: [298, 600],
+    angle: 0,
+  },
+  {
+    soulbind: "Nadjia",
+    src: "DiagonalShort.png",
+    position: [216, 615],
+    angle: 315,
+  },
+  {
+    soulbind: "Nadjia",
+    src: "DiagonalShort.png",
+    position: [380, 615],
+    angle: 45,
+  },
+
+  /* -------------------------------------------- Row 8 ------------------------------------------- */
+  {
+    soulbind: "Nadjia",
+    src: "DiagonalShort.png",
+    position: [287, 710],
+    angle: 55,
+  },
+  {
+    soulbind: "Nadjia",
+    src: "DiagonalShort.png",
+    position: [305, 710],
+    angle: 305,
+  },
+
+  /* -------------------------------------------- Row 9 ------------------------------------------- */
+  {
+    soulbind: "Nadjia",
+    src: "Vertical.PNG",
+    position: [208, 740],
+    angle: 0,
+  },
+  {
+    soulbind: "Nadjia",
+    src: "Vertical.PNG",
+    position: [388, 740],
+    angle: 0,
+  },
+
+  /* ------------------------------------------- Row 10 ------------------------------------------- */
+  {
+    soulbind: "Nadjia",
+    src: "DiagonalShort.png",
+    position: [216, 860],
+    angle: 315,
+  },
+  {
+    soulbind: "Nadjia",
+    src: "DiagonalShort.png",
+    position: [380, 860],
+    angle: 45,
+  },
+
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                             Theotar                                            */
+  /* ---------------------------------------------------------------------------------------------- */
+
+  /* -------------------------------------------- Row 0 ------------------------------------------- */
+  {
+    soulbind: "Theotar",
+    src: "DiagonalShort.png",
+    position: [287, 35],
+    angle: 45,
+  },
+  {
+    soulbind: "Theotar",
+    src: "DiagonalShort.png",
+    position: [305, 35],
+    angle: 315,
+  },
+
+  /* -------------------------------------------- Row 1 ------------------------------------------- */
+  {
+    soulbind: "Theotar",
+    src: "Vertical.PNG",
+    position: [208, 100],
+    angle: 0,
+  },
+  {
+    soulbind: "Theotar",
+    src: "Vertical.PNG",
+    position: [388, 100],
+    angle: 0,
+  },
+
+  /* -------------------------------------------- Row 2 ------------------------------------------- */
+  {
+    soulbind: "Theotar",
+    src: "DiagonalShort.png",
+    position: [202, 198],
+    angle: 305,
+  },
+
+  {
+    soulbind: "Theotar",
+    src: "DiagonalShort.png",
+    position: [400, 198],
+    angle: 55,
+  },
+
+  /* -------------------------------------------- Row 3 ------------------------------------------- */
+  {
+    soulbind: "Theotar",
+    src: "DiagonalShort.png",
+    position: [294, 275],
+    angle: 45,
+  },
+  {
+    soulbind: "Theotar",
+    src: "DiagonalShort.png",
+    position: [304, 275],
+    angle: 315,
+  },
+
+  /* -------------------------------------------- Row 4 ------------------------------------------- */
+  {
+    soulbind: "Theotar",
+    src: "DiagonalShort.png",
+    position: [215, 377],
+    angle: 305,
+  },
+  {
+    soulbind: "Theotar",
+    src: "DiagonalShort.png",
+    position: [380, 377],
+    angle: 55,
+  },
+
+  /* -------------------------------------------- Row 5 ------------------------------------------- */
+  {
+    soulbind: "Theotar",
+    src: "DiagonalShort.png",
+    position: [298, 435],
+    angle: 45,
+  },
+  {
+    soulbind: "Theotar",
+    src: "DiagonalShort.png",
+    position: [298, 435],
+    angle: 315,
+  },
+  {
+    soulbind: "Theotar",
+    src: "Vertical.PNG",
+    position: [298, 435],
+    angle: 0,
+  },
+
+  /* -------------------------------------------- Row 6 ------------------------------------------- */
+  {
+    soulbind: "Theotar",
+    src: "Vertical.PNG",
+    position: [298, 510],
+    angle: 0,
+  },
+  {
+    soulbind: "Theotar",
+    src: "Vertical.PNG",
+    position: [208, 494],
+    angle: 0,
+  },
+  {
+    soulbind: "Theotar",
+    src: "Vertical.PNG",
+    position: [388, 494],
+    angle: 0,
+  },
+
+  /* -------------------------------------------- Row 7 ------------------------------------------- */
+  {
+    soulbind: "Theotar",
+    src: "Vertical.PNG",
+    position: [298, 600],
+    angle: 0,
+  },
+  {
+    soulbind: "Theotar",
+    src: "DiagonalShort.png",
+    position: [216, 615],
+    angle: 315,
+  },
+  {
+    soulbind: "Theotar",
+    src: "DiagonalShort.png",
+    position: [380, 615],
+    angle: 45,
+  },
+
+  /* -------------------------------------------- Row 8 ------------------------------------------- */
+  {
+    soulbind: "Theotar",
+    src: "DiagonalShort.png",
+    position: [287, 710],
+    angle: 55,
+  },
+  {
+    soulbind: "Theotar",
+    src: "DiagonalShort.png",
+    position: [305, 710],
+    angle: 305,
+  },
+
+  /* -------------------------------------------- Row 9 ------------------------------------------- */
+  {
+    soulbind: "Theotar",
+    src: "Vertical.PNG",
+    position: [208, 740],
+    angle: 0,
+  },
+  {
+    soulbind: "Theotar",
+    src: "Vertical.PNG",
+    position: [388, 740],
+    angle: 0,
+  },
+
+  /* ------------------------------------------- Row 10 ------------------------------------------- */
+  {
+    soulbind: "Theotar",
+    src: "DiagonalShort.png",
+    position: [216, 860],
+    angle: 315,
+  },
+  {
+    soulbind: "Theotar",
+    src: "DiagonalShort.png",
+    position: [380, 860],
+    angle: 45,
+  },
+
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                             Draven                                             */
+  /* ---------------------------------------------------------------------------------------------- */
+
+  /* -------------------------------------------- Row 0 ------------------------------------------- */
+
+  {
+    soulbind: "Draven",
+    src: "DiagonalShort.png",
+    position: [287, 35],
+    angle: 45,
+  },
+  {
+    soulbind: "Draven",
+    src: "DiagonalShort.png",
+    position: [305, 35],
+    angle: 315,
+  },
+
+  /* -------------------------------------------- Row 1 ------------------------------------------- */
+
+  {
+    soulbind: "Draven",
+    src: "Vertical.PNG",
+    position: [208, 100],
+    angle: 0,
+  },
+  {
+    soulbind: "Draven",
+    src: "Vertical.PNG",
+    position: [388, 100],
+    angle: 0,
+  },
+
+  /* -------------------------------------------- Row 2 ------------------------------------------- */
+
+  {
+    soulbind: "Draven",
+    src: "DiagonalShort.png",
+    position: [202, 198],
+    angle: 305,
+  },
+
+  {
+    soulbind: "Draven",
+    src: "DiagonalShort.png",
+    position: [400, 198],
+    angle: 55,
+  },
+
+  /* -------------------------------------------- Row 3 ------------------------------------------- */
+
+  {
+    soulbind: "Draven",
+    src: "DiagonalShort.png",
+    position: [294, 275],
+    angle: 45,
+  },
+  {
+    soulbind: "Draven",
+    src: "DiagonalShort.png",
+    position: [304, 275],
+    angle: 315,
+  },
+
+  /* -------------------------------------------- Row 4 ------------------------------------------- */
+  {
+    soulbind: "Draven",
+    src: "DiagonalShort.png",
+    position: [215, 377],
+    angle: 305,
+  },
+  {
+    soulbind: "Draven",
+    src: "DiagonalShort.png",
+    position: [380, 377],
+    angle: 55,
+  },
+
+  /* -------------------------------------------- Row 5 ------------------------------------------- */
+  {
+    soulbind: "Draven",
+    src: "DiagonalShort.png",
+    position: [298, 435],
+    angle: 45,
+  },
+  {
+    soulbind: "Draven",
+    src: "DiagonalShort.png",
+    position: [298, 435],
+    angle: 315,
+  },
+  {
+    soulbind: "Draven",
+    src: "Vertical.PNG",
+    position: [298, 435],
+    angle: 0,
+  },
+
+  /* -------------------------------------------- Row 6 ------------------------------------------- */
+  {
+    soulbind: "Draven",
+    src: "Vertical.PNG",
+    position: [298, 510],
+    angle: 0,
+  },
+  {
+    soulbind: "Draven",
+    src: "Vertical.PNG",
+    position: [208, 494],
+    angle: 0,
+  },
+  {
+    soulbind: "Draven",
+    src: "Vertical.PNG",
+    position: [388, 494],
+    angle: 0,
+  },
+
+  /* -------------------------------------------- Row 7 ------------------------------------------- */
+  {
+    soulbind: "Draven",
+    src: "Vertical.PNG",
+    position: [298, 600],
+    angle: 0,
+  },
+  {
+    soulbind: "Draven",
+    src: "DiagonalShort.png",
+    position: [216, 615],
+    angle: 315,
+  },
+  {
+    soulbind: "Draven",
+    src: "DiagonalShort.png",
+    position: [380, 615],
+    angle: 45,
+  },
+
+  /* -------------------------------------------- Row 8 ------------------------------------------- */
+  {
+    soulbind: "Draven",
+    src: "DiagonalShort.png",
+    position: [287, 710],
+    angle: 55,
+  },
+  {
+    soulbind: "Draven",
+    src: "DiagonalShort.png",
+    position: [305, 710],
+    angle: 305,
+  },
+
+  /* -------------------------------------------- Row 9 ------------------------------------------- */
+  {
+    soulbind: "Draven",
+    src: "Vertical.PNG",
+    position: [208, 740],
+    angle: 0,
+  },
+  {
+    soulbind: "Draven",
+    src: "Vertical.PNG",
+    position: [388, 740],
+    angle: 0,
+  },
+
+  /* ------------------------------------------- Row 10 ------------------------------------------- */
+  {
+    soulbind: "Draven",
+    src: "DiagonalShort.png",
+    position: [216, 860],
+    angle: 315,
+  },
+  {
+    soulbind: "Draven",
+    src: "DiagonalShort.png",
+    position: [380, 860],
+    angle: 45,
+  },
+
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                            Marileth                                            */
+  /* ---------------------------------------------------------------------------------------------- */
+
+  /* -------------------------------------------- Row 0 ------------------------------------------- */
+
+  {
+    soulbind: "Marileth",
+    src: "Vertical.PNG",
+    position: [298, 10],
+    angle: 0,
+  },
+  {
+    soulbind: "Marileth",
+    src: "DiagonalShort.png",
+    position: [287, 35],
+    angle: 45,
+  },
+  {
+    soulbind: "Marileth",
+    src: "DiagonalShort.png",
+    position: [305, 35],
+    angle: 315,
+  },
+
+  /* -------------------------------------------- Row 1 ------------------------------------------- */
+
+  {
+    soulbind: "Marileth",
+    src: "Vertical.PNG",
+    position: [208, 100],
+    angle: 0,
+  },
+  {
+    soulbind: "Marileth",
+    src: "Vertical.PNG",
+    position: [298, 85],
+    angle: 0,
+  },
+  {
+    soulbind: "Marileth",
+    src: "Vertical.PNG",
+    position: [388, 100],
+    angle: 0,
+  },
+
+  /* -------------------------------------------- Row 2 ------------------------------------------- */
+  {
+    soulbind: "Marileth",
+    src: "DiagonalShort.png",
+    position: [202, 198],
+    angle: 305,
+  },
+  {
+    soulbind: "Marileth",
+    src: "Vertical.PNG",
+    position: [298, 165],
+    angle: 0,
+  },
+  {
+    soulbind: "Marileth",
+    src: "DiagonalShort.png",
+    position: [400, 198],
+    angle: 55,
+  },
+
+  /* -------------------------------------------- Row 3 ------------------------------------------- */
+  {
+    soulbind: "Marileth",
+    src: "DiagonalShort.png",
+    position: [294, 275],
+    angle: 45,
+  },
+  {
+    soulbind: "Marileth",
+    src: "DiagonalShort.png",
+    position: [304, 275],
+    angle: 315,
+  },
+
+  /* -------------------------------------------- Row 4 ------------------------------------------- */
+  {
+    soulbind: "Marileth",
+    src: "DiagonalShort.png",
+    position: [215, 377],
+    angle: 305,
+  },
+  {
+    soulbind: "Marileth",
+    src: "DiagonalShort.png",
+    position: [380, 377],
+    angle: 55,
+  },
+
+  /* -------------------------------------------- Row 5 ------------------------------------------- */
+  {
+    soulbind: "Marileth",
+    src: "DiagonalShort.png",
+    position: [298, 435],
+    angle: 45,
+  },
+  {
+    soulbind: "Marileth",
+    src: "DiagonalShort.png",
+    position: [298, 435],
+    angle: 315,
+  },
+
+  /* -------------------------------------------- Row 6 ------------------------------------------- */
+  {
+    soulbind: "Marileth",
+    src: "DiagonalShort.png",
+    position: [216, 533],
+    angle: 315,
+  },
+  {
+    soulbind: "Marileth",
+    src: "DiagonalShort.png",
+    position: [380, 533],
+    angle: 45,
+  },
+
+  /* -------------------------------------------- Row 7 ------------------------------------------- */
+  {
+    soulbind: "Marileth",
+    src: "Vertical.PNG",
+    position: [298, 600],
+    angle: 0,
+  },
+
+  /* -------------------------------------------- Row 8 ------------------------------------------- */
+  {
+    soulbind: "Marileth",
+    src: "DiagonalShort.png",
+    position: [287, 710],
+    angle: 55,
+  },
+  {
+    soulbind: "Marileth",
+    src: "DiagonalShort.png",
+    position: [305, 710],
+    angle: 305,
+  },
+
+  /* -------------------------------------------- Row 9 ------------------------------------------- */
+  {
+    soulbind: "Marileth",
+    src: "Vertical.PNG",
+    position: [208, 740],
+    angle: 0,
+  },
+  {
+    soulbind: "Marileth",
+    src: "Vertical.PNG",
+    position: [388, 740],
+    angle: 0,
+  },
+
+  /* ------------------------------------------- Row 10 ------------------------------------------- */
+  {
+    soulbind: "Marileth",
+    src: "DiagonalShort.png",
+    position: [216, 860],
+    angle: 315,
+  },
+  {
+    soulbind: "Marileth",
+    src: "DiagonalShort.png",
+    position: [380, 860],
+    angle: 45,
+  },
+
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                              Emeni                                             */
+  /* ---------------------------------------------------------------------------------------------- */
+
+  /* -------------------------------------------- Row 0 ------------------------------------------- */
+
+  {
+    soulbind: "Emeni",
+    src: "DiagonalShort.png",
+    position: [287, 35],
+    angle: 45,
+  },
+  {
+    soulbind: "Emeni",
+    src: "DiagonalShort.png",
+    position: [305, 35],
+    angle: 315,
+  },
+
+  /* -------------------------------------------- Row 1 ------------------------------------------- */
+  {
+    soulbind: "Emeni",
+    src: "Vertical.PNG",
+    position: [208, 100],
+    angle: 0,
+  },
+  {
+    soulbind: "Emeni",
+    src: "Vertical.PNG",
+    position: [388, 100],
+    angle: 0,
+  },
+
+  /* -------------------------------------------- Row 2 ------------------------------------------- */
+  {
+    soulbind: "Emeni",
+    src: "DiagonalShort.png",
+    position: [202, 198],
+    angle: 305,
+  },
+
+  {
+    soulbind: "Emeni",
+    src: "DiagonalShort.png",
+    position: [400, 198],
+    angle: 55,
+  },
+
+  /* -------------------------------------------- Row 3 ------------------------------------------- */
+  {
+    soulbind: "Emeni",
+    src: "DiagonalShort.png",
+    position: [294, 275],
+    angle: 45,
+  },
+  {
+    soulbind: "Emeni",
+    src: "DiagonalShort.png",
+    position: [304, 275],
+    angle: 315,
+  },
+
+  /* -------------------------------------------- Row 4 ------------------------------------------- */
+  {
+    soulbind: "Emeni",
+    src: "DiagonalShort.png",
+    position: [215, 377],
+    angle: 305,
+  },
+  {
+    soulbind: "Emeni",
+    src: "DiagonalShort.png",
+    position: [380, 377],
+    angle: 55,
+  },
+
+  /* -------------------------------------------- Row 5 ------------------------------------------- */
+  {
+    soulbind: "Emeni",
+    src: "DiagonalShort.png",
+    position: [298, 435],
+    angle: 45,
+  },
+  {
+    soulbind: "Emeni",
+    src: "DiagonalShort.png",
+    position: [298, 435],
+    angle: 315,
+  },
+  {
+    soulbind: "Emeni",
+    src: "Vertical.PNG",
+    position: [298, 435],
+    angle: 0,
+  },
+
+  /* -------------------------------------------- Row 6 ------------------------------------------- */
+  {
+    soulbind: "Emeni",
+    src: "Vertical.PNG",
+    position: [298, 510],
+    angle: 0,
+  },
+  {
+    soulbind: "Emeni",
+    src: "Vertical.PNG",
+    position: [208, 494],
+    angle: 0,
+  },
+  {
+    soulbind: "Emeni",
+    src: "Vertical.PNG",
+    position: [388, 494],
+    angle: 0,
+  },
+
+  /* -------------------------------------------- Row 7 ------------------------------------------- */
+  {
+    soulbind: "Emeni",
+    src: "Vertical.PNG",
+    position: [298, 600],
+    angle: 0,
+  },
+  {
+    soulbind: "Emeni",
+    src: "DiagonalShort.png",
+    position: [216, 615],
+    angle: 315,
+  },
+  {
+    soulbind: "Emeni",
+    src: "DiagonalShort.png",
+    position: [380, 615],
+    angle: 45,
+  },
+
+  /* -------------------------------------------- Row 8 ------------------------------------------- */
+  {
+    soulbind: "Emeni",
+    src: "DiagonalShort.png",
+    position: [287, 710],
+    angle: 55,
+  },
+  {
+    soulbind: "Emeni",
+    src: "DiagonalShort.png",
+    position: [305, 710],
+    angle: 305,
+  },
+
+  /* -------------------------------------------- Row 9 ------------------------------------------- */
+  {
+    soulbind: "Emeni",
+    src: "Vertical.PNG",
+    position: [208, 740],
+    angle: 0,
+  },
+  {
+    soulbind: "Emeni",
+    src: "Vertical.PNG",
+    position: [388, 740],
+    angle: 0,
+  },
+
+  /* ------------------------------------------- Row 10 ------------------------------------------- */
+  {
+    soulbind: "Emeni",
+    src: "DiagonalShort.png",
+    position: [216, 860],
+    angle: 315,
+  },
+  {
+    soulbind: "Emeni",
+    src: "DiagonalShort.png",
+    position: [380, 860],
+    angle: 45,
+  },
+
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                             Heirmir                                            */
+  /* ---------------------------------------------------------------------------------------------- */
+
+  /* -------------------------------------------- Row 0 ------------------------------------------- */
+  {
+    soulbind: "Heirmir",
+    src: "DiagonalShort.png",
+    position: [287, 35],
+    angle: 45,
+  },
+  {
+    soulbind: "Heirmir",
+    src: "DiagonalShort.png",
+    position: [305, 35],
+    angle: 315,
+  },
+
+  /* -------------------------------------------- Row 1 ------------------------------------------- */
+  {
+    soulbind: "Heirmir",
+    src: "Vertical.PNG",
+    position: [208, 100],
+    angle: 0,
+  },
+  {
+    soulbind: "Heirmir",
+    src: "Vertical.PNG",
+    position: [388, 100],
+    angle: 0,
+  },
+
+  /* -------------------------------------------- Row 2 ------------------------------------------- */
+  {
+    soulbind: "Heirmir",
+    src: "DiagonalShort.png",
+    position: [202, 198],
+    angle: 305,
+  },
+
+  {
+    soulbind: "Heirmir",
+    src: "DiagonalShort.png",
+    position: [400, 198],
+    angle: 55,
+  },
+
+  /* -------------------------------------------- Row 3 ------------------------------------------- */
+  {
+    soulbind: "Heirmir",
+    src: "DiagonalShort.png",
+    position: [294, 275],
+    angle: 45,
+  },
+  {
+    soulbind: "Heirmir",
+    src: "DiagonalShort.png",
+    position: [304, 275],
+    angle: 315,
+  },
+
+  /* -------------------------------------------- Row 4 ------------------------------------------- */
+  {
+    soulbind: "Heirmir",
+    src: "DiagonalShort.png",
+    position: [215, 377],
+    angle: 305,
+  },
+  {
+    soulbind: "Heirmir",
+    src: "DiagonalShort.png",
+    position: [380, 377],
+    angle: 55,
+  },
+
+  /* -------------------------------------------- Row 5 ------------------------------------------- */
+  {
+    soulbind: "Heirmir",
+    src: "DiagonalShort.png",
+    position: [298, 435],
+    angle: 45,
+  },
+  {
+    soulbind: "Heirmir",
+    src: "DiagonalShort.png",
+    position: [298, 435],
+    angle: 315,
+  },
+  {
+    soulbind: "Heirmir",
+    src: "Vertical.PNG",
+    position: [298, 435],
+    angle: 0,
+  },
+
+  /* -------------------------------------------- Row 6 ------------------------------------------- */
+  {
+    soulbind: "Heirmir",
+    src: "Vertical.PNG",
+    position: [298, 510],
+    angle: 0,
+  },
+  {
+    soulbind: "Heirmir",
+    src: "Vertical.PNG",
+    position: [208, 494],
+    angle: 0,
+  },
+  {
+    soulbind: "Heirmir",
+    src: "Vertical.PNG",
+    position: [388, 494],
+    angle: 0,
+  },
+
+  /* -------------------------------------------- Row 7 ------------------------------------------- */
+  {
+    soulbind: "Heirmir",
+    src: "Vertical.PNG",
+    position: [298, 600],
+    angle: 0,
+  },
+  {
+    soulbind: "Heirmir",
+    src: "DiagonalShort.png",
+    position: [216, 615],
+    angle: 315,
+  },
+  {
+    soulbind: "Heirmir",
+    src: "DiagonalShort.png",
+    position: [380, 615],
+    angle: 45,
+  },
+
+  /* -------------------------------------------- Row 8 ------------------------------------------- */
+  {
+    soulbind: "Heirmir",
+    src: "DiagonalShort.png",
+    position: [287, 710],
+    angle: 55,
+  },
+  {
+    soulbind: "Heirmir",
+    src: "DiagonalShort.png",
+    position: [305, 710],
+    angle: 305,
+  },
+
+  /* -------------------------------------------- Row 9 ------------------------------------------- */
+  {
+    soulbind: "Heirmir",
+    src: "Vertical.PNG",
+    position: [208, 740],
+    angle: 0,
+  },
+  {
+    soulbind: "Heirmir",
+    src: "Vertical.PNG",
+    position: [388, 740],
+    angle: 0,
+  },
+
+  /* ------------------------------------------- Row 10 ------------------------------------------- */
+  {
+    soulbind: "Heirmir",
+    src: "DiagonalShort.png",
+    position: [216, 860],
+    angle: 315,
+  },
+  {
+    soulbind: "Heirmir",
+    src: "DiagonalShort.png",
+    position: [380, 860],
     angle: 45,
   },
 ];
