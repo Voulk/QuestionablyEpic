@@ -80521,17 +80521,6 @@ export const itemDB = [
             "name": "Empyreal Ordnance"
         },
         "levelRange": [
-            187,
-            194,
-            200,
-            207,
-            213,
-            220,
-            226,
-            233,
-            239,
-            246,
-            252
         ]
     },
     {

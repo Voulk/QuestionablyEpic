@@ -64,7 +64,7 @@ export function getAdjustedHolyShock(player, contentType) {
 
 }
 
-export function getPaladinCovAbility(soulbindName, player, contentType) {
+export function getPaladinCovAbility(soulbindName, player, contentType, specialSettings = {}) {
   let bonus_stats = {};
 
   if (["Kleia", "Pelagos", "Mikanikos"].includes(soulbindName)) {
