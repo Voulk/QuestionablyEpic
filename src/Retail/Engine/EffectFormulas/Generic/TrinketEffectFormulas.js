@@ -1,5 +1,6 @@
 import { convertPPMToUptime, getScalarValue } from "../EffectUtilities";
 import { trinket_data } from "./TrinketData";
+import { getAdjustedHolyShock } from "../Paladin/PaladinMiscFormulas"
 // import { STAT } from "../../../../General/Engine/STAT";
 import SPEC from "../../../../General/Engine/SPECS";
 
@@ -586,6 +587,7 @@ else if (
   let effect = activeTrinket.effects[0];
 
   bonus_stats.mastery = (getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.duration) / effect.cooldown;
+  bonus_stats.mastery *= player.getCooldownMult("twoMinutesOrb", contentType);
 
 }
 else if (
@@ -601,11 +603,28 @@ else if (
   /* ------- Hastes impact on the trinket PPM is included in the secondary multiplier below. ------ */
   bonus_stats.hps = (getProcessedValue(healEffect.coefficient, healEffect.table, itemLevel, healEffect.efficiency) / 60) * meteor * healEffect.ppm * player.getStatMultiplier("NOMAST");
   bonus_stats.haste = getProcessedValue(hasteEffect.coefficient, hasteEffect.table, itemLevel) * convertPPMToUptime(hasteEffect.ppm, hasteEffect.duration);
-  //
+  /*
   console.log("Haste" + getProcessedValue(hasteEffect.coefficient, hasteEffect.table, itemLevel) + ". Itemlevel: " + itemLevel);
   console.log("Healing" + getProcessedValue(healEffect.coefficient, healEffect.table, itemLevel, 1) + ". Itemlevel: " + itemLevel);
   console.log("HPS: " + bonus_stats.hps + ". Haste: " + bonus_stats.haste + ". lv: " + itemLevel);
-  console.log("Uptime: " + convertPPMToUptime(hasteEffect.ppm * player.getStatPerc("Haste"), hasteEffect.duration));
+  console.log("Uptime: " + convertPPMToUptime(hasteEffect.ppm * player.getStatPerc("Haste"), hasteEffect.duration));*/
+} else if (
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                    Scrawled Word of Recall                                     */
+  /* ---------------------------------------------------------------------------------------------- */
+  effectName === "Scrawled Word of Recall"
+) {
+  const effect = activeTrinket.effects[0];
+  const expectedCDR = Math.round(10*getProcessedValue(effect.coefficient, effect.table, itemLevel, 1, false)*effect.specMod[player.getSpec()])/10;
+  //console.log(expectedCDR);
+
+  if (player.getSpec() === "Holy Paladin") {
+    console.log(getAdjustedHolyShock(player, contentType) * (expectedCDR / 7.5) / 60);
+    bonus_stats.hps = ((getAdjustedHolyShock(player, contentType) * (expectedCDR / 7.5)) - player.getSpecialQuery("OneManaHealing", contentType) * 1600) / 60
+  }
+
+  /* ------- Hastes impact on the trinket PPM is included in the secondary multiplier below. ------ */
+  //
 }
   else {
     /* ---------------------------------------------------------------------------------------------- */
