@@ -1,5 +1,5 @@
 import Player from "../../../../General/Modules/Player/Player";
-import { getOneHolyPower, getAwakeningWingsUptime, getWingsHealingInc, processPaladinRawHealing } from "./PaladinMiscFormulas";
+import { getOneHolyPower, getAwakeningWingsUptime, getWingsHealingInc, processPaladinRawHealing, getPaladinCovAbility } from "./PaladinMiscFormulas";
 
 /* ------------------------------------- Paladin Spell ID's ------------------------------------- */
 const IDLIGHTOFDAWN = 225311;
@@ -155,6 +155,32 @@ export const getPaladinLegendary = (effectName, player, contentType) => {
     //let akn = 2.5 / 60; //getAwakeningWingsUptime(player, contentType);
     //let awakening_hps = (akn * wingsEffHealingIncrease + 1 * (1 - akn) );
     //console.log("Wings Uptime: " + akn + ". Awakening healing increase:" + awakening_hps);
+  }
+  else if (name === "Divine Resonance") {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                        Divine Resonance                                        */
+    /* ---------------------------------------------------------------------------------------------- */
+    const specialSettings = {
+      numCopies: 5,
+      copyStrength: 0.2,
+    };
+  
+    bonus_stats = getPaladinCovAbility("Pelagos", player, contentType, specialSettings);
+
+
+    console.log(bonus_stats);
+  }
+  else if (name === "Duty-Bound Gavel") {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                        Duty-Bound Gavel                                        */
+    /* ---------------------------------------------------------------------------------------------- */
+    const specialSettings = {
+      extraSpells: 1,
+      extraCharge: 1,
+    };
+  
+    bonus_stats = getPaladinCovAbility("Emeni", player, contentType, specialSettings);
+    console.log(bonus_stats);
   }
 
   // Consider building in support for the conduit via SimC grab or something similar.
