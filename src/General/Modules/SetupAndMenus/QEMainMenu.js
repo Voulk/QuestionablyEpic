@@ -66,11 +66,12 @@ export default function QEMainMenu(props) {
     gameType === "Retail"
       ? {
           "MainMenu.TopGear": ["/topgear", true, "TopGear"],
-          "MainMenu.UpgradeFinder": ["/UpgradeFinder", true, "UpgradeFinder"],
+          "MainMenu.UpgradeFinder": ["/UpgradeFinder", false, "UpgradeFinder"],
           "MainMenu.QuickCompare": ["/quickcompare", true, "QuickCompare"],
           "MainMenu.ExploreCovenants": ["/soulbinds", true, "ExploreCovenants"],
           "MainMenu.LegendaryAnalysis": ["/legendaries", true, "LegendaryAnalysis"],
           "MainMenu.TrinketAnalysis": ["/trinkets", true, "TrinketAnalysis"],
+          "MainMenu.DominationAnalysis": ["/dominationsockets", false, "DominationAnalysis"],
           "MainMenu.CooldownPlanner": ["/holydiver", false, "CooldownPlanner"],
           "MainMenu.Profile": ["/profile", true, "Profile"],
         }
@@ -140,9 +141,9 @@ export default function QEMainMenu(props) {
               {patron ? t("MainMenu.PatronThanks") : t("MainMenu.PatronInvite")}
             </Button>
           </Grid>
-          {/*<Grid item xs={12}>
+          {<Grid item xs={12}>
             <MessageOfTheDay /> 
-            </Grid> */}
+            </Grid> }
 
           {Object.keys(mainMenuOptions).map((key, index) => (
             // Buttons are translated and printed from a dictionary.

@@ -229,7 +229,7 @@ export function getSoulbindFormula(effectID, player, contentType) {
     /* ------------------------------------- Grove Invigoration ------------------------------------- */
     effectID === 322721
   ) {
-    let expectedStacks = (2 * 30) / 60 + (8 * 30) / 120;
+    let expectedStacks = (2 * 30) / 60 + (8 * 30) / 120 * 1.5; // This is currently bugged on live servers and gives 50% more mastery than it should.
 
     bonus_stats.Mastery = expectedStacks * 25;
   } else if (
@@ -401,7 +401,7 @@ export function getSoulbindFormula(effectID, player, contentType) {
     let chanceOfMovement = 0.1;
     let uptime = convertPPMToUptime(1, 12) * (1 - chanceOfMovement);
 
-    bonus_stats.Mastery = uptime * 525;
+    bonus_stats.Mastery = uptime * 525 * 1.5; // This is currently bugged on live servers and gives 50% more mastery than it should.
   } else if (
     /* ------------------------------------ Token of Appreciation ----------------------------------- */
     effectID === 336245

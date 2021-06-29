@@ -9,6 +9,14 @@
 
 export const changeLog = [
   {
+    version: "9.1 / 2.5.1",
+    update: 1,
+    date: "29th June",
+    changes: [
+      "Retail: All 9.1 content added to the game.",
+    ],
+  },
+  {
     version: "9.0.5 / 2.5.1",
     update: 9,
     date: "22nd June",
