@@ -270,6 +270,7 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel, use
     let playerBestSecondary = player.getHighestStatWeight(contentType, ["versatility"]); // Exclude Vers since there isn't a Vers version.
 
     bonus_stats[playerBestSecondary] = ((getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.duration) / effect.cooldown) * 0.87;
+    bonus_stats[playerBestSecondary] *= player.getCooldownMult("threeMinutes", contentType);
     // TODO: power reduced by 5% because of the chance something interferes. This needs to be much much better and I'll fix it up this week.
     //
   } else if (
@@ -327,8 +328,8 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel, use
     let effect = activeTrinket.effects[0];
 
     bonus_stats.mastery = (getProcessedValue(effect.coefficient, effect.table, itemLevel) * effect.duration) / effect.cooldown;
+    bonus_stats.mastery *= player.getCooldownMult("ninetySeconds", contentType);
 
-    if (player.getSpec() === SPEC.RESTODRUID) bonus_stats.mastery *= 1.2; // Bell is combined with Flourish.
     // We need a better way to model interaction with spec cooldowns.
     //
   } else if (
@@ -620,8 +621,9 @@ else if (
 
   if (player.getSpec() === "Holy Paladin") {
     console.log(getAdjustedHolyShock(player, contentType) * (expectedCDR / 7.5) / 60);
-    bonus_stats.hps = ((getAdjustedHolyShock(player, contentType) * (expectedCDR / 7.5)) - player.getSpecialQuery("OneManaHealing", contentType) * 1600) / 60
+    bonus_stats.hps = ((getAdjustedHolyShock(player, contentType) * (expectedCDR / 7.5)) - player.getSpecialQuery("OneManaHealing", contentType) * 1600) / 60 * 0.8
   }
+
 
   /* ------- Hastes impact on the trinket PPM is included in the secondary multiplier below. ------ */
   //

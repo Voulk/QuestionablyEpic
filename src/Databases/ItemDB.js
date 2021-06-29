@@ -80520,7 +80520,19 @@ export const itemDB = [
             "type": "trinket",
             "name": "Empyreal Ordnance"
         },
-        "levelRange": []
+        "levelRange": [
+            187,
+            194,
+            200,
+            207,
+            213,
+            220,
+            226,
+            233,
+            239,
+            246,
+            252
+        ]
     },
     {
         "id": 180119,
@@ -100068,10 +100080,6 @@ export const itemDB = [
             "name": "Consumptive Infusion"
         },
         "levelRange": [
-            187,
-            200,
-            213,
-            226
         ]
     },
     {
@@ -100115,10 +100123,6 @@ export const itemDB = [
             "name": "Macabre Sheet Music"
         },
         "levelRange": [
-            187,
-            200,
-            213,
-            226
         ]
     },
     {
@@ -107669,7 +107673,7 @@ export const itemDB = [
         },
         "levelRange": [
             200,
-            270,
+            207,
             213,
             220,
             226,
@@ -110036,7 +110040,7 @@ export const itemDB = [
         },
         "levelRange": [
             200,
-            270,
+            207,
             213,
             220,
             226,
