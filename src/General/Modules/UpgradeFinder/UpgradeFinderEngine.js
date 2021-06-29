@@ -116,7 +116,7 @@ function getSetItemLevel(itemSource, playerSettings, raidIndex = 0, slot) {
   const instanceID = itemSource.instanceId;
   const bossID = itemSource.encounterId;
 
-  if (instanceID === 1190) itemLevel = itemLevels.raid[playerSettings.raid[raidIndex]];
+  if (instanceID === 1193) itemLevel = itemLevels.raid[playerSettings.raid[raidIndex]];
   if (instanceID === 1192) itemLevel = 207;
   // World Bosses
   else if (instanceID === -1) itemLevel = itemLevels.dungeon[playerSettings.dungeon];
@@ -126,7 +126,7 @@ function getSetItemLevel(itemSource, playerSettings, raidIndex = 0, slot) {
     itemLevel = itemLevels.pvp[playerSettings.pvp];
     if (playerSettings.pvp === 5 && ["1H Weapon", "2H Weapon", "Offhand", "Shield"].includes(slot)) itemLevel += 7;
   }
-  if (bossID === 2425 || bossID === 2424) itemLevel += 7; // Denathrius / Stone Legion Generals
+  if (bossID === 2440 || bossID === 2441) itemLevel += 7; // Kel'Thuzad / Sylvanus
 
   return itemLevel;
 }
