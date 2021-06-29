@@ -36,7 +36,7 @@ export function getSoulbindFormula(effectID, player, contentType) {
     You occasionally expel sorrowful memories which can be walked through to extend the effect by 3 seconds.
     */
     let expectedUptime = (30 + 9 * 2) / 180;
-    bonus_stats.Mastery = 524 * expectedUptime; // Despite the tooltip showing 350, Combat Med actually gives 524 Mastery. TODO: Check this on live servers.
+    bonus_stats.Mastery = 472 * expectedUptime; // Despite the tooltip showing 350, Combat Med actually gives 524 Mastery. TODO: Check this on live servers.
   } else if (
     /* --------------------------------------- Focusing Mantra -------------------------------------- */
     effectID === 328261
@@ -113,9 +113,9 @@ export function getSoulbindFormula(effectID, player, contentType) {
     effectID === 329778
   ) {
     const expected_allies = contentType === "Raid" ? 4.8 : 3.1;
-    const critPerAlly = STATPERONEPERCENT.Retail.CRIT; // This was advertised as being buffed to 2% crit, stacking up to 3 allies but doesn't behave this way on the PTR yet.
+    const critPerAlly = STATPERONEPERCENT.Retail.CRIT * 2; // This was advertised as being buffed to 2% crit, stacking up to 3 allies but doesn't behave this way on the PTR yet.
 
-    bonus_stats.Crit = expected_allies * critPerAlly;
+    bonus_stats.Crit = Math.min(expected_allies, 3) * critPerAlly;
   } else if (
     /* ------------------------------------- Resonant Accolades ------------------------------------- */
     effectID === 329781
