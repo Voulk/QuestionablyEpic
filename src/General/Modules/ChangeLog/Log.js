@@ -9,6 +9,69 @@
 
 export const changeLog = [
   {
+    version: "9.0.5 / 2.5.1",
+    update: 9,
+    date: "22nd June",
+    changes: [
+      "Bugfix: BC Troll Priests should no longer get an error when running Top Gear or Upgrade Finder.",
+      "Bugfix: Importing Suffixed items multiple times should no longer double their stat allocations.",
+      "Bugfix: Fixed a rare bug where some BC gems weren't using the correct stat line."
+    ],
+  },
+  {
+    version: "9.0.5 / 2.5.1",
+    update: 8,
+    date: "10th June",
+    changes: [
+      "Improved clarity around the QE Import addon, and where to get it.",
+      "Revamped the help text at the top of every module.",
+      "BC: Added Badge gear to Upgrade Finder."
+    ],
+  },
+  {
+    version: "9.0.5 / 2.5.1",
+    update: 7,
+    date: "8th June",
+    changes: [
+      "Fixed a bug where gems were being counted twice in set scores.",
+      "Fixed a bug where Spirit was being undervalued for BC Druid.",
+      "Fixed some minor UI bugs."
+    ],
+  },
+  {
+    version: "9.0.5 / 2.5.1",
+    update: 6,
+    date: "2nd June",
+    changes: [
+      "Added support for gear with Suffixes (like of the Owl, of the Whale and so on).",
+      "Added formulas for all levelling trinkets.",
+      "Added a Top Gear setting to use the Honor Hold starter gems since blues / epics aren't really appropriate for levelling gear."
+    ],
+  },
+  {
+    version: "9.0.5 / 2.5.1",
+    update: 5,
+    date: "1st June",
+    changes: [
+      "Added full support for all four Burning Crusade Classic specs.",
+      "BC: Added Tier Sets module.",
+      "Added Welcome screen for players new to the app.",
+      "Retail / BC: All items now have attached tooltips."
+    ],
+  },
+  {
+    version: "9.0.5",
+    update: 4,
+    date: "29th April",
+    changes: [
+      "New 'auto-socket' setting in Top Gear / Upgrade Finder to automatically add sockets to compatible slots.",
+      "Added the Hall of Fame. Thank you so much to all patrons.",
+      "Added Darkmoon Deck: Repose to the trinket graph as requested.",
+      "Significant visual revamps through the app!",
+      "Sweeping code cleanup and revamps behind the scenes to prepare for both Burning Crusade and 9.1.",
+    ],
+  },
+  {
     version: "9.0.5",
     update: 3,
     date: "23th March",

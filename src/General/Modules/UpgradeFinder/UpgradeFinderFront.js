@@ -5,9 +5,11 @@ import { useTranslation } from "react-i18next";
 import HelpText from "../SetupAndMenus/HelpText";
 import UpgradeFinderSlider from "./Slider";
 import ToggleButton from "@material-ui/lab/ToggleButton";
+import ToggleButtonGroup from "@material-ui/lab/ToggleButtonGroup";
 import Settings from "../Settings/Settings";
 import UpgradeFinderSimC from "./UpgradeFinderSimCImport";
 import { runUpgradeFinder } from "./UpgradeFinderEngine";
+import { runUpgradeFinderBC } from "./UpgradeFinderEngineBC";
 // import { useHistory } from "react-router-dom";
 import userSettings from "../Settings/SettingsObject";
 import { useSelector } from "react-redux";
@@ -35,39 +37,47 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   header: {
-    [theme.breakpoints.down("sm")]: {
+    [theme.breakpoints.down("xs")]: {
       justifyContent: "center",
       display: "block",
       marginLeft: "auto",
       marginRight: "auto",
-      maxWidth: "55%",
+      width: "85%",
       marginTop: 120,
     },
-    [theme.breakpoints.down("md")]: {
+    [theme.breakpoints.up("sm")]: {
       justifyContent: "center",
       display: "block",
       marginLeft: "auto",
       marginRight: "auto",
-      maxWidth: "55%",
+      width: "80%",
+      marginTop: 140,
     },
-    [theme.breakpoints.down("lg")]: {
+    [theme.breakpoints.up("md")]: {
       justifyContent: "center",
       display: "block",
       marginLeft: "auto",
       marginRight: "auto",
-      maxWidth: "55%",
+      width: "65%",
     },
-    [theme.breakpoints.up("xl")]: {
+    [theme.breakpoints.up("lg")]: {
       justifyContent: "center",
       display: "block",
       marginLeft: "auto",
       marginRight: "auto",
-      maxWidth: "55%",
+      width: "55%",
     },
   },
 }));
 
+/* ---------------------------------------------------------------------------------------------- */
+/*                                        Retail Constants                                        */
+/* ---------------------------------------------------------------------------------------------- */
+
+/* ---------------------------------- Retail Raid Difficulties ---------------------------------- */
 const raidDifficulty = ["Raid Finder", "Normal", "Heroic", "Mythic"];
+
+/* -------------------------------------- Retail PVP Ranks -------------------------------------- */
 
 const PvPRating = [
   { value: 0, label: "Unranked" },
@@ -78,12 +88,26 @@ const PvPRating = [
   { value: 1600, label: "Elite 2400+" },
 ];
 
+/* ---------------------------------------------------------------------------------------------- */
+/*                                    Burning Crusade Constants                                   */
+/* ---------------------------------------------------------------------------------------------- */
+
+/* ---------------------------- Burning Crusade Dungeon Difficulties ---------------------------- */
+const burningCrusadeDungeonDifficulty = ["Normal", "Heroic"];
+
 export default function UpgradeFinderFront(props) {
   const classes = useStyles();
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
   const contentType = useSelector((state) => state.contentType);
-  const helpText = t("UpgradeFinderFront.HelpText");
+  const gameType = useSelector((state) => state.gameType);
+  const helpBlurb = t("UpgradeFinderFront.HelpText")
+  const helpText = gameType === "Retail" ? ["Insert a SimC string to automatically import your gear.", "(Optional) Use the settings panel to make further customizations.", "Select a raid difficulty, Mythic+ level and PVP rating. If you don't play any particular content type, feel free to set it to 0.",
+                                            "Hit Go at the bottom of the page."] : 
+                                            ["Insert a QE Import string to automatically import your gear.",
+                                            "(Optional) Use the settings panel to set specific gem types, enchants and how much value to put on extra mana.",
+                                            "Select a dungeon difficulty, and (optionally) a PVP rating.",
+                                            "Hit Go at the bottom of the page."];
 
   const marks = [
     {
@@ -99,7 +123,7 @@ export default function UpgradeFinderFront(props) {
       value: 1,
       label: (
         <div className={classes.labels}>
-          <div>lvl 187</div>
+          <div>lvl 210</div>
           <div>M 2</div>
         </div>
       ),
@@ -108,7 +132,7 @@ export default function UpgradeFinderFront(props) {
       value: 2,
       label: (
         <div className={classes.labels}>
-          <div>lvl 190</div>
+          <div>lvl 213</div>
           <div>M 3</div>
         </div>
       ),
@@ -117,8 +141,8 @@ export default function UpgradeFinderFront(props) {
       value: 3,
       label: (
         <div className={classes.labels}>
-          <div>lvl 194</div>
-          <div>M 4-5</div>
+          <div>lvl 216</div>
+          <div>M 4</div>
         </div>
       ),
     },
@@ -126,8 +150,8 @@ export default function UpgradeFinderFront(props) {
       value: 4,
       label: (
         <div className={classes.labels}>
-          <div>lvl 197</div>
-          <div>M 6</div>
+          <div>lvl 220</div>
+          <div>M 5</div>
         </div>
       ),
     },
@@ -135,8 +159,8 @@ export default function UpgradeFinderFront(props) {
       value: 5,
       label: (
         <div className={classes.labels}>
-          <div>lvl 200</div>
-          <div>M 7-9</div>
+          <div>lvl 223</div>
+          <div>M 6-7</div>
         </div>
       ),
     },
@@ -144,8 +168,8 @@ export default function UpgradeFinderFront(props) {
       value: 6,
       label: (
         <div className={classes.labels}>
-          <div>lvl 203</div>
-          <div>M 10-11</div>
+          <div>lvl 226</div>
+          <div>M 8-9</div>
         </div>
       ),
     },
@@ -153,8 +177,8 @@ export default function UpgradeFinderFront(props) {
       value: 7,
       label: (
         <div className={classes.labels}>
-          <div>lvl 207</div>
-          <div>M 12-14</div>
+          <div>lvl 229</div>
+          <div>M 10-11</div>
         </div>
       ),
     },
@@ -162,8 +186,8 @@ export default function UpgradeFinderFront(props) {
       value: 8,
       label: (
         <div className={classes.labels}>
-          <div>lvl 210</div>
-          <div>M 15</div>
+          <div>lvl 233</div>
+          <div>M 12-13</div>
         </div>
       ),
     },
@@ -171,7 +195,8 @@ export default function UpgradeFinderFront(props) {
       value: 9,
       label: (
         <div className={classes.labels}>
-          <div>lvl 213</div>
+          <div>lvl 236</div>
+          <div>M 14-15</div>
         </div>
       ),
     },
@@ -179,7 +204,7 @@ export default function UpgradeFinderFront(props) {
       value: 10,
       label: (
         <div className={classes.labels}>
-          <div>lvl 216</div>
+          <div>lvl 239</div>
         </div>
       ),
     },
@@ -187,7 +212,7 @@ export default function UpgradeFinderFront(props) {
       value: 11,
       label: (
         <div className={classes.labels}>
-          <div>lvl 220 </div>
+          <div>lvl 242 </div>
         </div>
       ),
     },
@@ -195,7 +220,23 @@ export default function UpgradeFinderFront(props) {
       value: 12,
       label: (
         <div className={classes.labels}>
-          <div>lvl 226</div>
+          <div>lvl 246</div>
+        </div>
+      ),
+    },
+    {
+      value: 13,
+      label: (
+        <div className={classes.labels}>
+          <div>lvl 249</div>
+        </div>
+      ),
+    },
+    {
+      value: 14,
+      label: (
+        <div className={classes.labels}>
+          <div>lvl 252</div>
         </div>
       ),
     },
@@ -205,6 +246,16 @@ export default function UpgradeFinderFront(props) {
   const [selectedNormal, setSelectedNormal] = React.useState(false);
   const [selectedHeroic, setSelectedHeroic] = React.useState(false);
   const [selectedMythic, setSelectedMythic] = React.useState(false);
+
+  const [dungeonBC, setDungeonBC] = React.useState("Heroic");
+
+  const handleContent = (event, content) => {
+    if (content === null) {
+    } else {
+      setDungeonBC(content);
+      props.setBCDungeonDifficulty(event, content);
+    }
+  };
 
   // let history = useHistory();
 
@@ -218,10 +269,19 @@ export default function UpgradeFinderFront(props) {
   };
 
   const unleashUpgradeFinder = () => {
-    const playerSettings = props.playerSettings;
-    const result = runUpgradeFinder(props.player, contentType, currentLanguage, playerSettings, userSettings);
-    props.setItemSelection(result);
-    props.setShowReport(true);
+    if (gameType === "Retail") {
+      const playerSettings = props.playerSettings;
+      const result = runUpgradeFinder(props.player, contentType, currentLanguage, playerSettings, userSettings);
+      props.setItemSelection(result);
+      props.setShowReport(true);
+    } else if (gameType === "BurningCrusade") {
+      const playerSettings = props.playerSettings;
+      const result = runUpgradeFinderBC(props.player, contentType, currentLanguage, playerSettings, userSettings);
+      console.log(result);
+      props.setItemSelection(result);
+      props.setShowReport(true);
+    }
+
     //history.push("/UpgradeFinderReport/");
   };
 
@@ -231,15 +291,26 @@ export default function UpgradeFinderFront(props) {
     else return "Good";
   };
 
+  /*
   const checkCharacterValid = (player) => {
     const weaponSet = player.getActiveItems("AllMainhands", false, true);
     const weapon = weaponSet.length > 0 ? weaponSet[0] : "";
 
     return (weapon.slot === "2H Weapon" && player.getEquippedItems().length === 15) || (weapon.slot === "1H Weapon" && player.getEquippedItems().length === 16);
+  }; */
+
+  const checkCharacterValid = (player, gameType) => {
+    const weaponSet = player.getActiveItems("AllMainhands", false, true);
+    const weapon = weaponSet.length > 0 ? weaponSet[0] : "";
+    if (gameType === "Retail") {
+      return (weapon.slot === "2H Weapon" && player.getEquippedItems().length === 15) || (weapon.slot === "1H Weapon" && player.getEquippedItems().length === 16);
+    } else if (gameType === "BurningCrusade") {
+      return (weapon.slot === "2H Weapon" && player.getEquippedItems().length === 16) || (weapon.slot === "1H Weapon" && player.getEquippedItems().length === 17);
+    }
   };
 
   const getUpgradeFinderReady = (player) => {
-    return getSimCStatus(player) === "Good" && props.playerSettings.raid.length > 0;
+    return getSimCStatus(player) === "Good" && (props.playerSettings.raid.length > 0 || gameType == "BurningCrusade");
   };
 
   return (
@@ -251,7 +322,7 @@ export default function UpgradeFinderFront(props) {
       <Grid container spacing={1}>
         {/* ---------------------------- Help Text Section --------------------------- */}
         <Grid item xs={12}>
-          <HelpText text={helpText} />
+          <HelpText blurb={helpBlurb} text={helpText} />
         </Grid>
         <Grid item xs={12}>
           <UpgradeFinderSimC player={props.player} simcSnack={props.simcSnack} allChars={props.allChars} />
@@ -259,71 +330,140 @@ export default function UpgradeFinderFront(props) {
         <Grid item xs={12}>
           <Settings player={props.player} userSettings={userSettings} editSettings={editSettings} hymnalShow={true} groupBuffShow={true} autoSocket={true} />
         </Grid>
-
         {/* ------------------------------ Raid Section ------------------------------ */}
-        <Grid item xs={12}>
-          <Paper elevation={0} style={{ padding: 10 }}>
-            <Grid container justify="center" spacing={1}>
-              <Grid item xs={12}>
-                <Typography color="primary" align="center" variant="h5">
-                  {t("UpgradeFinderFront.RaidDifficultyHeader")}
-                </Typography>
+
+        {gameType === "Retail" ? (
+          <Grid item xs={12}>
+            <Paper elevation={0} style={{ padding: 10 }}>
+              <Grid container justify="center" spacing={1}>
                 <Grid item xs={12}>
-                  <Typography align="center">{t("UpgradeFinderFront.RaidDifficultyBody")}</Typography>
+                  <Typography color="primary" align="center" variant="h5">
+                    {t("UpgradeFinderFront.RaidDifficultyHeader")}
+                  </Typography>
+                  <Grid item xs={12}>
+                    <Typography align="center">{t("UpgradeFinderFront.RaidDifficultyBody")}</Typography>
+                  </Grid>
                 </Grid>
               </Grid>
-            </Grid>
 
-            <Grid container justify="center" spacing={1}>
-              {raidDifficulty.map((key, i) => (
-                <Grid item xs="auto" key={i}>
-                  <ToggleButton
-                    classes={{
-                      root: classes.red,
-                      selected: classes.selectedRed,
-                    }}
-                    value="check"
-                    selected={props.playerSettings.raid.includes(i)}
-                    style={{ width: 180, height: 45 }}
-                    onChange={() => {
-                      setsPvE[i](!selectsPvE[i]);
-                      props.setRaidDifficulty(i);
-                    }}
-                  >
-                    {t("RaidDifficulty." + key)}
+              <Grid container justify="center" spacing={1}>
+                {raidDifficulty.map((key, i) => (
+                  <Grid item xs="auto" key={i}>
+                    <ToggleButton
+                      classes={{
+                        root: classes.red,
+                        selected: classes.selectedRed,
+                      }}
+                      value="check"
+                      selected={props.playerSettings.raid.includes(i)}
+                      style={{ width: 180, height: 45 }}
+                      onChange={() => {
+                        setsPvE[i](!selectsPvE[i]);
+                        props.setRaidDifficulty(i);
+                      }}
+                    >
+                      {t("RaidDifficulty." + key)}
+                    </ToggleButton>
+                  </Grid>
+                ))}
+              </Grid>
+            </Paper>
+          </Grid>
+        ) : (
+          ""
+        )}
+
+        {/* -------------------------------------- Dungeon Settings -------------------------------------- */}
+
+        {gameType === "Retail" ? (
+          /* ---------------------------------------------------------------------------------------------- */
+          /*                                  Retail Mythic Dungeon Section                                 */
+          /* ---------------------------------------------------------------------------------------------- */
+
+          <Grid item xs={12}>
+            <Paper elevation={0} style={{ padding: "10px 10px 10px 10px", textAlign: "center" }}>
+              <Grid container justify="center" spacing={1}>
+                <Grid item xs={12}>
+                  <Typography color="primary" align="center" variant="h5">
+                    {t("UpgradeFinderFront.MythicPlusHeader")}
+                  </Typography>
+                  <Grid item xs={12}>
+                    <Typography align="center">{t("UpgradeFinderFront.MythicPlusBody")}</Typography>
+                  </Grid>
+                </Grid>
+              </Grid>
+
+              <UpgradeFinderSlider
+                className={classes.slider}
+                style={{ color: "#52af77" }}
+                defaultValue={6}
+                step={null}
+                valueLabelDisplay="off"
+                marks={marks}
+                max={14}
+                change={props.setDungeonDifficulty}
+              />
+            </Paper>
+          </Grid>
+        ) : (
+          /* ---------------------------------------------------------------------------------------------- */
+          /*                                 Burning Crusade Dungeon Section                                */
+          /* ---------------------------------------------------------------------------------------------- */
+
+          <Grid item xs={12}>
+            <Paper elevation={0} style={{ padding: "10px 10px 10px 10px", textAlign: "center" }}>
+              <Grid container justify="center" spacing={1}>
+                <Grid item xs={12}>
+                  <Typography color="primary" align="center" variant="h5">
+                    {t("Dungeon")}
+                  </Typography>
+                  <Grid item xs={12}>
+                    <Typography align="center">{t("UpgradeFinderFront.DungeonBodyBC")}</Typography>
+                  </Grid>
+                </Grid>
+              </Grid>
+
+              <Grid container justify="center" spacing={1}>
+                <ToggleButtonGroup value={dungeonBC} exclusive onChange={handleContent} aria-label="contentToggle" size="large">
+                  <ToggleButton style={{ padding: "15px 30px" }} value="Normal" aria-label="dungeonLabel">
+                    {/* <Tooltip title={t("QeHeader.Tooltip.ChangeToDungeon")} arrow> */}
+                    <div style={{ display: "inline-flex" }}>
+                      <Typography variant="button">{t("RaidDifficulty.Normal")}</Typography>
+                    </div>
+                    {/* </Tooltip> */}
                   </ToggleButton>
-                </Grid>
-              ))}
-            </Grid>
-          </Paper>
-        </Grid>
 
-        {/* --------------------------- Mythic Plus Section -------------------------- */}
-        <Grid item xs={12}>
-          <Paper elevation={0} style={{ padding: "10px 10px 10px 10px", textAlign: "center" }}>
-            <Grid container justify="center" spacing={1}>
-              <Grid item xs={12}>
-                <Typography color="primary" align="center" variant="h5">
-                  {t("UpgradeFinderFront.MythicPlusHeader")}
-                </Typography>
-                <Grid item xs={12}>
-                  <Typography align="center">{t("UpgradeFinderFront.MythicPlusBody")}</Typography>
-                </Grid>
+                  <ToggleButton style={{ padding: "15px 30px" }} value="Heroic" aria-label="raidLabel">
+                    {/* <Tooltip title={t("QeHeader.Tooltip.ChangeToRaid")} arrow> */}
+                    <div style={{ display: "inline-flex" }}>
+                      <Typography variant="button">{t("RaidDifficulty.Heroic")}</Typography>
+                    </div>
+                    {/* </Tooltip> */}
+                  </ToggleButton>
+                </ToggleButtonGroup>
+                {/* {burningCrusadeDungeonDifficulty.map((key, i) => (
+                  <Grid item xs="auto" key={i}>
+                    <ToggleButton
+                      classes={{
+                        root: classes.red,
+                        selected: classes.selectedRed,
+                      }}
+                      value="check"
+                      selected={props.playerSettings.raid.includes(i)}
+                      style={{ width: 180, height: 45 }}
+                      // onChange={() => {
+                      //   // setsPvE[i](!selectsPvE[i]);
+                      //   props.setRaidDifficulty(i);
+                      // }}
+                    >
+                      {t("RaidDifficulty." + key)}
+                    </ToggleButton>
+                  </Grid>
+                ))} */}
               </Grid>
-            </Grid>
-
-            <UpgradeFinderSlider
-              className={classes.slider}
-              style={{ color: "#52af77" }}
-              defaultValue={6}
-              step={null}
-              valueLabelDisplay="off"
-              marks={marks}
-              max={12}
-              change={props.setDungeonDifficulty}
-            />
-          </Paper>
-        </Grid>
+            </Paper>
+          </Grid>
+        )}
         {/* ------------------------------- PvP Section ------------------------------ */}
         <Grid item xs={12}>
           <Paper elevation={0} style={{ padding: 10 }}>

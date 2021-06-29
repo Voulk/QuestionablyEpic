@@ -51,7 +51,7 @@ export default function LegendaryCompare(props) {
   }, []);
   const { t } = useTranslation();
 
-  const helpText = "Help Text Here";
+  const helpText = ["A quick look at all tier sets available for your class throughout the expansion. Specific numbers coming very soon."];
 
   return (
     <div className={classes.header}>
@@ -69,7 +69,7 @@ export default function LegendaryCompare(props) {
         {/* ------------------------------ Map the Legendary list into Cards ----------------------------- */}
         <Grid item container spacing={1} direction="row">
           {tierSets
-            .filter((filter) => filter.spec === props.player.getSpec())
+            .filter((filter) => (filter.spec + " BC") === props.player.getSpec())
             .map((set, index) => (
               <TierObject key={index} set={set} player={props.player} />
             ))}

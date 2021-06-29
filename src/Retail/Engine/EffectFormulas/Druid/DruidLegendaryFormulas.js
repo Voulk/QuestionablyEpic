@@ -41,7 +41,7 @@ export const getDruidLegendary = (effectName, player, contentType) => {
     /* 
 
     The swiftmend extension legendary can be valued by calculating how much extra healing we can expect out of the HoTs on the swiftmended target. 
-    The general goal most of the time is to Swiftmend whichever target has your Cenarion Ward but playerayers aren't perfect. 
+    The general goal most of the time is to Swiftmend whichever target has your Cenarion Ward but players aren't perfect. 
 
     */
     // Do Math

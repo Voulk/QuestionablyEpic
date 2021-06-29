@@ -11,9 +11,12 @@ import {
   getItemIcon,
   checkItemExists,
   getItemSlot,
+  socketItem,
 } from "./ItemUtilities";
 import SPEC from "../Engine/SPECS";
 import each from "jest-each";
+import BCItem from "General/Modules/Player/BCItem";
+import BCPlayer from "General/Modules/Player/BCPlayer";
 
 describe("Test Item Level", () => {
   test("Sylvan Whiteshield ilvl", () => {
@@ -211,6 +214,20 @@ describe("getItemSlot func", () => {
     const expectedResult = "";
     expect(getItemProp(id, "slot")).toEqual(expectedResult);
   });
+
+  // Add new tests
+});
+
+describe("socketItem", () => {
+  test("Red Gem Test", () => {
+    const player = new BCPlayer("Mock", "Restoration Druid BC", 99, "NA", "Stonemaul", "Night Elf");
+    const item = new BCItem(29087, "Chestguard of Malorne", "Chest", "");
+
+    socketItem(item, player);
+
+  });
+
+
 
   // Add new tests
 });

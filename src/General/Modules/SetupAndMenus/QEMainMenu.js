@@ -13,28 +13,21 @@ import MessageOfTheDay from "./MessageOftheDay";
 import ArticleCard from "../ArticleCards/ArcticleCard";
 import Changelog from "../ChangeLog/Changelog";
 import InfoOutlinedIcon from "@material-ui/icons/InfoOutlined";
-
-/* ---------------------------------------------------------------------------------------------- */
-/*                                             Warning                                            */
-/*                 If a button name has to change, do it in the translation files.                */
-/*                    Consider the titles here to be ID's rather than strings                     */
-/* ---------------------------------------------------------------------------------------------- */
-// [route, show button?, tooltip]
-const mainMenuOptions = {
-  "MainMenu.TopGear": ["/topgear", true, "TopGear"],
-  "MainMenu.UpgradeFinder": ["/UpgradeFinder", true, "UpgradeFinder"],
-  "MainMenu.QuickCompare": ["/quickcompare", true, "QuickCompare"],
-  "MainMenu.ExploreCovenants": ["/soulbinds", true, "ExploreCovenants"],
-  "MainMenu.LegendaryAnalysis": ["/legendaries", true, "LegendaryAnalysis"],
-  "MainMenu.TrinketAnalysis": ["/trinkets", true, "TrinketAnalysis"],
-  "MainMenu.CooldownPlanner": ["/holydiver", false, "CooldownPlanner"],
-  "MainMenu.Profile": ["/profile", true, "Profile"],
-  // "MainMenu.TierSets": ["/TierSets", true, "TierSets"],
-};
+import { useSelector } from "react-redux";
+import GameTypeSwitch from "./GameTypeToggle";
+import WelcomeDialog from "../Welcome/Welcome";
+import ls from "local-storage";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    [theme.breakpoints.down("sm")]: {
+    [theme.breakpoints.down("xs")]: {
+      margin: "auto",
+      width: "85%",
+      justifyContent: "center",
+      display: "block",
+      marginTop: 140,
+    },
+    [theme.breakpoints.up("sm")]: {
       margin: "auto",
       width: "80%",
       justifyContent: "center",
@@ -61,9 +54,39 @@ export default function QEMainMenu(props) {
     ReactGA.pageview(window.location.pathname + window.location.search);
   }, []);
 
+  const gameType = useSelector((state) => state.gameType);
+
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                             Warning                                            */
+  /*                 If a button name has to change, do it in the translation files.                */
+  /*                    Consider the titles here to be ID's rather than strings                     */
+  /* ---------------------------------------------------------------------------------------------- */
+  // [route, show button?, tooltip]
+  const mainMenuOptions =
+    gameType === "Retail"
+      ? {
+          "MainMenu.TopGear": ["/topgear", true, "TopGear"],
+          "MainMenu.UpgradeFinder": ["/UpgradeFinder", true, "UpgradeFinder"],
+          "MainMenu.QuickCompare": ["/quickcompare", true, "QuickCompare"],
+          "MainMenu.ExploreCovenants": ["/soulbinds", true, "ExploreCovenants"],
+          "MainMenu.LegendaryAnalysis": ["/legendaries", true, "LegendaryAnalysis"],
+          "MainMenu.TrinketAnalysis": ["/trinkets", true, "TrinketAnalysis"],
+          "MainMenu.CooldownPlanner": ["/holydiver", false, "CooldownPlanner"],
+          "MainMenu.Profile": ["/profile", true, "Profile"],
+        }
+      : {
+          "MainMenu.TopGear": ["/topgear", true, "TopGear"],
+          "MainMenu.UpgradeFinder": ["/UpgradeFinder", true, "UpgradeFinder"],
+          "MainMenu.QuickCompare": ["/quickcompare", true, "QuickCompare"],
+          "MainMenu.TierSets": ["/TierSets", true, "TierSets"],
+          "MainMenu.TrinketAnalysis": ["/trinkets", true, "TrinketAnalysis"],
+          "MainMenu.Profile": ["/profile", true, "Profile"],
+        };
+
   const { t } = useTranslation();
   const classes = useStyles();
-  const characterCount = props.allChars.getAllChar().length;
+  const characterCount = props.allChars.getAllChar(gameType).length;
+  const characterCountAll = props.allChars.getAllChar("All").length;
   const patron = ["Diamond", "Gold", "Rolls Royce", "Sapphire"].includes(props.patronStatus);
 
   let articles = [];
@@ -79,10 +102,24 @@ export default function QEMainMenu(props) {
     return "right";
   };
 
+  /* -------------------- Character Creation Dialog States -------------------- */
+  const welcomeOpen = (ls.get("welcomeMessage") === null && characterCountAll === 0) ? true : false
+  // const handleClickOpen = () => {
+  //   setOpen(true);
+  // };
+  // const handleClose = () => {
+  //   setOpen(false);
+  // };
+
   return (
     <div style={{ backgroundColor: "#313131" }}>
       <div className={classes.root}>
         <Grid container spacing={2}>
+          {
+            <Grid item xs={12} style={{ textAlign: "center" }}>
+              <GameTypeSwitch charUpdate={props.charUpdate} allChars={props.allChars} />
+            </Grid>
+          }
           <Grid item xs={12}>
             <Button
               key={321}
@@ -103,9 +140,9 @@ export default function QEMainMenu(props) {
               {patron ? t("MainMenu.PatronThanks") : t("MainMenu.PatronInvite")}
             </Button>
           </Grid>
-          <Grid item xs={12}>
-            <MessageOfTheDay />
-          </Grid>
+          {/*<Grid item xs={12}>
+            <MessageOfTheDay /> 
+            </Grid> */}
 
           {Object.keys(mainMenuOptions).map((key, index) => (
             // Buttons are translated and printed from a dictionary.
@@ -143,9 +180,9 @@ export default function QEMainMenu(props) {
         </Typography>
 
         <Grid container spacing={2}>
-          {props.allChars.getAllChar().length > 0
+          {props.allChars.getAllChar(gameType).length > 0
             ? props.allChars
-                .getAllChar()
+                .getAllChar(gameType)
                 .map((char, index) => (
                   <CharCards
                     key={index}
@@ -155,13 +192,13 @@ export default function QEMainMenu(props) {
                     allChars={props.allChars}
                     charUpdate={props.charUpdate}
                     singleUpdate={props.singleUpdate}
-                    isActive={index === props.allChars.activeChar}
+                    isActive={char.charID === props.allChars.activeChar}
                     charUpdatedSnack={props.charUpdatedSnack}
                     delChar={props.delChar}
                   />
                 ))
             : ""}
-          {props.allChars.getAllChar().length < 9 ? <AddNewChar allChars={props.allChars} charUpdate={props.charUpdate} charAddedSnack={props.charAddedSnack} /> : ""}
+          {props.allChars.getAllChar(gameType).length < 9 ? <AddNewChar allChars={props.allChars} charUpdate={props.charUpdate} charAddedSnack={props.charAddedSnack} /> : ""}
         </Grid>
 
         {articles.length > 0 ? (
@@ -185,6 +222,8 @@ export default function QEMainMenu(props) {
         )}
         <Changelog />
         <HallOfFame />
+
+        <WelcomeDialog welcomeOpen={welcomeOpen}  allChars={props.allChars} charUpdate={props.charUpdate} charAddedSnack={props.charAddedSnack} />
       </div>
     </div>
   );

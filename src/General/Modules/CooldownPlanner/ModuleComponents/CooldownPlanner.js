@@ -5,7 +5,9 @@ import { AddBox, ArrowDownward, Check, Clear, DeleteOutline, Edit, FilterList, S
 import { Button, TextField, InputLabel, FormControl, Grow, MenuItem, Divider, Paper, Select, Grid, Typography } from "@material-ui/core";
 import { ThemeProvider, createMuiTheme, makeStyles } from "@material-ui/core/styles";
 import moment from "moment";
-import { healerCooldownsDetailed, raidList, bossList, bossAbilities } from "../Data/Data";
+import { healerCooldownsDetailed, raidList } from "../Data/Data";
+import { bossList } from "../Data/CooldownPlannerBossList"
+import { bossAbilities} from "../Data/CooldownPlannerBossAbilityList"
 import { classColoursJS } from "../Functions/ClassColourFunctions";
 import { useTranslation } from "react-i18next";
 import { localizationFR } from "locale/fr/TableLocale";

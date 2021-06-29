@@ -6,9 +6,10 @@ import { useTranslation } from "react-i18next";
 import classIcons from "../../CooldownPlanner/Functions/IconFunctions/ClassIcons";
 import raceIcons from "../../CooldownPlanner/Functions/IconFunctions/RaceIcons";
 import Autocomplete from "@material-ui/lab/Autocomplete";
-import { classRaceList } from "../../CooldownPlanner/Data/Data";
-import { serverDB } from "../../../../Databases/ServerDB";
+import { bcClassRaceList, classRaceList } from "../../CooldownPlanner/Data/Data";
+import { serverDB, serverDBBurningCrusade } from "../../../../Databases/ServerDB";
 import { classColoursJS } from "../../CooldownPlanner/Functions/ClassColourFunctions";
+import { useSelector } from "react-redux";
 
 const addBtn = require("../../../../Images/AddBtn.jpg").default;
 
@@ -79,6 +80,8 @@ const menuStyle = {
 export default function AddNewChar(props) {
   const { t } = useTranslation();
   const classes = useStyles();
+  const gameType = useSelector((state) => state.gameType);
+  const availableClasses = classRaceList;
   const [open, setOpen] = React.useState(false);
   const [healClass, setHealClass] = React.useState("");
   const [charName, setCharName] = React.useState("");
@@ -86,6 +89,8 @@ export default function AddNewChar(props) {
   const [selectedRace, setSelectedRace] = React.useState("");
   const [server, setServer] = React.useState("");
   const region = ["CN", "US", "TW", "EU", "KR"];
+
+  const serverList = gameType === "Retail" ? serverDB : serverDBBurningCrusade 
   const handleClickOpen = () => {
     setOpen(true);
   };
@@ -93,9 +98,9 @@ export default function AddNewChar(props) {
   const handleClose = () => {
     setOpen(false);
   };
-  const handleAdd = (name, spec, allChars, updateChar, region, realm, race) => {
+  const handleAdd = (name, spec, allChars, updateChar, region, realm, race, gameType) => {
     setOpen(false);
-    allChars.addChar(name, spec, region, realm, race);
+    allChars.addChar(name, spec, region, realm, race, gameType);
     updateChar(allChars);
     props.charAddedSnack();
     setSelectedRace("");
@@ -121,8 +126,10 @@ export default function AddNewChar(props) {
     setServer(serverName);
   };
 
+
+
   return (
-    <Grid item xs={12} sm={6} md={6} lg={4} xl={4}>
+    <Grid item xs={12} sm={6} md={6} lg={6} xl={4}>
       <CardActionArea onClick={handleClickOpen}>
         <Card className={classes.root} variant="outlined" raised={true}>
           <Avatar variant="square" alt="" className={classes.large} src={addBtn} />
@@ -166,7 +173,7 @@ export default function AddNewChar(props) {
                   }}
                   disabled={regions === "" ? true : false}
                   id="server-select"
-                  options={serverDB[regions] || []}
+                  options={serverList[regions] || []}
                   getOptionLabel={(option) => option}
                   style={{ width: "100%" }}
                   onChange={(e, newValue) => {
@@ -181,7 +188,8 @@ export default function AddNewChar(props) {
               <FormControl className={classes.formControl} variant="outlined" size="small" disabled={regions === "" ? true : false} label={t("Select Class")}>
                 <InputLabel id="NewClassSelector">{t("Select Class")}</InputLabel>
                 <Select label={t("Select Class")} value={healClass} onChange={handleChangeSpec} MenuProps={menuStyle}>
-                  {Object.getOwnPropertyNames(classRaceList)
+                  {Object.getOwnPropertyNames(availableClasses)
+                    .filter((filter) => gameType === availableClasses[filter].gameType)
                     .map((key, i) => (
                       <MenuItem key={i} value={key} style={{ color: classColoursJS(key) }}>
                         {classIcons(key, {
@@ -205,7 +213,7 @@ export default function AddNewChar(props) {
                 <Select label={t("Select Race")} value={selectedRace} onChange={handleChangeRace} MenuProps={menuStyle}>
                   {healClass === ""
                     ? ""
-                    : classRaceList[healClass.toString()].races
+                    : availableClasses[healClass.toString()].races
                         .map((key, i) => (
                           <MenuItem key={i} value={key}>
                             <div style={{ display: "inline-flex" }}>
@@ -221,10 +229,15 @@ export default function AddNewChar(props) {
           </Grid>
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose} color="primary">
+          <Button onClick={handleClose} color="primary" variant="outlined">
             {t("Cancel")}
           </Button>
-          <Button onClick={() => handleAdd(charName, healClass, props.allChars, props.charUpdate, regions, server, selectedRace)} color="primary" disabled={selectedRace === "" ? true : false}>
+          <Button
+            onClick={() => handleAdd(charName, healClass, props.allChars, props.charUpdate, regions, server, selectedRace, gameType)}
+            color="primary"
+            disabled={selectedRace === "" ? true : false}
+            variant="outlined"
+          >
             {t("Add")}
           </Button>
         </DialogActions>

@@ -131,6 +131,7 @@ export default function SoulbindNode(props) {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
+  const currentRenown = props.player.getRenownLevel();
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -152,7 +153,12 @@ export default function SoulbindNode(props) {
   const type = "type" in trait ? trait.type : "Soulbind"; // Soulbind, Potency Conduit, Endurance Conduit, Finesse Conduit
   const name = getLocalizedName(trait, type, currentLanguage);
   const icon = process.env.PUBLIC_URL + "/Images/Icons/" + trait.icon;
-  const containerIcon = "/Images/Interface/soulbindcontainer" + (type.includes("Conduit") ? "hex" : "circle") + (trait.active ? "active" : "") + ".png";
+
+  /* ----- if trait.enhanced > than current renown, normal container, else enhanced container ----- */
+  const containerIcon =
+    trait.enhanced > currentRenown
+      ? "/Images/Interface/soulbindcontainer" + (type.includes("Conduit") ? "hex" : "circle") + (trait.active ? "active" : "") + ".png"
+      : "/Images/Interface/soulbindcontainer" + (type.includes("Conduit") ? "hexenhanced" : "circle") + (trait.active ? "active" : "") + ".png";
 
   const conduitTag = type.includes("Potency")
     ? "/Images/Interface/PotencyConduitImg.png"

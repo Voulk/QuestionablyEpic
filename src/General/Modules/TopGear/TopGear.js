@@ -36,13 +36,44 @@ const useStyles = makeStyles((theme) => ({
   },
   header: {
     [theme.breakpoints.down("sm")]: {
-      marginTop: 120,
+
     },
     [theme.breakpoints.up("md")]: {
+
+    },
+  },
+  root: {
+    [theme.breakpoints.down("xs")]: {
+      margin: "auto",
+      width: "85%",
+      justifyContent: "center",
+      display: "block",
+      marginTop: 120,
+    },
+    [theme.breakpoints.up("sm")]: {
+      margin: "auto",
+      width: "80%",
+      justifyContent: "center",
+      display: "block",
+      marginTop: 140,
+    },
+    [theme.breakpoints.up("md")]: {
+      margin: "auto",
+      width: "65%",
+      justifyContent: "center",
+      display: "block",
+      marginTop: 120,
+    },
+    [theme.breakpoints.up("lg")]: {
       marginTop: 32,
+      margin: "auto",
+      width: "55%",
+      display: "block",
     },
   },
 }));
+
+
 
 const TOPGEARCAP = 34; // TODO
 
@@ -51,6 +82,7 @@ export default function TopGear(props) {
   // const currentLanguage = i18n.language;
   const contentType = useSelector((state) => state.contentType);
   const classes = useStyles();
+  const gameType = useSelector((state) => state.gameType);
 
   /* ---------------------------------------- Popover Props --------------------------------------- */
   const [anchorEl, setAnchorEl] = useState(null);
@@ -78,6 +110,7 @@ export default function TopGear(props) {
     /* ------------------ Check that the player has selected an item in every slot. ----------------- */
     let topgearOk = true;
     let itemList = props.player.getSelectedItems();
+    //console.log(props.player.getSelectedItems());
     let errorMessage = "";
     let slotLengths = {
       Head: 0,
@@ -101,7 +134,7 @@ export default function TopGear(props) {
     for (var i = 0; i < itemList.length; i++) {
       let slot = itemList[i].slot;
       if (slot in slotLengths) {
-        if (itemList[i].vaultItem === false) slotLengths[slot] += 1;
+        if (!itemList[i].vaultItem) slotLengths[slot] += 1;
       }
     }
     for (const key in slotLengths) {
@@ -114,6 +147,7 @@ export default function TopGear(props) {
       }
     }
     setErrorMessage(errorMessage);
+    console.log(slotLengths);
     return topgearOk;
   };
 
@@ -124,23 +158,41 @@ export default function TopGear(props) {
       const currentLanguage = i18n.language;
       let itemList = props.player.getSelectedItems();
       let wepCombos = buildWepCombos(props.player, true);
-      const worker = require("workerize-loader!./TopGearEngine"); // eslint-disable-line import/no-webpack-loader-syntax
-      let instance = new worker();
       let baseHPS = props.player.getHPS(contentType);
       let strippedPlayer = JSON.parse(JSON.stringify(props.player));
       let strippedCastModel = JSON.parse(JSON.stringify(props.player.castModel[contentType]));
-      instance.runTopGear(itemList, wepCombos, strippedPlayer, contentType, baseHPS, currentLanguage, userSettings, strippedCastModel).then((result) => {
-        apiSendTopGearSet(props.player, contentType, result.itemSet.hardScore, result.itemsCompared);
-        props.setTopResult(result);
-        history.push("/report/");
+
+      if (gameType === "Retail") {
+        const worker = require("workerize-loader!./TopGearEngine"); // eslint-disable-line import/no-webpack-loader-syntax
+        let instance = new worker();
+        instance.runTopGear(itemList, wepCombos, strippedPlayer, contentType, baseHPS, currentLanguage, userSettings, strippedCastModel).then((result) => {
+          apiSendTopGearSet(props.player, contentType, result.itemSet.hardScore, result.itemsCompared);
+          props.setTopResult(result);
+          history.push("/report/");
+        });
+      }
+      else {
+        const worker = require("workerize-loader!./TopGearEngineBC"); // eslint-disable-line import/no-webpack-loader-syntax
+        let instance = new worker();
+        instance.runTopGearBC(itemList, wepCombos, strippedPlayer, contentType, baseHPS, currentLanguage, userSettings, strippedCastModel).then((result) => {
+          //apiSendTopGearSet(props.player, contentType, result.itemSet.hardScore, result.itemsCompared);
+          props.setTopResult(result);
+          history.push("/report/");
       });
+    }
+
+
     } else {
       /* ---------------------------------------- Return error. --------------------------------------- */
     }
   };
 
   const selectedItemCount = props.player.getSelectedItems().length;
-  const helpText = t("TopGear.HelpText");
+  const helpBlurb = t("TopGear.HelpText" + gameType);
+  const helpText = gameType === "Retail" ? ["Add your SimC string to automatically import your entire set of items into the app.", "Select any items you want included in the comparison. We'll automatically add anything you're currently wearing.", 
+                    "When you're all set, hit the big Go button at the bottom of the page to run the module."] :
+                    ["Add your QE Import String to automatically import your entire set of items into the app.", "Select any items you want included in the comparison. We'll automatically add anything you're currently wearing.", 
+                    "When you're all set, hit the big Go button at the bottom of the page to run the module."]
 
   const activateItem = (unique, active) => {
     if (selectedItemCount < CONSTRAINTS.Shared.topGearMaxItems || active) {
@@ -171,18 +223,14 @@ export default function TopGear(props) {
     { label: t("slotNames.weapons"), slotName: "AllMainhands" },
     { label: t("slotNames.offhands"), slotName: "Offhands" },
   ];
+  if (gameType === "BurningCrusade") slotList.push({ label: t("slotNames.relics"), slotName: "Relics & Wands" })
 
   return (
-    <div className={classes.header}>
+    <div className={classes.root}>
       <Grid
         container
         spacing={1}
         justify="center"
-        style={{
-          margin: "auto",
-          width: "55%",
-          display: "block",
-        }}
       >
         {
           <Grid item xs={12}>
@@ -192,7 +240,7 @@ export default function TopGear(props) {
           </Grid>
         }
         <Grid item xs={12}>
-          <HelpText text={helpText} />
+          <HelpText blurb={helpBlurb} text={helpText} />
         </Grid>
         <Grid item xs={12}>
           {<UpgradeFinderSimC player={props.player} simcSnack={props.simcSnack} allChars={props.allChars} />}
@@ -232,8 +280,11 @@ export default function TopGear(props) {
           bottom: 0,
           left: 0,
           right: 0,
-          height: "50px",
+          height: "60px",
           backgroundColor: "#424242",
+          borderTopColor: "Goldenrod",
+          borderTopWidth: "1px",
+          borderTopStyle: "solid",
           width: "100%",
           display: "flex",
           alignItems: "center",
@@ -249,14 +300,14 @@ export default function TopGear(props) {
             alignItems: "center",
           }}
         >
-          <Typography align="center" style={{ padding: "10px 10px 5px 10px" }} color="primary">
+          <Typography align="center" style={{ padding: "2px 2px 2px 2px" }} color="primary">
             {t("TopGear.SelectedItems") + ":" + " " + selectedItemCount + "/" + TOPGEARCAP}
           </Typography>
           <div>
-            <Typography variant="subtitle2" align="center" style={{ padding: "10px 10px 5px 10px", marginRight: "5px" }} color="primary">
+            <Typography variant="subtitle2" align="center" style={{ padding: "2px 2px 2px 2px", marginRight: "5px" }} color="primary">
               {errorMessage}
             </Typography>
-            <Button variant="contained" color="secondary" align="center" style={{ height: "68%", width: "180px" }} disabled={!btnActive} onClick={unleashTopGear}>
+            <Button variant="contained" color="primary" align="center" style={{ height: "64%", width: "180px" }} disabled={!btnActive} onClick={unleashTopGear}>
               {t("TopGear.GoMsg")}
             </Button>
           </div>

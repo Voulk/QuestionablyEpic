@@ -16,7 +16,7 @@ export const trinket_data = [
       {
         coefficient: 45.58441,
         table: -8,
-        efficiency: 0.82,
+        efficiency: 0.81,
         cooldown: 120,
         targets: { Raid: 5, Dungeon: 3.1 }, // Remember that this is only used for the meteor effect.
         ticks: 3,
@@ -75,7 +75,7 @@ export const trinket_data = [
         coefficient: 80.17241,
         table: -8,
         cooldown: 60,
-        efficiency: 0.54,
+        efficiency: {Raid: 0.58, Dungeon: 0.7}
       },
     ],
   },
@@ -109,7 +109,7 @@ export const trinket_data = [
     name: "Unbound Changeling",
     effects: [
       {
-        coefficient: 2.2,
+        coefficient: 2.2, // The spell data also has a 1.679526 (-7) coefficient that is unused.
         table: -1,
         duration: 12,
         ppm: 1.5,
@@ -218,7 +218,7 @@ export const trinket_data = [
         table: -7,
         duration: 16,
         multiplier: 1.62, // This assumes your average boss health is just under 50% which feels like a fair average.
-        efficiency: 0.9, // Ruby is a tough trinket to maximise and it's average use case is far below it's maximum.
+        efficiency: 0.92, // Ruby is a tough trinket to maximise and it's average use case is far below it's maximum.
         cooldown: 120,
       },
       {
@@ -319,7 +319,7 @@ export const trinket_data = [
     /* 
     Flat haste + Int Proc. 
     */
-    name: "Sinful Gladiator's Insignia of Alacrity",
+    name: "Gladiator's Insignia of Alacrity",
     effects: [
       {
         coefficient: 1.116129,
@@ -338,7 +338,7 @@ export const trinket_data = [
     Badge doesn't provide a lot of stats alone, and it's strength is it's low cooldown and the ability to combine it with large cooldowns.
     Divine Toll & Spirit Shell are both great examples. If you just pop it off cooldown without a big ability then it's rather weak. 
     */
-    name: "Sinful Gladiator's Badge of Ferocity",
+    name: "Gladiator's Badge of Ferocity",
     effects: [
       {
         coefficient: 1.322581,
@@ -376,8 +376,8 @@ export const trinket_data = [
     effects: [
       {
         coefficient: 3.55,
-        table: -1,
-        duration: 30,
+        table: -7,
+        duration: 20,
         cooldown: 180,
       },
     ],
@@ -515,7 +515,7 @@ export const trinket_data = [
       {
         coefficient: 326.7931,
         table: -8,
-        efficiency: { Raid: 0.46, Dungeon: 0.77 }, // Includes the 25% multiplier as the target gets lower.
+        efficiency: { Raid: 0.47, Dungeon: 0.86 }, // Includes the 25% multiplier as the target gets lower.
         cooldown: 120,
       },
     ],
@@ -774,6 +774,153 @@ export const trinket_data = [
         duration: 20,
         multiplier: 1,
         cooldown: 120,
+      },
+    ],
+  },
+  // ---------------- 9.1 Trinkets -----------------
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                        Soul Cage Fragment                                       */
+    /* ---------------------------------------------------------------------------------------------- */
+    /*
+    Int proc on healing spells
+    */
+    name: "Soul Cage Fragment",
+    effects: [
+      {
+        coefficient: 1.123377,
+        table: -1,
+        duration: 15,
+        ppm: 2,
+      },
+    ],
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                        Titanic Ocular Gland                                       */
+    /* ---------------------------------------------------------------------------------------------- */
+    /*
+    Increased stats above 50% health, decreased stats below 50% health.
+    */
+    name: "Titanic Ocular Gland",
+    effects: [
+      {
+        coefficient: 0.555215,
+        table: -7,
+        uptime: 0.92,
+      },
+    ],
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                  So'leah's Secret Technique                                    */
+    /* ---------------------------------------------------------------------------------------------- */
+    /*
+    +20 stat to a friend, +100 stat to yourself.
+    */
+    name: "So'leah's Secret Technique",
+    effects: [
+      {
+        coefficient: 1.540096,
+        table: -8,
+      },
+      {
+        coefficient: 0.308019,
+        table: -8,
+      }
+    ],
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                         Carved Ivory Keepsake                                        */
+    /* ---------------------------------------------------------------------------------------------- */
+    /*
+
+    */
+    name: "Carved Ivory Keepsake", // Spell Name: Instrusive Foresight
+    effects: [
+      {
+        coefficient: 19.57812,
+        table: -8,
+        ppm: 6,
+        efficiency: 0.8,
+      },
+    ],
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                       Resonant Silver Bell                                     */
+    /* ---------------------------------------------------------------------------------------------- */
+    /*
+
+    */
+    name: "Resonant Silver Bell", // Spell Name: Spectral Feline
+    effects: [
+      {
+        coefficient: 83.59375,
+        table: -8,
+        ppm: 2,
+        efficiency: 0.45, // 
+      },
+    ],
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                    Shadowed Orb of Torment                                     */
+    /* ---------------------------------------------------------------------------------------------- */
+    /* 
+    */
+    name: "Shadowed Orb of Torment", // Tormented Insight
+    effects: [
+      {
+        coefficient: 1.328551,
+        table: -7,
+        duration: 40,
+        cooldown: 120,
+      },
+    ],
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                 First Class Healing Distributor                                */
+    /* ---------------------------------------------------------------------------------------------- */
+    /*
+    
+    */
+    name: "First Class Healing Distributor",
+    effects: [
+      {
+        /* ----------------------------------------- Healing Portion ---------------------------------------- */
+        coefficient: 32.7898,
+        table: -8,
+        efficiency: 0.7, 
+        ppm: 3,
+        targets: { Raid: 4.2, Dungeon: 2.9 }, // 8 yard range
+        meteor: 0.15, // TODO: Confirm
+      },
+      {
+        /* --------------------------------------- Haste Portion --------------------------------------- */
+        coefficient: 3.8125,
+        table: -8,
+        ppm: 3,
+        duration: 9,
+      },
+    ],
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                    Scrawled Word of Recall                                     */
+    /* ---------------------------------------------------------------------------------------------- */
+    /* 
+    */
+    name: "Scrawled Word of Recall", // Tormented Insight
+    effects: [
+      {
+        coefficient: 0.045455,
+        specMod: {"Restoration Druid": 1, "Holy Paladin": 0.6, "Mistweaver Monk": 1, "Restoration Shaman": 0.5, "Holy Priest": 1.25, "Discipline Priest": 0.8},
+        spellList: {"Restoration Druid": 1, "Holy Paladin": 25914, "Mistweaver Monk": 1, "Restoration Shaman": 1, "Holy Priest": 1, "Discipline Priest": 1},
+        table: -1,
+        cooldown: 60,
       },
     ],
   },

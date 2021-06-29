@@ -10,13 +10,15 @@ export const CONSTRAINTS = {
         minSecondaryWeight: 0,
         maxTertiaryWeight: 1.5,
         minTertiaryWeight: 0,
+        minRenown: 1,
+        maxRenown: 80
     },
     BurningCrusade: {
 
 
     },
     Shared: {
-        topGearMaxItems: 34, // The maximum number of items selectable by the player. Combinatorial explosion requires we keep this reasonable. 
+        topGearMaxItems: 31, // The maximum number of items selectable by the player. Combinatorial explosion requires we keep this reasonable. 
         topGearDifferentials: 8, // Number of competitive alternatives to show.
     }
 

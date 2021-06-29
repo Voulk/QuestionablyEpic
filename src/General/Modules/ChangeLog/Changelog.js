@@ -10,6 +10,17 @@ const useStyles = makeStyles((theme) => ({
     fontSize: theme.typography.pxToRem(15),
     fontWeight: theme.typography.fontWeightRegular,
   },
+  buttonStyle: {
+    [theme.breakpoints.down("xs")]: {
+      fontSize: 12,
+      maxWidth: 300
+    },
+    [theme.breakpoints.up("xs")]: {
+      fontSize: 12,
+      textTransform: "none",
+      
+    },
+  },
 }));
 
 export default function Changelog() {
@@ -28,8 +39,8 @@ export default function Changelog() {
   };
 
   return (
-    <div style={{ color: "Whitesmoke", width: "520px", marginLeft: "auto", marginRight: "auto", marginBottom: 5, marginTop: 20 }}>
-      <Button style={{ fontSize: 12, textTransform: "none" }} onClick={handleClickOpen("paper")}>
+    <div style={{ color: "Whitesmoke", marginLeft: "auto", marginRight: "auto", marginBottom: 5, marginTop: 20, textAlign: "center" }}>
+      <Button className={classes.buttonStyle} onClick={handleClickOpen("paper")}>
         {/* ----------------- The first entry in Log.js is used as the latest version for the below. The latest update must always be at the top of that array ----------------  */}
         {/* //TODO translate the Click text */}
         QE Live {changeLog[0].version} {t("Changelog.Update")} {changeLog[0].update}. {t("Changelog.LastUpdated")} {changeLog[0].date}. Click to see what's changed.

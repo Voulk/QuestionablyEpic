@@ -15,7 +15,7 @@ import { getEffectValue } from "../../../Retail/Engine/EffectFormulas/EffectEngi
 // our set bonus algorithm before we sort and slice. There are no current set bonuses that are relevant to raid / dungeon so left as a thought experiment for now.
 const softSlice = 3000;
 const DR_CONST = 0.00196669230769231;
-const DR_CONSTLEECH = 0.04622569230769231;
+const DR_CONSTLEECH = 0.04322569230769231;
 
 
 // block for `time` ms, then return the number of loops we could run in that time:
@@ -393,7 +393,6 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
   compileStats(setStats, bonus_stats); // Add the base stats on our gear together with enchants & gems.
   applyDiminishingReturns(setStats); // Apply Diminishing returns to our haul.
   addBaseStats(setStats, player.spec); // Add our base stats, which are immune to DR. This includes our base 5% crit, and whatever base mastery our spec has.
-
   // Apply soft DR formula to stats, as the more we get of any stat the weaker it becomes relative to our other stats. 
   adjusted_weights.haste = (adjusted_weights.haste + adjusted_weights.haste * (1 - (DR_CONST * setStats.haste) / STATPERONEPERCENT.Retail.HASTE)) / 2;
   adjusted_weights.crit = (adjusted_weights.crit + adjusted_weights.crit * (1 - (DR_CONST * setStats.crit) / STATPERONEPERCENT.Retail.CRIT)) / 2;

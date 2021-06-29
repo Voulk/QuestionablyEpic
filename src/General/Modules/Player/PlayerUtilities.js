@@ -22,16 +22,20 @@ export function convertLogSpellOutput(player, logOutput, fightLength, reportID, 
   };
 
   for (let i = 0; i < logOutput.length; i++) {
-    let spell = logOutput[i];
+    const spell = logOutput[i];
     // console.log(logOutput[i]);
-    let spellName = spell.name;
-    let spellID = spell.guid;
-    let casts = "uses" in spell ? spell.uses : 0;
-    let hits = "hitCount" in spell ? spell.hitCount : 0;
-    let spellHPS = Math.round((spell.total / duration) * 100) / 100;
-    let overHealingPerc = "overheal" in spell ? Math.round((100 * spell.overheal) / (spell.overheal + spell.total)) / 100 : 0;
+    const spellName = spell.name;
+    const spellID = spell.guid;
+    const casts = "uses" in spell ? spell.uses : 0;
+    const hits = "hitCount" in spell ? spell.hitCount : 0;
+    const spellHPS = Math.round((spell.total / duration) * 100) / 100;
+    const overHealingPerc = "overheal" in spell ? Math.round((100 * spell.overheal) / (spell.overheal + spell.total)) / 100 : 0;
+    const spellCPM = Math.round(1000*casts / duration * 60)/1000;
+    const spellAvgCast = Math.round(spellCPM > 0 ? spell.total / casts : 0);
+    
 
-    data[spellID] = { casts: casts, healing: spell.total, hps: spellHPS, overhealing: overHealingPerc, hits: hits };
+    //data[spellID] = { casts: casts, healing: spell.total, hps: spellHPS, overhealing: overHealingPerc, hits: hits };
+    data[spellID] = {cpm: spellCPM, avgcast: spellAvgCast, hps: spellHPS, overhealing: overHealingPerc, hits: hits };
     totalHealing += logOutput[i].total;
     totalOverhealing += "overheal" in spell ? spell.overheal : 0;
   }
@@ -62,5 +66,5 @@ export function convertLogStatOutput(player, logOutput, id) {
     data.leech = info.Leech.min;
   }
 
-  player.setActiveStats(data);
+  //player.setActiveStats(data);
 }

@@ -1,5 +1,6 @@
 import Player from "./Player";
 import ls from "local-storage";
+import BCPlayer from "./BCPlayer";
 // On app start, load player data.
 // First, we will check if they are signed in and have character data.
 // If they do, load that, if they don't, we will try their localstorage instead.
@@ -25,7 +26,13 @@ class PlayerChars {
       let index = 0;
       playerChars.forEach(function (player) {
         // This could be changed later if we end up storing more information about a character. Say, the most recent log they were in.
-        charArray.push(new Player(player.charName, player.spec, index, player.region, player.realm, player.race, player.statWeights));
+        if (player.gameType === "BurningCrusade") {
+          charArray.push(new BCPlayer(player.charName, player.spec, index, player.region, player.realm, player.race, player.statWeights));
+        }
+        else {
+          charArray.push(new Player(player.charName, player.spec, index, player.region, player.realm, player.race, player.statWeights));
+        }
+        
         index += 1;
       });
     } else {
@@ -58,8 +65,9 @@ class PlayerChars {
   };
 
   // Return an array of all of the players characters.
-  getAllChar = () => {
-    return this.allChar;
+  getAllChar = (gameType = "All") => {
+    if (gameType === "All") return this.allChar;
+    else return this.allChar.filter((filter) => filter.gameType === gameType)
   };
 
   updatePlayerChar = (player) => {
@@ -69,6 +77,17 @@ class PlayerChars {
       }
     }
   };
+
+  setLowestChar = (gameType) => {
+    let index = 0;
+    for (let i = 0; i < this.allChar.length; i++) {
+      if (this.allChar[i].gameType === gameType) {
+        index = i;
+        break;
+      }
+    }
+    this.setActiveChar(index);
+  }
 
   // Save our character array, both to database (when logged in) and to LocalStorage.
   saveAllChar = () => {
@@ -80,9 +99,15 @@ class PlayerChars {
   };
 
   // Add a new character to the array then save it.
-  addChar = (name, spec, region, realm, race) => {
+  addChar = (name, spec, region, realm, race, gameType) => {
     //alert("Adding new Character")
-    this.allChar.push(new Player(name, spec, this.allChar.length, region, realm, race));
+    if (gameType === "BurningCrusade") {
+      this.allChar.push(new BCPlayer(name, spec, this.allChar.length, region, realm, race))
+    }
+    else {
+      this.allChar.push(new Player(name, spec, this.allChar.length, region, realm, race));
+    }
+    
     this.saveAllChar();
 
     //ls.set("allChar", JSON.stringify(this.allChar))

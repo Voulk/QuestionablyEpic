@@ -52,7 +52,7 @@ export default function HallOfFame() {
         {/* ---------------------------------------------------------------------------------------------- */
         /*                                     Dialog Intro / Message                                     */
         /* ----------------------------------------------------------------------------------------------  */}
-        <Typography align="center" style={{ color: "limegreen" }} variant="h6">
+        <Typography align="center" style={{ color: "goldenrod" }} variant="h6">
           {t("HallOfFame.introduction")}
         </Typography>
 
@@ -78,8 +78,8 @@ export default function HallOfFame() {
                 <Grid container spacing={2} direction="row" justify="flex-start" alignItems="center" style={nameContainerStyle}>
                   {names
                     .filter((key) => key.tier === "Rolls Royce")
-                    .map((key) => (
-                      <Grid item xs={4}>
+                    .map((key, i) => (
+                      <Grid item xs={4} key={"RR" + i}>
                         <Typography
                           color="primary"
                           style={{
@@ -111,8 +111,8 @@ export default function HallOfFame() {
                 <Grid container spacing={2} direction="row" justify="flex-start" alignItems="center" style={nameContainerStyle}>
                   {names
                     .filter((key) => key.tier === "Diamond")
-                    .map((key) => (
-                      <Grid item xs={4}>
+                    .map((key, i) => (
+                      <Grid item xs={4} key={"D" + i}>
                         <Typography
                           color="primary"
                           style={{
@@ -145,7 +145,7 @@ export default function HallOfFame() {
                   {names
                     .filter((key) => key.tier === "Gold")
                     .map((key) => (
-                      <Grid item xs={4}>
+                      <Grid item xs={4} key={"G" + i}>
                         <Typography
                           style={{
                             borderRadius: 4,
