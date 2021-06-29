@@ -319,7 +319,7 @@ export const trinket_data = [
     /* 
     Flat haste + Int Proc. 
     */
-    name: "Sinful Gladiator's Insignia of Alacrity",
+    name: "Gladiator's Insignia of Alacrity",
     effects: [
       {
         coefficient: 1.116129,
@@ -338,7 +338,7 @@ export const trinket_data = [
     Badge doesn't provide a lot of stats alone, and it's strength is it's low cooldown and the ability to combine it with large cooldowns.
     Divine Toll & Spirit Shell are both great examples. If you just pop it off cooldown without a big ability then it's rather weak. 
     */
-    name: "Sinful Gladiator's Badge of Ferocity",
+    name: "Gladiator's Badge of Ferocity",
     effects: [
       {
         coefficient: 1.322581,

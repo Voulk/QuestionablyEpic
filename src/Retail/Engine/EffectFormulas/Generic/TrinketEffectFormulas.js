@@ -221,7 +221,7 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel, use
     /* ---------------------------------------------------------------------------------------------- */
     /*                             Sinful Gladiator's Insignia of Alacrity                            */
     /* ---------------------------------------------------------------------------------------------- */
-    effectName === "Sinful Gladiator's Insignia of Alacrity"
+    effectName === "Gladiator's Insignia of Alacrity"
   ) {
     let effect = activeTrinket.effects[0];
 
@@ -231,7 +231,7 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel, use
     /* ---------------------------------------------------------------------------------------------- */
     /*                              Sinful Gladiator's Badge of Ferocity                              */
     /* ---------------------------------------------------------------------------------------------- */
-    effectName === "Sinful Gladiator's Badge of Ferocity"
+    effectName === "Gladiator's Badge of Ferocity"
   ) {
     // Test
     let effect = activeTrinket.effects[0];

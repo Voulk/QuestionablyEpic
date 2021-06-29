@@ -60466,7 +60466,7 @@ export const itemDB = [
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
-            "name": "Sinful Gladiator's Badge of Ferocity"
+            "name": "Gladiator's Badge of Ferocity"
         },
         "levelRange": []
     },
@@ -68402,7 +68402,7 @@ export const itemDB = [
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
-            "name": "Sinful Gladiator's Insignia of Alacrity"
+            "name": "Gladiator's Insignia of Alacrity"
         },
         "levelRange": []
     },
@@ -106578,7 +106578,7 @@ export const itemDB = [
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
-            "name": "Unchained Gladiator's Badge of Ferocity"
+            "name": "Gladiator's Badge of Ferocity"
         },
         "levelRange": []
     },
@@ -107665,7 +107665,7 @@ export const itemDB = [
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
-            "name": "Unchained Gladiator's Badge of Ferocity"
+            "name": "Gladiator's Badge of Ferocity"
         },
         "levelRange": [
             200,
@@ -108820,7 +108820,7 @@ export const itemDB = [
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
-            "name": "Unchained Gladiator's Insignia of Alacrity"
+            "name": "Gladiator's Insignia of Alacrity"
         },
         "levelRange": []
     },
@@ -110032,7 +110032,7 @@ export const itemDB = [
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
-            "name": "Unchained Gladiator's Insignia of Alacrity"
+            "name": "Gladiator's Insignia of Alacrity"
         },
         "levelRange": [
             200,
@@ -120658,7 +120658,7 @@ export const itemDB = [
             "name": "Resonant Silver Bell"
         },
         "levelRange": [
-            219,
+            220,
             233,
             246,
             259
