@@ -123,7 +123,7 @@ export function getSoulbindFormula(effectID, player, contentType) {
     /*
     This one needs a check against log. It can obviously never exceed 4% total healing but is likely to be much less.
     */
-    let percent_healing_above_70 = 0.75;
+    let percent_healing_above_70 = 0.7;
     let expected_overhealing = 0.5;
     let effect_power = 0.04;
 
@@ -147,6 +147,16 @@ export function getSoulbindFormula(effectID, player, contentType) {
     /* --------------------------------------- Light the Path --------------------------------------- */
     effectID === 351491
   ) {
+    const ppm = 0.54
+    const stackTimer = 1.64 // Time it takes to get one stack. It has a 1.5s ICD.
+    const cycleLength = 60/ppm + 60;
+    const percentFull = ((60/ppm) - (20 * stackTimer)) / (cycleLength);
+    const percentStacking = (20 * stackTimer) / (cycleLength);
+    const averageValiantStacks = (20 / 2 * percentStacking) + (20 * percentFull);
+    const critPerStack = 0.25 * STATPERONEPERCENT.Retail.CRIT
+
+    bonus_stats.Crit = (critPerStack * averageValiantStacks) + (5 * STATPERONEPERCENT.Retail.CRIT * 15 * ppm) / 60
+    console.log("Average Valiant Stacks: " + averageValiantStacks);
 
   }
 
@@ -165,9 +175,15 @@ export function getSoulbindFormula(effectID, player, contentType) {
     /*
     DOES reset stacks on raid boss pull. Doesn't in Mythic+.
     */
-    let casts_per_minute = 25; // Pull from logs.
-    let brons_per_minute = casts_per_minute / 90;
-    let bron_sp = player.activeStats.intellect * 2;
+    
+    const stackTimer = 0.19 // Time it takes to get one stack. It has a 0.1s ICD and doesn't build while Bron is active.
+    const base_ppm = 60 / (stackTimer * 75);
+    const buildTime = 75 * stackTimer;
+    const cycleLength = buildTime + 30;
+    const ppmAdj = buildTime / cycleLength;
+    const brons_per_minute = base_ppm * (ppmAdj);
+
+    let bron_sp = player.activeStats.intellect * 2 * 1.1;
     let anima_cannon_dps = 0.55 * bron_sp * 3; //* player.getStatMultiplier("", ['Crit', 'Vers'])
     let smash_dps = 0.25 * bron_sp * 1;
     let vit_bolt_hps = 0.575 * bron_sp * 8;
