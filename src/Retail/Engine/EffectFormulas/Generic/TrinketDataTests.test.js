@@ -8,7 +8,7 @@ import each from "jest-each";
 
 describe("Insignia of Alacrity Data Check", () => {
     // Raw trinket values are compared to our spell data. Efficiency excluded.
-    const activeTrinket = trinket_data.find((trinket) => trinket.name === "Sinful Gladiator's Insignia of Alacrity");
+    const activeTrinket = trinket_data.find((trinket) => trinket.name === "Gladiator's Insignia of Alacrity");
     const effect = activeTrinket.effects[0];
     each`
     level   | expectedResult
@@ -24,7 +24,7 @@ describe("Insignia of Alacrity Data Check", () => {
 
 describe("Badge of Ferocity Data Check", () => {
     // Raw trinket values are compared to our spell data. Efficiency excluded.
-    const activeTrinket = trinket_data.find((trinket) => trinket.name === "Sinful Gladiator's Badge of Ferocity");
+    const activeTrinket = trinket_data.find((trinket) => trinket.name === "Gladiator's Badge of Ferocity");
     const effect = activeTrinket.effects[0];
     each`
     level    | expectedResult
