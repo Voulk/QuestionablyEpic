@@ -43,6 +43,27 @@ export function getAwakeningWingsUptime(player, contentType) {
   return basewings / 60.0;
 }
 
+export function getAdjustedHolyShock(player, contentType) {
+  const isShockBarrier = true;
+
+  const holy_shock_sp = 1.55;
+  const glimmer_sp = 0.38;
+  const expected_glimmer_active = contentType == "Raid" ? 7.1 : 4.4;
+  const shockBarrierMult = 1 + (0.2 * 3) * (1 - 0.15);
+  const expectedHSOverhealing = 0.06;
+  const beaconMult = 1 + (0.5 * (1 - 0.88));
+
+  const oneCombinedShock = holy_shock_sp * (1 - expectedHSOverhealing) * shockBarrierMult * beaconMult;
+  const oneGlimmerProc = glimmer_sp * expected_glimmer_active * beaconMult * 0.8;
+  const holyPowerHealing = getOneHolyPower(player, contentType);
+
+  // It is a reasonable assumption that you include half of your Divine Tolls within a wings window.
+  //const wingsMultiplier = (getWingsHealingInc(player.getStatPerc("Crit")) - 1) / 2 + 1; 
+  
+  return (holyPowerHealing + ((oneCombinedShock + oneGlimmerProc) * player.getStatMultiplier("NOHASTE")));
+
+}
+
 export function getPaladinCovAbility(soulbindName, player, contentType) {
   let bonus_stats = {};
 
@@ -58,14 +79,29 @@ export function getPaladinCovAbility(soulbindName, player, contentType) {
     const expectedHSOverhealing = 0.06;
     const beaconMult = 1 + (0.5 * (1 - 0.88));
 
-    const oneCombinedShock = holy_shock_sp * (1 - expectedHSOverhealing) * shockBarrierMult * beaconMult;
+    const oneCombinedShock = holy_shock_sp * (1 - expectedHSOverhealing) * beaconMult;
+    const oneCombinedShockSB = holy_shock_sp * (1 - expectedHSOverhealing) * shockBarrierMult * beaconMult;
     const oneGlimmerProc = glimmer_sp * expected_glimmer_active * beaconMult * 0.8;
     const holyPowerHPS = getOneHolyPower(player, contentType) * 5;
 
     // It is a reasonable assumption that you include half of your Divine Tolls within a wings window.
     const wingsMultiplier = (getWingsHealingInc(player.getStatPerc("Crit")) - 1) / 2 + 1; 
     
-    bonus_stats.HPS = (holyPowerHPS + ((oneCombinedShock * divineTollCasts + oneGlimmerProc) * player.getStatMultiplier("NOHASTE") * wingsMultiplier)) / 60;
+    if ('numCopies' in specialSettings) {
+      // This is the legendary effect. 
+      //bonus_stats.HPS = (holyPowerHPS + ((oneCombinedShock * divineTollCasts + oneGlimmerProc) * player.getStatMultiplier("NOHASTE") * wingsMultiplier)) / 60;
+      bonus_stats.hps = ((holyPowerHPS * specialSettings.numCopies / 5) + 
+                          (oneCombinedShock) * player.getStatMultiplier("NOHASTE") * specialSettings.copyStrength * specialSettings.numCopies) / 60;
+      
+      //console.log("Extra Shocks: " + (oneCombinedShock * divineTollCasts + oneGlimmerProc) * player.getStatMultiplier("NOHASTE") * specialSettings.copyStrength * specialSettings.numCopies / 60)
+      //console.log("Holy Power: " + (holyPowerHPS * specialSettings.numCopies / 60))
+                          //console.log("Num: " + specialSettings.numCopies + ". Str: " + specialSettings.copyStrength + ". HPS: " + bonus_stats.hps);
+      }
+    else {
+      // This is a regular Divine Toll use.
+      bonus_stats.HPS = (holyPowerHPS + ((oneCombinedShockSB * divineTollCasts + oneGlimmerProc) * player.getStatMultiplier("NOHASTE") * wingsMultiplier)) / 60;
+    }
+    
 
   } else if (["Nadjia", "Theotar", "Draven"].includes(soulbindName)) {
     // Ashen Hallow (Venthyr)
@@ -97,7 +133,13 @@ export function getPaladinCovAbility(soulbindName, player, contentType) {
     const HPSFreeWordOfGlory = player.getSingleCast(IDWORDOFGLORY, contentType);
     const HPSFreeHolyPower = getOneHolyPower(player, contentType);
 
-    bonus_stats.HPS = (HPSFreeWordOfGlory + HPSFreeHolyPower) / 30;
+    if ("extraSpells" in specialSettings) {
+      bonus_stats.hps = (HPSFreeWordOfGlory) / 30 + (HPSFreeHolyPower + HPSFreeWordOfGlory) / player.getFightLength(contentType);
+    }
+    else {
+      bonus_stats.HPS = (HPSFreeWordOfGlory + HPSFreeHolyPower) / 30;
+    }
+    
   }
 
   return bonus_stats;

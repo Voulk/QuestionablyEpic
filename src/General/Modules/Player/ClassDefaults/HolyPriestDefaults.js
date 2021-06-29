@@ -19,7 +19,9 @@ export const holyPriestDefaultSpecialQueries = (contentType) => {
       CastsPerMinute: 28,
       cooldownMult: {
         oneMinute: 1,
+        ninetySeconds: 1,
         twoMinutes: 1,
+        twoMinutesOrb: 1,
         threeMinutes: 1,
       },
       HoldYourGroundUptime: 0.8
@@ -30,7 +32,9 @@ export const holyPriestDefaultSpecialQueries = (contentType) => {
       CastsPerMinute: 30,
       cooldownMult: {
         oneMinute: 1,
+        ninetySeconds: 1,
         twoMinutes: 1,
+        twoMinutesOrb: 1,
         threeMinutes: 1,
       },
       HoldYourGroundUptime: 0.8
@@ -47,18 +51,18 @@ export const holyPriestDefaultStatWeights = (contentType) => {
 
   statWeights.Raid = {
     intellect: 1,
-    haste: 0.29,
-    crit: 0.38,
-    mastery: 0.38,
-    versatility: 0.35,
+    haste: 0.33,
+    crit: 0.4,
+    mastery: 0.4,
+    versatility: 0.37,
     leech: 0.56,
   };
   statWeights.Dungeon = {
     intellect: 1,
-    haste: 0.34,
-    crit: 0.35,
-    mastery: 0.28,
-    versatility: 0.34,
+    haste: 0.36,
+    crit: 0.37,
+    mastery: 0.29,
+    versatility: 0.35,
     leech: 0.36,
   };
 

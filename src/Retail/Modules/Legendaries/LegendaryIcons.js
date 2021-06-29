@@ -7,9 +7,15 @@ export const legendaryImages = {
   "Oath of the Elder Druid": require("Images/Legendaries/OathOfTheElderDruid.jpg"),
   "Verdant Infusion": require("Images/Legendaries/VerdantInfusion.jpg"),
   "Vision of Unending Growth": require("Images/Legendaries/VisionOfUnendingGrowth.jpg"),
+  "Kindred Affinity": require("Images/Legendaries/KindredAffinity.jpg"),
+  "Sinful Hysteria": require("Images/Legendaries/SinfulHysteria.jpg"),
+  "Unbridled Swarm": require("Images/Legendaries/UnbridledSwarm.jpg"),
+  "Celestial Spirits": require("Images/Legendaries/CelestialSpirits.jpg"),
 
   /* ----------------------------- Paladin Legendary Images ----------------------------- */
   "Of Dusk and Dawn": require("Images/Legendaries/FromDuskTillDawn.jpg"),
+  "Divine Resonance": require("Images/Legendaries/FromDuskTillDawn.jpg"),
+  "Duty-Bound Gavel": require("Images/Legendaries/FromDuskTillDawn.jpg"),
   "Vanguards Momentum": require("Images/Legendaries/VanguardsMomentum.jpg"),
   "The Magistrates Judgment": require("Images/Legendaries/TheMagistratesJudgment.jpg"),
   "Inflorescence of the Sunwell": require("Images/Legendaries/InflorescenceOfTheSunwell.jpg"),
@@ -18,6 +24,10 @@ export const legendaryImages = {
   "Shock Barrier": require("Images/Legendaries/ShockBarrier.jpg"),
   "The Mad Paragon": require("Images/Legendaries/ability_paladin_conviction.jpg"),
   "Relentless Inquisitor": require("Images/Legendaries/spell_holy_divinepurpose.jpg"),
+  "Divine Resonance": require("Images/Legendaries/DivineResonance.jpg"),
+  "Duty-Bound Gavel": require("Images/Legendaries/DutyBoundGavel.jpg"),
+  "Seasons of Plenty": require("Images/Legendaries/SeasonsOfPlenty.jpg"),
+  "Radiant Embers": require("Images/Legendaries/RadiantEmbers.jpg"),
 
   /* ------------------------------ Monk Legendary Images ------------------------------ */
   "Escape from Reality": require("Images/Legendaries/EscapeFromReality.jpg"),
@@ -31,6 +41,10 @@ export const legendaryImages = {
   "Vitality Sacrifice": require("Images/Legendaries/VitalitySacrifice.jpg"),
   "Sephuz's Proclamation": require("Images/Legendaries/SephuzsProclamation.jpg"),
   "Echo of Eonar": require("Images/Legendaries/EchoofEonar.jpg"),
+  "Call to Arms": require("Images/Legendaries/CallToArms.jpg"),
+  "Bountiful Brew": require("Images/Legendaries/BountifulBrew.jpg"),
+  "Faeline Harmony": require("Images/Legendaries/FaelineHarmony.jpg"),
+  "Sinister Teachings": require("Images/Legendaries/SinisterTeachings.jpg"),
 
   /* ------------------------------ Priest Legendary Images ------------------------------ */
   "Clarity of Mind": require("Images/Legendaries/ClarityofMind.jpg"),
@@ -45,6 +59,10 @@ export const legendaryImages = {
   "Harmonious Apparatus": require("Images/Legendaries/HarmoniousApparatus.jpg"),
   "X'anshi, Return of Archbishop Benedictus": require("Images/Legendaries/XanshiReturnofArchbishopBenedictus.jpg"),
   "Vault of Heavens": require("Images/Legendaries/VaultofHeavens.jpg"),
+  "Spheres' Harmony": require("Images/Legendaries/SpheresHarmony.jpg"),
+  "Pallid Command": require("Images/Legendaries/PallidCommand.jpg"),
+  "Bwonsamdi's Pact": require("Images/Legendaries/BwonsamdisPact.jpg"),
+  "Shadow Word: Manipulation": require("Images/Legendaries/ShadowWordManipulation.jpg"),
 
   /* ----------------------------- Shaman Legendary Images ----------------------------- */
   "Earthen Harmony": require("Images/Legendaries/EarthenHarmony.jpg"),
@@ -54,4 +72,8 @@ export const legendaryImages = {
   "Chains of Devastation": require("Images/Legendaries/ChainsofDevastation.jpg"),
   "Deeply Rooted Elements": require("Images/Legendaries/DeeplyRootedElements.jpg"),
   "Spiritwalker's Tidal Totem": require("Images/Legendaries/SpiritwalkersTidalTotem.jpg"),
+  "Raging Vesper Vortex": require("Images/Legendaries/RagingVesperVortex.jpg"),
+  "Seeds of Rampant Growth": require("Images/Legendaries/SeedsOfRampantGrowth.jpg"),
+  "Splintered Elements": require("Images/Legendaries/SplinteredElements.jpg"),
+  "Elemental Conduit": require("Images/Legendaries/ElementalConduit.jpg"),
 };

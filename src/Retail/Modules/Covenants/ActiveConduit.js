@@ -14,7 +14,7 @@ class ActiveConduit {
   id = 0;
   hps = -1;
   name = ""; // This needs to be localized. There are a few ways we can do it.
-  itemLevel = 184;
+  itemLevel = 200;
   icon = "";
   type = ""; // Potency, Finesse or Endurance. We are mostly focusing on Potency and Endurance since Finesse are very scenario specific.
   covenant = ""; // For those specific to a covenant.

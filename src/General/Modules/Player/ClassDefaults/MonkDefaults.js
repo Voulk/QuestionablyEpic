@@ -59,7 +59,9 @@ export const monkDefaultSpecialQueries = (contentType) => {
       OneManaHealing: 4.2,
       cooldownMult: {
         oneMinute: 1.4,
+        ninetySeconds: 1,
         twoMinutes: 1,
+        twoMinutesOrb: 1.11,
         threeMinutes: 1.2,
       },
       HoldYourGroundUptime: 0.6
@@ -75,7 +77,9 @@ export const monkDefaultSpecialQueries = (contentType) => {
       OneManaHealing: 1.4,
       cooldownMult: {
         oneMinute: 1.4,
+        ninetySeconds: 1,
         twoMinutes: 1,
+        twoMinutesOrb: 1.1,
         threeMinutes: 1.2,
       },
       HoldYourGroundUptime: 0.6
@@ -92,18 +96,18 @@ export const monkDefaultStatWeights = (contentType) => {
 
   statWeights.Raid = {
     intellect: 1,
-    haste: 0.36,
-    crit: 0.37,
-    mastery: 0.28,
-    versatility: 0.36,
+    haste: 0.38,
+    crit: 0.39,
+    mastery: 0.34,
+    versatility: 0.38,
     leech: 0.56,
   };
   statWeights.Dungeon = {
     intellect: 1,
-    haste: 0.36,
-    crit: 0.37,
-    mastery: 0.29,
-    versatility: 0.36,
+    haste: 0.38,
+    crit: 0.39,
+    mastery: 0.31,
+    versatility: 0.37,
     leech: 0.36,
   };
 

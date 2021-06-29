@@ -10,7 +10,7 @@ import i18n from "i18next";
 export function getAvailableClassConduits(spec) {
   let currentLanguage = i18n.language;
   let conduits = [];
-  const defaultItemLevel = 184;
+  const defaultItemLevel = 200;
   // TODO Implement the below rework, need to include the covenant in the mapping
   // example of potential rework
   // conduits

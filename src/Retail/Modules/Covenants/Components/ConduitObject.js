@@ -16,7 +16,7 @@ export default function ConduitObject(props) {
   /* --------- Arrow Function to Increase Conduits Ilvl on left click --------- */
   const conduitClicked = () => {
     let oldLevel = props.conduit.itemLevel;
-    let newLevel = oldLevel === 226 ? 145 : oldLevel === 184 ? 200 : oldLevel + 13;
+    let newLevel = oldLevel === 252 ? 145 : oldLevel === 184 ? 200 : oldLevel + 13;
     props.updateConduitLevel(props.conduit.id, newLevel);
   };
 
@@ -24,7 +24,7 @@ export default function ConduitObject(props) {
   const conduitRightClicked = (e) => {
     e.preventDefault();
     let oldLevel = props.conduit.itemLevel;
-    let newLevel = oldLevel === 145 ? 226 : oldLevel === 200 ? 184 : oldLevel - 13;
+    let newLevel = oldLevel === 145 ? 252 : oldLevel === 200 ? 184 : oldLevel - 13;
     props.updateConduitLevel(props.conduit.id, newLevel);
   };
 

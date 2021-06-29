@@ -129,7 +129,7 @@ export function getEffectValue(effect, player, contentType, itemLevel = 0, userS
       bonus_stats = getGenericEffectBC(effectName, player, contentType);
     } 
   }
-  //console.log("ITEM EFFECT" + effectName + " " + effectType + ". " + ". Result: " + JSON.stringify(bonus_stats));
+  console.log("ITEM EFFECT" + effectName + " " + effectType + ". " + ". Result: " + JSON.stringify(bonus_stats));
   return bonus_stats;
 }
 
@@ -142,6 +142,8 @@ function getConduitRank(itemLevel) {
     200: 5,
     213: 6,
     226: 7,
+    239: 8,
+    252: 9
   };
 
   return ranks[itemLevel];

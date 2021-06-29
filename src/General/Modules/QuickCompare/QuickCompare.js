@@ -38,11 +38,32 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(2),
   },
   header: {
-    [theme.breakpoints.down("sm")]: {
+    [theme.breakpoints.down("xs")]: {
+      margin: "auto",
+      width: "85%",
+      justifyContent: "center",
+      display: "block",
       marginTop: 120,
     },
+    [theme.breakpoints.up("sm")]: {
+      margin: "auto",
+      width: "80%",
+      justifyContent: "center",
+      display: "block",
+      marginTop: 140,
+    },
     [theme.breakpoints.up("md")]: {
+      margin: "auto",
+      width: "65%",
+      justifyContent: "center",
+      display: "block",
+      marginTop: 120,
+    },
+    [theme.breakpoints.up("lg")]: {
       marginTop: 32,
+      margin: "auto",
+      width: "55%",
+      display: "block",
     },
   },
   option: {
@@ -132,7 +153,11 @@ export default function QuickCompare(props) {
   const idPop = openPop ? "simple-popover" : undefined;
   const slots = getSlots();
   const helpBlurb = [t("QuickCompare.HelpText")];
-  const helpText = ["(Optional) Add your SimC or QE Import String to auto-import your entire set of items.", "(Optional) Manually add items using the slot drop down below.", "Item scores are shown in the top right corner in yellow."]
+  const helpText = [
+    "(Optional) Add your SimC or QE Import String to auto-import your entire set of items.",
+    "(Optional) Manually add items using the slot drop down below.",
+    "Item scores are shown in the top right corner in yellow.",
+  ];
   const gameType = useSelector((state) => state.gameType);
 
   /* ------------------------ End Simc Module Functions ----------------------- */
@@ -172,7 +197,7 @@ export default function QuickCompare(props) {
         (slotName === key.slot && key.itemClass === 4 && acceptableArmorTypes.includes(key.itemSubClass)) ||
         (slotName === "Offhands" && (key.slot === "Holdable" || key.slot === "Offhand" || key.slot === "Shield")) ||
         (slotName === "Weapons" && key.itemClass === 2 && acceptableWeaponTypes.includes(key.itemSubClass)) ||
-        (slotName == "Relics & Wands" && key.itemClass === 2 && spec === "Holy Priest BC") // Wands
+        (slotName == "Relics & Wands" && key.itemClass === 2 && spec === "Holy Priest BC"), // Wands
     ).map((key) => newItemList.push({ value: key.id, label: key.names[currentLanguage] }));
 
     newItemList.sort((a, b) => (a.label > b.label ? 1 : -1));
@@ -268,16 +293,7 @@ export default function QuickCompare(props) {
 
   return (
     <div className={classes.header}>
-      <Grid
-        container
-        spacing={1}
-        justify="center"
-        style={{
-          margin: "auto",
-          width: "65%",
-          display: "block",
-        }}
-      >
+      <Grid container spacing={1} justify="center">
         {/* -------------------------------------------------------------------------- */
         /*                         Quick Compare Title Header                         */
         /* -------------------------------------------------------------------------- */}

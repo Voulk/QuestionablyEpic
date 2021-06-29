@@ -5,7 +5,9 @@ import { AddBox, ArrowDownward, Check, Clear, DeleteOutline, Edit, FilterList, S
 import { Button, TextField, InputLabel, FormControl, Grow, MenuItem, Divider, Paper, Select, Grid, Typography } from "@material-ui/core";
 import { ThemeProvider, createMuiTheme, makeStyles } from "@material-ui/core/styles";
 import moment from "moment";
-import { healerCooldownsDetailed, raidList, bossList, bossAbilities } from "../Data/Data";
+import { healerCooldownsDetailed, raidList } from "../Data/Data";
+import { bossList } from "../Data/CooldownPlannerBossList"
+import { bossAbilities} from "../Data/CooldownPlannerBossAbilityList"
 import { classColoursJS } from "../Functions/ClassColourFunctions";
 import { useTranslation } from "react-i18next";
 import { localizationFR } from "locale/fr/TableLocale";
@@ -1316,14 +1318,14 @@ export default function CooldownPlanner(props) {
   /* ------ Generates the blank plan arrays in the local storage if they don't exist already. ----- */
   useEffect(() => {
     bossList.map((key) => {
-      if (ls.get(key.zoneID + "." + key.id + ".1") === null) {
-        ls.set(key.zoneID + "." + key.id + ".1", []);
+      if (ls.get(key.zoneID + "." + key.DungeonEncounterID + ".1") === null) {
+        ls.set(key.zoneID + "." + key.DungeonEncounterID + ".1", []);
       }
-      if (ls.get(key.zoneID + "." + key.id + ".2") === null) {
-        ls.set(key.zoneID + "." + key.id + ".2", []);
+      if (ls.get(key.zoneID + "." + key.DungeonEncounterID + ".2") === null) {
+        ls.set(key.zoneID + "." + key.DungeonEncounterID + ".2", []);
       }
-      if (ls.get(key.zoneID + "." + key.id + ".3") === null) {
-        ls.set(key.zoneID + "." + key.id + ".3", []);
+      if (ls.get(key.zoneID + "." + key.DungeonEncounterID + ".3") === null) {
+        ls.set(key.zoneID + "." + key.DungeonEncounterID + ".3", []);
       }
     });
     if (ls.get("healerInfo") === null || ls.get("healerInfo") === undefined) {
@@ -1488,9 +1490,9 @@ export default function CooldownPlanner(props) {
                           return obj.zoneID === currentRaid;
                         })
                         .map((key, i) => (
-                          <MenuItem key={"BS" + i} value={key.id}>
-                            {bossIcons(key.id)}
-                            {key.name}
+                          <MenuItem key={"BS" + i} value={key.DungeonEncounterID}>
+                            {bossIcons(key.DungeonEncounterID)}
+                            {t("BossNames." + key.ID)}
                           </MenuItem>
                         ))
                         .map((key, i) => [key, <Divider key={i} />])}

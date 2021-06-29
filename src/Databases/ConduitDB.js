@@ -13,6 +13,7 @@ export const conduitDB = [
 
   {
     guid: 340616,
+    simcID: 274,
     abilityIcon: "spell_nature_crystalball.jpg",
     name: {
       en: "Flash of Clarity",
@@ -28,6 +29,7 @@ export const conduitDB = [
   },
   {
     guid: 340621,
+    simcID: 275,
     abilityIcon: "item_herbd.jpg",
     name: {
       en: "Floral Recycling",
@@ -43,6 +45,7 @@ export const conduitDB = [
   },
   {
     guid: 340550,
+    simcID: 276,
     abilityIcon: "spell_nature_ravenform.jpg",
     name: {
       en: "Ready for Anything",
@@ -58,6 +61,7 @@ export const conduitDB = [
   },
   {
     guid: 340549,
+    simcID: 273,
     abilityIcon: "ability_druid_flourish.jpg",
     name: {
       en: "Unstoppable Growth",
@@ -73,6 +77,7 @@ export const conduitDB = [
   },
   {
     guid: 341446,
+    simcID: 279,
     abilityIcon: "ability_ardenweald_druid.jpg",
     name: {
       en: "Conflux of Elements",
@@ -88,6 +93,7 @@ export const conduitDB = [
   },
   {
     guid: 341378,
+    simcID: 277,
     abilityIcon: "ability_bastion_druid.jpg",
     name: {
       en: "Deep Allegiance",
@@ -103,6 +109,7 @@ export const conduitDB = [
   },
   {
     guid: 341383,
+    simcID: 280,
     abilityIcon: "ability_revendreth_druid.jpg",
     name: {
       en: "Endless Thirst",
@@ -118,6 +125,7 @@ export const conduitDB = [
   },
   {
     guid: 341447,
+    simcID: 278,
     abilityIcon: "ability_maldraxxus_druid.jpg",
     name: {
       en: "Evolved Swarm",
@@ -136,6 +144,7 @@ export const conduitDB = [
 
   {
     guid: 340529,
+    simcID: 254,
     abilityIcon: "spell_nature_stoneclawtotem.jpg",
     name: {
       en: "Tough as Bark",
@@ -151,6 +160,7 @@ export const conduitDB = [
   },
   {
     guid: 340553,
+    simcID: 271,
     abilityIcon: "ability_druid_tigersroar.jpg",
     name: {
       en: "Well-Honed Instincts",
@@ -166,6 +176,7 @@ export const conduitDB = [
   },
   {
     guid: 340540,
+    simcID: 255,
     abilityIcon: "ability_druid_markofursol.jpg",
     name: {
       en: "Ursine Vigor",
@@ -181,6 +192,7 @@ export const conduitDB = [
   },
   {
     guid: 340543,
+    simcID: 256,
     abilityIcon: "spell_nature_healingway.jpg",
     name: {
       en: "Innate Resolve",
@@ -199,6 +211,7 @@ export const conduitDB = [
 
   {
     guid: 341280,
+    simcID: 258,
     abilityIcon: "spell_nature_reincarnation.jpg",
     name: {
       en: "Born Anew",
@@ -214,6 +227,7 @@ export const conduitDB = [
   },
   {
     guid: 341450,
+    simcID: 259,
     abilityIcon: "spell_druid_stampedingroar_cat.jpg",
     name: {
       en: "Front of the Pack",
@@ -229,6 +243,7 @@ export const conduitDB = [
   },
   {
     guid: 341451,
+    simcID: 260,
     abilityIcon: "ability_hunter_huntervswild.jpg",
     name: {
       en: "Born of the Wilds",
@@ -244,6 +259,7 @@ export const conduitDB = [
   },
   {
     guid: 340545,
+    simcID: 257,
     abilityIcon: "spell_druid_tirelesspursuit.jpg",
     name: {
       en: "Tireless Pursuit",
@@ -266,6 +282,7 @@ export const conduitDB = [
 
   {
     guid: 336773,
+    simcID: 28,
     abilityIcon: "inv_inscription_deck_jadeserpent.jpg",
     name: {
       en: "Jade Bond",
@@ -281,6 +298,7 @@ export const conduitDB = [
   },
   {
     guid: 337241,
+    simcID: 54,
     abilityIcon: "inv_misc_gem_pearl_06.jpg",
     name: {
       en: "Nourishing Chi",
@@ -296,6 +314,7 @@ export const conduitDB = [
   },
   {
     guid: 337099,
+    simcID: 44,
     abilityIcon: "spell_monk_revival.jpg",
     name: {
       en: "Rising Sun Revival",
@@ -311,6 +330,7 @@ export const conduitDB = [
   },
   {
     guid: 336812,
+    simcID: 31,
     abilityIcon: "spell_nature_abolishmagic.jpg",
     name: {
       en: "Resplendent Mist",
@@ -326,6 +346,7 @@ export const conduitDB = [
   },
   {
     guid: 337286,
+    simcID: 59,
     abilityIcon: "ability_bastion_warrior.jpg",
     name: {
       en: "Strike with Clarity",
@@ -341,6 +362,7 @@ export const conduitDB = [
   },
   {
     guid: 337301,
+    simcID: 62,
     abilityIcon: "spell_animarevendreth_buff.jpg",
     name: {
       en: "Imbued Reflections",
@@ -356,6 +378,7 @@ export const conduitDB = [
   },
   {
     guid: 337295,
+    simcID: 60,
     abilityIcon: "spell_animamaldraxxus_nova.jpg",
     name: {
       en: "Bone Marrow Hops",
@@ -371,6 +394,7 @@ export const conduitDB = [
   },
   {
     guid: 337303,
+    simcID: 63,
     abilityIcon: "spell_animaardenweald_beam.jpg",
     name: {
       en: "Way of the Fae",
@@ -389,6 +413,7 @@ export const conduitDB = [
 
   {
     guid: 336853,
+    simcID: 33,
     abilityIcon: "inv_misc_food_vendor_blackpepper.jpg",
     name: {
       en: "Fortifying Ingredients",
@@ -404,6 +429,7 @@ export const conduitDB = [
   },
   {
     guid: 336632,
+    simcID: 25,
     abilityIcon: "inv_misc_volatileearth.jpg",
     name: {
       en: "Grounding Breath",
@@ -419,6 +445,7 @@ export const conduitDB = [
   },
   {
     guid: 336379,
+    simcID: 15,
     abilityIcon: "ability_monk_chiswirl.jpg",
     name: {
       en: "Harm Denial",
@@ -437,6 +464,7 @@ export const conduitDB = [
 
   {
     guid: 336890,
+    simcID: 37,
     abilityIcon: "inv_elemental_mote_air01.jpg",
     name: {
       en: "Dizzying Tumble",
@@ -452,6 +480,7 @@ export const conduitDB = [
   },
   {
     guid: 336884,
+    simcID: 35,
     abilityIcon: "sha_ability_rogue_bloodyeye.jpg",
     name: {
       en: "Lingering Numbness",
@@ -467,6 +496,7 @@ export const conduitDB = [
   },
   {
     guid: 337078,
+    simcID: 41,
     abilityIcon: "ability_monk_ridethewind.jpg",
     name: {
       en: "Swift Transference",
@@ -482,6 +512,7 @@ export const conduitDB = [
   },
   {
     guid: 337084,
+    simcID: 42,
     abilityIcon: "ability_titankeeper_phasing.jpg",
     name: {
       en: "Tumbling Technique",
@@ -504,6 +535,7 @@ export const conduitDB = [
 
   {
     guid: 339570,
+    simcID: 177,
     abilityIcon: "ability_priest_spiritoftheredeemer.jpg",
     name: {
       en: "Enkindled Spirit",
@@ -519,6 +551,7 @@ export const conduitDB = [
   },
   {
     guid: 339984,
+    simcID: 193,
     abilityIcon: "item_holyspark.jpg",
     name: {
       en: "Focused Light",
@@ -534,6 +567,7 @@ export const conduitDB = [
   },
   {
     guid: 339712,
+    simcID: 184,
     abilityIcon: "ability_priest_voidshift.jpg",
     name: {
       en: "Resplendent Light",
@@ -549,6 +583,7 @@ export const conduitDB = [
   },
   {
     guid: 339987,
+    simcID: 194,
     abilityIcon: "achievement_admiral_of_the_light.jpg",
     name: {
       en: "Untempered Dedication",
@@ -564,6 +599,7 @@ export const conduitDB = [
   },
   {
     guid: 340218,
+    simcID: 216,
     abilityIcon: "spell_animabastion_orb.jpg",
     name: {
       en: "Ringing Clarity",
@@ -579,6 +615,7 @@ export const conduitDB = [
   },
   {
     guid: 340212,
+    simcID: 215,
     abilityIcon: "spell_animarevendreth_groundstate.jpg",
     name: {
       en: "Hallowed Discernment",
@@ -594,6 +631,7 @@ export const conduitDB = [
   },
   {
     guid: 340192,
+    simcID: 213,
     abilityIcon: "spell_animamaldraxxus_missile.jpg",
     name: {
       en: "Righteous Might",
@@ -609,6 +647,7 @@ export const conduitDB = [
   },
   {
     guid: 340185,
+    simcID: 210,
     abilityIcon: "spell_animaardenweald_buff.jpg",
     name: {
       en: "The Long Summer",
@@ -627,6 +666,7 @@ export const conduitDB = [
 
   {
     guid: 338741,
+    simcID: 129,
     abilityIcon: "ability_racial_holyresistance.jpg",
     name: {
       en: "Divine Call",
@@ -642,6 +682,7 @@ export const conduitDB = [
   },
   {
     guid: 339114,
+    simcID: 141,
     abilityIcon: "ability_priest_cascade.jpg",
     name: {
       en: "Golden Path",
@@ -657,6 +698,7 @@ export const conduitDB = [
   },
   {
     guid: 338787,
+    simcID: 133,
     abilityIcon: "ability_vehicle_sonicshockwave.jpg",
     name: {
       en: "Shielding Words",
@@ -675,6 +717,7 @@ export const conduitDB = [
 
   {
     guid: 339316,
+    simcID: 163,
     abilityIcon: "achievement_dungeon_heroic_gloryoftheraider.jpg",
     name: {
       en: "Echoing Blessings",
@@ -690,6 +733,7 @@ export const conduitDB = [
   },
   {
     guid: 339268,
+    simcID: 159,
     abilityIcon: "inv_lightforgedmatrixability_lightsjudgment.jpgg",
     name: {
       en: "Light's Barding",
@@ -705,6 +749,7 @@ export const conduitDB = [
   },
   {
     guid: 339124,
+    simcID: 142,
     abilityIcon: "spell_holy_mindsooth.jpg",
     name: {
       en: "Pure Concentration",
@@ -720,6 +765,7 @@ export const conduitDB = [
   },
   {
     guid: 339292,
+    simcID: 161,
     abilityIcon: "spell_holy_painsupression.jpg",
     name: {
       en: "Wrench Evil",
@@ -742,6 +788,7 @@ export const conduitDB = [
 
   {
     guid: 337790,
+    simcID: 77,
     abilityIcon: "spell_holy_spiritualguidence.jpg", // This is a blizzard misspelling, not mine. Just by the way.
     name: {
       en: "Exaltation",
@@ -757,6 +804,7 @@ export const conduitDB = [
   },
   {
     guid: 337786,
+    simcID: 76,
     abilityIcon: "spell_holy_blessedrecovery.jpg",
     name: {
       en: "Pain Transformation",
@@ -772,6 +820,7 @@ export const conduitDB = [
   },
   {
     guid: 337778,
+    simcID: 75,
     abilityIcon: "ability_priest_spiritoftheredeemer.jpg",
     name: {
       en: "Shining Radiance",
@@ -787,6 +836,7 @@ export const conduitDB = [
   },
   {
     guid: 337891,
+    simcID: 81,
     abilityIcon: "spell_holy_purify.jpg",
     name: {
       en: "Swift Penitence",
@@ -802,6 +852,7 @@ export const conduitDB = [
   },
   {
     guid: 337914,
+    simcID: 82,
     abilityIcon: "achievement_bg_returnxflags_def_wsg.jpg",
     name: {
       en: "Focused Mending",
@@ -817,6 +868,7 @@ export const conduitDB = [
   },
   {
     guid: 338345,
+    simcID: 116,
     abilityIcon: "ability_priest_bindingprayers.jpg",
     name: {
       en: "Holy Oration",
@@ -832,6 +884,7 @@ export const conduitDB = [
   },
   {
     guid: 337811,
+    simcID: 78,
     abilityIcon: "inv_icon_wing06a.jpg",
     name: {
       en: "Lasting Spirit",
@@ -847,6 +900,7 @@ export const conduitDB = [
   },
   {
     guid: 337947,
+    simcID: 84,
     abilityIcon: "spell_holy_holybolt.jpg",
     name: {
       en: "Resonant Words",
@@ -862,6 +916,7 @@ export const conduitDB = [
   },
   {
     guid: 337966,
+    simcID: 87,
     abilityIcon: "spell_animabastion_wave.jpg",
     name: {
       en: "Courageous Ascension",
@@ -877,6 +932,7 @@ export const conduitDB = [
   },
   {
     guid: 338315,
+    simcID: 105,
     abilityIcon: "spell_animarevendreth_debuff.jpg",
     name: {
       en: "Shattered Perceptions",
@@ -892,6 +948,7 @@ export const conduitDB = [
   },
   {
     guid: 337979,
+    simcID: 90,
     abilityIcon: "spell_animamaldraxxus_debuff.jpg",
     name: {
       en: "Festering Transfusion",
@@ -907,6 +964,7 @@ export const conduitDB = [
   },
   {
     guid: 338305,
+    simcID: 101,
     abilityIcon: "spell_animaardenweald_buff.jpg",
     name: {
       en: "Fae Fermata",
@@ -922,6 +980,7 @@ export const conduitDB = [
   },
   {
     guid: 337715,
+    simcID: 71,
     abilityIcon: "ability_priest_clarityofwill.jpg",
     name: {
       en: "Charitable Soul",
@@ -937,6 +996,7 @@ export const conduitDB = [
   },
   {
     guid: 337748,
+    simcID: 72,
     abilityIcon: "spell_holy_restoration.jpg",
     name: {
       en: "Light's Inspiration",
@@ -952,6 +1012,7 @@ export const conduitDB = [
   },
   {
     guid: 337662,
+    simcID: 66,
     abilityIcon: "spell_nature_invisibilty.jpg",
     name: {
       en: "Translucent Image",
@@ -970,6 +1031,7 @@ export const conduitDB = [
 
   {
     guid: 337707,
+    simcID: 69,
     abilityIcon: "ability_pvp_innerrenewal.jpg",
     name: {
       en: "Clear Mind",
@@ -985,6 +1047,7 @@ export const conduitDB = [
   },
   {
     guid: 337954,
+    simcID: 85,
     abilityIcon: "sha_ability_rogue_bloodyeye_nightborne.jpg",
     name: {
       en: "Mental Recovery",
@@ -1000,6 +1063,7 @@ export const conduitDB = [
   },
   {
     guid: 337678,
+    simcID: 67,
     abilityIcon: "ability_priest_savinggrace.jpg",
     name: {
       en: "Move with Grace",
@@ -1015,6 +1079,7 @@ export const conduitDB = [
   },
   {
     guid: 337762,
+    simcID: 73,
     abilityIcon: "ability_priest_wordsofmeaning.jpg",
     name: {
       en: "Power Unto Others",
@@ -1037,6 +1102,7 @@ export const conduitDB = [
 
   {
     guid: 338329,
+    simcID: 117,
     abilityIcon: "spell_shaman_improvedearthshield.jpg",
     name: {
       en: "Embrace of Earth",
@@ -1052,6 +1118,7 @@ export const conduitDB = [
   },
   {
     guid: 338343,
+    simcID: 119,
     abilityIcon: "shaman_pvp_ripplingwaters.jpg",
     name: {
       en: "Heavy Rainfall",
@@ -1067,6 +1134,7 @@ export const conduitDB = [
   },
   {
     guid: 338346,
+    simcID: 120,
     abilityIcon: "spell_shaman_blessingofeternals.jpg",
     name: {
       en: "Nature's Reach",
@@ -1082,6 +1150,7 @@ export const conduitDB = [
   },
   {
     guid: 338339,
+    simcID: 118,
     abilityIcon: "spell_holy_serendipity.jpg",
     name: {
       en: "Swirling Currents",
@@ -1097,6 +1166,7 @@ export const conduitDB = [
   },
   {
     guid: 339182,
+    simcID: 146,
     abilityIcon: "ability_monk_forcesphere.jpg",
     name: {
       en: "Elysian Dirge",
@@ -1112,6 +1182,7 @@ export const conduitDB = [
   },
   {
     guid: 339185,
+    simcID: 149,
     abilityIcon: "warlock_charredremains.jpg",
     name: {
       en: "Lavish Harvest",
@@ -1127,6 +1198,7 @@ export const conduitDB = [
   },
   {
     guid: 339186,
+    simcID: 147,
     abilityIcon: "spell_animamaldraxxus_wave.jpg",
     name: {
       en: "Tumbling Waves",
@@ -1142,6 +1214,7 @@ export const conduitDB = [
   },
   {
     guid: 339183,
+    simcID: 148,
     abilityIcon: "spell_animaardenweald_debuff.jpg",
     name: {
       en: "Essential Extraction",
@@ -1160,6 +1233,7 @@ export const conduitDB = [
 
   {
     guid: 337964,
+    simcID: 92,
     abilityIcon: "ability_hunter_mastertactitian.jpg",
     name: {
       en: "Astral Protection",
@@ -1175,6 +1249,7 @@ export const conduitDB = [
   },
   {
     guid: 337974,
+    simcID: 93,
     abilityIcon: "ability_shaman_fortifyingwaters.jpg",
     name: {
       en: "Refreshing Waters",
@@ -1190,6 +1265,7 @@ export const conduitDB = [
   },
   {
     guid: 337981,
+    simcID: 94,
     abilityIcon: "ability_accretion.jpg",
     name: {
       en: "Vital Accretion",
@@ -1208,6 +1284,7 @@ export const conduitDB = [
 
   {
     guid: 338054,
+    simcID: 97,
     abilityIcon: "spell_nature_removedisease.jpg",
     name: {
       en: "Crippling Hex",
@@ -1223,6 +1300,7 @@ export const conduitDB = [
   },
   {
     guid: 338048,
+    simcID: 98,
     abilityIcon: "spell_arcane_prismaticcloak.jpg",
     name: {
       en: "Spiritual Resonance",
@@ -1238,6 +1316,7 @@ export const conduitDB = [
   },
   {
     guid: 338033,
+    simcID: 95,
     abilityIcon: "ability_hunter_longevity.jpg",
     name: {
       en: "Thunderous Paws",
@@ -1253,6 +1332,7 @@ export const conduitDB = [
   },
   {
     guid: 338042,
+    simcID: 96,
     abilityIcon: "spell_shaman_dropall_03.jpg",
     name: {
       en: "Totemic Surge",
@@ -1265,5 +1345,68 @@ export const conduitDB = [
     class: "Restoration Shaman",
     covenant: "",
     show: true,
+  },
+];
+
+export const conduitRanks = [
+  {
+    rank: 1,
+    itemLevel: 145,
+  },
+  {
+    rank: 2,
+    itemLevel: 158,
+  },
+  {
+    rank: 3,
+    itemLevel: 171,
+  },
+  {
+    rank: 4,
+    itemLevel: 184,
+  },
+  {
+    rank: 5,
+    itemLevel: 200,
+  },
+  {
+    rank: 6,
+    itemLevel: 213,
+  },
+  {
+    rank: 7,
+    itemLevel: 226,
+  },
+  {
+    rank: 8,
+    itemLevel: 239,
+  },
+  {
+    rank: 9,
+    itemLevel: 252,
+  },
+  {
+    rank: 10,
+    itemLevel: 265,
+  },
+  {
+    rank: 11,
+    itemLevel: 278,
+  },
+  {
+    rank: 12,
+    itemLevel: 291,
+  },
+  {
+    rank: 13,
+    itemLevel: 304,
+  },
+  {
+    rank: 14,
+    itemLevel: 317,
+  },
+  {
+    rank: 15,
+    itemLevel: 330,
   },
 ];
