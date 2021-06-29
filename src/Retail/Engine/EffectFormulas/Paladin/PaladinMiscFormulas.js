@@ -43,6 +43,27 @@ export function getAwakeningWingsUptime(player, contentType) {
   return basewings / 60.0;
 }
 
+export function getAdjustedHolyShock(player, contentType) {
+  const isShockBarrier = true;
+
+  const holy_shock_sp = 1.55;
+  const glimmer_sp = 0.38;
+  const expected_glimmer_active = contentType == "Raid" ? 7.1 : 4.4;
+  const shockBarrierMult = 1 + (0.2 * 3) * (1 - 0.15);
+  const expectedHSOverhealing = 0.06;
+  const beaconMult = 1 + (0.5 * (1 - 0.88));
+
+  const oneCombinedShock = holy_shock_sp * (1 - expectedHSOverhealing) * shockBarrierMult * beaconMult;
+  const oneGlimmerProc = glimmer_sp * expected_glimmer_active * beaconMult * 0.8;
+  const holyPowerHealing = getOneHolyPower(player, contentType);
+
+  // It is a reasonable assumption that you include half of your Divine Tolls within a wings window.
+  //const wingsMultiplier = (getWingsHealingInc(player.getStatPerc("Crit")) - 1) / 2 + 1; 
+  
+  return (holyPowerHealing + ((oneCombinedShock + oneGlimmerProc) * player.getStatMultiplier("NOHASTE")));
+
+}
+
 export function getPaladinCovAbility(soulbindName, player, contentType) {
   let bonus_stats = {};
 
