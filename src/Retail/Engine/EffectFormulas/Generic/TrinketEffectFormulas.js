@@ -553,7 +553,6 @@ export function getTrinketEffect(effectName, player, contentType, itemLevel, use
     const playerBestSecondary = player.getHighestStatWeight(contentType);
 
     bonus_stats[playerBestSecondary] = getProcessedValue(effect.coefficient, effect.table, itemLevel) + getProcessedValue(allyEffect.coefficient, allyEffect.table, itemLevel);
-    console.log("Soleah" + bonus_stats[playerBestSecondary]);
     //
   } else if (
     /* ---------------------------------------------------------------------------------------------- */
@@ -617,16 +616,11 @@ else if (
 ) {
   const effect = activeTrinket.effects[0];
   const expectedCDR = Math.round(10*getProcessedValue(effect.coefficient, effect.table, itemLevel, 1, false)*effect.specMod[player.getSpec()])/10;
-  //console.log(expectedCDR);
 
   if (player.getSpec() === "Holy Paladin") {
-    console.log(getAdjustedHolyShock(player, contentType) * (expectedCDR / 7.5) / 60);
     bonus_stats.hps = ((getAdjustedHolyShock(player, contentType) * (expectedCDR / 7.5)) - player.getSpecialQuery("OneManaHealing", contentType) * 1600) / 60 * 0.8
   }
 
-
-  /* ------- Hastes impact on the trinket PPM is included in the secondary multiplier below. ------ */
-  //
 }
   else {
     /* ---------------------------------------------------------------------------------------------- */

@@ -6,7 +6,8 @@ export default function MessageOfTheDay() {
   const messageOfTheDay = [
     "- 9.1 content is VERY buggy on live realms.",
     "- Expect ALL information to change as they make rapid hotfixes.",
-    "- The Upgrade Finder will return later this week."
+    "- The Upgrade Finder will return later this week.",
+    "- NOTHING IS FINAL YET!"
 ];
 
   return (
