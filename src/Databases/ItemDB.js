@@ -115161,7 +115161,7 @@ export const itemDB = [
             "type": "trinket",
             "name": "Tome of Insight"
         },
-        "levelRange": []
+        "levelRange": [200, 207, 213, 220, 226, 233]
     },
     {
         "id": 186207,

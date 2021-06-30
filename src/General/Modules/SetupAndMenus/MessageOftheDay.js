@@ -4,10 +4,9 @@ import { Grid, Paper, Typography } from "@material-ui/core";
 export default function MessageOfTheDay() {
   //prettier-ignore
   const messageOfTheDay = [
-    "- 9.1 content is VERY buggy on live realms.",
-    "- Expect ALL information to change as they make rapid hotfixes.",
+    "- Expect ALL information to change as blizzard are making rapid hotfixes.",
+    "- There are two very overtuned trinkets. These are likely to be nerfed before the raid opens.",
     "- The Upgrade Finder will return later this week.",
-    "- NOTHING IS FINAL YET!"
 ];
 
   return (
