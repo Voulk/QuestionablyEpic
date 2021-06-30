@@ -286,3 +286,17 @@ describe("Sunblood Amethyst", () => {
         expect(getProcessedValue(effect.coefficient, effect.table, level)).toBe(expectedResult);
     });
 });
+
+describe("Tome of Insight", () => {
+    // Raw trinket values are compared to our spell data. Efficiency excluded.
+    const activeTrinket = trinket_data.find((trinket) => trinket.name === "Tome of Insight");
+    const effect = activeTrinket.effects[0];
+    each`
+    level   | expectedResult
+    ${200}  | ${271}
+    // add new test cases here
+    `.test("Tome of Insight Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
+  
+        expect(getProcessedValue(effect.coefficient, effect.table, level)).toBe(expectedResult);
+    });
+});

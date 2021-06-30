@@ -924,6 +924,23 @@ export const trinket_data = [
       },
     ],
   },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                         Tome of Insight                                        */
+    /* ---------------------------------------------------------------------------------------------- */
+    /*
+    This is a crit stat stick available as catch up gear.
+    */
+    name: "Tome of Insight",
+    effects: [
+      {
+        coefficient: 1.546671, // The spell data also has a 1.679526 (-7) coefficient that is unused.
+        table: -7,
+        duration: 20,
+        ppm: 2,
+      },
+    ],
+  },
 ];
 
 /* ------------------------------------------- Unused ------------------------------------------- */

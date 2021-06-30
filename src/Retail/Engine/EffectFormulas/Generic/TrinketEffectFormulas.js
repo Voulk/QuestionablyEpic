@@ -622,6 +622,18 @@ else if (
   }
 
 }
+else if (
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                         Tome of Insight                                        */
+  /* ---------------------------------------------------------------------------------------------- */
+  effectName === "Tome of Insight"
+) {
+  let effect = activeTrinket.effects[0];
+
+  bonus_stats.crit = getProcessedValue(effect.coefficient, effect.table, itemLevel) * convertPPMToUptime(effect.ppm, effect.duration) * player.getStatPerc("Haste");
+  console.log("Crit: " + bonus_stats.crit);
+  //
+}
   else {
     /* ---------------------------------------------------------------------------------------------- */
     /*                                        No Trinkets Found                                       */
