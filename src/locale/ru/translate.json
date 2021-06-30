@@ -470,6 +470,7 @@
       "EnduranceConduit": "Проводник выносливости",
       "FinesseConduit": "Проводник точности",
       "ConduitInstructions": "Правый/Левый клик по проводнику для изменения уровня",
+      "RenownTooltip": "Import your Renown via SimC / Enter your Renown level here",
       "StatPanel": {
         "Summary": "Сводка",
         "Score": "Общий HPS",

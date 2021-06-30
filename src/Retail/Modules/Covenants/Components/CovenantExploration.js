@@ -529,7 +529,7 @@ function buildSoulbind(soulbindName, player, contentType, soulbindState, activat
                     height={36}
                     style={{ margin: 4, borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.12)" }}
                   />
-                  <Tooltip title={t("Import your Renown via SimC / Enter your Renown level here")} placement="right">
+                  <Tooltip title={t("Soulbinds.RenownTooltip")} placement="right">
                     <TextField
                       label={t("Renown Level")}
                       id="renownLevel"
