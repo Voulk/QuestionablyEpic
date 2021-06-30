@@ -1346,6 +1346,42 @@ export const conduitDB = [
     covenant: "",
     show: true,
   },
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                         Conduits Added in 9.1 Available to All Classes                         */
+  /* ---------------------------------------------------------------------------------------------- */
+  {
+    guid: 357902,
+    simcID: 284,
+    abilityIcon: "inv_belt_plate_ardenweald_d_01.jpg",
+    name: {
+      en: "Adaptive Armor Fragment",
+      cn: "适应性护甲碎片",
+      de: "Adaptives Rüstungsfragment",
+      fr: "Fragment d’armure adaptative",
+      ru: "Фрагмент адаптивной брони",
+    },
+    type: "Potency",
+    class: "",
+    covenant: "",
+    show: true,
+  },
+  {
+    guid: 357888,
+    simcID: 283,
+    abilityIcon: "spell_animarevendreth_orb.jpg",
+    name: {
+      en: "Condensed Anima Sphere",
+      cn: "浓缩的心能之球",
+      de: "Kondensierte Animasphäre",
+      fr: "Sphère d’anima condensé",
+      ru: "Сфера концентрированной анимы",
+    },
+    type: "Endurance",
+    class: "",
+    covenant: "",
+    show: true,
+  },
+
 ];
 
 export const conduitRanks = [

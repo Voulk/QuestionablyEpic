@@ -188,6 +188,14 @@ export const getMonkConduit = (conduitID, player, contentType, conduitLevel) => 
     const directHealingIncrease = yourExpelHarm * conduitPower; //+ otherExpelHarm * conduitPower;
 
     bonus_stats.HPS = directHealingIncrease;
+  } else if (
+    /* ----------------------------------- Adaptive Armor Fragment ---------------------------------- */
+    conduitID === 357902
+  ) {
+  } else if (
+    /* ----------------------------------- Condensed Anima Sphere ----------------------------------- */
+    conduitID === 357888
+  ) {
   }
 
   return bonus_stats;

@@ -127,6 +127,14 @@ export function getAvailableClassConduits(spec) {
     conduits.push(new ActiveConduit(337748, defaultItemLevel, localizedName(337748), "Endurance"));
     conduits.push(new ActiveConduit(337662, defaultItemLevel, localizedName(337662), "Endurance"));
   }
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                            Conduits Available to All Classes in 9.1                            */
+  /* ---------------------------------------------------------------------------------------------- */
+
+  /* ----------------------------------- Adaptive Armor Fragment ---------------------------------- */
+  conduits.push(new ActiveConduit(357902, defaultItemLevel, localizedName(357902), "Potency"));
+  /* ----------------------------------- Condensed Anima Sphere ----------------------------------- */
+  conduits.push(new ActiveConduit(357888, defaultItemLevel, localizedName(357888), "Endurance"));
 
   return conduits;
 }

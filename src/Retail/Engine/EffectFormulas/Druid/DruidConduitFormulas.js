@@ -96,6 +96,14 @@ export const getDruidConduit = (conduitID, player, contentType, conduitLevel) =>
     let percent_self_casts = 0.04;
 
     bonus_stats.HPS = (regrowth_hps + frenzied_hps) * trait_bonus * percent_self_casts;
+  } else if (
+    /* ----------------------------------- Adaptive Armor Fragment ---------------------------------- */
+    conduitID === 357902
+  ) {
+  } else if (
+    /* ----------------------------------- Condensed Anima Sphere ----------------------------------- */
+    conduitID === 357888
+  ) {
   }
 
   // =============================

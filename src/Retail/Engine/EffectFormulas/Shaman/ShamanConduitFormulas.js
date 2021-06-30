@@ -141,6 +141,14 @@ export const getShamanConduit = (conduitID, player, contentType, conduitRank) =>
     bonusStats.HPS = 1;
   } else if (conduitID === VITAL_ACCRETION) {
     bonusStats.HPS = 0;
+  } else if (
+    /* ----------------------------------- Adaptive Armor Fragment ---------------------------------- */
+    conduitID === 357902
+  ) {
+  } else if (
+    /* ----------------------------------- Condensed Anima Sphere ----------------------------------- */
+    conduitID === 357888
+  ) {
   }
 
   // some real dirty overheal & efficiency adjustment, gotta do it individually soon
