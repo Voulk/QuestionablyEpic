@@ -248,14 +248,14 @@ export default function CovenantExploration(props) {
               {/* ----------------------------------------- Pelagos Tab ----------------------------------------  */}
               <Tab
                 style={{ color: "white" }}
-                icon={<img height={139} alt={t("Covenants.Soulbinds.Pelagos")} src={process.env.PUBLIC_URL + "/Images/Interface/pelagos.png"} />}
+                icon={<img height={139} alt={t("Covenants.Soulbinds.Pelagos")} src={process.env.PUBLIC_URL + "/Images/Interface/Pelagos.png"} />}
                 label={t("Covenants.Soulbinds.Pelagos")}
                 {...a11yPropsVert(0)}
               />
               {/* ------------------------------------------ Kleia Tab -----------------------------------------  */}
               <Tab
                 style={{ color: "white" }}
-                icon={<img height={139} alt={t("Covenants.Soulbinds.Kleia")} src={process.env.PUBLIC_URL + "/Images/Interface/kleia.png"} />}
+                icon={<img height={139} alt={t("Covenants.Soulbinds.Kleia")} src={process.env.PUBLIC_URL + "/Images/Interface/Kleia.png"} />}
                 label={t("Covenants.Soulbinds.Kleia")}
                 {...a11yPropsVert(1)}
               />
