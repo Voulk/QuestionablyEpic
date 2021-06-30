@@ -467,6 +467,7 @@
       "EnduranceConduit": "Widerstandsmedium",
       "FinesseConduit": "Finessemedium",
       "ConduitInstructions": "Rechts-/Linksklicke auf ein Medium, um die Gegenstandsstufe zu verändern.",
+      "RenownTooltip": "Import your Renown via SimC / Enter your Renown level here",
       "StatPanel": {
         "Summary": "Zusammenfassung",
         "Score": "Wertung",

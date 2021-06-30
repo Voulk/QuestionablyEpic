@@ -469,6 +469,7 @@
       "EnduranceConduit": "韧如树皮",
       "FinesseConduit": "灵巧导灵器",
       "ConduitInstructions": "Right/Left Click Conduits to change IlvlCH",
+      "RenownTooltip": "Import your Renown via SimC / Enter your Renown level here",
       "StatPanel": {
         "Summary": "SummaryCH",
         "Score": "ScoreCH",
