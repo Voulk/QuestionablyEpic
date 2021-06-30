@@ -10,6 +10,17 @@
 export const changeLog = [
   {
     version: "9.1 / 2.5.1",
+    update: 2,
+    date: "30th June",
+    changes: [
+      "Soulbinds: Combat Med, Soothing Shade, Grove Invigoration and Bron all updated to the now nerfed in-game values.",
+      "Disc Priest: Updated the default spell model for 9.1.",
+      "New Trinket: Tome of Insight.",
+      "Bugfix: Covenant icons should now appear as expected."
+    ],
+  },
+  {
+    version: "9.1 / 2.5.1",
     update: 1,
     date: "29th June",
     changes: [
