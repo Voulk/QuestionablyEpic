@@ -805,7 +805,7 @@ export const legendaryNameTranslator = (legendaryEffectName) => {
         en: {
           name: "Divine Resonance",
           slot: "Legs or Back",
-          desc: "After casting Divine Toll, you instantly cast Judgement every 5 sec. This effect lasts 30 sec. (3s cooldown)",
+          desc: "After casting Divine Toll, you instantly cast Holy Shock every 5 sec. This effect lasts 30 sec.",
           droploc: "Kyrian",
           covenant: "Kyrian",
         },
