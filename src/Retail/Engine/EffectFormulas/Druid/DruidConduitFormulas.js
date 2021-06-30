@@ -65,7 +65,7 @@ export const getDruidConduit = (conduitID, player, contentType, conduitLevel) =>
   // TODO: This is using a placeholder formula
   else if (conduitID === 341446) {
     let trait_bonus = 0.135 + conduitLevel * 0.015;
-    let HPSDuringConvoke = 360; // PLACEHOLDER
+    let HPSDuringConvoke = 480; // PLACEHOLDER
 
     bonus_stats.HPS = trait_bonus * HPSDuringConvoke * (1 - expectedOverhealing);
   }
@@ -100,6 +100,7 @@ export const getDruidConduit = (conduitID, player, contentType, conduitLevel) =>
     /* ----------------------------------- Adaptive Armor Fragment ---------------------------------- */
     conduitID === 357902
   ) {
+
   } else if (
     /* ----------------------------------- Condensed Anima Sphere ----------------------------------- */
     conduitID === 357888
