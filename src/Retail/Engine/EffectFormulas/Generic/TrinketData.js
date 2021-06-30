@@ -893,7 +893,7 @@ export const trinket_data = [
         /* ----------------------------------------- Healing Portion ---------------------------------------- */
         coefficient: 32.7898,
         table: -8,
-        efficiency: 0.7, 
+        efficiency: 0.6, // The expected overhealing on this trinket is very high.
         ppm: 3,
         targets: { Raid: 4.2, Dungeon: 2.9 }, // 8 yard range
         meteor: 0.15, // TODO: Confirm
@@ -921,6 +921,23 @@ export const trinket_data = [
         spellList: {"Restoration Druid": 1, "Holy Paladin": 25914, "Mistweaver Monk": 1, "Restoration Shaman": 1, "Holy Priest": 1, "Discipline Priest": 1},
         table: -1,
         cooldown: 60,
+      },
+    ],
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                         Tome of Insight                                        */
+    /* ---------------------------------------------------------------------------------------------- */
+    /*
+    This is a crit stat stick available as catch up gear.
+    */
+    name: "Tome of Insight",
+    effects: [
+      {
+        coefficient: 1.546671, // The spell data also has a 1.679526 (-7) coefficient that is unused.
+        table: -7,
+        duration: 20,
+        ppm: 2,
       },
     ],
   },

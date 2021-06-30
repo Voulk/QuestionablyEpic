@@ -458,6 +458,7 @@
       "EnduranceConduit": "Intermédiaire d’endurance",
       "FinesseConduit": "Intermédiaire de finesse",
       "ConduitInstructions": "Clique droit/gauche sur les Conduits pour changer le niveau (iLvl)",
+      "RenownTooltip": "Import your Renown via SimC / Enter your Renown level here",
       "StatPanel": {
         "Summary": "Résumé",
         "Score": "Pointage",

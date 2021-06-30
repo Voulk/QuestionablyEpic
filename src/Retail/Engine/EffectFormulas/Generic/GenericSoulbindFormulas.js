@@ -36,7 +36,7 @@ export function getSoulbindFormula(effectID, player, contentType) {
     You occasionally expel sorrowful memories which can be walked through to extend the effect by 3 seconds.
     */
     let expectedUptime = (30 + 9 * 2) / 180;
-    bonus_stats.Mastery = 472 * expectedUptime; // Despite the tooltip showing 350, Combat Med actually gives 524 Mastery. TODO: Check this on live servers.
+    bonus_stats.Mastery = 315 * expectedUptime;
   } else if (
     /* --------------------------------------- Focusing Mantra -------------------------------------- */
     effectID === 328261
@@ -176,7 +176,7 @@ export function getSoulbindFormula(effectID, player, contentType) {
     DOES reset stacks on raid boss pull. Doesn't in Mythic+.
     */
     
-    const stackTimer = 0.19 // Time it takes to get one stack. It has a 0.1s ICD and doesn't build while Bron is active.
+    const stackTimer = 1.4 // Time it takes to get one stack. It has a 0.1s ICD and doesn't build while Bron is active.
     const base_ppm = 60 / (stackTimer * 75);
     const buildTime = 75 * stackTimer;
     const cycleLength = buildTime + 30;
@@ -229,7 +229,7 @@ export function getSoulbindFormula(effectID, player, contentType) {
     /* ------------------------------------- Grove Invigoration ------------------------------------- */
     effectID === 322721
   ) {
-    let expectedStacks = (2 * 30) / 60 + (8 * 30) / 120 * 1.5; // This is currently bugged on live servers and gives 50% more mastery than it should.
+    let expectedStacks = (2 * 30) / 60 + (8 * 30) / 120;
 
     bonus_stats.Mastery = expectedStacks * 25;
   } else if (
@@ -401,7 +401,7 @@ export function getSoulbindFormula(effectID, player, contentType) {
     let chanceOfMovement = 0.1;
     let uptime = convertPPMToUptime(1, 12) * (1 - chanceOfMovement);
 
-    bonus_stats.Mastery = uptime * 525 * 1.5; // This is currently bugged on live servers and gives 50% more mastery than it should.
+    bonus_stats.Mastery = uptime * 525;
   } else if (
     /* ------------------------------------ Token of Appreciation ----------------------------------- */
     effectID === 336245

@@ -605,6 +605,7 @@
       "EnduranceConduit": "Endurance Conduit",
       "FinesseConduit": "Finesse Conduit",
       "ConduitInstructions": "Right/Left Click Conduits to change Ilvl",
+      "RenownTooltip": "Import your Renown via SimC / Enter your Renown level here",
       "StatPanel": {
         "Summary": "Summary",
         "Score": "Score",

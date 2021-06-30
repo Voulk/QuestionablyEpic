@@ -462,7 +462,7 @@ class Player {
         crit: 480,
         mastery: 200,
         versatility: 320,
-        stamina: 1400,
+        stamina: 1900,
       };
       this.statWeights.Raid = druidDefaultStatWeights("Raid");
       this.statWeights.Dungeon = druidDefaultStatWeights("Dungeon");
@@ -474,7 +474,7 @@ class Player {
         crit: 200,
         mastery: 550,
         versatility: 340,
-        stamina: 1490,
+        stamina: 1900,
       };
 
       this.statWeights.Raid = paladinDefaultStatWeights("Raid");
@@ -488,7 +488,7 @@ class Player {
         crit: 590,
         mastery: 200,
         versatility: 370,
-        stamina: 1490,
+        stamina: 1900,
       };
       this.statWeights.Raid = shamanDefaultStatWeights("Raid");
       this.statWeights.Dungeon = shamanDefaultStatWeights("Dungeon");
@@ -500,7 +500,7 @@ class Player {
         crit: 480,
         mastery: 370,
         versatility: 320,
-        stamina: 1400,
+        stamina: 1900,
       };
 
       this.statWeights.Raid = discPriestDefaultStatWeights("Raid");
@@ -513,7 +513,7 @@ class Player {
         crit: 475,
         mastery: 470,
         versatility: 400,
-        stamina: 1400,
+        stamina: 1900,
       };
 
       this.statWeights.Raid = holyPriestDefaultStatWeights("Raid");
@@ -526,7 +526,7 @@ class Player {
         crit: 590,
         mastery: 200,
         versatility: 370,
-        stamina: 1490,
+        stamina: 1900,
       };
 
       this.statWeights.Raid = monkDefaultStatWeights("Raid");

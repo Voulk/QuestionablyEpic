@@ -150,26 +150,40 @@ function getConduitRank(itemLevel) {
 }
 
 export function getConduitFormula(effectID, player, contentType, itemLevel = 145) {
+
   let conduitRank = getConduitRank(itemLevel);
   let bonus_stats = {};
 
-  switch (player.spec) {
-    case SPEC.DISCPRIEST:
-    case SPEC.HOLYPRIEST:
-      bonus_stats = getPriestConduit(effectID, player, contentType, conduitRank);
-      break;
-    case SPEC.RESTODRUID:
-      bonus_stats = getDruidConduit(effectID, player, contentType, conduitRank);
-      break;
-    case SPEC.RESTOSHAMAN:
-      bonus_stats = getShamanConduit(effectID, player, contentType, conduitRank);
-      break;
-    case SPEC.HOLYPALADIN:
-      bonus_stats = getPaladinConduit(effectID, player, contentType, conduitRank);
-      break;
-    case SPEC.MISTWEAVERMONK:
-      bonus_stats = getMonkConduit(effectID, player, contentType, conduitRank);
-      break;
+  if (effectID === 357902) {
+    const percentInc = 0.02 + conduitRank * 0.002;
+    const uptime = 0.45;
+    const intGain = percentInc * player.getInt() * uptime;
+    bonus_stats.HPS = intGain / player.getInt() * player.getHPS(contentType);
+  }
+  else if (effectID === 357888) {
+    const percHealing = (0.25 + conduitRank * 0.025) / 100;
+    const ppm = 60 / 10 * 0.85;
+    bonus_stats.HPS = percHealing * ppm * player.activeStats.stamina * 20 * 1.06 / 60;
+  }
+  else {
+    switch (player.spec) {
+      case SPEC.DISCPRIEST:
+      case SPEC.HOLYPRIEST:
+        bonus_stats = getPriestConduit(effectID, player, contentType, conduitRank);
+        break;
+      case SPEC.RESTODRUID:
+        bonus_stats = getDruidConduit(effectID, player, contentType, conduitRank);
+        break;
+      case SPEC.RESTOSHAMAN:
+        bonus_stats = getShamanConduit(effectID, player, contentType, conduitRank);
+        break;
+      case SPEC.HOLYPALADIN:
+        bonus_stats = getPaladinConduit(effectID, player, contentType, conduitRank);
+        break;
+      case SPEC.MISTWEAVERMONK:
+        bonus_stats = getMonkConduit(effectID, player, contentType, conduitRank);
+        break;
+    }
   }
 
   return bonus_stats;
