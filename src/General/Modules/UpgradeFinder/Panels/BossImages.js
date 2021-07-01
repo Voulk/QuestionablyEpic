@@ -28,7 +28,7 @@ export default function UpgradeFinderBossImages(props, gameType, other) {
         return require("Images/MythicPlus/TazaveshTheVeiledMarket/timecapn.png").default;
 
       /* ------------------------------------------- So'leah ------------------------------------------ */
-      case 2445:
+      case 2455:
         return require("Images/MythicPlus/TazaveshTheVeiledMarket/soleah.png").default;
 
       default:

@@ -180,7 +180,7 @@ export const encounterDB = {
     2451, // So'azmi
     2448, // Hylbrande
     2449, // Timecap'n Hooktail
-    2445, // So'leah
+    2455, // So'leah
   ],
 
   /* --------------------------------------------- PVP -------------------------------------------- */
