@@ -47,7 +47,7 @@ export const getPaladinConduit = (conduitID, player, contentType, conduitLevel) 
     const oneHolyShock = player.getSingleCast(IDHOLYSHOCK, contentType);
     const expectedHolyPower = Math.pow(trait_bonus, 2) + Math.pow(trait_bonus, 3);
     const HPSOneHolyPower = getOneHolyPower(player, contentType);
-    expectedOverhealing = contentType === "Raid" ? 0.59 : 0.3;
+    expectedOverhealing = contentType === "Raid" ? 0.51 : 0.3;
 
     const HPSBonusHolyShocks = trait_bonus * oneHolyShock * 3 * (1 - expectedOverhealing) / 60;
     //const HPSBonusHolyPower = HPSOneHolyPower * expectedHolyPower / 60;

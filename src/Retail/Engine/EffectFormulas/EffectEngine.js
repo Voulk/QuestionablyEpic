@@ -159,7 +159,7 @@ export function getConduitFormula(effectID, player, contentType, itemLevel = 145
     const percentInc = 0.02 + conduitRank * 0.002;
     const uptime = contentType == "Raid" ? 0.4 : 0;
     const intGain = percentInc * player.getInt() * uptime;
-    bonus_stats.HPS = intGain / player.getInt() * player.getHPS(contentType);
+    bonus_stats.HPS = intGain / player.getInt() * (player.getHPS(contentType) * 0.75); // Remove this 0.75 modifier when the cast models update.
   }
   else if (effectID === 357888) {
     // Small heal based on your max health whenever you take damage. 10s cooldown.
