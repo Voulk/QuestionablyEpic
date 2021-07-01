@@ -14,7 +14,7 @@ import { getEffectValue } from "../../../Retail/Engine/EffectFormulas/EffectEngi
 // This does run into some problems when it comes to set bonuses and could be re-evaluated at the time. The likely strat is to auto-include anything with a bonus, or to run
 // our set bonus algorithm before we sort and slice. There are no current set bonuses that are relevant to raid / dungeon so left as a thought experiment for now.
 const softSlice = 3000;
-const DR_CONST = 0.00326669230769231;
+const DR_CONST = 0.00346669230769231;
 const DR_CONSTLEECH = 0.04322569230769231;
 
 
