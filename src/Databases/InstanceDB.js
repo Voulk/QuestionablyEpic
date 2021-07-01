@@ -171,6 +171,17 @@ export const encounterDB = {
     1188, //"De Other Side",
     1189, //"Sanguine Depths",
   ],
+  /* ---------------------------------- Tazavesh, The Vieled City --------------------------------- */
+  1194: [
+    2437, // Zo'phex the Sentinel,
+    2454, // The Grand Menagerie
+    2436, // Mailroom Mayhem
+    2452, // Myza's Oasis
+    2451, // So'azmi
+    2448, // Hylbrande
+    2449, // Timecap'n Hooktail
+    2445, // So'leah
+  ],
 
   /* --------------------------------------------- PVP -------------------------------------------- */
   2: [-17, -16],

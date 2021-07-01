@@ -10,6 +10,7 @@ import PvPGearContainer from "./Panels/PanelPvP";
 import RaidGearContainer from "./Panels/PanelRaid";
 import WorldBossGearContainer from "./Panels/PanelWorldBosses";
 import SlotsContainer from "./Panels/PanelSlots";
+import TazaveshGearContainer from "./Panels/TazaveshPanel";
 import "./Panels/ItemUpgrade.css";
 import { useSelector } from "react-redux";
 
@@ -102,6 +103,14 @@ const useStyles = makeStyles((theme) => ({
     color: "#fff",
     fontSize: "1.1rem",
   },
+  tazaveshStyle: {
+    backgroundImage: `url(${require("../../../Images/Bosses/TazaveshHeader.png").default})`,
+    borderRadius: "0px 4px 4px 0px",
+    whiteSpace: "nowrap",
+    textShadow: "3px 3px 4px black",
+    color: "#fff",
+    fontSize: "1.1rem",
+  },
   header: {
     [theme.breakpoints.down("sm")]: {
       marginTop: 120,
@@ -169,7 +178,7 @@ export default function UpgradeFinderResults(props) {
 
   const returnToSetup = () => {
     props.setShowReport(false);
-  }
+  };
 
   const upgradeFinderResultsRetail = () => {
     return (
@@ -197,12 +206,14 @@ export default function UpgradeFinderResults(props) {
             <Tab className={classes.raidHeaderStyle} label={t("UpgradeFinder.CurrentRaid")} {...a11yProps(0)} />
             {/* Mythic Plus */}
             <Tab className={classes.mythicPlusHeaderStyle} label={t("UpgradeFinder.MythicPlus")} {...a11yProps(1)} />
+            {/* Tazavesh */}
+            <Tab className={classes.tazaveshStyle} label={t("DungeonNames.1194")} {...a11yProps(2)} />
             {/* PVP */}
-            <Tab className={classes.pvpHeaderStyle} label={t("UpgradeFinder.PvP")} {...a11yProps(2)} />
+            <Tab className={classes.pvpHeaderStyle} label={t("UpgradeFinder.PvP")} {...a11yProps(3)} />
             {/* World Bosses */}
-            <Tab className={classes.worldBossHeaderStyle} label={t("UpgradeFinder.WorldBosses")} {...a11yProps(3)} />
+            <Tab className={classes.worldBossHeaderStyle} label={t("UpgradeFinder.WorldBosses")} {...a11yProps(4)} />
             {/* Slots */}
-            <Tab className={classes.slotsHeaderStyle} label={t("UpgradeFinder.UpgradeBySlot")} {...a11yProps(4)} />
+            <Tab className={classes.slotsHeaderStyle} label={t("UpgradeFinder.UpgradeBySlot")} {...a11yProps(5)} />
           </Tabs>
         </AppBar>
 
@@ -230,8 +241,23 @@ export default function UpgradeFinderResults(props) {
           </div>
         </TabPanel>
 
-        {/* PVP */}
+        {/* Tazavesh */}
         <TabPanel value={tabvalue} index={2}>
+          <div className={classes.panel}>
+            <Grid container>
+              <TazaveshGearContainer
+                setDungeonDifficulty={props.setDungeonDifficulty}
+                player={props.player}
+                itemList={itemList}
+                itemDifferentials={itemDifferentials}
+                playerSettings={props.playerSettings}
+              />
+            </Grid>
+          </div>
+        </TabPanel>
+
+        {/* PVP */}
+        <TabPanel value={tabvalue} index={3}>
           <div className={classes.panel}>
             <Grid container>
               <PvPGearContainer player={props.player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={props.playerSettings} />
@@ -240,7 +266,7 @@ export default function UpgradeFinderResults(props) {
         </TabPanel>
 
         {/* World Bosses */}
-        <TabPanel value={tabvalue} index={3}>
+        <TabPanel value={tabvalue} index={4}>
           <div className={classes.panel}>
             <Grid container>
               <WorldBossGearContainer player={props.player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={props.playerSettings} />
@@ -249,7 +275,7 @@ export default function UpgradeFinderResults(props) {
         </TabPanel>
 
         {/* Slots */}
-        <TabPanel value={tabvalue} index={4}>
+        <TabPanel value={tabvalue} index={5}>
           <div className={classes.panel}>
             <Grid container>
               <SlotsContainer player={props.player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={props.playerSettings} />
@@ -265,7 +291,7 @@ export default function UpgradeFinderResults(props) {
       <div className={classes.header}>
         <Button color="primary" variant="outlined" onClick={() => returnToSetup()} style={{ float: "left", position: "fixed" }}>
           {t("UpgradeFinder.BackButton")}
-        </Button> 
+        </Button>
         <Typography variant="h4" color="primary" align="center" style={{ padding: "1px 1px 1px 1px" }}>
           {t("UpgradeFinder.Header")}
         </Typography>

@@ -391,7 +391,18 @@
       "2446": "Wächter der Ersten",
       "2447": "Fatescribe Roh-Kalo",
       "2440": "Kel'Thuzad",
-      "2441": "Sylvanas Windläufer"
+      "2441": "Sylvanas Windläufer",
+      "Tazavesh Bosses": "",
+      "Tazavesh": {
+        "2437": "Zo'phex the Sentinel",
+        "2454": "The Grand Menagerie",
+        "2436": "Mailroom Mayhem",
+        "2452": "Myza's Oasis",
+        "2451": "So'azmi",
+        "2448": "Hylbrande",
+        "2449": "Timecap'n Hooktail",
+        "2445": "So'leah"
+      }
     },
 
     "DungeonNames": {
