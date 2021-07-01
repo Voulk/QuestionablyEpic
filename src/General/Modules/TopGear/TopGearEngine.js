@@ -14,7 +14,7 @@ import { getEffectValue } from "../../../Retail/Engine/EffectFormulas/EffectEngi
 // This does run into some problems when it comes to set bonuses and could be re-evaluated at the time. The likely strat is to auto-include anything with a bonus, or to run
 // our set bonus algorithm before we sort and slice. There are no current set bonuses that are relevant to raid / dungeon so left as a thought experiment for now.
 const softSlice = 3000;
-const DR_CONST = 0.00196669230769231;
+const DR_CONST = 0.00326669230769231;
 const DR_CONSTLEECH = 0.04322569230769231;
 
 
@@ -394,13 +394,14 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
   applyDiminishingReturns(setStats); // Apply Diminishing returns to our haul.
   addBaseStats(setStats, player.spec); // Add our base stats, which are immune to DR. This includes our base 5% crit, and whatever base mastery our spec has.
   // Apply soft DR formula to stats, as the more we get of any stat the weaker it becomes relative to our other stats. 
+  console.log("Base: " + JSON.stringify(adjusted_weights));
   adjusted_weights.haste = (adjusted_weights.haste + adjusted_weights.haste * (1 - (DR_CONST * setStats.haste) / STATPERONEPERCENT.Retail.HASTE)) / 2;
   adjusted_weights.crit = (adjusted_weights.crit + adjusted_weights.crit * (1 - (DR_CONST * setStats.crit) / STATPERONEPERCENT.Retail.CRIT)) / 2;
   adjusted_weights.versatility = (adjusted_weights.versatility + adjusted_weights.versatility * (1 - (DR_CONST * setStats.versatility) / STATPERONEPERCENT.Retail.VERSATILITY)) / 2;
   adjusted_weights.mastery = (adjusted_weights.mastery + adjusted_weights.mastery * (1 - (DR_CONST * setStats.mastery) / STATPERONEPERCENT.Retail.MASTERYA[player.spec])) / 2;
   adjusted_weights.leech = (adjusted_weights.leech + adjusted_weights.leech * (1 - (DR_CONSTLEECH * setStats.leech) / STATPERONEPERCENT.Retail.LEECH)) / 2;
 
-  //console.log("LEECH: " + adjusted_weights.leech);
+  console.log("Adj: " + JSON.stringify(adjusted_weights));
   // Calculate a hard score using the rebalanced stat weights.
 
   for (var stat in setStats) {
