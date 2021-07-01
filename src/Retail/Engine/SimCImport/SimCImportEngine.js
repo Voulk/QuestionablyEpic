@@ -205,6 +205,7 @@ function processItem(line, player, contentType, type) {
   let itemSocket = false;
   let itemTertiary = "";
   let dropLevel = 0;
+  let levelOverride = 0; // A player can forgo the bonus_id system and override an items level if they wish by entering ilevel= at the end of an item.
   let craftedStats = [];
   let itemBonusStats = {}; // Bonus_stats that don't naturally come on the item. Crafting and "of the X" items are the primary example.
   let gemID = 0; // currently unused.
@@ -233,6 +234,7 @@ function processItem(line, player, contentType, type) {
     else if (info.includes("id=")) itemID = parseInt(info.split("=")[1]);
     else if (info.includes("drop_level=")) dropLevel = parseInt(info.split("=")[1]);
     else if (info.includes("crafted_stats=")) craftedStats = info.split("=")[1].split("/");
+    else if (info.includes("ilevel=") || info.includes("ilvl=")) levelOverride = parseInt(info.split("=")[1]);
   }
 
 
@@ -306,6 +308,7 @@ function processItem(line, player, contentType, type) {
     else if (bonus_id === "6650") missiveStats.push("versatility");
   }
   if (craftedStats.length !== 0) itemBonusStats = getSecondaryAllocationAtItemLevel(itemLevel, itemSlot, craftedStats);
+  if (levelOverride !== 0) itemLevel = Math.min(499, levelOverride);
 
   // Add the new item to our characters item collection.
   if (itemLevel > 60 && itemID !== 0 && getItem(itemID) !== "") {
@@ -316,7 +319,7 @@ function processItem(line, player, contentType, type) {
     item.active = itemEquipped || item.vaultItem;
     item.isEquipped = itemEquipped;
     if (Object.keys(itemBonusStats).length > 0) item.addStats(itemBonusStats);
-    item.stats = calcStatsAtLevel(itemLevel, itemSlot, itemAllocations, itemTertiary);
+    item.stats = calcStatsAtLevel(item.level, itemSlot, itemAllocations, itemTertiary);
 
     item.effect = Object.keys(itemEffect).length !== 0 ? itemEffect : getItemProp(itemID, "effect");
     if (item.effect.type && item.effect.type === "spec legendary") item.uniqueEquip = "legendary";
