@@ -36,7 +36,7 @@ export default function TazaveshGearContainer(props) {
                   width: 207,
                   height: "100%",
                   paddingLeft: 8,
-                  backgroundImage: `url(${UpgradeFinderBossImages(key)})`,
+                  backgroundImage: `url(${UpgradeFinderBossImages(key, "", 1194)})`,
                   backgroundRepeat: "no-repeat",
                   backgroundPosition: "center 60%",
                   backgroundSize: "auto 100%",
@@ -59,7 +59,6 @@ export default function TazaveshGearContainer(props) {
       </Grid>
     ));
   };
-
 
   return (
     <div className={classes.root}>
