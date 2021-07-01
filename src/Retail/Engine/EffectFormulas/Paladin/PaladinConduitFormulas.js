@@ -99,15 +99,6 @@ export const getPaladinConduit = (conduitID, player, contentType, conduitLevel) 
 
     bonus_stats.HPS = trait_bonus * (1 - expectedOverhealing) * player.getSpellHPS(IDWORDOFGLORY, contentType);
   }
-  else if (
-    /* ----------------------------------- Adaptive Armor Fragment ---------------------------------- */
-    conduitID === 357902
-  ) {
-  } else if (
-    /* ----------------------------------- Condensed Anima Sphere ----------------------------------- */
-    conduitID === 357888
-  ) {
-  }
 
   return bonus_stats;
 };

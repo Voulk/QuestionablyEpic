@@ -155,12 +155,14 @@ export function getConduitFormula(effectID, player, contentType, itemLevel = 145
   let bonus_stats = {};
 
   if (effectID === 357902) {
+    // % intellect increase when healed by another player. 15s duration, 30s cooldown.
     const percentInc = 0.02 + conduitRank * 0.002;
-    const uptime = 0.45;
+    const uptime = contentType == "Raid" ? 0.4 : 0;
     const intGain = percentInc * player.getInt() * uptime;
     bonus_stats.HPS = intGain / player.getInt() * player.getHPS(contentType);
   }
   else if (effectID === 357888) {
+    // Small heal based on your max health whenever you take damage. 10s cooldown.
     const percHealing = (0.25 + conduitRank * 0.025) / 100;
     const ppm = 60 / 10 * 0.85;
     bonus_stats.HPS = percHealing * ppm * player.activeStats.stamina * 20 * 1.06 / 60;
