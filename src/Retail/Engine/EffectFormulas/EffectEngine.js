@@ -153,7 +153,6 @@ export function getConduitFormula(effectID, player, contentType, itemLevel = 145
 
   let conduitRank = getConduitRank(itemLevel);
   let bonus_stats = {};
-
   if (effectID === 357902) {
     // % intellect increase when healed by another player. 15s duration, 30s cooldown.
     const percentInc = 0.02 + conduitRank * 0.002;
@@ -162,10 +161,11 @@ export function getConduitFormula(effectID, player, contentType, itemLevel = 145
     bonus_stats.HPS = intGain / player.getInt() * (player.getHPS(contentType) * 0.75); // Remove this 0.75 modifier when the cast models update.
   }
   else if (effectID === 357888) {
-    // Small heal based on your max health whenever you take damage. 10s cooldown.
-    const percHealing = (0.25 + conduitRank * 0.025) / 100;
-    const ppm = 60 / 10 * 0.85;
-    bonus_stats.HPS = percHealing * ppm * player.activeStats.stamina * 20 * 1.06 / 60;
+    // Small heal based on your max health whenever you take damage. 10s cooldown. The heal on this is currently 10x it's tooltip value.
+    const percHealing = (0.25 + conduitRank * 0.025) / 100 * 10;
+    const ppm = 60 / 10 * 0.7; // Condensed Anima Sphere notably does not proc off a significant number of abilities.
+    const expectedOverhealing = 0.3;
+    bonus_stats.HPS = percHealing * ppm * (1 - expectedOverhealing) * player.activeStats.stamina * 20 * 1.06 / 60;
   }
   else {
     switch (player.spec) {
