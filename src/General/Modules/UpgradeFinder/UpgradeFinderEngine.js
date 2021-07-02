@@ -162,7 +162,16 @@ function buildItemPossibilities(player, contentType, playerSettings) {
           //console.log("Difficulty: " + playerSettings.raid[x] + ". Item level: " + itemLevel)
           itemPoss.push(item);
         }
-      } else {
+      }
+      else if (itemSource.instanceId === 1194) {
+        // Taz. This will be moved to the Mythic+ section in 9.2 but deserves a separate section for now.
+        const item226 = buildItem(player, contentType, rawItem, 226, rawItem.sources[0]);
+        itemPoss.push(item226);
+
+        const item233 = buildItem(player, contentType, rawItem, 233, rawItem.sources[0]);
+        itemPoss.push(item233);
+      }
+      else {
         const itemLevel = getSetItemLevel(itemSource, playerSettings, 0, rawItem.slot);
         const item = buildItem(player, contentType, rawItem, itemLevel, rawItem.sources[0]);
 

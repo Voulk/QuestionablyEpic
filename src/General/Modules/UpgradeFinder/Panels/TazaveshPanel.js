@@ -50,7 +50,7 @@ export default function TazaveshGearContainer(props) {
             </Grid>
             <Divider orientation="vertical" flexItem style={{ marginRight: 4 }} />
             <Grid item xs={12} sm container spacing={1} style={{ marginRight: 6 }}>
-              {[...filterItemListBySource(itemList, 1194, key, itemLevels.dungeon[difficulty])].map((item, index) => (
+              {[...filterItemListBySource(itemList, 1194, key, 233)].map((item, index) => (
                 <ItemUpgradeCard key={index} item={item} itemDifferential={getDifferentialByID(itemDifferentials, item.id, item.level)} slotPanel={false} />
               ))}
             </Grid>
