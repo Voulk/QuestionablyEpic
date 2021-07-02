@@ -106082,7 +106082,11 @@ export const itemDB = [
             "versatility": 0
         },
         "dropLoc": "",
-        "slot": "Neck"
+        "slot": "Neck",
+        "effect": {
+            "type": "special",
+            "name": "Passable Credentials"
+        }
     },
     {
         "id": 186004,
@@ -115715,7 +115719,12 @@ export const itemDB = [
             "mastery": 9250,
             "versatility": 0
         },
+
         "dropLoc": "",
-        "slot": "Neck"
+        "slot": "Neck",
+        "effect": {
+            "type": "special",
+            "name": "Passable Credentials"
+        }
     }
 ]

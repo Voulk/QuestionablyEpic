@@ -19,6 +19,11 @@ export function getScalarValue(table, itemLevel) {
   }
 }
 
+export function getProcessedValue(coefficient, table, itemLevel, efficiency = 1, floor=true) {
+  if (floor) return Math.floor(coefficient * getScalarValue(table, itemLevel) * efficiency);
+  else return coefficient * getScalarValue(table, itemLevel) * efficiency;
+}
+
 export function getBestWeaponEnchant(player, contentType) {
   let bonus_stats = {};
 

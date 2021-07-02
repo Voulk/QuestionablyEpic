@@ -1,4 +1,4 @@
-import { convertPPMToUptime, getScalarValue } from "../EffectUtilities";
+import { convertPPMToUptime, getProcessedValue } from "../EffectUtilities";
 import { trinket_data } from "./TrinketData";
 import { getAdjustedHolyShock } from "../Paladin/PaladinMiscFormulas"
 // import { STAT } from "../../../../General/Engine/STAT";
@@ -691,7 +691,4 @@ function getEstimatedHPS(bonus_stats, player, contentType) {
   return Math.round(estHPS);
 }
 
-export function getProcessedValue(coefficient, table, itemLevel, efficiency = 1, floor=true) {
-  if (floor) return Math.floor(coefficient * getScalarValue(table, itemLevel) * efficiency);
-  else return coefficient * getScalarValue(table, itemLevel) * efficiency;
-}
+

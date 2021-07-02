@@ -1,4 +1,4 @@
-import { convertPPMToUptime } from "../EffectUtilities";
+import { convertPPMToUptime, getProcessedValue } from "../EffectUtilities";
 
 /* ---------------------------------------------------------------------------------------------- */
 /*                                         Generic Effects                                        */
@@ -10,8 +10,14 @@ import { convertPPMToUptime } from "../EffectUtilities";
 export function getGenericEffect(effectName, player, contentType) {
   let bonus_stats = {};
 
-  if (effectName === "Ashjrakamas") {
-    bonus_stats.intellect = 0;
+  if (effectName === "Passable Credentials") {
+    const effect= {
+      coefficient: 0.165898,
+      duration: 15,
+      ppm: 2
+    }
+    bonus_stats.intellect = getProcessedValue(effect.coefficient, effect.table, itemLevel) * convertPPMToUptime(effect.ppm, effect.duration);
+
   } else if (effectName === "Effect2") {
   }
 
