@@ -5,6 +5,7 @@ export const instanceDB = {
   "-1": "Dungeons",
   "1190": "Castle Nathria",
   "1192": "World Bosses",
+  "1193": "Sanctum of Domination",
 };
 
 export const encounterDB = {

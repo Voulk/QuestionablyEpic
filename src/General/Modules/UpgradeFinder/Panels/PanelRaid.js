@@ -164,16 +164,16 @@ const getDifficultyName = (difficulty) => {
 const getDifficultyBaseLevel = (difficulty) => {
   switch (difficulty) {
     case 0:
-      return 187;
-      break;
-    case 1:
-      return 200;
-      break;
-    case 2:
       return 213;
       break;
-    case 3:
+    case 1:
       return 226;
+      break;
+    case 2:
+      return 239;
+      break;
+    case 3:
+      return 252;
       break;
   }
 };
@@ -238,7 +238,7 @@ export default function RaidGearContainer(props) {
                       </Typography>
                     </Grid>
 
-                    {[...filterItemListBySource(itemList, 1190, key, getDifficultyBaseLevel(firstDifficulty))].map((item, index) => (
+                    {[...filterItemListBySource(itemList, 1193, key, getDifficultyBaseLevel(firstDifficulty))].map((item, index) => (
                       <ItemUpgradeCard key={index} item={item} itemDifferential={getDifferentialByID(itemDifferentials, item.id, item.level)} slotPanel={false} />
                     ))}
                   </Grid>
@@ -259,7 +259,7 @@ export default function RaidGearContainer(props) {
                         </Typography>
                       </Grid>
 
-                      {[...filterItemListBySource(itemList, 1190, key, getDifficultyBaseLevel(secondDifficulty))].map((item, index) => (
+                      {[...filterItemListBySource(itemList, 1193, key, getDifficultyBaseLevel(secondDifficulty))].map((item, index) => (
                         <ItemUpgradeCard key={index} item={item} itemDifferential={getDifferentialByID(itemDifferentials, item.id, item.level)} slotPanel={false} />
                       ))}
                     </Grid>

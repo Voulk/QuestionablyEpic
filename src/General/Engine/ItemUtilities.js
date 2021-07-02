@@ -131,7 +131,7 @@ export function filterItemListBySource(itemList, sourceInstance, sourceBoss, lev
     // console.log(item);
     let itemEncounter = item.source.encounterId;
     let expectedItemLevel = level;
-    if (itemEncounter == 2425 || itemEncounter == 2424) expectedItemLevel += 7;
+    if (itemEncounter == 2440 || itemEncounter == 2441) expectedItemLevel += 7;
     else if (sourceInstance === -17 && pvpRank === 5 && ["1H Weapon", "2H Weapon", "Offhand", "Shield"].includes(item.slot)) expectedItemLevel += 7;
 
     //console.log(expectedItemLevel);

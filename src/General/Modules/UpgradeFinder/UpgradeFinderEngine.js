@@ -155,7 +155,7 @@ function buildItemPossibilities(player, contentType, playerSettings) {
     if ("sources" in rawItem && checkItemViable(rawItem, player)) {
       const itemSource = rawItem.sources[0];
 
-      if (itemSource.instanceId === 1190) {
+      if (itemSource.instanceId === 1193) { // Sanctum of Domination
         for (var x = 0; x < playerSettings.raid.length; x++) {
           const itemLevel = getSetItemLevel(itemSource, playerSettings, x, rawItem.slot);
           const item = buildItem(player, contentType, rawItem, itemLevel, rawItem.sources[0]);
